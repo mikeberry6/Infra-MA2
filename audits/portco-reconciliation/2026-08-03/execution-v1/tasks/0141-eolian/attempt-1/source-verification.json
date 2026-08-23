@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RESEARCH_SOURCE_VERIFICATION",
+  "taskId": "ledger:0141:eolian:ae9eb0a5",
+  "taskIndex": 141,
+  "companyName": "Eolian",
+  "verifiedAt": "2026-08-19T03:55:00.000Z",
+  "verifier": "Codex independent URL retrieval, redirect and content-hash check",
+  "summary": {
+    "evidenceRows": 7,
+    "open": 7,
+    "browserBlockedPendingReleaseReopen": 0,
+    "unavailablePendingReleaseReopen": 0,
+    "dead": 0,
+    "researchPacketAccepted": true
+  },
+  "sources": [
+    {
+      "httpStatus": 200,
+      "finalUrl": "https://www.global-infra.com/portfolio-page/eolian/",
+      "workingStatus": "OPEN",
+      "contentCaptured": true,
+      "sha256": "caa99d20dc62a6facf1f6f17fcc4e9e511f5e6ffae10637a3d233f6a5ff74c7e",
+      "mediaType": "text/html; charset=UTF-8",
+      "url": "https://www.global-infra.com/portfolio-page/eolian/",
+      "label": "GIP Eolian portfolio",
+      "purpose": "CURRENT_STATUS",
+      "isRecommendedPrimary": true,
+      "purposeReviewedAgainstResearchOutput": true
+    },
+    {
+      "httpStatus": 200,
+      "finalUrl": "https://www.eolianenergy.com/",
+      "workingStatus": "OPEN",
+      "contentCaptured": true,
+      "sha256": "4044b45a501f129b1414c25dcf19a3dda767bebdce1d7acb59477151e24ee6f1",
+      "mediaType": "text/html;charset=utf-8",
+      "url": "https://www.eolianenergy.com/",
+      "label": "Eolian website",
+      "purpose": "IDENTITY_HQ",
+      "isRecommendedPrimary": false,
+      "purposeReviewedAgainstResearchOutput": true
+    },
+    {
+      "httpStatus": 200,
+      "finalUrl": "https://www.eolianenergy.com/leadership",
+      "workingStatus": "OPEN",
+      "contentCaptured": true,
+      "sha256": "b95cfecf02623f2a15e428a6ef01d3d74104985a941a6174d9420a92038d8f0a",
+      "mediaType": "text/html;charset=utf-8",
+      "url": "https://www.eolianenergy.com/leadership",
+      "label": "Eolian leadership",
+      "purpose": "FORMATION_FUND",
+      "isRecommendedPrimary": false,
+      "purposeReviewedAgainstResearchOutput": true
+    },
+    {
+      "httpStatus": 200,
+      "finalUrl": "https://www.eolianenergy.com/press/global-infrastructure-partners-announces-acquisition-of-map-energys-renewable-energy-business",
+      "workingStatus": "OPEN",
+      "contentCaptured": true,
+      "sha256": "916c442b933fde2a83aa7eda9e5cbf7295ff1567503fd59ce670517a18c49fd7",
+      "mediaType": "text/html;charset=utf-8",
+      "url": "https://www.eolianenergy.com/press/global-infrastructure-partners-announces-acquisition-of-map-energys-renewable-energy-business",
+      "label": "MAP RE/ES acquisition",
+      "purpose": "ENTRY",
+      "isRecommendedPrimary": false,
+      "purposeReviewedAgainstResearchOutput": true
+    },
+    {
+      "httpStatus": 200,
+      "finalUrl": "https://www.prnewswire.com/news-releases/eolian-announces-1-gwh-flint-grid-bess-pjms-largest-battery-energy-storage-project-now-under-construction-to-support-americas-fastest-growing-data-center-and-industrial-corridor-near-columbus-ohio-302837697.html",
+      "workingStatus": "OPEN",
+      "contentCaptured": true,
+      "sha256": "35828ddcc1fb883050b5279f6e4b4cbfae14f38817da0754600c5240c3d4a170",
+      "mediaType": "text/html; charset=UTF-8",
+      "url": "https://www.prnewswire.com/news-releases/eolian-announces-1-gwh-flint-grid-bess-pjms-largest-battery-energy-storage-project-now-under-construction-to-support-americas-fastest-growing-data-center-and-industrial-corridor-near-columbus-ohio-302837697.html",
+      "label": "Flint Grid release",
+      "purpose": "CURRENT_OWNERS",
+      "isRecommendedPrimary": false,
+      "purposeReviewedAgainstResearchOutput": true
+    },
+    {
+      "httpStatus": 200,
+      "finalUrl": "https://www.prnewswire.com/news-releases/eolian-a-global-infrastructure-partners-portfolio-company-announces-acquisition-of-able-grid-development-interests-301450429.html",
+      "workingStatus": "OPEN",
+      "contentCaptured": true,
+      "sha256": "2e799560e160d0b33988b22bc3a38f631df3edb2e95675671dc919d1c44a1d28",
+      "mediaType": "text/html; charset=UTF-8",
+      "url": "https://www.prnewswire.com/news-releases/eolian-a-global-infrastructure-partners-portfolio-company-announces-acquisition-of-able-grid-development-interests-301450429.html",
+      "label": "Able Grid release",
+      "purpose": "BOUNDARY",
+      "isRecommendedPrimary": false,
+      "purposeReviewedAgainstResearchOutput": true
+    },
+    {
+      "httpStatus": 200,
+      "finalUrl": "https://www.global-infra.com/news/blackrock-completes-acquisition-of-global-infrastructure-partners/",
+      "workingStatus": "OPEN",
+      "contentCaptured": true,
+      "sha256": "97f7d1184ad17545844dd6b64629150fd372c2d4efe1dede44747b819037e52a",
+      "mediaType": "text/html; charset=UTF-8",
+      "url": "https://www.global-infra.com/news/blackrock-completes-acquisition-of-global-infrastructure-partners/",
+      "label": "BlackRock-GIP close",
+      "purpose": "PARENT_CLOSE",
+      "isRecommendedPrimary": false,
+      "purposeReviewedAgainstResearchOutput": true
+    }
+  ],
+  "note": "Staging verification only; reopen and claim-check every source against a fresh production snapshot before proposal or release."
+}
+

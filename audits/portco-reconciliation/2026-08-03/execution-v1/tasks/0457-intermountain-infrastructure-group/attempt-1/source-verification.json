@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0457:intermountain-infrastructure-group:66d1e5b0",
+  "taskIndex": 457,
+  "companyName": "Intermountain Infrastructure Group",
+  "verifiedAt": "2026-08-22T17:05:48.000Z",
+  "summary": {
+    "citationUrls": 8,
+    "working": 5,
+    "browserBlockedButVerified": 3,
+    "materialModelCorrections": 0,
+    "recommendedPrimaryOverride": 1
+  },
+  "sources": [
+    {
+      "label": "FCC ownership notice",
+      "url": "https://docs.fcc.gov/public/attachments/DOC-392404A1.pdf",
+      "httpStatus": 200,
+      "observedStatus": "WORKING",
+      "verificationMethod": "direct official PDF",
+      "note": "Supports the U.S. entities, Wafra and Post Road funds and vehicles, recapitalization ranges, founder rollover and governance/control structure. It is the strongest historical transaction source, but not the best current-ownership primary."
+    },
+    {
+      "label": "Oregon PUC closing notice",
+      "url": "https://edocs.puc.state.or.us/efdocs/HAH/cp1644hah326386032.pdf",
+      "httpStatus": 200,
+      "observedStatus": "WORKING",
+      "verificationMethod": "direct official PDF and indexed text",
+      "note": "States that the controlling-interest transfer was consummated on January 12, 2024."
+    },
+    {
+      "label": "Wafra partnership announcement",
+      "url": "https://www.wafra.com/wafra-and-post-road-form-partnership-with-intermountain-infrastructure-group/",
+      "httpStatus": 403,
+      "observedStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verificationMethod": "indexed direct party page after automated-request block",
+      "note": "Supports the February 2023 announcement, business model and network geography."
+    },
+    {
+      "label": "IIG Northern Tier update",
+      "url": "https://intermountainig.com/northern-tier-fiber-route-70-precent-complete/",
+      "httpStatus": 403,
+      "observedStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verificationMethod": "indexed direct company page after automated-request block",
+      "note": "Current June 2026 evidence that Wafra is majority shareholder, Future Standard is the other institutional backer, IIG wholly owns Northern Tier and the company owns and operates U.S.-centered fiber infrastructure. Use this as the proposal's primary active-ownership citation."
+    },
+    {
+      "label": "USFWS right-of-way determination",
+      "url": "https://www.fws.gov/sites/default/files/documents/2025-07/eel_rightsofway_utility_cd_2025_20250715_0.pdf",
+      "httpStatus": 200,
+      "observedStatus": "WORKING",
+      "verificationMethod": "direct official PDF",
+      "note": "Supports construction and long-term operation and maintenance of conduit, fiber and related infrastructure."
+    },
+    {
+      "label": "Future Standard acquisition announcement",
+      "url": "https://www.futurestandard.com/news-center/future-standard-to-launch-digital-infrastructure-platform-through-acquisition-from-post-road-group",
+      "httpStatus": 200,
+      "observedStatus": "WORKING",
+      "verificationMethod": "direct transaction-party page",
+      "note": "Supports Future Standard's acquisition of Post Road's digital-infrastructure platform; IIG's June 2026 page independently confirms Future Standard as its current backer."
+    },
+    {
+      "label": "Bank Street interim financing",
+      "url": "https://www.bankstreet.com/transactions/post-road-group-has-provided-interim-financing-to-intermountain-infrastructure-group-iig/",
+      "httpStatus": 200,
+      "observedStatus": "WORKING",
+      "verificationMethod": "direct adviser page",
+      "note": "Supports the 2023 interim financing and does not evidence an IIG ownership exit."
+    },
+    {
+      "label": "IIG Sandpoint-Missoula completion",
+      "url": "https://intermountainig.com/network-completion-announcement-sandpoint-to-missoula/",
+      "httpStatus": 403,
+      "observedStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verificationMethod": "indexed direct company page after automated-request block",
+      "note": "Supports completion of the Sandpoint-to-Missoula route and the broader approximately 1,000-mile U.S. corridor."
+    }
+  ],
+  "conclusion": "The response's PROPOSED_CORRECTION is supported. Intermountain Infrastructure Group is a U.S.-canonical infrastructure owner/operator; Wafra is its current majority shareholder and Future Standard is the successor backer to Post Road. The exact current percentages are not publicly disclosed and must not be inferred from the 2024 closing ranges. Canada is a secondary network geography, not the canonical country. For application, use IIG's June 2026 current-owner update as the primary ownership citation rather than the model-selected historical FCC notice."
+}

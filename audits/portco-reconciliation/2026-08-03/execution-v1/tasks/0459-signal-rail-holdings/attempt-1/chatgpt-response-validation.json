@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "runId": "portco-research-staging-2026-08-19",
+  "taskId": "ledger:0459:signal-rail-holdings:50c69045",
+  "taskIndex": 459,
+  "validatedAt": "2026-08-22T17:35:52.753Z",
+  "conversationUrl": "https://chatgpt.com/c/6a89db60-2a40-83ea-8fb6-3e8e5da9ffc5",
+  "requiredTopLevelKeys": [
+    "asOfDate",
+    "requestedCompany",
+    "requestedManagers",
+    "decision",
+    "confidence",
+    "rationale",
+    "identityResolution",
+    "ownershipResolution",
+    "operatingResolution",
+    "acquisitionExitCheck",
+    "milestones",
+    "evidence",
+    "beforeAfterChanges",
+    "excludedOrDuplicateCandidates",
+    "unresolvedQuestions",
+    "recommendedListAction"
+  ],
+  "initialResponse": {
+    "valid": false,
+    "fencedJsonPresent": false,
+    "jsonParsed": false,
+    "markdownReviewPresent": false,
+    "requiredTopLevelKeysPresent": false,
+    "responseSha256": "bb16edf7a1a5075a6c382ea391f5afc55194055a6f5e168ca100524bcb38f9fd",
+    "errors": [
+      "The initial response performed source research but never emitted the required contract packet."
+    ]
+  },
+  "repair": {
+    "count": 1,
+    "limit": 1,
+    "submittedAt": "2026-08-22T17:30:33.177Z",
+    "completedAt": "2026-08-22T17:35:52.753Z",
+    "valid": false,
+    "responseSha256": "70204b5483fe57d0e8dde8948c870d2d84e39613d736a6f19ebc855e8e89e202",
+    "errors": [
+      "The sole repair returned an internal-server error and no contract packet.",
+      "After the error, the UI resumed source-search text but did not produce a parseable response."
+    ]
+  },
+  "finalResponse": {
+    "fencedJsonPresent": false,
+    "jsonParsed": false,
+    "markdownReviewPresent": false,
+    "requiredTopLevelKeysPresent": false,
+    "decision": null,
+    "confidence": null,
+    "result": "FAIL_NO_CONTRACT_PACKET_AFTER_ONE_REPAIR"
+  },
+  "valid": false,
+  "applicationBlocked": true,
+  "blockingReasons": [
+    "No contract-valid accepted packet exists after the one permitted repair."
+  ],
+  "errors": [
+    "The sole repair failed at the ChatGPT service boundary; a second repair is prohibited."
+  ],
+  "repairsUsed": 1
+}

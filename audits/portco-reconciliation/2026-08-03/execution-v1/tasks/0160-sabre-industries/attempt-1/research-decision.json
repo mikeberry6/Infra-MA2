@@ -1,0 +1,197 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0160:sabre-industries:6ac88af1",
+  "taskIndex": 160,
+  "companyName": "Sabre Industries",
+  "asOfDate": "2026-08-19",
+  "researchOnly": true,
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "responseSha256": "e3e1bc2e8647b864527ae0a40efa5e156b7ee240e8f91c573cd2a2364f34e838",
+  "sourceVerification": "source-verification.json",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "Sabre Industries",
+    "requestedManagers": [
+      "Blackstone"
+    ],
+    "decision": "PROPOSED_CORRECTION",
+    "confidence": "HIGH",
+    "rationale": "Sabre is an active U.S. critical-infrastructure equipment platform. Blackstone's SEC-filed Q2 2026 results list Sabre as a realization, establishing that the February TPG majority sale closed by June 30. TPG is majority owner and Blackstone remains an active significant-minority owner; exact close date, percentages and funds/vehicles were not disclosed.",
+    "identityResolution": {
+      "canonicalKey": "sabre-industries|united-states",
+      "legalName": "Sabre Industries, Inc.",
+      "displayName": "Sabre Industries",
+      "aliases": [
+        "Sabre Communications Corporation",
+        "Sabre Communications Holdings, Inc."
+      ],
+      "history": "Founded in 1977 as Sabre Communications Corporation; acquired through Sabre Communications Holdings in 2006; Sabre Industries, Inc. succeeded Holdings in a 2007 reorganization. No later rebrand found.",
+      "platformBoundary": "One platform; divisions, products and plants are not separate PortCos.",
+      "country": "United States",
+      "headquarters": "Alvarado, Texas",
+      "officialWebsite": "https://sabreindustries.com/",
+      "inScope": true
+    },
+    "ownershipResolution": {
+      "currentOwners": [
+        {
+          "manager": "TPG",
+          "organization": "TPG Rise Climate",
+          "fund": "NOT_PUBLICLY_DISCLOSED",
+          "vehicle": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "Majority",
+          "announcementDate": "2026-02-06",
+          "entryDate": "Q2 2026; exact date NOT_PUBLICLY_DISCLOSED",
+          "entryYear": 2026,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED"
+        },
+        {
+          "manager": "Blackstone",
+          "organization": "Blackstone Energy Transition Partners (formerly Blackstone Energy Partners)",
+          "fund": "NOT_PUBLICLY_DISCLOSED",
+          "vehicle": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "Significant minority",
+          "announcementDate": "2021-04-13",
+          "entryDate": "April 2021; exact date NOT_PUBLICLY_DISCLOSED",
+          "entryYear": 2021,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_PARTIAL_REALIZATION_Q2_2026"
+        }
+      ],
+      "formerOwners": [
+        {
+          "manager": "The Jordan Company",
+          "organization": "The Jordan Company, L.P.",
+          "fund": "NOT_PUBLICLY_DISCLOSED",
+          "vehicle": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "NOT_PUBLICLY_DISCLOSED",
+          "entryDate": "NOT_PUBLICLY_DISCLOSED",
+          "entryYear": null,
+          "exitDate": "April 2021; exact date NOT_PUBLICLY_DISCLOSED",
+          "exitYear": 2021,
+          "isActive": false,
+          "transactionState": "CLOSED_EXIT"
+        }
+      ]
+    },
+    "operatingResolution": {
+      "status": "Active",
+      "foundedYear": 1977,
+      "sector": "Power and digital-infrastructure equipment",
+      "subsector": "Electric T&D structures, telecom towers/components and integrated enclosures",
+      "productsServices": "Engineers and manufactures transmission/distribution structures, wireless towers/components, integrated enclosures and related products.",
+      "endMarkets": [
+        "power utilities",
+        "telecom",
+        "data centers"
+      ],
+      "scale": "~2,800 employees and >2.3 million square feet of U.S. manufacturing space reported in February 2026.",
+      "scope": "IN_SCOPE: physical critical-infrastructure supplier; not debt, public securities, LP exposure or a separate project/subsidiary."
+    },
+    "acquisitionExitCheck": {
+      "blackstoneEntry": "Announced 2021-04-13 from The Jordan Company; completed in April 2021, exact date not disclosed.",
+      "tpgTransaction": "Announced 2026-02-06; closed Q2 2026. TPG acquired a majority and Blackstone retained a significant minority.",
+      "pendingTransactions": [],
+      "laterEventSearch": "No later sale, exit, transfer, recapitalization, merger, rebrand, bankruptcy or ownership change found through 2026-08-19."
+    },
+    "milestones": [
+      {
+        "date": "2007",
+        "event": "Sabre Industries, Inc. succeeded Sabre Communications Holdings, Inc.",
+        "category": "Identity"
+      },
+      {
+        "date": "2021-04",
+        "event": "Blackstone announced and completed its acquisition from The Jordan Company; exact close date was not disclosed.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "2026-02-06",
+        "event": "TPG signed to acquire a majority through TPG Rise Climate, with Blackstone retaining a significant minority.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Q2 2026",
+        "event": "Blackstone reported Sabre as a Q2 realization, establishing completion by June 30.",
+        "category": "Partial Exit"
+      }
+    ],
+    "evidence": [
+      {
+        "label": "Blackstone Q2 2026 SEC results",
+        "url": "https://www.sec.gov/Archives/edgar/data/1393818/000119312526313250/d153439dex991.htm",
+        "purpose": "CLOSING_STATE",
+        "sourceTier": "TIER_1_REGULATORY_PARTY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "Blackstone/TPG 2026 announcement",
+        "url": "https://www.blackstone.com/news/press/tpg-to-acquire-majority-stake-in-sabre-industries-from-blackstone-energy-transition-partners/",
+        "purpose": "STAKES_PLATFORM_PROFILE",
+        "sourceTier": "TIER_1_TRANSACTION_PARTY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Blackstone 2021 announcement",
+        "url": "https://www.blackstone.com/news/press/blackstone-to-acquire-sabre-industries-inc-a-leading-energy-and-telecom-infrastructure-provider/",
+        "purpose": "ENTRY_SELLER",
+        "sourceTier": "TIER_1_TRANSACTION_PARTY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "S&P Capital IQ via MarketScreener",
+        "url": "https://www.marketscreener.com/quote/stock/BLACKSTONE-INC-60951400/news/Leadership-Team-and-Employees-of-Sabre-and-The-Blackstone-Group-Inc-NYSE-BX-completed-the-acquisi-40661125/",
+        "purpose": "2021_CLOSE_MONTH",
+        "sourceTier": "TIER_3_DATABASE",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Sabre 2011 SEC registration statement",
+        "url": "https://www.sec.gov/Archives/edgar/data/1490224/000104746911003455/a2202133zs-1a.htm",
+        "purpose": "IDENTITY_HISTORY",
+        "sourceTier": "TIER_1_REGULATORY_COMPANY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": [
+      {
+        "field": "Transaction state",
+        "before": "Pending signed sale",
+        "after": "Closed Q2 2026 partial exit/change of control"
+      },
+      {
+        "field": "TPG attribution",
+        "before": "TPG Peppertree Fund X; active from announcement",
+        "after": "TPG Rise Climate organization; fund/vehicle NOT_PUBLICLY_DISCLOSED; active from close"
+      },
+      {
+        "field": "Blackstone/identity",
+        "before": "Minority under signed sale; current name only",
+        "after": "Active significant minority after close; add predecessor names without separate records"
+      }
+    ],
+    "excludedOrDuplicateCandidates": [
+      "Sabre Corporation (NASDAQ:SABR), the travel-technology company, is unrelated.",
+      "Predecessors, divisions, products and plants are not separate current PortCos."
+    ],
+    "unresolvedQuestions": [
+      "Exact Q2 2026 close date and ownership percentages.",
+      "Named TPG/Blackstone funds or vehicles; no party/regulatory source supports TPG Peppertree Fund X.",
+      "Size and 2026 rollover status of the announced management/employee co-invest."
+    ],
+    "recommendedListAction": "Keep Sabre as one active Blackstone North American infrastructure PortCo. Replace ADD_PENDING_TRANSACTION with a closed Q2 2026 partial-exit/change-of-control record; retain Blackstone as active significant-minority owner, date TPG majority ownership from close, and remove the TPG Peppertree Fund X attribution."
+  }
+}

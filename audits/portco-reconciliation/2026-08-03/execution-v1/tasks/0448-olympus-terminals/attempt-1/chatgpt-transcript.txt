@@ -1,0 +1,11 @@
+[SYSTEM OF RECORD]
+The complete initial user prompt is stored verbatim in research-prompt.md (SHA-256 5d1eccbc082ccf6fcd558798eec029097af0d2ccd22611fb9220250845ef770c).
+
+[ASSISTANT INITIAL]
+The initial GPT-5.6 Sol Pro run completed its source research but the response stream stalled before emitting the required packet. The stable visible research-state text is preserved in chatgpt-initial-response.txt.
+
+[USER REPAIR]
+The sole repair prompt is stored verbatim in chatgpt-repair-prompt.txt.
+
+[ASSISTANT REPAIR / REJECTED RESPONSE]
+The complete repair output is stored verbatim in chatgpt-repair-response.txt. It parsed and satisfied the substantive schema, evidence-count, milestone-count, exact-key and exactly-one-primary requirements, but at 7,889 persisted characters it exceeded the strict 7,500-character response cap. No accepted response exists after the one permitted repair.

@@ -747,12 +747,16 @@ export async function buildTaskSnapshotContext(input: {
   capturedAt: string;
   reviewedTargetCompanyId?: string;
   dependencySpec?: TaskSnapshotDependencySpec;
+  /** Batch-only selection, validated by the batch control CLI before entry. */
+  taskId?: string;
 }): Promise<TaskSnapshotContext> {
-  const task = input.manifest.activeTaskId
-    ? input.manifest.tasks.find((candidate) => candidate.taskId === input.manifest.activeTaskId)
+  const selectedTaskId = input.taskId ?? input.manifest.activeTaskId;
+  const task = selectedTaskId
+    ? input.manifest.tasks.find((candidate) => candidate.taskId === selectedTaskId)
     : null;
-  if (!task || !canCaptureTaskSnapshot(task.status)) {
-    throw new Error("A task snapshot can be built only for the sole in-flight task");
+  const batchPendingTask = input.taskId !== undefined && task?.status === "PENDING";
+  if (!task || (!canCaptureTaskSnapshot(task.status) && !batchPendingTask)) {
+    throw new Error("A task snapshot can be built only for the active task or a pending member of the active release bundle");
   }
   const queueEntry = input.proposalQueue.entries.find((entry) => entry.taskId === task.taskId);
   if (!queueEntry || queueEntry.taskIndex !== task.sequence) {

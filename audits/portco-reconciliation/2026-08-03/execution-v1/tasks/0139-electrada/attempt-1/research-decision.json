@@ -1,0 +1,189 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RESEARCH_DECISION",
+  "taskId": "ledger:0139:electrada:10ae1f7f",
+  "taskIndex": 139,
+  "companyName": "Electrada",
+  "asOfDate": "2026-08-19",
+  "stagedAt": "2026-08-19T03:33:28.170Z",
+  "researchOnly": true,
+  "mutationAuthorized": false,
+  "proposalRequiresFreshProductionSnapshot": true,
+  "releaseRequiresFreshAcquisitionExitCheck": true,
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "Electrada",
+    "requestedManagers": [
+      "BlackRock",
+      "Global Infrastructure Partners"
+    ],
+    "decision": "PROPOSED_CORRECTION",
+    "confidence": "HIGH",
+    "rationale": "Electrada was a qualifying U.S. fleet-charging PortCo backed by BlackRock Climate Infrastructure. Two completed 2026 asset sales split the business between Current Trucking and Inspiration Mobility/Inspiration Energy. Retire it as a current BlackRock PortCo, preserve it historically, and do not merge it wholly into either buyer. No direct GIP ownership or transfer was found.",
+    "identityResolution": {
+      "canonicalLegalName": "Electrada, LLC",
+      "displayName": "Electrada",
+      "country": "United States",
+      "jurisdiction": "Delaware",
+      "headquarters": "Cincinnati, Ohio",
+      "operatingLaunchYear": 2020,
+      "legalFormationYear": 2021,
+      "aliasesOrPredecessors": "NONE_FOUND",
+      "boundary": "Assets split between Current Trucking and Inspiration Energy; neither is a proven full legal successor.",
+      "status": "FORMER_STANDALONE_PLATFORM; RESIDUAL_LLC_STATUS_NOT_PUBLICLY_DISCLOSED"
+    },
+    "ownershipResolution": {
+      "owners": [
+        {
+          "manager": "BlackRock",
+          "organization": "BlackRock Climate Infrastructure",
+          "fund": "NOT_PUBLICLY_DISCLOSED",
+          "vehicle": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "NOT_PUBLICLY_DISCLOSED",
+          "entryDate": "NOT_PUBLICLY_DISCLOSED",
+          "entryYear": 2021,
+          "exitDate": "NOT_PUBLICLY_DISCLOSED",
+          "exitYear": 2026,
+          "isActive": false,
+          "transactionState": "FORMER_PORTCO_AFTER_COMPLETED_ASSET_DIVESTITURES; LEGAL_EQUITY_EXIT_NOT_PUBLICLY_DISCLOSED"
+        }
+      ],
+      "globalInfrastructurePartners": "NO_DIRECT_OWNERSHIP_FOUND. BlackRock's 2024-10-01 acquisition of GIP did not create a GIP Electrada ownership period."
+    },
+    "operatingResolution": {
+      "scope": "QUALIFYING_HISTORICAL_MANAGER_LEVEL_PORTCO",
+      "business": "Financed, owned and managed fleet-charging infrastructure under no-upfront-capex charging-as-a-service contracts.",
+      "geographyAndEndMarkets": "U.S./North American commercial, institutional and public fleets through Class 8.",
+      "scale": "375+ depots and 99%+ uptime cited; Current separately acquired 30+ operating sites.",
+      "currentStatus": "No standalone operator remains: one tranche is with Current Trucking and another is within Inspiration Energy.",
+      "officialPage": "https://inspirationmobility.com/energy/electrada"
+    },
+    "acquisitionExitCheck": {
+      "transactions": [
+        {
+          "direction": "OUTGOING",
+          "buyer": "Current Trucking",
+          "seller": "Electrada; legal seller NOT_PUBLICLY_DISCLOSED",
+          "stake": "Operating, construction and development assets; 30+ sites; customer agreements and select personnel; no equity stake disclosed",
+          "announcementDate": "2026-04-20",
+          "closingDate": "NOT_PUBLICLY_DISCLOSED",
+          "state": "CLOSED_ASSET_ACQUISITION",
+          "evidenceUrls": [
+            "https://www.currenttrucking.com/news/current-trucking-acquires-electrada-assets-and-select-talent-expands-national-electrification-p"
+          ]
+        },
+        {
+          "direction": "OUTGOING",
+          "buyer": "Inspiration Mobility Group / Inspiration Energy",
+          "seller": "Electrada; legal seller NOT_PUBLICLY_DISCLOSED",
+          "stake": "Select assets, team, pipeline, depot-development capability, energy software and IP; no equity stake disclosed",
+          "announcementDate": "2026-06-17",
+          "closingDate": "NOT_PUBLICLY_DISCLOSED",
+          "state": "CLOSED_ASSET_ACQUISITION",
+          "evidenceUrls": [
+            "https://inspirationmobility.com/news/inspiration-mobility-group-acquires-electrada-assets-to-scale-end-to-end-electric-fuel-solutions-for-commercial-fleets"
+          ]
+        }
+      ],
+      "result": "Two closed asset sales establish a PortCo-list exit, not a proven equity sale, merger or dissolution. No later transaction or reactivation was found."
+    },
+    "milestones": [
+      {
+        "date": "2020",
+        "event": "Operating launch.",
+        "category": "Founding"
+      },
+      {
+        "date": "2021",
+        "event": "BlackRock led a $20m Series B; exact fund, stake and entry date were undisclosed.",
+        "category": "Investment"
+      },
+      {
+        "date": "2023-05-10",
+        "event": "Electrada sold $22m equity to one investor; contemporaneous reporting identifies BlackRock.",
+        "category": "Financing"
+      },
+      {
+        "date": "2026-04-20/2026-06-17",
+        "event": "Separate asset sales to Current Trucking and Inspiration Mobility ended the standalone platform.",
+        "category": "Exit"
+      }
+    ],
+    "evidence": [
+      {
+        "label": "Inspiration acquisition",
+        "url": "https://inspirationmobility.com/news/inspiration-mobility-group-acquires-electrada-assets-to-scale-end-to-end-electric-fuel-solutions-for-commercial-fleets",
+        "purpose": "EXIT_SUCCESSOR",
+        "sourceTier": "TRANSACTION_PARTY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "Current acquisition",
+        "url": "https://www.currenttrucking.com/news/current-trucking-acquires-electrada-assets-and-select-talent-expands-national-electrification-p",
+        "purpose": "ASSET_EXIT",
+        "sourceTier": "TRANSACTION_PARTY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Inspiration successor page",
+        "url": "https://inspirationmobility.com/energy/electrada",
+        "purpose": "CURRENT_STATUS",
+        "sourceTier": "SUCCESSOR",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Electrada Form D",
+        "url": "https://www.sec.gov/Archives/edgar/data/1872193/000187219323000001/xslFormDX01/primary_doc.xml",
+        "purpose": "IDENTITY_FINANCING",
+        "sourceTier": "REGULATOR",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "BRITE follow-on",
+        "url": "https://brite.org/electrada-lands-22m-in-additional-investment-from-blackrock-to-expand-ev-charging-footprint/",
+        "purpose": "BLACKROCK_HISTORY",
+        "sourceTier": "SECONDARY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "BlackRock-GIP closing",
+        "url": "https://www.blackrock.com/corporate/newsroom/media/press-releases/blackrock-completes-acquisition-of-global-infrastructure-partners",
+        "purpose": "MANAGER_BOUNDARY",
+        "sourceTier": "MANAGER",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "before": "Active Electrada; active BlackRock; GEPIF III; possible GIP overlap; one implied buyer.",
+      "after": "Historical Electrada; inactive BlackRock period; fund/stake undisclosed; no GIP; two asset buyers."
+    },
+    "excludedOrDuplicateCandidates": [
+      "GIP: exclude as owner; no direct investment or transfer found.",
+      "Inspiration Energy: asset/business successor, not a duplicate legal entity.",
+      "Current Trucking: asset buyer, not an alias or duplicate."
+    ],
+    "unresolvedQuestions": [
+      "BlackRock fund, vehicle, stake, entry date and residual-equity disposition.",
+      "Closing dates, consideration, legal sellers and asset allocation for both sales.",
+      "Residual Electrada, LLC status; releases prove asset exits, not dissolution.",
+      "Secondary profiles cite 2019 activity; direct parties cite a 2020 launch and the LLC formed in 2021."
+    ],
+    "recommendedListAction": "Retire Electrada from current BlackRock and GIP lists; preserve one historical BlackRock Climate Infrastructure PortCo record; remove the unsupported Global Energy & Power Infrastructure Fund III attribution; record separate 2026 asset exits to Current Trucking and Inspiration Energy; do not merge into either buyer."
+  },
+  "independentVerification": {
+    "evidenceUrlsChecked": 6,
+    "openSourceCount": 6,
+    "blockedSourceCount": 0,
+    "unavailableSourceCount": 0,
+    "recommendedPrimaryCount": 1,
+    "modelModeVerified": true
+  }
+}
+

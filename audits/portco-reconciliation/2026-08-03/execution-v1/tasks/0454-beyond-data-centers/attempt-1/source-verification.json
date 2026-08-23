@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0454:beyond-data-centers:aa1b4081",
+  "taskIndex": 454,
+  "companyName": "Beyond Data Centers",
+  "verifiedAt": "2026-08-22T15:43:32.652Z",
+  "summary": {
+    "citationUrls": 2,
+    "working": 0,
+    "browserBlockedButVerified": 1,
+    "invalidUrls": 1,
+    "replacementUrlsVerified": 1,
+    "supplementalPrimarySources": 3,
+    "modelHealthOverrides": 2
+  },
+  "sources": [
+    {
+      "label": "Beyond Data Centers website",
+      "url": "https://www.beyonddatacenters.com/",
+      "httpStatus": null,
+      "observedStatus": "INVALID_TLS_HOSTNAME",
+      "verificationMethod": "curl TLS handshake",
+      "note": "The model-cited and census URL fails with an unrecognized TLS server name.",
+      "replacementUrl": "https://beyond-datacenters.com/",
+      "replacementStatus": "WORKING",
+      "replacementHttpStatus": 200,
+      "replacementEvidence": "The live official site describes a build-to-suit platform spanning land selection, site development, custom construction and transition to operations for institutional hyperscale clients. It does not disclose current campuses, MW, acreage or named customers."
+    },
+    {
+      "label": "Wafra personnel page — Michael Coleman",
+      "url": "https://www.wafra.com/our-people/michael-coleman-2/",
+      "httpStatus": 403,
+      "observedStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verificationMethod": "indexed direct page after curl 403",
+      "note": "The current Wafra page says Coleman focuses on real assets and infrastructure and serves on Beyond's board. This supports governance and infrastructure-strategy attribution but does not disclose a fund, stake or closing."
+    },
+    {
+      "label": "Wafra personnel page — Adel A. Alderbas",
+      "url": "https://www.wafra.com/our-people/adel-a-alderbas/",
+      "httpStatus": 403,
+      "observedStatus": "BROWSER_BLOCKED_BUT_VERIFIED_SUPPLEMENTAL",
+      "verificationMethod": "indexed direct page after curl 403",
+      "note": "Wafra's chief investment officer also currently serves on Beyond's board, corroborating a live Wafra governance relationship."
+    },
+    {
+      "label": "SEC Form D — Beyond Data Centers LLC",
+      "url": "https://www.sec.gov/Archives/edgar/data/2132701/000213270126000001/xslFormDX01/primary_doc.xml",
+      "httpStatus": 200,
+      "observedStatus": "WORKING_SUPPLEMENTAL",
+      "verificationMethod": "direct SEC page",
+      "note": "The May 20, 2026 filing identifies Beyond Data Centers LLC, formation year 2025, New York principal office, a February 10, 2026 first equity sale, three investors and US$4,714,076 sold. It does not name Wafra or disclose investor percentages."
+    },
+    {
+      "label": "Florida Division of Corporations — Beyond Data Centers LLC",
+      "url": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?aggregateId=forl-m26000000972-a7c64ecc-2b4b-4219-953b-cf8bf403d7b0&directionType=CurrentList&inquirytype=EntityName&listNameOrder=BEYONDDAMUSICENTERTAINMENT+P050001245560&searchNameOrder=BEYONDDATACENTERS+M260000009720&searchTerm=BEYOND+CHANCE+LLC",
+      "httpStatus": 200,
+      "observedStatus": "WORKING_SUPPLEMENTAL",
+      "verificationMethod": "direct indexed state registry page",
+      "note": "The state registry shows an active Delaware foreign LLC registered in Florida on January 20, 2026 and separately lists Beyond Data Centers Management LLC. Projects and service entities should remain beneath the canonical platform."
+    }
+  ],
+  "conclusion": "The conservative DEFERRED decision remains appropriate, but the accepted packet understates what the research resolved. Beyond Data Centers LLC and its build-to-suit operating boundary are supported, as are current Wafra board involvement and infrastructure-team attribution. Direct Wafra equity ownership, vehicle, stake, closing and current cap-table continuity remain unproven, so CREATE_COMPANY and ADD_OWNER are blocked."
+}

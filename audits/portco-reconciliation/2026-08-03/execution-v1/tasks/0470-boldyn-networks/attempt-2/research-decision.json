@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0470:boldyn-networks:3ce154eb",
+  "linkedTaskIds": [
+    "ledger:0471:boldyn-networks-us:9c03f01f"
+  ],
+  "taskIndex": 470,
+  "companyName": "Boldyn Networks",
+  "asOfDate": "2026-08-22",
+  "recordedAt": "2026-08-22T23:02:00.000Z",
+  "modelDecision": "PROPOSED_MERGE",
+  "confidence": "HIGH",
+  "stageState": "STAGED_VALIDATED",
+  "applicationBlocked": false,
+  "rationale": "Boldyn Networks and the separate Boldyn Networks (US) record represent one manager-level neutral-host connectivity platform. Direct sources support CPP Investments and AIMCo as parent shareholders, Manulife Infrastructure Fund II as an asset-specific minority investor in U.S. digital infrastructure, and the 2025 U.S. capital raise as debt rather than equity.",
+  "repoReconciliation": {
+    "canonicalKey": "boldyn-networks|united-states-canada",
+    "recommendedTreatment": "KEEP_GLOBAL_CANONICAL_AND_REDIRECT_US_DUPLICATE",
+    "redirectCanonicalKey": "boldyn-networks-us|united-states",
+    "preserveBoundary": "one Boldyn platform; regional legal entities, Mobilitie, Transit Wireless, ZenFi, Signal Point, Apogee, venue and transit systems, projects and financing vehicles remain beneath it"
+  },
+  "proposalGuardrails": [
+    "Keep task 0470 as the sole canonical Boldyn company and merge or redirect task 0471 beneath it.",
+    "Preserve CPP Investments' 86% and AIMCo's 10% as parent-level stakes at the last directly disclosed March 2024 date.",
+    "Preserve Manulife Infrastructure Fund II as a minority investor only in specified U.S. digital-infrastructure assets; do not represent it as a parent-level Boldyn shareholder.",
+    "Do not convert the 2025 US$1.2bn senior secured facilities and notes into equity ownership.",
+    "Do not create regional subsidiaries, acquired brands, operating systems, projects or financing entities as separate PortCos.",
+    "Do not infer the residual 4%, AIMCo entry date, Manulife percentage or 2024 follow-on instrument."
+  ],
+  "nonblockingDisclosureGaps": [
+    "AIMCo entry date",
+    "Identity of the residual 4% parent interest",
+    "Exact Manulife percentage and vehicle",
+    "Amount and instrument of the March 2024 follow-on commitment"
+  ],
+  "recommendedNextAction": "Prepare one later protected merge proposal retaining Boldyn Networks as canonical, redirecting Boldyn Networks (US), and preserving parent-level versus U.S.-asset-specific ownership scopes.",
+  "databaseMutationAuthorized": false
+}

@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0359:dartpoints:8deeccd5",
+  "taskIndex": 359,
+  "verifiedAt": "2026-08-21T16:15:38.465Z",
+  "allReturnedUrlsChecked": true,
+  "summary": {
+    "urlCount": 9,
+    "working": 6,
+    "browserBlockedButVerified": 3,
+    "browserBlockedUnverified": 0,
+    "dead": 0
+  },
+  "modelEvidenceCorrections": [
+    "The DartPoints homepage and Venyu release returned HTTP 403 to direct curl but rendered successfully at their exact URLs in-browser.",
+    "The Business Wire OIC Fund IV release returned an HTTP/2 transport error to curl but rendered successfully at its exact URL in-browser.",
+    "All three sources are classified BROWSER_BLOCKED_BUT_VERIFIED rather than dead."
+  ],
+  "sources": [
+    {
+      "url": "https://dartpoints.com/",
+      "finalUrl": "https://dartpoints.com/",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 4544,
+      "sha256": "0479a67314923b262d1869be7aa3f51f176de9edd7bd29a29c791b63bb050f33",
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "curlError": "Direct retrieval returned an access-denied page.",
+      "browserVerification": {
+        "title": "DartPoints - Enterprise Data Centers, Colocation & Cloud Services",
+        "exactUrlOpened": true,
+        "browserSnapshotSha256": "aa7c762453e9f362d57cda9a4f4b590162a1851db4ce1bd58738892510e5014a"
+      }
+    },
+    {
+      "url": "https://www.novainfrastructure.com/nova-infrastructure-invests-in-dartpoints-to-accelerate-growth",
+      "finalUrl": "https://www.novainfrastructure.com/nova-infrastructure-invests-in-dartpoints-to-accelerate-growth",
+      "httpStatus": 200,
+      "mediaType": "text/html;charset=utf-8",
+      "bytes": 84087,
+      "sha256": "b45b2dc3340ff02c071c24ee857a1db60cbc811861c8f9cbd61800797fb5b63a",
+      "health": "WORKING"
+    },
+    {
+      "url": "https://www.velaw.com/news/nova-infrastructure-invests-in-dartpoints-to-accelerate-growth-and-expand-strategic-infrastructure/",
+      "finalUrl": "https://www.velaw.com/news/nova-infrastructure-invests-in-dartpoints-to-accelerate-growth-and-expand-strategic-infrastructure/",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 402303,
+      "sha256": "d0927ae1bb0d0116ef49b79a977aa7bd9babd0defc5ed01c21cc75ccc79c721f",
+      "health": "WORKING"
+    },
+    {
+      "url": "https://www.novainfrastructure.com/investments-index",
+      "finalUrl": "https://www.novainfrastructure.com/investments-index",
+      "httpStatus": 200,
+      "mediaType": "text/html;charset=utf-8",
+      "bytes": 220466,
+      "sha256": "a4427f71884ea656e7412b6b5bf226196df7520cfb0c3ebe8ba575c18d00365b",
+      "health": "WORKING"
+    },
+    {
+      "url": "https://www.novainfrastructure.com/article-nova-infrastructure-exceeds-target-and-raises-145-billion-in-aggregate-capital-commitments-for-nova-fund-ii",
+      "finalUrl": "https://www.novainfrastructure.com/article-nova-infrastructure-exceeds-target-and-raises-145-billion-in-aggregate-capital-commitments-for-nova-fund-ii",
+      "httpStatus": 200,
+      "mediaType": "text/html;charset=utf-8",
+      "bytes": 82385,
+      "sha256": "aa468057387b784e1b19e1b1fdb32e14f9a720a8ff193b555a6f58d1bedeb4c1",
+      "health": "WORKING"
+    },
+    {
+      "url": "https://oic.com/investments",
+      "finalUrl": "https://oic.com/investments",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 1203701,
+      "sha256": "2757f3a5d767aa71602570d4c3e493aab6e9b9442247c73c5e2d27dfde02e0f5",
+      "health": "WORKING"
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20260331863914/en/OIC-Successfully-Closes-Credit-Opportunities-Fund-IV-Above-Target-at-%241.58BN",
+      "finalUrl": "https://www.businesswire.com/news/home/20260331863914/en/OIC-Successfully-Closes-Credit-Opportunities-Fund-IV-Above-Target-at-%241.58BN",
+      "httpStatus": 0,
+      "mediaType": null,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "curlError": "HTTP/2 stream closed with INTERNAL_ERROR during direct retrieval.",
+      "browserVerification": {
+        "title": "OIC Successfully Closes Credit Opportunities Fund IV Above Target at $1.58BN",
+        "exactUrlOpened": true,
+        "browserSnapshotSha256": "d575fa67972ae43ec2b463c6b5eb53d93aade8d33a41581a5742a759b333a0d3"
+      }
+    },
+    {
+      "url": "https://www.astracapitalmgmt.com/news/2020/5/6/dartpoints-receives-investment-from-astra-capital-management",
+      "finalUrl": "https://www.astracapitalmgmt.com/news/2020/5/6/dartpoints-receives-investment-from-astra-capital-management",
+      "httpStatus": 200,
+      "mediaType": "text/html;charset=utf-8",
+      "bytes": 86059,
+      "sha256": "216d323ab21e4a5bf15ac3cf8e048c5d176a54d308d85ddaa3473e5ee6f649d0",
+      "health": "WORKING"
+    },
+    {
+      "url": "https://dartpoints.com/press/dartpoints-acquires-venyu-adding-three-louisiana-data-centers-to-portfolio/",
+      "finalUrl": "https://dartpoints.com/press/dartpoints-acquires-venyu-adding-three-louisiana-data-centers-to-portfolio/",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 4544,
+      "sha256": "b60ca6ee09bdfa98029f6e5729a94c979eb95ddfb382ad766d9099664540af3c",
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "curlError": "Direct retrieval returned an access-denied page.",
+      "browserVerification": {
+        "title": "DartPoints Acquires Venyu, Adding Three Louisiana Data Centers to Portfolio - DartPoints",
+        "exactUrlOpened": true,
+        "browserSnapshotSha256": "f7ab581465e7c38f6ad7f243e299bb6e1affc3331b0fdd2ac24ca236e1f7c1f8"
+      }
+    }
+  ]
+}

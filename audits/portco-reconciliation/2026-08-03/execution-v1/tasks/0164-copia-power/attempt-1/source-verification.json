@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0164:copia-power:4a395f9a",
+  "taskIndex": 164,
+  "companyName": "Copia Power",
+  "verifiedAt": "2026-08-19T06:06:00.000Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://eqtgroup.com/news/eqt-to-acquire-copia-power-a-leading-integrated-power-and-ai-infrastructure-platform-2026-07-09",
+      "finalUrl": "https://eqtgroup.com/news/eqt-to-acquire-copia-power-a-leading-integrated-power-and-ai-infrastructure-platform-2026-07-09",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 228142,
+      "contentSha256": "719f605402d113d7d34873fa079411b155c7ec0b1c3c5c3f9af1a44156a0c0b5",
+      "note": "Official buyer release opened and was hash-captured."
+    },
+    {
+      "url": "https://www.carlyle.com/media-room/news-release-archive/carlyle-agrees-sell-copia-power-leading-power-and-ai-infrastructure",
+      "finalUrl": "https://www.carlyle.com/media-room/news-release-archive/carlyle-agrees-sell-copia-power-leading-power-and-ai-infrastructure",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 5795,
+      "contentSha256": "b3cd2aad58e517d2bfd51a20c864c6e8f886f1404963e481a579a6855cd25744",
+      "note": "Carlyle blocked curl, but independent browser retrieval opened the exact seller release and verified the pending sale and ownership history."
+    },
+    {
+      "url": "https://www.carlyle.com/media-room/news-release-archive/carlyle-launches-copia-power-platform-develop-7gwac-renewable",
+      "finalUrl": "https://www.carlyle.com/media-room/news-release-archive/carlyle-launches-copia-power-platform-develop-7gwac-renewable",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 5795,
+      "contentSha256": "888c506ecbf39ed6bfd4ebcf3f2b142548f469761b00d6b1f2930c3ff5d4dcbf",
+      "note": "Carlyle blocked curl, but independent browser retrieval opened the 2021 launch release and verified wholly owned platform formation and boundary."
+    },
+    {
+      "url": "https://www.copiapower.com/overview",
+      "finalUrl": "https://www.copiapower.com/overview",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html;charset=utf-8",
+      "bytes": 2232860,
+      "contentSha256": "647f2d2f61e50b44849d310c73db848a87e8ca039e0a420ffe2c7c2bb305a0da",
+      "note": "Official Copia overview opened."
+    },
+    {
+      "url": "https://www.birch.coop/carlyle-backed-copia-power-completes-strategic-combination",
+      "finalUrl": "https://www.birch.coop/carlyle-backed-copia-power-completes-strategic-combination",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html;charset=utf-8",
+      "bytes": 100896,
+      "contentSha256": "b0522d415d8646eea1b2b62c0ef91416ef3f8fec5dd9d65f1e16ba64d734de92",
+      "note": "Official Birch transaction-party page opened and supports the renewable-business combination boundary."
+    },
+    {
+      "url": "https://www.copiapower.com/map-collection-locations/blog-post-title-four-8dab2",
+      "finalUrl": "https://www.copiapower.com/map-collection-locations/blog-post-title-four-8dab2",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html;charset=utf-8",
+      "bytes": 386280,
+      "contentSha256": "d798978627350b02544d64ba9b7b625a60887fae89d62a9b5571ba3d7035bf85",
+      "note": "Official Copia location page opened."
+    },
+    {
+      "url": "https://www.guggenheimsecurities.com/capabilities/transactions",
+      "finalUrl": "https://www.guggenheimsecurities.com/capabilities/transactions",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 129464,
+      "contentSha256": "4d4e17047edf457ef0f8988f18335e39cf336c11cced05304a473f38ca31d640",
+      "note": "Transaction adviser list opened and remains supporting evidence only."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allEvidenceRowsChecked": true,
+    "allCoreClaimsHaveOpenOrBrowserVerifiedEvidence": true,
+    "deadUrlCount": 0,
+    "redirectConcernCount": 0
+  },
+  "releaseRequirement": "Reopen both transaction-party releases and search for a later legal closing before mutation; keep Carlyle active and EQT pending until a closing source is found."
+}

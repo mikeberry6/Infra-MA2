@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_ATTESTATION",
+  "runId": "portco-research-staging-2026-08-19",
+  "taskId": "ledger:0454:beyond-data-centers:aa1b4081",
+  "taskIndex": 454,
+  "companyName": "Beyond Data Centers",
+  "conversationUrl": "https://chatgpt.com/c/6a89c0cc-5560-83ea-9017-80336f96e36e",
+  "accountTier": "ChatGPT Pro",
+  "model": "GPT-5.6 Sol",
+  "effort": "Pro",
+  "power": "5 of 5",
+  "uiVerified": true,
+  "uiEvidence": {
+    "accountLabel": "mike berry Pro",
+    "modeMenuModelLabel": "Model GPT-5.6 Sol",
+    "modeMenuEffortLabel": "Effort Pro",
+    "modeMenuPowerLabel": "Pro, 5 of 5.",
+    "capturedBeforeSubmission": true,
+    "recapturedBeforeRepair": true
+  },
+  "initialSubmittedAt": "2026-08-22T15:31:24.144Z",
+  "initialCompletedAt": "2026-08-22T15:40:55.000Z",
+  "repairSubmittedAt": "2026-08-22T15:41:49.730Z",
+  "repairCompletedAt": "2026-08-22T15:42:25.000Z",
+  "repairCount": 1,
+  "initialOutcome": "RESEARCH_COMPLETE_OUTPUT_STALLED",
+  "finalOutcome": "VALID_CONTRACT_PACKET_WITH_TRANSIENT_POST_RESPONSE_LIMIT",
+  "transientRateLimit": {
+    "observed": true,
+    "uiMessage": "Too many requests — temporarily limited access to conversations",
+    "observedAfterPacketRendered": true,
+    "newConversationStarted": false
+  },
+  "contentHashes": {
+    "promptSha256": "689fe1b44def27e7121e98ad0d899a4709961a6b14554449f2ed4395d8df0181",
+    "initialResponseSha256": "9419d76a1a85427c148772f9614683bfcc496991b96acf8a434caafb0ccbdeea",
+    "acceptedResponseSha256": "6307a012bbf724cbded3caabe05b1e3cf3a7ff35bcb73fb292b6ad6383a52937",
+    "transcriptSha256": "68d86072acfe1d0bd721220ff31429b583783a24e4ce61e8e645d6ede920d7e0",
+    "repairPromptSha256": "d2e43796f2de19851aee6d29fe2e4853358d7fd4795fa3e5725adc20a1dd850c",
+    "repairResponseSha256": "6307a012bbf724cbded3caabe05b1e3cf3a7ff35bcb73fb292b6ad6383a52937"
+  },
+  "captureMethod": "signed-in ChatGPT web application via browser DOM",
+  "captureNote": "The original Pro turn completed substantive research but stalled before contract output. The same conversation was reloaded, Pro 5/5 was reverified, and the single permitted repair rendered a valid packet before ChatGPT displayed a transient conversation-rate notice."
+}

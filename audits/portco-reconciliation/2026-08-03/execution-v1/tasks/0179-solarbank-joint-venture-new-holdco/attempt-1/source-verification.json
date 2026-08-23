@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0179:solarbank-joint-venture-new-holdco:e1457e97",
+  "taskIndex": 179,
+  "companyName": "SolarBank Joint Venture (New HoldCo)",
+  "verifiedAt": "2026-08-19T08:27:13.088Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/2011053/000149315226023443/ex99-1.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/2011053/000149315226023443/ex99-1.htm",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 4819,
+      "contentSha256": "08d4cbe7a089248a84a2151837e1259dcf59f787a9093786183a7083225af5b1",
+      "note": "SEC blocked curl but rendered fully in the browser; CIM, SolarBank/PowerBank and non-binding or unexecuted language were present. Model purpose: Calls the mandate non-binding, documents the secured-loan refocus and states documents were unexecuted."
+    },
+    {
+      "url": "https://powerbankcorp.com/news/us100-million-transformative-project-financing-announced-by-solarbank-and-cim-group-to-fund-97-mw-of-renewable-energy-assets-in-the-united-states",
+      "finalUrl": "https://powerbankcorp.com/news/us100-million-transformative-project-financing-announced-by-solarbank-and-cim-group-to-fund-97-mw-of-renewable-energy-assets-in-the-united-states",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 30518,
+      "contentSha256": "d0631ffe59074075a94d9b1e1da440e1def373fba9f94d7b0d5a11979ccbc4a5",
+      "note": "PowerBank announcement opened directly and supports the original conditional prospective structure and no-funding warning. Model purpose: Original prospective New HoldCo/MIPA terms, conditions precedent and no-funding warning."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/2011053/000149315225016675/ex99-5.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/2011053/000149315225016675/ex99-5.htm",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 4819,
+      "contentSha256": "68b88b4dcb3ec2c0667e7f644b2c0223badc5ae3b68c0416051f9629ca6225c1",
+      "note": "SEC blocked curl but rendered fully in the browser; the annual MD&A contained the cited CIM and no-definitive-documentation context. Model purpose: Confirms no definitive CIM documentation as of October 2, 2025."
+    },
+    {
+      "url": "https://powerbankcorp.com/investor-documents/2025-sunn-aif.pdf",
+      "finalUrl": "https://powerbankcorp.com/investor-documents/2025-sunn-aif.pdf",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 2545933,
+      "contentSha256": "4a2daa0f5a7a387ec6f6d3b25c4351fba390ee6d7368cf35670c53d59cf76031",
+      "note": "PowerBank annual information form opened directly as a PDF and supports ASP identity and conditional New HoldCo language. Model purpose: Confirms ASP identity and keeps New HoldCo conditional; no legal identity is supplied."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/2011053/000149315226023443/ex99-2.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/2011053/000149315226023443/ex99-2.htm",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 4819,
+      "contentSha256": "41ecc600f542c9fcc40f1d29cf23458b2d91eb09b07e3a8cd09933ed3fa220f8",
+      "note": "SEC blocked curl but rendered fully in the browser; the financial statements were directly checked for subsequent-event evidence. Model purpose: Contains no disclosed CIM/New HoldCo or related subsequent-event close."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allEvidenceRowsChecked": true,
+    "allCoreClaimsHaveOpenOrBrowserVerifiedEvidence": true,
+    "deadUrlCount": 0,
+    "browserBlockedButVerifiedCount": 3,
+    "redirectConcernCount": 0
+  },
+  "releaseRequirement": "Exclude the unformed SolarBank/CIM New HoldCo from the PortCo ledger. Preserve the non-binding 2025 mandate and later unexecuted secured-loan negotiations only as PowerBank/ASP financing history; do not create CIM equity ownership or a pending acquisition."
+}

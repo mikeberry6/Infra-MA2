@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0465:havasu-air-center:895ad5ae",
+  "taskIndex": 465,
+  "companyName": "Havasu Air Center",
+  "verifiedAt": "2026-08-22T19:14:03.000Z",
+  "summary": {
+    "modelCitationUrls": 6,
+    "working": 3,
+    "browserBlockedButVerified": 3,
+    "dead": 0,
+    "replacementWorkingUrls": 0,
+    "materialModelCorrections": 2,
+    "sourceUrlOverrides": 0
+  },
+  "sources": [
+    {
+      "label": "E1 Lake Havasu City Council item 25-4926",
+      "url": "https://lakehavasucity.legistar.com/MeetingDetail.aspx?GUID=01EF0562-7E17-479F-95F9-C2808C0A33E5&ID=1330691&Search=",
+      "httpStatus": 200,
+      "observedStatus": "WORKING",
+      "verificationMethod": "direct official city meeting page",
+      "note": "The September 9, 2025 approved action identifies Havasu Air Center, LLC as transferor, Velocity Havasu Holdings, LLC as assignee, and the exact scope as the Sites 3, 4 and 6 FBO leases plus the Sites 1 and 2 fueling sublease."
+    },
+    {
+      "label": "E2 Velocity Havasu acquisition release",
+      "url": "https://www.businesswire.com/news/home/20251001812038/en/Tallvine-Backed-Velocity-FBO-Network-Expands-with-Acquisition-of-Havasu-Air-Centers-Fixed-Base-Operator-Assets",
+      "httpStatus": 403,
+      "observedStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verificationMethod": "indexed direct Business Wire page",
+      "note": "The October 1, 2025 release announces Velocity's completed acquisition of Havasu's FBO assets as its fourth location and explicitly excludes seller-retained aircraft management and Northstar Aviation Services maintenance."
+    },
+    {
+      "label": "E3 Velocity rebrand release",
+      "url": "https://www.businesswire.com/news/home/20250612894793/en/Tallvine-Backed-Odyssey-Aviation-North-America-Unveils-Rebrand-to-Velocity-FBO-Network",
+      "httpStatus": 403,
+      "observedStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verificationMethod": "indexed direct Business Wire page",
+      "note": "Confirms the pre-existing Tallvine-backed Velocity platform before the Havasu add-on."
+    },
+    {
+      "label": "E4 Velocity Lake Havasu page",
+      "url": "https://velocityfbo.com/locations/lake-havasu-khii/",
+      "httpStatus": 200,
+      "observedStatus": "WORKING_CURRENT",
+      "verificationMethod": "direct current first-party location page",
+      "note": "Confirms the current Velocity Lake Havasu / KHII branding, services, hangar scale and integration into Velocity's location network."
+    },
+    {
+      "label": "E5 Velocity SkyPlace release",
+      "url": "https://www.businesswire.com/news/home/20260810856121/en/Tallvine-Backed-Velocity-FBO-Network-Expands-with-Acquisition-of-SkyPlace-FBO",
+      "httpStatus": 403,
+      "observedStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verificationMethod": "indexed direct Business Wire page",
+      "note": "The August 10, 2026 release still describes Velocity as Tallvine-backed and lists Lake Havasu/KHII among six current locations."
+    },
+    {
+      "label": "E6 AirNav Velocity at KHII",
+      "url": "https://www.airnav.com/airport/KHII/VELOCITY",
+      "httpStatus": 200,
+      "observedStatus": "WORKING",
+      "verificationMethod": "direct airport-directory page",
+      "note": "Supports near-cutoff operating continuity under the Velocity name."
+    }
+  ],
+  "modelEvidenceCorrections": [
+    "The three Business Wire pages block direct curl with HTTP 403 and are classified as BROWSER_BLOCKED_BUT_VERIFIED rather than WORKING.",
+    "October 1, 2025 is the public completion-announcement date, not a separately proven private legal effective date. Any proposal must store the exact entry date as NOT_PUBLICLY_DISCLOSED or CLOSED_BY_2025-10-01, while preserving 2025 as the entry year."
+  ],
+  "conclusion": "The merge boundary is directly supported. Velocity acquired Havasu's FBO assets and specified airport leaseholds through Velocity Havasu Holdings, LLC, while aircraft management and Northstar maintenance remained with the seller. Current first-party evidence shows the KHII operation integrated into the Tallvine-backed Velocity FBO Network, with no later sale or reassignment found through the cutoff."
+}

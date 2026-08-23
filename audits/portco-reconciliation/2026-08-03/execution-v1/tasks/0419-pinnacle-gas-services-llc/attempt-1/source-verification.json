@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0419:pinnacle-gas-services-llc:94e9c671",
+  "checkedAt": "2026-08-22T01:55:23.000Z",
+  "method": "Independent direct HTTP status, redirect, media-type and content-hash checks; SEC filing inspection; browser verification of the August 2026 investor presentation; direct manager-page inspection; acquisition-and-exit search",
+  "sources": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/23194/000119312526326260/crk-20260630.htm",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/23194/000119312526326260/crk-20260630.htm",
+      "mediaType": "text/html",
+      "bytes": 2263750,
+      "sha256": "d8e136146fd58a8770ec5626d852698242e446c88e2f37973bd42b8f3a0dd1c0",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Starville acquired 600,000 Class A-2 units on June 15, 2026",
+        "Sixth Street's interest is noncontrolling equity and Comstock retained control",
+        "Cactus preferred units were redeemed at closing"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/23194/000119312526208551/crk-ex10_1.htm",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/23194/000119312526208551/crk-ex10_1.htm",
+      "mediaType": "text/html",
+      "bytes": 2019184,
+      "sha256": "04a7b2bfefc30a1c50305a060f09b9569eb3c8ee063e4005280ce1cd5ebc9773",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Pinnacle legal and financing chain",
+        "Comstock/Sixth Street 73%/27% ownership economics",
+        "Cactus redemption and lender separation"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/23194/000095017024016532/crk-20231231.htm",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/23194/000095017024016532/crk-20231231.htm",
+      "mediaType": "text/html",
+      "bytes": 3211757,
+      "sha256": "f7f298a1cf391da2033719d53cfd18b3f0030496f5a36e3a62ed6b00feceae71",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Pinnacle's 2023 formation and contributed midstream assets",
+        "Quantum/Cactus preferred-equity economics and former-owner role"
+      ]
+    },
+    {
+      "url": "https://investors.comstockresources.com/static-files/5a596a22-02f6-4b49-a9cc-93ecfe0179c0",
+      "httpStatus": 403,
+      "finalUrl": "https://investors.comstockresources.com/static-files/5a596a22-02f6-4b49-a9cc-93ecfe0179c0",
+      "mediaType": "application/pdf",
+      "directFetchBytes": 456,
+      "directFetchSha256": "cd0e88dc547218593deffd9a431247c3460fb521b3fd58fa2bb9753db799a274",
+      "browserVerified": true,
+      "browserPageCount": 28,
+      "healthStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verifiedClaims": [
+        "August 2026 presentation confirms Comstock 73% and Sixth Street 27%",
+        "Pinnacle had 246 in-service pipeline miles and two treating plants",
+        "Comstock retained operational control and the stake ratchets to 80.5%/19.5% after return hurdles"
+      ]
+    },
+    {
+      "url": "https://sixthstreet.com/investment_announce/comstock-announces-600-million-strategic-investment-by-sixth-street-in-pinnacle-gas-services/",
+      "httpStatus": 200,
+      "finalUrl": "https://sixthstreet.com/investment_announce/comstock-announces-600-million-strategic-investment-by-sixth-street-in-pinnacle-gas-services/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 69151,
+      "sha256": "0c27d4f3ac94aa7901dd72e066d24929a1e8cd1b70475aa6f0427d353c305bf7",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Sixth Street announced a $600 million closed investment on June 15, 2026",
+        "Investment acquired a 27% noncontrolling common-equity interest at a $2.2 billion enterprise value",
+        "Proceeds retired Pinnacle preferred equity and indebtedness"
+      ]
+    }
+  ],
+  "exitSearch": {
+    "searchedAt": "2026-08-22T01:55:23.000Z",
+    "scopeThrough": "2026-08-19",
+    "result": "No later equity transfer, Comstock sale, Sixth Street exit, redemption or signed pending ownership transaction was found. Comstock's August 2026 presentation continued to show the 73%/27% split."
+  },
+  "allEvidenceUrlsDirectHttps": true,
+  "allCoreSourcesWorkingOrVerified": true,
+  "directFetchBlockedButBrowserVerifiedCount": 1,
+  "responseSourceHealthCorrections": [
+    "The August 2026 Comstock presentation blocked direct curl with HTTP 403 but was independently opened as a 28-page PDF and its ownership and scale claims were verified.",
+    "The SEC sources returned HTTP 200 during independent verification."
+  ],
+  "deadSourceCount": 0
+}

@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0403:valley-of-fire:3a0ca3e8",
+  "checkedAt": "2026-08-21T23:20:43.000Z",
+  "method": "Independent direct curl status, redirect, media-type and content-hash checks; visible-browser verification for the curl-blocked KeyBank page; Nevada regulatory PDF extraction and rendered-page inspection; claim-level HTML inspection",
+  "sources": [
+    {
+      "url": "https://www.quinbrook.com/news-insights/quinbrook-closes-600m-solarstorage-continuation-fund/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.quinbrook.com/news-insights/quinbrook-closes-600m-solarstorage-continuation-fund/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 57027,
+      "sha256": "8c863d673a128837d3d733399ae3912f34c7b3e18595f0666692be3e1cdd6c62",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Quinbrook announced the successful close on April 4, 2024 of a $600 million continuation fund that acquired 51% of Gemini and 100% of the remaining Valley of Fire development portfolio from LCPF and certain other equity holders",
+        "Blackstone Strategic Partners and Ares infrastructure-secondaries funds are continuation-fund investors rather than direct Valley of Fire portfolio-company owners"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1820721/000119312526116240/d85164d8k.htm",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1820721/000119312526116240/d85164d8k.htm",
+      "mediaType": "text/html",
+      "bytes": 29055,
+      "sha256": "2afb369eaf2179a6d1ecfa04246df5310f0f80bd9c440813d026452a1720e21d",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Array Technologies' March 2026 filing says Emily Cohen is an executive officer of and owns securities in Valley of Fire Solar, LLC",
+        "The filing says Valley of Fire Solar, LLC has an ownership interest in Gemini; it does not disclose Cohen's security class or percentage"
+      ]
+    },
+    {
+      "url": "https://www.energy.nv.gov/siteassets/content/programs/reta/01_RETA_Application_FULL_rev2021_PurpleSage_20240905_Redacted_FE.pdf",
+      "httpStatus": 200,
+      "finalUrl": "https://www.energy.nv.gov/siteassets/content/programs/reta/01_RETA_Application_FULL_rev2021_PurpleSage_20240905_Redacted_FE.pdf",
+      "mediaType": "application/pdf",
+      "bytes": 602707,
+      "sha256": "55513f9f57b573c4dca320010ff3a48e252b22d7559dbf663fc8be1d60be939d",
+      "healthStatus": "WORKING",
+      "pdfVerification": {
+        "pageCount": 23,
+        "relevantPdfPages": [12],
+        "verifiedClaims": [
+          "The Nevada application says Noble Solar LLC is a subsidiary of Valley of Fire Solar, LLC",
+          "It says Noble Solar is managed exclusively by Primergy Solar Management LLC, which is responsible for development, construction and operation"
+        ],
+        "renderedPagesInspected": [12]
+      }
+    },
+    {
+      "url": "https://www.key.com/businesses-institutions/our-transactions/deals.primergy.html",
+      "httpStatus": 403,
+      "finalUrl": "https://www.key.com/businesses-institutions/our-transactions/deals.primergy.html",
+      "mediaType": "text/html",
+      "healthStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "browserDomTextBytes": 148870,
+      "browserDomTextSha256": "b43c3c29d66ac4df8492f5fb21d70b10bf56f3c94ef09d77841d2f21e49d576b",
+      "verifiedClaims": [
+        "The visible February 2026 transaction page says Gemini is owned 51% by Quinbrook's Valley of Fire Continuation Fund LP and 49% by APG",
+        "Those percentages apply to Gemini and do not establish the cap table of Valley of Fire Solar, LLC"
+      ]
+    },
+    {
+      "url": "https://www.quinbrook.com/projects/valley-of-fire-solar/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.quinbrook.com/projects/valley-of-fire-solar/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 47726,
+      "sha256": "fbbdbe55d4c1c87d4a5b285a604f45371bf5dde37ccaefcc4f2d410432475fa9",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Quinbrook's live page describes Valley of Fire as a North American solar-and-storage portfolio acquired in 2017 and currently in construction",
+        "It describes eight projects excluding Gemini with more than 2.2 GW solar and potential 2.5 GW storage, which differs from the 2024 close perimeter and therefore does not resolve the complete SPV list"
+      ]
+    },
+    {
+      "url": "https://www.primergypower.com/news/quinbrook-and-primergy-solar-partner-with-apg-on-gemini-solar-storage-project",
+      "httpStatus": 200,
+      "finalUrl": "https://www.primergypower.com/news/quinbrook-and-primergy-solar-partner-with-apg-on-gemini-solar-storage-project",
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 44425,
+      "sha256": "a52aec35d60ae9d4522001c92d53bd680b264288b2a03fcfa0e287e62134617b",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "The October 12, 2022 release says APG acquired a 49% equity ownership in Gemini",
+        "Primergy retained primary management responsibility for Gemini; the release does not make APG an owner of the wider Valley of Fire portfolio"
+      ]
+    }
+  ],
+  "allEvidenceUrlsDirectHttps": true,
+  "allSourcesWorkingOrVerified": true,
+  "deadSourceCount": 0
+}

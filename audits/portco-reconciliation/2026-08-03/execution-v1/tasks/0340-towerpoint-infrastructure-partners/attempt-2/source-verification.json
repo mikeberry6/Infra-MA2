@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0340:towerpoint-infrastructure-partners:4a5032aa",
+  "taskIndex": 340,
+  "companyName": "TowerPoint Infrastructure Partners",
+  "verifiedAt": "2026-08-22T21:26:13.000Z",
+  "summary": {
+    "modelCitationUrls": 6,
+    "working": 5,
+    "browserBlockedButVerified": 1,
+    "dead": 0,
+    "materialModelCorrections": 0,
+    "statusCorrections": 2
+  },
+  "sources": [
+    {
+      "label": "Recap",
+      "url": "https://towerpoint.com/meritage-group-and-towerpoint-capital/",
+      "finalUrl": "https://towerpoint.com/meritage-group-and-towerpoint-capital/",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "byteLength": 2160800,
+      "contentSha256": "7049ac63820c87f043b3aa6673695d9a3158af4bcd1cdda16f117b463a8c8af2",
+      "observedStatus": "WORKING",
+      "note": "Direct company release supports platform identity, recapitalization closing, investor roles and TowerPoint Capital's role."
+    },
+    {
+      "label": "TPC counsel",
+      "url": "https://www.weil.com/articles/weil-advised-towerpoint-capital-in-the-recapitalization-of-towerpoint-infrastructure-partners",
+      "finalUrl": "https://www.weil.com/articles/weil-advised-towerpoint-capital-in-the-recapitalization-of-towerpoint-infrastructure-partners",
+      "httpStatus": 403,
+      "mediaType": "browser-rendered text/html",
+      "byteLength": 87687,
+      "contentSha256": "339e42fe411b1b578b85ba64dda162995e9de92d71af95446892c6edde790180",
+      "observedStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "note": "Direct curl was denied, but the signed-in browser rendered the article and its statement that Weil advised TowerPoint Capital alongside Meritage in the recapitalization; no equity stake is disclosed."
+    },
+    {
+      "label": "Ullico",
+      "url": "https://www.ullico.com/ullico-closes-investment-in-wireless-infrastructure-platform/",
+      "finalUrl": "https://www.ullico.com/ullico-closes-investment-in-wireless-infrastructure-platform/",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "byteLength": 65072,
+      "contentSha256": "e9ee5cc1e693d1f91cf9a98483815c98b1fa64a030beba1851e56d28057b25a1",
+      "observedStatus": "WORKING",
+      "note": "Direct Ullico page now returns 200 and supports the UIF investment and fund attribution."
+    },
+    {
+      "label": "MEAG",
+      "url": "https://www.meag.com/en/inform/34340.html",
+      "finalUrl": "https://www.meag.com/en/inform/34340.html",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "byteLength": 162683,
+      "contentSha256": "5381839653096dc5196ab8637520e13d3d10952c9f4313a126955339a9772f13",
+      "observedStatus": "WORKING",
+      "note": "Direct MEAG page supports the Munich Re equity investment and TowerPoint Capital manager role."
+    },
+    {
+      "label": "Schedule Y",
+      "url": "https://legacy.insurance.ohio.gov/FRAnnuals/2025/Q3/42722Q32025.pdf",
+      "finalUrl": "https://legacy.insurance.ohio.gov/FRAnnuals/2025/Q3/42722Q32025.pdf",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "byteLength": 1209555,
+      "contentSha256": "d45ac73f9799189cc1d7090de552ce8e0236a2deaaa072163cdd34818fbf3475",
+      "observedStatus": "WORKING",
+      "note": "Insurance-regulatory filing supports MR Highland LP and the 15.0% entity-level holding at September 30, 2025."
+    },
+    {
+      "label": "2026 update",
+      "url": "https://towerpoint.com/towerpoint-prices-inaugural-386m-securitization-achieving-record-execution-levels/",
+      "finalUrl": "https://towerpoint.com/towerpoint-prices-inaugural-386m-securitization-achieving-record-execution-levels/",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "byteLength": 2160258,
+      "contentSha256": "1a41926a149dd085b76ca7ae81692f57aa315b3b57f2e703afa38e4a681a358f",
+      "observedStatus": "WORKING_CURRENT",
+      "note": "Latest company release names Meritage, UIF and MEAG/Munich Re as investors, TowerPoint Capital as manager, and the securitization as debt financing."
+    }
+  ],
+  "modelEvidenceCorrections": [
+    "The Ullico page returned HTTP 200 during independent verification rather than the model's indexed-500 status.",
+    "The Weil article returned HTTP 403 to curl but rendered normally in the signed-in browser, so it is browser-blocked but verified rather than simply OK."
+  ],
+  "conclusion": "The direct company, manager and regulatory sources support one current U.S. digital-infrastructure platform with Meritage, UIF and Munich Re/MEAG as evidenced institutional owners. MR Highland's 15.0% stake is entity-level supported; TowerPoint Capital is consistently described as manager, and no direct source supports counting a material management stake."
+}

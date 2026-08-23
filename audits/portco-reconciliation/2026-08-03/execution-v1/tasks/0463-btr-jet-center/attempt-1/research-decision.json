@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0463:btr-jet-center:402b91d4",
+  "taskIndex": 463,
+  "companyName": "BTR Jet Center",
+  "asOfDate": "2026-08-19",
+  "recordedAt": "2026-08-22T18:31:20.000Z",
+  "modelDecision": "PROPOSED_MERGE",
+  "confidence": "HIGH",
+  "stageState": "STAGED_VALIDATED",
+  "applicationBlocked": false,
+  "rationale": "Velocity's February 2026 acquisition release, Baton Rouge's official lease-assignment resolutions and the current Velocity Baton Rouge page establish that BTR is an operating location/local subsidiary beneath the Tallvine-owned Velocity FBO Network, not a separately managed Tallvine platform. The August 10, 2026 Velocity release still lists Baton Rouge in the network and no later ownership change was found.",
+  "repoReconciliation": {
+    "censusCanonicalKey": "btr-jet-center|united-states",
+    "recommendedCanonicalKey": "velocity-fbo-network|united-states",
+    "productionCompanyId": "cmrxpjnwb01adivhea7g6ojct",
+    "queuedActionTreatment": "MERGE_BTR_CHILD_RECORD_INTO_EXISTING_VELOCITY_FBO_NETWORK_AND_PRESERVE_REDIRECT_LINEAGE"
+  },
+  "proposalGuardrails": [
+    "Keep Velocity FBO Network as the sole manager-level Tallvine portfolio company and retain BTR Jet Center and Baton Rouge Jet Center, LLC only as aliases/local lineage.",
+    "Preserve Velocity BTR Holdings, LLC as the local legal assignee beneath the platform rather than creating another PortCo.",
+    "Preserve the official February 11 lease-assignment and February 13 acquisition milestones and citations when the child record is merged.",
+    "Do not infer purchase price, seller equity ownership, exact legal closing timestamp, Tallvine fund, vehicle or stake.",
+    "Do not include BTR Air Charter in the merge without separate direct acquisition evidence.",
+    "Verify that any later separate Velocity FBO Network queue task covers the same canonical parent before superseding it."
+  ],
+  "recommendedNextAction": "Prepare one later protected canonical merge and redirect proposal from BTR Jet Center to Velocity FBO Network, preserving source and milestone lineage while excluding BTR Air Charter.",
+  "databaseMutationAuthorized": false
+}

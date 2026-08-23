@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0372:northstar-new-jersey-lottery-group:968abd3a",
+  "taskIndex": 372,
+  "verifiedAt": "2026-08-21T19:39:26.000Z",
+  "allReturnedUrlsChecked": true,
+  "summary": {
+    "urlCount": 7,
+    "working": 5,
+    "browserBlockedButVerified": 2,
+    "browserBlockedUnverified": 0,
+    "dead": 0
+  },
+  "modelEvidenceCorrections": [
+    "Brightstar's audited 2025 report directly discloses that Northstar New Jersey Holding Company owns 72.00% of Northstar and that Brightstar owns 90.70% of the holding company. The 6.696% OMERS figure is the residual implied by those facts, not a directly disclosed current OMERS percentage; it must not be stored as an exact structured stake.",
+    "Brookfield Business Corporation's 33% interest applies to the Scientific Games lottery-services operation, not directly to Northstar. Northstar's Scientific Games member interest is 28%; any 9.24% BBUC look-through is a clearly labeled multiplication inference, not a direct Northstar disclosure.",
+    "The NJSTART input URL redirects from the .sdo endpoint to the .sda endpoint. The resulting state contract page names Northstar as the active vendor and shows June 20, 2013 through June 30, 2029.",
+    "Both exact SEC pages returned HTTP 403 to direct curl but were independently parsed in the browser and are classified BROWSER_BLOCKED_BUT_VERIFIED rather than dead.",
+    "The Brightstar/IGT Gaming sale to Apollo did not transfer the lottery business; it is not an ownership change for Northstar."
+  ],
+  "sources": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1619762/000162828026018232/a2025ukreportsandaccount.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1619762/000162828026018232/a2025ukreportsandaccount.htm",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 4819,
+      "sha256": "551cd579cc4b194b7b83ff45bab16a3f49a28ff3c3084d184a10a5c26429df3b",
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "browserEvidence": "The exact audited report was parsed in the browser. Note 23 states that Northstar New Jersey Holding Company owns 72.00% of Northstar and Brightstar owns 90.70% of the holding company; it also states that Northstar provides services through June 2029. The subsidiary schedule repeats both percentages."
+    },
+    {
+      "url": "https://www.njstart.gov/bso/external/purchaseorder/poSummary.sdo?docId=84144&parentUrl=contract&releaseNbr=0",
+      "finalUrl": "https://www.njstart.gov/bso/external/purchaseorder/poSummary.sda?docId=84144&parentUrl=contract&releaseNbr=0",
+      "httpStatus": 200,
+      "mediaType": "text/html;charset=UTF-8",
+      "bytes": 107341,
+      "sha256": "e0918f8317a5a3587e92dcfefec164cbd0c0dcfb17fce1a21d0db8fff4245799",
+      "health": "WORKING",
+      "contentEvidence": "NJSTART contract 84144 lists Northstar New Jersey Lottery Group LLC as the active vendor and shows a June 20, 2013 begin date and June 30, 2029 end date."
+    },
+    {
+      "url": "https://www.scientificgames.com/news/media-releases/scientific-games-joint-venture-signs-services-agreement-with-new-jersey-lottery/",
+      "finalUrl": "https://www.scientificgames.com/news/media-releases/scientific-games-joint-venture-signs-services-agreement-with-new-jersey-lottery/",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 49277,
+      "sha256": "6300e3bb8a6cb6e90e0ef7404f1714b0811e7d7fafa7f4283382f949d6c8cfd7",
+      "health": "WORKING",
+      "contentEvidence": "Scientific Games' 2013 announcement supports Northstar's original ownership participants, agreement scope and initial contract economics."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/750004/000095015721001124/ex2-1.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/750004/000095015721001124/ex2-1.htm",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 4819,
+      "sha256": "4f440f5cd46972a084700e5a54cb6da0e2042adee80466d104b275dabce99729",
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "browserEvidence": "The exact SEC purchase agreement was parsed in the browser and identifies Scientific Games New Jersey, LLC as a transferred company and Northstar New Jersey Lottery Group, LLC as a transferred joint venture."
+    },
+    {
+      "url": "https://www.scientificgames.com/news/media-releases/scientific-games-celebrates-sale-to-brookfield/",
+      "finalUrl": "https://www.scientificgames.com/news/media-releases/scientific-games-celebrates-sale-to-brookfield/",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 46517,
+      "sha256": "f4d1685150d30f9a3d016b37b1bf4dd3ffa80879cdd8a0309ea80cdd49aeeda0",
+      "health": "WORKING",
+      "contentEvidence": "The official closing announcement confirms completion of Brookfield's acquisition of the Scientific Games lottery business on April 4, 2022."
+    },
+    {
+      "url": "https://www.omersinfrastructure.com/investments/northstar-new-jersey-lottery",
+      "finalUrl": "https://www.omersinfrastructure.com/investments/northstar-new-jersey-lottery",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 157080,
+      "sha256": "e575da7884eb8817e9d0b7dc0c42e6722ae166271a50b349ef203a609728c3c4",
+      "health": "WORKING",
+      "contentEvidence": "OMERS currently lists Northstar New Jersey Lottery as an Americas investment with a 2013 investment year and a 15-year lottery management contract."
+    },
+    {
+      "url": "https://bbuc.brookfield.com/sites/brookfield-bbu-v2/files/Brookfield-BBU-IR-V2/news-events/presentations/q1-26-bbuc-investor-presentation.pdf",
+      "finalUrl": "https://bbuc.brookfield.com/sites/brookfield-bbu-v2/files/Brookfield-BBU-IR-V2/news-events/presentations/q1-26-bbuc-investor-presentation.pdf",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 1065886,
+      "sha256": "0cf22a89b1e03a94f627fb5ef2923c36238f59387f81fa33c6367dd398f9b415",
+      "health": "WORKING",
+      "contentEvidence": "Independent PDF extraction states that BBUC holds 33% of the Scientific Games lottery-services operation and gives April 2022 as its acquisition date. It does not directly disclose a Northstar percentage."
+    }
+  ]
+}

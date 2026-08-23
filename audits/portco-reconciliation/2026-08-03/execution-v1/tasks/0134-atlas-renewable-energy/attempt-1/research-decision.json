@@ -1,0 +1,213 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RESEARCH_DECISION",
+  "taskId": "ledger:0134:atlas-renewable-energy:8663d3ab",
+  "taskIndex": 134,
+  "companyName": "Atlas Renewable Energy",
+  "asOfDate": "2026-08-19",
+  "stagedAt": "2026-08-19T03:30:34.566Z",
+  "researchOnly": true,
+  "mutationAuthorized": false,
+  "proposalRequiresFreshProductionSnapshot": true,
+  "releaseRequiresFreshAcquisitionExitCheck": true,
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "Atlas Renewable Energy",
+    "requestedManagers": [
+      "Global Infrastructure Partners",
+      "BlackRock"
+    ],
+    "decision": "EXCLUDED",
+    "confidence": "HIGH",
+    "rationale": "Official GIP/Atlas sources classify Atlas as Latin American. Its U.S. HQ is not an operating mandate. Mexico is material but still a minority of a >10.8GW regional platform, with no U.S. or Canadian projects identified.",
+    "identityResolution": {
+      "productionId": "cmrxpjgio00yqivhewml9f98a",
+      "canonicalName": "Atlas Renewable Energy",
+      "aliases": [
+        "Atlas"
+      ],
+      "legalTopco": "NOT_PUBLICLY_DISCLOSED",
+      "website": "https://atlasrenewableenergy.com/",
+      "headquarters": "Plantation, Florida; branded Miami HQ",
+      "foundedYear": 2017,
+      "foundingNote": "Current sources say 2017/early 2017; the 2022 deal release says 2016.",
+      "status": "ACTIVE; GIP UNREALIZED",
+      "boundary": "One platform; SunEdison Latin America assets/personnel are predecessor history."
+    },
+    "ownershipResolution": {
+      "currentOwner": {
+        "manager": "Global Infrastructure Partners",
+        "organization": "Global Infrastructure Partners",
+        "fund": "NOT_PUBLICLY_DISCLOSED",
+        "vehicle": "NOT_PUBLICLY_DISCLOSED",
+        "stake": "NOT_PUBLICLY_DISCLOSED; GIP acquired the platform",
+        "announcementDate": "2022-10-11",
+        "entryDate": "2022-10-11",
+        "entryYear": 2022,
+        "exitDate": null,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      "formerOwner": {
+        "manager": "Actis",
+        "organization": "Actis LLP",
+        "fund": "Actis Energy 4",
+        "vehicle": "NOT_PUBLICLY_DISCLOSED",
+        "stake": "NOT_PUBLICLY_DISCLOSED",
+        "announcementDate": "2022-10-11",
+        "entryDate": "EARLY_2017",
+        "entryYear": 2017,
+        "exitDate": "2022-10-11",
+        "exitYear": 2022,
+        "isActive": false,
+        "transactionState": "CLOSED_EXITED"
+      },
+      "parentCrossReference": {
+        "manager": "BlackRock",
+        "organization": "BlackRock, Inc.",
+        "fund": "NOT_APPLICABLE",
+        "vehicle": "Global Infrastructure Partners manager",
+        "stake": "NO_DIRECT_ATLAS_STAKE; BlackRock wholly owns GIP",
+        "announcementDate": "2024-01-12",
+        "entryDate": "2024-10-01",
+        "entryYear": 2024,
+        "exitDate": null,
+        "exitYear": null,
+        "isActive": false,
+        "transactionState": "PARENT_CROSS_REFERENCE_ONLY"
+      },
+      "conclusion": "Count GIP once; BlackRock is parent-only."
+    },
+    "operatingResolution": {
+      "business": "Utility-scale solar/BESS platform; exclude projects and SPVs.",
+      "scopeTest": "North America=United States, Canada and Mexico; HQ alone is insufficient.",
+      "assetBase": ">10.8GW across Latin America in 2026.",
+      "countryFootprint": {
+        "Brazil": "3,421.1MW on visible cards",
+        "Chile": "783.5MW generation plus 200MW/800MWh BESS on visible cards",
+        "Colombia": "300.9MW on visible cards",
+        "Mexico": "429.5MW operating; reported ~2.5GW generation plus 1.5GW BESS pipeline",
+        "Uruguay": "76MWp sold 2026-05-27"
+      },
+      "dataCaveat": "Site says seven countries; visible cards cover five and are not exhaustive.",
+      "assessment": "No U.S./Canada projects found. Mexico is below half even on a 4.0/10.8 simple upper bound that mixes generation/storage.",
+      "geographyConclusion": "LATIN_AMERICA_PRIMARY; NOT_NORTH_AMERICA_PRIMARY_OR_DEDICATED"
+    },
+    "acquisitionExitCheck": {
+      "entry": "GIP closed the Actis acquisition 2022-10-11; price, stake and vehicle were undisclosed.",
+      "parentDeal": "BlackRock closed its GIP acquisition 2024-10-01; parent change only.",
+      "laterPlatformExit": "None found; GIP still lists Atlas as Unrealized and the 2026 refinancing names GIP sponsor.",
+      "laterAssetExit": "Atlas sold 76MWp of Uruguay assets 2026-05-27; asset rotation only.",
+      "currentStatus": "ACTIVE_UNREALIZED"
+    },
+    "milestones": [
+      {
+        "date": "EARLY_2017",
+        "event": "Actis launched Atlas under Actis Energy 4."
+      },
+      {
+        "date": "2022-10-11",
+        "event": "GIP acquisition closed; Actis exited."
+      },
+      {
+        "date": "2024-10-01",
+        "event": "BlackRock acquired GIP; parent cross-reference only."
+      },
+      {
+        "date": "2026-02-23",
+        "event": "Atlas closed an approximately US$3bn GIP-supported refinancing."
+      }
+    ],
+    "evidence": [
+      {
+        "label": "GIP portfolio",
+        "url": "https://www.global-infra.com/portfolio-page/atlas-renewable-energy/",
+        "purpose": "Current Unrealized status and Latin America classification.",
+        "sourceTier": "T1_MANAGER",
+        "workingStatus": "VERIFIED",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "GIP closing release",
+        "url": "https://www.global-infra.com/news/gip-and-actis-announce-acquisition-of-atlas-renewable-energy-by-gip/",
+        "purpose": "2022-10-11 close from Actis and entry footprint.",
+        "sourceTier": "T1_MANAGER",
+        "workingStatus": "VERIFIED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Atlas 2026 refinancing",
+        "url": "https://atlasrenewableenergy.com/news-and-insights/atlas-renewable-energy-secures-landmark-usd-3-billion-refinancing-for-its-portfolio-in-latin-america/",
+        "purpose": "Current GIP sponsorship, LatAm focus and >10.8GW base.",
+        "sourceTier": "T1_COMPANY",
+        "workingStatus": "VERIFIED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Atlas projects/offices",
+        "url": "https://atlasrenewableenergy.com/projects/",
+        "purpose": "Country cards and Miami-area HQ.",
+        "sourceTier": "T1_COMPANY",
+        "workingStatus": "VERIFIED_WITH_CAVEATS",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "GIP disclosures",
+        "url": "https://www.global-infra.com/additional-disclosures/",
+        "purpose": "BlackRock wholly owned GIP from 2024-10-01.",
+        "sourceTier": "T1_MANAGER",
+        "workingStatus": "VERIFIED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Atlas DNB release",
+        "url": "https://atlasrenewableenergy.com/news-and-insights/atlas-renewable-energy-and-dnb-markets-issue-largest-solar-pv-bond-in-issuance-in-latin-america/",
+        "purpose": "Early-2017 launch and Actis Energy 4.",
+        "sourceTier": "T1_COMPANY",
+        "workingStatus": "VERIFIED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Mexico pipeline report",
+        "url": "https://vanguardia.com.mx/noticias/mexico/atlas-renewable-energy-proyecta-inversion-de-2000-mdd-en-mexico-de-la-mano-de-la-cfe-HH19699538",
+        "purpose": "Reported ~2.5GW generation plus 1.5GW BESS.",
+        "sourceTier": "T2_NEWS",
+        "workingStatus": "VERIFIED_SECONDARY",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Atlas Uruguay sale",
+        "url": "https://atlasrenewableenergy.com/news-and-insights/atlas-completes-strategic-rotation-of-solar-assets-in-uruguay-and-continues-advancing-its-growth-across-the-region/",
+        "purpose": "2026 asset sale; LatAm platform continued.",
+        "sourceTier": "T1_COMPANY",
+        "workingStatus": "VERIFIED",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "before": "Published North American record; GIP/BlackRock overlap flagged.",
+      "after": "Exclude from North American census; GIP direct, BlackRock parent-only; no project records.",
+      "databaseEffect": "NONE"
+    },
+    "excludedOrDuplicateCandidates": [
+      "Atlas: alias; merge to canonical.",
+      "SunEdison LatAm assets/personnel: predecessor.",
+      "Country subsidiaries/project SPVs: exclude."
+    ],
+    "unresolvedQuestions": [
+      "NOT_PUBLICLY_DISCLOSED: acquisition topco, vehicle, price and stake.",
+      "NOT_PUBLICLY_DISCLOSED: exhaustive >10.8GW country split."
+    ],
+    "recommendedListAction": "Exclude cmrxpjgio00yqivhewml9f98a from the North American census. Retain Atlas once in any global/Latin America list with GIP active and BlackRock parent-only; keep the GIP relationship and create no project records."
+  },
+  "independentVerification": {
+    "evidenceUrlsChecked": 8,
+    "openSourceCount": 8,
+    "blockedSourceCount": 0,
+    "unavailableSourceCount": 0,
+    "recommendedPrimaryCount": 1,
+    "modelModeVerified": true
+  }
+}
+

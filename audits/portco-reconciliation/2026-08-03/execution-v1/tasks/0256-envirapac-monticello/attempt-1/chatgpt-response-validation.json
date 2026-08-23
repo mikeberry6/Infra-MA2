@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "runId": null,
+  "taskId": "ledger:0256:envirapac-monticello:efac2570",
+  "taskIndex": 256,
+  "validatedAt": "2026-08-20T08:25:35.337Z",
+  "conversationUrl": "https://chatgpt.com/c/6a86b22f-3f84-83ea-8209-246b6226962e",
+  "requiredTopLevelKeys": [
+    "asOfDate",
+    "requestedCompany",
+    "requestedManagers",
+    "decision",
+    "confidence",
+    "rationale",
+    "identityResolution",
+    "ownershipResolution",
+    "operatingResolution",
+    "acquisitionExitCheck",
+    "milestones",
+    "evidence",
+    "beforeAfterChanges",
+    "excludedOrDuplicateCandidates",
+    "unresolvedQuestions",
+    "recommendedListAction"
+  ],
+  "initialResponse": {
+    "valid": false,
+    "fencedJsonPresent": false,
+    "jsonParsed": false,
+    "markdownReviewPresent": false,
+    "requiredTopLevelKeysPresent": false,
+    "responseSha256": null,
+    "errors": [
+      "The research turn ended without the required final packet."
+    ],
+    "warnings": [
+      "Two temporary request-rate dialogs interrupted the initial long-running turn."
+    ]
+  },
+  "repair": {
+    "count": 1,
+    "limit": 1,
+    "submittedAt": "2026-08-20T08:17:07.933Z",
+    "completedAt": "2026-08-20T08:24:01.308Z",
+    "transportRetryCount": 1,
+    "transportRetryAt": "2026-08-20T08:22:26.753Z",
+    "valid": true,
+    "responseSha256": "65e3ed3552f923b7403c9ddc6efffda36f1406f539f843acdc83222a2f85846f",
+    "errors": [],
+    "warnings": [
+      "The first delivery attempt returned Internal Server Error; the built-in Retry reran the same submitted repair message.",
+      "The packet leaves Generate's current project-level interest unresolved.",
+      "One returned supporting URL now returns HTTP 404."
+    ]
+  },
+  "finalResponse": {
+    "fencedJsonPresent": false,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "decision": "PROPOSED_CORRECTION",
+    "confidence": "MEDIUM",
+    "canonicalName": "EnviraPAC Monticello, LLC",
+    "responseCharacterCount": 5781,
+    "evidenceCount": 6,
+    "uniqueReturnedUrlCount": 6,
+    "currentDirectOwnerCountResolved": 0,
+    "pendingDirectOwnershipTransactionCount": 0,
+    "operatingFacilityIdentityVerified": true,
+    "generateProjectSpvInvestmentVerified": true,
+    "generateCorporateEquityVerified": false,
+    "generateCurrentProjectOwnershipResolved": false,
+    "projectSpvLegalNameResolved": false,
+    "allReturnedUrlsChecked": true,
+    "deadReturnedUrlCount": 1,
+    "exactlyOneRecommendedPrimary": true,
+    "identityResolved": true,
+    "activeOwnershipResolved": false,
+    "applicationBlocked": true,
+    "result": "PASS_REVIEW_REQUIRED"
+  },
+  "valid": true,
+  "errors": [],
+  "repairsUsed": 1,
+  "independentSourceVerification": "source-verification.json",
+  "finalResearchDecision": "research-decision.json"
+}

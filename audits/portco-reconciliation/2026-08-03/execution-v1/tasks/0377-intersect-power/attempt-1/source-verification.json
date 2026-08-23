@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0377:intersect-power:2076089f",
+  "checkedAt": "2026-08-21T20:40:35.000Z",
+  "method": "Independent direct curl status, redirect, media-type and content-hash checks plus independent indexed-page verification for the browser-blocked Alphabet page",
+  "sources": [
+    {
+      "url": "https://www.tpg.com/news-and-insights/tpg-announces-completion-of-4-75-billion-sale-of-intersect-to-google-launches-ipx-power-as-independent-power-producer",
+      "httpStatus": 200,
+      "finalUrl": "https://www.tpg.com/news-and-insights/tpg-announces-completion-of-4-75-billion-sale-of-intersect-to-google-launches-ipx-power-as-independent-power-producer",
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 104514,
+      "sha256": "96da8f4a08821eaef4925e146e9f555cdfde17f5d433d8d45da06d48b81e3905",
+      "healthStatus": "WORKING"
+    },
+    {
+      "url": "https://abc.xyz/investor/news/news-details/2025/Alphabet-Announces-Agreement-to-Acquire-Intersect-to-Advance-U-S--Energy-Innovation-2025-DVIuVDM9wW/default.aspx",
+      "httpStatus": 403,
+      "finalUrl": "https://abc.xyz/investor/news/news-details/2025/Alphabet-Announces-Agreement-to-Acquire-Intersect-to-Advance-U-S--Energy-Innovation-2025-DVIuVDM9wW/default.aspx",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 5516,
+      "sha256": "2da7ea2aa5043cfcba72e5883ab1d559645962238a216e1f17c3d7ed05652629",
+      "healthStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verificationNote": "Direct curl was blocked, but the exact official page was independently indexed and exposed the 2025-12-22 agreement, Google's existing minority stake and the excluded grid-tied assets."
+    },
+    {
+      "url": "https://www.investegate.co.uk/announcement/rns/pantheon-infrastructure--pint/intersect-power-update/9314446",
+      "httpStatus": 200,
+      "finalUrl": "https://www.investegate.co.uk/announcement/rns/pantheon-infrastructure--pint/intersect-power-update/9314446",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 57718,
+      "sha256": "2749d2bce8f199e7eb073d51d683aa8251dce21b0b905537dd948fbc2c8513de",
+      "healthStatus": "WORKING"
+    },
+    {
+      "url": "https://www.investegate.co.uk/announcement/rns/pantheon-infrastructure--pint/net-asset-value-s-/9630754",
+      "httpStatus": 200,
+      "finalUrl": "https://www.investegate.co.uk/announcement/rns/pantheon-infrastructure--pint/net-asset-value-s-/9630754",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 96292,
+      "sha256": "6845beac2bf690f2d246344078984732f8535cc261fdff873c16a1a37738a6d5",
+      "healthStatus": "WORKING"
+    },
+    {
+      "url": "https://www.intersect.com/solutions",
+      "httpStatus": 200,
+      "finalUrl": "https://www.intersect.com/solutions",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 97204,
+      "sha256": "fdef49e6e91a1cef1b2cf4b3100dd0f2893034be7b2c6022b6a0f0da1ac9a791",
+      "healthStatus": "WORKING"
+    },
+    {
+      "url": "https://www.greenbeltcapital.com/portfolio-intersect-v2.html",
+      "httpStatus": 200,
+      "finalUrl": "https://www.greenbeltcapital.com/portfolio-intersect-v2.html",
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 67413,
+      "sha256": "f3d60c647e58a552abf6aaaa21d088a79d7363b94e51fba1118dd602c79b6ca7",
+      "healthStatus": "WORKING"
+    },
+    {
+      "url": "https://www.climateadaptiveinfra.com/news-and-insights/cai-announces-alphabet-agreement-to-acquire-intersect-to-advance-us-energy-innovation",
+      "httpStatus": 200,
+      "finalUrl": "https://www.climateadaptiveinfra.com/news-and-insights/cai-announces-alphabet-agreement-to-acquire-intersect-to-advance-us-energy-innovation",
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 22023,
+      "sha256": "fa301707177a365bd22b976d665147519594ed572e8956957e75148cd4591b12",
+      "healthStatus": "WORKING"
+    }
+  ],
+  "allEvidenceUrlsDirectHttps": true,
+  "allSourcesWorkingOrVerified": true,
+  "deadSourceCount": 0
+}
+

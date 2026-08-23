@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0347:lightpath:c411cbd2",
+  "taskIndex": 347,
+  "linkedTaskIdsCovered": [
+    "ledger:0483:lightpath-holdings-llc:26856215"
+  ],
+  "companyName": "Lightpath",
+  "canonicalName": "Lightpath",
+  "legalName": "Lightpath Holdings LLC",
+  "asOfDate": "2026-08-19",
+  "researchOnly": true,
+  "decision": "PROPOSED_MERGE",
+  "confidence": "HIGH",
+  "responseSha256": "99962f965826c8184bca0dfd0922a2be3b1ba5fad83e6ced912f0e66d6f14845",
+  "sourceVerification": "source-verification.json",
+  "acceptedResponse": "chatgpt-accepted-response.txt",
+  "summary": "Map the Lightpath census key to the existing Lightpath Holdings LLC platform rather than creating a duplicate. Current disclosed common-equity ownership remains Optimum at 50.01% and the MSIP-led NHIP III Lantern Holding LLC vehicle at 49.99%, with a December 1, 2020 close and no later ownership transfer found through August 19, 2026.",
+  "blockingQuestions": [],
+  "nonblockingDisclosureGaps": [
+    "Exact NHIP fund legal name.",
+    "Former direct-member allocation before the December 2020 close.",
+    "Management incentive ownership percentages."
+  ],
+  "applicationBlocked": false,
+  "survivorCondition": "Use the existing Lightpath Holdings LLC production and seed record as the survivor; canonicalize the public identity as Lightpath, preserve Cablevision Lightpath LLC and prior legal names as aliases, record the disclosed Optimum/MSIP ownership split and exclude subsidiaries, holding entities, route acquisitions, customer sites and financing vehicles as separate PortCos."
+}

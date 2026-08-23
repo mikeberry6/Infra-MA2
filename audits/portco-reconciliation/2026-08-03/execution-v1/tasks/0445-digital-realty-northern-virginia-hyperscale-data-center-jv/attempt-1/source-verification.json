@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0445:digital-realty-northern-virginia-hyperscale-data-center-jv:1419ed2f",
+  "checkedAt": "2026-08-22T11:48:54.312Z",
+  "method": "Independent direct HTTP status, final-URL, media-type, byte-length and SHA-256 checks of every accepted evidence URL, with visible browser retrieval of the two SEC filing pages blocked to direct command-line access, together with the acquisition and later-exit sweep in the GPT-5.6 Sol Pro research conversation",
+  "sources": [
+    {
+      "url": "https://www.tpg.com/news-and-insights/digital-realty-and-tpg-announce-joint-venture-hyperscale-data",
+      "httpStatus": 200,
+      "finalUrl": "https://www.tpg.com/news-and-insights/digital-realty-and-tpg-announce-joint-venture-hyperscale-data",
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 107344,
+      "sha256": "1783484bbf9abafa575dd4b94ee2239a0b1248f4bc414704b58ab8e94075f326",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "TREP acquired an 80% interest and Digital Realty retained 20%",
+        "The approximately $1.5bn transaction covered three stabilized Ashburn hyperscale data centers totaling approximately 104 MW",
+        "Digital Realty retained day-to-day operations while major decisions require both members"
+      ]
+    },
+    {
+      "url": "https://www.tpg.com/platforms/real-estate/tpg-real-estate-partners",
+      "httpStatus": 200,
+      "finalUrl": "https://www.tpg.com/platforms/real-estate/tpg-real-estate-partners",
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 125000,
+      "sha256": "b36ed9aa9cdaaed7a28f2fd2193507f61c26726eda716a136de1e474cfe43596",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "TREP is TPG's dedicated opportunistic real-estate strategy",
+        "The investment is not tied to a qualifying TPG infrastructure mandate"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1297996/000110465926015365/R15.htm",
+      "httpStatus": 403,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1297996/000110465926015365/R15.htm",
+      "mediaType": "text/html",
+      "bytes": 4818,
+      "sha256": "aba49c5a1be4a4b09a49e0ec9f85ad78802480c2970be110e451da3b062e651d",
+      "healthStatus": "COMMAND_LINE_BLOCKED_BROWSER_VERIFIED",
+      "verifiedClaims": [
+        "The browser-rendered filing lists the TPG Real Estate unconsolidated entity at 20% from Digital Realty's perspective",
+        "The filing supports continuing Digital Realty minority ownership through December 31, 2025"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1297996/000110465926089296/R31.htm",
+      "httpStatus": 403,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1297996/000110465926089296/R31.htm",
+      "mediaType": "text/html",
+      "bytes": 4818,
+      "sha256": "7e04e84a3bfae84f8590b333d09055ddf0e79671c69255a04ca1b84aec775b9d",
+      "healthStatus": "COMMAND_LINE_BLOCKED_BROWSER_VERIFIED",
+      "verifiedClaims": [
+        "The browser-rendered June 30, 2026 table continues to list the TPG Real Estate entity at 20% from Digital Realty's perspective",
+        "No subsequent disposal of Digital Realty's retained interest is reflected in the current filing"
+      ]
+    },
+    {
+      "url": "https://dbrs.morningstar.com/research/420088/dbrs-morningstar-finalizes-ratings-on-dc-commercial-mortgage-trust-2023-dc",
+      "httpStatus": 200,
+      "finalUrl": "https://dbrs.morningstar.com/research/420088/dbrs-morningstar-finalizes-ratings-on-dc-commercial-mortgage-trust-2023-dc",
+      "mediaType": "text/html",
+      "bytes": 204752,
+      "sha256": "89335a9434259d76eef94330f402d2e835fa89bea3ff19db0c8f8098f2489d85",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "The $990mm DC Commercial Mortgage Trust 2023-DC financing covered the three-building Ashburn portfolio",
+        "The ratings release supports the ACC5, ACC6 and ACC7 asset perimeter and August 30, 2023 financing milestone"
+      ]
+    }
+  ],
+  "exitSearch": {
+    "searchedAt": "2026-08-22T11:48:54.312Z",
+    "scopeThrough": "2026-08-19",
+    "result": "No later transfer, sale or exit of the three-building Nova DC Holdings JV was identified. Digital Realty's June 30, 2026 filing continued to report its 20% interest."
+  },
+  "allEvidenceUrlsDirectHttps": true,
+  "allCoreSourcesWorkingOrBrowserVerified": true,
+  "responseSourceHealthCorrections": [
+    "The two SEC evidence URLs return 403 to direct command-line retrieval but render normally in the signed-in browser and are not dead.",
+    "TPG and TPG Real Estate are duplicate labels for the same 80% TREP interest, not two owners.",
+    "TREP is an opportunistic real-estate strategy; the data-center asset type does not turn the holding into a qualifying infrastructure-fund investment.",
+    "ACC5, ACC6 and ACC7 are child assets of one Nova DC Holdings JV and are not separate PortCos."
+  ],
+  "deadSourceCount": 0
+}

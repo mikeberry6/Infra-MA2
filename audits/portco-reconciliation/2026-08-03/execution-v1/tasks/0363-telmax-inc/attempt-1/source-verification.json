@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0363:telmax-inc:f608a383",
+  "taskIndex": 363,
+  "verifiedAt": "2026-08-21T17:21:00.000Z",
+  "allReturnedUrlsChecked": true,
+  "summary": {"urlCount":8,"working":5,"browserBlockedButVerified":3,"browserBlockedUnverified":0,"dead":0},
+  "modelEvidenceCorrections": [
+    "The SEC, Jones Day and telMAX pages returned HTTP 403 to direct curl but rendered at their exact URLs in the browser and were independently verified there.",
+    "The response's financing URL was outside the eight evidence rows; it was not needed to support an ownership inclusion decision and remains a separate debt-only context claim."
+  ],
+  "sources": [
+    {"url":"https://www.sec.gov/Archives/edgar/data/1793855/000110465926071361/tm262258d7_ncsrs.htm","finalUrl":"https://www.sec.gov/Archives/edgar/data/1793855/000110465926071361/tm262258d7_ncsrs.htm","httpStatus":403,"mediaType":"text/html","bytes":2164,"sha256":"fe7a0a03071d0167fecc168f1af13dc1092d11aa9bc8dee6a8bfa021062e1d8b","health":"BROWSER_BLOCKED_BUT_VERIFIED","browserEvidence":"Exact filing rendered; March 31, 2026 N-CSR lists NOVA-telMAX HoldCo LLC and states it invests all capital in Telmax, Inc., in which the fund owns approximately 15%."},
+    {"url":"https://www.novainfrastructure.com/investments-index","finalUrl":"https://www.novainfrastructure.com/investments-index","httpStatus":200,"mediaType":"text/html;charset=utf-8","bytes":27613,"sha256":"a4427f71884ea656e7412b6b5bf226196df7520cfb0c3ebe8ba575c18d00365b","health":"WORKING"},
+    {"url":"https://www.novainfrastructure.com/team","finalUrl":"https://www.novainfrastructure.com/team","httpStatus":200,"mediaType":"text/html;charset=utf-8","bytes":37789,"sha256":"4e61e5638e8fa36bd4afbb424a74c1a81ee516b6a97d5060c95bc323ea27a52b","health":"WORKING"},
+    {"url":"https://quintana-id.com/wp-content/uploads/2021/news/QID%20Closing%20Press%20Release%20telMAX%202021.04.01.pdf","finalUrl":"https://quintana-id.com/wp-content/uploads/2021/news/QID%20Closing%20Press%20Release%20telMAX%202021.04.01.pdf","httpStatus":200,"mediaType":"application/pdf","bytes":96591,"sha256":"4b28bb542067dc8bd31da6f1e91b369b0e9aef3a175aab6ca355e780b4bdea67","health":"WORKING"},
+    {"url":"https://quintana-id.com/","finalUrl":"https://quintana-id.com/","httpStatus":200,"mediaType":"text/html; charset=UTF-8","bytes":10091,"sha256":"641ac2910d1e7ca77afa5ce3fb031dd203011e4b52d5d4482fe4d082938327ba","health":"WORKING"},
+    {"url":"https://www.jonesday.com/en/practices/experience/2024/04/nova-infrastructure-management-llc-and-affiliated-funds-obtain-new-25-million-subscription-facility","finalUrl":"https://www.jonesday.com/en/practices/experience/2024/04/nova-infrastructure-management-llc-and-affiliated-funds-obtain-new-25-million-subscription-facility","httpStatus":403,"mediaType":"text/html; charset=UTF-8","bytes":1745,"sha256":"1a2cb5423432bae93df8b309c22de7c22c9d12799dd64e8caf06ef257398940d","health":"BROWSER_BLOCKED_BUT_VERIFIED","browserEvidence":"Exact page rendered and identifies NOVA Infrastructure Fund I and NOVA-TELMAX AIV as manager-controlled affiliated funds."},
+    {"url":"https://www.telmax.com/about-telmax/","finalUrl":"https://www.telmax.com/about-telmax/","httpStatus":403,"mediaType":"text/html; charset=UTF-8","bytes":2103,"sha256":"c8f8a0b704ec8e0a2cff01e49d0822583f560aa1dc8b5ea5837d3456980fcda2","health":"BROWSER_BLOCKED_BUT_VERIFIED","browserEvidence":"Exact page rendered and supports 2016 founding, GTA origin and owned-fiber operating profile."},
+    {"url":"https://www.ourcommons.ca/documentviewer/en/44-1/RNNR/meeting-72/evidence","finalUrl":"https://www.ourcommons.ca/documentviewer/en/44-1/RNNR/meeting-72/evidence","httpStatus":200,"mediaType":"text/html; charset=utf-8","bytes":134292,"sha256":"86cc3a0fa3d3e5e2d30aed2c88f9f46ffb84d6f36ce1f6898df0a4b4e59dc6f3","health":"WORKING"}
+  ]
+}

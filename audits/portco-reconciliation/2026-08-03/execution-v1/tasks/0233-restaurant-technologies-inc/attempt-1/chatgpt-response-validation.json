@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "runId": null,
+  "taskId": "ledger:0233:restaurant-technologies-inc:d0e001f6",
+  "taskIndex": 233,
+  "validatedAt": "2026-08-20T02:09:06Z",
+  "conversationUrl": "https://chatgpt.com/c/6a865a5a-d058-83ea-a75b-171c98a609fc",
+  "requiredTopLevelKeys": [
+    "asOfDate",
+    "requestedCompany",
+    "requestedManagers",
+    "decision",
+    "confidence",
+    "rationale",
+    "identityResolution",
+    "ownershipResolution",
+    "operatingResolution",
+    "acquisitionExitCheck",
+    "milestones",
+    "evidence",
+    "beforeAfterChanges",
+    "excludedOrDuplicateCandidates",
+    "unresolvedQuestions",
+    "recommendedListAction"
+  ],
+  "initialResponse": {
+    "valid": false,
+    "fencedJsonPresent": false,
+    "jsonParsed": false,
+    "markdownReviewPresent": false,
+    "requiredTopLevelKeysPresent": false,
+    "responseSha256": null,
+    "errors": [
+      "No completed response packet was emitted after more than 25 minutes despite completed source research."
+    ]
+  },
+  "repair": {
+    "count": 1,
+    "limit": 1,
+    "submittedAt": "2026-08-20T02:03:25.700Z",
+    "completedAt": "2026-08-20T02:06:09.700Z",
+    "valid": true,
+    "responseSha256": "dc88d06848ff604120337bece6b20c966daa98de94cd1f98054e5ac1e7b5e5c0",
+    "errors": [],
+    "warnings": [
+      "The valid packet is 11,907 characters versus the requested maximum of 7,500. No second repair was sent."
+    ]
+  },
+  "finalResponse": {
+    "fencedJsonPresent": false,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "formatCharacterLimit": 7500,
+    "actualResponseCharacters": 11907,
+    "formatCompliant": false,
+    "decision": "VERIFIED_NO_CHANGE",
+    "confidence": "HIGH",
+    "canonicalName": "Restaurant Technologies, Inc.",
+    "evidenceCount": 7,
+    "uniqueReturnedUrlCount": 7,
+    "currentOwnerCount": 3,
+    "formerOwnerCount": 1,
+    "pendingDirectOwnershipTransactionCount": 0,
+    "existingCanonicalMappingVerified": true,
+    "duplicateEcpOwnerAvoided": true,
+    "april2022CloseVerified": true,
+    "continentalGrainContinuationVerified": true,
+    "ehiCoInvestmentVerified": true,
+    "currentBoardRepresentationVerified": true,
+    "gsamFormerOwnershipVerified": true,
+    "debtFinancingExcludedFromOwnership": true,
+    "infrastructureStrategyBoundaryExplained": true,
+    "laterDirectExitNotFound": true,
+    "northAmericaQualificationPresent": true,
+    "allReturnedUrlsChecked": true,
+    "exactlyOneRecommendedPrimary": true,
+    "unresolvedItemsAreNoncriticalDisclosureGaps": true,
+    "applicationBlocked": false,
+    "formatReviewRequired": true,
+    "result": "PASS_DATA_STAGED_REVIEW_REQUIRED_FOR_FORMAT"
+  },
+  "valid": true,
+  "errors": [],
+  "warnings": [
+    "Accepted research is structurally and substantively valid but not compactness-compliant."
+  ],
+  "repairsUsed": 1,
+  "independentSourceVerification": "source-verification.json",
+  "finalResearchDecision": "research-decision.json"
+}

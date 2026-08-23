@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0405:northstar-recycling:dba0ea8b",
+  "checkedAt": "2026-08-21T23:30:03.000Z",
+  "method": "Independent direct curl status, redirect, media-type and content-hash checks with claim-level HTML and SEC filing inspection",
+  "sources": [
+    {
+      "url": "https://www.ridgemontep.com/press-releases/northstar-recycling-acquires-waste-technology-services/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ridgemontep.com/press-releases/northstar-recycling-acquires-waste-technology-services/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 64330,
+      "sha256": "d8dad84cc752a6d302f7d13bf2a38bd01fdf9295d025d0657d61ad3d837f7c37",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Ridgemont's October 14, 2025 release says Northstar's 2021 recapitalization was led by Ridgemont and Northstar management",
+        "It identifies WTS as Northstar's third acquisition since that recapitalization and provides current platform/operating context"
+      ]
+    },
+    {
+      "url": "https://www.ridgemontep.com/press-releases/ridgemont-announces-growth-investment-in-northstar-recycling-company/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ridgemontep.com/press-releases/ridgemont-announces-growth-investment-in-northstar-recycling-company/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 66343,
+      "sha256": "62144074416c6606a8e5d239f2cd7527ad2837c87c999c46e4c9d3ddbd8f8b5f",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Ridgemont announced a growth investment in Northstar Recycling Company, LLC on October 5, 2021 alongside founders Seth and Noah Goodman",
+        "The release does not disclose Ridgemont's fund, stake, vehicle, exact legal close or the founders' retained percentage"
+      ]
+    },
+    {
+      "url": "https://www.ridgemontep.com/portfolio/northstar-recycling-company/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ridgemontep.com/portfolio/northstar-recycling-company/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 62054,
+      "sha256": "f4a8df8d77cb4b3e269b660704d8a8556f734bf33864e20cc91a4894478af9e3",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Ridgemont's live page labels Northstar Current, lists 2021 as the investment year and classifies it in Business & Technology Services and Industrial Growth"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/91767/000009176726000008/R12.htm",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/91767/000009176726000008/R12.htm",
+      "mediaType": "text/html",
+      "bytes": 93732,
+      "sha256": "5558c0c304978271d219613eebc490a5dd2e830f6fa402f787a8f183e88b4bf3",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Sonoco's filing says the S3 sale closed January 26, 2023 and Sonoco received a 2.7% Northstar equity interest",
+        "It says Sonoco sold that 2.7% interest on December 23, 2024 for $8.63 million but does not name the buyer"
+      ]
+    },
+    {
+      "url": "https://northstarrecycling.com/",
+      "httpStatus": 200,
+      "finalUrl": "https://northstarrecycling.com/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 239764,
+      "sha256": "ace388e66d436c9adad00a882d387ee14ab53ce5e82fd0784f135a8940cd587b",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Northstar's current site describes the active multi-site waste-management platform and reports more than 3,000 sites, more than 5,000 service providers, more than 225 zero-landfill locations and 88% diversion in advanced programs"
+      ]
+    }
+  ],
+  "allEvidenceUrlsDirectHttps": true,
+  "allSourcesWorkingOrVerified": true,
+  "deadSourceCount": 0
+}

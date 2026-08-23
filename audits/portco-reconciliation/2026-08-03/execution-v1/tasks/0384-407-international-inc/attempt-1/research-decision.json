@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0384:407-international-inc:e9ed737e",
+  "sequence": 384,
+  "asOfDate": "2026-08-19",
+  "companyName": "407 International Inc.",
+  "decision": "PROPOSED_NEW",
+  "confidence": "HIGH",
+  "stagingDisposition": "STAGED_VALIDATED",
+  "applicationBlocked": false,
+  "rationale": "407 International Inc. is the parent infrastructure platform and wholly owns the 407 ETR concessionaire. PSP Investments acquired a direct 7.51% interest through Spectre Infra LP on June 6, 2025. The current cap table is fully disclosed at the company level: Cintra 48.29%, the CPP Investments-controlled institutional block 44.20%, and PSP 7.51%.",
+  "recommendedChanges": [
+    "Create one canonical 407 International Inc. company with 407 ETR as an alias.",
+    "Add PSP Investments as an active 7.51% owner from 2025-06-06 through Spectre Infra Limited Partnership.",
+    "Add Cintra/Ferrovial as an active 48.29% owner and the CPP Investments-controlled block as an active 44.20% owner, preserving the disclosed co-investor limitation.",
+    "Record AtkinsRéalis, Macquarie/Intoll and CDPQ as former owners with their supported historical periods.",
+    "Do not split the concession company, tolling/service entities or financing subsidiaries into separate PortCos."
+  ],
+  "unresolvedQuestions": [
+    "MICI-parent co-investor identities, entry dates and look-through stakes are not publicly disclosed.",
+    "PSP's specific account and CPP's 2025 selling vehicle are not publicly disclosed."
+  ],
+  "unresolvedItemsAreNoncriticalDisclosureGaps": true,
+  "proposalGenerationAllowed": true,
+  "sourceVerificationPassed": true,
+  "acceptedResponseSha256": "93034ca215bee16d128794c73c3b8fd55c01970ae9409d715e092c0b7dfea816"
+}

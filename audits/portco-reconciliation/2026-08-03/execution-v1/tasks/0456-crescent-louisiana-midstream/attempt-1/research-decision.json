@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0456:crescent-louisiana-midstream:599b6824",
+  "taskIndex": 456,
+  "companyName": "Crescent Louisiana Midstream",
+  "asOfDate": "2026-08-19",
+  "recordedAt": "2026-08-22T16:43:09.000Z",
+  "modelDecision": "DEFERRED",
+  "confidence": "MEDIUM",
+  "stageState": "STAGED_REVIEW_REQUIRED",
+  "applicationBlocked": true,
+  "rationale": "Independent evidence supports Crescent Louisiana Midstream as an active onshore subsidiary or segment beneath the manager-level Crescent Midstream platform. Current 2026 financing evidence names Carlyle and founder John Grier at the holding-company level, while Wafra's personnel page supports only Michael Coleman's CLM board role. No direct source identifies Wafra's equity security, fund, vehicle, stake, entry, closing, or continuity. The model also reversed a Kinetica-to-CLM proposed pipeline sale and incorrectly described the current Crescent board page as showing Wafra. The proposed company creation and owner addition therefore remain unsupported.",
+  "repoReconciliation": {
+    "productionCompanyCount": 0,
+    "seedCompanyCount": 0,
+    "censusHoldingId": "098-wafra:holding:006:crescent-louisiana-midstream",
+    "queuedActions": [
+      "ADD_OWNER",
+      "CREATE_COMPANY"
+    ],
+    "queuedActionTreatment": "BLOCK_AS_SUBSIDIARY_AND_PENDING_DIRECT_WAFRA_OWNERSHIP_PROOF"
+  },
+  "unresolvedQuestions": [
+    "Whether Wafra holds any direct or indirect equity interest in CLM rather than a governance or advisory role.",
+    "Wafra's fund or managed account, security, percentage, announcement, and legal closing.",
+    "The exact present non-Crescent minority owner of the 30% CLM interest and whether that interest changed after the historical SEC filings.",
+    "The closing state of Kinetica's proposed pipeline sale to CLM and whether it belongs only as an underlying asset transaction."
+  ],
+  "recommendedNextAction": "Do not create a standalone Crescent Louisiana Midstream PortCo or add Wafra ownership. Retain the subsidiary/platform mapping and source leads for a targeted cap-table review. If later direct evidence proves Wafra equity, route it to the canonical Crescent Midstream platform unless the investment policy explicitly permits separate subsidiary-level holdings.",
+  "databaseMutationAuthorized": false
+}

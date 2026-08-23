@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0260:stem-energy-storage-asset-spvs:a034fa93",
+  "taskIndex": 260,
+  "companyName": "Stem Energy Storage Asset SPVs",
+  "verifiedAt": "2026-08-20T09:35:23.587Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1758766/000175876626000016/stem-20251231.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1758766/000175876626000016/stem-20251231.htm",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 2374378,
+      "contentSha256": "b910041bce869a0c34181a92b8b412f7e4c37132f131d424bbf20aef27308fb1",
+      "note": "Stem's 2025 10-K names Generate-Stem LCR, LLC, provides its formation date, class structure, 50/50 ownership and equity-method/current balance disclosures."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1758766/000175876626000081/stem-20260630.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1758766/000175876626000081/stem-20260630.htm",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 1500610,
+      "contentSha256": "065b9ab2fd1bd2636e9dec358d897897cc7a1973c4ef93ee4d11dcd2135f9e34",
+      "note": "Stem's Q2 2026 filing supports continuing SPE obligations and repayments through June 30 and separates the Canadian Logan/SPV VI sale process."
+    },
+    {
+      "url": "https://generatecapital.com/investment/422/",
+      "finalUrl": "https://generatecapital.com/investment/422/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 41739,
+      "contentSha256": "229299f97374fc17cff9bdf54a3f8a419e845e7f392240a7dafded0e2b60728b",
+      "note": "Generate's investment archive supports the project-finance/SPV model, disclosed investment amounts, host-contract term and capacity ceiling, but not the exact Generate affiliate."
+    },
+    {
+      "url": "https://www.sce.com/about-sce/energy-procurement/solicitations/archive/lcr-rfo",
+      "finalUrl": "https://www.sce.com/about-sce/energy-procurement/solicitations/archive/lcr-rfo",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 255774,
+      "contentSha256": "5acd518d287ad243d9187fbb2805f7652d806efe2ba879c091fa0bfe0b70188d",
+      "note": "SCE's procurement archive supports Stem's 85 MW LCR selection under two contracts; this is a program ceiling, not verified deployed capacity."
+    },
+    {
+      "url": "https://www.sce.com/business/save-costs-energy/savings-strategies/what-is-demand-response",
+      "finalUrl": "https://www.sce.com/business/save-costs-energy/savings-strategies/what-is-demand-response",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 226256,
+      "contentSha256": "33f31d6eb8a547b075aab6a0d8aea474024edf87a22db232ea1eb34c74cf82c4",
+      "note": "Current SCE page continues to list Stem's LCR network, supporting ongoing program continuity."
+    },
+    {
+      "url": "https://www.energy-storage.news/stem-takes-project-funding-to-us350-million/",
+      "finalUrl": "https://www.energy-storage.news/stem-takes-project-funding-to-us350-million/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 204898,
+      "contentSha256": "b41cb4253e89538edefff67739ddc792007fd42733cc393601a215b28236ffe0",
+      "note": "Contemporary trade coverage confirms the 2016 headline was a multi-financier pool rather than one legal Generate-owned platform."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allReturnedUrlsChecked": true,
+    "allEvidenceRowsChecked": true,
+    "deadUrlCount": 0,
+    "redirectCount": 0,
+    "primarySourceWorking": true,
+    "namedLegalVehicleVerified": true,
+    "generateStemLcrStakeStructureVerified": true,
+    "currentRunoffStatusSupported": true,
+    "generateExitNotFound": true,
+    "spvIIIExcludedFromGenerateAttribution": true,
+    "ontarioSaleSeparated": true,
+    "identityResolved": true,
+    "activeOwnershipResolved": true,
+    "applicationBlocked": false
+  },
+  "modelEvidenceCorrections": [
+    "Replace the generic 2016 umbrella with the named Generate-Stem LCR, LLC vehicle formed June 30, 2017.",
+    "Do not attribute Stem Finance SPV III to Generate without direct ownership evidence; the final packet correctly excludes it from Generate attribution.",
+    "Do not treat the 85 MW/340 MWh program ceiling as verified deployment.",
+    "Do not interpret the 2026 Canadian Logan/SPV VI sale process as a sale of the U.S. Generate-Stem LCR vehicle.",
+    "Use ACTIVE_RUNOFF rather than implying a growth platform or a completed Generate exit."
+  ],
+  "releaseRequirement": "The research supports a list correction retaining Generate-Stem LCR, LLC as the single manager-level vehicle for this task, with Generate and Stem as current 50/50 owners in active runoff. Retire the generic umbrella and keep historical SPV II unresolved rather than creating an unsupported duplicate."
+}

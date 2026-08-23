@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0123:connaught-oil-and-gas:bf7f3998",
+  "taskIndex": 123,
+  "companyName": "Connaught Oil and Gas",
+  "outcome": "EXCLUDED",
+  "decidedAt": "2026-08-23T04:46:00.000Z",
+  "rationale": "Connaught is upstream oil-and-gas E&P, not infrastructure. BCI reported I&RR exposure, but public evidence does not prove direct legal equity, holder, vehicle, stake or current title.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0123-connaught-oil-and-gas/attempt-1/locked-task-snapshot.json",
+    "sha256": "dd9c684d61b4d27115b14b5cb64a4d22a863195ddee06d9dd76fb4a50e8d8780"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0123-connaught-oil-and-gas/attempt-1/research-decision.json",
+    "sha256": "b9fa8a847cb082d29ac393b4fa280320138ddc8979f07253e8356367b223c470"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0123-connaught-oil-and-gas/attempt-1/source-verification.json",
+    "sha256": "67dd3f538fe4ba77733dcce748c54777679d9d00a070afc273757838d6a07d06"
+  },
+  "evidence": [
+    {
+      "url": "https://www.cogl.ca/",
+      "purpose": "Legal name, Calgary base and upstream E&P description"
+    },
+    {
+      "url": "https://www.investegate.co.uk/announcement/rns/reabold-resources--rbd/issue-of-shares/5879111",
+      "purpose": "Alberta identity, Reabold stake and Rathlin boundary"
+    },
+    {
+      "url": "https://www.shiftaction.ca/news/2022/11/24/statement-on-bci-2022-climate-action-plan",
+      "purpose": "BCI inventory comparison and first-disclosure timing"
+    },
+    {
+      "url": "https://www.bci.ca/investments/infrastructure-renewable-resources/overview/",
+      "purpose": "Current mandate and exposure types"
+    },
+    {
+      "url": "https://www.investegate.co.uk/announcement/rns/reabold-resources--rbd/full-year-results-for-year-ended-31-december-2025/9642982",
+      "purpose": "Rathlin sale, asset treatment, residual value and winding-up"
+    },
+    {
+      "url": "https://thenarwhal.ca/wp-content/uploads/2026/02/Shift-Action-2025-Pension-Climate-Report-Card.pdf",
+      "purpose": "BCI exposure cross-check at 2025-03-31"
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "0170f13d5fbd96ce231bc3f7d28d44e0120a0e3c70577bcf7d3a18e8702b6d90"
+}

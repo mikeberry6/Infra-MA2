@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0254:cambrian-innovation-water-asset-spvs:a5691d5c",
+  "taskIndex": 254,
+  "companyName": "Cambrian Innovation Water Asset SPVs",
+  "verifiedAt": "2026-08-20T07:53:59.496Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://cambrianinnovation.com/news/cambrian-a-leader-in-wastewater-treatment-water-reuse-and-energy-recovery-as-a-service-is-acquired-by-and-receives-200-million-growth-equity-commitment-from-pennybacker",
+      "finalUrl": "https://cambrianinnovation.com/news/cambrian-a-leader-in-wastewater-treatment-water-reuse-and-energy-recovery-as-a-service-is-acquired-by-and-receives-200-million-growth-equity-commitment-from-pennybacker",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 28770,
+      "contentSha256": "51ea05891c3e4d1ab9906ae2a69b0309d61152b45487e9953f48b66bde4f68c0",
+      "browserVerified": true,
+      "note": "Cambrian's November 16, 2023 announcement states that Pennybacker-affiliated funds acquired the company and committed an additional $200 million, directly resolving current corporate ownership."
+    },
+    {
+      "url": "https://cambrianinnovation.com/",
+      "finalUrl": "https://cambrianinnovation.com/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 67147,
+      "contentSha256": "b6ee164fc2416c9713eeb85fa7b89042f31eddd09c164220a5ba9f4f9825d664",
+      "browserVerified": true,
+      "note": "Cambrian's live site confirms the continuing wastewater treatment, water reuse and energy-recovery operating platform."
+    },
+    {
+      "url": "https://www.mintz.com/industries-practices/case-studies/mintz-helps-cambrian-innovation-generate-capital",
+      "finalUrl": "https://www.mintz.com/industries-practices/case-studies/mintz-helps-cambrian-innovation-generate-capital",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 27721,
+      "contentSha256": "aa914b159340b98ac52fba83050e33d2b695b7a3bfb7fdb1275b9ebe4d2fbbf3",
+      "browserVerified": true,
+      "note": "Mintz describes representing Cambrian on a project-financing facility under which a financing partner could fund construction and operation of a series of Cambrian facilities. It supports a project-finance boundary, not corporate equity ownership."
+    },
+    {
+      "url": "https://www.cambrianinnovation.com/news/cambrian-innovation-launches-30m-fund-to-finance-distributed-clean-water-solutions",
+      "finalUrl": "https://cambrianinnovation.com/news/cambrian-innovation-launches-30m-fund-to-finance-distributed-clean-water-solutions",
+      "status": "OPEN_REDIRECT_CANONICAL_HOST",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 28667,
+      "contentSha256": "2600b0afadaeadf847414f0824f857e143b1b0b533cb2c8931d231b1ae762822",
+      "browserVerified": true,
+      "note": "Cambrian's November 2015 announcement verifies the $30 million WEPA financing program and customer-pay-per-use model. It does not by itself name Generate or prove corporate equity."
+    },
+    {
+      "url": "https://generatecapital.com/investment/",
+      "finalUrl": "https://generatecapital.com/investment/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 60049,
+      "contentSha256": "85d7561370e32f5f3ce842cbad60c4e6da93d391e7a1a3e58f67bcba6ee59979",
+      "browserVerified": true,
+      "note": "Generate's live archive says Generate and Cambrian jointly owned a project-based SPV and reports a $15 million investment and $30 million contracted pipeline. The item is historical project-SPV evidence, not current corporate ownership."
+    },
+    {
+      "url": "https://cambrianinnovation.com/news/cambrian-and-ing-announce-150-million-facility",
+      "finalUrl": "https://cambrianinnovation.com/news/cambrian-and-ing-announce-150-million-facility",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 27908,
+      "contentSha256": "c90084940810eb0b1a05c27882d3ad90a99734ca301c55d57548932064763ee9",
+      "browserVerified": true,
+      "note": "Cambrian's June 4, 2025 announcement verifies the closed $150 million ING credit facility and continuing North American WEPA expansion; it is debt financing, not a new owner."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allReturnedUrlsChecked": true,
+    "allEvidenceRowsChecked": true,
+    "deadUrlCount": 0,
+    "browserFallbackCount": 0,
+    "primarySourceWorking": true,
+    "pennybackerCorporateAcquisitionVerified": true,
+    "pennybackerGrowthCommitmentVerified": true,
+    "generateHistoricalProjectSpvVerified": true,
+    "generateCorporateEquityVerified": false,
+    "generateCurrentManagerLevelOwnershipVerified": false,
+    "activeCorporatePlatformVerified": true,
+    "ingFacilityDebtOnlyVerified": true,
+    "unnamedProjectSpvsOutsideCanonicalBoundary": true,
+    "laterCorporateSaleOrPendingTransactionNotFound": true,
+    "identityResolved": true,
+    "activeOwnershipResolved": true,
+    "applicationBlocked": false
+  },
+  "modelEvidenceCorrections": [
+    "Use Cambrian Innovation as the manager-level canonical company and treat the generic water-asset-SPV label as a historical project-finance description.",
+    "Retire Generate's manager-level ownership attribution; Generate is directly evidenced only as a historical co-owner of a project-based SPV.",
+    "Add Pennybacker-affiliated funds as the current corporate owner from November 16, 2023 at an undisclosed stake.",
+    "Treat the 2025 ING facility as debt and do not create an owner or transaction-state change from it.",
+    "Exclude unnamed project SPVs from standalone PortCo counting while retaining their history beneath Cambrian."
+  ],
+  "releaseRequirement": "Correct the existing record to the Cambrian Innovation corporate platform, add Pennybacker-affiliated funds as current owner from November 16, 2023, retire Generate's manager-level ownership attribution, preserve Generate's historical project-SPV participation, and exclude unnamed project vehicles from standalone counting."
+}

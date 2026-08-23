@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0455:contract-leasing-corporation:083d749b",
+  "taskIndex": 455,
+  "companyName": "Contract Leasing Corporation",
+  "asOfDate": "2026-08-19",
+  "recordedAt": "2026-08-22T16:06:18.444Z",
+  "modelDecision": "PROPOSED_NEW",
+  "confidence": "HIGH",
+  "stageState": "STAGED_FAILED",
+  "applicationBlocked": true,
+  "rationale": "The research supports inclusion in substance, but the only repaired contract packet is not usable: it misidentifies founder and current CEO Michael Goor as Dennis T. Smith, asserts an unsupported fleet size above 30,000 units, and encodes pending evidenceUrls with the wrong type. The one-repair limit is exhausted, so the task must be recorded as failed rather than silently corrected or applied.",
+  "repoReconciliation": {
+    "productionCompanyCount": 0,
+    "seedCompanyCount": 0,
+    "censusHoldingId": "098-wafra:holding:001:contract-leasing-corporation",
+    "queuedActions": [
+      "CREATE_COMPANY",
+      "ADD_OWNER"
+    ],
+    "queuedActionTreatment": "BLOCK_AFTER_REPAIR_VALIDATION_FAILURE"
+  },
+  "supportedFactsForRetry": [
+    "Funds advised by Wafra acquired CLC on or by the August 2, 2022 announcement.",
+    "Founder Michael Goor remained a significant shareholder and is the current CEO.",
+    "Wafra currently lists CLC as a select real-assets and infrastructure investment.",
+    "CLC's president identified Wafra as its equity partner entering 2025.",
+    "The company owned or leased approximately 15,700 trailer and chassis units at acquisition and operated 13 branches and depots primarily east of the Mississippi."
+  ],
+  "unresolvedQuestions": [
+    "The specific Wafra fund or managed account and exact ownership percentage.",
+    "A current directly sourced fleet count after the 15,700-unit acquisition disclosure.",
+    "An exact legal closing date if different from August 2, 2022."
+  ],
+  "recommendedNextAction": "Schedule a fresh attempt after the ChatGPT rate limit fully clears. Require the retry to preserve Michael Goor, use only the 15,700-unit sourced baseline unless a newer direct figure is opened, and return evidenceUrls as an array. No database or seed mutation is authorized from this attempt.",
+  "databaseMutationAuthorized": false
+}

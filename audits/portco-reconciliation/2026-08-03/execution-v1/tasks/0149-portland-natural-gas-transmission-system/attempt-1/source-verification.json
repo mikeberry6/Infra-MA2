@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RESEARCH_SOURCE_VERIFICATION",
+  "taskId": "ledger:0149:portland-natural-gas-transmission-system:15040b8a",
+  "taskIndex": 149,
+  "companyName": "Portland Natural Gas Transmission System",
+  "verifiedAt": "2026-08-19T04:43:05.000Z",
+  "verifier": "Codex independent URL retrieval, redirect and content-hash check",
+  "summary": {
+    "evidenceRows": 7,
+    "open": 4,
+    "browserBlockedPendingReleaseReopen": 3,
+    "unavailablePendingReleaseReopen": 0,
+    "dead": 0,
+    "researchPacketAccepted": true
+  },
+  "sources": [
+    {
+      "httpStatus": 200,
+      "finalUrl": "https://www.tcenergy.com/announcements/2024/2024-08-15-tc-energy-completes-the-sale-of-portland-natural-gas-transmission-system/",
+      "workingStatus": "OPEN",
+      "contentCaptured": true,
+      "sha256": "bf6fae1bce606e44533537f731254c76662788b556f0264f4d0602d2b1b910c9",
+      "mediaType": "text/html; charset=utf-8",
+      "url": "https://www.tcenergy.com/announcements/2024/2024-08-15-tc-energy-completes-the-sale-of-portland-natural-gas-transmission-system/",
+      "label": "TC Energy close",
+      "purpose": "CLOSE_AND_FORMER_STAKES",
+      "isRecommendedPrimary": true,
+      "purposeReviewedAgainstResearchOutput": true
+    },
+    {
+      "httpStatus": 200,
+      "finalUrl": "https://www.tcenergy.com/announcements/2024/2024-03-04-tc-energy-announces-sale-of-portland-natural-gas-transmission-system/",
+      "workingStatus": "OPEN",
+      "contentCaptured": true,
+      "sha256": "1463feeca196bdf04a15e7fa905009238724282d89cab94d42f1829a4ce8bd42",
+      "mediaType": "text/html; charset=utf-8",
+      "url": "https://www.tcenergy.com/announcements/2024/2024-03-04-tc-energy-announces-sale-of-portland-natural-gas-transmission-system/",
+      "label": "TC Energy announcement",
+      "purpose": "BUYERS_SELLERS_VALUE",
+      "isRecommendedPrimary": false,
+      "purposeReviewedAgainstResearchOutput": true
+    },
+    {
+      "httpStatus": 403,
+      "finalUrl": "https://www.puc.nh.gov/VirtualFileRoom/ShowDocument.aspx?DocumentId=a01d59a1-e6ad-43e6-a7cf-d8c05b178aff",
+      "workingStatus": "BROWSER_BLOCKED_PENDING_RELEASE_REOPEN",
+      "contentCaptured": false,
+      "sha256": "d8155d72f4efe6aaab5ab22cc67a9dda7d5965cd23ed9123d27e123060590310",
+      "mediaType": "text/html",
+      "url": "https://www.puc.nh.gov/VirtualFileRoom/ShowDocument.aspx?DocumentId=a01d59a1-e6ad-43e6-a7cf-d8c05b178aff",
+      "label": "NH PUC order",
+      "purpose": "FUNDS_VEHICLE_STAKES_APPROVAL",
+      "isRecommendedPrimary": false,
+      "purposeReviewedAgainstResearchOutput": true
+    },
+    {
+      "httpStatus": 403,
+      "finalUrl": "https://www.morganstanley.com/im/en-us/individual-investor/companies/portland-natural-gas-transmission-system.html",
+      "workingStatus": "BROWSER_BLOCKED_PENDING_RELEASE_REOPEN",
+      "contentCaptured": false,
+      "sha256": "45a98f85f1d5bfea00098126f1c0af647689e93aec73e135de55df597b7fb8c3",
+      "mediaType": "text/html",
+      "url": "https://www.morganstanley.com/im/en-us/individual-investor/companies/portland-natural-gas-transmission-system.html",
+      "label": "Morgan Stanley portfolio",
+      "purpose": "MSIP_HOLDING_ENTRY",
+      "isRecommendedPrimary": false,
+      "purposeReviewedAgainstResearchOutput": true
+    },
+    {
+      "httpStatus": 200,
+      "finalUrl": "https://www.pngts.com/who-we-are",
+      "workingStatus": "OPEN",
+      "contentCaptured": true,
+      "sha256": "4441c3ab5d21336e2d833660a495e4d9b21f2f7fbb22657ca8238aeae1618e2b",
+      "mediaType": "text/html;charset=utf-8",
+      "url": "https://www.pngts.com/who-we-are",
+      "label": "PNGTS profile",
+      "purpose": "FOUNDING_SCALE_CUSTOMERS",
+      "isRecommendedPrimary": false,
+      "purposeReviewedAgainstResearchOutput": true
+    },
+    {
+      "httpStatus": 200,
+      "finalUrl": "https://www.pngts.com/press-insights/blog-post-title-one-xawhb",
+      "workingStatus": "OPEN",
+      "contentCaptured": true,
+      "sha256": "dcd940dcd759c3c97e922111740842adc56a3ce0b890d0e668f54b1e8214d4c8",
+      "mediaType": "text/html;charset=utf-8",
+      "url": "https://www.pngts.com/press-insights/blog-post-title-one-xawhb",
+      "label": "PNGTS standalone release",
+      "purpose": "IDENTITY_BOUNDARY_FOOTPRINT",
+      "isRecommendedPrimary": false,
+      "purposeReviewedAgainstResearchOutput": true
+    },
+    {
+      "httpStatus": 200,
+      "finalUrl": "https://unblock.federalregister.gov/",
+      "workingStatus": "BROWSER_BLOCKED_PENDING_RELEASE_REOPEN",
+      "contentCaptured": false,
+      "sha256": "c4def51ab98a77d7d06961db8bbe02e170e8f535da463b02c192dde59a7dbb35",
+      "mediaType": "text/html; charset=utf-8",
+      "url": "https://www.federalregister.gov/documents/2026/07/29/2026-15292/portland-natural-gas-transmission-system-notice-of-request-under-blanket-authorization-and",
+      "label": "2026 FERC notice",
+      "purpose": "CURRENT_OPERATIONS_OFFICE",
+      "isRecommendedPrimary": false,
+      "purposeReviewedAgainstResearchOutput": true
+    }
+  ],
+  "note": "Staging verification only; reopen and claim-check every source against a fresh production snapshot before proposal or release."
+}
+

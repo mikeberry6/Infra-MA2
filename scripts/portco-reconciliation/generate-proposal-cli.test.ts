@@ -247,6 +247,35 @@ function supersededProposalFixture(
 }
 
 describe("proposal patch ownership additions", () => {
+  it("adds a signed pending transaction without reconstructing a full company image", () => {
+    const context = contextFixture();
+    const ownerId = context.targetCompanyImage!.ownershipPeriods[0].id!;
+    const spec = {
+      ...baseSpec(),
+      actions: ["ADD_PENDING_TRANSACTION"],
+      ownershipPeriodAdditions: [],
+      companyFieldUpdates: { lastVerifiedAt: FIXTURE_NOW },
+      pendingOwnershipTransactionAdditions: [{
+        id: null,
+        direction: "EXIT",
+        transactionState: "SIGNED_PENDING_EXIT",
+        counterpartyName: "Approved Buyer",
+        transactionDescription: "Signed sale remains subject to closing.",
+        announcedAt: "2026-08-03",
+        expectedClosing: "Subject to regulatory approval",
+        relatedOwnershipPeriodIds: [ownerId],
+        evidenceUrls: ["https://acme.example.com/new-owner"],
+      }],
+    };
+    const applied = applySpec(context, spec);
+    expect(applied.afterImage?.pendingOwnershipTransactions).toHaveLength(1);
+    expect(applied.afterImage?.pendingOwnershipTransactions[0]).toMatchObject({
+      direction: "EXIT",
+      transactionState: "SIGNED_PENDING_EXIT",
+      relatedOwnershipPeriodIds: [ownerId],
+    });
+  });
+
   it("uses a snapshot-bound canonical identity for a canonical-null repo-only mutation", () => {
     expect(proposalCanonicalKey({
       resolvedCanonicalKey: "gfl-environmental-services|united-states-canada",

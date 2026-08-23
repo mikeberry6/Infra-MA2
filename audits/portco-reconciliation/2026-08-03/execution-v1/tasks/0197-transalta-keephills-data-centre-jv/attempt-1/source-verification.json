@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0197:transalta-keephills-data-centre-jv:34a62ae3",
+  "taskIndex": 197,
+  "companyName": "TransAlta Keephills Data Centre JV",
+  "verifiedAt": "2026-08-19T17:40:32.000Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://transalta.com/newsroom/transalta-enters-memorandum-of-understanding-for-data-centre-development-at-keephills-site-with-potential-to-scale-up-to-1-gw/",
+      "finalUrl": "https://transalta.com/newsroom/transalta-enters-memorandum-of-understanding-for-data-centre-development-at-keephills-site-with-potential-to-scale-up-to-1-gw",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 90220,
+      "contentSha256": "16c56997c39bb7177e01932d46d207276a9465aa0ccb129f3bcd7d0a767d166d",
+      "note": "Official announcement identifies the parties, TransAlta's exclusive site-and-power role, approximately 230 MW initial phase, potential 1 GW scale, and the requirement for future definitive binding agreements."
+    },
+    {
+      "url": "https://transalta.com/proposed-data-centre-development",
+      "finalUrl": "https://transalta.com/proposed-data-centre-development",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 82688,
+      "contentSha256": "10b17f3e420aef1fa795cde24da271b4462a96b8da958d730001197cd3772008",
+      "note": "Official project page says the MOU does not mean a data centre is being built and places the development in Stage 1 early planning."
+    },
+    {
+      "url": "https://cdn.sanity.io/files/glaib6u2/production/9e0c4a4b360e63c2fe6d21c7066a0777d3fd4081.pdf",
+      "finalUrl": "https://cdn.sanity.io/files/glaib6u2/production/9e0c4a4b360e63c2fe6d21c7066a0777d3fd4081.pdf",
+      "status": "OPEN_PDF_TEXT_VERIFIED",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 238156,
+      "contentSha256": "92731b497e35f3a2e1865d0b1111a166f2c5f40df5577eb89340d3557b8ceead",
+      "note": "Nineteen-page official transcript says CPP Investments and Brookfield are the two customers/proponents; definitive documents were still unfinished and investment, PPA and lease execution remained future work."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1144800/000114480026000041/q22026newsreleasecombined.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1144800/000114480026000041/q22026newsreleasecombined.htm",
+      "status": "BROWSER_OPEN_CURL_403",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": null,
+      "contentSha256": "8e5455df6ba75a56692991483a9d7496c4e79addcffbca88d5db5fdc581b4919",
+      "hashBasis": "in-app browser semantic DOM snapshot",
+      "note": "The filing opened directly in the signed-in browser even though automated curl received HTTP 403. It still describes the February 26 MOU, TransAlta's exclusive site-and-power role and development as subject to regulatory approvals and definitive agreements."
+    },
+    {
+      "url": "https://www.aeso.ca/grid/connecting-to-the-grid/large-load-projects/",
+      "finalUrl": "https://www.aeso.ca/grid/connecting-to-the-grid/large-load-projects/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 73042,
+      "contentSha256": "df18bc3b5dbe44248245453cf04f0e8252a899994f37cb61dc1aff504237896e",
+      "note": "AESO lists P3083 Keephills Data Centre Phase I at 230 MW; this is grid-connection evidence rather than CPP equity ownership evidence."
+    },
+    {
+      "url": "https://www.aeso.ca/assets/Uploads/project-reporting/August-2026-Project-List.xlsx",
+      "finalUrl": "https://www.aeso.ca/assets/Uploads/project-reporting/August-2026-Project-List.xlsx",
+      "status": "OPEN_ROWS_VERIFIED",
+      "httpStatus": 200,
+      "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 40702,
+      "contentSha256": "69135c1a6c8e75a99e6d68cf734cc83a88e6242a6cfe1ab6680aa146e11c8bea",
+      "note": "Artifact-tool inspection verified P3083 at row 105 as Active, P3095 at row 171 as ISD Under Review, and P3152 at row 185 as ISD Under Review. The workbook identifies project/grid stages, not a CPP investment vehicle or stake."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allEvidenceRowsChecked": true,
+    "allCoreClaimsHaveDirectOpenEvidence": true,
+    "deadUrlCount": 0,
+    "browserOrIndexFallbackCount": 1,
+    "redirectConcernCount": 0,
+    "spreadsheetRowsVerified": true,
+    "pdfContentExtracted": true
+  },
+  "releaseRequirement": "Exclude the proposed Keephills data-centre development from the active CPP Investments PortCo list and do not create a pending ownership transaction unless a definitive equity/JV agreement and legal close become publicly verifiable."
+}

@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0420:akumin:becd83c7",
+  "checkedAt": "2026-08-22T01:59:51.000Z",
+  "method": "Independent direct HTTP status, redirect, media-type and content-hash checks; SEC filing, company-release and manager-page inspection; acquisition, restructuring and exit search",
+  "sources": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1776197/000119312521202559/d195382dex992.htm",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1776197/000119312521202559/d195382dex992.htm",
+      "mediaType": "text/html",
+      "bytes": 896643,
+      "sha256": "a241924d4c165606cbc9c42d0a7d34f81dbfdf8fe845c7a0afe69e5c01985b84",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Stonepeak Magnet acquisition vehicle and Fund IV capital source",
+        "2021 note, share and warrant investment mechanics"
+      ]
+    },
+    {
+      "url": "https://akumin.com/press/akumin-announces-closing-of-acquisition-of-alliance-healthcare-services-and-related-financing/",
+      "httpStatus": 200,
+      "finalUrl": "https://akumin.com/press/akumin-announces-closing-of-acquisition-of-alliance-healthcare-services-and-related-financing/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 80129,
+      "sha256": "2ba5b37dec0165f90a375e1769d9c9af1b04c733302790ecb6581c9148f9f6a2",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Alliance acquisition and related financing closed September 1, 2021"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1671648/000121390023074003/ea184692-sc13dthaihot_akumin.htm",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1671648/000121390023074003/ea184692-sc13dthaihot_akumin.htm",
+      "mediaType": "text/html",
+      "bytes": 112484,
+      "sha256": "940ae48de32087195f36c234352b165e4bc80c93069cb2273f98b10f5077186c",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Thaihot held 14,223,570 shares and approximately 15.7% before restructuring"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1776197/000119312524025866/d31963d8k.htm",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1776197/000119312524025866/d31963d8k.htm",
+      "mediaType": "text/html",
+      "bytes": 80233,
+      "sha256": "c5072837b5188302846258eea8c8942fa96b72d4d07b45504b50100be4d4b0e3",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "February 6, 2024 plan effective date",
+        "Legacy equity cancellation and Stonepeak's 100% common control"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1776197/000119312523259995/d380424dex101.htm",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1776197/000119312523259995/d380424dex101.htm",
+      "mediaType": "text/html",
+      "bytes": 4079104,
+      "sha256": "4a7507a41649fce16be3a8ed609ee97b198a99ac4f0136bfa0fb05b466af2db9",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Akumin's patient/payor and hospital revenue model",
+        "Imaging, oncology and outsourced clinical-services operating profile"
+      ]
+    },
+    {
+      "url": "https://stonepeak.com/investments",
+      "httpStatus": 200,
+      "finalUrl": "https://stonepeak.com/investments",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 303186,
+      "sha256": "4f0a72952bb2b8608989bf7b9830cb25487feb19eedc5bf3fd053b964cfd9224",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Stonepeak continued to list Akumin as a current investment through the cutoff"
+      ]
+    },
+    {
+      "url": "https://akumin.com/press/akumin-inc-announces-final-results-of-exchange-offer/",
+      "httpStatus": 200,
+      "finalUrl": "https://akumin.com/press/akumin-inc-announces-final-results-of-exchange-offer/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 69742,
+      "sha256": "cd985d6b760dfb4e4643c76192adc4a9abe50485ce01130985f5ea44424f9b8e",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Final tender participation exceeded 99% thresholds",
+        "Settlement was expected February 23, 2026 but the page did not confirm consummation"
+      ]
+    },
+    {
+      "url": "https://akumin.com/press/akumin-inc-commences-exchange-offer-and-consent-solicitation/",
+      "httpStatus": 200,
+      "finalUrl": "https://akumin.com/press/akumin-inc-commences-exchange-offer-and-consent-solicitation/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 78900,
+      "sha256": "6e7310bf2f4f4c270257b98df543583cf92d77c8de8d40dc1e757e379f06fb22",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Proposed exchange contemplated converting approximately $119 million of RCF debt into preferred equity"
+      ]
+    }
+  ],
+  "exitSearch": {
+    "searchedAt": "2026-08-22T01:59:51.000Z",
+    "scopeThrough": "2026-08-19",
+    "result": "No later sale, IPO, bankruptcy recurrence, signed change of control or Stonepeak exit was found. Stonepeak still listed Akumin. The 2026 exchange achieved tender thresholds, but no primary completion or resulting preferred-equity cap-table notice was located."
+  },
+  "allEvidenceUrlsDirectHttps": true,
+  "allCoreSourcesWorkingOrVerified": true,
+  "directFetchBlockedButBrowserVerifiedCount": 0,
+  "responseSourceHealthCorrections": [
+    "All seven response evidence URLs and the additional exchange-commencement URL returned HTTP 200.",
+    "The final-results release establishes tender participation and an expected settlement date, not consummation; the recap remains unresolved."
+  ],
+  "deadSourceCount": 0
+}

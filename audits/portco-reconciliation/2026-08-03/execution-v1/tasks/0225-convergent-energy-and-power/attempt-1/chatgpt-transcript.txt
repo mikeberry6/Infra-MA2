@@ -1,0 +1,192 @@
+BEGIN_JSON
+{
+"asOfDate": "2026-08-19",
+"requestedCompany": "Convergent Energy and Power",
+"requestedManagers": [
+"Energy Capital Partners (ECP)"
+],
+"decision": "PROPOSED_CORRECTION",
+"confidence": "HIGH",
+"rationale": "Map the holding to the existing company and active ECP owner; add neither. The and/+ names are one platform. ECP acquired it through Fund IV in 2019; exact close, vehicle, seller and stake are NOT_PUBLICLY_DISCLOSED. DOE and bank facilities are project financing, and no later signed platform exit was identified.",
+"identityResolution": {
+"canonicalLegalName": "Convergent Energy and Power Inc.",
+"aliases": [
+"Convergent Energy and Power",
+"Convergent Energy + Power",
+"Convergent Energy + Power Inc.",
+"Convergent"
+],
+"officialWebsite": "https://convergentep.com/",
+"headquarters": "New York, New York, United States",
+"country": "United States",
+"platformBoundary": "One North American battery and solar-plus-storage platform. Projects, SPVs, borrowers and portfolios are subordinate assets, not peer companies or additional platform owners.",
+"duplicateDecision": "Retain one company; keep and/+ variants as aliases and do not create project-company duplicates."
+},
+"ownershipResolution": {
+"managerAliasDecision": "Resolve ECP to the existing Energy Capital Partners manager.",
+"currentOwners": [
+{
+"manager": "ECP",
+"organization": "Energy Capital Partners",
+"fund": "Fund IV",
+"vehicle": "NOT_PUBLICLY_DISCLOSED",
+"stake": "NOT_PUBLICLY_DISCLOSED",
+"announcementDate": "2019-07-10",
+"entryDate": "NOT_PUBLICLY_DISCLOSED",
+"entryYear": 2019,
+"exitDate": null,
+"exitYear": null,
+"isActive": true,
+"transactionState": "CLOSED_ACTIVE"
+}
+],
+"formerOwners": [],
+"pendingOwnershipTransactions": [],
+"duplicateOwnerAction": "Update the existing ECP period in place; do not add the census as another owner."
+},
+"operatingResolution": {
+"sector": "Power & ET",
+"subsector": "Battery storage and distributed energy infrastructure",
+"region": "North America",
+"countryTags": [
+"United States",
+"Canada"
+],
+"description": "Developer, owner, operator and optimizer of battery and solar-plus-storage systems.",
+"companyStatus": "ACTIVE",
+"yearFounded": 2011,
+"services": "Financing, development, ownership, operation and optimization.",
+"customersAndEndMarkets": "Commercial, industrial, utility, municipal, cooperative and developer customers.",
+"footprint": "United States and Canada, including Puerto Rico.",
+"disclosedScale": "Over $1 billion invested/committed; about 800 MW / 1 GWh disclosed in 2024."
+},
+"acquisitionExitCheck": {
+"initialAcquisition": {
+"signedDate": "2019-04",
+"reportedInvestmentMonth": "2019-06",
+"announcementDate": "2019-07-10",
+"legalClosingDate": "NOT_PUBLICLY_DISCLOSED",
+"seller": "NOT_PUBLICLY_DISCLOSED",
+"fund": "Fund IV",
+"vehicle": "NOT_PUBLICLY_DISCLOSED",
+"stake": "NOT_PUBLICLY_DISCLOSED"
+},
+"directEquityConclusion": "ECP acquired the operating platform; this was direct equity, not only project funding.",
+"financingBoundary": "DOE debt funded four Puerto Rico projects through subsidiaries. MUFG and NY Green Bank facilities are project/portfolio capital, not platform ownership.",
+"subsequentExitSearch": "ECP still labels Convergent Current; direct-source searches found no later platform sale, merger, sponsor exit or signed transfer through 2026-08-19.",
+"pendingTransactions": [],
+"signedPendingExitFound": false
+},
+"milestones": [
+{
+"date": "2011",
+"event": "Convergent founded."
+},
+{
+"date": "2019-07-10",
+"event": "Final-acquisition announcement; signed in April, with June reported as ECP's investment month. Exact close is NOT_PUBLICLY_DISCLOSED."
+},
+{
+"date": "2025-01-17",
+"event": "$584.5 million DOE-guaranteed project loan closed through subsidiaries; no platform transfer."
+},
+{
+"date": "2026-08-19",
+"event": "ECP still lists Convergent Current; no signed platform exit identified."
+}
+],
+"evidence": [
+{
+"label": "ECP current portfolio",
+"url": "https://www.ecpgp.com/equity/portfolio/convergent",
+"purpose": "Current status, June 2019 timing, geography and platform.",
+"sourceTier": "PRIMARY",
+"workingStatus": "WORKING",
+"isRecommendedPrimary": true
+},
+{
+"label": "Convergent acquisition release",
+"url": "https://convergentep.com/news/ecp",
+"purpose": "April signing, July 10 announcement and direct acquisition.",
+"sourceTier": "PRIMARY",
+"workingStatus": "WORKING",
+"isRecommendedPrimary": false
+},
+{
+"label": "ECP-hosted acquisition article",
+"url": "https://www.ecpgp.com/about/news-and-insights/press-releases/2019/energy-capital-partners-acquires-convergent-energy-power",
+"purpose": "Fund IV and separate-platform boundary.",
+"sourceTier": "INSTITUTIONAL",
+"workingStatus": "WORKING",
+"isRecommendedPrimary": false
+},
+{
+"label": "DOE project page",
+"url": "https://www.energy.gov/edf/convergent",
+"purpose": "Legal name, project subsidiaries and DOE debt boundary.",
+"sourceTier": "REGULATORY",
+"workingStatus": "WORKING",
+"isRecommendedPrimary": false
+},
+{
+"label": "MUFG financing release",
+"url": "https://convergentep.com/news/mitsubishi",
+"purpose": "Project/portfolio financing and scale.",
+"sourceTier": "PRIMARY",
+"workingStatus": "WORKING",
+"isRecommendedPrimary": false
+},
+{
+"label": "NY Green Bank facility",
+"url": "https://convergentep.com/news/convergent-closes-multimillion-dollar-interconnection-facility",
+"purpose": "Later project financing and ongoing activity.",
+"sourceTier": "PRIMARY",
+"workingStatus": "WORKING",
+"isRecommendedPrimary": false
+}
+],
+"beforeAfterChanges": [
+{
+"field": "identity",
+"before": "And/+ names treated as potentially separate.",
+"after": "One canonical company; plus-sign names are aliases."
+},
+{
+"field": "ownership",
+"before": "Census could create a second ECP owner.",
+"after": "Retain existing owner; add Fund IV and 2019; vehicle/stake remain NOT_PUBLICLY_DISCLOSED."
+},
+{
+"field": "financing",
+"before": "Project facilities could appear as ownership changes.",
+"after": "Treat as financing; no pending platform transaction."
+}
+],
+"excludedOrDuplicateCandidates": [
+{
+"candidate": "Convergent Energy + Power Inc.",
+"disposition": "DUPLICATE_ALIAS",
+"rationale": "Same platform."
+},
+{
+"candidate": "Convergent Ashford Development LLC / Convergent Puerto Rico TE Holdco LLC",
+"disposition": "SUBORDINATE_PROJECT_ENTITIES",
+"rationale": "DOE project subsidiaries."
+},
+{
+"candidate": "DOE, MUFG and NY Green Bank",
+"disposition": "FINANCIERS_NOT_PLATFORM_OWNERS",
+"rationale": "Project/portfolio capital providers."
+}
+],
+"unresolvedQuestions": [
+"NOT_PUBLICLY_DISCLOSED: exact 2019 legal closing day.",
+"NOT_PUBLICLY_DISCLOSED: acquisition vehicle, stake and seller; these do not block resolution."
+],
+"recommendedListAction": "PROPOSED_CORRECTION: retain the company and ECP owner; canonicalize the name, preserve aliases, add Fund IV/2019, use NOT_PUBLICLY_DISCLOSED for vehicle/stake/exact close/seller, and add no company, owner or pending transaction."
+}
+END_JSON
+BEGIN_REVIEW
+PROPOSED_CORRECTION is warranted. ECP lists Convergent as Current with a June 2019 investment; Convergent says the agreement was signed in April and the final acquisition announced July 10, while ECP attributes it to Fund IV and describes Convergent as a separate platform. Bridgepoint ECP+2Convergent Energy and Power+2
+The DOE, MUFG and NY Green Bank transactions are project- or portfolio-level financing, not direct platform ownership transfers. The existing company and ECP owner should therefore be corrected in place without adding a duplicate owner or pending transaction. The Department of Energy's Energy.gov+2Convergent Energy and Power+2
+END_REVIEW

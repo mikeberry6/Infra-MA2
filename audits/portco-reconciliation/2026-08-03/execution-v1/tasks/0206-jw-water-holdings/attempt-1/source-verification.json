@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0206:jw-water-holdings:fc8ebab0",
+  "taskIndex": 206,
+  "companyName": "JW Water Holdings and the Robson Utilities acquisition portfolio",
+  "verifiedAt": "2026-08-19T20:09:10.000Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://www.cvc.com/media/news/2024/2024-11-21-cvc-dif-acquires-a-portfolio-of-us-regulated-water-and-wastewater-utilities/",
+      "finalUrl": "https://www.cvc.com/media/news/2024/2024-11-21-cvc-dif-acquires-a-portfolio-of-us-regulated-water-and-wastewater-utilities/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 96713,
+      "contentSha256": "d97e3bfeddb73be4beb550673d80ca77bd6723433e7b74452a44337adb8da572",
+      "note": "Official sponsor release confirms two completed acquisitions through DIF Infrastructure VII: JW's ten-utility platform and eight Robson utilities, serving more than 50,000 customers together."
+    },
+    {
+      "url": "https://jwwater.com/",
+      "finalUrl": "https://jwwater.com/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 53959,
+      "contentSha256": "54b762a8ac814877a6ba96c18c349d4a2286f46c45c3fd3a6e5f3b846dbc6193",
+      "note": "Current company site identifies JW Water Holdings, more than 50,000 Arizona customers and the integrated utility roster including Pima and former Robson operations."
+    },
+    {
+      "url": "https://robson.com/contact/",
+      "finalUrl": "https://robson.com/contact/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 170035,
+      "contentSha256": "e11d77884381865d220a0b40945dc8c71d4dc96736f60a50fae19006c1bd446b",
+      "note": "Robson's current contact page lists the exact eight utility names associated with the acquisition cohort."
+    },
+    {
+      "url": "https://jwwater.com/pima/wp-content/uploads/sites/12/2026/03/Pima-Rate-Case-FAQ.pdf",
+      "finalUrl": "https://jwwater.com/pima/wp-content/uploads/sites/12/2026/03/Pima-Rate-Case-FAQ.pdf",
+      "status": "OPEN_PDF_VISUALLY_VERIFIED",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 145695,
+      "contentSha256": "c20e74c30e6c4f4e2696bacaa36a7491ef6de3b51fa6e4e54bd2a663eff153e6",
+      "pageCount": 2,
+      "verifiedPage": 1,
+      "note": "The PDF was extracted and rendered. Page 1 says Pima became a wholly owned JW Water Holdings subsidiary on November 20, 2024 and describes the proposed Pima Water/Pima Sewer split."
+    },
+    {
+      "url": "https://www.azcc.gov/news/home/2025/11/21/november-19--2025-open-meeting-highlights",
+      "finalUrl": "https://www.azcc.gov/news/home/2025/11/21/november-19--2025-open-meeting-highlights",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 35871,
+      "contentSha256": "a99dd203fa09b03cb47e480262d7c1a6b5ac6b431a40a587bb4eaac04ff10c6a",
+      "note": "Arizona Corporation Commission says JW Water Holdings owned Bensch Ranch, Pine Meadows, Verde Santa Fe and 15 other Arizona utilities while approving an internal consolidation."
+    },
+    {
+      "url": "https://azcc.gov/news/home/2026/08/17/august-12--2026-open-meeting-highlights",
+      "finalUrl": "https://azcc.gov/news/home/2026/08/17/august-12--2026-open-meeting-highlights",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 30072,
+      "contentSha256": "6f12bff6a4a54bb2809b3568737a89fdaa89a8a92188e6d8149851e358b866f6",
+      "note": "Latest ACC release approves consolidation of Quail Creek, Ridgeview and Lago Del Oro into JW Water Utility Company, an internal utility reorganization rather than a sponsor exit."
+    },
+    {
+      "url": "https://jwwater.com/pima/wp-content/uploads/sites/12/2026/03/Pima-Public-Notice-of-Hearing-and-Public-Comment-Meetings.pdf",
+      "finalUrl": "https://jwwater.com/pima/wp-content/uploads/sites/12/2026/03/Pima-Public-Notice-of-Hearing-and-Public-Comment-Meetings.pdf",
+      "status": "OPEN_PDF_VISUALLY_VERIFIED",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 244798,
+      "contentSha256": "5640275982bde657b6bf6199fb898c4f2ea4eafe33f22c5cace4c26ea4db18ae",
+      "pageCount": 2,
+      "verifiedPage": 1,
+      "note": "The public notice was extracted and rendered. Page 1 confirms the pending deconsolidation applications, $7.5 million and $5.0 million affiliate-debt requests, and ongoing staff review."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allReturnedUrlsChecked": true,
+    "allEvidenceRowsChecked": true,
+    "allPendingTransactionUrlsChecked": true,
+    "allCoreClaimsHaveDirectOpenEvidence": true,
+    "deadUrlCount": 0,
+    "browserOrIndexFallbackCount": 0,
+    "redirectConcernCount": 0,
+    "samePlatformBoundaryDirectlyProven": true,
+    "postCloseEvidencePresent": true,
+    "currentOwnershipEvidencePresent": true,
+    "pdfEvidenceVisuallyVerified": true
+  },
+  "releaseRequirement": "Keep JW Water Holdings as the sole manager-level CVC DIF PortCo, merge the two Robson manager-level rows, preserve Pima and the other utilities as subsidiary/history records, and record the pending Pima split only as an internal reorganization."
+}

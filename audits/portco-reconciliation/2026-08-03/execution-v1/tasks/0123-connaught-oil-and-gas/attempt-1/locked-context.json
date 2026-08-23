@@ -1,0 +1,253 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0123:connaught-oil-and-gas:bf7f3998",
+  "taskIndex": 123,
+  "companyName": "Connaught Oil and Gas",
+  "generatedAt": "2026-08-23T04:26:39.261Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0123-connaught-oil-and-gas/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 123,
+    "taskId": "ledger:0123:connaught-oil-and-gas:bf7f3998",
+    "canonicalKey": "connaught-oil-and-gas|canada",
+    "companyName": "Connaught Oil and Gas",
+    "country": "Canada",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 21,
+    "managers": [
+      "BCI"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "021-bci:holding:014:connaught-oil-and-gas"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpj8jc00mjivhe745y18v8"
+    ],
+    "seedKeys": [
+      "connaught oil and gas|Canada"
+    ],
+    "evidenceUrls": [
+      "https://thenarwhal.ca/wp-content/uploads/2026/02/Shift-Action-2025-Pension-Climate-Report-Card.pdf",
+      "https://www.energyvoice.com/markets/energy-finance/564385/canadas-connaught-sells-out-of-uk-gas-field-to-bullish-reabold/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted census NEEDS_REVIEW for 021-bci:holding:014:connaught-oil-and-gas: Ownership attribution relies on secondary sources without definitive primary confirmation of infrastructure mandate. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Accepted census NEEDS_REVIEW for 021-bci:holding:014:connaught-oil-and-gas: Ownership attribution relies on secondary sources without definitive primary confirmation of infrastructure mandate."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj8jc00mjivhe745y18v8",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "connaught-oil-and-gas|canada",
+  "targetCompanyImage": {
+    "id": "cmrxpj8jc00mjivhe745y18v8",
+    "name": "Connaught Oil and Gas",
+    "aliases": [],
+    "sector": "MIDSTREAM",
+    "subsector": "Oil and natural gas exploration and production",
+    "region": "NORTH_AMERICA",
+    "country": "Canada",
+    "countryTags": [
+      "Canada"
+    ],
+    "description": "Connaught Oil and Gas is a Calgary-based petroleum and natural gas company. Public references describe the business as participating in exploration, development, and production activities rather than regulated utility or contracted infrastructure operations. Its operating model is asset-heavy and commodity-exposed because cash flows depend on hydrocarbon reserves, drilling activity, and realized oil and gas prices. Operations are centered in Alberta and, based on public reports, have also included non-operated interests outside Canada. Publicly available information on scale, founding year, and current ownership structure is limited. BCI has been identified in public reports as an investor in the company, but current ownership percentages and the broader ownership group are not publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Alberta",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjtn001jpivhe2w83uilz",
+        "managerName": "BCI",
+        "organizationName": "BCI",
+        "fundName": "Infrastructure & Renewable Resources",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkuqn02yzivheh2uz3oi2",
+        "date": "Sep 19, 2024",
+        "event": "Energy Voice reported that Connaught sold its stake in the Rathlin JV in the United Kingdom.",
+        "category": "DIVESTITURE",
+        "sortDate": "2024-09-19T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkur702z0ivhev2z6qy8z",
+        "date": "2025",
+        "event": "BCI invested in Connaught Oil and Gas through Infrastructure & Renewable Resources.",
+        "category": "FINANCING",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxppg7z086sivhe87w9i6r8",
+        "label": "Energyvoice — Connaught Oil and Gas",
+        "url": "https://www.energyvoice.com/markets/energy-finance/564385/canadas-connaught-sells-out-of-uk-gas-field-to-bullish-reabold/",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Energyvoice transaction or milestone detail",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxppg93086uivherb4q8c8b",
+        "label": "Thenarwhal — Connaught Oil and Gas",
+        "url": "https://thenarwhal.ca/wp-content/uploads/2026/02/Shift-Action-2025-Pension-Climate-Report-Card.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Thenarwhal — Connaught Oil and Gas",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppga7086wivhe9va909c2",
+        "label": "Shiftaction — Connaught Oil and Gas",
+        "url": "https://www.shiftaction.ca/s/Shift-2025-Canadian-Pension-Climate-Report-Card-Summary.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Shiftaction — Connaught Oil and Gas",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppgba086yivhezgearv2t",
+        "label": "Bdo — Connaught Oil and Gas",
+        "url": "https://www.bdo.ca/getmedia/c62f2d6e-61f0-4295-be46-9075326a9562/Application-for-Limited-Discharge-Nov-27-2020118164121-1.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Bdo — Connaught Oil and Gas",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Connaught Oil and Gas",
+    "investmentFirm": "BCI",
+    "sector": "Midstream",
+    "subsector": "Oil and natural gas exploration and production",
+    "region": "North America",
+    "country": "Canada",
+    "ownershipVehicle": "n.a.",
+    "description": "Connaught Oil and Gas is a Calgary-based petroleum and natural gas company. Public references describe the business as participating in exploration, development, and production activities rather than regulated utility or contracted infrastructure operations. Its operating model is asset-heavy and commodity-exposed because cash flows depend on hydrocarbon reserves, drilling activity, and realized oil and gas prices. Operations are centered in Alberta and, based on public reports, have also included non-operated interests outside Canada. Publicly available information on scale, founding year, and current ownership structure is limited. BCI has been identified in public reports as an investor in the company, but current ownership percentages and the broader ownership group are not publicly disclosed.",
+    "status": "Active",
+    "countryTags": [
+      "Canada"
+    ],
+    "investmentYear": 2025,
+    "headquarters": "Alberta",
+    "milestones": [
+      {
+        "date": "Sep 19, 2024",
+        "event": "Energy Voice reported that Connaught sold its stake in the Rathlin JV in the United Kingdom.",
+        "category": "Divestiture"
+      },
+      {
+        "date": "2025",
+        "event": "BCI invested in Connaught Oil and Gas through Infrastructure & Renewable Resources.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Energyvoice — Connaught Oil and Gas",
+        "url": "https://www.energyvoice.com/markets/energy-finance/564385/canadas-connaught-sells-out-of-uk-gas-field-to-bullish-reabold/",
+        "type": "ARTICLE",
+        "purpose": "MILESTONE_EVENT"
+      },
+      {
+        "label": "Thenarwhal — Connaught Oil and Gas",
+        "url": "https://thenarwhal.ca/wp-content/uploads/2026/02/Shift-Action-2025-Pension-Climate-Report-Card.pdf",
+        "type": "PRESENTATION"
+      },
+      {
+        "label": "Shiftaction — Connaught Oil and Gas",
+        "url": "https://www.shiftaction.ca/s/Shift-2025-Canadian-Pension-Climate-Report-Card-Summary.pdf",
+        "type": "PRESENTATION"
+      },
+      {
+        "label": "Bdo — Connaught Oil and Gas",
+        "url": "https://www.bdo.ca/getmedia/c62f2d6e-61f0-4295-be46-9075326a9562/Application-for-Limited-Discharge-Nov-27-2020118164121-1.pdf",
+        "type": "PRESENTATION"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "BCI",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2025,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj1av00btivhe22q21yhy",
+        "fundName": "Infrastructure & Renewable Resources",
+        "managerId": "cmrxpi4wo000tivheupfc57xk",
+        "updatedAt": "2026-07-23T16:09:55.543Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi4wo000tivheupfc57xk",
+        "name": "BCI",
+        "updatedAt": "2026-07-23T16:09:13.560Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0123:connaught-oil-and-gas:bf7f3998",
+    "taskIndex": 123,
+    "canonicalKey": "connaught-oil-and-gas|canada",
+    "capturedAt": "2026-08-23T04:26:39.261Z",
+    "databaseRevision": "revision:19332a7d598f47c4b94cd6e3bfdf0479fca7eec9343ac3438c305f7b31fd63d5",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "5d5f52c0200fea96963092f0d66ecaf56e2393ed6172b1e9adc9d892308b4165",
+    "productionSnapshotSha256": "4c379e69a8bb0fbf03544d66206e3b9a4cf8def7820481431ec205e084e09d88",
+    "targetCompanySnapshotSha256": "435d567c4632125349b073d88c95d65f1527063ac9dcaadcf331688a9bdaced2",
+    "seedEntrySha256": "f695203eb1088043f2b2f7d803fa664fc5c8f7e583c2f2d010c7722410ba264e",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "95f5785a6559c6b6ae9210e2622edb778d3e5d7a67176b25683a8c615fdc5127",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "dcd177ee3778e283e7063c1b60f809c4e101c348b95e5c8073041ffcf3ec8829",
+      "organizationsSha256": "1cef697030a3ddd6682905fd69293d3c170819eebbbca06730d02467b8e3f1ca",
+      "citationsSha256": "a7c02c3056ed5130a43e7edf620b84c3904c3bd2bc9e3323078c616c7f942e43",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "3fd0c2999d97229ea7237c0df23fb300276759d4b7990a5b7a2ee0ad99434397",
+    "stateSha256": "e645c3d776df7b9c0af7db7d922dc638e981126562a42e2a0169d390c43db571",
+    "taskSnapshotSha256": "11bedcc5176c8fbefe846c1f9417fd306c3295df8ee37dd86b61a86573350d70"
+  },
+  "contextSha256": "64b7bc487af0fb51e82be5d11ded9f8b1c9cb7b790aba126c2e47300c867f3c4"
+}

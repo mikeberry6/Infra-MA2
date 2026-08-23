@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0174:vertical-bridge:62c32643",
+  "taskIndex": 174,
+  "companyName": "Vertical Bridge",
+  "verifiedAt": "2026-08-19T07:25:17.132Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://www.verticalbridge.com/press-releases/vertical-bridge-announces-1-5-billion-strategic-equity-investment-from-kkr",
+      "finalUrl": "https://www.verticalbridge.com/press-releases/vertical-bridge-announces-1-5-billion-strategic-equity-investment-from-kkr",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 27746,
+      "contentSha256": "822577a6dd484baa9bc2c88ca16a64b1cd6ae967613a5e73321b20a5756929cc",
+      "note": "Vertical Bridge announcement opened and supports the KKR investment announcement."
+    },
+    {
+      "url": "https://www.centerviewpartners.com/transactions.aspx",
+      "finalUrl": "https://www.centerviewpartners.com/transactions.aspx",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 755658,
+      "contentSha256": "6edfc0fbd3e170b5d15cffc7de8ae4743be9b80a7aeee68e310c9344d9c76856",
+      "note": "Centerview transaction page opened and supports completion of the KKR financing."
+    },
+    {
+      "url": "https://www.digitalbridge.com/news/2021-10-13-digitalbridge-completes-acquisition-of-controlling-stake-in-vertical-bridge",
+      "finalUrl": "https://www.digitalbridge.com/news/2021-10-13-digitalbridge-completes-acquisition-of-controlling-stake-in-vertical-bridge",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 28373,
+      "contentSha256": "8b7eb98a9e67fcc8f1380e7355f75a019cf1b828a466a06ba38af3473bec130e",
+      "note": "DigitalBridge 2021 closing page opened and supports the controlling-stake acquisition."
+    },
+    {
+      "url": "https://www.digitalbridge.com/portfolio/vertical-bridge",
+      "finalUrl": "https://www.digitalbridge.com/portfolio/vertical-bridge",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 12956,
+      "contentSha256": "7216f3a96356fcb2bb5b3b4967077be50ea40d32914c4e9755f9dfd8f6505452",
+      "note": "Current DigitalBridge portfolio page opened directly."
+    },
+    {
+      "url": "https://www.lacaisse.com/en/news/pressreleases/cdpq-acquire-30-stake-us-wireless-infrastructure-leader-vertical-bridge",
+      "finalUrl": "https://www.lacaisse.com/en/news/pressreleases/cdpq-acquire-30-stake-us-wireless-infrastructure-leader-vertical-bridge",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 83261,
+      "contentSha256": "63460e3b949ea9e89d8121a5b917af873e3f05cd0c296702d9798e16a92b2d5e",
+      "note": "La Caisse 2019 entry page opened and supports the disclosed 30% initial stake."
+    },
+    {
+      "url": "https://www.lacaisse.com/en/news/perspectives/cdpq-vertical-bridge-relationship-based-trust-targetted-towards-accelerating-growth",
+      "finalUrl": "https://www.lacaisse.com/en/news/perspectives/cdpq-vertical-bridge-relationship-based-trust-targetted-towards-accelerating-growth",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 81027,
+      "contentSha256": "010ec5b3588a1f5f042d68af92148a41e8c3737389b702e8641589642ff84001",
+      "note": "La Caisse current relationship page opened and corroborates continuing ownership."
+    },
+    {
+      "url": "https://www.digitalbridge.com/news/2023-02-02-digitalbridge-completes-acquisition-of-amp-capital-global-infrastructure-equity-investment-management-business",
+      "finalUrl": "https://www.digitalbridge.com/news/2023-02-02-digitalbridge-completes-acquisition-of-amp-capital-global-infrastructure-equity-investment-management-business",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 31612,
+      "contentSha256": "2d43b4bbcb443af232aa5373b8daebd10bb6df2d0b8cf61c1e2d8ad30ab25909",
+      "note": "DigitalBridge InfraBridge acquisition page opened and supports the manager-name boundary, not direct Vertical Bridge ownership."
+    },
+    {
+      "url": "https://ir.digitalbridge.com/news-releases/news-release-details/digitalbridge-reports-second-quarter-2026-financial-results/",
+      "finalUrl": "https://ir.digitalbridge.com/news-releases/news-release-details/digitalbridge-reports-second-quarter-2026-financial-results/",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 517,
+      "contentSha256": "51251f99441ba86faf3e909bc9c69cddf317865cc5e5dca6e7b23549251ebb3a",
+      "note": "DigitalBridge IR blocked curl but independently rendered in the browser and supported the still-pending SoftBank parent transaction."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allEvidenceRowsChecked": true,
+    "allCoreClaimsHaveOpenOrBrowserVerifiedEvidence": true,
+    "deadUrlCount": 0,
+    "redirectConcernCount": 0
+  },
+  "releaseRequirement": "Keep one Vertical Bridge record, preserve active La Caisse, DigitalBridge and KKR ownership with only disclosed stakes, remove InfraBridge as a direct owner, and keep the SoftBank transaction as parent-level pending context rather than a direct Vertical Bridge transfer."
+}

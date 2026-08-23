@@ -1,0 +1,188 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RESEARCH_DECISION",
+  "taskId": "ledger:0136:cleancapital-holdings-llc:f7156fe1",
+  "taskIndex": 136,
+  "companyName": "CleanCapital Holdings, LLC",
+  "asOfDate": "2026-08-19",
+  "stagedAt": "2026-08-19T03:33:28.170Z",
+  "researchOnly": true,
+  "mutationAuthorized": false,
+  "proposalRequiresFreshProductionSnapshot": true,
+  "releaseRequiresFreshAcquisitionExitCheck": true,
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "CleanCapital Holdings, LLC",
+    "requestedManagers": [
+      "BlackRock",
+      "Global Infrastructure Partners"
+    ],
+    "decision": "PROPOSED_MERGE",
+    "confidence": "HIGH",
+    "rationale": "CleanCapital is one active U.S. solar-and-storage platform. BlackRock funds invested directly in the firm in 2019, but the 2021 Manulife transaction restructured CleanCapital around its balance sheet and ended BlackRock's ownership of the original 46.9 MW asset partnership. Current company materials name Manulife as the backer. No evidence shows GIP directly owned CleanCapital or received the investment when BlackRock acquired GIP.",
+    "identityResolution": {
+      "legalName": "CleanCapital Holdings LLC",
+      "displayName": "CleanCapital",
+      "aliases": [
+        "CleanCapital Holdings, LLC"
+      ],
+      "country": "United States",
+      "headquarters": "New York, New York",
+      "website": "https://cleancapital.com/",
+      "founded": 2015,
+      "boundary": "Include the manager-level owner/operator/developer. Exclude project SPVs, financing vehicles and integrated subsidiary BQ Energy as separate PortCos."
+    },
+    "ownershipResolution": {
+      "owners": [
+        {
+          "manager": "Manulife Investment Management",
+          "organization": "Manulife Investment Management",
+          "fund": "Manulife Infrastructure Fund II",
+          "vehicle": "John Hancock Life Insurance Company (U.S.A.) balance sheet and third-party managed accounts",
+          "stake": "NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2021-04-20",
+          "entryDate": "NOT_PUBLICLY_DISCLOSED",
+          "entryYear": 2021,
+          "exitDate": "NOT_APPLICABLE",
+          "exitYear": "NOT_APPLICABLE",
+          "isActive": true,
+          "transactionState": "CURRENT; commitment increased in 2023 and Manulife plus unnamed co-investors added $145 million of equity in 2024"
+        },
+        {
+          "manager": "BlackRock",
+          "organization": "BlackRock Renewable Power Group",
+          "fund": "NOT_PUBLICLY_DISCLOSED",
+          "vehicle": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2019-04-02",
+          "entryDate": "NOT_PUBLICLY_DISCLOSED",
+          "entryYear": 2019,
+          "exitDate": "NOT_PUBLICLY_DISCLOSED",
+          "exitYear": "NOT_PUBLICLY_DISCLOSED",
+          "isActive": false,
+          "transactionState": "FORMER_DIRECT_EQUITY; exact platform-level exit mechanics and date are undisclosed"
+        }
+      ],
+      "BlackRock": "Preserve the 2019 historical period; retire current status and remove the unsupported Evergreen Infrastructure Fund attribution.",
+      "GlobalInfrastructurePartners": "No ownership period. BlackRock's 2024 manager-level acquisition of GIP does not prove a legal transfer of CleanCapital.",
+      "current": "Manulife is the only named current institutional backer; 2024 co-investors were unnamed."
+    },
+    "operatingResolution": {
+      "status": "Active",
+      "listQualification": "INCLUDE",
+      "sector": "Distributed solar and energy storage infrastructure",
+      "model": "Develops, builds, owns, operates and invests in contracted distributed-energy assets.",
+      "footprint": "United States; current materials report activity across 30 states and U.S. territories.",
+      "scale": "January 2026: over 350 projects and 500 MW. Current site: over 450 MW managed, over 1 GW in development and over $1.5 billion invested."
+    },
+    "acquisitionExitCheck": {
+      "searchThrough": "2026-08-18",
+      "platformResult": "No public platform sale, merger, bankruptcy or signed pending exit found.",
+      "pendingTransactions": [],
+      "assetResult": "CleanCapital completed the 120 MW Nottingham development sale to Energix on 2026-04-22; this was an asset sale, not a platform exit."
+    },
+    "milestones": [
+      {
+        "date": "2019-04-02",
+        "event": "BlackRock Renewable Power Group funds invested directly in CleanCapital."
+      },
+      {
+        "date": "2021-04-20",
+        "event": "Manulife made a corporate investment and $300 million commitment; CleanCapital became sole owner of the 46.9 MW portfolio previously financed with BlackRock."
+      },
+      {
+        "date": "2024-12-17",
+        "event": "Manulife and institutional co-investors added $145 million of equity."
+      },
+      {
+        "date": "2026-04-22",
+        "event": "CleanCapital completed the Nottingham project sale to Energix; asset-level only."
+      }
+    ],
+    "evidence": [
+      {
+        "label": "Current capital backing",
+        "url": "https://cleancapital.com/project-acquisition/capital/",
+        "purpose": "CURRENT_OWNERSHIP",
+        "sourceTier": "COMPANY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "2019 BlackRock firm investment",
+        "url": "https://cleancapital.com/resources/cleancapital-announces-new-investment-from-blackrocks-renewable-power-group/",
+        "purpose": "HISTORICAL_OWNERSHIP",
+        "sourceTier": "COMPANY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "2021 Manulife investment and transition",
+        "url": "https://cleancapital.com/resources/cleancapital-secures-300-million-commitment-from-manulife-investment-management-acquires-63-megawatts-of-operating-solar-projects/",
+        "purpose": "OWNERSHIP_TRANSITION",
+        "sourceTier": "COMPANY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Manulife Fund II attribution",
+        "url": "https://www.manulifeim.com/institutional/global/en/strategies/private-markets/infrastructure/infrastructure-team",
+        "purpose": "FUND_ATTRIBUTION",
+        "sourceTier": "MANAGER",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Current company profile",
+        "url": "https://cleancapital.com/",
+        "purpose": "IDENTITY_OPERATIONS",
+        "sourceTier": "COMPANY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "BlackRock acquisition of GIP",
+        "url": "https://www.blackrock.com/corporate/newsroom/media/press-releases/blackrock-completes-acquisition-of-global-infrastructure-partners",
+        "purpose": "MANAGER_LINEAGE",
+        "sourceTier": "MANAGER",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "2026 Nottingham asset sale",
+        "url": "https://cleancapital.com/resources/cleancapital-sells-120-mw-solar-project-to-energix-renewables/",
+        "purpose": "EXIT_SCREENING",
+        "sourceTier": "COMPANY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": [
+      "Identity: consolidate all manager-repository references into one CleanCapital Holdings LLC company.",
+      "Headquarters: replace the operating-footprint text with New York, New York.",
+      "BlackRock: active/Evergreen Infrastructure Fund to former/BlackRock Renewable Power Group, with fund and exit details undisclosed.",
+      "GIP: remove any owner attribution; BlackRock's GIP acquisition did not create a CleanCapital ownership period.",
+      "Manulife: retain current; Fund II attribution verified, stake undisclosed."
+    ],
+    "excludedOrDuplicateCandidates": [
+      "BQ Energy: acquired 100% in 2022 and integrated; not a separate current PortCo.",
+      "CleanCapital Holdco 4 LLC and related borrower/project SPVs: entities below the platform.",
+      "Global Infrastructure Partners owner record: no direct investment or legal transfer found."
+    ],
+    "unresolvedQuestions": [
+      "BlackRock's exact fund, vehicle, stake, legal closing date and platform-level exit date are not public.",
+      "Names and stakes of Manulife's 2024 institutional co-investors are not public.",
+      "Requested as-of date is one day after the 2026-08-18 research run; 2026-08-19 publications were not yet testable."
+    ],
+    "recommendedListAction": "Merge all references into one CleanCapital Holdings LLC company; retain Manulife/Fund II as current, preserve BlackRock only as former, remove Evergreen attribution, and exclude GIP and project-level duplicates."
+  },
+  "independentVerification": {
+    "evidenceUrlsChecked": 7,
+    "openSourceCount": 6,
+    "blockedSourceCount": 1,
+    "unavailableSourceCount": 0,
+    "recommendedPrimaryCount": 1,
+    "modelModeVerified": true
+  }
+}
+

@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RESEARCH_DECISION",
+  "taskId": "ledger:0123:connaught-oil-and-gas:bf7f3998",
+  "taskIndex": 123,
+  "companyName": "Connaught Oil and Gas",
+  "asOfDate": "2026-08-19",
+  "stagedAt": "2026-08-19T02:52:56.993Z",
+  "researchOnly": true,
+  "mutationAuthorized": false,
+  "proposalRequiresFreshProductionSnapshot": true,
+  "releaseRequiresFreshAcquisitionExitCheck": true,
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "Connaught Oil and Gas",
+    "requestedManager": "BCI",
+    "decision": "EXCLUDED",
+    "confidence": "HIGH",
+    "rationale": "Connaught is upstream oil-and-gas E&P, not infrastructure. BCI reported I&RR exposure, but public evidence does not prove direct legal equity, holder, vehicle, stake or current title.",
+    "identityResolution": {
+      "canonicalName": "Connaught Oil & Gas Ltd.",
+      "legalIdentity": "Private Alberta corporation",
+      "aliases": [
+        "Connaught Oil and Gas",
+        "Connaught Oil & Gas Limited",
+        "COGL"
+      ],
+      "website": "https://www.cogl.ca/",
+      "headquarters": "Calgary, Alberta",
+      "founded": "2009 reported; registry date unverified",
+      "parent": "None found",
+      "predecessor": "Connaught Energy Ltd is a reported predecessor; legal continuity is unverified.",
+      "boundaries": "Rathlin Energy (UK) Ltd was a separate UK investee/operator; PEDL183 and West Newton were upstream assets."
+    },
+    "ownershipResolution": {
+      "conclusion": "BCI legal equity is unproved. Connaught first appeared in I&RR reporting in FY2022, not 2025; security type and exact entry are undisclosed.",
+      "otherKnownEquity": "Reabold acquired 0.52% in 2019 and carried residual Connaught shares at £2,000 in 2025; its later percentage was undisclosed.",
+      "managerRelationships": [
+        {
+          "manager": "BCI",
+          "organization": "British Columbia Investment Management Corporation",
+          "fund": "Infrastructure & Renewable Resources",
+          "vehicle": null,
+          "stake": "Not disclosed",
+          "announcementDate": null,
+          "entryDate": null,
+          "entryYear": null,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": null,
+          "transactionState": "Reported exposure; legal equity and current title unproved"
+        }
+      ]
+    },
+    "operatingResolution": {
+      "business": "Petroleum and natural-gas exploration, development and production",
+      "products": "Crude oil and natural gas",
+      "customersEndMarkets": "No named customers; commodity markets",
+      "footprint": "Calgary-based; former UK Rathlin/PEDL183/West Newton exposure was sold in January 2025",
+      "scale": "Private; current production, reserves, revenue and workforce were not verified",
+      "operatingStatus": "Winding-up began in 2025; dissolution or continuing operations were not verified"
+    },
+    "infrastructureQualification": {
+      "qualifies": false,
+      "testResult": "FAIL",
+      "basis": "Upstream commodity extraction alone is not infrastructure.",
+      "missingBasis": "No pipeline, gathering, processing, storage, utility, tolling, regulated or contracted platform was evidenced."
+    },
+    "acquisitionExitCheck": {
+      "searchCutoff": "2026-08-18; requested 2026-08-19 is one day ahead",
+      "bciEntry": "First disclosed in FY2022; no acquisition announcement or exact close was found.",
+      "assetSale": "On 2025-01-30 Reabold bought Connaught's 20.4% Rathlin interest for £700,000, reaching 79.8%; it treated the deal as an asset acquisition.",
+      "platformExit": "The Rathlin sale was not a Connaught sale and does not prove BCI exit.",
+      "laterStatus": "Connaught started winding up in 2025. No public platform sale, merger, recap, bankruptcy order, later owner or completed dissolution was found."
+    },
+    "milestones": [
+      {
+        "date": "2019-02-08",
+        "event": "Reabold acquired 0.52% of Connaught; Connaught held 35.04% of Rathlin."
+      },
+      {
+        "date": "FY2022",
+        "event": "Connaught first appeared in BCI's I&RR inventory; exact entry was not disclosed."
+      },
+      {
+        "date": "2025-01-30",
+        "event": "Connaught sold its 20.4% Rathlin interest to Reabold for £700,000; asset-level only."
+      },
+      {
+        "date": "2025; reported 2026-06-30",
+        "event": "Connaught began winding up; Reabold marked residual shares at £2,000."
+      }
+    ],
+    "evidence": [
+      {
+        "label": "Connaught website",
+        "url": "https://www.cogl.ca/",
+        "purpose": "Legal name, Calgary base and upstream E&P description",
+        "sourceTier": "PRIMARY_COMPANY",
+        "workingStatus": "LIVE",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Reabold 2019 RNS",
+        "url": "https://www.investegate.co.uk/announcement/rns/reabold-resources--rbd/issue-of-shares/5879111",
+        "purpose": "Alberta identity, Reabold stake and Rathlin boundary",
+        "sourceTier": "PRIMARY_FILING",
+        "workingStatus": "LIVE",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Shift 2022 BCI comparison",
+        "url": "https://www.shiftaction.ca/news/2022/11/24/statement-on-bci-2022-climate-action-plan",
+        "purpose": "BCI inventory comparison and first-disclosure timing",
+        "sourceTier": "SECONDARY_RESEARCH",
+        "workingStatus": "LIVE",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "BCI I&RR overview",
+        "url": "https://www.bci.ca/investments/infrastructure-renewable-resources/overview/",
+        "purpose": "Current mandate and exposure types",
+        "sourceTier": "PRIMARY_MANAGER",
+        "workingStatus": "LIVE",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Reabold 2025 annual results",
+        "url": "https://www.investegate.co.uk/announcement/rns/reabold-resources--rbd/full-year-results-for-year-ended-31-december-2025/9642982",
+        "purpose": "Rathlin sale, asset treatment, residual value and winding-up",
+        "sourceTier": "PRIMARY_FILING",
+        "workingStatus": "LIVE",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "Shift 2025 Pension Climate Report Card",
+        "url": "https://thenarwhal.ca/wp-content/uploads/2026/02/Shift-Action-2025-Pension-Climate-Report-Card.pdf",
+        "purpose": "BCI exposure cross-check at 2025-03-31",
+        "sourceTier": "SECONDARY_RESEARCH",
+        "workingStatus": "LIVE_PDF",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": [
+      {
+        "field": "canonicalName",
+        "before": "Connaught Oil and Gas",
+        "after": "Connaught Oil & Gas Ltd."
+      },
+      {
+        "field": "classification",
+        "before": "Infrastructure PortCo",
+        "after": "Exclude as upstream E&P"
+      },
+      {
+        "field": "BCIEntry",
+        "before": "2025",
+        "after": "Exact date unknown; first disclosed in FY2022"
+      },
+      {
+        "field": "BCIOwnership",
+        "before": "Current direct equity",
+        "after": "Exposure reported; equity, holder, vehicle, stake and current title unproved"
+      },
+      {
+        "field": "operatingStatus",
+        "before": "Active",
+        "after": "Winding-up began in 2025; completion unverified"
+      },
+      {
+        "field": "UKTransaction",
+        "before": "Possible platform exit",
+        "after": "20.4% Rathlin sale only; no Connaught exit"
+      }
+    ],
+    "excludedOrDuplicateCandidates": [
+      {
+        "name": "Connaught Energy Limited",
+        "treatment": "Reported predecessor; do not merge without continuity evidence."
+      },
+      {
+        "name": "Rathlin Energy (UK) Limited",
+        "treatment": "Separate UK E&P company, now Reabold-controlled."
+      },
+      {
+        "name": "PEDL183 / West Newton",
+        "treatment": "Upstream assets, not manager-level PortCos."
+      }
+    ],
+    "unresolvedQuestions": [
+      "BCI security, legal holder, vehicle, stake, exact entry and any wind-up distribution or exit.",
+      "Alberta incorporation details and predecessor chain.",
+      "Wind-up completion and residual assets, liabilities or operations."
+    ],
+    "recommendedListAction": "Archive production ID cmrxpj8jc00mjivhe745y18v8; exclude it from the infrastructure PortCo list; add no active BCI equity owner; do not record the Rathlin sale as a platform exit."
+  },
+  "independentVerification": {
+    "evidenceUrlsChecked": 6,
+    "openSourceCount": 5,
+    "blockedSourceCount": 0,
+    "unavailableSourceCount": 1,
+    "recommendedPrimaryCount": 1,
+    "modelModeVerified": true
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0383:usic:edbbd2fb",
+  "checkedAt": "2026-08-21T21:27:00.483Z",
+  "method": "Independent direct curl status, redirect, media-type and content-hash checks; web-index verification for the browser-blocked Houlihan Lokey page; official replacement discovery for the stale Partners Group URL; PDF text extraction and rendered-page inspection",
+  "sources": [
+    {
+      "url": "https://www.usicllc.com/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.usicllc.com/",
+      "mediaType": "text/html",
+      "bytes": 47937,
+      "sha256": "05c47f85544b416c0ae234a5100498f785a8bdc5c052a2392ba243cc86d171ca",
+      "healthStatus": "WORKING"
+    },
+    {
+      "url": "https://www.usicllc.com/about/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.usicllc.com/about/",
+      "mediaType": "text/html",
+      "bytes": 21977,
+      "sha256": "4a491455e8f73ea0b28ae9aeaf179a54743a321ca18035aca5c6463ecc763410",
+      "healthStatus": "WORKING"
+    },
+    {
+      "url": "https://www.usicllc.com/services/public-utility-locating/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.usicllc.com/services/public-utility-locating/",
+      "mediaType": "text/html",
+      "bytes": 26326,
+      "sha256": "6df858717a09a78332be9973d1a9be4d1bec8b405b9c449a303c193cbb6c8d96",
+      "healthStatus": "WORKING"
+    },
+    {
+      "url": "https://www.partnersgroup.com/en/news/usic-acquisition/",
+      "httpStatus": 404,
+      "finalUrl": "https://www.partnersgroup.com/en/news/usic-acquisition/",
+      "mediaType": "text/html",
+      "bytes": 70979,
+      "sha256": "760e00b01b6b0f70fa21f72dc6ef79db2471a9f2f26eee57dfd7ae5ee89a2824",
+      "healthStatus": "DEAD_WITH_WORKING_OFFICIAL_REPLACEMENT",
+      "replacementUrl": "https://www.partnersgroup.com/news-and-views/press-releases/investment-news/detail?news_id=35063836-baee-42b0-882d-a9d7432e063e"
+    },
+    {
+      "url": "https://www.partnersgroup.com/news-and-views/press-releases/investment-news/detail?news_id=35063836-baee-42b0-882d-a9d7432e063e",
+      "httpStatus": 200,
+      "finalUrl": "https://www.partnersgroup.com/news-and-views/press-releases/investment-news/detail?news_id=35063836-baee-42b0-882d-a9d7432e063e",
+      "mediaType": "text/html",
+      "bytes": 74623,
+      "sha256": "2a354d766e003bb2fd6f5fb9fd9e7a7954679e5555aa41bff004547c924e9ffd",
+      "healthStatus": "WORKING",
+      "verificationNote": "Official Partners Group replacement page supports the August 24, 2017 acquisition announcement and Leonard Green seller."
+    },
+    {
+      "url": "https://www.partnersgroup.com/news-and-views/press-releases/investment-news/detail?news_id=4ceb77b8-b075-414c-b863-967cf03ba141",
+      "httpStatus": 200,
+      "finalUrl": "https://www.partnersgroup.com/news-and-views/press-releases/investment-news/detail?news_id=4ceb77b8-b075-414c-b863-967cf03ba141",
+      "mediaType": "text/html",
+      "bytes": 79611,
+      "sha256": "4cee09a160ab543db2ca321816fc5ad938364a6ca52a34e6831326e3357e2a64",
+      "healthStatus": "WORKING",
+      "verificationNote": "Official Partners Group page supports the 50/50 co-lead ownership, August 2022 announcement and $4.1bn enterprise value."
+    },
+    {
+      "url": "https://hl.com/about-us/transactions/houlihan-lokey-advises-kohlberg-co/",
+      "httpStatus": 200,
+      "finalUrl": "https://hl.com/about-us/transactions/houlihan-lokey-advises-kohlberg-co/",
+      "mediaType": "text/html",
+      "bytes": 212,
+      "sha256": "d02032286070b4dd9d8fbd985a7bdca8af8edf52b89ff177db3bfcb2c8a9c43d",
+      "healthStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verificationNote": "Direct curl returned an Incapsula shell, while the exact indexed page exposed the November 10, 2022 close and $4.1bn enterprise value."
+    },
+    {
+      "url": "https://ec.europa.eu/competition/mergers/cases1/202242/M_10911_8552241_84_3.pdf",
+      "httpStatus": 200,
+      "finalUrl": "https://ec.europa.eu/competition/mergers/cases1/202242/M_10911_8552241_84_3.pdf",
+      "mediaType": "application/pdf",
+      "bytes": 10885,
+      "sha256": "8f73865de461f4a97b560f95369d4d72c81538ff3a953f0bae039c0f57809fc0",
+      "healthStatus": "WORKING",
+      "pdfVerification": {
+        "pageCount": 1,
+        "relevantPdfPages": [
+          1
+        ],
+        "verifiedClaims": [
+          "Partners Group and Kohlberg proposed joint control of Onecall Holdings",
+          "Onecall indirectly wholly owns USIC Holdings",
+          "USIC operates utility damage-prevention and locating services in the United States and Canada"
+        ],
+        "renderedPagesInspected": true
+      }
+    },
+    {
+      "url": "https://www.harriswilliams.com/our-insights/harris-williams-co-advises-united-states-infrastructure-corporation-its-sale-omers-private",
+      "httpStatus": 200,
+      "finalUrl": "https://www.harriswilliams.com/our-insights/harris-williams-co-advises-united-states-infrastructure-corporation-its-sale-omers-private",
+      "mediaType": "text/html",
+      "bytes": 55442,
+      "sha256": "136a8f357c9d050580ac12716ab9ade94580afcd82d1b837360ed206185366e6",
+      "healthStatus": "WORKING"
+    },
+    {
+      "url": "https://www.insideindianabusiness.com/articles/sale-of-indy-company-closes",
+      "httpStatus": 200,
+      "finalUrl": "https://www.insideindianabusiness.com/articles/sale-of-indy-company-closes",
+      "mediaType": "text/html",
+      "bytes": 70109,
+      "sha256": "3c323ab8bec6ae81d099d215a9ffc9e45f3556ee7e2af0659a69b28fb03b45dc",
+      "healthStatus": "WORKING"
+    }
+  ],
+  "allEvidenceUrlsDirectHttps": true,
+  "allSourcesWorkingOrReplacedOrVerified": true,
+  "deadSourceCount": 1,
+  "deadSourceReplacementCount": 1
+}

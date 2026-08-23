@@ -16,6 +16,7 @@ import {
   citationImageSchema,
   companyImageSchema,
   ownershipPeriodImageSchema,
+  pendingOwnershipTransactionImageSchema,
   proposalActions,
   relationMergeSchema,
   type CompanyImage,
@@ -74,6 +75,23 @@ const ownershipPeriodAdditionSchema = ownershipPeriodImageSchema.refine(
   (period) => period.id === null,
   { message: "New ownership periods must use id: null", path: ["id"] },
 );
+const pendingOwnershipTransactionUpdateSchema = z.strictObject({
+  id: z.string().trim().min(1),
+  set: z.strictObject({
+    direction: z.enum(["INCOMING", "EXIT"]).optional(),
+    transactionState: z.enum(["SIGNED_PENDING_INCOMING", "SIGNED_PENDING_EXIT"]).optional(),
+    counterpartyName: z.string().trim().min(1).optional(),
+    transactionDescription: z.string().trim().min(1).optional(),
+    announcedAt: z.string().date().nullable().optional(),
+    expectedClosing: z.string().trim().min(1).nullable().optional(),
+    relatedOwnershipPeriodIds: z.array(z.string().trim().min(1)).optional(),
+    evidenceUrls: z.array(httpsUrl).optional(),
+  }),
+});
+const pendingOwnershipTransactionAdditionSchema = pendingOwnershipTransactionImageSchema.refine(
+  (transaction) => transaction.id === null,
+  { message: "New pending ownership transactions must use id: null", path: ["id"] },
+);
 const milestoneUpdateSchema = z.strictObject({
   id: z.string().trim().min(1),
   set: z.strictObject({
@@ -124,6 +142,8 @@ const proposalSpecSchema = z.strictObject({
   companyFieldUpdates: companyFieldUpdatesSchema.optional(),
   ownershipPeriodUpdates: z.array(ownershipPeriodUpdateSchema).default([]),
   ownershipPeriodAdditions: z.array(ownershipPeriodAdditionSchema).default([]),
+  pendingOwnershipTransactionUpdates: z.array(pendingOwnershipTransactionUpdateSchema).default([]),
+  pendingOwnershipTransactionAdditions: z.array(pendingOwnershipTransactionAdditionSchema).default([]),
   milestoneUpdates: z.array(milestoneUpdateSchema).default([]),
   citationUpdates: z.array(citationUpdateSchema).default([]),
   citationAdditions: z.array(citationAdditionSchema).default([]),
@@ -159,6 +179,8 @@ const proposalSpecSchema = z.strictObject({
       spec.companyFieldUpdates
       || spec.ownershipPeriodUpdates.length > 0
       || spec.ownershipPeriodAdditions.length > 0
+      || spec.pendingOwnershipTransactionUpdates.length > 0
+      || spec.pendingOwnershipTransactionAdditions.length > 0
       || spec.milestoneUpdates.length > 0
       || spec.citationUpdates.length > 0
       || spec.citationAdditions.length > 0
@@ -171,6 +193,8 @@ const proposalSpecSchema = z.strictObject({
     && !spec.companyFieldUpdates
     && spec.ownershipPeriodUpdates.length === 0
     && spec.ownershipPeriodAdditions.length === 0
+    && spec.pendingOwnershipTransactionUpdates.length === 0
+    && spec.pendingOwnershipTransactionAdditions.length === 0
     && spec.milestoneUpdates.length === 0
     && spec.citationUpdates.length === 0
     && spec.citationAdditions.length === 0
@@ -372,11 +396,19 @@ export function applySpec(context: TaskSnapshotContext, specInput: unknown) {
   if (!afterImage) {
     if (!beforeImage) throw new Error("Patch-based proposals require an existing target company");
     const ownershipUpdates = new Map(spec.ownershipPeriodUpdates.map((update) => [update.id, update.set]));
+    const pendingTransactionUpdates = new Map(
+      spec.pendingOwnershipTransactionUpdates.map((update) => [update.id, update.set]),
+    );
     const milestoneUpdates = new Map(spec.milestoneUpdates.map((update) => [update.id, update.set]));
     const citationUpdates = new Map(spec.citationUpdates.map((update) => [update.id, update.set]));
     for (const id of ownershipUpdates.keys()) {
       if (!beforeImage.ownershipPeriods.some((period) => period.id === id)) {
         throw new Error(`Ownership update references unknown period ${id}`);
+      }
+    }
+    for (const id of pendingTransactionUpdates.keys()) {
+      if (!beforeImage.pendingOwnershipTransactions.some((transaction) => transaction.id === id)) {
+        throw new Error(`Pending transaction update references unknown transaction ${id}`);
       }
     }
     for (const id of milestoneUpdates.keys()) {
@@ -396,6 +428,10 @@ export function applySpec(context: TaskSnapshotContext, specInput: unknown) {
         ...period,
         ...(period.id ? ownershipUpdates.get(period.id) : undefined),
       })).concat(spec.ownershipPeriodAdditions),
+      pendingOwnershipTransactions: beforeImage.pendingOwnershipTransactions.map((transaction) => ({
+        ...transaction,
+        ...(transaction.id ? pendingTransactionUpdates.get(transaction.id) : undefined),
+      })).concat(spec.pendingOwnershipTransactionAdditions),
       milestones: beforeImage.milestones.map((milestone) => ({
         ...milestone,
         ...(milestone.id ? milestoneUpdates.get(milestone.id) : undefined),

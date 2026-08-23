@@ -1,0 +1,196 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0162:duke-energy-florida:49a961e7",
+  "taskIndex": 162,
+  "companyName": "Duke Energy Florida",
+  "asOfDate": "2026-08-19",
+  "researchOnly": true,
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "responseSha256": "193c76da058433cbb117fe9c36f0e862f93c5c2835c52f07792a029094fc4508",
+  "sourceVerification": "source-verification.json",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "Duke Energy Florida",
+    "requestedManagers": [
+      "Brookfield Asset Management"
+    ],
+    "decision": "PROPOSED_CORRECTION",
+    "confidence": "HIGH",
+    "rationale": "The pending-only ledger state is stale. Brookfield's first tranche closed on 2026-03-03, producing a 9.19% indirect non-controlling interest through Florida Progress, LLC; Duke retained control. Signed follow-on subscriptions remain pending and may raise Brookfield to 19.7%.",
+    "identityResolution": {
+      "canonicalKey": "duke-energy-florida|united-states",
+      "legalName": "Duke Energy Florida, LLC",
+      "displayName": "Duke Energy Florida",
+      "aliases": [
+        "St. Petersburg Electric Light and Power Company",
+        "Florida Power Corporation / Progress Energy Florida",
+        "Duke Energy Florida, Inc."
+      ],
+      "country": "United States",
+      "headquarters": "St. Petersburg, Florida",
+      "foundedYear": 1899,
+      "boundary": "Count Duke Energy Florida. Florida Progress, LLC is its 100% holdco and transaction issuer, not a separate PortCo."
+    },
+    "ownershipResolution": {
+      "owners": [
+        {
+          "manager": "Brookfield Asset Management",
+          "organization": "Brookfield Infrastructure Group",
+          "fund": "Brookfield Super-Core Infrastructure Partners (BSIP)",
+          "vehicle": "Peninsula Power Holdings L.P.",
+          "stake": "9.19% indirect non-controlling interest via Florida Progress, LLC",
+          "announcementDate": "2025-08-05",
+          "entryDate": "2026-03-03",
+          "entryYear": 2026,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "ACTIVE_INITIAL_TRANCHE; FOLLOW_ON_CLOSINGS_PENDING"
+        }
+      ],
+      "control": "Duke-owned Progress Energy holds 90.81% of Florida Progress; Florida Progress owns 100% of Duke Energy Florida; Duke remains operator.",
+      "pendingTransactions": [
+        {
+          "direction": "INCOMING",
+          "buyer": "Peninsula Power Holdings L.P. (BSIP affiliate)",
+          "seller": "Florida Progress, LLC (issuer)",
+          "stake": "Incremental interests from 9.19% toward up to 19.7%",
+          "announcementDate": "2025-08-05",
+          "closingDate": null,
+          "state": "SIGNED; $0.2bn due by 2026-12-31, $0.5bn by 2027-06-30, $1.5bn by 2027-12-31 and $1.0bn by 2028-06-30; none later verified closed",
+          "evidenceUrls": [
+            "https://www.sec.gov/Archives/edgar/data/37637/000110465926022610/tm267351d1_8k.htm",
+            "https://www.sec.gov/Archives/edgar/data/1326160/000132616026000040/duk-20260630.htm"
+          ]
+        }
+      ]
+    },
+    "operatingResolution": {
+      "status": "Active",
+      "officialWebsite": "https://www.duke-energy.com",
+      "sector": "Utilities",
+      "subsector": "Regulated integrated electric utility",
+      "productsServices": "Generation, transmission, distribution and retail power",
+      "customersEndMarkets": "About 2 million residential, commercial and industrial customers",
+      "footprint": "Central/western Florida; about 13,000 square miles",
+      "scale": "About 12,500 MW",
+      "northAmericanInfrastructurePortCo": true,
+      "managerLevelTreatment": "INCLUDE"
+    },
+    "acquisitionExitCheck": {
+      "searchedThrough": "2026-08-19",
+      "searchScope": "Later closing, sale, sold, exit, divestiture, transfer, recapitalization, merger, rebrand and bankruptcy",
+      "result": "The 2026-08-04 10-Q still showed 9.19% and all follow-ons as future. No later closing or exit was located in direct-party or SEC sources.",
+      "state": "ACTIVE_PARTIAL_CLOSE; NO_EXIT_FOUND"
+    },
+    "milestones": [
+      {
+        "date": "2025-08-04",
+        "event": "Investment agreement signed for up to 19.7%.",
+        "category": "Signing"
+      },
+      {
+        "date": "2025-08-05",
+        "event": "Phased $6bn Brookfield investment announced.",
+        "category": "Announcement"
+      },
+      {
+        "date": "2026-03-03",
+        "event": "First close: 9.19% issued for about $2.8bn.",
+        "category": "Closing"
+      },
+      {
+        "date": "2026-08-04",
+        "event": "Q2 10-Q confirmed 9.19%; remaining tranches future.",
+        "category": "Status"
+      }
+    ],
+    "evidence": [
+      {
+        "label": "Duke Q2 2026 10-Q",
+        "url": "https://www.sec.gov/Archives/edgar/data/1326160/000132616026000040/duk-20260630.htm",
+        "purpose": "CURRENT_STAKE_AND_PENDING_STATE",
+        "sourceTier": "SEC",
+        "workingStatus": "OPENED/VERIFIED",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "Duke 2026 closing 8-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/37637/000110465926022610/tm267351d1_8k.htm",
+        "purpose": "CLOSE_AND_TRANCHES",
+        "sourceTier": "SEC",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "2025 Investment Agreement",
+        "url": "https://www.sec.gov/Archives/edgar/data/30371/000132616025000192/duk-202509x10qxexx101.htm",
+        "purpose": "PARTIES_FUND_VEHICLE",
+        "sourceTier": "SEC",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Brookfield infrastructure portfolio",
+        "url": "https://www.brookfield.com/about-us/capabilities/infrastructure",
+        "purpose": "PORTFOLIO_CLASSIFICATION",
+        "sourceTier": "MANAGER",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Duke Florida operating update",
+        "url": "https://investors.duke-energy.com/news/news-details/2026/Duke-Energy-Florida-delivers-50-million-in-customer-savings-avoids-2027-base-rate-increase-through-innovative-tax-strategy/default.aspx",
+        "purpose": "OPERATIONS_AND_SCALE",
+        "sourceTier": "COMPANY",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Duke Florida history",
+        "url": "https://illumination.duke-energy.com/articles/125-years-strong-celebrating-our-commitment-to-florida",
+        "purpose": "LINEAGE_AND_FOUNDING",
+        "sourceTier": "COMPANY",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "disposition": "PENDING only → ACTIVE owner plus pending follow-on",
+      "stake": "9.2%/19.9% → 9.19% current/up to 19.7%",
+      "fund": "Brookfield BISS → BSIP",
+      "vehicle": "n.a. → Peninsula Power Holdings L.P.",
+      "boundary": "DEF description → legal stake in its Florida Progress holdco",
+      "headquarters": "Florida → St. Petersburg, Florida"
+    },
+    "excludedOrDuplicateCandidates": [
+      {
+        "candidate": "Florida Progress, LLC",
+        "disposition": "EXCLUDED",
+        "reason": "Holdco/issuer, not separate operating PortCo."
+      },
+      {
+        "candidate": "Progress Energy, Inc.",
+        "disposition": "EXCLUDED",
+        "reason": "Duke parent-chain entity."
+      },
+      {
+        "candidate": "Brookfield Infrastructure Structured Solutions Fund (BISS)",
+        "disposition": "EXCLUDED",
+        "reason": "Not named in deal documents; BSIP is verified."
+      },
+      {
+        "candidate": "Duke commercial renewables/Brookfield Renewable 2023 deal",
+        "disposition": "EXCLUDED",
+        "reason": "Separate assets and transaction."
+      }
+    ],
+    "unresolvedQuestions": [
+      "Allocation among BSIP's five commitment entities and other Brookfield capital is NOT_PUBLICLY_DISCLOSED.",
+      "Current-LLC formation year is NOT_PUBLICLY_DISCLOSED; 1899 is the operating-lineage date."
+    ],
+    "recommendedListAction": "Keep the Duke Energy Florida record. Add active Brookfield ownership from 2026-03-03 at 9.19% via Florida Progress and retain a separate pending follow-on toward 19.7%. Correct BISS to BSIP, add Peninsula Power Holdings L.P., and do not create a Florida Progress PortCo."
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_ATTESTATION",
+  "runId": "portco-research-staging-2026-08-19",
+  "taskId": "ledger:0456:crescent-louisiana-midstream:599b6824",
+  "taskIndex": 456,
+  "companyName": "Crescent Louisiana Midstream",
+  "conversationUrl": "https://chatgpt.com/c/6a89cbaa-3660-83ea-92bd-eed162cbe3f0",
+  "accountTier": "ChatGPT Pro",
+  "model": "GPT-5.6 Sol",
+  "effort": "Pro",
+  "power": "5 of 5",
+  "uiVerified": true,
+  "uiEvidence": {
+    "accountLabel": "mike berry Pro",
+    "modeMenuModelLabel": "Model GPT-5.6 Sol",
+    "modeMenuEffortLabel": "Effort Pro",
+    "modeMenuPowerLabel": "Pro, 5 of 5.",
+    "capturedBeforeSubmission": true,
+    "recapturedBeforeRepair": true
+  },
+  "initialSubmittedAt": "2026-08-22T16:17:45.760Z",
+  "initialCompletedAt": "2026-08-22T16:36:57.000Z",
+  "repairSubmittedAt": "2026-08-22T16:37:39.823Z",
+  "repairCompletedAt": "2026-08-22T16:40:06.000Z",
+  "repairCount": 1,
+  "initialOutcome": "RESEARCH_COMPLETE_OUTPUT_STALLED",
+  "finalOutcome": "VALID_CONTRACT_PACKET_WITH_MATERIAL_SOURCE_OVERRIDES",
+  "transientRateLimit": {
+    "observed": true,
+    "uiMessage": "Too many requests — temporarily limited access to conversations",
+    "observedAfterSubmission": true,
+    "newConversationStarted": false
+  },
+  "contentHashes": {
+    "promptSha256": "0819885223c46f1ada677ebf4dbdf38198231ddb6a4dd48374787773d22ce965",
+    "initialResponseSha256": "e5c4b77169527ea9f8bd04fca5ef6fd11f53bdd8b1ea82dfc252945b460eb3f0",
+    "acceptedResponseSha256": "ea591f218b87416571be0d42ffb80f3caaaac1a0ae7ae694f1861180c4a2e835",
+    "transcriptSha256": "2e3737017daa35021b2f4ef1023f744be4ddd4cdde0e016dbcffb1468cef7019",
+    "repairPromptSha256": "51b6a7661a049c62d14ae43e101db4d4c21ba3e45c8bf047eb830dfe58688a17",
+    "repairResponseSha256": "ea591f218b87416571be0d42ffb80f3caaaac1a0ae7ae694f1861180c4a2e835"
+  },
+  "captureMethod": "signed-in ChatGPT web application via browser DOM",
+  "captureNote": "The original Pro turn completed substantive research but stalled before contract output. The same conversation was reloaded, Pro 5/5 was reverified, and the single permitted repair rendered a structurally valid packet. Independent review quarantined material source and transaction-direction errors."
+}

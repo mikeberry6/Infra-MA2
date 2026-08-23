@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0379:dimension-renewable-energy:afa21f3c",
+  "checkedAt": "2026-08-21T20:49:54.000Z",
+  "method": "Independent direct curl status, redirect, media-type and content-hash checks; independently indexed SEC filing verification; PDF text extraction and rendered-page inspection",
+  "sources": [
+    {
+      "url": "https://www.partnersgroup.com/en/news-and-views/press-releases/investment-news/detail?news_id=7ee9d7d3-c405-481e-b293-1ae11b818e4c",
+      "httpStatus": 200,
+      "finalUrl": "https://www.partnersgroup.com/en/news-and-views/press-releases/investment-news/detail?news_id=7ee9d7d3-c405-481e-b293-1ae11b818e4c",
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 74766,
+      "sha256": "b764027015be0576171502c1f31e4280977703bc1d7477fe38278cbdd19e2f38",
+      "healthStatus": "WORKING"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1828161/000095017021001227/ftci-20210630.htm",
+      "httpStatus": 403,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1828161/000095017021001227/ftci-20210630.htm",
+      "mediaType": "text/html",
+      "bytes": 4819,
+      "sha256": "18792c14357186d828042c926d6686fc2f2335c0bf83b4f245e222aac3854432",
+      "healthStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verificationNote": "Direct curl was blocked, but the exact SEC 10-Q was independently indexed and verifies FTC Solar's June 24, 2021 disposal of its entire approximately 23% Dimension interest."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1828161/000114036121014407/nt10018987x11_s1a.htm",
+      "httpStatus": 403,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1828161/000114036121014407/nt10018987x11_s1a.htm",
+      "mediaType": "text/html",
+      "bytes": 4819,
+      "sha256": "60782788217c76e2494395a8f9ecf352e4c00f4ce0a67de646a6f25ae3721905",
+      "healthStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verificationNote": "Direct curl was blocked, but the exact SEC filing was independently indexed and verifies the 2020 cap-table stakes and Dimension Energy LLC identity."
+    },
+    {
+      "url": "https://www.ontariocountyny.gov/DocumentCenter/View/39024/Geneva-CSG-2-LLC---OCIDA-Application",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ontariocountyny.gov/DocumentCenter/View/39024/Geneva-CSG-2-LLC---OCIDA-Application",
+      "mediaType": "application/pdf",
+      "bytes": 920578,
+      "sha256": "0139087d47659a0741850e603a2760216d0ccfd5f263c38ef19aba4d0e72671b",
+      "healthStatus": "WORKING",
+      "pdfVerification": {
+        "pageCount": 29,
+        "relevantPdfPage": 6,
+        "verifiedClaims": [
+          "PG Delta Holdco LLC owns 100% of Dimension Energy LLC",
+          "Partners Group Access 177 PF LP owned approximately 70% of PG Delta Holdco LLC",
+          "No other PG Delta holder exceeded 10%"
+        ],
+        "renderedPageInspected": true
+      }
+    },
+    {
+      "url": "https://www.dimension-energy.com/news-article/dimension-energy-announces-500mw-of-operating-community-solar-assets-and-1-1b-invested-by-end-of-2025",
+      "httpStatus": 200,
+      "finalUrl": "https://www.dimension-energy.com/news-article/dimension-energy-announces-500mw-of-operating-community-solar-assets-and-1-1b-invested-by-end-of-2025",
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 34115,
+      "sha256": "d58bc812552f4f994266b3ce8c3e49bdd355ebe13e6941447841b9d0a573440e",
+      "healthStatus": "WORKING"
+    },
+    {
+      "url": "https://www.dimension-energy.com/news-article/dimension-energy-secures-857-million-in-additional-capital-to-accelerate-distributed-solar-growth",
+      "httpStatus": 200,
+      "finalUrl": "https://www.dimension-energy.com/news-article/dimension-energy-secures-857-million-in-additional-capital-to-accelerate-distributed-solar-growth",
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 34836,
+      "sha256": "458ce761874044b8e76295d9e16e4f98998ddc31b3f55ed7230c9ec53a793ad0",
+      "healthStatus": "WORKING"
+    }
+  ],
+  "allEvidenceUrlsDirectHttps": true,
+  "allSourcesWorkingOrVerified": true,
+  "deadSourceCount": 0
+}
+

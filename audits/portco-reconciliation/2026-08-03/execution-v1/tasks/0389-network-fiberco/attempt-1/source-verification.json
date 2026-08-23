@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0389:network-fiberco:3f7436bc",
+  "checkedAt": "2026-08-21T21:39:51.231Z",
+  "method": "Independent direct curl status, redirect, media-type and content-hash checks; Idaho filing component download, PDF text extraction and rendered-page inspection",
+  "sources": [
+    {
+      "url": "https://ziplyfiber.com/",
+      "httpStatus": 200,
+      "finalUrl": "https://ziplyfiber.com/",
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 90541,
+      "sha256": "bae7279c4d852a196f18bdd12e823013b0b97d30d6961126145ddd8fd14bae4d",
+      "healthStatus": "WORKING"
+    },
+    {
+      "url": "https://lf-puc.idaho.gov/WebLink/DocView.aspx?dbid=0&id=157861",
+      "httpStatus": 200,
+      "finalUrl": "https://lf-puc.idaho.gov/WebLink/DocView.aspx?dbid=0&id=157861",
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 3354,
+      "sha256": "fee25aa970535b10dee0a226d8b99835e2064cc69b8fdbb4a2667bfede84cddc",
+      "healthStatus": "WORKING",
+      "componentDownloadUrl": "https://lf-puc.idaho.gov/WebLink/ElectronicFile.aspx?dbid=0&docid=157861&pdfView=true&repo=PUC-PROD",
+      "componentHttpStatus": 200,
+      "componentMediaType": "application/pdf",
+      "componentBytes": 1944116,
+      "componentSha256": "00f7a7e94662c74abd36d6370e36e477c1de76f7860256bc42a9a454661b85f0",
+      "pdfVerification": {
+        "pageCount": 11,
+        "relevantPdfPages": [
+          1,
+          2,
+          3
+        ],
+        "verifiedClaims": [
+          "NFC Northwest is a wholly owned subsidiary of NFC Management, which is wholly owned by Network FiberCo",
+          "Network FiberCo was formed by Northwest Fiber/Ziply and PSPIB Quadratic Blocker",
+          "PSP holds 51% and Ziply holds 49%",
+          "NFC Northwest owns local fiber assets while Ziply Fiber Pacific is the exclusive retail ISP and operator"
+        ],
+        "renderedPagesInspected": true
+      }
+    },
+    {
+      "url": "https://www.investpsp.com/en/news/bce-and-psp-investments-announce-strategic-partnership-to-create-network-fiberco/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.investpsp.com/en/news/bce-and-psp-investments-announce-strategic-partnership-to-create-network-fiberco/",
+      "mediaType": "text/html",
+      "bytes": 42739,
+      "sha256": "e908ca9f1bd68f39c717cf3ee78067fe116840bb00b69948609ef0f8315a5922",
+      "healthStatus": "WORKING"
+    },
+    {
+      "url": "https://www.goodmans.ca/expertise/case/psp-investments-and-bce-inc.-announce-strategic-partnership-to-create-network-fiberco",
+      "httpStatus": 200,
+      "finalUrl": "https://www.goodmans.ca/expertise/case/psp-investments-and-bce-inc.-announce-strategic-partnership-to-create-network-fiberco",
+      "mediaType": "text/html",
+      "bytes": 89158,
+      "sha256": "cb6e56063ff4b552b0474e6baf71345edaf18c0adf7f10b5e68a45a696a726b9",
+      "healthStatus": "WORKING"
+    },
+    {
+      "url": "https://ziplyfiber.com/news/press-release/ziply-bce",
+      "httpStatus": 200,
+      "finalUrl": "https://ziplyfiber.com/news/press-release/ziply-bce",
+      "mediaType": "text/html",
+      "bytes": 39408,
+      "sha256": "1b829604c3975b184f8ebfaedfe149736c0dc3a745d1f4caf1db87d3366745bc",
+      "healthStatus": "WORKING"
+    },
+    {
+      "url": "https://www.bce.ca/news-and-media/newsroom?article=bce-reports-second-quarter-2026-results",
+      "httpStatus": 200,
+      "finalUrl": "https://www.bce.ca/news-and-media/newsroom?article=bce-reports-second-quarter-2026-results",
+      "mediaType": "text/html",
+      "bytes": 814578,
+      "sha256": "d2f292bb0206902d87f29d0511469de519d5b35c7df55fb4426e6c734044f2dc",
+      "healthStatus": "WORKING"
+    }
+  ],
+  "allEvidenceUrlsDirectHttps": true,
+  "allSourcesWorkingOrVerified": true,
+  "deadSourceCount": 0
+}

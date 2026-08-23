@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_ATTESTATION",
+  "runId": "portco-research-staging-2026-08-19",
+  "taskId": "ledger:0452:terawatt-infrastructure:facb72c6",
+  "taskIndex": 452,
+  "companyName": "TeraWatt Infrastructure",
+  "conversationUrl": "https://chatgpt.com/c/6a89b47d-26d0-83ea-923f-15e9ed31f80a",
+  "accountTier": "ChatGPT Pro",
+  "model": "GPT-5.6 Sol",
+  "effort": "Pro",
+  "power": "5 of 5",
+  "uiVerified": true,
+  "uiEvidence": {
+    "accountLabel": "mike berry Pro",
+    "modeMenuModelLabel": "Model GPT-5.6 Sol",
+    "modeMenuEffortLabel": "Effort Pro",
+    "modeMenuPowerLabel": "Pro, 5 of 5.",
+    "capturedBeforeSubmission": true,
+    "recapturedBeforeRepair": true
+  },
+  "initialSubmittedAt": "2026-08-22T14:38:52.747Z",
+  "initialCompletedAt": "2026-08-22T14:56:00.000Z",
+  "repairSubmittedAt": "2026-08-22T15:01:06.940Z",
+  "repairCompletedAt": "2026-08-22T15:05:28.040Z",
+  "repairCount": 1,
+  "initialOutcome": "RESEARCH_COMPLETE_OUTPUT_STALLED_AFTER_TRANSIENT_CHATGPT_RATE_LIMIT",
+  "finalOutcome": "VALID_CONTRACT_PACKET",
+  "transientRateLimit": {
+    "observed": true,
+    "uiMessage": "Too many requests — temporarily limited access to conversations",
+    "clearedBeforeRepair": true,
+    "newConversationStarted": false
+  },
+  "contentHashes": {
+    "promptSha256": "cca32b5bdc7cacba19a8b68f58220423ed17bba656c8b743723eb6a7d20d69ca",
+    "initialResponseSha256": "904b3f37ef90bd176833d7217378c178d8257c2718cd908efcd27ea7cbf9769c",
+    "acceptedResponseSha256": "1e4b9289529b295a8022838ebc2e9d4e28b770bff6362495614dc69f17ddada4",
+    "transcriptSha256": "aed0ded8865ed89c900cb726b25ac318aa25d54bd83609ac053fcc8e47f346c5",
+    "repairPromptSha256": "c55361b3580de31b4967b3ad65b714f7787ad76942c415d34ef04bfe71ae805e",
+    "repairResponseSha256": "1e4b9289529b295a8022838ebc2e9d4e28b770bff6362495614dc69f17ddada4"
+  },
+  "captureMethod": "signed-in ChatGPT web application via browser DOM",
+  "captureNote": "The original Pro chat was preserved through a temporary conversation-rate limit. After cooldown, the same conversation was recovered, Pro 5/5 was reverified, and the single permitted repair produced the accepted packet."
+}

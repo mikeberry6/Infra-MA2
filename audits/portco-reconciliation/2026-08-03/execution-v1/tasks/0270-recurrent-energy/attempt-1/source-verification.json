@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0270:recurrent-energy:9b92b574",
+  "taskIndex": 270,
+  "companyName": "Recurrent Energy",
+  "verifiedAt": "2026-08-20T12:52:48.800Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1375877/000141057825001046/csiq-20241231x20f.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1375877/000141057825001046/csiq-20241231x20f.htm",
+      "status": "BROWSER_AND_INDEPENDENT_FETCH_VERIFIED_AFTER_CURL_403",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 5414621,
+      "contentSha256": "5c0da7f099e794f40720ee33ba2a7e58c3e8ae343119422972b40f88e9fee3e5",
+      "browserTextSha256": "4328e0e616038279b73ea0a1aa7a0cc30e65b185bef7c27d262b0f242bca824a",
+      "note": "The visible Form 20-F supports Recurrent Energy B.V., GRP IV Rose Bidco, the May and September 2024 closes, $500mm investment and 20% fully diluted as-converted basis."
+    },
+    {
+      "url": "https://recurrentenergy.com/recurrent-energy-announces-closing-of-500-million-investment-from-blackrock/",
+      "finalUrl": "https://recurrentenergy.com/recurrent-energy-announces-closing-of-500-million-investment-from-blackrock/",
+      "status": "BROWSER_AND_INDEPENDENT_FETCH_VERIFIED_AFTER_CURL_403",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 164126,
+      "contentSha256": "6915de28169f809da8092497b12bb374c2dde45cd3f0d947c44dce357eff6918",
+      "browserTextSha256": "874206c72da64f137aaa9c6da8235bd57540f1937c9ed3e929ec5e3fe4531de5",
+      "note": "Company release supports Climate Infrastructure Global Renewable Power Fund IV, final $500mm close and the platform boundary."
+    },
+    {
+      "url": "https://investors.canadiansolar.com/news-releases/news-release-details/canadian-solar-reports-first-quarter-2026-results-and-announces",
+      "finalUrl": "https://investors.canadiansolar.com/news-releases/news-release-details/canadian-solar-reports-first-quarter-2026-results-and-announces",
+      "status": "BROWSER_AND_INDEPENDENT_FETCH_VERIFIED_AFTER_CURL_HTTP2_ERROR",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 494514,
+      "contentSha256": "169aa46fcb0b1db753b93373beea1517a5e33cf6eca5ca65aacb9f9f8e46284e",
+      "browserTextSha256": "015a1effb705174002d9057886c38c98d8bf661998d437cb18cf8f4502900dbc",
+      "note": "Current results support continued Recurrent operations, scale and preferred-dividend continuity through Q1 2026."
+    },
+    {
+      "url": "https://recurrentenergy.com/sharp-corp-to-acquire-recurrent-energy/",
+      "finalUrl": "https://recurrentenergy.com/sharp-corp-to-acquire-recurrent-energy/",
+      "status": "BROWSER_AND_INDEPENDENT_FETCH_VERIFIED_AFTER_CURL_403",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 155774,
+      "contentSha256": "7059aa97321690862a07185268050b74413133d103cc309e5078ae9ca5c84641",
+      "browserTextSha256": "39af7049fcae9bb68925b076b05cf30b18f67e06a18ca8a198df5754fef23ea5",
+      "note": "The 2010 announcement supports Sharp's 100% acquisition and identifies Hudson and Mohr Davidow as selling shareholders."
+    },
+    {
+      "url": "https://investors.canadiansolar.com/news-releases/news-release-details/canadian-solar-completes-acquisition-recurrent-energy-sharp",
+      "finalUrl": "https://investors.canadiansolar.com/news-releases/news-release-details/canadian-solar-completes-acquisition-recurrent-energy-sharp",
+      "status": "BROWSER_AND_INDEPENDENT_FETCH_VERIFIED_AFTER_CURL_HTTP2_ERROR",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 44457,
+      "contentSha256": "f848c66888f36985dcb3f8dac9139964f104b4d6cbf128003ba0de4530616387",
+      "browserTextSha256": "452dbc68da9db95e7003d2b1f17230e46a54c5959820094782a7d5390da70ae2",
+      "note": "Canadian Solar release supports the March 30, 2015 closing and acquisition from Sharp."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allReturnedUrlsChecked": true,
+    "allEvidenceRowsChecked": true,
+    "deadUrlCount": 0,
+    "redirectCount": 0,
+    "browserFallbackCount": 5,
+    "primarySecSourceVerified": true,
+    "blackRockFundVehicleAndSecurityVerified": true,
+    "canadianSolarEntryVerified": true,
+    "formerOwnerChainVerified": true,
+    "noLaterPlatformOwnershipTransferFound": true,
+    "identityResolved": true,
+    "activeOwnershipResolved": true,
+    "applicationBlocked": false
+  },
+  "modelEvidenceCorrections": [
+    "Use BlackRock Climate Infrastructure Global Renewable Power Fund IV and GRP IV Rose Bidco Ltd., not the repository's inferred BlackRock GIF IV label.",
+    "Describe BlackRock's 20% only on the fully diluted as-converted basis and preserve Canadian Solar's 100% ordinary-share ownership.",
+    "Correct Canadian Solar's entry to the March 30, 2015 closing and preserve Sharp, Hudson and Mohr Davidow as former owners.",
+    "Do not count country subsidiaries, project SPVs, project finance or asset sales as separate platform ownership."
+  ],
+  "releaseRequirement": "Retain one active Recurrent Energy platform and correct the fund, vehicle, security basis, Canadian Solar entry and former ownership chain without adding project-level entities."
+}

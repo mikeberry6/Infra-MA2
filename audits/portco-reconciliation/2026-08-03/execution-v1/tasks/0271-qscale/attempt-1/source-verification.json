@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0271:qscale:f52cb49e",
+  "taskIndex": 271,
+  "companyName": "QScale",
+  "verifiedAt": "2026-08-20T12:52:48.800Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://am.gs.com/en-us/advisors/news/press-release/2026/goldman-sachs-alternatives-acquire-qscale",
+      "finalUrl": "https://am.gs.com/en-us/advisors/news/press-release/2026/goldman-sachs-alternatives-acquire-qscale",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 487076,
+      "contentSha256": "3f383dac9bcb016c5ed9fe008631a193f599845ebdf2e020497bc11dcbae2db9",
+      "note": "Goldman release supports the May 13, 2026 completed acquisition, infrastructure strategy attribution and founder-management partnership."
+    },
+    {
+      "url": "https://am.gs.com/en-us/advisors/news/press-release/2026/WSIP-V-First-Close",
+      "finalUrl": "https://am.gs.com/en-us/advisors/news/press-release/2026/WSIP-V-First-Close",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 500618,
+      "contentSha256": "9b35a31135054f3c9471dea1c5d7a7e2133d3f80dbb9a7dd4d6f11a519064a57",
+      "note": "Goldman fund release identifies QScale as West Street Infrastructure Partners V's first investment."
+    },
+    {
+      "url": "https://www.mccarthy.ca/fr/experience/goldman-sachs-alternatives-acquiert-qscale-s-e-c",
+      "finalUrl": "https://www.mccarthy.ca/fr/experience/goldman-sachs-alternatives-acquiert-qscale-s-e-c",
+      "status": "BROWSER_VERIFIED_AFTER_HTTP_429",
+      "httpStatus": 429,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 33789,
+      "contentSha256": "851bb918cf4d0dafe2da45bc5e0f3e46a7e7963f25cbc7957415142f9b456322",
+      "browserTextSha256": "bdc115c5dec65d7a6ee4ce696e931bf43c5c168572581c55e049c0d13d9a292b",
+      "note": "The visible legal transaction page identifies Fonds QScale S.E.C., confirms that the acquisition closed May 13, 2026, and states that Aligned sold its majority interest while the founders and management partnered with Goldman."
+    },
+    {
+      "url": "https://www.bcf.ca/en/thought-leadership/case-studies/bcf-investissement-quebec-desjardins-capital-sale-qscale/",
+      "finalUrl": "https://www.bcf.ca/en/thought-leadership/case-studies/bcf-investissement-quebec-desjardins-capital-sale-qscale/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 398897,
+      "contentSha256": "1835ea40fe0b6a9c3ae7b82c4f27408c35c5fb3eacba257e5305c81f987547af",
+      "note": "Counsel transaction page supports Investissement Québec and Desjardins Capital as sellers in the 2026 QScale transaction."
+    },
+    {
+      "url": "https://www.qscale.com/news/from-data-processing-to-food-self-sufficiency-financing",
+      "finalUrl": "https://www.qscale.com/news/from-data-processing-to-food-self-sufficiency-financing",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 48544,
+      "contentSha256": "fdef8e49d55ddf1cc7a420f8a70c05ec7d232b2edfd94270864c0b9264e182d5",
+      "note": "Company financing release supports the 2021 Investissement Québec, Desjardins and private-investor financing and QScale operating context."
+    },
+    {
+      "url": "https://hl.com/about-us/transactions/houlihan-lokey-advises-qscale/",
+      "finalUrl": "https://hl.com/about-us/transactions/houlihan-lokey-advises-qscale/",
+      "status": "INDEPENDENT_WEB_PARSER_VERIFIED_AFTER_BROWSER_BLANK",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 948,
+      "contentSha256": "09a0e306f2a1136c63069a816c7da01c6351cbdf105fd897407bcb96797d3e6b",
+      "note": "The independent web parser exposed Houlihan Lokey's official transaction text, supporting Aligned's strategic investment, its June 30, 2023 closing, the existing Québec shareholders and QScale's platform footprint."
+    },
+    {
+      "url": "https://www.qscale.com/q01-campus",
+      "finalUrl": "https://www.qscale.com/q01-campus",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 86227,
+      "contentSha256": "6a0f14f15eac670eb7803fa7e8f98f879174017dcd4801388703f4d69887aee9",
+      "note": "QScale's campus page supports the Q01 asset boundary, Lévis location, protected IT load and hydro-powered operating model."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allReturnedUrlsChecked": true,
+    "allEvidenceRowsChecked": true,
+    "deadUrlCount": 0,
+    "redirectCount": 0,
+    "browserBlockedButVerifiedCount": 1,
+    "webParserFallbackCount": 1,
+    "goldmanControlAndClosingVerified": true,
+    "wsipVFundAttributionVerified": true,
+    "formerNamedOwnersVerified": true,
+    "currentFounderManagementRolloverVerified": true,
+    "noLaterOwnershipTransferFound": true,
+    "identityResolved": true,
+    "activeOwnershipResolved": true,
+    "applicationBlocked": false
+  },
+  "modelEvidenceCorrections": [
+    "Create one QScale/Fonds QScale S.E.C. manager-level PortCo; Q01, buildings and campus SPVs are assets beneath it.",
+    "Record Goldman Sachs Alternatives infrastructure control through West Street Infrastructure Partners V from May 13, 2026 without inventing the acquisition SPV or exact percentage.",
+    "Preserve founders and management as a current minority rollover group and Aligned, Investissement Québec and Desjardins Capital as former named owners.",
+    "Treat the unnamed C$45mm 2021 private-investor pool as a nonblocking disclosure gap rather than inventing identities."
+  ],
+  "releaseRequirement": "Create one active QScale platform with WSIP V control from May 13, 2026, founder-management minority ownership, former named owners and asset-level exclusions."
+}

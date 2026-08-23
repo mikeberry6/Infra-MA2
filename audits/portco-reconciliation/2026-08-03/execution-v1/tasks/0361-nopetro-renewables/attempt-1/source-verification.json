@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0361:nopetro-renewables:1b512de3",
+  "taskIndex": 361,
+  "verifiedAt": "2026-08-21T16:29:07.782Z",
+  "allReturnedUrlsChecked": true,
+  "summary": {
+    "urlCount": 7,
+    "working": 4,
+    "browserBlockedButVerified": 2,
+    "browserBlockedUnverified": 1,
+    "dead": 0
+  },
+  "modelEvidenceCorrections": [
+    "The Business Wire formation release returned an HTTP/2 transport error to curl but rendered successfully at the exact URL in-browser.",
+    "The Florida registry PDF returned HTTP 403 to curl but opened at the exact URL in the browser document viewer; it is BROWSER_BLOCKED_BUT_VERIFIED.",
+    "The Wall Street Journal URL returned HTTP 401 and the browser page did not expose the Nopetro reference or enough context to verify the reported 55% stake. The exact stake is therefore BROWSER_BLOCKED_UNVERIFIED and must not become a structured numeric stake without further direct evidence.",
+    "The accepted response explicitly leaves possible Green Group direct equity UNRESOLVED, so application remains blocked pending owner-set review."
+  ],
+  "sources": [
+    {
+      "url": "https://nopetroenergy.com/",
+      "finalUrl": "https://nopetroenergy.com/",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 512100,
+      "sha256": "c7edc4f78fa8201ee647a2ce1fb9d403e1af75ccb8885b6364fec96b8c9e6472",
+      "health": "WORKING"
+    },
+    {
+      "url": "https://www.novainfrastructure.com/investments-index",
+      "finalUrl": "https://www.novainfrastructure.com/investments-index",
+      "httpStatus": 200,
+      "mediaType": "text/html;charset=utf-8",
+      "bytes": 220466,
+      "sha256": "a4427f71884ea656e7412b6b5bf226196df7520cfb0c3ebe8ba575c18d00365b",
+      "health": "WORKING"
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20230531005454/en/NOVA-Infrastructure-and-Nopetro-Energy-Announce-New-Renewables-Platform",
+      "finalUrl": "https://www.businesswire.com/news/home/20230531005454/en/NOVA-Infrastructure-and-Nopetro-Energy-Announce-New-Renewables-Platform",
+      "httpStatus": 0,
+      "mediaType": null,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "curlError": "HTTP/2 stream closed with INTERNAL_ERROR during direct retrieval.",
+      "browserVerification": {
+        "title": "NOVA Infrastructure and Nopetro Energy Announce New Renewables Platform",
+        "exactUrlOpened": true,
+        "browserSnapshotSha256": "2b5a1963b7d440a31a467396b2215bebfa9949948dabfbf3b497ac4e5049d486"
+      }
+    },
+    {
+      "url": "https://www.wsj.com/articles/nova-infrastructure-targets-1-billion-for-second-private-equity-fund-410290fa",
+      "finalUrl": "https://www.wsj.com/articles/nova-infrastructure-targets-1-billion-for-second-private-equity-fund-410290fa",
+      "httpStatus": 401,
+      "mediaType": "text/html;charset=utf-8",
+      "bytes": 769,
+      "sha256": "2d17e4a5d3ba3a5f1c66351cf0d07e26d1179aab18feda61f4d432615815e8e0",
+      "health": "BROWSER_BLOCKED_UNVERIFIED",
+      "curlError": "Direct retrieval returned an authentication-required page.",
+      "browserVerification": {
+        "title": "NOVA Infrastructure Targets $1 Billion for Second Private-Equity Fund - WSJ",
+        "exactUrlOpened": true,
+        "browserSnapshotSha256": "18591a3994bd6643fa4fd2490ccffa1be29e761a58860e0c68fd5c324f01ac6c",
+        "claimVisible": false
+      }
+    },
+    {
+      "url": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=forl-m25000006610-1ee1d1cb-7c93-4ab0-a610-d3a6ccc5b079&formatType=PDF&transactionId=m25000006610-ef98c59b-000c-4007-bcfa-d09dd7eb5025",
+      "finalUrl": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=forl-m25000006610-1ee1d1cb-7c93-4ab0-a610-d3a6ccc5b079&formatType=PDF&transactionId=m25000006610-ef98c59b-000c-4007-bcfa-d09dd7eb5025",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 6279,
+      "sha256": "c3b878d575286f57f56a47580bb5c3468e01f1b2929e2c951d1ee0e563cf9ef7",
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "curlError": "Direct retrieval returned an access-denied page.",
+      "browserVerification": {
+        "title": "SnapshotReport",
+        "exactUrlOpened": true,
+        "browserSnapshotSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "url": "https://ircdocs.indian-river.org/WebLink/DocView.aspx?dbid=0&id=257583&repo=CBCC",
+      "finalUrl": "https://ircdocs.indian-river.org:443/WebLink/DocView.aspx?dbid=0&id=257583&repo=CBCC&cr=1",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 1909,
+      "sha256": "9b11f52ed3f2849721b702ecfae21134014256e75a039dcae6dd4bd0a8635491",
+      "health": "WORKING_REDIRECT"
+    },
+    {
+      "url": "https://www.prnewswire.com/news-releases/manatee-county-selects-nopetro-and-johnson-controls-to-deliver-innovative-renewable-natural-gas-project-302631008.html",
+      "finalUrl": "https://www.prnewswire.com/news-releases/manatee-county-selects-nopetro-and-johnson-controls-to-deliver-innovative-renewable-natural-gas-project-302631008.html",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 229683,
+      "sha256": "bc8f8ddf91f5e937912c7f27ade7a455501d3f9b73309af956980a9c9d766634",
+      "health": "WORKING"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "runId": "portco-research-staging-2026-08-19",
+  "taskId": "ledger:0451:cartier-u-s-district-energy-platform:46304894",
+  "taskIndex": 451,
+  "validatedAt": "2026-08-22T14:37:25.927Z",
+  "conversationUrl": "https://chatgpt.com/c/6a89b02a-bb8c-83ea-9fab-2013f31b1416",
+  "requiredTopLevelKeys": [
+    "asOfDate",
+    "requestedCompany",
+    "requestedManagers",
+    "decision",
+    "confidence",
+    "rationale",
+    "identityResolution",
+    "ownershipResolution",
+    "operatingResolution",
+    "acquisitionExitCheck",
+    "milestones",
+    "evidence",
+    "beforeAfterChanges",
+    "excludedOrDuplicateCandidates",
+    "unresolvedQuestions",
+    "recommendedListAction"
+  ],
+  "initialResponse": {
+    "valid": false,
+    "fencedJsonPresent": false,
+    "jsonParsed": false,
+    "markdownReviewPresent": false,
+    "requiredTopLevelKeysPresent": false,
+    "responseSha256": "10a7777fc9b3356895e246bc4837d3ea863cc9012b36c9596ad6002cc34801ea",
+    "errors": [
+      "Generation stalled after research without emitting the required packet."
+    ]
+  },
+  "repair": {
+    "count": 1,
+    "limit": 1,
+    "submittedAt": "2026-08-22T14:33:12.086Z",
+    "completedAt": "2026-08-22T14:37:25.927Z",
+    "valid": true,
+    "responseSha256": "fa7abd915d968193afb80026414706d8e8f00d599b50ec65232146a7b5ffb049",
+    "errors": []
+  },
+  "finalResponse": {
+    "characterCount": 7024,
+    "fencedJsonPresent": false,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "decision": "PROPOSED_MERGE",
+    "confidence": "HIGH",
+    "evidenceCount": 6,
+    "currentOwnerCount": 2,
+    "formerOwnerCount": 2,
+    "pendingOwnershipTransactionCount": 0,
+    "primaryEvidenceCount": 1,
+    "ownerKeysExact": true,
+    "duplicateLabelSupersessionDistinctFromProductionMerge": true,
+    "unresolvedItemsAreNoncriticalDisclosureGaps": true,
+    "withinCharacterLimit": true,
+    "withinEvidenceLimit": true,
+    "withinMilestoneLimit": true,
+    "result": "PASS"
+  },
+  "valid": true,
+  "errors": [],
+  "repairsUsed": 1,
+  "independentSourceVerification": "source-verification.json"
+}

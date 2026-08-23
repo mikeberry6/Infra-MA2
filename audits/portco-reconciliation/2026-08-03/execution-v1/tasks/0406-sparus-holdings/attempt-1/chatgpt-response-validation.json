@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "runId": "portco-reconciliation-2026-08-03-execution-v1",
+  "taskId": "ledger:0406:sparus-holdings:85d26c81",
+  "taskIndex": 406,
+  "validatedAt": "2026-08-21T23:35:27.000Z",
+  "conversationUrl": "https://chatgpt.com/c/6a88da10-6b64-83ea-aefc-3d580b36e2e2",
+  "requiredTopLevelKeys": ["asOfDate", "requestedCompany", "requestedManagers", "decision", "confidence", "rationale", "identityResolution", "ownershipResolution", "operatingResolution", "acquisitionExitCheck", "milestones", "evidence", "beforeAfterChanges", "excludedOrDuplicateCandidates", "unresolvedQuestions", "recommendedListAction"],
+  "initialResponse": {"valid": true, "fencedJsonPresent": false, "jsonParsed": true, "markdownReviewPresent": true, "requiredTopLevelKeysPresent": true, "responseSha256": "205a0ecddd205c4aeec0ead54da1db861e8666e28e2ecbcf556047fafb62a4e3", "errors": []},
+  "repair": {"count": 0, "limit": 1, "submittedAt": null, "completedAt": null, "valid": null, "responseSha256": null, "errors": []},
+  "finalResponse": {
+    "fencedJsonPresent": false,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "decision": "PROPOSED_NEW",
+    "confidence": "MEDIUM_HIGH",
+    "canonicalName": "Sparus Holdings, LLC",
+    "evidenceCount": 8,
+    "ownerRows": 3,
+    "pendingOwnershipTransactionCount": 0,
+    "identityResolved": true,
+    "activeInstitutionalOwnerResolved": true,
+    "northAmericaQualificationPresent": true,
+    "subsequentExitSearchPresent": true,
+    "platformBoundaryResolved": true,
+    "allEvidenceUrlsDirectHttps": true,
+    "exactlyOneRecommendedPrimary": true,
+    "unresolvedManagementRollover": true,
+    "result": "PASS_REVIEW_REQUIRED"
+  },
+  "valid": true,
+  "applicationBlocked": true,
+  "blockingReasons": [
+    "Management holders, rollover equity and their current status after Ridgemont's March 2021 acquisition are unresolved.",
+    "Ridgemont's fund/SPV, exact stake/control and any direct PNC equity component are unresolved; the available PNC-related evidence is financing evidence only."
+  ],
+  "errors": [],
+  "repairsUsed": 0,
+  "independentSourceVerification": "source-verification.json",
+  "finalResearchDecision": "research-decision.json"
+}

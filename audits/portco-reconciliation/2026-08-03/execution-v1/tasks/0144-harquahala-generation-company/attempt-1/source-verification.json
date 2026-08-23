@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RESEARCH_SOURCE_VERIFICATION",
+  "taskId": "ledger:0144:harquahala-generation-company:a9e2eada",
+  "taskIndex": 144,
+  "companyName": "Harquahala Generation Company",
+  "verifiedAt": "2026-08-19T04:29:10.000Z",
+  "verifier": "Codex independent URL retrieval, redirect and content-hash check",
+  "summary": {
+    "evidenceRows": 8,
+    "open": 7,
+    "browserBlockedPendingReleaseReopen": 1,
+    "unavailablePendingReleaseReopen": 0,
+    "dead": 0,
+    "researchPacketAccepted": true
+  },
+  "sources": [
+    {
+      "httpStatus": 200,
+      "finalUrl": "https://www.capitalpower.com/operations/harquahala/",
+      "workingStatus": "OPEN",
+      "contentCaptured": true,
+      "sha256": "2165780da6352a68b260a1dcac19f0c3662f4105fea7921d7fdc3dfd439bd0e1",
+      "mediaType": "text/html; charset=UTF-8",
+      "url": "https://www.capitalpower.com/operations/harquahala/",
+      "label": "Capital Power operations",
+      "purpose": "CURRENT_OWNER_STATUS",
+      "isRecommendedPrimary": true,
+      "purposeReviewedAgainstResearchOutput": true
+    },
+    {
+      "httpStatus": 200,
+      "finalUrl": "https://www.capitalpower.com/media/media_releases/capital-power-completes-acquisition-of-the-1092-mw-harquahala-natural-gas-generation-facility-in-arizona/",
+      "workingStatus": "OPEN",
+      "contentCaptured": true,
+      "sha256": "fbf8ee6fda1838614311bb759aa8d6b8cf293e44867088c8403f488c4e734818",
+      "mediaType": "text/html; charset=UTF-8",
+      "url": "https://www.capitalpower.com/media/media_releases/capital-power-completes-acquisition-of-the-1092-mw-harquahala-natural-gas-generation-facility-in-arizona/",
+      "label": "Capital Power closing",
+      "purpose": "CLOSE_STAKE",
+      "isRecommendedPrimary": false,
+      "purposeReviewedAgainstResearchOutput": true
+    },
+    {
+      "httpStatus": 200,
+      "finalUrl": "https://www.capitalpower.com/media/media_releases/capital-power-announces-strategic-acquisition-of-two-u-s-gas-generation-facilities/",
+      "workingStatus": "OPEN",
+      "contentCaptured": true,
+      "sha256": "8ceddaa854d0f9c942d9b65785911d4b69f8382dc39ae1ce1e088610e032d329",
+      "mediaType": "text/html; charset=UTF-8",
+      "url": "https://www.capitalpower.com/media/media_releases/capital-power-announces-strategic-acquisition-of-two-u-s-gas-generation-facilities/",
+      "label": "Capital Power announcement",
+      "purpose": "ANNOUNCEMENT_SELLER",
+      "isRecommendedPrimary": false,
+      "purposeReviewedAgainstResearchOutput": true
+    },
+    {
+      "httpStatus": 200,
+      "finalUrl": "https://www.capitalpower.com/wp-content/uploads/2026/03/Capital-Power-2025-Integrated-Annual-Report.pdf",
+      "workingStatus": "OPEN",
+      "contentCaptured": true,
+      "sha256": "337805be456d89e30c37e9d8135ba9932ef66fbc877490d7326cd84511634e3b",
+      "mediaType": "application/pdf",
+      "url": "https://www.capitalpower.com/wp-content/uploads/2026/03/Capital-Power-2025-Integrated-Annual-Report.pdf",
+      "label": "Capital Power 2025 annual report",
+      "purpose": "AUDITED_JV",
+      "isRecommendedPrimary": false,
+      "purposeReviewedAgainstResearchOutput": true
+    },
+    {
+      "httpStatus": 200,
+      "finalUrl": "https://www.capitalpower.com/wp-content/uploads/2026/07/Capital-Power-2026-Q2-Report.pdf",
+      "workingStatus": "OPEN",
+      "contentCaptured": true,
+      "sha256": "ee10f83befc6a590b14374346fc72377f0adab8cbac44389df2380314d200c01",
+      "mediaType": "application/pdf",
+      "url": "https://www.capitalpower.com/wp-content/uploads/2026/07/Capital-Power-2026-Q2-Report.pdf",
+      "label": "Capital Power Q2 2026",
+      "purpose": "LATEST_STATUS",
+      "isRecommendedPrimary": false,
+      "purposeReviewedAgainstResearchOutput": true
+    },
+    {
+      "httpStatus": 200,
+      "finalUrl": "https://www.govinfo.gov/content/pkg/FR-2023-12-12/html/2023-27224.htm",
+      "workingStatus": "OPEN",
+      "contentCaptured": true,
+      "sha256": "4fa4aa83afe63913ab393990a532b3542c728025590e6ed4f19c2be115124353",
+      "mediaType": "text/html",
+      "url": "https://www.govinfo.gov/content/pkg/FR-2023-12-12/html/2023-27224.htm",
+      "label": "FERC EC24-23-000",
+      "purpose": "LEGAL_NAME_SPVS",
+      "isRecommendedPrimary": false,
+      "purposeReviewedAgainstResearchOutput": true
+    },
+    {
+      "httpStatus": 403,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1534126/000119312521067728/d105498dsc13d.htm",
+      "workingStatus": "BROWSER_BLOCKED_PENDING_RELEASE_REOPEN",
+      "contentCaptured": false,
+      "sha256": "c0147c3655ca6616e0d4c272299cc4d5bb7a2bd22222cd01df40206604febada",
+      "mediaType": "text/html",
+      "url": "https://www.sec.gov/Archives/edgar/data/1534126/000119312521067728/d105498dsc13d.htm",
+      "label": "SEC GEPIF III",
+      "purpose": "FUND_MANAGER",
+      "isRecommendedPrimary": false,
+      "purposeReviewedAgainstResearchOutput": true
+    },
+    {
+      "httpStatus": 200,
+      "finalUrl": "https://www.blackrock.com/corporate/newsroom/media/press-releases/blackrock-completes-acquisition-of-global-infrastructure-partners",
+      "workingStatus": "OPEN",
+      "contentCaptured": true,
+      "sha256": "d6a763f3df142d947a6de7b0b205225642704fc364c01d6c7e24067bc8bc7bf3",
+      "mediaType": "text/html; charset=utf-8",
+      "url": "https://www.blackrock.com/corporate/newsroom/media/press-releases/blackrock-completes-acquisition-of-global-infrastructure-partners",
+      "label": "BlackRock GIP closing",
+      "purpose": "GIP_CORPORATE_CONTEXT",
+      "isRecommendedPrimary": false,
+      "purposeReviewedAgainstResearchOutput": true
+    }
+  ],
+  "note": "Staging verification only; reopen and claim-check every source against a fresh production snapshot before proposal or release."
+}
+

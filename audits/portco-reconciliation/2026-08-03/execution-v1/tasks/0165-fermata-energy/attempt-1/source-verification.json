@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0165:fermata-energy:b28311a9",
+  "taskIndex": 165,
+  "companyName": "Fermata Energy",
+  "verifiedAt": "2026-08-19T06:23:42.679Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1836875/000183687525000102/nuvve-fermataxassetpurchas.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1836875/000183687525000102/nuvve-fermataxassetpurchas.htm",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 191133,
+      "contentSha256": "326308158a860e6e515215630e453c4b81dc7179ae08fe5d1341de3a3b948fae",
+      "note": "Executed asset purchase agreement opened and supports the business-assets, IP, names, goodwill and successor boundary."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1836875/000183687525000092/nvve-20250425.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1836875/000183687525000092/nvve-20250425.htm",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 36665,
+      "contentSha256": "a5be24339e3c5f26a41fc45a9aeae5c909abfa47ea599c9923d075aab520bf96",
+      "note": "Nuvve 8-K opened and supports the April 25, 2025 closing."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1836875/000183687526000059/nvve-20260331.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1836875/000183687526000059/nvve-20260331.htm",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 2290182,
+      "contentSha256": "db80acea92dc73e414e7b00927cd6753fcaa4853cecf2b1c9dfade4a198f02df",
+      "note": "Nuvve Q1 2026 filing opened and supports successor ownership."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1836875/000183687526000073/R37.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1836875/000183687526000073/R37.htm",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 34538,
+      "contentSha256": "7e6a55ed3539756f9c825fa74a9c63cf093002834f31d1935971c3411cca796e",
+      "note": "Nuvve Q2 2026 XBRL fact page opened for the latest successor-status check."
+    },
+    {
+      "url": "https://www.carlyle.com/media-room/news-release-archive/carlyle-commits-over-100-million-battery-storage-electric-vehicle-infrastructure-energy-transition",
+      "finalUrl": "https://www.carlyle.com/media-room/news-release-archive/carlyle-commits-over-100-million-battery-storage-electric-vehicle-infrastructure-energy-transition",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 5795,
+      "contentSha256": "5f01c4f6b8241c8ec59a94a345ac1a141c063db1f30f3ab1bad4ebeeca2033bb",
+      "note": "Carlyle blocked curl, but independent browser retrieval opened the exact release and verified the 2021 investment, infrastructure-platform basis and Fermata profile."
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20220906005819/en/Nissan-Approves-Fermata-Energys-Bidirectional-Charger-as-First-for-Use-with-Nissan-LEAF-in-the-U.S.",
+      "finalUrl": "https://www.businesswire.com/news/home/20220906005819/en/Nissan-Approves-Fermata-Energys-Bidirectional-Charger-as-First-for-Use-with-Nissan-LEAF-in-the-U.S.",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 583,
+      "contentSha256": "0c52148beaa214d136b99c9d1838b51f869cd170ba9a9021f2e3a48ea3246b47",
+      "note": "Business Wire blocked curl, but independent browser retrieval opened the company release and verified entry-year context, headquarters and products."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allEvidenceRowsChecked": true,
+    "allCoreClaimsHaveOpenOrBrowserVerifiedEvidence": true,
+    "deadUrlCount": 0,
+    "redirectConcernCount": 0
+  },
+  "releaseRequirement": "Retire Carlyle ownership only after a protected proposal preserves the historical 2021–2025 period and keeps Fermata Energy II as a distinct successor rather than carrying Carlyle forward."
+}

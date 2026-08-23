@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RESEARCH_SOURCE_VERIFICATION",
+  "taskId": "ledger:0146:jupiter-power:85379278",
+  "taskIndex": 146,
+  "companyName": "Jupiter Power",
+  "verifiedAt": "2026-08-19T04:29:20.000Z",
+  "verifier": "Codex independent URL retrieval, redirect and content-hash check",
+  "summary": {
+    "evidenceRows": 6,
+    "open": 6,
+    "browserBlockedPendingReleaseReopen": 0,
+    "unavailablePendingReleaseReopen": 0,
+    "dead": 0,
+    "researchPacketAccepted": true
+  },
+  "sources": [
+    {
+      "httpStatus": 200,
+      "finalUrl": "https://jupiterpower.io/encap-investments-sells-jupiter-power-to-blackrock/",
+      "workingStatus": "OPEN",
+      "contentCaptured": true,
+      "sha256": "0c559576a3d7c796a877f1b787b5e27f8c36aefbae76d84512210b94889cd4d8",
+      "mediaType": "text/html; charset=UTF-8",
+      "url": "https://jupiterpower.io/encap-investments-sells-jupiter-power-to-blackrock/",
+      "label": "Jupiter acquisition release",
+      "purpose": "Buyer, sellers, vehicle, announcement and profile",
+      "isRecommendedPrimary": true,
+      "purposeReviewedAgainstResearchOutput": true
+    },
+    {
+      "httpStatus": 200,
+      "finalUrl": "https://lazard.com/api/TransactionSearch/DownloadTransactions?transactionTypeIds=1",
+      "workingStatus": "OPEN",
+      "contentCaptured": true,
+      "sha256": "356377b372477076506107d74f038724b96fc64fb9f541502bc7624aee9d5640",
+      "mediaType": "application/json",
+      "url": "https://lazard.com/api/TransactionSearch/DownloadTransactions?transactionTypeIds=1",
+      "label": "Lazard transaction record",
+      "purpose": "Exact closing date",
+      "isRecommendedPrimary": false,
+      "purposeReviewedAgainstResearchOutput": true
+    },
+    {
+      "httpStatus": 200,
+      "finalUrl": "https://jupiterpower.io/solutions/",
+      "workingStatus": "OPEN",
+      "contentCaptured": true,
+      "sha256": "1bf2ee41d7a39e75f9d62eeb3ee1674456ab14fd4746c52d3438a4cf6460a3d9",
+      "mediaType": "text/html; charset=UTF-8",
+      "url": "https://jupiterpower.io/solutions/",
+      "label": "Jupiter solutions",
+      "purpose": "Current GIP branding, operations and scale",
+      "isRecommendedPrimary": false,
+      "purposeReviewedAgainstResearchOutput": true
+    },
+    {
+      "httpStatus": 200,
+      "finalUrl": "https://www.blackrock.com/corporate/newsroom/media/press-releases/blackrock-completes-acquisition-of-global-infrastructure-partners",
+      "workingStatus": "OPEN",
+      "contentCaptured": true,
+      "sha256": "d6a763f3df142d947a6de7b0b205225642704fc364c01d6c7e24067bc8bc7bf3",
+      "mediaType": "text/html; charset=utf-8",
+      "url": "https://www.blackrock.com/corporate/newsroom/media/press-releases/blackrock-completes-acquisition-of-global-infrastructure-partners",
+      "label": "BlackRock-GIP closing release",
+      "purpose": "Combined-platform branding and 2024-10-01 close",
+      "isRecommendedPrimary": false,
+      "purposeReviewedAgainstResearchOutput": true
+    },
+    {
+      "httpStatus": 200,
+      "finalUrl": "https://jupiterpower.io/jupiter-power-secures-500-million-in-upsized-corporate-credit-facility-to-accelerate-portfolio-expansion/",
+      "workingStatus": "OPEN",
+      "contentCaptured": true,
+      "sha256": "b74b3ab21858e3a560b6d765a726c15b414f5314e0db528cec2ebe63597f8597",
+      "mediaType": "text/html; charset=UTF-8",
+      "url": "https://jupiterpower.io/jupiter-power-secures-500-million-in-upsized-corporate-credit-facility-to-accelerate-portfolio-expansion/",
+      "label": "Jupiter 2026 facility release",
+      "purpose": "Active status, scale, offices and financing date",
+      "isRecommendedPrimary": false,
+      "purposeReviewedAgainstResearchOutput": true
+    },
+    {
+      "httpStatus": 200,
+      "finalUrl": "https://jupiterpower.io/jupiter-power-announces-652-megawatt-hours-of-battery-storage-projects/",
+      "workingStatus": "OPEN",
+      "contentCaptured": true,
+      "sha256": "21d7153113cca0a58628fc0acbab704df972b230621c895b495211273a4b2dd6",
+      "mediaType": "text/html; charset=UTF-8",
+      "url": "https://jupiterpower.io/jupiter-power-announces-652-megawatt-hours-of-battery-storage-projects/",
+      "label": "Jupiter 652 MWh release",
+      "purpose": "Correct project milestone date",
+      "isRecommendedPrimary": false,
+      "purposeReviewedAgainstResearchOutput": true
+    }
+  ],
+  "note": "Staging verification only; reopen and claim-check every source against a fresh production snapshot before proposal or release."
+}
+

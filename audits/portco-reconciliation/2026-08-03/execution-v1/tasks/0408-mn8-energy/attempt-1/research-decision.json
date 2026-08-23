@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0408:mn8-energy:3c6d0235",
+  "sequence": 408,
+  "asOfDate": "2026-08-19",
+  "companyName": "MN8 Energy",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "MEDIUM_HIGH",
+  "stagingDisposition": "STAGED_REVIEW_REQUIRED",
+  "applicationBlocked": true,
+  "rationale": "MN8 Energy is the existing published U.S. power platform, and the census Ridgewood holding is the same March 2024 investment rather than a second owner period. Direct sources support correcting that period to Ridgewood Infrastructure LLC through WSI Fund II Holdings, the March 28 close, $125 million convertible-preferred investment and non-control observer rights. Mercuria is a separate $200 million preferred co-investor. Application remains blocked because complete current common ownership is unresolved and the Greenbacker acquisition is signed but not closed.",
+  "recommendedChanges": [
+    "Keep production company cmrxpjmx8018sivhekm7abt7i and do not create a second MN8 or Ridgewood owner row.",
+    "Correct the existing Ridgewood period to Ridgewood Infrastructure LLC through WSI Fund II Holdings, LP, with the disclosed Fund II guarantors, March 28, 2024 close, $125 million preferred investment and observer-only governance.",
+    "Add Mercuria Energy Group through Mercuria Clean Energy Investments BV as a distinct active preferred owner from March 28, 2024.",
+    "Preserve Goldman Sachs Renewable Power LLC as the predecessor identity and keep project companies, tax-equity vehicles, lenders and financing SPVs below the platform.",
+    "Record the Greenbacker acquisition as signed pending incoming to MN8; do not treat Greenbacker as already owned."
+  ],
+  "unresolvedQuestions": [
+    "The names and stakes of all current common members are not publicly disclosed.",
+    "The current percentage stakes and status of Goldman Sachs RP Holdings and the Regents of the University of California remain unresolved.",
+    "Series A economics beyond disclosed amount, convertibility and governance rights are not publicly disclosed."
+  ],
+  "unresolvedItemsAreNoncriticalDisclosureGaps": false,
+  "proposalGenerationAllowed": false,
+  "sourceVerificationPassed": true,
+  "fieldCorrectionRequired": true,
+  "fieldCorrections": [
+    "Resolve the census manager alias to the existing Ridgewood ownership period rather than adding a duplicate.",
+    "Do not infer control from Ridgewood's preferred investment or board-observer right.",
+    "Do not convert the pending Greenbacker acquisition into current ownership before legal closing."
+  ],
+  "acceptedResponseSha256": "d4f3626ff32af79bc480def1dcf69f48f4441bcefb40557e49e177a85aa29bf6"
+}

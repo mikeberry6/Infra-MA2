@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "taskId": "ledger:0175:400-paul-avenue-data-center:e79f51df",
+  "taskIndex": 175,
+  "validatedAt": "2026-08-19T07:30:16.768Z",
+  "conversationUrl": "https://chatgpt.com/c/6a855481-69c8-83ea-a7ec-20f7ef9e4e78",
+  "requiredTopLevelKeys": [
+    "asOfDate",
+    "requestedCompany",
+    "requestedManagers",
+    "decision",
+    "confidence",
+    "rationale",
+    "identityResolution",
+    "ownershipResolution",
+    "operatingResolution",
+    "acquisitionExitCheck",
+    "milestones",
+    "evidence",
+    "beforeAfterChanges",
+    "excludedOrDuplicateCandidates",
+    "unresolvedQuestions",
+    "recommendedListAction"
+  ],
+  "initialResponse": {
+    "valid": false,
+    "fencedJsonPresent": false,
+    "jsonParsed": false,
+    "markdownReviewPresent": false,
+    "requiredTopLevelKeysPresent": false,
+    "responseSha256": "3a01ffb7890c425dde7a00925a9c7e3eab1c345350dfdc9d38b97305b44062c0",
+    "errors": [
+      "No assistant response rendered because ChatGPT temporarily rate-limited the conversation after research completed."
+    ]
+  },
+  "repair": {
+    "count": 1,
+    "limit": 1,
+    "submittedAt": "2026-08-19T07:25:34.670Z",
+    "completedAt": "2026-08-19T07:30:16.768Z",
+    "valid": true,
+    "responseSha256": "b75eaae19cc432821aba5d47e921c5e1094b8583d75add5535c2290eab8aa5f1",
+    "errors": []
+  },
+  "finalResponse": {
+    "fencedJsonPresent": false,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "decision": "PROPOSED_MERGE",
+    "confidence": "HIGH",
+    "canonicalName": "Novva SFO",
+    "evidenceCount": 7,
+    "currentOwnerCount": 1,
+    "formerOwnerCount": 0,
+    "ownershipStatusUnknownCount": 2,
+    "pendingOwnershipTransactionCount": 0,
+    "identityResolved": true,
+    "activeOwnershipResolved": true,
+    "northAmericaQualificationPresent": true,
+    "subsequentExitSearchPresent": true,
+    "exactlyOneRecommendedPrimary": true,
+    "result": "PASS"
+  },
+  "valid": true,
+  "errors": [],
+  "repairsUsed": 1,
+  "independentSourceVerification": "source-verification.json",
+  "finalResearchDecision": "research-decision.json"
+}

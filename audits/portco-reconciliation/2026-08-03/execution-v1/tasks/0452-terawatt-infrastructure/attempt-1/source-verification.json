@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0452:terawatt-infrastructure:facb72c6",
+  "taskIndex": 452,
+  "companyName": "TeraWatt Infrastructure",
+  "verifiedAt": "2026-08-22T15:05:28.040Z",
+  "summary": {
+    "citationUrls": 6,
+    "working": 4,
+    "browserBlockedButVerified": 1,
+    "invalidWrongDestination": 1,
+    "replacementUrlsVerified": 1,
+    "modelHealthOverrides": 2
+  },
+  "sources": [
+    {
+      "label": "TeraWatt 2022 financing",
+      "url": "https://www.businesswire.com/news/home/20220510005388/en/TeraWatt-Infrastructure-Raises-1-Billion",
+      "httpStatus": null,
+      "observedStatus": "INVALID_WRONG_DESTINATION",
+      "verificationMethod": "browser DOM",
+      "finalUrl": "https://www.businesswire.com/news/home/20220510005388/en/ANI-Pharmaceuticals-Reports-First-Quarter-2022-Results-Provides-Purified-Cortrophin-Gel-Net-Revenue-Guidance-and-Full-Year-2022-Total-Company-Net-Revenue-Guidance-of-%24295-Million-to-%24315-Million",
+      "note": "The cited URL resolves to an unrelated ANI Pharmaceuticals release; overrides the model-declared WORKING status.",
+      "replacementUrl": "https://www.businesswire.com/news/home/20220913005307/en/TeraWatt-Raises-Over-%241-Billion-to-Scale-Commercial-EV-Charging-Centers-Across-America",
+      "replacementStatus": "BROWSER_VERIFIED",
+      "replacementEvidence": "September 13, 2022 release states more than US$1bn of institutional capital and names Vision Ridge, Keyframe and Cyrus."
+    },
+    {
+      "label": "SEC Form D",
+      "url": "https://www.sec.gov/Archives/edgar/data/1944328/000194432822000001/xslFormDX08/primary_doc.xml",
+      "httpStatus": 403,
+      "observedStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verificationMethod": "browser DOM after curl 403",
+      "note": "Rendered SEC Form D identifies Pearl Street Operating Company and US$61,048,601 total offering/sale amount."
+    },
+    {
+      "label": "Vision Ridge portfolio",
+      "url": "https://vision-ridge.com/investments/",
+      "httpStatus": 200,
+      "observedStatus": "WORKING",
+      "verificationMethod": "curl content inspection",
+      "note": "Current investments page names TeraWatt and describes its U.S. fleet-charging platform."
+    },
+    {
+      "label": "Keyframe launch",
+      "url": "https://www.keyframecapital.com/post/news-keyframe-portfolio-company-terawatt-infrastructure-emerges-from-stealth-mode",
+      "httpStatus": 200,
+      "observedStatus": "WORKING",
+      "verificationMethod": "curl content inspection"
+    },
+    {
+      "label": "TeraWatt 2026 roadmap",
+      "url": "https://www.terawattinfrastructure.com/blog/terawatt-2026-roadmap-scaling-the-autonomous-electric-mobility-infrastructure",
+      "httpStatus": 200,
+      "observedStatus": "WORKING",
+      "verificationMethod": "curl content inspection"
+    },
+    {
+      "label": "2026 debt financing",
+      "url": "https://www.prnewswire.com/news-releases/terawatt-infrastructure-secures-300m-in-secured-debt-financing-to-expand-its-full-stack-autonomous-vehicle-infrastructure-platform-302808743.html",
+      "httpStatus": 200,
+      "observedStatus": "WORKING",
+      "verificationMethod": "curl content inspection",
+      "note": "Title and release characterize the US$300mm financing as secured debt."
+    }
+  ],
+  "conclusion": "The accepted packet is usable as a DEFERRED decision only. The central ownership claim is supported by a corrected Business Wire URL and the current Vision Ridge page, but one cited primary URL is wrong and Keyframe/Cyrus current ownership continuity remains unproven."
+}

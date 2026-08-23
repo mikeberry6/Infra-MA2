@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0440:danskammer-energy:5987da36",
+  "sequence": 440,
+  "asOfDate": "2026-08-19",
+  "companyName": "Danskammer Energy",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "stagingDisposition": "STAGED_VALIDATED",
+  "applicationBlocked": false,
+  "rationale": "Danskammer remains a qualifying operating power-infrastructure company controlled by Tiger Infrastructure Partners Fund II, but the current record materially understates its ownership, legal and operating status. June 2026 court evidence supports an 81.79% controlling Danskammer Investments position plus four named minority holders. The 532 MW legacy plant filed Chapter 11 and entered a pending Section 363 sale process, yet continued operating as an NYISO Interim Service Provider through at least January 15, 2027. The separate proposed repowering was denied, withdrawn and never built. No buyer, completed sale, permanent retirement or Tiger exit was identified by August 19, 2026.",
+  "recommendedChanges": [
+    "Retain one active Danskammer Energy record at danskammer-energy|united-states and preserve the four legacy units plus the abandoned Energy Center proposal beneath that company boundary.",
+    "Correct the active control record to Tiger Infrastructure Partners Fund II through Fund II Danskammer AIV LP and affiliated Tiger vehicles, with an 81.79% June 2026 HoldCo interest and explicit date qualification.",
+    "Add the four current minority holders disclosed in the June 2026 petition cap table without treating their stakes as separate manager-level PortCos.",
+    "Replace the generic approximately-500-MW profile with 532 MW nameplate and date-qualified NYISO CRIS and dependable-capability metrics.",
+    "Record the June 10, 2026 Chapter 11 filing and Section 363 asset-sale process as pending outbound; do not activate an undisclosed buyer or retire Tiger before a legal close.",
+    "Record the denied and withdrawn repowering as an abandoned historical project rather than operating capacity, while keeping the legacy plant active under NYISO reliability service."
+  ],
+  "unresolvedQuestions": [
+    "Tiger and Agate economics within Danskammer Investments LLC are not publicly disclosed.",
+    "No buyer or definitive sale agreement was public by the August 19, 2026 cutoff."
+  ],
+  "unresolvedItemsAreNoncriticalDisclosureGaps": true,
+  "proposalGenerationAllowed": true,
+  "sourceVerificationPassed": true,
+  "linkedFollowUpRequired": false,
+  "linkedFollowUpSubjects": [],
+  "acceptedResponseSha256": "bc7398d8a29e353825cfe3b44e844c4083e1aa1a319fcf9c3dc7c0398058c371"
+}

@@ -1,0 +1,398 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_MANIFEST",
+  "methodologyVersion": "PORTCO_APPLY_BATCH_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0121-0125-v1",
+  "createdAt": "2026-08-23T04:53:00.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "c9cee767a6166fbbeef4f26327d80b1029ec1882cb85dc05af6330675cfd8007"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0121:r-e-l-a-m:186bc13d",
+      "taskIndex": 121,
+      "companyName": "R.E.L.A.M.",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0121-r-e-l-a-m-v1/proposal.json",
+        "sha256": "1c1d926a2ecd292d81e86a37c9c3e3af1c2f91d0219aacde7f5c7090c89569db"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0121-r-e-l-a-m-v1.json",
+        "sha256": "7b8d4b31ba84b6e626b00eb481827a6bf3eddb733dcae88f655e6f011c212edd"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0121-r-e-l-a-m/attempt-1/locked-production-snapshot.json",
+        "sha256": "54fe8b3fe845451519d1d273d22a3256dec89dd7d0e5f93f7b927a0db819b473"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0121-r-e-l-a-m/attempt-1/locked-task-snapshot.json",
+        "sha256": "6f2b023e18f363ea2e33f44bf37b0b3cb403d186f79d6ea6f737ca5c38773336"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0121-r-e-l-a-m/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "311e5fb304cc617eab91bb7cc887d8527a85240026f969ec914213421e35eba7"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0121-r-e-l-a-m/attempt-1/research-decision.json",
+        "sha256": "02f240ee7b8f56f5e8224225c9cc67fc63ce23709f90dcd957989f7c2670e7f5"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0121-r-e-l-a-m/attempt-1/source-verification.json",
+        "sha256": "47e30e6b6fa81e4c2c4abb2d18aa2486d297a2b2179a1767d8b436778154d843"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "1a0f291d8e2687dddb5ce2fd66a76aad6d867b77125417d8934718726c5dd770",
+      "dependencySha256": "2010b2e00170d74f1601336b836de93270faade5c159d39999d2dc45c9efc237",
+      "afterImageSha256": "c853cbafb05cb31bcf2aa416ad77b7dc8c74f86608b57accd22b35e43ef11b39",
+      "targetClaims": [
+        "canonical:r-e-l-a-m|canada",
+        "seed:r.e.l.a.m.|canada"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://cassels.com/rep_work/infrastructure-partners-acquires-1435-rail-equipment-leasing-and-maintenance-inc/",
+          "label": "Cassels — R.E.L.A.M. acquisition close",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://hl.com/about-us/transactions/relam-paceline-basalt/",
+          "label": "Houlihan Lokey — R.E.L.A.M. acquisition close",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://pacelineequity.com/affiliates-of-paceline-equity-partners-expand-rail-maintenance-leasing-platform/",
+          "label": "Paceline — R.E.L.A.M. platform formation",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://pacelineequity.com/paceline-equity-partners-agrees-to-sell-r-e-l-a-m/",
+          "label": "Paceline — R.E.L.A.M. sale agreement",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://relaminc.com/about/",
+          "label": "R.E.L.A.M. — Company profile",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.basaltinfra.com/",
+          "label": "Basalt — Current portfolio",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.businesswire.com/news/home/20210603005206/en/Paceline-Equity-Partners-Closes-Opportunity-Fund-I",
+          "label": "Business Wire — Paceline Opportunity Fund I close",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.linkedin.com/company/relaminc",
+          "label": "LinkedIn — R.E.L.A.M. company profile",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/2142448/000214244826000001/0002142448-26-000001-index.html",
+          "label": "SEC — Basalt Fund V R.E.L.A.M. Form D",
+          "sourceType": "SEC_FILING"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0122:cleco-corporate-holdings-llc:43ffb062",
+      "taskIndex": 122,
+      "companyName": "Cleco Corporate Holdings LLC",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0122-cleco-corporate-holdings-llc-v1/proposal.json",
+        "sha256": "0cf9cab89dfb8ad09276950ccff124e710c55ee7385551fe8f8d15c406cbb21f"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0122-cleco-corporate-holdings-llc-v1.json",
+        "sha256": "ac2f02532fb8414e8e7afc3b823602268c925d74d37e48f587273c45c8b11e32"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0122-cleco-corporate-holdings-llc/attempt-1/locked-production-snapshot.json",
+        "sha256": "cb966fba5c36d05e5fab3b7b7b4a0e43274aba7fd0d9190a0118230fe3ebf5ec"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0122-cleco-corporate-holdings-llc/attempt-1/locked-task-snapshot.json",
+        "sha256": "e33bb4f55d6fdeba1c688d5440b0f158ab5fcedd3458ca811ace81aeeaa273c2"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0122-cleco-corporate-holdings-llc/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "732aa475a8109d0f2ad03fcfb251627e0805cc09926c683e125f22d43f52bc0b"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0122-cleco-corporate-holdings-llc/attempt-1/research-decision.json",
+        "sha256": "3e16aa1201cb13ca5486d1740a2c37c527e4c6e1b66dd19366126f9f4104c284"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0122-cleco-corporate-holdings-llc/attempt-1/source-verification.json",
+        "sha256": "b3eb001072664d46a570814df972480c590f8a54483ee7d40e00ada904ad7159"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "9502d27cd55d15be3d75cbca2d1092ac1c71b28023506b0aaca69211435c525c",
+      "dependencySha256": "70d064be2a906505d07ddf9e26a3dfe3490b5cdcd361a1bd8a88de3c2dbf8fa7",
+      "afterImageSha256": "9508e51a7e3fb6858471e0322fd2d63503814c8f59aa78aeedb48e9f8463d406",
+      "targetClaims": [
+        "canonical:cleco-corporate-holdings-llc|united-states",
+        "company:cmrxpjkkg0151ivhenxskmy7x",
+        "relation:cmrxpk6nt0244ivhetvms2jd6",
+        "relation:cmrxpk6od0245ivhe8mp691um",
+        "relation:cmrxpk6re0246ivhen4ze6pdf",
+        "relation:cmrxpkuna02yuivhezutt20hw",
+        "relation:cmrxpmase04p1ivheat4e9uo7",
+        "relation:cmrxpmasy04p2ivhedxaq3w8y",
+        "relation:cmrxpmati04p3ivhe4d661jv4",
+        "relation:cmrxpmaty04p4ivhextnub48a",
+        "relation:cmrxpmauk04p5ivhe52wmo6r5",
+        "relation:cmrxpmav504p6ivherdppmeqr",
+        "relation:cmrxpmxph05i0ivhe9e7vu7tx",
+        "relation:cmrxpmxq205i1ivhehr8an2v0",
+        "relation:cmrxpmxqh05i2ivhex99g6so7",
+        "relation:cmrxpmxqy05i3ivhe8g4k4rit",
+        "relation:cmrxpmxre05i4ivhexg26irkz",
+        "relation:cmrxpmxrz05i5ivhe6sn5wyod",
+        "relation:cmrxps3e10c2givheaxyj7554",
+        "relation:cmrxps3en0c2hivheh18pq63i",
+        "relation:cmrxps3f90c2iivheorw1y5ev",
+        "relation:cmrxps3fr0c2jivher9geurwv",
+        "relation:cmrxps3g90c2kivhetjvtdy68",
+        "relation:cmrxps3j60c2livheuzi26j62",
+        "relation:cmrxps3jx0c2mivhegf9kf6ac",
+        "seed:cleco corporate holdings llc|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://elibrary.ferc.gov/eLibrary/docinfo?accession_Number=20260629-5281",
+          "label": "FERC — Cleco sale filing EC26-120",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://lpscpubvalence.lpsc.louisiana.gov/portal/PSC/DocketDetails?docketId=32834",
+          "label": "Louisiana PSC — Cleco sale docket U-37963",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://lpscpubvalence.lpsc.louisiana.gov/portal/PSC/ViewFile?fileId=SnuJItgVr6k%3D",
+          "label": "Regulatory ownership source — Cleco Corporation",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.bci.ca/wp-content/uploads/2024/08/IRR-Program-FS-2024_Secured.pdf",
+          "label": "Ownership interest source — BCI I&RR 2024 financial statements — Puget Sound Energy",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://www.cleco.com/about/history",
+          "label": "Company profile source — Cleco Corporation",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.cleco.com/about/leadership-governance/executive-officers",
+          "label": "Management source — Cleco Corporation",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.cleco.com/about/our-company",
+          "label": "Cleco — Company profile",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.cleco.com/media/press-releases/detail/2014/10/20/cleco-enters-agreement-to-be-acquired-by-north-american-investor-group-led-by-macquarie-infrastructure-and-real-assets-and-british-columbia-investment-management-corporation",
+          "label": "Announcement date source — BCI — Cleco Corporation",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.cleco.com/media/press-releases/detail/2016/04/13/north-american-led-investor-group-completes-acquisition-of-cleco",
+          "label": "Close date source — BCI — Cleco Corporation",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.cleco.com/media/press-releases/detail/2026/04/27/stonepeak-and-bernhard-capital-partners-to-acquire-cleco",
+          "label": "Pending sale source — Cleco Corporation",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1089819/000108981926000010/cnl-20260331.htm",
+          "label": "Cleco — 2026 Q1 Form 10-Q",
+          "sourceType": "SEC_FILING"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1089819/000119312517101185/d317836d424b3.htm",
+          "label": "Cleco — 2017 debt prospectus",
+          "sourceType": "SEC_FILING"
+        }
+      ]
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0123:connaught-oil-and-gas:bf7f3998",
+      "taskIndex": 123,
+      "companyName": "Connaught Oil and Gas",
+      "outcome": "EXCLUDED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0121-0125-v1/decisions/0123-connaught-oil-and-gas.json",
+        "sha256": "0170f13d5fbd96ce231bc3f7d28d44e0120a0e3c70577bcf7d3a18e8702b6d90"
+      }
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0124:corex-resources-ltd:b7545232",
+      "taskIndex": 124,
+      "companyName": "Corex Resources Ltd.",
+      "outcome": "EXCLUDED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0121-0125-v1/decisions/0124-corex-resources-ltd.json",
+        "sha256": "52c6df1f113dab295d1ee3d0eb8fac9c85dca35ef1f780ecc5b69261390c3e3c"
+      }
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0125:gct-global-container-terminals-inc:4810f4cf",
+      "taskIndex": 125,
+      "companyName": "GCT Global Container Terminals Inc.",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0125-gct-global-container-terminals-inc-v1/proposal.json",
+        "sha256": "e02e11923daef49fef7673702baa60ae7638246d669a4607d53a32d505f21032"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0125-gct-global-container-terminals-inc-v1.json",
+        "sha256": "7813530b8f96d93ba29533107c8d10c35e7ffbfce7946bd20e1b15d522b4fe9a"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0125-gct-global-container-terminals-inc/attempt-1/locked-production-snapshot.json",
+        "sha256": "7e48863c1e9747ffaf2e060a52ac9dfafb6623c4ed737775ac86e72b87809b60"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0125-gct-global-container-terminals-inc/attempt-1/locked-task-snapshot.json",
+        "sha256": "1a398e68e45a04bb14fd7cd66ba66bddab4fbce28f37631735de02a54c474f54"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0125-gct-global-container-terminals-inc/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "34f7199823cd77ef6a6c0231aaa843cbf3ca0338b7a5244903b1f6eeb3d6a492"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0125-gct-global-container-terminals-inc/attempt-1/research-decision.json",
+        "sha256": "ef7112b7222bdea568aecc085a730fdf494029c9413ef8d8c2253aa74b119430"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0125-gct-global-container-terminals-inc/attempt-1/source-verification.json",
+        "sha256": "861bd402f2634e10770c1ae699fac4a8f154bff7af84161fb359667f9eb23ab6"
+      },
+      "supersededTaskIds": [
+        "ledger:0304:gct-global-container-terminals-inc:7bd15d5c",
+        "ledger:0477:gct-global-container-terminals:6046b469"
+      ],
+      "taskStateSha256": "d24339f55b3b52ea995f2155834d654b8998bc667427dc173ce68e8861e55403",
+      "dependencySha256": "ab1022ffef5e64cb7a31a2927b8b3b8207e29967f635519de1f4e1499982a280",
+      "afterImageSha256": "849e0d0117868857fae496cda38bc3c3332701553e1b3ae383906cbcaf69bbc4",
+      "targetClaims": [
+        "canonical:gct-global-container-terminals-inc|canada|census-1",
+        "company:cmrxpj8l000mmivhe1cfe4xs6",
+        "relation:cmrxpjtog01jsivhe5itt7b15",
+        "relation:cmrxpjtp001jtivhep0scqftr",
+        "relation:cmrxpjtpi01juivhelpzjg4ui",
+        "relation:cmrxpkuw802z7ivheahyhs096",
+        "relation:cmrxpkuwp02z8ivhepo95ewrz",
+        "relation:cmrxpkuxb02z9ivhe1ags325o",
+        "relation:cmrxpkuxq02zaivhevmksemr3",
+        "relation:cmrxpkv0l02zbivhehueq2jnq",
+        "relation:cmrxpmjwa050divhewhhkqw4k",
+        "relation:cmrxpmjwu050eivhe9zzwxzrf",
+        "relation:cmrxpmjyi050hivhemkal86dr",
+        "relation:cmrxpmx8605h7ivheo0sn8yz2",
+        "relation:cmrxpmx9a05h9ivhevky8erma",
+        "relation:cmrxpmxa805hbivhe9iqpbiyc",
+        "relation:cmrxpmxb905hdivhervpvk0y1",
+        "relation:cmrxpmxca05hfivhere57thbx",
+        "relation:cmrxppgnd087givhezj6ym2im",
+        "relation:cmrxppgoh087iivhezj6x8le2",
+        "relation:cmrxppgpj087kivhedqt6mbmp",
+        "relation:cmrxppgql087mivhe7iqc4krb",
+        "relation:cmrxppgrq087oivheprlacpxu",
+        "relation:cmrxppgvc087qivhei1qc5jbf",
+        "relation:cmrxpsiyb0cptivhevuvikr8y",
+        "relation:cmrxpsj160cpxivheaiif6zh9",
+        "relation:cmrxpsj1q0cpyivhe4m5bx6ay",
+        "seed:gct global container terminals inc.|canada",
+        "seed:gct global container terminals|canada"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://bcmarineterminals.com/global-container-terminals/",
+          "label": "Operations source — GCT Global Container Terminals Inc.",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://globalterminals.com/about/about-us/",
+          "label": "Company profile source — GCT Global Container Terminals Inc.",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://globalterminals.com/about/leadership/",
+          "label": "Management source — GCT Global Container Terminals Inc.",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://globalterminals.com/gct-successfully-concludes-sale-of-new-york-terminals-to-cma-cgm/",
+          "label": "GCT — U.S. terminal sale close",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://globalterminals.com/global-container-terminals-announces-new-board-chair-jane-ohagan/",
+          "label": "GCT — Current ownership and board chair",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://globalterminals.com/ifm-investors-bci-join-ontario-teachers-equity-partners-gct-global-container-terminals-inc/",
+          "label": "Investment source — GCT Global Container Terminals Inc.",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.ifminvestors.com/capabilities/infrastructure/our-portfolio/gct-global-container-terminals/",
+          "label": "IFM Investors — GCT Global Container Terminals",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.ifminvestors.com/en-gb/capabilities/infrastructure/our-portfolio/gct-global-container-terminals/",
+          "label": "Initial fund investment source — IFM Investors — GCT Global Container Terminals",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.otpp.com/en-ca/about-us/news-and-insights/2018/ifm-investors-and-bci-to-join-ontario-teachers-as-equity-partners-in-gct-global-container-terminals-inc-/",
+          "label": "Announcement date source — BCI — GCT Global Container Terminals Inc.",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.otpp.com/en-ca/investments/our-advantage/our-performance-and-track-record/major-investments/",
+          "label": "Otpp — Pacifico Sur",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.ourcommons.ca/Content/Committee/411/FINA/WebDoc/WD5138047/411_FINA_PBC2011_Briefs/Global%20Container%20Terminals%20E.html",
+          "label": "Investment date source — OTPP — GCT Global Container Terminals Inc.",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.sullcrom.com/About/News-and-Events/Highlights/2018/December/Ontario-Teachers-Pension-Plan-Completes-Equity-Partnership-in-GCT-Global-Container-Terminals-Inc",
+          "label": "Sullivan & Cromwell — GCT equity partnership close",
+          "sourceType": "ARTICLE"
+        }
+      ]
+    }
+  ],
+  "collisionAnalysis": {
+    "independent": true,
+    "claimsSha256": "edf6377eec0edeacc1c8f823652454be79de1ea362244ce0a530d5ea934d5b22",
+    "sharedSourceUrls": [],
+    "conflicts": []
+  },
+  "batchSha256": "d32dc609208bc6e4fe4ed25783d64de719bc45aa8ec9be1cbcbf572316a6c2bf"
+}

@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0161:txnm-energy:91e56a1f",
+  "taskIndex": 161,
+  "companyName": "TXNM Energy",
+  "verifiedAt": "2026-08-19T05:55:05.000Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1108426/000110842626000048/R37.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1108426/000110842626000048/R37.htm",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 4819,
+      "contentSha256": "877ac7a38d97756168a8989b17f3d3f2f4c577a6ff2b2e5848afe05fe44b70a8",
+      "note": "SEC blocked curl and the inline fact page was not independently safe-openable, but the parent SEC filing and current SEC/TXNM filing record were independently opened; release review must reopen the parent filing."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1108426/000110842626000048/R29.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1108426/000110842626000048/R29.htm",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 4819,
+      "contentSha256": "b41be8a8dece1800a13383d60faa3c64a02867f0997b4af29bacd7c8461dafa3",
+      "note": "SEC blocked curl and the inline fact page was not independently safe-openable, but the parent SEC filing and July 2026 current reports corroborate the PIPE unwind; release review must reopen the parent filing."
+    },
+    {
+      "url": "https://www.txnmenergy.com/~/media/Files/P/PNM-Resources/rates-and-filings/2025%20Blackstone%20Infrastructure/PNM/25-00060-UT-2026-07-27-PNM-Joint%20Applicants%20Compliance%20Report%20to%20Effectuate%20Final%20Order%20on%20the%20Show%20Cause.pdf",
+      "finalUrl": "https://www.txnmenergy.com/~/media/Files/P/PNM-Resources/rates-and-filings/2025%20Blackstone%20Infrastructure/PNM/25-00060-UT-2026-07-27-PNM-Joint%20Applicants%20Compliance%20Report%20to%20Effectuate%20Final%20Order%20on%20the%20Show%20Cause.pdf",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 4617237,
+      "contentSha256": "2e6530c35b7929a1ecb6f8b0e6ab5590a1dd1af9262755e8bedec313ec952ef4",
+      "note": "Official NMPRC compliance report opened and was hash-captured."
+    },
+    {
+      "url": "https://www.blackstone.com/news/press/txnm-energy-enters-agreement-to-be-acquired-by-blackstone-infrastructure/",
+      "finalUrl": "https://www.blackstone.com/news/press/txnm-energy-enters-agreement-to-be-acquired-by-blackstone-infrastructure/",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 5767,
+      "contentSha256": "80e53092441a97adbefd40665c82f6632880c47ab93d1c200d7e30d253dcad9c",
+      "note": "Blackstone blocked curl, but independent browser retrieval opened the transaction announcement and verified the strategy, terms, platform scope, and pending state at announcement."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1108426/000110842625000048/a05192025txnmex21.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1108426/000110842625000048/a05192025txnmex21.htm",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 4819,
+      "contentSha256": "2b6d81d2248e545bb4a371acb839b3149f65c4a3302fd49744050c0e69061d64",
+      "note": "SEC blocked curl, but independent browser retrieval opened the merger agreement and verified legal parties and transaction vehicles."
+    },
+    {
+      "url": "https://www.txnmenergy.com/investors/rates-and-filings/pnm-nmprc-filings.aspx",
+      "finalUrl": "https://www.txnmenergy.com/investors/rates-and-filings/pnm-nmprc-filings.aspx",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 237660,
+      "contentSha256": "a4d94e7d570dce31eadce3dc08b6b82cfcdf620b78d427ea99a0238769768b2e",
+      "note": "Official TXNM NMPRC filing index opened."
+    },
+    {
+      "url": "https://www.txnmenergy.com/about-us/history.aspx",
+      "finalUrl": "https://www.txnmenergy.com/about-us/history.aspx",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 88503,
+      "contentSha256": "1d55f18a472ce00cdc535176a976aea87159d3d410012a8f1c781eb0de618f9a",
+      "note": "Official corporate history page opened."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allEvidenceRowsChecked": true,
+    "allCoreClaimsHaveOpenOrBrowserVerifiedEvidence": true,
+    "deadUrlCount": 0,
+    "redirectConcernCount": 0
+  },
+  "releaseRequirement": "Reopen the complete 2026 10-Q and July 2026 SEC current reports before mutation; preserve the PIPE as historical and do not treat the signed take-private as closed until legal closing evidence exists."
+}

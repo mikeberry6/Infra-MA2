@@ -1,0 +1,214 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RESEARCH_DECISION",
+  "taskId": "ledger:0140:environmental-360-solutions:28da2905",
+  "taskIndex": 140,
+  "companyName": "Environmental 360 Solutions",
+  "asOfDate": "2026-08-19",
+  "stagedAt": "2026-08-19T03:42:00.000Z",
+  "researchOnly": true,
+  "mutationAuthorized": false,
+  "proposalRequiresFreshProductionSnapshot": true,
+  "releaseRequiresFreshAcquisitionExitCheck": true,
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "Environmental 360 Solutions",
+    "requestedManagers": [
+      "BlackRock",
+      "Global Infrastructure Partners"
+    ],
+    "decision": "PROPOSED_MERGE",
+    "confidence": "HIGH",
+    "rationale": "Retain one active E360S platform. BlackRock closed a majority purchase on 2023-02-16; the Competition Bureau names BlackRock Global Infrastructure Fund IV, SCSp, not GEPIF III. BlackRock's 2024 GIP acquisition did not itself transfer E360S or create another owner period. Current disclosures show BlackRock majority, Ardellini significant and CBGF minority; no platform exit was found.",
+    "identityResolution": {
+      "displayName": "Environmental 360 Solutions",
+      "canonicalKey": "environmental-360-solutions|canada",
+      "aliases": [
+        "Environmental 360 Solutions Inc.",
+        "Environmental 360 Solutions Ltd.",
+        "E360S"
+      ],
+      "nameNote": "Inc. appears in the 2023 close and Ltd. on the current site; treat both as one platform. Exact name-change mechanics are NOT_PUBLICLY_DISCLOSED.",
+      "headquarters": "Aurora, Ontario, Canada",
+      "boundary": "Count the parent once; acquired businesses and assets are subsidiaries/tuck-ins."
+    },
+    "ownershipResolution": {
+      "managerFindings": {
+        "BlackRock": "CURRENT majority owner since 2023-02-16 via BlackRock Global Infrastructure Fund IV, SCSp.",
+        "Global Infrastructure Partners": "NO separate owner period; post-2024 BlackRock platform cross-reference only."
+      },
+      "currentOwners": [
+        {
+          "manager": "BlackRock",
+          "organization": "BlackRock Alternatives—Diversified Infrastructure",
+          "fund": "BlackRock Global Infrastructure Fund IV",
+          "vehicle": "BlackRock Global Infrastructure Fund IV, SCSp",
+          "stake": "Majority",
+          "announcementDate": "2023-02-16",
+          "entryDate": "2023-02-16",
+          "isActive": true,
+          "transactionState": "CURRENT"
+        },
+        {
+          "manager": "Founder",
+          "organization": "Donato Ardellini",
+          "stake": "Significant; large individual holder",
+          "announcementDate": "2018-11-21",
+          "entryDate": "2018-10",
+          "isActive": true,
+          "transactionState": "CURRENT"
+        },
+        {
+          "manager": "Canadian Business Growth Fund",
+          "stake": "Minority",
+          "announcementDate": "2020-03-11",
+          "entryDate": "2020-03-11",
+          "isActive": true,
+          "transactionState": "CURRENT_INCREASED_2023"
+        }
+      ],
+      "formerOwners": [
+        {
+          "manager": "Almada Inc.",
+          "stake": "Founding investor; pre-sale majority",
+          "announcementDate": "2018-11-21",
+          "entryDate": "2018-10",
+          "exitDate": "2023-02-16",
+          "isActive": false,
+          "transactionState": "EXITED"
+        },
+        {
+          "manager": "OPTrust",
+          "stake": "Strategic interest",
+          "announcementDate": "2020-10-21",
+          "entryDate": "2020-10-21",
+          "exitDate": "2023-02-16",
+          "isActive": false,
+          "transactionState": "EXITED"
+        },
+        {
+          "manager": "Oaktree Capital Management, L.P.",
+          "fund": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "Significant strategic interest",
+          "announcementDate": "2021-08-27",
+          "entryDate": "2021-08-27",
+          "exitDate": "2023-02-16",
+          "isActive": false,
+          "transactionState": "EXITED"
+        }
+      ]
+    },
+    "operatingResolution": {
+      "status": "Active",
+      "qualification": "INCLUDE: manager-level environmental infrastructure platform with essential waste services, owned assets, permits, contracts and barriers to entry.",
+      "founded": 2018,
+      "sector": "Environmental infrastructure",
+      "subsector": "Waste management, recycling and environmental services",
+      "services": "Collection, transfer, recycling, special/liquid waste, response and industrial cleaning.",
+      "scale": "Over 800,000 North American municipal, commercial and industrial customers.",
+      "footprint": "Alberta, British Columbia, Ontario, Quebec, Saskatchewan and Michigan.",
+      "website": "https://e360s.ca/"
+    },
+    "acquisitionExitCheck": {
+      "result": "NO_EXIT_OR_PENDING_PLATFORM_SALE_FOUND",
+      "search": "Sale, exit, divestiture, transfer, recapitalization, merger, rebrand, bankruptcy and auction checked through 2026-08-19.",
+      "latestActivity": "First U.S. platform acquired in Michigan in July 2026; E360S remained active.",
+      "pendingTransactions": []
+    },
+    "milestones": [
+      {
+        "date": "2018-10",
+        "event": "E360S launched as a Canadian waste/environmental-services platform.",
+        "category": "Founding"
+      },
+      {
+        "date": "2023-02-16",
+        "event": "BlackRock closed its majority purchase; Ardellini retained, CBGF increased, and Almada/OPTrust/Oaktree sold.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "2026-07-13",
+        "event": "E360S announced its first U.S. platform through Marcotte Disposal in Michigan.",
+        "category": "Expansion"
+      }
+    ],
+    "evidence": [
+      {
+        "label": "E360S BlackRock close",
+        "url": "https://e360s.ca/our-media/environmental-360-solutions-inc-announces-closing-of-acquisition-by-blackrock-alternatives/",
+        "purpose": "OWNERSHIP",
+        "sourceTier": "T1",
+        "workingStatus": "OK",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "Competition Bureau merger reviews",
+        "url": "https://competition-bureau.canada.ca/mergers-and-acquisitions/archived-report-merger-reviews?wbdisable=true",
+        "purpose": "FUND_VEHICLE",
+        "sourceTier": "T1",
+        "workingStatus": "INDEXED; OPEN_TIMEOUT",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "E360S shareholders",
+        "url": "https://e360s.ca/about-us/shareholders/",
+        "purpose": "CURRENT_OWNERS",
+        "sourceTier": "T1",
+        "workingStatus": "OK",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "BlackRock GIP close",
+        "url": "https://www.blackrock.com/corporate/newsroom/media/press-releases/blackrock-completes-acquisition-of-global-infrastructure-partners",
+        "purpose": "MANAGER_BOUNDARY",
+        "sourceTier": "T1",
+        "workingStatus": "OK",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "E360S U.S. entry",
+        "url": "https://www.prnewswire.com/news-releases/environmental-360-solutions-enters-united-states-market-through-strategic-acquisition-302823114.html",
+        "purpose": "SCALE_FOOTPRINT",
+        "sourceTier": "T1",
+        "workingStatus": "OK",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "E360S company profile",
+        "url": "https://e360s.ca/about-us/",
+        "purpose": "FOUNDING_SERVICES",
+        "sourceTier": "T1",
+        "workingStatus": "OK",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "record": "BlackRock record plus GIP candidate -> one E360S record; GIP cross-reference only.",
+      "fund": "GEPIF III / n.a. -> BlackRock Global Infrastructure Fund IV / BlackRock Global Infrastructure Fund IV, SCSp.",
+      "headquarters": "Five-province list -> Aurora, Ontario; provinces plus Michigan are footprint.",
+      "scale": "750,000+ -> 800,000+ North American customers.",
+      "ownership": "BlackRock only -> BlackRock majority, Ardellini significant, CBGF minority; three institutional sellers exited in 2023."
+    },
+    "excludedOrDuplicateCandidates": {
+      "GIP owner/company": "Duplicate attribution; no distinct ownership period.",
+      "Inc. versus Ltd.": "Same platform aliases.",
+      "Acquired businesses/assets": "Subsidiaries/tuck-ins; exclude separately."
+    },
+    "unresolvedQuestions": [
+      "Exact percentages and any additional co-investors are NOT_PUBLICLY_DISCLOSED.",
+      "Exact Inc.-to-Ltd. legal mechanics are NOT_PUBLICLY_DISCLOSED.",
+      "Paul Coffey was an early backer; later ownership status is NOT_PUBLICLY_DISCLOSED."
+    ],
+    "recommendedListAction": "Retain production ID cmrxpj8wj00n3ivheefc305n4 as the sole active record; merge the GIP candidate as a non-owner cross-reference; correct fund/vehicle, headquarters, co-owner history and scale; do not create a GIP ownership period."
+  },
+  "independentVerification": {
+    "evidenceUrlsChecked": 6,
+    "openSourceCount": 6,
+    "blockedSourceCount": 0,
+    "unavailableSourceCount": 0,
+    "recommendedPrimaryCount": 1,
+    "modelModeVerified": true
+  }
+}
+
+

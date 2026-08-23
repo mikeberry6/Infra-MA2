@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0339:race-communications:debd2ccc",
+  "taskIndex": 339,
+  "companyName": "Race Communications",
+  "asOfDate": "2026-08-19",
+  "recordedAt": "2026-08-22T20:54:08.000Z",
+  "modelDecision": "PROPOSED_NEW",
+  "confidence": "HIGH",
+  "stageState": "STAGED_VALIDATED",
+  "applicationBlocked": false,
+  "rationale": "Race is an in-scope California fiber-to-the-home operating platform. Munich Re's audited holdings and insurance-regulatory evidence establish MEAG-managed MR Redwood as an active 7.1264% parent-equity investor, while company and Oak Hill evidence support continuing Oak Hill majority control and distinguish AllianceBernstein's private-credit financing from ownership.",
+  "repoReconciliation": {
+    "canonicalKey": "race-communications|united-states",
+    "recommendedTreatment": "CREATE_ONE_CANONICAL_PORTCO_WITH_MEAG_AND_OAK_HILL_OWNERSHIP",
+    "preserveBoundary": "Race Communications at the manager-level platform; exclude holdcos, operating subsidiaries, local networks, SPVs and absorbed add-ons"
+  },
+  "proposalGuardrails": [
+    "Create Race only once and map the MEAG census holding to the same canonical company.",
+    "Record MEAG/Munich Re through MR Redwood at 7.1264% parent equity; do not describe AllianceBernstein private credit as ownership.",
+    "Record Oak Hill as current majority controller without inventing a current exact percentage or fund allocation.",
+    "Use 2024 as MEAG's entry year but keep the legal closing date not publicly disclosed.",
+    "Do not create Race holdcos, Race subsidiaries, Atherton Fiber or local network assets as separate PortCos.",
+    "Do not infer undisclosed equity amount, unit class, voting/preference terms or observer rights."
+  ],
+  "nonblockingDisclosureGaps": [
+    "MEAG investment amount and legal closing date",
+    "MR Redwood unit, voting, preference and observer terms",
+    "Oak Hill exact current percentage and final fund allocation",
+    "AllianceBernstein debt terms"
+  ],
+  "recommendedNextAction": "Prepare one later protected new-company proposal for Race Communications with MEAG/Munich Re and Oak Hill as the two current owners, preserving the platform boundary and evidence limitations.",
+  "databaseMutationAuthorized": false
+}

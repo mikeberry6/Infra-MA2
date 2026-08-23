@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0410:sierra-railroad-company:b9c99f78",
+  "sequence": 410,
+  "asOfDate": "2026-08-19",
+  "companyName": "Sierra Railroad Company",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "stagingDisposition": "STAGED_REVIEW_REQUIRED",
+  "applicationBlocked": true,
+  "rationale": "Sierra Railroad Company is one current Ridgewood-controlled U.S. rail-infrastructure platform. Ridgewood's March 9 release and current portfolio page prove control and unrealized status, while the same release proves Mike Hart retained a significant investment. The repository should not represent Ridgewood as sole owner. Application is blocked because the exact post-close cap table and the complete retained-holder and Sunburst perimeter are not directly disclosed.",
+  "recommendedChanges": [
+    "Keep one canonical Sierra Railroad Company record and one Ridgewood ownership period beginning with the March 6, 2026 legal close.",
+    "Represent continuing legacy ownership without storing the response's inferred 57.6/42.4 percentages as exact structured stakes.",
+    "Keep Sierra Northern, Railpower, the included passenger operations and CVAT within the Sierra platform boundary.",
+    "Exclude Brookfield Infrastructure Credit as a debt provider rather than an equity owner."
+  ],
+  "unresolvedQuestions": ["Exact Ridgewood fund and surviving holdco","Complete retained-holder roster and exact post-close cap table","Exact Sunburst/passenger carveout","Exact CVAT legal close"],
+  "unresolvedItemsAreNoncriticalDisclosureGaps": false,
+  "proposalGenerationAllowed": false,
+  "sourceVerificationPassed": true,
+  "fieldCorrectionRequired": true,
+  "fieldCorrections": ["Do not store inferred ownership percentages as exact structured stakes","Use March 6, 2026 as the Ridgewood legal close and March 9, 2026 as the announcement date","Do not create separate Sierra Northern, Railpower or CVAT PortCos"],
+  "acceptedResponseSha256": "a41d4ac83689a92020ac30c67e9d75ad3cafe5f793f77c3b2d01fe91b10e3f33"
+}

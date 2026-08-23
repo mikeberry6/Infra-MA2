@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0416:u-s-solar-portfolio-oxbow-happy:cdda9d96",
+  "sequence": 416,
+  "asOfDate": "2026-08-19",
+  "companyName": "U.S. Solar Portfolio (Oxbow + Happy)",
+  "decision": "PROPOSED_NEW",
+  "confidence": "HIGH",
+  "stagingDisposition": "STAGED_VALIDATED",
+  "applicationBlocked": false,
+  "rationale": "Crawfish Solar Holdings 2, LLC is the narrowest proved manager-level portfolio boundary. JERA closed its 100% acquisition on August 2, 2024 and reduced its interest to 50% on July 30, 2025 through a sale to SG US Aggregator LLC. Current JERA evidence continues to show JERA Nex and Schroders Greencoat at 50% each. Happy and Oxbow are underlying operating assets and must not be counted again as separate Schroders PortCos.",
+  "recommendedChanges": [
+    "Create one canonical Crawfish Solar Holdings 2, LLC portfolio covering Happy and Oxbow.",
+    "Record JERA Nex Americas LLC as 100% owner from August 2, 2024 and 50% current owner from July 30, 2025.",
+    "Record SG US Aggregator LLC, an affiliate managed by Schroders Greencoat, as the other 50% current owner from July 30, 2025.",
+    "Record the Lightsource bp selling affiliate as former owner ending August 2, 2024 while retaining Lightsource bp only as the asset-management and O&M provider.",
+    "Keep Happy Solar 1, LLC, Oxbow Solar Farm 1, LLC and the intervening Crawfish entities within the portfolio boundary rather than creating additional PortCos."
+  ],
+  "unresolvedQuestions": [
+    "Exact Lightsource seller affiliate",
+    "Exact Schroders fund or managed-client pool",
+    "Detailed 50:50 governance rights",
+    "Happy commercial-operation month differs between September and October 2023 primary sources"
+  ],
+  "unresolvedItemsAreNoncriticalDisclosureGaps": true,
+  "proposalGenerationAllowed": true,
+  "sourceVerificationPassed": true,
+  "acceptedResponseSha256": "8a24e16c294105a8d5dcf92005a511394b8a8a19a3b3764b48b79f38e1c143f3"
+}

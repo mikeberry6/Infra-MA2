@@ -1,0 +1,233 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0168:vantage-data-centers:6c26d26a",
+  "taskIndex": 168,
+  "companyName": "Vantage Data Centers",
+  "asOfDate": "2026-08-19",
+  "researchOnly": true,
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "responseSha256": "f83ace1b2a3ba7d529228b5bd02ae5d9103be71f2e0e0636da63b6d738a05c43",
+  "sourceVerification": "source-verification.json",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "Vantage Data Centers",
+    "requestedManagers": [
+      "CBRE Investment Management",
+      "DigitalBridge",
+      "Pantheon Ventures",
+      "PSP Investments"
+    ],
+    "decision": "PROPOSED_CORRECTION",
+    "confidence": "HIGH",
+    "rationale": "Keep one Vantage company, but separate platform equity from Vantage SDC asset equity. Add Pantheon PINT; split CBRE's two layers; separate PSP's 2024 platform exit from its residual stake.",
+    "identityResolution": {
+      "canonicalKey": "vantage-data-centers|united-states-canada",
+      "displayName": "Vantage Data Centers",
+      "legalName": "Vantage Data Centers Holdings, LLC is documented in 2020; current ultimate parent is NOT_PUBLICLY_DISCLOSED",
+      "aliases": [
+        "Vantage"
+      ],
+      "boundary": "One operating company. Vantage SDC is a stabilized NA asset portfolio managed/operated by Vantage; campuses/SPVs are not companies.",
+      "action": "KEEP; NO_MERGE"
+    },
+    "ownershipResolution": {
+      "directPlatformInterests": [
+        {
+          "manager": "DigitalBridge",
+          "organization": "DigitalBridge Group, Inc.",
+          "fund": "NOT_PUBLICLY_DISCLOSED",
+          "vehicle": "DigitalBridge-managed vehicle(s)",
+          "stake": "Lead NA platform stake; percentage NOT_PUBLICLY_DISCLOSED",
+          "entryDate": "2017-03-27",
+          "isActive": true,
+          "transactionState": "2017 close; active through 2024 recap"
+        },
+        {
+          "manager": "CBRE Investment Management",
+          "organization": "CBRE Caledon Capital Management Inc.",
+          "fund": "NOT_PUBLICLY_DISCLOSED",
+          "vehicle": "Caledon Vantage Aggregator LP; Caledon Taurus Investments LP; Caledon Andromeda Investments II LP",
+          "stake": "Pre-SDC Vantage/Aviator equity; percentage NOT_PUBLICLY_DISCLOSED",
+          "entryDate": "NOT_PUBLICLY_DISCLOSED",
+          "exitDate": "2020-07-22",
+          "isActive": false,
+          "transactionState": "Rolled/sold into SDC",
+          "entryYear": 2017
+        },
+        {
+          "manager": "PSP Investments",
+          "organization": "Public Sector Pension Investment Board",
+          "fund": "Balance sheet",
+          "vehicle": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "NA/EMEA development-platform stakes; percentage NOT_PUBLICLY_DISCLOSED",
+          "entryDate": "2017-03-27",
+          "exitDate": "2024-06-13",
+          "isActive": false,
+          "transactionState": "Exited both platforms; retained other Vantage interest"
+        }
+      ],
+      "assetPortfolioInterests": [
+        {
+          "manager": "CBRE Investment Management",
+          "organization": "CBRE Caledon Capital Management Inc.",
+          "fund": "NOT_PUBLICLY_DISCLOSED",
+          "vehicle": "CBRE Caledon Valhalla Aggregator Holdings, LP",
+          "stake": "Significant minority in 12-asset SDC; percentage NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2020-07-07",
+          "entryDate": "2020-07-22",
+          "isActive": true,
+          "transactionState": "Closed; no exit found; vehicle in 2026 SEC annex"
+        },
+        {
+          "manager": "DigitalBridge",
+          "organization": "DigitalBridge Group, Inc.",
+          "fund": "Balance sheet",
+          "vehicle": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "12.8% retained Vantage SDC interest",
+          "announcementDate": "2020-07-07",
+          "entryDate": "2020-07-22",
+          "isActive": true,
+          "transactionState": "Deconsolidated 2023-12-31; active non-controlling"
+        }
+      ],
+      "coInvestmentInterests": [
+        {
+          "manager": "Pantheon Ventures",
+          "organization": "Pantheon Infrastructure plc",
+          "fund": "Pantheon Infrastructure plc (PINT)",
+          "vehicle": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "$34.7m direct NA co-investment; percentage NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2022-07-01",
+          "entryDate": "NOT_PUBLICLY_DISCLOSED",
+          "isActive": true,
+          "transactionState": "Active at 2025 year-end",
+          "entryYear": 2022
+        }
+      ],
+      "residualOrUnclassifiedInterests": [
+        {
+          "manager": "PSP Investments",
+          "organization": "Public Sector Pension Investment Board",
+          "fund": "Balance sheet",
+          "vehicle": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "Residual Vantage stake; percentage/layer NOT_PUBLICLY_DISCLOSED",
+          "isActive": true,
+          "transactionState": "Current; not proven NA platform ownership"
+        }
+      ]
+    },
+    "operatingResolution": {
+      "status": "Active",
+      "website": "https://vantage-dc.com/",
+      "headquarters": "Denver, Colorado",
+      "foundedYear": 2010,
+      "geography": "United States/Canada within a global platform",
+      "business": "Hyperscale campuses and rack-ready, whitespace/build-to-suit capacity for cloud, AI and enterprise customers",
+      "scale": "June 2024: >25 NA/EMEA sites and >3 GW expected capacity; current NA-only total is NOT_PUBLICLY_DISCLOSED."
+    },
+    "acquisitionExitCheck": {
+      "searchThrough": "2026-08-19",
+      "result": "No later closed sale, merger, bankruptcy or signed Vantage deal found after the 2024 recap.",
+      "latest": "Reuters, 2026-08-13: preliminary IPO/sale exploration; no formal process.",
+      "url": "https://www.reuters.com/legal/transactional/vantage-data-centers-explores-ipo-100-billion-valuation-or-sale-sources-say-2026-08-13/",
+      "pendingTransactions": []
+    },
+    "milestones": [
+      {
+        "date": "2017-03-27",
+        "event": "DigitalBridge/PSP/TIAA consortium acquired Vantage."
+      },
+      {
+        "date": "2020-07-22",
+        "event": "12-asset Vantage SDC carve-out closed."
+      },
+      {
+        "date": "2022-07-01",
+        "event": "PINT announced a $34.7m NA co-investment."
+      },
+      {
+        "date": "2024-06-13",
+        "event": "$9.2bn recap closed; PSP exited NA/EMEA development platforms."
+      }
+    ],
+    "evidence": [
+      {
+        "label": "2020 agreement",
+        "url": "https://www.sec.gov/Archives/edgar/data/1679688/000167968820000044/cny8-k07072020ex101.htm",
+        "purpose": "SDC/CBRE rollover",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "2017 acquisition",
+        "url": "https://vantage-dc.com/news/vantageacquired/",
+        "purpose": "2017 close/owners",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING"
+      },
+      {
+        "label": "SDC deconsolidation",
+        "url": "https://ir.digitalbridge.com/news-releases/news-release-details/digitalbridge-completes-deconsolidation-vantage-sdc/",
+        "purpose": "12.8% SDC stake",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING"
+      },
+      {
+        "label": "2024 recap",
+        "url": "https://vantage-dc.com/news/vantage-data-centers-completes-9-2-billion-equity-investment-led-by-digitalbridge-and-silver-lake/",
+        "purpose": "2024 close/scale",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING"
+      },
+      {
+        "label": "Pantheon entry",
+        "url": "https://www.investegate.co.uk/announcement/rns/pantheon-infrastructure--pint/investment-in-north-america-data-centre-business/7152044",
+        "purpose": "PINT amount/exposure",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING"
+      },
+      {
+        "label": "Pantheon 2025",
+        "url": "https://annualreport.pantheoninfrastructure.com/",
+        "purpose": "PINT still held",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING"
+      },
+      {
+        "label": "PSP exit",
+        "url": "https://www.investpsp.com/en/news/psp-investments-completes-sale-of-majority-of-its-investment-in-vantage-data-centers/",
+        "purpose": "PSP exit/scope",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING"
+      },
+      {
+        "label": "PSP current",
+        "url": "https://www.investpsp.com/en/investors/",
+        "purpose": "Residual stake",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING"
+      }
+    ],
+    "beforeAfterChanges": [
+      "CBRE: split historical platform equity from active SDC equity.",
+      "DigitalBridge: keep platform ownership; classify 2020/12.8% as SDC equity.",
+      "Pantheon: add PINT's $34.7m NA co-investment; exclude broader platform exposure.",
+      "PSP: add 2017 entry/2024 platform exit; residual remains unclassified."
+    ],
+    "excludedOrDuplicateCandidates": [
+      "Vantage SDC, campuses and funding SPVs: not separate companies.",
+      "Pantheon's broader platform exposure: not another direct owner without vehicle proof.",
+      "GCM Grosvenor 2020: review as SDC/co-investment exposure."
+    ],
+    "unresolvedQuestions": [
+      "Post-2024 DigitalBridge/Silver Lake percentages/vehicles.",
+      "PSP residual percentage/vehicle/layer.",
+      "CBRE SDC percentage/client allocation.",
+      "Pantheon closing date/vehicle."
+    ],
+    "recommendedListAction": "Keep one Vantage row; add Pantheon PINT and PSP history/residual; split CBRE/DigitalBridge platform interests from SDC; do not create Vantage SDC."
+  }
+}

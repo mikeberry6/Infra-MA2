@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "runId": "portco-research-staging-2026-08-19",
+  "taskId": "ledger:0455:contract-leasing-corporation:083d749b",
+  "taskIndex": 455,
+  "validatedAt": "2026-08-22T16:06:18.444Z",
+  "conversationUrl": "https://chatgpt.com/c/6a89c5c0-0e50-83ea-baca-5c83cbc19037",
+  "requiredTopLevelKeys": [
+    "asOfDate",
+    "requestedCompany",
+    "requestedManagers",
+    "decision",
+    "confidence",
+    "rationale",
+    "identityResolution",
+    "ownershipResolution",
+    "operatingResolution",
+    "acquisitionExitCheck",
+    "milestones",
+    "evidence",
+    "beforeAfterChanges",
+    "excludedOrDuplicateCandidates",
+    "unresolvedQuestions",
+    "recommendedListAction"
+  ],
+  "initialResponse": {
+    "valid": false,
+    "fencedJsonPresent": false,
+    "jsonParsed": false,
+    "markdownReviewPresent": false,
+    "requiredTopLevelKeysPresent": false,
+    "responseSha256": "80c1f01832583103ce6b2410f3e7dda7248f957d02cc7d3feefcf7f7fa4efa8f",
+    "errors": [
+      "Initial generation completed source research but stalled before emitting the required contract packet after a transient conversation-rate limit."
+    ]
+  },
+  "repair": {
+    "count": 1,
+    "limit": 1,
+    "submittedAt": "2026-08-22T16:04:43.093Z",
+    "completedAt": "2026-08-22T16:05:19.000Z",
+    "valid": false,
+    "responseSha256": "ae9e0ebd5fe5a0986cad258c3a6c87c0d13a7fb6a21f09742a20ddb6752dec4c",
+    "errors": [
+      "Material identity error: retained founder and current CEO is Michael Goor, not Dennis T. Smith.",
+      "Unsupported scale claim: the cited company evidence supports approximately 15,700 units at acquisition, not more than 30,000 units.",
+      "Schema type error: pendingTransaction.evidenceUrls is a string rather than an array."
+    ]
+  },
+  "finalResponse": {
+    "characterCount": 4126,
+    "fencedJsonPresent": false,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "decision": "PROPOSED_NEW",
+    "confidence": "HIGH",
+    "evidenceCount": 3,
+    "primaryEvidenceCount": 1,
+    "currentOwnerCount": 1,
+    "pendingOwnershipTransactionCount": 0,
+    "withinOriginalCharacterLimit": true,
+    "withinEvidenceLimit": true,
+    "withinMilestoneLimit": true,
+    "founderIdentityCorrect": false,
+    "fleetScaleDirectlySupported": false,
+    "pendingEvidenceUrlsArray": false,
+    "result": "FAIL"
+  },
+  "valid": false,
+  "errors": [
+    "The only repair response failed material factual and schema validation; no accepted response exists."
+  ],
+  "repairsUsed": 1,
+  "independentSourceVerification": "source-verification.json"
+}

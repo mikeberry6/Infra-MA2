@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0368:bruce-power:9c7e76e5",
+  "taskIndex": 368,
+  "linkedTaskIdsCovered": [],
+  "companyName": "Bruce Power",
+  "recommendedCanonicalName": "Bruce Power L.P.",
+  "asOfDate": "2026-08-19",
+  "researchOnly": true,
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "responseSha256": "e1dbbbbbc9ad5d441b4c541f0674ea78c42a4882e849739a5e2bb56963e65f4d",
+  "sourceVerification": "source-verification.json",
+  "acceptedResponse": "chatgpt-accepted-response.txt",
+  "summary": "Keep one Bruce Power L.P. platform and one continuous OMERS/Borealis period. Correct OMERS to a February 14, 2003 entry through BPC Generation Infrastructure Trust with a current 48.26% stake; add TC Energy at 48.26%, Power Workers' Union at 2.22%, the 1.26% aggregate employee/Society/GP interest, and the former British Energy and Cameco periods. No later ownership transfer or pending transaction was found.",
+  "blockingQuestions": [],
+  "nonblockingDisclosureGaps": [
+    "The individual splits within the disclosed 1.26% aggregate employee, Society and general-partner interest are not publicly disclosed.",
+    "The mechanism and date for the small change from the 2015 48.5% sponsor stakes to the current 48.26% stakes are not publicly disclosed.",
+    "The OMERS investment account beyond BPC Generation Infrastructure Trust and TC Energy's exact 2026 subsidiary chain are not publicly disclosed.",
+    "The submitted prompt carried a stale census holding identifier; authoritative lineage is 075-omers-infrastructure:holding:004:bruce-power."
+  ],
+  "applicationBlocked": false,
+  "recommendedActions": [
+    "Keep one canonical Bruce Power L.P. company and treat Bruce Power Inc., Bruce A/B, former Bruce Power A L.P., BPRIA, refurbishment, isotope and financing entities as internal or underlying boundaries.",
+    "Retain one OMERS/Borealis lineage period from February 14, 2003, correct its current stake to 48.26%, and record BPC Generation Infrastructure Trust as the disclosed holding vehicle.",
+    "Add the missing current TC Energy, Power Workers' Union and aggregate employee/Society/GP owner positions without creating duplicate platform records.",
+    "Add the former British Energy and Cameco ownership periods and record no pending ownership transaction."
+  ]
+}

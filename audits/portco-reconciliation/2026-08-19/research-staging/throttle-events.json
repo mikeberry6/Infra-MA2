@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RESEARCH_CHATGPT_THROTTLE_EVENTS",
+  "events": [
+    {
+      "observedAt": "2026-08-19T03:23:20.000Z",
+      "activeResearchChats": 10,
+      "noticeTitle": "Too many requests",
+      "noticeText": "You’re making requests too quickly. We’ve temporarily limited access to your conversations to protect your data. Please wait a few minutes before trying again.",
+      "action": "PAUSE_LAUNCHES_AND_BACK_OFF",
+      "previousCeiling": 10,
+      "newActiveLimit": 8,
+      "resumeNotBefore": "2026-08-19T03:28:20.000Z",
+      "researchResultsLost": false,
+      "mutationImpact": "NONE"
+    },
+    {
+      "observedAt": "2026-08-19T03:35:44.000Z",
+      "activeResearchChats": 2,
+      "noticeTitle": "Too many requests",
+      "noticeText": "You’re making requests too quickly. We’ve temporarily limited access to your conversations to protect your data. Please wait a few minutes before trying again.",
+      "triggerContext": "Two completed-response model metadata checks were attempted three seconds apart.",
+      "action": "PAUSE_UI_REQUESTS_AND_SLOW_METADATA_CHECKS",
+      "newResponseMetadataCheckCadenceSeconds": 15,
+      "newActiveLimit": 8,
+      "resumeNotBefore": "2026-08-19T03:40:44.000Z",
+      "researchResultsLost": false,
+      "mutationImpact": "NONE"
+    },
+    {
+      "observedAt": "2026-08-19T03:47:45.000Z",
+      "activeResearchChats": 2,
+      "noticeTitle": "Too many requests",
+      "noticeText": "You’re making requests too quickly. We’ve temporarily limited access to your conversations to protect your data. Please wait a few minutes before trying again.",
+      "triggerContext": "A fresh-chat launch was attempted after the prior cooldown while two schema repairs were outstanding. ChatGPT carried over an unrelated Work-surface prompt and rejected further access.",
+      "action": "QUARANTINE_LAUNCH_AND_PAUSE_ALL_NEW_CHATS",
+      "newResponseMetadataCheckCadenceSeconds": 15,
+      "newActiveLimit": 8,
+      "resumeNotBefore": "2026-08-19T03:52:45.000Z",
+      "quarantinedTask": "Gigapower",
+      "taskCountedAsStarted": false,
+      "researchResultsLost": false,
+      "mutationImpact": "NONE"
+    },
+    {
+      "observedAt": "2026-08-19T04:08:55.000Z",
+      "activeResearchChats": 4,
+      "noticeTitle": "Too many requests",
+      "noticeText": "You’re making requests too quickly. We’ve temporarily limited access to your conversations to protect your data. Please wait a few minutes before trying again.",
+      "triggerContext": "The fifth active company chat was attempted after four successful launches at roughly two-minute intervals.",
+      "action": "DO_NOT_COUNT_TASK_AND_BACK_OFF_ACTIVE_LIMIT",
+      "previousActiveLimit": 8,
+      "newActiveLimit": 4,
+      "resumeNotBefore": "2026-08-19T04:13:55.000Z",
+      "quarantinedTask": "National Renewable Solutions",
+      "taskCountedAsStarted": false,
+      "researchResultsLost": false,
+      "mutationImpact": "NONE"
+    }
+  ]
+}

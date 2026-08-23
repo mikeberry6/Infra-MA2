@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0194:cordelio-power:08aa08d8",
+  "taskIndex": 194,
+  "companyName": "Cordelio Power",
+  "verifiedAt": "2026-08-19T16:23:33.000Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://patternenergy.com/pattern-energy-announces-completion-of-acquisition-of-cordelio-power/",
+      "finalUrl": "https://patternenergy.com/pattern-energy-announces-completion-of-acquisition-of-cordelio-power/",
+      "status": "BROWSER_VERIFIED_AFTER_CURL_403",
+      "httpStatus": 403,
+      "mediaType": "browser DOM text",
+      "bytes": 3767,
+      "contentSha256": "1dbcc992098e827071f777cb1f53451e1aab5c0714590593c17f8308cacc94d8",
+      "note": "Pattern's completion announcement, acquired scope and integration boundary."
+    },
+    {
+      "url": "https://www.mccarthy.ca/en/experience/cordelio-power-acquired-by-pattern-energy",
+      "finalUrl": "https://www.mccarthy.ca/en/experience/cordelio-power-acquired-by-pattern-energy",
+      "status": "BROWSER_VERIFIED_AFTER_CURL_429",
+      "httpStatus": 429,
+      "mediaType": "browser DOM text",
+      "bytes": 4851,
+      "contentSha256": "ea1b054f10f27f5447871310a477b92cd5ae1f02c44f72d14d941b3a34b32627",
+      "note": "Transaction counsel's exact April 1, 2026 closing date and share-based structure."
+    },
+    {
+      "url": "https://www.cppinvestments.com/newsroom/cpp-investments-net-assets-total-780-7-billion-at-third-quarter-fiscal-2026/",
+      "finalUrl": "https://www.cppinvestments.com/newsroom/cpp-investments-net-assets-total-780-7-billion-at-third-quarter-fiscal-2026/",
+      "status": "INDEX_VERIFIED_AFTER_EMPTY_HTTP_202",
+      "httpStatus": 202,
+      "mediaType": "indexed page text",
+      "bytes": 286,
+      "contentSha256": "85ab1ac7386a2470916822bda10267ed037c684bea2c8af0d320b7d65cfa2c75",
+      "note": "The exact official page was title-verified but returned an empty body; independently indexed official text states that the Cordelio share transaction would increase CPP's Pattern stake to 69.1% at closing."
+    },
+    {
+      "url": "https://patternenergy.com/pattern-energy-announces-closing-of-equity-investment-from-consortium-headed-by-apg-and-art/",
+      "finalUrl": "https://patternenergy.com/pattern-energy-announces-closing-of-equity-investment-from-consortium-headed-by-apg-and-art/",
+      "status": "BROWSER_VERIFIED_AFTER_CURL_403",
+      "httpStatus": 403,
+      "mediaType": "browser DOM text",
+      "bytes": 13434,
+      "contentSha256": "fecced842a8865292c4c1a5b280c838da798c9975d74e5d87bdb67248136e269",
+      "note": "June 9, 2025 close of Riverstone's stake sale and the resulting Pattern co-owner set."
+    },
+    {
+      "url": "https://patternenergy.com/about/",
+      "finalUrl": "https://patternenergy.com/about/",
+      "status": "BROWSER_VERIFIED_AFTER_CURL_403",
+      "httpStatus": 403,
+      "mediaType": "browser DOM text",
+      "bytes": 15867,
+      "contentSha256": "21f3fe10d388702b84525f7a3a440506f8dc2f5b3aa8ee038733d104745e7c9e",
+      "note": "Current Pattern operating profile, North American scope and scale."
+    },
+    {
+      "url": "https://brightnightpower.com/about-us/news-insights/brightnight-acquires-cordelio-powers-joint-venture-interest-adds-6-gw-to-its-independently-controlled-project-portfolio/",
+      "finalUrl": "https://brightnightpower.com/about-us/news-insights/brightnight-acquires-cordelio-powers-joint-venture-interest-adds-6-gw-to-its-independently-controlled-project-portfolio/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 49759,
+      "contentSha256": "d2689c4de053352e7db8fa493d17ef3c0a2c11c23d4c05f7dca9d80571d24c3d",
+      "note": "April 21, 2026 completed JV-interest acquisition and retained-project boundary."
+    },
+    {
+      "url": "https://docs.fcc.gov/public/attachments/DOC-422125A1.pdf",
+      "finalUrl": "https://docs.fcc.gov/public/attachments/DOC-422125A1.pdf",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "application/pdf; charset=UTF-8",
+      "bytes": 754087,
+      "contentSha256": "c98005136c6dfff5e46357ad57823fff60831c9b4970aecf466d633be217e486",
+      "note": "Post-close regulator record retaining the Cordelio Power Holdings LLC name; no dissolution inferred."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allEvidenceRowsChecked": true,
+    "allCoreClaimsHaveOpenBrowserOrIndexVerifiedEvidence": true,
+    "deadUrlCount": 0,
+    "browserVerifiedAfterBlockedResponseCount": 4,
+    "indexVerifiedAfterEmptyResponseCount": 1,
+    "redirectConcernCount": 0
+  },
+  "releaseRequirement": "Retain Cordelio as a historical acquired company, retire CPP's direct owner period on April 1, 2026, and record continuing CPP exposure only on Pattern Energy."
+}

@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0439:crosslake-fibre:cb475638",
+  "checkedAt": "2026-08-22T08:27:30.000Z",
+  "method": "Independent direct HTTP status, final-URL, media-type, byte-length and content-hash checks; page-level PDF extraction for the FCC ownership chain and Tiger investment release; direct-page review of current Tiger relationship, company history, route scale, PoP definitions and CrossChannel readiness",
+  "sources": [
+    {
+      "url": "https://docs.fcc.gov/public/attachments/DA-18-1026A1_Rcd.pdf",
+      "httpStatus": 200,
+      "finalUrl": "https://docs.fcc.gov/public/attachments/DA-18-1026A1_Rcd.pdf",
+      "mediaType": "application/pdf; charset=UTF-8",
+      "bytes": 128596,
+      "sha256": "6b8d92be52162ae63b94875841a2fd394460b65729a68eba53e4056ed633b7ba",
+      "healthStatus": "WORKING",
+      "pageVerification": [
+        2
+      ],
+      "verifiedClaims": [
+        "Crosslake Fibre LP held 100% of the U.S. licensee equity and Connect Investments LP held 93.26% of Crosslake Fibre LP and its general partner",
+        "Tiger Infrastructure Partners Fund II Crosslake AIV LP and its Europe AIV held 78% and 22%, respectively, of Connect Investments LP",
+        "Other Canadian and U.S. investors held the remaining 6.74% of Crosslake Fibre LP and its general partner at the regulatory disclosure date",
+        "The Lake Ontario wet segment was 58 kilometres with 96 fibre pairs and a 2,400 Tbps design capacity"
+      ]
+    },
+    {
+      "url": "https://www.tigerinfrastructure.com/documents/FG/tigerNew/news/584279_Crosslake_Press_Release_-_Final.pdf",
+      "httpStatus": 200,
+      "finalUrl": "https://www.tigerinfrastructure.com/documents/FG/tigerNew/news/584279_Crosslake_Press_Release_-_Final.pdf",
+      "mediaType": "application/pdf",
+      "bytes": 350101,
+      "sha256": "29a04e65d7b8a22ce6c2c47a4618216b71ef34c47b8c592f46fe61b96601a98d",
+      "healthStatus": "WORKING",
+      "pageVerification": [
+        1,
+        2
+      ],
+      "verifiedClaims": [
+        "Tiger announced on December 7, 2017 that it had made an investment in Crosslake Fibre",
+        "The release identifies Crosslake as a developer of fibre-optic cable projects and specifically its Toronto-to-Buffalo Lake Ontario submarine cable",
+        "Tiger described itself as a middle-market investor in growing infrastructure platforms across communications and other infrastructure sectors",
+        "The release does not disclose a legal closing date separate from the announcement, a seller, security or ownership percentage"
+      ]
+    },
+    {
+      "url": "https://www.tigerinfrastructure.com/portfolio/Crosslake",
+      "httpStatus": 200,
+      "finalUrl": "https://www.tigerinfrastructure.com/portfolio/Crosslake",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 42757,
+      "sha256": "f10f81b191ce84913ce83cab38e8e1776900c81474f2aaa6898d87ef0baaa9fa",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Tiger continues to publish Crosslake as a Digital-sector North America portfolio company with a 2017 initial investment",
+        "Tiger describes Crosslake as a platform formed to develop, own and operate long-haul fibre-optic infrastructure networks"
+      ]
+    },
+    {
+      "url": "https://crosslakefibre.ca/company/",
+      "httpStatus": 200,
+      "finalUrl": "https://crosslakefibre.ca/company/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 190314,
+      "sha256": "59ae500c56cf36be5b3bb7a55ccbf34335ca95c181a4178bc37f71e6ed755d85",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Crosslake says it was founded in 2016, builds and owns its networks, and is backed by Tiger Infrastructure Partners",
+        "Mike Cunningham is identified as founder and CEO",
+        "The company timeline says the Toronto-Buffalo system entered commercial service in 2019 and CrossChannel entered service in December 2021"
+      ]
+    },
+    {
+      "url": "https://crosslakefibre.ca/network-map/",
+      "httpStatus": 200,
+      "finalUrl": "https://crosslakefibre.ca/network-map/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 169381,
+      "sha256": "3997785118b42ba049329efeff29da35973a2bba185d454e67f0a881cd12bad5",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "The Lake Ontario cable is described as 131 kilometres from Toronto to Buffalo with a 59-kilometre submarine segment",
+        "CrossChannel is described as a live 550-kilometre London-to-Paris route",
+        "Maple Leaf Fibre is identified as a joint venture in development, targeted for completion by the end of 2026"
+      ]
+    },
+    {
+      "url": "https://crosslakefibre.ca/pops/",
+      "httpStatus": 200,
+      "finalUrl": "https://crosslakefibre.ca/pops/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 186291,
+      "sha256": "535a4b47742de527f7b3b7f58424e737626a8bd8ab9802335563419d3369f88c",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Crosslake currently states that it has more than 25 backbone PoPs/data centres on its backbone network",
+        "The page separately describes dozens of additional data centres connected through an extranet, so those sites should not be represented as owned backbone PoPs"
+      ]
+    },
+    {
+      "url": "https://www.prnewswire.com/news-releases/crosslake-fibres-crosschannel-submarine-cable-goes-live-301438336.html",
+      "httpStatus": 200,
+      "finalUrl": "https://www.prnewswire.com/news-releases/crosslake-fibres-crosschannel-submarine-cable-goes-live-301438336.html",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 207866,
+      "sha256": "9375fd2cc52c5c458d8ebd2279929c0f8732d91d8560c3ef6d5368a1b66fd65e",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "The December 7, 2021 release says CrossChannel was ready for service",
+        "CrossChannel is described as a 550-kilometre system with a 149-kilometre submarine segment, 96 fibre pairs and more than 2,400 Tbps design capacity"
+      ]
+    }
+  ],
+  "exitSearch": {
+    "searchedAt": "2026-08-22T08:27:30.000Z",
+    "scopeThrough": "2026-08-19",
+    "result": "No public company sale, FCC transfer of control, Tiger exit or signed pending sponsor transaction was found. Tiger continues to publish Crosslake as a portfolio company and Crosslake continues to describe itself as Tiger-backed. Operating expansions, route joint ventures and PoP partnerships are not treated as sponsor transfers."
+  },
+  "allEvidenceUrlsDirectHttps": true,
+  "allCoreSourcesWorkingOrVerified": true,
+  "responseSourceHealthCorrections": [
+    "The FCC source supports a 93.26% indirect Tiger AIV interest at the 2018 regulatory disclosure date; it does not establish Tiger's current percentage or a current 100% ownership claim.",
+    "The 6.74% minority-holder group is historical disclosure only; its current composition and status are unresolved and it is not added as a named current manager owner.",
+    "Crosslake's current disclosure distinguishes 25+ backbone PoPs/data centres from dozens of extranet-connected sites, so the repository's undifferentiated greater-than-40 owned-PoP claim is not retained.",
+    "The 681-kilometre scale is the arithmetic sum of Crosslake's two named live systems, 131 kilometres and 550 kilometres; it excludes routes in development and does not imply that every extension or extranet connection is owned.",
+    "The 2017 Tiger release says an investment had been made but does not disclose a separate legal close date; December 7, 2017 is retained as the best public entry date with that limitation."
+  ],
+  "deadSourceCount": 0
+}

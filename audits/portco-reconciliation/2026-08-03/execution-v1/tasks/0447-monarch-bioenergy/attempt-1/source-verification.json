@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0447:monarch-bioenergy:92b9cb49",
+  "checkedAt": "2026-08-22T12:42:27.314Z",
+  "method": "Independent direct HTTP status, final-URL, media-type, byte-length and SHA-256 checks of every accepted evidence URL, with visible browser retrieval of the four SEC filings blocked to direct command-line access, together with the acquisition and later-exit sweep in the GPT-5.6 Sol Pro research conversation",
+  "sources": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/91388/000009138826000014/smf-20251228.htm",
+      "httpStatus": 403,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/91388/000009138826000014/smf-20251228.htm",
+      "mediaType": "text/html",
+      "bytes": 4818,
+      "sha256": "3953d153164cc5686a3240d3b96b3757caa36b4e725711f71570fa1a2877aaf0",
+      "healthStatus": "COMMAND_LINE_BLOCKED_BROWSER_VERIFIED",
+      "verifiedClaims": [
+        "Smithfield identifies TPG as one of the other two equal Monarch joint-venture partners",
+        "TPG delivered a January 16, 2025 sale notice requiring Monarch to pursue a sale",
+        "The filing says no sale had occurred and TPG could require Monarch to purchase its interest"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/91388/000009138825000017/smf-20241229.htm",
+      "httpStatus": 403,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/91388/000009138825000017/smf-20241229.htm",
+      "mediaType": "text/html",
+      "bytes": 4818,
+      "sha256": "79a31fd81338d15eea54e6670715f491cdc7ae2fa101bf5849d1eba2280c4704",
+      "healthStatus": "COMMAND_LINE_BLOCKED_BROWSER_VERIFIED",
+      "verifiedClaims": [
+        "Smithfield holds a one-third interest in Monarch",
+        "Monarch operates RNG projects at nine Smithfield-owned Missouri farms",
+        "The filing attributes biogas asset ownership to Monarch rather than Smithfield"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/91388/000009138826000051/smf-20260628.htm",
+      "httpStatus": 403,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/91388/000009138826000051/smf-20260628.htm",
+      "mediaType": "text/html",
+      "bytes": 4818,
+      "sha256": "f27203f5bd08b36ccba3caac43b1cf2d621321f854a16aabef20a124eba01c08",
+      "healthStatus": "COMMAND_LINE_BLOCKED_BROWSER_VERIFIED",
+      "verifiedClaims": [
+        "Smithfield continued recognizing Monarch results through June 28, 2026",
+        "The filing does not establish a completed TPG transfer or redemption"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1880661/000188066126000033/tpg-20260331.htm",
+      "httpStatus": 403,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1880661/000188066126000033/tpg-20260331.htm",
+      "mediaType": "text/html",
+      "bytes": 4818,
+      "sha256": "7d40a8e7a90794098db6c75ad3b854bbe1bb6b4c9aae8f19982e5e1cbf1b1b29",
+      "healthStatus": "COMMAND_LINE_BLOCKED_BROWSER_VERIFIED",
+      "verifiedClaims": [
+        "TPG identifies Rise Climate within its impact/private-equity platform",
+        "TPG separately lists Rise Climate Transition Infrastructure, preventing an infrastructure-mandate inference for the earlier Monarch investment"
+      ]
+    },
+    {
+      "url": "https://monarchbio.com/press-releases-articles-whitepapers/tpg-rise-climate-accelerates-renewable-energy-development-with-investment-in-monarch-bioenergy-joint-venture",
+      "httpStatus": 200,
+      "finalUrl": "https://monarchbio.com/press-releases-articles-whitepapers/tpg-rise-climate-accelerates-renewable-energy-development-with-investment-in-monarch-bioenergy-joint-venture",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 47099,
+      "sha256": "d5925e4a49e22d6e42bf49afd7896f3c81154fb51b3f1d68becbc4f7a5c74847",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "TPG Rise Climate's investment was announced on March 10, 2022",
+        "The release describes TPG, Roeslein and Smithfield as equal partners",
+        "The release supports each party's operating role but does not disclose the legal TPG vehicle or investment price"
+      ]
+    },
+    {
+      "url": "https://monarchbio.com/projects",
+      "httpStatus": 200,
+      "finalUrl": "https://monarchbio.com/projects",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 48457,
+      "sha256": "bb00599b23af178e673d46788ff11ea52d39c16f2e0d4eb1f77616f04914c5bd",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Monarch publishes nine Missouri projects and their individual production capacities",
+        "The current project profiles support an aggregate 889,000 MMBtu per year",
+        "The projects remain child assets beneath the Monarch JV"
+      ]
+    }
+  ],
+  "exitSearch": {
+    "searchedAt": "2026-08-22T12:42:27.314Z",
+    "scopeThrough": "2026-08-19",
+    "result": "TPG issued a January 16, 2025 sale notice, but no completed company sale, TPG transfer, redemption or signed buyer transaction was found. Smithfield continued recognizing Monarch results through June 28, 2026; TPG's current ownership status therefore remains unresolved."
+  },
+  "allEvidenceUrlsDirectHttps": true,
+  "allCoreSourcesWorkingOrBrowserVerified": true,
+  "responseSourceHealthCorrections": [
+    "All four SEC URLs return 403 to direct command-line retrieval but render normally in the browser and are not dead.",
+    "The three equal partners each hold 33%; TPG is not the sole owner.",
+    "The 2025 sale notice is not a signed buyer transaction and does not prove a closed exit.",
+    "Rise Climate is private equity, and no qualifying infrastructure-manager owner was identified."
+  ],
+  "deadSourceCount": 0
+}

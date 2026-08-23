@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0156:vopak-industrial-infrastructure-americas:bef0b093",
+  "taskIndex": 156,
+  "companyName": "Vopak Industrial Infrastructure Americas",
+  "verifiedAt": "2026-08-19T05:27:25.000Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://www.vopak.com/system/files/press/2020/12/6175e64e-5ed0-4b2f-8ec7-8f1dc4f5b2b8.pdf",
+      "finalUrl": "https://www.vopak.com/system/files/press/2020/12/6175e64e-5ed0-4b2f-8ec7-8f1dc4f5b2b8.pdf",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 84050,
+      "contentSha256": "2b43a300c92299450236c00e6d0473a9fa6b360a479315a252719a780665c51d",
+      "note": "Vopak closing PDF opened."
+    },
+    {
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020M9999",
+      "finalUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020M9999",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 162163,
+      "contentSha256": "36aa652c67b8038b6dc0de2dbefd11bf7e37889016cb0837065d7d622970af6e",
+      "note": "EU merger notice opened."
+    },
+    {
+      "url": "https://www.blackrock.com/corporate/newsroom/media/press-releases/blackrock-completes-acquisition-of-global-infrastructure-partners",
+      "finalUrl": "https://www.blackrock.com/corporate/newsroom/media/press-releases/blackrock-completes-acquisition-of-global-infrastructure-partners",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 200296,
+      "contentSha256": "16dc9537c2ffe2783b7595f2bf733e19558ec82daf1354cbda664c19b743afea",
+      "note": "BlackRock-GIP manager acquisition page opened."
+    },
+    {
+      "url": "https://www.vopak.com/terminals/viia-freeport-texas",
+      "finalUrl": "https://www.vopak.com/terminals/viia-freeport-texas",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 61619,
+      "contentSha256": "79ac5521bb93990424cb391e10dc47758b833f297f0f13a39d0594cda13381c2",
+      "note": "VIIA Freeport terminal page opened."
+    },
+    {
+      "url": "https://www.vopak.com/terminals/viia-st-charles-louisiana",
+      "finalUrl": "https://www.vopak.com/terminals/viia-st-charles-louisiana",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 61668,
+      "contentSha256": "c9319e512c2edd97d738988c7e948f1ff2e4e1bfa7cbe05341a2e4fc8ef935d1",
+      "note": "VIIA St. Charles terminal page opened."
+    },
+    {
+      "url": "https://www.vopak.com/terminals/viia-plaquemine-louisiana",
+      "finalUrl": "https://www.vopak.com/terminals/viia-plaquemine-louisiana",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 61235,
+      "contentSha256": "1c0b3767e203970211ba12e32272ee4a75290a53ce5df738d70be6adf840b5c8",
+      "note": "VIIA Plaquemine terminal page opened."
+    },
+    {
+      "url": "https://lei.bloomberg.com/leis/view/25490057VTAOBH0Z9373",
+      "finalUrl": "https://lei.bloomberg.com/leis/view/25490057VTAOBH0Z9373",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 74250,
+      "contentSha256": "5faa4660abd40dbe7524bdeedbde74a2904d04f159a271b269cc42bc07a2d605",
+      "note": "LEI registry mirror opened."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allEvidenceRowsChecked": true,
+    "allCoreClaimsHaveOpenEvidence": true,
+    "deadUrlCount": 0,
+    "redirectConcernCount": 0
+  },
+  "releaseRequirement": "Reopen every selected source against a fresh production snapshot before any proposal or mutation."
+}

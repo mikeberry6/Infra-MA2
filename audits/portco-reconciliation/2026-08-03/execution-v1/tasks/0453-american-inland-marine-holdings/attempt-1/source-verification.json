@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0453:american-inland-marine-holdings:47cd7d1a",
+  "taskIndex": 453,
+  "companyName": "American Inland Marine Holdings",
+  "verifiedAt": "2026-08-22T15:27:44.756Z",
+  "summary": {
+    "citationUrls": 2,
+    "working": 0,
+    "browserBlockedButVerified": 2,
+    "supplementalPrimarySources": 2,
+    "modelHealthOverrides": 2
+  },
+  "sources": [
+    {
+      "label": "Wafra corporate website",
+      "url": "https://www.wafra.com/",
+      "httpStatus": 403,
+      "observedStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verificationMethod": "browser DOM after curl 403",
+      "note": "The live page identifies Wafra as a New York-headquartered alternative investment firm and describes minority manager-stake investing, but it does not identify this company or establish ownership."
+    },
+    {
+      "label": "Edward Tsai profile",
+      "url": "https://www.wafra.com/our-people/edward-tsai/",
+      "httpStatus": 403,
+      "observedStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verificationMethod": "browser DOM after curl 403",
+      "note": "The current Wafra page directly says Edward Tsai serves on the board of American Inland Marine Holdings. It establishes an active governance relationship but no fund, stake, security or legal closing."
+    },
+    {
+      "label": "SEC Form D/A — AIM Parent Holdings LLC",
+      "url": "https://www.sec.gov/Archives/edgar/data/1959034/000195903423000001/xslFormDX01/primary_doc.xml",
+      "httpStatus": 200,
+      "observedStatus": "WORKING_SUPPLEMENTAL",
+      "verificationMethod": "curl content inspection",
+      "note": "The filing identifies AIM Parent Holdings LLC as a Delaware other investment fund formed in 2022, headquartered in Metairie, Louisiana. It lists Wafra's Edward Tsai as a director and manager of the LLC, but does not disclose Wafra's stake or prove the requested label is an exact legal alias."
+    },
+    {
+      "label": "Maritime Partners Form ADV",
+      "url": "https://reports.adviserinfo.sec.gov/reports/ADV/300186/PDF/300186.pdf",
+      "httpStatus": 200,
+      "observedStatus": "WORKING_SUPPLEMENTAL",
+      "verificationMethod": "download plus pdfplumber text extraction",
+      "contentSha256": "7c1cc3192b9af98eb891eb33441fa8c517397518ac58b6de82fab961afc72133",
+      "pages": [43, 44, 45],
+      "note": "The 2026 filing says Maritime Partners provides maritime leasing and financing, American Rivers Fund owns approximately 82% of AIM Parent Holdings, and AIM's gross asset value includes the American Rivers Fund investment. This strongly indicates a Maritime Partners-managed private-fund/holding structure rather than a proven standalone Wafra operating platform."
+    }
+  ],
+  "conclusion": "The accepted DEFERRED outcome is safe, but its identity wording is incomplete. Independent primary evidence identifies AIM Parent Holdings LLC as the likely related vehicle and confirms Wafra governance involvement; it still does not prove the exact American Inland Marine Holdings alias, Wafra's direct equity percentage or vehicle, or an in-scope manager-level operating-company boundary. No creation or owner addition is supportable."
+}

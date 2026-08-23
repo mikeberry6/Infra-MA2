@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0391:ash-creek-solar:5c31cc8f",
+  "checkedAt": "2026-08-21T21:52:06.531Z",
+  "method": "Independent direct curl status, redirect, media-type and content-hash checks; PDF text extraction and rendered-page inspection",
+  "sources": [
+    {
+      "url": "https://www.quinbrook.com/portfolio/primergy/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.quinbrook.com/portfolio/primergy/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 50272,
+      "sha256": "e1b02bba498c046aa03f3112d2f2b5fb78cc205bb593a1fa7c09860277c382c5",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Quinbrook defines Primergy as a 100%-owned portfolio company and lists Ash Creek among its projects"
+      ]
+    },
+    {
+      "url": "https://www.quinbrook.com/projects/ash-creek/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.quinbrook.com/projects/ash-creek/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 48212,
+      "sha256": "2a8df88bbbe190ec9f3237eb87ee2723e496ee6078bc321501484b3b96e84631",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Ash Creek is an operating 409 MW project acquired in 2021"
+      ]
+    },
+    {
+      "url": "https://www.primergypower.com/news/primergy-announces-the-commissioning-of-ash-creek-solar-in-texas",
+      "httpStatus": 200,
+      "finalUrl": "https://www.primergypower.com/news/primergy-announces-the-commissioning-of-ash-creek-solar-in-texas",
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 42112,
+      "sha256": "a07c36bd072ab101a0b638ce8c11ada82e9d38848ecf9aac18593fb4c3805f99",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Ash Creek reached commercial operation in 2025 at 408 MWac",
+        "Orion began development in 2016 and Primergy acquired the project in 2021"
+      ]
+    },
+    {
+      "url": "https://www.primergypower.com/news/primergy-secures-588m-in-project-financing-and-power-purchase-agreement-with-microsoft-for-408-mw-solar-project-in-texas",
+      "httpStatus": 200,
+      "finalUrl": "https://www.primergypower.com/news/primergy-secures-588m-in-project-financing-and-power-purchase-agreement-with-microsoft-for-408-mw-solar-project-in-texas",
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 42948,
+      "sha256": "edcafbc8886b762daf7cc5394dfd027c93818d0aae9bf466aac9e6af10e3e8c1",
+      "healthStatus": "WORKING"
+    },
+    {
+      "url": "https://interchange.puc.texas.gov/Documents/57281_2_1442430.PDF",
+      "httpStatus": 200,
+      "finalUrl": "https://interchange.puc.texas.gov/Documents/57281_2_1442430.PDF",
+      "mediaType": "application/pdf",
+      "bytes": 753645,
+      "sha256": "e6192750d82f19949782c2dd8b6f6a2122f0012a4dc2b6021a3e86295a0a2e9a",
+      "healthStatus": "WORKING",
+      "pdfVerification": {
+        "pageCount": 15,
+        "relevantPdfPages": [
+          7,
+          10
+        ],
+        "verifiedClaims": [
+          "Ash Creek Solar LLC identifies Primergy Solar LLC as its corporate parent",
+          "The registered generating unit is a 408.85 MW solar facility in Hill County, Texas"
+        ],
+        "renderedPagesInspected": true
+      }
+    },
+    {
+      "url": "https://assets.comptroller.texas.gov/ch313/1843/1843-penelope-ash-cert.pdf",
+      "httpStatus": 200,
+      "finalUrl": "https://assets.comptroller.texas.gov/ch313/1843/1843-penelope-ash-cert.pdf",
+      "mediaType": "application/pdf",
+      "bytes": 2300967,
+      "sha256": "1b71295994b5eebcdfbe7c7e6d54f77b0a4254b651c88cde4ab019c869985a16",
+      "healthStatus": "WORKING",
+      "pdfVerification": {
+        "pageCount": 13,
+        "relevantPdfPages": [
+          9
+        ],
+        "verifiedClaims": [
+          "Sam Switch Solar was only an internal working name with no LLC",
+          "Agreements were signed under Orion entities before assignment to Ash Creek"
+        ],
+        "renderedPagesInspected": true
+      }
+    },
+    {
+      "url": "https://www.quinbrook.com/news-insights/quinbrook-exceeds-target-for-net-zero-power-strategy-raising-usd-3-billion-in-capital-commitments/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.quinbrook.com/news-insights/quinbrook-exceeds-target-for-net-zero-power-strategy-raising-usd-3-billion-in-capital-commitments/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 59476,
+      "sha256": "bee5837a27457a88af467fcc3c385f340b54ee598e3c299670d847f929bc085a",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Quinbrook names Primergy, not Ash Creek, as the investment/platform"
+      ]
+    },
+    {
+      "url": "https://www.quinbrook.com/news-insights/quinbrook-closes-600m-solarstorage-continuation-fund/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.quinbrook.com/news-insights/quinbrook-closes-600m-solarstorage-continuation-fund/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 57027,
+      "sha256": "8c863d673a128837d3d733399ae3912f34c7b3e18595f0666692be3e1cdd6c62",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Quinbrook separately discloses asset-level ownership when present, including Gemini's 51% continuation-fund and APG 49% interests"
+      ]
+    }
+  ],
+  "allEvidenceUrlsDirectHttps": true,
+  "allSourcesWorkingOrVerified": true,
+  "deadSourceCount": 0
+}

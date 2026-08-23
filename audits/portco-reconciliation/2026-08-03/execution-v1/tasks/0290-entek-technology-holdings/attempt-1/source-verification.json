@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0290:entek-technology-holdings:3d9d2806",
+  "taskIndex": 290,
+  "verifiedAt": "2026-08-20T19:14:42.000Z",
+  "allReturnedUrlsChecked": true,
+  "summary": {
+    "urlCount": 6,
+    "working": 4,
+    "browserBlockedButVerified": 2,
+    "dead": 0
+  },
+  "sources": [
+    {
+      "url": "https://uohs.gov.cz/cs/hospodarska-soutez/sbirky-rozhodnuti/detail-23743.html",
+      "finalUrl": "https://uohs.gov.cz/cs/hospodarska-soutez/sbirky-rozhodnuti/detail-23743.html",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 92491,
+      "sha256": "33b2971ebd2b5af541e85b0ddc8672dea489278330cc269a5883c7fc8790b7e9",
+      "health": "WORKING",
+      "claimCheck": "The Czech competition decision identifies the August 15, 2025 preferred-unit agreement, ISQ Liberty Holdings, the approximately 63.3% Entek Liberty stake, indirect sole control and ENTEK's manufacturing model."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/2059924/000121390026057486/ea0290488-10q_isqopen.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/2059924/000121390026057486/ea0290488-10q_isqopen.htm",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 1931830,
+      "sha256": "8ef1ba1cc20e8f8147af9a9fdab14eb3964bc05412f8ead7b7924c2210d1d4ae",
+      "health": "WORKING",
+      "retrievalNote": "Retrieved successfully with an identifying SEC-compatible user agent after the anonymous request returned 403.",
+      "claimCheck": "The OpenInfra filing identifies ENTEK equity held through ISQ Liberty Aggregator, reports a 6.26% ownership interest at March 31, 2026 and proves that the I Squared investment had closed by then."
+    },
+    {
+      "url": "https://isquaredcapital.com/news/i-squared-capital-acquires-majority-stake-in-entek-to-reshore-critical-u-s-battery-manufacturing/",
+      "finalUrl": "https://isquaredcapital.com/news/i-squared-capital-acquires-majority-stake-in-entek-to-reshore-critical-u-s-battery-manufacturing/",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 59693,
+      "sha256": "94cb2175751d27f0b8e09caba9ce2ba3335726af088ecd8a8e3e3dc2b33fe533",
+      "health": "WORKING",
+      "claimCheck": "I Squared's September 17, 2025 announcement says it signed for a majority equity interest, describes ENTEK as a battery-separator manufacturer and states an $800 million investment commitment."
+    },
+    {
+      "url": "https://www.federalregister.gov/documents/2025/09/11/2025-17535/granting-of-requests-for-early-termination-of-the-waiting-period-under-the-premerger-notification",
+      "finalUrl": "https://unblock.federalregister.gov/",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 10596,
+      "sha256": "7bf3c2977450f983a191462ebd2a50b038541c5fe91e48e51005eb36156c9dba",
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verificationUrl": "https://public-inspection.federalregister.gov/2025-17535.pdf",
+      "claimCheck": "Independent browser retrieval of the direct page and official PDF verifies separate HSR entries naming ISQ Global Infrastructure Fund III and Fund IV with ENTEK Technology Holdings."
+    },
+    {
+      "url": "https://endeavour.com/portfolio/entek/",
+      "finalUrl": "https://endeavour.com/portfolio/entek/",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 101112,
+      "sha256": "be5e80a86ce427b3112f4df1131da93737f2a6f859b7008ffea52a107f65f65e",
+      "health": "WORKING",
+      "claimCheck": "Endeavour's live ENTEK page identifies its current portfolio relationship, Lebanon headquarters, plants and engineered-product and extrusion-equipment business."
+    },
+    {
+      "url": "https://www.bwb.gv.at/en/merger-control/2024/6808",
+      "finalUrl": "https://www.bwb.gv.at/en/merger-control/2024/6808",
+      "httpStatus": 307,
+      "mediaType": "text/html",
+      "bytes": 1383,
+      "sha256": "6cf7f2c2436c44a7c9f34d9c1e7129889724ed693e82a3344a867bc6bc50a997",
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "claimCheck": "Independent browser retrieval verifies the November 2024 AHVF II Firefly proposal for approximately 35%-49.5% of ENTEK and joint control, plus non-prohibition effective December 11, 2024; the page does not prove closing."
+    }
+  ]
+}

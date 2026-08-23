@@ -1,0 +1,183 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0157:advanced-cooling-technologies-act:3ea176a7",
+  "taskIndex": 157,
+  "companyName": "Advanced Cooling Technologies (ACT)",
+  "asOfDate": "2026-08-19",
+  "researchOnly": true,
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "responseSha256": "9c4273da20fb1aabfab4e09c65f8c222d95a5e10534fbafe99ac661548181883",
+  "sourceVerification": "source-verification.json",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "Advanced Cooling Technologies (ACT)",
+    "requestedManagers": [
+      "Blackstone"
+    ],
+    "decision": "PROPOSED_CORRECTION",
+    "confidence": "HIGH",
+    "rationale": "The pending recommendation is stale: BETP's majority ACT investment closed on 2026-05-19. Blackstone is an active owner; its exact percentage is not public. ACT is one U.S. platform.",
+    "identityResolution": {
+      "canonicalKey": "advanced-cooling-technologies-act|united-states",
+      "legalName": "Advanced Cooling Technologies, Inc.",
+      "displayName": "Advanced Cooling Technologies (ACT)",
+      "aliases": [
+        "Advanced Cooling Technologies",
+        "ACT"
+      ],
+      "predecessorSuccessor": "None identified",
+      "platformBoundary": "ACT is the platform; integrated acquisitions and merger vehicles are not separate PortCos.",
+      "country": "United States",
+      "headquarters": "Lancaster, Pennsylvania",
+      "website": "https://www.1-act.com/",
+      "founded": 2003
+    },
+    "ownershipResolution": {
+      "currentOwners": [
+        {
+          "manager": "Blackstone",
+          "organization": "Blackstone Energy Transition Partners",
+          "fund": "Blackstone Energy Transition Partners IV L.P.",
+          "vehicle": "Rocket Purchaser, L.L.C. (acquisition vehicle)",
+          "stake": "Majority; exact percentage NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2026-03-11",
+          "entryDate": "2026-05-19",
+          "entryYear": 2026,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE"
+        }
+      ],
+      "formerOwners": [],
+      "pendingOwnershipTransactions": [],
+      "coOwnership": "ACT executives remained significant shareholders; holders and percentages NOT_PUBLICLY_DISCLOSED."
+    },
+    "operatingResolution": {
+      "status": "Active",
+      "sector": "Digital",
+      "subsector": "Thermal management and liquid cooling",
+      "business": "Designs and manufactures thermal-management components and systems, including two-phase cooling, heat pipes, phase-change materials, cold plates and environmental-control units.",
+      "endMarkets": "Data centers, advanced computing, defense, space, electronics, medical, industrial and HVAC.",
+      "footprint": "Lancaster headquarters plus integrated York, Pennsylvania, and Anaheim, California operations.",
+      "scale": "July 2026: over $5 million of capacity investment, a planned 50,000-square-foot facility and up to 100 added jobs.",
+      "scope": "INCLUDE at the infrastructure-enabling platform boundary: direct majority equity in a critical data-center and mission-critical cooling supplier, not debt, public securities or LP exposure. BETP is energy-focused private equity, not Blackstone Infrastructure."
+    },
+    "acquisitionExitCheck": {
+      "searchThrough": "2026-08-19",
+      "closedTransaction": {
+        "direction": "ENTRY",
+        "buyer": "Funds managed by Blackstone Energy Transition Partners",
+        "seller": "Pre-transaction ACT shareholders; complete roster NOT_PUBLICLY_DISCLOSED",
+        "stake": "Majority; exact percentage NOT_PUBLICLY_DISCLOSED",
+        "announcementDate": "2026-03-11",
+        "closingDate": "2026-05-19",
+        "state": "CLOSED",
+        "evidenceUrls": [
+          "https://www.blackstone.com/news/press/blackstone-energy-transition-partners-announces-agreement-to-acquire-majority-stake-in-advanced-cooling-technologies/",
+          "https://hl.com/about-us/transactions/advanced-cooling-technologies-blackstone-energy-transition-partners/"
+        ]
+      },
+      "pendingTransactions": [],
+      "laterExitOrTransferFound": false,
+      "result": "No later sale, exit, transfer, recapitalization, merger, bankruptcy or ownership change found; Blackstone still lists ACT as an investment."
+    },
+    "milestones": [
+      {
+        "date": "2003",
+        "event": "ACT founded in Pennsylvania.",
+        "category": "Founding"
+      },
+      {
+        "date": "2026-03-11",
+        "event": "BETP announced a majority acquisition.",
+        "category": "Announcement"
+      },
+      {
+        "date": "2026-05-19",
+        "event": "BETP's majority investment closed.",
+        "category": "Closing"
+      },
+      {
+        "date": "2026-07-14",
+        "event": "ACT announced new cooling capacity and hiring.",
+        "category": "Expansion"
+      }
+    ],
+    "evidence": [
+      {
+        "label": "Houlihan Lokey transaction page",
+        "url": "https://hl.com/about-us/transactions/advanced-cooling-technologies-blackstone-energy-transition-partners/",
+        "purpose": "Closing date and majority sale",
+        "sourceTier": "TRANSACTION_ADVISER",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "Blackstone announcement",
+        "url": "https://www.blackstone.com/news/press/blackstone-energy-transition-partners-announces-agreement-to-acquire-majority-stake-in-advanced-cooling-technologies/",
+        "purpose": "Buyer, stake, date and management rollover",
+        "sourceTier": "MANAGER",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "FTC notice 20260959",
+        "url": "https://www.ftc.gov/legal-library/browse/early-termination-notices/20260959",
+        "purpose": "Fund identity and clearance",
+        "sourceTier": "REGULATOR",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "ACCC acquisition register",
+        "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/blackstone-advanced-cooling-technologies",
+        "purpose": "Acquisition vehicle and structure",
+        "sourceTier": "REGULATOR",
+        "workingStatus": "PARTIAL_PARSE",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Blackstone David Foley profile",
+        "url": "https://www.blackstone.com/people/david-foley/",
+        "purpose": "Current investment relationship",
+        "sourceTier": "MANAGER",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "ACT About",
+        "url": "https://www.1-act.com/about/",
+        "purpose": "Identity, founding and products",
+        "sourceTier": "COMPANY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "ACT capacity expansion",
+        "url": "https://www.1-act.com/about/news/advanced-cooling-technologies-expands-manufacturing-capacity-to-support-growing-demand-in-space-defense-and-data-center-markets/",
+        "purpose": "Current operations and scale",
+        "sourceTier": "COMPANY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "transaction": "PENDING_TRANSACTION / ADD_PENDING_TRANSACTION -> CLOSED_ACTIVE from 2026-05-19",
+      "owner": "Blackstone without verified close -> BETP / BETP IV L.P., majority, entered 2026-05-19",
+      "milestones": "Remove unsupported 2012 Q-Dot and 2015 PCM Products claims; retain verified events",
+      "headquarters": "Pennsylvania -> Lancaster, Pennsylvania"
+    },
+    "excludedOrDuplicateCandidates": [
+      "Canyon Composites, Tekgard and Parker Precision Cooling—integrated ACT businesses/product lines, not separate PortCos",
+      "Rocket Purchaser, L.L.C. and Rocket Merger Sub, Inc.—transaction vehicles, not operating PortCos"
+    ],
+    "unresolvedQuestions": [
+      "Exact Blackstone percentage, management rollover, seller roster and final holding chain are NOT_PUBLICLY_DISCLOSED.",
+      "No authoritative support was found for the snapshot's 2012 Q-Dot or 2015 PCM Products acquisitions; omit absent primary proof."
+    ],
+    "recommendedListAction": "Retain the ACT record; change Blackstone from pending to closed active as of 2026-05-19, attribute it to BETP and BETP IV L.P., keep one platform row, suppress integrated businesses/vehicles, and remove unsupported Q-Dot and PCM Products milestones."
+  }
+}

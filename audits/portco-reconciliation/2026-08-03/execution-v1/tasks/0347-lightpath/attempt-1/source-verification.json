@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0347:lightpath:c411cbd2",
+  "taskIndex": 347,
+  "verifiedAt": "2026-08-21T10:48:00.000Z",
+  "allReturnedUrlsChecked": true,
+  "summary": {
+    "urlCount": 6,
+    "working": 4,
+    "browserBlockedButVerified": 2,
+    "browserBlockedUnverified": 0,
+    "dead": 0
+  },
+  "sources": [
+    {
+      "url": "https://documents.dps.ny.gov/search/Home/ViewDoc/Find?ext=pdf&id=%7B3066D197-0000-C43B-86C9-1DFE7BEEA84D%7D",
+      "finalUrl": "https://documents.dps.ny.gov/search/Home/ViewDoc/Find?ext=pdf&id=%7B3066D197-0000-C43B-86C9-1DFE7BEEA84D%7D",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 598102,
+      "sha256": "c9a78599305e09dde7069368de68130782a11cc1c61824385a6bf0772ad4a6b8",
+      "health": "WORKING"
+    },
+    {
+      "url": "https://www.morganstanley.com/im/en-us/individual-investor/companies/lightpath.html",
+      "finalUrl": "https://www.morganstanley.com/im/en-us/individual-investor/companies/lightpath.html",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 454,
+      "sha256": "af7448c7cc9d1a010d49e1927873526d6cb1a2aeecadc5ddc1545340bd7240a9",
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "browserVerification": {
+        "title": "Lightpath | Morgan Stanley",
+        "companyNameMatched": true,
+        "managerPortfolioPageLoaded": true
+      }
+    },
+    {
+      "url": "https://investors.optimum.com/news-events/press-releases/detail/35/altice-usa-announces-closing-of-sale-of-49-99-of-lightpath",
+      "finalUrl": "https://investors.optimum.com/news-events/press-releases/detail/35/altice-usa-announces-closing-of-sale-of-49-99-of-lightpath",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 60776,
+      "sha256": "18caef1cf58a93b6a53cb5fcb6ef6750054fd1f1db80ba850b8ba8d55efe50ad",
+      "health": "WORKING"
+    },
+    {
+      "url": "https://pscdocs.utah.gov/telecom/24docs/24265301/337234Aplctn12-20-2024.pdf",
+      "finalUrl": "https://pscdocs.utah.gov/telecom/24docs/24265301/337234Aplctn12-20-2024.pdf",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 2560001,
+      "sha256": "805ba46d826403f5580335e3f4f557d3bb2e73e315c08702c88fc562523eb738",
+      "health": "WORKING"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1702780/000170278026000048/optu-20260630.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1702780/000170278026000048/optu-20260630.htm",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 4819,
+      "sha256": "81ccc96b08a95abebf0e0e3d4fba4fff6cd840625abce6562077326571c2f16c",
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "browserVerification": {
+        "title": "optu-20260630",
+        "formType": "FORM 10-Q",
+        "issuerMatched": true
+      }
+    },
+    {
+      "url": "https://lightpathfiber.com/wp-content/uploads/2026/07/lightpath_channel_partners_general_product_sheet.pdf",
+      "finalUrl": "https://lightpathfiber.com/wp-content/uploads/2026/07/lightpath_channel_partners_general_product_sheet.pdf",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 269320,
+      "sha256": "b34b0fcc81213d1c5d8f10e2a636e6bae29cb0deae3e71c5971cddfda2be47c7",
+      "health": "WORKING"
+    }
+  ]
+}

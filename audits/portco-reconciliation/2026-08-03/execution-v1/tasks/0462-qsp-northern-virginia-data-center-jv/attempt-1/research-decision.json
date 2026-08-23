@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0462:qsp-northern-virginia-data-center-jv:3a29bbb8",
+  "taskIndex": 462,
+  "companyName": "QSP (Northern Virginia Data Center JV)",
+  "asOfDate": "2026-08-19",
+  "recordedAt": "2026-08-22T18:12:38.000Z",
+  "modelDecision": "PROPOSED_MERGE",
+  "confidence": "HIGH",
+  "stageState": "STAGED_VALIDATED",
+  "applicationBlocked": false,
+  "rationale": "Wren House's current QSP portfolio page and November 2024 completion announcement establish that the census label and canonical QSP are the same three-facility Northern Virginia joint venture. CBRE and Paul Weiss identify BlackRock as the other direct investor; Wren House confirms QTS retained ownership and operates the facilities, while Blackstone is QTS's upstream owner. No later ownership transfer or signed pending exit was found. The model's 40% Wren House claim is unsupported and is overridden to not publicly disclosed.",
+  "repoReconciliation": {
+    "censusCanonicalKey": "qsp-northern-virginia-data-center-jv|united-states",
+    "recommendedCanonicalKey": "qsp|united-states",
+    "coveredLaterTaskSequence": 491,
+    "queuedActionTreatment": "MERGE_REQUESTED_LABEL_INTO_EXISTING_QSP_AND_SUPERSEDE_LATER_DUPLICATE_TASK_AFTER_APPLICATION"
+  },
+  "proposalGuardrails": [
+    "Use the current www.whinfra.com QSP portfolio and completion-announcement URLs instead of the dead legacy portfolio URL and generic homepage.",
+    "Do not persist the model's unsupported 40% Wren House stake; all direct JV ownership percentages are NOT_PUBLICLY_DISCLOSED.",
+    "Treat Wren House and BlackRock as direct current investors and QTS as retained current owner/operator; retain Blackstone only as QTS's upstream owner unless the data model expressly captures upstream attribution.",
+    "Keep the three Northern Virginia facilities, campuses, financing borrowers and holdcos beneath the one canonical QSP record.",
+    "Preserve the 99.6 MW financing figure and approximately 100 MW transaction description with their distinct sources rather than treating them as conflicting facts.",
+    "Supersede task 491 only after the exact canonical merge/correction is later applied and verified."
+  ],
+  "recommendedNextAction": "Prepare one later protected proposal that maps this task to existing canonical QSP, corrects the current-owner set and sources without inferring percentages, and then covers task 491 as an exact duplicate.",
+  "databaseMutationAuthorized": false
+}

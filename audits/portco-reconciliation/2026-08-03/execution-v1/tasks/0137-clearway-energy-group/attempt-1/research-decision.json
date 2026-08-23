@@ -1,0 +1,244 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RESEARCH_DECISION",
+  "taskId": "ledger:0137:clearway-energy-group:fb84d1ab",
+  "taskIndex": 137,
+  "companyName": "Clearway Energy Group",
+  "asOfDate": "2026-08-19",
+  "stagedAt": "2026-08-19T03:33:28.170Z",
+  "researchOnly": true,
+  "mutationAuthorized": false,
+  "proposalRequiresFreshProductionSnapshot": true,
+  "releaseRequiresFreshAcquisitionExitCheck": true,
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "Clearway Energy Group",
+    "requestedManagers": [
+      "Global Infrastructure Partners",
+      "BlackRock"
+    ],
+    "decision": "PROPOSED_MERGE",
+    "confidence": "HIGH",
+    "rationale": "Use one CEG record. GIP III bought the NRG platform in 2018 and sold 50% to TotalEnergies in 2022. BlackRock bought GIP's manager in 2024, not the fund asset; BlackRock/Evergreen is not a separate ownership period.",
+    "identityResolution": {
+      "canonicalLegalName": "Clearway Energy Group LLC",
+      "displayName": "Clearway Energy Group",
+      "canonicalKey": "clearway-energy-group|united-states",
+      "aliases": [
+        "Clearway Group",
+        "CEG",
+        "Clearway Energy (GIP label)"
+      ],
+      "predecessor": "Zephyr Renewables LLC / NRG Renewables Platform",
+      "successor": null,
+      "foundedYear": 2018,
+      "headquarters": "San Francisco, California, United States",
+      "officialWebsite": "https://www.clearwayenergygroup.com/",
+      "boundary": "Private sponsor/developer/operator. Clearway Energy, Inc. (CWEN; formerly NRG Yield) is a distinct listed affiliate; named LLCs and project SPVs below CEG are subsidiaries/assets."
+    },
+    "ownershipResolution": {
+      "current": "GIP III 50%; TotalEnergies 50%",
+      "owners": [
+        {
+          "manager": "NRG Energy",
+          "organization": "NRG Energy, Inc. / NRG Repowering Holdings LLC",
+          "fund": null,
+          "vehicle": "Zephyr Renewables LLC",
+          "stake": "100%",
+          "announcementDate": "2018-02-07",
+          "exitDate": "2018-08-31",
+          "exitYear": 2018,
+          "isActive": false,
+          "transactionState": "Sold"
+        },
+        {
+          "manager": "Global Infrastructure Partners",
+          "organization": "GIP III Zephyr Midco Holdings, L.P.",
+          "fund": "Global Infrastructure Partners III",
+          "vehicle": "GIP III Zephyr Acquisition Partners, L.P.",
+          "stake": "100%",
+          "announcementDate": "2018-02-07",
+          "entryDate": "2018-08-31",
+          "entryYear": 2018,
+          "exitDate": "2022-09-12",
+          "exitYear": 2022,
+          "isActive": false,
+          "transactionState": "50% sold"
+        },
+        {
+          "manager": "Global Infrastructure Partners",
+          "organization": "GIP III Zephyr Midco Holdings, L.P.",
+          "fund": "Global Infrastructure Partners III",
+          "vehicle": "Zephyr Holdings, L.P. / GIP III Zephyr Acquisition Partners, L.P.",
+          "stake": "50%",
+          "announcementDate": "2022-05-25",
+          "entryDate": "2022-09-12",
+          "entryYear": 2022,
+          "isActive": true,
+          "transactionState": "Current"
+        },
+        {
+          "manager": "TotalEnergies",
+          "organization": "TotalEnergies Renewables USA, LLC",
+          "fund": null,
+          "vehicle": "Zephyr Holdings, L.P. / GIP III Zephyr Acquisition Partners, L.P.",
+          "stake": "50%",
+          "announcementDate": "2022-05-25",
+          "entryDate": "2022-09-12",
+          "entryYear": 2022,
+          "isActive": true,
+          "transactionState": "Current"
+        }
+      ],
+      "blackRockResolution": "BlackRock acquired Global Infrastructure Management, LLC, the GIP funds' manager, on 2024-10-01; CEG remained in GIP III entities. Remove BlackRock/Evergreen and exclude any public CWEN holdings."
+    },
+    "operatingResolution": {
+      "qualifiesAsNorthAmericanInfrastructurePortCo": true,
+      "status": "Active",
+      "business": "U.S. developer, owner and operator of wind, solar, storage and flexible gas generation, largely under long-term contracts.",
+      "customers": "Corporates, institutions, governments, residential programs, utilities, CCAs and retailers.",
+      "footprint": "Develops or operates in 35 U.S. states; operating fleet spans 27.",
+      "scale": "450+ projects; 14 GW gross/11 GW owned; 1,000+ employees.",
+      "conclusion": "Include as a manager-level U.S. power-infrastructure platform."
+    },
+    "acquisitionExitCheck": {
+      "requestedAsOf": "2026-08-19",
+      "searchedThrough": "2026-08-18",
+      "result": "No post-2022 company-level sale or pending control change found through 2026-08-18; 2026 filings retain the GIP III/TotalEnergies chain.",
+      "pendingTransactions": []
+    },
+    "milestones": [
+      {
+        "date": "2018-08-31",
+        "event": "GIP closed the NRG platform purchase; CEG began operations.",
+        "category": "Acquisition/Founding"
+      },
+      {
+        "date": "2022-05-25",
+        "event": "TotalEnergies signed to buy 50% from GIP.",
+        "category": "Signed Acquisition"
+      },
+      {
+        "date": "2022-09-12",
+        "event": "The purchase closed; GIP III and TotalEnergies became equal owners.",
+        "category": "Closed Acquisition"
+      },
+      {
+        "date": "2024-10-01",
+        "event": "BlackRock bought GIP's manager; no CEG asset transfer.",
+        "category": "Manager Transaction"
+      }
+    ],
+    "evidence": [
+      {
+        "label": "2025 10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1567683/000162828026010952/cwen-20251231.htm",
+        "purpose": "OWNERSHIP_BLACKROCK",
+        "sourceTier": "SEC",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "2026 GIP Form 4",
+        "url": "https://www.sec.gov/Archives/edgar/data/1567683/000110465926039297/xslF345X06/tm2611002-1_4seq1.xml",
+        "purpose": "CURRENT_GIP",
+        "sourceTier": "SEC",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "2026 TTE Form 4",
+        "url": "https://www.sec.gov/Archives/edgar/data/879764/000110465926054231/xslF345X06/tm2613327-1_4seq1.xml",
+        "purpose": "CURRENT_TTE",
+        "sourceTier": "SEC",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "2022 closing Form 3",
+        "url": "https://www.sec.gov/Archives/edgar/data/1567683/000110465922100053/xslF345X02/tm2225825-1_3seq1.xml",
+        "purpose": "2022_CLOSE_STRUCTURE",
+        "sourceTier": "SEC",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "2022 TTE announcement",
+        "url": "https://totalenergies.com/newsroom/united-states-totalenergies-acquires-50-clearway-5th-largest-us-renewable/?lang=eng",
+        "purpose": "2022_SIGNING",
+        "sourceTier": "OFFICIAL",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "2018 NRG announcement",
+        "url": "https://investors.nrg.com/news-releases/news-release-details/nrg-announces-asset-sales-including-sale-its-interest-nrg-yield",
+        "purpose": "2018_SIGNING",
+        "sourceTier": "OFFICIAL",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "2018 CEG launch",
+        "url": "https://www.clearwayenergygroup.com/press-releases/clearway-energy-group-launches-operations/",
+        "purpose": "2018_CLOSE_IDENTITY",
+        "sourceTier": "OFFICIAL",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "CEG website",
+        "url": "https://www.clearwayenergygroup.com/",
+        "purpose": "OPERATIONS",
+        "sourceTier": "OFFICIAL",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": [
+      {
+        "field": "owners",
+        "before": "BlackRock/Evergreen, active from 2018",
+        "after": "GIP III 100% in 2018-2022, then GIP III 50% and TotalEnergies 50%; no BlackRock period."
+      },
+      {
+        "field": "boundary",
+        "before": "Unclear",
+        "after": "Keep private CEG; do not merge CWEN or count lower-tier entities."
+      }
+    ],
+    "excludedOrDuplicateCandidates": [
+      {
+        "candidate": "BlackRock Clearway row",
+        "disposition": "MERGE",
+        "rationale": "Same GIP III asset; parent-manager link only."
+      },
+      {
+        "candidate": "Clearway Energy, Inc. (CWEN)",
+        "disposition": "DO_NOT_MERGE",
+        "rationale": "Distinct listed affiliate controlled by CEG."
+      },
+      {
+        "candidate": "CEG subsidiaries/projects",
+        "disposition": "EXCLUDE",
+        "rationale": "Lower-tier entities/assets."
+      },
+      {
+        "candidate": "Clearway Community Energy",
+        "disposition": "EXCLUDE",
+        "rationale": "Separate district-energy identity, not CEG."
+      }
+    ],
+    "unresolvedQuestions": [],
+    "recommendedListAction": "Merge the BlackRock-routed row into production ID cmrxpjgjr00ysivhenmpy1x6i; keep one CEG record, replace BlackRock/Evergreen with GIP III and TotalEnergies at 50% each, preserve GIP's 2018-2022 history, and keep CWEN separate."
+  },
+  "independentVerification": {
+    "evidenceUrlsChecked": 8,
+    "openSourceCount": 7,
+    "blockedSourceCount": 0,
+    "unavailableSourceCount": 1,
+    "recommendedPrimaryCount": 1,
+    "modelModeVerified": true
+  }
+}
+

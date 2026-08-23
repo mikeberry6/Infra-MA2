@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "taskId": "ledger:0173:tramcite:9155b156",
+  "taskIndex": 173,
+  "validatedAt": "2026-08-19T07:20:23.541Z",
+  "conversationUrl": "https://chatgpt.com/c/6a85516a-8244-83ea-95fc-25ab38398002",
+  "requiredTopLevelKeys": [
+    "asOfDate",
+    "requestedCompany",
+    "requestedManagers",
+    "decision",
+    "confidence",
+    "rationale",
+    "identityResolution",
+    "ownershipResolution",
+    "operatingResolution",
+    "acquisitionExitCheck",
+    "milestones",
+    "evidence",
+    "beforeAfterChanges",
+    "excludedOrDuplicateCandidates",
+    "unresolvedQuestions",
+    "recommendedListAction"
+  ],
+  "initialResponse": {
+    "valid": false,
+    "fencedJsonPresent": false,
+    "jsonParsed": false,
+    "markdownReviewPresent": false,
+    "requiredTopLevelKeysPresent": false,
+    "responseSha256": "3b11f1f44a2102bd5af6d681d72f7c29e223ae6a31b54b14ceaeba57c4a30a3d",
+    "errors": [
+      "No assistant response rendered because ChatGPT temporarily rate-limited the conversation after research completed."
+    ]
+  },
+  "repair": {
+    "count": 1,
+    "limit": 1,
+    "submittedAt": "2026-08-19T07:10:59.009Z",
+    "completedAt": "2026-08-19T07:20:23.541Z",
+    "valid": true,
+    "responseSha256": "84beab3a30d1cb9f22b579b1d0da344478d57dd65293954e3db5f415c4a3b350",
+    "errors": []
+  },
+  "finalResponse": {
+    "fencedJsonPresent": false,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "decision": "EXCLUDED",
+    "confidence": "HIGH",
+    "canonicalName": "TramCité",
+    "evidenceCount": 6,
+    "currentOwnerCount": 0,
+    "formerOwnerCount": 0,
+    "pendingOwnershipTransactionCount": 0,
+    "identityResolved": true,
+    "activeOwnershipResolved": true,
+    "northAmericaQualificationPresent": true,
+    "subsequentExitSearchPresent": true,
+    "exactlyOneRecommendedPrimary": true,
+    "result": "PASS"
+  },
+  "valid": true,
+  "errors": [],
+  "repairsUsed": 1,
+  "independentSourceVerification": "source-verification.json",
+  "finalResearchDecision": "research-decision.json"
+}

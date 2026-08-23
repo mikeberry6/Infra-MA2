@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0406:sparus-holdings:85d26c81",
+  "checkedAt": "2026-08-21T23:35:27.000Z",
+  "method": "Independent direct curl status, redirect, media-type and content-hash checks; visible-browser verification for Business Wire; SEC claim inspection; Ridgemont PDF extraction and rendered-page inspection; indexed-PDF verification for the Capitala update where direct byte retrieval timed out",
+  "sources": [
+    {
+      "url": "https://www.ridgemontep.com/portfolio/sparus-holdings/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ridgemontep.com/portfolio/sparus-holdings/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 65674,
+      "sha256": "dd0b1ffc385a83bd9cad63e6bf17124fb69dd98f94258a0ae365d2abf2f50b6a",
+      "healthStatus": "WORKING",
+      "verifiedClaims": ["Ridgemont's live page labels Sparus Current, lists 2021 as the investment year and identifies Peachtree Corners headquarters and utility-services scope"]
+    },
+    {
+      "url": "https://www.ridgemontep.com/press-releases/ridgemont-equity-partners-acquires-sparus-holdings/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ridgemontep.com/press-releases/ridgemont-equity-partners-acquires-sparus-holdings/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 65578,
+      "sha256": "e5224b9f01df1cf07861d49a85fcdd8c78416cfd94be537f3ec04f83023e7cf4",
+      "healthStatus": "WORKING",
+      "verifiedClaims": ["Ridgemont announced its acquisition on August 3, 2021 and says the transaction closed in March 2021", "The release supports the infrastructure-services strategy and parent/subsidiary boundary but does not disclose fund, stake, management rollover or purchase price"]
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20210811005526/en/Harris-Williams-Advises-Sparus-Holdings-Inc.-on-its-Sale-to-Ridgemont-Equity-Partners",
+      "httpStatus": 403,
+      "finalUrl": "https://www.businesswire.com/news/home/20210811005526/en/Harris-Williams-Advises-Sparus-Holdings-Inc.-on-its-Sale-to-Ridgemont-Equity-Partners",
+      "mediaType": "text/html",
+      "healthStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "browserDomTextBytes": 289742,
+      "browserDomTextSha256": "c101674f6bc0aea1f35b45dce4ee27a6a7896a3d6623d4e20921c8029bb76581",
+      "verifiedClaims": ["Harris Williams says it advised Sparus Holdings, Inc., a Source Capital portfolio company, on its sale to Ridgemont", "It identifies the parent and names Southern Cross, The Spear Group and OneVision as operating brands/subsidiaries"]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1859919/000185991926000041/R18.htm",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1859919/000185991926000041/R18.htm",
+      "mediaType": "text/html",
+      "bytes": 403543,
+      "sha256": "d13273141f3c38563821d0b232e7a5a2b453e2eb8dd497bbd56ce4f354c90b57",
+      "healthStatus": "WORKING",
+      "verifiedClaims": ["The 2026 SEC schedule identifies Sparus Holdings, LLC as formerly Sparus Holdings, Inc.", "The cited row is a revolver commitment and does not prove lender equity"]
+    },
+    {
+      "url": "https://sparus.com/privacy-policy/",
+      "httpStatus": 200,
+      "finalUrl": "https://sparus.com/privacy-policy/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 54346,
+      "sha256": "a6a7a09ce168a147afe3dd945f1afd8a59661e54ea1f3b754bd3685e40bf5b04",
+      "healthStatus": "WORKING",
+      "verifiedClaims": ["The current company privacy page supports the Peachtree Corners address and current Sparus brand context"]
+    },
+    {
+      "url": "https://www.ridgemontep.com/wp-content/uploads/Ridgemont-Sustainability-Report-2025-1.pdf",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ridgemontep.com/wp-content/uploads/Ridgemont-Sustainability-Report-2025-1.pdf",
+      "mediaType": "application/pdf",
+      "bytes": 3075279,
+      "sha256": "62b34b903475a04298c9825182220051c420c1aadfe5fff45e2cf579ca58d8b4",
+      "healthStatus": "WORKING",
+      "pdfVerification": {"pageCount": 21, "relevantPdfPages": [14], "renderedPagesInspected": [14], "verifiedClaims": ["Ridgemont reports 2024 Sparus scale of 40+ states, 2,100+ employees, 1.5 million locate tickets, 250,000+ investigated methane leaks and 1 million smart meters"]}
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1462441/000114420414018791/v371009_10k.htm",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1462441/000114420414018791/v371009_10k.htm",
+      "mediaType": "text/html",
+      "bytes": 2272436,
+      "sha256": "6a6e7db5e791c1e593cd7933af2dc326b2842aa5c3459158a13956ca72a1de30",
+      "healthStatus": "WORKING",
+      "verifiedClaims": ["Capitala's 2013 Form 10-K lists Sparus subordinated debt, Series B preferred stock and common-stock warrants", "The filing establishes a former equity-linked position but not a public percentage ownership of Sparus"]
+    },
+    {
+      "url": "https://investor.capitalagroup.com/static-files/f0a605ed-87b0-4d70-aa34-13f670d7e364",
+      "httpStatus": null,
+      "finalUrl": "https://investor.capitalagroup.com/static-files/f0a605ed-87b0-4d70-aa34-13f670d7e364",
+      "mediaType": "application/pdf",
+      "healthStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "byteHashUnavailableReason": "Direct curl byte retrieval timed out; the direct PDF was independently opened and parsed through the web PDF surface.",
+      "pdfVerification": {"pageCount": 21, "relevantPdfPages": [8], "verifiedClaims": ["The Q2 2016 Capitala update says a $3.4 million loss on Sparus debt and equity was recognized in Q4 2015 as part of a reorganization plan"]}
+    }
+  ],
+  "allEvidenceUrlsDirectHttps": true,
+  "allSourcesWorkingOrVerified": true,
+  "deadSourceCount": 0
+}

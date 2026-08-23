@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0220:bleutec-industries:3c6b9662",
+  "taskIndex": 220,
+  "companyName": "Bleutec Industries",
+  "verifiedAt": "2026-08-19T23:41:30.000Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://www.encapinvestments.com/news/bleutec-industries-announces-equity-commitment-encap-investments",
+      "finalUrl": "https://www.encapinvestments.com/news/bleutec-industries-announces-equity-commitment-encap-investments",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 22861,
+      "contentSha256": "5638a8ffc2a23e1a2769bf5fcf3fdd5df7bde79b109a4ad3bbccea1b09f3c1d8",
+      "note": "EnCap's direct release supports the November 30, 2022 commitment, management co-investment, Energy Transition attribution, Houston location and 2019 founding, but not the specific fund, stake or close date."
+    },
+    {
+      "url": "https://floatingwindsolutions.com/wp-content/uploads/2023/02/FWS23-Bo-Jardine-Bleutec-Industries.pdf",
+      "finalUrl": "https://floatingwindsolutions.com/wp-content/uploads/2023/02/FWS23-Bo-Jardine-Bleutec-Industries.pdf",
+      "status": "OPEN_PDF_VISUALLY_VERIFIED",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 2479857,
+      "contentSha256": "0519d1f832663e7a477d55ba5171e8e37e082c53ae63137e36ce7b976fabc0fc",
+      "pageCount": 15,
+      "verifiedPages": [2],
+      "note": "Rendered page 2 identifies Bleutec Industries Offshore Wind Services LLC, states a 2019 founding and says Bleutec was fully capitalized with EnCap while describing the vessels as planned for circa-2026 deployment."
+    },
+    {
+      "url": "https://www.pphb.com/bleutec",
+      "finalUrl": "https://www.pphb.com/bleutec",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html;charset=utf-8",
+      "bytes": 90713,
+      "contentSha256": "693e0bf7448ec73d594b50a07ed572c672cb36785c895d26e91bd802816737b9",
+      "note": "The transaction-advisor tombstone corroborates the raise and a Bleutec holding-company name but its deployment forecast is not treated as delivery evidence."
+    },
+    {
+      "url": "https://www.encapinvestments.com/about/energy-transition/portfolio",
+      "finalUrl": "https://www.encapinvestments.com/about/energy-transition/portfolio",
+      "status": "OPEN_NO_MATCH",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 35172,
+      "contentSha256": "853e042b3e699308b5e8cfa8e2609e42462857c45924fb9e79eb8a92217c3e8d",
+      "note": "EnCap's displayed Energy Transition portfolio omits Bleutec. The omission is retained only as a status signal and not treated as proof of exit."
+    },
+    {
+      "url": "https://www.encapinvestments.com/about/energy-transition",
+      "finalUrl": "https://www.encapinvestments.com/about/energy-transition",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 30985,
+      "contentSha256": "7046fc81274191e710e9145aa2d659b312e0b6c7306ebed0f321d3bc7bc3c41e",
+      "note": "EnCap's aggregate overview reports more investments and monetizations than appear on the displayed portfolio page, confirming that the display is not exhaustive."
+    },
+    {
+      "url": "https://www.marinelog.com/offshore/offshore-wind/bleutec-seeks-title-xi-support-for-its-offshore-wind-vessel-spread/",
+      "finalUrl": "https://www.marinelog.com/offshore/offshore-wind/bleutec-seeks-title-xi-support-for-its-offshore-wind-vessel-spread/",
+      "status": "BROWSER_OPEN_CURL_BLOCKED",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 3883,
+      "contentSha256": "8fc0a4e41388c51847f431f5cd6e4bf8f80c42d48c3686a9d5510e116ce2a182",
+      "contentHashBasis": "browser-rendered text",
+      "curlBlockBytes": 5512,
+      "curlBlockContentSha256": "6a58246e288e34598e5af1a979199ed32d8a1d379e5885cbd44cd44010c215b9",
+      "note": "The browser-opened trade report describes a pending Title XI application for four vessels, an $809.709mm applicant cost, a $708.5mm guarantee request and builder to be determined; it does not prove vessel construction or delivery."
+    },
+    {
+      "url": "https://www.bleutecindustries.com/",
+      "finalUrl": "https://museumkonperensiasiaafrika.com/",
+      "status": "OPEN_UNRELATED_REDIRECT",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 391967,
+      "contentSha256": "d9f6371d3c28836933dacc0f53cce189ce0944e28266162893409a093f982ef9",
+      "note": "The former Bleutec domain redirects to unrelated content. This is a dormancy signal and not evidence of an ownership exit, sale or dissolution."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allReturnedUrlsChecked": true,
+    "allEvidenceRowsChecked": true,
+    "deadUrlCount": 0,
+    "browserFallbackCount": 1,
+    "pdfCount": 1,
+    "pdfVisuallyVerified": true,
+    "historicalEnCapCommitmentVerified": true,
+    "fundedByFebruary2023Verified": true,
+    "currentEnCapOwnershipUnresolved": true,
+    "portfolioOmissionNotTreatedAsExit": true,
+    "domainRedirectNotTreatedAsExit": true,
+    "operatingFleetNotEstablished": true,
+    "allCoreHistoricalClaimsHaveDirectOpenEvidence": true,
+    "applicationBlocked": true
+  },
+  "releaseRequirement": "No mutation is permitted while current ownership, legal identity and operating status remain materially unresolved."
+}

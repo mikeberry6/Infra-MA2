@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0152:saavi-energia:20878d92",
+  "taskIndex": 152,
+  "companyName": "Saavi Energía",
+  "verifiedAt": "2026-08-19T05:02:20.000Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://www.global-infra.com/news/gip-acquires-saavi-energia-a-leading-independent-power-generator-in-mexico/",
+      "finalUrl": "https://www.global-infra.com/news/gip-acquires-saavi-energia-a-leading-independent-power-generator-in-mexico/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 38128,
+      "contentSha256": "aee6c6767ddd97932ab9a3d52b0215649f194b6199b6958b490eb3a4caa6a019",
+      "note": "GIP acquisition release opened."
+    },
+    {
+      "url": "https://www.saavienergia.com/en/",
+      "finalUrl": "https://www.saavienergia.com/en/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 212365,
+      "contentSha256": "a0d18fb78e95eced99ada26865a1f296dad39ff2176a168f204ccb989e2acec7",
+      "note": "Official company site opened."
+    },
+    {
+      "url": "https://www.saavienergia.com/en/about-saavi/",
+      "finalUrl": "https://www.saavienergia.com/en/about-saavi/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 134191,
+      "contentSha256": "6d655498f58f747423713957290a349c62556d8e693731c37e073c7e1ee8a29c",
+      "note": "Official company history page opened."
+    },
+    {
+      "url": "https://www.global-infra.com/portfolio-page/saavi-energia/",
+      "finalUrl": "https://www.global-infra.com/portfolio-page/saavi-energia/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 35946,
+      "contentSha256": "effb344d25ba388faf199d94c2094347c969463e9a1d7291fa77a15c519f1ede",
+      "note": "Current GIP portfolio page opened."
+    },
+    {
+      "url": "https://www.blackrock.com/corporate/newsroom/media/press-releases/blackrock-completes-acquisition-of-global-infrastructure-partners",
+      "finalUrl": "https://www.blackrock.com/corporate/newsroom/media/press-releases/blackrock-completes-acquisition-of-global-infrastructure-partners",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 200296,
+      "contentSha256": "16dc9537c2ffe2783b7595f2bf733e19558ec82daf1354cbda664c19b743afea",
+      "note": "BlackRock-GIP manager-level closing page opened."
+    },
+    {
+      "url": "https://www.prnewswire.com/news-releases/saavi-energia-announces-the-agreement-signed-by-global-infrastructure-partners-gip-to-combine-power-generation-assets-with-those-of-grupo-mexico-sab-de-cv-302754442.html",
+      "finalUrl": "https://www.prnewswire.com/news-releases/saavi-energia-announces-the-agreement-signed-by-global-infrastructure-partners-gip-to-combine-power-generation-assets-with-those-of-grupo-mexico-sab-de-cv-302754442.html",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 204221,
+      "contentSha256": "4a31a95b38f082adff50572dad06efd82258574b8eaad37f2091e97504998ead",
+      "note": "Signed Grupo México combination announcement opened."
+    },
+    {
+      "url": "https://www.cofece.mx/wp-content/uploads/2021/09/VEP_20210805_31.pdf",
+      "finalUrl": "https://www.cofece.mx/wp-content/uploads/2021/09/VEP_20210805_31.pdf",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 390079,
+      "contentSha256": "184f5b369b7cac4402cbba28ba6b075913b664b3878ad7d7a51cd95e9883c51d",
+      "note": "COFECE PDF opened successfully despite the model reporting an origin error."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allEvidenceRowsChecked": true,
+    "allCoreClaimsHaveOpenEvidence": true,
+    "deadUrlCount": 0,
+    "redirectConcernCount": 0,
+    "modelSourceHealthCorrection": "The COFECE PDF returned HTTP 200 and was hash-captured; it is not currently 502."
+  },
+  "releaseRequirement": "Reopen every selected source against a fresh production snapshot before any proposal or mutation."
+}

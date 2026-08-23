@@ -1,0 +1,200 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RESEARCH_DECISION",
+  "taskId": "ledger:0145:indian-energy:6a5ea3ff",
+  "taskIndex": 145,
+  "companyName": "Indian Energy",
+  "asOfDate": "2026-08-19",
+  "stagedAt": "2026-08-19T04:23:05.000Z",
+  "researchOnly": true,
+  "mutationAuthorized": false,
+  "proposalRequiresFreshProductionSnapshot": true,
+  "releaseRequiresFreshAcquisitionExitCheck": true,
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "Indian Energy",
+    "requestedManagers": [
+      "BlackRock",
+      "Global Infrastructure Partners"
+    ],
+    "decision": "EXCLUDED",
+    "confidence": "HIGH",
+    "rationale": "Indian Energy, LLC is an active North American microgrid platform, but not a PortCo of either requested manager. BlackRock's 2023 exposure was an approximately $25 million BlackRock Impact Opportunities bridge loan for the Viejas project, not company equity, and had been repaid by 2026-04-22. No public GIP investment or transfer was found; BlackRock's later acquisition of GIP did not create one.",
+    "identityResolution": {
+      "canonicalLegalName": "Indian Energy, LLC",
+      "displayName": "Indian Energy",
+      "aliases": [
+        "IE"
+      ],
+      "country": "United States",
+      "headquarters": "Anaheim, California",
+      "founded": 2009,
+      "officialWebsite": "https://indianenergy.com/",
+      "boundary": "Indian Energy is the platform and managing partner of The Indian Energy Group. Viejas Enterprise Microgrid and Jingtamok/IE VEM entities are project/subsidiary structures, not aliases or separate requested-manager PortCos. No predecessor, successor or rebrand found."
+    },
+    "ownershipResolution": {
+      "qualifyingOwners": [],
+      "nonQualifyingRelationships": [
+        {
+          "manager": "BlackRock",
+          "organization": "BlackRock",
+          "fund": "BlackRock Impact Opportunities",
+          "vehicle": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "Approximately $25 million bridge loan; no equity verified",
+          "announcementDate": "NOT_PUBLICLY_DISCLOSED",
+          "entryDate": "NOT_PUBLICLY_DISCLOSED",
+          "entryYear": 2023,
+          "exitDate": "NOT_PUBLICLY_DISCLOSED",
+          "exitYear": "NOT_PUBLICLY_DISCLOSED",
+          "isActive": false,
+          "transactionState": "REPAID_BY_2026-04-22"
+        },
+        {
+          "manager": "Global Infrastructure Partners",
+          "organization": "Global Infrastructure Partners",
+          "fund": "NOT_APPLICABLE",
+          "vehicle": "NOT_APPLICABLE",
+          "stake": "NONE_VERIFIED",
+          "announcementDate": "NOT_APPLICABLE",
+          "entryDate": "NOT_APPLICABLE",
+          "entryYear": "NOT_APPLICABLE",
+          "exitDate": "NOT_APPLICABLE",
+          "exitYear": "NOT_APPLICABLE",
+          "isActive": false,
+          "transactionState": "NO_PUBLIC_TRANSACTION_FOUND"
+        }
+      ],
+      "otherOwnershipEvidence": "A July 2024 Sault Tribe resolution states the Tribe directly owned 15% of Indian Energy LLC. The complete current cap table is not public."
+    },
+    "operatingResolution": {
+      "status": "Active",
+      "business": "Native American-owned developer, integrator, owner and operator of resilient microgrids, renewable generation and storage.",
+      "customers": "Department of Defense, Community Choice Aggregators and Tribal Utility Authorities.",
+      "footprint": "Anaheim and San Diego, California, plus Baja Norte, Mexico; U.S. projects include Viejas and MCAS Miramar.",
+      "scale": "Company-reported in September 2024: 4 GW generation and 6 GWh storage in development.",
+      "scopeConclusion": "Infrastructure company, but excluded from these manager lists because the manager exposure was debt, not direct equity."
+    },
+    "acquisitionExitCheck": {
+      "companySearchResult": "No public sale, acquisition, merger, divestiture, recapitalization, rebrand, bankruptcy or pending control deal found through 2026-08-19.",
+      "blackRockExit": "BIO's bridge loan was taken out and capital returned by 2026-04-22; exact borrower, vehicle and repayment date are not public.",
+      "pendingTransactions": []
+    },
+    "milestones": [
+      {
+        "date": "2009",
+        "event": "Indian Energy, LLC founded."
+      },
+      {
+        "date": "2023",
+        "event": "BlackRock Impact Opportunities entered the Viejas project bridge loan; exact date not public."
+      },
+      {
+        "date": "2024-09-13",
+        "event": "Viejas financial close; BIO identified as a bridge-finance partner."
+      },
+      {
+        "date": "2026-04-22",
+        "event": "By this date, BIO said the roughly $25 million bridge capital had earned a 14% return and been returned."
+      }
+    ],
+    "evidence": [
+      {
+        "label": "BlackRock BIO head interview transcript",
+        "url": "https://media.mcguirewoods.com/podcasts/2026/Accessing-The-Pipeline-Ep16.pdf",
+        "purpose": "OWNERSHIP_AND_REPAYMENT",
+        "sourceTier": "DIRECT_MANAGER_INTERVIEW",
+        "workingStatus": "OPEN_PDF",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "Indian Energy Viejas close release",
+        "url": "https://indianenergy.com/indian-energy-announces-financial-close-on-the-viejas-enterprise-microgrid-project/",
+        "purpose": "FINANCING_CLOSE_PROFILE",
+        "sourceTier": "COMPANY",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "BlackRock Impact Opportunities portfolio",
+        "url": "https://www.blackrock.com/us/individual/investment-ideas/alternative-investments/blackrock-impact-opportunities",
+        "purpose": "ATTRIBUTION_ENTRY_YEAR",
+        "sourceTier": "MANAGER",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Indian Energy About IE",
+        "url": "https://indianenergy.com/about-ie/",
+        "purpose": "IDENTITY_BOUNDARY",
+        "sourceTier": "COMPANY",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Sault Tribe July 2024 Viejas packet",
+        "url": "https://saulttribe.com/images/07.02.24_BoD_Meeting_Announcement_Packet.pdf",
+        "purpose": "OTHER_OWNER_PROJECT_STRUCTURE",
+        "sourceTier": "TRIBAL_GOVERNMENT",
+        "workingStatus": "OPEN_PDF",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "GIP portfolio",
+        "url": "https://www.global-infra.com/portfolio/",
+        "purpose": "GIP_CHECK",
+        "sourceTier": "MANAGER",
+        "workingStatus": "OPEN_NO_MATCH",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "BlackRock closes GIP acquisition",
+        "url": "https://www.blackrock.com/corporate/newsroom/media/press-releases/blackrock-completes-acquisition-of-global-infrastructure-partners",
+        "purpose": "MANAGER_CORPORATE_BOUNDARY",
+        "sourceTier": "MANAGER",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": [
+      {
+        "field": "Owner",
+        "before": "Active BlackRock/GEPIF III owner from 2023",
+        "after": "No BlackRock or GIP equity owner; repaid BIO project debt only."
+      },
+      {
+        "field": "Vehicle",
+        "before": "BlackRock Global Energy & Power Infrastructure Fund III",
+        "after": "BlackRock Impact Opportunities; legal lending vehicle not public."
+      },
+      {
+        "field": "Headquarters",
+        "before": "California/Alpine",
+        "after": "Anaheim, California; Alpine is the Viejas project site."
+      },
+      {
+        "field": "Financial close",
+        "before": "2024-08-20",
+        "after": "2024-09-13"
+      }
+    ],
+    "excludedOrDuplicateCandidates": [
+      "GIP ownership: no direct transaction or transfer found.",
+      "Viejas, IE VEM and Jingtamok entities: project/subsidiary records, not duplicate platform PortCos.",
+      "GEPIF III attribution: unsupported and contradicted by BIO's bridge-debt description."
+    ],
+    "unresolvedQuestions": [
+      "Exact BIO borrower, legal vehicle, entry date and repayment date are not publicly disclosed.",
+      "Indian Energy's full current cap table is not public; no later confirmation of the Sault Tribe's disclosed 15% was found."
+    ],
+    "recommendedListAction": "Exclude Indian Energy from BlackRock and GIP PortCo lists; remove the active GEPIF III attribution; do not merge; retain only an excluded historical BIO financing reference."
+  },
+  "independentVerification": {
+    "evidenceUrlsChecked": 7,
+    "openSourceCount": 7,
+    "blockedSourceCount": 0,
+    "unavailableSourceCount": 0,
+    "recommendedPrimaryCount": 1,
+    "modelModeVerified": true
+  }
+}
+

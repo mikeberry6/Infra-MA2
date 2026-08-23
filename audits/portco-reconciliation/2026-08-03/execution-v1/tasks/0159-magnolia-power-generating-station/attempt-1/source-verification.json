@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0159:magnolia-power-generating-station:a3187893",
+  "taskIndex": 159,
+  "companyName": "Magnolia Power Generating Station",
+  "verifiedAt": "2026-08-19T05:34:05.000Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://www.businesswire.com/news/home/20260225463871/en/Blackstone-Energy-Transition-Partners-Announces-Completion-of-694MW-Magnolia-Power-Generating-Station-in-Louisiana",
+      "finalUrl": "https://www.businesswire.com/news/home/20260225463871/en/Blackstone-Energy-Transition-Partners-Announces-Completion-of-694MW-Magnolia-Power-Generating-Station-in-Louisiana",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 582,
+      "contentSha256": "26254da71784836a5bc6e47de7f7447d38cc919aeb8ba18839801a88ae68a874",
+      "note": "Business Wire blocked curl, but independent browser retrieval opened the exact Blackstone completion release."
+    },
+    {
+      "url": "https://lpscpubvalence.lpsc.louisiana.gov/portal/PSC/ViewFile?fileId=szIv3sAmBmA%3D",
+      "finalUrl": "https://lpscpubvalence.lpsc.louisiana.gov/portal/PSC/ViewFile?fileId=szIv3sAmBmA%3D",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 1818391,
+      "contentSha256": "ab5ccc48a0b7a8dc9433335036086ca8d24328c36b9adb3872f085d5d07662ab",
+      "note": "Louisiana PSC PDF opened."
+    },
+    {
+      "url": "https://kindle-energy.com/about",
+      "finalUrl": "https://kindle-energy.com/about",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 216182,
+      "contentSha256": "fb1e50654bd7f2e301940d90187dc5b02ad4dcac57da5f0be578f7f47486ab16",
+      "note": "Kindle current asset list opened."
+    },
+    {
+      "url": "https://kindle-energy.com/case-studies/magnolia",
+      "finalUrl": "https://kindle-energy.com/case-studies/magnolia",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 139203,
+      "contentSha256": "1234caf68fd74d5e5a52bd09a930d7c191d72d4d35ed39f65c1ef0d9856319de",
+      "note": "Kindle Magnolia case study opened."
+    },
+    {
+      "url": "https://www.kirkland.com/lawyers/m/monastyrskaya-tatiana",
+      "finalUrl": "https://www.kirkland.com/lawyers/m/monastyrskaya-tatiana",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 4546,
+      "contentSha256": "960bea59245b51662d6190d20c4ea7576db8ccce0b1aa4b16bf14c5e75d44743",
+      "note": "Kirkland blocked curl, but independent browser retrieval opened the exact lawyer profile and Magnolia financing matter."
+    },
+    {
+      "url": "https://www.federalregister.gov/documents/2026/08/17/2026-16737/combined-notice-of-filings-2",
+      "finalUrl": "https://www.federalregister.gov/documents/2026/08/17/2026-16737/combined-notice-of-filings-2",
+      "status": "BROWSER_BLOCKED_PENDING_RELEASE_REOPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 10596,
+      "contentSha256": "78202cd9e9c81076c89e12864f28a951f595e89928ebbca3415cf55faa86e052",
+      "note": "Direct request redirected to a Federal Register unblock page and secondary browser refused the future-dated URL; mandatory release-stage reopen."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1144800/000114480026000041/q22026newsreleasecombined.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1144800/000114480026000041/q22026newsreleasecombined.htm",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 4819,
+      "contentSha256": "9a2bc8593b5a096e00512d80a9f1ecd596ec62288d1bd82119ee1fa5f893a1a8",
+      "note": "SEC blocked curl, but independent browser retrieval opened the exact TransAlta Q2 2026 filing."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allEvidenceRowsChecked": true,
+    "deadUrlCount": 0,
+    "blockedPendingReleaseReopenCount": 1,
+    "corePlatformBoundarySupportedByOpenOrBrowserVerifiedEvidence": true,
+    "stagedResearchAcceptable": true
+  },
+  "releaseRequirement": "Reopen the Federal Register notice and all selected sources against a fresh production snapshot before any proposal or mutation."
+}

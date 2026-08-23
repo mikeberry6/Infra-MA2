@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0454:beyond-data-centers:aa1b4081",
+  "taskIndex": 454,
+  "companyName": "Beyond Data Centers",
+  "asOfDate": "2026-08-19",
+  "recordedAt": "2026-08-22T15:43:32.652Z",
+  "modelDecision": "DEFERRED",
+  "confidence": "LOW",
+  "stageState": "STAGED_REVIEW_REQUIRED",
+  "applicationBlocked": true,
+  "rationale": "Primary evidence supports a real 2025-formed Beyond Data Centers LLC, a build-to-suit development and operations platform, and current board involvement by two senior Wafra investment professionals, including a real-assets and infrastructure lead. The SEC filing confirms a February 2026 equity capitalization but names three investors without identifying Wafra or their percentages. No direct source establishes Wafra's security, vehicle, stake, closing or uninterrupted current equity ownership, and the census company URL is invalid. The proposed creation and owner addition therefore remain unsupported.",
+  "repoReconciliation": {
+    "productionCompanyCount": 0,
+    "seedCompanyCount": 0,
+    "censusHoldingId": "098-wafra:holding:007:beyond-data-centers",
+    "queuedActions": [
+      "CREATE_COMPANY",
+      "ADD_OWNER"
+    ],
+    "queuedActionTreatment": "BLOCK_PENDING_DIRECT_WAFRA_OWNERSHIP_PROOF"
+  },
+  "unresolvedQuestions": [
+    "Which of the three disclosed equity investors are Wafra or Wafra-controlled vehicles.",
+    "Wafra's fund or managed account, security, percentage, announcement and legal closing.",
+    "Whether any disclosed campus has reached construction or operation and the current sourced capacity and acreage.",
+    "Whether any ownership transfer or exit occurred after the February 2026 first sale."
+  ],
+  "recommendedNextAction": "Do not create the company or add Wafra ownership. Retain the verified legal identity and operating-boundary leads for focused cap-table and transaction-document research, and replace the invalid census website URL with the working official domain in any later approved proposal.",
+  "databaseMutationAuthorized": false
+}

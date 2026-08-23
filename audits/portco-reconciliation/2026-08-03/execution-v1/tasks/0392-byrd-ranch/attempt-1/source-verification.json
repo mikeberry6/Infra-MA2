@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0392:byrd-ranch:e6076e80",
+  "checkedAt": "2026-08-21T22:26:30.000Z",
+  "method": "Independent direct curl status, redirect, media-type and content-hash checks; browser-index verification for the blocked Business Wire page",
+  "sources": [
+    {
+      "url": "https://www.quinbrook.com/portfolio/glidepath/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.quinbrook.com/portfolio/glidepath/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 51073,
+      "sha256": "283da1a0f702fa4ab888faa947110f4bdd8128d9d98288a140a28b54e7efbb8a",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Quinbrook defines GlidePath as the manager-level portfolio company and lists Byrd Ranch among GlidePath's current operating projects"
+      ]
+    },
+    {
+      "url": "https://www.quinbrook.com/projects/byrd-ranch/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.quinbrook.com/projects/byrd-ranch/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 47394,
+      "sha256": "7bcfb4634fcf3c5c7b67fccc3a8e06309c0825efe67083cc31af4af9481d8f1a",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Byrd Ranch is an operational 50 MW/50 MWh lithium-ion battery project in Sweeny, Texas",
+        "The manager page reports a 2019 acquisition year and November 2022 commercial operations"
+      ]
+    },
+    {
+      "url": "https://www.quinbrook.com/news-insights/glidepath-adds-50mw-to-texas-battery-storage-portfolio/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.quinbrook.com/news-insights/glidepath-adds-50mw-to-texas-battery-storage-portfolio/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 56426,
+      "sha256": "d97861eb038d121e425f0db5ef8a9a5c4241666f07f91bd5dc4e605326bb6625",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "GlidePath announced financing completion and construction commencement in January 2022",
+        "GlidePath said the completed project would be owned and managed by GlidePath"
+      ]
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20221107005085/en/GlidePath-Begins-Operations-at-New-50MW-Battery-Storage-Facility-Near-Houston-TX",
+      "httpStatus": 403,
+      "finalUrl": "https://www.businesswire.com/news/home/20221107005085/en/GlidePath-Begins-Operations-at-New-50MW-Battery-Storage-Facility-Near-Houston-TX",
+      "mediaType": "text/html",
+      "bytes": 540,
+      "sha256": "0038c7524d68696b854dd025ae12b41f7aa2904af6c4ee310955e11599b823d3",
+      "healthStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verifiedClaims": [
+        "The exact indexed Business Wire release reports construction and commissioning complete and operations commenced on November 7, 2022",
+        "Habitat Energy and IHI Terrasun are disclosed as optimizer and equipment/service providers, not owners"
+      ]
+    },
+    {
+      "url": "https://www.prnewswire.com/news-releases/quinbrook-acquires-223-mw-wind-power-portfolio-300584615.html",
+      "httpStatus": 200,
+      "finalUrl": "https://www.prnewswire.com/news-releases/quinbrook-acquires-223-mw-wind-power-portfolio-300584615.html",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 203226,
+      "sha256": "674db95a424f6b46c120e3d21eaacc11a0f83937ce7333f0b5c2c439fa87bb3a",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Quinbrook states that the Quinbrook Low Carbon Power Fund acquired GlidePath in 2017"
+      ]
+    },
+    {
+      "url": "https://interchange.puc.texas.gov/search/filings/?ControlNumber=59141&DocumentType=ALL&SortBy=ItemNumber&SortOrder=Descending&UtilityType=E",
+      "httpStatus": 200,
+      "finalUrl": "https://interchange.puc.texas.gov/search/filings/?ControlNumber=59141&DocumentType=ALL&SortBy=ItemNumber&SortOrder=Descending&UtilityType=E",
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 384354,
+      "sha256": "984d2a806afde2c38a8f2a37c1ecf2e7ba94dc4aaad40a16dfc50de3de88555e",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "The Texas filing index includes a 2026 generating-capacity report under Byrd Ranch Storage LLC"
+      ]
+    }
+  ],
+  "allEvidenceUrlsDirectHttps": true,
+  "allSourcesWorkingOrVerified": true,
+  "deadSourceCount": 0
+}

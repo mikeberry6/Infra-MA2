@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0175:400-paul-avenue-data-center:e79f51df",
+  "taskIndex": 175,
+  "companyName": "400 Paul Avenue Data Center",
+  "verifiedAt": "2026-08-19T07:30:16.768Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://www.novva.com/media-center/novva-data-centers-expanding-to-san-francisco/",
+      "finalUrl": "https://www.novva.com/media-center/novva-data-centers-expanding-to-san-francisco/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 216630,
+      "contentSha256": "f277edb2d55a2780fc43368680cfc2145df6b73022f476c9ef67c5d5d603b676",
+      "note": "Novva acquisition announcement opened and supports completed platform consolidation."
+    },
+    {
+      "url": "https://www.novva.com/data-center-facilities/san-francisco-ca/",
+      "finalUrl": "https://www.novva.com/data-center-facilities/san-francisco-ca/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 285956,
+      "contentSha256": "465f2c8d0cbb28e49bc31c99c7729c82ede82c8ef71839cc72441937c67c7f03",
+      "note": "Current Novva San Francisco facility page opened directly."
+    },
+    {
+      "url": "https://www.cimgroup.com/press-releases/cim-group-and-fifteenfortyseven-critical-systems-realty-begin-construction-of-bay-area-data-center-campus",
+      "finalUrl": "https://www.cimgroup.com/press-releases/cim-group-and-fifteenfortyseven-critical-systems-realty-begin-construction-of-bay-area-data-center-campus",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 108907,
+      "contentSha256": "5393e0624086578d85ca50e54de266c03ff1d00164bdd34404af28ea9c8b09e5",
+      "note": "CIM/1547 construction announcement opened and supports historical site sponsorship."
+    },
+    {
+      "url": "https://www.cimgroup.com/case-studies/data-center-expertise",
+      "finalUrl": "https://www.cimgroup.com/case-studies/data-center-expertise",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 119574,
+      "contentSha256": "2504744c4a339a33106ab459b1d92218c17646cbc756d76a1d01ab7db53cb0e1",
+      "note": "CIM case study opened and supports Novva platform relationship."
+    },
+    {
+      "url": "https://www.bisnow.com/news/san-francisco/data-center/first-data-center-in-10-years-to-be-built-in-san-francisco-77571",
+      "finalUrl": "https://www.bisnow.com/news/san-francisco/data-center/first-data-center-in-10-years-to-be-built-in-san-francisco-77571",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 186678,
+      "contentSha256": "15159b59253af966c1e2ac6d71329fb337f4601ccbccfa78bbe158ca2f7f5ec8",
+      "note": "Bisnow page opened and supports historical acquisition/construction context."
+    },
+    {
+      "url": "https://www.datacenterdynamics.com/en/news/cim-group-offering-24mw-data-center-for-lease-in-san-francisco/",
+      "finalUrl": "https://www.datacenterdynamics.com/en/news/cim-group-offering-24mw-data-center-for-lease-in-san-francisco/",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 5736,
+      "contentSha256": "08de9ce78494240bb5491219bc0418a17061a3009205d55063b2015690a20a5d",
+      "note": "Data Center Dynamics blocked curl but independently rendered in the browser and supported facility scale/lease status."
+    },
+    {
+      "url": "https://www.sf.gov/documents/55669/BOS-AAB-051426B1PHCPM.pdf",
+      "finalUrl": "https://media.api.sf.gov/documents/BOS-AAB-051426B1PHCPM.pdf",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 372440,
+      "contentSha256": "70ed0f46abfb824bbb185e48966ced22b47bc3ce7ffe31be54b109f5bf970a0f",
+      "note": "San Francisco public PDF opened after a same-site media redirect and supports current project context."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allEvidenceRowsChecked": true,
+    "allCoreClaimsHaveOpenOrBrowserVerifiedEvidence": true,
+    "deadUrlCount": 0,
+    "redirectConcernCount": 0
+  },
+  "releaseRequirement": "Merge the standalone 400 Paul Avenue record into the surviving Novva SFO/San Francisco facility boundary, preserve CIM/1547 development history, and do not infer retained site economics or an exact Novva closing date."
+}

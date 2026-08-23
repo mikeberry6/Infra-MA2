@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0422:coresite:28c96afd",
+  "checkedAt": "2026-08-22T02:18:38.000Z",
+  "method": "Independent direct HTTP status, redirect, media-type and content-hash checks; SEC, manager and company-page inspection; acquisition, recapitalization and exit search",
+  "sources": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1053507/000105350726000133/amt-20260630.htm",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1053507/000105350726000133/amt-20260630.htm",
+      "mediaType": "text/html",
+      "bytes": 2592125,
+      "sha256": "2657fe95bce830e7b39e7e837d1032bbd0870431db6f85fd23203a19251a5988",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "American Tower's June 30, 2026 common ownership was 71% and Stonepeak's was 29%",
+        "Stonepeak still held mandatory preferred interests",
+        "CoreSite comprised 30 facilities and approximately 3.8 million net rentable square feet"
+      ]
+    },
+    {
+      "url": "https://stonepeak.com/news/american-tower-partners-with-stonepeak-in-u-s-data-center-business",
+      "httpStatus": 200,
+      "finalUrl": "https://stonepeak.com/news/american-tower-partners-with-stonepeak-in-u-s-data-center-business",
+      "mediaType": "text/html",
+      "bytes": 39676,
+      "sha256": "b2345a5861d3b912d54fd9a49f2aa76ec7ac1e7ed5d4e877a93d44f7de498250",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Stonepeak signed a $2.5 billion active platform-equity investment",
+        "The initial fully converted stake was approximately 29% with governance rights",
+        "The perimeter was American Tower's U.S. data-center business"
+      ]
+    },
+    {
+      "url": "https://stonepeak.com/news/stonepeak-upsizes-investment-in-american-towers-data-center-business",
+      "httpStatus": 200,
+      "finalUrl": "https://stonepeak.com/news/stonepeak-upsizes-investment-in-american-towers-data-center-business",
+      "mediaType": "text/html",
+      "bytes": 36873,
+      "sha256": "8aeca0b04b220c2765c76cfd1ba8b3e1b33dc25835787564dd82917882432bb4",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Stonepeak closed a $570 million upsize on October 20, 2022",
+        "Total Stonepeak investment reached $3.07 billion and approximately 36% on a fully converted basis"
+      ]
+    },
+    {
+      "url": "https://www.coresite.com/news/american-tower-acquire-coresite",
+      "httpStatus": 200,
+      "finalUrl": "https://www.coresite.com/news/american-tower-acquire-coresite",
+      "mediaType": "text/html",
+      "bytes": 137828,
+      "sha256": "d7030ffd3461c04ea13af3e73c0731470dfcb95029de6f3b6546ae14dcd7fdd6",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "American Tower agreed to acquire CoreSite at $170 per share and approximately $10.1 billion enterprise value",
+        "Legacy CoreSite platform scope and transaction rationale"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1490892/000110465921153950/tm2136323d5_posam.htm",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1490892/000110465921153950/tm2136323d5_posam.htm",
+      "mediaType": "text/html",
+      "bytes": 30424,
+      "sha256": "87bb35b967d722a3d1ab454299823989687eb96ba578a1788f3756e992186ce1",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "CoreSite Realty Corporation merged into the Appleseed holdco chain on December 28, 2021",
+        "Legal predecessor and successor boundary"
+      ]
+    },
+    {
+      "url": "https://www.coresite.com/about",
+      "httpStatus": 200,
+      "finalUrl": "https://www.coresite.com/about",
+      "mediaType": "text/html",
+      "bytes": 181440,
+      "sha256": "37dad8d8e1bb9bcd74322ac6b22ae08ce013a5b1be9d308dd5e979079fb3f30e",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "CoreSite operating brand, Denver headquarters and services",
+        "Colocation, interconnection, cloud and network customer profile",
+        "Current interconnection and network scale claims"
+      ]
+    }
+  ],
+  "exitSearch": {
+    "searchedAt": "2026-08-22T02:18:38.000Z",
+    "scopeThrough": "2026-08-19",
+    "result": "No later platform sale, Stonepeak exit, IPO/spin, strategic review, additional announced stake purchase or signed ownership transfer was found. The expected preferred conversion was not publicly confirmed by the cutoff."
+  },
+  "allEvidenceUrlsDirectHttps": true,
+  "allCoreSourcesWorkingOrVerified": true,
+  "directFetchBlockedButBrowserVerifiedCount": 0,
+  "responseSourceHealthCorrections": [
+    "All six evidence URLs returned HTTP 200 and supported their stated purposes.",
+    "The June 2026 filing supports a 71%/29% common split and outstanding preferred interests; the 64%/36% ratio remains a fully converted presentation, not a confirmed completed conversion by the cutoff."
+  ],
+  "deadSourceCount": 0
+}

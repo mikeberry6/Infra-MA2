@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0453:american-inland-marine-holdings:47cd7d1a",
+  "taskIndex": 453,
+  "companyName": "American Inland Marine Holdings",
+  "asOfDate": "2026-08-19",
+  "recordedAt": "2026-08-22T15:27:44.756Z",
+  "modelDecision": "DEFERRED",
+  "confidence": "LOW",
+  "stageState": "STAGED_REVIEW_REQUIRED",
+  "applicationBlocked": true,
+  "rationale": "Wafra's current personnel page confirms an active board relationship, and SEC records identify AIM Parent Holdings LLC as a likely related vehicle with Edward Tsai as director and manager. Maritime Partners' Form ADV, however, treats AIM as a managed private-fund/holding structure and attributes approximately 82% to American Rivers Fund. The evidence does not establish the exact requested-company alias, Wafra's security or stake, a Wafra fund or managed account, or a manager-level operating-company boundary. The queued CREATE_COMPANY and ADD_OWNER actions therefore remain unsupported.",
+  "repoReconciliation": {
+    "productionCompanyCount": 0,
+    "seedCompanyCount": 0,
+    "censusHoldingId": "098-wafra:holding:003:american-inland-marine-holdings",
+    "queuedActions": [
+      "CREATE_COMPANY",
+      "ADD_OWNER"
+    ],
+    "queuedActionTreatment": "BLOCK_PENDING_IDENTITY_AND_DIRECT_OWNERSHIP_PROOF"
+  },
+  "unresolvedQuestions": [
+    "Whether American Inland Marine Holdings is an exact alias for AIM Parent Holdings LLC or a separate operating or holding company.",
+    "Wafra's direct security, percentage, investment vehicle, announcement and legal closing.",
+    "Whether the exposure is direct company ownership or an LP/co-investment in a Maritime Partners-managed private fund.",
+    "Which marine assets and operating subsidiaries belong at the canonical manager-level company boundary and whether Wafra remains an equity owner."
+  ],
+  "recommendedNextAction": "Do not create a company or add a Wafra owner. Route the task to focused primary-document review of AIM's subscription/ownership structure, Wafra transaction records and the Maritime Partners entity chain; exclude it if Wafra proves to be only an LP or fund investor.",
+  "databaseMutationAuthorized": false
+}

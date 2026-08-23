@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RESEARCH_SOURCE_VERIFICATION",
+  "taskId": "ledger:0133:allete-inc:3a7edb92",
+  "taskIndex": 133,
+  "companyName": "ALLETE, Inc.",
+  "verifiedAt": "2026-08-19T03:40:30.000Z",
+  "verifier": "Codex independent URL retrieval, redirect and content-hash check",
+  "summary": {
+    "evidenceRows": 7,
+    "open": 4,
+    "browserBlockedPendingReleaseReopen": 3,
+    "unavailablePendingReleaseReopen": 0,
+    "dead": 0,
+    "researchPacketAccepted": true
+  },
+  "sources": [
+    {
+      "httpStatus": 403,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/66756/000114036125045482/ef20060780_8k.htm",
+      "workingStatus": "BROWSER_BLOCKED_PENDING_RELEASE_REOPEN",
+      "contentCaptured": false,
+      "sha256": "e274ab7dfd3bb541a428d7d26ade7248ef6abd142a3691c68ebe4cf0d33bcf50",
+      "mediaType": "text/html",
+      "url": "https://www.sec.gov/Archives/edgar/data/66756/000114036125045482/ef20060780_8k.htm",
+      "label": "SEC closing 8-K",
+      "purpose": "Close, survivor, parent and delisting",
+      "isRecommendedPrimary": true,
+      "purposeReviewedAgainstResearchOutput": true
+    },
+    {
+      "httpStatus": 403,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/66756/000114036124032849/ny20029448x3_defm14a.htm",
+      "workingStatus": "BROWSER_BLOCKED_PENDING_RELEASE_REOPEN",
+      "contentCaptured": false,
+      "sha256": "44128aaabdf37a35cd9948c9a09c201dd713d5a835ef1d2bb0c1827703010d8a",
+      "mediaType": "text/html",
+      "url": "https://www.sec.gov/Archives/edgar/data/66756/000114036124032849/ny20029448x3_defm14a.htm",
+      "label": "SEC definitive proxy",
+      "purpose": "Vehicles, holdcos, founding and HQ",
+      "isRecommendedPrimary": false,
+      "purposeReviewedAgainstResearchOutput": true
+    },
+    {
+      "httpStatus": 200,
+      "finalUrl": "https://www.synapse-energy.com/sites/default/files/Courtney%20Lane%20Direct%20Testimony%20PUBLIC%20REDACTED%2024-148.pdf",
+      "workingStatus": "OPEN",
+      "contentCaptured": true,
+      "sha256": "e299ee9665a2378305ec6522204ebd6d94466951025fc2d439b8ffe25c3bd776",
+      "mediaType": "application/pdf",
+      "url": "https://www.synapse-energy.com/sites/default/files/Courtney%20Lane%20Direct%20Testimony%20PUBLIC%20REDACTED%2024-148.pdf",
+      "label": "MPUC docket testimony",
+      "purpose": "40/40/20 stakes and platform boundary",
+      "isRecommendedPrimary": false,
+      "purposeReviewedAgainstResearchOutput": true
+    },
+    {
+      "httpStatus": 200,
+      "finalUrl": "https://www.blackrock.com/corporate/newsroom/media/press-releases/blackrock-completes-acquisition-of-global-infrastructure-partners",
+      "workingStatus": "OPEN",
+      "contentCaptured": true,
+      "sha256": "d6a763f3df142d947a6de7b0b205225642704fc364c01d6c7e24067bc8bc7bf3",
+      "mediaType": "text/html; charset=utf-8",
+      "url": "https://www.blackrock.com/corporate/newsroom/media/press-releases/blackrock-completes-acquisition-of-global-infrastructure-partners",
+      "label": "BlackRock GIP closing",
+      "purpose": "BlackRock parentage and GIP identity",
+      "isRecommendedPrimary": false,
+      "purposeReviewedAgainstResearchOutput": true
+    },
+    {
+      "httpStatus": 200,
+      "finalUrl": "https://www.allete.com/OurBusinesses",
+      "workingStatus": "OPEN",
+      "contentCaptured": true,
+      "sha256": "c75b5aa4b0d227ab18ae92579ebcb804e20af5824ca1f9908154f947d85d531b",
+      "mediaType": "text/html; charset=utf-8",
+      "url": "https://www.allete.com/OurBusinesses",
+      "label": "ALLETE businesses",
+      "purpose": "Current platform and boundaries",
+      "isRecommendedPrimary": false,
+      "purposeReviewedAgainstResearchOutput": true
+    },
+    {
+      "httpStatus": 200,
+      "finalUrl": "https://unblock.federalregister.gov/",
+      "workingStatus": "BROWSER_BLOCKED_PENDING_RELEASE_REOPEN",
+      "contentCaptured": false,
+      "sha256": "039bcdfd8e32eb12faf777b77c8079ed21dab1d15d5689ecbda12839125972bc",
+      "mediaType": "text/html; charset=utf-8",
+      "url": "https://www.federalregister.gov/documents/2026/07/24/2026-15036/combined-notice-of-filings-1",
+      "label": "Federal Register EC26-133",
+      "purpose": "Pending federal reorganization filing",
+      "isRecommendedPrimary": false,
+      "purposeReviewedAgainstResearchOutput": true
+    },
+    {
+      "httpStatus": 200,
+      "finalUrl": "https://www.stoel.com/insights/reports/energy-regulatory-updates/june-3-2026",
+      "workingStatus": "OPEN",
+      "contentCaptured": true,
+      "sha256": "731db85a9ef9b3e79d87e60261b2d47a6e812ba81c8c2592c475d1bf7f124a97",
+      "mediaType": "text/html; charset=UTF-8",
+      "url": "https://www.stoel.com/insights/reports/energy-regulatory-updates/june-3-2026",
+      "label": "June 2026 regulatory update",
+      "purpose": "Proposed New ALLETE structure",
+      "isRecommendedPrimary": false,
+      "purposeReviewedAgainstResearchOutput": true
+    }
+  ],
+  "note": "Staging verification only; three government pages require browser/release-time reopening. Reopen and claim-check every source against a fresh production snapshot before proposal or release."
+}
+
+

@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0373:teranet-inc:fc015f26",
+  "taskIndex": 373,
+  "verifiedAt": "2026-08-21T20:01:49.000Z",
+  "allReturnedUrlsChecked": true,
+  "summary": {
+    "urlCount": 6,
+    "working": 6,
+    "browserBlockedButVerified": 0,
+    "browserBlockedUnverified": 0,
+    "dead": 0
+  },
+  "modelEvidenceCorrections": [
+    "The OSC order returned HTTP 200 during independent verification, correcting the model's stale PAGE_403 health label.",
+    "Teranet's current company page directly confirms that it is wholly owned by OMERS and that OMERS Infrastructure has overseen the investment since 2008; the queued ADD_OWNER action would duplicate the existing period.",
+    "Morningstar DBRS directly states that OMERS-owned Teranet Holdings LP is the 100% equity owner of Teranet Inc. and separately describes the Manitoba subsidiary/concession boundary.",
+    "The 2007 AIF is the more precise source for the Province's August 5, 2003 exit, despite Teranet's simplified public timeline showing 2004.",
+    "The review paragraph contains non-semantic citation-rendering residue. The strict JSON, direct URLs and ownership conclusions are unaffected."
+  ],
+  "sources": [
+    {
+      "url": "https://www.teranet.ca/about-teranet/",
+      "finalUrl": "https://www.teranet.ca/about-teranet/",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 405053,
+      "sha256": "1b88edec82ce6066fabdb94130e61a8e57cacf51f759d8e7d0035dc178d59c68",
+      "health": "WORKING",
+      "contentEvidence": "Teranet identifies itself as a 1991-founded Toronto statutory-registry operator, states that it is wholly owned by OMERS and overseen by OMERS Infrastructure, and reports the Ontario and Manitoba operating boundary plus 850-plus staff, more than 10 million annual transactions, more than 200 million images, almost 7 million titles and 99.9% availability."
+    },
+    {
+      "url": "https://www.omersinfrastructure.com/investments/teranet",
+      "finalUrl": "https://www.omersinfrastructure.com/investments/teranet",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 157151,
+      "sha256": "da3b5bc2967c5675dc635cf23a4baac68aeb90cb43c1166bceaad43ee89857f0",
+      "health": "WORKING",
+      "contentEvidence": "OMERS currently lists Teranet as an infrastructure investment with a 2008 investment year."
+    },
+    {
+      "url": "https://dbrs.morningstar.com/issuers/13590/teranet-holdings-lp",
+      "finalUrl": "https://dbrs.morningstar.com/issuers/13590/teranet-holdings-lp",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 185954,
+      "sha256": "98ae3c724f5e772fbcd2739be14939ba9874114c951df6ce0555f7d6a4014f0e",
+      "health": "WORKING",
+      "contentEvidence": "The issuer summary states that Teranet Holdings LP, a subsidiary of OMERS, is the 100% equity owner of Teranet Inc. and that Teranet Manitoba LP separately holds the Manitoba registry concession."
+    },
+    {
+      "url": "https://media.corporate-ir.net/media_files/irol/19/198264/Teranet%202007%20AIF.pdf",
+      "finalUrl": "https://media.corporate-ir.net/media_files/irol/19/198264/Teranet%202007%20AIF.pdf",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 729419,
+      "sha256": "0fd7c79cc0848e46995564e2417b536b7840e69fed2f265a43b60e0db3dc9799",
+      "health": "WORKING",
+      "contentEvidence": "Independent extraction of the 121-page AIF confirms the 1991 Province/Teramira structure, Teramira's August 5, 2003 acquisition of the Province's securities, the June 16, 2006 Income Fund acquisition/IPO and the 2006 legal amalgamation continuing as Teranet."
+    },
+    {
+      "url": "https://www.osc.ca/en/securities-law/orders-rulings-decisions/teranet-income-fund-and-borealis-acquisition-corporation",
+      "finalUrl": "https://www.osc.ca/en/securities-law/orders-rulings-decisions/teranet-income-fund-and-borealis-acquisition-corporation",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 292544,
+      "sha256": "da1381921c8959d815f094826d8692acd984d2b8cf60b3d6d1a6afc18abc0600",
+      "health": "WORKING",
+      "contentEvidence": "The Ontario Securities Commission order supports the Borealis acquisition vehicle, offer scope and takeover chronology."
+    },
+    {
+      "url": "https://news.gov.mb.ca/news/index.html?item=30649",
+      "finalUrl": "https://news.gov.mb.ca/news/index.html?item=30649",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=ISO-8859-1",
+      "bytes": 26456,
+      "sha256": "039999eda9545f42eaf8c4c54aafee849dd1b689cc75db5731ecc30ba9a01b1d",
+      "health": "WORKING",
+      "contentEvidence": "The Manitoba government states that the agreement took effect March 28, 2014 and grants Teranet an exclusive 30-year licence while preserving provincial data ownership and oversight."
+    }
+  ]
+}

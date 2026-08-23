@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_ATTESTATION",
+  "runId": "portco-reconciliation-2026-08-03-execution-v1",
+  "taskId": "ledger:0440:danskammer-energy:5987da36",
+  "taskIndex": 440,
+  "companyName": "Danskammer Energy",
+  "conversationUrl": "https://chatgpt.com/c/6a895e61-8a0c-83ea-b2ed-bf7f33634c96",
+  "accountTier": "ChatGPT Pro",
+  "model": "GPT-5.6 Sol",
+  "effort": "Pro",
+  "power": "5 of 5",
+  "uiVerified": true,
+  "uiEvidence": {
+    "accountLabel": "mike berry Pro",
+    "modeMenuModelLabel": "GPT-5.6 Sol",
+    "modeMenuEffortLabel": "Pro",
+    "modeMenuPowerLabel": "Pro, 5 of 5",
+    "capturedBeforeSubmission": true,
+    "recapturedBeforeRepair": false
+  },
+  "initialSubmittedAt": "2026-08-22T08:31:29.182Z",
+  "initialCompletedAt": "2026-08-22T08:58:10.442Z",
+  "repairSubmittedAt": "2026-08-22T08:58:53.165Z",
+  "repairCompletedAt": "2026-08-22T09:03:08.625Z",
+  "repairCount": 1,
+  "initialOutcome": "INVALID_OWNER_ROW_SCHEMA",
+  "finalOutcome": "VALID_AFTER_REPAIR",
+  "contentHashes": {
+    "promptSha256": "64b35b336b086783909572329c6e9f997ed7ac4812ca658c43ac1399a96d25ec",
+    "initialResponseSha256": "3fd73bd02c53994ebd745d985ae4e0412d39857a4b9b9c1a4b332e50cf7fce3c",
+    "acceptedResponseSha256": "bc7398d8a29e353825cfe3b44e844c4083e1aa1a319fcf9c3dc7c0398058c371",
+    "transcriptSha256": "77dd6901aedb0ed840b32aef2a4e5604fcf0bac5b55777265b8a46813d1acd91",
+    "repairPromptSha256": "cb9a3421bc46d6c653499aaa5cc6fe204dec7cb8989c2f5f9390a1936bb160b4",
+    "repairResponseSha256": "bc7398d8a29e353825cfe3b44e844c4083e1aa1a319fcf9c3dc7c0398058c371"
+  },
+  "captureMethod": "Visible signed-in ChatGPT web conversation; authoritative assistant DOM textContent",
+  "captureNote": "GPT-5.6 Sol, Effort Pro and Pro 5 of 5 were visibly verified before the initial submission. The initial substantive answer omitted required null fields from its owner rows. One narrowly scoped repair in the same conversation returned the complete replacement response with exact owner keys, valid minified JSON, seven evidence rows, four milestones, exactly one primary source and 7,497 total characters. The transcript references the separately stored prompt by path and SHA before recording both assistant responses and the repair prompt."
+}

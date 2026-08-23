@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0238:centre-hospitalier-de-l-universite-de-montreal-chum:c4574e88",
+  "taskIndex": 238,
+  "companyName": "Centre Hospitalier de l'Université de Montréal (CHUM)",
+  "verifiedAt": "2026-08-20T03:34:20Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://www.ohla-group.com/en/inside-information-on-corporate-transactions-mergers-acquisitions-and-others/",
+      "finalUrl": "https://www.ohla-group.com/en/inside-information-on-corporate-transactions-mergers-acquisitions-and-others/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 195245,
+      "contentSha256": "552645c25a820cf6e4c26db915d8179606f088e9a63b4ef43351bccc310ec8ce",
+      "note": "OHLA's direct disclosure verifies the 25% stake, John Laing Health Montreal Limited as legal buyer and November 28, 2024 closing."
+    },
+    {
+      "url": "https://www.laing.com/insights/john-laing-acquires-stake-in-centre-hospitalier-de-luniversite-de-montreal-ppp-project/",
+      "finalUrl": "https://www.laing.com/insights/john-laing-acquires-stake-in-centre-hospitalier-de-luniversite-de-montreal-ppp-project/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 148675,
+      "contentSha256": "3a5d1f1f1818afeb119c7909114f4172bb04be9959f0227d8eaeed2f994d5863",
+      "note": "John Laing's direct announcement verifies its agreement to acquire a twenty-five percent CHUM PPP stake."
+    },
+    {
+      "url": "https://www.laing.com/portfolio/centre-hospitalier-de-luniversite-de-montreal-chum-canada/",
+      "finalUrl": "https://www.laing.com/portfolio/centre-hospitalier-de-luniversite-de-montreal-chum-canada/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 165569,
+      "contentSha256": "3a61d3026ec4d173977af72013f69e3a41e118ce367a8d6c26249bab60ca5487",
+      "note": "John Laing's live portfolio page supports current portfolio attribution and the CHUM PPP boundary."
+    },
+    {
+      "url": "https://www.chumontreal.qc.ca/sites/default/files/inline-files/ANNEXE_3.pdf",
+      "finalUrl": "https://www.chumontreal.qc.ca/sites/default/files/inline-files/ANNEXE_3.pdf",
+      "status": "OPEN_PDF_VISUAL_VERIFIED",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 169204,
+      "contentSha256": "ec0bc48d37ded6235ada520ac6c4a4b23a5e015c0d45bf2ea7f4be810673eb39",
+      "pageVerification": [
+        {
+          "pages": "2-3",
+          "method": "pypdfium2 visual render",
+          "finding": "The ProjectCo schedule shows Innisfree 300 of 1,000 units, OHL 250, Explore Santé Montréal 250 and Dalkia 200, equivalent to 30%/25%/25%/20% at financial close."
+        }
+      ],
+      "note": "The public project-agreement annex verifies Collectif Santé Montréal S.E.C. and the original equity syndicate."
+    },
+    {
+      "url": "https://mcmillan.ca/deals-cases/mcmillan-advises-john-laing-group-on-strategic-acquisition-in-chum-p3-project/",
+      "finalUrl": "https://mcmillan.ca/deals-cases/mcmillan-advises-john-laing-group-on-strategic-acquisition-in-chum-p3-project/",
+      "status": "BROWSER_OPEN_CURL_403",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 5779,
+      "contentSha256": "b2fd4896aca09e00c5f5fd96817cb5f40cee283537dbd2b5a9258c64b7df0190",
+      "browserTextBytes": 8534,
+      "browserTextSha256": "b8f076bc88839a97bc1b437982c6a9aeafe613528c1394c77ed77aa29d103960",
+      "note": "The browser-rendered transaction summary corroborates John Laing's CHUM P3 acquisition."
+    },
+    {
+      "url": "https://www.atkinsrealis.com/~/media/Files/A/atkinsrealis/investor-briefcase/en/2025/e_financial_statement_annual_2025.pdf",
+      "finalUrl": "https://www.atkinsrealis.com/sitecore/service/notfound.aspx",
+      "status": "DEAD_PATH_CORRECTED_TO_CURRENT_OFFICIAL_PDF",
+      "httpStatus": 404,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 44180,
+      "contentSha256": "402771d911a05cf03b90ae7af23abb2698954b5d92e2314b7f6633ba7b9728e2",
+      "correctedVerificationUrl": "https://www.atkinsrealis.com/~/media/Files/A/atkinsrealis/investor-briefcase/en/2025/e_financial_statement_annuel_2025-en.pdf",
+      "correctedVerificationStatus": "OPEN_PDF_TEXT_AND_VISUAL_VERIFIED",
+      "correctedVerificationBytes": 968836,
+      "correctedVerificationSha256": "70c7d0b4b238382730762802de02833a88667dc7abe7485f939fbcb7b2c6b3b9",
+      "pageVerification": [
+        {
+          "page": 29,
+          "method": "pypdf text extraction plus pypdfium2 visual render",
+          "finding": "AtkinsRéalis acquired a 10% HMC L.P. interest in a business combination completed March 4, 2024; the 10% interest remained reported at December 31, 2025."
+        }
+      ],
+      "note": "The model's direct PDF path moved. The current official financial statements independently verify AtkinsRéalis' 10% current interest."
+    },
+    {
+      "url": "https://www.lse.co.uk/rns/recommended-cash-acquisition-of-john-laing-group-jps0bk861zdyk32.html",
+      "finalUrl": "https://www.lse.co.uk/rns/recommended-cash-acquisition-of-john-laing-group-jps0bk861zdyk32.html",
+      "status": "BROWSER_OPEN_CURL_403",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 5665,
+      "contentSha256": "0550b2cb744ab948fb0f433f1244834771b80cb71bb827c9102fb926637e8ef7",
+      "browserTextBytes": 255971,
+      "browserTextSha256": "d44db3318f070af91f3b3a7ed4463aebfb2d19f689a00dc205bcd62712faaa3e",
+      "note": "The browser-open exchange announcement supports KKR's ownership of John Laing; KKR is treated as ultimate sponsor, not a separately evidenced ProjectCo owner."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allReturnedUrlsChecked": true,
+    "allEvidenceRowsChecked": true,
+    "deadUrlCount": 1,
+    "correctedDeadSourceCount": 1,
+    "browserFallbackCount": 2,
+    "pdfVisualVerificationCount": 2,
+    "johnLaing25PercentCloseVerified": true,
+    "atkinsRealis10PercentVerified": true,
+    "originalSyndicateVerified": true,
+    "currentJohnLaingPortfolioStatusVerified": true,
+    "equitixAttributionRejected": true,
+    "currentRemainingOwnershipUnresolved": true,
+    "laterDirectExitNotFound": true,
+    "applicationBlocked": true
+  },
+  "releaseRequirement": "Do not apply a complete current-owner after-image until the remaining 65% ProjectCo ownership is resolved. Preserve the verified John Laing 25%, AtkinsRéalis 10%, OHLA exit and original syndicate history, and remove unsupported Equitix attribution."
+}

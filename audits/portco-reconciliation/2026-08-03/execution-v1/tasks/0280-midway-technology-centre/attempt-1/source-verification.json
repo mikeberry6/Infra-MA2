@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0280:midway-technology-centre:9f8844f1",
+  "taskIndex": 280,
+  "verifiedAt": "2026-08-20T16:24:48.000Z",
+  "allReturnedUrlsChecked": true,
+  "summary": {
+    "urlCount": 7,
+    "working": 4,
+    "browserBlockedButVerified": 3,
+    "dead": 0
+  },
+  "sources": [
+    {
+      "url": "https://www.cimgroup.com/press-releases/cim-group-sells-portfolio-of-four-data-center-assets",
+      "finalUrl": "https://www.cimgroup.com/press-releases/cim-group-sells-portfolio-of-four-data-center-assets",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 109109,
+      "sha256": "133ce6e01834bcf5ba7d0c91d5528f951623d8fa1fa91e0659b11ffcf84e44af",
+      "health": "WORKING",
+      "claimCheck": "CIM's November 2, 2021 seller release directly states that it sold the four-data-center portfolio to a joint venture between Harrison Street and 1547, identifies Midway as a portfolio asset and describes CIM's prior 1547 partnership."
+    },
+    {
+      "url": "https://www.1547realty.com/resource/fifteenfortyseven-critical-systems-realty-and-harrison-street-acquire-portfolio-of-four-strategically-located-data-centers-in-new-york-chicago-and-wyoming/",
+      "finalUrl": "https://www.1547realty.com/resource/fifteenfortyseven-critical-systems-realty-and-harrison-street-acquire-portfolio-of-four-strategically-located-data-centers-in-new-york-chicago-and-wyoming/",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "blockedResponseBytes": 4544,
+      "blockedResponseSha256": "fbfc7a4af4d27ae6447453f5629964d52e48ab1de1470550345c337f44dda1b3",
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "claimCheck": "Independent page extraction verifies the November 2, 2021 acquisition by Harrison Street and 1547, the four-asset portfolio including Midway and 1547's continuing asset-management role."
+    },
+    {
+      "url": "https://www.1547realty.com/resource/fifteenfortyseven-critical-systems-realty-acquires-property-in-chicagos-south-side-for-data-center-conversion/",
+      "finalUrl": "https://www.1547realty.com/resource/fifteenfortyseven-critical-systems-realty-acquires-property-in-chicagos-south-side-for-data-center-conversion/",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "blockedResponseBytes": 4544,
+      "blockedResponseSha256": "512d34529482bc44abc190661d987045e223b16a3e64881248fa8dc3157e9a82",
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "claimCheck": "Independent page extraction verifies CIM and 1547's July 2018 acquisition of Midway, its then-vacant industrial-campus status, 40 East Garfield address and planned 26 MW Tier III+ conversion."
+    },
+    {
+      "url": "https://chicagocitywire.com/55th-state-redevelopment-llc-sells-5401-s-state-st-chicago-for-7-5m",
+      "finalUrl": "https://chicagocitywire.com/55th-state-redevelopment-llc-sells-5401-s-state-st-chicago-for-7-5m",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 44666,
+      "sha256": "3a96e2f354d054133db5b72c62961b7d32da5e5744fb9d61d97a082fe042224a",
+      "health": "WORKING_SECONDARY_RECORD_REPUBLICATION",
+      "claimCheck": "Record republication identifies the July 6, 2018 transfer from 55th & State Redevelopment, LLC to Midway Technology Centre Owner, LLC and the 5401 South State address alias."
+    },
+    {
+      "url": "https://www.chicago.gov/city/en/depts/dcd/supp_info/demolition-delay-hold-list--2021.html",
+      "finalUrl": "https://www.chicago.gov/city/en/depts/dcd/supp_info/demolition-delay-hold-list--2021.html",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 60685,
+      "sha256": "6d2005b32ccb630649a45234073b92dc0679a50823e6784857a404ea299719cf",
+      "health": "WORKING",
+      "claimCheck": "Chicago government record identifies Midway Technology Centre Owner, LLC as applicant and owner for 28 and 40 East Garfield Boulevard, corroborating the property SPV and address boundary."
+    },
+    {
+      "url": "https://www.1547realty.com/data-center/chicago-il-chil1/",
+      "finalUrl": "https://www.1547realty.com/data-center/chicago-il-chil1/",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "blockedResponseBytes": 4544,
+      "blockedResponseSha256": "3d9a2a145f9b3b4aa4fe78af70cb75d3f503cfd01d955c6671000e92748b5023",
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "claimCheck": "Current 1547 page presents CHIL1 as the Midway Technology Center redevelopment facility, with 230,000 gross square feet, 120,000 planned data-center square feet and a 24 MW power commitment."
+    },
+    {
+      "url": "https://property.jll.com/listings/40-e-garfield-blvd-chicago",
+      "finalUrl": "https://property.jll.com/listings/40-e-garfield-blvd-chicago",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 272025,
+      "sha256": "72a98d6686fed618a11c8f2d12fa982a26bf3637c76e09ee44982e5686fe66ca",
+      "health": "WORKING",
+      "claimCheck": "Live JLL listing offers the 40 East Garfield Boulevard property for sale and describes approximately 196,300 rentable square feet of warehouse space; it names no buyer or closed transaction."
+    }
+  ]
+}

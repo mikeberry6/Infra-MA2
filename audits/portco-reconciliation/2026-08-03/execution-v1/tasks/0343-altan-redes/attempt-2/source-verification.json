@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0343:altan-redes:8c5ff493",
+  "taskIndex": 343,
+  "companyName": "Altán Redes",
+  "verifiedAt": "2026-08-22T21:46:49.000Z",
+  "summary": {
+    "modelCitationUrls": 5,
+    "working": 4,
+    "browserBlockedButVerified": 1,
+    "dead": 0,
+    "materialModelCorrections": 0
+  },
+  "sources": [
+    {
+      "label": "IFT 2025 close",
+      "url": "https://www.ift.org.mx/sites/default/files/conocenos/pleno/sesiones_pleno/acuerdo_liga/vp_270825_281_confidencial.pdf",
+      "finalUrl": "https://www.ift.org.mx/sites/default/files/conocenos/pleno/sesiones_pleno/acuerdo_liga/vp_270825_281_confidencial.pdf",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "byteLength": 6296369,
+      "contentSha256": "81e28c0bc10b8675ffdd351d47279b0209843ef2282b0008ab67da178e3806a2",
+      "observedStatus": "WORKING_CURRENT",
+      "note": "Current IFT resolution supports the post-transaction capital percentages, trust rights and the identity of the interests acquired by CFE."
+    },
+    {
+      "label": "IFT 2022 recap",
+      "url": "https://www.ift.org.mx/sites/default/files/conocenos/pleno/sesiones/acuerdoliga/vp010622354_0.pdf",
+      "finalUrl": "https://www.ift.org.mx/sites/default/files/conocenos/pleno/sesiones/acuerdoliga/vp010622354_0.pdf",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "byteLength": 2398445,
+      "contentSha256": "c6e82e9b3469f556bd76779bfe875e025bcc258ee950c354d059036e4aae32c9",
+      "observedStatus": "WORKING",
+      "note": "IFT restructuring resolution supports the concurso recapitalization, ownership chain and separation of bank creditor rights from equity."
+    },
+    {
+      "label": "IFT 2017 owners",
+      "url": "https://www.ift.org.mx/sites/default/files/conocenos/pleno/sesiones/acuerdoliga/pift060317108.pdf",
+      "finalUrl": "https://www.ift.org.mx/sites/default/files/conocenos/pleno/sesiones/acuerdoliga/pift060317108.pdf",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "byteLength": 608742,
+      "contentSha256": "9bd32e1554624230f3a06475c96a319f0c259da89ef85ad9e8c336c6bf63a3bd",
+      "observedStatus": "WORKING",
+      "note": "IFT ownership resolution supports the original consortium, MSIP vehicle chain and concession/trust structure."
+    },
+    {
+      "label": "Morgan Stanley",
+      "url": "https://www.morganstanley.com/im/en-us/capital-seeker/companies/alt-n-redes.html",
+      "finalUrl": "https://www.morganstanley.com/im/en-us/capital-seeker/companies/alt-n-redes.html",
+      "httpStatus": 403,
+      "mediaType": "browser-rendered text/html",
+      "byteLength": 42013,
+      "contentSha256": "30a684f5166d379ccdc67d6d0609b8e21a3f1678668c2309507754c8353bbf3d",
+      "observedStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "note": "Direct curl was denied, but the signed-in browser rendered Morgan Stanley's current Altán page describing the nationwide Mexico wholesale mobile-network investment."
+    },
+    {
+      "label": "Altán",
+      "url": "https://www.altanredes.com/",
+      "finalUrl": "https://www.altanredes.com/",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "byteLength": 154360,
+      "contentSha256": "8e16ab43b40fc69fdabb3b4128e43914458ef7addf0a792c7fae3963d879a289",
+      "observedStatus": "WORKING_CURRENT",
+      "note": "Current company site supports active operation and the Red Compartida wholesale-network boundary."
+    }
+  ],
+  "modelEvidenceCorrections": [
+    "Morgan Stanley's page is browser-blocked to curl but rendered and was verified in the signed-in browser."
+  ],
+  "conclusion": "The IFT resolutions provide direct entity-level support for MSIP/Marapendi's continuing 51.37% capital stake, CFE/F-1320's 48.63% stake, and the distinction between state-bank creditor governance and equity. No later MSIP exit or pending transfer was identified."
+}

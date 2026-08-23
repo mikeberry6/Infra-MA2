@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0283:union-station-data-center-and-carrier-hotel:a3bf1cb4",
+  "taskIndex": 283,
+  "linkedTaskIdsCovered": [
+    "ledger:0273:1547-critical-systems-realty:8e267688"
+  ],
+  "companyName": "Union Station Data Center and Carrier Hotel",
+  "canonicalName": "South Bend IN | SBIN1",
+  "legalName": "1547 CSR- South Bend, LLC",
+  "asOfDate": "2026-08-19",
+  "researchOnly": true,
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH_BOUNDARY_MEDIUM_EQUITY_CHAIN",
+  "responseSha256": "830d43fdad17d31248116bbcddf42dd3b639039c20dece1daac581469726e157",
+  "sourceVerification": "source-verification.json",
+  "acceptedResponse": "chatgpt-accepted-response.txt",
+  "summary": "Retain Union Station/SBIN1 as a standalone site-level record linked beneath, but not merged into, task 273's Harrison Street-1547 relationship. Add 1547 as a current acquisition partner and Global Access Point/Kevin Smith as the former owner/operator, remove the unsupported Harrison Street Digital Fund label, and separate the data-center portion from the city-owned Grand Hall and parking assets.",
+  "blockingQuestions": [],
+  "nonblockingDisclosureGaps": [
+    "The exact grantor, deed/close date and detailed property/operating-asset split were not publicly resolved.",
+    "The upstream parents, equity split and Harrison Street fund for the South Bend SPV are not publicly disclosed.",
+    "Any residual Global Access Point role at SBIN1 remains unconfirmed."
+  ],
+  "applicationBlocked": false,
+  "survivorCondition": "Task 283 remains the site-level record and task 273 remains the separate relationship/platform record; the site must be linked beneath task 273 without manager-level double counting."
+}

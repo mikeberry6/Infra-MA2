@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0261:aces-delta:7027e92e",
+  "taskIndex": 261,
+  "companyName": "ACES Delta",
+  "verifiedAt": "2026-08-20T09:49:14.382Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://aces-delta.com/about-us/",
+      "finalUrl": "https://aces-delta.com/about-us/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 116207,
+      "contentSha256": "7c62d48965c936a408e8bdaf7c3ce0db50d2acba8e57a18322a6b0e00c7dac6b",
+      "note": "ACES Delta's current site identifies Chevron New Energies as majority owner through Magnum and Mitsubishi Power Americas as minority owner."
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20230912536953/en/Chevron-Acquires-Majority-Stake-in-the-Advanced-Clean-Energy-Storage-Hydrogen-Project-in-Delta-Utah",
+      "finalUrl": "https://www.businesswire.com/news/home/20230912536953/en/Chevron-Acquires-Majority-Stake-in-the-Advanced-Clean-Energy-Storage-Hydrogen-Project-in-Delta-Utah",
+      "status": "BROWSER_VERIFIED_AFTER_HTTP_403",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 716,
+      "contentSha256": "481194438015036e5916631682815a5bcc45cc65fa4d31186597b60e4070dff2",
+      "browserSnapshotSha256": "be24492bdbeaf754943cbf707b43f9caae1591a6af3d79235adb5ab4ad02fab0",
+      "note": "Direct fetch was blocked, but the visible browser page loaded and exposed the Chevron majority-acquisition release. Treat as browser-verified, not dead."
+    },
+    {
+      "url": "https://hvllc.com/haddingtonesp/",
+      "finalUrl": "https://hvllc.com/haddingtonesp/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 196352,
+      "contentSha256": "41e048891da6c644af740bb23a46dcc520d2e8ecb41d55a11f297f79b1b2a833",
+      "note": "Haddington's release supports ESP I, its $650 million syndication, named institutional LPs and ACES I construction-equity purpose."
+    },
+    {
+      "url": "https://www.otpp.com/en-ca/about-us/news-and-insights/2022/haddington-ventures-announces--650-million-equity-syndication-pr/",
+      "finalUrl": "https://www.otpp.com/en-ca/about-us/news-and-insights/2022/haddington-ventures-announces--650-million-equity-syndication-pr/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 705235,
+      "contentSha256": "7769dedc1f9981569bcd370b40fdfdcb998006d3dc4d91d934e1640884e0b252",
+      "note": "OTPP's investor-side release confirms GIC, OTPP and AIMCo invested in Haddington ESP I alongside Manulife rather than directly in ACES Delta."
+    },
+    {
+      "url": "https://hvllc.com/hydrogen-hubs/",
+      "finalUrl": "https://hvllc.com/hydrogen-hubs/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 198132,
+      "contentSha256": "426865dcead5a9b657f5bee84ce5c00fccc9937dc1d9de3277eb42f44c899aa6",
+      "note": "Haddington's portfolio page supports the ACES I project boundary and ESP I construction-equity relationship."
+    },
+    {
+      "url": "https://aces-delta.com/media/us-doe-closes-504-4-million-loan-to-advanced-clean-energy-storage-project-for-hydrogen-production-and-storage/",
+      "finalUrl": "https://aces-delta.com/media/us-doe-closes-504-4-million-loan-to-advanced-clean-energy-storage-project-for-hydrogen-production-and-storage/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 74077,
+      "contentSha256": "32312434803a27bbb78aae7655cbd702c31317ddd107e5f5414e68071c3592dd",
+      "note": "Official ACES release identifies Advanced Clean Energy Storage I, LLC as project borrower and supports the DOE financing and project scope."
+    },
+    {
+      "url": "https://hydrogenpro.com/mfn_news/business-update/",
+      "finalUrl": "https://hydrogenpro.com/mfn_news/business-update/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 110127,
+      "contentSha256": "6f203c607f79e9ebdce11afde10aef3598196caf6b558074e294c46c5aee4aae",
+      "note": "HydrogenPro's current operating update supports commissioning progress while leaving final commercial-operation timing unconfirmed."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allReturnedUrlsChecked": true,
+    "allEvidenceRowsChecked": true,
+    "deadUrlCount": 0,
+    "redirectCount": 0,
+    "browserBlockedButVerifiedCount": 1,
+    "primarySourceWorking": true,
+    "chevronMajorityVerified": true,
+    "mitsubishiMinorityVerified": true,
+    "haddingtonFormerOwnerVerified": true,
+    "espConstructionEquityVerified": true,
+    "lpOnlyInvestorsExcluded": true,
+    "projectCompanyBoundaryResolved": true,
+    "noPendingOwnershipTransactionFound": true,
+    "identityResolved": true,
+    "activeOwnershipResolved": true,
+    "applicationBlocked": false
+  },
+  "modelEvidenceCorrections": [
+    "Do not record GIC, Ontario Teachers, AIMCo or Manulife as direct ACES Delta owners; the cited releases establish them as Haddington ESP I investors.",
+    "Do not merge ACES Delta, LLC with Advanced Clean Energy Storage I, LLC; the latter is the linked first project company.",
+    "Do not infer exact Chevron or Mitsubishi ownership percentages from secondary-only figures.",
+    "Record Haddington Energy Partners III as a former indirect platform owner through Magnum and distinguish it from Haddington ESP I's continuing managed project-construction equity.",
+    "Do not treat Chevron's terminated 2021 proposal as a pending transaction."
+  ],
+  "releaseRequirement": "Correct the existing ACES Delta record: retain one canonical platform, remove the four institutional LPs as direct owners, add Chevron/Magnum and Mitsubishi as current platform owners, preserve Haddington Energy Partners III as former indirect owner, and describe Haddington ESP I only as current managed ACES I construction equity with its instrument and percentage undisclosed."
+}

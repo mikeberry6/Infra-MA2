@@ -1,0 +1,176 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0164:copia-power:4a395f9a",
+  "taskIndex": 164,
+  "companyName": "Copia Power",
+  "asOfDate": "2026-08-19",
+  "researchOnly": true,
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "responseSha256": "3c994723c8043d4a063de35b278e6ce6d0f85b0e14dbd289b73d2a91a04f3096",
+  "sourceVerification": "source-verification.json",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "Copia Power",
+    "requestedManagers": [
+      "Carlyle Infrastructure"
+    ],
+    "decision": "PROPOSED_CORRECTION",
+    "confidence": "HIGH",
+    "rationale": "Copia is a valid Carlyle U.S. infrastructure PortCo. Carlyle's sale to EQT Infrastructure VII was signed on 2026-07-09 but unclosed, so Carlyle remains current; the production fund attribution lacks direct support.",
+    "identityResolution": {
+      "canonicalName": "Copia Power",
+      "legalName": "NOT_PUBLICLY_DISCLOSED",
+      "aliases": [
+        "Copia"
+      ],
+      "country": "United States",
+      "foundedYear": 2021,
+      "headquarters": "Dana Point, California",
+      "website": "https://www.copiapower.com/",
+      "boundary": "Standalone platform. Only Birch Infrastructure's renewable-energy business merged into Copia; Tenaska supplied a development pipeline. Projects beneath Copia are not separate manager-level PortCos."
+    },
+    "ownershipResolution": {
+      "currentOwners": [
+        {
+          "manager": "Carlyle Infrastructure",
+          "organization": "Carlyle",
+          "fund": "NOT_PUBLICLY_DISCLOSED",
+          "vehicle": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "100% (last expressly disclosed)",
+          "announcementDate": "2021-07-21",
+          "entryDate": "NOT_PUBLICLY_DISCLOSED",
+          "entryYear": 2021,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CURRENT_OWNER_PENDING_EXIT"
+        }
+      ],
+      "pendingTransactions": [
+        {
+          "direction": "OUTBOUND",
+          "buyer": "EQT Infrastructure VII",
+          "seller": "Carlyle",
+          "stake": "NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2026-07-09",
+          "closingDate": "NOT_CLOSED_AS_OF_2026-08-19",
+          "state": "SIGNED_PENDING",
+          "evidenceUrls": [
+            "https://eqtgroup.com/news/eqt-to-acquire-copia-power-a-leading-integrated-power-and-ai-infrastructure-platform-2026-07-09",
+            "https://www.carlyle.com/media-room/news-release-archive/carlyle-agrees-sell-copia-power-leading-power-and-ai-infrastructure"
+          ]
+        }
+      ]
+    },
+    "operatingResolution": {
+      "qualifies": true,
+      "status": "Active",
+      "profile": "Developer-owner-operator of U.S. solar, storage, dispatchable thermal, transmission/substation and data-center campuses for utilities, public power, hyperscalers and industrial/corporate users.",
+      "footprint": "Western high-voltage positions with expansion toward eastern digital hubs.",
+      "scale": "Company overview: >2.6 GW operating/under construction, >15 GW data centers, >25 GW solar/storage and 7 GW gas; EQT's July 9 release stated >9 GW data centers.",
+      "scope": "Physical infrastructure, not debt, public securities, LP exposure or a subsidiary already counted elsewhere."
+    },
+    "acquisitionExitCheck": {
+      "entry": "Carlyle announced the wholly owned platform on 2021-07-21; exact legal entry date is undisclosed.",
+      "merger": "The 2022 combination covered Birch's renewable-energy business and did not displace Carlyle attribution.",
+      "pendingExit": "Sale to EQT Infrastructure VII announced 2026-07-09; conditional and expected to close by end-2026.",
+      "closingCheck": "No party closing release found through 2026-08-19; Carlyle's adviser still labels the sale pending.",
+      "other": "No later completed sale, transfer, recapitalization, bankruptcy or rebrand found."
+    },
+    "milestones": [
+      {
+        "date": "2021-07-21",
+        "event": "Carlyle publicly launched Copia as a wholly owned U.S. infrastructure platform.",
+        "category": "Formation"
+      },
+      {
+        "date": "2022-09",
+        "event": "Copia combined with Birch Infrastructure's renewable-energy business.",
+        "category": "Merger"
+      },
+      {
+        "date": "2026-07-09",
+        "event": "Carlyle agreed to sell Copia to EQT Infrastructure VII; closing remained conditional.",
+        "category": "Pending Exit"
+      }
+    ],
+    "evidence": [
+      {
+        "label": "EQT acquisition release",
+        "url": "https://eqtgroup.com/news/eqt-to-acquire-copia-power-a-leading-integrated-power-and-ai-infrastructure-platform-2026-07-09",
+        "purpose": "Buyer, fund, state, close timing",
+        "sourceTier": "1-PARTY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "Carlyle sale release",
+        "url": "https://www.carlyle.com/media-room/news-release-archive/carlyle-agrees-sell-copia-power-leading-power-and-ai-infrastructure",
+        "purpose": "Seller, ownership, history",
+        "sourceTier": "1-PARTY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Carlyle launch release",
+        "url": "https://www.carlyle.com/media-room/news-release-archive/carlyle-launches-copia-power-platform-develop-7gwac-renewable",
+        "purpose": "Formation, stake, scope",
+        "sourceTier": "1-MANAGER",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Copia overview",
+        "url": "https://www.copiapower.com/overview",
+        "purpose": "Current owner, operations, scale",
+        "sourceTier": "1-COMPANY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Birch merger release",
+        "url": "https://www.birch.coop/carlyle-backed-copia-power-completes-strategic-combination",
+        "purpose": "Merger boundary",
+        "sourceTier": "1-PARTY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Copia HQ page",
+        "url": "https://www.copiapower.com/map-collection-locations/blog-post-title-four-8dab2",
+        "purpose": "Headquarters",
+        "sourceTier": "1-COMPANY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Guggenheim transactions",
+        "url": "https://www.guggenheimsecurities.com/capabilities/transactions",
+        "purpose": "Pending-status cross-check",
+        "sourceTier": "2-ADVISER",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": [
+      "Add signed-pending outbound sale to EQT Infrastructure VII; expected close by end-2026.",
+      "Keep Carlyle active as CURRENT_OWNER_PENDING_EXIT; do not activate EQT before closing.",
+      "Replace Carlyle Global Infrastructure Opportunity Fund with NOT_PUBLICLY_DISCLOSED.",
+      "Replace headquarters 'Western United States' with Dana Point, California.",
+      "Expand profile beyond solar/storage to integrated power-and-digital campuses; update the $300 million facility to its $575 million December 2025 upsize."
+    ],
+    "excludedOrDuplicateCandidates": [
+      "Birch Infrastructure: do not merge the full entity; only its renewable-energy business combined with Copia.",
+      "Tenaska: not a predecessor PortCo; Copia acquired only a development pipeline.",
+      "Harquahala I/II, Centennial Flats, Maricopa Energy Center and other Copia projects: exclude as separate manager-level rows."
+    ],
+    "unresolvedQuestions": [
+      "Exact Copia legal entity name: NOT_PUBLICLY_DISCLOSED; no material display-identity uncertainty.",
+      "Carlyle fund/vehicle: NOT_PUBLICLY_DISCLOSED; remove the unsupported fund assignment.",
+      "Pending-sale stake, consideration and exact closing date: NOT_PUBLICLY_DISCLOSED; monitor for closing."
+    ],
+    "recommendedListAction": "Retain Copia Power on Carlyle Infrastructure's active North American list, add the signed-pending outbound sale to EQT Infrastructure VII, and keep Carlyle current until closing is verified."
+  }
+}

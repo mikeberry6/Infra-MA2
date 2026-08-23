@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0339:race-communications:debd2ccc",
+  "taskIndex": 339,
+  "companyName": "Race Communications",
+  "verifiedAt": "2026-08-22T20:54:08.000Z",
+  "summary": {
+    "modelCitationUrls": 6,
+    "working": 6,
+    "browserBlockedButVerified": 0,
+    "dead": 0,
+    "materialModelCorrections": 0
+  },
+  "sources": [
+    {
+      "label": "Munich Re company AR 2025",
+      "url": "https://www.munichre.com/content/dam/munichre/mrwebsiteslaunches/2025-annual-report/MunichRe-Annual-Report-Company-2025-en.pdf/_jcr_content/renditions/original./MunichRe-Annual-Report-Company-2025-en.pdf",
+      "finalUrl": "https://www.munichre.com/content/dam/munichre/mrwebsiteslaunches/2025-annual-report/MunichRe-Annual-Report-Company-2025-en.pdf/_jcr_content/renditions/original./MunichRe-Annual-Report-Company-2025-en.pdf",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "byteLength": 1076536,
+      "contentSha256": "4771e909c7c582a08095f0bde7a2760d4b180ccd387efe8d58d02ec8b1a68d35",
+      "observedStatus": "WORKING",
+      "note": "Direct audited company report used for the 7.1264% Hometown holding and MR Redwood attribution."
+    },
+    {
+      "label": "Ohio DOI Schedule Y",
+      "url": "https://legacy.insurance.ohio.gov/FRAnnuals/2025/Q2/23469Q22025.pdf",
+      "finalUrl": "https://legacy.insurance.ohio.gov/FRAnnuals/2025/Q2/23469Q22025.pdf",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "byteLength": 1432124,
+      "contentSha256": "acad04e9a5741f652fd1ed44f9e3553f9a66a83a1b5fa33979b456046e284c93",
+      "observedStatus": "WORKING",
+      "note": "Regulatory schedule independently supports MR Redwood's approximately 7.1% Hometown ownership."
+    },
+    {
+      "label": "Race 2024 raise",
+      "url": "https://race.com/resources/articles/post/race-communications-announces-new-capital-raise-to-accelerate-california-expansion",
+      "finalUrl": "https://race.com/resources/articles/post/race-communications-announces-new-capital-raise-to-accelerate-california-expansion",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "byteLength": 33433,
+      "contentSha256": "4f60e8dc2fe23626a6f5f58bd47ea069d252c6051da27a111341672529c9dd90",
+      "observedStatus": "WORKING",
+      "note": "Company release separates the $375mm equity raise from AllianceBernstein private credit and describes Oak Hill as majority investor."
+    },
+    {
+      "label": "MEAG 2024 release",
+      "url": "https://www.meag.com/de/informieren/33990.html",
+      "finalUrl": "https://www.meag.com/de/informieren/33990.html",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "byteLength": 176645,
+      "contentSha256": "d2204cfe59131f9a763a3e74594c6e4da701574db07fa62d2f69b18da5a05ccb",
+      "observedStatus": "WORKING",
+      "note": "Direct manager page supports MEAG's investment alongside Oak Hill on behalf of Munich Re clients."
+    },
+    {
+      "label": "FCC DA 20-1363",
+      "url": "https://docs.fcc.gov/public/attachments/DA-20-1363A1.docx",
+      "finalUrl": "https://docs.fcc.gov/public/attachments/DA-20-1363A1.docx",
+      "httpStatus": 200,
+      "mediaType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "byteLength": 44317,
+      "contentSha256": "bd7212a817b1d9d0bd456d50c1e5f02c46734ce7821efbbb975009a15cc9c37f",
+      "observedStatus": "WORKING",
+      "note": "FCC document supports the Fund V/Hometown ownership chain and Oak Hill's entry control."
+    },
+    {
+      "label": "Oak Hill investments",
+      "url": "https://oakhill.com/investments/",
+      "finalUrl": "https://oakhill.com/investments/",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "byteLength": 365746,
+      "contentSha256": "06a7f70d0e1bdb898b0b6f1c28445b6bc8cfc6b6fd5636e71af599e4b0b763af",
+      "observedStatus": "WORKING_CURRENT",
+      "note": "Current manager portfolio page lists Race as an active investment and supports the no-exit conclusion."
+    }
+  ],
+  "modelEvidenceCorrections": [],
+  "conclusion": "The direct manager, company, audited and regulatory sources consistently establish a qualifying active 7.1264% Munich Re/MEAG parent-equity interest and continuing Oak Hill control. AllianceBernstein is separately identified as a lender, so no debt-only owner is introduced."
+}

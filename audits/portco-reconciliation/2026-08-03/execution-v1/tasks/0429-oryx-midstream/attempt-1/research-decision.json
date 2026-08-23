@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0429:oryx-midstream:eee190fa",
+  "sequence": 429,
+  "asOfDate": "2026-08-19",
+  "companyName": "Oryx Midstream",
+  "decision": "PROPOSED_MERGE",
+  "confidence": "HIGH",
+  "stagingDisposition": "STAGED_REVIEW_REQUIRED",
+  "applicationBlocked": true,
+  "rationale": "Oryx Midstream and Oryx Midstream Services are duplicate labels for one Stonepeak investment whose current operating boundary is OMSPB's 35% interest in the Plains-operated POPB joint venture. The continuing 35% interest and Stonepeak attribution are directly supported through 2026. QIA's 2019 minority entry is proven, but its ownership status at the cutoff remains unresolved.",
+  "recommendedChanges": [
+    "Merge Oryx Midstream Services into the canonical Oryx Midstream record once the current QIA ownership question is adjudicated.",
+    "Set the active asset boundary to OMSPB's 35% interest in Plains Oryx Permian Basin and retain Plains' 65% operator position as related joint-venture ownership.",
+    "Keep Oryx Midstream Holdings, Middle Cadence and OMSPB as legal-chain entities and POPB as the underlying joint venture rather than separate PortCos.",
+    "Treat the 2019 QIA transaction as a proven closed entry but do not present QIA as current without direct cutoff evidence.",
+    "Supersede ledger:0430:oryx-midstream-services:8b062bed only after the canonical merge and ownership treatment are approved and released."
+  ],
+  "unresolvedQuestions": [
+    "Whether Qatar Investment Authority still held any indirect OMSPB interest at the cutoff.",
+    "Exact Stonepeak/QIA sponsor percentages and governance above OMSPB."
+  ],
+  "unresolvedItemsAreNoncriticalDisclosureGaps": false,
+  "proposalGenerationAllowed": false,
+  "sourceVerificationPassed": true,
+  "linkedFollowUpRequired": true,
+  "linkedFollowUpSubjects": [
+    "ledger:0430:oryx-midstream-services:8b062bed"
+  ],
+  "acceptedResponseSha256": "604fafd5b8e8775c3cb6be28f926ba4399d0f536e56c7cb3d1adcfb948690a11"
+}
+

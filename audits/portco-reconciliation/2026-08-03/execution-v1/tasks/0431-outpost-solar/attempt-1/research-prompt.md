@@ -1,0 +1,42 @@
+Research one North American infrastructure portfolio-company list reconciliation as of 2026-08-19. Use current web research, open direct pages, and search both acquisitions and later closings/exits. Treat every census claim as unverified.
+
+REQUESTED COMPANY: Outpost Solar
+REQUESTED MANAGER: Stonepeak; identify the seller/developer and continuing co-owners as needed
+TASK: ledger:0431:outpost-solar:b3b3fc4c
+CANONICAL KEY: outpost-solar|united-states
+
+LEDGER ISSUE TO TEST
+The Stonepeak census proposes a new U.S. solar-platform record based on a December 10, 2025 Stonepeak announcement, but classified the transaction as SIGNED_PENDING_INCOMING because legal closing was not established. The repository has no matched company. Determine whether the investment closed by the cutoff and whether Outpost Solar is a stable manager-level platform suitable for inclusion.
+
+IDENTITY AND TRANSACTION QUESTIONS
+Identify Outpost Solar’s exact legal/display identity, founders/seller, relationship to any predecessor developer or asset owner, website, headquarters and asset/development perimeter. Reconstruct Stonepeak’s transaction: equity commitment or purchase, acquisition/investment entities, fund/vehicle, stake, announcement date, required approvals and legal closing date. Search Stonepeak, Outpost, counterparties, FERC/state utility/interconnection records, financing materials and corporate filings for consummation. If no closing is directly supported, preserve the signed incoming state rather than activating Stonepeak ownership.
+
+Search through 2026-08-19 for later funding, project acquisitions, financing closings, changes of control, cancellation, termination, sale, Stonepeak exit and signed pending transactions. Determine whether Stonepeak’s live investments page reflects a closed investment or merely an announced commitment.
+
+PLATFORM AND OPERATING QUALIFICATION
+Confirm whether Outpost is an operating solar-generation portfolio, a development platform or a project holding company. Establish products/services, customers/end markets, U.S. geographic footprint, disclosed operating/development MW, project count, commercial status and infrastructure-strategy basis. Keep individual solar projects beneath Outpost unless separately manager-held.
+
+LIST-READY MINIMUM
+Because this is a proposed new company, require a verified canonical identity, geography, classification, ownership or pending-ownership state, concise description, investment milestone and primary ownership source. A signed pending acquisition may be recorded as a pending transaction, but the incoming buyer must not be represented as an active owner before legal close.
+
+RESEARCH RULES
+- Resolve canonical identity, legal/acquisition entities, current/former owners, funds/vehicles, stakes, announcement/closing/exit dates and transaction states.
+- Search both acquisition and subsequent exit evidence through 2026-08-19. Open direct pages rather than relying on snippets.
+- Prefer Stonepeak, Outpost/counterparty, regulatory, filing and project-finance sources.
+- Use NOT_PUBLICLY_DISCLOSED for noncritical gaps and UNRESOLVED for material identity or current-ownership uncertainty.
+- Return PROPOSED_NEW if the list-ready minimum is met, with Stonepeak active only if closing is proved; VERIFIED_NO_CHANGE is unavailable because no record exists; PROPOSED_CORRECTION if the investment maps to an existing canonical platform; PROPOSED_MERGE if a duplicate is proven; EXCLUDED if it is not a qualifying infrastructure investment; or DEFERRED if identity/transaction status is materially unresolved.
+- Do not elevate individual projects into separate PortCos. This is a research packet only; do not propose database syntax or change Deal Database records.
+
+STARTING SOURCES TO REOPEN
+- https://stonepeak.com/news/stonepeak-invests-in-outpost-solar
+- https://stonepeak.com/investments
+
+Return ordinary plain text only, not a code fence:
+BEGIN_JSON
+{one complete minified JSON object}
+END_JSON
+BEGIN_REVIEW
+One concise decision paragraph.
+END_REVIEW
+
+Keep the response under 7,500 characters, with no more than 8 evidence rows and 4 milestones. Mandatory top-level keys: asOfDate,requestedCompany,requestedManagers,decision,confidence,rationale,identityResolution,ownershipResolution,operatingResolution,acquisitionExitCheck,milestones,evidence,beforeAfterChanges,excludedOrDuplicateCandidates,unresolvedQuestions,recommendedListAction. Owner keys only: manager,organization,fund,vehicle,stake,announcementDate,entryDate,entryYear,exitDate,exitYear,isActive,transactionState. Pending transaction keys only: direction,buyer,seller,stake,announcementDate,closingDate,state,evidenceUrls. Evidence keys only: label,url,purpose,sourceTier,workingStatus,isRecommendedPrimary. Recommend exactly one primary source.

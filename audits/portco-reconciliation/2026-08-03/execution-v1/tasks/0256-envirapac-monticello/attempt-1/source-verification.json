@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0256:envirapac-monticello:efac2570",
+  "taskIndex": 256,
+  "companyName": "EnviraPAC Monticello",
+  "verifiedAt": "2026-08-20T08:25:35.337Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://generatecapital.com/investment/",
+      "finalUrl": "https://generatecapital.com/investment/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 60049,
+      "contentSha256": "85d7561370e32f5f3ce842cbad60c4e6da93d391e7a1a3e58f67bcba6ee59979",
+      "note": "Generate's investment archive describes a $25 million investment in an EnviraPAC-owned bankruptcy-remote project SPV for production lines; it does not name the SPV, prove EnviraPAC corporate equity, or establish current ownership."
+    },
+    {
+      "url": "https://www.adeq.state.ar.us/home/pdssql/p_facil_info.aspx?AFIN=2200392&AFINDash=22-00392",
+      "finalUrl": "https://adeq.state.ar.us/home/pdssql/p_facil_info.aspx?AFIN=2200392&AFINDash=22-00392",
+      "status": "REDIRECTED_WORKING",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 11825,
+      "contentSha256": "376cdd9a7ecddf5cc085774b70e30037cf8f720f7114d77a93813c09eab4d7e7",
+      "note": "Arkansas DEQ facility record supports the Monticello facility identity and permit history."
+    },
+    {
+      "url": "https://www.adeq.state.ar.us/home/pdssql/p_facil_details.aspx?AFIN=2200392&AFINDash=22-00392",
+      "finalUrl": "https://adeq.state.ar.us/home/pdssql/p_facil_details.aspx?AFIN=2200392&AFINDash=22-00392",
+      "status": "REDIRECTED_WORKING",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 11270,
+      "contentSha256": "88933e97d68022dc0784aa61e8349a04eddf41c341e7bcb68e20fe41c1742356",
+      "note": "Arkansas DEQ details support the regulated facility/operator record."
+    },
+    {
+      "url": "https://www.sos.arkansas.gov/",
+      "finalUrl": "https://www.sos.arkansas.gov/",
+      "status": "OPEN_NON_RECORD_SPECIFIC",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 67003,
+      "contentSha256": "fda8d1cff733ebb5d3d60f80679eaeaad55e4c7474bd52103f5d98b594831d7c",
+      "note": "The returned URL is only the Secretary of State homepage, not a durable direct entity record; it cannot independently support the legal-registration claim."
+    },
+    {
+      "url": "https://www.ncat.org/arkansas-carbon-venture-turns-sustainable-forestry-management-residuals-into-market-ready-product/",
+      "finalUrl": "https://www.ncat.org/arkansas-carbon-venture-turns-sustainable-forestry-management-residuals-into-market-ready-product/",
+      "status": "DEAD",
+      "httpStatus": 404,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 297206,
+      "contentSha256": "c184c275959ac48322680563e0b75bab8cb6fcf0ebd360f40ad21e715a0c04b2",
+      "note": "The operational-profile URL returned a branded 404 page and must not be treated as working."
+    },
+    {
+      "url": "https://www.mitchellwilliamslaw.com/air-enforcement-arkansas-department-of-energy-environment-division-of-environmental-quality-and-monticello-powdered-activated-carbon-wood-production-facility-enter-into-consent-administrative-ord",
+      "finalUrl": "https://www.mitchellwilliamslaw.com/air-enforcement-arkansas-department-of-energy-environment-division-of-environmental-quality-and-monticello-powdered-activated-carbon-wood-production-facility-enter-into-consent-administrative-ord",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 35585,
+      "contentSha256": "b5d8f6058fce99cb5d8d705e88863002ad4f504b964577efdb7f26ea079aa4d3",
+      "note": "Secondary legal summary supports EnviraPAC Monticello, LLC as facility owner/operator in the enforcement context."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allReturnedUrlsChecked": true,
+    "allEvidenceRowsChecked": true,
+    "deadUrlCount": 1,
+    "redirectCount": 2,
+    "nonRecordSpecificUrlCount": 1,
+    "primarySourceWorking": true,
+    "operatingFacilityIdentityVerified": true,
+    "generateProjectSpvInvestmentVerified": true,
+    "generateCorporateEquityVerified": false,
+    "generateCurrentProjectOwnershipResolved": false,
+    "projectSpvLegalNameResolved": false,
+    "laterExitOrPendingTransactionNotFound": true,
+    "identityResolved": true,
+    "activeOwnershipResolved": false,
+    "applicationBlocked": true
+  },
+  "modelEvidenceCorrections": [
+    "Retain EnviraPAC Monticello, LLC as the operating facility identity, but do not infer that Generate owned the operating company.",
+    "Record Generate's disclosed involvement only as an investment in an unnamed bankruptcy-remote project SPV unless a direct owner/title source identifies the vehicle.",
+    "Do not mark Generate active or exited while its project-level ownership state and exit date remain unresolved.",
+    "Replace the dead NCAT URL before any publication and do not use the Secretary of State homepage as entity-specific evidence."
+  ],
+  "releaseRequirement": "Pause list application pending direct evidence resolving the unnamed ProjectCo and Generate's current or former project-level ownership. The operating asset is verified, but the manager-level ownership period is not."
+}

@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "runId": "portco-research-staging-2026-08-19",
+  "taskId": "ledger:0470:boldyn-networks:3ce154eb",
+  "taskIndex": 470,
+  "validatedAt": "2026-08-22T19:36:03.000Z",
+  "conversationUrl": "https://chatgpt.com/c/6a89f640-6b34-83ea-9a68-7df07a1699c7",
+  "requiredTopLevelKeys": [
+    "asOfDate",
+    "requestedCompany",
+    "requestedManagers",
+    "decision",
+    "confidence",
+    "rationale",
+    "identityResolution",
+    "ownershipResolution",
+    "operatingResolution",
+    "acquisitionExitCheck",
+    "milestones",
+    "evidence",
+    "beforeAfterChanges",
+    "excludedOrDuplicateCandidates",
+    "unresolvedQuestions",
+    "recommendedListAction"
+  ],
+  "initialResponse": {
+    "valid": false,
+    "fencedJsonPresent": false,
+    "jsonParsed": false,
+    "markdownReviewPresent": false,
+    "requiredTopLevelKeysPresent": false,
+    "responseSha256": null,
+    "errors": [
+      "The research trace completed but the initial answer renderer emitted no contract packet."
+    ]
+  },
+  "repair": {
+    "count": 1,
+    "limit": 1,
+    "submittedAt": "2026-08-22T19:34:48.201Z",
+    "completedAt": "2026-08-22T19:35:40.000Z",
+    "valid": false,
+    "responseSha256": "d9dab888be79e24c9792f2fde0b4ebf07586d29739eb8bb4f63ae9613120ae99",
+    "errors": [
+      "Repair response contained only ChatGPT's Internal Server Error / Retry message."
+    ]
+  },
+  "finalResponse": null,
+  "valid": false,
+  "errors": [
+    "No valid BEGIN_JSON / END_JSON / BEGIN_REVIEW / END_REVIEW packet was emitted before the one-repair limit was exhausted."
+  ],
+  "repairsUsed": 1,
+  "result": "FAILED"
+}

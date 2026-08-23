@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0459:signal-rail-holdings:50c69045",
+  "taskIndex": 459,
+  "companyName": "Signal Rail Holdings",
+  "verifiedAt": "2026-08-22T22:42:00.000Z",
+  "summary": {
+    "modelCitationUrls": 6,
+    "working": 4,
+    "browserBlockedButVerified": 2,
+    "dead": 0,
+    "materialModelCorrections": 0
+  },
+  "sources": [
+    {
+      "label": "Trinity 2Q26 10-Q",
+      "url": "https://www.sec.gov/Archives/edgar/data/99780/000009978026000119/trn-20260630.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/99780/000009978026000119/trn-20260630.htm",
+      "httpStatus": 200,
+      "mediaType": "text/html (inline XBRL)",
+      "byteLength": 1740524,
+      "contentSha256": "933c037fb501cb44a607d06ee0f4169d98878b36cafbb08d419fc2037126f457",
+      "observedStatus": "WORKING",
+      "note": "The current SEC filing directly states that Wafra Funds own 88.5%, TILC owns 11.5%, and TILC services all Signal Rail railcars."
+    },
+    {
+      "label": "Wafra launch",
+      "url": "https://www.wafra.com/trinity-and-wafra-announce-joint-venture-in-new-railcar-investment-vehicle-signal-rail/",
+      "finalUrl": "https://www.wafra.com/trinity-and-wafra-announce-joint-venture-in-new-railcar-investment-vehicle-signal-rail/",
+      "httpStatus": 403,
+      "mediaType": "browser-rendered text/html",
+      "byteLength": 177853,
+      "contentSha256": "445dc818dfc0bf9135539cf63593f57857c64620a6efe382f28da817de85b7eb",
+      "observedStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "note": "Direct curl was denied, but the signed-in browser rendered Wafra's August 18, 2021 Signal Rail close announcement and its railcar-investment-vehicle structure."
+    },
+    {
+      "label": "Trinity 2022 10-K",
+      "url": "https://s21.q4cdn.com/496026207/files/doc_financials/2022/q4/3b5ea739-2279-4808-8d4b-5886059321e9.pdf",
+      "finalUrl": "https://s21.q4cdn.com/496026207/files/doc_financials/2022/q4/3b5ea739-2279-4808-8d4b-5886059321e9.pdf",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "byteLength": 2269003,
+      "contentSha256": "3f24fe75372f2b0dd1c6170cd5d8f3d89c7f08fd11e644b5ae9a47fc2c50df99",
+      "observedStatus": "WORKING",
+      "note": "The issuer's annual report is directly retrievable and supports the 2022 portfolio acquisition, funding and fleet figures cited in the research packet."
+    },
+    {
+      "label": "Trinity 2024 10-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/99780/000009978025000015/trn-20241231.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/99780/000009978025000015/trn-20241231.htm",
+      "httpStatus": 200,
+      "mediaType": "text/html (inline XBRL)",
+      "byteLength": 3057018,
+      "contentSha256": "4d4b15b83a16b16190cf6a123e713c3ceca01083dfaaa4daa16b5cd41cdedf83",
+      "observedStatus": "WORKING",
+      "note": "The SEC filing directly identifies Signal Rail as a partially owned unconsolidated affiliate and supports the 2024 portfolio activity."
+    },
+    {
+      "label": "Trinity 2025 10-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/99780/000009978026000014/trn-20251231.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/99780/000009978026000014/trn-20251231.htm",
+      "httpStatus": 200,
+      "mediaType": "text/html (inline XBRL)",
+      "byteLength": 2885500,
+      "contentSha256": "3a36ad1fcf1789cc4c2c2abbe421c3d217df548f14e08fc93c4d6cf9d4e69bac",
+      "observedStatus": "WORKING",
+      "note": "The SEC filing retains Signal Rail as an unconsolidated affiliate and supports the 2025 railcar acquisition and refinancing activity."
+    },
+    {
+      "label": "Wafra Edward Tsai",
+      "url": "https://www.wafra.com/our-people/edward-tsai/",
+      "finalUrl": "https://www.wafra.com/our-people/edward-tsai/",
+      "httpStatus": 403,
+      "mediaType": "browser-rendered text/html",
+      "byteLength": 171438,
+      "contentSha256": "ea81e49e9960fad8cac6b0397bc96db285e578c7d3e8f463632209238ebc83c9",
+      "observedStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "note": "Direct curl was denied, but the browser rendered Edward Tsai's current Real Assets & Infrastructure role and Signal Rail board affiliation."
+    }
+  ],
+  "modelEvidenceCorrections": [
+    "Both Wafra pages are browser-blocked to direct curl but rendered and were independently verified in the signed-in browser."
+  ],
+  "conclusion": "Current SEC and manager evidence supports the ownership percentages and continuing existence of Signal Rail, while consistently characterizing it as a nonconsolidated railcar investment and leasing vehicle serviced by TILC rather than a manager-level operating platform."
+}

@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "runId": null,
+  "taskId": "ledger:0236:abbotsford-regional-hospital-and-cancer-centre:d6878789",
+  "taskIndex": 236,
+  "validatedAt": "2026-08-20T02:50:14Z",
+  "conversationUrl": "https://chatgpt.com/c/6a866264-63c4-83ea-9a15-ac91f0e93d05",
+  "requiredTopLevelKeys": [
+    "asOfDate",
+    "requestedCompany",
+    "requestedManagers",
+    "decision",
+    "confidence",
+    "rationale",
+    "identityResolution",
+    "ownershipResolution",
+    "operatingResolution",
+    "acquisitionExitCheck",
+    "milestones",
+    "evidence",
+    "beforeAfterChanges",
+    "excludedOrDuplicateCandidates",
+    "unresolvedQuestions",
+    "recommendedListAction"
+  ],
+  "initialResponse": {
+    "valid": false,
+    "fencedJsonPresent": false,
+    "jsonParsed": false,
+    "markdownReviewPresent": false,
+    "requiredTopLevelKeysPresent": false,
+    "responseSha256": null,
+    "errors": [
+      "No completed response packet was emitted after more than 25 minutes despite completed source research."
+    ]
+  },
+  "repair": {
+    "count": 1,
+    "limit": 1,
+    "submittedAt": "2026-08-20T02:43:14.582Z",
+    "completedAt": "2026-08-20T02:47:45.000Z",
+    "valid": true,
+    "responseSha256": "f628c474479297b32d65ebacff46fa56d6c30faa4b6232ef3856e390d414f4b7",
+    "errors": [],
+    "warnings": [
+      "The recommended primary ISED pagination URL now serves a different result page; the same official index currently supports the claim at page 14 and is captured in source-verification.json."
+    ]
+  },
+  "finalResponse": {
+    "fencedJsonPresent": false,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "decision": "PROPOSED_CORRECTION",
+    "confidence": "MEDIUM_HIGH; current cap table MEDIUM",
+    "canonicalName": "Abbotsford Regional Hospital and Cancer Centre",
+    "canonicalProjectCompany": "AHA Access Health Abbotsford Ltd.",
+    "evidenceCount": 6,
+    "uniqueReturnedUrlCount": 6,
+    "currentOwnerCount": 1,
+    "unresolvedOwnerCount": 1,
+    "formerOwnerCount": 1,
+    "pendingDirectOwnershipTransactionCount": 0,
+    "jlifHistoricalOwnershipVerified": true,
+    "jura2018CloseVerified": true,
+    "dalmoreRoyalLondonChainVerified": true,
+    "equitixCurrentOwnershipUnresolved": true,
+    "currentCapTableUnresolved": true,
+    "projectBoundaryVerified": true,
+    "northAmericaQualificationPresent": true,
+    "allReturnedUrlsChecked": true,
+    "exactlyOneRecommendedPrimary": true,
+    "returnedPrimaryPaginationDriftDetected": true,
+    "applicationBlocked": true,
+    "result": "PASS_REVIEW_REQUIRED"
+  },
+  "valid": true,
+  "errors": [],
+  "repairsUsed": 1,
+  "independentSourceVerification": "source-verification.json",
+  "finalResearchDecision": "research-decision.json"
+}

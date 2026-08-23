@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0461:i3-broadband:2d53909b",
+  "taskIndex": 461,
+  "companyName": "i3 Broadband",
+  "asOfDate": "2026-08-19",
+  "recordedAt": "2026-08-22T17:50:55.000Z",
+  "modelDecision": "VERIFIED_NO_CHANGE",
+  "confidence": "HIGH",
+  "stageState": "STAGED_VALIDATED",
+  "applicationBlocked": false,
+  "rationale": "Current Wren House pages identify i3 as an active U.S. digital-infrastructure portfolio company and name Wren House board representatives. T-Mobile's April 28, 2026 release describes a definitive 50/50 JV agreement under which T-Mobile expects to invest approximately $700 million at a targeted second-half 2026 closing. No legal closing was found through August 19, so Wren House remains the current owner and T-Mobile remains signed pending incoming.",
+  "repoReconciliation": {
+    "censusCanonicalKey": "i3-broadband|united-states",
+    "recommendedCanonicalKey": "i3-broadband|united-states",
+    "queuedActionTreatment": "VERIFY_EXISTING_WREN_HOUSE_OWNER_AND_SIGNED_PENDING_T_MOBILE_50_PERCENT_JV_WITH_NO_ACTIVE_BUYER_CONVERSION"
+  },
+  "proposalGuardrails": [
+    "Replace the dead model-cited T-Mobile URL with the working April 28, 2026 official release.",
+    "Replace the dead Wren House portfolio-detail URL with the current digital-infrastructure portfolio page and retain current board-role evidence.",
+    "Keep Wren House active and record T-Mobile only as SIGNED_PENDING_INCOMING until a legal close is directly evidenced.",
+    "Do not treat the targeted second-half 2026 closing window as a completed transaction.",
+    "Do not preserve or alter the 2020 Wren House entry year without reopening direct entry evidence.",
+    "Keep i3 Circle, Big River, Circle Fiber and all network assets beneath the canonical i3 Broadband platform."
+  ],
+  "recommendedNextAction": "Record a verified no-change list decision with corrected source URLs; preserve the current Wren House owner and the signed pending T-Mobile 50% incoming transaction.",
+  "databaseMutationAuthorized": false
+}

@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0177:infraestructura-energetica-nova-transportation-company-ientc:9b9caa0e",
+  "taskIndex": 177,
+  "companyName": "Infraestructura Energetica Nova Transportation Company (IENTC)",
+  "verifiedAt": "2026-08-19T08:02:36.572Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://www.cimgroup.com/case-studies/ientc-telecomunicaciones",
+      "finalUrl": "https://www.cimgroup.com/case-studies/ientc-telecomunicaciones",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 124504,
+      "contentSha256": "76fa07a8f59d2871d934e4a506db6fa03d2a5d9481196c88c145aeb70869f022",
+      "note": "CIM case study opened directly and supports IENTC identity, Mexican fiber operations and CIM ownership context. Model purpose: Identity, Q1 2022 investment, funds, amounts, 45% equity, debt repayment and current status."
+    },
+    {
+      "url": "https://5246398.fs1.hubspotusercontent-na2.net/hubfs/5246398/CIM%20Group%20Corporate%20Website_RACR%20Documents/CIM%20RACR%20Semi-Annual%20Report_3.31.2026%20FINAL_SECURED.pdf",
+      "finalUrl": "https://5246398.fs1.hubspotusercontent-na2.net/hubfs/5246398/CIM%20Group%20Corporate%20Website_RACR%20Documents/CIM%20RACR%20Semi-Annual%20Report_3.31.2026%20FINAL_SECURED.pdf",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 1448707,
+      "contentSha256": "4366c37bb4116d57aefa172340346149a10072116b42bc25a621db5c13a2730e",
+      "note": "CIM RACR semi-annual report opened directly and supports the current 45% aggregate equity position through March 31, 2026. Model purpose: Acquisition date and continuing IENTC 1 equity/ownership."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1767074/000158064225007690/racr_n-csr.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1767074/000158064225007690/racr_n-csr.htm",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 4819,
+      "contentSha256": "6e4477312e391713c15b3add5a4e82c231f8ad934db365f94b31ef85de06e222",
+      "note": "SEC blocked curl but rendered fully in the signed-in browser; the filing contains IENTC and 45% ownership disclosures. Model purpose: IENTC 2 debt restructuring, full repayment and retained IENTC 1 equity."
+    },
+    {
+      "url": "https://www.cimgroup.com/about-us/leadership",
+      "finalUrl": "https://www.cimgroup.com/about-us/leadership",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 192611,
+      "contentSha256": "8f314b4f778bce2700eeca54caaf54d080b6e0a6a286ce4441418d3e955df2b9",
+      "note": "CIM leadership page opened directly and supports current manager/board context. Model purpose: Board representation at IENTC."
+    },
+    {
+      "url": "https://www.ientc.com/about-us",
+      "finalUrl": "https://www.ientc.com/about-us",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 44377,
+      "contentSha256": "ae0c5ac81e0d2c6419c7027ce8a4e550b496ab73e28cfc127d67dd29dc127162",
+      "note": "IENTC company page opened directly and supports the current Mexican fiber-operator identity and services. Model purpose: Operating business, headquarters, services, owned network and scale."
+    },
+    {
+      "url": "https://www.ift.org.mx/sites/default/files/conocenos/pleno/sesiones_pleno/acuerdo_liga/p_ift_111224_752.pdf",
+      "finalUrl": "https://www.ift.org.mx/sites/default/files/conocenos/pleno/sesiones_pleno/acuerdo_liga/p_ift_111224_752.pdf",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 864541,
+      "contentSha256": "31a0b56e2aa1328f7cf605ac007cd0ad6d489de1dd7d800cb9e9051bf1232153",
+      "note": "IFT regulatory PDF opened directly and supports the Mexican telecom operating-company identity. Model purpose: Legal name, concession status and concession date."
+    },
+    {
+      "url": "https://www.ienova.com.mx/?l=en",
+      "finalUrl": "https://www.ienova.com.mx/?l=en",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 20263,
+      "contentSha256": "561210a153fde99530e45e366f89f946f241e8d1343df7b460970ebc42f65e30",
+      "note": "IEnova legacy site opened directly and supports exclusion of the unrelated Sempra energy-platform identity. Model purpose: Separates IEnova's legal identity and Sempra ownership chain from IENTC."
+    },
+    {
+      "url": "https://www.sempra.com/newsroom/press-releases/sempra-reports-strong-second-quarter-2026-results",
+      "finalUrl": "https://www.sempra.com/newsroom/press-releases/sempra-reports-strong-second-quarter-2026-results",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 5709,
+      "contentSha256": "d30557caf10a6c813bcf30e3fdb4b0f3b40059a815c77a57193886ea0d600683",
+      "note": "Sempra blocked curl but rendered in the browser; KKR, 45% and pending transaction language were visible and confirm that the parent-level transaction is unrelated to IENTC. Model purpose: Shows the 45% Sempra Infrastructure sale to KKR remained pending and unrelated."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allEvidenceRowsChecked": true,
+    "allCoreClaimsHaveOpenOrBrowserVerifiedEvidence": true,
+    "deadUrlCount": 0,
+    "browserBlockedButVerifiedCount": 2,
+    "redirectConcernCount": 0
+  },
+  "releaseRequirement": "Create or correct one canonical IENTC Telecomunicaciones row rather than an IEnova-derived energy company, preserve CIM-managed funds as the active 45% aggregate equity owner, and do not treat the 2025 debt repayment as an equity exit."
+}

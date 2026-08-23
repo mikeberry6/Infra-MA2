@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0381:exus-renewables-north-america:beef769f",
+  "checkedAt": "2026-08-21T21:02:55.000Z",
+  "method": "Independent direct curl status, redirect, media-type and content-hash checks plus independently indexed SEC filing verification",
+  "sources": [
+    {
+      "url": "https://www.partnersgroup.com/news-and-views/press-releases/investment-news/detail?news_id=fac11494-cf82-49d3-8895-3d9580621f4c",
+      "httpStatus": 200,
+      "finalUrl": "https://www.partnersgroup.com/news-and-views/press-releases/investment-news/detail?news_id=fac11494-cf82-49d3-8895-3d9580621f4c",
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 77311,
+      "sha256": "427601dad423b76edf2155e25f8e682a781336a859bceca4ce145c60e04fe328",
+      "healthStatus": "WORKING"
+    },
+    {
+      "url": "https://www.exus.us/about-exus",
+      "httpStatus": 200,
+      "finalUrl": "https://www.exus.us/about-exus",
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 35490,
+      "sha256": "bc7e29bba69cf52d05adc59ec694f2a42651d6207b593a94338bdd101df4e4ab",
+      "healthStatus": "WORKING"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1989393/000139834426010607/fp0098461-1_ncsr.htm",
+      "httpStatus": 403,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1989393/000139834426010607/fp0098461-1_ncsr.htm",
+      "mediaType": "text/html",
+      "bytes": 4818,
+      "sha256": "35373ec0768c8e2183f38150d746d87df4027c5e8b073c98d54c708228e3c880",
+      "healthStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verificationNote": "Direct curl was blocked, but the exact SEC filing was independently indexed and verifies Exus US Holdings, LP as a direct investment acquired 2023-10-03 and held at 2026-03-31."
+    },
+    {
+      "url": "https://www.partnersgroup.com/en/our-investments/infrastructure/exus",
+      "httpStatus": 200,
+      "finalUrl": "https://www.partnersgroup.com/en/our-investments/infrastructure/exus",
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 89988,
+      "sha256": "b951243a8e9944824f3c0045cdc465bb1ed55a5ef1a192122dbdc9f607596948",
+      "healthStatus": "WORKING"
+    },
+    {
+      "url": "https://www.exus.us/ethics-and-compliance",
+      "httpStatus": 200,
+      "finalUrl": "https://www.exus.us/ethics-and-compliance",
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 66282,
+      "sha256": "764839607ef1831f499e8e9aacf4dc350f99d1d087f535cef32ff3caa22fbde6",
+      "healthStatus": "WORKING"
+    },
+    {
+      "url": "https://www.cuatrecasas.com/en/global/art/exus-secures-growth-capital-investment-of-up-to-one-billion-euros-from-partners-group-1",
+      "httpStatus": 200,
+      "finalUrl": "https://www.cuatrecasas.com/en/global/art/exus-secures-growth-capital-investment-of-up-to-one-billion-euros-from-partners-group-1",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 255500,
+      "sha256": "13c733de6a54ce0a8ab0ce840063047db1e7dcbbc3b96a967209e09e6dcd7c41",
+      "healthStatus": "WORKING"
+    }
+  ],
+  "allEvidenceUrlsDirectHttps": true,
+  "allSourcesWorkingOrVerified": true,
+  "deadSourceCount": 0
+}
+

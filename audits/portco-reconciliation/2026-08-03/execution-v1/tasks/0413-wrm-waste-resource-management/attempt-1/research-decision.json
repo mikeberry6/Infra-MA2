@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0413:wrm-waste-resource-management:deca62ff",
+  "sequence": 413,
+  "asOfDate": "2026-08-19",
+  "companyName": "WRM (Waste Resource Management)",
+  "decision": "PROPOSED_MERGE",
+  "confidence": "HIGH",
+  "stagingDisposition": "STAGED_VALIDATED",
+  "applicationBlocked": false,
+  "rationale": "The census WRM key is the existing Waste Resource Management platform and must be merged rather than created. Ridgewood's current portfolio ordering marks WRM Unrealized, while the repository's realized milestone resulted from associating the next status label, which belongs to Neptune. Ridgewood remains the current owner; NGP Energy Technology Partners and North Sky are former investors that exited at the December 28, 2023 close.",
+  "recommendedChanges": [
+    "Merge the WRM census key into the existing waste-resource-management|united-states survivor and do not add a second Ridgewood owner period.",
+    "Keep Ridgewood Infrastructure active from the December 28, 2023 close and remove the false realized milestone.",
+    "Add NGP Energy Technology Partners and North Sky Capital as former owners/investors ending December 28, 2023, without inventing entry dates or percentage stakes.",
+    "Retain WRM, Waste Resources Management and WRM Companies as aliases and keep operating brands, facilities and Darling assets inside the platform boundary.",
+    "Do not add Fund II or WRM Wastewater TopCo as verified vehicle data until the SEC filing or another direct source is independently reopened."
+  ],
+  "unresolvedQuestions": ["Exact filed parent spelling and legal-suffix history","Exact Ridgewood, management and co-invest ownership percentages","Exact NGP and North Sky entry dates and vehicles"],
+  "unresolvedItemsAreNoncriticalDisclosureGaps": true,
+  "proposalGenerationAllowed": true,
+  "sourceVerificationPassed": true,
+  "fieldCorrectionRequired": true,
+  "fieldCorrections": ["Correct the Ridgewood status to active/unrealized","Omit the response's Fund II/TopCo attribution from the apply proposal unless independently verified","Treat the July 2026 Darling transaction as a platform add-on, not an ownership exit"],
+  "acceptedResponseSha256": "650ad481e74d55c642a47e3937ee7f444176a451e306f8fccdd72ee563bf43b6"
+}

@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0418:caliche-development-partners:d31b8749",
+  "checkedAt": "2026-08-22T01:35:02.000Z",
+  "method": "Independent direct HTTP status, redirect, media-type and content-hash checks; CPUC PDF text extraction and visual page verification; direct manager, company and transaction-adviser inspection; acquisition-and-exit search",
+  "sources": [
+    {
+      "url": "https://docs.cpuc.ca.gov/PublishedDocs/Published/G000/M552/K464/552464740.PDF",
+      "httpStatus": 200,
+      "finalUrl": "https://docs.cpuc.ca.gov/PublishedDocs/Published/G000/M552/K464/552464740.PDF",
+      "mediaType": "application/pdf",
+      "bytes": 510913,
+      "sha256": "8ef1bffeba95c43c2ba701401a2e7ca7048d1f0beac3eeec6f95ada6acc2b240",
+      "healthStatus": "WORKING",
+      "pdfPages": 14,
+      "visuallyVerifiedPages": [
+        5,
+        6
+      ],
+      "verifiedClaims": [
+        "Mallard Evergreen Holdings is owned 100% by Sixth Street TAO Partners, L.P. and parallel vehicles",
+        "Mallard Evergreen holds majority board-appointment rights while Caliche Management III leads operations",
+        "The Sixth Street fund supplies equity and MUFG plus other lenders supply separate debt"
+      ]
+    },
+    {
+      "url": "https://sixthstreet.com/investment_announce/caliche-to-continue-expansion-backed-by-sixth-street/",
+      "httpStatus": 200,
+      "finalUrl": "https://sixthstreet.com/investment_announce/caliche-to-continue-expansion-backed-by-sixth-street/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 65285,
+      "sha256": "d22dd4f84b5dde1d0ea7b44137e8d5d476009f54e849daba9c8957c935714b2e",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Sixth Street announced a majority investment on August 20, 2024 covering GTS, CVGS and the carbon-sequestration development project",
+        "Caliche leadership remained investors and operators"
+      ]
+    },
+    {
+      "url": "https://calichestorage.com/sixth-street-acquires-caliche-development-second-underground-storage-asset.html",
+      "httpStatus": 200,
+      "finalUrl": "https://calichestorage.com/sixth-street-acquires-caliche-development-second-underground-storage-asset.html",
+      "mediaType": "text/html",
+      "bytes": 19119,
+      "sha256": "6532b1c79784198abfa9e214618712dc40a604e1971013b0e625c654ddb90a2f",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Sixth Street closed the Texas acquisition in October 2024",
+        "The Central Valley Gas Storage acquisition closed March 18, 2025, completing the second asset closing"
+      ]
+    },
+    {
+      "url": "https://calichestorage.com/caliche-announces-fid-for-first-phase-of-spindletop-expansion-060426.html",
+      "httpStatus": 200,
+      "finalUrl": "https://calichestorage.com/caliche-announces-fid-for-first-phase-of-spindletop-expansion-060426.html",
+      "mediaType": "text/html",
+      "bytes": 21302,
+      "sha256": "f6534f224971bb17288bf4e8ca68d95d8b2d238aa28e1a992a76d3935bf6fdb6",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Caliche was still described as a Sixth Street portfolio company on June 4, 2026",
+        "MUFG financing funded expansion and did not represent an equity transfer"
+      ]
+    },
+    {
+      "url": "https://calichestorage.com/caliche-development-partners-announce-acquisitions-following-capital-commitment.html",
+      "httpStatus": 200,
+      "finalUrl": "https://calichestorage.com/caliche-development-partners-announce-acquisitions-following-capital-commitment.html",
+      "mediaType": "text/html",
+      "bytes": 24363,
+      "sha256": "2fe4ce7507db814940b1dd7fc6d64dee2bf84236fe58e3c728791d00379881ce",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Caliche II partnered with Orion Infrastructure Capital and GCM Grosvenor",
+        "The GTS acquisition closed November 18, 2022 and CVGS remained subject to regulatory approval"
+      ]
+    },
+    {
+      "url": "https://www.willkie.com/news/2020/12/caliche-development-partners-capital-partnership",
+      "httpStatus": 200,
+      "finalUrl": "https://www.willkie.com/news/2020/12/caliche-development-partners-capital-partnership",
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 37372,
+      "sha256": "57a4491a24678e8d482586e1c971af29bdd302828eeca2865bf74211c0d43a94",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Caliche was a portfolio company of Energy Spectrum Partners VII",
+        "The 2020 Orion Energy Partners facility was senior secured debt rather than equity"
+      ]
+    }
+  ],
+  "pdfVerification": {
+    "renderer": "pdfplumber page rasterization",
+    "textExtractor": "pdfplumber",
+    "visualResult": "CPUC pages 5 and 6 were legible and visually confirmed the fund, holding-company, board-control and equity-versus-debt claims",
+    "layoutDefects": []
+  },
+  "exitSearch": {
+    "searchedAt": "2026-08-22T01:35:02.000Z",
+    "scopeThrough": "2026-08-19",
+    "result": "No later equity sale, recapitalization, exit or signed transfer was found. Caliche's June 4, 2026 release still described Sixth Street as sponsor; the disclosed MUFG facility is debt."
+  },
+  "allEvidenceUrlsDirectHttps": true,
+  "allCoreSourcesWorkingOrVerified": true,
+  "directFetchBlockedButBrowserVerifiedCount": 0,
+  "responseSourceHealthCorrections": [
+    "The prompt's stale Sixth Street URL returned HTTP 404; the live official announcement is https://sixthstreet.com/investment_announce/caliche-to-continue-expansion-backed-by-sixth-street/",
+    "The CPUC PDF is a proposed decision and is used for ownership/control/funding structure; the March 18, 2025 company release independently establishes legal closing"
+  ],
+  "deadSourceCount": 0
+}

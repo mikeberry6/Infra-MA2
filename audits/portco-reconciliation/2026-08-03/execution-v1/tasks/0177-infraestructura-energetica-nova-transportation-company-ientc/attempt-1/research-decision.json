@@ -1,0 +1,192 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0177:infraestructura-energetica-nova-transportation-company-ientc:9b9caa0e",
+  "taskIndex": 177,
+  "companyName": "Infraestructura Energetica Nova Transportation Company (IENTC)",
+  "asOfDate": "2026-08-19",
+  "researchOnly": true,
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "responseSha256": "4431f51ee19bcead2e986409059beb98751505d13b183f05c8b66d3af8613a8a",
+  "sourceVerification": "source-verification.json",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "Infraestructura Energetica Nova Transportation Company (IENTC)",
+    "requestedManagers": [
+      "CIM Group"
+    ],
+    "decision": "PROPOSED_CORRECTION",
+    "confidence": "HIGH",
+    "rationale": "The census uses a false IEnova/energy expansion. Primary sources identify IENTC Telecomunicaciones / IENTC, S. de R.L. de C.V. as a Mexican fiber operator. CIM-managed funds invested in Q1 2022, retain 45% aggregate equity and have board representation; only CIM's debt was repaid in 2025. No IEnova/Sempra link or CIM equity exit was found.",
+    "identityResolution": {
+      "canonicalDisplayName": "IENTC Telecomunicaciones",
+      "legalName": "IENTC, S. de R.L. de C.V.",
+      "aliases": [
+        "IENTC",
+        "IENTC Telecom"
+      ],
+      "correctedCanonicalKey": "ientc-telecomunicaciones|mexico",
+      "requestedCanonicalKeyDisposition": "REJECT_FALSE_ACRONYM_EXPANSION",
+      "predecessorSuccessor": "NONE_FOUND",
+      "iEnovaSempraRelationship": "NONE_FOUND; IEnova is the separate Sempra company Infraestructura Energética Nova, S.A.P.I. de C.V.",
+      "platformBoundary": "One Mexican operating fiber platform. IENTC 1, LLC is the RACR equity security/vehicle and IENTC 2, LLC issued debt securities; neither is a separate PortCo."
+    },
+    "ownershipResolution": {
+      "owners": [
+        {
+          "manager": "CIM Group",
+          "organization": "CIM Group, LLC",
+          "fund": "CIM Real Assets & Credit Fund (RACR) and another CIM-managed institutional fund",
+          "vehicle": "IENTC 1, LLC for RACR; second-fund vehicle NOT_PUBLICLY_DISCLOSED",
+          "stake": "45% aggregate equity; RACR separately reports 21.3% of IENTC 1, LLC",
+          "announcementDate": "NOT_PUBLICLY_DISCLOSED",
+          "entryDate": "2022-03-31",
+          "entryYear": 2022,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "ACTIVE_EQUITY; DEBT_REPAID_2025"
+        }
+      ],
+      "governance": "CIM Principal Jennifer Gandin represents CIM on IENTC's board.",
+      "otherDirectOwners": "NOT_PUBLICLY_DISCLOSED",
+      "conclusion": "Active direct equity with governance, not LP, public-security or debt-only exposure."
+    },
+    "operatingResolution": {
+      "qualifiesAsPortCo": true,
+      "sector": "Digital infrastructure / telecommunications",
+      "geography": "Mexico",
+      "headquarters": "Santiago de Querétaro, Querétaro",
+      "foundedYear": "NOT_PUBLICLY_DISCLOSED",
+      "officialWebsite": "https://www.ientc.com/",
+      "productsServices": "Owned-fiber connectivity, dedicated internet, data transport, dark fiber, FTTH and telephony",
+      "customersEndMarkets": "Carrier/wholesale, corporate and residential",
+      "assetFootprint": "Company reports 37,500 km of fiber across Mexico.",
+      "operatingStatus": "ACTIVE",
+      "regulatoryStatus": "IFT-authorized public telecommunications network; concession dated 2015-06-16."
+    },
+    "acquisitionExitCheck": {
+      "entryVerified": true,
+      "investment": "CIM reports $8 million equity and $23 million debt, including subsequent upsizing.",
+      "announcementDate": "NOT_PUBLICLY_DISCLOSED",
+      "legalClosingDate": "NOT_PUBLICLY_DISCLOSED; RACR acquisition date is 2022-03-31.",
+      "debtStatus": "IENTC 2 securities repaid in full during fiscal 2025.",
+      "equityStatus": "ACTIVE; 45% aggregate CIM-managed ownership, with RACR still invested at 2026-03-31.",
+      "exitSearchThrough": "2026-08-19",
+      "exitFound": false,
+      "pendingTransactions": [],
+      "searchConclusion": "No sale, transfer, redemption, merger, recapitalization, dissolution or signed CIM exit found. Sempra's pending KKR transaction is unrelated."
+    },
+    "milestones": [
+      {
+        "date": "2022-03-31",
+        "event": "RACR acquisition date; CIM places its initial equity/debt investment in Q1 2022."
+      },
+      {
+        "date": "2025-09-30",
+        "event": "IENTC 2 debt was repaid in full; IENTC 1 equity remained."
+      },
+      {
+        "date": "2026-03-31",
+        "event": "RACR still reported 21.3% of IENTC 1, LLC and no six-month sales/paydowns."
+      }
+    ],
+    "evidence": [
+      {
+        "label": "CIM IENTC case study",
+        "url": "https://www.cimgroup.com/case-studies/ientc-telecomunicaciones",
+        "purpose": "Identity, Q1 2022 investment, funds, amounts, 45% equity, debt repayment and current status.",
+        "sourceTier": "TIER_1_MANAGER",
+        "workingStatus": "LIVE; replaces stale /case-studies/ientc",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "RACR 2026 semi-annual report",
+        "url": "https://5246398.fs1.hubspotusercontent-na2.net/hubfs/5246398/CIM%20Group%20Corporate%20Website_RACR%20Documents/CIM%20RACR%20Semi-Annual%20Report_3.31.2026%20FINAL_SECURED.pdf",
+        "purpose": "Acquisition date and continuing IENTC 1 equity/ownership.",
+        "sourceTier": "TIER_1_MANAGER_FILING",
+        "workingStatus": "LIVE_PDF",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "RACR 2025 SEC annual filing",
+        "url": "https://www.sec.gov/Archives/edgar/data/1767074/000158064225007690/racr_n-csr.htm",
+        "purpose": "IENTC 2 debt restructuring, full repayment and retained IENTC 1 equity.",
+        "sourceTier": "TIER_1_SEC",
+        "workingStatus": "LIVE",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "CIM leadership",
+        "url": "https://www.cimgroup.com/about-us/leadership",
+        "purpose": "Board representation at IENTC.",
+        "sourceTier": "TIER_1_MANAGER",
+        "workingStatus": "LIVE",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "IENTC official site",
+        "url": "https://www.ientc.com/about-us",
+        "purpose": "Operating business, headquarters, services, owned network and scale.",
+        "sourceTier": "TIER_1_COMPANY",
+        "workingStatus": "LIVE",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "IFT resolution",
+        "url": "https://www.ift.org.mx/sites/default/files/conocenos/pleno/sesiones_pleno/acuerdo_liga/p_ift_111224_752.pdf",
+        "purpose": "Legal name, concession status and concession date.",
+        "sourceTier": "TIER_1_REGULATOR",
+        "workingStatus": "LIVE_PDF",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "IEnova official statement",
+        "url": "https://www.ienova.com.mx/?l=en",
+        "purpose": "Separates IEnova's legal identity and Sempra ownership chain from IENTC.",
+        "sourceTier": "TIER_1_COMPANY",
+        "workingStatus": "LIVE",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Sempra Q2 2026 results",
+        "url": "https://www.sempra.com/newsroom/press-releases/sempra-reports-strong-second-quarter-2026-results",
+        "purpose": "Shows the 45% Sempra Infrastructure sale to KKR remained pending and unrelated.",
+        "sourceTier": "TIER_1_TRANSACTION_PARTY",
+        "workingStatus": "LIVE",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "before": "CREATE the requested energy-named company and ADD_OWNER CIM Group.",
+      "after": "CREATE IENTC Telecomunicaciones and ADD_OWNER CIM Group as active 45% aggregate equity owner.",
+      "changes": [
+        "Correct identity/key",
+        "Exclude IEnova/Sempra conflation",
+        "Keep one operating platform",
+        "Record debt repayment without retiring equity"
+      ]
+    },
+    "excludedOrDuplicateCandidates": [
+      {
+        "candidate": "IEnova/Sempra and its Mexican transportation assets",
+        "reason": "Separate energy platform and underlying assets; no CIM-IENTC link."
+      },
+      {
+        "candidate": "IENTC 1, LLC",
+        "reason": "RACR equity security/vehicle, not a separately evidenced operator."
+      },
+      {
+        "candidate": "IENTC 2, LLC",
+        "reason": "Debt issuer/borrower; securities repaid in 2025."
+      }
+    ],
+    "unresolvedQuestions": [
+      "Exact legal chain between IENTC 1, LLC and IENTC, S. de R.L. de C.V.",
+      "Second CIM fund/vehicle and non-CIM shareholder identities and stakes.",
+      "Public announcement and legal-close date beyond RACR's 2022-03-31 acquisition date."
+    ],
+    "recommendedListAction": "CREATE"
+  }
+}

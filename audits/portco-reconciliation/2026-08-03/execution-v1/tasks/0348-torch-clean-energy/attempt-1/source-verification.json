@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0348:torch-clean-energy:e83ad4f7",
+  "taskIndex": 348,
+  "verifiedAt": "2026-08-21T11:12:00.000Z",
+  "allReturnedUrlsChecked": true,
+  "summary": {
+    "urlCount": 6,
+    "working": 3,
+    "browserBlockedButVerified": 3,
+    "browserBlockedUnverified": 0,
+    "dead": 0
+  },
+  "sources": [
+    {
+      "url": "https://www.morganstanley.com/press-releases/morgan-stanley-infrastructure-partners--torch-clean-energy",
+      "finalUrl": "https://www.morganstanley.com/press-releases/morgan-stanley-infrastructure-partners--torch-clean-energy",
+      "httpStatus": 200,
+      "mediaType": "text/html;charset=utf-8",
+      "bytes": 98453,
+      "sha256": "66c5076130d589ee779ec1066909d0648d97996e18924ed64053f9b83801a60d",
+      "health": "WORKING"
+    },
+    {
+      "url": "https://www.morganstanley.com/im/en-us/institutional-investor/companies/torch-clean-energy.html",
+      "finalUrl": "https://www.morganstanley.com/im/en-us/institutional-investor/companies/torch-clean-energy.html",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 474,
+      "sha256": "d69195df72e8005146be0b4e58eacc66448d7f9d9d415dcbae2444391bbe335b",
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "browserVerification": {
+        "title": "Torch Clean Energy | Morgan Stanley",
+        "companyNameMatched": true,
+        "browserSnapshotSha256": "94237f673170d4fcdf9f831459d390ba6a7e8ccb27c525d8bf91dc0a1b1a9ba1"
+      }
+    },
+    {
+      "url": "https://www.key.com/businesses-institutions/our-transactions/deals.torch-clean-energy.html",
+      "finalUrl": "https://www.key.com/businesses-institutions/our-transactions/deals.torch-clean-energy.html",
+      "httpStatus": 0,
+      "mediaType": null,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "browserVerification": {
+        "title": "Torch Clean Energy | Key",
+        "companyNameMatched": true,
+        "browserSnapshotSha256": "d6da7026b8a2a82bcbee254b8d210937918043d0aa786efe7f8f69589d77c6b7"
+      }
+    },
+    {
+      "url": "https://www.torchcleanenergy.com/projects",
+      "finalUrl": "https://www.torchcleanenergy.com/projects",
+      "httpStatus": 200,
+      "mediaType": "text/html;charset=utf-8",
+      "bytes": 598013,
+      "sha256": "4530ed44ee29ccd3c7fee3f99b2c1c2215a46713bee4068a4f29ccfda6475563",
+      "health": "WORKING"
+    },
+    {
+      "url": "https://www.torchcleanenergy.com/about",
+      "finalUrl": "https://www.torchcleanenergy.com/about",
+      "httpStatus": 200,
+      "mediaType": "text/html;charset=utf-8",
+      "bytes": 296120,
+      "sha256": "7b99cbe027107e4b4c24f104eb230f89ff60140f49dbeac05f174956d0034440",
+      "health": "WORKING"
+    },
+    {
+      "url": "https://ir.fluenceenergy.com/news-releases/news-release-details/fluence-and-torch-clean-energy-partner-deliver-160-mw-640-mwh/",
+      "finalUrl": "https://ir.fluenceenergy.com/news-releases/news-release-details/fluence-and-torch-clean-energy-partner-deliver-160-mw-640-mwh",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 533,
+      "sha256": "c8fe670cdaa7720f1ef660858474db2a2563463ccd4874f24c69575c406f968f",
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "browserVerification": {
+        "title": "Fluence and Torch Clean Energy Partner to Deliver 160 MW / 640 MWh Winchester Battery Energy Storage System | Fluence",
+        "companyNameMatched": true,
+        "browserSnapshotSha256": "8df92b7ff663063280aedb30a1e4fba30a3bf162d72d068fa911749813df9853"
+      }
+    }
+  ]
+}

@@ -620,7 +620,7 @@ export const ownershipPeriodImageSchema = z.strictObject({
   }
 });
 
-const pendingOwnershipTransactionImageSchema = z.strictObject({
+export const pendingOwnershipTransactionImageSchema = z.strictObject({
   id: optionalText,
   direction: z.enum(["INCOMING", "EXIT"]),
   transactionState: z.enum([

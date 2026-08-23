@@ -1,0 +1,191 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RESEARCH_DECISION",
+  "taskId": "ledger:0143:gigapower:91c4149b",
+  "taskIndex": 143,
+  "companyName": "Gigapower",
+  "asOfDate": "2026-08-19",
+  "stagedAt": "2026-08-19T04:19:20.000Z",
+  "researchOnly": true,
+  "mutationAuthorized": false,
+  "proposalRequiresFreshProductionSnapshot": true,
+  "releaseRequiresFreshAcquisitionExitCheck": true,
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "Gigapower",
+    "requestedManagers": [
+      "BlackRock",
+      "Global Infrastructure Partners"
+    ],
+    "decision": "PROPOSED_MERGE",
+    "confidence": "HIGH",
+    "rationale": "One Gigapower record is warranted. The 2023 interest entered through legacy BlackRock vehicle BGIF IV Neon Acquisition LP. Current company materials call the fund GIP-managed after BlackRock acquired GIP, but no reviewed source shows a new vehicle or economic-owner transfer. Merge the GIP source without a second ownership period; preserve BlackRock entry provenance and note GIP as current manager context.",
+    "identityResolution": {
+      "canonicalKey": "gigapower|united-states",
+      "legalName": "Gigapower, LLC",
+      "displayName": "Gigapower",
+      "predecessor": "Infrastructure Endeavors, LLC",
+      "formationDate": "2022-02-14",
+      "nameChangeDate": "2022-03-18",
+      "launchDate": "2023-05-11",
+      "foundedYear": 2022,
+      "headquarters": "Dallas, Texas, United States",
+      "officialWebsite": "https://www.gigapower.com",
+      "boundary": "Count the U.S. platform once; builds are projects and ISPs are tenants.",
+      "qualifies": true
+    },
+    "ownershipResolution": {
+      "currentOwners": [
+        {
+          "manager": "AT&T",
+          "organization": "AT&T Inc.",
+          "fund": "NOT_APPLICABLE",
+          "vehicle": "Infrastructure Endeavors Holdings, LLC; Teleport Communications America, LLC",
+          "stake": "50% aggregate (0.5%; 49.5%)",
+          "announcementDate": "2022-12-23",
+          "entryDate": "2023-05-11",
+          "entryYear": 2023,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "manager": "BlackRock",
+          "organization": "Diversified Infrastructure at entry; GIP, part of BlackRock, is the current stated fund manager",
+          "fund": "NOT_PUBLICLY_DISCLOSED",
+          "vehicle": "BGIF IV Neon Acquisition LP",
+          "stake": "50%",
+          "announcementDate": "2022-12-23",
+          "entryDate": "2023-05-11",
+          "entryYear": 2023,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE"
+        }
+      ],
+      "managerResolution": {
+        "BlackRock": "Retain one active 2023-current period with original platform/vehicle provenance.",
+        "Global Infrastructure Partners": "Current manager context only; no separate ownership period."
+      },
+      "vehicleContinuity": "No replacement for the 2023 disclosed vehicle was publicly identified."
+    },
+    "operatingResolution": {
+      "status": "Active",
+      "sector": "Digital infrastructure",
+      "subsector": "Wholesale open-access fiber broadband",
+      "business": "Builds, owns and operates multi-gig fiber networks for ISPs and businesses.",
+      "footprint": "Availability disclosed in Florida, New Mexico, northeastern Pennsylvania, North Carolina, South Carolina and southeastern Minnesota; expansion continued in 2026.",
+      "scale": "1.5 million-location target; dozens of municipalities by August 2025; completed passings NOT_PUBLICLY_DISCLOSED.",
+      "currentCheck": "2026 releases and AT&T reporting show continued operations and a second ISP."
+    },
+    "acquisitionExitCheck": {
+      "searchThrough": "2026-08-19",
+      "saleExitTransferFound": false,
+      "pendingTransactions": [],
+      "result": "No sale, exit, merger, recapitalization, ownership transfer, company rebrand or Gigapower bankruptcy found. BlackRock-GIP was a manager-level transaction."
+    },
+    "milestones": [
+      {
+        "date": "2022-02-14",
+        "event": "Predecessor entity formed in Delaware."
+      },
+      {
+        "date": "2022-03-18",
+        "event": "Renamed Gigapower, LLC."
+      },
+      {
+        "date": "2022-12-23",
+        "event": "AT&T-BlackRock JV announced."
+      },
+      {
+        "date": "2023-05-11",
+        "event": "JV closed and Gigapower launched."
+      }
+    ],
+    "evidence": [
+      {
+        "label": "South Carolina PSC application",
+        "url": "https://dms.psc.sc.gov/Attachments/Matter/65e6a0be-d1d8-4be5-b502-64cab3497284",
+        "purpose": "IDENTITY_OWNERSHIP_STAKE_VEHICLE",
+        "sourceTier": "TIER_1_REGULATOR",
+        "workingStatus": "LIVE_PDF",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "Definitive JV announcement",
+        "url": "https://www.businesswire.com/news/home/20221223005039/en/ATT-and-BlackRock-to-Form-Gigapower-Joint-Venture-A-Wholesale-Fiber-Services-Provider",
+        "purpose": "ANNOUNCEMENT",
+        "sourceTier": "TIER_1_PARTY_RELEASE",
+        "workingStatus": "LIVE",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "AT&T close release",
+        "url": "https://about.att.com/story/2023/gigapower.html",
+        "purpose": "CLOSING_ENTRY",
+        "sourceTier": "TIER_1_PARTY_RELEASE",
+        "workingStatus": "LIVE",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "AT&T 2025 Form 10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271726000120/t-20251231.htm",
+        "purpose": "CURRENT_AT&T_STAKE",
+        "sourceTier": "TIER_1_SEC",
+        "workingStatus": "LIVE",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "BlackRock GIP acquisition close",
+        "url": "https://www.blackrock.com/corporate/newsroom/media/press-releases/blackrock-completes-acquisition-of-global-infrastructure-partners",
+        "purpose": "MANAGER_CONTEXT",
+        "sourceTier": "TIER_1_MANAGER",
+        "workingStatus": "LIVE",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Gigapower June 2026 profile",
+        "url": "https://www.businesswire.com/news/home/20260602690771/en/Gigapower-Appoints-Jonathan-Mullen-as-Chief-Administrative-Officer-and-General-Counsel",
+        "purpose": "CURRENT_GIP_CONTEXT_OPERATIONS",
+        "sourceTier": "TIER_1_COMPANY",
+        "workingStatus": "LIVE",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Gigapower six-state expansion",
+        "url": "https://www.businesswire.com/news/home/20250828592914/en/Gigapower-Accelerates-High-Speed-Broadband-Fiber-Network-Deployment-with-Expansion-Across-Six-States",
+        "purpose": "FOOTPRINT_SCALE",
+        "sourceTier": "TIER_1_COMPANY",
+        "workingStatus": "LIVE",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": [
+      "Merge the GIP duplicate into the existing company.",
+      "Correct ownership to AT&T 50% and BGIF IV Neon Acquisition LP 50%.",
+      "Use BGIF IV Neon Acquisition LP as vehicle; Diversified Infrastructure is the entry platform.",
+      "Use 2022 legal formation, 2023 launch and Dallas headquarters."
+    ],
+    "excludedOrDuplicateCandidates": [
+      "GIP duplicate: merge as manager context; no second ownership period.",
+      "AT&T GigaPower brand: exclude; not Gigapower, LLC.",
+      "Builds and ISP tenants: exclude as projects/customers."
+    ],
+    "unresolvedQuestions": [
+      "Full fund name above BGIF IV Neon Acquisition LP: NOT_PUBLICLY_DISCLOSED.",
+      "Any internal management assignment to GIP: NOT_PUBLICLY_DISCLOSED; no ownership transfer found."
+    ],
+    "recommendedListAction": "Merge the GIP source into production company cmrxpj8xk00n5ivhezp5xja2f. Keep one active 2023-current BlackRock-origin period via BGIF IV Neon Acquisition LP, note GIP as current manager context, add AT&T as 50% co-owner, and correct founding year, headquarters and vehicle. Do not add a second GIP owner."
+  },
+  "independentVerification": {
+    "evidenceUrlsChecked": 7,
+    "openSourceCount": 2,
+    "blockedSourceCount": 2,
+    "unavailableSourceCount": 3,
+    "recommendedPrimaryCount": 1,
+    "modelModeVerified": true
+  }
+}
+

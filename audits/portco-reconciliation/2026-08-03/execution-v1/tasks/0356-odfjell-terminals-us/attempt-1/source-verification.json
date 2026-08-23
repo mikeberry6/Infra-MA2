@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0356:odfjell-terminals-us:5f8f7651",
+  "taskIndex": 356,
+  "verifiedAt": "2026-08-21T15:16:20.000Z",
+  "allReturnedUrlsChecked": true,
+  "summary": {
+    "urlCount": 8,
+    "working": 7,
+    "browserBlockedButVerified": 1,
+    "browserBlockedUnverified": 0,
+    "dead": 0
+  },
+  "modelEvidenceCorrections": [
+    "The Delaware Chancery URL returned an HTTP 200 rejection page to direct curl rather than the opinion, but the exact URL opened in the browser's document viewer and is classified BROWSER_BLOCKED_BUT_VERIFIED.",
+    "The general Odfjell terminals URL appeared in the identity resolution outside the seven-row evidence array and was independently checked as part of the complete returned-URL set."
+  ],
+  "sources": [
+    {
+      "url": "https://www.odfjell.com/terminals",
+      "finalUrl": "https://www.odfjell.com/terminals",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 50913,
+      "sha256": "cf133844bfd462a0ac3eb02bba8286962e79c05bf1853ec88941371bbc4ee269",
+      "health": "WORKING"
+    },
+    {
+      "url": "https://courts.delaware.gov/opinions/download.aspx?id=399380",
+      "finalUrl": "https://courts.delaware.gov/opinions/download.aspx?id=399380",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 244,
+      "sha256": "db42ba13e768afe23d815c01f1f67a421513a6bfa7325b9ae354a3d5d148d229",
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "curlError": "The response body was a Request Rejected interstitial rather than the court opinion.",
+      "browserVerification": {
+        "title": "download.aspx",
+        "exactUrlOpened": true,
+        "browserSnapshotSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "url": "https://www.northleafcapital.com/infrastructure-investments?page=1",
+      "finalUrl": "https://www.northleafcapital.com/infrastructure-investments?page=1",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 159967,
+      "sha256": "686b6f68cc701863bfc1db2f165b1c11b4990d95c06238eca51502366b74d635",
+      "health": "WORKING"
+    },
+    {
+      "url": "https://www.odfjell.com/about/our-stories/northleaf-capital-partner-transaction-with-lindsay-goldberg-is-closed/",
+      "finalUrl": "https://www.odfjell.com/about/our-stories/northleaf-capital-partner-transaction-with-lindsay-goldberg-is-closed/",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 43178,
+      "sha256": "da4a988066b05c776c26a4fab99a8ae8f2a24ed7b640eeee85fc9e686a60031c",
+      "health": "WORKING"
+    },
+    {
+      "url": "https://www.odfjell.com/about/our-stories/4q18-results-a-weak-chemical-tanker-market-that-improved-towards-the-end-of-the-quarter/",
+      "finalUrl": "https://www.odfjell.com/about/our-stories/4q18-results-a-weak-chemical-tanker-market-that-improved-towards-the-end-of-the-quarter/",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 44436,
+      "sha256": "813993acb325a2095dd6d5c59f2dc522cd0b20d6264127d0c85876c4bea10326",
+      "health": "WORKING"
+    },
+    {
+      "url": "https://www.lindsaygoldbergllc.com/wp-content/uploads/2019/04/091611.pdf",
+      "finalUrl": "https://www.lindsaygoldbergllc.com/wp-content/uploads/2019/04/091611.pdf",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 17044,
+      "sha256": "edefac1b26c22a1a1d11d70591f3d83aa58f0d35e231a0fdd7d2fbb8c244178d",
+      "health": "WORKING"
+    },
+    {
+      "url": "https://www.odfjell.com/terminals/houston-usa",
+      "finalUrl": "https://www.odfjell.com/terminals/houston-usa",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 59688,
+      "sha256": "36f58cac59166b84e8bee94e12fec15a43a81a928de0b4ca9c833d5bc7d3904e",
+      "health": "WORKING"
+    },
+    {
+      "url": "https://www.odfjell.com/terminals/charleston-usa",
+      "finalUrl": "https://www.odfjell.com/terminals/charleston-usa",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 55322,
+      "sha256": "8d96bfc5740ba37c5e65770a45de4802a376314a873ac466ce3b65671733ce4d",
+      "health": "WORKING"
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0285:wells-building-data-center:43636a55",
+  "taskIndex": 285,
+  "verifiedAt": "2026-08-20T18:04:33.000Z",
+  "allReturnedUrlsChecked": true,
+  "summary": {
+    "urlCount": 7,
+    "working": 5,
+    "browserBlockedButVerified": 2,
+    "dead": 0
+  },
+  "sources": [
+    {
+      "url": "https://www.1547realty.com/resource/1547-and-harrison-street-acquire-historic-milwaukee-carrier-hotel-and-data-center/",
+      "finalUrl": "https://www.1547realty.com/resource/1547-and-harrison-street-acquire-historic-milwaukee-carrier-hotel-and-data-center/",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 167012,
+      "sha256": "88bc9edb223cea20b9ec82206627eebf2ac0db068212d8b5b2f424572c89c41c",
+      "health": "WORKING",
+      "claimCheck": "The buyer announcement supports 1547 Fund II, Harrison Street, the seller, the asset and the September 3, 2020 transaction date."
+    },
+    {
+      "url": "https://hl.com/about-us/transactions/houlihan-lokey-advises-ah-wells/",
+      "finalUrl": "https://hl.com/about-us/transactions/houlihan-lokey-advises-ah-wells/",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 212,
+      "sha256": "d02032286070b4dd9d8fbd985a7bdca8af8edf52b89ff177db3bfcb2c8a9c43d",
+      "health": "BROWSER_VERIFIED_THIN_DIRECT_RESPONSE",
+      "claimCheck": "The independently rendered adviser page supports the September 3, 2020 closing, AH Wells as the sold entity and its Ascendant Holdings/Bixby Bridge sponsorship and 2011 acquisition history."
+    },
+    {
+      "url": "https://www.milwaukeedowntown.com/wp-content/uploads/2025/10/BID-21-Initial-2025-Property-Values_9_16.pdf",
+      "finalUrl": "https://www.milwaukeedowntown.com/wp-content/uploads/2025/10/BID-21-Initial-2025-Property-Values_9_16.pdf",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 206594,
+      "sha256": "314f132b597ca245c86f6df707416f5c8fbf34609c74f6ddc2ee7dc9d24a6a26",
+      "health": "WORKING_PDF_TEXT_AND_VISUAL_VERIFIED",
+      "claimCheck": "Page 4 visually and textually verifies tax key 3920728000, 324 East Wisconsin Avenue, 1547 CSR-Milwaukee LLC and 117,166 assessed square feet."
+    },
+    {
+      "url": "https://www.1547realty.com/data-center/milwaukee-wi-miwi1/",
+      "finalUrl": "https://www.1547realty.com/data-center/milwaukee-wi-miwi1/",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 223911,
+      "sha256": "51832df4bd3806caacec5d555b4433f8d7b6b76642c81cb82b5fcff56b173bdb",
+      "health": "WORKING",
+      "claimCheck": "The live operator page supports the MIWI1 alias, continued operation, address, services and current marketed specifications."
+    },
+    {
+      "url": "https://harrisonst.com/exclusive-harrison-street-and-fifteenfortyseven-acquire-four-data-center-facilities-in-u-s/",
+      "finalUrl": "https://harrisonst.com/wp-content/uploads/2025/06/EXCLUSIVE-%E2%80%94-Harrison-Street-and-fifteenfortyseven-acquire-four-data-center-facilities-in-U.pdf",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 205192,
+      "sha256": "42a28a1cfd93a5f94697ec83e38493ab859b2b6c228c78fd83f4519d89f5c5d2",
+      "health": "WORKING_REDIRECTED_PDF_VISUALLY_VERIFIED",
+      "claimCheck": "Rendered page 1 confirms Harrison Street and 1547 as the joint-venture buyers of four CIM facilities and describes 1547 as owner, developer and operator, without establishing Harrison equity in 1547 itself."
+    },
+    {
+      "url": "https://www.1547realty.com/resource/historic-wells-building-greets-its-future-as-growing-data-center/",
+      "finalUrl": "https://www.1547realty.com/resource/historic-wells-building-greets-its-future-as-growing-data-center/",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 163230,
+      "sha256": "4044e2da1e7aea71fdf166021c928eaa2018a1ed3f369810dd75d6411e5ae3a3",
+      "health": "WORKING",
+      "claimCheck": "The 1547-hosted historical article supports the Zilber-to-Ascendant ownership chronology."
+    },
+    {
+      "url": "https://www.bizjournals.com/milwaukee/news/2023/10/01/fifteenfortyseven-critical-systems-realty.html",
+      "finalUrl": "https://www.bizjournals.com/milwaukee/news/2023/10/01/fifteenfortyseven-critical-systems-realty.html",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 5860,
+      "sha256": "2284d3191cebf54ccb0b882d7092a5950bf75e6fdec596067567270db1a31675",
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "claimCheck": "Independent browser retrieval verified the article title and its report that approximately $18 million of Wells Building upgrades had been completed by 2023."
+    }
+  ]
+}

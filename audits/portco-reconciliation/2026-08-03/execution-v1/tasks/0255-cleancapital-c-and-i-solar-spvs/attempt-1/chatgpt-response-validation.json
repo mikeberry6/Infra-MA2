@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "runId": null,
+  "taskId": "ledger:0255:cleancapital-c-and-i-solar-spvs:38fec9c7",
+  "taskIndex": 255,
+  "validatedAt": "2026-08-20T08:05:14.922Z",
+  "conversationUrl": "https://chatgpt.com/c/6a86aea8-2458-83ea-8187-e6308e0dfec1",
+  "requiredTopLevelKeys": [
+    "asOfDate",
+    "requestedCompany",
+    "requestedManagers",
+    "decision",
+    "confidence",
+    "rationale",
+    "identityResolution",
+    "ownershipResolution",
+    "operatingResolution",
+    "acquisitionExitCheck",
+    "milestones",
+    "evidence",
+    "beforeAfterChanges",
+    "excludedOrDuplicateCandidates",
+    "unresolvedQuestions",
+    "recommendedListAction"
+  ],
+  "initialResponse": {
+    "valid": false,
+    "fencedJsonPresent": false,
+    "jsonParsed": false,
+    "markdownReviewPresent": false,
+    "requiredTopLevelKeysPresent": false,
+    "responseSha256": null,
+    "errors": [
+      "The research turn ended without BEGIN_JSON / END_JSON and BEGIN_REVIEW / END_REVIEW deliverables."
+    ],
+    "warnings": []
+  },
+  "repair": {
+    "count": 1,
+    "limit": 1,
+    "submittedAt": "2026-08-20T08:01:44.528Z",
+    "completedAt": "2026-08-20T08:03:07.435Z",
+    "valid": false,
+    "responseSha256": "dc554cd48a247cba4c6b97e6765730283b1ff843efdf30b642e17b025d6999a8",
+    "errors": [
+      "The repaired response is 8,423 characters, exceeding the 7,500-character contract."
+    ],
+    "warnings": [
+      "CurrentOwners includes CleanCapital itself as an owner of controlled project SPVs rather than limiting the parent-company cap table.",
+      "FormerOwners includes BlackRock and CarVal project-level portfolios without proving those firms owned CleanCapital Holdings LLC.",
+      "Generate's exact exit date and the 2017 SPV schedule remain unresolved."
+    ]
+  },
+  "finalResponse": {
+    "fencedJsonPresent": false,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "decision": "PROPOSED_CORRECTION",
+    "confidence": "HIGH_MODEL_REPORTED_BUT_REVIEW_REQUIRED",
+    "canonicalName": "CleanCapital Holdings LLC",
+    "responseCharacterCount": 8423,
+    "evidenceCount": 6,
+    "uniqueReturnedUrlCount": 6,
+    "currentPlatformSponsorCountSupported": 1,
+    "formerGenerateProjectWarehouseVerified": true,
+    "generateCorporateEquityVerified": false,
+    "generateExitDateResolved": false,
+    "infranityDebtSeparated": true,
+    "platformAndProjectOwnershipGranularityClean": false,
+    "allReturnedUrlsChecked": true,
+    "exactlyOneRecommendedPrimary": true,
+    "identityResolved": true,
+    "activeOwnershipResolved": false,
+    "applicationBlocked": true,
+    "result": "FAIL_REVIEW_REQUIRED"
+  },
+  "valid": false,
+  "errors": [
+    "One-repair limit exhausted without satisfying the response-length contract.",
+    "The proposed ownership arrays require manual scope correction before application."
+  ],
+  "repairsUsed": 1,
+  "independentSourceVerification": "source-verification.json",
+  "finalResearchDecision": "research-decision.json"
+}

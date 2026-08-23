@@ -356,7 +356,7 @@ const executionTransitionEventSchema = z.strictObject({
   reason: optionalText,
   taskSnapshotSha256: sha256Value.nullable(),
   evidenceSha256: z.array(sha256Value),
-  kind: z.enum(["INITIAL", "TRANSITION", "RECOVERY"]),
+  kind: z.enum(["INITIAL", "TRANSITION", "RECOVERY", "BATCH"]),
 });
 
 const executionTaskArtifactsSchema = z.strictObject({
@@ -1013,6 +1013,231 @@ export interface RecoverCompletedTaskInput {
     ExecutionTask["artifacts"],
     "proposal" | "approval" | "applyReceipt" | "companySnapshot"
   >;
+}
+
+export type CompleteExecutionBatchMember =
+  | {
+      kind: "MUTATION";
+      proposal: ReconciliationProposal;
+      approval: ReconciliationApproval;
+      applyReceipt: ReconciliationApplyReceipt;
+      taskSnapshot: ExecutionTaskSnapshot;
+      supersededTaskIds: string[];
+      artifacts: {
+        taskSnapshot: ExecutionArtifactReference;
+        proposal: ExecutionArtifactReference;
+        approval: ExecutionArtifactReference;
+        applyReceipt: ExecutionArtifactReference;
+        companySnapshot: ExecutionArtifactReference;
+      };
+    }
+  | {
+      kind: "TERMINAL";
+      taskId: string;
+      taskIndex: number;
+      outcome: Extract<ExecutionTaskStatus, "EXCLUDED" | "VERIFIED_NO_CHANGE" | "DEFERRED" | "SUPERSEDED">;
+      rationale: string;
+      supersededByTaskId: string | null;
+      taskSnapshot: ExecutionTaskSnapshot;
+      artifacts: {
+        taskSnapshot: ExecutionArtifactReference;
+        decision: ExecutionArtifactReference;
+      };
+    };
+
+/**
+ * Recovers the sequential source-task manifest from one verified atomic batch
+ * receipt. This is intentionally a single manifest rewrite so a crash cannot
+ * leave only some bundle members terminal in durable orchestration state.
+ */
+export function completeExecutionBatch(input: {
+  manifest: ExecutionManifest;
+  batchId: string;
+  batchSha256: string;
+  batchReceiptSha256: string;
+  batchStartedAt: string;
+  completedAt: string;
+  workflowRunUrl: string | null;
+  members: CompleteExecutionBatchMember[];
+}): ExecutionManifest {
+  const manifest = verifyExecutionManifest(input.manifest);
+  assertCanonicalTimestamp(input.batchStartedAt);
+  assertCanonicalTimestamp(input.completedAt);
+  if (!/^[a-f0-9]{64}$/.test(input.batchSha256) || !/^[a-f0-9]{64}$/.test(input.batchReceiptSha256)) {
+    throw new Error("Batch completion requires canonical batch and receipt hashes");
+  }
+  if (input.members.length < 2 || input.members.length > 5) {
+    throw new Error("Batch completion requires two to five ordered members");
+  }
+  const memberTaskIds = input.members.map((member) =>
+    member.kind === "MUTATION" ? member.proposal.taskId : member.taskId);
+  if (new Set(memberTaskIds).size !== memberTaskIds.length) {
+    throw new Error("Batch completion members must be unique");
+  }
+  const memberIndexes = input.members.map((member) =>
+    member.kind === "MUTATION" ? member.proposal.taskIndex : member.taskIndex);
+  if (memberIndexes.some((value, index) => index > 0 && value <= memberIndexes[index - 1])) {
+    throw new Error("Batch completion members must remain in source-task order");
+  }
+  const mutationReplacement = new Map<string, string>();
+  const completedMembers = new Map<string, ExecutionTask>();
+  for (const member of input.members) {
+    const taskId = member.kind === "MUTATION" ? member.proposal.taskId : member.taskId;
+    const taskIndex = member.kind === "MUTATION" ? member.proposal.taskIndex : member.taskIndex;
+    const current = manifest.tasks.find((task) => task.taskId === taskId);
+    if (!current || current.sequence !== taskIndex || !["ACTIVE", "PENDING"].includes(current.status)) {
+      throw new Error(`Batch source task ${taskId} is not an eligible active or pending task`);
+    }
+    const snapshot = assertSnapshotMatchesExecutionTask(manifest, current, member.taskSnapshot);
+    const wasPending = current.status === "PENDING";
+    if (member.kind === "MUTATION") {
+      const proposal = verifyProposal(member.proposal);
+      const approval = verifyApproval(member.approval, proposal);
+      const receipt = verifyApplyReceipt(member.applyReceipt, proposal, approval);
+      if (proposal.companyName !== current.subject || approval.decision !== "APPROVE") {
+        throw new Error(`Batch mutation ${taskId} does not match its source task`);
+      }
+      if (!proposal.executionLock
+        || !digestsEqual(proposal.executionLock.taskSnapshotSha256, snapshot.taskSnapshotSha256)
+        || !digestsEqual(member.artifacts.taskSnapshot.sha256, snapshot.taskSnapshotSha256)
+        || !digestsEqual(member.artifacts.proposal.sha256, proposal.proposalSha256)
+        || !digestsEqual(member.artifacts.approval.sha256, approval.approvalSha256)
+        || !digestsEqual(member.artifacts.applyReceipt.sha256, receipt.receiptSha256)
+        || proposal.afterImageSha256 === null
+        || !digestsEqual(member.artifacts.companySnapshot.sha256, proposal.afterImageSha256)) {
+        throw new Error(`Batch mutation ${taskId} artifact lineage does not reproduce`);
+      }
+      const artifacts = {
+        ...current.artifacts,
+        ...member.artifacts,
+        decision: null,
+      };
+      const evidenceSha256 = [
+        input.batchSha256,
+        input.batchReceiptSha256,
+        ...Object.values(member.artifacts).map((reference) => reference.sha256),
+      ].sort();
+      completedMembers.set(taskId, executionTaskSchema.parse({
+        ...current,
+        status: "COMPLETED",
+        attempts: current.attempts + (wasPending ? 1 : 0),
+        startedAt: current.startedAt ?? input.batchStartedAt,
+        updatedAt: input.completedAt,
+        completedAt: input.completedAt,
+        exceptionReason: null,
+        supersededByTaskId: null,
+        taskSnapshotSha256: snapshot.taskSnapshotSha256,
+        artifacts,
+        recovery: {
+          recoveredAt: input.completedAt,
+          auditEventId: receipt.auditEventId,
+          transactionId: receipt.transactionId,
+          receiptSha256: receipt.receiptSha256,
+          workflowRunUrl: input.workflowRunUrl,
+        },
+        history: [...current.history, {
+          sequence: current.history.length + 1,
+          from: current.status,
+          to: "COMPLETED",
+          at: input.completedAt,
+          reason: `Completed in verified atomic release bundle ${input.batchId}.`,
+          taskSnapshotSha256: snapshot.taskSnapshotSha256,
+          evidenceSha256,
+          kind: "BATCH",
+        }],
+      }));
+      for (const supersededTaskId of member.supersededTaskIds) {
+        if (supersededTaskId === taskId || mutationReplacement.has(supersededTaskId)) {
+          throw new Error(`Invalid or duplicate batch supersession ${supersededTaskId}`);
+        }
+        mutationReplacement.set(supersededTaskId, taskId);
+      }
+      continue;
+    }
+    const taskSnapshotReference = member.artifacts.taskSnapshot;
+    if (!digestsEqual(taskSnapshotReference.sha256, snapshot.taskSnapshotSha256)) {
+      throw new Error(`Terminal task snapshot reference mismatch for ${taskId}`);
+    }
+    if (member.outcome === "SUPERSEDED" && !member.supersededByTaskId) {
+      throw new Error(`Terminal supersession ${taskId} requires a replacement`);
+    }
+    const reason = ["DEFERRED", "SUPERSEDED"].includes(member.outcome) ? member.rationale : null;
+    completedMembers.set(taskId, executionTaskSchema.parse({
+      ...current,
+      status: member.outcome,
+      attempts: current.attempts + (wasPending ? 1 : 0),
+      startedAt: current.startedAt ?? input.batchStartedAt,
+      updatedAt: input.completedAt,
+      completedAt: input.completedAt,
+      exceptionReason: reason,
+      supersededByTaskId: member.outcome === "SUPERSEDED" ? member.supersededByTaskId : null,
+      taskSnapshotSha256: snapshot.taskSnapshotSha256,
+      artifacts: {
+        ...current.artifacts,
+        taskSnapshot: taskSnapshotReference,
+        proposal: null,
+        approval: null,
+        applyReceipt: null,
+        decision: member.artifacts.decision,
+        companySnapshot: null,
+      },
+      recovery: null,
+      history: [...current.history, {
+        sequence: current.history.length + 1,
+        from: current.status,
+        to: member.outcome,
+        at: input.completedAt,
+        reason: member.rationale,
+        taskSnapshotSha256: snapshot.taskSnapshotSha256,
+        evidenceSha256: [
+          input.batchSha256,
+          input.batchReceiptSha256,
+          member.artifacts.decision.sha256,
+          taskSnapshotReference.sha256,
+        ].sort(),
+        kind: "BATCH",
+      }],
+    }));
+  }
+  for (const taskId of mutationReplacement.keys()) {
+    if (completedMembers.has(taskId)) throw new Error(`Batch member ${taskId} cannot also be superseded`);
+    const task = manifest.tasks.find((candidate) => candidate.taskId === taskId);
+    if (!task || task.status !== "PENDING") {
+      throw new Error(`Batch supersession ${taskId} is not a pending source task`);
+    }
+  }
+  const tasks = manifest.tasks.map((task) => {
+    const completed = completedMembers.get(task.taskId);
+    if (completed) return completed;
+    const replacement = mutationReplacement.get(task.taskId);
+    if (!replacement) return task;
+    const reason = `Superseded by ${replacement}; its verified batch after-image covers the same canonical identity and ownership judgment.`;
+    return executionTaskSchema.parse({
+      ...task,
+      status: "SUPERSEDED",
+      updatedAt: input.completedAt,
+      completedAt: input.completedAt,
+      exceptionReason: reason,
+      supersededByTaskId: replacement,
+      history: [...task.history, {
+        sequence: task.history.length + 1,
+        from: task.status,
+        to: "SUPERSEDED",
+        at: input.completedAt,
+        reason,
+        taskSnapshotSha256: task.taskSnapshotSha256,
+        evidenceSha256: [input.batchSha256, input.batchReceiptSha256].sort(),
+        kind: "BATCH",
+      }],
+    });
+  });
+  const { manifestSha256: _manifestSha256, ...withoutHash } = manifest;
+  return finalizeExecutionManifestValue({
+    ...withoutHash,
+    ...derivedRunState(tasks),
+    updatedAt: input.completedAt,
+    tasks,
+  });
 }
 
 function recoveryBeforeImage(input: unknown): CompanyImage | null {

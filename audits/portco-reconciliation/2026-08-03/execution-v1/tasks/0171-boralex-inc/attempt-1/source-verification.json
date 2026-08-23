@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0171:boralex-inc:d6b39758",
+  "taskIndex": 171,
+  "companyName": "Boralex Inc.",
+  "verifiedAt": "2026-08-19T07:02:48.534Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://www.boralex.com/en/press-releases/brookfield-and-la-caisse-complete-acquisition-boralex",
+      "finalUrl": "https://www.boralex.com/en/press-releases/brookfield-and-la-caisse-complete-acquisition-boralex",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 83085,
+      "contentSha256": "a86ffa1daaf7e474d9c156e4f1b4fa08ff9bd978698e9ea04c2b6eb708372105",
+      "note": "Closing announcement opened and supports current 70/30 ownership and completed acquisition."
+    },
+    {
+      "url": "https://www.boralex.com/en/press-releases/boralex-enters-definitive-agreement-be-acquired-brookfield-alongside-la-caisse",
+      "finalUrl": "https://www.boralex.com/en/press-releases/boralex-enters-definitive-agreement-be-acquired-brookfield-alongside-la-caisse",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 91994,
+      "contentSha256": "b8b9b71d9a47e5418c91bf172b219cb4117a3d8b8649ed0c6ac9949e87b0b342",
+      "note": "Signing announcement opened and supports agreed ownership and transaction terms."
+    },
+    {
+      "url": "https://www.boralex.com/en/press-releases/boralex-regulatory-approvals-brookfield-la-caisse-arrangement",
+      "finalUrl": "https://www.boralex.com/en/press-releases/boralex-regulatory-approvals-brookfield-la-caisse-arrangement",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 83177,
+      "contentSha256": "cfed0bf6186278f4b4fd622f0a2c9b37ba5b862a8d980b7c989a980666a11a35",
+      "note": "Regulatory-approval announcement opened and supports pre-closing status."
+    },
+    {
+      "url": "https://ca.boralex.com/sites/default/files/2026-05/boralex-management-information-circular-english-may-1-2026.pdf?v=1778276138",
+      "finalUrl": "https://ca.boralex.com/sites/default/files/2026-05/boralex-management-information-circular-english-may-1-2026.pdf?v=1778276138",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 4429699,
+      "contentSha256": "b092ed454abb8b19b044b90851c8326a8b8189da99f03e0d5e63cc8a716e7b61",
+      "note": "Management circular PDF opened and supports transaction mechanics and pre-close ownership."
+    },
+    {
+      "url": "https://www.newswire.ca/news-releases/la-caisse-acquires-a-173-interest-in-boralex-inc-636940823.html",
+      "finalUrl": "https://www.newswire.ca/news-releases/la-caisse-acquires-a-173-interest-in-boralex-inc-636940823.html",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html;charset=utf-8",
+      "bytes": 206811,
+      "contentSha256": "d4345d52ffb28258bc9d49f77676c00206bd16e7a49c281dd470823ad8282e12",
+      "note": "2017 La Caisse acquisition page opened and supports historical 17.3% entry."
+    },
+    {
+      "url": "https://www.lacaisse.com/en/news/pressreleases/caisse-fondaction-invest-250-million-way-subordinated-loan-boralex",
+      "finalUrl": "https://www.lacaisse.com/en/news/pressreleases/caisse-fondaction-invest-250-million-way-subordinated-loan-boralex",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 85231,
+      "contentSha256": "90feb0ee0326514c0236c74075ff39b92347119d07670cca5ee084099958a032",
+      "note": "La Caisse subordinated-loan page opened and supports the debt/equity distinction."
+    },
+    {
+      "url": "https://www.lacaisse.com/en/news/pressreleases/brookfield-caisse-complete-acquisition-boralex",
+      "finalUrl": "https://www.lacaisse.com/en/news/pressreleases/brookfield-caisse-complete-acquisition-boralex",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 90063,
+      "contentSha256": "07c4cb0dda52c9b8043904ac8bc6758a9c19637f116d8a0dba63143e8af7058a",
+      "note": "La Caisse closing page opened and corroborates completed acquisition and 30% ownership."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allEvidenceRowsChecked": true,
+    "allCoreClaimsHaveOpenOrBrowserVerifiedEvidence": true,
+    "deadUrlCount": 0,
+    "redirectConcernCount": 0
+  },
+  "releaseRequirement": "Replace the stale pending-acquisition treatment with the closed 70% Brookfield / 30% La Caisse ownership while preserving La Caisse historical equity and excluding its subordinated loan from ownership."
+}

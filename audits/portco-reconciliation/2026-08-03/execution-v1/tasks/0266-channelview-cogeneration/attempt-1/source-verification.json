@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0266:channelview-cogeneration:a4e4cfd5",
+  "taskIndex": 266,
+  "companyName": "Channelview Cogeneration",
+  "verifiedAt": "2026-08-20T11:23:59.543Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://www.global-infra.com/portfolio-page/channelview-cogeneration/",
+      "finalUrl": "https://www.global-infra.com/portfolio-page/channelview-cogeneration/",
+      "status": "BROWSER_VERIFIED_AFTER_HTTP_403",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 4544,
+      "contentSha256": "32189054573ececfa628007a847ae55b6abe5c0d7bcf784f827ecc75c630da55",
+      "browserSnapshotSha256": "3ce5ecbfd67df5658c3a4ff75d8f93895eb5454a470948a650e7c47f03c5ad25",
+      "note": "Direct fetch was blocked; the visible BlackRock/GIP page loaded and identifies Channelview as a realized GIP investment."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1126294/000095012310016821/h69489exv10w1wb.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1126294/000095012310016821/h69489exv10w1wb.htm",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 340171,
+      "contentSha256": "7329e607b2531ad0c431dd73b6bf0e8d042c8d6c64316737d6cb0b53738f487f",
+      "note": "SEC asset-purchase agreement supports the Reliant seller entities and GIM Channelview acquisition vehicle."
+    },
+    {
+      "url": "https://www.wsj.com/articles/DJFLBO0020130719e97jbhkmq",
+      "finalUrl": "https://www.wsj.com/articles/DJFLBO0020130719e97jbhkmq",
+      "status": "BROWSER_OPEN_PARTIAL_PAYWALL",
+      "httpStatus": 401,
+      "mediaType": "text/html;charset=utf-8",
+      "bytes": 769,
+      "contentSha256": "b68719caadf5de4eb9a5838e54c76f5ac0e7f21aebaa0cfbffdde2478f14b984",
+      "browserSnapshotSha256": "319f7ffba0ae7c75a0a4777768807898fc7f6a502c3993dd01175e2c6c84ed60",
+      "note": "Browser page confirms GIP marketed Channelview for sale in July 2013, but the visible partial article does not expose the historical 90% stake. Treat the exact historical percentage as unstructured pending a directly visible source."
+    },
+    {
+      "url": "https://www.infrapppworld.com/news/gip-and-fortistar-sell-u-s-power-plant",
+      "finalUrl": "https://www.infrapppworld.com/news/gip-and-fortistar-sell-u-s-power-plant",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 220029,
+      "contentSha256": "a4aefe615db9e6695c369b4c8a0a9dae6fccb38bc986ad01ce50c890fca1d704",
+      "note": "Transaction coverage supports the January 10, 2014 completed sale from GIP/Fortistar to EIF United States Power Fund IV."
+    },
+    {
+      "url": "https://www.cahill.com/news/firm-news/2025-07-18-cahill-advises-administrative-agent-and-financing-sources-on-eif-channelview-cogeneration-llc-260-million-financing",
+      "finalUrl": "https://www.cahill.com/news/firm-news/2025-07-18-cahill-advises-administrative-agent-and-financing-sources-on-eif-channelview-cogeneration-llc-260-million-financing",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 22763,
+      "contentSha256": "3463defa77a38be59de1dbe32d58956e543237d832c76a4819bc4592eed8ccc7",
+      "note": "Financing counsel confirms Elliott's 2025 majority acquisition from Ares-managed funds and separates the debt package from equity ownership."
+    },
+    {
+      "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B70A8259D-0000-CC2D-ADEE-B0DFFB934636%7D&DocTitle=Joint+Petition+for+Declaratory+Ruling+or+Authorization+under+Section+70+PSL",
+      "finalUrl": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B70A8259D-0000-CC2D-ADEE-B0DFFB934636%7D&DocTitle=Joint+Petition+for+Declaratory+Ruling+or+Authorization+under+Section+70+PSL",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 1448511,
+      "contentSha256": "d0ae40646d064cd55a47781dc4b37e4ba3619ef0e98e350cbe3654b0f9f01ca7",
+      "pageEvidence": [
+        {
+          "page": 9,
+          "supports": "Elliott Associates and Elliott International ownership chain and current 97% interest in the 851 MW Channelview generation facility."
+        }
+      ],
+      "note": "A 2026 public-utility filing for a separate Elliott transaction independently states Elliott's current 97% Channelview interest and operating scale."
+    },
+    {
+      "url": "https://www.gridinfo.com/plant/channelview-cogeneration-plant/55187",
+      "finalUrl": "https://www.gridinfo.com/plant/channelview-cogeneration-plant/55187",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 54395,
+      "contentSha256": "305d2ee9a896b51a20c16e74d672fb059051280d15ac72c939fc4a5b6a042e38",
+      "note": "EIA-derived plant record supports generator identity, location, technology and technical capacity figures."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allReturnedUrlsChecked": true,
+    "allEvidenceRowsChecked": true,
+    "deadUrlCount": 0,
+    "redirectCount": 0,
+    "browserBlockedButVerifiedCount": 1,
+    "browserPartialPaywallCount": 1,
+    "primarySourceWorking": true,
+    "regulatoryPdfInspectedAtPageLevel": true,
+    "standaloneAssetBoundaryResolved": true,
+    "gipRealizedStatusVerified": true,
+    "blackrockManagerTransactionExcluded": true,
+    "elliottNinetySevenPercentVerified": true,
+    "aresSellerRetentionSupported": true,
+    "noLaterOwnershipChangeFound": true,
+    "identityResolved": true,
+    "activeOwnershipResolved": true,
+    "applicationBlocked": false
+  },
+  "modelEvidenceCorrections": [
+    "Do not create Channelview as a current GIP/BlackRock holding; GIP exited in January 2014.",
+    "Create one standalone Channelview record with Elliott as current 97% owner and Ares as the retained remainder, with the 3% characterized as derived unless proposal evidence directly states it.",
+    "Keep the exact historical GIP 90% figure unstructured until a fully visible supporting source is attached; GIP's majority/realized status and exit date are independently supported.",
+    "Do not treat BlackRock's manager acquisition, the 2010/2025 financings, the CCS alliance, Equistar/LyondellBasell, or separate Channelview-area plants as ownership changes."
+  ],
+  "releaseRequirement": "Create one standalone Channelview Cogeneration record because the asset remains operating under Elliott/Ares. Record GIP as a former realized owner ending January 10, 2014, not a current BlackRock/GIP holding; retain the 2025 Elliott/Ares change and all source limitations explicitly."
+}

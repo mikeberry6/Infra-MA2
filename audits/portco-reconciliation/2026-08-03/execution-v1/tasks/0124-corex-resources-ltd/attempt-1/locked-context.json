@@ -1,0 +1,254 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0124:corex-resources-ltd:b7545232",
+  "taskIndex": 124,
+  "companyName": "Corex Resources Ltd.",
+  "generatedAt": "2026-08-23T04:26:41.184Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0124-corex-resources-ltd/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 124,
+    "taskId": "ledger:0124:corex-resources-ltd:b7545232",
+    "canonicalKey": "corex-resources-ltd|canada",
+    "companyName": "Corex Resources Ltd.",
+    "country": "Canada",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 21,
+    "managers": [
+      "BCI"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "021-bci:holding:015:corex-resources"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpj8jy00mkivhettbl08rk"
+    ],
+    "seedKeys": [
+      "corex resources ltd.|Canada"
+    ],
+    "evidenceUrls": [
+      "https://corexresources.ca/",
+      "https://thenarwhal.ca/wp-content/uploads/2026/02/Shift-Action-2025-Pension-Climate-Report-Card.pdf"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted census NEEDS_REVIEW for 021-bci:holding:015:corex-resources: Ownership linkage to BCI is not fully substantiated by primary sources and requires verification. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Accepted census NEEDS_REVIEW for 021-bci:holding:015:corex-resources: Ownership linkage to BCI is not fully substantiated by primary sources and requires verification."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj8jy00mkivhettbl08rk",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "corex-resources-ltd|canada",
+  "targetCompanyImage": {
+    "id": "cmrxpj8jy00mkivhettbl08rk",
+    "name": "Corex Resources Ltd.",
+    "aliases": [],
+    "sector": "MIDSTREAM",
+    "subsector": "Oil and natural gas exploration and production",
+    "region": "NORTH_AMERICA",
+    "country": "Canada",
+    "countryTags": [
+      "Canada"
+    ],
+    "description": "Corex Resources is a Calgary-based private oil and natural gas company. The business focuses on development drilling opportunities and upstream resource extraction rather than regulated utility or contracted infrastructure services. Its operating model is asset-heavy and commodity-exposed because performance depends on reserves, drilling activity, and market prices for oil and natural gas. Operations are centered in Alberta, where the company maintains its headquarters and markets itself as a junior producer. Public sources provide limited disclosure on workforce scale, current ownership percentages, and the company's founding year. BCI has been referenced in public reporting as an investor, while other public materials show prior changes in shareholder ownership, so the current ownership structure is not publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Alberta",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjtni01jqivhekk62dmiy",
+        "managerName": "BCI",
+        "organizationName": "BCI",
+        "fundName": "Infrastructure & Renewable Resources",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkus402z1ivhefn01rzdy",
+        "date": "Jun 8, 2022",
+        "event": "Corex announced that a limited partnership managed by Azimuth Capital Management had acquired all shares held by CDPQ.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-06-08T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkusq02z2ivhe4yt6i7xi",
+        "date": "2025",
+        "event": "BCI invested in Corex Resources Ltd. through Infrastructure & Renewable Resources.",
+        "category": "FINANCING",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxppgcg0870ivheoy1l28b9",
+        "label": "Corexresources — Corex Resources Ltd.",
+        "url": "https://corexresources.ca/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Corexresources company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxppgdi0872ivheweykuohi",
+        "label": "Corexresources — Corex Resources Ltd.",
+        "url": "https://corexresources.ca/contact",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Corexresources transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppggr0874ivhe9afx0sgj",
+        "label": "Newswire — Corex Resources Ltd.",
+        "url": "https://www.newswire.ca/news-releases/corex-resources-ltd-announces-disposition-by-cdpq-of-corex-share-position-800716220.html",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Newswire — Corex Resources Ltd.",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppghb0875ivhea0jka6oq",
+        "label": "Thenarwhal — Connaught Oil and Gas",
+        "url": "https://thenarwhal.ca/wp-content/uploads/2026/02/Shift-Action-2025-Pension-Climate-Report-Card.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Thenarwhal — Corex Resources Ltd.",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Corex Resources Ltd.",
+    "investmentFirm": "BCI",
+    "sector": "Midstream",
+    "subsector": "Oil and natural gas exploration and production",
+    "region": "North America",
+    "country": "Canada",
+    "ownershipVehicle": "n.a.",
+    "description": "Corex Resources is a Calgary-based private oil and natural gas company. The business focuses on development drilling opportunities and upstream resource extraction rather than regulated utility or contracted infrastructure services. Its operating model is asset-heavy and commodity-exposed because performance depends on reserves, drilling activity, and market prices for oil and natural gas. Operations are centered in Alberta, where the company maintains its headquarters and markets itself as a junior producer. Public sources provide limited disclosure on workforce scale, current ownership percentages, and the company's founding year. BCI has been referenced in public reporting as an investor, while other public materials show prior changes in shareholder ownership, so the current ownership structure is not publicly disclosed.",
+    "status": "Active",
+    "countryTags": [
+      "Canada"
+    ],
+    "investmentYear": 2025,
+    "headquarters": "Alberta",
+    "milestones": [
+      {
+        "date": "Jun 8, 2022",
+        "event": "Corex announced that a limited partnership managed by Azimuth Capital Management had acquired all shares held by CDPQ.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "2025",
+        "event": "BCI invested in Corex Resources Ltd. through Infrastructure & Renewable Resources.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Corexresources — Corex Resources Ltd.",
+        "url": "https://corexresources.ca/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Corexresources — Corex Resources Ltd.",
+        "url": "https://corexresources.ca/contact",
+        "type": "ARTICLE",
+        "purpose": "MILESTONE_EVENT"
+      },
+      {
+        "label": "Newswire — Corex Resources Ltd.",
+        "url": "https://www.newswire.ca/news-releases/corex-resources-ltd-announces-disposition-by-cdpq-of-corex-share-position-800716220.html",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Thenarwhal — Corex Resources Ltd.",
+        "url": "https://thenarwhal.ca/wp-content/uploads/2026/02/Shift-Action-2025-Pension-Climate-Report-Card.pdf",
+        "type": "PRESENTATION"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "BCI",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2025,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj1av00btivhe22q21yhy",
+        "fundName": "Infrastructure & Renewable Resources",
+        "managerId": "cmrxpi4wo000tivheupfc57xk",
+        "updatedAt": "2026-07-23T16:09:55.543Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi4wo000tivheupfc57xk",
+        "name": "BCI",
+        "updatedAt": "2026-07-23T16:09:13.560Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0124:corex-resources-ltd:b7545232",
+    "taskIndex": 124,
+    "canonicalKey": "corex-resources-ltd|canada",
+    "capturedAt": "2026-08-23T04:26:41.184Z",
+    "databaseRevision": "revision:9053d4d72408014e19574ce8765303d8e761c9d79e849ca10a0c6fcd89a53595",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "5206e2b5962bf878d214073141d4d858e8e211bd9bfad88093a90e1d0995be8f",
+    "productionSnapshotSha256": "b891aeace5cca552056f0d846dd8e4f0e2f13d1586f0dec524c56550b9fec86b",
+    "targetCompanySnapshotSha256": "701a99bc9c9fe7faea8bce3b2fbe37fa83f27aa0abe26131cc3481559e5a56a0",
+    "seedEntrySha256": "87bf0a7131ac4b14b94a3a3332f8878e39c3eb1e46ff3bab88ddb7e3a552d966",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "6d4e0a660335e3a698ce946d98a175c0748058474dc529de9ed31ffed4c6b57f",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "dcd177ee3778e283e7063c1b60f809c4e101c348b95e5c8073041ffcf3ec8829",
+      "organizationsSha256": "1cef697030a3ddd6682905fd69293d3c170819eebbbca06730d02467b8e3f1ca",
+      "citationsSha256": "a60f575053b9c851a74be79f41ef8a4c640d6540e94360ed07ccc1a8b6b78769",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "1534683c479de986d1d25c503ab85cda94af1e5ea90b2a67c039e4c2af472453",
+    "stateSha256": "b9d0c1c891f7c255d9aa8c7850f06a27f1b4cce9786d08dd9fada66b43b3329c",
+    "taskSnapshotSha256": "0ccf34bd63957f9b08533b55b0516c3ea87097233511d6cc9db1ed6e959f6f46"
+  },
+  "contextSha256": "446105af0f7cd5f0185b826594edeeee90de1e7981800629084df4fe7bcf76d4"
+}

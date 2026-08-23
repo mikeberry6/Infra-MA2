@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "runId": "portco-reconciliation-2026-08-03-execution-v1",
+  "taskId": "ledger:0410:sierra-railroad-company:b9c99f78",
+  "taskIndex": 410,
+  "validatedAt": "2026-08-22T00:06:35.000Z",
+  "conversationUrl": "https://chatgpt.com/c/6a88e024-9b40-83ea-9c8e-e95f89b4f954",
+  "requiredTopLevelKeys": ["asOfDate","requestedCompany","requestedManagers","decision","confidence","rationale","identityResolution","ownershipResolution","operatingResolution","acquisitionExitCheck","milestones","evidence","beforeAfterChanges","excludedOrDuplicateCandidates","unresolvedQuestions","recommendedListAction"],
+  "initialResponse": {
+    "valid": true,
+    "fencedJsonPresent": false,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "responseSha256": "a41d4ac83689a92020ac30c67e9d75ad3cafe5f793f77c3b2d01fe91b10e3f33",
+    "errors": []
+  },
+  "repair": {"count":0,"limit":1,"submittedAt":null,"completedAt":null,"valid":null,"responseSha256":null,"errors":[]},
+  "finalResponse": {
+    "fencedJsonPresent": false,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "decision": "PROPOSED_CORRECTION",
+    "confidence": "HIGH",
+    "canonicalName": "Sierra Railroad Company",
+    "evidenceCount": 7,
+    "currentOwnerCount": 2,
+    "formerOwnerCount": 0,
+    "pendingOwnershipTransactionCount": 0,
+    "identityResolved": true,
+    "ridgewoodControlResolved": true,
+    "legacyRolloverPresent": true,
+    "brookfieldDebtExcluded": true,
+    "northAmericaQualificationPresent": true,
+    "subsequentExitSearchPresent": true,
+    "platformBoundaryPartiallyResolved": true,
+    "allEvidenceUrlsDirectHttps": true,
+    "exactlyOneRecommendedPrimary": true,
+    "result": "PASS_REVIEW_REQUIRED"
+  },
+  "valid": true,
+  "applicationBlocked": true,
+  "blockingReasons": [
+    "The response infers approximately 57.6 percent Ridgewood and 42.4 percent legacy ownership from filed mechanics; the exact post-close cap table is not directly disclosed and must not be stored as exact structured stakes.",
+    "The exact treatment of Sunburst and the complete retained-holder roster remain unresolved."
+  ],
+  "errors": [],
+  "repairsUsed": 0,
+  "independentSourceVerification": "source-verification.json",
+  "finalResearchDecision": "research-decision.json"
+}

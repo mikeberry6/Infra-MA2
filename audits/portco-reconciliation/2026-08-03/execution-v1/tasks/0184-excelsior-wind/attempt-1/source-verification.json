@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0184:excelsior-wind:c93e08d6",
+  "taskIndex": 184,
+  "companyName": "Excelsior Wind",
+  "verifiedAt": "2026-08-19T10:55:57.000Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://www.boem.gov/renewable-energy/state-activities/vineyard-mid-atlantic",
+      "finalUrl": "https://www.boem.gov/renewable-energy/state-activities/vineyard-mid-atlantic",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 76839,
+      "contentSha256": "c22de3880d003644954f355e7cc08215527f0cbd08f04c8a76260ed0039f1deb",
+      "note": "Opened directly. Model purpose: current lessee, lease, COP and permitting status."
+    },
+    {
+      "url": "https://www.vineyardoffshore.com/where-we-work/east-coast/excelsior-wind-1/",
+      "finalUrl": "https://www.vineyardoffshore.com/where-we-work/east-coast/excelsior-wind-1/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 199587,
+      "contentSha256": "fb34d955a8ba685a1293669b4c5d49c5002a085da05fd4f905d47d81630d4588",
+      "note": "Opened directly. Model purpose: current Excelsior brand, capacity, geography and stage."
+    },
+    {
+      "url": "https://www.vineyardoffshore.com/where-we-work/east-coast/excelsior-wind-1/vineyard-mid-atlantic/",
+      "finalUrl": "https://www.vineyardoffshore.com/where-we-work/east-coast/excelsior-wind-1/vineyard-mid-atlantic/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 144206,
+      "contentSha256": "cbb3f33cbb931a6acccfc8e3d9f739cdc7a8cabf5d16c35adf4fbf4c913e8dc8",
+      "note": "Opened directly. Model purpose: project-to-lease boundary."
+    },
+    {
+      "url": "https://cop.dk/vineyard-offshores-excelsior-wind-project-selected-as-next-wave-of-offshore-wind-in-new-york/",
+      "finalUrl": "https://cop.dk/vineyard-offshores-excelsior-wind-project-selected-as-next-wave-of-offshore-wind-in-new-york/",
+      "status": "BROWSER_VERIFIED_AFTER_CURL_455",
+      "httpStatus": null,
+      "mediaType": "browser DOM text",
+      "bytes": 6143,
+      "contentSha256": "fc6779a3fa392a07ef6db1da1fe6e406aba3b24b79256a95ddaf4a8cd233be10",
+      "note": "Direct curl returned 455, but the Copenhagen Offshore Partners announcement rendered in the browser. Model purpose: CI IV fund, Vineyard Offshore platform and COP role."
+    },
+    {
+      "url": "https://www.nyserda.ny.gov/-/media/Project/Nyserda/Files/Programs/Offshore-Wind/Vineyard-Offshore-40-Proposal-NarrativePUBLICrevised-22422.pdf",
+      "finalUrl": "https://www.nyserda.ny.gov/-/media/Project/Nyserda/Files/Programs/Offshore-Wind/Vineyard-Offshore-40-Proposal-NarrativePUBLICrevised-22422.pdf",
+      "status": "DIRECT_DOWNLOAD_VERIFIED",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 5101075,
+      "contentSha256": "88c229ede71b35ba334db2fa67d88262b7638ad5eda0c6c12c97d8f7678529e4",
+      "note": "Downloaded directly. Model purpose: platform and legal leaseholder structure."
+    },
+    {
+      "url": "https://www.nyserda.ny.gov/All-Programs/Offshore-Wind/Focus-Areas/Offshore-Wind-Solicitations",
+      "finalUrl": "https://www.nyserda.ny.gov/All-Programs/Offshore-Wind/Focus-Areas/Offshore-Wind-Solicitations",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 92382,
+      "contentSha256": "ae57719ebc801c784a6b622f3a7712ad8740e70d33819d044bc2d458a157bd4f",
+      "note": "Opened directly. Model purpose: 2023 provisional selection and no final 2022-round awards."
+    },
+    {
+      "url": "https://www.nyserda.ny.gov/All-Programs/Offshore-Wind/Focus-Areas/Offshore-Wind-Solicitations/2024-Solicitation",
+      "finalUrl": "https://www.nyserda.ny.gov/All-Programs/Offshore-Wind/Focus-Areas/Offshore-Wind-Solicitations/2024-Solicitation",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 100642,
+      "contentSha256": "915eb97af623b777952d4b6a9331afd934c29bad0af860eed9e061047b2ddea6",
+      "note": "Opened directly. Model purpose: 1,350 MW rebid and February 2026 no-award close."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allEvidenceRowsChecked": true,
+    "allCoreClaimsHaveOpenOrBrowserVerifiedEvidence": true,
+    "deadUrlCount": 0,
+    "browserVerifiedAfterCurlBlockCount": 1,
+    "redirectConcernCount": 0
+  },
+  "releaseRequirement": "Merge the standalone Excelsior Wind row into Vineyard Offshore, preserve Vineyard Mid-Atlantic LLC and Excelsior as nested lease/project history, retain CI IV attribution, and do not merge distinct projects such as Vineyard Wind 1."
+}

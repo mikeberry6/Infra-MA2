@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0225:convergent-energy-and-power:464221aa",
+  "taskIndex": 225,
+  "companyName": "Convergent Energy and Power",
+  "verifiedAt": "2026-08-20T00:45:18Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://www.ecpgp.com/equity/portfolio/convergent",
+      "finalUrl": "https://www.ecpgp.com/equity/portfolio/convergent",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 38727,
+      "contentSha256": "6bc270365161e5528e1c51f381af04cc0b72c78ba4325edc42abb0526057554d",
+      "note": "ECP's live portfolio page lists Convergent as Current, dates its investment to June 2019 and identifies North America as the platform geography."
+    },
+    {
+      "url": "https://convergentep.com/news/ecp",
+      "finalUrl": "https://convergentep.com/news/ecp",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 77866,
+      "contentSha256": "5645291e069890949202890eb36ea2bce69395d6078a4e9ba84ca3c6323c349d",
+      "note": "Convergent's July 10, 2019 release supports the direct platform acquisition and states that the transaction was signed in April 2019. The page describes a final acquisition but does not state a separate legal closing day."
+    },
+    {
+      "url": "https://www.ecpgp.com/about/news-and-insights/press-releases/2019/energy-capital-partners-acquires-convergent-energy-power",
+      "finalUrl": "https://www.ecpgp.com/about/news-and-insights/press-releases/2019/energy-capital-partners-acquires-convergent-energy-power",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 37518,
+      "contentSha256": "6312bd81cf1629b4fe8bd27dbed9b80ee9cb0e0b69cb986b4e6b463293a20558",
+      "note": "The ECP-hosted acquisition article attributes Convergent to Fund IV and describes a platform-level purchase. Price, vehicle and stake were not disclosed."
+    },
+    {
+      "url": "https://www.energy.gov/edf/convergent",
+      "finalUrl": "https://www.energy.gov/edf/convergent",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 115833,
+      "contentSha256": "50e4eff408a766111d74db0d6fde5fff5fc4769a0444958f3590217f77003053",
+      "note": "DOE identifies Convergent Energy and Power Inc. and the two borrowing project subsidiaries, and confirms the January 2025 US$584.5 million loan guarantee as project debt rather than platform equity."
+    },
+    {
+      "url": "https://convergentep.com/news/mitsubishi",
+      "finalUrl": "https://convergentep.com/news/mitsubishi",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 77329,
+      "contentSha256": "e3dcf4f8b0a963cce76e61b66361f038d4bd3c036dbb33c8384ce4be7b67d2cc",
+      "note": "Convergent's December 2024 release identifies MUFG construction-to-term, tax-equity bridge and letter-of-credit facilities and reports over 800 MW / 1 GWh and more than US$1 billion invested or committed."
+    },
+    {
+      "url": "https://convergentep.com/news/convergent-closes-multimillion-dollar-interconnection-facility",
+      "finalUrl": "https://convergentep.com/news/convergent-closes-multimillion-dollar-interconnection-facility",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 75848,
+      "contentSha256": "5d1994bae18a68798a7a2bebeb572bccf59aa597fb84ab1eabce86162751d8eb",
+      "note": "Convergent's December 2025 NY Green Bank release supports continuing activity and a project/interconnection financing facility, not an ownership transfer."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allReturnedUrlsChecked": true,
+    "allEvidenceRowsChecked": true,
+    "deadUrlCount": 0,
+    "browserFallbackCount": 0,
+    "ecpCurrentStatusVerified": true,
+    "fundIvAttributionVerified": true,
+    "legalIdentityVerified": true,
+    "andPlusAliasesResolved": true,
+    "projectSubsidiaryBoundaryVerified": true,
+    "doeLoanKeptNonEquity": true,
+    "bankFacilitiesKeptNonEquity": true,
+    "operatingScaleVerified": true,
+    "laterDirectExitNotFound": true,
+    "allCoreClaimsHaveDirectOpenEvidence": true,
+    "applicationBlocked": false
+  },
+  "releaseRequirement": "Before any mutation, recapture the task-specific production and dependency snapshot and convert this research packet into a hash-bound proposal."
+}

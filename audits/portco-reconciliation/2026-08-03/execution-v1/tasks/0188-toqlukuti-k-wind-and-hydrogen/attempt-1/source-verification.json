@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0188:toqlukuti-k-wind-and-hydrogen:a75100d1",
+  "taskIndex": 188,
+  "companyName": "Toqlukuti'k Wind & Hydrogen",
+  "verifiedAt": "2026-08-19T12:43:10.000Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://www.gov.nl.ca/eccc/files/EA-2368-Registration.pdf",
+      "finalUrl": "https://www.gov.nl.ca/eccc/files/EA-2368-Registration.pdf",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 3212378,
+      "contentSha256": "94d5810cd271c053212d05e0da6423e71458c9e116ef30b9f40bec2e99bda7fd",
+      "note": "Opened directly. Model purpose: legal entity, joint venture and fund attribution, boundary, capacity and stage."
+    },
+    {
+      "url": "https://www.aboenergy.com/en/media-center/press/2024/2024-12-17_toqlukuti-k_cip_en.html",
+      "finalUrl": "https://www.aboenergy.com/en/media-center/press/2024/2024-12-17_toqlukuti-k_cip_en.html",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 19211,
+      "contentSha256": "226b74a48926d2538540b092d2811d1afce89995c11d648fea36bbd1aee36e56",
+      "note": "Opened directly. Model purpose: exact 90% transfer to CIP and ABO's retained 10%."
+    },
+    {
+      "url": "https://news.cision.com/copenhagen-infrastructure-partners-p-s/r/copenhagen-infrastructure-partners-acquires-majority-stake-in-abo-energy-s-wind-and-hydrogen-project%2Cc4357452",
+      "finalUrl": "https://news.cision.com/copenhagen-infrastructure-partners-p-s/r/copenhagen-infrastructure-partners-acquires-majority-stake-in-abo-energy-s-wind-and-hydrogen-project%2Cc4357452",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 25018,
+      "contentSha256": "fdf3806385d164b05499b2bfaeb38258092711e79d1d98efd849d862daf80aa9",
+      "note": "Opened directly. Model purpose: completed majority acquisition and CI ETF I attribution."
+    },
+    {
+      "url": "https://www.aboenergy.com/ca/company/projects/toqlukutik-project/",
+      "finalUrl": "https://www.aboenergy.com/ca/company/projects/toqlukutik-project/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 93456,
+      "contentSha256": "6c92841b28884d58e104fa78d6144bf7e97459e23674edd48564f96193944cdc",
+      "note": "Opened directly. Model purpose: ongoing joint development, 90% ownership and project aliases."
+    },
+    {
+      "url": "https://www.gov.nl.ca/eccc/projects/projects-2368/",
+      "finalUrl": "https://www.gov.nl.ca/eccc/projects/projects-2368/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 103379,
+      "contentSha256": "c4ce7c66370244dc865ff180c3c8f9fe411c90154d8467c82764c0e8812c3af7",
+      "note": "Opened directly. Model purpose: identity, capacity and environmental-assessment milestones."
+    },
+    {
+      "url": "https://www.gov.nl.ca/releases/2026/minesen/0219n03/",
+      "finalUrl": "https://www.gov.nl.ca/releases/2026/minesen/0219n03/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 36812,
+      "contentSha256": "54df1cf7a3e53973b9721f9de4cbebb03620e5b759df763d2f9fe42affb18070",
+      "note": "Opened directly. Model purpose: Crown-land reserve non-extension, timing and reasons."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allEvidenceRowsChecked": true,
+    "allCoreClaimsHaveOpenEvidence": true,
+    "deadUrlCount": 0,
+    "blockedUrlCount": 0,
+    "redirectConcernCount": 0
+  },
+  "releaseRequirement": "Retain one project-company row, replace the pending transaction with a closed 2024 acquisition, record CIP 90% and ABO 10% as current ownership, and treat the 2026 land-reserve lapse as a development impairment rather than an ownership exit."
+}

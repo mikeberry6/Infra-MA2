@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0375:sidewalk-infrastructure-partners:80a3f3bf",
+  "checkedAt": "2026-08-21T20:13:07.000Z",
+  "method": "Independent direct curl followed by indexed-page verification for browser-blocked sources",
+  "sources": [
+    {
+      "url": "https://sidewalkinfra.com/about",
+      "httpStatus": 200,
+      "finalUrl": "https://sidewalkinfra.com/about",
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 73415,
+      "sha256": "82e8e3d4b9d2792f81e505556d54f63854c2bd8f170eb20d220f90098945de5d",
+      "healthStatus": "WORKING"
+    },
+    {
+      "url": "https://www.otpp.com/en-ca/about-us/news-and-insights/2019/transforming-infrastructure-through-technology-with-a-new-partnership/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.otpp.com/en-ca/about-us/news-and-insights/2019/transforming-infrastructure-through-technology-with-a-new-partnership/",
+      "mediaType": "text/html;charset=utf-8",
+      "bytes": 700632,
+      "sha256": "3ae8d4993fcf93eec008c72b830ceaf1d2f9fe541c551ca6aa1779459ddc024d",
+      "healthStatus": "WORKING"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1768502/000176850219000001/xslFormDX01/primary_doc.xml",
+      "httpStatus": 403,
+      "curlResponseSha256": "d07ceab8e2a8c58e075d643a2e48ce7f9f3623602c1b42936576553f76004857",
+      "healthStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verificationNote": "Direct SEC page independently opened through the indexed page reader and exposed the complete Form D, including 2018 formation, 2019-08-17 first sale, $400m sold and five investors."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1768502/000156761922002024/0001567619-22-002024.txt",
+      "httpStatus": 403,
+      "curlResponseSha256": "5a08af75a13a697a44276cb3effa05102349e144d34196257435939335364f37",
+      "healthStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verificationNote": "Direct SEC submission independently opened through the indexed page reader and exposed the 2022-01-14 first-sale date and $60m sold."
+    },
+    {
+      "url": "https://www.bloomberg.com/news/articles/2022-02-02/alphabet-googl-sidewalk-labs-offshoot-sip-is-now-a-unicorn",
+      "httpStatus": 403,
+      "curlResponseSha256": "a8b32ef80b0fe6e3f40bc4ce5286598ec9683aa6d798a3670be9ca063b65b814",
+      "healthStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verificationNote": "The direct Bloomberg page resolved in the indexed page reader; direct curl was paywall-blocked."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1957892/000121390026066832/ea0293631-01_ncsr.htm",
+      "httpStatus": 403,
+      "curlResponseSha256": "bcf4d79dd43606488b34ae7b35b370b140bbf366e6c09762e75d0884854f24d4",
+      "healthStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verificationNote": "The exact filing was independently discoverable and its text was exposed by the indexed Yahoo Finance SEC mirror.",
+      "mirrorUrl": "https://cdn.yahoofinance.com/prod/sec-filings/0001957892/000121390026066832/ea0293631-01_ncsr.htm"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1789470/000121390026066828/ea0293635-01_ncsr.htm",
+      "httpStatus": 403,
+      "curlResponseSha256": "4d3c58bc1705061156925b92612f85dbaa1df51ffc3ad1b3e7c6b27be5ee3c08",
+      "healthStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verificationNote": "Direct SEC filing independently opened through the indexed page reader and exposed the filing text."
+    }
+  ],
+  "allEvidenceUrlsDirectHttps": true,
+  "allSourcesWorkingOrVerified": true,
+  "deadSourceCount": 0
+}
+

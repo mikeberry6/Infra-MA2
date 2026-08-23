@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0267:cyrusone:541adafa",
+  "taskIndex": 267,
+  "companyName": "CyrusOne",
+  "verifiedAt": "2026-08-20T11:42:44.681Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1553023/000110465921154474/tm2134342-2_defm14a.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1553023/000110465921154474/tm2134342-2_defm14a.htm",
+      "status": "BROWSER_VERIFIED_AFTER_HTTP_403",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 4817,
+      "contentSha256": "cc7a8cad6a656a611d5c22eb5933f61789e50904a58626b07e05548aafcba640",
+      "browserSnapshotSha256": "b43989db9fc8b5ed757e7c693b34ef7f0fe4271c85a58f49211769021b0a3601",
+      "note": "The visible SEC proxy identifies Cavalry Parent, the KKR and GIP fund/vehicle stack, the merger terms, value and closing conditions."
+    },
+    {
+      "url": "https://www.global-infra.com/news/kkr-and-gip-complete-acquisition-of-cyrusone/",
+      "finalUrl": "https://www.global-infra.com/news/kkr-and-gip-complete-acquisition-of-cyrusone/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 41325,
+      "contentSha256": "ae9f3dc69e870b2501d150a933cf9ba3c6e6baaa54579eab1583369e778d0533",
+      "note": "Official GIP release supports the March 25, 2022 close, joint KKR/GIP acquisition, value and delisting."
+    },
+    {
+      "url": "https://www.lobbyregister.bundestag.de/media/b7/fe/754295/256920001-Finaler-Bericht-mit-QES.pdf",
+      "finalUrl": "https://www.lobbyregister.bundestag.de/media/b7/fe/754295/256920001-Finaler-Bericht-mit-QES.pdf",
+      "status": "OPEN_PDF_PAGE_VERIFIED",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 1169809,
+      "contentSha256": "f0c1eebb42dce0921675c2f0db686607ef8349e0878fd2b888a7fe40c8cec2b7",
+      "pageEvidence": [
+        {
+          "page": 5,
+          "supports": "Cavalry Parent L.P. is the ultimate CyrusOne parent and its interests are held by an investor consortium including KKR & Co. and Global Infrastructure Management."
+        }
+      ],
+      "note": "The 37-page audited German filing was text-extracted and page 5 was rendered and visually inspected."
+    },
+    {
+      "url": "https://www.global-infra.com/additional-disclosures/",
+      "finalUrl": "https://www.global-infra.com/additional-disclosures/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 39827,
+      "contentSha256": "cdcd76af59bbcf9e3de81de72a949ffd2251a8cda306597073ef51f22ef56b43",
+      "note": "Official disclosure supports GIP's continued identity within BlackRock rather than a separate duplicate asset owner."
+    },
+    {
+      "url": "https://www.cyrusone.com/",
+      "finalUrl": "https://www.cyrusone.com/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 111639,
+      "contentSha256": "0baddae42a60a0e671aacac3b7be981a1b7ed49a9755350aafdac805423e99aa",
+      "note": "Company site supports current operating platform, markets and scale context."
+    },
+    {
+      "url": "https://www.reuters.com/legal/transactional/data-center-operator-cyrusone-plans-potential-2027-ipo-banks-pitch-roles-sources-2026-08-10/",
+      "finalUrl": "https://www.reuters.com/legal/transactional/data-center-operator-cyrusone-plans-potential-2027-ipo-banks-pitch-roles-sources-2026-08-10/",
+      "status": "BROWSER_VERIFIED_AFTER_HTTP_401",
+      "httpStatus": 401,
+      "mediaType": "text/html;charset=utf-8",
+      "bytes": 771,
+      "contentSha256": "87b6870e1873e75fcc8a86653e4419eb4ac473d90bfc137c1bbb5513d5aba254",
+      "browserSnapshotSha256": "55ffe0e5894aa72df8eefbc69c129c0304116cfb76f55074bee50585496f433b",
+      "note": "The visible Reuters page supports early-stage work toward a possible 2027 IPO and continued KKR/GIP ownership; no filed or signed deal was reported."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1553023/000119312512341645/d381409ds11.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1553023/000119312512341645/d381409ds11.htm",
+      "status": "BROWSER_VERIFIED_AFTER_HTTP_403",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 4817,
+      "contentSha256": "264154fdcf56b482ba5e6093019611daf00c13a9f2dae2925b2981450c459ac9",
+      "browserSnapshotSha256": "172f0cfe0acd8a2e44f1277c282170cff5c34a71f3ec06dab8a57dad2f4a1969",
+      "note": "The visible S-11 supports the 2010 Cincinnati Bell acquisition, public-company formation and operating history; it does not directly expose the asserted ABRY fund name."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allReturnedUrlsChecked": true,
+    "allEvidenceRowsChecked": true,
+    "deadUrlCount": 0,
+    "redirectCount": 0,
+    "browserBlockedButVerifiedCount": 3,
+    "primarySourceWorking": true,
+    "auditedPdfInspectedAtPageLevel": true,
+    "kkrCurrentOwnershipVerified": true,
+    "gipCurrentOwnershipVerified": true,
+    "blackrockSuccessorLabelResolved": true,
+    "exactSponsorSplitNotInferred": true,
+    "exploratoryIpoNotPending": true,
+    "identityResolved": true,
+    "activeOwnershipResolved": true,
+    "applicationBlocked": false
+  },
+  "modelEvidenceCorrections": [
+    "Do not create BlackRock as a separate CyrusOne owner; record GIP as the current fund manager/successor platform within BlackRock.",
+    "Do not infer equal or any exact KKR/GIP percentage because the consortium allocation is not publicly disclosed.",
+    "Do not treat exploratory 2027 IPO work as a signed pending transaction.",
+    "Do not structure the asserted 2007 ABRY fund identity from the returned S-11 alone; require a direct ownership source before application."
+  ],
+  "releaseRequirement": "Correct the existing CyrusOne record by adding current GIP ownership, replacing the inferred KKR Fund V attribution with the disclosed KKR vehicle stack, retaining undisclosed stakes, and keeping the exploratory IPO outside pending transactions."
+}
+

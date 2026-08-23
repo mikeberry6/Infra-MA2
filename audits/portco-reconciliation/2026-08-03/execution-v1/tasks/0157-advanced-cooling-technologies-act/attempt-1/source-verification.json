@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0157:advanced-cooling-technologies-act:3ea176a7",
+  "taskIndex": 157,
+  "companyName": "Advanced Cooling Technologies (ACT)",
+  "verifiedAt": "2026-08-19T05:22:55.000Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://hl.com/about-us/transactions/advanced-cooling-technologies-blackstone-energy-transition-partners/",
+      "finalUrl": "https://hl.com/about-us/transactions/advanced-cooling-technologies-blackstone-energy-transition-partners/",
+      "status": "OPEN_VIA_BROWSER",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 212,
+      "contentSha256": "d02032286070b4dd9d8fbd985a7bdca8af8edf52b89ff177db3bfcb2c8a9c43d",
+      "note": "Curl returned a minimal shell; independent browser retrieval opened the full adviser page and verified the May 19, 2026 close."
+    },
+    {
+      "url": "https://www.blackstone.com/news/press/blackstone-energy-transition-partners-announces-agreement-to-acquire-majority-stake-in-advanced-cooling-technologies/",
+      "finalUrl": "https://www.blackstone.com/news/press/blackstone-energy-transition-partners-announces-agreement-to-acquire-majority-stake-in-advanced-cooling-technologies/",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 5963,
+      "contentSha256": "a291da2e0d04cf6b651bcf4a6e2e08666c136e4d23c112934dc305a2e38ceabb",
+      "note": "Blackstone blocked curl, but independent browser retrieval opened the exact announcement."
+    },
+    {
+      "url": "https://www.ftc.gov/legal-library/browse/early-termination-notices/20260959",
+      "finalUrl": "https://www.ftc.gov/legal-library/browse/early-termination-notices/20260959",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 478,
+      "contentSha256": "d9dfb8ec7e6f9b4bb90519aee192d297dd93346b87834d3a90362326f1c7cfc4",
+      "note": "FTC blocked curl, but independent browser retrieval opened the exact early-termination notice and BETP IV identity."
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/blackstone-advanced-cooling-technologies",
+      "finalUrl": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/blackstone-advanced-cooling-technologies",
+      "status": "OPEN_REDIRECTED",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 108933,
+      "contentSha256": "b62e7904fa71d61aff55bc5660cf20518b4114e068338e748326f01fd7edc129",
+      "note": "ACCC permanently normalized the path; final page opened by curl and was hash-captured."
+    },
+    {
+      "url": "https://www.blackstone.com/people/david-foley/",
+      "finalUrl": "https://www.blackstone.com/people/david-foley/",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 5487,
+      "contentSha256": "268acce73fbe3f9d83ed3e48794a26367a6f7c2775f9a9f7756fe8b748cddb59",
+      "note": "Blackstone profile blocked curl, but independent browser retrieval opened it."
+    },
+    {
+      "url": "https://www.1-act.com/about/",
+      "finalUrl": "https://www.1-act.com/about/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 218285,
+      "contentSha256": "d865807560b759defab47451536eeeb5c726550a34381fbe93f780f3a49ab2ea",
+      "note": "Official ACT profile opened."
+    },
+    {
+      "url": "https://www.1-act.com/about/news/advanced-cooling-technologies-expands-manufacturing-capacity-to-support-growing-demand-in-space-defense-and-data-center-markets/",
+      "finalUrl": "https://www.1-act.com/about/news/advanced-cooling-technologies-expands-manufacturing-capacity-to-support-growing-demand-in-space-defense-and-data-center-markets/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 209487,
+      "contentSha256": "1477539304308070b6f985bea7c1f588876d93b4855d80ab2f4f1f7a37813fae",
+      "note": "Official ACT capacity-expansion page opened."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allEvidenceRowsChecked": true,
+    "allCoreClaimsHaveOpenOrBrowserVerifiedEvidence": true,
+    "deadUrlCount": 0,
+    "redirectConcernCount": 1
+  },
+  "releaseRequirement": "Use the ACCC final URL and reopen every selected source against a fresh production snapshot before any proposal or mutation."
+}

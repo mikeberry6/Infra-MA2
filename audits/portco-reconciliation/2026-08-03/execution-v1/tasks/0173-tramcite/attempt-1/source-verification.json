@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0173:tramcite:9155b156",
+  "taskIndex": 173,
+  "companyName": "TramCité",
+  "verifiedAt": "2026-08-19T07:20:23.541Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://cdpqinfra.com/sites/cdpqinfrad8/files/medias/img/B8_TramCite/20241205-025_Entente%20CPDPi.pdf",
+      "finalUrl": "https://cdpqinfra.com/sites/cdpqinfrad8/files/medias/img/B8_TramCite/20241205-025_Entente%20CPDPi.pdf",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 727619,
+      "contentSha256": "9188b1dea4214526ea0c719faa141d80ab02fc161a156fd8b6961932576be98c",
+      "note": "Government-CDPQ Infra framework agreement PDF opened and supports mandate, conditional financing and asset-ownership allocation."
+    },
+    {
+      "url": "https://cdpqinfra.com/sites/cdpqinfrad8/files/2025-05/Entente_gestion_interfaces_TramCite-2025.pdf",
+      "finalUrl": "https://cdpqinfra.com/sites/cdpqinfrad8/files/2025-05/Entente_gestion_interfaces_TramCite-2025.pdf",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 1463583,
+      "contentSha256": "f15597ba1a44184b3ffe2fb4cee55d50e6762acd0a1dba8528b5d7f1e2f79e28",
+      "note": "Interface agreement PDF opened and supports project governance and delivery roles."
+    },
+    {
+      "url": "https://cdpqinfra.com/en/projects/tramcite",
+      "finalUrl": "https://cdpqinfra.com/en/projects/tramcite",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 39996,
+      "contentSha256": "b9a85438a27a95c2472340d9650bda20dcb292c4e7c14b2ee86461405bf26cca",
+      "note": "Current CDPQ Infra project page opened directly."
+    },
+    {
+      "url": "https://tramcite.info/fr/actualite/un-partenariat-est-cree-pour-realiser-le-tramcite-quebec",
+      "finalUrl": "https://tramcite.info/fr/actualite/un-partenariat-est-cree-pour-realiser-le-tramcite-quebec",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 52382,
+      "contentSha256": "2dae6ada1b9d306d804d15090c81dd4615aae6501313ded4fe37d1971ea9eb6a",
+      "note": "Project partnership announcement opened directly and supports public-sector ownership/delivery structure."
+    },
+    {
+      "url": "https://cdpqinfra.com/en/news/pressreleases/tramcite-announces-selected-consortia-for-the-civil-and-systems-contracts",
+      "finalUrl": "https://cdpqinfra.com/en/news/pressreleases/tramcite-announces-selected-consortia-for-the-civil-and-systems-contracts",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 36073,
+      "contentSha256": "de74ff5063bc0a97a91ab446a74f9e0883e5628ffec9cecb00b44a015190c6eb",
+      "note": "Selected-consortia announcement opened and supports procurement progress without an ownership transfer."
+    },
+    {
+      "url": "https://www.atkinsrealis.com/en/media/press-releases/2026/2026-07-16",
+      "finalUrl": "https://www.atkinsrealis.com/en/media/press-releases/2026/2026-07-16",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 4576,
+      "contentSha256": "dc8d1e9f82eed1326235316d7855881ede1dd3f3984493bf33da2e7b95b9e03c",
+      "note": "AtkinsRéalis blocked curl but independently rendered in the browser and supported the systems/rail contract award."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allEvidenceRowsChecked": true,
+    "allCoreClaimsHaveOpenOrBrowserVerifiedEvidence": true,
+    "deadUrlCount": 0,
+    "redirectConcernCount": 0
+  },
+  "releaseRequirement": "Exclude TramCité as a CDPQ-owned PortCo; preserve it only as a public transit project/context record if product policy allows, and do not turn conditional future CDPQ financing into ownership or a pending equity transaction."
+}
+

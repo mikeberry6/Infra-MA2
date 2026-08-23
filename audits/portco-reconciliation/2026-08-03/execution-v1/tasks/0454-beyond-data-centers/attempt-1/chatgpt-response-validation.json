@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "runId": "portco-research-staging-2026-08-19",
+  "taskId": "ledger:0454:beyond-data-centers:aa1b4081",
+  "taskIndex": 454,
+  "validatedAt": "2026-08-22T15:43:32.652Z",
+  "conversationUrl": "https://chatgpt.com/c/6a89c0cc-5560-83ea-9017-80336f96e36e",
+  "requiredTopLevelKeys": [
+    "asOfDate",
+    "requestedCompany",
+    "requestedManagers",
+    "decision",
+    "confidence",
+    "rationale",
+    "identityResolution",
+    "ownershipResolution",
+    "operatingResolution",
+    "acquisitionExitCheck",
+    "milestones",
+    "evidence",
+    "beforeAfterChanges",
+    "excludedOrDuplicateCandidates",
+    "unresolvedQuestions",
+    "recommendedListAction"
+  ],
+  "initialResponse": {
+    "valid": false,
+    "fencedJsonPresent": false,
+    "jsonParsed": false,
+    "markdownReviewPresent": false,
+    "requiredTopLevelKeysPresent": false,
+    "responseSha256": "9419d76a1a85427c148772f9614683bfcc496991b96acf8a434caafb0ccbdeea",
+    "errors": [
+      "Initial generation completed source research but stalled before emitting the required contract packet."
+    ]
+  },
+  "repair": {
+    "count": 1,
+    "limit": 1,
+    "submittedAt": "2026-08-22T15:41:49.730Z",
+    "completedAt": "2026-08-22T15:42:25.000Z",
+    "valid": true,
+    "responseSha256": "6307a012bbf724cbded3caabe05b1e3cf3a7ff35bcb73fb292b6ad6383a52937",
+    "errors": []
+  },
+  "finalResponse": {
+    "characterCount": 3311,
+    "fencedJsonPresent": false,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "decision": "DEFERRED",
+    "confidence": "LOW",
+    "evidenceCount": 2,
+    "currentOwnerCount": 0,
+    "unresolvedOwnerCount": 1,
+    "pendingOwnershipTransactionCount": 0,
+    "primaryEvidenceCount": 1,
+    "nestedOwnerKeysExact": true,
+    "pendingKeysExact": true,
+    "directWafraOwnershipUnresolved": true,
+    "withinOriginalCharacterLimit": true,
+    "withinEvidenceLimit": true,
+    "withinMilestoneLimit": true,
+    "result": "PASS_WITH_SOURCE_HEALTH_AND_SUBSTANTIVE_OVERRIDES"
+  },
+  "valid": true,
+  "errors": [],
+  "repairsUsed": 1,
+  "independentSourceVerification": "source-verification.json"
+}

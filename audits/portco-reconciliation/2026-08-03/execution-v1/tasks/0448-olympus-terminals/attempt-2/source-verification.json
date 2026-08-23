@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0448:olympus-terminals:280295ff",
+  "taskIndex": 448,
+  "companyName": "Olympus Terminals",
+  "verifiedAt": "2026-08-22T22:10:28.000Z",
+  "summary": {
+    "modelCitationUrls": 6,
+    "working": 4,
+    "browserOrIndexerVerified": 2,
+    "dead": 0,
+    "materialModelCorrections": 0
+  },
+  "sources": [
+    {
+      "label": "TPG Q2 2024 transcript",
+      "url": "https://shareholders.tpg.com/static-files/8ab43bae-d54c-4ca4-8cbb-7f1b7a898765",
+      "finalUrl": "https://shareholders.tpg.com/static-files/8ab43bae-d54c-4ca4-8cbb-7f1b7a898765",
+      "httpStatus": null,
+      "mediaType": "application/pdf",
+      "pageCount": 22,
+      "contentSha256": null,
+      "observedStatus": "WEB_INDEXED_AND_VERIFIED",
+      "note": "Direct curl transport repeatedly failed at the HTTP/2 layer, but the current web parser opened all 22 pages. The transcript explicitly separates Rise Climate's climate private-equity strategy from the then-future Transition Infrastructure fund and identifies Olympus under Rise Climate."
+    },
+    {
+      "label": "TPG deal release",
+      "url": "https://www.tpg.com/news-and-insights/tpg-rise-climate-to-acquire-olympus-terminals-leading-renewable-fuels-logistics-provider",
+      "finalUrl": "https://www.tpg.com/news-and-insights/tpg-rise-climate-to-acquire-olympus-terminals-leading-renewable-fuels-logistics-provider",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "byteLength": 105638,
+      "contentSha256": "247cb7ebe9082aa738cacffa0653cbebd1906c6fe56b94e7b802c707ce587da4",
+      "observedStatus": "WORKING",
+      "note": "Direct TPG release supports the signed acquisition, sellers and operating-asset description."
+    },
+    {
+      "label": "Kirkland biography",
+      "url": "https://www.kirkland.com/lawyers/h/harezlak-amber",
+      "finalUrl": "https://www.kirkland.com/lawyers/h/harezlak-amber",
+      "httpStatus": 403,
+      "mediaType": "browser-rendered text/html",
+      "byteLength": 24175,
+      "contentSha256": "8186cd5f8d5abb1cfaa549dd9758952dcef3e3ca7bd68fedbaafeb6cb8cc061b",
+      "observedStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "note": "Direct curl was denied, but the browser rendered the professional biography and its completed Olympus purchase matter."
+    },
+    {
+      "label": "2021 company release",
+      "url": "https://www.prnewswire.com/news-releases/investor-group-announces-acquisition-of-chemoil-terminals-301448040.html",
+      "finalUrl": "https://www.prnewswire.com/news-releases/investor-group-announces-acquisition-of-chemoil-terminals-301448040.html",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "byteLength": 196056,
+      "contentSha256": "b7376312613d9b3fae4ed3e4b3b902c26c5ff1be7e97a10693116741038f77b4",
+      "observedStatus": "WORKING",
+      "note": "Transaction-party release supports the Chemoil acquisition, Olympus rename and 2021 consortium."
+    },
+    {
+      "label": "Intrepid strategy",
+      "url": "https://www.intrepidfp.com/investment-management",
+      "finalUrl": "https://www.intrepidfp.com/investment-management",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "byteLength": 26119,
+      "contentSha256": "48ae1108e40cae10d32df78d185e7b2d9500011418b5596632db02bfbf0255ff",
+      "observedStatus": "WORKING",
+      "note": "Current Intrepid strategy page supports its historical terminal and storage infrastructure mandate."
+    },
+    {
+      "label": "SEC 2024 10-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1837532/000095017025038785/ck0001837532-20241231.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1837532/000095017025038785/ck0001837532-20241231.htm",
+      "httpStatus": 200,
+      "mediaType": "text/html inline XBRL",
+      "byteLength": 35370564,
+      "contentSha256": "faba55fbdeee1c6a7f875fb4bd243b25a3987e08ef11d70a7909d30edf9e0b4b",
+      "observedStatus": "WORKING",
+      "note": "SEC filing was retrieved with an SEC-compliant identifying user agent and supports the year-end Holdco II debt context."
+    }
+  ],
+  "modelEvidenceCorrections": [
+    "The Kirkland page is browser-blocked to curl but browser-verified.",
+    "The TPG transcript is web-indexed and fully parsed despite unstable direct curl transport; no raw-byte hash was available, which is recorded explicitly."
+  ],
+  "conclusion": "The direct TPG transcript and deal release establish that Olympus was acquired under Rise Climate's climate private-equity/impact strategy rather than its Transition Infrastructure fund. Completion evidence and the absence of a qualifying retained Intrepid owner support exclusion while preserving the historical ownership record."
+}

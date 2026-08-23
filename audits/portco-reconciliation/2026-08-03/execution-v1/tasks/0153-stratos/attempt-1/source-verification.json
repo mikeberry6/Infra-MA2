@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0153:stratos:4f72c101",
+  "taskIndex": 153,
+  "companyName": "STRATOS",
+  "verifiedAt": "2026-08-19T05:05:05.000Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://occidentalpetroleum.gcs-web.com/node/28471/html",
+      "finalUrl": "https://occidentalpetroleum.gcs-web.com/node/28471/html",
+      "status": "BROWSER_BLOCKED_PENDING_RELEASE_REOPEN",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 410,
+      "contentSha256": "09b752824ae167d48e18932157975a452876089d12a8bd8140aad7a9ab0dd30a",
+      "note": "Investor-hosted 2Q26 filing blocked direct curl and could not be independently opened by the secondary browser; mandatory reopen before release."
+    },
+    {
+      "url": "https://www.oxy.com/news/news-releases/occidental-and-blackrock-form-joint-venture-to-develop-stratos-the-worlds-largest-direct-air-capture-plant/",
+      "finalUrl": "https://www.oxy.com/news/news-releases/occidental-and-blackrock-form-joint-venture-to-develop-stratos-the-worlds-largest-direct-air-capture-plant/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 49942,
+      "contentSha256": "753207058e768c28fd2b08b65be51825d75110638dd69c7602d95fe8879e55b2",
+      "note": "Official Oxy/BlackRock JV announcement opened."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/797468/000079746824000095/oxy-20240331.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/797468/000079746824000095/oxy-20240331.htm",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 4819,
+      "contentSha256": "5b619363c5048608f8d81682c5cefae37072c40584d8358d76926cf52373eaa8",
+      "note": "SEC blocked curl, but independent browser retrieval opened the exact filing."
+    },
+    {
+      "url": "https://www.kirkland.com/lawyers/b/baird-maxwell",
+      "finalUrl": "https://www.kirkland.com/lawyers/b/baird-maxwell",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 4546,
+      "contentSha256": "4bd0e2d1b577766d5f4c7e9a2354afa90cb18c6941cf9a27948bf7bcff4920f2",
+      "note": "Kirkland blocked curl, but independent browser retrieval opened the exact lawyer page."
+    },
+    {
+      "url": "https://www.blackrock.com/corporate/newsroom/media/press-releases/blackrock-completes-acquisition-of-global-infrastructure-partners",
+      "finalUrl": "https://www.blackrock.com/corporate/newsroom/media/press-releases/blackrock-completes-acquisition-of-global-infrastructure-partners",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 200248,
+      "contentSha256": "d6a763f3df142d947a6de7b0b205225642704fc364c01d6c7e24067bc8bc7bf3",
+      "note": "BlackRock-GIP manager acquisition page opened."
+    },
+    {
+      "url": "https://www.1pointfive.com/projects/stratos",
+      "finalUrl": "https://www.1pointfive.com/projects/stratos",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 221242,
+      "contentSha256": "c0d8bba62f0f3203dc333bf7f35d0284d1a72395a7de6ebc179b320c48483a2b",
+      "note": "Official STRATOS project page opened."
+    },
+    {
+      "url": "https://www.epa.gov/newsreleases/epa-issues-final-permits-geologic-sequestration-carbon-dioxide-texas",
+      "finalUrl": "https://www.epa.gov/newsreleases/epa-issues-final-permits-geologic-sequestration-carbon-dioxide-texas",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 55993,
+      "contentSha256": "51b6bd4208f2d7cecf2d7614fe86fb9cd385daff1e4690abc1c75b33dc09bfb0",
+      "note": "EPA permit release opened."
+    },
+    {
+      "url": "https://www.1pointfive.com/news/1pointfive-holds-groundbreaking",
+      "finalUrl": "https://www.1pointfive.com/news",
+      "status": "REDIRECTED_PENDING_RELEASE_REOPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 142240,
+      "contentSha256": "1c5822d556ceb603d036fbd7efcabcc19746bfd95a6add2555ef9b0acd0392b2",
+      "note": "Historical URL now redirects to the news index; use an archived or replacement direct source before release."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allEvidenceRowsChecked": true,
+    "deadUrlCount": 0,
+    "blockedPendingReleaseReopenCount": 1,
+    "redirectedPendingReleaseReopenCount": 1,
+    "stagedResearchAcceptable": true
+  },
+  "releaseRequirement": "Reopen the current 2Q26 filing and replace or archive the redirected groundbreaking URL before any proposal or mutation."
+}

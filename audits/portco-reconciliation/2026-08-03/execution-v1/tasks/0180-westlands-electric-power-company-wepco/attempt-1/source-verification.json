@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0180:westlands-electric-power-company-wepco:952fb626",
+  "taskIndex": 180,
+  "companyName": "Westlands Electric Power Company (WEPCO)",
+  "verifiedAt": "2026-08-19T09:14:45.971Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1765107/000176510726000008/cim-20260331.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1765107/000176510726000008/cim-20260331.htm",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 4819,
+      "contentSha256": "26a7a9578681667f3b5b5020cd986461aabbb5d4bb1cc30339d12a9cfc486667",
+      "note": "SEC blocked curl but rendered fully in the browser; Permanent Power/WEPCO identity and ownership text were present. Model purpose: Rename, ownership and control."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1765107/000176510725000024/cim-20250929.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1765107/000176510725000024/cim-20250929.htm",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 4819,
+      "contentSha256": "7ab712bfa3d4809ad09ca0c2d4b52b11093dfa1575fc8bdc3cc011a0a475f954",
+      "note": "SEC blocked curl but rendered fully in the browser; Permanent Power/WEPCO transaction text was present. Model purpose: Contribution dates and closed structure."
+    },
+    {
+      "url": "https://www.cimgroup.com/press-releases/cim-group-launches-permanent-power-company-announces-power-purchase-agreement-and-400-million-financing-commitment",
+      "finalUrl": "https://www.cimgroup.com/press-releases/cim-group-launches-permanent-power-company-announces-power-purchase-agreement-and-400-million-financing-commitment",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 111200,
+      "contentSha256": "4805b0368078560695f4d5c62dde3fca178758970aa8fd0c2decd4306bc3e77d",
+      "note": "Opened directly. Model purpose: Current platform, scope and capacity."
+    },
+    {
+      "url": "https://www.cimgroup.com/press-releases/cim-groups-permanent-power-company-closes-approximately-600m-construction-financing-facility-for-grape-solar-and-energy-storage-project",
+      "finalUrl": "https://www.cimgroup.com/press-releases/cim-groups-permanent-power-company-closes-approximately-600m-construction-financing-facility-for-grape-solar-and-energy-storage-project",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 109276,
+      "contentSha256": "4ead762eaad1d36a37e611fcba0e12231d9e4193fb6d62b10721f0548976b5e9",
+      "note": "Opened directly. Model purpose: Financing close and project boundary."
+    },
+    {
+      "url": "https://www.cimgroup.com/press-releases/cim-groups-permanent-power-company-appoints-steve-vavrik-as-chief-executive-officer",
+      "finalUrl": "https://www.cimgroup.com/press-releases/cim-groups-permanent-power-company-appoints-steve-vavrik-as-chief-executive-officer",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 109812,
+      "contentSha256": "2948e91a19372fcd0192bbe6b0ada5e241dfcda6a3ddcacc5b7034b80960b16a",
+      "note": "Opened directly. Model purpose: Latest active-status check."
+    },
+    {
+      "url": "https://www.cimgroup.com/press-releases/cim-group-celebrates-completion-and-commercial-operation-of-aquamarine-250-megawatt-solar-photovoltaic-project-within-westlands-solar-park",
+      "finalUrl": "https://www.cimgroup.com/press-releases/cim-group-celebrates-completion-and-commercial-operation-of-aquamarine-250-megawatt-solar-photovoltaic-project-within-westlands-solar-park",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 113193,
+      "contentSha256": "5d2b4889cb9793784c2b136c3015ca463a57a8231e418402832dda8bc8826f51",
+      "note": "Opened directly. Model purpose: WSP/Aquamarine asset boundary."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allEvidenceRowsChecked": true,
+    "allCoreClaimsHaveOpenOrBrowserVerifiedEvidence": true,
+    "deadUrlCount": 0,
+    "browserBlockedButVerifiedCount": 2,
+    "redirectConcernCount": 0
+  },
+  "releaseRequirement": "Correct the existing WEPCO record to Permanent Power Company, preserve WEPCO as a former-name alias, retain CIM ownership with the disclosed 66.7%/33.3% split, and do not create separate PortCos for Westlands Solar Park or its underlying projects."
+}

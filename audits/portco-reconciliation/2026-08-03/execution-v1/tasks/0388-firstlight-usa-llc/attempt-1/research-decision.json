@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0388:firstlight-usa-llc:61bc946d",
+  "sequence": 388,
+  "asOfDate": "2026-08-19",
+  "companyName": "FirstLight USA, LLC",
+  "decision": "PROPOSED_NEW",
+  "confidence": "HIGH",
+  "stagingDisposition": "STAGED_VALIDATED",
+  "applicationBlocked": false,
+  "rationale": "FirstLight Power's U.S. operations form one manager-level power platform. ECP created the platform in November 2006, GDF SUEZ acquired it in December 2008, and PSP completed its 100% acquisition on June 1, 2016. PSP signed a sale of the U.S. operations to Hull Street Energy on May 19, 2026, but FERC EC26-110 remained pending as of the cutoff; PSP therefore remains the current legal owner and Hull Street is pending only.",
+  "recommendedChanges": [
+    "Create one canonical FirstLight Power U.S. platform record; use the requested FirstLight USA, LLC identity only if that exact legal name is preserved by the canonical repository convention.",
+    "Record ECP/Energy Capital Partners I as former owner from November 2006 to December 29, 2008; do not invent an exact November 1 entry date.",
+    "Record GDF SUEZ/ENGIE as former 100% owner from December 29, 2008 to June 1, 2016.",
+    "Record PSP Investments as the active 100% owner from June 1, 2016.",
+    "Record Hull Street Energy Partners III as a signed pending incoming owner, not an active owner.",
+    "Do not merge unrelated FirstLight Fiber or separately count subsidiary generation assets."
+  ],
+  "unresolvedQuestions": [
+    "The exact internal reorganization date from PSP H2O FL USA LLC to the current FirstLight Holding/PSP FL USA chain is not publicly disclosed.",
+    "The Hull Street closing date, post-closing top company and any platform combination remain unresolved because the sale was unclosed at the cutoff."
+  ],
+  "unresolvedItemsAreNoncriticalDisclosureGaps": true,
+  "proposalGenerationAllowed": true,
+  "sourceVerificationPassed": true,
+  "fieldCorrectionRequired": true,
+  "acceptedResponseSha256": "c3ff9fe5bd6706d8104e7acee8a2174e5ea9a56bf40002063998870992329d91"
+}

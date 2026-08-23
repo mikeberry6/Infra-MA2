@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0277:coolco:3d977a11",
+  "taskIndex": 277,
+  "verifiedAt": "2026-08-20T15:43:11.000Z",
+  "allReturnedUrlsChecked": true,
+  "summary": {
+    "urlCount": 7,
+    "working": 4,
+    "browserBlockedButVerified": 3,
+    "dead": 0
+  },
+  "sources": [
+    {
+      "url": "https://harrisonst.com/harrison-street-continues-to-expand-investments-for-social-infrastructure-fund/",
+      "finalUrl": "https://harrisonst.com/wp-content/uploads/2025/06/2019-i3-Harrison-Street-continues-to-expand-investments-for-social-infrastructure-fund.pdf",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "blockedResponseBytes": 5491,
+      "blockedResponseSha256": "79207e575f94553be73962f4b75a01c07356f9727768c7f3fb583e45ec02f379",
+      "resolvedPdfBytes": 280872,
+      "resolvedPdfSha256": "5dd9f041b347635f3016b0c81b07849c0f4c96a409391323500595588590d7ad",
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED_PDF",
+      "pageCount": 2,
+      "claimCheck": "Browser navigation resolved the archived article to a two-page PDF. Page 1 was rendered and visually inspected; it states Harrison Street had recently acquired ISQ CoolCo on behalf of the Harrison Street Social Infrastructure Fund and names I Squared Capital as seller."
+    },
+    {
+      "url": "https://www.ever-greenenergy.com/our-work/coolco/",
+      "finalUrl": "https://www.ever-greenenergy.com/our-work/coolco/",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 249693,
+      "sha256": "4bec31844926582e64dee3e617e869d0339726f78f050e34a5e4ce30f4740a00",
+      "health": "WORKING",
+      "claimCheck": "Current operator page states CoolCo was purchased by Harrison Street in 2019, has served Cincinnati since 1997, and operates central and satellite plants capable of more than 10,000 tons of cooling."
+    },
+    {
+      "url": "https://2030districts.org/cincinnati/company/coolco-cincinnati-district-energy/",
+      "finalUrl": "https://2030districts.org/cincinnati/company/coolco-cincinnati-district-energy/",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "blockedResponseBytes": 4544,
+      "blockedResponseSha256": "6214262504080f18099c0843a1d25466bdcfea02402206adf2a1242b8d5f417a",
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "claimCheck": "Independent page extraction verified that CoolCo – Cincinnati District Energy points to coolco.com and describes the same Cincinnati CBD system, 1997 operating start, two-plant configuration and 10,000-ton capacity."
+    },
+    {
+      "url": "https://mi-psc.my.site.com/sfc/servlet.shepherd/version/download/068t0000000vFVrAAM",
+      "finalUrl": "https://mi-psc.my.site.com/sfc/servlet.shepherd/version/download/068t0000000vFVrAAM",
+      "httpStatus": 200,
+      "mediaType": "application/pdf; charset=UTF-8",
+      "bytes": 1119269,
+      "sha256": "2dea5d28ea52c9f4aea2d4046f7fc75de9cb5c09c47af2489f25b164f0fdfe94",
+      "health": "WORKING_PDF_VERIFIED",
+      "pageCount": 21,
+      "claimCheck": "Downloaded Michigan PSC filing was hashed and text-inspected. Page 7 states DTE CoolCo, LLC was wholly owned by DTE Energy Services, operated the Cincinnati CBD chilled-water plant and was sold effective June 2, 2014."
+    },
+    {
+      "url": "https://www.infrapppworld.com/transaction/i-squared-capital-acquires-district-energy-business",
+      "finalUrl": "https://www.infrapppworld.com/transaction/i-squared-capital-acquires-district-energy-business",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 211701,
+      "sha256": "7306759ba31ee5b369a960bbbfd6ca7f54dfcf16ab59ce231fc9c968fd98f3da",
+      "health": "WORKING",
+      "claimCheck": "Transaction page states I Squared, through ISQ Global Infrastructure Fund, acquired a 100% interest in DTE CoolCo, LLC from DTE Energy Services."
+    },
+    {
+      "url": "https://app.g2xchange.com/companies/JCQMCNPGJCN7",
+      "finalUrl": "https://g2x.com/app/companies/JCQMCNPGJCN7",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "blockedResponseBytes": 5561,
+      "blockedResponseSha256": "1e4fe93c3e57802f5909c0f454efdbe1a565bfa68a3ab4b86d24d807b1779b24",
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "claimCheck": "Independent current-page extraction verified COOLCO LLC, Cincinnati location, UEI JCQMCNPGJCN7 and HS COOLCO, LLC as the SAM-derived division name. The page does not itself expose the asserted immediate parent, so that relationship remains a disclosure gap."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/899652/000089965202000035/formu5s2001.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/899652/000089965202000035/formu5s2001.htm",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 429758,
+      "sha256": "5ae39442aa653e79204953a748ec26b2ad1556baa5ae1a463ff63797982be02e",
+      "health": "WORKING",
+      "claimCheck": "SEC Form U5S identifies Trigen-Cinergy Solutions of Cincinnati, LLC with a 51% Cinergy-system interest and references its articles of organization in the 1998 annual filing; later transition details remain incomplete."
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0258:plug-power-fuel-cell-asset-spvs:70c16186",
+  "taskIndex": 258,
+  "companyName": "Plug Power Fuel Cell Asset SPVs",
+  "verifiedAt": "2026-08-20T09:08:37.972Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1093691/000110465917046148/a17-17059_1ex10d3.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1093691/000110465917046148/a17-17059_1ex10d3.htm",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 186262,
+      "contentSha256": "6db552b22cf139396e7b7c106ae5094204709be010eb2ce8ca303bf567501d94",
+      "note": "SEC-filed amended master lease identifies the sale-leaseback entities, equipment-title structure and true-lease relationships."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1093691/000110465919019559/a19-7776_1ex10d1.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1093691/000110465919019559/a19-7776_1ex10d1.htm",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 591474,
+      "contentSha256": "080dbb7468788c46ea088f3ac3564e6738bd2256e9464738b9dd02800840105b",
+      "note": "SEC-filed 2019 agreement identifies borrowers, lender, advances, liens and remedies; it supports creditor exposure rather than equity ownership."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1093691/000155837020002267/plug-20191231x10k.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1093691/000155837020002267/plug-20191231x10k.htm",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 3917610,
+      "contentSha256": "5725a8cf86d726af77a6e3edfbc7151c9d034534b5a69b042b9fd1746b6ed76b",
+      "note": "Plug's 2019 10-K supports secured debt treatment and termination/repurchase of certain SLB II leases."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1093691/000155837022002620/plug-20211231x10k.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1093691/000155837022002620/plug-20211231x10k.htm",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 4116754,
+      "contentSha256": "d6997ce1732b778807a0aa65af4563a6864d96b9e796ac99938ec11b49f6dee3",
+      "note": "Plug's 2021 10-K supports later borrowings, interest and maturity terms, and covenant-waiver history without an equity conversion."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1093691/000155837023008801/plug-20230331x10q.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1093691/000155837023008801/plug-20230331x10q.htm",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 2618588,
+      "contentSha256": "b48c124eb08edea13982365b2ba88ec74dc1606a9edff0a38b891c0affb1e9af",
+      "note": "Plug's Q1 2023 10-Q confirms full repayment in December 2022."
+    },
+    {
+      "url": "https://www.energy.senate.gov/services/files/DAA421D7-2F87-4341-8FF4-E6DCFFE1E4DB",
+      "finalUrl": "https://www.energy.senate.gov/services/files/DAA421D7-2F87-4341-8FF4-E6DCFFE1E4DB",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 279317,
+      "contentSha256": "b853fbb44129b2ef08cfed7d6c0e1af5faa5d1fa605ad2f69175214299a74d48",
+      "pageCount": 3,
+      "verifiedPages": [
+        1
+      ],
+      "note": "Rendered page 1 states that Plug repaid Generate ahead of schedule, without early-termination penalties, on December 14, 2022; the letter cites a secondary item for that exact day."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1093691/000110465926093454/plug-20260630x10q.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1093691/000110465926093454/plug-20260630x10q.htm",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 2557364,
+      "contentSha256": "8b68a79ff674eca95730f2baf2f0731e768f1074aac88ffa6e1b7edfa04ec434",
+      "note": "Latest filed check through the cutoff discloses no continuing Generate loan, equity or asset-title exposure."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allReturnedUrlsChecked": true,
+    "allEvidenceRowsChecked": true,
+    "deadUrlCount": 0,
+    "redirectCount": 0,
+    "primarySourceWorking": true,
+    "pdfPageLevelVerificationCompleted": true,
+    "genericIdentityResolvedAsInvalid": true,
+    "historicalSaleLeasebackOwnershipVerified": true,
+    "securedLoanDebtOnlyVerified": true,
+    "loanRepaymentVerified": true,
+    "laterGenerateEquityConversionOrForeclosureNotFound": true,
+    "currentGenerateOwnershipNotFound": true,
+    "residualHistoricalTitleDispositionResolved": false,
+    "identityResolved": true,
+    "activeOwnershipResolved": true,
+    "applicationBlocked": false
+  },
+  "modelEvidenceCorrections": [
+    "Do not treat the 2019-2022 Generate secured loan or its lender SPVs as equity or asset ownership.",
+    "Do not keep a generic active Plug Power Fuel Cell Asset SPVs record because no single legal entity matches it.",
+    "Preserve Generate's genuine 2016-2019 equipment-title history only through the named lessor vehicles and mark it historical unless residual title is directly proved.",
+    "Treat the exact December 14, 2022 date as government-correspondence evidence that cites a secondary source; the SEC filing directly confirms the month and full repayment."
+  ],
+  "releaseRequirement": "The research supports excluding and retiring the generic active row. Historical lessors may be retained separately if the ledger needs realized asset-ownership lineage, but they must not be represented as current without direct residual-title evidence."
+}

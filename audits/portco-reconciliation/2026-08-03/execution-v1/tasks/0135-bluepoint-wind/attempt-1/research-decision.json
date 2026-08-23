@@ -1,0 +1,190 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RESEARCH_DECISION",
+  "taskId": "ledger:0135:bluepoint-wind:3ec3aaa5",
+  "taskIndex": 135,
+  "companyName": "Bluepoint Wind",
+  "asOfDate": "2026-08-19",
+  "stagedAt": "2026-08-19T03:30:34.566Z",
+  "researchOnly": true,
+  "mutationAuthorized": false,
+  "proposalRequiresFreshProductionSnapshot": true,
+  "releaseRequiresFreshAcquisitionExitCheck": true,
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "Bluepoint Wind",
+    "requestedManagers": [
+      "Global Infrastructure Partners",
+      "BlackRock"
+    ],
+    "decision": "PROPOSED_CORRECTION",
+    "confidence": "HIGH",
+    "rationale": "Bluepoint is a dedicated U.S. leaseholding LLC. Its parent is 50:50 owned by OW North America and GIP's Seaway vehicle. BlackRock owns the GIP manager, not a separate project stake. The unbuilt project is under a conditional lease-termination settlement.",
+    "identityResolution": {
+      "canonicalId": "cmrxpjgj600yrivhex07hc3al",
+      "canonicalName": "Bluepoint Wind",
+      "legalEntity": "Bluepoint Wind, LLC; the settlement recital also uses Blue Point Wind, LLC",
+      "predecessor": "OW Ocean Winds East, LLC, also called Ocean Winds East or OW East",
+      "nameChangeDate": "2022-07-26",
+      "lease": "Bluepoint Wind, LLC directly holds OCS-A 0537",
+      "parent": "Bluepoint Winds Holdings, LLC",
+      "boundary": "Canonicalize the leaseholder/project; do not split out its predecessor, parent or Ocean Winds developer.",
+      "qualification": "QUALIFIES as a standalone U.S. project company; unbuilt and pending termination.",
+      "website": "https://bluepointwind.com/"
+    },
+    "ownershipResolution": {
+      "chain": "Bluepoint Wind, LLC <- Bluepoint Winds Holdings, LLC <- 50% OW North America LLC / 50% Seaway Energy Holdings, L.P.",
+      "owners": [
+        {
+          "manager": "Global Infrastructure Partners",
+          "organization": "Global Infrastructure Partners",
+          "fund": "NOT_PUBLICLY_DISCLOSED",
+          "vehicle": "Seaway Energy Holdings, L.P.",
+          "stake": "50% of Bluepoint Winds Holdings, LLC",
+          "announcementDate": "2022-02-25",
+          "entryDate": "2022-05-01",
+          "entryYear": 2022,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "ACTIVE_LEGAL_OWNER; TERMINATION_PENDING"
+        },
+        {
+          "manager": "Ocean Winds",
+          "organization": "Ocean Winds",
+          "fund": "50:50 EDPR/ENGIE joint venture",
+          "vehicle": "OW North America LLC",
+          "stake": "50% of Bluepoint Winds Holdings, LLC",
+          "announcementDate": "2022-02-25",
+          "entryDate": "2022-05-01",
+          "entryYear": 2022,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "ACTIVE_LEGAL_OWNER; TERMINATION_PENDING"
+        }
+      ],
+      "blackRock": "Overlap only: BlackRock acquired GIP on 2024-10-01; no separate Bluepoint stake is disclosed.",
+      "mubadala": "Mubadala bought an undisclosed interest within GIP's 50% in 2022; keep GIP attribution.",
+      "fund": "Seaway is verified; exact GIP fund/co-invest split is NOT_PUBLICLY_DISCLOSED."
+    },
+    "operatingResolution": {
+      "type": "Pre-construction offshore-wind lease/project",
+      "location": "New York Bight federal waters, 38 nm from New York and 53 nm from New Jersey",
+      "area": "71,522 acres / 289.4 km²",
+      "capacity": "Last concept: up to 2.4 GW; never built or operating",
+      "status": "NON_OPERATING; NO_CONSTRUCTION; SAP_REVIEW; CONDITIONAL_TERMINATION",
+      "counting": "Exclude from operating-capacity and active-build counts."
+    },
+    "acquisitionExitCheck": {
+      "entry": "No company acquisition found; the GIP/Ocean Winds partnership won the lease at BOEM's 2022 auction.",
+      "leaseAwardDate": "2022-02-23",
+      "leaseEffectiveDate": "2022-05-01",
+      "bonusBid": "US$765 million",
+      "laterEvents": "Mubadala entered GIP's block in 2022; BlackRock acquired GIP in 2024. Neither transferred Seaway's legal block.",
+      "settlement": "Signed 2026-04-27. Duties are suspended; DOI will cancel after investment verification, then seek reimbursement.",
+      "searchResult": "No cancellation letter, payment, lease transfer, block sale or dissolution found; no completed exit."
+    },
+    "milestones": [
+      {
+        "date": "2022-02-23",
+        "event": "OW Ocean Winds East won OCS-A 0537 for US$765 million."
+      },
+      {
+        "date": "2022-05-01/2022-07-26",
+        "event": "Lease became effective; lessee was renamed Bluepoint Wind, LLC."
+      },
+      {
+        "date": "2022-10-19/2024-10-01",
+        "event": "Mubadala entered GIP's block; BlackRock later acquired GIP."
+      },
+      {
+        "date": "2026-04-27",
+        "event": "Conditional termination signed; lease duties suspended pending completion."
+      }
+    ],
+    "evidence": [
+      {
+        "label": "BOEM settlement agreement",
+        "url": "https://www.boem.gov/renewable-energy/state-activities/bluepoint-settlement-agreement",
+        "purpose": "Identity, 50:50 owners, no construction and cancellation terms.",
+        "sourceTier": "GOVERNMENT_PRIMARY",
+        "workingStatus": "WORKING_PDF",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "BOEM project page",
+        "url": "https://www.boem.gov/renewable-energy/state-activities/bluepoint-wind-ocs-0537",
+        "purpose": "Current pending status, area, location and SAP stage.",
+        "sourceTier": "GOVERNMENT",
+        "workingStatus": "WORKING_CURRENT",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Interior agreement release",
+        "url": "https://www.doi.gov/pressreleases/interior-announces-two-historic-agreements-promote-affordable-reliable-energy",
+        "purpose": "Confirms each 50% owner, GIP/BlackRock overlap and project end.",
+        "sourceTier": "GOVERNMENT",
+        "workingStatus": "WORKING_CURRENT",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Bluepoint project page",
+        "url": "https://bluepointwind.com/the-project/",
+        "purpose": "50:50 structure, OW management role and 2.4 GW concept.",
+        "sourceTier": "PROJECT",
+        "workingStatus": "WORKING_STALE",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "GIP portfolio page",
+        "url": "https://www.global-infra.com/portfolio-page/bluepoint-wind/",
+        "purpose": "GIP lists Bluepoint as its unrealized joint venture with Ocean Winds.",
+        "sourceTier": "MANAGER",
+        "workingStatus": "WORKING_STALE",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "BlackRock acquisition closing",
+        "url": "https://www.blackrock.com/corporate/newsroom/media/press-releases/blackrock-completes-acquisition-of-global-infrastructure-partners",
+        "purpose": "BlackRock acquired GIP on 2024-10-01; GIP brand retained.",
+        "sourceTier": "MANAGER_PARENT",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Mubadala 2022 disclosure",
+        "url": "https://annual2022.mubadala.com/en/news/mubadala-invests-in-worlds-largest-private-offshore-wind-energy-developer",
+        "purpose": "Undisclosed co-investment within GIP's 50% interest.",
+        "sourceTier": "COINVESTOR",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "before": "GIP/BlackRock overlap unclear; record described active development.",
+      "after": "Keep one record; GIP 50% through Seaway, Ocean Winds 50%, BlackRock cross-reference only; never operating, termination pending."
+    },
+    "excludedOrDuplicateCandidates": [
+      "OW Ocean Winds East / Ocean Winds East / OW East: predecessor aliases.",
+      "Bluepoint Winds Holdings: holding parent, not another PortCo.",
+      "BlackRock: manager-parent overlap, not a separate project owner.",
+      "Skyborn Renewables: separate platform, not Bluepoint's parent."
+    ],
+    "unresolvedQuestions": [
+      "NONE_MATERIAL: identity, legal owners and pending status are resolved.",
+      "NOT_PUBLICLY_DISCLOSED: exact GIP fund and Mubadala percentage behind Seaway.",
+      "NOT_YET_OCCURRED_OR_DISCLOSED: settlement Effective Date, payment and final cancellation."
+    ],
+    "recommendedListAction": "RETAIN cmrxpjgj600yrivhex07hc3al. Keep GIP 50% through Seaway and Ocean Winds 50% through OW North America; do not add BlackRock separately. Set NON_OPERATING_PRECONSTRUCTION and SIGNED_PENDING_TERMINATION from 2026-04-27, with no exit date until cancellation or dissolution is evidenced. Exclude from operating and active-build counts."
+  },
+  "independentVerification": {
+    "evidenceUrlsChecked": 7,
+    "openSourceCount": 7,
+    "blockedSourceCount": 0,
+    "unavailableSourceCount": 0,
+    "recommendedPrimaryCount": 1,
+    "modelModeVerified": true
+  }
+}
+

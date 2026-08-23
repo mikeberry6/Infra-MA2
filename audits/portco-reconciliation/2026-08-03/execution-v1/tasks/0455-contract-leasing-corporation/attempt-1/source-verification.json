@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0455:contract-leasing-corporation:083d749b",
+  "taskIndex": 455,
+  "companyName": "Contract Leasing Corporation",
+  "verifiedAt": "2026-08-22T16:06:18.444Z",
+  "summary": {
+    "citationUrls": 3,
+    "working": 0,
+    "browserBlockedButVerified": 3,
+    "supplementalPrimarySources": 3,
+    "modelHealthOverrides": 3,
+    "materialFactualErrors": 2,
+    "schemaTypeErrors": 1
+  },
+  "sources": [
+    {
+      "label": "CLC acquisition announcement",
+      "url": "https://www.contractleasing.net/contract-leasing-corporation-announces-acquisition-by-wafra/",
+      "httpStatus": 403,
+      "observedStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verificationMethod": "direct indexed page after curl 403",
+      "note": "The August 2, 2022 company announcement states that funds advised by Wafra acquired CLC; founder, CEO and president Michael Goor remained a significant shareholder. It reports 15,700 trailer and chassis units and 13 branches/depots primarily east of the Mississippi."
+    },
+    {
+      "label": "Wafra professional profile",
+      "url": "https://www.wafra.com/our-people/edward-tsai/",
+      "httpStatus": 403,
+      "observedStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verificationMethod": "direct indexed page after curl 403",
+      "note": "The current page identifies Tsai as Wafra's head of real assets and infrastructure and a current CLC board member."
+    },
+    {
+      "label": "CLC company website",
+      "url": "https://www.contractleasing.net/",
+      "httpStatus": 403,
+      "observedStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verificationMethod": "direct indexed page after curl 403",
+      "note": "The current site identifies Mike Goor as founder and CEO and describes leasing, maintenance and nationwide fleet support. It does not support the repair response's claim of more than 30,000 units."
+    },
+    {
+      "label": "Wafra real assets and infrastructure strategy",
+      "url": "https://www.wafra.com/our-strategies/real-assets/",
+      "httpStatus": 403,
+      "observedStatus": "BROWSER_BLOCKED_BUT_VERIFIED_SUPPLEMENTAL",
+      "verificationMethod": "direct indexed page after curl 403",
+      "note": "Wafra currently lists Contract Leasing Corporation among select real-assets and infrastructure investments and describes it as U.S. trailing-equipment and intermodal-chassis leasing."
+    },
+    {
+      "label": "CLC president letter",
+      "url": "https://www.contractleasing.net/about/letter-from-the-president/",
+      "httpStatus": 403,
+      "observedStatus": "BROWSER_BLOCKED_BUT_VERIFIED_SUPPLEMENTAL",
+      "verificationMethod": "direct indexed page after curl 403",
+      "note": "Mike Goor's letter entering 2025 calls Wafra CLC's equity partner and says they continue to be excited about their future together, directly supporting current ownership continuity."
+    },
+    {
+      "label": "CLC about page",
+      "url": "https://www.contractleasing.net/about/",
+      "httpStatus": 403,
+      "observedStatus": "BROWSER_BLOCKED_BUT_VERIFIED_SUPPLEMENTAL",
+      "verificationMethod": "direct indexed page after curl 403",
+      "note": "The live team page identifies Mike Goor as CEO and Matt Goor as COO."
+    }
+  ],
+  "modelCorrections": [
+    "The retained founder and current CEO is Michael Goor, not Dennis T. Smith.",
+    "The directly supported acquisition-date fleet scale is approximately 15,700 units; the claimed more-than-30,000 figure is not supported by the cited company sources.",
+    "The pending-transaction evidenceUrls value is a string rather than the required array."
+  ],
+  "conclusion": "Primary evidence strongly supports the underlying PROPOSED_NEW signal, including a completed 2022 Wafra acquisition, a qualifying asset-owning leasing platform, retained founder ownership and current Wafra continuity. The single repaired ChatGPT packet nevertheless fails validation because it contains material identity and scale errors plus a schema type error; it cannot be accepted or converted into a proposal."
+}

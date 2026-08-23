@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0265:wecom-fiber:efb4f3b9",
+  "taskIndex": 265,
+  "companyName": "Wecom Fiber",
+  "verifiedAt": "2026-08-20T11:03:29.679Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://docs.fcc.gov/public/attachments/DA-24-820A1.pdf",
+      "finalUrl": "https://docs.fcc.gov/public/attachments/DA-24-820A1.pdf",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "application/pdf; charset=UTF-8",
+      "bytes": 434844,
+      "contentSha256": "bd615175df1bda129324296810759d7a7cb8463cc8babf078ccc6782592172da",
+      "pageEvidence": [
+        {
+          "page": 2,
+          "supports": "May 12, 2023 purchase agreement; 100% Holdco acquisition chain; Topco 77.83% SFA / 17.65% Simple II / 4.52% Newco; SFA GP 6.51% equity and 100% vote."
+        },
+        {
+          "page": 3,
+          "supports": "GIC and ADIA ultimate chains, FCC 36.38% indirect interests, and authorization only for non-controlling indirect interests."
+        }
+      ],
+      "note": "FCC final grant directly resolves the company-versus-parent boundary and prevents presenting Epsom's 46.74% of SFA as a 46.74% Wecom stake."
+    },
+    {
+      "url": "https://public.destinyhosted.com/yavapdocs/2025/BOS/20250917_1986/19761_Financial_Statements_-_Wecom_and_Subsidiaries.pdf",
+      "finalUrl": "https://public.destinyhosted.com/yavapdocs/2025/BOS/20250917_1986/19761_Financial_Statements_-_Wecom_and_Subsidiaries.pdf",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 3734367,
+      "contentSha256": "f7b8d70f3588c80b53446bc17c1665061e8bd78a6758581c0ab801b7d4ea052c",
+      "pageEvidence": [
+        {
+          "page": 10,
+          "supports": "Wecom LLC legal identity, Delaware form, subsidiaries and Arizona/Nevada service scope."
+        },
+        {
+          "page": 13,
+          "supports": "May 2023 acquisition by Searchlight WCM Holdco and deferred purchase-price treatment."
+        },
+        {
+          "page": 14,
+          "supports": "Subsequent events through June 19, 2025 and a $20 million 2025 member contribution."
+        }
+      ],
+      "renderedPages": [
+        10,
+        13,
+        14
+      ],
+      "note": "The audit PDF is image-only; key pages were rendered and visually inspected rather than relying on unavailable embedded text."
+    },
+    {
+      "url": "https://docs.fcc.gov/public/attachments/DOC-405049A1.txt",
+      "finalUrl": "https://docs.fcc.gov/public/attachments/DOC-405049A1.txt",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/plain; charset=UTF-8",
+      "bytes": 46371,
+      "contentSha256": "19817220a3966daba4a177401770d7191d55ea2d3e7f840a846f0c6824018ccb",
+      "note": "FCC consent notice supports the August 19, 2024 license-assignment approval without establishing a different ownership closing date."
+    },
+    {
+      "url": "https://wecomfiber.com/wecom-and-searchlight-capital-partners/",
+      "finalUrl": "https://wecomfiber.com/wecom-and-searchlight-capital-partners/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 705337,
+      "contentSha256": "c103a18491d5f0e8572dfcbfb6b38dc6e858a9e040924ada68fe206a1e5f0699",
+      "note": "Wecom's transaction announcement supports the May 2023 Searchlight investment and founder rollover context."
+    },
+    {
+      "url": "https://wecomfiber.com/wecom-fiber-names-kevin-stamey-chief-operating-officer-to-lead-arizona-fiber-buildout/",
+      "finalUrl": "https://wecomfiber.com/wecom-fiber-names-kevin-stamey-chief-operating-officer-to-lead-arizona-fiber-buildout/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 700115,
+      "contentSha256": "7b65c96bcb122f2485c1ed8d8a0709901eeb17eb6f979ecccb3eb2827b183600",
+      "note": "Current company release supports the active eight-county Arizona buildout and ongoing operations."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allReturnedUrlsChecked": true,
+    "allEvidenceRowsChecked": true,
+    "deadUrlCount": 0,
+    "redirectCount": 0,
+    "primarySourceWorking": true,
+    "pdfSourcesInspectedAtPageLevel": 2,
+    "imageOnlyAuditPagesRenderedForVisualConfirmation": 3,
+    "searchlightControlChainVerified": true,
+    "gicUpstreamNonvotingInterestVerified": true,
+    "adiaUpstreamNonvotingInterestVerified": true,
+    "companyLevelGicFortySixPointSevenFourRejected": true,
+    "noLaterOwnershipChangeFound": true,
+    "identityResolved": true,
+    "activeOwnershipResolved": true,
+    "applicationBlocked": false
+  },
+  "modelEvidenceCorrections": [
+    "Do not record GIC's 46.74% SFA interest as a 46.74% Wecom company stake.",
+    "Preserve Searchlight's controlling SFA-Topco-Holdco chain and keep Epsom/GIC and Platinum/ADIA as upstream nonvoting indirect interests.",
+    "Add Simple Broadband/ArmaVir and founder rollover interests only at their directly supported Topco level.",
+    "Do not create SFA, Topco, Holdco or LicenseCo as separate PortCos.",
+    "Separate the May 2023 acquisition from the August 2024 FCC consent and do not invent either consummation day."
+  ],
+  "releaseRequirement": "Correct the existing Wecom record in place with Searchlight as controlling owner, GIC and ADIA as upstream passive indirect investors, Simple Broadband and founders as minority Topco interests, and one canonical Wecom LLC/Wecom Fiber boundary. Do not store 46.74% as a direct Wecom stake."
+}

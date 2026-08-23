@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0154:the-aes-corporation:c65cb3c1",
+  "taskIndex": 154,
+  "companyName": "The AES Corporation",
+  "verifiedAt": "2026-08-19T05:11:10.000Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/874761/000119312526084157/d100078dex21.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/874761/000119312526084157/d100078dex21.htm",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 4819,
+      "contentSha256": "8c39d3692173f0746cea30ffe99c3459227849186b0c7a9b57bfc19e3fa6b697",
+      "note": "SEC blocked curl, but independent browser retrieval opened the exact merger agreement and verified Horizon Parent and sponsor vehicles."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/874761/000114036126026562/ef20076870_8k.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/874761/000114036126026562/ef20076870_8k.htm",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 4819,
+      "contentSha256": "bd9ee375dbfa033ef1adcd8889da3acd37da099a59bb3febd2def48c0236a4b9",
+      "note": "SEC blocked curl, but independent browser retrieval opened the exact June 2026 Form 8-K."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/874761/000087476126000144/R31.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/874761/000087476126000144/R31.htm",
+      "status": "BROWSER_BLOCKED_PENDING_RELEASE_REOPEN",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 4819,
+      "contentSha256": "96e5ee53a60d4debf09711a8162164dc10339c580ed2b639a9d787909513d521",
+      "note": "SEC fact page was blocked to curl and did not open in the secondary browser; mandatory reopen before release."
+    },
+    {
+      "url": "https://dps.ny.gov/event/comments-period-begins-horizon-merger-sub-inc-and-aes-corporation-petition-seeking",
+      "finalUrl": "https://dps.ny.gov/event/comments-period-begins-horizon-merger-sub-inc-and-aes-corporation-petition-seeking",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 31568,
+      "contentSha256": "ca770089420991d30552339422f3cb9c8a6377301343442adc43012980c1f535",
+      "note": "New York DPS open review page opened."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/874761/000087476126000063/aes-20251231.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/874761/000087476126000063/aes-20251231.htm",
+      "status": "BROWSER_BLOCKED_PENDING_RELEASE_REOPEN",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 4819,
+      "contentSha256": "8a5e1bc2689bdba5d908b9f3c52d3885a78add6f75801748584c386309d54520",
+      "note": "SEC 2025 Form 10-K was blocked to curl and did not open in the secondary browser; mandatory reopen before release."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/874761/000104746909001899/a2190712zex-3_1.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/874761/000104746909001899/a2190712zex-3_1.htm",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 4819,
+      "contentSha256": "228cb6d607ee980c1a5235d98b767c7047c11b45057e245c4118c7d369096ce0",
+      "note": "SEC blocked curl, but independent browser retrieval opened the exact certificate page."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allEvidenceRowsChecked": true,
+    "deadUrlCount": 0,
+    "blockedPendingReleaseReopenCount": 2,
+    "stagedResearchAcceptable": true,
+    "corePendingOwnershipSupportedByOpenOrBrowserVerifiedPrimaryEvidence": true
+  },
+  "releaseRequirement": "Reopen the Q2 merger note and AES 2025 Form 10-K against a fresh production snapshot before any proposal or mutation."
+}

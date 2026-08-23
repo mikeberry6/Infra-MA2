@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0273:1547-critical-systems-realty:8e267688",
+  "taskIndex": 273,
+  "linkedTaskIdsCovered": [],
+  "companyName": "1547 Critical Systems Realty",
+  "canonicalName": "1547 Critical Systems Realty",
+  "asOfDate": "2026-08-19",
+  "researchOnly": true,
+  "decision": "PROPOSED_CORRECTION",
+  "rawModelDecision": "PROPOSED_NEW",
+  "confidence": "MEDIUM_HIGH_WITH_NONCRITICAL_STAKE_AND_UMBRELLA_ENTITY_GAPS",
+  "responseSha256": "3af7cf38e957ad32c3cb30bdf814a65d014029b3b348ccc3b860ef6f2b22519b",
+  "sourceVerification": "source-verification.json",
+  "acceptedResponse": "chatgpt-accepted-response.txt",
+  "summary": "Correct the existing 1547 record to represent one Harrison Street–1547 multi-asset data-center and connectivity platform held through asset/company JVs and operated by 1547. Evidence supports active Harrison Street and 1547 participation from 2020, but not Harrison equity in corporate 1547, exact stakes, or one public umbrella entity. The ten named facilities are underlying assets to be resolved by their individual queue tasks rather than separately counted by default.",
+  "actionNormalization": "The model's PROPOSED_NEW label is normalized to PROPOSED_CORRECTION because task 273 is already target-bound to an existing canonical company and the proposed facts are a boundary and ownership correction, not a second company creation.",
+  "blockingQuestions": [],
+  "nonblockingDisclosureGaps": [
+    "Exact Harrison Street and 1547 stakes and Harrison Street fund are not publicly disclosed.",
+    "A single legal umbrella entity above the asset JVs is not publicly disclosed.",
+    "DRFortress founder rollover after the 2025 acquisition is not publicly disclosed.",
+    "The Chester County land buyer and closing date remain unresolved and are assigned to that project's individual task."
+  ],
+  "applicationBlocked": false
+}

@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0456:crescent-louisiana-midstream:599b6824",
+  "taskIndex": 456,
+  "companyName": "Crescent Louisiana Midstream",
+  "verifiedAt": "2026-08-22T16:43:09.000Z",
+  "summary": {
+    "citationUrls": 8,
+    "working": 5,
+    "workingRedirected": 2,
+    "browserBlockedButVerified": 3,
+    "genericOrNonEvidentiary": 2,
+    "materialModelCorrections": 2,
+    "supplementalPrimarySources": 3
+  },
+  "sources": [
+    {
+      "label": "S&P Ratings financing/ownership discussion",
+      "url": "https://www.spglobal.com/ratings/en/regulatory/article/-/view/type/HTML/id/3512918",
+      "httpStatus": 403,
+      "observedStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verificationMethod": "indexed direct page after curl 403",
+      "note": "The current 2026 S&P report identifies Crescent Midstream Intermediate Holdings as wholly owned by a holding company that is 68% Carlyle and 32% founder John Grier. It supports the manager-level platform boundary and current sponsor table, not Wafra ownership."
+    },
+    {
+      "label": "Crescent Midstream website",
+      "url": "https://www.crescentmidstream.com/",
+      "finalUrl": "https://crescentmidstream.com/",
+      "httpStatus": 200,
+      "observedStatus": "WORKING_REDIRECTED",
+      "verificationMethod": "direct page",
+      "note": "The company describes one Crescent Midstream platform providing crude-oil services across the Gulf of Mexico and Louisiana."
+    },
+    {
+      "label": "Crescent Midstream board",
+      "url": "https://www.crescentmidstream.com/about/board-of-directors/",
+      "finalUrl": "https://crescentmidstream.com/about/board-of-directors/",
+      "httpStatus": 200,
+      "observedStatus": "WORKING_MODEL_PURPOSE_CONTRADICTED",
+      "verificationMethod": "direct page",
+      "note": "The current board lists founder John Grier and Carlyle directors Ferris Hussein and Pete Taylor, but no Wafra representative. The model's claim that this page shows Wafra representation is false."
+    },
+    {
+      "label": "Wafra Michael Coleman profile",
+      "url": "https://www.wafra.com/our-people/michael-coleman-2/",
+      "httpStatus": 403,
+      "observedStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verificationMethod": "indexed direct page after curl 403",
+      "note": "Wafra says Coleman focuses on real assets and infrastructure and currently serves on the board of Crescent Louisiana Midstream. This supports a governance relationship only; it does not prove Wafra equity ownership, a vehicle, stake, or closing."
+    },
+    {
+      "label": "Louisiana Secretary of State search",
+      "url": "https://coraweb.sos.la.gov/CommercialSearch/CommercialSearch.aspx",
+      "httpStatus": 200,
+      "observedStatus": "WORKING_INTERACTIVE_NON_SPECIFIC",
+      "verificationMethod": "direct search page",
+      "note": "The generic registry search is live but the cited URL does not itself return a Crescent entity record, so it cannot support a specific identity claim without a captured result."
+    },
+    {
+      "label": "SEC EDGAR company filings",
+      "url": "https://www.sec.gov/edgar/browse/?CIK=1347652&owner=exclude",
+      "httpStatus": 200,
+      "observedStatus": "WORKING_INDIRECT",
+      "verificationMethod": "direct SEC page and indexed filings",
+      "note": "CorEnergy filings support the historical structure: Crescent Midstream was wholly owned by Crescent Midstream Holdings and CLM was a 70%-owned Crescent subsidiary. The generic browse URL should be replaced by the exact filing in any proposal."
+    },
+    {
+      "label": "FERC Monthly Infrastructure Report",
+      "url": "https://www.ferc.gov/sites/default/files/2026-01/November%20MIR%202025.pdf",
+      "httpStatus": 200,
+      "observedStatus": "WORKING_MODEL_TRANSACTION_REVERSED",
+      "verificationMethod": "direct PDF plus Federal Register notice 2025-17990",
+      "note": "The cited transaction is a proposed abandonment by sale from Kinetica Energy Express to Crescent Louisiana Midstream. The model reversed buyer and seller and therefore must not be used as an approved pending-transaction row."
+    },
+    {
+      "label": "Carlyle historical investment materials",
+      "url": "https://www.carlyle.com/",
+      "httpStatus": 403,
+      "observedStatus": "BROWSER_BLOCKED_GENERIC_NON_EVIDENTIARY",
+      "verificationMethod": "indexed corporate homepage after curl 403",
+      "note": "The generic Carlyle homepage contains no Crescent-specific transaction or ownership evidence."
+    },
+    {
+      "label": "Crescent Midstream operations",
+      "url": "https://crescentmidstream.com/operations/",
+      "httpStatus": 200,
+      "observedStatus": "WORKING_SUPPLEMENTAL",
+      "verificationMethod": "direct company page",
+      "note": "The company treats Crescent Louisiana Midstream as its onshore segment beneath the one Crescent platform and reports more than 1,200 pipeline miles and nearly 200 million barrels transported annually at platform level."
+    },
+    {
+      "label": "Federal Register notice 2025-17990",
+      "url": "https://public-inspection.federalregister.gov/2025-17990.pdf",
+      "httpStatus": 200,
+      "observedStatus": "WORKING_SUPPLEMENTAL",
+      "verificationMethod": "indexed official federal notice",
+      "note": "The notice expressly says Kinetica requested authorization to abandon by sale approximately 24.37 miles of pipeline to Crescent Louisiana Midstream, confirming the model's reversal."
+    },
+    {
+      "label": "Louisiana coastal permit P20260513",
+      "url": "https://www.dce.louisiana.gov/calendar/detail/2522/2050",
+      "httpStatus": 200,
+      "observedStatus": "WORKING_SUPPLEMENTAL",
+      "verificationMethod": "direct state page",
+      "note": "The July 2026 notice identifies CLM as applicant for approximately 9,011 feet of new 20-inch pipeline in Lafourche Parish, confirming current operations but not ownership."
+    }
+  ],
+  "conclusion": "The conservative DEFERRED decision is appropriate, but the response cannot support application. Public evidence establishes CLM as an active onshore subsidiary/segment beneath Crescent Midstream; current platform ownership is identified as Carlyle and founder John Grier. Wafra's Michael Coleman has a current CLM board role, yet no direct source establishes Wafra equity, fund, vehicle, stake, entry, or closing. The response also falsely says the Crescent board page shows Wafra and reverses the Kinetica-to-CLM proposed pipeline sale. CREATE_COMPANY and ADD_OWNER remain blocked."
+}

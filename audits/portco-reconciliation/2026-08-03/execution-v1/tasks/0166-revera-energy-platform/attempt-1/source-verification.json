@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0166:revera-energy-platform:658a9bc6",
+  "taskIndex": 166,
+  "companyName": "Revera Energy Platform",
+  "verifiedAt": "2026-08-19T06:18:16.883Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://www.carlyle.com/media-room/news-release-archive/revera-launches-independent-energy-infrastructure-platform-backed",
+      "finalUrl": "https://www.carlyle.com/media-room/news-release-archive/revera-launches-independent-energy-infrastructure-platform-backed",
+      "status": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 5795,
+      "contentSha256": "5c59ba1f6ed04a74d5402e507667ea647bf3f5481347d7d40a26388337f7995d",
+      "note": "Carlyle blocked curl, but independent browser retrieval opened the exact launch release and verified Carlyle backing, carve-out scope, and Australia/UK geography."
+    },
+    {
+      "url": "https://revera.energy/projects/australia",
+      "finalUrl": "https://revera.energy/projects/australia",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html;charset=utf-8",
+      "bytes": 1100507,
+      "contentSha256": "dfc612073ada0fea20bb64df41932477ecc6ac9391c87caa9458e3b48433b93f",
+      "note": "Official Revera Australia portfolio page opened and was hash-captured."
+    },
+    {
+      "url": "https://revera.energy/news/revera-energy-breaks-ground-on-windyhill-bess",
+      "finalUrl": "https://revera.energy/news/revera-energy-breaks-ground-on-windyhill-bess",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html;charset=utf-8",
+      "bytes": 279424,
+      "contentSha256": "65b4e1d3fa60d9a00689a10bef0459eb535ae517b1720054f8ead17c1e77c982",
+      "note": "Official Revera operating update opened and supports current platform activity."
+    },
+    {
+      "url": "https://www.amp.energy/news/amp-energys-australia-and-uk-businesses-acquired-by-revera-energy-and-longtime-partner-carlyle",
+      "finalUrl": "https://amp.energy/amp-energys-australia-and-uk-businesses-acquired-by-revera-energy-and-longtime-partner-carlyle/",
+      "status": "OPEN_REDIRECTED",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 113848,
+      "contentSha256": "475b208c9e9fc59e6b82f355911b1a9dd1e412c6f58cb15cbcedc651cea5e66e",
+      "note": "Official Amp seller release redirected to the canonical page and supports the completed Australia/UK business transfer."
+    },
+    {
+      "url": "https://abr.business.gov.au/AbnHistory/View?id=75618201380",
+      "finalUrl": "https://abr.business.gov.au/AbnHistory/View?id=75618201380",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 14228,
+      "contentSha256": "b6df2646ef3e16563543bc721dc470a65928069fa7b14678ba87742d704cb1be",
+      "note": "Australian Business Register history opened and supports the Australian legal-entity name history and active status."
+    },
+    {
+      "url": "https://find-and-update.company-information.service.gov.uk/company/16228457/persons-with-significant-control",
+      "finalUrl": "https://find-and-update.company-information.service.gov.uk/company/16228457/persons-with-significant-control",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html;charset=UTF-8",
+      "bytes": 43386,
+      "contentSha256": "4749aa82cf5959102b4f10560ac43e83e599cb535953c1b6192d45e4d1e731c5",
+      "note": "UK Companies House PSC page opened and supports the UK holdco and Carlyle control."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allEvidenceRowsChecked": true,
+    "allCoreClaimsHaveOpenOrBrowserVerifiedEvidence": true,
+    "deadUrlCount": 0,
+    "redirectConcernCount": 0
+  },
+  "releaseRequirement": "Exclude the Canada-keyed North American candidate; no production company or owner should be created from this census row."
+}

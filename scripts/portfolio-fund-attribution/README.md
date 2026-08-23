@@ -41,6 +41,21 @@ npm run portfolio:fund-attribution:promote -- \
 
 This creates `prisma/seed-data/ownership-attributions.manifest.json`. The seed runner requires a one-to-one match with every evaluated active owner and resolves only funds already present in `prisma/seed-data/funds.ts`.
 
+When an approved PortCo batch changes active owner identities, reconcile this
+restoration manifest with an explicit hash-bound change spec. The reconciliation
+preserves every reviewed attribution outside the batch, rejects stale source
+lineage, and fails unless the result matches every evaluated active seed owner
+exactly once:
+
+```sh
+npm run portfolio:fund-attribution:reconcile-seed -- \
+  --source=prisma/seed-data/ownership-attributions.manifest.json \
+  --spec=<batch seed-attribution reconciliation spec> \
+  --output=prisma/seed-data/ownership-attributions.manifest.json \
+  --artifact=<batch reconciliation receipt> \
+  --force=true
+```
+
 ## Approval and apply
 
 Create an approval bound to the exact manifest:

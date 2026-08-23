@@ -201,6 +201,60 @@ npm run portco:reconciliation:control -- recover \
   --at=2026-08-03T16:32:00.000Z
 ```
 
+## Five-task release bundles
+
+The batch path preserves sequential source-task order while reducing routine
+release cycles. Exactly one bundle may be active, and it contains two to five
+next-eligible tasks. A member is either a fully approved mutation or a hashed
+terminal decision (`EXCLUDED`, `VERIFIED_NO_CHANGE`, `DEFERRED`, or
+`SUPERSEDED`). Every mutation binds its proposal, automatic authorization,
+production and task snapshots, fresh observed state, dependency digest,
+research bytes, source-verification bytes, exact after-image, and any later
+queue tasks it supersedes.
+
+Use `portco:reconciliation:batch:control` to initialize, activate, inspect, and
+transition the one-active-bundle ledger. Snapshot a reserved member with the
+normal control command plus `--task-id` and `--batch-ledger`. Generate terminal
+decisions and automatic authorizations with
+`portco:reconciliation:batch:prepare`, then build the collision-checked batch:
+
+```sh
+npm run portco:reconciliation:batch:build -- \
+  --config=<batch-build-config.json> \
+  --output=<batch-manifest.json>
+
+npm run portco:reconciliation:batch:apply -- \
+  --batch-manifest=<batch-manifest.json> \
+  --batch-sha256=<batch hash>
+```
+
+The apply command is a dry run unless `--stage-seed` or the protected write
+flags are supplied. Seed after-images are published together in one adjacent
+rename. Production then replans every member against fresh state and applies
+all mutations inside one Prisma serializable transaction; a failure in any
+member rolls back the full database bundle. Terminal members never write to
+the database.
+
+If a bundle adds, retires, or changes an active seed owner identity, also run
+the hash-bound `portfolio:fund-attribution:reconcile-seed` control. It preserves
+reviewed fund attributions outside the bundle and proves one-to-one coverage of
+the evaluated seed before the release can pass the full test suite.
+
+After the database commit, the protected workflow writes a durable commit
+receipt before public API checks. A final receipt is created only after every
+detail API passes. This split makes a post-commit verification failure
+recoverable without claiming that verification succeeded. The batch ledger
+must remain `VERIFYING_FAILED` until recovery completes, and no later bundle
+may start. Once the final receipt is verified,
+`portco:reconciliation:batch:finalize` atomically updates all five source tasks
+and any reciprocal supersessions in the sequential execution manifest.
+
+Production bundles run only through
+`.github/workflows/portco-reconciliation-batch-apply.yml` after the exact seed
+overlay and batch artifacts are merged and the same commit is serving the
+canonical Vercel production alias. The historical single-company workflow
+remains supported for recovery and exceptional releases.
+
 ## Read-only baseline snapshots
 
 `snapshot-cli.ts` creates the two immutable baselines consumed by the ledger.

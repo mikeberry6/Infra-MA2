@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0357:pocahontas-parkway:d86a6391",
+  "taskIndex": 357,
+  "verifiedAt": "2026-08-21T16:08:14.651Z",
+  "allReturnedUrlsChecked": true,
+  "summary": {
+    "urlCount": 8,
+    "working": 6,
+    "browserBlockedButVerified": 2,
+    "browserBlockedUnverified": 0,
+    "dead": 0
+  },
+  "modelEvidenceCorrections": [
+    "Northleaf's 31.86% figure is a residual inference from Globalvia's disclosed 68.14% interest. It may be retained as qualified disclosure text but must not be stored as an exact structured stake without direct evidence.",
+    "Centerbridge's historical 25.5% figure is likewise an inferred residual and must remain explicitly qualified.",
+    "The Pocahontas operator site and USDOT project page returned HTTP 403 to direct curl but each exact URL rendered successfully in-browser and is classified BROWSER_BLOCKED_BUT_VERIFIED.",
+    "The ASX PDF redirected to announcements.asx.com.au and remained a working primary document."
+  ],
+  "sources": [
+    {
+      "url": "https://pocahontas895.com/",
+      "finalUrl": "https://pocahontas895.com/",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 4544,
+      "sha256": "73e81c09c81b357e2b5c2e24b6325fbb7d3469982c197ac9d59a89b5fbe10d65",
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "curlError": "Direct retrieval returned an access-denied page.",
+      "browserVerification": {
+        "title": "Pocahontas Parkway | Your Shortcut Around Richmond",
+        "exactUrlOpened": true,
+        "browserSnapshotSha256": "4bf6c4986f539a21de0fea8170607c46725d9da2df3b2bbc563ce7403017a4a2"
+      }
+    },
+    {
+      "url": "https://www.globalvia.com/en/inicio/movilidad/concesion/pocahontas-parkway/",
+      "finalUrl": "https://www.globalvia.com/en/inicio/movilidad/concesion/pocahontas-parkway/",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 76316,
+      "sha256": "4124d5772e2b3c118477dffd51d99bf45f06b660917e9391628b004560ed6bc0",
+      "health": "WORKING"
+    },
+    {
+      "url": "https://www.northleafcapital.com/infrastructure-investments?page=1",
+      "finalUrl": "https://www.northleafcapital.com/infrastructure-investments?page=1",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 159967,
+      "sha256": "686b6f68cc701863bfc1db2f165b1c11b4990d95c06238eca51502366b74d635",
+      "health": "WORKING"
+    },
+    {
+      "url": "https://www.linkedin.com/posts/allianz-global-investors_privatemarkets-infrastructure-activity-7244390567952941058-WHk0",
+      "finalUrl": "https://www.linkedin.com/posts/allianz-global-investors_privatemarkets-infrastructure-activity-7244390567952941058-WHk0",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 105530,
+      "sha256": "785329caf3eed00ffaa7b22644a8574d6a6930825fcbeb3e9edd7e56914f7f91",
+      "health": "WORKING"
+    },
+    {
+      "url": "https://www.globalvia.com/en/noticia/globalvia-successfully-completes-the-purchase-of-the-pocahontas-parkway-its-first-us-concession/",
+      "finalUrl": "https://www.globalvia.com/en/noticia/globalvia-successfully-completes-the-purchase-of-the-pocahontas-parkway-its-first-us-concession/",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 73082,
+      "sha256": "5c04b1492bba31badf104358bb8d38e98352fbd7e5dbe90c94fb64e5f06aa6ea",
+      "health": "WORKING"
+    },
+    {
+      "url": "https://www.transportation.gov/buildamerica/projects/pocahontas-parkway-richmond-airport-connector",
+      "finalUrl": "https://www.transportation.gov/buildamerica/projects/pocahontas-parkway-richmond-airport-connector",
+      "httpStatus": 403,
+      "mediaType": "text/html",
+      "bytes": 467,
+      "sha256": "ba300958953650583e06f193857e1fef41bcc0bc39007dd91c3bae6e741ae98f",
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "curlError": "Direct retrieval returned an access-denied page.",
+      "browserVerification": {
+        "title": "Pocahontas Parkway / Richmond Airport Connector | Build America",
+        "exactUrlOpened": true,
+        "browserSnapshotSha256": "527f092d4b1fd1b177c1d3894a3b6077fa4dfe22dd71691495dc9b1d360d9630"
+      }
+    },
+    {
+      "url": "https://www.asx.com.au/asxpdf/20080827/pdf/31bxrl10fz2y5n.pdf",
+      "finalUrl": "https://announcements.asx.com.au/asxpdf/20080827/pdf/31bxrl10fz2y5n.pdf",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 1266118,
+      "sha256": "3c5eea25d05a9dfa17014ed5876db683f227929c4242d7c49ba7f7e139e8c1bc",
+      "health": "WORKING_REDIRECT"
+    },
+    {
+      "url": "https://www.sullcrom.com/Practices/Infrastructure/",
+      "finalUrl": "https://www.sullcrom.com/Practices/Infrastructure/",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 103033,
+      "sha256": "43641783c44b1f5efa7480e89588365d4bed187309c44632ab7a8fa54d697ba9",
+      "health": "WORKING"
+    }
+  ]
+}

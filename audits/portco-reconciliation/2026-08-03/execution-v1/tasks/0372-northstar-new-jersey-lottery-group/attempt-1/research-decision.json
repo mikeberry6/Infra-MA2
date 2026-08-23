@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0372:northstar-new-jersey-lottery-group:968abd3a",
+  "taskIndex": 372,
+  "linkedTaskIdsCovered": [],
+  "companyName": "Northstar New Jersey Lottery Group",
+  "recommendedCanonicalName": "Northstar New Jersey Lottery Group, LLC",
+  "asOfDate": "2026-08-19",
+  "researchOnly": true,
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH; MEDIUM on OMERS stake",
+  "responseSha256": "a4dd7f4fc40097cc7df25a092e877575426456e662f42a860328d0f93e36c562",
+  "sourceVerification": "source-verification.json",
+  "acceptedResponse": "chatgpt-accepted-response.txt",
+  "summary": "Keep one active New Jersey Northstar company and reject the queued duplicate OMERS owner addition. The current legal ownership is Brightstar through Northstar New Jersey Holding Company, OMERS through the residual holding-company interest, and Brookfield-owned Scientific Games through Scientific Games New Jersey. End the legacy Scientific Games/Light & Wonder ownership period on April 4, 2022, preserve the contract's June 30, 2029 expiry, and record no pending transaction.",
+  "blockingQuestions": [],
+  "nonblockingDisclosureGaps": [
+    "The current OMERS nominee or account is not publicly disclosed. The 6.696% effective interest is a supported residual inference from Brightstar's audited holding-company percentages, not a directly disclosed current OMERS percentage.",
+    "The exact dates, instruments and contributions underlying post-entry ownership dilution are not publicly disclosed.",
+    "The investors and fund allocation behind the remaining 67% of the Brookfield-owned Scientific Games lottery-services operation are not publicly disclosed."
+  ],
+  "applicationBlocked": false,
+  "recommendedActions": [
+    "Keep one canonical Northstar New Jersey Lottery Group, LLC company; exclude the separate Illinois Northstar and treat the New Jersey holding company and SupplyCo as vehicles rather than PortCos.",
+    "Retain one active OMERS ownership period from 2013, but do not store 6.696% as a directly disclosed structured numeric stake; use qualified disclosure text or a null structured percentage.",
+    "Add Brightstar Lottery as a current owner through Northstar New Jersey Holding Company and preserve GTECH/IGT/Brightstar continuity.",
+    "Add Brookfield Private Equity Group through Scientific Games New Jersey as a current owner from April 4, 2022, and retire the legacy Scientific Games/Light & Wonder period on that date.",
+    "Keep the company active under the state lottery-growth-management contract through June 30, 2029 and record no signed pending ownership transaction."
+  ]
+}
