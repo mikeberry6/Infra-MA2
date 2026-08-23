@@ -3,7 +3,7 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-23T15:37:55Z",
+  "updatedAt": "2026-08-23T15:53:48Z",
   "activeBatchId": "batch-0157-0161-v1",
   "batches": [
     {
@@ -900,7 +900,7 @@
     },
     {
       "batchId": "batch-0157-0161-v1",
-      "state": "APPLYING",
+      "state": "VERIFYING",
       "taskIds": [
         "ledger:0157:advanced-cooling-technologies-act:3ea176a7",
         "ledger:0158:arlington-industries:c7b020cc",
@@ -916,14 +916,17 @@
         161
       ],
       "createdAt": "2026-08-23T15:02:14Z",
-      "updatedAt": "2026-08-23T15:37:55Z",
+      "updatedAt": "2026-08-23T15:53:48Z",
       "completedAt": null,
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0157-0161-v1/batch-manifest.json",
         "sha256": "fb2ed49e613bc9d4711d647615e4cb55840f16591725e708e643a70a56cc92f6"
       },
-      "releaseSha": "86b36b34138cf717efe652b5cef692cd1486e85d",
-      "receipt": null,
+      "releaseSha": "a66f6469b3ae29e94b463daba8ff953f030bacae",
+      "receipt": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0157-0161-v1/production-apply/batch-apply-receipt.json",
+        "sha256": "6b2df5bea89c397cfc539c651d2bd7dd6d3e9d09f0a9cf685380f20ab6571179"
+      },
       "reason": null,
       "history": [
         {
@@ -963,9 +966,20 @@
             "fb2ed49e613bc9d4711d647615e4cb55840f16591725e708e643a70a56cc92f6"
           ],
           "reason": null
+        },
+        {
+          "sequence": 5,
+          "from": "APPLYING",
+          "to": "VERIFYING",
+          "at": "2026-08-23T15:53:48Z",
+          "evidenceSha256": [
+            "6b2df5bea89c397cfc539c651d2bd7dd6d3e9d09f0a9cf685380f20ab6571179",
+            "fb2ed49e613bc9d4711d647615e4cb55840f16591725e708e643a70a56cc92f6"
+          ],
+          "reason": null
         }
       ]
     }
   ],
-  "ledgerSha256": "047a614a65e2a51e5acb9400c7c5474cb2589a1d74f6d12e85b388d56fed0e03"
+  "ledgerSha256": "3efdea5cf9ddc2083d2df1be3e3a9c82ddd975eed4b606dcdaf8bab2dbb7910b"
 }
