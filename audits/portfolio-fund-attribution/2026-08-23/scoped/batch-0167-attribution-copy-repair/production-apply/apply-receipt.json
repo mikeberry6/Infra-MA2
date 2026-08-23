@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_RECEIPT",
+  "manifestSha256": "fc1c07a93e5e98d9202f2c665ff0581c069ebdb4ed333a7ecf6e18b0c5a36b26",
+  "approvalSha256": "ac7e1c55e3d3b770fd7929bde31a739316c397ff990e45f3b550b5e97527e1d7",
+  "environment": "production",
+  "pipelineRunId": "cmt66pwij0000e1yy32lu154s",
+  "mutationCount": 3,
+  "changed": 3,
+  "idempotent": false,
+  "beforeFingerprint": "04d013693ee0390e96bcc4db0ea50d60a6c3bd6e9c97360d22fb3becb43b6033",
+  "afterFingerprint": "d85006e6be2525c9a708daa4721a820c089c8ec6d07c35a259a7dd36870305fd",
+  "rows": [
+    {
+      "recordId": "OFA-COPY-0168-VANTAGE-DB-2017",
+      "ownershipPeriodId": "cmrxpjyxx01s4ivhe0q4r5fsd",
+      "companyId": "cmrxpjdda00u1ivhe4o7z4w3s",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The 2017 acquisition materials establish DigitalBridge's current platform ownership, but the reviewed evidence does not identify the applicable DigitalBridge fund or legal investment vehicle; the stale DigitalBridge Partners estimate is removed."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The 2017 acquisition materials establish DigitalBridge as a current platform owner. The applicable DigitalBridge fund or legal investment vehicle is not publicly disclosed in the reviewed evidence."
+      }
+    },
+    {
+      "recordId": "OFA-COPY-0168-VANTAGE-CBRE",
+      "ownershipPeriodId": "cmrxpjyyh01s5ivhe4pze24xz",
+      "companyId": "cmrxpjdda00u1ivhe4o7z4w3s",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "CBRE Caledon Valhalla Aggregator Holdings, LP",
+        "attributionConfidence": null,
+        "attributionRationale": "CBRE Caledon's announcement and Vantage SDC transaction documents identify the Valhalla Aggregator vehicle; the prior CBRE GIF estimate is removed because no reviewed source links that vehicle to a fund in the current fund database."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "CBRE Caledon Valhalla Aggregator Holdings, LP",
+        "attributionConfidence": null,
+        "attributionRationale": "CBRE Caledon's announcement and Vantage SDC transaction documents identify CBRE Caledon Valhalla Aggregator Holdings, LP as the investment vehicle. The reviewed sources do not identify a separate underlying fund."
+      }
+    },
+    {
+      "recordId": "OFA-COPY-0171-BORALEX-LACAISSE",
+      "ownershipPeriodId": "cmrxpjv5701m4ivheldnfexl5",
+      "companyId": "cmrxpj9tv00okivhe1bj1dtst",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "La Caisse's 2017 entry and August 2026 closing releases establish its current 30% direct equity interest, but the reviewed sources do not identify a distinct La Caisse fund vehicle; the stale CDPQ Infrastructure label is removed."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "La Caisse's 2017 entry and August 2026 closing releases establish its current 30% direct equity interest. The reviewed sources do not identify a distinct La Caisse fund vehicle."
+      }
+    }
+  ],
+  "appliedAt": "2026-08-23T19:13:01.398Z",
+  "receiptSha256": "769c446dea15bc3ab741891f1550cd5ba5cd2f302ce6a1acf3ee2f79af50a014"
+}

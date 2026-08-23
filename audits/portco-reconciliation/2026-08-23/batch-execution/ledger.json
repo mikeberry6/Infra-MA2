@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-23T18:46:53Z",
-  "activeBatchId": "batch-0167-0171-v1",
+  "updatedAt": "2026-08-23T19:16:01Z",
+  "activeBatchId": null,
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -1130,7 +1130,7 @@
     },
     {
       "batchId": "batch-0167-0171-v1",
-      "state": "VERIFYING_FAILED",
+      "state": "COMPLETED",
       "taskIds": [
         "ledger:0167:accelerate-infrastructure-opportunities:cc039b14",
         "ledger:0168:vantage-data-centers:6c26d26a",
@@ -1146,8 +1146,8 @@
         171
       ],
       "createdAt": "2026-08-23T17:57:55Z",
-      "updatedAt": "2026-08-23T18:46:53Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-23T19:16:01Z",
+      "completedAt": "2026-08-23T19:16:01Z",
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0167-0171-v1/batch-manifest.json",
         "sha256": "cf4d040c61cf51bd3f25091fb88149ee3b2d64a2a0e3247c1bcfc4bcf92a2a0b"
@@ -1157,7 +1157,7 @@
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0167-0171-v1/production-apply/batch-apply-receipt.json",
         "sha256": "441f0a25b5fda13321cebeee7d5876ea0f8d04ae6de6c21567b86da5ebd0cc11"
       },
-      "reason": "Independent post-apply verification found stale fund-attribution metadata on nine current ownership rows across AIO, Vantage, Gateway Fiber and Boralex. The atomic PortCo after-images and legal ownership periods are correct; attribution classifications, rationales and fund links must be repaired before batch completion.",
+      "reason": "Batch 167-171 passed atomic receipt, attribution-repair, production API, canonical rendered-card, source-count, milestone-count, owner-state and terminal-exclusion verification.",
       "history": [
         {
           "sequence": 1,
@@ -1218,9 +1218,31 @@
             "cf4d040c61cf51bd3f25091fb88149ee3b2d64a2a0e3247c1bcfc4bcf92a2a0b"
           ],
           "reason": "Independent post-apply verification found stale fund-attribution metadata on nine current ownership rows across AIO, Vantage, Gateway Fiber and Boralex. The atomic PortCo after-images and legal ownership periods are correct; attribution classifications, rationales and fund links must be repaired before batch completion."
+        },
+        {
+          "sequence": 7,
+          "from": "VERIFYING_FAILED",
+          "to": "VERIFYING",
+          "at": "2026-08-23T19:16:00Z",
+          "evidenceSha256": [
+            "441f0a25b5fda13321cebeee7d5876ea0f8d04ae6de6c21567b86da5ebd0cc11",
+            "cf4d040c61cf51bd3f25091fb88149ee3b2d64a2a0e3247c1bcfc4bcf92a2a0b"
+          ],
+          "reason": "Both protected attribution repairs succeeded (runs 32659680477 and 32660470181), their receipts are durable, APIs and rendered drawers match the approved ownership after-images, internal audit phrasing is absent, and browser-console checks are clean."
+        },
+        {
+          "sequence": 8,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-08-23T19:16:01Z",
+          "evidenceSha256": [
+            "441f0a25b5fda13321cebeee7d5876ea0f8d04ae6de6c21567b86da5ebd0cc11",
+            "cf4d040c61cf51bd3f25091fb88149ee3b2d64a2a0e3247c1bcfc4bcf92a2a0b"
+          ],
+          "reason": "Batch 167-171 passed atomic receipt, attribution-repair, production API, canonical rendered-card, source-count, milestone-count, owner-state and terminal-exclusion verification."
         }
       ]
     }
   ],
-  "ledgerSha256": "da7a341029828b6e1734dc62f5b421365ca5fe0d39b9b524f0a2e9ad77fe5c1d"
+  "ledgerSha256": "36762727190375ef596434329cc8a8105360a46cdf0e8a7d6270da295e436b69"
 }
