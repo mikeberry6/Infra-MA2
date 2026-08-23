@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0177:infraestructura-energetica-nova-transportation-company-ientc:9b9caa0e",
+  "taskIndex": 177,
+  "companyName": "Infraestructura Energetica Nova Transportation Company (IENTC)",
+  "generatedAt": "2026-08-23T21:43:29.140Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0177-infraestructura-energetica-nova-transportation-company-ientc/attempt-1/locked-v2-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 177,
+    "taskId": "ledger:0177:infraestructura-energetica-nova-transportation-company-ientc:9b9caa0e",
+    "canonicalKey": "infraestructura-energetica-nova-transportation-company-ientc|mexico",
+    "companyName": "Infraestructura Energetica Nova Transportation Company (IENTC)",
+    "country": "Mexico",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 30,
+    "managers": [
+      "CIM Group"
+    ],
+    "actionScopes": {
+      "company": [
+        "CREATE_COMPANY"
+      ],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "030-cim-group:holding:006:infraestructura-energetica-nova-transportation-company-ientc"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://www.cimgroup.com/case-studies/ientc"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "No exact normalized production or seed match exists. Census evidence supports a new canonical company with 1 manager holding record(s).",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "infraestructura-energetica-nova-transportation-company-ientc|mexico",
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi63o0016ivhechqv2snf",
+        "name": "CIM Group",
+        "updatedAt": "2026-07-23T16:09:15.109Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0177:infraestructura-energetica-nova-transportation-company-ientc:9b9caa0e",
+    "taskIndex": 177,
+    "canonicalKey": "infraestructura-energetica-nova-transportation-company-ientc|mexico",
+    "capturedAt": "2026-08-23T21:43:29.140Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "813c324e21c166041d46be8d99aa1ebb691b183b214b28bc8ce80a366292863b",
+    "productionSnapshotSha256": "7ea8054079056d16b13375ff4c581d18ea3ef7d47cd6680d3e3eeb0b69b9968e",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "d6a02d402704eee7e41721198a8893941ac51e7899a35d87b09706a7cbfc5646",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "c149b5bf7477a3cc88a91e07b5dcf9e8acaf1700bd6648d2a3fcf0cc3e5d338d",
+    "stateSha256": "428ee40a466737817968ed1b2e5430e3dc4e917c45ba62a7007b97b6f87df759",
+    "taskSnapshotSha256": "70bc6ff5f1f592828121d60ca0966e8081fcf211d695234b45768d0271704a58"
+  },
+  "contextSha256": "ef87bf8ad07c045a0f2c4299a8ac8547ed91940c37d00adbbe1925e3e2f515ef"
+}

@@ -1,0 +1,274 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0181:westlands-solar-park-incl-aquamarine-solar:31dd05e4",
+  "taskIndex": 181,
+  "companyName": "Westlands Solar Park (incl. Aquamarine Solar)",
+  "generatedAt": "2026-08-23T21:04:36.380Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0181-westlands-solar-park-incl-aquamarine-solar/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 181,
+    "taskId": "ledger:0181:westlands-solar-park-incl-aquamarine-solar:31dd05e4",
+    "canonicalKey": "westlands-solar-park-incl-aquamarine-solar|united-states",
+    "companyName": "Westlands Solar Park (incl. Aquamarine Solar)",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 30,
+    "managers": [
+      "CIM Group"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "030-cim-group:repo-only:003:westlands-solar-park-incl-aquamarine-solar"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjbws00rtivhebkd663iz"
+    ],
+    "seedKeys": [
+      "westlands solar park (incl. aquamarine solar)|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.cimgroup.com/press-releases/cim-group-launches-permanent-power-company-a-national-power-infrastructure-company",
+      "https://www.cimgroup.com/press-releases/westlands-solar-park-one-of-the-largest-permitted-solar-parks-in-the-world-and-the-largest-in-north-america-starts-construction"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: CIM Group MATCHED_ELSEWHERE: Underlying assets are consolidated beneath the manager-level Permanent Power Company platform.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjbws00rtivhebkd663iz",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "westlands-solar-park-incl-aquamarine-solar|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjbws00rtivhebkd663iz",
+    "name": "Westlands Solar Park (incl. Aquamarine Solar)",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Utility-scale solar and battery storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Westlands Solar Park is a large California renewable-energy development centered on utility-scale solar generation and storage. The project is designed to serve utilities and other power purchasers through long-term offtake arrangements rather than merchant exposure alone. Its operating model is asset-heavy because the value proposition depends on control of land, interconnection, generation assets, and associated storage infrastructure. CIM has described Westlands Solar Park as one of the largest permitted solar parks in North America, with total planned capacity that can exceed 2,700 MW at full build-out. CIM and a joint venture partner obtained rights in 2014 to acquire more than 20,000 acres for the clean-energy development, started construction in 2020, and continue to sponsor the broader platform through privately held entities.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "California",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjxbg01pnivhe6uy36dxh",
+        "managerName": "CIM Group",
+        "organizationName": "CIM Group",
+        "fundName": null,
+        "vehicleName": "CIM Infrastructure Platform",
+        "stake": null,
+        "investmentYear": 2014,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplaav03i1ivhex1tjh4po",
+        "date": "2014",
+        "event": "CIM Group and a joint venture partner obtained rights to acquire more than 20,000 acres for the Westlands Solar Park clean-energy development.",
+        "category": "ACQUISITION",
+        "sortDate": "2014-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplabb03i2ivhe3g8o7a9n",
+        "date": "2020",
+        "event": "CIM stated that the permitted development could exceed 2,700 MW of total capacity at full build-out.",
+        "category": "EXPANSION",
+        "sortDate": "2020-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpladz03i3ivhehz4ixiot",
+        "date": "Mar 2, 2020",
+        "event": "CIM Group announced that it was advancing development and starting construction at Westlands Solar Park.",
+        "category": "FINANCING",
+        "sortDate": "2020-03-02T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplaee03i4ivhelkghxnd8",
+        "date": "2025",
+        "event": "CIM stated that the initial WEPCO portfolio at Westlands Solar Park included seven solar facilities and one battery-storage facility.",
+        "category": "EXPANSION",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpq8ls09ahivhem4fqnphn",
+        "label": "Investment date source — CIM Group — Westlands Solar Park (incl. Aquamarine Solar)",
+        "url": "https://www.cimgroup.com/case-studies/aquamarine-solar-project",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CIM Group initial investment / ownership",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpq8n009ajivheb64rttqd",
+        "label": "Construction start source — CIM Group — Westlands Solar Park (incl. Aquamarine Solar)",
+        "url": "https://www.cimgroup.com/press-releases/westlands-solar-park-one-of-the-largest-permitted-solar-parks-in-the-world-and-the-largest-in-north-america-starts-construction",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Construction start source — CIM Group — Westlands Solar Park (incl. Aquamarine Solar)",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq8nk09akivhe3neqpv84",
+        "label": "Investment date source — CIM Group — Westlands Electric Power Company (WEPCO)",
+        "url": "https://www.cimgroup.com/press-releases/cim-group-forms-westlands-electric-power-company",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Cimgroup — Westlands Solar Park (incl. Aquamarine Solar)",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq8nz09alivhea737inqf",
+        "label": "Investment date source — CIM Group — Kelso Valley Wind, Solar & Water",
+        "url": "https://labusinessjournal.com/infrastructure/first-phase-cim-groups-massive-solar-park-central/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Labusinessjournal — Westlands Solar Park (incl. Aquamarine Solar)",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Westlands Solar Park (incl. Aquamarine Solar)",
+    "investmentFirm": "CIM Group",
+    "sector": "Power & ET",
+    "subsector": "Utility-scale solar and battery storage",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "CIM Infrastructure Platform",
+    "description": "Westlands Solar Park is a large California renewable-energy development centered on utility-scale solar generation and storage. The project is designed to serve utilities and other power purchasers through long-term offtake arrangements rather than merchant exposure alone. Its operating model is asset-heavy because the value proposition depends on control of land, interconnection, generation assets, and associated storage infrastructure. CIM has described Westlands Solar Park as one of the largest permitted solar parks in North America, with total planned capacity that can exceed 2,700 MW at full build-out. CIM and a joint venture partner obtained rights in 2014 to acquire more than 20,000 acres for the clean-energy development, started construction in 2020, and continue to sponsor the broader platform through privately held entities.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2014,
+    "headquarters": "California",
+    "milestones": [
+      {
+        "date": "2014",
+        "event": "CIM Group and a joint venture partner obtained rights to acquire more than 20,000 acres for the Westlands Solar Park clean-energy development.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "2020",
+        "event": "CIM stated that the permitted development could exceed 2,700 MW of total capacity at full build-out.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Mar 2, 2020",
+        "event": "CIM Group announced that it was advancing development and starting construction at Westlands Solar Park.",
+        "category": "Financing"
+      },
+      {
+        "date": "2025",
+        "event": "CIM stated that the initial WEPCO portfolio at Westlands Solar Park included seven solar facilities and one battery-storage facility.",
+        "category": "Expansion"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Investment date source — CIM Group — Westlands Solar Park (incl. Aquamarine Solar)",
+        "url": "https://www.cimgroup.com/case-studies/aquamarine-solar-project",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Construction start source — CIM Group — Westlands Solar Park (incl. Aquamarine Solar)",
+        "url": "https://www.cimgroup.com/press-releases/westlands-solar-park-one-of-the-largest-permitted-solar-parks-in-the-world-and-the-largest-in-north-america-starts-construction",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Cimgroup — Westlands Solar Park (incl. Aquamarine Solar)",
+        "url": "https://www.cimgroup.com/press-releases/cim-group-forms-westlands-electric-power-company",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Labusinessjournal — Westlands Solar Park (incl. Aquamarine Solar)",
+        "url": "https://labusinessjournal.com/infrastructure/first-phase-cim-groups-massive-solar-park-central/",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "CIM Group",
+        "ownershipVehicle": "CIM Infrastructure Platform",
+        "investmentYear": 2014,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi63o0016ivhechqv2snf",
+        "name": "CIM Group",
+        "updatedAt": "2026-07-23T16:09:15.109Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0181:westlands-solar-park-incl-aquamarine-solar:31dd05e4",
+    "taskIndex": 181,
+    "canonicalKey": "westlands-solar-park-incl-aquamarine-solar|united-states",
+    "capturedAt": "2026-08-23T21:04:36.380Z",
+    "databaseRevision": "revision:32ef67d601df250f0ba8391fc7e1c70b6e8ae7c9818ac6f2ca5f7c7ed31cf6ad",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "5b9cf56caa8934d4c3096c0e6063ff19e27c5f8f9bae7426a3b2ad57c1c05c1e",
+    "productionSnapshotSha256": "7890f8302acdecc38bac00ebee1fae99bcc0060e15dec9f40406354aa4dc1ae5",
+    "targetCompanySnapshotSha256": "636e771dc3f5be21dc22439dd298b2eed19f744a49e16139a1a450ad52e080e7",
+    "seedEntrySha256": "e2aa01ecdefb9bf0050e613bdab8d0641bb219526d5f15fee8eb6fd4bfba93ab",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "1face3e2fb3925f46df3fb9101250269992c2a0479b78de88f6610fc41e57174",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "d6a02d402704eee7e41721198a8893941ac51e7899a35d87b09706a7cbfc5646",
+      "citationsSha256": "b5ce9e04cff2bf87c09b9481d022617433be02d9c8109c171d07289d9cd92cb2",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "af1123e6af75a861a5d2b874becd4e67da54e05968726da3ea2e97f42ff1b522",
+    "stateSha256": "82fc1468d26d9ea580b3656570f5c633f4d0bd004ea1213b80c03743bf5c01cf",
+    "taskSnapshotSha256": "2677c03d45c5d67437acc2732bb6fe9ece982f277713d72845c375eae40be12b"
+  },
+  "contextSha256": "bf160f13e9dda050cceb0ef071ac0bb636aec533f4359c5c5a94228a4b8e4a7d"
+}

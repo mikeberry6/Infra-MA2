@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0181:westlands-solar-park-incl-aquamarine-solar:31dd05e4",
+  "taskIndex": 181,
+  "companyName": "Westlands Solar Park (incl. Aquamarine Solar)",
+  "verifiedAt": "2026-08-23T21:35:00.000Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1765107/000176510726000008/cim-20260331.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1765107/000176510726000008/cim-20260331.htm",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 1064911,
+      "contentSha256": "6a580a34696ce4772290192c888bd86b65a201cb81b780033e75d17dfee2ae9a",
+      "note": "Opened directly. Name, former WEPCO identity and ownership structure."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1765107/000176510726000005/cim-20251231.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1765107/000176510726000005/cim-20251231.htm",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 1790287,
+      "contentSha256": "9d0bf6c726206ca6871b2c0f9aaf78d2b99562bd7ad949cf905dc0d1e5c6d4a2",
+      "note": "Opened directly. Ownership contributions and asset count."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1765107/000176510725000024/cim-20250929.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1765107/000176510725000024/cim-20250929.htm",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 42591,
+      "contentSha256": "02390482193471a5b0d9c125d18b82ce43782a872c1ccaf4f221e213563493cf",
+      "note": "Opened directly. Contribution dates, stakes and holdings chain."
+    },
+    {
+      "url": "https://www.cimgroup.com/press-releases/cim-group-forms-westlands-electric-power-company",
+      "finalUrl": "https://www.cimgroup.com/press-releases/cim-group-forms-westlands-electric-power-company",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 106853,
+      "contentSha256": "a4152687fd2c66793e4f2bd2f4b8544119cab6bbf67ac833fcda752e63b34c05",
+      "note": "Opened directly. WEPCO formation and initial platform scale."
+    },
+    {
+      "url": "https://www.cimgroup.com/press-releases/cim-group-launches-permanent-power-company-announces-power-purchase-agreement-and-400-million-financing-commitment",
+      "finalUrl": "https://www.cimgroup.com/press-releases/cim-group-launches-permanent-power-company-announces-power-purchase-agreement-and-400-million-financing-commitment",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 111200,
+      "contentSha256": "a1a89782e30c181f54eb689cfa02278b2f7f4ac3f84e85ed34563ced3e714316",
+      "note": "Opened directly. Current platform boundary, capacity and projects."
+    },
+    {
+      "url": "https://www.cimgroup.com/case-studies/aquamarine-solar-project",
+      "finalUrl": "https://www.cimgroup.com/case-studies/aquamarine-solar-project",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 115754,
+      "contentSha256": "ea4b7c934afe35877d0a82f74ebab743a62e52d6dfc596c66808f84975fcca49",
+      "note": "Opened directly. 2014 development lineage and Aquamarine project boundary."
+    },
+    {
+      "url": "https://www.cimgroup.com/press-releases/westlands-solar-park-one-of-the-largest-permitted-solar-parks-in-the-world-and-the-largest-in-north-america-starts-construction",
+      "finalUrl": "https://www.cimgroup.com/press-releases/westlands-solar-park-one-of-the-largest-permitted-solar-parks-in-the-world-and-the-largest-in-north-america-starts-construction",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 109775,
+      "contentSha256": "8a86174a68ffde8b4a929108c590c82393e9a9cf50a8f49b76962984c58c8447",
+      "note": "Opened directly. Site scale and Valley Clean Energy PPA."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allEvidenceRowsChecked": true,
+    "allCoreClaimsHaveOpenOrBrowserVerifiedEvidence": true,
+    "deadUrlCount": 0,
+    "browserBlockedButVerifiedCount": 0,
+    "redirectConcernCount": 0
+  },
+  "releaseRequirement": "Keep Permanent Power Company as the single manager-level PortCo, merge the WEPCO and Westlands records into it, and retain Westlands Solar Park and Aquamarine only as site/project history."
+}

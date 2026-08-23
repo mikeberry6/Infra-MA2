@@ -1,0 +1,295 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0179:solarbank-joint-venture-new-holdco:e1457e97",
+  "taskIndex": 179,
+  "companyName": "SolarBank Joint Venture (New HoldCo)",
+  "generatedAt": "2026-08-23T21:04:32.583Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0179-solarbank-joint-venture-new-holdco/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 179,
+    "taskId": "ledger:0179:solarbank-joint-venture-new-holdco:e1457e97",
+    "canonicalKey": "solarbank-joint-venture-new-holdco|united-states",
+    "companyName": "SolarBank Joint Venture (New HoldCo)",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 30,
+    "managers": [
+      "CIM Group"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "RETIRE_OWNERSHIP"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "030-cim-group:repo-only:002:solarbank-joint-venture-new-holdco"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjbv600rqivhe233tmodd"
+    ],
+    "seedKeys": [
+      "solarbank joint venture (new holdco)|United States"
+    ],
+    "evidenceUrls": [
+      "https://powerbankcorp.com/wp-content/uploads/2025-Q3-FS.pdf"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: CIM Group PROPOSED_RETIRE: No executed equity ownership; the contemplated transaction became a financing structure.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjbv600rqivhe233tmodd",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "solarbank-joint-venture-new-holdco|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjbv600rqivhe233tmodd",
+    "name": "SolarBank Joint Venture (New HoldCo)",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Distributed and community solar",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "SolarBank Joint Venture (New HoldCo) is a newly formed vehicle created to own and finance a portfolio of U.S. solar assets associated with SolarBank. The underlying projects serve renewable-power end markets, including community-solar and distributed-generation applications, through long-lived operating assets rather than an asset-light development advisory model. Public transaction materials describe a portfolio of 97 MW of identified U.S. renewable-energy assets to be funded through the structure. The model is asset-heavy and project-based because the vehicle is designed to acquire project interests and support construction and ownership of operating renewable infrastructure. SolarBank announced in May 2025 that CIM would provide up to $100 million of project-based financing and preferred equity through the newly formed joint-venture structure, while the ownership percentages were not publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2025,
+    "headquarters": "New York; multiple U.S. states",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjx9u01pkivhe147oyjj9",
+        "managerName": "CIM Group",
+        "organizationName": "CIM Group",
+        "fundName": "CIM Infrastructure Fund III",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpla2103hoivhel1a6ara3",
+        "date": "2025",
+        "event": "Public transaction documents described New HoldCo as a joint venture between CIM and Abundant Solar Power, a wholly owned SolarBank subsidiary.",
+        "category": "FINANCING",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpla2m03hpivhecfqfqdh0",
+        "date": "2025",
+        "event": "SolarBank disclosed that CIM would acquire preferred equity interests in New HoldCo as part of the financing structure.",
+        "category": "FINANCING",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpla3603hqivhe81lril24",
+        "date": "2025",
+        "event": "The vehicle was positioned to acquire identified U.S. project interests from the SolarBank development portfolio.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpla3t03hrivheryeumwtk",
+        "date": "2025",
+        "event": "SolarBank Joint Venture (New HoldCo) was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpla4a03hsivhexgzvu1kh",
+        "date": "May 6, 2025",
+        "event": "SolarBank and CIM announced a mandate for up to $100 million of financing for 97 MW of U.S. renewable-energy assets.",
+        "category": "FINANCING",
+        "sortDate": "2025-05-06T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpq87m099wivheraoyzrz2",
+        "label": "Investment date source — CIM Group — SolarBank Joint Venture (New HoldCo)",
+        "url": "https://www.prnewswire.com/news-releases/us100-million-transformative-project-financing-announced-by-solarbank-and-cim-group-to-fund-97-mw-of-renewable-energy-assets-in-the-united-states-302446554.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "CIM Group initial investment / ownership",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpq88q099yivhectc274d6",
+        "label": "Powerbankcorp — SolarBank Joint Venture (New HoldCo)",
+        "url": "https://powerbankcorp.com/wp-content/uploads/SUNN-MDA-FY25.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Powerbankcorp transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq89q09a0ivhe4stk2bps",
+        "label": "SEC — SolarBank Joint Venture (New HoldCo)",
+        "url": "https://www.sec.gov/Archives/edgar/data/2011053/000164117225009233/formf-10.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "SEC filing",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq8an09a2ivheervozte8",
+        "label": "Mercomcapital — SolarBank Joint Venture (New HoldCo)",
+        "url": "https://mercomcapital.com/solarbank-secures-100-million-financing-for-97-mw-of-solar-projects/",
+        "sourceType": "WEBSITE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Mercomcapital financing or public filing",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "SolarBank Joint Venture (New HoldCo)",
+    "investmentFirm": "CIM Group",
+    "sector": "Power & ET",
+    "subsector": "Distributed and community solar",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "SolarBank Joint Venture (New HoldCo) is a newly formed vehicle created to own and finance a portfolio of U.S. solar assets associated with SolarBank. The underlying projects serve renewable-power end markets, including community-solar and distributed-generation applications, through long-lived operating assets rather than an asset-light development advisory model. Public transaction materials describe a portfolio of 97 MW of identified U.S. renewable-energy assets to be funded through the structure. The model is asset-heavy and project-based because the vehicle is designed to acquire project interests and support construction and ownership of operating renewable infrastructure. SolarBank announced in May 2025 that CIM would provide up to $100 million of project-based financing and preferred equity through the newly formed joint-venture structure, while the ownership percentages were not publicly disclosed.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2025,
+    "investmentYear": 2025,
+    "headquarters": "New York; multiple U.S. states",
+    "milestones": [
+      {
+        "date": "2025",
+        "event": "Public transaction documents described New HoldCo as a joint venture between CIM and Abundant Solar Power, a wholly owned SolarBank subsidiary.",
+        "category": "Financing"
+      },
+      {
+        "date": "2025",
+        "event": "SolarBank disclosed that CIM would acquire preferred equity interests in New HoldCo as part of the financing structure.",
+        "category": "Financing"
+      },
+      {
+        "date": "2025",
+        "event": "The vehicle was positioned to acquire identified U.S. project interests from the SolarBank development portfolio.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "2025",
+        "event": "SolarBank Joint Venture (New HoldCo) was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "May 6, 2025",
+        "event": "SolarBank and CIM announced a mandate for up to $100 million of financing for 97 MW of U.S. renewable-energy assets.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Investment date source — CIM Group — SolarBank Joint Venture (New HoldCo)",
+        "url": "https://www.prnewswire.com/news-releases/us100-million-transformative-project-financing-announced-by-solarbank-and-cim-group-to-fund-97-mw-of-renewable-energy-assets-in-the-united-states-302446554.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "FINANCING_FILINGS"
+      },
+      {
+        "label": "Powerbankcorp — SolarBank Joint Venture (New HoldCo)",
+        "url": "https://powerbankcorp.com/wp-content/uploads/SUNN-MDA-FY25.pdf",
+        "type": "PRESENTATION",
+        "purpose": "MILESTONE_EVENT"
+      },
+      {
+        "label": "SEC — SolarBank Joint Venture (New HoldCo)",
+        "url": "https://www.sec.gov/Archives/edgar/data/2011053/000164117225009233/formf-10.htm",
+        "type": "SEC_FILING",
+        "purpose": "FINANCING_FILINGS"
+      },
+      {
+        "label": "Mercomcapital — SolarBank Joint Venture (New HoldCo)",
+        "url": "https://mercomcapital.com/solarbank-secures-100-million-financing-for-97-mw-of-solar-projects/",
+        "type": "WEBSITE",
+        "purpose": "FINANCING_FILINGS"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "CIM Group",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2025,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj1sj00clivhe0ob219ba",
+        "fundName": "CIM Infrastructure Fund III",
+        "managerId": "cmrxpi63o0016ivhechqv2snf",
+        "updatedAt": "2026-07-23T16:09:56.179Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi63o0016ivhechqv2snf",
+        "name": "CIM Group",
+        "updatedAt": "2026-07-23T16:09:15.109Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0179:solarbank-joint-venture-new-holdco:e1457e97",
+    "taskIndex": 179,
+    "canonicalKey": "solarbank-joint-venture-new-holdco|united-states",
+    "capturedAt": "2026-08-23T21:04:32.583Z",
+    "databaseRevision": "revision:ae261b5a288094af06cdfce3e94ec849896284e80685c7a608a040577eb9e813",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "7a805e5e1e26be8ac27f74e3e4ae6aabe271f6fb7972714ae30e1a9f448e72d9",
+    "productionSnapshotSha256": "1ea1a945bce9610099c5a4eb8080ccd7a0eb0ea33cb95222f65a53cddd91aafe",
+    "targetCompanySnapshotSha256": "d7cf81b24bbc0472ad8bcde440c0b952d1312546f55a7fac3556d9f1d7632ab5",
+    "seedEntrySha256": "dce680080a4e9ffb8866582f6247e95600d729fed4aa0f94cfcf46e79c895ea4",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "f6cf5ce12356a3f57af8b1a980a1c0b55883b8167305e40fe0d6f03ae6435d2d",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "c9e3bf96c20a29d2716c8beecc8fc3591c2063d58cf71035564a6bf7789d2c42",
+      "organizationsSha256": "d6a02d402704eee7e41721198a8893941ac51e7899a35d87b09706a7cbfc5646",
+      "citationsSha256": "67718556c90b3f86454a999d1c3091e9b401f0fb36d4cb3978cc7aae48900b7f",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "ef42ccebf88ee60eb86f682c987c046d6cca8f0c95844eb236773152e674d5ff",
+    "stateSha256": "39936b3b0cc574a59d892b9e1f03a4fc61d817484410da11cf2c19a4b6c0f2a7",
+    "taskSnapshotSha256": "5e018f1b27a13a81c518d85cbeb11dd24890c70fdbad02c3baf2640666d38af5"
+  },
+  "contextSha256": "ad35204710512e14d2ea21a12f6cba2b13ea878fa71f0820eef45d551b7bdae0"
+}
