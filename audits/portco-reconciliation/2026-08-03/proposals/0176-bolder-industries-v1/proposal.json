@@ -1,0 +1,438 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0176:bolder-industries:57e25d60",
+  "taskIndex": 176,
+  "asOfDate": "2026-08-23",
+  "generatedAt": "2026-08-23T19:50:00.000Z",
+  "canonicalKey": "bolder-industries|united-states",
+  "companyName": "Bolder Industries",
+  "actions": [
+    "CORRECT_COMPANY"
+  ],
+  "sourceHoldingIds": [
+    "030-cim-group:holding:005:bolder-industries",
+    "093-tiger-infrastructure-partners:holding:009:bolder-industries"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Keep one active Bolder Industries platform and correct its co-ownership records. CIM was an early investor, expanded its investment in 2021, participated in the February 2025 Tiger-funded recapitalization and retains board representation. Tiger joined CIM through that completed recapitalization rather than replacing it. Public sources do not disclose either sponsor's fund, vehicle or percentage, nor CIM's exact original entry year, so those fields remain unavailable instead of being inferred.",
+  "evidence": [
+    {
+      "url": "https://www.tigerinfrastructure.com/portfolio/Bolder-Industries",
+      "purpose": "Current Tiger ownership and platform scope",
+      "supports": [
+        "Tiger lists Bolder as a current portfolio company",
+        "Bolder is an operating circular-economy infrastructure platform"
+      ]
+    },
+    {
+      "url": "https://www.prnewswire.com/news-releases/tiger-infrastructure-partners-completes-transformational-growth-investment-in-bolder-industries-a-circular-economy-infrastructure-platform-converting-end-of-life-tires-into-sustainable-materials-302372336.html",
+      "purpose": "Tiger transaction close",
+      "supports": [
+        "Tiger completed its investment on February 10, 2025"
+      ]
+    },
+    {
+      "url": "https://www.stblaw.com/about-us/news/view/2025/02/13/simpson-thacher-represents-cim-group-in-recapitalization-of-bolder-industries",
+      "purpose": "CIM participation in the 2025 recapitalization",
+      "supports": [
+        "The transaction was a recapitalization of Bolder funded by Tiger",
+        "CIM participated rather than exiting"
+      ]
+    },
+    {
+      "url": "https://www.cimgroup.com/press-releases/cim-group-expands-investment-in-end-of-life-tire-recycling-company-bolder-industries-a-certified-b-corporation",
+      "purpose": "CIM's earlier investment and 2021 expansion",
+      "supports": [
+        "CIM was already an investor before October 2021",
+        "CIM expanded its Bolder investment in 2021"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "b2e52b61ffd5605fa2ab337b5a0b4d1fc0081e36298ff4550da99536b8b9cd43",
+  "currentCompanySnapshotSha256": "c9328567fd73537ddbe96a03cc157c5597c5aff4b91a6dde36be35a45c07e09d",
+  "executionLock": {
+    "taskSnapshotSha256": "06621337e02bdb49cb1a90c6dfc2a4ba90c99526cc45e263c75d1a7559a8f8a8",
+    "taskStateSha256": "690bc652a93349443748c8d025e5895c6a3749bbaf53a3896f5d4fa130c04c1a",
+    "taskDependencySha256": "e20b4e6164371667a36599be220c80419830ddebac29f78c6660c12e4d5d5b68",
+    "seedEntrySha256": "5c21a9970fdcf6d90513727217883bec7a70a4640673a17f33ba0a413149bdad",
+    "dependencies": {
+      "ownershipPeriodsSha256": "a064e47fce839b81387ad05dc3aad5777199a1090a2f010e607b76a30a4f9093",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "8a854765e6e3489d6bf704c2b184c366f603d402d17e41b86e19ea7925c19b83",
+      "organizationsSha256": "3b3966660f3c4966a0bc837cddecd997813e9ba1172af7c3b3c37989b50bf096",
+      "citationsSha256": "2f6e382e16988798e46d97ec50460f941950dc45364e29e255ba4324a23d03ef",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj1sj00clivhe0ob219ba",
+        "fundName": "CIM Infrastructure Fund III",
+        "managerId": "cmrxpi63o0016ivhechqv2snf",
+        "updatedAt": "2026-07-23T16:09:56.179Z"
+      },
+      {
+        "id": "cmrxpj3tl00flivhe3h1v2bq0",
+        "fundName": "Tiger Infrastructure Partners Fund III",
+        "managerId": "cmrxpie6w003qivhezkd8ost3",
+        "updatedAt": "2026-07-23T16:09:58.809Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi63o0016ivhechqv2snf",
+        "name": "CIM Group",
+        "updatedAt": "2026-07-23T16:09:15.109Z"
+      },
+      {
+        "id": "cmrxpigns004iivhep4tpvy3z",
+        "name": "Tiger",
+        "updatedAt": "2026-07-23T16:09:28.792Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjbsf00rlivhe8c3xqhxg",
+    "name": "Bolder Industries",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Circular materials and tire recycling",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Bolder Industries converts end-of-life tires into recovered carbon black, petrochemical products, steel, and related outputs for industrial customers. Its end markets include tire manufacturing, rubber and plastics production, and other users seeking lower-carbon feedstocks and circular-economy inputs. The operating model is asset-heavy because performance depends on proprietary processing facilities, feedstock supply, and long-term offtake relationships rather than an asset-light services platform. Public materials point to operating activity in Missouri and expansion activity in Indiana, with additional international development activity disclosed by the company. CIM Group expanded its investment in 2021, Tiger Infrastructure announced a major growth investment in 2025, and the current ownership structure has not been publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2011,
+    "headquarters": "Colorado; Missouri",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjx6h01peivhehagglx73",
+        "managerName": "CIM Group",
+        "organizationName": "CIM Group",
+        "fundName": "CIM Infrastructure Fund III",
+        "vehicleName": "CIM Infrastructure Platform",
+        "stake": null,
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjx7001pfivheodnrp1ll",
+        "managerName": "Tiger Infrastructure Partners",
+        "organizationName": "Tiger",
+        "fundName": "Tiger Infrastructure Partners Fund III",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpl9o603h8ivhevkh0lb20",
+        "date": "2011",
+        "event": "Bolder Industries was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2011-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpl9os03h9ivhen8g4giiv",
+        "date": "2020",
+        "event": "Bolder opened its Maryville, Missouri facility.",
+        "category": "EXPANSION",
+        "sortDate": "2020-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpl9pb03haivhe62o8ha6t",
+        "date": "Oct 8, 2021",
+        "event": "CIM Group announced that it had expanded its investment in Bolder Industries.",
+        "category": "FINANCING",
+        "sortDate": "2021-10-08T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpl9pv03hbivhe8i509rzm",
+        "date": "Feb 2025",
+        "event": "Tiger completed its growth investment in Bolder Industries.",
+        "category": "FINANCING",
+        "sortDate": "2025-02-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpl9qb03hcivheyxfg2a9z",
+        "date": "Feb 10, 2025",
+        "event": "Tiger Infrastructure Partners announced a transformational growth investment in Bolder Industries.",
+        "category": "FINANCING",
+        "sortDate": "2025-02-10T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpq7g6098uivhethxj7mpk",
+        "label": "Bolderindustries — Bolder Industries",
+        "url": "https://www.bolderindustries.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Bolderindustries company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpq7ha098wivheztew59gy",
+        "label": "Tigerinfrastructure — Bolder Industries",
+        "url": "https://www.tigerinfrastructure.com/portfolio/Bolder-Industries",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Tigerinfrastructure operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq7kf098yivhetld0yuks",
+        "label": "Investment date source — Tiger — Bolder Industries",
+        "url": "https://www.prnewswire.com/news-releases/tiger-infrastructure-partners-completes-transformational-growth-investment-in-bolder-industries-a-circular-economy-infrastructure-platform-converting-end-of-life-tires-into-sustainable-materials-302372336.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Tiger initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq7lw0990ivherwpy0nyv",
+        "label": "Bolderindustries — Bolder Industries",
+        "url": "https://www.bolderindustries.com/prgroundbreaking",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Bolderindustries — Bolder Industries",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq7mu0992ivhe84d0omeb",
+        "label": "Investment date source — CIM Group — Bolder Industries",
+        "url": "https://www.cimgroup.com/press-releases/cim-group-expands-investment-in-end-of-life-tire-recycling-company-bolder-industries-a-certified-b-corporation",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CIM Group initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq7o40994ivhe9w2gzbnp",
+        "label": "Scraptirenews — Bolder Industries",
+        "url": "https://scraptirenews.com/2022/09/01/bolder-industries-and-liberty-tire-formalize-elt-supply-agreement/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Scraptirenews — Bolder Industries",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "c9328567fd73537ddbe96a03cc157c5597c5aff4b91a6dde36be35a45c07e09d",
+  "afterImage": {
+    "id": "cmrxpjbsf00rlivhe8c3xqhxg",
+    "name": "Bolder Industries",
+    "aliases": [
+      "Bolder Industries, LLC",
+      "Bolder Industries, Inc.",
+      "Waste to Energy Partners, LLC",
+      "Bolder Industries Op. Co., LLC"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Circular materials and tire recycling",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Bolder Industries is a U.S. circular-materials infrastructure platform that converts end-of-life tires into recovered carbon black, pyrolysis oil, steel and energy for tire, rubber, plastics and other industrial customers. The company was founded in 2011 and is headquartered in Boulder, Colorado. Its operating and development footprint includes Maryville, Missouri, Terre Haute, Indiana and Antwerp, Belgium; those facilities and projects are not separate PortCos. CIM was an early investor and expanded its investment in October 2021. Tiger Infrastructure Partners completed a growth investment on February 10, 2025 through a recapitalization in which CIM participated, so Tiger joined rather than replaced CIM. Both sponsors remain current based on manager portfolio and board evidence. Their exact funds, vehicles, stakes and control rights, and CIM's original entry date, are not publicly disclosed. No later platform sale, exit, insolvency or signed pending ownership transaction was identified through August 23, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.bolderindustries.com/",
+    "yearFounded": 2011,
+    "headquarters": "Boulder, Colorado",
+    "lastVerifiedAt": "2026-08-23T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjx6h01peivhehagglx73",
+        "managerName": "CIM Group",
+        "organizationName": "CIM Group",
+        "fundName": null,
+        "vehicleName": null,
+        "stake": "Not publicly disclosed",
+        "investmentYear": null,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjx7001pfivheodnrp1ll",
+        "managerName": "Tiger Infrastructure Partners",
+        "organizationName": "Tiger",
+        "fundName": null,
+        "vehicleName": null,
+        "stake": "Not publicly disclosed",
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpl9o603h8ivhevkh0lb20",
+        "date": "2011",
+        "event": "Bolder Industries was founded as a circular-materials company focused on recovering industrial products from end-of-life tires.",
+        "category": "FOUNDING",
+        "sortDate": "2011-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.bolderindustries.com/"
+        ]
+      },
+      {
+        "id": "cmrxpl9os03h9ivhen8g4giiv",
+        "date": "2020",
+        "event": "Bolder opened its Maryville, Missouri tire-recycling facility, an operating asset within the platform rather than a separate PortCo.",
+        "category": "EXPANSION",
+        "sortDate": "2020-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.bolderindustries.com/"
+        ]
+      },
+      {
+        "id": "cmrxpl9pb03haivhe62o8ha6t",
+        "date": "Oct 8, 2021",
+        "event": "CIM expanded its existing Bolder investment as the company raised US$80 million of equity and secured US$100 million of committed project funding.",
+        "category": "FINANCING",
+        "sortDate": "2021-10-08T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.cimgroup.com/press-releases/cim-group-expands-investment-in-end-of-life-tire-recycling-company-bolder-industries-a-certified-b-corporation",
+          "https://www.newswire.com/news/bolder-industries-raises-80m-to-advance-commercial-scalability-and-use-21518060"
+        ]
+      },
+      {
+        "id": "cmrxpl9pv03hbivhe8i509rzm",
+        "date": "Feb 10, 2025",
+        "event": "Tiger Infrastructure Partners completed a growth investment in Bolder through a recapitalization in which CIM participated; disclosed sources did not identify the funds, vehicles, stakes or control rights.",
+        "category": "FINANCING",
+        "sortDate": "2025-02-10T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.prnewswire.com/news-releases/tiger-infrastructure-partners-completes-transformational-growth-investment-in-bolder-industries-a-circular-economy-infrastructure-platform-converting-end-of-life-tires-into-sustainable-materials-302372336.html",
+          "https://www.stblaw.com/about-us/news/view/2025/02/13/simpson-thacher-represents-cim-group-in-recapitalization-of-bolder-industries"
+        ]
+      },
+      {
+        "id": "cmrxpl9qb03hcivheyxfg2a9z",
+        "date": "Aug 23, 2026",
+        "event": "Tiger continued to list Bolder as a current investment and CIM retained board representation; no later ownership transfer or signed pending sale was found.",
+        "category": "OTHER",
+        "sortDate": "2026-08-23T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.tigerinfrastructure.com/portfolio/Bolder-Industries",
+          "https://www.cimgroup.com/about-us/leadership"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpq7g6098uivhethxj7mpk",
+        "label": "Bolderindustries — Bolder Industries",
+        "url": "https://www.bolderindustries.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Official business profile, products and operating-platform scope",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq7ha098wivheztew59gy",
+        "label": "Tigerinfrastructure — Bolder Industries",
+        "url": "https://www.tigerinfrastructure.com/portfolio/Bolder-Industries",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current Tiger ownership and portfolio status",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpq7kf098yivhetld0yuks",
+        "label": "Investment date source — Tiger — Bolder Industries",
+        "url": "https://www.prnewswire.com/news-releases/tiger-infrastructure-partners-completes-transformational-growth-investment-in-bolder-industries-a-circular-economy-infrastructure-platform-converting-end-of-life-tires-into-sustainable-materials-302372336.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Tiger's February 10, 2025 completed investment",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq7lw0990ivherwpy0nyv",
+        "label": "Bolderindustries — Bolder Industries",
+        "url": "https://www.bolderindustries.com/prgroundbreaking",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Bolder facility-development context",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq7mu0992ivhe84d0omeb",
+        "label": "Investment date source — CIM Group — Bolder Industries",
+        "url": "https://www.cimgroup.com/press-releases/cim-group-expands-investment-in-end-of-life-tire-recycling-company-bolder-industries-a-certified-b-corporation",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CIM's early ownership and October 2021 investment expansion",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq7o40994ivhe9w2gzbnp",
+        "label": "Scraptirenews — Bolder Industries",
+        "url": "https://scraptirenews.com/2022/09/01/bolder-industries-and-liberty-tire-formalize-elt-supply-agreement/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "End-of-life tire feedstock and operating partnership context",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Simpson Thacher — Bolder recapitalization",
+        "url": "https://www.stblaw.com/about-us/news/view/2025/02/13/simpson-thacher-represents-cim-group-in-recapitalization-of-bolder-industries",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CIM participation and Tiger-funded recapitalization structure",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Bolder Industries — 2021 financing",
+        "url": "https://www.newswire.com/news/bolder-industries-raises-80m-to-advance-commercial-scalability-and-use-21518060",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "US$80 million equity raise, US$100 million project commitment and CIM co-lead",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "CIM Group — Leadership",
+        "url": "https://www.cimgroup.com/about-us/leadership",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current CIM board representation at Bolder Industries",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "fccf248f2044bbc71c9f68d01337bd56edcd6619ccf8fa5908e5aab7e5f2452d",
+  "proposalSha256": "b1c01d004636a594e99da25c4a1c1e5a7911e590377c3167339e82656202f013"
+}

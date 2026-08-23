@@ -1,0 +1,355 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0172:renewa:4e75f8f4",
+  "taskIndex": 172,
+  "companyName": "Renewa",
+  "generatedAt": "2026-08-23T19:30:17.650Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0172-renewa/attempt-1/locked-v2-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 172,
+    "taskId": "ledger:0172:renewa:4e75f8f4",
+    "canonicalKey": "renewa|united-states",
+    "companyName": "Renewa",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 28,
+    "managers": [
+      "CDPQ",
+      "QIC Global Infrastructure"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "028-cdpq:holding:015:renewa",
+      "082-qic-global-infrastructure:holding:003:renewa"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjbnh00rcivheoc17wxk3"
+    ],
+    "seedKeys": [
+      "renewa|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.lacaisse.com/en/news/pressreleases/caisse-invests-us200-million-qic-backed-renewa-accelerate-funding-land-under",
+      "https://www.qic.com/what-we-do/infrastructure/global-portfolio/renewa/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_OWNER requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjbnh00rcivheoc17wxk3",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "renewa|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjbnh00rcivheoc17wxk3",
+    "name": "Renewa",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Land-under-infrastructure for renewable projects",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Renewa acquires and manages land interests under utility-scale renewable-energy projects. Its customers are renewable developers, project owners, and infrastructure investors that need long-duration land control rather than conventional project-level equipment financing. The business is contract-based and infrastructure-linked because value depends on long-term ground leases and site-control arrangements under operating and planned clean-energy projects. CDPQ stated in 2025 that Renewa had attracted more than $750 million of funding commitments since its inception in 2022. Its principal operating footprint is in the United States. CDPQ announced a $200 million investment in July 2025 alongside QIC-backed ownership, and public materials reviewed do not disclose the current ownership percentages.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2022,
+    "headquarters": "Multi-state United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjwxu01p2ivhet3z3ze2b",
+        "managerName": "La Caisse de dépôt (CDPQ)",
+        "organizationName": "La Caisse de dépôt (CDPQ)",
+        "fundName": "CDPQ Infrastructure",
+        "vehicleName": "Sustainable Land Management Strategy",
+        "stake": "Stake acquired; exact percentage not publicly disclosed",
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjwyh01p3ivheanfbimsd",
+        "managerName": "QIC",
+        "organizationName": "QIC",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpl8wj03gaivhewkzcqxcd",
+        "date": "2022",
+        "event": "Renewa was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2022-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpl8x403gbivheuth6c9a2",
+        "date": "2022",
+        "event": "QIC acquired Renewa on behalf of a managed client.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpl8xp03gcivhety79naf7",
+        "date": "Aug 2023",
+        "event": "QIC-backed Renewa secured $450 million of capital.",
+        "category": "FINANCING",
+        "sortDate": "2023-08-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpl8y603gdivheguurv846",
+        "date": "Jul 15, 2025",
+        "event": "CDPQ (La Caisse) made a $200 million primary equity commitment in QIC-backed Renewa, acquiring a stake in the business.",
+        "category": "FINANCING",
+        "sortDate": "2025-07-15T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpl8yr03geivhebulg9sbf",
+        "date": "Jul 15, 2025",
+        "event": "CDPQ stated that Renewa had secured more than $750 million of commitments since inception.",
+        "category": "OTHER",
+        "sortDate": "2025-07-15T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpq612096pivheerd16aj6",
+        "label": "Investment date source — QIC — Renewa",
+        "url": "https://www.qic.com/Investment-Capabilities/Infrastructure/Global-Portfolio/Renewa",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "QIC initial investment / ownership",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpq623096rivhekgwrohwo",
+        "label": "Qic — Renewa",
+        "url": "https://www.qic.com/News-and-Insights/US-land-under-infrastructure-company-Renewa",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Qic — Renewa",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq639096tivheuzabn1g7",
+        "label": "Qic — Renewa",
+        "url": "https://www.qic.com/News-and-Insights/QIC-Infrastructure-backed-Renewa-secures-US450m-of-capital",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Qic — Renewa",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq64k096vivhee7qd5d5f",
+        "label": "Investment date source — CDPQ — Renewa",
+        "url": "https://www.lacaisse.com/en/news/pressreleases/caisse-invests-us200-million-qic-backed-renewa-accelerate-funding-land-under",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CDPQ acquired stake; exact percentage not publicly disclosed",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq65k096xivhe8m3wt4b1",
+        "label": "Renewa — Renewa",
+        "url": "https://www.renewa.com/about/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Renewa company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq66m096zivhejsybgyis",
+        "label": "Qic — Renewa",
+        "url": "https://www.qic.com/news/media-release-qic-backed-renewa-secures-200m-investment-from-cdpq/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Qic — Renewa",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Renewa",
+    "investmentFirm": "CDPQ",
+    "sector": "Power & ET",
+    "subsector": "Land-under-infrastructure for renewable projects",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Sustainable Land Management Strategy",
+    "description": "Renewa acquires and manages land interests under utility-scale renewable-energy projects. Its customers are renewable developers, project owners, and infrastructure investors that need long-duration land control rather than conventional project-level equipment financing. The business is contract-based and infrastructure-linked because value depends on long-term ground leases and site-control arrangements under operating and planned clean-energy projects. CDPQ stated in 2025 that Renewa had attracted more than $750 million of funding commitments since its inception in 2022. Its principal operating footprint is in the United States. CDPQ announced a $200 million investment in July 2025 alongside QIC-backed ownership, and public materials reviewed do not disclose the current ownership percentages.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2022,
+    "investmentYear": 2025,
+    "headquarters": "Multi-state United States",
+    "milestones": [
+      {
+        "date": "2022",
+        "event": "Renewa was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "2022",
+        "event": "QIC acquired Renewa on behalf of a managed client.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Aug 2023",
+        "event": "QIC-backed Renewa secured $450 million of capital.",
+        "category": "Financing"
+      },
+      {
+        "date": "Jul 15, 2025",
+        "event": "CDPQ (La Caisse) made a $200 million primary equity commitment in QIC-backed Renewa, acquiring a stake in the business.",
+        "category": "Financing"
+      },
+      {
+        "date": "Jul 15, 2025",
+        "event": "CDPQ stated that Renewa had secured more than $750 million of commitments since inception.",
+        "category": "Other"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Investment date source — QIC — Renewa",
+        "url": "https://www.qic.com/Investment-Capabilities/Infrastructure/Global-Portfolio/Renewa",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Qic — Renewa",
+        "url": "https://www.qic.com/News-and-Insights/US-land-under-infrastructure-company-Renewa",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Qic — Renewa",
+        "url": "https://www.qic.com/News-and-Insights/QIC-Infrastructure-backed-Renewa-secures-US450m-of-capital",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Investment date source — CDPQ — Renewa",
+        "url": "https://www.lacaisse.com/en/news/pressreleases/caisse-invests-us200-million-qic-backed-renewa-accelerate-funding-land-under",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CDPQ acquired stake; exact percentage not publicly disclosed"
+      },
+      {
+        "label": "Renewa — Renewa",
+        "url": "https://www.renewa.com/about/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Qic — Renewa",
+        "url": "https://www.qic.com/news/media-release-qic-backed-renewa-secures-200m-investment-from-cdpq/",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "CDPQ",
+        "ownershipVehicle": "Sustainable Land Management Strategy",
+        "investmentYear": 2025,
+        "stake": "Stake acquired; exact percentage not publicly disclosed",
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "QIC",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2022,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj2zw00eeivheitsxgrz6",
+        "fundName": "CDPQ Infrastructure",
+        "managerId": "cmrxpib3m002rivherwm9fg8c",
+        "updatedAt": "2026-07-23T16:09:57.740Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpib3m002rivherwm9fg8c",
+        "name": "La Caisse de dépôt (CDPQ)",
+        "updatedAt": "2026-07-23T16:09:21.586Z"
+      },
+      {
+        "id": "cmrxpiclq0038ivhe8d6qcg7j",
+        "name": "QIC",
+        "updatedAt": "2026-07-23T16:09:23.534Z"
+      },
+      {
+        "id": "cmrxpifcq0043ivhe5112opir",
+        "name": "EnCap Investments",
+        "updatedAt": "2026-07-23T16:09:27.098Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0172:renewa:4e75f8f4",
+    "taskIndex": 172,
+    "canonicalKey": "renewa|united-states",
+    "capturedAt": "2026-08-23T19:30:17.650Z",
+    "databaseRevision": "revision:fd7b695cfe3d27e1f9ab485abc20624f7a53ddd5b0a54b77044611e21e4f57c5",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "66851d10409eaefb192638082922aa32af82d398305f6f4b20277be0f99efa09",
+    "productionSnapshotSha256": "0943d73eb149f289f276cf9735a675464263ca543934b99df5844df144472d3f",
+    "targetCompanySnapshotSha256": "46a3f5588ce11d9bf41b70db9ece8857da30d02d2d7f6f85b4f4443b0ad1e670",
+    "seedEntrySha256": "ffed10b8c931e3fa0c507f443a135723af29c305b66d3b1bda6e76882424f74a",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "73b598b493e0144d9b2e7f64bed0b05514b3c826f3661054679abd403e5102d2",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "2396dc1f6d16688ce3fa077c7dcb439d5c3a04b950f6c94144f749c5c2854a19",
+      "organizationsSha256": "7e1610ed148abdeccb73da927b3a2799682fe58679f4530339468b0198c9ce7c",
+      "citationsSha256": "9dcb2cacd07740594ee19eb7b4bf5c1ccb6d83cc4d8b711d7f0a0c6d19d667e9",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "206df0d2fac0c3020c64cb27e4b013430641eb07eb7d1839f9c7e581416c024e",
+    "stateSha256": "85fc20f00a8dda31f9a4d7d0028cb94e000a4ac1476dfdd1366ffe5a2ccd8110",
+    "taskSnapshotSha256": "99758c7073d5a7318f010a412ed8598331ca98841a1831ecc261de690e0b9229"
+  },
+  "contextSha256": "74ae4855edc6bca5bbc0132ffc079886162efd1578bd77dc3183e296fc949700"
+}

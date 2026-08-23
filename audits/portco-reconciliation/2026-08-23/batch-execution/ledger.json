@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-23T19:16:01Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-08-23T20:49:00Z",
+  "activeBatchId": "batch-0172-0176-v7",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -1242,7 +1242,403 @@
           "reason": "Batch 167-171 passed atomic receipt, attribution-repair, production API, canonical rendered-card, source-count, milestone-count, owner-state and terminal-exclusion verification."
         }
       ]
+    },
+    {
+      "batchId": "batch-0172-0176-v1",
+      "state": "FAILED",
+      "taskIds": [
+        "ledger:0172:renewa:4e75f8f4",
+        "ledger:0173:tramcite:9155b156",
+        "ledger:0174:vertical-bridge:62c32643",
+        "ledger:0175:400-paul-avenue-data-center:e79f51df",
+        "ledger:0176:bolder-industries:57e25d60"
+      ],
+      "taskIndexes": [
+        172,
+        173,
+        174,
+        175,
+        176
+      ],
+      "createdAt": "2026-08-23T19:25:30Z",
+      "updatedAt": "2026-08-23T20:12:30Z",
+      "completedAt": "2026-08-23T20:12:30Z",
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0172-0176-v1/batch-manifest.json",
+        "sha256": "03efd052a9820bed1b0960d530f2c66bd59caa05dad325f89eea97d78097534e"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": "Pre-release seed-attribution reconciliation detected duplicate Renewa QIC and La Caisse ownership periods in proposal v1; no release commit or database write occurred.",
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-23T19:25:30Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-23T20:06:00Z",
+          "evidenceSha256": [
+            "03efd052a9820bed1b0960d530f2c66bd59caa05dad325f89eea97d78097534e"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "FAILED",
+          "at": "2026-08-23T20:12:30Z",
+          "evidenceSha256": [
+            "03efd052a9820bed1b0960d530f2c66bd59caa05dad325f89eea97d78097534e"
+          ],
+          "reason": "Pre-release seed-attribution reconciliation detected duplicate Renewa QIC and La Caisse ownership periods in proposal v1; no release commit or database write occurred."
+        }
+      ]
+    },
+    {
+      "batchId": "batch-0172-0176-v2",
+      "state": "FAILED",
+      "taskIds": [
+        "ledger:0172:renewa:4e75f8f4",
+        "ledger:0173:tramcite:9155b156",
+        "ledger:0174:vertical-bridge:62c32643",
+        "ledger:0175:400-paul-avenue-data-center:e79f51df",
+        "ledger:0176:bolder-industries:57e25d60"
+      ],
+      "taskIndexes": [
+        172,
+        173,
+        174,
+        175,
+        176
+      ],
+      "createdAt": "2026-08-23T20:12:31Z",
+      "updatedAt": "2026-08-23T20:20:30Z",
+      "completedAt": "2026-08-23T20:20:30Z",
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0172-0176-v2/batch-manifest.json",
+        "sha256": "7a12c923b8751d109c3fd30a6c56b090055ab09b99b1bf74d4829203487049bb"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": "Production dry-run rejected the Renewa QIC manager alias because it would not round-trip through the existing QIC organization; no release commit or database write occurred.",
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-23T20:12:31Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-23T20:16:00Z",
+          "evidenceSha256": [
+            "7a12c923b8751d109c3fd30a6c56b090055ab09b99b1bf74d4829203487049bb"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "FAILED",
+          "at": "2026-08-23T20:20:30Z",
+          "evidenceSha256": [
+            "7a12c923b8751d109c3fd30a6c56b090055ab09b99b1bf74d4829203487049bb"
+          ],
+          "reason": "Production dry-run rejected the Renewa QIC manager alias because it would not round-trip through the existing QIC organization; no release commit or database write occurred."
+        }
+      ]
+    },
+    {
+      "batchId": "batch-0172-0176-v3",
+      "state": "FAILED",
+      "taskIds": [
+        "ledger:0172:renewa:4e75f8f4",
+        "ledger:0173:tramcite:9155b156",
+        "ledger:0174:vertical-bridge:62c32643",
+        "ledger:0175:400-paul-avenue-data-center:e79f51df",
+        "ledger:0176:bolder-industries:57e25d60"
+      ],
+      "taskIndexes": [
+        172,
+        173,
+        174,
+        175,
+        176
+      ],
+      "createdAt": "2026-08-23T20:20:31Z",
+      "updatedAt": "2026-08-23T20:31:30Z",
+      "completedAt": "2026-08-23T20:31:30Z",
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0172-0176-v3/batch-manifest.json",
+        "sha256": "9dbf7201cf645adebed16f2e456fcc5085956c71f3692137fb83edd567abdc62"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": "Production dry-run rejected shared DigitalBridge source metadata because proposal v1 did not preserve the existing global label and type; no release commit or database write occurred.",
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-23T20:20:31Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-23T20:23:00Z",
+          "evidenceSha256": [
+            "9dbf7201cf645adebed16f2e456fcc5085956c71f3692137fb83edd567abdc62"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "FAILED",
+          "at": "2026-08-23T20:31:30Z",
+          "evidenceSha256": [
+            "9dbf7201cf645adebed16f2e456fcc5085956c71f3692137fb83edd567abdc62"
+          ],
+          "reason": "Production dry-run rejected shared DigitalBridge source metadata because proposal v1 did not preserve the existing global label and type; no release commit or database write occurred."
+        }
+      ]
+    },
+    {
+      "batchId": "batch-0172-0176-v4",
+      "state": "FAILED",
+      "taskIds": [
+        "ledger:0172:renewa:4e75f8f4",
+        "ledger:0173:tramcite:9155b156",
+        "ledger:0174:vertical-bridge:62c32643",
+        "ledger:0175:400-paul-avenue-data-center:e79f51df",
+        "ledger:0176:bolder-industries:57e25d60"
+      ],
+      "taskIndexes": [
+        172,
+        173,
+        174,
+        175,
+        176
+      ],
+      "createdAt": "2026-08-23T20:31:31Z",
+      "updatedAt": "2026-08-23T20:36:30Z",
+      "completedAt": "2026-08-23T20:36:30Z",
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0172-0176-v4/batch-manifest.json",
+        "sha256": "76058b2828bb33f571483087695fd254c782c1f4f865d7bea4391772fa6ba1d0"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": "Production dry-run detected that the 400 Paul to Novva merge omitted the retired site's CIM/1547 ownership-period history; no release commit or database write occurred.",
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-23T20:31:31Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-23T20:34:00Z",
+          "evidenceSha256": [
+            "76058b2828bb33f571483087695fd254c782c1f4f865d7bea4391772fa6ba1d0"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "FAILED",
+          "at": "2026-08-23T20:36:30Z",
+          "evidenceSha256": [
+            "76058b2828bb33f571483087695fd254c782c1f4f865d7bea4391772fa6ba1d0"
+          ],
+          "reason": "Production dry-run detected that the 400 Paul to Novva merge omitted the retired site's CIM/1547 ownership-period history; no release commit or database write occurred."
+        }
+      ]
+    },
+    {
+      "batchId": "batch-0172-0176-v5",
+      "state": "FAILED",
+      "taskIds": [
+        "ledger:0172:renewa:4e75f8f4",
+        "ledger:0173:tramcite:9155b156",
+        "ledger:0174:vertical-bridge:62c32643",
+        "ledger:0175:400-paul-avenue-data-center:e79f51df",
+        "ledger:0176:bolder-industries:57e25d60"
+      ],
+      "taskIndexes": [
+        172,
+        173,
+        174,
+        175,
+        176
+      ],
+      "createdAt": "2026-08-23T20:36:31Z",
+      "updatedAt": "2026-08-23T20:41:30Z",
+      "completedAt": "2026-08-23T20:41:30Z",
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0172-0176-v5/batch-manifest.json",
+        "sha256": "ba7af30390ffcac116a5ecdd641ca16ba795f1033914031348b311ff2d214d85"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": "Production dry-run required the history-preserving 400 Paul merge to declare RETIRE_OWNERSHIP explicitly; no release commit or database write occurred.",
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-23T20:36:31Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-23T20:39:00Z",
+          "evidenceSha256": [
+            "ba7af30390ffcac116a5ecdd641ca16ba795f1033914031348b311ff2d214d85"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "FAILED",
+          "at": "2026-08-23T20:41:30Z",
+          "evidenceSha256": [
+            "ba7af30390ffcac116a5ecdd641ca16ba795f1033914031348b311ff2d214d85"
+          ],
+          "reason": "Production dry-run required the history-preserving 400 Paul merge to declare RETIRE_OWNERSHIP explicitly; no release commit or database write occurred."
+        }
+      ]
+    },
+    {
+      "batchId": "batch-0172-0176-v6",
+      "state": "FAILED",
+      "taskIds": [
+        "ledger:0172:renewa:4e75f8f4",
+        "ledger:0173:tramcite:9155b156",
+        "ledger:0174:vertical-bridge:62c32643",
+        "ledger:0175:400-paul-avenue-data-center:e79f51df",
+        "ledger:0176:bolder-industries:57e25d60"
+      ],
+      "taskIndexes": [
+        172,
+        173,
+        174,
+        175,
+        176
+      ],
+      "createdAt": "2026-08-23T20:41:31Z",
+      "updatedAt": "2026-08-23T20:46:30Z",
+      "completedAt": "2026-08-23T20:46:30Z",
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0172-0176-v6/batch-manifest.json",
+        "sha256": "99512815e85e4602a7e4ea2fbe29b64b0d3855ab934e92cf820e7e0f01f1bd48"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": "Production dry-run rejected the Bolder Tiger manager alias because it would not round-trip through the existing Tiger organization; no release commit or database write occurred.",
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-23T20:41:31Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-23T20:44:00Z",
+          "evidenceSha256": [
+            "99512815e85e4602a7e4ea2fbe29b64b0d3855ab934e92cf820e7e0f01f1bd48"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "FAILED",
+          "at": "2026-08-23T20:46:30Z",
+          "evidenceSha256": [
+            "99512815e85e4602a7e4ea2fbe29b64b0d3855ab934e92cf820e7e0f01f1bd48"
+          ],
+          "reason": "Production dry-run rejected the Bolder Tiger manager alias because it would not round-trip through the existing Tiger organization; no release commit or database write occurred."
+        }
+      ]
+    },
+    {
+      "batchId": "batch-0172-0176-v7",
+      "state": "READY",
+      "taskIds": [
+        "ledger:0172:renewa:4e75f8f4",
+        "ledger:0173:tramcite:9155b156",
+        "ledger:0174:vertical-bridge:62c32643",
+        "ledger:0175:400-paul-avenue-data-center:e79f51df",
+        "ledger:0176:bolder-industries:57e25d60"
+      ],
+      "taskIndexes": [
+        172,
+        173,
+        174,
+        175,
+        176
+      ],
+      "createdAt": "2026-08-23T20:46:31Z",
+      "updatedAt": "2026-08-23T20:49:00Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0172-0176-v7/batch-manifest.json",
+        "sha256": "295c4d3a6ff732c3fd598c64f4bfa8e107f65c0d66b6ae0febda40c9d9bce9aa"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-23T20:46:31Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-23T20:49:00Z",
+          "evidenceSha256": [
+            "295c4d3a6ff732c3fd598c64f4bfa8e107f65c0d66b6ae0febda40c9d9bce9aa"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "36762727190375ef596434329cc8a8105360a46cdf0e8a7d6270da295e436b69"
+  "ledgerSha256": "b2c321f1061b28b83dd21778c1e29e60cab05286e9de53082a3307ce7afff6a6"
 }

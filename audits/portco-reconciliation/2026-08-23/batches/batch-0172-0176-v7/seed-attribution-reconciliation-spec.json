@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_SEED_ATTRIBUTION_RECONCILIATION_SPEC",
+  "batchId": "batch-0172-0176-v7",
+  "batchSha256": "295c4d3a6ff732c3fd598c64f4bfa8e107f65c0d66b6ae0febda40c9d9bce9aa",
+  "reconciledAt": "2026-08-23T20:48:00.000Z",
+  "sourceManifestSha256": "58365f0c49bdde28986384504cb2c6c92412f4fac6d74410a7fbe6c7566e0800",
+  "rationale": "Reconcile the active-owner attribution manifest to Bolder Industries' production-linked Tiger manager and vehicle fallback and revalidate the complete v7 bundle. The canonical after-image uses the existing Tiger organization without an inferred fund or vehicle, so the evaluated seed correctly falls back to Tiger for both the investment firm and current vehicle name.",
+  "removeRecordIds": [],
+  "upsertRecords": [
+    {
+      "recordId": "OFA-8710EAB6D356",
+      "companyName": "Bolder Industries",
+      "country": "United States",
+      "investmentFirm": "Tiger",
+      "currentVehicleName": "Tiger",
+      "investmentYear": 2025,
+      "stake": "Not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "UNRESOLVED",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "Tiger completed its investment through a recapitalization, but the reviewed sources do not identify its fund, legal vehicle, percentage or control rights; Fund III is therefore not inferred.",
+      "evidenceUrls": [
+        "https://www.tigerinfrastructure.com/portfolio/Bolder-Industries",
+        "https://www.prnewswire.com/news-releases/tiger-infrastructure-partners-completes-transformational-growth-investment-in-bolder-industries-a-circular-economy-infrastructure-platform-converting-end-of-life-tires-into-sustainable-materials-302372336.html"
+      ]
+    }
+  ],
+  "specSha256": "6dc0590d8761b24897330ca61757688a472abd73bf5d37753afe3faae067f426"
+}

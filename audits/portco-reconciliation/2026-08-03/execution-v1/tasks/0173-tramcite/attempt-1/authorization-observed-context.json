@@ -1,0 +1,260 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0173:tramcite:9155b156",
+  "taskIndex": 173,
+  "companyName": "TramCité",
+  "generatedAt": "2026-08-23T19:44:55.651Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0173-tramcite/attempt-1/authorization-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 173,
+    "taskId": "ledger:0173:tramcite:9155b156",
+    "canonicalKey": "tramcite|canada",
+    "companyName": "TramCité",
+    "country": "Canada",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 28,
+    "managers": [
+      "CDPQ"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "ADD_PENDING_TRANSACTION"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "028-cdpq:holding:020:tramcite"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjbq800rhivhed5w05kc5"
+    ],
+    "seedKeys": [
+      "tramcité|Canada"
+    ],
+    "evidenceUrls": [
+      "https://cdpqinfra.com/en/tramcite"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_PENDING_TRANSACTION requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjbq800rhivhed5w05kc5",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "tramcite|canada",
+  "targetCompanyImage": {
+    "id": "cmrxpjbq800rhivhed5w05kc5",
+    "name": "TramCité",
+    "aliases": [],
+    "sector": "TRANSPORTATION",
+    "subsector": "Urban tramway",
+    "region": "NORTH_AMERICA",
+    "country": "Canada",
+    "countryTags": [
+      "Canada"
+    ],
+    "description": "TramCité is a proposed tramway and mobility project for Québec City. Its users are expected to be public-transit riders rather than freight, power, or communications customers. The project is development-stage and infrastructure-heavy because value depends on route design, civil works, rolling stock, and future operations and maintenance arrangements. CDPQ Infra materials describe the project at approximately 19 kilometers. Its principal operating footprint is in Québec. CDPQ Infra is overseeing the development process, and public materials reviewed do not disclose a separate external equity ownership structure for the project at this stage.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Québec",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjx3c01p8ivhe5b2bx44z",
+        "managerName": "La Caisse de dépôt (CDPQ)",
+        "organizationName": "La Caisse de dépôt (CDPQ)",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": "Not publicly disclosed",
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpl9c303guivheerd1k7cw",
+        "date": "Dec 19, 2024",
+        "event": "CDPQ Infra launched the TramCité procurement notice following its implementation agreement with the Government of Québec.",
+        "category": "FINANCING",
+        "sortDate": "2024-12-19T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpl9co03gvivhe530n73lh",
+        "date": "Jun 5, 2025",
+        "event": "TramCité announced qualified consortia for major civil-works and systems contracts under a CDPQ Infra-led procurement process.",
+        "category": "EXPANSION",
+        "sortDate": "2025-06-05T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpl9da03gwivhetwssofhq",
+        "date": "Mar 26, 2026",
+        "event": "TramCité announced preferred bidders for the civil and systems contracts under CDPQ Infra's procurement process.",
+        "category": "EXPANSION",
+        "sortDate": "2026-03-26T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpq6v8097xivhedvcqs0uj",
+        "label": "Agreement date source — CDPQ — TramCité",
+        "url": "https://cdpqinfra.com/en/news/pressreleases/cdpq-infra-launches-a-procurement-notice-for-the-tramcite-project",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CDPQ Infra development role; ownership percentage not publicly disclosed",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpq6wc097zivhewslevmbh",
+        "label": "Cdpqinfra — TramCité",
+        "url": "https://cdpqinfra.com/sites/cdpqinfrad8/files/2025-03/Seance_information_avis_marche_TramCite-EN_web_0.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Cdpqinfra — TramCité",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq6xh0981ivhea0xr853o",
+        "label": "Qualified consortia source — CDPQ — TramCité",
+        "url": "https://www.newswire.ca/news-releases/tramcite-takes-an-important-step-forward-with-the-announcement-of-the-qualified-consortia-for-two-major-contracts-834300933.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Qualified consortia source — CDPQ — TramCité",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq6yg0983ivhenwwpjepu",
+        "label": "Preferred bidders source — CDPQ — TramCité",
+        "url": "https://cdpqinfra.com/en/news/pressreleases/tramcite-announces-selected-consortia-for-the-civil-and-systems-contracts",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Preferred bidders source — CDPQ — TramCité",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "TramCité",
+    "investmentFirm": "CDPQ",
+    "sector": "Transportation",
+    "subsector": "Urban tramway",
+    "region": "North America",
+    "country": "Canada",
+    "ownershipVehicle": "n.a.",
+    "description": "TramCité is a proposed tramway and mobility project for Québec City. Its users are expected to be public-transit riders rather than freight, power, or communications customers. The project is development-stage and infrastructure-heavy because value depends on route design, civil works, rolling stock, and future operations and maintenance arrangements. CDPQ Infra materials describe the project at approximately 19 kilometers. Its principal operating footprint is in Québec. CDPQ Infra is overseeing the development process, and public materials reviewed do not disclose a separate external equity ownership structure for the project at this stage.",
+    "status": "Active",
+    "countryTags": [
+      "Canada"
+    ],
+    "investmentYear": 2024,
+    "headquarters": "Québec",
+    "milestones": [
+      {
+        "date": "Dec 19, 2024",
+        "event": "CDPQ Infra launched the TramCité procurement notice following its implementation agreement with the Government of Québec.",
+        "category": "Financing"
+      },
+      {
+        "date": "Jun 5, 2025",
+        "event": "TramCité announced qualified consortia for major civil-works and systems contracts under a CDPQ Infra-led procurement process.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Mar 26, 2026",
+        "event": "TramCité announced preferred bidders for the civil and systems contracts under CDPQ Infra's procurement process.",
+        "category": "Expansion"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Agreement date source — CDPQ — TramCité",
+        "url": "https://cdpqinfra.com/en/news/pressreleases/cdpq-infra-launches-a-procurement-notice-for-the-tramcite-project",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CDPQ Infra development role; ownership percentage not publicly disclosed"
+      },
+      {
+        "label": "Cdpqinfra — TramCité",
+        "url": "https://cdpqinfra.com/sites/cdpqinfrad8/files/2025-03/Seance_information_avis_marche_TramCite-EN_web_0.pdf",
+        "type": "PRESENTATION"
+      },
+      {
+        "label": "Qualified consortia source — CDPQ — TramCité",
+        "url": "https://www.newswire.ca/news-releases/tramcite-takes-an-important-step-forward-with-the-announcement-of-the-qualified-consortia-for-two-major-contracts-834300933.html",
+        "type": "PRESS_RELEASE"
+      },
+      {
+        "label": "Preferred bidders source — CDPQ — TramCité",
+        "url": "https://cdpqinfra.com/en/news/pressreleases/tramcite-announces-selected-consortia-for-the-civil-and-systems-contracts",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "CDPQ",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2024,
+        "stake": "Not publicly disclosed",
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpib3m002rivherwm9fg8c",
+        "name": "La Caisse de dépôt (CDPQ)",
+        "updatedAt": "2026-07-23T16:09:21.586Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0173:tramcite:9155b156",
+    "taskIndex": 173,
+    "canonicalKey": "tramcite|canada",
+    "capturedAt": "2026-08-23T19:44:55.651Z",
+    "databaseRevision": "revision:fdf419500936dde9f2278ed6a7ede870a5691a5224d180764bd5227e90e557aa",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "43086cf87bc793f24786586a5e687e8086c359930982f96f94730bf4fd292020",
+    "productionSnapshotSha256": "db7e66b7366d75f33e443cf7b89def780b609a8a779958a396db137b6c0c3fc0",
+    "targetCompanySnapshotSha256": "8f47362cfdfb462ab6b2c86c9d667d24ff527619c195d87b9cc443c8f2245d41",
+    "seedEntrySha256": "c993cffb96deb59e4a576e132e24320a9ca58f28ea8fd6013bf872206e5cd3fc",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "9555784c9dfaaacc5f1796d84d930e3d9b515ec23479677e9b74588181322d02",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "db006ad46c7b02f338d8fb0034a1205e53c3fc4e9c4f8bbb504c3a4f92a161d9",
+      "citationsSha256": "b41725e1c59048b69df6c2c983c369681e0ce3b737e106e90f494e6bb65774b5",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "6bb94e69d4c976076387ce12fa19810b95985fc33d4d79948efd9e3cf486b534",
+    "stateSha256": "52fe32bf983626698fe960584357fe43ea8c130227658e921fd967b5c3b35ee2",
+    "taskSnapshotSha256": "faeed886912db728df34d08395715020e2b0b7437fcaaabe2a89e5da0519e6e9"
+  },
+  "contextSha256": "e84669989682f95f41371b6239404bcf88f111fd0d85b0e4256b2cda7d59070e"
+}
