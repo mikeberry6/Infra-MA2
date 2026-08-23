@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-23T12:51:25.000Z",
-  "activeBatchId": "batch-0146-0151-v3",
+  "updatedAt": "2026-08-23T13:16:15.000Z",
+  "activeBatchId": null,
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -670,7 +670,7 @@
     },
     {
       "batchId": "batch-0146-0151-v3",
-      "state": "VERIFYING_FAILED",
+      "state": "COMPLETED",
       "taskIds": [
         "ledger:0146:jupiter-power:85379278",
         "ledger:0148:national-renewable-solutions:2d543538",
@@ -686,8 +686,8 @@
         151
       ],
       "createdAt": "2026-08-23T12:18:00.000Z",
-      "updatedAt": "2026-08-23T12:51:25.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-23T13:16:15.000Z",
+      "completedAt": "2026-08-23T13:16:15.000Z",
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0146-0151-v3/batch-manifest.json",
         "sha256": "5e52499d1a5ceef9a15a29f4ca0bf229f085f321f0c68903c6298970b90f4940"
@@ -697,7 +697,7 @@
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0146-0151-v3/production-apply/batch-apply-receipt.json",
         "sha256": "eaf3a53ca94d46dc24af97a262fd080c95ea3ce43050a50d6ba7123f137653d1"
       },
-      "reason": "Rendered production verification found seven direct corporate ownership rows still labeled FUND_ATTRIBUTION_PENDING: former TC Energy and Énergir at PNGTS; current Ørsted and former Eversource at Revolution/South Fork; and current XRG, TotalEnergies and NextDecade at Rio Grande LNG. The atomic PortCo transaction and after-images are correct; attribution metadata must be repaired before completion.",
+      "reason": "Atomic PortCo batch receipt, seven-row direct-program attribution repair, five public APIs, five rendered drawers, ownership histories, sources, milestones, and exact canonical deployment verification passed.",
       "history": [
         {
           "sequence": 1,
@@ -758,9 +758,31 @@
             "eaf3a53ca94d46dc24af97a262fd080c95ea3ce43050a50d6ba7123f137653d1"
           ],
           "reason": "Rendered production verification found seven direct corporate ownership rows still labeled FUND_ATTRIBUTION_PENDING: former TC Energy and Énergir at PNGTS; current Ørsted and former Eversource at Revolution/South Fork; and current XRG, TotalEnergies and NextDecade at Rio Grande LNG. The atomic PortCo transaction and after-images are correct; attribution metadata must be repaired before completion."
+        },
+        {
+          "sequence": 7,
+          "from": "VERIFYING_FAILED",
+          "to": "VERIFYING",
+          "at": "2026-08-23T13:16:13.000Z",
+          "evidenceSha256": [
+            "5e52499d1a5ceef9a15a29f4ca0bf229f085f321f0c68903c6298970b90f4940",
+            "eaf3a53ca94d46dc24af97a262fd080c95ea3ce43050a50d6ba7123f137653d1"
+          ],
+          "reason": "Recovered after protected attribution workflow 32641210280 applied seven direct-program corrections under receipt b9f52c2b5beda928a14451b1dfecf45630f29393144103ef4a006542749d31e6; all five APIs and rendered cards now pass with zero unresolved attribution rows."
+        },
+        {
+          "sequence": 8,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-08-23T13:16:15.000Z",
+          "evidenceSha256": [
+            "5e52499d1a5ceef9a15a29f4ca0bf229f085f321f0c68903c6298970b90f4940",
+            "eaf3a53ca94d46dc24af97a262fd080c95ea3ce43050a50d6ba7123f137653d1"
+          ],
+          "reason": "Atomic PortCo batch receipt, seven-row direct-program attribution repair, five public APIs, five rendered drawers, ownership histories, sources, milestones, and exact canonical deployment verification passed."
         }
       ]
     }
   ],
-  "ledgerSha256": "e9a6d8a41fca1a8545edf979a0fb11baaab5dad5cb36016be65259e9ab77041c"
+  "ledgerSha256": "7ef31c9875f6c618161300d90d0b88b1c22b558e3e38fb24338e6479f2e0e953"
 }
