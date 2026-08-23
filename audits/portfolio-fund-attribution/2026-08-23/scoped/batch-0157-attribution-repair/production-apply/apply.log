@@ -1,0 +1,163 @@
+
+> infra-tracker@1.0.0 portfolio:fund-attribution:apply
+> npx tsx scripts/apply-portfolio-fund-attribution.ts --manifest=audits/portfolio-fund-attribution/2026-08-23/scoped/batch-0157-attribution-repair/apply-manifest.json --manifest-sha256=ec8d137b46aef8612c9e0a2088847a920c45cbe597cb6a7748b7de861c2dd0da --production-snapshot=audits/portfolio-fund-attribution/2026-08-23/scoped/batch-0157-attribution-repair/production-snapshot.json --approval=audits/portfolio-fund-attribution/2026-08-23/scoped/batch-0157-attribution-repair/approval.json --approval-sha256=73dc5db05357e2b4293957ead5bcfb7627af5c789ec0e3b6ea40d458e9667685 --apply=true --write-token=APPLY_REVIEWED_PORTFOLIO_FUND_ATTRIBUTION --receipt=tmp/portfolio-fund-attribution/production/apply-receipt.json
+
+(node:3101) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_RECEIPT",
+  "manifestSha256": "ec8d137b46aef8612c9e0a2088847a920c45cbe597cb6a7748b7de861c2dd0da",
+  "approvalSha256": "73dc5db05357e2b4293957ead5bcfb7627af5c789ec0e3b6ea40d458e9667685",
+  "environment": "production",
+  "pipelineRunId": "cmt60h13n0000e5yyyaj4qo24",
+  "mutationCount": 7,
+  "changed": 7,
+  "idempotent": false,
+  "beforeFingerprint": "d7ddd17474ee13ee7ba708711f44b62070c40a9a057a511cf117140e550617d0",
+  "afterFingerprint": "9157657ae404fb4a8b04c2636fda037b47cd391e0c6f7b4abef4e49dad759d52",
+  "rows": [
+    {
+      "recordId": "OFA-REPAIR-0157-ACT",
+      "ownershipPeriodId": "cmrxpjuec01kxivhewxqrxgd0",
+      "companyId": "cmrxpj96300ngivhermpkiwdm",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": "Blackstone Energy Transition Partners IV (BETP IV)",
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "Blackstone Energy Transition Partners IV (BETP IV)",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, vintage 2025 is 1 years before investment, North America-relevant mandate; next candidate trails by 3.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": "Blackstone Energy Transition Partners IV (BETP IV)",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Blackstone Energy Transition Partners IV (BETP IV)",
+        "attributionConfidence": null,
+        "attributionRationale": "Official Blackstone, FTC and transaction materials identify a closed majority investment by Blackstone Energy Transition Partners IV through Rocket Purchaser, L.L.C.; the approved after-image retains both the disclosed fund and acquisition vehicle."
+      }
+    },
+    {
+      "recordId": "OFA-REPAIR-0158-ARLINGTON",
+      "ownershipPeriodId": "cmrxpjuf701kzivhenfmcwf22",
+      "companyId": "cmrxpj97700niivhe5vpquzmk",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": "Blackstone Energy Transition Partners IV (BETP IV)",
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "Blackstone Energy Transition Partners IV (BETP IV)",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, vintage 2025 is 1 years before investment, North America-relevant mandate; next candidate trails by 3.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": "Blackstone Energy Transition Partners IV (BETP IV)",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Blackstone Energy Transition Partners IV (BETP IV)",
+        "attributionConfidence": null,
+        "attributionRationale": "Official Blackstone and FTC materials identify the closed 2026 Arlington acquisition and Blackstone Energy Transition Partners IV AIV L.P. as the acquiring vehicle; the approved after-image links that disclosed vehicle to BETP IV."
+      }
+    },
+    {
+      "recordId": "OFA-REPAIR-0159-KINDLE",
+      "ownershipPeriodId": "cmrxpjujb01l7ivhek3vg7aph",
+      "companyId": "cmrxpj9b900nqivhekie3r4v7",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Blackstone Energy Transition Partners",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: Blackstone | Fund: Blackstone Energy Transition Partners | Ownership Interest: Not publicly disclosed. Verified fund matches an existing fund-list entry."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Blackstone Capital Partners VII L.P. and Blackstone Energy Partners II L.P.",
+        "attributionConfidence": null,
+        "attributionRationale": "Blackstone transaction materials identify Blackstone Capital Partners VII and Blackstone Energy Partners II as the disclosed Kindle investment vehicles; the combined disclosure is retained without inferring a different curated fund link."
+      }
+    },
+    {
+      "recordId": "OFA-REPAIR-0160-SABRE-BLACKSTONE",
+      "ownershipPeriodId": "cmrxpjusn01lkivhegi1fcvj9",
+      "companyId": "cmrxpj9ht00o2ivheap8w7ncx",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Blackstone Energy Transition Partners",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: Blackstone | Fund: Blackstone Energy Transition Partners | Ownership Interest: Not publicly disclosed. Verified fund matches an existing fund-list entry."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Blackstone Energy Transition Partners",
+        "attributionConfidence": null,
+        "attributionRationale": "Official Blackstone and closing materials show Blackstone Energy Transition Partners retained a significant minority position after TPG's 2026 majority acquisition; no exact retained percentage is publicly disclosed."
+      }
+    },
+    {
+      "recordId": "OFA-REPAIR-0160-SABRE-TPG",
+      "ownershipPeriodId": "cmrxpjut401llivheziczslxt",
+      "companyId": "cmrxpj9ht00o2ivheap8w7ncx",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "TPG Peppertree Fund X",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, vintage 2023 is 3 years before investment, North America-relevant mandate; next candidate trails by 3.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Official TPG, Blackstone and closing materials identify TPG Rise Climate as the majority investor; they do not identify TPG Peppertree Fund X or another separate fund vehicle, so the disclosed strategy is retained as a direct program."
+      }
+    },
+    {
+      "recordId": "OFA-REPAIR-0161-TXNM-PUBLIC",
+      "ownershipPeriodId": "cmt5zk80j001f1jyy7q0bgji4",
+      "companyId": "cmrxpj9mq00o7ivheg939dp9z",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "TXNM remains publicly traded with dispersed public shareholders after Blackstone's 2025 PIPE was fully cancelled and repaid in July 2026; the signed Blackstone take-private is represented only as a pending incoming ownership transaction until legal closing."
+      }
+    },
+    {
+      "recordId": "OFA-REPAIR-0161-TXNM-FORMER-BLACKSTONE",
+      "ownershipPeriodId": "cmrxpjuvp01lqivheohs4h1mf",
+      "companyId": "cmrxpj9mq00o7ivheg939dp9z",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "Blackstone Energy Transition Partners IV (BETP IV)",
+        "attributionConfidence": "MEDIUM",
+        "attributionRationale": "Estimated from manager match 1.00, vintage 2025 is 0 years before investment, North America-relevant mandate; next candidate trails by 15.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "TXNM's filings identify Troy TopCo LP as the exact former $400 million PIPE investment vehicle, but do not disclose the underlying Blackstone infrastructure fund; the stale BETP IV estimate is removed after the shares were fully cancelled and repaid in July 2026."
+      }
+    }
+  ],
+  "appliedAt": "2026-08-23T16:18:09.911Z",
+  "receiptSha256": "3e4a6e86b19fbadc60354a85469cec7025f4a169bc2e02ca55b508ab72032274"
+}
