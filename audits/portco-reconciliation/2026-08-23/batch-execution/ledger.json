@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-23T17:23:21Z",
-  "activeBatchId": "batch-0162-0166-v1",
+  "updatedAt": "2026-08-23T17:49:54Z",
+  "activeBatchId": null,
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -1015,7 +1015,7 @@
     },
     {
       "batchId": "batch-0162-0166-v1",
-      "state": "VERIFYING_FAILED",
+      "state": "COMPLETED",
       "taskIds": [
         "ledger:0162:duke-energy-florida:49a961e7",
         "ledger:0163:cag-holdings-the-new-terminal-one-at-jfk:057d63fe",
@@ -1031,18 +1031,18 @@
         166
       ],
       "createdAt": "2026-08-23T16:37:00Z",
-      "updatedAt": "2026-08-23T17:23:21Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-23T17:49:54Z",
+      "completedAt": "2026-08-23T17:49:54Z",
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0162-0166-v1/batch-manifest-v2.json",
         "sha256": "8f15f33baae4f06e0d088f8f7f1b2d601646d1ebd3eb5b2fc6e632c5597d0569"
       },
-      "releaseSha": "9740c09281b097ea4e5e461312d8578c58289c62",
+      "releaseSha": "445953a5c02dff6c0c1071d9c9dabe81ed16e3be",
       "receipt": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0162-0166-v1/production-apply/batch-apply-receipt.json",
         "sha256": "f52287d030e774fc04793d08ee84185a11b7aaa468c506b2e6902cf588212ef2"
       },
-      "reason": "Independent post-apply verification found stale fund-attribution metadata on Duke Energy Florida, CAG Holdings, Copia Power and Fermata Energy. The PortCo after-images and ownership periods are correct; these four attribution rows must be repaired before batch completion.",
+      "reason": null,
       "history": [
         {
           "sequence": 1,
@@ -1103,9 +1103,31 @@
             "f52287d030e774fc04793d08ee84185a11b7aaa468c506b2e6902cf588212ef2"
           ],
           "reason": "Independent post-apply verification found stale fund-attribution metadata on Duke Energy Florida, CAG Holdings, Copia Power and Fermata Energy. The PortCo after-images and ownership periods are correct; these four attribution rows must be repaired before batch completion."
+        },
+        {
+          "sequence": 7,
+          "from": "VERIFYING_FAILED",
+          "to": "VERIFYING",
+          "at": "2026-08-23T17:49:53Z",
+          "evidenceSha256": [
+            "8f15f33baae4f06e0d088f8f7f1b2d601646d1ebd3eb5b2fc6e632c5597d0569",
+            "f52287d030e774fc04793d08ee84185a11b7aaa468c506b2e6902cf588212ef2"
+          ],
+          "reason": "Protected attribution workflows 32654972048 and 32655894970 corrected all stale metadata and public editorial phrasing; both receipts, all four canonical APIs, all four rendered drawers and the Revera exclusion verified successfully."
+        },
+        {
+          "sequence": 8,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-08-23T17:49:54Z",
+          "evidenceSha256": [
+            "8f15f33baae4f06e0d088f8f7f1b2d601646d1ebd3eb5b2fc6e632c5597d0569",
+            "f52287d030e774fc04793d08ee84185a11b7aaa468c506b2e6902cf588212ef2"
+          ],
+          "reason": null
         }
       ]
     }
   ],
-  "ledgerSha256": "c88d10dc54ee029ae2b9ac39dae98b4ccd2b45a7ae2a1799ff1ba95c8ec968b7"
+  "ledgerSha256": "d1386eeacb924712a50d744bd1a23edf28a5166da428d3de869dbaf4fc88a1b7"
 }
