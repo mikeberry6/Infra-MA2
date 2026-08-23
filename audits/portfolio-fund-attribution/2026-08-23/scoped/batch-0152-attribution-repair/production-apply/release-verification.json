@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_RELEASE_VERIFICATION",
+  "verifiedAt": "2026-08-23T14:44:28.706Z",
+  "manifestSha256": "7708ca83c4317d852e2c6fa333cbc0560b604eeee9d0c5f306db2b50e1920eb6",
+  "approvalSha256": "6ddee01319a2231c371b9f856da8edd0e7be9884ae6af598a7227dd2c1967c0c",
+  "receiptSha256": "07408486b2ad3f251eb2eb899037c81f42518211de50e9e56f27fb1940c69e9e",
+  "mutationCount": 7,
+  "changed": 7,
+  "verificationScope": "BOUNDED_STATUS_SAMPLE",
+  "sampledRows": [
+    {
+      "recordId": "OFA-REPAIR-0152-SAAVI-GIP",
+      "companyId": "cmrxpjgly00ywivhe8rs5yjnm",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjgly00ywivhe8rs5yjnm?verification=7708ca83c4317d852e2c6fa333cbc0560b604eeee9d0c5f306db2b50e1920eb6",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "GIP Emerging Markets Fund I",
+        "attributionConfidence": null,
+        "attributionRationale": "GIP's acquisition release and live portfolio page identify Saavi as an investment of GIP Emerging Markets Fund I; the disclosed fund is not yet a curated fund-list record, so no different fund is inferred."
+      }
+    },
+    {
+      "recordId": "OFA-REPAIR-0153-OCCIDENTAL",
+      "companyId": "cmrxpj91y00ndivhejiuocayx",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpj91y00ndivhejiuocayx?verification=7708ca83c4317d852e2c6fa333cbc0560b604eeee9d0c5f306db2b50e1920eb6",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Occidental holds and consolidates STRATOS through its 1PointFive corporate platform; no separate managed infrastructure fund is disclosed."
+      }
+    },
+    {
+      "recordId": "OFA-REPAIR-0155-FORMER-VISION-RIDGE",
+      "companyId": "cmrxpjgn500yyivhe7tr8lc9h",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjgn500yyivhe7tr8lc9h?verification=7708ca83c4317d852e2c6fa333cbc0560b604eeee9d0c5f306db2b50e1920eb6",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Vision Ridge was Vanguard Renewables' former owner, but the reviewed public sources do not disclose the exact Vision Ridge fund vehicle; the stale BlackRock GEPIF III estimate is unrelated and is removed."
+      }
+    }
+  ],
+  "passed": true
+}
