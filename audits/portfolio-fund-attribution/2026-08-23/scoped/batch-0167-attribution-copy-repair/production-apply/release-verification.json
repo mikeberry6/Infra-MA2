@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_RELEASE_VERIFICATION",
+  "verifiedAt": "2026-08-23T19:13:04.203Z",
+  "manifestSha256": "fc1c07a93e5e98d9202f2c665ff0581c069ebdb4ed333a7ecf6e18b0c5a36b26",
+  "approvalSha256": "ac7e1c55e3d3b770fd7929bde31a739316c397ff990e45f3b550b5e97527e1d7",
+  "receiptSha256": "769c446dea15bc3ab741891f1550cd5ba5cd2f302ce6a1acf3ee2f79af50a014",
+  "mutationCount": 3,
+  "changed": 3,
+  "verificationScope": "BOUNDED_STATUS_SAMPLE",
+  "sampledRows": [
+    {
+      "recordId": "OFA-COPY-0168-VANTAGE-CBRE",
+      "companyId": "cmrxpjdda00u1ivhe4o7z4w3s",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjdda00u1ivhe4o7z4w3s?verification=fc1c07a93e5e98d9202f2c665ff0581c069ebdb4ed333a7ecf6e18b0c5a36b26",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "CBRE Caledon Valhalla Aggregator Holdings, LP",
+        "attributionConfidence": null,
+        "attributionRationale": "CBRE Caledon's announcement and Vantage SDC transaction documents identify CBRE Caledon Valhalla Aggregator Holdings, LP as the investment vehicle. The reviewed sources do not identify a separate underlying fund."
+      }
+    },
+    {
+      "recordId": "OFA-COPY-0168-VANTAGE-DB-2017",
+      "companyId": "cmrxpjdda00u1ivhe4o7z4w3s",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjdda00u1ivhe4o7z4w3s?verification=fc1c07a93e5e98d9202f2c665ff0581c069ebdb4ed333a7ecf6e18b0c5a36b26",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The 2017 acquisition materials establish DigitalBridge as a current platform owner. The applicable DigitalBridge fund or legal investment vehicle is not publicly disclosed in the reviewed evidence."
+      }
+    }
+  ],
+  "passed": true
+}
