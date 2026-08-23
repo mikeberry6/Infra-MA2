@@ -1,0 +1,291 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0159:magnolia-power-generating-station:a3187893",
+  "taskIndex": 159,
+  "companyName": "Magnolia Power Generating Station",
+  "generatedAt": "2026-08-23T15:08:55.854Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0159-magnolia-power-generating-station/attempt-1/locked-v2-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 159,
+    "taskId": "ledger:0159:magnolia-power-generating-station:a3187893",
+    "canonicalKey": "magnolia-power-generating-station|united-states",
+    "companyName": "Magnolia Power Generating Station",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 24,
+    "managers": [
+      "Blackstone"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "024-blackstone:repo-only:002:magnolia-power-generating-station"
+    ],
+    "productionCompanyIds": [
+      "cmrxpj9dy00nvivhehugooqb3"
+    ],
+    "seedKeys": [
+      "magnolia power generating station|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.businesswire.com/news/home/20260225463871/en/Blackstone-Energy-Transition-Partners-Announces-Completion-of-694MW-Magnolia-Power-Generating-Station-in-Louisiana",
+      "https://www.kindle-energy.com/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Blackstone MATCHED_ELSEWHERE: Magnolia is consolidated beneath the counted Kindle Energy platform and should not be represented as a separate manager-level holding.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "REVIEWED_MERGE_CANONICAL_TARGET",
+    "targetCompanyId": "cmrxpj9b900nqivhekie3r4v7",
+    "linkedQueueTaskId": null,
+    "immutableRetiredCompanyId": "cmrxpj9dy00nvivhehugooqb3"
+  },
+  "resolvedCanonicalKey": "kindle-energy|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpj9b900nqivhekie3r4v7",
+    "name": "Kindle Energy",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Power generation development and asset management",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Kindle Energy develops, acquires, manages, and operates power generation assets in North America. Its customer and counterparties include utilities, cooperatives, municipalities, commercial and industrial buyers, and wholesale power markets. The business operates as an asset-heavy generation platform with responsibilities spanning investment, operations, fuel strategy, and commercial management. Public materials state that the team has managed more than 70 gigawatts of generation historically and that the operating platform had roughly 11 gigawatts of capacity by early 2026. Kindle's 2025 Ohio legislative testimony states that the company was founded in 2015 as a Blackstone portfolio company; later Magnolia construction milestones do not reset Blackstone's original owner-entry year.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2015,
+    "headquarters": "New Jersey and multiple U.S. states",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjujb01l7ivhek3vg7aph",
+        "managerName": "Blackstone",
+        "organizationName": "Blackstone",
+        "fundName": null,
+        "vehicleName": "Blackstone Energy Transition Partners",
+        "stake": null,
+        "investmentYear": 2015,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkxxb032vivhegssv8g90",
+        "date": "2015",
+        "event": "Blackstone founded Kindle Energy as a portfolio company.",
+        "category": "FINANCING",
+        "sortDate": "2015-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkxxv032wivheg3r4a8ob",
+        "date": "2015",
+        "event": "Kindle Energy was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2015-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkxyi032xivheoyikyh0j",
+        "date": "2018",
+        "event": "Kindle built out a portfolio of gas-fired power assets and asset-management capabilities in North America.",
+        "category": "EXPANSION",
+        "sortDate": "2018-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkxz2032yivherp7qc38h",
+        "date": "2022",
+        "event": "Construction began on the Magnolia Power Generating Station in Louisiana with Kindle as the development platform.",
+        "category": "EXPANSION",
+        "sortDate": "2022-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkxzi032zivhek1nsr3iw",
+        "date": "Feb 25, 2026",
+        "event": "Magnolia entered commercial operation, highlighting Kindle's role within Blackstone's generation strategy.",
+        "category": "EXPANSION",
+        "sortDate": "2026-02-25T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxppmnl08g4ivhe1onzsgcu",
+        "label": "Kindle Energy — Kindle Energy",
+        "url": "https://www.kindle-energy.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Kindle Energy company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxppmon08g6ivhea5c9e37o",
+        "label": "Kindle Energy — Kindle Energy",
+        "url": "https://www.kindle-energy.com/about-us/meet-the-kindle-energy-team/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Kindle Energy company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppmpr08g8ivheh4s7xdyf",
+        "label": "Investment date source — Blackstone — Kindle Energy",
+        "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/committees/cmte_h_energy_1/meetings/cmte_h_energy_1_2025-03-19-0300_239/testimony/4530/uploaded-doc/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Blackstone initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppmqw08gaivhexza1z3st",
+        "label": "Powermag — Kindle Energy",
+        "url": "https://www.powermag.com/blackstone-brings-694-mw-gas-fired-plant-online-in-louisiana/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Powermag — Kindle Energy",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Kindle Energy",
+    "investmentFirm": "Blackstone",
+    "sector": "Power & ET",
+    "subsector": "Power generation development and asset management",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Blackstone Energy Transition Partners",
+    "description": "Kindle Energy develops, acquires, manages, and operates power generation assets in North America. Its customer and counterparties include utilities, cooperatives, municipalities, commercial and industrial buyers, and wholesale power markets. The business operates as an asset-heavy generation platform with responsibilities spanning investment, operations, fuel strategy, and commercial management. Public materials state that the team has managed more than 70 gigawatts of generation historically and that the operating platform had roughly 11 gigawatts of capacity by early 2026. Kindle's 2025 Ohio legislative testimony states that the company was founded in 2015 as a Blackstone portfolio company; later Magnolia construction milestones do not reset Blackstone's original owner-entry year.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2015,
+    "investmentYear": 2015,
+    "headquarters": "New Jersey and multiple U.S. states",
+    "milestones": [
+      {
+        "date": "2015",
+        "event": "Blackstone founded Kindle Energy as a portfolio company.",
+        "category": "Financing"
+      },
+      {
+        "date": "2015",
+        "event": "Kindle Energy was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "2018",
+        "event": "Kindle built out a portfolio of gas-fired power assets and asset-management capabilities in North America.",
+        "category": "Expansion"
+      },
+      {
+        "date": "2022",
+        "event": "Construction began on the Magnolia Power Generating Station in Louisiana with Kindle as the development platform.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Feb 25, 2026",
+        "event": "Magnolia entered commercial operation, highlighting Kindle's role within Blackstone's generation strategy.",
+        "category": "Expansion"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Kindle Energy — Kindle Energy",
+        "url": "https://www.kindle-energy.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Kindle Energy — Kindle Energy",
+        "url": "https://www.kindle-energy.com/about-us/meet-the-kindle-energy-team/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Investment date source — Blackstone — Kindle Energy",
+        "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/committees/cmte_h_energy_1/meetings/cmte_h_energy_1_2025-03-19-0300_239/testimony/4530/uploaded-doc/",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Powermag — Kindle Energy",
+        "url": "https://www.powermag.com/blackstone-brings-694-mw-gas-fired-plant-online-in-louisiana/",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Blackstone",
+        "ownershipVehicle": "Blackstone Energy Transition Partners",
+        "investmentYear": 2015,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi5em000yivhekda3otkf",
+        "name": "Blackstone",
+        "updatedAt": "2026-07-23T16:09:14.206Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0159:magnolia-power-generating-station:a3187893",
+    "taskIndex": 159,
+    "canonicalKey": "magnolia-power-generating-station|united-states",
+    "capturedAt": "2026-08-23T15:08:55.854Z",
+    "databaseRevision": "revision:b214c3db7a30eaa00d1595fcb18fb95c0098479713c7a2f5f0294e88395ef70d",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "13f8aa2a02428628a0263f03b8e3fbb54f8cf9be2cc6f72188f7848801494237",
+    "productionSnapshotSha256": "9569dcfd891e89e89c1a5ee9b11b8be078f50b2267896683c06ff7a631c4e724",
+    "targetCompanySnapshotSha256": "d86c9d49fff22deb502a3c3371f170dbde50a699bda5de26ce0339bc507383ea",
+    "seedEntrySha256": "b35b269510e228d5ae708035c4958b33301e5bf0b68059d02f2231fe9e269d12",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "eef952e2dffc3452a75da785b752b809730afedcfed2a784c2d240df95ea7aee",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "822bec67cc4716c5f451eabeacca4f0e1879646fef54ea97656799afeac99c94",
+      "citationsSha256": "1867f1f4519de44c5fe93a87351663b165bfff49d0716d92e048c4bab6de3b38",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "8fc32e03e90dc0fa7fa83a1384c8b151fbb7ebdd5113cefbe7c1fb85dc06a32a",
+    "stateSha256": "b587a5387ca6d8c120ed775eabcd21dabc0e2eea3f16be01c9bb0676a7b526c0",
+    "taskSnapshotSha256": "2d9068545db5ff691e5d0265cfb568080b45b58fb2e733a79410d7617962a8b3"
+  },
+  "contextSha256": "ba724dc53b9d88705afa187b739dbe4e581325620d87f7e422fcd8a383c3ca48"
+}

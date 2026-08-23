@@ -1,0 +1,267 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0157:advanced-cooling-technologies-act:3ea176a7",
+  "taskIndex": 157,
+  "companyName": "Advanced Cooling Technologies (ACT)",
+  "generatedAt": "2026-08-23T15:08:51.810Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0157-advanced-cooling-technologies-act/attempt-1/locked-v2-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 157,
+    "taskId": "ledger:0157:advanced-cooling-technologies-act:3ea176a7",
+    "canonicalKey": "advanced-cooling-technologies-act|united-states",
+    "companyName": "Advanced Cooling Technologies (ACT)",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 24,
+    "managers": [
+      "Blackstone"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "ADD_PENDING_TRANSACTION"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "024-blackstone:holding:002:advanced-cooling-technologies-act"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpj96300ngivhermpkiwdm"
+    ],
+    "seedKeys": [
+      "advanced cooling technologies (act)|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.blackstone.com/news/press/blackstone-energy-transition-partners-announces-agreement-to-acquire-majority-stake-in-advanced-cooling-technologies/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_PENDING_TRANSACTION requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj96300ngivhermpkiwdm",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "advanced-cooling-technologies-act|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpj96300ngivhermpkiwdm",
+    "name": "Advanced Cooling Technologies (ACT)",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Thermal management and cooling systems",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Advanced Cooling Technologies designs and manufactures thermal management, heat transfer, and energy efficiency products used in data centers, defense, aerospace, electronics, HVAC, and industrial applications. The company sells engineered components and systems to original equipment manufacturers, end users, and government-related customers that require temperature control and power-density management. Its operating model is asset-heavy, with in-house engineering and manufacturing supporting both standard products and custom applications. Public materials identify Pennsylvania as its operating base, while its end markets extend across the United States. Blackstone Energy Transition Partners announced an agreement in March 2026 to acquire a majority stake, but post-closing ownership percentages were not publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2003,
+    "headquarters": "Pennsylvania",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjuec01kxivhewxqrxgd0",
+        "managerName": "Blackstone",
+        "organizationName": "Blackstone",
+        "fundName": "Blackstone Energy Transition Partners IV (BETP IV)",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2026,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkx43031vivhekp42uevi",
+        "date": "2003",
+        "event": "Advanced Cooling Technologies was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2003-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkx4m031wivheftv022uj",
+        "date": "2012",
+        "event": "The company acquired Q-Dot Technology to add advanced heat-spreader capabilities.",
+        "category": "ACQUISITION",
+        "sortDate": "2012-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkx53031xivhet0n5k7na",
+        "date": "2015",
+        "event": "ACT acquired PCM Products to expand into phase change material and thermal storage applications.",
+        "category": "EXPANSION",
+        "sortDate": "2015-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkx5i031yivheq7hop811",
+        "date": "Mar 11, 2026",
+        "event": "Blackstone Energy Transition Partners announced an agreement to acquire a majority stake in ACT.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-03-11T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxppldr08eeivhehtpdhdna",
+        "label": "1 Act — Advanced Cooling Technologies (ACT)",
+        "url": "https://www.1-act.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "1 Act company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpplev08egivheftqzd3ea",
+        "label": "1 Act — Advanced Cooling Technologies (ACT)",
+        "url": "https://www.1-act.com/about/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "1 Act company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpplfx08ehivhenadt5ycy",
+        "label": "Blackstone",
+        "url": "https://www.blackstone.com/news/press/blackstone-energy-transition-partners-announces-agreement-to-acquire-majority-stake-in-advanced-cooling-technologies/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Blackstone transaction announcement",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Advanced Cooling Technologies (ACT)",
+    "investmentFirm": "Blackstone",
+    "sector": "Digital",
+    "subsector": "Thermal management and cooling systems",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "Advanced Cooling Technologies designs and manufactures thermal management, heat transfer, and energy efficiency products used in data centers, defense, aerospace, electronics, HVAC, and industrial applications. The company sells engineered components and systems to original equipment manufacturers, end users, and government-related customers that require temperature control and power-density management. Its operating model is asset-heavy, with in-house engineering and manufacturing supporting both standard products and custom applications. Public materials identify Pennsylvania as its operating base, while its end markets extend across the United States. Blackstone Energy Transition Partners announced an agreement in March 2026 to acquire a majority stake, but post-closing ownership percentages were not publicly disclosed.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2003,
+    "investmentYear": 2026,
+    "headquarters": "Pennsylvania",
+    "milestones": [
+      {
+        "date": "2003",
+        "event": "Advanced Cooling Technologies was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "2012",
+        "event": "The company acquired Q-Dot Technology to add advanced heat-spreader capabilities.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "2015",
+        "event": "ACT acquired PCM Products to expand into phase change material and thermal storage applications.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Mar 11, 2026",
+        "event": "Blackstone Energy Transition Partners announced an agreement to acquire a majority stake in ACT.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "1 Act — Advanced Cooling Technologies (ACT)",
+        "url": "https://www.1-act.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "1 Act — Advanced Cooling Technologies (ACT)",
+        "url": "https://www.1-act.com/about/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Announcement date source — Blackstone — Advanced Cooling Technologies (ACT)",
+        "url": "https://www.blackstone.com/news/press/blackstone-energy-transition-partners-announces-agreement-to-acquire-majority-stake-in-advanced-cooling-technologies/",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Blackstone",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2026,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj1ju00c5ivhey5d0stry",
+        "fundName": "Blackstone Energy Transition Partners IV (BETP IV)",
+        "managerId": "cmrxpi5em000yivhekda3otkf",
+        "updatedAt": "2026-07-23T16:09:55.866Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi5em000yivhekda3otkf",
+        "name": "Blackstone",
+        "updatedAt": "2026-07-23T16:09:14.206Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0157:advanced-cooling-technologies-act:3ea176a7",
+    "taskIndex": 157,
+    "canonicalKey": "advanced-cooling-technologies-act|united-states",
+    "capturedAt": "2026-08-23T15:08:51.810Z",
+    "databaseRevision": "revision:bb0aafdd53b5b21d218272bdc8366cdad44cf00ac9339a3c0e1153e7a6bd092d",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "5fa6dae5be471e291db4c4ebb4d08b6b2fd69dc269b26408eb72d64ab6e097e0",
+    "productionSnapshotSha256": "0eee3787525b3527c1275c4b86ef17ef162e51be1de67f3153ed2b32d6532e67",
+    "targetCompanySnapshotSha256": "43b48231d1ca00578bfc346e7a0fb8e18ea95d790f75a291bb99e9be80580640",
+    "seedEntrySha256": "5bc63451ffa8bb6bfd29cefe59dfc64609309a6f7561d8bd28023a4cb2cdeba8",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "fb1667e12ee15d01e1c9b95a2f59fdcea9fba9cfe7799dffe8a38d391a87c30b",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "bfbbc97b62364bdca0d923e9d9c2d2c8e9809cc241147623a5385f341caadfba",
+      "organizationsSha256": "822bec67cc4716c5f451eabeacca4f0e1879646fef54ea97656799afeac99c94",
+      "citationsSha256": "0fc147593d77bf86a12537edbe4f18b151d10c6958cfe577eaff6856755c9d9a",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "0ba6d765cd3c4214e3dbc9e87b965346f83a81f6313a98a0fd6482a1f77e6aa6",
+    "stateSha256": "cf7c89e079409fc25d1428dfd7a2b15b987264abad115d46fdce1ecc7be7bfc2",
+    "taskSnapshotSha256": "5e18fe6e3a35fed888e5dc33f6a09952a59c665d5827f474e64ec4bae1381080"
+  },
+  "contextSha256": "49791ad1b502bc8b829d862b8edff1fc3da900c393e989a590bd0f5a31292314"
+}

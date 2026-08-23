@@ -1,0 +1,519 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_MANIFEST",
+  "methodologyVersion": "PORTCO_APPLY_BATCH_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0157-0161-v1",
+  "createdAt": "2026-08-23T15:21:00.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "2d84f1375d30cc54557c9b87630e8266ac7e275de93f5694414e719803565c17"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0157:advanced-cooling-technologies-act:3ea176a7",
+      "taskIndex": 157,
+      "companyName": "Advanced Cooling Technologies (ACT)",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0157-advanced-cooling-technologies-act-v1/proposal.json",
+        "sha256": "16c3b9883dce4dc27fa7a2afde944735547533f6507d40c6fd61a0ed0576857d"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0157-advanced-cooling-technologies-act-v1.json",
+        "sha256": "4ccb910cca4750c088935b91809e862769f537fbfb8e51ed1ed9d516a464934c"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0157-advanced-cooling-technologies-act/attempt-1/locked-v2-production-snapshot.json",
+        "sha256": "0eee3787525b3527c1275c4b86ef17ef162e51be1de67f3153ed2b32d6532e67"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0157-advanced-cooling-technologies-act/attempt-1/locked-v2-task-snapshot.json",
+        "sha256": "5e18fe6e3a35fed888e5dc33f6a09952a59c665d5827f474e64ec4bae1381080"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0157-advanced-cooling-technologies-act/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "102ceedc41b8b2371e3312f7498925a38011f6a057bc3ebf3dd660ab6943d2a1"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0157-advanced-cooling-technologies-act/attempt-1/research-decision.json",
+        "sha256": "c2c3c6df2e72fea8e06349df7a39d06d61bfa9227bdc7042352c587137a08030"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0157-advanced-cooling-technologies-act/attempt-1/source-verification.json",
+        "sha256": "9db4aee00f60c3959feb97304f098094f8258d5f97ccb98441300a25e00917dc"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "cf7c89e079409fc25d1428dfd7a2b15b987264abad115d46fdce1ecc7be7bfc2",
+      "dependencySha256": "0ba6d765cd3c4214e3dbc9e87b965346f83a81f6313a98a0fd6482a1f77e6aa6",
+      "afterImageSha256": "dd81b5c1caff55e7389576f4f9dc2a4ab2ad81abe420c0c39b7fd7442d0e5e47",
+      "targetClaims": [
+        "canonical:advanced-cooling-technologies-act|united-states",
+        "company:cmrxpj96300ngivhermpkiwdm",
+        "relation:cmrxpjuec01kxivhewxqrxgd0",
+        "relation:cmrxpkx43031vivhekp42uevi",
+        "relation:cmrxpkx4m031wivheftv022uj",
+        "relation:cmrxpkx53031xivhet0n5k7na",
+        "relation:cmrxpkx5i031yivheq7hop811",
+        "relation:cmrxppldr08eeivhehtpdhdna",
+        "relation:cmrxpplev08egivheftqzd3ea",
+        "relation:cmrxpplfx08ehivhenadt5ycy",
+        "seed:advanced cooling technologies (act)|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://hl.com/about-us/transactions/advanced-cooling-technologies-blackstone-energy-transition-partners/",
+          "label": "Houlihan Lokey — ACT transaction",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.1-act.com/",
+          "label": "1 Act — Advanced Cooling Technologies (ACT)",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.1-act.com/about/",
+          "label": "1 Act — Advanced Cooling Technologies (ACT)",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.1-act.com/about/news/advanced-cooling-technologies-expands-manufacturing-capacity-to-support-growing-demand-in-space-defense-and-data-center-markets/",
+          "label": "ACT — Manufacturing capacity expansion",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/blackstone-advanced-cooling-technologies",
+          "label": "ACCC — Blackstone / ACT acquisition",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.blackstone.com/news/press/blackstone-energy-transition-partners-announces-agreement-to-acquire-majority-stake-in-advanced-cooling-technologies/",
+          "label": "Blackstone",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.ftc.gov/legal-library/browse/early-termination-notices/20260959",
+          "label": "FTC — ACT early termination notice",
+          "sourceType": "OTHER"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0158:arlington-industries:c7b020cc",
+      "taskIndex": 158,
+      "companyName": "Arlington Industries",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0158-arlington-industries-v1/proposal.json",
+        "sha256": "cc4000cecb667d4f4cabb09022bf86a8caa91110be3a8047a986096251e9f4b2"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0158-arlington-industries-v1.json",
+        "sha256": "5f9c158677f63e747365448a5ee4654dca78178d4cd333e036d66267709ee9fc"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0158-arlington-industries/attempt-1/locked-v2-production-snapshot.json",
+        "sha256": "387bb7fe0c83d6a1be5c354647c2a4b1f53a7d171d94a75c062928eb709f80bc"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0158-arlington-industries/attempt-1/locked-v2-task-snapshot.json",
+        "sha256": "1505e64ae305abf1075f8a90bde5965136be7cfa6ed9f4957fd0b47d2f81d685"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0158-arlington-industries/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "ae5fb4386d9a6443a555d0412664042f2ad868df6247763ffec9886efc6507eb"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0158-arlington-industries/attempt-1/research-decision.json",
+        "sha256": "1229cfe193930f0716a71e36c67e8e4bfee53096174db3235feed9b5650a1175"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0158-arlington-industries/attempt-1/source-verification.json",
+        "sha256": "1514b6eae373f3db45724becc17e0f88a41c438271a5d1afbef717f98d939ba7"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "e53f848d58f97c899c50e9826f568f87e4b6dce05b521b5a2ac97536aeddd73b",
+      "dependencySha256": "97a69de30f5ac571bbc8c233f8920f3e34301e2b0fba511afa67ae4d0d86bcbd",
+      "afterImageSha256": "10025825629ce0c7e1f3c109444449083722ca9be6dba5e4c4f0b1c25230537c",
+      "targetClaims": [
+        "canonical:arlington-industries|united-states",
+        "company:cmrxpj97700niivhe5vpquzmk",
+        "relation:cmrxpjuf701kzivhenfmcwf22",
+        "relation:cmrxpkx970323ivhe20vazgmb",
+        "relation:cmrxpkx9t0324ivhek792tm6g",
+        "relation:cmrxpkxab0325ivhe8g98uv4s",
+        "relation:cmrxppljs08eoivhevrexop21",
+        "relation:cmrxpplkv08eqivhehamc3mi6",
+        "relation:cmrxpplly08erivhe5q3rlnj8",
+        "seed:arlington industries|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://www.aifittings.com/",
+          "label": "Aifittings — Arlington Industries",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.aifittings.com/about/history",
+          "label": "Aifittings — Arlington Industries",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.aifittings.com/media/catalogs/Arlington-75Years.pdf",
+          "label": "Arlington Industries — 75-year history",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://www.blackstone.com/news/press/blackstone-announces-agreement-to-acquire-arlington-industries/",
+          "label": "Blackstone",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.ftc.gov/legal-library/browse/early-termination-notices/20260906",
+          "label": "FTC — Arlington early termination notice",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1393818/000119312526313250/d153439dex991.htm",
+          "label": "Blackstone — Second-quarter 2026 results",
+          "sourceType": "SEC_FILING"
+        },
+        {
+          "url": "https://www.sullcrom.com/Lawyers/Keith-A-Pagnani",
+          "label": "Sullivan & Cromwell — Arlington transaction matter",
+          "sourceType": "ARTICLE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0159:magnolia-power-generating-station:a3187893",
+      "taskIndex": 159,
+      "companyName": "Magnolia Power Generating Station",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0159-magnolia-power-generating-station-v1/proposal.json",
+        "sha256": "fd94b7a02a5d65d4bc0716db1db71fa3a65d4af576515ca1d9bc00ef4cc5cd65"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0159-magnolia-power-generating-station-v1.json",
+        "sha256": "270aa5d4b7aab53992ecc8316e9dd8bb30a3eb4ac97e2c71f0e93a7df1b57aa5"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0159-magnolia-power-generating-station/attempt-1/locked-v2-production-snapshot.json",
+        "sha256": "9569dcfd891e89e89c1a5ee9b11b8be078f50b2267896683c06ff7a631c4e724"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0159-magnolia-power-generating-station/attempt-1/locked-v2-task-snapshot.json",
+        "sha256": "2d9068545db5ff691e5d0265cfb568080b45b58fb2e733a79410d7617962a8b3"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0159-magnolia-power-generating-station/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "aa241a03be3867337bc9b400edc295835466f50820b34e23a4cb9d0a0f6a3048"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0159-magnolia-power-generating-station/attempt-1/research-decision.json",
+        "sha256": "6be0f164065a138671b3f1f95adaf13827aabb5d3c437eed7cb899e9ddefcedb"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0159-magnolia-power-generating-station/attempt-1/source-verification.json",
+        "sha256": "e69b0dd27fa2529007b4a65e01a20b3e10e5ca2ce00346a8ae76ab6d4aad79ed"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "b587a5387ca6d8c120ed775eabcd21dabc0e2eea3f16be01c9bb0676a7b526c0",
+      "dependencySha256": "8fc32e03e90dc0fa7fa83a1384c8b151fbb7ebdd5113cefbe7c1fb85dc06a32a",
+      "afterImageSha256": "60f3f34d520754ad51197ae99673ca4d6fef37076a36297e3333f0448030e5bd",
+      "targetClaims": [
+        "canonical:kindle-energy|united-states",
+        "company:cmrxpj9b900nqivhekie3r4v7",
+        "company:cmrxpj9dy00nvivhehugooqb3",
+        "relation:cmrxpjujb01l7ivhek3vg7aph",
+        "relation:cmrxpjuo601lcivheaakd94zf",
+        "relation:cmrxpkxxb032vivhegssv8g90",
+        "relation:cmrxpkxxv032wivheg3r4a8ob",
+        "relation:cmrxpkxyi032xivheoyikyh0j",
+        "relation:cmrxpkxz2032yivherp7qc38h",
+        "relation:cmrxpkxzi032zivhek1nsr3iw",
+        "relation:cmrxpkye2033hivhefk6yyq5h",
+        "relation:cmrxpkyf3033jivhekzxnjr3y",
+        "relation:cmrxpkyfn033kivheidms2pje",
+        "relation:cmrxppmnl08g4ivhe1onzsgcu",
+        "relation:cmrxppmon08g6ivhea5c9e37o",
+        "relation:cmrxppmpr08g8ivheh4s7xdyf",
+        "relation:cmrxppmqw08gaivhexza1z3st",
+        "seed:kindle energy|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://kindle-energy.com/about",
+          "label": "Kindle Energy — Current portfolio",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://kindle-energy.com/case-studies/magnolia",
+          "label": "Kindle Energy — Magnolia case study",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://lpscpubvalence.lpsc.louisiana.gov/portal/PSC/ViewFile?fileId=szIv3sAmBmA%3D",
+          "label": "Louisiana PSC — Magnolia filing",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/committees/cmte_h_energy_1/meetings/cmte_h_energy_1_2025-03-19-0300_239/testimony/4530/uploaded-doc/",
+          "label": "Investment date source — Blackstone — Kindle Energy",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.businesswire.com/news/home/20260225463871/en/Blackstone-Energy-Transition-Partners-Announces-Completion-of-694MW-Magnolia-Power-Generating-Station-in-Louisiana",
+          "label": "Investment date source — Blackstone — Magnolia Power Generating Station",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.federalregister.gov/documents/2026/08/17/2026-16737/combined-notice-of-filings-2",
+          "label": "Federal Register — Magnolia filing notice",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.kindle-energy.com/",
+          "label": "Kindle Energy — Kindle Energy",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.kindle-energy.com/about-us/meet-the-kindle-energy-team/",
+          "label": "Kindle Energy — Kindle Energy",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.kirkland.com/lawyers/m/monastyrskaya-tatiana",
+          "label": "Kirkland & Ellis — Magnolia financing matter",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.powermag.com/blackstone-brings-694-mw-gas-fired-plant-online-in-louisiana/",
+          "label": "Powermag — Kindle Energy",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1144800/000114480026000041/q22026newsreleasecombined.htm",
+          "label": "TransAlta — Second-quarter 2026 results",
+          "sourceType": "SEC_FILING"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0160:sabre-industries:6ac88af1",
+      "taskIndex": 160,
+      "companyName": "Sabre Industries",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0160-sabre-industries-v1/proposal.json",
+        "sha256": "33e02baa807678a88dea5f7636c9d6f7d4cbd85b08033e88f73488cc970b95d8"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0160-sabre-industries-v1.json",
+        "sha256": "629f357be67413aec08daaab93b41c71456877a7a2d31415cfb57a96046756a2"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0160-sabre-industries/attempt-1/locked-v2-production-snapshot.json",
+        "sha256": "f178ade6cb8a68d9b2b160c8e8be5742ab8fc1f207314abf3aff23357e95812c"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0160-sabre-industries/attempt-1/locked-v2-task-snapshot.json",
+        "sha256": "4e67b4de2fb15660c96c97a1be4a4a9085616bdac7b0d5ef7a197bc59d78012b"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0160-sabre-industries/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "ae4ac75cd7e061408c54ea36e89d523ed50ebafd7014c8373e89c2e64f37f235"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0160-sabre-industries/attempt-1/research-decision.json",
+        "sha256": "a4d5e162e35ee614635ef07185f6c4f59ce14e6ba173c30080a4be50e82556f0"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0160-sabre-industries/attempt-1/source-verification.json",
+        "sha256": "612738ccc5a9618a6e2b9d3e6fec79d5e6d81c75b68182eba09290f600bede01"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "6af631804ea9157a6bd35ba680c489d8a5efff4dbe9078c39bbc0098e30e7c43",
+      "dependencySha256": "29a07a2eceacc5a833bba0ef65e5ca6f5263d3bfb9b14295bdd3297667db4667",
+      "afterImageSha256": "907072d1a872deb95addbb30c9539efcd6149249db28509914a86818980f6b07",
+      "targetClaims": [
+        "canonical:sabre-industries|united-states",
+        "company:cmrxpj9ht00o2ivheap8w7ncx",
+        "relation:cmrxpjusn01lkivhegi1fcvj9",
+        "relation:cmrxpjut401llivheziczslxt",
+        "relation:cmrxpkywm0346ivheguzttxny",
+        "relation:cmrxpkyx10347ivhejy7hh6gk",
+        "relation:cmrxpkyxf0348ivhe11txz09x",
+        "relation:cmrxpkyxu0349ivheixog16jf",
+        "relation:cmrxpkyyg034aivhe9ixlih5s",
+        "relation:cmrxppoc108inivhes206v6hr",
+        "relation:cmrxppod308ipivhemjld1f9i",
+        "relation:cmrxppoe708irivhe9rl6ujd7",
+        "relation:cmrxppofb08itivhez5lyoqig",
+        "relation:cmrxppogd08ivivheij3iubc5",
+        "relation:cmrxppok108iwivhef26nsekq",
+        "seed:sabre industries|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://www.blackstone.com/news/press/blackstone-to-acquire-sabre-industries-inc-a-leading-energy-and-telecom-infrastructure-provider/",
+          "label": "Announcement date source — Blackstone — Sabre Industries",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.blackstone.com/news/press/tpg-to-acquire-majority-stake-in-sabre-industries-from-blackstone-energy-transition-partners/",
+          "label": "Investment date source — Blackstone — Sabre Industries",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.businesswire.com/news/home/20260205906188/en/TPG-to-Acquire-Majority-Stake-in-Sabre-Industries-from-Blackstone-Energy-Transition-Partners",
+          "label": "Business Wire",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.marketscreener.com/quote/stock/BLACKSTONE-INC-60951400/news/Leadership-Team-and-Employees-of-Sabre-and-The-Blackstone-Group-Inc-NYSE-BX-completed-the-acquisi-40661125/",
+          "label": "Close date source — Blackstone — Sabre Industries",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.reuters.com/legal/transactional/tpg-buys-majority-stake-35-billion-power-infrastructure-firm-sabre-industries-2026-02-06/",
+          "label": "Reuters — Sabre Industries",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.sabreindustries.com/",
+          "label": "Sabreindustries — Sabre Industries",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1393818/000119312526313250/d153439dex991.htm",
+          "label": "Blackstone — Second-quarter 2026 results",
+          "sourceType": "SEC_FILING"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1490224/000104746911003455/a2202133zs-1a.htm",
+          "label": "Sabre Industries — 2011 registration statement",
+          "sourceType": "SEC_FILING"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0161:txnm-energy:91e56a1f",
+      "taskIndex": 161,
+      "companyName": "TXNM Energy",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0161-txnm-energy-v1/proposal.json",
+        "sha256": "61f777ed9e2295961e91439085d1daa60f9de84e9a23f3fcc0405792c153f1d6"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0161-txnm-energy-v1.json",
+        "sha256": "e384d2df14dbf638d39c484124adf1abfe817ac742ef529ca4896ca86a9716a4"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0161-txnm-energy/attempt-1/locked-v2-production-snapshot.json",
+        "sha256": "62cefe0d1bcd7b57a0f9531232aeee7e83379ea6d9001ca1ad84115abe09f9ca"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0161-txnm-energy/attempt-1/locked-v2-task-snapshot.json",
+        "sha256": "2a9bb071ffec89c2a7cad3d3faab8d0b39d33ee3c4a5d2a18c236089231f4be9"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0161-txnm-energy/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "03b0c491f9b094f93fd0a448f86dd04876ff8917efc10ce481808d9997352284"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0161-txnm-energy/attempt-1/research-decision.json",
+        "sha256": "b533500353592ba3bc1b20cc4962e4f2b482cbcaf6a3bec090bbed6f7bd2593a"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0161-txnm-energy/attempt-1/source-verification.json",
+        "sha256": "4604f6baa6ef798029ee20236bc75b719e4f63b8b6d551282cd598d854a6d5aa"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "d888b2c9475a123abac5a64f37b516d53ce629a16cac307dac5fb62a374681ac",
+      "dependencySha256": "f8be98464c699967010e644c3391285fa621ac77ee98686562300ce87fc63401",
+      "afterImageSha256": "1376b48e2ee4b54116127159832cb4dfc8c8ce54dab4d35a1ad07c4926657085",
+      "targetClaims": [
+        "canonical:txnm-energy|united-states",
+        "company:cmrxpj9mq00o7ivheg939dp9z",
+        "relation:cmrxpjuvp01lqivheohs4h1mf",
+        "relation:cmrxpkzdm034sivhep1exvzj8",
+        "relation:cmrxpkze7034tivheicbdny5c",
+        "relation:cmrxpkzgw034uivhebqkjmh3b",
+        "relation:cmrxpkzhg034vivhel2bhvp63",
+        "relation:cmrxppp6g08jqivhecrq8uv7o",
+        "relation:cmrxppp7r08jsivhe4nmji1a0",
+        "relation:cmrxppp8y08juivhemgyeuz0z",
+        "relation:cmrxpppaf08jwivhein7gfy5p",
+        "seed:txnm energy|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://www.blackstone.com/news/press/txnm-energy-enters-agreement-to-be-acquired-by-blackstone-infrastructure/",
+          "label": "Announcement date source — Blackstone — TXNM Energy",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/txnm-energy-reports-second-quarter-2025-results-302519323.html",
+          "label": "Investment date source — Blackstone — TXNM Energy",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.reuters.com/legal/transactional/txnm-energy-gets-ferc-approval-115-billion-blackstone-deal-2026-02-20/",
+          "label": "Reuters — TXNM Energy",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1108426/000110842625000048/a05192025txnmex21.htm",
+          "label": "TXNM Energy — Merger agreement",
+          "sourceType": "SEC_FILING"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1108426/000110842626000048/R29.htm",
+          "label": "TXNM Energy — Second-quarter 2026 financing note",
+          "sourceType": "SEC_FILING"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1108426/000110842626000048/R37.htm",
+          "label": "TXNM Energy — Second-quarter 2026 merger note",
+          "sourceType": "SEC_FILING"
+        },
+        {
+          "url": "https://www.txnmenergy.com/~/media/Files/P/PNM-Resources/rates-and-filings/2025%20Blackstone%20Infrastructure/PNM/25-00060-UT-2026-07-27-PNM-Joint%20Applicants%20Compliance%20Report%20to%20Effectuate%20Final%20Order%20on%20the%20Show%20Cause.pdf",
+          "label": "NMPRC — TXNM compliance report",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.txnmenergy.com/about-us/history.aspx",
+          "label": "TXNM Energy — Corporate history",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.txnmenergy.com/investors/acquisition.aspx",
+          "label": "Txnmenergy — TXNM Energy",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.txnmenergy.com/investors/rates-and-filings/pnm-nmprc-filings.aspx",
+          "label": "TXNM Energy — NMPRC filings",
+          "sourceType": "WEBSITE"
+        }
+      ]
+    }
+  ],
+  "collisionAnalysis": {
+    "independent": true,
+    "claimsSha256": "46c3d9aef587bd6d1990774a72976278496f511b85e581a27cfadd73f9d60f9b",
+    "sharedSourceUrls": [
+      "https://www.sec.gov/Archives/edgar/data/1393818/000119312526313250/d153439dex991.htm"
+    ],
+    "conflicts": []
+  },
+  "batchSha256": "fb2ed49e613bc9d4711d647615e4cb55840f16591725e708e643a70a56cc92f6"
+}

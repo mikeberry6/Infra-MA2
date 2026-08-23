@@ -1,0 +1,281 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0161:txnm-energy:91e56a1f",
+  "taskIndex": 161,
+  "companyName": "TXNM Energy",
+  "generatedAt": "2026-08-23T15:08:59.777Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0161-txnm-energy/attempt-1/locked-v2-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 161,
+    "taskId": "ledger:0161:txnm-energy:91e56a1f",
+    "canonicalKey": "txnm-energy|united-states",
+    "companyName": "TXNM Energy",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 24,
+    "managers": [
+      "Blackstone"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "ADD_PENDING_TRANSACTION"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "024-blackstone:holding:028:txnm-energy"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpj9mq00o7ivheg939dp9z"
+    ],
+    "seedKeys": [
+      "txnm energy|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.blackstone.com/news/press/txnm-energy-enters-agreement-to-be-acquired-by-blackstone-infrastructure/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_PENDING_TRANSACTION requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj9mq00o7ivheg939dp9z",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "txnm-energy|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpj9mq00o7ivheg939dp9z",
+    "name": "TXNM Energy",
+    "aliases": [],
+    "sector": "UTILITIES",
+    "subsector": "Regulated electric and gas utility",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "TXNM Energy is the parent company of regulated electric and gas utility operations serving customers in New Mexico and Texas. Its customer base consists of residential, commercial, and industrial users served under regulated frameworks through utility subsidiaries. The business is asset-heavy and rate-based, with investment focused on transmission, distribution, generation, and related utility infrastructure. Public filings and company materials identify regulated utility service territories in New Mexico and Texas as the core operating footprint. Blackstone Infrastructure announced an agreement to acquire TXNM Energy in May 2025 and TXNM later reported a $400 million Q2 2025 equity issuance to Blackstone Infrastructure affiliates, while the full take-private transaction remained subject to approvals as of early 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2000,
+    "headquarters": "New Mexico and Texas",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjuvp01lqivheohs4h1mf",
+        "managerName": "Blackstone",
+        "organizationName": "Blackstone",
+        "fundName": "Blackstone Energy Transition Partners IV (BETP IV)",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkzdm034sivhep1exvzj8",
+        "date": "2000",
+        "event": "PNM Resources, now TXNM Energy, was formed through the merger of Public Service Company of New Mexico and Texas-New Mexico Power.",
+        "category": "FOUNDING",
+        "sortDate": "2000-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkze7034tivheicbdny5c",
+        "date": "May 19, 2025",
+        "event": "TXNM Energy entered into an agreement to be acquired by Blackstone Infrastructure.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-05-19T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkzgw034uivhebqkjmh3b",
+        "date": "Aug 1, 2025",
+        "event": "TXNM reported that its second-quarter equity issuance included $400 million issued to affiliates of Blackstone Infrastructure Partners.",
+        "category": "FINANCING",
+        "sortDate": "2025-08-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkzhg034vivhel2bhvp63",
+        "date": "Feb 20, 2026",
+        "event": "Reuters reported that FERC approved the Blackstone transaction, with other approvals still pending.",
+        "category": "EXPANSION",
+        "sortDate": "2026-02-20T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxppp6g08jqivhecrq8uv7o",
+        "label": "Txnmenergy — TXNM Energy",
+        "url": "https://www.txnmenergy.com/investors/acquisition.aspx",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Txnmenergy transaction or milestone detail",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxppp7r08jsivhe4nmji1a0",
+        "label": "Announcement date source — Blackstone — TXNM Energy",
+        "url": "https://www.blackstone.com/news/press/txnm-energy-enters-agreement-to-be-acquired-by-blackstone-infrastructure/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Blackstone transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppp8y08juivhemgyeuz0z",
+        "label": "Investment date source — Blackstone — TXNM Energy",
+        "url": "https://www.prnewswire.com/news-releases/txnm-energy-reports-second-quarter-2025-results-302519323.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Blackstone initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpppaf08jwivhein7gfy5p",
+        "label": "Reuters — TXNM Energy",
+        "url": "https://www.reuters.com/legal/transactional/txnm-energy-gets-ferc-approval-115-billion-blackstone-deal-2026-02-20/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Reuters — TXNM Energy",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "TXNM Energy",
+    "investmentFirm": "Blackstone",
+    "sector": "Utilities",
+    "subsector": "Regulated electric and gas utility",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "TXNM Energy is the parent company of regulated electric and gas utility operations serving customers in New Mexico and Texas. Its customer base consists of residential, commercial, and industrial users served under regulated frameworks through utility subsidiaries. The business is asset-heavy and rate-based, with investment focused on transmission, distribution, generation, and related utility infrastructure. Public filings and company materials identify regulated utility service territories in New Mexico and Texas as the core operating footprint. Blackstone Infrastructure announced an agreement to acquire TXNM Energy in May 2025 and TXNM later reported a $400 million Q2 2025 equity issuance to Blackstone Infrastructure affiliates, while the full take-private transaction remained subject to approvals as of early 2026.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2000,
+    "investmentYear": 2025,
+    "headquarters": "New Mexico and Texas",
+    "milestones": [
+      {
+        "date": "2000",
+        "event": "PNM Resources, now TXNM Energy, was formed through the merger of Public Service Company of New Mexico and Texas-New Mexico Power.",
+        "category": "Founding"
+      },
+      {
+        "date": "May 19, 2025",
+        "event": "TXNM Energy entered into an agreement to be acquired by Blackstone Infrastructure.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Aug 1, 2025",
+        "event": "TXNM reported that its second-quarter equity issuance included $400 million issued to affiliates of Blackstone Infrastructure Partners.",
+        "category": "Financing"
+      },
+      {
+        "date": "Feb 20, 2026",
+        "event": "Reuters reported that FERC approved the Blackstone transaction, with other approvals still pending.",
+        "category": "Expansion"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Txnmenergy — TXNM Energy",
+        "url": "https://www.txnmenergy.com/investors/acquisition.aspx",
+        "type": "ARTICLE",
+        "purpose": "MILESTONE_EVENT"
+      },
+      {
+        "label": "Announcement date source — Blackstone — TXNM Energy",
+        "url": "https://www.blackstone.com/news/press/txnm-energy-enters-agreement-to-be-acquired-by-blackstone-infrastructure/",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Investment date source — Blackstone — TXNM Energy",
+        "url": "https://www.prnewswire.com/news-releases/txnm-energy-reports-second-quarter-2025-results-302519323.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Reuters — TXNM Energy",
+        "url": "https://www.reuters.com/legal/transactional/txnm-energy-gets-ferc-approval-115-billion-blackstone-deal-2026-02-20/",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Blackstone",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2025,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj1ju00c5ivhey5d0stry",
+        "fundName": "Blackstone Energy Transition Partners IV (BETP IV)",
+        "managerId": "cmrxpi5em000yivhekda3otkf",
+        "updatedAt": "2026-07-23T16:09:55.866Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi5em000yivhekda3otkf",
+        "name": "Blackstone",
+        "updatedAt": "2026-07-23T16:09:14.206Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0161:txnm-energy:91e56a1f",
+    "taskIndex": 161,
+    "canonicalKey": "txnm-energy|united-states",
+    "capturedAt": "2026-08-23T15:08:59.777Z",
+    "databaseRevision": "revision:fd9c5c90d52c5b7d30b190594b1a4a49155d171a227c21d400ff0e5b7c21f7cb",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "1323e62b7bfab7049ef5d04312eb12036876dd1793b0a549fa090ae0098f8768",
+    "productionSnapshotSha256": "62cefe0d1bcd7b57a0f9531232aeee7e83379ea6d9001ca1ad84115abe09f9ca",
+    "targetCompanySnapshotSha256": "d4e15dd577df792fcde86de022a517e6a1b2450792860adcc6064f3616261042",
+    "seedEntrySha256": "f6790e473e5842ab621f890d30650c2f0617a281a803d46b10ab7f14568f5be7",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "3d531037cf334fec506315fa7e607d00a368651307650b38296e33cea1447854",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "bfbbc97b62364bdca0d923e9d9c2d2c8e9809cc241147623a5385f341caadfba",
+      "organizationsSha256": "822bec67cc4716c5f451eabeacca4f0e1879646fef54ea97656799afeac99c94",
+      "citationsSha256": "748d690f91101102a095e7d3a5bfe7c2c93b607ab9b7791120f3b5295d1d521c",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "f8be98464c699967010e644c3391285fa621ac77ee98686562300ce87fc63401",
+    "stateSha256": "d888b2c9475a123abac5a64f37b516d53ce629a16cac307dac5fb62a374681ac",
+    "taskSnapshotSha256": "2a9bb071ffec89c2a7cad3d3faab8d0b39d33ee3c4a5d2a18c236089231f4be9"
+  },
+  "contextSha256": "345e63c8f2c05aaa22c1009230307a169bd7adc6c721437c277d1775947e56ed"
+}
