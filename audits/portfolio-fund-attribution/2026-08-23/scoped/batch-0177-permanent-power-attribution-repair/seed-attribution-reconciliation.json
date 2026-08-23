@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_SEED_ATTRIBUTION_RECONCILIATION",
+  "batchId": "batch-0177-0181-v4-attribution-repair",
+  "batchSha256": "cb393971487d4f73f23d1288937f39314a65b98fce32bb2a0ccf9c557a5c4b6a",
+  "reconciledAt": "2026-08-23T22:35:00.000Z",
+  "sourceManifestSha256": "eac0f1ef4362fd0ae5d4185416c8eee5a6f14d750bb5ef5b57c545d11a579057",
+  "specSha256": "baa03ff97dc9e960edcf57ceda8d703eb8085612ad3668cc39f11833929af8ac",
+  "changesSha256": "f9b6c7f6ca8187f38906a3650664e1d8c6b1978c23f2e6c12a405513417b2abc",
+  "removedRecords": [],
+  "replacedRecords": [
+    {
+      "recordId": "OFA-C0AD3D817897",
+      "companyName": "Permanent Power Company",
+      "country": "United States",
+      "investmentFirm": "CIM Group",
+      "currentVehicleName": "CIM Opportunity Zone Fund, L.P. (direct and through COZ 1, LLC)",
+      "investmentYear": 2025,
+      "stake": "66.7% total economic interest at March 31, 2026 (63.2% direct plus approximately 3.5% through COZ 1, LLC)",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "SEC filings directly identify CIM Opportunity Zone Fund's controlling 66.7% economic interest, including its direct interest and the interest held through COZ 1; no matching normalized fund row is linked in the current PortCo dependency snapshot.",
+      "evidenceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/1765107/000176510726000008/cim-20260331.htm",
+        "https://www.sec.gov/Archives/edgar/data/1765107/000176510725000024/cim-20250929.htm"
+      ]
+    },
+    {
+      "recordId": "OFA-D98B843B30FB",
+      "companyName": "Permanent Power Company",
+      "country": "United States",
+      "investmentFirm": "CIM Group",
+      "currentVehicleName": "Other CIM-affiliated entities / managed accounts",
+      "investmentYear": 2025,
+      "stake": "33.3% aggregate economic interest at March 31, 2026",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "SEC filings directly disclose that other CIM-affiliated entities hold the remaining 33.3% aggregate interest, but do not identify their individual entities, funds or managed accounts; no specific fund is inferred.",
+      "evidenceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/1765107/000176510726000008/cim-20260331.htm",
+        "https://www.sec.gov/Archives/edgar/data/1765107/000176510726000005/cim-20251231.htm"
+      ]
+    }
+  ],
+  "upsertRecords": [
+    {
+      "recordId": "OFA-C0AD3D817897",
+      "companyName": "Permanent Power Company",
+      "country": "United States",
+      "investmentFirm": "CIM Group",
+      "currentVehicleName": "CIM Opportunity Zone Fund, L.P. (direct and through COZ 1, LLC)",
+      "investmentYear": 2025,
+      "stake": "66.7% total economic interest at March 31, 2026 (63.2% direct plus approximately 3.5% through COZ 1, LLC)",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "CIM Opportunity Zone Fund, L.P.",
+      "attributionConfidence": null,
+      "attributionRationale": "SEC filings directly identify CIM Opportunity Zone Fund, L.P. as holding the controlling 66.7% economic interest, including its direct interest and the interest held through COZ 1. No matching normalized fund row exists, so preserve the disclosed vehicle without inferring CIM Infrastructure Fund III.",
+      "evidenceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/1765107/000176510726000008/cim-20260331.htm",
+        "https://www.sec.gov/Archives/edgar/data/1765107/000176510726000005/cim-20251231.htm",
+        "https://www.sec.gov/Archives/edgar/data/1765107/000176510725000024/cim-20250929.htm"
+      ]
+    },
+    {
+      "recordId": "OFA-D98B843B30FB",
+      "companyName": "Permanent Power Company",
+      "country": "United States",
+      "investmentFirm": "CIM Group",
+      "currentVehicleName": "Other CIM-affiliated entities / managed accounts",
+      "investmentYear": 2025,
+      "stake": "33.3% aggregate economic interest at March 31, 2026",
+      "targetLinkedFundName": null,
+      "fundAttribution": "UNRESOLVED",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "SEC filings directly disclose that other CIM-affiliated entities hold the remaining 33.3% aggregate interest but do not identify their entities, funds or managed accounts; preserve the ownership while leaving fund attribution unresolved.",
+      "evidenceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/1765107/000176510726000008/cim-20260331.htm",
+        "https://www.sec.gov/Archives/edgar/data/1765107/000176510726000005/cim-20251231.htm"
+      ]
+    }
+  ],
+  "resultingRecordCount": 1289,
+  "resultingManifestSha256": "18be80cf6f22b2ef869dc89325caf5e4a7ec309d55b61a98527f3fdad2ead52f",
+  "reconciliationSha256": "e4b962b10642cb0d0ece6666383804fb27fa1c6ef231094b1f756685437ee3b5"
+}

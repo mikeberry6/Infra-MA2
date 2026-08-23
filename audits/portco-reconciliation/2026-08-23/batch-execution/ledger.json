@@ -3,7 +3,7 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-23T22:22:13.000Z",
+  "updatedAt": "2026-08-23T22:34:00.000Z",
   "activeBatchId": "batch-0177-0181-v4",
   "batches": [
     {
@@ -1845,7 +1845,7 @@
     },
     {
       "batchId": "batch-0177-0181-v4",
-      "state": "VERIFYING",
+      "state": "VERIFYING_FAILED",
       "taskIds": [
         "ledger:0177:infraestructura-energetica-nova-transportation-company-ientc:9b9caa0e",
         "ledger:0178:kelso-valley-wind-solar-and-water:285d524a",
@@ -1861,7 +1861,7 @@
         181
       ],
       "createdAt": "2026-08-23T22:09:01.000Z",
-      "updatedAt": "2026-08-23T22:22:13.000Z",
+      "updatedAt": "2026-08-23T22:34:00.000Z",
       "completedAt": null,
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0177-0181-v4/batch-manifest.json",
@@ -1872,7 +1872,7 @@
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0177-0181-v4/production-apply/batch-apply-receipt.json",
         "sha256": "357bdc45b1bee864c49d81d4b5ccecd2de6a9223685e88dbac0bbe1809a5fc1f"
       },
-      "reason": null,
+      "reason": "Rendered production verification found stale ownership-attribution metadata on Permanent Power: the current CIM Opportunity Zone Fund ownership period was incorrectly displayed as estimated CIM Infrastructure Fund III, and former-owner history retained an unsupported CIM Infrastructure Fund I estimate. The PortCo database transaction and receipt remain durable; the bundle is frozen pending a protected attribution-only correction and renewed API/rendered verification.",
       "history": [
         {
           "sequence": 1,
@@ -1922,9 +1922,20 @@
             "cb393971487d4f73f23d1288937f39314a65b98fce32bb2a0ccf9c557a5c4b6a"
           ],
           "reason": null
+        },
+        {
+          "sequence": 6,
+          "from": "VERIFYING",
+          "to": "VERIFYING_FAILED",
+          "at": "2026-08-23T22:34:00.000Z",
+          "evidenceSha256": [
+            "357bdc45b1bee864c49d81d4b5ccecd2de6a9223685e88dbac0bbe1809a5fc1f",
+            "cb393971487d4f73f23d1288937f39314a65b98fce32bb2a0ccf9c557a5c4b6a"
+          ],
+          "reason": "Rendered production verification found stale ownership-attribution metadata on Permanent Power: the current CIM Opportunity Zone Fund ownership period was incorrectly displayed as estimated CIM Infrastructure Fund III, and former-owner history retained an unsupported CIM Infrastructure Fund I estimate. The PortCo database transaction and receipt remain durable; the bundle is frozen pending a protected attribution-only correction and renewed API/rendered verification."
         }
       ]
     }
   ],
-  "ledgerSha256": "b7aabbaff60b2f0a80f13c4671089c7ba1aa0cee8698834e116192c617a70e82"
+  "ledgerSha256": "b556c73faf6827545907d66158b01b3b7b6ba7cd1f040ed7bce47ae55e39ba8c"
 }

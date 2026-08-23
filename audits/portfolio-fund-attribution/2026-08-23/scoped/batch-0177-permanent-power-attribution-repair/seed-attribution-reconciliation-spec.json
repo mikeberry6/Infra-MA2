@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_SEED_ATTRIBUTION_RECONCILIATION_SPEC",
+  "batchId": "batch-0177-0181-v4-attribution-repair",
+  "batchSha256": "cb393971487d4f73f23d1288937f39314a65b98fce32bb2a0ccf9c557a5c4b6a",
+  "reconciledAt": "2026-08-23T22:35:00.000Z",
+  "sourceManifestSha256": "eac0f1ef4362fd0ae5d4185416c8eee5a6f14d750bb5ef5b57c545d11a579057",
+  "rationale": "Align evaluated-seed fund attribution with the protected Permanent Power correction: retain the disclosed CIM Opportunity Zone Fund name without an unrelated normalized fund link and treat the unidentified 33.3% CIM-affiliate block as unresolved rather than direct-program ownership.",
+  "removeRecordIds": [],
+  "upsertRecords": [
+    {
+      "recordId": "OFA-C0AD3D817897",
+      "companyName": "Permanent Power Company",
+      "country": "United States",
+      "investmentFirm": "CIM Group",
+      "currentVehicleName": "CIM Opportunity Zone Fund, L.P. (direct and through COZ 1, LLC)",
+      "investmentYear": 2025,
+      "stake": "66.7% total economic interest at March 31, 2026 (63.2% direct plus approximately 3.5% through COZ 1, LLC)",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "CIM Opportunity Zone Fund, L.P.",
+      "attributionConfidence": null,
+      "attributionRationale": "SEC filings directly identify CIM Opportunity Zone Fund, L.P. as holding the controlling 66.7% economic interest, including its direct interest and the interest held through COZ 1. No matching normalized fund row exists, so preserve the disclosed vehicle without inferring CIM Infrastructure Fund III.",
+      "evidenceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/1765107/000176510726000008/cim-20260331.htm",
+        "https://www.sec.gov/Archives/edgar/data/1765107/000176510726000005/cim-20251231.htm",
+        "https://www.sec.gov/Archives/edgar/data/1765107/000176510725000024/cim-20250929.htm"
+      ]
+    },
+    {
+      "recordId": "OFA-D98B843B30FB",
+      "companyName": "Permanent Power Company",
+      "country": "United States",
+      "investmentFirm": "CIM Group",
+      "currentVehicleName": "Other CIM-affiliated entities / managed accounts",
+      "investmentYear": 2025,
+      "stake": "33.3% aggregate economic interest at March 31, 2026",
+      "targetLinkedFundName": null,
+      "fundAttribution": "UNRESOLVED",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "SEC filings directly disclose that other CIM-affiliated entities hold the remaining 33.3% aggregate interest but do not identify their entities, funds or managed accounts; preserve the ownership while leaving fund attribution unresolved.",
+      "evidenceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/1765107/000176510726000008/cim-20260331.htm",
+        "https://www.sec.gov/Archives/edgar/data/1765107/000176510726000005/cim-20251231.htm"
+      ]
+    }
+  ],
+  "specSha256": "baa03ff97dc9e960edcf57ceda8d703eb8085612ad3668cc39f11833929af8ac"
+}

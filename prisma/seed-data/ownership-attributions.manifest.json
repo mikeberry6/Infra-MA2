@@ -8311,12 +8311,13 @@
       "investmentYear": 2025,
       "stake": "66.7% total economic interest at March 31, 2026 (63.2% direct plus approximately 3.5% through COZ 1, LLC)",
       "targetLinkedFundName": null,
-      "fundAttribution": "DIRECT_PROGRAM",
-      "attributedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "CIM Opportunity Zone Fund, L.P.",
       "attributionConfidence": null,
-      "attributionRationale": "SEC filings directly identify CIM Opportunity Zone Fund's controlling 66.7% economic interest, including its direct interest and the interest held through COZ 1; no matching normalized fund row is linked in the current PortCo dependency snapshot.",
+      "attributionRationale": "SEC filings directly identify CIM Opportunity Zone Fund, L.P. as holding the controlling 66.7% economic interest, including its direct interest and the interest held through COZ 1. No matching normalized fund row exists, so preserve the disclosed vehicle without inferring CIM Infrastructure Fund III.",
       "evidenceUrls": [
         "https://www.sec.gov/Archives/edgar/data/1765107/000176510726000008/cim-20260331.htm",
+        "https://www.sec.gov/Archives/edgar/data/1765107/000176510726000005/cim-20251231.htm",
         "https://www.sec.gov/Archives/edgar/data/1765107/000176510725000024/cim-20250929.htm"
       ]
     },
@@ -25791,10 +25792,10 @@
       "investmentYear": 2025,
       "stake": "33.3% aggregate economic interest at March 31, 2026",
       "targetLinkedFundName": null,
-      "fundAttribution": "DIRECT_PROGRAM",
+      "fundAttribution": "UNRESOLVED",
       "attributedFundName": null,
       "attributionConfidence": null,
-      "attributionRationale": "SEC filings directly disclose that other CIM-affiliated entities hold the remaining 33.3% aggregate interest, but do not identify their individual entities, funds or managed accounts; no specific fund is inferred.",
+      "attributionRationale": "SEC filings directly disclose that other CIM-affiliated entities hold the remaining 33.3% aggregate interest but do not identify their entities, funds or managed accounts; preserve the ownership while leaving fund attribution unresolved.",
       "evidenceUrls": [
         "https://www.sec.gov/Archives/edgar/data/1765107/000176510726000008/cim-20260331.htm",
         "https://www.sec.gov/Archives/edgar/data/1765107/000176510726000005/cim-20251231.htm"
@@ -25961,7 +25962,15 @@
       "sourceManifestSha256": "b213933ce9dbe6af5ccf501e1400ed71d03033eec3f065dd9de7d73a27c7dbe4",
       "specSha256": "94251cdf0236086e38bf4f9e41cb06fd9f4649940f2202f7d202c0c650ac4a32",
       "changesSha256": "a3c8405ae4b0ee8cea3509730fbfcb6d61b63c69afd9e8a7fa05282ec0e715bd"
+    },
+    {
+      "batchId": "batch-0177-0181-v4-attribution-repair",
+      "batchSha256": "cb393971487d4f73f23d1288937f39314a65b98fce32bb2a0ccf9c557a5c4b6a",
+      "reconciledAt": "2026-08-23T22:35:00.000Z",
+      "sourceManifestSha256": "eac0f1ef4362fd0ae5d4185416c8eee5a6f14d750bb5ef5b57c545d11a579057",
+      "specSha256": "baa03ff97dc9e960edcf57ceda8d703eb8085612ad3668cc39f11833929af8ac",
+      "changesSha256": "f9b6c7f6ca8187f38906a3650664e1d8c6b1978c23f2e6c12a405513417b2abc"
     }
   ],
-  "manifestSha256": "eac0f1ef4362fd0ae5d4185416c8eee5a6f14d750bb5ef5b57c545d11a579057"
+  "manifestSha256": "18be80cf6f22b2ef869dc89325caf5e4a7ec309d55b61a98527f3fdad2ead52f"
 }
