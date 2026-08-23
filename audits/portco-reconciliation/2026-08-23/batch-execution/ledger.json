@@ -3,7 +3,7 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-23T22:18:00.000Z",
+  "updatedAt": "2026-08-23T22:22:13.000Z",
   "activeBatchId": "batch-0177-0181-v4",
   "batches": [
     {
@@ -1845,7 +1845,7 @@
     },
     {
       "batchId": "batch-0177-0181-v4",
-      "state": "RELEASING",
+      "state": "VERIFYING",
       "taskIds": [
         "ledger:0177:infraestructura-energetica-nova-transportation-company-ientc:9b9caa0e",
         "ledger:0178:kelso-valley-wind-solar-and-water:285d524a",
@@ -1861,14 +1861,17 @@
         181
       ],
       "createdAt": "2026-08-23T22:09:01.000Z",
-      "updatedAt": "2026-08-23T22:18:00.000Z",
+      "updatedAt": "2026-08-23T22:22:13.000Z",
       "completedAt": null,
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0177-0181-v4/batch-manifest.json",
         "sha256": "cb393971487d4f73f23d1288937f39314a65b98fce32bb2a0ccf9c557a5c4b6a"
       },
-      "releaseSha": null,
-      "receipt": null,
+      "releaseSha": "9e4d1da909137b461f47a040c9746a6f91427bc5",
+      "receipt": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0177-0181-v4/production-apply/batch-apply-receipt.json",
+        "sha256": "357bdc45b1bee864c49d81d4b5ccecd2de6a9223685e88dbac0bbe1809a5fc1f"
+      },
       "reason": null,
       "history": [
         {
@@ -1898,9 +1901,30 @@
             "cb393971487d4f73f23d1288937f39314a65b98fce32bb2a0ccf9c557a5c4b6a"
           ],
           "reason": null
+        },
+        {
+          "sequence": 4,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-08-23T22:18:01.000Z",
+          "evidenceSha256": [
+            "cb393971487d4f73f23d1288937f39314a65b98fce32bb2a0ccf9c557a5c4b6a"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 5,
+          "from": "APPLYING",
+          "to": "VERIFYING",
+          "at": "2026-08-23T22:22:13.000Z",
+          "evidenceSha256": [
+            "357bdc45b1bee864c49d81d4b5ccecd2de6a9223685e88dbac0bbe1809a5fc1f",
+            "cb393971487d4f73f23d1288937f39314a65b98fce32bb2a0ccf9c557a5c4b6a"
+          ],
+          "reason": null
         }
       ]
     }
   ],
-  "ledgerSha256": "4ddaafdf3c467199ebac5823a238addc0148bc16f36e23a69e4f77843f875d8d"
+  "ledgerSha256": "b7aabbaff60b2f0a80f13c4671089c7ba1aa0cee8698834e116192c617a70e82"
 }
