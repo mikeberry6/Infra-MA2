@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_RELEASE_VERIFICATION",
+  "verifiedAt": "2026-08-23T16:18:12.884Z",
+  "manifestSha256": "ec8d137b46aef8612c9e0a2088847a920c45cbe597cb6a7748b7de861c2dd0da",
+  "approvalSha256": "73dc5db05357e2b4293957ead5bcfb7627af5c789ec0e3b6ea40d458e9667685",
+  "receiptSha256": "3e4a6e86b19fbadc60354a85469cec7025f4a169bc2e02ca55b508ab72032274",
+  "mutationCount": 7,
+  "changed": 7,
+  "verificationScope": "BOUNDED_STATUS_SAMPLE",
+  "sampledRows": [
+    {
+      "recordId": "OFA-REPAIR-0157-ACT",
+      "companyId": "cmrxpj96300ngivhermpkiwdm",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpj96300ngivhermpkiwdm?verification=ec8d137b46aef8612c9e0a2088847a920c45cbe597cb6a7748b7de861c2dd0da",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": "Blackstone Energy Transition Partners IV (BETP IV)",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Blackstone Energy Transition Partners IV (BETP IV)",
+        "attributionConfidence": null,
+        "attributionRationale": "Official Blackstone, FTC and transaction materials identify a closed majority investment by Blackstone Energy Transition Partners IV through Rocket Purchaser, L.L.C.; the approved after-image retains both the disclosed fund and acquisition vehicle."
+      }
+    },
+    {
+      "recordId": "OFA-REPAIR-0160-SABRE-TPG",
+      "companyId": "cmrxpj9ht00o2ivheap8w7ncx",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpj9ht00o2ivheap8w7ncx?verification=ec8d137b46aef8612c9e0a2088847a920c45cbe597cb6a7748b7de861c2dd0da",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Official TPG, Blackstone and closing materials identify TPG Rise Climate as the majority investor; they do not identify TPG Peppertree Fund X or another separate fund vehicle, so the disclosed strategy is retained as a direct program."
+      }
+    },
+    {
+      "recordId": "OFA-REPAIR-0161-TXNM-FORMER-BLACKSTONE",
+      "companyId": "cmrxpj9mq00o7ivheg939dp9z",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpj9mq00o7ivheg939dp9z?verification=ec8d137b46aef8612c9e0a2088847a920c45cbe597cb6a7748b7de861c2dd0da",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "TXNM's filings identify Troy TopCo LP as the exact former $400 million PIPE investment vehicle, but do not disclose the underlying Blackstone infrastructure fund; the stale BETP IV estimate is removed after the shares were fully cancelled and repaid in July 2026."
+      }
+    }
+  ],
+  "passed": true
+}
