@@ -1,0 +1,468 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0168:vantage-data-centers:6c26d26a",
+  "taskIndex": 168,
+  "companyName": "Vantage Data Centers",
+  "generatedAt": "2026-08-23T18:03:49.088Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0168-vantage-data-centers/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 168,
+    "taskId": "ledger:0168:vantage-data-centers:6c26d26a",
+    "canonicalKey": "vantage-data-centers|united-states-canada",
+    "companyName": "Vantage Data Centers",
+    "country": "United States / Canada",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 27,
+    "managers": [
+      "CBRE Investment Management",
+      "DigitalBridge",
+      "Pantheon Ventures",
+      "PSP Investments"
+    ],
+    "actionScopes": {
+      "company": [
+        "CORRECT_COMPANY"
+      ],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "027-cbre-investment-management:holding:008:vantage-data-centers",
+      "036-digitalbridge:holding:015:vantage-data-centers",
+      "077-pantheon-ventures:holding:003:vantage-data-centers",
+      "081-psp-investments:holding:006:vantage-data-centers"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjdda00u1ivhe4o7z4w3s"
+    ],
+    "seedKeys": [
+      "vantage data centers|United States / Canada"
+    ],
+    "evidenceUrls": [
+      "https://vantage-dc.com/",
+      "https://www.cbrecaledon.com/wp-content/uploads/2020/07/Vantage-Data-Centers-Investment-Press-Release.pdf",
+      "https://www.digitalbridge.com/news/2024-06-13-vantage-data-centers-completes-92-billion-equity-investment-led-by-digitalbridge-and-silver-lake",
+      "https://www.digitalbridge.com/portfolio/vantage-data-centers-north-america",
+      "https://www.pantheoninfrastructure.com/portfolio"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_OWNER, CORRECT_COMPANY requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjdda00u1ivhe4o7z4w3s",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "vantage-data-centers|united-states-canada",
+  "targetCompanyImage": {
+    "id": "cmrxpjdda00u1ivhe4o7z4w3s",
+    "name": "Vantage Data Centers",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Hyperscale data centers",
+    "region": "NORTH_AMERICA",
+    "country": "United States / Canada",
+    "countryTags": [
+      "United States",
+      "Canada"
+    ],
+    "description": "Vantage Data Centers develops and operates wholesale and hyperscale data center campuses for large cloud and technology customers. It serves hyperscalers, cloud providers, internet companies, and large enterprises requiring large-scale data center capacity. The business is asset-heavy and contracted because it finances, develops, owns, manages, and operates large physical campuses under long-term customer commitments. This portfolio-company scorecard consolidates the North American Vantage exposure in the database: the DigitalBridge-led platform investment, the Vantage SDC stabilized North American asset portfolio, and the North American growth-platform exposure. Vantage SDC is not a separate operating company; it is a stabilized asset portfolio formed through a 2020 strategic partnership between Vantage Data Centers and a DigitalBridge-led investor group, with Vantage continuing to manage and operate those facilities as part of its broader footprint. Public materials identify Silver Lake as Vantage's launch sponsor and seller in the 2017 transaction, then as a lead investor alongside DigitalBridge in the 2024 equity round. CBRE Caledon invested in the 2020 stabilized portfolio, and GCM Grosvenor's Labor Impact Fund, L.P. committed equity capital to Vantage's North American growth platform.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2010,
+    "headquarters": "Denver, Colorado",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjyxx01s4ivhe0q4r5fsd",
+        "managerName": "DigitalBridge",
+        "organizationName": "DigitalBridge",
+        "fundName": "DigitalBridge Partners, LP",
+        "vehicleName": "n.a.",
+        "stake": "Core Vantage platform acquisition",
+        "investmentYear": 2017,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjyyh01s5ivhe4pze24xz",
+        "managerName": "CBRE Investment Management",
+        "organizationName": "CBRE Investment Management",
+        "fundName": "CBRE GIF",
+        "vehicleName": "n.a.",
+        "stake": "Significant minority stake in stabilized North American portfolio",
+        "investmentYear": 2020,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjyz001s6ivheb7flugph",
+        "managerName": "GCM Grosvenor",
+        "organizationName": "GCM Grosvenor",
+        "fundName": null,
+        "vehicleName": "Labor Impact Fund, L.P. / Infrastructure Advantage Strategy",
+        "stake": null,
+        "investmentYear": 2020,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjyzj01s7ivhe86monwqb",
+        "managerName": "Silver Lake",
+        "organizationName": "Silver Lake",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": "Lead investor in 2024 equity investment",
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplgro03pqivhec2nma1xr",
+        "date": "2010",
+        "event": "Vantage Data Centers launched with the acquisition of an Intel-owned data center in Santa Clara.",
+        "category": "FOUNDING",
+        "sortDate": "2010-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplgs903privhexucv9g0k",
+        "date": "Mar 27, 2017",
+        "event": "A consortium including Digital Bridge Holdings, PSP Investments, and TIAA Investments acquired Vantage Data Centers from its prior sponsor.",
+        "category": "ACQUISITION",
+        "sortDate": "2017-03-27T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplguu03psivhe1hfd48po",
+        "date": "Jul 2020",
+        "event": "DigitalBridge-led investors formed Vantage SDC through a $3.5 billion strategic partnership with Vantage Data Centers.",
+        "category": "FINANCING",
+        "sortDate": "2020-07-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplgv903ptivhe8h1jnnfq",
+        "date": "Jul 23, 2020",
+        "event": "CBRE Caledon completed an investment in the newly formed Vantage SDC platform containing 12 stabilized Vantage Data Centers assets.",
+        "category": "ACQUISITION",
+        "sortDate": "2020-07-23T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplgvt03puivhejs8k1x3n",
+        "date": "2020",
+        "event": "GCM Grosvenor's Labor Impact Fund committed equity capital to Vantage's North American growth platform.",
+        "category": "FINANCING",
+        "sortDate": "2020-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplgwd03pvivhelu0edm3p",
+        "date": "Jun 13, 2024",
+        "event": "Vantage completed a $9.2 billion equity investment led by DigitalBridge and Silver Lake.",
+        "category": "FINANCING",
+        "sortDate": "2024-06-13T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqjza09rcivhe6vsaxzjg",
+        "label": "Vantage Dc — Vantage Data Centers",
+        "url": "https://vantage-dc.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Vantage Dc company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqk0809reivhen2z14aix",
+        "label": "Close date source — DigitalBridge — Vantage Data Centers",
+        "url": "https://vantage-dc.com/news/vantageacquired/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "DigitalBridge closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqk1309rgivhe3hu5vn0a",
+        "label": "Close date source — Silver Lake — Vantage Data Centers",
+        "url": "https://www.silverlake.com/consortium-of-digital-bridge-psp-investments-and-tiaa-investments-acquires-vantage-data-centers/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Silver Lake closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqk4z09riivhedmnymd1m",
+        "label": "Close date source — CBRE Investment Management — Vantage Data Centers stabilized portfolio",
+        "url": "https://www.cbrecaledon.com/wp-content/uploads/2020/07/Vantage-Data-Centers-Investment-Press-Release.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CBRE Investment Management closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqk6409rkivherqi1cx6r",
+        "label": "Investment date source — GCM Grosvenor — Vantage Data Centers",
+        "url": "https://www.gcmgrosvenor.com/wp-content/uploads/GCM-Grosvenor-LIF-2020-Impact-Report.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "GCM Grosvenor initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqk7409rmivhe1gd9gsxq",
+        "label": "Digitalbridge — Vantage Data Centers",
+        "url": "https://www.digitalbridge.com/news/2024-06-13-vantage-data-centers-completes-92-billion-equity-investment-led-by-digitalbridge-and-silver-lake",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Digitalbridge — Vantage Data Centers",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqk8909roivhe188ltbuy",
+        "label": "Digitalbridge — Vantage Data Centers North America",
+        "url": "https://www.digitalbridge.com/portfolio/vantage-data-centers-north-america",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Digitalbridge operations / asset details",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Vantage Data Centers",
+    "investmentFirm": "DigitalBridge",
+    "sector": "Digital",
+    "subsector": "Hyperscale data centers",
+    "region": "North America",
+    "country": "United States / Canada",
+    "ownershipVehicle": "n.a.",
+    "description": "Vantage Data Centers develops and operates wholesale and hyperscale data center campuses for large cloud and technology customers. It serves hyperscalers, cloud providers, internet companies, and large enterprises requiring large-scale data center capacity. The business is asset-heavy and contracted because it finances, develops, owns, manages, and operates large physical campuses under long-term customer commitments. This portfolio-company scorecard consolidates the North American Vantage exposure in the database: the DigitalBridge-led platform investment, the Vantage SDC stabilized North American asset portfolio, and the North American growth-platform exposure. Vantage SDC is not a separate operating company; it is a stabilized asset portfolio formed through a 2020 strategic partnership between Vantage Data Centers and a DigitalBridge-led investor group, with Vantage continuing to manage and operate those facilities as part of its broader footprint. Public materials identify Silver Lake as Vantage's launch sponsor and seller in the 2017 transaction, then as a lead investor alongside DigitalBridge in the 2024 equity round. CBRE Caledon invested in the 2020 stabilized portfolio, and GCM Grosvenor's Labor Impact Fund, L.P. committed equity capital to Vantage's North American growth platform.",
+    "status": "Active",
+    "countryTags": [
+      "United States",
+      "Canada"
+    ],
+    "yearFounded": 2010,
+    "investmentYear": 2017,
+    "headquarters": "Denver, Colorado",
+    "milestones": [
+      {
+        "date": "2010",
+        "event": "Vantage Data Centers launched with the acquisition of an Intel-owned data center in Santa Clara.",
+        "category": "Founding"
+      },
+      {
+        "date": "Mar 27, 2017",
+        "event": "A consortium including Digital Bridge Holdings, PSP Investments, and TIAA Investments acquired Vantage Data Centers from its prior sponsor.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Jul 2020",
+        "event": "DigitalBridge-led investors formed Vantage SDC through a $3.5 billion strategic partnership with Vantage Data Centers.",
+        "category": "Financing"
+      },
+      {
+        "date": "Jul 23, 2020",
+        "event": "CBRE Caledon completed an investment in the newly formed Vantage SDC platform containing 12 stabilized Vantage Data Centers assets.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "2020",
+        "event": "GCM Grosvenor's Labor Impact Fund committed equity capital to Vantage's North American growth platform.",
+        "category": "Financing"
+      },
+      {
+        "date": "Jun 13, 2024",
+        "event": "Vantage completed a $9.2 billion equity investment led by DigitalBridge and Silver Lake.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Vantage Dc — Vantage Data Centers",
+        "url": "https://vantage-dc.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Close date source — DigitalBridge — Vantage Data Centers",
+        "url": "https://vantage-dc.com/news/vantageacquired/",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Close date source — Silver Lake — Vantage Data Centers",
+        "url": "https://www.silverlake.com/consortium-of-digital-bridge-psp-investments-and-tiaa-investments-acquires-vantage-data-centers/",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Close date source — CBRE Investment Management — Vantage Data Centers stabilized portfolio",
+        "url": "https://www.cbrecaledon.com/wp-content/uploads/2020/07/Vantage-Data-Centers-Investment-Press-Release.pdf",
+        "type": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Investment date source — GCM Grosvenor — Vantage Data Centers",
+        "url": "https://www.gcmgrosvenor.com/wp-content/uploads/GCM-Grosvenor-LIF-2020-Impact-Report.pdf",
+        "type": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Digitalbridge — Vantage Data Centers",
+        "url": "https://www.digitalbridge.com/news/2024-06-13-vantage-data-centers-completes-92-billion-equity-investment-led-by-digitalbridge-and-silver-lake",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Digitalbridge — Vantage Data Centers North America",
+        "url": "https://www.digitalbridge.com/portfolio/vantage-data-centers-north-america",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "DigitalBridge",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2017,
+        "stake": "Core Vantage platform acquisition",
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "CBRE Investment Management",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2020,
+        "stake": "Significant minority stake in stabilized North American portfolio",
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "GCM Grosvenor",
+        "ownershipVehicle": "Labor Impact Fund, L.P. / Infrastructure Advantage Strategy",
+        "investmentYear": 2020,
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "DigitalBridge",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2020,
+        "stake": "Vantage SDC exposure; DigitalBridge retained 12.8% balance-sheet interest after 2023 deconsolidation",
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "Silver Lake",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2024,
+        "stake": "Lead investor in 2024 equity investment",
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "DigitalBridge",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2024,
+        "stake": "Lead investor in 2024 equity investment",
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj1s200ckivhe4yizd9u7",
+        "fundName": "CBRE GIF",
+        "managerId": "cmrxpi5yr0014ivheox7bkitj",
+        "updatedAt": "2026-07-23T16:09:56.162Z"
+      },
+      {
+        "id": "cmsdi3ze7004n7h4sajm63o16",
+        "fundName": "DigitalBridge Partners, LP",
+        "managerId": "cmrxpi6te001eivheobw69a9c",
+        "updatedAt": "2026-08-03T17:26:34.735Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi5yr0014ivheox7bkitj",
+        "name": "CBRE Investment Management",
+        "updatedAt": "2026-07-23T16:09:14.931Z"
+      },
+      {
+        "id": "cmrxpi6te001eivheobw69a9c",
+        "name": "DigitalBridge",
+        "updatedAt": "2026-07-23T16:09:16.034Z"
+      },
+      {
+        "id": "cmrxpi8oe0020ivhehzrfmqus",
+        "name": "GCM Grosvenor",
+        "updatedAt": "2026-07-23T16:09:18.446Z"
+      },
+      {
+        "id": "cmrxpih6o004oivhejmzw2gfv",
+        "name": "PSP Investments",
+        "updatedAt": "2026-07-23T16:09:29.472Z"
+      },
+      {
+        "id": "cmrxpii4u004yivhe3yd3y0ig",
+        "name": "Silver Lake",
+        "updatedAt": "2026-07-23T16:09:30.702Z"
+      },
+      {
+        "id": "cmrxpj03900aoivhejhybu5pv",
+        "name": "Pantheon",
+        "updatedAt": "2026-07-23T16:09:53.973Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0168:vantage-data-centers:6c26d26a",
+    "taskIndex": 168,
+    "canonicalKey": "vantage-data-centers|united-states-canada",
+    "capturedAt": "2026-08-23T18:03:49.088Z",
+    "databaseRevision": "revision:642972f365e69182f2d0f32b2ba11c41a11bbc554959c6080714b5bffb13a67f",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "609a94dc564a659a517545788e9873228f81bca84d945a09089586cc8dd2f723",
+    "productionSnapshotSha256": "81e00b126fcc640c34ae82d3ef55ca2e53143a2db92b7a1e2bd4f9a26bea8dba",
+    "targetCompanySnapshotSha256": "9c1c6dce5ed1fac6c5db0aaffb0dbb26d6e86461d462c15c314bf0a2073ba25f",
+    "seedEntrySha256": "786da0cfc7ce5fdeb4550ad2c7a35683fb1832e5830dccfe20aff7b8292c314b",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "60ceb1e040c3773be1fd05ddbf16477e06369e7ec1528b447606015651d110d2",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "b7b820444179d3fc9f8d9b35a5f805f4c378babbedce61590e597de8862cd02e",
+      "organizationsSha256": "b31c4f88f60459cd966f26d9f3e1c836fb2427bd3fa65f3706dc798788db4f93",
+      "citationsSha256": "63561b29e75499e2058c61c67a5c0263273c954370fbd65ab2e4169fccd179fe",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "8bfcfd04b04396a2003d612e36f72578c4a34cdbec9dcddc144e0813ef984e56",
+    "stateSha256": "cea9f889efa83fbed821de76aea7127eacd06614d32803ea21ac19d6cae096ff",
+    "taskSnapshotSha256": "8421f193043382410702f92e364b5c0c928908eaecfffd5c63762fc57aed9020"
+  },
+  "contextSha256": "258ffcf6b19f22f0cc2e693cdb407deffd01ac4babbbe8a112aece0ef12d5b68"
+}

@@ -977,12 +977,25 @@ describe("approved local seed after-image", () => {
   it("publishes an archived after-image as a seed removal", () => {
     const archived = companyImageFixture("Archived outside the North American census scope.");
     archived.recordStatus = "ARCHIVED";
+    archived.companyStatus = "REALIZED";
+    archived.ownershipPeriods = [];
     const { proposal, approval } = approvedCorrection({ after: archived });
 
     const entry = buildApprovedSeedEntry(proposal, approval, productionSnapshotFixture());
 
     expect(entry.operation).toBe("ARCHIVE");
     expect(entry.canonicalAfterImage.recordStatus).toBe("ARCHIVED");
+    expect(entry.company.owners).toEqual([]);
+    expect(entry.company.investmentFirm).toBe("Not applicable");
+  });
+
+  it("rejects an ownerless published after-image", () => {
+    const published = companyImageFixture("A published company still requires ownership evidence.");
+    published.ownershipPeriods = [];
+    const { proposal, approval } = approvedCorrection({ after: published });
+
+    expect(() => buildApprovedSeedEntry(proposal, approval, productionSnapshotFixture()))
+      .toThrow(/published approved seed company requires at least one ownership period/i);
   });
 
   it("retires the previous seed identity when an approved company is renamed", () => {

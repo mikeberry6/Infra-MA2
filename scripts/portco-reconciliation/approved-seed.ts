@@ -151,21 +151,23 @@ function seedPortCo(image: CompanyImage): SeedPortCo {
     transactionState: owner.transactionState,
   }));
   const focalOwner = owners.find((owner) => owner.status === "Active") ?? owners[0];
-  if (!focalOwner) throw new Error("An approved seed company requires at least one ownership period");
+  if (!focalOwner && image.recordStatus !== "ARCHIVED") {
+    throw new Error("A published approved seed company requires at least one ownership period");
+  }
   return {
     name: image.name,
-    investmentFirm: focalOwner.investmentFirm,
+    investmentFirm: focalOwner?.investmentFirm ?? "Not applicable",
     sector: seedDisplay(image.sector, sectorForSeed),
     subsector: image.subsector,
     region: seedDisplay(image.region, regionForSeed),
     country: image.country,
-    ownershipVehicle: focalOwner.ownershipVehicle,
+    ownershipVehicle: focalOwner?.ownershipVehicle ?? "Not applicable",
     description: image.description,
     status: image.companyStatus === "ACTIVE" ? "Active" : "Realized",
     countryTags: image.countryTags,
     ...(image.website === null ? {} : { website: image.website }),
     ...(image.yearFounded === null ? {} : { yearFounded: image.yearFounded }),
-    ...(focalOwner.investmentYear === undefined ? {} : { investmentYear: focalOwner.investmentYear }),
+    ...(focalOwner?.investmentYear === undefined ? {} : { investmentYear: focalOwner.investmentYear }),
     ...(image.headquarters === null ? {} : { headquarters: image.headquarters }),
     milestones: image.milestones.map(({ date, event, category }) => ({
       date,
