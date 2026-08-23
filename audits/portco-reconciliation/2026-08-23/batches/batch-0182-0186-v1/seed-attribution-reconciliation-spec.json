@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_SEED_ATTRIBUTION_RECONCILIATION_SPEC",
+  "batchId": "batch-0182-0186-v1",
+  "batchSha256": "9ffa0cdb0d33349894fcd58fad0cffba402a113ad06d284f4e93df2235d367b5",
+  "reconciledAt": "2026-08-23T23:55:00.000Z",
+  "sourceManifestSha256": "18be80cf6f22b2ef869dc89325caf5e4a7ec309d55b61a98527f3fdad2ead52f",
+  "rationale": "Remove the retired Aira Solar and Excelsior Wind identities and the archived generic Energy Storage umbrella from active-owner attribution. Replace Horizon New Energy and Sunrise Renewables with their directly supported CI V attribution, and align Helax Istmo with CIP's direct collective ownership disclosure, the full named vehicle string, an undisclosed entry year and a 100% collective stake without inventing the fund split.",
+  "removeRecordIds": [
+    "OFA-B034FFD8671F",
+    "OFA-AC5BC691047F",
+    "OFA-DE4975B9D011"
+  ],
+  "upsertRecords": [
+    {
+      "recordId": "OFA-7ADB51BC3C3F",
+      "companyName": "Horizon New Energy",
+      "country": "Canada",
+      "investmentFirm": "Copenhagen Infrastructure Partners",
+      "currentVehicleName": "CI V Horizon New Energy Devco Ltd",
+      "investmentYear": 2023,
+      "stake": "Not publicly disclosed",
+      "targetLinkedFundName": "Copenhagen Infrastructure V (CI V)",
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Copenhagen Infrastructure V (CI V)",
+      "attributionConfidence": null,
+      "attributionRationale": "Alberta registry records identify the current Horizon and Aira development entities as CI V vehicles; CIP and Horizon sources establish the platform boundary, while no separate current CI IV platform ownership was verified.",
+      "evidenceUrls": [
+        "https://www.horizonnewenergy.ca/backed-by-cip",
+        "https://www.horizonnewenergy.ca/projects",
+        "https://kings-printer.alberta.ca/documents/gazette/2023/text/21_Nov15_Registrar.cfm",
+        "https://kings-printer.alberta.ca/documents/gazette/2025/text/06_Mar31_Registrar.cfm"
+      ]
+    },
+    {
+      "recordId": "OFA-5D740BAFAB60",
+      "companyName": "Helax Istmo",
+      "country": "Mexico",
+      "investmentFirm": "Copenhagen Infrastructure Partners",
+      "currentVehicleName": "CI Growth Markets Fund II / Copenhagen Infrastructure Energy Transition Fund I",
+      "investmentYear": null,
+      "stake": "100% collectively; individual fund split not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "CI Growth Markets Fund II / Copenhagen Infrastructure Energy Transition Fund I",
+      "attributionConfidence": null,
+      "attributionRationale": "CIP directly identifies Helax as wholly owned collectively by CI Growth Markets Fund II and Copenhagen Infrastructure Energy Transition Fund I; the individual fund split and entry date are not publicly disclosed.",
+      "evidenceUrls": [
+        "https://www.cip-smf.com/media/vuai4aob/copenhagen-infrastructure-partners-signs-mou-with.pdf",
+        "https://www.business-humanrights.org/en/latest-news/copenhagen-infrastructure-partners-response-re-lack-of-consent-impacts-of-green-hidrogen-project/"
+      ]
+    },
+    {
+      "recordId": "OFA-C5ACA6155F29",
+      "companyName": "Sunrise Renewables",
+      "country": "United States",
+      "investmentFirm": "Copenhagen Infrastructure Partners",
+      "currentVehicleName": "CI V Sunrise HoldCo LLC / CI V Sunrise Renewables LLC",
+      "investmentYear": null,
+      "stake": "Wholly owned indirect CI V affiliate; manager-level percentage not separately disclosed",
+      "targetLinkedFundName": "Copenhagen Infrastructure V (CI V)",
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Copenhagen Infrastructure V (CI V)",
+      "attributionConfidence": null,
+      "attributionRationale": "Kentucky regulatory filings directly disclose the CI V Sunrise HoldCo and CI V Sunrise Renewables ownership chain; they do not support the former CI IV inference or a public entry date.",
+      "evidenceUrls": [
+        "https://psc.ky.gov/pscecf/2024-00406/tosterloh%40sturgillturner.com/01292025030138/2A_Lost_City_Attachment_A_Corporate_Information.pdf",
+        "https://psc.ky.gov/pscecf/2025-00030/tosterloh%40sturgillturner.com/09152025025218/2025-00030_Lost_City_Witness_List.pdf",
+        "https://www.cip.com/funds/"
+      ]
+    }
+  ],
+  "specSha256": "ac7332c12dc77a49e6ecf2b144530dd88234876f60ea278b0dee8a66e150eba7"
+}

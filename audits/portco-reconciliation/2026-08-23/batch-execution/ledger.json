@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-23T22:55:02.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-08-24T00:02:00.000Z",
+  "activeBatchId": "batch-0182-0186-v1",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -1957,7 +1957,65 @@
           "reason": "All five members reached their verified terminal outcomes. The three mutations match their approved database and seed after-images, both terminal decisions are durable, and the Permanent Power attribution correction is receipt-bound and rendered correctly in production."
         }
       ]
+    },
+    {
+      "batchId": "batch-0182-0186-v1",
+      "state": "RELEASING",
+      "taskIds": [
+        "ledger:0182:aira-solar:bed31b0f",
+        "ledger:0183:energy-storage:95c2200d",
+        "ledger:0184:excelsior-wind:c93e08d6",
+        "ledger:0185:helax-istmo:d1195262",
+        "ledger:0186:sunrise-renewables:49611daa"
+      ],
+      "taskIndexes": [
+        182,
+        183,
+        184,
+        185,
+        186
+      ],
+      "createdAt": "2026-08-23T23:01:30.000Z",
+      "updatedAt": "2026-08-24T00:02:00.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0182-0186-v1/batch-manifest.json",
+        "sha256": "9ffa0cdb0d33349894fcd58fad0cffba402a113ad06d284f4e93df2235d367b5"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-23T23:01:30.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-23T23:58:00.000Z",
+          "evidenceSha256": [
+            "9ffa0cdb0d33349894fcd58fad0cffba402a113ad06d284f4e93df2235d367b5"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "RELEASING",
+          "at": "2026-08-24T00:02:00.000Z",
+          "evidenceSha256": [
+            "9ffa0cdb0d33349894fcd58fad0cffba402a113ad06d284f4e93df2235d367b5"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "6f528fd7dff22c83cda2ff3f47b25c9589125b9d094c156615fa0e511ef0218a"
+  "ledgerSha256": "f1e975ff65d374a3d2faa16d9340d76e3ffc175a94044dc9c6b0a9927c2af509"
 }

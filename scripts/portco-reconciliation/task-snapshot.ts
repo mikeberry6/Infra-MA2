@@ -559,6 +559,42 @@ export function assertReviewedPostQueueExactIdentity(input: {
   const reviewedParentheticalAliasBase = isParentheticalAlias
     ? parentheticalAcronymBase(input.queueEntry.companyName)
     : null;
+  const matchesReviewedRepoOnlyMergeTarget = (): boolean => {
+    if (
+      input.targetResolution.method !== "REVIEWED_POST_QUEUE_EXACT_IDENTITY"
+      || input.queueEntry.queueKind !== "REPO_ONLY_JUDGMENT"
+      || input.queueEntry.canonicalKey !== null
+      || input.queueEntry.sourceRepoOnlyIds.length === 0
+      || input.queueEntry.sourceHoldingIds.length !== 0
+      || input.queueEntry.productionCompanyIds.length !== 0
+      || input.queueEntry.seedKeys.length !== 0
+      || input.queueEntry.candidateCanonicalKeys.length !== 0
+    ) return false;
+
+    const targetName = canonicalIdentityPart(input.targetCompanyImage!.name);
+    const rationale = canonicalIdentityPart(input.queueEntry.rationale);
+    if (!targetName || !rationale.includes(targetName)) return false;
+
+    const queueTokens = normalizedCompanyBaseTokens(input.queueEntry.companyName)
+      .filter((token) => token !== "and");
+    const targetCorpus = canonicalIdentityPart([
+      input.targetCompanyImage!.name,
+      ...input.targetCompanyImage!.aliases,
+      input.targetCompanyImage!.description,
+    ].join(" "));
+    const targetTokens = new Set(targetCorpus.split("-").filter(Boolean));
+    if (queueTokens.length === 0 || queueTokens.some((token) => !targetTokens.has(token))) return false;
+
+    const targetUrls = new Set(input.targetCompanyImage!.citations.map((citation) => citation.url));
+    if (!input.queueEntry.evidenceUrls.some((url) => targetUrls.has(url))) return false;
+
+    const retiredCandidates = input.productionCompanies.filter((company) =>
+      normalizedCompanyBaseName(company.name)
+        === normalizedCompanyBaseName(input.queueEntry.companyName)
+      && company.id !== input.targetResolution.targetCompanyId,
+    );
+    return retiredCandidates.length === 1;
+  };
   const matchesTargetIdentity = (company: Pick<SnapshotCompany, "name" | "country">): boolean => {
     if (isEmbeddedPortfolioIdentity) {
       return company.id === input.targetResolution.targetCompanyId
@@ -606,7 +642,8 @@ export function assertReviewedPostQueueExactIdentity(input: {
       throw new Error("Reviewed embedded-portfolio target does not share immutable queue evidence");
     }
   }
-  if (!matchesTargetIdentity(input.targetCompanyImage)) {
+  const reviewedRepoOnlyMergeTarget = matchesReviewedRepoOnlyMergeTarget();
+  if (!matchesTargetIdentity(input.targetCompanyImage) && !reviewedRepoOnlyMergeTarget) {
     throw new Error(
       isDba
         ? "Reviewed post-queue target does not exactly match the immutable DBA alias and country"
@@ -619,7 +656,9 @@ export function assertReviewedPostQueueExactIdentity(input: {
           : "Reviewed post-queue target does not exactly match the immutable task identity",
     );
   }
-  const matches = input.productionCompanies.filter(matchesTargetIdentity);
+  const matches = reviewedRepoOnlyMergeTarget
+    ? input.productionCompanies.filter((company) => company.id === input.targetResolution.targetCompanyId)
+    : input.productionCompanies.filter(matchesTargetIdentity);
   if (matches.length !== 1) {
     throw new Error(
       `Reviewed post-queue identity resolved to ${matches.length} production records instead of exactly one`,
