@@ -1,0 +1,197 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_RECEIPT",
+  "manifestSha256": "13c583837c997247383c551d8d3ecf236daef0a997ea819c3e061ef2651eecfa",
+  "approvalSha256": "e67433e593f7228f0867b9789ebe8f8f6aacfc32fb2a9287694e0e12dd10bd6a",
+  "environment": "production",
+  "pipelineRunId": "cmt666z0c0000c8yyqj22y01a",
+  "mutationCount": 9,
+  "changed": 9,
+  "idempotent": false,
+  "beforeFingerprint": "f9672a0db893a96bb6f73e9a79be2db839c43781ce2f7f2b1cb08c3cebfb470e",
+  "afterFingerprint": "f480414088e3c39bb2642edc9dfd60bc0840cbb0bbc8a332a8c7fe4f8c407231",
+  "rows": [
+    {
+      "recordId": "OFA-REPAIR-0167-AIO-CBRE",
+      "ownershipPeriodId": "cmrxpjw0o01njivheuyjl6ls5",
+      "companyId": "cmrxpjamu00puivhe9q2wp35l",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "CBRE Private Infrastructure Funds",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: CBRE Investment Management | Fund: CBRE Private Infrastructure Funds | Ownership Interest: Not publicly disclosed. Supplemental ownership detail discloses a distinct fund/vehicle that does not match funds.ts."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "CBRE AIO Infra Holdings Inc. / CBRE Musselshell Infrastructure Investments, LP",
+        "attributionConfidence": null,
+        "attributionRationale": "CBRE Investment Management's AIO materials and reviewed ownership filings identify the CBRE AIO Infra Holdings and CBRE Musselshell investment vehicles, but do not establish a link to a fund in the current fund database."
+      }
+    },
+    {
+      "recordId": "OFA-REPAIR-0168-VANTAGE-DB-2017",
+      "ownershipPeriodId": "cmrxpjyxx01s4ivhe0q4r5fsd",
+      "companyId": "cmrxpjdda00u1ivhe4o7z4w3s",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "DigitalBridge Partners, LP",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, investment predates reported close by 1 year; pre-close deployment is plausible, North America-relevant mandate; next candidate trails by 43.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The 2017 acquisition materials establish DigitalBridge's current platform ownership, but the reviewed evidence does not identify the applicable DigitalBridge fund or legal investment vehicle; the stale DigitalBridge Partners estimate is removed."
+      }
+    },
+    {
+      "recordId": "OFA-REPAIR-0168-VANTAGE-CBRE",
+      "ownershipPeriodId": "cmrxpjyyh01s5ivhe4pze24xz",
+      "companyId": "cmrxpjdda00u1ivhe4o7z4w3s",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "CBRE GIF",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, evergreen/permanent-capital vehicle, North America-relevant mandate; no second manager-matched fund candidate. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "CBRE Caledon Valhalla Aggregator Holdings, LP",
+        "attributionConfidence": null,
+        "attributionRationale": "CBRE Caledon's announcement and Vantage SDC transaction documents identify the Valhalla Aggregator vehicle; the prior CBRE GIF estimate is removed because no reviewed source links that vehicle to a fund in the current fund database."
+      }
+    },
+    {
+      "recordId": "OFA-REPAIR-0168-VANTAGE-DB-SDC",
+      "ownershipPeriodId": "cmt65fmq4000rwoyyh2xtn6c4",
+      "companyId": "cmrxpjdda00u1ivhe4o7z4w3s",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "DigitalBridge's deconsolidation announcement describes the retained 12.8% Vantage SDC interest as a balance-sheet position rather than a named third-party fund investment."
+      }
+    },
+    {
+      "recordId": "OFA-REPAIR-0168-VANTAGE-PANTHEON",
+      "ownershipPeriodId": "cmt65fmr7000swoyyas3x1dp4",
+      "companyId": "cmrxpjdda00u1ivhe4o7z4w3s",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Pantheon Infrastructure plc (PINT)",
+        "attributionConfidence": null,
+        "attributionRationale": "PINT's announcement and current annual report identify Pantheon Infrastructure plc as the direct North American Vantage co-investment vehicle and confirm continuing exposure."
+      }
+    },
+    {
+      "recordId": "OFA-REPAIR-0168-VANTAGE-PSP",
+      "ownershipPeriodId": "cmt65fmte000uwoyyy77jpnpy",
+      "companyId": "cmrxpjdda00u1ivhe4o7z4w3s",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "PSP's 2024 sale announcement and current portfolio listing support a residual direct PSP interest but do not identify a separate fund vehicle."
+      }
+    },
+    {
+      "recordId": "OFA-REPAIR-0169-GATEWAY-CBRE",
+      "ownershipPeriodId": "cmrxpjw3701noivhe6fyso0sj",
+      "companyId": "cmrxpjapk00pzivhepnv4hgyt",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "CBRE Private Infrastructure",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: CBRE Investment Management | Fund: CBRE Private Infrastructure | Ownership Interest: Not publicly disclosed. Supplemental ownership detail discloses a distinct fund/vehicle that does not match funds.ts."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Sponsored fund and one separately managed account",
+        "attributionConfidence": null,
+        "attributionRationale": "WANRack's 2021 close announcement discloses a CBRE-sponsored fund and separately managed account, and the 2025 merger evidence establishes Gateway Fiber as the surviving platform without identifying a specific fund name."
+      }
+    },
+    {
+      "recordId": "OFA-REPAIR-0171-BORALEX-BROOKFIELD",
+      "ownershipPeriodId": "cmrxpjv4o01m3ivhekpgpv69r",
+      "companyId": "cmrxpj9tv00okivhe1bj1dtst",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": "Brookfield BIF V",
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "Brookfield BISS",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, vehicle-name overlap 0.33, vintage 2024 is 2 years before investment, North America-relevant mandate; next candidate trails by 4.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": "Brookfield BIF V",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Brookfield BIF V",
+        "attributionConfidence": null,
+        "attributionRationale": "Boralex's management circular identifies Brookfield Infrastructure Fund V and BIF Thunder as the acquisition structure, and the August 2026 closing release confirms Brookfield's current 70% ownership."
+      }
+    },
+    {
+      "recordId": "OFA-REPAIR-0171-BORALEX-LACAISSE",
+      "ownershipPeriodId": "cmrxpjv5701m4ivheldnfexl5",
+      "companyId": "cmrxpj9tv00okivhe1bj1dtst",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "CDPQ Infrastructure",
+        "attributionConfidence": null,
+        "attributionRationale": "Seed milestones or source evidence explicitly name the current fund vehicle."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "La Caisse's 2017 entry and August 2026 closing releases establish its current 30% direct equity interest, but the reviewed sources do not identify a distinct La Caisse fund vehicle; the stale CDPQ Infrastructure label is removed."
+      }
+    }
+  ],
+  "appliedAt": "2026-08-23T18:58:18.132Z",
+  "receiptSha256": "f20a43cb7125f3cc6b16c34de1879f8111fc2b6f3a8e3bfc19277c36b8ab41dd"
+}
