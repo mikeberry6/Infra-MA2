@@ -1,0 +1,228 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-08-23",
+  "ledgerSha256": "fb2ed49e613bc9d4711d647615e4cb55840f16591725e708e643a70a56cc92f6",
+  "sourceSnapshotSha256": "b5d0dfd4e349a6bdcdeb07bd2e2cb725492c077acc9f68e2f16f34f8009357ac",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 4,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 2,
+      "UNRESOLVED": 1
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  },
+  "expectedMutationCount": 7,
+  "mutations": [
+    {
+      "recordId": "OFA-REPAIR-0157-ACT",
+      "ownershipPeriodId": "cmrxpjuec01kxivhewxqrxgd0",
+      "companyName": "Advanced Cooling Technologies (ACT)",
+      "country": "United States",
+      "investmentFirm": "Blackstone",
+      "currentVehicleName": "Rocket Purchaser, L.L.C.",
+      "databaseVehicleName": "Rocket Purchaser, L.L.C.",
+      "investmentYear": 2026,
+      "stake": "Majority; exact percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": "Blackstone Energy Transition Partners IV (BETP IV)",
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": "Blackstone Energy Transition Partners IV (BETP IV)"
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Blackstone Energy Transition Partners IV (BETP IV)",
+        "attributionConfidence": null,
+        "attributionRationale": "Official Blackstone, FTC and transaction materials identify a closed majority investment by Blackstone Energy Transition Partners IV through Rocket Purchaser, L.L.C.; the approved after-image retains both the disclosed fund and acquisition vehicle."
+      },
+      "evidenceUrls": [
+        "https://www.blackstone.com/news/press/blackstone-energy-transition-partners-announces-agreement-to-acquire-majority-stake-in-advanced-cooling-technologies/",
+        "https://www.ftc.gov/legal-library/browse/early-termination-notices/20260959",
+        "https://hl.com/about-us/transactions/advanced-cooling-technologies-blackstone-energy-transition-partners/"
+      ]
+    },
+    {
+      "recordId": "OFA-REPAIR-0158-ARLINGTON",
+      "ownershipPeriodId": "cmrxpjuf701kzivhenfmcwf22",
+      "companyName": "Arlington Industries",
+      "country": "United States",
+      "investmentFirm": "Blackstone",
+      "currentVehicleName": "Blackstone Energy Transition Partners IV AIV L.P.",
+      "databaseVehicleName": "Blackstone Energy Transition Partners IV AIV L.P.",
+      "investmentYear": 2026,
+      "stake": null,
+      "expectedIsActive": true,
+      "targetLinkedFundName": "Blackstone Energy Transition Partners IV (BETP IV)",
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": "Blackstone Energy Transition Partners IV (BETP IV)"
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Blackstone Energy Transition Partners IV (BETP IV)",
+        "attributionConfidence": null,
+        "attributionRationale": "Official Blackstone and FTC materials identify the closed 2026 Arlington acquisition and Blackstone Energy Transition Partners IV AIV L.P. as the acquiring vehicle; the approved after-image links that disclosed vehicle to BETP IV."
+      },
+      "evidenceUrls": [
+        "https://www.blackstone.com/news/press/blackstone-announces-agreement-to-acquire-arlington-industries/",
+        "https://www.sec.gov/Archives/edgar/data/1393818/000119312526313250/d153439dex991.htm",
+        "https://www.ftc.gov/legal-library/browse/early-termination-notices/20260906"
+      ]
+    },
+    {
+      "recordId": "OFA-REPAIR-0159-KINDLE",
+      "ownershipPeriodId": "cmrxpjujb01l7ivhek3vg7aph",
+      "companyName": "Kindle Energy",
+      "country": "United States",
+      "investmentFirm": "Blackstone",
+      "currentVehicleName": "Blackstone Capital Partners VII L.P. and Blackstone Energy Partners II L.P.",
+      "databaseVehicleName": "Blackstone Capital Partners VII L.P. and Blackstone Energy Partners II L.P.",
+      "investmentYear": 2015,
+      "stake": "Not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "DISCLOSED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Blackstone Capital Partners VII L.P. and Blackstone Energy Partners II L.P.",
+        "attributionConfidence": null,
+        "attributionRationale": "Blackstone transaction materials identify Blackstone Capital Partners VII and Blackstone Energy Partners II as the disclosed Kindle investment vehicles; the combined disclosure is retained without inferring a different curated fund link."
+      },
+      "evidenceUrls": [
+        "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/committees/cmte_h_energy_1/meetings/cmte_h_energy_1_2025-03-19-0300_239/testimony/4530/uploaded-doc/",
+        "https://kindle-energy.com/about",
+        "https://kindle-energy.com/case-studies/magnolia"
+      ]
+    },
+    {
+      "recordId": "OFA-REPAIR-0160-SABRE-BLACKSTONE",
+      "ownershipPeriodId": "cmrxpjusn01lkivhegi1fcvj9",
+      "companyName": "Sabre Industries",
+      "country": "United States",
+      "investmentFirm": "Blackstone",
+      "currentVehicleName": "Blackstone Energy Transition Partners",
+      "databaseVehicleName": "Blackstone Energy Transition Partners",
+      "investmentYear": 2021,
+      "stake": "Significant minority; exact percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "DISCLOSED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Blackstone Energy Transition Partners",
+        "attributionConfidence": null,
+        "attributionRationale": "Official Blackstone and closing materials show Blackstone Energy Transition Partners retained a significant minority position after TPG's 2026 majority acquisition; no exact retained percentage is publicly disclosed."
+      },
+      "evidenceUrls": [
+        "https://www.blackstone.com/news/press/blackstone-to-acquire-sabre-industries-inc-a-leading-energy-and-telecom-infrastructure-provider/",
+        "https://www.blackstone.com/news/press/tpg-to-acquire-majority-stake-in-sabre-industries-from-blackstone-energy-transition-partners/",
+        "https://www.sec.gov/Archives/edgar/data/1393818/000119312526313250/d153439dex991.htm"
+      ]
+    },
+    {
+      "recordId": "OFA-REPAIR-0160-SABRE-TPG",
+      "ownershipPeriodId": "cmrxpjut401llivheziczslxt",
+      "companyName": "Sabre Industries",
+      "country": "United States",
+      "investmentFirm": "TPG",
+      "currentVehicleName": "TPG Rise Climate",
+      "databaseVehicleName": "TPG Rise Climate",
+      "investmentYear": 2026,
+      "stake": "Majority; exact percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Official TPG, Blackstone and closing materials identify TPG Rise Climate as the majority investor; they do not identify TPG Peppertree Fund X or another separate fund vehicle, so the disclosed strategy is retained as a direct program."
+      },
+      "evidenceUrls": [
+        "https://www.blackstone.com/news/press/tpg-to-acquire-majority-stake-in-sabre-industries-from-blackstone-energy-transition-partners/",
+        "https://www.businesswire.com/news/home/20260205906188/en/TPG-to-Acquire-Majority-Stake-in-Sabre-Industries-from-Blackstone-Energy-Transition-Partners",
+        "https://www.sec.gov/Archives/edgar/data/1393818/000119312526313250/d153439dex991.htm"
+      ]
+    },
+    {
+      "recordId": "OFA-REPAIR-0161-TXNM-PUBLIC",
+      "ownershipPeriodId": "cmt5zk80j001f1jyy7q0bgji4",
+      "companyName": "TXNM Energy",
+      "country": "United States",
+      "investmentFirm": "Public Market",
+      "currentVehicleName": "Public Market",
+      "databaseVehicleName": null,
+      "investmentYear": null,
+      "stake": "Publicly traded; dispersed public shareholders",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "TXNM remains publicly traded with dispersed public shareholders after Blackstone's 2025 PIPE was fully cancelled and repaid in July 2026; the signed Blackstone take-private is represented only as a pending incoming ownership transaction until legal closing."
+      },
+      "evidenceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/1108426/000110842626000048/R29.htm",
+        "https://www.sec.gov/Archives/edgar/data/1108426/000110842626000048/R37.htm",
+        "https://www.txnmenergy.com/investors/acquisition.aspx"
+      ]
+    },
+    {
+      "recordId": "OFA-REPAIR-0161-TXNM-FORMER-BLACKSTONE",
+      "ownershipPeriodId": "cmrxpjuvp01lqivheohs4h1mf",
+      "companyName": "TXNM Energy",
+      "country": "United States",
+      "investmentFirm": "Blackstone",
+      "currentVehicleName": "Troy TopCo LP",
+      "databaseVehicleName": "Troy TopCo LP",
+      "investmentYear": 2025,
+      "stake": "8,000,000 common shares acquired for $400 million; fully cancelled and repaid",
+      "expectedIsActive": false,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "TXNM's filings identify Troy TopCo LP as the exact former $400 million PIPE investment vehicle, but do not disclose the underlying Blackstone infrastructure fund; the stale BETP IV estimate is removed after the shares were fully cancelled and repaid in July 2026."
+      },
+      "evidenceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/1108426/000110842626000048/R29.htm",
+        "https://www.txnmenergy.com/~/media/Files/P/PNM-Resources/rates-and-filings/2025%20Blackstone%20Infrastructure/PNM/25-00060-UT-2026-07-27-PNM-Joint%20Applicants%20Compliance%20Report%20to%20Effectuate%20Final%20Order%20on%20the%20Show%20Cause.pdf",
+        "https://www.sec.gov/Archives/edgar/data/1108426/000110842625000048/a05192025txnmex21.htm"
+      ]
+    }
+  ],
+  "manifestSha256": "ec8d137b46aef8612c9e0a2088847a920c45cbe597cb6a7748b7de861c2dd0da"
+}
