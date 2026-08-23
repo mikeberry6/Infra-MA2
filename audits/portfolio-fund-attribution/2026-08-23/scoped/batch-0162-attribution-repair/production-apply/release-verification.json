@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_RELEASE_VERIFICATION",
+  "verifiedAt": "2026-08-23T17:30:04.276Z",
+  "manifestSha256": "6f58b1b855345c76018ffe0ab16def75a53d7756f096b6d3197b7fa897bde03e",
+  "approvalSha256": "a53184f7eff43a93afc4c9ed1f4297db9d0ae7f6b6e21301067f43bd522f6225",
+  "receiptSha256": "e5eaac6cc0f3261c176ecb264e44e012caf67fcb328fa0ec2972e2260036aeea",
+  "mutationCount": 4,
+  "changed": 4,
+  "verificationScope": "BOUNDED_STATUS_SAMPLE",
+  "sampledRows": [
+    {
+      "recordId": "OFA-REPAIR-0162-DUKE",
+      "companyId": "cmrxpj9zn00orivhel69huml1",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpj9zn00orivhel69huml1?verification=6f58b1b855345c76018ffe0ab16def75a53d7756f096b6d3197b7fa897bde03e",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": "Brookfield Super-Core Infrastructure Partners",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Brookfield Super-Core Infrastructure Partners",
+        "attributionConfidence": null,
+        "attributionRationale": "Duke Energy's executed agreement and closing filings identify Brookfield Super-Core Infrastructure Partners and Peninsula Power Holdings L.P. as the direct investment fund and vehicle for the closed 9.19% indirect interest in Duke Energy Florida."
+      }
+    },
+    {
+      "recordId": "OFA-REPAIR-0164-COPIA",
+      "companyId": "cmrxpjakf00ppivhe197wcvey",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjakf00ppivhe197wcvey?verification=6f58b1b855345c76018ffe0ab16def75a53d7756f096b6d3197b7fa897bde03e",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Carlyle's launch and pending-sale materials establish Carlyle ownership of Copia Power but do not publicly identify a specific Carlyle fund vehicle; the stale CGI Opportunity Fund estimate is therefore removed without changing the active ownership period."
+      }
+    }
+  ],
+  "passed": true
+}

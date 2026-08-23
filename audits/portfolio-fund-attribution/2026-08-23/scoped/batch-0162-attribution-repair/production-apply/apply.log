@@ -1,0 +1,103 @@
+
+> infra-tracker@1.0.0 portfolio:fund-attribution:apply
+> npx tsx scripts/apply-portfolio-fund-attribution.ts --manifest=audits/portfolio-fund-attribution/2026-08-23/scoped/batch-0162-attribution-repair/apply-manifest.json --manifest-sha256=6f58b1b855345c76018ffe0ab16def75a53d7756f096b6d3197b7fa897bde03e --production-snapshot=audits/portfolio-fund-attribution/2026-08-23/scoped/batch-0162-attribution-repair/production-snapshot.json --approval=audits/portfolio-fund-attribution/2026-08-23/scoped/batch-0162-attribution-repair/approval.json --approval-sha256=a53184f7eff43a93afc4c9ed1f4297db9d0ae7f6b6e21301067f43bd522f6225 --apply=true --write-token=APPLY_REVIEWED_PORTFOLIO_FUND_ATTRIBUTION --receipt=tmp/portfolio-fund-attribution/production/apply-receipt.json
+
+(node:2997) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_RECEIPT",
+  "manifestSha256": "6f58b1b855345c76018ffe0ab16def75a53d7756f096b6d3197b7fa897bde03e",
+  "approvalSha256": "a53184f7eff43a93afc4c9ed1f4297db9d0ae7f6b6e21301067f43bd522f6225",
+  "environment": "production",
+  "pipelineRunId": "cmt631fjk0000b9yyqhcnrh4m",
+  "mutationCount": 4,
+  "changed": 4,
+  "idempotent": false,
+  "beforeFingerprint": "053f1b7af0069a599fa7f80c2e730b665ae4ba21e72d2221c5a826b816cfdd16",
+  "afterFingerprint": "a090b3dadafee6bf631c1f41a8ee45fa6ccbafa2b54df1be52bbce492cb844d4",
+  "rows": [
+    {
+      "recordId": "OFA-REPAIR-0162-DUKE",
+      "ownershipPeriodId": "cmrxpjv8s01mbivhez214hok2",
+      "companyId": "cmrxpj9zn00orivhel69huml1",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": "Brookfield Super-Core Infrastructure Partners",
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "Brookfield BISS",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, vintage 2024 is 2 years before investment, North America-relevant mandate; next candidate trails by 0.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": "Brookfield Super-Core Infrastructure Partners",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Brookfield Super-Core Infrastructure Partners",
+        "attributionConfidence": null,
+        "attributionRationale": "Duke Energy's executed agreement and closing filings identify Brookfield Super-Core Infrastructure Partners and Peninsula Power Holdings L.P. as the direct investment fund and vehicle for the closed 9.19% indirect interest in Duke Energy Florida."
+      }
+    },
+    {
+      "recordId": "OFA-REPAIR-0163-CAG",
+      "ownershipPeriodId": "cmrxpjvws01ncivhet9l9o37h",
+      "companyId": "cmrxpjajc00pnivhebltqp86n",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": "Carlyle Global Infrastructure Opportunity Fund",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Carlyle Global Infrastructure Opportunity Fund",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: Carlyle | Fund: Not publicly disclosed. | Ownership Interest: Not publicly disclosed. Seed milestones or source evidence explicitly name the current fund vehicle."
+      },
+      "after": {
+        "linkedFundName": "Carlyle Global Infrastructure Opportunity Fund",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Carlyle Global Infrastructure Opportunity Fund",
+        "attributionConfidence": null,
+        "attributionRationale": "Carlyle and Ferrovial materials directly identify CAG Holdings and CGI Phoenix Aggregator as Carlyle Global Infrastructure Opportunity Fund investment vehicles and document Carlyle's retained indirect interest in The New Terminal One after the 2022 partial sale."
+      }
+    },
+    {
+      "recordId": "OFA-REPAIR-0164-COPIA",
+      "ownershipPeriodId": "cmrxpjvxx01neivheya8o7kr4",
+      "companyId": "cmrxpjakf00ppivhe197wcvey",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "Carlyle Global Infrastructure Opportunity Fund",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, vintage 2019 is 2 years before investment, North America-relevant mandate; next candidate trails by 0.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Carlyle's launch and pending-sale materials establish Carlyle ownership of Copia Power but do not publicly identify a specific Carlyle fund vehicle; the stale CGI Opportunity Fund estimate is therefore removed without changing the active ownership period."
+      }
+    },
+    {
+      "recordId": "OFA-REPAIR-0165-FERMATA",
+      "ownershipPeriodId": "cmrxpjvyz01ngivhepbsr5vxc",
+      "companyId": "cmrxpjalg00privheqmhw1bjb",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "Carlyle CRSEF II",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, vintage 2022 is 0 years before investment, North America-relevant mandate; next candidate trails by 0.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Carlyle's original commitment establishes its former ownership of Fermata Energy but does not disclose a specific Carlyle fund; the stale CRSEF II estimate is removed after the April 2025 sale of substantially all assets ended the active ownership period."
+      }
+    }
+  ],
+  "appliedAt": "2026-08-23T17:30:00.762Z",
+  "receiptSha256": "e5eaac6cc0f3261c176ecb264e44e012caf67fcb328fa0ec2972e2260036aeea"
+}
