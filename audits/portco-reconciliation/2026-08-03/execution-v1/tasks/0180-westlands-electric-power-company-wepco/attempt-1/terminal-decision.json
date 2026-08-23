@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0180:westlands-electric-power-company-wepco:952fb626",
+  "taskIndex": 180,
+  "companyName": "Westlands Electric Power Company (WEPCO)",
+  "outcome": "SUPERSEDED",
+  "decidedAt": "2026-08-23T21:47:01.000Z",
+  "rationale": "Task 181's focused GPT-5.6 Sol Pro adjudication resolved Westlands Solar Park, Aquamarine Solar and WEPCO as one canonical Permanent Power Company boundary. The Task 181 approved after-image will retain the existing WEPCO production ID as Permanent Power, preserve WEPCO as a former legal name, fold Westlands/Aquamarine history into that record and retire the duplicate Westlands company. A separate Task 180 mutation would duplicate and collide with the same canonical correction.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0180-westlands-electric-power-company-wepco/attempt-1/locked-task-snapshot.json",
+    "sha256": "2b0732fcea956747826af19bc6964d64626ea02c1947df7b77664b1167dc8edc"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0180-westlands-electric-power-company-wepco/attempt-1/terminal-research-decision.json",
+    "sha256": "ac4b4c9fe519abe212cb0aba2fa9b5e97623587328bc231883027768a1e33347"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0180-westlands-electric-power-company-wepco/attempt-1/source-verification.json",
+    "sha256": "cc3eae68402e124afa18503dbe3a87ea0202d110696d8780a33be9b2acffd57b"
+  },
+  "evidence": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1765107/000176510726000008/cim-20260331.htm",
+      "purpose": "Permanent Power former-WEPCO identity and current ownership"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1765107/000176510725000024/cim-20250929.htm",
+      "purpose": "Closed contribution structure and dates"
+    },
+    {
+      "url": "https://www.cimgroup.com/press-releases/cim-group-launches-permanent-power-company-announces-power-purchase-agreement-and-400-million-financing-commitment",
+      "purpose": "Current manager-level platform boundary"
+    },
+    {
+      "url": "https://www.cimgroup.com/case-studies/aquamarine-solar-project",
+      "purpose": "Westlands and Aquamarine site/project boundary"
+    }
+  ],
+  "supersededByTaskId": "ledger:0181:westlands-solar-park-incl-aquamarine-solar:31dd05e4",
+  "decisionSha256": "a513ea0d7178f11c1061f7aed0f4067bdde05d54b2436032f556aadf1fded871"
+}

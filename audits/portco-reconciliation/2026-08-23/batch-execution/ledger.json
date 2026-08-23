@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-23T20:55:30.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-08-23T22:18:00.000Z",
+  "activeBatchId": "batch-0177-0181-v4",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -1683,7 +1683,224 @@
           "reason": "Atomic receipt, APIs, redirects, archived record and rendered production drawers verified; PR #708 removed internal attribution prose without changing data."
         }
       ]
+    },
+    {
+      "batchId": "batch-0177-0181-v1",
+      "state": "FAILED",
+      "taskIds": [
+        "ledger:0177:infraestructura-energetica-nova-transportation-company-ientc:9b9caa0e",
+        "ledger:0178:kelso-valley-wind-solar-and-water:285d524a",
+        "ledger:0179:solarbank-joint-venture-new-holdco:e1457e97",
+        "ledger:0180:westlands-electric-power-company-wepco:952fb626",
+        "ledger:0181:westlands-solar-park-incl-aquamarine-solar:31dd05e4"
+      ],
+      "taskIndexes": [
+        177,
+        178,
+        179,
+        180,
+        181
+      ],
+      "createdAt": "2026-08-23T21:01:27.000Z",
+      "updatedAt": "2026-08-23T21:53:30.000Z",
+      "completedAt": "2026-08-23T21:53:30.000Z",
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0177-0181-v1/batch-manifest.json",
+        "sha256": "99532f97f9199835acd4fa5922f830188d5903d94b790a6c03fd17acfa2f28de"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": "Production dry-run required the Westlands-to-Permanent Power merge to preserve the retired site ownership-period history; no release commit or database write occurred.",
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-23T21:01:27.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-23T21:51:00.000Z",
+          "evidenceSha256": [
+            "99532f97f9199835acd4fa5922f830188d5903d94b790a6c03fd17acfa2f28de"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "FAILED",
+          "at": "2026-08-23T21:53:30.000Z",
+          "evidenceSha256": [
+            "99532f97f9199835acd4fa5922f830188d5903d94b790a6c03fd17acfa2f28de"
+          ],
+          "reason": "Production dry-run required the Westlands-to-Permanent Power merge to preserve the retired site ownership-period history; no release commit or database write occurred."
+        }
+      ]
+    },
+    {
+      "batchId": "batch-0177-0181-v2",
+      "state": "FAILED",
+      "taskIds": [
+        "ledger:0177:infraestructura-energetica-nova-transportation-company-ientc:9b9caa0e",
+        "ledger:0178:kelso-valley-wind-solar-and-water:285d524a",
+        "ledger:0179:solarbank-joint-venture-new-holdco:e1457e97",
+        "ledger:0180:westlands-electric-power-company-wepco:952fb626",
+        "ledger:0181:westlands-solar-park-incl-aquamarine-solar:31dd05e4"
+      ],
+      "taskIndexes": [
+        177,
+        178,
+        179,
+        180,
+        181
+      ],
+      "createdAt": "2026-08-23T21:53:31.000Z",
+      "updatedAt": "2026-08-23T22:02:18.000Z",
+      "completedAt": "2026-08-23T22:02:18.000Z",
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0177-0181-v2/batch-manifest.json",
+        "sha256": "8934baefc361e0917bf3bf92a5da75a88f397ba4e6a4c4cc69085267555b2845"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": "Production dry-run rejected the approved merge because retired Westlands milestone history cmrxplabb03i2ivhe3g8o7a9n and related retired history were absent from the v2 after-image; no release or database write occurred.",
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-23T21:53:31.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-23T21:56:00.000Z",
+          "evidenceSha256": [
+            "8934baefc361e0917bf3bf92a5da75a88f397ba4e6a4c4cc69085267555b2845"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "FAILED",
+          "at": "2026-08-23T22:02:18.000Z",
+          "evidenceSha256": [
+            "8934baefc361e0917bf3bf92a5da75a88f397ba4e6a4c4cc69085267555b2845"
+          ],
+          "reason": "Production dry-run rejected the approved merge because retired Westlands milestone history cmrxplabb03i2ivhe3g8o7a9n and related retired history were absent from the v2 after-image; no release or database write occurred."
+        }
+      ]
+    },
+    {
+      "batchId": "batch-0177-0181-v3",
+      "state": "FAILED",
+      "taskIds": [
+        "ledger:0177:infraestructura-energetica-nova-transportation-company-ientc:9b9caa0e",
+        "ledger:0178:kelso-valley-wind-solar-and-water:285d524a",
+        "ledger:0179:solarbank-joint-venture-new-holdco:e1457e97",
+        "ledger:0180:westlands-electric-power-company-wepco:952fb626",
+        "ledger:0181:westlands-solar-park-incl-aquamarine-solar:31dd05e4"
+      ],
+      "taskIndexes": [
+        177,
+        178,
+        179,
+        180,
+        181
+      ],
+      "createdAt": "2026-08-23T22:02:19.000Z",
+      "updatedAt": "2026-08-23T22:09:00.000Z",
+      "completedAt": "2026-08-23T22:09:00.000Z",
+      "batchManifest": null,
+      "releaseSha": null,
+      "receipt": null,
+      "reason": "Production dry-run rejected v3 because the exact after-image adds a second current CIM ownership period and therefore requires the fail-closed ADD_OWNER action in addition to correction, merge and retirement; no release or database write occurred.",
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-23T22:02:19.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "FAILED",
+          "at": "2026-08-23T22:09:00.000Z",
+          "evidenceSha256": [],
+          "reason": "Production dry-run rejected v3 because the exact after-image adds a second current CIM ownership period and therefore requires the fail-closed ADD_OWNER action in addition to correction, merge and retirement; no release or database write occurred."
+        }
+      ]
+    },
+    {
+      "batchId": "batch-0177-0181-v4",
+      "state": "RELEASING",
+      "taskIds": [
+        "ledger:0177:infraestructura-energetica-nova-transportation-company-ientc:9b9caa0e",
+        "ledger:0178:kelso-valley-wind-solar-and-water:285d524a",
+        "ledger:0179:solarbank-joint-venture-new-holdco:e1457e97",
+        "ledger:0180:westlands-electric-power-company-wepco:952fb626",
+        "ledger:0181:westlands-solar-park-incl-aquamarine-solar:31dd05e4"
+      ],
+      "taskIndexes": [
+        177,
+        178,
+        179,
+        180,
+        181
+      ],
+      "createdAt": "2026-08-23T22:09:01.000Z",
+      "updatedAt": "2026-08-23T22:18:00.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0177-0181-v4/batch-manifest.json",
+        "sha256": "cb393971487d4f73f23d1288937f39314a65b98fce32bb2a0ccf9c557a5c4b6a"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-23T22:09:01.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-23T22:14:00.000Z",
+          "evidenceSha256": [
+            "cb393971487d4f73f23d1288937f39314a65b98fce32bb2a0ccf9c557a5c4b6a"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "RELEASING",
+          "at": "2026-08-23T22:18:00.000Z",
+          "evidenceSha256": [
+            "cb393971487d4f73f23d1288937f39314a65b98fce32bb2a0ccf9c557a5c4b6a"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "f98903dad12ac01cd81169ec20852c47e01b82e84d0ac8f459d18f04d500a853"
+  "ledgerSha256": "4ddaafdf3c467199ebac5823a238addc0148bc16f36e23a69e4f77843f875d8d"
 }

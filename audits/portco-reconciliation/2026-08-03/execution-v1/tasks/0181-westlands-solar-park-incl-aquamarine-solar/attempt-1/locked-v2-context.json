@@ -1,0 +1,282 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0181:westlands-solar-park-incl-aquamarine-solar:31dd05e4",
+  "taskIndex": 181,
+  "companyName": "Westlands Solar Park (incl. Aquamarine Solar)",
+  "generatedAt": "2026-08-23T21:43:30.707Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0181-westlands-solar-park-incl-aquamarine-solar/attempt-1/locked-v2-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 181,
+    "taskId": "ledger:0181:westlands-solar-park-incl-aquamarine-solar:31dd05e4",
+    "canonicalKey": "westlands-solar-park-incl-aquamarine-solar|united-states",
+    "companyName": "Westlands Solar Park (incl. Aquamarine Solar)",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 30,
+    "managers": [
+      "CIM Group"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "030-cim-group:repo-only:003:westlands-solar-park-incl-aquamarine-solar"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjbws00rtivhebkd663iz"
+    ],
+    "seedKeys": [
+      "westlands solar park (incl. aquamarine solar)|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.cimgroup.com/press-releases/cim-group-launches-permanent-power-company-a-national-power-infrastructure-company",
+      "https://www.cimgroup.com/press-releases/westlands-solar-park-one-of-the-largest-permitted-solar-parks-in-the-world-and-the-largest-in-north-america-starts-construction"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: CIM Group MATCHED_ELSEWHERE: Underlying assets are consolidated beneath the manager-level Permanent Power Company platform.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "REVIEWED_MERGE_CANONICAL_TARGET",
+    "targetCompanyId": "cmrxpjbw800rsivhe6s7g89eh",
+    "linkedQueueTaskId": null,
+    "immutableRetiredCompanyId": "cmrxpjbws00rtivhebkd663iz"
+  },
+  "resolvedCanonicalKey": "westlands-electric-power-company-wepco|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjbw800rsivhe6s7g89eh",
+    "name": "Westlands Electric Power Company (WEPCO)",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Utility-scale solar and battery storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Westlands Electric Power Company is a CIM-sponsored power platform formed to hold California renewable-generation assets. The platform is intended to sell electricity and related products into utility and long-term contracted power markets rather than operate as a regulated retail utility. Its model is asset-heavy because value is tied to owned solar and storage facilities, interconnection rights, and project-level contracting. CIM stated in 2025 that the initial WEPCO portfolio consisted of seven solar-generation facilities and one battery-storage facility located in Westlands Solar Park. CIM formed the company in 2025 from CIM-affiliated entities, and public sources do not disclose the ownership percentages of the current investor group.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2025,
+    "headquarters": "California",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjxay01pmivhevwqj1bv4",
+        "managerName": "CIM Group",
+        "organizationName": "CIM Group",
+        "fundName": "CIM Infrastructure Fund III",
+        "vehicleName": "CIM Infrastructure Platform",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpla7m03hwivhe4koowe3x",
+        "date": "Mar 2, 2020",
+        "event": "CIM announced the start of construction at Westlands Solar Park, the asset base that would later support WEPCO.",
+        "category": "EXPANSION",
+        "sortDate": "2020-03-02T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpla8503hxivheml7cca9k",
+        "date": "2025",
+        "event": "CIM said WEPCO's initial portfolio included seven solar facilities and one battery-storage facility in Westlands Solar Park.",
+        "category": "EXPANSION",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpla8m03hyivhexa4ijzbs",
+        "date": "2025",
+        "event": "CIM stated that WEPCO was intended to grow through both organic development and additional acquisitions.",
+        "category": "OTHER",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpla9603hzivhej9bgbfyk",
+        "date": "2025",
+        "event": "Westlands Electric Power Company (WEPCO) was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpla9q03i0ivhe07r95j25",
+        "date": "Oct 13, 2025",
+        "event": "CIM Group announced the formation of Westlands Electric Power Company.",
+        "category": "FINANCING",
+        "sortDate": "2025-10-13T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpq8iv09acivheuzsuyx9h",
+        "label": "Investment date source — CIM Group — Westlands Electric Power Company (WEPCO)",
+        "url": "https://www.cimgroup.com/press-releases/cim-group-forms-westlands-electric-power-company",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CIM Group initial investment / ownership",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpq8je09adivhe4amd5m56",
+        "label": "Cimgroup — Kelso Valley Wind, Solar & Water",
+        "url": "https://www.cimgroup.com/our-platforms/infrastructure",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Cimgroup — Westlands Electric Power Company (WEPCO)",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq8kp09afivheerhz2420",
+        "label": "Renewablesnow — Westlands Electric Power Company (WEPCO)",
+        "url": "https://renewablesnow.com/news/us-real-estate-firm-cim-groups-gw-level-renewables-ops-into-new-entity-1283241/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Renewablesnow — Westlands Electric Power Company (WEPCO)",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Westlands Electric Power Company (WEPCO)",
+    "investmentFirm": "CIM Group",
+    "sector": "Power & ET",
+    "subsector": "Utility-scale solar and battery storage",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "CIM Infrastructure Platform",
+    "description": "Westlands Electric Power Company is a CIM-sponsored power platform formed to hold California renewable-generation assets. The platform is intended to sell electricity and related products into utility and long-term contracted power markets rather than operate as a regulated retail utility. Its model is asset-heavy because value is tied to owned solar and storage facilities, interconnection rights, and project-level contracting. CIM stated in 2025 that the initial WEPCO portfolio consisted of seven solar-generation facilities and one battery-storage facility located in Westlands Solar Park. CIM formed the company in 2025 from CIM-affiliated entities, and public sources do not disclose the ownership percentages of the current investor group.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2025,
+    "investmentYear": 2025,
+    "headquarters": "California",
+    "milestones": [
+      {
+        "date": "Mar 2, 2020",
+        "event": "CIM announced the start of construction at Westlands Solar Park, the asset base that would later support WEPCO.",
+        "category": "Expansion"
+      },
+      {
+        "date": "2025",
+        "event": "CIM said WEPCO's initial portfolio included seven solar facilities and one battery-storage facility in Westlands Solar Park.",
+        "category": "Expansion"
+      },
+      {
+        "date": "2025",
+        "event": "CIM stated that WEPCO was intended to grow through both organic development and additional acquisitions.",
+        "category": "Other"
+      },
+      {
+        "date": "2025",
+        "event": "Westlands Electric Power Company (WEPCO) was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "Oct 13, 2025",
+        "event": "CIM Group announced the formation of Westlands Electric Power Company.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Investment date source — CIM Group — Westlands Electric Power Company (WEPCO)",
+        "url": "https://www.cimgroup.com/press-releases/cim-group-forms-westlands-electric-power-company",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Cimgroup — Westlands Electric Power Company (WEPCO)",
+        "url": "https://www.cimgroup.com/our-platforms/infrastructure",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Renewablesnow — Westlands Electric Power Company (WEPCO)",
+        "url": "https://renewablesnow.com/news/us-real-estate-firm-cim-groups-gw-level-renewables-ops-into-new-entity-1283241/",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "CIM Group",
+        "ownershipVehicle": "CIM Infrastructure Platform",
+        "investmentYear": 2025,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj1sj00clivhe0ob219ba",
+        "fundName": "CIM Infrastructure Fund III",
+        "managerId": "cmrxpi63o0016ivhechqv2snf",
+        "updatedAt": "2026-07-23T16:09:56.179Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi63o0016ivhechqv2snf",
+        "name": "CIM Group",
+        "updatedAt": "2026-07-23T16:09:15.109Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0181:westlands-solar-park-incl-aquamarine-solar:31dd05e4",
+    "taskIndex": 181,
+    "canonicalKey": "westlands-solar-park-incl-aquamarine-solar|united-states",
+    "capturedAt": "2026-08-23T21:43:30.707Z",
+    "databaseRevision": "revision:f5c6b20e7f261312e2d1f44f21656def948dec0f76b849c6269bc4760c4c56cd",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "5b9cf56caa8934d4c3096c0e6063ff19e27c5f8f9bae7426a3b2ad57c1c05c1e",
+    "productionSnapshotSha256": "ec73f9c1ebbacd74434d9696dc09f234ecb1d1191a376c00e56cee7a2beb6a48",
+    "targetCompanySnapshotSha256": "46918e66ae813e6c5ccac7037ee1d96bb21bd2b4bc38c16c1150b23f60e37f61",
+    "seedEntrySha256": "559d0ca9634bb778076763f86ca0018dea3d3688eb93c5162710e40711e3cf95",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4da0da76104b51a479028440f8e310686183ac7397c958312f22a51864590639",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "c9e3bf96c20a29d2716c8beecc8fc3591c2063d58cf71035564a6bf7789d2c42",
+      "organizationsSha256": "d6a02d402704eee7e41721198a8893941ac51e7899a35d87b09706a7cbfc5646",
+      "citationsSha256": "f99dec8b3ab3c78415cb79b859d7ab31fe4829c027c3f253b9ed877f42958254",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "c84d1dbfbc29b6c7df802b1eff8e786f967214aecac6f5bf7d3cd0a44f917ba4",
+    "stateSha256": "68c0a865ab3e4a9ad016b13188c19293f3ca81fca67f61466290dd6afd308a47",
+    "taskSnapshotSha256": "6ab97b93378695f282325c303ef533bfbf52ce9d127fc27860b39fac62e147bb"
+  },
+  "contextSha256": "6ddcaf0d911b527648f6f02d219b711f4782e7e8071329f83132be159950463d"
+}

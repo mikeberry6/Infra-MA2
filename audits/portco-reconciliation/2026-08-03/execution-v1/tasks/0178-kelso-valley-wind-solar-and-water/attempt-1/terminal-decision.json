@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0178:kelso-valley-wind-solar-and-water:285d524a",
+  "taskIndex": 178,
+  "companyName": "Kelso Valley Wind, Solar & Water",
+  "outcome": "DEFERRED",
+  "decidedAt": "2026-08-23T21:47:00.000Z",
+  "rationale": "Primary evidence resolves Kelso Valley as CIM's label for ReNu Resources LLC and the Onyx Ranch land, water and renewables-development investment, distinct from Permanent Power. Assets were sold in 2008, 2013 and 2014, but CIM still reported oversight in 2021 and no later direct source establishes ReNu's current legal existence, residual assets or rights, the current CIM/Renewable Resources Group ownership split, or a final exit. Because active ownership remains materially unresolved, no production mutation is inferred.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0178-kelso-valley-wind-solar-and-water/attempt-1/locked-task-snapshot.json",
+    "sha256": "c528d638b50d92d39b673fdb7cfcd03d3bf2be67da6d7d7a0228c5f095cd3ece"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0178-kelso-valley-wind-solar-and-water/attempt-1/terminal-research-decision.json",
+    "sha256": "928f905400695e8aac7a0a7be1f09484bd9cbf24d4fae6d17c4599474ade7fbb"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0178-kelso-valley-wind-solar-and-water/attempt-1/source-verification.json",
+    "sha256": "50104cb24fb1070efaee7af835e6687f9ecf191830ec725d58ad81633c17e987"
+  },
+  "evidence": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1767074/000176707421000009/cimintervalfund486bposjan2.htm",
+      "purpose": "CIM oversight and ReNu Resources investment context reported in 2021"
+    },
+    {
+      "url": "https://www.latimes.com/archives/la-xpm-2009-sep-15-me-wind15-story.html",
+      "purpose": "ReNu Resources, Onyx Ranch and Kelso Valley identity and development history"
+    },
+    {
+      "url": "https://www.rrbwsd.com/onyx-ranch/",
+      "purpose": "Later Onyx Ranch disposition and residual-boundary evidence"
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "439a6ef72704f88f879c6e42fe61695e19064e39e3ac668a527593907c7c7e0c"
+}

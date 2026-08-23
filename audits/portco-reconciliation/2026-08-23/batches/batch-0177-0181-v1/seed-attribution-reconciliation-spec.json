@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_SEED_ATTRIBUTION_RECONCILIATION_SPEC",
+  "batchId": "batch-0177-0181-v1",
+  "batchSha256": "99532f97f9199835acd4fa5922f830188d5903d94b790a6c03fd17acfa2f28de",
+  "reconciledAt": "2026-08-23T21:52:00.000Z",
+  "sourceManifestSha256": "cbca219eb4bfc40742f312ee30246b315b640aef55c602265a1374c44237e51e",
+  "rationale": "Remove the unexecuted SolarBank New HoldCo and duplicate Westlands site owner records, add the new IENTC direct CIM-managed ownership identity, and replace the former WEPCO attribution with the two disclosed current Permanent Power ownership blocks. No fund link is inferred because the exact database fund rows and the identities within the minority CIM-affiliate block are not available.",
+  "removeRecordIds": [
+    "OFA-F22F74444A19",
+    "OFA-8894B7F5231F"
+  ],
+  "upsertRecords": [
+    {
+      "recordId": "OFA-4AFABE6F62C1",
+      "companyName": "IENTC Telecomunicaciones",
+      "country": "Mexico",
+      "investmentFirm": "CIM Group",
+      "currentVehicleName": "CIM Real Assets & Credit Fund and another CIM-managed institutional fund; IENTC 1, LLC for RACR",
+      "investmentYear": 2022,
+      "stake": "45% aggregate CIM-managed equity; RACR separately reported 21.3% of IENTC 1, LLC",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "CIM directly identifies two CIM-managed funds, including CIM Real Assets & Credit Fund, as the 45% aggregate equity investor and RACR reports its IENTC 1 interest; the second fund and a normalized portfolio-company fund link are not publicly disclosed and are not inferred.",
+      "evidenceUrls": [
+        "https://www.cimgroup.com/case-studies/ientc-telecomunicaciones",
+        "https://5246398.fs1.hubspotusercontent-na2.net/hubfs/5246398/CIM%20Group%20Corporate%20Website_RACR%20Documents/CIM%20RACR%20Semi-Annual%20Report_3.31.2026%20FINAL_SECURED.pdf"
+      ]
+    },
+    {
+      "recordId": "OFA-C0AD3D817897",
+      "companyName": "Permanent Power Company",
+      "country": "United States",
+      "investmentFirm": "CIM Group",
+      "currentVehicleName": "CIM Opportunity Zone Fund, L.P. (direct and through COZ 1, LLC)",
+      "investmentYear": 2025,
+      "stake": "66.7% total economic interest at March 31, 2026 (63.2% direct plus approximately 3.5% through COZ 1, LLC)",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "SEC filings directly identify CIM Opportunity Zone Fund's controlling 66.7% economic interest, including its direct interest and the interest held through COZ 1; no matching normalized fund row is linked in the current PortCo dependency snapshot.",
+      "evidenceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/1765107/000176510726000008/cim-20260331.htm",
+        "https://www.sec.gov/Archives/edgar/data/1765107/000176510725000024/cim-20250929.htm"
+      ]
+    },
+    {
+      "recordId": "OFA-D98B843B30FB",
+      "companyName": "Permanent Power Company",
+      "country": "United States",
+      "investmentFirm": "CIM Group",
+      "currentVehicleName": "Other CIM-affiliated entities / managed accounts",
+      "investmentYear": 2025,
+      "stake": "33.3% aggregate economic interest at March 31, 2026",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "SEC filings directly disclose that other CIM-affiliated entities hold the remaining 33.3% aggregate interest, but do not identify their individual entities, funds or managed accounts; no specific fund is inferred.",
+      "evidenceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/1765107/000176510726000008/cim-20260331.htm",
+        "https://www.sec.gov/Archives/edgar/data/1765107/000176510726000005/cim-20251231.htm"
+      ]
+    }
+  ],
+  "specSha256": "e78214b0c4b0989f2e09be734a03d6b2331c789494d00508ccb6e7321f7baa07"
+}
