@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-23T05:50:28.000Z",
+  "updatedAt": "2026-08-23T06:54:47.000Z",
   "runStatus": "IDLE",
   "activeTaskId": null,
   "source": {
@@ -18669,23 +18669,44 @@
       "managerIndex": 21,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "5968f7a74d2c8575bb8f147e4d7a57c46307347961e95c22a5a11d8f377e6f2b",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-08-23T06:01:30.000Z",
+      "updatedAt": "2026-08-23T06:54:47.000Z",
+      "completedAt": "2026-08-23T06:54:47.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "96d71feeb93b5ffb852569a8298df8cf0a84f3ea4511c36ad3c28f55e2fbc687",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0126-mosaic-forest-management/attempt-1/locked-task-snapshot.json",
+          "sha256": "96d71feeb93b5ffb852569a8298df8cf0a84f3ea4511c36ad3c28f55e2fbc687"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0126-mosaic-forest-management-v1/proposal.json",
+          "sha256": "bd719a7f8cd58e9a3d135e3b0b977e392c7add138502994a41395890717ade92"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0126-mosaic-forest-management-v1.json",
+          "sha256": "f1e356b066269ee9e58377b3e64a74736f0ecc6024759c778bed9317e6db6fca"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0126-0130-v1/production-apply/batch-apply-receipt.json#members/0/receipt",
+          "sha256": "ec5279bbc3dafcfa52868ee38870e42ef36f90f37a99569284ea4f9a894d0e43"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0126-mosaic-forest-management-v1/proposal.json#afterImage",
+          "sha256": "faa53b914e4fb1d504d5a37d9e407587a378a01057c1753b3f090463aa31e07b"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-23T06:54:47.000Z",
+        "auditEventId": "cmt5g49hn000axryyw9eslnrx",
+        "transactionId": "069363c9-c37c-4d26-8322-ed6688b3971a",
+        "receiptSha256": "ec5279bbc3dafcfa52868ee38870e42ef36f90f37a99569284ea4f9a894d0e43",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/32623821475"
+      },
       "history": [
         {
           "sequence": 1,
@@ -18696,6 +18717,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-08-23T06:54:47.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0126-0130-v1.",
+          "taskSnapshotSha256": "96d71feeb93b5ffb852569a8298df8cf0a84f3ea4511c36ad3c28f55e2fbc687",
+          "evidenceSha256": [
+            "598be026cbcf92062a764dc09dcdb69b8a694dcfbcc2cde2b2abfded7410ccb8",
+            "599c607030f2aeb266e0a8643b52d70fc49ca67fe95899ae70fd36b0ed7ad91a",
+            "96d71feeb93b5ffb852569a8298df8cf0a84f3ea4511c36ad3c28f55e2fbc687",
+            "bd719a7f8cd58e9a3d135e3b0b977e392c7add138502994a41395890717ade92",
+            "ec5279bbc3dafcfa52868ee38870e42ef36f90f37a99569284ea4f9a894d0e43",
+            "f1e356b066269ee9e58377b3e64a74736f0ecc6024759c778bed9317e6db6fca",
+            "faa53b914e4fb1d504d5a37d9e407587a378a01057c1753b3f090463aa31e07b"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -18707,23 +18746,44 @@
       "managerIndex": 21,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "daf3cb7d134a7bed3b654986097dcae42cabdd0d76bae0015c39b496f48dc0a2",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-08-23T06:01:30.000Z",
+      "updatedAt": "2026-08-23T06:54:47.000Z",
+      "completedAt": "2026-08-23T06:54:47.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "9bdf96832c514c21d4f4095a43bc30b8e489627b5b8092d7301f7585ee23e263",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0127-nexus-water-group/attempt-1/locked-task-snapshot.json",
+          "sha256": "9bdf96832c514c21d4f4095a43bc30b8e489627b5b8092d7301f7585ee23e263"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0127-nexus-water-group-v1/proposal.json",
+          "sha256": "31d24e373962ed55b43dd57a226cdaae9d90a488ccb16d790fed82a7f42b0956"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0127-nexus-water-group-v1.json",
+          "sha256": "ae7f1d8dafad997ad9d4c9b95d73b6452ada23048d15fe8c1daf27f28823803b"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0126-0130-v1/production-apply/batch-apply-receipt.json#members/1/receipt",
+          "sha256": "f0f0f613162f0a6f0f1ff1dbff60310334515ff1955e0b880403bf1c00c6bae0"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0127-nexus-water-group-v1/proposal.json#afterImage",
+          "sha256": "cbf84decfa0ab31709362b5afd3af545333c2bb120e58153c2e2410e5591efe8"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-23T06:54:47.000Z",
+        "auditEventId": "cmt5g4gmp000oxryy7u0tqui2",
+        "transactionId": "069363c9-c37c-4d26-8322-ed6688b3971a",
+        "receiptSha256": "f0f0f613162f0a6f0f1ff1dbff60310334515ff1955e0b880403bf1c00c6bae0",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/32623821475"
+      },
       "history": [
         {
           "sequence": 1,
@@ -18734,6 +18794,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-08-23T06:54:47.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0126-0130-v1.",
+          "taskSnapshotSha256": "9bdf96832c514c21d4f4095a43bc30b8e489627b5b8092d7301f7585ee23e263",
+          "evidenceSha256": [
+            "31d24e373962ed55b43dd57a226cdaae9d90a488ccb16d790fed82a7f42b0956",
+            "598be026cbcf92062a764dc09dcdb69b8a694dcfbcc2cde2b2abfded7410ccb8",
+            "599c607030f2aeb266e0a8643b52d70fc49ca67fe95899ae70fd36b0ed7ad91a",
+            "9bdf96832c514c21d4f4095a43bc30b8e489627b5b8092d7301f7585ee23e263",
+            "ae7f1d8dafad997ad9d4c9b95d73b6452ada23048d15fe8c1daf27f28823803b",
+            "cbf84decfa0ab31709362b5afd3af545333c2bb120e58153c2e2410e5591efe8",
+            "f0f0f613162f0a6f0f1ff1dbff60310334515ff1955e0b880403bf1c00c6bae0"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -18745,23 +18823,44 @@
       "managerIndex": 21,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "3fd668abb47e7502a975c01a2b0f8971bf28bcdc0067c4115d5809dbdd2fed79",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-08-23T06:01:30.000Z",
+      "updatedAt": "2026-08-23T06:54:47.000Z",
+      "completedAt": "2026-08-23T06:54:47.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "1ad86562062412b5988747a040f617f7836ab1c605632efc0731df13a38b5dee",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0128-puget-energy/attempt-1/locked-task-snapshot.json",
+          "sha256": "1ad86562062412b5988747a040f617f7836ab1c605632efc0731df13a38b5dee"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0128-puget-energy-v1/proposal.json",
+          "sha256": "c579f09caa89779cb49d9aecada0638377ed8aab7d30989af7357ce54d604036"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0128-puget-energy-v1.json",
+          "sha256": "cfdff69e5a30ec8011584f24c515830c64309a2b7985572714f2a9f556226f9b"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0126-0130-v1/production-apply/batch-apply-receipt.json#members/2/receipt",
+          "sha256": "038ba0356997af25395a8b9a7158261e2cb7db4378a8bcfa184d10b9db7c3869"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0128-puget-energy-v1/proposal.json#afterImage",
+          "sha256": "796302af1244bfd24e9c7e5d02d5cfbe8ed1f1ca244e003cbabc27217d07e5b3"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-23T06:54:47.000Z",
+        "auditEventId": "cmt5g4pnp0014xryyvwbuc4fj",
+        "transactionId": "069363c9-c37c-4d26-8322-ed6688b3971a",
+        "receiptSha256": "038ba0356997af25395a8b9a7158261e2cb7db4378a8bcfa184d10b9db7c3869",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/32623821475"
+      },
       "history": [
         {
           "sequence": 1,
@@ -18772,6 +18871,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-08-23T06:54:47.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0126-0130-v1.",
+          "taskSnapshotSha256": "1ad86562062412b5988747a040f617f7836ab1c605632efc0731df13a38b5dee",
+          "evidenceSha256": [
+            "038ba0356997af25395a8b9a7158261e2cb7db4378a8bcfa184d10b9db7c3869",
+            "1ad86562062412b5988747a040f617f7836ab1c605632efc0731df13a38b5dee",
+            "598be026cbcf92062a764dc09dcdb69b8a694dcfbcc2cde2b2abfded7410ccb8",
+            "599c607030f2aeb266e0a8643b52d70fc49ca67fe95899ae70fd36b0ed7ad91a",
+            "796302af1244bfd24e9c7e5d02d5cfbe8ed1f1ca244e003cbabc27217d07e5b3",
+            "c579f09caa89779cb49d9aecada0638377ed8aab7d30989af7357ce54d604036",
+            "cfdff69e5a30ec8011584f24c515830c64309a2b7985572714f2a9f556226f9b"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -18783,20 +18900,26 @@
       "managerIndex": 21,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "dd6bc20286f47d5730cd26fb1e54d8c04d1aea4ae1f78c0d0a1925bad603c2d1",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
-      "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "status": "SUPERSEDED",
+      "attempts": 1,
+      "startedAt": "2026-08-23T06:01:30.000Z",
+      "updatedAt": "2026-08-23T06:54:47.000Z",
+      "completedAt": "2026-08-23T06:54:47.000Z",
+      "exceptionReason": "Puget Sound Energy is the wholly owned regulated operating subsidiary of Puget Energy, Inc., not a second manager-level PortCo. Task 128 preserves PSE as an alias and subsidiary, consolidates the complete six-owner Puget Holdings cap table into Puget Energy, and retires the duplicate production record. This linked task would duplicate the same identity and ownership work.",
+      "supersededByTaskId": "ledger:0128:puget-energy:f96cd6be",
+      "taskSnapshotSha256": "9052f0c82b32e5fdddcd15046c3d32353dac883d0762622d8d62a6ccb7068ef9",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0129-puget-sound-energy/attempt-1/locked-task-snapshot.json",
+          "sha256": "9052f0c82b32e5fdddcd15046c3d32353dac883d0762622d8d62a6ccb7068ef9"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0126-0130-v1/decisions/0129-puget-sound-energy.json",
+          "sha256": "6104e79a0f5739319959fca3170cd429782d5d0334b1f7e76437ba6d347de119"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -18810,6 +18933,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "SUPERSEDED",
+          "at": "2026-08-23T06:54:47.000Z",
+          "reason": "Puget Sound Energy is the wholly owned regulated operating subsidiary of Puget Energy, Inc., not a second manager-level PortCo. Task 128 preserves PSE as an alias and subsidiary, consolidates the complete six-owner Puget Holdings cap table into Puget Energy, and retires the duplicate production record. This linked task would duplicate the same identity and ownership work.",
+          "taskSnapshotSha256": "9052f0c82b32e5fdddcd15046c3d32353dac883d0762622d8d62a6ccb7068ef9",
+          "evidenceSha256": [
+            "598be026cbcf92062a764dc09dcdb69b8a694dcfbcc2cde2b2abfded7410ccb8",
+            "599c607030f2aeb266e0a8643b52d70fc49ca67fe95899ae70fd36b0ed7ad91a",
+            "6104e79a0f5739319959fca3170cd429782d5d0334b1f7e76437ba6d347de119",
+            "9052f0c82b32e5fdddcd15046c3d32353dac883d0762622d8d62a6ccb7068ef9"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -18821,20 +18959,26 @@
       "managerIndex": 22,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "016e5d2563ca0a9d6323e5c83239939332c96352f3616f4ae67f061314fa76d2",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
-      "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "status": "SUPERSEDED",
+      "attempts": 1,
+      "startedAt": "2026-08-23T06:01:30.000Z",
+      "updatedAt": "2026-08-23T06:54:47.000Z",
+      "completedAt": "2026-08-23T06:54:47.000Z",
+      "exceptionReason": "Cleco is the trade and group name for the same canonical Louisiana utility platform already corrected by task 122 as Cleco Corporate Holdings LLC. Stonepeak and Bernhard remain announced buyers under a signed pending transaction and are not current owners before closing. Task 130 therefore adds no second company or owner and is superseded by task 122's completed after-image.",
+      "supersededByTaskId": "ledger:0122:cleco-corporate-holdings-llc:43ffb062",
+      "taskSnapshotSha256": "e2646b7ecff18cd2a6184b9954afeb8b5b86873fd3e4d2ee0093c157c302e859",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0130-cleco/attempt-1/locked-task-snapshot.json",
+          "sha256": "e2646b7ecff18cd2a6184b9954afeb8b5b86873fd3e4d2ee0093c157c302e859"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0126-0130-v1/decisions/0130-cleco.json",
+          "sha256": "81e197817a90c7f35266c2d63dd886334e2cb3d8766dbcaa2c02650670f15992"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -18848,6 +18992,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "SUPERSEDED",
+          "at": "2026-08-23T06:54:47.000Z",
+          "reason": "Cleco is the trade and group name for the same canonical Louisiana utility platform already corrected by task 122 as Cleco Corporate Holdings LLC. Stonepeak and Bernhard remain announced buyers under a signed pending transaction and are not current owners before closing. Task 130 therefore adds no second company or owner and is superseded by task 122's completed after-image.",
+          "taskSnapshotSha256": "e2646b7ecff18cd2a6184b9954afeb8b5b86873fd3e4d2ee0093c157c302e859",
+          "evidenceSha256": [
+            "598be026cbcf92062a764dc09dcdb69b8a694dcfbcc2cde2b2abfded7410ccb8",
+            "599c607030f2aeb266e0a8643b52d70fc49ca67fe95899ae70fd36b0ed7ad91a",
+            "81e197817a90c7f35266c2d63dd886334e2cb3d8766dbcaa2c02650670f15992",
+            "e2646b7ecff18cd2a6184b9954afeb8b5b86873fd3e4d2ee0093c157c302e859"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -32906,5 +33065,5 @@
       ]
     }
   ],
-  "manifestSha256": "53cbba6e337b20bee229dd99693b6bc0ed3934a04aa93fe92e25185a67445b1c"
+  "manifestSha256": "337d26391b4ca1eb30c6ce30f9742aeec714bb9a94eb707c3b6fe868641f56d8"
 }

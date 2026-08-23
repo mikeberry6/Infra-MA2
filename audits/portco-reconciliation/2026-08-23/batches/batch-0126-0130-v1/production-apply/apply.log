@@ -1,0 +1,142 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:batch:apply
+> npx tsx scripts/portco-reconciliation/batch-apply-cli.ts --batch-manifest=audits/portco-reconciliation/2026-08-23/batches/batch-0126-0130-v1/batch-manifest.json --batch-sha256=598be026cbcf92062a764dc09dcdb69b8a694dcfbcc2cde2b2abfded7410ccb8 --seed-artifact=prisma/seed-data/approved-portco-after-images.json --apply --write-token=APPLY_APPROVED_PORTCO_BATCH --commit-receipt=tmp/portco-reconciliation/production/batch-commit-receipt.json --receipt=tmp/portco-reconciliation/production/batch-apply-receipt.json --public-base-url=https://infra-ma-2.vercel.app/Infra-MA2/
+
+(node:3807) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "BATCH_APPLIED",
+  "receiptPath": "/home/runner/work/Infra-MA2/Infra-MA2/tmp/portco-reconciliation/production/batch-apply-receipt.json",
+  "receipt": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_APPLY_BATCH_RECEIPT",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "batchId": "batch-0126-0130-v1",
+    "batchSha256": "598be026cbcf92062a764dc09dcdb69b8a694dcfbcc2cde2b2abfded7410ccb8",
+    "releaseSha": "db5d43aee00427c3b6bcf3e793987c432a40f660",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "transactionId": "069363c9-c37c-4d26-8322-ed6688b3971a",
+    "appliedAt": "2026-08-23T06:48:42.585Z",
+    "members": [
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0126:mosaic-forest-management:d54ba16b",
+        "taskIndex": 126,
+        "companyName": "Mosaic Forest Management",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0126:mosaic-forest-management:d54ba16b",
+          "taskIndex": 126,
+          "companyName": "Mosaic Forest Management",
+          "companyId": "cmrxpj8mm00mpivhecizreyp5",
+          "proposalSha256": "bd719a7f8cd58e9a3d135e3b0b977e392c7add138502994a41395890717ade92",
+          "approvalSha256": "f1e356b066269ee9e58377b3e64a74736f0ecc6024759c778bed9317e6db6fca",
+          "productionSnapshotSha256": "91c4db2401e3ee546657211abfd3e3fe8e83b4ac3214b362fea28b3798f2d35b",
+          "beforeCompanySnapshotSha256": "14b63975af017efe74f4a158dfdad17bb0e0833888d4ea567eaacf519e9ead63",
+          "appliedAfterImageSha256": "faa53b914e4fb1d504d5a37d9e407587a378a01057c1753b3f090463aa31e07b",
+          "seedAfterImageSha256": "faa53b914e4fb1d504d5a37d9e407587a378a01057c1753b3f090463aa31e07b",
+          "approvedSeedEntrySha256": "701c7b373d034675598aa11e00c26e1789ca8e92e9431f7521436c1bdd63dc7a",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "069363c9-c37c-4d26-8322-ed6688b3971a",
+          "auditEventId": "cmt5g49hn000axryyw9eslnrx",
+          "appliedAt": "2026-08-23T06:48:42.585Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "ec5279bbc3dafcfa52868ee38870e42ef36f90f37a99569284ea4f9a894d0e43"
+        }
+      },
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0127:nexus-water-group:287d18eb",
+        "taskIndex": 127,
+        "companyName": "Nexus Water Group",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0127:nexus-water-group:287d18eb",
+          "taskIndex": 127,
+          "companyName": "Nexus Water Group",
+          "companyId": "cmrxpj8n500mqivhe8jt4n9mw",
+          "proposalSha256": "31d24e373962ed55b43dd57a226cdaae9d90a488ccb16d790fed82a7f42b0956",
+          "approvalSha256": "ae7f1d8dafad997ad9d4c9b95d73b6452ada23048d15fe8c1daf27f28823803b",
+          "productionSnapshotSha256": "9cf674ebe0b65d5af92120bc16e00ba1058dbc7ecb120e127795fe387085b414",
+          "beforeCompanySnapshotSha256": "3aa3d93a11ebc140f6e12f97104e0acef18386fe1602bd24ff4cbb5c8e50ea0c",
+          "appliedAfterImageSha256": "cbf84decfa0ab31709362b5afd3af545333c2bb120e58153c2e2410e5591efe8",
+          "seedAfterImageSha256": "cbf84decfa0ab31709362b5afd3af545333c2bb120e58153c2e2410e5591efe8",
+          "approvedSeedEntrySha256": "6e4cbfa28e439ea6eb06f5e685d8a37454dc002a1ddf678dd80233e7d6fc2644",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "069363c9-c37c-4d26-8322-ed6688b3971a",
+          "auditEventId": "cmt5g4gmp000oxryy7u0tqui2",
+          "appliedAt": "2026-08-23T06:48:42.585Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "f0f0f613162f0a6f0f1ff1dbff60310334515ff1955e0b880403bf1c00c6bae0"
+        }
+      },
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0128:puget-energy:f96cd6be",
+        "taskIndex": 128,
+        "companyName": "Puget Energy",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0128:puget-energy:f96cd6be",
+          "taskIndex": 128,
+          "companyName": "Puget Energy",
+          "companyId": "cmrxpj4fp00ghivhebe9bfh5k",
+          "proposalSha256": "c579f09caa89779cb49d9aecada0638377ed8aab7d30989af7357ce54d604036",
+          "approvalSha256": "cfdff69e5a30ec8011584f24c515830c64309a2b7985572714f2a9f556226f9b",
+          "productionSnapshotSha256": "5e94c1d6dfe2f19ca15145ffd18c89c15581ab30aaf594a3264cb1f80900040e",
+          "beforeCompanySnapshotSha256": "959773e56e2d96ae58e3576433decc82285c7be75fb3db6541da5616c92ed3a0",
+          "appliedAfterImageSha256": "796302af1244bfd24e9c7e5d02d5cfbe8ed1f1ca244e003cbabc27217d07e5b3",
+          "seedAfterImageSha256": "796302af1244bfd24e9c7e5d02d5cfbe8ed1f1ca244e003cbabc27217d07e5b3",
+          "approvedSeedEntrySha256": "c3d0cbafca8d40ac0680e3dc5f1beb3087f3a0a4c2ceb9adeaf13a24f29f7f22",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "069363c9-c37c-4d26-8322-ed6688b3971a",
+          "auditEventId": "cmt5g4pnp0014xryyvwbuc4fj",
+          "appliedAt": "2026-08-23T06:48:42.585Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "038ba0356997af25395a8b9a7158261e2cb7db4378a8bcfa184d10b9db7c3869"
+        }
+      },
+      {
+        "kind": "TERMINAL",
+        "taskId": "ledger:0129:puget-sound-energy:3d2f76d8",
+        "taskIndex": 129,
+        "companyName": "Puget Sound Energy",
+        "outcome": "SUPERSEDED",
+        "decisionSha256": "6104e79a0f5739319959fca3170cd429782d5d0334b1f7e76437ba6d347de119"
+      },
+      {
+        "kind": "TERMINAL",
+        "taskId": "ledger:0130:cleco:aacd195e",
+        "taskIndex": 130,
+        "companyName": "Cleco",
+        "outcome": "SUPERSEDED",
+        "decisionSha256": "81e197817a90c7f35266c2d63dd886334e2cb3d8766dbcaa2c02650670f15992"
+      }
+    ],
+    "verification": {
+      "databaseTransactionCommitted": true,
+      "seedArtifactVerified": true,
+      "allDetailApisVerified": true,
+      "partialDatabaseApplication": false
+    },
+    "receiptSha256": "599c607030f2aeb266e0a8643b52d70fc49ca67fe95899ae70fd36b0ed7ad91a"
+  }
+}

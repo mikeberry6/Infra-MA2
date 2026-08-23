@@ -26,7 +26,11 @@ function parsed(path: string): unknown {
 
 function eligiblePilotSourceFixture() {
   const completed = verifyExecutionManifest(parsed(`${EXECUTION_ROOT}/manifest.json`));
-  const resetSequences = new Set([121, 122, 123, 124, 125, 304, 477]);
+  // Keep this fixture pinned to the state immediately before the pilot bundle.
+  // Later production batches may have completed additional queue members in the
+  // durable manifest, so reset those members as well to preserve the pilot's
+  // deterministic next-task assertion.
+  const resetSequences = new Set([121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 304, 477]);
   const tasks = completed.tasks.map((task) => {
     if (!resetSequences.has(task.sequence)) return task;
     const history = task.history.slice(0, -1);

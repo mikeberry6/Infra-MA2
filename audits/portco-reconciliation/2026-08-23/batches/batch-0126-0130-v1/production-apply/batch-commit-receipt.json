@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_COMMIT_RECEIPT",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0126-0130-v1",
+  "batchSha256": "598be026cbcf92062a764dc09dcdb69b8a694dcfbcc2cde2b2abfded7410ccb8",
+  "releaseSha": "db5d43aee00427c3b6bcf3e793987c432a40f660",
+  "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+  "transactionId": "069363c9-c37c-4d26-8322-ed6688b3971a",
+  "appliedAt": "2026-08-23T06:48:42.585Z",
+  "members": [
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0126:mosaic-forest-management:d54ba16b",
+      "taskIndex": 126,
+      "companyName": "Mosaic Forest Management",
+      "proposalSha256": "bd719a7f8cd58e9a3d135e3b0b977e392c7add138502994a41395890717ade92",
+      "approvalSha256": "f1e356b066269ee9e58377b3e64a74736f0ecc6024759c778bed9317e6db6fca",
+      "afterImageSha256": "faa53b914e4fb1d504d5a37d9e407587a378a01057c1753b3f090463aa31e07b",
+      "approvedSeedEntrySha256": "701c7b373d034675598aa11e00c26e1789ca8e92e9431f7521436c1bdd63dc7a",
+      "companyId": "cmrxpj8mm00mpivhecizreyp5",
+      "auditEventId": "cmt5g49hn000axryyw9eslnrx"
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0127:nexus-water-group:287d18eb",
+      "taskIndex": 127,
+      "companyName": "Nexus Water Group",
+      "proposalSha256": "31d24e373962ed55b43dd57a226cdaae9d90a488ccb16d790fed82a7f42b0956",
+      "approvalSha256": "ae7f1d8dafad997ad9d4c9b95d73b6452ada23048d15fe8c1daf27f28823803b",
+      "afterImageSha256": "cbf84decfa0ab31709362b5afd3af545333c2bb120e58153c2e2410e5591efe8",
+      "approvedSeedEntrySha256": "6e4cbfa28e439ea6eb06f5e685d8a37454dc002a1ddf678dd80233e7d6fc2644",
+      "companyId": "cmrxpj8n500mqivhe8jt4n9mw",
+      "auditEventId": "cmt5g4gmp000oxryy7u0tqui2"
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0128:puget-energy:f96cd6be",
+      "taskIndex": 128,
+      "companyName": "Puget Energy",
+      "proposalSha256": "c579f09caa89779cb49d9aecada0638377ed8aab7d30989af7357ce54d604036",
+      "approvalSha256": "cfdff69e5a30ec8011584f24c515830c64309a2b7985572714f2a9f556226f9b",
+      "afterImageSha256": "796302af1244bfd24e9c7e5d02d5cfbe8ed1f1ca244e003cbabc27217d07e5b3",
+      "approvedSeedEntrySha256": "c3d0cbafca8d40ac0680e3dc5f1beb3087f3a0a4c2ceb9adeaf13a24f29f7f22",
+      "companyId": "cmrxpj4fp00ghivhebe9bfh5k",
+      "auditEventId": "cmt5g4pnp0014xryyvwbuc4fj"
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0129:puget-sound-energy:3d2f76d8",
+      "taskIndex": 129,
+      "companyName": "Puget Sound Energy",
+      "outcome": "SUPERSEDED",
+      "decisionSha256": "6104e79a0f5739319959fca3170cd429782d5d0334b1f7e76437ba6d347de119"
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0130:cleco:aacd195e",
+      "taskIndex": 130,
+      "companyName": "Cleco",
+      "outcome": "SUPERSEDED",
+      "decisionSha256": "81e197817a90c7f35266c2d63dd886334e2cb3d8766dbcaa2c02650670f15992"
+    }
+  ],
+  "verification": {
+    "databaseTransactionCommitted": true,
+    "seedArtifactVerifiedBeforeCommit": true,
+    "detailApiVerificationPending": true,
+    "partialDatabaseApplication": false
+  },
+  "receiptSha256": "fa2bd7fbcc28bc0f20973a56c91e42c26574bad5c6921e46ff3548ef7b0dae1c"
+}
