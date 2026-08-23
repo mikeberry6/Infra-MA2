@@ -1,0 +1,377 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0126:mosaic-forest-management:d54ba16b",
+  "taskIndex": 126,
+  "asOfDate": "2026-08-23",
+  "generatedAt": "2026-08-23T06:20:00.000Z",
+  "canonicalKey": "mosaic-forest-management|canada",
+  "companyName": "Mosaic Forest Management",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER"
+  ],
+  "sourceHoldingIds": [
+    "021-bci:holding:009:mosaic-forest-management"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Retain one Mosaic Forest Management platform. BCI remains the in-scope infrastructure owner at a directly reported 56.1%, PSP remains a legal co-owner through its Natural Resources mandate rather than PSP Infrastructure, and AIMCo is preserved as a former platform participant whose exact exit date is not publicly disclosed. The manager-level platform includes Mosaic LP and its general partner; TimberWest and Island Timberlands remain underlying managed affiliates.",
+  "evidence": [
+    {
+      "url": "https://www.bci.ca/wp-content/uploads/2026/07/BCI-IRR-Program-FS-2025.pdf",
+      "purpose": "Current BCI infrastructure ownership",
+      "supports": [
+        "BCI held 56.1% of Mosaic LP at December 31, 2025",
+        "Mosaic is held within BCI's Infrastructure & Renewable Resources program"
+      ]
+    },
+    {
+      "url": "https://scalca.blob.core.windows.net/2026/Mosaic_Forest_Management_Corporation%2C_Mosaic_Forest_Management_Limited_Partnership%2C_Island_Timberlands_Limited_Partnership%2C_Island_Timberlands_GP_Ltd%2C_2026_QHpdiL.pdf",
+      "purpose": "Current legal owners and platform boundary",
+      "supports": [
+        "BCI and PSP are the two ultimate public-pension owners",
+        "Mosaic Corporation, Mosaic LP and the managed timber entities belong to one platform boundary"
+      ]
+    },
+    {
+      "url": "https://www.investpsp.com/en/news/canadian-institutional-investment-managers-enter-an-agreement-to-affiliate-timberwest-forest-corporation-and-island-timberlands-limited-partnership/",
+      "purpose": "PSP strategy classification and predecessor ownership",
+      "supports": [
+        "PSP classifies the timber investment under Natural Resources",
+        "BCI, PSP and AIMCo participated in the 2018 predecessor affiliation"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "91c4db2401e3ee546657211abfd3e3fe8e83b4ac3214b362fea28b3798f2d35b",
+  "currentCompanySnapshotSha256": "14b63975af017efe74f4a158dfdad17bb0e0833888d4ea567eaacf519e9ead63",
+  "executionLock": {
+    "taskSnapshotSha256": "96d71feeb93b5ffb852569a8298df8cf0a84f3ea4511c36ad3c28f55e2fbc687",
+    "taskStateSha256": "ead3a4a9f93c6afe9b0a90360ced9c8b80baf40a2e6a2378e501eaaf1bd31c61",
+    "taskDependencySha256": "6be11872406c170eaca564c047119f7e72889f50300b168c1e2d6567632b89a5",
+    "seedEntrySha256": "e51c0717f9a45c63ff9a1305a18d7276310f29c8c9dfcf1692ab4f9ce505b371",
+    "dependencies": {
+      "ownershipPeriodsSha256": "aa0b141a3daaf6d4d185808d62f4aaa5eff21aeb21f8a8aaad884360b41aa344",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "dcd177ee3778e283e7063c1b60f809c4e101c348b95e5c8073041ffcf3ec8829",
+      "organizationsSha256": "5493d6146f53cf9875d94908eb80dffc8d590d92fc2ba8d868922abe4ca69d6a",
+      "citationsSha256": "0f750adc9ae4888330e8577613397a574eaa6f4e7016b990ecef309ef1b1cd51",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj1av00btivhe22q21yhy",
+        "fundName": "Infrastructure & Renewable Resources",
+        "managerId": "cmrxpi4wo000tivheupfc57xk",
+        "updatedAt": "2026-07-23T16:09:55.543Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi2rj0005ivhejt9pabwk",
+        "name": "AIMCo",
+        "updatedAt": "2026-07-23T16:09:10.783Z"
+      },
+      {
+        "id": "cmrxpi4wo000tivheupfc57xk",
+        "name": "BCI",
+        "updatedAt": "2026-07-23T16:09:13.560Z"
+      },
+      {
+        "id": "cmrxpih6o004oivhejmzw2gfv",
+        "name": "PSP Investments",
+        "updatedAt": "2026-07-23T16:09:29.472Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpj8mm00mpivhecizreyp5",
+    "name": "Mosaic Forest Management",
+    "aliases": [],
+    "sector": "SOCIAL_INFRA",
+    "subsector": "Timberlands management / sustainable forestry",
+    "region": "NORTH_AMERICA",
+    "country": "Canada",
+    "countryTags": [
+      "Canada"
+    ],
+    "description": "Mosaic Forest Management is a timberlands management company overseeing large private forestlands and associated public tenures on Vancouver Island and coastal British Columbia. The platform serves timber, lumber, and broader forest-products markets through harvesting, stewardship, and land-management activities. Its operating model is asset-heavy because it manages extensive timberlands where value is tied to land quality, biological growth, harvest planning, and log sales. Company materials describe Mosaic as the manager for the TimberWest and Island Timberlands ownership interests and note a supply chain supporting roughly 2,000 employees and contractors. Operations are concentrated in British Columbia, particularly on Vancouver Island and the province's coast. Mosaic launched in 2018 as the management platform for TimberWest and Island Timberlands; BCI's 2024 I&RR financial statements disclose a 56.1% ownership interest in Mosaic LP, while public materials also identify PSP Investments as an underlying ownership partner.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2018,
+    "headquarters": "British Columbia",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjtuf01jzivhepih49uhp",
+        "managerName": "PSP Investments",
+        "organizationName": "PSP Investments",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2018,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjtv101k0ivhec6b6y0bg",
+        "managerName": "BCI",
+        "organizationName": "BCI",
+        "fundName": "Infrastructure & Renewable Resources",
+        "vehicleName": "Infrastructure & Renewable Resources",
+        "stake": "56.1%",
+        "investmentYear": 2018,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkv6c02zjivheaxm94zng",
+        "date": "2018",
+        "event": "Mosaic began managing extensive private forest lands and public tenures in coastal British Columbia.",
+        "category": "OTHER",
+        "sortDate": "2018-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkv6t02zkivhegcgx01o9",
+        "date": "Nov 1, 2018",
+        "event": "BCI, PSP Investments, and AIMCo-affiliated Island Timberlands investors launched Mosaic Forest Management as the management platform for TimberWest and Island Timberlands.",
+        "category": "FINANCING",
+        "sortDate": "2018-11-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpphax088divhe9uia9ish",
+        "label": "Mosaicforests — Mosaic Forest Management",
+        "url": "https://www.mosaicforests.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Mosaicforests company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpphbx088fivhem1s6qyrh",
+        "label": "Investment date source — BCI — Mosaic Forest Management",
+        "url": "https://www.mosaicforests.com/news-views/2018/11/mosaic-forest-management-launch-wbcjc",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "BCI initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpphd2088hivhe93x7k8mc",
+        "label": "Mosaicforests — Mosaic Forest Management",
+        "url": "https://www.mosaicforests.com/timberlands",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Mosaicforests operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpphe7088jivheq3597exl",
+        "label": "Newnavigationtwo — Mosaic Forest Management",
+        "url": "https://newnavigationtwo.squarespace.com/s/Mosaic-2024-Supply-Chain-Report.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Newnavigationtwo operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppheo088kivheysb8cazk",
+        "label": "Ownership interest source — BCI I&RR 2024 financial statements — Puget Sound Energy",
+        "url": "https://www.bci.ca/wp-content/uploads/2024/08/IRR-Program-FS-2024_Secured.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "BCI 56.1% ownership interest in Mosaic LP as of December 31, 2024",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "14b63975af017efe74f4a158dfdad17bb0e0833888d4ea567eaacf519e9ead63",
+  "afterImage": {
+    "id": "cmrxpj8mm00mpivhecizreyp5",
+    "name": "Mosaic Forest Management",
+    "aliases": [
+      "Mosaic Forest Management Corporation",
+      "Mosaic Forest Management Limited Partnership",
+      "Mosaic Forest Management LP",
+      "Mosaic LP"
+    ],
+    "sector": "SOCIAL_INFRA",
+    "subsector": "Timberlands management / sustainable forestry",
+    "region": "NORTH_AMERICA",
+    "country": "Canada",
+    "countryTags": [
+      "Canada"
+    ],
+    "description": "Mosaic Forest Management is a Canadian timberlands and land-management platform overseeing the TimberWest and Island Timberlands interests across Vancouver Island and coastal British Columbia. The business manages sustainable forestry, timber production and related land uses, including renewable-energy, watershed, recreation, real-estate and carbon initiatives. Mosaic launched on November 1, 2018. BCI remains the in-scope infrastructure owner through its Infrastructure & Renewable Resources program and reported a 56.1% interest in Mosaic LP at year-end 2025. PSP Investments remains the other legal owner through its Natural Resources mandate; its exact published percentage is not publicly disclosed, and it is not treated as a PSP Infrastructure holding. AIMCo participated at launch but was no longer named in Mosaic's 2024 statutory ownership report, so it is preserved as a former owner with an undisclosed exit date.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.mosaicforests.com/",
+    "yearFounded": 2018,
+    "headquarters": "Vancouver, British Columbia (corporate); Nanaimo, British Columbia (operations)",
+    "lastVerifiedAt": "2026-08-23T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjtuf01jzivhepih49uhp",
+        "managerName": "PSP Investments",
+        "organizationName": "PSP Investments",
+        "fundName": null,
+        "vehicleName": "PSP Natural Resources mandate; legal vehicle not publicly disclosed",
+        "stake": "43.9% inferred residual from BCI's 56.1% and the two-owner disclosure; exact published stake not publicly disclosed",
+        "investmentYear": 2018,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjtv101k0ivhec6b6y0bg",
+        "managerName": "BCI",
+        "organizationName": "BCI",
+        "fundName": "Infrastructure & Renewable Resources",
+        "vehicleName": "Mosaic LP through intermediary corporations; exact legal vehicle not publicly disclosed",
+        "stake": "56.1%",
+        "investmentYear": 2018,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "AIMCo",
+        "organizationName": "AIMCo",
+        "fundName": null,
+        "vehicleName": "Island Timberlands entities; exact vehicle not publicly disclosed",
+        "stake": null,
+        "investmentYear": 2018,
+        "exitYear": null,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkv6c02zjivheaxm94zng",
+        "date": "2011",
+        "event": "BCI and PSP Investments acquired TimberWest, establishing one of the two predecessor ownership groups later managed through Mosaic.",
+        "category": "ACQUISITION",
+        "sortDate": "2011-01-01T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.investpsp.com/en/news/canadian-institutional-investment-managers-enter-an-agreement-to-affiliate-timberwest-forest-corporation-and-island-timberlands-limited-partnership/"
+        ]
+      },
+      {
+        "id": "cmrxpkv6t02zkivhegcgx01o9",
+        "date": "Nov 1, 2018",
+        "event": "BCI-, PSP- and AIMCo-affiliated owners launched Mosaic Forest Management to manage the TimberWest and Island Timberlands businesses as one platform.",
+        "category": "FINANCING",
+        "sortDate": "2018-11-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.mosaicforests.com/news-views/2018/11/mosaic-forest-management-launch-wbcjc",
+          "https://www.investpsp.com/en/news/canadian-institutional-investment-managers-enter-an-agreement-to-affiliate-timberwest-forest-corporation-and-island-timberlands-limited-partnership/"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpphax088divhe9uia9ish",
+        "label": "Mosaicforests — Mosaic Forest Management",
+        "url": "https://www.mosaicforests.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current Mosaic company profile and operating activity",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpphbx088fivhem1s6qyrh",
+        "label": "Investment date source — BCI — Mosaic Forest Management",
+        "url": "https://www.mosaicforests.com/news-views/2018/11/mosaic-forest-management-launch-wbcjc",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "November 1, 2018 Mosaic platform launch and predecessor boundary",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpphd2088hivhe93x7k8mc",
+        "label": "Mosaicforests — Mosaic Forest Management",
+        "url": "https://www.mosaicforests.com/timberlands",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Managed timberlands, coastal British Columbia footprint and operating scale",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpphe7088jivheq3597exl",
+        "label": "Newnavigationtwo — Mosaic Forest Management",
+        "url": "https://newnavigationtwo.squarespace.com/s/Mosaic-2024-Supply-Chain-Report.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Newnavigationtwo operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppheo088kivheysb8cazk",
+        "label": "Ownership interest source — BCI I&RR 2024 financial statements — Puget Sound Energy",
+        "url": "https://www.bci.ca/wp-content/uploads/2024/08/IRR-Program-FS-2024_Secured.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "BCI 56.1% ownership interest in Mosaic LP at December 31, 2024",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "BCI — I&RR Program financial statements 2025",
+        "url": "https://www.bci.ca/wp-content/uploads/2026/07/BCI-IRR-Program-FS-2025.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Audited BCI 56.1% Mosaic LP interest at December 31, 2025",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "Mosaic — 2026 statutory report",
+        "url": "https://scalca.blob.core.windows.net/2026/Mosaic_Forest_Management_Corporation%2C_Mosaic_Forest_Management_Limited_Partnership%2C_Island_Timberlands_Limited_Partnership%2C_Island_Timberlands_GP_Ltd%2C_2026_QHpdiL.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current BCI and PSP ultimate ownership and legal-entity map",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Mosaic — 2024 statutory report",
+        "url": "https://scalca.blob.core.windows.net/2024/Mosaic_Forest_Management_Corporation_Mosaic_Forest_Management_Limited_Partnership_Island_Timberlands_Limited_Partnership_Island_Timberlands_GP_Ltd._Ti_2024_2cHhS1.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "BCI and PSP owner set bounding AIMCo's undisclosed exit before 2024",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "PSP Investments — TimberWest and Island Timberlands affiliation",
+        "url": "https://www.investpsp.com/en/news/canadian-institutional-investment-managers-enter-an-agreement-to-affiliate-timberwest-forest-corporation-and-island-timberlands-limited-partnership/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "PSP Natural Resources classification and 2018 predecessor ownership",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "faa53b914e4fb1d504d5a37d9e407587a378a01057c1753b3f090463aa31e07b",
+  "proposalSha256": "bd719a7f8cd58e9a3d135e3b0b977e392c7add138502994a41395890717ade92"
+}

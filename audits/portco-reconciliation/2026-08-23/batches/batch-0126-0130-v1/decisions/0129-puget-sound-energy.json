@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0129:puget-sound-energy:3d2f76d8",
+  "taskIndex": 129,
+  "companyName": "Puget Sound Energy",
+  "outcome": "SUPERSEDED",
+  "decidedAt": "2026-08-23T06:31:00.000Z",
+  "rationale": "Puget Sound Energy is the wholly owned regulated operating subsidiary of Puget Energy, Inc., not a second manager-level PortCo. Task 128 preserves PSE as an alias and subsidiary, consolidates the complete six-owner Puget Holdings cap table into Puget Energy, and retires the duplicate production record. This linked task would duplicate the same identity and ownership work.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0129-puget-sound-energy/attempt-1/locked-task-snapshot.json",
+    "sha256": "c8d2eafb4ba15602696c34c0ab1751a21f330531d985e99a6d2120d1e477c11a"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0129-puget-sound-energy/attempt-1/research-decision.json",
+    "sha256": "e2d985c2cb8b8800eeb69bfcdb31b0fbd84348450f2095037c26d5a7336e7517"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0129-puget-sound-energy/attempt-1/source-verification.json",
+    "sha256": "4e46fad35a0e342b19e6712934b5807912f19e9d69a77a20de0f8dfddc8e185c"
+  },
+  "evidence": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/81100/000119312526084011/d109936dex991.htm",
+      "purpose": "Current owner table and Puget Energy / PSE parent-subsidiary boundary"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1085392/000108539226000013/psd-20260331.htm",
+      "purpose": "Legal chain and subsidiary boundary"
+    },
+    {
+      "url": "https://www.macquarie.com/us/en/about/news/2022/macquarie-asset-management-and-ontario-teachers-complete-acquisition-of-stake-in-puget-holdings.html",
+      "purpose": "Current Macquarie and Ontario Teachers' ownership at Puget Holdings"
+    }
+  ],
+  "supersededByTaskId": "ledger:0128:puget-energy:f96cd6be",
+  "decisionSha256": "6104e79a0f5739319959fca3170cd429782d5d0334b1f7e76437ba6d347de119"
+}

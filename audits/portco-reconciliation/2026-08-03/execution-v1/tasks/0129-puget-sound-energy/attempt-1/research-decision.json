@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_LINKED_RESEARCH_DECISION",
+  "taskId": "ledger:0129:puget-sound-energy:3d2f76d8",
+  "taskIndex": 129,
+  "companyName": "Puget Sound Energy",
+  "asOfDate": "2026-08-23",
+  "stagedAt": "2026-08-23T06:24:00.000Z",
+  "researchOnly": true,
+  "mutationAuthorized": false,
+  "linkedCanonicalTaskId": "ledger:0128:puget-energy:f96cd6be",
+  "linkedResearchDecision": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0128-puget-energy/attempt-1/research-decision.json",
+  "result": {
+    "decision": "SUPERSEDED",
+    "confidence": "HIGH",
+    "rationale": "Puget Sound Energy is the wholly owned regulated operating subsidiary of Puget Energy, Inc., not a second manager-level PortCo. Task 128 preserves PSE as an alias and subsidiary, consolidates the complete six-owner Puget Holdings cap table into Puget Energy, and retires the duplicate production record. This linked task would duplicate the same identity and ownership work.",
+    "evidence": [
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/81100/000119312526084011/d109936dex991.htm",
+        "purpose": "Current owner table and Puget Energy / PSE parent-subsidiary boundary"
+      },
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/1085392/000108539226000013/psd-20260331.htm",
+        "purpose": "Legal chain and subsidiary boundary"
+      },
+      {
+        "url": "https://www.macquarie.com/us/en/about/news/2022/macquarie-asset-management-and-ontario-teachers-complete-acquisition-of-stake-in-puget-holdings.html",
+        "purpose": "Current Macquarie and Ontario Teachers' ownership at Puget Holdings"
+      }
+    ]
+  }
+}
