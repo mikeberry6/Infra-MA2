@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-23T16:12:00Z",
-  "activeBatchId": "batch-0157-0161-v1",
+  "updatedAt": "2026-08-23T16:27:02Z",
+  "activeBatchId": null,
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -900,7 +900,7 @@
     },
     {
       "batchId": "batch-0157-0161-v1",
-      "state": "VERIFYING_FAILED",
+      "state": "COMPLETED",
       "taskIds": [
         "ledger:0157:advanced-cooling-technologies-act:3ea176a7",
         "ledger:0158:arlington-industries:c7b020cc",
@@ -916,18 +916,18 @@
         161
       ],
       "createdAt": "2026-08-23T15:02:14Z",
-      "updatedAt": "2026-08-23T16:12:00Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-23T16:27:02Z",
+      "completedAt": "2026-08-23T16:27:02Z",
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0157-0161-v1/batch-manifest.json",
         "sha256": "fb2ed49e613bc9d4711d647615e4cb55840f16591725e708e643a70a56cc92f6"
       },
-      "releaseSha": "a66f6469b3ae29e94b463daba8ff953f030bacae",
+      "releaseSha": "3e620cc8f00405cc975e1755d93086174871b9b2",
       "receipt": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0157-0161-v1/production-apply/batch-apply-receipt.json",
         "sha256": "6b2df5bea89c397cfc539c651d2bd7dd6d3e9d09f0a9cf685380f20ab6571179"
       },
-      "reason": "Independent rendered-card verification found stale attribution metadata on ACT and Arlington BETP IV, Kindle Energy combined Blackstone vehicles, Sabre TPG Rise Climate and retained Blackstone ownership, TXNM public ownership, and TXNM former repaid Blackstone PIPE. PortCo after-images are correct; these seven attribution rows must be repaired before completion.",
+      "reason": null,
       "history": [
         {
           "sequence": 1,
@@ -988,9 +988,31 @@
             "fb2ed49e613bc9d4711d647615e4cb55840f16591725e708e643a70a56cc92f6"
           ],
           "reason": "Independent rendered-card verification found stale attribution metadata on ACT and Arlington BETP IV, Kindle Energy combined Blackstone vehicles, Sabre TPG Rise Climate and retained Blackstone ownership, TXNM public ownership, and TXNM former repaid Blackstone PIPE. PortCo after-images are correct; these seven attribution rows must be repaired before completion."
+        },
+        {
+          "sequence": 7,
+          "from": "VERIFYING_FAILED",
+          "to": "VERIFYING",
+          "at": "2026-08-23T16:27:01Z",
+          "evidenceSha256": [
+            "6b2df5bea89c397cfc539c651d2bd7dd6d3e9d09f0a9cf685380f20ab6571179",
+            "fb2ed49e613bc9d4711d647615e4cb55840f16591725e708e643a70a56cc92f6"
+          ],
+          "reason": "Protected attribution workflow 32651180385 applied all seven metadata repairs; receipt 3e4a6e86b19fbadc60354a85469cec7025f4a169bc2e02ca55b508ab72032274, all five APIs, and all five rendered drawers verified successfully."
+        },
+        {
+          "sequence": 8,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-08-23T16:27:02Z",
+          "evidenceSha256": [
+            "6b2df5bea89c397cfc539c651d2bd7dd6d3e9d09f0a9cf685380f20ab6571179",
+            "fb2ed49e613bc9d4711d647615e4cb55840f16591725e708e643a70a56cc92f6"
+          ],
+          "reason": null
         }
       ]
     }
   ],
-  "ledgerSha256": "4ee3d8dd33413f646da57133344bedd8f44d35e548531ba6685e02e2cb9c5a3c"
+  "ledgerSha256": "2545ba169dd3c80ce37d57624d0fdf94e8ebc0d66dc56d09509fe5fb9de06be1"
 }
