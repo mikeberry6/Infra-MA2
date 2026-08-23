@@ -3,7 +3,7 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-23T18:40:54Z",
+  "updatedAt": "2026-08-23T18:46:53Z",
   "activeBatchId": "batch-0167-0171-v1",
   "batches": [
     {
@@ -1130,7 +1130,7 @@
     },
     {
       "batchId": "batch-0167-0171-v1",
-      "state": "VERIFYING",
+      "state": "VERIFYING_FAILED",
       "taskIds": [
         "ledger:0167:accelerate-infrastructure-opportunities:cc039b14",
         "ledger:0168:vantage-data-centers:6c26d26a",
@@ -1146,7 +1146,7 @@
         171
       ],
       "createdAt": "2026-08-23T17:57:55Z",
-      "updatedAt": "2026-08-23T18:40:54Z",
+      "updatedAt": "2026-08-23T18:46:53Z",
       "completedAt": null,
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0167-0171-v1/batch-manifest.json",
@@ -1157,7 +1157,7 @@
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0167-0171-v1/production-apply/batch-apply-receipt.json",
         "sha256": "441f0a25b5fda13321cebeee7d5876ea0f8d04ae6de6c21567b86da5ebd0cc11"
       },
-      "reason": null,
+      "reason": "Independent post-apply verification found stale fund-attribution metadata on nine current ownership rows across AIO, Vantage, Gateway Fiber and Boralex. The atomic PortCo after-images and legal ownership periods are correct; attribution classifications, rationales and fund links must be repaired before batch completion.",
       "history": [
         {
           "sequence": 1,
@@ -1207,9 +1207,20 @@
             "cf4d040c61cf51bd3f25091fb88149ee3b2d64a2a0e3247c1bcfc4bcf92a2a0b"
           ],
           "reason": null
+        },
+        {
+          "sequence": 6,
+          "from": "VERIFYING",
+          "to": "VERIFYING_FAILED",
+          "at": "2026-08-23T18:46:53Z",
+          "evidenceSha256": [
+            "441f0a25b5fda13321cebeee7d5876ea0f8d04ae6de6c21567b86da5ebd0cc11",
+            "cf4d040c61cf51bd3f25091fb88149ee3b2d64a2a0e3247c1bcfc4bcf92a2a0b"
+          ],
+          "reason": "Independent post-apply verification found stale fund-attribution metadata on nine current ownership rows across AIO, Vantage, Gateway Fiber and Boralex. The atomic PortCo after-images and legal ownership periods are correct; attribution classifications, rationales and fund links must be repaired before batch completion."
         }
       ]
     }
   ],
-  "ledgerSha256": "c543bd782948bc8a34a6575c87fe939c9b69508cca6bc1f7efa2bbff71cde00f"
+  "ledgerSha256": "da7a341029828b6e1734dc62f5b421365ca5fe0d39b9b524f0a2e9ad77fe5c1d"
 }
