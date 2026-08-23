@@ -1,0 +1,247 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0131:green-meadow-sustainable-solutions:bf30ae0e",
+  "taskIndex": 131,
+  "companyName": "Green Meadow Sustainable Solutions",
+  "generatedAt": "2026-08-23T07:09:52.379Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0131-green-meadow-sustainable-solutions/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 131,
+    "taskId": "ledger:0131:green-meadow-sustainable-solutions:bf30ae0e",
+    "canonicalKey": "green-meadow-sustainable-solutions|united-states",
+    "companyName": "Green Meadow Sustainable Solutions",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 22,
+    "managers": [
+      "Bernhard Capital Partners"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "022-bernhard-capital-partners:holding:006:green-meadow-sustainable-solutions"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpj8sn00mwivhe36vzydnj"
+    ],
+    "seedKeys": [
+      "green meadow sustainable solutions|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.bernhardcapital.com/portfolio-items/green-meadow-sustainable-solutions/",
+      "https://www.bernhardcapital.com/wp-content/uploads/2025/11/BCP_ESGReport_24_102025.pdf"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted census NEEDS_REVIEW for 022-bernhard-capital-partners:holding:006:green-meadow-sustainable-solutions: Matched to repository entity but fund attribution and infrastructure-strategy classification conflict with ESG disclosures. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Accepted census NEEDS_REVIEW for 022-bernhard-capital-partners:holding:006:green-meadow-sustainable-solutions: Matched to repository entity but fund attribution and infrastructure-strategy classification conflict with ESG disclosures."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj8sn00mwivhe36vzydnj",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "green-meadow-sustainable-solutions|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpj8sn00mwivhe36vzydnj",
+    "name": "Green Meadow Sustainable Solutions",
+    "aliases": [],
+    "sector": "SOCIAL_INFRA",
+    "subsector": "Waste management",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Green Meadow Sustainable Solutions is a vertically integrated municipal solid waste platform. Its services span collection, transfer, disposal, and related environmental operations for municipal, commercial, and industrial customers. The operating model is asset-heavy because the business depends on owned and controlled disposal infrastructure, transfer stations, hauling assets, and landfill capacity. Company materials identify Fayette, Mississippi as the headquarters and describe the platform as operating across Mississippi and Louisiana. Public sources indicate that the company began in 2019 and has expanded through acquisitions. Bernhard Capital Partners invested in the business in 2020 through BCP Infrastructure Fund I, and public sources do not disclose the firm's ownership percentage.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2019,
+    "headquarters": "Mississippi and Louisiana",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpju0401kaivheygugrmpb",
+        "managerName": "Bernhard Capital Partners",
+        "organizationName": "Bernhard Capital Partners",
+        "fundName": null,
+        "vehicleName": "BCP Infrastructure Fund I",
+        "stake": null,
+        "investmentYear": 2020,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkvnr0305ivhecqkt916v",
+        "date": "2019",
+        "event": "Green Meadow Sustainable Solutions began operations.",
+        "category": "EXPANSION",
+        "sortDate": "2019-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkvo50306ivhe8idc4ml7",
+        "date": "2020",
+        "event": "Bernhard Capital Partners invested in Green Meadow Sustainable Solutions.",
+        "category": "FINANCING",
+        "sortDate": "2020-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkvol0307ivhek45u8ttu",
+        "date": "2021",
+        "event": "Green Meadow expanded through the acquisition of Riverbend.",
+        "category": "EXPANSION",
+        "sortDate": "2021-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxppiei08a3ivhe58uoeqni",
+        "label": "Greenmeadowsolutions — Green Meadow Sustainable Solutions",
+        "url": "https://www.greenmeadowsolutions.com/about",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Greenmeadowsolutions company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxppij808a5ivheo9vccchr",
+        "label": "Investment date source — Bernhard Capital Partners — Green Meadow Sustainable Solutions",
+        "url": "https://www.bernhardcapital.com/portfolio-items/green-meadow-sustainable-solutions/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Bernhard Capital Partners initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppijq08a6ivhe3b0rwicl",
+        "label": "Bernhardcapital — ClearCurrent",
+        "url": "https://www.bernhardcapital.com/wp-content/uploads/2025/11/BCP_ESGReport_24_102025.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Bernhardcapital — Green Meadow Sustainable Solutions",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Green Meadow Sustainable Solutions",
+    "investmentFirm": "Bernhard Capital Partners",
+    "sector": "Social Infra",
+    "subsector": "Waste management",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "BCP Infrastructure Fund I",
+    "description": "Green Meadow Sustainable Solutions is a vertically integrated municipal solid waste platform. Its services span collection, transfer, disposal, and related environmental operations for municipal, commercial, and industrial customers. The operating model is asset-heavy because the business depends on owned and controlled disposal infrastructure, transfer stations, hauling assets, and landfill capacity. Company materials identify Fayette, Mississippi as the headquarters and describe the platform as operating across Mississippi and Louisiana. Public sources indicate that the company began in 2019 and has expanded through acquisitions. Bernhard Capital Partners invested in the business in 2020 through BCP Infrastructure Fund I, and public sources do not disclose the firm's ownership percentage.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2019,
+    "investmentYear": 2020,
+    "headquarters": "Mississippi and Louisiana",
+    "milestones": [
+      {
+        "date": "2019",
+        "event": "Green Meadow Sustainable Solutions began operations.",
+        "category": "Expansion"
+      },
+      {
+        "date": "2020",
+        "event": "Bernhard Capital Partners invested in Green Meadow Sustainable Solutions.",
+        "category": "Financing"
+      },
+      {
+        "date": "2021",
+        "event": "Green Meadow expanded through the acquisition of Riverbend.",
+        "category": "Expansion"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Greenmeadowsolutions — Green Meadow Sustainable Solutions",
+        "url": "https://www.greenmeadowsolutions.com/about",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Investment date source — Bernhard Capital Partners — Green Meadow Sustainable Solutions",
+        "url": "https://www.bernhardcapital.com/portfolio-items/green-meadow-sustainable-solutions/",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Bernhardcapital — Green Meadow Sustainable Solutions",
+        "url": "https://www.bernhardcapital.com/wp-content/uploads/2025/11/BCP_ESGReport_24_102025.pdf",
+        "type": "PRESENTATION"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Bernhard Capital Partners",
+        "ownershipVehicle": "BCP Infrastructure Fund I",
+        "investmentYear": 2020,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi4ze000uivheks52decy",
+        "name": "Bernhard Capital Partners",
+        "updatedAt": "2026-07-23T16:09:13.658Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0131:green-meadow-sustainable-solutions:bf30ae0e",
+    "taskIndex": 131,
+    "canonicalKey": "green-meadow-sustainable-solutions|united-states",
+    "capturedAt": "2026-08-23T07:09:52.379Z",
+    "databaseRevision": "revision:9cc92b412f4873965ca378b34aa35656454c63577bd32289b8de9f693b90e3f4",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "b71601047ac29ec7b75fc86956568acae3aab456eed1d21f1e27911601ca5d0c",
+    "productionSnapshotSha256": "7388128dc8dd96087f039f37e13679e9de275aea843dc00b47302487207d15fb",
+    "targetCompanySnapshotSha256": "3ec292237f00824281bcf54c20145151e489686268b91d6090b31b569f683f82",
+    "seedEntrySha256": "7d449017394c32b5613b80258b5e0e9aec1a89c29fc3f2b36b20af25216670c1",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "8b9799267de63432dd689213b49c45e0d63497ea32b6c0bdbac7872ee5dfece0",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "5a060d7904dc43b92ad61ebbad13704a2146e2ea716b1053c8a8a1bdefa46858",
+      "citationsSha256": "ea1d9cbe645d19b2baca99e995e897f80908bbdb359f908617a46b5301791271",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "2c451c66a692c134efe9d0a78b4b1a0a7916fe1427676f7785f4b35ea0d5cbb2",
+    "stateSha256": "c71e69d5494b5a6c75d32375da0bb168ef126105ffc162777b1d1a19505b0e96",
+    "taskSnapshotSha256": "f40fb3fe47ad4d60b358f710388935d80cbc7e8c7bd477bdef02e8238571c041"
+  },
+  "contextSha256": "b207abca078cbdbb9708c600a8de76175c6254018b275cf03f9aadca7f6e985d"
+}

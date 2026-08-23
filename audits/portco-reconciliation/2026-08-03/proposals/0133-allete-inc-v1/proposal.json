@@ -1,0 +1,435 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0133:allete-inc:3a7edb92",
+  "taskIndex": 133,
+  "asOfDate": "2026-08-23",
+  "generatedAt": "2026-08-23T07:25:00.000Z",
+  "canonicalKey": "allete-inc|united-states",
+  "companyName": "ALLETE, Inc.",
+  "actions": [
+    "CORRECT_COMPANY"
+  ],
+  "sourceHoldingIds": [
+    "032-cpp-investments:holding:002:allete-inc",
+    "048-global-infrastructure-partners:holding:001:allete-inc"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Keep ALLETE, Inc. as the surviving private utility platform after the December 15, 2025 take-private. CPP Investments owns 40% indirectly and GIP-managed vehicles own 60% indirectly. BlackRock is GIP's parent and is not a separate owner. The 2026 regulatory filings describe a pending internal reorganization, not a completed ownership change or exit.",
+  "evidence": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/66756/000114036125045482/ef20060780_8k.htm",
+      "purpose": "Take-private closing and surviving-company evidence",
+      "supports": [
+        "The transaction closed on December 15, 2025",
+        "ALLETE survived as a privately held company under Alloy Parent",
+        "The public shares were delisted at closing"
+      ]
+    },
+    {
+      "url": "https://www.synapse-energy.com/sites/default/files/Courtney%20Lane%20Direct%20Testimony%20PUBLIC%20REDACTED%2024-148.pdf",
+      "purpose": "Current indirect ownership percentages",
+      "supports": [
+        "CPP Investments holds a 40% indirect interest",
+        "GIP Fund V and the GIP-managed Tower Bridge vehicle together hold 60% indirectly"
+      ]
+    },
+    {
+      "url": "https://www.federalregister.gov/documents/2026/07/24/2026-15036/combined-notice-of-filings-1",
+      "purpose": "Subsequent-event and exit check",
+      "supports": [
+        "The 2026 filing concerns a pending internal reorganization",
+        "The filing does not establish an economic owner exit or transfer"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "d29446e830d54122a135f83bc67d132acf23add52061a07792881c3397f85e99",
+  "currentCompanySnapshotSha256": "1a60b8f066468f1ea714b04d84230e36681bf98e5df2680a10db0dae14134e63",
+  "executionLock": {
+    "taskSnapshotSha256": "7380d7da5c3b6f9ef9723dd104b9733f46506c4ee6d2da74a75cb6b354ccce13",
+    "taskStateSha256": "389f48060b6feba46ce310f6b5d5f2513974ebfeb541c9d03e4d10e46eb71524",
+    "taskDependencySha256": "dcf92796c9420b3b0963477d3ca07a159fb3e80c2b48ece02bb60b107d8dc1dd",
+    "seedEntrySha256": "d9a060e90b6520e6c194eda9e14e35eff15f49acfebb5780bbe6b72780ab1f8d",
+    "dependencies": {
+      "ownershipPeriodsSha256": "e65ab146e45cf3375dc9910e13ffaa6828e1f1c03231d2abfa588ef7e5c08133",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "5045c84709efc16ffd1726e475842e7d47e418468f8da83dfab3f71d513140ec",
+      "organizationsSha256": "34eaba2d4963a7109d7125dcb85f24b814a0b10b49bcf8ca495c18dce4a48336",
+      "citationsSha256": "fc78418ca21055b658e0addda146c6ed9dc6c1dd6b0dcdfb9f609a3d6a1af1a4",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj1bs00bvivhev1nn6jh1",
+        "fundName": "BlackRock GIF IV",
+        "managerId": "cmrxpi56u000wivhev4hy469z",
+        "updatedAt": "2026-07-23T16:09:55.576Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi6gh001aivhefuh9d1bo",
+        "name": "CPP Investments",
+        "updatedAt": "2026-07-23T16:09:15.569Z"
+      },
+      {
+        "id": "cmrxpij5s005aivhe70jwqccm",
+        "name": "GIP",
+        "updatedAt": "2026-07-23T16:09:32.032Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjgi100ypivhehaw4at9a",
+    "name": "ALLETE, Inc.",
+    "aliases": [],
+    "sector": "UTILITIES",
+    "subsector": "Regulated electric utilities and clean energy",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "ALLETE is a utility holding company whose businesses include Minnesota Power, Superior Water, Light and Power, ALLETE Clean Energy, BNI Energy, and New Energy Equity. Its customer base spans regulated electric and water customers, municipal and cooperative utilities, and renewable-energy counterparties. The company combines regulated utility earnings with asset-heavy owned generation, fuel, and clean-energy development businesses, giving it a mix of contracted and regulated cash flows. Its principal operating footprint is in Minnesota, Wisconsin, and North Dakota, with clean-energy activities extending beyond those core utility jurisdictions. ALLETE reported 1,616 employees at year-end 2024 and described a diversified platform of utility, renewable, and energy-services businesses. The company was taken private in December 2025 by CPP Investments and Global Infrastructure Partners following the merger agreement announced in May 2024.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 1906,
+    "headquarters": "Minnesota; Wisconsin; North Dakota",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk27n01x8ivhevmhimy9d",
+        "managerName": "CPP Investments",
+        "organizationName": "CPP Investments",
+        "fundName": null,
+        "vehicleName": "Real Assets (Infrastructure)",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpk2ap01x9ivhe4xgl52eu",
+        "managerName": "BlackRock",
+        "organizationName": "GIP",
+        "fundName": "BlackRock GIF IV",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpltio044vivheltmmd2bl",
+        "date": "1906",
+        "event": "ALLETE, Inc. was founded.",
+        "category": "FOUNDING",
+        "sortDate": "1906-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpltj8044wivhe8p1za61y",
+        "date": "2024",
+        "event": "ALLETE's annual report described a diversified regulated-utility and clean-energy platform with 1,616 employees at year-end.",
+        "category": "EXPANSION",
+        "sortDate": "2024-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpltjs044xivhe3tk7xtvt",
+        "date": "May 6, 2024",
+        "event": "ALLETE announced an agreement to be acquired by a partnership led by CPP Investments and Global Infrastructure Partners.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-05-06T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpltkc044yivhechj59eic",
+        "date": "2025",
+        "event": "Following closing, ALLETE became a private company while remaining locally managed and headquartered in Duluth.",
+        "category": "OTHER",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpltkx044zivheyef99g2j",
+        "date": "Dec 15, 2025",
+        "event": "ALLETE announced completion of the acquisition by CPP Investments and Global Infrastructure Partners (GIP).",
+        "category": "ACQUISITION",
+        "sortDate": "2025-12-15T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpr9430asnivhev5harobv",
+        "label": "Allete — ALLETE, Inc.",
+        "url": "https://www.allete.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Allete company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpr97y0aspivhe5gqik7pk",
+        "label": "Allete — ALLETE, Inc.",
+        "url": "https://allete.blob.core.windows.net/allete/Documents/Investors/AnnualReports/2024AR.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Allete — ALLETE, Inc.",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr9910asrivhezopbemrn",
+        "label": "Announcement date source — CPP Investments — ALLETE, Inc.",
+        "url": "https://investor.allete.com/news-releases/news-release-details/allete-enters-agreement-be-acquired-partnership-led-canada",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CPP Investments transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr99f0assivheb7g569nb",
+        "label": "Announcement date source — CPP Investments — ALLETE, Inc.",
+        "url": "https://investor.allete.com/news-releases/news-release-details/allete-enters-agreement-be-acquired-partnership-led-canada",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Global Infrastructure Partners transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr9ab0asuivhecrr4ruac",
+        "label": "Close date source — CPP Investments — ALLETE, Inc.",
+        "url": "https://investor.allete.com/news-releases/news-release-details/allete-announces-completion-acquisition-cpp-investments-and",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CPP Investments closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr9av0asvivhewihup7at",
+        "label": "Close date source — CPP Investments — ALLETE, Inc.",
+        "url": "https://investor.allete.com/news-releases/news-release-details/allete-announces-completion-acquisition-cpp-investments-and",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Global Infrastructure Partners closing confirmation",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "1a60b8f066468f1ea714b04d84230e36681bf98e5df2680a10db0dae14134e63",
+  "afterImage": {
+    "id": "cmrxpjgi100ypivhehaw4at9a",
+    "name": "ALLETE, Inc.",
+    "aliases": [
+      "ALLETE"
+    ],
+    "sector": "UTILITIES",
+    "subsector": "Regulated electric utilities and clean energy",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "ALLETE, Inc. is a Duluth, Minnesota-based utility holding company whose businesses include Minnesota Power, Superior Water, Light and Power, ALLETE Clean Energy, BNI Energy, New Energy Equity and other energy infrastructure interests. Its regulated utility footprint is concentrated in Minnesota and Wisconsin, with clean-energy activities across North America. The take-private announced in May 2024 closed on December 15, 2025, and ALLETE survived as a privately held company under Alloy Parent LLC. CPP Investments owns 40% indirectly and Global Infrastructure Partners-managed vehicles own the remaining 60% indirectly, comprising GIP Fund V and the GIP-managed Tower Bridge vehicle. BlackRock is shown only as GIP's parent, not as a separate owner. Regulatory filings in 2026 describe a pending internal reorganization around Minnesota Power, not a completed ownership transfer. No later owner exit or signed platform sale was identified through August 23, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.allete.com/",
+    "yearFounded": 1906,
+    "headquarters": "Duluth, Minnesota",
+    "lastVerifiedAt": "2026-08-23T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk27n01x8ivhevmhimy9d",
+        "managerName": "CPP Investments",
+        "organizationName": "CPP Investments",
+        "fundName": null,
+        "vehicleName": "CPP Investment Board Private Holdings (6) Inc.",
+        "stake": "40% indirect",
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpk2ap01x9ivhe4xgl52eu",
+        "managerName": "GIP",
+        "organizationName": "GIP",
+        "fundName": null,
+        "vehicleName": "GIP Fund V vehicles (40%) and Tower Bridge Infrastructure Partners, L.P. (20%)",
+        "stake": "60% indirect",
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpltio044vivheltmmd2bl",
+        "date": "1906",
+        "event": "ALLETE, Inc. was founded.",
+        "category": "FOUNDING",
+        "sortDate": "1906-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpltj8044wivhe8p1za61y",
+        "date": "2024",
+        "event": "ALLETE's annual report described a diversified regulated-utility and clean-energy platform with 1,616 employees at year-end.",
+        "category": "EXPANSION",
+        "sortDate": "2024-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpltjs044xivhe3tk7xtvt",
+        "date": "May 6, 2024",
+        "event": "ALLETE announced an agreement to be acquired by a partnership led by CPP Investments and Global Infrastructure Partners for approximately US$6.2 billion including debt.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-05-06T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://investor.allete.com/news-releases/news-release-details/allete-enters-agreement-be-acquired-partnership-led-canada"
+        ]
+      },
+      {
+        "id": "cmrxpltkc044yivhechj59eic",
+        "date": "Jul 16, 2026",
+        "event": "A federal filing described a proposed internal ALLETE reorganization involving Minnesota Power; it did not change the economic owner set and remained pending.",
+        "category": "OTHER",
+        "sortDate": "2026-07-16T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.federalregister.gov/documents/2026/07/24/2026-15036/combined-notice-of-filings-1"
+        ]
+      },
+      {
+        "id": "cmrxpltkx044zivheyef99g2j",
+        "date": "Dec 15, 2025",
+        "event": "The CPP Investments and Global Infrastructure Partners take-private closed; ALLETE survived as a private company under Alloy Parent with 40% indirect CPP ownership and 60% indirect ownership by GIP-managed vehicles.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-12-15T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/66756/000114036125045482/ef20060780_8k.htm",
+          "https://www.synapse-energy.com/sites/default/files/Courtney%20Lane%20Direct%20Testimony%20PUBLIC%20REDACTED%2024-148.pdf"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpr9430asnivhev5harobv",
+        "label": "Allete — ALLETE, Inc.",
+        "url": "https://www.allete.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current ALLETE company profile and business platform",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr97y0aspivhe5gqik7pk",
+        "label": "Allete — ALLETE, Inc.",
+        "url": "https://allete.blob.core.windows.net/allete/Documents/Investors/AnnualReports/2024AR.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Allete — ALLETE, Inc.",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr9910asrivhezopbemrn",
+        "label": "Announcement date source — CPP Investments — ALLETE, Inc.",
+        "url": "https://investor.allete.com/news-releases/news-release-details/allete-enters-agreement-be-acquired-partnership-led-canada",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CPP Investments transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr99f0assivheb7g569nb",
+        "label": "Announcement date source — CPP Investments — ALLETE, Inc.",
+        "url": "https://investor.allete.com/news-releases/news-release-details/allete-enters-agreement-be-acquired-partnership-led-canada",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Global Infrastructure Partners transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr9ab0asuivhecrr4ruac",
+        "label": "Close date source — CPP Investments — ALLETE, Inc.",
+        "url": "https://investor.allete.com/news-releases/news-release-details/allete-announces-completion-acquisition-cpp-investments-and",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CPP Investments closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr9av0asvivhewihup7at",
+        "label": "Close date source — CPP Investments — ALLETE, Inc.",
+        "url": "https://investor.allete.com/news-releases/news-release-details/allete-announces-completion-acquisition-cpp-investments-and",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Global Infrastructure Partners closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "ALLETE — take-private closing Form 8-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/66756/000114036125045482/ef20060780_8k.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "December 15, 2025 closing, surviving company, private status and delisting",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "ALLETE — definitive merger proxy",
+        "url": "https://www.sec.gov/Archives/edgar/data/66756/000114036124032849/ny20029448x3_defm14a.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Acquisition vehicles, Alloy Parent boundary, headquarters and corporate history",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Minnesota regulatory testimony — ALLETE ownership structure",
+        "url": "https://www.synapse-energy.com/sites/default/files/Courtney%20Lane%20Direct%20Testimony%20PUBLIC%20REDACTED%2024-148.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CPP 40% and GIP-managed 60% indirect ownership structure",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Federal Register — ALLETE reorganization filing",
+        "url": "https://www.federalregister.gov/documents/2026/07/24/2026-15036/combined-notice-of-filings-1",
+        "sourceType": "OTHER",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Pending internal reorganization and subsequent ownership-exit check",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "ALLETE — current businesses",
+        "url": "https://www.allete.com/OurBusinesses",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current operating-company and subsidiary boundary",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "8d7b4ab9dd4528c3fe6bf1fae4f89779f8da2211575b2479a0ce2b32d0e7e149",
+  "proposalSha256": "918867107a194fd02c502314aadc1cf178e47411f6a012fcb888c407ac4bcd26"
+}
