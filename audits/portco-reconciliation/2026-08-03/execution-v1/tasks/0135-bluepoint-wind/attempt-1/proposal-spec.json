@@ -1,0 +1,150 @@
+{
+  "generatedAt": "2026-08-23T07:26:00.000Z",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "reviewedSeedRetirementTaskIds": [],
+  "rationale": "Retain Bluepoint Wind as one standalone U.S. offshore-wind leaseholder/project company. Its parent is owned 50:50 by GIP's Seaway Energy Holdings and Ocean Winds' OW North America. BlackRock is GIP's parent rather than a separate project owner, and Mubadala's undisclosed participation sits within the GIP block. The April 2026 settlement makes lease cancellation conditional; it is not yet a completed ownership exit or dissolution.",
+  "evidence": [
+    {
+      "url": "https://www.boem.gov/renewable-energy/state-activities/bluepoint-settlement-agreement",
+      "purpose": "Legal identity, owner chain and conditional termination evidence",
+      "supports": [
+        "Bluepoint Wind, LLC is the federal leaseholder",
+        "Bluepoint Winds Holdings is owned 50:50 by OW North America and Seaway Energy Holdings",
+        "The April 27, 2026 settlement makes cancellation conditional rather than completed"
+      ]
+    },
+    {
+      "url": "https://www.boem.gov/renewable-energy/state-activities/bluepoint-wind-ocs-0537",
+      "purpose": "Current federal project status and exit check",
+      "supports": [
+        "BOEM still describes cancellation as contingent on investment verification",
+        "No final cancellation or ownership transfer is shown"
+      ]
+    },
+    {
+      "url": "https://www.doi.gov/pressreleases/interior-announces-two-historic-agreements-promote-affordable-reliable-energy",
+      "purpose": "Current owners and project termination context",
+      "supports": [
+        "Ocean Winds and GIP each hold 50% through their respective parent vehicles",
+        "BlackRock is identified as GIP's parent rather than a separate project owner"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "companyFieldUpdates": {
+    "aliases": [
+      "Bluepoint Wind, LLC",
+      "Blue Point Wind, LLC",
+      "OW Ocean Winds East, LLC",
+      "Ocean Winds East"
+    ],
+    "description": "Bluepoint Wind, LLC is the holder of federal offshore-wind lease OCS-A 0537 in the New York Bight, approximately 38 nautical miles from New York and 53 nautical miles from New Jersey. The 71,522-acre lease supported a pre-construction concept of up to 2.4 GW but no generation facilities were constructed. Bluepoint Winds Holdings, LLC owns the leaseholder and is itself owned 50:50 by Ocean Winds through OW North America LLC and Global Infrastructure Partners through Seaway Energy Holdings, L.P. BlackRock is shown only as GIP's parent, while Mubadala's undisclosed participation remains within the GIP block. On April 27, 2026, the project parties signed a settlement that suspended lease duties and provides for cancellation after specified investment verification and reimbursement steps. BOEM still describes that cancellation as conditional; no final cancellation, ownership transfer or dissolution was identified through August 23, 2026, so both legal owner periods remain active.",
+    "website": "https://bluepointwind.com/",
+    "headquarters": null,
+    "lastVerifiedAt": "2026-08-23T00:00:00.000Z"
+  },
+  "ownershipPeriodUpdates": [
+    {
+      "id": "cmrxpk2bs01xbivhem5vf9xzv",
+      "set": {
+        "managerName": "GIP",
+        "organizationName": "GIP",
+        "fundName": null,
+        "vehicleName": "Seaway Energy Holdings, L.P.",
+        "stake": "50% of Bluepoint Winds Holdings, LLC",
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    }
+  ],
+  "ownershipPeriodAdditions": [
+    {
+      "id": null,
+      "managerName": "Ocean Winds",
+      "organizationName": null,
+      "fundName": null,
+      "vehicleName": "OW North America LLC",
+      "stake": "50% of Bluepoint Winds Holdings, LLC",
+      "investmentYear": 2022,
+      "exitYear": null,
+      "isActive": true,
+      "transactionState": "CLOSED_ACTIVE"
+    }
+  ],
+  "pendingOwnershipTransactionUpdates": [],
+  "pendingOwnershipTransactionAdditions": [],
+  "milestoneUpdates": [
+    {
+      "id": "cmrxplto70453ivhepr1nw5uo",
+      "set": {
+        "date": "May 1, 2022",
+        "event": "The federal offshore-wind lease for the Ocean Winds and Global Infrastructure Partners project became effective after their joint venture won the New York Bight auction; Bluepoint's parent remained owned 50:50 through OW North America and Seaway Energy Holdings.",
+        "category": "FINANCING",
+        "sortDate": "2022-05-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.boem.gov/renewable-energy/state-activities/bluepoint-settlement-agreement",
+          "https://www.boem.gov/renewable-energy/state-activities/bluepoint-wind-ocs-0537"
+        ]
+      }
+    },
+    {
+      "id": "cmrxpltoo0454ivhep268nr4z",
+      "set": {
+        "date": "Apr 27, 2026",
+        "event": "Bluepoint and the U.S. Department of the Interior signed a settlement suspending lease duties and providing for future cancellation after specified verification and reimbursement steps; cancellation was not yet complete.",
+        "category": "OTHER",
+        "sortDate": "2026-04-27T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.boem.gov/renewable-energy/state-activities/bluepoint-settlement-agreement",
+          "https://www.boem.gov/renewable-energy/state-activities/bluepoint-wind-ocs-0537",
+          "https://www.doi.gov/pressreleases/interior-announces-two-historic-agreements-promote-affordable-reliable-energy"
+        ]
+      }
+    }
+  ],
+  "citationUpdates": [
+    {
+      "id": "cmrxpr9ek0at3ivheoqpxrdpj",
+      "set": {
+        "evidenceLabel": "2022 lease award and original GIP/Ocean Winds joint venture",
+        "isPrimary": false
+      }
+    }
+  ],
+  "citationAdditions": [
+    {
+      "id": null,
+      "label": "BOEM — Bluepoint settlement agreement",
+      "url": "https://www.boem.gov/renewable-energy/state-activities/bluepoint-settlement-agreement",
+      "sourceType": "OTHER",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Legal owner chain, 50:50 parent ownership and conditional lease termination terms",
+      "isPrimary": true
+    },
+    {
+      "id": null,
+      "label": "BOEM — Bluepoint Wind OCS-A 0537",
+      "url": "https://www.boem.gov/renewable-energy/state-activities/bluepoint-wind-ocs-0537",
+      "sourceType": "WEBSITE",
+      "purpose": "OPERATIONS_ASSETS",
+      "evidenceLabel": "Current lease status, project geography and conditional-cancellation check",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "U.S. Department of the Interior — Bluepoint agreement",
+      "url": "https://www.doi.gov/pressreleases/interior-announces-two-historic-agreements-promote-affordable-reliable-energy",
+      "sourceType": "PRESS_RELEASE",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Each 50% owner, GIP/BlackRock overlap and termination context",
+      "isPrimary": false
+    }
+  ]
+}

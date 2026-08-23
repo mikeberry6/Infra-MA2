@@ -1,0 +1,259 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0134:atlas-renewable-energy:8663d3ab",
+  "taskIndex": 134,
+  "companyName": "Atlas Renewable Energy",
+  "generatedAt": "2026-08-23T07:09:58.295Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0134-atlas-renewable-energy/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 134,
+    "taskId": "ledger:0134:atlas-renewable-energy:8663d3ab",
+    "canonicalKey": "atlas-renewable-energy|united-states",
+    "companyName": "Atlas Renewable Energy",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 23,
+    "managers": [
+      "BlackRock",
+      "Global Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "023-blackrock:repo-only:003:atlas-renewable-energy",
+      "048-global-infrastructure-partners:repo-only:001:atlas-renewable-energy"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjgio00yqivhewml9f98a"
+    ],
+    "seedKeys": [
+      "atlas renewable energy|United States"
+    ],
+    "evidenceUrls": [
+      "https://atlasrenewableenergy.com/news-and-insights/gip-and-actis-announce-acquisition-of-atlas-renewable-energy-by-gip-usa/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: BlackRock MATCHED_ELSEWHERE: Core GIP renewable platform; routed to GIP census. Global Infrastructure Partners OUT_OF_SCOPE: Primarily Latin America platform and excluded from North America scope",
+    "unresolvedQuestions": [
+      "Confirm whether the manager ownership, the company itself, or only this census scope is out of scope before proposing any change.",
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjgio00yqivhewml9f98a",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "atlas-renewable-energy|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjgio00yqivhewml9f98a",
+    "name": "Atlas Renewable Energy",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Utility-scale solar and renewable power",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Atlas Renewable Energy develops, finances, builds, and operates utility-scale renewable power assets in Latin America. Its customers are utilities and large commercial and industrial offtakers that procure energy through long-term power purchase agreements and other contracted structures. The platform follows an asset-heavy and predominantly contracted operating model centered on owned or managed solar and related renewable infrastructure. Public materials describe Atlas as one of the larger independent renewable-power platforms in the region, with operations spanning Brazil, Chile, Mexico, and Uruguay. Global Infrastructure Partners completed the acquisition of Atlas from Actis in October 2022. The company continues to operate as a Latin American renewable generation and development platform within GIP’s energy portfolio.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2016,
+    "headquarters": "Brazil; Chile; Mexico; Uruguay",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk2b701xaivhe6bo1i1t3",
+        "managerName": "BlackRock",
+        "organizationName": "GIP",
+        "fundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpltlz0450ivhelx590irc",
+        "date": "2016",
+        "event": "Atlas Renewable Energy was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2016-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpltmk0451ivhe48l75unt",
+        "date": "Oct 11, 2022",
+        "event": "Global Infrastructure Partners and Actis announced completion of the acquisition of Atlas Renewable Energy by GIP.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-10-11T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpltn40452ivhez91hwn21",
+        "date": "Nov 21, 2022",
+        "event": "Atlas announced full operations at the La Pimienta solar project in Mexico.",
+        "category": "OTHER",
+        "sortDate": "2022-11-21T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpr9bq0asxivhel4w9x55l",
+        "label": "Atlasrenewableenergy — Atlas Renewable Energy",
+        "url": "https://atlasrenewableenergy.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Atlasrenewableenergy company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpr9ct0aszivhe6bq6hg5u",
+        "label": "Close date source — Global Infrastructure Partners — Atlas Renewable Energy",
+        "url": "https://atlasrenewableenergy.com/news-and-insights/gip-and-actis-announce-acquisition-of-atlas-renewable-energy-by-gip-usa/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Global Infrastructure Partners closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr9dm0at1ivhevy77poz3",
+        "label": "PR Newswire — Atlas Renewable Energy",
+        "url": "https://www.prnewswire.com/news-releases/gip-and-actis-announce-acquisition-of-atlas-renewable-energy-by-gip-301645902.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "PR Newswire transaction or milestone detail",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Atlas Renewable Energy",
+    "investmentFirm": "Global Infrastructure Partners",
+    "sector": "Power & ET",
+    "subsector": "Utility-scale solar and renewable power",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "Atlas Renewable Energy develops, finances, builds, and operates utility-scale renewable power assets in Latin America. Its customers are utilities and large commercial and industrial offtakers that procure energy through long-term power purchase agreements and other contracted structures. The platform follows an asset-heavy and predominantly contracted operating model centered on owned or managed solar and related renewable infrastructure. Public materials describe Atlas as one of the larger independent renewable-power platforms in the region, with operations spanning Brazil, Chile, Mexico, and Uruguay. Global Infrastructure Partners completed the acquisition of Atlas from Actis in October 2022. The company continues to operate as a Latin American renewable generation and development platform within GIP’s energy portfolio.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2016,
+    "investmentYear": 2022,
+    "headquarters": "Brazil; Chile; Mexico; Uruguay",
+    "milestones": [
+      {
+        "date": "2016",
+        "event": "Atlas Renewable Energy was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "Oct 11, 2022",
+        "event": "Global Infrastructure Partners and Actis announced completion of the acquisition of Atlas Renewable Energy by GIP.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Nov 21, 2022",
+        "event": "Atlas announced full operations at the La Pimienta solar project in Mexico.",
+        "category": "Other"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Atlasrenewableenergy — Atlas Renewable Energy",
+        "url": "https://atlasrenewableenergy.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Close date source — Global Infrastructure Partners — Atlas Renewable Energy",
+        "url": "https://atlasrenewableenergy.com/news-and-insights/gip-and-actis-announce-acquisition-of-atlas-renewable-energy-by-gip-usa/",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "PR Newswire — Atlas Renewable Energy",
+        "url": "https://www.prnewswire.com/news-releases/gip-and-actis-announce-acquisition-of-atlas-renewable-energy-by-gip-301645902.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Global Infrastructure Partners",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2022,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmsdi3s2g003i7h4s4t0s4mmh",
+        "fundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+        "managerId": "cmrxpi56u000wivhev4hy469z",
+        "updatedAt": "2026-08-03T17:26:25.240Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpij5s005aivhe70jwqccm",
+        "name": "GIP",
+        "updatedAt": "2026-07-23T16:09:32.032Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0134:atlas-renewable-energy:8663d3ab",
+    "taskIndex": 134,
+    "canonicalKey": "atlas-renewable-energy|united-states",
+    "capturedAt": "2026-08-23T07:09:58.295Z",
+    "databaseRevision": "revision:49f5e3a846de754349f3d739afeaf6b2c716344022ddf3c69deeb014fed6394c",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "fd5c10a66afea693e9ac41057944f74b17cd12fd06d1e1a983413a667f46f614",
+    "productionSnapshotSha256": "4b7a153d38d87623e1be0d9d5d087d1bf88509a2b8c7b86091d26ae5eb896746",
+    "targetCompanySnapshotSha256": "2375039d3529a1672e6fcfbb82ded3d26ecb9098d2eb02e433f1022b0c179fc3",
+    "seedEntrySha256": "94d182e631155da332a23e8a7e9f3fddd97d008e5a3bef4aa4fb6090779bdb7f",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "fdb6c333e7fa5bf2947741894da708c92e6295df0df50ff5ff3861934755dc7f",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "e5741b37b7220d4bd73463514c45185716aab20b4eb4977c4625e9d38bf093ce",
+      "organizationsSha256": "3ed7104b99c97281f3949d1c8a26a405765c8b3d846e946714e267dd538c1ffd",
+      "citationsSha256": "d304fc85c962f245a30e4ff4743ca54068ae5eda968170ba16e8936de8c72bda",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "488698860677c07944c4409bf30f7ebfa98541729f32e3a69a392e34c410ea38",
+    "stateSha256": "5e87d439d9b0f3ed2da63971230ed5c18cba35365766fe752426689c6e7280a3",
+    "taskSnapshotSha256": "38cb76cc301b0cf843170a11e7027468960dca8cd594a0557c2352186283fbc5"
+  },
+  "contextSha256": "7e51fa7d94715e27e8806ca5b5ed4d3585d54a30ca45b151d6d3cae5460dc8d3"
+}

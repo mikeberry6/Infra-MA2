@@ -1,0 +1,340 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_MANIFEST",
+  "methodologyVersion": "PORTCO_APPLY_BATCH_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0131-0135-v1",
+  "createdAt": "2026-08-23T07:31:00.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "337d26391b4ca1eb30c6ce30f9742aeec714bb9a94eb707c3b6fe868641f56d8"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0131:green-meadow-sustainable-solutions:bf30ae0e",
+      "taskIndex": 131,
+      "companyName": "Green Meadow Sustainable Solutions",
+      "outcome": "EXCLUDED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0131-0135-v1/decisions/0131-green-meadow-sustainable-solutions.json",
+        "sha256": "36655fd6e0a018b0259f5e02d4b5f94124853078eba9561b221308224fde1c96"
+      }
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0132:aligned-data-centers:ce7a118d",
+      "taskIndex": 132,
+      "companyName": "Aligned Data Centers",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0132-aligned-data-centers-v1/proposal.json",
+        "sha256": "8b17f5a15b3837ea9404f169d8522c5e3373fbc34ba93a66f0383278607a990e"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0132-aligned-data-centers-v1.json",
+        "sha256": "ca01c17b0f9ff8fbcf8d99bc7795cb1b639f173748c3f13af1585f6bae4b7e0f"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0132-aligned-data-centers/attempt-1/locked-v2-production-snapshot.json",
+        "sha256": "8188d8eaad3d083fc7acc1a568171e0c3a0881174a66557a84b47d57220295cd"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0132-aligned-data-centers/attempt-1/locked-v2-task-snapshot.json",
+        "sha256": "81ab657a750f0651dca25ecdc324d7e1053788dac6d4dfd4782d0a543da65755"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0132-aligned-data-centers/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "fe48701f42857cd1ad026e528e7e3fcf0fa55cb7f0e25c36e332f3ce65587506"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0132-aligned-data-centers/attempt-1/research-decision.json",
+        "sha256": "6211e66e3492d93c60933c440496c0347e0c6ccc4edc28d4fadb3cc6e94c9dd4"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0132-aligned-data-centers/attempt-1/source-verification.json",
+        "sha256": "b5ad6620c823609fa328cb63424a35a15f5e9634afb0e5d27b8c0e6c151a254c"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "fa249cc31a0002bf31bd06ea4f303296f7fb6d35d322943a0bbe1d62b337bd99",
+      "dependencySha256": "23172283b143139321aa956b98b2302e6325bdbe74f681e33d602924d19bd76b",
+      "afterImageSha256": "3b3944362a84a8d919adf362cd52bb47c2ded67eb377f561da4c8be2474dcbd1",
+      "targetClaims": [
+        "canonical:aligned-data-centers|united-states",
+        "company:cmrxpjghb00yoivhejmdrclkw",
+        "relation:cmrxpk26i01x6ivhertl2pn50",
+        "relation:cmrxpk27301x7ivhepfk5vqti",
+        "relation:cmrxpltf4044qivhecpol03fy",
+        "relation:cmrxpltfo044rivhe8ars56mn",
+        "relation:cmrxpltg9044sivhewr8cdtqu",
+        "relation:cmrxpltgz044tivhei7ti290s",
+        "relation:cmrxplthk044uivheogvn52by",
+        "relation:cmrxpr8y80asbivhezcxdztw1",
+        "relation:cmrxpr8zd0asdivhevgwsuz8x",
+        "relation:cmrxpr90d0asfivhe0ve8fjoz",
+        "relation:cmrxpr91c0ashivheac0hik83",
+        "relation:cmrxpr9270asjivhebjsafn32",
+        "relation:cmrxpr9360aslivheepj8ppin",
+        "seed:aligned data centers|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://aligneddc.com/",
+          "label": "Aligneddc — Aligned Data Centers",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://aligneddc.com/blog/mubadala-invests-in-aligned-data-centers/",
+          "label": "Investment date source — Mubadala — Aligned Data Centers",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://aligneddc.com/press-release/ai-infrastructure-partnership-aip-mgx-and-blackrocks-global-infrastructure-partners-gip-to-acquire-all-equity-in-aligned-data-centers/",
+          "label": "Announcement date source — Global Infrastructure Partners — Aligned Data Centers",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://aligneddc.com/press-release/aip-mgx-and-blackrocks-gip-close-acquisition-of-aligned-data-centers/",
+          "label": "Aligned Data Centers — acquisition closing",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://aligneddc.com/press-release/aligned-energy-announces-new-strategic-investment-by-macquarie-infrastructure-partners/",
+          "label": "Investment date source — Macquarie Asset Management — Aligned Data Centers",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://ec.europa.eu/competition/mergers/cases1/202604/M_12259_10869557_118_3.pdf",
+          "label": "European Commission — Aligned merger decision",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.macquarie.com/au/en/about/news/2025/macquarie-asset-management-to-lead-sale-of-aligned-data-centers-at-an-enterprise-value-of-us-40-billion.html",
+          "label": "Announcement date source — Macquarie Asset Management — Aligned Data Centers",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.macquarie.com/au/en/about/news/2026/macquarie-asset-management-announces-successful-close-of-aligned-data-centers-transaction.html",
+          "label": "Macquarie Asset Management — Aligned transaction close",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.mubadala.com/en/what-we-do/real-assets/infrastructure/aligned-data-centers",
+          "label": "Mubadala — Aligned Data Centers",
+          "sourceType": "ARTICLE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0133:allete-inc:3a7edb92",
+      "taskIndex": 133,
+      "companyName": "ALLETE, Inc.",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0133-allete-inc-v1/proposal.json",
+        "sha256": "918867107a194fd02c502314aadc1cf178e47411f6a012fcb888c407ac4bcd26"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0133-allete-inc-v1.json",
+        "sha256": "4b8cecdffe643835b8fe08ba11bdc8da8af9f0d4ef29006fc512c51db4e97936"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0133-allete-inc/attempt-1/locked-production-snapshot.json",
+        "sha256": "d29446e830d54122a135f83bc67d132acf23add52061a07792881c3397f85e99"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0133-allete-inc/attempt-1/locked-task-snapshot.json",
+        "sha256": "7380d7da5c3b6f9ef9723dd104b9733f46506c4ee6d2da74a75cb6b354ccce13"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0133-allete-inc/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "468936c603c1aeb295b06bbaceafad512e3f0130f44e9c4c2a3ea55b22ed5261"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0133-allete-inc/attempt-1/research-decision.json",
+        "sha256": "08e1fd3988e713dbf3cc151fdc1eb863049f09d2e2e8b6fc42a51f42f959c9b0"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0133-allete-inc/attempt-1/source-verification.json",
+        "sha256": "0ef37487dc4d6d1bea42bd7b324cf5bfd8070c15a8cae8f7e4cfab76819377a4"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "389f48060b6feba46ce310f6b5d5f2513974ebfeb541c9d03e4d10e46eb71524",
+      "dependencySha256": "dcf92796c9420b3b0963477d3ca07a159fb3e80c2b48ece02bb60b107d8dc1dd",
+      "afterImageSha256": "8d7b4ab9dd4528c3fe6bf1fae4f89779f8da2211575b2479a0ce2b32d0e7e149",
+      "targetClaims": [
+        "canonical:allete-inc|united-states",
+        "company:cmrxpjgi100ypivhehaw4at9a",
+        "relation:cmrxpk27n01x8ivhevmhimy9d",
+        "relation:cmrxpk2ap01x9ivhe4xgl52eu",
+        "relation:cmrxpltio044vivheltmmd2bl",
+        "relation:cmrxpltj8044wivhe8p1za61y",
+        "relation:cmrxpltjs044xivhe3tk7xtvt",
+        "relation:cmrxpltkc044yivhechj59eic",
+        "relation:cmrxpltkx044zivheyef99g2j",
+        "relation:cmrxpr9430asnivhev5harobv",
+        "relation:cmrxpr97y0aspivhe5gqik7pk",
+        "relation:cmrxpr9910asrivhezopbemrn",
+        "relation:cmrxpr99f0assivheb7g569nb",
+        "relation:cmrxpr9ab0asuivhecrr4ruac",
+        "relation:cmrxpr9av0asvivhewihup7at",
+        "seed:allete, inc.|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://allete.blob.core.windows.net/allete/Documents/Investors/AnnualReports/2024AR.pdf",
+          "label": "Allete — ALLETE, Inc.",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://investor.allete.com/news-releases/news-release-details/allete-announces-completion-acquisition-cpp-investments-and",
+          "label": "Close date source — CPP Investments — ALLETE, Inc.",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://investor.allete.com/news-releases/news-release-details/allete-enters-agreement-be-acquired-partnership-led-canada",
+          "label": "Announcement date source — CPP Investments — ALLETE, Inc.",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.allete.com/",
+          "label": "Allete — ALLETE, Inc.",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.allete.com/OurBusinesses",
+          "label": "ALLETE — current businesses",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.federalregister.gov/documents/2026/07/24/2026-15036/combined-notice-of-filings-1",
+          "label": "Federal Register — ALLETE reorganization filing",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/66756/000114036124032849/ny20029448x3_defm14a.htm",
+          "label": "ALLETE — definitive merger proxy",
+          "sourceType": "SEC_FILING"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/66756/000114036125045482/ef20060780_8k.htm",
+          "label": "ALLETE — take-private closing Form 8-K",
+          "sourceType": "SEC_FILING"
+        },
+        {
+          "url": "https://www.synapse-energy.com/sites/default/files/Courtney%20Lane%20Direct%20Testimony%20PUBLIC%20REDACTED%2024-148.pdf",
+          "label": "Minnesota regulatory testimony — ALLETE ownership structure",
+          "sourceType": "PRESENTATION"
+        }
+      ]
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0134:atlas-renewable-energy:8663d3ab",
+      "taskIndex": 134,
+      "companyName": "Atlas Renewable Energy",
+      "outcome": "EXCLUDED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0131-0135-v1/decisions/0134-atlas-renewable-energy.json",
+        "sha256": "7a51c213aa89e94e4afaafb64db034389285431dfe153e5d8f54c295f3f7ec18"
+      }
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0135:bluepoint-wind:3ec3aaa5",
+      "taskIndex": 135,
+      "companyName": "Bluepoint Wind",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0135-bluepoint-wind-v1/proposal.json",
+        "sha256": "adb4eb034eb42e7a82786ca95d8f47fb1fb1bebfded07a17428d5314ceb34d83"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0135-bluepoint-wind-v1.json",
+        "sha256": "b87cbd7aef2424a814cef001be1f6ff2f3d3d5ff69c961b854d636ed1cd8df8e"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0135-bluepoint-wind/attempt-1/locked-production-snapshot.json",
+        "sha256": "50a4b42a787d5a14c1aed141e456372757af22aa9d61322bc0932e50a2fdd51d"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0135-bluepoint-wind/attempt-1/locked-task-snapshot.json",
+        "sha256": "af7f94692eb65f9aad0f61195b06f202a4737b1d7d4bfcddf6223f49ea21bfb8"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0135-bluepoint-wind/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "7ac5a663688dd5a12e5705598af8f33441ba7e7b189d356f8acbfa3ae337353b"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0135-bluepoint-wind/attempt-1/research-decision.json",
+        "sha256": "b2e1041d195baf4131a803efc6c4ce4d757d2b8f1e6dbd83649426646401c84d"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0135-bluepoint-wind/attempt-1/source-verification.json",
+        "sha256": "63ccf764201ad3b5688bbafcd7cf031bb9bae24b93aecd617d0529221b79a93f"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "a07f4c67f22d565bcd0d4cc04b2d89fd9148bd36d263a96958b47580c44a34fb",
+      "dependencySha256": "b4efcdba0f506e65e260a6aac3e72b5a7b3f965a22c6f26ae67da36fd678b25d",
+      "afterImageSha256": "74a4ef2d2b875a469dbd182f2424a63387e1c6327d9a71b1aa08972cf7d9e83d",
+      "targetClaims": [
+        "canonical:bluepoint-wind|united-states",
+        "company:cmrxpjgj600yrivhex07hc3al",
+        "relation:cmrxpk2bs01xbivhem5vf9xzv",
+        "relation:cmrxplto70453ivhepr1nw5uo",
+        "relation:cmrxpltoo0454ivhep268nr4z",
+        "relation:cmrxpr9ek0at3ivheoqpxrdpj",
+        "relation:cmrxpr9fe0at5ivhex836ntvt",
+        "relation:cmrxpr9gc0at7ivheecytxeee",
+        "relation:cmrxpr9he0at9ivhe4cywjijn",
+        "seed:bluepoint wind|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://bluepointwind.com/ocean-winds-east-awarded-lease-area-in-new-york-bight-offshore-wind-energy-auction/",
+          "label": "Announcement date source — Global Infrastructure Partners — Bluepoint Wind",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://bluepointwind.com/the-project/",
+          "label": "Bluepointwind — Bluepoint Wind",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.boem.gov/renewable-energy/state-activities/bluepoint-settlement-agreement",
+          "label": "BOEM — Bluepoint settlement agreement",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.boem.gov/renewable-energy/state-activities/bluepoint-wind-ocs-0537",
+          "label": "BOEM — Bluepoint Wind OCS-A 0537",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.doi.gov/pressreleases/interior-announces-two-historic-agreements-promote-affordable-reliable-energy",
+          "label": "U.S. Department of the Interior — Bluepoint agreement",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.nyserda.ny.gov/-/media/Project/Nyserda/Files/EE/RGGI/Bluepoint-Wind_RGGI-2026.pdf",
+          "label": "Nyserda — Bluepoint Wind",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://www.oceanwinds.com/projects/bluepoint-wind/",
+          "label": "Oceanwinds — Bluepoint Wind",
+          "sourceType": "WEBSITE"
+        }
+      ]
+    }
+  ],
+  "collisionAnalysis": {
+    "independent": true,
+    "claimsSha256": "6231974465a44f9b85906405187dbf0f04b03baf7cfec840618807841a6cb63d",
+    "sharedSourceUrls": [],
+    "conflicts": []
+  },
+  "batchSha256": "c343bfe13066628ec3d2a3cb8c732a7235bd375ed227444db63bbe4b4b8cbfec"
+}

@@ -1,0 +1,368 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0132:aligned-data-centers:ce7a118d",
+  "taskIndex": 132,
+  "companyName": "Aligned Data Centers",
+  "generatedAt": "2026-08-23T07:22:12.890Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0132-aligned-data-centers/attempt-1/authorization-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 132,
+    "taskId": "ledger:0132:aligned-data-centers:ce7a118d",
+    "canonicalKey": "aligned-data-centers|united-states",
+    "companyName": "Aligned Data Centers",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 23,
+    "managers": [
+      "BlackRock",
+      "Global Infrastructure Partners",
+      "Macquarie Asset Management",
+      "Mubadala"
+    ],
+    "actionScopes": {
+      "company": [
+        "CORRECT_COMPANY",
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [
+        "ADD_PENDING_TRANSACTION",
+        "RETIRE_OWNERSHIP"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "048-global-infrastructure-partners:holding:002:aligned-data-centers"
+    ],
+    "sourceRepoOnlyIds": [
+      "023-blackrock:repo-only:002:aligned-data-centers",
+      "065-macquarie-asset-management:repo-only:001:aligned-data-centers",
+      "070-mubadala:repo-only:002:aligned-data-centers"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjghb00yoivhejmdrclkw"
+    ],
+    "seedKeys": [
+      "aligned data centers|United States"
+    ],
+    "evidenceUrls": [
+      "https://aligneddc.com/",
+      "https://aligneddc.com/press-release/ai-infrastructure-partnership-aip-mgx-and-blackrocks-global-infrastructure-partners-gip-to-acquire-all-equity-in-aligned-data-centers/",
+      "https://www.macquarie.com/au/en/about/news/2025/macquarie-asset-management-to-lead-sale-of-aligned-data-centers-at-an-enterprise-value-of-us-40-billion.html"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: BlackRock MATCHED_ELSEWHERE: AIP/GIP-led transaction; treated as GIP-attributed holding rather than legacy BlackRock direct strategy. Macquarie Asset Management PROPOSED_RETIRE: Exited July 2026 and no longer in Macquarie portfolio Mubadala PROPOSED_RETIRE: Ownership exited via GIP-led acquisition; no longer held by Mubadala.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjghb00yoivhejmdrclkw",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "aligned-data-centers|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjghb00yoivhejmdrclkw",
+    "name": "Aligned Data Centers",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Hyperscale and build-to-suit data centers",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Aligned Data Centers develops and operates data center campuses for hyperscale, cloud, and enterprise customers. Its operating model is asset-heavy, built around powered land, build-to-suit delivery, and long-duration customer contracts for wholesale and hyperscale capacity. The company’s geographic footprint spans major U.S. data center markets, including Texas, Arizona, Illinois, and Virginia, with additional development activity in other markets. Public materials reviewed describe a large-scale campus platform focused on high-density and AI-oriented workloads, though they do not disclose revenue or employee count in the sources used here. Macquarie Asset Management-managed funds and co-invest partners were the disclosed owners in the latest transaction announcement reviewed. In October 2025, AI Infrastructure Partnership, MGX, and BlackRock’s Global Infrastructure Partners announced an agreement to acquire all equity in the company from those sellers, but public sources reviewed as of May 13, 2026 still describe that transaction as expected to close in the first half of 2026 and do not confirm completion.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2013,
+    "headquarters": "Virginia; Texas; Arizona; Illinois; Utah; Ohio; Oregon",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk26i01x6ivhertl2pn50",
+        "managerName": "Macquarie Asset Management",
+        "organizationName": "Macquarie Asset Management",
+        "fundName": null,
+        "vehicleName": "MIP IV / MIP V and related vehicles",
+        "stake": null,
+        "investmentYear": 2018,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpk27301x7ivhepfk5vqti",
+        "managerName": "Mubadala Investment Company",
+        "organizationName": "Mubadala",
+        "fundName": "Mubadala Infrastructure",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpltf4044qivhecpol03fy",
+        "date": "2013",
+        "event": "Aligned Data Centers was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2013-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpltfo044rivhe8ars56mn",
+        "date": "Apr 23, 2018",
+        "event": "Macquarie Infrastructure Partners made its initial investment in Aligned Data Centers, with the company jointly controlled by existing owners and MIP after the transaction.",
+        "category": "FINANCING",
+        "sortDate": "2018-04-23T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpltg9044sivhewr8cdtqu",
+        "date": "Jul 2020",
+        "event": "Macquarie Infrastructure Partners V acquired an additional stake in Aligned Data Centers.",
+        "category": "FINANCING",
+        "sortDate": "2020-07-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpltgz044tivhei7ti290s",
+        "date": "Aug 2, 2023",
+        "event": "Mubadala announced a minority investment in Aligned alongside majority partners managed by Macquarie Asset Management.",
+        "category": "FINANCING",
+        "sortDate": "2023-08-02T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplthk044uivheogvn52by",
+        "date": "Oct 15, 2025",
+        "event": "AI Infrastructure Partnership, MGX, and BlackRock's Global Infrastructure Partners (GIP) announced an agreement to acquire all equity in Aligned Data Centers, subject to closing.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-10-15T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpr8y80asbivhezcxdztw1",
+        "label": "Investment date source — Mubadala — Aligned Data Centers",
+        "url": "https://aligneddc.com/blog/mubadala-invests-in-aligned-data-centers/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Mubadala initial investment / ownership",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpr8zd0asdivhevgwsuz8x",
+        "label": "Aligneddc — Aligned Data Centers",
+        "url": "https://aligneddc.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Aligneddc company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr90d0asfivhe0ve8fjoz",
+        "label": "Mubadala — Aligned Data Centers",
+        "url": "https://www.mubadala.com/en/what-we-do/real-assets/infrastructure/aligned-data-centers",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Mubadala operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr91c0ashivheac0hik83",
+        "label": "Announcement date source — Global Infrastructure Partners — Aligned Data Centers",
+        "url": "https://aligneddc.com/press-release/ai-infrastructure-partnership-aip-mgx-and-blackrocks-global-infrastructure-partners-gip-to-acquire-all-equity-in-aligned-data-centers/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Global Infrastructure Partners transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr9270asjivhebjsafn32",
+        "label": "Investment date source — Macquarie Asset Management — Aligned Data Centers",
+        "url": "https://aligneddc.com/press-release/aligned-energy-announces-new-strategic-investment-by-macquarie-infrastructure-partners/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Macquarie Asset Management initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr9360aslivheepj8ppin",
+        "label": "Announcement date source — Macquarie Asset Management — Aligned Data Centers",
+        "url": "https://www.macquarie.com/au/en/about/news/2025/macquarie-asset-management-to-lead-sale-of-aligned-data-centers-at-an-enterprise-value-of-us-40-billion.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Macquarie Asset Management transaction announcement",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Aligned Data Centers",
+    "investmentFirm": "Macquarie Asset Management",
+    "sector": "Digital",
+    "subsector": "Hyperscale and build-to-suit data centers",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "MIP IV / MIP V and related vehicles",
+    "description": "Aligned Data Centers develops and operates data center campuses for hyperscale, cloud, and enterprise customers. Its operating model is asset-heavy, built around powered land, build-to-suit delivery, and long-duration customer contracts for wholesale and hyperscale capacity. The company’s geographic footprint spans major U.S. data center markets, including Texas, Arizona, Illinois, and Virginia, with additional development activity in other markets. Public materials reviewed describe a large-scale campus platform focused on high-density and AI-oriented workloads, though they do not disclose revenue or employee count in the sources used here. Macquarie Asset Management-managed funds and co-invest partners were the disclosed owners in the latest transaction announcement reviewed. In October 2025, AI Infrastructure Partnership, MGX, and BlackRock’s Global Infrastructure Partners announced an agreement to acquire all equity in the company from those sellers, but public sources reviewed as of May 13, 2026 still describe that transaction as expected to close in the first half of 2026 and do not confirm completion.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2013,
+    "investmentYear": 2018,
+    "headquarters": "Virginia; Texas; Arizona; Illinois; Utah; Ohio; Oregon",
+    "milestones": [
+      {
+        "date": "2013",
+        "event": "Aligned Data Centers was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "Apr 23, 2018",
+        "event": "Macquarie Infrastructure Partners made its initial investment in Aligned Data Centers, with the company jointly controlled by existing owners and MIP after the transaction.",
+        "category": "Financing"
+      },
+      {
+        "date": "Jul 2020",
+        "event": "Macquarie Infrastructure Partners V acquired an additional stake in Aligned Data Centers.",
+        "category": "Financing"
+      },
+      {
+        "date": "Aug 2, 2023",
+        "event": "Mubadala announced a minority investment in Aligned alongside majority partners managed by Macquarie Asset Management.",
+        "category": "Financing"
+      },
+      {
+        "date": "Oct 15, 2025",
+        "event": "AI Infrastructure Partnership, MGX, and BlackRock's Global Infrastructure Partners (GIP) announced an agreement to acquire all equity in Aligned Data Centers, subject to closing.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Investment date source — Mubadala — Aligned Data Centers",
+        "url": "https://aligneddc.com/blog/mubadala-invests-in-aligned-data-centers/",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Aligneddc — Aligned Data Centers",
+        "url": "https://aligneddc.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Mubadala — Aligned Data Centers",
+        "url": "https://www.mubadala.com/en/what-we-do/real-assets/infrastructure/aligned-data-centers",
+        "type": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Announcement date source — Global Infrastructure Partners — Aligned Data Centers",
+        "url": "https://aligneddc.com/press-release/ai-infrastructure-partnership-aip-mgx-and-blackrocks-global-infrastructure-partners-gip-to-acquire-all-equity-in-aligned-data-centers/",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Investment date source — Macquarie Asset Management — Aligned Data Centers",
+        "url": "https://aligneddc.com/press-release/aligned-energy-announces-new-strategic-investment-by-macquarie-infrastructure-partners/",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Announcement date source — Macquarie Asset Management — Aligned Data Centers",
+        "url": "https://www.macquarie.com/au/en/about/news/2025/macquarie-asset-management-to-lead-sale-of-aligned-data-centers-at-an-enterprise-value-of-us-40-billion.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Macquarie Asset Management",
+        "ownershipVehicle": "MIP IV / MIP V and related vehicles",
+        "investmentYear": 2018,
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "Mubadala",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2023,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj3di00exivhe38xmhpah",
+        "fundName": "Mubadala Infrastructure",
+        "managerId": "cmrxpibvr0030ivhenpnx8bdv",
+        "updatedAt": "2026-07-23T16:09:58.230Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpibdo002uivheekmgpdbp",
+        "name": "Macquarie Asset Management",
+        "updatedAt": "2026-07-23T16:09:21.948Z"
+      },
+      {
+        "id": "cmrxpihu7004vivheoemw7s8z",
+        "name": "Mubadala",
+        "updatedAt": "2026-07-23T16:09:30.319Z"
+      },
+      {
+        "id": "cmrxpij5s005aivhe70jwqccm",
+        "name": "GIP",
+        "updatedAt": "2026-07-23T16:09:32.032Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0132:aligned-data-centers:ce7a118d",
+    "taskIndex": 132,
+    "canonicalKey": "aligned-data-centers|united-states",
+    "capturedAt": "2026-08-23T07:22:12.890Z",
+    "databaseRevision": "revision:fed1a41ac27a97a13d70080739e65e73f4b03ae26cd656d9a32ca4a82e8a21c1",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "2775ecdb648870dfe852bbb607822221190af4453e196ce7520df08587bbda53",
+    "productionSnapshotSha256": "0ab651456ad4fb92caee526aa8e3a87558bb4bb315c5032ea4c3c7a01b8ff5db",
+    "targetCompanySnapshotSha256": "9b9279d68587c65b95d99c2e47ebe8d20dcc618595d91d12f7e16a9a3ba83518",
+    "seedEntrySha256": "8aa364f363257f732a92cdc45c37cc13441c1e40f1f1e18c6c9160532b942cad",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "234036789ef524f286681b76f0c94d12138d9928433f6679f91cf60d6a9b2871",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "f6494c92356554899d91dc2d01437cf3688abc4d1eee0b901b27cc2b516a7c21",
+      "organizationsSha256": "d6efc33b4ba331e405dc2eb2cf49824efad0d095bf81af8171d80e60d678e015",
+      "citationsSha256": "52fb2c2dfcdf07f79234da185f448efdff72efd9a7ee3ed0414bd9e0abc31728",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "23172283b143139321aa956b98b2302e6325bdbe74f681e33d602924d19bd76b",
+    "stateSha256": "fa249cc31a0002bf31bd06ea4f303296f7fb6d35d322943a0bbe1d62b337bd99",
+    "taskSnapshotSha256": "fe48701f42857cd1ad026e528e7e3fcf0fa55cb7f0e25c36e332f3ce65587506"
+  },
+  "contextSha256": "e5e487469605d789150f1218b19830b8256ad38ad919094db70b0dfcc087a982"
+}

@@ -245,6 +245,8 @@ const approvedOwnershipOrganizationProvisioning = {
   "GFL Environmental Inc.": "CORPORATE",
   "HPS Investment Partners": "FUND_MANAGER",
   "Kinder Morgan, Inc.": "CORPORATE",
+  "MGX": "FUND_MANAGER",
+  "Ocean Winds": "CORPORATE",
   "PUC Inc.": "CORPORATE",
   "Revera Inc.": "CORPORATE",
 } as const;

@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-23T06:54:47.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-08-23T07:44:00.000Z",
+  "activeBatchId": "batch-0131-0135-v1",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -202,7 +202,55 @@
           "reason": null
         }
       ]
+    },
+    {
+      "batchId": "batch-0131-0135-v1",
+      "state": "READY",
+      "taskIds": [
+        "ledger:0131:green-meadow-sustainable-solutions:bf30ae0e",
+        "ledger:0132:aligned-data-centers:ce7a118d",
+        "ledger:0133:allete-inc:3a7edb92",
+        "ledger:0134:atlas-renewable-energy:8663d3ab",
+        "ledger:0135:bluepoint-wind:3ec3aaa5"
+      ],
+      "taskIndexes": [
+        131,
+        132,
+        133,
+        134,
+        135
+      ],
+      "createdAt": "2026-08-23T07:06:00.000Z",
+      "updatedAt": "2026-08-23T07:44:00.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0131-0135-v1/batch-manifest.json",
+        "sha256": "c343bfe13066628ec3d2a3cb8c732a7235bd375ed227444db63bbe4b4b8cbfec"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-23T07:06:00.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-23T07:44:00.000Z",
+          "evidenceSha256": [
+            "c343bfe13066628ec3d2a3cb8c732a7235bd375ed227444db63bbe4b4b8cbfec"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "dfbf24b48338d9eaab87e9b4548210afe3a1aef84a017f3923e508ac49f060cc"
+  "ledgerSha256": "fd577ec3913886de30ec0a8f2317e6fea119c00fe3720bed019b751d4441ff20"
 }

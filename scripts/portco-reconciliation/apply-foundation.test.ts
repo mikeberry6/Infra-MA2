@@ -60,6 +60,8 @@ describe("approved ownership organization provisioning", () => {
     expect(ownershipOrganizationTypes("HPS Investment Partners")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("GFL Environmental Inc.")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Kinder Morgan, Inc.")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("MGX")).toEqual(["FUND_MANAGER"]);
+    expect(ownershipOrganizationTypes("Ocean Winds")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("PUC Inc.")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Revera Inc.")).toEqual(["CORPORATE"]);
   });
@@ -77,6 +79,8 @@ describe("approved ownership organization provisioning", () => {
       ["GFL Environmental Inc.", "CORPORATE"],
       ["HPS Investment Partners", "FUND_MANAGER"],
       ["Kinder Morgan, Inc.", "CORPORATE"],
+      ["MGX", "FUND_MANAGER"],
+      ["Ocean Winds", "CORPORATE"],
       ["PUC Inc.", "CORPORATE"],
       ["Revera Inc.", "CORPORATE"],
     ] as const) {
