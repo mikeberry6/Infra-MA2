@@ -1,0 +1,476 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0149:portland-natural-gas-transmission-system:15040b8a",
+  "taskIndex": 149,
+  "asOfDate": "2026-08-23",
+  "generatedAt": "2026-08-23T12:08:00.000Z",
+  "canonicalKey": "portland-natural-gas-transmission-system|united-states-canada",
+  "companyName": "Portland Natural Gas Transmission System",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER"
+  ],
+  "sourceHoldingIds": [
+    "023-blackrock:holding:005:portland-natural-gas-transmission-system",
+    "069-morgan-stanley-infrastructure-partners:holding:005:portland-natural-gas-transmission-system"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Retain one Portland Natural Gas Transmission System record and correct its complete 2024 ownership transition. BlackRock Global Infrastructure Fund IV and North Haven Infrastructure Partners III each acquired a 50% indirect interest through Beehive Loop AcquisitionCo LLC when the US$1.14 billion sale closed on August 15, 2024. The prior direct owners, TC Pipelines and Énergir's Northern New England Investment Company, exited their 61.7% and 38.3% interests at closing. PNGTS remains an active standalone FERC-regulated pipeline; the later MSIP census task is the same canonical company and must not create a duplicate owner or PortCo.",
+  "evidence": [
+    {
+      "url": "https://www.tcenergy.com/announcements/2024/2024-08-15-tc-energy-completes-the-sale-of-portland-natural-gas-transmission-system/",
+      "purpose": "Closing and former-owner stake evidence",
+      "supports": [
+        "the sale closed on August 15, 2024",
+        "TC Pipelines and Énergir sold their 61.7% and 38.3% interests"
+      ]
+    },
+    {
+      "url": "https://www.tcenergy.com/announcements/2024/2024-03-04-tc-energy-announces-sale-of-portland-natural-gas-transmission-system/",
+      "purpose": "Announcement, buyers and transaction value",
+      "supports": [
+        "the transaction was announced on March 4, 2024",
+        "BlackRock and Morgan Stanley Infrastructure Partners were the buyers",
+        "the transaction value was approximately US$1.14 billion including assumed notes"
+      ]
+    },
+    {
+      "url": "https://www.puc.nh.gov/VirtualFileRoom/ShowDocument.aspx?DocumentId=a01d59a1-e6ad-43e6-a7cf-d8c05b178aff",
+      "purpose": "Funds, acquisition vehicle and equal indirect stakes",
+      "supports": [
+        "BlackRock Global Infrastructure Fund IV and North Haven Infrastructure Partners III were equal indirect owners through Beehive Loop AcquisitionCo LLC"
+      ]
+    },
+    {
+      "url": "https://www.pngts.com/who-we-are",
+      "purpose": "Current business profile and pipeline scale",
+      "supports": [
+        "PNGTS remains an active natural-gas transmission system",
+        "the system spans approximately 295 miles with nearly 460,000 Dth per day of capacity"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "abb3a15a2df1740cecb121ee548db18f117365ed6d27777b4ea29435786cd52c",
+  "currentCompanySnapshotSha256": "ede32e71a1bfd70d5c8436ec3dd5f64ab754820ae8b8a4e2abe43bdb78830c5c",
+  "executionLock": {
+    "taskSnapshotSha256": "cec9c8d980e9433b4a606229d06b1e1403c937a8f880f966f5a98f0577bf4936",
+    "taskStateSha256": "2b5771222c96ddb075247b1d866e9e6142df44be0d954c2913b90e2b193b442e",
+    "taskDependencySha256": "8baa2a4bb775645f2a3e3f718b94957612ea41ff83cef01d2cc8cc12e39e1f89",
+    "seedEntrySha256": "76704a26f5a2a8282ca520eb02765cdbb0824a71f8d7d0680d51d2e8a23f63b2",
+    "dependencies": {
+      "ownershipPeriodsSha256": "0ecba6e19cc160b455ac37d1b0637ff83c6fb5d7bd67423c5e8402811bf4aa5e",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "c3d59cdc6fff3acd5008b0dc7990485711d7c13066d8b12b43130b91a3d91070",
+      "organizationsSha256": "420754aab92d7931e901c052c36c3789f7bab1512597a24d3f1f76c16a086b62",
+      "citationsSha256": "3b513a026c7a32927f8f5d32492cf448360084171ddb30aa36c5271e3d4c7421",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj1bs00bvivhev1nn6jh1",
+        "fundName": "BlackRock GIF IV",
+        "managerId": "cmrxpi56u000wivhev4hy469z",
+        "updatedAt": "2026-07-23T16:09:55.576Z"
+      },
+      {
+        "id": "cmsdi41gb004y7h4sql1igk6u",
+        "fundName": "North Haven Infrastructure Partners III",
+        "managerId": "cmrxpibqa002yivhe44v34tdd",
+        "updatedAt": "2026-08-03T17:26:37.403Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi56u000wivhev4hy469z",
+        "name": "BlackRock",
+        "updatedAt": "2026-07-23T16:09:13.926Z"
+      },
+      {
+        "id": "cmrxpibqa002yivhe44v34tdd",
+        "name": "Morgan Stanley Infrastructure Partners",
+        "updatedAt": "2026-07-23T16:09:22.402Z"
+      },
+      {
+        "id": "cmrxpifi80045ivhe1qqdd4g8",
+        "name": "MSIP",
+        "updatedAt": "2026-07-23T16:09:27.296Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpj90w00nbivhe1yvbf58m",
+    "name": "Portland Natural Gas Transmission System",
+    "aliases": [],
+    "sector": "MIDSTREAM",
+    "subsector": "Natural gas transmission pipeline",
+    "region": "NORTH_AMERICA",
+    "country": "United States / Canada",
+    "countryTags": [
+      "United States",
+      "Canada"
+    ],
+    "description": "Portland Natural Gas Transmission System is a FERC-regulated natural gas transmission pipeline serving New England and Atlantic Canada markets. Its customers include gas shippers, utilities, and power-market participants that rely on pipeline transportation capacity into the northeastern United States. The business is asset-heavy and contracted because value is tied to a long-lived interstate pipeline system and transportation agreements rather than commodity ownership. Company materials describe a 295-mile pipeline with approximately 460,000 dekatherms per day of capacity. Its principal operating corridor runs through New Hampshire, Maine, and Massachusetts, with connections into Québec and New Brunswick. TC Energy announced the sale of PNGTS in March 2024 to BlackRock's Diversified Infrastructure business and Morgan Stanley Infrastructure Partners, and public sources do not disclose the buyers' respective ownership percentages.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 1999,
+    "headquarters": "Maine; New Hampshire; Canada",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjub601krivheoda5cutx",
+        "managerName": "Morgan Stanley Infrastructure Partners",
+        "organizationName": "MSIP",
+        "fundName": "North Haven Infrastructure Partners III",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjubo01ksivhed9ljaa2e",
+        "managerName": "BlackRock",
+        "organizationName": "BlackRock",
+        "fundName": null,
+        "vehicleName": "Diversified Infrastructure",
+        "stake": null,
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkwpj031divhekm0fiu00",
+        "date": "1999",
+        "event": "Portland Natural Gas Transmission System was founded.",
+        "category": "FOUNDING",
+        "sortDate": "1999-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkwq6031eivhe2ih5skb0",
+        "date": "2024",
+        "event": "Transaction materials valued the sale at approximately $1.14 billion including assumption of notes.",
+        "category": "DIVESTITURE",
+        "sortDate": "2024-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkwqo031fivhe4roghjro",
+        "date": "Aug 15, 2024",
+        "event": "TC Energy completed the sale of PNGTS to BlackRock and Morgan Stanley Infrastructure Partners (MSIP).",
+        "category": "ACQUISITION",
+        "sortDate": "2024-08-15T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkwr7031givhevlsicw37",
+        "date": "Mar 4, 2024",
+        "event": "TC Energy announced the sale of PNGTS to BlackRock's Diversified Infrastructure business and Morgan Stanley Infrastructure Partners.",
+        "category": "DIVESTITURE",
+        "sortDate": "2024-03-04T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkwru031hivheciox71za",
+        "date": "Mar 4, 2024",
+        "event": "TC Energy announced an agreement to sell PNGTS to BlackRock and Morgan Stanley Infrastructure Partners (MSIP).",
+        "category": "ACQUISITION",
+        "sortDate": "2024-03-04T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxppklj08d9ivhej78xzp85",
+        "label": "Close date source — BlackRock — Portland Natural Gas Transmission System",
+        "url": "https://www.tcenergy.com/announcements/2024/2024-08-15-tc-energy-completes-the-sale-of-portland-natural-gas-transmission-system/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "BlackRock closing confirmation",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxppkm408daivhef0s2vwtn",
+        "label": "Close date source — BlackRock — Portland Natural Gas Transmission System",
+        "url": "https://www.tcenergy.com/announcements/2024/2024-08-15-tc-energy-completes-the-sale-of-portland-natural-gas-transmission-system/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "MSIP closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppkn608dcivheu97jmln8",
+        "label": "Investment date source — MSIP — Portland Natural Gas Transmission System",
+        "url": "https://www.morganstanley.com/im/en-ie/intermediary-investor/companies/portland-natural-gas-transmission-system.html",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "MSIP initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppkoa08deivhenwt9dd2j",
+        "label": "Fitchratings — Portland Natural Gas Transmission System",
+        "url": "https://www.fitchratings.com/research/corporate-finance/fitch-affirms-portland-natural-gas-transmission-system-at-a-outlook-stable-09-08-2024",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Fitchratings — Portland Natural Gas Transmission System",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppkpf08dgivhes9dnmgdr",
+        "label": "Pngts — Portland Natural Gas Transmission System",
+        "url": "https://www.pngts.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Pngts company profile",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "ede32e71a1bfd70d5c8436ec3dd5f64ab754820ae8b8a4e2abe43bdb78830c5c",
+  "afterImage": {
+    "id": "cmrxpj90w00nbivhe1yvbf58m",
+    "name": "Portland Natural Gas Transmission System",
+    "aliases": [
+      "PNGTS",
+      "Portland Natural Gas Transmission System, L.P."
+    ],
+    "sector": "MIDSTREAM",
+    "subsector": "Natural gas transmission pipeline",
+    "region": "NORTH_AMERICA",
+    "country": "United States / Canada",
+    "countryTags": [
+      "United States",
+      "Canada"
+    ],
+    "description": "Portland Natural Gas Transmission System is a standalone FERC-regulated natural-gas transmission business serving New England and Atlantic Canada. The approximately 295-mile system crosses New Hampshire, Maine and Massachusetts, connects with Canadian pipelines and has nearly 460,000 dekatherms per day of capacity. Its customers include utilities, energy marketers, industrial users and power generators. BlackRock- and Morgan Stanley Infrastructure Partners-managed funds announced the acquisition from TC Energy and Énergir on March 4, 2024 and closed it on August 15, 2024 for approximately US$1.14 billion including assumed notes. Regulatory evidence identifies BlackRock Global Infrastructure Fund IV and North Haven Infrastructure Partners III as equal 50% indirect owners through Beehive Loop AcquisitionCo LLC. The former owners' 61.7% and 38.3% direct interests ended at closing. PNGTS maintains a corporate office in Houston and an operating office in Lancaster, New Hampshire. No later company sale or signed pending exit was identified through August 23, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.pngts.com/",
+    "yearFounded": 1999,
+    "headquarters": "Houston, Texas",
+    "lastVerifiedAt": "2026-08-23T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjub601krivheoda5cutx",
+        "managerName": "Morgan Stanley Infrastructure Partners",
+        "organizationName": "MSIP",
+        "fundName": "North Haven Infrastructure Partners III",
+        "vehicleName": "Beehive Loop AcquisitionCo LLC",
+        "stake": "50% indirect",
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjubo01ksivhed9ljaa2e",
+        "managerName": "BlackRock",
+        "organizationName": "BlackRock",
+        "fundName": "BlackRock GIF IV",
+        "vehicleName": "Beehive Loop AcquisitionCo LLC",
+        "stake": "50% indirect",
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "TC Energy Corporation",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "TC Pipelines, Inc.",
+        "stake": "61.7% immediately before the August 2024 sale",
+        "investmentYear": null,
+        "exitYear": 2024,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      },
+      {
+        "id": null,
+        "managerName": "Énergir L.P.",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Northern New England Investment Company, Inc.",
+        "stake": "38.3% immediately before the August 2024 sale",
+        "investmentYear": null,
+        "exitYear": 2024,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkwpj031divhekm0fiu00",
+        "date": "1999",
+        "event": "Portland Natural Gas Transmission System entered service as an interstate transmission link between Canadian supply and New England markets.",
+        "category": "FOUNDING",
+        "sortDate": "1999-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.pngts.com/who-we-are"
+        ]
+      },
+      {
+        "id": "cmrxpkwq6031eivhe2ih5skb0",
+        "date": "Mar 4, 2024",
+        "event": "TC Energy and Énergir agreed to sell PNGTS to BlackRock- and MSIP-managed funds for approximately US$1.14 billion including US$250 million of assumed notes.",
+        "category": "DIVESTITURE",
+        "sortDate": "2024-03-04T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.tcenergy.com/announcements/2024/2024-03-04-tc-energy-announces-sale-of-portland-natural-gas-transmission-system/"
+        ]
+      },
+      {
+        "id": "cmrxpkwqo031fivhe4roghjro",
+        "date": "Aug 15, 2024",
+        "event": "The sale closed, establishing BlackRock Global Infrastructure Fund IV and North Haven Infrastructure Partners III as equal 50% indirect owners through Beehive Loop AcquisitionCo LLC.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-08-15T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.tcenergy.com/announcements/2024/2024-08-15-tc-energy-completes-the-sale-of-portland-natural-gas-transmission-system/",
+          "https://www.puc.nh.gov/VirtualFileRoom/ShowDocument.aspx?DocumentId=a01d59a1-e6ad-43e6-a7cf-d8c05b178aff"
+        ]
+      },
+      {
+        "id": "cmrxpkwr7031givhevlsicw37",
+        "date": "Jun 21, 2024",
+        "event": "New Hampshire regulators approved the ownership transfer and documented the two acquiring funds' equal indirect interests.",
+        "category": "OTHER",
+        "sortDate": "2024-06-21T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.puc.nh.gov/VirtualFileRoom/ShowDocument.aspx?DocumentId=a01d59a1-e6ad-43e6-a7cf-d8c05b178aff"
+        ]
+      },
+      {
+        "id": "cmrxpkwru031hivheciox71za",
+        "date": "Jul 29, 2026",
+        "event": "A Federal Register notice documented continuing PNGTS operations and its Houston corporate office while the pipeline pursued a blanket-certificate project request.",
+        "category": "EXPANSION",
+        "sortDate": "2026-07-29T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.federalregister.gov/documents/2026/07/29/2026-15292/portland-natural-gas-transmission-system-notice-of-request-under-blanket-authorization-and"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxppklj08d9ivhej78xzp85",
+        "label": "Close date source — BlackRock — Portland Natural Gas Transmission System",
+        "url": "https://www.tcenergy.com/announcements/2024/2024-08-15-tc-energy-completes-the-sale-of-portland-natural-gas-transmission-system/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "August 15, 2024 closing and former-owner stakes",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxppkm408daivhef0s2vwtn",
+        "label": "Close date source — BlackRock — Portland Natural Gas Transmission System",
+        "url": "https://www.tcenergy.com/announcements/2024/2024-08-15-tc-energy-completes-the-sale-of-portland-natural-gas-transmission-system/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Duplicate closing citation retained for historical lineage",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppkn608dcivheu97jmln8",
+        "label": "Investment date source — MSIP — Portland Natural Gas Transmission System",
+        "url": "https://www.morganstanley.com/im/en-ie/intermediary-investor/companies/portland-natural-gas-transmission-system.html",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Legacy MSIP portfolio URL",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppkoa08deivhenwt9dd2j",
+        "label": "Fitchratings — Portland Natural Gas Transmission System",
+        "url": "https://www.fitchratings.com/research/corporate-finance/fitch-affirms-portland-natural-gas-transmission-system-at-a-outlook-stable-09-08-2024",
+        "sourceType": "ARTICLE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Credit-quality and operating context",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppkpf08dgivhes9dnmgdr",
+        "label": "Pngts — Portland Natural Gas Transmission System",
+        "url": "https://www.pngts.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Official PNGTS website",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "TC Energy — PNGTS sale announcement",
+        "url": "https://www.tcenergy.com/announcements/2024/2024-03-04-tc-energy-announces-sale-of-portland-natural-gas-transmission-system/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "March 2024 agreement, buyers, sellers and transaction value",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "New Hampshire PUC — PNGTS transfer order",
+        "url": "https://www.puc.nh.gov/VirtualFileRoom/ShowDocument.aspx?DocumentId=a01d59a1-e6ad-43e6-a7cf-d8c05b178aff",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Acquiring funds, Beehive vehicle and equal indirect stakes",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Morgan Stanley Infrastructure Partners — PNGTS",
+        "url": "https://www.morganstanley.com/im/en-us/individual-investor/companies/portland-natural-gas-transmission-system.html",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current MSIP portfolio status",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "PNGTS — Who we are",
+        "url": "https://www.pngts.com/who-we-are",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Pipeline history, footprint, capacity and customers",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "PNGTS — Standalone company transition",
+        "url": "https://www.pngts.com/press-insights/blog-post-title-one-xawhb",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Standalone identity and operating footprint after the sale",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Federal Register — PNGTS blanket authorization notice",
+        "url": "https://www.federalregister.gov/documents/2026/07/29/2026-15292/portland-natural-gas-transmission-system-notice-of-request-under-blanket-authorization-and",
+        "sourceType": "OTHER",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current operations and Houston corporate office",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "7040a45dbc33320028d602bd3908b5cbcacc2048b16c8000a3c71c18a2a33e82",
+  "proposalSha256": "349299d88c2691d5bd82808448d12631ced55889b189f98fb7fac488f997413d"
+}

@@ -1,0 +1,403 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0151:rio-grande-lng:e7985cce",
+  "taskIndex": 151,
+  "companyName": "Rio Grande LNG",
+  "generatedAt": "2026-08-23T12:05:31.114Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0151-rio-grande-lng/attempt-1/locked-v2-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 151,
+    "taskId": "ledger:0151:rio-grande-lng:e7985cce",
+    "canonicalKey": "rio-grande-lng|united-states",
+    "companyName": "Rio Grande LNG",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 23,
+    "managers": [
+      "BlackRock",
+      "GIC",
+      "Global Infrastructure Partners",
+      "Mubadala"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "047-gic:holding:010:rio-grande-lng",
+      "048-global-infrastructure-partners:holding:007:rio-grande-lng"
+    ],
+    "sourceRepoOnlyIds": [
+      "023-blackrock:repo-only:008:rio-grande-lng",
+      "070-mubadala:repo-only:008:rio-grande-lng"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjgli00yvivheorrptcgd"
+    ],
+    "seedKeys": [
+      "rio grande lng|United States"
+    ],
+    "evidenceUrls": [
+      "https://investors.next-decade.com/news-releases/news-release-details/nextdecade-announces-positive-final-investment-decision-rio",
+      "https://www.next-decade.com/our-business/rio-grande-lng/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: BlackRock MATCHED_ELSEWHERE: GIP flagship LNG investment; routed to GIP census. Mubadala OUT_OF_SCOPE: No confirmed direct project equity held by Mubadala.",
+    "unresolvedQuestions": [
+      "Confirm whether the manager ownership, the company itself, or only this census scope is out of scope before proposing any change.",
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjgli00yvivheorrptcgd",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "rio-grande-lng|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjgli00yvivheorrptcgd",
+    "name": "Rio Grande LNG",
+    "aliases": [],
+    "sector": "MIDSTREAM",
+    "subsector": "LNG liquefaction and export terminal",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Rio Grande LNG is a large-scale liquefied natural gas export project under development and construction in Brownsville, Texas. Its customers are global LNG buyers and offtakers seeking long-term liquefaction capacity and LNG supply from the U.S. Gulf Coast. The project is an asset-heavy midstream development whose economics depend on long-term sale and purchase agreements, large-scale project financing, and multiyear construction execution. Public materials state that Phase 1 consists of three liquefaction trains with roughly 18 million tonnes per annum of LNG production capacity and that the broader project is designed for larger total capacity across additional trains. NextDecade announced positive final investment decision on Phase 1 in July 2023 with Global Infrastructure Partners, TotalEnergies, GIC, Mubadala, and other project stakeholders involved in the financing structure. The latest public disclosures reviewed here indicate expected first LNG from Phase 1 in 2027, but they do not fully disclose the current project-company ownership breakdown across all investors.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Texas",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk2dz01xfivhe6czef2co",
+        "managerName": "GIC",
+        "organizationName": "GIC",
+        "fundName": "GIC Infrastructure",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpk2ef01xgivhe1pzzw4h7",
+        "managerName": "Mubadala",
+        "organizationName": "Mubadala",
+        "fundName": null,
+        "vehicleName": "MIC TI Holding LLC",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpk2f101xhivhej18k131a",
+        "managerName": "BlackRock",
+        "organizationName": "GIP",
+        "fundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpltzc045fivhegl6cdurd",
+        "date": "2019",
+        "event": "Rio Grande LNG received federal approvals for the Brownsville project.",
+        "category": "OTHER",
+        "sortDate": "2019-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpltzw045givhebwxjaek4",
+        "date": "Sep 2023",
+        "event": "Federal Register materials disclosed the post-transaction ownership structure for Rio Grande LNG Phase 1.",
+        "category": "FINANCING",
+        "sortDate": "2023-09-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplu0g045hivhe73vd8jh2",
+        "date": "Jul 2023",
+        "event": "Phase 1 construction began following notice to proceed to Bechtel.",
+        "category": "EXPANSION",
+        "sortDate": "2023-07-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplu10045iivhejsujusd3",
+        "date": "Jul 12, 2023",
+        "event": "NextDecade executed and closed the Rio Grande LNG Phase 1 joint venture with financial commitments from Global Infrastructure Partners (GIP), GIC, Mubadala, and TotalEnergies.",
+        "category": "FINANCING",
+        "sortDate": "2023-07-12T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplu1k045jivhevxfdl0bu",
+        "date": "Oct 2025",
+        "event": "NextDecade announced a positive final investment decision for Train 5 at the Rio Grande LNG complex.",
+        "category": "FINANCING",
+        "sortDate": "2025-10-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplu24045kivheu9dumav9",
+        "date": "Sep 11, 2025",
+        "event": "NextDecade announced a positive final investment decision on Train 4 and disclosed the continuing equity partner group.",
+        "category": "FINANCING",
+        "sortDate": "2025-09-11T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpr9wi0atvivheh4w5a68k",
+        "label": "Close date source — Global Infrastructure Partners — Rio Grande LNG",
+        "url": "https://investors.next-decade.com/news-releases/news-release-details/nextdecade-announces-positive-final-investment-decision-rio",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Global Infrastructure Partners closing confirmation",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpr9wz0atwivhedmrpasvw",
+        "label": "Close date source — Global Infrastructure Partners — Rio Grande LNG",
+        "url": "https://investors.next-decade.com/news-releases/news-release-details/nextdecade-announces-positive-final-investment-decision-rio",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "GIC closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpra0w0atyivhel2zyhz1e",
+        "label": "Close date source — Mubadala — Rio Grande LNG",
+        "url": "https://corporate.totalenergies.us/news/totalenergies-and-its-partners-make-final-investment-decision-rglng-project-texas",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Mubadala closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpra200au0ivhe2m4mxdt3",
+        "label": "Next Decade — Rio Grande LNG",
+        "url": "https://www.next-decade.com/our-business/rio-grande-lng/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Next Decade — Rio Grande LNG",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpra310au2ivhe33aslq35",
+        "label": "Riograndelng — Rio Grande LNG, LLC",
+        "url": "https://www.riograndelng.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Riograndelng company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpra430au4ivhecf1a6nc3",
+        "label": "Federalregister — Rio Grande LNG, LLC",
+        "url": "https://www.federalregister.gov/documents/2023/09/05/2023-19122/change-in-control-notice-regarding-rio-grande-lng-llc-and-rio-bravo-pipeline-company-llc",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Federalregister — Rio Grande LNG, LLC",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Rio Grande LNG",
+    "investmentFirm": "GIC",
+    "sector": "Midstream",
+    "subsector": "LNG liquefaction and export terminal",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "Rio Grande LNG is a large-scale liquefied natural gas export project under development and construction in Brownsville, Texas. Its customers are global LNG buyers and offtakers seeking long-term liquefaction capacity and LNG supply from the U.S. Gulf Coast. The project is an asset-heavy midstream development whose economics depend on long-term sale and purchase agreements, large-scale project financing, and multiyear construction execution. Public materials state that Phase 1 consists of three liquefaction trains with roughly 18 million tonnes per annum of LNG production capacity and that the broader project is designed for larger total capacity across additional trains. NextDecade announced positive final investment decision on Phase 1 in July 2023 with Global Infrastructure Partners, TotalEnergies, GIC, Mubadala, and other project stakeholders involved in the financing structure. The latest public disclosures reviewed here indicate expected first LNG from Phase 1 in 2027, but they do not fully disclose the current project-company ownership breakdown across all investors.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2023,
+    "headquarters": "Texas",
+    "milestones": [
+      {
+        "date": "2019",
+        "event": "Rio Grande LNG received federal approvals for the Brownsville project.",
+        "category": "Other"
+      },
+      {
+        "date": "Sep 2023",
+        "event": "Federal Register materials disclosed the post-transaction ownership structure for Rio Grande LNG Phase 1.",
+        "category": "Financing"
+      },
+      {
+        "date": "Jul 2023",
+        "event": "Phase 1 construction began following notice to proceed to Bechtel.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Jul 12, 2023",
+        "event": "NextDecade executed and closed the Rio Grande LNG Phase 1 joint venture with financial commitments from Global Infrastructure Partners (GIP), GIC, Mubadala, and TotalEnergies.",
+        "category": "Financing"
+      },
+      {
+        "date": "Oct 2025",
+        "event": "NextDecade announced a positive final investment decision for Train 5 at the Rio Grande LNG complex.",
+        "category": "Financing"
+      },
+      {
+        "date": "Sep 11, 2025",
+        "event": "NextDecade announced a positive final investment decision on Train 4 and disclosed the continuing equity partner group.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Close date source — Global Infrastructure Partners — Rio Grande LNG",
+        "url": "https://investors.next-decade.com/news-releases/news-release-details/nextdecade-announces-positive-final-investment-decision-rio",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Close date source — GIC — Rio Grande LNG",
+        "url": "https://investors.next-decade.com/news-releases/news-release-details/nextdecade-announces-positive-final-investment-decision-rio",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Close date source — Mubadala — Rio Grande LNG",
+        "url": "https://corporate.totalenergies.us/news/totalenergies-and-its-partners-make-final-investment-decision-rglng-project-texas",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Next Decade — Rio Grande LNG",
+        "url": "https://www.next-decade.com/our-business/rio-grande-lng/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Riograndelng — Rio Grande LNG, LLC",
+        "url": "https://www.riograndelng.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Federalregister — Rio Grande LNG, LLC",
+        "url": "https://www.federalregister.gov/documents/2023/09/05/2023-19122/change-in-control-notice-regarding-rio-grande-lng-llc-and-rio-bravo-pipeline-company-llc",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "GIC",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2023,
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "Mubadala",
+        "ownershipVehicle": "MIC TI Holding LLC",
+        "investmentYear": 2023,
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "Global Infrastructure Partners",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2023,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj2gj00dkivhejraeavgi",
+        "fundName": "GIC Infrastructure",
+        "managerId": "cmrxpi8wm0022ivhessbkv786",
+        "updatedAt": "2026-07-23T16:09:57.043Z"
+      },
+      {
+        "id": "cmsdi3s2g003i7h4s4t0s4mmh",
+        "fundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+        "managerId": "cmrxpi56u000wivhev4hy469z",
+        "updatedAt": "2026-08-03T17:26:25.240Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi8wm0022ivhessbkv786",
+        "name": "GIC",
+        "updatedAt": "2026-07-23T16:09:18.742Z"
+      },
+      {
+        "id": "cmrxpihu7004vivheoemw7s8z",
+        "name": "Mubadala",
+        "updatedAt": "2026-07-23T16:09:30.319Z"
+      },
+      {
+        "id": "cmrxpij5s005aivhe70jwqccm",
+        "name": "GIP",
+        "updatedAt": "2026-07-23T16:09:32.032Z"
+      },
+      {
+        "id": "cmt5klrzk000dy8yyb0i0cdgc",
+        "name": "TotalEnergies",
+        "updatedAt": "2026-08-23T08:53:57.104Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0151:rio-grande-lng:e7985cce",
+    "taskIndex": 151,
+    "canonicalKey": "rio-grande-lng|united-states",
+    "capturedAt": "2026-08-23T12:05:31.114Z",
+    "databaseRevision": "revision:80ba8c507fbfc1e4190d7c9d57bf15db6cfe16b814d19c08a3296f6c45e520f8",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "ef60dc9099dd8033d7b42bd8b8517822a508b9067e536590c83dba631e7d05f7",
+    "productionSnapshotSha256": "1436894b0ee2c6c670665780fbf31f1707fa649ceb0f8588780690ba4359e7bf",
+    "targetCompanySnapshotSha256": "e8465b2d7afc902882bed28c72b3a33a5018dae45496d0c43db5429e3499c9a9",
+    "seedEntrySha256": "86a7968d053a30db9d0a81e63518c202f830cb42388efa328f214e9785f64aba",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "89da8655146fb40020671ca20b261b55b16f52a2a4b5205f01b280395afb3817",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "53c886019b714f9796c12ac52ada6f2bd6d0d2e4be18975f7818ca7218a6c5f6",
+      "organizationsSha256": "6415fe48c3bcfe2a97efeca5fd10101ad46bad5033e2a884f330a43cb1ca147b",
+      "citationsSha256": "5da12b550de86fb9cfcb4ae241cec369b3c0b3938e7d2b4e8838678a2ce0cbd7",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "c099f16a2f39d93930534ab9c30795fde5ecc8c2e9d7d2d03d3314058746f450",
+    "stateSha256": "5a7705769108477367c8dc6e56c106e3c9368ce381b7a5e710d530c12a30127f",
+    "taskSnapshotSha256": "2318612027906afc256f2df9d1887fb350fe9abca2c07b3ae31c03637e2bb141"
+  },
+  "contextSha256": "b154caa612d3cc5b79e67eeeead5355a70d76b25ad23f09162a82533c551c517"
+}

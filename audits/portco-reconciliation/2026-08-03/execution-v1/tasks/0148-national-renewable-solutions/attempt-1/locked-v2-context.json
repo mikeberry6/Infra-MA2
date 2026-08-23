@@ -1,0 +1,252 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0148:national-renewable-solutions:2d543538",
+  "taskIndex": 148,
+  "companyName": "National Renewable Solutions",
+  "generatedAt": "2026-08-23T12:05:25.118Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0148-national-renewable-solutions/attempt-1/locked-v2-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 148,
+    "taskId": "ledger:0148:national-renewable-solutions:2d543538",
+    "canonicalKey": "national-renewable-solutions|united-states",
+    "companyName": "National Renewable Solutions",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 23,
+    "managers": [
+      "BlackRock",
+      "Global Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "023-blackrock:holding:007:national-renewable-solutions"
+    ],
+    "sourceRepoOnlyIds": [
+      "048-global-infrastructure-partners:repo-only:013:national-renewable-solutions"
+    ],
+    "productionCompanyIds": [
+      "cmrxpj90b00naivhedtmfwflb"
+    ],
+    "seedKeys": [
+      "national renewable solutions|United States"
+    ],
+    "evidenceUrls": [
+      "https://natrs.com/wp-content/uploads/2022/04/BlackRockAcquiresNRS_PressRelease_Final.pdf"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Global Infrastructure Partners MATCHED_ELSEWHERE: Attributable to legacy BlackRock infrastructure vehicles, not GIP",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj90b00naivhedtmfwflb",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "national-renewable-solutions|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpj90b00naivhedtmfwflb",
+    "name": "National Renewable Solutions",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Renewable project development",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "National Renewable Solutions is an early-stage wind and solar project development company. Its business centers on site origination, permitting, interconnection, land control, and development of utility-scale renewable projects for eventual construction or sale. The model is development-led rather than contracted utility ownership, but it remains capital-intensive because value depends on building a pipeline of viable renewable projects. Company materials identify Minnetonka, Minnesota as headquarters and describe activity across multiple US renewable markets. The company was founded in 2011 and has built a portfolio spanning wind, solar, and energy-storage opportunities. BlackRock acquired the company in 2021, and National Renewable Solutions announced that 100% of its shares had been purchased by BlackRock.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2011,
+    "headquarters": "Minnesota and multi-state United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjuas01kqivhe76y9ulx8",
+        "managerName": "BlackRock",
+        "organizationName": "BlackRock",
+        "fundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkwnx031bivhe4yhx4v3d",
+        "date": "2011",
+        "event": "Company materials identify National Renewable Solutions' founding year as 2011.",
+        "category": "FOUNDING",
+        "sortDate": "2011-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkwok031civhevz1ikytp",
+        "date": "Aug 18, 2021",
+        "event": "National Renewable Solutions announced that BlackRock had acquired 100% of the company.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-08-18T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxppkfv08d3ivhe9n1itngr",
+        "label": "Natrs — National Renewable Solutions",
+        "url": "https://natrs.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Natrs company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxppkjh08d5ivhenxqrxdne",
+        "label": "Natrs — National Renewable Solutions",
+        "url": "https://natrs.com/about/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Natrs company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppkkg08d7ivhe39xv0u7d",
+        "label": "Investment date source — BlackRock — National Renewable Solutions",
+        "url": "https://natrs.com/wp-content/uploads/2022/04/BlackRockAcquiresNRS_PressRelease_Final.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "BlackRock initial investment / ownership",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "National Renewable Solutions",
+    "investmentFirm": "BlackRock",
+    "sector": "Power & ET",
+    "subsector": "Renewable project development",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "National Renewable Solutions is an early-stage wind and solar project development company. Its business centers on site origination, permitting, interconnection, land control, and development of utility-scale renewable projects for eventual construction or sale. The model is development-led rather than contracted utility ownership, but it remains capital-intensive because value depends on building a pipeline of viable renewable projects. Company materials identify Minnetonka, Minnesota as headquarters and describe activity across multiple US renewable markets. The company was founded in 2011 and has built a portfolio spanning wind, solar, and energy-storage opportunities. BlackRock acquired the company in 2021, and National Renewable Solutions announced that 100% of its shares had been purchased by BlackRock.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2011,
+    "investmentYear": 2021,
+    "headquarters": "Minnesota and multi-state United States",
+    "milestones": [
+      {
+        "date": "2011",
+        "event": "Company materials identify National Renewable Solutions' founding year as 2011.",
+        "category": "Founding"
+      },
+      {
+        "date": "Aug 18, 2021",
+        "event": "National Renewable Solutions announced that BlackRock had acquired 100% of the company.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Natrs — National Renewable Solutions",
+        "url": "https://natrs.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Natrs — National Renewable Solutions",
+        "url": "https://natrs.com/about/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Investment date source — BlackRock — National Renewable Solutions",
+        "url": "https://natrs.com/wp-content/uploads/2022/04/BlackRockAcquiresNRS_PressRelease_Final.pdf",
+        "type": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "BlackRock",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2021,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmsdi3s2g003i7h4s4t0s4mmh",
+        "fundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+        "managerId": "cmrxpi56u000wivhev4hy469z",
+        "updatedAt": "2026-08-03T17:26:25.240Z"
+      },
+      {
+        "id": "cmsdi3tdx003q7h4s1lmd3qs3",
+        "fundName": "BlackRock Global Renewable Power Fund III",
+        "managerId": "cmrxpi56u000wivhev4hy469z",
+        "updatedAt": "2026-08-03T17:26:26.949Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi56u000wivhev4hy469z",
+        "name": "BlackRock",
+        "updatedAt": "2026-07-23T16:09:13.926Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0148:national-renewable-solutions:2d543538",
+    "taskIndex": 148,
+    "canonicalKey": "national-renewable-solutions|united-states",
+    "capturedAt": "2026-08-23T12:05:25.118Z",
+    "databaseRevision": "revision:0be6ad9599defcce0e339c145e7359f5fb61f49055bd42e90ef6e5391699e5d0",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "3430a34328fad4aa8874e82345f51fb71e27551a8b7d07368dc915a66c9842e7",
+    "productionSnapshotSha256": "4174b413897e9073b2c9432d638415d870da834c8988a7d4fc3dbf1e0fb96e89",
+    "targetCompanySnapshotSha256": "3f9c0d92e1914590734f98fce6d7890af61f25e9adacef029821fc3434d584fb",
+    "seedEntrySha256": "67e611d13e933cc1999421776f8ce333ec72ac2e3983bf56dd3eecfe7c486755",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "741b68477cadefdd72cd4e9e263f332b7b60b91a8330c117a4cb5bf82d66b9e2",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4e9f5441d863905a9084a360f0d634ca1e298611eb1f50cfebf44d67928ead2b",
+      "organizationsSha256": "7fbbcb0226a342f0009dc42b0ec9a859965a5106254bd3e946023b716fe28cfa",
+      "citationsSha256": "96d53aebaf1ddbf78198b77ec4bdc5956fd75e21765b56a5387c39c787d4d3ac",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "611e94d6cf8613d078b5a6f55e10332b806cf3d021fa7d60f062a81782fe2634",
+    "stateSha256": "eea477d1997d83f6094fff2abb4705d22560233c5a63f18b5cc21c0596c7e198",
+    "taskSnapshotSha256": "bc763a79dd740897eab598225589c03d255a70d70b7dbe4a94c266442423d707"
+  },
+  "contextSha256": "52b7f3700b550d4206b980cb71c9da3d03738a32bac7436caac0fa32f7f17794"
+}

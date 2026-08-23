@@ -1,0 +1,382 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0150:revolution-wind-and-south-fork-wind:141c088f",
+  "taskIndex": 150,
+  "asOfDate": "2026-08-23",
+  "generatedAt": "2026-08-23T11:43:00.000Z",
+  "canonicalKey": "revolution-wind-and-south-fork-wind|united-states",
+  "companyName": "Revolution Wind & South Fork Wind",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER"
+  ],
+  "sourceHoldingIds": [
+    "048-global-infrastructure-partners:holding:012:revolution-wind-and-south-fork-wind"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Retain the paired Revolution Wind and South Fork Wind record while correcting its legal-entity boundary and complete ownership history. GIP IV Whale/designated affiliates bought Eversource's 50% interests in both project LLCs at the September 30, 2024 closing, and Skyborn manages GIP's interests. Ørsted retains the other 50% of each project. BlackRock's October 2024 acquisition of GIP was an upstream manager transaction and did not create a separate BlackRock project ownership period. South Fork is operating and Revolution began delivering power in March 2026; no later project sale or signed pending exit was found.",
+  "evidence": [
+    {
+      "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BC09E878F-0000-CA75-B0A2-F8C5D3DB3507%7D",
+      "purpose": "Regulatory ownership, vehicle and legal-entity evidence",
+      "supports": [
+        "GIP acquired Eversource's 50% interests in Revolution Wind, LLC and South Fork Wind, LLC",
+        "Ørsted retained the other 50% interests",
+        "GIP IV Whale/designated affiliates were the acquisition vehicles"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/72741/000110465924104387/tm2425236d1_ex99-1.htm",
+      "purpose": "Closing and Eversource exit evidence",
+      "supports": [
+        "Eversource completed the sale of its 50% project interests on September 30, 2024"
+      ]
+    },
+    {
+      "url": "https://www.skybornrenewables.com/articles/newsroom/skyborn_enters_us_joint_venture",
+      "purpose": "Current GIP ownership and Skyborn management evidence",
+      "supports": [
+        "Skyborn manages GIP's U.S. offshore-wind joint-venture interests",
+        "the project interests remained partnered with Ørsted"
+      ]
+    },
+    {
+      "url": "https://www.blackrock.com/corporate/newsroom/media/press-releases/blackrock-completes-acquisition-of-global-infrastructure-partners",
+      "purpose": "BlackRock-GIP parent transaction context",
+      "supports": [
+        "BlackRock completed its acquisition of GIP after the project-level closing",
+        "the manager transaction does not establish a separate BlackRock asset period"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "247028b463c04205550135972fd6438a580e3ab52463d0a2391bfc1582bc71a3",
+  "currentCompanySnapshotSha256": "8548e0a8298ecad123ffdb452d9d495736cbb664cfd5f26a85d11be1ab5e209d",
+  "executionLock": {
+    "taskSnapshotSha256": "5840090bc8fd104150228dd726c169a51af2bb19f2e8fada5de0531ed60d9fe2",
+    "taskStateSha256": "8d0f5086c0fd026e942767aebc970c62e3de9afe64f0b6c57bf40b07492fe507",
+    "taskDependencySha256": "4f353382b97530e23151963039aa34607023b80a36d84ee848380917a1e41e86",
+    "seedEntrySha256": "51a706c835fd87eb6da6071bffb80278b9687e63e19436be2406bbe165f6d8c6",
+    "dependencies": {
+      "ownershipPeriodsSha256": "16f61dfec3f601b553b0ceb261541f2a615ea3faedd9e834d0c52456a2c5a087",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "5045c84709efc16ffd1726e475842e7d47e418468f8da83dfab3f71d513140ec",
+      "organizationsSha256": "3ed7104b99c97281f3949d1c8a26a405765c8b3d846e946714e267dd538c1ffd",
+      "citationsSha256": "818ae51d88cae29c9ffdc73236cab5e33c2e10ea025543bf04bbfd414cfe8e7d",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj1bs00bvivhev1nn6jh1",
+        "fundName": "BlackRock GIF IV",
+        "managerId": "cmrxpi56u000wivhev4hy469z",
+        "updatedAt": "2026-07-23T16:09:55.576Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpij5s005aivhe70jwqccm",
+        "name": "GIP",
+        "updatedAt": "2026-07-23T16:09:32.032Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjgkv00yuivhek3goid87",
+    "name": "Revolution Wind & South Fork Wind",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Offshore wind generation",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Revolution Wind and South Fork Wind are offshore wind projects serving the Northeast U.S. power market. Their end markets are utility-scale electricity systems in Rhode Island, Connecticut, and New York that require contracted renewable generation and related transmission infrastructure. The projects follow an asset-heavy model characteristic of offshore wind, with economics tied to long-term offtake arrangements, construction execution, and operation of large-scale generation assets. South Fork Wind reached commercial operations first, while Revolution Wind has been under construction for the regional offshore market. In 2024, Eversource completed the sale of its 50% stakes in both projects to Global Infrastructure Partners’ Skyborn Renewables, leaving Ørsted and Skyborn as joint venture partners. Public disclosures reviewed do not provide a combined employee count or revenue figure for the two-project ownership structure.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Rhode Island; New York",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk2dc01xeivheu69xialw",
+        "managerName": "BlackRock",
+        "organizationName": "GIP",
+        "fundName": "BlackRock GIF IV",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpltwo045bivheu6vm8vte",
+        "date": "2019",
+        "event": "South Fork Wind and Revolution Wind advanced through major state procurement and development milestones.",
+        "category": "OTHER",
+        "sortDate": "2019-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpltx8045civhe66ldk74c",
+        "date": "2023",
+        "event": "South Fork Wind moved through final construction and commissioning phases.",
+        "category": "EXPANSION",
+        "sortDate": "2023-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpltxs045divheof61h06b",
+        "date": "Sep 30, 2024",
+        "event": "Eversource completed the sale of its 50% interests in South Fork Wind and Revolution Wind to Global Infrastructure Partners (GIP), with ownership managed through GIP portfolio company Skyborn Renewables.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-09-30T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpltyc045eivhemwqgv18d",
+        "date": "Oct 1, 2024",
+        "event": "Skyborn said it had entered the U.S. offshore wind joint venture with Ørsted after completing the 50% stake acquisition.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-10-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpr9tb0atpivhel3d8y48d",
+        "label": "Revolution Wind — Revolution Wind & South Fork Wind",
+        "url": "https://revolution-wind.com/about-revolution-wind",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Revolution Wind company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpr9u80atrivheqyoe3tps",
+        "label": "Close date source — Global Infrastructure Partners — Revolution Wind & South Fork Wind",
+        "url": "https://www.businesswire.com/news/home/20240930672791/en/Eversource-Energy-Completes-Exit-of-Offshore-Wind-Business",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Global Infrastructure Partners closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr9vg0attivhe5xz08dg2",
+        "label": "Close date source — Global Infrastructure Partners / Skyborn — Revolution Wind & South Fork Wind",
+        "url": "https://www.skybornrenewables.com/articles/newsroom/skyborn_enters_us_joint_venture",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Global Infrastructure Partners / Skyborn closing confirmation",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "8548e0a8298ecad123ffdb452d9d495736cbb664cfd5f26a85d11be1ab5e209d",
+  "afterImage": {
+    "id": "cmrxpjgkv00yuivhek3goid87",
+    "name": "Revolution Wind & South Fork Wind",
+    "aliases": [
+      "Revolution Wind, LLC",
+      "South Fork Wind, LLC",
+      "DWW Rev I, LLC",
+      "Deepwater Wind South Fork, LLC"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Offshore wind generation",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Revolution Wind & South Fork Wind is a paired manager-level record for two separate contracted U.S. offshore-wind project companies: Revolution Wind, LLC and South Fork Wind, LLC. South Fork is a 132 MW, 12-turbine project serving Long Island that entered commercial operation on March 14, 2024. Revolution is a 704 MW, 65-turbine project serving Rhode Island and Connecticut; it first delivered power on March 13, 2026 and was more than 95% complete in August 2026. GIP IV Whale/designated affiliates acquired Eversource's 50% interests in both projects on September 30, 2024, with Skyborn Renewables managing those interests. Ørsted retains the other 50% of each project, and Eversource is retained as the former 50% partner. BlackRock's acquisition of GIP closed after the project transaction and did not create a separate BlackRock ownership period. No later sale or signed pending exit was identified through August 23, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://revolution-wind.com/",
+    "yearFounded": null,
+    "headquarters": null,
+    "lastVerifiedAt": "2026-08-23T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk2dc01xeivheu69xialw",
+        "managerName": "Global Infrastructure Partners",
+        "organizationName": "GIP",
+        "fundName": null,
+        "vehicleName": "GIP IV Whale Fund Holdings, L.P. and designated affiliates",
+        "stake": "50% of each project",
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Ørsted",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Ørsted DevCo, LLC; Ørsted SF Class B Member, LLC",
+        "stake": "50% of each project since 2019",
+        "investmentYear": 2018,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Eversource Energy",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "North East Offshore, LLC; South Fork Class B Member, LLC",
+        "stake": "Former 50% of each project",
+        "investmentYear": 2019,
+        "exitYear": 2024,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpltwo045bivheu6vm8vte",
+        "date": "Feb 8, 2019",
+        "event": "Ørsted and Eversource announced a 50/50 partnership covering both Revolution Wind and South Fork Wind.",
+        "category": "FINANCING",
+        "sortDate": "2019-02-08T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BC09E878F-0000-CA75-B0A2-F8C5D3DB3507%7D"
+        ]
+      },
+      {
+        "id": "cmrxpltx8045civhe66ldk74c",
+        "date": "Mar 14, 2024",
+        "event": "South Fork Wind entered commercial operation as the first utility-scale offshore-wind project completed in U.S. federal waters.",
+        "category": "EXPANSION",
+        "sortDate": "2024-03-14T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://us.orsted.com/news-archive/2024/03/south-fork-wind-powers-up-new-era-for-american-clean-energy"
+        ]
+      },
+      {
+        "id": "cmrxpltxs045divheof61h06b",
+        "date": "Sep 30, 2024",
+        "event": "GIP IV Whale/designated affiliates completed the acquisition of Eversource's 50% interests in both projects, with Skyborn taking management of GIP's interests alongside Ørsted.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-09-30T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/72741/000110465924104387/tm2425236d1_ex99-1.htm",
+          "https://www.skybornrenewables.com/articles/newsroom/skyborn_enters_us_joint_venture",
+          "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BC09E878F-0000-CA75-B0A2-F8C5D3DB3507%7D"
+        ]
+      },
+      {
+        "id": "cmrxpltyc045eivhemwqgv18d",
+        "date": "Mar 13, 2026",
+        "event": "Revolution Wind began delivering power; by August 2026 the project was reported more than 95% complete with 61 of 65 turbines installed.",
+        "category": "EXPANSION",
+        "sortDate": "2026-03-13T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://ctmirror.org/2026/08/13/revolution-wind-completed-2026-orsted/"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpr9tb0atpivhel3d8y48d",
+        "label": "Revolution Wind — Revolution Wind & South Fork Wind",
+        "url": "https://revolution-wind.com/about-revolution-wind",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Official Revolution Wind project profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr9u80atrivheqyoe3tps",
+        "label": "Close date source — Global Infrastructure Partners — Revolution Wind & South Fork Wind",
+        "url": "https://www.businesswire.com/news/home/20240930672791/en/Eversource-Energy-Completes-Exit-of-Offshore-Wind-Business",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "September 2024 Eversource offshore-wind exit",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr9vg0attivhe5xz08dg2",
+        "label": "Close date source — Global Infrastructure Partners / Skyborn — Revolution Wind & South Fork Wind",
+        "url": "https://www.skybornrenewables.com/articles/newsroom/skyborn_enters_us_joint_venture",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "GIP acquisition close and Skyborn management role",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "New York PSC — South Fork ownership ruling",
+        "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BC09E878F-0000-CA75-B0A2-F8C5D3DB3507%7D",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Project legal entities, acquisition vehicles and 50/50 ownership structure",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "Eversource — Offshore-wind divestiture close",
+        "url": "https://www.sec.gov/Archives/edgar/data/72741/000110465924104387/tm2425236d1_ex99-1.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "September 30, 2024 closing and former Eversource interests",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "BlackRock — GIP acquisition close",
+        "url": "https://www.blackrock.com/corporate/newsroom/media/press-releases/blackrock-completes-acquisition-of-global-infrastructure-partners",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Upstream manager transaction distinguished from project ownership",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "BOEM — Renewable-energy leases",
+        "url": "https://www.boem.gov/renewable-energy/lease-and-grant-information",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Separate federal lease and project-entity boundary",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Ørsted — South Fork commercial operation",
+        "url": "https://us.orsted.com/news-archive/2024/03/south-fork-wind-powers-up-new-era-for-american-clean-energy",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "March 14, 2024 South Fork commercial-operation date and scale",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "CT Mirror — Revolution Wind 2026 update",
+        "url": "https://ctmirror.org/2026/08/13/revolution-wind-completed-2026-orsted/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Revolution first power and August 2026 construction progress",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "c94073c42bc873351c3a4d18a1be9633efe29fe14040bf2ec7c5f40b02be0708",
+  "proposalSha256": "1781e1df691354961bc1f314560d19248a6da6c6b4edf6aa5f5aa8f10c123403"
+}
