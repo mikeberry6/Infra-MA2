@@ -26,7 +26,15 @@ describe("portfolio fund attribution ledger", () => {
 
   it("leaves reviewed owners unresolved when the current vehicle is not a disclosed fund", () => {
     const unresolved = ledger.rows.filter((row) => row.attribution === "UNRESOLVED");
-    expect(unresolved).toHaveLength(7);
+    expect(unresolved).toHaveLength(8);
+    expect(unresolved).toContainEqual(expect.objectContaining({
+      companyName: "Environmental 360 Solutions",
+      investmentFirm: "Donato Ardellini",
+      currentVehicleName: "Donato Ardellini",
+      attributedFundName: null,
+      targetLinkedFundName: null,
+      proposedAction: "RESEARCH_REQUIRED",
+    }));
     expect(unresolved).toContainEqual(expect.objectContaining({
       companyName: "Edwards Sanborn Solar + Storage",
       investmentFirm: "Axium Infrastructure",

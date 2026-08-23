@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-23T07:55:00.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-08-23T08:43:30.000Z",
+  "activeBatchId": "batch-0136-0140-v1",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -295,7 +295,55 @@
           "reason": null
         }
       ]
+    },
+    {
+      "batchId": "batch-0136-0140-v1",
+      "state": "READY",
+      "taskIds": [
+        "ledger:0136:cleancapital-holdings-llc:f7156fe1",
+        "ledger:0137:clearway-energy-group:fb84d1ab",
+        "ledger:0138:conexon:5a11e528",
+        "ledger:0139:electrada:10ae1f7f",
+        "ledger:0140:environmental-360-solutions:28da2905"
+      ],
+      "taskIndexes": [
+        136,
+        137,
+        138,
+        139,
+        140
+      ],
+      "createdAt": "2026-08-23T08:02:00.000Z",
+      "updatedAt": "2026-08-23T08:43:30.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0136-0140-v1/batch-manifest.json",
+        "sha256": "bc9f12bbf81487ce5f58439fb40000b64abc98660e65a293755b4efb63e52e43"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-23T08:02:00.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-23T08:43:30.000Z",
+          "evidenceSha256": [
+            "bc9f12bbf81487ce5f58439fb40000b64abc98660e65a293755b4efb63e52e43"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "6fb127ca63a263d2b82907ab48f093f68f84d5ba035b17c790bc2b68d0d96ced"
+  "ledgerSha256": "96e606b1785fdab89de452e1498d1a958534e4fe9b43c3340bfad78eeacbe1fa"
 }

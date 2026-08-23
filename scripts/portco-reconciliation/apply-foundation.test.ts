@@ -51,7 +51,9 @@ describe("approved ownership organization provisioning", () => {
   it("classifies newly approved fund managers and corporate retained owners deterministically", () => {
     expect(ownershipOrganizationTypes("AgeCare")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("BC Partners")).toEqual(["FUND_MANAGER"]);
+    expect(ownershipOrganizationTypes("Canadian Business Growth Fund")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("Cox Enterprises")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("Donato Ardellini")).toEqual(["OTHER"]);
     expect(ownershipOrganizationTypes("Energy Transfer LP")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("ePointZero")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Extendicare Inc.")).toEqual(["CORPORATE"]);
@@ -62,15 +64,19 @@ describe("approved ownership organization provisioning", () => {
     expect(ownershipOrganizationTypes("Kinder Morgan, Inc.")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("MGX")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("Ocean Winds")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("OPTrust")).toEqual(["PENSION"]);
     expect(ownershipOrganizationTypes("PUC Inc.")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Revera Inc.")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("TotalEnergies")).toEqual(["CORPORATE"]);
   });
 
   it("provisions only exact approved missing owner organizations during the protected apply phase", async () => {
     for (const [name, type] of [
       ["AgeCare", "CORPORATE"],
       ["BC Partners", "FUND_MANAGER"],
+      ["Canadian Business Growth Fund", "FUND_MANAGER"],
       ["Cox Enterprises", "CORPORATE"],
+      ["Donato Ardellini", "OTHER"],
       ["Energy Transfer LP", "CORPORATE"],
       ["ePointZero", "CORPORATE"],
       ["Extendicare Inc.", "CORPORATE"],
@@ -81,8 +87,10 @@ describe("approved ownership organization provisioning", () => {
       ["Kinder Morgan, Inc.", "CORPORATE"],
       ["MGX", "FUND_MANAGER"],
       ["Ocean Winds", "CORPORATE"],
+      ["OPTrust", "PENSION"],
       ["PUC Inc.", "CORPORATE"],
       ["Revera Inc.", "CORPORATE"],
+      ["TotalEnergies", "CORPORATE"],
     ] as const) {
       const create = vi.fn().mockResolvedValue({
         id: `org-${name}`,
