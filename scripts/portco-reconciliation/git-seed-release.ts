@@ -15,7 +15,10 @@ async function git(cwd: string, args: string[]): Promise<string> {
   const result = await execFileAsync("git", args, {
     cwd,
     encoding: "utf8",
-    maxBuffer: 2_000_000,
+    // Approved after-image overlays grow monotonically and have crossed 2 MB.
+    // Leave ample headroom so `git show` can hash the committed artifact rather
+    // than being misclassified as missing when Node's stdout buffer fills.
+    maxBuffer: 32_000_000,
   });
   return result.stdout.trim();
 }

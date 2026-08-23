@@ -3,7 +3,7 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-23T15:30:35Z",
+  "updatedAt": "2026-08-23T15:37:55Z",
   "activeBatchId": "batch-0157-0161-v1",
   "batches": [
     {
@@ -900,7 +900,7 @@
     },
     {
       "batchId": "batch-0157-0161-v1",
-      "state": "READY",
+      "state": "APPLYING",
       "taskIds": [
         "ledger:0157:advanced-cooling-technologies-act:3ea176a7",
         "ledger:0158:arlington-industries:c7b020cc",
@@ -916,13 +916,13 @@
         161
       ],
       "createdAt": "2026-08-23T15:02:14Z",
-      "updatedAt": "2026-08-23T15:30:35Z",
+      "updatedAt": "2026-08-23T15:37:55Z",
       "completedAt": null,
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0157-0161-v1/batch-manifest.json",
         "sha256": "fb2ed49e613bc9d4711d647615e4cb55840f16591725e708e643a70a56cc92f6"
       },
-      "releaseSha": null,
+      "releaseSha": "86b36b34138cf717efe652b5cef692cd1486e85d",
       "receipt": null,
       "reason": null,
       "history": [
@@ -943,9 +943,29 @@
             "fb2ed49e613bc9d4711d647615e4cb55840f16591725e708e643a70a56cc92f6"
           ],
           "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "RELEASING",
+          "at": "2026-08-23T15:37:55Z",
+          "evidenceSha256": [
+            "fb2ed49e613bc9d4711d647615e4cb55840f16591725e708e643a70a56cc92f6"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 4,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-08-23T15:37:55Z",
+          "evidenceSha256": [
+            "fb2ed49e613bc9d4711d647615e4cb55840f16591725e708e643a70a56cc92f6"
+          ],
+          "reason": null
         }
       ]
     }
   ],
-  "ledgerSha256": "5670712a43b23fb10c840be18b857fab7e134d353f61f254dda340f3fb5899f7"
+  "ledgerSha256": "047a614a65e2a51e5acb9400c7c5474cb2589a1d74f6d12e85b388d56fed0e03"
 }
