@@ -3,7 +3,7 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-23T08:43:30.000Z",
+  "updatedAt": "2026-08-23T09:00:12.000Z",
   "activeBatchId": "batch-0136-0140-v1",
   "batches": [
     {
@@ -298,7 +298,7 @@
     },
     {
       "batchId": "batch-0136-0140-v1",
-      "state": "READY",
+      "state": "VERIFYING_FAILED",
       "taskIds": [
         "ledger:0136:cleancapital-holdings-llc:f7156fe1",
         "ledger:0137:clearway-energy-group:fb84d1ab",
@@ -314,15 +314,18 @@
         140
       ],
       "createdAt": "2026-08-23T08:02:00.000Z",
-      "updatedAt": "2026-08-23T08:43:30.000Z",
+      "updatedAt": "2026-08-23T09:00:12.000Z",
       "completedAt": null,
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0136-0140-v1/batch-manifest.json",
         "sha256": "bc9f12bbf81487ce5f58439fb40000b64abc98660e65a293755b4efb63e52e43"
       },
-      "releaseSha": null,
-      "receipt": null,
-      "reason": null,
+      "releaseSha": "7462162af603d7b10ca2663a61a4d7deac2a5e07",
+      "receipt": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0136-0140-v1/production-apply/batch-apply-receipt.json",
+        "sha256": "c6d349f4781ddf5ef54af97c667af9d010b1cda7dfa0e51d1df2b5431ba724cf"
+      },
+      "reason": "Rendered production verification found stale OwnershipPeriod fund-attribution metadata on CleanCapital former BlackRock, Clearway former GIP, Electrada former BlackRock, and E360S current BlackRock rows; ownership after-images and atomic transaction are correct, but false inferred fund labels must be corrected before completion.",
       "history": [
         {
           "sequence": 1,
@@ -341,9 +344,51 @@
             "bc9f12bbf81487ce5f58439fb40000b64abc98660e65a293755b4efb63e52e43"
           ],
           "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "RELEASING",
+          "at": "2026-08-23T08:51:11.000Z",
+          "evidenceSha256": [
+            "bc9f12bbf81487ce5f58439fb40000b64abc98660e65a293755b4efb63e52e43"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 4,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-08-23T08:51:28.000Z",
+          "evidenceSha256": [
+            "bc9f12bbf81487ce5f58439fb40000b64abc98660e65a293755b4efb63e52e43"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 5,
+          "from": "APPLYING",
+          "to": "VERIFYING",
+          "at": "2026-08-23T08:55:52.000Z",
+          "evidenceSha256": [
+            "bc9f12bbf81487ce5f58439fb40000b64abc98660e65a293755b4efb63e52e43",
+            "c6d349f4781ddf5ef54af97c667af9d010b1cda7dfa0e51d1df2b5431ba724cf"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 6,
+          "from": "VERIFYING",
+          "to": "VERIFYING_FAILED",
+          "at": "2026-08-23T09:00:12.000Z",
+          "evidenceSha256": [
+            "bc9f12bbf81487ce5f58439fb40000b64abc98660e65a293755b4efb63e52e43",
+            "c6d349f4781ddf5ef54af97c667af9d010b1cda7dfa0e51d1df2b5431ba724cf"
+          ],
+          "reason": "Rendered production verification found stale OwnershipPeriod fund-attribution metadata on CleanCapital former BlackRock, Clearway former GIP, Electrada former BlackRock, and E360S current BlackRock rows; ownership after-images and atomic transaction are correct, but false inferred fund labels must be corrected before completion."
         }
       ]
     }
   ],
-  "ledgerSha256": "96e606b1785fdab89de452e1498d1a958534e4fe9b43c3340bfad78eeacbe1fa"
+  "ledgerSha256": "c6bd1636320f88dd1a7c9108be0cec10aed74411432c8d5eec12a6d720e23ad9"
 }

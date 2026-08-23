@@ -15,6 +15,7 @@ function reviewedManifest(mutation: {
   databaseVehicleName: string | null;
   investmentYear: number | null;
   stake: string | null;
+  expectedIsActive?: boolean;
   targetLinkedFundName: string | null;
   expected: {
     fundAttribution: "DISCLOSED" | "INFERRED" | "DIRECT_PROGRAM" | "UNRESOLVED";
@@ -152,6 +153,116 @@ describe("portfolio fund attribution observation", () => {
     const observed = await observeManifest(tx as never, manifest);
     expect(tx.fund.findMany).not.toHaveBeenCalled();
     expect(observed[0]).toMatchObject({ targetFundId: null, state: "PENDING" });
+  });
+
+  it("supports a snapshot-bound former ownership row when explicitly requested", async () => {
+    const manifest = reviewedManifest({
+      recordId: "OFA-FORMER",
+      ownershipPeriodId: "owner-former",
+      companyName: "Former PortCo",
+      country: "United States",
+      investmentFirm: "Example Manager",
+      currentVehicleName: "Example direct program",
+      databaseVehicleName: "Example direct program",
+      investmentYear: 2019,
+      stake: "Former investment",
+      expectedIsActive: false,
+      targetLinkedFundName: null,
+      expected: { fundAttribution: "INFERRED", currentLinkedFundName: null },
+      set: {
+        fundAttribution: "DIRECT_PROGRAM",
+        attributedFundName: null,
+        attributionConfidence: null,
+        attributionRationale: "The reviewed sources support a direct program but do not name a fund.",
+      },
+      evidenceUrls: ["https://example.com/former-owner"],
+    });
+    const tx = {
+      ownershipPeriod: { findMany: vi.fn().mockResolvedValue([period({
+        id: "owner-former",
+        vehicleName: "Example direct program",
+        investmentYear: 2019,
+        stake: "Former investment",
+        isActive: false,
+        fundAttribution: "INFERRED",
+        attributedFundName: "Unsupported Fund",
+        attributionConfidence: "LOW",
+        organization: { name: "Example Manager" },
+        company: { id: "company-former", name: "Former PortCo", country: "United States" },
+      })]) },
+      fund: { findMany: vi.fn() },
+    };
+
+    const observed = await observeManifest(tx as never, manifest);
+    expect(observed).toHaveLength(1);
+    expect(observed[0]).toMatchObject({ ownershipPeriodId: "owner-former", state: "PENDING" });
+  });
+
+  it("rejects a former ownership row when the manifest expects an active row", async () => {
+    const manifest = reviewedManifest({
+      recordId: "OFA-LEGACY-ACTIVE",
+      ownershipPeriodId: "owner-former",
+      companyName: "Former PortCo",
+      country: "United States",
+      investmentFirm: "Example Manager",
+      currentVehicleName: "Example direct program",
+      databaseVehicleName: "Example direct program",
+      investmentYear: 2019,
+      stake: "Former investment",
+      targetLinkedFundName: null,
+      expected: { fundAttribution: "INFERRED", currentLinkedFundName: null },
+      set: {
+        fundAttribution: "DIRECT_PROGRAM",
+        attributedFundName: null,
+        attributionConfidence: null,
+        attributionRationale: "The reviewed sources support a direct program but do not name a fund.",
+      },
+      evidenceUrls: ["https://example.com/former-owner"],
+    });
+    const tx = {
+      ownershipPeriod: { findMany: vi.fn().mockResolvedValue([period({
+        id: "owner-former",
+        vehicleName: "Example direct program",
+        investmentYear: 2019,
+        stake: "Former investment",
+        isActive: false,
+        organization: { name: "Example Manager" },
+        company: { id: "company-former", name: "Former PortCo", country: "United States" },
+      })]) },
+      fund: { findMany: vi.fn() },
+    };
+
+    await expect(observeManifest(tx as never, manifest)).rejects.toThrow(/expected active ownership period/);
+  });
+
+  it("rejects an active ownership row when the manifest explicitly expects a former row", async () => {
+    const manifest = reviewedManifest({
+      recordId: "OFA-FORMER-MISMATCH",
+      ownershipPeriodId: "owner-active",
+      companyName: "Vantage Data Centers",
+      country: "United States / Canada",
+      investmentFirm: "DigitalBridge",
+      currentVehicleName: "n.a.",
+      databaseVehicleName: "n.a.",
+      investmentYear: 2024,
+      stake: "Lead investor",
+      expectedIsActive: false,
+      targetLinkedFundName: null,
+      expected: { fundAttribution: "UNRESOLVED", currentLinkedFundName: null },
+      set: {
+        fundAttribution: "DIRECT_PROGRAM",
+        attributedFundName: null,
+        attributionConfidence: null,
+        attributionRationale: "Reviewed direct program attribution.",
+      },
+      evidenceUrls: ["https://example.com/active-owner"],
+    });
+    const tx = {
+      ownershipPeriod: { findMany: vi.fn().mockResolvedValue([period({ id: "owner-active" })]) },
+      fund: { findMany: vi.fn() },
+    };
+
+    await expect(observeManifest(tx as never, manifest)).rejects.toThrow(/expected former ownership period/);
   });
 
   it("applies pending rows with one guarded bulk update", async () => {

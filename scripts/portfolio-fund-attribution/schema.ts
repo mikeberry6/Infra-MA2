@@ -16,6 +16,7 @@ export const attributionMutationSchema = z.strictObject({
   databaseVehicleName: nonEmpty.nullable(),
   investmentYear: z.number().int().min(1900).max(2200).nullable(),
   stake: nonEmpty.nullable(),
+  expectedIsActive: z.boolean().optional(),
   targetLinkedFundName: nonEmpty.nullable(),
   expected: z.strictObject({
     fundAttribution: attribution,
