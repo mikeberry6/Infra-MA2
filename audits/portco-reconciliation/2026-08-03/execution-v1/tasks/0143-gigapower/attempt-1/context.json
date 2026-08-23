@@ -1,0 +1,239 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0143:gigapower:24d5d5d3",
+  "taskIndex": 143,
+  "companyName": "Gigapower",
+  "generatedAt": "2026-08-23T09:38:31.933Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0143-gigapower/attempt-1/production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 143,
+    "taskId": "ledger:0143:gigapower:24d5d5d3",
+    "canonicalKey": "gigapower|united-states",
+    "companyName": "Gigapower",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 23,
+    "managers": [
+      "BlackRock",
+      "Global Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "023-blackrock:holding:002:gigapower"
+    ],
+    "sourceRepoOnlyIds": [
+      "048-global-infrastructure-partners:repo-only:008:gigapower"
+    ],
+    "productionCompanyIds": [
+      "cmrxpj8xk00n5ivhezp5xja2f"
+    ],
+    "seedKeys": [
+      "gigapower|United States"
+    ],
+    "evidenceUrls": [
+      "https://about.att.com/story/2023/gigapower.html"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Global Infrastructure Partners MATCHED_ELSEWHERE: Attributable to legacy BlackRock infrastructure vehicles, not GIP",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj8xk00n5ivhezp5xja2f",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "gigapower|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpj8xk00n5ivhezp5xja2f",
+    "name": "Gigapower",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Open-access fiber broadband",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Gigapower is a wholesale open-access fiber broadband platform formed by AT&T and BlackRock. The business builds, owns, and operates fiber networks that internet service providers can use to serve end customers, rather than selling only through a single captive retail brand. Its operating model is asset-heavy because value is tied to owned fiber infrastructure and recurring wholesale network revenues. AT&T's launch materials described plans to deploy multi-gig fiber in markets beyond AT&T's traditional footprint, and later reporting referenced operations across multiple states. The company launched in 2023 and has been building an open-access broadband footprint in the United States. AT&T and BlackRock announced the joint venture in 2022 and launched Gigapower in 2023, but public sources do not disclose the partners' percentage ownership.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2023,
+    "headquarters": "Multiple U.S. states",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpju8701klivhews3qe3yr",
+        "managerName": "BlackRock",
+        "organizationName": "BlackRock",
+        "fundName": null,
+        "vehicleName": "Diversified Infrastructure",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkwbb030xivhecrh2g6hu",
+        "date": "Dec 23, 2022",
+        "event": "AT&T and BlackRock signed a definitive agreement to form the Gigapower joint venture.",
+        "category": "FINANCING",
+        "sortDate": "2022-12-23T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkwbw030yivhepvh4ep6u",
+        "date": "May 11, 2023",
+        "event": "AT&T and BlackRock closed the Gigapower joint venture and launched the open-access fiber platform.",
+        "category": "FINANCING",
+        "sortDate": "2023-05-11T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxppjwn08c8ivheijk0clpi",
+        "label": "Gigapower — Gigapower",
+        "url": "https://www.gigapower.com/about-us",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Gigapower company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxppjxs08caivheza4x8wik",
+        "label": "Close date source — BlackRock — Gigapower",
+        "url": "https://about.att.com/story/2023/gigapower.html",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "BlackRock closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppjyu08ccivheto4x3n66",
+        "label": "Announcement date source — BlackRock — Gigapower",
+        "url": "https://www.businesswire.com/news/home/20221223005039/en/ATT-and-BlackRock-to-Form-Gigapower-Joint-Venture-A-Wholesale-Fiber-Services-Provider",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "BlackRock transaction announcement",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Gigapower",
+    "investmentFirm": "BlackRock",
+    "sector": "Digital",
+    "subsector": "Open-access fiber broadband",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Diversified Infrastructure",
+    "description": "Gigapower is a wholesale open-access fiber broadband platform formed by AT&T and BlackRock. The business builds, owns, and operates fiber networks that internet service providers can use to serve end customers, rather than selling only through a single captive retail brand. Its operating model is asset-heavy because value is tied to owned fiber infrastructure and recurring wholesale network revenues. AT&T's launch materials described plans to deploy multi-gig fiber in markets beyond AT&T's traditional footprint, and later reporting referenced operations across multiple states. The company launched in 2023 and has been building an open-access broadband footprint in the United States. AT&T and BlackRock announced the joint venture in 2022 and launched Gigapower in 2023, but public sources do not disclose the partners' percentage ownership.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2023,
+    "investmentYear": 2023,
+    "headquarters": "Multiple U.S. states",
+    "milestones": [
+      {
+        "date": "Dec 23, 2022",
+        "event": "AT&T and BlackRock signed a definitive agreement to form the Gigapower joint venture.",
+        "category": "Financing"
+      },
+      {
+        "date": "May 11, 2023",
+        "event": "AT&T and BlackRock closed the Gigapower joint venture and launched the open-access fiber platform.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Gigapower — Gigapower",
+        "url": "https://www.gigapower.com/about-us",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Close date source — BlackRock — Gigapower",
+        "url": "https://about.att.com/story/2023/gigapower.html",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Announcement date source — BlackRock — Gigapower",
+        "url": "https://www.businesswire.com/news/home/20221223005039/en/ATT-and-BlackRock-to-Form-Gigapower-Joint-Venture-A-Wholesale-Fiber-Services-Provider",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "BlackRock",
+        "ownershipVehicle": "Diversified Infrastructure",
+        "investmentYear": 2023,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi56u000wivhev4hy469z",
+        "name": "BlackRock",
+        "updatedAt": "2026-07-23T16:09:13.926Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0143:gigapower:24d5d5d3",
+    "taskIndex": 143,
+    "canonicalKey": "gigapower|united-states",
+    "capturedAt": "2026-08-23T09:38:31.933Z",
+    "databaseRevision": "revision:a41430c21d572e734c87c03ce88270a933396920b1166dce182f8ff0007320a7",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "6fdf592cdd4f2f940e9248a8bb315498f9dc2a03f36334353a479565c31975d5",
+    "productionSnapshotSha256": "dea6adc5e527d6e53b2d36e74b853bac3789d5cf7671dd48b658b8a09f1e1b64",
+    "targetCompanySnapshotSha256": "55c881d5841f28156f5d6549bd2e2ede6c6022da4fd0065af5d76a7be7ee4002",
+    "seedEntrySha256": "e2aea3b118bf7c9bf1f53da563a2f6158077a7e610e9a8319c746451d06f95a6",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4779a1c3009276aaf3af2ff45a9910699bb0863fbfc6072986f0c3a4af4466dc",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "7fbbcb0226a342f0009dc42b0ec9a859965a5106254bd3e946023b716fe28cfa",
+      "citationsSha256": "edc589dd28d43a9e5620d09cb729261830e83ef4b4b96298b1e0fdb3b9d7b074",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "0e1475fcc449f00e8513d83efe9631c3561998ebb0442a73d1d29fa9835c9a63",
+    "stateSha256": "e24d372319e01e52b0d94bbcd9684da11f4a322da946a7299c4c2f7f9ae7f904",
+    "taskSnapshotSha256": "ac02850aebda4c5a838cb04832a6a4a2931a4312bb775ff0e5b9b61b634f8c5d"
+  },
+  "contextSha256": "d824789f692fca4a10ea722414029b2bdfdb80371bd6402cf09f2744b911391c"
+}

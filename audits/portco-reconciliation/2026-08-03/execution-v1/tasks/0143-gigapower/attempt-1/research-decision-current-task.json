@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RESEARCH_DECISION_IDENTITY_REBINDING",
+  "taskId": "ledger:0143:gigapower:24d5d5d3",
+  "taskIndex": 143,
+  "companyName": "Gigapower",
+  "asOfDate": "2026-08-19",
+  "researchOnly": true,
+  "mutationAuthorized": false,
+  "identityRebinding": {
+    "originalPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0143-gigapower/attempt-1/research-decision.json",
+    "originalByteSha256": "cb009b6d15420580b5a50fae4fe686f0a49c3e81b994fbd07a21473a159c3bf3",
+    "originalTaskId": "ledger:0143:gigapower:91c4149b",
+    "reason": "The imported immutable research artifact predates the normalized current source-task suffix. Company, task index, accepted transcript, evidence and research result are unchanged; only the current manifest task identifier is rebound for authorization."
+  },
+  "result": {
+    "decision": "PROPOSED_MERGE",
+    "rationale": "One Gigapower record is warranted. The 2023 interest entered through legacy BlackRock vehicle BGIF IV Neon Acquisition LP. Current company materials call the fund GIP-managed after BlackRock acquired GIP, but no reviewed source shows a new vehicle or economic-owner transfer. Merge the GIP source without a second ownership period; preserve BlackRock entry provenance and note GIP as current manager context.",
+    "evidence": [
+      {
+        "url": "https://dms.psc.sc.gov/Attachments/Matter/65e6a0be-d1d8-4be5-b502-64cab3497284",
+        "purpose": "Identity, ownership percentages and disclosed vehicles"
+      },
+      {
+        "url": "https://www.businesswire.com/news/home/20221223005039/en/ATT-and-BlackRock-to-Form-Gigapower-Joint-Venture-A-Wholesale-Fiber-Services-Provider",
+        "purpose": "Definitive joint-venture announcement"
+      },
+      {
+        "url": "https://about.att.com/story/2023/gigapower.html",
+        "purpose": "Closing and launch confirmation"
+      },
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271726000120/t-20251231.htm",
+        "purpose": "Current AT&T stake confirmation"
+      },
+      {
+        "url": "https://www.blackrock.com/corporate/newsroom/media/press-releases/blackrock-completes-acquisition-of-global-infrastructure-partners",
+        "purpose": "BlackRock-GIP manager-level context"
+      },
+      {
+        "url": "https://www.businesswire.com/news/home/20260602690771/en/Gigapower-Appoints-Jonathan-Mullen-as-Chief-Administrative-Officer-and-General-Counsel",
+        "purpose": "Current company and GIP-manager context"
+      },
+      {
+        "url": "https://www.businesswire.com/news/home/20250828592914/en/Gigapower-Accelerates-High-Speed-Broadband-Fiber-Network-Deployment-with-Expansion-Across-Six-States",
+        "purpose": "Operating footprint and scale"
+      }
+    ]
+  }
+}

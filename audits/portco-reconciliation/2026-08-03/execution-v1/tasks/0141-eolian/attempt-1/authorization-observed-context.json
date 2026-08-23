@@ -1,0 +1,239 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0141:eolian:ae9eb0a5",
+  "taskIndex": 141,
+  "companyName": "Eolian",
+  "generatedAt": "2026-08-23T10:02:28.804Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0141-eolian/attempt-1/authorization-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 141,
+    "taskId": "ledger:0141:eolian:ae9eb0a5",
+    "canonicalKey": "eolian|united-states",
+    "companyName": "Eolian",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 23,
+    "managers": [
+      "BlackRock",
+      "Global Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "048-global-infrastructure-partners:holding:006:eolian"
+    ],
+    "sourceRepoOnlyIds": [
+      "023-blackrock:repo-only:006:eolian"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjgka00ytivhen28z6djw"
+    ],
+    "seedKeys": [
+      "eolian|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.eolianenergy.com/",
+      "https://www.eolianenergy.com/press/global-infrastructure-partners-announces-acquisition-of-map-energys-renewable-energy-business"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: BlackRock MATCHED_ELSEWHERE: GIP renewable development platform; not a legacy BlackRock direct holding.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjgka00ytivhen28z6djw",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "eolian|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjgka00ytivhen28z6djw",
+    "name": "Eolian",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Renewable project development and battery storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Eolian develops, owns, and operates renewable-energy and battery-storage projects in the United States. Its counterparties include utilities, power-market participants, and infrastructure partners seeking utility-scale storage and renewable capacity. The platform uses an asset-heavy model focused on project development, ownership, and long-duration operating assets rather than an advisory or service-only approach. Public materials indicate that GIP acquired MAP Energy’s renewable-energy business in 2020 and used that acquisition to establish the Eolian platform, which later consolidated the remaining interests in the Able Grid joint venture. The company’s footprint is multi-state, but the sources reviewed do not disclose revenue, employee count, or a single current portfolio-capacity figure for the overall platform. Eolian remains part of GIP’s renewable-power portfolio.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Multi-state U.S. operations",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk2ct01xdivheok0jco5h",
+        "managerName": "GIP",
+        "organizationName": "GIP",
+        "fundName": null,
+        "vehicleName": "GIP IV",
+        "stake": null,
+        "investmentYear": 2020,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpltv00459ivhe8y1ufybq",
+        "date": "Dec 29, 2020",
+        "event": "Global Infrastructure Partners (GIP) announced the acquisition of MAP Energy's renewable-energy business to form Eolian.",
+        "category": "ACQUISITION",
+        "sortDate": "2020-12-29T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpltvk045aivhecrwo2esn",
+        "date": "Dec 23, 2021",
+        "event": "Eolian acquired the remaining ownership interests in Able Grid Energy Solutions.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-12-23T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpr9p50atjivhekkj1lpq3",
+        "label": "Eolianenergy — Eolian",
+        "url": "https://www.eolianenergy.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Eolianenergy company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpr9q30atlivheiryo6qwn",
+        "label": "Announcement date source — Global Infrastructure Partners — Eolian",
+        "url": "https://www.eolianenergy.com/press/global-infrastructure-partners-announces-acquisition-of-map-energys-renewable-energy-business",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Global Infrastructure Partners transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr9s90atnivheocn4yeik",
+        "label": "Eolianenergy — Eolian",
+        "url": "https://www.eolianenergy.com/press/eolian-acquires-remaining-ownership-interests-in-able-grid-energy-solutions",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Eolianenergy transaction or milestone detail",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Eolian",
+    "investmentFirm": "Global Infrastructure Partners",
+    "sector": "Power & ET",
+    "subsector": "Renewable project development and battery storage",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "GIP IV",
+    "description": "Eolian develops, owns, and operates renewable-energy and battery-storage projects in the United States. Its counterparties include utilities, power-market participants, and infrastructure partners seeking utility-scale storage and renewable capacity. The platform uses an asset-heavy model focused on project development, ownership, and long-duration operating assets rather than an advisory or service-only approach. Public materials indicate that GIP acquired MAP Energy’s renewable-energy business in 2020 and used that acquisition to establish the Eolian platform, which later consolidated the remaining interests in the Able Grid joint venture. The company’s footprint is multi-state, but the sources reviewed do not disclose revenue, employee count, or a single current portfolio-capacity figure for the overall platform. Eolian remains part of GIP’s renewable-power portfolio.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2020,
+    "headquarters": "Multi-state U.S. operations",
+    "milestones": [
+      {
+        "date": "Dec 29, 2020",
+        "event": "Global Infrastructure Partners (GIP) announced the acquisition of MAP Energy's renewable-energy business to form Eolian.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Dec 23, 2021",
+        "event": "Eolian acquired the remaining ownership interests in Able Grid Energy Solutions.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Eolianenergy — Eolian",
+        "url": "https://www.eolianenergy.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Announcement date source — Global Infrastructure Partners — Eolian",
+        "url": "https://www.eolianenergy.com/press/global-infrastructure-partners-announces-acquisition-of-map-energys-renewable-energy-business",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Eolianenergy — Eolian",
+        "url": "https://www.eolianenergy.com/press/eolian-acquires-remaining-ownership-interests-in-able-grid-energy-solutions",
+        "type": "ARTICLE",
+        "purpose": "MILESTONE_EVENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Global Infrastructure Partners",
+        "ownershipVehicle": "GIP IV",
+        "investmentYear": 2020,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpij5s005aivhe70jwqccm",
+        "name": "GIP",
+        "updatedAt": "2026-07-23T16:09:32.032Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0141:eolian:ae9eb0a5",
+    "taskIndex": 141,
+    "canonicalKey": "eolian|united-states",
+    "capturedAt": "2026-08-23T10:02:28.804Z",
+    "databaseRevision": "revision:ad33267ccf4ae81bd6756d9a060524107566d1669bc015fb5f5d1b8643777ff0",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "88b5d78457b5b4a2561a1e68ce9db887fca105f7b4d4f7f9989d6517fe1b1aed",
+    "productionSnapshotSha256": "905883efa1422641367b84a61e464293f6e99bc7edc5f4fe5cff30ef090ef51b",
+    "targetCompanySnapshotSha256": "fad9b06cc85d5919bb20c94c7b04872f4c3c37dbf2802e1569348b346d71fdba",
+    "seedEntrySha256": "fad9d4adc24d34f216a542cf2dfbaf48cec19f7b0f0af555ff4cc22c662f2a43",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "9e9f089dd8667066991e48891158a9c34a646bb20065363e46d0fa1114c1c68d",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "3ed7104b99c97281f3949d1c8a26a405765c8b3d846e946714e267dd538c1ffd",
+      "citationsSha256": "a22e0783762e3d0fe8097e4703b2daffa570637a408a1237c26b4f3b0626c897",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "d4d7f1fe07da33e03232e3534c04a3c13ad9c6613d195e94eb5de9c701781f92",
+    "stateSha256": "2b8109e3dabbf66efafa0887706af91b30102ff591991d261534b2ba8a7b47af",
+    "taskSnapshotSha256": "f2e22503cdab7f69b9f451a8fbd1736fe27b6383ad4782de70fe5b13119ce9bb"
+  },
+  "contextSha256": "3518fdfbb0b617a9f354a204956b3428646ddc9e544e9c2216f08a3ee2d46cbe"
+}

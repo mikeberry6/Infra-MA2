@@ -1,0 +1,325 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0143:gigapower:24d5d5d3",
+  "taskIndex": 143,
+  "asOfDate": "2026-08-23",
+  "generatedAt": "2026-08-23T10:07:00.000Z",
+  "canonicalKey": "gigapower|united-states",
+  "companyName": "Gigapower",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER"
+  ],
+  "sourceHoldingIds": [
+    "023-blackrock:holding:002:gigapower"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Retain one Gigapower record, add AT&T as the missing 50% co-owner and correct the BlackRock-origin ownership period to the disclosed BGIF IV Neon Acquisition LP vehicle and 50% stake. Regulatory evidence identifies Gigapower, LLC and its predecessor, shows the two partners' aggregate 50/50 ownership and provides the holding vehicles. The joint venture closed and launched in May 2023. Current filings and company releases show continued AT&T ownership and operations. BlackRock's acquisition of the GIP manager did not establish a second GIP economic ownership period, so GIP remains manager context only.",
+  "evidence": [
+    {
+      "url": "https://dms.psc.sc.gov/Attachments/Matter/65e6a0be-d1d8-4be5-b502-64cab3497284",
+      "purpose": "Regulatory identity, stake and vehicle evidence",
+      "supports": [
+        "Gigapower, LLC is the successor name of Infrastructure Endeavors, LLC",
+        "AT&T-related vehicles and BGIF IV Neon Acquisition LP hold aggregate 50% interests each"
+      ]
+    },
+    {
+      "url": "https://about.att.com/story/2023/gigapower.html",
+      "purpose": "Closing and launch evidence",
+      "supports": [
+        "AT&T and BlackRock closed the joint venture on May 11, 2023",
+        "Gigapower launched as a wholesale open-access fiber platform"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271726000120/t-20251231.htm",
+      "purpose": "Current AT&T ownership evidence",
+      "supports": [
+        "AT&T continued to report its 50% Gigapower ownership in its 2025 Form 10-K"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "b17c725d5ca1fa59ab4aa122be14d485fb63595eaa62017b369964919cb19986",
+  "currentCompanySnapshotSha256": "55c881d5841f28156f5d6549bd2e2ede6c6022da4fd0065af5d76a7be7ee4002",
+  "executionLock": {
+    "taskSnapshotSha256": "6cf0d0e06e66eec63780827281e7932dad56c346365cbc886e2443dfa1e7321d",
+    "taskStateSha256": "e24d372319e01e52b0d94bbcd9684da11f4a322da946a7299c4c2f7f9ae7f904",
+    "taskDependencySha256": "0e1475fcc449f00e8513d83efe9631c3561998ebb0442a73d1d29fa9835c9a63",
+    "seedEntrySha256": "e2aea3b118bf7c9bf1f53da563a2f6158077a7e610e9a8319c746451d06f95a6",
+    "dependencies": {
+      "ownershipPeriodsSha256": "4779a1c3009276aaf3af2ff45a9910699bb0863fbfc6072986f0c3a4af4466dc",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "7fbbcb0226a342f0009dc42b0ec9a859965a5106254bd3e946023b716fe28cfa",
+      "citationsSha256": "edc589dd28d43a9e5620d09cb729261830e83ef4b4b96298b1e0fdb3b9d7b074",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi56u000wivhev4hy469z",
+        "name": "BlackRock",
+        "updatedAt": "2026-07-23T16:09:13.926Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpj8xk00n5ivhezp5xja2f",
+    "name": "Gigapower",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Open-access fiber broadband",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Gigapower is a wholesale open-access fiber broadband platform formed by AT&T and BlackRock. The business builds, owns, and operates fiber networks that internet service providers can use to serve end customers, rather than selling only through a single captive retail brand. Its operating model is asset-heavy because value is tied to owned fiber infrastructure and recurring wholesale network revenues. AT&T's launch materials described plans to deploy multi-gig fiber in markets beyond AT&T's traditional footprint, and later reporting referenced operations across multiple states. The company launched in 2023 and has been building an open-access broadband footprint in the United States. AT&T and BlackRock announced the joint venture in 2022 and launched Gigapower in 2023, but public sources do not disclose the partners' percentage ownership.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2023,
+    "headquarters": "Multiple U.S. states",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpju8701klivhews3qe3yr",
+        "managerName": "BlackRock",
+        "organizationName": "BlackRock",
+        "fundName": null,
+        "vehicleName": "Diversified Infrastructure",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkwbb030xivhecrh2g6hu",
+        "date": "Dec 23, 2022",
+        "event": "AT&T and BlackRock signed a definitive agreement to form the Gigapower joint venture.",
+        "category": "FINANCING",
+        "sortDate": "2022-12-23T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkwbw030yivhepvh4ep6u",
+        "date": "May 11, 2023",
+        "event": "AT&T and BlackRock closed the Gigapower joint venture and launched the open-access fiber platform.",
+        "category": "FINANCING",
+        "sortDate": "2023-05-11T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxppjwn08c8ivheijk0clpi",
+        "label": "Gigapower — Gigapower",
+        "url": "https://www.gigapower.com/about-us",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Gigapower company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxppjxs08caivheza4x8wik",
+        "label": "Close date source — BlackRock — Gigapower",
+        "url": "https://about.att.com/story/2023/gigapower.html",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "BlackRock closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppjyu08ccivheto4x3n66",
+        "label": "Announcement date source — BlackRock — Gigapower",
+        "url": "https://www.businesswire.com/news/home/20221223005039/en/ATT-and-BlackRock-to-Form-Gigapower-Joint-Venture-A-Wholesale-Fiber-Services-Provider",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "BlackRock transaction announcement",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "55c881d5841f28156f5d6549bd2e2ede6c6022da4fd0065af5d76a7be7ee4002",
+  "afterImage": {
+    "id": "cmrxpj8xk00n5ivhezp5xja2f",
+    "name": "Gigapower",
+    "aliases": [
+      "Gigapower, LLC",
+      "Infrastructure Endeavors, LLC"
+    ],
+    "sector": "DIGITAL",
+    "subsector": "Wholesale open-access fiber broadband",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Gigapower, LLC is a U.S. wholesale open-access fiber platform formed as a 50/50 joint venture between AT&T and a BlackRock-origin infrastructure vehicle. The company builds, owns and operates multi-gigabit fiber networks that multiple internet service providers can use to serve homes and businesses outside AT&T's traditional wireline footprint. Regulatory filings identify AT&T-related Infrastructure Endeavors Holdings, LLC and Teleport Communications America, LLC as holding an aggregate 50% interest and BGIF IV Neon Acquisition LP as holding the other 50%. The predecessor entity formed in Delaware in February 2022, changed its name to Gigapower in March 2022, and the joint venture closed and launched in May 2023. Current disclosures describe availability or expansion in Florida, New Mexico, northeastern Pennsylvania, North Carolina, South Carolina and southeastern Minnesota, with a long-term target of roughly 1.5 million customer locations. GIP, part of BlackRock, is now referenced as the fund manager, but no separate asset-level transfer or second GIP ownership period was disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.gigapower.com/",
+    "yearFounded": 2022,
+    "headquarters": "Dallas, Texas",
+    "lastVerifiedAt": "2026-08-23T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpju8701klivhews3qe3yr",
+        "managerName": "BlackRock",
+        "organizationName": "BlackRock",
+        "fundName": null,
+        "vehicleName": "BGIF IV Neon Acquisition LP",
+        "stake": "50%",
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "AT&T Inc.",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Infrastructure Endeavors Holdings, LLC; Teleport Communications America, LLC",
+        "stake": "50% aggregate",
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": null,
+        "date": "Feb 14, 2022",
+        "event": "The predecessor entity Infrastructure Endeavors, LLC was formed in Delaware.",
+        "category": "FOUNDING",
+        "sortDate": "2022-02-14T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://dms.psc.sc.gov/Attachments/Matter/65e6a0be-d1d8-4be5-b502-64cab3497284"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Mar 18, 2022",
+        "event": "Infrastructure Endeavors, LLC changed its legal name to Gigapower, LLC.",
+        "category": "OTHER",
+        "sortDate": "2022-03-18T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://dms.psc.sc.gov/Attachments/Matter/65e6a0be-d1d8-4be5-b502-64cab3497284"
+        ]
+      },
+      {
+        "id": "cmrxpkwbb030xivhecrh2g6hu",
+        "date": "Dec 23, 2022",
+        "event": "AT&T and BlackRock announced a definitive agreement to form the 50/50 Gigapower wholesale fiber joint venture.",
+        "category": "FINANCING",
+        "sortDate": "2022-12-23T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.businesswire.com/news/home/20221223005039/en/ATT-and-BlackRock-to-Form-Gigapower-Joint-Venture-A-Wholesale-Fiber-Services-Provider"
+        ]
+      },
+      {
+        "id": "cmrxpkwbw030yivhepvh4ep6u",
+        "date": "May 11, 2023",
+        "event": "AT&T and BlackRock closed the joint venture and launched Gigapower as an open-access fiber platform.",
+        "category": "FINANCING",
+        "sortDate": "2023-05-11T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://about.att.com/story/2023/gigapower.html"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxppjwn08c8ivheijk0clpi",
+        "label": "Gigapower — Gigapower",
+        "url": "https://www.gigapower.com/about-us",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Official company profile and open-access fiber model",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppjxs08caivheza4x8wik",
+        "label": "Close date source — BlackRock — Gigapower",
+        "url": "https://about.att.com/story/2023/gigapower.html",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "May 11, 2023 joint-venture closing and platform launch",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppjyu08ccivheto4x3n66",
+        "label": "Announcement date source — BlackRock — Gigapower",
+        "url": "https://www.businesswire.com/news/home/20221223005039/en/ATT-and-BlackRock-to-Form-Gigapower-Joint-Venture-A-Wholesale-Fiber-Services-Provider",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Definitive AT&T-BlackRock joint-venture announcement",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "South Carolina Public Service Commission — Gigapower application",
+        "url": "https://dms.psc.sc.gov/Attachments/Matter/65e6a0be-d1d8-4be5-b502-64cab3497284",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Legal identity, formation dates, 50/50 ownership and holding vehicles",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "AT&T — 2025 Form 10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271726000120/t-20251231.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current AT&T 50% Gigapower ownership",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "BlackRock — GIP acquisition close",
+        "url": "https://www.blackrock.com/corporate/newsroom/media/press-releases/blackrock-completes-acquisition-of-global-infrastructure-partners",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Manager-level BlackRock-GIP transaction, not an asset-level ownership transfer",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Gigapower — June 2026 company update",
+        "url": "https://www.businesswire.com/news/home/20260602690771/en/Gigapower-Appoints-Jonathan-Mullen-as-Chief-Administrative-Officer-and-General-Counsel",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current operating status and GIP-manager context",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Gigapower — six-state expansion",
+        "url": "https://www.businesswire.com/news/home/20250828592914/en/Gigapower-Accelerates-High-Speed-Broadband-Fiber-Network-Deployment-with-Expansion-Across-Six-States",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Operating footprint and long-term location target",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "ac4e61b585ee104c0bfa868b3179ef65c0fbcfe2fe15d334e0986d40c0f5f55c",
+  "proposalSha256": "6cd55636973f236a8c58ccbfc020de43250377d278375f2ec2670d5ca88bb84f"
+}

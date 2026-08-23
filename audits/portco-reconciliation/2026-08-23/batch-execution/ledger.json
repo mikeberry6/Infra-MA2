@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-23T09:28:01.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-08-23T10:15:31.000Z",
+  "activeBatchId": "batch-0141-0145-v1",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -410,7 +410,65 @@
           "reason": "Atomic batch receipt, attribution repair receipt, four public APIs, four rendered drawers, and browser console verification passed."
         }
       ]
+    },
+    {
+      "batchId": "batch-0141-0145-v1",
+      "state": "RELEASING",
+      "taskIds": [
+        "ledger:0141:eolian:ae9eb0a5",
+        "ledger:0142:excelsior-u-s-solar-and-storage-portfolio:ec48f1c5",
+        "ledger:0143:gigapower:24d5d5d3",
+        "ledger:0144:harquahala-generation-company:a9e2eada",
+        "ledger:0145:indian-energy:6a5ea3ff"
+      ],
+      "taskIndexes": [
+        141,
+        142,
+        143,
+        144,
+        145
+      ],
+      "createdAt": "2026-08-23T09:35:00.000Z",
+      "updatedAt": "2026-08-23T10:15:31.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0141-0145-v1/batch-manifest.json",
+        "sha256": "d162e873fc24b0dd3ac9ac18e0a820050caf417de7601c5317a0df2690dacd36"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-23T09:35:00.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-23T10:15:30.000Z",
+          "evidenceSha256": [
+            "d162e873fc24b0dd3ac9ac18e0a820050caf417de7601c5317a0df2690dacd36"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "RELEASING",
+          "at": "2026-08-23T10:15:31.000Z",
+          "evidenceSha256": [
+            "d162e873fc24b0dd3ac9ac18e0a820050caf417de7601c5317a0df2690dacd36"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "ea4037216136016e8c2a1a7b196dc061e218780377c848f28facb3404dd3b5bc"
+  "ledgerSha256": "5932ab15774bf1da2ca705944e8455a13e8b898d5effc4430b708657487bebaf"
 }

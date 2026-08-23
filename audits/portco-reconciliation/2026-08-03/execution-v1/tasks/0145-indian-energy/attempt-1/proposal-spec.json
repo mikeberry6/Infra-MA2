@@ -1,0 +1,155 @@
+{
+  "generatedAt": "2026-08-23T10:09:00.000Z",
+  "actions": [
+    "CORRECT_COMPANY",
+    "RETIRE_OWNERSHIP",
+    "REALIZE_COMPANY"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "reviewedSeedRetirementTaskIds": [],
+  "rationale": "Archive Indian Energy from the PortCo census because neither BlackRock nor GIP held verified equity. The live record incorrectly converts an approximately US$25 million BlackRock Impact Opportunities bridge loan for the Viejas project into an active GEPIF III ownership period. A direct 2026 BlackRock Impact Opportunities interview describes the exposure as bridge capital that earned a return and had already been returned; Indian Energy's closing release identifies BlackRock Impact Opportunities as a financing partner rather than an equity owner. No GIP investment or asset-level transfer was found. The approved archive removes Indian Energy from the published and evaluated seed PortCo universe, ends the false active ownership attribution and retains the original mistaken relation only as corrected audit history rather than asserting a historical equity stake.",
+  "evidence": [
+    {
+      "url": "https://media.mcguirewoods.com/podcasts/2026/Accessing-The-Pipeline-Ep16.pdf",
+      "purpose": "Direct manager evidence of debt-only exposure and repayment",
+      "supports": [
+        "BlackRock Impact Opportunities provided approximately US$25 million of bridge capital",
+        "the capital earned a return and had been returned by April 22, 2026",
+        "the exposure was financing rather than company equity"
+      ]
+    },
+    {
+      "url": "https://indianenergy.com/indian-energy-announces-financial-close-on-the-viejas-enterprise-microgrid-project/",
+      "purpose": "Project financing and company-boundary evidence",
+      "supports": [
+        "BlackRock Impact Opportunities was identified as a bridge-finance partner for the Viejas project",
+        "the September 2024 event was a project financial close rather than a BlackRock acquisition of Indian Energy"
+      ]
+    },
+    {
+      "url": "https://saulttribe.com/images/07.02.24_BoD_Meeting_Announcement_Packet.pdf",
+      "purpose": "Contrary owner and project-structure evidence",
+      "supports": [
+        "a tribal-government resolution disclosed a 15% direct Indian Energy interest held by the Tribe",
+        "Viejas project entities are not BlackRock ownership vehicles for Indian Energy"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "companyFieldUpdates": {
+    "aliases": [
+      "Indian Energy, LLC",
+      "IE"
+    ],
+    "description": "Archived PortCo-census record for Indian Energy, LLC, an active Native American-owned developer, integrator, owner and operator of resilient microgrids, renewable generation and energy storage. Indian Energy is a qualifying infrastructure operating company, but no direct BlackRock or GIP equity ownership was established. The relationship previously recorded as a BlackRock GEPIF III ownership period was instead an approximately US$25 million BlackRock Impact Opportunities bridge loan supporting the Viejas Enterprise Microgrid project. Indian Energy identified BlackRock Impact Opportunities as a financing partner at the September 2024 project financial close, and a direct 2026 BlackRock Impact Opportunities interview said the bridge capital had earned a return and been returned. A July 2024 tribal-government resolution separately disclosed a 15% direct Indian Energy interest held by the Sault Ste. Marie Tribe. The complete current cap table is not public, but the evidence is sufficient to exclude the company from the requested BlackRock and GIP PortCo lists. The record is archived rather than represented as a realized infrastructure-fund equity investment.",
+    "companyStatus": "REALIZED",
+    "recordStatus": "ARCHIVED",
+    "website": "https://indianenergy.com/",
+    "yearFounded": 2009,
+    "headquarters": "Anaheim, California",
+    "lastVerifiedAt": "2026-08-23T00:00:00.000Z"
+  },
+  "ownershipPeriodUpdates": [
+    {
+      "id": "cmrxpju9601knivheepwf2q66",
+      "set": {
+        "fundName": null,
+        "vehicleName": "BlackRock Impact Opportunities bridge loan for the Viejas project; debt-only and repaid",
+        "stake": "Approximately US$25 million bridge loan; no equity ownership established",
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    }
+  ],
+  "ownershipPeriodAdditions": [],
+  "pendingOwnershipTransactionUpdates": [],
+  "pendingOwnershipTransactionAdditions": [],
+  "milestoneUpdates": [
+    {
+      "id": "cmrxpkwf70312ivherj0a3qfb",
+      "set": {
+        "date": "2009",
+        "event": "Indian Energy, LLC was founded as a Native American-owned energy infrastructure company.",
+        "category": "FOUNDING",
+        "sortDate": "2009-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://indianenergy.com/about-ie/"
+        ]
+      }
+    },
+    {
+      "id": "cmrxpkwfq0313ivhe833rn4wg",
+      "set": {
+        "date": "2023",
+        "event": "BlackRock Impact Opportunities provided approximately US$25 million of bridge financing for the Viejas project; the exposure was debt, not an equity investment in Indian Energy.",
+        "category": "FINANCING",
+        "sortDate": "2023-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://media.mcguirewoods.com/podcasts/2026/Accessing-The-Pipeline-Ep16.pdf",
+          "https://www.blackrock.com/us/individual/investment-ideas/alternative-investments/blackrock-impact-opportunities"
+        ]
+      }
+    },
+    {
+      "id": "cmrxpkwg70314ivhel3nc4f3e",
+      "set": {
+        "date": "Sep 13, 2024",
+        "event": "Indian Energy announced financial close for the Viejas Enterprise Microgrid and identified BlackRock Impact Opportunities as a bridge-finance partner, not an equity owner.",
+        "category": "FINANCING",
+        "sortDate": "2024-09-13T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://indianenergy.com/indian-energy-announces-financial-close-on-the-viejas-enterprise-microgrid-project/"
+        ]
+      }
+    }
+  ],
+  "citationUpdates": [
+    {
+      "id": "cmrxppk5f08ckivhe8l4w29wd",
+      "set": {
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Official identity, founding year and operating profile",
+        "isPrimary": false
+      }
+    },
+    {
+      "id": "cmrxppk6j08cmivhedupmxp5e",
+      "set": {
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "September 2024 project financial close and bridge-finance attribution",
+        "isPrimary": false
+      }
+    },
+    {
+      "id": "cmrxppk7408cnivhevcko7m33",
+      "set": {
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "BlackRock Impact Opportunities attribution; not infrastructure-fund equity ownership",
+        "isPrimary": false
+      }
+    }
+  ],
+  "citationAdditions": [
+    {
+      "id": null,
+      "label": "McGuireWoods — BlackRock Impact Opportunities interview transcript",
+      "url": "https://media.mcguirewoods.com/podcasts/2026/Accessing-The-Pipeline-Ep16.pdf",
+      "sourceType": "OTHER",
+      "purpose": "FINANCING_FILINGS",
+      "evidenceLabel": "Direct manager description of the approximately US$25 million bridge loan, return and repayment",
+      "isPrimary": true
+    },
+    {
+      "id": null,
+      "label": "Sault Ste. Marie Tribe — July 2024 meeting packet",
+      "url": "https://saulttribe.com/images/07.02.24_BoD_Meeting_Announcement_Packet.pdf",
+      "sourceType": "OTHER",
+      "purpose": "SUPPORTING_CONTEXT",
+      "evidenceLabel": "Tribal-government disclosure of a separate 15% Indian Energy interest and project structure",
+      "isPrimary": false
+    }
+  ]
+}

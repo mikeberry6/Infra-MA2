@@ -1,0 +1,345 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0144:harquahala-generation-company:a9e2eada",
+  "taskIndex": 144,
+  "asOfDate": "2026-08-23",
+  "generatedAt": "2026-08-23T10:08:00.000Z",
+  "canonicalKey": "harquahala-generation-company|united-states",
+  "companyName": "Harquahala Generation Company",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER"
+  ],
+  "sourceHoldingIds": [],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Correct Harquahala as one active single-asset generation company owned 50/50 by Capital Power and BlackRock's GEPIF III vehicle from the February 16, 2024 closing. The existing ledger direction was reversed: BlackRock entered rather than exited. Capital Power and BlackRock acquired 100% from CSG Investments, which is retained as the former owner. Direct transaction, regulatory and audited-report evidence supports the legal identity, 1,092 MW operating asset, GEPIF III vehicle, ownership percentages and current status. The 2004 date is commercial operation, not company formation, and no separate GIP ownership period is supported.",
+  "evidence": [
+    {
+      "url": "https://www.capitalpower.com/media/media_releases/capital-power-completes-acquisition-of-the-1092-mw-harquahala-natural-gas-generation-facility-in-arizona/",
+      "purpose": "Closing and 50/50 current ownership evidence",
+      "supports": [
+        "the acquisition closed on February 16, 2024",
+        "Capital Power and BlackRock each acquired 50%",
+        "the acquired plant has 1,092 MW of gross capacity"
+      ]
+    },
+    {
+      "url": "https://www.capitalpower.com/media/media_releases/capital-power-announces-strategic-acquisition-of-two-u-s-gas-generation-facilities/",
+      "purpose": "Announcement and seller evidence",
+      "supports": [
+        "the acquisition was announced on November 20, 2023",
+        "CSG Investments was the seller",
+        "the partners planned a 50/50 acquisition"
+      ]
+    },
+    {
+      "url": "https://www.capitalpower.com/wp-content/uploads/2026/03/Capital-Power-2025-Integrated-Annual-Report.pdf",
+      "purpose": "Audited ownership and operating evidence",
+      "supports": [
+        "Capital Power continued to report its 50% Harquahala interest",
+        "the plant remained an operating asset"
+      ]
+    },
+    {
+      "url": "https://www.govinfo.gov/content/pkg/FR-2023-12-12/html/2023-27224.htm",
+      "purpose": "Legal entity and acquisition-vehicle evidence",
+      "supports": [
+        "New Harquahala Generating Company, LLC is the asset-owning legal entity",
+        "the transaction used the Trident acquisition structure"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "327e99f0c8f41c4b8c4663da53a3e5fe60e7b9838dcd556927fcd38b6f899d02",
+  "currentCompanySnapshotSha256": "985128e98b53bb1ec7a15e47d9f2ab65260786144eeb2c3a25d14c9827baf834",
+  "executionLock": {
+    "taskSnapshotSha256": "c84365e3850eac3bbb6fdc9ac321bf7dfcf89ef12419f52a5677e022511f1149",
+    "taskStateSha256": "53caa658e0830ea1e044b684b9d62dcd4c24e30fc7320f47dfb0f1a2b3a84737",
+    "taskDependencySha256": "93e8131bc0ce8175d6c13e11397558d8c654350afa262f581e2b7835c6b4f770",
+    "seedEntrySha256": "73eaf597ad196f42c071624c1fd025a0d30f697ad4e02726aff0ded645c41077",
+    "dependencies": {
+      "ownershipPeriodsSha256": "676890390ee4bd680f5f1e15db40067b7c60e87280d1d5fa1e11b215328777db",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "e5741b37b7220d4bd73463514c45185716aab20b4eb4977c4625e9d38bf093ce",
+      "organizationsSha256": "7fbbcb0226a342f0009dc42b0ec9a859965a5106254bd3e946023b716fe28cfa",
+      "citationsSha256": "00282d226e50790caa745b6f0572553f0eb527dd88d1fa32907416b2c8028e3e",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmsdi3s2g003i7h4s4t0s4mmh",
+        "fundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+        "managerId": "cmrxpi56u000wivhev4hy469z",
+        "updatedAt": "2026-08-03T17:26:25.240Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi56u000wivhev4hy469z",
+        "name": "BlackRock",
+        "updatedAt": "2026-07-23T16:09:13.926Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpj8y400n6ivhelufjsj1z",
+    "name": "Harquahala Generation Company",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Natural gas-fired generation",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Harquahala Generation Company owns a large combined-cycle natural gas power plant in Arizona. The asset serves wholesale power needs through dispatchable generation and benefits from a contracted tolling structure rather than full merchant exposure. Its operating model is asset-heavy because value is tied to a single large thermal generation facility and its long-term operating agreements. Capital Power's transaction materials describe the plant as a 1,092 MW facility in Maricopa County with a tolling agreement extending through 2031. Operations are concentrated in Arizona as a single-asset generation business. Capital Power completed the acquisition in February 2024 through a 50-50 partnership with BlackRock's Diversified Infrastructure business.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2004,
+    "headquarters": "Arizona",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpju8p01kmivhernfcvtau",
+        "managerName": "BlackRock",
+        "organizationName": "BlackRock",
+        "fundName": null,
+        "vehicleName": "Diversified Infrastructure",
+        "stake": null,
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkwcy030zivhegm9jpagm",
+        "date": "2004",
+        "event": "Capital Power materials indicate that Harquahala reached commercial operation in 2004.",
+        "category": "EXPANSION",
+        "sortDate": "2004-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkwdk0310ivhepyugvcws",
+        "date": "Nov 14, 2023",
+        "event": "Capital Power announced the strategic acquisition of Harquahala and La Paloma through a 50-50 partnership with BlackRock.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-11-14T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkwe50311ivhedhmrdaos",
+        "date": "Feb 16, 2024",
+        "event": "Capital Power and BlackRock completed the acquisition of the 1,092 MW Harquahala facility.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-02-16T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxppjzy08ceivhe1raqh9sq",
+        "label": "Capitalpower — Harquahala Generation Company",
+        "url": "https://www.capitalpower.com/operations/harquahala/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Capitalpower operations / asset details",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxppk1308cgivhezrz3wzcy",
+        "label": "Capitalpower — Harquahala Generation Company",
+        "url": "https://www.capitalpower.com/media/media_releases/capital-power-announces-strategic-acquisition-of-two-u-s-gas-generation-facilities/",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Capitalpower transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppk4c08ciivheuwmdwso0",
+        "label": "Close date source — BlackRock — Harquahala Generation Company",
+        "url": "https://www.capitalpower.com/media/media_releases/capital-power-completes-acquisition-of-the-1092-mw-harquahala-natural-gas-generation-facility-in-arizona/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "BlackRock closing confirmation",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "985128e98b53bb1ec7a15e47d9f2ab65260786144eeb2c3a25d14c9827baf834",
+  "afterImage": {
+    "id": "cmrxpj8y400n6ivhelufjsj1z",
+    "name": "Harquahala Generation Company",
+    "aliases": [
+      "Harquahala",
+      "Harquahala Generating Facility",
+      "New Harquahala Generating Company, LLC",
+      "New Harquahala Generation Company, LLC"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Natural gas-fired generation",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Harquahala Generation Company is the manager-level record for New Harquahala Generating Company, LLC, owner of a 1,092 MW combined-cycle natural-gas generation facility in Maricopa County, Arizona. The plant supplies wholesale energy, capacity and grid-reliability services and is 100% tolled through 2031 with an undisclosed investment-grade utility. Capital Power operates, maintains and manages the facility. Capital Power and BlackRock announced a 50/50 acquisition from CSG Investments in November 2023 and closed the purchase on February 16, 2024. BlackRock invested through its Global Energy & Power Infrastructure Fund III Trident structure. Capital Power's 2025 annual report and Q2 2026 report continued to show the 50% joint-venture interest and operating facility. The plant began commercial operation in 2004; that date is not treated as the legal company's founding year. No later sale, ownership transfer or signed pending exit was identified through August 23, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": null,
+    "lastVerifiedAt": "2026-08-23T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpju8p01kmivhernfcvtau",
+        "managerName": "BlackRock",
+        "organizationName": "BlackRock",
+        "fundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+        "vehicleName": "GEPIF III Trident HoldCo, L.P.; Trident Parent Holdings LLC",
+        "stake": "50%",
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Capital Power Corporation",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Capital Power Investments, LLC; Trident Parent Holdings LLC",
+        "stake": "50%",
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "CSG Investments, Inc.",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "CSG Investments, Inc. (Beal Financial Corporation affiliate)",
+        "stake": "100% immediately before the February 2024 sale; earlier percentage not publicly disclosed",
+        "investmentYear": null,
+        "exitYear": 2024,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkwcy030zivhegm9jpagm",
+        "date": "2004",
+        "event": "The 1,092 MW Harquahala combined-cycle facility began commercial operation; this is an asset operating date, not the company's legal formation date.",
+        "category": "EXPANSION",
+        "sortDate": "2004-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.capitalpower.com/operations/harquahala/"
+        ]
+      },
+      {
+        "id": "cmrxpkwdk0310ivhepyugvcws",
+        "date": "Nov 20, 2023",
+        "event": "Capital Power and BlackRock announced a 50/50 acquisition of Harquahala from CSG Investments.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-11-20T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.capitalpower.com/media/media_releases/capital-power-announces-strategic-acquisition-of-two-u-s-gas-generation-facilities/"
+        ]
+      },
+      {
+        "id": "cmrxpkwe50311ivhedhmrdaos",
+        "date": "Feb 16, 2024",
+        "event": "Capital Power and BlackRock closed the acquisition of 100% of New Harquahala Generating Company, LLC, with each partner holding 50%.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-02-16T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.capitalpower.com/media/media_releases/capital-power-completes-acquisition-of-the-1092-mw-harquahala-natural-gas-generation-facility-in-arizona/",
+          "https://www.govinfo.gov/content/pkg/FR-2023-12-12/html/2023-27224.htm"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxppjzy08ceivhe1raqh9sq",
+        "label": "Capitalpower — Harquahala Generation Company",
+        "url": "https://www.capitalpower.com/operations/harquahala/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current plant profile, capacity, location, tolling and commercial-operation year",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxppk1308cgivhezrz3wzcy",
+        "label": "Capitalpower — Harquahala Generation Company",
+        "url": "https://www.capitalpower.com/media/media_releases/capital-power-announces-strategic-acquisition-of-two-u-s-gas-generation-facilities/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "November 20, 2023 acquisition announcement and CSG seller identity",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppk4c08ciivheuwmdwso0",
+        "label": "Close date source — BlackRock — Harquahala Generation Company",
+        "url": "https://www.capitalpower.com/media/media_releases/capital-power-completes-acquisition-of-the-1092-mw-harquahala-natural-gas-generation-facility-in-arizona/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "February 16, 2024 closing and 50/50 ownership",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Capital Power — 2025 integrated annual report",
+        "url": "https://www.capitalpower.com/wp-content/uploads/2026/03/Capital-Power-2025-Integrated-Annual-Report.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Audited current 50% Capital Power joint-venture interest",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Capital Power — Q2 2026 report",
+        "url": "https://www.capitalpower.com/wp-content/uploads/2026/07/Capital-Power-2026-Q2-Report.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Latest operating-status and no-exit check",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Federal Register — Harquahala FERC application notice",
+        "url": "https://www.govinfo.gov/content/pkg/FR-2023-12-12/html/2023-27224.htm",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Legal entity and Trident acquisition structure",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "SEC — Global Energy & Power Infrastructure Fund III filing",
+        "url": "https://www.sec.gov/Archives/edgar/data/1534126/000119312521067728/d105498dsc13d.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "GEPIF III fund and BlackRock manager attribution",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "3c9567950932db926725952acc1a646a39c251aed33b1a932977f67249a32b9a",
+  "proposalSha256": "ab5ac596755de05dc598078a1e0995962bbfd2a46d8f1272bf979e1594882423"
+}

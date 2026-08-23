@@ -1,0 +1,260 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0144:harquahala-generation-company:a9e2eada",
+  "taskIndex": 144,
+  "companyName": "Harquahala Generation Company",
+  "generatedAt": "2026-08-23T09:53:26.642Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0144-harquahala-generation-company/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 144,
+    "taskId": "ledger:0144:harquahala-generation-company:a9e2eada",
+    "canonicalKey": "harquahala-generation-company|united-states",
+    "companyName": "Harquahala Generation Company",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 23,
+    "managers": [
+      "BlackRock",
+      "Global Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [
+        "RETIRE_OWNERSHIP"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "023-blackrock:repo-only:013:harquahala-generation-company",
+      "048-global-infrastructure-partners:repo-only:009:harquahala-generation-company"
+    ],
+    "productionCompanyIds": [
+      "cmrxpj8y400n6ivhelufjsj1z"
+    ],
+    "seedKeys": [
+      "harquahala generation company|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.capitalpower.com/media/media_releases/capital-power-completes-acquisition-of-the-1092-mw-harquahala-natural-gas-generation-facility-in-arizona/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: BlackRock PROPOSED_RETIRE: Sold to Capital Power, no longer held. Global Infrastructure Partners MATCHED_ELSEWHERE: Attributable to legacy BlackRock infrastructure vehicles, not GIP",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj8y400n6ivhelufjsj1z",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "harquahala-generation-company|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpj8y400n6ivhelufjsj1z",
+    "name": "Harquahala Generation Company",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Natural gas-fired generation",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Harquahala Generation Company owns a large combined-cycle natural gas power plant in Arizona. The asset serves wholesale power needs through dispatchable generation and benefits from a contracted tolling structure rather than full merchant exposure. Its operating model is asset-heavy because value is tied to a single large thermal generation facility and its long-term operating agreements. Capital Power's transaction materials describe the plant as a 1,092 MW facility in Maricopa County with a tolling agreement extending through 2031. Operations are concentrated in Arizona as a single-asset generation business. Capital Power completed the acquisition in February 2024 through a 50-50 partnership with BlackRock's Diversified Infrastructure business.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2004,
+    "headquarters": "Arizona",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpju8p01kmivhernfcvtau",
+        "managerName": "BlackRock",
+        "organizationName": "BlackRock",
+        "fundName": null,
+        "vehicleName": "Diversified Infrastructure",
+        "stake": null,
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkwcy030zivhegm9jpagm",
+        "date": "2004",
+        "event": "Capital Power materials indicate that Harquahala reached commercial operation in 2004.",
+        "category": "EXPANSION",
+        "sortDate": "2004-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkwdk0310ivhepyugvcws",
+        "date": "Nov 14, 2023",
+        "event": "Capital Power announced the strategic acquisition of Harquahala and La Paloma through a 50-50 partnership with BlackRock.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-11-14T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkwe50311ivhedhmrdaos",
+        "date": "Feb 16, 2024",
+        "event": "Capital Power and BlackRock completed the acquisition of the 1,092 MW Harquahala facility.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-02-16T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxppjzy08ceivhe1raqh9sq",
+        "label": "Capitalpower — Harquahala Generation Company",
+        "url": "https://www.capitalpower.com/operations/harquahala/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Capitalpower operations / asset details",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxppk1308cgivhezrz3wzcy",
+        "label": "Capitalpower — Harquahala Generation Company",
+        "url": "https://www.capitalpower.com/media/media_releases/capital-power-announces-strategic-acquisition-of-two-u-s-gas-generation-facilities/",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Capitalpower transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppk4c08ciivheuwmdwso0",
+        "label": "Close date source — BlackRock — Harquahala Generation Company",
+        "url": "https://www.capitalpower.com/media/media_releases/capital-power-completes-acquisition-of-the-1092-mw-harquahala-natural-gas-generation-facility-in-arizona/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "BlackRock closing confirmation",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Harquahala Generation Company",
+    "investmentFirm": "BlackRock",
+    "sector": "Power & ET",
+    "subsector": "Natural gas-fired generation",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Diversified Infrastructure",
+    "description": "Harquahala Generation Company owns a large combined-cycle natural gas power plant in Arizona. The asset serves wholesale power needs through dispatchable generation and benefits from a contracted tolling structure rather than full merchant exposure. Its operating model is asset-heavy because value is tied to a single large thermal generation facility and its long-term operating agreements. Capital Power's transaction materials describe the plant as a 1,092 MW facility in Maricopa County with a tolling agreement extending through 2031. Operations are concentrated in Arizona as a single-asset generation business. Capital Power completed the acquisition in February 2024 through a 50-50 partnership with BlackRock's Diversified Infrastructure business.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2004,
+    "investmentYear": 2024,
+    "headquarters": "Arizona",
+    "milestones": [
+      {
+        "date": "2004",
+        "event": "Capital Power materials indicate that Harquahala reached commercial operation in 2004.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Nov 14, 2023",
+        "event": "Capital Power announced the strategic acquisition of Harquahala and La Paloma through a 50-50 partnership with BlackRock.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Feb 16, 2024",
+        "event": "Capital Power and BlackRock completed the acquisition of the 1,092 MW Harquahala facility.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Capitalpower — Harquahala Generation Company",
+        "url": "https://www.capitalpower.com/operations/harquahala/",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Capitalpower — Harquahala Generation Company",
+        "url": "https://www.capitalpower.com/media/media_releases/capital-power-announces-strategic-acquisition-of-two-u-s-gas-generation-facilities/",
+        "type": "ARTICLE",
+        "purpose": "MILESTONE_EVENT"
+      },
+      {
+        "label": "Close date source — BlackRock — Harquahala Generation Company",
+        "url": "https://www.capitalpower.com/media/media_releases/capital-power-completes-acquisition-of-the-1092-mw-harquahala-natural-gas-generation-facility-in-arizona/",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "BlackRock",
+        "ownershipVehicle": "Diversified Infrastructure",
+        "investmentYear": 2024,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmsdi3s2g003i7h4s4t0s4mmh",
+        "fundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+        "managerId": "cmrxpi56u000wivhev4hy469z",
+        "updatedAt": "2026-08-03T17:26:25.240Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi56u000wivhev4hy469z",
+        "name": "BlackRock",
+        "updatedAt": "2026-07-23T16:09:13.926Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0144:harquahala-generation-company:a9e2eada",
+    "taskIndex": 144,
+    "canonicalKey": "harquahala-generation-company|united-states",
+    "capturedAt": "2026-08-23T09:53:26.642Z",
+    "databaseRevision": "revision:c70364034dc7fd4b9fe26dd252c5e5ccc1a562b3706f8b38d807b374fbc792f1",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "40cf1c184a7462819507a4d42e1157c5ad91c768d3770e7e1d8163a695f8d88c",
+    "productionSnapshotSha256": "327e99f0c8f41c4b8c4663da53a3e5fe60e7b9838dcd556927fcd38b6f899d02",
+    "targetCompanySnapshotSha256": "985128e98b53bb1ec7a15e47d9f2ab65260786144eeb2c3a25d14c9827baf834",
+    "seedEntrySha256": "73eaf597ad196f42c071624c1fd025a0d30f697ad4e02726aff0ded645c41077",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "676890390ee4bd680f5f1e15db40067b7c60e87280d1d5fa1e11b215328777db",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "e5741b37b7220d4bd73463514c45185716aab20b4eb4977c4625e9d38bf093ce",
+      "organizationsSha256": "7fbbcb0226a342f0009dc42b0ec9a859965a5106254bd3e946023b716fe28cfa",
+      "citationsSha256": "00282d226e50790caa745b6f0572553f0eb527dd88d1fa32907416b2c8028e3e",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "93e8131bc0ce8175d6c13e11397558d8c654350afa262f581e2b7835c6b4f770",
+    "stateSha256": "53caa658e0830ea1e044b684b9d62dcd4c24e30fc7320f47dfb0f1a2b3a84737",
+    "taskSnapshotSha256": "c84365e3850eac3bbb6fdc9ac321bf7dfcf89ef12419f52a5677e022511f1149"
+  },
+  "contextSha256": "5aa0f2fd0665cf46380e97ae6c10e38d2f73657ea6df459475632e626623527d"
+}

@@ -49,19 +49,25 @@ import type {
 
 describe("approved ownership organization provisioning", () => {
   it("classifies newly approved fund managers and corporate retained owners deterministically", () => {
+    expect(ownershipOrganizationTypes("AT&T Inc.")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("AgeCare")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("BC Partners")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("Canadian Business Growth Fund")).toEqual(["FUND_MANAGER"]);
+    expect(ownershipOrganizationTypes("Capital Power Corporation")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Cox Enterprises")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("CSG Investments, Inc.")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Donato Ardellini")).toEqual(["OTHER"]);
     expect(ownershipOrganizationTypes("Energy Transfer LP")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("Eolian employees")).toEqual(["OTHER"]);
     expect(ownershipOrganizationTypes("ePointZero")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("Excelsior Energy Capital")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("Extendicare Inc.")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Ferrovial N.V.")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("GE Renewable Energy")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("HPS Investment Partners")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("GFL Environmental Inc.")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Kinder Morgan, Inc.")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("MAP Energy, LLC")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("MGX")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("Ocean Winds")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("OPTrust")).toEqual(["PENSION"]);
@@ -72,19 +78,25 @@ describe("approved ownership organization provisioning", () => {
 
   it("provisions only exact approved missing owner organizations during the protected apply phase", async () => {
     for (const [name, type] of [
+      ["AT&T Inc.", "CORPORATE"],
       ["AgeCare", "CORPORATE"],
       ["BC Partners", "FUND_MANAGER"],
       ["Canadian Business Growth Fund", "FUND_MANAGER"],
+      ["Capital Power Corporation", "CORPORATE"],
       ["Cox Enterprises", "CORPORATE"],
+      ["CSG Investments, Inc.", "CORPORATE"],
       ["Donato Ardellini", "OTHER"],
       ["Energy Transfer LP", "CORPORATE"],
+      ["Eolian employees", "OTHER"],
       ["ePointZero", "CORPORATE"],
+      ["Excelsior Energy Capital", "FUND_MANAGER"],
       ["Extendicare Inc.", "CORPORATE"],
       ["Ferrovial N.V.", "CORPORATE"],
       ["GE Renewable Energy", "CORPORATE"],
       ["GFL Environmental Inc.", "CORPORATE"],
       ["HPS Investment Partners", "FUND_MANAGER"],
       ["Kinder Morgan, Inc.", "CORPORATE"],
+      ["MAP Energy, LLC", "FUND_MANAGER"],
       ["MGX", "FUND_MANAGER"],
       ["Ocean Winds", "CORPORATE"],
       ["OPTrust", "PENSION"],

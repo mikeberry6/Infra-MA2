@@ -1,0 +1,313 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0142:excelsior-u-s-solar-and-storage-portfolio:ec48f1c5",
+  "taskIndex": 142,
+  "asOfDate": "2026-08-23",
+  "generatedAt": "2026-08-23T10:06:00.000Z",
+  "canonicalKey": "excelsior-u-s-solar-and-storage-portfolio|united-states",
+  "companyName": "Excelsior U.S. Solar & Storage Portfolio",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER",
+    "MERGE_COMPANIES"
+  ],
+  "sourceHoldingIds": [
+    "023-blackrock:holding:010:excelsior-u-s-solar-and-storage-portfolio"
+  ],
+  "retiredCompanyIds": [
+    "cmrxpj8zq00n9ivhed9tgikrv"
+  ],
+  "relationMerges": [
+    {
+      "kind": "OWNERSHIP_PERIOD",
+      "retiredRelationId": "cmrxpjuac01kpivhefe29onwu",
+      "canonicalRelationId": "cmrxpju7s01kkivheqy4idfr6",
+      "rationale": "Both rows describe the same BlackRock Evergreen acquisition of the same Lighthouse portfolio; one corrected canonical period preserves the ownership history without double-counting."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxpkwkg031aivheflvs0dd9",
+      "canonicalRelationId": "cmrxpkw9x030vivheldsxdx9k",
+      "rationale": "Both milestones describe BlackRock signing the Lighthouse acquisition in November 2023 and are consolidated into one corrected signing milestone."
+    }
+  ],
+  "rationale": "Merge the duplicate Lighthouse and Excelsior U.S. Solar & Storage Portfolio records into the existing Excelsior production ID, renamed Lighthouse with the former display name retained as an alias. Buyer, seller and adviser evidence identify one 38-project, 89 MWDC operating solar and solar-plus-storage portfolio across six U.S. states. BlackRock's Evergreen strategy signed the acquisition in November 2023 and closed it in December 2023; Excelsior's March 2024 release was a later disclosure, not the ownership entry date. The duplicate BlackRock ownership periods and signing milestones are consolidated, Excelsior is retained as the former owner, and no GIP ownership period is created because BlackRock's later acquisition of the GIP manager did not transfer the portfolio.",
+  "evidence": [
+    {
+      "url": "https://www.key.com/businesses-institutions/our-transactions/deals.excelsior-energy-capital.html",
+      "purpose": "Closing, seller, stake and footprint evidence",
+      "supports": [
+        "the sale closed in December 2023",
+        "Excelsior sold 100% of its membership interests",
+        "the portfolio comprised 38 operating projects totaling 89 MWDC across six states"
+      ]
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20231115151975/en/BlackRocks-Evergreen-Infrastructure-Fund-Partners-with-European-Institutional-Investors-to-Invest-in-Energy-Transition-and-Energy-Security",
+      "purpose": "Buyer identity and signing evidence",
+      "supports": [
+        "BlackRock identified the portfolio as Lighthouse",
+        "Evergreen signed definitive documentation to acquire the operating portfolio in November 2023"
+      ]
+    },
+    {
+      "url": "https://excelsiorcapital.com/news-insights/excelsior-energy-capital-sells-sub-portfolio-of-solar-and-solar-plus-storage-assets-to-blackrock/",
+      "purpose": "Seller exit and portfolio-boundary evidence",
+      "supports": [
+        "Excelsior sold the same 38-project 89 MW solar and storage portfolio to BlackRock",
+        "the March 2024 page is a disclosure of the completed sale"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "9c5e1a3ba07b0807208e6db0c2332d1696eb23e2e045ee315d11f30431d707f9",
+  "currentCompanySnapshotSha256": "ae09df241eb0d5c1c0d4ba0261fdc6ed8ef62346eee2a3f752fa7c89564684ec",
+  "executionLock": {
+    "taskSnapshotSha256": "a755e9b6169b7c373ff8fc5bbf77e76015e986ebf16ac819addfe6bc03d882f3",
+    "taskStateSha256": "a91200428291cd43b3984f86b62580e0b3aca2e55cabfefc6c6f42a8866a88fa",
+    "taskDependencySha256": "712846049843a0d6d4eff58b68c890f6faabd7d6411fc22cf44c38198ad62b21",
+    "seedEntrySha256": "245f0dcc4d53a808cdfcee5b039c3d1da4350d41d52e0787e1825335a4dc37e2",
+    "dependencies": {
+      "ownershipPeriodsSha256": "473ab06c72d0ef320239b6b115be6f477a55591c30537afbab6811db01f93744",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "d2b61ffca022121ad2d96284773b2bf1e2607a59fb80f5ba36851fe1d60bdd21",
+      "organizationsSha256": "7fbbcb0226a342f0009dc42b0ec9a859965a5106254bd3e946023b716fe28cfa",
+      "citationsSha256": "13cdfa86c80a413a470a5ac20ad9be0e9753ba349c62d8d9499315a666e5d065",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj1cv00bxivhe247gfqwa",
+        "fundName": "Evergreen Infrastructure Fund",
+        "managerId": "cmrxpi56u000wivhev4hy469z",
+        "updatedAt": "2026-07-23T16:09:55.615Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi56u000wivhev4hy469z",
+        "name": "BlackRock",
+        "updatedAt": "2026-07-23T16:09:13.926Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpj8x000n4ivhefbfwnig3",
+    "name": "Excelsior U.S. Solar & Storage Portfolio",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Solar and solar-plus-storage portfolio",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "This portfolio comprises operating US solar and solar-plus-storage assets acquired from Excelsior Energy Capital. The assets sell power under contracted structures and therefore have an operating model tied to long-lived renewable generation infrastructure rather than a development-only pipeline. Its revenue profile is asset-heavy and contracted because cash flows depend on the operating performance of the underlying projects and customer agreements. Public transaction materials described a 38-project portfolio totaling 89 MW across multiple US states. The assets form part of BlackRock's Evergreen Infrastructure strategy focused on energy transition and energy security investments. BlackRock's Evergreen Infrastructure fund acquired the portfolio in March 2024, and Excelsior announced that it had sold the sub-portfolio to BlackRock.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Multiple U.S. states",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpju7s01kkivheqy4idfr6",
+        "managerName": "BlackRock",
+        "organizationName": "BlackRock",
+        "fundName": "Evergreen Infrastructure Fund",
+        "vehicleName": "Evergreen Infrastructure Fund",
+        "stake": null,
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkw9x030vivheldsxdx9k",
+        "date": "2024",
+        "event": "Natural Power announced support for BlackRock's acquisition of the operating portfolio.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkwab030wivhe1gfqjdt7",
+        "date": "Mar 12, 2024",
+        "event": "Excelsior Energy Capital announced the sale of a sub-portfolio of solar and solar-plus-storage assets to BlackRock.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-03-12T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxppjtg08c2ivhev6rdob4o",
+        "label": "Investment date source — BlackRock — Excelsior U.S. Solar & Storage Portfolio",
+        "url": "https://excelsiorcapital.com/news-insights/excelsior-energy-capital-sells-sub-portfolio-of-solar-and-solar-plus-storage-assets-to-blackrock/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "BlackRock initial investment / ownership",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxppjui08c4ivhez13wpcrd",
+        "label": "Naturalpower — Excelsior U.S. Solar & Storage Portfolio",
+        "url": "https://www.naturalpower.com/us/news/news-post/natural-power-supports-blackrocks-portfolio-acquisition-from-excelsior-energy-capital",
+        "sourceType": "WEBSITE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Naturalpower transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppjvk08c6ivhenq51szsb",
+        "label": "Excelsiorcapital — Excelsior U.S. Solar & Storage Portfolio",
+        "url": "https://excelsiorcapital.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Excelsiorcapital company profile",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "ae09df241eb0d5c1c0d4ba0261fdc6ed8ef62346eee2a3f752fa7c89564684ec",
+  "afterImage": {
+    "id": "cmrxpj8x000n4ivhefbfwnig3",
+    "name": "Lighthouse",
+    "aliases": [
+      "Excelsior U.S. Solar & Storage Portfolio",
+      "Excelsior 89 MW solar/BESS DG portfolio"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Commercial and industrial distributed solar and solar-plus-storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Lighthouse is a portfolio of 38 operating commercial-and-industrial distributed solar and solar-plus-storage projects totaling 89 MWDC across California, Colorado, Massachusetts, Minnesota, Vermont and Washington. The portfolio is asset-heavy and contracted, with operating renewable-generation and storage assets serving long-term commercial and industrial offtakers. BlackRock's Evergreen infrastructure strategy signed to acquire Lighthouse in November 2023 and the sale closed in December 2023. Excelsior Energy Capital sold 100% of its membership interests in the portfolio through Excelsior Renewable Energy Investment Fund I LP and disclosed the completed exit in March 2024. The transaction disclosure does not establish that BlackRock owns 100% of every project's total economic interests, so the current platform-level percentage is not inferred. Lighthouse is counted once as the manager-level portfolio; its 38 underlying project and SPV assets are not separate PortCos. No later portfolio sale, transfer or signed pending ownership transaction was identified through August 23, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": null,
+    "lastVerifiedAt": "2026-08-23T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpju7s01kkivheqy4idfr6",
+        "managerName": "BlackRock",
+        "organizationName": "BlackRock",
+        "fundName": "Evergreen Infrastructure Fund",
+        "vehicleName": "Evergreen Infrastructure Fund",
+        "stake": "Acquired 100% of Excelsior's membership interests; total project-level economic percentage not publicly disclosed",
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Excelsior Energy Capital",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Excelsior Renewable Energy Investment Fund I LP",
+        "stake": "Sold 100% of its membership interests; total project-level economic percentage not publicly disclosed",
+        "investmentYear": null,
+        "exitYear": 2023,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkw9x030vivheldsxdx9k",
+        "date": "Nov 16, 2023",
+        "event": "BlackRock's Evergreen Infrastructure Fund signed definitive documentation to acquire Lighthouse, a 38-project operating U.S. solar and solar-plus-storage portfolio.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-11-16T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.businesswire.com/news/home/20231115151975/en/BlackRocks-Evergreen-Infrastructure-Fund-Partners-with-European-Institutional-Investors-to-Invest-in-Energy-Transition-and-Energy-Security"
+        ]
+      },
+      {
+        "id": "cmrxpkwab030wivhe1gfqjdt7",
+        "date": "Dec 2023",
+        "event": "The sale closed, with BlackRock's Evergreen strategy acquiring 100% of Excelsior's membership interests in the 89 MWDC portfolio; the exact closing day was not publicly disclosed.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-12-01T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.key.com/businesses-institutions/our-transactions/deals.excelsior-energy-capital.html"
+        ]
+      },
+      {
+        "id": "cmrxpkwjr0319ivhenqes3mah",
+        "date": "Mar 12, 2024",
+        "event": "Excelsior Energy Capital publicly disclosed its completed sale and exit from the 38-project solar and solar-plus-storage portfolio.",
+        "category": "OTHER",
+        "sortDate": "2024-03-12T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://excelsiorcapital.com/news-insights/excelsior-energy-capital-sells-sub-portfolio-of-solar-and-solar-plus-storage-assets-to-blackrock/"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxppjtg08c2ivhev6rdob4o",
+        "label": "Investment date source — BlackRock — Excelsior U.S. Solar & Storage Portfolio",
+        "url": "https://excelsiorcapital.com/news-insights/excelsior-energy-capital-sells-sub-portfolio-of-solar-and-solar-plus-storage-assets-to-blackrock/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Seller confirmation, portfolio boundary and March 2024 exit disclosure",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppjui08c4ivhez13wpcrd",
+        "label": "Naturalpower — Excelsior U.S. Solar & Storage Portfolio",
+        "url": "https://www.naturalpower.com/us/news/news-post/natural-power-supports-blackrocks-portfolio-acquisition-from-excelsior-energy-capital",
+        "sourceType": "WEBSITE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Independent transaction and operating-portfolio context",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppjvk08c6ivhenq51szsb",
+        "label": "Excelsiorcapital — Excelsior U.S. Solar & Storage Portfolio",
+        "url": "https://excelsiorcapital.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Former manager profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppkcj08cxivheq426ayta",
+        "label": "Announcement date source — BlackRock — Lighthouse",
+        "url": "https://www.businesswire.com/news/home/20231115151975/en/BlackRocks-Evergreen-Infrastructure-Fund-Partners-with-European-Institutional-Investors-to-Invest-in-Energy-Transition-and-Energy-Security",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Buyer identity, Lighthouse name and November 2023 signing",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "KeyBanc Capital Markets — Excelsior portfolio sale",
+        "url": "https://www.key.com/businesses-institutions/our-transactions/deals.excelsior-energy-capital.html",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "December 2023 closing, 100% membership-interest sale and six-state footprint",
+        "isPrimary": true
+      }
+    ]
+  },
+  "afterImageSha256": "c614aa02bfa4e2034bf7cfa8b13fa36bc865d052f4d0dcab72169dd321b656e7",
+  "proposalSha256": "68de232f7ca0c596a042ddaa0df73e94cc329c4283020638c4fbe20ba05ac8b6"
+}

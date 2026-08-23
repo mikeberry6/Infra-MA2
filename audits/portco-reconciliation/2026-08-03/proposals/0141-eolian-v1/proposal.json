@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0141:eolian:ae9eb0a5",
+  "taskIndex": 141,
+  "asOfDate": "2026-08-23",
+  "generatedAt": "2026-08-23T10:05:00.000Z",
+  "canonicalKey": "eolian|united-states",
+  "companyName": "Eolian",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER"
+  ],
+  "sourceHoldingIds": [
+    "048-global-infrastructure-partners:holding:006:eolian"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Retain one Eolian platform record and correct its identity, ownership boundary and Able Grid history. GIP IV acquired MAP Energy's renewable business in 2020 and GIP continues to list Eolian as unrealized. Eolian's July 2026 release identifies both employees and GIP-managed funds as owners, while BlackRock's acquisition of the GIP manager did not create a separate Eolian ownership period. MAP Energy is retained as the former owner that exited in 2020. The 2021 transaction acquired remaining interests in Able Grid-managed development portfolios, not Able Grid Energy Solutions itself.",
+  "evidence": [
+    {
+      "url": "https://www.global-infra.com/portfolio-page/eolian/",
+      "purpose": "Current infrastructure-strategy and ownership-status evidence",
+      "supports": [
+        "GIP identifies Eolian as a current unrealized GIP IV portfolio company",
+        "Eolian is a U.S. renewable-power and storage platform"
+      ]
+    },
+    {
+      "url": "https://www.eolianenergy.com/press/global-infrastructure-partners-announces-acquisition-of-map-energys-renewable-energy-business",
+      "purpose": "Entry and predecessor evidence",
+      "supports": [
+        "GIP IV announced the acquisition of 100% of MAP Energy's renewable-energy business in 2020",
+        "the acquired business became Eolian"
+      ]
+    },
+    {
+      "url": "https://www.prnewswire.com/news-releases/eolian-announces-1-gwh-flint-grid-bess-pjms-largest-battery-energy-storage-project-now-under-construction-to-support-americas-fastest-growing-data-center-and-industrial-corridor-near-columbus-ohio-302837697.html",
+      "purpose": "Current co-owner and operating-status evidence",
+      "supports": [
+        "Eolian identified its owners as employees and funds managed by GIP in July 2026",
+        "Eolian remained active through the Flint Grid construction announcement"
+      ]
+    },
+    {
+      "url": "https://www.prnewswire.com/news-releases/eolian-a-global-infrastructure-partners-portfolio-company-announces-acquisition-of-able-grid-development-interests-301450429.html",
+      "purpose": "Platform-boundary evidence",
+      "supports": [
+        "Eolian acquired remaining interests in Able Grid-managed development portfolios",
+        "the transaction was not an acquisition of Able Grid Energy Solutions itself"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "7fe3b410d74a38f6f34737582e32cac27a33de5e1018c0dd68c514787aadae94",
+  "currentCompanySnapshotSha256": "fad9b06cc85d5919bb20c94c7b04872f4c3c37dbf2802e1569348b346d71fdba",
+  "executionLock": {
+    "taskSnapshotSha256": "d808ab5ac8e59af349293ece5fe0a9e3c88c1e860dd9c5e15083085ee392d36a",
+    "taskStateSha256": "2b8109e3dabbf66efafa0887706af91b30102ff591991d261534b2ba8a7b47af",
+    "taskDependencySha256": "d4d7f1fe07da33e03232e3534c04a3c13ad9c6613d195e94eb5de9c701781f92",
+    "seedEntrySha256": "fad9d4adc24d34f216a542cf2dfbaf48cec19f7b0f0af555ff4cc22c662f2a43",
+    "dependencies": {
+      "ownershipPeriodsSha256": "9e9f089dd8667066991e48891158a9c34a646bb20065363e46d0fa1114c1c68d",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "3ed7104b99c97281f3949d1c8a26a405765c8b3d846e946714e267dd538c1ffd",
+      "citationsSha256": "a22e0783762e3d0fe8097e4703b2daffa570637a408a1237c26b4f3b0626c897",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpij5s005aivhe70jwqccm",
+        "name": "GIP",
+        "updatedAt": "2026-07-23T16:09:32.032Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjgka00ytivhen28z6djw",
+    "name": "Eolian",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Renewable project development and battery storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Eolian develops, owns, and operates renewable-energy and battery-storage projects in the United States. Its counterparties include utilities, power-market participants, and infrastructure partners seeking utility-scale storage and renewable capacity. The platform uses an asset-heavy model focused on project development, ownership, and long-duration operating assets rather than an advisory or service-only approach. Public materials indicate that GIP acquired MAP Energy’s renewable-energy business in 2020 and used that acquisition to establish the Eolian platform, which later consolidated the remaining interests in the Able Grid joint venture. The company’s footprint is multi-state, but the sources reviewed do not disclose revenue, employee count, or a single current portfolio-capacity figure for the overall platform. Eolian remains part of GIP’s renewable-power portfolio.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Multi-state U.S. operations",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk2ct01xdivheok0jco5h",
+        "managerName": "GIP",
+        "organizationName": "GIP",
+        "fundName": null,
+        "vehicleName": "GIP IV",
+        "stake": null,
+        "investmentYear": 2020,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpltv00459ivhe8y1ufybq",
+        "date": "Dec 29, 2020",
+        "event": "Global Infrastructure Partners (GIP) announced the acquisition of MAP Energy's renewable-energy business to form Eolian.",
+        "category": "ACQUISITION",
+        "sortDate": "2020-12-29T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpltvk045aivhecrwo2esn",
+        "date": "Dec 23, 2021",
+        "event": "Eolian acquired the remaining ownership interests in Able Grid Energy Solutions.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-12-23T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpr9p50atjivhekkj1lpq3",
+        "label": "Eolianenergy — Eolian",
+        "url": "https://www.eolianenergy.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Eolianenergy company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpr9q30atlivheiryo6qwn",
+        "label": "Announcement date source — Global Infrastructure Partners — Eolian",
+        "url": "https://www.eolianenergy.com/press/global-infrastructure-partners-announces-acquisition-of-map-energys-renewable-energy-business",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Global Infrastructure Partners transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr9s90atnivheocn4yeik",
+        "label": "Eolianenergy — Eolian",
+        "url": "https://www.eolianenergy.com/press/eolian-acquires-remaining-ownership-interests-in-able-grid-energy-solutions",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Eolianenergy transaction or milestone detail",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "fad9b06cc85d5919bb20c94c7b04872f4c3c37dbf2802e1569348b346d71fdba",
+  "afterImage": {
+    "id": "cmrxpjgka00ytivhen28z6djw",
+    "name": "Eolian",
+    "aliases": [
+      "Eolian, L.P.",
+      "Eolian Energy",
+      "MAP RE/ES"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Renewable project development and battery storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Eolian is a U.S. renewable-power and battery-storage investment, development and operating platform formed in 2020 from MAP Energy's renewable business. It develops, funds, owns and operates utility-scale battery storage, finances renewable projects and retains operating-project royalties while serving utilities, independent power producers, wholesale markets and large industrial and data-center loads. GIP reports operating-project royalties across 19 GW, while Eolian reports nearly 30 GW cumulatively funded or developed; neither figure represents wholly owned capacity. GIP IV acquired MAP RE/ES in 2020 and GIP continues to classify Eolian as unrealized. Eolian's July 2026 Flint Grid announcement identifies employees and GIP-managed funds as current owners. BlackRock's 2024 acquisition of the GIP manager did not create a separate Eolian ownership period. Eolian is the counted platform; Astral and project SPVs are underlying assets, and the 2021 Able Grid transaction concerned development-portfolio interests rather than Able Grid itself.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.eolianenergy.com/",
+    "yearFounded": 2020,
+    "headquarters": "Burlingame, California",
+    "lastVerifiedAt": "2026-08-23T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk2ct01xdivheok0jco5h",
+        "managerName": "GIP",
+        "organizationName": "GIP",
+        "fundName": null,
+        "vehicleName": "GIP IV",
+        "stake": "100% of MAP RE/ES acquired at entry; current percentage not publicly disclosed because employees now co-own",
+        "investmentYear": 2020,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Eolian employees",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": null,
+        "stake": "Current employee co-ownership disclosed; percentage not publicly disclosed",
+        "investmentYear": null,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "MAP Energy, LLC",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "MAP RE/ES",
+        "stake": "100% of MAP RE/ES announced sold to GIP IV",
+        "investmentYear": null,
+        "exitYear": 2020,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpltv00459ivhe8y1ufybq",
+        "date": "Dec 29, 2020",
+        "event": "GIP announced GIP IV's acquisition of 100% of MAP Energy's renewable-energy business, which became Eolian; the exact legal closing date was not publicly disclosed.",
+        "category": "ACQUISITION",
+        "sortDate": "2020-12-29T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.eolianenergy.com/press/global-infrastructure-partners-announces-acquisition-of-map-energys-renewable-energy-business",
+          "https://www.global-infra.com/portfolio-page/eolian/"
+        ]
+      },
+      {
+        "id": "cmrxpltvk045aivhecrwo2esn",
+        "date": "Dec 23, 2021",
+        "event": "Eolian acquired the remaining interests in Able Grid-managed joint-venture development portfolios; it did not acquire Able Grid Energy Solutions itself.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-12-23T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.prnewswire.com/news-releases/eolian-a-global-infrastructure-partners-portfolio-company-announces-acquisition-of-able-grid-development-interests-301450429.html"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpr9p50atjivhekkj1lpq3",
+        "label": "Eolianenergy — Eolian",
+        "url": "https://www.eolianenergy.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Official company identity, products and operating profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr9q30atlivheiryo6qwn",
+        "label": "Announcement date source — Global Infrastructure Partners — Eolian",
+        "url": "https://www.eolianenergy.com/press/global-infrastructure-partners-announces-acquisition-of-map-energys-renewable-energy-business",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "GIP IV entry through the acquisition of MAP RE/ES",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr9s90atnivheocn4yeik",
+        "label": "Eolianenergy — Eolian",
+        "url": "https://www.eolianenergy.com/press/eolian-acquires-remaining-ownership-interests-in-able-grid-energy-solutions",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Company account of the 2021 Able Grid-managed portfolio transaction",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Global Infrastructure Partners — Eolian portfolio",
+        "url": "https://www.global-infra.com/portfolio-page/eolian/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current GIP IV portfolio attribution and unrealized status",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "Eolian — Flint Grid BESS construction announcement",
+        "url": "https://www.prnewswire.com/news-releases/eolian-announces-1-gwh-flint-grid-bess-pjms-largest-battery-energy-storage-project-now-under-construction-to-support-americas-fastest-growing-data-center-and-industrial-corridor-near-columbus-ohio-302837697.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "July 2026 employee and GIP-managed-fund co-ownership disclosure",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Eolian — Able Grid development interests acquisition",
+        "url": "https://www.prnewswire.com/news-releases/eolian-a-global-infrastructure-partners-portfolio-company-announces-acquisition-of-able-grid-development-interests-301450429.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "2021 development-portfolio acquisition boundary",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "5b026f8949cd8ac754ffd15e08462727531aa2c172a54b554ae506c4452f6fb7",
+  "proposalSha256": "b4ad93574d376c88db93fa40c483ab05f922eef0df4b75fce881a2332abd2b32"
+}
