@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_RELEASE_VERIFICATION",
+  "verifiedAt": "2026-08-23T22:45:47.359Z",
+  "manifestSha256": "459ccb6e7f7fbba7f5a76e0283f18e7334c929e45590222479a1871a01529613",
+  "approvalSha256": "a4073058a5aed026f702dde1b8727a5f0505ec0b8d00227c3cba9fb69aec53e5",
+  "receiptSha256": "5e9b5a1d011e477c4183c7c1efa43345f9c17b48337b26e1b414510e38340ea1",
+  "mutationCount": 2,
+  "changed": 2,
+  "verificationScope": "BOUNDED_STATUS_SAMPLE",
+  "sampledRows": [
+    {
+      "recordId": "OFA-REPAIR-0177-PERMANENT-POWER-CURRENT",
+      "companyId": "cmrxpjbw800rsivhe6s7g89eh",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjbw800rsivhe6s7g89eh?verification=459ccb6e7f7fbba7f5a76e0283f18e7334c929e45590222479a1871a01529613",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "CIM Opportunity Zone Fund, L.P.",
+        "attributionConfidence": null,
+        "attributionRationale": "SEC filings directly identify CIM Opportunity Zone Fund, L.P. as holding the controlling 66.7% economic interest, including its direct interest and the interest held through COZ 1. No matching normalized fund row exists, so preserve the disclosed vehicle without inferring CIM Infrastructure Fund III."
+      }
+    },
+    {
+      "recordId": "OFA-REPAIR-0177-PERMANENT-POWER-FORMER",
+      "companyId": "cmrxpjbw800rsivhe6s7g89eh",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjbw800rsivhe6s7g89eh?verification=459ccb6e7f7fbba7f5a76e0283f18e7334c929e45590222479a1871a01529613",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "CIM's Westlands development history supports the former CIM and joint-venture ownership period, but the reviewed public evidence does not identify a specific CIM fund or the joint-venture partner. Remove the unsupported CIM Infrastructure Fund I inference while preserving the historical ownership period."
+      }
+    }
+  ],
+  "passed": true
+}

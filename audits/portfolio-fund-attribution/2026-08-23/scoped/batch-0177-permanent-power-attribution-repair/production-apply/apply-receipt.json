@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_RECEIPT",
+  "manifestSha256": "459ccb6e7f7fbba7f5a76e0283f18e7334c929e45590222479a1871a01529613",
+  "approvalSha256": "a4073058a5aed026f702dde1b8727a5f0505ec0b8d00227c3cba9fb69aec53e5",
+  "environment": "production",
+  "pipelineRunId": "cmt6ebgf60000hbyyj1vzhknp",
+  "mutationCount": 2,
+  "changed": 2,
+  "idempotent": false,
+  "beforeFingerprint": "ddc07653f7c14323962d9612a5780abbe5f5a49bdd65af667e2ed0a83f4b2cf0",
+  "afterFingerprint": "2a6abb71ab7e9a72d2466a1975c1a43db33d283589a82fd2b1ca0a71dd7e7a31",
+  "rows": [
+    {
+      "recordId": "OFA-REPAIR-0177-PERMANENT-POWER-CURRENT",
+      "ownershipPeriodId": "cmrxpjxay01pmivhevwqj1bv4",
+      "companyId": "cmrxpjbw800rsivhe6s7g89eh",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "CIM Infrastructure Fund III",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, vehicle-name overlap 0.50, vintage 2021 precedes investment by 4 years, North America-relevant mandate; next candidate trails by 11.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "CIM Opportunity Zone Fund, L.P.",
+        "attributionConfidence": null,
+        "attributionRationale": "SEC filings directly identify CIM Opportunity Zone Fund, L.P. as holding the controlling 66.7% economic interest, including its direct interest and the interest held through COZ 1. No matching normalized fund row exists, so preserve the disclosed vehicle without inferring CIM Infrastructure Fund III."
+      }
+    },
+    {
+      "recordId": "OFA-REPAIR-0177-PERMANENT-POWER-FORMER",
+      "ownershipPeriodId": "cmrxpjxbg01pnivhe6uy36dxh",
+      "companyId": "cmrxpjbw800rsivhe6s7g89eh",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "CIM Infrastructure Fund I",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, vehicle-name overlap 0.50, vintage 2007 precedes investment by 7 years, North America-relevant mandate, historical vehicle retained for attribution only; next candidate trails by 7.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "CIM's Westlands development history supports the former CIM and joint-venture ownership period, but the reviewed public evidence does not identify a specific CIM fund or the joint-venture partner. Remove the unsupported CIM Infrastructure Fund I inference while preserving the historical ownership period."
+      }
+    }
+  ],
+  "appliedAt": "2026-08-23T22:45:44.363Z",
+  "receiptSha256": "5e9b5a1d011e477c4183c7c1efa43345f9c17b48337b26e1b414510e38340ea1"
+}
