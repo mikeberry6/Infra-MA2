@@ -1,0 +1,83 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:batch:apply
+> npx tsx scripts/portco-reconciliation/batch-apply-cli.ts --batch-manifest=audits/portco-reconciliation/2026-08-23/batches/batch-0121-0125-v1/batch-manifest.json --batch-sha256=d32dc609208bc6e4fe4ed25783d64de719bc45aa8ec9be1cbcbf572316a6c2bf
+
+(node:3423) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "BATCH_DRY_RUN",
+  "batchId": "batch-0121-0125-v1",
+  "batchSha256": "d32dc609208bc6e4fe4ed25783d64de719bc45aa8ec9be1cbcbf572316a6c2bf",
+  "databaseWrites": false,
+  "seedWrites": false,
+  "plans": [
+    {
+      "companyName": "R.E.L.A.M.",
+      "mutations": [
+        {
+          "kind": "CREATE_COMPANY",
+          "relationIds": [],
+          "detail": "Create the approved canonical company and all approved relations."
+        }
+      ],
+      "changedFields": [
+        "company"
+      ],
+      "retiredCompanyIds": []
+    },
+    {
+      "companyName": "Cleco Corporate Holdings LLC",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to aliases, description, yearFounded, lastVerifiedAt, ownershipPeriods, milestones, citations."
+        },
+        {
+          "kind": "ADD_PENDING_TRANSACTION",
+          "relationIds": [],
+          "detail": "Add 1 signed pending ownership transaction(s)."
+        }
+      ],
+      "changedFields": [
+        "aliases",
+        "citations",
+        "description",
+        "lastVerifiedAt",
+        "milestones",
+        "ownershipPeriods",
+        "pendingOwnershipTransactions",
+        "yearFounded"
+      ],
+      "retiredCompanyIds": []
+    },
+    {
+      "companyName": "GCT Global Container Terminals Inc.",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to aliases, description, yearFounded, headquarters, lastVerifiedAt, milestones, citations."
+        },
+        {
+          "kind": "MERGE_COMPANIES",
+          "relationIds": [
+            "seed:ledger:0477:gct-global-container-terminals:6046b469"
+          ],
+          "detail": "retire 1 reviewed seed-only identity record(s)"
+        }
+      ],
+      "changedFields": [
+        "aliases",
+        "citations",
+        "description",
+        "headquarters",
+        "lastVerifiedAt",
+        "milestones",
+        "seedIdentities",
+        "yearFounded"
+      ],
+      "retiredCompanyIds": []
+    }
+  ]
+}

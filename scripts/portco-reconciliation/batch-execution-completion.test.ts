@@ -12,6 +12,7 @@ import {
   verifyExecutionTaskSnapshot,
   type CompleteExecutionBatchMember,
 } from "./execution-control";
+import { sha256Canonical } from "./hash";
 
 const ROOT = "audits/portco-reconciliation";
 const EXECUTION_ROOT = `${ROOT}/2026-08-03/execution-v1`;
@@ -23,9 +24,40 @@ function parsed(path: string): unknown {
   return JSON.parse(readFileSync(path, "utf8")) as unknown;
 }
 
+function eligiblePilotSourceFixture() {
+  const completed = verifyExecutionManifest(parsed(`${EXECUTION_ROOT}/manifest.json`));
+  const resetSequences = new Set([121, 122, 123, 124, 125, 304, 477]);
+  const tasks = completed.tasks.map((task) => {
+    if (!resetSequences.has(task.sequence)) return task;
+    const history = task.history.slice(0, -1);
+    const status = task.sequence === 121 ? "ACTIVE" as const : "PENDING" as const;
+    return {
+      ...task,
+      status,
+      updatedAt: history.at(-1)!.at,
+      completedAt: null,
+      exceptionReason: null,
+      supersededByTaskId: null,
+      history,
+    };
+  });
+  const { manifestSha256: _manifestSha256, ...completedWithoutHash } = completed;
+  const withoutHash = {
+    ...completedWithoutHash,
+    updatedAt: "2026-08-19T01:00:50.000Z",
+    runStatus: "RUNNING" as const,
+    activeTaskId: tasks.find((task) => task.sequence === 121)!.taskId,
+    tasks,
+  };
+  return verifyExecutionManifest({
+    ...withoutHash,
+    manifestSha256: sha256Canonical(withoutHash),
+  });
+}
+
 describe("atomic batch source-manifest recovery", () => {
   it("completes five members and their reciprocal supersessions in one manifest rewrite", () => {
-    const source = verifyExecutionManifest(parsed(`${EXECUTION_ROOT}/manifest.json`));
+    const source = eligiblePilotSourceFixture();
     const mutationKeys = [
       ["0121-r-e-l-a-m-v1", "0121-r-e-l-a-m", "company-relam", []],
       ["0122-cleco-corporate-holdings-llc-v1", "0122-cleco-corporate-holdings-llc", "cmrxpjkkg0151ivhenxskmy7x", []],

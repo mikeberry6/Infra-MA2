@@ -532,6 +532,48 @@ export function verifyPortCoBatchReceipt(input: unknown, manifestInput: PortCoBa
   return receipt;
 }
 
+export function assertPortCoBatchReceiptMatchesCommit(
+  commitReceipt: PortCoBatchCommitReceipt,
+  receipt: PortCoBatchReceipt,
+): void {
+  if (commitReceipt.transactionId !== receipt.transactionId
+    || commitReceipt.appliedAt !== receipt.appliedAt
+    || commitReceipt.releaseSha !== receipt.releaseSha
+    || commitReceipt.databaseTargetFingerprint !== receipt.databaseTargetFingerprint
+    || commitReceipt.members.length !== receipt.members.length) {
+    throw new Error("Final batch receipt does not match the durable database commit receipt");
+  }
+
+  for (const [index, commitMember] of commitReceipt.members.entries()) {
+    const receiptMember = receipt.members[index];
+    if (commitMember.kind !== receiptMember.kind
+      || commitMember.taskId !== receiptMember.taskId
+      || commitMember.taskIndex !== receiptMember.taskIndex) {
+      throw new Error(`Final receipt member ${index + 1} differs from the durable commit receipt`);
+    }
+    if (commitMember.kind === "TERMINAL") {
+      if (receiptMember.kind !== "TERMINAL"
+        || commitMember.outcome !== receiptMember.outcome
+        || commitMember.decisionSha256 !== receiptMember.decisionSha256) {
+        throw new Error(`Final receipt member ${index + 1} differs from the durable commit receipt`);
+      }
+      continue;
+    }
+    if (receiptMember.kind !== "MUTATION"
+      || commitMember.companyId !== receiptMember.receipt.companyId
+      || commitMember.auditEventId !== receiptMember.receipt.auditEventId
+      || commitMember.proposalSha256 !== receiptMember.receipt.proposalSha256
+      || commitMember.approvalSha256 !== receiptMember.receipt.approvalSha256
+      || commitMember.afterImageSha256 !== receiptMember.receipt.appliedAfterImageSha256
+      || commitMember.approvedSeedEntrySha256 !== receiptMember.receipt.approvedSeedEntrySha256
+      || commitReceipt.transactionId !== receiptMember.receipt.transactionId
+      || commitReceipt.appliedAt !== receiptMember.receipt.appliedAt
+      || commitReceipt.databaseTargetFingerprint !== receiptMember.receipt.databaseTargetFingerprint) {
+      throw new Error(`Final receipt member ${index + 1} differs from the durable commit receipt`);
+    }
+  }
+}
+
 export function finalizedChildReceipt(input: {
   proposal: ReconciliationProposal;
   approval: ReconciliationApproval;

@@ -7,10 +7,12 @@ import {
   snapshotCompanySha256,
 } from "./artifacts";
 import {
+  assertPortCoBatchReceiptMatchesCommit,
   finalizeBatchTerminalDecision,
   finalizePortCoBatchManifest,
   verifyBatchTerminalDecision,
   verifyPortCoBatchManifest,
+  type PortCoBatchCommitReceipt,
   type ResolvedBatchMember,
 } from "./batch-artifacts";
 import {
@@ -248,7 +250,7 @@ describe("atomic PortCo batch apply", () => {
     const mutations = members.filter((member) => member.kind === "MUTATION");
     const appliedImages = new Map<string, NonNullable<(typeof mutations)[number]["proposal"]["afterImage"]>>();
     const events: string[] = [];
-    let commitReceiptHash: string | null = null;
+    let commitReceipt: PortCoBatchCommitReceipt | null = null;
     const release = {
       targetDatabase: "production" as const,
       protectedProductionWriteApproved: true,
@@ -275,7 +277,7 @@ describe("atomic PortCo batch apply", () => {
             proposalSha256: member.proposal.proposalSha256,
             approvalSha256: member.approval.approvalSha256,
             afterImageSha256: member.proposal.afterImageSha256!,
-            approvedSeedEntrySha256: sha256Canonical(member.proposal.afterImage),
+            approvedSeedEntrySha256: "a".repeat(64),
           })),
         }),
         verifyPublishedSeedBatch: async () => { events.push("seed:verify"); },
@@ -306,8 +308,8 @@ describe("atomic PortCo batch apply", () => {
           createAuditEvent: async (_tx, audit) => ({ id: `audit:${audit.entityId}` }),
         },
         verifyDetailApi: async () => { events.push("api:verify"); },
-        persistCommitReceipt: async (commitReceipt) => {
-          commitReceiptHash = commitReceipt.receiptSha256;
+        persistCommitReceipt: async (value) => {
+          commitReceipt = value;
           events.push("commit-receipt:persist");
         },
         now: () => new Date(FIXTURE_NOW),
@@ -318,10 +320,12 @@ describe("atomic PortCo batch apply", () => {
     expect(events).toContain("tx:commit");
     expect(events.indexOf("commit-receipt:persist")).toBeGreaterThan(events.indexOf("tx:commit"));
     expect(events.indexOf("commit-receipt:persist")).toBeLessThan(events.indexOf("api:verify"));
-    expect(commitReceiptHash).toMatch(/^[a-f0-9]{64}$/);
+    expect(commitReceipt?.receiptSha256).toMatch(/^[a-f0-9]{64}$/);
     expect(events.filter((event) => event === "api:verify")).toHaveLength(2);
     expect(receipt.members.map((member) => member.kind)).toEqual(["MUTATION", "MUTATION", "TERMINAL"]);
     expect(receipt.verification.partialDatabaseApplication).toBe(false);
+    if (!commitReceipt) throw new Error("Expected a durable commit receipt");
+    expect(() => assertPortCoBatchReceiptMatchesCommit(commitReceipt!, receipt)).not.toThrow();
   });
 
   it("rolls back the entire database transaction when a later member fails", async () => {

@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_POST_APPLY_VERIFICATION",
+  "verifiedAt": "2026-08-23T05:44:00.000Z",
+  "batchId": "batch-0121-0125-v1",
+  "batchSha256": "d32dc609208bc6e4fe4ed25783d64de719bc45aa8ec9be1cbcbf572316a6c2bf",
+  "releaseSha": "012fc4958ead835a48a6494dbc28edc04962c9ca",
+  "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/32620620950",
+  "transactionId": "655cbe74-5435-4b4a-8e4c-04b5d091f9b8",
+  "commitReceiptSha256": "2001d983ceba3856a876dba78e0d6bb215292eb72e2de72bce6fbd88db522c0b",
+  "finalReceiptSha256": "482937a50b045ce83b20a53f5e5d3e371fc17a8dd728cac7be6d3948bf819497",
+  "receiptVerificationSha256": "230b99c87c4800d3ec72fc2f73e398f7f60c6ec7c3b656689934f6aff3baeb3e",
+  "atomicity": {
+    "databaseTransactionCommitted": true,
+    "databaseTransactionIdSharedByAllMutations": true,
+    "partialDatabaseApplication": false,
+    "mutationCount": 3,
+    "terminalDecisionCount": 2
+  },
+  "mutations": [
+    {
+      "taskIndex": 121,
+      "companyName": "R.E.L.A.M.",
+      "companyId": "cmt5dkowd0000ujyy2xt5zh9z",
+      "auditEventId": "cmt5dksxh000pujyy9lcfzyjb",
+      "companySnapshotSha256": "64d4b4b459c155e08010e8c8e417ebdc41293efbdab367fefc722518d5590955",
+      "afterImageSha256": "c853cbafb05cb31bcf2aa416ad77b7dc8c74f86608b57accd22b35e43ef11b39",
+      "recordStatus": "PUBLISHED",
+      "companyStatus": "ACTIVE",
+      "ownershipPeriodCount": 2,
+      "activeOwnerCount": 1,
+      "pendingOwnershipTransactionCount": 0,
+      "milestoneCount": 3,
+      "citationCount": 9,
+      "primaryCitationCount": 1,
+      "databaseMatchesAfterImage": true,
+      "seedMatchesAfterImage": true,
+      "detailApiVerified": true
+    },
+    {
+      "taskIndex": 122,
+      "companyName": "Cleco Corporate Holdings LLC",
+      "companyId": "cmrxpjkkg0151ivhenxskmy7x",
+      "auditEventId": "cmt5dl1ik0012ujyyvfm3dccj",
+      "companySnapshotSha256": "c71c74dec0ca2f7dd267db5164a2f549b80abaaf0915b055d1766cdfc8704280",
+      "afterImageSha256": "9508e51a7e3fb6858471e0322fd2d63503814c8f59aa78aeedb48e9f8463d406",
+      "recordStatus": "PUBLISHED",
+      "companyStatus": "ACTIVE",
+      "ownershipPeriodCount": 3,
+      "activeOwnerCount": 3,
+      "pendingOwnershipTransactionCount": 1,
+      "milestoneCount": 7,
+      "citationCount": 12,
+      "primaryCitationCount": 1,
+      "databaseMatchesAfterImage": true,
+      "seedMatchesAfterImage": true,
+      "detailApiVerified": true
+    },
+    {
+      "taskIndex": 125,
+      "companyName": "GCT Global Container Terminals Inc.",
+      "companyId": "cmrxpj8l000mmivhe1cfe4xs6",
+      "auditEventId": "cmt5dl9o5001cujyyx9tz5hbm",
+      "companySnapshotSha256": "998659ddcfec81f615ad72c5d3f8b7cdf08ccd2b0ac884381894f32be50af969",
+      "afterImageSha256": "849e0d0117868857fae496cda38bc3c3332701553e1b3ae383906cbcaf69bbc4",
+      "recordStatus": "PUBLISHED",
+      "companyStatus": "ACTIVE",
+      "ownershipPeriodCount": 3,
+      "activeOwnerCount": 3,
+      "pendingOwnershipTransactionCount": 0,
+      "milestoneCount": 8,
+      "citationCount": 13,
+      "primaryCitationCount": 1,
+      "canonicalDatabaseMatchCount": 1,
+      "reviewedSeedDuplicateRetirementCount": 1,
+      "databaseMatchesAfterImage": true,
+      "seedMatchesAfterImage": true,
+      "detailApiVerified": true
+    }
+  ],
+  "terminalDecisions": [
+    {
+      "taskIndex": 123,
+      "companyName": "Connaught Oil and Gas",
+      "outcome": "EXCLUDED",
+      "decisionSha256": "0170f13d5fbd96ce231bc3f7d28d44e0120a0e3c70577bcf7d3a18e8702b6d90",
+      "reason": "Upstream oil-and-gas E&P is outside the infrastructure census, and the reviewed evidence does not prove direct BCI legal ownership.",
+      "databaseMutationExpected": false,
+      "databaseMutationObserved": false
+    },
+    {
+      "taskIndex": 124,
+      "companyName": "Corex Resources Ltd.",
+      "outcome": "EXCLUDED",
+      "decisionSha256": "52c6df1f113dab295d1ee3d0eb8fac9c85dca35ef1f780ecc5b69261390c3e3c",
+      "reason": "Upstream oil-and-gas E&P is outside the infrastructure census, and the reviewed evidence does not prove direct BCI legal ownership.",
+      "databaseMutationExpected": false,
+      "databaseMutationObserved": false
+    }
+  ],
+  "passed": true
+}

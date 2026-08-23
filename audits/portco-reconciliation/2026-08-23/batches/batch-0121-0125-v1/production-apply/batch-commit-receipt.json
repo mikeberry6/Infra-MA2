@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_COMMIT_RECEIPT",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0121-0125-v1",
+  "batchSha256": "d32dc609208bc6e4fe4ed25783d64de719bc45aa8ec9be1cbcbf572316a6c2bf",
+  "releaseSha": "012fc4958ead835a48a6494dbc28edc04962c9ca",
+  "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+  "transactionId": "655cbe74-5435-4b4a-8e4c-04b5d091f9b8",
+  "appliedAt": "2026-08-23T05:37:36.195Z",
+  "members": [
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0121:r-e-l-a-m:186bc13d",
+      "taskIndex": 121,
+      "companyName": "R.E.L.A.M.",
+      "proposalSha256": "1c1d926a2ecd292d81e86a37c9c3e3af1c2f91d0219aacde7f5c7090c89569db",
+      "approvalSha256": "7b8d4b31ba84b6e626b00eb481827a6bf3eddb733dcae88f655e6f011c212edd",
+      "afterImageSha256": "c853cbafb05cb31bcf2aa416ad77b7dc8c74f86608b57accd22b35e43ef11b39",
+      "approvedSeedEntrySha256": "6b22b6f49c2b54fc3f438ec04099a866084aa4d07a9bf73ccf82275671addd04",
+      "companyId": "cmt5dkowd0000ujyy2xt5zh9z",
+      "auditEventId": "cmt5dksxh000pujyy9lcfzyjb"
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0122:cleco-corporate-holdings-llc:43ffb062",
+      "taskIndex": 122,
+      "companyName": "Cleco Corporate Holdings LLC",
+      "proposalSha256": "0cf9cab89dfb8ad09276950ccff124e710c55ee7385551fe8f8d15c406cbb21f",
+      "approvalSha256": "ac2f02532fb8414e8e7afc3b823602268c925d74d37e48f587273c45c8b11e32",
+      "afterImageSha256": "9508e51a7e3fb6858471e0322fd2d63503814c8f59aa78aeedb48e9f8463d406",
+      "approvedSeedEntrySha256": "4db55d91ef206107dfe2bcec0bcc794663bb9992e8be2fd859801405e4838cb4",
+      "companyId": "cmrxpjkkg0151ivhenxskmy7x",
+      "auditEventId": "cmt5dl1ik0012ujyyvfm3dccj"
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0123:connaught-oil-and-gas:bf7f3998",
+      "taskIndex": 123,
+      "companyName": "Connaught Oil and Gas",
+      "outcome": "EXCLUDED",
+      "decisionSha256": "0170f13d5fbd96ce231bc3f7d28d44e0120a0e3c70577bcf7d3a18e8702b6d90"
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0124:corex-resources-ltd:b7545232",
+      "taskIndex": 124,
+      "companyName": "Corex Resources Ltd.",
+      "outcome": "EXCLUDED",
+      "decisionSha256": "52c6df1f113dab295d1ee3d0eb8fac9c85dca35ef1f780ecc5b69261390c3e3c"
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0125:gct-global-container-terminals-inc:4810f4cf",
+      "taskIndex": 125,
+      "companyName": "GCT Global Container Terminals Inc.",
+      "proposalSha256": "e02e11923daef49fef7673702baa60ae7638246d669a4607d53a32d505f21032",
+      "approvalSha256": "7813530b8f96d93ba29533107c8d10c35e7ffbfce7946bd20e1b15d522b4fe9a",
+      "afterImageSha256": "849e0d0117868857fae496cda38bc3c3332701553e1b3ae383906cbcaf69bbc4",
+      "approvedSeedEntrySha256": "975476758b8e1c79fe3ca95fb15bdad893f1829c6d2df7e34392f06af30319f6",
+      "companyId": "cmrxpj8l000mmivhe1cfe4xs6",
+      "auditEventId": "cmt5dl9o5001cujyyx9tz5hbm"
+    }
+  ],
+  "verification": {
+    "databaseTransactionCommitted": true,
+    "seedArtifactVerifiedBeforeCommit": true,
+    "detailApiVerificationPending": true,
+    "partialDatabaseApplication": false
+  },
+  "receiptSha256": "2001d983ceba3856a876dba78e0d6bb215292eb72e2de72bce6fbd88db522c0b"
+}
