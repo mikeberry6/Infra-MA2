@@ -2,7 +2,7 @@
 
 - Workflow timestamp: 2026-08-22 10:51 EDT
 - Target period: August 15–21, 2026
-- Status: Complete — all 20 batch chats and final consolidation completed in Pro Deep Think; independent source QA, 11-deal briefing update, structural validation, browser QA, and repository checks completed
+- Status: Complete — all 20 batch chats and final consolidation completed in Pro Deep Think; independent source QA, 12-deal briefing reconciliation, structural validation, browser QA, and repository checks completed
 - Required model: Gemini 3.1 Pro Deep Think / Pro Deep Think
 - Briefing path: `public/email-format/2026-08-21.html`
 
@@ -64,12 +64,14 @@ Gemini said 1. QA Analyst SummaryFollowing a comprehensive quality assurance aud
 - Bryant Hammett & Associates — Bernhard Capital-backed Aventia bolt-on acquisition.
 - Muon Space — I Squared Capital participation in the US$250mm Series C.
 - Fiberhost and INEA — Macquarie European Infrastructure Fund 5 divestiture to Deutsche Telekom.
+- GMSL / Energy One — EIP portfolio company Fluxys signed a share purchase agreement to sell GMSL and receive an 18.26% strategic stake in Energy One; official EIP disclosure verifies Fluxys's infrastructure-fund lineage.
 - Nxt-Infra Trust — Actis Highway Infra sale of 19.125mm listed InvIT units.
 - FlightServ FBO — Igneo-backed Infinity Aviation acquisition of the Trenton-Mercer operation.
 
 ## Rejected candidates
 
 - Solitude Pipeline System — the source disclosed FID for an already-owned joint venture, not a new equity transaction or newly formed JV; removed during independent source QA despite Gemini's consolidated INCLUDE verdict.
+- Nxt-Infra follow-on sell-down — duplicate market-trading / execution activity following the same formally announced sponsor disposition; retained as one Nxt-Infra transaction under the first-announcement rule.
 - toob — debt-for-equity restructuring led by Ares' private-credit arm; fails infrastructure-vehicle isolation and is a restructuring rather than qualifying infrastructure equity M&A.
 - firstcolo — definitive agreement announced August 14, one day before the target period.
 - Copia Power — definitive takeover agreement announced in July; later coverage was an update.
