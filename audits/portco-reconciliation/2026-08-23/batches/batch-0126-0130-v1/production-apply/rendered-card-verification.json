@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_RENDERED_CARD_VERIFICATION",
+  "verifiedAt": "2026-08-23T06:54:47.000Z",
+  "batchId": "batch-0126-0130-v1",
+  "batchSha256": "598be026cbcf92062a764dc09dcdb69b8a694dcfbcc2cde2b2abfded7410ccb8",
+  "canonicalProductionUrl": "https://infra-ma-2.vercel.app/Infra-MA2/portfolio",
+  "productionDeployment": {
+    "id": "dpl_4kWGML6ovBHBhPTrrrqzxWZ12pKC",
+    "immutableUrl": "infra-ma-2-mcv917zf7-mberry.vercel.app",
+    "githubCommitSha": "db5d43aee00427c3b6bcf3e793987c432a40f660",
+    "readyState": "READY",
+    "canonicalAliasBound": true
+  },
+  "renderedChecks": {
+    "browser": "Codex In-app Browser",
+    "publicPortCoCount": 1138,
+    "mosaic": {
+      "filteredCompanyRows": 1,
+      "canonicalNameVisible": true,
+      "drawerVisible": true,
+      "bciCurrentOwnerVisible": true,
+      "pspCurrentOwnerVisible": true,
+      "aimcoPriorOwnerControlVisible": true,
+      "bciStakeVisible": "56.1%",
+      "pspResidualDisclosureCaveatVisible": true,
+      "sourceCount": 9,
+      "milestoneCount": 2,
+      "domSnapshotSha256": "8b3238386ca400e7376c9521b22806bc0f3179f51dafb33df3765aef4b273d4c"
+    },
+    "nexus": {
+      "filteredCompanyRows": 1,
+      "canonicalNameVisible": true,
+      "drawerVisible": true,
+      "bciCurrentOwnerVisible": true,
+      "jpmIifCurrentOwnerVisible": true,
+      "meagCurrentOwnerVisible": true,
+      "currentStakesVisible": [
+        "50.0%",
+        "37.5% indirect",
+        "12.5% indirect"
+      ],
+      "rawTransactionEnumsAbsent": true,
+      "sourceCount": 14,
+      "milestoneCount": 5,
+      "domSnapshotSha256": "7777740b21f8129a971e8d1a7bb1610e4378289830304267747885d453b28018"
+    },
+    "puget": {
+      "filteredCompanyRows": 1,
+      "canonicalNameVisible": true,
+      "drawerVisible": true,
+      "currentOwnerCount": 6,
+      "formerOwnerCount": 2,
+      "currentOwnersVisible": [
+        "BCI",
+        "Macquarie Asset Management",
+        "OMERS Infrastructure",
+        "Ontario Teachers' Pension Plan",
+        "AIMCo",
+        "PGGM"
+      ],
+      "currentStakesVisible": [
+        "20.9%",
+        "15.8%",
+        "23.9%",
+        "15.8%",
+        "13.6%",
+        "10.0%"
+      ],
+      "priorOwnerControlVisible": true,
+      "pugetSoundEnergyDuplicateRowAbsent": true,
+      "retiredPugetSoundEnergyIdResolvesToCanonicalPugetEnergy": true,
+      "rawTransactionEnumsAbsent": true,
+      "sourceCount": 18,
+      "milestoneCount": 6,
+      "domSnapshotSha256": "4a60bd8bfa2da66c5e2d8413262093780842e27b42e065eeed47d86a93ef5dcc"
+    },
+    "terminalDecisions": {
+      "pugetSoundEnergyPublicDuplicateAbsent": true,
+      "clecoCompositeTaskIntroducesNoDuplicate": true
+    },
+    "browserConsoleIssueCount": 0
+  },
+  "apiChecks": [
+    {
+      "companyName": "Mosaic Forest Management",
+      "companyId": "cmrxpj8mm00mpivhecizreyp5",
+      "httpStatus": 200,
+      "responseContentLengthBytes": 6179,
+      "responseContentSha256": "0d4b63b7fb9f05b055d7fc69ddf06993271c6c1618e6d3a84d19766e1a3e95e2",
+      "currentOwnerCount": 2,
+      "formerOwnerCount": 1
+    },
+    {
+      "companyName": "Nexus Water Group, Inc.",
+      "companyId": "cmrxpj8n500mqivhe8jt4n9mw",
+      "httpStatus": 200,
+      "responseContentLengthBytes": 8062,
+      "responseContentSha256": "4c39e55bc1df5805d2aee1d9c243fe3c06c5b7b34e933101cca63be8007fb4dc",
+      "currentOwnerCount": 3,
+      "formerOwnerCount": 0
+    },
+    {
+      "companyName": "Puget Energy, Inc.",
+      "companyId": "cmrxpj4fp00ghivhebe9bfh5k",
+      "httpStatus": 200,
+      "responseContentLengthBytes": 10918,
+      "responseContentSha256": "78535a34a77b1e44c129e3da0f40e83ee043279f4781303a033c1228904d311f",
+      "currentOwnerCount": 6,
+      "formerOwnerCount": 2
+    },
+    {
+      "companyName": "Puget Sound Energy (retired ID redirect check)",
+      "requestedCompanyId": "cmrxpjkcr014rivhero16klvt",
+      "resolvedCompanyId": "cmrxpj4fp00ghivhebe9bfh5k",
+      "httpStatus": 200,
+      "responseContentLengthBytes": 10918,
+      "responseContentSha256": "78535a34a77b1e44c129e3da0f40e83ee043279f4781303a033c1228904d311f"
+    }
+  ],
+  "boundaryConclusion": "Production renders Mosaic with BCI and PSP current and AIMCo prior, Nexus with BCI, J.P. Morgan/IIF and MEAG current at the supported stakes, and one canonical Puget Energy row with six current and two former owners. The retired Puget Sound Energy company ID resolves to the canonical Puget Energy response, and no public duplicate row is rendered. The Cleco composite task introduced no duplicate or new mutation. No raw transaction enums or browser console errors were observed.",
+  "passed": true
+}
