@@ -1,0 +1,275 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-08-23",
+  "ledgerSha256": "e05bc11faa495f10ac0b386c45c68932cbee598027551c8f65857a6d8caa46d7",
+  "sourceSnapshotSha256": "038827ad00dce5d336d12f5578ff4969dc771052ace1ca190f441a5255211fe1",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 4,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 4,
+      "UNRESOLVED": 1
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  },
+  "expectedMutationCount": 9,
+  "mutations": [
+    {
+      "recordId": "OFA-REPAIR-0141-EOLIAN-EMPLOYEES",
+      "ownershipPeriodId": "cmt5og4ch0007u7yykqzqw0ct",
+      "companyName": "Eolian",
+      "country": "United States",
+      "investmentFirm": "Eolian employees",
+      "currentVehicleName": "Eolian employees",
+      "databaseVehicleName": null,
+      "investmentYear": null,
+      "stake": "Current employee co-ownership disclosed; percentage not publicly disclosed",
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Eolian's current company site identifies the business as owned by GIP funds and employees; employee ownership is direct ownership with no managed-fund attribution."
+      },
+      "evidenceUrls": [
+        "https://www.eolianenergy.com/",
+        "https://www.global-infra.com/portfolio-page/eolian/"
+      ]
+    },
+    {
+      "recordId": "OFA-REPAIR-0141-EOLIAN-FORMER-MAP",
+      "ownershipPeriodId": "cmt5og4io0009u7yyvbz3oqar",
+      "companyName": "Eolian",
+      "country": "United States",
+      "investmentFirm": "MAP Energy, LLC",
+      "currentVehicleName": "MAP RE/ES",
+      "databaseVehicleName": "MAP RE/ES",
+      "investmentYear": null,
+      "stake": "100% of MAP RE/ES announced sold to GIP IV",
+      "expectedIsActive": false,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "MAP RE/ES",
+        "attributionConfidence": null,
+        "attributionRationale": "GIP's acquisition announcement directly identifies MAP Energy's renewable-energy and energy-storage business, MAP RE/ES, as the acquired predecessor vehicle; this former ownership is disclosed but has no separate curated fund link."
+      },
+      "evidenceUrls": [
+        "https://www.eolianenergy.com/press/global-infrastructure-partners-announces-acquisition-of-map-energys-renewable-energy-business",
+        "https://www.eolianenergy.com/"
+      ]
+    },
+    {
+      "recordId": "OFA-REPAIR-0142-LIGHTHOUSE-FORMER-EXCELSIOR",
+      "ownershipPeriodId": "cmt5ogans000fu7yykyfg3253",
+      "companyName": "Lighthouse",
+      "country": "United States",
+      "investmentFirm": "Excelsior Energy Capital",
+      "currentVehicleName": "Excelsior Renewable Energy Investment Fund I LP",
+      "databaseVehicleName": "Excelsior Renewable Energy Investment Fund I LP",
+      "investmentYear": null,
+      "stake": "Sold 100% of its membership interests; total project-level economic percentage not publicly disclosed",
+      "expectedIsActive": false,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Excelsior Renewable Energy Investment Fund I LP",
+        "attributionConfidence": null,
+        "attributionRationale": "Excelsior's sale announcement and KeyBanc transaction record directly identify Excelsior Renewable Energy Investment Fund I LP as the seller of the consolidated Lighthouse portfolio; the former vehicle is disclosed but has no separate curated fund link."
+      },
+      "evidenceUrls": [
+        "https://excelsiorcapital.com/news-insights/excelsior-energy-capital-sells-sub-portfolio-of-solar-and-solar-plus-storage-assets-to-blackrock/",
+        "https://www.key.com/businesses-institutions/our-transactions/deals.excelsior-energy-capital.html"
+      ]
+    },
+    {
+      "recordId": "OFA-REPAIR-0143-GIGAPOWER-BLACKROCK",
+      "ownershipPeriodId": "cmrxpju8701klivhews3qe3yr",
+      "companyName": "Gigapower",
+      "country": "United States",
+      "investmentFirm": "BlackRock",
+      "currentVehicleName": "BGIF IV Neon Acquisition LP",
+      "databaseVehicleName": "BGIF IV Neon Acquisition LP",
+      "investmentYear": 2023,
+      "stake": "50%",
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "DISCLOSED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "BGIF IV Neon Acquisition LP",
+        "attributionConfidence": null,
+        "attributionRationale": "AT&T's closing release and regulatory evidence establish BlackRock's 50% Gigapower ownership through BGIF IV Neon Acquisition LP; the vehicle is disclosed but has no separate curated fund link."
+      },
+      "evidenceUrls": [
+        "https://about.att.com/story/2023/gigapower.html",
+        "https://dms.psc.sc.gov/Attachments/Matter/65e6a0be-d1d8-4be5-b502-64cab3497284",
+        "https://www.businesswire.com/news/home/20221223005039/en/ATT-and-BlackRock-to-Form-Gigapower-Joint-Venture-A-Wholesale-Fiber-Services-Provider"
+      ]
+    },
+    {
+      "recordId": "OFA-REPAIR-0143-GIGAPOWER-ATT",
+      "ownershipPeriodId": "cmt5oggkj000tu7yyz4u566wy",
+      "companyName": "Gigapower",
+      "country": "United States",
+      "investmentFirm": "AT&T Inc.",
+      "currentVehicleName": "Infrastructure Endeavors Holdings, LLC; Teleport Communications America, LLC",
+      "databaseVehicleName": "Infrastructure Endeavors Holdings, LLC; Teleport Communications America, LLC",
+      "investmentYear": 2023,
+      "stake": "50% aggregate",
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "AT&T and regulatory evidence establish AT&T's aggregate 50% Gigapower interest through its disclosed corporate holding entities; this is corporate ownership rather than a managed-fund attribution."
+      },
+      "evidenceUrls": [
+        "https://about.att.com/story/2023/gigapower.html",
+        "https://dms.psc.sc.gov/Attachments/Matter/65e6a0be-d1d8-4be5-b502-64cab3497284",
+        "https://www.businesswire.com/news/home/20221223005039/en/ATT-and-BlackRock-to-Form-Gigapower-Joint-Venture-A-Wholesale-Fiber-Services-Provider"
+      ]
+    },
+    {
+      "recordId": "OFA-REPAIR-0144-HARQUAHALA-BLACKROCK",
+      "ownershipPeriodId": "cmrxpju8p01kmivhernfcvtau",
+      "companyName": "Harquahala Generation Company",
+      "country": "United States",
+      "investmentFirm": "BlackRock",
+      "currentVehicleName": "GEPIF III Trident HoldCo, L.P.; Trident Parent Holdings LLC",
+      "databaseVehicleName": "GEPIF III Trident HoldCo, L.P.; Trident Parent Holdings LLC",
+      "investmentYear": 2024,
+      "stake": "50%",
+      "targetLinkedFundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+      "expected": {
+        "fundAttribution": "DISCLOSED",
+        "currentLinkedFundName": "BlackRock Global Energy & Power Infrastructure Fund III"
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+        "attributionConfidence": null,
+        "attributionRationale": "Capital Power's closing and annual-report evidence establish BlackRock GEPIF III's continuing 50% indirect Harquahala ownership through the Trident entities, matching the curated GEPIF III fund record."
+      },
+      "evidenceUrls": [
+        "https://www.capitalpower.com/media/media_releases/capital-power-completes-acquisition-of-the-1092-mw-harquahala-natural-gas-generation-facility-in-arizona/",
+        "https://www.capitalpower.com/wp-content/uploads/2026/03/Capital-Power-2025-Integrated-Annual-Report.pdf",
+        "https://www.sec.gov/Archives/edgar/data/1534126/000119312521067728/d105498dsc13d.htm"
+      ]
+    },
+    {
+      "recordId": "OFA-REPAIR-0144-HARQUAHALA-CAPITAL-POWER",
+      "ownershipPeriodId": "cmt5ogmaf0016u7yy9gfmnt7i",
+      "companyName": "Harquahala Generation Company",
+      "country": "United States",
+      "investmentFirm": "Capital Power Corporation",
+      "currentVehicleName": "Capital Power Investments, LLC; Trident Parent Holdings LLC",
+      "databaseVehicleName": "Capital Power Investments, LLC; Trident Parent Holdings LLC",
+      "investmentYear": 2024,
+      "stake": "50%",
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Capital Power's closing and current operating disclosures establish its continuing 50% indirect ownership through Capital Power Investments and Trident Parent Holdings; this is corporate ownership rather than a managed-fund attribution."
+      },
+      "evidenceUrls": [
+        "https://www.capitalpower.com/media/media_releases/capital-power-completes-acquisition-of-the-1092-mw-harquahala-natural-gas-generation-facility-in-arizona/",
+        "https://www.capitalpower.com/operations/harquahala/",
+        "https://www.capitalpower.com/wp-content/uploads/2026/07/Capital-Power-2026-Q2-Report.pdf"
+      ]
+    },
+    {
+      "recordId": "OFA-REPAIR-0144-HARQUAHALA-FORMER-CSG",
+      "ownershipPeriodId": "cmt5ogmg60018u7yycxhjngfs",
+      "companyName": "Harquahala Generation Company",
+      "country": "United States",
+      "investmentFirm": "CSG Investments, Inc.",
+      "currentVehicleName": "CSG Investments, Inc. (Beal Financial Corporation affiliate)",
+      "databaseVehicleName": "CSG Investments, Inc. (Beal Financial Corporation affiliate)",
+      "investmentYear": null,
+      "stake": "100% immediately before the February 2024 sale; earlier percentage not publicly disclosed",
+      "expectedIsActive": false,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Capital Power's closing evidence identifies CSG Investments, a Beal Financial Corporation affiliate, as Harquahala's direct corporate seller; no managed-fund vehicle is disclosed."
+      },
+      "evidenceUrls": [
+        "https://www.capitalpower.com/media/media_releases/capital-power-completes-acquisition-of-the-1092-mw-harquahala-natural-gas-generation-facility-in-arizona/",
+        "https://www.sec.gov/Archives/edgar/data/1534126/000119312521067728/d105498dsc13d.htm"
+      ]
+    },
+    {
+      "recordId": "OFA-REPAIR-0145-INDIAN-ENERGY-FORMER-DEBT",
+      "ownershipPeriodId": "cmrxpju9601knivheepwf2q66",
+      "companyName": "Indian Energy",
+      "country": "United States",
+      "investmentFirm": "BlackRock",
+      "currentVehicleName": "BlackRock Impact Opportunities bridge loan for the Viejas project; debt-only and repaid",
+      "databaseVehicleName": "BlackRock Impact Opportunities bridge loan for the Viejas project; debt-only and repaid",
+      "investmentYear": 2023,
+      "stake": "Approximately US$25 million bridge loan; no equity ownership established",
+      "expectedIsActive": false,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "A direct BlackRock Impact Opportunities interview describes the Viejas exposure as approximately US$25 million of bridge capital that earned a return and was repaid, while Indian Energy identifies BlackRock as a financing partner; no equity ownership or infrastructure-fund vehicle is established."
+      },
+      "evidenceUrls": [
+        "https://media.mcguirewoods.com/podcasts/2026/Accessing-The-Pipeline-Ep16.pdf",
+        "https://indianenergy.com/indian-energy-announces-financial-close-on-the-viejas-enterprise-microgrid-project/",
+        "https://www.blackrock.com/us/individual/investment-ideas/alternative-investments/blackrock-impact-opportunities"
+      ]
+    }
+  ],
+  "manifestSha256": "f3761bccd4cc8ca4628b359caffd3202c89dac2899f4806905d9bc7441095b48"
+}
