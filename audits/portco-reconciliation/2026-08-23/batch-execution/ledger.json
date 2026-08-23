@@ -3,7 +3,7 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-23T16:58:00Z",
+  "updatedAt": "2026-08-23T17:08:50Z",
   "activeBatchId": "batch-0162-0166-v1",
   "batches": [
     {
@@ -1015,7 +1015,7 @@
     },
     {
       "batchId": "batch-0162-0166-v1",
-      "state": "READY",
+      "state": "APPLYING",
       "taskIds": [
         "ledger:0162:duke-energy-florida:49a961e7",
         "ledger:0163:cag-holdings-the-new-terminal-one-at-jfk:057d63fe",
@@ -1031,13 +1031,13 @@
         166
       ],
       "createdAt": "2026-08-23T16:37:00Z",
-      "updatedAt": "2026-08-23T16:58:00Z",
+      "updatedAt": "2026-08-23T17:08:50Z",
       "completedAt": null,
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0162-0166-v1/batch-manifest-v2.json",
         "sha256": "8f15f33baae4f06e0d088f8f7f1b2d601646d1ebd3eb5b2fc6e632c5597d0569"
       },
-      "releaseSha": null,
+      "releaseSha": "9740c09281b097ea4e5e461312d8578c58289c62",
       "receipt": null,
       "reason": null,
       "history": [
@@ -1058,9 +1058,29 @@
             "8f15f33baae4f06e0d088f8f7f1b2d601646d1ebd3eb5b2fc6e632c5597d0569"
           ],
           "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "RELEASING",
+          "at": "2026-08-23T17:08:49Z",
+          "evidenceSha256": [
+            "8f15f33baae4f06e0d088f8f7f1b2d601646d1ebd3eb5b2fc6e632c5597d0569"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 4,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-08-23T17:08:50Z",
+          "evidenceSha256": [
+            "8f15f33baae4f06e0d088f8f7f1b2d601646d1ebd3eb5b2fc6e632c5597d0569"
+          ],
+          "reason": null
         }
       ]
     }
   ],
-  "ledgerSha256": "b29ef3f4fdf07a584f811dbc251ae4a4bfa9970b86fbbb4eb73162b7cab2cc6e"
+  "ledgerSha256": "7adb293d19750b526d0952a64876473f96894609ce982e6f6f13c73738212203"
 }
