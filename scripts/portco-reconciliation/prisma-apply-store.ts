@@ -236,7 +236,9 @@ export function assertOwnershipManagerCompatible(input: {
 const approvedOwnershipOrganizationProvisioning = {
   "AgeCare": "CORPORATE",
   "BC Partners": "FUND_MANAGER",
+  "Canadian Business Growth Fund": "FUND_MANAGER",
   "Cox Enterprises": "CORPORATE",
+  "Donato Ardellini": "OTHER",
   "Energy Transfer LP": "CORPORATE",
   "ePointZero": "CORPORATE",
   "Extendicare Inc.": "CORPORATE",
@@ -247,11 +249,15 @@ const approvedOwnershipOrganizationProvisioning = {
   "Kinder Morgan, Inc.": "CORPORATE",
   "MGX": "FUND_MANAGER",
   "Ocean Winds": "CORPORATE",
+  "OPTrust": "PENSION",
   "PUC Inc.": "CORPORATE",
   "Revera Inc.": "CORPORATE",
+  "TotalEnergies": "CORPORATE",
 } as const;
 
-export function ownershipOrganizationTypes(name: string): ["CORPORATE"] | ["FUND_MANAGER"] {
+export function ownershipOrganizationTypes(
+  name: string,
+): ["CORPORATE"] | ["FUND_MANAGER"] | ["OTHER"] | ["PENSION"] {
   const type = approvedOwnershipOrganizationProvisioning[
     name as keyof typeof approvedOwnershipOrganizationProvisioning
   ];

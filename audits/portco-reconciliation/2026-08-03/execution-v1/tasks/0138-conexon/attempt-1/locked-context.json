@@ -1,0 +1,288 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0138:conexon:5a11e528",
+  "taskIndex": 138,
+  "companyName": "Conexon",
+  "generatedAt": "2026-08-23T08:04:53.255Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0138-conexon/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 138,
+    "taskId": "ledger:0138:conexon:5a11e528",
+    "canonicalKey": "conexon|united-states",
+    "companyName": "Conexon",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 23,
+    "managers": [
+      "BlackRock",
+      "Global Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "023-blackrock:repo-only:014:conexon",
+      "048-global-infrastructure-partners:repo-only:003:conexon"
+    ],
+    "productionCompanyIds": [
+      "cmrxpj8uv00n0ivheku4opk63"
+    ],
+    "seedKeys": [
+      "conexon|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.blackrock.com/us/individual/investment-ideas/alternative-investments/blackrock-impact-opportunities"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: BlackRock OUT_OF_SCOPE: Held under Impact Opportunities, not infrastructure. Global Infrastructure Partners MATCHED_ELSEWHERE: Attributable to legacy BlackRock infrastructure vehicles, not GIP",
+    "unresolvedQuestions": [
+      "Confirm whether the manager ownership, the company itself, or only this census scope is out of scope before proposing any change.",
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj8uv00n0ivheku4opk63",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "conexon|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpj8uv00n0ivheku4opk63",
+    "name": "Conexon",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Rural fiber broadband",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Conexon is a broadband platform that works with electric cooperatives to plan, build, finance, and operate fiber-to-the-home networks in rural areas. Its customer base is anchored by electric cooperatives and the residential and business subscribers served through those cooperative broadband systems. The business combines advisory, construction-management, network design, and retail ISP operations through Conexon Connect, creating a model that blends fee income with network-based recurring revenue. Company materials identify Kansas City, Missouri as headquarters and describe more than 800 employees and work with more than 275 electric cooperatives. Its geographic footprint spans rural markets across multiple US states where electric cooperatives are expanding fiber coverage. Transaction materials state that funds and accounts managed by BlackRock invested in Conexon in 2023, and public sources do not disclose the resulting ownership percentage.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2015,
+    "headquarters": "Missouri and multi-state rural United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpju2v01kfivhes3cy8ooe",
+        "managerName": "BlackRock",
+        "organizationName": "BlackRock",
+        "fundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkvz9030jivhersflgje8",
+        "date": "2015",
+        "event": "Company materials identify Conexon's founding year as 2015.",
+        "category": "FOUNDING",
+        "sortDate": "2015-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkvzo030kivhe7igaaewn",
+        "date": "2021",
+        "event": "Conexon launched Conexon Connect as its retail internet service provider platform.",
+        "category": "EXPANSION",
+        "sortDate": "2021-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkw08030livhebxcyh4go",
+        "date": "2023",
+        "event": "TAP Advisors disclosed an investment in Conexon by funds and accounts managed by BlackRock.",
+        "category": "FINANCING",
+        "sortDate": "2023-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxppj3808b0ivhek3obmkf6",
+        "label": "Conexon — Conexon",
+        "url": "https://conexon.us/about/about-conexon/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Conexon company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxppj4908b2ivher43lb8cm",
+        "label": "Conexon — Conexon",
+        "url": "https://conexon.us/about/media-fact-sheet/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Conexon operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppj5a08b4ivhes2iot186",
+        "label": "Conexon — Conexon",
+        "url": "https://conexon.us/news/conexon-founding-partner-randy-klindt-named-ceo-of-companys-isp-entity-conexon-connect/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Conexon — Conexon",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppj6f08b6ivherxvxciqb",
+        "label": "Investment date source — BlackRock — Conexon",
+        "url": "https://www.blackrock.com/us/individual/investment-ideas/alternative-investments/blackrock-impact-opportunities",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "BlackRock initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppj7j08b8ivhe097uea0p",
+        "label": "Announcement date source — BlackRock — Conexon",
+        "url": "https://www.tapadvisors.com/selected-tap-advisors-transactions",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "BlackRock transaction announcement",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Conexon",
+    "investmentFirm": "BlackRock",
+    "sector": "Digital",
+    "subsector": "Rural fiber broadband",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "Conexon is a broadband platform that works with electric cooperatives to plan, build, finance, and operate fiber-to-the-home networks in rural areas. Its customer base is anchored by electric cooperatives and the residential and business subscribers served through those cooperative broadband systems. The business combines advisory, construction-management, network design, and retail ISP operations through Conexon Connect, creating a model that blends fee income with network-based recurring revenue. Company materials identify Kansas City, Missouri as headquarters and describe more than 800 employees and work with more than 275 electric cooperatives. Its geographic footprint spans rural markets across multiple US states where electric cooperatives are expanding fiber coverage. Transaction materials state that funds and accounts managed by BlackRock invested in Conexon in 2023, and public sources do not disclose the resulting ownership percentage.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2015,
+    "investmentYear": 2023,
+    "headquarters": "Missouri and multi-state rural United States",
+    "milestones": [
+      {
+        "date": "2015",
+        "event": "Company materials identify Conexon's founding year as 2015.",
+        "category": "Founding"
+      },
+      {
+        "date": "2021",
+        "event": "Conexon launched Conexon Connect as its retail internet service provider platform.",
+        "category": "Expansion"
+      },
+      {
+        "date": "2023",
+        "event": "TAP Advisors disclosed an investment in Conexon by funds and accounts managed by BlackRock.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Conexon — Conexon",
+        "url": "https://conexon.us/about/about-conexon/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Conexon — Conexon",
+        "url": "https://conexon.us/about/media-fact-sheet/",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Conexon — Conexon",
+        "url": "https://conexon.us/news/conexon-founding-partner-randy-klindt-named-ceo-of-companys-isp-entity-conexon-connect/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Investment date source — BlackRock — Conexon",
+        "url": "https://www.blackrock.com/us/individual/investment-ideas/alternative-investments/blackrock-impact-opportunities",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Announcement date source — BlackRock — Conexon",
+        "url": "https://www.tapadvisors.com/selected-tap-advisors-transactions",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "BlackRock",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2023,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmsdi3s2g003i7h4s4t0s4mmh",
+        "fundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+        "managerId": "cmrxpi56u000wivhev4hy469z",
+        "updatedAt": "2026-08-03T17:26:25.240Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi56u000wivhev4hy469z",
+        "name": "BlackRock",
+        "updatedAt": "2026-07-23T16:09:13.926Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0138:conexon:5a11e528",
+    "taskIndex": 138,
+    "canonicalKey": "conexon|united-states",
+    "capturedAt": "2026-08-23T08:04:53.255Z",
+    "databaseRevision": "revision:001f6c045f1fbbac8efb42f026c37ece4e668973e776b966547fd08ed336ffb0",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "3186dbf61060a74bcc17773d110a98e575dc9d6b6029eef0d2a187ecb6d8c5e9",
+    "productionSnapshotSha256": "2eea4fc9b961955f5e231fe4192d1d42ff7c4b3008aacfe9c4368955874b983f",
+    "targetCompanySnapshotSha256": "77483cb57b13d61d6ac790c3b14bad228eedc50ddf4463611455f3510137d62d",
+    "seedEntrySha256": "496b9c0a244c921b238e4fdf16ce644e8a4bead14a11ae171c5deca59d53e0d7",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "1c9e7456789d3c382ef87f0b559f3a810d03d63111ffdb360233e0cdc781ac00",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "e5741b37b7220d4bd73463514c45185716aab20b4eb4977c4625e9d38bf093ce",
+      "organizationsSha256": "7fbbcb0226a342f0009dc42b0ec9a859965a5106254bd3e946023b716fe28cfa",
+      "citationsSha256": "efab0963d808038dfde4f016ad06977d875ce34227d0d276b602803f8d5fb77b",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "1eba0bb821e05c7edaf2d1c3104adb419222dcbb4dae23585a435b85f5efa7a8",
+    "stateSha256": "efc4617ffbf1709a6315ad3663f0e807d0a134f529aeccf87e74bfc7d936f2c8",
+    "taskSnapshotSha256": "015682ac4e120c41afb8510890334a1e3255e6776109ad3103afb17e19919cef"
+  },
+  "contextSha256": "4442ae6b78e6fd43793976ef670ed769ec78cf2debdb4e6aa91d8bc044e4b820"
+}

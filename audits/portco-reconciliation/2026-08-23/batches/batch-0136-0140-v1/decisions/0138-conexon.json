@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0138:conexon:5a11e528",
+  "taskIndex": 138,
+  "companyName": "Conexon",
+  "outcome": "EXCLUDED",
+  "decidedAt": "2026-08-23T08:15:00.000Z",
+  "rationale": "BlackRock's current page lists Conexon in BlackRock Impact Opportunities (BIO), its social-impact platform, not an infrastructure fund. TAP Advisors says only that BlackRock-managed funds and accounts invested in 2023; it does not identify GEPIF III, a stake or a closing date. BlackRock's acquisition of GIP does not establish transfer of this BIO holding. The company is digital infrastructure, but the documented manager strategy is out of scope.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0138-conexon/attempt-1/locked-task-snapshot.json",
+    "sha256": "c5da6c9db0b1cbd9ea2d0158f12076ab2f2decff90dde027d070f318fde0e71e"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0138-conexon/attempt-1/research-decision.json",
+    "sha256": "1c04bd574fe31b52cc620c87247fe7b5f2181a6288585d8b11c50ffc085da18b"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0138-conexon/attempt-1/source-verification.json",
+    "sha256": "15a13837ae19f7809e0bef69f1229d88acc124eead5811a687549a71cdff7f07"
+  },
+  "evidence": [
+    {
+      "url": "https://www.blackrock.com/us/individual/investment-ideas/alternative-investments/blackrock-impact-opportunities",
+      "purpose": "OWNER_STRATEGY_AND_INVESTMENT_YEAR"
+    },
+    {
+      "url": "https://www.tapadvisors.com/selected-tap-advisors-transactions",
+      "purpose": "2023_INVESTMENT_ANNOUNCEMENT"
+    },
+    {
+      "url": "https://conexon.us/about/about-conexon/",
+      "purpose": "IDENTITY_BOUNDARY_OPERATIONS_AND_FOOTPRINT"
+    },
+    {
+      "url": "https://ir.blackrock.com/news-and-events/press-releases/press-releases-details/2024/BlackRock-Completes-Acquisition-of-Global-Infrastructure-Partners/default.aspx",
+      "purpose": "MANAGER_COMBINATION_NOT_PORTCO_TRANSFER"
+    },
+    {
+      "url": "https://www.linkedin.com/posts/infrastructure-journal_blackrock-backed-rural-fiber-broadband-network-activity-7439746340701540353-QawN",
+      "purpose": "LATER_TRANSACTION_CHECK"
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "1a28658ec025c4deef8ae04a71f360185064d42ab4cd4d93b2c03e77a490a05b"
+}

@@ -1,0 +1,259 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0139:electrada:10ae1f7f",
+  "taskIndex": 139,
+  "companyName": "Electrada",
+  "generatedAt": "2026-08-23T08:19:10.812Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0139-electrada/attempt-1/authorization-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 139,
+    "taskId": "ledger:0139:electrada:10ae1f7f",
+    "canonicalKey": "electrada|united-states",
+    "companyName": "Electrada",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 23,
+    "managers": [
+      "BlackRock",
+      "Global Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [
+        "RETIRE_OWNERSHIP"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "023-blackrock:repo-only:012:electrada",
+      "048-global-infrastructure-partners:repo-only:005:electrada"
+    ],
+    "productionCompanyIds": [
+      "cmrxpj8vz00n2ivhe9ik74yeq"
+    ],
+    "seedKeys": [
+      "electrada|United States"
+    ],
+    "evidenceUrls": [
+      "https://inspirationmobility.com/news/inspiration-mobility-group-acquires-electrada-assets-to-scale-end-to-end-electric-fuel-solutions-for-commercial-fleets"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: BlackRock PROPOSED_RETIRE: Asset base acquired by third party, indicating exit. Global Infrastructure Partners MATCHED_ELSEWHERE: Attributable to legacy BlackRock infrastructure vehicles, not GIP",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj8vz00n2ivhe9ik74yeq",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "electrada|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpj8vz00n2ivhe9ik74yeq",
+    "name": "Electrada",
+    "aliases": [],
+    "sector": "TRANSPORTATION",
+    "subsector": "EV fleet charging infrastructure",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Electrada provides electric-fleet charging infrastructure and electric-fuel management solutions for commercial vehicle operators. Its customer base includes fleets that want to electrify without funding charging infrastructure through large upfront capital expenditure. The operating model is asset-heavy and contracted because the company finances, owns, and manages charging infrastructure under long-term service and performance arrangements. Company materials state that the platform launched in 2020 and markets a zero-capex model with uptime and performance commitments to fleet operators. Its deployment footprint spans multiple US states across fleet, municipal, and commercial transportation use cases. BlackRock led Electrada's Series B funding in 2021 and added follow-on capital in 2023, while public sources do not disclose the precise ownership percentage.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2020,
+    "headquarters": "Multi-state United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpju4l01kiivheyfgagvuj",
+        "managerName": "BlackRock",
+        "organizationName": "BlackRock",
+        "fundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkw3q030qivhe7lscmnza",
+        "date": "2020",
+        "event": "Electrada launched its electric-fleet charging platform.",
+        "category": "FOUNDING",
+        "sortDate": "2020-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkw47030rivhec510wk9c",
+        "date": "2021",
+        "event": "BlackRock led Electrada's Series B financing.",
+        "category": "FINANCING",
+        "sortDate": "2021-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkw4r030sivhe964ykwj1",
+        "date": "2023",
+        "event": "BlackRock committed an additional $22 million to support expansion of the platform.",
+        "category": "FINANCING",
+        "sortDate": "2023-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxppji508boivhe1b0uzv2g",
+        "label": "Electrada — Electrada",
+        "url": "https://electrada.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Electrada company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxppjja08bqivhexnapy0kv",
+        "label": "Electrada — Electrada",
+        "url": "https://electrada.com/company/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Electrada — Electrada",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppjkb08bsivhezk62d1us",
+        "label": "Investment date source — BlackRock — Electrada",
+        "url": "https://electrada.com/news/blackrock-ev-charging-expansion/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "BlackRock initial investment / ownership",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Electrada",
+    "investmentFirm": "BlackRock",
+    "sector": "Transportation",
+    "subsector": "EV fleet charging infrastructure",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "Electrada provides electric-fleet charging infrastructure and electric-fuel management solutions for commercial vehicle operators. Its customer base includes fleets that want to electrify without funding charging infrastructure through large upfront capital expenditure. The operating model is asset-heavy and contracted because the company finances, owns, and manages charging infrastructure under long-term service and performance arrangements. Company materials state that the platform launched in 2020 and markets a zero-capex model with uptime and performance commitments to fleet operators. Its deployment footprint spans multiple US states across fleet, municipal, and commercial transportation use cases. BlackRock led Electrada's Series B funding in 2021 and added follow-on capital in 2023, while public sources do not disclose the precise ownership percentage.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2020,
+    "investmentYear": 2021,
+    "headquarters": "Multi-state United States",
+    "milestones": [
+      {
+        "date": "2020",
+        "event": "Electrada launched its electric-fleet charging platform.",
+        "category": "Founding"
+      },
+      {
+        "date": "2021",
+        "event": "BlackRock led Electrada's Series B financing.",
+        "category": "Financing"
+      },
+      {
+        "date": "2023",
+        "event": "BlackRock committed an additional $22 million to support expansion of the platform.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Electrada — Electrada",
+        "url": "https://electrada.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Electrada — Electrada",
+        "url": "https://electrada.com/company/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Investment date source — BlackRock — Electrada",
+        "url": "https://electrada.com/news/blackrock-ev-charging-expansion/",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "BlackRock",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2021,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmsdi3s2g003i7h4s4t0s4mmh",
+        "fundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+        "managerId": "cmrxpi56u000wivhev4hy469z",
+        "updatedAt": "2026-08-03T17:26:25.240Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi56u000wivhev4hy469z",
+        "name": "BlackRock",
+        "updatedAt": "2026-07-23T16:09:13.926Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0139:electrada:10ae1f7f",
+    "taskIndex": 139,
+    "canonicalKey": "electrada|united-states",
+    "capturedAt": "2026-08-23T08:19:10.812Z",
+    "databaseRevision": "revision:0dd464228a65302c6c9ba188333522844c24b70725a7afa2fb35f0893e62c01f",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "5b7597911dc71de4f938bf9321e8bec9f2d2141234b7ddf9a5757c1b14cb0739",
+    "productionSnapshotSha256": "432aefb41f5fdd22cccc6c5d18ff5ca507da88b97c07844d64f16a688d1e4a94",
+    "targetCompanySnapshotSha256": "cdb312615a1ade4b642381b58e3d104526e8bd69126d625f9ae6c1de681643ca",
+    "seedEntrySha256": "dc13937d308b5ee0428ecfb4e10bdd63c90090d3345797078c7552a5089f67db",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "8fa10708d8235b07f6d090e8c3a34ce114de510e98dab7e8f281c35ded3563d7",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "e5741b37b7220d4bd73463514c45185716aab20b4eb4977c4625e9d38bf093ce",
+      "organizationsSha256": "7fbbcb0226a342f0009dc42b0ec9a859965a5106254bd3e946023b716fe28cfa",
+      "citationsSha256": "020c0b29a9e2dc2d025777113605ba28cfa295e100f98ae80e6c138b93c51692",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "16f2f9025155621e7b82189f8eee81a16d605c8538520cb4c443e8cb7ebe4c57",
+    "stateSha256": "3917386d7decb652478e43c4c2da1a20ddc68174eeeb9aef1b7bd849b815ce09",
+    "taskSnapshotSha256": "7ca5d9a9393c26ebb397e589248a7f55890deac2f44484aeb177bb977e5c5622"
+  },
+  "contextSha256": "eb5598de2d412c32f5fc966de831fd1c49fe92c1b9fa4f9338f0d3f777824d3b"
+}

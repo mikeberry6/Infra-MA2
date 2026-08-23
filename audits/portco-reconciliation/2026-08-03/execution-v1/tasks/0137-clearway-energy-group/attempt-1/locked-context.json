@@ -1,0 +1,288 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0137:clearway-energy-group:fb84d1ab",
+  "taskIndex": 137,
+  "companyName": "Clearway Energy Group",
+  "generatedAt": "2026-08-23T08:04:51.466Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0137-clearway-energy-group/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 137,
+    "taskId": "ledger:0137:clearway-energy-group:fb84d1ab",
+    "canonicalKey": "clearway-energy-group|united-states",
+    "companyName": "Clearway Energy Group",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 23,
+    "managers": [
+      "BlackRock",
+      "Global Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "048-global-infrastructure-partners:holding:005:clearway-energy-group"
+    ],
+    "sourceRepoOnlyIds": [
+      "023-blackrock:repo-only:005:clearway-energy-group"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjgjr00ysivhenmpy1x6i"
+    ],
+    "seedKeys": [
+      "clearway energy group|United States"
+    ],
+    "evidenceUrls": [
+      "https://totalenergies.com/news/press-releases/united-states-totalenergies-acquires-50-clearway-5th-largest-us-renewable",
+      "https://www.clearwayenergygroup.com/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: BlackRock MATCHED_ELSEWHERE: GIP-led renewable platform; routed to GIP task.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjgjr00ysivhenmpy1x6i",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "clearway-energy-group|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjgjr00ysivhenmpy1x6i",
+    "name": "Clearway Energy Group",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Utility-scale renewable power and storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Clearway Energy Group develops, owns, and operates utility-scale wind, solar, and energy-storage assets across the United States. Its customers are utilities, corporates, and power-market counterparties that procure renewable generation and related clean-energy products through long-term contracts and market arrangements. The company runs an asset-heavy model built around owned generation assets, development pipelines, and contracted renewable power sales. At the time of TotalEnergies’ transaction announcement in 2022, public materials described Clearway as the fifth-largest U.S. renewable energy player. Global Infrastructure Partners and TotalEnergies agreed in May 2022 that TotalEnergies would acquire 50% of Clearway Energy Group. The platform continues to operate as a large U.S. renewable-generation and development business under that ownership structure.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2018,
+    "headquarters": "Multi-state U.S. operations",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk2cd01xcivhef8mj5h2n",
+        "managerName": "BlackRock",
+        "organizationName": "GIP",
+        "fundName": "Evergreen Infrastructure Fund",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2018,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpltps0455ivhe8s13n0cr",
+        "date": "2018",
+        "event": "Clearway Energy Group was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2018-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpltss0456ivheob5d13s0",
+        "date": "Aug 31, 2018",
+        "event": "Global Infrastructure Partners (GIP) completed the acquisition of NRG's renewables platform and controlling interest in NRG Yield, forming Clearway Energy Group as an independent enterprise.",
+        "category": "ACQUISITION",
+        "sortDate": "2018-08-31T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplttc0457ivhelon8bxz2",
+        "date": "2022",
+        "event": "Clearway was described publicly as the fifth-largest U.S. renewable energy player.",
+        "category": "EXPANSION",
+        "sortDate": "2022-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplttw0458ivhepxe48h20",
+        "date": "May 25, 2022",
+        "event": "TotalEnergies announced an agreement to acquire 50% of Clearway Energy Group from GIP.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-05-25T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpr9ie0atbivhevrjk1smi",
+        "label": "Clearwayenergygroup — Clearway Energy Group",
+        "url": "https://www.clearwayenergygroup.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Clearwayenergygroup company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpr9lg0atdivhefy1f81mh",
+        "label": "Close date source — Global Infrastructure Partners — Clearway Energy Group",
+        "url": "https://www.clearwayenergygroup.com/press-releases/clearway-energy-group-launches-operations/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Global Infrastructure Partners closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr9mx0atfivhekve4abf0",
+        "label": "Totalenergies — Clearway Energy Group",
+        "url": "https://totalenergies.com/news/press-releases/united-states-totalenergies-acquires-50-clearway-5th-largest-us-renewable",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Totalenergies transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr9o20athivheaeo1bki7",
+        "label": "Clearwayenergygroup — Clearway Energy Group",
+        "url": "https://www.clearwayenergygroup.com/about/leadership/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Clearwayenergygroup company profile",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Clearway Energy Group",
+    "investmentFirm": "Global Infrastructure Partners",
+    "sector": "Power & ET",
+    "subsector": "Utility-scale renewable power and storage",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "Clearway Energy Group develops, owns, and operates utility-scale wind, solar, and energy-storage assets across the United States. Its customers are utilities, corporates, and power-market counterparties that procure renewable generation and related clean-energy products through long-term contracts and market arrangements. The company runs an asset-heavy model built around owned generation assets, development pipelines, and contracted renewable power sales. At the time of TotalEnergies’ transaction announcement in 2022, public materials described Clearway as the fifth-largest U.S. renewable energy player. Global Infrastructure Partners and TotalEnergies agreed in May 2022 that TotalEnergies would acquire 50% of Clearway Energy Group. The platform continues to operate as a large U.S. renewable-generation and development business under that ownership structure.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2018,
+    "investmentYear": 2018,
+    "headquarters": "Multi-state U.S. operations",
+    "milestones": [
+      {
+        "date": "2018",
+        "event": "Clearway Energy Group was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "Aug 31, 2018",
+        "event": "Global Infrastructure Partners (GIP) completed the acquisition of NRG's renewables platform and controlling interest in NRG Yield, forming Clearway Energy Group as an independent enterprise.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "2022",
+        "event": "Clearway was described publicly as the fifth-largest U.S. renewable energy player.",
+        "category": "Expansion"
+      },
+      {
+        "date": "May 25, 2022",
+        "event": "TotalEnergies announced an agreement to acquire 50% of Clearway Energy Group from GIP.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Clearwayenergygroup — Clearway Energy Group",
+        "url": "https://www.clearwayenergygroup.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Close date source — Global Infrastructure Partners — Clearway Energy Group",
+        "url": "https://www.clearwayenergygroup.com/press-releases/clearway-energy-group-launches-operations/",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Totalenergies — Clearway Energy Group",
+        "url": "https://totalenergies.com/news/press-releases/united-states-totalenergies-acquires-50-clearway-5th-largest-us-renewable",
+        "type": "ARTICLE",
+        "purpose": "MILESTONE_EVENT"
+      },
+      {
+        "label": "Clearwayenergygroup — Clearway Energy Group",
+        "url": "https://www.clearwayenergygroup.com/about/leadership/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Global Infrastructure Partners",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2018,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj1cv00bxivhe247gfqwa",
+        "fundName": "Evergreen Infrastructure Fund",
+        "managerId": "cmrxpi56u000wivhev4hy469z",
+        "updatedAt": "2026-07-23T16:09:55.615Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpij5s005aivhe70jwqccm",
+        "name": "GIP",
+        "updatedAt": "2026-07-23T16:09:32.032Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0137:clearway-energy-group:fb84d1ab",
+    "taskIndex": 137,
+    "canonicalKey": "clearway-energy-group|united-states",
+    "capturedAt": "2026-08-23T08:04:51.466Z",
+    "databaseRevision": "revision:64eb69cf72a59e4677f3c952f9856047f2e50757837a7e83b4f3c21a2cf0b02d",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "62330c9f8192e0577bfc883c5386c262538dc1516b2e833430d8a05458ac6da4",
+    "productionSnapshotSha256": "df4d6269fb0b9e324d57aa57a8c78a76d8c96c5da8de276343c78df8e5a7b5bb",
+    "targetCompanySnapshotSha256": "8ca7e4787e616d6e5bbd58774ad30dd51a141cb0205f313ede828b534a21aa52",
+    "seedEntrySha256": "03e868da7bf76e2e466f20fd7e3ff8d347ef12e38652027d68445fc4a15aeb94",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "8a562330f65d00bd442b295a58ff372a5229ef97d73feb56d81236ba73c3c320",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "d2b61ffca022121ad2d96284773b2bf1e2607a59fb80f5ba36851fe1d60bdd21",
+      "organizationsSha256": "3ed7104b99c97281f3949d1c8a26a405765c8b3d846e946714e267dd538c1ffd",
+      "citationsSha256": "a5336726b985f0ab120ed69b3c6622586bf3294b900eba2d4ef1ffc9d3e0ea47",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "ced241ab750117521e268c8e6598e1880375daca827551a5ab487d8ae2c765b8",
+    "stateSha256": "84e0717a9f01a7443f86d4f559dd4a540f282d6b49e74659a7c24ce59de395e2",
+    "taskSnapshotSha256": "5fd73cc85cc2cdd9291ccb1a3192fcd4540bfc8b3ebef0756d27cf2c8cec1e98"
+  },
+  "contextSha256": "26aaed2319a7252c9f08ed5cbea5c2e7fea52ec2c6a3f5d66581074fa7c4dbf9"
+}

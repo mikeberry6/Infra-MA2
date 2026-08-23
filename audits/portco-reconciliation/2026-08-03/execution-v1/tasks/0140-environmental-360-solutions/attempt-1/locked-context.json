@@ -1,0 +1,261 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0140:environmental-360-solutions:28da2905",
+  "taskIndex": 140,
+  "companyName": "Environmental 360 Solutions",
+  "generatedAt": "2026-08-23T08:04:56.796Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0140-environmental-360-solutions/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 140,
+    "taskId": "ledger:0140:environmental-360-solutions:28da2905",
+    "canonicalKey": "environmental-360-solutions|canada",
+    "companyName": "Environmental 360 Solutions",
+    "country": "Canada",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 23,
+    "managers": [
+      "BlackRock",
+      "Global Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "023-blackrock:holding:001:environmental-360-solutions"
+    ],
+    "sourceRepoOnlyIds": [
+      "048-global-infrastructure-partners:repo-only:006:environmental-360-solutions"
+    ],
+    "productionCompanyIds": [
+      "cmrxpj8wj00n3ivheefc305n4"
+    ],
+    "seedKeys": [
+      "environmental 360 solutions|Canada"
+    ],
+    "evidenceUrls": [
+      "https://e360s.ca/our-media/environmental-360-solutions-inc-announces-closing-of-acquisition-by-blackrock-alternatives/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Global Infrastructure Partners MATCHED_ELSEWHERE: Attributable to legacy BlackRock infrastructure vehicles, not GIP",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj8wj00n3ivheefc305n4",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "environmental-360-solutions|canada",
+  "targetCompanyImage": {
+    "id": "cmrxpj8wj00n3ivheefc305n4",
+    "name": "Environmental 360 Solutions",
+    "aliases": [],
+    "sector": "SOCIAL_INFRA",
+    "subsector": "Waste management and environmental services",
+    "region": "NORTH_AMERICA",
+    "country": "Canada",
+    "countryTags": [
+      "Canada"
+    ],
+    "description": "Environmental 360 Solutions is a Canadian waste-management and environmental-services platform serving municipal, commercial, and industrial customers. Its operating model is asset-heavy because it relies on owned collection routes, transfer, processing, disposal, and related environmental infrastructure. Public company materials describe a workforce of more than 2,200 people and service to more than 750,000 customers across Canada. Operations are concentrated in Alberta, British Columbia, Ontario, Québec, and Saskatchewan. The company was founded in 2018 and has expanded through acquisitions to build a national waste and environmental-services platform. BlackRock Alternatives announced the acquisition of a majority interest in 2023, while the founder remained one of the largest individual shareholders and exact ownership percentages were not publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2018,
+    "headquarters": "Alberta, British Columbia, Ontario, Québec, and Saskatchewan",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpju7d01kjivhel2xkl0z1",
+        "managerName": "BlackRock",
+        "organizationName": "BlackRock",
+        "fundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkw5v030tivhev37g9csr",
+        "date": "2018",
+        "event": "Environmental 360 Solutions was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2018-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkw8x030uivhezc475nkn",
+        "date": "Feb 16, 2023",
+        "event": "Environmental 360 Solutions announced the closing of BlackRock Alternatives' acquisition of a majority interest.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-02-16T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxppjlf08buivhe5tfe20jd",
+        "label": "E360S — Environmental 360 Solutions",
+        "url": "https://e360s.ca/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "E360S company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxppjmi08bwivhe9fokavij",
+        "label": "E360S — Environmental 360 Solutions",
+        "url": "https://e360s.ca/about-us/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "E360S company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppjpx08byivheektdnydn",
+        "label": "E360S — Environmental 360 Solutions",
+        "url": "https://e360s.ca/about-us/shareholders/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "E360S company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppjqy08c0ivhebzm4vfsa",
+        "label": "Close date source — BlackRock — Environmental 360 Solutions",
+        "url": "https://e360s.ca/our-media/environmental-360-solutions-inc-announces-closing-of-acquisition-by-blackrock-alternatives/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "BlackRock closing confirmation",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Environmental 360 Solutions",
+    "investmentFirm": "BlackRock",
+    "sector": "Social Infra",
+    "subsector": "Waste management and environmental services",
+    "region": "North America",
+    "country": "Canada",
+    "ownershipVehicle": "n.a.",
+    "description": "Environmental 360 Solutions is a Canadian waste-management and environmental-services platform serving municipal, commercial, and industrial customers. Its operating model is asset-heavy because it relies on owned collection routes, transfer, processing, disposal, and related environmental infrastructure. Public company materials describe a workforce of more than 2,200 people and service to more than 750,000 customers across Canada. Operations are concentrated in Alberta, British Columbia, Ontario, Québec, and Saskatchewan. The company was founded in 2018 and has expanded through acquisitions to build a national waste and environmental-services platform. BlackRock Alternatives announced the acquisition of a majority interest in 2023, while the founder remained one of the largest individual shareholders and exact ownership percentages were not publicly disclosed.",
+    "status": "Active",
+    "countryTags": [
+      "Canada"
+    ],
+    "yearFounded": 2018,
+    "investmentYear": 2023,
+    "headquarters": "Alberta, British Columbia, Ontario, Québec, and Saskatchewan",
+    "milestones": [
+      {
+        "date": "2018",
+        "event": "Environmental 360 Solutions was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "Feb 16, 2023",
+        "event": "Environmental 360 Solutions announced the closing of BlackRock Alternatives' acquisition of a majority interest.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "E360S — Environmental 360 Solutions",
+        "url": "https://e360s.ca/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "E360S — Environmental 360 Solutions",
+        "url": "https://e360s.ca/about-us/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "E360S — Environmental 360 Solutions",
+        "url": "https://e360s.ca/about-us/shareholders/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Close date source — BlackRock — Environmental 360 Solutions",
+        "url": "https://e360s.ca/our-media/environmental-360-solutions-inc-announces-closing-of-acquisition-by-blackrock-alternatives/",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "BlackRock",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2023,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmsdi3s2g003i7h4s4t0s4mmh",
+        "fundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+        "managerId": "cmrxpi56u000wivhev4hy469z",
+        "updatedAt": "2026-08-03T17:26:25.240Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi56u000wivhev4hy469z",
+        "name": "BlackRock",
+        "updatedAt": "2026-07-23T16:09:13.926Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0140:environmental-360-solutions:28da2905",
+    "taskIndex": 140,
+    "canonicalKey": "environmental-360-solutions|canada",
+    "capturedAt": "2026-08-23T08:04:56.796Z",
+    "databaseRevision": "revision:887f1dd2a7386ec543e86d92af9c5c48c55e4a33f909a45614000d178f173422",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "f73fa55d084f487b029481e889c884beaa7522d96ae8c73882995b8f618bed06",
+    "productionSnapshotSha256": "83a48f988c8f8389a06338e424682e73a6765c555357779dc0a4c30fb50d9f7e",
+    "targetCompanySnapshotSha256": "d9c1ddc26106909394618191d0bb38cbb1e83d6bed42e8baccafdd2786d9effc",
+    "seedEntrySha256": "7ea06c4fda79eda88d64e6e3b3ec4487966d3eaebf3d1c9127ad010b71ee6f6e",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "c820ff6d2c81bc10d549114b071ebb1c9c377fa23725507f4ac2478bef69249d",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "e5741b37b7220d4bd73463514c45185716aab20b4eb4977c4625e9d38bf093ce",
+      "organizationsSha256": "7fbbcb0226a342f0009dc42b0ec9a859965a5106254bd3e946023b716fe28cfa",
+      "citationsSha256": "024153f4640734d5ec579ab759701c3ca4b9c79d1666e4740c20b333553643c6",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "f40dea19faf4b923d37f01e57f18a4008652afdf798bfd54b8bfabe0318a3c1a",
+    "stateSha256": "c6d65a2bb55925afa3a09552dfe1b078bf069f055265b07416b80d6daec45e08",
+    "taskSnapshotSha256": "dd8ac31d7f257cd59e2841e1adf0e5f647cf48e894dbd5e21f9ef13308042f70"
+  },
+  "contextSha256": "0197f1b4da08441a24bc5e1e98a8fab8190fbdc5cb6effa38d3ff03cae920d96"
+}

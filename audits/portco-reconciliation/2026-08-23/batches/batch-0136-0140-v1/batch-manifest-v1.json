@@ -1,0 +1,403 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_MANIFEST",
+  "methodologyVersion": "PORTCO_APPLY_BATCH_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0136-0140-v1",
+  "createdAt": "2026-08-23T08:17:00.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "15524007b6c56f949bb97a7a858e83924276a30ab8364de54551d71129b7ef5b"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0136:cleancapital-holdings-llc:f7156fe1",
+      "taskIndex": 136,
+      "companyName": "CleanCapital Holdings, LLC",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0136-cleancapital-holdings-v1/proposal.json",
+        "sha256": "87ea13baf3e3a97854af3ab1e52542fd4e1bb47f56375aafe3b7545df6b792bd"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0136-cleancapital-holdings-v1.json",
+        "sha256": "b14856c83fc083640743496abe31c6b4630ddabcfd7eb06c7ec3796844ae8bad"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0136-cleancapital-holdings-llc/attempt-1/locked-v2-production-snapshot.json",
+        "sha256": "b8eeeb7ce324740358f7b2e94611e0e35969a22062ca5edc38fa291c9e12fabf"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0136-cleancapital-holdings-llc/attempt-1/locked-v2-task-snapshot.json",
+        "sha256": "d29346b13ed98389cdadd0ac9dd44c49cef016c1284d9c6348976c865b20a353"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0136-cleancapital-holdings-llc/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "88e7ca56acbd0d9d08950daf5da3af52b60aa6d91cf092745115a4b64cebf72b"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0136-cleancapital-holdings-llc/attempt-1/research-decision.json",
+        "sha256": "11f5bd3c611d920618a7b019594d3f6da949d8937741a265037dfac8504bdf63"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0136-cleancapital-holdings-llc/attempt-1/source-verification.json",
+        "sha256": "068349ed0eda523991726b60f864cd44e78e2d6edacd05a6c389a447fb76f2f8"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "6bab5d467d8e73a447b7fe39c81941956bbedd3a84237c5eb0983cc8ee4e6942",
+      "dependencySha256": "a7e65199c6a8a944d070ab75e3644de7eb05de6d881f24d1fbc22ea2c5b50168",
+      "afterImageSha256": "6e811f758344d8ff3f6698a08037f3e08674c404acd9cddd988db0ad1f8aa943",
+      "targetClaims": [
+        "canonical:cleancapital-holdings-llc|united-states",
+        "company:cmrxpj8ua00mzivheaeu8kmvz",
+        "relation:cmrxpju1s01kdivhencq5zip1",
+        "relation:cmrxpju2c01keivhesnzgo23j",
+        "relation:cmrxpkvw3030eivhe0jkazioh",
+        "relation:cmrxpkvwk030fivhey91ri2de",
+        "relation:cmrxpkvx4030givheyihcy4a2",
+        "relation:cmrxpkvxo030hivheh7k3kp42",
+        "relation:cmrxpkvy8030iivhed57f0bt6",
+        "relation:cmrxppisf08amivheifz61vou",
+        "relation:cmrxppiti08aoivhexskjav9j",
+        "relation:cmrxppix508aqivhe5otiugb9",
+        "relation:cmrxppiyk08asivhejximvecf",
+        "relation:cmrxppizu08auivhe6uzcnxw0",
+        "relation:cmrxppj0z08awivhedehausjt",
+        "relation:cmrxppj2208ayivhejbhzr6i7",
+        "seed:cleancapital holdings, llc|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://cleancapital.com/",
+          "label": "Cleancapital — CleanCapital",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://cleancapital.com/about/our-story/",
+          "label": "Cleancapital — CleanCapital Holdings, LLC",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://cleancapital.com/project-acquisition/capital/",
+          "label": "CleanCapital — current capital backing",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://cleancapital.com/resources/cleancapital-and-blackrock-announce-new-partnership-to-drive-capital-into-distributed-clean-energy-markets/",
+          "label": "CleanCapital — BlackRock partnership source — CleanCapital Holdings, LLC",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://cleancapital.com/resources/cleancapital-announces-new-investment-from-blackrocks-renewable-power-group/",
+          "label": "Investment date source — BlackRock — CleanCapital Holdings, LLC",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://cleancapital.com/resources/cleancapital-completes-185m-debt-private-placement/",
+          "label": "Cleancapital — CleanCapital",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://cleancapital.com/resources/cleancapital-secures-300-million-commitment-from-manulife-investment-management-acquires-63-megawatts-of-operating-solar-projects/",
+          "label": "Investment date source — Manulife — CleanCapital Holdings, LLC",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://cleancapital.com/resources/cleancapital-sells-120-mw-solar-project-to-energix-renewables/",
+          "label": "CleanCapital — Nottingham asset sale",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.manulifeim.com/institutional/global/en/about-us/press-releases/cleancapital-receives-up-to-500-million-additional-commitment-from-manulife-investment-management",
+          "label": "Manulifeim — CleanCapital Holdings, LLC",
+          "sourceType": "WEBSITE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0137:clearway-energy-group:fb84d1ab",
+      "taskIndex": 137,
+      "companyName": "Clearway Energy Group",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0137-clearway-energy-group-v1/proposal.json",
+        "sha256": "c9d145a047933925e98f082be4013bcd379a065c7438fe8678eb2ce1dc7de555"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0137-clearway-energy-group-v1.json",
+        "sha256": "6bc219929a3b2eef07e2c78424d111f54a1926596432902f0c82c7246b2cc4b6"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0137-clearway-energy-group/attempt-1/locked-v2-production-snapshot.json",
+        "sha256": "4d94bf39811b9df246c9051ea9ddb50df7aa608552472af2d99a82d26f627339"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0137-clearway-energy-group/attempt-1/locked-v2-task-snapshot.json",
+        "sha256": "8c86dad5c9294d4d68696f09249fb1b4dd569047249587a9a8968cd16706e672"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0137-clearway-energy-group/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "9239dedf74c78ecdb3405497035d520cfced1adbfdd8bfe9d611fb95e8791f18"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0137-clearway-energy-group/attempt-1/research-decision.json",
+        "sha256": "930504886e07a7ee7ae862922c65625cd98a6a4d90d81f5d85e73b92f3f55d5b"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0137-clearway-energy-group/attempt-1/source-verification.json",
+        "sha256": "5171e6ebb88cb8e2ea188882eeb6a79635aca8f2069fd58555599034b7f9b4dc"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "84e0717a9f01a7443f86d4f559dd4a540f282d6b49e74659a7c24ce59de395e2",
+      "dependencySha256": "ced241ab750117521e268c8e6598e1880375daca827551a5ab487d8ae2c765b8",
+      "afterImageSha256": "dbfdaab3b64fb7ade7fec16b0d193fe17dc4ad6609fb147ee678c4d60dbcccf9",
+      "targetClaims": [
+        "canonical:clearway-energy-group|united-states",
+        "company:cmrxpjgjr00ysivhenmpy1x6i",
+        "relation:cmrxpk2cd01xcivhef8mj5h2n",
+        "relation:cmrxpltps0455ivhe8s13n0cr",
+        "relation:cmrxpltss0456ivheob5d13s0",
+        "relation:cmrxplttc0457ivhelon8bxz2",
+        "relation:cmrxplttw0458ivhepxe48h20",
+        "relation:cmrxpr9ie0atbivhevrjk1smi",
+        "relation:cmrxpr9lg0atdivhefy1f81mh",
+        "relation:cmrxpr9mx0atfivhekve4abf0",
+        "relation:cmrxpr9o20athivheaeo1bki7",
+        "seed:clearway energy group|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://totalenergies.com/news/press-releases/united-states-totalenergies-acquires-50-clearway-5th-largest-us-renewable",
+          "label": "Totalenergies — Clearway Energy Group",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.clearwayenergygroup.com/",
+          "label": "Clearwayenergygroup — Clearway Energy Group",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.clearwayenergygroup.com/about/",
+          "label": "Clearway Energy Group — ownership structure",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.clearwayenergygroup.com/about/leadership/",
+          "label": "Clearwayenergygroup — Clearway Energy Group",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.clearwayenergygroup.com/press-releases/clearway-energy-group-launches-operations/",
+          "label": "Close date source — Global Infrastructure Partners — Clearway Energy Group",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1567683/000110465922100053/xslF345X02/tm2225825-1_3seq1.xml",
+          "label": "SEC — TotalEnergies Clearway ownership filing",
+          "sourceType": "SEC_FILING"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1567683/000110465926039297/xslF345X06/tm2611002-1_4seq1.xml",
+          "label": "SEC — current GIP Clearway ownership filing",
+          "sourceType": "SEC_FILING"
+        }
+      ]
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0138:conexon:5a11e528",
+      "taskIndex": 138,
+      "companyName": "Conexon",
+      "outcome": "EXCLUDED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0136-0140-v1/decisions/0138-conexon.json",
+        "sha256": "1a28658ec025c4deef8ae04a71f360185064d42ab4cd4d93b2c03e77a490a05b"
+      }
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0139:electrada:10ae1f7f",
+      "taskIndex": 139,
+      "companyName": "Electrada",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0139-electrada-v1/proposal.json",
+        "sha256": "4d860273dd340fe986fdd6581bdac6ba5c9eea8907fcaa5e8699c6e31f9ecfdd"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0139-electrada-v1.json",
+        "sha256": "c3684e6d9f24f2de0a368b3b0ec2b951ff3d03126c6c92a7116412ac01cc3834"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0139-electrada/attempt-1/locked-v2-production-snapshot.json",
+        "sha256": "f75f64a5148dde39692ad1bf45e70e9dcd136b0482f537251a1f6a926c07be62"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0139-electrada/attempt-1/locked-v2-task-snapshot.json",
+        "sha256": "d55a46da5bc291bf0bc340bc3c91fd7361148eae08026542a9950f7628ac43d9"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0139-electrada/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "7ca5d9a9393c26ebb397e589248a7f55890deac2f44484aeb177bb977e5c5622"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0139-electrada/attempt-1/research-decision.json",
+        "sha256": "b8c6baeb4f889790e0d1c55025156fffb85ed038dd7194aef693eea79d838248"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0139-electrada/attempt-1/source-verification.json",
+        "sha256": "7af00eb76cb57ee4bf794c7a63d412398de87b5c03a01a888e2795746c1d6f7c"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "3917386d7decb652478e43c4c2da1a20ddc68174eeeb9aef1b7bd849b815ce09",
+      "dependencySha256": "16f2f9025155621e7b82189f8eee81a16d605c8538520cb4c443e8cb7ebe4c57",
+      "afterImageSha256": "182bc49e7c42cb5bed61ea9437d28cc901652e1e56d6a8d039264d22cb766601",
+      "targetClaims": [
+        "canonical:electrada|united-states",
+        "company:cmrxpj8vz00n2ivhe9ik74yeq",
+        "relation:cmrxpju4l01kiivheyfgagvuj",
+        "relation:cmrxpkw3q030qivhe7lscmnza",
+        "relation:cmrxpkw47030rivhec510wk9c",
+        "relation:cmrxpkw4r030sivhe964ykwj1",
+        "relation:cmrxppji508boivhe1b0uzv2g",
+        "relation:cmrxppjja08bqivhexnapy0kv",
+        "relation:cmrxppjkb08bsivhezk62d1us",
+        "seed:electrada|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://brite.org/electrada-lands-22m-in-additional-investment-from-blackrock-to-expand-ev-charging-footprint/",
+          "label": "BRITE — Electrada BlackRock follow-on investment",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://electrada.com/",
+          "label": "Electrada — Electrada",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://electrada.com/company/",
+          "label": "Electrada — Electrada",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://electrada.com/news/blackrock-ev-charging-expansion/",
+          "label": "Investment date source — BlackRock — Electrada",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://inspirationmobility.com/energy/electrada",
+          "label": "Inspiration Energy — Electrada successor page",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://inspirationmobility.com/news/inspiration-mobility-group-acquires-electrada-assets-to-scale-end-to-end-electric-fuel-solutions-for-commercial-fleets",
+          "label": "Inspiration Mobility — Electrada asset acquisition",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.currenttrucking.com/news/current-trucking-acquires-electrada-assets-and-select-talent-expands-national-electrification-p",
+          "label": "Current Trucking — Electrada asset acquisition",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1872193/000187219323000001/xslFormDX01/primary_doc.xml",
+          "label": "SEC — Electrada Form D",
+          "sourceType": "SEC_FILING"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0140:environmental-360-solutions:28da2905",
+      "taskIndex": 140,
+      "companyName": "Environmental 360 Solutions",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0140-environmental-360-solutions-v1/proposal.json",
+        "sha256": "a834ec3c62ff18b3044df5b68f0d94d697e565d9554f2fefb88a7e98bc77f9f6"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0140-environmental-360-solutions-v1.json",
+        "sha256": "ae1211faf200e4c7f731e309e017dafad2948cadd176cc0bc0718c853e2ef452"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0140-environmental-360-solutions/attempt-1/locked-v2-production-snapshot.json",
+        "sha256": "b67254a1cd6821a19f0187ebc06393e1aafd977fa8bd7808b9a69cad3482d999"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0140-environmental-360-solutions/attempt-1/locked-v2-task-snapshot.json",
+        "sha256": "51ec3c273ef3613ab359d71951048b78db90e924f0b7c966ce81ba5ac71894e3"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0140-environmental-360-solutions/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "cf4487428f54f01a475cf744a6f2182bf0557fd4f1fa872a06fe0f9c641ed59a"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0140-environmental-360-solutions/attempt-1/research-decision.json",
+        "sha256": "5214fbabd55278026f53d1980b957085f751cc492be9aa74e5688e639f087e5d"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0140-environmental-360-solutions/attempt-1/source-verification.json",
+        "sha256": "11935c43e04bcf1606eaaec87ef0321da3b3387ecb0aa0291f354ace9687915d"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "1e07af7a49320bbeb67e4ccc6930a17ffc3e24dbdaa6301d100f9fa3bab41cbf",
+      "dependencySha256": "72b82b37500ffa8c45f5e8fc7bf9299798d73de4feaba7694da66a0a9aa2de14",
+      "afterImageSha256": "a6d96752e0e4fc401d130a68d72d108bf91bf5963eac5e14cb75ff9ea7aaea39",
+      "targetClaims": [
+        "canonical:environmental-360-solutions|canada",
+        "company:cmrxpj8wj00n3ivheefc305n4",
+        "relation:cmrxpju7d01kjivhel2xkl0z1",
+        "relation:cmrxpkw5v030tivhev37g9csr",
+        "relation:cmrxpkw8x030uivhezc475nkn",
+        "relation:cmrxppjlf08buivhe5tfe20jd",
+        "relation:cmrxppjmi08bwivhe9fokavij",
+        "relation:cmrxppjpx08byivheektdnydn",
+        "relation:cmrxppjqy08c0ivhebzm4vfsa",
+        "seed:environmental 360 solutions|canada"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://competition-bureau.canada.ca/mergers-and-acquisitions/archived-report-merger-reviews?wbdisable=true",
+          "label": "Competition Bureau Canada — E360S merger review",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://e360s.ca/",
+          "label": "E360S — Environmental 360 Solutions",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://e360s.ca/about-us/",
+          "label": "E360S — Environmental 360 Solutions",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://e360s.ca/about-us/shareholders/",
+          "label": "E360S — Environmental 360 Solutions",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://e360s.ca/our-media/environmental-360-solutions-inc-announces-closing-of-acquisition-by-blackrock-alternatives/",
+          "label": "Close date source — BlackRock — Environmental 360 Solutions",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/environmental-360-solutions-enters-united-states-market-through-strategic-acquisition-302823114.html",
+          "label": "Environmental 360 Solutions — U.S. market entry",
+          "sourceType": "PRESS_RELEASE"
+        }
+      ]
+    }
+  ],
+  "collisionAnalysis": {
+    "independent": true,
+    "claimsSha256": "a53c3f91f86609c0c244c0dede1cf61f3aa44043dd7d8aa2575661ea032b03c8",
+    "sharedSourceUrls": [],
+    "conflicts": []
+  },
+  "batchSha256": "3f27d5fce79b6a13e9cee2bdaf738a1e987c012aee5d0c0bc9865897549509d2"
+}

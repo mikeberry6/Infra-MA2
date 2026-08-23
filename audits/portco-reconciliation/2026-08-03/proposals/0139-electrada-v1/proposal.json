@@ -1,0 +1,312 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0139:electrada:10ae1f7f",
+  "taskIndex": 139,
+  "asOfDate": "2026-08-23",
+  "generatedAt": "2026-08-23T08:13:00.000Z",
+  "canonicalKey": "electrada|united-states",
+  "companyName": "Electrada",
+  "actions": [
+    "CORRECT_COMPANY",
+    "RETIRE_OWNERSHIP"
+  ],
+  "sourceHoldingIds": [],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Retain Electrada as one realized historical U.S. fleet-charging platform. BlackRock Climate Infrastructure backed the company, but the exact fund, vehicle and stake were not publicly disclosed. Current Trucking acquired operating, construction and development assets in April 2026, and Inspiration Mobility acquired the remaining disclosed team, pipeline, software and IP assets in June. The two buyers are separate successors to asset groups rather than duplicate Electrada companies, and no GIP ownership period exists.",
+  "evidence": [
+    {
+      "url": "https://www.currenttrucking.com/news/current-trucking-acquires-electrada-assets-and-select-talent-expands-national-electrification-p",
+      "purpose": "First completed asset exit",
+      "supports": [
+        "Current Trucking acquired Electrada operating, construction and development assets and more than 30 sites in April 2026"
+      ]
+    },
+    {
+      "url": "https://inspirationmobility.com/news/inspiration-mobility-group-acquires-electrada-assets-to-scale-end-to-end-electric-fuel-solutions-for-commercial-fleets",
+      "purpose": "Second completed asset exit and successor evidence",
+      "supports": [
+        "Inspiration Mobility acquired select Electrada assets, team, pipeline, software and intellectual property in June 2026"
+      ]
+    },
+    {
+      "url": "https://brite.org/electrada-lands-22m-in-additional-investment-from-blackrock-to-expand-ev-charging-footprint/",
+      "purpose": "Historical BlackRock backing",
+      "supports": [
+        "BlackRock supplied follow-on equity in 2023 through its climate-infrastructure business"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "f75f64a5148dde39692ad1bf45e70e9dcd136b0482f537251a1f6a926c07be62",
+  "currentCompanySnapshotSha256": "cdb312615a1ade4b642381b58e3d104526e8bd69126d625f9ae6c1de681643ca",
+  "executionLock": {
+    "taskSnapshotSha256": "d55a46da5bc291bf0bc340bc3c91fd7361148eae08026542a9950f7628ac43d9",
+    "taskStateSha256": "3917386d7decb652478e43c4c2da1a20ddc68174eeeb9aef1b7bd849b815ce09",
+    "taskDependencySha256": "16f2f9025155621e7b82189f8eee81a16d605c8538520cb4c443e8cb7ebe4c57",
+    "seedEntrySha256": "dc13937d308b5ee0428ecfb4e10bdd63c90090d3345797078c7552a5089f67db",
+    "dependencies": {
+      "ownershipPeriodsSha256": "8fa10708d8235b07f6d090e8c3a34ce114de510e98dab7e8f281c35ded3563d7",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "e5741b37b7220d4bd73463514c45185716aab20b4eb4977c4625e9d38bf093ce",
+      "organizationsSha256": "7fbbcb0226a342f0009dc42b0ec9a859965a5106254bd3e946023b716fe28cfa",
+      "citationsSha256": "020c0b29a9e2dc2d025777113605ba28cfa295e100f98ae80e6c138b93c51692",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmsdi3s2g003i7h4s4t0s4mmh",
+        "fundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+        "managerId": "cmrxpi56u000wivhev4hy469z",
+        "updatedAt": "2026-08-03T17:26:25.240Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi56u000wivhev4hy469z",
+        "name": "BlackRock",
+        "updatedAt": "2026-07-23T16:09:13.926Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpj8vz00n2ivhe9ik74yeq",
+    "name": "Electrada",
+    "aliases": [],
+    "sector": "TRANSPORTATION",
+    "subsector": "EV fleet charging infrastructure",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Electrada provides electric-fleet charging infrastructure and electric-fuel management solutions for commercial vehicle operators. Its customer base includes fleets that want to electrify without funding charging infrastructure through large upfront capital expenditure. The operating model is asset-heavy and contracted because the company finances, owns, and manages charging infrastructure under long-term service and performance arrangements. Company materials state that the platform launched in 2020 and markets a zero-capex model with uptime and performance commitments to fleet operators. Its deployment footprint spans multiple US states across fleet, municipal, and commercial transportation use cases. BlackRock led Electrada's Series B funding in 2021 and added follow-on capital in 2023, while public sources do not disclose the precise ownership percentage.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2020,
+    "headquarters": "Multi-state United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpju4l01kiivheyfgagvuj",
+        "managerName": "BlackRock",
+        "organizationName": "BlackRock",
+        "fundName": "BlackRock Global Energy & Power Infrastructure Fund III",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkw3q030qivhe7lscmnza",
+        "date": "2020",
+        "event": "Electrada launched its electric-fleet charging platform.",
+        "category": "FOUNDING",
+        "sortDate": "2020-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkw47030rivhec510wk9c",
+        "date": "2021",
+        "event": "BlackRock led Electrada's Series B financing.",
+        "category": "FINANCING",
+        "sortDate": "2021-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkw4r030sivhe964ykwj1",
+        "date": "2023",
+        "event": "BlackRock committed an additional $22 million to support expansion of the platform.",
+        "category": "FINANCING",
+        "sortDate": "2023-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxppji508boivhe1b0uzv2g",
+        "label": "Electrada — Electrada",
+        "url": "https://electrada.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Electrada company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxppjja08bqivhexnapy0kv",
+        "label": "Electrada — Electrada",
+        "url": "https://electrada.com/company/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Electrada — Electrada",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppjkb08bsivhezk62d1us",
+        "label": "Investment date source — BlackRock — Electrada",
+        "url": "https://electrada.com/news/blackrock-ev-charging-expansion/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "BlackRock initial investment / ownership",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "cdb312615a1ade4b642381b58e3d104526e8bd69126d625f9ae6c1de681643ca",
+  "afterImage": {
+    "id": "cmrxpj8vz00n2ivhe9ik74yeq",
+    "name": "Electrada",
+    "aliases": [
+      "Electrada, LLC"
+    ],
+    "sector": "TRANSPORTATION",
+    "subsector": "EV fleet charging infrastructure",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Electrada, LLC was a U.S. commercial fleet-charging platform that financed, owned and managed charging infrastructure under charging-as-a-service arrangements. Launched in 2020 and headquartered in Cincinnati, the company served commercial, institutional and public fleets through no-upfront-capex infrastructure and energy-management contracts. BlackRock Climate Infrastructure backed Electrada beginning in 2021, but the exact fund, vehicle and stake were not publicly disclosed. On April 20, 2026, Current Trucking acquired Electrada's operating, construction and development assets, more than 30 sites, customer agreements and select personnel. On June 17, 2026, Inspiration Mobility acquired select remaining assets, team, pipeline, depot-development capability, energy software and intellectual property. Those transactions ended Electrada as a standalone operating platform; neither buyer is treated as a full legal successor and no GIP ownership period exists.",
+    "companyStatus": "REALIZED",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2020,
+    "headquarters": "Cincinnati, Ohio",
+    "lastVerifiedAt": "2026-08-23T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpju4l01kiivheyfgagvuj",
+        "managerName": "BlackRock",
+        "organizationName": "BlackRock",
+        "fundName": null,
+        "vehicleName": "BlackRock Climate Infrastructure; exact vehicle not publicly disclosed",
+        "stake": "Exact percentage not publicly disclosed",
+        "investmentYear": 2021,
+        "exitYear": 2026,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkw3q030qivhe7lscmnza",
+        "date": "2020",
+        "event": "Electrada launched its electric-fleet charging platform.",
+        "category": "FOUNDING",
+        "sortDate": "2020-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkw47030rivhec510wk9c",
+        "date": "2021",
+        "event": "BlackRock Climate Infrastructure led Electrada's Series B financing; the exact fund, legal vehicle and stake were not publicly disclosed.",
+        "category": "FINANCING",
+        "sortDate": "2021-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1872193/000187219323000001/xslFormDX01/primary_doc.xml"
+        ]
+      },
+      {
+        "id": "cmrxpkw4r030sivhe964ykwj1",
+        "date": "Apr 20–Jun 17, 2026",
+        "event": "Current Trucking acquired Electrada's operating, construction and development assets in April, and Inspiration Mobility acquired select remaining assets, team, pipeline, software and intellectual property in June, ending the standalone platform.",
+        "category": "DIVESTITURE",
+        "sortDate": "2026-06-17T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.currenttrucking.com/news/current-trucking-acquires-electrada-assets-and-select-talent-expands-national-electrification-p",
+          "https://inspirationmobility.com/news/inspiration-mobility-group-acquires-electrada-assets-to-scale-end-to-end-electric-fuel-solutions-for-commercial-fleets"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxppji508boivhe1b0uzv2g",
+        "label": "Electrada — Electrada",
+        "url": "https://electrada.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Historical Electrada company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppjja08bqivhexnapy0kv",
+        "label": "Electrada — Electrada",
+        "url": "https://electrada.com/company/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Electrada — Electrada",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppjkb08bsivhezk62d1us",
+        "label": "Investment date source — BlackRock — Electrada",
+        "url": "https://electrada.com/news/blackrock-ev-charging-expansion/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Historical BlackRock investment and expansion backing",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Inspiration Mobility — Electrada asset acquisition",
+        "url": "https://inspirationmobility.com/news/inspiration-mobility-group-acquires-electrada-assets-to-scale-end-to-end-electric-fuel-solutions-for-commercial-fleets",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "June 2026 completed asset acquisition and successor boundary",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "Current Trucking — Electrada asset acquisition",
+        "url": "https://www.currenttrucking.com/news/current-trucking-acquires-electrada-assets-and-select-talent-expands-national-electrification-p",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "April 2026 completed operating-asset acquisition",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Inspiration Energy — Electrada successor page",
+        "url": "https://inspirationmobility.com/energy/electrada",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current placement of acquired Electrada capabilities within Inspiration Energy",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "SEC — Electrada Form D",
+        "url": "https://www.sec.gov/Archives/edgar/data/1872193/000187219323000001/xslFormDX01/primary_doc.xml",
+        "sourceType": "SEC_FILING",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Electrada legal identity and 2023 equity financing",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "BRITE — Electrada BlackRock follow-on investment",
+        "url": "https://brite.org/electrada-lands-22m-in-additional-investment-from-blackrock-to-expand-ev-charging-footprint/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "BlackRock Climate Infrastructure's historical follow-on backing",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "182bc49e7c42cb5bed61ea9437d28cc901652e1e56d6a8d039264d22cb766601",
+  "proposalSha256": "4d860273dd340fe986fdd6581bdac6ba5c9eea8907fcaa5e8699c6e31f9ecfdd"
+}
