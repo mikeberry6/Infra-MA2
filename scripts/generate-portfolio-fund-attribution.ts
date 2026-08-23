@@ -663,6 +663,7 @@ const CANDIDATE_FUNDS: CandidateFund[] = [
 
 const DIRECT_PROGRAM_FIRMS = new Set([
   "acadia infrastructure capital",
+  "at&t inc.",
   "allianz global investors",
   "allianz capital partners",
   "altius minerals",
@@ -693,6 +694,7 @@ const DIRECT_PROGRAM_FIRMS = new Set([
   "cox enterprises",
   "emera",
   "energy transfer lp",
+  "eolian employees",
   "epointzero",
   "ferrovial n.v.",
   "kinder morgan, inc.",
