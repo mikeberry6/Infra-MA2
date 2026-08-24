@@ -1,0 +1,150 @@
+{
+  "generatedAt": "2026-08-24T00:12:00.000Z",
+  "relationMerges": [],
+  "reviewedSeedRetirementTaskIds": [],
+  "unresolvedQuestions": [],
+  "actions": [
+    "CORRECT_COMPANY"
+  ],
+  "retiredCompanyIds": [],
+  "rationale": "Retain one Toqlukuti'k project-company record and correct the 2024 transaction from pending to closed. Direct party and regulatory evidence supports CIP through CI ETF I at 90% and ABO Energy at 10%, while the exact legal close date and holding vehicles are not publicly disclosed. The Crown-land reserve lapsed in 2026, impairing development but not changing the verified ownership split, and no later equity transfer or exit was found.",
+  "evidence": [
+    {
+      "url": "https://www.aboenergy.com/en/media-center/press/2024/2024-12-17_toqlukuti-k_cip_en.html",
+      "purpose": "Closed ownership split",
+      "supports": [
+        "CIP acquired 90% through CI ETF I",
+        "ABO retained 10%"
+      ]
+    },
+    {
+      "url": "https://www.gov.nl.ca/eccc/files/EA-2368-Registration.pdf",
+      "purpose": "Identity, project boundary and development stage",
+      "supports": [
+        "The legal project company and joint venture are identified",
+        "The project remained pre-construction"
+      ]
+    },
+    {
+      "url": "https://www.gov.nl.ca/releases/2026/minesen/0219n03/",
+      "purpose": "Current development-right status",
+      "supports": [
+        "The Crown-land reserve was not extended",
+        "The lapse was a development-right event rather than an ownership transfer"
+      ]
+    }
+  ],
+  "companyFieldUpdates": {
+    "aliases": [
+      "TQK",
+      "Toqlukuti'k Wind and Hydrogen Project",
+      "Toqlukuti'k Avalon Isthmus Green Energy Project"
+    ],
+    "description": "Toqlukuti'k Wind & Hydrogen is a pre-FID wind, hydrogen and green-ammonia development in Newfoundland and Labrador held through Toqlukuti'k Wind and Hydrogen Limited. On December 17, 2024, ABO Energy announced that Copenhagen Infrastructure Partners, through Copenhagen Infrastructure Energy Transition Fund I, had acquired 90% of the project company while ABO retained 10%; the party disclosures describe the acquisition as completed, although the exact legal closing date and holding vehicles were not published. Provincial filings describe a proposed 2.5–3.2 GW wind complex, 2.0–2.5 GW of electrolysis and associated ammonia, transmission, pipeline and storage infrastructure. The environmental assessment remains at the EIS-preparation stage, and the Crown-land reserve expired after February 28, 2026 because development conditions were not met. That lapse impaired the development right but did not establish an equity sale, cancellation or owner exit. No later ownership transfer, financing close, FID, construction start or signed pending transaction was identified through August 19, 2026. TQK facilities and land rights remain components of this one project-company record.",
+    "headquarters": "Newfoundland and Labrador, Canada",
+    "lastVerifiedAt": "2026-08-19T00:00:00.000Z"
+  },
+  "ownershipPeriodUpdates": [
+    {
+      "id": "cmrxpjxq701qaivhe3xcmrpfp",
+      "set": {
+        "managerName": "Copenhagen Infrastructure Partners",
+        "organizationName": "Copenhagen Infrastructure Partners",
+        "fundName": null,
+        "vehicleName": "Copenhagen Infrastructure Energy Transition Fund I (CI ETF I)",
+        "stake": "90%; ABO Energy retains 10%",
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    }
+  ],
+  "ownershipPeriodAdditions": [],
+  "pendingOwnershipTransactionUpdates": [],
+  "pendingOwnershipTransactionAdditions": [],
+  "milestoneUpdates": [
+    {
+      "id": "cmrxplc0603jyivhemt5ili6w",
+      "set": {
+        "date": "Dec 17, 2024",
+        "event": "ABO Energy announced the completed transfer of a 90% interest in Toqlukuti'k to CIP through CI ETF I, with ABO retaining 10%.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-12-17T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.aboenergy.com/en/media-center/press/2024/2024-12-17_toqlukuti-k_cip_en.html",
+          "https://news.cision.com/copenhagen-infrastructure-partners-p-s/r/copenhagen-infrastructure-partners-acquires-majority-stake-in-abo-energy-s-wind-and-hydrogen-project%2Cc4357452"
+        ]
+      }
+    },
+    {
+      "id": "cmrxplc0y03jzivhep6usyn6e",
+      "set": {
+        "date": "Feb 28, 2026",
+        "event": "The provincial Crown-land reserve expired after development conditions were not met; no ownership transfer, project cancellation or environmental-assessment withdrawal was identified.",
+        "category": "OTHER",
+        "sortDate": "2026-02-28T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.gov.nl.ca/releases/2026/minesen/0219n03/",
+          "https://www.gov.nl.ca/eccc/projects/projects-2368/"
+        ]
+      }
+    }
+  ],
+  "citationUpdates": [
+    {
+      "id": "cmrxpqbvc09f9ivhebbly9pus",
+      "set": {
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Completed 90% CIP acquisition and ABO's retained 10% interest",
+        "isPrimary": true
+      }
+    },
+    {
+      "id": "cmrxpqbwk09fbivhe9ornie60",
+      "set": {
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current joint-development identity, ownership split and project scope",
+        "isPrimary": false
+      }
+    }
+  ],
+  "citationAdditions": [
+    {
+      "id": null,
+      "label": "Newfoundland and Labrador — TQK environmental registration",
+      "url": "https://www.gov.nl.ca/eccc/files/EA-2368-Registration.pdf",
+      "sourceType": "PRESENTATION",
+      "purpose": "OPERATIONS_ASSETS",
+      "evidenceLabel": "Legal entity, joint-venture boundary, capacity and pre-construction stage",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "CIP — Toqlukuti'k majority acquisition",
+      "url": "https://news.cision.com/copenhagen-infrastructure-partners-p-s/r/copenhagen-infrastructure-partners-acquires-majority-stake-in-abo-energy-s-wind-and-hydrogen-project%2Cc4357452",
+      "sourceType": "PRESS_RELEASE",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "CIP confirmation of the completed CI ETF I majority acquisition",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "Newfoundland and Labrador — TQK environmental assessment",
+      "url": "https://www.gov.nl.ca/eccc/projects/projects-2368/",
+      "sourceType": "WEBSITE",
+      "purpose": "OPERATIONS_ASSETS",
+      "evidenceLabel": "Current environmental-assessment status and milestones",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "Newfoundland and Labrador — wind-hydrogen land reserves",
+      "url": "https://www.gov.nl.ca/releases/2026/minesen/0219n03/",
+      "sourceType": "PRESS_RELEASE",
+      "purpose": "MILESTONE_EVENT",
+      "evidenceLabel": "February 2026 non-extension of the Crown-land reserve",
+      "isPrimary": false
+    }
+  ]
+}

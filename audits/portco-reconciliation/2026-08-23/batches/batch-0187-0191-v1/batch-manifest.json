@@ -1,0 +1,528 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_MANIFEST",
+  "methodologyVersion": "PORTCO_APPLY_BATCH_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0187-0191-v1",
+  "createdAt": "2026-08-24T00:14:00.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "23444ef2530273a4e8c6f5457d3e45fea302e79a752cc7ba875173355670767d"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0187:sunstone-power:15729451",
+      "taskIndex": 187,
+      "companyName": "Sunstone Power",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0187-sunstone-power/attempt-1/terminal-decision.json",
+        "sha256": "a26e1596e3366267c159a706326c193f6e11d7b62c42dc94cd91a3b71149e5bd"
+      }
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0188:toqlukuti-k-wind-and-hydrogen:a75100d1",
+      "taskIndex": 188,
+      "companyName": "Toqlukuti'k Wind & Hydrogen",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0188-toqlukuti-k-wind-and-hydrogen-v1/proposal.json",
+        "sha256": "5edb6adc4d4580bd8f59024a8f48ae1facc342f08cf867f8bb53f3d02293052e"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0188-toqlukuti-k-wind-and-hydrogen-v1.json",
+        "sha256": "3312ecf1e27a5d2ee78eac5e2de5d52bb10e684331d55137d96e90576ed86475"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0188-toqlukuti-k-wind-and-hydrogen/attempt-1/locked-production-snapshot.json",
+        "sha256": "88b7e52573ed8c8fbb8f51e941b5710778a61d368ea85b2dbe4dea7cb5981e02"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0188-toqlukuti-k-wind-and-hydrogen/attempt-1/locked-task-snapshot.json",
+        "sha256": "ad7808df86995506271f501acc386315cc2eab55dd985a74525bed6115f1e60a"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0188-toqlukuti-k-wind-and-hydrogen/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "c7fb7a81c1cefdd5c2b83df2f2fcf5efab0024670e601f54e945e6cdda2eb52f"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0188-toqlukuti-k-wind-and-hydrogen/attempt-1/application-research-decision.json",
+        "sha256": "591f61181e755c4475271c30c9fed8d3883eecc6db508a17358658a10dfffe48"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0188-toqlukuti-k-wind-and-hydrogen/attempt-1/source-verification.json",
+        "sha256": "c3fc29e4b1f0f2414dee3ac127607ff1de12eaa84d71dfd60bdaa20e9e55739b"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "45ab6af0ea9449d8117a55febf84a204f1977da77fffaf498bf3235cd94400d6",
+      "dependencySha256": "274cee2f9e66ead54d97206ea1438a8aa02f5cc48e5bb4e1d025ce9e93da4130",
+      "afterImageSha256": "2cb14faabe727174f44a2a297935a50d91e7de98cbfd0ef26c1970bb393f5e8b",
+      "targetClaims": [
+        "canonical:toqlukuti-k-wind-and-hydrogen|canada",
+        "company:cmrxpjcbk00sgivhe5kyio04t",
+        "relation:cmrxpjxq701qaivhe3xcmrpfp",
+        "relation:cmrxplc0603jyivhemt5ili6w",
+        "relation:cmrxplc0y03jzivhep6usyn6e",
+        "relation:cmrxpqbvc09f9ivhebbly9pus",
+        "relation:cmrxpqbwk09fbivhe9ornie60",
+        "seed:toqlukuti'k wind & hydrogen|canada"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://news.cision.com/copenhagen-infrastructure-partners-p-s/r/copenhagen-infrastructure-partners-acquires-majority-stake-in-abo-energy-s-wind-and-hydrogen-project%2Cc4357452",
+          "label": "CIP — Toqlukuti'k majority acquisition",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.aboenergy.com/ca/company/projects/toqlukutik-project/",
+          "label": "Aboenergy — Toqlukuti'k Wind & Hydrogen",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.aboenergy.com/en/media-center/press/2024/2024-12-17_toqlukuti-k_cip_en.html",
+          "label": "Close date source — Copenhagen Infrastructure Partners — Toqlukuti'k Wind & Hydrogen",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.gov.nl.ca/eccc/files/EA-2368-Registration.pdf",
+          "label": "Newfoundland and Labrador — TQK environmental registration",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://www.gov.nl.ca/eccc/projects/projects-2368/",
+          "label": "Newfoundland and Labrador — TQK environmental assessment",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.gov.nl.ca/releases/2026/minesen/0219n03/",
+          "label": "Newfoundland and Labrador — wind-hydrogen land reserves",
+          "sourceType": "PRESS_RELEASE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0189:vineyard-northeast:2c3d1cf2",
+      "taskIndex": 189,
+      "companyName": "Vineyard Northeast",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0189-vineyard-offshore-v2/proposal.json",
+        "sha256": "0de1b4661a97dc67d23718d93663279277bef9fd243c827a0932ade2e9654f2a"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0189-vineyard-offshore-v2.json",
+        "sha256": "5235cd99bee3e4757174ab3b428a25af0e583e40898b5e9c7ea1329caf45e9a1"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0189-vineyard-northeast/attempt-1/locked-v2-production-snapshot.json",
+        "sha256": "6028fe1e3f0a2271949be74f88f6734d0c9a97663c0d8eca892b07668c1a1b25"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0189-vineyard-northeast/attempt-1/locked-v2-task-snapshot.json",
+        "sha256": "75178cffa6c38ad7c26b093a46d5d8f49c0e48d5249d71049e1509cbba840b49"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0189-vineyard-northeast/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "40f41cf6d9bd316b30bd6f4860dc2dda9e2bb2c3ef50971a082eb8462cd1f7a1"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0189-vineyard-northeast/attempt-1/application-research-decision.json",
+        "sha256": "c06f0e48642fd8837984a381f608543ca659eaca6d5fd657bbcd966db3802d43"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0189-vineyard-northeast/attempt-1/source-verification.json",
+        "sha256": "1bb8f91496315b7159167ab88b75cf3977750ea07540d43f63321b3a999ee47f"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "c379a8a0da37036bdce3aa13d7df4a072c3b961cef83269ce12172b4e96dfe20",
+      "dependencySha256": "fad8c0e3ff8a485af0f25fc756ce12c4cd806fd948412ab7766bad20f8d421fa",
+      "afterImageSha256": "f111a29f14285e3cdb7e74daaf79bedf768d21af054e993278e2d703384fd732",
+      "targetClaims": [
+        "canonical:vineyard-offshore|united-states",
+        "company:cmrxpjcc300shivhevs5fdcyl",
+        "company:cmrxpjcex00siivhegwj7n0ow",
+        "relation:cmrxpjxr801qcivhep94oama6",
+        "relation:cmrxplavk03ipivhegsk3r2td",
+        "relation:cmrxplawj03irivhe30e1altt",
+        "relation:cmrxplax003isivhedbgt2fjz",
+        "relation:cmrxplc4n03k4ivhew53lzd2s",
+        "relation:cmrxplc5a03k5ivhehkfysqrj",
+        "relation:cmrxplc5s03k6ivhet6rhp1u9",
+        "relation:cmrxplc6c03k7ivhemh337oo7",
+        "relation:cmrxpq9ob09c1ivhetc3ns5me",
+        "relation:cmrxpq9pd09c3ivhemyt9rg7f",
+        "relation:cmrxpq9qb09c5ivheypqg95r4",
+        "relation:cmrxpq9r809c7ivhes3n21xro",
+        "relation:cmrxpq9sf09c9ivhe9pxs6hc7",
+        "relation:cmrxpqc5u09fnivhebnd7evsx",
+        "relation:cmrxpqc6v09fpivhe200k6l1n",
+        "relation:cmrxpqc7x09frivhe40euzk16",
+        "relation:cmrxpqc8w09ftivhe9ccjhtk8",
+        "relation:cmt6gnvhu000k0ryy8d5td6ud",
+        "relation:cmt6gnvig000m0ryylhgd3m6a",
+        "relation:cmt6gnvj1000o0ryy08yhbdoa",
+        "relation:cmt6gnvjn000q0ryyh7frxfox",
+        "seed:vineyard offshore|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://cop.dk/vineyard-offshores-excelsior-wind-project-selected-as-next-wave-of-offshore-wind-in-new-york/",
+          "label": "Copenhagen Offshore Partners — Excelsior selection",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B50D13E96-0000-C9A4-A57C-1AF6D4575681%7D&DocTitle=VNE+NY+Segment_Appendix+E+PIP",
+          "label": "New York DPS — Vineyard Northeast public involvement plan",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://www.boem.gov/renewable-energy/lease-and-grant-information",
+          "label": "BOEM — Renewable-energy leases",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.boem.gov/renewable-energy/state-activities/vineyard-mid-atlantic",
+          "label": "BOEM — Vineyard Mid-Atlantic",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.boem.gov/renewable-energy/state-activities/vineyard-mid-atlantic-ocs-0544",
+          "label": "BOEM lease source — Excelsior Wind",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.boem.gov/renewable-energy/state-activities/vineyard-northeast",
+          "label": "Investment date source — Copenhagen Infrastructure Partners — Vineyard Northeast",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.boem.gov/renewable-energy/state-activities/vineyard-offshore-fact-sheet",
+          "label": "Investment date source — Copenhagen Infrastructure Partners — Vineyard Offshore",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.energyglobal.com/wind/28022022/lease-area-won-by-mid-atlantic-offshore-wind/",
+          "label": "Investment date source — Copenhagen Infrastructure Partners — Excelsior Wind",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.nyserda.ny.gov/All-Programs/Offshore-Wind/Focus-Areas/Offshore-Wind-Solicitations",
+          "label": "NYSERDA — Offshore-wind solicitation history",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.nyserda.ny.gov/All-Programs/Offshore-Wind/Focus-Areas/Offshore-Wind-Solicitations/2024-Solicitation",
+          "label": "Nyserda — Excelsior Wind",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.offshore-mag.com/renewable-energy/news/55251964/vineyard-wind-2-shelved-after-connecticut-withdraws-from-project",
+          "label": "Offshore Magazine — Vineyard Wind 2 withdrawal",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.permits.performance.gov/permitting-project/fast-41-covered-projects/vineyard-northeast",
+          "label": "FAST-41 — Vineyard Northeast",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1634997/000119312521277812/d409108dex101.htm",
+          "label": "SEC — OCS-A 0522 restructuring agreement",
+          "sourceType": "SEC_FILING"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1634997/000163499722000056/R28.htm",
+          "label": "SEC — Avangrid OCS-A 0522 disposition",
+          "sourceType": "SEC_FILING"
+        },
+        {
+          "url": "https://www.vineyardoffshore.com/",
+          "label": "Vineyardoffshore — Vineyard Offshore",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.vineyardoffshore.com/article/team-behind-vineyard-wind-1-announces-next-offshore-wind-project-for-new-england/",
+          "label": "Vineyardoffshore — Vineyard Northeast",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.vineyardoffshore.com/article/vineyard-offshores-excelsior-wind-selected-for-the-next-wave-of-offshore-wind-power-in-new-york/",
+          "label": "Vineyardoffshore — Excelsior Wind",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.vineyardoffshore.com/where-we-work/east-coast/excelsior-wind-1/",
+          "label": "Vineyardoffshore — Excelsior Wind",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.vineyardoffshore.com/where-we-work/east-coast/excelsior-wind-1/vineyard-mid-atlantic/",
+          "label": "Vineyard Offshore — Vineyard Mid-Atlantic",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.vineyardoffshore.com/where-we-work/east-coast/vineyard-wind-2/vineyard-northeast/",
+          "label": "Vineyardoffshore — Vineyard Northeast",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.vineyardoffshore.com/who-we-are/",
+          "label": "Vineyardoffshore — Vineyard Offshore",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.windtech-international.com/company-news/team-behind-vineyard-wind-launches-vineyard-offshore",
+          "label": "Windtech International — Vineyard Offshore",
+          "sourceType": "ARTICLE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0190:arco-norte:b9067e32",
+      "taskIndex": 190,
+      "companyName": "Arco Norte",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0190-autopista-arco-norte-v1/proposal.json",
+        "sha256": "9c4b4e572d56995ea6ae3c3b8fe4de9f87072afde7e59ac3f3de947e777e586a"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0190-autopista-arco-norte-v1.json",
+        "sha256": "39c03a04bf54ce051fedaab496d5b44bd84f95c2f8d1ae6a6fef8a393a8afe4d"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0190-arco-norte/attempt-1/locked-production-snapshot.json",
+        "sha256": "ece00ce08fabaa6de568ace106e41dd0c3b74dcb23d362ac6c736c8703dd5a30"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0190-arco-norte/attempt-1/locked-task-snapshot.json",
+        "sha256": "c020d548d7351209eb1c6b8cc9eb9df1e651f1b921bec8ea71cc7bb0be088b1d"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0190-arco-norte/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "a5848b829c9e803ee08cce10053411564292d30e8445fb196879c6bdbb5e5dab"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0190-arco-norte/attempt-1/application-research-decision.json",
+        "sha256": "984e3fa4c20f373bdda0b76e473963b5bce825b8000d70fcd7227ef54ff25e2f"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0190-arco-norte/attempt-1/source-verification.json",
+        "sha256": "233d980a55ff0028a88d594640bd28f6b4badfe247f4922ba9857be06ab43e8d"
+      },
+      "supersededTaskIds": [
+        "ledger:0374:autopista-arco-norte-s-a-de-c-v:75a792e3"
+      ],
+      "taskStateSha256": "fee0a00879cf20f428ec757d7b774e836f8b218bea99d30550b47e0abe010bfd",
+      "dependencySha256": "6d3702b846ccea137638adc2a347a83d1f1b9222c5e40058c0d999400ef8b9c7",
+      "afterImageSha256": "27f6f740aff49ea4bddfd7d744a68f615510571aab58da8c5471101178f1d150",
+      "targetClaims": [
+        "canonical:arco-norte|mexico",
+        "company:cmrxpjmb4017tivhe2f61twxg",
+        "company:cmrxpjmbm017uivheptthqtyf",
+        "relation:cmrxpk8oj0279ivhe0fc6b7ay",
+        "relation:cmrxpk8ox027aivhey29wjo5v",
+        "relation:cmrxpk8rp027bivhe191ench8",
+        "relation:cmrxpmjjd04zyivhe5nhvugy9",
+        "relation:cmrxpmjjx04zzivhe4d9qnalk",
+        "relation:cmrxpmjkj0500ivhet6iurpbd",
+        "relation:cmrxpmjl20501ivhe7tvgy7zb",
+        "relation:cmrxpmjlm0502ivhe3gog012y",
+        "relation:cmrxpmjp80503ivhe8vg9nl93",
+        "relation:cmrxpmjps0504ivhec97dzwvq",
+        "relation:cmrxpmjqa0505ivheyufxjtoe",
+        "relation:cmrxpsibg0coxivhegd6zy0gz",
+        "relation:cmrxpsici0cozivherrnd1k33",
+        "relation:cmrxpsidn0cp1ivheipiyib5a",
+        "relation:cmrxpsie60cp2ivheji63trz6",
+        "relation:cmrxpsif30cp4ivheetnnwu6x",
+        "relation:cmrxpsiiv0cp6ivheortuuv1u",
+        "seed:arco norte|mexico",
+        "seed:autopista arco norte, s.a. de c.v.|mexico"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://micrs.sct.gob.mx/index.php/infraestructura/direccion-general-de-desarrollo-carretero/titulos-de-concesion",
+          "label": "Mexico SICT — Federal concession titles",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.arconorte.com.mx/",
+          "label": "Arconorte — Arco Norte",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.arconorte.com.mx/en/our-highways/",
+          "label": "Arconorte — Arco Norte",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.cppinvestments.com/newsroom/cppib-invests-mexican-infrastructure/",
+          "label": "Investment date source — CPP Investments — Arco Norte",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.cppinvestments.com/newsroom/project-summit/",
+          "label": "Cppinvestments — Arco Norte",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.otpp.com/en-ca/about-us/news-and-insights/2016/impulsora-del-desarrollo-y-el-empleo-en-america-latina-s-a-b-de-c-v-cppib-and-ontario-teachers-pension-plan-create-strategic-partnership-to-invest-in/",
+          "label": "Otpp — Autopista Arco Norte, S.A. de C.V.",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.otpp.com/en-ca/about-us/news-and-insights/2016/ontario-teachers-and-cppib-complete-investment-in-ideal-subsidiary-promotora-punta-cometa/",
+          "label": "Ontario Teachers' — Promotora Punta Cometa closing",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.otpp.com/en-ca/about-us/news-and-insights/2018/ideal-cppib-and-ontario-teachers-expand-mexican-infrastructure-partnership-with-pacifico-sur-toll-road/",
+          "label": "Announcement date source — OTPP — Pacifico Sur",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.otpp.com/en-ca/about-us/news-and-insights/2020/ideal-cpp-investments-and-ontario-teachers-complete-the-expansion-of-mexican-infrastructure-partnership/",
+          "label": "Otpp — Impulsora del Desarrollo y el Empleo en América Latina, S.A.B. de C.V. (IDEAL)",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.otpp.com/en-ca/investments/our-advantage/our-performance-and-track-record/major-investments/",
+          "label": "Otpp — Pacifico Sur",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.otpp.com/en-ca/modals/portfolio/arco-norte/",
+          "label": "Otpp — Arco Norte",
+          "sourceType": "WEBSITE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0191:caturus:fb78fef3",
+      "taskIndex": 191,
+      "companyName": "Caturus",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0191-caturus-v1/proposal.json",
+        "sha256": "8365a7e2f2efeae5f6d791dc8145c9a6caf6fb7e7fcf524dc0c33ca02db9279a"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0191-caturus-v1.json",
+        "sha256": "827eec33ab7ec6b5e284f92d1de4a269c339615fbdf274221f9765a082432428"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0191-caturus/attempt-1/locked-v2-production-snapshot.json",
+        "sha256": "6b41dcff3efcd0f074d384aae6affa3f18802faa5c8365bb08acf8820534f489"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0191-caturus/attempt-1/locked-v2-task-snapshot.json",
+        "sha256": "4bf6d8f47f9998f39eb1ba05067b5892f3ca6d6b0c15e818df677b430490eb3a"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0191-caturus/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "6e755d0e65eda1c39008ff08f6e58c46f74ca406fc4600c047d7e9e318926b23"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0191-caturus/attempt-1/application-research-decision.json",
+        "sha256": "e0d69f613f32b27c78fd3ea1302669fc64baf33325f071768cff8a95d131d41a"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0191-caturus/attempt-1/source-verification.json",
+        "sha256": "471f84d3cc7b86637d70f02a9d9edda3bda33edf7475857532c183f10d888fc6"
+      },
+      "supersededTaskIds": [
+        "ledger:0192:caturus-energy:13954843"
+      ],
+      "taskStateSha256": "8307882a470ec2665fa0821bb4454f0a0b12b8af56111dc9936d9136742baa46",
+      "dependencySha256": "d05cfd711e69ee119157b82c9b9bce4fce2f8901008519d5d20f46ec5b0ba8d6",
+      "afterImageSha256": "5784916e20fd20d83a1077bf4cfc7219295cca7eaa8e197d559b9b085bae227d",
+      "targetClaims": [
+        "canonical:caturus|united-states",
+        "company:cmrxpjch400smivhexwb0tx7x",
+        "company:cmrxpjjko013jivhegryhtkk9",
+        "relation:cmrxpk5lt022divheaglek2t6",
+        "relation:cmrxpm6h304jyivhez77s8rxv",
+        "relation:cmrxpm6hm04jzivhe2wnt9ui1",
+        "relation:cmrxpm6i804k0ivhe4zjmuoxn",
+        "relation:cmrxpm6ir04k1ivheke2wq01t",
+        "relation:cmrxprvce0bq0ivheoebkj1md",
+        "relation:cmrxprvfx0bq2ivhek85fhl1w",
+        "relation:cmrxprvhe0bq4ivheuxwwuo8x",
+        "relation:cmrxprvic0bq6ivhe0aa6owrf",
+        "relation:cmrxprvjc0bq8ivhehfb7qr61",
+        "relation:cmrxprvkf0bqaivheq8d7bcvy",
+        "seed:caturus|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://caturus.com/",
+          "label": "Caturus — Caturus Energy",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://caturus.com/caturus-announces-final-investment-decision-for-9-5-mtpa-commonwealth-lng-export-facility-in-cameron-la/",
+          "label": "Caturus — Commonwealth LNG FID",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://caturus.com/caturus-closes-gulf-coast-galvan-ranch-acquisition-from-sm-energy/",
+          "label": "Caturus — Galvan Ranch acquisition",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://caturus.com/news/kimmeridge-closes-strategic-equity-investment-from-mubadala-energy-and-rebrands-integrated-natural-gas-platform-as-caturus",
+          "label": "Caturus — Caturus",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://kimmeridge.com/kimmeridge-texas-gas-appoints-david-lawler-as-ceo-kimmeridge-closes-follow-on-control-investment-in-commonwealth-lng/",
+          "label": "Follow-on control source — Kimmeridge — Caturus",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://mubadalaenergy.com/news/mubadala-energy-closes-strategic-investment-in-u-s-natural-gas-and-lng-sector-with-kimmeridge/",
+          "label": "Mubadalaenergy — Caturus",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.cppinvestments.com/newsroom/cpp-investments-net-assets-total-777-5-billion-at-second-quarter-fiscal-2026/",
+          "label": "Cppinvestments — AlphaGen",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.energy.gov/documents/commonwealth-follow-questions",
+          "label": "DOE — Caturus ownership clarification",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.energy.gov/documents/commonwealth-lng-doe-notice-change-control-cpppdf",
+          "label": "DOE — Caturus change of control to CPP Investments",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.energy.gov/sites/default/files/2025-09/Commonwealth%20LNG%20DOE%20Notice%20of%20Change%20in%20Control%20%28Mubadala-Caturus%29%20-%209.5.2025.pdf",
+          "label": "Energy — Caturus",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/commonwealth-lng-closes-on-investment-and-agrees-to-terms-for-strategic-partnership-301898868.html",
+          "label": "Investment date source — Kimmeridge — Caturus / Commonwealth LNG",
+          "sourceType": "PRESS_RELEASE"
+        }
+      ]
+    }
+  ],
+  "collisionAnalysis": {
+    "independent": true,
+    "claimsSha256": "335e6cf4a6f1dbacb74986755e892fd5da980f41cec1d0b3b0510611de7a46e0",
+    "sharedSourceUrls": [],
+    "conflicts": []
+  },
+  "batchSha256": "571cc24b4a9337c5c490ec0cbf56dfffd464b75d7fd34030dd99fef8b87c5528"
+}

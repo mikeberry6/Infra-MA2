@@ -1,0 +1,298 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0189:vineyard-northeast:2c3d1cf2",
+  "taskIndex": 189,
+  "companyName": "Vineyard Northeast",
+  "generatedAt": "2026-08-24T00:13:26.468Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0189-vineyard-northeast/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 189,
+    "taskId": "ledger:0189:vineyard-northeast:2c3d1cf2",
+    "canonicalKey": "vineyard-northeast|united-states",
+    "companyName": "Vineyard Northeast",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 31,
+    "managers": [
+      "Copenhagen Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "031-copenhagen-infrastructure-partners:repo-only:003:vineyard-northeast"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjcc300shivhevs5fdcyl"
+    ],
+    "seedKeys": [
+      "vineyard northeast|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.vineyardoffshore.com/where-we-work/east-coast/vineyard-wind-2/vineyard-northeast/",
+      "https://www.vineyardoffshore.com/who-we-are/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Copenhagen Infrastructure Partners MATCHED_ELSEWHERE: Consolidated beneath the separately counted Vineyard Offshore development platform to avoid double counting an underlying project.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjcc300shivhevs5fdcyl",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "vineyard-northeast|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjcc300shivhevs5fdcyl",
+    "name": "Vineyard Northeast",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Offshore wind development",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Vineyard Northeast is Vineyard Offshore's offshore wind development project for the New England market. The project is intended to serve utility-scale power demand in the region through future offshore wind procurement programs. The model is asset-heavy because it relies on federal lease rights, marine construction, transmission development, and large-scale project finance. Vineyard Offshore announced Vineyard Northeast in 2024 and associated the project with lease area OCS-A 0522. BOEM states that the OCS-A 0522 lease package went into effect on April 1, 2019, after Vineyard Wind, then a 50/50 Avangrid and Copenhagen Infrastructure Partners joint venture, won the 2018 auction. Public materials identify Vineyard Offshore as a CIP-supported platform, while the project-specific ownership percentage is not publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2024,
+    "headquarters": "Massachusetts; federal waters off New England",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjxqs01qbivhe1wsscu5r",
+        "managerName": "Copenhagen Infrastructure Partners",
+        "organizationName": "Copenhagen Infrastructure Partners",
+        "fundName": "Copenhagen Infrastructure III (CI III)",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2019,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplc2103k0ivhejovuhki7",
+        "date": "Apr 1, 2019",
+        "event": "BOEM's commercial lease package for OCS-A 0522, won by Vineyard Wind as a Copenhagen Infrastructure Partners and Avangrid joint venture, went into effect for the Vineyard Northeast project area.",
+        "category": "ACQUISITION",
+        "sortDate": "2019-04-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplc2n03k1ivhe7evhj666",
+        "date": "2024",
+        "event": "BOEM materials linked Vineyard Northeast to lease area OCS-A 0522.",
+        "category": "OTHER",
+        "sortDate": "2024-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplc3603k2ivhenxfi6ue5",
+        "date": "2024",
+        "event": "Vineyard Northeast was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2024-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplc3l03k3ivhed00tadvj",
+        "date": "Mar 27, 2024",
+        "event": "Vineyard Offshore announced Vineyard Northeast as its next offshore wind project for New England.",
+        "category": "OTHER",
+        "sortDate": "2024-03-27T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqbxs09fdivheojjyopzj",
+        "label": "Vineyardoffshore — Vineyard Northeast",
+        "url": "https://www.vineyardoffshore.com/where-we-work/east-coast/vineyard-wind-2/vineyard-northeast/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Vineyardoffshore — Vineyard Northeast",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqc1j09ffivheuq5ta3id",
+        "label": "Vineyardoffshore — Vineyard Northeast",
+        "url": "https://www.vineyardoffshore.com/article/team-behind-vineyard-wind-1-announces-next-offshore-wind-project-for-new-england/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Vineyardoffshore operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqc2i09fhivhehquiuba0",
+        "label": "Announcement date source — Copenhagen Infrastructure Partners — Vineyard Northeast",
+        "url": "https://www.avangrid.com/w/avangrid-renewables-expands-offshore-wind-portfolio-with-provisional-winning-bid-in-new-england",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Copenhagen Infrastructure Partners transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqc3j09fjivheq7ap5aqd",
+        "label": "Investment date source — Copenhagen Infrastructure Partners — Vineyard Northeast",
+        "url": "https://www.boem.gov/renewable-energy/state-activities/vineyard-northeast",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Copenhagen Infrastructure Partners initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqc4r09flivhegjhflau5",
+        "label": "Boem — Vineyard Northeast",
+        "url": "https://www.boem.gov/sites/default/files/documents/renewable-energy/state-activities/VNE%20COP%20Vol%20I%20Text%20March%202024_PUBLIC_0.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Boem — Vineyard Northeast",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Vineyard Northeast",
+    "investmentFirm": "Copenhagen Infrastructure Partners",
+    "sector": "Power & ET",
+    "subsector": "Offshore wind development",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "Vineyard Northeast is Vineyard Offshore's offshore wind development project for the New England market. The project is intended to serve utility-scale power demand in the region through future offshore wind procurement programs. The model is asset-heavy because it relies on federal lease rights, marine construction, transmission development, and large-scale project finance. Vineyard Offshore announced Vineyard Northeast in 2024 and associated the project with lease area OCS-A 0522. BOEM states that the OCS-A 0522 lease package went into effect on April 1, 2019, after Vineyard Wind, then a 50/50 Avangrid and Copenhagen Infrastructure Partners joint venture, won the 2018 auction. Public materials identify Vineyard Offshore as a CIP-supported platform, while the project-specific ownership percentage is not publicly disclosed.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2024,
+    "investmentYear": 2019,
+    "headquarters": "Massachusetts; federal waters off New England",
+    "milestones": [
+      {
+        "date": "Apr 1, 2019",
+        "event": "BOEM's commercial lease package for OCS-A 0522, won by Vineyard Wind as a Copenhagen Infrastructure Partners and Avangrid joint venture, went into effect for the Vineyard Northeast project area.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "2024",
+        "event": "BOEM materials linked Vineyard Northeast to lease area OCS-A 0522.",
+        "category": "Other"
+      },
+      {
+        "date": "2024",
+        "event": "Vineyard Northeast was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "Mar 27, 2024",
+        "event": "Vineyard Offshore announced Vineyard Northeast as its next offshore wind project for New England.",
+        "category": "Other"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Vineyardoffshore — Vineyard Northeast",
+        "url": "https://www.vineyardoffshore.com/where-we-work/east-coast/vineyard-wind-2/vineyard-northeast/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Vineyardoffshore — Vineyard Northeast",
+        "url": "https://www.vineyardoffshore.com/article/team-behind-vineyard-wind-1-announces-next-offshore-wind-project-for-new-england/",
+        "type": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Announcement date source — Copenhagen Infrastructure Partners — Vineyard Northeast",
+        "url": "https://www.avangrid.com/w/avangrid-renewables-expands-offshore-wind-portfolio-with-provisional-winning-bid-in-new-england",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Investment date source — Copenhagen Infrastructure Partners — Vineyard Northeast",
+        "url": "https://www.boem.gov/renewable-energy/state-activities/vineyard-northeast",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Boem — Vineyard Northeast",
+        "url": "https://www.boem.gov/sites/default/files/documents/renewable-energy/state-activities/VNE%20COP%20Vol%20I%20Text%20March%202024_PUBLIC_0.pdf",
+        "type": "PRESENTATION"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Copenhagen Infrastructure Partners",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2019,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmsdi3x1t004a7h4sa9iramgs",
+        "fundName": "Copenhagen Infrastructure III (CI III)",
+        "managerId": "cmrxpi66e0017ivheel3xod17",
+        "updatedAt": "2026-08-03T17:26:31.697Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi66e0017ivheel3xod17",
+        "name": "Copenhagen Infrastructure Partners",
+        "updatedAt": "2026-07-23T16:09:15.206Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0189:vineyard-northeast:2c3d1cf2",
+    "taskIndex": 189,
+    "canonicalKey": "vineyard-northeast|united-states",
+    "capturedAt": "2026-08-24T00:13:26.468Z",
+    "databaseRevision": "revision:6bc2bb966ba38c08e314c7090e2e11780d0c55778a86894de7f04657e927a30a",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "e6d22501ee417b240520ecbda11f388f5dd32f64e5c47880a8a563768ecd2861",
+    "productionSnapshotSha256": "241cb0f33b331347eef087352fb34e4fe2c648734b7ed4b5dd7c0dedc9098dbc",
+    "targetCompanySnapshotSha256": "e524de59a5a557d0e8cdb9d8e1abff0b8b77603c38dc4a54e8bdac6c2125de41",
+    "seedEntrySha256": "7b9055d8cd7a0f29d6571b1f75229a47aad2ef9b78e7739a7fb8c37bdd531e00",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "1b0eab9925711cc032218c3aedbf1b70ed80379bfd485984ae438389eab96b41",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "31a6bd7af4f9c6c2128bab83596f76b658ed0f32f5d634b8200776ce59fdf691",
+      "organizationsSha256": "e44800072983a0697af1aa770f11a5e263004ae330e81d75e3592716938e4c8d",
+      "citationsSha256": "7dc7c7ba2e4c96fe46723ab204ec12f620393f9a30596fe6d01381a75787f429",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "0fc132d1ac95dad939300508635980c41353c364df8b6eb3936dd1d055baae3c",
+    "stateSha256": "1cf614b8f9e888e93fa462d14a9ca494f8bfb83b684a1dac7afd988ebc5cad5b",
+    "taskSnapshotSha256": "96b9167e50923894caa493ad748f6359f2675d202e7eed312770fe01bd7e5f57"
+  },
+  "contextSha256": "14a73cc5f6c68c4ba8bf1a83d893aec596560557e6d840a60e0a2e86e8afca63"
+}
