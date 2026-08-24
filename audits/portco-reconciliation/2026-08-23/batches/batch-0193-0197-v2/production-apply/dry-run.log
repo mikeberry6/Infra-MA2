@@ -1,0 +1,132 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:batch:apply
+> npx tsx scripts/portco-reconciliation/batch-apply-cli.ts --batch-manifest=audits/portco-reconciliation/2026-08-23/batches/batch-0193-0197-v2/batch-manifest.json --batch-sha256=2c3ed26a043a5b10db46c07fa7d59a2c8cb3999be3c32bd1c91e6f6b249398ed
+
+(node:3698) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "BATCH_DRY_RUN",
+  "batchId": "batch-0193-0197-v2",
+  "batchSha256": "2c3ed26a043a5b10db46c07fa7d59a2c8cb3999be3c32bd1c91e6f6b249398ed",
+  "databaseWrites": false,
+  "seedWrites": false,
+  "plans": [
+    {
+      "companyName": "Caturus",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to aliases, milestones, citations."
+        },
+        {
+          "kind": "MERGE_COMPANIES",
+          "relationIds": [
+            "cmrxpjlmi016rivhegsbn21hd"
+          ],
+          "detail": "merge 1 production duplicate(s)"
+        }
+      ],
+      "changedFields": [
+        "aliases",
+        "citations",
+        "milestones",
+        "redirects"
+      ],
+      "retiredCompanyIds": [
+        "cmrxpjlmi016rivhegsbn21hd"
+      ]
+    },
+    {
+      "companyName": "Cordelio Power",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to aliases, country, countryTags, description, headquarters, lastVerifiedAt, milestones, citations."
+        },
+        {
+          "kind": "RETIRE_OWNERSHIP",
+          "relationIds": [
+            "cmrxpjxwr01qhivhey42yacb7"
+          ],
+          "detail": "Retire 1 ownership period(s) without deleting history."
+        },
+        {
+          "kind": "REALIZE_COMPANY",
+          "relationIds": [],
+          "detail": "Mark the company realized after all active ownership has ended."
+        }
+      ],
+      "changedFields": [
+        "aliases",
+        "citations",
+        "companyStatus",
+        "country",
+        "countryTags",
+        "description",
+        "headquarters",
+        "lastVerifiedAt",
+        "milestones",
+        "ownershipPeriods"
+      ],
+      "retiredCompanyIds": []
+    },
+    {
+      "companyName": "Pacifico Sur",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to aliases, description, headquarters, lastVerifiedAt, ownershipPeriods, milestones, citations."
+        }
+      ],
+      "changedFields": [
+        "aliases",
+        "citations",
+        "description",
+        "headquarters",
+        "lastVerifiedAt",
+        "milestones",
+        "ownershipPeriods"
+      ],
+      "retiredCompanyIds": []
+    },
+    {
+      "companyName": "TransAlta Keephills Data Centre JV",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to aliases, subsector, description, recordStatus, yearFounded, headquarters, lastVerifiedAt, milestones, citations."
+        },
+        {
+          "kind": "RETRACT_ERRONEOUS_OWNERSHIP",
+          "relationIds": [
+            "cmrxpjy4f01qvivhe4cx2zkie"
+          ],
+          "detail": "Retract 1 proven erroneous ownership period(s); revision history preserves the prior claim."
+        },
+        {
+          "kind": "REALIZE_COMPANY",
+          "relationIds": [],
+          "detail": "Mark the company realized after all active ownership has ended."
+        }
+      ],
+      "changedFields": [
+        "aliases",
+        "citations",
+        "companyStatus",
+        "description",
+        "headquarters",
+        "lastVerifiedAt",
+        "milestones",
+        "ownershipPeriods",
+        "recordStatus",
+        "subsector",
+        "yearFounded"
+      ],
+      "retiredCompanyIds": []
+    }
+  ]
+}
