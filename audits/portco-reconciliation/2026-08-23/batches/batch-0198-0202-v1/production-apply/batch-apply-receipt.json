@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_RECEIPT",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0198-0202-v1",
+  "batchSha256": "ebfb5307c329991a373ad45481874eb65630624d15f508af749a4cd5ce28d0ba",
+  "releaseSha": "55fb204d3207038b72ccd3bedc917f8cab0605be",
+  "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+  "transactionId": "8e2816c4-fa35-4b53-8cd8-fbc57cde51a9",
+  "appliedAt": "2026-08-24T03:12:44.715Z",
+  "members": [
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0198:american-roads:874323bb",
+      "taskIndex": 198,
+      "companyName": "American Roads",
+      "receipt": {
+        "schemaVersion": 1,
+        "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+        "runId": "portco-reconciliation-2026-08-03-v2",
+        "taskId": "ledger:0198:american-roads:874323bb",
+        "taskIndex": 198,
+        "companyName": "American Roads",
+        "companyId": "cmrxpjevf00wbivheu50etwdq",
+        "proposalSha256": "02f30f53b0f996010ef9509a20c61f0d84c9aa9574e0bc898c2a9b02e807f9d2",
+        "approvalSha256": "551ce9efd16b4d0d7b083d8e13b09893de06ac77b54ade8f07d97e142de83241",
+        "productionSnapshotSha256": "5930ed1ca83e8d4d7c7cc484c9e697d46231d4bee16b4733ee546df14821f05b",
+        "beforeCompanySnapshotSha256": "b0c249ed4c1c29c7be412007ff8cb7b797cf5ea949e5c6590e5aeb9c581f5f55",
+        "appliedAfterImageSha256": "bc1a638cebdec4874b64308c959bbde74ed6062e23b26cf42fc4e6460c4e3227",
+        "seedAfterImageSha256": "bc1a638cebdec4874b64308c959bbde74ed6062e23b26cf42fc4e6460c4e3227",
+        "approvedSeedEntrySha256": "2db650390a2afb5c2a2c30ade6266fb5d24b4e20771d178f6d6bf3a1687794eb",
+        "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+        "transactionId": "8e2816c4-fa35-4b53-8cd8-fbc57cde51a9",
+        "auditEventId": "cmt6nueui000850yypb4u3q9t",
+        "appliedAt": "2026-08-24T03:12:44.715Z",
+        "verification": {
+          "databaseMatchesAfterImage": true,
+          "seedMatchesAfterImage": true,
+          "detailApiVerified": true
+        },
+        "receiptSha256": "b6ec14faf7e37dbc6fd7845434f6d2163ee460b24c015d32b9c558052ab40fde"
+      }
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0199:american-student-transportation-partners-astp:0eaaa394",
+      "taskIndex": 199,
+      "companyName": "American Student Transportation Partners (ASTP)",
+      "receipt": {
+        "schemaVersion": 1,
+        "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+        "runId": "portco-reconciliation-2026-08-03-v2",
+        "taskId": "ledger:0199:american-student-transportation-partners-astp:0eaaa394",
+        "taskIndex": 199,
+        "companyName": "American Student Transportation Partners (ASTP)",
+        "companyId": "cmrxpjct700t4ivhe097ggvuj",
+        "proposalSha256": "eff5c77d676c3d61a1eccad3c32ea49b3680a03032d98114cf29406971fdcc68",
+        "approvalSha256": "d1743f4aa3c8fdf014cfe58ad7f8a4a22325bd1c98fdcb52781c2389a0ff6ef1",
+        "productionSnapshotSha256": "73a0bbadd7d13faf5698260aeff760184cd38bc453c4c8973fbd6967bae78761",
+        "beforeCompanySnapshotSha256": "0979bb86a984acd2977afdf88d13e026769dd85a3884b64bd4aece1c7a459623",
+        "appliedAfterImageSha256": "0e78550e32b3db7fc5da6f9eaaac1680e3f5f84d86105dc8b2cf6deba217392d",
+        "seedAfterImageSha256": "0e78550e32b3db7fc5da6f9eaaac1680e3f5f84d86105dc8b2cf6deba217392d",
+        "approvedSeedEntrySha256": "43ccc2177fc721803a343418195f70ae0732a01b8480f55be508163f484d18fe",
+        "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+        "transactionId": "8e2816c4-fa35-4b53-8cd8-fbc57cde51a9",
+        "auditEventId": "cmt6nuk2k000m50yyr0ta462m",
+        "appliedAt": "2026-08-24T03:12:44.715Z",
+        "verification": {
+          "databaseMatchesAfterImage": true,
+          "seedMatchesAfterImage": true,
+          "detailApiVerified": true
+        },
+        "receiptSha256": "1438a1c422d2e6d3dc4b7b78df4d3021004b13f6972a63f4e272d1ec1c1a3a6c"
+      }
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0200:bernhard-llc:5339777c",
+      "taskIndex": 200,
+      "companyName": "Bernhard, LLC",
+      "outcome": "SUPERSEDED",
+      "decisionSha256": "dfdfe59775ff3a5aa412a243d28997a529510d207f365572d28664ab7e6e010e"
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0201:carma-corp:7b48e49a",
+      "taskIndex": 201,
+      "companyName": "CARMA Corp.",
+      "receipt": {
+        "schemaVersion": 1,
+        "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+        "runId": "portco-reconciliation-2026-08-03-v2",
+        "taskId": "ledger:0201:carma-corp:7b48e49a",
+        "taskIndex": 201,
+        "companyName": "CARMA Corp.",
+        "companyId": "cmrxpjcvs00t9ivhes1jkf37g",
+        "proposalSha256": "5cfe2547935eb748a4ca4a8796ea2001d512b345d26c9def881ce9cf4c608b77",
+        "approvalSha256": "7f8a2c1c4cc19a842a7e9cc5ff6428fb2b7b1959fad389a5b2c2e84088913d74",
+        "productionSnapshotSha256": "4e124c2d0b4eccbd353b3e29a2bf971acd8b4e89d35b736fc3b0ca2da21c1acf",
+        "beforeCompanySnapshotSha256": "b529c84e7a5048145cb001ef602a9237569c58f2b49411094e62b476ef56ab2a",
+        "appliedAfterImageSha256": "e158f9484a11264f44826cf33c3bf51f46d357c0d85d9a67722b56dda5206f2e",
+        "seedAfterImageSha256": "e158f9484a11264f44826cf33c3bf51f46d357c0d85d9a67722b56dda5206f2e",
+        "approvedSeedEntrySha256": "12f77e5a0682576b7c2354b0a8a365c43b9b4add981467aa026d8396dddd5278",
+        "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+        "transactionId": "8e2816c4-fa35-4b53-8cd8-fbc57cde51a9",
+        "auditEventId": "cmt6nuny0000w50yydatasszw",
+        "appliedAt": "2026-08-24T03:12:44.715Z",
+        "verification": {
+          "databaseMatchesAfterImage": true,
+          "seedMatchesAfterImage": true,
+          "detailApiVerified": true
+        },
+        "receiptSha256": "5615e5de9efbc2b89dbe6fde0273a2c458513ff28f717d3fcb1e5506479ae914"
+      }
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0202:enfra:7265d723",
+      "taskIndex": 202,
+      "companyName": "ENFRA",
+      "receipt": {
+        "schemaVersion": 1,
+        "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+        "runId": "portco-reconciliation-2026-08-03-v2",
+        "taskId": "ledger:0202:enfra:7265d723",
+        "taskIndex": 202,
+        "companyName": "ENFRA",
+        "companyId": "cmrxpjcwx00tbivhed8tnctp1",
+        "proposalSha256": "b1e2882d99a7f1d156c733db06a715de8781c5bffd9b6a824de2322c9a03e45c",
+        "approvalSha256": "df3ca0b92b8949f1f06ae24bf919a0338cf46a914f5804d3464717cef5c83342",
+        "productionSnapshotSha256": "4d351a736fa00671af95fb3ffc16300aec1ade67b183e6057bc897861b4e0869",
+        "beforeCompanySnapshotSha256": "6fb7ad8ec69c6472b3771927a31184766a47b92f24eabc280782459d698e0396",
+        "appliedAfterImageSha256": "2d7bdc878250ef0982064c8fcb1d50265135561ebcc9bc8b6fede6c3fd4e8469",
+        "seedAfterImageSha256": "2d7bdc878250ef0982064c8fcb1d50265135561ebcc9bc8b6fede6c3fd4e8469",
+        "approvedSeedEntrySha256": "173c2704845b10573306d6a013aea6980cafaa3d56c1b294e1cc1ce9c1f65232",
+        "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+        "transactionId": "8e2816c4-fa35-4b53-8cd8-fbc57cde51a9",
+        "auditEventId": "cmt6nutzf001350yympekw0gg",
+        "appliedAt": "2026-08-24T03:12:44.715Z",
+        "verification": {
+          "databaseMatchesAfterImage": true,
+          "seedMatchesAfterImage": true,
+          "detailApiVerified": true
+        },
+        "receiptSha256": "872511df7d9a0a66091c7cd3b7a96e646b191c1f3cce44f8d7ee7d2637c60ae7"
+      }
+    }
+  ],
+  "verification": {
+    "databaseTransactionCommitted": true,
+    "seedArtifactVerified": true,
+    "allDetailApisVerified": true,
+    "partialDatabaseApplication": false
+  },
+  "receiptSha256": "95e30b53d376b18036796a2f72fee651285220a13144cd35eb6e980e90db2c3e"
+}
