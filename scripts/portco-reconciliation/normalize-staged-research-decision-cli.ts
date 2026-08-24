@@ -45,6 +45,10 @@ async function main(): Promise<void> {
   const verificationPath = resolve(required(values, "source-verification"));
   const outputPath = resolve(required(values, "output"));
   const generatedAt = required(values, "generated-at");
+  const expectedTaskId = values.get("expected-task-id")?.trim() || null;
+  const promptPath = values.get("research-prompt")?.trim()
+    ? resolve(required(values, "research-prompt"))
+    : null;
   if (Number.isNaN(new Date(generatedAt).valueOf())) throw new Error("--generated-at must be an ISO timestamp");
 
   const [sourceBytes, responseBytes, verificationBytes] = await Promise.all([
@@ -80,10 +84,36 @@ async function main(): Promise<void> {
     throw new Error("Accepted research evidence requires direct HTTPS URLs and purposes");
   }
 
+  let identityCorrection: null | {
+    originalTaskId: string;
+    correctedTaskId: string;
+    basis: string;
+    researchPrompt: { path: string; sha256: string };
+  } = null;
+  if (expectedTaskId && expectedTaskId !== source.taskId) {
+    if (!promptPath) {
+      throw new Error("A task-id correction requires --research-prompt");
+    }
+    const promptBytes = await readFile(promptPath);
+    const prompt = promptBytes.toString("utf8");
+    if (!prompt.split(/\r?\n/).includes(`TASK: ${expectedTaskId}`)) {
+      throw new Error("Research prompt does not bind the expected task id");
+    }
+    if (!prompt.split(/\r?\n/).includes(`REQUESTED COMPANY: ${source.companyName}`)) {
+      throw new Error("Research prompt does not bind the staged company identity");
+    }
+    identityCorrection = {
+      originalTaskId: String(source.taskId),
+      correctedTaskId: expectedTaskId,
+      basis: "The immutable research prompt carries the canonical queue task id; only the downstream transport metadata used a stale task suffix.",
+      researchPrompt: { path: repositoryPath(promptPath), sha256: sha256(promptBytes) },
+    };
+  }
+
   const normalized = {
     schemaVersion: 1,
     artifactType: "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
-    taskId: source.taskId,
+    taskId: expectedTaskId ?? source.taskId,
     taskIndex: source.taskIndex,
     companyName: source.companyName,
     asOfDate: source.asOfDate,
@@ -98,6 +128,7 @@ async function main(): Promise<void> {
       sourceVerification: { path: repositoryPath(verificationPath), sha256: sha256(verificationBytes) },
       acceptedResponseSha256: source.responseSha256,
       sourceVerificationArtifactType: verification.artifactType ?? null,
+      ...(identityCorrection ? { identityCorrection } : {}),
     },
   };
   await mkdir(dirname(outputPath), { recursive: true });

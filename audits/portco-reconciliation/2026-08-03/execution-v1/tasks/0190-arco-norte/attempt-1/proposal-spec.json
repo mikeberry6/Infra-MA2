@@ -1,0 +1,264 @@
+{
+  "generatedAt": "2026-08-24T00:12:00.000Z",
+  "relationMerges": [
+    {
+      "kind": "OWNERSHIP_PERIOD",
+      "retiredRelationId": "cmrxpk8rp027bivhe191ench8",
+      "canonicalRelationId": "cmrxpk8oj0279ivhe0fc6b7ay",
+      "rationale": "Both rows represent Ontario Teachers' ownership through Promotora Punta Cometa in the same Arco Norte concessionaire."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxpmjp80503ivhe8vg9nl93",
+      "canonicalRelationId": "cmrxpmjjd04zyivhe5nhvugy9",
+      "rationale": "Both rows preserve the July 2009 first-phase operating milestone."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxpmjps0504ivhec97dzwvq",
+      "canonicalRelationId": "cmrxpmjjx04zzivhe4d9qnalk",
+      "rationale": "Both rows preserve the 2011 second-phase operating milestone."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxpmjqa0505ivheyufxjtoe",
+      "canonicalRelationId": "cmrxpmjkj0500ivhet6iurpbd",
+      "rationale": "Both rows describe the 2016 IDEAL, CPP Investments and Ontario Teachers' partnership for Arco Norte."
+    }
+  ],
+  "reviewedSeedRetirementTaskIds": [],
+  "unresolvedQuestions": [],
+  "actions": [
+    "CORRECT_COMPANY",
+    "MERGE_COMPANIES"
+  ],
+  "retiredCompanyIds": [
+    "cmrxpjmbm017uivheptthqtyf"
+  ],
+  "rationale": "Merge Arco Norte and Autopista Arco Norte, S.A. de C.V. because they are the same federal concessionaire. Keep the earlier canonical database ID, use the legal concessionaire name with Arco Norte as an alias, preserve both manager ownership periods, and correct the disclosed stakes as percentages of Promotora Punta Cometa rather than unsupported direct look-through percentages. IDEAL Group and Pacifico Sur remain separate investments.",
+  "evidence": [
+    {
+      "url": "https://www.otpp.com/en-ca/about-us/news-and-insights/2016/ontario-teachers-and-cppib-complete-investment-in-ideal-subsidiary-promotora-punta-cometa/",
+      "purpose": "Transaction close and ownership vehicle",
+      "supports": [
+        "The transaction closed on December 22, 2016",
+        "CPP held 29% and Ontario Teachers' held 20% of Promotora Punta Cometa"
+      ]
+    },
+    {
+      "url": "https://www.otpp.com/en-ca/investments/our-advantage/our-performance-and-track-record/major-investments/",
+      "purpose": "Current ownership and platform boundary",
+      "supports": [
+        "Ontario Teachers' continues to list Arco Norte",
+        "Arco Norte and IDEAL are separately listed investments"
+      ]
+    },
+    {
+      "url": "https://micrs.sct.gob.mx/index.php/infraestructura/direccion-general-de-desarrollo-carretero/titulos-de-concesion",
+      "purpose": "Legal identity and operating concession",
+      "supports": [
+        "Autopista Arco Norte is the legal concessionaire",
+        "The concession remains listed through its 2065 expiry"
+      ]
+    }
+  ],
+  "companyFieldUpdates": {
+    "name": "Autopista Arco Norte, S.A. de C.V.",
+    "aliases": [
+      "Arco Norte",
+      "Autopista Arco Norte"
+    ],
+    "description": "Autopista Arco Norte, S.A. de C.V., commonly known as Arco Norte, operates a 223-kilometer federal user-pay toll road across the State of Mexico, Hidalgo, Tlaxcala and Puebla. The concession was granted on December 21, 2005 and is scheduled to expire on December 20, 2065. IDEAL contributed its 99% Arco Norte interest to Promotora Punta Cometa, S.A. de C.V. in the partnership that closed on December 22, 2016; at close, CPP Investments held 29% of that vehicle and Ontario Teachers' held 20%, alongside IDEAL and a small Inbursa affiliate interest. Later FIDEAL restructuring changed the direct capitalization beneath the road, so current manager look-through percentages are not publicly disclosed and the 2016 percentages should not be presented as direct concessionaire stakes. Ontario Teachers' continues to list Arco Norte separately from IDEAL, supporting treatment as its own manager-level infrastructure holding. No manager exit, concession transfer, termination or signed pending ownership transaction was identified through August 19, 2026. Promotora Punta Cometa is the upstream holding vehicle; IDEAL Group and Pacifico Sur remain separate investments.",
+    "website": "https://www.arconorte.com.mx/",
+    "headquarters": "State of Mexico, Hidalgo, Tlaxcala and Puebla",
+    "lastVerifiedAt": "2026-08-19T00:00:00.000Z"
+  },
+  "ownershipPeriodUpdates": [
+    {
+      "id": "cmrxpk8oj0279ivhe0fc6b7ay",
+      "set": {
+        "managerName": "OTPP",
+        "organizationName": "OTPP",
+        "fundName": null,
+        "vehicleName": "Promotora Punta Cometa, S.A. de C.V.",
+        "stake": "20% of Promotora Punta Cometa at the December 2016 close; current Arco Norte look-through not publicly disclosed",
+        "investmentYear": 2016,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    },
+    {
+      "id": "cmrxpk8ox027aivhey29wjo5v",
+      "set": {
+        "managerName": "CPP Investments",
+        "organizationName": "CPP Investments",
+        "fundName": null,
+        "vehicleName": "Promotora Punta Cometa, S.A. de C.V.",
+        "stake": "29% of Promotora Punta Cometa at the December 2016 close; current Arco Norte look-through not publicly disclosed",
+        "investmentYear": 2016,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    }
+  ],
+  "ownershipPeriodAdditions": [],
+  "pendingOwnershipTransactionUpdates": [],
+  "pendingOwnershipTransactionAdditions": [],
+  "milestoneUpdates": [
+    {
+      "id": "cmrxpmjjd04zyivhe5nhvugy9",
+      "set": {
+        "date": "Jul 2009",
+        "event": "The first operating phase of Arco Norte opened to traffic.",
+        "category": "EXPANSION",
+        "sortDate": "2009-07-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    },
+    {
+      "id": "cmrxpmjjx04zzivhe4d9qnalk",
+      "set": {
+        "date": "2011",
+        "event": "The second operating phase to Atlacomulco opened.",
+        "category": "EXPANSION",
+        "sortDate": "2011-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    },
+    {
+      "id": "cmrxpmjkj0500ivhet6iurpbd",
+      "set": {
+        "date": "Jun 9, 2016",
+        "event": "IDEAL, CPP Investments and Ontario Teachers' announced the Promotora Punta Cometa partnership containing IDEAL's 99% Arco Norte interest.",
+        "category": "ACQUISITION",
+        "sortDate": "2016-06-09T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.otpp.com/en-ca/about-us/news-and-insights/2016/impulsora-del-desarrollo-y-el-empleo-en-america-latina-s-a-b-de-c-v-cppib-and-ontario-teachers-pension-plan-create-strategic-partnership-to-invest-in/"
+        ]
+      }
+    },
+    {
+      "id": "cmrxpmjl20501ivhe7tvgy7zb",
+      "set": {
+        "date": "Dec 22, 2016",
+        "event": "The partnership closed with CPP Investments holding 29% and Ontario Teachers' holding 20% of Promotora Punta Cometa.",
+        "category": "ACQUISITION",
+        "sortDate": "2016-12-22T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.otpp.com/en-ca/about-us/news-and-insights/2016/ontario-teachers-and-cppib-complete-investment-in-ideal-subsidiary-promotora-punta-cometa/"
+        ]
+      }
+    },
+    {
+      "id": "cmrxpmjlm0502ivhe3gog012y",
+      "set": {
+        "date": "Apr 22, 2020",
+        "event": "A FIDEAL restructuring increased the trust's direct Arco Norte interest to approximately 39.92%; the event did not constitute a CPP Investments or Ontario Teachers' exit.",
+        "category": "FINANCING",
+        "sortDate": "2020-04-22T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.otpp.com/en-ca/about-us/news-and-insights/2020/ideal-cpp-investments-and-ontario-teachers-complete-the-expansion-of-mexican-infrastructure-partnership/"
+        ]
+      }
+    }
+  ],
+  "citationUpdates": [
+    {
+      "id": "cmrxpsibg0coxivhegd6zy0gz",
+      "set": {
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Toll-road operating footprint and user-pay model",
+        "isPrimary": false
+      }
+    },
+    {
+      "id": "cmrxpsici0cozivherrnd1k33",
+      "set": {
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "CPP Investments' later Mexican partnership context",
+        "isPrimary": false
+      }
+    },
+    {
+      "id": "cmrxpsidn0cp1ivheipiyib5a",
+      "set": {
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CPP Investments' 2016 partnership announcement",
+        "isPrimary": false
+      }
+    },
+    {
+      "id": "cmrxpsie60cp2ivheji63trz6",
+      "set": {
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Pacifico Sur is a separate concession within the broader partnership",
+        "isPrimary": false
+      }
+    },
+    {
+      "id": "cmrxpsif30cp4ivheetnnwu6x",
+      "set": {
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Official Arco Norte website",
+        "isPrimary": false
+      }
+    },
+    {
+      "id": "cmrxpsiiv0cp6ivheortuuv1u",
+      "set": {
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Ontario Teachers' portfolio description of Arco Norte",
+        "isPrimary": false
+      }
+    }
+  ],
+  "citationAdditions": [
+    {
+      "id": null,
+      "label": "Ontario Teachers' — Promotora Punta Cometa closing",
+      "url": "https://www.otpp.com/en-ca/about-us/news-and-insights/2016/ontario-teachers-and-cppib-complete-investment-in-ideal-subsidiary-promotora-punta-cometa/",
+      "sourceType": "PRESS_RELEASE",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "December 2016 closing, vehicle capitalization and Arco Norte legal chain",
+      "isPrimary": true
+    },
+    {
+      "id": null,
+      "label": "Otpp — Autopista Arco Norte, S.A. de C.V.",
+      "url": "https://www.otpp.com/en-ca/about-us/news-and-insights/2016/impulsora-del-desarrollo-y-el-empleo-en-america-latina-s-a-b-de-c-v-cppib-and-ontario-teachers-pension-plan-create-strategic-partnership-to-invest-in/",
+      "sourceType": "WEBSITE",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "June 2016 partnership announcement and contribution of the Arco Norte interest",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "Otpp — Pacifico Sur",
+      "url": "https://www.otpp.com/en-ca/investments/our-advantage/our-performance-and-track-record/major-investments/",
+      "sourceType": "WEBSITE",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Current separate listings for Arco Norte and IDEAL",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "Otpp — Impulsora del Desarrollo y el Empleo en América Latina, S.A.B. de C.V. (IDEAL)",
+      "url": "https://www.otpp.com/en-ca/about-us/news-and-insights/2020/ideal-cpp-investments-and-ontario-teachers-complete-the-expansion-of-mexican-infrastructure-partnership/",
+      "sourceType": "WEBSITE",
+      "purpose": "MILESTONE_EVENT",
+      "evidenceLabel": "2020 FIDEAL restructuring without a manager exit",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "Mexico SICT — Federal concession titles",
+      "url": "https://micrs.sct.gob.mx/index.php/infraestructura/direccion-general-de-desarrollo-carretero/titulos-de-concesion",
+      "sourceType": "WEBSITE",
+      "purpose": "OPERATIONS_ASSETS",
+      "evidenceLabel": "Legal concessionaire, covered states, grant date and 2065 expiry",
+      "isPrimary": false
+    }
+  ]
+}

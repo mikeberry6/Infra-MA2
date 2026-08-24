@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-24T00:02:05.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-08-24T00:42:15.000Z",
+  "activeBatchId": "batch-0187-0191-v1",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -2050,7 +2050,65 @@
           "reason": null
         }
       ]
+    },
+    {
+      "batchId": "batch-0187-0191-v1",
+      "state": "RELEASING",
+      "taskIds": [
+        "ledger:0187:sunstone-power:15729451",
+        "ledger:0188:toqlukuti-k-wind-and-hydrogen:a75100d1",
+        "ledger:0189:vineyard-northeast:2c3d1cf2",
+        "ledger:0190:arco-norte:b9067e32",
+        "ledger:0191:caturus:fb78fef3"
+      ],
+      "taskIndexes": [
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "createdAt": "2026-08-24T00:10:00.000Z",
+      "updatedAt": "2026-08-24T00:42:15.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0187-0191-v1/batch-manifest.json",
+        "sha256": "571cc24b4a9337c5c490ec0cbf56dfffd464b75d7fd34030dd99fef8b87c5528"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-24T00:10:00.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-24T00:42:10.000Z",
+          "evidenceSha256": [
+            "571cc24b4a9337c5c490ec0cbf56dfffd464b75d7fd34030dd99fef8b87c5528"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "RELEASING",
+          "at": "2026-08-24T00:42:15.000Z",
+          "evidenceSha256": [
+            "571cc24b4a9337c5c490ec0cbf56dfffd464b75d7fd34030dd99fef8b87c5528"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "beeb3f92a4ccad57b9c2190eb943aa692add9ca6c789ed9871c4eb6af091e91c"
+  "ledgerSha256": "df515e1968790b36cf853910665eb9ddd2cd6410557267796033c1a807a3a5df"
 }

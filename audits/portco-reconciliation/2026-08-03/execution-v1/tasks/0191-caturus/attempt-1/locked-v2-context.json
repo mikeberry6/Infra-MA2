@@ -1,0 +1,317 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0191:caturus:fb78fef3",
+  "taskIndex": 191,
+  "companyName": "Caturus",
+  "generatedAt": "2026-08-24T00:21:28.846Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0191-caturus/attempt-1/locked-v2-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 191,
+    "taskId": "ledger:0191:caturus:fb78fef3",
+    "canonicalKey": "caturus|united-states",
+    "companyName": "Caturus",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 32,
+    "managers": [
+      "CPP Investments",
+      "Kimmeridge Energy",
+      "Mubadala"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "032-cpp-investments:holding:005:caturus",
+      "063-kimmeridge-energy:holding:001:caturus",
+      "070-mubadala:holding:002:caturus"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjjko013jivhegryhtkk9"
+    ],
+    "seedKeys": [
+      "caturus|United States"
+    ],
+    "evidenceUrls": [
+      "https://caturus.com/news/kimmeridge-closes-strategic-equity-investment-from-mubadala-energy-and-rebrands-integrated-natural-gas-platform-as-caturus",
+      "https://mubadalaenergy.com/news/mubadala-energy-kimmeridge-and-cpp-investments-announce-final-investment-decision-for-caturus-commonwealth-lng-investment-in-the-u-s/",
+      "https://www.kimmeridge.com/news/kimmeridge-forms-caturus",
+      "https://www.kimmeridge.com/select-investments"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted census POSSIBLE_DUPLICATE for 070-mubadala:holding:002:caturus: Matches Caturus record; Caturus Energy is duplicate identity and Commonwealth LNG is subordinate project under platform. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Accepted census POSSIBLE_DUPLICATE for 070-mubadala:holding:002:caturus: Matches Caturus record; Caturus Energy is duplicate identity and Commonwealth LNG is subordinate project under platform."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjjko013jivhegryhtkk9",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "caturus|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjjko013jivhegryhtkk9",
+    "name": "Caturus",
+    "aliases": [],
+    "sector": "MIDSTREAM",
+    "subsector": "Integrated natural gas and LNG platform",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Caturus is an integrated natural gas and LNG platform that combines upstream gas production with associated midstream and export infrastructure. Its end markets include LNG buyers, gas marketers, and downstream customers seeking low-emission U.S. natural gas supply linked to export capacity. The operating model is asset-heavy and integrated, spanning production, gathering and related infrastructure, and an LNG export project through Commonwealth LNG rather than a pure asset-light marketing model. Public materials state that the platform had crossed the 600 MMcfe per day threshold by August 2025 and targets 3 Bcfe per day over time, while also advancing the 9.5 mtpa Commonwealth LNG project. Kimmeridge first publicly closed development-capital funding for Commonwealth LNG in August 2023, closed a follow-on control investment in June 2024, and later rebranded SoTex HoldCo as Caturus in August 2025 when Mubadala Energy closed a strategic investment for a 24.1% equity stake.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Texas; Louisiana",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk5lt022divheaglek2t6",
+        "managerName": "Kimmeridge",
+        "organizationName": "Kimmeridge",
+        "fundName": null,
+        "vehicleName": "Kimmeridge Flagship Funds",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpm6h304jyivhez77s8rxv",
+        "date": "Aug 14, 2023",
+        "event": "Kimmeridge closed development-capital funding for Commonwealth LNG, the LNG project later incorporated into the Caturus integrated platform.",
+        "category": "FINANCING",
+        "sortDate": "2023-08-14T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm6hm04jzivhe2wnt9ui1",
+        "date": "Jun 25, 2024",
+        "event": "Kimmeridge closed a follow-on control investment in Commonwealth LNG through Kimmeridge Texas Gas, building the integrated platform later rebranded as Caturus.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-06-25T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm6i804k0ivhe4zjmuoxn",
+        "date": "Aug 7, 2025",
+        "event": "Kimmeridge announced the rebranding of SoTex HoldCo as Caturus and the closing of Mubadala Energy's strategic investment.",
+        "category": "FINANCING",
+        "sortDate": "2025-08-07T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm6ir04k1ivheke2wq01t",
+        "date": "Sep 5, 2025",
+        "event": "DOE change-of-control materials disclosed that Mubadala Energy owned 24.1% of Caturus and Kimmeridge retained 75.9%.",
+        "category": "FINANCING",
+        "sortDate": "2025-09-05T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxprvce0bq0ivheoebkj1md",
+        "label": "Caturus — Caturus Energy",
+        "url": "https://caturus.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Caturus company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxprvfx0bq2ivhek85fhl1w",
+        "label": "Investment date source — Kimmeridge — Caturus / Commonwealth LNG",
+        "url": "https://www.prnewswire.com/news-releases/commonwealth-lng-closes-on-investment-and-agrees-to-terms-for-strategic-partnership-301898868.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Kimmeridge initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprvhe0bq4ivheuxwwuo8x",
+        "label": "Follow-on control source — Kimmeridge — Caturus",
+        "url": "https://kimmeridge.com/kimmeridge-texas-gas-appoints-david-lawler-as-ceo-kimmeridge-closes-follow-on-control-investment-in-commonwealth-lng/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Follow-on control source — Kimmeridge — Caturus",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprvic0bq6ivhe0aa6owrf",
+        "label": "Caturus — Caturus",
+        "url": "https://caturus.com/news/kimmeridge-closes-strategic-equity-investment-from-mubadala-energy-and-rebrands-integrated-natural-gas-platform-as-caturus",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Caturus — Caturus",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprvjc0bq8ivhehfb7qr61",
+        "label": "Mubadalaenergy — Caturus",
+        "url": "https://mubadalaenergy.com/news/mubadala-energy-closes-strategic-investment-in-u-s-natural-gas-and-lng-sector-with-kimmeridge/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Mubadalaenergy — Caturus",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprvkf0bqaivheq8d7bcvy",
+        "label": "Energy — Caturus",
+        "url": "https://www.energy.gov/sites/default/files/2025-09/Commonwealth%20LNG%20DOE%20Notice%20of%20Change%20in%20Control%20%28Mubadala-Caturus%29%20-%209.5.2025.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Energy — Caturus",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Caturus",
+    "investmentFirm": "Kimmeridge",
+    "sector": "Midstream",
+    "subsector": "Integrated natural gas and LNG platform",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Kimmeridge Flagship Funds",
+    "description": "Caturus is an integrated natural gas and LNG platform that combines upstream gas production with associated midstream and export infrastructure. Its end markets include LNG buyers, gas marketers, and downstream customers seeking low-emission U.S. natural gas supply linked to export capacity. The operating model is asset-heavy and integrated, spanning production, gathering and related infrastructure, and an LNG export project through Commonwealth LNG rather than a pure asset-light marketing model. Public materials state that the platform had crossed the 600 MMcfe per day threshold by August 2025 and targets 3 Bcfe per day over time, while also advancing the 9.5 mtpa Commonwealth LNG project. Kimmeridge first publicly closed development-capital funding for Commonwealth LNG in August 2023, closed a follow-on control investment in June 2024, and later rebranded SoTex HoldCo as Caturus in August 2025 when Mubadala Energy closed a strategic investment for a 24.1% equity stake.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2023,
+    "headquarters": "Texas; Louisiana",
+    "milestones": [
+      {
+        "date": "Aug 14, 2023",
+        "event": "Kimmeridge closed development-capital funding for Commonwealth LNG, the LNG project later incorporated into the Caturus integrated platform.",
+        "category": "Financing"
+      },
+      {
+        "date": "Jun 25, 2024",
+        "event": "Kimmeridge closed a follow-on control investment in Commonwealth LNG through Kimmeridge Texas Gas, building the integrated platform later rebranded as Caturus.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Aug 7, 2025",
+        "event": "Kimmeridge announced the rebranding of SoTex HoldCo as Caturus and the closing of Mubadala Energy's strategic investment.",
+        "category": "Financing"
+      },
+      {
+        "date": "Sep 5, 2025",
+        "event": "DOE change-of-control materials disclosed that Mubadala Energy owned 24.1% of Caturus and Kimmeridge retained 75.9%.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Caturus — Caturus",
+        "url": "https://caturus.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Investment date source — Kimmeridge — Caturus / Commonwealth LNG",
+        "url": "https://www.prnewswire.com/news-releases/commonwealth-lng-closes-on-investment-and-agrees-to-terms-for-strategic-partnership-301898868.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Follow-on control source — Kimmeridge — Caturus",
+        "url": "https://kimmeridge.com/kimmeridge-texas-gas-appoints-david-lawler-as-ceo-kimmeridge-closes-follow-on-control-investment-in-commonwealth-lng/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Caturus — Caturus",
+        "url": "https://caturus.com/news/kimmeridge-closes-strategic-equity-investment-from-mubadala-energy-and-rebrands-integrated-natural-gas-platform-as-caturus",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Mubadalaenergy — Caturus",
+        "url": "https://mubadalaenergy.com/news/mubadala-energy-closes-strategic-investment-in-u-s-natural-gas-and-lng-sector-with-kimmeridge/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Energy — Caturus",
+        "url": "https://www.energy.gov/sites/default/files/2025-09/Commonwealth%20LNG%20DOE%20Notice%20of%20Change%20in%20Control%20%28Mubadala-Caturus%29%20-%209.5.2025.pdf",
+        "type": "PRESENTATION"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Kimmeridge",
+        "ownershipVehicle": "Kimmeridge Flagship Funds",
+        "investmentYear": 2023,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi6gh001aivhefuh9d1bo",
+        "name": "CPP Investments",
+        "updatedAt": "2026-07-23T16:09:15.569Z"
+      },
+      {
+        "id": "cmrxpihu7004vivheoemw7s8z",
+        "name": "Mubadala",
+        "updatedAt": "2026-07-23T16:09:30.319Z"
+      },
+      {
+        "id": "cmrxpijtm005hivheogcm0zek",
+        "name": "Kimmeridge",
+        "updatedAt": "2026-07-23T16:09:32.890Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0191:caturus:fb78fef3",
+    "taskIndex": 191,
+    "canonicalKey": "caturus|united-states",
+    "capturedAt": "2026-08-24T00:21:28.846Z",
+    "databaseRevision": "revision:49f5e1031069d4a76e4ad35f39ab1f98ceff1e3288a6715bf53864b1d705ceff",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "58e0baa9c8248521bd1d5e397b378b8a564a2b057b223f197503d5ed2eac022e",
+    "productionSnapshotSha256": "6b41dcff3efcd0f074d384aae6affa3f18802faa5c8365bb08acf8820534f489",
+    "targetCompanySnapshotSha256": "d2cacd1673db1afed1b80de1092d7ac98e8d2551500bbc2ab811c4239814dd17",
+    "seedEntrySha256": "4f1cf5cf57a6a908fae706a12eb7446d119a28ed96837f2242712a3f92e8df1c",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "d4fc74325c0bfe290190fbf28cfa72511c4b49a40be1fb12175221c23616284a",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "fdd58082c6e08316ed83d2115b7a902039afe078e98ac68779bb90b369828ff1",
+      "citationsSha256": "aa4dc9d459262a7c92f2962b6b142b91aaee4554ff71466c64f2288fc16bab8e",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "d05cfd711e69ee119157b82c9b9bce4fce2f8901008519d5d20f46ec5b0ba8d6",
+    "stateSha256": "8307882a470ec2665fa0821bb4454f0a0b12b8af56111dc9936d9136742baa46",
+    "taskSnapshotSha256": "4bf6d8f47f9998f39eb1ba05067b5892f3ca6d6b0c15e818df677b430490eb3a"
+  },
+  "contextSha256": "3108f719785c5e5156bbe32be8ed5c310269247c9753c93fe8d8aa04ec93936b"
+}

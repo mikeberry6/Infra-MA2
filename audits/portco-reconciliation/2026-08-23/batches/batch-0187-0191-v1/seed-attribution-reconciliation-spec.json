@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_SEED_ATTRIBUTION_RECONCILIATION_SPEC",
+  "batchId": "batch-0187-0191-v1",
+  "batchSha256": "571cc24b4a9337c5c490ec0cbf56dfffd464b75d7fd34030dd99fef8b87c5528",
+  "reconciledAt": "2026-08-24T00:15:00.000Z",
+  "sourceManifestSha256": "5f5e0c318bb65539211b043f3a428cc09df58f0f0abbd6019548323725996d29",
+  "rationale": "Align the evaluated seed owner ledger with the approved bundle after-images: update Toqlukuti'k to the closed CI ETF I 90% position; consolidate Vineyard Northeast beneath Vineyard Offshore while retaining current CI IV attribution; merge the duplicate Arco concessionaire identities and preserve both manager positions through Promotora Punta Cometa; and consolidate Caturus Energy beneath Caturus while recording the current Kimmeridge, CPP Investments and Mubadala ownership rows. Sunstone remains deferred and therefore produces no seed-owner change.",
+  "removeRecordIds": [
+    "OFA-ECD7C4BB5283",
+    "OFA-32CC2492CF01"
+  ],
+  "upsertRecords": [
+    {
+      "recordId": "OFA-611844D7D616",
+      "companyName": "Toqlukuti'k Wind & Hydrogen",
+      "country": "Canada",
+      "investmentFirm": "Copenhagen Infrastructure Partners",
+      "currentVehicleName": "Copenhagen Infrastructure Energy Transition Fund I (CI ETF I)",
+      "investmentYear": 2024,
+      "stake": "90%; ABO Energy retains 10%",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Copenhagen Infrastructure Energy Transition Fund I (CI ETF I)",
+      "attributionConfidence": null,
+      "attributionRationale": "ABO Energy and CIP directly identify CI ETF I as the completed 90% acquirer and ABO as the 10% retained owner; the exact holding vehicle and legal close date are not public.",
+      "evidenceUrls": [
+        "https://www.aboenergy.com/en/media-center/press/2024/2024-12-17_toqlukuti-k_cip_en.html",
+        "https://news.cision.com/copenhagen-infrastructure-partners-p-s/r/copenhagen-infrastructure-partners-acquires-majority-stake-in-abo-energy-s-wind-and-hydrogen-project%2Cc4357452"
+      ]
+    },
+    {
+      "recordId": "OFA-4C803E092C5D",
+      "companyName": "Vineyard Offshore",
+      "country": "United States",
+      "investmentFirm": "Copenhagen Infrastructure Partners",
+      "currentVehicleName": "CI IV Master Devco LLC / Vineyard Northeast LLC",
+      "investmentYear": 2022,
+      "stake": "100% of OCS-A 0522 lease rights from January 10, 2022; platform-level percentage not separately disclosed",
+      "targetLinkedFundName": "Copenhagen Infrastructure IV (CI IV)",
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Copenhagen Infrastructure IV (CI IV)",
+      "attributionConfidence": null,
+      "attributionRationale": "SEC disclosures establish the January 2022 CI IV acquisition of the remaining OCS-A 0522 interest, while current regulatory filings place Vineyard Northeast within the Vineyard Offshore platform.",
+      "evidenceUrls": [
+        "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B50D13E96-0000-C9A4-A57C-1AF6D4575681%7D&DocTitle=VNE+NY+Segment_Appendix+E+PIP",
+        "https://www.sec.gov/Archives/edgar/data/1634997/000163499722000056/R28.htm",
+        "https://www.boem.gov/renewable-energy/lease-and-grant-information"
+      ]
+    },
+    {
+      "recordId": "OFA-FE163F5B9519",
+      "companyName": "Autopista Arco Norte, S.A. de C.V.",
+      "country": "Mexico",
+      "investmentFirm": "OTPP",
+      "currentVehicleName": "Promotora Punta Cometa, S.A. de C.V.",
+      "investmentYear": 2016,
+      "stake": "20% of Promotora Punta Cometa at the December 2016 close; current Arco Norte look-through not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "Ontario Teachers' direct infrastructure program invested through Promotora Punta Cometa; the closing disclosure states its 20% vehicle interest but does not publish a current Arco Norte look-through percentage.",
+      "evidenceUrls": [
+        "https://www.otpp.com/en-ca/about-us/news-and-insights/2016/ontario-teachers-and-cppib-complete-investment-in-ideal-subsidiary-promotora-punta-cometa/",
+        "https://www.otpp.com/en-ca/investments/our-advantage/our-performance-and-track-record/major-investments/"
+      ]
+    },
+    {
+      "recordId": "OFA-9718B3CCF7A1",
+      "companyName": "Autopista Arco Norte, S.A. de C.V.",
+      "country": "Mexico",
+      "investmentFirm": "CPP Investments",
+      "currentVehicleName": "Promotora Punta Cometa, S.A. de C.V.",
+      "investmentYear": 2016,
+      "stake": "29% of Promotora Punta Cometa at the December 2016 close; current Arco Norte look-through not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "CPP Investments invested through Promotora Punta Cometa; the closing disclosure states its 29% vehicle interest but does not publish a current Arco Norte look-through percentage.",
+      "evidenceUrls": [
+        "https://www.otpp.com/en-ca/about-us/news-and-insights/2016/ontario-teachers-and-cppib-complete-investment-in-ideal-subsidiary-promotora-punta-cometa/",
+        "https://www.cppinvestments.com/newsroom/cppib-invests-mexican-infrastructure/"
+      ]
+    },
+    {
+      "recordId": "OFA-5957D5F357A4",
+      "companyName": "Caturus",
+      "country": "United States",
+      "investmentFirm": "Kimmeridge",
+      "currentVehicleName": "Kimmeridge-managed funds; exact allocation not publicly disclosed",
+      "investmentYear": 2023,
+      "stake": "52.6% direct governance after the May 2026 closing",
+      "targetLinkedFundName": null,
+      "fundAttribution": "UNRESOLVED",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "DOE filings resolve Kimmeridge's current direct governance percentage, but the exact Kimmeridge fund and vehicle allocation is not publicly disclosed and is therefore not inferred.",
+      "evidenceUrls": [
+        "https://www.energy.gov/documents/commonwealth-lng-doe-notice-change-control-cpppdf",
+        "https://www.energy.gov/documents/commonwealth-follow-questions",
+        "https://www.prnewswire.com/news-releases/commonwealth-lng-closes-on-investment-and-agrees-to-terms-for-strategic-partnership-301898868.html"
+      ]
+    },
+    {
+      "recordId": "OFA-04277D895FFB",
+      "companyName": "Caturus",
+      "country": "United States",
+      "investmentFirm": "CPP Investments",
+      "currentVehicleName": "Kimmeridge SoTex Aggregator, LLC / Kimmeridge-managed funds",
+      "investmentYear": 2025,
+      "stake": "22.8% direct governance; additional 10.3% economic look-through through Kimmeridge-managed funds",
+      "targetLinkedFundName": null,
+      "fundAttribution": "UNRESOLVED",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "DOE filings resolve CPP Investments' direct and look-through interests, but the exact fund allocation and primary-versus-secondary mix are not publicly disclosed.",
+      "evidenceUrls": [
+        "https://www.energy.gov/documents/commonwealth-lng-doe-notice-change-control-cpppdf",
+        "https://www.cppinvestments.com/newsroom/cpp-investments-net-assets-total-777-5-billion-at-second-quarter-fiscal-2026/"
+      ]
+    },
+    {
+      "recordId": "OFA-AAA626D5F54F",
+      "companyName": "Caturus",
+      "country": "United States",
+      "investmentFirm": "Mubadala",
+      "currentVehicleName": "Mubadala",
+      "investmentYear": 2025,
+      "stake": "24.1% direct governance",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "Mubadala's direct corporate investment closed in August 2025; no separate fund vehicle applies.",
+      "evidenceUrls": [
+        "https://mubadalaenergy.com/news/mubadala-energy-closes-strategic-investment-in-u-s-natural-gas-and-lng-sector-with-kimmeridge/",
+        "https://www.energy.gov/sites/default/files/2025-09/Commonwealth%20LNG%20DOE%20Notice%20of%20Change%20in%20Control%20%28Mubadala-Caturus%29%20-%209.5.2025.pdf"
+      ]
+    }
+  ],
+  "specSha256": "99b568c702f3fe5a67002bbf7285ef99aee67b8fa58b009bc278162fd8a856b2"
+}
