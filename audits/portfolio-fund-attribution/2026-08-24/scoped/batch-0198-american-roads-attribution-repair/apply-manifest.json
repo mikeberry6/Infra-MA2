@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-08-24",
+  "ledgerSha256": "a427834b1271b97291b20f000ab34ec46e644ecc3a473baa1b51479a4243eec8",
+  "sourceSnapshotSha256": "4ce6629e31d51a553eb967ca30367543dc02ed82688ab3f3cc6b7985127ed790",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 0,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 1,
+      "UNRESOLVED": 0
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  },
+  "expectedMutationCount": 1,
+  "mutations": [
+    {
+      "recordId": "OFA-REPAIR-0198-AMERICAN-ROADS-CURRENT",
+      "ownershipPeriodId": "cmt6nud7w000650yykdrdss4i",
+      "companyName": "American Roads",
+      "country": "United States / Canada",
+      "investmentFirm": "John Laing",
+      "currentVehicleName": "John Laing",
+      "databaseVehicleName": null,
+      "investmentYear": 2026,
+      "stake": "100%",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "John Laing directly reports 100% ownership of American Roads after announcing financial close on April 28, 2026. Public sources do not identify a separate fund or acquisition SPV, so the active holding is recorded as a direct John Laing program without an inferred fund."
+      },
+      "evidenceUrls": [
+        "https://www.laing.com/portfolio/american-roads-us/",
+        "https://www.linkedin.com/posts/john-laing_jl-american-roads-activity-7455005298681004034-0czR"
+      ]
+    }
+  ],
+  "manifestSha256": "463c741e2b14c7b959ea1da6e8368ef2f0d00f0d7366ca71da60f02c0547b746"
+}

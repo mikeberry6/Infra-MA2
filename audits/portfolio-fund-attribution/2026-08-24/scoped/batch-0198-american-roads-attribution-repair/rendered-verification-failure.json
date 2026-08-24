@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RENDERED_VERIFICATION_FAILURE",
+  "verifiedAt": "2026-08-24T03:26:04.000Z",
+  "batchId": "batch-0198-0202-v1",
+  "releaseSha": "55fb204d3207038b72ccd3bedc917f8cab0605be",
+  "receiptSha256": "95e30b53d376b18036796a2f72fee651285220a13144cd35eb6e980e90db2c3e",
+  "canonicalProductionDeploymentId": "dpl_9GNrh2TGAyCo1rG7bhokfJsAvdr1",
+  "canonicalProductionDeploymentSha": "35b5307aa9ab6e8b966d7da9d82f65bc5b954d27",
+  "companyId": "cmrxpjevf00wbivheu50etwdq",
+  "companyName": "American Roads",
+  "result": "FAIL",
+  "failedCheck": "The current 100% John Laing ownership period rendered 'Fund attribution pending' instead of the approved direct-program classification.",
+  "rootCause": "The atomic PortCo after-image created the correct John Laing ownership period but does not apply OwnershipPeriod fund-attribution metadata. Production therefore retained the default UNRESOLVED value while the seed attribution manifest correctly classified the same owner record as DIRECT_PROGRAM.",
+  "containment": "The batch ledger was moved from VERIFYING to VERIFYING_FAILED. No subsequent release bundle may start until the protected attribution-only correction and renewed API and rendered-card checks pass."
+}

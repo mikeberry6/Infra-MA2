@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_CORRECTION_DECISION",
+  "asOfDate": "2026-08-24",
+  "companyId": "cmrxpjevf00wbivheu50etwdq",
+  "companyName": "American Roads",
+  "triggerBatchId": "batch-0198-0202-v1",
+  "triggerBatchSha256": "ebfb5307c329991a373ad45481874eb65630624d15f508af749a4cd5ce28d0ba",
+  "decision": "CORRECT_STALE_ATTRIBUTION_METADATA",
+  "rationale": "The PortCo transaction correctly recorded John Laing as the current 100% owner of American Roads after the April 28, 2026 financial close, but the new ownership period retained the default UNRESOLVED attribution state. John Laing directly reports the holding and the reviewed public sources do not identify a separate fund or acquisition SPV. Classify the active ownership as DIRECT_PROGRAM without linking an inferred fund, matching the approved seed attribution record OFA-34CFA0D4A510.",
+  "mutations": [
+    {
+      "ownershipPeriodId": "cmt6nud7w000650yykdrdss4i",
+      "isActive": true,
+      "from": "UNRESOLVED — no named fund — no normalized fund link",
+      "to": "DIRECT_PROGRAM — John Laing direct ownership — no normalized fund link"
+    }
+  ],
+  "nonChanges": [
+    "Company identity and canonical redirects",
+    "Ownership organization, vehicle, stake and dates",
+    "Active/former ownership state",
+    "Milestones, citations and primary source",
+    "The former CVC DIF / DIF Infrastructure V ownership period"
+  ],
+  "evidenceUrls": [
+    "https://www.laing.com/portfolio/american-roads-us/",
+    "https://www.linkedin.com/posts/john-laing_jl-american-roads-activity-7455005298681004034-0czR"
+  ],
+  "identityResolved": true,
+  "activeOwnershipResolved": true,
+  "unresolvedQuestions": []
+}
