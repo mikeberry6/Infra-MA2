@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-24T00:54:10.000Z",
-  "activeBatchId": "batch-0187-0191-v1",
+  "updatedAt": "2026-08-24T01:08:35.000Z",
+  "activeBatchId": null,
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -2053,7 +2053,7 @@
     },
     {
       "batchId": "batch-0187-0191-v1",
-      "state": "VERIFYING",
+      "state": "COMPLETED",
       "taskIds": [
         "ledger:0187:sunstone-power:15729451",
         "ledger:0188:toqlukuti-k-wind-and-hydrogen:a75100d1",
@@ -2069,8 +2069,8 @@
         191
       ],
       "createdAt": "2026-08-24T00:10:00.000Z",
-      "updatedAt": "2026-08-24T00:54:10.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-24T01:08:35.000Z",
+      "completedAt": "2026-08-24T01:08:35.000Z",
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0187-0191-v1/batch-manifest.json",
         "sha256": "571cc24b4a9337c5c490ec0cbf56dfffd464b75d7fd34030dd99fef8b87c5528"
@@ -2130,9 +2130,20 @@
             "9bd506d1a861e11047f27001617928e3b7d05b2aff8e1c8552b5dbc52f9cff83"
           ],
           "reason": null
+        },
+        {
+          "sequence": 6,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-08-24T01:08:35.000Z",
+          "evidenceSha256": [
+            "571cc24b4a9337c5c490ec0cbf56dfffd464b75d7fd34030dd99fef8b87c5528",
+            "9bd506d1a861e11047f27001617928e3b7d05b2aff8e1c8552b5dbc52f9cff83"
+          ],
+          "reason": null
         }
       ]
     }
   ],
-  "ledgerSha256": "46afd7aadb8114a3efe9d9a64f515f9948056330f05f4a4b67ca7a87f8a0384d"
+  "ledgerSha256": "e86fede3be922f4be7ff4265e8ade167b356361ef06cb64f16f6bf36a308e8fb"
 }

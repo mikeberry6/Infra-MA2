@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-24T00:02:04.000Z",
+  "updatedAt": "2026-08-24T01:08:30.000Z",
   "runStatus": "IDLE",
   "activeTaskId": null,
   "source": {
@@ -23196,20 +23196,26 @@
       "managerIndex": 31,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "02c2a1aa534044f19ff19bbea0959dfe1c5de65ed93544e0202bf7f8c6dfa4f9",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
+      "status": "DEFERRED",
+      "attempts": 1,
+      "startedAt": "2026-08-24T00:10:00.000Z",
+      "updatedAt": "2026-08-24T01:08:30.000Z",
+      "completedAt": "2026-08-24T01:08:30.000Z",
+      "exceptionReason": "Sunstone is a verified Mexican renewable-development platform. CIP/CFE directly verify CIP sponsorship and CI Growth Markets Fund II equity at La Esperanza, but no source identifies CIP/GMF II as a Sunstone shareholder or supports the repository's 2023 platform-entry date, stake or equity commitment. Retain Sunstone; defer direct manager ownership.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "f3ce3e8163d849a573259c3821540aaccbbc95f726101d14ac8cb65da24b5866",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0187-sunstone-power/attempt-1/locked-task-snapshot.json",
+          "sha256": "f3ce3e8163d849a573259c3821540aaccbbc95f726101d14ac8cb65da24b5866"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0187-sunstone-power/attempt-1/terminal-decision.json",
+          "sha256": "a26e1596e3366267c159a706326c193f6e11d7b62c42dc94cd91a3b71149e5bd"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -23223,6 +23229,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-08-24T01:08:30.000Z",
+          "reason": "Sunstone is a verified Mexican renewable-development platform. CIP/CFE directly verify CIP sponsorship and CI Growth Markets Fund II equity at La Esperanza, but no source identifies CIP/GMF II as a Sunstone shareholder or supports the repository's 2023 platform-entry date, stake or equity commitment. Retain Sunstone; defer direct manager ownership.",
+          "taskSnapshotSha256": "f3ce3e8163d849a573259c3821540aaccbbc95f726101d14ac8cb65da24b5866",
+          "evidenceSha256": [
+            "571cc24b4a9337c5c490ec0cbf56dfffd464b75d7fd34030dd99fef8b87c5528",
+            "9bd506d1a861e11047f27001617928e3b7d05b2aff8e1c8552b5dbc52f9cff83",
+            "a26e1596e3366267c159a706326c193f6e11d7b62c42dc94cd91a3b71149e5bd",
+            "f3ce3e8163d849a573259c3821540aaccbbc95f726101d14ac8cb65da24b5866"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -23234,23 +23255,44 @@
       "managerIndex": 31,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "58b17757ecf3d691e2e76147c0df7269a8577d252dc36f465d5c67e6db9f64a1",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-08-24T00:10:00.000Z",
+      "updatedAt": "2026-08-24T01:08:30.000Z",
+      "completedAt": "2026-08-24T01:08:30.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "ad7808df86995506271f501acc386315cc2eab55dd985a74525bed6115f1e60a",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0188-toqlukuti-k-wind-and-hydrogen/attempt-1/locked-task-snapshot.json",
+          "sha256": "ad7808df86995506271f501acc386315cc2eab55dd985a74525bed6115f1e60a"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0188-toqlukuti-k-wind-and-hydrogen-v1/proposal.json",
+          "sha256": "5edb6adc4d4580bd8f59024a8f48ae1facc342f08cf867f8bb53f3d02293052e"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0188-toqlukuti-k-wind-and-hydrogen-v1.json",
+          "sha256": "3312ecf1e27a5d2ee78eac5e2de5d52bb10e684331d55137d96e90576ed86475"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0187-0191-v1/production-apply/batch-apply-receipt.json#members/1/receipt",
+          "sha256": "43db75652cddde35af1c326de6436bfb79f41d632526cb21b07b1a1e6030d869"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0188-toqlukuti-k-wind-and-hydrogen-v1/proposal.json#afterImage",
+          "sha256": "2cb14faabe727174f44a2a297935a50d91e7de98cbfd0ef26c1970bb393f5e8b"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-24T01:08:30.000Z",
+        "auditEventId": "cmt6ivmce0009wfyyxxx5a7lj",
+        "transactionId": "d2284316-1615-41e2-bafc-2fc0466fe9ef",
+        "receiptSha256": "43db75652cddde35af1c326de6436bfb79f41d632526cb21b07b1a1e6030d869",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/32677968727"
+      },
       "history": [
         {
           "sequence": 1,
@@ -23261,6 +23303,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-08-24T01:08:30.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0187-0191-v1.",
+          "taskSnapshotSha256": "ad7808df86995506271f501acc386315cc2eab55dd985a74525bed6115f1e60a",
+          "evidenceSha256": [
+            "2cb14faabe727174f44a2a297935a50d91e7de98cbfd0ef26c1970bb393f5e8b",
+            "3312ecf1e27a5d2ee78eac5e2de5d52bb10e684331d55137d96e90576ed86475",
+            "43db75652cddde35af1c326de6436bfb79f41d632526cb21b07b1a1e6030d869",
+            "571cc24b4a9337c5c490ec0cbf56dfffd464b75d7fd34030dd99fef8b87c5528",
+            "5edb6adc4d4580bd8f59024a8f48ae1facc342f08cf867f8bb53f3d02293052e",
+            "9bd506d1a861e11047f27001617928e3b7d05b2aff8e1c8552b5dbc52f9cff83",
+            "ad7808df86995506271f501acc386315cc2eab55dd985a74525bed6115f1e60a"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -23272,23 +23332,44 @@
       "managerIndex": 31,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "e6d22501ee417b240520ecbda11f388f5dd32f64e5c47880a8a563768ecd2861",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-08-24T00:10:00.000Z",
+      "updatedAt": "2026-08-24T01:08:30.000Z",
+      "completedAt": "2026-08-24T01:08:30.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "75178cffa6c38ad7c26b093a46d5d8f49c0e48d5249d71049e1509cbba840b49",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0189-vineyard-northeast/attempt-1/locked-v2-task-snapshot.json",
+          "sha256": "75178cffa6c38ad7c26b093a46d5d8f49c0e48d5249d71049e1509cbba840b49"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0189-vineyard-offshore-v2/proposal.json",
+          "sha256": "0de1b4661a97dc67d23718d93663279277bef9fd243c827a0932ade2e9654f2a"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0189-vineyard-offshore-v2.json",
+          "sha256": "5235cd99bee3e4757174ab3b428a25af0e583e40898b5e9c7ea1329caf45e9a1"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0187-0191-v1/production-apply/batch-apply-receipt.json#members/2/receipt",
+          "sha256": "871945a07d78df5ec50db2570608b9ef41d55dcbb8cf6c606167df24bf15bba3"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0189-vineyard-offshore-v2/proposal.json#afterImage",
+          "sha256": "f111a29f14285e3cdb7e74daaf79bedf768d21af054e993278e2d703384fd732"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-24T01:08:30.000Z",
+        "auditEventId": "cmt6ivtya000pwfyyxi3aetrg",
+        "transactionId": "d2284316-1615-41e2-bafc-2fc0466fe9ef",
+        "receiptSha256": "871945a07d78df5ec50db2570608b9ef41d55dcbb8cf6c606167df24bf15bba3",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/32677968727"
+      },
       "history": [
         {
           "sequence": 1,
@@ -23299,6 +23380,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-08-24T01:08:30.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0187-0191-v1.",
+          "taskSnapshotSha256": "75178cffa6c38ad7c26b093a46d5d8f49c0e48d5249d71049e1509cbba840b49",
+          "evidenceSha256": [
+            "0de1b4661a97dc67d23718d93663279277bef9fd243c827a0932ade2e9654f2a",
+            "5235cd99bee3e4757174ab3b428a25af0e583e40898b5e9c7ea1329caf45e9a1",
+            "571cc24b4a9337c5c490ec0cbf56dfffd464b75d7fd34030dd99fef8b87c5528",
+            "75178cffa6c38ad7c26b093a46d5d8f49c0e48d5249d71049e1509cbba840b49",
+            "871945a07d78df5ec50db2570608b9ef41d55dcbb8cf6c606167df24bf15bba3",
+            "9bd506d1a861e11047f27001617928e3b7d05b2aff8e1c8552b5dbc52f9cff83",
+            "f111a29f14285e3cdb7e74daaf79bedf768d21af054e993278e2d703384fd732"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -23310,23 +23409,44 @@
       "managerIndex": 32,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "03ee8c2bb78cc601edb9fb9f419a546d24aa0cac2458ee8a007f6f70b16f62e9",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-08-24T00:10:00.000Z",
+      "updatedAt": "2026-08-24T01:08:30.000Z",
+      "completedAt": "2026-08-24T01:08:30.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "c020d548d7351209eb1c6b8cc9eb9df1e651f1b921bec8ea71cc7bb0be088b1d",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0190-arco-norte/attempt-1/locked-task-snapshot.json",
+          "sha256": "c020d548d7351209eb1c6b8cc9eb9df1e651f1b921bec8ea71cc7bb0be088b1d"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0190-autopista-arco-norte-v1/proposal.json",
+          "sha256": "9c4b4e572d56995ea6ae3c3b8fe4de9f87072afde7e59ac3f3de947e777e586a"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0190-autopista-arco-norte-v1.json",
+          "sha256": "39c03a04bf54ce051fedaab496d5b44bd84f95c2f8d1ae6a6fef8a393a8afe4d"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0187-0191-v1/production-apply/batch-apply-receipt.json#members/3/receipt",
+          "sha256": "ec9851072949c15988fce58eec37fd21b158e903e34d5e0544b364fc04db499c"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0190-autopista-arco-norte-v1/proposal.json#afterImage",
+          "sha256": "27f6f740aff49ea4bddfd7d744a68f615510571aab58da8c5471101178f1d150"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-24T01:08:30.000Z",
+        "auditEventId": "cmt6ivyr4000ywfyycodqln7i",
+        "transactionId": "d2284316-1615-41e2-bafc-2fc0466fe9ef",
+        "receiptSha256": "ec9851072949c15988fce58eec37fd21b158e903e34d5e0544b364fc04db499c",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/32677968727"
+      },
       "history": [
         {
           "sequence": 1,
@@ -23337,6 +23457,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-08-24T01:08:30.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0187-0191-v1.",
+          "taskSnapshotSha256": "c020d548d7351209eb1c6b8cc9eb9df1e651f1b921bec8ea71cc7bb0be088b1d",
+          "evidenceSha256": [
+            "27f6f740aff49ea4bddfd7d744a68f615510571aab58da8c5471101178f1d150",
+            "39c03a04bf54ce051fedaab496d5b44bd84f95c2f8d1ae6a6fef8a393a8afe4d",
+            "571cc24b4a9337c5c490ec0cbf56dfffd464b75d7fd34030dd99fef8b87c5528",
+            "9bd506d1a861e11047f27001617928e3b7d05b2aff8e1c8552b5dbc52f9cff83",
+            "9c4b4e572d56995ea6ae3c3b8fe4de9f87072afde7e59ac3f3de947e777e586a",
+            "c020d548d7351209eb1c6b8cc9eb9df1e651f1b921bec8ea71cc7bb0be088b1d",
+            "ec9851072949c15988fce58eec37fd21b158e903e34d5e0544b364fc04db499c"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -23348,23 +23486,44 @@
       "managerIndex": 32,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "58e0baa9c8248521bd1d5e397b378b8a564a2b057b223f197503d5ed2eac022e",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-08-24T00:10:00.000Z",
+      "updatedAt": "2026-08-24T01:08:30.000Z",
+      "completedAt": "2026-08-24T01:08:30.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "4bf6d8f47f9998f39eb1ba05067b5892f3ca6d6b0c15e818df677b430490eb3a",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0191-caturus/attempt-1/locked-v2-task-snapshot.json",
+          "sha256": "4bf6d8f47f9998f39eb1ba05067b5892f3ca6d6b0c15e818df677b430490eb3a"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0191-caturus-v1/proposal.json",
+          "sha256": "8365a7e2f2efeae5f6d791dc8145c9a6caf6fb7e7fcf524dc0c33ca02db9279a"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0191-caturus-v1.json",
+          "sha256": "827eec33ab7ec6b5e284f92d1de4a269c339615fbdf274221f9765a082432428"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0187-0191-v1/production-apply/batch-apply-receipt.json#members/4/receipt",
+          "sha256": "f401115cf4adf533a48faa0ecdb80246f988a9d374d59bc907dc67f13adc7715"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0191-caturus-v1/proposal.json#afterImage",
+          "sha256": "5784916e20fd20d83a1077bf4cfc7219295cca7eaa8e197d559b9b085bae227d"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-24T01:08:30.000Z",
+        "auditEventId": "cmt6iw45b001awfyykemsao9a",
+        "transactionId": "d2284316-1615-41e2-bafc-2fc0466fe9ef",
+        "receiptSha256": "f401115cf4adf533a48faa0ecdb80246f988a9d374d59bc907dc67f13adc7715",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/32677968727"
+      },
       "history": [
         {
           "sequence": 1,
@@ -23375,6 +23534,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-08-24T01:08:30.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0187-0191-v1.",
+          "taskSnapshotSha256": "4bf6d8f47f9998f39eb1ba05067b5892f3ca6d6b0c15e818df677b430490eb3a",
+          "evidenceSha256": [
+            "4bf6d8f47f9998f39eb1ba05067b5892f3ca6d6b0c15e818df677b430490eb3a",
+            "571cc24b4a9337c5c490ec0cbf56dfffd464b75d7fd34030dd99fef8b87c5528",
+            "5784916e20fd20d83a1077bf4cfc7219295cca7eaa8e197d559b9b085bae227d",
+            "827eec33ab7ec6b5e284f92d1de4a269c339615fbdf274221f9765a082432428",
+            "8365a7e2f2efeae5f6d791dc8145c9a6caf6fb7e7fcf524dc0c33ca02db9279a",
+            "9bd506d1a861e11047f27001617928e3b7d05b2aff8e1c8552b5dbc52f9cff83",
+            "f401115cf4adf533a48faa0ecdb80246f988a9d374d59bc907dc67f13adc7715"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -23386,13 +23563,13 @@
       "managerIndex": 32,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "1e1836f42cd3c01e424b6edcbf0fc986c771cced3aabb0b6a83f7754aa2c251f",
-      "status": "PENDING",
+      "status": "SUPERSEDED",
       "attempts": 0,
       "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
-      "supersededByTaskId": null,
+      "updatedAt": "2026-08-24T01:08:30.000Z",
+      "completedAt": "2026-08-24T01:08:30.000Z",
+      "exceptionReason": "Superseded by ledger:0191:caturus:fb78fef3; its verified batch after-image covers the same canonical identity and ownership judgment.",
+      "supersededByTaskId": "ledger:0191:caturus:fb78fef3",
       "taskSnapshotSha256": null,
       "artifacts": {
         "taskSnapshot": null,
@@ -23413,6 +23590,19 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "SUPERSEDED",
+          "at": "2026-08-24T01:08:30.000Z",
+          "reason": "Superseded by ledger:0191:caturus:fb78fef3; its verified batch after-image covers the same canonical identity and ownership judgment.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "571cc24b4a9337c5c490ec0cbf56dfffd464b75d7fd34030dd99fef8b87c5528",
+            "9bd506d1a861e11047f27001617928e3b7d05b2aff8e1c8552b5dbc52f9cff83"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -30381,13 +30571,13 @@
       "managerIndex": 76,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "b7e8beeeb59f8bdaaf25c70805c9da10c7e40e6078bc32150510ec54e00f9fe7",
-      "status": "PENDING",
+      "status": "SUPERSEDED",
       "attempts": 0,
       "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
-      "supersededByTaskId": null,
+      "updatedAt": "2026-08-24T01:08:30.000Z",
+      "completedAt": "2026-08-24T01:08:30.000Z",
+      "exceptionReason": "Superseded by ledger:0190:arco-norte:b9067e32; its verified batch after-image covers the same canonical identity and ownership judgment.",
+      "supersededByTaskId": "ledger:0190:arco-norte:b9067e32",
       "taskSnapshotSha256": null,
       "artifacts": {
         "taskSnapshot": null,
@@ -30408,6 +30598,19 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "SUPERSEDED",
+          "at": "2026-08-24T01:08:30.000Z",
+          "reason": "Superseded by ledger:0190:arco-norte:b9067e32; its verified batch after-image covers the same canonical identity and ownership judgment.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "571cc24b4a9337c5c490ec0cbf56dfffd464b75d7fd34030dd99fef8b87c5528",
+            "9bd506d1a861e11047f27001617928e3b7d05b2aff8e1c8552b5dbc52f9cff83"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -35141,5 +35344,5 @@
       ]
     }
   ],
-  "manifestSha256": "23444ef2530273a4e8c6f5457d3e45fea302e79a752cc7ba875173355670767d"
+  "manifestSha256": "06465f0b150e72f1355e5a95a7158987c24db2fdce830f41aae50efa3d508f9c"
 }
