@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_SEED_ATTRIBUTION_RECONCILIATION_SPEC",
+  "batchId": "batch-0193-0197-v2",
+  "batchSha256": "2c3ed26a043a5b10db46c07fa7d59a2c8cb3999be3c32bd1c91e6f6b249398ed",
+  "reconciledAt": "2026-08-24T01:33:00.000Z",
+  "sourceManifestSha256": "35fcdbcb509e33a876423ba850e573108299cd4a77928475c5217566a3fc263a",
+  "rationale": "Align the evaluated seed owner ledger with the approved bundle after-images: retire the duplicate Commonwealth LNG Kimmeridge and Mubadala attribution rows after consolidation beneath Caturus; remove Cordelio Power's former CPP Investments row after the company-level exit; correct Pacifico Sur's active CPP Investments and OTPP rows to the May 2019 closing year, disclosed 29% and 20% stakes and non-inferred direct-program vehicles; and remove the unsupported CPP Investments attribution for the archived Keephills MOU-only development.",
+  "removeRecordIds": [
+    "OFA-A275AC114304",
+    "OFA-A5C0BC6CBEC4",
+    "OFA-BE64AF8151BE",
+    "OFA-BB7CFE3642A4"
+  ],
+  "upsertRecords": [
+    {
+      "recordId": "OFA-69CA15E3689B",
+      "companyName": "Pacifico Sur",
+      "country": "Mexico",
+      "investmentFirm": "CPP Investments",
+      "currentVehicleName": "CPP Investments",
+      "investmentYear": 2019,
+      "stake": "29%",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "CPP Investments directly acquired 29% of CAGT at the May 15, 2019 close; public sources do not identify a separate acquisition SPV or fund vehicle, so none is inferred.",
+      "evidenceUrls": [
+        "https://www.otpp.com/en-ca/about-us/news-and-insights/2018/ideal-cppib-and-ontario-teachers-expand-mexican-infrastructure-partnership-with-pacifico-sur-toll-road/",
+        "https://www.ideal.com.mx/wp-content/uploads/2021/04/Rep_Trim_INVERSIONISTAS_3Q-2020.pdf",
+        "https://ec.europa.eu/competition/mergers/cases/decisions/m9165_45_3.pdf"
+      ]
+    },
+    {
+      "recordId": "OFA-C9FF8CD22913",
+      "companyName": "Pacifico Sur",
+      "country": "Mexico",
+      "investmentFirm": "OTPP",
+      "currentVehicleName": "OTPP",
+      "investmentYear": 2019,
+      "stake": "20%",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "Ontario Teachers' directly acquired 20% of CAGT at the May 15, 2019 close; public sources do not identify a separate acquisition SPV or fund vehicle, so none is inferred.",
+      "evidenceUrls": [
+        "https://www.otpp.com/en-ca/about-us/news-and-insights/2018/ideal-cppib-and-ontario-teachers-expand-mexican-infrastructure-partnership-with-pacifico-sur-toll-road/",
+        "https://www.ideal.com.mx/wp-content/uploads/2021/04/Rep_Trim_INVERSIONISTAS_3Q-2020.pdf",
+        "https://www.otpp.com/en-ca/investments/our-advantage/our-performance-and-track-record/major-investments/"
+      ]
+    }
+  ],
+  "specSha256": "a94ddbb96f95e9db237cd9b5466b50ed8b7a74c479d6a21ca6032305f3301c84"
+}

@@ -1,0 +1,411 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0195:pacifico-sur:c39347ba",
+  "taskIndex": 195,
+  "asOfDate": "2026-08-23",
+  "generatedAt": "2026-08-24T01:28:01.000Z",
+  "canonicalKey": "pacifico-sur|mexico",
+  "companyName": "Pacifico Sur",
+  "actions": [
+    "CORRECT_COMPANY"
+  ],
+  "sourceHoldingIds": [
+    "032-cpp-investments:holding:010:pacifico-sur"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Retain Pacifico Sur as a separate directly held toll-road concession company rather than merging it into IDEAL Group or Arco Norte. Correct the legal identity, Jalisco and Nayarit footprint, May 15, 2019 closing year, and the disclosed 29% CPP Investments and 20% Ontario Teachers' stakes. Current manager and issuer sources reviewed show the concession remains operating and separately identified, with no later sale or signed pending ownership transfer.",
+  "evidence": [
+    {
+      "url": "https://www.otpp.com/en-ca/investments/our-advantage/our-performance-and-track-record/major-investments/",
+      "purpose": "Current separate investment boundary",
+      "supports": [
+        "Ontario Teachers' separately lists Pacifico Sur, IDEAL Group and Arco Norte"
+      ]
+    },
+    {
+      "url": "https://ec.europa.eu/competition/mergers/cases/decisions/m9165_45_3.pdf",
+      "purpose": "Legal identity and direct ownership structure",
+      "supports": [
+        "The transaction was a direct CAGT share purchase",
+        "The Pacifico Sur road assets are distinct from IDEAL and Arco Norte"
+      ]
+    },
+    {
+      "url": "https://www.ideal.com.mx/wp-content/uploads/2021/04/Rep_Trim_INVERSIONISTAS_3Q-2020.pdf",
+      "purpose": "Closing date",
+      "supports": [
+        "The CAGT share purchase closed on May 15, 2019"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "cf9633ee5fd0a7cad5181efef5d4c92f2f5b435f48d56f341f9579c80c0f4507",
+  "currentCompanySnapshotSha256": "4aab00741ad8ddf0e162fe6203044e5cd888262e4a244ad078acf5d017a9360f",
+  "executionLock": {
+    "taskSnapshotSha256": "8161e883325ca31062f6bdcffd8c90a489a249b6218b25d586c8b36825b61681",
+    "taskStateSha256": "db613cade9c0049c390616aeb6991b12d4ec9b533183495e4d8da2415bcd1bfd",
+    "taskDependencySha256": "d2ae328efe4783661f827bb2739a3953a89c3e29f981955c084724ba85200489",
+    "seedEntrySha256": "df7c77c2daf286ceb40399e38acd9e04ba39443b14ba3bf87fb0e6d30357b93a",
+    "dependencies": {
+      "ownershipPeriodsSha256": "7bd2bb49b539dada6676c0283aad71df700c9e7ad4f5d0275c6f89e1c7475974",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "7e0d6441b1461af0d44fad8cd1f96f5f47bae8574a684a73c8f27238dfeebfb5",
+      "citationsSha256": "dc74b956134fee87b29b28512579431bbab29afd7d6a55d950ba2d232d5c3201",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi6gh001aivhefuh9d1bo",
+        "name": "CPP Investments",
+        "updatedAt": "2026-07-23T16:09:15.569Z"
+      },
+      {
+        "id": "cmrxpih16004mivhea7i805re",
+        "name": "OTPP",
+        "updatedAt": "2026-07-23T16:09:29.274Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjckc00ssivhet8xg6gs5",
+    "name": "Pacifico Sur",
+    "aliases": [],
+    "sector": "TRANSPORTATION",
+    "subsector": "Toll road",
+    "region": "NORTH_AMERICA",
+    "country": "Mexico",
+    "countryTags": [
+      "Mexico"
+    ],
+    "description": "Pacifico Sur is a toll road concession connecting central and northwestern Mexico, including the corridor between Guadalajara and Tepic. Its customers are passenger vehicles and commercial transport operators using a strategic intercity highway link. The operating model is asset-heavy and concession based, with long-duration toll revenue supporting the asset rather than short-term project development fees. Public investment announcements describe a 309-kilometer toll road and related bypasses serving both freight and tourism traffic. CPP Investments announced its investment in Pacifico Sur in 2018 in partnership with IDEAL and Ontario Teachers', with a disclosed ownership structure of 29%, 51%, and 20%, respectively.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Guerrero; Morelos; State of Mexico",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjxzf01qmivhephymt31i",
+        "managerName": "CPP Investments",
+        "organizationName": "CPP Investments",
+        "fundName": null,
+        "vehicleName": "Real Assets (Infrastructure)",
+        "stake": null,
+        "investmentYear": 2018,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjxzy01qnivhez34f1suv",
+        "managerName": "OTPP",
+        "organizationName": "OTPP",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2018,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplcx503l3ivhezjultmil",
+        "date": "2018",
+        "event": "The transaction announcement disclosed ownership interests of 51% IDEAL, 29% CPP Investments, and 20% Ontario Teachers' (OTPP).",
+        "category": "FINANCING",
+        "sortDate": "2018-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplcxo03l4ivhep1md7lx9",
+        "date": "2018",
+        "event": "CPPIB disclosed a 29% interest and Ontario Teachers' a 20% interest in the asset, with IDEAL retaining 51%.",
+        "category": "OTHER",
+        "sortDate": "2018-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplcy703l5ivheqj1t3nly",
+        "date": "Oct 2, 2018",
+        "event": "IDEAL, CPP Investments, and Ontario Teachers' (OTPP) announced the acquisition of the Pacifico Sur toll road.",
+        "category": "ACQUISITION",
+        "sortDate": "2018-10-02T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplcys03l6ivhepo9rk44e",
+        "date": "2020",
+        "event": "Ontario Teachers' included Pacifico Sur within its expanded Mexican infrastructure partnership.",
+        "category": "EXPANSION",
+        "sortDate": "2020-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqdnw09hxivhexatim0fi",
+        "label": "Announcement date source — CPP Investments — Pacifico Sur",
+        "url": "https://www.cppinvestments.com/newsroom/ideal-cppib-and-ontario-teachers-expand-mexican-infrastructure-partnership-pacifico-sur-toll-road/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CPP Investments transaction announcement",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqdp709hzivhefuszcj39",
+        "label": "GlobeNewsWire — Pacifico Sur",
+        "url": "https://www.globenewswire.com/news-release/2018/10/02/1600447/0/en/IDEAL-CPPIB-and-Ontario-Teachers-Expand-Mexican-Infrastructure-Partnership-with-Pacifico-Sur-Toll-Road.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "GlobeNewsWire — Pacifico Sur",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqdq709i1ivhezuxtbp0c",
+        "label": "Otpp — Pacifico Sur",
+        "url": "https://www.otpp.com/en-ca/investments/our-advantage/our-performance-and-track-record/major-investments/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Otpp company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqdrf09i3ivhengotq2uu",
+        "label": "Announcement date source — OTPP — Pacifico Sur",
+        "url": "https://www.otpp.com/en-ca/about-us/news-and-insights/2018/ideal-cppib-and-ontario-teachers-expand-mexican-infrastructure-partnership-with-pacifico-sur-toll-road/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "OTPP transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqdsc09i5ivhexm3a6lq6",
+        "label": "Newswire — Pacifico Sur",
+        "url": "https://www.newswire.ca/news-releases/ideal-cppib-and-ontario-teachers-expand-mexican-infrastructure-partnership-872914736.html",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Newswire — Pacifico Sur",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqdta09i7ivhepdey5v1i",
+        "label": "Renewcanada — Pacifico Sur",
+        "url": "https://www.renewcanada.net/cppib-otpp-purchase-stake-in-mexican-toll-road/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Renewcanada — Pacifico Sur",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "4aab00741ad8ddf0e162fe6203044e5cd888262e4a244ad078acf5d017a9360f",
+  "afterImage": {
+    "id": "cmrxpjckc00ssivhet8xg6gs5",
+    "name": "Pacifico Sur",
+    "aliases": [
+      "Pacífico Sur",
+      "Concesionaria Autopista Guadalajara Tepic, S.A. de C.V.",
+      "CAGT"
+    ],
+    "sector": "TRANSPORTATION",
+    "subsector": "Toll road",
+    "region": "NORTH_AMERICA",
+    "country": "Mexico",
+    "countryTags": [
+      "Mexico"
+    ],
+    "description": "Pacifico Sur is the operating toll-road concession held through Concesionaria Autopista Guadalajara Tepic, S.A. de C.V. (CAGT). Its 309.6-kilometer network in Jalisco and Nayarit includes the Guadalajara–Tepic toll road, the South Guadalajara Bypass and the Tepic Bypass, serving freight, tourism and other toll-paying road users under a long-duration user-pay concession. A definitive agreement was announced on October 2, 2018 and the direct purchase of 49% of CAGT closed on May 15, 2019, leaving IDEAL with 51%, CPP Investments with 29% and Ontario Teachers' with 20%. A 2020 modification extended the concession to 60 years from November 30, 2011, implying expiry in November 2071. Pacifico Sur remains a separate direct PortCo from IDEAL Group and Autopista Arco Norte, and no later direct-stake sale, concession transfer or signed pending ownership transaction was identified through August 19, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Jalisco and Nayarit",
+    "lastVerifiedAt": "2026-08-19T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjxzf01qmivhephymt31i",
+        "managerName": "CPP Investments",
+        "organizationName": "CPP Investments",
+        "fundName": null,
+        "vehicleName": null,
+        "stake": "29%",
+        "investmentYear": 2019,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjxzy01qnivhez34f1suv",
+        "managerName": "OTPP",
+        "organizationName": "OTPP",
+        "fundName": null,
+        "vehicleName": null,
+        "stake": "20%",
+        "investmentYear": 2019,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplcx503l3ivhezjultmil",
+        "date": "Oct 2, 2018",
+        "event": "IDEAL, CPP Investments and Ontario Teachers' announced the direct CAGT share purchase at 51%, 29% and 20%, respectively.",
+        "category": "ACQUISITION",
+        "sortDate": "2018-10-02T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.otpp.com/en-ca/about-us/news-and-insights/2018/ideal-cppib-and-ontario-teachers-expand-mexican-infrastructure-partnership-with-pacifico-sur-toll-road/"
+        ]
+      },
+      {
+        "id": "cmrxplcxo03l4ivhep1md7lx9",
+        "date": "May 15, 2019",
+        "event": "The purchase of 49% of CAGT closed, establishing CPP Investments' 29% and Ontario Teachers' 20% direct interests alongside IDEAL's 51% stake.",
+        "category": "ACQUISITION",
+        "sortDate": "2019-05-15T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.ideal.com.mx/wp-content/uploads/2021/04/Rep_Trim_INVERSIONISTAS_3Q-2020.pdf"
+        ]
+      },
+      {
+        "id": "cmrxplcy703l5ivheqj1t3nly",
+        "date": "Jun 8, 2020",
+        "event": "A concession modification extended Pacifico Sur's term to 60 years from November 30, 2011.",
+        "category": "EXPANSION",
+        "sortDate": "2020-06-08T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://micrs.sct.gob.mx/images/Transparencia/Base_de_Datos_Concesiones_Vigentes_30_Junio_2025.xlsx"
+        ]
+      },
+      {
+        "id": "cmrxplcys03l6ivhepo9rk44e",
+        "date": "Dec 31, 2025",
+        "event": "Ontario Teachers' continued to list Pacifico Sur separately from IDEAL Group and Arco Norte.",
+        "category": "OTHER",
+        "sortDate": "2025-12-31T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.otpp.com/en-ca/investments/our-advantage/our-performance-and-track-record/major-investments/"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqdnw09hxivhexatim0fi",
+        "label": "Announcement date source — CPP Investments — Pacifico Sur",
+        "url": "https://www.cppinvestments.com/newsroom/ideal-cppib-and-ontario-teachers-expand-mexican-infrastructure-partnership-pacifico-sur-toll-road/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "2018 transaction announcement, stakes and road portfolio",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqdp709hzivhefuszcj39",
+        "label": "GlobeNewsWire — Pacifico Sur",
+        "url": "https://www.globenewswire.com/news-release/2018/10/02/1600447/0/en/IDEAL-CPPIB-and-Ontario-Teachers-Expand-Mexican-Infrastructure-Partnership-with-Pacifico-Sur-Toll-Road.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Syndicated 2018 announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqdq709i1ivhezuxtbp0c",
+        "label": "Otpp — Pacifico Sur",
+        "url": "https://www.otpp.com/en-ca/investments/our-advantage/our-performance-and-track-record/major-investments/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current separate listing for Pacifico Sur",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqdrf09i3ivhengotq2uu",
+        "label": "Announcement date source — OTPP — Pacifico Sur",
+        "url": "https://www.otpp.com/en-ca/about-us/news-and-insights/2018/ideal-cppib-and-ontario-teachers-expand-mexican-infrastructure-partnership-with-pacifico-sur-toll-road/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "2018 agreement date, stakes, network and consideration",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqdsc09i5ivhexm3a6lq6",
+        "label": "Newswire — Pacifico Sur",
+        "url": "https://www.newswire.ca/news-releases/ideal-cppib-and-ontario-teachers-expand-mexican-infrastructure-partnership-872914736.html",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Syndicated transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqdta09i7ivhepdey5v1i",
+        "label": "Renewcanada — Pacifico Sur",
+        "url": "https://www.renewcanada.net/cppib-otpp-purchase-stake-in-mexican-toll-road/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Secondary transaction coverage",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "European Commission — Case M.9165",
+        "url": "https://ec.europa.eu/competition/mergers/cases/decisions/m9165_45_3.pdf",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CAGT legal identity, direct share purchase and joint control",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "IDEAL — Third-quarter 2020 investor report",
+        "url": "https://www.ideal.com.mx/wp-content/uploads/2021/04/Rep_Trim_INVERSIONISTAS_3Q-2020.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "May 15, 2019 acquisition closing date",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Mexico SICT — June 2025 concession database",
+        "url": "https://micrs.sct.gob.mx/images/Transparencia/Base_de_Datos_Concesiones_Vigentes_30_Junio_2025.xlsx",
+        "sourceType": "OTHER",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "CAGT concession assets and 60-year term modification",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Otpp — Impulsora del Desarrollo y el Empleo en América Latina, S.A.B. de C.V. (IDEAL)",
+        "url": "https://www.otpp.com/en-ca/about-us/news-and-insights/2020/ideal-cpp-investments-and-ontario-teachers-complete-the-expansion-of-mexican-infrastructure-partnership/",
+        "sourceType": "WEBSITE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "IDEAL-parent and FIBRA-E transaction distinguished from Pacifico Sur",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "IDEAL — First-quarter 2026 report",
+        "url": "https://www.ideal.com.mx/wp-content/uploads/2026/06/IDEAL-1-Trimestre-2026.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current CAGT operating disclosure",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "d20d0a60fb3118df275113b08c5995e349731d471495482ca17a5a9b20db940e",
+  "proposalSha256": "5cdad5e8e4962fb5a4220f5a38aa92b7cee23ee1e9b94b761d06e21492115730"
+}

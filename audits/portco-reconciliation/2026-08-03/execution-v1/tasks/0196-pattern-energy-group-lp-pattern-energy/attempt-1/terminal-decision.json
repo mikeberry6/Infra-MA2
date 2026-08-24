@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0196:pattern-energy-group-lp-pattern-energy:13287f81",
+  "taskIndex": 196,
+  "companyName": "Pattern Energy Group LP (Pattern Energy)",
+  "outcome": "SUPERSEDED",
+  "decidedAt": "2026-08-24T01:29:00.000Z",
+  "rationale": "Completed Task 41 already reconciled this exact canonical Pattern Energy Group LP production company and released the CPP Investments ownership period, including the 69.1% post-Cordelio stake, together with the APG co-owner and current company identity. Task 196 is the later CPP census task for the same company and would duplicate the already applied ownership and identity work.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0196-pattern-energy-group-lp-pattern-energy/attempt-1/locked-task-snapshot.json",
+    "sha256": "49e48eb73472d7e999e42458129ea859d6276d2c3c8989c83a11194d20dd8c76"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0196-pattern-energy-group-lp-pattern-energy/attempt-1/terminal-research-decision.json",
+    "sha256": "724e2d507f0ef9530d8271459b0670b63c9ac5fea76f20a8ca6d34c198178f96"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0196-pattern-energy-group-lp-pattern-energy/attempt-1/source-verification.json",
+    "sha256": "52a557bc8241f5a78923d6230504cc215b136b82b0117746a6db3dd1e42417e4"
+  },
+  "evidence": [
+    {
+      "url": "https://www.cppinvestments.com/newsroom/pattern-energy-and-canada-pension-plan-investment-board-complete-transaction/",
+      "purpose": "CPP Investments' completed 2020 Pattern entry."
+    },
+    {
+      "url": "https://www.cppinvestments.com/newsroom/cpp-investments-net-assets-total-780-7-billion-at-third-quarter-fiscal-2026/",
+      "purpose": "CPP Investments' 69.1% Pattern ownership following the Cordelio transaction."
+    },
+    {
+      "url": "https://patternenergy.com/pattern-energy-announces-completion-of-acquisition-of-cordelio-power/",
+      "purpose": "Cordelio closing and combined Pattern platform boundary."
+    },
+    {
+      "url": "https://patternenergy.com/terms-conditions/",
+      "purpose": "Canonical Pattern Energy Group LP legal identity."
+    }
+  ],
+  "supersededByTaskId": "ledger:0041:pattern-energy-group-lp-pattern-energy:21bb4249",
+  "decisionSha256": "1faee3c018a5ea0503b353dfd465e001a8fe808aafc73bb836dbea4a8d9489fd"
+}

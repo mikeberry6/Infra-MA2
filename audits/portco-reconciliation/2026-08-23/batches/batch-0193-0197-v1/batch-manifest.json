@@ -1,0 +1,520 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_MANIFEST",
+  "methodologyVersion": "PORTCO_APPLY_BATCH_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0193-0197-v1",
+  "createdAt": "2026-08-24T01:31:00.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "d37eaaf339dec235f3bde17cd45267bf94c1d1ebf5649bc9108a4888618536ff"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "e75df35e224a1c1db6f3afc11d04a07cbaf2bffce03b3f55d13a3939b5c8e083"
+  },
+  "members": [
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0193:commonwealth-lng:177a93a3",
+      "taskIndex": 193,
+      "companyName": "Commonwealth LNG",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0193-commonwealth-lng-v1/proposal.json",
+        "sha256": "e735c77e932ca60fc980053a5ce3bd5db99c04dd028e0de0c62e5f704f41fa2a"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0193-commonwealth-lng-v1.json",
+        "sha256": "231a91eb9e8e8ce3b848b7f6dd3985b26c9cbf60aa117934f38fd5c26de19018"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0193-commonwealth-lng/attempt-1/locked-production-snapshot.json",
+        "sha256": "af6429f938c712a29fd64b816fe6f846c462a6740c8b69cb3229cb9fbc31c0fb"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0193-commonwealth-lng/attempt-1/locked-task-snapshot.json",
+        "sha256": "b23e856b76c83829f305a79d1ef4f96ea8180e798538aa06cdefa224e9f82237"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0193-commonwealth-lng/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "10bcb6660e6b206a05b207436317ba49fdcf040c06883257869df83f90d77cf8"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0193-commonwealth-lng/attempt-1/application-research-decision.json",
+        "sha256": "9b32eca4cf3824b0861324e9627c2d816b4499353cbb5e4e0547052256321cc4"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0193-commonwealth-lng/attempt-1/source-verification.json",
+        "sha256": "84cef16f122a8f0094219a11d43c1579e05c1200b0617a80bf9c906beedbd250"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "f63134fd2fe27f90abc17069c9046ecee011ffc667bfe1d1c6b33fd2a313eff8",
+      "dependencySha256": "b89412aa2a91b2ecef8eadd6c6d291d98b91ed44fe5db732828873756ba773c2",
+      "afterImageSha256": "c6c668d544322c29811eda71041c9365ba9495ed2f0fb3f9a7840a8e7747cd18",
+      "targetClaims": [
+        "canonical:caturus|united-states",
+        "company:cmrxpjjko013jivhegryhtkk9",
+        "company:cmrxpjlmi016rivhegsbn21hd",
+        "relation:cmrxpjxw601qgivhep9veksy1",
+        "relation:cmrxpk5lt022divheaglek2t6",
+        "relation:cmrxpk8070264ivheshixqnhb",
+        "relation:cmrxpk80r0265ivhedqzn07u2",
+        "relation:cmrxplcgu03kiivhe6rbe2w0p",
+        "relation:cmrxplchd03kjivhebb6bbuur",
+        "relation:cmrxpm6h304jyivhez77s8rxv",
+        "relation:cmrxpm6hm04jzivhe2wnt9ui1",
+        "relation:cmrxpm6i804k0ivhe4zjmuoxn",
+        "relation:cmrxpm6ir04k1ivheke2wq01t",
+        "relation:cmrxpmgdm04w0ivheyo4fw4z2",
+        "relation:cmrxpmgg804w1ivhe0vdkmk0r",
+        "relation:cmrxprvce0bq0ivheoebkj1md",
+        "relation:cmrxprvfx0bq2ivhek85fhl1w",
+        "relation:cmrxprvhe0bq4ivheuxwwuo8x",
+        "relation:cmrxprvic0bq6ivhe0aa6owrf",
+        "relation:cmrxprvjc0bq8ivhehfb7qr61",
+        "relation:cmrxprvkf0bqaivheq8d7bcvy",
+        "relation:cmt6iw1fr0010wfyyhx2s6uhj",
+        "relation:cmt6iw1jf0012wfyyiy3set05",
+        "relation:cmt6iw1lt0013wfyy87esr5yp",
+        "relation:cmt6iw1pf0015wfyyk9mo5d5g",
+        "relation:cmt6iw1t00017wfyy3paqwhbr",
+        "relation:cmt6iw22r0018wfyyex8urcg5",
+        "seed:caturus|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://caturus.com/",
+          "label": "Caturus — Caturus Energy",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://caturus.com/caturus-announces-final-investment-decision-for-9-5-mtpa-commonwealth-lng-export-facility-in-cameron-la/",
+          "label": "Caturus — Commonwealth LNG FID",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://caturus.com/caturus-closes-gulf-coast-galvan-ranch-acquisition-from-sm-energy/",
+          "label": "Caturus — Galvan Ranch acquisition",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://caturus.com/news/kimmeridge-closes-strategic-equity-investment-from-mubadala-energy-and-rebrands-integrated-natural-gas-platform-as-caturus",
+          "label": "Caturus — Caturus",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://commonwealthlng.com/",
+          "label": "Commonwealthlng — Commonwealth LNG",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://commonwealthlng.com/kimmeridge-closes-follow-on-control-investment-in-commonwealth-lng/",
+          "label": "Follow-on control investment source — Kimmeridge — Commonwealth LNG",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://commonwealthlng.com/kimmeridge-closes-strategic-equity-investment-from-mubadala-energy-and-rebrands-integrated-natural-gas-platform-as-caturus/",
+          "label": "Close date source — Mubadala — Commonwealth LNG",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://kimmeridge.com/kimmeridge-texas-gas-appoints-david-lawler-as-ceo-kimmeridge-closes-follow-on-control-investment-in-commonwealth-lng/",
+          "label": "Follow-on control source — Kimmeridge — Caturus",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://mubadalaenergy.com/news/mubadala-energy-closes-strategic-investment-in-u-s-natural-gas-and-lng-sector-with-kimmeridge/",
+          "label": "Mubadalaenergy — Caturus",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.caturus.com/news/caturus-and-kimmeridge-announce-partnership-with-mubadala-energy/",
+          "label": "Close date source — Mubadala — Commonwealth LNG",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.cppinvestments.com/newsroom/cpp-investments-net-assets-total-777-5-billion-at-second-quarter-fiscal-2026/",
+          "label": "Cppinvestments — AlphaGen",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.energy.gov/documents/commonwealth-follow-questions",
+          "label": "DOE — Caturus ownership clarification",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.energy.gov/documents/commonwealth-lng-doe-notice-change-control-cpppdf",
+          "label": "DOE — Caturus change of control to CPP Investments",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.energy.gov/fecm/articles/doe-receives-notice-change-control-commonwealth-lng-project",
+          "label": "Energy — Commonwealth LNG",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.energy.gov/sites/default/files/2025-09/Commonwealth%20LNG%20DOE%20Notice%20of%20Change%20in%20Control%20%28Mubadala-Caturus%29%20-%209.5.2025.pdf",
+          "label": "Energy — Caturus",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/commonwealth-lng-closes-on-investment-and-agrees-to-terms-for-strategic-partnership-301898868.html",
+          "label": "Investment date source — Kimmeridge — Caturus / Commonwealth LNG",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.reuters.com/world/us/commonwealth-lng-signs-20-year-supply-deal-with-saudi-aramco-2026-02-13/",
+          "label": "Reuters — Commonwealth LNG",
+          "sourceType": "ARTICLE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0194:cordelio-power:08aa08d8",
+      "taskIndex": 194,
+      "companyName": "Cordelio Power",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0194-cordelio-power-v1/proposal.json",
+        "sha256": "679f6e36324296490fd2a690a8c45f12c4246348ce6f9e077ea32ed78723d5c0"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0194-cordelio-power-v1.json",
+        "sha256": "6ca921b66510ef363adab2f9beb48c17ee30365ef832de454b1361dc0bc86d4a"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0194-cordelio-power/attempt-1/locked-production-snapshot.json",
+        "sha256": "46dcbf0bb9e1667731402541e7b91934317f30497be109fe2a1e279c4207dbf6"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0194-cordelio-power/attempt-1/locked-task-snapshot.json",
+        "sha256": "8699abb52ce7a0adacc74a4f708e98ce0a873b7eeebaa0f982d2a220261f5b7b"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0194-cordelio-power/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "8ceb385a72040d1acfdacd070ca3a92c246be117fab0c27421333d6a8bddd485"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0194-cordelio-power/attempt-1/application-research-decision.json",
+        "sha256": "20c200ccdfdf9a41b3e2347ba3dbc018aa93e98702826e54c99b989c54de1431"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0194-cordelio-power/attempt-1/source-verification.json",
+        "sha256": "c8d297082a3e31f151be3282fb3ab028c56b8131f53f02cf814f1dd7aef2a07d"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "c5ae140758f9b94e2047b99b11f1ae45bdda766300bd1ba6a40ef4eb8946b224",
+      "dependencySha256": "f1e3ec98fa488e360aa0b0eb39373986b6fbedc9f23e3ab7aeb5061e19f6cba7",
+      "afterImageSha256": "8b377ba3fae4f4082e1cf250e66c3fcd420dec24d0074e77f62835f73ce505e7",
+      "targetClaims": [
+        "canonical:cordelio-power|united-states-canada",
+        "company:cmrxpjchl00snivheq6k7hdmj",
+        "relation:cmrxpjxwr01qhivhey42yacb7",
+        "relation:cmrxplci703kkivhe1hyxa8ma",
+        "relation:cmrxplcin03klivhex3poh005",
+        "relation:cmrxplcja03kmivhexctlujse",
+        "relation:cmrxplcjt03knivhezb598ukv",
+        "relation:cmrxpqcuv09gpivhey4dikyoc",
+        "relation:cmrxpqcw909grivhehotvf5hg",
+        "relation:cmrxpqcx809gtivhe5ltdjad7",
+        "relation:cmrxpqcyd09gvivheo6xo5zna",
+        "relation:cmrxpqczk09gxivhefrztywp4",
+        "relation:cmrxpqd0009gyivhed3qi6oz9",
+        "relation:cmrxpqd1609gzivheuerkstje",
+        "seed:cordelio power|canada",
+        "seed:cordelio power|united states / canada"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://brightnightpower.com/about-us/news-insights/brightnight-acquires-cordelio-powers-joint-venture-interest-adds-6-gw-to-its-independently-controlled-project-portfolio/",
+          "label": "BrightNight — Cordelio joint-venture interest acquisition",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://cordeliopower.com/",
+          "label": "Cordeliopower — Denfield Power Portfolio",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://cordeliopower.com/pattern_energy_announces_agreement_to_acquire_cordelio_power/",
+          "label": "Cordeliopower — Cordelio Power",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://docs.fcc.gov/public/attachments/DOC-422125A1.pdf",
+          "label": "FCC — Cordelio post-close ownership records",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://gowlingwlg.com/en/insights-resources/client-work/2018/nextera-energy-partners-completes-sale-to-cppib",
+          "label": "Close date source — CPP Investments — Cordelio Power",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://patternenergy.com/about/",
+          "label": "Pattern Energy — company profile",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://patternenergy.com/pattern-energy-announces-closing-of-equity-investment-from-consortium-headed-by-apg-and-art/",
+          "label": "Close date source — APG Infrastructure — Pattern Energy Group LP",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://patternenergy.com/pattern-energy-announces-completion-of-acquisition-of-cordelio-power/",
+          "label": "Patternenergy — Cordelio Power",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.cppinvestments.com/newsroom/cpp-investments-net-assets-total-780-7-billion-at-third-quarter-fiscal-2026/",
+          "label": "CPP Investments — Q3 fiscal 2026 results",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.globenewswire.com/news-release/2018/08/10/1550309/0/en/CPP-Fund-Totals-366-6-Billion-at-First-Quarter-Fiscal-2019.html",
+          "label": "Investment date source — CPP Investments — Cordelio Power",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.mccarthy.ca/en/experience/cordelio-power-acquired-by-pattern-energy",
+          "label": "McCarthy Tétrault — Cordelio Power acquired by Pattern Energy",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.mccarthy.ca/en/experience/cordelio-power-enters-into-definitive-agreement-in-connection-with-its-sale-to-pattern-energy-group",
+          "label": "McCarthy Tétrault",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/brightnight-acquires-cordelio-powers-joint-venture-interest-adds-6-gw-to-its-independently-controlled-project-portfolio-302747628.html",
+          "label": "PR Newswire",
+          "sourceType": "PRESS_RELEASE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0195:pacifico-sur:c39347ba",
+      "taskIndex": 195,
+      "companyName": "Pacifico Sur",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0195-pacifico-sur-v1/proposal.json",
+        "sha256": "5cdad5e8e4962fb5a4220f5a38aa92b7cee23ee1e9b94b761d06e21492115730"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0195-pacifico-sur-v1.json",
+        "sha256": "406995ddcec5bb90fa052325f39e125d14711cfbc3053d35087eec2d168957d3"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0195-pacifico-sur/attempt-1/locked-production-snapshot.json",
+        "sha256": "cf9633ee5fd0a7cad5181efef5d4c92f2f5b435f48d56f341f9579c80c0f4507"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0195-pacifico-sur/attempt-1/locked-task-snapshot.json",
+        "sha256": "8161e883325ca31062f6bdcffd8c90a489a249b6218b25d586c8b36825b61681"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0195-pacifico-sur/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "b77772c74ad842e4e151422dd48029216e3e3680458ce15a4717663606199251"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0195-pacifico-sur/attempt-1/application-research-decision.json",
+        "sha256": "8e7b5b85cf720fb8cddf4813b71e54a753650c5526041ca0035dd30a044088c0"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0195-pacifico-sur/attempt-1/source-verification.json",
+        "sha256": "34f59ae6c569991e1c1d14acd89470366b102089603c84e7f73ddfd816170c8f"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "db613cade9c0049c390616aeb6991b12d4ec9b533183495e4d8da2415bcd1bfd",
+      "dependencySha256": "d2ae328efe4783661f827bb2739a3953a89c3e29f981955c084724ba85200489",
+      "afterImageSha256": "d20d0a60fb3118df275113b08c5995e349731d471495482ca17a5a9b20db940e",
+      "targetClaims": [
+        "canonical:pacifico-sur|mexico",
+        "company:cmrxpjckc00ssivhet8xg6gs5",
+        "relation:cmrxpjxzf01qmivhephymt31i",
+        "relation:cmrxpjxzy01qnivhez34f1suv",
+        "relation:cmrxplcx503l3ivhezjultmil",
+        "relation:cmrxplcxo03l4ivhep1md7lx9",
+        "relation:cmrxplcy703l5ivheqj1t3nly",
+        "relation:cmrxplcys03l6ivhepo9rk44e",
+        "relation:cmrxpqdnw09hxivhexatim0fi",
+        "relation:cmrxpqdp709hzivhefuszcj39",
+        "relation:cmrxpqdq709i1ivhezuxtbp0c",
+        "relation:cmrxpqdrf09i3ivhengotq2uu",
+        "relation:cmrxpqdsc09i5ivhexm3a6lq6",
+        "relation:cmrxpqdta09i7ivhepdey5v1i",
+        "seed:pacifico sur|mexico"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://ec.europa.eu/competition/mergers/cases/decisions/m9165_45_3.pdf",
+          "label": "European Commission — Case M.9165",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://micrs.sct.gob.mx/images/Transparencia/Base_de_Datos_Concesiones_Vigentes_30_Junio_2025.xlsx",
+          "label": "Mexico SICT — June 2025 concession database",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.cppinvestments.com/newsroom/ideal-cppib-and-ontario-teachers-expand-mexican-infrastructure-partnership-pacifico-sur-toll-road/",
+          "label": "Announcement date source — CPP Investments — Pacifico Sur",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.globenewswire.com/news-release/2018/10/02/1600447/0/en/IDEAL-CPPIB-and-Ontario-Teachers-Expand-Mexican-Infrastructure-Partnership-with-Pacifico-Sur-Toll-Road.html",
+          "label": "GlobeNewsWire — Pacifico Sur",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.ideal.com.mx/wp-content/uploads/2021/04/Rep_Trim_INVERSIONISTAS_3Q-2020.pdf",
+          "label": "IDEAL — Third-quarter 2020 investor report",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://www.ideal.com.mx/wp-content/uploads/2026/06/IDEAL-1-Trimestre-2026.pdf",
+          "label": "IDEAL — First-quarter 2026 report",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://www.newswire.ca/news-releases/ideal-cppib-and-ontario-teachers-expand-mexican-infrastructure-partnership-872914736.html",
+          "label": "Newswire — Pacifico Sur",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.otpp.com/en-ca/about-us/news-and-insights/2018/ideal-cppib-and-ontario-teachers-expand-mexican-infrastructure-partnership-with-pacifico-sur-toll-road/",
+          "label": "Announcement date source — OTPP — Pacifico Sur",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.otpp.com/en-ca/about-us/news-and-insights/2020/ideal-cpp-investments-and-ontario-teachers-complete-the-expansion-of-mexican-infrastructure-partnership/",
+          "label": "Otpp — Impulsora del Desarrollo y el Empleo en América Latina, S.A.B. de C.V. (IDEAL)",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.otpp.com/en-ca/investments/our-advantage/our-performance-and-track-record/major-investments/",
+          "label": "Otpp — Pacifico Sur",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.renewcanada.net/cppib-otpp-purchase-stake-in-mexican-toll-road/",
+          "label": "Renewcanada — Pacifico Sur",
+          "sourceType": "ARTICLE"
+        }
+      ]
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0196:pattern-energy-group-lp-pattern-energy:13287f81",
+      "taskIndex": 196,
+      "companyName": "Pattern Energy Group LP (Pattern Energy)",
+      "outcome": "SUPERSEDED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0196-pattern-energy-group-lp-pattern-energy/attempt-1/terminal-decision.json",
+        "sha256": "1faee3c018a5ea0503b353dfd465e001a8fe808aafc73bb836dbea4a8d9489fd"
+      }
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0197:transalta-keephills-data-centre-jv:34a62ae3",
+      "taskIndex": 197,
+      "companyName": "TransAlta Keephills Data Centre JV",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0197-transalta-keephills-data-centre-jv-v1/proposal.json",
+        "sha256": "c36488c995e309f1801ecdde421553d904a1b2fa2151858cad93a3f714e4bd7f"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0197-transalta-keephills-data-centre-jv-v1.json",
+        "sha256": "0861b9ef9eaf7a3ff4c9ee198842534ec3501b8dac7322f48e929bf896f927de"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0197-transalta-keephills-data-centre-jv/attempt-1/locked-production-snapshot.json",
+        "sha256": "8bcc1783526d539fcef60e68bea2c4e1b78bde0575b584c6d200afb5d440419f"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0197-transalta-keephills-data-centre-jv/attempt-1/locked-task-snapshot.json",
+        "sha256": "365e5afedb86df7dbe23bd465d7da3daff2d4ddf3a5e84e51db0f8289b018e4d"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0197-transalta-keephills-data-centre-jv/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "ac9f30547f648c17b496e7d061e046f2f222c3a21cca8f7d14b3ee6e0db43e61"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0197-transalta-keephills-data-centre-jv/attempt-1/application-research-decision.json",
+        "sha256": "9a9a9bff6ddb2d395c00d7b145af21d514c18bbc7eb2d2ffb0c2eb3c8d1d5662"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0197-transalta-keephills-data-centre-jv/attempt-1/source-verification.json",
+        "sha256": "c749c445e7cdff9a88c0ecd64b10888d23de211aac5768024ae07f36bcf7b695"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "4f957beaac14ea6961b997a325a677554dde5f43266b93a45893fdc3832558a8",
+      "dependencySha256": "040e8a81a4c3bc3ebcee9ce203d83a2067900d3ce87709f561df05ff6ec4400d",
+      "afterImageSha256": "6e0f33310180794b165473b129cec871e4de67e5cb597f06ad4e8a70832c2d67",
+      "targetClaims": [
+        "canonical:transalta-keephills-data-centre-jv|canada",
+        "company:cmrxpjcn500sxivhe3olj5uf3",
+        "relation:cmrxpjy4f01qvivhe4cx2zkie",
+        "relation:cmrxplddt03loivher3kngv7z",
+        "relation:cmrxpldec03lpivhe78brjx8j",
+        "relation:cmrxpldew03lqivheuqwghxf3",
+        "relation:cmrxpldfg03lrivheh57ynml9",
+        "relation:cmrxpldg003lsivhevcepcmf0",
+        "relation:cmrxpqeip09j5ivheayq45yhm",
+        "relation:cmrxpqek209j7ivhe0nx34gu6",
+        "relation:cmrxpqele09j9ivheqv2854ev",
+        "seed:transalta keephills data centre jv|canada"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://cdn.sanity.io/files/glaib6u2/production/9e0c4a4b360e63c2fe6d21c7066a0777d3fd4081.pdf",
+          "label": "TransAlta — fourth-quarter 2025 call transcript",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://transalta.com/",
+          "label": "Transalta — TransAlta Keephills Data Centre JV",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://transalta.com/newsroom/transalta-enters-memorandum-of-understanding-for-data-centre-development-at-keephills-site-with-potential-to-scale-up-to-1-gw/",
+          "label": "Announcement date source — CPP Investments — TransAlta Keephills Data Centre JV",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://transalta.com/proposed-data-centre-development",
+          "label": "TransAlta — proposed data-centre development",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.aeso.ca/assets/Uploads/project-reporting/August-2026-Project-List.xlsx",
+          "label": "AESO — August 2026 Project List",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.aeso.ca/grid/connecting-to-the-grid/large-load-projects/",
+          "label": "AESO — Large Load Projects",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.datacenterdynamics.com/en/news/transalta-cpp-brookfield-ink-mou-for-230mw-alberta-data-center-project/",
+          "label": "Data Center Dynamics — TransAlta Keephills Data Centre JV",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1144800/000114480026000041/q22026newsreleasecombined.htm",
+          "label": "TransAlta — Second-quarter 2026 results",
+          "sourceType": "SEC_FILING"
+        }
+      ]
+    }
+  ],
+  "collisionAnalysis": {
+    "independent": true,
+    "claimsSha256": "5728304476bb7cb149084b2081ae147b458deebcd1557af71de6f601f24e4813",
+    "sharedSourceUrls": [],
+    "conflicts": []
+  },
+  "batchSha256": "1176956f609c93c6ff2e697cc32cb5b0bb7e3b35713023e81d8d9ef843ad0f0b"
+}

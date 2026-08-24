@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RECIPROCAL_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0193:commonwealth-lng:177a93a3",
+  "taskIndex": 193,
+  "companyName": "Commonwealth LNG",
+  "asOfDate": "2026-08-19",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-08-24T01:25:00.000Z",
+  "result": {
+    "decision": "PROPOSED_CORRECTION",
+    "rationale": "Task 191's GPT-5.6 Sol Pro adjudication established that Commonwealth LNG, LLC is a wholly controlled project subsidiary within the Caturus parent platform rather than a separate manager-level PortCo. Merge the published Commonwealth LNG record into canonical Caturus, preserve Commonwealth as an alias and operating-project history, and redirect the retired company ID. Do not create separate Kimmeridge, Mubadala or CPP parent ownership rows from the subsidiary record because Task 191 already released the verified Caturus direct cap table.",
+    "evidence": [
+      {
+        "url": "https://www.energy.gov/documents/commonwealth-lng-doe-notice-change-control-cpppdf",
+        "purpose": "Caturus legal chain, Commonwealth subsidiary status, CPP closing and direct parent ownership."
+      },
+      {
+        "url": "https://www.energy.gov/documents/commonwealth-follow-questions",
+        "purpose": "Corrected Caturus direct ownership and governance cap table."
+      },
+      {
+        "url": "https://caturus.com/caturus-announces-final-investment-decision-for-9-5-mtpa-commonwealth-lng-export-facility-in-cameron-la/",
+        "purpose": "Caturus parent-platform scope and Commonwealth LNG project boundary."
+      },
+      {
+        "url": "https://kimmeridge.com/kimmeridge-texas-gas-appoints-david-lawler-as-ceo-kimmeridge-closes-follow-on-control-investment-in-commonwealth-lng/",
+        "purpose": "Kimmeridge control acquisition and Commonwealth project history."
+      }
+    ]
+  },
+  "reciprocalResearchLineage": {
+    "coveredByTaskId": "ledger:0191:caturus:fb78fef3",
+    "basis": "The two tasks resolve the same parent/subsidiary identity boundary; one focused Pro adjudication is the plan-approved reciprocal treatment.",
+    "researchPrompt": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0191-caturus/attempt-1/research-prompt.md",
+      "sha256": "b704c17db0e8357b7366e21d5bcca5176bdfb80c887616e2da46271625d2ef55"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0191-caturus/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "caa3d52b48708f433d97ced72365965ddb7350ae8c1e88acbe7a03e1dbfd7dc7"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0191-caturus/attempt-1/source-verification.json",
+      "sha256": "471f84d3cc7b86637d70f02a9d9edda3bda33edf7475857532c183f10d888fc6"
+    },
+    "applicationDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0191-caturus/attempt-1/application-research-decision.json",
+      "sha256": "e0d69f613f32b27c78fd3ea1302669fc64baf33325f071768cff8a95d131d41a"
+    }
+  }
+}
