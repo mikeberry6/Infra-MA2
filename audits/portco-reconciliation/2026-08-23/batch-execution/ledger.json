@@ -3,7 +3,7 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-24T03:00:49Z",
+  "updatedAt": "2026-08-24T03:13:30Z",
   "activeBatchId": "batch-0198-0202-v1",
   "batches": [
     {
@@ -2297,7 +2297,7 @@
     },
     {
       "batchId": "batch-0198-0202-v1",
-      "state": "RELEASING",
+      "state": "VERIFYING",
       "taskIds": [
         "ledger:0198:american-roads:874323bb",
         "ledger:0199:american-student-transportation-partners-astp:0eaaa394",
@@ -2313,14 +2313,17 @@
         202
       ],
       "createdAt": "2026-08-24T02:22:59.000Z",
-      "updatedAt": "2026-08-24T03:00:49Z",
+      "updatedAt": "2026-08-24T03:13:30Z",
       "completedAt": null,
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0198-0202-v1/batch-manifest.json",
         "sha256": "ebfb5307c329991a373ad45481874eb65630624d15f508af749a4cd5ce28d0ba"
       },
-      "releaseSha": null,
-      "receipt": null,
+      "releaseSha": "55fb204d3207038b72ccd3bedc917f8cab0605be",
+      "receipt": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0198-0202-v1/production-apply/batch-apply-receipt.json",
+        "sha256": "95e30b53d376b18036796a2f72fee651285220a13144cd35eb6e980e90db2c3e"
+      },
       "reason": null,
       "history": [
         {
@@ -2350,9 +2353,30 @@
             "ebfb5307c329991a373ad45481874eb65630624d15f508af749a4cd5ce28d0ba"
           ],
           "reason": null
+        },
+        {
+          "sequence": 4,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-08-24T03:09:07Z",
+          "evidenceSha256": [
+            "ebfb5307c329991a373ad45481874eb65630624d15f508af749a4cd5ce28d0ba"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 5,
+          "from": "APPLYING",
+          "to": "VERIFYING",
+          "at": "2026-08-24T03:13:30Z",
+          "evidenceSha256": [
+            "95e30b53d376b18036796a2f72fee651285220a13144cd35eb6e980e90db2c3e",
+            "ebfb5307c329991a373ad45481874eb65630624d15f508af749a4cd5ce28d0ba"
+          ],
+          "reason": null
         }
       ]
     }
   ],
-  "ledgerSha256": "f1c72a34567d5dcb9391353552c09c81b3431a6fbbca2907ad77b251e882136f"
+  "ledgerSha256": "65bd36b8eaee3b5c6a8fcebff14db3ff0f3d1a1b3f52cf542c43e9b3ff9e45d6"
 }
