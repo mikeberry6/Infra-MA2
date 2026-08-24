@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-24T01:08:30.000Z",
+  "updatedAt": "2026-08-24T02:15:10.000Z",
   "runStatus": "IDLE",
   "activeTaskId": null,
   "source": {
@@ -23614,23 +23614,44 @@
       "managerIndex": 32,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "bdea381a25420f1be627194e6bfd8e96ad4e7ea536f48f6ced7c8e72c6a41e3e",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-08-24T01:32:01.000Z",
+      "updatedAt": "2026-08-24T02:15:10.000Z",
+      "completedAt": "2026-08-24T02:15:10.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "b23e856b76c83829f305a79d1ef4f96ea8180e798538aa06cdefa224e9f82237",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0193-commonwealth-lng/attempt-1/locked-task-snapshot.json",
+          "sha256": "b23e856b76c83829f305a79d1ef4f96ea8180e798538aa06cdefa224e9f82237"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0193-commonwealth-lng-v1/proposal.json",
+          "sha256": "e735c77e932ca60fc980053a5ce3bd5db99c04dd028e0de0c62e5f704f41fa2a"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0193-commonwealth-lng-v1.json",
+          "sha256": "231a91eb9e8e8ce3b848b7f6dd3985b26c9cbf60aa117934f38fd5c26de19018"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0193-0197-v2/production-apply/batch-apply-receipt.json#members/0/receipt",
+          "sha256": "9c14be0309ef2917b3ac0899afad0dda1e5301912720d7e6942a71797f294e6a"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0193-commonwealth-lng-v1/proposal.json#afterImage",
+          "sha256": "c6c668d544322c29811eda71041c9365ba9495ed2f0fb3f9a7840a8e7747cd18"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-24T02:15:10.000Z",
+        "auditEventId": "cmt6ldog0000125yytn1eaigv",
+        "transactionId": "334d1056-bad4-49ec-94fb-e2a2be8275be",
+        "receiptSha256": "9c14be0309ef2917b3ac0899afad0dda1e5301912720d7e6942a71797f294e6a",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/32681694614"
+      },
       "history": [
         {
           "sequence": 1,
@@ -23641,6 +23662,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-08-24T02:15:10.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0193-0197-v2.",
+          "taskSnapshotSha256": "b23e856b76c83829f305a79d1ef4f96ea8180e798538aa06cdefa224e9f82237",
+          "evidenceSha256": [
+            "231a91eb9e8e8ce3b848b7f6dd3985b26c9cbf60aa117934f38fd5c26de19018",
+            "2c3ed26a043a5b10db46c07fa7d59a2c8cb3999be3c32bd1c91e6f6b249398ed",
+            "8f0407b6e83672fd6284f5379b1aad6b5a748977617694284dff961e7a21394a",
+            "9c14be0309ef2917b3ac0899afad0dda1e5301912720d7e6942a71797f294e6a",
+            "b23e856b76c83829f305a79d1ef4f96ea8180e798538aa06cdefa224e9f82237",
+            "c6c668d544322c29811eda71041c9365ba9495ed2f0fb3f9a7840a8e7747cd18",
+            "e735c77e932ca60fc980053a5ce3bd5db99c04dd028e0de0c62e5f704f41fa2a"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -23652,23 +23691,44 @@
       "managerIndex": 32,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "4b14882ec7e6517dbe0ae9c824ee8da7f4209b99f19f39374f0706476767d328",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-08-24T01:32:01.000Z",
+      "updatedAt": "2026-08-24T02:15:10.000Z",
+      "completedAt": "2026-08-24T02:15:10.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "8699abb52ce7a0adacc74a4f708e98ce0a873b7eeebaa0f982d2a220261f5b7b",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0194-cordelio-power/attempt-1/locked-task-snapshot.json",
+          "sha256": "8699abb52ce7a0adacc74a4f708e98ce0a873b7eeebaa0f982d2a220261f5b7b"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0194-cordelio-power-v1/proposal.json",
+          "sha256": "679f6e36324296490fd2a690a8c45f12c4246348ce6f9e077ea32ed78723d5c0"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0194-cordelio-power-v1.json",
+          "sha256": "6ca921b66510ef363adab2f9beb48c17ee30365ef832de454b1361dc0bc86d4a"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0193-0197-v2/production-apply/batch-apply-receipt.json#members/1/receipt",
+          "sha256": "840ce1f5073b9b5decaadd8206061535646a12a0e02a9b631b8bea8f96bf7df5"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0194-cordelio-power-v1/proposal.json#afterImage",
+          "sha256": "8b377ba3fae4f4082e1cf250e66c3fcd420dec24d0074e77f62835f73ce505e7"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-24T02:15:10.000Z",
+        "auditEventId": "cmt6ldou1000c25yyw6zony0e",
+        "transactionId": "334d1056-bad4-49ec-94fb-e2a2be8275be",
+        "receiptSha256": "840ce1f5073b9b5decaadd8206061535646a12a0e02a9b631b8bea8f96bf7df5",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/32681694614"
+      },
       "history": [
         {
           "sequence": 1,
@@ -23679,6 +23739,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-08-24T02:15:10.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0193-0197-v2.",
+          "taskSnapshotSha256": "8699abb52ce7a0adacc74a4f708e98ce0a873b7eeebaa0f982d2a220261f5b7b",
+          "evidenceSha256": [
+            "2c3ed26a043a5b10db46c07fa7d59a2c8cb3999be3c32bd1c91e6f6b249398ed",
+            "679f6e36324296490fd2a690a8c45f12c4246348ce6f9e077ea32ed78723d5c0",
+            "6ca921b66510ef363adab2f9beb48c17ee30365ef832de454b1361dc0bc86d4a",
+            "840ce1f5073b9b5decaadd8206061535646a12a0e02a9b631b8bea8f96bf7df5",
+            "8699abb52ce7a0adacc74a4f708e98ce0a873b7eeebaa0f982d2a220261f5b7b",
+            "8b377ba3fae4f4082e1cf250e66c3fcd420dec24d0074e77f62835f73ce505e7",
+            "8f0407b6e83672fd6284f5379b1aad6b5a748977617694284dff961e7a21394a"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -23690,23 +23768,44 @@
       "managerIndex": 32,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "cff00786821022010b8533e4e57fdce4568ab1d0d56fe97a9a08adda11f3453d",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-08-24T01:32:01.000Z",
+      "updatedAt": "2026-08-24T02:15:10.000Z",
+      "completedAt": "2026-08-24T02:15:10.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "8161e883325ca31062f6bdcffd8c90a489a249b6218b25d586c8b36825b61681",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0195-pacifico-sur/attempt-1/locked-task-snapshot.json",
+          "sha256": "8161e883325ca31062f6bdcffd8c90a489a249b6218b25d586c8b36825b61681"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0195-pacifico-sur-v1/proposal.json",
+          "sha256": "5cdad5e8e4962fb5a4220f5a38aa92b7cee23ee1e9b94b761d06e21492115730"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0195-pacifico-sur-v1.json",
+          "sha256": "406995ddcec5bb90fa052325f39e125d14711cfbc3053d35087eec2d168957d3"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0193-0197-v2/production-apply/batch-apply-receipt.json#members/2/receipt",
+          "sha256": "db40b645298ddc2b0a67742f1d82e5d3def7778324236d09d47a2fb4c8a211cf"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0195-pacifico-sur-v1/proposal.json#afterImage",
+          "sha256": "d20d0a60fb3118df275113b08c5995e349731d471495482ca17a5a9b20db940e"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-24T02:15:10.000Z",
+        "auditEventId": "cmt6ldp5n000n25yyx04j154t",
+        "transactionId": "334d1056-bad4-49ec-94fb-e2a2be8275be",
+        "receiptSha256": "db40b645298ddc2b0a67742f1d82e5d3def7778324236d09d47a2fb4c8a211cf",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/32681694614"
+      },
       "history": [
         {
           "sequence": 1,
@@ -23717,6 +23816,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-08-24T02:15:10.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0193-0197-v2.",
+          "taskSnapshotSha256": "8161e883325ca31062f6bdcffd8c90a489a249b6218b25d586c8b36825b61681",
+          "evidenceSha256": [
+            "2c3ed26a043a5b10db46c07fa7d59a2c8cb3999be3c32bd1c91e6f6b249398ed",
+            "406995ddcec5bb90fa052325f39e125d14711cfbc3053d35087eec2d168957d3",
+            "5cdad5e8e4962fb5a4220f5a38aa92b7cee23ee1e9b94b761d06e21492115730",
+            "8161e883325ca31062f6bdcffd8c90a489a249b6218b25d586c8b36825b61681",
+            "8f0407b6e83672fd6284f5379b1aad6b5a748977617694284dff961e7a21394a",
+            "d20d0a60fb3118df275113b08c5995e349731d471495482ca17a5a9b20db940e",
+            "db40b645298ddc2b0a67742f1d82e5d3def7778324236d09d47a2fb4c8a211cf"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -23728,20 +23845,26 @@
       "managerIndex": 32,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "fcd2094a849fcb54aedcb38b9a671648d0e524c67d6ba4860bcd3a72861840bb",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
-      "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "status": "SUPERSEDED",
+      "attempts": 1,
+      "startedAt": "2026-08-24T01:32:01.000Z",
+      "updatedAt": "2026-08-24T02:15:10.000Z",
+      "completedAt": "2026-08-24T02:15:10.000Z",
+      "exceptionReason": "Completed Task 41 already reconciled this exact canonical Pattern Energy Group LP production company and released the CPP Investments ownership period, including the 69.1% post-Cordelio stake, together with the APG co-owner and current company identity. Task 196 is the later CPP census task for the same company and would duplicate the already applied ownership and identity work.",
+      "supersededByTaskId": "ledger:0041:pattern-energy-group-lp-pattern-energy:21bb4249",
+      "taskSnapshotSha256": "387f52e2b5176046c12f04635edede6cf13e272d48c49307990418dc3654e30c",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0196-pattern-energy-group-lp-pattern-energy/attempt-1/locked-task-snapshot.json",
+          "sha256": "387f52e2b5176046c12f04635edede6cf13e272d48c49307990418dc3654e30c"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0196-pattern-energy-group-lp-pattern-energy/attempt-1/terminal-decision.json",
+          "sha256": "1faee3c018a5ea0503b353dfd465e001a8fe808aafc73bb836dbea4a8d9489fd"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -23755,6 +23878,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "SUPERSEDED",
+          "at": "2026-08-24T02:15:10.000Z",
+          "reason": "Completed Task 41 already reconciled this exact canonical Pattern Energy Group LP production company and released the CPP Investments ownership period, including the 69.1% post-Cordelio stake, together with the APG co-owner and current company identity. Task 196 is the later CPP census task for the same company and would duplicate the already applied ownership and identity work.",
+          "taskSnapshotSha256": "387f52e2b5176046c12f04635edede6cf13e272d48c49307990418dc3654e30c",
+          "evidenceSha256": [
+            "1faee3c018a5ea0503b353dfd465e001a8fe808aafc73bb836dbea4a8d9489fd",
+            "2c3ed26a043a5b10db46c07fa7d59a2c8cb3999be3c32bd1c91e6f6b249398ed",
+            "387f52e2b5176046c12f04635edede6cf13e272d48c49307990418dc3654e30c",
+            "8f0407b6e83672fd6284f5379b1aad6b5a748977617694284dff961e7a21394a"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -23766,23 +23904,44 @@
       "managerIndex": 32,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "6166a6194dab4274754f12d5b05a880eac2a368810c6aedb2b131e06f4224a1c",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-08-24T01:32:01.000Z",
+      "updatedAt": "2026-08-24T02:15:10.000Z",
+      "completedAt": "2026-08-24T02:15:10.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "365e5afedb86df7dbe23bd465d7da3daff2d4ddf3a5e84e51db0f8289b018e4d",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0197-transalta-keephills-data-centre-jv/attempt-1/locked-task-snapshot.json",
+          "sha256": "365e5afedb86df7dbe23bd465d7da3daff2d4ddf3a5e84e51db0f8289b018e4d"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0197-transalta-keephills-data-centre-jv-v1/proposal.json",
+          "sha256": "c36488c995e309f1801ecdde421553d904a1b2fa2151858cad93a3f714e4bd7f"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0197-transalta-keephills-data-centre-jv-v1.json",
+          "sha256": "0861b9ef9eaf7a3ff4c9ee198842534ec3501b8dac7322f48e929bf896f927de"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0193-0197-v2/production-apply/batch-apply-receipt.json#members/4/receipt",
+          "sha256": "25a58c985223c653ff093f7753170c17fb5c8c58ae77fefb65309ea58c7f6c6e"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0197-transalta-keephills-data-centre-jv-v1/proposal.json#afterImage",
+          "sha256": "6e0f33310180794b165473b129cec871e4de67e5cb597f06ad4e8a70832c2d67"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-24T02:15:10.000Z",
+        "auditEventId": "cmt6ldpgn000x25yy6udqrxsu",
+        "transactionId": "334d1056-bad4-49ec-94fb-e2a2be8275be",
+        "receiptSha256": "25a58c985223c653ff093f7753170c17fb5c8c58ae77fefb65309ea58c7f6c6e",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/32681694614"
+      },
       "history": [
         {
           "sequence": 1,
@@ -23793,6 +23952,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-08-24T02:15:10.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0193-0197-v2.",
+          "taskSnapshotSha256": "365e5afedb86df7dbe23bd465d7da3daff2d4ddf3a5e84e51db0f8289b018e4d",
+          "evidenceSha256": [
+            "0861b9ef9eaf7a3ff4c9ee198842534ec3501b8dac7322f48e929bf896f927de",
+            "25a58c985223c653ff093f7753170c17fb5c8c58ae77fefb65309ea58c7f6c6e",
+            "2c3ed26a043a5b10db46c07fa7d59a2c8cb3999be3c32bd1c91e6f6b249398ed",
+            "365e5afedb86df7dbe23bd465d7da3daff2d4ddf3a5e84e51db0f8289b018e4d",
+            "6e0f33310180794b165473b129cec871e4de67e5cb597f06ad4e8a70832c2d67",
+            "8f0407b6e83672fd6284f5379b1aad6b5a748977617694284dff961e7a21394a",
+            "c36488c995e309f1801ecdde421553d904a1b2fa2151858cad93a3f714e4bd7f"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -35344,5 +35521,5 @@
       ]
     }
   ],
-  "manifestSha256": "06465f0b150e72f1355e5a95a7158987c24db2fdce830f41aae50efa3d508f9c"
+  "manifestSha256": "2008035bb66e6588455117713e4d0c6355abb9788c6a40abd7be3a635080dba2"
 }

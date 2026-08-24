@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-24T02:04:07.000Z",
-  "activeBatchId": "batch-0193-0197-v2",
+  "updatedAt": "2026-08-24T02:15:10.000Z",
+  "activeBatchId": null,
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -2204,7 +2204,7 @@
     },
     {
       "batchId": "batch-0193-0197-v2",
-      "state": "VERIFYING",
+      "state": "COMPLETED",
       "taskIds": [
         "ledger:0193:commonwealth-lng:177a93a3",
         "ledger:0194:cordelio-power:08aa08d8",
@@ -2220,8 +2220,8 @@
         197
       ],
       "createdAt": "2026-08-24T01:32:01.000Z",
-      "updatedAt": "2026-08-24T02:04:07.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-24T02:15:10.000Z",
+      "completedAt": "2026-08-24T02:15:10.000Z",
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0193-0197-v2/batch-manifest.json",
         "sha256": "2c3ed26a043a5b10db46c07fa7d59a2c8cb3999be3c32bd1c91e6f6b249398ed"
@@ -2231,7 +2231,7 @@
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0193-0197-v2/production-apply/batch-apply-receipt.json",
         "sha256": "8f0407b6e83672fd6284f5379b1aad6b5a748977617694284dff961e7a21394a"
       },
-      "reason": null,
+      "reason": "Atomic PortCo receipt, four after-image checks, canonical redirect, three public APIs, one expected archived-company absence, rendered drawers and exact canonical deployment verification passed.",
       "history": [
         {
           "sequence": 1,
@@ -2281,9 +2281,20 @@
             "8f0407b6e83672fd6284f5379b1aad6b5a748977617694284dff961e7a21394a"
           ],
           "reason": null
+        },
+        {
+          "sequence": 6,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-08-24T02:15:10.000Z",
+          "evidenceSha256": [
+            "2c3ed26a043a5b10db46c07fa7d59a2c8cb3999be3c32bd1c91e6f6b249398ed",
+            "8f0407b6e83672fd6284f5379b1aad6b5a748977617694284dff961e7a21394a"
+          ],
+          "reason": "Atomic PortCo receipt, four after-image checks, canonical redirect, three public APIs, one expected archived-company absence, rendered drawers and exact canonical deployment verification passed."
         }
       ]
     }
   ],
-  "ledgerSha256": "e5f8617f79a5451bbfb09016b31f57a5a10210ecf9cf5743355be5edbc2d5ddb"
+  "ledgerSha256": "13d0f7366569669d9b726aa0eaf8a428cf02abcfaf4a298b90a1fb4f0f0d625d"
 }
