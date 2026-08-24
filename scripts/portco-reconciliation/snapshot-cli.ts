@@ -3,13 +3,14 @@ import { randomBytes } from "node:crypto";
 import {
   mkdir,
   link,
+  readdir,
   readFile,
   rename,
   rm,
   stat,
   writeFile,
 } from "node:fs/promises";
-import { dirname, basename, resolve } from "node:path";
+import { dirname, basename, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { PrismaPg } from "@prisma/adapter-pg";
 import type { PortCo } from "../../prisma/seed-data/portco-types";
@@ -22,8 +23,11 @@ import {
   redactDatabaseError,
   type ApprovedSeedAfterImageMetadata,
   type ProductionSnapshotClient,
+  type SeedRedirectBaselineEntry,
 } from "./snapshot";
+import { verifyProposal } from "./artifacts";
 import type { ProductionSnapshot, SeedSnapshot } from "./schema";
+import { REVIEWED_LIVE_COMPANY_DECISION_SPECS } from "../company-canonical-live-decisions";
 
 export type SnapshotCommand = "production" | "seed" | "both";
 
@@ -212,20 +216,107 @@ export async function writeSnapshotRunAtomically(input: {
   }
 }
 
-function parseApprovedAfterImages(value: unknown): ApprovedSeedAfterImageMetadata[] {
+const SHA256_PATTERN = /^[a-f0-9]{64}$/;
+
+function legacyProposalHashes(value: unknown): Set<string> {
+  if (!Array.isArray(value)) throw new Error("Approved PortCo after-image file must contain an array");
+  const hashes = new Set<string>();
+  for (const [index, entry] of value.entries()) {
+    if (!entry || typeof entry !== "object") throw new Error(`Approved after-image ${index} is not an object`);
+    const record = entry as Record<string, unknown>;
+    if (record.productionRetiredCompanies !== undefined) continue;
+    if (!Array.isArray(record.retiredCompanies)) {
+      throw new Error(`Approved after-image ${index} is missing retiredCompanies`);
+    }
+    if (record.retiredCompanies.length === 0) continue;
+    if (typeof record.proposalSha256 !== "string" || !SHA256_PATTERN.test(record.proposalSha256)) {
+      throw new Error(`Approved after-image ${index} has an invalid proposal hash`);
+    }
+    hashes.add(record.proposalSha256);
+  }
+  return hashes;
+}
+
+async function proposalArtifactPaths(directory: string): Promise<string[]> {
+  let entries;
+  try {
+    entries = await readdir(directory, { withFileTypes: true });
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code === "ENOENT") return [];
+    throw error;
+  }
+  entries.sort((left, right) => left.name.localeCompare(right.name, "en"));
+  const result: string[] = [];
+  for (const entry of entries) {
+    const path = join(directory, entry.name);
+    if (entry.isDirectory()) result.push(...await proposalArtifactPaths(path));
+    else if (entry.isFile() && entry.name === "proposal.json") result.push(path);
+  }
+  return result;
+}
+
+export async function loadLegacyProductionRedirectLineage(
+  repoRoot: string,
+  approvedArtifact: unknown,
+): Promise<Map<string, string[]>> {
+  const requiredHashes = legacyProposalHashes(approvedArtifact);
+  const result = new Map<string, string[]>();
+  if (requiredHashes.size === 0) return result;
+  const paths = await proposalArtifactPaths(resolve(repoRoot, "audits/portco-reconciliation"));
+  for (const path of paths) {
+    let raw: unknown;
+    try {
+      raw = JSON.parse(await readFile(path, "utf8"));
+    } catch {
+      continue;
+    }
+    if (!raw || typeof raw !== "object") continue;
+    const proposalSha256 = (raw as Record<string, unknown>).proposalSha256;
+    if (typeof proposalSha256 !== "string" || !requiredHashes.has(proposalSha256)) continue;
+    const proposal = verifyProposal(raw as Parameters<typeof verifyProposal>[0]);
+    const retiredCompanyIds = [...proposal.retiredCompanyIds];
+    const existing = result.get(proposalSha256);
+    if (existing && JSON.stringify(existing) !== JSON.stringify(retiredCompanyIds)) {
+      throw new Error(`Approved proposal ${proposalSha256} has conflicting production redirect lineage`);
+    }
+    result.set(proposalSha256, retiredCompanyIds);
+  }
+  return result;
+}
+
+export function parseApprovedAfterImages(
+  value: unknown,
+  legacyProductionRedirects: ReadonlyMap<string, readonly string[]> = new Map(),
+): ApprovedSeedAfterImageMetadata[] {
   if (!Array.isArray(value)) throw new Error("Approved PortCo after-image file must contain an array");
   return value.map((entry, index) => {
     if (!entry || typeof entry !== "object") throw new Error(`Approved after-image ${index} is not an object`);
     const record = entry as Record<string, unknown>;
+    const proposalSha256 = record.proposalSha256;
+    const taskId = record.taskId;
     const company = record.company;
     const retired = record.retiredCompanies;
     const reviewedSeedRetirements = record.reviewedSeedRetirements;
+    const productionRetiredCompanies = record.productionRetiredCompanies;
+    const canonicalAfterImage = record.canonicalAfterImage;
+    if (typeof proposalSha256 !== "string" || !SHA256_PATTERN.test(proposalSha256)) {
+      throw new Error(`Approved after-image ${index} has an invalid proposal hash`);
+    }
+    if (typeof taskId !== "string" || !taskId.trim()) {
+      throw new Error(`Approved after-image ${index} has an invalid task id`);
+    }
     if (!company || typeof company !== "object" || !Array.isArray(retired)) {
       throw new Error(`Approved after-image ${index} is missing company or retiredCompanies`);
     }
     const canonical = company as Record<string, unknown>;
     if (typeof canonical.name !== "string" || typeof canonical.country !== "string") {
       throw new Error(`Approved after-image ${index} has an invalid canonical company identity`);
+    }
+    const canonicalCompanyId = canonicalAfterImage && typeof canonicalAfterImage === "object"
+      ? (canonicalAfterImage as Record<string, unknown>).id
+      : null;
+    if (canonicalCompanyId !== null && typeof canonicalCompanyId !== "string") {
+      throw new Error(`Approved after-image ${index} has an invalid canonical company id`);
     }
     const retiredCompanies = retired.map((item, retiredIndex) => {
       if (!item || typeof item !== "object") {
@@ -254,12 +345,128 @@ function parseApprovedAfterImages(value: unknown): ApprovedSeedAfterImageMetadat
             return { name: retirement.name, country: retirement.country };
           });
         })();
+    const productionRetiredCompanyIds = productionRetiredCompanies === undefined
+      ? (() => {
+          const legacy = legacyProductionRedirects.get(proposalSha256);
+          if (legacy) return [...legacy];
+          if (retiredCompanies.length === 0) return [];
+          throw new Error(
+            `Approved after-image ${index} lacks production redirect lineage for proposal ${proposalSha256}`,
+          );
+        })()
+      : (() => {
+          if (!Array.isArray(productionRetiredCompanies)) {
+            throw new Error(`Approved after-image ${index} productionRetiredCompanies is invalid`);
+          }
+          const retiredIdentityKeys = new Set(
+            retiredCompanies.map((item) => `${item.name.trim().toLowerCase()}\u0000${item.country.trim().toLowerCase()}`),
+          );
+          const ids = productionRetiredCompanies.map((item, retiredIndex) => {
+            if (!item || typeof item !== "object") {
+              throw new Error(`Approved after-image ${index} production retirement ${retiredIndex} is invalid`);
+            }
+            const retiredCompany = item as Record<string, unknown>;
+            if (
+              typeof retiredCompany.id !== "string"
+              || !retiredCompany.id.trim()
+              || typeof retiredCompany.name !== "string"
+              || typeof retiredCompany.country !== "string"
+            ) {
+              throw new Error(`Approved after-image ${index} production retirement ${retiredIndex} is invalid`);
+            }
+            const identityKey = `${retiredCompany.name.trim().toLowerCase()}\u0000${retiredCompany.country.trim().toLowerCase()}`;
+            if (!retiredIdentityKeys.has(identityKey)) {
+              throw new Error(
+                `Approved after-image ${index} production retirement ${retiredIndex} is absent from retiredCompanies`,
+              );
+            }
+            return retiredCompany.id;
+          });
+          if (new Set(ids).size !== ids.length) {
+            throw new Error(`Approved after-image ${index} repeats a production retired company id`);
+          }
+          return ids;
+        })();
     return {
+      proposalSha256,
+      taskId,
+      canonicalCompanyId,
       company: { name: canonical.name, country: canonical.country },
+      productionRetiredCompanyIds,
       retiredCompanies,
       ...(seedOnlyRetirements === undefined ? {} : { reviewedSeedRetirements: seedOnlyRetirements }),
     };
   });
+}
+
+export function parseSeedRedirectBaseline(value: unknown): SeedRedirectBaselineEntry[] {
+  if (!Array.isArray(value)) throw new Error("Seed redirect baseline must contain an array");
+  const retiredIds = new Set<string>();
+  const lineageKeys = new Set<string>();
+  return value.map((entry, index) => {
+    if (!entry || typeof entry !== "object") throw new Error(`Seed redirect baseline ${index} is invalid`);
+    const record = entry as Record<string, unknown>;
+    const company = record.company;
+    if (
+      typeof record.lineageKey !== "string"
+      || !record.lineageKey.trim()
+      || typeof record.retiredId !== "string"
+      || !record.retiredId.trim()
+      || typeof record.companyId !== "string"
+      || !record.companyId.trim()
+      || !company
+      || typeof company !== "object"
+      || typeof (company as Record<string, unknown>).name !== "string"
+      || typeof (company as Record<string, unknown>).country !== "string"
+    ) {
+      throw new Error(`Seed redirect baseline ${index} is invalid`);
+    }
+    if (lineageKeys.has(record.lineageKey)) {
+      throw new Error(`Seed redirect baseline repeats lineage key ${record.lineageKey}`);
+    }
+    if (retiredIds.has(record.retiredId)) {
+      throw new Error(`Seed redirect baseline repeats retired company ${record.retiredId}`);
+    }
+    lineageKeys.add(record.lineageKey);
+    retiredIds.add(record.retiredId);
+    return {
+      lineageKey: record.lineageKey,
+      retiredId: record.retiredId,
+      companyId: record.companyId,
+      company: {
+        name: (company as Record<string, unknown>).name as string,
+        country: (company as Record<string, unknown>).country as string,
+      },
+    };
+  });
+}
+
+export function assertSeedRedirectBaselineMatchesLiveDecisions(
+  baseline: readonly SeedRedirectBaselineEntry[],
+): void {
+  const comparable = (entry: {
+    lineageKey: string;
+    retiredId: string;
+    companyId: string;
+  }) => ({
+    lineageKey: entry.lineageKey,
+    retiredId: entry.retiredId,
+    companyId: entry.companyId,
+  });
+  const actual = baseline.map(comparable)
+    .sort((left, right) => left.lineageKey.localeCompare(right.lineageKey, "en"));
+  const expected = REVIEWED_LIVE_COMPANY_DECISION_SPECS.flatMap((decision) =>
+    decision.kind === "MERGE"
+      ? decision.retiredIds.map((retiredId) => ({
+          lineageKey: decision.reviewKey,
+          retiredId,
+          companyId: decision.canonicalId,
+        }))
+      : [])
+    .sort((left, right) => left.lineageKey.localeCompare(right.lineageKey, "en"));
+  if (JSON.stringify(actual) !== JSON.stringify(expected)) {
+    throw new Error("Seed redirect baseline does not match the reviewed live canonical-cleanup decisions");
+  }
 }
 
 async function createProductionSnapshot(input: {
@@ -304,23 +511,34 @@ async function createSeedSnapshot(input: {
   repoRoot: string;
 }): Promise<SeedSnapshot> {
   const seedCompaniesModule = "../../prisma/seed-data/companies";
-  const [{ companies }, afterImageText, baseCommit] = await Promise.all([
+  const [{ companies }, afterImageText, redirectBaselineText, baseCommit] = await Promise.all([
     import(seedCompaniesModule) as Promise<{ companies: PortCo[] }>,
     readFile(resolve(input.repoRoot, "prisma/seed-data/approved-portco-after-images.json"), "utf8"),
+    readFile(resolve(input.repoRoot, "prisma/seed-data/company-redirect-baseline.json"), "utf8"),
     currentGitCommit(input.repoRoot),
   ]);
   let rawAfterImages: unknown;
+  let rawRedirectBaseline: unknown;
   try {
     rawAfterImages = JSON.parse(afterImageText);
   } catch {
     throw new Error("Approved PortCo after-image file is not valid JSON");
   }
+  try {
+    rawRedirectBaseline = JSON.parse(redirectBaselineText);
+  } catch {
+    throw new Error("Seed redirect baseline is not valid JSON");
+  }
+  const legacyProductionRedirects = await loadLegacyProductionRedirectLineage(input.repoRoot, rawAfterImages);
+  const baselineRedirects = parseSeedRedirectBaseline(rawRedirectBaseline);
+  assertSeedRedirectBaselineMatchesLiveDecisions(baselineRedirects);
   return buildSeedSnapshot({
     asOfDate: input.options.asOfDate,
     capturedAt: input.capturedAt,
     baseCommit,
     companies,
-    approvedAfterImages: parseApprovedAfterImages(rawAfterImages),
+    approvedAfterImages: parseApprovedAfterImages(rawAfterImages, legacyProductionRedirects),
+    baselineRedirects,
   });
 }
 
