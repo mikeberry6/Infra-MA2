@@ -1,0 +1,285 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0200:bernhard-llc:5339777c",
+  "taskIndex": 200,
+  "companyName": "Bernhard, LLC",
+  "generatedAt": "2026-08-24T02:29:10.255Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0200-bernhard-llc/attempt-1/terminal-locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 200,
+    "taskId": "ledger:0200:bernhard-llc:5339777c",
+    "canonicalKey": "bernhard-llc|united-states",
+    "companyName": "Bernhard, LLC",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 34,
+    "managers": [
+      "CVC",
+      "DIF"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "034-cvc:holding:004:enfra-bernhard-platform",
+      "035-dif:holding:004:enfra-bernhard-platform"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjctn00t5ivhet8mwenz9"
+    ],
+    "seedKeys": [
+      "bernhard, llc|United States"
+    ],
+    "evidenceUrls": [
+      "https://enfrasolutions.com/dif-capital-partners-invests-in-sustainability-and-energy-solutions-with-acquisition-of-bernhard-llc",
+      "https://www.prnewswire.com/news-releases/bernhard-rebrands-as-enfra-to-reflect-energy-infrastructure-leadership-and-future-growth-302443445.html"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted census POSSIBLE_DUPLICATE for 034-cvc:holding:004:enfra-bernhard-platform: Bernhard and ENFRA represent the same platform post-rebrand. Accepted census POSSIBLE_DUPLICATE for 035-dif:holding:004:enfra-bernhard-platform: Bernhard and ENFRA represent the same platform post-rebrand. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Accepted census POSSIBLE_DUPLICATE for 034-cvc:holding:004:enfra-bernhard-platform: Bernhard and ENFRA represent the same platform post-rebrand",
+      "Accepted census POSSIBLE_DUPLICATE for 035-dif:holding:004:enfra-bernhard-platform: Bernhard and ENFRA represent the same platform post-rebrand"
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjctn00t5ivhet8mwenz9",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "bernhard-llc|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjctn00t5ivhet8mwenz9",
+    "name": "Bernhard, LLC",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Energy-as-a-service and building infrastructure",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Bernhard provides engineering, construction, and energy-as-a-service solutions for building infrastructure in sectors such as healthcare, education, government, and commercial real estate. Its customers rely on the company for design, modernization, and long-term performance of mechanical, electrical, and energy systems rather than discrete equipment supply alone. The platform combines services and asset-backed project delivery, with public materials highlighting more than 2,000 employees, 23 office locations, and over 2,500 active projects. Bernhard Capital Partners agreed to sell the business to DIF Infrastructure VI in 2021, and Bernhard announced a rebrand to ENFRA in 2025. Public sources reviewed do not disclose DIF's ownership percentage.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 1919,
+    "headquarters": "Louisiana; Texas; multiple U.S. states",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjyaz01r3ivhei2mcwgri",
+        "managerName": "CVC DIF",
+        "organizationName": "CVC DIF",
+        "fundName": "DIF Infrastructure VI",
+        "vehicleName": "DIF Infrastructure VI",
+        "stake": null,
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxple5d03mhivhev6e98k36",
+        "date": "1919",
+        "event": "Company materials identify 1919 as the founding year.",
+        "category": "FOUNDING",
+        "sortDate": "1919-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxple5s03miivhepi9gndru",
+        "date": "Oct 4, 2021",
+        "event": "DIF announced an agreement to acquire Bernhard, LLC through DIF Infrastructure VI.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-10-04T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxple6803mjivhe1kkuhq6s",
+        "date": "Dec 2, 2021",
+        "event": "Bernhard Capital Partners announced completion of the sale to DIF Capital Partners.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-12-02T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxple6r03mkivhe5f1brzb2",
+        "date": "May 7, 2025",
+        "event": "Bernhard announced its rebrand to ENFRA.",
+        "category": "MANAGEMENT",
+        "sortDate": "2025-05-07T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqfoz09kvivhestjt3sm0",
+        "label": "Enfrasolutions — Bernhard, LLC",
+        "url": "https://enfrasolutions.com/about",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Enfrasolutions company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqfq409kxivhedc57wia2",
+        "label": "Close date source — CVC DIF — Bernhard, LLC",
+        "url": "https://www.bernhardcapital.com/bernhard-capital-partners-completes-sale-of-bernhard-llc-to-dif-capital-partners/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CVC DIF closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqfr809kzivheqtn0266j",
+        "label": "PR Newswire — Bernhard, LLC",
+        "url": "https://www.prnewswire.com/news-releases/bernhard-rebrands-as-enfra-to-reflect-energy-infrastructure-leadership-and-future-growth-302443445.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "PR Newswire — Bernhard, LLC",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqfsb09l1ivhev6yqv6bp",
+        "label": "Cvcdif — Bernhard, LLC",
+        "url": "https://www.cvcdif.com/news-insights/dif-capital-partners-invests-in-sustainability-and-energy-solutions-with-acquisition-of-bernhard-llc",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Cvcdif transaction or milestone detail",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Bernhard, LLC",
+    "investmentFirm": "CVC DIF",
+    "sector": "Power & ET",
+    "subsector": "Energy-as-a-service and building infrastructure",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "DIF Infrastructure VI",
+    "description": "Bernhard provides engineering, construction, and energy-as-a-service solutions for building infrastructure in sectors such as healthcare, education, government, and commercial real estate. Its customers rely on the company for design, modernization, and long-term performance of mechanical, electrical, and energy systems rather than discrete equipment supply alone. The platform combines services and asset-backed project delivery, with public materials highlighting more than 2,000 employees, 23 office locations, and over 2,500 active projects. Bernhard Capital Partners agreed to sell the business to DIF Infrastructure VI in 2021, and Bernhard announced a rebrand to ENFRA in 2025. Public sources reviewed do not disclose DIF's ownership percentage.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 1919,
+    "investmentYear": 2021,
+    "headquarters": "Louisiana; Texas; multiple U.S. states",
+    "milestones": [
+      {
+        "date": "1919",
+        "event": "Company materials identify 1919 as the founding year.",
+        "category": "Founding"
+      },
+      {
+        "date": "Oct 4, 2021",
+        "event": "DIF announced an agreement to acquire Bernhard, LLC through DIF Infrastructure VI.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Dec 2, 2021",
+        "event": "Bernhard Capital Partners announced completion of the sale to DIF Capital Partners.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "May 7, 2025",
+        "event": "Bernhard announced its rebrand to ENFRA.",
+        "category": "Management"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Enfrasolutions — Bernhard, LLC",
+        "url": "https://enfrasolutions.com/about",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Close date source — CVC DIF — Bernhard, LLC",
+        "url": "https://www.bernhardcapital.com/bernhard-capital-partners-completes-sale-of-bernhard-llc-to-dif-capital-partners/",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "PR Newswire — Bernhard, LLC",
+        "url": "https://www.prnewswire.com/news-releases/bernhard-rebrands-as-enfra-to-reflect-energy-infrastructure-leadership-and-future-growth-302443445.html",
+        "type": "PRESS_RELEASE"
+      },
+      {
+        "label": "Cvcdif — Bernhard, LLC",
+        "url": "https://www.cvcdif.com/news-insights/dif-capital-partners-invests-in-sustainability-and-energy-solutions-with-acquisition-of-bernhard-llc",
+        "type": "ARTICLE",
+        "purpose": "MILESTONE_EVENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "CVC DIF",
+        "ownershipVehicle": "DIF Infrastructure VI",
+        "investmentYear": 2021,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj1zv00cuivheteq5vlnk",
+        "fundName": "DIF Infrastructure VI",
+        "managerId": "cmrxpi6qi001divhesbtqsco2",
+        "updatedAt": "2026-07-23T16:09:56.443Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi6qi001divhesbtqsco2",
+        "name": "CVC DIF",
+        "updatedAt": "2026-07-23T16:09:15.930Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0200:bernhard-llc:5339777c",
+    "taskIndex": 200,
+    "canonicalKey": "bernhard-llc|united-states",
+    "capturedAt": "2026-08-24T02:29:10.255Z",
+    "databaseRevision": "revision:6faf4a8c63655ff7792fb5a61edaff4b6c182db796bc9a8cae0d7513c08bf00e",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "7c6f81246aa9ebd60187b4f0d1d78836730b5b8c5c7ff31c56d23088114a8b52",
+    "productionSnapshotSha256": "edae7230e10fff68fbde24c220fddc3ddb66f53bd4ab738d6e05fe3982117b0b",
+    "targetCompanySnapshotSha256": "038ab2a2bbe9d4fea9e40986bae8251f72a5ca682208e854f78ac786ca090593",
+    "seedEntrySha256": "b7fb9ee819736933e0caef6c89ca5e29642f30bb05c1b4c45a8b6ba3fdddc1df",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "20a378d1f3526e7606df973e6f291c6aed9604e833b49f3964d4949d4468f8f7",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "66572626d3bf0580f5153c3ca7717cf40604f9ba4e67ac5f97ad2b2d01f285db",
+      "organizationsSha256": "7a6d6eb8c91275eb133966b74b94196b45a1b8bf9f563ec95b85cdc78132c4f4",
+      "citationsSha256": "fa3a170c99635bf3f6a0be5f3bf23c323647db30dc455bb012815b07b9970fea",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "88371ade333848e9b502c520647930d589489e674d0aeb5ea698a725884d1130",
+    "stateSha256": "c8bb59cbdf79cde96259e9f59ee4a666b5d7ab8871ab53481fb1584210d19bd3",
+    "taskSnapshotSha256": "5d862f587a2ff6c4b38fea1e3f8a06b998ce46579a1e5da39f1735135e259ba3"
+  },
+  "contextSha256": "85687519ba4815952aafbcfa72aa613b7cdf53c61c24832f1a61d35b7b92bd3b"
+}

@@ -1172,6 +1172,41 @@ describe("task snapshot seed-retirement candidates", () => {
     });
   });
 
+  it("captures an exact reciprocal heuristic-overlap seed identity", () => {
+    const active = entry({
+      taskIndex: 199,
+      taskId: "task-199",
+      canonicalKey: "american-student-transportation-partners-astp|united-states",
+      companyName: "American Student Transportation Partners (ASTP)",
+      productionCompanyIds: ["company-astp"],
+      seedKeys: ["american student transportation partners (astp)|United States"],
+      rationale: "Heuristic identity overlap with american-student-transportation-partners|united-states; no automatic merge was made. Exact identity approval is required before any merge or correction.",
+    });
+    const duplicate = entry({
+      taskIndex: 467,
+      taskId: "task-467",
+      canonicalKey: "american-student-transportation-partners|united-states",
+      companyName: "American Student Transportation Partners",
+      seedKeys: ["american student transportation partners|United States"],
+      rationale: "Heuristic identity overlap with american-student-transportation-partners-astp|united-states; no automatic merge was made. Exact identity approval is required before any merge or correction.",
+    });
+    const company = seedCompany("American Student Transportation Partners", "United States");
+
+    const candidates = resolveSeedRetirementCandidates({
+      queueEntry: active,
+      queueEntries: [active, duplicate],
+      rawSeedCompanies: [company],
+      evaluatedSeedCompanies: [structuredClone(company)],
+    });
+
+    expect(candidates).toHaveLength(1);
+    expect(candidates[0]).toMatchObject({
+      sourceQueueTaskId: "task-467",
+      name: "American Student Transportation Partners",
+      country: "United States",
+    });
+  });
+
   it("fails closed when a reciprocal seed identity is ambiguous or missing", () => {
     const active = entry({
       taskId: "task-41",

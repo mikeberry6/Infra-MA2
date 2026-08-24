@@ -1096,6 +1096,7 @@ describe("approved local seed after-image", () => {
         supersededApproval: oldApproved.approval,
         supersedingProposal: newApproved.proposal,
         supersedingApproval: newApproved.approval,
+        approvedProductionSnapshot: productionSnapshotFixture(),
       });
       const remaining = JSON.parse(await readFile(artifactPath, "utf8")) as Array<{ proposalSha256: string }>;
       expect(result.removedProposalSha256).toBe(oldApproved.proposal.proposalSha256);
@@ -1149,12 +1150,69 @@ describe("approved local seed after-image", () => {
         supersededApproval: oldApproved.approval,
         supersedingProposal: newApproved.proposal,
         supersedingApproval: newApproved.approval,
+        approvedProductionSnapshot: productionSnapshotFixture(),
       });
 
       const stored = JSON.parse(await readFile(artifactPath, "utf8")) as Array<Record<string, unknown>>;
       expect(stored).toHaveLength(1);
       expect(stored[0].proposalSha256).toBe(newApproved.proposal.proposalSha256);
       expect(sha256Canonical(stored[0])).toBe(sha256Canonical(newEntry));
+    } finally {
+      await rm(directory, { recursive: true, force: true });
+    }
+  });
+
+  it("atomically supersedes a staged merge proposal using the proposal-bound production snapshot", async () => {
+    const directory = await mkdtemp(join(tmpdir(), "portco-approved-seed-merge-replace-"));
+    const artifactPath = join(directory, "approved-portco-after-images.json");
+    const baseSnapshot = productionSnapshotFixture();
+    const { companySnapshotSha256: _existingSnapshotSha256, ...baseCompanyWithoutHash }
+      = baseSnapshot.companies[0];
+    const retiredWithoutHash = {
+      ...baseCompanyWithoutHash,
+      id: "company_retired",
+      seedKey: "retired infrastructure|United States",
+      name: "Retired Infrastructure, LLC",
+    };
+    const retired = {
+      ...retiredWithoutHash,
+      companySnapshotSha256: snapshotCompanySha256(retiredWithoutHash),
+    };
+    const snapshot = finalizeProductionSnapshot({
+      ...baseSnapshot,
+      companies: [...baseSnapshot.companies, retired],
+    });
+    try {
+      const oldApproved = approvedCorrection({
+        snapshot,
+        actions: ["CORRECT_COMPANY", "MERGE_COMPANIES"],
+        retiredCompanyIds: [retired.id],
+      });
+      const newApproved = approvedCorrection({
+        snapshot,
+        after: companyImageFixture("Superseding merged after-image."),
+        actions: ["CORRECT_COMPANY", "MERGE_COMPANIES"],
+        retiredCompanyIds: [retired.id],
+      });
+      const oldEntry = buildApprovedSeedEntry(oldApproved.proposal, oldApproved.approval, snapshot);
+      await writeFile(artifactPath, `${JSON.stringify([oldEntry], null, 2)}\n`, "utf8");
+
+      await supersedeStagedApprovedSeedAfterImage({
+        artifactPath,
+        supersededProposal: oldApproved.proposal,
+        supersededApproval: oldApproved.approval,
+        supersedingProposal: newApproved.proposal,
+        supersedingApproval: newApproved.approval,
+        approvedProductionSnapshot: snapshot,
+      });
+
+      const stored = JSON.parse(await readFile(artifactPath, "utf8")) as Array<Record<string, unknown>>;
+      expect(stored).toHaveLength(1);
+      expect(stored[0].proposalSha256).toBe(newApproved.proposal.proposalSha256);
+      expect(stored[0].retiredCompanies).toEqual([{
+        name: retired.name,
+        country: retired.country,
+      }]);
     } finally {
       await rm(directory, { recursive: true, force: true });
     }

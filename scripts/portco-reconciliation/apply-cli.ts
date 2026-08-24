@@ -148,6 +148,7 @@ async function main(): Promise<void> {
       supersededApproval,
       supersedingProposal: proposal,
       supersedingApproval: approval,
+      approvedProductionSnapshot: snapshot,
     });
     console.log(JSON.stringify({
       mode: "SUPERSEDE_STAGED_SEED_ONLY",

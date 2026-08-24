@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0200:bernhard-llc:5339777c",
+  "taskIndex": 200,
+  "companyName": "Bernhard, LLC",
+  "outcome": "SUPERSEDED",
+  "decidedAt": "2026-08-24T02:47:00.000Z",
+  "rationale": "Task 202 releases the same canonical identity and complete ownership judgment: Bernhard, LLC became ENFRA, LLC on May 1, 2025 without changing the legal entity or ownership. Task 200 is therefore superseded by task 202's ENFRA-survivor merge and would otherwise duplicate the same production mutation.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0200-bernhard-llc/attempt-1/terminal-locked-task-snapshot.json",
+    "sha256": "fa90863362c4a3b7383b1da34963cc7b44e9a30c2db2f5d5a274c846d58bef06"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0200-bernhard-llc/attempt-1/terminal-research-decision.json",
+    "sha256": "c75138e1fbfadc4ad0e1bb7e77c0461940ec937666240a265e0054da5933f94b"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0200-bernhard-llc/attempt-1/source-verification.json",
+    "sha256": "485f537d6febf44b52317b85df711815305da18856bc19a0817da9a968ff64f2"
+  },
+  "evidence": [
+    {
+      "url": "https://enfrasolutions.com/about/rebrand",
+      "purpose": "Same-entity continuity and May 1, 2025 legal-name change."
+    },
+    {
+      "url": "https://enfrasolutions.com/dif-capital-partners-invests-in-sustainability-and-energy-solutions-with-acquisition-of-bernhard-llc",
+      "purpose": "DIF Infrastructure VI signed acquisition."
+    },
+    {
+      "url": "https://www.bernhardcapital.com/bernhard-capital-partners-completes-sale-of-bernhard-llc-to-dif-capital-partners/",
+      "purpose": "December 2, 2021 acquisition close."
+    },
+    {
+      "url": "https://enfrasolutions.com/about/company-leadership",
+      "purpose": "Current CVC DIF majority ownership."
+    }
+  ],
+  "supersededByTaskId": "ledger:0202:enfra:7265d723",
+  "decisionSha256": "dfdfe59775ff3a5aa412a243d28997a529510d207f365572d28664ab7e6e010e"
+}

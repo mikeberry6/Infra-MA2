@@ -1,0 +1,458 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_MANIFEST",
+  "methodologyVersion": "PORTCO_APPLY_BATCH_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0198-0202-v1",
+  "createdAt": "2026-08-24T02:50:00.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "2008035bb66e6588455117713e4d0c6355abb9788c6a40abd7be3a635080dba2"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0198:american-roads:874323bb",
+      "taskIndex": 198,
+      "companyName": "American Roads",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0198-american-roads-v1/proposal.json",
+        "sha256": "02f30f53b0f996010ef9509a20c61f0d84c9aa9574e0bc898c2a9b02e807f9d2"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0198-american-roads-v1.json",
+        "sha256": "551ce9efd16b4d0d7b083d8e13b09893de06ac77b54ade8f07d97e142de83241"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0198-american-roads/attempt-1/locked-production-snapshot.json",
+        "sha256": "5930ed1ca83e8d4d7c7cc484c9e697d46231d4bee16b4733ee546df14821f05b"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0198-american-roads/attempt-1/locked-task-snapshot.json",
+        "sha256": "0fa871b845e2e49f0c8a40fc871b7e7e667f45d91788cbf5a35d060848ac2a8f"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0198-american-roads/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "9011c56f99ee0eb566a2edcac20368b0a86580ccfca821f3f543b186e441b8cb"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0198-american-roads/attempt-1/application-research-decision.json",
+        "sha256": "d52bc7fc5b68df7659e5dc01b370b251d99a9c65e8ef2eb8f946e65e85faf6a1"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0198-american-roads/attempt-1/source-verification.json",
+        "sha256": "7e4ca7a9c48319eacb8faf767bb660c58575eeffa642623e5612942e294f2ded"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "80dca7eb9cfe5bd30d6b135cd87dfaaa3ef10519e75ee3c583efc605289c3833",
+      "dependencySha256": "1b5fca09bf160d14ae9316b724d3e54ee5678702fbbad071206b34a7dc4d0c5f",
+      "afterImageSha256": "bc1a638cebdec4874b64308c959bbde74ed6062e23b26cf42fc4e6460c4e3227",
+      "targetClaims": [
+        "canonical:american-roads|united-states-canada",
+        "company:cmrxpjevf00wbivheu50etwdq",
+        "relation:cmrxpk0ij01ukivhe1egc0mxo",
+        "relation:cmrxpln2a03x5ivhekh5e1a2l",
+        "relation:cmrxpln2u03x6ivhex4dx5oci",
+        "relation:cmrxpln3e03x7ivhe0uc88xma",
+        "relation:cmrxpqwpm0aa0ivhe5qlant4g",
+        "relation:cmrxpqwqk0aa2ivhekb488ei4",
+        "relation:cmrxpqwrm0aa4ivhez78oks00",
+        "relation:cmrxpqwsp0aa6ivhe4ic7hgtk",
+        "relation:cmrxpqwtq0aa8ivheobirib0v",
+        "relation:cmrxpqwuu0aaaivhecjlhb9e0",
+        "relation:cmrxpqwva0aabivhek2oldh9z",
+        "seed:american roads|united states / canada"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://www.americanroads.com/",
+          "label": "Americanroads — American Roads",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.americanroads.com/Assets.aspx",
+          "label": "Americanroads — American Roads",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.cvc.com/media/news/2026/cvc-dif-agrees-sale-of-american-roads-to-john-laing/",
+          "label": "Announcement date source — CVC DIF — American Roads",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.debevoise.com/news/2021/05/debevoise-advises-pantheon-in-its-role-in",
+          "label": "Ownership structure source — Equitix — John Laing Investments Limited",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.enr.com/articles/62530-john-laing-to-acquire-american-roads-signaling-durable-demand-for-us-toll-assets",
+          "label": "ENR",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.globenewswire.com/news-release/2018/07/16/1537963/0/en/syncora-announces-closing-of-sale-of-american-roads-llc.html",
+          "label": "Syncora — American Roads 2018 closing",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.laing.com/insights/john-laing-agrees-to-acquire-us-road-transportation-platform-from-cvc-dif/",
+          "label": "Announcement date source — Equitix / John Laing — American Roads",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.laing.com/portfolio/american-roads-us/",
+          "label": "John Laing — American Roads portfolio",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.linkedin.com/posts/john-laing_jl-american-roads-activity-7455005298681004034-0czR",
+          "label": "John Laing — American Roads financial close",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.private-equitynews.com/news/dif-infrastructure-v-acquires-100-of-american-roads/",
+          "label": "Private Equity News — American Roads",
+          "sourceType": "ARTICLE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0199:american-student-transportation-partners-astp:0eaaa394",
+      "taskIndex": 199,
+      "companyName": "American Student Transportation Partners (ASTP)",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0199-american-student-transportation-partners-astp-v2/proposal.json",
+        "sha256": "eff5c77d676c3d61a1eccad3c32ea49b3680a03032d98114cf29406971fdcc68"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0199-american-student-transportation-partners-astp-v2.json",
+        "sha256": "d1743f4aa3c8fdf014cfe58ad7f8a4a22325bd1c98fdcb52781c2389a0ff6ef1"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0199-american-student-transportation-partners-astp/attempt-1/locked-production-snapshot.json",
+        "sha256": "73a0bbadd7d13faf5698260aeff760184cd38bc453c4c8973fbd6967bae78761"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0199-american-student-transportation-partners-astp/attempt-1/locked-task-snapshot.json",
+        "sha256": "6bdc5277a51049dc5f8abaeabb0879dcfe805e41aa98b258fe37a69c4b4095c8"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0199-american-student-transportation-partners-astp/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "adbca663c78949807b702dcc90dddf5d7cb3ac95b2f29f434f6997503eec209b"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0199-american-student-transportation-partners-astp/attempt-1/application-research-decision.json",
+        "sha256": "a91ebbebb1c6d77ecc728f11944bd1ea4c32244d5c2b280895c203dc6bd5a7f2"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0199-american-student-transportation-partners-astp/attempt-1/source-verification.json",
+        "sha256": "a687417c3beecfbedbd3c49be52ee9a3e96f05c11dbc801b5d36762bc11d3df3"
+      },
+      "supersededTaskIds": [
+        "ledger:0467:american-student-transportation-partners:b63018e7"
+      ],
+      "taskStateSha256": "ee513c91c6757d983c82b4c7c8af54472882b50d0748f6e5a666bda450f79eec",
+      "dependencySha256": "51f59b51368911b6170c83848c09d0768eef5ef87f4ba709564eeb97dce3d8fe",
+      "afterImageSha256": "0e78550e32b3db7fc5da6f9eaaac1680e3f5f84d86105dc8b2cf6deba217392d",
+      "targetClaims": [
+        "canonical:american-student-transportation-partners-astp|united-states",
+        "company:cmrxpjct700t4ivhe097ggvuj",
+        "relation:cmrxpjyag01r2ivheip9oa90v",
+        "relation:cmrxpldxq03m9ivhe6jxe1ohs",
+        "relation:cmrxpldy403maivhecsm91tnl",
+        "relation:cmrxple0x03mbivhezi6n2psi",
+        "relation:cmrxple1o03mcivhea1fkt6vf",
+        "relation:cmrxple2o03mdivhezcxma58u",
+        "relation:cmrxple3703meivhe6ltkaq7k",
+        "relation:cmrxple3q03mfivhebjohrod6",
+        "relation:cmrxple4a03mgivheur85ctfs",
+        "relation:cmrxpqfh909klivhew1nawhqh",
+        "relation:cmrxpqfi809knivhecve8da01",
+        "relation:cmrxpqfj709kpivhesf14lc0y",
+        "relation:cmrxpqfjn09kqivhefk824fge",
+        "relation:cmrxpqfk609krivhe3j23fbjn",
+        "relation:cmrxpqfl909ktivhe58u4we1t",
+        "seed:american student transportation partners (astp)|united states",
+        "seed:american student transportation partners|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://accessholdings.com/access-holdings-announces-the-addition-of-sam-tidswell-norrish-as-partner/",
+          "label": "Access Holdings — ASTP exit confirmation",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://accessholdings.com/access-holdings-completes-majority-investment-in-reliable-towing/",
+          "label": "Access Holdings — ASTP 2026 exit reconfirmation",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://astpartners.com/",
+          "label": "Astpartners — American Student Transportation Partners (ASTP)",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://astpartners.com/2023/09/assisted-announcement/",
+          "label": "ASTP — Assisted acquisition",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://astpartners.com/2023/09/brandywine/",
+          "label": "Astpartners — American Student Transportation Partners",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://astpartners.com/2026/06/astps-tod-eskra-earns-ey-entrepreneur-of-the-year-recognition/",
+          "label": "ASTP — current operating update",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://astpartners.com/about-astp/",
+          "label": "Astpartners — American Student Transportation Partners",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://astpartners.com/wp-content/uploads/2023/08/2023.08.25-ASTP-fact-sheet.pdf",
+          "label": "ASTP — company fact sheet",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://www.cvc.com/media/news/2025/cvc-dif-agrees-to-acquire-premier-us-student-transportation-operator-astp-from-access-holdings/",
+          "label": "Announcement date source — CVC DIF — American Student Transportation Partners",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.cvcdif.com/news-insights/cvc-dif-agrees-to-acquire-premier-us-student-transportation-operator-astp",
+          "label": "CVC DIF — ASTP acquisition",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/access-holdings-announces-sale-of-american-student-transportation-partners-to-cvc-dif-302526686.html",
+          "label": "PR Newswire — American Student Transportation Partners",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.schoolbusfleet.com/news/american-student-transportation-partners-acquired-by-cvc-dif",
+          "label": "Schoolbusfleet — American Student Transportation Partners (ASTP)",
+          "sourceType": "ARTICLE"
+        }
+      ]
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0200:bernhard-llc:5339777c",
+      "taskIndex": 200,
+      "companyName": "Bernhard, LLC",
+      "outcome": "SUPERSEDED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0200-bernhard-llc/attempt-1/terminal-decision.json",
+        "sha256": "dfdfe59775ff3a5aa412a243d28997a529510d207f365572d28664ab7e6e010e"
+      }
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0201:carma-corp:7b48e49a",
+      "taskIndex": 201,
+      "companyName": "CARMA Corp.",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0201-carma-corp-v2/proposal.json",
+        "sha256": "5cfe2547935eb748a4ca4a8796ea2001d512b345d26c9def881ce9cf4c608b77"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0201-carma-corp-v2.json",
+        "sha256": "7f8a2c1c4cc19a842a7e9cc5ff6428fb2b7b1959fad389a5b2c2e84088913d74"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0201-carma-corp/attempt-1/locked-production-snapshot.json",
+        "sha256": "4e124c2d0b4eccbd353b3e29a2bf971acd8b4e89d35b736fc3b0ca2da21c1acf"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0201-carma-corp/attempt-1/locked-task-snapshot.json",
+        "sha256": "9e46a22da6512b128fe3dd93f87484adb70a6dec32109cd4a935e9be1cccd932"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0201-carma-corp/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "1f5fd6dd6cb58a9c686576587f8a2fbf828016ed6de73b289e441729a8846ca7"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0201-carma-corp/attempt-1/application-research-decision.json",
+        "sha256": "af52f3508bc2610be1d082b6e2dc754c9e6f425b4644de021d799653b3f51c07"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0201-carma-corp/attempt-1/source-verification.json",
+        "sha256": "d35618797b8664743ae9895bd445dab6cb1af9619e627c9401afe2573c3e05cc"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "68fafb86fd69b1076e90891a1838320c533abf39c3d4a35ca9deec5a2030e317",
+      "dependencySha256": "3ac971309defb1526c71ea769344c9b339af0dfb4b15cf8f1f0b64ab7b626e83",
+      "afterImageSha256": "e158f9484a11264f44826cf33c3bf51f46d357c0d85d9a67722b56dda5206f2e",
+      "targetClaims": [
+        "canonical:carma-corp|canada",
+        "company:cmrxpjcvs00t9ivhes1jkf37g",
+        "relation:cmrxpjyd401r7ivhe8d9ndnfn",
+        "relation:cmrxpleh603mwivheg8umrhys",
+        "relation:cmrxplehp03mxivhe6e8uuyoy",
+        "relation:cmrxpleia03myivherf77urjb",
+        "relation:cmrxpleiw03mzivheyp583mx6",
+        "relation:cmrxpqg6909lnivhe8jwwuf2w",
+        "relation:cmrxpqg7e09lpivhe749eoqwl",
+        "relation:cmrxpqg8i09lrivhetnvp2t7n",
+        "seed:carma corp.|canada"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://ca.linkedin.com/company/carmacorp",
+          "label": "Ca — CARMA Corp.",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://carmacorp.com/about/",
+          "label": "Carmacorp — CARMA Corp.",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://central.cvca.ca/cvca-awards/terranova-partners-wins-2026-pe-deal-of-the-year-award-for-carma-corp/",
+          "label": "CVCA — CARMA transaction closing",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://ised-isde.canada.ca/site/investment-canada-act/en/node/240046",
+          "label": "Investment Canada Act — CARMA acquisition",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.cvc.com/media/news/2025/cvc-dif-to-acquire-carma-corp-a-leading-canadian-submetering-and-essential-building-services-platform/",
+          "label": "Announcement date source — CVC DIF — CARMA Corp.",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.newswire.ca/news-releases/terranova-partners-and-michael-platt-acquire-carma-corp-in-partnership-with-the-williams-family-867429100.html",
+          "label": "TerraNova — CARMA 2019 acquisition",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.rds.oeb.ca/CMWebDrawer/Record/655709/File/document",
+          "label": "Ontario Energy Board — CARMA amalgamation filing",
+          "sourceType": "OTHER"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0202:enfra:7265d723",
+      "taskIndex": 202,
+      "companyName": "ENFRA",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0202-enfra-v2/proposal.json",
+        "sha256": "b1e2882d99a7f1d156c733db06a715de8781c5bffd9b6a824de2322c9a03e45c"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0202-enfra-v2.json",
+        "sha256": "df3ca0b92b8949f1f06ae24bf919a0338cf46a914f5804d3464717cef5c83342"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0202-enfra/attempt-1/locked-production-snapshot.json",
+        "sha256": "4d351a736fa00671af95fb3ffc16300aec1ade67b183e6057bc897861b4e0869"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0202-enfra/attempt-1/locked-task-snapshot.json",
+        "sha256": "c1215f2bd1cbb2957fed2caa6cf3748eeda99b0482e4c1a4202fd8745fbedfd7"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0202-enfra/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "d3eefb008ebaad382b3a9c9f955a77094a9f4481eec13c0953aabb2b72d4c2d8"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0202-enfra/attempt-1/application-research-decision.json",
+        "sha256": "6164062d9440d3758bc8edccf61e5d551b23091e02d8f68ec51095520a26f389"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0200-bernhard-llc/attempt-1/source-verification.json",
+        "sha256": "485f537d6febf44b52317b85df711815305da18856bc19a0817da9a968ff64f2"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "524da6cf44d35b76d41061b38f1ccc96e7b6e16df6986f8038dc0cf7d7ddc4a9",
+      "dependencySha256": "2b83f312c8d05850aebef26ca0131af2b18c31e9cd50fa5bd73ab5d95acba45b",
+      "afterImageSha256": "2d7bdc878250ef0982064c8fcb1d50265135561ebcc9bc8b6fede6c3fd4e8469",
+      "targetClaims": [
+        "canonical:enfra|united-states",
+        "company:cmrxpjctn00t5ivhet8mwenz9",
+        "company:cmrxpjcwx00tbivhed8tnctp1",
+        "relation:cmrxpjyaz01r3ivhei2mcwgri",
+        "relation:cmrxpjye801r9ivhe0aq0zjxs",
+        "relation:cmrxple5d03mhivhev6e98k36",
+        "relation:cmrxple5s03miivhepi9gndru",
+        "relation:cmrxple6803mjivhe1kkuhq6s",
+        "relation:cmrxplemg03n4ivhe947mijra",
+        "relation:cmrxplemy03n5ivhezgf4gtjf",
+        "relation:cmrxplenj03n6ivhe91cx0acs",
+        "relation:cmrxpleny03n7ivhetyvbzihc",
+        "relation:cmrxpleoi03n8ivhetd467kyr",
+        "relation:cmrxpqgdd09m1ivhefba8yy15",
+        "relation:cmrxpqgdu09m2ivhez2j2odjs",
+        "relation:cmrxpqgh709m4ivhepprhulqh",
+        "relation:cmrxpqgil09m6ivhe7ma36y4s",
+        "seed:enfra|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://enfrasolutions.com/about",
+          "label": "Enfrasolutions — Bernhard, LLC",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://enfrasolutions.com/about/company-leadership",
+          "label": "Enfrasolutions — ENFRA",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://enfrasolutions.com/about/rebrand",
+          "label": "ENFRA — rebrand FAQ",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://enfrasolutions.com/contact",
+          "label": "ENFRA — contact and footprint",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://enfrasolutions.com/dif-capital-partners-invests-in-sustainability-and-energy-solutions-with-acquisition-of-bernhard-llc",
+          "label": "Enfrasolutions — ENFRA",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.bernhardcapital.com/bernhard-capital-partners-completes-sale-of-bernhard-llc-to-dif-capital-partners/",
+          "label": "Close date source — CVC DIF — Bernhard, LLC",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.cvc.com/media/news/2024/2024-07-03-completion-of-cvc-dif-and-acquisition-of-final-stake-in-cvc-secondary-partners/",
+          "label": "CVC — CVC DIF completion",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.cvcdif.com/news-insights/dif-capital-partners-invests-in-sustainability-and-energy-solutions-with-acquisition-of-bernhard-llc",
+          "label": "Cvcdif — Bernhard, LLC",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/bernhard-rebrands-as-enfra-to-reflect-energy-infrastructure-leadership-and-future-growth-302443445.html",
+          "label": "PR Newswire — Bernhard, LLC",
+          "sourceType": "PRESS_RELEASE"
+        }
+      ]
+    }
+  ],
+  "collisionAnalysis": {
+    "independent": true,
+    "claimsSha256": "f325c1142b0c552ea8390c56ca6b819515a52026fe90f3fdddaab63edd77be27",
+    "sharedSourceUrls": [],
+    "conflicts": []
+  },
+  "batchSha256": "ebfb5307c329991a373ad45481874eb65630624d15f508af749a4cd5ce28d0ba"
+}

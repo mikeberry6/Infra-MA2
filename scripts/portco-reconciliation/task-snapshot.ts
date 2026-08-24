@@ -733,12 +733,36 @@ export function resolveSeedRetirementCandidates(input: {
   evaluatedSeedCompanies: readonly PortCo[];
 }): ReviewedSeedRetirement[] {
   if (!input.queueEntry.canonicalKey) return [];
+  const isReciprocalHeuristicOverlap = (
+    left: ProposalQueueIndexArtifact["entries"][number],
+    right: ProposalQueueIndexArtifact["entries"][number],
+  ): boolean => {
+    if (
+      !left.canonicalKey
+      || !right.canonicalKey
+      || left.queueKind !== "CANONICAL_COMPANY"
+      || right.queueKind !== "CANONICAL_COMPANY"
+      || left.decisionStatus !== "NEEDS_REVIEW"
+      || right.decisionStatus !== "NEEDS_REVIEW"
+      || normalizedIdentity(left.country) !== normalizedIdentity(right.country)
+    ) return false;
+    const expected = (canonicalKey: string) => normalizedIdentity(
+      `Heuristic identity overlap with ${canonicalKey}; no automatic merge was made. Exact identity approval is required before any merge or correction.`,
+    );
+    return normalizedIdentity(left.rationale) === expected(right.canonicalKey)
+      && normalizedIdentity(right.rationale) === expected(left.canonicalKey);
+  };
   const reciprocal = input.queueEntries
     .filter((candidate) =>
       candidate.taskId !== input.queueEntry.taskId
       && candidate.canonicalKey !== null
-      && input.queueEntry.candidateCanonicalKeys.includes(candidate.canonicalKey)
-      && candidate.candidateCanonicalKeys.includes(input.queueEntry.canonicalKey!),
+      && (
+        (
+          input.queueEntry.candidateCanonicalKeys.includes(candidate.canonicalKey)
+          && candidate.candidateCanonicalKeys.includes(input.queueEntry.canonicalKey!)
+        )
+        || isReciprocalHeuristicOverlap(input.queueEntry, candidate)
+      ),
     )
     .sort((left, right) => left.taskIndex - right.taskIndex);
   const seedOnly = reciprocal.filter((candidate) =>
