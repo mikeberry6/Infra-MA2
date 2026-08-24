@@ -1,0 +1,416 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0194:cordelio-power:08aa08d8",
+  "taskIndex": 194,
+  "asOfDate": "2026-08-23",
+  "generatedAt": "2026-08-24T01:28:00.000Z",
+  "canonicalKey": "cordelio-power|united-states-canada",
+  "companyName": "Cordelio Power",
+  "actions": [
+    "CORRECT_COMPANY",
+    "RETIRE_OWNERSHIP",
+    "REALIZE_COMPANY"
+  ],
+  "sourceHoldingIds": [],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Retain Cordelio Power as a historical acquired platform, but end CPP Investments' direct ownership when Pattern Energy's share-based acquisition closed on April 1, 2026. Pattern integrated Cordelio's core assets, pipeline and team, while CPP's continuing exposure is represented only on the canonical Pattern Energy record. Correct Cordelio's canonical geography and headquarters, its historical 100% CPP stake, and the acquisition timeline without inferring dissolution of the surviving legal entities.",
+  "evidence": [
+    {
+      "url": "https://patternenergy.com/pattern-energy-announces-completion-of-acquisition-of-cordelio-power/",
+      "purpose": "Acquisition close and current platform boundary",
+      "supports": [
+        "Pattern completed the Cordelio acquisition",
+        "Cordelio's core assets, pipeline and team were integrated into Pattern"
+      ]
+    },
+    {
+      "url": "https://www.mccarthy.ca/en/experience/cordelio-power-acquired-by-pattern-energy",
+      "purpose": "Exact closing date and transaction form",
+      "supports": [
+        "The share-based transaction closed on April 1, 2026"
+      ]
+    },
+    {
+      "url": "https://www.cppinvestments.com/newsroom/cpp-investments-net-assets-total-780-7-billion-at-third-quarter-fiscal-2026/",
+      "purpose": "Continuing indirect exposure",
+      "supports": [
+        "CPP Investments held 69.1% of Pattern after the Cordelio transaction"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "46dcbf0bb9e1667731402541e7b91934317f30497be109fe2a1e279c4207dbf6",
+  "currentCompanySnapshotSha256": "e8841011593336b47b65c562e3cf6482c6be1c0aa5125e07d42dd143a9d4a00f",
+  "executionLock": {
+    "taskSnapshotSha256": "8699abb52ce7a0adacc74a4f708e98ce0a873b7eeebaa0f982d2a220261f5b7b",
+    "taskStateSha256": "c5ae140758f9b94e2047b99b11f1ae45bdda766300bd1ba6a40ef4eb8946b224",
+    "taskDependencySha256": "f1e3ec98fa488e360aa0b0eb39373986b6fbedc9f23e3ab7aeb5061e19f6cba7",
+    "seedEntrySha256": "184d202a7670015f79fcbdbbe60addeda64ae0bfbf11c52f9afc1bd7a8787e86",
+    "dependencies": {
+      "ownershipPeriodsSha256": "4e99be6b5896bd57a5afac446bbcb4b78c75cd76e4259fbc6f2766f869c63b24",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "be052fc1a043d754129088287692e7637b280b607150a59c11c82465311bc155",
+      "organizationsSha256": "9301f335682e45bc86708de1263eae424457efb100e88f7185c2f52d76c6193d",
+      "citationsSha256": "70ea2d4bffe1a99ed22879408f18187f519ad65472fa2bfb74ac644fd41e3063",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj1x400cpivhetff20cuv",
+        "fundName": "CPP Investments Infrastructure",
+        "managerId": "cmrxpi6gh001aivhefuh9d1bo",
+        "updatedAt": "2026-07-23T16:09:56.344Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi6gh001aivhefuh9d1bo",
+        "name": "CPP Investments",
+        "updatedAt": "2026-07-23T16:09:15.569Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjchl00snivheq6k7hdmj",
+    "name": "Cordelio Power",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Wind, solar, and energy storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States / Canada",
+    "countryTags": [
+      "United States",
+      "Canada"
+    ],
+    "description": "Cordelio Power develops, builds, and operates wind, solar, and energy-storage projects in the United States and Canada. Its customers are utilities, corporates, and other power offtakers that contract for renewable generation and related capacity. The business is asset-heavy and largely contracted because value is linked to owned and under-construction projects plus a sizable development pipeline. Public company materials have described an operating portfolio of 1,860 MW across the United States and Canada and a U.S. development pipeline of more than 18,000 MW. Pattern Energy completed its acquisition of Cordelio in April 2026 after the platform had been wholly owned by CPP Investments, and the direct ownership percentages of the resulting structure have not been publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2018,
+    "headquarters": "New York; Illinois; Oregon; Ontario; British Columbia",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjxwr01qhivhey42yacb7",
+        "managerName": "CPP Investments",
+        "organizationName": "CPP Investments",
+        "fundName": "CPP Investments Infrastructure",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2018,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplci703kkivhe1hyxa8ma",
+        "date": "2018",
+        "event": "Cordelio Power was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2018-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplcin03klivhex3poh005",
+        "date": "Jun 29, 2018",
+        "event": "CPP Investments completed the acquisition of a 396 MW portfolio of contracted renewable energy projects in Canada through Cordelio Power.",
+        "category": "ACQUISITION",
+        "sortDate": "2018-06-29T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplcja03kmivhexctlujse",
+        "date": "Apr 22, 2026",
+        "event": "Cordelio Power sold its 6 GW joint venture interest to BrightNight.",
+        "category": "DIVESTITURE",
+        "sortDate": "2026-04-22T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplcjt03knivhezb598ukv",
+        "date": "Jan 6, 2026",
+        "event": "Pattern Energy and Cordelio announced a definitive agreement for Pattern to acquire the company.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-01-06T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqcuv09gpivhey4dikyoc",
+        "label": "Cordeliopower — Denfield Power Portfolio",
+        "url": "https://cordeliopower.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Cordeliopower company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqcw909grivhehotvf5hg",
+        "label": "Close date source — CPP Investments — Cordelio Power",
+        "url": "https://gowlingwlg.com/en/insights-resources/client-work/2018/nextera-energy-partners-completes-sale-to-cppib",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CPP Investments closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqcx809gtivhe5ltdjad7",
+        "label": "Investment date source — CPP Investments — Cordelio Power",
+        "url": "https://www.globenewswire.com/news-release/2018/08/10/1550309/0/en/CPP-Fund-Totals-366-6-Billion-at-First-Quarter-Fiscal-2019.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CPP Investments initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqcyd09gvivheo6xo5zna",
+        "label": "Cordeliopower — Cordelio Power",
+        "url": "https://cordeliopower.com/pattern_energy_announces_agreement_to_acquire_cordelio_power/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Cordeliopower — Cordelio Power",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqczk09gxivhefrztywp4",
+        "label": "Patternenergy — Cordelio Power",
+        "url": "https://patternenergy.com/pattern-energy-announces-completion-of-acquisition-of-cordelio-power/",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Patternenergy transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqd0009gyivhed3qi6oz9",
+        "label": "McCarthy Tétrault",
+        "url": "https://www.mccarthy.ca/en/experience/cordelio-power-enters-into-definitive-agreement-in-connection-with-its-sale-to-pattern-energy-group",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "McCarthy TéTrault transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqd1609gzivheuerkstje",
+        "label": "PR Newswire",
+        "url": "https://www.prnewswire.com/news-releases/brightnight-acquires-cordelio-powers-joint-venture-interest-adds-6-gw-to-its-independently-controlled-project-portfolio-302747628.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "PR Newswire transaction or milestone detail",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "e8841011593336b47b65c562e3cf6482c6be1c0aa5125e07d42dd143a9d4a00f",
+  "afterImage": {
+    "id": "cmrxpjchl00snivheq6k7hdmj",
+    "name": "Cordelio Power",
+    "aliases": [
+      "Cordelio Power Inc.",
+      "Cordelio Power Holdings LLC"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Wind, solar, and energy storage",
+    "region": "NORTH_AMERICA",
+    "country": "Canada",
+    "countryTags": [
+      "Canada",
+      "United States"
+    ],
+    "description": "Cordelio Power was a Toronto-headquartered wind, solar and energy-storage platform operating in Canada and the United States. CPP Investments wholly owned the business from its June 29, 2018 entry until Pattern Energy's share-based acquisition closed on April 1, 2026. Pattern acquired approximately 1,550 MW across 16 operating or construction projects, most of Cordelio's U.S. development portfolio and the Cordelio team; Cordelio is therefore retained as a historical acquired company subordinate to Pattern, not as a separate active CPP Investments PortCo. CPP's continuing exposure is represented through its 69.1% ownership of Pattern. BrightNight separately announced on April 21, 2026 that it had acquired Cordelio's interest in a 6 GW development joint venture, a partial asset-level divestiture rather than a second company-level exit. Public sources reviewed do not establish the exact surviving merger entity, so dissolution is not inferred.",
+    "companyStatus": "REALIZED",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2018,
+    "headquarters": "Toronto, Ontario",
+    "lastVerifiedAt": "2026-08-19T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjxwr01qhivhey42yacb7",
+        "managerName": "CPP Investments",
+        "organizationName": "CPP Investments",
+        "fundName": "CPP Investments Infrastructure",
+        "vehicleName": null,
+        "stake": "100%",
+        "investmentYear": 2018,
+        "exitYear": 2026,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplci703kkivhe1hyxa8ma",
+        "date": "2018",
+        "event": "Cordelio Power was established as CPP Investments' renewable-power platform.",
+        "category": "FOUNDING",
+        "sortDate": "2018-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplcin03klivhex3poh005",
+        "date": "Jun 29, 2018",
+        "event": "CPP Investments completed its initial 396 MW Canadian renewable-energy acquisition through Cordelio Power.",
+        "category": "ACQUISITION",
+        "sortDate": "2018-06-29T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://gowlingwlg.com/en/insights-resources/client-work/2018/nextera-energy-partners-completes-sale-to-cppib"
+        ]
+      },
+      {
+        "id": "cmrxplcja03kmivhexctlujse",
+        "date": "Apr 1, 2026",
+        "event": "Pattern Energy's acquisition closed, ending CPP Investments' direct Cordelio ownership and integrating the company into Pattern.",
+        "category": "DIVESTITURE",
+        "sortDate": "2026-04-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://patternenergy.com/pattern-energy-announces-completion-of-acquisition-of-cordelio-power/",
+          "https://www.mccarthy.ca/en/experience/cordelio-power-acquired-by-pattern-energy"
+        ]
+      },
+      {
+        "id": "cmrxplcjt03knivhezb598ukv",
+        "date": "Jan 6, 2026",
+        "event": "Pattern Energy and Cordelio announced a definitive share-based agreement for Pattern to acquire the company.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-01-06T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://cordeliopower.com/pattern_energy_announces_agreement_to_acquire_cordelio_power/"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqcuv09gpivhey4dikyoc",
+        "label": "Cordeliopower — Denfield Power Portfolio",
+        "url": "https://cordeliopower.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Historical Cordelio website, now redirected to Pattern Energy",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqcw909grivhehotvf5hg",
+        "label": "Close date source — CPP Investments — Cordelio Power",
+        "url": "https://gowlingwlg.com/en/insights-resources/client-work/2018/nextera-energy-partners-completes-sale-to-cppib",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CPP Investments' June 2018 entry close",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqcx809gtivhe5ltdjad7",
+        "label": "Investment date source — CPP Investments — Cordelio Power",
+        "url": "https://www.globenewswire.com/news-release/2018/08/10/1550309/0/en/CPP-Fund-Totals-366-6-Billion-at-First-Quarter-Fiscal-2019.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CPP Investments' initial Cordelio portfolio acquisition",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqcyd09gvivheo6xo5zna",
+        "label": "Cordeliopower — Cordelio Power",
+        "url": "https://cordeliopower.com/pattern_energy_announces_agreement_to_acquire_cordelio_power/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Pattern acquisition announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqczk09gxivhefrztywp4",
+        "label": "Patternenergy — Cordelio Power",
+        "url": "https://patternenergy.com/pattern-energy-announces-completion-of-acquisition-of-cordelio-power/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Pattern acquisition completion and integrated-platform boundary",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqd0009gyivhed3qi6oz9",
+        "label": "McCarthy Tétrault",
+        "url": "https://www.mccarthy.ca/en/experience/cordelio-power-enters-into-definitive-agreement-in-connection-with-its-sale-to-pattern-energy-group",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Definitive-agreement legal context",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqd1609gzivheuerkstje",
+        "label": "PR Newswire",
+        "url": "https://www.prnewswire.com/news-releases/brightnight-acquires-cordelio-powers-joint-venture-interest-adds-6-gw-to-its-independently-controlled-project-portfolio-302747628.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "BrightNight's April 2026 Cordelio joint-venture interest acquisition",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "McCarthy Tétrault — Cordelio Power acquired by Pattern Energy",
+        "url": "https://www.mccarthy.ca/en/experience/cordelio-power-acquired-by-pattern-energy",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Exact April 1, 2026 closing date and share-based structure",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "CPP Investments — Q3 fiscal 2026 results",
+        "url": "https://www.cppinvestments.com/newsroom/cpp-investments-net-assets-total-780-7-billion-at-third-quarter-fiscal-2026/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CPP Investments' 69.1% post-transaction Pattern stake",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Close date source — APG Infrastructure — Pattern Energy Group LP",
+        "url": "https://patternenergy.com/pattern-energy-announces-closing-of-equity-investment-from-consortium-headed-by-apg-and-art/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Pattern co-owner boundary and Riverstone exit",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Pattern Energy — company profile",
+        "url": "https://patternenergy.com/about/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current Pattern scale and continuing Cordelio integration",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "BrightNight — Cordelio joint-venture interest acquisition",
+        "url": "https://brightnightpower.com/about-us/news-insights/brightnight-acquires-cordelio-powers-joint-venture-interest-adds-6-gw-to-its-independently-controlled-project-portfolio/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "April 21, 2026 partial asset-level divestiture",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "FCC — Cordelio post-close ownership records",
+        "url": "https://docs.fcc.gov/public/attachments/DOC-422125A1.pdf",
+        "sourceType": "OTHER",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Post-close Cordelio Power Holdings LLC identity without a dissolution inference",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "8b377ba3fae4f4082e1cf250e66c3fcd420dec24d0074e77f62835f73ce505e7",
+  "proposalSha256": "679f6e36324296490fd2a690a8c45f12c4246348ce6f9e077ea32ed78723d5c0"
+}

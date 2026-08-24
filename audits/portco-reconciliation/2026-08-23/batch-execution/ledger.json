@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-24T01:08:35.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-08-24T01:34:00.000Z",
+  "activeBatchId": "batch-0193-0197-v2",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -2143,7 +2143,123 @@
           "reason": null
         }
       ]
+    },
+    {
+      "batchId": "batch-0193-0197-v1",
+      "state": "FAILED",
+      "taskIds": [
+        "ledger:0193:commonwealth-lng:177a93a3",
+        "ledger:0194:cordelio-power:08aa08d8",
+        "ledger:0195:pacifico-sur:c39347ba",
+        "ledger:0196:pattern-energy-group-lp-pattern-energy:13287f81",
+        "ledger:0197:transalta-keephills-data-centre-jv:34a62ae3"
+      ],
+      "taskIndexes": [
+        193,
+        194,
+        195,
+        196,
+        197
+      ],
+      "createdAt": "2026-08-24T01:19:25.000Z",
+      "updatedAt": "2026-08-24T01:32:00.000Z",
+      "completedAt": "2026-08-24T01:32:00.000Z",
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0193-0197-v1/batch-manifest.json",
+        "sha256": "1176956f609c93c6ff2e697cc32cb5b0bb7e3b35713023e81d8d9ef843ad0f0b"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": "Rejected before seed or database writes: root build config used byte hashes instead of the embedded canonical execution-manifest and research-normalization hashes.",
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-24T01:19:25.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-24T01:31:30.000Z",
+          "evidenceSha256": [
+            "1176956f609c93c6ff2e697cc32cb5b0bb7e3b35713023e81d8d9ef843ad0f0b"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "FAILED",
+          "at": "2026-08-24T01:32:00.000Z",
+          "evidenceSha256": [
+            "1176956f609c93c6ff2e697cc32cb5b0bb7e3b35713023e81d8d9ef843ad0f0b"
+          ],
+          "reason": "Rejected before seed or database writes: root build config used byte hashes instead of the embedded canonical execution-manifest and research-normalization hashes."
+        }
+      ]
+    },
+    {
+      "batchId": "batch-0193-0197-v2",
+      "state": "RELEASING",
+      "taskIds": [
+        "ledger:0193:commonwealth-lng:177a93a3",
+        "ledger:0194:cordelio-power:08aa08d8",
+        "ledger:0195:pacifico-sur:c39347ba",
+        "ledger:0196:pattern-energy-group-lp-pattern-energy:13287f81",
+        "ledger:0197:transalta-keephills-data-centre-jv:34a62ae3"
+      ],
+      "taskIndexes": [
+        193,
+        194,
+        195,
+        196,
+        197
+      ],
+      "createdAt": "2026-08-24T01:32:01.000Z",
+      "updatedAt": "2026-08-24T01:34:00.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0193-0197-v2/batch-manifest.json",
+        "sha256": "2c3ed26a043a5b10db46c07fa7d59a2c8cb3999be3c32bd1c91e6f6b249398ed"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-24T01:32:01.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-24T01:32:15.000Z",
+          "evidenceSha256": [
+            "2c3ed26a043a5b10db46c07fa7d59a2c8cb3999be3c32bd1c91e6f6b249398ed"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "RELEASING",
+          "at": "2026-08-24T01:34:00.000Z",
+          "evidenceSha256": [
+            "2c3ed26a043a5b10db46c07fa7d59a2c8cb3999be3c32bd1c91e6f6b249398ed"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "e86fede3be922f4be7ff4265e8ade167b356361ef06cb64f16f6bf36a308e8fb"
+  "ledgerSha256": "619d465d9d7358d1432dbc4b521e05393ffc6f9439968f5fdc341ce2b743fe6f"
 }

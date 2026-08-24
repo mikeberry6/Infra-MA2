@@ -1,0 +1,273 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0197:transalta-keephills-data-centre-jv:34a62ae3",
+  "taskIndex": 197,
+  "companyName": "TransAlta Keephills Data Centre JV",
+  "generatedAt": "2026-08-24T01:42:40.160Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0197-transalta-keephills-data-centre-jv/attempt-1/authorization-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 197,
+    "taskId": "ledger:0197:transalta-keephills-data-centre-jv:34a62ae3",
+    "canonicalKey": "transalta-keephills-data-centre-jv|canada",
+    "companyName": "TransAlta Keephills Data Centre JV",
+    "country": "Canada",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 32,
+    "managers": [
+      "CPP Investments"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "ADD_PENDING_TRANSACTION"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "032-cpp-investments:holding:017:transalta-keephills-data-centre-jv"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjcn500sxivhe3olj5uf3"
+    ],
+    "seedKeys": [
+      "transalta keephills data centre jv|Canada"
+    ],
+    "evidenceUrls": [
+      "https://transalta.com/newsroom/transalta-enters-memorandum-of-understanding-for-data-centre-development-at-keephills-site-with-potential-to-scale-up-to-1-gw"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_PENDING_TRANSACTION requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjcn500sxivhe3olj5uf3",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "transalta-keephills-data-centre-jv|canada",
+  "targetCompanyImage": {
+    "id": "cmrxpjcn500sxivhe3olj5uf3",
+    "name": "TransAlta Keephills Data Centre JV",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Powered data-center development",
+    "region": "NORTH_AMERICA",
+    "country": "Canada",
+    "countryTags": [
+      "Canada"
+    ],
+    "description": "TransAlta Keephills Data Centre JV is a development partnership for a large Alberta data-center project linked to dedicated power supply at the Keephills site. The venture is designed to serve high-density computing demand and depends on both digital-infrastructure development and long-term power procurement. Its model is asset-heavy because value is tied to site control, major capital deployment, and integrated electricity infrastructure rather than an asset-light colocation strategy. TransAlta announced in 2026 that it had entered into an MOU with CPP Investments and Brookfield for an initial approximately 230 MW project with potential to scale to 1 GW. Public sources reviewed do not disclose the ownership percentages of the development partners.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2026,
+    "headquarters": "Alberta",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjy4f01qvivhe4cx2zkie",
+        "managerName": "CPP Investments",
+        "organizationName": "CPP Investments",
+        "fundName": null,
+        "vehicleName": "Real Assets (Infrastructure)",
+        "stake": null,
+        "investmentYear": 2026,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplddt03loivher3kngv7z",
+        "date": "2026",
+        "event": "The partners disclosed an initial approximately 230 MW project supported by a long-term power arrangement.",
+        "category": "FINANCING",
+        "sortDate": "2026-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpldec03lpivhe78brjx8j",
+        "date": "2026",
+        "event": "The project had the potential to scale to as much as 1 GW over time.",
+        "category": "EXPANSION",
+        "sortDate": "2026-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpldew03lqivheuqwghxf3",
+        "date": "2026",
+        "event": "The development advanced as a powered data-center opportunity in Alberta.",
+        "category": "EXPANSION",
+        "sortDate": "2026-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpldfg03lrivheh57ynml9",
+        "date": "2026",
+        "event": "TransAlta Keephills Data Centre JV was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2026-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpldg003lsivhevcepcmf0",
+        "date": "Feb 27, 2026",
+        "event": "TransAlta announced an MOU with CPP Investments and Brookfield for data-center development at its Keephills site.",
+        "category": "FINANCING",
+        "sortDate": "2026-02-27T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqeip09j5ivheayq45yhm",
+        "label": "Announcement date source — CPP Investments — TransAlta Keephills Data Centre JV",
+        "url": "https://transalta.com/newsroom/transalta-enters-memorandum-of-understanding-for-data-centre-development-at-keephills-site-with-potential-to-scale-up-to-1-gw/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CPP Investments transaction announcement",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqek209j7ivhe0nx34gu6",
+        "label": "Data Center Dynamics — TransAlta Keephills Data Centre JV",
+        "url": "https://www.datacenterdynamics.com/en/news/transalta-cpp-brookfield-ink-mou-for-230mw-alberta-data-center-project/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Data Center Dynamics operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqele09j9ivheqv2854ev",
+        "label": "Transalta — TransAlta Keephills Data Centre JV",
+        "url": "https://transalta.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Transalta company profile",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "TransAlta Keephills Data Centre JV",
+    "investmentFirm": "CPP Investments",
+    "sector": "Digital",
+    "subsector": "Powered data-center development",
+    "region": "North America",
+    "country": "Canada",
+    "ownershipVehicle": "Real Assets (Infrastructure)",
+    "description": "TransAlta Keephills Data Centre JV is a development partnership for a large Alberta data-center project linked to dedicated power supply at the Keephills site. The venture is designed to serve high-density computing demand and depends on both digital-infrastructure development and long-term power procurement. Its model is asset-heavy because value is tied to site control, major capital deployment, and integrated electricity infrastructure rather than an asset-light colocation strategy. TransAlta announced in 2026 that it had entered into an MOU with CPP Investments and Brookfield for an initial approximately 230 MW project with potential to scale to 1 GW. Public sources reviewed do not disclose the ownership percentages of the development partners.",
+    "status": "Active",
+    "countryTags": [
+      "Canada"
+    ],
+    "yearFounded": 2026,
+    "investmentYear": 2026,
+    "headquarters": "Alberta",
+    "milestones": [
+      {
+        "date": "2026",
+        "event": "The partners disclosed an initial approximately 230 MW project supported by a long-term power arrangement.",
+        "category": "Financing"
+      },
+      {
+        "date": "2026",
+        "event": "The project had the potential to scale to as much as 1 GW over time.",
+        "category": "Expansion"
+      },
+      {
+        "date": "2026",
+        "event": "The development advanced as a powered data-center opportunity in Alberta.",
+        "category": "Expansion"
+      },
+      {
+        "date": "2026",
+        "event": "TransAlta Keephills Data Centre JV was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "Feb 27, 2026",
+        "event": "TransAlta announced an MOU with CPP Investments and Brookfield for data-center development at its Keephills site.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Announcement date source — CPP Investments — TransAlta Keephills Data Centre JV",
+        "url": "https://transalta.com/newsroom/transalta-enters-memorandum-of-understanding-for-data-centre-development-at-keephills-site-with-potential-to-scale-up-to-1-gw/",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Data Center Dynamics — TransAlta Keephills Data Centre JV",
+        "url": "https://www.datacenterdynamics.com/en/news/transalta-cpp-brookfield-ink-mou-for-230mw-alberta-data-center-project/",
+        "type": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Transalta — TransAlta Keephills Data Centre JV",
+        "url": "https://transalta.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "CPP Investments",
+        "ownershipVehicle": "Real Assets (Infrastructure)",
+        "investmentYear": 2026,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi6gh001aivhefuh9d1bo",
+        "name": "CPP Investments",
+        "updatedAt": "2026-07-23T16:09:15.569Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0197:transalta-keephills-data-centre-jv:34a62ae3",
+    "taskIndex": 197,
+    "canonicalKey": "transalta-keephills-data-centre-jv|canada",
+    "capturedAt": "2026-08-24T01:42:40.160Z",
+    "databaseRevision": "revision:2062c3cb95d3b10d1516b367861826b71bcd4074a25443fcd6f810d928ffb502",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "6166a6194dab4274754f12d5b05a880eac2a368810c6aedb2b131e06f4224a1c",
+    "productionSnapshotSha256": "ec291a1110b5494674f58f2f38b8dfb265cdf62c9931031aa1a64cfe3e790dba",
+    "targetCompanySnapshotSha256": "706a462ce427ebd4ed2b285a81a1e98402d2032bb7323db64bb723543a970101",
+    "seedEntrySha256": "ec19663d67c1d86d4acd08d79c8c806374d1a219e1209dda4f1f7b537004850d",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "ed14216c0d5446cb50e57063759cb65409245ea6302767109df8d9bf9c76284f",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "9301f335682e45bc86708de1263eae424457efb100e88f7185c2f52d76c6193d",
+      "citationsSha256": "a0c706594d874d428dc616baf1700f936a446fda2a01c747c5ee804917fac6ef",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "040e8a81a4c3bc3ebcee9ce203d83a2067900d3ce87709f561df05ff6ec4400d",
+    "stateSha256": "4f957beaac14ea6961b997a325a677554dde5f43266b93a45893fdc3832558a8",
+    "taskSnapshotSha256": "ac9f30547f648c17b496e7d061e046f2f222c3a21cca8f7d14b3ee6e0db43e61"
+  },
+  "contextSha256": "8904040723fcbcce275f9c153a3c98fe71e86cb04180d5e196fd84b0ca3531bf"
+}

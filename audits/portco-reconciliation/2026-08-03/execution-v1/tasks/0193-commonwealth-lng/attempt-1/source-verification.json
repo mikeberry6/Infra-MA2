@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RECIPROCAL_SOURCE_VERIFICATION",
+  "taskId": "ledger:0193:commonwealth-lng:177a93a3",
+  "taskIndex": 193,
+  "companyName": "Commonwealth LNG",
+  "verifiedAt": "2026-08-24T01:25:01.000Z",
+  "researchOnly": true,
+  "coveredByTaskId": "ledger:0191:caturus:fb78fef3",
+  "coveredSourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0191-caturus/attempt-1/source-verification.json",
+    "sha256": "471f84d3cc7b86637d70f02a9d9edda3bda33edf7475857532c183f10d888fc6"
+  },
+  "checks": {
+    "sameCanonicalParentBoundary": true,
+    "commonwealthIsControlledProjectSubsidiary": true,
+    "caturusDirectOwnershipAlreadyReleased": true,
+    "separateManagerLevelPortCoUnsupported": true,
+    "unresolvedIdentityOrActiveOwnership": false
+  },
+  "sources": [
+    {
+      "url": "https://www.energy.gov/documents/commonwealth-lng-doe-notice-change-control-cpppdf",
+      "status": "OPEN_VERIFIED_IN_TASK_191",
+      "purpose": "Legal parent/subsidiary chain and current direct cap table."
+    },
+    {
+      "url": "https://www.energy.gov/documents/commonwealth-follow-questions",
+      "status": "OPEN_VERIFIED_IN_TASK_191",
+      "purpose": "Corrected direct governance percentages."
+    },
+    {
+      "url": "https://caturus.com/caturus-announces-final-investment-decision-for-9-5-mtpa-commonwealth-lng-export-facility-in-cameron-la/",
+      "status": "OPEN_VERIFIED_IN_TASK_191",
+      "purpose": "Commonwealth LNG operating project within Caturus."
+    },
+    {
+      "url": "https://kimmeridge.com/kimmeridge-texas-gas-appoints-david-lawler-as-ceo-kimmeridge-closes-follow-on-control-investment-in-commonwealth-lng/",
+      "status": "OPEN_VERIFIED_IN_TASK_191",
+      "purpose": "Commonwealth control-acquisition history."
+    }
+  ]
+}
