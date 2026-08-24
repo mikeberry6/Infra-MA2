@@ -1,0 +1,182 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0206:jw-water-holdings:fc8ebab0",
+  "taskIndex": 206,
+  "companyName": "JW Water Holdings and the Robson Utilities acquisition portfolio",
+  "asOfDate": "2026-08-19",
+  "decision": "PROPOSED_MERGE",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-08-24T04:14:38.000Z",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "JW Water Holdings and the Robson Utilities acquisition portfolio",
+    "requestedManagers": [
+      "CVC",
+      "DIF"
+    ],
+    "decision": "PROPOSED_MERGE",
+    "confidence": "HIGH",
+    "rationale": "CVC DIF made two concurrent acquisitions, but the eight Robson utilities were folded beneath JW Water rather than retained as a second PortCo. Pima became a wholly owned JW subsidiary on 2024-11-20, and ACC later said JW owned the full 18-utility group.",
+    "identityResolution": {
+      "canonical": "JW Water Holdings, LLC",
+      "display": "JW Water Holdings",
+      "canonicalKey": "jw-water-holdings|united-states",
+      "aliases": [
+        "JW Water",
+        "JW Water Holdings (incl. Robson Utilities)"
+      ],
+      "boundary": "One manager-level platform; Robson Utilities Portfolio is an acquisition cohort and Pima Utility Company is a child utility.",
+      "tasks": {
+        "ledger:0206:jw-water-holdings:fc8ebab0": "SURVIVE",
+        "ledger:0207:robson-communities-utilities-pima-utility:d965a9e0": "MERGE_ROW_RETAIN_CHILD",
+        "ledger:0208:robson-utilities-portfolio:357f70cb": "MERGE_COHORT_ROW"
+      }
+    },
+    "ownershipResolution": {
+      "owners": [
+        {
+          "manager": "CVC DIF",
+          "organization": "JW Water Holdings, LLC",
+          "fund": "DIF Infrastructure VII",
+          "vehicle": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2024-11-21",
+          "entryDate": "2024-11-21",
+          "entryYear": 2024,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED"
+        }
+      ],
+      "structure": "DIF VII separately acquired JW Water and the Robson eight; Pima transferred into JW on 2024-11-20. Acquisition SPVs were not disclosed."
+    },
+    "operatingResolution": {
+      "footprint": "Arizona; over 50,000 customers. JW's 2026 site lists 18 legacy brands and 20 water/wastewater systems, not a current legal-entity count.",
+      "robsonEight": "Lago Del Oro Water Company; Mountain Pass Utility Company; Picacho Water Company; Picacho Sewer Company; Pima Utility Company; Quail Creek Water Company; Ridgeview Utility Company; SaddleBrooke Utility Company.",
+      "jwTen": "Bensch Ranch Utilities; Coronado Utilities; Golden Shores Water Company; Navajo Water Company; Payson Water Company; Pine Meadows Utilities; Sunrise Vista Utilities; The Links at Coyote Wash Utilities; Tonto Basin Water Company; Verde Santa Fe Wastewater Company.",
+      "rosterBasis": "Robson directly lists its eight; the JW ten are the reconciled remainder of JW's current 18-brand roster.",
+      "legalStatus": "ACC approved Bensch/Pine absorption into Verde Santa Fe in 2025 and Quail/Ridgeview/Lago consolidation into JW Water Utility Company on 2026-08-12; the latter's implementation date was not located. Pima's split remains pending."
+    },
+    "acquisitionExitCheck": {
+      "entry": "CLOSED by 2024-11-21; Pima transfer dated 2024-11-20.",
+      "exit": "No later sale, transfer or signed manager-level exit found through 2026-08-19; current JW and ACC sources show continued ownership.",
+      "pendingTransactions": [
+        {
+          "direction": "INTERNAL_REORGANIZATION",
+          "buyer": "Pima Water Company and Pima Sewer Company (proposed)",
+          "seller": "Pima Utility Company",
+          "stake": "NOT_APPLICABLE",
+          "announcementDate": "2025-12-24",
+          "closingDate": null,
+          "state": "PENDING_ACC_REVIEW_AS_OF_2026-08-19",
+          "evidenceUrls": [
+            "https://jwwater.com/pima/wp-content/uploads/sites/12/2026/03/Pima-Public-Notice-of-Hearing-and-Public-Comment-Meetings.pdf"
+          ]
+        }
+      ],
+      "financing": "Pima's 2026 applications seek up to $12.5 million of affiliate debt; approval remained pending as of 2026-08-19."
+    },
+    "milestones": [
+      {
+        "date": "2024-11-20",
+        "event": "Pima became a wholly owned JW subsidiary."
+      },
+      {
+        "date": "2024-11-21",
+        "event": "CVC announced the completed JW ten-utility and Robson eight-utility deals through DIF VII."
+      },
+      {
+        "date": "2025-11-19",
+        "event": "ACC approved Bensch/Pine/Verde Santa Fe consolidation and said JW owned those three plus 15 others."
+      },
+      {
+        "date": "2026-08-12",
+        "event": "ACC approved Quail/Ridgeview/Lago consolidation into JW Water Utility Company."
+      }
+    ],
+    "evidence": [
+      {
+        "label": "CVC announcement",
+        "url": "https://www.cvc.com/media/news/2024/2024-11-21-cvc-dif-acquires-a-portfolio-of-us-regulated-water-and-wastewater-utilities/",
+        "purpose": "Two deals, 10+8 utilities, DIF VII and JW boundary.",
+        "sourceTier": "MANAGER",
+        "workingStatus": "OK",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "JW site",
+        "url": "https://jwwater.com/",
+        "purpose": "Current identity, scale and roster.",
+        "sourceTier": "COMPANY",
+        "workingStatus": "OK",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Robson contacts",
+        "url": "https://robson.com/contact/",
+        "purpose": "Exact Robson eight.",
+        "sourceTier": "SELLER",
+        "workingStatus": "OK",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Pima FAQ",
+        "url": "https://jwwater.com/pima/wp-content/uploads/sites/12/2026/03/Pima-Rate-Case-FAQ.pdf",
+        "purpose": "Transfer date, wholly owned status and split.",
+        "sourceTier": "COMPANY_FILING",
+        "workingStatus": "OK",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "ACC Nov. 2025",
+        "url": "https://www.azcc.gov/news/home/2025/11/21/november-19--2025-open-meeting-highlights",
+        "purpose": "JW ownership of 18 and VSF consolidation.",
+        "sourceTier": "REGULATOR",
+        "workingStatus": "OK",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "ACC Aug. 2026",
+        "url": "https://azcc.gov/news/home/2026/08/17/august-12--2026-open-meeting-highlights",
+        "purpose": "Latest internal consolidation approval.",
+        "sourceTier": "REGULATOR",
+        "workingStatus": "OK",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "before": "Three active manager-level rows: cmrxpjd0700thivhe6wdzyicz, cmrxpjd2w00tmivhewaupms5e and cmrxpjd0s00tiivheuomhxk0o.",
+      "after": "Survive cmrxpjd0700thivhe6wdzyicz as JW Water Holdings, LLC; merge the other two rows; preserve Pima, all utilities and the Robson cohort as child/history records."
+    },
+    "excludedOrDuplicateCandidates": [
+      "JW Water Holdings (incl. Robson Utilities): duplicate alias",
+      "Robson Utilities Portfolio: cohort, not PortCo",
+      "Robson Communities Utilities / Pima Utility: parent-child boundary duplicate"
+    ],
+    "unresolvedQuestions": [
+      "NOT_PUBLICLY_DISCLOSED: CVC DIF stake and acquisition SPV chain.",
+      "NOT_PUBLICLY_DISCLOSED: each Robson utility's exact legal seller.",
+      "NOT_LOCATED: separate 2024 ACC change-of-control order or formal 2026 JW Water Utility Company implementation date; later ACC records confirm JW parentage."
+    ],
+    "recommendedListAction": "Keep jw-water-holdings|united-states / cmrxpjd0700thivhe6wdzyicz as the sole CVC DIF PortCo; merge both Robson rows, retain utilities as children, and treat later consolidations and Pima's pending split as internal events."
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0206-jw-water-holdings/attempt-1/research-decision.json",
+      "sha256": "d31fcab0b2c81180d7a68baf78841d2f21291a5991ff1673f15d9da4d579b417"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0206-jw-water-holdings/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "903bb68a4470e1c008f92d9be656b4e5bccb99e9cbc86887bb18af035b734b26"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0206-jw-water-holdings/attempt-1/source-verification.json",
+      "sha256": "ddfaba41c00b83f0e8e2a2ef60ec3d1ecde437755bc7d17d5c241887eb066c8d"
+    },
+    "acceptedResponseSha256": "903bb68a4470e1c008f92d9be656b4e5bccb99e9cbc86887bb18af035b734b26",
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION"
+  }
+}
