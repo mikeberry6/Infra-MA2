@@ -1,0 +1,15 @@
+
+> infra-tracker@1.0.0 portfolio:fund-attribution:apply
+> npx tsx scripts/apply-portfolio-fund-attribution.ts --manifest=audits/portfolio-fund-attribution/2026-08-24/scoped/batch-0198-american-roads-attribution-repair/apply-manifest.json --manifest-sha256=463c741e2b14c7b959ea1da6e8368ef2f0d00f0d7366ca71da60f02c0547b746 --production-snapshot=audits/portfolio-fund-attribution/2026-08-24/scoped/batch-0198-american-roads-attribution-repair/production-snapshot.json --approval=audits/portfolio-fund-attribution/2026-08-24/scoped/batch-0198-american-roads-attribution-repair/approval.json --approval-sha256=86d2ee1ba0a06b250ed5f056a77a3c7958c39ff643d405a6e4f9ef0897aefe9e
+
+(node:3007) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "DRY_RUN",
+  "databaseWrites": false,
+  "manifestSha256": "463c741e2b14c7b959ea1da6e8368ef2f0d00f0d7366ca71da60f02c0547b746",
+  "mutationCount": 1,
+  "pending": 1,
+  "alreadyApplied": 0,
+  "observedFingerprint": "ab55814fa2a73c6e26970727067a90dfc1a3fcd2d63451fb2629e99162156da0"
+}

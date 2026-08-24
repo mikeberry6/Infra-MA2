@@ -1,0 +1,43 @@
+
+> infra-tracker@1.0.0 portfolio:fund-attribution:apply
+> npx tsx scripts/apply-portfolio-fund-attribution.ts --manifest=audits/portfolio-fund-attribution/2026-08-24/scoped/batch-0198-american-roads-attribution-repair/apply-manifest.json --manifest-sha256=463c741e2b14c7b959ea1da6e8368ef2f0d00f0d7366ca71da60f02c0547b746 --production-snapshot=audits/portfolio-fund-attribution/2026-08-24/scoped/batch-0198-american-roads-attribution-repair/production-snapshot.json --approval=audits/portfolio-fund-attribution/2026-08-24/scoped/batch-0198-american-roads-attribution-repair/approval.json --approval-sha256=86d2ee1ba0a06b250ed5f056a77a3c7958c39ff643d405a6e4f9ef0897aefe9e --apply=true --write-token=APPLY_REVIEWED_PORTFOLIO_FUND_ATTRIBUTION --receipt=tmp/portfolio-fund-attribution/production/apply-receipt.json
+
+(node:3228) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_RECEIPT",
+  "manifestSha256": "463c741e2b14c7b959ea1da6e8368ef2f0d00f0d7366ca71da60f02c0547b746",
+  "approvalSha256": "86d2ee1ba0a06b250ed5f056a77a3c7958c39ff643d405a6e4f9ef0897aefe9e",
+  "environment": "production",
+  "pipelineRunId": "cmt6oorqn0000hoyyhmwt7ym6",
+  "mutationCount": 1,
+  "changed": 1,
+  "idempotent": false,
+  "beforeFingerprint": "1268cba2ef49ab82c6c8094bd2c39984d6ec78192417a8b46dcac6f9d6e98688",
+  "afterFingerprint": "7230591cf62c52a2fecd9f3a5e970e4e8677db07a89876f0a064e8572ed5352e",
+  "rows": [
+    {
+      "recordId": "OFA-REPAIR-0198-AMERICAN-ROADS-CURRENT",
+      "ownershipPeriodId": "cmt6nud7w000650yykdrdss4i",
+      "companyId": "cmrxpjevf00wbivheu50etwdq",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "John Laing directly reports 100% ownership of American Roads after announcing financial close on April 28, 2026. Public sources do not identify a separate fund or acquisition SPV, so the active holding is recorded as a direct John Laing program without an inferred fund."
+      }
+    }
+  ],
+  "appliedAt": "2026-08-24T03:36:01.691Z",
+  "receiptSha256": "b6310fa609b8cb3a287c3eb7072de64ee480b66f29213d96dc0393f48367ac28"
+}
