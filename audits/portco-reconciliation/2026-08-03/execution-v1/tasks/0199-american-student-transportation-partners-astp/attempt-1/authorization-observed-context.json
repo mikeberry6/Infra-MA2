@@ -1,0 +1,359 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0199:american-student-transportation-partners-astp:0eaaa394",
+  "taskIndex": 199,
+  "companyName": "American Student Transportation Partners (ASTP)",
+  "generatedAt": "2026-08-24T02:42:43.224Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0199-american-student-transportation-partners-astp/attempt-1/authorization-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 199,
+    "taskId": "ledger:0199:american-student-transportation-partners-astp:0eaaa394",
+    "canonicalKey": "american-student-transportation-partners-astp|united-states",
+    "companyName": "American Student Transportation Partners (ASTP)",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 34,
+    "managers": [
+      "CVC",
+      "DIF"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "034-cvc:holding:003:american-student-transportation-partners-astp",
+      "035-dif:holding:003:american-student-transportation-partners-astp"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjct700t4ivhe097ggvuj"
+    ],
+    "seedKeys": [
+      "american student transportation partners (astp)|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.cvc.com/media/news/2025/cvc-dif-agrees-to-acquire-premier-us-student-transportation-operator-astp-from-access-holdings/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Heuristic identity overlap with american-student-transportation-partners|united-states; no automatic merge was made. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Heuristic identity overlap with american-student-transportation-partners|united-states; no automatic merge was made."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjct700t4ivhe097ggvuj",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "american-student-transportation-partners-astp|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjct700t4ivhe097ggvuj",
+    "name": "American Student Transportation Partners (ASTP)",
+    "aliases": [],
+    "sector": "TRANSPORTATION",
+    "subsector": "Student transportation",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "American Student Transportation Partners provides outsourced school transportation services for K-12 districts in the United States. The platform serves school districts through route-based, contracted operations using a large fleet of buses and vans rather than passenger-demand or asset-light logistics models. Its business is asset-heavy because service delivery depends on owned or controlled vehicles, depots, drivers, and local operating systems. CVC DIF announced in 2025 that ASTP transported more than 90,000 students each school year across the Northeast and Midwest through a fleet of more than 2,300 vehicles and contracts with over 50 districts. CVC DIF also stated that it had agreed to acquire ASTP from Access Holdings through DIF Infrastructure VII, and public sources reviewed do not disclose the final post-closing ownership structure.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2021,
+    "headquarters": "Northeast and Midwest U.S.",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjyag01r2ivheip9oa90v",
+        "managerName": "CVC DIF",
+        "organizationName": "CVC DIF",
+        "fundName": "DIF Infrastructure VII",
+        "vehicleName": "DIF Infrastructure VII",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpldxq03m9ivhe6jxe1ohs",
+        "date": "2021",
+        "event": "ASTP states that it was established in 2021.",
+        "category": "FOUNDING",
+        "sortDate": "2021-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpldy403maivhecsm91tnl",
+        "date": "Sep 26, 2023",
+        "event": "ASTP announced a partnership with Assisted Transportation Services, expanding into the Midwest.",
+        "category": "EXPANSION",
+        "sortDate": "2023-09-26T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxple0x03mbivhezi6n2psi",
+        "date": "Sep 26, 2023",
+        "event": "ASTP announced the acquisition of Brandywine Transportation routes and vehicles in Pennsylvania.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-09-26T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxple1o03mcivhea1fkt6vf",
+        "date": "Aug 12, 2025",
+        "event": "CVC DIF announced an agreement to acquire ASTP from Access Holdings.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-08-12T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxple2o03mdivhezcxma58u",
+        "date": "2021",
+        "event": "Public sources identify ASTP as having been established in 2021.",
+        "category": "FOUNDING",
+        "sortDate": "2021-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxple3703meivhe6ltkaq7k",
+        "date": "2021",
+        "event": "ASTP expanded into a multi-state student transportation provider serving the Northeast and Midwest.",
+        "category": "EXPANSION",
+        "sortDate": "2021-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxple3q03mfivhebjohrod6",
+        "date": "2025",
+        "event": "CVC DIF disclosed that ASTP served more than 90,000 students annually with a fleet of more than 2,300 vehicles.",
+        "category": "EXPANSION",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxple4a03mgivheur85ctfs",
+        "date": "Aug 12, 2025",
+        "event": "CVC DIF announced an agreement to acquire ASTP from Access Holdings through DIF Infrastructure VII.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-08-12T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqfh909klivhew1nawhqh",
+        "label": "PR Newswire — American Student Transportation Partners",
+        "url": "https://www.prnewswire.com/news-releases/access-holdings-announces-sale-of-american-student-transportation-partners-to-cvc-dif-302526686.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "PR Newswire transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqfi809knivhecve8da01",
+        "label": "Astpartners — American Student Transportation Partners",
+        "url": "https://astpartners.com/2023/09/brandywine/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Astpartners — American Student Transportation Partners",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqfj709kpivhesf14lc0y",
+        "label": "Astpartners — American Student Transportation Partners (ASTP)",
+        "url": "https://astpartners.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Astpartners company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqfjn09kqivhefk824fge",
+        "label": "Astpartners — American Student Transportation Partners",
+        "url": "https://astpartners.com/about-astp/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Astpartners company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqfk609krivhe3j23fbjn",
+        "label": "Announcement date source — CVC DIF — American Student Transportation Partners",
+        "url": "https://www.cvc.com/media/news/2025/cvc-dif-agrees-to-acquire-premier-us-student-transportation-operator-astp-from-access-holdings/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CVC DIF transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqfl909ktivhe58u4we1t",
+        "label": "Schoolbusfleet — American Student Transportation Partners (ASTP)",
+        "url": "https://www.schoolbusfleet.com/news/american-student-transportation-partners-acquired-by-cvc-dif",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Schoolbusfleet transaction or milestone detail",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "American Student Transportation Partners (ASTP)",
+    "investmentFirm": "CVC DIF",
+    "sector": "Transportation",
+    "subsector": "Student transportation",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "DIF Infrastructure VII",
+    "description": "American Student Transportation Partners provides outsourced school transportation services for K-12 districts in the United States. The platform serves school districts through route-based, contracted operations using a large fleet of buses and vans rather than passenger-demand or asset-light logistics models. Its business is asset-heavy because service delivery depends on owned or controlled vehicles, depots, drivers, and local operating systems. CVC DIF announced in 2025 that ASTP transported more than 90,000 students each school year across the Northeast and Midwest through a fleet of more than 2,300 vehicles and contracts with over 50 districts. CVC DIF also stated that it had agreed to acquire ASTP from Access Holdings through DIF Infrastructure VII, and public sources reviewed do not disclose the final post-closing ownership structure.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2021,
+    "investmentYear": 2025,
+    "headquarters": "Northeast and Midwest U.S.",
+    "milestones": [
+      {
+        "date": "2021",
+        "event": "Public sources identify ASTP as having been established in 2021.",
+        "category": "Founding"
+      },
+      {
+        "date": "2021",
+        "event": "ASTP expanded into a multi-state student transportation provider serving the Northeast and Midwest.",
+        "category": "Expansion"
+      },
+      {
+        "date": "2025",
+        "event": "CVC DIF disclosed that ASTP served more than 90,000 students annually with a fleet of more than 2,300 vehicles.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Aug 12, 2025",
+        "event": "CVC DIF announced an agreement to acquire ASTP from Access Holdings through DIF Infrastructure VII.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Astpartners — American Student Transportation Partners (ASTP)",
+        "url": "https://astpartners.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Astpartners — American Student Transportation Partners (ASTP)",
+        "url": "https://astpartners.com/about-astp/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Announcement date source — CVC DIF — American Student Transportation Partners (ASTP)",
+        "url": "https://www.cvc.com/media/news/2025/cvc-dif-agrees-to-acquire-premier-us-student-transportation-operator-astp-from-access-holdings/",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Schoolbusfleet — American Student Transportation Partners (ASTP)",
+        "url": "https://www.schoolbusfleet.com/news/american-student-transportation-partners-acquired-by-cvc-dif",
+        "type": "ARTICLE",
+        "purpose": "MILESTONE_EVENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "CVC DIF",
+        "ownershipVehicle": "DIF Infrastructure VII",
+        "investmentYear": 2025,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [
+    {
+      "sourceQueueTaskId": "ledger:0467:american-student-transportation-partners:b63018e7",
+      "sourceQueueEntrySha256": "ddf54d632068817d9a3ae4be7ee466bbdc9712df87433df9ec510553553266b7",
+      "name": "American Student Transportation Partners",
+      "country": "United States",
+      "rawSeedEntrySha256": "532b171ddedda1c737362851217d8ada6ca9993d4fac8a56e9fadda0348746a6",
+      "evaluatedSeedEntrySha256": "532b171ddedda1c737362851217d8ada6ca9993d4fac8a56e9fadda0348746a6"
+    }
+  ],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj20l00cvivhe9pkvc7nw",
+        "fundName": "DIF Infrastructure VII",
+        "managerId": "cmrxpi6qi001divhesbtqsco2",
+        "updatedAt": "2026-07-23T16:09:56.469Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi6qi001divhesbtqsco2",
+        "name": "CVC DIF",
+        "updatedAt": "2026-07-23T16:09:15.930Z"
+      }
+    ],
+    "redirects": [
+      {
+        "retiredId": "cmrxpjcqb00t3ivhe6qiqp9nq",
+        "companyId": "cmrxpjct700t4ivhe097ggvuj",
+        "reason": "CANONICAL_MERGE",
+        "createdAt": "2026-07-29T04:08:38.793Z"
+      }
+    ]
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0199:american-student-transportation-partners-astp:0eaaa394",
+    "taskIndex": 199,
+    "canonicalKey": "american-student-transportation-partners-astp|united-states",
+    "capturedAt": "2026-08-24T02:42:43.224Z",
+    "databaseRevision": "revision:4f769f4313c98ccf1b59f0f7916b56986e0c5589470a539c46482c9f28f59a26",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "483a95fc3ec1b176edb0da7f6616f50e2a229e737905a3c4a1ad7a53063016ee",
+    "productionSnapshotSha256": "aeb8ac7d7d859a32ac61627b405bdc61e450bb875a7b76651f497df93d0ab668",
+    "targetCompanySnapshotSha256": "0979bb86a984acd2977afdf88d13e026769dd85a3884b64bd4aece1c7a459623",
+    "seedEntrySha256": "af073e31815c9942ca557129db5acae70c13035d49bb7ca1532af4690ccf2deb",
+    "seedRetirementCandidates": [
+      {
+        "sourceQueueTaskId": "ledger:0467:american-student-transportation-partners:b63018e7",
+        "sourceQueueEntrySha256": "ddf54d632068817d9a3ae4be7ee466bbdc9712df87433df9ec510553553266b7",
+        "name": "American Student Transportation Partners",
+        "country": "United States",
+        "rawSeedEntrySha256": "532b171ddedda1c737362851217d8ada6ca9993d4fac8a56e9fadda0348746a6",
+        "evaluatedSeedEntrySha256": "532b171ddedda1c737362851217d8ada6ca9993d4fac8a56e9fadda0348746a6"
+      }
+    ],
+    "dependencies": {
+      "ownershipPeriodsSha256": "2b4d6011d90ce11d5e698b54c76496f27ea159db84b94dbaf065b33f65faf1f3",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "588765f986a9d33b249694c8c6f470a1add55672144665c177332962aa28c52d",
+      "organizationsSha256": "7a6d6eb8c91275eb133966b74b94196b45a1b8bf9f563ec95b85cdc78132c4f4",
+      "citationsSha256": "7d2b7bf5f78dd43d8348debee3bafce43bf8872d8c8f900bca2ea1d1eb0bd2c0",
+      "redirectsSha256": "5f111d4c2503bcdcdf93415285f872e528353609672f27770546f50f43d28472"
+    },
+    "dependencySha256": "51f59b51368911b6170c83848c09d0768eef5ef87f4ba709564eeb97dce3d8fe",
+    "stateSha256": "ee513c91c6757d983c82b4c7c8af54472882b50d0748f6e5a666bda450f79eec",
+    "taskSnapshotSha256": "adbca663c78949807b702dcc90dddf5d7cb3ac95b2f29f434f6997503eec209b"
+  },
+  "contextSha256": "9d605f070476826ac727be1f2a533601ad2a56841419c9979632fe942f666640"
+}

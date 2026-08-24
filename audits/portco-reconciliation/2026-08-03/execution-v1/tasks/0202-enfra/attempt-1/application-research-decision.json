@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RECIPROCAL_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0202:enfra:7265d723",
+  "taskIndex": 202,
+  "companyName": "ENFRA",
+  "asOfDate": "2026-08-19",
+  "decision": "PROPOSED_MERGE",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-08-24T02:46:00.000Z",
+  "result": {
+    "decision": "PROPOSED_MERGE",
+    "rationale": "Keep ENFRA as the canonical survivor and merge Bernhard, LLC because the official legal FAQ proves a same-entity name change effective May 1, 2025 with no ownership or structural change. Preserve one active CVC DIF ownership period through DIF Infrastructure VI from the December 2021 close.",
+    "evidence": [
+      {"url": "https://enfrasolutions.com/about/rebrand", "purpose": "Same-entity continuity and legal-name change."},
+      {"url": "https://enfrasolutions.com/dif-capital-partners-invests-in-sustainability-and-energy-solutions-with-acquisition-of-bernhard-llc", "purpose": "DIF Infrastructure VI signed acquisition."},
+      {"url": "https://www.bernhardcapital.com/bernhard-capital-partners-completes-sale-of-bernhard-llc-to-dif-capital-partners/", "purpose": "December 2, 2021 close."},
+      {"url": "https://enfrasolutions.com/about/company-leadership", "purpose": "Current CVC DIF majority ownership."}
+    ]
+  },
+  "reciprocalResearchLineage": {
+    "coveredByTaskId": "ledger:0200:bernhard-llc:5339777c",
+    "basis": "Tasks 200 and 202 are the same predecessor-successor identity; the plan permits one focused reciprocal adjudication.",
+    "researchPrompt": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0200-bernhard-llc/attempt-1/research-prompt.md",
+    "acceptedResponse": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0200-bernhard-llc/attempt-1/chatgpt-accepted-response.txt",
+    "sourceVerification": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0200-bernhard-llc/attempt-1/source-verification.json"
+  }
+}

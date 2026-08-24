@@ -1,0 +1,322 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0198:american-roads:874323bb",
+  "taskIndex": 198,
+  "companyName": "American Roads",
+  "generatedAt": "2026-08-24T02:42:40.990Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0198-american-roads/attempt-1/authorization-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 198,
+    "taskId": "ledger:0198:american-roads:874323bb",
+    "canonicalKey": "american-roads|united-states-canada",
+    "companyName": "American Roads",
+    "country": "United States / Canada",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 34,
+    "managers": [
+      "CVC",
+      "DIF"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "ADD_PENDING_TRANSACTION"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "034-cvc:holding:002:american-roads",
+      "035-dif:holding:002:american-roads"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjevf00wbivheu50etwdq"
+    ],
+    "seedKeys": [
+      "american roads|United States / Canada"
+    ],
+    "evidenceUrls": [
+      "https://www.cvc.com/media/news/2026/cvc-dif-agrees-sale-of-american-roads-to-john-laing/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_PENDING_TRANSACTION requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjevf00wbivheu50etwdq",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "american-roads|united-states-canada",
+  "targetCompanyImage": {
+    "id": "cmrxpjevf00wbivheu50etwdq",
+    "name": "American Roads",
+    "aliases": [],
+    "sector": "TRANSPORTATION",
+    "subsector": "Toll roads and tunnel concession",
+    "region": "NORTH_AMERICA",
+    "country": "United States / Canada",
+    "countryTags": [
+      "United States",
+      "Canada"
+    ],
+    "description": "American Roads owns and operates a portfolio of tolled transportation assets in the United States. Its user base is made up of passenger and commercial vehicle traffic using the Detroit-Windsor Tunnel and three toll bridges in Alabama. The platform is asset-heavy and revenue is tied to tolling rights and concession-based transportation operations. Public sources state that the company's four operational assets serve approximately seven million trips annually across Alabama and Michigan. DIF Infrastructure V acquired American Roads in July 2018. As of the reviewed public record, a February 2026 announcement said John Laing had agreed to acquire the platform from CVC DIF, but closing had not been publicly confirmed, so CVC DIF remains treated as the current owner pending closing.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Alabama; Michigan",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk0ij01ukivhe1egc0mxo",
+        "managerName": "CVC DIF",
+        "organizationName": "CVC DIF",
+        "fundName": "DIF Infrastructure V",
+        "vehicleName": "DIF Infrastructure V",
+        "stake": null,
+        "investmentYear": 2018,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpln2a03x5ivhekh5e1a2l",
+        "date": "Jul 17, 2018",
+        "event": "DIF Infrastructure V acquired 100% of American Roads.",
+        "category": "ACQUISITION",
+        "sortDate": "2018-07-17T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpln2u03x6ivhex4dx5oci",
+        "date": "Feb 2026",
+        "event": "CVC DIF announced an agreement to sell American Roads to John Laing.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-02-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpln3e03x7ivhe0uc88xma",
+        "date": "Feb 2026",
+        "event": "Equitix-backed John Laing announced an agreement to acquire 100% of the platform from CVC DIF.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-02-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqwpm0aa0ivhe5qlant4g",
+        "label": "Americanroads — American Roads",
+        "url": "https://www.americanroads.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Americanroads company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqwqk0aa2ivhekb488ei4",
+        "label": "Americanroads — American Roads",
+        "url": "https://www.americanroads.com/Assets.aspx",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Americanroads operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqwrm0aa4ivhez78oks00",
+        "label": "Private Equity News — American Roads",
+        "url": "https://www.private-equitynews.com/news/dif-infrastructure-v-acquires-100-of-american-roads/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "DIF Infrastructure V announced the acquisition of 100% of American Roads in July 2018.",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqwsp0aa6ivhe4ic7hgtk",
+        "label": "Announcement date source — CVC DIF — American Roads",
+        "url": "https://www.cvc.com/media/news/2026/cvc-dif-agrees-sale-of-american-roads-to-john-laing/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CVC DIF transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqwtq0aa8ivheobirib0v",
+        "label": "Announcement date source — Equitix / John Laing — American Roads",
+        "url": "https://www.laing.com/insights/john-laing-agrees-to-acquire-us-road-transportation-platform-from-cvc-dif/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Equitix / John Laing transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqwuu0aaaivhecjlhb9e0",
+        "label": "Ownership structure source — Equitix — John Laing Investments Limited",
+        "url": "https://www.debevoise.com/news/2021/05/debevoise-advises-pantheon-in-its-role-in",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Ownership structure source — Equitix — John Laing Investments Limited",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqwva0aabivhek2oldh9z",
+        "label": "ENR",
+        "url": "https://www.enr.com/articles/62530-john-laing-to-acquire-american-roads-signaling-durable-demand-for-us-toll-assets",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "ENR operations / asset details",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "American Roads",
+    "investmentFirm": "Equitix",
+    "sector": "Transportation",
+    "subsector": "Toll roads and tunnel concession",
+    "region": "North America",
+    "country": "United States / Canada",
+    "ownershipVehicle": "DIF Infrastructure V",
+    "description": "American Roads owns and operates a portfolio of tolled transportation assets in the United States. Its user base is made up of passenger and commercial vehicle traffic using the Detroit-Windsor Tunnel and three toll bridges in Alabama. The platform is asset-heavy and revenue is tied to tolling rights and concession-based transportation operations. Public sources state that the company's four operational assets serve approximately seven million trips annually across Alabama and Michigan. DIF Infrastructure V acquired American Roads in July 2018. As of the reviewed public record, a February 2026 announcement said John Laing had agreed to acquire the platform from CVC DIF, but closing had not been publicly confirmed, so CVC DIF remains treated as the current owner pending closing.",
+    "status": "Active",
+    "countryTags": [
+      "United States",
+      "Canada"
+    ],
+    "investmentYear": 2018,
+    "headquarters": "Alabama; Michigan",
+    "milestones": [
+      {
+        "date": "Jul 17, 2018",
+        "event": "DIF Infrastructure V acquired 100% of American Roads.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Feb 2026",
+        "event": "CVC DIF announced an agreement to sell American Roads to John Laing.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Feb 2026",
+        "event": "Equitix-backed John Laing announced an agreement to acquire 100% of the platform from CVC DIF.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Americanroads — American Roads",
+        "url": "https://www.americanroads.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Americanroads — American Roads",
+        "url": "https://www.americanroads.com/Assets.aspx",
+        "type": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Private Equity News — American Roads",
+        "url": "https://www.private-equitynews.com/news/dif-infrastructure-v-acquires-100-of-american-roads/",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "DIF Infrastructure V announced the acquisition of 100% of American Roads in July 2018."
+      },
+      {
+        "label": "Announcement date source — CVC DIF — American Roads",
+        "url": "https://www.cvc.com/media/news/2026/cvc-dif-agrees-sale-of-american-roads-to-john-laing/",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Announcement date source — Equitix / John Laing — American Roads",
+        "url": "https://www.laing.com/insights/john-laing-agrees-to-acquire-us-road-transportation-platform-from-cvc-dif/",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Ownership structure source — Equitix — John Laing Investments Limited",
+        "url": "https://www.debevoise.com/news/2021/05/debevoise-advises-pantheon-in-its-role-in",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "ENR - INF-2026-044 - American Roads",
+        "url": "https://www.enr.com/articles/62530-john-laing-to-acquire-american-roads-signaling-durable-demand-for-us-toll-assets",
+        "type": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "CVC DIF",
+        "ownershipVehicle": "DIF Infrastructure V",
+        "investmentYear": 2018,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj1zc00ctivhebba7kq3a",
+        "fundName": "DIF Infrastructure V",
+        "managerId": "cmrxpi6qi001divhesbtqsco2",
+        "updatedAt": "2026-07-23T16:09:56.424Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi6qi001divhesbtqsco2",
+        "name": "CVC DIF",
+        "updatedAt": "2026-07-23T16:09:15.930Z"
+      },
+      {
+        "id": "cmrxpivna0097ivheghay4wbn",
+        "name": "John Laing",
+        "updatedAt": "2026-07-23T16:09:48.214Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0198:american-roads:874323bb",
+    "taskIndex": 198,
+    "canonicalKey": "american-roads|united-states-canada",
+    "capturedAt": "2026-08-24T02:42:40.990Z",
+    "databaseRevision": "revision:be5ff59d37033b1bd96aa9a06af319e25ee8804a4d0a6991ca92ee9b57fd445f",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "4b73cc674a81395785253ede3058e04826a40af8b0def478cdeb0246146c0ec0",
+    "productionSnapshotSha256": "f3c39dcd5e1a667b8cde45a43ba3e3f86462c2af9bc95dc2e1c42f4baf5b747e",
+    "targetCompanySnapshotSha256": "b0c249ed4c1c29c7be412007ff8cb7b797cf5ea949e5c6590e5aeb9c581f5f55",
+    "seedEntrySha256": "8db097609c59ddc529200a1346fe4e4cb155d7648f055ce273bf65ca1fc89787",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4ba127dea80d718e3553bb5537694fb7426a3f4b99f7dab9b74b9e00e4d5ff30",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "d7f0746bdf30b67cdb2e6314f4f426245efdbfa32965dac76568dfb2c21401d5",
+      "organizationsSha256": "1d0e31311b607b1dc448f2d2e8ffd39d5c79e56143cb28852bbd1839fef6bc1d",
+      "citationsSha256": "d7f73e20be5606f2aa99d28d16e22ee42c80e3f3a9c763a20b33c0b8225b95dc",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "1b5fca09bf160d14ae9316b724d3e54ee5678702fbbad071206b34a7dc4d0c5f",
+    "stateSha256": "80dca7eb9cfe5bd30d6b135cd87dfaaa3ef10519e75ee3c583efc605289c3833",
+    "taskSnapshotSha256": "9011c56f99ee0eb566a2edcac20368b0a86580ccfca821f3f543b186e441b8cb"
+  },
+  "contextSha256": "2254cef4994702cd8ca651b8b0834a78ea70b8d7602479645bf5fc9706c9bce5"
+}

@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_SEED_ATTRIBUTION_RECONCILIATION_SPEC",
+  "batchId": "batch-0198-0202-v1",
+  "batchSha256": "ebfb5307c329991a373ad45481874eb65630624d15f508af749a4cd5ce28d0ba",
+  "reconciledAt": "2026-08-24T02:51:00.000Z",
+  "sourceManifestSha256": "7227892c35741d160bfc46f84e136eed5a062ee6a650f418b194d89d2b46d2f1",
+  "rationale": "Align the active-owner attribution ledger with the approved bundle after-images: replace American Roads' realized CVC DIF row with current 100% John Laing ownership, retire the unparenthesized ASTP seed-only duplicate attribution, retire the duplicate Bernhard predecessor attribution after its merge into ENFRA, and update ENFRA's existing CVC DIF row with the disclosed majority-ownership text. CARMA's active CVC DIF and DIF Infrastructure VIII owner key is unchanged; TerraNova is former and therefore does not enter the active-owner attribution ledger.",
+  "removeRecordIds": ["OFA-C15F2AFE8D30", "OFA-B2D414FFEFC4", "OFA-C2769F556017"],
+  "upsertRecords": [
+    {
+      "recordId": "OFA-34CFA0D4A510",
+      "companyName": "American Roads",
+      "country": "United States / Canada",
+      "investmentFirm": "John Laing",
+      "currentVehicleName": "John Laing",
+      "investmentYear": 2026,
+      "stake": "100%",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "John Laing directly reports 100% ownership of American Roads after announcing financial close on April 28, 2026. Public sources do not identify a separate fund or acquisition SPV, so the active holding is recorded as a direct John Laing program without an inferred fund.",
+      "evidenceUrls": ["https://www.laing.com/portfolio/american-roads-us/", "https://www.linkedin.com/posts/john-laing_jl-american-roads-activity-7455005298681004034-0czR"]
+    },
+    {
+      "recordId": "OFA-969769738F27",
+      "companyName": "CARMA Corp.",
+      "country": "Canada",
+      "investmentFirm": "CVC DIF",
+      "currentVehicleName": "DIF Infra 8 Canada Holdco 2 Ltd.",
+      "investmentYear": 2025,
+      "stake": null,
+      "targetLinkedFundName": "DIF Infrastructure VIII",
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "DIF Infrastructure VIII",
+      "attributionConfidence": null,
+      "attributionRationale": "CVC DIF acquired CARMA through DIF Infrastructure VIII in December 2025. The Investment Canada Act database identifies DIF Infra 8 Canada Holdco 2 Ltd. as the acquisition vehicle; the acquired percentage is not publicly disclosed.",
+      "evidenceUrls": ["https://www.cvc.com/media/news/2025/cvc-dif-to-acquire-carma-corp-a-leading-canadian-submetering-and-essential-building-services-platform/", "https://central.cvca.ca/cvca-awards/terranova-partners-wins-2026-pe-deal-of-the-year-award-for-carma-corp/", "https://ised-isde.canada.ca/site/investment-canada-act/en/node/240046"]
+    },
+    {
+      "recordId": "OFA-71957B17A181",
+      "companyName": "ENFRA",
+      "country": "United States",
+      "investmentFirm": "CVC DIF",
+      "currentVehicleName": "DIF Infrastructure VI",
+      "investmentYear": 2021,
+      "stake": "Majority ownership; exact percentage not publicly disclosed",
+      "targetLinkedFundName": "DIF Infrastructure VI",
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "DIF Infrastructure VI",
+      "attributionConfidence": null,
+      "attributionRationale": "DIF Infrastructure VI acquired the Bernhard platform in December 2021. The same legal entity became ENFRA, LLC in May 2025 without an ownership change, and ENFRA continues to identify CVC DIF as its majority owner; the exact percentage is not publicly disclosed.",
+      "evidenceUrls": ["https://enfrasolutions.com/about/rebrand", "https://enfrasolutions.com/dif-capital-partners-invests-in-sustainability-and-energy-solutions-with-acquisition-of-bernhard-llc", "https://www.bernhardcapital.com/bernhard-capital-partners-completes-sale-of-bernhard-llc-to-dif-capital-partners/", "https://enfrasolutions.com/about/company-leadership"]
+    }
+  ],
+  "specSha256": "11ea400995ab84a2041bbef3788c86f0a5884a13e1cd3dc8c6945f5c1869b7ec"
+}

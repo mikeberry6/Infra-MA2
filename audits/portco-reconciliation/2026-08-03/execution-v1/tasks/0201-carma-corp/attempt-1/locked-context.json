@@ -1,0 +1,268 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0201:carma-corp:7b48e49a",
+  "taskIndex": 201,
+  "companyName": "CARMA Corp.",
+  "generatedAt": "2026-08-24T02:29:12.345Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0201-carma-corp/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 201,
+    "taskId": "ledger:0201:carma-corp:7b48e49a",
+    "canonicalKey": "carma-corp|canada",
+    "companyName": "CARMA Corp.",
+    "country": "Canada",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 34,
+    "managers": [
+      "CVC",
+      "DIF"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "ADD_PENDING_TRANSACTION"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "034-cvc:holding:007:carma-corp",
+      "035-dif:holding:007:carma-corp"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjcvs00t9ivhes1jkf37g"
+    ],
+    "seedKeys": [
+      "carma corp.|Canada"
+    ],
+    "evidenceUrls": [
+      "https://www.cvc.com/media/news/2025/cvc-dif-to-acquire-carma-corp-a-leading-canadian-submetering-and-essential-building-services-platform/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_PENDING_TRANSACTION requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjcvs00t9ivhes1jkf37g",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "carma-corp|canada",
+  "targetCompanyImage": {
+    "id": "cmrxpjcvs00t9ivhes1jkf37g",
+    "name": "CARMA Corp.",
+    "aliases": [],
+    "sector": "UTILITIES",
+    "subsector": "Submetering and utility billing",
+    "region": "NORTH_AMERICA",
+    "country": "Canada",
+    "countryTags": [
+      "Canada"
+    ],
+    "description": "CARMA provides submetering, utility billing, and essential building services for multi-residential and commercial properties in Canada. Its customers are building owners, managers, and residents that require consumption measurement, billing administration, and related services tied to utility infrastructure. The platform is infrastructure-linked and recurring because it depends on installed metering assets, contracted service relationships, and long-duration building exposure. CVC DIF announced in 2025 that CARMA operated across more than 1,000 buildings and approximately 135,000 units in Ontario, Alberta, British Columbia, and Nova Scotia. CVC DIF also stated that it had signed a definitive agreement to acquire CARMA through DIF Infrastructure VIII, and public sources reviewed do not disclose the post-closing ownership structure.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 1977,
+    "headquarters": "Ontario; Alberta; British Columbia; Nova Scotia",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjyd401r7ivhe8d9ndnfn",
+        "managerName": "CVC DIF",
+        "organizationName": "CVC DIF",
+        "fundName": "DIF Infrastructure VIII",
+        "vehicleName": "DIF Infrastructure VIII",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpleh603mwivheg8umrhys",
+        "date": "1977",
+        "event": "CVC DIF identified 1977 as CARMA's founding year.",
+        "category": "OTHER",
+        "sortDate": "1977-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplehp03mxivhe6e8uuyoy",
+        "date": "1977",
+        "event": "CARMA Corp. was founded.",
+        "category": "FOUNDING",
+        "sortDate": "1977-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpleia03myivherf77urjb",
+        "date": "2025",
+        "event": "CVC DIF disclosed that CARMA served approximately 135,000 units across more than 1,000 buildings.",
+        "category": "EXPANSION",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpleiw03mzivheyp583mx6",
+        "date": "Sep 15, 2025",
+        "event": "CVC DIF announced a definitive agreement to acquire CARMA through DIF Infrastructure VIII.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-09-15T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqg6909lnivhe8jwwuf2w",
+        "label": "Carmacorp — CARMA Corp.",
+        "url": "https://carmacorp.com/about/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Carmacorp company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqg7e09lpivhe749eoqwl",
+        "label": "Announcement date source — CVC DIF — CARMA Corp.",
+        "url": "https://www.cvc.com/media/news/2025/cvc-dif-to-acquire-carma-corp-a-leading-canadian-submetering-and-essential-building-services-platform/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CVC DIF transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqg8i09lrivhetnvp2t7n",
+        "label": "Ca — CARMA Corp.",
+        "url": "https://ca.linkedin.com/company/carmacorp",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Ca — CARMA Corp.",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "CARMA Corp.",
+    "investmentFirm": "CVC DIF",
+    "sector": "Utilities",
+    "subsector": "Submetering and utility billing",
+    "region": "North America",
+    "country": "Canada",
+    "ownershipVehicle": "DIF Infrastructure VIII",
+    "description": "CARMA provides submetering, utility billing, and essential building services for multi-residential and commercial properties in Canada. Its customers are building owners, managers, and residents that require consumption measurement, billing administration, and related services tied to utility infrastructure. The platform is infrastructure-linked and recurring because it depends on installed metering assets, contracted service relationships, and long-duration building exposure. CVC DIF announced in 2025 that CARMA operated across more than 1,000 buildings and approximately 135,000 units in Ontario, Alberta, British Columbia, and Nova Scotia. CVC DIF also stated that it had signed a definitive agreement to acquire CARMA through DIF Infrastructure VIII, and public sources reviewed do not disclose the post-closing ownership structure.",
+    "status": "Active",
+    "countryTags": [
+      "Canada"
+    ],
+    "yearFounded": 1977,
+    "investmentYear": 2025,
+    "headquarters": "Ontario; Alberta; British Columbia; Nova Scotia",
+    "milestones": [
+      {
+        "date": "1977",
+        "event": "CVC DIF identified 1977 as CARMA's founding year.",
+        "category": "Other"
+      },
+      {
+        "date": "1977",
+        "event": "CARMA Corp. was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "2025",
+        "event": "CVC DIF disclosed that CARMA served approximately 135,000 units across more than 1,000 buildings.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Sep 15, 2025",
+        "event": "CVC DIF announced a definitive agreement to acquire CARMA through DIF Infrastructure VIII.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Carmacorp — CARMA Corp.",
+        "url": "https://carmacorp.com/about/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Announcement date source — CVC DIF — CARMA Corp.",
+        "url": "https://www.cvc.com/media/news/2025/cvc-dif-to-acquire-carma-corp-a-leading-canadian-submetering-and-essential-building-services-platform/",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Ca — CARMA Corp.",
+        "url": "https://ca.linkedin.com/company/carmacorp",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "CVC DIF",
+        "ownershipVehicle": "DIF Infrastructure VIII",
+        "investmentYear": 2025,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj21000cwivhenhhbsted",
+        "fundName": "DIF Infrastructure VIII",
+        "managerId": "cmrxpi6qi001divhesbtqsco2",
+        "updatedAt": "2026-08-03T17:25:32.335Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi6qi001divhesbtqsco2",
+        "name": "CVC DIF",
+        "updatedAt": "2026-07-23T16:09:15.930Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0201:carma-corp:7b48e49a",
+    "taskIndex": 201,
+    "canonicalKey": "carma-corp|canada",
+    "capturedAt": "2026-08-24T02:29:12.345Z",
+    "databaseRevision": "revision:6cb33c35bc90c6423a6bb1f568b1ee8ef5669ff300375997238332e800591821",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "d7de6bb25eda809125a885f2b2220394a9f421ccbc2f933f23ea02a130d52979",
+    "productionSnapshotSha256": "4e124c2d0b4eccbd353b3e29a2bf971acd8b4e89d35b736fc3b0ca2da21c1acf",
+    "targetCompanySnapshotSha256": "b529c84e7a5048145cb001ef602a9237569c58f2b49411094e62b476ef56ab2a",
+    "seedEntrySha256": "e69e0937b553afc803040e02eafd2612d3c8625de4f6627dd70a6241536a710d",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "c8a1fc37a41f65fc6b8174c5fc75dff1eab37f627ab3073532148e97a27e5e37",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "aabbb930b452e14a8769a138a24c51dfe9e9d1c169202399d9fa05ffdd48da57",
+      "organizationsSha256": "7a6d6eb8c91275eb133966b74b94196b45a1b8bf9f563ec95b85cdc78132c4f4",
+      "citationsSha256": "9974539e88c01ee02ed92b205f1bb52ca8b02c130092cf92192b923ccfb0edeb",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "3ac971309defb1526c71ea769344c9b339af0dfb4b15cf8f1f0b64ab7b626e83",
+    "stateSha256": "68fafb86fd69b1076e90891a1838320c533abf39c3d4a35ca9deec5a2030e317",
+    "taskSnapshotSha256": "9e46a22da6512b128fe3dd93f87484adb70a6dec32109cd4a935e9be1cccd932"
+  },
+  "contextSha256": "1f2e3d7be3ebdd269c1da419a1000d8bf900467c792f1379970cedabe5961cb2"
+}

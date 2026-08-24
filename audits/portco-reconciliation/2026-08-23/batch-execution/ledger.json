@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-24T02:15:10.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-08-24T03:00:49Z",
+  "activeBatchId": "batch-0198-0202-v1",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -2294,7 +2294,65 @@
           "reason": "Atomic PortCo receipt, four after-image checks, canonical redirect, three public APIs, one expected archived-company absence, rendered drawers and exact canonical deployment verification passed."
         }
       ]
+    },
+    {
+      "batchId": "batch-0198-0202-v1",
+      "state": "RELEASING",
+      "taskIds": [
+        "ledger:0198:american-roads:874323bb",
+        "ledger:0199:american-student-transportation-partners-astp:0eaaa394",
+        "ledger:0200:bernhard-llc:5339777c",
+        "ledger:0201:carma-corp:7b48e49a",
+        "ledger:0202:enfra:7265d723"
+      ],
+      "taskIndexes": [
+        198,
+        199,
+        200,
+        201,
+        202
+      ],
+      "createdAt": "2026-08-24T02:22:59.000Z",
+      "updatedAt": "2026-08-24T03:00:49Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0198-0202-v1/batch-manifest.json",
+        "sha256": "ebfb5307c329991a373ad45481874eb65630624d15f508af749a4cd5ce28d0ba"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-24T02:22:59.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-24T02:59:48Z",
+          "evidenceSha256": [
+            "ebfb5307c329991a373ad45481874eb65630624d15f508af749a4cd5ce28d0ba"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "RELEASING",
+          "at": "2026-08-24T03:00:49Z",
+          "evidenceSha256": [
+            "ebfb5307c329991a373ad45481874eb65630624d15f508af749a4cd5ce28d0ba"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "13d0f7366569669d9b726aa0eaf8a428cf02abcfaf4a298b90a1fb4f0f0d625d"
+  "ledgerSha256": "f1c72a34567d5dcb9391353552c09c81b3431a6fbbca2907ad77b251e882136f"
 }

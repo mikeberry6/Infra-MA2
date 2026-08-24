@@ -616,13 +616,22 @@ export async function supersedeStagedApprovedSeedAfterImage(input: {
   supersededApproval: ReconciliationApproval;
   supersedingProposal: ReconciliationProposal;
   supersedingApproval: ReconciliationApproval;
+  approvedProductionSnapshot: ProductionSnapshot;
 }): Promise<{ artifactPath: string; artifactSha256: string; removedProposalSha256: string }> {
   const artifactPath = resolve(input.artifactPath);
   if (!artifactPath.endsWith(`/${APPROVED_SEED_BASENAME}`)) {
     throw new Error(`Seed writes are target-pinned to ${APPROVED_SEED_BASENAME}`);
   }
-  const superseded = buildApprovedSeedEntry(input.supersededProposal, input.supersededApproval);
-  const superseding = buildApprovedSeedEntry(input.supersedingProposal, input.supersedingApproval);
+  const superseded = buildApprovedSeedEntry(
+    input.supersededProposal,
+    input.supersededApproval,
+    input.approvedProductionSnapshot,
+  );
+  const superseding = buildApprovedSeedEntry(
+    input.supersedingProposal,
+    input.supersedingApproval,
+    input.approvedProductionSnapshot,
+  );
   if (
     superseded.taskId !== superseding.taskId
     || input.supersededProposal.taskIndex !== input.supersedingProposal.taskIndex
