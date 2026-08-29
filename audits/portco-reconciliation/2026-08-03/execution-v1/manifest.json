@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-29T06:17:30.000Z",
+  "updatedAt": "2026-08-29T07:07:44.000Z",
   "runStatus": "IDLE",
   "activeTaskId": null,
   "source": {
@@ -24727,23 +24727,44 @@
       "managerIndex": 34,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "1ec522a7e0188e5924cbab1de900c99ea48d085f3ec075efcb31b691b932e166",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-08-29T06:25:35.000Z",
+      "updatedAt": "2026-08-29T07:07:44.000Z",
+      "completedAt": "2026-08-29T07:07:44.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "9d4f01de2ff7ff4f26c5afcb214d0f1d9a75d6300c8bdbd8c8f6eed163203c83",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0209-tonaquint-data-centers/attempt-1/locked-task-snapshot.json",
+          "sha256": "9d4f01de2ff7ff4f26c5afcb214d0f1d9a75d6300c8bdbd8c8f6eed163203c83"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0209-valorc3-data-centers-v1/proposal.json",
+          "sha256": "5f2648ca43aef481e8afeaeceb24a7a873e6e328f9d179300e126b630d6e548a"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0209-valorc3-data-centers-v1.json",
+          "sha256": "2c9ab8f247958f992a6d22d03956c7f6ba801c22813598f9eeb0d313fd14d6a3"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0209-0213-v1/production-apply/batch-apply-receipt.json#members/0/receipt",
+          "sha256": "0e061394b96e751801c653135a14bee68081bc2d7ba8f01522d2dd8a2bbf119e"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0209-valorc3-data-centers-v1/proposal.json#afterImage",
+          "sha256": "9e370772773ca9fd063d2a91f7b0f2d7179af9fa1ef58684ba8b6806802d2d42"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-29T07:07:44.000Z",
+        "auditEventId": "cmte16ciu000cv02baxm7xrhv",
+        "transactionId": "44507fde-d8d2-46b5-bdd4-73985198271c",
+        "receiptSha256": "0e061394b96e751801c653135a14bee68081bc2d7ba8f01522d2dd8a2bbf119e",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33239717004"
+      },
       "history": [
         {
           "sequence": 1,
@@ -24754,6 +24775,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-08-29T07:07:44.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0209-0213-v1.",
+          "taskSnapshotSha256": "9d4f01de2ff7ff4f26c5afcb214d0f1d9a75d6300c8bdbd8c8f6eed163203c83",
+          "evidenceSha256": [
+            "0e061394b96e751801c653135a14bee68081bc2d7ba8f01522d2dd8a2bbf119e",
+            "242168a778b8dd6b38a83ccaaf56eab68d833c026df7e51e88228a74781bdee7",
+            "2c9ab8f247958f992a6d22d03956c7f6ba801c22813598f9eeb0d313fd14d6a3",
+            "5f2648ca43aef481e8afeaeceb24a7a873e6e328f9d179300e126b630d6e548a",
+            "9d4f01de2ff7ff4f26c5afcb214d0f1d9a75d6300c8bdbd8c8f6eed163203c83",
+            "9e370772773ca9fd063d2a91f7b0f2d7179af9fa1ef58684ba8b6806802d2d42",
+            "b92c30918cfc5fde5cd1e648e523c01d49942ce4ac32586d4a8a11ebffd8f1a9"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -24765,20 +24804,26 @@
       "managerIndex": 34,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "399b2cb465b4568716f3cea4099bafd596ee9c14be37ea8e1ff3620998e218a5",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
-      "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "status": "SUPERSEDED",
+      "attempts": 1,
+      "startedAt": "2026-08-29T06:25:35.000Z",
+      "updatedAt": "2026-08-29T07:07:44.000Z",
+      "completedAt": "2026-08-29T07:07:44.000Z",
+      "exceptionReason": "Task 209 resolves Tonaquint Data Centers and ValorC3 as one continuing legal and operating platform. It keeps the existing ValorC3 record, merges the Tonaquint duplicate and preserves the complete CVC DIF / DIF CIF III ownership judgment, so task 210 would duplicate that same identity and ownership work.",
+      "supersededByTaskId": "ledger:0209:tonaquint-data-centers:c32a57e3",
+      "taskSnapshotSha256": "2be46627086a4f95860ae3d81df44cb2c1037f89b7d14444efac82658a8a958f",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0210-valorc3/attempt-1/locked-task-snapshot.json",
+          "sha256": "2be46627086a4f95860ae3d81df44cb2c1037f89b7d14444efac82658a8a958f"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0210-valorc3/attempt-1/terminal-decision.json",
+          "sha256": "ee2d8e4d938cda47ab41ea7edaa914811c912840666ba671845337bb7374faf3"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -24792,6 +24837,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "SUPERSEDED",
+          "at": "2026-08-29T07:07:44.000Z",
+          "reason": "Task 209 resolves Tonaquint Data Centers and ValorC3 as one continuing legal and operating platform. It keeps the existing ValorC3 record, merges the Tonaquint duplicate and preserves the complete CVC DIF / DIF CIF III ownership judgment, so task 210 would duplicate that same identity and ownership work.",
+          "taskSnapshotSha256": "2be46627086a4f95860ae3d81df44cb2c1037f89b7d14444efac82658a8a958f",
+          "evidenceSha256": [
+            "242168a778b8dd6b38a83ccaaf56eab68d833c026df7e51e88228a74781bdee7",
+            "2be46627086a4f95860ae3d81df44cb2c1037f89b7d14444efac82658a8a958f",
+            "b92c30918cfc5fde5cd1e648e523c01d49942ce4ac32586d4a8a11ebffd8f1a9",
+            "ee2d8e4d938cda47ab41ea7edaa914811c912840666ba671845337bb7374faf3"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -24803,23 +24863,44 @@
       "managerIndex": 36,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "e27755c0bf50a54cd593c26ded8fe04ef8a99e659f6abf83399092fe8bcc5ef8",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-08-29T06:25:35.000Z",
+      "updatedAt": "2026-08-29T07:07:44.000Z",
+      "completedAt": "2026-08-29T07:07:44.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "1eaeb97ac71b367ec7edad0967cd50d7af4a252f56ea16d3f501cad6326c1983",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0211-beanfield-metroconnect/attempt-1/locked-task-snapshot.json",
+          "sha256": "1eaeb97ac71b367ec7edad0967cd50d7af4a252f56ea16d3f501cad6326c1983"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0211-beanfield-metroconnect-v1/proposal.json",
+          "sha256": "12762bf4a650106408ae2ae42606cbc3a1dd142af746ba0c19208d1b5fff4465"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0211-beanfield-metroconnect-v1.json",
+          "sha256": "cf7889c56687ff7ed216b6fbf3df16fb10b5b592cb5b149495d4a48a9ed41592"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0209-0213-v1/production-apply/batch-apply-receipt.json#members/2/receipt",
+          "sha256": "0f5d2a828edfad8695a34a7d1a1e6a109a410ecee9939f3613259cbdc721ac23"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0211-beanfield-metroconnect-v1/proposal.json#afterImage",
+          "sha256": "6f1d81d0e9bffbfda7ea98ee826b6d0b9bc566686e24a9df2b37b2420c1826d3"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-29T07:07:44.000Z",
+        "auditEventId": "cmte16kth000kv02bpymbozlt",
+        "transactionId": "44507fde-d8d2-46b5-bdd4-73985198271c",
+        "receiptSha256": "0f5d2a828edfad8695a34a7d1a1e6a109a410ecee9939f3613259cbdc721ac23",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33239717004"
+      },
       "history": [
         {
           "sequence": 1,
@@ -24830,6 +24911,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-08-29T07:07:44.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0209-0213-v1.",
+          "taskSnapshotSha256": "1eaeb97ac71b367ec7edad0967cd50d7af4a252f56ea16d3f501cad6326c1983",
+          "evidenceSha256": [
+            "0f5d2a828edfad8695a34a7d1a1e6a109a410ecee9939f3613259cbdc721ac23",
+            "12762bf4a650106408ae2ae42606cbc3a1dd142af746ba0c19208d1b5fff4465",
+            "1eaeb97ac71b367ec7edad0967cd50d7af4a252f56ea16d3f501cad6326c1983",
+            "242168a778b8dd6b38a83ccaaf56eab68d833c026df7e51e88228a74781bdee7",
+            "6f1d81d0e9bffbfda7ea98ee826b6d0b9bc566686e24a9df2b37b2420c1826d3",
+            "b92c30918cfc5fde5cd1e648e523c01d49942ce4ac32586d4a8a11ebffd8f1a9",
+            "cf7889c56687ff7ed216b6fbf3df16fb10b5b592cb5b149495d4a48a9ed41592"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -24841,20 +24940,26 @@
       "managerIndex": 36,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "8809dfc7dde133300850d4eb14d7863e569a183e1ce7dcd2780670e5c2cf4eaf",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "VERIFIED_NO_CHANGE",
+      "attempts": 1,
+      "startedAt": "2026-08-29T06:25:35.000Z",
+      "updatedAt": "2026-08-29T07:07:44.000Z",
+      "completedAt": "2026-08-29T07:07:44.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "671a003dc944a7c38bfc631c1b23887759234dd16bb88fa5fb33d5c6da0c3c9d",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0212-boingo-wireless/attempt-1/locked-task-snapshot.json",
+          "sha256": "671a003dc944a7c38bfc631c1b23887759234dd16bb88fa5fb33d5c6da0c3c9d"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0212-boingo-wireless/attempt-1/terminal-decision.json",
+          "sha256": "b99f93a16cfa474c29f31e917a01ffda272c18535a947720c512600ecfd625e9"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -24868,6 +24973,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "VERIFIED_NO_CHANGE",
+          "at": "2026-08-29T07:07:44.000Z",
+          "reason": "Boingo Wireless is one continuing U.S. platform acquired by Digital Colony Partners II, now DigitalBridge Partners II, on June 2, 2021. Current Boingo and DigitalBridge pages continue to support DigitalBridge ownership. No direct InfraBridge equity interest, duplicate identity, successor, or signed or closed Boingo exit was identified through August 19, 2026.",
+          "taskSnapshotSha256": "671a003dc944a7c38bfc631c1b23887759234dd16bb88fa5fb33d5c6da0c3c9d",
+          "evidenceSha256": [
+            "242168a778b8dd6b38a83ccaaf56eab68d833c026df7e51e88228a74781bdee7",
+            "671a003dc944a7c38bfc631c1b23887759234dd16bb88fa5fb33d5c6da0c3c9d",
+            "b92c30918cfc5fde5cd1e648e523c01d49942ce4ac32586d4a8a11ebffd8f1a9",
+            "b99f93a16cfa474c29f31e917a01ffda272c18535a947720c512600ecfd625e9"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -24879,20 +24999,26 @@
       "managerIndex": 36,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "768b5d3cfeb382a90c7e1864b1b0295c4ed687793e89c105390f88c9cbe746c8",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
+      "status": "DEFERRED",
+      "attempts": 1,
+      "startedAt": "2026-08-29T06:25:35.000Z",
+      "updatedAt": "2026-08-29T07:07:44.000Z",
+      "completedAt": "2026-08-29T07:07:44.000Z",
+      "exceptionReason": "The 2025 filing verifies Stonepeak 42%, KH Killington 32% and Other Members 26%, but not Northleaf. Northleaf's indexed page calls its November 2015 ExteNet investment active while the live page omits it; regulatory owner tables omit Northleaf, and no direct exit, transfer or current-holder record was found. Northleaf may be current below 20%, former or indirect, so ownership is blocking. JH is only the 2020-2021 transaction vehicle and KH only the 2024-2025 chart label; no legal succession is assumed.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "2758e5c3a1150cc695fd4d194dd0bd697e6d5b5128c49a731784f2564ac4e963",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0213-extenet-formerly-extenet-systems/attempt-1/locked-task-snapshot.json",
+          "sha256": "2758e5c3a1150cc695fd4d194dd0bd697e6d5b5128c49a731784f2564ac4e963"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0213-extenet-formerly-extenet-systems/attempt-1/terminal-decision.json",
+          "sha256": "382e6ed9c8b54719db3ea09d45aa6aec8fac7494c1aa68192fb63c3bb7e8c31f"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -24906,6 +25032,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-08-29T07:07:44.000Z",
+          "reason": "The 2025 filing verifies Stonepeak 42%, KH Killington 32% and Other Members 26%, but not Northleaf. Northleaf's indexed page calls its November 2015 ExteNet investment active while the live page omits it; regulatory owner tables omit Northleaf, and no direct exit, transfer or current-holder record was found. Northleaf may be current below 20%, former or indirect, so ownership is blocking. JH is only the 2020-2021 transaction vehicle and KH only the 2024-2025 chart label; no legal succession is assumed.",
+          "taskSnapshotSha256": "2758e5c3a1150cc695fd4d194dd0bd697e6d5b5128c49a731784f2564ac4e963",
+          "evidenceSha256": [
+            "242168a778b8dd6b38a83ccaaf56eab68d833c026df7e51e88228a74781bdee7",
+            "2758e5c3a1150cc695fd4d194dd0bd697e6d5b5128c49a731784f2564ac4e963",
+            "382e6ed9c8b54719db3ea09d45aa6aec8fac7494c1aa68192fb63c3bb7e8c31f",
+            "b92c30918cfc5fde5cd1e648e523c01d49942ce4ac32586d4a8a11ebffd8f1a9"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -35865,5 +36006,5 @@
       ]
     }
   ],
-  "manifestSha256": "a930d0f1990097ef8b63b44a9973bb516e5b89d946f3dbe8240600753457a226"
+  "manifestSha256": "412cfa3e3f860e14ed524d867ea78a0f00b291e471d7caad220f88bbda077401"
 }
