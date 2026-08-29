@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_RECEIPT",
+  "manifestSha256": "27e34f826fcf0a2dd28a4c46c055d98b9df6f23240356a4b9a69affd54e0693f",
+  "approvalSha256": "06c0cf44d8231404343c1c62bc5ab7485bf3657bad1cb1749c114c7784133629",
+  "environment": "production",
+  "pipelineRunId": "cmtepawvg0000fo2b55ujgppu",
+  "mutationCount": 1,
+  "changed": 1,
+  "idempotent": false,
+  "beforeFingerprint": "dd902ecac7ef9ba35dd4a1c6736c05c4f65156ca5f89b772cc2857caf709fe23",
+  "afterFingerprint": "db54c4b5d3941211554cac3f3da705f7925a982941f644126dfee96b76b1aebf",
+  "rows": [
+    {
+      "recordId": "OFA-279285F87BBB",
+      "ownershipPeriodId": "cmteolk0g0001yp2blb2la8vg",
+      "companyId": "cmrxpjfxp00xxivhe1mkhiraq",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Pennybacker-affiliated funds / corporate equity",
+        "attributionConfidence": null,
+        "attributionRationale": "Cambrian's direct acquisition announcement identifies Pennybacker-affiliated funds as the November 2023 corporate acquirer and current company materials continue that ownership attribution. No specific Pennybacker managed fund is publicly named, so the disclosed vehicle description is retained without a curated fund link."
+      }
+    }
+  ],
+  "appliedAt": "2026-08-29T18:15:24.253Z",
+  "receiptSha256": "cc5a39172cc8a4fb6b8d7cf69968d007f000f3f6e0a8ca661465ae4ff58c9b4a"
+}
