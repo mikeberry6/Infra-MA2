@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_COMMIT_RECEIPT",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0209-0213-v1",
+  "batchSha256": "b92c30918cfc5fde5cd1e648e523c01d49942ce4ac32586d4a8a11ebffd8f1a9",
+  "releaseSha": "fbbdf82fcf0cb48ea8d9538bc747a3ce328752b3",
+  "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+  "transactionId": "44507fde-d8d2-46b5-bdd4-73985198271c",
+  "appliedAt": "2026-08-29T07:00:10.993Z",
+  "members": [
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0209:tonaquint-data-centers:c32a57e3",
+      "taskIndex": 209,
+      "companyName": "Tonaquint Data Centers",
+      "proposalSha256": "5f2648ca43aef481e8afeaeceb24a7a873e6e328f9d179300e126b630d6e548a",
+      "approvalSha256": "2c9ab8f247958f992a6d22d03956c7f6ba801c22813598f9eeb0d313fd14d6a3",
+      "afterImageSha256": "9e370772773ca9fd063d2a91f7b0f2d7179af9fa1ef58684ba8b6806802d2d42",
+      "approvedSeedEntrySha256": "b3d328ed8b9d8839cd0b96e7206857dad71ae3e2ed2b4a52c7180f2bca644a85",
+      "companyId": "cmrxpjd5200tqivheyj3gg8uj",
+      "auditEventId": "cmte16ciu000cv02baxm7xrhv"
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0210:valorc3:48b37136",
+      "taskIndex": 210,
+      "companyName": "ValorC3",
+      "outcome": "SUPERSEDED",
+      "decisionSha256": "ee2d8e4d938cda47ab41ea7edaa914811c912840666ba671845337bb7374faf3"
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0211:beanfield-metroconnect:1a05dc89",
+      "taskIndex": 211,
+      "companyName": "Beanfield Metroconnect",
+      "proposalSha256": "12762bf4a650106408ae2ae42606cbc3a1dd142af746ba0c19208d1b5fff4465",
+      "approvalSha256": "cf7889c56687ff7ed216b6fbf3df16fb10b5b592cb5b149495d4a48a9ed41592",
+      "afterImageSha256": "6f1d81d0e9bffbfda7ea98ee826b6d0b9bc566686e24a9df2b37b2420c1826d3",
+      "approvedSeedEntrySha256": "b26edae55c0823616d8af84706c596101d2452372df6c020beabd19492f98ed2",
+      "companyId": "cmrxpjd8g00tsivhe75mpfqhf",
+      "auditEventId": "cmte16kth000kv02bpymbozlt"
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0212:boingo-wireless:94c73adf",
+      "taskIndex": 212,
+      "companyName": "Boingo Wireless",
+      "outcome": "VERIFIED_NO_CHANGE",
+      "decisionSha256": "b99f93a16cfa474c29f31e917a01ffda272c18535a947720c512600ecfd625e9"
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0213:extenet-formerly-extenet-systems:1d3fac1c",
+      "taskIndex": 213,
+      "companyName": "Extenet (formerly ExteNet Systems)",
+      "outcome": "DEFERRED",
+      "decisionSha256": "382e6ed9c8b54719db3ea09d45aa6aec8fac7494c1aa68192fb63c3bb7e8c31f"
+    }
+  ],
+  "verification": {
+    "databaseTransactionCommitted": true,
+    "seedArtifactVerifiedBeforeCommit": true,
+    "detailApiVerificationPending": true,
+    "partialDatabaseApplication": false
+  },
+  "receiptSha256": "b15537a89be9b9673ab984e6e026bfb4d45f21504dbb61c0962c45f505772a88"
+}
