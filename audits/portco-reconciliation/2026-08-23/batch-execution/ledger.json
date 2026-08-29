@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-29T16:08:36.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-08-29T16:41:34.000Z",
+  "activeBatchId": "batch-0249-0253-v1",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -3334,7 +3334,55 @@
           "reason": null
         }
       ]
+    },
+    {
+      "batchId": "batch-0249-0253-v1",
+      "state": "READY",
+      "taskIds": [
+        "ledger:0249:jupiter-medical-center-campus:b484d033",
+        "ledger:0250:medcraft-medical-outpatient-portfolio:bb470706",
+        "ledger:0251:montecito-medical-outpatient-portfolio:18c48dc3",
+        "ledger:0252:prince-george-s-county-blueprint-schools-program-phase-one:d1600602",
+        "ledger:0253:byd-ev-fleet-asset-spvs:e914a6d4"
+      ],
+      "taskIndexes": [
+        249,
+        250,
+        251,
+        252,
+        253
+      ],
+      "createdAt": "2026-08-29T16:16:00.000Z",
+      "updatedAt": "2026-08-29T16:41:34.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0249-0253-v1/batch-manifest.json",
+        "sha256": "f2688d921be742fe4b6878016dc5b13c4bc7c469634e8f8e1170e7a7aabe4fdf"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-29T16:16:00.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-29T16:41:34.000Z",
+          "evidenceSha256": [
+            "f2688d921be742fe4b6878016dc5b13c4bc7c469634e8f8e1170e7a7aabe4fdf"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "a1aa59109c15e540f9aa3b1a040e4b28ee0fa9facbbfbc882e49690c61315d69"
+  "ledgerSha256": "b20fd2da6a5703eec17407a57160b509af310b324f58fc9023df8d30de314b8a"
 }

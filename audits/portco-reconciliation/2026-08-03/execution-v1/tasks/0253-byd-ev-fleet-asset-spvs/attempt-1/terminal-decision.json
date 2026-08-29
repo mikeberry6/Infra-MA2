@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0253:byd-ev-fleet-asset-spvs:e914a6d4",
+  "taskIndex": 253,
+  "companyName": "BYD EV Fleet Asset SPVs",
+  "outcome": "DEFERRED",
+  "decidedAt": "2026-08-29T16:19:04.000Z",
+  "rationale": "The generic asset-SPV record resolves to Green Transportation Leasing, LLC, historically jointly owned by Generate and BYD. A 2026 registry extract shows an active legal entity and a Generate-linked manager, so immediate retirement is not supported. Application is deferred because direct evidence does not establish the current member schedule, current equity stakes, BYD's current status, or whether the platform still holds an in-scope leasing asset book rather than only an active shell.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0253-byd-ev-fleet-asset-spvs/attempt-1/locked-task-snapshot.json",
+    "sha256": "d20435821291785248695499e591240a19bb7a467a53ba2d398c4bc08f4a6d6c"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0253-byd-ev-fleet-asset-spvs/attempt-1/application-research-decision.json",
+    "sha256": "f4556c99b2aad6b1793d76fae8e72abd2c0c0b4d3cd92392cbf37f3cda3e8cb1"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0253-byd-ev-fleet-asset-spvs/attempt-1/source-verification.json",
+    "sha256": "75b69865cadc92362b9e4f05f8df07b022e034c4dbb36732e9379f7ed491cc40"
+  },
+  "evidence": [
+    {
+      "url": "https://generatecapital.com/technology-companies/",
+      "purpose": "Direct Generate evidence for the GTL platform, original commitment and Generate/BYD roles."
+    },
+    {
+      "url": "https://www.bizprofile.net/ca/san-francisco/green-transportation-leasing-llc",
+      "purpose": "Registry-extract evidence for the exact legal identity, active status and Generate-linked manager."
+    },
+    {
+      "url": "https://www.metro-magazine.com/news/byd-partners-to-launch-first-ever-electric-bus-leasing-program",
+      "purpose": "Contemporaneous launch evidence for the joint venture and US$200 million allocation."
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "09c477afaa471b0565ce8682136cdf5ba754dc1554268c1b49d4091d7783001a"
+}

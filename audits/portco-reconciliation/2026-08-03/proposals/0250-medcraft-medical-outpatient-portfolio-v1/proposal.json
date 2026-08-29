@@ -1,0 +1,319 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0250:medcraft-medical-outpatient-portfolio:bb470706",
+  "taskIndex": 250,
+  "asOfDate": "2026-08-29",
+  "generatedAt": "2026-08-29T16:19:01.000Z",
+  "canonicalKey": "medcraft-medical-outpatient-portfolio|united-states",
+  "companyName": "MedCraft Medical Outpatient Portfolio",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER"
+  ],
+  "sourceHoldingIds": [
+    "045-fengate-asset-management:holding:016:medcraft-medical-outpatient-portfolio"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Correct the existing company to the bounded 24-facility Cleveland Clinic sale-leaseback portfolio. Direct manager and title evidence supports Fengate and MedCraft Healthcare Real Estate as current joint owners at undisclosed stakes, Cleveland Clinic as former fee owner and continuing tenant/operator, and a September 2025 closed transaction. The separate Fengate-Montecito Project Lotus portfolio is not merged.",
+  "evidence": [
+    {
+      "url": "https://fengate.com/news/fengate-expands-healthcare-infrastructure-portfolio-with-acquisition-of-24-u-s-outpatient-facilities",
+      "purpose": "Current ownership and portfolio evidence",
+      "supports": [
+        "Fengate and MedCraft joint ownership",
+        "24-facility Ohio and Florida portfolio",
+        "Closed sale-leaseback transaction"
+      ]
+    },
+    {
+      "url": "https://neo-trans.blog/2025/09/10/cleveland-clinic-sells-leases-back-24-facilities/",
+      "purpose": "Seller, tenant and title evidence",
+      "supports": [
+        "Cleveland Clinic former fee ownership and continuing tenancy",
+        "MedCraft buyer identity",
+        "September 2025 transfer and title-vehicle evidence"
+      ]
+    },
+    {
+      "url": "https://myplace.cuyahogacounty.gov/NTgzMTQwMTE%3D?city=OTk%3D&dataRequested=UHJvcGVydHkgU3VtbWFyeSBSZXBvcnQ%3D&searchBy=UGFyY2Vs",
+      "purpose": "Government title evidence",
+      "supports": [
+        "Transfer into the FG MC II ownership structure"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "8b1453a8d6739679a8aa5f3ee05fd213df8e9eee078a6d6c8a65e655201039d5",
+  "currentCompanySnapshotSha256": "8790ed51b2eb48932bc0fb85487b8d5acab19d84ef46a74ec1fcfcc7d60a9e93",
+  "executionLock": {
+    "taskSnapshotSha256": "8c4bb00b9d94c1ce2b28277554faf9dbcc06323305f3a7948f11943a2fee7a40",
+    "taskStateSha256": "0d849d8ec35122f7db2be4d6de5b3c0f2a7ef693d2da9b95ac02a1b5581a3abc",
+    "taskDependencySha256": "0dc606471227aa39f80d1ee26f0cde6af0bc411651feaa08cf8525df2cde561a",
+    "seedEntrySha256": null,
+    "dependencies": {
+      "ownershipPeriodsSha256": "2785d534f964ec83c4a0be118b3054ea66efd2613d8b5301dfdb4bf0acf4f3e7",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "65e1b2747154ba1f1ef5ede31c629db026308567e75b294f62a8055419ffe447",
+      "organizationsSha256": "bbd093e87197f60b3133c00d31e7622cc16bde8c3f3d4f9ef51b24f56bec8503",
+      "citationsSha256": "bf19ace8a0051f7464db52c50eda2f4fdfbda6cc6974fcf775243ceb433f4f31",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj2c800dcivhe55uomdsj",
+        "fundName": "Fengate Infrastructure Fund IV",
+        "managerId": "cmrxpi8j5001yivhenuypjkuy",
+        "updatedAt": "2026-07-23T16:09:56.888Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi8j5001yivhenuypjkuy",
+        "name": "Fengate Asset Management",
+        "updatedAt": "2026-07-23T16:09:18.257Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjfs500xmivheiqodqkfz",
+    "name": "MedCraft Medical Outpatient Portfolio",
+    "aliases": [],
+    "sector": "SOCIAL_INFRA",
+    "subsector": "Medical outpatient facilities",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "U.S. Medical Outpatient Facilities Portfolio (MedCraft JV) is a portfolio of medical outpatient buildings in the United States. Its end users are patients and healthcare providers, with occupancy tied to a major nonprofit health system under a sale-leaseback structure rather than broad multi-tenant speculative leasing. The model is asset-heavy and healthcare-oriented, with value supported by essential outpatient real estate and a large health-system tenant. Fengate disclosed in 2025 that the portfolio comprises 24 facilities with more than 900,000 square feet of medical space across two states. The reviewed materials did not disclose the specific states, property-level revenue, or current ownership percentages within the joint venture. Fengate acquired the portfolio in 2025 alongside MedCraft as part of its healthcare infrastructure strategy.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Two U.S. states (not publicly disclosed.)",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk1c501vwivhev2ni5vv2",
+        "managerName": "Fengate Asset Management",
+        "organizationName": "Fengate Asset Management",
+        "fundName": "Fengate Infrastructure Fund IV",
+        "vehicleName": "Fengate Infrastructure Fund IV",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplqk8041aivheqhb1lcxi",
+        "date": "2025",
+        "event": "Fengate stated that the portfolio added more than 900,000 square feet of medical space across two states.",
+        "category": "EXPANSION",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplqkp041bivhe1r4aig0m",
+        "date": "2025",
+        "event": "The acquisition was completed alongside MedCraft under a sale-leaseback structure.",
+        "category": "DIVESTITURE",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplql9041civhezucn4zqy",
+        "date": "Sep 11, 2025",
+        "event": "Fengate announced the acquisition of 24 medical outpatient facilities from a large U.S. nonprofit health system.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-09-11T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpr3j30ak7ivhemocedz3z",
+        "label": "Announcement date source — Fengate Asset Management — U.S. Medical Outpatient Facilities Portfolio (MedCraft JV)",
+        "url": "https://fengate.com/news/fengate-expands-healthcare-infrastructure-portfolio-with-acquisition-of-24-u-s-outpatient-facilities",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Fengate Asset Management transaction announcement",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpr3ky0ak9ivhewh6ymklw",
+        "label": "GlobeNewsWire — U.S. Medical Outpatient Facilities Portfolio (MedCraft JV)",
+        "url": "https://www.globenewswire.com/news-release/2025/09/11/3148713/0/en/Fengate-expands-healthcare-infrastructure-portfolio-with-acquisition-of-24-U-S-outpatient-facilities.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "GlobeNewswire transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr3m30akbivhe95dagg14",
+        "label": "Medcraft — U.S. Medical Outpatient Facilities Portfolio (MedCraft JV)",
+        "url": "https://www.medcraft.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Medcraft company profile",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "8790ed51b2eb48932bc0fb85487b8d5acab19d84ef46a74ec1fcfcc7d60a9e93",
+  "afterImage": {
+    "id": "cmrxpjfs500xmivheiqodqkfz",
+    "name": "Fengate-MedCraft Cleveland Clinic Outpatient Portfolio",
+    "aliases": [
+      "MedCraft Medical Outpatient Portfolio",
+      "Cleveland Clinic 24-Facility Sale-Leaseback Portfolio",
+      "U.S. Medical Outpatient Facilities Portfolio (MedCraft JV)"
+    ],
+    "sector": "SOCIAL_INFRA",
+    "subsector": "Medical outpatient facilities",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Fengate-MedCraft Cleveland Clinic Outpatient Portfolio is a 24-facility medical-outpatient sale-leaseback portfolio across Ohio and Florida totaling more than 900,000 square feet. Fengate Asset Management and MedCraft Healthcare Real Estate acquired the portfolio in September 2025 through FG MC II Cleveland, LLC and location-specific title entities; public sources do not disclose their percentages or a deal-specific Fengate fund. Cleveland Clinic and title affiliates were the former fee owners and remain the principal tenant/operator under long-term leases. The portfolio is the first Fengate-MedCraft joint-venture acquisition and is distinct from Fengate's separate Project Lotus investment with Montecito. No later disposal, recapitalization, owner exit or signed ownership transaction was identified through August 29, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2025,
+    "headquarters": null,
+    "lastVerifiedAt": "2026-08-29T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk1c501vwivhev2ni5vv2",
+        "managerName": "Fengate Asset Management",
+        "organizationName": "Fengate Asset Management",
+        "fundName": null,
+        "vehicleName": "FG MC II Cleveland, LLC / location-specific title LLCs",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "MedCraft Healthcare Real Estate",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "FG MC II Cleveland, LLC / location-specific title LLCs",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Cleveland Clinic Foundation",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Direct fee-title affiliates",
+        "stake": "Former fee ownership across the sold portfolio; asset allocation not publicly disclosed",
+        "investmentYear": null,
+        "exitYear": 2025,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplqk8041aivheqhb1lcxi",
+        "date": "Sep 4, 2025",
+        "event": "Cleveland Clinic property transfers and financing into the FG MC II title structure began for the outpatient portfolio.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-09-04T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://neo-trans.blog/2025/09/10/cleveland-clinic-sells-leases-back-24-facilities/",
+          "https://myplace.cuyahogacounty.gov/NTgzMTQwMTE%3D?city=OTk%3D&dataRequested=UHJvcGVydHkgU3VtbWFyeSBSZXBvcnQ%3D&searchBy=UGFyY2Vs"
+        ]
+      },
+      {
+        "id": "cmrxplqkp041bivhe1r4aig0m",
+        "date": "Sep 10, 2025",
+        "event": "Contemporaneous reporting identified Cleveland Clinic as seller and continuing tenant and MedCraft as buyer across the 24-facility portfolio.",
+        "category": "OTHER",
+        "sortDate": "2025-09-10T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://neo-trans.blog/2025/09/10/cleveland-clinic-sells-leases-back-24-facilities/"
+        ]
+      },
+      {
+        "id": "cmrxplql9041civhezucn4zqy",
+        "date": "Sep 11, 2025",
+        "event": "Fengate announced the first Fengate-MedCraft joint-venture acquisition: 24 outpatient facilities across Ohio and Florida totaling more than 900,000 square feet.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-09-11T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://fengate.com/news/fengate-expands-healthcare-infrastructure-portfolio-with-acquisition-of-24-u-s-outpatient-facilities"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpr3j30ak7ivhemocedz3z",
+        "label": "Announcement date source — Fengate Asset Management — U.S. Medical Outpatient Facilities Portfolio (MedCraft JV)",
+        "url": "https://fengate.com/news/fengate-expands-healthcare-infrastructure-portfolio-with-acquisition-of-24-u-s-outpatient-facilities",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Fengate-MedCraft joint ownership, closed acquisition, 24 facilities, two states and 900,000-plus square feet",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpr3ky0ak9ivhewh6ymklw",
+        "label": "GlobeNewsWire — U.S. Medical Outpatient Facilities Portfolio (MedCraft JV)",
+        "url": "https://www.globenewswire.com/news-release/2025/09/11/3148713/0/en/Fengate-expands-healthcare-infrastructure-portfolio-with-acquisition-of-24-U-S-outpatient-facilities.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Syndicated Fengate transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr3m30akbivhe95dagg14",
+        "label": "Medcraft — U.S. Medical Outpatient Facilities Portfolio (MedCraft JV)",
+        "url": "https://www.medcraft.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "MedCraft healthcare real-estate operating profile",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "NEOtrans — Cleveland Clinic outpatient sale-leaseback",
+        "url": "https://neo-trans.blog/2025/09/10/cleveland-clinic-sells-leases-back-24-facilities/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Seller, tenant, buyer, transfer timing and title-vehicle evidence",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Cuyahoga County — FG MC II title record",
+        "url": "https://myplace.cuyahogacounty.gov/NTgzMTQwMTE%3D?city=OTk%3D&dataRequested=UHJvcGVydHkgU3VtbWFyeSBSZXBvcnQ%3D&searchBy=UGFyY2Vs",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Government title evidence for the FG MC II ownership structure",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "c0518b0647506f434620303bc252faa0e7c401fffd9840d96891a893f4845820",
+  "proposalSha256": "eeeacc4abe708aa4ff4b8ed33a54e9d0bddef996e8b1ee6d641329c9f1185cf5"
+}

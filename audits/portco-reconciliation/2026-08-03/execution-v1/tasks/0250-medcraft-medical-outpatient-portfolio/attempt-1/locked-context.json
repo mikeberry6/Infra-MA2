@@ -1,0 +1,191 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0250:medcraft-medical-outpatient-portfolio:bb470706",
+  "taskIndex": 250,
+  "companyName": "MedCraft Medical Outpatient Portfolio",
+  "generatedAt": "2026-08-29T16:22:00.035Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0250-medcraft-medical-outpatient-portfolio/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 250,
+    "taskId": "ledger:0250:medcraft-medical-outpatient-portfolio:bb470706",
+    "canonicalKey": "medcraft-medical-outpatient-portfolio|united-states",
+    "companyName": "MedCraft Medical Outpatient Portfolio",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 45,
+    "managers": [
+      "Fengate Asset Management"
+    ],
+    "actionScopes": {
+      "company": [
+        "CORRECT_COMPANY"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "045-fengate-asset-management:holding:016:medcraft-medical-outpatient-portfolio"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjfs500xmivheiqodqkfz"
+    ],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://fengate.com/news/fengate-acquires-medcraft-medical-outpatient-portfolio/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The company appears on only one repository side; reconcile production and evaluated seed through an individually approved correction.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjfs500xmivheiqodqkfz",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "medcraft-medical-outpatient-portfolio|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjfs500xmivheiqodqkfz",
+    "name": "MedCraft Medical Outpatient Portfolio",
+    "aliases": [],
+    "sector": "SOCIAL_INFRA",
+    "subsector": "Medical outpatient facilities",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "U.S. Medical Outpatient Facilities Portfolio (MedCraft JV) is a portfolio of medical outpatient buildings in the United States. Its end users are patients and healthcare providers, with occupancy tied to a major nonprofit health system under a sale-leaseback structure rather than broad multi-tenant speculative leasing. The model is asset-heavy and healthcare-oriented, with value supported by essential outpatient real estate and a large health-system tenant. Fengate disclosed in 2025 that the portfolio comprises 24 facilities with more than 900,000 square feet of medical space across two states. The reviewed materials did not disclose the specific states, property-level revenue, or current ownership percentages within the joint venture. Fengate acquired the portfolio in 2025 alongside MedCraft as part of its healthcare infrastructure strategy.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Two U.S. states (not publicly disclosed.)",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk1c501vwivhev2ni5vv2",
+        "managerName": "Fengate Asset Management",
+        "organizationName": "Fengate Asset Management",
+        "fundName": "Fengate Infrastructure Fund IV",
+        "vehicleName": "Fengate Infrastructure Fund IV",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplqk8041aivheqhb1lcxi",
+        "date": "2025",
+        "event": "Fengate stated that the portfolio added more than 900,000 square feet of medical space across two states.",
+        "category": "EXPANSION",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplqkp041bivhe1r4aig0m",
+        "date": "2025",
+        "event": "The acquisition was completed alongside MedCraft under a sale-leaseback structure.",
+        "category": "DIVESTITURE",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplql9041civhezucn4zqy",
+        "date": "Sep 11, 2025",
+        "event": "Fengate announced the acquisition of 24 medical outpatient facilities from a large U.S. nonprofit health system.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-09-11T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpr3j30ak7ivhemocedz3z",
+        "label": "Announcement date source — Fengate Asset Management — U.S. Medical Outpatient Facilities Portfolio (MedCraft JV)",
+        "url": "https://fengate.com/news/fengate-expands-healthcare-infrastructure-portfolio-with-acquisition-of-24-u-s-outpatient-facilities",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Fengate Asset Management transaction announcement",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpr3ky0ak9ivhewh6ymklw",
+        "label": "GlobeNewsWire — U.S. Medical Outpatient Facilities Portfolio (MedCraft JV)",
+        "url": "https://www.globenewswire.com/news-release/2025/09/11/3148713/0/en/Fengate-expands-healthcare-infrastructure-portfolio-with-acquisition-of-24-U-S-outpatient-facilities.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "GlobeNewswire transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr3m30akbivhe95dagg14",
+        "label": "Medcraft — U.S. Medical Outpatient Facilities Portfolio (MedCraft JV)",
+        "url": "https://www.medcraft.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Medcraft company profile",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj2c800dcivhe55uomdsj",
+        "fundName": "Fengate Infrastructure Fund IV",
+        "managerId": "cmrxpi8j5001yivhenuypjkuy",
+        "updatedAt": "2026-07-23T16:09:56.888Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi8j5001yivhenuypjkuy",
+        "name": "Fengate Asset Management",
+        "updatedAt": "2026-07-23T16:09:18.257Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0250:medcraft-medical-outpatient-portfolio:bb470706",
+    "taskIndex": 250,
+    "canonicalKey": "medcraft-medical-outpatient-portfolio|united-states",
+    "capturedAt": "2026-08-29T16:22:00.035Z",
+    "databaseRevision": "revision:7b15c6f2136e12f9914944a5d02ffd16dab6a966d81a18ff202c9e653373ff17",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "98392ed484a6b906dba299afa4802d519bda3a4fb690db819a2005f199aae5bc",
+    "productionSnapshotSha256": "8b1453a8d6739679a8aa5f3ee05fd213df8e9eee078a6d6c8a65e655201039d5",
+    "targetCompanySnapshotSha256": "8790ed51b2eb48932bc0fb85487b8d5acab19d84ef46a74ec1fcfcc7d60a9e93",
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "2785d534f964ec83c4a0be118b3054ea66efd2613d8b5301dfdb4bf0acf4f3e7",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "65e1b2747154ba1f1ef5ede31c629db026308567e75b294f62a8055419ffe447",
+      "organizationsSha256": "bbd093e87197f60b3133c00d31e7622cc16bde8c3f3d4f9ef51b24f56bec8503",
+      "citationsSha256": "bf19ace8a0051f7464db52c50eda2f4fdfbda6cc6974fcf775243ceb433f4f31",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "0dc606471227aa39f80d1ee26f0cde6af0bc411651feaa08cf8525df2cde561a",
+    "stateSha256": "0d849d8ec35122f7db2be4d6de5b3c0f2a7ef693d2da9b95ac02a1b5581a3abc",
+    "taskSnapshotSha256": "8c4bb00b9d94c1ce2b28277554faf9dbcc06323305f3a7948f11943a2fee7a40"
+  },
+  "contextSha256": "b7a07ea09a64d80412e952c6f3c74527aebbed85d0fe2e603108b15f1bfbdd4f"
+}

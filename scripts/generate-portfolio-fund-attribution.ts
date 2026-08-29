@@ -414,6 +414,78 @@ const ATTRIBUTION_ONLY_FUNDS: CandidateFund[] = [
 
 const REVIEWED_ATTRIBUTION_OVERRIDES: ReviewedAttributionOverride[] = [
   {
+    companyName: "Health Park at Avenir",
+    investmentFirm: "Stonemont Financial Group",
+    attribution: "DIRECT_PROGRAM",
+    confidence: "HIGH",
+    attributedFundName: null,
+    rationale: "Fengate and Sina identify Stonemont as a direct investment and development partner in the named Health Park ProjectCo structure. No Stonemont managed infrastructure fund is publicly identified for the investment.",
+    sourceUrls: [
+      "https://fengate.com/article/fengate-asset-management-breaks-ground-jupiter-medical-center-campus",
+      "https://www.sinacompanies.com/projects/health-park-at-avenir/",
+    ],
+  },
+  {
+    companyName: "Health Park at Avenir",
+    investmentFirm: "The Sina Companies",
+    attribution: "DIRECT_PROGRAM",
+    confidence: "HIGH",
+    attributedFundName: null,
+    rationale: "Fengate and Sina identify The Sina Companies as a direct investment and development partner in Health Park at Avenir. No Sina managed infrastructure fund is publicly identified for the investment.",
+    sourceUrls: [
+      "https://fengate.com/article/fengate-asset-management-breaks-ground-jupiter-medical-center-campus",
+      "https://www.sinacompanies.com/projects/health-park-at-avenir/",
+    ],
+  },
+  {
+    companyName: "Fengate-MedCraft Cleveland Clinic Outpatient Portfolio",
+    investmentFirm: "Fengate Asset Management",
+    attribution: "DIRECT_PROGRAM",
+    confidence: "HIGH",
+    attributedFundName: null,
+    rationale: "Fengate's transaction announcement identifies Fengate and MedCraft as the joint-venture acquirers through the FG MC II ownership structure. No deal-specific Fengate managed fund is publicly disclosed, so no fund is inferred.",
+    sourceUrls: [
+      "https://fengate.com/news/fengate-expands-healthcare-infrastructure-portfolio-with-acquisition-of-24-u-s-outpatient-facilities",
+      "https://neo-trans.blog/2025/09/10/cleveland-clinic-sells-leases-back-24-facilities/",
+    ],
+  },
+  {
+    companyName: "Fengate-MedCraft Cleveland Clinic Outpatient Portfolio",
+    investmentFirm: "MedCraft Healthcare Real Estate",
+    attribution: "DIRECT_PROGRAM",
+    confidence: "HIGH",
+    attributedFundName: null,
+    rationale: "Fengate and contemporaneous transaction reporting identify MedCraft Healthcare Real Estate as the joint-venture co-owner and buyer. No MedCraft managed fund is publicly identified for the investment.",
+    sourceUrls: [
+      "https://fengate.com/news/fengate-expands-healthcare-infrastructure-portfolio-with-acquisition-of-24-u-s-outpatient-facilities",
+      "https://neo-trans.blog/2025/09/10/cleveland-clinic-sells-leases-back-24-facilities/",
+    ],
+  },
+  {
+    companyName: "Montecito Medical Outpatient Portfolio",
+    investmentFirm: "Montecito Medical Real Estate",
+    attribution: "DIRECT_PROGRAM",
+    confidence: "HIGH",
+    attributedFundName: null,
+    rationale: "Fengate and transaction reporting identify Montecito Medical Real Estate as Fengate's partner and confirm that Montecito retained equity. No Montecito managed infrastructure fund is publicly identified for the investment.",
+    sourceUrls: [
+      "https://fengate.com/news/fengate-acquires-montecito-medical-outpatient-portfolio/",
+      "https://wolfmediausa.com/2025/11/04/transactions-18-mob-750000-s-f-portfolio-closes-for-323-million/",
+    ],
+  },
+  {
+    companyName: "Prince George's County Blueprint Schools Program (Phase One)",
+    investmentFirm: "BBGI",
+    attribution: "DIRECT_PROGRAM",
+    confidence: "HIGH",
+    attributedFundName: null,
+    rationale: "BBGI announced and the school district reported completion of BBGI's direct acquisition of a 100% ProjectCo interest. No separately named managed fund is identified in the ownership chain.",
+    sourceUrls: [
+      "https://www.bb-gi.com/news/bbgi-acquires-a-100-equity-interest-in-a-portfolio-of-six-modern-schools-in-prince-georges-county-maryland/",
+      "https://www.pgcps.org/globalassets/offices/capital-programs/docs---capital-programs/bps-quarterly-reports/pgcps-blueprint-schools-q1-report-2026.pdf",
+    ],
+  },
+  {
     companyName: "Kelowna and Vernon Hospitals Project",
     investmentFirm: "BBGI",
     attribution: "DIRECT_PROGRAM",
