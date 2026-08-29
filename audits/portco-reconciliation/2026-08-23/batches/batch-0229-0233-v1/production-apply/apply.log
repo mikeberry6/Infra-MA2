@@ -1,0 +1,190 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:batch:apply
+> npx tsx scripts/portco-reconciliation/batch-apply-cli.ts --batch-manifest=audits/portco-reconciliation/2026-08-23/batches/batch-0229-0233-v1/batch-manifest.json --batch-sha256=0029d3f39ef468adf60e5a3a56b25636fab172ec3a4e8482753db11ed9b3cbf7 --seed-artifact=prisma/seed-data/approved-portco-after-images.json --apply --write-token=APPLY_APPROVED_PORTCO_BATCH --commit-receipt=tmp/portco-reconciliation/production/batch-commit-receipt.json --receipt=tmp/portco-reconciliation/production/batch-apply-receipt.json --public-base-url=https://infra-ma-2.vercel.app/Infra-MA2/
+
+(node:3747) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "BATCH_APPLIED",
+  "receiptPath": "/home/runner/work/Infra-MA2/Infra-MA2/tmp/portco-reconciliation/production/batch-apply-receipt.json",
+  "receipt": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_APPLY_BATCH_RECEIPT",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "batchId": "batch-0229-0233-v1",
+    "batchSha256": "0029d3f39ef468adf60e5a3a56b25636fab172ec3a4e8482753db11ed9b3cbf7",
+    "releaseSha": "f01be016cf06045c6806d466453d6cdc713cbbfe",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "transactionId": "56796a2e-14d2-42c2-b33b-f5576a8857e9",
+    "appliedAt": "2026-08-29T11:27:21.802Z",
+    "members": [
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0229:new-leaf-energy:321d604d",
+        "taskIndex": 229,
+        "companyName": "New Leaf Energy",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0229:new-leaf-energy:321d604d",
+          "taskIndex": 229,
+          "companyName": "New Leaf Energy",
+          "companyId": "cmrxpjdmu00ueivhetif6v25s",
+          "proposalSha256": "88b11933d876dd0bc823d8b0972cc7f7eab77b30701e486e0f3cabd15de71b31",
+          "approvalSha256": "ee644c657f412faa5f0b2f7d20495f04f22ccfeb80634877316247c70ac86fac",
+          "productionSnapshotSha256": "68cb13a5c2747b736f00dfb4ab5f06c78fd2165053d539cf7dd36d63f1ef46a3",
+          "beforeCompanySnapshotSha256": "889b33347a6e18e486baafe00ed3ff45d90485c06309f551629cc10fcaa6b314",
+          "appliedAfterImageSha256": "d523e4daaf44b895ece4591272284a43ca9fde827f3e682dd51c8a751b369762",
+          "seedAfterImageSha256": "d523e4daaf44b895ece4591272284a43ca9fde827f3e682dd51c8a751b369762",
+          "approvedSeedEntrySha256": "e6a9a7069509a993af037b53189b2c204266518a299fffac9dfd74d8f507c476",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "56796a2e-14d2-42c2-b33b-f5576a8857e9",
+          "auditEventId": "cmteapu4m000dw32bwuizwyoz",
+          "appliedAt": "2026-08-29T11:27:21.802Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "efb13128f017cb76e477c760e510d028b2cfeb4278bec5ea0359f969c975d0e2"
+        }
+      },
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0230:next-wave-energy:b4bcb6ea",
+        "taskIndex": 230,
+        "companyName": "Next Wave Energy",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0230:next-wave-energy:b4bcb6ea",
+          "taskIndex": 230,
+          "companyName": "Next Wave Energy",
+          "companyId": "cmrxpjdne00ufivheo8adf9nm",
+          "proposalSha256": "1914585453e0b4a6f781cb1fbdf09ff53c91f93222290a3105538d124d303ebd",
+          "approvalSha256": "62541e8d8cf607912f92a584981eab37810456a5b0c600361492e1030e5067d5",
+          "productionSnapshotSha256": "d6b4f0103e89c7e0217d80dfa41845180666083ba28c8c1a08735954784ea3c7",
+          "beforeCompanySnapshotSha256": "c77dcc51d988718328eaf3c6413d80be253c0df7ff520008e00cc8ddd0948010",
+          "appliedAfterImageSha256": "9e8229ca3029e8f38db4ea1b347f62fc8ad824bc2d50f1c749cf508d0f77e0b0",
+          "seedAfterImageSha256": "9e8229ca3029e8f38db4ea1b347f62fc8ad824bc2d50f1c749cf508d0f77e0b0",
+          "approvedSeedEntrySha256": "8e382906acc87e9a404a4804796862ec83ce1b6703df4beaa90f30096d72ecde",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "56796a2e-14d2-42c2-b33b-f5576a8857e9",
+          "auditEventId": "cmteapww0000nw32banqite2i",
+          "appliedAt": "2026-08-29T11:27:21.802Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "c643bb1668681a80c40e16fd8a8c0c8d7dbf4ab670af3970ffb31a2af1d643a9"
+        }
+      },
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0231:pivot-energy:e0f42706",
+        "taskIndex": 231,
+        "companyName": "Pivot Energy",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0231:pivot-energy:e0f42706",
+          "taskIndex": 231,
+          "companyName": "Pivot Energy",
+          "companyId": "cmrxpjdnz00ugivhezk5dzw98",
+          "proposalSha256": "c66c82c03b6177faf9e8969cd6e08a56bf6b946df96f21d109267e976c39fc28",
+          "approvalSha256": "d3d38ca38a494f2de379c736b0826906ccc0c354600b925923d966a0645604b7",
+          "productionSnapshotSha256": "ba76424de8ddfcfb16e9dd0a7e5556fed3228262f3602be3dc969920ecc75a65",
+          "beforeCompanySnapshotSha256": "69a9187a57a66f2d14d2cf89eafcd6ed881bf0d0988a9aa6e916a328c202d3c7",
+          "appliedAfterImageSha256": "300624ab81b876bccd8caed2db15ded67e584bbac177152e5d7bc0143c1686b8",
+          "seedAfterImageSha256": "300624ab81b876bccd8caed2db15ded67e584bbac177152e5d7bc0143c1686b8",
+          "approvedSeedEntrySha256": "d2ad25c8ecf1d9f2396d8fc11cae6fe65e90a3325eb4cbf75aedb0108ad2889f",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "56796a2e-14d2-42c2-b33b-f5576a8857e9",
+          "auditEventId": "cmteaq01v0011w32bw3fwggln",
+          "appliedAt": "2026-08-29T11:27:21.802Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "376a089bd4fb30be4119fbacb50970b16bd881be023f9a29806008296c18d5ca"
+        }
+      },
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0232:proenergy:f5e9cdb0",
+        "taskIndex": 232,
+        "companyName": "PROENERGY",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0232:proenergy:f5e9cdb0",
+          "taskIndex": 232,
+          "companyName": "PROENERGY",
+          "companyId": "cmrxpjdoi00uhivhenpf9ydgf",
+          "proposalSha256": "3623e93476b50a6ef2646e7aa491d681ba82537782e973f16ec0698541a83504",
+          "approvalSha256": "92252f0c1f2ccaa6713e7130435af2c353d18ea4168e94681fccbba50336bc62",
+          "productionSnapshotSha256": "ea9d5a9b7824c0ceadba0f3827f2f9937d2958a04356c0a68be151c42d02a857",
+          "beforeCompanySnapshotSha256": "60168a38a65fc3c50bfb6a3ac56e1ed97b2cdd835fbe189982a7086d2fe23832",
+          "appliedAfterImageSha256": "00ec5566fe023823e56d8dcda8d70621662589e3e934feb6876c2ce7134e62e1",
+          "seedAfterImageSha256": "00ec5566fe023823e56d8dcda8d70621662589e3e934feb6876c2ce7134e62e1",
+          "approvedSeedEntrySha256": "5badb2d791377edfd1af8af080fd5a327dea805dbefb1c6119aec2c6244ec2d2",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "56796a2e-14d2-42c2-b33b-f5576a8857e9",
+          "auditEventId": "cmteaq3cx001hw32b0g2tvg62",
+          "appliedAt": "2026-08-29T11:27:21.802Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "f54e51d7da24b1643c0caa6e8999b717472c187c9e98d3d61f87ec29abd6239c"
+        }
+      },
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0233:restaurant-technologies-inc:d0e001f6",
+        "taskIndex": 233,
+        "companyName": "Restaurant Technologies, Inc.",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0233:restaurant-technologies-inc:d0e001f6",
+          "taskIndex": 233,
+          "companyName": "Restaurant Technologies, Inc.",
+          "companyId": "cmrxpjdp200uiivheb3y5869n",
+          "proposalSha256": "a29e25f9b897c2b7ed6d9432897583746ad11d212832d45ce45211a1d87e7696",
+          "approvalSha256": "582187eeae0ea940b940a7ff72f836c3098fc169bff13794f78f4e09749b1745",
+          "productionSnapshotSha256": "be89d54143f92e6bb205040f7b9a13137651c7dbfa4fa84bbd9f7ff7788803b9",
+          "beforeCompanySnapshotSha256": "2e2c9a3ecc818b1945818088f01f5b81c1fafd29b0ebd6b07713a00e4b33743a",
+          "appliedAfterImageSha256": "279edfb1fe7b0d8c3a9d9546a926b238f56ff602c8fe12228f36b6272699b117",
+          "seedAfterImageSha256": "279edfb1fe7b0d8c3a9d9546a926b238f56ff602c8fe12228f36b6272699b117",
+          "approvedSeedEntrySha256": "9485b4c3042d0373504d452cf7db79fd79325d74399bf0e5a6ed64dc3df0b4e2",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "56796a2e-14d2-42c2-b33b-f5576a8857e9",
+          "auditEventId": "cmteaq6bn001ww32b0a66ond8",
+          "appliedAt": "2026-08-29T11:27:21.802Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "44a3eff6db0d33cbae3b7eb82e57c87536b1d19021b4448d819d640cb9c4db42"
+        }
+      }
+    ],
+    "verification": {
+      "databaseTransactionCommitted": true,
+      "seedArtifactVerified": true,
+      "allDetailApisVerified": true,
+      "partialDatabaseApplication": false
+    },
+    "receiptSha256": "5f7444055add560dcad217c99c320d4027d56fdeded5d2704bf71c5018023bcb"
+  }
+}
