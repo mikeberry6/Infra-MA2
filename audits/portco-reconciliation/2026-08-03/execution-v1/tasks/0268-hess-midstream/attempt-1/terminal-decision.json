@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0268:hess-midstream:b85ab916",
+  "taskIndex": 268,
+  "companyName": "Hess Midstream",
+  "outcome": "EXCLUDED",
+  "decidedAt": "2026-08-29T19:44:30.000Z",
+  "rationale": "GIP's strategic/sponsor/GP interest became 0% at its 2025-05-30 full exit; BlackRock client-account shares were passive. Chevron acquired Hess on 2025-07-18, controls the GP chain and through HINDL holds 37.965% as-exchanged economics. The operator is infrastructure, but not a current GIP/BlackRock PortCo.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0268-hess-midstream/attempt-1/locked-task-snapshot.json",
+    "sha256": "37c6d3734879116f118c3f59b679509c3c9a7ae172c27503c965e65483345210"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0268-hess-midstream/attempt-1/application-research-decision.json",
+    "sha256": "510fd9481dd0764465065e9d779a8bad0ba3dde8dab891eb01011a8f9230b0e4"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0268-hess-midstream/attempt-1/source-verification.json",
+    "sha256": "746884426bafe6d10a62dc8f291a490b662c451f2283a351cfe0be4844d7eb10"
+  },
+  "evidence": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1789832/000119312526338055/hesm-20260630.htm",
+      "purpose": "Current facts/exit check"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1789832/000119312526091977/xslF345X03/ownership.xml",
+      "purpose": "Holdings/chain"
+    },
+    {
+      "url": "https://www.global-infra.com/news/gip-announces-formation-of-a-strategic-partnership-with-hess-corporation/",
+      "purpose": "JV formation"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1789832/000119312519315651/d557268d8k12b.htm",
+      "purpose": "Simplification"
+    },
+    {
+      "url": "https://www.hessmidstream.com/static-files/092216dd-401d-4616-aba1-f9f700f2e9f1",
+      "purpose": "Full exit/passive split"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1789832/000119312525161221/d66017d8k.htm",
+      "purpose": "Control transfer"
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "a771d75fdb619326b1834ace405cc0d5c3af8ce2ac1358bfb4c0ddae4bd986f3"
+}

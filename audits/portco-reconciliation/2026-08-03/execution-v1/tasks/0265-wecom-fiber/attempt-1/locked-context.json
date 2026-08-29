@@ -1,0 +1,314 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0265:wecom-fiber:efb4f3b9",
+  "taskIndex": 265,
+  "companyName": "Wecom Fiber",
+  "generatedAt": "2026-08-29T19:38:25.821Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0265-wecom-fiber/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 265,
+    "taskId": "ledger:0265:wecom-fiber:efb4f3b9",
+    "canonicalKey": "wecom-fiber|united-states",
+    "companyName": "Wecom Fiber",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 47,
+    "managers": [
+      "GIC"
+    ],
+    "actionScopes": {
+      "company": [
+        "CORRECT_COMPANY"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "047-gic:holding:013:wecom-fiber"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjggs00ynivheegnza3qj"
+    ],
+    "seedKeys": [
+      "wecom fiber|United States"
+    ],
+    "evidenceUrls": [
+      "https://docs.fcc.gov/public/attachments/DA-24-820A1.pdf",
+      "https://wecomfiber.com/wecom-and-searchlight-capital-partners/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; CORRECT_COMPANY requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjggs00ynivheegnza3qj",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "wecom-fiber|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjggs00ynivheegnza3qj",
+    "name": "Wecom Fiber",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Fiber broadband",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Wecom Fiber is a broadband network platform serving residential and business customers in Arizona. Its end users are households, enterprises, and community institutions that require fiber-based internet access and communications services. The model is asset-heavy and contracted, with value supported by network buildout, customer relationships, and local market density. FCC materials tied to the ownership structure show that Searchlight Fiber Alliance and related entities control the investment vehicle around Wecom, and that GIC's Epsom Investment Pte. Ltd. held a 46.74% equity interest in the Searchlight Fiber Alliance structure in 2024. The reviewed materials did not disclose Wecom's revenue or the exact full capitalization of the broader sponsor structure. Searchlight invested in Wecom in 2023 and the ownership structure was subsequently reflected in FCC public notices.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Arizona",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk25f01x4ivhev3rzw9ul",
+        "managerName": "Searchlight Capital Partners",
+        "organizationName": "Searchlight",
+        "fundName": "Searchlight Fiber Alliance",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpk25z01x5ivhezwl33di9",
+        "managerName": "GIC",
+        "organizationName": "GIC",
+        "fundName": null,
+        "vehicleName": "Epsom Investment Pte. Ltd",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpltag044mivhe8utqky30",
+        "date": "2023",
+        "event": "The company outlined plans to expand fiber service in underserved Arizona markets.",
+        "category": "EXPANSION",
+        "sortDate": "2023-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpltb0044nivhexib3ejsl",
+        "date": "May 15, 2023",
+        "event": "Searchlight announced its strategic investment in Wecom; FCC materials later showed Epsom Investment Pte. Ltd. (GIC) in the Searchlight Fiber Alliance ownership chain.",
+        "category": "FINANCING",
+        "sortDate": "2023-05-15T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpltbk044oivhe41tynz09",
+        "date": "Aug 2024",
+        "event": "FCC materials disclosed the post-transaction ownership structure for Wecom.",
+        "category": "FINANCING",
+        "sortDate": "2024-08-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplte4044pivhexshswvn7",
+        "date": "Aug 14, 2024",
+        "event": "FCC materials showed Epsom Investment Pte. Ltd. with a 46.74% equity interest in the Searchlight Fiber Alliance structure.",
+        "category": "FINANCING",
+        "sortDate": "2024-08-14T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpr8tn0as3ivhejask6c51",
+        "label": "Announcement date source — Searchlight — Wecom Fiber",
+        "url": "https://wecomfiber.com/wecom-and-searchlight-capital-partners/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Searchlight transaction announcement",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpr8up0as5ivhed0xyntdu",
+        "label": "Investment date source — GIC — Wecom Fiber",
+        "url": "https://docs.fcc.gov/public/attachments/DA-24-820A1.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "GIC initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr8vv0as7ivheokdbvsg7",
+        "label": "Announcement date source — Searchlight — Wecom Fiber",
+        "url": "https://www.lw.com/en/news/latham-watkins-advises-searchlight-capital-partners-on-strategic-investment-in-wecom",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Searchlight transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr8x50as9ivhehvwfv762",
+        "label": "Investment structure source — GIC — Wecom Fiber",
+        "url": "https://docs.fcc.gov/public/attachments/DOC-397850A1.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Investment structure source — GIC — Wecom Fiber",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Wecom Fiber",
+    "investmentFirm": "GIC",
+    "sector": "Digital",
+    "subsector": "Fiber broadband",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Epsom Investment Pte. Ltd",
+    "description": "Wecom Fiber is a broadband network platform serving residential and business customers in Arizona. Its end users are households, enterprises, and community institutions that require fiber-based internet access and communications services. The model is asset-heavy and contracted, with value supported by network buildout, customer relationships, and local market density. FCC materials tied to the ownership structure show that Searchlight Fiber Alliance and related entities control the investment vehicle around Wecom, and that GIC's Epsom Investment Pte. Ltd. held a 46.74% equity interest in the Searchlight Fiber Alliance structure in 2024. The reviewed materials did not disclose Wecom's revenue or the exact full capitalization of the broader sponsor structure. Searchlight invested in Wecom in 2023 and the ownership structure was subsequently reflected in FCC public notices.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2023,
+    "headquarters": "Arizona",
+    "milestones": [
+      {
+        "date": "2023",
+        "event": "The company outlined plans to expand fiber service in underserved Arizona markets.",
+        "category": "Expansion"
+      },
+      {
+        "date": "May 15, 2023",
+        "event": "Searchlight announced its strategic investment in Wecom; FCC materials later showed Epsom Investment Pte. Ltd. (GIC) in the Searchlight Fiber Alliance ownership chain.",
+        "category": "Financing"
+      },
+      {
+        "date": "Aug 2024",
+        "event": "FCC materials disclosed the post-transaction ownership structure for Wecom.",
+        "category": "Financing"
+      },
+      {
+        "date": "Aug 14, 2024",
+        "event": "FCC materials showed Epsom Investment Pte. Ltd. with a 46.74% equity interest in the Searchlight Fiber Alliance structure.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Announcement date source — Searchlight — Wecom Fiber",
+        "url": "https://wecomfiber.com/wecom-and-searchlight-capital-partners/",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Investment date source — GIC — Wecom Fiber",
+        "url": "https://docs.fcc.gov/public/attachments/DA-24-820A1.pdf",
+        "type": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Announcement date source — Searchlight — Wecom Fiber",
+        "url": "https://www.lw.com/en/news/latham-watkins-advises-searchlight-capital-partners-on-strategic-investment-in-wecom",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Investment structure source — GIC — Wecom Fiber",
+        "url": "https://docs.fcc.gov/public/attachments/DOC-397850A1.pdf",
+        "type": "PRESENTATION"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Searchlight",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2023,
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "GIC",
+        "ownershipVehicle": "Epsom Investment Pte. Ltd",
+        "investmentYear": 2023,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj3n300faivhe3fxd7hox",
+        "fundName": "Searchlight Fiber Alliance",
+        "managerId": "cmrxpidbh003givhe6qjhti2h",
+        "updatedAt": "2026-08-03T17:26:02.499Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi2jw0003ivhe0d2l8t07",
+        "name": "Abu Dhabi Investment Authority (ADIA)",
+        "updatedAt": "2026-07-23T16:09:10.508Z"
+      },
+      {
+        "id": "cmrxpi8wm0022ivhessbkv786",
+        "name": "GIC",
+        "updatedAt": "2026-07-23T16:09:18.742Z"
+      },
+      {
+        "id": "cmrxpidbh003givhe6qjhti2h",
+        "name": "Searchlight Capital Partners",
+        "updatedAt": "2026-07-23T16:09:24.461Z"
+      },
+      {
+        "id": "cmrxpij310059ivhe6dg99v0y",
+        "name": "Searchlight",
+        "updatedAt": "2026-07-23T16:09:31.933Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0265:wecom-fiber:efb4f3b9",
+    "taskIndex": 265,
+    "canonicalKey": "wecom-fiber|united-states",
+    "capturedAt": "2026-08-29T19:38:25.821Z",
+    "databaseRevision": "revision:83386efc52ade6354dcdff38b706d9d833bf40db54d495f27b47d2121ca08b99",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "dbd252ef6299eb9c8f85e2cf96d290bd5ef5ab64b4b252e99461f6aaf5091bad",
+    "productionSnapshotSha256": "f8c09518492dda5243f3a7b22cc947b9d386a9a3759f52c9b6651c35cb38d2f1",
+    "targetCompanySnapshotSha256": "233bf66589aa6775677e5182e3907bbe4da3ee2befa7cba7b560abeb11edbef5",
+    "seedEntrySha256": "7fc93950741ba11f2cbc6a5b2c1dac9f7dbbe69e81748e9337818e703abe2985",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4ed2c608db6390e788952c880bd50e17d63d3b0ec22ebac718b0f296054b7c49",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4dd7a9e99c59c173bb9932328be12e7d51df19882070725e4753e9847162ebe6",
+      "organizationsSha256": "2ef91cb2bccad08780d36c18dfb0a1a9054258a1822ea0167ed9096646555441",
+      "citationsSha256": "8c7a10ed97680ad0a9c08ae48872118f540f367d78d2ced48e1cca009843df4e",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "85dc05ade542ae2d0de4d5c0f873b98f7aa5a26b52412ee088b03cc4065295ba",
+    "stateSha256": "f08a400ec1e4cb16ba635230cb828ece1af8336355165eee0914755f8e8258d7",
+    "taskSnapshotSha256": "8eef30ad71ebbcdc452fb34d7fee68a59505865457ca358d887a8aabd68a773d"
+  },
+  "contextSha256": "b7e021a6860ec035c278cfc1126828f55b17e879024f610a842bd9a570c89933"
+}

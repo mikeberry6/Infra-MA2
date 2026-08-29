@@ -111,6 +111,16 @@ describe("approved ownership organization provisioning", () => {
     expect(ownershipOrganizationTypes("Haddington Ventures")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("A.P. Moller-Maersk")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Littlejohn & Co.")).toEqual(["FUND_MANAGER"]);
+    expect(ownershipOrganizationTypes("Multiple Mexican AFORES")).toEqual(["PENSION"]);
+    expect(ownershipOrganizationTypes("Empresas ICA")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("ArmaVir Partners / Simple Networks")).toEqual(["FUND_MANAGER"]);
+    expect(ownershipOrganizationTypes("Wecom founders")).toEqual(["OTHER"]);
+    expect(ownershipOrganizationTypes("Elliott Investment Management")).toEqual(["FUND_MANAGER"]);
+    expect(ownershipOrganizationTypes("Fortistar")).toEqual(["FUND_MANAGER"]);
+    expect(ownershipOrganizationTypes("Reliant Energy")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("CyrusOne founders and management")).toEqual(["OTHER"]);
+    expect(ownershipOrganizationTypes("ABRY Partners")).toEqual(["FUND_MANAGER"]);
+    expect(ownershipOrganizationTypes("Cincinnati Bell")).toEqual(["CORPORATE"]);
   });
 
   it("provisions only exact approved missing owner organizations during the protected apply phase", async () => {
@@ -173,6 +183,16 @@ describe("approved ownership organization provisioning", () => {
       ["Haddington Ventures", "FUND_MANAGER"],
       ["A.P. Moller-Maersk", "CORPORATE"],
       ["Littlejohn & Co.", "FUND_MANAGER"],
+      ["Multiple Mexican AFORES", "PENSION"],
+      ["Empresas ICA", "CORPORATE"],
+      ["ArmaVir Partners / Simple Networks", "FUND_MANAGER"],
+      ["Wecom founders", "OTHER"],
+      ["Elliott Investment Management", "FUND_MANAGER"],
+      ["Fortistar", "FUND_MANAGER"],
+      ["Reliant Energy", "CORPORATE"],
+      ["CyrusOne founders and management", "OTHER"],
+      ["ABRY Partners", "FUND_MANAGER"],
+      ["Cincinnati Bell", "CORPORATE"],
     ] as const) {
       const create = vi.fn().mockResolvedValue({
         id: `org-${name}`,

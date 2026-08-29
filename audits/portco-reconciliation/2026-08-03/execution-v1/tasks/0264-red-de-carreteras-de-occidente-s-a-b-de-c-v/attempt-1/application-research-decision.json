@@ -1,0 +1,251 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0264:red-de-carreteras-de-occidente-s-a-b-de-c-v:3ba7cbb5",
+  "taskIndex": 264,
+  "companyName": "Red de Carreteras de Occidente, S.A.B. de C.V. (RCO / Red Vía Corta)",
+  "asOfDate": "2026-08-19",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH_WITH_NONCRITICAL_GIC_FUND_AFORE_AND_MILEAGE_GAPS",
+  "researchOnly": true,
+  "generatedAt": "2026-08-29T19:44:00.000Z",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "Red de Carreteras de Occidente, S.A.B. de C.V. (RCO / Red Vía Corta)",
+    "requestedManagers": [
+      "GIC",
+      "Abertis",
+      "Mundys / Atlantia"
+    ],
+    "decision": "PROPOSED_CORRECTION",
+    "confidence": "HIGH",
+    "rationale": "Active and correctly scoped, but the legal form and GIC stake are stale; latest filings show Abertis 53.12%, GIC ~29.04% and AFORES 17.84%.",
+    "identityResolution": {
+      "legal": "Red de Carreteras de Occidente, S.A.P.I. de C.V.",
+      "display": "Red Vía Corta",
+      "aliases": [
+        "RCO",
+        "Red de Carreteras de Occidente"
+      ],
+      "hq": "Guadalajara, Jalisco",
+      "form": "Formed 2007-08-13; equity registration canceled 2020-06-04; converted from S.A.B. to S.A.P.I. in 2021.",
+      "boundary": "RCO holds FARAC I and parents COVIQSA, CONIPSA, COTESA and AUTOVIM. Red Vía Corta is the brand; RCO Carreteras is an inactive operator."
+    },
+    "ownershipResolution": {
+      "currentEconomic": [
+        {
+          "manager": "Abertis",
+          "organization": "Abertis Infraestructuras, S.A.",
+          "vehicle": "IVM; BBVA F/411215-7",
+          "stake": "53.12%",
+          "entryDate": "2020-06-04",
+          "isActive": true,
+          "transactionState": "CURRENT"
+        },
+        {
+          "manager": "GIC",
+          "organization": "GIC affiliates; 2020 buyer GIC Special Investment Pte. Ltd.",
+          "fund": "NOT_PUBLICLY_DISCLOSED",
+          "vehicle": "BBVA F/411215-7",
+          "stake": "~29.04% implied; site 29%",
+          "entryDate": "2020-06-04",
+          "isActive": true,
+          "transactionState": "CURRENT"
+        },
+        {
+          "manager": "Multiple AFORES",
+          "organization": "NOT_PUBLICLY_DISCLOSED",
+          "fund": "RCOCB 09 CKD",
+          "vehicle": "HSBC F/311529 (formerly F/00661)",
+          "stake": "~31.9% post-2009; 17.84% current",
+          "entryDate": "2009-09-24",
+          "isActive": true,
+          "transactionState": "CURRENT"
+        }
+      ],
+      "registered": [
+        {
+          "manager": "N/A",
+          "organization": "BBVA México, trustee",
+          "vehicle": "F/411215-7",
+          "stake": "82.1600209% Series A",
+          "isActive": true,
+          "transactionState": "REGISTERED"
+        },
+        {
+          "manager": "N/A",
+          "organization": "HSBC México, trustee",
+          "vehicle": "F/311529",
+          "stake": "17.8399791% Series B",
+          "entryDate": "2025-11-21",
+          "isActive": true,
+          "transactionState": "REGISTERED_NO_ECONOMIC_CHANGE"
+        }
+      ],
+      "former": [
+        {
+          "manager": "Empresas ICA",
+          "organization": "CICASA; CONOISA",
+          "vehicle": "Series A shares",
+          "stake": "20% initial; 18.7% at sale",
+          "entryYear": 2007,
+          "exitDate": "2013-08-06",
+          "exitYear": 2013,
+          "isActive": false,
+          "transactionState": "EXITED"
+        },
+        {
+          "manager": "Goldman Sachs Infrastructure Partners",
+          "organization": "GSIP I; GSIA 2006; Matador Infrastructure UK; Alghero (Ireland)",
+          "fund": "GS Infrastructure Partners I",
+          "vehicle": "Matador Infra B.V./Series A",
+          "stake": "80% initial; 70% pre-sale; final 6.14305559235545% title",
+          "entryYear": 2007,
+          "exitDate": "2021-07-14",
+          "exitYear": 2021,
+          "isActive": false,
+          "transactionState": "EXITED"
+        }
+      ],
+      "reconciliation": "BBVA 82.1600209% less Abertis 53.12% implies GIC 29.0400209%; HSBC/AFORES is 17.8399791%. Prior trustees BNY Mellon México, CIBanco and Banco Multiva exited without economic sale.",
+      "mundys": "Mundys (Atlantia until 2023-03-14) indirectly co-owns Abertis with ACS/Hochtief; it is not an RCO shareholder."
+    },
+    "operatingResolution": {
+      "status": "Active",
+      "active": "FARAC I 799.5 km/2067-10-02; COTESA 31.0 km/2046-05-04; AUTOVIM 13.8 km/2069-12-02.",
+      "expired": "CONIPSA 73.5 km ended 2025-09-12; COVIQSA 93.0 km ended 2026-06-21.",
+      "length": "2025 filed 937.3 km including COVIQSA; post-expiry active centerline mileage is 844.3 km. Website >1,100 km appears broader; Abertis said close to 900 km.",
+      "geography": "Active: Jalisco, Michoacán, Guanajuato, Aguascalientes, Nayarit; not Querétaro/Zacatecas.",
+      "scale": "2Q2026 toll/concession revenue MXN4,325.9m (+9.75%), adjusted EBITDA margin 86.88%; TPD FARAC 18,218.6, COTESA 4,035.1, AUTOVIM 4,101.6."
+    },
+    "acquisitionExitCheck": {
+      "announcementDate": "2019-10-11",
+      "closingDate": "2020-06-04",
+      "initial": "72.3%: GSIP 70% plus AFORE/local 2.3%; Abertis 51.3%, GIC 21.0%; closed 2020-06-04, released 2020-06-05.",
+      "later": "Series-B settlements: 7.5535% (2020-07-16), 2.30% (2020-09-29), 0.0005% (2021-01-25); Abertis rose 1.86% to 53.12%. On 2021-07-14 final GS-registered 6.14305559235545% moved to BBVA for GIC; title/process figures are non-additive.",
+      "capital": "28,715,021,303 shares unchanged; 2022 class conversion, 2023 pro-rata capital reduction and 2025 trustee change caused no dilution.",
+      "pendingTransactions": [],
+      "conclusion": "No later equity sale, tender, IPO, buyback, recapitalization, new investor or signed pending transfer found; debt holders are not owners."
+    },
+    "milestones": [
+      {
+        "date": "2007-08-13",
+        "event": "RCO constituted after FARAC I award.",
+        "category": "Founding"
+      },
+      {
+        "date": "2013-08-06",
+        "event": "ICA entities sold all shares to Alghero.",
+        "category": "Ownership"
+      },
+      {
+        "date": "2020-06-04",
+        "event": "Abertis/GIC closed 72.3%.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "2026-05-07",
+        "event": "FARAC I extended to 2067-10-02.",
+        "category": "Concession"
+      }
+    ],
+    "evidence": [
+      {
+        "label": "RCO 2025 annual",
+        "url": "https://www.redviacorta.mx/documents/d/red-v%C3%ADa-corta/2025_reporte-anual",
+        "purpose": "Identity, owners, trusts, concessions.",
+        "sourceTier": "T1",
+        "workingStatus": "VERIFIED",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "RCO 2Q2026",
+        "url": "https://redviacorta.mx/documents/d/red-v%C3%ADa-corta/2026_t1-1-",
+        "purpose": "Operations and concession changes.",
+        "sourceTier": "T1",
+        "workingStatus": "VERIFIED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Abertis close",
+        "url": "https://www.abertis.com/news/abertis-y-gic-cierran-la-compra-del-72-de-red-de-/?lang=en",
+        "purpose": "2020 close/initial stakes.",
+        "sourceTier": "T1",
+        "workingStatus": "VERIFIED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "BMV 2021 notice",
+        "url": "https://bmv.com.mx/docs-pub/eventemi/eventemi_1114252_1.pdf",
+        "purpose": "GS sellers/final transfer.",
+        "sourceTier": "T1",
+        "workingStatus": "VERIFIED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Abertis 2025 accounts",
+        "url": "https://www.abertis.com/filemanager/media-resource/download/4230/",
+        "purpose": "Abertis stake/vehicle/parent.",
+        "sourceTier": "T1",
+        "workingStatus": "VERIFIED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Milbank GIC notice",
+        "url": "https://www.milbank.com/en/news/milbank-advises-gic-in-successful-joint-acquisition-of-red-de-carreteras-de-occidente.html",
+        "purpose": "GIC acquisition entity.",
+        "sourceTier": "T2",
+        "workingStatus": "VERIFIED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "ICA 2009 6-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/885012/000090342309000865/ica6-k_1022.htm",
+        "purpose": "Original/post-CKD owners.",
+        "sourceTier": "T1",
+        "workingStatus": "VERIFIED",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": [
+      "Identity: S.A.B. -> S.A.P.I.; brand Red Vía Corta.",
+      "Owners: GIC 21% only -> Abertis 53.12%, GIC ~29.04%, AFORES 17.84%.",
+      "Vehicles: undisclosed -> IVM/BBVA, GIC/BBVA, AFORES/HSBC.",
+      "Operations: listed states/>1,100 km -> Guadalajara HQ, 3 concessions, ~844.3 filed active km."
+    ],
+    "excludedOrDuplicateCandidates": [
+      "Red Vía Corta=brand",
+      "RCO Carreteras=inactive operator",
+      "COVIQSA/CONIPSA/COTESA/AUTOVIM=subsidiaries/assets",
+      "Mundys/Atlantia and debt providers=indirect parent/financing, not direct owners"
+    ],
+    "unresolvedQuestions": [
+      "Individual AFORES/stakes.",
+      "Current GIC affiliate/fund behind trust.",
+      "Final GS allocation among four sellers.",
+      ">1,100-km methodology."
+    ],
+    "recommendedListAction": "Retain canonical key red-de-carreteras-de-occidente-s-a-b-de-c-v|mexico as one active RCO record; update legal name, stakes/vehicles, ICA/GSIP history and concessions; classify Mundys/Atlantia as indirect."
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0264-red-de-carreteras-de-occidente-s-a-b-de-c-v/attempt-1/research-decision.json",
+      "sha256": "30d61a07f7ef9d75426d44aca04c31feab6441e963c2b5ad9f4fbfafe7383ab5"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0264-red-de-carreteras-de-occidente-s-a-b-de-c-v/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "c5a04670fca4ed6873bc1ff94888ac49f5243d1ca0a62f340d1f39a3650109d6"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0264-red-de-carreteras-de-occidente-s-a-b-de-c-v/attempt-1/source-verification.json",
+      "sha256": "47ec2927cddfe5df6c97d56d64c3450c65f9aa9bc22c839271a45c293c4aa171"
+    },
+    "acceptedResponseSha256": "c5a04670fca4ed6873bc1ff94888ac49f5243d1ca0a62f340d1f39a3650109d6",
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+    "confidenceNormalization": {
+      "acceptedValue": "HIGH",
+      "stagedSummaryValue": "HIGH_WITH_NONCRITICAL_GIC_FUND_AFORE_AND_MILEAGE_GAPS",
+      "basis": "The staged summary preserves the accepted confidence and appends the noncritical disclosure-gap qualifier; the research decision is unchanged."
+    }
+  }
+}

@@ -1,0 +1,270 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0267:cyrusone:541adafa",
+  "taskIndex": 267,
+  "companyName": "CyrusOne",
+  "generatedAt": "2026-08-29T19:48:15.628Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0267-cyrusone/attempt-1/authorization-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 267,
+    "taskId": "ledger:0267:cyrusone:541adafa",
+    "canonicalKey": "cyrusone|united-states",
+    "companyName": "CyrusOne",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 48,
+    "managers": [
+      "Global Infrastructure Partners",
+      "KKR"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "048-global-infrastructure-partners:holding:009:cyrusone",
+      "064-kkr:holding:008:cyrusone"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjjte013vivhep3ejd8c0"
+    ],
+    "seedKeys": [
+      "cyrusone|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.cyrusone.com/",
+      "https://www.global-infra.com/news/global-infrastructure-partners-and-kkr-complete-acquisition-of-cyrusone/",
+      "https://www.global-infra.com/news/kkr-and-gip-complete-acquisition-of-cyrusone/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_OWNER requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjjte013vivhep3ejd8c0",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "cyrusone|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjjte013vivhep3ejd8c0",
+    "name": "CyrusOne",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Hyperscale and enterprise data centers",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "CyrusOne designs, builds, and operates data centers for hyperscale cloud, enterprise, and network customers. Its customers use the platform for mission-critical colocation, wholesale, and build-to-suit deployments that require large amounts of reliable power and connectivity. The operating model is asset-heavy and contracted, centered on long-lived data center campuses, utility power procurement, and multi-year customer commitments. Public company materials indicate that the business operates more than 60 data center facilities in nine countries and has more than 50 additional data centers in development. Funds managed by KKR and Global Infrastructure Partners completed the take-private acquisition of CyrusOne in March 2022.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2001,
+    "headquarters": "United States; Europe; Asia",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk5sc022pivhejivt66fy",
+        "managerName": "KKR",
+        "organizationName": "KKR",
+        "fundName": "KKR Global Infrastructure Investors V",
+        "vehicleName": "KKR Global Infrastructure Investors V",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpm7bq04kxivher2jmu7mv",
+        "date": "2001",
+        "event": "CyrusOne was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2001-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm7ca04kyivhera3d3dh2",
+        "date": "Mar 25, 2022",
+        "event": "KKR and Global Infrastructure Partners completed the $15 billion acquisition of CyrusOne.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-03-25T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxprx800bsvivhe74ay59zh",
+        "label": "Cyrusone — CyrusOne",
+        "url": "https://www.cyrusone.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Cyrusone company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxprx900bsxivhenevv4842",
+        "label": "Cyrusone — CyrusOne",
+        "url": "https://www.cyrusone.com/company/about",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Cyrusone company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprx9y0bszivhe6ag3dtol",
+        "label": "Kkr — CyrusOne",
+        "url": "https://www.kkr.com/invest/portfolio/heres-the-deal/cyrusone",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Kkr operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprxb10bt1ivhe2ks6ti0c",
+        "label": "Close date source — KKR / GIP — CyrusOne",
+        "url": "https://www.global-infra.com/news/kkr-and-gip-complete-acquisition-of-cyrusone/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "KKR / GIP closing confirmation",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "CyrusOne",
+    "investmentFirm": "KKR",
+    "sector": "Digital",
+    "subsector": "Hyperscale and enterprise data centers",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "KKR Global Infrastructure Investors V",
+    "description": "CyrusOne designs, builds, and operates data centers for hyperscale cloud, enterprise, and network customers. Its customers use the platform for mission-critical colocation, wholesale, and build-to-suit deployments that require large amounts of reliable power and connectivity. The operating model is asset-heavy and contracted, centered on long-lived data center campuses, utility power procurement, and multi-year customer commitments. Public company materials indicate that the business operates more than 60 data center facilities in nine countries and has more than 50 additional data centers in development. Funds managed by KKR and Global Infrastructure Partners completed the take-private acquisition of CyrusOne in March 2022.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2001,
+    "investmentYear": 2022,
+    "headquarters": "United States; Europe; Asia",
+    "milestones": [
+      {
+        "date": "2001",
+        "event": "CyrusOne was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "Mar 25, 2022",
+        "event": "KKR and Global Infrastructure Partners completed the $15 billion acquisition of CyrusOne.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Cyrusone — CyrusOne",
+        "url": "https://www.cyrusone.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Cyrusone — CyrusOne",
+        "url": "https://www.cyrusone.com/company/about",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Kkr — CyrusOne",
+        "url": "https://www.kkr.com/invest/portfolio/heres-the-deal/cyrusone",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Close date source — KKR / GIP — CyrusOne",
+        "url": "https://www.global-infra.com/news/kkr-and-gip-complete-acquisition-of-cyrusone/",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "KKR",
+        "ownershipVehicle": "KKR Global Infrastructure Investors V",
+        "investmentYear": 2022,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj2y500ebivhe1p2bph1k",
+        "fundName": "KKR Global Infrastructure Investors V",
+        "managerId": "cmrxpiay4002pivhed6sjuu9i",
+        "updatedAt": "2026-08-03T17:25:52.281Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpiay4002pivhed6sjuu9i",
+        "name": "KKR",
+        "updatedAt": "2026-07-23T16:09:21.388Z"
+      },
+      {
+        "id": "cmrxpij5s005aivhe70jwqccm",
+        "name": "GIP",
+        "updatedAt": "2026-07-23T16:09:32.032Z"
+      },
+      {
+        "id": "cmrxpiqvn007pivhe1zf9mk23",
+        "name": "Public Market",
+        "updatedAt": "2026-07-23T16:09:42.035Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0267:cyrusone:541adafa",
+    "taskIndex": 267,
+    "canonicalKey": "cyrusone|united-states",
+    "capturedAt": "2026-08-29T19:48:15.628Z",
+    "databaseRevision": "revision:be3eca83c900e0757ee6c765262109f74065e1440d0499220718ec29a8701f16",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "5b0cb6a8f6cf229cce93191cbc5a03ac44f31137bc9a9a8df46bec8d66511673",
+    "productionSnapshotSha256": "12e24b2ac22c7e9f04b580249fc04eb51e854c8e50a6dd53e7f4f89162d0907c",
+    "targetCompanySnapshotSha256": "e05c922cd0207a04a4e31e6a76f734b6f5958b6d194f7152ca77bcd4f654aac1",
+    "seedEntrySha256": "7f070ceae225b91de5bd878086c407b1bbc29b062b948cb94289f03b3a1164a2",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "8015d034ce4a076d2584d3b835a36d21f2e6674fb0140dc16340c4b7783464a3",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "338b07b657baee9dda327dc33840779af81c73938679ecd95473e811be2c54ec",
+      "organizationsSha256": "8946ef35816a2547b942d738fe5c136fe6d01cec6a92bf24f7ebaafb57d6060f",
+      "citationsSha256": "af9a7dc4b2924029282d9d8109921ca02099ae8c3b686b4a13049a08b80f0ede",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "735db4ca3ae14f970fc314cfb87a9ea4544dfaf8fc4bc6d210c4ad067b605262",
+    "stateSha256": "b4130e9e4d627e6248b0acf45382457245442a5defc3abce0bdebe4805433252",
+    "taskSnapshotSha256": "8852c2ad1b49f2dd3d66f94c5cf751c735ea676bd31ae6747dfc5814beceda51"
+  },
+  "contextSha256": "07bb437caee0d29af79bcd7d95db0b9aab868b28ba7187ed2e7ae533c4bb00be"
+}
