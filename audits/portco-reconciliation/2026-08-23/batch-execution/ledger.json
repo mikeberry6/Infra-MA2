@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-29T09:54:06.000Z",
-  "activeBatchId": "batch-0224-0228-v1",
+  "updatedAt": "2026-08-29T10:16:02.000Z",
+  "activeBatchId": null,
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -2795,7 +2795,7 @@
     },
     {
       "batchId": "batch-0224-0228-v1",
-      "state": "VERIFYING_FAILED",
+      "state": "COMPLETED",
       "taskIds": [
         "ledger:0224:braya-renewable-fuels:f18c1937",
         "ledger:0225:convergent-energy-and-power:464221aa",
@@ -2811,8 +2811,8 @@
         228
       ],
       "createdAt": "2026-08-29T09:17:21.000Z",
-      "updatedAt": "2026-08-29T09:54:06.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-29T10:16:02.000Z",
+      "completedAt": "2026-08-29T10:16:02.000Z",
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0224-0228-v1/batch-manifest.json",
         "sha256": "e9d287135d6cb4b9cabed5a2cefb7199bcc890081487fdcac9e27173c87822d8"
@@ -2822,7 +2822,7 @@
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0224-0228-v1/production-apply/batch-apply-receipt.json",
         "sha256": "7a126853c327329b52d3d6d7dd47a315ae8912ad0276a6d57e6c99e8f412b8e0"
       },
-      "reason": "Independent canonical API verification found six stale OwnershipPeriod fund-attribution metadata rows: Braya ECP, Convergent ECP, Gopher ECP, Harvestone Energy Capital Partners, Harvestone Group, and Metrus ECP. The five company identities, ownership periods, stakes, vehicles, sources, seed after-images, and atomic transaction are correct; no later bundle may start until a protected attribution-only repair and renewed rendered checks pass.",
+      "reason": "All five PortCo after-images, seed entries, ownership attributions, detail APIs and rendered drawers passed final canonical production verification; no partial application or unresolved identity or active-ownership issue remains.",
       "history": [
         {
           "sequence": 1,
@@ -2883,9 +2883,31 @@
             "e9d287135d6cb4b9cabed5a2cefb7199bcc890081487fdcac9e27173c87822d8"
           ],
           "reason": "Independent canonical API verification found six stale OwnershipPeriod fund-attribution metadata rows: Braya ECP, Convergent ECP, Gopher ECP, Harvestone Energy Capital Partners, Harvestone Group, and Metrus ECP. The five company identities, ownership periods, stakes, vehicles, sources, seed after-images, and atomic transaction are correct; no later bundle may start until a protected attribution-only repair and renewed rendered checks pass."
+        },
+        {
+          "sequence": 7,
+          "from": "VERIFYING_FAILED",
+          "to": "VERIFYING",
+          "at": "2026-08-29T10:16:01.000Z",
+          "evidenceSha256": [
+            "7a126853c327329b52d3d6d7dd47a315ae8912ad0276a6d57e6c99e8f412b8e0",
+            "e9d287135d6cb4b9cabed5a2cefb7199bcc890081487fdcac9e27173c87822d8"
+          ],
+          "reason": "Protected attribution-only repair receipt e8f78a25a84e3480cd5bf3dfdce9c37dfdaf68bfb00b39614c92cf050b45e50a applied all six reviewed metadata corrections; canonical API and rendered-card verification passed on deployment b1bb9eea0cb290555fdbfa452c6db45cf3e55910."
+        },
+        {
+          "sequence": 8,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-08-29T10:16:02.000Z",
+          "evidenceSha256": [
+            "7a126853c327329b52d3d6d7dd47a315ae8912ad0276a6d57e6c99e8f412b8e0",
+            "e9d287135d6cb4b9cabed5a2cefb7199bcc890081487fdcac9e27173c87822d8"
+          ],
+          "reason": "All five PortCo after-images, seed entries, ownership attributions, detail APIs and rendered drawers passed final canonical production verification; no partial application or unresolved identity or active-ownership issue remains."
         }
       ]
     }
   ],
-  "ledgerSha256": "d9be1a4d6131d17f4f8012dbecae9dff5f2ac7ba918cd4eb02328ea970170467"
+  "ledgerSha256": "1637ebc986f40bb3d359fea21211d4f5a63c0c6f63a9de6a926c142f3396efe4"
 }
