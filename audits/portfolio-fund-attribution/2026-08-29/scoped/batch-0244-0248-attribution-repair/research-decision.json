@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_CORRECTION_DECISION",
+  "asOfDate": "2026-08-29",
+  "triggerBatchId": "batch-0244-0248-v1",
+  "triggerBatchSha256": "fcff3e836d88a6278655a0c77152bb1a5b5ef7379621d6b065fd4cb8527bb101",
+  "decision": "ALIGN_ACTIVE_OWNERSHIP_ATTRIBUTION_METADATA",
+  "rationale": "The protected atomic PortCo transaction correctly applied the reviewed ownership identities, economics and dates for Ontario Science Partners General Partnership, Surrey Pretrial Services Centre Expansion Project and Cardinal Portfolio JV. Six active production rows now require alignment to the already-reviewed, hash-bound seed attribution records. KKR holds its disclosed interest through John Laing Limited without a curated-fund link; Sacyr, Amico and Clearway are direct corporate programs; and the existing Fiera and Fengate fund links remain bound to the exact disclosed funds.",
+  "mutations": [
+    {
+      "ownershipPeriodId": "cmrxpk0s401uxivhee4ggxu2h",
+      "companyName": "Ontario Science Partners General Partnership",
+      "from": "DIRECT_PROGRAM — generic legacy vehicle rationale",
+      "to": "DISCLOSED — reviewed KKR ownership through John Laing Limited, with no curated-fund link"
+    },
+    {
+      "ownershipPeriodId": "cmtejtsg1000bwa2bxei7p1za",
+      "companyName": "Ontario Science Partners General Partnership",
+      "from": "UNRESOLVED — no attribution rationale",
+      "to": "DIRECT_PROGRAM — Sacyr direct corporate sponsor interest"
+    },
+    {
+      "ownershipPeriodId": "cmtejtshv000dwa2bmkkjwx0t",
+      "companyName": "Ontario Science Partners General Partnership",
+      "from": "UNRESOLVED — no attribution rationale",
+      "to": "DIRECT_PROGRAM — Amico direct corporate sponsor interest"
+    },
+    {
+      "ownershipPeriodId": "cmrxpk0sk01uyivhewry4wp6r",
+      "companyName": "Surrey Pretrial Services Centre Expansion Project",
+      "from": "DISCLOSED — stale Jura Acquisition rationale",
+      "to": "DISCLOSED — Fiera EagleCrest Infrastructure with the existing curated-fund link"
+    },
+    {
+      "ownershipPeriodId": "cmtejtvzl0019wa2bg3zizp6g",
+      "companyName": "Cardinal Portfolio JV",
+      "from": "UNRESOLVED — no attribution rationale",
+      "to": "DIRECT_PROGRAM — Clearway direct corporate sponsor interest"
+    },
+    {
+      "ownershipPeriodId": "cmtejtw1u001awa2bnl6qtc8i",
+      "companyName": "Cardinal Portfolio JV",
+      "from": "UNRESOLVED — existing Fengate fund link but no attribution rationale",
+      "to": "DISCLOSED — Fengate Infrastructure Yield Fund with the existing curated-fund link"
+    }
+  ],
+  "nonChanges": [
+    "Company identities, canonical redirects and publication status",
+    "Ownership organizations, vehicles, stakes, dates and active or former state",
+    "Fund Database records and normalized fund identities",
+    "Descriptions, milestones, citations and primary sources",
+    "Former Brookfield, Forum and Manulife ownership periods, which are outside the active-owner attribution manifest"
+  ],
+  "identityResolved": true,
+  "activeOwnershipResolved": true,
+  "unresolvedQuestions": []
+}
