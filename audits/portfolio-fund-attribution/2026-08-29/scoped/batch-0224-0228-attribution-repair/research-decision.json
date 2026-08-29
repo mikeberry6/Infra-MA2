@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_CORRECTION_DECISION",
+  "asOfDate": "2026-08-29",
+  "triggerBatchId": "batch-0224-0228-v1",
+  "triggerBatchSha256": "e9d287135d6cb4b9cabed5a2cefb7199bcc890081487fdcac9e27173c87822d8",
+  "decision": "CORRECT_STALE_ATTRIBUTION_METADATA",
+  "rationale": "The PortCo transaction correctly applied the reviewed identities, owners, vehicles, stakes and dates, but six current ownership periods retained stale or default attribution metadata. Align production to the already-reviewed seed attribution records without changing any company, ownership identity, fund database record or legal ownership conclusion.",
+  "mutations": [
+    {
+      "ownershipPeriodId": "cmrxpjz5v01sfivheccpdklbu",
+      "companyName": "Braya Renewable Fuels",
+      "from": "INFERRED — ECP Fund V — LOW",
+      "to": "UNRESOLVED — ECP investing vehicle not publicly disclosed — no normalized fund link"
+    },
+    {
+      "ownershipPeriodId": "cmrxpjz6h01sgivhesqag6gww",
+      "companyName": "Convergent Energy and Power",
+      "from": "INFERRED — ECP Fund IV — LOW",
+      "to": "DISCLOSED — ECP Fund IV — no normalized fund link"
+    },
+    {
+      "ownershipPeriodId": "cmrxpjz7g01siivhe4vhlbwxz",
+      "companyName": "Gopher Resource",
+      "from": "INFERRED — ECP Fund IV — LOW",
+      "to": "DISCLOSED — Energy Capital Partners IV-A, LP — no normalized fund link"
+    },
+    {
+      "ownershipPeriodId": "cmrxpjz8k01skivhe3vjjnmqj",
+      "companyName": "Harvestone Low Carbon Partners",
+      "from": "INFERRED — ECP Fund V — LOW",
+      "to": "DISCLOSED — ECP Fund V — existing normalized fund link retained"
+    },
+    {
+      "ownershipPeriodId": "cmte75pk30014w22bamd7lc20",
+      "companyName": "Harvestone Low Carbon Partners",
+      "from": "UNRESOLVED — no named fund",
+      "to": "DIRECT_PROGRAM — Harvestone Group corporate partnership ownership — no normalized fund link"
+    },
+    {
+      "ownershipPeriodId": "cmrxpjz9401slivhe9c586tc5",
+      "companyName": "Metrus Energy",
+      "from": "INFERRED — ECP Fund V — LOW",
+      "to": "UNRESOLVED — ECP investing vehicle not publicly disclosed — no normalized fund link"
+    }
+  ],
+  "nonChanges": [
+    "Company identities, canonical redirects and publication status",
+    "Ownership organizations, vehicles, stakes, dates and active/former state",
+    "Fund Database records",
+    "Descriptions, milestones, citations and primary sources",
+    "Cresta Fund Management and Silverpeak attribution records, which already render correctly"
+  ],
+  "evidenceUrls": [
+    "https://www.ecpgp.com/equity/portfolio/braya-renewable-fuels",
+    "https://www.ecpgp.com/about/news-and-insights/press-releases/2019/energy-capital-partners-acquires-convergent-energy-power",
+    "https://www.ftc.gov/legal-library/browse/early-termination-notices/20180664",
+    "https://www.ecpgp.com/equity/portfolio/harvestone-low-carbon-partners",
+    "https://www.harvestonegroup.com/",
+    "https://www.metrusenergy.com/resources/blog/metrus-acquisition-by-ecp"
+  ],
+  "identityResolved": true,
+  "activeOwnershipResolved": true,
+  "unresolvedQuestions": []
+}
