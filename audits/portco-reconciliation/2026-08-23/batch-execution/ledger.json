@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-29T06:17:45.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-08-29T06:52:00.000Z",
+  "activeBatchId": "batch-0209-0213-v1",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -2491,7 +2491,55 @@
           "reason": "Atomic receipt, two canonical after-images, three canonical redirects, two public detail APIs, two rendered drawers, retired-row absence, and exact receipt-commit deployment verification passed."
         }
       ]
+    },
+    {
+      "batchId": "batch-0209-0213-v1",
+      "state": "READY",
+      "taskIds": [
+        "ledger:0209:tonaquint-data-centers:c32a57e3",
+        "ledger:0210:valorc3:48b37136",
+        "ledger:0211:beanfield-metroconnect:1a05dc89",
+        "ledger:0212:boingo-wireless:94c73adf",
+        "ledger:0213:extenet-formerly-extenet-systems:1d3fac1c"
+      ],
+      "taskIndexes": [
+        209,
+        210,
+        211,
+        212,
+        213
+      ],
+      "createdAt": "2026-08-29T06:25:35.000Z",
+      "updatedAt": "2026-08-29T06:52:00.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0209-0213-v1/batch-manifest.json",
+        "sha256": "b92c30918cfc5fde5cd1e648e523c01d49942ce4ac32586d4a8a11ebffd8f1a9"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-29T06:25:35.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-29T06:52:00.000Z",
+          "evidenceSha256": [
+            "b92c30918cfc5fde5cd1e648e523c01d49942ce4ac32586d4a8a11ebffd8f1a9"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "14a860698761d1c1f630eed98b6c682bc460e60a844fa52f89d3d20075680355"
+  "ledgerSha256": "26d4fc0d67e5efd2a1362b821a3fa78bd100fc46ee10d4d9e04328a87844e5d7"
 }

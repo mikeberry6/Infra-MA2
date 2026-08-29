@@ -1,0 +1,415 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0209:tonaquint-data-centers:c32a57e3",
+  "taskIndex": 209,
+  "asOfDate": "2026-08-29",
+  "generatedAt": "2026-08-29T06:35:00.000Z",
+  "canonicalKey": "valorc3|united-states",
+  "companyName": "Tonaquint Data Centers",
+  "actions": [
+    "CORRECT_COMPANY",
+    "MERGE_COMPANIES"
+  ],
+  "sourceHoldingIds": [],
+  "retiredCompanyIds": [
+    "cmrxpjd3z00toivhesha276ac"
+  ],
+  "relationMerges": [
+    {
+      "kind": "OWNERSHIP_PERIOD",
+      "retiredRelationId": "cmrxpjyo301rmivhemda6nxe1",
+      "canonicalRelationId": "cmrxpjyp701roivherr3dpvqf",
+      "rationale": "Both rows represent CVC DIF's continuing majority investment through DIF CIF III in the same Tonaquint/ValorC3 platform."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxplfql03ogivhe2wtkugzl",
+      "canonicalRelationId": "cmrxplfw103ooivheap44h09b",
+      "rationale": "Both rows contain the platform's 2008 founding history."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxplfr103ohivhe0loqprwo",
+      "canonicalRelationId": "cmrxplfwl03opivhef1rnmx49",
+      "rationale": "The management-retained minority statement is part of the same December 2022 CVC DIF entry transaction preserved in the canonical acquisition milestone."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxplfrm03oiivheopl5ynsv",
+      "canonicalRelationId": "cmrxplfwl03opivhef1rnmx49",
+      "rationale": "Both rows describe CVC DIF's acquisition of the same platform through DIF CIF III."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxplfs503ojivhezswoj1ye",
+      "canonicalRelationId": "cmrxplfx603oqivhecqwxq7ls",
+      "rationale": "Both rows describe the November 2023 EdgeX add-on in Oklahoma City."
+    }
+  ],
+  "rationale": "Merge Tonaquint Data Centers into ValorC3 Data Centers because direct company legal terms and the January 2025 rebrand announcement establish one continuing operating platform: Tonaquint Data Centers, LLC doing business as ValorC3 Data Centers. Preserve one CVC DIF ownership period through DIF CIF III, correct the investment year to the disclosed December 2022 acquisition month, retain Tonaquint as an alias and legal identity, and record the current St. George headquarters and three-market operating footprint. No later platform sale, sponsor transfer or signed pending exit was identified through August 19, 2026.",
+  "evidence": [
+    {
+      "url": "https://valorc3.com/terms-of-use/",
+      "purpose": "Canonical legal and operating identity",
+      "supports": [
+        "Tonaquint Data Centers, LLC does business as ValorC3 Data Centers",
+        "ValorC3 is the current operating identity rather than a separate company"
+      ]
+    },
+    {
+      "url": "https://valorc3.com/tonaquint-launches-new-brand-valorc3-data-centers/",
+      "purpose": "Rebrand, headquarters and operating continuity",
+      "supports": [
+        "Tonaquint began operating as ValorC3 on January 20, 2025",
+        "The same platform continued across St. George, Boise and Oklahoma City"
+      ]
+    },
+    {
+      "url": "https://www.cvcdif.com/news-insights/dif-capital-partners-acquires-us-based-data-centre-provider-tonaquint",
+      "purpose": "Ownership and fund attribution",
+      "supports": [
+        "DIF acquired a majority interest through DIF CIF III",
+        "Management retained a minority interest at entry"
+      ]
+    },
+    {
+      "url": "https://www.cvcdif.com/news-insights/dif-investee-company-tonaquint-acquires-edgex-data-centers-in-oklahoma-city",
+      "purpose": "Entry timing and platform expansion",
+      "supports": [
+        "CVC DIF identifies December 2022 as the acquisition month",
+        "EdgeX expanded the same platform into Oklahoma City"
+      ]
+    },
+    {
+      "url": "https://valorc3.com/valorc3-boise-hyperscale-data-center-credit-facility/",
+      "purpose": "Current ownership and exit check",
+      "supports": [
+        "The 2026 financing announcement still identifies CVC DIF as sponsor",
+        "The Boise development remained part of the active ValorC3 platform"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "f4d73ebc15afdc9b8a24d2020814d9a3c1f56924ed94d602102467bb5def8968",
+  "currentCompanySnapshotSha256": "d49269816fd1c8572511c1e36c4184bab79b00ab64c1f0f6e69c26e1fab91ecf",
+  "executionLock": {
+    "taskSnapshotSha256": "9d4f01de2ff7ff4f26c5afcb214d0f1d9a75d6300c8bdbd8c8f6eed163203c83",
+    "taskStateSha256": "c8da2a748f3460d91360a915bd2a50dcc045fb3ecb9bb55172286ba3ba613c34",
+    "taskDependencySha256": "fd516efe21094193e0624f57d271a9fbadd56a693037ae4b6a419663abde58b2",
+    "seedEntrySha256": "e8cdf0cb67228b82800b50c39268a0f123efc74b84c6e8afb4c255e27588a3ad",
+    "dependencies": {
+      "ownershipPeriodsSha256": "3851648245e649c887022affb159965532f778deef67adf0b6dd7c9d08254bcd",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "a7a69089c19e9c582fc00f35978c32ce1b9021d33d533cb6f89a20bcedda556a",
+      "organizationsSha256": "7a6d6eb8c91275eb133966b74b94196b45a1b8bf9f563ec95b85cdc78132c4f4",
+      "citationsSha256": "0c2ea33f279330107eea9b21fbba98ddb1d82f8aaba6bd19977ce73757f64c3b",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj1y900crivheqhghebtk",
+        "fundName": "DIF CIF III",
+        "managerId": "cmrxpi6qi001divhesbtqsco2",
+        "updatedAt": "2026-07-23T16:09:56.385Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi6qi001divhesbtqsco2",
+        "name": "CVC DIF",
+        "updatedAt": "2026-07-23T16:09:15.930Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjd5200tqivheyj3gg8uj",
+    "name": "ValorC3",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Colocation, cloud, and data centers",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "ValorC3 provides colocation, cloud, and related data-center services in regional United States markets. Its customers include enterprise and channel users that require colocation capacity, connectivity, and managed infrastructure in secondary markets. The business is asset-heavy because it owns and operates data-center facilities rather than a software-only platform. Public materials trace the platform to Tonaquint Data Centers, which DIF acquired in 2023 through CIF III, and later show a 2025 rebrand to ValorC3 after the 2023 EdgeX acquisition broadened the footprint into Oklahoma City. Company materials identify roots dating to 2008 and an operating footprint across Utah, Idaho, and Oklahoma.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2008,
+    "headquarters": "Utah; Idaho; Oklahoma",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjyp701roivherr3dpvqf",
+        "managerName": "CVC DIF",
+        "organizationName": "CVC DIF",
+        "fundName": "DIF CIF III",
+        "vehicleName": "DIF CIF III",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplfw103ooivheap44h09b",
+        "date": "2008",
+        "event": "Public company materials identify the platform's founding year as 2008.",
+        "category": "FOUNDING",
+        "sortDate": "2008-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplfwl03opivhef1rnmx49",
+        "date": "Jan 10, 2023",
+        "event": "DIF announced the acquisition of Tonaquint Data Centers through DIF CIF III.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-01-10T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplfx603oqivhecqwxq7ls",
+        "date": "Nov 30, 2023",
+        "event": "DIF announced Tonaquint's acquisition of EdgeX Data Centers in Oklahoma City.",
+        "category": "OTHER",
+        "sortDate": "2023-11-30T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplfxp03orivhezylvbnqz",
+        "date": "Jan 17, 2025",
+        "event": "Tonaquint Data Centers rebranded as ValorC3.",
+        "category": "MANAGEMENT",
+        "sortDate": "2025-01-17T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqi7v09oqivhemya9pdwn",
+        "label": "Valorc3 — ValorC3",
+        "url": "https://www.valorc3.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Valorc3 company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqi8y09osivhe0nw4nl60",
+        "label": "Valorc3 — ValorC3",
+        "url": "https://www.valorc3.com/about-us/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Valorc3 company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqi9t09ouivhe9rxvbk0o",
+        "label": "Valorc3 — ValorC3",
+        "url": "https://www.valorc3.com/press-releases/2025/01/17/tonaquint-data-centers-launches-new-brand-valorc3/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Valorc3 — ValorC3",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqiaa09ovivhe57ngbzsa",
+        "label": "Announcement date source — CVC DIF — Tonaquint Data Centers",
+        "url": "https://www.cvcdif.com/news-insights/dif-capital-partners-acquires-us-based-data-centre-provider-tonaquint",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CVC DIF transaction announcement",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "d49269816fd1c8572511c1e36c4184bab79b00ab64c1f0f6e69c26e1fab91ecf",
+  "afterImage": {
+    "id": "cmrxpjd5200tqivheyj3gg8uj",
+    "name": "ValorC3 Data Centers",
+    "aliases": [
+      "Tonaquint",
+      "Tonaquint Data Centers",
+      "Tonaquint Data Centers, LLC",
+      "ValorC3"
+    ],
+    "sector": "DIGITAL",
+    "subsector": "Colocation, cloud and regional data centers",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "ValorC3 Data Centers is the operating name of Tonaquint Data Centers, LLC, a regional U.S. data-center platform providing colocation, private cloud, connectivity, disaster recovery, backup and build-to-suit capacity. The platform serves enterprise, channel and hyperscale customers from St. George, Utah, Boise, Idaho and Oklahoma City, Oklahoma. CVC DIF acquired a majority interest through DIF CIF III in December 2022; management retained a minority interest, while exact percentages and the legal closing day were not publicly disclosed. Tonaquint acquired EdgeX in November 2023 and began operating as ValorC3 on January 20, 2025 without creating a new company. Current materials report 19 MW of operating capacity plus a 10 MW Boise facility under development and a second 10 MW facility planned. A 2026 company financing announcement still identified CVC DIF as sponsor, and no later sale, transfer or signed pending exit was identified through August 19, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://valorc3.com/",
+    "yearFounded": 2008,
+    "headquarters": "St. George, Utah, United States",
+    "lastVerifiedAt": "2026-08-19T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjyp701roivherr3dpvqf",
+        "managerName": "CVC DIF",
+        "organizationName": "CVC DIF",
+        "fundName": "DIF CIF III",
+        "vehicleName": null,
+        "stake": "Majority interest; exact percentage not publicly disclosed",
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplfw103ooivheap44h09b",
+        "date": "2008",
+        "event": "Public company profiles identify 2008 as the founding year of Tonaquint Data Centers in St. George, Utah.",
+        "category": "FOUNDING",
+        "sortDate": "2008-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://valorc3.com/tonaquint-launches-new-brand-valorc3-data-centers/"
+        ]
+      },
+      {
+        "id": "cmrxplfwl03opivhef1rnmx49",
+        "date": "Jan 10, 2023",
+        "event": "DIF acquired a majority interest in Tonaquint through DIF CIF III in December 2022; the transaction was announced on January 10, 2023 and management retained a minority interest.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-01-10T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.cvcdif.com/news-insights/dif-capital-partners-acquires-us-based-data-centre-provider-tonaquint",
+          "https://www.cvcdif.com/news-insights/dif-investee-company-tonaquint-acquires-edgex-data-centers-in-oklahoma-city"
+        ]
+      },
+      {
+        "id": "cmrxplfx603oqivhecqwxq7ls",
+        "date": "Nov 30, 2023",
+        "event": "Tonaquint acquired EdgeX Data Centers, adding an Oklahoma City facility to the same regional platform.",
+        "category": "OTHER",
+        "sortDate": "2023-11-30T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.cvcdif.com/news-insights/dif-investee-company-tonaquint-acquires-edgex-data-centers-in-oklahoma-city"
+        ]
+      },
+      {
+        "id": "cmrxplfxp03orivhezylvbnqz",
+        "date": "Jan 20, 2025",
+        "event": "Tonaquint Data Centers began operating as ValorC3 Data Centers while retaining the same legal company, facilities, management and sponsor ownership.",
+        "category": "OTHER",
+        "sortDate": "2025-01-20T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://valorc3.com/terms-of-use/",
+          "https://valorc3.com/tonaquint-launches-new-brand-valorc3-data-centers/"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqi7v09oqivhemya9pdwn",
+        "label": "Valorc3 — ValorC3",
+        "url": "https://www.valorc3.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current ValorC3 company website and operating identity",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqi8y09osivhe0nw4nl60",
+        "label": "Valorc3 — ValorC3",
+        "url": "https://www.valorc3.com/about-us/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current services and regional operating platform",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqi9t09ouivhe9rxvbk0o",
+        "label": "ValorC3 — Rebrand announcement",
+        "url": "https://valorc3.com/tonaquint-launches-new-brand-valorc3-data-centers/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "January 2025 operating-name change and platform continuity",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqiaa09ovivhe57ngbzsa",
+        "label": "Announcement date source — CVC DIF — Tonaquint Data Centers",
+        "url": "https://www.cvcdif.com/news-insights/dif-capital-partners-acquires-us-based-data-centre-provider-tonaquint",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "DIF CIF III majority investment and retained management minority",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "ValorC3 — Terms of use",
+        "url": "https://valorc3.com/terms-of-use/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Tonaquint Data Centers, LLC d/b/a ValorC3 Data Centers legal identity",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "Cvcdif — Tonaquint Data Centers",
+        "url": "https://www.cvcdif.com/news-insights/dif-investee-company-tonaquint-acquires-edgex-data-centers-in-oklahoma-city",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "December 2022 sponsor entry month and November 2023 EdgeX acquisition",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Tonaquint — Tonaquint Data Centers",
+        "url": "https://www.tonaquint.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Former Tonaquint domain redirect to the current ValorC3 platform",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "ValorC3 — Leadership",
+        "url": "https://valorc3.com/valorc3-leadership/",
+        "sourceType": "WEBSITE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Current leadership and continuity from the Tonaquint platform",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "ValorC3 — Build-to-suit data centers",
+        "url": "https://valorc3.com/built-to-suit-data-center/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current 19 MW platform capacity and Boise development plan",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "ValorC3 — Boise credit facility",
+        "url": "https://valorc3.com/valorc3-boise-hyperscale-data-center-credit-facility/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "April 2026 financing, development continuity and current CVC DIF sponsorship",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "9e370772773ca9fd063d2a91f7b0f2d7179af9fa1ef58684ba8b6806802d2d42",
+  "proposalSha256": "5f2648ca43aef481e8afeaeceb24a7a873e6e328f9d179300e126b630d6e548a"
+}

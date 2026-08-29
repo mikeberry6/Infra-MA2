@@ -1,0 +1,393 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0213:extenet-formerly-extenet-systems:1d3fac1c",
+  "taskIndex": 213,
+  "companyName": "Extenet (formerly ExteNet Systems)",
+  "generatedAt": "2026-08-29T06:31:12.201Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0213-extenet-formerly-extenet-systems/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 213,
+    "taskId": "ledger:0213:extenet-formerly-extenet-systems:1d3fac1c",
+    "canonicalKey": "extenet-formerly-extenet-systems|united-states",
+    "companyName": "Extenet (formerly ExteNet Systems)",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 36,
+    "managers": [
+      "DigitalBridge",
+      "InfraBridge",
+      "Northleaf Capital"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "036-digitalbridge:holding:007:extenet-formerly-extenet-systems",
+      "071-northleaf-capital:holding:006:extenet-formerly-extenet-systems"
+    ],
+    "sourceRepoOnlyIds": [
+      "058-infrabridge:repo-only:005:extenet-formerly-extenet-systems"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjdak00twivheazjbfqum"
+    ],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://extenet.com/about-us/",
+      "https://www.digitalbridge.com/portfolio/extenet-systems",
+      "https://www.northleafcapital.com/infrastructure-investments?page=2"
+    ],
+    "candidateCanonicalKeys": [
+      "extenet-formerly-extenet-systems|united-states|census-1"
+    ],
+    "rationale": "Accepted census NEEDS_REVIEW for 071-northleaf-capital:holding:006:extenet-formerly-extenet-systems: Ownership persists but consortium recapitalizations and evolving partner structure obscure exact stake and vehicle. Census candidate extenet-formerly-extenet-systems|united-states|census-1 overlaps this record without an exact approved identity decision. Heuristic identity overlap with extenet-systems|united-states; no automatic merge was made. Heuristic identity overlap with extenet|united-states; no automatic merge was made. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Accepted census NEEDS_REVIEW for 071-northleaf-capital:holding:006:extenet-formerly-extenet-systems: Ownership persists but consortium recapitalizations and evolving partner structure obscure exact stake and vehicle.",
+      "Census candidate extenet-formerly-extenet-systems|united-states|census-1 overlaps this record without an exact approved identity decision.",
+      "Heuristic identity overlap with extenet-systems|united-states; no automatic merge was made.",
+      "Heuristic identity overlap with extenet|united-states; no automatic merge was made.",
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjdak00twivheazjbfqum",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "extenet-formerly-extenet-systems|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjdak00twivheazjbfqum",
+    "name": "Extenet (formerly ExteNet Systems)",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Small cells, DAS, and fiber",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "ExteNet develops and operates outdoor and in-building wireless infrastructure, fiber networks, and related connectivity systems for mobile carriers, venue owners, and enterprise customers. The company follows an asset-heavy model built around long-lived communications infrastructure and recurring carrier or venue revenues rather than retail service revenues. Public materials describe ExteNet as the largest privately held U.S. provider focused on DAS, small cells, fiber, and other advanced connectivity solutions. Its footprint is national, and the company relocated its headquarters to Frisco, Texas while continuing to serve carrier and enterprise customers across major U.S. markets. John Hancock led the acquisition of an approximately 30% stake in 2020, and ExteNet announced the closing of the Manulife-led investment in 2021 alongside existing owners Digital Colony and Stonepeak. Manulife's infrastructure team identifies the investment with Fund II.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2003,
+    "headquarters": "Multi-state United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjysh01ruivhekyprfap4",
+        "managerName": "Manulife Investment Management",
+        "organizationName": "Manulife",
+        "fundName": "Manulife Infrastructure Fund II",
+        "vehicleName": "Manulife Infrastructure Fund II",
+        "stake": null,
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjysz01rvivheidx2w2t3",
+        "managerName": "Stonepeak",
+        "organizationName": "Stonepeak",
+        "fundName": "Stonepeak Core Fund",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2015,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjyti01rwivheilwkn87k",
+        "managerName": "DigitalBridge",
+        "organizationName": "DigitalBridge",
+        "fundName": null,
+        "vehicleName": "DigitalBridge Equity",
+        "stake": null,
+        "investmentYear": 2015,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjyu501rxivhecye398eq",
+        "managerName": "Northleaf Capital Partners",
+        "organizationName": "Northleaf",
+        "fundName": "Northleaf NEIF",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2015,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplgg903paivhenu5ulvi9",
+        "date": "2003",
+        "event": "ExteNet Systems was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2003-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplggv03pbivheb5ppcidf",
+        "date": "Nov 2015",
+        "event": "Northleaf portfolio materials identify ExteNet Systems as a November 2015 infrastructure investment.",
+        "category": "FINANCING",
+        "sortDate": "2015-11-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplghd03pcivhe0p6vybvn",
+        "date": "Nov 17, 2015",
+        "event": "Digital Bridge and Stonepeak completed ExteNet's $1.4 billion recapitalization.",
+        "category": "ACQUISITION",
+        "sortDate": "2015-11-17T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplghx03pdivheleltnpzv",
+        "date": "Jul 23, 2015",
+        "event": "Digital Bridge and Stonepeak announced a recapitalization of ExteNet, with additional capital to support long-term growth.",
+        "category": "FINANCING",
+        "sortDate": "2015-07-23T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplgih03peivhehjasmphs",
+        "date": "May 10, 2021",
+        "event": "Manulife Investment Management completed its strategic investment in ExteNet.",
+        "category": "FINANCING",
+        "sortDate": "2021-05-10T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplgj103pfivhe69inxako",
+        "date": "Feb 5, 2026",
+        "event": "DigitalBridge (via Extenet Systems) agreed to sell Extenet Systems (Enterprise Fiber) to Undisclosed Buyer.",
+        "category": "DIVESTITURE",
+        "sortDate": "2026-02-05T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmpfn0572ivhezeuw30yd",
+        "date": "2002",
+        "event": "ExteNet Systems was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2002-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmpg90573ivhem9g4jdfv",
+        "date": "Jul 2015",
+        "event": "Stonepeak and DigitalBridge announced a recapitalization of ExteNet Systems.",
+        "category": "ACQUISITION",
+        "sortDate": "2015-07-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmpgq0574ivhe1a88phrw",
+        "date": "May 10, 2021",
+        "event": "ExteNet announced the closing of a strategic investment from Manulife Investment Management.",
+        "category": "FINANCING",
+        "sortDate": "2021-05-10T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmph90575ivhe8n1enb99",
+        "date": "Dec 15, 2022",
+        "event": "ExteNet Systems announced its rebrand to Extenet.",
+        "category": "MANAGEMENT",
+        "sortDate": "2022-12-15T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqj2i09q3ivhenku9n5rp",
+        "label": "Announcement date source — Manulife — ExteNet Systems",
+        "url": "https://www.businesswire.com/news/home/20201015005270/en/ExteNet-Systems-Announces-Strategic-Investment-from-John-Hancock-Life-Insurance-Company-U.S.A.",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Manulife transaction announcement",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqj3n09q5ivheyqyzk33g",
+        "label": "Investment date source — DigitalBridge — ExteNet Systems",
+        "url": "https://www.digitalbridge.com/portfolio/extenet-systems",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "DigitalBridge initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqj4q09q7ivhefbcqra5i",
+        "label": "Close date source — DigitalBridge — ExteNet Systems",
+        "url": "https://www.prnewswire.com/news-releases/chicago-region-extenet-systems-completes-recapitalization-300180129.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "DigitalBridge closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqjbg09q9ivhe7hm2f1pq",
+        "label": "Extenet — ExteNet Systems, LLC",
+        "url": "https://extenet.com/about-us/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Extenet company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqjbz09qaivhe1ul19d9q",
+        "label": "Close date source — DigitalBridge — ExteNet Systems",
+        "url": "https://www.prnewswire.com/news-releases/chicago-region-extenet-systems-completes-recapitalization-300180129.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Stonepeak closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqjd209qcivhemhwyqfhy",
+        "label": "Investment date source — Northleaf — ExteNet Systems",
+        "url": "https://www.northleafcapital.com/infrastructure-investments?page=2",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Northleaf initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpssae0d4aivhe0pgwug8c",
+        "label": "Company profile source — Extenet",
+        "url": "https://extenet.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Extenet company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpssbe0d4civhefrxj0wgl",
+        "label": "Announcement date source — Stonepeak — Extenet",
+        "url": "https://www.prnewswire.com/news-releases/extenet-systems-announces-capital-restructuring-300117742.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Stonepeak transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpssd00d4fivhe5t4dnone",
+        "label": "Investment date source — Manulife Investment Management — Extenet",
+        "url": "https://extenet.com/extenet-systems-announces-successful-closing-of-manulife-investment/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Manulife Investment Management initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpssdy0d4hivhe1rkni0it",
+        "label": "Rebrand source — Extenet",
+        "url": "https://extenet.com/extenet-systems-is-now-extenet/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Extenet company profile",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj39300epivhe8orerprn",
+        "fundName": "Manulife Infrastructure Fund II",
+        "managerId": "cmrxpibim002wivhet9rhv26m",
+        "updatedAt": "2026-07-23T16:09:58.071Z"
+      },
+      {
+        "id": "cmrxpj3ek00ezivhe3cnm6515",
+        "fundName": "Northleaf NEIF",
+        "managerId": "cmrxpic3o0032ivhe1bvmxxsl",
+        "updatedAt": "2026-07-23T16:09:58.268Z"
+      },
+      {
+        "id": "cmrxpj3nu00fbivhebtp8thxg",
+        "fundName": "Stonepeak Core Fund",
+        "managerId": "cmrxpide6003hivhe1g17rhjr",
+        "updatedAt": "2026-07-23T16:09:58.602Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi6te001eivheobw69a9c",
+        "name": "DigitalBridge",
+        "updatedAt": "2026-07-23T16:09:16.034Z"
+      },
+      {
+        "id": "cmrxpide6003hivhe1g17rhjr",
+        "name": "Stonepeak",
+        "updatedAt": "2026-07-23T16:09:24.559Z"
+      },
+      {
+        "id": "cmrxpihju004sivhe0wgw7q0e",
+        "name": "Manulife",
+        "updatedAt": "2026-07-23T16:09:29.946Z"
+      },
+      {
+        "id": "cmrxpihww004wivhek83snno3",
+        "name": "Northleaf",
+        "updatedAt": "2026-07-23T16:09:30.416Z"
+      }
+    ],
+    "redirects": [
+      {
+        "retiredId": "cmrxpjnj4019sivheei4wmjpj",
+        "companyId": "cmrxpjdak00twivheazjbfqum",
+        "reason": "CANONICAL_MERGE",
+        "createdAt": "2026-07-29T04:08:42.522Z"
+      }
+    ]
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0213:extenet-formerly-extenet-systems:1d3fac1c",
+    "taskIndex": 213,
+    "canonicalKey": "extenet-formerly-extenet-systems|united-states",
+    "capturedAt": "2026-08-29T06:31:12.201Z",
+    "databaseRevision": "revision:d114ded2b2c3a4cbd174f0070d8a097fb82649d8679f4b665ab56b12c8f47ee8",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "768b5d3cfeb382a90c7e1864b1b0295c4ed687793e89c105390f88c9cbe746c8",
+    "productionSnapshotSha256": "6ae08bea53e80179c62ea3eb774ff7350b54feecaf5978350698204f1c9b8951",
+    "targetCompanySnapshotSha256": "9cd838b45c4e39d13bd86b249456be8b8c94bdb826e4d5b7d332caef7d41c8c6",
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "a4e52e00ffd7be93fa856ceba03e0e1c03f3b0d4c82452a5ad911bcf1289bb65",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "68d516f5b468deff95fca0e4fd72fea5ea3c3dab3661a8f6aab4431381e623f3",
+      "organizationsSha256": "f6e70128c0b4c9e6ee48d39f38dea1460f7e2e44ba76a7e8a52887ebc2c70b1e",
+      "citationsSha256": "5d9f2dfec96f607b060b235a72e848bb2ebce9f547e6cb4409d19956cfaf6db6",
+      "redirectsSha256": "f738561d38d0b175bb3b2d0f74d9a42bf7ed453dd8966f435b60f2f63059fc2c"
+    },
+    "dependencySha256": "879b71344a95df0e32a9bf829c73f025770e12200eae82047eab6312138d7de9",
+    "stateSha256": "7ff2622ed869cdd8aa7f5a4159ce16c61734b8253fd5ac467a966f6af66bbc79",
+    "taskSnapshotSha256": "2758e5c3a1150cc695fd4d194dd0bd697e6d5b5128c49a731784f2564ac4e963"
+  },
+  "contextSha256": "6d4ad5bc801ac9e664a207c2f3c07ca9c915efb1be100e54b196e6a8cc318c32"
+}
