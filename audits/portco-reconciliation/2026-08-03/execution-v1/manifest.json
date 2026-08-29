@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-29T18:24:42.000Z",
+  "updatedAt": "2026-08-29T19:29:00.000Z",
   "runStatus": "IDLE",
   "activeTaskId": null,
   "source": {
@@ -28325,20 +28325,26 @@
       "managerIndex": 46,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "bf5e26c288c7e883b725b411d46bdcc404f2a3e4ef513638c2a1b6571be2b399",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "EXCLUDED",
+      "attempts": 1,
+      "startedAt": "2026-08-29T18:55:37.000Z",
+      "updatedAt": "2026-08-29T19:29:00.000Z",
+      "completedAt": "2026-08-29T19:29:00.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "2eead69c5da26fb8a73106c8ee00dbef0efc4ba83db1bcd3051c2c4c308f28cd",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0259-solcap-keystate-renewables-jvs/attempt-1/locked-task-snapshot.json",
+          "sha256": "2eead69c5da26fb8a73106c8ee00dbef0efc4ba83db1bcd3051c2c4c308f28cd"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0259-solcap-keystate-renewables-jvs/attempt-1/terminal-decision.json",
+          "sha256": "b52d656bc11c5b440d5ee52ca3454d67835175bb12bad1829a189c812755f7f2"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -28352,6 +28358,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "EXCLUDED",
+          "at": "2026-08-29T19:29:00.000Z",
+          "reason": "SOLCAP is KeyState's tax-credit syndication platform and a series of pooled LLCs, not a Generate/KeyState operating company. Generate owns/sponsors the solar assets; KeyState manages tax-equity capital. SEC filings classify the Generate-named vehicles as pooled funds and omit Generate as manager.",
+          "taskSnapshotSha256": "2eead69c5da26fb8a73106c8ee00dbef0efc4ba83db1bcd3051c2c4c308f28cd",
+          "evidenceSha256": [
+            "2eead69c5da26fb8a73106c8ee00dbef0efc4ba83db1bcd3051c2c4c308f28cd",
+            "6ddb37b3bcd45abbfffb748f1b5683c63df3a0cf3c41a36107bc6e14affbd453",
+            "b52d656bc11c5b440d5ee52ca3454d67835175bb12bad1829a189c812755f7f2",
+            "e7009ead2e4c6d46c161899b9989fc43dc64483bbcb779e56bb9398012cfbfac"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -28363,23 +28384,44 @@
       "managerIndex": 46,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "b795bfda0727627b7e1b076c8980eaa05b6242d53ef181ac836f3af75fa8f9a2",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-08-29T18:55:37.000Z",
+      "updatedAt": "2026-08-29T19:29:00.000Z",
+      "completedAt": "2026-08-29T19:29:00.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "418d799a0cdc93f2fab9c22b79fdfb0e2d1fead6fe5efe942f8b7c06ec540654",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0260-stem-energy-storage-asset-spvs/attempt-1/locked-task-snapshot.json",
+          "sha256": "418d799a0cdc93f2fab9c22b79fdfb0e2d1fead6fe5efe942f8b7c06ec540654"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0260-stem-energy-storage-asset-spvs-v1/proposal.json",
+          "sha256": "5306ed448d9d524bd8d165bf419e65da6f89e1f5f32ad00c77b1f23add34ef57"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0260-stem-energy-storage-asset-spvs-v1.json",
+          "sha256": "5e98ed85e5cc1feccd467a4dc2a6de2ae8e3ac19f3663f41e012944f8223fae0"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0259-0263-v6/production-apply/batch-apply-receipt.json#members/1/receipt",
+          "sha256": "5bad5492b8a928bed70be7db094e536afc4f2569e68b0f1c38e364d73d307069"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0260-stem-energy-storage-asset-spvs-v1/proposal.json#afterImage",
+          "sha256": "196243d434c169290044e15202e546f310a64ed8b37d12bce0ea3c632212ddc2"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-29T19:29:00.000Z",
+        "auditEventId": "cmterm29f000dts2bd6w8mqs6",
+        "transactionId": "7aec548a-e0b5-4ad8-9425-d7b144fd88a1",
+        "receiptSha256": "5bad5492b8a928bed70be7db094e536afc4f2569e68b0f1c38e364d73d307069",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33270555661"
+      },
       "history": [
         {
           "sequence": 1,
@@ -28390,6 +28432,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-08-29T19:29:00.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0259-0263-v6.",
+          "taskSnapshotSha256": "418d799a0cdc93f2fab9c22b79fdfb0e2d1fead6fe5efe942f8b7c06ec540654",
+          "evidenceSha256": [
+            "196243d434c169290044e15202e546f310a64ed8b37d12bce0ea3c632212ddc2",
+            "418d799a0cdc93f2fab9c22b79fdfb0e2d1fead6fe5efe942f8b7c06ec540654",
+            "5306ed448d9d524bd8d165bf419e65da6f89e1f5f32ad00c77b1f23add34ef57",
+            "5bad5492b8a928bed70be7db094e536afc4f2569e68b0f1c38e364d73d307069",
+            "5e98ed85e5cc1feccd467a4dc2a6de2ae8e3ac19f3663f41e012944f8223fae0",
+            "6ddb37b3bcd45abbfffb748f1b5683c63df3a0cf3c41a36107bc6e14affbd453",
+            "e7009ead2e4c6d46c161899b9989fc43dc64483bbcb779e56bb9398012cfbfac"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -28401,23 +28461,44 @@
       "managerIndex": 47,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "6108c5297c9c8c5bd3d200dd77cd2202af036b147e201bc076968033707bfb14",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-08-29T18:55:37.000Z",
+      "updatedAt": "2026-08-29T19:29:00.000Z",
+      "completedAt": "2026-08-29T19:29:00.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "af78cb0e99b157ac5fad02e6a05ce3fa56c7e248862130817953bcb18b4b9365",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0261-aces-delta/attempt-1/locked-task-snapshot.json",
+          "sha256": "af78cb0e99b157ac5fad02e6a05ce3fa56c7e248862130817953bcb18b4b9365"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0261-aces-delta-v4/proposal.json",
+          "sha256": "b7c9f4a9dd4a183f94f5ddaa54a6702ba670201ab97fb2991c97459d1f158acf"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0261-aces-delta-v4.json",
+          "sha256": "e14692aa23dee10d965bc0bf5c4c511479986b59205408166f25e08a3e15d076"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0259-0263-v6/production-apply/batch-apply-receipt.json#members/2/receipt",
+          "sha256": "73995120a57b8ea0766fa2c629133be2f951dec6c49b770d7ad009772e8d1047"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0261-aces-delta-v4/proposal.json#afterImage",
+          "sha256": "127ce1d008b22e95ac9f76ebabab31f40fd3985a0618b15cf5dcca1171464fc3"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-29T19:29:00.000Z",
+        "auditEventId": "cmterm2nd000qts2brictxvdv",
+        "transactionId": "7aec548a-e0b5-4ad8-9425-d7b144fd88a1",
+        "receiptSha256": "73995120a57b8ea0766fa2c629133be2f951dec6c49b770d7ad009772e8d1047",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33270555661"
+      },
       "history": [
         {
           "sequence": 1,
@@ -28428,6 +28509,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-08-29T19:29:00.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0259-0263-v6.",
+          "taskSnapshotSha256": "af78cb0e99b157ac5fad02e6a05ce3fa56c7e248862130817953bcb18b4b9365",
+          "evidenceSha256": [
+            "127ce1d008b22e95ac9f76ebabab31f40fd3985a0618b15cf5dcca1171464fc3",
+            "6ddb37b3bcd45abbfffb748f1b5683c63df3a0cf3c41a36107bc6e14affbd453",
+            "73995120a57b8ea0766fa2c629133be2f951dec6c49b770d7ad009772e8d1047",
+            "af78cb0e99b157ac5fad02e6a05ce3fa56c7e248862130817953bcb18b4b9365",
+            "b7c9f4a9dd4a183f94f5ddaa54a6702ba670201ab97fb2991c97459d1f158acf",
+            "e14692aa23dee10d965bc0bf5c4c511479986b59205408166f25e08a3e15d076",
+            "e7009ead2e4c6d46c161899b9989fc43dc64483bbcb779e56bb9398012cfbfac"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -28439,23 +28538,44 @@
       "managerIndex": 47,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "655dbbb90d49ebd66a3473469108da6aacac2784608e1c0989d02c8c4353d4ae",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-08-29T18:55:37.000Z",
+      "updatedAt": "2026-08-29T19:29:00.000Z",
+      "completedAt": "2026-08-29T19:29:00.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "e1e250f7a228b863ba82de3fed3997d735123fe5b9d0f34afcb9f2452f5b4824",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0262-direct-chassislink-inc-dcli/attempt-1/locked-task-snapshot.json",
+          "sha256": "e1e250f7a228b863ba82de3fed3997d735123fe5b9d0f34afcb9f2452f5b4824"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0262-direct-chassislink-inc-dcli-v3/proposal.json",
+          "sha256": "5b7c5f97b9dd04342bda97c4f2aa7e23ea94e390e35529c57314deb1b602cebe"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0262-direct-chassislink-inc-dcli-v3.json",
+          "sha256": "529cfacc47b8719dc40b64c512aceb2deec57080eded0850b7994e7d91381168"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0259-0263-v6/production-apply/batch-apply-receipt.json#members/3/receipt",
+          "sha256": "c78403b7334738b21905b4224563e934f1b119dc1ced74e68a6086af1528ece3"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0262-direct-chassislink-inc-dcli-v3/proposal.json#afterImage",
+          "sha256": "e08441148d0e0d962a616d0ce2975dcd10d136e9447b7fd15f3c984968a5d212"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-29T19:29:00.000Z",
+        "auditEventId": "cmterm35k001ats2bthbqgg4b",
+        "transactionId": "7aec548a-e0b5-4ad8-9425-d7b144fd88a1",
+        "receiptSha256": "c78403b7334738b21905b4224563e934f1b119dc1ced74e68a6086af1528ece3",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33270555661"
+      },
       "history": [
         {
           "sequence": 1,
@@ -28466,6 +28586,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-08-29T19:29:00.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0259-0263-v6.",
+          "taskSnapshotSha256": "e1e250f7a228b863ba82de3fed3997d735123fe5b9d0f34afcb9f2452f5b4824",
+          "evidenceSha256": [
+            "529cfacc47b8719dc40b64c512aceb2deec57080eded0850b7994e7d91381168",
+            "5b7c5f97b9dd04342bda97c4f2aa7e23ea94e390e35529c57314deb1b602cebe",
+            "6ddb37b3bcd45abbfffb748f1b5683c63df3a0cf3c41a36107bc6e14affbd453",
+            "c78403b7334738b21905b4224563e934f1b119dc1ced74e68a6086af1528ece3",
+            "e08441148d0e0d962a616d0ce2975dcd10d136e9447b7fd15f3c984968a5d212",
+            "e1e250f7a228b863ba82de3fed3997d735123fe5b9d0f34afcb9f2452f5b4824",
+            "e7009ead2e4c6d46c161899b9989fc43dc64483bbcb779e56bb9398012cfbfac"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -28477,20 +28615,26 @@
       "managerIndex": 47,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "4be111aa6c8792eae03e118e6d10ff03ef9cc60cfe7c301173f11a635360a2bc",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
+      "status": "DEFERRED",
+      "attempts": 1,
+      "startedAt": "2026-08-29T18:55:37.000Z",
+      "updatedAt": "2026-08-29T19:29:00.000Z",
+      "completedAt": "2026-08-29T19:29:00.000Z",
+      "exceptionReason": "Divert remains a verified active platform and Ara's continuing ownership is supported, but GIC's 2021 direct investment cannot be safely reconciled because no primary source establishes whether GIC remains a shareholder or identifies the sponsoring GIC strategy or legal affiliate. Applying only the supported owners would silently retire a potentially current position, while retaining the repository's GIC Infrastructure label would preserve an unsupported attribution. Defer the entire list correction until that active-ownership question is resolved.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "232e97fa8abf007fc51d7602c0ebcb3ea2c9961d90414f5cd126411ce46dbdc4",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0263-divert-inc/attempt-1/locked-task-snapshot.json",
+          "sha256": "232e97fa8abf007fc51d7602c0ebcb3ea2c9961d90414f5cd126411ce46dbdc4"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0263-divert-inc/attempt-1/terminal-decision.json",
+          "sha256": "1004180fce4052cc37e8a4ec860e3dd162463bd4c74a85b775e466f82b87a16e"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -28504,6 +28648,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-08-29T19:29:00.000Z",
+          "reason": "Divert remains a verified active platform and Ara's continuing ownership is supported, but GIC's 2021 direct investment cannot be safely reconciled because no primary source establishes whether GIC remains a shareholder or identifies the sponsoring GIC strategy or legal affiliate. Applying only the supported owners would silently retire a potentially current position, while retaining the repository's GIC Infrastructure label would preserve an unsupported attribution. Defer the entire list correction until that active-ownership question is resolved.",
+          "taskSnapshotSha256": "232e97fa8abf007fc51d7602c0ebcb3ea2c9961d90414f5cd126411ce46dbdc4",
+          "evidenceSha256": [
+            "1004180fce4052cc37e8a4ec860e3dd162463bd4c74a85b775e466f82b87a16e",
+            "232e97fa8abf007fc51d7602c0ebcb3ea2c9961d90414f5cd126411ce46dbdc4",
+            "6ddb37b3bcd45abbfffb748f1b5683c63df3a0cf3c41a36107bc6e14affbd453",
+            "e7009ead2e4c6d46c161899b9989fc43dc64483bbcb779e56bb9398012cfbfac"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -32574,13 +32733,13 @@
       "managerIndex": 75,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "b78c723855b7328ba50193e43f12bc72337c562409bf4b4f7e91f3a4ae79b502",
-      "status": "PENDING",
+      "status": "SUPERSEDED",
       "attempts": 0,
       "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
-      "supersededByTaskId": null,
+      "updatedAt": "2026-08-29T19:29:00.000Z",
+      "completedAt": "2026-08-29T19:29:00.000Z",
+      "exceptionReason": "Superseded by ledger:0262:direct-chassislink-inc-dcli:d3d4542b; its verified batch after-image covers the same canonical identity and ownership judgment.",
+      "supersededByTaskId": "ledger:0262:direct-chassislink-inc-dcli:d3d4542b",
       "taskSnapshotSha256": null,
       "artifacts": {
         "taskSnapshot": null,
@@ -32601,6 +32760,19 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "SUPERSEDED",
+          "at": "2026-08-29T19:29:00.000Z",
+          "reason": "Superseded by ledger:0262:direct-chassislink-inc-dcli:d3d4542b; its verified batch after-image covers the same canonical identity and ownership judgment.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "6ddb37b3bcd45abbfffb748f1b5683c63df3a0cf3c41a36107bc6e14affbd453",
+            "e7009ead2e4c6d46c161899b9989fc43dc64483bbcb779e56bb9398012cfbfac"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -37615,5 +37787,5 @@
       ]
     }
   ],
-  "manifestSha256": "9499f94ff7fe4f619b8284dd99cc0b89bae0d201674004ca0ea8d41d537c768f"
+  "manifestSha256": "eb342e5f3ed9b4d061250c98a705214224e89d7deb195f154b30f625b255c641"
 }

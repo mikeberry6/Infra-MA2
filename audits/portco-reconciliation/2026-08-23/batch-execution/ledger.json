@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-29T19:21:01.000Z",
-  "activeBatchId": "batch-0259-0263-v6",
+  "updatedAt": "2026-08-29T19:29:00.000Z",
+  "activeBatchId": null,
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -3824,7 +3824,7 @@
     },
     {
       "batchId": "batch-0259-0263-v6",
-      "state": "VERIFYING",
+      "state": "COMPLETED",
       "taskIds": [
         "ledger:0259:solcap-keystate-renewables-jvs:349ca18f",
         "ledger:0260:stem-energy-storage-asset-spvs:a034fa93",
@@ -3840,8 +3840,8 @@
         263
       ],
       "createdAt": "2026-08-29T18:55:37Z",
-      "updatedAt": "2026-08-29T19:21:01.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-29T19:29:00.000Z",
+      "completedAt": "2026-08-29T19:29:00.000Z",
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0259-0263-v6/batch-manifest.json",
         "sha256": "e7009ead2e4c6d46c161899b9989fc43dc64483bbcb779e56bb9398012cfbfac"
@@ -3901,9 +3901,20 @@
             "e7009ead2e4c6d46c161899b9989fc43dc64483bbcb779e56bb9398012cfbfac"
           ],
           "reason": null
+        },
+        {
+          "sequence": 6,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-08-29T19:29:00.000Z",
+          "evidenceSha256": [
+            "6ddb37b3bcd45abbfffb748f1b5683c63df3a0cf3c41a36107bc6e14affbd453",
+            "e7009ead2e4c6d46c161899b9989fc43dc64483bbcb779e56bb9398012cfbfac"
+          ],
+          "reason": null
         }
       ]
     }
   ],
-  "ledgerSha256": "3e681144105d8d9d47ae1c29a91207a3d17d06d1bd8d26b82796ecf522e3eacc"
+  "ledgerSha256": "d3a37e3c2ebfcc527fa55e3ed4418cfae5f63b0e8d3d773b5db56bb14a7f6de1"
 }
