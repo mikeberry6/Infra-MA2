@@ -1,0 +1,183 @@
+
+> infra-tracker@1.0.0 portfolio:fund-attribution:apply
+> npx tsx scripts/apply-portfolio-fund-attribution.ts --manifest=audits/portfolio-fund-attribution/2026-08-29/scoped/batch-0229-0233-attribution-repair/apply-manifest.json --manifest-sha256=890842493dc54ee35462e4f9817b3310f3ba9c01e0e25df92f7cb176e514e2e3 --production-snapshot=audits/portfolio-fund-attribution/2026-08-29/scoped/batch-0229-0233-attribution-repair/production-snapshot.json --approval=audits/portfolio-fund-attribution/2026-08-29/scoped/batch-0229-0233-attribution-repair/approval.json --approval-sha256=04a077d845cdece56efd8646f5b8bd4daa95815bab311823b57d683c452ea142 --apply=true --write-token=APPLY_REVIEWED_PORTFOLIO_FUND_ATTRIBUTION --receipt=tmp/portfolio-fund-attribution/production/apply-receipt.json
+
+(node:2928) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_RECEIPT",
+  "manifestSha256": "890842493dc54ee35462e4f9817b3310f3ba9c01e0e25df92f7cb176e514e2e3",
+  "approvalSha256": "04a077d845cdece56efd8646f5b8bd4daa95815bab311823b57d683c452ea142",
+  "environment": "production",
+  "pipelineRunId": "cmtebluzw00009c2b4xh88bl6",
+  "mutationCount": 8,
+  "changed": 8,
+  "idempotent": false,
+  "beforeFingerprint": "af792c9b60f309c48beb13ba9c0ce2f1a9ff04cf3aa22830274d097965d89c9e",
+  "afterFingerprint": "18017bd05bfaa60a486e3a1683c724535652d50fcf10d2851d8a940c4a10ccd9",
+  "rows": [
+    {
+      "recordId": "OFA-1D158A6E02F2",
+      "ownershipPeriodId": "cmrxpjz9o01smivhe6emw3bll",
+      "companyId": "cmrxpjdmu00ueivhetif6v25s",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "ECP Fund V",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, vintage 2022 is 0 years before investment, North America-relevant mandate; next candidate trails by 3.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "ECP directly supports the completed July 2022 acquisition and current ownership, but the reviewed sources do not identify the current fund or holding vehicle beyond the transaction entities. The unsupported ECP Fund V estimate is removed."
+      }
+    },
+    {
+      "recordId": "OFA-CC5B3D9E35F7",
+      "ownershipPeriodId": "cmrxpjza701snivheqdjimc56",
+      "companyId": "cmrxpjdne00ufivheo8adf9nm",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "ECP Fund III",
+        "attributionConfidence": "MEDIUM",
+        "attributionRationale": "Estimated from manager match 1.00, vintage 2013 is 2 years before investment, North America-relevant mandate, historical vehicle retained for attribution only; next candidate trails by 17.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "ECP Fund IV",
+        "attributionConfidence": null,
+        "attributionRationale": "ECP identifies March 2018 as the Fund IV investment date and continues to list Next Wave as current. The record preserves the earlier 2015 ECP investment while explicitly leaving its original fund and the transition mechanics undisclosed; no curated Fund IV database row is linked."
+      }
+    },
+    {
+      "recordId": "OFA-BC5F27EAA8C4",
+      "ownershipPeriodId": "cmrxpjzar01soivheky8l1tl7",
+      "companyId": "cmrxpjdnz00ugivhezk5dzw98",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "ECP Fund IV",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, vintage 2017 precedes investment by 4 years, North America-relevant mandate, historical vehicle retained for attribution only; next candidate trails by 7.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "ECP Fund IV",
+        "attributionConfidence": null,
+        "attributionRationale": "The receivership report identifies ECP IV-A, IV-B, IV-C and IV-D as the acquisition funds, and ECP confirms the completed 2021 acquisition and current ownership. The disclosed Fund IV attribution is retained without a curated database link."
+      }
+    },
+    {
+      "recordId": "OFA-D71042A88A24",
+      "ownershipPeriodId": "cmrxpjzba01spivhee3vel7bc",
+      "companyId": "cmrxpjdoi00uhivhenpf9ydgf",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": "ECP Fund V",
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "ECP Fund V",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, vintage 2022 is 2 years before investment, North America-relevant mandate; next candidate trails by 3.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": "ECP Fund V",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "ECP Fund V",
+        "attributionConfidence": null,
+        "attributionRationale": "Bridgepoint's 2026 reporting attributes PROENERGY to ECP Fund V, while ECP confirms the majority acquisition and current status. The approved ownership period remains linked to the existing curated ECP Fund V record."
+      }
+    },
+    {
+      "recordId": "OFA-5379C52EC8D3",
+      "ownershipPeriodId": "cmteaq22x001bw32bqz186r2y",
+      "companyId": "cmrxpjdoi00uhivhenpf9ydgf",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "ECP's acquisition release directly states that founder Jeff Canon and management invested alongside ECP. This is a management co-investment rather than an infrastructure-fund attribution, and no separate vehicle or percentage is inferred."
+      }
+    },
+    {
+      "recordId": "OFA-7F84F0F6B187",
+      "ownershipPeriodId": "cmrxpjzbw01sqivheqo2vhw6z",
+      "companyId": "cmrxpjdp200uiivheb3y5869n",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "ECP Fund V",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, vintage 2022 is 0 years before investment, North America-relevant mandate; next candidate trails by 3.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "ECP directly supports the completed 2022 acquisition and current ownership, but the reviewed sources do not disclose the investing fund or acquisition vehicle. The unsupported ECP Fund V estimate is removed."
+      }
+    },
+    {
+      "recordId": "OFA-E875D2826345",
+      "ownershipPeriodId": "cmteaq53n001rw32bw4g0h3m1",
+      "companyId": "cmrxpjdp200uiivheb3y5869n",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "ECP's acquisition release identifies Continental Grain as a continuing minority investor. This is direct corporate co-ownership rather than a fund attribution; the original investment date, vehicle and percentage are not inferred."
+      }
+    },
+    {
+      "recordId": "OFA-29DF966C706C",
+      "ownershipPeriodId": "cmteaq56l001tw32bhapeul49",
+      "companyId": "cmrxpjdp200uiivheb3y5869n",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "ECP's acquisition release identifies Enlightened Hospitality Investments as a minority co-investor at the 2022 closing. The exact fund, sleeve, holding vehicle and percentage are not publicly disclosed, so no fund attribution is inferred."
+      }
+    }
+  ],
+  "appliedAt": "2026-08-29T11:52:00.380Z",
+  "receiptSha256": "2d8f65dd5441c901985118f841371718f34e9f3c472860043132b62c9f940e44"
+}
