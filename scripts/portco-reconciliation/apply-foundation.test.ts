@@ -52,6 +52,7 @@ describe("approved ownership organization provisioning", () => {
     expect(ownershipOrganizationTypes("AT&T Inc.")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("AgeCare")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("BC Partners")).toEqual(["FUND_MANAGER"]);
+    expect(ownershipOrganizationTypes("BBGI")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("Canadian Business Growth Fund")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("Capital Power Corporation")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Continental Grain Company")).toEqual(["CORPORATE"]);
@@ -59,7 +60,9 @@ describe("approved ownership organization provisioning", () => {
     expect(ownershipOrganizationTypes("Cox Enterprises")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("CSG Investments, Inc.")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Donato Ardellini")).toEqual(["OTHER"]);
+    expect(ownershipOrganizationTypes("Dalmore Capital")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("Energy Transfer LP")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("ENGIE")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Enlightened Hospitality Investments")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("Eolian employees")).toEqual(["OTHER"]);
     expect(ownershipOrganizationTypes("ePointZero")).toEqual(["CORPORATE"]);
@@ -99,6 +102,7 @@ describe("approved ownership organization provisioning", () => {
       ["AT&T Inc.", "CORPORATE"],
       ["AgeCare", "CORPORATE"],
       ["BC Partners", "FUND_MANAGER"],
+      ["BBGI", "FUND_MANAGER"],
       ["Canadian Business Growth Fund", "FUND_MANAGER"],
       ["Capital Power Corporation", "CORPORATE"],
       ["Continental Grain Company", "CORPORATE"],
@@ -106,7 +110,9 @@ describe("approved ownership organization provisioning", () => {
       ["Cox Enterprises", "CORPORATE"],
       ["CSG Investments, Inc.", "CORPORATE"],
       ["Donato Ardellini", "OTHER"],
+      ["Dalmore Capital", "FUND_MANAGER"],
       ["Energy Transfer LP", "CORPORATE"],
+      ["ENGIE", "CORPORATE"],
       ["Enlightened Hospitality Investments", "FUND_MANAGER"],
       ["Eolian employees", "OTHER"],
       ["ePointZero", "CORPORATE"],

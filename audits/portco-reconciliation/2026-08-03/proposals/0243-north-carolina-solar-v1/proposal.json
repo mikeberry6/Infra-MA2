@@ -1,0 +1,380 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0243:north-carolina-solar:5919d3cc",
+  "taskIndex": 243,
+  "asOfDate": "2026-08-29",
+  "generatedAt": "2026-08-29T14:12:02.000Z",
+  "canonicalKey": "north-carolina-solar|united-states",
+  "companyName": "North Carolina Solar",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER"
+  ],
+  "sourceHoldingIds": [
+    "044-equitix:holding:006:north-carolina-solar"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Keep North Carolina Solar as one five-project portfolio and correct the initial investment year from 2021 to 2018. John Laing assembled the portfolio in 2018. KKR acquired John Laing in September 2021 and Equitix completed its 50% JLIL investment on October 6, 2021; direct April 2026 evidence confirms JLIL remained 50:50 owned by KKR-owned John Laing Group and Equitix. Preserve John Laing's 2018–2021 sponsor history without treating it as a third independent current owner, and keep Granite outside this canonical boundary.",
+  "evidence": [
+    {
+      "url": "https://www.annualreports.com/HostedData/AnnualReportArchive/J/LSE_JLG_2018.pdf",
+      "purpose": "Original portfolio assembly",
+      "supports": [
+        "John Laing assembled the five North Carolina solar assets in 2018"
+      ]
+    },
+    {
+      "url": "https://data.fca.org.uk/artefacts/NSM/RNS/4118829.html",
+      "purpose": "KKR acquisition close",
+      "supports": [
+        "KKR's acquisition of John Laing became effective on September 22, 2021"
+      ]
+    },
+    {
+      "url": "https://find-and-update.company-information.service.gov.uk/company/00780225/persons-with-significant-control",
+      "purpose": "JLIL ownership structure",
+      "supports": [
+        "Equitix and the KKR/John Laing side obtained joint control of JLIL"
+      ]
+    },
+    {
+      "url": "https://www.laing.com/insights/john-laing-increases-commitment-to-i-4-ultimate-project-in-the-u-s-with-a-100-stake/",
+      "purpose": "Current JLIL ownership confirmation",
+      "supports": [
+        "JLIL remained 50:50 owned by Equitix and KKR-owned John Laing Group in April 2026"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "6664411dd5f9a496d23b1c3205c0f3d9cffc283c9fc9dad440dab57c20fc205b",
+  "currentCompanySnapshotSha256": "2770d6584581885973c42fc79942f641497c29cf69f912325658a133f69ed58a",
+  "executionLock": {
+    "taskSnapshotSha256": "77eac06ae06fc44442263100722a3166e621013dfe0bf03e7953d27ef42c489f",
+    "taskStateSha256": "e9c1d22a760f0f04cfd700d6b1850ad18f836d968558f537f86640dadcdf9ee4",
+    "taskDependencySha256": "595eeb2095c86291eb0504048ce9e8493360aad6614f872c6b226223df2f7e0f",
+    "seedEntrySha256": "d2afde45c3dd7cb57348815034e0761cebbfd131693cb2e387a669bd09b1d545",
+    "dependencies": {
+      "ownershipPeriodsSha256": "70bf99d3e4f8f91bda092ec923d6ee8cfdb087a75141cbceb508ee284a96ae09",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "935175f15dd61525741b215f18c132f3a3aec6e7c31262463db247152025b404",
+      "citationsSha256": "138242186a49b546547f4a948f433480c7320534afe5ffb6778ac3afbebf836a",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpiay4002pivhed6sjuu9i",
+        "name": "KKR",
+        "updatedAt": "2026-07-23T16:09:21.388Z"
+      },
+      {
+        "id": "cmrxpiimy0054ivhe8zpfvx69",
+        "name": "Equitix",
+        "updatedAt": "2026-07-23T16:09:31.354Z"
+      },
+      {
+        "id": "cmrxpivna0097ivheghay4wbn",
+        "name": "John Laing",
+        "updatedAt": "2026-07-23T16:09:48.214Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjf1j00wmivheot2d4ja5",
+    "name": "North Carolina Solar",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Utility-scale solar generation portfolio",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "North Carolina Solar is a portfolio of utility-scale solar projects in North Carolina. The customer base is anchored by contracted power sales, with public sources referencing busbar PPAs with Duke Energy Progress. The portfolio is asset-heavy because value is derived from operating generation assets rather than development services alone. John Laing's portfolio page describes five operating projects totaling 334 MW, with commercial operation dates spanning late 2018 to early 2019. The reviewed materials did not disclose current revenue, project-level leverage, or the economic split within John Laing Investments Limited. The asset is associated in the master workbook with John Laing Investments Limited, the holding structure backed by Equitix and KKR.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "North Carolina",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk0qz01uvivheqzsn7gav",
+        "managerName": "Equitix",
+        "organizationName": "Equitix",
+        "fundName": null,
+        "vehicleName": "John Laing Investments Limited",
+        "stake": null,
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplnwl03y6ivhecpwndzg1",
+        "date": "2018",
+        "event": "Two projects in the portfolio changed ownership from Cypress Creek before the current holding structure.",
+        "category": "ACQUISITION",
+        "sortDate": "2018-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplnx703y7ivhegqc1g0xf",
+        "date": "2018",
+        "event": "The five-project North Carolina solar portfolio reached commercial operation.",
+        "category": "EXPANSION",
+        "sortDate": "2018-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplnxq03y8ivhechore6rb",
+        "date": "Sep 22, 2021",
+        "event": "John Laing Group's scheme of arrangement became effective, bringing the North Carolina solar portfolio into the John Laing Investments Limited holding structure backed by Equitix and KKR.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-09-22T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqyii0acsivhewk032roa",
+        "label": "Laing — North Carolina Solar",
+        "url": "https://www.laing.com/portfolio/north-carolina-solar-us/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Laing operations / asset details",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqyjj0acuivheyu3y49np",
+        "label": "Assets — North Carolina Solar",
+        "url": "https://assets.kwhanalytics.com/documents/public/dealflow/2019/Deal-Flow-V.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Assets — North Carolina Solar",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqyjy0acvivhe7i7c2de1",
+        "label": "Close date source — Equitix — Boston AFC 2.0 OpCo",
+        "url": "https://data.fca.org.uk/artefacts/NSM/RNS/4118829.html",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Equitix closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqykf0acwivhe8d4lp3ut",
+        "label": "Ownership structure source — Equitix — John Laing Investments Limited",
+        "url": "https://www.debevoise.com/news/2021/05/debevoise-advises-pantheon-in-its-role-in",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Ownership structure source — Equitix — John Laing Investments Limited",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqylj0acyivhe7jubwd05",
+        "label": "Laing — North Carolina Solar",
+        "url": "https://www.laing.com/assets/John-Laing-Sustainability-Report-2022.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Laing operations / asset details",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "2770d6584581885973c42fc79942f641497c29cf69f912325658a133f69ed58a",
+  "afterImage": {
+    "id": "cmrxpjf1j00wmivheot2d4ja5",
+    "name": "North Carolina Solar",
+    "aliases": [
+      "North Carolina Solar, US",
+      "John Laing North Carolina Solar portfolio"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Utility-scale solar generation portfolio",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "North Carolina Solar is one five-project operating solar portfolio in North Carolina comprising Brantley, Fox Creek, Buckleberry, Innovative Solar 54 and Innovative Solar 67. John Laing's portfolio page reports 334 MWdc across the five assets, with contracted power sales to Duke Energy Progress and commercial operations beginning from late 2018 into early 2019. John Laing assembled the portfolio in 2018. KKR acquired John Laing Group in September 2021, and Equitix completed its 50% investment in John Laing Investments Limited on October 6, 2021. Direct April 2026 evidence describes JLIL as 50:50 owned by Equitix and KKR-owned John Laing Group. John Laing is preserved as the former sponsor and current KKR-owned asset manager, not a third independent owner. The historic 9.9% ProjectCo/HoldCo minority and its current rights are not publicly disclosed and are not inferred to be tax equity. Granite is a separate eight-project portfolio and is excluded from this company boundary. No later portfolio sale or signed pending ownership transaction was identified through August 29, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": null,
+    "lastVerifiedAt": "2026-08-29T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk0qz01uvivheqzsn7gav",
+        "managerName": "Equitix",
+        "organizationName": "Equitix",
+        "fundName": null,
+        "vehicleName": "John Laing Investments Limited",
+        "stake": "50% of JLIL; no separate direct project percentage attributed",
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "KKR",
+        "organizationName": "KKR",
+        "fundName": null,
+        "vehicleName": "John Laing Group / John Laing Investments Limited",
+        "stake": "50% of JLIL; no separate direct project percentage attributed",
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "John Laing",
+        "organizationName": "John Laing",
+        "fundName": null,
+        "vehicleName": "John Laing US Solar Corp",
+        "stake": "Former sponsor; 90.1% legal ProjectCo/HoldCo interests disclosed in 2018, with the historic minority not publicly identified",
+        "investmentYear": 2018,
+        "exitYear": 2021,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplnwl03y6ivhecpwndzg1",
+        "date": "2018",
+        "event": "John Laing assembled the Brantley, Fox Creek, Buckleberry, Innovative Solar 54 and Innovative Solar 67 projects as one North Carolina solar portfolio.",
+        "category": "ACQUISITION",
+        "sortDate": "2018-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.annualreports.com/HostedData/AnnualReportArchive/J/LSE_JLG_2018.pdf",
+          "https://www.laing.com/portfolio/north-carolina-solar-us/"
+        ]
+      },
+      {
+        "id": "cmrxplnx703y7ivhegqc1g0xf",
+        "date": "Q4 2018–Q1 2019",
+        "event": "The five-project portfolio entered commercial operation, with John Laing reporting 334 MWdc of operating solar capacity.",
+        "category": "EXPANSION",
+        "sortDate": "2019-03-31T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.laing.com/portfolio/north-carolina-solar-us/"
+        ]
+      },
+      {
+        "id": "cmrxplnxq03y8ivhechore6rb",
+        "date": "Sep 22–Oct 6, 2021",
+        "event": "KKR completed the John Laing acquisition and Equitix completed its 50% JLIL investment, establishing the 50:50 JLIL ownership structure.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-10-06T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://data.fca.org.uk/artefacts/NSM/RNS/4118829.html",
+          "https://find-and-update.company-information.service.gov.uk/company/00780225/persons-with-significant-control",
+          "https://www.laing.com/insights/john-laing-increases-commitment-to-i-4-ultimate-project-in-the-u-s-with-a-100-stake/"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqyii0acsivhewk032roa",
+        "label": "Laing — North Carolina Solar",
+        "url": "https://www.laing.com/portfolio/north-carolina-solar-us/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Five-project portfolio boundary, project names and 334 MWdc scale",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqyjj0acuivheyu3y49np",
+        "label": "Assets — North Carolina Solar",
+        "url": "https://assets.kwhanalytics.com/documents/public/dealflow/2019/Deal-Flow-V.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Historical solar project transaction context",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqyjy0acvivhe7i7c2de1",
+        "label": "Close date source — Equitix — Boston AFC 2.0 OpCo",
+        "url": "https://data.fca.org.uk/artefacts/NSM/RNS/4118829.html",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "September 22, 2021 KKR acquisition close",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqykf0acwivhe8d4lp3ut",
+        "label": "Ownership structure source — Equitix — John Laing Investments Limited",
+        "url": "https://www.debevoise.com/news/2021/05/debevoise-advises-pantheon-in-its-role-in",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Equitix/Pantheon and JLIL structure context",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqylj0acyivhe7jubwd05",
+        "label": "Laing — North Carolina Solar",
+        "url": "https://www.laing.com/assets/John-Laing-Sustainability-Report-2022.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Operating portfolio and sustainability context",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "John Laing — 2018 Annual Report",
+        "url": "https://www.annualreports.com/HostedData/AnnualReportArchive/J/LSE_JLG_2018.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "2018 portfolio assembly and legal ownership chain",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Companies House — JLIL persons with significant control",
+        "url": "https://find-and-update.company-information.service.gov.uk/company/00780225/persons-with-significant-control",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "JLIL control structure and 2021 ownership change",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "John Laing — JLIL ownership confirmation",
+        "url": "https://www.laing.com/insights/john-laing-increases-commitment-to-i-4-ultimate-project-in-the-u-s-with-a-100-stake/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "April 2026 confirmation that JLIL remained 50:50 owned by Equitix and KKR-owned John Laing Group",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "Close date source — Amber Infrastructure — Granite Solar Portfolio",
+        "url": "https://www.ussolarfund.co.uk/portfolio/granite",
+        "sourceType": "WEBSITE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Granite is a separate eight-project solar portfolio",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "49229564faa61a9350e63f050811b711cd9e72cf1ea903ec10bbb24077b6f401",
+  "proposalSha256": "bc5ba06922d0c325d33afa1ff470e9c0e06000babfd89803aafa10af7f9cb997"
+}

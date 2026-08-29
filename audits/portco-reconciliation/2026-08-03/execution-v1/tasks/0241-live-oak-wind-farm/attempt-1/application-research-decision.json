@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0241:live-oak-wind-farm:082ed40f",
+  "taskIndex": 241,
+  "companyName": "Live Oak Wind Farm",
+  "asOfDate": "2026-08-19",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH_WITH_DISCLOSURE_GAPS",
+  "researchOnly": true,
+  "generatedAt": "2026-08-29T14:08:02.000Z",
+  "result": {
+    "decision": "PROPOSED_CORRECTION",
+    "rationale": "John Laing acquired a 75% Live Oak interest in 2019 while ENGIE retained 25% and remained operator. The 75% block subsequently entered JLIL, which direct April 2026 evidence describes as 50:50 owned by Equitix and KKR-owned John Laing Group. The company investment year should be 2019, and manager-level interests must be recorded without inferring direct 37.5% project stakes.",
+    "evidence": [
+      {
+        "url": "https://www.annualreports.com/HostedData/AnnualReportArchive/J/LSE_JLG_2019.pdf",
+        "purpose": "Confirms John Laing's 75% acquisition, the project identity and 2019 ownership."
+      },
+      {
+        "url": "https://www.engie-na.com/houston_headquarters_powered_by_wind/",
+        "purpose": "Confirms ENGIE and John Laing co-ownership and ENGIE's operating role."
+      },
+      {
+        "url": "https://data.fca.org.uk/artefacts/NSM/RNS/4118829.html",
+        "purpose": "Confirms KKR's acquisition of John Laing became effective in September 2021."
+      },
+      {
+        "url": "https://equitix.com/news/equitix-strengthens-north-american-footprint-with-increased-ownership-of-the-i-4-ultimate-project-in-florida/",
+        "purpose": "Direct April 2026 evidence that JLIL remained 50:50 owned by Equitix and KKR-owned John Laing Group."
+      }
+    ]
+  },
+  "lineage": {
+    "researchDecisionSha256": "55b7eaf27b8d58afc34f0967e7a2d9f2e0929001181daefd0554dc08a650bc97",
+    "acceptedResponseSha256": "b98079bf898c0351b91875e9cfe1f134ccb12d8e8a88b707910fd128d6e01ee4",
+    "sourceVerificationSha256": "d885a91f369e76c1c3e29907e9c3907c927b981bbb6f3a9a1e44dd2b02b06b2f"
+  }
+}

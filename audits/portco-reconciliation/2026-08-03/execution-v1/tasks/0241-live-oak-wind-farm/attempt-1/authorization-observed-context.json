@@ -1,0 +1,285 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0241:live-oak-wind-farm:082ed40f",
+  "taskIndex": 241,
+  "companyName": "Live Oak Wind Farm",
+  "generatedAt": "2026-08-29T14:15:26.112Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0241-live-oak-wind-farm/attempt-1/authorization-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 241,
+    "taskId": "ledger:0241:live-oak-wind-farm:082ed40f",
+    "canonicalKey": "live-oak-wind-farm|united-states",
+    "companyName": "Live Oak Wind Farm",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 44,
+    "managers": [
+      "Equitix"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "044-equitix:holding:007:live-oak-wind-farm"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjf0f00wkivhexu0u6f39"
+    ],
+    "seedKeys": [
+      "live oak wind farm|United States"
+    ],
+    "evidenceUrls": [
+      "https://data.fca.org.uk/artefacts/NSM/RNS/4118829.html",
+      "https://www.laing.com/portfolio/live-oak-us/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted census NEEDS_REVIEW for 044-equitix:holding:007:live-oak-wind-farm: Asset remains listed under John Laing portfolio, but direct Equitix ownership continuity after 2021 transfer is not explicitly reconfirmed. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Accepted census NEEDS_REVIEW for 044-equitix:holding:007:live-oak-wind-farm: Asset remains listed under John Laing portfolio, but direct Equitix ownership continuity after 2021 transfer is not explicitly reconfirmed."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjf0f00wkivhexu0u6f39",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "live-oak-wind-farm|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjf0f00wkivhexu0u6f39",
+    "name": "Live Oak Wind Farm",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Onshore wind generation",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Live Oak Wind Farm is an operating onshore wind project in Texas. Its end markets are wholesale and contracted power offtake, with public materials indicating that the project sells renewable generation into the Texas market. The project is asset-heavy and based on operating wind generation infrastructure rather than providing development services only. Public sources describe the facility as roughly 200 MW and note that it uses 76 Siemens Gamesa turbines in Schleicher County near San Angelo. Reviewed sources did not disclose current project revenue, merchant exposure, or the economic split within John Laing Investments Limited. The asset is associated in the master workbook with John Laing Investments Limited, the holding structure backed by Equitix and KKR, and public materials state that the project became operational in 2018.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Texas",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk0py01utivheek2ja0lo",
+        "managerName": "Equitix",
+        "organizationName": "Equitix",
+        "fundName": null,
+        "vehicleName": "John Laing Investments Limited",
+        "stake": null,
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplns903y0ivhejd55f956",
+        "date": "Dec 2018",
+        "event": "Live Oak Wind Farm reached commercial operation.",
+        "category": "EXPANSION",
+        "sortDate": "2018-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplnsr03y1ivheth5frque",
+        "date": "2019",
+        "event": "John Laing sustainability materials began referencing the project as an operating wind asset.",
+        "category": "OTHER",
+        "sortDate": "2019-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplnta03y2ivhekwvuzv0d",
+        "date": "Sep 22, 2021",
+        "event": "John Laing Group's scheme of arrangement became effective, bringing Live Oak Wind Farm into the John Laing Investments Limited holding structure backed by Equitix and KKR.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-09-22T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqy550acaivhe3dzdawv5",
+        "label": "Laing — Live Oak Wind Farm",
+        "url": "https://www.laing.com/portfolio/live-oak-us/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Laing operations / asset details",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqy680accivhe44oj571v",
+        "label": "Engie Na — Live Oak Wind Farm",
+        "url": "https://www.engie-na.com/houston_headquarters_powered_by_wind/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Engie Na — Live Oak Wind Farm",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqy9l0aceivhevzl52rwh",
+        "label": "Laing — Live Oak Wind Farm",
+        "url": "https://www.laing.com/assets/John-Laing-Sustainability-Report-2023_2024.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Laing operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqyaf0acfivhehfdsknjo",
+        "label": "Close date source — Equitix — Boston AFC 2.0 OpCo",
+        "url": "https://data.fca.org.uk/artefacts/NSM/RNS/4118829.html",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Equitix closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqyay0acgivhe9qsl53sa",
+        "label": "Ownership structure source — Equitix — John Laing Investments Limited",
+        "url": "https://www.debevoise.com/news/2021/05/debevoise-advises-pantheon-in-its-role-in",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Ownership structure source — Equitix — John Laing Investments Limited",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Live Oak Wind Farm",
+    "investmentFirm": "Equitix",
+    "sector": "Power & ET",
+    "subsector": "Onshore wind generation",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "John Laing Investments Limited",
+    "description": "Live Oak Wind Farm is an operating onshore wind project in Texas. Its end markets are wholesale and contracted power offtake, with public materials indicating that the project sells renewable generation into the Texas market. The project is asset-heavy and based on operating wind generation infrastructure rather than providing development services only. Public sources describe the facility as roughly 200 MW and note that it uses 76 Siemens Gamesa turbines in Schleicher County near San Angelo. Reviewed sources did not disclose current project revenue, merchant exposure, or the economic split within John Laing Investments Limited. The asset is associated in the master workbook with John Laing Investments Limited, the holding structure backed by Equitix and KKR, and public materials state that the project became operational in 2018.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2021,
+    "headquarters": "Texas",
+    "milestones": [
+      {
+        "date": "Dec 2018",
+        "event": "Live Oak Wind Farm reached commercial operation.",
+        "category": "Expansion"
+      },
+      {
+        "date": "2019",
+        "event": "John Laing sustainability materials began referencing the project as an operating wind asset.",
+        "category": "Other"
+      },
+      {
+        "date": "Sep 22, 2021",
+        "event": "John Laing Group's scheme of arrangement became effective, bringing Live Oak Wind Farm into the John Laing Investments Limited holding structure backed by Equitix and KKR.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Laing — Live Oak Wind Farm",
+        "url": "https://www.laing.com/portfolio/live-oak-us/",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Engie Na — Live Oak Wind Farm",
+        "url": "https://www.engie-na.com/houston_headquarters_powered_by_wind/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Laing — Live Oak Wind Farm",
+        "url": "https://www.laing.com/assets/John-Laing-Sustainability-Report-2023_2024.pdf",
+        "type": "PRESENTATION",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Close date source — Equitix — Live Oak Wind Farm",
+        "url": "https://data.fca.org.uk/artefacts/NSM/RNS/4118829.html",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Ownership structure source — Equitix — John Laing Investments Limited",
+        "url": "https://www.debevoise.com/news/2021/05/debevoise-advises-pantheon-in-its-role-in",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Equitix",
+        "ownershipVehicle": "John Laing Investments Limited",
+        "investmentYear": 2021,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpiay4002pivhed6sjuu9i",
+        "name": "KKR",
+        "updatedAt": "2026-07-23T16:09:21.388Z"
+      },
+      {
+        "id": "cmrxpiimy0054ivhe8zpfvx69",
+        "name": "Equitix",
+        "updatedAt": "2026-07-23T16:09:31.354Z"
+      },
+      {
+        "id": "cmrxpivna0097ivheghay4wbn",
+        "name": "John Laing",
+        "updatedAt": "2026-07-23T16:09:48.214Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0241:live-oak-wind-farm:082ed40f",
+    "taskIndex": 241,
+    "canonicalKey": "live-oak-wind-farm|united-states",
+    "capturedAt": "2026-08-29T14:15:26.112Z",
+    "databaseRevision": "revision:1e66f36653f80704ec71de2fdd00baddd530f809370969cda74e55464fd6b871",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "f9948f05c93001d26782981e58967b98a2b737dd4cd6a9ab436f53cb9dff755d",
+    "productionSnapshotSha256": "e0fc5711dd47d034c69540fae69bef3e71b030862bc854faa1aee66c0828e0c2",
+    "targetCompanySnapshotSha256": "387324807afe2c2b4e9d119e7b2795f5b9546e1fa9f3901765826fd049ba2f29",
+    "seedEntrySha256": "c346418b4dfc0275cbc987ec7302ec74062d6b4962ddfa80dc64762f8a814de5",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "2688718433ff2ee24d8ac23f3474e5cb43efccc6e7f901fc6cb3c90201a41559",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "935175f15dd61525741b215f18c132f3a3aec6e7c31262463db247152025b404",
+      "citationsSha256": "9cce6030b5e9780c3e14577127439ba76fed61ce445f9036d81d40ef7e49dc12",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "2e130567ca2fa9c3d6da325bc760b3682d6c42d77e77186dd01b70f265ad5331",
+    "stateSha256": "7af3ee7ad38da6237379ae4491c325999dfe9e205a6cd3425723d90d6834c2ff",
+    "taskSnapshotSha256": "074b408cc432a67ebd88624603e741ca5b192e058ac05e191db8349cda752422"
+  },
+  "contextSha256": "bf8b5cf6449b5cdd9672523f61ecb9cc8fef9dbca6b35ebc5af11d88dc77a90e"
+}
