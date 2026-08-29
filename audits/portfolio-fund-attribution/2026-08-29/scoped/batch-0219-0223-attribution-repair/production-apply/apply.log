@@ -1,0 +1,143 @@
+
+> infra-tracker@1.0.0 portfolio:fund-attribution:apply
+> npx tsx scripts/apply-portfolio-fund-attribution.ts --manifest=audits/portfolio-fund-attribution/2026-08-29/scoped/batch-0219-0223-attribution-repair/apply-manifest.json --manifest-sha256=8d7cd6ea8a308c921d6133433da465ee33200b6f48cdacefd7c5a0647017d3eb --production-snapshot=audits/portfolio-fund-attribution/2026-08-29/scoped/batch-0219-0223-attribution-repair/production-snapshot.json --approval=audits/portfolio-fund-attribution/2026-08-29/scoped/batch-0219-0223-attribution-repair/approval.json --approval-sha256=db5096b4f084e1200008f1b7e5056c4a5488ec943f5ca26522b460f1a3085e7e --apply=true --write-token=APPLY_REVIEWED_PORTFOLIO_FUND_ATTRIBUTION --receipt=tmp/portfolio-fund-attribution/production/apply-receipt.json
+
+(node:3130) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_RECEIPT",
+  "manifestSha256": "8d7cd6ea8a308c921d6133433da465ee33200b6f48cdacefd7c5a0647017d3eb",
+  "approvalSha256": "db5096b4f084e1200008f1b7e5056c4a5488ec943f5ca26522b460f1a3085e7e",
+  "environment": "production",
+  "pipelineRunId": "cmte5koiv0000ey2bp5pb060u",
+  "mutationCount": 6,
+  "changed": 6,
+  "idempotent": false,
+  "beforeFingerprint": "f1b5b3e307e032980f9bbb40b865b3024fefab7c3e1ff7487124d540510119d9",
+  "afterFingerprint": "90fc66ea1a927e9c1ef76a0988fda22b39ba622d72a35382ba66574a7238d1f8",
+  "rows": [
+    {
+      "recordId": "OFA-A3AEBC9A0725",
+      "ownershipPeriodId": "cmrxpjz2601s8ivhekaamx1rl",
+      "companyId": "cmrxpjddu00u2ivheu6k02my6",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": "DigitalBridge Fund III",
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "DigitalBridge Fund III",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, vintage 2024 is 1 years before investment, North America-relevant mandate; next candidate trails by 10.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": "DigitalBridge Fund III",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "DigitalBridge Fund III",
+        "attributionConfidence": null,
+        "attributionRationale": "Post-close regulatory evidence identifies DigitalBridge Partners III as the holder of approximately 63% of Bandit Parent's LP interests. The approved owner remains linked to the existing DigitalBridge Fund III record."
+      }
+    },
+    {
+      "recordId": "OFA-11C679572894",
+      "ownershipPeriodId": "cmte4sfi0000c0x2bc5d4embd",
+      "companyId": "cmrxpjddu00u2ivheu6k02my6",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Crestview III investment funds",
+        "attributionConfidence": null,
+        "attributionRationale": "Post-close regulatory evidence identifies Crestview III investment funds as the holders of approximately 37% of Bandit Parent's LP interests. No matching curated Fund Database record is available, so the disclosed vehicle is retained without a database link."
+      }
+    },
+    {
+      "recordId": "OFA-5DD9C1C3D1C9",
+      "ownershipPeriodId": "cmte4siy8000o0x2brw46sffy",
+      "companyId": "cmte4si88000f0x2b8sgnu0se",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "EnCap Energy Transition Fund III",
+        "attributionConfidence": null,
+        "attributionRationale": "Mantle Reach and Baker Hughes directly identify EnCap Energy Transition Fund III backing. The fund is not currently represented by a matching curated Fund Database row, and no Fund III entry date or stake is inferred."
+      }
+    },
+    {
+      "recordId": "OFA-D914928BB40B",
+      "ownershipPeriodId": "cmrxpjz3p01sbivhe5nxkcfvj",
+      "companyId": "cmrxpjdf000u4ivhe82f2fkli",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "ECP Fund V",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, vehicle-name overlap 0.33, vintage 2022 is 1 years before investment, North America-relevant mandate; next candidate trails by 10.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "ECP Energy Transition Opportunities Fund",
+        "attributionConfidence": null,
+        "attributionRationale": "Anza's completed-separation release directly identifies ECP's Energy Transition Opportunities Fund as an investor. The prior ECP Fund V estimate is removed, and the disclosed fund is retained without a curated Fund Database link."
+      }
+    },
+    {
+      "recordId": "OFA-43CB6B0F4FDB",
+      "ownershipPeriodId": "cmrxpjz5b01seivhelnb7zna3",
+      "companyId": "cmrxpjdg100u6ivhep4xv8y79",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "ECP Fund V",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, vehicle-name overlap 0.20, vintage 2022 is 0 years before investment, North America-relevant mandate; next candidate trails by 9.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "ECP directly supports its current February 2022 joint-venture investment, but the reviewed sources do not identify the ECP fund or investing affiliate. The unsupported ECP Fund V estimate is removed."
+      }
+    },
+    {
+      "recordId": "OFA-E4E92424A3C2",
+      "ownershipPeriodId": "cmte4sr05001d0x2bahfwizbx",
+      "companyId": "cmrxpjdg100u6ivhep4xv8y79",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "ECP and Avolta sources establish Avolta, LLC as the operating joint-venture counterparty. Avolta's interest is direct corporate ownership rather than an infrastructure fund attribution."
+      }
+    }
+  ],
+  "appliedAt": "2026-08-29T09:03:07.521Z",
+  "receiptSha256": "720ca8611926c37148cb0c38cf8b2d3ab4a2386a4be3a55b88ccc76b16fcc061"
+}

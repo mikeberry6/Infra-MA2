@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_RELEASE_VERIFICATION",
+  "verifiedAt": "2026-08-29T09:03:10.613Z",
+  "manifestSha256": "8d7cd6ea8a308c921d6133433da465ee33200b6f48cdacefd7c5a0647017d3eb",
+  "approvalSha256": "db5096b4f084e1200008f1b7e5056c4a5488ec943f5ca26522b460f1a3085e7e",
+  "receiptSha256": "720ca8611926c37148cb0c38cf8b2d3ab4a2386a4be3a55b88ccc76b16fcc061",
+  "mutationCount": 6,
+  "changed": 6,
+  "verificationScope": "BOUNDED_STATUS_SAMPLE",
+  "sampledRows": [
+    {
+      "recordId": "OFA-A3AEBC9A0725",
+      "companyId": "cmrxpjddu00u2ivheu6k02my6",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjddu00u2ivheu6k02my6?verification=8d7cd6ea8a308c921d6133433da465ee33200b6f48cdacefd7c5a0647017d3eb",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": "DigitalBridge Fund III",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "DigitalBridge Fund III",
+        "attributionConfidence": null,
+        "attributionRationale": "Post-close regulatory evidence identifies DigitalBridge Partners III as the holder of approximately 63% of Bandit Parent's LP interests. The approved owner remains linked to the existing DigitalBridge Fund III record."
+      }
+    },
+    {
+      "recordId": "OFA-E4E92424A3C2",
+      "companyId": "cmrxpjdg100u6ivhep4xv8y79",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjdg100u6ivhep4xv8y79?verification=8d7cd6ea8a308c921d6133433da465ee33200b6f48cdacefd7c5a0647017d3eb",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "ECP and Avolta sources establish Avolta, LLC as the operating joint-venture counterparty. Avolta's interest is direct corporate ownership rather than an infrastructure fund attribution."
+      }
+    },
+    {
+      "recordId": "OFA-43CB6B0F4FDB",
+      "companyId": "cmrxpjdg100u6ivhep4xv8y79",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjdg100u6ivhep4xv8y79?verification=8d7cd6ea8a308c921d6133433da465ee33200b6f48cdacefd7c5a0647017d3eb",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "ECP directly supports its current February 2022 joint-venture investment, but the reviewed sources do not identify the ECP fund or investing affiliate. The unsupported ECP Fund V estimate is removed."
+      }
+    }
+  ],
+  "passed": true
+}
