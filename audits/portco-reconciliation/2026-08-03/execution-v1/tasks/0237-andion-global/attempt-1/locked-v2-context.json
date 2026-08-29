@@ -1,0 +1,246 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0237:andion-global:05d3742d",
+  "taskIndex": 237,
+  "companyName": "Andion Global",
+  "generatedAt": "2026-08-29T12:11:41.546Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0237-andion-global/attempt-1/locked-v2-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 237,
+    "taskId": "ledger:0237:andion-global:05d3742d",
+    "canonicalKey": null,
+    "companyName": "Andion Global",
+    "country": "United States / Canada",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "REPO_ONLY_JUDGMENT",
+    "earliestManagerIndex": 44,
+    "managers": [
+      "Equitix"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "044-equitix:repo-only:005:andion-global"
+    ],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://www.gsk-lux.com/en/gsk-stockmann-advises-andion-ch4-renewables-on-the-first-capital-raise-after-its-migration-from-canada-to-luxembourg/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted repo-only OUT_OF_SCOPE judgment for Equitix: Platform no longer primarily North America-dedicated following corporate migration and strategic repositioning.",
+    "unresolvedQuestions": [
+      "Confirm whether the manager ownership, the company itself, or only this census scope is out of scope before proposing any change.",
+      "Repo-only identity has no matching production or evaluated-seed record in the captured snapshots."
+    ]
+  },
+  "targetResolution": {
+    "method": "REVIEWED_POST_QUEUE_EXACT_IDENTITY",
+    "targetCompanyId": "cmrxpjevz00wcivhe9e2ofe2v",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "andion-global|united-states-canada",
+  "targetCompanyImage": {
+    "id": "cmrxpjevz00wcivhe9e2ofe2v",
+    "name": "Andion Global",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Anaerobic digestion, biogas, and waste-to-energy systems",
+    "region": "NORTH_AMERICA",
+    "country": "United States / Canada",
+    "countryTags": [
+      "United States",
+      "Canada"
+    ],
+    "description": "Andion Global develops and delivers anaerobic digestion, wastewater treatment, and renewable energy solutions that convert organic waste streams into usable energy and by-products. Its customer base spans municipal, agricultural, industrial, and food-related waste generators seeking treatment capacity and renewable gas or energy outputs. The business combines engineering, plant delivery, and operating capabilities, which makes it more infrastructure-led than a pure consulting platform. Public sources identify Vancouver as a principal operating location and also describe operations in North America and Europe. A 2022 financing announcement disclosed a $270 million capital package to support expansion, but current enterprise-wide revenue and installed-capacity figures were not publicly disclosed in the reviewed materials. Equitix is associated with the investment in the master workbook, but the reviewed public sources did not disclose detailed current ownership percentages.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2017,
+    "headquarters": "British Columbia",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk0j401ulivheplql7c68",
+        "managerName": "Equitix",
+        "organizationName": "Equitix",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpln4f03x8ivhe14re9kok",
+        "date": "2017",
+        "event": "Andion was founded, according to company profile sources.",
+        "category": "FOUNDING",
+        "sortDate": "2017-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpln4x03x9ivhe7v19u8v3",
+        "date": "Feb 2022",
+        "event": "Equitix invested in Andion as part of a $270 million financing package to expand waste processing and renewable energy deployments.",
+        "category": "FINANCING",
+        "sortDate": "2022-02-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqwwb0aadivhe9f9z9a8b",
+        "label": "Investment date source — Equitix — Andion Global",
+        "url": "https://www.businesswire.com/news/home/20220228006263/en/Andion-Global-Secures-%24270-Million-to-Expand-Operations-and-Deployment-of-Waste-Processing-Plants-to-Upcycle-Organic-Waste-and-Create-Renewable-Energy",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Equitix initial investment / ownership",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqwxe0aafivheehtp0i8k",
+        "label": "Bennettjones — Andion Global",
+        "url": "https://www.bennettjones.com/News/Client-Work/Andion-Global-Secures-270-Million-to-Expand-Operations",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Bennettjones operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqwyg0aahivhe471ybvzc",
+        "label": "Gsk Lux — Andion Global",
+        "url": "https://www.gsk-lux.com/en/gsk-stockmann-advises-andion-ch4-renewables-on-the-first-capital-raise-after-its-migration-from-canada-to-luxembourg/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Gsk Lux — Andion Global",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqwzi0aajivheksdjuq3b",
+        "label": "Mergr — Andion Global",
+        "url": "https://mergr.com/company/andion",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Mergr — Andion Global",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Andion Global",
+    "investmentFirm": "Equitix",
+    "sector": "Power & ET",
+    "subsector": "Anaerobic digestion, biogas, and waste-to-energy systems",
+    "region": "North America",
+    "country": "United States / Canada",
+    "ownershipVehicle": "n.a.",
+    "description": "Andion Global develops and delivers anaerobic digestion, wastewater treatment, and renewable energy solutions that convert organic waste streams into usable energy and by-products. Its customer base spans municipal, agricultural, industrial, and food-related waste generators seeking treatment capacity and renewable gas or energy outputs. The business combines engineering, plant delivery, and operating capabilities, which makes it more infrastructure-led than a pure consulting platform. Public sources identify Vancouver as a principal operating location and also describe operations in North America and Europe. A 2022 financing announcement disclosed a $270 million capital package to support expansion, but current enterprise-wide revenue and installed-capacity figures were not publicly disclosed in the reviewed materials. Equitix is associated with the investment in the master workbook, but the reviewed public sources did not disclose detailed current ownership percentages.",
+    "status": "Active",
+    "countryTags": [
+      "United States",
+      "Canada"
+    ],
+    "yearFounded": 2017,
+    "investmentYear": 2022,
+    "headquarters": "British Columbia",
+    "milestones": [
+      {
+        "date": "2017",
+        "event": "Andion was founded, according to company profile sources.",
+        "category": "Founding"
+      },
+      {
+        "date": "Feb 2022",
+        "event": "Equitix invested in Andion as part of a $270 million financing package to expand waste processing and renewable energy deployments.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Investment date source — Equitix — Andion Global",
+        "url": "https://www.businesswire.com/news/home/20220228006263/en/Andion-Global-Secures-%24270-Million-to-Expand-Operations-and-Deployment-of-Waste-Processing-Plants-to-Upcycle-Organic-Waste-and-Create-Renewable-Energy",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Bennettjones — Andion Global",
+        "url": "https://www.bennettjones.com/News/Client-Work/Andion-Global-Secures-270-Million-to-Expand-Operations",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Gsk Lux — Andion Global",
+        "url": "https://www.gsk-lux.com/en/gsk-stockmann-advises-andion-ch4-renewables-on-the-first-capital-raise-after-its-migration-from-canada-to-luxembourg/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Mergr — Andion Global",
+        "url": "https://mergr.com/company/andion",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Equitix",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2022,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpiimy0054ivhe8zpfvx69",
+        "name": "Equitix",
+        "updatedAt": "2026-07-23T16:09:31.354Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0237:andion-global:05d3742d",
+    "taskIndex": 237,
+    "canonicalKey": null,
+    "capturedAt": "2026-08-29T12:11:41.546Z",
+    "databaseRevision": "revision:16b09aec32985b71227ce2c02acde48e0e031009dd71f92799114b36de83dc00",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "ef1588a5f567759173f01e7d66fee8ee34ce0a85f8cbd844b241cf492cd67191",
+    "productionSnapshotSha256": "744d682a9390baca78a37edcff1d02e42d7e1f392525e8ab48988523071175d4",
+    "targetCompanySnapshotSha256": "e99b5666f2ff55f485a087dc36f26fd8e616b1849a510aa06aaa6a03462cf65e",
+    "seedEntrySha256": "3c12158ad9f90281205da0ffeeeb0d70f6453393d2b3bcdda191abe37d43a0fb",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "5c020c3215d4320bc40709787a6d9106e5ebcbffe234d8da082083e7a09c4d07",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "0fba6ee1c7181bf4b1926ce140b74370b945cf49d8110a5fc29893b7fa73cc5e",
+      "citationsSha256": "a5f784f903195f9a7b90c07a3b18a8df2f755628df243a486b88b5216473c615",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "a666609f2fd595ca0772d99530a7dd3c67243b81c1a2eea19bdad5fb6e6892cd",
+    "stateSha256": "37c528d0d24e86fd666da2f7d80e241d937ab8c91efafd6f11c0bb6647114172",
+    "taskSnapshotSha256": "f3afb55b682f402b02bc4af30b4c429c2b9926fd5590cdd55acfd57ab3d8ec4d"
+  },
+  "contextSha256": "250b372cd1b73e8b55e39b1d81a7fc05d9c969eb0b42d74c89b037fbe91617d6"
+}

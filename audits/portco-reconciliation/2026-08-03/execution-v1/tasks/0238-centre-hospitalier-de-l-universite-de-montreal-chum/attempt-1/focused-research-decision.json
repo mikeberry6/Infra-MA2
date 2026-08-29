@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0238:centre-hospitalier-de-l-universite-de-montreal-chum:c4574e88",
+  "taskIndex": 238,
+  "companyName": "Centre Hospitalier de l'Université de Montréal (CHUM)",
+  "asOfDate": "2026-08-29",
+  "decision": "DEFERRED",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-08-29T13:12:05.000Z",
+  "result": {
+    "decision": "DEFERRED",
+    "rationale": "Reliable direct evidence resolves only 90% of current ProjectCo equity: Innisfree 55%, John Laing Health Montreal Limited 25%, and AtkinsRéalis 10%. The direct legal holder of the remaining 10% and that ownership period's effective date remain unproven, so a complete current ownership record cannot be published without speculation. The contemplated BBGI transaction was cancelled and creates no ownership period. KKR-managed funds are ultimate owners of John Laing rather than direct ProjectCo shareholders, and no direct current ProjectCo evidence supports Equitix or John Laing Investments Limited.",
+    "identityResolution": {
+      "canonicalProjectCompany": "Collectif Santé Montréal S.E.C. / Health Montréal Collective Limited Partnership",
+      "resolved": true
+    },
+    "ownershipResolution": {
+      "resolvedForApplication": false,
+      "supportedCurrentOwnership": [
+        "Innisfree — 55%",
+        "John Laing Health Montreal Limited — 25% from 2024-11-28",
+        "AtkinsRéalis — 10% from 2024-03-04"
+      ],
+      "missingCurrentOwnership": "One 10% direct ProjectCo holder and effective date",
+      "equitixDisposition": "EXCLUDED",
+      "bbgiDisposition": "CANCELLED_TRANSACTION_NO_OWNERSHIP_PERIOD"
+    },
+    "acquisitionExitCheck": {
+      "searchedThrough": "2026-08-29",
+      "remainingTenPercentResolved": false
+    },
+    "evidence": [
+      {
+        "url": "https://www.laing.com/insights/john-laing-acquires-stake-in-centre-hospitalier-de-luniversite-de-montreal-ppp-project/",
+        "purpose": "Direct evidence for John Laing's acquisition of OHLA's 25% CHUM ProjectCo interest and the acquiring entity."
+      },
+      {
+        "url": "https://www.ohla-group.com/en/inside-information-on-corporate-transactions-mergers-acquisitions-and-others/",
+        "purpose": "Direct disposition and closing evidence for OHLA's former 25% ProjectCo interest."
+      },
+      {
+        "url": "https://www.laing.com/portfolio/centre-hospitalier-de-luniversite-de-montreal-chum-canada/",
+        "purpose": "Current John Laing portfolio attribution for the CHUM PPP."
+      },
+      {
+        "url": "https://www.chumontreal.qc.ca/sites/default/files/inline-files/ANNEXE_3.pdf",
+        "purpose": "Official ProjectCo identity and historical ownership framework."
+      },
+      {
+        "url": "https://www.atkinsrealis.com/~/media/Files/A/atkinsrealis/investor-briefcase/en/2025/e_financial_statement_annuel_2025-en.pdf",
+        "purpose": "Current official financial statements supporting AtkinsRéalis' 10% ProjectCo interest acquired on 2024-03-04."
+      },
+      {
+        "url": "https://www.lse.co.uk/rns/recommended-cash-acquisition-of-john-laing-group-jps0bk861zdyk32.html",
+        "purpose": "Evidence that KKR-managed funds own John Laing at the ultimate sponsor level, not as a direct CHUM ProjectCo shareholder."
+      }
+    ],
+    "recommendedListAction": "Remove the unsupported Equitix/JLIL attribution from the proposed replacement model, preserve the cancelled-BBGI finding, and keep the task deferred. Do not publish a complete active ownership set until the remaining 10% holder and effective date are directly evidenced.",
+    "unresolvedQuestions": [
+      "Which legal entity currently holds the remaining 10% direct interest in Collectif Santé Montréal S.E.C., and when did that ownership period begin?"
+    ]
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0238-centre-hospitalier-de-l-universite-de-montreal-chum/attempt-1/research-decision.json",
+      "sha256": "cfcb4824a9e452cc9137c358d293a56e735b36dc8ad555bb2461145665d1ed3a"
+    },
+    "focusedPrompt": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0238-centre-hospitalier-de-l-universite-de-montreal-chum/attempt-1/focused-adjudication-prompt.md",
+      "sha256": "a20401875fd89256541e65b859d550fc21dfcea47077d82e3de6d4f4515a0154"
+    },
+    "focusedInitialPartial": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0238-centre-hospitalier-de-l-universite-de-montreal-chum/attempt-1/focused-adjudication-initial-partial.md",
+      "sha256": "d18d83b64e256ec52f7f9ac517c0cd7b15fae45b76e0b4c9668229acad6be9a7"
+    },
+    "focusedRepairPrompt": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0238-centre-hospitalier-de-l-universite-de-montreal-chum/attempt-1/focused-adjudication-repair-prompt.md",
+      "sha256": "793b96dfafb7e12a72baeded2ddcee872bb649f10ab341b438b851a8a4d5159a"
+    },
+    "focusedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0238-centre-hospitalier-de-l-universite-de-montreal-chum/attempt-1/focused-adjudication-response.json",
+      "sha256": "61326949ac710787d4e933c681c1ea7e9a8e25a758bf928a9096aee19dd69611"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0238-centre-hospitalier-de-l-universite-de-montreal-chum/attempt-1/source-verification.json",
+      "sha256": "2864a247cdf5b9363b3f43f03a3949617cd11518625810130285b3b2db97819a"
+    },
+    "conversationUrl": "https://chatgpt.com/c/6a92cfd7-c170-83e9-9671-799a4cf42fc2",
+    "model": "GPT-5.6 Sol",
+    "mode": "Pro",
+    "power": "5 of 5"
+  }
+}

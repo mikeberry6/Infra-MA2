@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0236:abbotsford-regional-hospital-and-cancer-centre:d6878789",
+  "taskIndex": 236,
+  "companyName": "Abbotsford Regional Hospital and Cancer Centre",
+  "outcome": "DEFERRED",
+  "decidedAt": "2026-08-29T12:39:04.000Z",
+  "rationale": "The canonical ProjectCo identity is resolved and direct evidence supports JLIF's historical 100% interest through 2017 plus Jura's acquisition of JLIF in 2018. No direct evidence identifies whether AHA was included in Jura's 2019 sell-down or proves all current AHA/AHA Holdings shareholders, percentages and effective dates. Royal London's 2025 acquisition of Dalmore Capital and Resolis is a manager and servicing-business acquisition, not a publishable ProjectCo cap table. Current ownership must therefore be deferred rather than inferred; CVC DIF is excluded absent direct evidence.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0236-abbotsford-regional-hospital-and-cancer-centre/attempt-1/locked-task-snapshot.json",
+    "sha256": "6fe98cd55e48608f04967e36c47632e25434472b4ae8ee81dafe4dc69755eb79"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0236-abbotsford-regional-hospital-and-cancer-centre/attempt-1/focused-research-decision.json",
+    "sha256": "2243d41c0721e04787ff216c4cb25df9553a04f6dba996d7e70f5c9cc4b738f5"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0236-abbotsford-regional-hospital-and-cancer-centre/attempt-1/focused-source-verification.json",
+    "sha256": "e1f3ac99e8179ce272c8f6c886b043f976531fbe624f2dafef5d5260f4ad3689"
+  },
+  "evidence": [
+    {
+      "url": "https://ised-isde.canada.ca/site/investment-canada-act/en/node/239984",
+      "purpose": "Government acquisition notice names Royal London as investor and AHA as investee but does not disclose the ProjectCo shareholders, percentages or vehicles."
+    },
+    {
+      "url": "https://www.royallondon.com/about-us/media/Media-Centre/press-releases/press-releases-2025/november/royal-london-completes-acquisition-of-dalmore-capital/",
+      "purpose": "Royal London's direct release identifies the transferred businesses as Dalmore Capital and Resolis, preventing speculative conversion of the manager transaction into ProjectCo ownership."
+    },
+    {
+      "url": "https://tools.euroland.com/tools/Pressreleases/GetPressRelease/?ID=3439674&companycode=uk-jlif&lang=en-GB&v=",
+      "purpose": "Direct historical evidence that JLIF held 100% interest and voting control in AHA and its holding company as of 2017-12-31."
+    },
+    {
+      "url": "https://www.marketscreener.com/quote/stock/JOHN-LAING-INFRASTRUCTURE-6919133/news/John-Laing-Infrastructure-Fund-Ld-Scheme-of-Arrangement-becomes-Effective-27339064/",
+      "purpose": "Issuer-release mirror establishing Jura's 2018 acquisition of all JLIF shares without proving post-2019 AHA ownership percentages."
+    },
+    {
+      "url": "https://www.kedglobal.com/newsView/ked201901290001",
+      "purpose": "Evidence that Jura sold interests in 36 assets in 2019 while failing to identify whether AHA was included or the resulting shareholders."
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "4f5c7ca5bc110f6f7c3129e723ad622587b37dab751a177c2afe09d0e32ff769"
+}

@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_FOCUSED_CHATGPT_RESPONSE_VALIDATION",
+  "runId": "2026-08-03",
+  "taskId": "ledger:0236:abbotsford-regional-hospital-and-cancer-centre:d6878789",
+  "taskIndex": 236,
+  "companyName": "Abbotsford Regional Hospital and Cancer Centre",
+  "validatedAt": "2026-08-29T12:39:04.000Z",
+  "conversationUrl": "https://chatgpt.com/c/6a92cd26-f734-83ea-81cc-f97cb5d4f7ce",
+  "requiredTopLevelKeys": [
+    "asOfDate",
+    "taskId",
+    "requestedCompany",
+    "decision",
+    "confidence",
+    "rationale",
+    "identityResolution",
+    "ownershipResolution",
+    "acquisitionExitCheck",
+    "evidence",
+    "unresolvedQuestions",
+    "recommendedListAction"
+  ],
+  "initialResponse": {
+    "valid": true,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "responseSha256": "8949f68aaa22dcdd76cb713c1ef257efe0beb17717f050c8c29723e673b31c79",
+    "errors": []
+  },
+  "repair": {
+    "count": 0,
+    "limit": 1,
+    "submittedAt": null,
+    "completedAt": null,
+    "valid": null,
+    "responseSha256": null,
+    "errors": []
+  },
+  "finalResponse": {
+    "decision": "DEFERRED",
+    "confidence": "HIGH",
+    "canonicalProjectCompany": "AHA Access Health Abbotsford Ltd.",
+    "identityResolved": true,
+    "activeOwnershipResolved": false,
+    "historicalJLIFOwnershipSupported": true,
+    "royalLondonManagerAcquisitionNotConvertedToProjectCoOwnership": true,
+    "cvcDifExcluded": true,
+    "subsequentExitSearchPresent": true,
+    "exactMissingFactStated": true,
+    "singleRecommendedPrimary": true,
+    "allEvidenceUrlsDirectHttps": true,
+    "result": "PASS_FOR_DEFERRAL"
+  },
+  "independentSourceVerification": "focused-source-verification.json",
+  "valid": true,
+  "errors": [],
+  "repairsUsed": 0
+}

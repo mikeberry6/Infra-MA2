@@ -1,0 +1,485 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0235:edgeconnex:0ea39b90",
+  "taskIndex": 235,
+  "asOfDate": "2026-08-29",
+  "generatedAt": "2026-08-29T12:15:00.000Z",
+  "canonicalKey": "edgeconnex|united-states",
+  "companyName": "EdgeConneX",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER"
+  ],
+  "sourceHoldingIds": [
+    "043-eqt-infrastructure:holding:006:edgeconnex",
+    "088-sixth-street:holding:004:edgeconnex"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Correct EdgeConneX's ownership and milestone history without creating duplicate platform records. Direct sources establish EQT Infrastructure as the continuing largest shareholder group, Sixth Street-managed funds as a current minority owner from 2024, Providence as the former seller group, and Liberty Global as a former minority holder that fully exited on June 29, 2026. CPP Investments funded EQT's broader AI infrastructure strategy but is not separately evidenced as a direct EdgeConneX shareholder, so it is not added. Sites, campuses, AdaniConneX and Chayora remain outside the canonical company boundary.",
+  "evidence": [
+    {
+      "url": "https://sixthstreet.com/investment_announce/eqt-welcomes-sixth-street-as-strategic-investor-in-edgeconnex/",
+      "purpose": "Current Sixth Street minority ownership",
+      "supports": [
+        "Sixth Street-managed funds invested in EdgeConneX",
+        "The interest was acquired from EQT Infrastructure IV and V"
+      ]
+    },
+    {
+      "url": "https://www.prnewswire.com/news-releases/edgeconnex-announces-completion-of-its-acquisition-by-eqt-infrastructure-301167475.html",
+      "purpose": "EQT acquisition closing and former seller",
+      "supports": [
+        "EQT Infrastructure completed the acquisition on November 5, 2020",
+        "The acquired company was held by a Providence-led investor group"
+      ]
+    },
+    {
+      "url": "https://eqtgroup.com/news/eqt-ab-publ-half-year-report-2026-2026-07-17",
+      "purpose": "2026 EQT fund recapitalization",
+      "supports": [
+        "EQT AI Infrastructure acquired a minority stake from EQT Infrastructure IV and V",
+        "EQT remained the largest shareholder group"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1570585/000157058526000109/lbtya-20260630.htm",
+      "purpose": "Liberty Global exit",
+      "supports": [
+        "Liberty Global fully disposed of its EdgeConneX-related interest on June 29, 2026"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "6450eb3d0682bf21e3b034e46ac2c4022c9e71dfab291aa98ded4604470a5841",
+  "currentCompanySnapshotSha256": "00bd424d541a6161ddb27c63fd3927aad6d21f416fd5c8ec0da69c8068f18543",
+  "executionLock": {
+    "taskSnapshotSha256": "7168d3754506d0382fafd191d60158624421b2662113703dec0027d72602a6b8",
+    "taskStateSha256": "74a48867f32d2d54a7813f6a6ab1a92f5eff0f16e90ed37051b3f3b585dd4901",
+    "taskDependencySha256": "94364638d1dac53f7ed9c41d94148c8893752acaa9dfe210d7a26020b05110f2",
+    "seedEntrySha256": "607a3ff167d04edbb7e719d158f65375aaa9f435f61929bde6cf0bf8bec99fa7",
+    "dependencies": {
+      "ownershipPeriodsSha256": "f2f77b45009b3ba34fb2faa02d7ed8689b125c083304377613b8373ff08c7ccc",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "0fb655a8db1a1dde9a8938dfc7f12a47fb099b032e2937a8d1d7398808ed0d4e",
+      "organizationsSha256": "6f5925623212c63e4b51ce862c215955f0be7b0d5326f7a6c9697a770c696501",
+      "citationsSha256": "54cf71cb7c9809b2b2139342bcad417c4d2e29194d50cd79c9335c09e8d0c6a0",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj27k00d8ivhed2eoh3b8",
+        "fundName": "EQT AI Infrastructure Strategy",
+        "managerId": "cmrxpi7yv001rivhe44fyzxcs",
+        "updatedAt": "2026-07-23T16:09:56.720Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi7yv001rivhe44fyzxcs",
+        "name": "EQT Infrastructure",
+        "updatedAt": "2026-07-23T16:09:17.527Z"
+      },
+      {
+        "id": "cmrxpiobr006wivheuo45sxng",
+        "name": "Liberty Global",
+        "updatedAt": "2026-07-23T16:09:38.727Z"
+      },
+      {
+        "id": "cmrxpixvx009xivhe3nwzefid",
+        "name": "Sixth Street",
+        "updatedAt": "2026-07-23T16:09:51.117Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjemf00vyivhe4veoijb8",
+    "name": "EdgeConneX",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Data centers",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "EdgeConneX develops and operates hyperlocal, hyperscale, and build-to-suit data center infrastructure globally. It serves hyperscalers, cloud providers, AI users, and enterprise customers requiring high-powered and purpose-built digital infrastructure. The business is asset-heavy and contracted because it develops and operates physical data center campuses under long-duration customer commitments. Company and EQT materials describe a global platform spanning more than 40 facilities in 33 markets across North America, Europe, and South America, with ongoing expansion into Asia and Europe. EQT Infrastructure announced the acquisition in 2020 and remains the owner through EQT infrastructure vehicles.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "United States and international markets",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk0b701u7ivhebptkxpiu",
+        "managerName": "EQT Infrastructure",
+        "organizationName": "EQT Infrastructure",
+        "fundName": null,
+        "vehicleName": "EQT Infrastructure IV",
+        "stake": null,
+        "investmentYear": 2020,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplm8e03w7ivheiu3lwl2j",
+        "date": "2020",
+        "event": "EdgeConneX expanded from an edge-focused footprint into a broader global hyperscale data center platform.",
+        "category": "EXPANSION",
+        "sortDate": "2020-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplm9003w8ivhey2r2weml",
+        "date": "Nov 5, 2020",
+        "event": "EdgeConneX announced completion of its acquisition by EQT Infrastructure.",
+        "category": "ACQUISITION",
+        "sortDate": "2020-11-05T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplm9i03w9ivhe9uzor9on",
+        "date": "Feb 28, 2026",
+        "event": "EdgeConneX acquired Skellefteå Data Center Site from Lyten.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-02-28T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplma203waivhewlr87o0f",
+        "date": "Apr 21, 2026",
+        "event": "EQT introduced an AI infrastructure strategy with EdgeConneX as a core data center platform.",
+        "category": "EXPANSION",
+        "sortDate": "2026-04-21T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqut80a73ivhe35rrg2ty",
+        "label": "Edgeconnex — EdgeConneX",
+        "url": "https://www.edgeconnex.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Edgeconnex company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpquud0a75ivheg6fbscd4",
+        "label": "Eqtgroup — EdgeConneX",
+        "url": "https://eqtgroup.com/about/current-portfolio/edgeconnex",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Eqtgroup operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpquvi0a77ivheg36dq2o9",
+        "label": "Announcement date source — EQT Infrastructure — EdgeConneX",
+        "url": "https://www.edgeconnex.com/news/press-releases/eqt-infrastructure-to-acquire-leading-global-data-center-provider-edgeconnex/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "EQT Infrastructure transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpquwl0a79ivhea1ju8nrl",
+        "label": "Close date source — EQT Infrastructure — EdgeConneX",
+        "url": "https://www.edgeconnex.com/news/press-releases/edgeconnex-announces-completion-of-its-acquisition-by-eqt-infrastructure/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "EQT Infrastructure closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpquxl0a7bivhei8bx88lj",
+        "label": "EdgeConneX - INF-2026-090 - Skellefteå Data Center Site",
+        "url": "https://www.edgeconnex.com/news/press-releases/edgeconnex-looks-to-enter-swedish-market-as-part-of-european-data-center-expansion-strategy/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "EdgeConneX - INF-2026-090 - Skellefteå Data Center Site",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpquy30a7civhem3eix373",
+        "label": "EQT",
+        "url": "https://eqtgroup.com/news/eqt-introduces-ai-infrastructure-strategy-to-help-build-the-foundation-of-the-ai-economy-2026-04-21",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "EQT - INF-2026-180 - EdgeConneX",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "00bd424d541a6161ddb27c63fd3927aad6d21f416fd5c8ec0da69c8068f18543",
+  "afterImage": {
+    "id": "cmrxpjemf00vyivhe4veoijb8",
+    "name": "EdgeConneX",
+    "aliases": [
+      "EdgeConneX, Inc.",
+      "EdgeConnex, Inc."
+    ],
+    "sector": "DIGITAL",
+    "subsector": "Data centers",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "EdgeConneX is a global data-center developer and operator headquartered in Herndon, Virginia. Founded in 2009, it develops and operates edge, hyperscale, purpose-built and build-to-density facilities for hyperscale, cloud, enterprise, content, network, technology and AI customers. Public materials describe more than 80 operating or developing sites across over 60 markets in more than 20 countries, with over 10 GW of additional planned capacity. EQT Infrastructure IV completed the Providence-led acquisition on November 5, 2020; EQT Infrastructure V joined in 2021, Sixth Street-managed funds completed a minority investment in 2024, and EQT AI Infrastructure acquired a minority interest from EQT Infrastructure IV and V in 2026 while EQT remained the largest shareholder group. Liberty Global fully exited its former minority interest on June 29, 2026. CPP Investments' $1.75 billion commitment supports EQT's broader AI infrastructure strategy but is not disclosed as a separate direct EdgeConneX shareholding. Individual sites, campuses, subsidiaries, AdaniConneX and Chayora are outside this canonical company boundary. No later company sale, EQT exit, Sixth Street exit or signed pending ownership transfer was identified through August 29, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.edgeconnex.com/",
+    "yearFounded": 2009,
+    "headquarters": "Herndon, Virginia",
+    "lastVerifiedAt": "2026-08-29T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk0b701u7ivhebptkxpiu",
+        "managerName": "EQT Infrastructure",
+        "organizationName": "EQT Infrastructure",
+        "fundName": null,
+        "vehicleName": "EQT Infrastructure IV",
+        "stake": "Initial EQT acquisition vehicle; exact current percentage not publicly disclosed",
+        "investmentYear": 2020,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "EQT Infrastructure",
+        "organizationName": "EQT Infrastructure",
+        "fundName": null,
+        "vehicleName": "EQT Infrastructure V",
+        "stake": "Co-investment alongside EQT Infrastructure IV; exact percentage not publicly disclosed",
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "EQT Infrastructure",
+        "organizationName": "EQT Infrastructure",
+        "fundName": "EQT AI Infrastructure Strategy",
+        "vehicleName": null,
+        "stake": "Minority interest acquired from EQT Infrastructure IV and V; exact percentage not publicly disclosed",
+        "investmentYear": 2026,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Sixth Street",
+        "organizationName": "Sixth Street",
+        "fundName": null,
+        "vehicleName": "Sixth Street-managed funds; exact vehicles not publicly disclosed",
+        "stake": "Minority; exact percentage not publicly disclosed",
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Liberty Global",
+        "organizationName": "Liberty Global",
+        "fundName": null,
+        "vehicleName": "Herndon Topco LP / McNair Topco LP",
+        "stake": "Former weighted 3.3% interest",
+        "investmentYear": null,
+        "exitYear": 2026,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplm8e03w7ivheiu3lwl2j",
+        "date": "Nov 5, 2020",
+        "event": "EQT Infrastructure IV completed the acquisition of EdgeConneX from a Providence-led investor group.",
+        "category": "ACQUISITION",
+        "sortDate": "2020-11-05T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.prnewswire.com/news-releases/edgeconnex-announces-completion-of-its-acquisition-by-eqt-infrastructure-301167475.html"
+        ]
+      },
+      {
+        "id": "cmrxplm9003w8ivhey2r2weml",
+        "date": "Aug 19, 2021",
+        "event": "EQT Infrastructure V announced a co-investment in EdgeConneX alongside EQT Infrastructure IV; the exact closing date and percentage were not disclosed.",
+        "category": "FINANCING",
+        "sortDate": "2021-08-19T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.prnewswire.com/news-releases/eqt-infrastructure-v-to-co-invest-in-edgeconnex-301359016.html"
+        ]
+      },
+      {
+        "id": "cmrxplm9i03w9ivhe9uzor9on",
+        "date": "Sep 24, 2024",
+        "event": "EQT announced that Sixth Street-managed funds had made a minority investment in EdgeConneX by acquiring interests from EQT Infrastructure IV and V.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-09-24T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://sixthstreet.com/investment_announce/eqt-welcomes-sixth-street-as-strategic-investor-in-edgeconnex/"
+        ]
+      },
+      {
+        "id": "cmrxplma203waivhewlr87o0f",
+        "date": "Jun 29, 2026",
+        "event": "EQT AI Infrastructure acquired a minority interest from EQT Infrastructure IV and V while EQT remained the largest shareholder group; Liberty Global fully exited its former minority interest on June 29.",
+        "category": "DIVESTITURE",
+        "sortDate": "2026-06-29T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://eqtgroup.com/news/eqt-ab-publ-half-year-report-2026-2026-07-17",
+          "https://www.sec.gov/Archives/edgar/data/1570585/000157058526000109/lbtya-20260630.htm"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqut80a73ivhe35rrg2ty",
+        "label": "Edgeconnex — EdgeConneX",
+        "url": "https://www.edgeconnex.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current EdgeConneX identity and operating profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpquud0a75ivheg6fbscd4",
+        "label": "Eqtgroup — EdgeConneX",
+        "url": "https://eqtgroup.com/about/current-portfolio/edgeconnex",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current EQT portfolio status and platform scale",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpquvi0a77ivheg36dq2o9",
+        "label": "Announcement date source — EQT Infrastructure — EdgeConneX",
+        "url": "https://www.edgeconnex.com/news/press-releases/eqt-infrastructure-to-acquire-leading-global-data-center-provider-edgeconnex/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "August 2020 EQT acquisition announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpquwl0a79ivhea1ju8nrl",
+        "label": "Close date source — EQT Infrastructure — EdgeConneX",
+        "url": "https://www.edgeconnex.com/news/press-releases/edgeconnex-announces-completion-of-its-acquisition-by-eqt-infrastructure/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "November 5, 2020 EQT acquisition closing",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpquxl0a7bivhei8bx88lj",
+        "label": "EdgeConneX - INF-2026-090 - Skellefteå Data Center Site",
+        "url": "https://www.edgeconnex.com/news/press-releases/edgeconnex-looks-to-enter-swedish-market-as-part-of-european-data-center-expansion-strategy/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Planned Swedish site acquisition; no legal closing used in this proposal",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpquy30a7civhem3eix373",
+        "label": "EQT",
+        "url": "https://eqtgroup.com/news/eqt-introduces-ai-infrastructure-strategy-to-help-build-the-foundation-of-the-ai-economy-2026-04-21",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "EQT AI infrastructure strategy and EdgeConneX platform role",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "FTC — EdgeConneX acquisition HSR notice",
+        "url": "https://www.ftc.gov/legal-library/browse/early-termination-notices/20201430",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "2020 acquisition vehicle and legal target identity",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "EdgeConneX — EQT acquisition closing",
+        "url": "https://www.prnewswire.com/news-releases/edgeconnex-announces-completion-of-its-acquisition-by-eqt-infrastructure-301167475.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "November 2020 EQT close and Providence-led seller group",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "EQT — Infrastructure V co-investment in EdgeConneX",
+        "url": "https://www.prnewswire.com/news-releases/eqt-infrastructure-v-to-co-invest-in-edgeconnex-301359016.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "August 2021 EQT Infrastructure V co-investment",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Sixth Street — EdgeConneX strategic investment",
+        "url": "https://sixthstreet.com/investment_announce/eqt-welcomes-sixth-street-as-strategic-investor-in-edgeconnex/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current Sixth Street minority ownership acquired from EQT IV and V",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "Sixth Street — Real Estate portfolio",
+        "url": "https://sixthstreet.com/real-estate/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current Sixth Street portfolio attribution",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "EQT — Half-year report 2026",
+        "url": "https://eqtgroup.com/news/eqt-ab-publ-half-year-report-2026-2026-07-17",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "EQT AI Infrastructure minority purchase and continuing largest-shareholder status",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Newswire",
+        "url": "https://www.newswire.ca/news-releases/cpp-investments-partners-with-eqt-to-support-global-digital-infrastructure-growth-826226428.html",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "CPP investment in EQT's broader strategy, not separate direct EdgeConneX ownership",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Liberty Global — Q2 2026 filing",
+        "url": "https://www.sec.gov/Archives/edgar/data/1570585/000157058526000109/lbtya-20260630.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "June 29, 2026 full disposal of Liberty's EdgeConneX-related interest",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "c4f7b27d043604b0e0f1479e51f5785a5c95a7fe4060b3ef2395c6e3ff4fdee6",
+  "proposalSha256": "6e7035288911ca92799f9d5367d3b1816d29c1b9a3be695e3e587815f1238e25"
+}

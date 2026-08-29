@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-29T12:01:22.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-08-29T13:13:00.000Z",
+  "activeBatchId": "batch-0234-0238-v1",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -3022,7 +3022,55 @@
           "reason": "All five PortCo after-images, seed entries, ownership attributions, detail APIs and rendered drawers passed final canonical production verification; no partial application or unresolved identity or active-ownership issue remains."
         }
       ]
+    },
+    {
+      "batchId": "batch-0234-0238-v1",
+      "state": "READY",
+      "taskIds": [
+        "ledger:0234:crown-castle-small-cells-solutions:2b7e932b",
+        "ledger:0235:edgeconnex:0ea39b90",
+        "ledger:0236:abbotsford-regional-hospital-and-cancer-centre:d6878789",
+        "ledger:0237:andion-global:05d3742d",
+        "ledger:0238:centre-hospitalier-de-l-universite-de-montreal-chum:c4574e88"
+      ],
+      "taskIndexes": [
+        234,
+        235,
+        236,
+        237,
+        238
+      ],
+      "createdAt": "2026-08-29T12:09:37Z",
+      "updatedAt": "2026-08-29T13:13:00.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0234-0238-v1/batch-manifest.json",
+        "sha256": "a1fa32fc2233da578d6a16b61debb0d35912fc379bc7e2e3e2e4a5974cb1b30d"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-29T12:09:37Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-29T13:13:00.000Z",
+          "evidenceSha256": [
+            "a1fa32fc2233da578d6a16b61debb0d35912fc379bc7e2e3e2e4a5974cb1b30d"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "dfea96f85fe944f6bbb03cdb9028c54d1b09ee2bec2f0fd4e989f2fdb5810534"
+  "ledgerSha256": "09d0dc3acef0d2322c91860f8924e17abbf1a9a2dd37d1f14e26dfe66e58a0a3"
 }
