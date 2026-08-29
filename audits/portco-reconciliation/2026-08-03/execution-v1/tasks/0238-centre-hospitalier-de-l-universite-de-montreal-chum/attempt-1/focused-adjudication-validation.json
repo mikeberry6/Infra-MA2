@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_FOCUSED_CHATGPT_RESPONSE_VALIDATION",
+  "runId": "2026-08-03",
+  "taskId": "ledger:0238:centre-hospitalier-de-l-universite-de-montreal-chum:c4574e88",
+  "taskIndex": 238,
+  "companyName": "Centre Hospitalier de l'Université de Montréal (CHUM)",
+  "validatedAt": "2026-08-29T13:12:05.000Z",
+  "conversationUrl": "https://chatgpt.com/c/6a92cfd7-c170-83e9-9671-799a4cf42fc2",
+  "requiredTopLevelKeys": [
+    "asOfDate",
+    "taskId",
+    "requestedCompany",
+    "decision",
+    "confidence",
+    "rationale",
+    "identityResolution",
+    "ownershipResolution",
+    "equitixDisposition",
+    "acquisitionExitCheck",
+    "evidence",
+    "unresolvedQuestions",
+    "recommendedListAction"
+  ],
+  "initialResponse": {
+    "valid": false,
+    "jsonParsed": false,
+    "markdownReviewPresent": false,
+    "requiredTopLevelKeysPresent": false,
+    "responseSha256": "d18d83b64e256ec52f7f9ac517c0cd7b15fae45b76e0b4c9668229acad6be9a7",
+    "errors": [
+      "The initial GPT Pro web research stalled after approximately 50 minutes and did not return the requested structured block."
+    ]
+  },
+  "repair": {
+    "count": 1,
+    "limit": 1,
+    "submittedAt": "2026-08-29T13:06:30.000Z",
+    "completedAt": "2026-08-29T13:10:39.000Z",
+    "valid": true,
+    "responseSha256": "61326949ac710787d4e933c681c1ea7e9a8e25a758bf928a9096aee19dd69611",
+    "errors": []
+  },
+  "finalResponse": {
+    "decision": "DEFERRED",
+    "confidence": "HIGH",
+    "canonicalProjectCompany": "Collectif Santé Montréal S.E.C. / Health Montréal Collective Limited Partnership",
+    "identityResolved": true,
+    "activeOwnershipResolved": false,
+    "supportedCurrentPercentage": 90,
+    "unresolvedCurrentPercentage": 10,
+    "equitixExcluded": true,
+    "cancelledBbgiTransactionExcluded": true,
+    "kkrNotMisclassifiedAsDirectOwner": true,
+    "subsequentExitSearchPresent": true,
+    "exactMissingFactStated": true,
+    "singleRecommendedPrimary": true,
+    "allEvidenceUrlsDirectHttps": true,
+    "result": "PASS_FOR_DEFERRAL"
+  },
+  "independentSourceVerification": "source-verification.json",
+  "valid": true,
+  "errors": [],
+  "repairsUsed": 1
+}

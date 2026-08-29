@@ -1,0 +1,275 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0236:abbotsford-regional-hospital-and-cancer-centre:d6878789",
+  "taskIndex": 236,
+  "companyName": "Abbotsford Regional Hospital and Cancer Centre",
+  "generatedAt": "2026-08-29T12:11:11.259Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0236-abbotsford-regional-hospital-and-cancer-centre/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 236,
+    "taskId": "ledger:0236:abbotsford-regional-hospital-and-cancer-centre:d6878789",
+    "canonicalKey": "abbotsford-regional-hospital-and-cancer-centre|canada",
+    "companyName": "Abbotsford Regional Hospital and Cancer Centre",
+    "country": "Canada",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 44,
+    "managers": [
+      "Equitix"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "044-equitix:holding:009:abbotsford-regional-hospital-and-cancer-centre"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjeux00waivhepxan0122"
+    ],
+    "seedKeys": [
+      "abbotsford regional hospital and cancer centre|Canada"
+    ],
+    "evidenceUrls": [
+      "https://www.infrastructurebc.com/project/abbotsford-regional-hospital-and-cancer-centre/",
+      "https://www.marketscreener.com/quote/stock/JOHN-LAING-INFRASTRUCTURE-6919133/news/John-Laing-Infrastructure-Fund-Ld-Scheme-of-Arrangement-becomes-Effective-27339064/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted census NEEDS_REVIEW for 044-equitix:holding:009:abbotsford-regional-hospital-and-cancer-centre: Ownership tied to 2018 Jura acquisition; current Equitix ownership continuity not directly reconfirmed by recent source. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Accepted census NEEDS_REVIEW for 044-equitix:holding:009:abbotsford-regional-hospital-and-cancer-centre: Ownership tied to 2018 Jura acquisition; current Equitix ownership continuity not directly reconfirmed by recent source."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjeux00waivhepxan0122",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "abbotsford-regional-hospital-and-cancer-centre|canada",
+  "targetCompanyImage": {
+    "id": "cmrxpjeux00waivhepxan0122",
+    "name": "Abbotsford Regional Hospital and Cancer Centre",
+    "aliases": [],
+    "sector": "SOCIAL_INFRA",
+    "subsector": "Availability-based hospital PPP",
+    "region": "NORTH_AMERICA",
+    "country": "Canada",
+    "countryTags": [
+      "Canada"
+    ],
+    "description": "Abbotsford Regional Hospital and Cancer Centre is a hospital PPP asset serving Fraser Valley patients through acute care and cancer services. The facility serves the Fraser Health region and related public healthcare users rather than private-pay markets. Its operating model is asset-heavy and availability-based, with long-term public-sector service payments characteristic of hospital PPP structures. Public sources describe the campus as a roughly 300-bed, approximately 645,000-square-foot facility in Abbotsford, British Columbia. The reviewed materials did not disclose current project-level revenue or equity ownership percentages. The investment is associated with Jura Acquisition, the vehicle backed by funds managed by Equitix and Dalmore following the 2018 take-private of John Laing Infrastructure Fund, and exact project-level ownership percentages were not publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "British Columbia",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk0ht01ujivhekrs9xwtt",
+        "managerName": "Equitix",
+        "organizationName": "Equitix",
+        "fundName": null,
+        "vehicleName": "Jura Acquisition",
+        "stake": null,
+        "investmentYear": 2018,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpln0103x2ivhev7ak416b",
+        "date": "2005",
+        "event": "Financial close was completed for the hospital PPP project.",
+        "category": "FINANCING",
+        "sortDate": "2005-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpln0m03x3ivhextojgy8i",
+        "date": "2008",
+        "event": "The hospital opened and began serving the Fraser Valley region.",
+        "category": "EXPANSION",
+        "sortDate": "2008-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpln1603x4ivhejf1t3t42",
+        "date": "Sep 28, 2018",
+        "event": "John Laing Infrastructure Fund's scheme of arrangement became effective, taking the portfolio private through Jura Acquisition, a vehicle backed by Equitix and Dalmore-managed funds.",
+        "category": "ACQUISITION",
+        "sortDate": "2018-09-28T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqwhn0a9qivhe4otck9gj",
+        "label": "Fraserhealth — Abbotsford Regional Hospital and Cancer Centre",
+        "url": "https://www.fraserhealth.ca/Service-Directory/Locations/Abbotsford/abbotsford-regional-hospital-and-cancer-centre",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Fraserhealth operations / asset details",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqwij0a9sivhe9n1a2nqg",
+        "label": "Fvhcf — Abbotsford Regional Hospital and Cancer Centre",
+        "url": "https://www.fvhcf.ca/welcome-to-arh/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Fvhcf — Abbotsford Regional Hospital and Cancer Centre",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqwjh0a9uivhe57ojf36u",
+        "label": "Lexpert — Abbotsford Regional Hospital and Cancer Centre",
+        "url": "https://www.lexpert.ca/big-deals/ahcc-and-aha-complete-p3/345623",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Lexpert — Abbotsford Regional Hospital and Cancer Centre",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqwki0a9wivhesk20ldoo",
+        "label": "Marciajedd — Abbotsford Regional Hospital and Cancer Centre",
+        "url": "https://marciajedd.com/assets/pdfs/JeddM_EngineeringDesignHVAC_CHF2011abbotsford.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Marciajedd operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqwof0a9yivhe2e84dd71",
+        "label": "Close date source — Equitix — Abbotsford Regional Hospital and Cancer Centre",
+        "url": "https://www.marketscreener.com/quote/stock/JOHN-LAING-INFRASTRUCTURE-6919133/news/John-Laing-Infrastructure-Fund-Ld-Scheme-of-Arrangement-becomes-Effective-27339064/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Equitix closing confirmation",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Abbotsford Regional Hospital and Cancer Centre",
+    "investmentFirm": "CVC DIF",
+    "sector": "Social Infra",
+    "subsector": "Availability-based hospital PPP",
+    "region": "North America",
+    "country": "Canada",
+    "ownershipVehicle": "Jura Acquisition",
+    "description": "Abbotsford Regional Hospital and Cancer Centre is a hospital PPP asset serving Fraser Valley patients through acute care and cancer services. The facility serves the Fraser Health region and related public healthcare users rather than private-pay markets. Its operating model is asset-heavy and availability-based, with long-term public-sector service payments characteristic of hospital PPP structures. Public sources describe the campus as a roughly 300-bed, approximately 645,000-square-foot facility in Abbotsford, British Columbia. The reviewed materials did not disclose current project-level revenue or equity ownership percentages. The investment is associated with Jura Acquisition, the vehicle backed by funds managed by Equitix and Dalmore following the 2018 take-private of John Laing Infrastructure Fund, and exact project-level ownership percentages were not publicly disclosed.",
+    "status": "Active",
+    "countryTags": [
+      "Canada"
+    ],
+    "investmentYear": 2018,
+    "headquarters": "British Columbia",
+    "milestones": [
+      {
+        "date": "2005",
+        "event": "Financial close was completed for the hospital PPP project.",
+        "category": "Financing"
+      },
+      {
+        "date": "2008",
+        "event": "The hospital opened and began serving the Fraser Valley region.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Sep 28, 2018",
+        "event": "John Laing Infrastructure Fund's scheme of arrangement became effective, taking the portfolio private through Jura Acquisition, a vehicle backed by Equitix and Dalmore-managed funds.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Fraserhealth — Abbotsford Regional Hospital and Cancer Centre",
+        "url": "https://www.fraserhealth.ca/Service-Directory/Locations/Abbotsford/abbotsford-regional-hospital-and-cancer-centre",
+        "type": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Fvhcf — Abbotsford Regional Hospital and Cancer Centre",
+        "url": "https://www.fvhcf.ca/welcome-to-arh/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Lexpert — Abbotsford Regional Hospital and Cancer Centre",
+        "url": "https://www.lexpert.ca/big-deals/ahcc-and-aha-complete-p3/345623",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Marciajedd — Abbotsford Regional Hospital and Cancer Centre",
+        "url": "https://marciajedd.com/assets/pdfs/JeddM_EngineeringDesignHVAC_CHF2011abbotsford.pdf",
+        "type": "PRESENTATION",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Close date source — Equitix — Abbotsford Regional Hospital and Cancer Centre",
+        "url": "https://www.marketscreener.com/quote/stock/JOHN-LAING-INFRASTRUCTURE-6919133/news/John-Laing-Infrastructure-Fund-Ld-Scheme-of-Arrangement-becomes-Effective-27339064/",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Equitix",
+        "ownershipVehicle": "Jura Acquisition",
+        "investmentYear": 2018,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpiimy0054ivhe8zpfvx69",
+        "name": "Equitix",
+        "updatedAt": "2026-07-23T16:09:31.354Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0236:abbotsford-regional-hospital-and-cancer-centre:d6878789",
+    "taskIndex": 236,
+    "canonicalKey": "abbotsford-regional-hospital-and-cancer-centre|canada",
+    "capturedAt": "2026-08-29T12:11:11.259Z",
+    "databaseRevision": "revision:afe0efb63b526544519f71b7b3d842cfa4b2522f431d0745c7b13e37daa1af63",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "1ccefb77654bb3eea58212e6e07ff9f334ff18a3314501b15649cf2ae1f0d107",
+    "productionSnapshotSha256": "762a430b501a1e5859b8e0ef4ab744ac1e2e4ee9ddeaf12bc91b58d361b5b8e2",
+    "targetCompanySnapshotSha256": "0ca93f68b0baa4f71730441bbec0cc32cfe482a294672ebfc9226c8cbf609ad5",
+    "seedEntrySha256": "a0e08e0a90a5ba72953760933e2fb85c20d3d7171ce3343704891dfc4dec31f8",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "02a5f9faa68dd020b111a23bf7b2048f23286b8c8ece75469a0660070242d00a",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "0fba6ee1c7181bf4b1926ce140b74370b945cf49d8110a5fc29893b7fa73cc5e",
+      "citationsSha256": "2092f53b780dc5724bc2e9996b657d62a45965720759c17e6c6641077377096d",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "3b2b9f0338845d8bd0ee9057dc53f738fd81256079b698cfe04d3c992887e1bf",
+    "stateSha256": "72730da2013a8c0941323599b2c5356912608c79739ef56c1dd82f7220adc70b",
+    "taskSnapshotSha256": "248efe64e8d7ab202f0c1a8ed547f38ae7a4f16f3b8ecd13d64c604471148d2b"
+  },
+  "contextSha256": "72650dd7c619f8f3f8d5917498eedb5f97f2fbe7a285c3a0dab36e2f83d60601"
+}

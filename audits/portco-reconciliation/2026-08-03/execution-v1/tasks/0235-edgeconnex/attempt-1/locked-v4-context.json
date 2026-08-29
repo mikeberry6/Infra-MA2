@@ -1,0 +1,324 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0235:edgeconnex:0ea39b90",
+  "taskIndex": 235,
+  "companyName": "EdgeConneX",
+  "generatedAt": "2026-08-29T12:30:11.324Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0235-edgeconnex/attempt-1/locked-v4-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 235,
+    "taskId": "ledger:0235:edgeconnex:0ea39b90",
+    "canonicalKey": "edgeconnex|united-states",
+    "companyName": "EdgeConneX",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 43,
+    "managers": [
+      "EQT Infrastructure",
+      "Sixth Street"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "043-eqt-infrastructure:holding:006:edgeconnex",
+      "088-sixth-street:holding:004:edgeconnex"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjemf00vyivhe4veoijb8"
+    ],
+    "seedKeys": [
+      "edgeconnex|United States"
+    ],
+    "evidenceUrls": [
+      "https://eqtgroup.com/about/current-portfolio/edgeconnex",
+      "https://eqtgroup.com/news/eqt-announces-investment-in-edgeconnex",
+      "https://sixthstreet.com/investment_announce/sixth-street-announces-investment-in-edgeconnex/",
+      "https://www.newswire.ca/news-releases/cpp-investments-partners-with-eqt-to-support-global-digital-infrastructure-growth-826226428.html"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_OWNER requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjemf00vyivhe4veoijb8",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "edgeconnex|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjemf00vyivhe4veoijb8",
+    "name": "EdgeConneX",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Data centers",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "EdgeConneX develops and operates hyperlocal, hyperscale, and build-to-suit data center infrastructure globally. It serves hyperscalers, cloud providers, AI users, and enterprise customers requiring high-powered and purpose-built digital infrastructure. The business is asset-heavy and contracted because it develops and operates physical data center campuses under long-duration customer commitments. Company and EQT materials describe a global platform spanning more than 40 facilities in 33 markets across North America, Europe, and South America, with ongoing expansion into Asia and Europe. EQT Infrastructure announced the acquisition in 2020 and remains the owner through EQT infrastructure vehicles.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "United States and international markets",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk0b701u7ivhebptkxpiu",
+        "managerName": "EQT Infrastructure",
+        "organizationName": "EQT Infrastructure",
+        "fundName": null,
+        "vehicleName": "EQT Infrastructure IV",
+        "stake": null,
+        "investmentYear": 2020,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplm8e03w7ivheiu3lwl2j",
+        "date": "2020",
+        "event": "EdgeConneX expanded from an edge-focused footprint into a broader global hyperscale data center platform.",
+        "category": "EXPANSION",
+        "sortDate": "2020-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplm9003w8ivhey2r2weml",
+        "date": "Nov 5, 2020",
+        "event": "EdgeConneX announced completion of its acquisition by EQT Infrastructure.",
+        "category": "ACQUISITION",
+        "sortDate": "2020-11-05T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplm9i03w9ivhe9uzor9on",
+        "date": "Feb 28, 2026",
+        "event": "EdgeConneX acquired Skellefteå Data Center Site from Lyten.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-02-28T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplma203waivhewlr87o0f",
+        "date": "Apr 21, 2026",
+        "event": "EQT introduced an AI infrastructure strategy with EdgeConneX as a core data center platform.",
+        "category": "EXPANSION",
+        "sortDate": "2026-04-21T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqut80a73ivhe35rrg2ty",
+        "label": "Edgeconnex — EdgeConneX",
+        "url": "https://www.edgeconnex.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Edgeconnex company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpquud0a75ivheg6fbscd4",
+        "label": "Eqtgroup — EdgeConneX",
+        "url": "https://eqtgroup.com/about/current-portfolio/edgeconnex",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Eqtgroup operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpquvi0a77ivheg36dq2o9",
+        "label": "Announcement date source — EQT Infrastructure — EdgeConneX",
+        "url": "https://www.edgeconnex.com/news/press-releases/eqt-infrastructure-to-acquire-leading-global-data-center-provider-edgeconnex/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "EQT Infrastructure transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpquwl0a79ivhea1ju8nrl",
+        "label": "Close date source — EQT Infrastructure — EdgeConneX",
+        "url": "https://www.edgeconnex.com/news/press-releases/edgeconnex-announces-completion-of-its-acquisition-by-eqt-infrastructure/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "EQT Infrastructure closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpquxl0a7bivhei8bx88lj",
+        "label": "EdgeConneX - INF-2026-090 - Skellefteå Data Center Site",
+        "url": "https://www.edgeconnex.com/news/press-releases/edgeconnex-looks-to-enter-swedish-market-as-part-of-european-data-center-expansion-strategy/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "EdgeConneX - INF-2026-090 - Skellefteå Data Center Site",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpquy30a7civhem3eix373",
+        "label": "EQT",
+        "url": "https://eqtgroup.com/news/eqt-introduces-ai-infrastructure-strategy-to-help-build-the-foundation-of-the-ai-economy-2026-04-21",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "EQT - INF-2026-180 - EdgeConneX",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "EdgeConneX",
+    "investmentFirm": "EQT Infrastructure",
+    "sector": "Digital",
+    "subsector": "Data centers",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "EQT Infrastructure IV",
+    "description": "EdgeConneX develops and operates hyperlocal, hyperscale, and build-to-suit data center infrastructure globally. It serves hyperscalers, cloud providers, AI users, and enterprise customers requiring high-powered and purpose-built digital infrastructure. The business is asset-heavy and contracted because it develops and operates physical data center campuses under long-duration customer commitments. Company and EQT materials describe a global platform spanning more than 40 facilities in 33 markets across North America, Europe, and South America, with ongoing expansion into Asia and Europe. EQT Infrastructure announced the acquisition in 2020 and remains the owner through EQT infrastructure vehicles.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2020,
+    "headquarters": "United States and international markets",
+    "milestones": [
+      {
+        "date": "2020",
+        "event": "EdgeConneX expanded from an edge-focused footprint into a broader global hyperscale data center platform.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Nov 5, 2020",
+        "event": "EdgeConneX announced completion of its acquisition by EQT Infrastructure.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Feb 28, 2026",
+        "event": "EdgeConneX acquired Skellefteå Data Center Site from Lyten.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Apr 21, 2026",
+        "event": "EQT introduced an AI infrastructure strategy with EdgeConneX as a core data center platform.",
+        "category": "Expansion"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Edgeconnex — EdgeConneX",
+        "url": "https://www.edgeconnex.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Eqtgroup — EdgeConneX",
+        "url": "https://eqtgroup.com/about/current-portfolio/edgeconnex",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Announcement date source — EQT Infrastructure — EdgeConneX",
+        "url": "https://www.edgeconnex.com/news/press-releases/eqt-infrastructure-to-acquire-leading-global-data-center-provider-edgeconnex/",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Close date source — EQT Infrastructure — EdgeConneX",
+        "url": "https://www.edgeconnex.com/news/press-releases/edgeconnex-announces-completion-of-its-acquisition-by-eqt-infrastructure/",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "EdgeConneX - INF-2026-090 - Skellefteå Data Center Site",
+        "url": "https://www.edgeconnex.com/news/press-releases/edgeconnex-looks-to-enter-swedish-market-as-part-of-european-data-center-expansion-strategy/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "EQT - INF-2026-180 - EdgeConneX",
+        "url": "https://eqtgroup.com/news/eqt-introduces-ai-infrastructure-strategy-to-help-build-the-foundation-of-the-ai-economy-2026-04-21",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "EQT Infrastructure",
+        "ownershipVehicle": "EQT Infrastructure IV",
+        "investmentYear": 2020,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj27k00d8ivhed2eoh3b8",
+        "fundName": "EQT AI Infrastructure Strategy",
+        "managerId": "cmrxpi7yv001rivhe44fyzxcs",
+        "updatedAt": "2026-07-23T16:09:56.720Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi7yv001rivhe44fyzxcs",
+        "name": "EQT Infrastructure",
+        "updatedAt": "2026-07-23T16:09:17.527Z"
+      },
+      {
+        "id": "cmrxpiobr006wivheuo45sxng",
+        "name": "Liberty Global",
+        "updatedAt": "2026-07-23T16:09:38.727Z"
+      },
+      {
+        "id": "cmrxpixvx009xivhe3nwzefid",
+        "name": "Sixth Street",
+        "updatedAt": "2026-07-23T16:09:51.117Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0235:edgeconnex:0ea39b90",
+    "taskIndex": 235,
+    "canonicalKey": "edgeconnex|united-states",
+    "capturedAt": "2026-08-29T12:30:11.324Z",
+    "databaseRevision": "revision:3511600359a0046ca0312eeedb6fc72f4d499b05c63898ea1c7e8b1f03842e68",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "40f26f13ca98e82c52d63f391707576d67431cbad16e0a34a3d5f2ff46da1de9",
+    "productionSnapshotSha256": "6450eb3d0682bf21e3b034e46ac2c4022c9e71dfab291aa98ded4604470a5841",
+    "targetCompanySnapshotSha256": "00bd424d541a6161ddb27c63fd3927aad6d21f416fd5c8ec0da69c8068f18543",
+    "seedEntrySha256": "607a3ff167d04edbb7e719d158f65375aaa9f435f61929bde6cf0bf8bec99fa7",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "f2f77b45009b3ba34fb2faa02d7ed8689b125c083304377613b8373ff08c7ccc",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "0fb655a8db1a1dde9a8938dfc7f12a47fb099b032e2937a8d1d7398808ed0d4e",
+      "organizationsSha256": "6f5925623212c63e4b51ce862c215955f0be7b0d5326f7a6c9697a770c696501",
+      "citationsSha256": "54cf71cb7c9809b2b2139342bcad417c4d2e29194d50cd79c9335c09e8d0c6a0",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "94364638d1dac53f7ed9c41d94148c8893752acaa9dfe210d7a26020b05110f2",
+    "stateSha256": "74a48867f32d2d54a7813f6a6ab1a92f5eff0f16e90ed37051b3f3b585dd4901",
+    "taskSnapshotSha256": "7168d3754506d0382fafd191d60158624421b2662113703dec0027d72602a6b8"
+  },
+  "contextSha256": "3389a9db91e7187a072785421bc095b2610d03e3dbaf36a23029bb55205cfd73"
+}

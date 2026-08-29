@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_SEED_ATTRIBUTION_RECONCILIATION_SPEC",
+  "batchId": "batch-0234-0238-v1",
+  "batchSha256": "a1fa32fc2233da578d6a16b61debb0d35912fc379bc7e2e3e2e4a5974cb1b30d",
+  "reconciledAt": "2026-08-29T13:15:00.000Z",
+  "sourceManifestSha256": "a3e73726c9f9ae53f91b4cb0bd2447fc3252c7e1a73639b75abfa316259ba675",
+  "rationale": "Align every active owner in the approved Arium Networks and EdgeConneX after-images with one reviewed attribution record. Rename the existing Crown Castle Small Cells attribution to Arium and preserve its disclosed EQT Active Core I link; retain EdgeConneX's disclosed EQT Infrastructure IV attribution, add the separately evidenced EQT Infrastructure V and EQT AI Infrastructure Strategy periods, and record Sixth Street's current minority ownership without inventing the undisclosed underlying managed funds.",
+  "removeRecordIds": [],
+  "upsertRecords": [
+    {
+      "recordId": "OFA-2D900E74ACEE",
+      "companyName": "Arium Networks",
+      "country": "United States",
+      "investmentFirm": "EQT Infrastructure",
+      "currentVehicleName": "EQT Active Core Infrastructure SCSp / Small Cells HoldCo Inc.",
+      "investmentYear": 2026,
+      "stake": "EQT-controlled consortium; exact manager-level economic percentage not publicly disclosed",
+      "targetLinkedFundName": "EQT Active Core I",
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "EQT Active Core I",
+      "attributionConfidence": null,
+      "attributionRationale": "EQT's current portfolio page attributes Arium to EQT Active Core Infrastructure I, while the acquisition agreement and regulatory ownership chart identify Small Cells HoldCo and the EQT-controlled consortium structure. The existing curated EQT Active Core I link is preserved under the corrected company identity.",
+      "evidenceUrls": [
+        "https://eqtgroup.com/about/current-portfolio/arium-networks",
+        "https://www.sec.gov/Archives/edgar/data/1051470/000095014225000762/eh250603725_ex0201.htm",
+        "https://services.psc.ga.gov/api/v1/External/Public/Get/Document/DownloadFile/225590/106856"
+      ]
+    },
+    {
+      "recordId": "OFA-CD43F136EE6C",
+      "companyName": "EdgeConneX",
+      "country": "United States",
+      "investmentFirm": "EQT Infrastructure",
+      "currentVehicleName": "EQT Infrastructure IV",
+      "investmentYear": 2020,
+      "stake": "Initial EQT acquisition vehicle; exact current percentage not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "EQT Infrastructure IV",
+      "attributionConfidence": null,
+      "attributionRationale": "EQT and EdgeConneX directly identify EQT Infrastructure IV as the 2020 acquisition fund. It remains separately represented after later co-investments; no curated Fund IV record is linked.",
+      "evidenceUrls": [
+        "https://www.edgeconnex.com/news/press-releases/eqt-infrastructure-to-acquire-leading-global-data-center-provider-edgeconnex/",
+        "https://www.prnewswire.com/news-releases/edgeconnex-announces-completion-of-its-acquisition-by-eqt-infrastructure-301167475.html",
+        "https://eqtgroup.com/about/current-portfolio/edgeconnex"
+      ]
+    },
+    {
+      "recordId": "OFA-20B17512FB81",
+      "companyName": "EdgeConneX",
+      "country": "United States",
+      "investmentFirm": "EQT Infrastructure",
+      "currentVehicleName": "EQT Infrastructure V",
+      "investmentYear": 2021,
+      "stake": "Co-investment alongside EQT Infrastructure IV; exact percentage not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "EQT Infrastructure V",
+      "attributionConfidence": null,
+      "attributionRationale": "EQT directly announced that EQT Infrastructure V would co-invest in EdgeConneX alongside EQT Infrastructure IV. The exact percentage and closing date are not public, and no curated Fund V record is linked.",
+      "evidenceUrls": [
+        "https://www.prnewswire.com/news-releases/eqt-infrastructure-v-to-co-invest-in-edgeconnex-301359016.html",
+        "https://eqtgroup.com/about/current-portfolio/edgeconnex"
+      ]
+    },
+    {
+      "recordId": "OFA-BDA26D90D266",
+      "companyName": "EdgeConneX",
+      "country": "United States",
+      "investmentFirm": "EQT Infrastructure",
+      "currentVehicleName": "EQT AI Infrastructure Strategy",
+      "investmentYear": 2026,
+      "stake": "Minority interest acquired from EQT Infrastructure IV and V; exact percentage not publicly disclosed",
+      "targetLinkedFundName": "EQT AI Infrastructure Strategy",
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "EQT AI Infrastructure Strategy",
+      "attributionConfidence": null,
+      "attributionRationale": "EQT's 2026 reporting directly identifies its AI Infrastructure strategy's minority EdgeConneX acquisition from EQT Infrastructure IV and V. The ownership period links to the existing curated EQT AI Infrastructure Strategy record.",
+      "evidenceUrls": [
+        "https://eqtgroup.com/news/eqt-introduces-ai-infrastructure-strategy-to-help-build-the-foundation-of-the-ai-economy-2026-04-21",
+        "https://eqtgroup.com/news/eqt-ab-publ-half-year-report-2026-2026-07-17",
+        "https://eqtgroup.com/about/current-portfolio/edgeconnex"
+      ]
+    },
+    {
+      "recordId": "OFA-B86B5FFEB7CA",
+      "companyName": "EdgeConneX",
+      "country": "United States",
+      "investmentFirm": "Sixth Street",
+      "currentVehicleName": "Sixth Street-managed funds; exact vehicles not publicly disclosed",
+      "investmentYear": 2024,
+      "stake": "Minority; exact percentage not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "UNRESOLVED",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "Sixth Street directly supports its 2024 minority investment and continues to list EdgeConneX, but the specific managed funds and percentages are not publicly disclosed. No fund is inferred or linked.",
+      "evidenceUrls": [
+        "https://sixthstreet.com/investment_announce/eqt-welcomes-sixth-street-as-strategic-investor-in-edgeconnex/",
+        "https://sixthstreet.com/real-estate/"
+      ]
+    }
+  ],
+  "specSha256": "ae44f92df45184350f3378a0be17387f7b762b36572e5bf41755d97952882894"
+}

@@ -1,0 +1,350 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0234:crown-castle-small-cells-solutions:2b7e932b",
+  "taskIndex": 234,
+  "asOfDate": "2026-08-29",
+  "generatedAt": "2026-08-29T12:15:00.000Z",
+  "canonicalKey": "crown-castle-small-cells-solutions|united-states",
+  "companyName": "Crown Castle Small Cells Solutions",
+  "actions": [
+    "CORRECT_COMPANY"
+  ],
+  "sourceHoldingIds": [
+    "043-eqt-infrastructure:holding:003:crown-castle-small-cells-solutions"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Correct the existing Crown Castle Small Cells Solutions record in place to its post-close identity, Arium Networks. Direct manager, company and SEC evidence establishes that EQT Active Core Infrastructure I closed the acquisition on May 1, 2026, Arium launched as the standalone small-cell and venue-network platform, and Crown Castle became the former owner. Preserve the predecessor names as aliases, exclude the separately sold Zayo fiber business, and do not infer a single EQT economic percentage from nested co-investment interests.",
+  "evidence": [
+    {
+      "url": "https://eqtgroup.com/about/current-portfolio/arium-networks",
+      "purpose": "Current EQT ownership, Arium identity and fund attribution",
+      "supports": [
+        "EQT lists Arium Networks as a current portfolio company",
+        "EQT attributes the investment to EQT Active Core Infrastructure I"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1051470/000105147026000052/cci-20260501.htm",
+      "purpose": "Legal closing and transaction boundary",
+      "supports": [
+        "The Small Cell sale closed May 1, 2026",
+        "The Zayo fiber transaction was legally separate"
+      ]
+    },
+    {
+      "url": "https://www.globenewswire.com/news-release/2026/05/01/3285986/0/en/arium-networks-launches-following-completion-of-eqt-s-acquisition-of-crown-castle-s-small-cell-solutions-business.html",
+      "purpose": "Arium launch, headquarters and operating footprint",
+      "supports": [
+        "Arium launched following completion of the EQT acquisition",
+        "The company is based in Charlotte and operates small-cell and venue networks across the United States"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "aa681c4a8907204c59e25682e5233c6b5e75fb85630b2022a0567d82143fe725",
+  "currentCompanySnapshotSha256": "ac2b1db4928021f76c21eb1a9c7dadbb87da26d4627dafffe5927a0b47c9408c",
+  "executionLock": {
+    "taskSnapshotSha256": "406cdeffc362211a4a33898b600a4c7ec0d5021ffeb2960014fe627390810643",
+    "taskStateSha256": "4187c122055e06e99c86b0069ce749ab6b3e1c4c83da9c6f61c20799eca28880",
+    "taskDependencySha256": "f12f7bc9e5621e584f3a97d03e508ecd2b7c0adb415a3ad71ca51ca5d1018964",
+    "seedEntrySha256": "6ded7577077484dc0a30c177f3ccfe35eb68521847bc4dc2fc891f3bf8e025be",
+    "dependencies": {
+      "ownershipPeriodsSha256": "cf0100a1b8dc242ce17a733b592dc7ed3bcf29b7485af8c23ae2f465b6b5d832",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "0d0f92a0979dd5edb1887880626e106c11e333ad3dd7b86527c48ee6ed5c4640",
+      "organizationsSha256": "0765fb9ded526c9ce17514fe98fd3edd7b96e95597bbf409f89f70b81b185531",
+      "citationsSha256": "7c6b09b3a23ac9775a5e0c603d95a45bc7fd7586afb6d538ae90bc20a00a1d0a",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj27100d7ivheadclgfnd",
+        "fundName": "EQT Active Core I",
+        "managerId": "cmrxpi7yv001rivhe44fyzxcs",
+        "updatedAt": "2026-07-23T16:09:56.701Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi7yv001rivhe44fyzxcs",
+        "name": "EQT Infrastructure",
+        "updatedAt": "2026-07-23T16:09:17.527Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjekr00vvivhe5v2kbj0w",
+    "name": "Crown Castle Small Cells Solutions",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Small cells and venue infrastructure",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Crown Castle Small Cells Solutions comprises Crown Castle's small-cell and venue communications infrastructure business in the United States. It serves mobile network operators and venue customers that require densification and in-building or outdoor wireless connectivity assets. The business is asset-heavy and lease-based because it consists of physical small-cell, fiber-connected, and venue communications infrastructure. Public transaction materials describe the business as part of Crown Castle's fiber segment and note that it includes the company's small-cell and venue assets. EQT Active Core Infrastructure signed a definitive agreement in March 2025 to acquire the business, and Crown Castle announced the completed sale of its Small Cell business to Arium Networks, an EQT Active Core Infrastructure fund company, on May 1, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk07b01u4ivhef320t33f",
+        "managerName": "EQT Infrastructure",
+        "organizationName": "EQT Infrastructure",
+        "fundName": "EQT Active Core I",
+        "vehicleName": "EQT Active Core I",
+        "stake": null,
+        "investmentYear": 2026,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpllyu03vxivhet9ro4jzf",
+        "date": "Mar 13, 2025",
+        "event": "EQT announced a definitive agreement to acquire Crown Castle's Small Cells Solutions business.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-03-13T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpllze03vyivhe26p096ey",
+        "date": "Mar 13, 2025",
+        "event": "Crown Castle announced the sale of its small-cell and venue assets to EQT as part of its strategic review.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-03-13T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpllzz03vzivhea7y57aur",
+        "date": "May 1, 2026",
+        "event": "Crown Castle announced that it had completed the sale of its Small Cell business to Arium Networks, an EQT Active Core Infrastructure fund company.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-05-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqucx0a6eivhet5uyk18l",
+        "label": "Announcement date source — EQT Infrastructure — Crown Castle Small Cells Solutions",
+        "url": "https://eqtgroup.com/news/eqt-to-acquire-crown-castles-small-cells-solutions-business-2025-03-13",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "EQT Infrastructure transaction announcement",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqudy0a6givhe2n35areu",
+        "label": "Announcement date source — EQT Infrastructure — Crown Castle Small Cells Solutions",
+        "url": "https://investor.crowncastle.com/news-releases/news-release-details/crown-castle-announces-agreement-sell-fiber-segment-eqt-and-zayo",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "EQT Infrastructure transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpquf10a6iivheqblj1zyo",
+        "label": "Close date source — EQT Infrastructure — Crown Castle Small Cells Solutions",
+        "url": "https://www.crowncastle.com/news/29086-crown-castle-announces-closing-of-sale-of-fiber-and-small-cell-businesses-and-updates-full-year-2026-outlook",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "EQT Infrastructure closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqug40a6kivheyuutcu9x",
+        "label": "Crowncastle — Crown Castle Small Cells Solutions",
+        "url": "https://www.crowncastle.com/strategic-review-results",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Crowncastle — Crown Castle Small Cells Solutions",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "ac2b1db4928021f76c21eb1a9c7dadbb87da26d4627dafffe5927a0b47c9408c",
+  "afterImage": {
+    "id": "cmrxpjekr00vvivhe5v2kbj0w",
+    "name": "Arium Networks",
+    "aliases": [
+      "Arium",
+      "Arium Networks LLC",
+      "Crown Castle Small Cells Solutions",
+      "Crown Castle Small Cell & Venue business",
+      "Small Cells HoldCo Inc."
+    ],
+    "sector": "DIGITAL",
+    "subsector": "Small cells and venue infrastructure",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Arium Networks LLC is a U.S. small-cell, distributed-antenna-system and venue-network infrastructure platform created from Crown Castle's former Small Cell business. It designs, deploys and manages outdoor and in-building wireless networks for the three largest U.S. mobile network operators and venue customers. EQT Active Core Infrastructure I announced the acquisition in March 2025 and completed it through Small Cells HoldCo Inc. on May 1, 2026, when Arium launched as a standalone company. Arium reported more than 100,000 small cells on air or under contract across 43 states at launch and is headquartered in Charlotte, North Carolina. EQT continues to list Arium as current. The separately sold Crown Castle Fiber Solutions business now owned by Zayo is outside this company boundary. Public sources do not disclose one comparable EQT economic stake across the nested fund and co-investment structure, and no later platform sale, sponsor exit or signed pending ownership transfer was identified through August 29, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Charlotte, North Carolina",
+    "lastVerifiedAt": "2026-08-29T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk07b01u4ivhef320t33f",
+        "managerName": "EQT Infrastructure",
+        "organizationName": "EQT Infrastructure",
+        "fundName": "EQT Active Core I",
+        "vehicleName": "EQT Active Core Infrastructure SCSp / Small Cells HoldCo Inc.",
+        "stake": "EQT-controlled consortium; exact manager-level economic percentage not publicly disclosed",
+        "investmentYear": 2026,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpllyu03vxivhet9ro4jzf",
+        "date": "Mar 13, 2025",
+        "event": "EQT Active Core Infrastructure signed to acquire Crown Castle's Small Cell business for approximately $4.25 billion; Crown Castle's Fiber Solutions sale to Zayo was a separate transaction.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-03-13T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://eqtgroup.com/news/eqt-to-acquire-crown-castles-small-cells-solutions-business-2025-03-13",
+          "https://www.sec.gov/Archives/edgar/data/1051470/000095014225000762/eh250603725_ex0201.htm"
+        ]
+      },
+      {
+        "id": "cmrxpllze03vyivhe26p096ey",
+        "date": "Dec 2025",
+        "event": "Arium Networks was announced as the successor brand for Crown Castle's Small Cell business ahead of its standalone launch.",
+        "category": "OTHER",
+        "sortDate": "2025-12-01T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.globenewswire.com/news-release/2026/05/01/3285986/0/en/arium-networks-launches-following-completion-of-eqt-s-acquisition-of-crown-castle-s-small-cell-solutions-business.html"
+        ]
+      },
+      {
+        "id": "cmrxpllzz03vzivhea7y57aur",
+        "date": "May 1, 2026",
+        "event": "The sale to Small Cells HoldCo Inc. closed and Arium Networks launched as an EQT Active Core Infrastructure I portfolio company.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-05-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1051470/000105147026000052/cci-20260501.htm",
+          "https://www.globenewswire.com/news-release/2026/05/01/3285986/0/en/arium-networks-launches-following-completion-of-eqt-s-acquisition-of-crown-castle-s-small-cell-solutions-business.html"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqucx0a6eivhet5uyk18l",
+        "label": "Announcement date source — EQT Infrastructure — Crown Castle Small Cells Solutions",
+        "url": "https://eqtgroup.com/news/eqt-to-acquire-crown-castles-small-cells-solutions-business-2025-03-13",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "March 2025 EQT acquisition agreement and Small Cell business boundary",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqudy0a6givhe2n35areu",
+        "label": "Announcement date source — EQT Infrastructure — Crown Castle Small Cells Solutions",
+        "url": "https://investor.crowncastle.com/news-releases/news-release-details/crown-castle-announces-agreement-sell-fiber-segment-eqt-and-zayo",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Crown Castle sale announcement and separate Zayo fiber transaction",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpquf10a6iivheqblj1zyo",
+        "label": "Close date source — EQT Infrastructure — Crown Castle Small Cells Solutions",
+        "url": "https://www.crowncastle.com/news/29086-crown-castle-announces-closing-of-sale-of-fiber-and-small-cell-businesses-and-updates-full-year-2026-outlook",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "May 1, 2026 closing of the Small Cell sale to Arium Networks",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqug40a6kivheyuutcu9x",
+        "label": "Crowncastle — Crown Castle Small Cells Solutions",
+        "url": "https://www.crowncastle.com/strategic-review-results",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Crown Castle strategic review and asset-sale scope",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "EQT — Arium Networks",
+        "url": "https://eqtgroup.com/about/current-portfolio/arium-networks",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current Arium portfolio status, EQT fund attribution and entry year",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "Crown Castle — May 2026 closing 8-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051470/000105147026000052/cci-20260501.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Legal closing date, Small Cell buyer and separate fiber buyer",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Crown Castle — Small Cell stock purchase agreement",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051470/000095014225000762/eh250603725_ex0201.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Small Cells HoldCo purchaser, EQT sponsor and transaction value",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Arium Networks — Standalone launch",
+        "url": "https://www.globenewswire.com/news-release/2026/05/01/3285986/0/en/arium-networks-launches-following-completion-of-eqt-s-acquisition-of-crown-castle-s-small-cell-solutions-business.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Arium identity, May 2026 launch, headquarters and 43-state footprint",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Georgia PSC — Arium acquisition structure",
+        "url": "https://services.psc.ga.gov/api/v1/External/Public/Get/Document/DownloadFile/225590/106856",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Acquisition entity chain, control and nested co-investment interests",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Arium Networks — Terms of Use",
+        "url": "https://ariumwp.wpenginepowered.com/wp-content/uploads/2026/05/Terms-of-Use-Arium-Networks-043026.pdf",
+        "sourceType": "OTHER",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Public-facing legal name Arium Networks LLC",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "896729b0c6e4d314565a7f6ce638c822b24ca2887d0ba0fcf7e6de1b65846c7b",
+  "proposalSha256": "08969daad3475a675333809a9283bb704301e1c712f71e4f558c20c918bee2bf"
+}

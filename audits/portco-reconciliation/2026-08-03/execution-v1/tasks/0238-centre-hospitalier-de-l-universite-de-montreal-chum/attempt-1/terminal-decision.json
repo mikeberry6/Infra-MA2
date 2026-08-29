@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0238:centre-hospitalier-de-l-universite-de-montreal-chum:c4574e88",
+  "taskIndex": 238,
+  "companyName": "Centre Hospitalier de l'Université de Montréal (CHUM)",
+  "outcome": "DEFERRED",
+  "decidedAt": "2026-08-29T13:12:05.000Z",
+  "rationale": "Reliable direct evidence resolves only 90% of current ProjectCo equity: Innisfree 55%, John Laing Health Montreal Limited 25%, and AtkinsRéalis 10%. The direct legal holder of the remaining 10% and that ownership period's effective date remain unproven, so a complete current ownership record cannot be published without speculation. The contemplated BBGI transaction was cancelled and creates no ownership period. KKR-managed funds are ultimate owners of John Laing rather than direct ProjectCo shareholders, and no direct current ProjectCo evidence supports Equitix or John Laing Investments Limited.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0238-centre-hospitalier-de-l-universite-de-montreal-chum/attempt-1/locked-task-snapshot.json",
+    "sha256": "8e327f8a59686a6a9b129d794d4b12bbc91fba97d87f28d03bd8ef62bacfb6be"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0238-centre-hospitalier-de-l-universite-de-montreal-chum/attempt-1/focused-research-decision.json",
+    "sha256": "b20abcdd20481ac5f551d2be5f6fd7e8160867f3bf14370343469c238ff21774"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0238-centre-hospitalier-de-l-universite-de-montreal-chum/attempt-1/source-verification.json",
+    "sha256": "2864a247cdf5b9363b3f43f03a3949617cd11518625810130285b3b2db97819a"
+  },
+  "evidence": [
+    {
+      "url": "https://www.laing.com/insights/john-laing-acquires-stake-in-centre-hospitalier-de-luniversite-de-montreal-ppp-project/",
+      "purpose": "Direct evidence for John Laing's acquisition of OHLA's 25% CHUM ProjectCo interest and the acquiring entity."
+    },
+    {
+      "url": "https://www.ohla-group.com/en/inside-information-on-corporate-transactions-mergers-acquisitions-and-others/",
+      "purpose": "Direct disposition and closing evidence for OHLA's former 25% ProjectCo interest."
+    },
+    {
+      "url": "https://www.laing.com/portfolio/centre-hospitalier-de-luniversite-de-montreal-chum-canada/",
+      "purpose": "Current John Laing portfolio attribution for the CHUM PPP."
+    },
+    {
+      "url": "https://www.chumontreal.qc.ca/sites/default/files/inline-files/ANNEXE_3.pdf",
+      "purpose": "Official ProjectCo identity and historical ownership framework."
+    },
+    {
+      "url": "https://www.atkinsrealis.com/~/media/Files/A/atkinsrealis/investor-briefcase/en/2025/e_financial_statement_annuel_2025-en.pdf",
+      "purpose": "Current official financial statements supporting AtkinsRéalis' 10% ProjectCo interest acquired on 2024-03-04."
+    },
+    {
+      "url": "https://www.lse.co.uk/rns/recommended-cash-acquisition-of-john-laing-group-jps0bk861zdyk32.html",
+      "purpose": "Evidence that KKR-managed funds own John Laing at the ultimate sponsor level, not as a direct CHUM ProjectCo shareholder."
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "502a987c5a981936c04a499d8faba8834c49b103a13d5a4b694d18a4ed108747"
+}

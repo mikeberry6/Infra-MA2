@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_FOCUSED_CHATGPT_RESPONSE_VALIDATION",
+  "runId": "2026-08-03",
+  "taskId": "ledger:0237:andion-global:05d3742d",
+  "taskIndex": 237,
+  "companyName": "Andion Global",
+  "validatedAt": "2026-08-29T12:36:37.000Z",
+  "conversationUrl": "https://chatgpt.com/c/6a92cf85-69c8-83e9-9389-88b6cbd545bc",
+  "requiredTopLevelKeys": [
+    "asOfDate",
+    "taskId",
+    "requestedCompany",
+    "decision",
+    "confidence",
+    "rationale",
+    "identityResolution",
+    "northAmericaResolution",
+    "ownershipResolution",
+    "acquisitionExitCheck",
+    "evidence",
+    "unresolvedQuestions",
+    "recommendedListAction"
+  ],
+  "initialResponse": {
+    "valid": true,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "responseSha256": "9c122fe651c1af483dc48cbd852763e4e68506e0b5df6ee53f97ff6055194428",
+    "errors": []
+  },
+  "repair": {
+    "count": 0,
+    "limit": 1,
+    "submittedAt": null,
+    "completedAt": null,
+    "valid": null,
+    "responseSha256": null,
+    "errors": []
+  },
+  "finalResponse": {
+    "decision": "EXCLUDED",
+    "confidence": "HIGH",
+    "canonicalName": "ANDION CH4 Renewables S.A.S.",
+    "northAmericaQualificationResolved": true,
+    "northAmericaQualification": false,
+    "currentEquitixAttributionSupported": true,
+    "subsequentExitSearchPresent": true,
+    "geographyDecisionIndependentOfUndisclosedCapTable": true,
+    "singleRecommendedPrimary": true,
+    "allEvidenceUrlsDirectHttps": true,
+    "result": "PASS"
+  },
+  "independentSourceVerification": "source-verification.json",
+  "valid": true,
+  "errors": [],
+  "repairsUsed": 0
+}

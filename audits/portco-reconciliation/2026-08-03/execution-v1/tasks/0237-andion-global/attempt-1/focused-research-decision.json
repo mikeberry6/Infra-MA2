@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0237:andion-global:05d3742d",
+  "taskIndex": 237,
+  "companyName": "Andion Global",
+  "asOfDate": "2026-08-29",
+  "decision": "EXCLUDED",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-08-29T12:36:37.000Z",
+  "result": {
+    "decision": "EXCLUDED",
+    "rationale": "The former Canadian Andion Global migrated to Luxembourg as ANDION CH4 Renewables S.A.S. and the current manager-level company is affirmatively a Luxembourg-domiciled European biomethane platform with European offices, assets and development markets. It is outside the North American census definition. Equitix Next Generation Fund remains supported as a leading existing shareholder, and no later Equitix exit was found; the exclusion is based on geography, not an inferred ownership change.",
+    "identityResolution": {
+      "canonicalName": "ANDION CH4 Renewables S.A.S.",
+      "resolved": true,
+      "formerIdentity": "Andion Global"
+    },
+    "ownershipResolution": {
+      "currentManager": "Equitix",
+      "currentFund": "Equitix Next Generation Fund",
+      "continuitySupported": true,
+      "exactLegalNomineeAndPercentage": "NOT_PUBLICLY_DISCLOSED"
+    },
+    "geographyResolution": {
+      "northAmericaQualified": false,
+      "basis": "Manager-level successor is domiciled in Luxembourg and publicly describes a European operating and development mandate."
+    },
+    "acquisitionExitCheck": {
+      "searchedThrough": "2026-08-29",
+      "laterEquitixExitFound": false
+    },
+    "evidence": [
+      {
+        "url": "https://equitix.com/news/equitix-welcomes-financing-partnership-to-support-andions-european-biomethane-growth/",
+        "purpose": "Direct manager evidence that Equitix Next Generation Fund was a leading existing shareholder making a further equity contribution and that Andion's platform growth was European."
+      },
+      {
+        "url": "https://andionch4.com/",
+        "purpose": "Current company evidence describing Andion as Europe's integrated biomethane platform and presenting European operating and development activity."
+      },
+      {
+        "url": "https://gsk-lux.com/en/gsk-stockmann-advises-andion-ch4-renewables-on-the-first-capital-raise-after-its-migration-from-canada-to-luxembourg/",
+        "purpose": "Legal-adviser evidence resolving the identity migration from Canada to Luxembourg and the successor platform's European ownership and operating strategy."
+      }
+    ],
+    "recommendedListAction": "Exclude Andion Global / ANDION CH4 Renewables S.A.S. from the North American manager-level PortCo census while retaining identity and Equitix-attribution lineage.",
+    "unresolvedQuestions": [
+      "The exact Equitix shareholder nominee, percentage and complete current cap table are not publicly disclosed, but those noncritical details do not affect the geography-based exclusion."
+    ]
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0237-andion-global/attempt-1/research-decision.json",
+      "sha256": "f5c3b559c9afc8c3e6a80f4f81a3ef02f6f690e0b42a4bab34293d0e60d033e9"
+    },
+    "focusedPrompt": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0237-andion-global/attempt-1/focused-adjudication-prompt.md",
+      "sha256": "567464db0f20e29db37dee3fba307c16227c3e12c366ffd0d3e2f6dab72ed390"
+    },
+    "focusedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0237-andion-global/attempt-1/focused-adjudication-response.json",
+      "sha256": "9c122fe651c1af483dc48cbd852763e4e68506e0b5df6ee53f97ff6055194428"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0237-andion-global/attempt-1/source-verification.json",
+      "sha256": "3eac59a37fccf5269cf7bdab6237a2775f5cea9b9b2011210918dddbc062c0fa"
+    },
+    "conversationUrl": "https://chatgpt.com/c/6a92cf85-69c8-83e9-9389-88b6cbd545bc",
+    "model": "GPT-5.6 Sol",
+    "mode": "Pro",
+    "power": "5 of 5"
+  }
+}
