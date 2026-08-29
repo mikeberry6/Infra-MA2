@@ -260,11 +260,13 @@ const approvedOwnershipOrganizationProvisioning = {
   "OPTrust": "PENSION",
   "PUC Inc.": "CORPORATE",
   "Revera Inc.": "CORPORATE",
+  "Switch management": "OTHER",
   "TC Energy Corporation": "CORPORATE",
   "TotalEnergies": "CORPORATE",
   "XRG P.J.S.C.": "CORPORATE",
   "Énergir L.P.": "CORPORATE",
   "Ingka Investments": "CORPORATE",
+  "Invenergy": "CORPORATE",
   "Koninklijke Vopak N.V.": "CORPORATE",
   "Occidental Petroleum Corporation": "CORPORATE",
 } as const;

@@ -1,0 +1,391 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0218:switch-inc:ed27b056",
+  "taskIndex": 218,
+  "asOfDate": "2026-08-29",
+  "generatedAt": "2026-08-29T07:24:00.000Z",
+  "canonicalKey": "switch-inc|united-states",
+  "companyName": "Switch, Inc.",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER"
+  ],
+  "sourceHoldingIds": [
+    "036-digitalbridge:holding:014:switch",
+    "055-ifm-investors:holding:009:switch-inc"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Keep the sole Switch record and complete its active ownership roster. Preserve DigitalBridge/DBP II and IFM/GIF, record the latest comparable 55.8%/37.2%/7.0% schedule across DigitalBridge, IFM and the management rollover group, and add Aware Super as a current co-investor with an explicitly non-additive undisclosed stake. InfraBridge is not a direct owner, and neither the reported confidential IPO filing nor the pending SoftBank-DigitalBridge manager transaction changes Switch's ownership periods.",
+  "evidence": [
+    {
+      "url": "https://www.ifminvestors.com/capabilities/infrastructure/our-portfolio/switch-inc/",
+      "purpose": "Current IFM ownership",
+      "supports": [
+        "IFM continues to list Switch as a current investment",
+        "IFM reports a 37.2% stake as of June 30, 2026"
+      ]
+    },
+    {
+      "url": "https://www.ifminvestors.com/capabilities/know-how/asset-management-case-study-switch-inc/",
+      "purpose": "Comparable ownership schedule",
+      "supports": [
+        "The latest disclosed same-level schedule is DigitalBridge 55.8%, IFM 37.2% and management 7.0%"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1710583/000119312522306436/d433839d1512g.htm",
+      "purpose": "Legal closing",
+      "supports": [
+        "The take-private closed on December 6, 2022",
+        "Switch continued beneath Sunshine Bidco"
+      ]
+    },
+    {
+      "url": "https://aware.com.au/member/what-we-offer/investments/what-we-invest-in/infrastructure",
+      "purpose": "Current Aware exposure",
+      "supports": [
+        "Aware Super continues to identify Switch as an infrastructure investment"
+      ]
+    },
+    {
+      "url": "https://www.digitalbridge.com/news/2023-07-13-aware-super-and-digitalbridge-announce-partnership-to-invest-in-renewable-powered-data-centers",
+      "purpose": "Aware co-investment",
+      "supports": [
+        "Aware and DigitalBridge announced the Switch co-investment relationship in July 2023",
+        "The public announcement did not disclose Aware's exact stake or nesting"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "631d449ca5eb1e74ea86fdad24f5b46da3aee06e9ab24bb80ba96aecfbbb7b0e",
+  "currentCompanySnapshotSha256": "7101049576a4afdbd53b103b10e66eee9f973e3370cfe3eca94eefa7e6c5cc2d",
+  "executionLock": {
+    "taskSnapshotSha256": "01e606fee967ddd30e98961c360ac61eb3214760b2c5583ddbf835db8a8003e2",
+    "taskStateSha256": "98b8be2efea9921ba6750cebb71258e2ff513e03698edef030b850f55d68e848",
+    "taskDependencySha256": "502b8941bab6c133b8d3940e0cf2cbc6753ca03c5b75ca79098bc08666e33556",
+    "seedEntrySha256": "dd39d1d2772cbb1e9dd0260628cd5dc9ffcaa60cceee35d6725857e960ed1bd7",
+    "dependencies": {
+      "ownershipPeriodsSha256": "9609be493bf9828a3b8fd619e703da3f8ace60f756a12c525a9af0a3fbc06178",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "fc6623a0f1fb06ca08995358b7415e08d884bd340379d38606c85dddb401c1e4",
+      "organizationsSha256": "e6bb0c518fe0b313e1717b36257e8ed5d65b490c6f753f570776874df80e7f50",
+      "citationsSha256": "938a501d431fa878bb39292d9c6be51e439691691665946b85473e73a9fca453",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj2ra00dzivhegbwhzec2",
+        "fundName": "IFM Global Infrastructure Fund (GIF)",
+        "managerId": "cmrxpi9zp002eivheuaj1gpqj",
+        "updatedAt": "2026-07-23T16:09:57.431Z"
+      },
+      {
+        "id": "cmsdi3y2s004f7h4sfgnd0i96",
+        "fundName": "DigitalBridge Partners II, LP",
+        "managerId": "cmrxpi6te001eivheobw69a9c",
+        "updatedAt": "2026-08-03T17:26:33.028Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi6te001eivheobw69a9c",
+        "name": "DigitalBridge",
+        "updatedAt": "2026-07-23T16:09:16.034Z"
+      },
+      {
+        "id": "cmrxpi9zp002eivheuaj1gpqj",
+        "name": "IFM Investors",
+        "updatedAt": "2026-07-23T16:09:20.149Z"
+      },
+      {
+        "id": "cmrxpio1e006tivhe8kjjez07",
+        "name": "Aware Super",
+        "updatedAt": "2026-07-23T16:09:38.354Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjdcs00u0ivhec2k6lhpt",
+    "name": "Switch, Inc.",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Data centers",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Switch, Inc. develops, owns, and operates large-scale data center campuses in North America. It serves cloud, AI, and enterprise users that require wholesale and colocation data center capacity. The business is asset-heavy and contracted because it owns specialized data center real estate and sells long-term colocation and infrastructure services to large customers. IFM states that the company operates 20 data centers in the United States and company materials emphasize high-density and AI-ready campus designs. DigitalBridge and IFM Global Infrastructure Fund (GIF) completed the take-private acquisition in December 2022, and IFM subsequently disclosed that DigitalBridge held a 55.8% stake while IFM held 37.2%.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2000,
+    "headquarters": "Nevada and other U.S. markets",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjyws01s2ivhega71tdl3",
+        "managerName": "DigitalBridge",
+        "organizationName": "DigitalBridge",
+        "fundName": "DigitalBridge Partners II, LP",
+        "vehicleName": "DigitalBridge Partners II",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjyxf01s3ivhe59c5b3l8",
+        "managerName": "IFM Investors",
+        "organizationName": "IFM Investors",
+        "fundName": "IFM Global Infrastructure Fund (GIF)",
+        "vehicleName": "IFM Global Infrastructure Fund (GIF)",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplgq503poivheulge80ul",
+        "date": "2000",
+        "event": "Public company materials identify 2000 as the founding year.",
+        "category": "FOUNDING",
+        "sortDate": "2000-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplgql03ppivhe4sugxu80",
+        "date": "Dec 6, 2022",
+        "event": "DigitalBridge and IFM Global Infrastructure Fund (GIF) completed the $11 billion take-private acquisition of Switch.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-12-06T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqjuy09r4ivhebu1d8gkh",
+        "label": "Switch — Switch, Inc.",
+        "url": "https://www.switch.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Switch company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqjw409r6ivhev1ilbi9w",
+        "label": "Investment date source — IFM Investors — Switch, Inc.",
+        "url": "https://www.ifminvestors.com/capabilities/infrastructure/our-portfolio/switch-inc/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "IFM Investors initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqjx509r8ivheoge5unfd",
+        "label": "Close date source — DigitalBridge — Switch, Inc.",
+        "url": "https://www.digitalbridge.com/news/2022-12-06-digitalbridge-and-ifm-investors-complete-11-billion-take-private-of-switch",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "DigitalBridge closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqjy909raivheu4zrbqid",
+        "label": "Close date source — IFM Investors — Switch, Inc.",
+        "url": "https://ir.digitalbridge.com/news-releases/news-release-details/digitalbridge-and-ifm-investors-complete-11-billion-take-private/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "IFM Investors closing confirmation",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "7101049576a4afdbd53b103b10e66eee9f973e3370cfe3eca94eefa7e6c5cc2d",
+  "afterImage": {
+    "id": "cmrxpjdcs00u0ivhec2k6lhpt",
+    "name": "Switch, Inc.",
+    "aliases": [
+      "Switch",
+      "Sunshine Bidco Inc.",
+      "Switch, Ltd."
+    ],
+    "sector": "DIGITAL",
+    "subsector": "Data centers",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Switch, Inc. develops, owns and operates large-scale U.S. data-center campuses serving AI, cloud and enterprise customers. The platform was founded in 2000 and is headquartered in Las Vegas, with campuses in Nevada, Texas, Michigan and Georgia and a Pennsylvania expansion announced in 2026. DigitalBridge Partners II and IFM Global Infrastructure Fund completed the take-private on December 6, 2022. The latest comparable ownership schedule reports DigitalBridge at 55.8%, IFM at 37.2% and the management rollover group at 7.0%. Aware Super is also a current co-investor, but its exact stake, vehicle, closing date and nesting are not publicly disclosed and are not additive to that schedule. InfraBridge is not a direct owner, and no later signed or closed direct Switch transfer was identified through August 19, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.switch.com/",
+    "yearFounded": 2000,
+    "headquarters": "Las Vegas, Nevada, United States",
+    "lastVerifiedAt": "2026-08-19T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjyws01s2ivhega71tdl3",
+        "managerName": "DigitalBridge",
+        "organizationName": "DigitalBridge",
+        "fundName": "DigitalBridge Partners II, LP",
+        "vehicleName": "DBP II, LP / DB Sunshine Holdings I, LP / Sunshine Bidco",
+        "stake": "55.8% in the latest comparable ownership schedule",
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjyxf01s3ivhe59c5b3l8",
+        "managerName": "IFM Investors",
+        "organizationName": "IFM Investors",
+        "fundName": "IFM Global Infrastructure Fund (GIF)",
+        "vehicleName": "Conyers Trust Co. trustee / Sunshine Bidco",
+        "stake": "37.2% as of June 30, 2026",
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Aware Super",
+        "organizationName": "Aware Super",
+        "fundName": null,
+        "vehicleName": null,
+        "stake": "Current co-investment; exact percentage not publicly disclosed and non-additive to the latest comparable ownership schedule",
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Switch management",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "DB Sunshine Parent, LP / parent entities",
+        "stake": "7.0% in the latest comparable ownership schedule",
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplgq503poivheulge80ul",
+        "date": "2000",
+        "event": "Switch was founded in Las Vegas, Nevada.",
+        "category": "FOUNDING",
+        "sortDate": "2000-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.switch.com/"
+        ]
+      },
+      {
+        "id": "cmrxplgql03ppivhe4sugxu80",
+        "date": "Dec 6, 2022",
+        "event": "DigitalBridge Partners II and IFM Global Infrastructure Fund completed the approximately $11 billion take-private of Switch under Sunshine Bidco.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-12-06T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1710583/000119312522306436/d433839d1512g.htm",
+          "https://www.digitalbridge.com/news/2022-12-06-digitalbridge-and-ifm-investors-complete-11-billion-take-private-of-switch"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqjuy09r4ivhebu1d8gkh",
+        "label": "Switch — Switch, Inc.",
+        "url": "https://www.switch.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current Switch operating identity and data-center platform",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqjw409r6ivhev1ilbi9w",
+        "label": "Investment date source — IFM Investors — Switch, Inc.",
+        "url": "https://www.ifminvestors.com/capabilities/infrastructure/our-portfolio/switch-inc/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current IFM ownership and 37.2% stake as of June 30, 2026",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqjx509r8ivheoge5unfd",
+        "label": "Close date source — DigitalBridge — Switch, Inc.",
+        "url": "https://www.digitalbridge.com/news/2022-12-06-digitalbridge-and-ifm-investors-complete-11-billion-take-private-of-switch",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "December 2022 take-private closing",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqjy909raivheu4zrbqid",
+        "label": "Close date source — IFM Investors — Switch, Inc.",
+        "url": "https://ir.digitalbridge.com/news-releases/news-release-details/digitalbridge-and-ifm-investors-complete-11-billion-take-private/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "DigitalBridge and IFM closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "IFM Investors — Switch ownership schedule",
+        "url": "https://www.ifminvestors.com/capabilities/know-how/asset-management-case-study-switch-inc/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Latest comparable 55.8% DigitalBridge, 37.2% IFM and 7.0% management schedule",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "SEC — Switch closing filing",
+        "url": "https://www.sec.gov/Archives/edgar/data/1710583/000119312522306436/d433839d1512g.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "December 6, 2022 legal closing and surviving structure",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Aware Super — Infrastructure portfolio",
+        "url": "https://aware.com.au/member/what-we-offer/investments/what-we-invest-in/infrastructure",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current Aware Super exposure to Switch",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "DigitalBridge — Aware Super Switch partnership",
+        "url": "https://www.digitalbridge.com/news/2023-07-13-aware-super-and-digitalbridge-announce-partnership-to-invest-in-renewable-powered-data-centers",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Aware Super co-investment announcement and relationship to Switch",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "94cd4f25ada737a668f51d5404e5af160bc9f6e4b92bec8d1b2fa25a457bbb15",
+  "proposalSha256": "750c9f776c9a7d6d786de38a30ced7a95a5f1c5ff7e1ae8c59f6883dcebd207c"
+}

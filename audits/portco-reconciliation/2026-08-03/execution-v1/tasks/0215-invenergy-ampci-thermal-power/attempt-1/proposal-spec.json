@@ -1,0 +1,251 @@
+{
+  "generatedAt": "2026-08-29T07:21:00.000Z",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER",
+    "ADD_PENDING_TRANSACTION"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "reviewedSeedRetirementTaskIds": [],
+  "rationale": "Correct the sole IATP record to show its 50/50 InfraBridge and Invenergy ownership. Keep InfraBridge active through legacy GIF II while its signed sale of that 50% interest to ArcLight remains pending, add Invenergy Clean Power as the continuing 50% owner and operator, and keep DigitalBridge only as the parent organization behind the InfraBridge record. No legal closing of the ArcLight acquisition was identified through August 19, 2026.",
+  "evidence": [
+    {
+      "url": "https://www.infrabridge.com/news/2026-03-12-arclight-to-acquire-infrabridge-50-stake-in-54-gw-power-portfolio",
+      "purpose": "Signed pending sale",
+      "supports": [
+        "InfraBridge agreed to sell its 50% interest to ArcLight",
+        "Invenergy remains a continuing owner and operator",
+        "The transaction was expected to close only after approvals"
+      ]
+    },
+    {
+      "url": "https://www.infrabridge.com/our-portfolio",
+      "purpose": "Current ownership and scale",
+      "supports": [
+        "The platform is a 50/50 joint venture",
+        "InfraBridge reports an August 2018 entry and 11 assets totaling about 5.4 GW gross"
+      ]
+    },
+    {
+      "url": "https://invenergy.com/news/invenergy-strengthens-its-diversified-clean-energy-platform-through-new-equity-transactions-with-cdpq-and-amp-capital",
+      "purpose": "Original joint venture",
+      "supports": [
+        "Invenergy and AMP formed the 50/50 partnership",
+        "Invenergy retained management responsibility"
+      ]
+    },
+    {
+      "url": "https://www.federalregister.gov/documents/2026/03/30/2026-06095/combined-notice-of-filings-1",
+      "purpose": "FERC filing",
+      "supports": [
+        "The ArcLight transaction required FERC approval under EC26-76"
+      ]
+    },
+    {
+      "url": "https://www.ftc.gov/legal-library/browse/early-termination-notices/20261126",
+      "purpose": "Antitrust review",
+      "supports": [
+        "Gray Wolf and the GIF II/IATP parties received HSR early termination",
+        "Antitrust progress did not itself establish legal closing"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "companyFieldUpdates": {
+    "aliases": [
+      "IATP",
+      "IA Thermal Power",
+      "Invenergy JV",
+      "Invenergy AMPCI Thermal Power LLC"
+    ],
+    "description": "Invenergy AMPCI Thermal Power LLC is a 50/50 joint venture that owns a portfolio of dispatchable power-generation assets across the United States and Canada. InfraBridge holds one half through the legacy AMP Capital Global Infrastructure Fund II strategy, and Invenergy Clean Power holds the other half and continues to operate and manage the portfolio. Public materials report 11 facilities totaling approximately 5.4 GW gross and 3.2 GW net. On March 12, 2026, ArcLight signed an agreement to acquire InfraBridge's 50% interest through disclosed Gray Wolf acquisition vehicles. Regulatory reviews advanced, but no FERC approval, consummation notice or party closing release was identified through August 19, 2026; InfraBridge therefore remains the current legal owner and ArcLight remains a pending incoming buyer.",
+    "headquarters": null,
+    "lastVerifiedAt": "2026-08-19T00:00:00.000Z"
+  },
+  "ownershipPeriodUpdates": [
+    {
+      "id": "cmrxpjrff01g2ivhek768az2y",
+      "set": {
+        "managerName": "DigitalBridge",
+        "organizationName": "DigitalBridge",
+        "fundName": "AMP Capital Global Infrastructure Fund II (GIF II)",
+        "vehicleName": "InfraBridge North America Thermal Power Acquisition, LLC",
+        "stake": "50%",
+        "investmentYear": 2018,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "SIGNED_PENDING_EXIT"
+      }
+    }
+  ],
+  "ownershipPeriodAdditions": [
+    {
+      "id": null,
+      "managerName": "Invenergy",
+      "organizationName": null,
+      "fundName": null,
+      "vehicleName": "Invenergy Clean Power LLC",
+      "stake": "50%",
+      "investmentYear": 2018,
+      "exitYear": null,
+      "isActive": true,
+      "transactionState": "CLOSED_ACTIVE"
+    }
+  ],
+  "pendingOwnershipTransactionUpdates": [],
+  "pendingOwnershipTransactionAdditions": [
+    {
+      "id": null,
+      "direction": "EXIT",
+      "transactionState": "SIGNED_PENDING_EXIT",
+      "counterpartyName": "ArcLight Capital Partners through Gray Wolf Power Aggregator, L.P. / Gray Wolf Power, LLC",
+      "transactionDescription": "Signed acquisition of InfraBridge's 50% interest in Invenergy AMPCI Thermal Power; ArcLight is not recorded as an active owner until legal closing.",
+      "announcedAt": "2026-03-12",
+      "expectedClosing": "Targeted for the second half of 2026 subject to approvals; no legal closing identified through August 19, 2026",
+      "relatedOwnershipPeriodIds": [
+        "cmrxpjrff01g2ivhek768az2y"
+      ],
+      "evidenceUrls": [
+        "https://www.infrabridge.com/news/2026-03-12-arclight-to-acquire-infrabridge-50-stake-in-54-gw-power-portfolio",
+        "https://www.federalregister.gov/documents/2026/03/30/2026-06095/combined-notice-of-filings-1",
+        "https://www.ftc.gov/legal-library/browse/early-termination-notices/20261126"
+      ]
+    }
+  ],
+  "milestoneUpdates": [
+    {
+      "id": "cmrxpklqn02ogivheaptldl3g",
+      "set": {
+        "date": "May 22, 2018",
+        "event": "Invenergy and AMP Capital announced a 50/50 partnership for the North American thermal-power portfolio, with Invenergy retaining management responsibility.",
+        "category": "FINANCING",
+        "sortDate": "2018-05-22T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://invenergy.com/news/invenergy-strengthens-its-diversified-clean-energy-platform-through-new-equity-transactions-with-cdpq-and-amp-capital"
+        ]
+      }
+    },
+    {
+      "id": "cmrxpklr802ohivhejykdhv75",
+      "set": {
+        "date": "Aug 2018",
+        "event": "The 50/50 Invenergy and legacy GIF II investment in Invenergy AMPCI Thermal Power commenced; the exact closing day was not publicly disclosed.",
+        "category": "ACQUISITION",
+        "sortDate": "2018-08-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.infrabridge.com/our-portfolio",
+          "https://invenergy.com/news/invenergy-strengthens-its-diversified-clean-energy-platform-through-new-equity-transactions-with-cdpq-and-amp-capital"
+        ]
+      }
+    },
+    {
+      "id": "cmrxpklrt02oiivhe0ip18dcp",
+      "set": {
+        "date": "Mar 12, 2026",
+        "event": "ArcLight signed an agreement to acquire InfraBridge's 50% interest, while Invenergy remained the continuing 50% owner and operator.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-03-12T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.infrabridge.com/news/2026-03-12-arclight-to-acquire-infrabridge-50-stake-in-54-gw-power-portfolio"
+        ]
+      }
+    },
+    {
+      "id": "cmrxpklsc02ojivheopvuk0fk",
+      "set": {
+        "date": "Mar 24, 2026",
+        "event": "The parties filed the pending ArcLight acquisition with FERC under docket EC26-76.",
+        "category": "OTHER",
+        "sortDate": "2026-03-24T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.federalregister.gov/documents/2026/03/30/2026-06095/combined-notice-of-filings-1"
+        ]
+      }
+    },
+    {
+      "id": "cmrxpklss02okivher832qpj6",
+      "set": {
+        "date": "Apr 7–9, 2026",
+        "event": "U.S. antitrust and Canadian merger reviews advanced, but those clearances did not establish a legal closing of the ArcLight acquisition.",
+        "category": "OTHER",
+        "sortDate": "2026-04-09T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.ftc.gov/legal-library/browse/early-termination-notices/20261126"
+        ]
+      }
+    }
+  ],
+  "citationUpdates": [
+    {
+      "id": "cmrxpozsx07i3ivhe5gb97hy1",
+      "set": {
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Signed ArcLight acquisition of InfraBridge's 50% interest",
+        "isPrimary": false
+      }
+    },
+    {
+      "id": "cmrxpozwi07i5ivhemm3bw4k1",
+      "set": {
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Portfolio scale and continuing Invenergy role",
+        "isPrimary": false
+      }
+    },
+    {
+      "id": "cmrxpozys07i9ivhe3uejjntg",
+      "set": {
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current 50/50 ownership, August 2018 entry and portfolio scale",
+        "isPrimary": false
+      }
+    },
+    {
+      "id": "cmrxpozzi07iaivhebu2ateg5",
+      "set": {
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current InfraBridge ownership and pending-exit check",
+        "isPrimary": false
+      }
+    }
+  ],
+  "citationAdditions": [
+    {
+      "id": null,
+      "label": "InfraBridge — ArcLight IATP agreement",
+      "url": "https://www.infrabridge.com/news/2026-03-12-arclight-to-acquire-infrabridge-50-stake-in-54-gw-power-portfolio",
+      "sourceType": "PRESS_RELEASE",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Signed sale of InfraBridge's 50% interest and continuing Invenergy ownership",
+      "isPrimary": true
+    },
+    {
+      "id": null,
+      "label": "Investment date source — CDPQ — Invenergy Renewables LLC",
+      "url": "https://invenergy.com/news/invenergy-strengthens-its-diversified-clean-energy-platform-through-new-equity-transactions-with-cdpq-and-amp-capital",
+      "sourceType": "ARTICLE",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Original 50/50 partnership and Invenergy management role",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "Federal Register — EC26-76 filing notice",
+      "url": "https://www.federalregister.gov/documents/2026/03/30/2026-06095/combined-notice-of-filings-1",
+      "sourceType": "OTHER",
+      "purpose": "FINANCING_FILINGS",
+      "evidenceLabel": "FERC filing for the pending ArcLight acquisition",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "FTC — Gray Wolf early termination notice",
+      "url": "https://www.ftc.gov/legal-library/browse/early-termination-notices/20261126",
+      "sourceType": "OTHER",
+      "purpose": "FINANCING_FILINGS",
+      "evidenceLabel": "HSR clearance for the pending Gray Wolf acquisition",
+      "isPrimary": false
+    }
+  ]
+}
