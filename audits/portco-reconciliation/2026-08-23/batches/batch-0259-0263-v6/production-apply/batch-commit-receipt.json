@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_COMMIT_RECEIPT",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0259-0263-v6",
+  "batchSha256": "e7009ead2e4c6d46c161899b9989fc43dc64483bbcb779e56bb9398012cfbfac",
+  "releaseSha": "bf761edf40a76f3cd71c8ebdfc8f96d97014ebbe",
+  "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+  "transactionId": "7aec548a-e0b5-4ad8-9425-d7b144fd88a1",
+  "appliedAt": "2026-08-29T19:20:04.485Z",
+  "members": [
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0259:solcap-keystate-renewables-jvs:349ca18f",
+      "taskIndex": 259,
+      "companyName": "SOLCAP (KeyState Renewables JVs)",
+      "outcome": "EXCLUDED",
+      "decisionSha256": "b52d656bc11c5b440d5ee52ca3454d67835175bb12bad1829a189c812755f7f2"
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0260:stem-energy-storage-asset-spvs:a034fa93",
+      "taskIndex": 260,
+      "companyName": "Stem Energy Storage Asset SPVs",
+      "proposalSha256": "5306ed448d9d524bd8d165bf419e65da6f89e1f5f32ad00c77b1f23add34ef57",
+      "approvalSha256": "5e98ed85e5cc1feccd467a4dc2a6de2ae8e3ac19f3663f41e012944f8223fae0",
+      "afterImageSha256": "196243d434c169290044e15202e546f310a64ed8b37d12bce0ea3c632212ddc2",
+      "approvedSeedEntrySha256": "fd89f5afc1ad24ecc35f1f8cc0b9caa63e1a1b62ed78c95a32a61ef68ed67e88",
+      "companyId": "cmrxpjg6300y8ivhes0xgnzrw",
+      "auditEventId": "cmterm29f000dts2bd6w8mqs6"
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0261:aces-delta:7027e92e",
+      "taskIndex": 261,
+      "companyName": "ACES Delta",
+      "proposalSha256": "b7c9f4a9dd4a183f94f5ddaa54a6702ba670201ab97fb2991c97459d1f158acf",
+      "approvalSha256": "e14692aa23dee10d965bc0bf5c4c511479986b59205408166f25e08a3e15d076",
+      "afterImageSha256": "127ce1d008b22e95ac9f76ebabab31f40fd3985a0618b15cf5dcca1171464fc3",
+      "approvedSeedEntrySha256": "e41459f76d5d42420480e69cbefb7f1bf73ce85e11c03e8ec5cd2349962aecfe",
+      "companyId": "cmrxpjg8d00ycivhe43mta77q",
+      "auditEventId": "cmterm2nd000qts2brictxvdv"
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0262:direct-chassislink-inc-dcli:d3d4542b",
+      "taskIndex": 262,
+      "companyName": "Direct ChassisLink, Inc. (DCLI)",
+      "proposalSha256": "5b7c5f97b9dd04342bda97c4f2aa7e23ea94e390e35529c57314deb1b602cebe",
+      "approvalSha256": "529cfacc47b8719dc40b64c512aceb2deec57080eded0850b7994e7d91381168",
+      "afterImageSha256": "e08441148d0e0d962a616d0ce2975dcd10d136e9447b7fd15f3c984968a5d212",
+      "approvedSeedEntrySha256": "7b77c7f4509c4060926a838ebfc779a835b463dfb37562af25d765583a9f1505",
+      "companyId": "cmrxpjoz401c3ivhemhei5kyo",
+      "auditEventId": "cmterm35k001ats2bthbqgg4b"
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0263:divert-inc:e7a24939",
+      "taskIndex": 263,
+      "companyName": "Divert, Inc.",
+      "outcome": "DEFERRED",
+      "decisionSha256": "1004180fce4052cc37e8a4ec860e3dd162463bd4c74a85b775e466f82b87a16e"
+    }
+  ],
+  "verification": {
+    "databaseTransactionCommitted": true,
+    "seedArtifactVerifiedBeforeCommit": true,
+    "detailApiVerificationPending": true,
+    "partialDatabaseApplication": false
+  },
+  "receiptSha256": "19362ad0edfe56258c8e03c625484d222238a01640448154a5b8b597602815ae"
+}
