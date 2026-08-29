@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-29T13:55:45.000Z",
+  "updatedAt": "2026-08-29T15:05:22.000Z",
   "runStatus": "IDLE",
   "activeTaskId": null,
   "source": {
@@ -26911,20 +26911,26 @@
       "managerIndex": 44,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "d5f5ef47de2da9a7fa2013a3c2be084ad9f4ffa5343c86c01baad98fdc5e4f45",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
+      "status": "DEFERRED",
+      "attempts": 1,
+      "startedAt": "2026-08-29T14:02:45.000Z",
+      "updatedAt": "2026-08-29T15:05:22.000Z",
+      "completedAt": "2026-08-29T15:05:22.000Z",
+      "exceptionReason": "The display identity and AHV Access Health Vancouver Ltd. ProjectCo boundary are resolved, and the 2018 Jura acquisition is historical fact. Direct evidence does not establish the current ProjectCo shareholder register or current Equitix-, Dalmore- or Royal London-managed percentages. A production ownership correction would therefore require inference and is deferred.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "ac196e2286a92b71ea914da87b74ed169e3dfd6753eee693c0a081a8ed3f02ce",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0239-gordon-and-leslie-diamond-health-care-centre/attempt-1/locked-task-snapshot.json",
+          "sha256": "ac196e2286a92b71ea914da87b74ed169e3dfd6753eee693c0a081a8ed3f02ce"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0239-gordon-and-leslie-diamond-health-care-centre/attempt-1/terminal-decision.json",
+          "sha256": "7f1abc77788c9c70ec0df73ef2f81833d008be3404cd83931d33f2e118777c38"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -26938,6 +26944,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-08-29T15:05:22.000Z",
+          "reason": "The display identity and AHV Access Health Vancouver Ltd. ProjectCo boundary are resolved, and the 2018 Jura acquisition is historical fact. Direct evidence does not establish the current ProjectCo shareholder register or current Equitix-, Dalmore- or Royal London-managed percentages. A production ownership correction would therefore require inference and is deferred.",
+          "taskSnapshotSha256": "ac196e2286a92b71ea914da87b74ed169e3dfd6753eee693c0a081a8ed3f02ce",
+          "evidenceSha256": [
+            "02c52fffe14c3bd8623a470f4d9ada3e3444683e857ee99ba49ef258e4a323ef",
+            "7f1abc77788c9c70ec0df73ef2f81833d008be3404cd83931d33f2e118777c38",
+            "ac196e2286a92b71ea914da87b74ed169e3dfd6753eee693c0a081a8ed3f02ce",
+            "d158dd38db18cdc9d19a6c3ae7d365aa5497d91671f11ba4f86e181ba2d71f14"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -26949,23 +26970,44 @@
       "managerIndex": 44,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "be87c6f12ad50e491808db4fe666bd9d2701cdf5a580d42f95929dcf436f1d79",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-08-29T14:02:45.000Z",
+      "updatedAt": "2026-08-29T15:05:22.000Z",
+      "completedAt": "2026-08-29T15:05:22.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "d9f3a1c188167135bb07305516f2d5f332854bb416662ac8b07b0470171bb646",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0240-kelowna-and-vernon-hospitals-project/attempt-1/locked-task-snapshot.json",
+          "sha256": "d9f3a1c188167135bb07305516f2d5f332854bb416662ac8b07b0470171bb646"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0240-kelowna-and-vernon-hospitals-project-v1/proposal.json",
+          "sha256": "b5096e8e3dd26a5a5212ace483f26f4ed8e225d3a703bf64ffad5baa244567bb"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0240-kelowna-and-vernon-hospitals-project-v1.json",
+          "sha256": "8843eb72e0fac368f46cefa24685d5561c4c4f00334785b07c580610601b35eb"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0239-0243-v1/production-apply/batch-apply-receipt.json#members/1/receipt",
+          "sha256": "8557d44e766cb689a5b2caa76cd853f123635540ab489a5b0953cc0b528ee384"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0240-kelowna-and-vernon-hospitals-project-v1/proposal.json#afterImage",
+          "sha256": "fbe1616547e93d2499a5ee0990ba4bb1250d252fb2bebeb6e6568351234f8684"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-29T15:05:22.000Z",
+        "auditEventId": "cmtehfyke000fsm2bo6eadjgk",
+        "transactionId": "3be4daaf-12fa-4528-94a9-d7e224cdd250",
+        "receiptSha256": "8557d44e766cb689a5b2caa76cd853f123635540ab489a5b0953cc0b528ee384",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33257934865"
+      },
       "history": [
         {
           "sequence": 1,
@@ -26976,6 +27018,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-08-29T15:05:22.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0239-0243-v1.",
+          "taskSnapshotSha256": "d9f3a1c188167135bb07305516f2d5f332854bb416662ac8b07b0470171bb646",
+          "evidenceSha256": [
+            "02c52fffe14c3bd8623a470f4d9ada3e3444683e857ee99ba49ef258e4a323ef",
+            "8557d44e766cb689a5b2caa76cd853f123635540ab489a5b0953cc0b528ee384",
+            "8843eb72e0fac368f46cefa24685d5561c4c4f00334785b07c580610601b35eb",
+            "b5096e8e3dd26a5a5212ace483f26f4ed8e225d3a703bf64ffad5baa244567bb",
+            "d158dd38db18cdc9d19a6c3ae7d365aa5497d91671f11ba4f86e181ba2d71f14",
+            "d9f3a1c188167135bb07305516f2d5f332854bb416662ac8b07b0470171bb646",
+            "fbe1616547e93d2499a5ee0990ba4bb1250d252fb2bebeb6e6568351234f8684"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -26987,23 +27047,44 @@
       "managerIndex": 44,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "f9948f05c93001d26782981e58967b98a2b737dd4cd6a9ab436f53cb9dff755d",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-08-29T14:02:45.000Z",
+      "updatedAt": "2026-08-29T15:05:22.000Z",
+      "completedAt": "2026-08-29T15:05:22.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "0075343aaea5778c7b5eb7defaa0642fa271b8d4bee28deb9ec5f459e192bb67",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0241-live-oak-wind-farm/attempt-1/locked-v2-task-snapshot.json",
+          "sha256": "0075343aaea5778c7b5eb7defaa0642fa271b8d4bee28deb9ec5f459e192bb67"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0241-live-oak-wind-farm-v1/proposal.json",
+          "sha256": "d61911b72dfd25b6f42eac2d4a2368b3b528c7457000fe6e532a11de507e92b3"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0241-live-oak-wind-farm-v1.json",
+          "sha256": "ed33155ce06f96f8b08c79d5c69c0a424ed269a1ecd622c25ecb93d866c402c6"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0239-0243-v1/production-apply/batch-apply-receipt.json#members/2/receipt",
+          "sha256": "ec116ac02521555fc26a90bd13cbb85d4d081f2428d31feacb6628e3b309a224"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0241-live-oak-wind-farm-v1/proposal.json#afterImage",
+          "sha256": "cdacd0d309b6c7f6c33fefd12380eb252bab38a9f5157c30b4402b487727f935"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-29T15:05:22.000Z",
+        "auditEventId": "cmtehg336000qsm2byph4ef6w",
+        "transactionId": "3be4daaf-12fa-4528-94a9-d7e224cdd250",
+        "receiptSha256": "ec116ac02521555fc26a90bd13cbb85d4d081f2428d31feacb6628e3b309a224",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33257934865"
+      },
       "history": [
         {
           "sequence": 1,
@@ -27014,6 +27095,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-08-29T15:05:22.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0239-0243-v1.",
+          "taskSnapshotSha256": "0075343aaea5778c7b5eb7defaa0642fa271b8d4bee28deb9ec5f459e192bb67",
+          "evidenceSha256": [
+            "0075343aaea5778c7b5eb7defaa0642fa271b8d4bee28deb9ec5f459e192bb67",
+            "02c52fffe14c3bd8623a470f4d9ada3e3444683e857ee99ba49ef258e4a323ef",
+            "cdacd0d309b6c7f6c33fefd12380eb252bab38a9f5157c30b4402b487727f935",
+            "d158dd38db18cdc9d19a6c3ae7d365aa5497d91671f11ba4f86e181ba2d71f14",
+            "d61911b72dfd25b6f42eac2d4a2368b3b528c7457000fe6e532a11de507e92b3",
+            "ec116ac02521555fc26a90bd13cbb85d4d081f2428d31feacb6628e3b309a224",
+            "ed33155ce06f96f8b08c79d5c69c0a424ed269a1ecd622c25ecb93d866c402c6"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -27025,20 +27124,26 @@
       "managerIndex": 44,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "a71aa4658c7a8b8f6bf1274202037d2f791f8cfbf0a8ec6fffb9de7cd315ba03",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
+      "status": "DEFERRED",
+      "attempts": 1,
+      "startedAt": "2026-08-29T14:02:45.000Z",
+      "updatedAt": "2026-08-29T15:05:22.000Z",
+      "completedAt": "2026-08-29T15:05:22.000Z",
+      "exceptionReason": "Mobilinx Hurontario General Partnership is the ProjectCo and 2019 is the correct initial investment year. Webuild directly reports 53.85% at June 30, 2026, but public evidence does not establish the legal date or mechanism removing JLIL's former 35%, the current Hitachi Rail, Amico and Transdev percentages, or whether the contemplated Equitix/Pantheon JLIL investment legally closed. A current ownership mutation is therefore deferred.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "500c502124cf56c35411733d58aa3905b95308850dcb75a072be99a888360140",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0242-mobilinx/attempt-1/locked-task-snapshot.json",
+          "sha256": "500c502124cf56c35411733d58aa3905b95308850dcb75a072be99a888360140"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0242-mobilinx/attempt-1/terminal-decision.json",
+          "sha256": "aec9a175438f1e0e81dae2bf12359250033e239d1a18413faea42a88cbd95fcd"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -27052,6 +27157,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-08-29T15:05:22.000Z",
+          "reason": "Mobilinx Hurontario General Partnership is the ProjectCo and 2019 is the correct initial investment year. Webuild directly reports 53.85% at June 30, 2026, but public evidence does not establish the legal date or mechanism removing JLIL's former 35%, the current Hitachi Rail, Amico and Transdev percentages, or whether the contemplated Equitix/Pantheon JLIL investment legally closed. A current ownership mutation is therefore deferred.",
+          "taskSnapshotSha256": "500c502124cf56c35411733d58aa3905b95308850dcb75a072be99a888360140",
+          "evidenceSha256": [
+            "02c52fffe14c3bd8623a470f4d9ada3e3444683e857ee99ba49ef258e4a323ef",
+            "500c502124cf56c35411733d58aa3905b95308850dcb75a072be99a888360140",
+            "aec9a175438f1e0e81dae2bf12359250033e239d1a18413faea42a88cbd95fcd",
+            "d158dd38db18cdc9d19a6c3ae7d365aa5497d91671f11ba4f86e181ba2d71f14"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -27063,23 +27183,44 @@
       "managerIndex": 44,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "abb3ed9288beb237e889544e8ae70e6c96b2c75fba263f9ced1f6d391b37ae0e",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-08-29T14:02:45.000Z",
+      "updatedAt": "2026-08-29T15:05:22.000Z",
+      "completedAt": "2026-08-29T15:05:22.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "77eac06ae06fc44442263100722a3166e621013dfe0bf03e7953d27ef42c489f",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0243-north-carolina-solar/attempt-1/locked-v2-task-snapshot.json",
+          "sha256": "77eac06ae06fc44442263100722a3166e621013dfe0bf03e7953d27ef42c489f"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0243-north-carolina-solar-v1/proposal.json",
+          "sha256": "bc5ba06922d0c325d33afa1ff470e9c0e06000babfd89803aafa10af7f9cb997"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0243-north-carolina-solar-v1.json",
+          "sha256": "822c82ccb8b5e6f221d265c394a6c169a2e0f1fb7a4f5d7805b82841f78ed94b"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0239-0243-v1/production-apply/batch-apply-receipt.json#members/4/receipt",
+          "sha256": "d18e1ffe1e3cef4687a0f766782046c7d22374fa67e7a3dbe61ed8e824112049"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0243-north-carolina-solar-v1/proposal.json#afterImage",
+          "sha256": "49229564faa61a9350e63f050811b711cd9e72cf1ea903ec10bbb24077b6f401"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-29T15:05:22.000Z",
+        "auditEventId": "cmtehg7rn0011sm2bm0pojt9h",
+        "transactionId": "3be4daaf-12fa-4528-94a9-d7e224cdd250",
+        "receiptSha256": "d18e1ffe1e3cef4687a0f766782046c7d22374fa67e7a3dbe61ed8e824112049",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33257934865"
+      },
       "history": [
         {
           "sequence": 1,
@@ -27090,6 +27231,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-08-29T15:05:22.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0239-0243-v1.",
+          "taskSnapshotSha256": "77eac06ae06fc44442263100722a3166e621013dfe0bf03e7953d27ef42c489f",
+          "evidenceSha256": [
+            "02c52fffe14c3bd8623a470f4d9ada3e3444683e857ee99ba49ef258e4a323ef",
+            "49229564faa61a9350e63f050811b711cd9e72cf1ea903ec10bbb24077b6f401",
+            "77eac06ae06fc44442263100722a3166e621013dfe0bf03e7953d27ef42c489f",
+            "822c82ccb8b5e6f221d265c394a6c169a2e0f1fb7a4f5d7805b82841f78ed94b",
+            "bc5ba06922d0c325d33afa1ff470e9c0e06000babfd89803aafa10af7f9cb997",
+            "d158dd38db18cdc9d19a6c3ae7d365aa5497d91671f11ba4f86e181ba2d71f14",
+            "d18e1ffe1e3cef4687a0f766782046c7d22374fa67e7a3dbe61ed8e824112049"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -36961,5 +37120,5 @@
       ]
     }
   ],
-  "manifestSha256": "e2ac189dfba26b0bd7e1ae80ac10921d13b7fb69b65aa2c5e79ead1dcb6783f1"
+  "manifestSha256": "05baef60a981030f777388e6ebdc877256149c6186c9c7d636d98d64c87d2c96"
 }
