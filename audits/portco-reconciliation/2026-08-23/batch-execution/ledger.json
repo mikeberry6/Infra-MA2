@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-29T20:20:00.000Z",
-  "activeBatchId": "batch-0264-0268-v4",
+  "updatedAt": "2026-08-29T20:41:02.000Z",
+  "activeBatchId": null,
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -4091,7 +4091,7 @@
     },
     {
       "batchId": "batch-0264-0268-v4",
-      "state": "VERIFYING_FAILED",
+      "state": "COMPLETED",
       "taskIds": [
         "ledger:0264:red-de-carreteras-de-occidente-s-a-b-de-c-v:3ba7cbb5",
         "ledger:0265:wecom-fiber:efb4f3b9",
@@ -4107,8 +4107,8 @@
         268
       ],
       "createdAt": "2026-08-29T20:04:01.000Z",
-      "updatedAt": "2026-08-29T20:20:00.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-29T20:41:02.000Z",
+      "completedAt": "2026-08-29T20:41:02.000Z",
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0264-0268-v4/batch-manifest.json",
         "sha256": "c7f145053fa703b88e9896da2170258b4c0a647fe12a235ee4cec68f38986630"
@@ -4118,7 +4118,7 @@
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0264-0268-v4/production-apply/batch-apply-receipt.json",
         "sha256": "08c60838923d19f720453468994f899717f9ac177e7694cfba46dd96f212e6b0"
       },
-      "reason": "Independent rendered-card verification found stale production fund-attribution metadata on the newly reconciled active owner rows, including GIC Infrastructure on RCO, prior Wecom estimates and KKR Fund V on CyrusOne. Company identity, legal ownership, seed after-images and detail APIs remain correct; the pipeline is frozen pending the scoped attribution repair.",
+      "reason": "Batch receipt, scoped attribution repair receipt, canonical receipt-publication deployment, four detail APIs, four rendered drawers and the Hess Midstream exclusion all verified; no partial application or stale attribution labels remain.",
       "history": [
         {
           "sequence": 1,
@@ -4179,9 +4179,31 @@
             "c7f145053fa703b88e9896da2170258b4c0a647fe12a235ee4cec68f38986630"
           ],
           "reason": "Independent rendered-card verification found stale production fund-attribution metadata on the newly reconciled active owner rows, including GIC Infrastructure on RCO, prior Wecom estimates and KKR Fund V on CyrusOne. Company identity, legal ownership, seed after-images and detail APIs remain correct; the pipeline is frozen pending the scoped attribution repair."
+        },
+        {
+          "sequence": 7,
+          "from": "VERIFYING_FAILED",
+          "to": "VERIFYING",
+          "at": "2026-08-29T20:41:00.000Z",
+          "evidenceSha256": [
+            "08c60838923d19f720453468994f899717f9ac177e7694cfba46dd96f212e6b0",
+            "c7f145053fa703b88e9896da2170258b4c0a647fe12a235ee4cec68f38986630"
+          ],
+          "reason": "Recovered after the snapshot-bound 12-row attribution repair succeeded in protected workflow 33273702797, receipt fa9b123df6cd0a5874dc2c86f4f91bd50fd1fc32436b56329e2c5ebe381d5e99 was published on canonical deployment dpl_GjMSTd6YBrD8c7ahDrQxF5JhrXWE, and all four detail APIs and rendered drawers passed independent verification."
+        },
+        {
+          "sequence": 8,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-08-29T20:41:02.000Z",
+          "evidenceSha256": [
+            "08c60838923d19f720453468994f899717f9ac177e7694cfba46dd96f212e6b0",
+            "c7f145053fa703b88e9896da2170258b4c0a647fe12a235ee4cec68f38986630"
+          ],
+          "reason": "Batch receipt, scoped attribution repair receipt, canonical receipt-publication deployment, four detail APIs, four rendered drawers and the Hess Midstream exclusion all verified; no partial application or stale attribution labels remain."
         }
       ]
     }
   ],
-  "ledgerSha256": "79db748360e9767aa53051de63a5f06c93a0a789ca1539656de2c58e4eb84c6d"
+  "ledgerSha256": "d941109b3b2c2f0f734515e316ae7361d47e3f5e5997d5d2b9eacd6d63b0ed08"
 }
