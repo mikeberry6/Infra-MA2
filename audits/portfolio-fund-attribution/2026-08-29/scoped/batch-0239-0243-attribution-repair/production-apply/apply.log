@@ -1,0 +1,143 @@
+
+> infra-tracker@1.0.0 portfolio:fund-attribution:apply
+> npx tsx scripts/apply-portfolio-fund-attribution.ts --manifest=audits/portfolio-fund-attribution/2026-08-29/scoped/batch-0239-0243-attribution-repair/apply-manifest.json --manifest-sha256=1168e1dce9d000780272bfbab9de8de6ab9cc9d832285ae9c210dd91fb28d0de --production-snapshot=audits/portfolio-fund-attribution/2026-08-29/scoped/batch-0239-0243-attribution-repair/production-snapshot.json --approval=audits/portfolio-fund-attribution/2026-08-29/scoped/batch-0239-0243-attribution-repair/approval.json --approval-sha256=5304b37440732a40714e6849fed72c71ba97cbd93c214c61e47e5b783047c668 --apply=true --write-token=APPLY_REVIEWED_PORTFOLIO_FUND_ATTRIBUTION --receipt=tmp/portfolio-fund-attribution/production/apply-receipt.json
+
+(node:3166) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_RECEIPT",
+  "manifestSha256": "1168e1dce9d000780272bfbab9de8de6ab9cc9d832285ae9c210dd91fb28d0de",
+  "approvalSha256": "5304b37440732a40714e6849fed72c71ba97cbd93c214c61e47e5b783047c668",
+  "environment": "production",
+  "pipelineRunId": "cmtei2jus0000fy2bbpowrdvc",
+  "mutationCount": 6,
+  "changed": 6,
+  "idempotent": false,
+  "beforeFingerprint": "3ea24f20b93d0ee9a14a7c5653847cc6fde4c4459f92ab8a1dfd94145ca421d3",
+  "afterFingerprint": "e5a9ea0ef65582d8054b57e3b67abc63043da31ded1d0cacd8563847b8c1d980",
+  "rows": [
+    {
+      "recordId": "OFA-B1306B298A14",
+      "ownershipPeriodId": "cmtehfwf3000bsm2bbqigdneu",
+      "companyId": "cmrxpjezu00wjivhep4zsd3j9",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "BBGI invested through named Canadian subsidiaries and directly disclosed reaching 100% ownership, but no separate managed fund is involved or named. The listed infrastructure investment company exposure is treated as a direct program without a fund link."
+      }
+    },
+    {
+      "recordId": "OFA-0866BF19C418",
+      "ownershipPeriodId": "cmrxpk0py01utivheek2ja0lo",
+      "companyId": "cmrxpjf0f00wkivhexu0u6f39",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "John Laing Investments Limited",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: Equitix | Fund: John Laing Investments Limited | Ownership Interest: Not publicly disclosed. Supplemental ownership detail discloses a distinct fund/vehicle that does not match funds.ts."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "John Laing Investments Limited",
+        "attributionConfidence": null,
+        "attributionRationale": "Direct transaction and April 2026 evidence identifies Equitix as a 50% JLIL owner. JLIL is the disclosed holding vehicle, not a curated fund, and no separate Equitix fund is inferred."
+      }
+    },
+    {
+      "recordId": "OFA-3EA84E6B683C",
+      "ownershipPeriodId": "cmtehg141000lsm2bnroz96yd",
+      "companyId": "cmrxpjf0f00wkivhexu0u6f39",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "John Laing Investments Limited",
+        "attributionConfidence": null,
+        "attributionRationale": "Direct April 2026 evidence identifies KKR-owned John Laing Group as the other 50% JLIL owner. JLIL is the disclosed holding vehicle; K-INFRA, DCIF and other KKR funds are not inferred or linked."
+      }
+    },
+    {
+      "recordId": "OFA-E51D666CFD5B",
+      "ownershipPeriodId": "cmtehg18p000nsm2by81ztldc",
+      "companyId": "cmrxpjf0f00wkivhexu0u6f39",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "ENGIE retained the direct corporate sponsor interest and operating role through its renewable-energy affiliate. No managed infrastructure fund is named or inferred."
+      }
+    },
+    {
+      "recordId": "OFA-04A9F34F7248",
+      "ownershipPeriodId": "cmrxpk0qz01uvivheqzsn7gav",
+      "companyId": "cmrxpjf1j00wmivheot2d4ja5",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "John Laing Investments Limited",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: Equitix | Fund: John Laing Investments Limited | Ownership Interest: Not publicly disclosed. Supplemental ownership detail discloses a distinct fund/vehicle that does not match funds.ts."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "John Laing Investments Limited",
+        "attributionConfidence": null,
+        "attributionRationale": "Direct 2021 and April 2026 evidence identifies Equitix as a 50% JLIL owner. JLIL is the disclosed holding vehicle, not a curated fund, and no separate Equitix fund is inferred."
+      }
+    },
+    {
+      "recordId": "OFA-2887E9294B07",
+      "ownershipPeriodId": "cmtehg5x9000ysm2b99mmnc8z",
+      "companyId": "cmrxpjf1j00wmivheot2d4ja5",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "John Laing Investments Limited",
+        "attributionConfidence": null,
+        "attributionRationale": "Direct April 2026 evidence identifies KKR-owned John Laing Group as the other 50% JLIL owner. JLIL is the disclosed holding vehicle; no specific KKR fund is inferred or linked."
+      }
+    }
+  ],
+  "appliedAt": "2026-08-29T14:52:56.848Z",
+  "receiptSha256": "0039da55528b929d0d9c11204f89fb9a70391555e3229a68048bc0d09dd9675a"
+}
