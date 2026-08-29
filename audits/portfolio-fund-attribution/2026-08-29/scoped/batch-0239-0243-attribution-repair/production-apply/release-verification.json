@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_RELEASE_VERIFICATION",
+  "verifiedAt": "2026-08-29T14:52:59.959Z",
+  "manifestSha256": "1168e1dce9d000780272bfbab9de8de6ab9cc9d832285ae9c210dd91fb28d0de",
+  "approvalSha256": "5304b37440732a40714e6849fed72c71ba97cbd93c214c61e47e5b783047c668",
+  "receiptSha256": "0039da55528b929d0d9c11204f89fb9a70391555e3229a68048bc0d09dd9675a",
+  "mutationCount": 6,
+  "changed": 6,
+  "verificationScope": "BOUNDED_STATUS_SAMPLE",
+  "sampledRows": [
+    {
+      "recordId": "OFA-0866BF19C418",
+      "companyId": "cmrxpjf0f00wkivhexu0u6f39",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjf0f00wkivhexu0u6f39?verification=1168e1dce9d000780272bfbab9de8de6ab9cc9d832285ae9c210dd91fb28d0de",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "John Laing Investments Limited",
+        "attributionConfidence": null,
+        "attributionRationale": "Direct transaction and April 2026 evidence identifies Equitix as a 50% JLIL owner. JLIL is the disclosed holding vehicle, not a curated fund, and no separate Equitix fund is inferred."
+      }
+    },
+    {
+      "recordId": "OFA-B1306B298A14",
+      "companyId": "cmrxpjezu00wjivhep4zsd3j9",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjezu00wjivhep4zsd3j9?verification=1168e1dce9d000780272bfbab9de8de6ab9cc9d832285ae9c210dd91fb28d0de",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "BBGI invested through named Canadian subsidiaries and directly disclosed reaching 100% ownership, but no separate managed fund is involved or named. The listed infrastructure investment company exposure is treated as a direct program without a fund link."
+      }
+    }
+  ],
+  "passed": true
+}
