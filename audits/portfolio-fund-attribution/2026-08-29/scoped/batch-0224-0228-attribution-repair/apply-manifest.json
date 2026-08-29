@@ -1,0 +1,194 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-08-29",
+  "ledgerSha256": "429f366c08d5b4f3bee803b64fc24042b0f1790d81516ef33ae27d9c755b771f",
+  "sourceSnapshotSha256": "aa98fe856db80826d0242dfae070b2ff67b4e1ce200243f9c43ce39414e80393",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 3,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 1,
+      "UNRESOLVED": 2
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  },
+  "expectedMutationCount": 6,
+  "mutations": [
+    {
+      "recordId": "OFA-CF89B282524A",
+      "ownershipPeriodId": "cmrxpjz5v01sfivheccpdklbu",
+      "companyName": "Braya Renewable Fuels",
+      "country": "Canada",
+      "investmentFirm": "ECP",
+      "currentVehicleName": "Preferred-equity investment; exact investing vehicle not publicly disclosed",
+      "databaseVehicleName": "Preferred-equity investment; exact investing vehicle not publicly disclosed",
+      "investmentYear": 2023,
+      "stake": "US$300 million preferred equity; percentage and voting rights not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "ECP directly supports its active US$300 million preferred-equity investment, but the reviewed sources do not identify the investing fund or vehicle. The unsupported ECP Fund V estimate is removed."
+      },
+      "evidenceUrls": [
+        "https://www.ecpgp.com/equity/portfolio/braya-renewable-fuels",
+        "https://www.ecpgp.com/about/news-and-insights/press-releases/2023/braya-renewable-fuels-receives-a-300-million-investment-from-energy-capital-partners"
+      ]
+    },
+    {
+      "recordId": "OFA-7BDD300CF1C9",
+      "ownershipPeriodId": "cmrxpjz6h01sgivhesqag6gww",
+      "companyName": "Convergent Energy and Power",
+      "country": "United States",
+      "investmentFirm": "ECP",
+      "currentVehicleName": "Energy Capital Partners Fund IV; exact acquisition vehicle not publicly disclosed",
+      "databaseVehicleName": "Energy Capital Partners Fund IV; exact acquisition vehicle not publicly disclosed",
+      "investmentYear": 2019,
+      "stake": "Not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "ECP Fund IV",
+        "attributionConfidence": null,
+        "attributionRationale": "ECP directly attributes the acquisition to Fund IV. The disclosed fund is retained without a database link because no matching curated Fund Database row is available."
+      },
+      "evidenceUrls": [
+        "https://www.ecpgp.com/about/news-and-insights/press-releases/2019/energy-capital-partners-acquires-convergent-energy-power",
+        "https://www.ecpgp.com/equity/portfolio/convergent"
+      ]
+    },
+    {
+      "recordId": "OFA-F55781BA968F",
+      "ownershipPeriodId": "cmrxpjz7g01siivhe4vhlbwxz",
+      "companyName": "Gopher Resource",
+      "country": "United States",
+      "investmentFirm": "ECP",
+      "currentVehicleName": "Energy Capital Partners IV-A, LP; immediate parent ECP Gopher Holdings, LP",
+      "databaseVehicleName": "Energy Capital Partners IV-A, LP; immediate parent ECP Gopher Holdings, LP",
+      "investmentYear": 2018,
+      "stake": "100% at the immediate-parent level; ECP economic ownership not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Energy Capital Partners IV-A, LP",
+        "attributionConfidence": null,
+        "attributionRationale": "The FTC filing identifies Energy Capital Partners IV-A, LP as the acquisition fund and current court records identify ECP Gopher Holdings, LP as the immediate parent. The disclosed fund is retained without a database link because no matching curated Fund Database row is available."
+      },
+      "evidenceUrls": [
+        "https://www.ftc.gov/legal-library/browse/early-termination-notices/20180664",
+        "https://dockets.justia.com/docket/minnesota/mndce/0%3A2025cv03833/228096"
+      ]
+    },
+    {
+      "recordId": "OFA-A06958B5F730",
+      "ownershipPeriodId": "cmrxpjz8k01skivhe3vjjnmqj",
+      "companyName": "Harvestone Low Carbon Partners",
+      "country": "United States",
+      "investmentFirm": "Energy Capital Partners",
+      "currentVehicleName": "ECP Fund V",
+      "databaseVehicleName": null,
+      "investmentYear": 2022,
+      "stake": "Not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": "ECP Fund V",
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": "ECP Fund V"
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "ECP Fund V",
+        "attributionConfidence": null,
+        "attributionRationale": "ECP directly attributes Harvestone Low Carbon Partners to ECP Fund V, and the approved ownership period remains linked to the existing curated fund record."
+      },
+      "evidenceUrls": [
+        "https://www.ecpgp.com/equity/portfolio/harvestone-low-carbon-partners",
+        "https://www.ecpgp.com/about/news-and-insights/press-releases/2024/energy-capital-partners-ecp-completes-67-billion-fundraise"
+      ]
+    },
+    {
+      "recordId": "OFA-E3774EF2CE09",
+      "ownershipPeriodId": "cmte75pk30014w22bamd7lc20",
+      "companyName": "Harvestone Low Carbon Partners",
+      "country": "United States",
+      "investmentFirm": "Harvestone Group",
+      "currentVehicleName": "Harvestone Group partnership; exact holding vehicle not publicly disclosed",
+      "databaseVehicleName": "Harvestone Group partnership; exact holding vehicle not publicly disclosed",
+      "investmentYear": 2022,
+      "stake": "Not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Harvestone Group directly identifies Harvestone Low Carbon Partners as its partnership with ECP. Harvestone Group's interest is direct corporate ownership rather than an infrastructure fund attribution."
+      },
+      "evidenceUrls": [
+        "https://www.harvestonegroup.com/",
+        "https://www.ecpgp.com/equity/portfolio/harvestone-low-carbon-partners"
+      ]
+    },
+    {
+      "recordId": "OFA-351A7C9EF7AD",
+      "ownershipPeriodId": "cmrxpjz9401slivhe9c586tc5",
+      "companyName": "Metrus Energy",
+      "country": "United States",
+      "investmentFirm": "ECP",
+      "currentVehicleName": "ECP",
+      "databaseVehicleName": null,
+      "investmentYear": 2022,
+      "stake": "Not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "ECP and Metrus directly support the completed 2022 ECP acquisition, but the reviewed sources do not identify the ECP fund or investing affiliate. The unsupported ECP Fund V estimate is removed."
+      },
+      "evidenceUrls": [
+        "https://www.ecpgp.com/equity/portfolio/metrus-energy",
+        "https://www.metrusenergy.com/resources/blog/metrus-acquisition-by-ecp"
+      ]
+    }
+  ],
+  "manifestSha256": "370be32ced0d213e44a6ad2a89cebc1dce76a21d9032cc18f51f131ce88ec4ec"
+}

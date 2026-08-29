@@ -3,7 +3,7 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-29T09:48:44.000Z",
+  "updatedAt": "2026-08-29T09:54:06.000Z",
   "activeBatchId": "batch-0224-0228-v1",
   "batches": [
     {
@@ -2795,7 +2795,7 @@
     },
     {
       "batchId": "batch-0224-0228-v1",
-      "state": "VERIFYING",
+      "state": "VERIFYING_FAILED",
       "taskIds": [
         "ledger:0224:braya-renewable-fuels:f18c1937",
         "ledger:0225:convergent-energy-and-power:464221aa",
@@ -2811,7 +2811,7 @@
         228
       ],
       "createdAt": "2026-08-29T09:17:21.000Z",
-      "updatedAt": "2026-08-29T09:48:44.000Z",
+      "updatedAt": "2026-08-29T09:54:06.000Z",
       "completedAt": null,
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0224-0228-v1/batch-manifest.json",
@@ -2822,7 +2822,7 @@
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0224-0228-v1/production-apply/batch-apply-receipt.json",
         "sha256": "7a126853c327329b52d3d6d7dd47a315ae8912ad0276a6d57e6c99e8f412b8e0"
       },
-      "reason": null,
+      "reason": "Independent canonical API verification found six stale OwnershipPeriod fund-attribution metadata rows: Braya ECP, Convergent ECP, Gopher ECP, Harvestone Energy Capital Partners, Harvestone Group, and Metrus ECP. The five company identities, ownership periods, stakes, vehicles, sources, seed after-images, and atomic transaction are correct; no later bundle may start until a protected attribution-only repair and renewed rendered checks pass.",
       "history": [
         {
           "sequence": 1,
@@ -2872,9 +2872,20 @@
             "e9d287135d6cb4b9cabed5a2cefb7199bcc890081487fdcac9e27173c87822d8"
           ],
           "reason": null
+        },
+        {
+          "sequence": 6,
+          "from": "VERIFYING",
+          "to": "VERIFYING_FAILED",
+          "at": "2026-08-29T09:54:06.000Z",
+          "evidenceSha256": [
+            "7a126853c327329b52d3d6d7dd47a315ae8912ad0276a6d57e6c99e8f412b8e0",
+            "e9d287135d6cb4b9cabed5a2cefb7199bcc890081487fdcac9e27173c87822d8"
+          ],
+          "reason": "Independent canonical API verification found six stale OwnershipPeriod fund-attribution metadata rows: Braya ECP, Convergent ECP, Gopher ECP, Harvestone Energy Capital Partners, Harvestone Group, and Metrus ECP. The five company identities, ownership periods, stakes, vehicles, sources, seed after-images, and atomic transaction are correct; no later bundle may start until a protected attribution-only repair and renewed rendered checks pass."
         }
       ]
     }
   ],
-  "ledgerSha256": "d542335d19ea886f590d2397729aee299022ca624616f1a88d530feca92c4c6f"
+  "ledgerSha256": "d9be1a4d6131d17f4f8012dbecae9dff5f2ac7ba918cd4eb02328ea970170467"
 }
