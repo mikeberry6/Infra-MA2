@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_RELEASE_VERIFICATION",
+  "verifiedAt": "2026-08-29T13:47:52.840Z",
+  "manifestSha256": "c0f0112ffc103f6a3586a26960280632bf5bd417a0853e5aa3f89b2776da2d4b",
+  "approvalSha256": "2a3133daffbdb1af587255fde5d81ae445f2f271f78ba06da31d4694095911b9",
+  "receiptSha256": "9f942bf0a675d8cdc85fb927a812e70156b5117d457001fb5d452042647d884f",
+  "mutationCount": 3,
+  "changed": 3,
+  "verificationScope": "BOUNDED_STATUS_SAMPLE",
+  "sampledRows": [
+    {
+      "recordId": "OFA-20B17512FB81",
+      "companyId": "cmrxpjemf00vyivhe4veoijb8",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjemf00vyivhe4veoijb8?verification=c0f0112ffc103f6a3586a26960280632bf5bd417a0853e5aa3f89b2776da2d4b",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "EQT Infrastructure V",
+        "attributionConfidence": null,
+        "attributionRationale": "EQT directly announced that EQT Infrastructure V would co-invest in EdgeConneX alongside EQT Infrastructure IV. The exact percentage and closing date are not public, and no curated Fund V record is linked."
+      }
+    },
+    {
+      "recordId": "OFA-B86B5FFEB7CA",
+      "companyId": "cmrxpjemf00vyivhe4veoijb8",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjemf00vyivhe4veoijb8?verification=c0f0112ffc103f6a3586a26960280632bf5bd417a0853e5aa3f89b2776da2d4b",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Sixth Street directly supports its 2024 minority investment and continues to list EdgeConneX, but the specific managed funds and percentages are not publicly disclosed. No fund is inferred or linked."
+      }
+    }
+  ],
+  "passed": true
+}
