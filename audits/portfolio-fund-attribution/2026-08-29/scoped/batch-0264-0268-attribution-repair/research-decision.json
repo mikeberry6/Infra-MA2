@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_CORRECTION_DECISION",
+  "asOfDate": "2026-08-29",
+  "triggerBatchId": "batch-0264-0268-v4",
+  "triggerBatchSha256": "c7f145053fa703b88e9896da2170258b4c0a647fe12a235ee4cec68f38986630",
+  "decision": "ALIGN_ACTIVE_OWNERSHIP_ATTRIBUTION_METADATA",
+  "rationale": "The PortCo transaction correctly applied the verified legal owners, vehicles, economics and ownership dates, but the ownership drawer reads a separate attribution layer that retained stale estimates or defaulted new rows to unresolved. Align the 12 active ownership rows to the already-reviewed seed attribution records: disclose named acquisition vehicles where supported, classify corporate, pension and founder interests as direct programs, link only the exact curated Searchlight Fiber Alliance record, and remove the false GIC Infrastructure and KKR Fund V labels.",
+  "mutations": [
+    { "companyName": "Red de Carreteras de Occidente, S.A.P.I. de C.V.", "ownershipPeriodIds": ["cmrxpk21s01wxivhej5fjim7z", "cmtetese4000c3g2b57jyvnbs", "cmteteskf000e3g2b30ze26hr"], "outcome": "One disclosed GIC vehicle and two direct-program owners" },
+    { "companyName": "Wecom Fiber", "ownershipPeriodIds": ["cmrxpk25f01x4ivhev3rzw9ul", "cmrxpk25z01x5ivhezwl33di9", "cmteteyv1000q3g2bcibcawmu", "cmtetez14000s3g2bzjwxyz6b", "cmtetez77000u3g2b0hqq93e0"], "outcome": "Three disclosed vehicles and two direct-program retained interests" },
+    { "companyName": "Channelview Cogeneration", "ownershipPeriodIds": ["cmtetf58l001d3g2bqm4nq2u1", "cmtetf5co001e3g2bunyny4mt"], "outcome": "Two disclosed current investment vehicles" },
+    { "companyName": "CyrusOne", "ownershipPeriodIds": ["cmrxpk5sc022pivhejivt66fy", "cmtetfc5a001z3g2b7cf5m3n9"], "outcome": "Correct disclosed KKR and GIP multi-vehicle ownership with no false Fund V link" }
+  ],
+  "nonChanges": [
+    "Company identities, aliases, redirects and publication status",
+    "Ownership organizations, vehicle text, stakes, dates and active or former state",
+    "Descriptions, milestones, citations and primary sources",
+    "Fund Database records; the repair creates or updates no fund",
+    "The completed atomic PortCo transaction and its durable receipt"
+  ],
+  "identityResolved": true,
+  "activeOwnershipResolved": true,
+  "unresolvedQuestions": []
+}
