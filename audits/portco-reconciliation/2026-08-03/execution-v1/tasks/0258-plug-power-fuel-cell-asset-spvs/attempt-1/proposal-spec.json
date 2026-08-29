@@ -1,0 +1,149 @@
+{
+  "generatedAt": "2026-08-29T17:46:02.000Z",
+  "actions": [
+    "CORRECT_COMPANY",
+    "RETIRE_OWNERSHIP",
+    "REALIZE_COMPANY"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "reviewedSeedRetirementTaskIds": [],
+  "rationale": "Retire and archive the generic Plug Power SPV row because it conflates equipment sale-leaseback vehicles with a later Generate secured loan. Generate's 2019-2022 exposure was debt and was fully repaid in December 2022; no current Generate equity ownership, foreclosure or later conversion was identified.",
+  "evidence": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1093691/000110465919019559/a19-7776_1ex10d1.htm",
+      "purpose": "Debt classification",
+      "supports": [
+        "Generate Lending's 2019 exposure was an executed secured loan"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1093691/000155837023008801/plug-20230331x10q.htm",
+      "purpose": "Repayment and exit evidence",
+      "supports": [
+        "Plug Power repaid the Generate loan in December 2022"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1093691/000110465917046148/a17-17059_1ex10d3.htm",
+      "purpose": "Historical sale-leaseback structure",
+      "supports": [
+        "Separate lessor SPVs held title to identified fuel-cell equipment"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "companyFieldUpdates": {
+    "aliases": [
+      "Plug Power fuel-cell financing SPVs",
+      "Plug Power sale-leaseback asset SPVs"
+    ],
+    "description": "Plug Power Fuel Cell Asset SPVs is an archived generic financing construct rather than a manager-level operating portfolio company. Plug Power filings document separate sale-leaseback lessors that held title to specified fuel-cell equipment beginning in 2016-2017, followed by a US$100 million secured Generate Lending facility announced in 2019. The Generate loan was debt rather than equity and Plug Power reported repaying it in full in December 2022. Public filings reviewed through August 29, 2026 did not identify an equity conversion, foreclosure, renewed Generate ownership or a current consolidated Generate-owned Plug Power SPV platform. The exact residual disposition of every historical leased-equipment vehicle was not publicly disclosed, but that gap does not support retaining this generic row as an active direct infrastructure holding.",
+    "companyStatus": "REALIZED",
+    "recordStatus": "ARCHIVED",
+    "headquarters": null,
+    "lastVerifiedAt": "2026-08-29T00:00:00.000Z"
+  },
+  "ownershipPeriodUpdates": [
+    {
+      "id": "cmrxpk1pj01whivhe7hvcv2xx",
+      "set": {
+        "managerName": "Generate Capital",
+        "organizationName": "Generate Capital",
+        "fundName": null,
+        "vehicleName": "Generate Lending LLC / Generate PPL SPV I, LLC secured debt facility",
+        "stake": "Debt-only exposure; no ownership stake",
+        "investmentYear": 2019,
+        "exitYear": 2022,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    }
+  ],
+  "ownershipPeriodAdditions": [],
+  "pendingOwnershipTransactionUpdates": [],
+  "pendingOwnershipTransactionAdditions": [],
+  "milestoneUpdates": [
+    {
+      "id": "cmrxpls0r0432ivhe1lrhry61",
+      "set": {
+        "date": "2016–2017",
+        "event": "Plug Power entered equipment sale-leaseback structures in which separate lessor SPVs held title to specified deployed fuel-cell systems.",
+        "category": "FINANCING",
+        "sortDate": "2017-01-01T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1093691/000110465917046148/a17-17059_1ex10d3.htm"
+        ]
+      }
+    },
+    {
+      "id": "cmrxpls150433ivheu49ukegr",
+      "set": {
+        "date": "Apr 2019–Dec 2022",
+        "event": "Generate Lending provided a secured debt facility in April 2019; Plug Power reported repaying the loan in full in December 2022, ending the disclosed Generate credit exposure without an equity conversion.",
+        "category": "FINANCING",
+        "sortDate": "2022-12-31T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1093691/000110465919019559/a19-7776_1ex10d1.htm",
+          "https://www.sec.gov/Archives/edgar/data/1093691/000155837023008801/plug-20230331x10q.htm"
+        ]
+      }
+    }
+  ],
+  "citationUpdates": [
+    {
+      "id": "cmrxpr6ae0aoiivhe7hsqpn30",
+      "set": {
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Generate technology-company financing context; not direct equity evidence",
+        "isPrimary": false
+      }
+    },
+    {
+      "id": "cmrxpr6e20aokivhec5rssd27",
+      "set": {
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Announcement of the 2019 Generate secured debt facility",
+        "isPrimary": false
+      }
+    }
+  ],
+  "citationAdditions": [
+    {
+      "id": null,
+      "label": "Plug Power — 2017 sale-leaseback agreement",
+      "url": "https://www.sec.gov/Archives/edgar/data/1093691/000110465917046148/a17-17059_1ex10d3.htm",
+      "sourceType": "SEC_FILING",
+      "purpose": "FINANCING_FILINGS",
+      "evidenceLabel": "Historical equipment-title and sale-leaseback structure",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "Plug Power — 2019 Generate loan agreement",
+      "url": "https://www.sec.gov/Archives/edgar/data/1093691/000110465919019559/a19-7776_1ex10d1.htm",
+      "sourceType": "SEC_FILING",
+      "purpose": "FINANCING_FILINGS",
+      "evidenceLabel": "Executed secured-loan terms establishing debt-only exposure",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "Plug Power — Q1 2023 Form 10-Q",
+      "url": "https://www.sec.gov/Archives/edgar/data/1093691/000155837023008801/plug-20230331x10q.htm",
+      "sourceType": "SEC_FILING",
+      "purpose": "FINANCING_FILINGS",
+      "evidenceLabel": "December 2022 repayment of the Generate secured loan",
+      "isPrimary": true
+    },
+    {
+      "id": null,
+      "label": "Plug Power — Q2 2026 Form 10-Q",
+      "url": "https://www.sec.gov/Archives/edgar/data/1093691/000110465926093454/plug-20260630x10q.htm",
+      "sourceType": "SEC_FILING",
+      "purpose": "SUPPORTING_CONTEXT",
+      "evidenceLabel": "Current exit search with no revived Generate ownership relationship",
+      "isPrimary": false
+    }
+  ]
+}

@@ -144,6 +144,18 @@ describe("task snapshot dependency specification", () => {
     });
   });
 
+  it("accepts an explicit earlier canonical task binding for a reviewed merge", () => {
+    expect(verifyTaskSnapshotDependencySpec({
+      fundNames: [],
+      organizationNames: ["Generate Capital"],
+      reviewedCanonicalTaskId: " ledger:0136:cleancapital-holdings-llc:f7156fe1 ",
+    })).toEqual({
+      fundNames: [],
+      organizationNames: ["Generate Capital"],
+      reviewedCanonicalTaskId: "ledger:0136:cleancapital-holdings-llc:f7156fe1",
+    });
+  });
+
   it.each([
     null,
     [],
@@ -152,6 +164,7 @@ describe("task snapshot dependency specification", () => {
     { fundNames: "ArcLight Fund VIII", organizationNames: [] },
     { fundNames: [""], organizationNames: [] },
     { fundNames: [], organizationNames: ["ArcLight", " ArcLight "] },
+    { fundNames: [], organizationNames: [], reviewedCanonicalTaskId: "" },
   ])("rejects a malformed or non-strict dependency spec: %j", (input) => {
     expect(() => verifyTaskSnapshotDependencySpec(input)).toThrow();
   });

@@ -1,0 +1,429 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0255:cleancapital-c-and-i-solar-spvs:38fec9c7",
+  "taskIndex": 255,
+  "companyName": "CleanCapital C&I Solar SPVs",
+  "generatedAt": "2026-08-29T17:28:07.349Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0255-cleancapital-c-and-i-solar-spvs/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 255,
+    "taskId": "ledger:0255:cleancapital-c-and-i-solar-spvs:38fec9c7",
+    "canonicalKey": "cleancapital-c-and-i-solar-spvs|united-states",
+    "companyName": "CleanCapital C&I Solar SPVs",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 46,
+    "managers": [
+      "Generate Capital"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "RETIRE_OWNERSHIP"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "046-generate-capital:repo-only:003:cleancapital-c-i-solar-spvs"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjfy800xyivhefxypfjko"
+    ],
+    "seedKeys": [
+      "cleancapital c&i solar spvs|United States"
+    ],
+    "evidenceUrls": [
+      "https://pv-magazine-usa.com/2017/01/19/cleancapital-and-generate-capital-enter-300-million-partnership-to-focus-on-distributed-solar/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Generate Capital PROPOSED_RETIRE: 2017 partnership structure with no current named consolidated Generate-owned platform or ownership evidence.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "REVIEWED_MERGE_CANONICAL_TARGET",
+    "targetCompanyId": "cmrxpj8ua00mzivheaeu8kmvz",
+    "linkedQueueTaskId": "ledger:0136:cleancapital-holdings-llc:f7156fe1",
+    "immutableRetiredCompanyId": "cmrxpjfy800xyivhefxypfjko"
+  },
+  "resolvedCanonicalKey": "cleancapital-holdings-llc|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpj8ua00mzivheaeu8kmvz",
+    "name": "CleanCapital Holdings, LLC",
+    "aliases": [
+      "CleanCapital",
+      "CleanCapital Holdings LLC"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Distributed solar and energy storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "CleanCapital Holdings LLC develops, acquires, owns and operates distributed solar and energy-storage projects across the United States. Founded in 2015 and headquartered in New York, the platform serves commercial, industrial, institutional, utility and public-sector counterparties through contracted clean-energy assets. Current company materials report more than 350 projects and approximately 500 MW, with over US$1.5 billion invested. BlackRock Renewable Power Group funds made a direct investment in 2019, but that period is historical and the exact stake and exit date are not publicly disclosed. Manulife Investment Management made a corporate investment in 2021 and remains the only named current institutional backer; its exact percentage is not publicly disclosed. BlackRock's acquisition of GIP did not create a GIP ownership period. CleanCapital sold the 120 MW Nottingham development in April 2026 as an asset-level transaction and no platform sale or signed exit was identified through August 23, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://cleancapital.com/",
+    "yearFounded": 2015,
+    "headquarters": "New York, New York",
+    "lastVerifiedAt": "2026-08-23T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpju1s01kdivhencq5zip1",
+        "managerName": "Manulife Investment Management",
+        "organizationName": "Manulife",
+        "fundName": "Manulife Infrastructure Fund II",
+        "vehicleName": "John Hancock Life Insurance Company (U.S.A.) balance sheet and third-party managed accounts",
+        "stake": "Largest named shareholder; exact percentage not publicly disclosed",
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpju2c01keivhesnzgo23j",
+        "managerName": "BlackRock",
+        "organizationName": "BlackRock",
+        "fundName": null,
+        "vehicleName": "BlackRock Renewable Power Group funds; exact vehicle not publicly disclosed",
+        "stake": "Former direct equity investment; exact stake and exit timing not publicly disclosed",
+        "investmentYear": 2019,
+        "exitYear": null,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkvw3030eivhe0jkazioh",
+        "date": "2015",
+        "event": "CleanCapital was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2015-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkvwk030fivhey91ri2de",
+        "date": "Apr 2, 2019",
+        "event": "Funds managed by BlackRock's Renewable Power Group made a direct investment in CleanCapital; the exact fund, stake and later exit timing were not publicly disclosed.",
+        "category": "FINANCING",
+        "sortDate": "2019-04-02T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://cleancapital.com/resources/cleancapital-announces-new-investment-from-blackrocks-renewable-power-group/"
+        ]
+      },
+      {
+        "id": "cmrxpkvx4030givheyihcy4a2",
+        "date": "Apr 20, 2021",
+        "event": "Manulife Investment Management made a corporate investment and US$300 million commitment; CleanCapital also became sole owner of the 46.9 MW portfolio previously financed with BlackRock.",
+        "category": "FINANCING",
+        "sortDate": "2021-04-20T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://cleancapital.com/resources/cleancapital-secures-300-million-commitment-from-manulife-investment-management-acquires-63-megawatts-of-operating-solar-projects/"
+        ]
+      },
+      {
+        "id": "cmrxpkvxo030hivheh7k3kp42",
+        "date": "Dec 2024",
+        "event": "CleanCapital acquired a 40-asset, 22.7 MW portfolio from Kendall Sustainable Infrastructure and secured further equity investment.",
+        "category": "FINANCING",
+        "sortDate": "2024-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkvy8030iivhed57f0bt6",
+        "date": "Jun 2025",
+        "event": "CleanCapital announced the acquisition of a 25 MWh storage portfolio from Pacifico.",
+        "category": "FINANCING",
+        "sortDate": "2025-06-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxppisf08amivheifz61vou",
+        "label": "Cleancapital — CleanCapital",
+        "url": "https://cleancapital.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current CleanCapital company profile and operating platform",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppiti08aoivhexskjav9j",
+        "label": "CleanCapital — BlackRock partnership source — CleanCapital Holdings, LLC",
+        "url": "https://cleancapital.com/resources/cleancapital-and-blackrock-announce-new-partnership-to-drive-capital-into-distributed-clean-energy-markets/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "CleanCapital — BlackRock partnership source — CleanCapital Holdings, LLC",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppix508aqivhe5otiugb9",
+        "label": "Investment date source — BlackRock — CleanCapital Holdings, LLC",
+        "url": "https://cleancapital.com/resources/cleancapital-announces-new-investment-from-blackrocks-renewable-power-group/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "BlackRock Renewable Power Group's 2019 direct investment",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppiyk08asivhejximvecf",
+        "label": "Cleancapital — CleanCapital",
+        "url": "https://cleancapital.com/resources/cleancapital-completes-185m-debt-private-placement/",
+        "sourceType": "ARTICLE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Cleancapital financing or public filing",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppizu08auivhe6uzcnxw0",
+        "label": "Cleancapital — CleanCapital Holdings, LLC",
+        "url": "https://cleancapital.com/about/our-story/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Cleancapital company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppj0z08awivhedehausjt",
+        "label": "Manulifeim — CleanCapital Holdings, LLC",
+        "url": "https://www.manulifeim.com/institutional/global/en/about-us/press-releases/cleancapital-receives-up-to-500-million-additional-commitment-from-manulife-investment-management",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Manulifeim company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppj2208ayivhejbhzr6i7",
+        "label": "Investment date source — Manulife — CleanCapital Holdings, LLC",
+        "url": "https://cleancapital.com/resources/cleancapital-secures-300-million-commitment-from-manulife-investment-management-acquires-63-megawatts-of-operating-solar-projects/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Manulife's 2021 corporate investment and BlackRock portfolio transition",
+        "isPrimary": false
+      },
+      {
+        "id": "cmt5kllvt0001y8yy1cvh34n3",
+        "label": "CleanCapital — current capital backing",
+        "url": "https://cleancapital.com/project-acquisition/capital/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current Manulife backing and active platform status",
+        "isPrimary": true
+      },
+      {
+        "id": "cmt5klm1j0003y8yymv2lti8h",
+        "label": "CleanCapital — Nottingham asset sale",
+        "url": "https://cleancapital.com/resources/cleancapital-sells-120-mw-solar-project-to-energix-renewables/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "April 2026 asset-level sale and platform-exit distinction",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "CleanCapital Holdings, LLC",
+    "investmentFirm": "Manulife",
+    "sector": "Power & ET",
+    "subsector": "Distributed solar and energy storage",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Manulife Infrastructure Fund II",
+    "description": "CleanCapital Holdings LLC develops, acquires, owns and operates distributed solar and energy-storage projects across the United States. Founded in 2015 and headquartered in New York, the platform serves commercial, industrial, institutional, utility and public-sector counterparties through contracted clean-energy assets. Current company materials report more than 350 projects and approximately 500 MW, with over US$1.5 billion invested. BlackRock Renewable Power Group funds made a direct investment in 2019, but that period is historical and the exact stake and exit date are not publicly disclosed. Manulife Investment Management made a corporate investment in 2021 and remains the only named current institutional backer; its exact percentage is not publicly disclosed. BlackRock's acquisition of GIP did not create a GIP ownership period. CleanCapital sold the 120 MW Nottingham development in April 2026 as an asset-level transaction and no platform sale or signed exit was identified through August 23, 2026.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "website": "https://cleancapital.com/",
+    "yearFounded": 2015,
+    "investmentYear": 2021,
+    "headquarters": "New York, New York",
+    "milestones": [
+      {
+        "date": "2015",
+        "event": "CleanCapital was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "Apr 2, 2019",
+        "event": "Funds managed by BlackRock's Renewable Power Group made a direct investment in CleanCapital; the exact fund, stake and later exit timing were not publicly disclosed.",
+        "category": "Financing"
+      },
+      {
+        "date": "Apr 20, 2021",
+        "event": "Manulife Investment Management made a corporate investment and US$300 million commitment; CleanCapital also became sole owner of the 46.9 MW portfolio previously financed with BlackRock.",
+        "category": "Financing"
+      },
+      {
+        "date": "Dec 2024",
+        "event": "CleanCapital acquired a 40-asset, 22.7 MW portfolio from Kendall Sustainable Infrastructure and secured further equity investment.",
+        "category": "Financing"
+      },
+      {
+        "date": "Jun 2025",
+        "event": "CleanCapital announced the acquisition of a 25 MWh storage portfolio from Pacifico.",
+        "category": "Financing"
+      }
+    ],
+    "management": [],
+    "sources": [
+      {
+        "label": "Cleancapital — CleanCapital",
+        "url": "https://cleancapital.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current CleanCapital company profile and operating platform"
+      },
+      {
+        "label": "CleanCapital — BlackRock partnership source — CleanCapital Holdings, LLC",
+        "url": "https://cleancapital.com/resources/cleancapital-and-blackrock-announce-new-partnership-to-drive-capital-into-distributed-clean-energy-markets/",
+        "type": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "CleanCapital — BlackRock partnership source — CleanCapital Holdings, LLC"
+      },
+      {
+        "label": "Investment date source — BlackRock — CleanCapital Holdings, LLC",
+        "url": "https://cleancapital.com/resources/cleancapital-announces-new-investment-from-blackrocks-renewable-power-group/",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "BlackRock Renewable Power Group's 2019 direct investment"
+      },
+      {
+        "label": "Cleancapital — CleanCapital",
+        "url": "https://cleancapital.com/resources/cleancapital-completes-185m-debt-private-placement/",
+        "type": "ARTICLE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Cleancapital financing or public filing"
+      },
+      {
+        "label": "Cleancapital — CleanCapital Holdings, LLC",
+        "url": "https://cleancapital.com/about/our-story/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Cleancapital company profile"
+      },
+      {
+        "label": "Manulifeim — CleanCapital Holdings, LLC",
+        "url": "https://www.manulifeim.com/institutional/global/en/about-us/press-releases/cleancapital-receives-up-to-500-million-additional-commitment-from-manulife-investment-management",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Manulifeim company profile"
+      },
+      {
+        "label": "Investment date source — Manulife — CleanCapital Holdings, LLC",
+        "url": "https://cleancapital.com/resources/cleancapital-secures-300-million-commitment-from-manulife-investment-management-acquires-63-megawatts-of-operating-solar-projects/",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Manulife's 2021 corporate investment and BlackRock portfolio transition"
+      },
+      {
+        "label": "CleanCapital — current capital backing",
+        "url": "https://cleancapital.com/project-acquisition/capital/",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current Manulife backing and active platform status"
+      },
+      {
+        "label": "CleanCapital — Nottingham asset sale",
+        "url": "https://cleancapital.com/resources/cleancapital-sells-120-mw-solar-project-to-energix-renewables/",
+        "type": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "April 2026 asset-level sale and platform-exit distinction"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Manulife",
+        "ownershipVehicle": "Manulife Infrastructure Fund II",
+        "fundName": "Manulife Infrastructure Fund II",
+        "vehicleName": "John Hancock Life Insurance Company (U.S.A.) balance sheet and third-party managed accounts",
+        "investmentYear": 2021,
+        "stake": "Largest named shareholder; exact percentage not publicly disclosed",
+        "status": "Active",
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "investmentFirm": "BlackRock",
+        "ownershipVehicle": "BlackRock Renewable Power Group funds; exact vehicle not publicly disclosed",
+        "vehicleName": "BlackRock Renewable Power Group funds; exact vehicle not publicly disclosed",
+        "investmentYear": 2019,
+        "stake": "Former direct equity investment; exact stake and exit timing not publicly disclosed",
+        "status": "Realized",
+        "transactionState": "REALIZED"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj39300epivhe8orerprn",
+        "fundName": "Manulife Infrastructure Fund II",
+        "managerId": "cmrxpibim002wivhet9rhv26m",
+        "updatedAt": "2026-07-23T16:09:58.071Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi56u000wivhev4hy469z",
+        "name": "BlackRock",
+        "updatedAt": "2026-07-23T16:09:13.926Z"
+      },
+      {
+        "id": "cmrxpi8ti0021ivhe78elelvr",
+        "name": "Generate Capital",
+        "updatedAt": "2026-07-23T16:09:18.630Z"
+      },
+      {
+        "id": "cmrxpibim002wivhet9rhv26m",
+        "name": "Manulife Investment Management",
+        "updatedAt": "2026-07-23T16:09:22.126Z"
+      },
+      {
+        "id": "cmrxpihju004sivhe0wgw7q0e",
+        "name": "Manulife",
+        "updatedAt": "2026-07-23T16:09:29.946Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0255:cleancapital-c-and-i-solar-spvs:38fec9c7",
+    "taskIndex": 255,
+    "canonicalKey": "cleancapital-c-and-i-solar-spvs|united-states",
+    "capturedAt": "2026-08-29T17:28:07.349Z",
+    "databaseRevision": "revision:4d456a28c9f9d7b587908ad49440e393b1bac00ba2c03e22946ad80d5d1cb25e",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "48ac9959755e603c7e86e0cdaf9b9fd886aebfef60c205fe3aadf49259f7ed78",
+    "productionSnapshotSha256": "6176389fef9bfa5533a9a53039273e4777aaf54f7ff5848486633d760b69153c",
+    "targetCompanySnapshotSha256": "36e853eff819f196feb1277898e4030bcf9b29027292180691fa8a886f583e7d",
+    "seedEntrySha256": "7b358819759297e42f531ad38154234d6c4b70a7d83deef4af3a15bc37768f3f",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "7c943df9041f922e5a2c766d28eccd0965f669b30827a63153976f20543f223f",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "dd5b215f186c114aa2ca0ab0c81ea54819feebbc824a2d8cbfdad5227840315d",
+      "organizationsSha256": "0e931412cc3309755117a96821ead92cf08b043b1bb388dec481af36d856da51",
+      "citationsSha256": "ebeafea1ca841f7b86fec4b4cbbb4b32431177c4775698029a8fa4e46619c04e",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "68fc8ae4eccb14d1b02b0bd58bbd8a62f2c3fc268c9fd51c804e4dcabe01107e",
+    "stateSha256": "a52dcad4120e1dd371bcfc1df274332120b1a8350bedae06da7e1f876361bcf6",
+    "taskSnapshotSha256": "a91ed6607360616e7307e0c604dd6a7a579465bb0b4c822d92c640c749eb5676"
+  },
+  "contextSha256": "3cf121fb3383acbbd3f2dbd869b43df0e18ce7584107c92b2c02a4a3558a8171"
+}

@@ -96,6 +96,69 @@ describe("task snapshot target resolution", () => {
     });
   });
 
+  it("pins a repo-only retirement to an earlier completed canonical task with the same identity root", () => {
+    const active = entry({
+      taskIndex: 255,
+      taskId: "task-cleancapital-spvs",
+      canonicalKey: "cleancapital-c-and-i-solar-spvs|united-states",
+      companyName: "CleanCapital C&I Solar SPVs",
+      productionCompanyIds: ["company-cleancapital-spvs"],
+      seedKeys: ["cleancapital c&i solar spvs|United States"],
+      sourceRepoOnlyIds: ["repo-only-cleancapital-spvs"],
+      actionScopes: { company: [], ownership: ["RETIRE_OWNERSHIP"], verification: [] },
+    });
+    const canonical = entry({
+      taskIndex: 136,
+      taskId: "task-cleancapital-holdings",
+      canonicalKey: "cleancapital-holdings-llc|united-states",
+      companyName: "CleanCapital Holdings, LLC",
+      productionCompanyIds: ["company-cleancapital-holdings"],
+      seedKeys: ["cleancapital holdings, llc|United States"],
+    });
+
+    expect(resolveTaskSnapshotTarget({
+      queueEntry: active,
+      queueEntries: [canonical, active],
+      reviewedTargetCompanyId: "company-cleancapital-holdings",
+      reviewedCanonicalTaskId: canonical.taskId,
+      completedTaskIds: [canonical.taskId],
+    })).toEqual({
+      method: "REVIEWED_MERGE_CANONICAL_TARGET",
+      targetCompanyId: "company-cleancapital-holdings",
+      linkedQueueTaskId: canonical.taskId,
+      immutableRetiredCompanyId: "company-cleancapital-spvs",
+    });
+  });
+
+  it("rejects a completed canonical target without the explicit completed-task binding", () => {
+    const active = entry({
+      taskIndex: 255,
+      taskId: "task-cleancapital-spvs",
+      canonicalKey: "cleancapital-c-and-i-solar-spvs|united-states",
+      companyName: "CleanCapital C&I Solar SPVs",
+      productionCompanyIds: ["company-cleancapital-spvs"],
+      seedKeys: ["cleancapital c&i solar spvs|United States"],
+      sourceRepoOnlyIds: ["repo-only-cleancapital-spvs"],
+      actionScopes: { company: [], ownership: ["RETIRE_OWNERSHIP"], verification: [] },
+    });
+    const canonical = entry({
+      taskIndex: 136,
+      taskId: "task-cleancapital-holdings",
+      canonicalKey: "cleancapital-holdings-llc|united-states",
+      companyName: "CleanCapital Holdings, LLC",
+      productionCompanyIds: ["company-cleancapital-holdings"],
+      seedKeys: ["cleancapital holdings, llc|United States"],
+    });
+
+    expect(() => resolveTaskSnapshotTarget({
+      queueEntry: active,
+      queueEntries: [canonical, active],
+      reviewedTargetCompanyId: "company-cleancapital-holdings",
+      reviewedCanonicalTaskId: canonical.taskId,
+      completedTaskIds: [],
+    })).toThrow("cannot replace the immutable queue target");
+  });
+
   it("pins a mixed holding/repo-only project duplicate to one later manager-level survivor", () => {
     const active = entry({
       taskIndex: 117,

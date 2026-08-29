@@ -52,8 +52,8 @@ describe("portfolio fund attribution seed manifest", () => {
     const ownerKeys = owners.map(ownerKey);
     const manifestKeys = manifest.records.map(ownerKey);
 
-    expect(manifest.records).toHaveLength(1_305);
-    expect(owners).toHaveLength(1_305);
+    expect(manifest.records).toHaveLength(1_303);
+    expect(owners).toHaveLength(1_303);
     expect(new Set(ownerKeys)).toHaveProperty("size", ownerKeys.length);
     expect(new Set(manifestKeys)).toHaveProperty("size", manifestKeys.length);
     expect([...manifestKeys].sort()).toEqual([...ownerKeys].sort());

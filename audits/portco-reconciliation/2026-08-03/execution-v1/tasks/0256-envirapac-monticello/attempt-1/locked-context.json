@@ -1,0 +1,274 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0256:envirapac-monticello:efac2570",
+  "taskIndex": 256,
+  "companyName": "EnviraPAC Monticello",
+  "generatedAt": "2026-08-29T17:28:09.933Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0256-envirapac-monticello/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 256,
+    "taskId": "ledger:0256:envirapac-monticello:efac2570",
+    "canonicalKey": "envirapac-monticello|united-states",
+    "companyName": "EnviraPAC Monticello",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 46,
+    "managers": [
+      "Generate Capital"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "046-generate-capital:repo-only:004:envirapac-monticello"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjg1p00y0ivhej6kafhmq"
+    ],
+    "seedKeys": [
+      "envirapac monticello|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.ncat.org/arkansas-carbon-venture-turns-sustainable-forestry-management-residuals-into-market-ready-product/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Generate Capital UNVERIFIED_EXISTING: Project references exist but no current direct Generate ownership evidence is established.",
+    "unresolvedQuestions": [
+      "Current ownership remains unverified and must be resolved with direct evidence before any proposal can be applied."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjg1p00y0ivhej6kafhmq",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "envirapac-monticello|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjg1p00y0ivhej6kafhmq",
+    "name": "EnviraPAC Monticello",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Biomass-derived carbon products",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "EnviraPAC Monticello is a biomass processing facility in Monticello, Arkansas that converts forestry residuals into renewable engineered carbon products. Its end markets include industrial and agricultural users that require activated carbon or related carbon powder products derived from biomass feedstock. The model is asset-heavy and process-oriented, with value tied to a dedicated manufacturing facility and feedstock conversion technology. Public materials describe the Monticello facility as a renewable carbon powder operation backed by Generate Capital and designed around sustainable forestry residuals. Generate describes its investment in an EnviraPAC-operated project SPV, while 2021 industry materials show Generate-linked management involvement at EnviraPAC Monticello. The reviewed materials did not disclose facility-level revenue, ownership percentages, or an exact original investment date.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Arkansas",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk1lr01waivherjsx4md0",
+        "managerName": "Generate Capital",
+        "organizationName": "Generate Capital",
+        "fundName": null,
+        "vehicleName": "Corporate Equity",
+        "stake": null,
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplrl0042jivheji7zgf7n",
+        "date": "2021",
+        "event": "Generate Capital had Generate-linked management involvement with EnviraPAC Monticello and later described its investment in the project SPV.",
+        "category": "FINANCING",
+        "sortDate": "2021-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplrll042kivhei6mfyk22",
+        "date": "2022",
+        "event": "EnviraPAC Monticello was named one of Arkansas's Exceptional 8 in the Coolest Things Made in Arkansas contest.",
+        "category": "OTHER",
+        "sortDate": "2022-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplrm1042livheldib74md",
+        "date": "Sep 2024",
+        "event": "NCAT profiled EnviraPAC's Monticello operation converting forestry residuals into renewable engineered biochar carbon powder.",
+        "category": "EXPANSION",
+        "sortDate": "2024-09-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpr5av0an0ivhetr78b830",
+        "label": "Ownership source — Generate Capital — Cambrian Innovation Water Asset SPVs",
+        "url": "https://generatecapital.com/investment/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Portfolio evidence source — Generate Capital — EnviraPAC Monticello",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpr5c30an2ivheoq4kavmg",
+        "label": "Ncat — EnviraPAC Monticello",
+        "url": "https://www.ncat.org/arkansas-carbon-venture-turns-sustainable-forestry-management-residuals-into-market-ready-product/",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Ncat transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr5d00an4ivheo7v520ok",
+        "label": "Biomassmagazine — EnviraPAC Monticello",
+        "url": "https://biomassmagazine.com/directory/companies/772",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Biomassmagazine — EnviraPAC Monticello",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr5e00an6ivheb0m3nngs",
+        "label": "Chemicalsamerica — EnviraPAC Monticello",
+        "url": "https://chemicalsamerica.com/companies/envirapac-monticello",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Chemicalsamerica operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr5f10an8ivhe636z3aim",
+        "label": "Investment evidence source — Generate Capital — EnviraPAC Monticello",
+        "url": "https://chemicalsamerica.com/2021-Attendee-List",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Investment evidence source — Generate Capital — EnviraPAC Monticello",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "EnviraPAC Monticello",
+    "investmentFirm": "Generate Capital",
+    "sector": "Power & ET",
+    "subsector": "Biomass-derived carbon products",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Corporate Equity",
+    "description": "EnviraPAC Monticello is a biomass processing facility in Monticello, Arkansas that converts forestry residuals into renewable engineered carbon products. Its end markets include industrial and agricultural users that require activated carbon or related carbon powder products derived from biomass feedstock. The model is asset-heavy and process-oriented, with value tied to a dedicated manufacturing facility and feedstock conversion technology. Public materials describe the Monticello facility as a renewable carbon powder operation backed by Generate Capital and designed around sustainable forestry residuals. Generate describes its investment in an EnviraPAC-operated project SPV, while 2021 industry materials show Generate-linked management involvement at EnviraPAC Monticello. The reviewed materials did not disclose facility-level revenue, ownership percentages, or an exact original investment date.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2021,
+    "headquarters": "Arkansas",
+    "milestones": [
+      {
+        "date": "2021",
+        "event": "Generate Capital had Generate-linked management involvement with EnviraPAC Monticello and later described its investment in the project SPV.",
+        "category": "Financing"
+      },
+      {
+        "date": "2022",
+        "event": "EnviraPAC Monticello was named one of Arkansas's Exceptional 8 in the Coolest Things Made in Arkansas contest.",
+        "category": "Other"
+      },
+      {
+        "date": "Sep 2024",
+        "event": "NCAT profiled EnviraPAC's Monticello operation converting forestry residuals into renewable engineered biochar carbon powder.",
+        "category": "Expansion"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Portfolio evidence source — Generate Capital — EnviraPAC Monticello",
+        "url": "https://generatecapital.com/investment/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Ncat — EnviraPAC Monticello",
+        "url": "https://www.ncat.org/arkansas-carbon-venture-turns-sustainable-forestry-management-residuals-into-market-ready-product/",
+        "type": "ARTICLE",
+        "purpose": "MILESTONE_EVENT"
+      },
+      {
+        "label": "Biomassmagazine — EnviraPAC Monticello",
+        "url": "https://biomassmagazine.com/directory/companies/772",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Chemicalsamerica — EnviraPAC Monticello",
+        "url": "https://chemicalsamerica.com/companies/envirapac-monticello",
+        "type": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Investment evidence source — Generate Capital — EnviraPAC Monticello",
+        "url": "https://chemicalsamerica.com/2021-Attendee-List",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Generate Capital",
+        "ownershipVehicle": "Corporate Equity",
+        "investmentYear": 2021,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi8ti0021ivhe78elelvr",
+        "name": "Generate Capital",
+        "updatedAt": "2026-07-23T16:09:18.630Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0256:envirapac-monticello:efac2570",
+    "taskIndex": 256,
+    "canonicalKey": "envirapac-monticello|united-states",
+    "capturedAt": "2026-08-29T17:28:09.933Z",
+    "databaseRevision": "revision:046809899883fc68753a0b05b9cb6f20cba941cb5202d80fdbae96191418f63e",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "58e4fd898161698cd45a2224df91dba168988a70f72a35991e8afc70ece82ff5",
+    "productionSnapshotSha256": "804196473a6e84a1b94925f2b275b8b2c024771c6a1d6aaad90c92b4d8bd18d4",
+    "targetCompanySnapshotSha256": "a97e7737ceea2c7867ae51db13ee26356eb9e900b598086abb0cb0c3445429fc",
+    "seedEntrySha256": "abcb54d3e5367d4e48ad9bd03b2a3142eb91bcb36e6b1027270c769d41c59125",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "b00be33495b62567667d4c24455e9bd39de3516d28b5fdf1eebaf4da40da040e",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "f54db27c51c5aa5ddcb1c154cba3320ce6f3755f26526ea2b3b6b6e5bbe8af09",
+      "citationsSha256": "42fb7539090c2efb5eb8fb40374f002d8bb3430437b2fdd8a640341dab88b931",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "ef201e2f3c298ecc668bc07c0693c34f639a14ae90692f126ec0356c533374db",
+    "stateSha256": "8242855b7f04f534956584d624f1eb7bbaf169c4087ff569042f4376f3e432dd",
+    "taskSnapshotSha256": "621bc1577c7a94467580c44b4fbd5621260591e1fda4da801b53aa545d414dea"
+  },
+  "contextSha256": "6184786b58a6dada0cd81c6573a527c68f278b35b0cff49d81ddf81d57ebcecb"
+}

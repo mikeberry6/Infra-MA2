@@ -1,0 +1,368 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0254:cambrian-innovation-water-asset-spvs:a5691d5c",
+  "taskIndex": 254,
+  "asOfDate": "2026-08-29",
+  "generatedAt": "2026-08-29T17:46:00.000Z",
+  "canonicalKey": "cambrian-innovation-water-asset-spvs|united-states",
+  "companyName": "Cambrian Innovation Water Asset SPVs",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER",
+    "RETIRE_OWNERSHIP"
+  ],
+  "sourceHoldingIds": [],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Correct the generic water-asset SPV record to the operating Cambrian Innovation platform. Pennybacker-affiliated funds acquired the company in November 2023 and remain the current corporate owner. Generate's 2015 involvement was historical project-level WEPA financing and ownership, not current corporate ownership, and the 2025 ING facility is debt.",
+  "evidence": [
+    {
+      "url": "https://cambrianinnovation.com/news/cambrian-a-leader-in-wastewater-treatment-water-reuse-and-energy-recovery-as-a-service-is-acquired-by-and-receives-200-million-growth-equity-commitment-from-pennybacker",
+      "purpose": "Current ownership and acquisition evidence",
+      "supports": [
+        "Pennybacker-affiliated funds acquired Cambrian on November 16, 2023",
+        "The acquired operating company is Cambrian Innovation, Inc."
+      ]
+    },
+    {
+      "url": "https://www.mintz.com/industries-practices/case-studies/mintz-helps-cambrian-innovation-generate-capital",
+      "purpose": "Historical Generate relationship",
+      "supports": [
+        "Generate participated in a project-based WEPA financing and ownership structure rather than disclosed current corporate ownership"
+      ]
+    },
+    {
+      "url": "https://cambrianinnovation.com/news/cambrian-and-ing-announce-150-million-facility",
+      "purpose": "Current operations and debt classification",
+      "supports": [
+        "Cambrian remained an active operating platform in 2025",
+        "The ING capital is a credit facility rather than ownership"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "7c091e00717488f22ee77c4f07d93ec3daf0c4612b0b6272c90c16faf25ffb12",
+  "currentCompanySnapshotSha256": "80cea9256fedffaef11791adc84a8f2d72a3672b8c31f3e815a341a155ceca40",
+  "executionLock": {
+    "taskSnapshotSha256": "6132af88769e8b841393a78c41f804dd24e59343fb412d7f56955767d6cb20b0",
+    "taskStateSha256": "c756a68f6227db748df7cb25c23e5ce921a0bf1da0c3552f6f3139770b3797fe",
+    "taskDependencySha256": "f9250e40842ab43664702974a01b77a0c9d1f10435d76290a1a6cd58d579b681",
+    "seedEntrySha256": "9073571379bcf365d65df8fbb089ff8785b84075985543cb5dc7c71b8e8cc035",
+    "dependencies": {
+      "ownershipPeriodsSha256": "70f6937977259ba18e548e8adc7c244aa437e7097ef200dd125ce84eab38fe15",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "f54db27c51c5aa5ddcb1c154cba3320ce6f3755f26526ea2b3b6b6e5bbe8af09",
+      "citationsSha256": "95448eb8e1031b75515aaa403eb5324828e5c62da8ffb4aa32424ce52c271d86",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi8ti0021ivhe78elelvr",
+        "name": "Generate Capital",
+        "updatedAt": "2026-07-23T16:09:18.630Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjfxp00xxivhe1mkhiraq",
+    "name": "Cambrian Innovation Water Asset SPVs",
+    "aliases": [],
+    "sector": "UTILITIES",
+    "subsector": "Industrial water reuse and wastewater treatment",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Cambrian Innovation Water Asset SPVs are project vehicles used to finance industrial wastewater treatment, water reuse, and energy recovery infrastructure. Their end users are industrial and food-and-beverage customers that need on-site utility services without funding treatment plants directly. The operating model is asset-heavy and contracted, with projects deployed under service-based arrangements such as Cambrian's Water-Energy Purchase Agreement structure. Public materials describe Cambrian as a provider of wastewater treatment, water reuse, and energy recovery-as-a-service, and third-party case materials note that the company had deployed more than ten industrial plants as the platform scaled. Cambrian announced a $30 million WEPA financing vehicle in November 2015; public reporting identified Generate Capital as lead investor, and Generate's own archive describes a jointly owned Cambrian project-based SPV. The reviewed materials did not disclose SPV-level revenue or current ownership percentages within the Generate-Cambrian financing structures. Cambrian itself was acquired by Pennybacker in 2023 at the corporate level.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Multiple U.S. states",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk1kb01w7ivhex5nat2ca",
+        "managerName": "Generate Capital",
+        "organizationName": "Generate Capital",
+        "fundName": null,
+        "vehicleName": "Joint SPV",
+        "stake": null,
+        "investmentYear": 2015,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplrdw0429ivheyk9z8cqr",
+        "date": "Nov 18, 2015",
+        "event": "Cambrian announced a $30 million WEPA financing vehicle; public reporting later identified Generate Capital as lead investor in the fund.",
+        "category": "FINANCING",
+        "sortDate": "2015-11-18T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplreh042aivhebggz6h2w",
+        "date": "Oct 30, 2019",
+        "event": "Cambrian announced a dedicated capital program with project finance partners to support service-based industrial water projects.",
+        "category": "FINANCING",
+        "sortDate": "2019-10-30T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplrex042bivhe6dwelc3h",
+        "date": "Nov 16, 2023",
+        "event": "Pennybacker announced the acquisition of Cambrian and a US$200 million growth commitment at the corporate level.",
+        "category": "FINANCING",
+        "sortDate": "2023-11-16T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplrfi042civhe5hr2pb1c",
+        "date": "Jun 4, 2025",
+        "event": "Cambrian announced a US$150 million credit facility with ING to support further expansion of its water and energy infrastructure offerings.",
+        "category": "FINANCING",
+        "sortDate": "2025-06-04T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpr4tm0am9ivhe55zrc6h6",
+        "label": "Cambrianinnovation — Cambrian Innovation Water Asset SPVs",
+        "url": "https://cambrianinnovation.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Cambrianinnovation company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpr4v00ambivhejj5ghoo3",
+        "label": "Mintz — Cambrian Innovation Water Asset SPVs",
+        "url": "https://www.mintz.com/industries-practices/case-studies/mintz-helps-cambrian-innovation-generate-capital",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Mintz — Cambrian Innovation Water Asset SPVs",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr4w40amdivhe52umspo0",
+        "label": "Announcement date source — Generate Capital — Cambrian Innovation Water Asset SPVs",
+        "url": "https://www.cambrianinnovation.com/news/cambrian-innovation-launches-30m-fund-to-finance-distributed-clean-water-solutions",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Generate Capital transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr4x30amfivhegm5kjpt4",
+        "label": "Investment date source — Generate Capital — Cambrian Innovation Water Asset SPVs",
+        "url": "https://www.environmental-finance.com/content/news/water-fund-manager-eyes-second-fundraise.html",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Generate Capital initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr4y30amhivhegirphqa7",
+        "label": "Ownership source — Generate Capital — Cambrian Innovation Water Asset SPVs",
+        "url": "https://generatecapital.com/investment/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Ownership source — Generate Capital — Cambrian Innovation Water Asset SPVs",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr4yy0amjivhex96jrp1z",
+        "label": "Cambrianinnovation — Cambrian Innovation Water Asset SPVs",
+        "url": "https://cambrianinnovation.com/news/cambrian-and-ing-announce-150-million-facility",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Cambrianinnovation — Cambrian Innovation Water Asset SPVs",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr5050amlivhei4xvin4v",
+        "label": "Cambrianinnovation — Cambrian Innovation Water Asset SPVs",
+        "url": "https://cambrianinnovation.com/news/cambrian-a-leader-in-wastewater-treatment-water-reuse-and-energy-recovery-as-a-service-is-acquired-by-and-receives-200-million-growth-equity-commitment-from-pennybacker",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Cambrianinnovation transaction or milestone detail",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "80cea9256fedffaef11791adc84a8f2d72a3672b8c31f3e815a341a155ceca40",
+  "afterImage": {
+    "id": "cmrxpjfxp00xxivhe1mkhiraq",
+    "name": "Cambrian Innovation",
+    "aliases": [
+      "Cambrian Innovation, Inc.",
+      "Cambrian Innovation Water Asset SPVs",
+      "Cambrian water asset SPVs",
+      "WEPA project vehicles"
+    ],
+    "sector": "UTILITIES",
+    "subsector": "Industrial water reuse and wastewater treatment",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Cambrian Innovation, Inc. develops, owns and operates distributed industrial wastewater treatment, water-reuse and energy-recovery infrastructure through service-based Water-Energy Purchase Agreement structures. Pennybacker-affiliated funds acquired Cambrian on November 16, 2023 and committed up to US$200 million of growth equity; current company materials continue to identify Pennybacker as the corporate owner. Generate Capital's earlier participation concerned project-level WEPA financing and jointly owned project vehicles beginning in 2015, not current corporate ownership, and its exact project-SPV stake and exit date were not publicly disclosed. Cambrian announced a US$150 million ING credit facility in June 2025 to expand its active infrastructure portfolio; that facility is debt. No later corporate sale or signed pending ownership transfer was identified through August 29, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://cambrianinnovation.com/",
+    "yearFounded": null,
+    "headquarters": null,
+    "lastVerifiedAt": "2026-08-29T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk1kb01w7ivhex5nat2ca",
+        "managerName": "Generate Capital",
+        "organizationName": "Generate Capital",
+        "fundName": null,
+        "vehicleName": "Unnamed project-specific WEPA financing and ownership vehicles",
+        "stake": "Historical project-level participation; exact stake not publicly disclosed",
+        "investmentYear": 2015,
+        "exitYear": null,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      },
+      {
+        "id": null,
+        "managerName": "Pennybacker Capital",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Pennybacker-affiliated funds / corporate equity",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplrdw0429ivheyk9z8cqr",
+        "date": "Nov 18, 2015",
+        "event": "Cambrian launched a US$30 million WEPA financing vehicle for distributed clean-water projects; Generate later described its participation through a jointly owned project-based SPV.",
+        "category": "FINANCING",
+        "sortDate": "2015-11-18T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.cambrianinnovation.com/news/cambrian-innovation-launches-30m-fund-to-finance-distributed-clean-water-solutions",
+          "https://www.mintz.com/industries-practices/case-studies/mintz-helps-cambrian-innovation-generate-capital"
+        ]
+      },
+      {
+        "id": "cmrxplreh042aivhebggz6h2w",
+        "date": "Oct 30, 2019",
+        "event": "Cambrian expanded its dedicated project-capital program for service-based industrial water infrastructure.",
+        "category": "FINANCING",
+        "sortDate": "2019-10-30T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplrex042bivhe6dwelc3h",
+        "date": "Nov 16, 2023",
+        "event": "Pennybacker-affiliated funds acquired Cambrian Innovation and committed up to US$200 million of growth equity.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-11-16T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://cambrianinnovation.com/news/cambrian-a-leader-in-wastewater-treatment-water-reuse-and-energy-recovery-as-a-service-is-acquired-by-and-receives-200-million-growth-equity-commitment-from-pennybacker"
+        ]
+      },
+      {
+        "id": "cmrxplrfi042civhe5hr2pb1c",
+        "date": "Jun 4, 2025",
+        "event": "Cambrian announced a US$150 million ING credit facility to expand its water and energy infrastructure portfolio.",
+        "category": "FINANCING",
+        "sortDate": "2025-06-04T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://cambrianinnovation.com/news/cambrian-and-ing-announce-150-million-facility"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpr4tm0am9ivhe55zrc6h6",
+        "label": "Cambrianinnovation — Cambrian Innovation Water Asset SPVs",
+        "url": "https://cambrianinnovation.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current Cambrian operating-company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr4v00ambivhejj5ghoo3",
+        "label": "Mintz — Cambrian Innovation Water Asset SPVs",
+        "url": "https://www.mintz.com/industries-practices/case-studies/mintz-helps-cambrian-innovation-generate-capital",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Mintz — Cambrian Innovation Water Asset SPVs",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr4w40amdivhe52umspo0",
+        "label": "Announcement date source — Generate Capital — Cambrian Innovation Water Asset SPVs",
+        "url": "https://www.cambrianinnovation.com/news/cambrian-innovation-launches-30m-fund-to-finance-distributed-clean-water-solutions",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Generate Capital transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr4x30amfivhegm5kjpt4",
+        "label": "Investment date source — Generate Capital — Cambrian Innovation Water Asset SPVs",
+        "url": "https://www.environmental-finance.com/content/news/water-fund-manager-eyes-second-fundraise.html",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Generate Capital initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr4y30amhivhegirphqa7",
+        "label": "Ownership source — Generate Capital — Cambrian Innovation Water Asset SPVs",
+        "url": "https://generatecapital.com/investment/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Ownership source — Generate Capital — Cambrian Innovation Water Asset SPVs",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr4yy0amjivhex96jrp1z",
+        "label": "Cambrianinnovation — Cambrian Innovation Water Asset SPVs",
+        "url": "https://cambrianinnovation.com/news/cambrian-and-ing-announce-150-million-facility",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Cambrianinnovation — Cambrian Innovation Water Asset SPVs",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr5050amlivhei4xvin4v",
+        "label": "Cambrianinnovation — Cambrian Innovation Water Asset SPVs",
+        "url": "https://cambrianinnovation.com/news/cambrian-a-leader-in-wastewater-treatment-water-reuse-and-energy-recovery-as-a-service-is-acquired-by-and-receives-200-million-growth-equity-commitment-from-pennybacker",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Pennybacker's November 2023 acquisition and growth-equity commitment",
+        "isPrimary": true
+      }
+    ]
+  },
+  "afterImageSha256": "79ca17079d425475c47df7dbcc52b12d5163380fdab44efd8f09e5f451b5e8bf",
+  "proposalSha256": "3750cf1f22cbbb1d7d71c53be8d4f72054748ad63ab621288189dc40b8e57597"
+}

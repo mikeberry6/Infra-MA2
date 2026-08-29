@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0258:plug-power-fuel-cell-asset-spvs:70c16186",
+  "taskIndex": 258,
+  "companyName": "Plug Power Fuel Cell Asset SPVs",
+  "asOfDate": "2026-08-29",
+  "decision": "EXCLUDED",
+  "confidence": "HIGH_WITH_NONCRITICAL_RESIDUAL_SLB_ASSET_GAPS",
+  "researchOnly": true,
+  "generatedAt": "2026-08-29T17:42:04.000Z",
+  "result": {
+    "decision": "EXCLUDED",
+    "rationale": "The generic row conflates historical sale-leaseback equipment owners with a later corporate loan. Generate Capital's 2019-2022 exposure was secured debt and was fully repaid in December 2022, with no equity conversion, foreclosure or later current ownership found. Because the stale generic row is already published as active, it must be corrected, retired and archived rather than merely receiving a terminal exclusion record.",
+    "evidence": [
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/1093691/000110465919019559/a19-7776_1ex10d1.htm",
+        "purpose": "Executed 2019 secured loan agreement showing Generate Lending's creditor role."
+      },
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/1093691/000155837023008801/plug-20230331x10q.htm",
+        "purpose": "Plug Power filing confirming repayment of the Generate secured debt in December 2022."
+      },
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/1093691/000110465917046148/a17-17059_1ex10d3.htm",
+        "purpose": "Historical sale-leaseback documentation showing separate equipment-owning SPV structures."
+      },
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/1093691/000110465926093454/plug-20260630x10q.htm",
+        "purpose": "Current exit search showing no revived Generate equity or ownership relationship."
+      }
+    ]
+  },
+  "lineage": {
+    "researchDecisionSha256": "deda7c430a328dd31b444700663451c2f0932fdcd4984813cf2a0132c30eb57e",
+    "acceptedResponseSha256": "d0f6f70563eef4c90b4717f12e6b1affb513992258542a7b03c0d7abfd3c4ef5",
+    "sourceVerificationSha256": "15fd993e59e21ae88440d44ed129c32d4cc31964151178990f3ad3fa6b619469"
+  }
+}
