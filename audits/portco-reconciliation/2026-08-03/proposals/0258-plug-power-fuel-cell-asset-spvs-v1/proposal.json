@@ -1,0 +1,318 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0258:plug-power-fuel-cell-asset-spvs:70c16186",
+  "taskIndex": 258,
+  "asOfDate": "2026-08-29",
+  "generatedAt": "2026-08-29T17:46:02.000Z",
+  "canonicalKey": "plug-power-fuel-cell-asset-spvs|united-states",
+  "companyName": "Plug Power Fuel Cell Asset SPVs",
+  "actions": [
+    "CORRECT_COMPANY",
+    "RETIRE_OWNERSHIP",
+    "REALIZE_COMPANY"
+  ],
+  "sourceHoldingIds": [],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Retire and archive the generic Plug Power SPV row because it conflates equipment sale-leaseback vehicles with a later Generate secured loan. Generate's 2019-2022 exposure was debt and was fully repaid in December 2022; no current Generate equity ownership, foreclosure or later conversion was identified.",
+  "evidence": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1093691/000110465919019559/a19-7776_1ex10d1.htm",
+      "purpose": "Debt classification",
+      "supports": [
+        "Generate Lending's 2019 exposure was an executed secured loan"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1093691/000155837023008801/plug-20230331x10q.htm",
+      "purpose": "Repayment and exit evidence",
+      "supports": [
+        "Plug Power repaid the Generate loan in December 2022"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1093691/000110465917046148/a17-17059_1ex10d3.htm",
+      "purpose": "Historical sale-leaseback structure",
+      "supports": [
+        "Separate lessor SPVs held title to identified fuel-cell equipment"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "2e2b6c145dac18747fec467e25ffd9f1fea59413cb7fa35200f48f2d51fdb00a",
+  "currentCompanySnapshotSha256": "b72ff559bc114325434b509220ce48df124112a0af0dcec06bcc8c4c9c1eea62",
+  "executionLock": {
+    "taskSnapshotSha256": "c8e18f24ec57726eaf7fe78be6cfb831c60e7058f3e0eef294b45275552a3a79",
+    "taskStateSha256": "18c8d21fc9b154ba745599736ac4090b0d41c2aa115bddf4c9219d326552d1a3",
+    "taskDependencySha256": "33c1b3590fc17836d22b625231b4cd07665c6efcf0e05fa014d865973d742077",
+    "seedEntrySha256": "9cb766d7f0cd76ec39440b6c42ade641ef15c8253f9734024ce0dc1d97c63345",
+    "dependencies": {
+      "ownershipPeriodsSha256": "ea7fabe5ce0972ae49acdddc0a9a2177b8fe5183c1c08069467f79d144755532",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "f54db27c51c5aa5ddcb1c154cba3320ce6f3755f26526ea2b3b6b6e5bbe8af09",
+      "citationsSha256": "7f284d5a26591233b39366cdf512c71e8bbba76e973925ab8f8d4926700220c2",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi8ti0021ivhe78elelvr",
+        "name": "Generate Capital",
+        "updatedAt": "2026-07-23T16:09:18.630Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjg5000y6ivheoq2q5rbl",
+    "name": "Plug Power Fuel Cell Asset SPVs",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Fuel cell and hydrogen equipment financing",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Plug Power Fuel Cell Asset SPVs are financing vehicles used to support distributed fuel cell and hydrogen-powered equipment deployments. Their end users include commercial customers adopting hydrogen-powered mobility or power solutions that prefer project-style financing rather than outright equipment purchases. The model is asset-heavy and lease or service contract based, with Generate providing capital against deployed equipment assets. Public materials state that Generate provided Plug with a US$100 million debt facility in 2019 and describe Generate as a capital partner that allowed Plug to pursue deployments without issuing the same amount of corporate equity. The reviewed materials did not disclose individual SPV ownership structures, project-level revenue, or current outstanding asset balances. The 2020 Generate facility amendment increased and repriced an existing relationship, so it was not used to reset Generate's original owner-entry year.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Multiple U.S. states",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk1pj01whivhe7hvcv2xx",
+        "managerName": "Generate Capital",
+        "organizationName": "Generate Capital",
+        "fundName": null,
+        "vehicleName": "Asset Owner",
+        "stake": null,
+        "investmentYear": 2019,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpls0r0432ivhe1lrhry61",
+        "date": "Apr 3, 2019",
+        "event": "Plug Power announced a US$100 million debt facility from Generate Capital to fund new fuel-cell project deployments.",
+        "category": "FINANCING",
+        "sortDate": "2019-04-03T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpls150433ivheu49ukegr",
+        "date": "May 7, 2020",
+        "event": "Plug Power and Generate Capital restructured and increased the existing term loan facility.",
+        "category": "FINANCING",
+        "sortDate": "2020-05-07T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpr6ae0aoiivhe7hsqpn30",
+        "label": "Generatecapital — BYD EV Fleet Asset SPVs",
+        "url": "https://generatecapital.com/technology-companies/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Generatecapital — Plug Power Fuel Cell Asset SPVs",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpr6e20aokivhec5rssd27",
+        "label": "Investment date source — Generate Capital — Plug Power Fuel Cell Asset SPVs",
+        "url": "https://www.ir.plugpower.com/press-releases/news-details/2019/Plug-Power-Announces-100-Million-Debt-Facility-from-Generate-Capital-2019-4-3/default.aspx",
+        "sourceType": "ARTICLE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Generate Capital initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr6f90aomivhezycotk7n",
+        "label": "GlobeNewsWire — Plug Power Fuel Cell Asset SPVs",
+        "url": "https://www.globenewswire.com/news-release/2019/04/03/1796055/0/en/Plug-Power-Announces-100-Million-Debt-Facility-from-Generate-Capital.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "GlobeNewswire financing or public filing",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr6gf0aooivhemddh16yg",
+        "label": "Follow-on financing source — Generate Capital — Plug Power Fuel Cell Asset SPVs",
+        "url": "https://www.ir.plugpower.com/press-releases/news-details/2020/Plug-Power-Strengthens-Financial-Flexibility-with-Restructured-and-Increased-Generate-Capital-Loan-Facility-2020-5-7/default.aspx",
+        "sourceType": "ARTICLE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Follow financing or public filing",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr6hb0aoqivheyn9feci4",
+        "label": "Plugpower — Plug Power Fuel Cell Asset SPVs",
+        "url": "https://www.plugpower.com/about-us/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Plugpower company profile",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "b72ff559bc114325434b509220ce48df124112a0af0dcec06bcc8c4c9c1eea62",
+  "afterImage": {
+    "id": "cmrxpjg5000y6ivheoq2q5rbl",
+    "name": "Plug Power Fuel Cell Asset SPVs",
+    "aliases": [
+      "Plug Power fuel-cell financing SPVs",
+      "Plug Power sale-leaseback asset SPVs"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Fuel cell and hydrogen equipment financing",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Plug Power Fuel Cell Asset SPVs is an archived generic financing construct rather than a manager-level operating portfolio company. Plug Power filings document separate sale-leaseback lessors that held title to specified fuel-cell equipment beginning in 2016-2017, followed by a US$100 million secured Generate Lending facility announced in 2019. The Generate loan was debt rather than equity and Plug Power reported repaying it in full in December 2022. Public filings reviewed through August 29, 2026 did not identify an equity conversion, foreclosure, renewed Generate ownership or a current consolidated Generate-owned Plug Power SPV platform. The exact residual disposition of every historical leased-equipment vehicle was not publicly disclosed, but that gap does not support retaining this generic row as an active direct infrastructure holding.",
+    "companyStatus": "REALIZED",
+    "recordStatus": "ARCHIVED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": null,
+    "lastVerifiedAt": "2026-08-29T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk1pj01whivhe7hvcv2xx",
+        "managerName": "Generate Capital",
+        "organizationName": "Generate Capital",
+        "fundName": null,
+        "vehicleName": "Generate Lending LLC / Generate PPL SPV I, LLC secured debt facility",
+        "stake": "Debt-only exposure; no ownership stake",
+        "investmentYear": 2019,
+        "exitYear": 2022,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpls0r0432ivhe1lrhry61",
+        "date": "2016–2017",
+        "event": "Plug Power entered equipment sale-leaseback structures in which separate lessor SPVs held title to specified deployed fuel-cell systems.",
+        "category": "FINANCING",
+        "sortDate": "2017-01-01T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1093691/000110465917046148/a17-17059_1ex10d3.htm"
+        ]
+      },
+      {
+        "id": "cmrxpls150433ivheu49ukegr",
+        "date": "Apr 2019–Dec 2022",
+        "event": "Generate Lending provided a secured debt facility in April 2019; Plug Power reported repaying the loan in full in December 2022, ending the disclosed Generate credit exposure without an equity conversion.",
+        "category": "FINANCING",
+        "sortDate": "2022-12-31T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1093691/000110465919019559/a19-7776_1ex10d1.htm",
+          "https://www.sec.gov/Archives/edgar/data/1093691/000155837023008801/plug-20230331x10q.htm"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpr6ae0aoiivhe7hsqpn30",
+        "label": "Generatecapital — BYD EV Fleet Asset SPVs",
+        "url": "https://generatecapital.com/technology-companies/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Generate technology-company financing context; not direct equity evidence",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr6e20aokivhec5rssd27",
+        "label": "Investment date source — Generate Capital — Plug Power Fuel Cell Asset SPVs",
+        "url": "https://www.ir.plugpower.com/press-releases/news-details/2019/Plug-Power-Announces-100-Million-Debt-Facility-from-Generate-Capital-2019-4-3/default.aspx",
+        "sourceType": "ARTICLE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Announcement of the 2019 Generate secured debt facility",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr6f90aomivhezycotk7n",
+        "label": "GlobeNewsWire — Plug Power Fuel Cell Asset SPVs",
+        "url": "https://www.globenewswire.com/news-release/2019/04/03/1796055/0/en/Plug-Power-Announces-100-Million-Debt-Facility-from-Generate-Capital.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "GlobeNewswire financing or public filing",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr6gf0aooivhemddh16yg",
+        "label": "Follow-on financing source — Generate Capital — Plug Power Fuel Cell Asset SPVs",
+        "url": "https://www.ir.plugpower.com/press-releases/news-details/2020/Plug-Power-Strengthens-Financial-Flexibility-with-Restructured-and-Increased-Generate-Capital-Loan-Facility-2020-5-7/default.aspx",
+        "sourceType": "ARTICLE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Follow financing or public filing",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr6hb0aoqivheyn9feci4",
+        "label": "Plugpower — Plug Power Fuel Cell Asset SPVs",
+        "url": "https://www.plugpower.com/about-us/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Plugpower company profile",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Plug Power — 2017 sale-leaseback agreement",
+        "url": "https://www.sec.gov/Archives/edgar/data/1093691/000110465917046148/a17-17059_1ex10d3.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Historical equipment-title and sale-leaseback structure",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Plug Power — 2019 Generate loan agreement",
+        "url": "https://www.sec.gov/Archives/edgar/data/1093691/000110465919019559/a19-7776_1ex10d1.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Executed secured-loan terms establishing debt-only exposure",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Plug Power — Q1 2023 Form 10-Q",
+        "url": "https://www.sec.gov/Archives/edgar/data/1093691/000155837023008801/plug-20230331x10q.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "December 2022 repayment of the Generate secured loan",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "Plug Power — Q2 2026 Form 10-Q",
+        "url": "https://www.sec.gov/Archives/edgar/data/1093691/000110465926093454/plug-20260630x10q.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Current exit search with no revived Generate ownership relationship",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "329181ba02ed605c4cc2297f5a5d2da5e401d8ad40bfa8b843795dc15ee4b3c4",
+  "proposalSha256": "c1d00795e1850990ac3804de06b9d363e337679ed6ab4a6e00c2e096fb27c79b"
+}

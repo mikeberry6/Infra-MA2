@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0256:envirapac-monticello:efac2570",
+  "taskIndex": 256,
+  "companyName": "EnviraPAC Monticello",
+  "outcome": "DEFERRED",
+  "decidedAt": "2026-08-29T17:48:00.000Z",
+  "rationale": "EnviraPAC Monticello, LLC is the verified operating facility owner/operator, but Generate disclosed a $25 million investment in an unnamed bankruptcy-remote project SPV rather than corporate equity in EnviraPAC. The SPV identity, present title chain, Generate's current ownership state and any exit date remain unresolved, so the active corporate ownership record cannot be safely changed.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0256-envirapac-monticello/attempt-1/locked-task-snapshot.json",
+    "sha256": "6362eebcd749787cffcf14849a73e1b5704b18421bc55f2be5bd99e5bf217b84"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0256-envirapac-monticello/attempt-1/application-research-decision.json",
+    "sha256": "8aee68e81ed54f176e4f300225b2297665dedfcc25d4a12f74795bee4bc200ca"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0256-envirapac-monticello/attempt-1/source-verification.json",
+    "sha256": "7d8e49e9df98027c201149a6cc958b57c41a94eb23418739a5fa242bef38d04b"
+  },
+  "evidence": [
+    {
+      "url": "https://generatecapital.com/investment/",
+      "purpose": "Generate's project-investment description and exit-search context."
+    },
+    {
+      "url": "https://www.adeq.state.ar.us/home/pdssql/p_facil_details.aspx?AFIN=2200392&AFINDash=22-00392",
+      "purpose": "Official Arkansas facility identity and operator evidence."
+    },
+    {
+      "url": "https://www.mitchellwilliamslaw.com/air-enforcement-arkansas-department-of-energy-environment-division-of-environmental-quality-and-monticello-powdered-activated-carbon-wood-production-facility-enter-into-consent-administrative-ord",
+      "purpose": "Operating-facility identity and regulatory history."
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "7c17f7713c6b840d52e4f70ce59828c4b112903905f843159514a8dda6be73c5"
+}

@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-29T17:12:45.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-08-29T18:02:00.000Z",
+  "activeBatchId": "batch-0254-0258-v1",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -3438,7 +3438,55 @@
           "reason": null
         }
       ]
+    },
+    {
+      "batchId": "batch-0254-0258-v1",
+      "state": "READY",
+      "taskIds": [
+        "ledger:0254:cambrian-innovation-water-asset-spvs:a5691d5c",
+        "ledger:0255:cleancapital-c-and-i-solar-spvs:38fec9c7",
+        "ledger:0256:envirapac-monticello:efac2570",
+        "ledger:0257:pine-gate-renewables:2f4fe856",
+        "ledger:0258:plug-power-fuel-cell-asset-spvs:70c16186"
+      ],
+      "taskIndexes": [
+        254,
+        255,
+        256,
+        257,
+        258
+      ],
+      "createdAt": "2026-08-29T17:20:23.000Z",
+      "updatedAt": "2026-08-29T18:02:00.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0254-0258-v1/batch-manifest-v3.json",
+        "sha256": "9d8eb449035183b44d76d4de5833795badca2a9a1e7ec51828b8619886968a8e"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-29T17:20:23.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-29T18:02:00.000Z",
+          "evidenceSha256": [
+            "9d8eb449035183b44d76d4de5833795badca2a9a1e7ec51828b8619886968a8e"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "ad93ce6eda52c7d4dd9e9162ec38fb96af4b0bce8a1ffbd8ea0b95e54eec9a0b"
+  "ledgerSha256": "de3f6d865cd951db0a410401a6d76e8f979fcd62d8ba79eac4310f9a30171d74"
 }

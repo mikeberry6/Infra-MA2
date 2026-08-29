@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_SEED_ATTRIBUTION_RECONCILIATION_SPEC",
+  "batchId": "batch-0254-0258-v1",
+  "batchSha256": "9d8eb449035183b44d76d4de5833795badca2a9a1e7ec51828b8619886968a8e",
+  "reconciledAt": "2026-08-29T17:59:00.000Z",
+  "sourceManifestSha256": "5d801b84c7fcac602b5a623965d0fc698a93e67c2d12c2717300a199782f5c19",
+  "rationale": "Align the seed attribution manifest with the approved Cambrian, CleanCapital and Plug Power after-images. Remove the stale Generate records for Cambrian, the merged CleanCapital project warehouse and the archived Plug Power financing construct; preserve CleanCapital's existing current Manulife record; and add Pennybacker as Cambrian's sole current corporate owner without inferring a specific Pennybacker fund.",
+  "removeRecordIds": [
+    "OFA-D3DA53B7BBA2",
+    "OFA-979C2524357C",
+    "OFA-1FB928D63F84"
+  ],
+  "upsertRecords": [
+    {
+      "recordId": "OFA-279285F87BBB",
+      "companyName": "Cambrian Innovation",
+      "country": "United States",
+      "investmentFirm": "Pennybacker Capital",
+      "currentVehicleName": "Pennybacker-affiliated funds / corporate equity",
+      "investmentYear": 2023,
+      "stake": null,
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Pennybacker-affiliated funds / corporate equity",
+      "attributionConfidence": null,
+      "attributionRationale": "Cambrian's direct acquisition announcement identifies Pennybacker-affiliated funds as the November 2023 corporate acquirer and current company materials continue that ownership attribution. No specific Pennybacker managed fund is publicly named, so the disclosed vehicle description is retained without a curated fund link.",
+      "evidenceUrls": [
+        "https://cambrianinnovation.com/news/cambrian-a-leader-in-wastewater-treatment-water-reuse-and-energy-recovery-as-a-service-is-acquired-by-and-receives-200-million-growth-equity-commitment-from-pennybacker",
+        "https://cambrianinnovation.com/"
+      ]
+    }
+  ],
+  "specSha256": "163c6fffd1c64a07b2ebbe7b855f842c03627a85cff7f9f0672601ce1157bf99"
+}

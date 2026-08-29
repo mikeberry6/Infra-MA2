@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0255:cleancapital-c-and-i-solar-spvs:38fec9c7",
+  "taskIndex": 255,
+  "companyName": "CleanCapital C&I Solar SPVs",
+  "asOfDate": "2026-08-29",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH_AFTER_CANONICAL_TASK_RECONCILIATION",
+  "researchOnly": true,
+  "generatedAt": "2026-08-29T17:42:01.000Z",
+  "result": {
+    "decision": "PROPOSED_CORRECTION",
+    "rationale": "Merge the generic C&I Solar SPV record into the already verified CleanCapital Holdings, LLC canonical company from completed task 136. Generate's 2017 role was a project-acquisition warehouse and sell-down structure, not proven current corporate equity. Preserve that history as a former project-level period while retaining the canonical current Manulife ownership and former BlackRock ownership established by task 136.",
+    "evidence": [
+      {
+        "url": "https://cleancapital.com/about/our-story/",
+        "purpose": "Official company identity and platform history."
+      },
+      {
+        "url": "https://cleancapital.com/resources/cleancapital-secures-300-million-commitment-from-manulife-investment-management-acquires-63-megawatts-of-operating-solar-projects/",
+        "purpose": "Direct company evidence for Manulife's platform investment."
+      },
+      {
+        "url": "https://www.manulifeim.com/institutional/global/en/about-us/press-releases/cleancapital-receives-up-to-500-million-additional-commitment-from-manulife-investment-management",
+        "purpose": "Direct current-owner evidence for Manulife's continuing CleanCapital commitment."
+      },
+      {
+        "url": "https://generatecapital.com/investment/",
+        "purpose": "Generate investment history and exit-search context for the project warehouse."
+      }
+    ]
+  },
+  "orchestratorAdjudication": {
+    "reviewedCanonicalTaskId": "ledger:0136:cleancapital-holdings-llc:f7156fe1",
+    "canonicalCompanyId": "cmrxpj8ua00mzivheaeu8kmvz",
+    "retiredDuplicateCompanyId": "cmrxpjfy800xyivhefxypfjko",
+    "basis": "Completed task 136 supplies the authoritative current platform cap table; task 255 supplies the duplicate identity and historical Generate project-warehouse period."
+  },
+  "lineage": {
+    "researchDecisionSha256": "038249853c6ae0ea043abca776040f93b309622dede750356735cc9503be9b24",
+    "acceptedResponseSha256": "dc554cd48a247cba4c6b97e6765730283b1ff843efdf30b642e17b025d6999a8",
+    "sourceVerificationSha256": "ad6f41fce2c5e9d4945f287d70afc5c0473edcbd6eb6c73c2cd07571e2765ffa"
+  }
+}

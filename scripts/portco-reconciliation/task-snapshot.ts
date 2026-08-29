@@ -59,6 +59,7 @@ interface FundDependencyRecord {
 export interface TaskSnapshotDependencySpec {
   fundNames: string[];
   organizationNames: string[];
+  reviewedCanonicalTaskId?: string;
 }
 
 export function verifyTaskSnapshotDependencySpec(input: unknown): TaskSnapshotDependencySpec {
@@ -67,8 +68,10 @@ export function verifyTaskSnapshotDependencySpec(input: unknown): TaskSnapshotDe
   }
   const record = input as Record<string, unknown>;
   const keys = Object.keys(record).sort();
-  if (JSON.stringify(keys) !== JSON.stringify(["fundNames", "organizationNames"])) {
-    throw new Error("Task dependency spec must contain only fundNames and organizationNames");
+  const allowedKeys = ["fundNames", "organizationNames", "reviewedCanonicalTaskId"];
+  if (keys.some((key) => !allowedKeys.includes(key))
+    || !keys.includes("fundNames") || !keys.includes("organizationNames")) {
+    throw new Error("Task dependency spec must contain fundNames and organizationNames and may name one reviewed canonical task");
   }
   const names = (field: "fundNames" | "organizationNames"): string[] => {
     const value = record[field];
@@ -81,9 +84,17 @@ export function verifyTaskSnapshotDependencySpec(input: unknown): TaskSnapshotDe
     }
     return normalized.sort((left, right) => left.localeCompare(right, "en"));
   };
+  const reviewedCanonicalTaskId = record.reviewedCanonicalTaskId;
+  if (reviewedCanonicalTaskId !== undefined
+    && (typeof reviewedCanonicalTaskId !== "string" || !reviewedCanonicalTaskId.trim())) {
+    throw new Error("Task dependency spec reviewedCanonicalTaskId must be a non-empty string");
+  }
   return {
     fundNames: names("fundNames"),
     organizationNames: names("organizationNames"),
+    ...(typeof reviewedCanonicalTaskId === "string"
+      ? { reviewedCanonicalTaskId: reviewedCanonicalTaskId.trim() }
+      : {}),
   };
 }
 
@@ -154,7 +165,7 @@ export type TaskSnapshotTargetResolution =
   | {
     method: "REVIEWED_MERGE_CANONICAL_TARGET";
     targetCompanyId: string;
-    linkedQueueTaskId: null;
+    linkedQueueTaskId: string | null;
     immutableRetiredCompanyId: string;
   }
   | {
@@ -220,6 +231,8 @@ export function resolveTaskSnapshotTarget(input: {
   queueEntry: ProposalQueueIndexArtifact["entries"][number];
   queueEntries: ProposalQueueIndexArtifact["entries"];
   reviewedTargetCompanyId?: string;
+  reviewedCanonicalTaskId?: string;
+  completedTaskIds?: readonly string[];
 }): TaskSnapshotTargetResolution {
   const productionIds = input.queueEntry.productionCompanyIds;
   if (productionIds.length > 1) {
@@ -257,14 +270,40 @@ export function resolveTaskSnapshotTarget(input: {
         && input.queueEntry.seedKeys.length === 1
         && input.queueEntry.candidateCanonicalKeys.length === 0
         && reviewedMixedMergeCandidates.length === 1;
-      const reviewedMergeTarget = reviewedRepoOnlyMergeTarget || reviewedMixedHoldingMergeTarget;
+      const reviewedCanonicalQueueEntry = input.reviewedCanonicalTaskId
+        ? input.queueEntries.find((candidate) => candidate.taskId === input.reviewedCanonicalTaskId)
+        : undefined;
+      const sourceRoot = normalizedCompanyBaseTokens(input.queueEntry.companyName)[0] ?? "";
+      const canonicalRoot = reviewedCanonicalQueueEntry
+        ? normalizedCompanyBaseTokens(reviewedCanonicalQueueEntry.companyName)[0] ?? ""
+        : "";
+      const reviewedCompletedCanonicalTarget = Boolean(
+        reviewedCanonicalQueueEntry
+        && reviewedCanonicalQueueEntry.taskIndex < input.queueEntry.taskIndex
+        && input.completedTaskIds?.includes(reviewedCanonicalQueueEntry.taskId)
+        && reviewedCanonicalQueueEntry.productionCompanyIds.length === 1
+        && reviewedCanonicalQueueEntry.productionCompanyIds[0] === reviewedTargetCompanyId
+        && normalizedIdentity(reviewedCanonicalQueueEntry.country) === normalizedIdentity(input.queueEntry.country)
+        && input.queueEntry.queueKind === "CANONICAL_COMPANY"
+        && input.queueEntry.sourceRepoOnlyIds.length > 0
+        && input.queueEntry.sourceHoldingIds.length === 0
+        && input.queueEntry.seedKeys.length === 1
+        && input.queueEntry.actionScopes.ownership.includes("RETIRE_OWNERSHIP")
+        && sourceRoot.length >= 6
+        && sourceRoot === canonicalRoot,
+      );
+      const reviewedMergeTarget = reviewedRepoOnlyMergeTarget
+        || reviewedMixedHoldingMergeTarget
+        || reviewedCompletedCanonicalTarget;
       if (!reviewedMergeTarget) {
         throw new Error("Reviewed target company cannot replace the immutable queue target");
       }
       return {
         method: "REVIEWED_MERGE_CANONICAL_TARGET",
         targetCompanyId: reviewedTargetCompanyId,
-        linkedQueueTaskId: null,
+        linkedQueueTaskId: reviewedCompletedCanonicalTarget
+          ? reviewedCanonicalQueueEntry!.taskId
+          : null,
         immutableRetiredCompanyId: immutableTargetCompanyId,
       };
     }
@@ -835,6 +874,10 @@ export async function buildTaskSnapshotContext(input: {
     queueEntry,
     queueEntries: input.proposalQueue.entries,
     reviewedTargetCompanyId: input.reviewedTargetCompanyId,
+    reviewedCanonicalTaskId: input.dependencySpec?.reviewedCanonicalTaskId,
+    completedTaskIds: input.manifest.tasks
+      .filter((candidate) => candidate.status === "COMPLETED")
+      .map((candidate) => candidate.taskId),
   });
   const targetId = targetResolution.targetCompanyId;
   const seedRetirementCandidates = resolveSeedRetirementCandidates({
