@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-08-29",
+  "ledgerSha256": "672fe277e1a08d78bd5721a9a0040158e8a32fa99f975d188721d5f562617a3a",
+  "sourceSnapshotSha256": "5de4f764c6151384ba2d1228793a87b72b826b44ec14e1d4053b68c31a78cb5e",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 2,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 0,
+      "UNRESOLVED": 1
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  },
+  "expectedMutationCount": 3,
+  "mutations": [
+    {
+      "recordId": "OFA-20B17512FB81",
+      "ownershipPeriodId": "cmtef467x000tv32benn3udqt",
+      "companyName": "EdgeConneX",
+      "country": "United States",
+      "investmentFirm": "EQT Infrastructure",
+      "currentVehicleName": "EQT Infrastructure V",
+      "databaseVehicleName": "EQT Infrastructure V",
+      "investmentYear": 2021,
+      "stake": "Co-investment alongside EQT Infrastructure IV; exact percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "EQT Infrastructure V",
+        "attributionConfidence": null,
+        "attributionRationale": "EQT directly announced that EQT Infrastructure V would co-invest in EdgeConneX alongside EQT Infrastructure IV. The exact percentage and closing date are not public, and no curated Fund V record is linked."
+      },
+      "evidenceUrls": [
+        "https://www.prnewswire.com/news-releases/eqt-infrastructure-v-to-co-invest-in-edgeconnex-301359016.html",
+        "https://eqtgroup.com/about/current-portfolio/edgeconnex"
+      ]
+    },
+    {
+      "recordId": "OFA-BDA26D90D266",
+      "ownershipPeriodId": "cmtef46e6000uv32b03e6dkzd",
+      "companyName": "EdgeConneX",
+      "country": "United States",
+      "investmentFirm": "EQT Infrastructure",
+      "currentVehicleName": "EQT AI Infrastructure Strategy",
+      "databaseVehicleName": null,
+      "investmentYear": 2026,
+      "stake": "Minority interest acquired from EQT Infrastructure IV and V; exact percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": "EQT AI Infrastructure Strategy",
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": "EQT AI Infrastructure Strategy"
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "EQT AI Infrastructure Strategy",
+        "attributionConfidence": null,
+        "attributionRationale": "EQT's 2026 reporting directly identifies its AI Infrastructure strategy's minority EdgeConneX acquisition from EQT Infrastructure IV and V. The ownership period links to the existing curated EQT AI Infrastructure Strategy record."
+      },
+      "evidenceUrls": [
+        "https://eqtgroup.com/news/eqt-introduces-ai-infrastructure-strategy-to-help-build-the-foundation-of-the-ai-economy-2026-04-21",
+        "https://eqtgroup.com/news/eqt-ab-publ-half-year-report-2026-2026-07-17",
+        "https://eqtgroup.com/about/current-portfolio/edgeconnex"
+      ]
+    },
+    {
+      "recordId": "OFA-B86B5FFEB7CA",
+      "ownershipPeriodId": "cmtef46h8000vv32b2a2f0c3y",
+      "companyName": "EdgeConneX",
+      "country": "United States",
+      "investmentFirm": "Sixth Street",
+      "currentVehicleName": "Sixth Street-managed funds; exact vehicles not publicly disclosed",
+      "databaseVehicleName": "Sixth Street-managed funds; exact vehicles not publicly disclosed",
+      "investmentYear": 2024,
+      "stake": "Minority; exact percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Sixth Street directly supports its 2024 minority investment and continues to list EdgeConneX, but the specific managed funds and percentages are not publicly disclosed. No fund is inferred or linked."
+      },
+      "evidenceUrls": [
+        "https://sixthstreet.com/investment_announce/eqt-welcomes-sixth-street-as-strategic-investor-in-edgeconnex/",
+        "https://sixthstreet.com/real-estate/"
+      ]
+    }
+  ],
+  "manifestSha256": "c0f0112ffc103f6a3586a26960280632bf5bd417a0853e5aa3f89b2776da2d4b"
+}
