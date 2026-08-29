@@ -1,0 +1,119 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:batch:apply
+> npx tsx scripts/portco-reconciliation/batch-apply-cli.ts --batch-manifest=audits/portco-reconciliation/2026-08-23/batches/batch-0254-0258-v1/batch-manifest-v3.json --batch-sha256=9d8eb449035183b44d76d4de5833795badca2a9a1e7ec51828b8619886968a8e
+
+(node:3573) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "BATCH_DRY_RUN",
+  "batchId": "batch-0254-0258-v1",
+  "batchSha256": "9d8eb449035183b44d76d4de5833795badca2a9a1e7ec51828b8619886968a8e",
+  "databaseWrites": false,
+  "seedWrites": false,
+  "plans": [
+    {
+      "companyName": "Cambrian Innovation",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to name, aliases, description, website, headquarters, lastVerifiedAt, milestones, citations."
+        },
+        {
+          "kind": "ADD_OWNER",
+          "relationIds": [],
+          "detail": "Add 1 approved ownership period(s)."
+        },
+        {
+          "kind": "RETIRE_OWNERSHIP",
+          "relationIds": [
+            "cmrxpk1kb01w7ivhex5nat2ca"
+          ],
+          "detail": "Retire 1 ownership period(s) without deleting history."
+        }
+      ],
+      "changedFields": [
+        "aliases",
+        "citations",
+        "description",
+        "headquarters",
+        "lastVerifiedAt",
+        "milestones",
+        "name",
+        "ownershipPeriods",
+        "website"
+      ],
+      "retiredCompanyIds": []
+    },
+    {
+      "companyName": "CleanCapital Holdings, LLC",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to aliases, description, lastVerifiedAt, milestones, citations."
+        },
+        {
+          "kind": "RETIRE_OWNERSHIP",
+          "relationIds": [
+            "cmrxpk1kw01w8ivheehi57un0"
+          ],
+          "detail": "Retire 1 ownership period(s) without deleting history."
+        },
+        {
+          "kind": "MERGE_COMPANIES",
+          "relationIds": [
+            "cmrxpjfy800xyivhefxypfjko"
+          ],
+          "detail": "merge 1 production duplicate(s)"
+        }
+      ],
+      "changedFields": [
+        "aliases",
+        "citations",
+        "description",
+        "lastVerifiedAt",
+        "milestones",
+        "ownershipPeriods",
+        "redirects"
+      ],
+      "retiredCompanyIds": [
+        "cmrxpjfy800xyivhefxypfjko"
+      ]
+    },
+    {
+      "companyName": "Plug Power Fuel Cell Asset SPVs",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to aliases, description, recordStatus, headquarters, lastVerifiedAt, milestones, citations."
+        },
+        {
+          "kind": "RETIRE_OWNERSHIP",
+          "relationIds": [
+            "cmrxpk1pj01whivhe7hvcv2xx"
+          ],
+          "detail": "Retire 1 ownership period(s) without deleting history."
+        },
+        {
+          "kind": "REALIZE_COMPANY",
+          "relationIds": [],
+          "detail": "Mark the company realized after all active ownership has ended."
+        }
+      ],
+      "changedFields": [
+        "aliases",
+        "citations",
+        "companyStatus",
+        "description",
+        "headquarters",
+        "lastVerifiedAt",
+        "milestones",
+        "ownershipPeriods",
+        "recordStatus"
+      ],
+      "retiredCompanyIds": []
+    }
+  ]
+}
