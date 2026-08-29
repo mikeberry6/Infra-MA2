@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_RELEASE_VERIFICATION",
+  "verifiedAt": "2026-08-29T20:32:27.645Z",
+  "manifestSha256": "854c5623b15e995b24fe59064edda267054db7b99776bda6620773b04c49dd21",
+  "approvalSha256": "07f85981de9701e9c83b724df4770fcc5572d517045b1536c52eed9a2e00cea3",
+  "receiptSha256": "fa9b123df6cd0a5874dc2c86f4f91bd50fd1fc32436b56329e2c5ebe381d5e99",
+  "mutationCount": 12,
+  "changed": 12,
+  "verificationScope": "BOUNDED_STATUS_SAMPLE",
+  "sampledRows": [
+    {
+      "recordId": "OFA-12F7EE14DF2D",
+      "companyId": "cmrxpjgc300yjivhejf598csv",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjgc300yjivhejf598csv?verification=854c5623b15e995b24fe59064edda267054db7b99776bda6620773b04c49dd21",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "GIC Special Investment Pte. Ltd. via BBVA México trust F/411215-7",
+        "attributionConfidence": null,
+        "attributionRationale": "RCO's annual report and transaction evidence disclose GIC's acquisition entity and current economic interest. The materials do not identify a commingled GIC fund, so no curated fund link is inferred."
+      }
+    },
+    {
+      "recordId": "OFA-F4579F85FCD1",
+      "companyId": "cmrxpjgc300yjivhejf598csv",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjgc300yjivhejf598csv?verification=854c5623b15e995b24fe59064edda267054db7b99776bda6620773b04c49dd21",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Abertis' accounts and RCO reporting disclose Abertis' current 53.12% economic interest through IVM and the BBVA trust. This is strategic corporate ownership rather than a managed infrastructure fund."
+      }
+    },
+    {
+      "recordId": "OFA-11BF3546A50E",
+      "companyId": "cmrxpjggs00ynivheegnza3qj",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjggs00ynivheegnza3qj?verification=854c5623b15e995b24fe59064edda267054db7b99776bda6620773b04c49dd21",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": "Searchlight Fiber Alliance",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Searchlight Fiber Alliance",
+        "attributionConfidence": null,
+        "attributionRationale": "The investment announcement and FCC consent record identify Searchlight Fiber Alliance and the Topco/Holdco control chain. The curated Searchlight Fiber Alliance record matches that disclosed vehicle."
+      }
+    }
+  ],
+  "passed": true
+}
