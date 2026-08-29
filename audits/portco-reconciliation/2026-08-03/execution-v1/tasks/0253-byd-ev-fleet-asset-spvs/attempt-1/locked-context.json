@@ -1,0 +1,232 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0253:byd-ev-fleet-asset-spvs:e914a6d4",
+  "taskIndex": 253,
+  "companyName": "BYD EV Fleet Asset SPVs",
+  "generatedAt": "2026-08-29T16:22:06.050Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0253-byd-ev-fleet-asset-spvs/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 253,
+    "taskId": "ledger:0253:byd-ev-fleet-asset-spvs:e914a6d4",
+    "canonicalKey": "byd-ev-fleet-asset-spvs|united-states",
+    "companyName": "BYD EV Fleet Asset SPVs",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 46,
+    "managers": [
+      "Generate Capital"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "RETIRE_OWNERSHIP"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "046-generate-capital:repo-only:001:byd-ev-fleet-asset-spvs"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjfxa00xwivheazgpv3e4"
+    ],
+    "seedKeys": [
+      "byd ev fleet asset spvs|United States"
+    ],
+    "evidenceUrls": [
+      "https://generatecapital.com/technology-companies/",
+      "https://www.metro-magazine.com/news/byd-partners-to-launch-first-ever-electric-bus-leasing-program"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Generate Capital PROPOSED_RETIRE: Legacy asset-level leasing SPVs without current platform-level ownership evidence.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjfxa00xwivheazgpv3e4",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "byd-ev-fleet-asset-spvs|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjfxa00xwivheazgpv3e4",
+    "name": "BYD EV Fleet Asset SPVs",
+    "aliases": [],
+    "sector": "TRANSPORTATION",
+    "subsector": "Electric bus and fleet leasing",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "BYD EV Fleet Asset SPVs are financing and ownership vehicles used to support electric bus deployments in the United States. Their end users are public and private fleet operators that need battery-electric buses without paying the full upfront purchase price. The model is asset-heavy and lease-based, with Generate funding vehicle assets and BYD providing equipment and commercial support. Public disclosures state that the BYD-Generate program launched in 2018 as the first electric bus leasing program of its kind in the United States and carried an initial capital commitment of US$200 million. The reviewed materials did not disclose individual SPV ownership structures, lease-level revenue, or current deployment volumes for each vehicle pool. Generate's role is that of financier and asset owner within the leasing structure, while BYD supports vehicle supply and market access.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Multiple U.S. states",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk1js01w6ivhed9t1fnk2",
+        "managerName": "Generate Capital",
+        "organizationName": "Generate Capital",
+        "fundName": null,
+        "vehicleName": "Asset Owner",
+        "stake": null,
+        "investmentYear": 2018,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplr9s0427ivheb0363tu3",
+        "date": "2018",
+        "event": "Generate Capital and BYD structured the program to reduce upfront costs for public and private fleet customers adopting electric buses.",
+        "category": "FINANCING",
+        "sortDate": "2018-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplrac0428ivheqbkgo597",
+        "date": "Jul 10, 2018",
+        "event": "Generate Capital and BYD announced a joint venture with an initial $200 million allocation for the U.S. electric bus leasing program.",
+        "category": "FINANCING",
+        "sortDate": "2018-07-10T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpr4nx0am3ivhe6q7f5eae",
+        "label": "Generatecapital — BYD EV Fleet Asset SPVs",
+        "url": "https://generatecapital.com/technology-companies/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Generatecapital — BYD EV Fleet Asset SPVs",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpr4rl0am5ivhe8t13hxfo",
+        "label": "Announcement date source — Generate Capital — BYD EV Fleet Asset SPVs",
+        "url": "https://www.metro-magazine.com/news/byd-partners-to-launch-first-ever-electric-bus-leasing-program",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Generate Capital transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr4sg0am7ivhebwvsjxyf",
+        "label": "En — BYD EV Fleet Asset SPVs",
+        "url": "https://en.byd.com/page/59/?s=BYD",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "En — BYD EV Fleet Asset SPVs",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "BYD EV Fleet Asset SPVs",
+    "investmentFirm": "Generate Capital",
+    "sector": "Transportation",
+    "subsector": "Electric bus and fleet leasing",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Asset Owner",
+    "description": "BYD EV Fleet Asset SPVs are financing and ownership vehicles used to support electric bus deployments in the United States. Their end users are public and private fleet operators that need battery-electric buses without paying the full upfront purchase price. The model is asset-heavy and lease-based, with Generate funding vehicle assets and BYD providing equipment and commercial support. Public disclosures state that the BYD-Generate program launched in 2018 as the first electric bus leasing program of its kind in the United States and carried an initial capital commitment of US$200 million. The reviewed materials did not disclose individual SPV ownership structures, lease-level revenue, or current deployment volumes for each vehicle pool. Generate's role is that of financier and asset owner within the leasing structure, while BYD supports vehicle supply and market access.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2018,
+    "headquarters": "Multiple U.S. states",
+    "milestones": [
+      {
+        "date": "2018",
+        "event": "Generate Capital and BYD structured the program to reduce upfront costs for public and private fleet customers adopting electric buses.",
+        "category": "Financing"
+      },
+      {
+        "date": "Jul 10, 2018",
+        "event": "Generate Capital and BYD announced a joint venture with an initial $200 million allocation for the U.S. electric bus leasing program.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Generatecapital — BYD EV Fleet Asset SPVs",
+        "url": "https://generatecapital.com/technology-companies/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Announcement date source — Generate Capital — BYD EV Fleet Asset SPVs",
+        "url": "https://www.metro-magazine.com/news/byd-partners-to-launch-first-ever-electric-bus-leasing-program",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "En — BYD EV Fleet Asset SPVs",
+        "url": "https://en.byd.com/page/59/?s=BYD",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Generate Capital",
+        "ownershipVehicle": "Asset Owner",
+        "investmentYear": 2018,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi8ti0021ivhe78elelvr",
+        "name": "Generate Capital",
+        "updatedAt": "2026-07-23T16:09:18.630Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0253:byd-ev-fleet-asset-spvs:e914a6d4",
+    "taskIndex": 253,
+    "canonicalKey": "byd-ev-fleet-asset-spvs|united-states",
+    "capturedAt": "2026-08-29T16:22:06.050Z",
+    "databaseRevision": "revision:70a11fa33d7de7526d0c507aa261de79274bf7484318cccc514f4201cd3e91bc",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "075ff46a73d819c80f2c9123041ffb28f01565fc09a2382a57e933ef465ea266",
+    "productionSnapshotSha256": "afc4555a604aebe187f7a5e9564ce879079e41bb9ca2a7941da17c21f41f5663",
+    "targetCompanySnapshotSha256": "8979d5c5f9637ee1010c41cc978c22f8edb7ce0e55baedb7b3e6877eef88904f",
+    "seedEntrySha256": "2f93aaceeb1e09c73c1466b441e598b1f135613ba014140c1709ebd01bb0a14f",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "537e158f4636e96a81ce66e6a06b5ccb4b9eee3051f7b291f56cc5129b44978b",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "f54db27c51c5aa5ddcb1c154cba3320ce6f3755f26526ea2b3b6b6e5bbe8af09",
+      "citationsSha256": "0421ea39811c62cdb129d8c4c8be3df0404325b5e72f86f7f8f78668f1c3f4be",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "04b106125d31dac204c26ec628a83ed1c6d191c30621edde2dc200c77233232b",
+    "stateSha256": "e0c858429df9d38314f285905252716a41229f1ad4adf3acb9043f090f2601ff",
+    "taskSnapshotSha256": "dd10151862fcda9330925ba9b0bf9947550076a07fd40407f84b954e72cb2d58"
+  },
+  "contextSha256": "b589bfeb8ffd7ccc682976fb1738cd205fdf7cc95b68f10a95e1e0fa9b6f0961"
+}

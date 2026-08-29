@@ -1,0 +1,191 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0251:montecito-medical-outpatient-portfolio:18c48dc3",
+  "taskIndex": 251,
+  "companyName": "Montecito Medical Outpatient Portfolio",
+  "generatedAt": "2026-08-29T16:22:02.063Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0251-montecito-medical-outpatient-portfolio/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 251,
+    "taskId": "ledger:0251:montecito-medical-outpatient-portfolio:18c48dc3",
+    "canonicalKey": "montecito-medical-outpatient-portfolio|united-states",
+    "companyName": "Montecito Medical Outpatient Portfolio",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 45,
+    "managers": [
+      "Fengate Asset Management"
+    ],
+    "actionScopes": {
+      "company": [
+        "CORRECT_COMPANY"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "045-fengate-asset-management:holding:018:montecito-medical-outpatient-portfolio"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjfsr00xnivhemb529yxo"
+    ],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://fengate.com/news/fengate-acquires-montecito-medical-outpatient-portfolio/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The company appears on only one repository side; reconcile production and evaluated seed through an individually approved correction.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjfsr00xnivhemb529yxo",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "montecito-medical-outpatient-portfolio|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjfsr00xnivhemb529yxo",
+    "name": "Montecito Medical Outpatient Portfolio",
+    "aliases": [],
+    "sector": "SOCIAL_INFRA",
+    "subsector": "Medical outpatient facilities",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "U.S. Medical Outpatient Facilities Portfolio (Montecito JV) is a portfolio of medical outpatient properties in the United States. Its end users are patients and physician practices requiring ambulatory surgery, radiology, oncology, orthopedics, and related outpatient services. The model is asset-heavy and healthcare-oriented, with economics supported by specialized outpatient real estate rather than general office tenancy. Fengate disclosed in 2025 that the acquisition covered 16 facilities serving communities across 10 states and formed part of a healthcare portfolio exceeding 80 facilities and more than US$1 billion in assets. The reviewed materials did not disclose property-level revenue or current ownership percentages within the joint venture. Fengate completed the acquisition alongside Montecito Medical in 2025 on behalf of Fengate Infrastructure Fund IV and affiliated entities.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Ten U.S. states (not publicly disclosed.)",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk1ct01vxivhefediabkg",
+        "managerName": "Fengate Asset Management",
+        "organizationName": "Fengate Asset Management",
+        "fundName": "Fengate Infrastructure Fund IV",
+        "vehicleName": "Fengate Infrastructure Fund IV",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplqmc041divheaf7tbcph",
+        "date": "2025",
+        "event": "Fengate stated that the properties delivered high-acuity outpatient services across 10 states.",
+        "category": "OTHER",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplqmx041eivhe1mcwn4r1",
+        "date": "2025",
+        "event": "The transaction was completed alongside Montecito Medical and expanded Fengate's healthcare portfolio beyond 80 facilities.",
+        "category": "EXPANSION",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplqng041fivhe3lqeke95",
+        "date": "Oct 30, 2025",
+        "event": "Fengate announced the acquisition of 16 medical outpatient facilities in the United States.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-10-30T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpr3mz0akdivheibqvb3xa",
+        "label": "Announcement date source — Fengate Asset Management — U.S. Medical Outpatient Facilities Portfolio (Montecito JV)",
+        "url": "https://fengate.com/news/fengate-acquires-16-medical-outpatient-facilities-in-the-united-states",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Fengate Asset Management transaction announcement",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpr3o00akfivhe9pf3hvik",
+        "label": "GlobeNewsWire — U.S. Medical Outpatient Facilities Portfolio (Montecito JV)",
+        "url": "https://www.globenewswire.com/news-release/2025/10/30/3177631/0/en/Fengate-acquires-16-medical-outpatient-facilities-in-the-United-States.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "GlobeNewswire transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr3oy0akhivhe6l4uyay2",
+        "label": "Montecitomac — U.S. Medical Outpatient Facilities Portfolio (Montecito JV)",
+        "url": "https://montecitomac.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Montecitomac company profile",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj2c800dcivhe55uomdsj",
+        "fundName": "Fengate Infrastructure Fund IV",
+        "managerId": "cmrxpi8j5001yivhenuypjkuy",
+        "updatedAt": "2026-07-23T16:09:56.888Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi8j5001yivhenuypjkuy",
+        "name": "Fengate Asset Management",
+        "updatedAt": "2026-07-23T16:09:18.257Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0251:montecito-medical-outpatient-portfolio:18c48dc3",
+    "taskIndex": 251,
+    "canonicalKey": "montecito-medical-outpatient-portfolio|united-states",
+    "capturedAt": "2026-08-29T16:22:02.063Z",
+    "databaseRevision": "revision:dcbc6c51eddbe6a80f5ba7267e702e32e03f747d60dba347c9ce0373e6f6bcac",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "48cbc914bab00aebe3ec719fefdb285185a1328a047f408ae3fa77d86102682e",
+    "productionSnapshotSha256": "ae3f2875e9bff5760dee385f9c26128197cdd9fb36f0955a81628ac93c6b809f",
+    "targetCompanySnapshotSha256": "6e6169d00713daf1241e92dbe5f211448012f0e0320192856ec13c3239b827ff",
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "299fae990c95eb2c20ec625d67bfc77344f6a6d11cbd2d1428243b1a74205935",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "65e1b2747154ba1f1ef5ede31c629db026308567e75b294f62a8055419ffe447",
+      "organizationsSha256": "bbd093e87197f60b3133c00d31e7622cc16bde8c3f3d4f9ef51b24f56bec8503",
+      "citationsSha256": "ff47353ba7ed1f76d2ee765d156988bf974f3608ef99976655f8fc4493b1903c",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "17e98a25cd7974fbd3b3dab515c296b7ca992ce7d054e0084dd1a847aea3450a",
+    "stateSha256": "dfebe16896d623c0b2736d998026a6e6fa1bd8bd50fb0843656d3f2282a64558",
+    "taskSnapshotSha256": "48212b0048fdd0c838edc63c47017fbaee3626d7ad11854306bf238add41e21d"
+  },
+  "contextSha256": "d2429c214f80ba96689183f4fb51314cafb58293ba1873bfe99e23e3121ee195"
+}

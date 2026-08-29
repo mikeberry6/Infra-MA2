@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0249:jupiter-medical-center-campus:b484d033",
+  "taskIndex": 249,
+  "companyName": "Jupiter Medical Center Campus",
+  "generatedAt": "2026-08-29T16:21:58.446Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0249-jupiter-medical-center-campus/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 249,
+    "taskId": "ledger:0249:jupiter-medical-center-campus:b484d033",
+    "canonicalKey": "jupiter-medical-center-campus|united-states",
+    "companyName": "Jupiter Medical Center Campus",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 45,
+    "managers": [
+      "Fengate Asset Management"
+    ],
+    "actionScopes": {
+      "company": [
+        "CREATE_COMPANY"
+      ],
+      "ownership": [
+        "ADD_PENDING_TRANSACTION"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "045-fengate-asset-management:holding:035:jupiter-medical-center-campus"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://fengate.com/news/fengate-and-stonemont-financial-group-break-ground-on-jupiter-medical-center-campus/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "No exact normalized production or seed match exists. Census evidence supports a new canonical company with 1 manager holding record(s).",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "jupiter-medical-center-campus|united-states",
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj2c800dcivhe55uomdsj",
+        "fundName": "Fengate Infrastructure Fund IV",
+        "managerId": "cmrxpi8j5001yivhenuypjkuy",
+        "updatedAt": "2026-07-23T16:09:56.888Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi8j5001yivhenuypjkuy",
+        "name": "Fengate Asset Management",
+        "updatedAt": "2026-07-23T16:09:18.257Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0249:jupiter-medical-center-campus:b484d033",
+    "taskIndex": 249,
+    "canonicalKey": "jupiter-medical-center-campus|united-states",
+    "capturedAt": "2026-08-29T16:21:58.446Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "92c015232e6556a983959390f31d5b5e728791fa7ee7f7fcb136db44ac41d8f3",
+    "productionSnapshotSha256": "132fc16b338645baf576f5d232c8ba31a3386da99eed8c16ba3b2b3c1f2381a3",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "65e1b2747154ba1f1ef5ede31c629db026308567e75b294f62a8055419ffe447",
+      "organizationsSha256": "bbd093e87197f60b3133c00d31e7622cc16bde8c3f3d4f9ef51b24f56bec8503",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "e4f4e031c46e8d83e4f3c461fc8ecebaac5617ec3d08939e7ceb9ce16951512d",
+    "stateSha256": "0c9ea5b7209d342edab186356b625135ff2f841c5c680823963cb50bd381210f",
+    "taskSnapshotSha256": "93653d66cc2b9faf7a0940c86168ad1532d463acae1b9bc19ad55458460b981b"
+  },
+  "contextSha256": "794b110d407eff3e33bc6c7e91bedeb79255c59d7337fd3801575061ff163d71"
+}

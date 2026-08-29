@@ -57,6 +57,7 @@ describe("approved ownership organization provisioning", () => {
     expect(ownershipOrganizationTypes("Canadian Business Growth Fund")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("Capital Power Corporation")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Clearway Energy")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("Cleveland Clinic Foundation")).toEqual(["OTHER"]);
     expect(ownershipOrganizationTypes("Continental Grain Company")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Cresta Fund Management")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("Cox Enterprises")).toEqual(["CORPORATE"]);
@@ -73,6 +74,7 @@ describe("approved ownership organization provisioning", () => {
     expect(ownershipOrganizationTypes("Extendicare Inc.")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Ferrovial N.V.")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Forum Equity Partners")).toEqual(["FUND_MANAGER"]);
+    expect(ownershipOrganizationTypes("Gilbane Development Company")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("GE Renewable Energy")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("HPS Investment Partners")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("Harvestone Group")).toEqual(["CORPORATE"]);
@@ -80,16 +82,20 @@ describe("approved ownership organization provisioning", () => {
     expect(ownershipOrganizationTypes("Jeff Canon and PROENERGY management")).toEqual(["OTHER"]);
     expect(ownershipOrganizationTypes("Kinder Morgan, Inc.")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("MAP Energy, LLC")).toEqual(["FUND_MANAGER"]);
+    expect(ownershipOrganizationTypes("MedCraft Healthcare Real Estate")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("MGX")).toEqual(["FUND_MANAGER"]);
+    expect(ownershipOrganizationTypes("Montecito Medical Real Estate")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("Ocean Winds")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("NextDecade Corporation")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("OPTrust")).toEqual(["PENSION"]);
     expect(ownershipOrganizationTypes("PUC Inc.")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Revera Inc.")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Sacyr Infrastructure Canada")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("Stonemont Financial Group")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("Silverpeak")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("TC Energy Corporation")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("TotalEnergies")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("The Sina Companies")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("XRG P.J.S.C.")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Énergir L.P.")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Ingka Investments")).toEqual(["CORPORATE"]);
@@ -111,6 +117,7 @@ describe("approved ownership organization provisioning", () => {
       ["Canadian Business Growth Fund", "FUND_MANAGER"],
       ["Capital Power Corporation", "CORPORATE"],
       ["Clearway Energy", "CORPORATE"],
+      ["Cleveland Clinic Foundation", "OTHER"],
       ["Continental Grain Company", "CORPORATE"],
       ["Cresta Fund Management", "FUND_MANAGER"],
       ["Cox Enterprises", "CORPORATE"],
@@ -127,6 +134,7 @@ describe("approved ownership organization provisioning", () => {
       ["Extendicare Inc.", "CORPORATE"],
       ["Ferrovial N.V.", "CORPORATE"],
       ["Forum Equity Partners", "FUND_MANAGER"],
+      ["Gilbane Development Company", "CORPORATE"],
       ["GE Renewable Energy", "CORPORATE"],
       ["GFL Environmental Inc.", "CORPORATE"],
       ["Jeff Canon and PROENERGY management", "OTHER"],
@@ -134,16 +142,20 @@ describe("approved ownership organization provisioning", () => {
       ["Harvestone Group", "CORPORATE"],
       ["Kinder Morgan, Inc.", "CORPORATE"],
       ["MAP Energy, LLC", "FUND_MANAGER"],
+      ["MedCraft Healthcare Real Estate", "FUND_MANAGER"],
       ["MGX", "FUND_MANAGER"],
+      ["Montecito Medical Real Estate", "FUND_MANAGER"],
       ["Ocean Winds", "CORPORATE"],
       ["NextDecade Corporation", "CORPORATE"],
       ["OPTrust", "PENSION"],
       ["PUC Inc.", "CORPORATE"],
       ["Revera Inc.", "CORPORATE"],
       ["Sacyr Infrastructure Canada", "CORPORATE"],
+      ["Stonemont Financial Group", "FUND_MANAGER"],
       ["Silverpeak", "FUND_MANAGER"],
       ["TC Energy Corporation", "CORPORATE"],
       ["TotalEnergies", "CORPORATE"],
+      ["The Sina Companies", "CORPORATE"],
       ["XRG P.J.S.C.", "CORPORATE"],
       ["Énergir L.P.", "CORPORATE"],
       ["ACON Investments", "FUND_MANAGER"],
