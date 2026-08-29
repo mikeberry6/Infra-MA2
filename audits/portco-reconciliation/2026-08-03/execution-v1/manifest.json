@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-29T08:02:02.000Z",
+  "updatedAt": "2026-08-29T09:11:13.000Z",
   "runStatus": "IDLE",
   "activeTaskId": null,
   "source": {
@@ -25443,23 +25443,44 @@
       "managerIndex": 36,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "c19e3ddf914cf7bb0e1212da31daeebe68730b7965e1994c7dfaa7ffa3291fe8",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-08-29T08:10:05.000Z",
+      "updatedAt": "2026-08-29T09:11:13.000Z",
+      "completedAt": "2026-08-29T09:11:13.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "d9cd6b93417d7e5b789c3b949b309474cda3999ceb09fb4813629dca6f22f8ab",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0219-wideopenwest-inc/attempt-1/locked-task-snapshot.json",
+          "sha256": "d9cd6b93417d7e5b789c3b949b309474cda3999ceb09fb4813629dca6f22f8ab"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0219-wideopenwest-inc-v1/proposal.json",
+          "sha256": "d18288bd15cfe6753324538cfa4d2ff8453a164da9d9aebdf0f4c9c432759e68"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0219-wideopenwest-inc-v1.json",
+          "sha256": "ceccbc13f976a10b10002e8a6e96b1698bf5a45fc1beeeb411411492329e11a6"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0219-0223-v1/production-apply/batch-apply-receipt.json#members/0/receipt",
+          "sha256": "0222271f88cd0eebaffbd81d88bd2db74ba4db798b0b2ddd22908ca173cb1e6b"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0219-wideopenwest-inc-v1/proposal.json#afterImage",
+          "sha256": "2ec90d84bfb55e1917346f053e4964c449b98bd7fa94d6cbcd04d1e0c89b4043"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-29T09:11:13.000Z",
+        "auditEventId": "cmte4sh4o000e0x2b3isj0tvc",
+        "transactionId": "945e8d7f-78a4-45a7-93ac-d9a4cce978b1",
+        "receiptSha256": "0222271f88cd0eebaffbd81d88bd2db74ba4db798b0b2ddd22908ca173cb1e6b",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33243670043"
+      },
       "history": [
         {
           "sequence": 1,
@@ -25470,6 +25491,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-08-29T09:11:13.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0219-0223-v1.",
+          "taskSnapshotSha256": "d9cd6b93417d7e5b789c3b949b309474cda3999ceb09fb4813629dca6f22f8ab",
+          "evidenceSha256": [
+            "0222271f88cd0eebaffbd81d88bd2db74ba4db798b0b2ddd22908ca173cb1e6b",
+            "295c99cfd3b9b411cb4aae7b4849b7abe11827750b157b144616b207bdc292bc",
+            "2ec90d84bfb55e1917346f053e4964c449b98bd7fa94d6cbcd04d1e0c89b4043",
+            "54ff1f0ed08add50ec80397de759f189384428219ff03e5bb53928677b54e6e3",
+            "ceccbc13f976a10b10002e8a6e96b1698bf5a45fc1beeeb411411492329e11a6",
+            "d18288bd15cfe6753324538cfa4d2ff8453a164da9d9aebdf0f4c9c432759e68",
+            "d9cd6b93417d7e5b789c3b949b309474cda3999ceb09fb4813629dca6f22f8ab"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -25481,20 +25520,26 @@
       "managerIndex": 40,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "8ffd601509c05040ff44da279f9412bdfa73252073b927847fd7f27aa37fed72",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
+      "status": "DEFERRED",
+      "attempts": 1,
+      "startedAt": "2026-08-29T08:10:05.000Z",
+      "updatedAt": "2026-08-29T09:11:13.000Z",
+      "completedAt": "2026-08-29T09:11:13.000Z",
+      "exceptionReason": "Bleutec's 2022 EnCap commitment was funded by February 2023, but direct sources do not resolve current ownership, a supported exit, the canonical legal parent or current operations. Portfolio omission, a compromised domain and a lack of later vessel activity are dormancy signals rather than disposition evidence, so the record cannot safely remain verified active or be marked realized.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "a2a07fc902e021bb976101ce1177f88833430f23391bdb6f59ab52090dd95ce1",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0220-bleutec-industries/attempt-1/locked-task-snapshot.json",
+          "sha256": "a2a07fc902e021bb976101ce1177f88833430f23391bdb6f59ab52090dd95ce1"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0220-bleutec-industries/attempt-1/terminal-decision.json",
+          "sha256": "49978cb2a7207c4bec02afa356866b28940bca61a34c41668e36dbfae35ea8a0"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -25508,6 +25553,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-08-29T09:11:13.000Z",
+          "reason": "Bleutec's 2022 EnCap commitment was funded by February 2023, but direct sources do not resolve current ownership, a supported exit, the canonical legal parent or current operations. Portfolio omission, a compromised domain and a lack of later vessel activity are dormancy signals rather than disposition evidence, so the record cannot safely remain verified active or be marked realized.",
+          "taskSnapshotSha256": "a2a07fc902e021bb976101ce1177f88833430f23391bdb6f59ab52090dd95ce1",
+          "evidenceSha256": [
+            "295c99cfd3b9b411cb4aae7b4849b7abe11827750b157b144616b207bdc292bc",
+            "49978cb2a7207c4bec02afa356866b28940bca61a34c41668e36dbfae35ea8a0",
+            "54ff1f0ed08add50ec80397de759f189384428219ff03e5bb53928677b54e6e3",
+            "a2a07fc902e021bb976101ce1177f88833430f23391bdb6f59ab52090dd95ce1"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -25519,23 +25579,44 @@
       "managerIndex": 40,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "707aeddbd1d969a7136a720af7019ce0992fc039eb3d9377da747448fc7843a1",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-08-29T08:10:05.000Z",
+      "updatedAt": "2026-08-29T09:11:13.000Z",
+      "completedAt": "2026-08-29T09:11:13.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "cc52668781f615a0c122973f1c0854c27b81281d0471f8fcbfab3d94c30d3b27",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0221-mantle-reach/attempt-1/locked-v2-task-snapshot.json",
+          "sha256": "cc52668781f615a0c122973f1c0854c27b81281d0471f8fcbfab3d94c30d3b27"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0221-mantle-reach-v1/proposal.json",
+          "sha256": "486ef61481c402268248fc63e1dd48ee304f3013e6d58bdbdacc27b7744739e4"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0221-mantle-reach-v1.json",
+          "sha256": "b1ba55da3aaedc242871d8f594c99f24d96842867f2da113771ea74e6712f3e4"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0219-0223-v1/production-apply/batch-apply-receipt.json#members/2/receipt",
+          "sha256": "c273ecb09757f34e560aa5c1331a35a3c7f004d4636aeadc432e1ad8523e4bd8"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0221-mantle-reach-v1/proposal.json#afterImage",
+          "sha256": "b03b2b5c28043a7b9b122826bf972a92103e811da4505d448dce52a51265cb6c"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-29T09:11:13.000Z",
+        "auditEventId": "cmte4skid000t0x2bups7efqc",
+        "transactionId": "945e8d7f-78a4-45a7-93ac-d9a4cce978b1",
+        "receiptSha256": "c273ecb09757f34e560aa5c1331a35a3c7f004d4636aeadc432e1ad8523e4bd8",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33243670043"
+      },
       "history": [
         {
           "sequence": 1,
@@ -25546,6 +25627,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-08-29T09:11:13.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0219-0223-v1.",
+          "taskSnapshotSha256": "cc52668781f615a0c122973f1c0854c27b81281d0471f8fcbfab3d94c30d3b27",
+          "evidenceSha256": [
+            "295c99cfd3b9b411cb4aae7b4849b7abe11827750b157b144616b207bdc292bc",
+            "486ef61481c402268248fc63e1dd48ee304f3013e6d58bdbdacc27b7744739e4",
+            "54ff1f0ed08add50ec80397de759f189384428219ff03e5bb53928677b54e6e3",
+            "b03b2b5c28043a7b9b122826bf972a92103e811da4505d448dce52a51265cb6c",
+            "b1ba55da3aaedc242871d8f594c99f24d96842867f2da113771ea74e6712f3e4",
+            "c273ecb09757f34e560aa5c1331a35a3c7f004d4636aeadc432e1ad8523e4bd8",
+            "cc52668781f615a0c122973f1c0854c27b81281d0471f8fcbfab3d94c30d3b27"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -25557,23 +25656,44 @@
       "managerIndex": 41,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "6ab89bf7d01165b59d953a202b86091515fa2470525e6793d5a7d110d791233e",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-08-29T08:10:05.000Z",
+      "updatedAt": "2026-08-29T09:11:13.000Z",
+      "completedAt": "2026-08-29T09:11:13.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "84388c941ea6ee1ca951a33d08d866e7c0950d60a60ddc8efcde0938c9bd9d32",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0222-anza-renewables/attempt-1/locked-v2-task-snapshot.json",
+          "sha256": "84388c941ea6ee1ca951a33d08d866e7c0950d60a60ddc8efcde0938c9bd9d32"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0222-anza-renewables-v2/proposal.json",
+          "sha256": "f9b03d80f5423bd9d7fdb5af71a4dae50ea8153d1216bd67e947d55731d194f6"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0222-anza-renewables-v2.json",
+          "sha256": "925d79a5a14f6fb2299b98e3188146f2163bb352791c7a4bdbfb7fd6adbc60bd"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0219-0223-v1/production-apply/batch-apply-receipt.json#members/3/receipt",
+          "sha256": "8519c49a4575828a9c172f0899af00fcc623fc2a55b9cf9c3367c245cf19c037"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0222-anza-renewables-v2/proposal.json#afterImage",
+          "sha256": "37a39118688e998c2d37b5740ef02350d8bbf82455b68ff0e26a669c72579df8"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-29T09:11:13.000Z",
+        "auditEventId": "cmte4soot00150x2b7mkq9li6",
+        "transactionId": "945e8d7f-78a4-45a7-93ac-d9a4cce978b1",
+        "receiptSha256": "8519c49a4575828a9c172f0899af00fcc623fc2a55b9cf9c3367c245cf19c037",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33243670043"
+      },
       "history": [
         {
           "sequence": 1,
@@ -25584,6 +25704,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-08-29T09:11:13.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0219-0223-v1.",
+          "taskSnapshotSha256": "84388c941ea6ee1ca951a33d08d866e7c0950d60a60ddc8efcde0938c9bd9d32",
+          "evidenceSha256": [
+            "295c99cfd3b9b411cb4aae7b4849b7abe11827750b157b144616b207bdc292bc",
+            "37a39118688e998c2d37b5740ef02350d8bbf82455b68ff0e26a669c72579df8",
+            "54ff1f0ed08add50ec80397de759f189384428219ff03e5bb53928677b54e6e3",
+            "84388c941ea6ee1ca951a33d08d866e7c0950d60a60ddc8efcde0938c9bd9d32",
+            "8519c49a4575828a9c172f0899af00fcc623fc2a55b9cf9c3367c245cf19c037",
+            "925d79a5a14f6fb2299b98e3188146f2163bb352791c7a4bdbfb7fd6adbc60bd",
+            "f9b03d80f5423bd9d7fdb5af71a4dae50ea8153d1216bd67e947d55731d194f6"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -25595,23 +25733,44 @@
       "managerIndex": 41,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "bc962a2766394caf1899fb87f12501d8367b3693c297d4488227be1952582b57",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-08-29T08:10:05.000Z",
+      "updatedAt": "2026-08-29T09:11:13.000Z",
+      "completedAt": "2026-08-29T09:11:13.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "56a9bf115123e2889931a40019bcb337e235b2364cdacd6c6b5b87bf209446f4",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0223-avolta-renewable-holdings/attempt-1/locked-v2-task-snapshot.json",
+          "sha256": "56a9bf115123e2889931a40019bcb337e235b2364cdacd6c6b5b87bf209446f4"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0223-avolta-renewable-holdings-v2/proposal.json",
+          "sha256": "f2dd0866c047d8537b6ad591b12d14b59fb0a0d9e4fde25cb606fc051cafe54d"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0223-avolta-renewable-holdings-v2.json",
+          "sha256": "2fd3b58fd9a2c60ed220295df999ff1cf60f642e9fb8e98c9dbc337dede05fc4"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0219-0223-v1/production-apply/batch-apply-receipt.json#members/4/receipt",
+          "sha256": "b60cf8655d0da28449f12b4599a40302b42070914d3cc7a52faa9f8cee38feab"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0223-avolta-renewable-holdings-v2/proposal.json#afterImage",
+          "sha256": "09e3136be77cce0ce090f8223b0c5053106467d330ca1e4215f25afb0af263b8"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-29T09:11:13.000Z",
+        "auditEventId": "cmte4sscn001f0x2bi99t0u2p",
+        "transactionId": "945e8d7f-78a4-45a7-93ac-d9a4cce978b1",
+        "receiptSha256": "b60cf8655d0da28449f12b4599a40302b42070914d3cc7a52faa9f8cee38feab",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33243670043"
+      },
       "history": [
         {
           "sequence": 1,
@@ -25622,6 +25781,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-08-29T09:11:13.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0219-0223-v1.",
+          "taskSnapshotSha256": "56a9bf115123e2889931a40019bcb337e235b2364cdacd6c6b5b87bf209446f4",
+          "evidenceSha256": [
+            "09e3136be77cce0ce090f8223b0c5053106467d330ca1e4215f25afb0af263b8",
+            "295c99cfd3b9b411cb4aae7b4849b7abe11827750b157b144616b207bdc292bc",
+            "2fd3b58fd9a2c60ed220295df999ff1cf60f642e9fb8e98c9dbc337dede05fc4",
+            "54ff1f0ed08add50ec80397de759f189384428219ff03e5bb53928677b54e6e3",
+            "56a9bf115123e2889931a40019bcb337e235b2364cdacd6c6b5b87bf209446f4",
+            "b60cf8655d0da28449f12b4599a40302b42070914d3cc7a52faa9f8cee38feab",
+            "f2dd0866c047d8537b6ad591b12d14b59fb0a0d9e4fde25cb606fc051cafe54d"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -35000,13 +35177,13 @@
       "managerIndex": null,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "c5cdebbf0a0be3883ac01dea5858fb38f64a4a7f650c8e2be485fbbbcd0bccf9",
-      "status": "PENDING",
+      "status": "SUPERSEDED",
       "attempts": 0,
       "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
-      "supersededByTaskId": null,
+      "updatedAt": "2026-08-29T09:11:13.000Z",
+      "completedAt": "2026-08-29T09:11:13.000Z",
+      "exceptionReason": "Superseded by ledger:0222:anza-renewables:03b962a6; its verified batch after-image covers the same canonical identity and ownership judgment.",
+      "supersededByTaskId": "ledger:0222:anza-renewables:03b962a6",
       "taskSnapshotSha256": null,
       "artifacts": {
         "taskSnapshot": null,
@@ -35027,6 +35204,19 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "SUPERSEDED",
+          "at": "2026-08-29T09:11:13.000Z",
+          "reason": "Superseded by ledger:0222:anza-renewables:03b962a6; its verified batch after-image covers the same canonical identity and ownership judgment.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "295c99cfd3b9b411cb4aae7b4849b7abe11827750b157b144616b207bdc292bc",
+            "54ff1f0ed08add50ec80397de759f189384428219ff03e5bb53928677b54e6e3"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -35038,13 +35228,13 @@
       "managerIndex": null,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "cec992c941314fc37727dd692c16c7dbfec657f5d1c1ae7635daace981e7f5cd",
-      "status": "PENDING",
+      "status": "SUPERSEDED",
       "attempts": 0,
       "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
-      "supersededByTaskId": null,
+      "updatedAt": "2026-08-29T09:11:13.000Z",
+      "completedAt": "2026-08-29T09:11:13.000Z",
+      "exceptionReason": "Superseded by ledger:0223:avolta-renewable-holdings:7181d627; its verified batch after-image covers the same canonical identity and ownership judgment.",
+      "supersededByTaskId": "ledger:0223:avolta-renewable-holdings:7181d627",
       "taskSnapshotSha256": null,
       "artifacts": {
         "taskSnapshot": null,
@@ -35065,6 +35255,19 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "SUPERSEDED",
+          "at": "2026-08-29T09:11:13.000Z",
+          "reason": "Superseded by ledger:0223:avolta-renewable-holdings:7181d627; its verified batch after-image covers the same canonical identity and ownership judgment.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "295c99cfd3b9b411cb4aae7b4849b7abe11827750b157b144616b207bdc292bc",
+            "54ff1f0ed08add50ec80397de759f189384428219ff03e5bb53928677b54e6e3"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -36201,5 +36404,5 @@
       ]
     }
   ],
-  "manifestSha256": "a83fb09105d43c0d537afcbf6b9eb09590bfded698e0dd22c3f2a4a8024b7694"
+  "manifestSha256": "d829527168eeff0dd9bbd22ef6fa96bf621e1ee9cd01b82dd8537ccefbd5c49d"
 }
