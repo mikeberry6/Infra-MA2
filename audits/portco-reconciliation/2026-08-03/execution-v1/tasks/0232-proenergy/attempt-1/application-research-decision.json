@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0232:proenergy:f5e9cdb0",
+  "taskIndex": 232,
+  "companyName": "PROENERGY",
+  "asOfDate": "2026-08-19",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-08-29T10:30:30.000Z",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "PROENERGY",
+    "requestedManagers": [
+      "Energy Capital Partners (ECP)"
+    ],
+    "decision": "PROPOSED_CORRECTION",
+    "confidence": "HIGH",
+    "rationale": "The existing company is the correct ECP platform, but ADD_OWNER would duplicate ECP/Energy Capital Partners. ECP V remains majority owner; two later plant sales were asset realizations, not a PROENERGY sale.",
+    "identityResolution": {
+      "canonicalKey": "proenergy|united-states",
+      "productionCompanyId": "cmrxpjdoi00uhivhenpf9ydgf",
+      "displayName": "PROENERGY",
+      "legalOrTransactionName": "PROENERGY Holdings",
+      "aliases": [
+        "ProEnergy",
+        "PROENERGY Services"
+      ],
+      "founded": 2002,
+      "headquarters": "Sedalia, Missouri, United States",
+      "boundary": "PROENERGY is the PortCo. PROENERGY Services is an operating identity; WattBridge is its contracted-power subsidiary/segment; AeroAdvantage, PowerFLX and plants sit below the platform.",
+      "wattBridgeCount": "DO_NOT_COUNT_SEPARATELY"
+    },
+    "ownershipResolution": {
+      "owners": [
+        {
+          "manager": "Energy Capital Partners",
+          "organization": "Energy Capital Partners Management, LP",
+          "fund": "ECP V",
+          "vehicle": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "Majority; exact percentage NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2024-09-05",
+          "entryDate": "2024-08; exact day NOT_PUBLICLY_DISCLOSED",
+          "entryYear": 2024,
+          "exitDate": "NOT_APPLICABLE",
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_CURRENT"
+        },
+        {
+          "manager": "Jeff Canon and PROENERGY management",
+          "organization": "PROENERGY",
+          "fund": "NOT_APPLICABLE",
+          "vehicle": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "Invested alongside ECP; exact percentage NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2024-09-05",
+          "entryDate": "NOT_PUBLICLY_DISCLOSED",
+          "entryYear": null,
+          "exitDate": "NOT_APPLICABLE",
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CONTINUING_CO_INVESTOR"
+        }
+      ],
+      "priorSponsors": "Eos Partners, L.P. and ACON Investments completed a financing in 2012 and were the selling sponsor affiliates in 2024. No continuing interest was disclosed.",
+      "aliasResolution": "ECP equals Energy Capital Partners; retain one owner.",
+      "currentConclusion": "ECP remains majority owner. The cap table, external co-investors and acquisition vehicle are NOT_PUBLICLY_DISCLOSED. Bridgepoint is ECP's parent, not a direct owner."
+    },
+    "operatingResolution": {
+      "status": "Active",
+      "sector": "Electricity infrastructure",
+      "business": "Aeroderivative turbine/equipment manufacturing, turnkey EPC, contracted power and lifecycle care for utilities, municipalities, IPPs and data centers.",
+      "footprint": "Sedalia headquarters; global operations and Texas service presence, not a second headquarters.",
+      "scale": "At entry, 2.4 GW of Texas peakers and service exposure to more than 3,000 installed LM6000/LM2500 units.",
+      "generationUpdate": "CPS Energy bought four plants/1,632 MW on 2025-09-24 for $1.387bn; STEC bought two plants/768 MW on 2026-04-10 for $768m. Together they equal 2.4 GW. PROENERGY retained O&M/lifecycle contracts; no WattBridge entity sale was disclosed."
+    },
+    "acquisitionExitCheck": {
+      "entry": "Closed majority acquisition from Eos/ACON affiliates in August 2024; announced 2024-09-05. Exact day, percentage and vehicle are NOT_PUBLICLY_DISCLOSED.",
+      "assetRealizations": "The six disclosed historic ERCOT plants were sold in two closed transactions; asset-level partial realizations, not a platform exit.",
+      "pendingTransactions": [],
+      "laterCheck": "Through 2026-08-19, no follow-on equity, recapitalization, company sale, owner transfer, portfolio removal or signed pending transaction was found. ECP marks PROENERGY Current; Bridgepoint's July 2026 report retains it in ECP V."
+    },
+    "milestones": [
+      {
+        "date": "2002",
+        "event": "Jeff Canon founded PROENERGY.",
+        "category": "Founding"
+      },
+      {
+        "date": "2024-08",
+        "event": "ECP closed a majority investment from Eos/ACON affiliates; announced 2024-09-05.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "2025-09-24",
+        "event": "CPS Energy closed its $1.387bn purchase of four plants/1,632 MW.",
+        "category": "Asset Sale"
+      },
+      {
+        "date": "2026-04-10",
+        "event": "STEC closed its $768m purchase of two plants/768 MW.",
+        "category": "Asset Sale"
+      }
+    ],
+    "evidence": [
+      {
+        "label": "ECP acquisition",
+        "url": "https://www.ecpgp.com/about/news-and-insights/press-releases/2024/energy-capital-partners--ecp--acquires-majority-interest-in-proe",
+        "purpose": "Stake, sellers, co-investment and business scope.",
+        "sourceTier": "OFFICIAL_MANAGER",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "ECP portfolio",
+        "url": "https://www.ecpgp.com/equity/portfolio/proenergy",
+        "purpose": "Current status, entry date, headquarters and taxonomy.",
+        "sourceTier": "OFFICIAL_MANAGER",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Bridgepoint interim",
+        "url": "https://www.bridgepointgroup.com/content/dam/bridgepoint/corporate2022/documents/financial-information/results_reports_presentations/2026/bridgepoint-group-interim-results-2026-announcement.pdf.downloadasset.pdf",
+        "purpose": "ECP V and retained business through June 2026.",
+        "sourceTier": "PUBLIC_COMPANY_REPORT",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "ACON 2012 financing",
+        "url": "https://aconinvestments.com/news/proenergy-holdings-receives-equity-financing/",
+        "purpose": "Founding, prior sponsors, headquarters and footprint.",
+        "sourceTier": "OFFICIAL_FORMER_OWNER",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "CPS closing",
+        "url": "https://newsroom.cpsenergy.com/cps-energy-closes-on-previously-announced-acquisition-of-1632-megawatt-power-generation-portfolio-in-southeast-texas/",
+        "purpose": "Closing, capacity, price and retained services.",
+        "sourceTier": "TRANSACTION_PARTY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "STEC closing",
+        "url": "https://www.proenergyservices.com/2026/04/proenergy-closes-agreement-with-south-texas-electric-cooperative-to-divest-braes-bayou-and-brotman-generating-stations/",
+        "purpose": "Closing, capacity, price and retained services.",
+        "sourceTier": "OFFICIAL_COMPANY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": [
+      "Owner: ADD_OWNER -> alias-resolve ECP to existing Energy Capital Partners.",
+      "Fund/date: ECP V; August 2024 close; vehicle NOT_PUBLICLY_DISCLOSED.",
+      "Headquarters: Missouri and Texas -> Sedalia, Missouri; Texas is operating footprint.",
+      "Description: historic 2.4-GW fleet sold; service contracts retained.",
+      "Boundary: one PROENERGY PortCo; no separate services, WattBridge, segment or plant counts."
+    ],
+    "excludedOrDuplicateCandidates": [
+      "ECP: alias duplicate of Energy Capital Partners.",
+      "PROENERGY Services: operating identity.",
+      "WattBridge: subsidiary/segment, not separate ECP PortCo.",
+      "AeroAdvantage/PowerFLX: segments; ERCOT plants: assets.",
+      "Bridgepoint Group plc: ECP parent, not direct owner."
+    ],
+    "unresolvedQuestions": [
+      "NOT_PUBLICLY_DISCLOSED: exact ECP percentage, cap table and management percentages.",
+      "NOT_PUBLICLY_DISCLOSED: acquisition vehicle and exact August 2024 closing day.",
+      "NOT_PUBLICLY_DISCLOSED: exact ACON/Eos fund vehicles, prior stakes and full subsidiary chart."
+    ],
+    "recommendedListAction": "Retain PROENERGY; alias-resolve ECP to Energy Capital Partners without adding an owner; set fund to ECP V; correct headquarters and post-sale description; do not create separate PortCos for PROENERGY Services, WattBridge, segments or plants."
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0232-proenergy/attempt-1/research-decision.json",
+      "sha256": "7c821da2833ebd6e76471ea3c2f4573781417113c8355c872154520e2cdf2cd4"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0232-proenergy/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "cee35eb96b101ba11d30eb56266d566226e9659066f71cc34f15aeef14aebfe6"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0232-proenergy/attempt-1/source-verification.json",
+      "sha256": "f89caff514ef40556a5698a5f3ab938b7f048d82fd9228ccabe4d55eb16179ec"
+    },
+    "acceptedResponseSha256": "cee35eb96b101ba11d30eb56266d566226e9659066f71cc34f15aeef14aebfe6",
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION"
+  }
+}

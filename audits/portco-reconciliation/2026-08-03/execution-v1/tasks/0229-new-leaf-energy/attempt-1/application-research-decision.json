@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0229:new-leaf-energy:321d604d",
+  "taskIndex": 229,
+  "companyName": "New Leaf Energy",
+  "asOfDate": "2026-08-29",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-08-29T10:47:27.000Z",
+  "result": {
+    "decision": "PROPOSED_CORRECTION",
+    "rationale": "Energy Capital Partners is the existing ECP owner and must not be duplicated. New Leaf's legal identity, 2022 formation and July 27 closing require correction, and Walsin Lihwa/Walsin America should be recorded only as a former 2022 owner. A focused GPT-5.6 Sol Pro adjudication and independent source review established that Walsin America sold back its entire exact 88,729-share block, so no current Walsin owner should be added.",
+    "identityResolution": {
+      "displayName": "New Leaf Energy",
+      "legalName": "New Leaf Energy, Inc.",
+      "formerName": "2022 Solar Development, Inc.",
+      "productionCompanyId": "cmrxpjdmu00ueivhetif6v25s",
+      "foundedYear": 2022,
+      "headquarters": "Lowell, Massachusetts",
+      "boundary": "New Leaf is the solar and storage development platform. Borrego's retained EPC/O&M/Anza businesses and individual project companies or portfolios are outside the canonical company."
+    },
+    "ownershipResolution": {
+      "currentOwners": [
+        {
+          "manager": "ECP",
+          "entryDate": "2022-07-27",
+          "stake": "Control; exact percentage not publicly disclosed",
+          "status": "CURRENT"
+        }
+      ],
+      "formerOwners": [
+        {
+          "manager": "Walsin Lihwa Corporation",
+          "vehicle": "Walsin Lihwa Holdings Limited / Walsin America, LLC",
+          "stake": "1,371,729-share controlling block sold to ECP; separate 88,729-share block sold back to New Leaf",
+          "exitDate": "2022-07-27 to 2022-10-12 restructuring sequence",
+          "status": "FORMER"
+        }
+      ],
+      "walsinCurrentInterest": "NONE",
+      "focusedDecision": "WALSIN_EXITED",
+      "focusedProductionRecommendation": "KEEP_ECP_ONLY"
+    },
+    "acquisitionExitCheck": {
+      "agreementDate": "2022-05-24",
+      "announcementDate": "2022-05-25",
+      "legalClosingDate": "2022-07-27",
+      "platformExitFound": false,
+      "pendingTransactions": []
+    },
+    "evidence": [
+      {
+        "label": "Walsin 2022 annual report",
+        "url": "https://www.walsin.com/wp-content/uploads/2023/02/2022-Annual-Report_EN.pdf",
+        "purpose": "Audited closing, ECP disposal block and separate Walsin America share allocation",
+        "sourceTier": "T1_SELLER_FILING",
+        "workingStatus": "OPEN_PDF_VISUALLY_VERIFIED",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "Walsin May 2022 material-information disclosure reproduction",
+        "url": "https://www.marketscreener.com/quote/stock/WALSIN-LIHWA-CORPORATION-6492359/news/Walsin-Lihwa-Announcement-for-Walsin-America-LLC-sell-all-of-its-2022-Solar-Development-Inc-share-40531297/",
+        "purpose": "All-share sale-back authorization and completion-dependent pricing disclosure",
+        "sourceTier": "T2_FULL_ISSUER_DISCLOSURE_REPRODUCTION",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Walsin October 2022 supplemental disclosure reproduction",
+        "url": "https://news.cnyes.com/news/id/4977294",
+        "purpose": "Completed 88,729-share sale-back, unit price and total consideration",
+        "sourceTier": "T2_FULL_ISSUER_DISCLOSURE_REPRODUCTION",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "ECP New Leaf portfolio page",
+        "url": "https://www.ecpgp.com/equity/portfolio/new-leaf-energy",
+        "purpose": "Current ECP status and July 2022 investment",
+        "sourceTier": "T1_MANAGER",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "ECP/Borrego closing announcement",
+        "url": "https://www.ecpgp.com/about/news-and-insights/press-releases/2022/borrego-completes-spin-off-and-sale-of-solar-and-energy-storage-development-business-to-ecp",
+        "purpose": "Carve-out scope and completed ECP acquisition",
+        "sourceTier": "T1_MANAGER_SELLER",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "unresolvedQuestions": [],
+    "recommendedListAction": "Correct the existing New Leaf record; keep ECP as the sole current owner, add Walsin as a former 2022 owner, and do not add Walsin America as current."
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0229-new-leaf-energy/attempt-1/research-decision.json",
+      "sha256": "ad02021a3bb4f881a8d7b80ce63aeff1eb02a8d836fc3701d63c0598f1849f5a"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0229-new-leaf-energy/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "30c7319965eb7b4c4890ffdb5eaa587197704e8a716913be4257d2dbed8e5548"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0229-new-leaf-energy/attempt-1/source-verification.json",
+      "sha256": "09542eedf1e108b48785dbee568d6ac9865e0f206740b54a674ad14cebe8c770"
+    },
+    "focusedPrompt": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0229-new-leaf-energy/attempt-1/focused-adjudication-prompt.md",
+      "sha256": "bd9f6cdcbea5f6bdb2cb6c2e50ff2584dd589c5133e85a1de059df19f9320d86"
+    },
+    "focusedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0229-new-leaf-energy/attempt-1/focused-adjudication-response.json",
+      "sha256": "258f2cf951ad339e4dc55d1a357bce9df6d9f4a295ce5e95039ce1e3882c6af0"
+    },
+    "focusedSourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0229-new-leaf-energy/attempt-1/focused-source-verification.json",
+      "sha256": "517e50dce15dcadab46b4b50aa48ab6de65cf8970ffda1e03eba1724f2939e38"
+    }
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0233:restaurant-technologies-inc:d0e001f6",
+  "taskIndex": 233,
+  "companyName": "Restaurant Technologies, Inc.",
+  "asOfDate": "2026-08-19",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-08-29T10:46:00.000Z",
+  "result": {
+    "decision": "PROPOSED_CORRECTION",
+    "rationale": "Energy Capital Partners is the existing ECP owner and must not be duplicated. The validated research also directly supports Continental Grain as a continuing investor, EHI as an April 2022 co-investor, and GSAM/West Street Infrastructure Partners III as the former sponsor through the April 2022 closing. Those ownership periods are missing from the current record, so the application outcome is a correction even though the original census-level ECP alias decision was no-change.",
+    "identityResolution": {
+      "canonicalName": "Restaurant Technologies, Inc.",
+      "productionCompanyId": "cmrxpjdp200uiivheb3y5869n",
+      "aliases": [
+        "Restaurant Technologies",
+        "RTI",
+        "RT"
+      ],
+      "headquarters": "Mendota Heights, Minnesota",
+      "foundedYear": 1999,
+      "boundary": "The canonical company is the nationwide operating platform. Depots, routes, installed equipment, Eagle Parent Corp. and Double Eagle Buyer Inc. are operating assets or financing/holding entities rather than separate PortCos."
+    },
+    "ownershipResolution": {
+      "currentOwners": [
+        {
+          "manager": "ECP",
+          "stake": "Control or majority reported; exact percentage not publicly disclosed",
+          "entryDate": "2022-04",
+          "status": "CURRENT"
+        },
+        {
+          "manager": "Continental Grain Company",
+          "stake": "Minority; exact percentage not publicly disclosed",
+          "entryDate": "Before 2022; exact date not publicly disclosed",
+          "status": "CURRENT"
+        },
+        {
+          "manager": "Enlightened Hospitality Investments",
+          "stake": "Minority; exact percentage not publicly disclosed",
+          "entryDate": "2022-04",
+          "status": "CURRENT"
+        }
+      ],
+      "formerOwners": [
+        {
+          "manager": "Goldman Sachs Asset Management",
+          "fund": "West Street Infrastructure Partners III",
+          "entryYear": 2018,
+          "exitDate": "2022-04",
+          "status": "FORMER"
+        }
+      ],
+      "currentOwnershipSupport": "The 2022 acquisition announcement identifies Continental Grain as continuing and EHI as investing alongside ECP; the current company board page retains representatives associated with all three ownership groups."
+    },
+    "acquisitionExitCheck": {
+      "announcementDate": "2022-02-28",
+      "closingDate": "2022-04; exact day not publicly disclosed",
+      "laterOwnershipCheck": "No later company sale, ECP exit, signed pending transfer or portfolio removal was found through 2026-08-19. Later credit facilities are debt financing rather than equity transfers."
+    },
+    "evidence": [
+      {
+        "label": "ECP acquisition announcement",
+        "url": "https://www.ecpgp.com/about/news-and-insights/press-releases/2022/ecp-to-acquire-restaurant-technologies-from-goldman-sachs-asset-management-as-sustainability-initiatives-move-to-the-forefront-of-restaurant-management",
+        "purpose": "ECP acquisition, former GSAM ownership, continuing Continental Grain participation and EHI co-investment",
+        "sourceTier": "T1_DIRECT_MANAGER",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "ECP portfolio page",
+        "url": "https://www.ecpgp.com/equity/portfolio/restaurant-technologies-inc",
+        "purpose": "Current ECP status and April 2022 investment date",
+        "sourceTier": "T1_DIRECT_MANAGER",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Restaurant Technologies board of directors",
+        "url": "https://www.rti-inc.com/about-rti/board-of-directors/",
+        "purpose": "Current board representation for ECP, Continental Grain and EHI",
+        "sourceTier": "T1_DIRECT_COMPANY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Restaurant Technologies ESG report",
+        "url": "https://www.rti-inc.com/wp-content/uploads/2022/10/RT_2022_ESGReport.pdf",
+        "purpose": "April 2022 closing and operating-platform context",
+        "sourceTier": "T1_DIRECT_COMPANY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Houlihan Lokey 2018 transaction page",
+        "url": "https://hl.com/about-us/transactions/houlihan-lokey-advises-restaurant-technologies/",
+        "purpose": "West Street Infrastructure Partners III entry in 2018",
+        "sourceTier": "T2_TRANSACTION_ADVISER",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Cahill acquisition financing release",
+        "url": "https://www.cahill.com/news/firm-news/2022-04-01-cahill-represents-lead-arrangers-in-910-million-green-loan-credit-facilities-for-ecp-acquisition-of-restaurant-technologies-inc",
+        "purpose": "Acquisition financing and financing-entity boundary",
+        "sourceTier": "T2_TRANSACTION_COUNSEL",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "unresolvedQuestions": [],
+    "recommendedListAction": "Retain the existing company and ECP period, add Continental Grain and EHI as current minority owners, record GSAM/West Street Infrastructure Partners III as the former owner through April 2022, and do not treat financing entities or lenders as owners."
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0233-restaurant-technologies-inc/attempt-1/research-decision.json",
+      "sha256": "5849dca3b9a77084f8d4aa2169ba28b51c508c340004d6708d575706fb2f8c4e"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0233-restaurant-technologies-inc/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "dc88d06848ff604120337bece6b20c966daa98de94cd1f98054e5ac1e7b5e5c0"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0233-restaurant-technologies-inc/attempt-1/source-verification.json",
+      "sha256": "e18546ef03a5d2c043921cb19bc7f010d5c9bf7c88b0a92a2c6b0ba3f233d53e"
+    },
+    "applicationReview": "The staged packet's only review flag was response length. Its substantive ownership evidence is valid; the application decision differs from the census-level no-change label solely because the production record omits directly supported current co-investors and the former sponsor period."
+  }
+}

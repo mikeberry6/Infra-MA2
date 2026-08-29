@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-29T10:16:02.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-08-29T11:27:00.000Z",
+  "activeBatchId": "batch-0229-0233-v1",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -2907,7 +2907,55 @@
           "reason": "All five PortCo after-images, seed entries, ownership attributions, detail APIs and rendered drawers passed final canonical production verification; no partial application or unresolved identity or active-ownership issue remains."
         }
       ]
+    },
+    {
+      "batchId": "batch-0229-0233-v1",
+      "state": "READY",
+      "taskIds": [
+        "ledger:0229:new-leaf-energy:321d604d",
+        "ledger:0230:next-wave-energy:b4bcb6ea",
+        "ledger:0231:pivot-energy:e0f42706",
+        "ledger:0232:proenergy:f5e9cdb0",
+        "ledger:0233:restaurant-technologies-inc:d0e001f6"
+      ],
+      "taskIndexes": [
+        229,
+        230,
+        231,
+        232,
+        233
+      ],
+      "createdAt": "2026-08-29T10:23:29.000Z",
+      "updatedAt": "2026-08-29T11:27:00.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0229-0233-v1/batch-manifest.json",
+        "sha256": "2400185b69273871a011d83c9b9a9576321931c9226369ee593fc81b43179e98"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-29T10:23:29.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-29T11:27:00.000Z",
+          "evidenceSha256": [
+            "2400185b69273871a011d83c9b9a9576321931c9226369ee593fc81b43179e98"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "1637ebc986f40bb3d359fea21211d4f5a63c0c6f63a9de6a926c142f3396efe4"
+  "ledgerSha256": "9315a0e938446d06bfbb7bb4ab9163989ace838bbe81d316a61c50ec4954a242"
 }

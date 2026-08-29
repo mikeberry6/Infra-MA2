@@ -1,0 +1,279 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0233:restaurant-technologies-inc:d0e001f6",
+  "taskIndex": 233,
+  "companyName": "Restaurant Technologies, Inc.",
+  "generatedAt": "2026-08-29T11:02:25.750Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0233-restaurant-technologies-inc/attempt-1/authorization-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 233,
+    "taskId": "ledger:0233:restaurant-technologies-inc:d0e001f6",
+    "canonicalKey": "restaurant-technologies-inc|united-states",
+    "companyName": "Restaurant Technologies, Inc.",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 41,
+    "managers": [
+      "Energy Capital Partners"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "041-energy-capital-partners:holding:012:restaurant-technologies-inc"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjdp200uiivheb3y5869n"
+    ],
+    "seedKeys": [
+      "restaurant technologies, inc.|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.ecpgp.com/equity/portfolio/restaurant-technologies-inc",
+      "https://www.rti-inc.com/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_OWNER requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjdp200uiivheb3y5869n",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "restaurant-technologies-inc|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjdp200uiivheb3y5869n",
+    "name": "Restaurant Technologies, Inc.",
+    "aliases": [],
+    "sector": "SOCIAL_INFRA",
+    "subsector": "Commercial kitchen oil management and back-of-house services",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Restaurant Technologies provides automated cooking oil management, hood and flue cleaning, and related back-of-house services to restaurants and other foodservice operators. Its customer base includes quick-service and full-service restaurant chains, independent restaurants, grocery delis, hotels, casinos, universities, and hospitals. The company operates a route-based, service-heavy model supported by installed equipment and a depot network rather than a purely asset-light software or marketplace model. Public disclosures state that it serves more than 45,000 customer locations through 41 depots with more than 1,200 employees across the United States. ECP agreed to acquire the company in February 2022 and identifies April 2022 as its investment date; Restaurant Technologies now operates as an essential outsourced kitchen services platform under that ownership.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 1999,
+    "headquarters": "United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjzbw01sqivheqo2vhw6z",
+        "managerName": "Energy Capital Partners",
+        "organizationName": "ECP",
+        "fundName": "ECP Fund V",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpli8j03riivhem74k2ita",
+        "date": "1999",
+        "event": "Restaurant Technologies was founded.",
+        "category": "FOUNDING",
+        "sortDate": "1999-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpli9403rjivhezh0zeb7c",
+        "date": "Apr 2022",
+        "event": "ECP identified April 2022 as its investment date in Restaurant Technologies.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-04-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpli9o03rkivhe3fglmwih",
+        "date": "Feb 28, 2022",
+        "event": "ECP announced an agreement to acquire Restaurant Technologies from Goldman Sachs Asset Management.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-02-28T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqn6709vrivhe2dzcennx",
+        "label": "Rti Inc — Restaurant Technologies, Inc.",
+        "url": "https://www.rti-inc.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Rti Inc company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqn7f09vtivhe4pijx635",
+        "label": "Rti Inc — Restaurant Technologies, Inc.",
+        "url": "https://www.rti-inc.com/news-and-media/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Rti Inc — Restaurant Technologies, Inc.",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqn8c09vvivhel4u67a8n",
+        "label": "Announcement date source — ECP — Restaurant Technologies, Inc.",
+        "url": "https://www.ecpgp.com/about/news-and-insights/press-releases/2022/ecp-to-acquire-restaurant-technologies-from-goldman-sachs-asset-management-as-sustainability-initiatives-move-to-the-forefront-of-restaurant-management",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "ECP transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqn9b09vxivhewro5o18k",
+        "label": "Investment date source — ECP — Restaurant Technologies, Inc.",
+        "url": "https://www.ecpgp.com/equity/portfolio/restaurant-technologies-inc",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "ECP initial investment / ownership",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Restaurant Technologies, Inc.",
+    "investmentFirm": "ECP",
+    "sector": "Social Infra",
+    "subsector": "Commercial kitchen oil management and back-of-house services",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "Restaurant Technologies provides automated cooking oil management, hood and flue cleaning, and related back-of-house services to restaurants and other foodservice operators. Its customer base includes quick-service and full-service restaurant chains, independent restaurants, grocery delis, hotels, casinos, universities, and hospitals. The company operates a route-based, service-heavy model supported by installed equipment and a depot network rather than a purely asset-light software or marketplace model. Public disclosures state that it serves more than 45,000 customer locations through 41 depots with more than 1,200 employees across the United States. ECP agreed to acquire the company in February 2022 and identifies April 2022 as its investment date; Restaurant Technologies now operates as an essential outsourced kitchen services platform under that ownership.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 1999,
+    "investmentYear": 2022,
+    "headquarters": "United States",
+    "milestones": [
+      {
+        "date": "1999",
+        "event": "Restaurant Technologies was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "Apr 2022",
+        "event": "ECP identified April 2022 as its investment date in Restaurant Technologies.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Feb 28, 2022",
+        "event": "ECP announced an agreement to acquire Restaurant Technologies from Goldman Sachs Asset Management.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Rti Inc — Restaurant Technologies, Inc.",
+        "url": "https://www.rti-inc.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Rti Inc — Restaurant Technologies, Inc.",
+        "url": "https://www.rti-inc.com/news-and-media/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Announcement date source — ECP — Restaurant Technologies, Inc.",
+        "url": "https://www.ecpgp.com/about/news-and-insights/press-releases/2022/ecp-to-acquire-restaurant-technologies-from-goldman-sachs-asset-management-as-sustainability-initiatives-move-to-the-forefront-of-restaurant-management",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Investment date source — ECP — Restaurant Technologies, Inc.",
+        "url": "https://www.ecpgp.com/equity/portfolio/restaurant-technologies-inc",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "ECP",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2022,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj23s00d1ivhel30ncaa5",
+        "fundName": "ECP Fund V",
+        "managerId": "cmrxpi79j001jivhe2rmjalkq",
+        "updatedAt": "2026-07-23T16:09:56.584Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi79j001jivhe2rmjalkq",
+        "name": "Energy Capital Partners",
+        "updatedAt": "2026-07-23T16:09:16.615Z"
+      },
+      {
+        "id": "cmrxpi91j0024ivheufpwts5g",
+        "name": "Goldman Sachs Asset Management",
+        "updatedAt": "2026-07-23T16:09:18.919Z"
+      },
+      {
+        "id": "cmrxpii7l004zivhe9bvhh5r5",
+        "name": "ECP",
+        "updatedAt": "2026-07-23T16:09:30.801Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0233:restaurant-technologies-inc:d0e001f6",
+    "taskIndex": 233,
+    "canonicalKey": "restaurant-technologies-inc|united-states",
+    "capturedAt": "2026-08-29T11:02:25.750Z",
+    "databaseRevision": "revision:a3a8a613314aac7e14b75f0b6a566378d3e6f25a7e3303d93609d3e974448fa5",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "35b48f699cbfc8e3c1b92b3f097ec7a176ec2ad64f7093578bd3d8fd8ac8044b",
+    "productionSnapshotSha256": "c414aa2e48db01e497978ec0a85b933c46d79827bc8db8bbf761b6115e9734db",
+    "targetCompanySnapshotSha256": "2e2c9a3ecc818b1945818088f01f5b81c1fafd29b0ebd6b07713a00e4b33743a",
+    "seedEntrySha256": "8c564964a22dad1d3a374f28fe3fece0cd9ef0602599ad48d3d50d24135318be",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "7855e0d0e02c802f5787668ad94ae197121fb26f8e4b3bbc09ba2bfc5a6aa308",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "cd20bf918111ea91d87de82c3607378a098a82d96d9ad9ef41dc65f122089cb0",
+      "organizationsSha256": "0a9bc3133f967ae1be52d01d0d8d840c88973f8862cea6f7a68e618f7ad3cd4f",
+      "citationsSha256": "2fad1cf2931664624380bf9e7ffec570aa29de0bb7a0000279cf7a87a625093a",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "6ddded022126e4ed7913c19d250965605ada3c146fb595ccf7206c61c2694287",
+    "stateSha256": "b389aa71bfbcac8de77370fac8b5abe2f5406dea3a731d5674cfc1ed397463fb",
+    "taskSnapshotSha256": "382ed7a181b037599240b1cb40491a854a9f4767fb92e80357f212f51013cfd6"
+  },
+  "contextSha256": "3cb3b8a8e5352f01453542c2271f9ab5611e8f78d9ca9dcd10c47b271876e3a2"
+}
