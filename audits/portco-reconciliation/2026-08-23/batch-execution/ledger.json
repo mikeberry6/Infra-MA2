@@ -3,7 +3,7 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-29T18:02:00.000Z",
+  "updatedAt": "2026-08-29T18:08:01.000Z",
   "activeBatchId": "batch-0254-0258-v1",
   "batches": [
     {
@@ -3441,7 +3441,7 @@
     },
     {
       "batchId": "batch-0254-0258-v1",
-      "state": "READY",
+      "state": "VERIFYING",
       "taskIds": [
         "ledger:0254:cambrian-innovation-water-asset-spvs:a5691d5c",
         "ledger:0255:cleancapital-c-and-i-solar-spvs:38fec9c7",
@@ -3457,14 +3457,17 @@
         258
       ],
       "createdAt": "2026-08-29T17:20:23.000Z",
-      "updatedAt": "2026-08-29T18:02:00.000Z",
+      "updatedAt": "2026-08-29T18:08:01.000Z",
       "completedAt": null,
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0254-0258-v1/batch-manifest-v3.json",
         "sha256": "9d8eb449035183b44d76d4de5833795badca2a9a1e7ec51828b8619886968a8e"
       },
-      "releaseSha": null,
-      "receipt": null,
+      "releaseSha": "7f07b93c499f26323c021ede673abfedb812b77b",
+      "receipt": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0254-0258-v1/production-apply/batch-apply-receipt.json",
+        "sha256": "2610663060eb71c8bf8fc2beb4c556f6c5e6a0e498a5b3684b450751640655ec"
+      },
       "reason": null,
       "history": [
         {
@@ -3484,9 +3487,40 @@
             "9d8eb449035183b44d76d4de5833795badca2a9a1e7ec51828b8619886968a8e"
           ],
           "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "RELEASING",
+          "at": "2026-08-29T18:06:00.000Z",
+          "evidenceSha256": [
+            "9d8eb449035183b44d76d4de5833795badca2a9a1e7ec51828b8619886968a8e"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 4,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-08-29T18:08:00.000Z",
+          "evidenceSha256": [
+            "9d8eb449035183b44d76d4de5833795badca2a9a1e7ec51828b8619886968a8e"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 5,
+          "from": "APPLYING",
+          "to": "VERIFYING",
+          "at": "2026-08-29T18:08:01.000Z",
+          "evidenceSha256": [
+            "2610663060eb71c8bf8fc2beb4c556f6c5e6a0e498a5b3684b450751640655ec",
+            "9d8eb449035183b44d76d4de5833795badca2a9a1e7ec51828b8619886968a8e"
+          ],
+          "reason": null
         }
       ]
     }
   ],
-  "ledgerSha256": "de3f6d865cd951db0a410401a6d76e8f979fcd62d8ba79eac4310f9a30171d74"
+  "ledgerSha256": "9ecacca54f57a8621030105a6e93035a2b881f6f71655c6b74ea273807ddde99"
 }
