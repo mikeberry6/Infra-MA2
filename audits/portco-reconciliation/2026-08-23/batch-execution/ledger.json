@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-29T11:40:07.165Z",
-  "activeBatchId": "batch-0229-0233-v1",
+  "updatedAt": "2026-08-29T12:01:22.000Z",
+  "activeBatchId": null,
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -2910,7 +2910,7 @@
     },
     {
       "batchId": "batch-0229-0233-v1",
-      "state": "VERIFYING_FAILED",
+      "state": "COMPLETED",
       "taskIds": [
         "ledger:0229:new-leaf-energy:321d604d",
         "ledger:0230:next-wave-energy:b4bcb6ea",
@@ -2926,8 +2926,8 @@
         233
       ],
       "createdAt": "2026-08-29T10:23:29.000Z",
-      "updatedAt": "2026-08-29T11:40:07.165Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-29T12:01:22.000Z",
+      "completedAt": "2026-08-29T12:01:22.000Z",
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0229-0233-v1/batch-manifest.json",
         "sha256": "0029d3f39ef468adf60e5a3a56b25636fab172ec3a4e8482753db11ed9b3cbf7"
@@ -2937,7 +2937,7 @@
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0229-0233-v1/production-apply/batch-apply-receipt.json",
         "sha256": "5f7444055add560dcad217c99c320d4027d56fdeded5d2704bf71c5018023bcb"
       },
-      "reason": "Independent canonical API and rendered-card verification found eight stale or generic OwnershipPeriod fund-attribution metadata rows across New Leaf Energy, Next Wave Energy Partners, Pivot Energy, PROENERGY and Restaurant Technologies. The five company identities, ownership periods, stakes, vehicles, sources, seed after-images and atomic transaction are correct; no later bundle may start until the protected attribution-only repair and renewed rendered checks pass.",
+      "reason": "All five PortCo after-images, seed entries, ownership attributions, detail APIs and rendered drawers passed final canonical production verification; no partial application or unresolved identity or active-ownership issue remains.",
       "history": [
         {
           "sequence": 1,
@@ -2998,9 +2998,31 @@
             "5f7444055add560dcad217c99c320d4027d56fdeded5d2704bf71c5018023bcb"
           ],
           "reason": "Independent canonical API and rendered-card verification found eight stale or generic OwnershipPeriod fund-attribution metadata rows across New Leaf Energy, Next Wave Energy Partners, Pivot Energy, PROENERGY and Restaurant Technologies. The five company identities, ownership periods, stakes, vehicles, sources, seed after-images and atomic transaction are correct; no later bundle may start until the protected attribution-only repair and renewed rendered checks pass."
+        },
+        {
+          "sequence": 7,
+          "from": "VERIFYING_FAILED",
+          "to": "VERIFYING",
+          "at": "2026-08-29T12:01:21.428Z",
+          "evidenceSha256": [
+            "0029d3f39ef468adf60e5a3a56b25636fab172ec3a4e8482753db11ed9b3cbf7",
+            "5f7444055add560dcad217c99c320d4027d56fdeded5d2704bf71c5018023bcb"
+          ],
+          "reason": "Protected attribution-only receipt 2d8f65dd5441c901985118f841371718f34e9f3c472860043132b62c9f940e44 applied all eight reviewed metadata corrections; canonical APIs and rendered-card verification passed on receipt deployment e7db6366a788df55afbae386ded5178b112921cb."
+        },
+        {
+          "sequence": 8,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-08-29T12:01:22.000Z",
+          "evidenceSha256": [
+            "0029d3f39ef468adf60e5a3a56b25636fab172ec3a4e8482753db11ed9b3cbf7",
+            "5f7444055add560dcad217c99c320d4027d56fdeded5d2704bf71c5018023bcb"
+          ],
+          "reason": "All five PortCo after-images, seed entries, ownership attributions, detail APIs and rendered drawers passed final canonical production verification; no partial application or unresolved identity or active-ownership issue remains."
         }
       ]
     }
   ],
-  "ledgerSha256": "8391d81bd738a4ea47b6c3a443a1b5a07418cea8a3deb2dfa75f647ef59685d2"
+  "ledgerSha256": "dfea96f85fe944f6bbb03cdb9028c54d1b09ee2bec2f0fd4e989f2fdb5810534"
 }
