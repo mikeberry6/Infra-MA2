@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-08-29",
+  "ledgerSha256": "6a7e028b3454c5ca639500b49d0c7826b591158b62706e1df8d814cceb347a6a",
+  "sourceSnapshotSha256": "487e6b10f623c2acccd8bec8b43010cca9acd4a1eaa7f6a17385370a634d97fa",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 1,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 0,
+      "UNRESOLVED": 0
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  },
+  "expectedMutationCount": 1,
+  "mutations": [
+    {
+      "recordId": "OFA-279285F87BBB",
+      "ownershipPeriodId": "cmteolk0g0001yp2blb2la8vg",
+      "companyName": "Cambrian Innovation",
+      "country": "United States",
+      "investmentFirm": "Pennybacker Capital",
+      "currentVehicleName": "Pennybacker-affiliated funds / corporate equity",
+      "databaseVehicleName": "Pennybacker-affiliated funds / corporate equity",
+      "investmentYear": 2023,
+      "stake": null,
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Pennybacker-affiliated funds / corporate equity",
+        "attributionConfidence": null,
+        "attributionRationale": "Cambrian's direct acquisition announcement identifies Pennybacker-affiliated funds as the November 2023 corporate acquirer and current company materials continue that ownership attribution. No specific Pennybacker managed fund is publicly named, so the disclosed vehicle description is retained without a curated fund link."
+      },
+      "evidenceUrls": [
+        "https://cambrianinnovation.com/news/cambrian-a-leader-in-wastewater-treatment-water-reuse-and-energy-recovery-as-a-service-is-acquired-by-and-receives-200-million-growth-equity-commitment-from-pennybacker",
+        "https://cambrianinnovation.com/"
+      ]
+    }
+  ],
+  "manifestSha256": "27e34f826fcf0a2dd28a4c46c055d98b9df6f23240356a4b9a69affd54e0693f"
+}
