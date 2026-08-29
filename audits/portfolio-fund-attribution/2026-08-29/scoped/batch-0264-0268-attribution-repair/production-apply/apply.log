@@ -1,0 +1,263 @@
+
+> infra-tracker@1.0.0 portfolio:fund-attribution:apply
+> npx tsx scripts/apply-portfolio-fund-attribution.ts --manifest=audits/portfolio-fund-attribution/2026-08-29/scoped/batch-0264-0268-attribution-repair/apply-manifest.json --manifest-sha256=854c5623b15e995b24fe59064edda267054db7b99776bda6620773b04c49dd21 --production-snapshot=audits/portfolio-fund-attribution/2026-08-29/scoped/batch-0264-0268-attribution-repair/production-snapshot.json --approval=audits/portfolio-fund-attribution/2026-08-29/scoped/batch-0264-0268-attribution-repair/approval.json --approval-sha256=07f85981de9701e9c83b724df4770fcc5572d517045b1536c52eed9a2e00cea3 --apply=true --write-token=APPLY_REVIEWED_PORTFOLIO_FUND_ATTRIBUTION --receipt=tmp/portfolio-fund-attribution/production/apply-receipt.json
+
+(node:3138) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_RECEIPT",
+  "manifestSha256": "854c5623b15e995b24fe59064edda267054db7b99776bda6620773b04c49dd21",
+  "approvalSha256": "07f85981de9701e9c83b724df4770fcc5572d517045b1536c52eed9a2e00cea3",
+  "environment": "production",
+  "pipelineRunId": "cmteu74i20000f62bqz1gf609",
+  "mutationCount": 12,
+  "changed": 12,
+  "idempotent": false,
+  "beforeFingerprint": "68f0401adc213e255bc2e8771513152a7af6f0697d74ef92686e34c4ed6052f1",
+  "afterFingerprint": "918229ed36d071759436bd681fd455412925e8dc4b689cff9dc23362c50f4e84",
+  "rows": [
+    {
+      "recordId": "OFA-12F7EE14DF2D",
+      "ownershipPeriodId": "cmrxpk21s01wxivhej5fjim7z",
+      "companyId": "cmrxpjgc300yjivhejf598csv",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "GIC Infrastructure",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, evergreen/permanent-capital vehicle, North America-relevant mandate; no second manager-matched fund candidate. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "GIC Special Investment Pte. Ltd. via BBVA México trust F/411215-7",
+        "attributionConfidence": null,
+        "attributionRationale": "RCO's annual report and transaction evidence disclose GIC's acquisition entity and current economic interest. The materials do not identify a commingled GIC fund, so no curated fund link is inferred."
+      }
+    },
+    {
+      "recordId": "OFA-F4579F85FCD1",
+      "ownershipPeriodId": "cmtetese4000c3g2b57jyvnbs",
+      "companyId": "cmrxpjgc300yjivhejf598csv",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Abertis' accounts and RCO reporting disclose Abertis' current 53.12% economic interest through IVM and the BBVA trust. This is strategic corporate ownership rather than a managed infrastructure fund."
+      }
+    },
+    {
+      "recordId": "OFA-E36BB344B56E",
+      "ownershipPeriodId": "cmteteskf000e3g2b30ze26hr",
+      "companyId": "cmrxpjgc300yjivhejf598csv",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "RCO reporting and the original ownership filing identify the Mexican pension investors' CKD and trust structure. The evidence supports a pension-program investment, not a separately curated manager fund."
+      }
+    },
+    {
+      "recordId": "OFA-11BF3546A50E",
+      "ownershipPeriodId": "cmrxpk25f01x4ivhev3rzw9ul",
+      "companyId": "cmrxpjggs00ynivheegnza3qj",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "Searchlight Fiber Alliance",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, North America-relevant mandate; no second manager-matched fund candidate. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": "Searchlight Fiber Alliance",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Searchlight Fiber Alliance",
+        "attributionConfidence": null,
+        "attributionRationale": "The investment announcement and FCC consent record identify Searchlight Fiber Alliance and the Topco/Holdco control chain. The curated Searchlight Fiber Alliance record matches that disclosed vehicle."
+      }
+    },
+    {
+      "recordId": "OFA-22B8E8C97BF9",
+      "ownershipPeriodId": "cmrxpk25z01x5ivhezwl33di9",
+      "companyId": "cmrxpjggs00ynivheegnza3qj",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Epsom Investment Pte. Ltd",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: GIC | Fund: Epsom Investment Pte. Ltd. | Ownership Interest: 46.74% Supplemental ownership detail discloses a distinct fund/vehicle that does not match funds.ts."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Epsom Investment Pte. Ltd. via Searchlight Fiber Alliance LLC",
+        "attributionConfidence": null,
+        "attributionRationale": "FCC materials disclose Epsom's nonvoting SFA interest and indirect Holdco economics. They do not disclose a GIC commingled fund or a direct percentage of Wecom, so the acquisition vehicle is retained unlinked."
+      }
+    },
+    {
+      "recordId": "OFA-21FF08F27335",
+      "ownershipPeriodId": "cmteteyv1000q3g2bcibcawmu",
+      "companyId": "cmrxpjggs00ynivheegnza3qj",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Platinum Compass B 2018 RSC Ltd. via Searchlight Fiber Alliance LLC",
+        "attributionConfidence": null,
+        "attributionRationale": "FCC materials disclose ADIA's Platinum Compass acquisition vehicle and indirect Holdco economics. This is direct institutional capital through SFA; no managed fund is inferred."
+      }
+    },
+    {
+      "recordId": "OFA-32F3883D9C0A",
+      "ownershipPeriodId": "cmtetez14000s3g2bzjwxyz6b",
+      "companyId": "cmrxpjggs00ynivheegnza3qj",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The FCC control record discloses Simple Broadband's retained equity and vote. The reviewed evidence does not identify a separately curated infrastructure fund."
+      }
+    },
+    {
+      "recordId": "OFA-5DD0197E71BD",
+      "ownershipPeriodId": "cmtetez77000u3g2b0hqq93e0",
+      "companyId": "cmrxpjggs00ynivheegnza3qj",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The FCC consent record discloses the founders' rollover equity and vote. This is retained founder ownership and has no fund attribution."
+      }
+    },
+    {
+      "recordId": "OFA-5CFE51CF5660",
+      "ownershipPeriodId": "cmtetf58l001d3g2bqm4nq2u1",
+      "companyId": "cmtetf3o5000x3g2bx6qi4hzi",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Elliott Associates, L.P. and Elliott International, L.P.",
+        "attributionConfidence": null,
+        "attributionRationale": "The regulatory ownership filing discloses Elliott's named funds, acquisition structure and 97% current interest. Those vehicles are not curated fund-database records, so they remain unlinked."
+      }
+    },
+    {
+      "recordId": "OFA-B4A45A820B26",
+      "ownershipPeriodId": "cmtetf5co001e3g2bunyny4mt",
+      "companyId": "cmtetf3o5000x3g2bx6qi4hzi",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "EIF United States Power Fund IV, L.P.",
+        "attributionConfidence": null,
+        "attributionRationale": "The regulatory filing discloses the EIF Fund IV vehicle and Ares-managed acquisition chain. The named fund is not in the curated fund database, so the disclosure is preserved without a link."
+      }
+    },
+    {
+      "recordId": "OFA-4FDBF57ADA5C",
+      "ownershipPeriodId": "cmrxpk5sc022pivhejivt66fy",
+      "companyId": "cmrxpjjte013vivhep3ejd8c0",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "KKR Global Infrastructure Investors V",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: KKR | Fund: KKR Global Infrastructure Investors | Ownership Interest: Not publicly disclosed. Supplemental ownership detail discloses a distinct fund/vehicle that does not match funds.ts."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "KKR Global Infrastructure Investors IV; KKR Real Estate Partners Americas III; KKR Core vehicles",
+        "attributionConfidence": null,
+        "attributionRationale": "The merger proxy identifies KKR's acquisition funds and Cavalry Parent structure. No single curated fund row captures the disclosed multi-vehicle ownership, so no link is created."
+      }
+    },
+    {
+      "recordId": "OFA-69B7E235196C",
+      "ownershipPeriodId": "cmtetfc5a001z3g2b7cf5m3n9",
+      "companyId": "cmrxpjjte013vivhep3ejd8c0",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Global Infrastructure Partners IV-A/B and IV-C vehicles; GIP IV Friends & Family Fund",
+        "attributionConfidence": null,
+        "attributionRationale": "The merger proxy and GIP disclosure materials identify the GIP IV acquisition vehicles and Cavalry Parent structure. No single curated fund record covers that disclosed structure, so it remains unlinked."
+      }
+    }
+  ],
+  "appliedAt": "2026-08-29T20:32:25.391Z",
+  "receiptSha256": "fa9b123df6cd0a5874dc2c86f4f91bd50fd1fc32436b56329e2c5ebe381d5e99"
+}
