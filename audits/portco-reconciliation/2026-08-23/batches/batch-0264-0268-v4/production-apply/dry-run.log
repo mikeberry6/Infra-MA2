@@ -1,0 +1,110 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:batch:apply
+> npx tsx scripts/portco-reconciliation/batch-apply-cli.ts --batch-manifest=audits/portco-reconciliation/2026-08-23/batches/batch-0264-0268-v4/batch-manifest.json --batch-sha256=c7f145053fa703b88e9896da2170258b4c0a647fe12a235ee4cec68f38986630
+
+(node:3740) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "BATCH_DRY_RUN",
+  "batchId": "batch-0264-0268-v4",
+  "batchSha256": "c7f145053fa703b88e9896da2170258b4c0a647fe12a235ee4cec68f38986630",
+  "databaseWrites": false,
+  "seedWrites": false,
+  "plans": [
+    {
+      "companyName": "Red de Carreteras de Occidente, S.A.P.I. de C.V.",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to name, aliases, subsector, description, website, headquarters, lastVerifiedAt, ownershipPeriods, milestones, citations."
+        },
+        {
+          "kind": "ADD_OWNER",
+          "relationIds": [],
+          "detail": "Add 4 approved ownership period(s)."
+        }
+      ],
+      "changedFields": [
+        "aliases",
+        "citations",
+        "description",
+        "headquarters",
+        "lastVerifiedAt",
+        "milestones",
+        "name",
+        "ownershipPeriods",
+        "subsector",
+        "website"
+      ],
+      "retiredCompanyIds": []
+    },
+    {
+      "companyName": "Wecom Fiber",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to aliases, subsector, description, website, headquarters, lastVerifiedAt, ownershipPeriods, milestones, citations."
+        },
+        {
+          "kind": "ADD_OWNER",
+          "relationIds": [],
+          "detail": "Add 3 approved ownership period(s)."
+        }
+      ],
+      "changedFields": [
+        "aliases",
+        "citations",
+        "description",
+        "headquarters",
+        "lastVerifiedAt",
+        "milestones",
+        "ownershipPeriods",
+        "subsector",
+        "website"
+      ],
+      "retiredCompanyIds": []
+    },
+    {
+      "companyName": "Channelview Cogeneration",
+      "mutations": [
+        {
+          "kind": "CREATE_COMPANY",
+          "relationIds": [],
+          "detail": "Create the approved canonical company and all approved relations."
+        }
+      ],
+      "changedFields": [
+        "company"
+      ],
+      "retiredCompanyIds": []
+    },
+    {
+      "companyName": "CyrusOne",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to aliases, description, website, headquarters, lastVerifiedAt, ownershipPeriods, milestones, citations."
+        },
+        {
+          "kind": "ADD_OWNER",
+          "relationIds": [],
+          "detail": "Add 5 approved ownership period(s)."
+        }
+      ],
+      "changedFields": [
+        "aliases",
+        "citations",
+        "description",
+        "headquarters",
+        "lastVerifiedAt",
+        "milestones",
+        "ownershipPeriods",
+        "website"
+      ],
+      "retiredCompanyIds": []
+    }
+  ]
+}
