@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-29T15:43:49.000Z",
-  "activeBatchId": "batch-0244-0248-v1",
+  "updatedAt": "2026-08-29T16:08:36.000Z",
+  "activeBatchId": null,
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -3233,7 +3233,7 @@
     },
     {
       "batchId": "batch-0244-0248-v1",
-      "state": "VERIFYING_FAILED",
+      "state": "COMPLETED",
       "taskIds": [
         "ledger:0244:ontario-science-partners:619f3a80",
         "ledger:0245:surrey-pretrial-services-centre-expansion-project:7ed8555d",
@@ -3249,8 +3249,8 @@
         248
       ],
       "createdAt": "2026-08-29T15:12:37.000Z",
-      "updatedAt": "2026-08-29T15:43:49.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-29T16:08:36.000Z",
+      "completedAt": "2026-08-29T16:08:36.000Z",
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0244-0248-v1/batch-manifest.json",
         "sha256": "fcff3e836d88a6278655a0c77152bb1a5b5ef7379621d6b065fd4cb8527bb101"
@@ -3260,7 +3260,7 @@
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0244-0248-v1/production-apply/batch-apply-receipt.json",
         "sha256": "cde4f37a1276ad80cce120b0f02f4772ad7d483e5add101ba1089679629b5467"
       },
-      "reason": "Independent canonical API verification confirmed all three PortCo after-images and the atomic transaction, but six active ownership rows retained stale, default, or unresolved fund-attribution metadata. No later bundle may start until the protected attribution-only repair sets the six exact reviewed records and renewed API/rendered-card checks pass.",
+      "reason": null,
       "history": [
         {
           "sequence": 1,
@@ -3321,9 +3321,20 @@
             "fcff3e836d88a6278655a0c77152bb1a5b5ef7379621d6b065fd4cb8527bb101"
           ],
           "reason": "Independent canonical API verification confirmed all three PortCo after-images and the atomic transaction, but six active ownership rows retained stale, default, or unresolved fund-attribution metadata. No later bundle may start until the protected attribution-only repair sets the six exact reviewed records and renewed API/rendered-card checks pass."
+        },
+        {
+          "sequence": 7,
+          "from": "VERIFYING_FAILED",
+          "to": "COMPLETED",
+          "at": "2026-08-29T16:08:36.000Z",
+          "evidenceSha256": [
+            "cde4f37a1276ad80cce120b0f02f4772ad7d483e5add101ba1089679629b5467",
+            "fcff3e836d88a6278655a0c77152bb1a5b5ef7379621d6b065fd4cb8527bb101"
+          ],
+          "reason": null
         }
       ]
     }
   ],
-  "ledgerSha256": "d3376d529159343e61598dd3ecc9aea4871b5d2a06f1572054a7df2311d55da1"
+  "ledgerSha256": "a1aa59109c15e540f9aa3b1a040e4b28ee0fa9facbbfbc882e49690c61315d69"
 }
