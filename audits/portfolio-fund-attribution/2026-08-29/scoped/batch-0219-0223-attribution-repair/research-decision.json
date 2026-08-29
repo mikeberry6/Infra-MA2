@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_CORRECTION_DECISION",
+  "asOfDate": "2026-08-29",
+  "triggerBatchId": "batch-0219-0223-v1",
+  "triggerBatchSha256": "54ff1f0ed08add50ec80397de759f189384428219ff03e5bb53928677b54e6e3",
+  "decision": "CORRECT_STALE_ATTRIBUTION_METADATA",
+  "rationale": "The PortCo transaction correctly applied the reviewed identities, owners, vehicles, stakes and dates, but six current ownership periods retained stale or default attribution metadata. Align production to the already-reviewed seed attribution records without changing any company, ownership identity, fund database record or legal ownership conclusion.",
+  "mutations": [
+    {
+      "ownershipPeriodId": "cmrxpjz2601s8ivhekaamx1rl",
+      "companyName": "WideOpenWest, Inc.",
+      "from": "INFERRED — DigitalBridge Fund III — LOW",
+      "to": "DISCLOSED — DigitalBridge Fund III — existing normalized fund link retained"
+    },
+    {
+      "ownershipPeriodId": "cmte4sfi0000c0x2bc5d4embd",
+      "companyName": "WideOpenWest, Inc.",
+      "from": "UNRESOLVED — no named fund",
+      "to": "DISCLOSED — Crestview III investment funds — no normalized fund link"
+    },
+    {
+      "ownershipPeriodId": "cmte4siy8000o0x2brw46sffy",
+      "companyName": "Mantle Reach Power",
+      "from": "UNRESOLVED — no named fund",
+      "to": "DISCLOSED — EnCap Energy Transition Fund III — no normalized fund link"
+    },
+    {
+      "ownershipPeriodId": "cmrxpjz3p01sbivhe5nxkcfvj",
+      "companyName": "Anza Renewables",
+      "from": "INFERRED — ECP Fund V — LOW",
+      "to": "DISCLOSED — ECP Energy Transition Opportunities Fund — no normalized fund link"
+    },
+    {
+      "ownershipPeriodId": "cmrxpjz5b01seivhelnb7zna3",
+      "companyName": "Avolta Renewable Holdings",
+      "from": "INFERRED — ECP Fund V — LOW",
+      "to": "UNRESOLVED — ECP investing affiliate not publicly disclosed — no normalized fund link"
+    },
+    {
+      "ownershipPeriodId": "cmte4sr05001d0x2bahfwizbx",
+      "companyName": "Avolta Renewable Holdings",
+      "from": "UNRESOLVED — no named fund",
+      "to": "DIRECT_PROGRAM — Avolta, LLC corporate joint-venture ownership — no normalized fund link"
+    }
+  ],
+  "nonChanges": [
+    "Company identities, canonical redirects and publication status",
+    "Ownership organizations, vehicles, stakes, dates and active/former state",
+    "Fund Database records",
+    "Descriptions, milestones, citations and primary sources",
+    "Bleutec Industries deferral"
+  ],
+  "evidenceUrls": [
+    "https://dms.psc.sc.gov/Attachments/Matter/97a30d91-be2e-4b65-802e-146d80e00088",
+    "https://www.digitalbridge.com/portfolio/wow",
+    "https://investors.bakerhughes.com/news/press-releases/news-details/2026/Baker-Hughes-and-Mantle-Reach-Power-an-EnCap-Energy-Transition-Company-Announce-Strategic-Agreement-to-Accelerate-Large-scale-Geothermal-Across-North-America/default.aspx",
+    "https://www.anzarenewables.com/press-release/anza-completes-separation-from-borrego-and-receives-new-investment-from-energy-capital-partners-led-consortium-to-transform-solar-and-storage-procurement/",
+    "https://www.ecpgp.com/equity/portfolio/avolta-renewable-holdings",
+    "https://avoltadevelopment.com/"
+  ],
+  "identityResolved": true,
+  "activeOwnershipResolved": true,
+  "unresolvedQuestions": []
+}

@@ -3,7 +3,7 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-29T08:41:31Z",
+  "updatedAt": "2026-08-29T08:51:33Z",
   "activeBatchId": "batch-0219-0223-v1",
   "batches": [
     {
@@ -2680,7 +2680,7 @@
     },
     {
       "batchId": "batch-0219-0223-v1",
-      "state": "VERIFYING",
+      "state": "VERIFYING_FAILED",
       "taskIds": [
         "ledger:0219:wideopenwest-inc:2debcc76",
         "ledger:0220:bleutec-industries:3c6b9662",
@@ -2696,7 +2696,7 @@
         223
       ],
       "createdAt": "2026-08-29T08:10:05Z",
-      "updatedAt": "2026-08-29T08:41:31Z",
+      "updatedAt": "2026-08-29T08:51:33Z",
       "completedAt": null,
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0219-0223-v1/batch-manifest-v2.json",
@@ -2707,7 +2707,7 @@
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0219-0223-v1/production-apply/batch-apply-receipt.json",
         "sha256": "295c99cfd3b9b411cb4aae7b4849b7abe11827750b157b144616b207bdc292bc"
       },
-      "reason": null,
+      "reason": "Rendered production verification found stale OwnershipPeriod fund-attribution metadata on six current rows: WideOpenWest DigitalBridge and Crestview, Mantle Reach EnCap, Anza ECP, and Avolta ECP and Avolta LLC. The PortCo identities, ownership periods, stakes, vehicles, seed after-images, and atomic transaction are correct; no later batch may start until the protected attribution-only repair and renewed rendered checks pass.",
       "history": [
         {
           "sequence": 1,
@@ -2757,9 +2757,20 @@
             "54ff1f0ed08add50ec80397de759f189384428219ff03e5bb53928677b54e6e3"
           ],
           "reason": null
+        },
+        {
+          "sequence": 6,
+          "from": "VERIFYING",
+          "to": "VERIFYING_FAILED",
+          "at": "2026-08-29T08:51:33Z",
+          "evidenceSha256": [
+            "295c99cfd3b9b411cb4aae7b4849b7abe11827750b157b144616b207bdc292bc",
+            "54ff1f0ed08add50ec80397de759f189384428219ff03e5bb53928677b54e6e3"
+          ],
+          "reason": "Rendered production verification found stale OwnershipPeriod fund-attribution metadata on six current rows: WideOpenWest DigitalBridge and Crestview, Mantle Reach EnCap, Anza ECP, and Avolta ECP and Avolta LLC. The PortCo identities, ownership periods, stakes, vehicles, seed after-images, and atomic transaction are correct; no later batch may start until the protected attribution-only repair and renewed rendered checks pass."
         }
       ]
     }
   ],
-  "ledgerSha256": "1fc1bdfaab20b906fca1b5edffa61bffbd0596102d1acef9ad5d1e503ac1d091"
+  "ledgerSha256": "b4ccf0a19a1ff04386132c30fd8566db9e6635a5ff0c8b32d9d2415ef95ec4bd"
 }
