@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-29T17:12:45.000Z",
+  "updatedAt": "2026-08-29T18:24:42.000Z",
   "runStatus": "IDLE",
   "activeTaskId": null,
   "source": {
@@ -27976,23 +27976,44 @@
       "managerIndex": 46,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "f41b784e1f2c75491b0c2db801aeb0c4ac0cc024b04b95ed6bc8b70dcc1b4f7a",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-08-29T17:20:23.000Z",
+      "updatedAt": "2026-08-29T18:24:42.000Z",
+      "completedAt": "2026-08-29T18:24:42.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "6132af88769e8b841393a78c41f804dd24e59343fb412d7f56955767d6cb20b0",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0254-cambrian-innovation-water-asset-spvs/attempt-1/locked-task-snapshot.json",
+          "sha256": "6132af88769e8b841393a78c41f804dd24e59343fb412d7f56955767d6cb20b0"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0254-cambrian-innovation-v1/proposal.json",
+          "sha256": "3750cf1f22cbbb1d7d71c53be8d4f72054748ad63ab621288189dc40b8e57597"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0254-cambrian-innovation-v1.json",
+          "sha256": "977c1add13ae0c623e5b5db343415601098d9d6e46689610644c09bcad135c11"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0254-0258-v1/production-apply/batch-apply-receipt.json#members/0/receipt",
+          "sha256": "954068396ef7602ce585472d12dcb61b3059ea9e31250abe37019f70bcae4c4d"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0254-cambrian-innovation-v1/proposal.json#afterImage",
+          "sha256": "79ca17079d425475c47df7dbcc52b12d5163380fdab44efd8f09e5f451b5e8bf"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-29T18:24:42.000Z",
+        "auditEventId": "cmteolkk60003yp2b2uv1cks8",
+        "transactionId": "5a85f838-44b6-4907-a3e9-7f5fdf361dc5",
+        "receiptSha256": "954068396ef7602ce585472d12dcb61b3059ea9e31250abe37019f70bcae4c4d",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33266836098"
+      },
       "history": [
         {
           "sequence": 1,
@@ -28003,6 +28024,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-08-29T18:24:42.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0254-0258-v1.",
+          "taskSnapshotSha256": "6132af88769e8b841393a78c41f804dd24e59343fb412d7f56955767d6cb20b0",
+          "evidenceSha256": [
+            "2610663060eb71c8bf8fc2beb4c556f6c5e6a0e498a5b3684b450751640655ec",
+            "3750cf1f22cbbb1d7d71c53be8d4f72054748ad63ab621288189dc40b8e57597",
+            "6132af88769e8b841393a78c41f804dd24e59343fb412d7f56955767d6cb20b0",
+            "79ca17079d425475c47df7dbcc52b12d5163380fdab44efd8f09e5f451b5e8bf",
+            "954068396ef7602ce585472d12dcb61b3059ea9e31250abe37019f70bcae4c4d",
+            "977c1add13ae0c623e5b5db343415601098d9d6e46689610644c09bcad135c11",
+            "9d8eb449035183b44d76d4de5833795badca2a9a1e7ec51828b8619886968a8e"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -28014,23 +28053,44 @@
       "managerIndex": 46,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "48ac9959755e603c7e86e0cdaf9b9fd886aebfef60c205fe3aadf49259f7ed78",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-08-29T17:20:23.000Z",
+      "updatedAt": "2026-08-29T18:24:42.000Z",
+      "completedAt": "2026-08-29T18:24:42.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "a91ed6607360616e7307e0c604dd6a7a579465bb0b4c822d92c640c749eb5676",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0255-cleancapital-c-and-i-solar-spvs/attempt-1/locked-task-snapshot.json",
+          "sha256": "a91ed6607360616e7307e0c604dd6a7a579465bb0b4c822d92c640c749eb5676"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0255-cleancapital-holdings-v3/proposal.json",
+          "sha256": "7222a4bbe446e6bd1bb3ffe68b7abdb50753f16f977fb78dafcc246c3081149c"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0255-cleancapital-holdings-v3.json",
+          "sha256": "d4be35c9ca35508e8a61c1b5766a72371fea8c6b2ecb14256a1bbe898cd1fdcd"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0254-0258-v1/production-apply/batch-apply-receipt.json#members/1/receipt",
+          "sha256": "22f47f75f02dfe067ddcd0f8e9651fdba85651cce807e16c20f2b4e8e5de5f4d"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0255-cleancapital-holdings-v3/proposal.json#afterImage",
+          "sha256": "d92bf004b04240d0696e5f76469ceea558a81d4344e213b02be2ac1acb4a883d"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-29T18:24:42.000Z",
+        "auditEventId": "cmteoll97000ayp2b9ye3xrvk",
+        "transactionId": "5a85f838-44b6-4907-a3e9-7f5fdf361dc5",
+        "receiptSha256": "22f47f75f02dfe067ddcd0f8e9651fdba85651cce807e16c20f2b4e8e5de5f4d",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33266836098"
+      },
       "history": [
         {
           "sequence": 1,
@@ -28041,6 +28101,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-08-29T18:24:42.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0254-0258-v1.",
+          "taskSnapshotSha256": "a91ed6607360616e7307e0c604dd6a7a579465bb0b4c822d92c640c749eb5676",
+          "evidenceSha256": [
+            "22f47f75f02dfe067ddcd0f8e9651fdba85651cce807e16c20f2b4e8e5de5f4d",
+            "2610663060eb71c8bf8fc2beb4c556f6c5e6a0e498a5b3684b450751640655ec",
+            "7222a4bbe446e6bd1bb3ffe68b7abdb50753f16f977fb78dafcc246c3081149c",
+            "9d8eb449035183b44d76d4de5833795badca2a9a1e7ec51828b8619886968a8e",
+            "a91ed6607360616e7307e0c604dd6a7a579465bb0b4c822d92c640c749eb5676",
+            "d4be35c9ca35508e8a61c1b5766a72371fea8c6b2ecb14256a1bbe898cd1fdcd",
+            "d92bf004b04240d0696e5f76469ceea558a81d4344e213b02be2ac1acb4a883d"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -28052,20 +28130,26 @@
       "managerIndex": 46,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "58e4fd898161698cd45a2224df91dba168988a70f72a35991e8afc70ece82ff5",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
+      "status": "DEFERRED",
+      "attempts": 1,
+      "startedAt": "2026-08-29T17:20:23.000Z",
+      "updatedAt": "2026-08-29T18:24:42.000Z",
+      "completedAt": "2026-08-29T18:24:42.000Z",
+      "exceptionReason": "EnviraPAC Monticello, LLC is the verified operating facility owner/operator, but Generate disclosed a $25 million investment in an unnamed bankruptcy-remote project SPV rather than corporate equity in EnviraPAC. The SPV identity, present title chain, Generate's current ownership state and any exit date remain unresolved, so the active corporate ownership record cannot be safely changed.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "621bc1577c7a94467580c44b4fbd5621260591e1fda4da801b53aa545d414dea",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0256-envirapac-monticello/attempt-1/locked-task-snapshot.json",
+          "sha256": "621bc1577c7a94467580c44b4fbd5621260591e1fda4da801b53aa545d414dea"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0256-envirapac-monticello/attempt-1/terminal-decision.json",
+          "sha256": "7c17f7713c6b840d52e4f70ce59828c4b112903905f843159514a8dda6be73c5"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -28079,6 +28163,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-08-29T18:24:42.000Z",
+          "reason": "EnviraPAC Monticello, LLC is the verified operating facility owner/operator, but Generate disclosed a $25 million investment in an unnamed bankruptcy-remote project SPV rather than corporate equity in EnviraPAC. The SPV identity, present title chain, Generate's current ownership state and any exit date remain unresolved, so the active corporate ownership record cannot be safely changed.",
+          "taskSnapshotSha256": "621bc1577c7a94467580c44b4fbd5621260591e1fda4da801b53aa545d414dea",
+          "evidenceSha256": [
+            "2610663060eb71c8bf8fc2beb4c556f6c5e6a0e498a5b3684b450751640655ec",
+            "621bc1577c7a94467580c44b4fbd5621260591e1fda4da801b53aa545d414dea",
+            "7c17f7713c6b840d52e4f70ce59828c4b112903905f843159514a8dda6be73c5",
+            "9d8eb449035183b44d76d4de5833795badca2a9a1e7ec51828b8619886968a8e"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -28090,20 +28189,26 @@
       "managerIndex": 46,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "af1e2d30c0d2bc2985e2f8e0bd4cdaa449eae564e908441d69233a472dfc1366",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
+      "status": "DEFERRED",
+      "attempts": 1,
+      "startedAt": "2026-08-29T17:20:23.000Z",
+      "updatedAt": "2026-08-29T18:24:42.000Z",
+      "completedAt": "2026-08-29T18:24:42.000Z",
+      "exceptionReason": "Pine Gate's current repository ownership is stale after its November 2025 Chapter 11 process and reported April 2026 plan effectiveness. The prepetition Generate, HOOPP and HESTA periods should end, but the direct sale orders, purchaser identities and surviving canonical platform boundary are not sufficiently resolved to publish a complete current owner roster or realized status without inference.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "d32b0563becc6cfbee3bc21cfa14e0000a91abe6a35829b15fd2b248e56a6b9a",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0257-pine-gate-renewables/attempt-1/locked-task-snapshot.json",
+          "sha256": "d32b0563becc6cfbee3bc21cfa14e0000a91abe6a35829b15fd2b248e56a6b9a"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0257-pine-gate-renewables/attempt-1/terminal-decision.json",
+          "sha256": "0ecdf23cf9bd9491c5f8965b052b63fb809f916090b3bdebac46a996c3ddc5e0"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -28117,6 +28222,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-08-29T18:24:42.000Z",
+          "reason": "Pine Gate's current repository ownership is stale after its November 2025 Chapter 11 process and reported April 2026 plan effectiveness. The prepetition Generate, HOOPP and HESTA periods should end, but the direct sale orders, purchaser identities and surviving canonical platform boundary are not sufficiently resolved to publish a complete current owner roster or realized status without inference.",
+          "taskSnapshotSha256": "d32b0563becc6cfbee3bc21cfa14e0000a91abe6a35829b15fd2b248e56a6b9a",
+          "evidenceSha256": [
+            "0ecdf23cf9bd9491c5f8965b052b63fb809f916090b3bdebac46a996c3ddc5e0",
+            "2610663060eb71c8bf8fc2beb4c556f6c5e6a0e498a5b3684b450751640655ec",
+            "9d8eb449035183b44d76d4de5833795badca2a9a1e7ec51828b8619886968a8e",
+            "d32b0563becc6cfbee3bc21cfa14e0000a91abe6a35829b15fd2b248e56a6b9a"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -28128,23 +28248,44 @@
       "managerIndex": 46,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "bc9dbb24d961ee729d73afdbf1379a8ce9479523920b932e42df141134f147d0",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-08-29T17:20:23.000Z",
+      "updatedAt": "2026-08-29T18:24:42.000Z",
+      "completedAt": "2026-08-29T18:24:42.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "c8e18f24ec57726eaf7fe78be6cfb831c60e7058f3e0eef294b45275552a3a79",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0258-plug-power-fuel-cell-asset-spvs/attempt-1/locked-task-snapshot.json",
+          "sha256": "c8e18f24ec57726eaf7fe78be6cfb831c60e7058f3e0eef294b45275552a3a79"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0258-plug-power-fuel-cell-asset-spvs-v1/proposal.json",
+          "sha256": "c1d00795e1850990ac3804de06b9d363e337679ed6ab4a6e00c2e096fb27c79b"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0258-plug-power-fuel-cell-asset-spvs-v1.json",
+          "sha256": "7a360d2c1066d176c1a5bd2d329b1d7d817872395aa15eac3205be3ec046a038"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0254-0258-v1/production-apply/batch-apply-receipt.json#members/4/receipt",
+          "sha256": "34be10313c0a6f04ac94121693adee63ed579dd9edda7608d735f9ae9b3f2b70"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0258-plug-power-fuel-cell-asset-spvs-v1/proposal.json#afterImage",
+          "sha256": "329181ba02ed605c4cc2297f5a5d2da5e401d8ad40bfa8b843795dc15ee4b3c4"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-29T18:24:42.000Z",
+        "auditEventId": "cmteollmu000kyp2byimtult2",
+        "transactionId": "5a85f838-44b6-4907-a3e9-7f5fdf361dc5",
+        "receiptSha256": "34be10313c0a6f04ac94121693adee63ed579dd9edda7608d735f9ae9b3f2b70",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33266836098"
+      },
       "history": [
         {
           "sequence": 1,
@@ -28155,6 +28296,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-08-29T18:24:42.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0254-0258-v1.",
+          "taskSnapshotSha256": "c8e18f24ec57726eaf7fe78be6cfb831c60e7058f3e0eef294b45275552a3a79",
+          "evidenceSha256": [
+            "2610663060eb71c8bf8fc2beb4c556f6c5e6a0e498a5b3684b450751640655ec",
+            "329181ba02ed605c4cc2297f5a5d2da5e401d8ad40bfa8b843795dc15ee4b3c4",
+            "34be10313c0a6f04ac94121693adee63ed579dd9edda7608d735f9ae9b3f2b70",
+            "7a360d2c1066d176c1a5bd2d329b1d7d817872395aa15eac3205be3ec046a038",
+            "9d8eb449035183b44d76d4de5833795badca2a9a1e7ec51828b8619886968a8e",
+            "c1d00795e1850990ac3804de06b9d363e337679ed6ab4a6e00c2e096fb27c79b",
+            "c8e18f24ec57726eaf7fe78be6cfb831c60e7058f3e0eef294b45275552a3a79"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -37456,5 +37615,5 @@
       ]
     }
   ],
-  "manifestSha256": "c9e348f766104690743106a8e49ccd886efd4b4b7172c92e6652d695c58da2f6"
+  "manifestSha256": "9499f94ff7fe4f619b8284dd99cc0b89bae0d201674004ca0ea8d41d537c768f"
 }
