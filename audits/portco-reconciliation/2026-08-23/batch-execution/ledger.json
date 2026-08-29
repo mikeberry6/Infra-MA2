@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-29T08:51:33Z",
-  "activeBatchId": "batch-0219-0223-v1",
+  "updatedAt": "2026-08-29T09:11:13.000Z",
+  "activeBatchId": null,
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -2680,7 +2680,7 @@
     },
     {
       "batchId": "batch-0219-0223-v1",
-      "state": "VERIFYING_FAILED",
+      "state": "COMPLETED",
       "taskIds": [
         "ledger:0219:wideopenwest-inc:2debcc76",
         "ledger:0220:bleutec-industries:3c6b9662",
@@ -2696,8 +2696,8 @@
         223
       ],
       "createdAt": "2026-08-29T08:10:05Z",
-      "updatedAt": "2026-08-29T08:51:33Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-29T09:11:13.000Z",
+      "completedAt": "2026-08-29T09:11:13.000Z",
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0219-0223-v1/batch-manifest-v2.json",
         "sha256": "54ff1f0ed08add50ec80397de759f189384428219ff03e5bb53928677b54e6e3"
@@ -2707,7 +2707,7 @@
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0219-0223-v1/production-apply/batch-apply-receipt.json",
         "sha256": "295c99cfd3b9b411cb4aae7b4849b7abe11827750b157b144616b207bdc292bc"
       },
-      "reason": "Rendered production verification found stale OwnershipPeriod fund-attribution metadata on six current rows: WideOpenWest DigitalBridge and Crestview, Mantle Reach EnCap, Anza ECP, and Avolta ECP and Avolta LLC. The PortCo identities, ownership periods, stakes, vehicles, seed after-images, and atomic transaction are correct; no later batch may start until the protected attribution-only repair and renewed rendered checks pass.",
+      "reason": "Exact receipt deployment, four public detail APIs, four rendered drawers, attribution labels, owner stakes, milestones, sources, and zero browser-console errors verified.",
       "history": [
         {
           "sequence": 1,
@@ -2768,9 +2768,31 @@
             "54ff1f0ed08add50ec80397de759f189384428219ff03e5bb53928677b54e6e3"
           ],
           "reason": "Rendered production verification found stale OwnershipPeriod fund-attribution metadata on six current rows: WideOpenWest DigitalBridge and Crestview, Mantle Reach EnCap, Anza ECP, and Avolta ECP and Avolta LLC. The PortCo identities, ownership periods, stakes, vehicles, seed after-images, and atomic transaction are correct; no later batch may start until the protected attribution-only repair and renewed rendered checks pass."
+        },
+        {
+          "sequence": 7,
+          "from": "VERIFYING_FAILED",
+          "to": "VERIFYING",
+          "at": "2026-08-29T09:11:07.000Z",
+          "evidenceSha256": [
+            "295c99cfd3b9b411cb4aae7b4849b7abe11827750b157b144616b207bdc292bc",
+            "54ff1f0ed08add50ec80397de759f189384428219ff03e5bb53928677b54e6e3"
+          ],
+          "reason": "Protected six-row attribution repair applied and exact receipt deployment verified; resumed final API and rendered-card verification."
+        },
+        {
+          "sequence": 8,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-08-29T09:11:13.000Z",
+          "evidenceSha256": [
+            "295c99cfd3b9b411cb4aae7b4849b7abe11827750b157b144616b207bdc292bc",
+            "54ff1f0ed08add50ec80397de759f189384428219ff03e5bb53928677b54e6e3"
+          ],
+          "reason": "Exact receipt deployment, four public detail APIs, four rendered drawers, attribution labels, owner stakes, milestones, sources, and zero browser-console errors verified."
         }
       ]
     }
   ],
-  "ledgerSha256": "b4ccf0a19a1ff04386132c30fd8566db9e6635a5ff0c8b32d9d2415ef95ec4bd"
+  "ledgerSha256": "1075bf9890a69d26d3aa8850c7aa78ac0193c7b9cefd1f685bb90ce579c67ba1"
 }
