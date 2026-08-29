@@ -1,0 +1,221 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-08-29",
+  "ledgerSha256": "ab759586c098745194a76067be624d843eee5f61990bd62171cbd69d25c35a66",
+  "sourceSnapshotSha256": "de7cc86408bf9792d66b1dd84a91e2f2170c153a74bfedc91b2630eb304bdcfe",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 1,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 6,
+      "UNRESOLVED": 0
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  },
+  "expectedMutationCount": 7,
+  "mutations": [
+    {
+      "recordId": "OFA-D7EB30FD17B2",
+      "ownershipPeriodId": "cmtem9ev60009yr2b5oi1cpx1",
+      "companyName": "Health Park at Avenir",
+      "country": "United States",
+      "investmentFirm": "Fengate Asset Management",
+      "currentVehicleName": "SFG PBG Medical, LLC",
+      "databaseVehicleName": "SFG PBG Medical, LLC",
+      "investmentYear": 2026,
+      "stake": null,
+      "expectedIsActive": true,
+      "targetLinkedFundName": "Fengate Infrastructure Fund IV",
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": "Fengate Infrastructure Fund IV"
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Fengate Infrastructure Fund IV",
+        "attributionConfidence": null,
+        "attributionRationale": "Fengate's groundbreaking announcement directly attributes its investment in the Health Park at Avenir ProjectCo to Fengate Infrastructure Fund IV and identifies Stonemont and Sina as its investment and development partners. The exact percentages are not publicly disclosed."
+      },
+      "evidenceUrls": [
+        "https://fengate.com/article/fengate-asset-management-breaks-ground-jupiter-medical-center-campus",
+        "https://www.sinacompanies.com/projects/health-park-at-avenir/"
+      ]
+    },
+    {
+      "recordId": "OFA-8F07EB5420B8",
+      "ownershipPeriodId": "cmtem9f1i000byr2bnch9nylw",
+      "companyName": "Health Park at Avenir",
+      "country": "United States",
+      "investmentFirm": "Stonemont Financial Group",
+      "currentVehicleName": "SFG PBG Medical JV, LLC / SFG PBG Medical, LLC",
+      "databaseVehicleName": "SFG PBG Medical JV, LLC / SFG PBG Medical, LLC",
+      "investmentYear": 2026,
+      "stake": null,
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Fengate and Sina identify Stonemont as a direct investment and development partner in the named Health Park ProjectCo structure. No Stonemont managed infrastructure fund is publicly identified for the investment, and the ownership percentage is not disclosed."
+      },
+      "evidenceUrls": [
+        "https://fengate.com/article/fengate-asset-management-breaks-ground-jupiter-medical-center-campus",
+        "https://www.sinacompanies.com/projects/health-park-at-avenir/"
+      ]
+    },
+    {
+      "recordId": "OFA-8B132A481D75",
+      "ownershipPeriodId": "cmtem9f7f000dyr2bo023lqeu",
+      "companyName": "Health Park at Avenir",
+      "country": "United States",
+      "investmentFirm": "The Sina Companies",
+      "currentVehicleName": "SFG PBG Medical JV, LLC / SFG PBG Medical, LLC",
+      "databaseVehicleName": "SFG PBG Medical JV, LLC / SFG PBG Medical, LLC",
+      "investmentYear": 2026,
+      "stake": null,
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Fengate and Sina identify The Sina Companies as a direct investment and development partner in Health Park at Avenir. No Sina managed infrastructure fund is publicly identified for the investment, and the ownership percentage is not disclosed."
+      },
+      "evidenceUrls": [
+        "https://fengate.com/article/fengate-asset-management-breaks-ground-jupiter-medical-center-campus",
+        "https://www.sinacompanies.com/projects/health-park-at-avenir/"
+      ]
+    },
+    {
+      "recordId": "OFA-1B0A2130650D",
+      "ownershipPeriodId": "cmrxpk1c501vwivhev2ni5vv2",
+      "companyName": "Fengate-MedCraft Cleveland Clinic Outpatient Portfolio",
+      "country": "United States",
+      "investmentFirm": "Fengate Asset Management",
+      "currentVehicleName": "FG MC II Cleveland, LLC / location-specific title LLCs",
+      "databaseVehicleName": "FG MC II Cleveland, LLC / location-specific title LLCs",
+      "investmentYear": 2025,
+      "stake": null,
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "DISCLOSED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Fengate's transaction announcement identifies Fengate and MedCraft as the joint-venture acquirers of the 24-facility portfolio, while title evidence identifies the FG MC II ownership structure. No deal-specific Fengate managed fund or ownership percentage is publicly disclosed, so no fund is inferred."
+      },
+      "evidenceUrls": [
+        "https://fengate.com/news/fengate-expands-healthcare-infrastructure-portfolio-with-acquisition-of-24-u-s-outpatient-facilities",
+        "https://neo-trans.blog/2025/09/10/cleveland-clinic-sells-leases-back-24-facilities/"
+      ]
+    },
+    {
+      "recordId": "OFA-C52755A498CA",
+      "ownershipPeriodId": "cmtem9k8e000oyr2blig746ur",
+      "companyName": "Fengate-MedCraft Cleveland Clinic Outpatient Portfolio",
+      "country": "United States",
+      "investmentFirm": "MedCraft Healthcare Real Estate",
+      "currentVehicleName": "FG MC II Cleveland, LLC / location-specific title LLCs",
+      "databaseVehicleName": "FG MC II Cleveland, LLC / location-specific title LLCs",
+      "investmentYear": 2025,
+      "stake": null,
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Fengate and contemporaneous transaction reporting identify MedCraft Healthcare Real Estate as the joint-venture co-owner and buyer of the Cleveland Clinic outpatient portfolio. No MedCraft managed fund or ownership percentage is publicly disclosed."
+      },
+      "evidenceUrls": [
+        "https://fengate.com/news/fengate-expands-healthcare-infrastructure-portfolio-with-acquisition-of-24-u-s-outpatient-facilities",
+        "https://neo-trans.blog/2025/09/10/cleveland-clinic-sells-leases-back-24-facilities/"
+      ]
+    },
+    {
+      "recordId": "OFA-CC1E602228B8",
+      "ownershipPeriodId": "cmtem9q240012yr2bn80geocq",
+      "companyName": "Montecito Medical Outpatient Portfolio",
+      "country": "United States",
+      "investmentFirm": "Montecito Medical Real Estate",
+      "currentVehicleName": "Retained equity through FG MNTO I LOTUS, LLC",
+      "databaseVehicleName": "Retained equity through FG MNTO I LOTUS, LLC",
+      "investmentYear": 2025,
+      "stake": null,
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Fengate and transaction reporting identify Montecito Medical Real Estate as Fengate's partner and confirm that Montecito retained equity in the recapitalized portfolio. No Montecito managed infrastructure fund or ownership percentage is publicly disclosed."
+      },
+      "evidenceUrls": [
+        "https://fengate.com/news/fengate-acquires-montecito-medical-outpatient-portfolio/",
+        "https://wolfmediausa.com/2025/11/04/transactions-18-mob-750000-s-f-portfolio-closes-for-323-million/"
+      ]
+    },
+    {
+      "recordId": "OFA-E4C82A3B5D3E",
+      "ownershipPeriodId": "cmtem9w32001jyr2bij3e7hze",
+      "companyName": "Prince George's County Blueprint Schools Program (Phase One)",
+      "country": "United States",
+      "investmentFirm": "BBGI",
+      "currentVehicleName": "BBGI",
+      "databaseVehicleName": null,
+      "investmentYear": 2026,
+      "stake": "100%",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "BBGI announced and the school district subsequently reported completion of BBGI's acquisition of a 100% equity interest in the Phase One ProjectCo. The evidence identifies a direct BBGI investment rather than a separately named managed fund."
+      },
+      "evidenceUrls": [
+        "https://www.bb-gi.com/news/bbgi-acquires-a-100-equity-interest-in-a-portfolio-of-six-modern-schools-in-prince-georges-county-maryland/",
+        "https://www.pgcps.org/globalassets/offices/capital-programs/docs---capital-programs/bps-quarterly-reports/pgcps-blueprint-schools-q1-report-2026.pdf"
+      ]
+    }
+  ],
+  "manifestSha256": "175fd0aa8ab2a08fe4cf20491bff2da05ae4d0281c86a3d1621aa90a95400bd2"
+}

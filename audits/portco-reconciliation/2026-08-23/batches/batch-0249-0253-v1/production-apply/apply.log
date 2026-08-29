@@ -1,0 +1,166 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:batch:apply
+> npx tsx scripts/portco-reconciliation/batch-apply-cli.ts --batch-manifest=audits/portco-reconciliation/2026-08-23/batches/batch-0249-0253-v1/batch-manifest.json --batch-sha256=f2688d921be742fe4b6878016dc5b13c4bc7c469634e8f8e1170e7a7aabe4fdf --seed-artifact=prisma/seed-data/approved-portco-after-images.json --apply --write-token=APPLY_APPROVED_PORTCO_BATCH --commit-receipt=tmp/portco-reconciliation/production/batch-commit-receipt.json --receipt=tmp/portco-reconciliation/production/batch-apply-receipt.json --public-base-url=https://infra-ma-2.vercel.app/Infra-MA2/
+
+(node:3843) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "BATCH_APPLIED",
+  "receiptPath": "/home/runner/work/Infra-MA2/Infra-MA2/tmp/portco-reconciliation/production/batch-apply-receipt.json",
+  "receipt": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_APPLY_BATCH_RECEIPT",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "batchId": "batch-0249-0253-v1",
+    "batchSha256": "f2688d921be742fe4b6878016dc5b13c4bc7c469634e8f8e1170e7a7aabe4fdf",
+    "releaseSha": "24835fc86b3369b01f1af1ea7fd39726706375d8",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "transactionId": "6aeb3126-3fff-4335-a317-66337a5ffb11",
+    "appliedAt": "2026-08-29T16:50:40.415Z",
+    "members": [
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0249:jupiter-medical-center-campus:b484d033",
+        "taskIndex": 249,
+        "companyName": "Jupiter Medical Center Campus",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0249:jupiter-medical-center-campus:b484d033",
+          "taskIndex": 249,
+          "companyName": "Jupiter Medical Center Campus",
+          "companyId": "cmtem9dr80000yr2btcupxed4",
+          "proposalSha256": "51bae8d445741983f67a338526ca7961420ce349be7ae14523c13a8d9e37c5d2",
+          "approvalSha256": "922e2b1b4de07e6c7d20813e7e8edc5d3da051589a435b575e1b252a4ff8647a",
+          "productionSnapshotSha256": "132fc16b338645baf576f5d232c8ba31a3386da99eed8c16ba3b2b3c1f2381a3",
+          "beforeCompanySnapshotSha256": null,
+          "appliedAfterImageSha256": "b2f9d38433988c1e43eea1cea90a55a50e9c1f18a40b39f0d64105cab24c716b",
+          "seedAfterImageSha256": "b2f9d38433988c1e43eea1cea90a55a50e9c1f18a40b39f0d64105cab24c716b",
+          "approvedSeedEntrySha256": "f071caa9d367f4fc6203146ce3060d084978078b4f43393346944bb92a62b88f",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "6aeb3126-3fff-4335-a317-66337a5ffb11",
+          "auditEventId": "cmtem9hee000iyr2bfrxd5rro",
+          "appliedAt": "2026-08-29T16:50:40.415Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "9767a4b23f49277bbf1f853028397082f75d84b790faf926f25636e9ecc97040"
+        }
+      },
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0250:medcraft-medical-outpatient-portfolio:bb470706",
+        "taskIndex": 250,
+        "companyName": "MedCraft Medical Outpatient Portfolio",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0250:medcraft-medical-outpatient-portfolio:bb470706",
+          "taskIndex": 250,
+          "companyName": "MedCraft Medical Outpatient Portfolio",
+          "companyId": "cmrxpjfs500xmivheiqodqkfz",
+          "proposalSha256": "eeeacc4abe708aa4ff4b8ed33a54e9d0bddef996e8b1ee6d641329c9f1185cf5",
+          "approvalSha256": "efe6a5bd9511a9379853aac7a4743a43d41c00f09e5fe726f57aeaaaeb0f1cd7",
+          "productionSnapshotSha256": "8b1453a8d6739679a8aa5f3ee05fd213df8e9eee078a6d6c8a65e655201039d5",
+          "beforeCompanySnapshotSha256": "8790ed51b2eb48932bc0fb85487b8d5acab19d84ef46a74ec1fcfcc7d60a9e93",
+          "appliedAfterImageSha256": "c0518b0647506f434620303bc252faa0e7c401fffd9840d96891a893f4845820",
+          "seedAfterImageSha256": "c0518b0647506f434620303bc252faa0e7c401fffd9840d96891a893f4845820",
+          "approvedSeedEntrySha256": "abab11d595d9f39b34434d57eb5f500fc312113bf3ce8e23ee76cfd0f5287772",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "6aeb3126-3fff-4335-a317-66337a5ffb11",
+          "auditEventId": "cmtem9mjm000syr2bo5xgmcu9",
+          "appliedAt": "2026-08-29T16:50:40.415Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "22488f716612a9125f445b08b42baa56bddc5384420c16f43c855cd32c412c6b"
+        }
+      },
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0251:montecito-medical-outpatient-portfolio:18c48dc3",
+        "taskIndex": 251,
+        "companyName": "Montecito Medical Outpatient Portfolio",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0251:montecito-medical-outpatient-portfolio:18c48dc3",
+          "taskIndex": 251,
+          "companyName": "Montecito Medical Outpatient Portfolio",
+          "companyId": "cmrxpjfsr00xnivhemb529yxo",
+          "proposalSha256": "a4ed998ed258706be5eabc1f634fc9c84a8e2053dd0544b693a9d832632585be",
+          "approvalSha256": "5472f25d6dd83963653c83914fb4fb8c1f485f8c0a552dcd8ecc02e5ed532282",
+          "productionSnapshotSha256": "ae3f2875e9bff5760dee385f9c26128197cdd9fb36f0955a81628ac93c6b809f",
+          "beforeCompanySnapshotSha256": "6e6169d00713daf1241e92dbe5f211448012f0e0320192856ec13c3239b827ff",
+          "appliedAfterImageSha256": "a6c9a7c221f6aa2b76cced07aeaf9d012daf47422baddb4faac0bafaaa153398",
+          "seedAfterImageSha256": "a6c9a7c221f6aa2b76cced07aeaf9d012daf47422baddb4faac0bafaaa153398",
+          "approvedSeedEntrySha256": "288752bf0f87a96a0ce9d6ca52f1c056cbdc0abf5a664ac21074148beda471cb",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "6aeb3126-3fff-4335-a317-66337a5ffb11",
+          "auditEventId": "cmtem9s7b0014yr2bty6ibp2e",
+          "appliedAt": "2026-08-29T16:50:40.415Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "8fce0e3acc458f7df27cf836fc174de32538f187795cc70275663598d3169417"
+        }
+      },
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0252:prince-george-s-county-blueprint-schools-program-phase-one:d1600602",
+        "taskIndex": 252,
+        "companyName": "Prince George's County Blueprint Schools Program (Phase One)",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0252:prince-george-s-county-blueprint-schools-program-phase-one:d1600602",
+          "taskIndex": 252,
+          "companyName": "Prince George's County Blueprint Schools Program (Phase One)",
+          "companyId": "cmrxpjfj100xeivhebd0fzcqi",
+          "proposalSha256": "b6d57e7e095e33a1f9489ddf8801662ac6c4cebbac6a198bed61bfcd5a79ddf0",
+          "approvalSha256": "0c23fed8864923c1918360506d8cc90c5700e34c188e6ae2d0df8dc0aa5bf863",
+          "productionSnapshotSha256": "fa40aae3a852fcee8bfd0c394bf947d48beddcfebc0a6cf74a4936d643cccd5d",
+          "beforeCompanySnapshotSha256": "8053a80cc48304df0faebd7c444b138a42a9f44bca10d95013bd369ab935c45e",
+          "appliedAfterImageSha256": "c6005872dd32987a5c934721e3c9f67df047f1739acbf06bd198cc48e4c8d549",
+          "seedAfterImageSha256": "c6005872dd32987a5c934721e3c9f67df047f1739acbf06bd198cc48e4c8d549",
+          "approvedSeedEntrySha256": "8bb6254a4014e0ad24154c5025e2a0b6792a9180da144c71838e743c01b353db",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "6aeb3126-3fff-4335-a317-66337a5ffb11",
+          "auditEventId": "cmtem9yc3001lyr2b531doxbf",
+          "appliedAt": "2026-08-29T16:50:40.415Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "c3e8f1c7d1756bcf4c34b9e7dccb62ecc4272e6978018c6824088788982fd4e2"
+        }
+      },
+      {
+        "kind": "TERMINAL",
+        "taskId": "ledger:0253:byd-ev-fleet-asset-spvs:e914a6d4",
+        "taskIndex": 253,
+        "companyName": "BYD EV Fleet Asset SPVs",
+        "outcome": "DEFERRED",
+        "decisionSha256": "09c477afaa471b0565ce8682136cdf5ba754dc1554268c1b49d4091d7783001a"
+      }
+    ],
+    "verification": {
+      "databaseTransactionCommitted": true,
+      "seedArtifactVerified": true,
+      "allDetailApisVerified": true,
+      "partialDatabaseApplication": false
+    },
+    "receiptSha256": "2054ed468635bd9c652c37e176974da0e73004150b9394b6f34bef09034dedfc"
+  }
+}
