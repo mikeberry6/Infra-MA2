@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RENDERED_VERIFICATION_FAILURE",
+  "verifiedAt": "2026-08-29T08:51:33.000Z",
+  "batchId": "batch-0219-0223-v1",
+  "batchSha256": "54ff1f0ed08add50ec80397de759f189384428219ff03e5bb53928677b54e6e3",
+  "releaseSha": "9de259738264b40f3e2e580b45650e09994100a0",
+  "receiptSha256": "295c99cfd3b9b411cb4aae7b4849b7abe11827750b157b144616b207bdc292bc",
+  "canonicalProductionDeploymentId": "dpl_8KTvTynxba7EYakafTehV3jmLHW7",
+  "canonicalProductionDeploymentSha": "61e6770d1169acd8a288d7e0413aa01f6d2e7cfc",
+  "result": "FAIL",
+  "failedChecks": [
+    {
+      "companyId": "cmrxpjddu00u2ivheu6k02my6",
+      "companyName": "WideOpenWest, Inc.",
+      "detail": "The DigitalBridge period rendered as an estimated attribution rather than disclosed DigitalBridge Fund III ownership, and the disclosed Crestview III investment-funds period rendered as fund attribution pending."
+    },
+    {
+      "companyId": "cmte4si88000f0x2b8sgnu0se",
+      "companyName": "Mantle Reach Power",
+      "detail": "The directly disclosed EnCap Energy Transition Fund III ownership period rendered as fund attribution pending."
+    },
+    {
+      "companyId": "cmrxpjdf000u4ivhe82f2fkli",
+      "companyName": "Anza Renewables",
+      "detail": "The ECP ownership period rendered the unsupported ECP Fund V estimate instead of the disclosed ECP Energy Transition Opportunities Fund."
+    },
+    {
+      "companyId": "cmrxpjdg100u6ivhep4xv8y79",
+      "companyName": "Avolta Renewable Holdings",
+      "detail": "The ECP ownership period rendered the unsupported ECP Fund V estimate, and the direct Avolta, LLC joint-venture interest rendered as fund attribution pending."
+    }
+  ],
+  "rootCause": "The atomic PortCo after-images correctly changed company and ownership-period identity fields but intentionally do not overwrite the independent OwnershipPeriod fund-attribution metadata. Newly added periods retained the default UNRESOLVED state, while existing ECP periods preserved older INFERRED ECP Fund V metadata even though the reviewed seed attribution manifest contains the correct current classifications.",
+  "containment": "The batch ledger moved from VERIFYING to VERIFYING_FAILED. No subsequent release bundle may start until a protected attribution-only correction updates the six affected current ownership periods and renewed API and rendered-card verification passes."
+}
