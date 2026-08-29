@@ -3,7 +3,7 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-29T14:36:00.000Z",
+  "updatedAt": "2026-08-29T14:42:00.000Z",
   "activeBatchId": "batch-0239-0243-v1",
   "batches": [
     {
@@ -3129,7 +3129,7 @@
     },
     {
       "batchId": "batch-0239-0243-v1",
-      "state": "VERIFYING",
+      "state": "VERIFYING_FAILED",
       "taskIds": [
         "ledger:0239:gordon-and-leslie-diamond-health-care-centre:aed7b7a6",
         "ledger:0240:kelowna-and-vernon-hospitals-project:10251313",
@@ -3145,7 +3145,7 @@
         243
       ],
       "createdAt": "2026-08-29T14:02:45.000Z",
-      "updatedAt": "2026-08-29T14:36:00.000Z",
+      "updatedAt": "2026-08-29T14:42:00.000Z",
       "completedAt": null,
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0239-0243-v1/batch-manifest.json",
@@ -3156,7 +3156,7 @@
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0239-0243-v1/production-apply/batch-apply-receipt.json",
         "sha256": "d158dd38db18cdc9d19a6c3ae7d365aa5497d91671f11ba4f86e181ba2d71f14"
       },
-      "reason": null,
+      "reason": "Independent canonical API and rendered-card verification confirmed six active ownership rows retained default or legacy fund-attribution metadata after the atomic PortCo apply. All three company identities, ownership periods, stakes, vehicles, sources, seed after-images and the database transaction are correct; no later bundle may start until the protected attribution-only repair and renewed rendered checks pass.",
       "history": [
         {
           "sequence": 1,
@@ -3206,9 +3206,20 @@
             "d158dd38db18cdc9d19a6c3ae7d365aa5497d91671f11ba4f86e181ba2d71f14"
           ],
           "reason": null
+        },
+        {
+          "sequence": 6,
+          "from": "VERIFYING",
+          "to": "VERIFYING_FAILED",
+          "at": "2026-08-29T14:42:00.000Z",
+          "evidenceSha256": [
+            "02c52fffe14c3bd8623a470f4d9ada3e3444683e857ee99ba49ef258e4a323ef",
+            "d158dd38db18cdc9d19a6c3ae7d365aa5497d91671f11ba4f86e181ba2d71f14"
+          ],
+          "reason": "Independent canonical API and rendered-card verification confirmed six active ownership rows retained default or legacy fund-attribution metadata after the atomic PortCo apply. All three company identities, ownership periods, stakes, vehicles, sources, seed after-images and the database transaction are correct; no later bundle may start until the protected attribution-only repair and renewed rendered checks pass."
         }
       ]
     }
   ],
-  "ledgerSha256": "0031fa4ddf3462d33d8f293eab7a12abd58a998185710086e1b7e586e3a91936"
+  "ledgerSha256": "e78dfadf5d53c2d62a4c553c9acba7b2cce12e2e97e39dd7afe753e9655d2f48"
 }

@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_CORRECTION_DECISION",
+  "asOfDate": "2026-08-29",
+  "triggerBatchId": "batch-0239-0243-v1",
+  "triggerBatchSha256": "02c52fffe14c3bd8623a470f4d9ada3e3444683e857ee99ba49ef258e4a323ef",
+  "decision": "ALIGN_ACTIVE_OWNERSHIP_ATTRIBUTION_METADATA",
+  "rationale": "The protected atomic PortCo transaction correctly applied the reviewed ownership identities, economics and dates for Kelowna and Vernon Hospitals Project, Live Oak Wind Farm and North Carolina Solar. Six active production rows now require alignment to the already-reviewed, hash-bound seed attribution records. BBGI and ENGIE are direct investment programs, while Equitix and KKR hold their disclosed interests through John Laing Investments Limited without a curated-fund link.",
+  "mutations": [
+    {
+      "ownershipPeriodId": "cmtehfwf3000bsm2bbqigdneu",
+      "companyName": "Kelowna and Vernon Hospitals Project",
+      "from": "UNRESOLVED — no attribution rationale",
+      "to": "DIRECT_PROGRAM — BBGI listed infrastructure investment company and named Canadian subsidiaries"
+    },
+    {
+      "ownershipPeriodId": "cmrxpk0py01utivheek2ja0lo",
+      "companyName": "Live Oak Wind Farm",
+      "from": "DISCLOSED — generic legacy JLIL rationale",
+      "to": "DISCLOSED — reviewed 50% Equitix ownership of JLIL, with no curated-fund link"
+    },
+    {
+      "ownershipPeriodId": "cmtehg141000lsm2bnroz96yd",
+      "companyName": "Live Oak Wind Farm",
+      "from": "UNRESOLVED — no attribution rationale",
+      "to": "DISCLOSED — reviewed 50% KKR-owned John Laing ownership of JLIL, with no curated-fund link"
+    },
+    {
+      "ownershipPeriodId": "cmtehg18p000nsm2by81ztldc",
+      "companyName": "Live Oak Wind Farm",
+      "from": "UNRESOLVED — no attribution rationale",
+      "to": "DIRECT_PROGRAM — ENGIE direct corporate sponsor interest"
+    },
+    {
+      "ownershipPeriodId": "cmrxpk0qz01uvivheqzsn7gav",
+      "companyName": "North Carolina Solar",
+      "from": "DISCLOSED — generic legacy JLIL rationale",
+      "to": "DISCLOSED — reviewed 50% Equitix ownership of JLIL, with no curated-fund link"
+    },
+    {
+      "ownershipPeriodId": "cmtehg5x9000ysm2b99mmnc8z",
+      "companyName": "North Carolina Solar",
+      "from": "UNRESOLVED — no attribution rationale",
+      "to": "DISCLOSED — reviewed 50% KKR-owned John Laing ownership of JLIL, with no curated-fund link"
+    }
+  ],
+  "nonChanges": [
+    "Company identities, canonical redirects and publication status",
+    "Ownership organizations, vehicles, stakes, dates and active or former state",
+    "Fund Database records and normalized fund links",
+    "Descriptions, milestones, citations and primary sources",
+    "Former John Laing and Dalmore ownership periods, which are outside the active-owner attribution manifest"
+  ],
+  "identityResolved": true,
+  "activeOwnershipResolved": true,
+  "unresolvedQuestions": []
+}
