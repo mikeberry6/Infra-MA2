@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-29T15:05:22.000Z",
+  "updatedAt": "2026-08-29T16:08:36.000Z",
   "runStatus": "IDLE",
   "activeTaskId": null,
   "source": {
@@ -27260,23 +27260,44 @@
       "managerIndex": 44,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "2325a7f0d1bce6ef59f253a3c3ec52e699ad2a5ec318cbb1fe86a586787fb958",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-08-29T15:12:37.000Z",
+      "updatedAt": "2026-08-29T16:08:36.000Z",
+      "completedAt": "2026-08-29T16:08:36.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "3d304468e7b2a60889e5303cf65cd270ef099e770e4fbb399405a1d7c6dac79f",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0244-ontario-science-partners/attempt-1/locked-v2-task-snapshot.json",
+          "sha256": "3d304468e7b2a60889e5303cf65cd270ef099e770e4fbb399405a1d7c6dac79f"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0244-ontario-science-partners-v1/proposal.json",
+          "sha256": "7bcc46f4b8629a2866e85994d49bbb6ea0c3461400c8bc987f2218d7f7d4cb65"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0244-ontario-science-partners-v1.json",
+          "sha256": "aba7e94a23d77b4a2e21d1cb09224226730c4e53758a2f6e833dbe18b6a3186f"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0244-0248-v1/production-apply/batch-apply-receipt.json#members/0/receipt",
+          "sha256": "3ae17e4445a63db74d4c2ffeb1371455266ccc792c98b987a24b12c304c5673e"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0244-ontario-science-partners-v1/proposal.json#afterImage",
+          "sha256": "96eb220d04cfde6bab0e7863d5b86b215bbc9174dc3b0db4bbc433640ef549fe"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-29T16:08:36.000Z",
+        "auditEventId": "cmtejtt87000fwa2bq2n243za",
+        "transactionId": "b37115c1-82d5-42ac-9cdd-1b0164bc9f60",
+        "receiptSha256": "3ae17e4445a63db74d4c2ffeb1371455266ccc792c98b987a24b12c304c5673e",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33260910477"
+      },
       "history": [
         {
           "sequence": 1,
@@ -27287,6 +27308,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-08-29T16:08:36.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0244-0248-v1.",
+          "taskSnapshotSha256": "3d304468e7b2a60889e5303cf65cd270ef099e770e4fbb399405a1d7c6dac79f",
+          "evidenceSha256": [
+            "3ae17e4445a63db74d4c2ffeb1371455266ccc792c98b987a24b12c304c5673e",
+            "3d304468e7b2a60889e5303cf65cd270ef099e770e4fbb399405a1d7c6dac79f",
+            "7bcc46f4b8629a2866e85994d49bbb6ea0c3461400c8bc987f2218d7f7d4cb65",
+            "96eb220d04cfde6bab0e7863d5b86b215bbc9174dc3b0db4bbc433640ef549fe",
+            "aba7e94a23d77b4a2e21d1cb09224226730c4e53758a2f6e833dbe18b6a3186f",
+            "cde4f37a1276ad80cce120b0f02f4772ad7d483e5add101ba1089679629b5467",
+            "fcff3e836d88a6278655a0c77152bb1a5b5ef7379621d6b065fd4cb8527bb101"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -27298,23 +27337,44 @@
       "managerIndex": 44,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "d39fcf3b7242d777bfd254d1109fa055d60bece636e5baeab7503618d14848f8",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-08-29T15:12:37.000Z",
+      "updatedAt": "2026-08-29T16:08:36.000Z",
+      "completedAt": "2026-08-29T16:08:36.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "fe7b4dcf479d02a952c1648b858d910f601051ae363d0609839b9776f9177602",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0245-surrey-pretrial-services-centre-expansion-project/attempt-1/locked-v2-task-snapshot.json",
+          "sha256": "fe7b4dcf479d02a952c1648b858d910f601051ae363d0609839b9776f9177602"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0245-surrey-pretrial-services-centre-expansion-project-v1/proposal.json",
+          "sha256": "186dca3f9de9435952bac0c2ab8c345b4980e48fc1917f7c54478255a08d103a"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0245-surrey-pretrial-services-centre-expansion-project-v1.json",
+          "sha256": "52903f7964b76ebb19bb95d783a55b22cc40c71bd4b287b0a89ed133947863ad"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0244-0248-v1/production-apply/batch-apply-receipt.json#members/1/receipt",
+          "sha256": "3f081a44a14d346fab76e7bfb060e392f3e28a73b33b96bc4699c8269680f2fb"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0245-surrey-pretrial-services-centre-expansion-project-v1/proposal.json#afterImage",
+          "sha256": "6ecbe984aacaa73d3aa2d7a62f934b171750ace849814414379f0d47065d4b0d"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-29T16:08:36.000Z",
+        "auditEventId": "cmtejtv2n000uwa2byjwbt4po",
+        "transactionId": "b37115c1-82d5-42ac-9cdd-1b0164bc9f60",
+        "receiptSha256": "3f081a44a14d346fab76e7bfb060e392f3e28a73b33b96bc4699c8269680f2fb",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33260910477"
+      },
       "history": [
         {
           "sequence": 1,
@@ -27325,6 +27385,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-08-29T16:08:36.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0244-0248-v1.",
+          "taskSnapshotSha256": "fe7b4dcf479d02a952c1648b858d910f601051ae363d0609839b9776f9177602",
+          "evidenceSha256": [
+            "186dca3f9de9435952bac0c2ab8c345b4980e48fc1917f7c54478255a08d103a",
+            "3f081a44a14d346fab76e7bfb060e392f3e28a73b33b96bc4699c8269680f2fb",
+            "52903f7964b76ebb19bb95d783a55b22cc40c71bd4b287b0a89ed133947863ad",
+            "6ecbe984aacaa73d3aa2d7a62f934b171750ace849814414379f0d47065d4b0d",
+            "cde4f37a1276ad80cce120b0f02f4772ad7d483e5add101ba1089679629b5467",
+            "fcff3e836d88a6278655a0c77152bb1a5b5ef7379621d6b065fd4cb8527bb101",
+            "fe7b4dcf479d02a952c1648b858d910f601051ae363d0609839b9776f9177602"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -27336,23 +27414,44 @@
       "managerIndex": 45,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "d675c36f9e783212459460cb51002bf34118e304d7ae93d987f3bf671fa90190",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-08-29T15:12:37.000Z",
+      "updatedAt": "2026-08-29T16:08:36.000Z",
+      "completedAt": "2026-08-29T16:08:36.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "0c03a1f357d176251786db2fb163f37b22378c1f8aa0c2f4df77e4e3c87247c6",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0246-clearway-operating-solar-portfolio-12-u-s-projects-50-interest/attempt-1/locked-v2-task-snapshot.json",
+          "sha256": "0c03a1f357d176251786db2fb163f37b22378c1f8aa0c2f4df77e4e3c87247c6"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0246-clearway-operating-solar-portfolio-12-u-s-projects-50-interest-v1/proposal.json",
+          "sha256": "d6b6301e3ce2d353c2b8b62a680cb5acf5b493d26ff59cb28a13256e57c31bea"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0246-clearway-operating-solar-portfolio-12-u-s-projects-50-interest-v1.json",
+          "sha256": "47b7140bf4cce75cdf481e9383ead1580f5b640e09800624ae9ce3e9695c2c5c"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0244-0248-v1/production-apply/batch-apply-receipt.json#members/2/receipt",
+          "sha256": "c569b4a188400c3f2c49639cdb914ef45fe99868030b688f2be2c6ab9ea23b35"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0246-clearway-operating-solar-portfolio-12-u-s-projects-50-interest-v1/proposal.json#afterImage",
+          "sha256": "cdf7c526e91bb1d8582f91482ccf4241995a38ff183f79d89efa709136b1f4c2"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-29T16:08:36.000Z",
+        "auditEventId": "cmtejtwsp001iwa2bc6xugobz",
+        "transactionId": "b37115c1-82d5-42ac-9cdd-1b0164bc9f60",
+        "receiptSha256": "c569b4a188400c3f2c49639cdb914ef45fe99868030b688f2be2c6ab9ea23b35",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33260910477"
+      },
       "history": [
         {
           "sequence": 1,
@@ -27363,6 +27462,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-08-29T16:08:36.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0244-0248-v1.",
+          "taskSnapshotSha256": "0c03a1f357d176251786db2fb163f37b22378c1f8aa0c2f4df77e4e3c87247c6",
+          "evidenceSha256": [
+            "0c03a1f357d176251786db2fb163f37b22378c1f8aa0c2f4df77e4e3c87247c6",
+            "47b7140bf4cce75cdf481e9383ead1580f5b640e09800624ae9ce3e9695c2c5c",
+            "c569b4a188400c3f2c49639cdb914ef45fe99868030b688f2be2c6ab9ea23b35",
+            "cde4f37a1276ad80cce120b0f02f4772ad7d483e5add101ba1089679629b5467",
+            "cdf7c526e91bb1d8582f91482ccf4241995a38ff183f79d89efa709136b1f4c2",
+            "d6b6301e3ce2d353c2b8b62a680cb5acf5b493d26ff59cb28a13256e57c31bea",
+            "fcff3e836d88a6278655a0c77152bb1a5b5ef7379621d6b065fd4cb8527bb101"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -27374,20 +27491,26 @@
       "managerIndex": 45,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "40f6a7abf1f918577505fc3c4b768e01161ad7ac3e1e558fa50468f5649c4742",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
+      "status": "DEFERRED",
+      "attempts": 1,
+      "startedAt": "2026-08-29T15:12:37.000Z",
+      "updatedAt": "2026-08-29T16:08:36.000Z",
+      "completedAt": "2026-08-29T16:08:36.000Z",
+      "exceptionReason": "The 2021 BioNorth acquisition and Fengate/Veolia exit are established, as are Arrow's 40% and Nak'azdli's 40% interests. Direct evidence does not identify the legal holder of the remaining 20% or directly map that interest to a Nexus PMG affiliate. Because a complete current owner roster would require inference, the production correction is deferred pending the missing cap-table evidence.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "2f11a36c9a75dabae0ac0f8f2cd0158af0218ab9c8b9092d60dee530cfbfddde",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0247-fort-st-james-green-energy-project/attempt-1/locked-task-snapshot.json",
+          "sha256": "2f11a36c9a75dabae0ac0f8f2cd0158af0218ab9c8b9092d60dee530cfbfddde"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0247-fort-st-james-green-energy-project/attempt-1/terminal-decision.json",
+          "sha256": "ed366f6e31d037f60bb6a8ef50d68cf44dcde50ede2768972185677eb6651fb5"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -27401,6 +27524,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-08-29T16:08:36.000Z",
+          "reason": "The 2021 BioNorth acquisition and Fengate/Veolia exit are established, as are Arrow's 40% and Nak'azdli's 40% interests. Direct evidence does not identify the legal holder of the remaining 20% or directly map that interest to a Nexus PMG affiliate. Because a complete current owner roster would require inference, the production correction is deferred pending the missing cap-table evidence.",
+          "taskSnapshotSha256": "2f11a36c9a75dabae0ac0f8f2cd0158af0218ab9c8b9092d60dee530cfbfddde",
+          "evidenceSha256": [
+            "2f11a36c9a75dabae0ac0f8f2cd0158af0218ab9c8b9092d60dee530cfbfddde",
+            "cde4f37a1276ad80cce120b0f02f4772ad7d483e5add101ba1089679629b5467",
+            "ed366f6e31d037f60bb6a8ef50d68cf44dcde50ede2768972185677eb6651fb5",
+            "fcff3e836d88a6278655a0c77152bb1a5b5ef7379621d6b065fd4cb8527bb101"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -27412,20 +27550,26 @@
       "managerIndex": 45,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "2b63296e5bddb0e51155092d5f63d70cac42188f1bda2b827b1ee465af7e204a",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
+      "status": "DEFERRED",
+      "attempts": 1,
+      "startedAt": "2026-08-29T15:12:37.000Z",
+      "updatedAt": "2026-08-29T16:08:36.000Z",
+      "completedAt": "2026-08-29T16:08:36.000Z",
+      "exceptionReason": "The facility is conclusively part of the single Gander and Grand Falls-Windsor Care Homes Project and should not remain a separate manager-level PortCo. However, the exact limited partners and percentages in Fengate Central Health, LP are not publicly disclosed, and official materials conflict on whether SEC Pomerleau retained equity after financial close. The merge is deferred until the canonical bundle's current ownership can be represented without inference.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "75f8e1fd0656c94f6e0e08fbf682991aa72cf19ccae1f62b78d2c7673198373a",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0248-grand-falls-windsor-long-term-care-home/attempt-1/locked-task-snapshot.json",
+          "sha256": "75f8e1fd0656c94f6e0e08fbf682991aa72cf19ccae1f62b78d2c7673198373a"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0248-grand-falls-windsor-long-term-care-home/attempt-1/terminal-decision.json",
+          "sha256": "62d97d0922a232b9d9aaa930b2e2af56facee9f15ec38a7d32bf0be9fb45a00e"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -27439,6 +27583,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-08-29T16:08:36.000Z",
+          "reason": "The facility is conclusively part of the single Gander and Grand Falls-Windsor Care Homes Project and should not remain a separate manager-level PortCo. However, the exact limited partners and percentages in Fengate Central Health, LP are not publicly disclosed, and official materials conflict on whether SEC Pomerleau retained equity after financial close. The merge is deferred until the canonical bundle's current ownership can be represented without inference.",
+          "taskSnapshotSha256": "75f8e1fd0656c94f6e0e08fbf682991aa72cf19ccae1f62b78d2c7673198373a",
+          "evidenceSha256": [
+            "62d97d0922a232b9d9aaa930b2e2af56facee9f15ec38a7d32bf0be9fb45a00e",
+            "75f8e1fd0656c94f6e0e08fbf682991aa72cf19ccae1f62b78d2c7673198373a",
+            "cde4f37a1276ad80cce120b0f02f4772ad7d483e5add101ba1089679629b5467",
+            "fcff3e836d88a6278655a0c77152bb1a5b5ef7379621d6b065fd4cb8527bb101"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -37120,5 +37279,5 @@
       ]
     }
   ],
-  "manifestSha256": "05baef60a981030f777388e6ebdc877256149c6186c9c7d636d98d64c87d2c96"
+  "manifestSha256": "5b98ead0afe9130d1a4d81f7a863c5f53dd0e961ad26694c29eb03df8b3c9789"
 }
