@@ -152,6 +152,9 @@ describe("portfolio fund attribution ledger", () => {
       "Allied Industrial Partners",
       "BTG Pactual Timberland Investment Group",
       "QIC",
+      "Stem, Inc.",
+      "Chevron New Energies",
+      "Mitsubishi Power Americas",
     ]);
     const directRows = ledger.rows.filter((row) => directFirms.has(row.investmentFirm));
     expect(directRows.length).toBeGreaterThan(0);
