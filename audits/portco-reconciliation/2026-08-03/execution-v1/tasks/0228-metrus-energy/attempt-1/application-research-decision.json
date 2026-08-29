@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0228:metrus-energy:3f2ae5fa",
+  "taskIndex": 228,
+  "companyName": "Metrus Energy",
+  "asOfDate": "2026-08-19",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-08-29T09:20:14.000Z",
+  "result": {
+    "decision": "PROPOSED_CORRECTION",
+    "rationale": "The existing Metrus company and ECP owner cover the census holding. Remove the unsupported ECP Fund V attribution, correct the company to a U.S. platform headquartered in San Francisco, add its official website and update 2025 scale without adding a duplicate owner.",
+    "evidence": [
+      {
+        "url": "https://www.ecpgp.com/equity/portfolio/metrus-energy",
+        "purpose": "Current ECP status and July 2022 investment."
+      },
+      {
+        "url": "https://www.metrusenergy.com/resources/blog/metrus-acquisition-by-ecp",
+        "purpose": "Completed acquisition announcement and headquarters."
+      },
+      {
+        "url": "https://www.metrusenergy.com/impact-reports/2025-impact-report",
+        "purpose": "2025 U.S. scale, services and operating footprint."
+      },
+      {
+        "url": "https://www.renewablethermal.org/partner/",
+        "purpose": "United States geographic scope."
+      }
+    ]
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0228-metrus-energy/attempt-1/research-decision.json",
+      "sha256": "85c67279cc7400837beafcf7da7257b83e609eb035e23dca634e13ee9984e3d0"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0228-metrus-energy/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "98f42fb7746f40773c2e9afcc922ce711a09c215fc3219a02a49c2b12f811a72"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0228-metrus-energy/attempt-1/source-verification.json",
+      "sha256": "df708a71cbe9e59ed68db59d7c4700d1f33060b6db38f068d0335a5e1eed0fa0"
+    }
+  }
+}

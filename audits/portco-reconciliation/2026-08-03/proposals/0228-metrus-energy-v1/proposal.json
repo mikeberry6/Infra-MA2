@@ -1,0 +1,319 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0228:metrus-energy:3f2ae5fa",
+  "taskIndex": 228,
+  "asOfDate": "2026-08-29",
+  "generatedAt": "2026-08-29T09:20:04.000Z",
+  "canonicalKey": "metrus-energy|north-america",
+  "companyName": "Metrus Energy",
+  "actions": [
+    "CORRECT_COMPANY"
+  ],
+  "sourceHoldingIds": [
+    "041-energy-capital-partners:holding:007:metrus-energy"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Correct the existing Metrus record and suppress the duplicate Energy Capital Partners owner implied by the census. Retain one active 2022 ECP period, remove the unsupported ECP Fund V attribution, correct the company from a generic North America/Canada record to a U.S. platform headquartered in San Francisco, add the official website and update disclosed 2025 scale. The acquisition fund, vehicle, seller, stake, co-investors and exact legal closing day remain not publicly disclosed.",
+  "evidence": [
+    {
+      "url": "https://www.ecpgp.com/equity/portfolio/metrus-energy",
+      "purpose": "Current ECP status and investment timing",
+      "supports": [
+        "ECP lists Metrus as a current portfolio company",
+        "ECP dates the investment to July 2022"
+      ]
+    },
+    {
+      "url": "https://www.metrusenergy.com/resources/blog/metrus-acquisition-by-ecp",
+      "purpose": "Completed ECP acquisition",
+      "supports": [
+        "Metrus announced that it had been acquired by ECP on July 7, 2022",
+        "The announcement supports San Francisco headquarters and states that transaction terms were not disclosed"
+      ]
+    },
+    {
+      "url": "https://www.metrusenergy.com/impact-reports/2025-impact-report",
+      "purpose": "Current U.S. operating scale",
+      "supports": [
+        "Metrus reported more than 940 sites in 34 U.S. states for 2025",
+        "The report supports services, end markets and the project-asset boundary"
+      ]
+    },
+    {
+      "url": "https://www.renewablethermal.org/partner/",
+      "purpose": "U.S. geography",
+      "supports": [
+        "The Renewable Thermal Collaborative identifies Metrus Energy, Inc. with United States geographic scope"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "0681d8df8b166c58ec80222e6a7efb1fff6d451e12434fe48e36b5d0a0e193ae",
+  "currentCompanySnapshotSha256": "9526fd9d4984e0e6fa0b22085a3a65d203cdee12280ab7173076eaddabd00d11",
+  "executionLock": {
+    "taskSnapshotSha256": "4a4b11236eb8053cfb633c0f635912ac8cdb17a5fe6a88b3d83ab67b344930f1",
+    "taskStateSha256": "7754cd588f2b4a845eae0006fb94fd6711546f5645e959f828017edbfe401c77",
+    "taskDependencySha256": "c2ce66403acbb198f48ff752ac81203bc597b4163806ec5d1892168c08fcf10d",
+    "seedEntrySha256": "9ea9889ac95fa649a27136e1f9c0876331f138ec097616a0be874285ddbba93d",
+    "dependencies": {
+      "ownershipPeriodsSha256": "e3e5b37e52bc15adf2e0cd1e8f78c16b6c97d984339456d53a4e0541180df827",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "cd20bf918111ea91d87de82c3607378a098a82d96d9ad9ef41dc65f122089cb0",
+      "organizationsSha256": "592a52bc18a9de4fb86a5d0e7fec2a9f373528b05a4401efa6036f9b6ba5b5ca",
+      "citationsSha256": "9277d58ad89bc40ce77b2e46c28204ab2e16c825ee3afa215e845606d3726312",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj23s00d1ivhel30ncaa5",
+        "fundName": "ECP Fund V",
+        "managerId": "cmrxpi79j001jivhe2rmjalkq",
+        "updatedAt": "2026-07-23T16:09:56.584Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpii7l004zivhe9bvhh5r5",
+        "name": "ECP",
+        "updatedAt": "2026-07-23T16:09:30.801Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjdmc00udivhejaxw2vbz",
+    "name": "Metrus Energy",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Energy-as-a-service financing for efficiency and distributed energy",
+    "region": "NORTH_AMERICA",
+    "country": "North America",
+    "countryTags": [
+      "United States",
+      "Canada"
+    ],
+    "description": "Metrus Energy finances, owns, and manages energy efficiency, renewable energy, and resiliency upgrades for commercial, industrial, higher education, and other institutional customers. Its customers use the company's energy-as-a-service structure to procure building and onsite energy infrastructure without upfront capital spending, while projects are installed and maintained through partner contractors. The business follows an asset-heavy, contracted model in which project cash flows are tied to long-term service agreements rather than merchant energy sales. Public disclosures state that Metrus has operational projects in 32 states across more than 760 sites, giving it a broad national footprint in distributed decarbonization infrastructure. ECP acquired the company in July 2022, and Metrus has since continued to scale its platform around energy efficiency, distributed generation, cooling, heating, and related low-carbon infrastructure.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2009,
+    "headquarters": "Multi-state United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjz9401slivhe9c586tc5",
+        "managerName": "Energy Capital Partners",
+        "organizationName": "ECP",
+        "fundName": "ECP Fund V",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplhto03r0ivhetlyxnnb2",
+        "date": "2009",
+        "event": "Metrus Energy was founded and launched its energy-as-a-service financing model.",
+        "category": "FOUNDING",
+        "sortDate": "2009-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplhu903r1ivhe0kq1agf1",
+        "date": "Jul 7, 2022",
+        "event": "Metrus announced its acquisition by ECP.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-07-07T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplhuv03r2ivhei8l62fuv",
+        "date": "2024",
+        "event": "Metrus reported more than 760 project sites across 32 states in its public materials.",
+        "category": "EXPANSION",
+        "sortDate": "2024-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqmao09univhewjcnkmce",
+        "label": "Metrusenergy — Metrus Energy",
+        "url": "https://www.metrusenergy.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Metrusenergy company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqmbv09upivhej46jqwvz",
+        "label": "Close date source — ECP — Metrus Energy",
+        "url": "https://www.metrusenergy.com/resources/blog/metrus-acquisition-by-ecp",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "ECP closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqmcu09urivhe6ebw41ox",
+        "label": "Ecpgp — Metrus Energy",
+        "url": "https://www.ecpgp.com/equity/portfolio/metrus-energy",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Ecpgp operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqme109utivhe5smgga2k",
+        "label": "Metrusenergy — Metrus Energy",
+        "url": "https://www.metrusenergy.com/impact-reports/2024-impact-report",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Metrusenergy — Metrus Energy",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "9526fd9d4984e0e6fa0b22085a3a65d203cdee12280ab7173076eaddabd00d11",
+  "afterImage": {
+    "id": "cmrxpjdmc00udivhejaxw2vbz",
+    "name": "Metrus Energy",
+    "aliases": [
+      "Metrus Energy, Inc.",
+      "Metrus Energy Inc.",
+      "Metrus"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Energy-as-a-service financing for efficiency and distributed energy",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Metrus Energy, Inc. is a U.S. Energy-as-a-Service platform that finances, owns, operates and maintains energy-efficiency, HVAC, lighting, water, solar and storage upgrades under long-term Sustainable Energy Services Agreements. Customers include commercial and industrial businesses, higher-education institutions, healthcare systems, municipalities and nonprofits. ECP acquired the company in July 2022 and continues to classify it as current; public sources do not disclose the acquisition fund, vehicle, seller, stake, co-investors or exact legal closing day, and ECP Fund V is not directly supported for this investment. Metrus reported more than 940 sites across 34 U.S. states for 2025. Metrus-named project LLCs, financed equipment, installers, lenders, tax-equity providers and customers remain subordinate structures or counterparties rather than separate PortCos or platform owners. No corporate sale, sponsor exit or signed pending ownership transfer was identified through August 19, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.metrusenergy.com/",
+    "yearFounded": 2009,
+    "headquarters": "San Francisco, California",
+    "lastVerifiedAt": "2026-08-19T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjz9401slivhe9c586tc5",
+        "managerName": "ECP",
+        "organizationName": "ECP",
+        "fundName": null,
+        "vehicleName": null,
+        "stake": "Not publicly disclosed",
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplhto03r0ivhetlyxnnb2",
+        "date": "2009",
+        "event": "Metrus Energy was founded and launched its Energy-as-a-Service financing model.",
+        "category": "FOUNDING",
+        "sortDate": "2009-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.metrusenergy.com/"
+        ]
+      },
+      {
+        "id": "cmrxplhu903r1ivhe0kq1agf1",
+        "date": "Jul 7, 2022",
+        "event": "Metrus announced that it had been acquired by ECP; the acquisition fund, vehicle, seller, stake and exact legal closing day were not publicly disclosed.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-07-07T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.metrusenergy.com/resources/blog/metrus-acquisition-by-ecp",
+          "https://www.ecpgp.com/equity/portfolio/metrus-energy"
+        ]
+      },
+      {
+        "id": "cmrxplhuv03r2ivhei8l62fuv",
+        "date": "2025",
+        "event": "Metrus reported more than 940 project sites across 34 U.S. states.",
+        "category": "EXPANSION",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.metrusenergy.com/impact-reports/2025-impact-report"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqmao09univhewjcnkmce",
+        "label": "Metrusenergy — Metrus Energy",
+        "url": "https://www.metrusenergy.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current Metrus identity, services and platform profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqmbv09upivhej46jqwvz",
+        "label": "Close date source — ECP — Metrus Energy",
+        "url": "https://www.metrusenergy.com/resources/blog/metrus-acquisition-by-ecp",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "July 2022 completed ECP acquisition and San Francisco headquarters",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqmcu09urivhe6ebw41ox",
+        "label": "Ecpgp — Metrus Energy",
+        "url": "https://www.ecpgp.com/equity/portfolio/metrus-energy",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current ECP status and July 2022 investment timing",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqme109utivhe5smgga2k",
+        "label": "Metrusenergy — Metrus Energy",
+        "url": "https://www.metrusenergy.com/impact-reports/2024-impact-report",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Historical 2024 impact and operating scale",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Metrus Energy — 2025 Impact Report",
+        "url": "https://www.metrusenergy.com/impact-reports/2025-impact-report",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "2025 scale, U.S. footprint, services and end markets",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Renewable Thermal Collaborative — Metrus Energy",
+        "url": "https://www.renewablethermal.org/partner/",
+        "sourceType": "WEBSITE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "United States geographic scope for Metrus Energy, Inc.",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "f07df2ef30ab959d32956506ef8c9d2d2fb760b5ee3c1862ca3fdb5b40e16d03",
+  "proposalSha256": "527fd1f334e5524525712b303fd75e14fb0781d0b1723d5d8ddbd8beca50bdd7"
+}

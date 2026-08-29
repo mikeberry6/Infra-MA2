@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-29T09:11:13.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-08-29T09:38:13.000Z",
+  "activeBatchId": "batch-0224-0228-v1",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -2792,7 +2792,55 @@
           "reason": "Exact receipt deployment, four public detail APIs, four rendered drawers, attribution labels, owner stakes, milestones, sources, and zero browser-console errors verified."
         }
       ]
+    },
+    {
+      "batchId": "batch-0224-0228-v1",
+      "state": "READY",
+      "taskIds": [
+        "ledger:0224:braya-renewable-fuels:f18c1937",
+        "ledger:0225:convergent-energy-and-power:464221aa",
+        "ledger:0226:gopher-resource:d40d2e66",
+        "ledger:0227:harvestone-low-carbon-partners:184c949c",
+        "ledger:0228:metrus-energy:3f2ae5fa"
+      ],
+      "taskIndexes": [
+        224,
+        225,
+        226,
+        227,
+        228
+      ],
+      "createdAt": "2026-08-29T09:17:21.000Z",
+      "updatedAt": "2026-08-29T09:38:13.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0224-0228-v1/batch-manifest.json",
+        "sha256": "e9d287135d6cb4b9cabed5a2cefb7199bcc890081487fdcac9e27173c87822d8"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-29T09:17:21.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-29T09:38:13.000Z",
+          "evidenceSha256": [
+            "e9d287135d6cb4b9cabed5a2cefb7199bcc890081487fdcac9e27173c87822d8"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "1075bf9890a69d26d3aa8850c7aa78ac0193c7b9cefd1f685bb90ce579c67ba1"
+  "ledgerSha256": "152b6f08dbedde9a6398400822ca798cbf631ac1ad0251274f4c9f996be3d19f"
 }

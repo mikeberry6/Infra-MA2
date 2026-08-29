@@ -1,0 +1,268 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0224:braya-renewable-fuels:f18c1937",
+  "taskIndex": 224,
+  "companyName": "Braya Renewable Fuels",
+  "generatedAt": "2026-08-29T09:19:23.949Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0224-braya-renewable-fuels/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 224,
+    "taskId": "ledger:0224:braya-renewable-fuels:f18c1937",
+    "canonicalKey": "braya-renewable-fuels|canada",
+    "companyName": "Braya Renewable Fuels",
+    "country": "Canada",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 41,
+    "managers": [
+      "Energy Capital Partners"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "041-energy-capital-partners:holding:003:braya-renewable-fuels"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjdgl00u7ivhe3uwhdzke"
+    ],
+    "seedKeys": [
+      "braya renewable fuels|Canada"
+    ],
+    "evidenceUrls": [
+      "https://www.brayarenewablefuels.com/",
+      "https://www.ecpgp.com/equity/portfolio"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_OWNER requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjdgl00u7ivhe3uwhdzke",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "braya-renewable-fuels|canada",
+  "targetCompanyImage": {
+    "id": "cmrxpjdgl00u7ivhe3uwhdzke",
+    "name": "Braya Renewable Fuels",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Renewable diesel and low-carbon fuels refining",
+    "region": "NORTH_AMERICA",
+    "country": "Canada",
+    "countryTags": [
+      "Canada"
+    ],
+    "description": "Braya Renewable Fuels owns the Come By Chance refinery complex in Newfoundland and Labrador and is converting and operating the site for renewable and low-carbon fuel production. Its customer base is tied to fuel markets and distributors, with economics influenced by physical refining margins and low-carbon fuel programs rather than regulated utility-style revenues. The platform is highly asset-heavy, centered on a large existing refinery and associated logistics infrastructure that has been repurposed for renewable diesel production. Energy Capital Partners announced a $300 million investment in 2023, and Braya said in early 2024 that the facility had commenced commercial operations for renewable fuel production. Newfoundland and Labrador government materials in 2025 identified the ownership group as including Cresta Fund Management, North Atlantic Refining Corp. managed by Silverpeak, and Energy Capital Partners.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Newfoundland and Labrador",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjz5v01sfivheccpdklbu",
+        "managerName": "Energy Capital Partners",
+        "organizationName": "ECP",
+        "fundName": "ECP Fund V",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplhd003qfivhec041lf5h",
+        "date": "2021",
+        "event": "The Come By Chance refinery changed ownership and began repositioning toward renewable fuels.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplhdl03qgivhexmx55g1z",
+        "date": "Apr 20, 2023",
+        "event": "ECP announced a $300 million preferred equity investment in Braya Renewable Fuels.",
+        "category": "FINANCING",
+        "sortDate": "2023-04-20T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplhe603qhivhemr9e5u9e",
+        "date": "Feb 2024",
+        "event": "Braya announced commencement of commercial operations.",
+        "category": "EXPANSION",
+        "sortDate": "2024-02-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpql5x09t2ivhe7289uh0q",
+        "label": "Brayafuels — Braya Renewable Fuels",
+        "url": "https://brayafuels.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Brayafuels company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpql7a09t4ivhe165lar0a",
+        "label": "Investment date source — ECP — Braya Renewable Fuels",
+        "url": "https://www.ecpgp.com/about/news-and-insights/press-releases/2023/braya-renewable-fuels-receives-a-300-million-investment-from-energy-capital-partners",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "ECP initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpql8d09t6ivhep7pff7ui",
+        "label": "Brayafuels — Braya Renewable Fuels",
+        "url": "https://brayafuels.com/wp-content/uploads/2024/02/Braya-Renewable-Fuels-Commercial-Operations-Release-FINAL-2-22-2024.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Brayafuels operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqlbs09t8ivhepl0l4vlw",
+        "label": "Gov — Braya Renewable Fuels",
+        "url": "https://www.gov.nl.ca/releases/2025/exec/0911n07/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Gov — Braya Renewable Fuels",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Braya Renewable Fuels",
+    "investmentFirm": "ECP",
+    "sector": "Power & ET",
+    "subsector": "Renewable diesel and low-carbon fuels refining",
+    "region": "North America",
+    "country": "Canada",
+    "ownershipVehicle": "n.a.",
+    "description": "Braya Renewable Fuels owns the Come By Chance refinery complex in Newfoundland and Labrador and is converting and operating the site for renewable and low-carbon fuel production. Its customer base is tied to fuel markets and distributors, with economics influenced by physical refining margins and low-carbon fuel programs rather than regulated utility-style revenues. The platform is highly asset-heavy, centered on a large existing refinery and associated logistics infrastructure that has been repurposed for renewable diesel production. Energy Capital Partners announced a $300 million investment in 2023, and Braya said in early 2024 that the facility had commenced commercial operations for renewable fuel production. Newfoundland and Labrador government materials in 2025 identified the ownership group as including Cresta Fund Management, North Atlantic Refining Corp. managed by Silverpeak, and Energy Capital Partners.",
+    "status": "Active",
+    "countryTags": [
+      "Canada"
+    ],
+    "investmentYear": 2023,
+    "headquarters": "Newfoundland and Labrador",
+    "milestones": [
+      {
+        "date": "2021",
+        "event": "The Come By Chance refinery changed ownership and began repositioning toward renewable fuels.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Apr 20, 2023",
+        "event": "ECP announced a $300 million preferred equity investment in Braya Renewable Fuels.",
+        "category": "Financing"
+      },
+      {
+        "date": "Feb 2024",
+        "event": "Braya announced commencement of commercial operations.",
+        "category": "Expansion"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Brayafuels — Braya Renewable Fuels",
+        "url": "https://brayafuels.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Investment date source — ECP — Braya Renewable Fuels",
+        "url": "https://www.ecpgp.com/about/news-and-insights/press-releases/2023/braya-renewable-fuels-receives-a-300-million-investment-from-energy-capital-partners",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Brayafuels — Braya Renewable Fuels",
+        "url": "https://brayafuels.com/wp-content/uploads/2024/02/Braya-Renewable-Fuels-Commercial-Operations-Release-FINAL-2-22-2024.pdf",
+        "type": "PRESENTATION",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Gov — Braya Renewable Fuels",
+        "url": "https://www.gov.nl.ca/releases/2025/exec/0911n07/",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "ECP",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2023,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj23s00d1ivhel30ncaa5",
+        "fundName": "ECP Fund V",
+        "managerId": "cmrxpi79j001jivhe2rmjalkq",
+        "updatedAt": "2026-07-23T16:09:56.584Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpii7l004zivhe9bvhh5r5",
+        "name": "ECP",
+        "updatedAt": "2026-07-23T16:09:30.801Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0224:braya-renewable-fuels:f18c1937",
+    "taskIndex": 224,
+    "canonicalKey": "braya-renewable-fuels|canada",
+    "capturedAt": "2026-08-29T09:19:23.949Z",
+    "databaseRevision": "revision:56815adc5ac1489ac9f410b0b7792ad2f8329bb57bf9a71d8383043245a8e1ec",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "c408e751cfbbe2aaf75b9239a6b26040ae26e3168d0afd2ef8c2dac365bd5587",
+    "productionSnapshotSha256": "c81fdc5fb2f75ea7472bbfdcb747acc4b159c22936ea93cee0224f5caaff335c",
+    "targetCompanySnapshotSha256": "4d619301f54867b010e1512842bf938e2734e0bd9d78963e4da342164490362f",
+    "seedEntrySha256": "1eae882461359eb8012f423886178cc76422ef00ed4e08445064d7d6339cd9fd",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "aa56315630e3dd190d06f7d0602de307227ca8631b0c52707394e6d297568749",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "cd20bf918111ea91d87de82c3607378a098a82d96d9ad9ef41dc65f122089cb0",
+      "organizationsSha256": "592a52bc18a9de4fb86a5d0e7fec2a9f373528b05a4401efa6036f9b6ba5b5ca",
+      "citationsSha256": "70e3de864343c2631542e67089086fe8f29f33b5a931c2308e9102b6f4f44a61",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "e66070c070ad4bcae4a34afd0bb52a49ff892521003d793b1ef5f53e43e7f0ad",
+    "stateSha256": "e3a9852354f1fe3594d5e190e0860df64ea6615f57097d90afaf8492b1eeab6d",
+    "taskSnapshotSha256": "bb59490866d4182290adfb527ed50490d14cb91a76c71402e6a6c367a12f4b02"
+  },
+  "contextSha256": "f6e9ab6316e04f468b443323367ce19d1576b605a283689fde32fd502ff22154"
+}

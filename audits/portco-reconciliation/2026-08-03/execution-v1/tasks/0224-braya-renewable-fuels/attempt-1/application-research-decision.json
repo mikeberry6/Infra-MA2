@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0224:braya-renewable-fuels:f18c1937",
+  "taskIndex": 224,
+  "companyName": "Braya Renewable Fuels",
+  "asOfDate": "2026-08-19",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-08-29T09:20:10.000Z",
+  "result": {
+    "decision": "PROPOSED_CORRECTION",
+    "rationale": "The existing ECP period covers the census holding but its ECP Fund V attribution is unsupported. Retain ECP's April 2023 preferred equity, add Cresta as controller and Silverpeak-managed NARC as retained minority owner, and preserve the LP/GP/refinery boundary.",
+    "evidence": [
+      {
+        "url": "https://www.ecpgp.com/equity/portfolio/braya-renewable-fuels",
+        "purpose": "Current ECP status and April 2023 investment."
+      },
+      {
+        "url": "https://www.ecpgp.com/about/news-and-insights/press-releases/2023/braya-renewable-fuels-receives-a-300-million-investment-from-energy-capital-partners",
+        "purpose": "US$300 million preferred-equity investment."
+      },
+      {
+        "url": "https://www.crestafunds.com/cresta-fund-management-to-acquire-a-controlling-interest-in-the-come-by-chance-refinery-in-newfoundland-establishing-braya-renewable-fuels-as-a-global-leader-in-the-production-of-clean-fuels/",
+        "purpose": "Cresta control closing and NARC minority retention."
+      },
+      {
+        "url": "https://www.gov.nl.ca/releases/2025/exec/0911n07/",
+        "purpose": "Current owner group and operating restart."
+      }
+    ]
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0224-braya-renewable-fuels/attempt-1/research-decision.json",
+      "sha256": "2ec3bbeaf324e0ae5bc1d57c007776abf9f2dd60aa1a5a0fe455bbd99b7f22d0"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0224-braya-renewable-fuels/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "7fc45e9bfb842647a93bb9c8af646c4a343ac6226511cc0b7f120b3af94107f4"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0224-braya-renewable-fuels/attempt-1/source-verification.json",
+      "sha256": "52601673e090cec2dceb0c667261340266d4d9e6a584bc346d4025fb5e8ebeb8"
+    }
+  }
+}

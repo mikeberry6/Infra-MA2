@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0226:gopher-resource:d40d2e66",
+  "taskIndex": 226,
+  "companyName": "Gopher Resource",
+  "asOfDate": "2026-08-19",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-08-29T09:20:12.000Z",
+  "result": {
+    "decision": "PROPOSED_CORRECTION",
+    "rationale": "Gopher Resource is the display name of the existing Gopher Resource, LLC company. Correct that record with the Fund IV-A acquisition vehicle, ECP Gopher Holdings immediate parent, Eagan headquarters and official website; do not create facility, subsidiary or duplicate company rows.",
+    "evidence": [
+      {
+        "url": "https://www.ecpgp.com/equity/portfolio/gopher",
+        "purpose": "Current ECP status and 2018 investment."
+      },
+      {
+        "url": "https://www.ftc.gov/legal-library/browse/early-termination-notices/20180664",
+        "purpose": "Fund IV-A acquirer and Gopher Resource, LLC target."
+      },
+      {
+        "url": "https://nep.com/news/norwest-equity-partners-and-gopher-resource-complete-sale-to-energy-capital-partners/",
+        "purpose": "March 6, 2018 closing and sellers."
+      },
+      {
+        "url": "https://dockets.justia.com/docket/minnesota/mndce/0%3A2025cv03833/228096",
+        "purpose": "ECP Gopher Holdings, LP as sole immediate parent."
+      },
+      {
+        "url": "https://www.gopherresource.com/newsroom/global-recycling-day-2026.html",
+        "purpose": "Current operating footprint and 2025 recycling volumes."
+      }
+    ]
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0226-gopher-resource/attempt-1/research-decision.json",
+      "sha256": "881e3a15152c67ae325f27e38c9706a03c3a3493b47e304dfa099e8a9abecdce"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0226-gopher-resource/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "45f4745905cbccba28aa5f068192fcf1c982f75055d3baf0d8accfd7e7f0a9a5"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0226-gopher-resource/attempt-1/source-verification.json",
+      "sha256": "eabe2de6b6d3e6252e84814733dd3490b4cc2b02082cd1fd12ee7289976bf67a"
+    }
+  }
+}

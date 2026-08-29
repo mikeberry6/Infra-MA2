@@ -1,0 +1,360 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0225:convergent-energy-and-power:464221aa",
+  "taskIndex": 225,
+  "asOfDate": "2026-08-29",
+  "generatedAt": "2026-08-29T09:20:01.000Z",
+  "canonicalKey": "convergent-energy-and-power|united-states",
+  "companyName": "Convergent Energy and Power",
+  "actions": [
+    "CORRECT_COMPANY"
+  ],
+  "sourceHoldingIds": [
+    "041-energy-capital-partners:holding:004:convergent-energy-and-power"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Correct the existing Convergent record without creating a second ECP owner. Convergent Energy and Power and Convergent Energy + Power are one platform. ECP acquired it through Fund IV in 2019 and continues to list it as current; the exact acquisition vehicle, legal closing day, seller and stake remain not publicly disclosed. DOE, MUFG and NY Green Bank facilities are project or portfolio financing rather than platform ownership.",
+  "evidence": [
+    {
+      "url": "https://www.ecpgp.com/equity/portfolio/convergent",
+      "purpose": "Current ECP status and investment timing",
+      "supports": [
+        "ECP lists Convergent as a current portfolio company",
+        "ECP reports a June 2019 investment"
+      ]
+    },
+    {
+      "url": "https://convergentep.com/news/ecp",
+      "purpose": "Direct platform acquisition",
+      "supports": [
+        "ECP signed to acquire Convergent in April 2019",
+        "The company announced the acquisition on July 10, 2019"
+      ]
+    },
+    {
+      "url": "https://www.ecpgp.com/about/news-and-insights/press-releases/2019/energy-capital-partners-acquires-convergent-energy-power",
+      "purpose": "Fund IV attribution",
+      "supports": [
+        "ECP identified Fund IV as the acquiring fund",
+        "The transaction involved the operating platform rather than only projects"
+      ]
+    },
+    {
+      "url": "https://convergentep.com/hubfs/Convergent%202024%20Sustainability%20and%20Impact%20Report.pdf?hsLang=en",
+      "purpose": "Operating scale",
+      "supports": [
+        "Convergent reported approximately 800 MW and 1 GWh developed or acquired",
+        "The platform operates across the United States and Canada"
+      ]
+    },
+    {
+      "url": "https://www.energy.gov/edf/convergent",
+      "purpose": "Project-financing boundary",
+      "supports": [
+        "DOE financing was made through project subsidiaries",
+        "The financing did not create a new platform owner"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "a35c66dd1369802db2381c37e4cd39b4b2c5e7bb634dbee5e06ed3b6c91ae2b8",
+  "currentCompanySnapshotSha256": "d2391d3b5c95e304068344434655dbe7f9e2ff5dbfed5c9913aa2ec660bacdc8",
+  "executionLock": {
+    "taskSnapshotSha256": "82fd21b5731e7386c6fa27195b6570d406376448bfcf692383bdce5569809877",
+    "taskStateSha256": "fc66c9bc068db844c7447ac89c7b0ca565ffa5da17613316e534773a9cf78d5f",
+    "taskDependencySha256": "c09b83f89f6e6182d7e0b91bfd3a41d199c0a6c5a444a2f32de9b234e08b5c24",
+    "seedEntrySha256": "7ef3439dcf01ca708f1d7676a37baabe2264630718bbb0e63884088cc61f3430",
+    "dependencies": {
+      "ownershipPeriodsSha256": "f3edd54071660901d6f378c90fa9817497ba211b10d3d674d954891327323a16",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "592a52bc18a9de4fb86a5d0e7fec2a9f373528b05a4401efa6036f9b6ba5b5ca",
+      "citationsSha256": "ab9cb9acb6d01a6d8b74a883aa4a148a18441bfc3de691140afda95efb40ca04",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpii7l004zivhe9bvhh5r5",
+        "name": "ECP",
+        "updatedAt": "2026-07-23T16:09:30.801Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjdh400u8ivheq80gd7ep",
+    "name": "Convergent Energy and Power",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Battery storage and distributed energy infrastructure",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States",
+      "Canada"
+    ],
+    "description": "Convergent develops, owns, and operates battery storage and related distributed energy infrastructure. Its customers include utilities, commercial and industrial users, and public-sector counterparties that need reliability, demand management, and energy cost savings. The operating model is asset-heavy and project based, with Convergent managing development, financing, construction, and operations across its storage portfolio. Company materials state that the platform has developed or acquired more than 800 MW and 1 GWh of storage capacity across North America. Convergent was founded in 2011, and Energy Capital Partners acquired the company in 2019; ECP and U.S. Department of Energy materials show the platform remained active in large-scale growth projects in 2025.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2011,
+    "headquarters": "United States, Canada, and the United Kingdom",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjz6h01sgivhesqag6gww",
+        "managerName": "ECP",
+        "organizationName": "ECP",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2019,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplhf703qiivhe5ugo8zp4",
+        "date": "2011",
+        "event": "Convergent Energy and Power was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2011-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplhft03qjivhedkxgvo1s",
+        "date": "Jul 9, 2019",
+        "event": "ECP / Energy Capital Partners acquired Convergent Energy and Power.",
+        "category": "ACQUISITION",
+        "sortDate": "2019-07-09T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplhgd03qkivhewke8uzjk",
+        "date": "2024",
+        "event": "Convergent’s sustainability report cited more than 800 MW and 1 GWh of projects developed or acquired.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqld509taivheyfpj0k6i",
+        "label": "Convergentep — Convergent Energy and Power",
+        "url": "https://convergentep.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Convergentep company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqleb09tcivhevlw2typl",
+        "label": "Convergentep — Convergent Energy and Power",
+        "url": "https://convergentep.com/our-story/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Convergentep — Convergent Energy and Power",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqlf809teivhexys73bgu",
+        "label": "Close date source — ECP — Convergent Energy and Power",
+        "url": "https://www.ecpgp.com/about/news-and-insights/press-releases/2019/energy-capital-partners-acquires-convergent-energy-power",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "ECP closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqlgc09tgivhe7qf6dply",
+        "label": "Convergentep — Convergent Energy and Power",
+        "url": "https://convergentep.com/hubfs/Convergent%202024%20Sustainability%20and%20Impact%20Report.pdf?hsLang=en",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Convergentep — Convergent Energy and Power",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqlhf09tiivheynnmkqjs",
+        "label": "Ecpgp — Convergent Energy and Power",
+        "url": "https://www.ecpgp.com/equity/portfolio/convergent",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Ecpgp operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqlil09tkivhe961p2681",
+        "label": "Energy — Convergent Energy and Power",
+        "url": "https://www.energy.gov/edf/articles/doe-announces-5845-million-loan-guarantee-subsidiaries-convergent-energy-and-power-inc",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Energy — Convergent Energy and Power",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "d2391d3b5c95e304068344434655dbe7f9e2ff5dbfed5c9913aa2ec660bacdc8",
+  "afterImage": {
+    "id": "cmrxpjdh400u8ivheq80gd7ep",
+    "name": "Convergent Energy and Power",
+    "aliases": [
+      "Convergent Energy and Power Inc.",
+      "Convergent Energy + Power",
+      "Convergent Energy + Power Inc.",
+      "Convergent"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Battery storage and distributed energy infrastructure",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States",
+      "Canada"
+    ],
+    "description": "Convergent Energy and Power Inc. develops, finances, owns, operates and optimizes battery-storage and solar-plus-storage infrastructure for commercial, industrial, utility, municipal, cooperative and developer customers across the United States and Canada, including Puerto Rico. ECP acquired the platform through Fund IV in 2019 and continues to classify it as current. The acquisition was signed in April and announced July 10, 2019; public sources do not disclose the exact legal closing day, acquisition vehicle, seller or stake. Convergent reported approximately 800 MW and 1 GWh developed or acquired and more than US$1 billion invested or committed. DOE, MUFG and NY Green Bank facilities fund projects or portfolios and are not additional platform owners. No later platform sale, sponsor exit or signed pending ownership transfer was identified through August 19, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://convergentep.com/",
+    "yearFounded": 2011,
+    "headquarters": "New York, New York",
+    "lastVerifiedAt": "2026-08-19T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjz6h01sgivhesqag6gww",
+        "managerName": "ECP",
+        "organizationName": "ECP",
+        "fundName": null,
+        "vehicleName": "Energy Capital Partners Fund IV; exact acquisition vehicle not publicly disclosed",
+        "stake": "Not publicly disclosed",
+        "investmentYear": 2019,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplhf703qiivhe5ugo8zp4",
+        "date": "2011",
+        "event": "Convergent Energy and Power was founded as a distributed-energy and storage platform.",
+        "category": "FOUNDING",
+        "sortDate": "2011-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://convergentep.com/our-story/"
+        ]
+      },
+      {
+        "id": "cmrxplhft03qjivhedkxgvo1s",
+        "date": "Jul 10, 2019",
+        "event": "Convergent announced its acquisition by ECP through Fund IV after an April signing; the exact legal closing day, vehicle, seller and stake were not publicly disclosed.",
+        "category": "ACQUISITION",
+        "sortDate": "2019-07-10T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://convergentep.com/news/ecp",
+          "https://www.ecpgp.com/about/news-and-insights/press-releases/2019/energy-capital-partners-acquires-convergent-energy-power",
+          "https://www.ecpgp.com/equity/portfolio/convergent"
+        ]
+      },
+      {
+        "id": "cmrxplhgd03qkivhewke8uzjk",
+        "date": "2024",
+        "event": "Convergent reported approximately 800 MW and 1 GWh of storage projects developed or acquired across its North American platform.",
+        "category": "EXPANSION",
+        "sortDate": "2024-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://convergentep.com/hubfs/Convergent%202024%20Sustainability%20and%20Impact%20Report.pdf?hsLang=en"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqld509taivheyfpj0k6i",
+        "label": "Convergentep — Convergent Energy and Power",
+        "url": "https://convergentep.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current Convergent identity, services and operating platform",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqleb09tcivhevlw2typl",
+        "label": "Convergentep — Convergent Energy and Power",
+        "url": "https://convergentep.com/our-story/",
+        "sourceType": "ARTICLE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Company history, founding and North American footprint",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqlf809teivhexys73bgu",
+        "label": "Close date source — ECP — Convergent Energy and Power",
+        "url": "https://www.ecpgp.com/about/news-and-insights/press-releases/2019/energy-capital-partners-acquires-convergent-energy-power",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "ECP Fund IV attribution and July 2019 acquisition announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqlgc09tgivhe7qf6dply",
+        "label": "Convergentep — Convergent Energy and Power",
+        "url": "https://convergentep.com/hubfs/Convergent%202024%20Sustainability%20and%20Impact%20Report.pdf?hsLang=en",
+        "sourceType": "PRESENTATION",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "2024 platform scale and operating footprint",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqlhf09tiivheynnmkqjs",
+        "label": "Ecpgp — Convergent Energy and Power",
+        "url": "https://www.ecpgp.com/equity/portfolio/convergent",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current ECP portfolio status and June 2019 investment timing",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqlil09tkivhe961p2681",
+        "label": "Energy — Convergent Energy and Power",
+        "url": "https://www.energy.gov/edf/articles/doe-announces-5845-million-loan-guarantee-subsidiaries-convergent-energy-and-power-inc",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "DOE project-subsidiary financing boundary",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Convergent — ECP acquisition announcement",
+        "url": "https://convergentep.com/news/ecp",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "April 2019 signing and July 10 acquisition announcement",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "U.S. Department of Energy — Convergent project financing",
+        "url": "https://www.energy.gov/edf/convergent",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Project-subsidiary financing rather than platform ownership",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "d0649a624cfce08633c08e3463a8e3589667b63bff11c15d37862fea807bbc18",
+  "proposalSha256": "d5ce84cf33d93437c0dd42ab90cf701692ad41bdaa935b4b90eb737c739cf08a"
+}
