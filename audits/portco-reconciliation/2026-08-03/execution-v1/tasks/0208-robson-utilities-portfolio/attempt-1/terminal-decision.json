@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0208:robson-utilities-portfolio:357f70cb",
+  "taskIndex": 208,
+  "companyName": "Robson Utilities Portfolio",
+  "outcome": "SUPERSEDED",
+  "decidedAt": "2026-08-29T05:52:04.000Z",
+  "rationale": "Task 206 resolves the Robson acquisition cohort within the single manager-level JW Water Holdings platform. CVC DIF acquired the eight Robson utilities alongside JW Water, and current company and regulatory evidence shows the utilities beneath JW rather than as an independent manager-level company. Task 208 would duplicate task 206's identity and ownership work.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0208-robson-utilities-portfolio/attempt-1/locked-task-snapshot.json",
+    "sha256": "ed4f5c655297dbf561bc1356a46e58b3dc8307aca27b339821c688fdc48e708b"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0208-robson-utilities-portfolio/attempt-1/terminal-research-decision.json",
+    "sha256": "570fce9b6ee8c6d02be3536387c81f6b39f6efbde17236ace746cc86770bcc3d"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0206-jw-water-holdings/attempt-1/source-verification.json",
+    "sha256": "ddfaba41c00b83f0e8e2a2ef60ec3d1ecde437755bc7d17d5c241887eb066c8d"
+  },
+  "evidence": [
+    {
+      "url": "https://www.cvc.com/media/news/2024/2024-11-21-cvc-dif-acquires-a-portfolio-of-us-regulated-water-and-wastewater-utilities/",
+      "purpose": "DIF Infrastructure VII acquisition and the 10-plus-8 utility structure."
+    },
+    {
+      "url": "https://jwwater.com/",
+      "purpose": "Current JW Water identity, operating scale and utility roster."
+    },
+    {
+      "url": "https://robson.com/contact/",
+      "purpose": "Exact eight-utility Robson acquisition cohort."
+    },
+    {
+      "url": "https://azcc.gov/news/home/2026/08/17/august-12--2026-open-meeting-highlights",
+      "purpose": "Latest internal consolidation approval within JW Water."
+    }
+  ],
+  "supersededByTaskId": "ledger:0206:jw-water-holdings:fc8ebab0",
+  "decisionSha256": "cf9563a8b75fe4a48753dad402ce5bc928549ee9426e5f87ea3bb6a8d2871fac"
+}

@@ -1,0 +1,176 @@
+{
+  "generatedAt": "2026-08-29T05:48:00.000Z",
+  "actions": [
+    "CORRECT_COMPANY",
+    "MERGE_COMPANIES"
+  ],
+  "retiredCompanyIds": [
+    "cmrxpjcxy00tdivhea9p9kug7"
+  ],
+  "relationMerges": [
+    {
+      "kind": "OWNERSHIP_PERIOD",
+      "retiredRelationId": "cmrxpjyfn01rbivheqqa9jiv1",
+      "canonicalRelationId": "cmrxpjyg501rcivheu7f99nh3",
+      "rationale": "Both rows represent the same continuing CVC DIF majority investment through DIF Infrastructure VII completed in April 2023."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxpleu303ncivhelh4ofmz7",
+      "canonicalRelationId": "cmrxplevy03neivhe58iyw1mk",
+      "rationale": "Both rows contain the same 2015 platform-founding milestone."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxpleur03ndivhe95yigh66",
+      "canonicalRelationId": "cmrxplewj03nfivhenh8350d6",
+      "rationale": "Both rows contain the same April 2023 DIF Infrastructure VII majority-investment milestone."
+    }
+  ],
+  "reviewedSeedRetirementTaskIds": [],
+  "rationale": "Merge Green Street Power Partners into GS Power Partners because the official company rebrand notice establishes that GS Power Partners is the current brand of the same Green Street Power Partners, LLC platform. Preserve the former legal and brand names as aliases, retain one CVC DIF ownership period through DIF Infrastructure VII, correct the disclosed majority stake and Stamford headquarters, and redirect the retired production identity without creating a second company.",
+  "evidence": [
+    {
+      "url": "https://gspowerpartners.com/we-are-now-gs-power-partners-heres-why-were-excited/",
+      "purpose": "Canonical identity and rebrand",
+      "supports": [
+        "GS Power Partners is the current brand of Green Street Power Partners",
+        "The same legal operating platform continued through the December 2024 rebrand"
+      ]
+    },
+    {
+      "url": "https://gspowerpartners.com/dif-capital-partners-agrees-to-acquire-majority-interest-in-us-based-solar-platform-green-street-power-partners/",
+      "purpose": "Ownership and fund attribution",
+      "supports": [
+        "DIF agreed to acquire a majority equity interest through DIF Infrastructure VII",
+        "The transaction was announced on April 3, 2023"
+      ]
+    },
+    {
+      "url": "https://dif-capital-partners.euwest01.umbraco.io/media/iojnwvku/sustainability-report-2023.pdf",
+      "purpose": "Investment closing",
+      "supports": [
+        "DIF Infrastructure VII closed its investment in April 2023"
+      ]
+    },
+    {
+      "url": "https://www.cvcdif.com/infrastructure/investments",
+      "purpose": "Current portfolio status and exit check",
+      "supports": [
+        "CVC DIF continues to list GS Power Partners as a current infrastructure investment"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "companyFieldUpdates": {
+    "aliases": [
+      "GSPP",
+      "Green Street Power Partners",
+      "Green Street Power Partners, LLC"
+    ],
+    "description": "GS Power Partners, legally Green Street Power Partners, LLC, develops, finances, owns and operates distributed-generation commercial, industrial and community-solar assets in the United States. The platform adopted the GS Power Partners brand on December 9, 2024 while retaining its legal identity. CVC DIF holds a majority equity interest through DIF Infrastructure VII; the investment closed in April 2023, while the exact percentage and closing day were not publicly disclosed. Current CVC DIF materials continue to list the company as an infrastructure investment, and no later platform sale, transfer or signed pending exit was identified through August 19, 2026. The company is based in Stamford, Connecticut and reported more than 400 MW across more than 125 projects in August 2026.",
+    "website": "https://gspowerpartners.com/",
+    "yearFounded": 2015,
+    "headquarters": "Stamford, Connecticut, United States",
+    "lastVerifiedAt": "2026-08-19T00:00:00.000Z"
+  },
+  "ownershipPeriodUpdates": [
+    {
+      "id": "cmrxpjyg501rcivheu7f99nh3",
+      "set": {
+        "vehicleName": null,
+        "stake": "Majority equity interest; exact percentage not publicly disclosed"
+      }
+    }
+  ],
+  "ownershipPeriodAdditions": [],
+  "pendingOwnershipTransactionUpdates": [],
+  "pendingOwnershipTransactionAdditions": [],
+  "milestoneUpdates": [
+    {
+      "id": "cmrxplewj03nfivhenh8350d6",
+      "set": {
+        "event": "DIF announced a majority equity investment in Green Street Power Partners through DIF Infrastructure VII on April 3, 2023 and later reported that the investment closed in April 2023.",
+        "evidenceUrls": [
+          "https://gspowerpartners.com/dif-capital-partners-agrees-to-acquire-majority-interest-in-us-based-solar-platform-green-street-power-partners/",
+          "https://dif-capital-partners.euwest01.umbraco.io/media/iojnwvku/sustainability-report-2023.pdf"
+        ]
+      }
+    }
+  ],
+  "citationUpdates": [
+    {
+      "id": "cmrxpqgqt09mkivhetb30pd8b",
+      "set": {
+        "evidenceLabel": "Current GS Power Partners website and operating identity",
+        "isPrimary": false
+      }
+    },
+    {
+      "id": "cmrxpqgrd09mlivhehge4utye",
+      "set": {
+        "evidenceLabel": "Company business model, operating scope and U.S. footprint"
+      }
+    },
+    {
+      "id": "cmrxpqgs209mmivheqz1hxiyc",
+      "set": {
+        "evidenceLabel": "DIF Infrastructure VII majority-investment announcement"
+      }
+    },
+    {
+      "id": "cmrxpqgsh09mnivhe1iz193ek",
+      "set": {
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "April 2023 investment closing"
+      }
+    }
+  ],
+  "citationAdditions": [
+    {
+      "id": null,
+      "label": "GS Power Partners — Rebrand announcement",
+      "url": "https://gspowerpartners.com/we-are-now-gs-power-partners-heres-why-were-excited/",
+      "sourceType": "PRESS_RELEASE",
+      "purpose": "COMPANY_PROFILE",
+      "evidenceLabel": "Same-company rebrand from Green Street Power Partners effective December 9, 2024",
+      "isPrimary": true
+    },
+    {
+      "id": null,
+      "label": "CVC DIF — Current infrastructure investments",
+      "url": "https://www.cvcdif.com/infrastructure/investments",
+      "sourceType": "WEBSITE",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Current GS Power Partners portfolio status and exit check",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "Florida Division of Corporations — Green Street Power Partners, LLC",
+      "url": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?aggregateId=forl-m18000009957-b8f68b7d-3c07-4d46-b267-b37dffc111c8",
+      "sourceType": "OTHER",
+      "purpose": "COMPANY_PROFILE",
+      "evidenceLabel": "Active legal identity and Stamford principal address",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "GS Power Partners — Leadership succession",
+      "url": "https://gspowerpartners.com/gs-power-partners-announces-leadership-succession/",
+      "sourceType": "PRESS_RELEASE",
+      "purpose": "OPERATIONS_ASSETS",
+      "evidenceLabel": "Current CVC DIF backing, leadership continuity and August 2026 operating scale",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "CVC — CVC DIF completion",
+      "url": "https://www.cvc.com/media/news/2024/2024-07-03-completion-of-cvc-dif-and-acquisition-of-final-stake-in-cvc-secondary-partners/",
+      "sourceType": "PRESS_RELEASE",
+      "purpose": "SUPPORTING_CONTEXT",
+      "evidenceLabel": "DIF manager transition to CVC DIF with fund names unchanged",
+      "isPrimary": false
+    }
+  ]
+}

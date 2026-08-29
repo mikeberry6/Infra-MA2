@@ -1,0 +1,286 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0206:jw-water-holdings:fc8ebab0",
+  "taskIndex": 206,
+  "companyName": "JW Water Holdings",
+  "generatedAt": "2026-08-29T05:39:19.173Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0206-jw-water-holdings/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 206,
+    "taskId": "ledger:0206:jw-water-holdings:fc8ebab0",
+    "canonicalKey": "jw-water-holdings|united-states",
+    "companyName": "JW Water Holdings",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 34,
+    "managers": [
+      "CVC",
+      "DIF"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "034-cvc:holding:014:jw-water-holdings",
+      "035-dif:holding:014:jw-water-holdings"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjd0700thivhe6wdzyicz"
+    ],
+    "seedKeys": [
+      "jw water holdings|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.cvc.com/media/news/2024/2024-11-21-cvc-dif-acquires-a-portfolio-of-us-regulated-water-and-wastewater-utilities/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Heuristic identity overlap with jw-water-holdings-incl-robson-utilities|united-states; no automatic merge was made. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Heuristic identity overlap with jw-water-holdings-incl-robson-utilities|united-states; no automatic merge was made."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjd0700thivhe6wdzyicz",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "jw-water-holdings|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjd0700thivhe6wdzyicz",
+    "name": "JW Water Holdings",
+    "aliases": [],
+    "sector": "UTILITIES",
+    "subsector": "Regulated water and wastewater utilities",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "JW Water Holdings is a regulated water and wastewater utility platform in Arizona. Its customers are residential communities and local service areas that rely on essential regulated utility service rather than discretionary consumption models. The business is asset-heavy and regulated because value depends on pipes, treatment and distribution systems, rate-based operations, and customer connections. CVC DIF disclosed in 2024 that JW Water served about 9,000 customers across 10 utilities at signing and that the broader Arizona utility platform acquired alongside Robson assets would serve more than 50,000 customers. Public materials identify DIF Infrastructure VII as the acquisition vehicle, while exact ownership percentages are not disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2013,
+    "headquarters": "Arizona",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjyht01rfivheqr8qfsdl",
+        "managerName": "CVC DIF",
+        "organizationName": "CVC DIF",
+        "fundName": "DIF Infrastructure VII",
+        "vehicleName": "DIF Infrastructure VII",
+        "stake": null,
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplf2s03noivhemd0rwmjo",
+        "date": "2013",
+        "event": "CVC DIF identified 2013 as the founding year of JW Water.",
+        "category": "OTHER",
+        "sortDate": "2013-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplf3a03npivhe69qpet20",
+        "date": "2013",
+        "event": "JW Water Holdings was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2013-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplf3u03nqivhe08x7rqh0",
+        "date": "2024",
+        "event": "CVC DIF disclosed that JW Water served about 9,000 customers across 10 utilities at signing.",
+        "category": "EXPANSION",
+        "sortDate": "2024-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplf4f03nrivhesuiayyk0",
+        "date": "Nov 21, 2024",
+        "event": "CVC DIF acquired JW Water through DIF Infrastructure VII.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-11-21T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqh5h09n6ivheb2f36qx8",
+        "label": "Close date source — CVC DIF — JW Water Holdings",
+        "url": "https://www.cvc.com/media/news/2024/2024-11-21-cvc-dif-acquires-a-portfolio-of-us-regulated-water-and-wastewater-utilities/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CVC DIF closing confirmation",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqh6j09n8ivhevg9yuexo",
+        "label": "Pillsburylaw — JW Water Holdings",
+        "url": "https://www.pillsburylaw.com/en/news-and-insights/cvc-dif-strategic-acquisition-arizona-water-wastewater-sector.html",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Pillsburylaw transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqh7i09naivhevpsfe3vw",
+        "label": "Bluefieldresearch — JW Water Holdings",
+        "url": "https://www.bluefieldresearch.com/research/pe-firm-cvc-lands-deal-in-arizona-utility-market/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Bluefieldresearch — JW Water Holdings",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "JW Water Holdings",
+    "investmentFirm": "CVC DIF",
+    "sector": "Utilities",
+    "subsector": "Regulated water and wastewater utilities",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "DIF Infrastructure VII",
+    "description": "JW Water Holdings is a regulated water and wastewater utility platform in Arizona. Its customers are residential communities and local service areas that rely on essential regulated utility service rather than discretionary consumption models. The business is asset-heavy and regulated because value depends on pipes, treatment and distribution systems, rate-based operations, and customer connections. CVC DIF disclosed in 2024 that JW Water served about 9,000 customers across 10 utilities at signing and that the broader Arizona utility platform acquired alongside Robson assets would serve more than 50,000 customers. Public materials identify DIF Infrastructure VII as the acquisition vehicle, while exact ownership percentages are not disclosed.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2013,
+    "investmentYear": 2024,
+    "headquarters": "Arizona",
+    "milestones": [
+      {
+        "date": "2013",
+        "event": "CVC DIF identified 2013 as the founding year of JW Water.",
+        "category": "Other"
+      },
+      {
+        "date": "2013",
+        "event": "JW Water Holdings was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "2024",
+        "event": "CVC DIF disclosed that JW Water served about 9,000 customers across 10 utilities at signing.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Nov 21, 2024",
+        "event": "CVC DIF acquired JW Water through DIF Infrastructure VII.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Close date source — CVC DIF — JW Water Holdings",
+        "url": "https://www.cvc.com/media/news/2024/2024-11-21-cvc-dif-acquires-a-portfolio-of-us-regulated-water-and-wastewater-utilities/",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Pillsburylaw — JW Water Holdings",
+        "url": "https://www.pillsburylaw.com/en/news-and-insights/cvc-dif-strategic-acquisition-arizona-water-wastewater-sector.html",
+        "type": "ARTICLE",
+        "purpose": "MILESTONE_EVENT"
+      },
+      {
+        "label": "Bluefieldresearch — JW Water Holdings",
+        "url": "https://www.bluefieldresearch.com/research/pe-firm-cvc-lands-deal-in-arizona-utility-market/",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "CVC DIF",
+        "ownershipVehicle": "DIF Infrastructure VII",
+        "investmentYear": 2024,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [
+    {
+      "sourceQueueTaskId": "ledger:0482:jw-water-holdings-incl-robson-utilities:9fae287b",
+      "sourceQueueEntrySha256": "4c91d23e94740025316af3e77ddb89e8311909389fd8c1d04b54e57face2c12c",
+      "name": "JW Water Holdings (incl. Robson Utilities)",
+      "country": "United States",
+      "rawSeedEntrySha256": "f91c5693b0c91c72bf616c21bb2ab066374b85d7150ac4c6bb254593fe896257",
+      "evaluatedSeedEntrySha256": "f91c5693b0c91c72bf616c21bb2ab066374b85d7150ac4c6bb254593fe896257"
+    }
+  ],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj20l00cvivhe9pkvc7nw",
+        "fundName": "DIF Infrastructure VII",
+        "managerId": "cmrxpi6qi001divhesbtqsco2",
+        "updatedAt": "2026-07-23T16:09:56.469Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi6qi001divhesbtqsco2",
+        "name": "CVC DIF",
+        "updatedAt": "2026-07-23T16:09:15.930Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0206:jw-water-holdings:fc8ebab0",
+    "taskIndex": 206,
+    "canonicalKey": "jw-water-holdings|united-states",
+    "capturedAt": "2026-08-29T05:39:19.173Z",
+    "databaseRevision": "revision:7c9f7af5560f67d45775ded8dcf36bc46742af2bf04e127016a3df4522ecb823",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "fec932a3c86655207484e32bd1043bcdd37289d185bf27ab41193704c30b8d06",
+    "productionSnapshotSha256": "e73857cf073c70847450357b2c61f20c5e14db82c3ac3da75d37b43045c74e59",
+    "targetCompanySnapshotSha256": "23d9f76aa2e0dd3c76064beb9fd893e6a25e39437522c90eeeeb57efdaa0dc83",
+    "seedEntrySha256": "5f2adcd4db7f80e43626a6f6053685653c80850be2ddef932b9670c9ce718fba",
+    "seedRetirementCandidates": [
+      {
+        "sourceQueueTaskId": "ledger:0482:jw-water-holdings-incl-robson-utilities:9fae287b",
+        "sourceQueueEntrySha256": "4c91d23e94740025316af3e77ddb89e8311909389fd8c1d04b54e57face2c12c",
+        "name": "JW Water Holdings (incl. Robson Utilities)",
+        "country": "United States",
+        "rawSeedEntrySha256": "f91c5693b0c91c72bf616c21bb2ab066374b85d7150ac4c6bb254593fe896257",
+        "evaluatedSeedEntrySha256": "f91c5693b0c91c72bf616c21bb2ab066374b85d7150ac4c6bb254593fe896257"
+      }
+    ],
+    "dependencies": {
+      "ownershipPeriodsSha256": "e9783259ebba5a453260d1e2e246152c7e1c76f14acfcb3838498437157f75a3",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "588765f986a9d33b249694c8c6f470a1add55672144665c177332962aa28c52d",
+      "organizationsSha256": "7a6d6eb8c91275eb133966b74b94196b45a1b8bf9f563ec95b85cdc78132c4f4",
+      "citationsSha256": "79ef95d6da5b02ccbabe1c23bc951bab6cc7a600978248cf2403af56b4cb4dac",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "948811e12623503c891ab0023ac376122b6f66381f3d5a338e36a39d41f97b10",
+    "stateSha256": "e9519c99d4fc55834a14528917e61cb792b8de09edf4a03db0dca04b84680b35",
+    "taskSnapshotSha256": "aee24d886db69735a44ad3e3e3b7802e9332cda035192c5eed15ce5d75a8c3da"
+  },
+  "contextSha256": "b83f457123dddc526d8a16582c52899b0d9cb1a7d225bf3ddbdda7add30e6777"
+}

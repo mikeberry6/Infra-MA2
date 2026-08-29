@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_SEED_ATTRIBUTION_RECONCILIATION_SPEC",
+  "batchId": "batch-0204-0208-v1",
+  "batchSha256": "c90e86c3affb34263a5e3c499bd76dcc7ad39538610c9aa7640ce9896f766996",
+  "reconciledAt": "2026-08-29T05:54:00.000Z",
+  "sourceManifestSha256": "ea7dcaf0fd4c5524c64747a9c2524482c1a5b53f3d04a858bdfb26949ed1cd17",
+  "rationale": "Align the active-owner attribution ledger with the approved bundle after-images. Retire the former-name Green Street Power Partners attribution while retaining one current GS Power Partners and CVC DIF / DIF Infrastructure VII majority-interest record. Retire the duplicate JW Water (incl. Robson Utilities) and Robson Communities Utilities / Pima Utility attributions while retaining one current JW Water Holdings, LLC and CVC DIF / DIF Infrastructure VII record. The Robson utilities and Pima are child utilities or acquisition-cohort history, not separate manager-level owners.",
+  "removeRecordIds": [
+    "OFA-7A3354023267",
+    "OFA-242CF5CB0B89",
+    "OFA-A488787AA8FB"
+  ],
+  "upsertRecords": [
+    {
+      "recordId": "OFA-03B7C977156B",
+      "companyName": "GS Power Partners",
+      "country": "United States",
+      "investmentFirm": "CVC DIF",
+      "currentVehicleName": "DIF Infrastructure VII",
+      "investmentYear": 2023,
+      "stake": "Majority equity interest; exact percentage not publicly disclosed",
+      "targetLinkedFundName": "DIF Infrastructure VII",
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "DIF Infrastructure VII",
+      "attributionConfidence": null,
+      "attributionRationale": "DIF announced a majority equity investment in Green Street Power Partners through DIF Infrastructure VII in April 2023. The same company adopted the GS Power Partners brand in December 2024, and CVC DIF continues to list it as a current investment. The exact percentage is not publicly disclosed.",
+      "evidenceUrls": [
+        "https://gspowerpartners.com/we-are-now-gs-power-partners-heres-why-were-excited/",
+        "https://gspowerpartners.com/dif-capital-partners-agrees-to-acquire-majority-interest-in-us-based-solar-platform-green-street-power-partners/",
+        "https://dif-capital-partners.euwest01.umbraco.io/media/iojnwvku/sustainability-report-2023.pdf",
+        "https://www.cvcdif.com/infrastructure/investments"
+      ]
+    },
+    {
+      "recordId": "OFA-2A3EC46A57A4",
+      "companyName": "JW Water Holdings, LLC",
+      "country": "United States",
+      "investmentFirm": "CVC DIF",
+      "currentVehicleName": "DIF Infrastructure VII",
+      "investmentYear": 2024,
+      "stake": null,
+      "targetLinkedFundName": "DIF Infrastructure VII",
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "DIF Infrastructure VII",
+      "attributionConfidence": null,
+      "attributionRationale": "CVC DIF completed the acquisitions of JW Water and the eight-utility Robson portfolio through DIF Infrastructure VII in November 2024. Current company and regulatory evidence shows the utilities beneath one JW Water Holdings platform; the manager-level ownership percentage is not publicly disclosed.",
+      "evidenceUrls": [
+        "https://www.cvc.com/media/news/2024/2024-11-21-cvc-dif-acquires-a-portfolio-of-us-regulated-water-and-wastewater-utilities/",
+        "https://jwwater.com/",
+        "https://jwwater.com/pima/wp-content/uploads/sites/12/2026/03/Pima-Rate-Case-FAQ.pdf",
+        "https://www.azcc.gov/news/home/2025/11/21/november-19--2025-open-meeting-highlights"
+      ]
+    }
+  ],
+  "specSha256": "8f690683b4ad171a6e793edad0986fa3444e603283ddc36f983af1a7802b48ea"
+}

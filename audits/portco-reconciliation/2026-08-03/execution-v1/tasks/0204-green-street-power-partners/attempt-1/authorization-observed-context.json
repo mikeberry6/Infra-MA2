@@ -1,0 +1,259 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0204:green-street-power-partners:9b141bba",
+  "taskIndex": 204,
+  "companyName": "Green Street Power Partners",
+  "generatedAt": "2026-08-29T05:50:52.597Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0204-green-street-power-partners/attempt-1/authorization-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 204,
+    "taskId": "ledger:0204:green-street-power-partners:9b141bba",
+    "canonicalKey": "green-street-power-partners|united-states",
+    "companyName": "Green Street Power Partners",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 34,
+    "managers": [
+      "CVC",
+      "DIF"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "034-cvc:repo-only:003:green-street-power-partners",
+      "035-dif:repo-only:003:green-street-power-partners"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjcxy00tdivhea9p9kug7"
+    ],
+    "seedKeys": [
+      "green street power partners|United States"
+    ],
+    "evidenceUrls": [
+      "https://gspowerpartners.com/dif-capital-partners-agrees-to-acquire-majority-interest-in-us-based-solar-platform-green-street-power-partners/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: CVC MATCHED_ELSEWHERE: Rebranded as GS Power Partners DIF MATCHED_ELSEWHERE: Legacy name of GS Power Partners platform",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "REVIEWED_MERGE_CANONICAL_TARGET",
+    "targetCompanyId": "cmrxpjcyj00teivhe0d58ngch",
+    "linkedQueueTaskId": null,
+    "immutableRetiredCompanyId": "cmrxpjcxy00tdivhea9p9kug7"
+  },
+  "resolvedCanonicalKey": "gs-power-partners|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjcyj00teivhe0d58ngch",
+    "name": "GS Power Partners",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Distributed and community solar",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Green Street Power Partners, now branded as GS Power Partners, develops, finances, owns, and operates distributed-generation and community-solar projects in the United States. Its customers include utilities, municipalities, commercial users, and community-solar subscribers that rely on contracted distributed renewable generation. The platform is asset-heavy because it develops and owns physical solar assets rather than operating solely as a services or brokerage business. Company materials identify a Northeast and Midwest focus and describe the business as an independent power producer with a sizable operating and development portfolio. DIF announced in 2023 that it had agreed to acquire a majority equity interest in the company through DIF Infrastructure VII, while public sources do not disclose the final ownership percentage.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2015,
+    "headquarters": "Northeast and Midwest U.S.",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjyg501rcivheu7f99nh3",
+        "managerName": "CVC DIF",
+        "organizationName": "CVC DIF",
+        "fundName": "DIF Infrastructure VII",
+        "vehicleName": "DIF Infrastructure VII",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplevy03neivhe58iyw1mk",
+        "date": "2015",
+        "event": "Public company profiles identify 2015 as the founding year.",
+        "category": "FOUNDING",
+        "sortDate": "2015-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplewj03nfivhenh8350d6",
+        "date": "Apr 3, 2023",
+        "event": "DIF announced an agreement to acquire a majority equity interest in Green Street Power Partners through DIF Infrastructure VII.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-04-03T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqgqt09mkivhetb30pd8b",
+        "label": "Gspowerpartners — Green Street Power Partners",
+        "url": "https://gspowerpartners.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Gspowerpartners company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqgrd09mlivhehge4utye",
+        "label": "Gspowerpartners — Green Street Power Partners",
+        "url": "https://gspowerpartners.com/company/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Gspowerpartners — GS Power Partners",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqgs209mmivheqz1hxiyc",
+        "label": "Announcement date source — CVC DIF — Green Street Power Partners",
+        "url": "https://gspowerpartners.com/dif-capital-partners-agrees-to-acquire-majority-interest-in-us-based-solar-platform-green-street-power-partners/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CVC DIF transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqgsh09mnivhe1iz193ek",
+        "label": "Dif Capital Partners — Green Street Power Partners",
+        "url": "https://dif-capital-partners.euwest01.umbraco.io/media/iojnwvku/sustainability-report-2023.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Dif Capital Partners — GS Power Partners",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "GS Power Partners",
+    "investmentFirm": "CVC DIF",
+    "sector": "Power & ET",
+    "subsector": "Distributed and community solar",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "DIF Infrastructure VII",
+    "description": "Green Street Power Partners, now branded as GS Power Partners, develops, finances, owns, and operates distributed-generation and community-solar projects in the United States. Its customers include utilities, municipalities, commercial users, and community-solar subscribers that rely on contracted distributed renewable generation. The platform is asset-heavy because it develops and owns physical solar assets rather than operating solely as a services or brokerage business. Company materials identify a Northeast and Midwest focus and describe the business as an independent power producer with a sizable operating and development portfolio. DIF announced in 2023 that it had agreed to acquire a majority equity interest in the company through DIF Infrastructure VII, while public sources do not disclose the final ownership percentage.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2015,
+    "investmentYear": 2023,
+    "headquarters": "Northeast and Midwest U.S.",
+    "milestones": [
+      {
+        "date": "2015",
+        "event": "Public company profiles identify 2015 as the founding year.",
+        "category": "Founding"
+      },
+      {
+        "date": "Apr 3, 2023",
+        "event": "DIF announced an agreement to acquire a majority equity interest in Green Street Power Partners through DIF Infrastructure VII.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Gspowerpartners — GS Power Partners",
+        "url": "https://gspowerpartners.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Gspowerpartners — GS Power Partners",
+        "url": "https://gspowerpartners.com/company/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Announcement date source — CVC DIF — GS Power Partners",
+        "url": "https://gspowerpartners.com/dif-capital-partners-agrees-to-acquire-majority-interest-in-us-based-solar-platform-green-street-power-partners/",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Dif Capital Partners — GS Power Partners",
+        "url": "https://dif-capital-partners.euwest01.umbraco.io/media/iojnwvku/sustainability-report-2023.pdf",
+        "type": "PRESENTATION"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "CVC DIF",
+        "ownershipVehicle": "DIF Infrastructure VII",
+        "investmentYear": 2023,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj20l00cvivhe9pkvc7nw",
+        "fundName": "DIF Infrastructure VII",
+        "managerId": "cmrxpi6qi001divhesbtqsco2",
+        "updatedAt": "2026-07-23T16:09:56.469Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi6qi001divhesbtqsco2",
+        "name": "CVC DIF",
+        "updatedAt": "2026-07-23T16:09:15.930Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0204:green-street-power-partners:9b141bba",
+    "taskIndex": 204,
+    "canonicalKey": "green-street-power-partners|united-states",
+    "capturedAt": "2026-08-29T05:50:52.597Z",
+    "databaseRevision": "revision:deebacd8bff07077343b44e21d41287c6c1c1ee9207fd73dab62e50bb4ead19b",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "bec75dbaf34b93f390d48d82e0c44c77bdfd8dc8ecace1ebc3d7a37dcc548cec",
+    "productionSnapshotSha256": "3094914af68b675fe3eea7a36566002b71eb593dbf4ba6f874c220984570a20f",
+    "targetCompanySnapshotSha256": "c07d59a5f3d3de30f3d0337886c8bc1f5c5b87e54ef882dea9c7ed26b12fd701",
+    "seedEntrySha256": "956669adb0697a4c5550d1f006fe9fd0b279d0e891d2192830496f15d2649b37",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "961d2738bca60c66ef51aff36c987012c946a804d567b8a28983b2afe19f1a7a",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "588765f986a9d33b249694c8c6f470a1add55672144665c177332962aa28c52d",
+      "organizationsSha256": "7a6d6eb8c91275eb133966b74b94196b45a1b8bf9f563ec95b85cdc78132c4f4",
+      "citationsSha256": "ea7680916f93c0f14aed3f2d8e60f1b2ca6d9f494dc1b12c257930049ef66da5",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "70e12793e15d8265c6abbaa16d4b4ac78de0274aaa713a85c1e084c64a13d8cd",
+    "stateSha256": "f3824b43dce51e12d50c10ea99a90dcae00d5f9d7b4538d57ca6755c7340ca38",
+    "taskSnapshotSha256": "9c48c8e5497f2d60ec2d76cd177bf5f652df85f7662d5a52b4101aa25aaea357"
+  },
+  "contextSha256": "f62c2794fc9b3b94c0dc067c9ad51c78d58745bf0dc2bc3bfd96577b9a973ae9"
+}

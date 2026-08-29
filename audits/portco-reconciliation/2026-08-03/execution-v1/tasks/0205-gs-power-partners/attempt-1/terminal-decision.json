@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0205:gs-power-partners:c5899878",
+  "taskIndex": 205,
+  "companyName": "GS Power Partners",
+  "outcome": "SUPERSEDED",
+  "decidedAt": "2026-08-29T05:52:02.000Z",
+  "rationale": "Task 204 resolves the same canonical platform and complete CVC DIF ownership judgment. GS Power Partners is the current brand of Green Street Power Partners, not a separate successor company. Task 204 keeps the existing GS Power Partners record, merges the former-name duplicate and preserves the April 2023 DIF Infrastructure VII majority investment, so task 205 would duplicate that work.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0205-gs-power-partners/attempt-1/locked-task-snapshot.json",
+    "sha256": "b28c99a4763bcd323f62354ab034b1910b155b42ae42a33dd84a849f55572b25"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0205-gs-power-partners/attempt-1/terminal-research-decision.json",
+    "sha256": "f4025add8166d432715825ddfd01a2961eb3d42a41cf340e1f8ff1d91d75f7f6"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0204-green-street-power-partners/attempt-1/source-verification.json",
+    "sha256": "bae258e7ad7ff9c4058000019bd03ab622217d051e50ca5586620abaf1a88b7e"
+  },
+  "evidence": [
+    {
+      "url": "https://gspowerpartners.com/we-are-now-gs-power-partners-heres-why-were-excited/",
+      "purpose": "Same-company rebrand effective December 9, 2024."
+    },
+    {
+      "url": "https://gspowerpartners.com/dif-capital-partners-agrees-to-acquire-majority-interest-in-us-based-solar-platform-green-street-power-partners/",
+      "purpose": "DIF Infrastructure VII majority investment announcement."
+    },
+    {
+      "url": "https://www.cvcdif.com/infrastructure/investments",
+      "purpose": "Current CVC DIF portfolio status."
+    }
+  ],
+  "supersededByTaskId": "ledger:0204:green-street-power-partners:9b141bba",
+  "decisionSha256": "df7071d91cf545c97b54bab47187baca1ab39daf9aa78083196c4c3e10f7e5cc"
+}
