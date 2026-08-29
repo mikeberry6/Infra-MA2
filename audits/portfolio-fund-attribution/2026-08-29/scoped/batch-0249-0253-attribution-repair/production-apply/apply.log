@@ -1,0 +1,163 @@
+
+> infra-tracker@1.0.0 portfolio:fund-attribution:apply
+> npx tsx scripts/apply-portfolio-fund-attribution.ts --manifest=audits/portfolio-fund-attribution/2026-08-29/scoped/batch-0249-0253-attribution-repair/apply-manifest.json --manifest-sha256=175fd0aa8ab2a08fe4cf20491bff2da05ae4d0281c86a3d1621aa90a95400bd2 --production-snapshot=audits/portfolio-fund-attribution/2026-08-29/scoped/batch-0249-0253-attribution-repair/production-snapshot.json --approval=audits/portfolio-fund-attribution/2026-08-29/scoped/batch-0249-0253-attribution-repair/approval.json --approval-sha256=c3f4d990b25f064ba84a3ae2e3ebb8187a9c44e7a4b5deb4f413981d324f12a6 --apply=true --write-token=APPLY_REVIEWED_PORTFOLIO_FUND_ATTRIBUTION --receipt=tmp/portfolio-fund-attribution/production/apply-receipt.json
+
+(node:2933) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_RECEIPT",
+  "manifestSha256": "175fd0aa8ab2a08fe4cf20491bff2da05ae4d0281c86a3d1621aa90a95400bd2",
+  "approvalSha256": "c3f4d990b25f064ba84a3ae2e3ebb8187a9c44e7a4b5deb4f413981d324f12a6",
+  "environment": "production",
+  "pipelineRunId": "cmtemqycl00009h2bweeuzqvg",
+  "mutationCount": 7,
+  "changed": 7,
+  "idempotent": false,
+  "beforeFingerprint": "3f7f48d985fa5ed0353232b90e79294e57ea08df51c4965f9b53b4bc08850e38",
+  "afterFingerprint": "b1263ebb642f1461da0c65c281447814bc3ea890c2693f632102b530aa0d26e0",
+  "rows": [
+    {
+      "recordId": "OFA-D7EB30FD17B2",
+      "ownershipPeriodId": "cmtem9ev60009yr2b5oi1cpx1",
+      "companyId": "cmtem9dr80000yr2btcupxed4",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": "Fengate Infrastructure Fund IV",
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": "Fengate Infrastructure Fund IV",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Fengate Infrastructure Fund IV",
+        "attributionConfidence": null,
+        "attributionRationale": "Fengate's groundbreaking announcement directly attributes its investment in the Health Park at Avenir ProjectCo to Fengate Infrastructure Fund IV and identifies Stonemont and Sina as its investment and development partners. The exact percentages are not publicly disclosed."
+      }
+    },
+    {
+      "recordId": "OFA-8F07EB5420B8",
+      "ownershipPeriodId": "cmtem9f1i000byr2bnch9nylw",
+      "companyId": "cmtem9dr80000yr2btcupxed4",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Fengate and Sina identify Stonemont as a direct investment and development partner in the named Health Park ProjectCo structure. No Stonemont managed infrastructure fund is publicly identified for the investment, and the ownership percentage is not disclosed."
+      }
+    },
+    {
+      "recordId": "OFA-8B132A481D75",
+      "ownershipPeriodId": "cmtem9f7f000dyr2bo023lqeu",
+      "companyId": "cmtem9dr80000yr2btcupxed4",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Fengate and Sina identify The Sina Companies as a direct investment and development partner in Health Park at Avenir. No Sina managed infrastructure fund is publicly identified for the investment, and the ownership percentage is not disclosed."
+      }
+    },
+    {
+      "recordId": "OFA-1B0A2130650D",
+      "ownershipPeriodId": "cmrxpk1c501vwivhev2ni5vv2",
+      "companyId": "cmrxpjfs500xmivheiqodqkfz",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Fengate Infrastructure Fund IV",
+        "attributionConfidence": null,
+        "attributionRationale": "Verified fund matches an existing fund-list entry."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Fengate's transaction announcement identifies Fengate and MedCraft as the joint-venture acquirers of the 24-facility portfolio, while title evidence identifies the FG MC II ownership structure. No deal-specific Fengate managed fund or ownership percentage is publicly disclosed, so no fund is inferred."
+      }
+    },
+    {
+      "recordId": "OFA-C52755A498CA",
+      "ownershipPeriodId": "cmtem9k8e000oyr2blig746ur",
+      "companyId": "cmrxpjfs500xmivheiqodqkfz",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Fengate and contemporaneous transaction reporting identify MedCraft Healthcare Real Estate as the joint-venture co-owner and buyer of the Cleveland Clinic outpatient portfolio. No MedCraft managed fund or ownership percentage is publicly disclosed."
+      }
+    },
+    {
+      "recordId": "OFA-CC1E602228B8",
+      "ownershipPeriodId": "cmtem9q240012yr2bn80geocq",
+      "companyId": "cmrxpjfsr00xnivhemb529yxo",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Fengate and transaction reporting identify Montecito Medical Real Estate as Fengate's partner and confirm that Montecito retained equity in the recapitalized portfolio. No Montecito managed infrastructure fund or ownership percentage is publicly disclosed."
+      }
+    },
+    {
+      "recordId": "OFA-E4C82A3B5D3E",
+      "ownershipPeriodId": "cmtem9w32001jyr2bij3e7hze",
+      "companyId": "cmrxpjfj100xeivhebd0fzcqi",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "BBGI announced and the school district subsequently reported completion of BBGI's acquisition of a 100% equity interest in the Phase One ProjectCo. The evidence identifies a direct BBGI investment rather than a separately named managed fund."
+      }
+    }
+  ],
+  "appliedAt": "2026-08-29T17:03:53.675Z",
+  "receiptSha256": "646f01565dc355ea54ba767b79def3fc38ce29552a608fad714874afdd67f609"
+}
