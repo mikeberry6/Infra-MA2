@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_CORRECTION_DECISION",
+  "asOfDate": "2026-08-29",
+  "triggerBatchId": "batch-0254-0258-v1",
+  "triggerBatchSha256": "9d8eb449035183b44d76d4de5833795badca2a9a1e7ec51828b8619886968a8e",
+  "decision": "ALIGN_ACTIVE_OWNERSHIP_ATTRIBUTION_METADATA",
+  "rationale": "The protected atomic PortCo transaction correctly applied Cambrian Innovation's current Pennybacker Capital ownership, disclosed acquisition vehicle and 2023 entry date. The active production ownership row now requires alignment to the already-reviewed, hash-bound seed attribution record: Cambrian's acquisition announcement identifies Pennybacker-affiliated funds as the corporate acquirer, while no specific Pennybacker managed fund is publicly named.",
+  "mutations": [
+    {
+      "ownershipPeriodId": "cmteolk0g0001yp2blb2la8vg",
+      "companyName": "Cambrian Innovation",
+      "from": "UNRESOLVED — no attribution rationale or attributed vehicle",
+      "to": "DISCLOSED — Pennybacker-affiliated funds / corporate equity, without a curated-fund link"
+    }
+  ],
+  "nonChanges": [
+    "Company identity, aliases, canonical redirects and publication status",
+    "Ownership organization, vehicle, stake, investment date and active state",
+    "Fund Database records and normalized fund identities",
+    "Description, milestones, citations and primary source",
+    "Former Generate Capital project-level ownership period"
+  ],
+  "identityResolved": true,
+  "activeOwnershipResolved": true,
+  "unresolvedQuestions": []
+}
