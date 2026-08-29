@@ -3,7 +3,7 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-29T11:27:26.072Z",
+  "updatedAt": "2026-08-29T11:40:07.165Z",
   "activeBatchId": "batch-0229-0233-v1",
   "batches": [
     {
@@ -2910,7 +2910,7 @@
     },
     {
       "batchId": "batch-0229-0233-v1",
-      "state": "VERIFYING",
+      "state": "VERIFYING_FAILED",
       "taskIds": [
         "ledger:0229:new-leaf-energy:321d604d",
         "ledger:0230:next-wave-energy:b4bcb6ea",
@@ -2926,7 +2926,7 @@
         233
       ],
       "createdAt": "2026-08-29T10:23:29.000Z",
-      "updatedAt": "2026-08-29T11:27:26.072Z",
+      "updatedAt": "2026-08-29T11:40:07.165Z",
       "completedAt": null,
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0229-0233-v1/batch-manifest.json",
@@ -2937,7 +2937,7 @@
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0229-0233-v1/production-apply/batch-apply-receipt.json",
         "sha256": "5f7444055add560dcad217c99c320d4027d56fdeded5d2704bf71c5018023bcb"
       },
-      "reason": null,
+      "reason": "Independent canonical API and rendered-card verification found eight stale or generic OwnershipPeriod fund-attribution metadata rows across New Leaf Energy, Next Wave Energy Partners, Pivot Energy, PROENERGY and Restaurant Technologies. The five company identities, ownership periods, stakes, vehicles, sources, seed after-images and atomic transaction are correct; no later bundle may start until the protected attribution-only repair and renewed rendered checks pass.",
       "history": [
         {
           "sequence": 1,
@@ -2987,9 +2987,20 @@
             "5f7444055add560dcad217c99c320d4027d56fdeded5d2704bf71c5018023bcb"
           ],
           "reason": null
+        },
+        {
+          "sequence": 6,
+          "from": "VERIFYING",
+          "to": "VERIFYING_FAILED",
+          "at": "2026-08-29T11:40:07.165Z",
+          "evidenceSha256": [
+            "0029d3f39ef468adf60e5a3a56b25636fab172ec3a4e8482753db11ed9b3cbf7",
+            "5f7444055add560dcad217c99c320d4027d56fdeded5d2704bf71c5018023bcb"
+          ],
+          "reason": "Independent canonical API and rendered-card verification found eight stale or generic OwnershipPeriod fund-attribution metadata rows across New Leaf Energy, Next Wave Energy Partners, Pivot Energy, PROENERGY and Restaurant Technologies. The five company identities, ownership periods, stakes, vehicles, sources, seed after-images and atomic transaction are correct; no later bundle may start until the protected attribution-only repair and renewed rendered checks pass."
         }
       ]
     }
   ],
-  "ledgerSha256": "f7a7e9798750987ce54b08db1f09648240753de2184c38e730ff6f5bcc5e15ae"
+  "ledgerSha256": "8391d81bd738a4ea47b6c3a443a1b5a07418cea8a3deb2dfa75f647ef59685d2"
 }
