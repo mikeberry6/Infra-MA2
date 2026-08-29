@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_CORRECTION_DECISION",
+  "asOfDate": "2026-08-29",
+  "triggerBatchId": "batch-0249-0253-v1",
+  "triggerBatchSha256": "f2688d921be742fe4b6878016dc5b13c4bc7c469634e8f8e1170e7a7aabe4fdf",
+  "decision": "ALIGN_ACTIVE_OWNERSHIP_ATTRIBUTION_METADATA",
+  "rationale": "The protected atomic PortCo transaction correctly applied the reviewed identities, ownership organizations, vehicles, economics and dates for Health Park at Avenir, the Fengate-MedCraft Cleveland Clinic Outpatient Portfolio, the Montecito Medical Outpatient Portfolio and Prince George's County Blueprint Schools Program (Phase One). Seven active production ownership rows now require alignment to the already-reviewed, hash-bound seed attribution records. Fengate's Health Park interest is disclosed through Fengate Infrastructure Fund IV; Stonemont, Sina, MedCraft, Montecito and BBGI are direct or program interests without a named managed fund; and Fengate's MedCraft interest must not retain the former inferred Fund IV label because no deal-specific fund was disclosed.",
+  "mutations": [
+    {
+      "ownershipPeriodId": "cmtem9ev60009yr2b5oi1cpx1",
+      "companyName": "Health Park at Avenir",
+      "from": "UNRESOLVED — existing Fengate Infrastructure Fund IV link but no attribution rationale",
+      "to": "DISCLOSED — Fengate Infrastructure Fund IV with the existing curated-fund link"
+    },
+    {
+      "ownershipPeriodId": "cmtem9f1i000byr2bnch9nylw",
+      "companyName": "Health Park at Avenir",
+      "from": "UNRESOLVED — no attribution rationale",
+      "to": "DIRECT_PROGRAM — Stonemont direct investment and development interest"
+    },
+    {
+      "ownershipPeriodId": "cmtem9f7f000dyr2bo023lqeu",
+      "companyName": "Health Park at Avenir",
+      "from": "UNRESOLVED — no attribution rationale",
+      "to": "DIRECT_PROGRAM — Sina direct investment and development interest"
+    },
+    {
+      "ownershipPeriodId": "cmrxpk1c501vwivhev2ni5vv2",
+      "companyName": "Fengate-MedCraft Cleveland Clinic Outpatient Portfolio",
+      "from": "DISCLOSED — stale inferred Fengate Infrastructure Fund IV label with no current fund link",
+      "to": "DIRECT_PROGRAM — Fengate joint-venture interest with no deal-specific managed fund disclosed"
+    },
+    {
+      "ownershipPeriodId": "cmtem9k8e000oyr2blig746ur",
+      "companyName": "Fengate-MedCraft Cleveland Clinic Outpatient Portfolio",
+      "from": "UNRESOLVED — no attribution rationale",
+      "to": "DIRECT_PROGRAM — MedCraft direct joint-venture interest"
+    },
+    {
+      "ownershipPeriodId": "cmtem9q240012yr2bn80geocq",
+      "companyName": "Montecito Medical Outpatient Portfolio",
+      "from": "UNRESOLVED — no attribution rationale",
+      "to": "DIRECT_PROGRAM — Montecito retained direct equity interest"
+    },
+    {
+      "ownershipPeriodId": "cmtem9w32001jyr2bij3e7hze",
+      "companyName": "Prince George's County Blueprint Schools Program (Phase One)",
+      "from": "UNRESOLVED — no attribution rationale",
+      "to": "DIRECT_PROGRAM — BBGI direct 100% ProjectCo interest"
+    }
+  ],
+  "nonChanges": [
+    "Company identities, aliases, canonical redirects and publication status",
+    "Ownership organizations, vehicles, stakes, dates and active or former state",
+    "Fund Database records and normalized fund identities",
+    "Descriptions, milestones, citations and primary sources",
+    "Former Cleveland Clinic, Fengate and Gilbane ownership periods, which are outside the active-owner attribution manifest"
+  ],
+  "identityResolved": true,
+  "activeOwnershipResolved": true,
+  "unresolvedQuestions": []
+}
