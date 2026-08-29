@@ -1,0 +1,286 @@
+{
+  "generatedAt": "2026-08-29T06:35:00.000Z",
+  "actions": [
+    "CORRECT_COMPANY",
+    "MERGE_COMPANIES"
+  ],
+  "retiredCompanyIds": [
+    "cmrxpjm7v017nivhet0bl1s0p"
+  ],
+  "relationMerges": [
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxpmj2604zdivhey2qcp0h1",
+      "canonicalRelationId": "cmrxplg3x03owivheaeh1j5zd",
+      "rationale": "Both rows contain Beanfield's 1988 founding history."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxpmj2s04zeivhex5dt9um8",
+      "canonicalRelationId": "cmrxplg4h03oxivheseuufho6",
+      "rationale": "Both rows contain Digital Colony's November 2019 acquisition of Beanfield Technologies."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxpmj3u04zgivhekj3v0n8v",
+      "canonicalRelationId": "cmrxplg5n03ozivheoldyna5r",
+      "rationale": "Both rows describe the announced 2023 DigitalBridge and OMERS ownership partnership."
+    }
+  ],
+  "reviewedSeedRetirementTaskIds": [],
+  "rationale": "Consolidate the duplicate Beanfield Technologies Inc. production and seed record into the canonical Beanfield Metroconnect record because regulator and company sources establish that these are legal and trading names of one Canadian fibre platform. Preserve DigitalBridge as majority owner following its 2019 acquisition, move the existing OMERS ownership period to the canonical company as an active minority investment from the September 15, 2023 close, and exclude InfraBridge because no direct Beanfield equity interest was identified. OpenFace and the Aptum metro network remain subordinate acquired operations and assets. No Beanfield-specific sale, ownership transfer or signed pending exit was identified through August 19, 2026.",
+  "evidence": [
+    {
+      "url": "https://crtc.gc.ca/eng/archive/2025/2025-154.htm",
+      "purpose": "Canonical legal and trading identity",
+      "supports": [
+        "Beanfield Technologies Inc. operates as Beanfield Metroconnect",
+        "The two repository records represent one company rather than separate platforms"
+      ]
+    },
+    {
+      "url": "https://blog.beanfield.com/digital-colony-acquires-beanfield-technologies-inc/",
+      "purpose": "DigitalBridge ownership entry",
+      "supports": [
+        "Digital Colony Partners acquired Beanfield Technologies on November 12, 2019"
+      ]
+    },
+    {
+      "url": "https://www.omers.com/news/omers-infrastructure-announces-strategic-investment-in-beanfield-metroconnect",
+      "purpose": "Current co-ownership structure",
+      "supports": [
+        "OMERS Infrastructure agreed to a minority investment",
+        "DigitalBridge would remain the majority owner"
+      ]
+    },
+    {
+      "url": "https://www.mccarthy.ca/en/experience/omers-infrastructure-management-inc-completes-investment-in-beanfield-technologies-inc",
+      "purpose": "OMERS ownership closing",
+      "supports": [
+        "OMERS completed its Beanfield investment on September 15, 2023"
+      ]
+    },
+    {
+      "url": "https://www.digitalbridge.com/portfolio/beanfield-metroconnect",
+      "purpose": "Current DigitalBridge ownership and exit check",
+      "supports": [
+        "DigitalBridge continues to list Beanfield as a current portfolio company"
+      ]
+    },
+    {
+      "url": "https://www.omersinfrastructure.com/investments",
+      "purpose": "Current OMERS ownership and exit check",
+      "supports": [
+        "OMERS Infrastructure continues to list Beanfield as a current investment"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "afterImage": {
+    "id": "cmrxpjd8g00tsivhe75mpfqhf",
+    "name": "Beanfield Metroconnect",
+    "aliases": [
+      "Beanfield",
+      "Beanfield Technologies",
+      "Beanfield Technologies Inc."
+    ],
+    "sector": "DIGITAL",
+    "subsector": "Metro fiber broadband and enterprise connectivity",
+    "region": "NORTH_AMERICA",
+    "country": "Canada",
+    "countryTags": [
+      "Canada"
+    ],
+    "description": "Beanfield Metroconnect, legally Beanfield Technologies Inc., builds, owns and operates metropolitan fibre networks and provides residential broadband, business connectivity, private networks, cloud connectivity and colocation services in Canada. The platform serves residential and multi-dwelling-unit customers, enterprises, carriers and data centres across Toronto, Montreal, Ottawa and Vancouver, with additional points of presence in Calgary, New York and Seattle. Public transaction materials reported approximately 4,000 kilometres of fibre connecting roughly 4,000 commercial buildings and more than 170,000 residential units in 2023; current scale was not publicly disclosed. Digital Colony Partners acquired Beanfield in November 2019. OMERS Infrastructure completed a minority investment on September 15, 2023, after which DigitalBridge remained the majority owner. OpenFace was integrated into Beanfield, and Beanfield acquired Aptum's metro-network assets rather than Aptum itself. Current DigitalBridge and OMERS materials continue to list Beanfield, and no Beanfield-specific sale, ownership transfer or signed pending exit was identified through August 19, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.beanfield.com/",
+    "yearFounded": 1988,
+    "headquarters": "Toronto, Ontario, Canada",
+    "lastVerifiedAt": "2026-08-19T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjyqc01rqivheiou7knv7",
+        "managerName": "DigitalBridge",
+        "organizationName": "DigitalBridge",
+        "fundName": null,
+        "vehicleName": "Digital Colony Partners",
+        "stake": "Majority interest after the 2023 OMERS investment; exact percentage not publicly disclosed",
+        "investmentYear": 2019,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpk8lh0273ivhe33cjsxfs",
+        "managerName": "OMERS Infrastructure",
+        "organizationName": "OMERS Infrastructure",
+        "fundName": null,
+        "vehicleName": null,
+        "stake": "Minority interest; exact percentage not publicly disclosed",
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplg3x03owivheaeh1j5zd",
+        "date": "1988",
+        "event": "Beanfield was founded in Toronto.",
+        "category": "FOUNDING",
+        "sortDate": "1988-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.beanfield.com/en/tor/about-us"
+        ]
+      },
+      {
+        "id": "cmrxplg4h03oxivheseuufho6",
+        "date": "Nov 12, 2019",
+        "event": "Digital Colony Partners acquired Beanfield Technologies Inc., establishing the ownership period now attributed to DigitalBridge.",
+        "category": "ACQUISITION",
+        "sortDate": "2019-11-12T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://blog.beanfield.com/digital-colony-acquires-beanfield-technologies-inc/"
+        ]
+      },
+      {
+        "id": "cmrxplg5203oyivhe344hf3rd",
+        "date": "May 6, 2020",
+        "event": "Beanfield announced a C$255 million recapitalization following the OpenFace integration and the acquisition of Aptum's Toronto and Montreal metro-network assets.",
+        "category": "FINANCING",
+        "sortDate": "2020-05-06T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://blog.beanfield.com/digital-colony-announces-strategic-recapitalization-of-beanfield-metroconnect/",
+          "https://blog.beanfield.com/beanfield-technologies-expands-fiber-footprint-into-montreal-with-acquisition-of-openface/"
+        ]
+      },
+      {
+        "id": "cmrxpmj3a04zfivheqtwmjvou",
+        "date": "2020",
+        "event": "Beanfield acquired OpenFace and integrated its Montreal fibre operations into the Beanfield platform.",
+        "category": "ACQUISITION",
+        "sortDate": "2020-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://blog.beanfield.com/beanfield-technologies-expands-fiber-footprint-into-montreal-with-acquisition-of-openface/"
+        ]
+      },
+      {
+        "id": "cmrxplg5n03ozivheoldyna5r",
+        "date": "Jul 18, 2023",
+        "event": "OMERS Infrastructure announced a minority investment in Beanfield while DigitalBridge said it would remain the majority owner.",
+        "category": "FINANCING",
+        "sortDate": "2023-07-18T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.omers.com/news/omers-infrastructure-announces-strategic-investment-in-beanfield-metroconnect"
+        ]
+      },
+      {
+        "id": "cmrxpmj4e04zhivhexgi708zd",
+        "date": "Sep 15, 2023",
+        "event": "OMERS Infrastructure completed its minority investment in Beanfield Technologies Inc., with DigitalBridge continuing as majority owner.",
+        "category": "FINANCING",
+        "sortDate": "2023-09-15T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.mccarthy.ca/en/experience/omers-infrastructure-management-inc-completes-investment-in-beanfield-technologies-inc",
+          "https://www.omers.com/news/omers-infrastructure-announces-strategic-investment-in-beanfield-metroconnect"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqiji09p7ivheezhss1gs",
+        "label": "Digitalbridge — Beanfield Metroconnect",
+        "url": "https://www.digitalbridge.com/portfolio/beanfield-metroconnect",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current DigitalBridge portfolio status and operating profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqiki09p9ivheihbt5b8t",
+        "label": "Announcement date source — DigitalBridge — Beanfield Metroconnect",
+        "url": "https://blog.beanfield.com/digital-colony-acquires-beanfield-technologies-inc/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Digital Colony Partners acquisition on November 12, 2019",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqilm09pbivhevdk5z667",
+        "label": "Beanfield — Beanfield Metroconnect",
+        "url": "https://www.beanfield.com/business/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current business, carrier and enterprise connectivity services",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpshi60cnmivhe16m3ga63",
+        "label": "Beanfield — Beanfield Technologies",
+        "url": "https://www.beanfield.com/en/tor/about-us",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Company history, founding and fibre-network profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpshjt0cnpivheqyu2ec4z",
+        "label": "Announcement date source — OMERS — Beanfield Technologies Inc.",
+        "url": "https://www.omers.com/news/omers-infrastructure-announces-strategic-investment-in-beanfield-metroconnect",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "OMERS minority investment and continuing DigitalBridge majority ownership",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpshlw0cntivhefmq7jjrp",
+        "label": "Blog — Beanfield Technologies Inc.",
+        "url": "https://blog.beanfield.com/beanfield-technologies-expands-fiber-footprint-into-montreal-with-acquisition-of-openface/",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "OpenFace integration and Montreal network expansion",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpshpf0cnvivhekq4sohbr",
+        "label": "Completion source — OMERS — Beanfield Technologies Inc.",
+        "url": "https://www.mccarthy.ca/en/experience/omers-infrastructure-management-inc-completes-investment-in-beanfield-technologies-inc",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "September 15, 2023 OMERS investment closing",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Beanfield — 2020 recapitalization",
+        "url": "https://blog.beanfield.com/digital-colony-announces-strategic-recapitalization-of-beanfield-metroconnect/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "C$255 million recapitalization and Aptum metro-network asset boundary",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "CRTC — Beanfield Technologies Inc.",
+        "url": "https://crtc.gc.ca/eng/archive/2025/2025-154.htm",
+        "sourceType": "OTHER",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Beanfield Technologies Inc. operating as Beanfield Metroconnect legal and trade-name identity",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "OMERS Infrastructure — Current investments",
+        "url": "https://www.omersinfrastructure.com/investments",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current OMERS Infrastructure portfolio status and exit check",
+        "isPrimary": false
+      }
+    ]
+  }
+}

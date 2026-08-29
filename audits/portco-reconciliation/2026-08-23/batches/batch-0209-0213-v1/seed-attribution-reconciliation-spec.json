@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_SEED_ATTRIBUTION_RECONCILIATION_SPEC",
+  "batchId": "batch-0209-0213-v1",
+  "batchSha256": "b92c30918cfc5fde5cd1e648e523c01d49942ce4ac32586d4a8a11ebffd8f1a9",
+  "reconciledAt": "2026-08-29T06:51:00.000Z",
+  "sourceManifestSha256": "86b43b539c5cddb9c80f77f1132c75fc74d43929dacb0c83ba80e9f2da3643f4",
+  "rationale": "Align the active-owner attribution ledger with the approved bundle after-images. Retire the former Tonaquint duplicate attribution and retain one current ValorC3 Data Centers and CVC DIF / DIF CIF III majority-interest record with the corrected 2022 entry year. Consolidate the Beanfield Technologies duplicate into Beanfield Metroconnect while preserving DigitalBridge's majority ownership through the disclosed Digital Colony Partners vehicle and OMERS Infrastructure's active minority ownership as a direct program investment for which no distinct fund or SPV is publicly disclosed.",
+  "removeRecordIds": [
+    "OFA-0CE100874AF6"
+  ],
+  "upsertRecords": [
+    {
+      "recordId": "OFA-07F34C50B3F1",
+      "companyName": "ValorC3 Data Centers",
+      "country": "United States",
+      "investmentFirm": "CVC DIF",
+      "currentVehicleName": "DIF CIF III",
+      "investmentYear": 2022,
+      "stake": "Majority interest; exact percentage not publicly disclosed",
+      "targetLinkedFundName": "DIF CIF III",
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "DIF CIF III",
+      "attributionConfidence": null,
+      "attributionRationale": "CVC DIF identifies DIF CIF III as the acquiring fund and a majority interest in Tonaquint, now ValorC3 Data Centers. Later manager history identifies December 2022 as the entry month; the exact ownership percentage and legal closing day are not publicly disclosed.",
+      "evidenceUrls": [
+        "https://www.cvcdif.com/news-insights/dif-capital-partners-acquires-us-based-data-centre-provider-tonaquint",
+        "https://www.cvcdif.com/news-insights/dif-investee-company-tonaquint-acquires-edgex-data-centers-in-oklahoma-city",
+        "https://valorc3.com/terms-of-use/",
+        "https://valorc3.com/valorc3-boise-hyperscale-data-center-credit-facility/"
+      ]
+    },
+    {
+      "recordId": "OFA-BBD7466A51A3",
+      "companyName": "Beanfield Metroconnect",
+      "country": "Canada",
+      "investmentFirm": "DigitalBridge",
+      "currentVehicleName": "Digital Colony Partners",
+      "investmentYear": 2019,
+      "stake": "Majority interest after the 2023 OMERS investment; exact percentage not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Digital Colony Partners",
+      "attributionConfidence": null,
+      "attributionRationale": "Beanfield's acquisition announcement identifies Digital Colony Partners as the 2019 acquirer, and the 2023 OMERS announcement states that DigitalBridge would remain the majority owner. No matching Digital Colony Partners fund row exists in the current Fund Database, so the disclosed vehicle is retained without an inferred fund link.",
+      "evidenceUrls": [
+        "https://blog.beanfield.com/digital-colony-acquires-beanfield-technologies-inc/",
+        "https://www.digitalbridge.com/portfolio/beanfield-metroconnect",
+        "https://www.omers.com/news/omers-infrastructure-announces-strategic-investment-in-beanfield-metroconnect"
+      ]
+    },
+    {
+      "recordId": "OFA-444A05FD3DFD",
+      "companyName": "Beanfield Metroconnect",
+      "country": "Canada",
+      "investmentFirm": "OMERS Infrastructure",
+      "currentVehicleName": "OMERS Infrastructure",
+      "investmentYear": 2023,
+      "stake": "Minority interest; exact percentage not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "OMERS Infrastructure announced and completed a direct minority investment in Beanfield in 2023, but the reviewed public evidence does not identify a distinct fund or special-purpose vehicle. The investment is therefore retained at the disclosed OMERS Infrastructure program level without an inferred fund link.",
+      "evidenceUrls": [
+        "https://www.omers.com/news/omers-infrastructure-announces-strategic-investment-in-beanfield-metroconnect",
+        "https://www.mccarthy.ca/en/experience/omers-infrastructure-management-inc-completes-investment-in-beanfield-technologies-inc",
+        "https://www.omersinfrastructure.com/investments"
+      ]
+    }
+  ],
+  "specSha256": "8a26883553a6629e9a32facc150512bda53c5939c8df685dad0737f6b3ca4e36"
+}

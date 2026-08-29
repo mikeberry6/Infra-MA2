@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0210:valorc3:48b37136",
+  "taskIndex": 210,
+  "companyName": "ValorC3",
+  "outcome": "SUPERSEDED",
+  "decidedAt": "2026-08-29T06:39:00.000Z",
+  "rationale": "Task 209 resolves Tonaquint Data Centers and ValorC3 as one continuing legal and operating platform. It keeps the existing ValorC3 record, merges the Tonaquint duplicate and preserves the complete CVC DIF / DIF CIF III ownership judgment, so task 210 would duplicate that same identity and ownership work.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0210-valorc3/attempt-1/locked-task-snapshot.json",
+    "sha256": "797171e29223b7eb7351f1e6c3da347ee453a0346eb6ed0dd3d9e959917731b2"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0210-valorc3/attempt-1/terminal-research-decision.json",
+    "sha256": "538092bb6295a2a9f0746a62a2d18e27bf258058f710bb8b1d4f8c9e077a6c8f"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0209-tonaquint-data-centers/attempt-1/source-verification.json",
+    "sha256": "f83b4ea3b9afadf3bcbb99903b4740a0c7667894f06d0bba42dec4f41b502292"
+  },
+  "evidence": [
+    {
+      "url": "https://valorc3.com/terms-of-use/",
+      "purpose": "Legal entity and ValorC3 d/b/a identity."
+    },
+    {
+      "url": "https://valorc3.com/tonaquint-launches-new-brand-valorc3-data-centers/",
+      "purpose": "Same-platform rebrand effective January 20, 2025."
+    },
+    {
+      "url": "https://www.cvcdif.com/news-insights/dif-capital-partners-acquires-us-based-data-centre-provider-tonaquint",
+      "purpose": "DIF CIF III majority investment."
+    },
+    {
+      "url": "https://valorc3.com/valorc3-boise-hyperscale-data-center-credit-facility/",
+      "purpose": "Current ValorC3 operations and CVC DIF sponsorship."
+    }
+  ],
+  "supersededByTaskId": "ledger:0209:tonaquint-data-centers:c32a57e3",
+  "decisionSha256": "ee2d8e4d938cda47ab41ea7edaa914811c912840666ba671845337bb7374faf3"
+}

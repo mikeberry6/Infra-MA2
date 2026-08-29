@@ -1,0 +1,296 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0211:beanfield-metroconnect:1a05dc89",
+  "taskIndex": 211,
+  "companyName": "Beanfield Metroconnect",
+  "generatedAt": "2026-08-29T06:31:08.084Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0211-beanfield-metroconnect/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 211,
+    "taskId": "ledger:0211:beanfield-metroconnect:1a05dc89",
+    "canonicalKey": "beanfield-metroconnect|canada",
+    "companyName": "Beanfield Metroconnect",
+    "country": "Canada",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 36,
+    "managers": [
+      "DigitalBridge",
+      "InfraBridge"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "036-digitalbridge:holding:002:beanfield-metroconnect"
+    ],
+    "sourceRepoOnlyIds": [
+      "058-infrabridge:repo-only:002:beanfield-metroconnect"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjd8g00tsivhe75mpfqhf"
+    ],
+    "seedKeys": [
+      "beanfield metroconnect|Canada"
+    ],
+    "evidenceUrls": [
+      "https://blog.beanfield.com/digital-colony-acquires-beanfield-technologies-inc/",
+      "https://www.digitalbridge.com/portfolio/beanfield-metroconnect"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: InfraBridge MATCHED_ELSEWHERE: Attributed to DigitalBridge digital strategy rather than InfraBridge.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjd8g00tsivhe75mpfqhf",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "beanfield-metroconnect|canada",
+  "targetCompanyImage": {
+    "id": "cmrxpjd8g00tsivhe75mpfqhf",
+    "name": "Beanfield Metroconnect",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Metro fiber networks",
+    "region": "NORTH_AMERICA",
+    "country": "Canada",
+    "countryTags": [
+      "Canada"
+    ],
+    "description": "Beanfield Metroconnect builds, owns, and operates metropolitan fiber infrastructure and provides broadband and connectivity services in Canada. It serves enterprise, carrier, and residential customers. The business is asset-heavy and recurring because it owns the underlying fibre network and sells services directly over that infrastructure. Company materials describe the largest independent fibre-optic network in Toronto and Montreal, with expansion into Vancouver, while public sources reviewed do not disclose current revenue. DigitalBridge first invested in 2019, and OMERS announced a strategic minority investment in 2023 while DigitalBridge said it would remain the majority owner.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 1988,
+    "headquarters": "Ontario and Quebec",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjyqc01rqivheiou7knv7",
+        "managerName": "DigitalBridge",
+        "organizationName": "DigitalBridge",
+        "fundName": null,
+        "vehicleName": "DigitalBridge Equity",
+        "stake": null,
+        "investmentYear": 2019,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplg3x03owivheaeh1j5zd",
+        "date": "1988",
+        "event": "Public company materials state Beanfield was founded in Toronto.",
+        "category": "FOUNDING",
+        "sortDate": "1988-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplg4h03oxivheseuufho6",
+        "date": "Nov 12, 2019",
+        "event": "Digital Colony (now DigitalBridge) announced the acquisition of Beanfield Technologies.",
+        "category": "ACQUISITION",
+        "sortDate": "2019-11-12T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplg5203oyivhe344hf3rd",
+        "date": "May 6, 2020",
+        "event": "Beanfield announced a recapitalization that included C$255 million of financing and referenced acquisitions of Aptum's metro network and OpenFace.",
+        "category": "FINANCING",
+        "sortDate": "2020-05-06T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplg5n03ozivheoldyna5r",
+        "date": "Jul 18, 2023",
+        "event": "OMERS Infrastructure announced a strategic minority investment in Beanfield while DigitalBridge said it would remain the majority owner.",
+        "category": "FINANCING",
+        "sortDate": "2023-07-18T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqiji09p7ivheezhss1gs",
+        "label": "Digitalbridge — Beanfield Metroconnect",
+        "url": "https://www.digitalbridge.com/portfolio/beanfield-metroconnect",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Digitalbridge operations / asset details",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqiki09p9ivheihbt5b8t",
+        "label": "Announcement date source — DigitalBridge — Beanfield Metroconnect",
+        "url": "https://blog.beanfield.com/digital-colony-acquires-beanfield-technologies-inc/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "DigitalBridge transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqilm09pbivhevdk5z667",
+        "label": "Beanfield — Beanfield Metroconnect",
+        "url": "https://www.beanfield.com/business/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Beanfield — Beanfield Metroconnect",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqimj09pdivhecqwcsda1",
+        "label": "Digitalbridge — Beanfield Metroconnect",
+        "url": "https://www.digitalbridge.com/news/2023-07-18-omers-infrastructure-announces-strategic-investment-in-beanfield-metroconnect",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Digitalbridge — Beanfield Metroconnect",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Beanfield Metroconnect",
+    "investmentFirm": "DigitalBridge",
+    "sector": "Digital",
+    "subsector": "Metro fiber networks",
+    "region": "North America",
+    "country": "Canada",
+    "ownershipVehicle": "DigitalBridge Equity",
+    "description": "Beanfield Metroconnect builds, owns, and operates metropolitan fiber infrastructure and provides broadband and connectivity services in Canada. It serves enterprise, carrier, and residential customers. The business is asset-heavy and recurring because it owns the underlying fibre network and sells services directly over that infrastructure. Company materials describe the largest independent fibre-optic network in Toronto and Montreal, with expansion into Vancouver, while public sources reviewed do not disclose current revenue. DigitalBridge first invested in 2019, and OMERS announced a strategic minority investment in 2023 while DigitalBridge said it would remain the majority owner.",
+    "status": "Active",
+    "countryTags": [
+      "Canada"
+    ],
+    "yearFounded": 1988,
+    "investmentYear": 2019,
+    "headquarters": "Ontario and Quebec",
+    "milestones": [
+      {
+        "date": "1988",
+        "event": "Public company materials state Beanfield was founded in Toronto.",
+        "category": "Founding"
+      },
+      {
+        "date": "Nov 12, 2019",
+        "event": "Digital Colony (now DigitalBridge) announced the acquisition of Beanfield Technologies.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "May 6, 2020",
+        "event": "Beanfield announced a recapitalization that included C$255 million of financing and referenced acquisitions of Aptum's metro network and OpenFace.",
+        "category": "Financing"
+      },
+      {
+        "date": "Jul 18, 2023",
+        "event": "OMERS Infrastructure announced a strategic minority investment in Beanfield while DigitalBridge said it would remain the majority owner.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Digitalbridge — Beanfield Metroconnect",
+        "url": "https://www.digitalbridge.com/portfolio/beanfield-metroconnect",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Announcement date source — DigitalBridge — Beanfield Metroconnect",
+        "url": "https://blog.beanfield.com/digital-colony-acquires-beanfield-technologies-inc/",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Beanfield — Beanfield Metroconnect",
+        "url": "https://www.beanfield.com/business/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Digitalbridge — Beanfield Metroconnect",
+        "url": "https://www.digitalbridge.com/news/2023-07-18-omers-infrastructure-announces-strategic-investment-in-beanfield-metroconnect",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "DigitalBridge",
+        "ownershipVehicle": "DigitalBridge Equity",
+        "investmentYear": 2019,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj3fm00f1ivhehhc270qc",
+        "fundName": "OMERS Infrastructure",
+        "managerId": "cmrxpic6e0033ivheho9lmsp6",
+        "updatedAt": "2026-07-23T16:09:58.306Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi6te001eivheobw69a9c",
+        "name": "DigitalBridge",
+        "updatedAt": "2026-07-23T16:09:16.034Z"
+      },
+      {
+        "id": "cmrxpic6e0033ivheho9lmsp6",
+        "name": "OMERS Infrastructure",
+        "updatedAt": "2026-07-23T16:09:22.983Z"
+      },
+      {
+        "id": "cmrxpij0a0058ivhemf1et807",
+        "name": "OMERS",
+        "updatedAt": "2026-07-23T16:09:31.834Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0211:beanfield-metroconnect:1a05dc89",
+    "taskIndex": 211,
+    "canonicalKey": "beanfield-metroconnect|canada",
+    "capturedAt": "2026-08-29T06:31:08.084Z",
+    "databaseRevision": "revision:1b5d013aea4e74aac8bf66fc893fc277defcf9abb3efd3438aebd6b7663be7c6",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "e27755c0bf50a54cd593c26ded8fe04ef8a99e659f6abf83399092fe8bcc5ef8",
+    "productionSnapshotSha256": "36999efb557c421a1fc771f9df165b9ffa3915c55fdc7b03975349bb70a9029c",
+    "targetCompanySnapshotSha256": "37ee866e65bfce67612a0d288014b652d044549fee7938f9d69277f515dc9ae6",
+    "seedEntrySha256": "ed3f3621bf1619a905194f36fc391fecc009533135da3d47e1b2bb2654186e89",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "03dbc1267a054cd685df748597e824733f1c895dc51a7ff7d1986a0bf47f49e5",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "fac4fa7335c127e73abe52490df9652aca3bb882b516d47a38d8dfc92ad1e3f0",
+      "organizationsSha256": "3b2ad821d407c1b6aa0ee3658ce14a35925f36d644fc3525f2ae2db6a519ae3c",
+      "citationsSha256": "32ec2ff5870e2fb6ed09c297657baa9e1d7ddbacb9dce4481490d372afd85cb4",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "3a93db7eb25de9d0277ad19f7d86ff5fe2a877f3643ddc32e25f065e3b310036",
+    "stateSha256": "91475b296b58f27ec18213d035fae452014730164f8932fd9548eb5fba82925c",
+    "taskSnapshotSha256": "1eaeb97ac71b367ec7edad0967cd50d7af4a252f56ea16d3f501cad6326c1983"
+  },
+  "contextSha256": "af7bbd2c76705147a90eb7ca202d1ec257cc206a7c470309706ccd657b5278e6"
+}

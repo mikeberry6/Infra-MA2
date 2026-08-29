@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0213:extenet-formerly-extenet-systems:1d3fac1c",
+  "taskIndex": 213,
+  "companyName": "Extenet (formerly ExteNet Systems)",
+  "outcome": "DEFERRED",
+  "decidedAt": "2026-08-29T06:39:02.000Z",
+  "rationale": "The 2025 filing verifies Stonepeak 42%, KH Killington 32% and Other Members 26%, but not Northleaf. Northleaf's indexed page calls its November 2015 ExteNet investment active while the live page omits it; regulatory owner tables omit Northleaf, and no direct exit, transfer or current-holder record was found. Northleaf may be current below 20%, former or indirect, so ownership is blocking. JH is only the 2020-2021 transaction vehicle and KH only the 2024-2025 chart label; no legal succession is assumed.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0213-extenet-formerly-extenet-systems/attempt-1/locked-task-snapshot.json",
+    "sha256": "b88fc6d5526fcc7ff5b46742203db5d622f8fbe1cae1cb2034d90f3b80f72288"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0213-extenet-formerly-extenet-systems/attempt-1/application-research-decision.json",
+    "sha256": "94cbbbf867beebd52353e5daa1341bf03d09dce8731c17157125b55425429e57"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0213-extenet-formerly-extenet-systems/attempt-1/source-verification.json",
+    "sha256": "bcc26c52a9127cfe8f18c3f105970e919f72898770e44389722370ba330e8a11"
+  },
+  "evidence": [
+    {
+      "url": "https://psc.ky.gov/telecomm_informational_letters/ExteNet%20LVS%202025-02-13.pdf",
+      "purpose": "Current cap table"
+    },
+    {
+      "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BF2D3FF54-BA8D-4D83-9AAA-18A9970F2F24%7D",
+      "purpose": "JH vehicle/dilution"
+    },
+    {
+      "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BFBBD9239-ADA1-4E1E-8370-34D14C1ABDDF%7D",
+      "purpose": "JH closing"
+    },
+    {
+      "url": "https://psc.ky.gov/telecomm_informational_letters/telecommunication%20properties%202016-03-14.pdf",
+      "purpose": "Owner table; Northleaf absent"
+    },
+    {
+      "url": "https://www.northleafcapital.com/fr/node/272?page=2",
+      "purpose": "Indexed/live-page conflict"
+    },
+    {
+      "url": "https://www.manulifeim.com/institutional/global/en/strategies/private-markets/infrastructure/infrastructure-team",
+      "purpose": "Fund II/board"
+    },
+    {
+      "url": "https://www.digitalbridge.com/portfolio/extenet-systems",
+      "purpose": "Current attribution"
+    },
+    {
+      "url": "https://www.pilotfiber.com/news/extenet-acquisition-complete",
+      "purpose": "Line-sale close"
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "382e6ed9c8b54719db3ea09d45aa6aec8fac7494c1aa68192fb63c3bb7e8c31f"
+}

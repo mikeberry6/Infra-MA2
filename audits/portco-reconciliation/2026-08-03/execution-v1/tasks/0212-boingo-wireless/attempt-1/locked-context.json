@@ -1,0 +1,273 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0212:boingo-wireless:94c73adf",
+  "taskIndex": 212,
+  "companyName": "Boingo Wireless",
+  "generatedAt": "2026-08-29T06:31:10.124Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0212-boingo-wireless/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 212,
+    "taskId": "ledger:0212:boingo-wireless:94c73adf",
+    "canonicalKey": "boingo-wireless|united-states",
+    "companyName": "Boingo Wireless",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 36,
+    "managers": [
+      "DigitalBridge",
+      "InfraBridge"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "036-digitalbridge:holding:003:boingo-wireless"
+    ],
+    "sourceRepoOnlyIds": [
+      "058-infrabridge:repo-only:003:boingo-wireless"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjd8z00ttivhevosygp6u"
+    ],
+    "seedKeys": [
+      "boingo wireless|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.boingo.com/press-releases/digital-colony-completes-acquisition-of-boingo-wireless/",
+      "https://www.digitalbridge.com/portfolio/boingo-wireless"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: InfraBridge MATCHED_ELSEWHERE: Attributed to DigitalBridge digital strategy rather than InfraBridge.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjd8z00ttivhevosygp6u",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "boingo-wireless|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjd8z00ttivhevosygp6u",
+    "name": "Boingo Wireless",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Wi-Fi / DAS / neutral-host networks",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Boingo Wireless designs, builds, and manages converged wireless infrastructure including DAS, Wi-Fi, small cells, and private networks. It serves mobile carriers, airports, transit hubs, military bases, stadiums, hospitals, commercial properties, and enterprise venues. The business is asset-heavy and largely contracted because it owns or manages venue network infrastructure under long-term relationships with site owners and carriers. Sponsor and company materials describe a broad U.S. venue footprint with major airport, transit, and military deployments, while public sources reviewed do not disclose current revenue. DigitalBridge completed the take-private acquisition in June 2021 through DigitalBridge Partners II, and the company has remained privately held since then.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2001,
+    "headquarters": "United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjyqs01rrivheot8ahmpf",
+        "managerName": "DigitalBridge",
+        "organizationName": "DigitalBridge",
+        "fundName": "DigitalBridge Partners II, LP",
+        "vehicleName": "DigitalBridge Partners II",
+        "stake": null,
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplg6o03p0ivhe8ewsoz4s",
+        "date": "2001",
+        "event": "Boingo Wireless was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2001-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplg7a03p1ivhejqohv3ze",
+        "date": "2011",
+        "event": "Boingo completed its IPO on NASDAQ under the ticker WIFI.",
+        "category": "IPO",
+        "sortDate": "2011-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplg7u03p2ivhe5h285ic2",
+        "date": "Jun 2, 2021",
+        "event": "DigitalBridge completed the take-private acquisition of Boingo for approximately $854 million.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-06-02T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplg8f03p3ivheb5zs86c1",
+        "date": "Jan 14, 2026",
+        "event": "Boingo announced a new cellular infrastructure deployment at Citi Field, extending its major-venue footprint.",
+        "category": "OTHER",
+        "sortDate": "2026-01-14T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqino09pfivhebeogtnge",
+        "label": "Boingo — Boingo Wireless",
+        "url": "https://www.boingo.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Boingo company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqiol09phivhe8bqxx5ke",
+        "label": "Digitalbridge — Boingo Wireless",
+        "url": "https://www.digitalbridge.com/portfolio/boingo-wireless",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Digitalbridge operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqipi09pjivheej6smmwa",
+        "label": "Close date source — DigitalBridge — Boingo Wireless",
+        "url": "https://www.boingo.com/press-releases/digital-colony-completes-acquisition-of-boingo-wireless/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "DigitalBridge closing confirmation",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Boingo Wireless",
+    "investmentFirm": "DigitalBridge",
+    "sector": "Digital",
+    "subsector": "Wi-Fi / DAS / neutral-host networks",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "DigitalBridge Partners II",
+    "description": "Boingo Wireless designs, builds, and manages converged wireless infrastructure including DAS, Wi-Fi, small cells, and private networks. It serves mobile carriers, airports, transit hubs, military bases, stadiums, hospitals, commercial properties, and enterprise venues. The business is asset-heavy and largely contracted because it owns or manages venue network infrastructure under long-term relationships with site owners and carriers. Sponsor and company materials describe a broad U.S. venue footprint with major airport, transit, and military deployments, while public sources reviewed do not disclose current revenue. DigitalBridge completed the take-private acquisition in June 2021 through DigitalBridge Partners II, and the company has remained privately held since then.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2001,
+    "investmentYear": 2021,
+    "headquarters": "United States",
+    "milestones": [
+      {
+        "date": "2001",
+        "event": "Boingo Wireless was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "2011",
+        "event": "Boingo completed its IPO on NASDAQ under the ticker WIFI.",
+        "category": "IPO"
+      },
+      {
+        "date": "Jun 2, 2021",
+        "event": "DigitalBridge completed the take-private acquisition of Boingo for approximately $854 million.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Jan 14, 2026",
+        "event": "Boingo announced a new cellular infrastructure deployment at Citi Field, extending its major-venue footprint.",
+        "category": "Other"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Boingo — Boingo Wireless",
+        "url": "https://www.boingo.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Digitalbridge — Boingo Wireless",
+        "url": "https://www.digitalbridge.com/portfolio/boingo-wireless",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Close date source — DigitalBridge — Boingo Wireless",
+        "url": "https://www.boingo.com/press-releases/digital-colony-completes-acquisition-of-boingo-wireless/",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "DigitalBridge",
+        "ownershipVehicle": "DigitalBridge Partners II",
+        "investmentYear": 2021,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmsdi3y2s004f7h4sfgnd0i96",
+        "fundName": "DigitalBridge Partners II, LP",
+        "managerId": "cmrxpi6te001eivheobw69a9c",
+        "updatedAt": "2026-08-03T17:26:33.028Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi6te001eivheobw69a9c",
+        "name": "DigitalBridge",
+        "updatedAt": "2026-07-23T16:09:16.034Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0212:boingo-wireless:94c73adf",
+    "taskIndex": 212,
+    "canonicalKey": "boingo-wireless|united-states",
+    "capturedAt": "2026-08-29T06:31:10.124Z",
+    "databaseRevision": "revision:7b1bab9ac57e487de680b3b7cae735db399eeb6b551208fa1cdfd2ad61c6370f",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "8809dfc7dde133300850d4eb14d7863e569a183e1ce7dcd2780670e5c2cf4eaf",
+    "productionSnapshotSha256": "d99920ecf2018820868f69b07f832c4ce1827338a8947c53f95f06761e52c641",
+    "targetCompanySnapshotSha256": "34cbdc70944f8659af9a20b807e2d9b6a3935457c244bcca2dc3ec0644e4ba41",
+    "seedEntrySha256": "8d1cf86744f584f773d8fc14b744b9b6ab299893b800ed7b1865000b9892abb8",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "b605c96799dd9d2f6f433556b71f52a990aa5e532f3e007fd61837c8615705c6",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "209944edef2ef89a8fd3ee6c77be9c63ecd832b1d2d4dfa6d0a83ae642975dc2",
+      "organizationsSha256": "044669daa5d8e30d4b464ed1c1e0894f60c2ee53f208a986e3281ab3f6318c4b",
+      "citationsSha256": "b442d0175b888a0b76f1e3e5722a312a9a8ad423a433ef9058ece1b7dd6a9373",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "1d88c8c0e6e9bfdbad9b90dfd039c9b9058f3eac1eaaed8c39668729b744dd04",
+    "stateSha256": "a2019842844f80b69bb5a6d38e0385d05e2fbe94cad8ebfc95860f5398c89951",
+    "taskSnapshotSha256": "671a003dc944a7c38bfc631c1b23887759234dd16bb88fa5fb33d5c6da0c3c9d"
+  },
+  "contextSha256": "89489e40ebd6f9813ea5a5ede41566cc2a68747de08e52912e62e758e3a5af32"
+}
