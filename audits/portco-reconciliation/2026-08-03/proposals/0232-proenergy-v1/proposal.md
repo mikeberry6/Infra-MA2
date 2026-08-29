@@ -3,10 +3,10 @@
 - Task: 232 (ledger:0232:proenergy:f5e9cdb0)
 - As of: 2026-08-29
 - Actions: CORRECT_COMPANY, ADD_OWNER
-- Proposal SHA-256: 46b976509ebe5d0912f340d32b633054943de13f1d171da580cdf88b9f0d1f8d
+- Proposal SHA-256: 3623e93476b50a6ef2646e7aa491d681ba82537782e973f16ec0698541a83504
 - Production snapshot SHA-256: ea9d5a9b7824c0ceadba0f3827f2f9937d2958a04356c0a68be151c42d02a857
 - Current company snapshot SHA-256: 60168a38a65fc3c50bfb6a3ac56e1ed97b2cdd835fbe189982a7086d2fe23832
-- After-image SHA-256: 25802d6ed9c6c40c8222505c2c711a0b1549e119d3279310a146d57d3abeb6f4
+- After-image SHA-256: 00ec5566fe023823e56d8dcda8d70621662589e3e934feb6876c2ce7134e62e1
 
 ## Recommendation
 
