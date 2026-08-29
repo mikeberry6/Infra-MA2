@@ -1,0 +1,83 @@
+
+> infra-tracker@1.0.0 portfolio:fund-attribution:apply
+> npx tsx scripts/apply-portfolio-fund-attribution.ts --manifest=audits/portfolio-fund-attribution/2026-08-29/scoped/batch-0234-0238-attribution-repair/apply-manifest.json --manifest-sha256=c0f0112ffc103f6a3586a26960280632bf5bd417a0853e5aa3f89b2776da2d4b --production-snapshot=audits/portfolio-fund-attribution/2026-08-29/scoped/batch-0234-0238-attribution-repair/production-snapshot.json --approval=audits/portfolio-fund-attribution/2026-08-29/scoped/batch-0234-0238-attribution-repair/approval.json --approval-sha256=2a3133daffbdb1af587255fde5d81ae445f2f271f78ba06da31d4694095911b9 --apply=true --write-token=APPLY_REVIEWED_PORTFOLIO_FUND_ATTRIBUTION --receipt=tmp/portfolio-fund-attribution/production/apply-receipt.json
+
+(node:3148) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_RECEIPT",
+  "manifestSha256": "c0f0112ffc103f6a3586a26960280632bf5bd417a0853e5aa3f89b2776da2d4b",
+  "approvalSha256": "2a3133daffbdb1af587255fde5d81ae445f2f271f78ba06da31d4694095911b9",
+  "environment": "production",
+  "pipelineRunId": "cmtefqtec0000fg2bg9koe40e",
+  "mutationCount": 3,
+  "changed": 3,
+  "idempotent": false,
+  "beforeFingerprint": "d727b39187ba757d6e3ad533531c386e08b54062a1c8b29ef4fe7c5db06054da",
+  "afterFingerprint": "6239172e8862c84aa52daf4f23aab188ce70378a30e64a72a4362419daf120c2",
+  "rows": [
+    {
+      "recordId": "OFA-20B17512FB81",
+      "ownershipPeriodId": "cmtef467x000tv32benn3udqt",
+      "companyId": "cmrxpjemf00vyivhe4veoijb8",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "EQT Infrastructure V",
+        "attributionConfidence": null,
+        "attributionRationale": "EQT directly announced that EQT Infrastructure V would co-invest in EdgeConneX alongside EQT Infrastructure IV. The exact percentage and closing date are not public, and no curated Fund V record is linked."
+      }
+    },
+    {
+      "recordId": "OFA-BDA26D90D266",
+      "ownershipPeriodId": "cmtef46e6000uv32b03e6dkzd",
+      "companyId": "cmrxpjemf00vyivhe4veoijb8",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": "EQT AI Infrastructure Strategy",
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": "EQT AI Infrastructure Strategy",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "EQT AI Infrastructure Strategy",
+        "attributionConfidence": null,
+        "attributionRationale": "EQT's 2026 reporting directly identifies its AI Infrastructure strategy's minority EdgeConneX acquisition from EQT Infrastructure IV and V. The ownership period links to the existing curated EQT AI Infrastructure Strategy record."
+      }
+    },
+    {
+      "recordId": "OFA-B86B5FFEB7CA",
+      "ownershipPeriodId": "cmtef46h8000vv32b2a2f0c3y",
+      "companyId": "cmrxpjemf00vyivhe4veoijb8",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Sixth Street directly supports its 2024 minority investment and continues to list EdgeConneX, but the specific managed funds and percentages are not publicly disclosed. No fund is inferred or linked."
+      }
+    }
+  ],
+  "appliedAt": "2026-08-29T13:47:49.976Z",
+  "receiptSha256": "9f942bf0a675d8cdc85fb927a812e70156b5117d457001fb5d452042647d884f"
+}
