@@ -1,0 +1,287 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0226:gopher-resource:d40d2e66",
+  "taskIndex": 226,
+  "companyName": "Gopher Resource",
+  "generatedAt": "2026-08-29T09:28:45.478Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0226-gopher-resource/attempt-1/authorization-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 226,
+    "taskId": "ledger:0226:gopher-resource:d40d2e66",
+    "canonicalKey": "gopher-resource|united-states",
+    "companyName": "Gopher Resource",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 41,
+    "managers": [
+      "Energy Capital Partners"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "041-energy-capital-partners:holding:005:gopher-resource"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://www.ecpgp.com/equity/portfolio",
+      "https://www.gopherresource.com/"
+    ],
+    "candidateCanonicalKeys": [
+      "gopher-resource-llc|united-states"
+    ],
+    "rationale": "Only heuristic repository candidate(s) exist: gopher-resource-llc|united-states; no automatic merge was made. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Only heuristic repository candidate(s) exist: gopher-resource-llc|united-states; no automatic merge was made."
+    ]
+  },
+  "targetResolution": {
+    "method": "REVIEWED_SYMMETRIC_CANDIDATE",
+    "targetCompanyId": "cmrxpjdi600uaivhenl93kb9z",
+    "linkedQueueTaskId": "ledger:0478:gopher-resource-llc:0c75d2c2"
+  },
+  "resolvedCanonicalKey": "gopher-resource|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjdi600uaivhenl93kb9z",
+    "name": "Gopher Resource, LLC",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Lead-acid battery recycling",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Gopher Resource recycles lead-acid batteries and related materials, producing recycled lead and polypropylene for battery manufacturers and industrial customers. Its operations are asset-heavy, anchored by large recycling plants in Eagan, Minnesota and Tampa, Florida, and supported by a nationwide battery collection network. The company describes itself as a long-established industrial recycler with approximately 80 years of operating history. Public materials indicate that it recycled about 600 million pounds of lead and 41 million pounds of plastic in 2025. Energy Capital Partners announced the acquisition of Gopher Resource in 2018 and remains the publicly disclosed owner.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 1946,
+    "headquarters": "Minnesota and Florida",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjz7g01siivhe4vhlbwxz",
+        "managerName": "ECP",
+        "organizationName": "ECP",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2018,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplhkp03qqivhexp6w0d7p",
+        "date": "1946",
+        "event": "Gopher Resource traces its operating history back roughly 80 years.",
+        "category": "FOUNDING",
+        "sortDate": "1946-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplhl903qrivhewjzrxh9j",
+        "date": "Mar 6, 2018",
+        "event": "ECP / Energy Capital Partners completed the acquisition of Gopher Resource.",
+        "category": "ACQUISITION",
+        "sortDate": "2018-03-06T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplho003qsivhepb5iyfzq",
+        "date": "2025",
+        "event": "Gopher reported recycling roughly 600 million pounds of lead and 41 million pounds of plastic.",
+        "category": "OTHER",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplhoo03qtivhe8q3wdeci",
+        "date": "Mar 2026",
+        "event": "Gopher highlighted its 2025 recycling volumes in a Global Recycling Day release.",
+        "category": "EXPANSION",
+        "sortDate": "2026-03-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqlt709tvivhe8v5ki1or",
+        "label": "Gopherresource — Gopher Resource, LLC",
+        "url": "https://www.gopherresource.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Gopherresource company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqlu909txivhecshunv2p",
+        "label": "Investment date source — ECP — Gopher Resource, LLC",
+        "url": "https://www.ecpgp.com/equity/portfolio/gopher",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "ECP initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqlv809tzivhe3nke2w82",
+        "label": "Close date source — ECP — Gopher Resource, LLC",
+        "url": "https://nep.com/news/norwest-equity-partners-and-gopher-resource-complete-sale-to-energy-capital-partners/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "ECP closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqlwb09u1ivhejkbz1cdb",
+        "label": "Gopherresource — Gopher Resource, LLC",
+        "url": "https://www.gopherresource.com/newsroom/global-recycling-day-2026.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Gopherresource — Gopher Resource, LLC",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqlxi09u3ivhe0itonn0x",
+        "label": "Waste360 — Gopher Resource, LLC",
+        "url": "https://www.waste360.com/mergers-acquisitions/energy-capital-partners-to-acquire-gopher-resource",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Waste360 — Gopher Resource, LLC",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Gopher Resource, LLC",
+    "investmentFirm": "ECP",
+    "sector": "Power & ET",
+    "subsector": "Lead-acid battery recycling",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "Gopher Resource recycles lead-acid batteries and related materials, producing recycled lead and polypropylene for battery manufacturers and industrial customers. Its operations are asset-heavy, anchored by large recycling plants in Eagan, Minnesota and Tampa, Florida, and supported by a nationwide battery collection network. The company describes itself as a long-established industrial recycler with approximately 80 years of operating history. Public materials indicate that it recycled about 600 million pounds of lead and 41 million pounds of plastic in 2025. Energy Capital Partners announced the acquisition of Gopher Resource in 2018 and remains the publicly disclosed owner.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 1946,
+    "investmentYear": 2018,
+    "headquarters": "Minnesota and Florida",
+    "milestones": [
+      {
+        "date": "1946",
+        "event": "Gopher Resource traces its operating history back roughly 80 years.",
+        "category": "Founding"
+      },
+      {
+        "date": "Mar 6, 2018",
+        "event": "ECP / Energy Capital Partners completed the acquisition of Gopher Resource.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "2025",
+        "event": "Gopher reported recycling roughly 600 million pounds of lead and 41 million pounds of plastic.",
+        "category": "Other"
+      },
+      {
+        "date": "Mar 2026",
+        "event": "Gopher highlighted its 2025 recycling volumes in a Global Recycling Day release.",
+        "category": "Expansion"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Gopherresource — Gopher Resource, LLC",
+        "url": "https://www.gopherresource.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Investment date source — ECP — Gopher Resource, LLC",
+        "url": "https://www.ecpgp.com/equity/portfolio/gopher",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Close date source — ECP — Gopher Resource, LLC",
+        "url": "https://nep.com/news/norwest-equity-partners-and-gopher-resource-complete-sale-to-energy-capital-partners/",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Gopherresource — Gopher Resource, LLC",
+        "url": "https://www.gopherresource.com/newsroom/global-recycling-day-2026.html",
+        "type": "PRESS_RELEASE"
+      },
+      {
+        "label": "Waste360 — Gopher Resource, LLC",
+        "url": "https://www.waste360.com/mergers-acquisitions/energy-capital-partners-to-acquire-gopher-resource",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "ECP",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2018,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpii7l004zivhe9bvhh5r5",
+        "name": "ECP",
+        "updatedAt": "2026-07-23T16:09:30.801Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0226:gopher-resource:d40d2e66",
+    "taskIndex": 226,
+    "canonicalKey": "gopher-resource|united-states",
+    "capturedAt": "2026-08-29T09:28:45.478Z",
+    "databaseRevision": "revision:16639ac368ced990e7f5e8902789a72ab0ac59779cf2eb947b15030aa4dc8484",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "e58d828ea0313d576c4807d5c2cc7b0597fd15052100c097fab9c5a150662322",
+    "productionSnapshotSha256": "c8cb25c403bb0435b5015a2ad09069814b96a5d48e820657004840ae54ce2698",
+    "targetCompanySnapshotSha256": "487272842d81988b1365ef7078c36baf80ece8a6a3ea8455b0eaee4489e38b12",
+    "seedEntrySha256": "967e7a75077af8f55a7b764fbe3bfa0a673ef70d38410f5e4cc49cea069afbe8",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "763b0120da7589c61fc8e7dd1b6de270ec09a6df82afb6ae08b98188c5606064",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "592a52bc18a9de4fb86a5d0e7fec2a9f373528b05a4401efa6036f9b6ba5b5ca",
+      "citationsSha256": "5fab12dcfffe1924f3a894b70afc15df3f6c48ba49e52b84fcf7011aa19ede7e",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "9421adab0ea9a44af46de2ddc078d4772b54777b855ff0f4bd79c3d14ed5a2c2",
+    "stateSha256": "cabcca80edc4b6b635e995cdce4ce2062b09efe2e1aaad5dfe8cc174109c4969",
+    "taskSnapshotSha256": "02dc92bf6713b7da412452d79a23e370c3721237067fe6395d5247a226e52cd3"
+  },
+  "contextSha256": "e51b2813f543b256256abe2157f333c08f0f8659914c06f682b1584bedd9a8b8"
+}

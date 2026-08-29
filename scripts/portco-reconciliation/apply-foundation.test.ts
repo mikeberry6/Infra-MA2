@@ -54,6 +54,7 @@ describe("approved ownership organization provisioning", () => {
     expect(ownershipOrganizationTypes("BC Partners")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("Canadian Business Growth Fund")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("Capital Power Corporation")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("Cresta Fund Management")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("Cox Enterprises")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("CSG Investments, Inc.")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Donato Ardellini")).toEqual(["OTHER"]);
@@ -66,6 +67,7 @@ describe("approved ownership organization provisioning", () => {
     expect(ownershipOrganizationTypes("Ferrovial N.V.")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("GE Renewable Energy")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("HPS Investment Partners")).toEqual(["FUND_MANAGER"]);
+    expect(ownershipOrganizationTypes("Harvestone Group")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("GFL Environmental Inc.")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Kinder Morgan, Inc.")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("MAP Energy, LLC")).toEqual(["FUND_MANAGER"]);
@@ -75,6 +77,7 @@ describe("approved ownership organization provisioning", () => {
     expect(ownershipOrganizationTypes("OPTrust")).toEqual(["PENSION"]);
     expect(ownershipOrganizationTypes("PUC Inc.")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Revera Inc.")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("Silverpeak")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("TC Energy Corporation")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("TotalEnergies")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("XRG P.J.S.C.")).toEqual(["CORPORATE"]);
@@ -91,6 +94,7 @@ describe("approved ownership organization provisioning", () => {
       ["BC Partners", "FUND_MANAGER"],
       ["Canadian Business Growth Fund", "FUND_MANAGER"],
       ["Capital Power Corporation", "CORPORATE"],
+      ["Cresta Fund Management", "FUND_MANAGER"],
       ["Cox Enterprises", "CORPORATE"],
       ["CSG Investments, Inc.", "CORPORATE"],
       ["Donato Ardellini", "OTHER"],
@@ -104,6 +108,7 @@ describe("approved ownership organization provisioning", () => {
       ["GE Renewable Energy", "CORPORATE"],
       ["GFL Environmental Inc.", "CORPORATE"],
       ["HPS Investment Partners", "FUND_MANAGER"],
+      ["Harvestone Group", "CORPORATE"],
       ["Kinder Morgan, Inc.", "CORPORATE"],
       ["MAP Energy, LLC", "FUND_MANAGER"],
       ["MGX", "FUND_MANAGER"],
@@ -112,6 +117,7 @@ describe("approved ownership organization provisioning", () => {
       ["OPTrust", "PENSION"],
       ["PUC Inc.", "CORPORATE"],
       ["Revera Inc.", "CORPORATE"],
+      ["Silverpeak", "FUND_MANAGER"],
       ["TC Energy Corporation", "CORPORATE"],
       ["TotalEnergies", "CORPORATE"],
       ["XRG P.J.S.C.", "CORPORATE"],

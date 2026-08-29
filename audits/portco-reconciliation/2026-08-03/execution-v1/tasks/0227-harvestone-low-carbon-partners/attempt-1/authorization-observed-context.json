@@ -1,0 +1,261 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0227:harvestone-low-carbon-partners:184c949c",
+  "taskIndex": 227,
+  "companyName": "Harvestone Low Carbon Partners",
+  "generatedAt": "2026-08-29T09:28:47.432Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0227-harvestone-low-carbon-partners/attempt-1/authorization-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 227,
+    "taskId": "ledger:0227:harvestone-low-carbon-partners:184c949c",
+    "canonicalKey": "harvestone-low-carbon-partners|united-states",
+    "companyName": "Harvestone Low Carbon Partners",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 41,
+    "managers": [
+      "Energy Capital Partners"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "041-energy-capital-partners:holding:006:harvestone-low-carbon-partners"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjdja00ucivher3kcpgs2"
+    ],
+    "seedKeys": [
+      "harvestone low carbon partners|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.ecpgp.com/equity/portfolio",
+      "https://www.harvestonelcp.com/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_OWNER requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjdja00ucivher3kcpgs2",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "harvestone-low-carbon-partners|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjdja00ucivher3kcpgs2",
+    "name": "Harvestone Low Carbon Partners",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Low-carbon ethanol and carbon capture",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Harvestone Low Carbon Partners is a low-carbon fuels platform that owns and operates ethanol and related carbon management assets. Its facilities serve fuel and agricultural markets, with economics supported by ethanol sales, feed coproducts, and increasingly carbon-capture and low-carbon fuel attributes. The business is asset-heavy, with operating plants at Blue Flint in Underwood, North Dakota, Dakota Spirit in Spiritwood, North Dakota, and Iroquois Bio-Energy in Rensselaer, Indiana. Harvestone states that the platform was formed in 2022 by Harvestone Group and Energy Capital Partners and has capacity of more than 200 million gallons per year. In 2024 the company announced a $205 million carbon-capture tax-equity financing for the Blue Flint CCS project, further shifting the platform toward lower-carbon fuel production.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2022,
+    "headquarters": "North Dakota and Indiana",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjz8k01skivhe3vjjnmqj",
+        "managerName": "Energy Capital Partners",
+        "organizationName": "ECP",
+        "fundName": "ECP Fund V",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplhsb03qyivhebcl7k0r0",
+        "date": "2022",
+        "event": "Harvestone Low Carbon Partners was formed by Harvestone Group and ECP / Energy Capital Partners.",
+        "category": "FINANCING",
+        "sortDate": "2022-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplhsp03qzivhew9tw9h5m",
+        "date": "Sep 2024",
+        "event": "Harvestone announced $205 million of tax-equity financing for the Blue Flint carbon capture project.",
+        "category": "FINANCING",
+        "sortDate": "2024-09-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqm6g09ufivheia0o62uk",
+        "label": "Investment date source — ECP — Harvestone Low Carbon Partners",
+        "url": "https://www.ecpgp.com/equity/portfolio/harvestone-low-carbon-partners",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "ECP initial investment / ownership",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqm7i09uhivhe1t5y8u58",
+        "label": "Harvestonelcp — Harvestone Low Carbon Partners",
+        "url": "https://harvestonelcp.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Harvestonelcp company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqm8h09ujivhea5z8k7rg",
+        "label": "Harvestonelcp — Harvestone Low Carbon Partners",
+        "url": "https://harvestonelcp.com/fccp-about-19627",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Harvestonelcp company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqm9n09ulivhecmdi6c0l",
+        "label": "Harvestonelcp — Harvestone Low Carbon Partners",
+        "url": "https://harvestonelcp.com/storyArchives-375",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Harvestonelcp — Harvestone Low Carbon Partners",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Harvestone Low Carbon Partners",
+    "investmentFirm": "ECP",
+    "sector": "Power & ET",
+    "subsector": "Low-carbon ethanol and carbon capture",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "Harvestone Low Carbon Partners is a low-carbon fuels platform that owns and operates ethanol and related carbon management assets. Its facilities serve fuel and agricultural markets, with economics supported by ethanol sales, feed coproducts, and increasingly carbon-capture and low-carbon fuel attributes. The business is asset-heavy, with operating plants at Blue Flint in Underwood, North Dakota, Dakota Spirit in Spiritwood, North Dakota, and Iroquois Bio-Energy in Rensselaer, Indiana. Harvestone states that the platform was formed in 2022 by Harvestone Group and Energy Capital Partners and has capacity of more than 200 million gallons per year. In 2024 the company announced a $205 million carbon-capture tax-equity financing for the Blue Flint CCS project, further shifting the platform toward lower-carbon fuel production.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2022,
+    "investmentYear": 2022,
+    "headquarters": "North Dakota and Indiana",
+    "milestones": [
+      {
+        "date": "2022",
+        "event": "Harvestone Low Carbon Partners was formed by Harvestone Group and ECP / Energy Capital Partners.",
+        "category": "Financing"
+      },
+      {
+        "date": "Sep 2024",
+        "event": "Harvestone announced $205 million of tax-equity financing for the Blue Flint carbon capture project.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Investment date source — ECP — Harvestone Low Carbon Partners",
+        "url": "https://www.ecpgp.com/equity/portfolio/harvestone-low-carbon-partners",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Harvestonelcp — Harvestone Low Carbon Partners",
+        "url": "https://harvestonelcp.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Harvestonelcp — Harvestone Low Carbon Partners",
+        "url": "https://harvestonelcp.com/fccp-about-19627",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Harvestonelcp — Harvestone Low Carbon Partners",
+        "url": "https://harvestonelcp.com/storyArchives-375",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "ECP",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2022,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj23s00d1ivhel30ncaa5",
+        "fundName": "ECP Fund V",
+        "managerId": "cmrxpi79j001jivhe2rmjalkq",
+        "updatedAt": "2026-07-23T16:09:56.584Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi79j001jivhe2rmjalkq",
+        "name": "Energy Capital Partners",
+        "updatedAt": "2026-07-23T16:09:16.615Z"
+      },
+      {
+        "id": "cmrxpii7l004zivhe9bvhh5r5",
+        "name": "ECP",
+        "updatedAt": "2026-07-23T16:09:30.801Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0227:harvestone-low-carbon-partners:184c949c",
+    "taskIndex": 227,
+    "canonicalKey": "harvestone-low-carbon-partners|united-states",
+    "capturedAt": "2026-08-29T09:28:47.432Z",
+    "databaseRevision": "revision:cd244091ea56578ce1ff87cae61478766eae7b39e36d654d77dee01378794b74",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "22a5a86991e1ba4a1eb62306c68b838dea6c6aa2e71b70ca547b067918aa74b1",
+    "productionSnapshotSha256": "59005855fbe4927b2ad8e0f7b8864dd473859d81dd7dd973844186e089254f55",
+    "targetCompanySnapshotSha256": "fb9da2442d1b962fd73ee8bce2825edd679a9902c0796cc83d023f5e4ebb5fb6",
+    "seedEntrySha256": "6f9b0b8360b07dbb406e2de73ffecd4f22fbc1a584ab31f1fec8137719a12960",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "d74b1935615f590dd09afb8a81e96a3ec78665e9dd879bd984302ceca5d642d0",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "cd20bf918111ea91d87de82c3607378a098a82d96d9ad9ef41dc65f122089cb0",
+      "organizationsSha256": "c37832515269e67eda7b22dbeacc39e08520e87ae42b1936606ac180a3bfb772",
+      "citationsSha256": "96831e7824b6dbca916de0629339891a58dc41cb84aab936e4e9ce2d98845637",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "bccab8cdc48222278ee800b6229ecfd5bef7ac379a4d2b0d73eab44f2c341995",
+    "stateSha256": "3b82e4ebf42f3a31db5fd3555fcd52f1823a6eee029524ac31b4e4f3e4d32192",
+    "taskSnapshotSha256": "bc52f34f4cb009cff8a8831ca41ac482b2b1bb99562273ad2a2b24dc850f8dd7"
+  },
+  "contextSha256": "93890e2a8f60cdac6c15f00e84644f5a5d62f99cbc144c6e9f52159e3b0b0d9a"
+}
