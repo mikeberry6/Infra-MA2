@@ -1,0 +1,397 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0231:pivot-energy:e0f42706",
+  "taskIndex": 231,
+  "asOfDate": "2026-08-29",
+  "generatedAt": "2026-08-29T10:52:02.000Z",
+  "canonicalKey": "pivot-energy|united-states",
+  "companyName": "Pivot Energy",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER"
+  ],
+  "sourceHoldingIds": [
+    "041-energy-capital-partners:holding:010:pivot-energy"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Correct the existing Pivot Energy record without duplicating ECP. Direct court and manager evidence supports the June 1, 2021 ECP IV acquisition, a former TCA-controlled predecessor ownership period and Denver headquarters. Project lenders, tax-equity providers, HASI project capital and Microsoft are not company-level owners, and a reported 2025 sale process did not establish a signed transaction.",
+  "evidence": [
+    {
+      "url": "https://www.tcafundreceivership.com/docs/DE141FourthQStatRep.pdf",
+      "purpose": "Buyer funds, seller ownership, transaction value and headquarters",
+      "supports": [
+        "ECP IV-A, IV-B, IV-C and IV-D owned newly formed Pivot Energy, Inc.",
+        "The US$67 million asset purchase closed June 1, 2021",
+        "The report identifies the predecessor TCA ownership and Denver headquarters"
+      ]
+    },
+    {
+      "url": "https://www.ecpgp.com/about/news-and-insights/press-releases/2021/ecp-announces-acquisition-of-pivot-energy",
+      "purpose": "Completed ECP acquisition",
+      "supports": [
+        "ECP completed the acquisition June 1, 2021",
+        "ECP announced the transaction June 2, 2021"
+      ]
+    },
+    {
+      "url": "https://www.ecpgp.com/equity/portfolio/pivot-energy",
+      "purpose": "Current ownership and investment date",
+      "supports": [
+        "ECP lists Pivot Energy as Current",
+        "ECP reports a June 2021 investment date"
+      ]
+    },
+    {
+      "url": "https://www.pivotenergy.net/blog/2025-year-in-review",
+      "purpose": "Current operating scale",
+      "supports": [
+        "Pivot reported 4.3 GW and approximately 1,900 completed or developing projects"
+      ]
+    },
+    {
+      "url": "https://ionanalytics.com/insights/mergermarket/ecp-hires-evercore-for-pivot-energy-stake-sale/",
+      "purpose": "Exit search",
+      "supports": [
+        "A possible 2025 ECP stake-sale process was reported",
+        "The source does not identify a signed buyer or completed transfer"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "ba76424de8ddfcfb16e9dd0a7e5556fed3228262f3602be3dc969920ecc75a65",
+  "currentCompanySnapshotSha256": "69a9187a57a66f2d14d2cf89eafcd6ed881bf0d0988a9aa6e916a328c202d3c7",
+  "executionLock": {
+    "taskSnapshotSha256": "da12620a707b2d7feb7cbb63ba4039b3e4da2b5f77859a9f836b36615a032362",
+    "taskStateSha256": "d1dd025293920081ff9db74d76fba603f4b1f7b0f7c67966bde556cb04509f99",
+    "taskDependencySha256": "35ef9c9c2db77133f0f1bd82a11da8cf00a165645b564b060f34bccec3b34aef",
+    "seedEntrySha256": "e6cd8a6b315e636c94c3a9d32dded1ea3fa6bd55d478a9cccec96ae5b5b78e7a",
+    "dependencies": {
+      "ownershipPeriodsSha256": "7bb2e1811de6154b7b3d338318dac0cfe5d8973a0a27c9e3dc617c3edb5155b8",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "592a52bc18a9de4fb86a5d0e7fec2a9f373528b05a4401efa6036f9b6ba5b5ca",
+      "citationsSha256": "255aaf7d9010280aee4cb4f27779d9b3da0ab1d4c9dede418751d0acf4aad4c2",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpii7l004zivhe9bvhh5r5",
+        "name": "ECP",
+        "updatedAt": "2026-07-23T16:09:30.801Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjdnz00ugivhezk5dzw98",
+    "name": "Pivot Energy",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Distributed and community solar and storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Pivot Energy develops, finances, builds, owns, and manages commercial, community-scale, and utility-oriented solar and energy storage projects in the United States. Its customers and counterparties include businesses, utilities, cooperatives, municipalities, community solar subscribers, and tax credit or capital providers. The platform operates as an asset-heavy independent power producer and developer, with contracted project revenues and development value rather than merchant retail power exposure. Public materials state that Pivot has nearly 1,900 projects completed or under development totaling more than 4 gigawatts of solar capacity nationwide. ECP acquired Pivot in June 2021, and the company has continued to expand under that ownership through project financing and new offtake arrangements.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2009,
+    "headquarters": "Multi-state United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjzar01soivheky8l1tl7",
+        "managerName": "ECP",
+        "organizationName": "ECP",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpli3c03raivhefel1qia4",
+        "date": "2009",
+        "event": "Pivot Energy was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2009-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpli3s03rbivhem2dt6z3u",
+        "date": "Jun 1, 2021",
+        "event": "ECP completed its acquisition of Pivot Energy.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-06-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpli4d03rcivhe6rlaqzte",
+        "date": "Aug 2024",
+        "event": "Pivot announced a framework agreement with Microsoft for up to 500 MWac of community-scale solar development.",
+        "category": "EXPANSION",
+        "sortDate": "2024-08-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpli4s03rdivhekh7c5yic",
+        "date": "2025",
+        "event": "Pivot reached 3.5 GW of renewable energy completed or in development.",
+        "category": "EXPANSION",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpli5h03reivhecajb5rh2",
+        "date": "Jan 2026",
+        "event": "Pivot projects completed or under development reached roughly 4.3 GW.",
+        "category": "EXPANSION",
+        "sortDate": "2026-01-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqmqf09vbivhe3am9mwe4",
+        "label": "Pivotenergy — Pivot Energy",
+        "url": "https://www.pivotenergy.net/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Pivotenergy company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqmrc09vdivheqeqnbtfv",
+        "label": "Pivotenergy — Pivot Energy",
+        "url": "https://www.pivotenergy.net/about-us",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Pivotenergy company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqmsj09vfivhe7a7w0rbq",
+        "label": "Close date source — ECP — Pivot Energy",
+        "url": "https://www.ecpgp.com/about/news-and-insights/press-releases/2021/ecp-announces-acquisition-of-pivot-energy",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "ECP closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqmtl09vhivhef12wxrm5",
+        "label": "Pivotenergy — Pivot Energy",
+        "url": "https://www.pivotenergy.net/energy-capital-partners",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Pivotenergy — Pivot Energy",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "69a9187a57a66f2d14d2cf89eafcd6ed881bf0d0988a9aa6e916a328c202d3c7",
+  "afterImage": {
+    "id": "cmrxpjdnz00ugivhezk5dzw98",
+    "name": "Pivot Energy",
+    "aliases": [
+      "Pivot Energy Inc.",
+      "TCA Microgrid Energy, LLC d/b/a Pivot Energy",
+      "Microgrid Energy"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Distributed and community solar and storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Pivot Energy Inc. is a Denver-based U.S. independent power producer that develops, finances, builds, owns and manages distributed commercial and community solar and storage projects. ECP IV-owned Pivot Energy, Inc. completed a US$67 million purchase of substantially all assets and most liabilities of the TCA-controlled predecessor on June 1, 2021. ECP continues to list the platform as current; exact ECP fund percentages and the full holding chart are not publicly disclosed. Pivot reported approximately 4.3 GW and about 1,000 completed and 900 developing projects for 2025. Project lenders, tax-equity providers, HASI project-joint-venture capital, Microsoft and individual project or portfolio entities are not company-level owners. A possible ECP stake-sale process was reported in April 2025, but no buyer, signed agreement, closing or ownership transfer was found through August 19, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.pivotenergy.net/",
+    "yearFounded": 2009,
+    "headquarters": "Denver, Colorado",
+    "lastVerifiedAt": "2026-08-19T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjzar01soivheky8l1tl7",
+        "managerName": "ECP",
+        "organizationName": "ECP",
+        "fundName": null,
+        "vehicleName": "Pivot Energy, Inc.; owned by ECP IV-A, IV-B, IV-C and IV-D, LP",
+        "stake": "Control; exact economic percentages not publicly disclosed",
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "TCA Fund Management Group Corp.",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "TCA Microgrid Energy, LLC d/b/a Pivot Energy",
+        "stake": "Predecessor interests held 99.0%, 0.8% and 0.2% by three TCA fund entities",
+        "investmentYear": null,
+        "exitYear": 2021,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpli3c03raivhefel1qia4",
+        "date": "2009",
+        "event": "The predecessor Pivot Energy platform was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2009-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.tcafundreceivership.com/docs/DE141FourthQStatRep.pdf"
+        ]
+      },
+      {
+        "id": "cmrxpli3s03rbivhem2dt6z3u",
+        "date": "Jun 1, 2021",
+        "event": "ECP IV-owned Pivot Energy, Inc. completed the US$67 million acquisition of substantially all assets and most liabilities of the TCA-controlled predecessor.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-06-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.tcafundreceivership.com/docs/DE141FourthQStatRep.pdf",
+          "https://www.ecpgp.com/about/news-and-insights/press-releases/2021/ecp-announces-acquisition-of-pivot-energy"
+        ]
+      },
+      {
+        "id": "cmrxpli4d03rcivhe6rlaqzte",
+        "date": "Aug 8, 2024",
+        "event": "Pivot announced a framework with Microsoft for up to 500 MWac of community-scale solar development; Microsoft is a commercial counterparty rather than a company owner.",
+        "category": "EXPANSION",
+        "sortDate": "2024-08-08T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.pivotenergy.net/news-releases/pivot-energy-collaborates-with-microsoft-to-develop-up-to-500-mwac-of-community-scale-solar-projects-that-will-deliver-significant-benefits-to-local-communities"
+        ]
+      },
+      {
+        "id": "cmrxpli4s03rdivhekh7c5yic",
+        "date": "Apr 5, 2025",
+        "event": "A possible ECP stake-sale process was reported, but no buyer, signed transaction or completed ownership transfer was identified.",
+        "category": "OTHER",
+        "sortDate": "2025-04-05T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://ionanalytics.com/insights/mergermarket/ecp-hires-evercore-for-pivot-energy-stake-sale/",
+          "https://www.ecpgp.com/equity/portfolio/pivot-energy"
+        ]
+      },
+      {
+        "id": "cmrxpli5h03reivhecajb5rh2",
+        "date": "2025",
+        "event": "Pivot reported approximately 4.3 GW across about 1,000 completed and 900 developing projects.",
+        "category": "EXPANSION",
+        "sortDate": "2025-12-31T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.pivotenergy.net/blog/2025-year-in-review"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqmqf09vbivhe3am9mwe4",
+        "label": "Pivotenergy — Pivot Energy",
+        "url": "https://www.pivotenergy.net/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current Pivot operating profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqmrc09vdivheqeqnbtfv",
+        "label": "Pivotenergy — Pivot Energy",
+        "url": "https://www.pivotenergy.net/about-us",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Pivot company history and operating model",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqmsj09vfivhe7a7w0rbq",
+        "label": "Close date source — ECP — Pivot Energy",
+        "url": "https://www.ecpgp.com/about/news-and-insights/press-releases/2021/ecp-announces-acquisition-of-pivot-energy",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "June 1, 2021 ECP acquisition close",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqmtl09vhivhef12wxrm5",
+        "label": "Pivotenergy — Pivot Energy",
+        "url": "https://www.pivotenergy.net/energy-capital-partners",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Pivot announcement of the ECP acquisition",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "TCA Receiver — Fourth Quarterly Status Report",
+        "url": "https://www.tcafundreceivership.com/docs/DE141FourthQStatRep.pdf",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "ECP IV buyer funds, US$67 million transaction, predecessor ownership and Denver headquarters",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "ECP — Pivot Energy portfolio",
+        "url": "https://www.ecpgp.com/equity/portfolio/pivot-energy",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current ECP status and June 2021 investment date",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Pivot Energy — 2025 year in review",
+        "url": "https://www.pivotenergy.net/blog/2025-year-in-review",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current operating scale and 2025 activity",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Pivot Energy — Microsoft development framework",
+        "url": "https://www.pivotenergy.net/news-releases/pivot-energy-collaborates-with-microsoft-to-develop-up-to-500-mwac-of-community-scale-solar-projects-that-will-deliver-significant-benefits-to-local-communities",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Microsoft commercial-counterparty boundary and up-to-500 MWac framework",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Mergermarket — Pivot Energy stake-sale process",
+        "url": "https://ionanalytics.com/insights/mergermarket/ecp-hires-evercore-for-pivot-energy-stake-sale/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Reported 2025 sale process without a signed transaction",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "300624ab81b876bccd8caed2db15ded67e584bbac177152e5d7bc0143c1686b8",
+  "proposalSha256": "c66c82c03b6177faf9e8969cd6e08a56bf6b946df96f21d109267e976c39fc28"
+}

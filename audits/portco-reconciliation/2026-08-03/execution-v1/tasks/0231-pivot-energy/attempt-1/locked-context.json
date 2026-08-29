@@ -1,0 +1,288 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0231:pivot-energy:e0f42706",
+  "taskIndex": 231,
+  "companyName": "Pivot Energy",
+  "generatedAt": "2026-08-29T10:35:22.746Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0231-pivot-energy/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 231,
+    "taskId": "ledger:0231:pivot-energy:e0f42706",
+    "canonicalKey": "pivot-energy|united-states",
+    "companyName": "Pivot Energy",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 41,
+    "managers": [
+      "Energy Capital Partners"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "041-energy-capital-partners:holding:010:pivot-energy"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjdnz00ugivhezk5dzw98"
+    ],
+    "seedKeys": [
+      "pivot energy|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.ecpgp.com/equity/portfolio/pivot-energy",
+      "https://www.pivotenergy.net/energy-capital-partners"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_OWNER requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjdnz00ugivhezk5dzw98",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "pivot-energy|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjdnz00ugivhezk5dzw98",
+    "name": "Pivot Energy",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Distributed and community solar and storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Pivot Energy develops, finances, builds, owns, and manages commercial, community-scale, and utility-oriented solar and energy storage projects in the United States. Its customers and counterparties include businesses, utilities, cooperatives, municipalities, community solar subscribers, and tax credit or capital providers. The platform operates as an asset-heavy independent power producer and developer, with contracted project revenues and development value rather than merchant retail power exposure. Public materials state that Pivot has nearly 1,900 projects completed or under development totaling more than 4 gigawatts of solar capacity nationwide. ECP acquired Pivot in June 2021, and the company has continued to expand under that ownership through project financing and new offtake arrangements.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2009,
+    "headquarters": "Multi-state United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjzar01soivheky8l1tl7",
+        "managerName": "ECP",
+        "organizationName": "ECP",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpli3c03raivhefel1qia4",
+        "date": "2009",
+        "event": "Pivot Energy was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2009-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpli3s03rbivhem2dt6z3u",
+        "date": "Jun 1, 2021",
+        "event": "ECP completed its acquisition of Pivot Energy.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-06-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpli4d03rcivhe6rlaqzte",
+        "date": "Aug 2024",
+        "event": "Pivot announced a framework agreement with Microsoft for up to 500 MWac of community-scale solar development.",
+        "category": "EXPANSION",
+        "sortDate": "2024-08-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpli4s03rdivhekh7c5yic",
+        "date": "2025",
+        "event": "Pivot reached 3.5 GW of renewable energy completed or in development.",
+        "category": "EXPANSION",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpli5h03reivhecajb5rh2",
+        "date": "Jan 2026",
+        "event": "Pivot projects completed or under development reached roughly 4.3 GW.",
+        "category": "EXPANSION",
+        "sortDate": "2026-01-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqmqf09vbivhe3am9mwe4",
+        "label": "Pivotenergy — Pivot Energy",
+        "url": "https://www.pivotenergy.net/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Pivotenergy company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqmrc09vdivheqeqnbtfv",
+        "label": "Pivotenergy — Pivot Energy",
+        "url": "https://www.pivotenergy.net/about-us",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Pivotenergy company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqmsj09vfivhe7a7w0rbq",
+        "label": "Close date source — ECP — Pivot Energy",
+        "url": "https://www.ecpgp.com/about/news-and-insights/press-releases/2021/ecp-announces-acquisition-of-pivot-energy",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "ECP closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqmtl09vhivhef12wxrm5",
+        "label": "Pivotenergy — Pivot Energy",
+        "url": "https://www.pivotenergy.net/energy-capital-partners",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Pivotenergy — Pivot Energy",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Pivot Energy",
+    "investmentFirm": "ECP",
+    "sector": "Power & ET",
+    "subsector": "Distributed and community solar and storage",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "Pivot Energy develops, finances, builds, owns, and manages commercial, community-scale, and utility-oriented solar and energy storage projects in the United States. Its customers and counterparties include businesses, utilities, cooperatives, municipalities, community solar subscribers, and tax credit or capital providers. The platform operates as an asset-heavy independent power producer and developer, with contracted project revenues and development value rather than merchant retail power exposure. Public materials state that Pivot has nearly 1,900 projects completed or under development totaling more than 4 gigawatts of solar capacity nationwide. ECP acquired Pivot in June 2021, and the company has continued to expand under that ownership through project financing and new offtake arrangements.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2009,
+    "investmentYear": 2021,
+    "headquarters": "Multi-state United States",
+    "milestones": [
+      {
+        "date": "2009",
+        "event": "Pivot Energy was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "Jun 1, 2021",
+        "event": "ECP completed its acquisition of Pivot Energy.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Aug 2024",
+        "event": "Pivot announced a framework agreement with Microsoft for up to 500 MWac of community-scale solar development.",
+        "category": "Expansion"
+      },
+      {
+        "date": "2025",
+        "event": "Pivot reached 3.5 GW of renewable energy completed or in development.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Jan 2026",
+        "event": "Pivot projects completed or under development reached roughly 4.3 GW.",
+        "category": "Expansion"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Pivotenergy — Pivot Energy",
+        "url": "https://www.pivotenergy.net/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Pivotenergy — Pivot Energy",
+        "url": "https://www.pivotenergy.net/about-us",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Close date source — ECP — Pivot Energy",
+        "url": "https://www.ecpgp.com/about/news-and-insights/press-releases/2021/ecp-announces-acquisition-of-pivot-energy",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Pivotenergy — Pivot Energy",
+        "url": "https://www.pivotenergy.net/energy-capital-partners",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "ECP",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2021,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpii7l004zivhe9bvhh5r5",
+        "name": "ECP",
+        "updatedAt": "2026-07-23T16:09:30.801Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0231:pivot-energy:e0f42706",
+    "taskIndex": 231,
+    "canonicalKey": "pivot-energy|united-states",
+    "capturedAt": "2026-08-29T10:35:22.746Z",
+    "databaseRevision": "revision:809855fabba798a9ff9e49f87cc42c889456e948e9646d7bb28157c9144f289d",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "4d168ebd9685ed6048432cbadc3c2d8c537329fac423822008091bc5316959c4",
+    "productionSnapshotSha256": "ba76424de8ddfcfb16e9dd0a7e5556fed3228262f3602be3dc969920ecc75a65",
+    "targetCompanySnapshotSha256": "69a9187a57a66f2d14d2cf89eafcd6ed881bf0d0988a9aa6e916a328c202d3c7",
+    "seedEntrySha256": "e6cd8a6b315e636c94c3a9d32dded1ea3fa6bd55d478a9cccec96ae5b5b78e7a",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "7bb2e1811de6154b7b3d338318dac0cfe5d8973a0a27c9e3dc617c3edb5155b8",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "592a52bc18a9de4fb86a5d0e7fec2a9f373528b05a4401efa6036f9b6ba5b5ca",
+      "citationsSha256": "255aaf7d9010280aee4cb4f27779d9b3da0ab1d4c9dede418751d0acf4aad4c2",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "35ef9c9c2db77133f0f1bd82a11da8cf00a165645b564b060f34bccec3b34aef",
+    "stateSha256": "d1dd025293920081ff9db74d76fba603f4b1f7b0f7c67966bde556cb04509f99",
+    "taskSnapshotSha256": "da12620a707b2d7feb7cbb63ba4039b3e4da2b5f77859a9f836b36615a032362"
+  },
+  "contextSha256": "bfac647cdd32203b5e0a11109176d4f7450396dfa02aedec92deb7fbc9340404"
+}

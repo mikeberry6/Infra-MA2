@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_FOCUSED_CHATGPT_RESPONSE_VALIDATION",
+  "runId": "2026-08-03",
+  "taskId": "ledger:0229:new-leaf-energy:321d604d",
+  "taskIndex": 229,
+  "companyName": "New Leaf Energy",
+  "validatedAt": "2026-08-29T10:47:27.000Z",
+  "conversationUrl": "https://chatgpt.com/c/WEB:929bfb98-981f-466d-81b2-87d653619e21",
+  "requiredTopLevelKeys": [
+    "asOfDate",
+    "company",
+    "decision",
+    "confidence",
+    "currentOwners",
+    "walsinShareBlock",
+    "laterPlatformExitFound",
+    "evidence",
+    "searchedButNotFound",
+    "productionRecommendation",
+    "rationale",
+    "unresolvedQuestions"
+  ],
+  "initialResponse": {
+    "valid": true,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "responseSha256": "258f2cf951ad339e4dc55d1a357bce9df6d9f4a295ce5e95039ce1e3882c6af0",
+    "errors": []
+  },
+  "repair": {
+    "count": 0,
+    "limit": 1,
+    "submittedAt": null,
+    "completedAt": null,
+    "valid": null,
+    "responseSha256": null,
+    "errors": []
+  },
+  "finalResponse": {
+    "decision": "WALSIN_EXITED",
+    "confidence": "HIGH",
+    "productionRecommendation": "KEEP_ECP_ONLY",
+    "currentOwnerCount": 1,
+    "walsinExactBlockMatched": true,
+    "affirmativeDispositionEvidencePresent": true,
+    "laterPlatformExitFound": false,
+    "allEvidenceUrlsDirectHttps": true,
+    "singleRecommendedPrimary": true,
+    "identityResolved": true,
+    "activeOwnershipResolved": true,
+    "result": "PASS"
+  },
+  "independentSourceVerification": "focused-source-verification.json",
+  "valid": true,
+  "errors": [],
+  "repairsUsed": 0
+}

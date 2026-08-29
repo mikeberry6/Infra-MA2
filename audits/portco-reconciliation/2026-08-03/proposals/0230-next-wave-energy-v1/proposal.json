@@ -1,0 +1,353 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0230:next-wave-energy:b4bcb6ea",
+  "taskIndex": 230,
+  "asOfDate": "2026-08-29",
+  "generatedAt": "2026-08-29T10:52:01.000Z",
+  "canonicalKey": "next-wave-energy|united-states",
+  "companyName": "Next Wave Energy",
+  "actions": [
+    "CORRECT_COMPANY"
+  ],
+  "sourceHoldingIds": [
+    "041-energy-capital-partners:holding:009:next-wave-energy"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Map Next Wave Energy to the existing Next Wave Energy Partners, LP platform and correct the single ECP ownership period without adding a duplicate owner. Preserve ECP's 2015 initial investment while recording the disclosed Fund IV attribution and March 2018 current-fund chronology without inferring an undisclosed recapitalization or sponsor exit. Project Traveler and Pasadena Performance Products remain subordinate facility and project entities.",
+  "evidence": [
+    {
+      "url": "https://www.ecpgp.com/equity/portfolio/next-wave-energy-partners-lp",
+      "purpose": "Current ECP status, alias and March 2018 date",
+      "supports": [
+        "ECP lists Next Wave Energy Partners as Current",
+        "ECP reports March 2018 as its investment date"
+      ]
+    },
+    {
+      "url": "https://www.nextwaveenergy.com/news/next-wave-energy-partners-announces-investment-500-million-energy-capital-partners",
+      "purpose": "Initial ECP investment",
+      "supports": [
+        "Next Wave announced ECP's investment on April 14, 2015",
+        "ECP and management committed up to US$500 million of equity"
+      ]
+    },
+    {
+      "url": "https://www.ecpgp.com/about/news-and-insights/press-releases/2020/energy-capital-partners-raises-68-billion-for-fund-iv-and-co-investment-pools",
+      "purpose": "Fund IV attribution",
+      "supports": [
+        "ECP directly identifies Next Wave as a Fund IV investment"
+      ]
+    },
+    {
+      "url": "https://www.nextwaveenergy.com/news/next-wave-energy-partners-build-ethylene-alkylate-production-facility-near-houston-ship",
+      "purpose": "Project Traveler boundary and scale",
+      "supports": [
+        "Project Traveler is Next Wave's facility at its Pasadena site",
+        "The original nameplate capacity was 28,000 barrels per day"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1868275/000186827526000037/cpn_12312025financialsfo.htm",
+      "purpose": "Commercial operation date and project boundary",
+      "supports": [
+        "Project Traveler reached commercial operation on December 28, 2023",
+        "Pasadena Performance Products is a project subsidiary"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "d6b4f0103e89c7e0217d80dfa41845180666083ba28c8c1a08735954784ea3c7",
+  "currentCompanySnapshotSha256": "c77dcc51d988718328eaf3c6413d80be253c0df7ff520008e00cc8ddd0948010",
+  "executionLock": {
+    "taskSnapshotSha256": "7ea6891919cdc8763897aead90fbb151d0152146ee14db4925e1ed4782c21858",
+    "taskStateSha256": "26e4ed52b75e17e6deba67d2232fea96514e703240ede41107b9f9b45f4b7280",
+    "taskDependencySha256": "8514f0618194ae1f6e9a1f078e490c3e4ebc049735735c4b01db40a045d6f79c",
+    "seedEntrySha256": "738fb1dfb815470fdbbf190f1077031b898410abfae8ca2c39ab9ca53dd471b5",
+    "dependencies": {
+      "ownershipPeriodsSha256": "6eb2379deb8e2ae7eff2a747a72f4416e581a6a72b8bbbb2cb62abad77d84cc4",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "592a52bc18a9de4fb86a5d0e7fec2a9f373528b05a4401efa6036f9b6ba5b5ca",
+      "citationsSha256": "a1ca0f5fd23241fa7f9c7133031f4caaa9aba472e61cf5f60b6bbf928caf0662",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpii7l004zivhe9bvhh5r5",
+        "name": "ECP",
+        "updatedAt": "2026-07-23T16:09:30.801Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjdne00ufivheo8adf9nm",
+    "name": "Next Wave Energy Partners, LP",
+    "aliases": [],
+    "sector": "MIDSTREAM",
+    "subsector": "Alkylate production, processing, and fuels logistics",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Next Wave Energy Partners develops, owns, and operates downstream and midstream assets focused on alkylate, natural gas liquids, petrochemicals, and related logistics services. Its customers include refiners, blenders, and other industrial counterparties that require toll processing, manufacturing, and logistics solutions for fuels and petrochemical value chains. The company follows an asset-heavy operating model centered on owned processing and terminal infrastructure rather than an advisory or marketing model. Its principal operating footprint is in the Houston Ship Channel area, where the company developed Project Traveler on a 53-acre site in Pasadena, Texas. ECP committed up to $500 million to the company in 2015, and the platform reached a major operating milestone when Project Traveler entered commercial operations in 2024.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2014,
+    "headquarters": "Texas",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjza701snivheqdjimc56",
+        "managerName": "ECP",
+        "organizationName": "ECP",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2015,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplhy403r6ivhej82u1uw3",
+        "date": "2014",
+        "event": "Next Wave Energy Partners, LP was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2014-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplhyo03r7ivheihj6p9gm",
+        "date": "Apr 14, 2015",
+        "event": "Next Wave announced an investment of up to $500 million from ECP.",
+        "category": "FINANCING",
+        "sortDate": "2015-04-14T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplhz803r8ivhexchato2g",
+        "date": "Nov 2019",
+        "event": "The company announced a final investment decision to build Project Traveler near the Houston Ship Channel.",
+        "category": "FINANCING",
+        "sortDate": "2019-11-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplhzs03r9ivhebfzw4g33",
+        "date": "Mar 2024",
+        "event": "Project Traveler entered commercial operations in Pasadena, Texas.",
+        "category": "EXPANSION",
+        "sortDate": "2024-03-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqmm309v3ivhexeiz62d0",
+        "label": "Nextwaveenergy — Next Wave Energy Partners, LP",
+        "url": "https://www.nextwaveenergy.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Nextwaveenergy company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqmna09v5ivheegc1j5co",
+        "label": "Nextwaveenergy — Next Wave Energy Partners, LP",
+        "url": "https://www.nextwaveenergy.com/about-us",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Nextwaveenergy company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqmoe09v7ivhe9r8n25sz",
+        "label": "Investment date source — ECP — Next Wave Energy Partners, LP",
+        "url": "https://www.nextwaveenergy.com/news/next-wave-energy-partners-announces-investment-500-million-energy-capital-partners",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "ECP initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqmpj09v9ivhe6ealsom4",
+        "label": "Ecpgp — Next Wave Energy Partners, LP",
+        "url": "https://www.ecpgp.com/equity/portfolio/next-wave-energy",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Ecpgp operations / asset details",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "c77dcc51d988718328eaf3c6413d80be253c0df7ff520008e00cc8ddd0948010",
+  "afterImage": {
+    "id": "cmrxpjdne00ufivheo8adf9nm",
+    "name": "Next Wave Energy Partners, LP",
+    "aliases": [
+      "Next Wave Energy",
+      "Next Wave"
+    ],
+    "sector": "MIDSTREAM",
+    "subsector": "Alkylate production, processing, and fuels logistics",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Next Wave Energy Partners, LP is a Houston-based downstream and midstream infrastructure platform that develops, owns and operates toll-processing, manufacturing and logistics assets for natural gas liquids, petrochemicals and gasoline blend components. ECP first invested alongside management in 2015 with an equity commitment of up to US$500 million; ECP reports a March 2018 investment date and later identifies Next Wave as a Fund IV investment. Those disclosures establish continuous ECP ownership but do not disclose the Fund IV transition mechanics, acquisition vehicle or stake. Project Traveler is the platform's Pasadena, Texas alkylate facility, and Pasadena Performance Products is its project subsidiary rather than a separate PortCo. The 53-acre facility was originally designed for 28,000 barrels per day and reached commercial operation December 28, 2023. No later platform or asset sale, ECP exit or signed pending ownership transfer was identified through August 19, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.nextwaveenergy.com/",
+    "yearFounded": 2014,
+    "headquarters": "Houston, Texas",
+    "lastVerifiedAt": "2026-08-19T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjza701snivheqdjimc56",
+        "managerName": "ECP",
+        "organizationName": "ECP",
+        "fundName": null,
+        "vehicleName": "ECP Fund IV from March 2018; initial 2015 fund and transition mechanics not publicly disclosed",
+        "stake": "Not publicly disclosed",
+        "investmentYear": 2015,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplhy403r6ivhej82u1uw3",
+        "date": "2014",
+        "event": "Next Wave Energy Partners was formed as a downstream and midstream infrastructure platform.",
+        "category": "FOUNDING",
+        "sortDate": "2014-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.nextwaveenergy.com/about-us"
+        ]
+      },
+      {
+        "id": "cmrxplhyo03r7ivheihj6p9gm",
+        "date": "Apr 14, 2015",
+        "event": "Next Wave announced ECP's initial investment and an equity commitment of up to US$500 million alongside management.",
+        "category": "FINANCING",
+        "sortDate": "2015-04-14T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.nextwaveenergy.com/news/next-wave-energy-partners-announces-investment-500-million-energy-capital-partners"
+        ]
+      },
+      {
+        "id": "cmrxplhz803r8ivhexchato2g",
+        "date": "Nov 2019",
+        "event": "Next Wave reached final investment decision for Project Traveler, a 28,000-barrel-per-day alkylate facility at its 53-acre Pasadena site.",
+        "category": "FINANCING",
+        "sortDate": "2019-11-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.nextwaveenergy.com/news/next-wave-energy-partners-build-ethylene-alkylate-production-facility-near-houston-ship"
+        ]
+      },
+      {
+        "id": "cmrxplhzs03r9ivhebfzw4g33",
+        "date": "Dec 28, 2023",
+        "event": "Project Traveler reached commercial operation through Next Wave's Pasadena Performance Products project subsidiary.",
+        "category": "EXPANSION",
+        "sortDate": "2023-12-28T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1868275/000186827526000037/cpn_12312025financialsfo.htm"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqmm309v3ivhexeiz62d0",
+        "label": "Nextwaveenergy — Next Wave Energy Partners, LP",
+        "url": "https://www.nextwaveenergy.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current Next Wave operating profile and product scope",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqmna09v5ivheegc1j5co",
+        "label": "Nextwaveenergy — Next Wave Energy Partners, LP",
+        "url": "https://www.nextwaveenergy.com/about-us",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Company history, Houston headquarters and platform scope",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqmoe09v7ivhe9r8n25sz",
+        "label": "Investment date source — ECP — Next Wave Energy Partners, LP",
+        "url": "https://www.nextwaveenergy.com/news/next-wave-energy-partners-announces-investment-500-million-energy-capital-partners",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "April 2015 ECP investment and equity commitment",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqmpj09v9ivhe6ealsom4",
+        "label": "Ecpgp — Next Wave Energy Partners, LP",
+        "url": "https://www.ecpgp.com/equity/portfolio/next-wave-energy",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Legacy ECP portfolio URL and platform context",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "ECP — Next Wave Energy Partners",
+        "url": "https://www.ecpgp.com/equity/portfolio/next-wave-energy-partners-lp",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current ECP status, canonical identity and March 2018 investment date",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "ECP — Fund IV closing announcement",
+        "url": "https://www.ecpgp.com/about/news-and-insights/press-releases/2020/energy-capital-partners-raises-68-billion-for-fund-iv-and-co-investment-pools",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Direct Next Wave attribution to ECP Fund IV",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Next Wave — Project Traveler final investment decision",
+        "url": "https://www.nextwaveenergy.com/news/next-wave-energy-partners-build-ethylene-alkylate-production-facility-near-houston-ship",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Project Traveler boundary, Pasadena site, capacity and project equity",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Calpine — 2025 financial statements",
+        "url": "https://www.sec.gov/Archives/edgar/data/1868275/000186827526000037/cpn_12312025financialsfo.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "December 28, 2023 commercial operation and project-subsidiary boundary",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "9e8229ca3029e8f38db4ea1b347f62fc8ad824bc2d50f1c749cf508d0f77e0b0",
+  "proposalSha256": "1914585453e0b4a6f781cb1fbdf09ff53c91f93222290a3105538d124d303ebd"
+}

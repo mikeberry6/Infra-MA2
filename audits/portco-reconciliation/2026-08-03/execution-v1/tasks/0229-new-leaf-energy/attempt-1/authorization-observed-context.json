@@ -1,0 +1,270 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0229:new-leaf-energy:321d604d",
+  "taskIndex": 229,
+  "companyName": "New Leaf Energy",
+  "generatedAt": "2026-08-29T11:02:17.690Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0229-new-leaf-energy/attempt-1/authorization-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 229,
+    "taskId": "ledger:0229:new-leaf-energy:321d604d",
+    "canonicalKey": "new-leaf-energy|united-states",
+    "companyName": "New Leaf Energy",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 41,
+    "managers": [
+      "Energy Capital Partners"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "041-energy-capital-partners:holding:008:new-leaf-energy"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjdmu00ueivhetif6v25s"
+    ],
+    "seedKeys": [
+      "new leaf energy|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.ecpgp.com/equity/portfolio",
+      "https://www.newleafenergy.com/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_OWNER requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjdmu00ueivhetif6v25s",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "new-leaf-energy|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjdmu00ueivhetif6v25s",
+    "name": "New Leaf Energy",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Solar and energy storage development",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "New Leaf Energy develops utility-scale, commercial, and community solar and storage projects for utilities, corporate offtakers, and community energy programs in the United States. The company operates as a development platform that originates sites, secures permits and interconnection, advances offtake arrangements, and manages projects through financing and construction handoff. Its model is development-led and contracted rather than merchant, with value tied to a pipeline of permitted and construction-ready projects across multiple power markets. ECP and company materials describe a development portfolio of approximately 15 gigawatts of solar and 7 gigawatts of storage, which provides a large national scale indicator for the platform. The business was formed in July 2022 through the spin-off of Borrego's development business backed by ECP, and it now operates as a standalone renewables developer under that ownership.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2022,
+    "headquarters": "Multi-state United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjz9o01smivhe6emw3bll",
+        "managerName": "Energy Capital Partners",
+        "organizationName": "ECP",
+        "fundName": "ECP Fund V",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplhvw03r3ivhenm07kqq0",
+        "date": "1980",
+        "event": "Borrego Solar traces its roots to 1980.",
+        "category": "OTHER",
+        "sortDate": "1980-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplhwg03r4ivheuyrg0blc",
+        "date": "2022",
+        "event": "New Leaf Energy launched as a standalone U.S. solar and storage development company.",
+        "category": "EXPANSION",
+        "sortDate": "2022-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplhx003r5ivhe58w18bpt",
+        "date": "Jul 28, 2022",
+        "event": "Borrego completed the spin-off and sale of its development business to ECP, creating New Leaf Energy.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-07-28T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqmf609uvivhee3k899rc",
+        "label": "Newleafenergy — New Leaf Energy",
+        "url": "https://newleafenergy.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Newleafenergy company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqmg609uxivhexyj01o12",
+        "label": "Ecpgp — New Leaf Energy",
+        "url": "https://www.ecpgp.com/equity/portfolio/new-leaf-energy",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Ecpgp operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqmjr09uzivheptvsds64",
+        "label": "Close date source — ECP — New Leaf Energy",
+        "url": "https://www.ecpgp.com/about/news-and-insights/press-releases/2022/borrego-completes-spin-off-and-sale-of-solar-and-energy-storage-development-business-to-ecp",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "ECP closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqml409v1ivheu865zwq8",
+        "label": "Newleafenergy — New Leaf Energy",
+        "url": "https://newleafenergy.com/about/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Newleafenergy company profile",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "New Leaf Energy",
+    "investmentFirm": "ECP",
+    "sector": "Power & ET",
+    "subsector": "Solar and energy storage development",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "New Leaf Energy develops utility-scale, commercial, and community solar and storage projects for utilities, corporate offtakers, and community energy programs in the United States. The company operates as a development platform that originates sites, secures permits and interconnection, advances offtake arrangements, and manages projects through financing and construction handoff. Its model is development-led and contracted rather than merchant, with value tied to a pipeline of permitted and construction-ready projects across multiple power markets. ECP and company materials describe a development portfolio of approximately 15 gigawatts of solar and 7 gigawatts of storage, which provides a large national scale indicator for the platform. The business was formed in July 2022 through the spin-off of Borrego's development business backed by ECP, and it now operates as a standalone renewables developer under that ownership.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2022,
+    "investmentYear": 2022,
+    "headquarters": "Multi-state United States",
+    "milestones": [
+      {
+        "date": "1980",
+        "event": "Borrego Solar traces its roots to 1980.",
+        "category": "Other"
+      },
+      {
+        "date": "2022",
+        "event": "New Leaf Energy launched as a standalone U.S. solar and storage development company.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Jul 28, 2022",
+        "event": "Borrego completed the spin-off and sale of its development business to ECP, creating New Leaf Energy.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Newleafenergy — New Leaf Energy",
+        "url": "https://newleafenergy.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Ecpgp — New Leaf Energy",
+        "url": "https://www.ecpgp.com/equity/portfolio/new-leaf-energy",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Close date source — ECP — New Leaf Energy",
+        "url": "https://www.ecpgp.com/about/news-and-insights/press-releases/2022/borrego-completes-spin-off-and-sale-of-solar-and-energy-storage-development-business-to-ecp",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Newleafenergy — New Leaf Energy",
+        "url": "https://newleafenergy.com/about/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "ECP",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2022,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj23s00d1ivhel30ncaa5",
+        "fundName": "ECP Fund V",
+        "managerId": "cmrxpi79j001jivhe2rmjalkq",
+        "updatedAt": "2026-07-23T16:09:56.584Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpii7l004zivhe9bvhh5r5",
+        "name": "ECP",
+        "updatedAt": "2026-07-23T16:09:30.801Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0229:new-leaf-energy:321d604d",
+    "taskIndex": 229,
+    "canonicalKey": "new-leaf-energy|united-states",
+    "capturedAt": "2026-08-29T11:02:17.690Z",
+    "databaseRevision": "revision:2ebf4762020ce2b8d5cc3077c71ee51693c8fcf76321cffd202d50b6d4c90d9e",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "f02e53c50f498aaf9b96e0050105910f4bd65fcf5c5685337ee11cef493ae886",
+    "productionSnapshotSha256": "cc8710a1b70d92437eaf23fb60b399f5b767f86b1b3293618ba2dcf625794a05",
+    "targetCompanySnapshotSha256": "889b33347a6e18e486baafe00ed3ff45d90485c06309f551629cc10fcaa6b314",
+    "seedEntrySha256": "d8d3f5c5db55754f02cb9b6303e00025cce2e4341c904279c9eae380699b41a2",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "2327fd6401bfd9ecda141b983ae01981df82693949d11cd3e9035ebf06f8e9e3",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "cd20bf918111ea91d87de82c3607378a098a82d96d9ad9ef41dc65f122089cb0",
+      "organizationsSha256": "592a52bc18a9de4fb86a5d0e7fec2a9f373528b05a4401efa6036f9b6ba5b5ca",
+      "citationsSha256": "6d5091d50c327d9ee24110f6c775f9e61b76922597e9f98a4d1fba7d905d1e1e",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "4c82d98a3e25b645c5d1a8df006a2ecd19fe285227db28563222707dc87d6ca6",
+    "stateSha256": "a4990545ff00f20f17dbb45ad89f7d4884182fd6daa332ad10a5056a3c0374d5",
+    "taskSnapshotSha256": "9b1bc9c723433b8712436407a1c7a50b905f89c9ec01067b9eb5c715aeb16c12"
+  },
+  "contextSha256": "ba9b93ef81bcb2e27e87fdc45ba8aaee3db210ea6879939047ccad98fcb8fb93"
+}

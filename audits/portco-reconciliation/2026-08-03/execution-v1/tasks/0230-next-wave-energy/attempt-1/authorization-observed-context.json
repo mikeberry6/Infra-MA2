@@ -1,0 +1,274 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0230:next-wave-energy:b4bcb6ea",
+  "taskIndex": 230,
+  "companyName": "Next Wave Energy",
+  "generatedAt": "2026-08-29T11:02:19.704Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0230-next-wave-energy/attempt-1/authorization-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 230,
+    "taskId": "ledger:0230:next-wave-energy:b4bcb6ea",
+    "canonicalKey": "next-wave-energy|united-states",
+    "companyName": "Next Wave Energy",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 41,
+    "managers": [
+      "Energy Capital Partners"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "041-energy-capital-partners:holding:009:next-wave-energy"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://www.ecpgp.com/equity/portfolio/next-wave-energy-partners-lp",
+      "https://www.nextwaveenergy.com/about-us/our-partners"
+    ],
+    "candidateCanonicalKeys": [
+      "next-wave-energy-partners-lp|united-states"
+    ],
+    "rationale": "Only heuristic repository candidate(s) exist: next-wave-energy-partners-lp|united-states; no automatic merge was made. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Only heuristic repository candidate(s) exist: next-wave-energy-partners-lp|united-states; no automatic merge was made."
+    ]
+  },
+  "targetResolution": {
+    "method": "REVIEWED_SYMMETRIC_CANDIDATE",
+    "targetCompanyId": "cmrxpjdne00ufivheo8adf9nm",
+    "linkedQueueTaskId": "ledger:0484:next-wave-energy-partners-lp:e23ce6cf"
+  },
+  "resolvedCanonicalKey": "next-wave-energy|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjdne00ufivheo8adf9nm",
+    "name": "Next Wave Energy Partners, LP",
+    "aliases": [],
+    "sector": "MIDSTREAM",
+    "subsector": "Alkylate production, processing, and fuels logistics",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Next Wave Energy Partners develops, owns, and operates downstream and midstream assets focused on alkylate, natural gas liquids, petrochemicals, and related logistics services. Its customers include refiners, blenders, and other industrial counterparties that require toll processing, manufacturing, and logistics solutions for fuels and petrochemical value chains. The company follows an asset-heavy operating model centered on owned processing and terminal infrastructure rather than an advisory or marketing model. Its principal operating footprint is in the Houston Ship Channel area, where the company developed Project Traveler on a 53-acre site in Pasadena, Texas. ECP committed up to $500 million to the company in 2015, and the platform reached a major operating milestone when Project Traveler entered commercial operations in 2024.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2014,
+    "headquarters": "Texas",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjza701snivheqdjimc56",
+        "managerName": "ECP",
+        "organizationName": "ECP",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2015,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplhy403r6ivhej82u1uw3",
+        "date": "2014",
+        "event": "Next Wave Energy Partners, LP was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2014-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplhyo03r7ivheihj6p9gm",
+        "date": "Apr 14, 2015",
+        "event": "Next Wave announced an investment of up to $500 million from ECP.",
+        "category": "FINANCING",
+        "sortDate": "2015-04-14T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplhz803r8ivhexchato2g",
+        "date": "Nov 2019",
+        "event": "The company announced a final investment decision to build Project Traveler near the Houston Ship Channel.",
+        "category": "FINANCING",
+        "sortDate": "2019-11-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplhzs03r9ivhebfzw4g33",
+        "date": "Mar 2024",
+        "event": "Project Traveler entered commercial operations in Pasadena, Texas.",
+        "category": "EXPANSION",
+        "sortDate": "2024-03-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqmm309v3ivhexeiz62d0",
+        "label": "Nextwaveenergy — Next Wave Energy Partners, LP",
+        "url": "https://www.nextwaveenergy.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Nextwaveenergy company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqmna09v5ivheegc1j5co",
+        "label": "Nextwaveenergy — Next Wave Energy Partners, LP",
+        "url": "https://www.nextwaveenergy.com/about-us",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Nextwaveenergy company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqmoe09v7ivhe9r8n25sz",
+        "label": "Investment date source — ECP — Next Wave Energy Partners, LP",
+        "url": "https://www.nextwaveenergy.com/news/next-wave-energy-partners-announces-investment-500-million-energy-capital-partners",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "ECP initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqmpj09v9ivhe6ealsom4",
+        "label": "Ecpgp — Next Wave Energy Partners, LP",
+        "url": "https://www.ecpgp.com/equity/portfolio/next-wave-energy",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Ecpgp operations / asset details",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Next Wave Energy Partners, LP",
+    "investmentFirm": "ECP",
+    "sector": "Midstream",
+    "subsector": "Alkylate production, processing, and fuels logistics",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "Next Wave Energy Partners develops, owns, and operates downstream and midstream assets focused on alkylate, natural gas liquids, petrochemicals, and related logistics services. Its customers include refiners, blenders, and other industrial counterparties that require toll processing, manufacturing, and logistics solutions for fuels and petrochemical value chains. The company follows an asset-heavy operating model centered on owned processing and terminal infrastructure rather than an advisory or marketing model. Its principal operating footprint is in the Houston Ship Channel area, where the company developed Project Traveler on a 53-acre site in Pasadena, Texas. ECP committed up to $500 million to the company in 2015, and the platform reached a major operating milestone when Project Traveler entered commercial operations in 2024.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2014,
+    "investmentYear": 2015,
+    "headquarters": "Texas",
+    "milestones": [
+      {
+        "date": "2014",
+        "event": "Next Wave Energy Partners, LP was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "Apr 14, 2015",
+        "event": "Next Wave announced an investment of up to $500 million from ECP.",
+        "category": "Financing"
+      },
+      {
+        "date": "Nov 2019",
+        "event": "The company announced a final investment decision to build Project Traveler near the Houston Ship Channel.",
+        "category": "Financing"
+      },
+      {
+        "date": "Mar 2024",
+        "event": "Project Traveler entered commercial operations in Pasadena, Texas.",
+        "category": "Expansion"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Nextwaveenergy — Next Wave Energy Partners, LP",
+        "url": "https://www.nextwaveenergy.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Nextwaveenergy — Next Wave Energy Partners, LP",
+        "url": "https://www.nextwaveenergy.com/about-us",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Investment date source — ECP — Next Wave Energy Partners, LP",
+        "url": "https://www.nextwaveenergy.com/news/next-wave-energy-partners-announces-investment-500-million-energy-capital-partners",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Ecpgp — Next Wave Energy Partners, LP",
+        "url": "https://www.ecpgp.com/equity/portfolio/next-wave-energy",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "ECP",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2015,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpii7l004zivhe9bvhh5r5",
+        "name": "ECP",
+        "updatedAt": "2026-07-23T16:09:30.801Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0230:next-wave-energy:b4bcb6ea",
+    "taskIndex": 230,
+    "canonicalKey": "next-wave-energy|united-states",
+    "capturedAt": "2026-08-29T11:02:19.704Z",
+    "databaseRevision": "revision:ac7d548a014147050c596b1d761a4dfa17999fe1c804b6d20c7b54c75b1c01cc",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "8216c00ad464d0b437a090b3917bbabac89d9f27d6da11788dc7a0e2d3e1cbf6",
+    "productionSnapshotSha256": "28ca16f5eaafc54fa8a6a5f69c26d4279c29f629069a17fc2c7bd674b1e340d1",
+    "targetCompanySnapshotSha256": "c77dcc51d988718328eaf3c6413d80be253c0df7ff520008e00cc8ddd0948010",
+    "seedEntrySha256": "738fb1dfb815470fdbbf190f1077031b898410abfae8ca2c39ab9ca53dd471b5",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "6eb2379deb8e2ae7eff2a747a72f4416e581a6a72b8bbbb2cb62abad77d84cc4",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "592a52bc18a9de4fb86a5d0e7fec2a9f373528b05a4401efa6036f9b6ba5b5ca",
+      "citationsSha256": "a1ca0f5fd23241fa7f9c7133031f4caaa9aba472e61cf5f60b6bbf928caf0662",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "8514f0618194ae1f6e9a1f078e490c3e4ebc049735735c4b01db40a045d6f79c",
+    "stateSha256": "26e4ed52b75e17e6deba67d2232fea96514e703240ede41107b9f9b45f4b7280",
+    "taskSnapshotSha256": "084f071711e662917a6b37f87faba70d924c15cb6dc14f797ad38725bd19570f"
+  },
+  "contextSha256": "36c0e6d21e3e63664cd5f872982d4b3884bf6f2ecccb21ee4691c20cbb5eef3c"
+}

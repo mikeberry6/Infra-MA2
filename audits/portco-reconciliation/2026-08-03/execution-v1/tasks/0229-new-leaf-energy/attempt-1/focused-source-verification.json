@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_FOCUSED_SOURCE_VERIFICATION",
+  "taskId": "ledger:0229:new-leaf-energy:321d604d",
+  "taskIndex": 229,
+  "companyName": "New Leaf Energy",
+  "verifiedAt": "2026-08-29T10:47:27.000Z",
+  "conclusion": "AFFIRMATIVE_WALSIN_EXIT",
+  "applicationBlocked": false,
+  "sources": [
+    {
+      "url": "https://www.walsin.com/wp-content/uploads/2023/02/2022-Annual-Report_EN.pdf",
+      "status": "OPEN_PDF_VISUALLY_VERIFIED",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "contentSha256": "733f01adcfc91036fc5b8f3e8acad0e2a4933e1280315b930bc9b48e2ea6efed",
+      "visualPage": 274,
+      "claim": "Audited transaction table separates the 1,371,729-share ECP disposal from the 88,729-share contribution to Walsin America; note 4 identifies the contribution as part of establishing and capitalizing Walsin America."
+    },
+    {
+      "url": "https://www.marketscreener.com/quote/stock/WALSIN-LIHWA-CORPORATION-6492359/news/Walsin-Lihwa-Announcement-for-Walsin-America-LLC-sell-all-of-its-2022-Solar-Development-Inc-share-40531297/",
+      "status": "OPEN_FULL_ISSUER_DISCLOSURE_REPRODUCTION",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "claim": "May 24 issuer disclosure states that Walsin America would sell all 2022 Solar Development shares back to the issuer and that actual figures would follow completion."
+    },
+    {
+      "url": "https://news.cnyes.com/news/id/4977294",
+      "status": "OPEN_FULL_ISSUER_DISCLOSURE_REPRODUCTION",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "claim": "October 12 supplemental disclosure reports the actual completed transaction as all 88,729 shares, approximately US$175.05 per share and approximately US$15.532 million total consideration."
+    },
+    {
+      "url": "https://www.ecpgp.com/equity/portfolio/new-leaf-energy",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "claim": "ECP currently lists New Leaf as a Current July 2022 investment."
+    },
+    {
+      "url": "https://www.ecpgp.com/about/news-and-insights/press-releases/2022/borrego-completes-spin-off-and-sale-of-solar-and-energy-storage-development-business-to-ecp",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "claim": "ECP and Borrego announced completion of the New Leaf carve-out and sale on July 28, 2022."
+    }
+  ],
+  "independentReview": "The PDF table was rendered and inspected rather than inferred from extracted column text. The official MOPS archive did not expose a stable permalink; the May and October issuer filings were cross-checked through separate full reproductions and reconciled to Walsin's audited report.",
+  "result": "PASS"
+}

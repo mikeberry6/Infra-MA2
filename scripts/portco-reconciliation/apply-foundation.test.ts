@@ -54,11 +54,13 @@ describe("approved ownership organization provisioning", () => {
     expect(ownershipOrganizationTypes("BC Partners")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("Canadian Business Growth Fund")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("Capital Power Corporation")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("Continental Grain Company")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Cresta Fund Management")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("Cox Enterprises")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("CSG Investments, Inc.")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Donato Ardellini")).toEqual(["OTHER"]);
     expect(ownershipOrganizationTypes("Energy Transfer LP")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("Enlightened Hospitality Investments")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("Eolian employees")).toEqual(["OTHER"]);
     expect(ownershipOrganizationTypes("ePointZero")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Eversource Energy")).toEqual(["CORPORATE"]);
@@ -69,6 +71,7 @@ describe("approved ownership organization provisioning", () => {
     expect(ownershipOrganizationTypes("HPS Investment Partners")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("Harvestone Group")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("GFL Environmental Inc.")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("Jeff Canon and PROENERGY management")).toEqual(["OTHER"]);
     expect(ownershipOrganizationTypes("Kinder Morgan, Inc.")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("MAP Energy, LLC")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("MGX")).toEqual(["FUND_MANAGER"]);
@@ -85,6 +88,10 @@ describe("approved ownership organization provisioning", () => {
     expect(ownershipOrganizationTypes("Ingka Investments")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Koninklijke Vopak N.V.")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Occidental Petroleum Corporation")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("ACON Investments")).toEqual(["FUND_MANAGER"]);
+    expect(ownershipOrganizationTypes("Eos Partners, L.P.")).toEqual(["FUND_MANAGER"]);
+    expect(ownershipOrganizationTypes("TCA Fund Management Group Corp.")).toEqual(["FUND_MANAGER"]);
+    expect(ownershipOrganizationTypes("Walsin Lihwa Corporation")).toEqual(["CORPORATE"]);
   });
 
   it("provisions only exact approved missing owner organizations during the protected apply phase", async () => {
@@ -94,11 +101,13 @@ describe("approved ownership organization provisioning", () => {
       ["BC Partners", "FUND_MANAGER"],
       ["Canadian Business Growth Fund", "FUND_MANAGER"],
       ["Capital Power Corporation", "CORPORATE"],
+      ["Continental Grain Company", "CORPORATE"],
       ["Cresta Fund Management", "FUND_MANAGER"],
       ["Cox Enterprises", "CORPORATE"],
       ["CSG Investments, Inc.", "CORPORATE"],
       ["Donato Ardellini", "OTHER"],
       ["Energy Transfer LP", "CORPORATE"],
+      ["Enlightened Hospitality Investments", "FUND_MANAGER"],
       ["Eolian employees", "OTHER"],
       ["ePointZero", "CORPORATE"],
       ["Eversource Energy", "CORPORATE"],
@@ -107,6 +116,7 @@ describe("approved ownership organization provisioning", () => {
       ["Ferrovial N.V.", "CORPORATE"],
       ["GE Renewable Energy", "CORPORATE"],
       ["GFL Environmental Inc.", "CORPORATE"],
+      ["Jeff Canon and PROENERGY management", "OTHER"],
       ["HPS Investment Partners", "FUND_MANAGER"],
       ["Harvestone Group", "CORPORATE"],
       ["Kinder Morgan, Inc.", "CORPORATE"],
@@ -122,6 +132,10 @@ describe("approved ownership organization provisioning", () => {
       ["TotalEnergies", "CORPORATE"],
       ["XRG P.J.S.C.", "CORPORATE"],
       ["Énergir L.P.", "CORPORATE"],
+      ["ACON Investments", "FUND_MANAGER"],
+      ["Eos Partners, L.P.", "FUND_MANAGER"],
+      ["TCA Fund Management Group Corp.", "FUND_MANAGER"],
+      ["Walsin Lihwa Corporation", "CORPORATE"],
     ] as const) {
       const create = vi.fn().mockResolvedValue({
         id: `org-${name}`,

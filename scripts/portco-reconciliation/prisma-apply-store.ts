@@ -239,12 +239,14 @@ const approvedOwnershipOrganizationProvisioning = {
   "BC Partners": "FUND_MANAGER",
   "Canadian Business Growth Fund": "FUND_MANAGER",
   "Capital Power Corporation": "CORPORATE",
+  "Continental Grain Company": "CORPORATE",
   "Cresta Fund Management": "FUND_MANAGER",
   "Crestview Partners": "FUND_MANAGER",
   "Cox Enterprises": "CORPORATE",
   "CSG Investments, Inc.": "CORPORATE",
   "Donato Ardellini": "OTHER",
   "Energy Transfer LP": "CORPORATE",
+  "Enlightened Hospitality Investments": "FUND_MANAGER",
   "Angeleno Group": "FUND_MANAGER",
   "Avolta, LLC": "CORPORATE",
   "Borrego Energy": "CORPORATE",
@@ -256,6 +258,7 @@ const approvedOwnershipOrganizationProvisioning = {
   "Ferrovial N.V.": "CORPORATE",
   "GE Renewable Energy": "CORPORATE",
   "GFL Environmental Inc.": "CORPORATE",
+  "Jeff Canon and PROENERGY management": "OTHER",
   "HPS Investment Partners": "FUND_MANAGER",
   "Harvestone Group": "CORPORATE",
   "Kinder Morgan, Inc.": "CORPORATE",
@@ -276,6 +279,10 @@ const approvedOwnershipOrganizationProvisioning = {
   "Invenergy": "CORPORATE",
   "Koninklijke Vopak N.V.": "CORPORATE",
   "Occidental Petroleum Corporation": "CORPORATE",
+  "ACON Investments": "FUND_MANAGER",
+  "Eos Partners, L.P.": "FUND_MANAGER",
+  "TCA Fund Management Group Corp.": "FUND_MANAGER",
+  "Walsin Lihwa Corporation": "CORPORATE",
 } as const;
 
 export function ownershipOrganizationTypes(

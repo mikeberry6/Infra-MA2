@@ -1,0 +1,505 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_MANIFEST",
+  "methodologyVersion": "PORTCO_APPLY_BATCH_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0229-0233-v1",
+  "createdAt": "2026-08-29T11:06:00.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "543ece02d930bd7e62f77fe2c60a02ecbeba028f7fafc8a17cd412a810bbfd53"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0229:new-leaf-energy:321d604d",
+      "taskIndex": 229,
+      "companyName": "New Leaf Energy",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0229-new-leaf-energy-v1/proposal.json",
+        "sha256": "88b11933d876dd0bc823d8b0972cc7f7eab77b30701e486e0f3cabd15de71b31"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0229-new-leaf-energy-v1.json",
+        "sha256": "ee644c657f412faa5f0b2f7d20495f04f22ccfeb80634877316247c70ac86fac"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0229-new-leaf-energy/attempt-1/locked-production-snapshot.json",
+        "sha256": "68cb13a5c2747b736f00dfb4ab5f06c78fd2165053d539cf7dd36d63f1ef46a3"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0229-new-leaf-energy/attempt-1/locked-task-snapshot.json",
+        "sha256": "5f7113ec5d6e799fa3a0184be09eb30ddb632cd42393ee15f4f54f0431bb2462"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0229-new-leaf-energy/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "9b1bc9c723433b8712436407a1c7a50b905f89c9ec01067b9eb5c715aeb16c12"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0229-new-leaf-energy/attempt-1/application-research-decision.json",
+        "sha256": "badd7e6e7ddb3c52d6589205c411242f7633de1ce2e8c2aab804c57b59ccc432"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0229-new-leaf-energy/attempt-1/focused-source-verification.json",
+        "sha256": "517e50dce15dcadab46b4b50aa48ab6de65cf8970ffda1e03eba1724f2939e38"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "a4990545ff00f20f17dbb45ad89f7d4884182fd6daa332ad10a5056a3c0374d5",
+      "dependencySha256": "4c82d98a3e25b645c5d1a8df006a2ecd19fe285227db28563222707dc87d6ca6",
+      "afterImageSha256": "d523e4daaf44b895ece4591272284a43ca9fde827f3e682dd51c8a751b369762",
+      "targetClaims": [
+        "canonical:new-leaf-energy|united-states",
+        "company:cmrxpjdmu00ueivhetif6v25s",
+        "relation:cmrxpjz9o01smivhe6emw3bll",
+        "relation:cmrxplhvw03r3ivhenm07kqq0",
+        "relation:cmrxplhwg03r4ivheuyrg0blc",
+        "relation:cmrxplhx003r5ivhe58w18bpt",
+        "relation:cmrxpqmf609uvivhee3k899rc",
+        "relation:cmrxpqmg609uxivhexyj01o12",
+        "relation:cmrxpqmjr09uzivheptvsds64",
+        "relation:cmrxpqml409v1ivheu865zwq8",
+        "seed:new leaf energy|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=8059b991-0000-c9a4-91d5-1de81d715cc8",
+          "label": "New York DPS — New Leaf formation and merger certificates",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://newleafenergy.com/",
+          "label": "Newleafenergy — New Leaf Energy",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://newleafenergy.com/about/",
+          "label": "Newleafenergy — New Leaf Energy",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://news.cnyes.com/news/id/4977294",
+          "label": "Cnyes — Walsin October 2022 supplemental disclosure",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.ecpgp.com/about/news-and-insights/press-releases/2022/borrego-completes-spin-off-and-sale-of-solar-and-energy-storage-development-business-to-ecp",
+          "label": "Close date source — ECP — New Leaf Energy",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.ecpgp.com/equity/portfolio/new-leaf-energy",
+          "label": "Ecpgp — New Leaf Energy",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.marketscreener.com/quote/stock/WALSIN-LIHWA-CORPORATION-6492359/news/Walsin-Lihwa-Announcement-for-Walsin-America-LLC-sell-all-of-its-2022-Solar-Development-Inc-share-40531297/",
+          "label": "MarketScreener — Walsin May 2022 material disclosure",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.walsin.com/en/walsin-lihwa-corporation-announced-the-sale-of-its-u-s-solar-development-business-to-ecp-for-restructuring-its-business-strategy-of-green-energy/",
+          "label": "Walsin Lihwa — New Leaf sale announcement",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.walsin.com/wp-content/uploads/2023/02/2022-Annual-Report_EN.pdf",
+          "label": "Walsin Lihwa — 2022 Annual Report",
+          "sourceType": "PRESENTATION"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0230:next-wave-energy:b4bcb6ea",
+      "taskIndex": 230,
+      "companyName": "Next Wave Energy",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0230-next-wave-energy-v1/proposal.json",
+        "sha256": "1914585453e0b4a6f781cb1fbdf09ff53c91f93222290a3105538d124d303ebd"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0230-next-wave-energy-v1.json",
+        "sha256": "62541e8d8cf607912f92a584981eab37810456a5b0c600361492e1030e5067d5"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0230-next-wave-energy/attempt-1/locked-v2-production-snapshot.json",
+        "sha256": "d6b4f0103e89c7e0217d80dfa41845180666083ba28c8c1a08735954784ea3c7"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0230-next-wave-energy/attempt-1/locked-v2-task-snapshot.json",
+        "sha256": "7ea6891919cdc8763897aead90fbb151d0152146ee14db4925e1ed4782c21858"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0230-next-wave-energy/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "084f071711e662917a6b37f87faba70d924c15cb6dc14f797ad38725bd19570f"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0230-next-wave-energy/attempt-1/application-research-decision.json",
+        "sha256": "f08117ccc5dec0000addbb45737ed5c70d724d0ef1658dfbfb90a6a0688f7715"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0230-next-wave-energy/attempt-1/source-verification.json",
+        "sha256": "7640bdcccb5c35d9b5fadb163b5a5ac198e6f14807a5227c75f4dc1441397849"
+      },
+      "supersededTaskIds": [
+        "ledger:0484:next-wave-energy-partners-lp:e23ce6cf"
+      ],
+      "taskStateSha256": "26e4ed52b75e17e6deba67d2232fea96514e703240ede41107b9f9b45f4b7280",
+      "dependencySha256": "8514f0618194ae1f6e9a1f078e490c3e4ebc049735735c4b01db40a045d6f79c",
+      "afterImageSha256": "9e8229ca3029e8f38db4ea1b347f62fc8ad824bc2d50f1c749cf508d0f77e0b0",
+      "targetClaims": [
+        "canonical:next-wave-energy|united-states",
+        "company:cmrxpjdne00ufivheo8adf9nm",
+        "relation:cmrxpjza701snivheqdjimc56",
+        "relation:cmrxplhy403r6ivhej82u1uw3",
+        "relation:cmrxplhyo03r7ivheihj6p9gm",
+        "relation:cmrxplhz803r8ivhexchato2g",
+        "relation:cmrxplhzs03r9ivhebfzw4g33",
+        "relation:cmrxpqmm309v3ivhexeiz62d0",
+        "relation:cmrxpqmna09v5ivheegc1j5co",
+        "relation:cmrxpqmoe09v7ivhe9r8n25sz",
+        "relation:cmrxpqmpj09v9ivhe6ealsom4",
+        "seed:next wave energy partners, lp|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://www.ecpgp.com/about/news-and-insights/press-releases/2020/energy-capital-partners-raises-68-billion-for-fund-iv-and-co-investment-pools",
+          "label": "ECP — Fund IV closing announcement",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.ecpgp.com/equity/portfolio/next-wave-energy",
+          "label": "Ecpgp — Next Wave Energy Partners, LP",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.ecpgp.com/equity/portfolio/next-wave-energy-partners-lp",
+          "label": "ECP — Next Wave Energy Partners",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.nextwaveenergy.com/",
+          "label": "Nextwaveenergy — Next Wave Energy Partners, LP",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.nextwaveenergy.com/about-us",
+          "label": "Nextwaveenergy — Next Wave Energy Partners, LP",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.nextwaveenergy.com/news/next-wave-energy-partners-announces-investment-500-million-energy-capital-partners",
+          "label": "Investment date source — ECP — Next Wave Energy Partners, LP",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.nextwaveenergy.com/news/next-wave-energy-partners-build-ethylene-alkylate-production-facility-near-houston-ship",
+          "label": "Next Wave — Project Traveler final investment decision",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1868275/000186827526000037/cpn_12312025financialsfo.htm",
+          "label": "Calpine — 2025 financial statements",
+          "sourceType": "SEC_FILING"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0231:pivot-energy:e0f42706",
+      "taskIndex": 231,
+      "companyName": "Pivot Energy",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0231-pivot-energy-v1/proposal.json",
+        "sha256": "c66c82c03b6177faf9e8969cd6e08a56bf6b946df96f21d109267e976c39fc28"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0231-pivot-energy-v1.json",
+        "sha256": "d3d38ca38a494f2de379c736b0826906ccc0c354600b925923d966a0645604b7"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0231-pivot-energy/attempt-1/locked-production-snapshot.json",
+        "sha256": "ba76424de8ddfcfb16e9dd0a7e5556fed3228262f3602be3dc969920ecc75a65"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0231-pivot-energy/attempt-1/locked-task-snapshot.json",
+        "sha256": "da12620a707b2d7feb7cbb63ba4039b3e4da2b5f77859a9f836b36615a032362"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0231-pivot-energy/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "47e245ec27aa5e23ff373873faf1421d89b82efb02d6ff99a3dd8557a89eb411"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0231-pivot-energy/attempt-1/application-research-decision.json",
+        "sha256": "6d3fc738c94a19c4d9961c25ccc5ca04e79fd1fbaa468f79386cd726774cae97"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0231-pivot-energy/attempt-1/source-verification.json",
+        "sha256": "c0829f4223ed7d7a4cad0b12cdaa392fc2406ea4fa49fb6e84fe8a40d9e5019b"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "d1dd025293920081ff9db74d76fba603f4b1f7b0f7c67966bde556cb04509f99",
+      "dependencySha256": "35ef9c9c2db77133f0f1bd82a11da8cf00a165645b564b060f34bccec3b34aef",
+      "afterImageSha256": "300624ab81b876bccd8caed2db15ded67e584bbac177152e5d7bc0143c1686b8",
+      "targetClaims": [
+        "canonical:pivot-energy|united-states",
+        "company:cmrxpjdnz00ugivhezk5dzw98",
+        "relation:cmrxpjzar01soivheky8l1tl7",
+        "relation:cmrxpli3c03raivhefel1qia4",
+        "relation:cmrxpli3s03rbivhem2dt6z3u",
+        "relation:cmrxpli4d03rcivhe6rlaqzte",
+        "relation:cmrxpli4s03rdivhekh7c5yic",
+        "relation:cmrxpli5h03reivhecajb5rh2",
+        "relation:cmrxpqmqf09vbivhe3am9mwe4",
+        "relation:cmrxpqmrc09vdivheqeqnbtfv",
+        "relation:cmrxpqmsj09vfivhe7a7w0rbq",
+        "relation:cmrxpqmtl09vhivhef12wxrm5",
+        "seed:pivot energy|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://ionanalytics.com/insights/mergermarket/ecp-hires-evercore-for-pivot-energy-stake-sale/",
+          "label": "Mergermarket — Pivot Energy stake-sale process",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.ecpgp.com/about/news-and-insights/press-releases/2021/ecp-announces-acquisition-of-pivot-energy",
+          "label": "Close date source — ECP — Pivot Energy",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.ecpgp.com/equity/portfolio/pivot-energy",
+          "label": "ECP — Pivot Energy portfolio",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.pivotenergy.net/",
+          "label": "Pivotenergy — Pivot Energy",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.pivotenergy.net/about-us",
+          "label": "Pivotenergy — Pivot Energy",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.pivotenergy.net/blog/2025-year-in-review",
+          "label": "Pivot Energy — 2025 year in review",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.pivotenergy.net/energy-capital-partners",
+          "label": "Pivotenergy — Pivot Energy",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.pivotenergy.net/news-releases/pivot-energy-collaborates-with-microsoft-to-develop-up-to-500-mwac-of-community-scale-solar-projects-that-will-deliver-significant-benefits-to-local-communities",
+          "label": "Pivot Energy — Microsoft development framework",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.tcafundreceivership.com/docs/DE141FourthQStatRep.pdf",
+          "label": "TCA Receiver — Fourth Quarterly Status Report",
+          "sourceType": "OTHER"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0232:proenergy:f5e9cdb0",
+      "taskIndex": 232,
+      "companyName": "PROENERGY",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0232-proenergy-v1/proposal.json",
+        "sha256": "3623e93476b50a6ef2646e7aa491d681ba82537782e973f16ec0698541a83504"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0232-proenergy-v1.json",
+        "sha256": "92252f0c1f2ccaa6713e7130435af2c353d18ea4168e94681fccbba50336bc62"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0232-proenergy/attempt-1/locked-v2-production-snapshot.json",
+        "sha256": "ea9d5a9b7824c0ceadba0f3827f2f9937d2958a04356c0a68be151c42d02a857"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0232-proenergy/attempt-1/locked-v2-task-snapshot.json",
+        "sha256": "18051624c613e6421fa5c6f1adc4e61ec20341aa3629b2dc0cbb0ffbebb3e086"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0232-proenergy/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "35c764843bed47b58b636d924adba3ba1adb6097605bd9583a795ea42070aeea"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0232-proenergy/attempt-1/application-research-decision.json",
+        "sha256": "c34b57b8e194307dc17bb027d216318adbee66759fc8932b1804ac0a7877a253"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0232-proenergy/attempt-1/source-verification.json",
+        "sha256": "f89caff514ef40556a5698a5f3ab938b7f048d82fd9228ccabe4d55eb16179ec"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "161d4a4602ef2f89729aae494b97a66aba78078e247a6fc9d8c8fe61ee3f6cee",
+      "dependencySha256": "a4d6e71f9a51cd1544d529418e9b01650e5a5a9d3a9b9cd4899190d1d6033056",
+      "afterImageSha256": "00ec5566fe023823e56d8dcda8d70621662589e3e934feb6876c2ce7134e62e1",
+      "targetClaims": [
+        "canonical:proenergy|united-states",
+        "company:cmrxpjdoi00uhivhenpf9ydgf",
+        "relation:cmrxpjzba01spivhee3vel7bc",
+        "relation:cmrxpli6g03rfivhe2rt6m6fe",
+        "relation:cmrxpli7003rgivhez503qu0h",
+        "relation:cmrxpli7f03rhivhe7d18j2fa",
+        "relation:cmrxpqmuo09vjivhercjsyg92",
+        "relation:cmrxpqmxw09vlivhexw55ii6l",
+        "relation:cmrxpqmzi09vnivheohkqgpkl",
+        "relation:cmrxpqn5209vpivhe3k5an1pr",
+        "seed:proenergy|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://aconinvestments.com/news/proenergy-holdings-receives-equity-financing/",
+          "label": "ACON Investments — PROENERGY financing",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://newsroom.cpsenergy.com/cps-energy-closes-on-previously-announced-acquisition-of-1632-megawatt-power-generation-portfolio-in-southeast-texas/",
+          "label": "CPS Energy — PROENERGY plant acquisition closing",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.bridgepointgroup.com/content/dam/bridgepoint/corporate2022/documents/financial-information/results_reports_presentations/2026/bridgepoint-group-interim-results-2026-announcement.pdf.downloadasset.pdf",
+          "label": "Bridgepoint — 2026 interim results",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://www.ecpgp.com/about/news-and-insights/press-releases/2024/energy-capital-partners--ecp--acquires-majority-interest-in-proe",
+          "label": "Announcement date source — ECP — PROENERGY",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.ecpgp.com/equity/portfolio/proenergy",
+          "label": "Investment date source — ECP — PROENERGY",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.proenergyservices.com/",
+          "label": "Proenergyservices — PROENERGY",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.proenergyservices.com/2026/04/proenergy-closes-agreement-with-south-texas-electric-cooperative-to-divest-braes-bayou-and-brotman-generating-stations/",
+          "label": "PROENERGY — STEC plant sale closing",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.proenergyservices.com/meet-the-pros/about-us/",
+          "label": "Proenergyservices — PROENERGY",
+          "sourceType": "WEBSITE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0233:restaurant-technologies-inc:d0e001f6",
+      "taskIndex": 233,
+      "companyName": "Restaurant Technologies, Inc.",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0233-restaurant-technologies-inc-v1/proposal.json",
+        "sha256": "a29e25f9b897c2b7ed6d9432897583746ad11d212832d45ce45211a1d87e7696"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0233-restaurant-technologies-inc-v1.json",
+        "sha256": "582187eeae0ea940b940a7ff72f836c3098fc169bff13794f78f4e09749b1745"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0233-restaurant-technologies-inc/attempt-1/locked-v2-production-snapshot.json",
+        "sha256": "be89d54143f92e6bb205040f7b9a13137651c7dbfa4fa84bbd9f7ff7788803b9"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0233-restaurant-technologies-inc/attempt-1/locked-v2-task-snapshot.json",
+        "sha256": "708c9af10c309085bd2c5b0b471a46d5d13227bd530bd51a7c3ae88c0f4f3f03"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0233-restaurant-technologies-inc/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "382ed7a181b037599240b1cb40491a854a9f4767fb92e80357f212f51013cfd6"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0233-restaurant-technologies-inc/attempt-1/application-research-decision.json",
+        "sha256": "0f2c56590291be3edf454a56323c8e2e2b6e1723e4975f4e744c144b3607a62f"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0233-restaurant-technologies-inc/attempt-1/source-verification.json",
+        "sha256": "e18546ef03a5d2c043921cb19bc7f010d5c9bf7c88b0a92a2c6b0ba3f233d53e"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "b389aa71bfbcac8de77370fac8b5abe2f5406dea3a731d5674cfc1ed397463fb",
+      "dependencySha256": "6ddded022126e4ed7913c19d250965605ada3c146fb595ccf7206c61c2694287",
+      "afterImageSha256": "279edfb1fe7b0d8c3a9d9546a926b238f56ff602c8fe12228f36b6272699b117",
+      "targetClaims": [
+        "canonical:restaurant-technologies-inc|united-states",
+        "company:cmrxpjdp200uiivheb3y5869n",
+        "relation:cmrxpjzbw01sqivheqo2vhw6z",
+        "relation:cmrxpli8j03riivhem74k2ita",
+        "relation:cmrxpli9403rjivhezh0zeb7c",
+        "relation:cmrxpli9o03rkivhe3fglmwih",
+        "relation:cmrxpqn6709vrivhe2dzcennx",
+        "relation:cmrxpqn7f09vtivhe4pijx635",
+        "relation:cmrxpqn8c09vvivhel4u67a8n",
+        "relation:cmrxpqn9b09vxivhewro5o18k",
+        "seed:restaurant technologies, inc.|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://hl.com/about-us/transactions/houlihan-lokey-advises-restaurant-technologies/",
+          "label": "Houlihan Lokey — Restaurant Technologies transaction",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.cahill.com/news/firm-news/2022-04-01-cahill-represents-lead-arrangers-in-910-million-green-loan-credit-facilities-for-ecp-acquisition-of-restaurant-technologies-inc",
+          "label": "Cahill — Restaurant Technologies acquisition financing",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.ecpgp.com/about/news-and-insights/press-releases/2022/ecp-to-acquire-restaurant-technologies-from-goldman-sachs-asset-management-as-sustainability-initiatives-move-to-the-forefront-of-restaurant-management",
+          "label": "Announcement date source — ECP — Restaurant Technologies, Inc.",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.ecpgp.com/equity/portfolio/restaurant-technologies-inc",
+          "label": "Investment date source — ECP — Restaurant Technologies, Inc.",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.rti-inc.com/",
+          "label": "Rti Inc — Restaurant Technologies, Inc.",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.rti-inc.com/about-rti/board-of-directors/",
+          "label": "Restaurant Technologies — Board of Directors",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.rti-inc.com/news-and-media/",
+          "label": "Rti Inc — Restaurant Technologies, Inc.",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.rti-inc.com/wp-content/uploads/2022/10/RT_2022_ESGReport.pdf",
+          "label": "Restaurant Technologies — 2022 ESG Report",
+          "sourceType": "PRESENTATION"
+        }
+      ]
+    }
+  ],
+  "collisionAnalysis": {
+    "independent": true,
+    "claimsSha256": "68c7e10f2daeefe752553649fa10c96176174f3a3b9fef72c71cf47c581d0afa",
+    "sharedSourceUrls": [],
+    "conflicts": []
+  },
+  "batchSha256": "0029d3f39ef468adf60e5a3a56b25636fab172ec3a4e8482753db11ed9b3cbf7"
+}

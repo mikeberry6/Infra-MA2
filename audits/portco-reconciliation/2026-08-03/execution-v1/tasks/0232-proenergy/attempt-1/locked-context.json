@@ -1,0 +1,270 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0232:proenergy:f5e9cdb0",
+  "taskIndex": 232,
+  "companyName": "PROENERGY",
+  "generatedAt": "2026-08-29T10:35:24.865Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0232-proenergy/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 232,
+    "taskId": "ledger:0232:proenergy:f5e9cdb0",
+    "canonicalKey": "proenergy|united-states",
+    "companyName": "PROENERGY",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 41,
+    "managers": [
+      "Energy Capital Partners"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "041-energy-capital-partners:holding:011:proenergy"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjdoi00uhivhenpf9ydgf"
+    ],
+    "seedKeys": [
+      "proenergy|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.ecpgp.com/equity/portfolio",
+      "https://www.proenergyservices.com/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_OWNER requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjdoi00uhivhenpf9ydgf",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "proenergy|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjdoi00uhivhenpf9ydgf",
+    "name": "PROENERGY",
+    "aliases": [],
+    "sector": "UTILITIES",
+    "subsector": "Fast-start gas generation equipment, services, and contracted power",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "PROENERGY manufactures, services, and operates aeroderivative power generation equipment and related contracted generation assets for utilities, municipalities, data centers, and industrial customers. Its business spans turbine and package manufacturing, turnkey project execution, contracted power, and lifecycle maintenance, which gives the company exposure to both equipment and operating infrastructure cash flows. The operating model is asset-heavy and service-intensive, with revenue supported by long-lived power assets, maintenance contracts, and engineered equipment delivery. Public disclosures tie the platform to headquarters and manufacturing operations in Sedalia, Missouri and to the WattBridge portfolio of approximately 2.4 gigawatts of contracted gas peaking capacity in ERCOT. ECP acquired a majority stake in 2024, positioning the company around fast-start generation, aero services, and flexible power solutions.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2002,
+    "headquarters": "Missouri and Texas",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjzba01spivhee3vel7bc",
+        "managerName": "Energy Capital Partners",
+        "organizationName": "ECP",
+        "fundName": "ECP Fund V",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpli6g03rfivhe2rt6m6fe",
+        "date": "2002",
+        "event": "PROENERGY was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2002-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpli7003rgivhez503qu0h",
+        "date": "2024",
+        "event": "ECP's transaction disclosure highlighted the inclusion of the WattBridge portfolio in ERCOT.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpli7f03rhivhe7d18j2fa",
+        "date": "Aug 2024",
+        "event": "ECP acquired a majority stake in PROENERGY.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-08-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqmuo09vjivhercjsyg92",
+        "label": "Proenergyservices — PROENERGY",
+        "url": "https://www.proenergyservices.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Proenergyservices company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqmxw09vlivhexw55ii6l",
+        "label": "Proenergyservices — PROENERGY",
+        "url": "https://www.proenergyservices.com/meet-the-pros/about-us/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Proenergyservices company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqmzi09vnivheohkqgpkl",
+        "label": "Announcement date source — ECP — PROENERGY",
+        "url": "https://www.ecpgp.com/about/news-and-insights/press-releases/2024/energy-capital-partners--ecp--acquires-majority-interest-in-proe",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "ECP transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqn5209vpivhe3k5an1pr",
+        "label": "Investment date source — ECP — PROENERGY",
+        "url": "https://www.ecpgp.com/equity/portfolio/proenergy",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "ECP initial investment / ownership",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "PROENERGY",
+    "investmentFirm": "ECP",
+    "sector": "Utilities",
+    "subsector": "Fast-start gas generation equipment, services, and contracted power",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "PROENERGY manufactures, services, and operates aeroderivative power generation equipment and related contracted generation assets for utilities, municipalities, data centers, and industrial customers. Its business spans turbine and package manufacturing, turnkey project execution, contracted power, and lifecycle maintenance, which gives the company exposure to both equipment and operating infrastructure cash flows. The operating model is asset-heavy and service-intensive, with revenue supported by long-lived power assets, maintenance contracts, and engineered equipment delivery. Public disclosures tie the platform to headquarters and manufacturing operations in Sedalia, Missouri and to the WattBridge portfolio of approximately 2.4 gigawatts of contracted gas peaking capacity in ERCOT. ECP acquired a majority stake in 2024, positioning the company around fast-start generation, aero services, and flexible power solutions.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2002,
+    "investmentYear": 2024,
+    "headquarters": "Missouri and Texas",
+    "milestones": [
+      {
+        "date": "2002",
+        "event": "PROENERGY was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "2024",
+        "event": "ECP's transaction disclosure highlighted the inclusion of the WattBridge portfolio in ERCOT.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Aug 2024",
+        "event": "ECP acquired a majority stake in PROENERGY.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Proenergyservices — PROENERGY",
+        "url": "https://www.proenergyservices.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Proenergyservices — PROENERGY",
+        "url": "https://www.proenergyservices.com/meet-the-pros/about-us/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Announcement date source — ECP — PROENERGY",
+        "url": "https://www.ecpgp.com/about/news-and-insights/press-releases/2024/energy-capital-partners--ecp--acquires-majority-interest-in-proe",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Investment date source — ECP — PROENERGY",
+        "url": "https://www.ecpgp.com/equity/portfolio/proenergy",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "ECP",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2024,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj23s00d1ivhel30ncaa5",
+        "fundName": "ECP Fund V",
+        "managerId": "cmrxpi79j001jivhe2rmjalkq",
+        "updatedAt": "2026-07-23T16:09:56.584Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpii7l004zivhe9bvhh5r5",
+        "name": "ECP",
+        "updatedAt": "2026-07-23T16:09:30.801Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0232:proenergy:f5e9cdb0",
+    "taskIndex": 232,
+    "canonicalKey": "proenergy|united-states",
+    "capturedAt": "2026-08-29T10:35:24.865Z",
+    "databaseRevision": "revision:400120b60d371b989e0dd443a0581234a3b14069222f26f088b37ff34b5e0691",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "203cae6c0ded1ec9bd3aafa5f67438738b895f030b6881b9e9d4a5e73ed18ae9",
+    "productionSnapshotSha256": "24eb6efe22a212fc7102f812daf9f7a5dd8393e063929b842e1055fee05f5690",
+    "targetCompanySnapshotSha256": "60168a38a65fc3c50bfb6a3ac56e1ed97b2cdd835fbe189982a7086d2fe23832",
+    "seedEntrySha256": "f8bed8b6a3eec02ac47f238d6d56b668ad2d1f85addffb4c5c1cddddd6fd046b",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "b44ad5c4c09a010c23febe4a4171a958bca13d769e64949dbdfeb64fd995cfbc",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "cd20bf918111ea91d87de82c3607378a098a82d96d9ad9ef41dc65f122089cb0",
+      "organizationsSha256": "592a52bc18a9de4fb86a5d0e7fec2a9f373528b05a4401efa6036f9b6ba5b5ca",
+      "citationsSha256": "11dbc50d956f3096b17c6cdc55465072af1e3e9eb828316223eec9d3120d85c7",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "6c11e86114df2dd1b7cfcbc6e0ff1a57db9212df581438454fde53d8c88970d2",
+    "stateSha256": "c62a96a6576c3c13a399c7c45f98d929cdf0eaeb652949291ee98d644bc6942e",
+    "taskSnapshotSha256": "66169e5b0dfe74c8ffa912ce79e21becd72ab64aca50caf7f716d90d8e558382"
+  },
+  "contextSha256": "ff900ee5ef206136e885a386bda71147dda29a9be2b2e0d4288cf9f79b9e4164"
+}
