@@ -1,0 +1,362 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0222:anza-renewables:03b962a6",
+  "taskIndex": 222,
+  "asOfDate": "2026-08-29",
+  "generatedAt": "2026-08-29T08:16:02.000Z",
+  "canonicalKey": "anza-renewables|united-states",
+  "companyName": "Anza Renewables",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER"
+  ],
+  "sourceHoldingIds": [
+    "041-energy-capital-partners:holding:001:anza-renewables"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Correct the existing Anza record rather than creating a duplicate. Anza Renewables is the U.S. operating brand of Anza RE, LLC, headquartered in Oakland, not a Canadian platform. Record ECP's Energy Transition Opportunities Fund and Angeleno Group as current investors in the completed May 2023 separation, preserve Borrego Energy as the former owner, and leave the exact stakes, control, legal closing day and investor holding chain undisclosed.",
+  "evidence": [
+    {
+      "url": "https://www.anzarenewables.com/press-release/anza-completes-separation-from-borrego-and-receives-new-investment-from-energy-capital-partners-led-consortium-to-transform-solar-and-storage-procurement/",
+      "purpose": "Separation and current investors",
+      "supports": [
+        "Anza completed its separation from Borrego by May 17, 2023",
+        "ECP's Energy Transition Opportunities Fund and Angeleno Group invested in the separated platform"
+      ]
+    },
+    {
+      "url": "https://www.ecpgp.com/equity/portfolio/anza-renewables",
+      "purpose": "Current ECP ownership",
+      "supports": [
+        "ECP continues to list Anza as a current portfolio company",
+        "ECP reports a May 2023 investment"
+      ]
+    },
+    {
+      "url": "https://www.angelenogroup.com/portfolio/anza-renewables/",
+      "purpose": "Current co-investor and headquarters",
+      "supports": [
+        "Angeleno Group lists Anza as an active investment",
+        "The company is headquartered in Oakland, California"
+      ]
+    },
+    {
+      "url": "https://www.walsin.com/2024annual-report/files/pdf/en/0.%20%E8%8B%B1%E6%96%87%E5%AE%8C%E6%95%B4%E7%89%88.pdf",
+      "purpose": "Legal target and sale agreement",
+      "supports": [
+        "The legal target was Anza RE, LLC",
+        "The sale agreement was signed February 24, 2023 for US$26.74 million"
+      ]
+    },
+    {
+      "url": "https://www.anzarenewables.com/",
+      "purpose": "Current operating profile",
+      "supports": [
+        "Anza is an active U.S. solar, storage and transformer procurement platform"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "d96c3b2565fa030c74813f73eb7cb3a19e6b511a045aa322cb05b4c4c577aa64",
+  "currentCompanySnapshotSha256": "2cc298803a734fec53c5305473303342de1dd5194e0bbcd7c197fedff742fae4",
+  "executionLock": {
+    "taskSnapshotSha256": "84388c941ea6ee1ca951a33d08d866e7c0950d60a60ddc8efcde0938c9bd9d32",
+    "taskStateSha256": "4b9d66b2fa502260d28052a700c6c60a993e1afa3c6140f26e9b0fa9b18e252c",
+    "taskDependencySha256": "91507f2330a0ccf27ee29c68a23920c1720d5a8d16a5a9cc9c8302a94d41817d",
+    "seedEntrySha256": "757d1c3af8007024ee0b79b44934631c6169337644808a70ce3ed26abf23984a",
+    "dependencies": {
+      "ownershipPeriodsSha256": "cce76c9f083fa65ffca65af5511882907716a4b1ddb6408b4f898d59e8bc670a",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "cd20bf918111ea91d87de82c3607378a098a82d96d9ad9ef41dc65f122089cb0",
+      "organizationsSha256": "592a52bc18a9de4fb86a5d0e7fec2a9f373528b05a4401efa6036f9b6ba5b5ca",
+      "citationsSha256": "b877f8caf718eef3a5bbd3a17fd0222917f833793464c68b9890e097a29cb0ae",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj23s00d1ivhel30ncaa5",
+        "fundName": "ECP Fund V",
+        "managerId": "cmrxpi79j001jivhe2rmjalkq",
+        "updatedAt": "2026-07-23T16:09:56.584Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpii7l004zivhe9bvhh5r5",
+        "name": "ECP",
+        "updatedAt": "2026-07-23T16:09:30.801Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjdf000u4ivhe82f2fkli",
+    "name": "Anza Renewables, LLC",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Solar and storage procurement platform",
+    "region": "NORTH_AMERICA",
+    "country": "North America",
+    "countryTags": [
+      "United States",
+      "Canada"
+    ],
+    "description": "Anza provides a software-enabled marketplace and analytics platform used by solar and storage developers, independent power producers, and corporate energy buyers to source equipment. Its operating model is asset-light relative to power generation platforms, with revenues tied to subscription, transaction support, and procurement services rather than ownership of operating plants. The business focuses on helping customers evaluate module, inverter, and storage options using market data and comparative analytics. The company states that it was formally launched in 2022 and completed its separation from Borrego in 2023 with new backing from an Energy Capital Partners-led consortium that included Angeleno Group. Anza reported in early 2026 that its platform had supported more than 2 GW of solar safe-harbor procurements during 2025 and more than 9.2 GW of solar purchase orders over the prior five years.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2022,
+    "headquarters": "United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjz3p01sbivhe5nxkcfvj",
+        "managerName": "Energy Capital Partners",
+        "organizationName": "ECP",
+        "fundName": "ECP Fund V",
+        "vehicleName": "ECP-led consortium investment",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplh2x03q4ivhejrg9kkg8",
+        "date": "Sep 2022",
+        "event": "Anza was formally launched.",
+        "category": "EXPANSION",
+        "sortDate": "2022-09-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplh3h03q5ivhee1pszgtn",
+        "date": "May 17, 2023",
+        "event": "Anza completed its separation from Borrego and received new investment from an ECP / Energy Capital Partners-led consortium.",
+        "category": "FINANCING",
+        "sortDate": "2023-05-17T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplh4203q6ivhepse4lpls",
+        "date": "Feb 2026",
+        "event": "Anza published updated safe-harbor procurement activity and historical purchase-order data.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-02-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqknn09saivhemup1y1ew",
+        "label": "Anzarenewables — Anza Renewables, LLC",
+        "url": "https://www.anzarenewables.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Anzarenewables company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqkoq09scivhevdcju6i9",
+        "label": "Anzarenewables — Anza Renewables, LLC",
+        "url": "https://www.anzarenewables.com/about-us/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Anzarenewables company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqkpq09seivhe2hn07es0",
+        "label": "Investment date source — ECP — Anza Renewables, LLC",
+        "url": "https://www.anzarenewables.com/press-release/anza-completes-separation-from-borrego-and-receives-new-investment-from-energy-capital-partners-led-consortium-to-transform-solar-and-storage-procurement/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "ECP initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqkqr09sgivhebiw5xwpv",
+        "label": "Anzarenewables — Anza Renewables, LLC",
+        "url": "https://www.anzarenewables.com/press-release/anza-supports-over-2-gw-of-solar-safe-harbor-procurements-in-2025-helping-developers-preserve-itc-benefits-and-project-economics/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Anzarenewables operations / asset details",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "2cc298803a734fec53c5305473303342de1dd5194e0bbcd7c197fedff742fae4",
+  "afterImage": {
+    "id": "cmrxpjdf000u4ivhe82f2fkli",
+    "name": "Anza Renewables",
+    "aliases": [
+      "Anza",
+      "Anza RE, LLC",
+      "Anza Renewables, LLC"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Solar and storage procurement platform",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Anza Renewables is the operating brand of Anza RE, LLC, a U.S. software-enabled procurement, data and analytics platform serving solar and battery-storage developers, independent power producers and other energy buyers. Its tools support module, inverter, storage and transformer sourcing, supplier evaluation and purchase-order execution. The business formally launched from Borrego in September 2022. Borrego contracted to sell all Anza RE, LLC equity to Anza RE Buyer, LLC on February 24, 2023 for US$26.74 million, and Anza announced the completed separation on May 17, 2023 with investment from ECP's Energy Transition Opportunities Fund, Angeleno Group and other investors. ECP and Angeleno continue to list Anza as active; exact stakes, control, the full cap table and the legal closing day are not publicly disclosed. The company is headquartered in Oakland, California and reports more than 80 subscribers and support for over 8 GW of PV and 5 GWh of BESS purchase orders. No later sale or signed pending exit was identified through August 19, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.anzarenewables.com/",
+    "yearFounded": 2022,
+    "headquarters": "Oakland, California",
+    "lastVerifiedAt": "2026-08-19T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjz3p01sbivhe5nxkcfvj",
+        "managerName": "ECP",
+        "organizationName": "ECP",
+        "fundName": null,
+        "vehicleName": "ECP Energy Transition Opportunities Fund-led consortium",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Angeleno Group",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Anza RE Buyer, LLC consortium; exact holding chain not publicly disclosed",
+        "stake": "Not publicly disclosed",
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Borrego Energy",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Anza RE, LLC",
+        "stake": "100% before the 2023 sale",
+        "investmentYear": 2022,
+        "exitYear": 2023,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplh2x03q4ivhejrg9kkg8",
+        "date": "Sep 2022",
+        "event": "Borrego formally launched Anza as its solar and storage procurement, data and analytics platform.",
+        "category": "EXPANSION",
+        "sortDate": "2022-09-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.anzarenewables.com/press-release/anza-completes-separation-from-borrego-and-receives-new-investment-from-energy-capital-partners-led-consortium-to-transform-solar-and-storage-procurement/"
+        ]
+      },
+      {
+        "id": "cmrxplh3h03q5ivhee1pszgtn",
+        "date": "Feb 24, 2023",
+        "event": "Borrego's parent contracted to sell all equity in Anza RE, LLC to Anza RE Buyer, LLC for US$26.74 million.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-02-24T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.walsin.com/2024annual-report/files/pdf/en/0.%20%E8%8B%B1%E6%96%87%E5%AE%8C%E6%95%B4%E7%89%88.pdf"
+        ]
+      },
+      {
+        "id": "cmrxplh4203q6ivhepse4lpls",
+        "date": "May 17, 2023",
+        "event": "Anza announced completion of its separation from Borrego and new investment from ECP's Energy Transition Opportunities Fund, Angeleno Group and other investors.",
+        "category": "FINANCING",
+        "sortDate": "2023-05-17T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.anzarenewables.com/press-release/anza-completes-separation-from-borrego-and-receives-new-investment-from-energy-capital-partners-led-consortium-to-transform-solar-and-storage-procurement/",
+          "https://www.ecpgp.com/equity/portfolio/anza-renewables",
+          "https://www.angelenogroup.com/portfolio/anza-renewables/"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqknn09saivhemup1y1ew",
+        "label": "Anzarenewables — Anza Renewables, LLC",
+        "url": "https://www.anzarenewables.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current Anza operating identity and business profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqkoq09scivhevdcju6i9",
+        "label": "Anzarenewables — Anza Renewables, LLC",
+        "url": "https://www.anzarenewables.com/about-us/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Anza company history and operating profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqkpq09seivhe2hn07es0",
+        "label": "Investment date source — ECP — Anza Renewables, LLC",
+        "url": "https://www.anzarenewables.com/press-release/anza-completes-separation-from-borrego-and-receives-new-investment-from-energy-capital-partners-led-consortium-to-transform-solar-and-storage-procurement/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Completed separation, ECP fund attribution and named investors",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqkqr09sgivhebiw5xwpv",
+        "label": "Anzarenewables — Anza Renewables, LLC",
+        "url": "https://www.anzarenewables.com/press-release/anza-supports-over-2-gw-of-solar-safe-harbor-procurements-in-2025-helping-developers-preserve-itc-benefits-and-project-economics/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Anza procurement activity and historical purchase-order scale",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "ECP — Anza Renewables portfolio",
+        "url": "https://www.ecpgp.com/equity/portfolio/anza-renewables",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current ECP status and May 2023 investment",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Angeleno Group — Anza Renewables portfolio",
+        "url": "https://www.angelenogroup.com/portfolio/anza-renewables/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current Angeleno investment and Oakland headquarters",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Walsin — 2024 annual report",
+        "url": "https://www.walsin.com/2024annual-report/files/pdf/en/0.%20%E8%8B%B1%E6%96%87%E5%AE%8C%E6%95%B4%E7%89%88.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Anza RE, LLC legal target, February 2023 sale agreement and US$26.74 million price",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "37a39118688e998c2d37b5740ef02350d8bbf82455b68ff0e26a669c72579df8",
+  "proposalSha256": "f9b03d80f5423bd9d7fdb5af71a4dae50ea8153d1216bd67e947d55731d194f6"
+}

@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0222:anza-renewables:03b962a6",
+  "taskIndex": 222,
+  "companyName": "Anza Renewables",
+  "asOfDate": "2026-08-19",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-08-29T08:11:03.000Z",
+  "result": {
+    "decision": "PROPOSED_CORRECTION",
+    "rationale": "Anza Renewables is the existing Anza RE, LLC U.S. operating company, not a separate Canadian platform. ECP's Energy Transition Opportunities Fund, Angeleno Group and unnamed investors funded the completed May 2023 separation. The record should use the United States, Oakland headquarters and the official Anza website; exact stakes, control, holding vehicle and legal close date remain undisclosed.",
+    "evidence": [
+      {
+        "url": "https://www.anzarenewables.com/press-release/anza-completes-separation-from-borrego-and-receives-new-investment-from-energy-capital-partners-led-consortium-to-transform-solar-and-storage-procurement/",
+        "purpose": "Completed separation, platform launch, ECP fund and named investors."
+      },
+      {
+        "url": "https://www.ecpgp.com/equity/portfolio/anza-renewables",
+        "purpose": "May 2023 investment and current ECP portfolio status."
+      },
+      {
+        "url": "https://www.angelenogroup.com/portfolio/anza-renewables/",
+        "purpose": "Current Angeleno co-investment and Oakland headquarters."
+      },
+      {
+        "url": "https://www.anzarenewables.com/",
+        "purpose": "Current U.S. operating identity, business profile and scale."
+      }
+    ]
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0222-anza-renewables/attempt-1/research-decision.json",
+      "sha256": "8ed7010c6d079a7479e9153216ed6b444f3fbfeb982739ed9947ea973a2127d8"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0222-anza-renewables/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "a7ed5346e35a14051739bb5ae84c24db1702a699fa7aed1a3c961a1f469add1b"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0222-anza-renewables/attempt-1/source-verification.json",
+      "sha256": "246bfc9af57a199090689c9119abf3eb8a1b18fa8ecba414eaa32435b4785552"
+    }
+  }
+}

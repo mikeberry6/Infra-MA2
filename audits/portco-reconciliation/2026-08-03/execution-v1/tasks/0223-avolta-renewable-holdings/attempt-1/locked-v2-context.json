@@ -1,0 +1,254 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0223:avolta-renewable-holdings:7181d627",
+  "taskIndex": 223,
+  "companyName": "Avolta Renewable Holdings",
+  "generatedAt": "2026-08-29T08:11:24.645Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0223-avolta-renewable-holdings/attempt-1/locked-v2-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 223,
+    "taskId": "ledger:0223:avolta-renewable-holdings:7181d627",
+    "canonicalKey": "avolta-renewable-holdings|united-states",
+    "companyName": "Avolta Renewable Holdings",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 41,
+    "managers": [
+      "Energy Capital Partners"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "041-energy-capital-partners:holding:002:avolta-renewable-holdings"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://www.avoltaenergy.com/",
+      "https://www.ecpgp.com/equity/portfolio"
+    ],
+    "candidateCanonicalKeys": [
+      "avolta-renewable-holdings-llc|united-states"
+    ],
+    "rationale": "Only heuristic repository candidate(s) exist: avolta-renewable-holdings-llc|united-states; no automatic merge was made. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Only heuristic repository candidate(s) exist: avolta-renewable-holdings-llc|united-states; no automatic merge was made."
+    ]
+  },
+  "targetResolution": {
+    "method": "REVIEWED_SYMMETRIC_CANDIDATE",
+    "targetCompanyId": "cmrxpjdg100u6ivhep4xv8y79",
+    "linkedQueueTaskId": "ledger:0469:avolta-renewable-holdings-llc:db85a6b5"
+  },
+  "resolvedCanonicalKey": "avolta-renewable-holdings|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjdg100u6ivhep4xv8y79",
+    "name": "Avolta Renewable Holdings, LLC",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Renewable natural gas from dairy waste",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Avolta Renewable Holdings is a renewable natural gas platform focused on dairy projects that capture biogas from manure and upgrade it to pipeline-quality fuel. Its end markets include gas utilities, transportation fuel markets, and environmental credit programs, with cash flows supported by offtake and regulatory value streams tied to low-carbon fuel production. The platform follows an asset-heavy development and ownership model built around digester infrastructure, gas upgrading facilities, and pipeline interconnections. Energy Capital Partners said in February 2022 that it had committed capital to a newly formed joint venture with Avolta to develop a series of U.S. dairy RNG projects. Public materials since then continue to describe the company as a growing dairy RNG developer with a project pipeline across major livestock regions.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2022,
+    "headquarters": "California, Idaho, and other U.S. dairy markets",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjz5b01seivhelnb7zna3",
+        "managerName": "Energy Capital Partners",
+        "organizationName": "ECP",
+        "fundName": "ECP Fund V",
+        "vehicleName": "Joint venture by ECP and Avolta, LLC",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplhbg03qdivheeqxmol6a",
+        "date": "2022",
+        "event": "Avolta Renewable Holdings was formed to develop a portfolio of dairy RNG projects.",
+        "category": "FOUNDING",
+        "sortDate": "2022-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplhbx03qeivhex36y43c5",
+        "date": "Feb 2022",
+        "event": "ECP committed to invest in Avolta Renewable Holdings, a newly formed joint venture with Avolta, LLC.",
+        "category": "FINANCING",
+        "sortDate": "2022-02-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpql1s09suivheqd97k3kv",
+        "label": "Investment date source — ECP — Avolta Renewable Holdings, LLC",
+        "url": "https://www.ecpgp.com/equity/portfolio/avolta-renewable-holdings",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "ECP initial investment / ownership",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpql2s09swivheycxok4nb",
+        "label": "Avoltadevelopment — Avolta Renewable Holdings, LLC",
+        "url": "https://avoltadevelopment.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Avoltadevelopment company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpql3v09syivheoc2b6r50",
+        "label": "Avoltadevelopment — Avolta Renewable Holdings, LLC",
+        "url": "https://avoltadevelopment.com/about-us/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Avoltadevelopment company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpql4z09t0ivhepfbnkdyw",
+        "label": "Avoltadevelopment — Avolta Renewable Holdings, LLC",
+        "url": "https://avoltadevelopment.com/news/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Avoltadevelopment — Avolta Renewable Holdings, LLC",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Avolta Renewable Holdings, LLC",
+    "investmentFirm": "ECP",
+    "sector": "Power & ET",
+    "subsector": "Renewable natural gas from dairy waste",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Joint venture by ECP and Avolta, LLC",
+    "description": "Avolta Renewable Holdings is a renewable natural gas platform focused on dairy projects that capture biogas from manure and upgrade it to pipeline-quality fuel. Its end markets include gas utilities, transportation fuel markets, and environmental credit programs, with cash flows supported by offtake and regulatory value streams tied to low-carbon fuel production. The platform follows an asset-heavy development and ownership model built around digester infrastructure, gas upgrading facilities, and pipeline interconnections. Energy Capital Partners said in February 2022 that it had committed capital to a newly formed joint venture with Avolta to develop a series of U.S. dairy RNG projects. Public materials since then continue to describe the company as a growing dairy RNG developer with a project pipeline across major livestock regions.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2022,
+    "investmentYear": 2022,
+    "headquarters": "California, Idaho, and other U.S. dairy markets",
+    "milestones": [
+      {
+        "date": "2022",
+        "event": "Avolta Renewable Holdings was formed to develop a portfolio of dairy RNG projects.",
+        "category": "Founding"
+      },
+      {
+        "date": "Feb 2022",
+        "event": "ECP committed to invest in Avolta Renewable Holdings, a newly formed joint venture with Avolta, LLC.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Investment date source — ECP — Avolta Renewable Holdings, LLC",
+        "url": "https://www.ecpgp.com/equity/portfolio/avolta-renewable-holdings",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Avoltadevelopment — Avolta Renewable Holdings, LLC",
+        "url": "https://avoltadevelopment.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Avoltadevelopment — Avolta Renewable Holdings, LLC",
+        "url": "https://avoltadevelopment.com/about-us/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Avoltadevelopment — Avolta Renewable Holdings, LLC",
+        "url": "https://avoltadevelopment.com/news/",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "ECP",
+        "ownershipVehicle": "Joint venture by ECP and Avolta, LLC",
+        "investmentYear": 2022,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj23s00d1ivhel30ncaa5",
+        "fundName": "ECP Fund V",
+        "managerId": "cmrxpi79j001jivhe2rmjalkq",
+        "updatedAt": "2026-07-23T16:09:56.584Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpii7l004zivhe9bvhh5r5",
+        "name": "ECP",
+        "updatedAt": "2026-07-23T16:09:30.801Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0223:avolta-renewable-holdings:7181d627",
+    "taskIndex": 223,
+    "canonicalKey": "avolta-renewable-holdings|united-states",
+    "capturedAt": "2026-08-29T08:11:24.645Z",
+    "databaseRevision": "revision:3b9bc718b8184a147751ef985edfbb5dd7dd3373bd2bf3917777743d01840bf2",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "bc962a2766394caf1899fb87f12501d8367b3693c297d4488227be1952582b57",
+    "productionSnapshotSha256": "5d3893c240fde2a2eecd219c12c8972183f662aa167f0ac0bb281835f53a92c1",
+    "targetCompanySnapshotSha256": "e2b32cf91da1c04217d803f896a2e888e2f6aa7fdce1a152c14cba97349d2ace",
+    "seedEntrySha256": "169df6fac92fc426b7753325abdc6c872f8162fe6c623faf1c299aa29bfc5933",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "277e2caf5dfbadddf0d386f00fbdd7eef2bddb9c26d6cead116953df729451dd",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "cd20bf918111ea91d87de82c3607378a098a82d96d9ad9ef41dc65f122089cb0",
+      "organizationsSha256": "592a52bc18a9de4fb86a5d0e7fec2a9f373528b05a4401efa6036f9b6ba5b5ca",
+      "citationsSha256": "1a2be14ce834407b261b6379e35b7e9bfe7b603525299459c4bc25e45180d2af",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "4ffbdce6bc41ed4d21bb0ee58c1988882db6cc4a7a9ed3d1388f9b473c3094ba",
+    "stateSha256": "5b1e9374f0b9603ab379df43b3c8adea561e063a89f4caf906ad93a50d162b9a",
+    "taskSnapshotSha256": "56a9bf115123e2889931a40019bcb337e235b2364cdacd6c6b5b87bf209446f4"
+  },
+  "contextSha256": "bb8ef164755ab99967cee9fedfce9e8a4a210f07663d09d975b20869767e29d9"
+}

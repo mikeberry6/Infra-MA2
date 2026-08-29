@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0219:wideopenwest-inc:2debcc76",
+  "taskIndex": 219,
+  "companyName": "WideOpenWest, Inc.",
+  "asOfDate": "2026-08-19",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-08-29T08:11:00.000Z",
+  "result": {
+    "decision": "PROPOSED_CORRECTION",
+    "rationale": "WideOpenWest is one active private U.S. broadband platform. The December 31, 2025 take-private left DigitalBridge Partners III with approximately 63% and Crestview III with approximately 37% of Bandit Parent's limited-partner interests, with equal general-partner control. Crestview must be added, InfraBridge is not an owner, and the signed SoftBank acquisition of DigitalBridge remains upstream pending context rather than a direct WOW ownership change.",
+    "evidence": [
+      {
+        "url": "https://dms.psc.sc.gov/Attachments/Matter/97a30d91-be2e-4b65-802e-146d80e00088",
+        "purpose": "Post-close ownership percentages, equal GP control and the indirect holding chain."
+      },
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/1701051/000110465925125421/tm2534163d1_8k.htm",
+        "purpose": "December 31, 2025 legal closing, surviving entity and delisting."
+      },
+      {
+        "url": "https://www.digitalbridge.com/news/2025-08-11-wideopenwest-wow-inc-to-be-taken-private-by-digitalbridge-group-inc-and-crestview-partners-in-15-billion-transaction",
+        "purpose": "Take-private announcement, transaction value and Crestview rollover."
+      },
+      {
+        "url": "https://www.digitalbridge.com/portfolio/wow",
+        "purpose": "Current DigitalBridge portfolio attribution."
+      },
+      {
+        "url": "https://www.wowway.com/experience/about",
+        "purpose": "Operating profile, markets and network footprint."
+      },
+      {
+        "url": "https://group.softbank/en/news/press/20251229",
+        "purpose": "Signed upstream DigitalBridge corporate acquisition, which does not directly transfer WOW."
+      }
+    ]
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0219-wideopenwest-inc/attempt-1/research-decision.json",
+      "sha256": "7eba66a530fde634ca5cb3d0983bdc9a854491d59279ff906934b71c5b6d4046"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0219-wideopenwest-inc/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "c56356578b42bb887a1cef4718ba5f7bca7ef9a09d1877bbbc9fa77b36eb68bf"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0219-wideopenwest-inc/attempt-1/source-verification.json",
+      "sha256": "061b9cf9b0ebb85e79291248add88f8d1d85ce5b863d28d9bfcd181ccf32c8e4"
+    }
+  }
+}

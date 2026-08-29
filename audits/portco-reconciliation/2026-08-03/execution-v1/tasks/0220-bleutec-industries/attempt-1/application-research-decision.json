@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0220:bleutec-industries:3c6b9662",
+  "taskIndex": 220,
+  "companyName": "Bleutec Industries",
+  "asOfDate": "2026-08-19",
+  "decision": "DEFERRED",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-08-29T08:11:01.000Z",
+  "result": {
+    "decision": "DEFERRED",
+    "rationale": "Bleutec's 2022 EnCap commitment was funded by February 2023, but direct sources do not resolve current ownership, a supported exit, the canonical legal parent or current operations. Portfolio omission, a compromised domain and a lack of later vessel activity are dormancy signals rather than disposition evidence, so the record cannot safely remain verified active or be marked realized.",
+    "evidence": [
+      {
+        "url": "https://www.encapinvestments.com/news/bleutec-industries-announces-equity-commitment-encap-investments",
+        "purpose": "EnCap commitment, co-investment, Energy Transition attribution and 2019 launch."
+      },
+      {
+        "url": "https://floatingwindsolutions.com/wp-content/uploads/2023/02/FWS23-Bo-Jardine-Bleutec-Industries.pdf",
+        "purpose": "Bleutec's February 2023 fully-capitalized statement and planned vessel status."
+      },
+      {
+        "url": "https://www.encapinvestments.com/about/energy-transition/portfolio",
+        "purpose": "Current manager portfolio display omission, treated only as a non-dispositive status signal."
+      },
+      {
+        "url": "https://www.marinelog.com/offshore/offshore-wind/bleutec-seeks-title-xi-support-for-its-offshore-wind-vessel-spread/",
+        "purpose": "Planned four-vessel Title XI application with builder still to be determined."
+      },
+      {
+        "url": "https://www.bleutecindustries.com/",
+        "purpose": "Unrelated domain redirect, treated as a dormancy signal rather than exit proof."
+      }
+    ]
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0220-bleutec-industries/attempt-1/research-decision.json",
+      "sha256": "3b892b904524b3a5172d4aa4709c54d758fe7f094f5e6fe940f87e6035911135"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0220-bleutec-industries/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "6271ffd28c4826d8ff5b64a586f839e6928f4b56e22510ec72f51e71df8dd069"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0220-bleutec-industries/attempt-1/source-verification.json",
+      "sha256": "cad8f850a0725186aa7c41a21d0933364d437cb1ab86cdfe5d7d8e29dc71a4ff"
+    }
+  }
+}

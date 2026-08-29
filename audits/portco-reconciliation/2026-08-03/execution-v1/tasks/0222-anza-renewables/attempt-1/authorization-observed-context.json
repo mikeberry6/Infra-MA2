@@ -1,0 +1,270 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0222:anza-renewables:03b962a6",
+  "taskIndex": 222,
+  "companyName": "Anza Renewables",
+  "generatedAt": "2026-08-29T08:20:50.924Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0222-anza-renewables/attempt-1/authorization-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 222,
+    "taskId": "ledger:0222:anza-renewables:03b962a6",
+    "canonicalKey": "anza-renewables|united-states",
+    "companyName": "Anza Renewables",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 41,
+    "managers": [
+      "Energy Capital Partners"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "041-energy-capital-partners:holding:001:anza-renewables"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://www.anzarenewables.com/",
+      "https://www.ecpgp.com/equity/portfolio"
+    ],
+    "candidateCanonicalKeys": [
+      "anza-renewables-llc|north-america"
+    ],
+    "rationale": "Only heuristic repository candidate(s) exist: anza-renewables-llc|north-america; no automatic merge was made. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Only heuristic repository candidate(s) exist: anza-renewables-llc|north-america; no automatic merge was made."
+    ]
+  },
+  "targetResolution": {
+    "method": "REVIEWED_SYMMETRIC_CANDIDATE",
+    "targetCompanyId": "cmrxpjdf000u4ivhe82f2fkli",
+    "linkedQueueTaskId": "ledger:0468:anza-renewables-llc:222fdd9f"
+  },
+  "resolvedCanonicalKey": "anza-renewables|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjdf000u4ivhe82f2fkli",
+    "name": "Anza Renewables, LLC",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Solar and storage procurement platform",
+    "region": "NORTH_AMERICA",
+    "country": "North America",
+    "countryTags": [
+      "United States",
+      "Canada"
+    ],
+    "description": "Anza provides a software-enabled marketplace and analytics platform used by solar and storage developers, independent power producers, and corporate energy buyers to source equipment. Its operating model is asset-light relative to power generation platforms, with revenues tied to subscription, transaction support, and procurement services rather than ownership of operating plants. The business focuses on helping customers evaluate module, inverter, and storage options using market data and comparative analytics. The company states that it was formally launched in 2022 and completed its separation from Borrego in 2023 with new backing from an Energy Capital Partners-led consortium that included Angeleno Group. Anza reported in early 2026 that its platform had supported more than 2 GW of solar safe-harbor procurements during 2025 and more than 9.2 GW of solar purchase orders over the prior five years.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2022,
+    "headquarters": "United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjz3p01sbivhe5nxkcfvj",
+        "managerName": "Energy Capital Partners",
+        "organizationName": "ECP",
+        "fundName": "ECP Fund V",
+        "vehicleName": "ECP-led consortium investment",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplh2x03q4ivhejrg9kkg8",
+        "date": "Sep 2022",
+        "event": "Anza was formally launched.",
+        "category": "EXPANSION",
+        "sortDate": "2022-09-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplh3h03q5ivhee1pszgtn",
+        "date": "May 17, 2023",
+        "event": "Anza completed its separation from Borrego and received new investment from an ECP / Energy Capital Partners-led consortium.",
+        "category": "FINANCING",
+        "sortDate": "2023-05-17T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplh4203q6ivhepse4lpls",
+        "date": "Feb 2026",
+        "event": "Anza published updated safe-harbor procurement activity and historical purchase-order data.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-02-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqknn09saivhemup1y1ew",
+        "label": "Anzarenewables — Anza Renewables, LLC",
+        "url": "https://www.anzarenewables.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Anzarenewables company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqkoq09scivhevdcju6i9",
+        "label": "Anzarenewables — Anza Renewables, LLC",
+        "url": "https://www.anzarenewables.com/about-us/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Anzarenewables company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqkpq09seivhe2hn07es0",
+        "label": "Investment date source — ECP — Anza Renewables, LLC",
+        "url": "https://www.anzarenewables.com/press-release/anza-completes-separation-from-borrego-and-receives-new-investment-from-energy-capital-partners-led-consortium-to-transform-solar-and-storage-procurement/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "ECP initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqkqr09sgivhebiw5xwpv",
+        "label": "Anzarenewables — Anza Renewables, LLC",
+        "url": "https://www.anzarenewables.com/press-release/anza-supports-over-2-gw-of-solar-safe-harbor-procurements-in-2025-helping-developers-preserve-itc-benefits-and-project-economics/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Anzarenewables operations / asset details",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Anza Renewables, LLC",
+    "investmentFirm": "ECP",
+    "sector": "Power & ET",
+    "subsector": "Solar and storage procurement platform",
+    "region": "North America",
+    "country": "North America",
+    "ownershipVehicle": "ECP-led consortium investment",
+    "description": "Anza provides a software-enabled marketplace and analytics platform used by solar and storage developers, independent power producers, and corporate energy buyers to source equipment. Its operating model is asset-light relative to power generation platforms, with revenues tied to subscription, transaction support, and procurement services rather than ownership of operating plants. The business focuses on helping customers evaluate module, inverter, and storage options using market data and comparative analytics. The company states that it was formally launched in 2022 and completed its separation from Borrego in 2023 with new backing from an Energy Capital Partners-led consortium that included Angeleno Group. Anza reported in early 2026 that its platform had supported more than 2 GW of solar safe-harbor procurements during 2025 and more than 9.2 GW of solar purchase orders over the prior five years.",
+    "status": "Active",
+    "countryTags": [
+      "United States",
+      "Canada"
+    ],
+    "yearFounded": 2022,
+    "investmentYear": 2023,
+    "headquarters": "United States",
+    "milestones": [
+      {
+        "date": "Sep 2022",
+        "event": "Anza was formally launched.",
+        "category": "Expansion"
+      },
+      {
+        "date": "May 17, 2023",
+        "event": "Anza completed its separation from Borrego and received new investment from an ECP / Energy Capital Partners-led consortium.",
+        "category": "Financing"
+      },
+      {
+        "date": "Feb 2026",
+        "event": "Anza published updated safe-harbor procurement activity and historical purchase-order data.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Anzarenewables — Anza Renewables, LLC",
+        "url": "https://www.anzarenewables.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Anzarenewables — Anza Renewables, LLC",
+        "url": "https://www.anzarenewables.com/about-us/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Investment date source — ECP — Anza Renewables, LLC",
+        "url": "https://www.anzarenewables.com/press-release/anza-completes-separation-from-borrego-and-receives-new-investment-from-energy-capital-partners-led-consortium-to-transform-solar-and-storage-procurement/",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Anzarenewables — Anza Renewables, LLC",
+        "url": "https://www.anzarenewables.com/press-release/anza-supports-over-2-gw-of-solar-safe-harbor-procurements-in-2025-helping-developers-preserve-itc-benefits-and-project-economics/",
+        "type": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "ECP",
+        "ownershipVehicle": "ECP-led consortium investment",
+        "investmentYear": 2023,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj23s00d1ivhel30ncaa5",
+        "fundName": "ECP Fund V",
+        "managerId": "cmrxpi79j001jivhe2rmjalkq",
+        "updatedAt": "2026-07-23T16:09:56.584Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpii7l004zivhe9bvhh5r5",
+        "name": "ECP",
+        "updatedAt": "2026-07-23T16:09:30.801Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0222:anza-renewables:03b962a6",
+    "taskIndex": 222,
+    "canonicalKey": "anza-renewables|united-states",
+    "capturedAt": "2026-08-29T08:20:50.924Z",
+    "databaseRevision": "revision:ad92f299d442de085f68af41fd6724cbe38d340123b02729bbda578a96d649c4",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "6ab89bf7d01165b59d953a202b86091515fa2470525e6793d5a7d110d791233e",
+    "productionSnapshotSha256": "1da63b686df4c33f44365ac6b159f18e1d93ce10c0a41f43fb43fe043a48e0f7",
+    "targetCompanySnapshotSha256": "2cc298803a734fec53c5305473303342de1dd5194e0bbcd7c197fedff742fae4",
+    "seedEntrySha256": "757d1c3af8007024ee0b79b44934631c6169337644808a70ce3ed26abf23984a",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "cce76c9f083fa65ffca65af5511882907716a4b1ddb6408b4f898d59e8bc670a",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "cd20bf918111ea91d87de82c3607378a098a82d96d9ad9ef41dc65f122089cb0",
+      "organizationsSha256": "592a52bc18a9de4fb86a5d0e7fec2a9f373528b05a4401efa6036f9b6ba5b5ca",
+      "citationsSha256": "b877f8caf718eef3a5bbd3a17fd0222917f833793464c68b9890e097a29cb0ae",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "91507f2330a0ccf27ee29c68a23920c1720d5a8d16a5a9cc9c8302a94d41817d",
+    "stateSha256": "4b9d66b2fa502260d28052a700c6c60a993e1afa3c6140f26e9b0fa9b18e252c",
+    "taskSnapshotSha256": "7a6c6f49619e2d778af5b84c03272b4b8da620ee4130cb0cc60c171e8537b905"
+  },
+  "contextSha256": "18facef0febd40b1fbe00110354b81e76e3e9e2191d161aadf509fcdebb90119"
+}

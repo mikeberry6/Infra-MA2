@@ -1,0 +1,259 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0219:wideopenwest-inc:2debcc76",
+  "taskIndex": 219,
+  "companyName": "WideOpenWest, Inc.",
+  "generatedAt": "2026-08-29T08:20:31.339Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0219-wideopenwest-inc/attempt-1/authorization-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 219,
+    "taskId": "ledger:0219:wideopenwest-inc:2debcc76",
+    "canonicalKey": "wideopenwest-inc|united-states",
+    "companyName": "WideOpenWest, Inc.",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 36,
+    "managers": [
+      "DigitalBridge",
+      "InfraBridge"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "036-digitalbridge:holding:017:wideopenwest-wow"
+    ],
+    "sourceRepoOnlyIds": [
+      "058-infrabridge:repo-only:013:wideopenwest-inc"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjddu00u2ivheu6k02my6"
+    ],
+    "seedKeys": [
+      "wideopenwest, inc.|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.digitalbridge.com/news/2025-12-31-digitalbridge-and-crestview-partners-complete-take-private-acquisition-of-wideopenwest-wow",
+      "https://www.wowway.com/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: InfraBridge MATCHED_ELSEWHERE: Attributed to DigitalBridge digital strategy rather than InfraBridge.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjddu00u2ivheu6k02my6",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "wideopenwest-inc|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjddu00u2ivheu6k02my6",
+    "name": "WideOpenWest, Inc.",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Broadband and fiber-to-the-home",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "WideOpenWest, Inc. provides broadband internet, video, voice, and related connectivity services in the United States. It serves residential subscribers and businesses in its cable and fiber markets. The business is asset-heavy and recurring because it owns and upgrades last-mile broadband infrastructure and earns subscription revenue from network users. Company materials emphasize network reliability and broadband services, while public sources reviewed do not disclose the current revenue figure in the sources used for this batch. DigitalBridge and Crestview announced a take-private acquisition in August 2025 and completed the transaction in December 2025.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjz2601s8ivhekaamx1rl",
+        "managerName": "DigitalBridge",
+        "organizationName": "DigitalBridge",
+        "fundName": "DigitalBridge Fund III",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplgxh03pwivhemrk9z36q",
+        "date": "Aug 11, 2025",
+        "event": "DigitalBridge and Crestview announced an agreement to acquire WOW! in a $1.5 billion take-private transaction.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-08-11T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplgy103pxivherpb6r16x",
+        "date": "Dec 31, 2025",
+        "event": "DigitalBridge and Crestview completed the take-private acquisition of WOW!.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-12-31T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplgyl03pyivheyxd1h4wl",
+        "date": "Jan 7, 2026",
+        "event": "Crestview announced the appointment of Frank van der Post as CEO.",
+        "category": "MANAGEMENT",
+        "sortDate": "2026-01-07T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqk9e09rqivherkj626oj",
+        "label": "Wowway — WideOpenWest, Inc.",
+        "url": "https://www.wowway.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Wowway company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqkaj09rsivhexxa673da",
+        "label": "Announcement date source — DigitalBridge — WideOpenWest, Inc.",
+        "url": "https://www.digitalbridge.com/news/2025-08-11-wideopenwest-wow-inc-to-be-taken-private-by-digitalbridge-group-inc-and-crestview-partners-in-15-billion-transaction",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "DigitalBridge transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqkbr09ruivheem49duow",
+        "label": "Close date source — DigitalBridge — WideOpenWest, Inc.",
+        "url": "https://www.digitalbridge.com/news/2025-12-31-digitalbridge-and-crestview-partners-complete-take-private-acquisition-of-wideopenwest-wow",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "DigitalBridge closing confirmation",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "WideOpenWest, Inc.",
+    "investmentFirm": "DigitalBridge",
+    "sector": "Digital",
+    "subsector": "Broadband and fiber-to-the-home",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "WideOpenWest, Inc. provides broadband internet, video, voice, and related connectivity services in the United States. It serves residential subscribers and businesses in its cable and fiber markets. The business is asset-heavy and recurring because it owns and upgrades last-mile broadband infrastructure and earns subscription revenue from network users. Company materials emphasize network reliability and broadband services, while public sources reviewed do not disclose the current revenue figure in the sources used for this batch. DigitalBridge and Crestview announced a take-private acquisition in August 2025 and completed the transaction in December 2025.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2025,
+    "headquarters": "United States",
+    "milestones": [
+      {
+        "date": "Aug 11, 2025",
+        "event": "DigitalBridge and Crestview announced an agreement to acquire WOW! in a $1.5 billion take-private transaction.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Dec 31, 2025",
+        "event": "DigitalBridge and Crestview completed the take-private acquisition of WOW!.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Jan 7, 2026",
+        "event": "Crestview announced the appointment of Frank van der Post as CEO.",
+        "category": "Management"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Wowway — WideOpenWest, Inc.",
+        "url": "https://www.wowway.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Announcement date source — DigitalBridge — WideOpenWest, Inc.",
+        "url": "https://www.digitalbridge.com/news/2025-08-11-wideopenwest-wow-inc-to-be-taken-private-by-digitalbridge-group-inc-and-crestview-partners-in-15-billion-transaction",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Close date source — DigitalBridge — WideOpenWest, Inc.",
+        "url": "https://www.digitalbridge.com/news/2025-12-31-digitalbridge-and-crestview-partners-complete-take-private-acquisition-of-wideopenwest-wow",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "DigitalBridge",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2025,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj22300cyivheme173qse",
+        "fundName": "DigitalBridge Fund III",
+        "managerId": "cmrxpi6te001eivheobw69a9c",
+        "updatedAt": "2026-07-23T16:09:56.523Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi6te001eivheobw69a9c",
+        "name": "DigitalBridge",
+        "updatedAt": "2026-07-23T16:09:16.034Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0219:wideopenwest-inc:2debcc76",
+    "taskIndex": 219,
+    "canonicalKey": "wideopenwest-inc|united-states",
+    "capturedAt": "2026-08-29T08:20:31.339Z",
+    "databaseRevision": "revision:dbca6a856ff377339f921a53777df7eb12b95b00e27386bfec147ed7e267235f",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "c19e3ddf914cf7bb0e1212da31daeebe68730b7965e1994c7dfaa7ffa3291fe8",
+    "productionSnapshotSha256": "67749d52c3dedb1dd15d172048fe1ba20da273a83e26e8ad11653f9395d53206",
+    "targetCompanySnapshotSha256": "f7e77716cc85a4c388a366ae47def25240a7c008887e7199a0d460e77717f180",
+    "seedEntrySha256": "9adf1f7766b1e1bdc186079b6ddfbc80c9491c217d48d4eb30992b304bd23fef",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "b1c8c9fd716078bdb27130ff520389a017ded7e3ba9bf21a4f6128dabcbad79d",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "b3be6f9b0fe5283f3df5ae514c18c73a3e7e5a5450bdc48cebfca4d063ad196f",
+      "organizationsSha256": "044669daa5d8e30d4b464ed1c1e0894f60c2ee53f208a986e3281ab3f6318c4b",
+      "citationsSha256": "dc9fa62f4da58e33d1c238151d9c67d0fabd325018236892985b265f5d69d694",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "41cdc22970b33e22d523c287238f277846c01fcbaaea0df1c6e18bc4072da53a",
+    "stateSha256": "a700796b3429d97587b853096d86e72a2aae7580fbc526ad7d478e183f719901",
+    "taskSnapshotSha256": "db667b9b8e05e6fcf5aecbdf46ce546e40a2847e1f5a146622881feb369f2d8c"
+  },
+  "contextSha256": "faaf8b3bbaac426ad2a2d2342971c3f40e778437500b49394fa5ec5bb71637da"
+}
