@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0248:grand-falls-windsor-long-term-care-home:ebbcb53e",
+  "taskIndex": 248,
+  "companyName": "Grand Falls-Windsor Long-Term Care Home",
+  "outcome": "DEFERRED",
+  "decidedAt": "2026-08-29T15:15:01.000Z",
+  "rationale": "The facility is conclusively part of the single Gander and Grand Falls-Windsor Care Homes Project and should not remain a separate manager-level PortCo. However, the exact limited partners and percentages in Fengate Central Health, LP are not publicly disclosed, and official materials conflict on whether SEC Pomerleau retained equity after financial close. The merge is deferred until the canonical bundle's current ownership can be represented without inference.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0248-grand-falls-windsor-long-term-care-home/attempt-1/locked-task-snapshot.json",
+    "sha256": "61a19abacd0597627e238a1e16b7a57073f155d1f082ee51603f52efe1dabecd"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0248-grand-falls-windsor-long-term-care-home/attempt-1/application-research-decision.json",
+    "sha256": "437a4f5ea1a0391bf85beb363cb522507c37960e0a159e48050295079fcd6c6b"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0248-grand-falls-windsor-long-term-care-home/attempt-1/source-verification.json",
+    "sha256": "e72e2c295ecdd59121197e1ae695829fb1ffa659c00518309f40900424b16326"
+  },
+  "evidence": [
+    {
+      "url": "https://www.gov.nl.ca/ti/files/GNL-Central-LTC-Final-VFM-Assessment.pdf",
+      "purpose": "Post-close government evidence that one ProjectCo and Project Agreement cover both care homes."
+    },
+    {
+      "url": "https://fengate.com/news/fengate-led-consortium-achieves-financial-close-for-gander-and-grand-falls-windsor-care-homes-infrastructure-project",
+      "purpose": "Direct Fengate evidence for one bundled project and the June 14, 2019 close."
+    },
+    {
+      "url": "https://www.gov.nl.ca/ti/works/major-building-construction-project-updates/central-long-term-care-project/",
+      "purpose": "Current government project page confirming the two-facility operating scope and exposing the unresolved equity-provider conflict."
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "62d97d0922a232b9d9aaa930b2e2af56facee9f15ec38a7d32bf0be9fb45a00e"
+}

@@ -1,0 +1,290 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0244:ontario-science-partners:619f3a80",
+  "taskIndex": 244,
+  "companyName": "Ontario Science Partners",
+  "generatedAt": "2026-08-29T15:23:55.098Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0244-ontario-science-partners/attempt-1/authorization-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 244,
+    "taskId": "ledger:0244:ontario-science-partners:619f3a80",
+    "canonicalKey": "ontario-science-partners|canada",
+    "companyName": "Ontario Science Partners",
+    "country": "Canada",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 44,
+    "managers": [
+      "Equitix"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "044-equitix:repo-only:002:ontario-science-partners"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjf2k00woivhe7duvxzv6"
+    ],
+    "seedKeys": [
+      "ontario science partners|Canada"
+    ],
+    "evidenceUrls": [
+      "https://www.infrastructureontario.ca/en/news-and-media/news/new-ontario-science-centre-facility/new-ontario-science-centre-contract-awarded/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Equitix OUT_OF_SCOPE: Recent award associated with John Laing but not evidenced within Equitix portfolio scope.",
+    "unresolvedQuestions": [
+      "Confirm whether the manager ownership, the company itself, or only this census scope is out of scope before proposing any change."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjf2k00woivhe7duvxzv6",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "ontario-science-partners|canada",
+  "targetCompanyImage": {
+    "id": "cmrxpjf2k00woivhe7duvxzv6",
+    "name": "Ontario Science Partners",
+    "aliases": [],
+    "sector": "SOCIAL_INFRA",
+    "subsector": "DBFM cultural and science centre infrastructure",
+    "region": "NORTH_AMERICA",
+    "country": "Canada",
+    "countryTags": [
+      "Canada"
+    ],
+    "description": "Ontario Science Partners is the consortium selected to deliver the new Ontario Science Centre project at Ontario Place. Its end user is the public sector and the visiting public, with economics structured through a design-build-finance-maintain concession rather than commercial admissions risk. The project is asset-heavy and still in the pre-construction phase following contract award in 2026. Public sources identify the scope as a new science centre facility together with rehabilitation of the Cinesphere and Pods. The reviewed materials did not disclose project-level revenue or financing beyond the announced procurement structure. Infrastructure Ontario and John Laing disclosed in February 2026 that the Ontario Science Partners consortium consists of John Laing at 64%, Sacyr Infrastructure Canada at 26%, and Amico Major Projects at 10%.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Ontario",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk0s401uxivhee4ggxu2h",
+        "managerName": "Equitix",
+        "organizationName": "Equitix",
+        "fundName": null,
+        "vehicleName": "John Laing Investments Limited (Equitix / KKR JV)",
+        "stake": null,
+        "investmentYear": 2026,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplo1i03ydivheiupjf12p",
+        "date": "2025",
+        "event": "Ontario Science Partners was shortlisted in the procurement process for the new Ontario Science Centre.",
+        "category": "FINANCING",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplo2203yeivheezpjmvdg",
+        "date": "2026",
+        "event": "The project advanced into the DBFM delivery phase following contract award.",
+        "category": "EXPANSION",
+        "sortDate": "2026-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplo4x03yfivhe4b9nbaya",
+        "date": "Feb 2026",
+        "event": "John Laing disclosed the consortium ownership split of 64% / 26% / 10%.",
+        "category": "FINANCING",
+        "sortDate": "2026-02-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplo5e03ygivhexczj9c59",
+        "date": "Feb 11, 2026",
+        "event": "Ontario Science Partners reached financial close on the John Laing-led DBFM consortium, marking the John Laing Investments Limited (Equitix/KKR JV) entry into the project.",
+        "category": "FINANCING",
+        "sortDate": "2026-02-11T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqyu80adaivhecaibyr3f",
+        "label": "Infrastructureontario — Ontario Science Partners",
+        "url": "https://www.infrastructureontario.ca/en/news-and-media/news/new-ontario-science-centre-facility/new-ontario-science-centre-contract-awarded/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Infrastructureontario — Ontario Science Partners",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqyve0adcivhe750twcxl",
+        "label": "News — Ontario Science Partners",
+        "url": "https://news.ontario.ca/en/release/1007092/province-awards-contract-to-build-new-ontario-science-centre-at-ontario-place",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "News — Ontario Science Partners",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqywh0adeivhejhlyz5sj",
+        "label": "Close date source — Equitix — Ontario Science Partners",
+        "url": "https://www.laing.com/insights/osp-consortium-is-preferred-bidder-for-new-ontario-science-centre-ppp/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Equitix closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqyxd0adgivhez5lk4v6l",
+        "label": "Sacyr — Ontario Science Partners",
+        "url": "https://sacyr.com/en/-/adjudicacion-museo-ciencias-ontario",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Sacyr — Ontario Science Partners",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqyxt0adhivhemyfepjb9",
+        "label": "Ownership structure source — Equitix — John Laing Investments Limited",
+        "url": "https://www.debevoise.com/news/2021/05/debevoise-advises-pantheon-in-its-role-in",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Ownership structure source — Equitix — John Laing Investments Limited",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Ontario Science Partners",
+    "investmentFirm": "Equitix",
+    "sector": "Social Infra",
+    "subsector": "DBFM cultural and science centre infrastructure",
+    "region": "North America",
+    "country": "Canada",
+    "ownershipVehicle": "John Laing Investments Limited (Equitix / KKR JV)",
+    "description": "Ontario Science Partners is the consortium selected to deliver the new Ontario Science Centre project at Ontario Place. Its end user is the public sector and the visiting public, with economics structured through a design-build-finance-maintain concession rather than commercial admissions risk. The project is asset-heavy and still in the pre-construction phase following contract award in 2026. Public sources identify the scope as a new science centre facility together with rehabilitation of the Cinesphere and Pods. The reviewed materials did not disclose project-level revenue or financing beyond the announced procurement structure. Infrastructure Ontario and John Laing disclosed in February 2026 that the Ontario Science Partners consortium consists of John Laing at 64%, Sacyr Infrastructure Canada at 26%, and Amico Major Projects at 10%.",
+    "status": "Active",
+    "countryTags": [
+      "Canada"
+    ],
+    "investmentYear": 2026,
+    "headquarters": "Ontario",
+    "milestones": [
+      {
+        "date": "2025",
+        "event": "Ontario Science Partners was shortlisted in the procurement process for the new Ontario Science Centre.",
+        "category": "Financing"
+      },
+      {
+        "date": "2026",
+        "event": "The project advanced into the DBFM delivery phase following contract award.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Feb 2026",
+        "event": "John Laing disclosed the consortium ownership split of 64% / 26% / 10%.",
+        "category": "Financing"
+      },
+      {
+        "date": "Feb 11, 2026",
+        "event": "Ontario Science Partners reached financial close on the John Laing-led DBFM consortium, marking the John Laing Investments Limited (Equitix/KKR JV) entry into the project.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Infrastructureontario — Ontario Science Partners",
+        "url": "https://www.infrastructureontario.ca/en/news-and-media/news/new-ontario-science-centre-facility/new-ontario-science-centre-contract-awarded/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "News — Ontario Science Partners",
+        "url": "https://news.ontario.ca/en/release/1007092/province-awards-contract-to-build-new-ontario-science-centre-at-ontario-place",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Close date source — Equitix — Ontario Science Partners",
+        "url": "https://www.laing.com/insights/osp-consortium-is-preferred-bidder-for-new-ontario-science-centre-ppp/",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Sacyr — Ontario Science Partners",
+        "url": "https://sacyr.com/en/-/adjudicacion-museo-ciencias-ontario",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Ownership structure source — Equitix — John Laing Investments Limited",
+        "url": "https://www.debevoise.com/news/2021/05/debevoise-advises-pantheon-in-its-role-in",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Equitix",
+        "ownershipVehicle": "John Laing Investments Limited (Equitix / KKR JV)",
+        "investmentYear": 2026,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpiay4002pivhed6sjuu9i",
+        "name": "KKR",
+        "updatedAt": "2026-07-23T16:09:21.388Z"
+      },
+      {
+        "id": "cmrxpiimy0054ivhe8zpfvx69",
+        "name": "Equitix",
+        "updatedAt": "2026-07-23T16:09:31.354Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0244:ontario-science-partners:619f3a80",
+    "taskIndex": 244,
+    "canonicalKey": "ontario-science-partners|canada",
+    "capturedAt": "2026-08-29T15:23:55.098Z",
+    "databaseRevision": "revision:bef968de9c5a6b443f30c68908b4a965fc61513f5e021ad34e36dae9260dcdb7",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "2325a7f0d1bce6ef59f253a3c3ec52e699ad2a5ec318cbb1fe86a586787fb958",
+    "productionSnapshotSha256": "54a9fe15d5c7a798877e607c15bedf99278c2c9ade1206b4d0ca6e4f1bcef4fb",
+    "targetCompanySnapshotSha256": "cdc24af8d82227da1ce1464b201515165dcb197b448ed796bab06a16707e69cc",
+    "seedEntrySha256": "7aa8892a76da782e418a6f3165456ce2c969743a5932f1642987ae0a1a53c8dd",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "2a3891f3dfb781d56c35ffe3b1130d6336df1ced990d963dc52ee4f2f54f09db",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "7737938488957d6518ad189fb8a0caf56aea917d2d7da081f9d66555baa95c1c",
+      "citationsSha256": "c084f4e35bd30fe217b8901bbd78f21e64fa9028bb4bd9b6dffe8b0880ec2bbc",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "e4efbb29e7152ee43f976f6183c43cb4cd82b6c31b71f6f31fad042d20de3e95",
+    "stateSha256": "ea3f580a4be05d484f27c63b3cbbf11e6c6f16454a11b240c6d300b9859717f9",
+    "taskSnapshotSha256": "19b172b7a455fd75fda1556cbf3d6d0bb14765a58d3f23b03314d101f0069e61"
+  },
+  "contextSha256": "2109e4c19ddbf1f1491816fbcf59a42be6077f0c5a33de29fb7732917d4b6f2d"
+}

@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0246:clearway-operating-solar-portfolio-12-u-s-projects-50-interest:1c6f7831",
+  "taskIndex": 246,
+  "companyName": "Clearway Operating Solar Portfolio (12 U.S. projects, 50% interest)",
+  "asOfDate": "2026-08-19",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-08-29T15:14:02.000Z",
+  "result": {
+    "decision": "PROPOSED_CORRECTION",
+    "rationale": "Create one manager-level Cardinal Portfolio JV record. SEC, FERC and sponsor evidence establish a March 30, 2026 closed sponsor-equity transaction in which Clearway Energy, Inc. and Fengate-managed vehicles each acquired 50%. The company boundary is the 225-227 MW western operating-solar subset, not the complete Cardinal portfolio or the broader Clearway platform.",
+    "evidence": [
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/1567683/000162828026053421/cwen-20260630.htm",
+        "purpose": "Current SEC evidence for the Cardinal Portfolio JV name, March 30 close, Clearway's 50% interest and 225 MW scope."
+      },
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/1637757/000110465925097101/tm2528052d1_ex10-2.htm",
+        "purpose": "Executed purchase agreement identifying buyers, sellers, target entities and the 50/50 cash membership-interest purchase."
+      },
+      {
+        "url": "https://fengate.com/article/fengate-acquires-interest-operational-us-solar-portfolio",
+        "purpose": "Direct Fengate evidence for its 50% interest, fund attribution, 12-project boundary and 227 MW scale."
+      },
+      {
+        "url": "https://www.ferc.gov/sites/default/files/2026-03/EC26-13-000.pdf",
+        "purpose": "Regulatory approval and ownership-chain evidence for the Clearway/Fengate acquisition."
+      }
+    ]
+  },
+  "lineage": {
+    "researchDecisionSha256": "d9aa264e5e48319f69d58fb64ef7cc1d9f3f1fe4265cb956e8dbfec5275ee167",
+    "acceptedResponseSha256": "3abeddbf532ebc768726932f656720b98768c4d3a6a4b2c9bffaf3f78e0f1833",
+    "sourceVerificationSha256": "3579cc6fe8b29f5724de050bc29f0f7c861c8343aa6b1b37fc7c6f8d02d2ea8b"
+  }
+}

@@ -51,10 +51,12 @@ describe("approved ownership organization provisioning", () => {
   it("classifies newly approved fund managers and corporate retained owners deterministically", () => {
     expect(ownershipOrganizationTypes("AT&T Inc.")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("AgeCare")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("Amico Major Projects")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("BC Partners")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("BBGI")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("Canadian Business Growth Fund")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("Capital Power Corporation")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("Clearway Energy")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Continental Grain Company")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Cresta Fund Management")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("Cox Enterprises")).toEqual(["CORPORATE"]);
@@ -70,6 +72,7 @@ describe("approved ownership organization provisioning", () => {
     expect(ownershipOrganizationTypes("Excelsior Energy Capital")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("Extendicare Inc.")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Ferrovial N.V.")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("Forum Equity Partners")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("GE Renewable Energy")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("HPS Investment Partners")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("Harvestone Group")).toEqual(["CORPORATE"]);
@@ -83,6 +86,7 @@ describe("approved ownership organization provisioning", () => {
     expect(ownershipOrganizationTypes("OPTrust")).toEqual(["PENSION"]);
     expect(ownershipOrganizationTypes("PUC Inc.")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Revera Inc.")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("Sacyr Infrastructure Canada")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Silverpeak")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("TC Energy Corporation")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("TotalEnergies")).toEqual(["CORPORATE"]);
@@ -101,10 +105,12 @@ describe("approved ownership organization provisioning", () => {
     for (const [name, type] of [
       ["AT&T Inc.", "CORPORATE"],
       ["AgeCare", "CORPORATE"],
+      ["Amico Major Projects", "CORPORATE"],
       ["BC Partners", "FUND_MANAGER"],
       ["BBGI", "FUND_MANAGER"],
       ["Canadian Business Growth Fund", "FUND_MANAGER"],
       ["Capital Power Corporation", "CORPORATE"],
+      ["Clearway Energy", "CORPORATE"],
       ["Continental Grain Company", "CORPORATE"],
       ["Cresta Fund Management", "FUND_MANAGER"],
       ["Cox Enterprises", "CORPORATE"],
@@ -120,6 +126,7 @@ describe("approved ownership organization provisioning", () => {
       ["Excelsior Energy Capital", "FUND_MANAGER"],
       ["Extendicare Inc.", "CORPORATE"],
       ["Ferrovial N.V.", "CORPORATE"],
+      ["Forum Equity Partners", "FUND_MANAGER"],
       ["GE Renewable Energy", "CORPORATE"],
       ["GFL Environmental Inc.", "CORPORATE"],
       ["Jeff Canon and PROENERGY management", "OTHER"],
@@ -133,6 +140,7 @@ describe("approved ownership organization provisioning", () => {
       ["OPTrust", "PENSION"],
       ["PUC Inc.", "CORPORATE"],
       ["Revera Inc.", "CORPORATE"],
+      ["Sacyr Infrastructure Canada", "CORPORATE"],
       ["Silverpeak", "FUND_MANAGER"],
       ["TC Energy Corporation", "CORPORATE"],
       ["TotalEnergies", "CORPORATE"],

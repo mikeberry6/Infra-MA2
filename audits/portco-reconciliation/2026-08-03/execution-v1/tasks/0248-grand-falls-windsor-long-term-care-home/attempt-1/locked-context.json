@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0248:grand-falls-windsor-long-term-care-home:ebbcb53e",
+  "taskIndex": 248,
+  "companyName": "Grand Falls-Windsor Long-Term Care Home",
+  "generatedAt": "2026-08-29T15:13:29.601Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0248-grand-falls-windsor-long-term-care-home/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 248,
+    "taskId": "ledger:0248:grand-falls-windsor-long-term-care-home:ebbcb53e",
+    "canonicalKey": null,
+    "companyName": "Grand Falls-Windsor Long-Term Care Home",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "REPO_ONLY_JUDGMENT",
+    "earliestManagerIndex": 45,
+    "managers": [
+      "Fengate Asset Management"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "045-fengate-asset-management:repo-only:001:grand-falls-windsor-long-term-care-home"
+    ],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://fengate.com/news/fengate-led-consortium-achieves-financial-close-for-gander-and-grand-falls-windsor-care-homes-infrastructure-project"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted repo-only MATCHED_ELSEWHERE judgment for Fengate Asset Management: Record corresponds to a single facility within the broader Gander and Grand Falls-Windsor Care Homes Project, which is included as the consolidated platform holding.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment.",
+      "Repo-only identity has no matching production or evaluated-seed record in the captured snapshots."
+    ]
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": null,
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0248:grand-falls-windsor-long-term-care-home:ebbcb53e",
+    "taskIndex": 248,
+    "canonicalKey": null,
+    "capturedAt": "2026-08-29T15:13:29.601Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "2b63296e5bddb0e51155092d5f63d70cac42188f1bda2b827b1ee465af7e204a",
+    "productionSnapshotSha256": "e1eb0f78fadbd018229ae904d57f6631fb3172ad34efaf71e1f0fe8e37ba6855",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "7162f023548431ed1fed51e43a93e8e1e0a46df9edc0adf314307e96f61f1312",
+    "stateSha256": "b638399b300f42ffe7692cd8970af175b9d3223ed44f13b66d1a9aee5d1d9098",
+    "taskSnapshotSha256": "75f8e1fd0656c94f6e0e08fbf682991aa72cf19ccae1f62b78d2c7673198373a"
+  },
+  "contextSha256": "5aa219cc030da1cbff16ff03bfce1ef0b7249e693ec358834334e574e832573c"
+}
