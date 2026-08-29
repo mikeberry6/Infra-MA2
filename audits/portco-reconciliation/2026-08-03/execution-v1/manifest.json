@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-29T16:08:36.000Z",
+  "updatedAt": "2026-08-29T17:12:45.000Z",
   "runStatus": "IDLE",
   "activeTaskId": null,
   "source": {
@@ -27609,23 +27609,44 @@
       "managerIndex": 45,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "92c015232e6556a983959390f31d5b5e728791fa7ee7f7fcb136db44ac41d8f3",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-08-29T16:16:00.000Z",
+      "updatedAt": "2026-08-29T17:12:45.000Z",
+      "completedAt": "2026-08-29T17:12:45.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "93653d66cc2b9faf7a0940c86168ad1532d463acae1b9bc19ad55458460b981b",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0249-jupiter-medical-center-campus/attempt-1/locked-task-snapshot.json",
+          "sha256": "93653d66cc2b9faf7a0940c86168ad1532d463acae1b9bc19ad55458460b981b"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0249-jupiter-medical-center-campus-v1/proposal.json",
+          "sha256": "51bae8d445741983f67a338526ca7961420ce349be7ae14523c13a8d9e37c5d2"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0249-jupiter-medical-center-campus-v1.json",
+          "sha256": "922e2b1b4de07e6c7d20813e7e8edc5d3da051589a435b575e1b252a4ff8647a"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0249-0253-v1/production-apply/batch-apply-receipt.json#members/0/receipt",
+          "sha256": "9767a4b23f49277bbf1f853028397082f75d84b790faf926f25636e9ecc97040"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0249-jupiter-medical-center-campus-v1/proposal.json#afterImage",
+          "sha256": "b2f9d38433988c1e43eea1cea90a55a50e9c1f18a40b39f0d64105cab24c716b"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-29T17:12:45.000Z",
+        "auditEventId": "cmtem9hee000iyr2bfrxd5rro",
+        "transactionId": "6aeb3126-3fff-4335-a317-66337a5ffb11",
+        "receiptSha256": "9767a4b23f49277bbf1f853028397082f75d84b790faf926f25636e9ecc97040",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33263969614"
+      },
       "history": [
         {
           "sequence": 1,
@@ -27636,6 +27657,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-08-29T17:12:45.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0249-0253-v1.",
+          "taskSnapshotSha256": "93653d66cc2b9faf7a0940c86168ad1532d463acae1b9bc19ad55458460b981b",
+          "evidenceSha256": [
+            "2054ed468635bd9c652c37e176974da0e73004150b9394b6f34bef09034dedfc",
+            "51bae8d445741983f67a338526ca7961420ce349be7ae14523c13a8d9e37c5d2",
+            "922e2b1b4de07e6c7d20813e7e8edc5d3da051589a435b575e1b252a4ff8647a",
+            "93653d66cc2b9faf7a0940c86168ad1532d463acae1b9bc19ad55458460b981b",
+            "9767a4b23f49277bbf1f853028397082f75d84b790faf926f25636e9ecc97040",
+            "b2f9d38433988c1e43eea1cea90a55a50e9c1f18a40b39f0d64105cab24c716b",
+            "f2688d921be742fe4b6878016dc5b13c4bc7c469634e8f8e1170e7a7aabe4fdf"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -27647,23 +27686,44 @@
       "managerIndex": 45,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "98392ed484a6b906dba299afa4802d519bda3a4fb690db819a2005f199aae5bc",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-08-29T16:16:00.000Z",
+      "updatedAt": "2026-08-29T17:12:45.000Z",
+      "completedAt": "2026-08-29T17:12:45.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "8c4bb00b9d94c1ce2b28277554faf9dbcc06323305f3a7948f11943a2fee7a40",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0250-medcraft-medical-outpatient-portfolio/attempt-1/locked-task-snapshot.json",
+          "sha256": "8c4bb00b9d94c1ce2b28277554faf9dbcc06323305f3a7948f11943a2fee7a40"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0250-medcraft-medical-outpatient-portfolio-v1/proposal.json",
+          "sha256": "eeeacc4abe708aa4ff4b8ed33a54e9d0bddef996e8b1ee6d641329c9f1185cf5"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0250-medcraft-medical-outpatient-portfolio-v1.json",
+          "sha256": "efe6a5bd9511a9379853aac7a4743a43d41c00f09e5fe726f57aeaaaeb0f1cd7"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0249-0253-v1/production-apply/batch-apply-receipt.json#members/1/receipt",
+          "sha256": "22488f716612a9125f445b08b42baa56bddc5384420c16f43c855cd32c412c6b"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0250-medcraft-medical-outpatient-portfolio-v1/proposal.json#afterImage",
+          "sha256": "c0518b0647506f434620303bc252faa0e7c401fffd9840d96891a893f4845820"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-29T17:12:45.000Z",
+        "auditEventId": "cmtem9mjm000syr2bo5xgmcu9",
+        "transactionId": "6aeb3126-3fff-4335-a317-66337a5ffb11",
+        "receiptSha256": "22488f716612a9125f445b08b42baa56bddc5384420c16f43c855cd32c412c6b",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33263969614"
+      },
       "history": [
         {
           "sequence": 1,
@@ -27674,6 +27734,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-08-29T17:12:45.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0249-0253-v1.",
+          "taskSnapshotSha256": "8c4bb00b9d94c1ce2b28277554faf9dbcc06323305f3a7948f11943a2fee7a40",
+          "evidenceSha256": [
+            "2054ed468635bd9c652c37e176974da0e73004150b9394b6f34bef09034dedfc",
+            "22488f716612a9125f445b08b42baa56bddc5384420c16f43c855cd32c412c6b",
+            "8c4bb00b9d94c1ce2b28277554faf9dbcc06323305f3a7948f11943a2fee7a40",
+            "c0518b0647506f434620303bc252faa0e7c401fffd9840d96891a893f4845820",
+            "eeeacc4abe708aa4ff4b8ed33a54e9d0bddef996e8b1ee6d641329c9f1185cf5",
+            "efe6a5bd9511a9379853aac7a4743a43d41c00f09e5fe726f57aeaaaeb0f1cd7",
+            "f2688d921be742fe4b6878016dc5b13c4bc7c469634e8f8e1170e7a7aabe4fdf"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -27685,23 +27763,44 @@
       "managerIndex": 45,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "48cbc914bab00aebe3ec719fefdb285185a1328a047f408ae3fa77d86102682e",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-08-29T16:16:00.000Z",
+      "updatedAt": "2026-08-29T17:12:45.000Z",
+      "completedAt": "2026-08-29T17:12:45.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "48212b0048fdd0c838edc63c47017fbaee3626d7ad11854306bf238add41e21d",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0251-montecito-medical-outpatient-portfolio/attempt-1/locked-task-snapshot.json",
+          "sha256": "48212b0048fdd0c838edc63c47017fbaee3626d7ad11854306bf238add41e21d"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0251-montecito-medical-outpatient-portfolio-v1/proposal.json",
+          "sha256": "a4ed998ed258706be5eabc1f634fc9c84a8e2053dd0544b693a9d832632585be"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0251-montecito-medical-outpatient-portfolio-v1.json",
+          "sha256": "5472f25d6dd83963653c83914fb4fb8c1f485f8c0a552dcd8ecc02e5ed532282"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0249-0253-v1/production-apply/batch-apply-receipt.json#members/2/receipt",
+          "sha256": "8fce0e3acc458f7df27cf836fc174de32538f187795cc70275663598d3169417"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0251-montecito-medical-outpatient-portfolio-v1/proposal.json#afterImage",
+          "sha256": "a6c9a7c221f6aa2b76cced07aeaf9d012daf47422baddb4faac0bafaaa153398"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-29T17:12:45.000Z",
+        "auditEventId": "cmtem9s7b0014yr2bty6ibp2e",
+        "transactionId": "6aeb3126-3fff-4335-a317-66337a5ffb11",
+        "receiptSha256": "8fce0e3acc458f7df27cf836fc174de32538f187795cc70275663598d3169417",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33263969614"
+      },
       "history": [
         {
           "sequence": 1,
@@ -27712,6 +27811,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-08-29T17:12:45.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0249-0253-v1.",
+          "taskSnapshotSha256": "48212b0048fdd0c838edc63c47017fbaee3626d7ad11854306bf238add41e21d",
+          "evidenceSha256": [
+            "2054ed468635bd9c652c37e176974da0e73004150b9394b6f34bef09034dedfc",
+            "48212b0048fdd0c838edc63c47017fbaee3626d7ad11854306bf238add41e21d",
+            "5472f25d6dd83963653c83914fb4fb8c1f485f8c0a552dcd8ecc02e5ed532282",
+            "8fce0e3acc458f7df27cf836fc174de32538f187795cc70275663598d3169417",
+            "a4ed998ed258706be5eabc1f634fc9c84a8e2053dd0544b693a9d832632585be",
+            "a6c9a7c221f6aa2b76cced07aeaf9d012daf47422baddb4faac0bafaaa153398",
+            "f2688d921be742fe4b6878016dc5b13c4bc7c469634e8f8e1170e7a7aabe4fdf"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -27723,23 +27840,44 @@
       "managerIndex": 45,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "073b7747d7bcde1b734b0b77cc6d7e26a9796f506b9e1c3a0ece8fa583cacc44",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-08-29T16:16:00.000Z",
+      "updatedAt": "2026-08-29T17:12:45.000Z",
+      "completedAt": "2026-08-29T17:12:45.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "243a44448a8384350a06f4544674b59f27ce46f13090b92186717e2b7e47ed1a",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0252-prince-george-s-county-blueprint-schools-program-phase-one/attempt-1/locked-task-snapshot.json",
+          "sha256": "243a44448a8384350a06f4544674b59f27ce46f13090b92186717e2b7e47ed1a"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0252-prince-george-s-county-blueprint-schools-program-phase-one-v1/proposal.json",
+          "sha256": "b6d57e7e095e33a1f9489ddf8801662ac6c4cebbac6a198bed61bfcd5a79ddf0"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0252-prince-george-s-county-blueprint-schools-program-phase-one-v1.json",
+          "sha256": "0c23fed8864923c1918360506d8cc90c5700e34c188e6ae2d0df8dc0aa5bf863"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0249-0253-v1/production-apply/batch-apply-receipt.json#members/3/receipt",
+          "sha256": "c3e8f1c7d1756bcf4c34b9e7dccb62ecc4272e6978018c6824088788982fd4e2"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0252-prince-george-s-county-blueprint-schools-program-phase-one-v1/proposal.json#afterImage",
+          "sha256": "c6005872dd32987a5c934721e3c9f67df047f1739acbf06bd198cc48e4c8d549"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-29T17:12:45.000Z",
+        "auditEventId": "cmtem9yc3001lyr2b531doxbf",
+        "transactionId": "6aeb3126-3fff-4335-a317-66337a5ffb11",
+        "receiptSha256": "c3e8f1c7d1756bcf4c34b9e7dccb62ecc4272e6978018c6824088788982fd4e2",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33263969614"
+      },
       "history": [
         {
           "sequence": 1,
@@ -27750,6 +27888,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-08-29T17:12:45.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0249-0253-v1.",
+          "taskSnapshotSha256": "243a44448a8384350a06f4544674b59f27ce46f13090b92186717e2b7e47ed1a",
+          "evidenceSha256": [
+            "0c23fed8864923c1918360506d8cc90c5700e34c188e6ae2d0df8dc0aa5bf863",
+            "2054ed468635bd9c652c37e176974da0e73004150b9394b6f34bef09034dedfc",
+            "243a44448a8384350a06f4544674b59f27ce46f13090b92186717e2b7e47ed1a",
+            "b6d57e7e095e33a1f9489ddf8801662ac6c4cebbac6a198bed61bfcd5a79ddf0",
+            "c3e8f1c7d1756bcf4c34b9e7dccb62ecc4272e6978018c6824088788982fd4e2",
+            "c6005872dd32987a5c934721e3c9f67df047f1739acbf06bd198cc48e4c8d549",
+            "f2688d921be742fe4b6878016dc5b13c4bc7c469634e8f8e1170e7a7aabe4fdf"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -27761,20 +27917,26 @@
       "managerIndex": 46,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "075ff46a73d819c80f2c9123041ffb28f01565fc09a2382a57e933ef465ea266",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
+      "status": "DEFERRED",
+      "attempts": 1,
+      "startedAt": "2026-08-29T16:16:00.000Z",
+      "updatedAt": "2026-08-29T17:12:45.000Z",
+      "completedAt": "2026-08-29T17:12:45.000Z",
+      "exceptionReason": "The generic asset-SPV record resolves to Green Transportation Leasing, LLC, historically jointly owned by Generate and BYD. A 2026 registry extract shows an active legal entity and a Generate-linked manager, so immediate retirement is not supported. Application is deferred because direct evidence does not establish the current member schedule, current equity stakes, BYD's current status, or whether the platform still holds an in-scope leasing asset book rather than only an active shell.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "dd10151862fcda9330925ba9b0bf9947550076a07fd40407f84b954e72cb2d58",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0253-byd-ev-fleet-asset-spvs/attempt-1/locked-task-snapshot.json",
+          "sha256": "dd10151862fcda9330925ba9b0bf9947550076a07fd40407f84b954e72cb2d58"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0253-byd-ev-fleet-asset-spvs/attempt-1/terminal-decision.json",
+          "sha256": "09c477afaa471b0565ce8682136cdf5ba754dc1554268c1b49d4091d7783001a"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -27788,6 +27950,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-08-29T17:12:45.000Z",
+          "reason": "The generic asset-SPV record resolves to Green Transportation Leasing, LLC, historically jointly owned by Generate and BYD. A 2026 registry extract shows an active legal entity and a Generate-linked manager, so immediate retirement is not supported. Application is deferred because direct evidence does not establish the current member schedule, current equity stakes, BYD's current status, or whether the platform still holds an in-scope leasing asset book rather than only an active shell.",
+          "taskSnapshotSha256": "dd10151862fcda9330925ba9b0bf9947550076a07fd40407f84b954e72cb2d58",
+          "evidenceSha256": [
+            "09c477afaa471b0565ce8682136cdf5ba754dc1554268c1b49d4091d7783001a",
+            "2054ed468635bd9c652c37e176974da0e73004150b9394b6f34bef09034dedfc",
+            "dd10151862fcda9330925ba9b0bf9947550076a07fd40407f84b954e72cb2d58",
+            "f2688d921be742fe4b6878016dc5b13c4bc7c469634e8f8e1170e7a7aabe4fdf"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -37279,5 +37456,5 @@
       ]
     }
   ],
-  "manifestSha256": "5b98ead0afe9130d1a4d81f7a863c5f53dd0e961ad26694c29eb03df8b3c9789"
+  "manifestSha256": "c9e348f766104690743106a8e49ccd886efd4b4b7172c92e6652d695c58da2f6"
 }
