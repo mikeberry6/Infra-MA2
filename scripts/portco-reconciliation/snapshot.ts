@@ -126,9 +126,20 @@ export interface ProductionSnapshotRead {
 }
 
 export interface ApprovedSeedAfterImageMetadata {
+  proposalSha256: string;
+  taskId: string;
+  canonicalCompanyId: string | null;
   company: { name: string; country: string };
+  productionRetiredCompanyIds: string[];
   retiredCompanies: Array<{ name: string; country: string }>;
   reviewedSeedRetirements?: Array<{ name: string; country: string }>;
+}
+
+export interface SeedRedirectBaselineEntry {
+  lineageKey: string;
+  retiredId: string;
+  companyId: string;
+  company: { name: string; country: string };
 }
 
 function normalizeHost(value: string): string {
@@ -212,7 +223,9 @@ export function databaseTargetIdentity(input: {
 
 export function redactDatabaseError(error: unknown, connectionString: string): string {
   const raw = error instanceof Error ? error.message : String(error);
-  let redacted = raw.split(connectionString).join("[REDACTED_DATABASE_URL]");
+  let redacted = connectionString
+    ? raw.split(connectionString).join("[REDACTED_DATABASE_URL]")
+    : raw;
   try {
     const parsed = new URL(connectionString);
     const secrets = [
@@ -462,24 +475,55 @@ function exactCitationCount(company: PortCo): number {
 
 function redirectCountsByCanonical(
   afterImages: readonly ApprovedSeedAfterImageMetadata[],
+  baselineRedirects: readonly SeedRedirectBaselineEntry[],
 ): Map<string, number> {
   const result = new Map<string, number>();
-  const retiredKeys = new Set<string>();
-  for (const afterImage of afterImages) {
-    const canonicalKey = seedKey(afterImage.company.name, afterImage.company.country);
-    const seedOnlyRetirementKeys = new Set(
-      (afterImage.reviewedSeedRetirements ?? []).map((retired) => seedKey(retired.name, retired.country)),
-    );
-    for (const retired of afterImage.retiredCompanies) {
-      const retiredKey = seedKey(retired.name, retired.country);
-      if (retiredKeys.has(retiredKey)) {
-        throw new Error(`Approved seed overlays retire ${retiredKey} more than once`);
-      }
-      retiredKeys.add(retiredKey);
-      if (!seedOnlyRetirementKeys.has(retiredKey)) {
-        result.set(canonicalKey, (result.get(canonicalKey) ?? 0) + 1);
-      }
+  const companyIdentityById = new Map<string, { name: string; country: string }>();
+  const redirects = new Map<string, { companyId: string; lineageKey: string }>();
+  for (const baseline of baselineRedirects) {
+    if (redirects.has(baseline.retiredId)) {
+      throw new Error(`Seed redirect baseline repeats retired company ${baseline.retiredId}`);
     }
+    companyIdentityById.set(baseline.companyId, baseline.company);
+    redirects.set(baseline.retiredId, {
+      companyId: baseline.companyId,
+      lineageKey: baseline.lineageKey,
+    });
+  }
+  for (const afterImage of afterImages) {
+    if (afterImage.canonicalCompanyId) {
+      companyIdentityById.set(afterImage.canonicalCompanyId, afterImage.company);
+    }
+    if (afterImage.productionRetiredCompanyIds.length === 0) continue;
+    if (!afterImage.canonicalCompanyId) {
+      throw new Error(
+        `Approved seed overlay ${afterImage.proposalSha256} retires production rows without a canonical company id`,
+      );
+    }
+    const retiredIds = new Set(afterImage.productionRetiredCompanyIds);
+    for (const redirect of redirects.values()) {
+      if (retiredIds.has(redirect.companyId)) redirect.companyId = afterImage.canonicalCompanyId;
+    }
+    for (const retiredId of afterImage.productionRetiredCompanyIds) {
+      const existing = redirects.get(retiredId);
+      if (existing && existing.companyId !== afterImage.canonicalCompanyId) {
+        throw new Error(`Approved seed overlays retire production company ${retiredId} more than once`);
+      }
+      redirects.set(retiredId, {
+        companyId: afterImage.canonicalCompanyId,
+        lineageKey: afterImage.proposalSha256,
+      });
+    }
+  }
+  for (const [retiredId, redirect] of redirects) {
+    const company = companyIdentityById.get(redirect.companyId);
+    if (!company) {
+      throw new Error(
+        `Redirect ${retiredId} targets company ${redirect.companyId} without seed identity lineage`,
+      );
+    }
+    const canonicalKey = seedKey(company.name, company.country);
+    result.set(canonicalKey, (result.get(canonicalKey) ?? 0) + 1);
   }
   return result;
 }
@@ -491,8 +535,9 @@ export function buildSeedSnapshot(input: {
   evaluatedFrom?: string;
   companies: readonly PortCo[];
   approvedAfterImages: readonly ApprovedSeedAfterImageMetadata[];
+  baselineRedirects?: readonly SeedRedirectBaselineEntry[];
 }): SeedSnapshot {
-  const redirects = redirectCountsByCanonical(input.approvedAfterImages);
+  const redirects = redirectCountsByCanonical(input.approvedAfterImages, input.baselineRedirects ?? []);
   const companies = input.companies.map((company) => {
     const companySeedKey = seedKey(company.name, company.country);
     return finalizeSnapshotCompany({

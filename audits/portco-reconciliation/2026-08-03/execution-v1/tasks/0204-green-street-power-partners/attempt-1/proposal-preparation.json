@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_PROPOSAL_PREPARATION",
+  "taskId": "ledger:0204:green-street-power-partners:9b141bba",
+  "taskIndex": 204,
+  "generatedAt": "2026-08-24T04:38:00.000Z",
+  "readyForLocking": false,
+  "plannedActions": [
+    "CORRECT_COMPANY",
+    "MERGE_COMPANIES"
+  ],
+  "canonicalCompany": {
+    "id": "cmrxpjcyj00teivhe0d58ngch",
+    "name": "GS Power Partners",
+    "country": "United States"
+  },
+  "retiredCompanies": [
+    {
+      "id": "cmrxpjcxy00tdivhea9p9kug7",
+      "name": "Green Street Power Partners",
+      "country": "United States"
+    }
+  ],
+  "knownRelationMerges": [
+    {
+      "kind": "OWNERSHIP_PERIOD",
+      "retiredRelationId": "cmrxpjyfn01rbivheqqa9jiv1",
+      "canonicalRelationId": "cmrxpjyg501rcivheu7f99nh3",
+      "rationale": "Both rows represent the same continuing CVC DIF majority investment through DIF Infrastructure VII completed in April 2023."
+    }
+  ],
+  "recommendedFields": {
+    "name": "GS Power Partners",
+    "aliases": [
+      "GSPP",
+      "Green Street Power Partners",
+      "Green Street Power Partners, LLC"
+    ],
+    "website": "https://gspowerpartners.com/",
+    "yearFounded": 2015,
+    "headquarters": "Stamford, Connecticut, United States",
+    "lastVerifiedAt": "2026-08-19T00:00:00.000Z",
+    "owner": {
+      "managerName": "CVC DIF",
+      "organizationName": "CVC DIF",
+      "fundName": "DIF Infrastructure VII",
+      "vehicleName": null,
+      "stake": "Majority equity interest; exact percentage not publicly disclosed",
+      "investmentYear": 2023,
+      "exitYear": null,
+      "isActive": true,
+      "transactionState": "CLOSED_ACTIVE"
+    }
+  },
+  "primarySourceUrl": "https://gspowerpartners.com/we-are-now-gs-power-partners-heres-why-were-excited/",
+  "snapshotDependentWork": [
+    "Capture the fresh protected-schema target and retired-company full images after the active 198-202 bundle completes.",
+    "Map the two duplicate retired milestones to the two canonical GS Power Partners milestones using their fresh production relation IDs.",
+    "Reconcile shared Source metadata and set exactly one primary citation without changing globally shared labels or types.",
+    "Regenerate the strict proposal spec and proposal from the fresh task-scoped hashes."
+  ]
+}

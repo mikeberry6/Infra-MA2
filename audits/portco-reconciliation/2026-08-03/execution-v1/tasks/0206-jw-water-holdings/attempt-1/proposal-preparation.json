@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_PROPOSAL_PREPARATION",
+  "taskId": "ledger:0206:jw-water-holdings:fc8ebab0",
+  "taskIndex": 206,
+  "generatedAt": "2026-08-24T04:38:00.000Z",
+  "readyForLocking": false,
+  "plannedActions": [
+    "CORRECT_COMPANY",
+    "MERGE_COMPANIES"
+  ],
+  "canonicalCompany": {
+    "id": "cmrxpjd0700thivhe6wdzyicz",
+    "name": "JW Water Holdings, LLC",
+    "country": "United States"
+  },
+  "retiredCompanies": [
+    {
+      "id": "cmrxpjd2w00tmivhewaupms5e",
+      "name": "Robson Communities Utilities / Pima Utility",
+      "country": "United States"
+    },
+    {
+      "id": "cmrxpjd0s00tiivheuomhxk0o",
+      "name": "Robson Utilities Portfolio",
+      "country": "United States"
+    }
+  ],
+  "knownRelationMerges": [
+    {
+      "kind": "OWNERSHIP_PERIOD",
+      "retiredRelationId": "cmrxpjyks01rkivhehaofx67s",
+      "canonicalRelationId": "cmrxpjyht01rfivheqr8qfsdl",
+      "rationale": "The Robson and Pima row carries the same CVC DIF and DIF Infrastructure VII ownership as the canonical JW Water platform."
+    },
+    {
+      "kind": "OWNERSHIP_PERIOD",
+      "retiredRelationId": "cmrxpjyib01rgivhevk92xk8v",
+      "canonicalRelationId": "cmrxpjyht01rfivheqr8qfsdl",
+      "rationale": "The Robson portfolio row carries the same CVC DIF and DIF Infrastructure VII ownership as the canonical JW Water platform."
+    }
+  ],
+  "recommendedFields": {
+    "name": "JW Water Holdings, LLC",
+    "aliases": [
+      "JW Water",
+      "JW Water Holdings",
+      "JW Water Holdings (incl. Robson Utilities)"
+    ],
+    "website": "https://jwwater.com/",
+    "yearFounded": 2013,
+    "headquarters": null,
+    "lastVerifiedAt": "2026-08-19T00:00:00.000Z",
+    "owner": {
+      "managerName": "CVC DIF",
+      "organizationName": "CVC DIF",
+      "fundName": "DIF Infrastructure VII",
+      "vehicleName": null,
+      "stake": null,
+      "investmentYear": 2024,
+      "exitYear": null,
+      "isActive": true,
+      "transactionState": "CLOSED_ACTIVE"
+    },
+    "pendingOwnershipTransactions": []
+  },
+  "primarySourceUrl": "https://www.cvc.com/media/news/2024/2024-11-21-cvc-dif-acquires-a-portfolio-of-us-regulated-water-and-wastewater-utilities/",
+  "snapshotDependentWork": [
+    "Capture fresh protected-schema full images for JW Water and both Robson rows after the active 198-202 bundle completes.",
+    "Preserve child-utility and regulatory history while mapping only genuinely duplicate acquisition and scale milestones by fresh relation ID.",
+    "Confirm that the Pima split and utility consolidations remain internal reorganizations, not pending manager-level ownership transactions.",
+    "Reconcile shared Source metadata, set exactly one primary citation and regenerate the strict proposal from fresh task-scoped hashes."
+  ]
+}

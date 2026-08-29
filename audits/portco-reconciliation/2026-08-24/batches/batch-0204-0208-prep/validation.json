@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_PREPARATION_VALIDATION",
+  "batchKey": "batch-0204-0208-prep",
+  "validatedAt": "2026-08-24T04:40:00.000Z",
+  "researchOnly": true,
+  "activeBundleCreated": false,
+  "orderedMembers": [
+    {
+      "taskId": "ledger:0204:green-street-power-partners:9b141bba",
+      "taskIndex": 204,
+      "plannedOutcome": "MUTATION",
+      "canonicalCompanyId": "cmrxpjcyj00teivhe0d58ngch",
+      "retiredCompanyIds": [
+        "cmrxpjcxy00tdivhea9p9kug7"
+      ]
+    },
+    {
+      "taskId": "ledger:0205:gs-power-partners:c5899878",
+      "taskIndex": 205,
+      "plannedOutcome": "SUPERSEDED",
+      "supersededByTaskId": "ledger:0204:green-street-power-partners:9b141bba"
+    },
+    {
+      "taskId": "ledger:0206:jw-water-holdings:fc8ebab0",
+      "taskIndex": 206,
+      "plannedOutcome": "MUTATION",
+      "canonicalCompanyId": "cmrxpjd0700thivhe6wdzyicz",
+      "retiredCompanyIds": [
+        "cmrxpjd2w00tmivhewaupms5e",
+        "cmrxpjd0s00tiivheuomhxk0o"
+      ]
+    },
+    {
+      "taskId": "ledger:0207:robson-communities-utilities-pima-utility:d965a9e0",
+      "taskIndex": 207,
+      "plannedOutcome": "SUPERSEDED",
+      "supersededByTaskId": "ledger:0206:jw-water-holdings:fc8ebab0"
+    },
+    {
+      "taskId": "ledger:0208:robson-utilities-portfolio:357f70cb",
+      "taskIndex": 208,
+      "plannedOutcome": "SUPERSEDED",
+      "supersededByTaskId": "ledger:0206:jw-water-holdings:fc8ebab0"
+    }
+  ],
+  "lineage": {
+    "observedProductionSnapshotSha256": "38099e0765f763375546667ae0d42b7606c60383c268af429946631dd276afd9",
+    "artifacts": [
+      {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0204-green-street-power-partners/attempt-1/application-research-decision.json",
+        "sha256": "a6475a540ab55f9602e98e36ddec8062652fcb530cb492748828a83cb9230cfc"
+      },
+      {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0204-green-street-power-partners/attempt-1/proposal-preparation.json",
+        "sha256": "3179026f61aa0c4e906f7585eb49d890b4e0d60c8dadeee5347587fada372871"
+      },
+      {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0205-gs-power-partners/attempt-1/terminal-research-decision.json",
+        "sha256": "f4025add8166d432715825ddfd01a2961eb3d42a41cf340e1f8ff1d91d75f7f6"
+      },
+      {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0206-jw-water-holdings/attempt-1/application-research-decision.json",
+        "sha256": "1bc16a748f5caaf654f18456a8dc260a9bcaa1a408642e0b670dca2ce68e00d2"
+      },
+      {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0206-jw-water-holdings/attempt-1/proposal-preparation.json",
+        "sha256": "5ac1ffa96a8fea7212b6811780b5fd72887b9603b92a350dd4db6ede4422d477"
+      },
+      {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0207-robson-communities-utilities-pima-utility/attempt-1/terminal-research-decision.json",
+        "sha256": "04ea2dd1bde4b230d23b3a722cf9d7c5be4cc4e793a5b3c5ff29cc504628454f"
+      },
+      {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0208-robson-utilities-portfolio/attempt-1/terminal-research-decision.json",
+        "sha256": "570fce9b6ee8c6d02be3536387c81f6b39f6efbde17236ace746cc86770bcc3d"
+      }
+    ]
+  },
+  "checks": {
+    "orderedTaskIndexes": true,
+    "allFiveTaskIdsMatchManifest": true,
+    "canonicalCompanyIdsExistInObservedProduction": true,
+    "retiredCompanyIdsExistInObservedProduction": true,
+    "retiredCompanyIdsAreUniqueAcrossMutations": true,
+    "dependencyOverlapRequiresSingleTransaction": true,
+    "terminalTasksHaveDurableResearchRationale": true,
+    "applicationResearchHasOneRecommendedPrimaryPerMutation": true,
+    "unresolvedItemsAreNoncriticalDisclosureGaps": true,
+    "strictProposalHashesDeferredUntilFreshSnapshots": true,
+    "secondBundleNotActivated": true
+  },
+  "tests": {
+    "portcoReconciliation": "247 passed",
+    "typecheck": "passed",
+    "targetedLint": "passed",
+    "seedSnapshot": {
+      "companies": 1131,
+      "redirects": 43
+    },
+    "observedProductionRedirects": 43
+  },
+  "remainingBeforeActivation": [
+    "Complete and verify the currently active 198-202 release bundle after Vercel serves the exact receipt commit.",
+    "Recapture fresh production, seed, task and dependency snapshots for tasks 204-208.",
+    "Resolve snapshot-dependent milestone relation IDs and shared Source compatibility.",
+    "Generate strict proposals, terminal decisions, automatic authorizations and the canonical batch hash."
+  ],
+  "result": "PASS_OFFLINE_PREPARATION"
+}
