@@ -1,0 +1,274 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-08-29",
+  "ledgerSha256": "f882edc7422226cd5eba9e878b0ce56857cc4278a91df55daf2d5761b8acd5ca",
+  "sourceSnapshotSha256": "1416fdf8e05f9ac8e4439102e8ce87a41208b173419c365c0c1af8543da31d4c",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": ["DISCLOSED", "INFERRED", "DIRECT_PROGRAM", "UNRESOLVED"],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": { "DISCLOSED": 8, "INFERRED": 0, "DIRECT_PROGRAM": 4, "UNRESOLVED": 0 },
+    "inferredWrites": 0,
+    "fundLinkChanges": 1
+  },
+  "expectedMutationCount": 12,
+  "mutations": [
+    {
+      "recordId": "OFA-12F7EE14DF2D",
+      "ownershipPeriodId": "cmrxpk21s01wxivhej5fjim7z",
+      "companyName": "Red de Carreteras de Occidente, S.A.P.I. de C.V.",
+      "country": "Mexico",
+      "investmentFirm": "GIC",
+      "currentVehicleName": "GIC Special Investment Pte. Ltd. via BBVA México trust F/411215-7",
+      "databaseVehicleName": "GIC Special Investment Pte. Ltd. via BBVA México trust F/411215-7",
+      "investmentYear": 2020,
+      "stake": "Approximately 29.04% economic interest, implied within the 82.16% BBVA trust block; company materials round to 29%",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": { "fundAttribution": "INFERRED", "currentLinkedFundName": null },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "GIC Special Investment Pte. Ltd. via BBVA México trust F/411215-7",
+        "attributionConfidence": null,
+        "attributionRationale": "RCO's annual report and transaction evidence disclose GIC's acquisition entity and current economic interest. The materials do not identify a commingled GIC fund, so no curated fund link is inferred."
+      },
+      "evidenceUrls": ["https://www.redviacorta.mx/documents/d/red-v%C3%ADa-corta/2025_reporte-anual", "https://www.abertis.com/news/abertis-y-gic-cierran-la-compra-del-72-de-red-de-/?lang=en"]
+    },
+    {
+      "recordId": "OFA-F4579F85FCD1",
+      "ownershipPeriodId": "cmtetese4000c3g2b57jyvnbs",
+      "companyName": "Red de Carreteras de Occidente, S.A.P.I. de C.V.",
+      "country": "Mexico",
+      "investmentFirm": "Abertis",
+      "currentVehicleName": "IVM via BBVA México trust F/411215-7",
+      "databaseVehicleName": "IVM via BBVA México trust F/411215-7",
+      "investmentYear": 2020,
+      "stake": "53.12%",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": { "fundAttribution": "UNRESOLVED", "currentLinkedFundName": null },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Abertis' accounts and RCO reporting disclose Abertis' current 53.12% economic interest through IVM and the BBVA trust. This is strategic corporate ownership rather than a managed infrastructure fund."
+      },
+      "evidenceUrls": ["https://www.abertis.com/filemanager/media-resource/download/4230/", "https://www.redviacorta.mx/documents/d/red-v%C3%ADa-corta/2025_reporte-anual"]
+    },
+    {
+      "recordId": "OFA-E36BB344B56E",
+      "ownershipPeriodId": "cmteteskf000e3g2b30ze26hr",
+      "companyName": "Red de Carreteras de Occidente, S.A.P.I. de C.V.",
+      "country": "Mexico",
+      "investmentFirm": "Multiple Mexican AFORES",
+      "currentVehicleName": "RCOCB 09 CKD via HSBC México trust F/311529 (formerly F/00661)",
+      "databaseVehicleName": "RCOCB 09 CKD via HSBC México trust F/311529 (formerly F/00661)",
+      "investmentYear": 2009,
+      "stake": "17.84% current economic interest",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": { "fundAttribution": "UNRESOLVED", "currentLinkedFundName": null },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "RCO reporting and the original ownership filing identify the Mexican pension investors' CKD and trust structure. The evidence supports a pension-program investment, not a separately curated manager fund."
+      },
+      "evidenceUrls": ["https://www.redviacorta.mx/documents/d/red-v%C3%ADa-corta/2025_reporte-anual", "https://www.sec.gov/Archives/edgar/data/885012/000090342309000865/ica6-k_1022.htm"]
+    },
+    {
+      "recordId": "OFA-11BF3546A50E",
+      "ownershipPeriodId": "cmrxpk25f01x4ivhev3rzw9ul",
+      "companyName": "Wecom Fiber",
+      "country": "United States",
+      "investmentFirm": "Searchlight Capital Partners",
+      "currentVehicleName": "Searchlight Fiber Alliance LLC; SFA GP; WCM Topco and WCM Holdco",
+      "databaseVehicleName": "Searchlight Fiber Alliance LLC; SFA GP; WCM Topco and WCM Holdco",
+      "investmentYear": 2023,
+      "stake": "SFA holds 77.83% of Topco equity and 66.67% of its vote; Holdco owns 100% of Wecom",
+      "expectedIsActive": true,
+      "targetLinkedFundName": "Searchlight Fiber Alliance",
+      "expected": { "fundAttribution": "INFERRED", "currentLinkedFundName": null },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Searchlight Fiber Alliance",
+        "attributionConfidence": null,
+        "attributionRationale": "The investment announcement and FCC consent record identify Searchlight Fiber Alliance and the Topco/Holdco control chain. The curated Searchlight Fiber Alliance record matches that disclosed vehicle."
+      },
+      "evidenceUrls": ["https://wecomfiber.com/wecom-and-searchlight-capital-partners/", "https://docs.fcc.gov/public/attachments/DOC-405049A1.txt"]
+    },
+    {
+      "recordId": "OFA-22B8E8C97BF9",
+      "ownershipPeriodId": "cmrxpk25z01x5ivhezwl33di9",
+      "companyName": "Wecom Fiber",
+      "country": "United States",
+      "investmentFirm": "GIC",
+      "currentVehicleName": "Epsom Investment Pte. Ltd. via Searchlight Fiber Alliance LLC",
+      "databaseVehicleName": "Epsom Investment Pte. Ltd. via Searchlight Fiber Alliance LLC",
+      "investmentYear": null,
+      "stake": "46.74% nonvoting interest in SFA; FCC-calculated 36.38% indirect Holdco equity",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": { "fundAttribution": "DISCLOSED", "currentLinkedFundName": null },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Epsom Investment Pte. Ltd. via Searchlight Fiber Alliance LLC",
+        "attributionConfidence": null,
+        "attributionRationale": "FCC materials disclose Epsom's nonvoting SFA interest and indirect Holdco economics. They do not disclose a GIC commingled fund or a direct percentage of Wecom, so the acquisition vehicle is retained unlinked."
+      },
+      "evidenceUrls": ["https://docs.fcc.gov/public/attachments/DA-24-820A1.pdf", "https://docs.fcc.gov/public/attachments/DOC-397850A1.pdf"]
+    },
+    {
+      "recordId": "OFA-21FF08F27335",
+      "ownershipPeriodId": "cmteteyv1000q3g2bcibcawmu",
+      "companyName": "Wecom Fiber",
+      "country": "United States",
+      "investmentFirm": "Abu Dhabi Investment Authority (ADIA)",
+      "currentVehicleName": "Platinum Compass B 2018 RSC Ltd. via Searchlight Fiber Alliance LLC",
+      "databaseVehicleName": "Platinum Compass B 2018 RSC Ltd. via Searchlight Fiber Alliance LLC",
+      "investmentYear": null,
+      "stake": "46.74% nonvoting interest in SFA; FCC-calculated 36.38% indirect Holdco equity",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": { "fundAttribution": "UNRESOLVED", "currentLinkedFundName": null },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Platinum Compass B 2018 RSC Ltd. via Searchlight Fiber Alliance LLC",
+        "attributionConfidence": null,
+        "attributionRationale": "FCC materials disclose ADIA's Platinum Compass acquisition vehicle and indirect Holdco economics. This is direct institutional capital through SFA; no managed fund is inferred."
+      },
+      "evidenceUrls": ["https://docs.fcc.gov/public/attachments/DA-24-820A1.pdf", "https://docs.fcc.gov/public/attachments/DOC-397850A1.pdf"]
+    },
+    {
+      "recordId": "OFA-32F3883D9C0A",
+      "ownershipPeriodId": "cmtetez14000s3g2bzjwxyz6b",
+      "companyName": "Wecom Fiber",
+      "country": "United States",
+      "investmentFirm": "ArmaVir Partners / Simple Networks",
+      "currentVehicleName": "Simple Broadband II LLC via Simple Broadband LLC",
+      "databaseVehicleName": "Simple Broadband II LLC via Simple Broadband LLC",
+      "investmentYear": 2023,
+      "stake": "17.65% of Topco equity and 16.67% of its vote",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": { "fundAttribution": "UNRESOLVED", "currentLinkedFundName": null },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The FCC control record discloses Simple Broadband's retained equity and vote. The reviewed evidence does not identify a separately curated infrastructure fund."
+      },
+      "evidenceUrls": ["https://docs.fcc.gov/public/attachments/DOC-405049A1.txt"]
+    },
+    {
+      "recordId": "OFA-5DD0197E71BD",
+      "ownershipPeriodId": "cmtetez77000u3g2b0hqq93e0",
+      "companyName": "Wecom Fiber",
+      "country": "United States",
+      "investmentFirm": "Wecom founders",
+      "currentVehicleName": "Wecom Newco Inc. / LicenseCo rollover",
+      "databaseVehicleName": "Wecom Newco Inc. / LicenseCo rollover",
+      "investmentYear": 2023,
+      "stake": "4.52% of Topco equity and 16.67% of its vote",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": { "fundAttribution": "UNRESOLVED", "currentLinkedFundName": null },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The FCC consent record discloses the founders' rollover equity and vote. This is retained founder ownership and has no fund attribution."
+      },
+      "evidenceUrls": ["https://docs.fcc.gov/public/attachments/DOC-405049A1.txt"]
+    },
+    {
+      "recordId": "OFA-5CFE51CF5660",
+      "ownershipPeriodId": "cmtetf58l001d3g2bqm4nq2u1",
+      "companyName": "Channelview Cogeneration",
+      "country": "United States",
+      "investmentFirm": "Elliott Investment Management",
+      "currentVehicleName": "Elliott Associates, L.P. and Elliott International, L.P. via Chip Energy Investor LLC and EIF Channelview, LLC",
+      "databaseVehicleName": "Elliott Associates, L.P. and Elliott International, L.P. via Chip Energy Investor LLC and EIF Channelview, LLC",
+      "investmentYear": 2025,
+      "stake": "97%",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": { "fundAttribution": "UNRESOLVED", "currentLinkedFundName": null },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Elliott Associates, L.P. and Elliott International, L.P.",
+        "attributionConfidence": null,
+        "attributionRationale": "The regulatory ownership filing discloses Elliott's named funds, acquisition structure and 97% current interest. Those vehicles are not curated fund-database records, so they remain unlinked."
+      },
+      "evidenceUrls": ["https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B70A8259D-0000-CC2D-ADEE-B0DFFB934636%7D&DocTitle=Joint+Petition+for+Declaratory+Ruling+or+Authorization+under+Section+70+PSL"]
+    },
+    {
+      "recordId": "OFA-B4A45A820B26",
+      "ownershipPeriodId": "cmtetf5co001e3g2bunyny4mt",
+      "companyName": "Channelview Cogeneration",
+      "country": "United States",
+      "investmentFirm": "Ares Management",
+      "currentVehicleName": "EIF United States Power Fund IV, L.P. via Ares Channelview Acquisition L.P. / EIF Channelview, LLC",
+      "databaseVehicleName": "EIF United States Power Fund IV, L.P. via Ares Channelview Acquisition L.P. / EIF Channelview, LLC",
+      "investmentYear": 2014,
+      "stake": "3% current; 100% from the 2014 acquisition until the 2025 Elliott transaction",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": { "fundAttribution": "UNRESOLVED", "currentLinkedFundName": null },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "EIF United States Power Fund IV, L.P.",
+        "attributionConfidence": null,
+        "attributionRationale": "The regulatory filing discloses the EIF Fund IV vehicle and Ares-managed acquisition chain. The named fund is not in the curated fund database, so the disclosure is preserved without a link."
+      },
+      "evidenceUrls": ["https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B70A8259D-0000-CC2D-ADEE-B0DFFB934636%7D&DocTitle=Joint+Petition+for+Declaratory+Ruling+or+Authorization+under+Section+70+PSL", "https://www.infrapppworld.com/news/gip-and-fortistar-sell-u-s-power-plant"]
+    },
+    {
+      "recordId": "OFA-4FDBF57ADA5C",
+      "ownershipPeriodId": "cmrxpk5sc022pivhejivt66fy",
+      "companyName": "CyrusOne",
+      "country": "United States",
+      "investmentFirm": "KKR",
+      "currentVehicleName": "Cavalry Parent L.P.; KKR Global Infrastructure Investors IV; KKR Real Estate Partners Americas III; KKR Core vehicles",
+      "databaseVehicleName": "Cavalry Parent L.P.; KKR Global Infrastructure Investors IV; KKR Real Estate Partners Americas III; KKR Core vehicles",
+      "investmentYear": 2022,
+      "stake": "Not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": { "fundAttribution": "DISCLOSED", "currentLinkedFundName": null },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "KKR Global Infrastructure Investors IV; KKR Real Estate Partners Americas III; KKR Core vehicles",
+        "attributionConfidence": null,
+        "attributionRationale": "The merger proxy identifies KKR's acquisition funds and Cavalry Parent structure. No single curated fund row captures the disclosed multi-vehicle ownership, so no link is created."
+      },
+      "evidenceUrls": ["https://www.sec.gov/Archives/edgar/data/1553023/000110465921154474/tm2134342-2_defm14a.htm", "https://www.global-infra.com/news/kkr-and-gip-complete-acquisition-of-cyrusone/"]
+    },
+    {
+      "recordId": "OFA-69B7E235196C",
+      "ownershipPeriodId": "cmtetfc5a001z3g2b7cf5m3n9",
+      "companyName": "CyrusOne",
+      "country": "United States",
+      "investmentFirm": "GIP",
+      "currentVehicleName": "Cavalry Parent L.P.; Global Infrastructure Partners IV-A/B and IV-C vehicles; GIP IV Friends & Family Fund",
+      "databaseVehicleName": "Cavalry Parent L.P.; Global Infrastructure Partners IV-A/B and IV-C vehicles; GIP IV Friends & Family Fund",
+      "investmentYear": 2022,
+      "stake": "Not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": { "fundAttribution": "UNRESOLVED", "currentLinkedFundName": null },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Global Infrastructure Partners IV-A/B and IV-C vehicles; GIP IV Friends & Family Fund",
+        "attributionConfidence": null,
+        "attributionRationale": "The merger proxy and GIP disclosure materials identify the GIP IV acquisition vehicles and Cavalry Parent structure. No single curated fund record covers that disclosed structure, so it remains unlinked."
+      },
+      "evidenceUrls": ["https://www.sec.gov/Archives/edgar/data/1553023/000110465921154474/tm2134342-2_defm14a.htm", "https://www.global-infra.com/additional-disclosures/"]
+    }
+  ],
+  "manifestSha256": "854c5623b15e995b24fe59064edda267054db7b99776bda6620773b04c49dd21"
+}
