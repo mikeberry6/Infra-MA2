@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_SEED_ATTRIBUTION_RECONCILIATION_SPEC",
+  "batchId": "batch-0244-0248-v1",
+  "batchSha256": "fcff3e836d88a6278655a0c77152bb1a5b5ef7379621d6b065fd4cb8527bb101",
+  "reconciledAt": "2026-08-29T15:32:00.000Z",
+  "sourceManifestSha256": "fc2a32d105599dd33e8a2f6d493eefd7101145f37ab801ede9dbf66ee6cb4f44",
+  "rationale": "Align every active owner in the approved Ontario Science Partners, Surrey Pretrial Services Centre Expansion and Cardinal Portfolio JV after-images with one reviewed attribution record. Remove the false Equitix/JLIL and Jura records; preserve John Laing Limited as KKR's disclosed holding platform without inventing a KKR fund; classify Sacyr, Amico and Clearway as direct corporate programs; and link Fiera and Fengate only to the exact funds named by direct ownership evidence and already present in the curated fund universe.",
+  "removeRecordIds": [
+    "OFA-F089815E722B",
+    "OFA-A9FE83B733E0"
+  ],
+  "upsertRecords": [
+    {
+      "recordId": "OFA-5ED767D27E0D",
+      "companyName": "Ontario Science Partners General Partnership",
+      "country": "Canada",
+      "investmentFirm": "KKR",
+      "currentVehicleName": "John Laing Limited / Ontario Science Partners General Partnership",
+      "investmentYear": 2026,
+      "stake": "Indirect through John Laing's 64% ProjectCo interest",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "John Laing Limited",
+      "attributionConfidence": null,
+      "attributionRationale": "Direct closing and portfolio evidence identifies John Laing's 64% ProjectCo interest, while the KKR takeover terms reserve post-takeover John Laing investments to KKR. John Laing Limited is retained as the disclosed holding platform; no specific KKR managed fund is inferred.",
+      "evidenceUrls": [
+        "https://www.laing.com/insights/jjohn-laing-osp-consortium-is-preferred-bidder-for-new-ontario-science-centre-ppp/",
+        "https://www.laing.com/portfolio/ontario-science-centre-canada/",
+        "https://www.lse.co.uk/rns/recommended-cash-acquisition-of-john-laing-group-jps0bk861zdyk32.html"
+      ]
+    },
+    {
+      "recordId": "OFA-3F3C6855DE6B",
+      "companyName": "Ontario Science Partners General Partnership",
+      "country": "Canada",
+      "investmentFirm": "Sacyr Infrastructure Canada",
+      "currentVehicleName": "Ontario Science Partners General Partnership",
+      "investmentYear": 2026,
+      "stake": "26%",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "Sacyr holds its disclosed 26% ProjectCo interest directly through the named consortium structure. No managed infrastructure fund is named or inferred.",
+      "evidenceUrls": [
+        "https://sacyr.com/en/-/adjudicacion-museo-ciencias-ontario",
+        "https://www.infrastructureontario.ca/en/news-and-media/news/new-ontario-science-centre-facility/new-ontario-science-centre-contract-awarded/"
+      ]
+    },
+    {
+      "recordId": "OFA-2A5F4F781416",
+      "companyName": "Ontario Science Partners General Partnership",
+      "country": "Canada",
+      "investmentFirm": "Amico Major Projects",
+      "currentVehicleName": "Ontario Science Partners General Partnership",
+      "investmentYear": 2026,
+      "stake": "10%",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "Amico holds its disclosed 10% ProjectCo interest directly through the named consortium structure. No managed infrastructure fund is named or inferred.",
+      "evidenceUrls": [
+        "https://www.laing.com/insights/jjohn-laing-osp-consortium-is-preferred-bidder-for-new-ontario-science-centre-ppp/",
+        "https://www.infrastructureontario.ca/en/news-and-media/news/new-ontario-science-centre-facility/new-ontario-science-centre-contract-awarded/"
+      ]
+    },
+    {
+      "recordId": "OFA-EB876E6C0A30",
+      "companyName": "Surrey Pretrial Services Centre Expansion Project",
+      "country": "Canada",
+      "investmentFirm": "Fiera Infrastructure",
+      "currentVehicleName": "Woodford Social Infrastructure",
+      "investmentYear": 2016,
+      "stake": "100% at April 19, 2016 entry; no later transfer identified",
+      "targetLinkedFundName": "Fiera EagleCrest Infrastructure",
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Fiera EagleCrest Infrastructure",
+      "attributionConfidence": null,
+      "attributionRationale": "Fiera's acquisition announcement and current asset page directly identify Woodford Social Infrastructure and attribute the investment to its EagleCrest infrastructure platform. The exact curated Fiera EagleCrest Infrastructure fund is linked without inference.",
+      "evidenceUrls": [
+        "https://www.fierainfrastructure.com/wp-content/uploads/2016/04/fiera-capital-adds-five-major-public-private-partnerships-across-canada-to-its-infrastructure-portfolio.pdf",
+        "https://www.fierainfrastructure.com/en/assets/woodford-social-infrastructure/"
+      ]
+    },
+    {
+      "recordId": "OFA-38DAD3AF4BB9",
+      "companyName": "Cardinal Portfolio JV",
+      "country": "United States",
+      "investmentFirm": "Clearway Energy",
+      "currentVehicleName": "Cardinal JV Purchaser LLC",
+      "investmentYear": 2026,
+      "stake": "50%",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "Clearway's SEC filing identifies its direct 50% interest through Cardinal JV Purchaser LLC. Clearway is a corporate owner and no managed infrastructure fund is named or inferred.",
+      "evidenceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/1567683/000162828026053421/cwen-20260630.htm",
+        "https://www.sec.gov/Archives/edgar/data/1637757/000110465925097101/tm2528052d1_ex10-2.htm"
+      ]
+    },
+    {
+      "recordId": "OFA-FDB27D025709",
+      "companyName": "Cardinal Portfolio JV",
+      "country": "United States",
+      "investmentFirm": "Fengate Asset Management",
+      "currentVehicleName": "Fengate Cardinal Blocker LLC / Fengate Yield (VCOC) UBTI Blocker LLC",
+      "investmentYear": 2026,
+      "stake": "50% collectively; blocker allocation not publicly disclosed",
+      "targetLinkedFundName": "Fengate Infrastructure Yield Fund",
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Fengate Infrastructure Yield Fund",
+      "attributionConfidence": null,
+      "attributionRationale": "Fengate's closing announcement directly attributes the 50% joint-venture interest to Fengate Infrastructure Yield Fund and its named acquisition blockers. The exact curated fund is linked without inferring the allocation between blockers.",
+      "evidenceUrls": [
+        "https://fengate.com/article/fengate-acquires-interest-operational-us-solar-portfolio",
+        "https://www.sec.gov/Archives/edgar/data/1637757/000110465925097101/tm2528052d1_ex10-2.htm"
+      ]
+    }
+  ],
+  "specSha256": "a233d797772e440439fffb0d6c193a0f9f60bdb5c351a95639cc623be1767f32"
+}

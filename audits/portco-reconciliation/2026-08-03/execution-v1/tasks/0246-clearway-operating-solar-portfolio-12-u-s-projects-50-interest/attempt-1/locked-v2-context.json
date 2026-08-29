@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0246:clearway-operating-solar-portfolio-12-u-s-projects-50-interest:1c6f7831",
+  "taskIndex": 246,
+  "companyName": "Clearway Operating Solar Portfolio (12 U.S. projects, 50% interest)",
+  "generatedAt": "2026-08-29T15:17:22.531Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0246-clearway-operating-solar-portfolio-12-u-s-projects-50-interest/attempt-1/locked-v2-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 246,
+    "taskId": "ledger:0246:clearway-operating-solar-portfolio-12-u-s-projects-50-interest:1c6f7831",
+    "canonicalKey": "clearway-operating-solar-portfolio-12-u-s-projects-50-interest|united-states",
+    "companyName": "Clearway Operating Solar Portfolio (12 U.S. projects, 50% interest)",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 45,
+    "managers": [
+      "Fengate Asset Management"
+    ],
+    "actionScopes": {
+      "company": [
+        "CREATE_COMPANY"
+      ],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "045-fengate-asset-management:holding:034:clearway-operating-solar-portfolio-12-u-s-projects-50-interest"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://fengate.com/news/fengate-acquires-50-interest-in-clearway-operating-solar-portfolio/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "No exact normalized production or seed match exists. Census evidence supports a new canonical company with 1 manager holding record(s).",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "clearway-operating-solar-portfolio-12-u-s-projects-50-interest|united-states",
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj2cr00ddivheodq8lv2w",
+        "fundName": "Fengate Infrastructure Yield Fund",
+        "managerId": "cmrxpi8j5001yivhenuypjkuy",
+        "updatedAt": "2026-07-23T16:09:56.907Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi8j5001yivhenuypjkuy",
+        "name": "Fengate Asset Management",
+        "updatedAt": "2026-07-23T16:09:18.257Z"
+      },
+      {
+        "id": "cmrxpibim002wivhet9rhv26m",
+        "name": "Manulife Investment Management",
+        "updatedAt": "2026-07-23T16:09:22.126Z"
+      },
+      {
+        "id": "cmrxpifpw0047ivhexsim174k",
+        "name": "Brookfield Asset Management",
+        "updatedAt": "2026-07-23T16:09:27.572Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0246:clearway-operating-solar-portfolio-12-u-s-projects-50-interest:1c6f7831",
+    "taskIndex": 246,
+    "canonicalKey": "clearway-operating-solar-portfolio-12-u-s-projects-50-interest|united-states",
+    "capturedAt": "2026-08-29T15:17:22.531Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "d675c36f9e783212459460cb51002bf34118e304d7ae93d987f3bf671fa90190",
+    "productionSnapshotSha256": "0483b2192c6e236fc891426e21ba866b38b6feca94d103d975e523bc6710a96a",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4cf71a714d9168ce1b134b50985c012528f69841ece5eaadcb7e57fbc86a972a",
+      "organizationsSha256": "df8645696c249026fd0f1562ea98746b617870287795d3fc688b5e7a7f8a3949",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "c91e16f0119471f4c9e485df6992c9ccef546432c4340043b08d723f3e9c068c",
+    "stateSha256": "68af9ae5ad0c96843cdc43baaacbe497d5a9e054a060a885655b660c72ee594d",
+    "taskSnapshotSha256": "0c03a1f357d176251786db2fb163f37b22378c1f8aa0c2f4df77e4e3c87247c6"
+  },
+  "contextSha256": "a57f6b1d24aee5720056b14d1ba6aafe0b417775c3299dc05bea9d2cb159ec8a"
+}
