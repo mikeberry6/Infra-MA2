@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-29T07:54:12Z",
-  "activeBatchId": "batch-0214-0218-v1",
+  "updatedAt": "2026-08-29T08:02:02Z",
+  "activeBatchId": null,
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -2587,7 +2587,7 @@
     },
     {
       "batchId": "batch-0214-0218-v1",
-      "state": "VERIFYING",
+      "state": "COMPLETED",
       "taskIds": [
         "ledger:0214:fibernow:ea7c2ad3",
         "ledger:0215:invenergy-ampci-thermal-power:7aff1fc4",
@@ -2603,8 +2603,8 @@
         218
       ],
       "createdAt": "2026-08-29T07:15:06Z",
-      "updatedAt": "2026-08-29T07:54:12Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-29T08:02:02Z",
+      "completedAt": "2026-08-29T08:02:02Z",
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0214-0218-v1/batch-manifest.json",
         "sha256": "b58abcae3c791c69747c20db89277f9cea46b7ce54762920a2237eb51639976b"
@@ -2614,7 +2614,7 @@
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0214-0218-v1/production-apply/batch-apply-receipt.json",
         "sha256": "0496a4a56ec3aaf88b8909bc2e541224588f12e92803fea829a086466b211b92"
       },
-      "reason": null,
+      "reason": "Atomic receipt, five canonical after-images, five public detail APIs, five rendered drawers, exact receipt-commit deployment, ownership rosters, stakes, vehicles, milestones, and sources verified; no partial application or browser console errors.",
       "history": [
         {
           "sequence": 1,
@@ -2664,9 +2664,20 @@
             "b58abcae3c791c69747c20db89277f9cea46b7ce54762920a2237eb51639976b"
           ],
           "reason": null
+        },
+        {
+          "sequence": 6,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-08-29T08:02:02Z",
+          "evidenceSha256": [
+            "0496a4a56ec3aaf88b8909bc2e541224588f12e92803fea829a086466b211b92",
+            "b58abcae3c791c69747c20db89277f9cea46b7ce54762920a2237eb51639976b"
+          ],
+          "reason": "Atomic receipt, five canonical after-images, five public detail APIs, five rendered drawers, exact receipt-commit deployment, ownership rosters, stakes, vehicles, milestones, and sources verified; no partial application or browser console errors."
         }
       ]
     }
   ],
-  "ledgerSha256": "70a21deef51ca7284c72fed95b0142a4d5bf3a0b543310c8c9d0cf83aaa63991"
+  "ledgerSha256": "5d78d0b3955f0e42e95ca3badccfd71cafc9dacf867e0a553dd1f10725ea94f6"
 }
