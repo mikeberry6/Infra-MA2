@@ -1,0 +1,285 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0243:north-carolina-solar:5919d3cc",
+  "taskIndex": 243,
+  "companyName": "North Carolina Solar",
+  "generatedAt": "2026-08-29T14:11:00.830Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0243-north-carolina-solar/attempt-1/locked-v2-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 243,
+    "taskId": "ledger:0243:north-carolina-solar:5919d3cc",
+    "canonicalKey": "north-carolina-solar|united-states",
+    "companyName": "North Carolina Solar",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 44,
+    "managers": [
+      "Equitix"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "044-equitix:holding:006:north-carolina-solar"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjf1j00wmivheot2d4ja5"
+    ],
+    "seedKeys": [
+      "north carolina solar|United States"
+    ],
+    "evidenceUrls": [
+      "https://data.fca.org.uk/artefacts/NSM/RNS/4118829.html",
+      "https://www.laing.com/portfolio/north-carolina-solar-us/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted census NEEDS_REVIEW for 044-equitix:holding:006:north-carolina-solar: Legacy John Laing asset attributed to Equitix via JLIL, but no direct post-transfer confirmation of continued Equitix ownership identified. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Accepted census NEEDS_REVIEW for 044-equitix:holding:006:north-carolina-solar: Legacy John Laing asset attributed to Equitix via JLIL, but no direct post-transfer confirmation of continued Equitix ownership identified."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjf1j00wmivheot2d4ja5",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "north-carolina-solar|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjf1j00wmivheot2d4ja5",
+    "name": "North Carolina Solar",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Utility-scale solar generation portfolio",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "North Carolina Solar is a portfolio of utility-scale solar projects in North Carolina. The customer base is anchored by contracted power sales, with public sources referencing busbar PPAs with Duke Energy Progress. The portfolio is asset-heavy because value is derived from operating generation assets rather than development services alone. John Laing's portfolio page describes five operating projects totaling 334 MW, with commercial operation dates spanning late 2018 to early 2019. The reviewed materials did not disclose current revenue, project-level leverage, or the economic split within John Laing Investments Limited. The asset is associated in the master workbook with John Laing Investments Limited, the holding structure backed by Equitix and KKR.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "North Carolina",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk0qz01uvivheqzsn7gav",
+        "managerName": "Equitix",
+        "organizationName": "Equitix",
+        "fundName": null,
+        "vehicleName": "John Laing Investments Limited",
+        "stake": null,
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplnwl03y6ivhecpwndzg1",
+        "date": "2018",
+        "event": "Two projects in the portfolio changed ownership from Cypress Creek before the current holding structure.",
+        "category": "ACQUISITION",
+        "sortDate": "2018-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplnx703y7ivhegqc1g0xf",
+        "date": "2018",
+        "event": "The five-project North Carolina solar portfolio reached commercial operation.",
+        "category": "EXPANSION",
+        "sortDate": "2018-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplnxq03y8ivhechore6rb",
+        "date": "Sep 22, 2021",
+        "event": "John Laing Group's scheme of arrangement became effective, bringing the North Carolina solar portfolio into the John Laing Investments Limited holding structure backed by Equitix and KKR.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-09-22T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqyii0acsivhewk032roa",
+        "label": "Laing — North Carolina Solar",
+        "url": "https://www.laing.com/portfolio/north-carolina-solar-us/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Laing operations / asset details",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqyjj0acuivheyu3y49np",
+        "label": "Assets — North Carolina Solar",
+        "url": "https://assets.kwhanalytics.com/documents/public/dealflow/2019/Deal-Flow-V.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Assets — North Carolina Solar",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqyjy0acvivhe7i7c2de1",
+        "label": "Close date source — Equitix — Boston AFC 2.0 OpCo",
+        "url": "https://data.fca.org.uk/artefacts/NSM/RNS/4118829.html",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Equitix closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqykf0acwivhe8d4lp3ut",
+        "label": "Ownership structure source — Equitix — John Laing Investments Limited",
+        "url": "https://www.debevoise.com/news/2021/05/debevoise-advises-pantheon-in-its-role-in",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Ownership structure source — Equitix — John Laing Investments Limited",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqylj0acyivhe7jubwd05",
+        "label": "Laing — North Carolina Solar",
+        "url": "https://www.laing.com/assets/John-Laing-Sustainability-Report-2022.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Laing operations / asset details",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "North Carolina Solar",
+    "investmentFirm": "Equitix",
+    "sector": "Power & ET",
+    "subsector": "Utility-scale solar generation portfolio",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "John Laing Investments Limited",
+    "description": "North Carolina Solar is a portfolio of utility-scale solar projects in North Carolina. The customer base is anchored by contracted power sales, with public sources referencing busbar PPAs with Duke Energy Progress. The portfolio is asset-heavy because value is derived from operating generation assets rather than development services alone. John Laing's portfolio page describes five operating projects totaling 334 MW, with commercial operation dates spanning late 2018 to early 2019. The reviewed materials did not disclose current revenue, project-level leverage, or the economic split within John Laing Investments Limited. The asset is associated in the master workbook with John Laing Investments Limited, the holding structure backed by Equitix and KKR.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2021,
+    "headquarters": "North Carolina",
+    "milestones": [
+      {
+        "date": "2018",
+        "event": "Two projects in the portfolio changed ownership from Cypress Creek before the current holding structure.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "2018",
+        "event": "The five-project North Carolina solar portfolio reached commercial operation.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Sep 22, 2021",
+        "event": "John Laing Group's scheme of arrangement became effective, bringing the North Carolina solar portfolio into the John Laing Investments Limited holding structure backed by Equitix and KKR.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Laing — North Carolina Solar",
+        "url": "https://www.laing.com/portfolio/north-carolina-solar-us/",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Assets — North Carolina Solar",
+        "url": "https://assets.kwhanalytics.com/documents/public/dealflow/2019/Deal-Flow-V.pdf",
+        "type": "PRESENTATION"
+      },
+      {
+        "label": "Close date source — Equitix — North Carolina Solar",
+        "url": "https://data.fca.org.uk/artefacts/NSM/RNS/4118829.html",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Ownership structure source — Equitix — John Laing Investments Limited",
+        "url": "https://www.debevoise.com/news/2021/05/debevoise-advises-pantheon-in-its-role-in",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Laing — North Carolina Solar",
+        "url": "https://www.laing.com/assets/John-Laing-Sustainability-Report-2022.pdf",
+        "type": "PRESENTATION",
+        "purpose": "OPERATIONS_ASSETS"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Equitix",
+        "ownershipVehicle": "John Laing Investments Limited",
+        "investmentYear": 2021,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpiay4002pivhed6sjuu9i",
+        "name": "KKR",
+        "updatedAt": "2026-07-23T16:09:21.388Z"
+      },
+      {
+        "id": "cmrxpiimy0054ivhe8zpfvx69",
+        "name": "Equitix",
+        "updatedAt": "2026-07-23T16:09:31.354Z"
+      },
+      {
+        "id": "cmrxpivna0097ivheghay4wbn",
+        "name": "John Laing",
+        "updatedAt": "2026-07-23T16:09:48.214Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0243:north-carolina-solar:5919d3cc",
+    "taskIndex": 243,
+    "canonicalKey": "north-carolina-solar|united-states",
+    "capturedAt": "2026-08-29T14:11:00.830Z",
+    "databaseRevision": "revision:17eeb86f153a8760fbba1bcb162d00e9c3fd8e0e8f30da9ca66365387fb7118e",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "abb3ed9288beb237e889544e8ae70e6c96b2c75fba263f9ced1f6d391b37ae0e",
+    "productionSnapshotSha256": "6664411dd5f9a496d23b1c3205c0f3d9cffc283c9fc9dad440dab57c20fc205b",
+    "targetCompanySnapshotSha256": "2770d6584581885973c42fc79942f641497c29cf69f912325658a133f69ed58a",
+    "seedEntrySha256": "d2afde45c3dd7cb57348815034e0761cebbfd131693cb2e387a669bd09b1d545",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "70bf99d3e4f8f91bda092ec923d6ee8cfdb087a75141cbceb508ee284a96ae09",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "935175f15dd61525741b215f18c132f3a3aec6e7c31262463db247152025b404",
+      "citationsSha256": "138242186a49b546547f4a948f433480c7320534afe5ffb6778ac3afbebf836a",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "595eeb2095c86291eb0504048ce9e8493360aad6614f872c6b226223df2f7e0f",
+    "stateSha256": "e9c1d22a760f0f04cfd700d6b1850ad18f836d968558f537f86640dadcdf9ee4",
+    "taskSnapshotSha256": "77eac06ae06fc44442263100722a3166e621013dfe0bf03e7953d27ef42c489f"
+  },
+  "contextSha256": "bebeaba2b7c1ff24dd2834aad3705123700f55156e31025c5103f89b42413f28"
+}

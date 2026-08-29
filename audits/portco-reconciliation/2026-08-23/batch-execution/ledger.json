@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-29T13:55:45.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-08-29T14:18:00.000Z",
+  "activeBatchId": "batch-0239-0243-v1",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -3126,7 +3126,55 @@
           "reason": null
         }
       ]
+    },
+    {
+      "batchId": "batch-0239-0243-v1",
+      "state": "READY",
+      "taskIds": [
+        "ledger:0239:gordon-and-leslie-diamond-health-care-centre:aed7b7a6",
+        "ledger:0240:kelowna-and-vernon-hospitals-project:10251313",
+        "ledger:0241:live-oak-wind-farm:082ed40f",
+        "ledger:0242:mobilinx:7d20cccb",
+        "ledger:0243:north-carolina-solar:5919d3cc"
+      ],
+      "taskIndexes": [
+        239,
+        240,
+        241,
+        242,
+        243
+      ],
+      "createdAt": "2026-08-29T14:02:45.000Z",
+      "updatedAt": "2026-08-29T14:18:00.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0239-0243-v1/batch-manifest.json",
+        "sha256": "02c52fffe14c3bd8623a470f4d9ada3e3444683e857ee99ba49ef258e4a323ef"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-29T14:02:45.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-29T14:18:00.000Z",
+          "evidenceSha256": [
+            "02c52fffe14c3bd8623a470f4d9ada3e3444683e857ee99ba49ef258e4a323ef"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "cd013de3ddb9b537a0cb84ada3bcc4fef56f54fc8b697e3737d6df5159ff313f"
+  "ledgerSha256": "97dc4f00da8a6dbcbaf1752698d08073fac05ee30e4e5414655cbfe7ab94e7f9"
 }

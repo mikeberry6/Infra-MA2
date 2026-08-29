@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0239:gordon-and-leslie-diamond-health-care-centre:aed7b7a6",
+  "taskIndex": 239,
+  "companyName": "Gordon and Leslie Diamond Health Care Centre",
+  "outcome": "DEFERRED",
+  "decidedAt": "2026-08-29T14:09:00.000Z",
+  "rationale": "The display identity and AHV Access Health Vancouver Ltd. ProjectCo boundary are resolved, and the 2018 Jura acquisition is historical fact. Direct evidence does not establish the current ProjectCo shareholder register or current Equitix-, Dalmore- or Royal London-managed percentages. A production ownership correction would therefore require inference and is deferred.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0239-gordon-and-leslie-diamond-health-care-centre/attempt-1/locked-task-snapshot.json",
+    "sha256": "4b1116f1139547df6bf690322e0c49282724efc6c11b06641b14416254cace6c"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0239-gordon-and-leslie-diamond-health-care-centre/attempt-1/application-research-decision.json",
+    "sha256": "e5fd75cb756d10e404e855c3cb20bdd72f6efba752729f6f739e0b1e572893f8"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0239-gordon-and-leslie-diamond-health-care-centre/attempt-1/source-verification.json",
+    "sha256": "fb8a85c56317b8a224c1b021059e79a73513da959b60ba0027ee909a2bd4f8c1"
+  },
+  "evidence": [
+    {
+      "url": "https://www.infrastructurebc.com/project/gordon-and-leslie-diamond-health-care-centre-aacc/",
+      "purpose": "Confirms the facility, ProjectCo and public-authority boundary."
+    },
+    {
+      "url": "https://mednet.med.ubc.ca/facilities/vancouver-coastal/gordon-leslie-diamond-health-care-centre-dhcc/",
+      "purpose": "Confirms the named health-care centre is the clinical facility rather than the concession company."
+    },
+    {
+      "url": "https://www.marketscreener.com/quote/stock/JOHN-LAING-INFRASTRUCTURE-6919133/news/John-Laing-Infrastructure-Fund-Ld-Scheme-of-Arrangement-becomes-Effective-27339064/",
+      "purpose": "Confirms the Jura acquisition became effective in 2018 without proving the current ProjectCo cap table."
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "7f1abc77788c9c70ec0df73ef2f81833d008be3404cd83931d33f2e118777c38"
+}

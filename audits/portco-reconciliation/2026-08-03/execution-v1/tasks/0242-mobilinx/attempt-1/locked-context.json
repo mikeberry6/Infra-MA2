@@ -1,0 +1,290 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0242:mobilinx:7d20cccb",
+  "taskIndex": 242,
+  "companyName": "Mobilinx",
+  "generatedAt": "2026-08-29T14:03:30.166Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0242-mobilinx/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 242,
+    "taskId": "ledger:0242:mobilinx:7d20cccb",
+    "canonicalKey": "mobilinx|canada",
+    "companyName": "Mobilinx",
+    "country": "Canada",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 44,
+    "managers": [
+      "Equitix"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "044-equitix:holding:008:mobilinx-hurontario-lrt"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjf0y00wlivhe0e7k8wcy"
+    ],
+    "seedKeys": [
+      "mobilinx|Canada"
+    ],
+    "evidenceUrls": [
+      "https://data.fca.org.uk/artefacts/NSM/RNS/4118829.html",
+      "https://www.mobilinx.ca/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted census NEEDS_REVIEW for 044-equitix:holding:008:mobilinx-hurontario-lrt: Mobilinx attributable via John Laing portfolio transfer, but no direct Equitix confirmation post-transfer identified. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Accepted census NEEDS_REVIEW for 044-equitix:holding:008:mobilinx-hurontario-lrt: Mobilinx attributable via John Laing portfolio transfer, but no direct Equitix confirmation post-transfer identified."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjf0y00wlivhe0e7k8wcy",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "mobilinx|canada",
+  "targetCompanyImage": {
+    "id": "cmrxpjf0y00wlivhe0e7k8wcy",
+    "name": "Mobilinx",
+    "aliases": [],
+    "sector": "TRANSPORTATION",
+    "subsector": "Light rail transit PPP",
+    "region": "NORTH_AMERICA",
+    "country": "Canada",
+    "countryTags": [
+      "Canada"
+    ],
+    "description": "Mobilinx is the project company delivering the Hurontario LRT, now branded the Hazel McCallion Line, in Ontario. Its end users are public transit passengers in Mississauga and Brampton, while the direct counterparty is the public sector under a long-term DBFOM contract. The project is asset-heavy and concession-based, combining design, construction, financing, operations, and maintenance obligations. Public sources describe the line as an 18-kilometre system with 19 stops. John Laing's portfolio materials indicate a 35% equity interest in the project, while project-level revenue and the internal split within John Laing Investments Limited were not publicly disclosed. The master workbook associates the investment with John Laing Investments Limited, the vehicle backed by Equitix and KKR.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Ontario",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk0qg01uuivheqf8n9w5n",
+        "managerName": "Equitix",
+        "organizationName": "Equitix",
+        "fundName": null,
+        "vehicleName": "John Laing Investments Limited",
+        "stake": null,
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplnud03y3ivhe9hwxl3ta",
+        "date": "2019",
+        "event": "Transdev was awarded the operating contract for the line.",
+        "category": "EXPANSION",
+        "sortDate": "2019-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplnux03y4ivheuad8s0m5",
+        "date": "Sep 2019",
+        "event": "Mobilinx reached financial close on the Hurontario LRT DBFOM project.",
+        "category": "FINANCING",
+        "sortDate": "2019-09-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplnvk03y5ivhedwd85zff",
+        "date": "Sep 22, 2021",
+        "event": "John Laing Group's scheme of arrangement became effective, bringing Mobilinx into the John Laing Investments Limited holding structure backed by Equitix and KKR.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-09-22T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqyby0aciivhexw813d9y",
+        "label": "Mobilinx — Mobilinx",
+        "url": "https://www.mobilinx.ca/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Mobilinx company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqyd90ackivhe8qta0jlo",
+        "label": "Laing — Mobilinx",
+        "url": "https://www.laing.com/portfolio/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Laing operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqyf30acmivheuikr24r2",
+        "label": "Transdev — Mobilinx",
+        "url": "https://www.transdev.com/en/press-release/transdev-awarded-contract-hurontario-canada-light-rail-transit/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Transdev — Mobilinx",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqyg40acoivhe0sb5aqsv",
+        "label": "Mississauga — Mobilinx",
+        "url": "https://www.mississauga.ca/projects-and-strategies/city-projects/hurontario-light-rail-transit/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Mississauga operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqygl0acpivhe0u2br40q",
+        "label": "Close date source — Equitix — Boston AFC 2.0 OpCo",
+        "url": "https://data.fca.org.uk/artefacts/NSM/RNS/4118829.html",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Equitix closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqyhe0acqivhecxx248u7",
+        "label": "Ownership structure source — Equitix — John Laing Investments Limited",
+        "url": "https://www.debevoise.com/news/2021/05/debevoise-advises-pantheon-in-its-role-in",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Ownership structure source — Equitix — John Laing Investments Limited",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Mobilinx",
+    "investmentFirm": "Equitix",
+    "sector": "Transportation",
+    "subsector": "Light rail transit PPP",
+    "region": "North America",
+    "country": "Canada",
+    "ownershipVehicle": "John Laing Investments Limited",
+    "description": "Mobilinx is the project company delivering the Hurontario LRT, now branded the Hazel McCallion Line, in Ontario. Its end users are public transit passengers in Mississauga and Brampton, while the direct counterparty is the public sector under a long-term DBFOM contract. The project is asset-heavy and concession-based, combining design, construction, financing, operations, and maintenance obligations. Public sources describe the line as an 18-kilometre system with 19 stops. John Laing's portfolio materials indicate a 35% equity interest in the project, while project-level revenue and the internal split within John Laing Investments Limited were not publicly disclosed. The master workbook associates the investment with John Laing Investments Limited, the vehicle backed by Equitix and KKR.",
+    "status": "Active",
+    "countryTags": [
+      "Canada"
+    ],
+    "investmentYear": 2021,
+    "headquarters": "Ontario",
+    "milestones": [
+      {
+        "date": "2019",
+        "event": "Transdev was awarded the operating contract for the line.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Sep 2019",
+        "event": "Mobilinx reached financial close on the Hurontario LRT DBFOM project.",
+        "category": "Financing"
+      },
+      {
+        "date": "Sep 22, 2021",
+        "event": "John Laing Group's scheme of arrangement became effective, bringing Mobilinx into the John Laing Investments Limited holding structure backed by Equitix and KKR.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Mobilinx — Mobilinx",
+        "url": "https://www.mobilinx.ca/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Laing — Mobilinx",
+        "url": "https://www.laing.com/portfolio/",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Transdev — Mobilinx",
+        "url": "https://www.transdev.com/en/press-release/transdev-awarded-contract-hurontario-canada-light-rail-transit/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Mississauga — Mobilinx",
+        "url": "https://www.mississauga.ca/projects-and-strategies/city-projects/hurontario-light-rail-transit/",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Close date source — Equitix — Mobilinx",
+        "url": "https://data.fca.org.uk/artefacts/NSM/RNS/4118829.html",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Ownership structure source — Equitix — John Laing Investments Limited",
+        "url": "https://www.debevoise.com/news/2021/05/debevoise-advises-pantheon-in-its-role-in",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Equitix",
+        "ownershipVehicle": "John Laing Investments Limited",
+        "investmentYear": 2021,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpiimy0054ivhe8zpfvx69",
+        "name": "Equitix",
+        "updatedAt": "2026-07-23T16:09:31.354Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0242:mobilinx:7d20cccb",
+    "taskIndex": 242,
+    "canonicalKey": "mobilinx|canada",
+    "capturedAt": "2026-08-29T14:03:30.166Z",
+    "databaseRevision": "revision:087387c8317bfcd4ae165b9d570b93c614fb0d417b291e7a6dadd5809b565395",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "a71aa4658c7a8b8f6bf1274202037d2f791f8cfbf0a8ec6fffb9de7cd315ba03",
+    "productionSnapshotSha256": "df9c7c6fcf05379bb9610a36c6eb16e1994ab4f291b38a6f28993aa26f71e0e1",
+    "targetCompanySnapshotSha256": "d989899adab9913648c75ac495c8f6378020da660223887526868ae6583f8924",
+    "seedEntrySha256": "16396e892740166669938e2a95f5cf030a0173a4c9bd83bde1c52a17227f8992",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "c49ace5bb25ca5071b4b7819a07ccce622c85534eec2fdd60a3c7adb3a203549",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "0fba6ee1c7181bf4b1926ce140b74370b945cf49d8110a5fc29893b7fa73cc5e",
+      "citationsSha256": "e1fecf8ee9e0ab8ade795ead5b69a4ead0f4f9d16f9ab20d9f772944dc9101ee",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "36f2dcd318535b595cee786c5711085af0c1b8bb60336e1191ebd6766d76dc8c",
+    "stateSha256": "e957d9deb6535602059b15cdc812a1caed671ebdb5f119732b7b6a9f4a80665e",
+    "taskSnapshotSha256": "500c502124cf56c35411733d58aa3905b95308850dcb75a072be99a888360140"
+  },
+  "contextSha256": "22cf05e9dd406f2b8217f185796daed9cc6feb2841607984b04d79661ec75927"
+}

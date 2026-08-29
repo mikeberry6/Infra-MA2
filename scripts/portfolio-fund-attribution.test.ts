@@ -106,6 +106,23 @@ describe("portfolio fund attribution ledger", () => {
     expect(gated.every((row) => !row.applyEligible)).toBe(true);
   });
 
+  it("keeps BBGI and ENGIE direct ownership out of the fund-inference queue", () => {
+    expect(ledger.rows).toContainEqual(expect.objectContaining({
+      companyName: "Kelowna and Vernon Hospitals Project",
+      investmentFirm: "BBGI",
+      attribution: "DIRECT_PROGRAM",
+      attributedFundName: null,
+      targetLinkedFundName: null,
+    }));
+    expect(ledger.rows).toContainEqual(expect.objectContaining({
+      companyName: "Live Oak Wind Farm",
+      investmentFirm: "ENGIE",
+      attribution: "DIRECT_PROGRAM",
+      attributedFundName: null,
+      targetLinkedFundName: null,
+    }));
+  });
+
   it("only admits high-confidence disclosed existing funds to the deterministic batch", () => {
     const eligible = ledger.rows.filter((row) => row.applyEligible);
     expect(eligible.length).toBe(ledger.summary.applyEligibleRows);

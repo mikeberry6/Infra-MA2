@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0242:mobilinx:7d20cccb",
+  "taskIndex": 242,
+  "companyName": "Mobilinx",
+  "outcome": "DEFERRED",
+  "decidedAt": "2026-08-29T14:09:01.000Z",
+  "rationale": "Mobilinx Hurontario General Partnership is the ProjectCo and 2019 is the correct initial investment year. Webuild directly reports 53.85% at June 30, 2026, but public evidence does not establish the legal date or mechanism removing JLIL's former 35%, the current Hitachi Rail, Amico and Transdev percentages, or whether the contemplated Equitix/Pantheon JLIL investment legally closed. A current ownership mutation is therefore deferred.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0242-mobilinx/attempt-1/locked-task-snapshot.json",
+    "sha256": "ec92c0cee0a538c417d6b4d8fd965217b8b19739e80f9f75178706387d8e4e43"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0242-mobilinx/attempt-1/application-research-decision.json",
+    "sha256": "e72c3430a359efc7158cfba4935b25122739e623702a96efd639f220048fe714"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0242-mobilinx/attempt-1/source-verification.json",
+    "sha256": "ca3b8d5c74f9dc35c04ab01201e512fd9c930a02627ef59dbfdd4eeb02c33123"
+  },
+  "evidence": [
+    {
+      "url": "https://media.webuildgroup.com/sites/default/files/2026-08/Interim_Financial_Report_2026.pdf",
+      "purpose": "Confirms Webuild-group vehicles held 53.85% of the ProjectCo at June 30, 2026."
+    },
+    {
+      "url": "https://www.infrastructureontario.ca/en/news-and-media/news/hurontario-light-rail-transit/contract-awarded-for-hurontario-lrt/",
+      "purpose": "Confirms ProjectCo identity, the 2019 financial close and original consortium roles."
+    },
+    {
+      "url": "https://www.climatebonds.net/files/drupal-files/files/2019-10_CA_Mobilinx_Hurontario_General_Partnership.pdf",
+      "purpose": "Supports the original six-sponsor cap table while not resolving the current residual stakes."
+    },
+    {
+      "url": "https://assets.metrolinx.com/image/upload/v1781899780/Documents/corporate/Item_11.2_-_CPG_Rapid_Transit_Update_En.pdf",
+      "purpose": "Confirms the 2026 contract restructuring rather than a disclosed equity sale."
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "aec9a175438f1e0e81dae2bf12359250033e239d1a18413faea42a88cbd95fcd"
+}

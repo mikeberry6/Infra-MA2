@@ -414,6 +414,31 @@ const ATTRIBUTION_ONLY_FUNDS: CandidateFund[] = [
 
 const REVIEWED_ATTRIBUTION_OVERRIDES: ReviewedAttributionOverride[] = [
   {
+    companyName: "Kelowna and Vernon Hospitals Project",
+    investmentFirm: "BBGI",
+    attribution: "DIRECT_PROGRAM",
+    confidence: "HIGH",
+    attributedFundName: null,
+    rationale: "BBGI directly disclosed its investment through named Canadian subsidiaries and its increase to 100% ownership. BBGI is a listed infrastructure investment company in this ownership chain, and no separate managed fund is named or inferred.",
+    sourceUrls: [
+      "https://www.investegate.co.uk/announcement/rns/bbgi-global-infrastructure-s-a-npv-di---bbgi/acquisition/3311694",
+      "https://it.advfn.com/mercati/LSE/BBGI/notizie/83097679/bbgi-sicav-s-a-acquisition",
+      "https://www.bb-gi.com/sustainability/initiatives/joining-the-community-to-support-emergency-care-at-kelowna-general-hospital/",
+    ],
+  },
+  {
+    companyName: "Live Oak Wind Farm",
+    investmentFirm: "ENGIE",
+    attribution: "DIRECT_PROGRAM",
+    confidence: "HIGH",
+    attributedFundName: null,
+    rationale: "ENGIE retained the direct corporate sponsor interest and operating role through its renewable-energy affiliate. No managed infrastructure fund is named or inferred.",
+    sourceUrls: [
+      "https://www.engie-na.com/houston_headquarters_powered_by_wind/",
+      "https://www.annualreports.com/HostedData/AnnualReportArchive/J/LSE_JLG_2019.pdf",
+    ],
+  },
+  {
     companyName: "PUC Transmission LP",
     investmentFirm: "Axium Infrastructure",
     attribution: "DISCLOSED",

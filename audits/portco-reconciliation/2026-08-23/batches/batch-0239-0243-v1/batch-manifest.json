@@ -1,0 +1,342 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_MANIFEST",
+  "methodologyVersion": "PORTCO_APPLY_BATCH_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0239-0243-v1",
+  "createdAt": "2026-08-29T14:15:00.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "e2ac189dfba26b0bd7e1ae80ac10921d13b7fb69b65aa2c5e79ead1dcb6783f1"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0239:gordon-and-leslie-diamond-health-care-centre:aed7b7a6",
+      "taskIndex": 239,
+      "companyName": "Gordon and Leslie Diamond Health Care Centre",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0239-gordon-and-leslie-diamond-health-care-centre/attempt-1/terminal-decision.json",
+        "sha256": "7f1abc77788c9c70ec0df73ef2f81833d008be3404cd83931d33f2e118777c38"
+      }
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0240:kelowna-and-vernon-hospitals-project:10251313",
+      "taskIndex": 240,
+      "companyName": "Kelowna and Vernon Hospitals Project",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0240-kelowna-and-vernon-hospitals-project-v1/proposal.json",
+        "sha256": "b5096e8e3dd26a5a5212ace483f26f4ed8e225d3a703bf64ffad5baa244567bb"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0240-kelowna-and-vernon-hospitals-project-v1.json",
+        "sha256": "8843eb72e0fac368f46cefa24685d5561c4c4f00334785b07c580610601b35eb"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0240-kelowna-and-vernon-hospitals-project/attempt-1/locked-production-snapshot.json",
+        "sha256": "a9355011d808ecf9d41c1aad33c80d28e7d58a0b8639ef322aa8572323ca7901"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0240-kelowna-and-vernon-hospitals-project/attempt-1/locked-task-snapshot.json",
+        "sha256": "d9f3a1c188167135bb07305516f2d5f332854bb416662ac8b07b0470171bb646"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0240-kelowna-and-vernon-hospitals-project/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "95d1884e549847dc81f3d188a90238a8f89a4143ba9b22780af1f79f68485db7"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0240-kelowna-and-vernon-hospitals-project/attempt-1/application-research-decision.json",
+        "sha256": "1bb97318f0e664d255ba63c283b4aafb9e744d5af73ce9d44260a608779037c4"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0240-kelowna-and-vernon-hospitals-project/attempt-1/source-verification.json",
+        "sha256": "b61cbdb8316f60bc60668908c09c49831ed8878c25027598e938afa951e127c2"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "7c80e9152de099fe71fc4ccad26a24e4903550b3972dd7345bf639ea9db65222",
+      "dependencySha256": "f6affc138d088631fe5f0dc78bb1fc5ab6843058b7f67005b74bb5cf43aefabb",
+      "afterImageSha256": "fbe1616547e93d2499a5ee0990ba4bb1250d252fb2bebeb6e6568351234f8684",
+      "targetClaims": [
+        "canonical:kelowna-and-vernon-hospitals-project|canada",
+        "company:cmrxpjezu00wjivhep4zsd3j9",
+        "relation:cmrxpk0pd01usivhehlbgkvdg",
+        "relation:cmrxplnn903xwivhed69qhels",
+        "relation:cmrxplnnu03xxivhehx9t4u98",
+        "relation:cmrxplnqm03xyivheczirluy7",
+        "relation:cmrxplnr603xzivhe44njdg0n",
+        "relation:cmrxpqy1i0ac3ivhe62emj4f0",
+        "relation:cmrxpqy2j0ac5ivhenqloo15k",
+        "relation:cmrxpqy3o0ac7ivhesq64dzy1",
+        "relation:cmrxpqy470ac8ivheosvfq1qd",
+        "seed:kelowna and vernon hospitals project|canada"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://it.advfn.com/mercati/LSE/BBGI/notizie/83097679/bbgi-sicav-s-a-acquisition",
+          "label": "BBGI — Remaining KVH interest acquisition",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://tools.euroland.com/tools/Pressreleases/GetPressRelease/?ID=3439674&companycode=uk-jlif&lang=en-GB&v=",
+          "label": "JLIF — 2017 portfolio report",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://www.bb-gi.com/media/2548/bbgi-esg-factsheet-kelowna-and-vernon-hospitals-healthcare.pdf",
+          "label": "Bb Gi — Kelowna and Vernon Hospitals Project",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://www.bb-gi.com/sustainability/initiatives/joining-the-community-to-support-emergency-care-at-kelowna-general-hospital/",
+          "label": "BBGI — Kelowna General Hospital community initiative",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.infrastructurebc.com/files-4/documents/KVH-Schedule12.pdf",
+          "label": "Infrastructure BC — KVH project agreement",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.infrastructurebc.com/project/kelowna-and-vernon-hospitals-project/",
+          "label": "Infrastructurebc — Kelowna and Vernon Hospitals Project",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.investegate.co.uk/announcement/rns/bbgi-global-infrastructure-s-a-npv-di---bbgi/acquisition/3311694",
+          "label": "BBGI — Initial KVH acquisition close",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.marketscreener.com/quote/stock/JOHN-LAING-INFRASTRUCTURE-6919133/news/John-Laing-Infrastructure-Fund-Ld-Scheme-of-Arrangement-becomes-Effective-27339064/",
+          "label": "Close date source — Equitix — Abbotsford Regional Hospital and Cancer Centre",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www2.gov.bc.ca/assets/gov/british-columbians-our-governments/government-finances/public-accounts/2009-10/sup-e/interior-health-authority-fs-2009-10.pdf",
+          "label": "Www2 — Kelowna and Vernon Hospitals Project",
+          "sourceType": "PRESENTATION"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0241:live-oak-wind-farm:082ed40f",
+      "taskIndex": 241,
+      "companyName": "Live Oak Wind Farm",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0241-live-oak-wind-farm-v1/proposal.json",
+        "sha256": "d61911b72dfd25b6f42eac2d4a2368b3b528c7457000fe6e532a11de507e92b3"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0241-live-oak-wind-farm-v1.json",
+        "sha256": "ed33155ce06f96f8b08c79d5c69c0a424ed269a1ecd622c25ecb93d866c402c6"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0241-live-oak-wind-farm/attempt-1/locked-v2-production-snapshot.json",
+        "sha256": "3685e80928c5d7a793fa83fdaf6bbda31f0ca89f760f1f357829f0c4a3b9086d"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0241-live-oak-wind-farm/attempt-1/locked-v2-task-snapshot.json",
+        "sha256": "0075343aaea5778c7b5eb7defaa0642fa271b8d4bee28deb9ec5f459e192bb67"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0241-live-oak-wind-farm/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "074b408cc432a67ebd88624603e741ca5b192e058ac05e191db8349cda752422"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0241-live-oak-wind-farm/attempt-1/application-research-decision.json",
+        "sha256": "8a3d2dc3392bf14c385694dc9a80d15daab8b336bd2f0e8cfc6c2887c8b1181f"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0241-live-oak-wind-farm/attempt-1/source-verification.json",
+        "sha256": "d885a91f369e76c1c3e29907e9c3907c927b981bbb6f3a9a1e44dd2b02b06b2f"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "7af3ee7ad38da6237379ae4491c325999dfe9e205a6cd3425723d90d6834c2ff",
+      "dependencySha256": "2e130567ca2fa9c3d6da325bc760b3682d6c42d77e77186dd01b70f265ad5331",
+      "afterImageSha256": "cdacd0d309b6c7f6c33fefd12380eb252bab38a9f5157c30b4402b487727f935",
+      "targetClaims": [
+        "canonical:live-oak-wind-farm|united-states",
+        "company:cmrxpjf0f00wkivhexu0u6f39",
+        "relation:cmrxpk0py01utivheek2ja0lo",
+        "relation:cmrxplns903y0ivhejd55f956",
+        "relation:cmrxplnsr03y1ivheth5frque",
+        "relation:cmrxplnta03y2ivhekwvuzv0d",
+        "relation:cmrxpqy550acaivhe3dzdawv5",
+        "relation:cmrxpqy680accivhe44oj571v",
+        "relation:cmrxpqy9l0aceivhevzl52rwh",
+        "relation:cmrxpqyaf0acfivhehfdsknjo",
+        "relation:cmrxpqyay0acgivhe9qsl53sa",
+        "seed:live oak wind farm|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://data.fca.org.uk/artefacts/NSM/RNS/4118829.html",
+          "label": "Close date source — Equitix — Boston AFC 2.0 OpCo",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://equitix.com/news/equitix-strengthens-north-american-footprint-with-increased-ownership-of-the-i-4-ultimate-project-in-florida/",
+          "label": "Equitix",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.annualreports.com/HostedData/AnnualReportArchive/J/LSE_JLG_2019.pdf",
+          "label": "John Laing — 2019 Annual Report",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://www.debevoise.com/news/2021/05/debevoise-advises-pantheon-in-its-role-in",
+          "label": "Ownership structure source — Equitix — John Laing Investments Limited",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.engie-na.com/houston_headquarters_powered_by_wind/",
+          "label": "Engie Na — Live Oak Wind Farm",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.engie-na.com/live_oak_financing/",
+          "label": "ENGIE — Live Oak financing",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.laing.com/assets/John-Laing-Sustainability-Report-2023_2024.pdf",
+          "label": "Laing — Live Oak Wind Farm",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://www.laing.com/portfolio/live-oak-us/",
+          "label": "Laing — Live Oak Wind Farm",
+          "sourceType": "WEBSITE"
+        }
+      ]
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0242:mobilinx:7d20cccb",
+      "taskIndex": 242,
+      "companyName": "Mobilinx",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0242-mobilinx/attempt-1/terminal-decision.json",
+        "sha256": "aec9a175438f1e0e81dae2bf12359250033e239d1a18413faea42a88cbd95fcd"
+      }
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0243:north-carolina-solar:5919d3cc",
+      "taskIndex": 243,
+      "companyName": "North Carolina Solar",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0243-north-carolina-solar-v1/proposal.json",
+        "sha256": "bc5ba06922d0c325d33afa1ff470e9c0e06000babfd89803aafa10af7f9cb997"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0243-north-carolina-solar-v1.json",
+        "sha256": "822c82ccb8b5e6f221d265c394a6c169a2e0f1fb7a4f5d7805b82841f78ed94b"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0243-north-carolina-solar/attempt-1/locked-v2-production-snapshot.json",
+        "sha256": "6664411dd5f9a496d23b1c3205c0f3d9cffc283c9fc9dad440dab57c20fc205b"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0243-north-carolina-solar/attempt-1/locked-v2-task-snapshot.json",
+        "sha256": "77eac06ae06fc44442263100722a3166e621013dfe0bf03e7953d27ef42c489f"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0243-north-carolina-solar/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "cb7a6636d3f8537e21a46d20ac41b426e8a6d681708558fde18990fda476312c"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0243-north-carolina-solar/attempt-1/application-research-decision.json",
+        "sha256": "115fbe00e460b6a11afd28256fa267a4801e13d6c717d3e150f12d6c7cefb868"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0243-north-carolina-solar/attempt-1/source-verification.json",
+        "sha256": "66ed4faa708fa217ad2357d1639a50cef0971ed1f89db2ca4c2919baa5874d0d"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "e9c1d22a760f0f04cfd700d6b1850ad18f836d968558f537f86640dadcdf9ee4",
+      "dependencySha256": "595eeb2095c86291eb0504048ce9e8493360aad6614f872c6b226223df2f7e0f",
+      "afterImageSha256": "49229564faa61a9350e63f050811b711cd9e72cf1ea903ec10bbb24077b6f401",
+      "targetClaims": [
+        "canonical:north-carolina-solar|united-states",
+        "company:cmrxpjf1j00wmivheot2d4ja5",
+        "relation:cmrxpk0qz01uvivheqzsn7gav",
+        "relation:cmrxplnwl03y6ivhecpwndzg1",
+        "relation:cmrxplnx703y7ivhegqc1g0xf",
+        "relation:cmrxplnxq03y8ivhechore6rb",
+        "relation:cmrxpqyii0acsivhewk032roa",
+        "relation:cmrxpqyjj0acuivheyu3y49np",
+        "relation:cmrxpqyjy0acvivhe7i7c2de1",
+        "relation:cmrxpqykf0acwivhe8d4lp3ut",
+        "relation:cmrxpqylj0acyivhe7jubwd05",
+        "seed:north carolina solar|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://assets.kwhanalytics.com/documents/public/dealflow/2019/Deal-Flow-V.pdf",
+          "label": "Assets — North Carolina Solar",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://data.fca.org.uk/artefacts/NSM/RNS/4118829.html",
+          "label": "Close date source — Equitix — Boston AFC 2.0 OpCo",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://find-and-update.company-information.service.gov.uk/company/00780225/persons-with-significant-control",
+          "label": "Companies House — JLIL persons with significant control",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.annualreports.com/HostedData/AnnualReportArchive/J/LSE_JLG_2018.pdf",
+          "label": "John Laing — 2018 Annual Report",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://www.debevoise.com/news/2021/05/debevoise-advises-pantheon-in-its-role-in",
+          "label": "Ownership structure source — Equitix — John Laing Investments Limited",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.laing.com/assets/John-Laing-Sustainability-Report-2022.pdf",
+          "label": "Laing — North Carolina Solar",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://www.laing.com/insights/john-laing-increases-commitment-to-i-4-ultimate-project-in-the-u-s-with-a-100-stake/",
+          "label": "John Laing — JLIL ownership confirmation",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.laing.com/portfolio/north-carolina-solar-us/",
+          "label": "Laing — North Carolina Solar",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.ussolarfund.co.uk/portfolio/granite",
+          "label": "Close date source — Amber Infrastructure — Granite Solar Portfolio",
+          "sourceType": "WEBSITE"
+        }
+      ]
+    }
+  ],
+  "collisionAnalysis": {
+    "independent": true,
+    "claimsSha256": "aa071aaa3ecef42e26a7822780b63a29b10ec896af50c68f659c431884f32c1c",
+    "sharedSourceUrls": [
+      "https://data.fca.org.uk/artefacts/NSM/RNS/4118829.html",
+      "https://www.debevoise.com/news/2021/05/debevoise-advises-pantheon-in-its-role-in"
+    ],
+    "conflicts": []
+  },
+  "batchSha256": "02c52fffe14c3bd8623a470f4d9ada3e3444683e857ee99ba49ef258e4a323ef"
+}
