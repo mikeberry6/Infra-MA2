@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-29T16:52:34.000Z",
-  "activeBatchId": "batch-0249-0253-v1",
+  "updatedAt": "2026-08-29T17:12:45.000Z",
+  "activeBatchId": null,
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -3337,7 +3337,7 @@
     },
     {
       "batchId": "batch-0249-0253-v1",
-      "state": "VERIFYING_FAILED",
+      "state": "COMPLETED",
       "taskIds": [
         "ledger:0249:jupiter-medical-center-campus:b484d033",
         "ledger:0250:medcraft-medical-outpatient-portfolio:bb470706",
@@ -3353,8 +3353,8 @@
         253
       ],
       "createdAt": "2026-08-29T16:16:00.000Z",
-      "updatedAt": "2026-08-29T16:52:34.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-29T17:12:45.000Z",
+      "completedAt": "2026-08-29T17:12:45.000Z",
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0249-0253-v1/batch-manifest.json",
         "sha256": "f2688d921be742fe4b6878016dc5b13c4bc7c469634e8f8e1170e7a7aabe4fdf"
@@ -3364,7 +3364,7 @@
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0249-0253-v1/production-apply/batch-apply-receipt.json",
         "sha256": "2054ed468635bd9c652c37e176974da0e73004150b9394b6f34bef09034dedfc"
       },
-      "reason": "The atomic PortCo transaction, seed artifact and four canonical detail APIs verified, but seven active ownership rows retained stale or default fund-attribution metadata. No later bundle may start until a protected attribution-only repair sets the exact reviewed classifications and renewed API and rendered-card checks pass.",
+      "reason": null,
       "history": [
         {
           "sequence": 1,
@@ -3425,9 +3425,20 @@
             "f2688d921be742fe4b6878016dc5b13c4bc7c469634e8f8e1170e7a7aabe4fdf"
           ],
           "reason": "The atomic PortCo transaction, seed artifact and four canonical detail APIs verified, but seven active ownership rows retained stale or default fund-attribution metadata. No later bundle may start until a protected attribution-only repair sets the exact reviewed classifications and renewed API and rendered-card checks pass."
+        },
+        {
+          "sequence": 7,
+          "from": "VERIFYING_FAILED",
+          "to": "COMPLETED",
+          "at": "2026-08-29T17:12:45.000Z",
+          "evidenceSha256": [
+            "2054ed468635bd9c652c37e176974da0e73004150b9394b6f34bef09034dedfc",
+            "f2688d921be742fe4b6878016dc5b13c4bc7c469634e8f8e1170e7a7aabe4fdf"
+          ],
+          "reason": null
         }
       ]
     }
   ],
-  "ledgerSha256": "bb7fe8459144dbf6415cd99a6f59e863d8e707e9f550eaa53064243439240d4b"
+  "ledgerSha256": "ad93ce6eda52c7d4dd9e9162ec38fb96af4b0bce8a1ffbd8ea0b95e54eec9a0b"
 }
