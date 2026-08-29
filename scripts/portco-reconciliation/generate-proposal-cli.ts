@@ -141,6 +141,7 @@ const proposalSpecSchema = z.strictObject({
   unresolvedQuestions: z.array(z.string().trim().min(1)).default([]),
   companyFieldUpdates: companyFieldUpdatesSchema.optional(),
   ownershipPeriodUpdates: z.array(ownershipPeriodUpdateSchema).default([]),
+  ownershipPeriodRemovals: z.array(z.string().trim().min(1)).default([]),
   ownershipPeriodAdditions: z.array(ownershipPeriodAdditionSchema).default([]),
   pendingOwnershipTransactionUpdates: z.array(pendingOwnershipTransactionUpdateSchema).default([]),
   pendingOwnershipTransactionAdditions: z.array(pendingOwnershipTransactionAdditionSchema).default([]),
@@ -178,6 +179,7 @@ const proposalSpecSchema = z.strictObject({
     && (
       spec.companyFieldUpdates
       || spec.ownershipPeriodUpdates.length > 0
+      || spec.ownershipPeriodRemovals.length > 0
       || spec.ownershipPeriodAdditions.length > 0
       || spec.pendingOwnershipTransactionUpdates.length > 0
       || spec.pendingOwnershipTransactionAdditions.length > 0
@@ -192,6 +194,7 @@ const proposalSpecSchema = z.strictObject({
     !spec.afterImage
     && !spec.companyFieldUpdates
     && spec.ownershipPeriodUpdates.length === 0
+    && spec.ownershipPeriodRemovals.length === 0
     && spec.ownershipPeriodAdditions.length === 0
     && spec.pendingOwnershipTransactionUpdates.length === 0
     && spec.pendingOwnershipTransactionAdditions.length === 0
@@ -200,6 +203,21 @@ const proposalSpecSchema = z.strictObject({
     && spec.citationAdditions.length === 0
   ) {
     context.addIssue({ code: "custom", message: "Proposal spec must define an after-image or at least one patch" });
+  }
+  if (new Set(spec.ownershipPeriodRemovals).size !== spec.ownershipPeriodRemovals.length) {
+    context.addIssue({
+      code: "custom",
+      path: ["ownershipPeriodRemovals"],
+      message: "Ownership period removals must be unique",
+    });
+  }
+  const ownershipUpdateIds = new Set(spec.ownershipPeriodUpdates.map((update) => update.id));
+  if (spec.ownershipPeriodRemovals.some((id) => ownershipUpdateIds.has(id))) {
+    context.addIssue({
+      code: "custom",
+      path: ["ownershipPeriodRemovals"],
+      message: "An ownership period cannot be updated and removed in the same proposal",
+    });
   }
 });
 
@@ -396,6 +414,7 @@ export function applySpec(context: TaskSnapshotContext, specInput: unknown) {
   if (!afterImage) {
     if (!beforeImage) throw new Error("Patch-based proposals require an existing target company");
     const ownershipUpdates = new Map(spec.ownershipPeriodUpdates.map((update) => [update.id, update.set]));
+    const ownershipRemovals = new Set(spec.ownershipPeriodRemovals);
     const pendingTransactionUpdates = new Map(
       spec.pendingOwnershipTransactionUpdates.map((update) => [update.id, update.set]),
     );
@@ -404,6 +423,11 @@ export function applySpec(context: TaskSnapshotContext, specInput: unknown) {
     for (const id of ownershipUpdates.keys()) {
       if (!beforeImage.ownershipPeriods.some((period) => period.id === id)) {
         throw new Error(`Ownership update references unknown period ${id}`);
+      }
+    }
+    for (const id of ownershipRemovals) {
+      if (!beforeImage.ownershipPeriods.some((period) => period.id === id)) {
+        throw new Error(`Ownership removal references unknown period ${id}`);
       }
     }
     for (const id of pendingTransactionUpdates.keys()) {
@@ -424,10 +448,13 @@ export function applySpec(context: TaskSnapshotContext, specInput: unknown) {
     afterImage = companyImageSchema.parse({
       ...beforeImage,
       ...(spec.companyFieldUpdates ?? {}),
-      ownershipPeriods: beforeImage.ownershipPeriods.map((period) => ({
-        ...period,
-        ...(period.id ? ownershipUpdates.get(period.id) : undefined),
-      })).concat(spec.ownershipPeriodAdditions),
+      ownershipPeriods: beforeImage.ownershipPeriods
+        .filter((period) => !period.id || !ownershipRemovals.has(period.id))
+        .map((period) => ({
+          ...period,
+          ...(period.id ? ownershipUpdates.get(period.id) : undefined),
+        }))
+        .concat(spec.ownershipPeriodAdditions),
       pendingOwnershipTransactions: beforeImage.pendingOwnershipTransactions.map((transaction) => ({
         ...transaction,
         ...(transaction.id ? pendingTransactionUpdates.get(transaction.id) : undefined),

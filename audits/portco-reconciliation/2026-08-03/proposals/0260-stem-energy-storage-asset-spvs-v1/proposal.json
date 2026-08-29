@@ -1,0 +1,326 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0260:stem-energy-storage-asset-spvs:a034fa93",
+  "taskIndex": 260,
+  "asOfDate": "2026-08-29",
+  "generatedAt": "2026-08-29T19:00:00.000Z",
+  "canonicalKey": "stem-energy-storage-asset-spvs|united-states",
+  "companyName": "Stem Energy Storage Asset SPVs",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER"
+  ],
+  "sourceHoldingIds": [],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Replace the unsupported generic 2016 Stem financing umbrella with the identified Generate-Stem LCR, LLC co-owned SPE. Stem's filings establish the 2017 legal entity, its two membership classes, Stem's 50% Class B interest and continuing obligations through June 2026. Generate's current Class A interest is inferred from the disclosed two-member structure and Stem's 50% interest; the exact Generate affiliate and fund are not publicly disclosed.",
+  "evidence": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1758766/000175876626000016/stem-20251231.htm",
+      "purpose": "Legal identity and ownership structure",
+      "supports": [
+        "Generate-Stem LCR, LLC was formed in 2017 as SPV IV",
+        "Stem holds the 50% Class B non-managing interest",
+        "The SPE has Class A and Class B membership interests"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1758766/000175876626000081/stem-20260630.htm",
+      "purpose": "Current status and exit check",
+      "supports": [
+        "Stem continued to report SPE obligations and repayments through June 30, 2026",
+        "No sale, foreclosure or ownership exit was disclosed"
+      ]
+    },
+    {
+      "url": "https://generatecapital.com/investment/422/",
+      "purpose": "Generate investment and operating scope",
+      "supports": [
+        "Generate financed a Southern California behind-the-meter storage program with Stem",
+        "The program was structured through asset-owning special-purpose vehicles"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "eac66d728aa6d7697209b602fce61e3cea7770fa088367f3b07968c6af8bd0a6",
+  "currentCompanySnapshotSha256": "223249c2649b4a0ceb17a7d75bf02fa88e39cb698b2c6c34ac8332e32dd3bc70",
+  "executionLock": {
+    "taskSnapshotSha256": "418d799a0cdc93f2fab9c22b79fdfb0e2d1fead6fe5efe942f8b7c06ec540654",
+    "taskStateSha256": "c1ebe8dffd20144b9bea2823b76039a38dd3a0dcd195225274f2141f09b84b42",
+    "taskDependencySha256": "4681f101b6d544ab738065bd510a9b08105b9bad0d2b650a37a45e9f933aa820",
+    "seedEntrySha256": "cc9ead9ede69a183968c05c6fc37a69a1bc26c93707dc7059cbcb7634bd4aa72",
+    "dependencies": {
+      "ownershipPeriodsSha256": "1c9c5e2dede7ed1969f75d3ed932be824692494ae1db0902bee9aa12ca07ed10",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "f54db27c51c5aa5ddcb1c154cba3320ce6f3755f26526ea2b3b6b6e5bbe8af09",
+      "citationsSha256": "289c95e9654d974e418f91804f76ffecbfaa6b11f08fcc86d47902cb561d1936",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi8ti0021ivhe78elelvr",
+        "name": "Generate Capital",
+        "updatedAt": "2026-07-23T16:09:18.630Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjg6300y8ivhes0xgnzrw",
+    "name": "Stem Energy Storage Asset SPVs",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Behind-the-meter battery storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Stem Energy Storage Asset SPVs are financing vehicles for behind-the-meter battery storage projects. Their end users are commercial and grid-facing customers that use storage to reduce energy costs, provide local capacity, and support utility programs. The model is asset-heavy and contract-based, with project value tied to financed storage systems and long-term software and services support from Stem. Public reporting identified Generate Capital as a primary Stem project-financing provider in 2016, and Generate's published materials later described a program with the right to fund up to 85 MW / 340 MWh of Southern California behind-the-meter storage projects. The reviewed materials did not disclose individual SPV ownership percentages or portfolio-level revenue. Generate's relationship with Stem therefore centers on project and asset financing, while Stem remains the technology and software provider.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "California",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk1qv01wjivhesljqngxd",
+        "managerName": "Generate Capital",
+        "organizationName": "Generate Capital",
+        "fundName": null,
+        "vehicleName": "Asset Owner",
+        "stake": null,
+        "investmentYear": 2016,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpls6f0437ivhe4wy5905t",
+        "date": "2009",
+        "event": "Stem, Inc. was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2009-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpls6w0438ivheiuuxc71f",
+        "date": "Aug 2016",
+        "event": "Stem's project-financing pool included primary project financing from Generate Capital for behind-the-meter storage deployments.",
+        "category": "FINANCING",
+        "sortDate": "2016-08-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpr6l60aoxivhebf97hwyt",
+        "label": "Ownership source — Generate Capital — Cambrian Innovation Water Asset SPVs",
+        "url": "https://generatecapital.com/investment/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Generatecapital — Stem Energy Storage Asset SPVs",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpr6m70aozivhew8bp4khc",
+        "label": "Stem — Stem Energy Storage Asset SPVs",
+        "url": "https://www.stem.com/about-stem/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Stem company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr6n20ap1ivhee34jeatd",
+        "label": "Stem — Stem Energy Storage Asset SPVs",
+        "url": "https://www.stem.com/wp-content/uploads/2022/10/About-Stem-Brochure-Sept-2022.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Stem — Stem Energy Storage Asset SPVs",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr6o10ap3ivhepxt3szci",
+        "label": "Investment date source — Generate Capital — Stem Energy Storage Asset SPVs",
+        "url": "https://www.energy-storage.news/stem-takes-project-funding-to-us350-million/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Generate Capital initial investment / ownership",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "223249c2649b4a0ceb17a7d75bf02fa88e39cb698b2c6c34ac8332e32dd3bc70",
+  "afterImage": {
+    "id": "cmrxpjg6300y8ivhes0xgnzrw",
+    "name": "Generate–Stem LCR",
+    "aliases": [
+      "Generate-Stem LCR, LLC",
+      "SPV IV",
+      "STEM LCR",
+      "Stem Energy Storage Asset SPVs"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Behind-the-meter battery-storage special-purpose vehicle",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Generate-Stem LCR, LLC is a Delaware special-purpose vehicle formed on June 30, 2017 to purchase and own behind-the-meter battery-storage systems supporting Southern California Edison's West Los Angeles Basin local-capacity program. Stem, Inc. holds a 50% Class B non-managing interest and remains the host-facing technology and operating counterparty. Stem's filings describe a two-class structure and its 50% interest, so the Generate-linked Class A managing interest is recorded as an inferred 50%; the exact Generate affiliate and fund are not publicly disclosed. The cited 85 MW / 340 MWh figures are contract and funding ceilings rather than verified deployed capacity. Stem continued to report obligations and repayments for its consolidated SPE program through June 30, 2026, and no sale, transfer, foreclosure, dissolution or signed pending ownership transaction for Generate-Stem LCR was identified through August 29, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2017,
+    "headquarters": null,
+    "lastVerifiedAt": "2026-08-29T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk1qv01wjivhesljqngxd",
+        "managerName": "Generate Capital",
+        "organizationName": "Generate Capital",
+        "fundName": null,
+        "vehicleName": "SPV IV Class A managing interest; exact Generate affiliate not publicly disclosed",
+        "stake": "Inferred 50% from Stem's disclosed 50% Class B interest and the two-class membership structure",
+        "investmentYear": 2017,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Stem, Inc.",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "SPV IV Class B non-managing interest",
+        "stake": "50%; entitled to 2.5% of initial distributions",
+        "investmentYear": 2017,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpls6f0437ivhe4wy5905t",
+        "date": "Jun 30, 2017",
+        "event": "Generate-Stem LCR, LLC was formed as SPV IV with Class A managing and Class B non-managing membership interests to purchase and own Southern California behind-the-meter storage systems; Stem retained the 50% Class B interest.",
+        "category": "FINANCING",
+        "sortDate": "2017-06-30T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1758766/000175876626000016/stem-20251231.htm",
+          "https://generatecapital.com/investment/422/"
+        ]
+      },
+      {
+        "id": "cmrxpls6w0438ivheiuuxc71f",
+        "date": "Jun 30, 2026",
+        "event": "Stem continued to report obligations and repayments for its special-purpose storage program, with no disclosed sale, transfer or Generate-Stem LCR exit.",
+        "category": "FINANCING",
+        "sortDate": "2026-06-30T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1758766/000175876626000081/stem-20260630.htm"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpr6l60aoxivhebf97hwyt",
+        "label": "Ownership source — Generate Capital — Cambrian Innovation Water Asset SPVs",
+        "url": "https://generatecapital.com/investment/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Generate portfolio archive index; company-specific evidence is provided by the archived investment page",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr6m70aozivhew8bp4khc",
+        "label": "Stem — Stem Energy Storage Asset SPVs",
+        "url": "https://www.stem.com/about-stem/",
+        "sourceType": "WEBSITE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Stem operating-company context; not the legal SPE identity",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr6n20ap1ivhee34jeatd",
+        "label": "Stem — Stem Energy Storage Asset SPVs",
+        "url": "https://www.stem.com/wp-content/uploads/2022/10/About-Stem-Brochure-Sept-2022.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Stem technology and operating-platform context",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr6o10ap3ivhepxt3szci",
+        "label": "Investment date source — Generate Capital — Stem Energy Storage Asset SPVs",
+        "url": "https://www.energy-storage.news/stem-takes-project-funding-to-us350-million/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "The 2016 multi-financier pool was not a single Generate-owned legal entity",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Stem — 2025 Form 10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1758766/000175876626000016/stem-20251231.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Generate-Stem LCR legal identity, formation date, membership classes and Stem's 50% Class B interest",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "Stem — Q2 2026 Form 10-Q",
+        "url": "https://www.sec.gov/Archives/edgar/data/1758766/000175876626000081/stem-20260630.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Continuing SPE obligations and repayments through June 30, 2026",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Generate Capital — Stem investment archive",
+        "url": "https://generatecapital.com/investment/422/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Generate's asset-owning SPV model, Southern California scope and funding ceiling",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Southern California Edison — LCR RFO archive",
+        "url": "https://www.sce.com/about-sce/energy-procurement/solicitations/archive/lcr-rfo",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "West Los Angeles Basin local-capacity procurement and Stem contract award context",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Southern California Edison — demand response programs",
+        "url": "https://www.sce.com/business/save-costs-energy/savings-strategies/what-is-demand-response",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current Stem local-capacity demand-response program listing",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "196243d434c169290044e15202e546f310a64ed8b37d12bce0ea3c632212ddc2",
+  "proposalSha256": "5306ed448d9d524bd8d165bf419e65da6f89e1f5f32ad00c77b1f23add34ef57"
+}

@@ -42,6 +42,7 @@ import {
 } from "./test-fixtures";
 import type {
   CompanyImage,
+  ProposalExecutionLock,
   ReconciliationApproval,
   ReconciliationProposal,
   ProductionSnapshot,
@@ -105,6 +106,11 @@ describe("approved ownership organization provisioning", () => {
     expect(ownershipOrganizationTypes("Eos Partners, L.P.")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("TCA Fund Management Group Corp.")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("Walsin Lihwa Corporation")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("Stem, Inc.")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("Chevron New Energies")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("Haddington Ventures")).toEqual(["FUND_MANAGER"]);
+    expect(ownershipOrganizationTypes("A.P. Moller-Maersk")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("Littlejohn & Co.")).toEqual(["FUND_MANAGER"]);
   });
 
   it("provisions only exact approved missing owner organizations during the protected apply phase", async () => {
@@ -162,6 +168,11 @@ describe("approved ownership organization provisioning", () => {
       ["Eos Partners, L.P.", "FUND_MANAGER"],
       ["TCA Fund Management Group Corp.", "FUND_MANAGER"],
       ["Walsin Lihwa Corporation", "CORPORATE"],
+      ["Stem, Inc.", "CORPORATE"],
+      ["Chevron New Energies", "CORPORATE"],
+      ["Haddington Ventures", "FUND_MANAGER"],
+      ["A.P. Moller-Maersk", "CORPORATE"],
+      ["Littlejohn & Co.", "FUND_MANAGER"],
     ] as const) {
       const create = vi.fn().mockResolvedValue({
         id: `org-${name}`,
@@ -258,6 +269,7 @@ function approvedCorrection(input?: {
   retiredCompanyIds?: string[];
   relationMerges?: NonNullable<ReconciliationProposal["relationMerges"]>;
   reviewedSeedRetirements?: NonNullable<ReconciliationProposal["reviewedSeedRetirements"]>;
+  executionLock?: ProposalExecutionLock;
   snapshot?: ProductionSnapshot;
 }): {
   proposal: ReconciliationProposal;
@@ -294,6 +306,7 @@ function approvedCorrection(input?: {
     ledgerSha256: FIXTURE_SHA,
     productionSnapshotSha256: snapshot.snapshotSha256,
     currentCompanySnapshotSha256: companyImageSha256(before),
+    ...(input?.executionLock === undefined ? {} : { executionLock: input.executionLock }),
     beforeImage: before,
     beforeImageSha256: companyImageSha256(before),
     afterImage: after,
@@ -1057,6 +1070,54 @@ describe("approved local seed after-image", () => {
       name: before.name,
       country: before.country,
     }]);
+  });
+
+  it("retires a proposal-bound legacy seed identity when production already uses the canonical name", () => {
+    const before = companyImageFixture();
+    const legacyTarget = legacySeedCompany("Acme Infrastructure Inc.", before.country);
+    const funds: ProposalExecutionLock["funds"] = [];
+    const organizations: ProposalExecutionLock["organizations"] = [];
+    const redirects: ProposalExecutionLock["redirects"] = [];
+    const dependencies = {
+      ownershipPeriodsSha256: sha256Canonical(before.ownershipPeriods),
+      pendingTransactionsSha256: sha256Canonical(before.pendingOwnershipTransactions),
+      fundsSha256: sha256Canonical(funds),
+      organizationsSha256: sha256Canonical(organizations),
+      citationsSha256: sha256Canonical(before.citations),
+      redirectsSha256: sha256Canonical(redirects),
+    };
+    const executionLock: ProposalExecutionLock = {
+      taskSnapshotSha256: "1".repeat(64),
+      taskStateSha256: "2".repeat(64),
+      taskDependencySha256: sha256Canonical(dependencies),
+      seedEntrySha256: sha256Canonical(legacyTarget),
+      dependencies,
+      funds,
+      organizations,
+      redirects,
+    };
+    const { proposal, approval } = approvedCorrection({
+      before,
+      after: structuredClone(before),
+      executionLock,
+    });
+
+    const entry = buildApprovedSeedEntry(
+      proposal,
+      approval,
+      productionSnapshotFixture(),
+      [legacyTarget],
+    );
+
+    expect(entry.retiredCompanies).toEqual([{
+      name: legacyTarget.name,
+      country: legacyTarget.country,
+    }]);
+    expect(() => verifyApprovedSeedProjection({
+      artifact: [],
+      expectedEntry: entry,
+      rawSeedCompanies: [legacyTarget],
+    })).not.toThrow();
   });
 
   it("verifies raw and evaluated seed-only retirements and leaves one canonical after-image", () => {

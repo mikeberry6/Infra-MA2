@@ -1,0 +1,424 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0262:direct-chassislink-inc-dcli:d3d4542b",
+  "taskIndex": 262,
+  "companyName": "Direct ChassisLink, Inc. (DCLI)",
+  "generatedAt": "2026-08-29T18:40:04.873Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0262-direct-chassislink-inc-dcli/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 262,
+    "taskId": "ledger:0262:direct-chassislink-inc-dcli:d3d4542b",
+    "canonicalKey": "direct-chassislink-inc-dcli|united-states",
+    "companyName": "Direct ChassisLink, Inc. (DCLI)",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 47,
+    "managers": [
+      "GIC"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "047-gic:holding:001:direct-chassislink-inc-dcli"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjoz401c3ivhemhei5kyo"
+    ],
+    "seedKeys": [
+      "direct chassislink inc. (dcli)|United States"
+    ],
+    "evidenceUrls": [
+      "https://dcli.com/about-us/",
+      "https://www.omers.com/news/gic-omers-infrastructure-and-wren-house-to-acquire-direct-chassislink-inc"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Heuristic identity overlap with direct-chassislink-inc|united-states; no automatic merge was made. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Heuristic identity overlap with direct-chassislink-inc|united-states; no automatic merge was made."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjoz401c3ivhemhei5kyo",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "direct-chassislink-inc-dcli|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjoz401c3ivhemhei5kyo",
+    "name": "Direct ChassisLink, Inc. (DCLI)",
+    "aliases": [],
+    "sector": "TRANSPORTATION",
+    "subsector": "Intermodal chassis leasing",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Direct ChassisLink, Inc. leases marine and domestic intermodal chassis used to move containerized freight between ports, rail terminals, and inland customer locations across the United States. Its customers include ocean carriers, railroads, motor carriers, beneficial cargo owners, and logistics intermediaries that depend on chassis availability for port and inland intermodal flows. The operating model is asset heavy and lease based, supported by a large fleet positioned at strategic port and rail locations rather than a brokerage model. Wren House states that DCLI operates more than 151,000 marine chassis and 121,000 domestic chassis and employs approximately 470 people, with headquarters in Charlotte. GIC, OMERS Infrastructure, and Wren House signed the acquisition of DCLI in 2022, and the platform has since remained under that consortium ownership. The investment gives Wren House exposure to essential equipment underpinning U.S. container logistics.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk1x801wqivhe2d9e9l1t",
+        "managerName": "GIC",
+        "organizationName": "GIC",
+        "fundName": null,
+        "vehicleName": "GIC Infrastructure (Joint buyout with OMERS and Wren House)",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpkbiz02btivhe0hamfvuo",
+        "managerName": "Wren House",
+        "organizationName": "Wren House",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpkblk02buivhen559osw3",
+        "managerName": "OMERS Infrastructure",
+        "organizationName": "OMERS",
+        "fundName": "OMERS Infrastructure",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplshs043nivhe2wggqhcs",
+        "date": "2009",
+        "event": "DCLI states that it began its growth as Direct ChassisLink through expansion, acquisition, and innovation.",
+        "category": "OTHER",
+        "sortDate": "2009-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplsid043oivhegx0prgr3",
+        "date": "Dec 2022",
+        "event": "DCLI was acquired by the GIC, OMERS Infrastructure, and Wren House consortium.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplsl6043pivhey5jyvmvv",
+        "date": "Jun 24, 2022",
+        "event": "GIC, OMERS Infrastructure, and Wren House announced an agreement to acquire DCLI from Apollo and EQT-managed funds.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-06-24T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplsll043qivheigs92akm",
+        "date": "Mar 1, 2024",
+        "event": "OMERS highlighted the investment and disclosed fleet and employee scale metrics for DCLI.",
+        "category": "FINANCING",
+        "sortDate": "2024-03-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmw4t05fnivhepxfmj19i",
+        "date": "Dec 2022",
+        "event": "GIC, OMERS Infrastructure, and Wren House completed the consortium acquisition of DCLI.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmw5a05foivhes6xe06nh",
+        "date": "Jun 2022",
+        "event": "GIC, OMERS Infrastructure, and Wren House announced an agreement to acquire DCLI.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-06-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmw8905fpivhe96cm57rv",
+        "date": "Jun 2022",
+        "event": "GIC, OMERS Infrastructure, and Wren House announced the acquisition of DCLI.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-06-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmw8r05fqivheptcee3hi",
+        "date": "2023",
+        "event": "Wren House portfolio materials reflected DCLI as a 2022 investment.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpr7b00apxivhexgwolru7",
+        "label": "Dcli — Direct ChassisLink Inc. (DCLI)",
+        "url": "https://dcli.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Dcli company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr7de0aq1ivhe2xeqrzxn",
+        "label": "Announcement date source — GIC — Direct ChassisLink Inc. (DCLI)",
+        "url": "https://dcli.com/resource/gic-omers-infrastructure-and-wren-house-to-acquire-dcli/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "GIC transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr7ei0aq3ivhedracuda3",
+        "label": "Close date source — GIC — Direct ChassisLink Inc. (DCLI)",
+        "url": "https://www.omersinfrastructure.com/news/omers-wins-m-and-a-award-for-dcli-investment",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "GIC closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpt3zr0dm7ivhe6keodcop",
+        "label": "Announcement date source — OMERS — Direct ChassisLink, Inc.",
+        "url": "https://www.omers.com/news/gic-omers-infrastructure-and-wren-house-to-acquire-direct-chassislink-inc",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "OMERS transaction announcement",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpt4060dm8ivheg95cbe3o",
+        "label": "Close date source — GIC — Direct ChassisLink Inc. (DCLI)",
+        "url": "https://www.omersinfrastructure.com/news/omers-wins-m-and-a-award-for-dcli-investment",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "OMERS closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpt40o0dm9ivhev4tw7i9x",
+        "label": "Dcli — Direct ChassisLink Inc. (DCLI)",
+        "url": "https://dcli.com/about-us/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Dcli company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpt41o0dmbivhe68ysaa6i",
+        "label": "Investment date source — Wren House — Direct ChassisLink, Inc.",
+        "url": "https://www.whinfra.com/our-portfolio/direct-chassislink-inc-dcli/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Wren House initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpt42r0dmdivhebzlfphh7",
+        "label": "Announcement date source — Wren House — Direct ChassisLink, Inc.",
+        "url": "https://www.whinfra.com/gic-omers-infrastructure-and-wren-house-to-acquire-direct-chassislink-inc/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Wren House transaction announcement",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Direct ChassisLink Inc. (DCLI)",
+    "investmentFirm": "GIC",
+    "sector": "Transportation",
+    "subsector": "Intermodal chassis leasing",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "GIC Infrastructure (Joint buyout with OMERS and Wren House)",
+    "description": "Direct ChassisLink Inc. is an intermodal equipment platform that leases and manages container chassis across the United States. Its customers include ocean carriers, motor carriers, beneficial cargo owners, domestic shippers, and other freight intermediaries that move containerized goods through ports and rail hubs. The model is asset-heavy and contracted, with value supported by a large owned and managed chassis fleet and national operating coverage. Company materials state that DCLI operates from more than 500 locations and owns or manages more than 270,000 marine and domestic chassis, making it one of the largest providers in the U.S. intermodal market. The reviewed materials did not disclose platform-level revenue or the ownership percentages held by GIC, OMERS Infrastructure, and Wren House. The consortium agreed to acquire DCLI in 2022 and completed the transaction later that year.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2022,
+    "headquarters": "North Carolina; nationwide U.S.",
+    "milestones": [
+      {
+        "date": "2009",
+        "event": "DCLI states that it began its growth as Direct ChassisLink through expansion, acquisition, and innovation.",
+        "category": "Other"
+      },
+      {
+        "date": "Dec 2022",
+        "event": "DCLI was acquired by the GIC, OMERS Infrastructure, and Wren House consortium.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Jun 24, 2022",
+        "event": "GIC, OMERS Infrastructure, and Wren House announced an agreement to acquire DCLI from Apollo and EQT-managed funds.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Mar 1, 2024",
+        "event": "OMERS highlighted the investment and disclosed fleet and employee scale metrics for DCLI.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Dcli — Direct ChassisLink Inc. (DCLI)",
+        "url": "https://dcli.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Dcli — Direct ChassisLink Inc. (DCLI)",
+        "url": "https://dcli.com/about-us/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Announcement date source — GIC — Direct ChassisLink Inc. (DCLI)",
+        "url": "https://dcli.com/resource/gic-omers-infrastructure-and-wren-house-to-acquire-dcli/",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Close date source — GIC — Direct ChassisLink Inc. (DCLI)",
+        "url": "https://www.omersinfrastructure.com/news/omers-wins-m-and-a-award-for-dcli-investment",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "GIC",
+        "ownershipVehicle": "GIC Infrastructure (Joint buyout with OMERS and Wren House)",
+        "investmentYear": 2022,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [
+    {
+      "sourceQueueTaskId": "ledger:0369:direct-chassislink-inc:a317904f",
+      "sourceQueueEntrySha256": "b78c723855b7328ba50193e43f12bc72337c562409bf4b4f7e91f3a4ae79b502",
+      "name": "Direct ChassisLink, Inc.",
+      "country": "United States",
+      "rawSeedEntrySha256": "c1ca102f0d794ba4a5c1717cad0274898d1453a04cadafc17ff550b867a814ff",
+      "evaluatedSeedEntrySha256": "c1ca102f0d794ba4a5c1717cad0274898d1453a04cadafc17ff550b867a814ff"
+    }
+  ],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj3fm00f1ivhehhc270qc",
+        "fundName": "OMERS Infrastructure",
+        "managerId": "cmrxpic6e0033ivheho9lmsp6",
+        "updatedAt": "2026-07-23T16:09:58.306Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi3q1000givhe0rxho1m0",
+        "name": "Apollo Global Management",
+        "updatedAt": "2026-07-23T16:09:12.025Z"
+      },
+      {
+        "id": "cmrxpi7yv001rivhe44fyzxcs",
+        "name": "EQT Infrastructure",
+        "updatedAt": "2026-07-23T16:09:17.527Z"
+      },
+      {
+        "id": "cmrxpi8wm0022ivhessbkv786",
+        "name": "GIC",
+        "updatedAt": "2026-07-23T16:09:18.742Z"
+      },
+      {
+        "id": "cmrxpic6e0033ivheho9lmsp6",
+        "name": "OMERS Infrastructure",
+        "updatedAt": "2026-07-23T16:09:22.983Z"
+      },
+      {
+        "id": "cmrxpij0a0058ivhemf1et807",
+        "name": "OMERS",
+        "updatedAt": "2026-07-23T16:09:31.834Z"
+      },
+      {
+        "id": "cmrxpijz1005jivhekerlz6i2",
+        "name": "Wren House",
+        "updatedAt": "2026-07-23T16:09:33.085Z"
+      }
+    ],
+    "redirects": [
+      {
+        "retiredId": "cmrxpjg8u00ydivhe473ah8ub",
+        "companyId": "cmrxpjoz401c3ivhemhei5kyo",
+        "reason": "CANONICAL_MERGE",
+        "createdAt": "2026-07-29T04:08:41.914Z"
+      }
+    ]
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0262:direct-chassislink-inc-dcli:d3d4542b",
+    "taskIndex": 262,
+    "canonicalKey": "direct-chassislink-inc-dcli|united-states",
+    "capturedAt": "2026-08-29T18:40:04.873Z",
+    "databaseRevision": "revision:928a05c81ee1d3b7cc74e90b37801f595a28aa2a7fb75aeafca9487ef00506bb",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "655dbbb90d49ebd66a3473469108da6aacac2784608e1c0989d02c8c4353d4ae",
+    "productionSnapshotSha256": "fa2da2c3770ad75fc3d7f090ab2d41007df7379e6e5a65d12fd61a461323eba9",
+    "targetCompanySnapshotSha256": "cfc1ff383d6f7b4ce48bf63d1cc3e1629046bdb4e53f33eee9018a71dbaea67b",
+    "seedEntrySha256": "c4cb1462020107b8099c76d09d968de31cc0e860632ee0cf379b31342086cb6c",
+    "seedRetirementCandidates": [
+      {
+        "sourceQueueTaskId": "ledger:0369:direct-chassislink-inc:a317904f",
+        "sourceQueueEntrySha256": "b78c723855b7328ba50193e43f12bc72337c562409bf4b4f7e91f3a4ae79b502",
+        "name": "Direct ChassisLink, Inc.",
+        "country": "United States",
+        "rawSeedEntrySha256": "c1ca102f0d794ba4a5c1717cad0274898d1453a04cadafc17ff550b867a814ff",
+        "evaluatedSeedEntrySha256": "c1ca102f0d794ba4a5c1717cad0274898d1453a04cadafc17ff550b867a814ff"
+      }
+    ],
+    "dependencies": {
+      "ownershipPeriodsSha256": "737c5f43531f00dab4656b4e1cb8c6b46b9ea2b72a0d6182306d39aca8f04898",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "fac4fa7335c127e73abe52490df9652aca3bb882b516d47a38d8dfc92ad1e3f0",
+      "organizationsSha256": "606fee8dbcc95de436737b0b983c53546ac876c18341f25f05b13e05bb83c0ae",
+      "citationsSha256": "d4ef4f0b774656c68f7064a4e5767dd30ef6f06437245c0e19963c36dc39ec24",
+      "redirectsSha256": "488cba3d65ddcd53b8c2676e0b951fe2181ec70b4650a23477b9c83917e2c750"
+    },
+    "dependencySha256": "f155d6eab6a5e2aa0ea163c49a775cbd1721a8fe2cebfa405262bd6e094e7c80",
+    "stateSha256": "061e73817d8ac9cbbfc4f77935e67242dc03f44195f3d2cab4f2630c12c728e2",
+    "taskSnapshotSha256": "e1e250f7a228b863ba82de3fed3997d735123fe5b9d0f34afcb9f2452f5b4824"
+  },
+  "contextSha256": "b3e7102806edc3a44d3da2982480b212698984b2faab8a7ab40f3e1b5a420949"
+}

@@ -3,6 +3,7 @@ import { dirname, resolve } from "node:path";
 import { baseCompanies } from "../../prisma/seed-data/companies";
 import {
   applyApprovedPortCoAfterImages,
+  approvedPortCoSeedIdentityCandidates,
   type ApprovedPortCoAfterImage,
 } from "../../prisma/seed-data/approved-portco-after-images";
 import type { PortCo } from "../../prisma/seed-data/portco-types";
@@ -192,6 +193,10 @@ export function buildApprovedSeedEntry(
   proposal: ReconciliationProposal,
   approval: ReconciliationApproval,
   approvedProductionSnapshot?: ProductionSnapshot,
+  seedIdentityCandidates: readonly PortCo[] = [
+    ...baseCompanies,
+    ...approvedPortCoSeedIdentityCandidates(),
+  ],
 ): ApprovedSeedEntry {
   const verifiedProposal = verifyProposal(proposal);
   const verifiedApproval = verifyApproval(approval, verifiedProposal);
@@ -229,6 +234,27 @@ export function buildApprovedSeedEntry(
     name: retirement.name,
     country: retirement.country,
   })));
+  const lockedSeedHash = verifiedProposal.executionLock?.seedEntrySha256 ?? null;
+  if (lockedSeedHash !== null) {
+    const lockedSeedIdentities = new Map<string, { name: string; country: string }>();
+    for (const candidate of seedIdentityCandidates) {
+      if (sha256Canonical(candidate) !== lockedSeedHash) continue;
+      lockedSeedIdentities.set(companyIdentityKey(candidate), {
+        name: candidate.name,
+        country: candidate.country,
+      });
+    }
+    if (lockedSeedIdentities.size === 0) {
+      throw new Error("Proposal-bound seed entry hash cannot be resolved from immutable seed history");
+    }
+    if (lockedSeedIdentities.size > 1) {
+      throw new Error("Proposal-bound seed entry hash resolves to multiple seed identities");
+    }
+    const [lockedSeedIdentity] = lockedSeedIdentities.values();
+    if (companyIdentityKey(lockedSeedIdentity) !== companyIdentityKey(verifiedProposal.afterImage)) {
+      retiredCompanies.push(lockedSeedIdentity);
+    }
+  }
   if (
     verifiedProposal.beforeImage
     && companyIdentityKey(verifiedProposal.beforeImage)

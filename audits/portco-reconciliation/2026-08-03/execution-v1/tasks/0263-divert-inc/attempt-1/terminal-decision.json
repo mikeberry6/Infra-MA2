@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0263:divert-inc:e7a24939",
+  "taskIndex": 263,
+  "companyName": "Divert, Inc.",
+  "outcome": "DEFERRED",
+  "decidedAt": "2026-08-29T18:36:15Z",
+  "rationale": "Divert remains a verified active platform and Ara's continuing ownership is supported, but GIC's 2021 direct investment cannot be safely reconciled because no primary source establishes whether GIC remains a shareholder or identifies the sponsoring GIC strategy or legal affiliate. Applying only the supported owners would silently retire a potentially current position, while retaining the repository's GIC Infrastructure label would preserve an unsupported attribution. Defer the entire list correction until that active-ownership question is resolved.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0263-divert-inc/attempt-1/locked-task-snapshot.json",
+    "sha256": "3063d4947a1998babaa551b4cb9e8d47d9b9390dd168427432f9ab57de939133"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0263-divert-inc/attempt-1/application-research-decision.json",
+    "sha256": "531d378467a3cc1cc2f2f8f0ab979a8e3ef23c8692c19a8cf946bce5c57af3bc"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0263-divert-inc/attempt-1/source-verification.json",
+    "sha256": "d3883c86c7632c9a658ca15e5d24db2ce175186c4181cdefac6b983dcf3d42a7"
+  },
+  "evidence": [
+    {
+      "url": "https://www.arapartners.com/portfolio/",
+      "purpose": "Ara Fund II, Private Equity, June 2021, Active."
+    },
+    {
+      "url": "https://divertinc.com/divert-inc-announces-significant-business-momentum/",
+      "purpose": "Founding, Ara acquisition and $100m Ara/GIC/OPG round."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1725902/000172590218000002/xslFormDX01/primary_doc.xml",
+      "purpose": "Former name and 2017 equity offering."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1969268/000156761923004988/xslFormDX01/primary_doc.xml",
+      "purpose": "HoldCo and $80m equity first sale on 2023-03-01."
+    },
+    {
+      "url": "https://www.enbridge.com/media-center/news/details?id=123758&lang=en",
+      "purpose": "$80m acquisition of 10% and project option."
+    },
+    {
+      "url": "https://divertinc.com/divert-inc-secures-funding-to-scale-infrastructure-addressing-the-wasted-food-crisis-in-north-america/",
+      "purpose": "2026 funding, Ara continuity and OPG board representation."
+    },
+    {
+      "url": "https://divertinc.com/divert-secures-strategic-partnership-with-mitsubishi-to-scale-circular-infrastructure-across-north-america/",
+      "purpose": "Closed Mitsubishi-led Series C and ancillary offtake."
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "1004180fce4052cc37e8a4ec860e3dd162463bd4c74a85b775e466f82b87a16e"
+}
