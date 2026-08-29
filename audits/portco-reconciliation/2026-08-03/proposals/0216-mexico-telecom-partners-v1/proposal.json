@@ -1,0 +1,343 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0216:mexico-telecom-partners:4a74c013",
+  "taskIndex": 216,
+  "asOfDate": "2026-08-29",
+  "generatedAt": "2026-08-29T07:22:00.000Z",
+  "canonicalKey": "mexico-telecom-partners|mexico",
+  "companyName": "Mexico Telecom Partners",
+  "actions": [
+    "CORRECT_COMPANY"
+  ],
+  "sourceHoldingIds": [
+    "036-digitalbridge:holding:011:mexico-telecom-partners",
+    "065-macquarie-asset-management:holding:017:mexico-telecom-partners"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Retain one Mexico Telecom Partners record and correct the legal/display identity and exact 50/50 co-ownership. Mexico Tower Partners is the legal and original identity, while Mexico Telecom Partners is the current brand. The Macquarie-side 2022 transfer to MMIT I and MMIT II was internal and did not change the aggregate 50% interest. InfraBridge is not a direct owner, and no later direct platform transfer was found through August 19, 2026.",
+  "evidence": [
+    {
+      "url": "https://www.bmv.com.mx/docs-pub/eventfid/eventfid_1578452_f00656_1.pdf",
+      "purpose": "Current ownership and exit check",
+      "supports": [
+        "DigitalBridge's MTP Mexico Holding B.V. owns 50%",
+        "Macquarie's MMIT I and MMIT II own 50% in aggregate",
+        "The platform had not been divested as of June 2026"
+      ]
+    },
+    {
+      "url": "https://www.bmv.com.mx/docs-pub/eventfid/eventfid_1167398_f00656_1.pdf",
+      "purpose": "Formation and predecessor evidence",
+      "supports": [
+        "The platform was formed as Mexico Tower Partners",
+        "The original Digital Bridge and MMIF combination was 50/50"
+      ]
+    },
+    {
+      "url": "https://www.mtpsites.com/ourcompany.html",
+      "purpose": "Company identity and operations",
+      "supports": [
+        "Mexico Telecom Partners is the current brand",
+        "The platform provides neutral tower and adjacent digital infrastructure in Mexico"
+      ]
+    },
+    {
+      "url": "https://www.digitalbridge.com/portfolio/mexico-telecom-partners",
+      "purpose": "Current sponsor attribution",
+      "supports": [
+        "DigitalBridge continues to list Mexico Telecom Partners as a current portfolio company"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "67c34d1558f5ec22793b03583e4db891997e52f2c25a1abdea4e67a0eb325b4c",
+  "currentCompanySnapshotSha256": "748c8c355df19d1b467c3f0480da4c2ad4514392e809717d5152438df24ada0e",
+  "executionLock": {
+    "taskSnapshotSha256": "4f6b4d2b32bc4abe72d68b5d325ce4cfab59a9f4c2e338547046b3f367e57d42",
+    "taskStateSha256": "74475e00c27418eea992b6645d48aaaebe736279ea6ad06517455739d521efa7",
+    "taskDependencySha256": "1895bd316319a86d27fb03a0766bf03a6e33eb12dfade43b7ff9beaa5aba089b",
+    "seedEntrySha256": "57f60b66aef38abfe0412a2bf10a739ebed8fb950bf0304df8941b0d3874c878",
+    "dependencies": {
+      "ownershipPeriodsSha256": "841ced525ba01f192015d996918a22f71b80f88c1aa01b63956bc8d4f161ea82",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "79b360a7bef198d67d88df109691edd70a6b7f60fba802afc4b623fce13cfd4e",
+      "citationsSha256": "e368e750f2d879e91a6414a3b5b26ff7dd9ddc95e4ac02f2b2a646796f7d0340",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi6te001eivheobw69a9c",
+        "name": "DigitalBridge",
+        "updatedAt": "2026-07-23T16:09:16.034Z"
+      },
+      {
+        "id": "cmrxpibdo002uivheekmgpdbp",
+        "name": "Macquarie Asset Management",
+        "updatedAt": "2026-07-23T16:09:21.948Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjdbm00tyivher2rzd195",
+    "name": "Mexico Telecom Partners",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Wireless towers and edge digital infrastructure",
+    "region": "NORTH_AMERICA",
+    "country": "Mexico",
+    "countryTags": [
+      "Mexico"
+    ],
+    "description": "Mexico Telecom Partners owns and operates wireless communications infrastructure in Mexico, with activities centered on towers and adjacent digital infrastructure. Its customers include major wireless carriers and other communications users that require shared infrastructure for coverage, densification, and network expansion. The operating model is asset-heavy and lease driven, supported by long-lived telecom sites and recurring tenancy revenue rather than consumer retail billing. DigitalBridge and company materials describe MTP as one of the largest private tower companies in Mexico, founded in 2014, with operations across the country and additional activity in edge data centers. MTP was created in 2014 with the backing of DigitalBridge and Macquarie, and the current ownership percentages between those shareholders are not publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2014,
+    "headquarters": "Mexico",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjyv901rzivhejyznedjv",
+        "managerName": "DigitalBridge",
+        "organizationName": "DigitalBridge",
+        "fundName": null,
+        "vehicleName": "DigitalBridge Equity",
+        "stake": null,
+        "investmentYear": 2014,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjyvp01s0ivhe4ik2jsqg",
+        "managerName": "Macquarie Asset Management",
+        "organizationName": "Macquarie Asset Management",
+        "fundName": null,
+        "vehicleName": "MMIF",
+        "stake": null,
+        "investmentYear": 2014,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplgma03pjivhekm9w9r7d",
+        "date": "May 21, 2014",
+        "event": "Macquarie Mexican Infrastructure Fund and Digital Bridge formed Mexico Tower Partners by merging their existing Mexican tower portfolios.",
+        "category": "FINANCING",
+        "sortDate": "2014-05-21T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplgmv03pkivheikhzy45b",
+        "date": "Jun 19, 2023",
+        "event": "MTP inaugurated a data center in Mexico City.",
+        "category": "EXPANSION",
+        "sortDate": "2023-06-19T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqjib09qmivhexeleax1u",
+        "label": "Investment date source — Macquarie Asset Management — Mexico Telecom Partners",
+        "url": "https://www.mtpsites.com/ourcompany.html",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Macquarie Asset Management initial investment / ownership",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqjjh09qoivhefhm3kuxt",
+        "label": "Investment date source — DigitalBridge — Mexico Telecom Partners",
+        "url": "https://www.digitalbridge.com/portfolio/mexico-telecom-partners",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "DigitalBridge initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqjkj09qqivhea0rzxjde",
+        "label": "Announcement date source — DigitalBridge — Mexico Telecom Partners",
+        "url": "https://www.marketscreener.com/quote/stock/MACQUARIE-GROUP-LIMITED-6491460/news/Macquarie-Mexican-Infrastructure-Fund-Partners-with-Digital-Bridge-to-Form-Second-Largest-Independ-18475031/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "DigitalBridge transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqjls09qsivhe630z4rar",
+        "label": "Macquarie — Mexico Telecom Partners",
+        "url": "https://www.macquarie.com/us/en/about/company/macquarie-asset-management/our-portfolio/mexico-telecom-partners.html",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Macquarie operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqjmv09quivhekpf1p5wz",
+        "label": "Data Center Dynamics — Mexico Telecom Partners",
+        "url": "https://www.datacenterdynamics.com/en/news/mtp-inaugurates-data-center-in-mexico-city/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Data Center Dynamics — Mexico Telecom Partners",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "748c8c355df19d1b467c3f0480da4c2ad4514392e809717d5152438df24ada0e",
+  "afterImage": {
+    "id": "cmrxpjdbm00tyivher2rzd195",
+    "name": "Mexico Telecom Partners",
+    "aliases": [
+      "Mexico Tower Partners",
+      "México Tower Partners",
+      "Mexico Tower Partners, S.A.P.I. de C.V.",
+      "MTP"
+    ],
+    "sector": "DIGITAL",
+    "subsector": "Wireless towers and edge digital infrastructure",
+    "region": "NORTH_AMERICA",
+    "country": "Mexico",
+    "countryTags": [
+      "Mexico"
+    ],
+    "description": "Mexico Telecom Partners, legally Mexico Tower Partners, S.A.P.I. de C.V., is a neutral Mexican digital-infrastructure platform that owns and operates towers, rooftop sites, distributed antenna systems, small cells, edge facilities and data-center infrastructure. The platform serves major wireless operators and colocation users across Mexico. It was formed in May 2014 by combining Digital Bridge and Macquarie Mexican Infrastructure Fund portfolios. A June 2026 BMV filing reported approximately 3,737 sites and confirmed an unchanged 50/50 ownership split: DigitalBridge through MTP Mexico Holding B.V., and Macquarie Asset Management through MMIT I and MMIT II. The 2022 Macquarie-side transfer was internal, InfraBridge is not a direct owner, and no signed or closed direct platform sale was identified through August 19, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.mtpsites.com/",
+    "yearFounded": 2014,
+    "headquarters": "Mexico City, Mexico",
+    "lastVerifiedAt": "2026-08-19T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjyv901rzivhejyznedjv",
+        "managerName": "DigitalBridge",
+        "organizationName": "DigitalBridge",
+        "fundName": null,
+        "vehicleName": "MTP Mexico Holding B.V.",
+        "stake": "50.00%",
+        "investmentYear": 2014,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjyvp01s0ivhe4ik2jsqg",
+        "managerName": "Macquarie Asset Management",
+        "organizationName": "Macquarie Asset Management",
+        "fundName": null,
+        "vehicleName": "MMIT I and MMIT II",
+        "stake": "50.00% total (34.0270% and 15.9730%)",
+        "investmentYear": 2014,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplgma03pjivhekm9w9r7d",
+        "date": "May 20, 2014",
+        "event": "The 50/50 Digital Bridge and Macquarie Mexican Infrastructure Fund combination closed to form Mexico Tower Partners; the transaction was announced the following day.",
+        "category": "FINANCING",
+        "sortDate": "2014-05-20T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.bmv.com.mx/docs-pub/eventfid/eventfid_1167398_f00656_1.pdf",
+          "https://www.marketscreener.com/quote/stock/MACQUARIE-GROUP-LIMITED-6491460/news/Macquarie-Mexican-Infrastructure-Fund-Partners-with-Digital-Bridge-to-Form-Second-Largest-Independ-18475031/"
+        ]
+      },
+      {
+        "id": "cmrxplgmv03pkivheikhzy45b",
+        "date": "Dec 22, 2022",
+        "event": "Macquarie transferred its MTP shares and related loans internally to MMIT I and MMIT II without changing Macquarie's aggregate 50% interest.",
+        "category": "OTHER",
+        "sortDate": "2022-12-22T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.bmv.com.mx/docs-pub/eventfid/eventfid_1578452_f00656_1.pdf"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqjib09qmivhexeleax1u",
+        "label": "Investment date source — Macquarie Asset Management — Mexico Telecom Partners",
+        "url": "https://www.mtpsites.com/ourcompany.html",
+        "sourceType": "ARTICLE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current brand, company formation and operating services",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqjjh09qoivhefhm3kuxt",
+        "label": "Investment date source — DigitalBridge — Mexico Telecom Partners",
+        "url": "https://www.digitalbridge.com/portfolio/mexico-telecom-partners",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current DigitalBridge portfolio attribution and operating offices",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqjkj09qqivhea0rzxjde",
+        "label": "Announcement date source — DigitalBridge — Mexico Telecom Partners",
+        "url": "https://www.marketscreener.com/quote/stock/MACQUARIE-GROUP-LIMITED-6491460/news/Macquarie-Mexican-Infrastructure-Fund-Partners-with-Digital-Bridge-to-Form-Second-Largest-Independ-18475031/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "2014 50/50 formation announcement and launch scale",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqjls09qsivhe630z4rar",
+        "label": "Macquarie — Mexico Telecom Partners",
+        "url": "https://www.macquarie.com/us/en/about/company/macquarie-asset-management/our-portfolio/mexico-telecom-partners.html",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current Macquarie portfolio attribution and operating profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqjmv09quivhekpf1p5wz",
+        "label": "Data Center Dynamics — Mexico Telecom Partners",
+        "url": "https://www.datacenterdynamics.com/en/news/mtp-inaugurates-data-center-in-mexico-city/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Data Center Dynamics — Mexico Telecom Partners",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "BMV — Mexico Tower Partners Q2 2026 filing",
+        "url": "https://www.bmv.com.mx/docs-pub/eventfid/eventfid_1578452_f00656_1.pdf",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current 50/50 cap table, 2022 internal transfer, operating scale and non-divestment",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "BMV — Mexico Tower Partners 2021 filing",
+        "url": "https://www.bmv.com.mx/docs-pub/eventfid/eventfid_1167398_f00656_1.pdf",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Legal formation, predecessor portfolios and original 50/50 ownership",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "92dc371b484ec5a09d8670d8a05b819b5058fe3d70623152778f90afaecb57c9",
+  "proposalSha256": "ac918a6a413a5e95ba3a4962eece0a7f72fb24d856754b11ff145cd12f714ecd"
+}

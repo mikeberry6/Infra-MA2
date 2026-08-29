@@ -1,0 +1,294 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0218:switch-inc:ed27b056",
+  "taskIndex": 218,
+  "companyName": "Switch, Inc.",
+  "generatedAt": "2026-08-29T07:17:11.280Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0218-switch-inc/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 218,
+    "taskId": "ledger:0218:switch-inc:ed27b056",
+    "canonicalKey": "switch-inc|united-states",
+    "companyName": "Switch, Inc.",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 36,
+    "managers": [
+      "DigitalBridge",
+      "IFM Investors",
+      "InfraBridge"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "036-digitalbridge:holding:014:switch",
+      "055-ifm-investors:holding:009:switch-inc"
+    ],
+    "sourceRepoOnlyIds": [
+      "058-infrabridge:repo-only:010:switch-inc"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjdcs00u0ivhec2k6lhpt"
+    ],
+    "seedKeys": [
+      "switch, inc.|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.digitalbridge.com/news/2022-12-06-digitalbridge-and-ifm-investors-complete-11-billion-take-private-of-switch",
+      "https://www.ifminvestors.com/capabilities/infrastructure/our-portfolio/switch-inc/",
+      "https://www.switch.com/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: InfraBridge MATCHED_ELSEWHERE: Attributed to DigitalBridge/IFM digital strategy rather than InfraBridge.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjdcs00u0ivhec2k6lhpt",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "switch-inc|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjdcs00u0ivhec2k6lhpt",
+    "name": "Switch, Inc.",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Data centers",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Switch, Inc. develops, owns, and operates large-scale data center campuses in North America. It serves cloud, AI, and enterprise users that require wholesale and colocation data center capacity. The business is asset-heavy and contracted because it owns specialized data center real estate and sells long-term colocation and infrastructure services to large customers. IFM states that the company operates 20 data centers in the United States and company materials emphasize high-density and AI-ready campus designs. DigitalBridge and IFM Global Infrastructure Fund (GIF) completed the take-private acquisition in December 2022, and IFM subsequently disclosed that DigitalBridge held a 55.8% stake while IFM held 37.2%.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2000,
+    "headquarters": "Nevada and other U.S. markets",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjyws01s2ivhega71tdl3",
+        "managerName": "DigitalBridge",
+        "organizationName": "DigitalBridge",
+        "fundName": "DigitalBridge Partners II, LP",
+        "vehicleName": "DigitalBridge Partners II",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjyxf01s3ivhe59c5b3l8",
+        "managerName": "IFM Investors",
+        "organizationName": "IFM Investors",
+        "fundName": "IFM Global Infrastructure Fund (GIF)",
+        "vehicleName": "IFM Global Infrastructure Fund (GIF)",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplgq503poivheulge80ul",
+        "date": "2000",
+        "event": "Public company materials identify 2000 as the founding year.",
+        "category": "FOUNDING",
+        "sortDate": "2000-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplgql03ppivhe4sugxu80",
+        "date": "Dec 6, 2022",
+        "event": "DigitalBridge and IFM Global Infrastructure Fund (GIF) completed the $11 billion take-private acquisition of Switch.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-12-06T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqjuy09r4ivhebu1d8gkh",
+        "label": "Switch — Switch, Inc.",
+        "url": "https://www.switch.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Switch company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqjw409r6ivhev1ilbi9w",
+        "label": "Investment date source — IFM Investors — Switch, Inc.",
+        "url": "https://www.ifminvestors.com/capabilities/infrastructure/our-portfolio/switch-inc/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "IFM Investors initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqjx509r8ivheoge5unfd",
+        "label": "Close date source — DigitalBridge — Switch, Inc.",
+        "url": "https://www.digitalbridge.com/news/2022-12-06-digitalbridge-and-ifm-investors-complete-11-billion-take-private-of-switch",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "DigitalBridge closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqjy909raivheu4zrbqid",
+        "label": "Close date source — IFM Investors — Switch, Inc.",
+        "url": "https://ir.digitalbridge.com/news-releases/news-release-details/digitalbridge-and-ifm-investors-complete-11-billion-take-private/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "IFM Investors closing confirmation",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Switch, Inc.",
+    "investmentFirm": "DigitalBridge",
+    "sector": "Digital",
+    "subsector": "Data centers",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "DigitalBridge Partners II",
+    "description": "Switch, Inc. develops, owns, and operates large-scale data center campuses in North America. It serves cloud, AI, and enterprise users that require wholesale and colocation data center capacity. The business is asset-heavy and contracted because it owns specialized data center real estate and sells long-term colocation and infrastructure services to large customers. IFM states that the company operates 20 data centers in the United States and company materials emphasize high-density and AI-ready campus designs. DigitalBridge and IFM Global Infrastructure Fund (GIF) completed the take-private acquisition in December 2022, and IFM subsequently disclosed that DigitalBridge held a 55.8% stake while IFM held 37.2%.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2000,
+    "investmentYear": 2022,
+    "headquarters": "Nevada and other U.S. markets",
+    "milestones": [
+      {
+        "date": "2000",
+        "event": "Public company materials identify 2000 as the founding year.",
+        "category": "Founding"
+      },
+      {
+        "date": "Dec 6, 2022",
+        "event": "DigitalBridge and IFM Global Infrastructure Fund (GIF) completed the $11 billion take-private acquisition of Switch.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Switch — Switch, Inc.",
+        "url": "https://www.switch.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Investment date source — IFM Investors — Switch, Inc.",
+        "url": "https://www.ifminvestors.com/capabilities/infrastructure/our-portfolio/switch-inc/",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Close date source — DigitalBridge — Switch, Inc.",
+        "url": "https://www.digitalbridge.com/news/2022-12-06-digitalbridge-and-ifm-investors-complete-11-billion-take-private-of-switch",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Close date source — IFM Investors — Switch, Inc.",
+        "url": "https://ir.digitalbridge.com/news-releases/news-release-details/digitalbridge-and-ifm-investors-complete-11-billion-take-private/",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "DigitalBridge",
+        "ownershipVehicle": "DigitalBridge Partners II",
+        "investmentYear": 2022,
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "IFM Investors",
+        "ownershipVehicle": "IFM Global Infrastructure Fund (GIF)",
+        "investmentYear": 2022,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj2ra00dzivhegbwhzec2",
+        "fundName": "IFM Global Infrastructure Fund (GIF)",
+        "managerId": "cmrxpi9zp002eivheuaj1gpqj",
+        "updatedAt": "2026-07-23T16:09:57.431Z"
+      },
+      {
+        "id": "cmsdi3y2s004f7h4sfgnd0i96",
+        "fundName": "DigitalBridge Partners II, LP",
+        "managerId": "cmrxpi6te001eivheobw69a9c",
+        "updatedAt": "2026-08-03T17:26:33.028Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi6te001eivheobw69a9c",
+        "name": "DigitalBridge",
+        "updatedAt": "2026-07-23T16:09:16.034Z"
+      },
+      {
+        "id": "cmrxpi9zp002eivheuaj1gpqj",
+        "name": "IFM Investors",
+        "updatedAt": "2026-07-23T16:09:20.149Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0218:switch-inc:ed27b056",
+    "taskIndex": 218,
+    "canonicalKey": "switch-inc|united-states",
+    "capturedAt": "2026-08-29T07:17:11.280Z",
+    "databaseRevision": "revision:bf3a9f580cb833cfc1f961065950ce73400daa2719f206ec07c0f32c0e1d9156",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "bcb439352e94be82e039d1830053ae8faaee346b389135d7f835ea48f39aba2a",
+    "productionSnapshotSha256": "629a852c2a5e0828afbe940ac3a732a4f46d00f7dae7d4e4c73979c0012172e0",
+    "targetCompanySnapshotSha256": "7101049576a4afdbd53b103b10e66eee9f973e3370cfe3eca94eefa7e6c5cc2d",
+    "seedEntrySha256": "dd39d1d2772cbb1e9dd0260628cd5dc9ffcaa60cceee35d6725857e960ed1bd7",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "9609be493bf9828a3b8fd619e703da3f8ace60f756a12c525a9af0a3fbc06178",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "fc6623a0f1fb06ca08995358b7415e08d884bd340379d38606c85dddb401c1e4",
+      "organizationsSha256": "47c81f3b35bf784bca6212f84f78bbb2eea26c6cc3fe04f803a1302fa236e26b",
+      "citationsSha256": "938a501d431fa878bb39292d9c6be51e439691691665946b85473e73a9fca453",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "9e0f95b47cb40822a3f8c91c69057f48301928eb623487e262247845ef641e30",
+    "stateSha256": "714569f62fb5529889240be484350b9e94a2f975b66838e5fc9351ee5cf5492c",
+    "taskSnapshotSha256": "12a9262b5460d2fcf55e359cf6ef61d66dbae35645a0bf52b7014a96b51032cd"
+  },
+  "contextSha256": "4e46024136fbe203a5ef32ee5df6ecbec235829e806bce7eeea219d817765756"
+}

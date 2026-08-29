@@ -1,0 +1,274 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0217:orange-barrel-media:938d5ad8",
+  "taskIndex": 217,
+  "companyName": "Orange Barrel Media",
+  "generatedAt": "2026-08-29T07:17:09.331Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0217-orange-barrel-media/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 217,
+    "taskId": "ledger:0217:orange-barrel-media:938d5ad8",
+    "canonicalKey": "orange-barrel-media|united-states",
+    "companyName": "Orange Barrel Media",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 36,
+    "managers": [
+      "DigitalBridge",
+      "InfraBridge"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "036-digitalbridge:holding:013:orange-barrel-media"
+    ],
+    "sourceRepoOnlyIds": [
+      "058-infrabridge:repo-only:009:orange-barrel-media"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjdca00tzivhe8jg48f1m"
+    ],
+    "seedKeys": [
+      "orange barrel media|United States"
+    ],
+    "evidenceUrls": [
+      "https://ir.digitalbridge.com/news-releases/news-release-details/digitalbridge-announces-total-commitments-117-billion-fund-and",
+      "https://www.digitalbridge.com/portfolio/orange-barrel-media"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: InfraBridge MATCHED_ELSEWHERE: Attributed to DigitalBridge digital strategy rather than InfraBridge.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjdca00tzivhe8jg48f1m",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "orange-barrel-media|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjdca00tzivhe8jg48f1m",
+    "name": "Orange Barrel Media",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Digital out-of-home and smart-city media infrastructure",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Orange Barrel Media develops and operates digital out-of-home media and related smart-city infrastructure in urban environments. It serves advertisers, municipalities, real estate owners, and public-space stakeholders. The business is asset-heavy and contracted because it secures long-term rights to premium urban locations and operates physical display infrastructure in partnership with cities and property owners. Company materials highlight major urban markets including Columbus and New York and describe a platform built around landmark media assets rather than a traditional agency model. DigitalBridge portfolio materials identify 2025 as the year of investment through DigitalBridge Partners III.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2004,
+    "headquarters": "Ohio and New York",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjywb01s1ivhei07w6qo1",
+        "managerName": "DigitalBridge",
+        "organizationName": "DigitalBridge",
+        "fundName": "DigitalBridge Fund III",
+        "vehicleName": "DigitalBridge Fund III",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplgnw03plivheak7u05g4",
+        "date": "2004",
+        "event": "Orange Barrel Media was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2004-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplgoh03pmivheqf35kylr",
+        "date": "2025",
+        "event": "DigitalBridge invested in Orange Barrel Media through DigitalBridge Partners III.",
+        "category": "FINANCING",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplgp403pnivhedifll9n9",
+        "date": "Nov 18, 2025",
+        "event": "DigitalBridge announced final close of DigitalBridge Partners III at $11.7 billion of total commitments, with Orange Barrel Media listed as a portfolio investment.",
+        "category": "FINANCING",
+        "sortDate": "2025-11-18T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqjqg09qwivhecgxrkmil",
+        "label": "Obm — Orange Barrel Media",
+        "url": "https://obm.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Obm company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqjrp09qyivhealr4c8lp",
+        "label": "Investment date source — DigitalBridge — Orange Barrel Media",
+        "url": "https://www.digitalbridge.com/portfolio/orange-barrel-media",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "DigitalBridge initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqjsq09r0ivhevy1u9dkf",
+        "label": "Investment date source — DigitalBridge — Orange Barrel Media",
+        "url": "https://ir.digitalbridge.com/news-releases/news-release-details/digitalbridge-announces-total-commitments-117-billion-fund-and",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "DigitalBridge initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqjtv09r2ivhec5mxg5lf",
+        "label": "Obm — Orange Barrel Media",
+        "url": "https://obm.com/wp-content/uploads/2024/01/OBM_MarketOverview_WEB.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Obm — Orange Barrel Media",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Orange Barrel Media",
+    "investmentFirm": "DigitalBridge",
+    "sector": "Digital",
+    "subsector": "Digital out-of-home and smart-city media infrastructure",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "DigitalBridge Fund III",
+    "description": "Orange Barrel Media develops and operates digital out-of-home media and related smart-city infrastructure in urban environments. It serves advertisers, municipalities, real estate owners, and public-space stakeholders. The business is asset-heavy and contracted because it secures long-term rights to premium urban locations and operates physical display infrastructure in partnership with cities and property owners. Company materials highlight major urban markets including Columbus and New York and describe a platform built around landmark media assets rather than a traditional agency model. DigitalBridge portfolio materials identify 2025 as the year of investment through DigitalBridge Partners III.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2004,
+    "investmentYear": 2025,
+    "headquarters": "Ohio and New York",
+    "milestones": [
+      {
+        "date": "2004",
+        "event": "Orange Barrel Media was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "2025",
+        "event": "DigitalBridge invested in Orange Barrel Media through DigitalBridge Partners III.",
+        "category": "Financing"
+      },
+      {
+        "date": "Nov 18, 2025",
+        "event": "DigitalBridge announced final close of DigitalBridge Partners III at $11.7 billion of total commitments, with Orange Barrel Media listed as a portfolio investment.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Obm — Orange Barrel Media",
+        "url": "https://obm.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Investment date source — DigitalBridge — Orange Barrel Media",
+        "url": "https://www.digitalbridge.com/portfolio/orange-barrel-media",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Investment date source — DigitalBridge — Orange Barrel Media",
+        "url": "https://ir.digitalbridge.com/news-releases/news-release-details/digitalbridge-announces-total-commitments-117-billion-fund-and",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Obm — Orange Barrel Media",
+        "url": "https://obm.com/wp-content/uploads/2024/01/OBM_MarketOverview_WEB.pdf",
+        "type": "PRESENTATION"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "DigitalBridge",
+        "ownershipVehicle": "DigitalBridge Fund III",
+        "investmentYear": 2025,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj22300cyivheme173qse",
+        "fundName": "DigitalBridge Fund III",
+        "managerId": "cmrxpi6te001eivheobw69a9c",
+        "updatedAt": "2026-07-23T16:09:56.523Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi6te001eivheobw69a9c",
+        "name": "DigitalBridge",
+        "updatedAt": "2026-07-23T16:09:16.034Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0217:orange-barrel-media:938d5ad8",
+    "taskIndex": 217,
+    "canonicalKey": "orange-barrel-media|united-states",
+    "capturedAt": "2026-08-29T07:17:09.331Z",
+    "databaseRevision": "revision:77b9684b9eac8cdf0c47e7f67a82fd61775e2c4df4371af13938a6f3a97be8c7",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "e741ca54cce43229ee13d0bf4c7634a50aa4910c40580cbac2c7f4e39a3427d8",
+    "productionSnapshotSha256": "0b97448dda42d1c87dd58a291b52ab81ca3ca62d1e7b64f3d357a2e63108202f",
+    "targetCompanySnapshotSha256": "3b7d7f00cdee40cdbde1af875050f6f59267a3cccb98a75d898aaf102a88c99e",
+    "seedEntrySha256": "90278fdf70785881d6f0d64657f6692acffdffa589d47543fcbf27207f9f6c40",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "d4e484a6a9a818055a1eecf5555ba8b3e73a761b015dc09910ce05ba1cbe0e3c",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "b3be6f9b0fe5283f3df5ae514c18c73a3e7e5a5450bdc48cebfca4d063ad196f",
+      "organizationsSha256": "044669daa5d8e30d4b464ed1c1e0894f60c2ee53f208a986e3281ab3f6318c4b",
+      "citationsSha256": "ee90b0931cab54884325f1d5a73680f643090a4ac1c990e5e97e8d3146152b64",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "46b10121f8f476df03c82cfa19f24c40d43415e2116a795c53f701634ddab1f0",
+    "stateSha256": "cc9a4c1343b214cad4a05193daa2150114235ee48cf0f5a1cd2f5145272daf4c",
+    "taskSnapshotSha256": "618a78d60666b4820f320762abf773fce915d7a3762f5a7f6cb40d57035caae1"
+  },
+  "contextSha256": "f1345e49dd7e75b49c931ed043f56140d798bba3a0bd789ac111aa5a101dbc76"
+}

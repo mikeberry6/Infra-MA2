@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-29T07:07:44.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-08-29T07:49:00Z",
+  "activeBatchId": "batch-0214-0218-v1",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -2584,7 +2584,55 @@
           "reason": null
         }
       ]
+    },
+    {
+      "batchId": "batch-0214-0218-v1",
+      "state": "READY",
+      "taskIds": [
+        "ledger:0214:fibernow:ea7c2ad3",
+        "ledger:0215:invenergy-ampci-thermal-power:7aff1fc4",
+        "ledger:0216:mexico-telecom-partners:4a74c013",
+        "ledger:0217:orange-barrel-media:938d5ad8",
+        "ledger:0218:switch-inc:ed27b056"
+      ],
+      "taskIndexes": [
+        214,
+        215,
+        216,
+        217,
+        218
+      ],
+      "createdAt": "2026-08-29T07:15:06Z",
+      "updatedAt": "2026-08-29T07:49:00Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0214-0218-v1/batch-manifest.json",
+        "sha256": "b58abcae3c791c69747c20db89277f9cea46b7ce54762920a2237eb51639976b"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-29T07:15:06Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-29T07:49:00Z",
+          "evidenceSha256": [
+            "b58abcae3c791c69747c20db89277f9cea46b7ce54762920a2237eb51639976b"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "ed3b09a0568d460d342f72f6136cecba1d8aa0d53252384ef0a90b8e92658945"
+  "ledgerSha256": "6077dda5109d2c38f4477805ca62a691fd9cc2601687d303cc77b065d65281c5"
 }

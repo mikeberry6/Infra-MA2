@@ -1,0 +1,507 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_MANIFEST",
+  "methodologyVersion": "PORTCO_APPLY_BATCH_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0214-0218-v1",
+  "createdAt": "2026-08-29T07:32:00.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "412cfa3e3f860e14ed524d867ea78a0f00b291e471d7caad220f88bbda077401"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0214:fibernow:ea7c2ad3",
+      "taskIndex": 214,
+      "companyName": "Fibernow",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0214-fibernow-v1/proposal.json",
+        "sha256": "93d961f7f42d6231964d60aa1e65d5a8794f1be06f9e1cc9b024bead2c9dba83"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0214-fibernow-v1.json",
+        "sha256": "a1e19aa5e0c3414aadee055b103855bc663bbaaec68cd3f3395b75dd3fe8e313"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0214-fibernow/attempt-1/locked-production-snapshot.json",
+        "sha256": "2bcf878aaf6d265565eae53850d621f7d347ff8da0c601fdb66a649392c32840"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0214-fibernow/attempt-1/locked-task-snapshot.json",
+        "sha256": "783e9866b31fa868cfa4cff40dc61384aa8de9c331ca05bcc6d80fc91a9cfe23"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0214-fibernow/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "317dd0852aca1a9b0ff4858689109da8226080590d9fc182129dac22091891a7"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0214-fibernow/attempt-1/application-research-decision.json",
+        "sha256": "a006bc9526d5fb2ae3c976b3e7e5f9f6e00d387d818a7583de80ee76413aa5d5"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0214-fibernow/attempt-1/source-verification.json",
+        "sha256": "c8749cbeccd686c52d180b1b52b9fd4bf383517a84a1aead129ab09aae766c3f"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "fb6f1a8db94c396baa5274b8abed0d755c11a7ec5197b76245d5c8a8cdb2cd9d",
+      "dependencySha256": "4b0c29da0ad61c4584e3140695b89ac04ae29bb6937c72d6a85eacb7fadc4d36",
+      "afterImageSha256": "30803185968114dac52c5221317ea150246961397cc3e3adf1ef9912d945cb86",
+      "targetClaims": [
+        "canonical:fibernow|united-states",
+        "company:cmrxpjdb400txivhexf162x1c",
+        "relation:cmrxpjyun01ryivhezbsnwobo",
+        "relation:cmrxplgk003pgivhety8plsm5",
+        "relation:cmrxplgkl03phivhe8ps6qqei",
+        "relation:cmrxplgl503piivheojwodo5u",
+        "relation:cmrxpqjdy09qeivhejfkpm7gf",
+        "relation:cmrxpqjey09qgivhetbrmnooh",
+        "relation:cmrxpqjg609qiivheuff8v4q4",
+        "relation:cmrxpqjha09qkivheja1riobm",
+        "seed:fibernow|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://fibernow.com/aboutus/",
+          "label": "Fibernow — Fibernow",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://trellis.law/doc/265882303/response-to-req-for-admission-defendant-dbp-iii-snowbird-bidco-llc-s-amended-response-to-plaintiff-s-first-request-for-admissions",
+          "label": "Trellis — DBP III Snowbird admissions",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.businesswire.com/news/home/20241022483738/en/OpticalTel-Transforms-into-Fibernow-Strengthening-Commitment-to-Advance-Cutting-Edge-Fiber-Technology-and-Excellent-Customer-Service",
+          "label": "Fibernow — OpticalTel rebrand",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.businesswire.com/news/home/20250507667082/en/Fibernow-Acquires-Wavetechs-Adding-Robust-Managed-IT-Services-to-Business-Fiber-and-VoIP-Portfolio",
+          "label": "Fibernow — Wavetechs acquisition",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.digitalbridge.com/portfolio/fibernow",
+          "label": "Investment date source — DigitalBridge — Fibernow",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.fcc.gov/ecfs/search/search-filings/filing/109141363824301",
+          "label": "FCC — OpticalTel filing",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.fibernow.com/",
+          "label": "Fibernow — Fibernow",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.paulweiss.com/insights/client-news/digitalbridge-backed-opticaltel-becomes-fibernow",
+          "label": "Investment date source — DigitalBridge — Fibernow",
+          "sourceType": "ARTICLE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0215:invenergy-ampci-thermal-power:7aff1fc4",
+      "taskIndex": 215,
+      "companyName": "Invenergy AMPCI Thermal Power",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0215-invenergy-ampci-thermal-power-v1/proposal.json",
+        "sha256": "2c37f98d85d12f6c9faaf77ff58facd2b0dcaef99cd2e637d0e1c9591241a601"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0215-invenergy-ampci-thermal-power-v1.json",
+        "sha256": "8fed7045ede9b38e38155a2146a713d8b8aa48a13535453e71a0273a37b54dc2"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0215-invenergy-ampci-thermal-power/attempt-1/locked-v2-production-snapshot.json",
+        "sha256": "36fff253527e44aebbd6e568941daf49f0d4e7e688c87b59f2336c8aa44e9833"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0215-invenergy-ampci-thermal-power/attempt-1/locked-v2-task-snapshot.json",
+        "sha256": "c2528e9b8e672d275baf096ad0bdde3767cf57174eda20c7a28c7abe54748e1b"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0215-invenergy-ampci-thermal-power/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "212cdc963e9f146f8ca29835e1373de827a743c0ec29e0657a306813b999a06d"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0215-invenergy-ampci-thermal-power/attempt-1/application-research-decision.json",
+        "sha256": "13af6ca920518ffc4f7a724532a7045b500e1254c4623ef34fa74cb88e0e0d92"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0215-invenergy-ampci-thermal-power/attempt-1/source-verification.json",
+        "sha256": "56a431ba5eef09c89aeb24ae0e8bc3166e684d6bffe77cc5e9f60ba10fda60cb"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "d31c5ab573a8bce81054e062f7089b58ae0823a4b7e4e16a57b32d8af852af40",
+      "dependencySha256": "bb21e4ce415d137a3d1d64c7ac703f50313c9f848b6d196aa9b6ddaa6fe2c827",
+      "afterImageSha256": "a6999b476907a9e17bba638dcb025022baa2f6caa0ed082c03f034a7eca9e501",
+      "targetClaims": [
+        "canonical:invenergy-ampci-thermal-power|united-states-canada",
+        "company:cmrxpj6er00j7ivhe4q6f5u9y",
+        "relation:cmrxpjrff01g2ivhek768az2y",
+        "relation:cmrxpklqn02ogivheaptldl3g",
+        "relation:cmrxpklr802ohivhejykdhv75",
+        "relation:cmrxpklrt02oiivhe0ip18dcp",
+        "relation:cmrxpklsc02ojivheopvuk0fk",
+        "relation:cmrxpklss02okivher832qpj6",
+        "relation:cmrxpozsx07i3ivhe5gb97hy1",
+        "relation:cmrxpozwi07i5ivhemm3bw4k1",
+        "relation:cmrxpozxu07i7ivhe14o7fw9a",
+        "relation:cmrxpozys07i9ivhe3uejjntg",
+        "relation:cmrxpozzi07iaivhebu2ateg5",
+        "relation:cmrxpp00g07icivhem80a4p6y",
+        "relation:cmrxpp01e07ieivhengqjd5io",
+        "relation:cmrxpp02d07igivhed5inctrc",
+        "seed:invenergy ampci thermal power|united states / canada"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://invenergy.com/",
+          "label": "Invenergy — Invenergy AMPCI Thermal Power",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://invenergy.com/news/invenergy-strengthens-its-diversified-clean-energy-platform-through-new-equity-transactions-with-cdpq-and-amp-capital",
+          "label": "Investment date source — CDPQ — Invenergy Renewables LLC",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.businesswire.com/news/home/20260311462798/en/ArcLight-to-Acquire-InfraBridges-50-Stake-in-5.4-GW-Power-Portfolio",
+          "label": "Business Wire",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.digitalbridge.com/news/2023-02-02-digitalbridge-completes-acquisition-of-amp-capital-global-infrastructure-equity-investment-management-business",
+          "label": "Owner relationship source — DigitalBridge — InfraBridge",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.federalregister.gov/documents/2026/03/30/2026-06095/combined-notice-of-filings-1",
+          "label": "Federal Register — EC26-76 filing notice",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.ftc.gov/legal-library/browse/early-termination-notices/20261126",
+          "label": "FTC — Gray Wolf early termination notice",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.infrabridge.com/news/2026-03-12-arclight-to-acquire-infrabridge-50-stake-in-54-gw-power-portfolio",
+          "label": "InfraBridge — ArcLight IATP agreement",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.infrabridge.com/our-portfolio",
+          "label": "Investment date source — DigitalBridge — Invenergy AMPCI Thermal Power",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.invenergy.com/",
+          "label": "Invenergy — Invenergy AMPCI Thermal Power",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/arclight-to-acquire-infrabridges-50-stake-in-5-4-gw-power-portfolio-302397366.html",
+          "label": "PR Newswire — Invenergy AMPCI Thermal Power",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.theasset.com/article/39539/amp-capital-global-infrastructure-fund-ii-closes-at-us-3-4-billion",
+          "label": "The Asset — AMP Capital Global Infrastructure Fund II",
+          "sourceType": "ARTICLE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0216:mexico-telecom-partners:4a74c013",
+      "taskIndex": 216,
+      "companyName": "Mexico Telecom Partners",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0216-mexico-telecom-partners-v1/proposal.json",
+        "sha256": "ac918a6a413a5e95ba3a4962eece0a7f72fb24d856754b11ff145cd12f714ecd"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0216-mexico-telecom-partners-v1.json",
+        "sha256": "d4300d4dc02aab02656de8c294e2768cb717bdbe9d8e46593233d7eb4cb189b3"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0216-mexico-telecom-partners/attempt-1/locked-production-snapshot.json",
+        "sha256": "67c34d1558f5ec22793b03583e4db891997e52f2c25a1abdea4e67a0eb325b4c"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0216-mexico-telecom-partners/attempt-1/locked-task-snapshot.json",
+        "sha256": "4f6b4d2b32bc4abe72d68b5d325ce4cfab59a9f4c2e338547046b3f367e57d42"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0216-mexico-telecom-partners/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "90f13d5e42ed4ecb2f5b23268e15b327f05302efcfc2a62cc0b58e955ea1981c"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0216-mexico-telecom-partners/attempt-1/application-research-decision.json",
+        "sha256": "7cf71ecf420a6b11d950f0799e58ad266f840254f73b8841341a31f3dbc7856c"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0216-mexico-telecom-partners/attempt-1/source-verification.json",
+        "sha256": "8490d5780443617ceba077e02b81e3418bd4293a05c3d68e29657ddf3975a4a9"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "74475e00c27418eea992b6645d48aaaebe736279ea6ad06517455739d521efa7",
+      "dependencySha256": "1895bd316319a86d27fb03a0766bf03a6e33eb12dfade43b7ff9beaa5aba089b",
+      "afterImageSha256": "92dc371b484ec5a09d8670d8a05b819b5058fe3d70623152778f90afaecb57c9",
+      "targetClaims": [
+        "canonical:mexico-telecom-partners|mexico",
+        "company:cmrxpjdbm00tyivher2rzd195",
+        "relation:cmrxpjyv901rzivhejyznedjv",
+        "relation:cmrxpjyvp01s0ivhe4ik2jsqg",
+        "relation:cmrxplgma03pjivhekm9w9r7d",
+        "relation:cmrxplgmv03pkivheikhzy45b",
+        "relation:cmrxpqjib09qmivhexeleax1u",
+        "relation:cmrxpqjjh09qoivhefhm3kuxt",
+        "relation:cmrxpqjkj09qqivhea0rzxjde",
+        "relation:cmrxpqjls09qsivhe630z4rar",
+        "relation:cmrxpqjmv09quivhekpf1p5wz",
+        "seed:mexico telecom partners|mexico"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://www.bmv.com.mx/docs-pub/eventfid/eventfid_1167398_f00656_1.pdf",
+          "label": "BMV — Mexico Tower Partners 2021 filing",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.bmv.com.mx/docs-pub/eventfid/eventfid_1578452_f00656_1.pdf",
+          "label": "BMV — Mexico Tower Partners Q2 2026 filing",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.datacenterdynamics.com/en/news/mtp-inaugurates-data-center-in-mexico-city/",
+          "label": "Data Center Dynamics — Mexico Telecom Partners",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.digitalbridge.com/portfolio/mexico-telecom-partners",
+          "label": "Investment date source — DigitalBridge — Mexico Telecom Partners",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.macquarie.com/us/en/about/company/macquarie-asset-management/our-portfolio/mexico-telecom-partners.html",
+          "label": "Macquarie — Mexico Telecom Partners",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.marketscreener.com/quote/stock/MACQUARIE-GROUP-LIMITED-6491460/news/Macquarie-Mexican-Infrastructure-Fund-Partners-with-Digital-Bridge-to-Form-Second-Largest-Independ-18475031/",
+          "label": "Announcement date source — DigitalBridge — Mexico Telecom Partners",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.mtpsites.com/ourcompany.html",
+          "label": "Investment date source — Macquarie Asset Management — Mexico Telecom Partners",
+          "sourceType": "ARTICLE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0217:orange-barrel-media:938d5ad8",
+      "taskIndex": 217,
+      "companyName": "Orange Barrel Media",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0217-orange-barrel-media-v1/proposal.json",
+        "sha256": "42af330fd375930a89129d30973fea17c0d2f3b724a168d9ed503bbc3d86659c"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0217-orange-barrel-media-v1.json",
+        "sha256": "e14b032e4a555a84f5428fcb47ffaf98e387fbb42de67b02cdc2ac533534cb55"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0217-orange-barrel-media/attempt-1/locked-production-snapshot.json",
+        "sha256": "0b97448dda42d1c87dd58a291b52ab81ca3ca62d1e7b64f3d357a2e63108202f"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0217-orange-barrel-media/attempt-1/locked-task-snapshot.json",
+        "sha256": "618a78d60666b4820f320762abf773fce915d7a3762f5a7f6cb40d57035caae1"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0217-orange-barrel-media/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "9c9bd3f41c20603ecc7a5ac06210d09b5ed7aaa0ed95583d88a9b953a7192f3d"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0217-orange-barrel-media/attempt-1/application-research-decision.json",
+        "sha256": "1099c36742a5f9ee9738956b1c5e19b80c20900d8bf72114e8774a63afcc0b29"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0217-orange-barrel-media/attempt-1/source-verification.json",
+        "sha256": "cec18e5d196b2d5444562bdf4d01d9e88412377a1bb16087737bcc808755e650"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "cc9a4c1343b214cad4a05193daa2150114235ee48cf0f5a1cd2f5145272daf4c",
+      "dependencySha256": "46b10121f8f476df03c82cfa19f24c40d43415e2116a795c53f701634ddab1f0",
+      "afterImageSha256": "0a0d810d0f4aedc66628288de73d2c7a6c079474c377e89ff8e3d20ba4e7349c",
+      "targetClaims": [
+        "canonical:orange-barrel-media|united-states",
+        "company:cmrxpjdca00tzivhe8jg48f1m",
+        "relation:cmrxpjywb01s1ivhei07w6qo1",
+        "relation:cmrxplgnw03plivheak7u05g4",
+        "relation:cmrxplgoh03pmivheqf35kylr",
+        "relation:cmrxplgp403pnivhedifll9n9",
+        "relation:cmrxpqjqg09qwivhecgxrkmil",
+        "relation:cmrxpqjrp09qyivhealr4c8lp",
+        "relation:cmrxpqjsq09r0ivhevy1u9dkf",
+        "relation:cmrxpqjtv09r2ivhec5mxg5lf",
+        "seed:orange barrel media|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://ir.digitalbridge.com/news-releases/news-release-details/digitalbridge-announces-total-commitments-117-billion-fund-and",
+          "label": "Investment date source — DigitalBridge — Orange Barrel Media",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://obm.com/",
+          "label": "Obm — Orange Barrel Media",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://obm.com/newsroom/",
+          "label": "Orange Barrel Media — Newsroom",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://obm.com/wp-content/uploads/2024/01/OBM_MarketOverview_WEB.pdf",
+          "label": "Obm — Orange Barrel Media",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://www.digitalbridge.com/news/2025-11-18-digitalbridge-announces-total-commitments-of-117-billion-in-fund-and-related-fund-lp-co-investment-commitments-for-digitalbridge-partners-iii",
+          "label": "DigitalBridge — DBP III final close",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.digitalbridge.com/portfolio/orange-barrel-media",
+          "label": "Investment date source — DigitalBridge — Orange Barrel Media",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.ikesmartcity.com/",
+          "label": "IKE Smart City — Company website",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.paulweiss.com/professionals/partners-and-counsel/ravi-purohit",
+          "label": "Paul Weiss — Orange Barrel Media investment",
+          "sourceType": "ARTICLE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0218:switch-inc:ed27b056",
+      "taskIndex": 218,
+      "companyName": "Switch, Inc.",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0218-switch-inc-v1/proposal.json",
+        "sha256": "750c9f776c9a7d6d786de38a30ced7a95a5f1c5ff7e1ae8c59f6883dcebd207c"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0218-switch-inc-v1.json",
+        "sha256": "3b483d3612de7fb76907451c83178077222ea3a313cd51183f5f92b6eafc9e7b"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0218-switch-inc/attempt-1/locked-v2-production-snapshot.json",
+        "sha256": "631d449ca5eb1e74ea86fdad24f5b46da3aee06e9ab24bb80ba96aecfbbb7b0e"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0218-switch-inc/attempt-1/locked-v2-task-snapshot.json",
+        "sha256": "01e606fee967ddd30e98961c360ac61eb3214760b2c5583ddbf835db8a8003e2"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0218-switch-inc/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "58de2880f8c513b8edce3f23a504988940e3b035704b0979da4335d2b6065ce7"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0218-switch-inc/attempt-1/application-research-decision.json",
+        "sha256": "75337d0290bf4bbccef5bd61f8cae124a7da15b2a7294f55e3f157e43b21917f"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0218-switch-inc/attempt-1/source-verification.json",
+        "sha256": "116108b185d1189abae9f634b55d9cca46823dd4bcacef5e920f5625269a37c9"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "98b8be2efea9921ba6750cebb71258e2ff513e03698edef030b850f55d68e848",
+      "dependencySha256": "502b8941bab6c133b8d3940e0cf2cbc6753ca03c5b75ca79098bc08666e33556",
+      "afterImageSha256": "94cd4f25ada737a668f51d5404e5af160bc9f6e4b92bec8d1b2fa25a457bbb15",
+      "targetClaims": [
+        "canonical:switch-inc|united-states",
+        "company:cmrxpjdcs00u0ivhec2k6lhpt",
+        "relation:cmrxpjyws01s2ivhega71tdl3",
+        "relation:cmrxpjyxf01s3ivhe59c5b3l8",
+        "relation:cmrxplgq503poivheulge80ul",
+        "relation:cmrxplgql03ppivhe4sugxu80",
+        "relation:cmrxpqjuy09r4ivhebu1d8gkh",
+        "relation:cmrxpqjw409r6ivhev1ilbi9w",
+        "relation:cmrxpqjx509r8ivheoge5unfd",
+        "relation:cmrxpqjy909raivheu4zrbqid",
+        "seed:switch, inc.|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://aware.com.au/member/what-we-offer/investments/what-we-invest-in/infrastructure",
+          "label": "Aware Super — Infrastructure portfolio",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://ir.digitalbridge.com/news-releases/news-release-details/digitalbridge-and-ifm-investors-complete-11-billion-take-private/",
+          "label": "Close date source — IFM Investors — Switch, Inc.",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.digitalbridge.com/news/2022-12-06-digitalbridge-and-ifm-investors-complete-11-billion-take-private-of-switch",
+          "label": "Close date source — DigitalBridge — Switch, Inc.",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.digitalbridge.com/news/2023-07-13-aware-super-and-digitalbridge-announce-partnership-to-invest-in-renewable-powered-data-centers",
+          "label": "DigitalBridge — Aware Super Switch partnership",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.ifminvestors.com/capabilities/infrastructure/our-portfolio/switch-inc/",
+          "label": "Investment date source — IFM Investors — Switch, Inc.",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.ifminvestors.com/capabilities/know-how/asset-management-case-study-switch-inc/",
+          "label": "IFM Investors — Switch ownership schedule",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1710583/000119312522306436/d433839d1512g.htm",
+          "label": "SEC — Switch closing filing",
+          "sourceType": "SEC_FILING"
+        },
+        {
+          "url": "https://www.switch.com/",
+          "label": "Switch — Switch, Inc.",
+          "sourceType": "WEBSITE"
+        }
+      ]
+    }
+  ],
+  "collisionAnalysis": {
+    "independent": true,
+    "claimsSha256": "28745beac92b643882fd94a2bcaac3768e89f84037e11068546009fdbd993b55",
+    "sharedSourceUrls": [],
+    "conflicts": []
+  },
+  "batchSha256": "b58abcae3c791c69747c20db89277f9cea46b7ce54762920a2237eb51639976b"
+}

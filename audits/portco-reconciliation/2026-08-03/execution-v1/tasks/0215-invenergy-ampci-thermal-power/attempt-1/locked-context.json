@@ -1,0 +1,363 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0215:invenergy-ampci-thermal-power:7aff1fc4",
+  "taskIndex": 215,
+  "companyName": "Invenergy AMPCI Thermal Power",
+  "generatedAt": "2026-08-29T07:17:05.470Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0215-invenergy-ampci-thermal-power/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 215,
+    "taskId": "ledger:0215:invenergy-ampci-thermal-power:7aff1fc4",
+    "canonicalKey": "invenergy-ampci-thermal-power|united-states-canada",
+    "companyName": "Invenergy AMPCI Thermal Power",
+    "country": "United States / Canada",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 36,
+    "managers": [
+      "DigitalBridge",
+      "InfraBridge"
+    ],
+    "actionScopes": {
+      "company": [
+        "CORRECT_COMPANY"
+      ],
+      "ownership": [
+        "ADD_PENDING_TRANSACTION"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "036-digitalbridge:holding:009:invenergy-ampci-thermal-power",
+      "058-infrabridge:holding:004:invenergy-ampci-thermal-power"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpj6er00j7ivhe4q6f5u9y"
+    ],
+    "seedKeys": [
+      "invenergy ampci thermal power|United States / Canada"
+    ],
+    "evidenceUrls": [
+      "https://www.infrabridge.com/news/2026-03-12-arclight-to-acquire-infrabridge-50-stake-in-54-gw-power-portfolio",
+      "https://www.infrabridge.com/our-portfolio"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_PENDING_TRANSACTION, CORRECT_COMPANY requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj6er00j7ivhe4q6f5u9y",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "invenergy-ampci-thermal-power|united-states-canada",
+  "targetCompanyImage": {
+    "id": "cmrxpj6er00j7ivhe4q6f5u9y",
+    "name": "Invenergy AMPCI Thermal Power",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Gas-Fired Power Generation",
+    "region": "NORTH_AMERICA",
+    "country": "United States / Canada",
+    "countryTags": [
+      "United States",
+      "Canada"
+    ],
+    "description": "Invenergy AMPCI Thermal Power is a portfolio of dispatchable thermal generation assets operated by Invenergy. The business serves competitive wholesale power markets through an asset-heavy portfolio of generation plants rather than through regulated distribution operations. InfraBridge currently owns a 50% stake through the legacy AMP Capital Global Infrastructure Fund II (GIF II) strategy, with Invenergy retaining the other 50% and operational role. ArcLight announced a definitive agreement in March 2026 to acquire InfraBridge's 50% stake, but the transaction remains subject to regulatory approvals and was expected to close in the second half of 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2018,
+    "headquarters": "United States & Canada",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjrff01g2ivhek768az2y",
+        "managerName": "DigitalBridge",
+        "organizationName": "DigitalBridge",
+        "fundName": "AMP Capital Global Infrastructure Fund II (GIF II)",
+        "vehicleName": "AMP Capital Global Infrastructure Fund II (GIF II)",
+        "stake": null,
+        "investmentYear": 2018,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpklqn02ogivheaptldl3g",
+        "date": "2018",
+        "event": "The portfolio was established to manage Invenergy thermal power assets across North America.",
+        "category": "FOUNDING",
+        "sortDate": "2018-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpklr802ohivhejykdhv75",
+        "date": "Aug 2018",
+        "event": "DigitalBridge's InfraBridge platform and Invenergy Clean Power created Invenergy AMPCI Thermal Power as a 50/50 joint venture to manage Invenergy thermal power assets.",
+        "category": "FINANCING",
+        "sortDate": "2018-08-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpklrt02oiivhe0ip18dcp",
+        "date": "2026",
+        "event": "The transaction announcement indicated that Invenergy would remain involved as operator and continuing owner.",
+        "category": "MANAGEMENT",
+        "sortDate": "2026-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpklsc02ojivheopvuk0fk",
+        "date": "Mar 12, 2026",
+        "event": "ArcLight announced a definitive agreement to acquire InfraBridge's 50% stake in the Invenergy AMPCI Thermal Power portfolio.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-03-12T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpklss02okivher832qpj6",
+        "date": "Mar 12, 2026",
+        "event": "InfraBridge announced an agreement for ArcLight to acquire its 50% stake in IATP.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-03-12T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpozsx07i3ivhe5gb97hy1",
+        "label": "Business Wire",
+        "url": "https://www.businesswire.com/news/home/20260311462798/en/ArcLight-to-Acquire-InfraBridges-50-Stake-in-5.4-GW-Power-Portfolio",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "ArcLight Capital Partners transaction announcement",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpozwi07i5ivhemm3bw4k1",
+        "label": "PR Newswire — Invenergy AMPCI Thermal Power",
+        "url": "https://www.prnewswire.com/news-releases/arclight-to-acquire-infrabridges-50-stake-in-5-4-gw-power-portfolio-302397366.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "PR Newswire operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpozxu07i7ivhe14o7fw9a",
+        "label": "Invenergy — Invenergy AMPCI Thermal Power",
+        "url": "https://invenergy.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Invenergy company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpozys07i9ivhe3uejjntg",
+        "label": "Investment date source — DigitalBridge — Invenergy AMPCI Thermal Power",
+        "url": "https://www.infrabridge.com/our-portfolio",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "DigitalBridge initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpozzi07iaivhebu2ateg5",
+        "label": "Investment date source — DigitalBridge — Invenergy AMPCI Thermal Power",
+        "url": "https://www.infrabridge.com/our-portfolio",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "InfraBridge initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp00g07icivhem80a4p6y",
+        "label": "The Asset — AMP Capital Global Infrastructure Fund II",
+        "url": "https://www.theasset.com/article/39539/amp-capital-global-infrastructure-fund-ii-closes-at-us-3-4-billion",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Fund close reporting identified Invenergy AMPCI Thermal Power as a current asset of AMP Capital Global Infrastructure Fund II (GIF II).",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp01e07ieivhengqjd5io",
+        "label": "Invenergy — Invenergy AMPCI Thermal Power",
+        "url": "https://www.invenergy.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Invenergy company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp02d07igivhed5inctrc",
+        "label": "Owner relationship source — DigitalBridge — InfraBridge",
+        "url": "https://www.digitalbridge.com/news/2023-02-02-digitalbridge-completes-acquisition-of-amp-capital-global-infrastructure-equity-investment-management-business",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Digitalbridge transaction or milestone detail",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Invenergy AMPCI Thermal Power",
+    "investmentFirm": "ArcLight Capital Partners",
+    "sector": "Power & ET",
+    "subsector": "Gas-Fired Power Generation",
+    "region": "North America",
+    "country": "United States / Canada",
+    "ownershipVehicle": "AMP Capital Global Infrastructure Fund II (GIF II)",
+    "description": "Invenergy AMPCI Thermal Power is a portfolio of dispatchable thermal generation assets operated by Invenergy. The business serves competitive wholesale power markets through an asset-heavy portfolio of generation plants rather than through regulated distribution operations. InfraBridge currently owns a 50% stake through the legacy AMP Capital Global Infrastructure Fund II (GIF II) strategy, with Invenergy retaining the other 50% and operational role. ArcLight announced a definitive agreement in March 2026 to acquire InfraBridge's 50% stake, but the transaction remains subject to regulatory approvals and was expected to close in the second half of 2026.",
+    "status": "Active",
+    "countryTags": [
+      "United States",
+      "Canada"
+    ],
+    "yearFounded": 2018,
+    "investmentYear": 2018,
+    "headquarters": "United States & Canada",
+    "milestones": [
+      {
+        "date": "2018",
+        "event": "The portfolio was established to manage Invenergy thermal power assets across North America.",
+        "category": "Founding"
+      },
+      {
+        "date": "Aug 2018",
+        "event": "DigitalBridge's InfraBridge platform and Invenergy Clean Power created Invenergy AMPCI Thermal Power as a 50/50 joint venture to manage Invenergy thermal power assets.",
+        "category": "Financing"
+      },
+      {
+        "date": "2026",
+        "event": "The transaction announcement indicated that Invenergy would remain involved as operator and continuing owner.",
+        "category": "Management"
+      },
+      {
+        "date": "Mar 12, 2026",
+        "event": "ArcLight announced a definitive agreement to acquire InfraBridge's 50% stake in the Invenergy AMPCI Thermal Power portfolio.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Mar 12, 2026",
+        "event": "InfraBridge announced an agreement for ArcLight to acquire its 50% stake in IATP.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Announcement date source — ArcLight Capital Partners — Invenergy AMPCI Thermal Power",
+        "url": "https://www.businesswire.com/news/home/20260311462798/en/ArcLight-to-Acquire-InfraBridges-50-Stake-in-5.4-GW-Power-Portfolio",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "PR Newswire — Invenergy AMPCI Thermal Power",
+        "url": "https://www.prnewswire.com/news-releases/arclight-to-acquire-infrabridges-50-stake-in-5-4-gw-power-portfolio-302397366.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Invenergy — Invenergy AMPCI Thermal Power",
+        "url": "https://invenergy.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Investment date source — DigitalBridge — Invenergy AMPCI Thermal Power",
+        "url": "https://www.infrabridge.com/our-portfolio",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Investment date source — InfraBridge — Invenergy AMPCI Thermal Power",
+        "url": "https://www.infrabridge.com/our-portfolio",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "The Asset — AMP Capital Global Infrastructure Fund II",
+        "url": "https://www.theasset.com/article/39539/amp-capital-global-infrastructure-fund-ii-closes-at-us-3-4-billion",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Fund close reporting identified Invenergy AMPCI Thermal Power as a current asset of AMP Capital Global Infrastructure Fund II (GIF II)."
+      },
+      {
+        "label": "Invenergy — Invenergy AMPCI Thermal Power",
+        "url": "https://www.invenergy.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Owner relationship source — DigitalBridge — InfraBridge",
+        "url": "https://www.digitalbridge.com/news/2023-02-02-digitalbridge-completes-acquisition-of-amp-capital-global-infrastructure-equity-investment-management-business",
+        "type": "ARTICLE",
+        "purpose": "MILESTONE_EVENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "InfraBridge",
+        "ownershipVehicle": "AMP Capital Global Infrastructure Fund II (GIF II)",
+        "investmentYear": 2018,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj2tj00e3ivheilo42l1j",
+        "fundName": "AMP Capital Global Infrastructure Fund II (GIF II)",
+        "managerId": "cmrxpi6te001eivheobw69a9c",
+        "updatedAt": "2026-07-23T16:09:57.511Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi6te001eivheobw69a9c",
+        "name": "DigitalBridge",
+        "updatedAt": "2026-07-23T16:09:16.034Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0215:invenergy-ampci-thermal-power:7aff1fc4",
+    "taskIndex": 215,
+    "canonicalKey": "invenergy-ampci-thermal-power|united-states-canada",
+    "capturedAt": "2026-08-29T07:17:05.470Z",
+    "databaseRevision": "revision:dbf83d5ca9eb6c0cc42df16ef958d70b8696bf6998e856771cae4008cb50c94f",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "fd4b5ba9db3f81a0953c2a2472bbfa2a6316d7c494f4538036bb2c59e2f80b56",
+    "productionSnapshotSha256": "95338216426d545755d2ffa9f9a65549064f63fb65ac989f6268a6a94d72e36e",
+    "targetCompanySnapshotSha256": "bd6780bbd92db1cb18edf24e071c3d0e0fd772c2abadd29edfe76fc8594e81ea",
+    "seedEntrySha256": "0e7bb8a358814be46be76d2225bd3dc247182b7a1fb183456ab484ae53db5c1d",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "defa9a921649b0b32746ddc03b2ea88316d910548169445315c882b91ed4c758",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "e30f0bbf5f296269f6a4e321df2df1404340fa8093aa9e16319ef18c8ff26053",
+      "organizationsSha256": "044669daa5d8e30d4b464ed1c1e0894f60c2ee53f208a986e3281ab3f6318c4b",
+      "citationsSha256": "ba208f264bb1e94c440cc65a4dbef0ddc59f3f3256a2cc4df2b7da0b93993f08",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "484de166f8b6fe5eb9cae7db72ffde150bab5368ce74869c818a68631848d751",
+    "stateSha256": "4e46fabba1d95e20ec7c11b7283a15c71c95eb9b578d91ec1e14917fe0575d66",
+    "taskSnapshotSha256": "fd7d777a9a6555b7295f5ce3a5f0198f2822e6474346d98006674aa445083fe6"
+  },
+  "contextSha256": "7f4cecdcda52d299db1710a019036c1bdea12f4312f243ec101135847b295412"
+}
