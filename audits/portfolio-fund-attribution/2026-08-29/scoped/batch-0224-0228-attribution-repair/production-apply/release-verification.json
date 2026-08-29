@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_RELEASE_VERIFICATION",
+  "verifiedAt": "2026-08-29T10:07:49.961Z",
+  "manifestSha256": "370be32ced0d213e44a6ad2a89cebc1dce76a21d9032cc18f51f131ce88ec4ec",
+  "approvalSha256": "735fe7001dce13db4c28bfb324b6dcae94d7d20fe56c1722119a4e9331cc66b1",
+  "receiptSha256": "e8f78a25a84e3480cd5bf3dfdce9c37dfdaf68bfb00b39614c92cf050b45e50a",
+  "mutationCount": 6,
+  "changed": 6,
+  "verificationScope": "BOUNDED_STATUS_SAMPLE",
+  "sampledRows": [
+    {
+      "recordId": "OFA-7BDD300CF1C9",
+      "companyId": "cmrxpjdh400u8ivheq80gd7ep",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjdh400u8ivheq80gd7ep?verification=370be32ced0d213e44a6ad2a89cebc1dce76a21d9032cc18f51f131ce88ec4ec",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "ECP Fund IV",
+        "attributionConfidence": null,
+        "attributionRationale": "ECP directly attributes the acquisition to Fund IV. The disclosed fund is retained without a database link because no matching curated Fund Database row is available."
+      }
+    },
+    {
+      "recordId": "OFA-E3774EF2CE09",
+      "companyId": "cmrxpjdja00ucivher3kcpgs2",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjdja00ucivher3kcpgs2?verification=370be32ced0d213e44a6ad2a89cebc1dce76a21d9032cc18f51f131ce88ec4ec",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Harvestone Group directly identifies Harvestone Low Carbon Partners as its partnership with ECP. Harvestone Group's interest is direct corporate ownership rather than an infrastructure fund attribution."
+      }
+    },
+    {
+      "recordId": "OFA-CF89B282524A",
+      "companyId": "cmrxpjdgl00u7ivhe3uwhdzke",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjdgl00u7ivhe3uwhdzke?verification=370be32ced0d213e44a6ad2a89cebc1dce76a21d9032cc18f51f131ce88ec4ec",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "ECP directly supports its active US$300 million preferred-equity investment, but the reviewed sources do not identify the investing fund or vehicle. The unsupported ECP Fund V estimate is removed."
+      }
+    }
+  ],
+  "passed": true
+}

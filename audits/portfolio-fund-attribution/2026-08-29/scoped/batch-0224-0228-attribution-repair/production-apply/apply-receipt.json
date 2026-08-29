@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_RECEIPT",
+  "manifestSha256": "370be32ced0d213e44a6ad2a89cebc1dce76a21d9032cc18f51f131ce88ec4ec",
+  "approvalSha256": "735fe7001dce13db4c28bfb324b6dcae94d7d20fe56c1722119a4e9331cc66b1",
+  "environment": "production",
+  "pipelineRunId": "cmte7vtii0000el2bojqrhri9",
+  "mutationCount": 6,
+  "changed": 6,
+  "idempotent": false,
+  "beforeFingerprint": "d2b927676def738b33be3ce4072dcb5857395ff53d12d03a3ba9569da773596d",
+  "afterFingerprint": "935a5288dcb541eabc55f91526c1e1c6b1ee588be934e5cd8be779d78bc69bb6",
+  "rows": [
+    {
+      "recordId": "OFA-CF89B282524A",
+      "ownershipPeriodId": "cmrxpjz5v01sfivheccpdklbu",
+      "companyId": "cmrxpjdgl00u7ivhe3uwhdzke",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "ECP Fund V",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, vintage 2022 is 1 years before investment, North America-relevant mandate; next candidate trails by 3.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "ECP directly supports its active US$300 million preferred-equity investment, but the reviewed sources do not identify the investing fund or vehicle. The unsupported ECP Fund V estimate is removed."
+      }
+    },
+    {
+      "recordId": "OFA-7BDD300CF1C9",
+      "ownershipPeriodId": "cmrxpjz6h01sgivhesqag6gww",
+      "companyId": "cmrxpjdh400u8ivheq80gd7ep",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "ECP Fund IV",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, vintage 2017 is 2 years before investment, North America-relevant mandate, historical vehicle retained for attribution only; next candidate trails by 10.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "ECP Fund IV",
+        "attributionConfidence": null,
+        "attributionRationale": "ECP directly attributes the acquisition to Fund IV. The disclosed fund is retained without a database link because no matching curated Fund Database row is available."
+      }
+    },
+    {
+      "recordId": "OFA-F55781BA968F",
+      "ownershipPeriodId": "cmrxpjz7g01siivhe4vhlbwxz",
+      "companyId": "cmrxpjdi600uaivhenl93kb9z",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "ECP Fund IV",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, vintage 2017 is 1 years before investment, North America-relevant mandate, historical vehicle retained for attribution only; next candidate trails by 10.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Energy Capital Partners IV-A, LP",
+        "attributionConfidence": null,
+        "attributionRationale": "The FTC filing identifies Energy Capital Partners IV-A, LP as the acquisition fund and current court records identify ECP Gopher Holdings, LP as the immediate parent. The disclosed fund is retained without a database link because no matching curated Fund Database row is available."
+      }
+    },
+    {
+      "recordId": "OFA-A06958B5F730",
+      "ownershipPeriodId": "cmrxpjz8k01skivhe3vjjnmqj",
+      "companyId": "cmrxpjdja00ucivher3kcpgs2",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": "ECP Fund V",
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "ECP Fund V",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, vintage 2022 is 0 years before investment, North America-relevant mandate; next candidate trails by 3.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": "ECP Fund V",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "ECP Fund V",
+        "attributionConfidence": null,
+        "attributionRationale": "ECP directly attributes Harvestone Low Carbon Partners to ECP Fund V, and the approved ownership period remains linked to the existing curated fund record."
+      }
+    },
+    {
+      "recordId": "OFA-E3774EF2CE09",
+      "ownershipPeriodId": "cmte75pk30014w22bamd7lc20",
+      "companyId": "cmrxpjdja00ucivher3kcpgs2",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Harvestone Group directly identifies Harvestone Low Carbon Partners as its partnership with ECP. Harvestone Group's interest is direct corporate ownership rather than an infrastructure fund attribution."
+      }
+    },
+    {
+      "recordId": "OFA-351A7C9EF7AD",
+      "ownershipPeriodId": "cmrxpjz9401slivhe9c586tc5",
+      "companyId": "cmrxpjdmc00udivhejaxw2vbz",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "ECP Fund V",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, vintage 2022 is 0 years before investment, North America-relevant mandate; next candidate trails by 3.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "ECP and Metrus directly support the completed 2022 ECP acquisition, but the reviewed sources do not identify the ECP fund or investing affiliate. The unsupported ECP Fund V estimate is removed."
+      }
+    }
+  ],
+  "appliedAt": "2026-08-29T10:07:46.341Z",
+  "receiptSha256": "e8f78a25a84e3480cd5bf3dfdce9c37dfdaf68bfb00b39614c92cf050b45e50a"
+}
