@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0221:mantle-reach:c0dcf711",
+  "taskIndex": 221,
+  "companyName": "Mantle Reach",
+  "generatedAt": "2026-08-29T08:20:41.827Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0221-mantle-reach/attempt-1/authorization-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 221,
+    "taskId": "ledger:0221:mantle-reach:c0dcf711",
+    "canonicalKey": "mantle-reach|united-states",
+    "companyName": "Mantle Reach",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 40,
+    "managers": [
+      "EnCap Investments"
+    ],
+    "actionScopes": {
+      "company": [
+        "CREATE_COMPANY"
+      ],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "040-encap-investments:holding:010:mantle-reach"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://mantlereach.com/",
+      "https://www.encapinvestments.com/about/energy-transition/portfolio/current/mantle-reach"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "No exact normalized production or seed match exists. Census evidence supports a new canonical company with 1 manager holding record(s).",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "mantle-reach|united-states",
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpifcq0043ivhe5112opir",
+        "name": "EnCap Investments",
+        "updatedAt": "2026-07-23T16:09:27.098Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0221:mantle-reach:c0dcf711",
+    "taskIndex": 221,
+    "canonicalKey": "mantle-reach|united-states",
+    "capturedAt": "2026-08-29T08:20:41.827Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "707aeddbd1d969a7136a720af7019ce0992fc039eb3d9377da747448fc7843a1",
+    "productionSnapshotSha256": "f4d8d9e4fefebc5f370bbfc1d34e69961d1093d9accc076ace61ce5695eb142c",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "63417b868abfd26b4dcc54fb8f8307f0b1294775ecabb6e01c0311fcbbcc337c",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "37247d8d2e0e7ff40e635f8521d4eb49e3abe5027d4eb207d76f72028bbe3ca4",
+    "stateSha256": "d742f5b09341f6ccfa92febcf1a71c2ef8d0a5c267f03713cfc1b3305ec1ea34",
+    "taskSnapshotSha256": "50d00e682adbac57a8b946d9e8c7612fc777ae65ab1d86e3baa72dc7b530cb08"
+  },
+  "contextSha256": "e04c929adf0d24278bf71b7a00995531d550a6a5db57cc81c71f8c89fcffd783"
+}

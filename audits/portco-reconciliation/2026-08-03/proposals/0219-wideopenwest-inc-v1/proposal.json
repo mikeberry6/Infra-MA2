@@ -1,0 +1,360 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0219:wideopenwest-inc:2debcc76",
+  "taskIndex": 219,
+  "asOfDate": "2026-08-29",
+  "generatedAt": "2026-08-29T08:13:00.000Z",
+  "canonicalKey": "wideopenwest-inc|united-states",
+  "companyName": "WideOpenWest, Inc.",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER"
+  ],
+  "sourceHoldingIds": [
+    "036-digitalbridge:holding:017:wideopenwest-wow"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Keep one WideOpenWest record and correct the closed take-private ownership. DigitalBridge Partners III owns approximately 63% and Crestview III owns approximately 37% of Bandit Parent's limited-partner interests, with equal general-partner control, following the December 31, 2025 close. Preserve Crestview's 2015-2025 pre-take-private period separately, exclude InfraBridge, and do not convert the still-pending upstream SoftBank acquisition of DigitalBridge into a direct WOW owner change.",
+  "evidence": [
+    {
+      "url": "https://dms.psc.sc.gov/Attachments/Matter/97a30d91-be2e-4b65-802e-146d80e00088",
+      "purpose": "Post-close ownership and holding chain",
+      "supports": [
+        "DigitalBridge Partners III holds approximately 63% of Bandit Parent's LP interests",
+        "Crestview III holds approximately 37% and has equal GP control"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1701051/000110465925125421/tm2534163d1_8k.htm",
+      "purpose": "Legal closing",
+      "supports": [
+        "The take-private closed on December 31, 2025",
+        "WOW survived as a private company"
+      ]
+    },
+    {
+      "url": "https://www.digitalbridge.com/news/2025-08-11-wideopenwest-wow-inc-to-be-taken-private-by-digitalbridge-group-inc-and-crestview-partners-in-15-billion-transaction",
+      "purpose": "Transaction announcement and rollover",
+      "supports": [
+        "DigitalBridge and Crestview announced the transaction on August 11, 2025",
+        "Crestview rolled its existing investment into the new ownership structure"
+      ]
+    },
+    {
+      "url": "https://www.digitalbridge.com/portfolio/wow",
+      "purpose": "Current manager attribution",
+      "supports": [
+        "DigitalBridge currently lists WOW as a portfolio investment"
+      ]
+    },
+    {
+      "url": "https://www.wowway.com/experience/about",
+      "purpose": "Operating profile",
+      "supports": [
+        "WOW provides broadband services across 19 markets",
+        "The network passes nearly two million homes and businesses"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "4cc2ec48e8c6a2f8e33c18ab8e9625a47ee1500ab95ecc5931ad8c4a78f98e48",
+  "currentCompanySnapshotSha256": "f7e77716cc85a4c388a366ae47def25240a7c008887e7199a0d460e77717f180",
+  "executionLock": {
+    "taskSnapshotSha256": "d9cd6b93417d7e5b789c3b949b309474cda3999ceb09fb4813629dca6f22f8ab",
+    "taskStateSha256": "a700796b3429d97587b853096d86e72a2aae7580fbc526ad7d478e183f719901",
+    "taskDependencySha256": "41cdc22970b33e22d523c287238f277846c01fcbaaea0df1c6e18bc4072da53a",
+    "seedEntrySha256": "9adf1f7766b1e1bdc186079b6ddfbc80c9491c217d48d4eb30992b304bd23fef",
+    "dependencies": {
+      "ownershipPeriodsSha256": "b1c8c9fd716078bdb27130ff520389a017ded7e3ba9bf21a4f6128dabcbad79d",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "b3be6f9b0fe5283f3df5ae514c18c73a3e7e5a5450bdc48cebfca4d063ad196f",
+      "organizationsSha256": "044669daa5d8e30d4b464ed1c1e0894f60c2ee53f208a986e3281ab3f6318c4b",
+      "citationsSha256": "dc9fa62f4da58e33d1c238151d9c67d0fabd325018236892985b265f5d69d694",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj22300cyivheme173qse",
+        "fundName": "DigitalBridge Fund III",
+        "managerId": "cmrxpi6te001eivheobw69a9c",
+        "updatedAt": "2026-07-23T16:09:56.523Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi6te001eivheobw69a9c",
+        "name": "DigitalBridge",
+        "updatedAt": "2026-07-23T16:09:16.034Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjddu00u2ivheu6k02my6",
+    "name": "WideOpenWest, Inc.",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Broadband and fiber-to-the-home",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "WideOpenWest, Inc. provides broadband internet, video, voice, and related connectivity services in the United States. It serves residential subscribers and businesses in its cable and fiber markets. The business is asset-heavy and recurring because it owns and upgrades last-mile broadband infrastructure and earns subscription revenue from network users. Company materials emphasize network reliability and broadband services, while public sources reviewed do not disclose the current revenue figure in the sources used for this batch. DigitalBridge and Crestview announced a take-private acquisition in August 2025 and completed the transaction in December 2025.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjz2601s8ivhekaamx1rl",
+        "managerName": "DigitalBridge",
+        "organizationName": "DigitalBridge",
+        "fundName": "DigitalBridge Fund III",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplgxh03pwivhemrk9z36q",
+        "date": "Aug 11, 2025",
+        "event": "DigitalBridge and Crestview announced an agreement to acquire WOW! in a $1.5 billion take-private transaction.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-08-11T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplgy103pxivherpb6r16x",
+        "date": "Dec 31, 2025",
+        "event": "DigitalBridge and Crestview completed the take-private acquisition of WOW!.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-12-31T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplgyl03pyivheyxd1h4wl",
+        "date": "Jan 7, 2026",
+        "event": "Crestview announced the appointment of Frank van der Post as CEO.",
+        "category": "MANAGEMENT",
+        "sortDate": "2026-01-07T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqk9e09rqivherkj626oj",
+        "label": "Wowway — WideOpenWest, Inc.",
+        "url": "https://www.wowway.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Wowway company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqkaj09rsivhexxa673da",
+        "label": "Announcement date source — DigitalBridge — WideOpenWest, Inc.",
+        "url": "https://www.digitalbridge.com/news/2025-08-11-wideopenwest-wow-inc-to-be-taken-private-by-digitalbridge-group-inc-and-crestview-partners-in-15-billion-transaction",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "DigitalBridge transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqkbr09ruivheem49duow",
+        "label": "Close date source — DigitalBridge — WideOpenWest, Inc.",
+        "url": "https://www.digitalbridge.com/news/2025-12-31-digitalbridge-and-crestview-partners-complete-take-private-acquisition-of-wideopenwest-wow",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "DigitalBridge closing confirmation",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "f7e77716cc85a4c388a366ae47def25240a7c008887e7199a0d460e77717f180",
+  "afterImage": {
+    "id": "cmrxpjddu00u2ivheu6k02my6",
+    "name": "WideOpenWest, Inc.",
+    "aliases": [
+      "WOW!",
+      "WideOpenWest",
+      "WideOpenWest Kite, Inc."
+    ],
+    "sector": "DIGITAL",
+    "subsector": "Broadband and fiber-to-the-home",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "WideOpenWest, Inc. (WOW!) is a U.S. broadband network operator providing high-speed internet, video, voice, mobile, business data and related connectivity services to residential, commercial and wholesale customers. The company operates across 19 markets in Michigan, Alabama, Tennessee, South Carolina, Georgia and Florida and reports nearly two million network passings. Operations began in 2001; the current corporation was formed in 2012 and adopted the WideOpenWest name in 2017. Crestview first invested in December 2015. DigitalBridge and Crestview completed a $1.5 billion take-private on December 31, 2025 through Bandit Parent and its subsidiaries; DigitalBridge Partners III holds approximately 63% and Crestview III approximately 37% of Bandit Parent's limited-partner interests, with equal general-partner control. InfraBridge is not a direct owner. SoftBank's signed acquisition of DigitalBridge remains an upstream manager transaction and was not treated as a direct WOW ownership transfer through August 19, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.wowway.com/",
+    "yearFounded": 2001,
+    "headquarters": "Englewood, Colorado",
+    "lastVerifiedAt": "2026-08-19T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjz2601s8ivhekaamx1rl",
+        "managerName": "DigitalBridge",
+        "organizationName": "DigitalBridge",
+        "fundName": "DigitalBridge Fund III",
+        "vehicleName": "Bandit Parent, LP via Bandit HoldCo, Inc. and Bandit MidCo, Inc.",
+        "stake": "Approximately 63% of Bandit Parent, LP limited-partner interests",
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Crestview Partners",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Crestview III investment funds",
+        "stake": "Approximately 35% at entry; approximately 37% immediately before the take-private",
+        "investmentYear": 2015,
+        "exitYear": 2025,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      },
+      {
+        "id": null,
+        "managerName": "Crestview Partners",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Crestview III investment funds via Bandit Parent, LP",
+        "stake": "Approximately 37% of Bandit Parent, LP limited-partner interests",
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplgxh03pwivhemrk9z36q",
+        "date": "Dec 18, 2015",
+        "event": "Crestview Partners acquired an approximately 35% interest in WideOpenWest and invested $125 million.",
+        "category": "ACQUISITION",
+        "sortDate": "2015-12-18T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1701051/000104746917003405/a2232135zs-1a.htm"
+        ]
+      },
+      {
+        "id": "cmrxplgy103pxivherpb6r16x",
+        "date": "Aug 11, 2025",
+        "event": "DigitalBridge and Crestview announced a $1.5 billion take-private of WOW! at $5.20 per share, including Crestview's rollover.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-08-11T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.digitalbridge.com/news/2025-08-11-wideopenwest-wow-inc-to-be-taken-private-by-digitalbridge-group-inc-and-crestview-partners-in-15-billion-transaction"
+        ]
+      },
+      {
+        "id": "cmrxplgyl03pyivheyxd1h4wl",
+        "date": "Dec 31, 2025",
+        "event": "The take-private closed; post-close filings reported approximately 63% of Bandit Parent's LP interests for DigitalBridge Partners III and approximately 37% for Crestview III, with equal GP control.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-12-31T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://dms.psc.sc.gov/Attachments/Matter/97a30d91-be2e-4b65-802e-146d80e00088",
+          "https://www.sec.gov/Archives/edgar/data/1701051/000110465925125421/tm2534163d1_8k.htm"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqk9e09rqivherkj626oj",
+        "label": "Wowway — WideOpenWest, Inc.",
+        "url": "https://www.wowway.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current WOW services and operating identity",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqkaj09rsivhexxa673da",
+        "label": "Announcement date source — DigitalBridge — WideOpenWest, Inc.",
+        "url": "https://www.digitalbridge.com/news/2025-08-11-wideopenwest-wow-inc-to-be-taken-private-by-digitalbridge-group-inc-and-crestview-partners-in-15-billion-transaction",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "August 2025 take-private announcement and Crestview rollover",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqkbr09ruivheem49duow",
+        "label": "Close date source — DigitalBridge — WideOpenWest, Inc.",
+        "url": "https://www.digitalbridge.com/news/2025-12-31-digitalbridge-and-crestview-partners-complete-take-private-acquisition-of-wideopenwest-wow",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "December 31, 2025 transaction closing",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "South Carolina PSC — WOW post-close ownership notice",
+        "url": "https://dms.psc.sc.gov/Attachments/Matter/97a30d91-be2e-4b65-802e-146d80e00088",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Post-close 63%/37% LP interests, equal GP control and holding chain",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "SEC — WOW closing Form 8-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1701051/000110465925125421/tm2534163d1_8k.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "December 31, 2025 legal closing and private-company structure",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "DigitalBridge — WOW portfolio",
+        "url": "https://www.digitalbridge.com/portfolio/wow",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current DigitalBridge portfolio attribution",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "WOW! — About",
+        "url": "https://www.wowway.com/experience/about",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Operating markets, services and network footprint",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "SEC — WideOpenWest registration statement",
+        "url": "https://www.sec.gov/Archives/edgar/data/1701051/000104746917003405/a2232135zs-1a.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Corporate history and Crestview's December 2015 entry",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "2ec90d84bfb55e1917346f053e4964c449b98bd7fa94d6cbcd04d1e0c89b4043",
+  "proposalSha256": "d18288bd15cfe6753324538cfa4d2ff8453a164da9d9aebdf0f4c9c432759e68"
+}

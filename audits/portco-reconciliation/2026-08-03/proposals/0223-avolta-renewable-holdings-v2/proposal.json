@@ -1,0 +1,320 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0223:avolta-renewable-holdings:7181d627",
+  "taskIndex": 223,
+  "asOfDate": "2026-08-29",
+  "generatedAt": "2026-08-29T08:16:03.000Z",
+  "canonicalKey": "avolta-renewable-holdings|united-states",
+  "companyName": "Avolta Renewable Holdings",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER"
+  ],
+  "sourceHoldingIds": [
+    "041-energy-capital-partners:holding:002:avolta-renewable-holdings"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Correct the existing Avolta Renewable Holdings record and preserve one platform boundary. ECP and Avolta, LLC formed the current U.S. renewable-natural-gas joint venture in February 2022 and remain the publicly supported owners. Replace the unsupported ECP Fund V attribution with an undisclosed ECP investing affiliate, add Avolta, LLC as the active co-owner, use Avolta Development as the operating website and Charleston as headquarters, and exclude the unrelated Costa Rican Avolta Energy and project-level entities.",
+  "evidence": [
+    {
+      "url": "https://www.ecpgp.com/equity/portfolio/avolta-renewable-holdings",
+      "purpose": "Current joint-venture ownership",
+      "supports": [
+        "ECP invested in the newly formed Avolta Renewable Holdings joint venture with Avolta, LLC in February 2022",
+        "ECP continues to list the platform as current"
+      ]
+    },
+    {
+      "url": "https://avoltadevelopment.com/",
+      "purpose": "Current operating identity",
+      "supports": [
+        "Avolta Development is the operating brand associated with Avolta, LLC",
+        "The business develops, owns and operates dairy and landfill RNG projects"
+      ]
+    },
+    {
+      "url": "https://apps.sos.wv.gov/business/corporations/organization.aspx?org=468751",
+      "purpose": "Avolta legal history and headquarters",
+      "supports": [
+        "Avolta, LLC became effective in West Virginia on January 10, 2019",
+        "The registered business location is Charleston, West Virginia"
+      ]
+    },
+    {
+      "url": "https://avoltadevelopment.com/beyond-the-pipeline-what-a-digester-actually-changes-on-a-dairy-farm/",
+      "purpose": "Current operations",
+      "supports": [
+        "Avolta published a current central-Texas dairy RNG operating case in May 2026"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "5d3893c240fde2a2eecd219c12c8972183f662aa167f0ac0bb281835f53a92c1",
+  "currentCompanySnapshotSha256": "e2b32cf91da1c04217d803f896a2e888e2f6aa7fdce1a152c14cba97349d2ace",
+  "executionLock": {
+    "taskSnapshotSha256": "56a9bf115123e2889931a40019bcb337e235b2364cdacd6c6b5b87bf209446f4",
+    "taskStateSha256": "5b1e9374f0b9603ab379df43b3c8adea561e063a89f4caf906ad93a50d162b9a",
+    "taskDependencySha256": "4ffbdce6bc41ed4d21bb0ee58c1988882db6cc4a7a9ed3d1388f9b473c3094ba",
+    "seedEntrySha256": "169df6fac92fc426b7753325abdc6c872f8162fe6c623faf1c299aa29bfc5933",
+    "dependencies": {
+      "ownershipPeriodsSha256": "277e2caf5dfbadddf0d386f00fbdd7eef2bddb9c26d6cead116953df729451dd",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "cd20bf918111ea91d87de82c3607378a098a82d96d9ad9ef41dc65f122089cb0",
+      "organizationsSha256": "592a52bc18a9de4fb86a5d0e7fec2a9f373528b05a4401efa6036f9b6ba5b5ca",
+      "citationsSha256": "1a2be14ce834407b261b6379e35b7e9bfe7b603525299459c4bc25e45180d2af",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj23s00d1ivhel30ncaa5",
+        "fundName": "ECP Fund V",
+        "managerId": "cmrxpi79j001jivhe2rmjalkq",
+        "updatedAt": "2026-07-23T16:09:56.584Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpii7l004zivhe9bvhh5r5",
+        "name": "ECP",
+        "updatedAt": "2026-07-23T16:09:30.801Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjdg100u6ivhep4xv8y79",
+    "name": "Avolta Renewable Holdings, LLC",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Renewable natural gas from dairy waste",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Avolta Renewable Holdings is a renewable natural gas platform focused on dairy projects that capture biogas from manure and upgrade it to pipeline-quality fuel. Its end markets include gas utilities, transportation fuel markets, and environmental credit programs, with cash flows supported by offtake and regulatory value streams tied to low-carbon fuel production. The platform follows an asset-heavy development and ownership model built around digester infrastructure, gas upgrading facilities, and pipeline interconnections. Energy Capital Partners said in February 2022 that it had committed capital to a newly formed joint venture with Avolta to develop a series of U.S. dairy RNG projects. Public materials since then continue to describe the company as a growing dairy RNG developer with a project pipeline across major livestock regions.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2022,
+    "headquarters": "California, Idaho, and other U.S. dairy markets",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjz5b01seivhelnb7zna3",
+        "managerName": "Energy Capital Partners",
+        "organizationName": "ECP",
+        "fundName": "ECP Fund V",
+        "vehicleName": "Joint venture by ECP and Avolta, LLC",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplhbg03qdivheeqxmol6a",
+        "date": "2022",
+        "event": "Avolta Renewable Holdings was formed to develop a portfolio of dairy RNG projects.",
+        "category": "FOUNDING",
+        "sortDate": "2022-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplhbx03qeivhex36y43c5",
+        "date": "Feb 2022",
+        "event": "ECP committed to invest in Avolta Renewable Holdings, a newly formed joint venture with Avolta, LLC.",
+        "category": "FINANCING",
+        "sortDate": "2022-02-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpql1s09suivheqd97k3kv",
+        "label": "Investment date source — ECP — Avolta Renewable Holdings, LLC",
+        "url": "https://www.ecpgp.com/equity/portfolio/avolta-renewable-holdings",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "ECP initial investment / ownership",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpql2s09swivheycxok4nb",
+        "label": "Avoltadevelopment — Avolta Renewable Holdings, LLC",
+        "url": "https://avoltadevelopment.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Avoltadevelopment company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpql3v09syivheoc2b6r50",
+        "label": "Avoltadevelopment — Avolta Renewable Holdings, LLC",
+        "url": "https://avoltadevelopment.com/about-us/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Avoltadevelopment company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpql4z09t0ivhepfbnkdyw",
+        "label": "Avoltadevelopment — Avolta Renewable Holdings, LLC",
+        "url": "https://avoltadevelopment.com/news/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Avoltadevelopment — Avolta Renewable Holdings, LLC",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "e2b32cf91da1c04217d803f896a2e888e2f6aa7fdce1a152c14cba97349d2ace",
+  "afterImage": {
+    "id": "cmrxpjdg100u6ivhep4xv8y79",
+    "name": "Avolta Renewable Holdings",
+    "aliases": [
+      "Avolta Renewable Holdings, LLC",
+      "Avolta Development"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Renewable natural gas from dairy waste",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Avolta Renewable Holdings, LLC is a U.S. renewable-natural-gas platform formed as a joint venture between Energy Capital Partners and Avolta, LLC in February 2022. Operating through the Avolta Development brand, the company develops, finances, owns and operates dairy and landfill RNG projects, including feedstock and site rights, digesters, gas-upgrading equipment, pipeline interconnections, offtake and environmental-credit arrangements. End markets include pipeline gas utilities, transportation-fuel programs and other low-carbon fuel buyers. ECP continues to list the platform as current, and Avolta published current Texas operating activity in May 2026. Exact ownership percentages, governance economics, ECP fund and legal holding vehicle are not publicly disclosed. Avolta, LLC is headquartered in Charleston, West Virginia; Texas, Florida and Arizona are operating or project locations rather than headquarters. No direct sale or signed pending platform exit was identified through August 19, 2026. Avolta Energy, Nacelle and individual project SPVs are not part of this canonical company record.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://avoltadevelopment.com/",
+    "yearFounded": 2022,
+    "headquarters": "Charleston, West Virginia",
+    "lastVerifiedAt": "2026-08-19T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjz5b01seivhelnb7zna3",
+        "managerName": "ECP",
+        "organizationName": "ECP",
+        "fundName": null,
+        "vehicleName": "Avolta Renewable Holdings, LLC joint venture; ECP investing affiliate not publicly disclosed",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Avolta, LLC",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Avolta Renewable Holdings, LLC joint venture",
+        "stake": "Not publicly disclosed",
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplhbg03qdivheeqxmol6a",
+        "date": "Jan 10, 2019",
+        "event": "Avolta, LLC, the operating sponsor that later formed the Avolta Renewable Holdings joint venture, became effective in West Virginia.",
+        "category": "FOUNDING",
+        "sortDate": "2019-01-10T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://apps.sos.wv.gov/business/corporations/organization.aspx?org=468751"
+        ]
+      },
+      {
+        "id": "cmrxplhbx03qeivhex36y43c5",
+        "date": "Feb 2022",
+        "event": "Energy Capital Partners invested in newly formed Avolta Renewable Holdings, LLC as a joint venture with Avolta, LLC to develop U.S. dairy renewable-natural-gas projects.",
+        "category": "FINANCING",
+        "sortDate": "2022-02-01T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.ecpgp.com/equity/portfolio/avolta-renewable-holdings"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpql1s09suivheqd97k3kv",
+        "label": "Investment date source — ECP — Avolta Renewable Holdings, LLC",
+        "url": "https://www.ecpgp.com/equity/portfolio/avolta-renewable-holdings",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "February 2022 ECP and Avolta, LLC joint venture and current ECP status",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpql2s09swivheycxok4nb",
+        "label": "Avoltadevelopment — Avolta Renewable Holdings, LLC",
+        "url": "https://avoltadevelopment.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current Avolta Development operating identity and RNG business",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpql3v09syivheoc2b6r50",
+        "label": "Avoltadevelopment — Avolta Renewable Holdings, LLC",
+        "url": "https://avoltadevelopment.com/about-us/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Avolta Development business and operating history",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpql4z09t0ivhepfbnkdyw",
+        "label": "Avoltadevelopment — Avolta Renewable Holdings, LLC",
+        "url": "https://avoltadevelopment.com/news/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Avolta Development operating updates",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "West Virginia Secretary of State — Avolta, LLC",
+        "url": "https://apps.sos.wv.gov/business/corporations/organization.aspx?org=468751",
+        "sourceType": "OTHER",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Avolta, LLC legal date, Charleston office and current registry presence",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Avolta Development — Texas dairy RNG case study",
+        "url": "https://avoltadevelopment.com/beyond-the-pipeline-what-a-digester-actually-changes-on-a-dairy-farm/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "May 2026 current Texas operating activity",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Pathward — Avolta RNG project financing",
+        "url": "https://www.pathward.com/news/pathward-and-avolta-partnership-brings-two-renewable-natural-gas/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Project financing and two-plant Arizona operating scale without a platform ownership transfer",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "09e3136be77cce0ce090f8223b0c5053106467d330ca1e4215f25afb0af263b8",
+  "proposalSha256": "f2dd0866c047d8537b6ad591b12d14b59fb0a0d9e4fde25cb606fc051cafe54d"
+}

@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0223:avolta-renewable-holdings:7181d627",
+  "taskIndex": 223,
+  "companyName": "Avolta Renewable Holdings",
+  "generatedAt": "2026-08-29T08:10:59.717Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0223-avolta-renewable-holdings/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 223,
+    "taskId": "ledger:0223:avolta-renewable-holdings:7181d627",
+    "canonicalKey": "avolta-renewable-holdings|united-states",
+    "companyName": "Avolta Renewable Holdings",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 41,
+    "managers": [
+      "Energy Capital Partners"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "041-energy-capital-partners:holding:002:avolta-renewable-holdings"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://www.avoltaenergy.com/",
+      "https://www.ecpgp.com/equity/portfolio"
+    ],
+    "candidateCanonicalKeys": [
+      "avolta-renewable-holdings-llc|united-states"
+    ],
+    "rationale": "Only heuristic repository candidate(s) exist: avolta-renewable-holdings-llc|united-states; no automatic merge was made. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Only heuristic repository candidate(s) exist: avolta-renewable-holdings-llc|united-states; no automatic merge was made."
+    ]
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "avolta-renewable-holdings|united-states",
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0223:avolta-renewable-holdings:7181d627",
+    "taskIndex": 223,
+    "canonicalKey": "avolta-renewable-holdings|united-states",
+    "capturedAt": "2026-08-29T08:10:59.717Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "bc962a2766394caf1899fb87f12501d8367b3693c297d4488227be1952582b57",
+    "productionSnapshotSha256": "f47e68eb0364d8b5134b5ecea382aa22c9b3f6b82582f16ee22d9208494535b2",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "7162f023548431ed1fed51e43a93e8e1e0a46df9edc0adf314307e96f61f1312",
+    "stateSha256": "11e304a1b07cabc584d790fa2874190a07f567e1a8adf2f4ff12650c0279a860",
+    "taskSnapshotSha256": "385b53f3aaf74d4a529bdc08e7afc0c5976c2b9b3627df43569dedb7c91fd05c"
+  },
+  "contextSha256": "b04941211ac39d42b62a594375d40fa0cb69035ad33682dca1316179f03ba46e"
+}

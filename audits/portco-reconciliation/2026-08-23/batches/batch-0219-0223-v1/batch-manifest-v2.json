@@ -1,0 +1,373 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_MANIFEST",
+  "methodologyVersion": "PORTCO_APPLY_BATCH_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0219-0223-v1",
+  "createdAt": "2026-08-29T08:15:00.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "a83fb09105d43c0d537afcbf6b9eb09590bfded698e0dd22c3f2a4a8024b7694"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0219:wideopenwest-inc:2debcc76",
+      "taskIndex": 219,
+      "companyName": "WideOpenWest, Inc.",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0219-wideopenwest-inc-v1/proposal.json",
+        "sha256": "d18288bd15cfe6753324538cfa4d2ff8453a164da9d9aebdf0f4c9c432759e68"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0219-wideopenwest-inc-v1.json",
+        "sha256": "ceccbc13f976a10b10002e8a6e96b1698bf5a45fc1beeeb411411492329e11a6"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0219-wideopenwest-inc/attempt-1/locked-production-snapshot.json",
+        "sha256": "4cc2ec48e8c6a2f8e33c18ab8e9625a47ee1500ab95ecc5931ad8c4a78f98e48"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0219-wideopenwest-inc/attempt-1/locked-task-snapshot.json",
+        "sha256": "d9cd6b93417d7e5b789c3b949b309474cda3999ceb09fb4813629dca6f22f8ab"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0219-wideopenwest-inc/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "db667b9b8e05e6fcf5aecbdf46ce546e40a2847e1f5a146622881feb369f2d8c"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0219-wideopenwest-inc/attempt-1/application-research-decision.json",
+        "sha256": "261943b909a4634b81569af3f271f33e1def7b01a1c06705cdaf651e07cd205e"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0219-wideopenwest-inc/attempt-1/source-verification.json",
+        "sha256": "061b9cf9b0ebb85e79291248add88f8d1d85ce5b863d28d9bfcd181ccf32c8e4"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "a700796b3429d97587b853096d86e72a2aae7580fbc526ad7d478e183f719901",
+      "dependencySha256": "41cdc22970b33e22d523c287238f277846c01fcbaaea0df1c6e18bc4072da53a",
+      "afterImageSha256": "2ec90d84bfb55e1917346f053e4964c449b98bd7fa94d6cbcd04d1e0c89b4043",
+      "targetClaims": [
+        "canonical:wideopenwest-inc|united-states",
+        "company:cmrxpjddu00u2ivheu6k02my6",
+        "relation:cmrxpjz2601s8ivhekaamx1rl",
+        "relation:cmrxplgxh03pwivhemrk9z36q",
+        "relation:cmrxplgy103pxivherpb6r16x",
+        "relation:cmrxplgyl03pyivheyxd1h4wl",
+        "relation:cmrxpqk9e09rqivherkj626oj",
+        "relation:cmrxpqkaj09rsivhexxa673da",
+        "relation:cmrxpqkbr09ruivheem49duow",
+        "seed:wideopenwest, inc.|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://dms.psc.sc.gov/Attachments/Matter/97a30d91-be2e-4b65-802e-146d80e00088",
+          "label": "South Carolina PSC — WOW post-close ownership notice",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.digitalbridge.com/news/2025-08-11-wideopenwest-wow-inc-to-be-taken-private-by-digitalbridge-group-inc-and-crestview-partners-in-15-billion-transaction",
+          "label": "Announcement date source — DigitalBridge — WideOpenWest, Inc.",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.digitalbridge.com/news/2025-12-31-digitalbridge-and-crestview-partners-complete-take-private-acquisition-of-wideopenwest-wow",
+          "label": "Close date source — DigitalBridge — WideOpenWest, Inc.",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.digitalbridge.com/portfolio/wow",
+          "label": "DigitalBridge — WOW portfolio",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1701051/000104746917003405/a2232135zs-1a.htm",
+          "label": "SEC — WideOpenWest registration statement",
+          "sourceType": "SEC_FILING"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1701051/000110465925125421/tm2534163d1_8k.htm",
+          "label": "SEC — WOW closing Form 8-K",
+          "sourceType": "SEC_FILING"
+        },
+        {
+          "url": "https://www.wowway.com/",
+          "label": "Wowway — WideOpenWest, Inc.",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.wowway.com/experience/about",
+          "label": "WOW! — About",
+          "sourceType": "WEBSITE"
+        }
+      ]
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0220:bleutec-industries:3c6b9662",
+      "taskIndex": 220,
+      "companyName": "Bleutec Industries",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0220-bleutec-industries/attempt-1/terminal-decision.json",
+        "sha256": "49978cb2a7207c4bec02afa356866b28940bca61a34c41668e36dbfae35ea8a0"
+      }
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0221:mantle-reach:c0dcf711",
+      "taskIndex": 221,
+      "companyName": "Mantle Reach",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0221-mantle-reach-v1/proposal.json",
+        "sha256": "486ef61481c402268248fc63e1dd48ee304f3013e6d58bdbdacc27b7744739e4"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0221-mantle-reach-v1.json",
+        "sha256": "b1ba55da3aaedc242871d8f594c99f24d96842867f2da113771ea74e6712f3e4"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0221-mantle-reach/attempt-1/locked-v2-production-snapshot.json",
+        "sha256": "23b5c43e2c6d80ea8e5b9740c0735ba3b95468b9282a3562ee07a66e453b4821"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0221-mantle-reach/attempt-1/locked-v2-task-snapshot.json",
+        "sha256": "cc52668781f615a0c122973f1c0854c27b81281d0471f8fcbfab3d94c30d3b27"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0221-mantle-reach/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "50d00e682adbac57a8b946d9e8c7612fc777ae65ab1d86e3baa72dc7b530cb08"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0221-mantle-reach/attempt-1/application-research-decision.json",
+        "sha256": "03a487f2c091b30ef819fe4b5a8aaee24083213a1e3004869055ec6c9782faef"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0221-mantle-reach/attempt-1/source-verification.json",
+        "sha256": "a5e2a7a6083973da70e895aecc0fe02242e6bd575b2030a028eee05acd087229"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "d742f5b09341f6ccfa92febcf1a71c2ef8d0a5c267f03713cfc1b3305ec1ea34",
+      "dependencySha256": "37247d8d2e0e7ff40e635f8521d4eb49e3abe5027d4eb207d76f72028bbe3ca4",
+      "afterImageSha256": "b03b2b5c28043a7b9b122826bf972a92103e811da4505d448dce52a51265cb6c",
+      "targetClaims": [
+        "canonical:mantle-reach|united-states",
+        "seed:mantle reach power|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://investors.bakerhughes.com/news/press-releases/news-details/2026/Baker-Hughes-and-Mantle-Reach-Power-an-EnCap-Energy-Transition-Company-Announce-Strategic-Agreement-to-Accelerate-Large-scale-Geothermal-Across-North-America/default.aspx",
+          "label": "Baker Hughes — Mantle Reach strategic agreement",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://mantlereach.com/",
+          "label": "Mantle Reach Power — Company profile",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.encapinvestments.com/about/energy-transition/portfolio/current/mantle-reach",
+          "label": "EnCap — Mantle Reach portfolio",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.linkedin.com/company/mantle-reach-power",
+          "label": "LinkedIn — Mantle Reach Power",
+          "sourceType": "WEBSITE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0222:anza-renewables:03b962a6",
+      "taskIndex": 222,
+      "companyName": "Anza Renewables",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0222-anza-renewables-v2/proposal.json",
+        "sha256": "f9b03d80f5423bd9d7fdb5af71a4dae50ea8153d1216bd67e947d55731d194f6"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0222-anza-renewables-v2.json",
+        "sha256": "925d79a5a14f6fb2299b98e3188146f2163bb352791c7a4bdbfb7fd6adbc60bd"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0222-anza-renewables/attempt-1/locked-v2-production-snapshot.json",
+        "sha256": "d96c3b2565fa030c74813f73eb7cb3a19e6b511a045aa322cb05b4c4c577aa64"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0222-anza-renewables/attempt-1/locked-v2-task-snapshot.json",
+        "sha256": "84388c941ea6ee1ca951a33d08d866e7c0950d60a60ddc8efcde0938c9bd9d32"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0222-anza-renewables/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "7a6c6f49619e2d778af5b84c03272b4b8da620ee4130cb0cc60c171e8537b905"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0222-anza-renewables/attempt-1/application-research-decision.json",
+        "sha256": "4256c19ecffef66dbf01350c36a4bad954a68d2f30b30f782e863da797af1975"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0222-anza-renewables/attempt-1/source-verification.json",
+        "sha256": "246bfc9af57a199090689c9119abf3eb8a1b18fa8ecba414eaa32435b4785552"
+      },
+      "supersededTaskIds": [
+        "ledger:0468:anza-renewables-llc:222fdd9f"
+      ],
+      "taskStateSha256": "4b9d66b2fa502260d28052a700c6c60a993e1afa3c6140f26e9b0fa9b18e252c",
+      "dependencySha256": "91507f2330a0ccf27ee29c68a23920c1720d5a8d16a5a9cc9c8302a94d41817d",
+      "afterImageSha256": "37a39118688e998c2d37b5740ef02350d8bbf82455b68ff0e26a669c72579df8",
+      "targetClaims": [
+        "canonical:anza-renewables|united-states",
+        "company:cmrxpjdf000u4ivhe82f2fkli",
+        "relation:cmrxpjz3p01sbivhe5nxkcfvj",
+        "relation:cmrxplh2x03q4ivhejrg9kkg8",
+        "relation:cmrxplh3h03q5ivhee1pszgtn",
+        "relation:cmrxplh4203q6ivhepse4lpls",
+        "relation:cmrxpqknn09saivhemup1y1ew",
+        "relation:cmrxpqkoq09scivhevdcju6i9",
+        "relation:cmrxpqkpq09seivhe2hn07es0",
+        "relation:cmrxpqkqr09sgivhebiw5xwpv",
+        "seed:anza renewables, llc|north america",
+        "seed:anza renewables|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://www.angelenogroup.com/portfolio/anza-renewables/",
+          "label": "Angeleno Group — Anza Renewables portfolio",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.anzarenewables.com/",
+          "label": "Anzarenewables — Anza Renewables, LLC",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.anzarenewables.com/about-us/",
+          "label": "Anzarenewables — Anza Renewables, LLC",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.anzarenewables.com/press-release/anza-completes-separation-from-borrego-and-receives-new-investment-from-energy-capital-partners-led-consortium-to-transform-solar-and-storage-procurement/",
+          "label": "Investment date source — ECP — Anza Renewables, LLC",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.anzarenewables.com/press-release/anza-supports-over-2-gw-of-solar-safe-harbor-procurements-in-2025-helping-developers-preserve-itc-benefits-and-project-economics/",
+          "label": "Anzarenewables — Anza Renewables, LLC",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.ecpgp.com/equity/portfolio/anza-renewables",
+          "label": "ECP — Anza Renewables portfolio",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.walsin.com/2024annual-report/files/pdf/en/0.%20%E8%8B%B1%E6%96%87%E5%AE%8C%E6%95%B4%E7%89%88.pdf",
+          "label": "Walsin — 2024 annual report",
+          "sourceType": "PRESENTATION"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0223:avolta-renewable-holdings:7181d627",
+      "taskIndex": 223,
+      "companyName": "Avolta Renewable Holdings",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0223-avolta-renewable-holdings-v2/proposal.json",
+        "sha256": "f2dd0866c047d8537b6ad591b12d14b59fb0a0d9e4fde25cb606fc051cafe54d"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0223-avolta-renewable-holdings-v2.json",
+        "sha256": "2fd3b58fd9a2c60ed220295df999ff1cf60f642e9fb8e98c9dbc337dede05fc4"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0223-avolta-renewable-holdings/attempt-1/locked-v2-production-snapshot.json",
+        "sha256": "5d3893c240fde2a2eecd219c12c8972183f662aa167f0ac0bb281835f53a92c1"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0223-avolta-renewable-holdings/attempt-1/locked-v2-task-snapshot.json",
+        "sha256": "56a9bf115123e2889931a40019bcb337e235b2364cdacd6c6b5b87bf209446f4"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0223-avolta-renewable-holdings/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "77ffe179832941c1b012974fe0895655b9f44627d4d2866c7992e29a9ea6b2b4"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0223-avolta-renewable-holdings/attempt-1/application-research-decision.json",
+        "sha256": "0cf09539aa562d8fe3961e8da60e1995acfc280af72fe2db2c66c850c5d13d8b"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0223-avolta-renewable-holdings/attempt-1/source-verification.json",
+        "sha256": "4befab25e097b3b08110865ec6bee02a5342c9046aa1e2792c9c1756cc77b335"
+      },
+      "supersededTaskIds": [
+        "ledger:0469:avolta-renewable-holdings-llc:db85a6b5"
+      ],
+      "taskStateSha256": "5b1e9374f0b9603ab379df43b3c8adea561e063a89f4caf906ad93a50d162b9a",
+      "dependencySha256": "4ffbdce6bc41ed4d21bb0ee58c1988882db6cc4a7a9ed3d1388f9b473c3094ba",
+      "afterImageSha256": "09e3136be77cce0ce090f8223b0c5053106467d330ca1e4215f25afb0af263b8",
+      "targetClaims": [
+        "canonical:avolta-renewable-holdings|united-states",
+        "company:cmrxpjdg100u6ivhep4xv8y79",
+        "relation:cmrxpjz5b01seivhelnb7zna3",
+        "relation:cmrxplhbg03qdivheeqxmol6a",
+        "relation:cmrxplhbx03qeivhex36y43c5",
+        "relation:cmrxpql1s09suivheqd97k3kv",
+        "relation:cmrxpql2s09swivheycxok4nb",
+        "relation:cmrxpql3v09syivheoc2b6r50",
+        "relation:cmrxpql4z09t0ivhepfbnkdyw",
+        "seed:avolta renewable holdings, llc|united states",
+        "seed:avolta renewable holdings|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://apps.sos.wv.gov/business/corporations/organization.aspx?org=468751",
+          "label": "West Virginia Secretary of State — Avolta, LLC",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://avoltadevelopment.com/",
+          "label": "Avoltadevelopment — Avolta Renewable Holdings, LLC",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://avoltadevelopment.com/about-us/",
+          "label": "Avoltadevelopment — Avolta Renewable Holdings, LLC",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://avoltadevelopment.com/beyond-the-pipeline-what-a-digester-actually-changes-on-a-dairy-farm/",
+          "label": "Avolta Development — Texas dairy RNG case study",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://avoltadevelopment.com/news/",
+          "label": "Avoltadevelopment — Avolta Renewable Holdings, LLC",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.ecpgp.com/equity/portfolio/avolta-renewable-holdings",
+          "label": "Investment date source — ECP — Avolta Renewable Holdings, LLC",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.pathward.com/news/pathward-and-avolta-partnership-brings-two-renewable-natural-gas/",
+          "label": "Pathward — Avolta RNG project financing",
+          "sourceType": "PRESS_RELEASE"
+        }
+      ]
+    }
+  ],
+  "collisionAnalysis": {
+    "independent": true,
+    "claimsSha256": "7b52ec8e55fa2816eba1be77d5a07049380a074bc975df55a7f46bf766855a0c",
+    "sharedSourceUrls": [],
+    "conflicts": []
+  },
+  "batchSha256": "54ff1f0ed08add50ec80397de759f189384428219ff03e5bb53928677b54e6e3"
+}

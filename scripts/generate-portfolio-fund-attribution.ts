@@ -669,6 +669,7 @@ const DIRECT_PROGRAM_FIRMS = new Set([
   "altius minerals",
   "altius renewable royalties",
   "australian retirement trust",
+  "avolta, llc",
   "aware super",
   "bmo financial group",
   "comstock resources",

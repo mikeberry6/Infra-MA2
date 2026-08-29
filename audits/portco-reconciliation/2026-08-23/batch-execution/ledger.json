@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-29T08:02:02Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-08-29T08:28:26Z",
+  "activeBatchId": "batch-0219-0223-v1",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -2677,7 +2677,55 @@
           "reason": "Atomic receipt, five canonical after-images, five public detail APIs, five rendered drawers, exact receipt-commit deployment, ownership rosters, stakes, vehicles, milestones, and sources verified; no partial application or browser console errors."
         }
       ]
+    },
+    {
+      "batchId": "batch-0219-0223-v1",
+      "state": "READY",
+      "taskIds": [
+        "ledger:0219:wideopenwest-inc:2debcc76",
+        "ledger:0220:bleutec-industries:3c6b9662",
+        "ledger:0221:mantle-reach:c0dcf711",
+        "ledger:0222:anza-renewables:03b962a6",
+        "ledger:0223:avolta-renewable-holdings:7181d627"
+      ],
+      "taskIndexes": [
+        219,
+        220,
+        221,
+        222,
+        223
+      ],
+      "createdAt": "2026-08-29T08:10:05Z",
+      "updatedAt": "2026-08-29T08:28:26Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0219-0223-v1/batch-manifest-v2.json",
+        "sha256": "54ff1f0ed08add50ec80397de759f189384428219ff03e5bb53928677b54e6e3"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-29T08:10:05Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-29T08:28:26Z",
+          "evidenceSha256": [
+            "54ff1f0ed08add50ec80397de759f189384428219ff03e5bb53928677b54e6e3"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "5d78d0b3955f0e42e95ca3badccfd71cafc9dacf867e0a553dd1f10725ea94f6"
+  "ledgerSha256": "af83b7a222f2b48bcc43da30ca46dd767ccd52b79a1fe9f2b4bdb0917209f600"
 }

@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0220:bleutec-industries:3c6b9662",
+  "taskIndex": 220,
+  "companyName": "Bleutec Industries",
+  "outcome": "DEFERRED",
+  "decidedAt": "2026-08-29T08:12:00.000Z",
+  "rationale": "Bleutec's 2022 EnCap commitment was funded by February 2023, but direct sources do not resolve current ownership, a supported exit, the canonical legal parent or current operations. Portfolio omission, a compromised domain and a lack of later vessel activity are dormancy signals rather than disposition evidence, so the record cannot safely remain verified active or be marked realized.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0220-bleutec-industries/attempt-1/locked-task-snapshot.json",
+    "sha256": "1cce48dbdcfe3fee1b81fa897ab81eebbea76b76603aec95f58c4498344f3db7"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0220-bleutec-industries/attempt-1/application-research-decision.json",
+    "sha256": "8c3ecbd89cbcbaeaeb3390c2b160f453f037fc61dadc1928cca285e638066c58"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0220-bleutec-industries/attempt-1/source-verification.json",
+    "sha256": "cad8f850a0725186aa7c41a21d0933364d437cb1ab86cdfe5d7d8e29dc71a4ff"
+  },
+  "evidence": [
+    {
+      "url": "https://www.encapinvestments.com/news/bleutec-industries-announces-equity-commitment-encap-investments",
+      "purpose": "EnCap commitment, co-investment, Energy Transition attribution and 2019 launch."
+    },
+    {
+      "url": "https://floatingwindsolutions.com/wp-content/uploads/2023/02/FWS23-Bo-Jardine-Bleutec-Industries.pdf",
+      "purpose": "Bleutec's February 2023 fully-capitalized statement and planned vessel status."
+    },
+    {
+      "url": "https://www.encapinvestments.com/about/energy-transition/portfolio",
+      "purpose": "Current manager portfolio display omission, treated only as a non-dispositive status signal."
+    },
+    {
+      "url": "https://www.marinelog.com/offshore/offshore-wind/bleutec-seeks-title-xi-support-for-its-offshore-wind-vessel-spread/",
+      "purpose": "Planned four-vessel Title XI application with builder still to be determined."
+    },
+    {
+      "url": "https://www.bleutecindustries.com/",
+      "purpose": "Unrelated domain redirect, treated as a dormancy signal rather than exit proof."
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "49978cb2a7207c4bec02afa356866b28940bca61a34c41668e36dbfae35ea8a0"
+}
