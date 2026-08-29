@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-29T19:29:00.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-08-29T20:06:00.000Z",
+  "activeBatchId": "batch-0264-0268-v4",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -3914,7 +3914,229 @@
           "reason": null
         }
       ]
+    },
+    {
+      "batchId": "batch-0264-0268-v1",
+      "state": "FAILED",
+      "taskIds": [
+        "ledger:0264:red-de-carreteras-de-occidente-s-a-b-de-c-v:3ba7cbb5",
+        "ledger:0265:wecom-fiber:efb4f3b9",
+        "ledger:0266:channelview-cogeneration:a4e4cfd5",
+        "ledger:0267:cyrusone:541adafa",
+        "ledger:0268:hess-midstream:b85ab916"
+      ],
+      "taskIndexes": [
+        264,
+        265,
+        266,
+        267,
+        268
+      ],
+      "createdAt": "2026-08-29T19:35:00.000Z",
+      "updatedAt": "2026-08-29T19:54:00.000Z",
+      "completedAt": "2026-08-29T19:54:00.000Z",
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0264-0268-v1/batch-manifest.json",
+        "sha256": "3672e5b1219e800fa85bb3f20c27d4d569218153d858c100f357c5c05f0915ec"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": "Pre-write root-lineage validation rejected the draft batch because the config used filesystem byte hashes instead of the execution manifest and research-normalization artifacts canonical internal hashes; no seed or database writes occurred.",
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-29T19:35:00.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-29T19:53:00.000Z",
+          "evidenceSha256": [
+            "3672e5b1219e800fa85bb3f20c27d4d569218153d858c100f357c5c05f0915ec"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "FAILED",
+          "at": "2026-08-29T19:54:00.000Z",
+          "evidenceSha256": [
+            "3672e5b1219e800fa85bb3f20c27d4d569218153d858c100f357c5c05f0915ec"
+          ],
+          "reason": "Pre-write root-lineage validation rejected the draft batch because the config used filesystem byte hashes instead of the execution manifest and research-normalization artifacts canonical internal hashes; no seed or database writes occurred."
+        }
+      ]
+    },
+    {
+      "batchId": "batch-0264-0268-v2",
+      "state": "FAILED",
+      "taskIds": [
+        "ledger:0264:red-de-carreteras-de-occidente-s-a-b-de-c-v:3ba7cbb5",
+        "ledger:0265:wecom-fiber:efb4f3b9",
+        "ledger:0266:channelview-cogeneration:a4e4cfd5",
+        "ledger:0267:cyrusone:541adafa",
+        "ledger:0268:hess-midstream:b85ab916"
+      ],
+      "taskIndexes": [
+        264,
+        265,
+        266,
+        267,
+        268
+      ],
+      "createdAt": "2026-08-29T19:54:01.000Z",
+      "updatedAt": "2026-08-29T19:59:00.000Z",
+      "completedAt": "2026-08-29T19:59:00.000Z",
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0264-0268-v2/batch-manifest.json",
+        "sha256": "f999a77d2f76882cfeabba54655ceb54aa92efd1982bf72662c41c102531d3da"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": "Pre-write dry-run rejected the former RCO owner because Goldman Sachs Infrastructure Partners was used as managerName while the linked canonical organization is Goldman Sachs Asset Management; no seed or database writes occurred.",
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-29T19:54:01.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-29T19:56:00.000Z",
+          "evidenceSha256": [
+            "f999a77d2f76882cfeabba54655ceb54aa92efd1982bf72662c41c102531d3da"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "FAILED",
+          "at": "2026-08-29T19:59:00.000Z",
+          "evidenceSha256": [
+            "f999a77d2f76882cfeabba54655ceb54aa92efd1982bf72662c41c102531d3da"
+          ],
+          "reason": "Pre-write dry-run rejected the former RCO owner because Goldman Sachs Infrastructure Partners was used as managerName while the linked canonical organization is Goldman Sachs Asset Management; no seed or database writes occurred."
+        }
+      ]
+    },
+    {
+      "batchId": "batch-0264-0268-v3",
+      "state": "FAILED",
+      "taskIds": [
+        "ledger:0264:red-de-carreteras-de-occidente-s-a-b-de-c-v:3ba7cbb5",
+        "ledger:0265:wecom-fiber:efb4f3b9",
+        "ledger:0266:channelview-cogeneration:a4e4cfd5",
+        "ledger:0267:cyrusone:541adafa",
+        "ledger:0268:hess-midstream:b85ab916"
+      ],
+      "taskIndexes": [
+        264,
+        265,
+        266,
+        267,
+        268
+      ],
+      "createdAt": "2026-08-29T19:59:01.000Z",
+      "updatedAt": "2026-08-29T20:04:00.000Z",
+      "completedAt": "2026-08-29T20:04:00.000Z",
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0264-0268-v3/batch-manifest.json",
+        "sha256": "088e993c7bda422ba50ee455625cc4cc56af3c83c13c13ac748e553b41353de1"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": "Pre-write dry-run rejected expanded Global Infrastructure Partners manager labels against the repository canonical organization name GIP for Channelview and CyrusOne; no seed or database writes occurred.",
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-29T19:59:01.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-29T20:01:00.000Z",
+          "evidenceSha256": [
+            "088e993c7bda422ba50ee455625cc4cc56af3c83c13c13ac748e553b41353de1"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "FAILED",
+          "at": "2026-08-29T20:04:00.000Z",
+          "evidenceSha256": [
+            "088e993c7bda422ba50ee455625cc4cc56af3c83c13c13ac748e553b41353de1"
+          ],
+          "reason": "Pre-write dry-run rejected expanded Global Infrastructure Partners manager labels against the repository canonical organization name GIP for Channelview and CyrusOne; no seed or database writes occurred."
+        }
+      ]
+    },
+    {
+      "batchId": "batch-0264-0268-v4",
+      "state": "READY",
+      "taskIds": [
+        "ledger:0264:red-de-carreteras-de-occidente-s-a-b-de-c-v:3ba7cbb5",
+        "ledger:0265:wecom-fiber:efb4f3b9",
+        "ledger:0266:channelview-cogeneration:a4e4cfd5",
+        "ledger:0267:cyrusone:541adafa",
+        "ledger:0268:hess-midstream:b85ab916"
+      ],
+      "taskIndexes": [
+        264,
+        265,
+        266,
+        267,
+        268
+      ],
+      "createdAt": "2026-08-29T20:04:01.000Z",
+      "updatedAt": "2026-08-29T20:06:00.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0264-0268-v4/batch-manifest.json",
+        "sha256": "c7f145053fa703b88e9896da2170258b4c0a647fe12a235ee4cec68f38986630"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-29T20:04:01.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-29T20:06:00.000Z",
+          "evidenceSha256": [
+            "c7f145053fa703b88e9896da2170258b4c0a647fe12a235ee4cec68f38986630"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "d3a37e3c2ebfcc527fa55e3ed4418cfae5f63b0e8d3d773b5db56bb14a7f6de1"
+  "ledgerSha256": "ebb3eb76e577381f9e13a5869f2ca34977c8ab752454f88410d4e67a788f8f6e"
 }

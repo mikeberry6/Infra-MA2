@@ -302,6 +302,16 @@ const approvedOwnershipOrganizationProvisioning = {
   "Haddington Ventures": "FUND_MANAGER",
   "A.P. Moller-Maersk": "CORPORATE",
   "Littlejohn & Co.": "FUND_MANAGER",
+  "Multiple Mexican AFORES": "PENSION",
+  "Empresas ICA": "CORPORATE",
+  "ArmaVir Partners / Simple Networks": "FUND_MANAGER",
+  "Wecom founders": "OTHER",
+  "Elliott Investment Management": "FUND_MANAGER",
+  "Fortistar": "FUND_MANAGER",
+  "Reliant Energy": "CORPORATE",
+  "CyrusOne founders and management": "OTHER",
+  "ABRY Partners": "FUND_MANAGER",
+  "Cincinnati Bell": "CORPORATE",
 } as const;
 
 export function ownershipOrganizationTypes(

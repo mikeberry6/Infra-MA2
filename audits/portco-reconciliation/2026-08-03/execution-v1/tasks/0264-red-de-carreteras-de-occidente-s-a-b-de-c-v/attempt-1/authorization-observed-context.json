@@ -1,0 +1,291 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0264:red-de-carreteras-de-occidente-s-a-b-de-c-v:3ba7cbb5",
+  "taskIndex": 264,
+  "companyName": "Red de Carreteras de Occidente, S.A.B. de C.V.",
+  "generatedAt": "2026-08-29T19:48:09.873Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0264-red-de-carreteras-de-occidente-s-a-b-de-c-v/attempt-1/authorization-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 264,
+    "taskId": "ledger:0264:red-de-carreteras-de-occidente-s-a-b-de-c-v:3ba7cbb5",
+    "canonicalKey": "red-de-carreteras-de-occidente-s-a-b-de-c-v|mexico",
+    "companyName": "Red de Carreteras de Occidente, S.A.B. de C.V.",
+    "country": "Mexico",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 47,
+    "managers": [
+      "GIC"
+    ],
+    "actionScopes": {
+      "company": [
+        "CORRECT_COMPANY"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "047-gic:holding:008:red-de-carreteras-de-occidente-s-a-b-de-c-v"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjgc300yjivhejf598csv"
+    ],
+    "seedKeys": [
+      "red de carreteras de occidente, s.a.b. de c.v.|Mexico"
+    ],
+    "evidenceUrls": [
+      "https://redviacorta.mx/acerca-de-nosotros",
+      "https://www.abertis.com/news/abertis-y-gic-cierran-la-compra-del-72-de-red-de-/?lang=en"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; CORRECT_COMPANY requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjgc300yjivhejf598csv",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "red-de-carreteras-de-occidente-s-a-b-de-c-v|mexico",
+  "targetCompanyImage": {
+    "id": "cmrxpjgc300yjivhejf598csv",
+    "name": "Red de Carreteras de Occidente, S.A.B. de C.V.",
+    "aliases": [],
+    "sector": "TRANSPORTATION",
+    "subsector": "Toll road operator",
+    "region": "NORTH_AMERICA",
+    "country": "Mexico",
+    "countryTags": [
+      "Mexico"
+    ],
+    "description": "Red de Carreteras de Occidente operates concessioned toll roads and related mobility services in western and central Mexico. Its customers are passenger and freight users moving through one of the country's main industrial and logistics corridors. The operating model is asset-heavy and concession based, with cash flow generated from toll collection and associated road services over long asset lives. Recent company materials describe more than 1,100 kilometers of managed highways, while transaction materials at the time of the Abertis and GIC acquisition described the asset as one of Mexico's largest motorway operators. RCO was constituted in 2007, and Abertis and GIC completed the acquisition of 72.3% of the company in 2020, with GIC disclosed at 21% of the equity.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2007,
+    "headquarters": "Jalisco, Michoacán, Guanajuato, Aguascalientes, and Zacatecas",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk21s01wxivhej5fjim7z",
+        "managerName": "GIC",
+        "organizationName": "GIC",
+        "fundName": "GIC Infrastructure",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2020,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplszj0446ivhe49ntmlx3",
+        "date": "2007",
+        "event": "Red de Carreteras de Occidente, S.A.B. de C.V. was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2007-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplt050447ivhewoe5ij5z",
+        "date": "Aug 13, 2007",
+        "event": "RCO was constituted in Mexico City.",
+        "category": "FOUNDING",
+        "sortDate": "2007-08-13T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplt0o0448ivheiohvt0rn",
+        "date": "2020",
+        "event": "The acquisition disclosed Abertis at 51.3% and GIC at 21.0%, with the remainder held by local investors and pension funds.",
+        "category": "ACQUISITION",
+        "sortDate": "2020-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplt180449ivheya96dn8o",
+        "date": "Jun 5, 2020",
+        "event": "Abertis and GIC announced closing of their acquisition of 72.3% of RCO.",
+        "category": "ACQUISITION",
+        "sortDate": "2020-06-05T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpr8440ar4ivhe0mqfb533",
+        "label": "Redviacorta — Red de Carreteras de Occidente, S.A.B. de C.V.",
+        "url": "https://redviacorta.mx/acerca-de-nosotros",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Redviacorta — Red de Carreteras de Occidente, S.A.B. de C.V.",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpr85d0ar6ivhec7h1hpuq",
+        "label": "Close date source — GIC — Red de Carreteras de Occidente, S.A.B. de C.V.",
+        "url": "https://www.abertis.com/news/abertis-y-gic-cierran-la-compra-del-72-de-red-de-/?lang=en",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "GIC closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr86p0ar8ivhez22zf53a",
+        "label": "Mundys — Red de Carreteras de Occidente, S.A.B. de C.V.",
+        "url": "https://www.mundys.com/sites/default/files/documents/Press%20Release-2020-06-04-1043.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Mundys — Red de Carreteras de Occidente, S.A.B. de C.V.",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr87n0araivhe1w6xvum0",
+        "label": "Fitchratings — Red de Carreteras de Occidente, S.A.B. de C.V.",
+        "url": "https://www.fitchratings.com/research/infrastructure-project-finance/fitch-affirms-red-de-carreteras-de-occidente-sr-secured-notes-at-bbb-outlook-stable-07-03-2025",
+        "sourceType": "ARTICLE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Fitchratings financing or public filing",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Red de Carreteras de Occidente, S.A.B. de C.V.",
+    "investmentFirm": "GIC",
+    "sector": "Transportation",
+    "subsector": "Toll road operator",
+    "region": "North America",
+    "country": "Mexico",
+    "ownershipVehicle": "n.a.",
+    "description": "Red de Carreteras de Occidente operates concessioned toll roads and related mobility services in western and central Mexico. Its customers are passenger and freight users moving through one of the country's main industrial and logistics corridors. The operating model is asset-heavy and concession based, with cash flow generated from toll collection and associated road services over long asset lives. Recent company materials describe more than 1,100 kilometers of managed highways, while transaction materials at the time of the Abertis and GIC acquisition described the asset as one of Mexico's largest motorway operators. RCO was constituted in 2007, and Abertis and GIC completed the acquisition of 72.3% of the company in 2020, with GIC disclosed at 21% of the equity.",
+    "status": "Active",
+    "countryTags": [
+      "Mexico"
+    ],
+    "yearFounded": 2007,
+    "investmentYear": 2020,
+    "headquarters": "Jalisco, Michoacán, Guanajuato, Aguascalientes, and Zacatecas",
+    "milestones": [
+      {
+        "date": "2007",
+        "event": "Red de Carreteras de Occidente, S.A.B. de C.V. was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "Aug 13, 2007",
+        "event": "RCO was constituted in Mexico City.",
+        "category": "Founding"
+      },
+      {
+        "date": "2020",
+        "event": "The acquisition disclosed Abertis at 51.3% and GIC at 21.0%, with the remainder held by local investors and pension funds.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Jun 5, 2020",
+        "event": "Abertis and GIC announced closing of their acquisition of 72.3% of RCO.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Redviacorta — Red de Carreteras de Occidente, S.A.B. de C.V.",
+        "url": "https://redviacorta.mx/acerca-de-nosotros",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Close date source — GIC — Red de Carreteras de Occidente, S.A.B. de C.V.",
+        "url": "https://www.abertis.com/news/abertis-y-gic-cierran-la-compra-del-72-de-red-de-/?lang=en",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Mundys — Red de Carreteras de Occidente, S.A.B. de C.V.",
+        "url": "https://www.mundys.com/sites/default/files/documents/Press%20Release-2020-06-04-1043.pdf",
+        "type": "PRESENTATION"
+      },
+      {
+        "label": "Fitchratings — Red de Carreteras de Occidente, S.A.B. de C.V.",
+        "url": "https://www.fitchratings.com/research/infrastructure-project-finance/fitch-affirms-red-de-carreteras-de-occidente-sr-secured-notes-at-bbb-outlook-stable-07-03-2025",
+        "type": "ARTICLE",
+        "purpose": "FINANCING_FILINGS"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "GIC",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2020,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj2gj00dkivhejraeavgi",
+        "fundName": "GIC Infrastructure",
+        "managerId": "cmrxpi8wm0022ivhessbkv786",
+        "updatedAt": "2026-07-23T16:09:57.043Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi8wm0022ivhessbkv786",
+        "name": "GIC",
+        "updatedAt": "2026-07-23T16:09:18.742Z"
+      },
+      {
+        "id": "cmrxpi91j0024ivheufpwts5g",
+        "name": "Goldman Sachs Asset Management",
+        "updatedAt": "2026-07-23T16:09:18.919Z"
+      },
+      {
+        "id": "cmrxpivax0093ivhe6wvvu4i5",
+        "name": "Abertis",
+        "updatedAt": "2026-07-23T16:09:47.769Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0264:red-de-carreteras-de-occidente-s-a-b-de-c-v:3ba7cbb5",
+    "taskIndex": 264,
+    "canonicalKey": "red-de-carreteras-de-occidente-s-a-b-de-c-v|mexico",
+    "capturedAt": "2026-08-29T19:48:09.873Z",
+    "databaseRevision": "revision:d793d94dd22f1eff32a9072fc6071339f840d4484f4fa352dc11cda506337539",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "3ac84384892759ecd30491c0621143f8fe292ee1826ab023763b660ceb2197cb",
+    "productionSnapshotSha256": "554ebfdf8994d774643d7261428c3dc284f5a1f097be724456396c9a24817d51",
+    "targetCompanySnapshotSha256": "af8d06c06687d8e4aa12cfefda9cceaacdcead581412383286ddbbb8625324d1",
+    "seedEntrySha256": "421b48ee1dcabb908660555fc7f1bf10acafda0f1d2e6c08d3d6df92cbd431c3",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "321510c18793c1aced966f6cccf7638041b4b27fae42d048d82a56d13025558d",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "f1029ad7656a4216be10729f35b734e92ef6bc394244201bc4d2b080e7513ef3",
+      "organizationsSha256": "a5eb0a0269a68148a38ceb6602844e933088238532998fd0cd51ad6ce22ec5b3",
+      "citationsSha256": "6797c1cc323503cf5f609592920d2a81c4e4707c857bc3998b6e00dcc8cc2edc",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "c9b6cb9559b5a92f5532e0ef7e9141065cf00cfa98ebcc58a436cb07292a222d",
+    "stateSha256": "373b7820659b2ee88ad0e0330078304f28b1964569d8633acba390b6c844bcee",
+    "taskSnapshotSha256": "576719a290505ec0b63d0817b2ebe20f81bf517faf614a9c854ba6ac73c07e09"
+  },
+  "contextSha256": "ce0c4a23376f1cdf701a7f0198a97234047680b886df23cc8538038ae0b62971"
+}

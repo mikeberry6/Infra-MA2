@@ -1,0 +1,278 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0266:channelview-cogeneration:a4e4cfd5",
+  "taskIndex": 266,
+  "asOfDate": "2026-08-29",
+  "generatedAt": "2026-08-29T19:41:02.000Z",
+  "canonicalKey": "channelview-cogeneration|united-states",
+  "companyName": "Channelview Cogeneration",
+  "actions": [
+    "CREATE_COMPANY"
+  ],
+  "sourceHoldingIds": [
+    "048-global-infrastructure-partners:holding:011:channelview-cogeneration"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Create one standalone Channelview Cogeneration asset record while correcting the stale census implication that GIP remains a current owner. GIP and Fortistar acquired the plant in 2008 and fully exited to Energy Investors Funds in 2014. Ares subsequently became the fund manager and retained 3% when Elliott acquired 97% in 2025. BlackRock's 2024 acquisition of GIP's manager occurred a decade after the asset exit and is not a Channelview ownership transfer.",
+  "evidence": [
+    {
+      "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B70A8259D-0000-CC2D-ADEE-B0DFFB934636%7D&DocTitle=Joint+Petition+for+Declaratory+Ruling+or+Authorization+under+Section+70+PSL",
+      "purpose": "Current ownership and legal chain",
+      "supports": [
+        "Elliott owns 97% and the Ares-managed vehicle retains 3%",
+        "The legal ownership chain terminates at EIF Channelview Cogeneration, LLC"
+      ]
+    },
+    {
+      "url": "https://www.global-infra.com/portfolio-page/channelview-cogeneration/",
+      "purpose": "GIP realized status",
+      "supports": [
+        "GIP classifies Channelview as realized rather than current"
+      ]
+    },
+    {
+      "url": "https://www.infrapppworld.com/news/gip-and-fortistar-sell-u-s-power-plant",
+      "purpose": "2014 GIP and Fortistar exit",
+      "supports": [
+        "Energy Investors Funds completed its acquisition on January 10, 2014",
+        "GIP and Fortistar exited the plant"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "bb59530841115f65b2f6cb1e304b53888ef51f3df42af12d912d039f9fea41cc",
+  "currentCompanySnapshotSha256": null,
+  "executionLock": {
+    "taskSnapshotSha256": "b9808b8db713dea02407a3ea3d8e983813fe32a09427577564185a10284e79fe",
+    "taskStateSha256": "a2ef1afdc9f59bd51cf521a0aa46c597ed7972b2051ad921e8df726b8edc55e6",
+    "taskDependencySha256": "672ecc09ee30ee8829e81414eaa68acb191256845f9046e391e35288d8ba1868",
+    "seedEntrySha256": null,
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "e3a33cf37b831d45d8091ee7402db5933e62e0cf106db6602ab0495f3e095bfb",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi48n000mivhewkoz0k55",
+        "name": "Ares Management",
+        "updatedAt": "2026-07-23T16:09:12.695Z"
+      },
+      {
+        "id": "cmrxpij5s005aivhe70jwqccm",
+        "name": "GIP",
+        "updatedAt": "2026-07-23T16:09:32.032Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": null,
+  "beforeImageSha256": null,
+  "afterImage": {
+    "id": null,
+    "name": "Channelview Cogeneration",
+    "aliases": [
+      "EIF Channelview Cogeneration, LLC",
+      "GIM Channelview Cogeneration, LLC",
+      "Channelview Cogeneration Plant",
+      "EIA Plant 55187"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Natural-gas cogeneration",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Channelview Cogeneration is an operating natural-gas-fired combined-cycle cogeneration plant at 8580 Sheldon Road in Channelview, Texas. The facility supplies steam and part of its electricity to the adjacent Equistar Chemicals / LyondellBasell complex and sells excess power into ERCOT. Current operating scope is reported at approximately 851 MW, while EIA-derived technical figures use different nameplate and summer-capacity conventions. Elliott Investment Management acquired 97% in July 2025 and the Ares-managed EIF United States Power Fund IV structure retained 3%. GIP and Fortistar were former owners from 2008 until their completed 2014 exit. BlackRock's later acquisition of GIP's manager did not transfer the plant, and no subsequent sale, shutdown or signed pending ownership transaction was identified through August 29, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2001,
+    "headquarters": "Channelview, Texas",
+    "lastVerifiedAt": "2026-08-29T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": null,
+        "managerName": "Elliott Investment Management",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Elliott Associates, L.P. and Elliott International, L.P. via Chip Energy Investor LLC and EIF Channelview, LLC",
+        "stake": "97%",
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Ares Management",
+        "organizationName": "Ares Management",
+        "fundName": null,
+        "vehicleName": "EIF United States Power Fund IV, L.P. via Ares Channelview Acquisition L.P. / EIF Channelview, LLC",
+        "stake": "3% current; 100% from the 2014 acquisition until the 2025 Elliott transaction",
+        "investmentYear": 2014,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "GIP",
+        "organizationName": "GIP",
+        "fundName": null,
+        "vehicleName": "GIM Channelview Cogeneration, LLC",
+        "stake": "90%",
+        "investmentYear": 2008,
+        "exitYear": 2014,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      },
+      {
+        "id": null,
+        "managerName": "Fortistar",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "GIM Channelview Cogeneration, LLC",
+        "stake": "10%",
+        "investmentYear": 2008,
+        "exitYear": 2014,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      },
+      {
+        "id": null,
+        "managerName": "Reliant Energy",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Reliant Energy Channelview LP and related project entities",
+        "stake": "100% control",
+        "investmentYear": 2001,
+        "exitYear": 2008,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": null,
+        "date": "Jun 2002",
+        "event": "The full Channelview Cogeneration plant entered commercial service under Reliant Energy.",
+        "category": "FOUNDING",
+        "sortDate": "2002-06-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1126294/000095012310016821/h69489exv10w1wb.htm"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Jul 2008",
+        "event": "GIP and Fortistar completed their acquisition of Channelview with 90% and 10% interests, respectively.",
+        "category": "ACQUISITION",
+        "sortDate": "2008-07-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.wsj.com/articles/DJFLBO0020130719e97jbhkmq"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Jan 10, 2014",
+        "event": "Energy Investors Funds completed its acquisition of Channelview; GIP and Fortistar exited the plant.",
+        "category": "ACQUISITION",
+        "sortDate": "2014-01-10T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.infrapppworld.com/news/gip-and-fortistar-sell-u-s-power-plant"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Jul 2025",
+        "event": "Elliott Investment Management acquired 97% of the Channelview ownership structure and the Ares-managed vehicle retained 3%.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-07-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B70A8259D-0000-CC2D-ADEE-B0DFFB934636%7D&DocTitle=Joint+Petition+for+Declaratory+Ruling+or+Authorization+under+Section+70+PSL",
+          "https://www.cahill.com/news/firm-news/2025-07-18-cahill-advises-administrative-agent-and-financing-sources-on-eif-channelview-cogeneration-llc-260-million-financing"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": null,
+        "label": "New York DPS — Channelview ownership filing",
+        "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B70A8259D-0000-CC2D-ADEE-B0DFFB934636%7D&DocTitle=Joint+Petition+for+Declaratory+Ruling+or+Authorization+under+Section+70+PSL",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current Elliott 97% and Ares-managed 3% interests and legal ownership chain",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "GIP — Channelview realized portfolio",
+        "url": "https://www.global-infra.com/portfolio-page/channelview-cogeneration/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "GIP's realized rather than current Channelview classification",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "SEC — Reliant Channelview schedule",
+        "url": "https://www.sec.gov/Archives/edgar/data/1126294/000095012310016821/h69489exv10w1wb.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Reliant project entities and early operating history",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Wall Street Journal — Channelview ownership history",
+        "url": "https://www.wsj.com/articles/DJFLBO0020130719e97jbhkmq",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "GIP and Fortistar 90% and 10% ownership stakes",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "InfraPPP — Channelview 2014 sale",
+        "url": "https://www.infrapppworld.com/news/gip-and-fortistar-sell-u-s-power-plant",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "January 10, 2014 EIF acquisition close and GIP and Fortistar exit",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Cahill — Channelview 2025 financing",
+        "url": "https://www.cahill.com/news/firm-news/2025-07-18-cahill-advises-administrative-agent-and-financing-sources-on-eif-channelview-cogeneration-llc-260-million-financing",
+        "sourceType": "ARTICLE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "EIF Channelview legal identity and 2025 transaction context",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "GridInfo — Channelview plant profile",
+        "url": "https://www.gridinfo.com/plant/channelview-cogeneration-plant/55187",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Plant location, technology, capacity conventions and operating status",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "3fa9f942443f0537f67e6ad8552cf6a526bec38da3aa35929ba5902f390ba634",
+  "proposalSha256": "ac68049d9b82051fda78df2b740e1f5e223b3ca2ec5e2f21907e07c3d8d2e6bc"
+}

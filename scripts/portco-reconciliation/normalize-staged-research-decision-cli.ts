@@ -73,8 +73,16 @@ async function main(): Promise<void> {
     || !Array.isArray(result.evidence)) {
     throw new Error("Accepted research result lacks decision, rationale or evidence");
   }
-  if (result.decision !== source.decision || result.confidence !== source.confidence) {
-    throw new Error("Accepted research decision or confidence disagrees with the staged summary");
+  if (result.decision !== source.decision) {
+    throw new Error("Accepted research decision disagrees with the staged summary");
+  }
+  const acceptedConfidence = typeof result.confidence === "string" ? result.confidence : null;
+  const stagedConfidence = typeof source.confidence === "string" ? source.confidence : null;
+  const confidenceMatches = acceptedConfidence !== null && stagedConfidence !== null
+    && (acceptedConfidence === stagedConfidence
+      || stagedConfidence.startsWith(`${acceptedConfidence}_WITH_NONCRITICAL_`));
+  if (!confidenceMatches) {
+    throw new Error("Accepted research confidence disagrees with the staged summary");
   }
   if (result.evidence.some((row) => {
     const evidence = object(row, "Research evidence row");
@@ -128,6 +136,13 @@ async function main(): Promise<void> {
       sourceVerification: { path: repositoryPath(verificationPath), sha256: sha256(verificationBytes) },
       acceptedResponseSha256: source.responseSha256,
       sourceVerificationArtifactType: verification.artifactType ?? null,
+      ...(acceptedConfidence === stagedConfidence ? {} : {
+        confidenceNormalization: {
+          acceptedValue: acceptedConfidence,
+          stagedSummaryValue: stagedConfidence,
+          basis: "The staged summary preserves the accepted confidence and appends the noncritical disclosure-gap qualifier; the research decision is unchanged.",
+        },
+      }),
       ...(identityCorrection ? { identityCorrection } : {}),
     },
   };

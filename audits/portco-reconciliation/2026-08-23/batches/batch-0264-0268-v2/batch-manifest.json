@@ -1,0 +1,407 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_MANIFEST",
+  "methodologyVersion": "PORTCO_APPLY_BATCH_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0264-0268-v2",
+  "createdAt": "2026-08-29T19:55:00.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "eb342e5f3ed9b4d061250c98a705214224e89d7deb195f154b30f625b255c641"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0264:red-de-carreteras-de-occidente-s-a-b-de-c-v:3ba7cbb5",
+      "taskIndex": 264,
+      "companyName": "Red de Carreteras de Occidente, S.A.B. de C.V.",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0264-red-de-carreteras-de-occidente-s-a-b-de-c-v-v1/proposal.json",
+        "sha256": "9e3c83396ce4de7a50364cb398595fc5ce563d5b49e9f6a8148fecacfc141e35"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0264-red-de-carreteras-de-occidente-s-a-b-de-c-v-v1.json",
+        "sha256": "a4f53e06a6fd436a17076109f0365eff980f7ca17cab0accd34ad35399f721e6"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0264-red-de-carreteras-de-occidente-s-a-b-de-c-v/attempt-1/locked-production-snapshot.json",
+        "sha256": "07bafb7498b4336f4a8d6a3cceced29b81ee13315909499bcab124d02748cf5f"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0264-red-de-carreteras-de-occidente-s-a-b-de-c-v/attempt-1/locked-task-snapshot.json",
+        "sha256": "a29cd475468db4bc61b02d5bd4b2b9c7bd076e6854201f71d79052f709c25c6c"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0264-red-de-carreteras-de-occidente-s-a-b-de-c-v/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "576719a290505ec0b63d0817b2ebe20f81bf517faf614a9c854ba6ac73c07e09"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0264-red-de-carreteras-de-occidente-s-a-b-de-c-v/attempt-1/application-research-decision.json",
+        "sha256": "5e7af953ca0a863775db36b30963ba9f48b67802664789ecd001181eada758cf"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0264-red-de-carreteras-de-occidente-s-a-b-de-c-v/attempt-1/source-verification.json",
+        "sha256": "47ec2927cddfe5df6c97d56d64c3450c65f9aa9bc22c839271a45c293c4aa171"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "373b7820659b2ee88ad0e0330078304f28b1964569d8633acba390b6c844bcee",
+      "dependencySha256": "c9b6cb9559b5a92f5532e0ef7e9141065cf00cfa98ebcc58a436cb07292a222d",
+      "afterImageSha256": "89600aa68131df7c49b9865bca983c0d69df9526b2ccbc9019fac83ff1d04a67",
+      "targetClaims": [
+        "canonical:red-de-carreteras-de-occidente-s-a-b-de-c-v|mexico",
+        "company:cmrxpjgc300yjivhejf598csv",
+        "relation:cmrxpk21s01wxivhej5fjim7z",
+        "relation:cmrxplszj0446ivhe49ntmlx3",
+        "relation:cmrxplt050447ivhewoe5ij5z",
+        "relation:cmrxplt0o0448ivheiohvt0rn",
+        "relation:cmrxplt180449ivheya96dn8o",
+        "relation:cmrxpr8440ar4ivhe0mqfb533",
+        "relation:cmrxpr85d0ar6ivhec7h1hpuq",
+        "relation:cmrxpr86p0ar8ivhez22zf53a",
+        "relation:cmrxpr87n0araivhe1w6xvum0",
+        "seed:red de carreteras de occidente, s.a.b. de c.v.|mexico",
+        "seed:red de carreteras de occidente, s.a.p.i. de c.v.|mexico"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://bmv.com.mx/docs-pub/eventemi/eventemi_1114252_1.pdf",
+          "label": "BMV — RCO 2021 ownership transfer notice",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://redviacorta.mx/acerca-de-nosotros",
+          "label": "Redviacorta — Red de Carreteras de Occidente, S.A.B. de C.V.",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://redviacorta.mx/documents/d/red-v%C3%ADa-corta/2026_t1-1-",
+          "label": "Red Vía Corta — 2Q 2026 report",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://www.abertis.com/filemanager/media-resource/download/4230/",
+          "label": "Abertis — 2025 annual accounts",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://www.abertis.com/news/abertis-y-gic-cierran-la-compra-del-72-de-red-de-/?lang=en",
+          "label": "Close date source — GIC — Red de Carreteras de Occidente, S.A.B. de C.V.",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.fitchratings.com/research/infrastructure-project-finance/fitch-affirms-red-de-carreteras-de-occidente-sr-secured-notes-at-bbb-outlook-stable-07-03-2025",
+          "label": "Fitchratings — Red de Carreteras de Occidente, S.A.B. de C.V.",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.milbank.com/en/news/milbank-advises-gic-in-successful-joint-acquisition-of-red-de-carreteras-de-occidente.html",
+          "label": "Milbank — GIC RCO acquisition",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.mundys.com/sites/default/files/documents/Press%20Release-2020-06-04-1043.pdf",
+          "label": "Mundys — Red de Carreteras de Occidente, S.A.B. de C.V.",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://www.redviacorta.mx/documents/d/red-v%C3%ADa-corta/2025_reporte-anual",
+          "label": "Red Vía Corta — 2025 annual report",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/885012/000090342309000865/ica6-k_1022.htm",
+          "label": "SEC — ICA 2009 RCO filing",
+          "sourceType": "SEC_FILING"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0265:wecom-fiber:efb4f3b9",
+      "taskIndex": 265,
+      "companyName": "Wecom Fiber",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0265-wecom-fiber-v1/proposal.json",
+        "sha256": "c91bfab4be037d9a9bd22b5c135a5e4ccb29614449a5ae694af1dc4fe6fb5ee3"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0265-wecom-fiber-v1.json",
+        "sha256": "b746f11c30ea9fee1332d766c9f6fe568a1c24a34f04bf723ed0ad18767d5fc9"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0265-wecom-fiber/attempt-1/locked-production-snapshot.json",
+        "sha256": "f8c09518492dda5243f3a7b22cc947b9d386a9a3759f52c9b6651c35cb38d2f1"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0265-wecom-fiber/attempt-1/locked-task-snapshot.json",
+        "sha256": "8eef30ad71ebbcdc452fb34d7fee68a59505865457ca358d887a8aabd68a773d"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0265-wecom-fiber/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "9a1247e20a5f317c533a09404efd3bc7bc748a7f65169d4e80d9ac7a247c2028"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0265-wecom-fiber/attempt-1/application-research-decision.json",
+        "sha256": "b7c00ab59e7a6c9b9c789836481ed7779302fff5b5b8ffd7a82287a348ab8086"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0265-wecom-fiber/attempt-1/source-verification.json",
+        "sha256": "b5308fe180b4c7b2c8e464d6b77c7e8403ad465b22d3454205531d078ad91653"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "f08a400ec1e4cb16ba635230cb828ece1af8336355165eee0914755f8e8258d7",
+      "dependencySha256": "85dc05ade542ae2d0de4d5c0f873b98f7aa5a26b52412ee088b03cc4065295ba",
+      "afterImageSha256": "c32ed4ed9c9da682eec1e43ac652c71e9a11a467fdd34cbdae9e4ce471ef92c2",
+      "targetClaims": [
+        "canonical:wecom-fiber|united-states",
+        "company:cmrxpjggs00ynivheegnza3qj",
+        "relation:cmrxpk25f01x4ivhev3rzw9ul",
+        "relation:cmrxpk25z01x5ivhezwl33di9",
+        "relation:cmrxpltag044mivhe8utqky30",
+        "relation:cmrxpltb0044nivhexib3ejsl",
+        "relation:cmrxpltbk044oivhe41tynz09",
+        "relation:cmrxplte4044pivhexshswvn7",
+        "relation:cmrxpr8tn0as3ivhejask6c51",
+        "relation:cmrxpr8up0as5ivhed0xyntdu",
+        "relation:cmrxpr8vv0as7ivheokdbvsg7",
+        "relation:cmrxpr8x50as9ivhehvwfv762",
+        "seed:wecom fiber|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://docs.fcc.gov/public/attachments/DA-24-820A1.pdf",
+          "label": "Investment date source — GIC — Wecom Fiber",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://docs.fcc.gov/public/attachments/DOC-397850A1.pdf",
+          "label": "Investment structure source — GIC — Wecom Fiber",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://docs.fcc.gov/public/attachments/DOC-405049A1.txt",
+          "label": "FCC — Wecom license-assignment consent",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://public.destinyhosted.com/yavapdocs/2025/BOS/20250917_1986/19761_Financial_Statements_-_Wecom_and_Subsidiaries.pdf",
+          "label": "Wecom — audited financial statements",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://wecomfiber.com/wecom-and-searchlight-capital-partners/",
+          "label": "Announcement date source — Searchlight — Wecom Fiber",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://wecomfiber.com/wecom-fiber-names-kevin-stamey-chief-operating-officer-to-lead-arizona-fiber-buildout/",
+          "label": "Wecom — 2026 fiber buildout update",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.lw.com/en/news/latham-watkins-advises-searchlight-capital-partners-on-strategic-investment-in-wecom",
+          "label": "Announcement date source — Searchlight — Wecom Fiber",
+          "sourceType": "PRESS_RELEASE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0266:channelview-cogeneration:a4e4cfd5",
+      "taskIndex": 266,
+      "companyName": "Channelview Cogeneration",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0266-channelview-cogeneration-v1/proposal.json",
+        "sha256": "c9f55628a22c4e772ce83bc79999a91b2d3bd70e6b566bef338ccf8ddc456d84"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0266-channelview-cogeneration-v1.json",
+        "sha256": "6b6a6956f2427d19c74846aa62311b0fbbbcfae58163c0916f517605227a9b01"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0266-channelview-cogeneration/attempt-1/locked-production-snapshot.json",
+        "sha256": "bb59530841115f65b2f6cb1e304b53888ef51f3df42af12d912d039f9fea41cc"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0266-channelview-cogeneration/attempt-1/locked-task-snapshot.json",
+        "sha256": "b9808b8db713dea02407a3ea3d8e983813fe32a09427577564185a10284e79fe"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0266-channelview-cogeneration/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "432f4c365000215815d0f77bea2b13c5dcaa720432cb8438ca6a14ee6712314c"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0266-channelview-cogeneration/attempt-1/application-research-decision.json",
+        "sha256": "b93b910e3d9e97d1a8e6cbeb18b22de2f5cd49634351fa695142a52306dc128c"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0266-channelview-cogeneration/attempt-1/source-verification.json",
+        "sha256": "46d2419d1f7628d5698d5bd91e17a3398bb045724d0c19a82b64684cc5ce7e26"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "a2ef1afdc9f59bd51cf521a0aa46c597ed7972b2051ad921e8df726b8edc55e6",
+      "dependencySha256": "672ecc09ee30ee8829e81414eaa68acb191256845f9046e391e35288d8ba1868",
+      "afterImageSha256": "6bf73dd7a4536e63ed38acb8d9b697380a73039030ba90b1e5eff2b4364fc866",
+      "targetClaims": [
+        "canonical:channelview-cogeneration|united-states",
+        "seed:channelview cogeneration|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B70A8259D-0000-CC2D-ADEE-B0DFFB934636%7D&DocTitle=Joint+Petition+for+Declaratory+Ruling+or+Authorization+under+Section+70+PSL",
+          "label": "New York DPS — Channelview ownership filing",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.cahill.com/news/firm-news/2025-07-18-cahill-advises-administrative-agent-and-financing-sources-on-eif-channelview-cogeneration-llc-260-million-financing",
+          "label": "Cahill — Channelview 2025 financing",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.global-infra.com/portfolio-page/channelview-cogeneration/",
+          "label": "GIP — Channelview realized portfolio",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.gridinfo.com/plant/channelview-cogeneration-plant/55187",
+          "label": "GridInfo — Channelview plant profile",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.infrapppworld.com/news/gip-and-fortistar-sell-u-s-power-plant",
+          "label": "InfraPPP — Channelview 2014 sale",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1126294/000095012310016821/h69489exv10w1wb.htm",
+          "label": "SEC — Reliant Channelview schedule",
+          "sourceType": "SEC_FILING"
+        },
+        {
+          "url": "https://www.wsj.com/articles/DJFLBO0020130719e97jbhkmq",
+          "label": "Wall Street Journal — Channelview ownership history",
+          "sourceType": "ARTICLE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0267:cyrusone:541adafa",
+      "taskIndex": 267,
+      "companyName": "CyrusOne",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0267-cyrusone-v1/proposal.json",
+        "sha256": "300eb2ce1ed4846d3cf4ff86e2284c1ba5acf0f4a146e8fb9911c747b93af8bc"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0267-cyrusone-v1.json",
+        "sha256": "50d5ce3aebf8273526ea7fb6c58df8770f305ef3cb7ecc421b9dde85f7ea926b"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0267-cyrusone/attempt-1/locked-production-snapshot.json",
+        "sha256": "91e6bc082e845817b8d73fe736178b7641b2a0434509093706a81d2f4d434afe"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0267-cyrusone/attempt-1/locked-task-snapshot.json",
+        "sha256": "6b2df9ff5ad548910a73214a7b65fa811ad43621068e57a9e3684e064a008aae"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0267-cyrusone/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "8852c2ad1b49f2dd3d66f94c5cf751c735ea676bd31ae6747dfc5814beceda51"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0267-cyrusone/attempt-1/application-research-decision.json",
+        "sha256": "9bc54df5511de4b41a843f9d648b5e3ddea0af0ad723d9a35970cf2c16947d0a"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0267-cyrusone/attempt-1/source-verification.json",
+        "sha256": "6a8e7564a0dd6487cb208ebae54bd0475706a502e55efbccef39f51d4bd02505"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "b4130e9e4d627e6248b0acf45382457245442a5defc3abce0bdebe4805433252",
+      "dependencySha256": "735db4ca3ae14f970fc314cfb87a9ea4544dfaf8fc4bc6d210c4ad067b605262",
+      "afterImageSha256": "b02f605d0fd58244fc323a960093d060f2cdea5de8e90e9522961a824b6a3d8b",
+      "targetClaims": [
+        "canonical:cyrusone|united-states",
+        "company:cmrxpjjte013vivhep3ejd8c0",
+        "relation:cmrxpk5sc022pivhejivt66fy",
+        "relation:cmrxpm7bq04kxivher2jmu7mv",
+        "relation:cmrxpm7ca04kyivhera3d3dh2",
+        "relation:cmrxprx800bsvivhe74ay59zh",
+        "relation:cmrxprx900bsxivhenevv4842",
+        "relation:cmrxprx9y0bszivhe6ag3dtol",
+        "relation:cmrxprxb10bt1ivhe2ks6ti0c",
+        "seed:cyrusone|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://www.cyrusone.com/",
+          "label": "Cyrusone — CyrusOne",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.cyrusone.com/company/about",
+          "label": "Cyrusone — CyrusOne",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.global-infra.com/additional-disclosures/",
+          "label": "GIP — Additional disclosures",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.global-infra.com/news/kkr-and-gip-complete-acquisition-of-cyrusone/",
+          "label": "Close date source — KKR / GIP — CyrusOne",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.kkr.com/invest/portfolio/heres-the-deal/cyrusone",
+          "label": "Kkr — CyrusOne",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.lobbyregister.bundestag.de/media/b7/fe/754295/256920001-Finaler-Bericht-mit-QES.pdf",
+          "label": "German Lobby Register — CyrusOne audited filing",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://www.reuters.com/legal/transactional/data-center-operator-cyrusone-plans-potential-2027-ipo-banks-pitch-roles-sources-2026-08-10/",
+          "label": "Reuters — CyrusOne exploratory IPO report",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1553023/000110465921154474/tm2134342-2_defm14a.htm",
+          "label": "SEC — CyrusOne merger proxy",
+          "sourceType": "SEC_FILING"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1553023/000119312512341645/d381409ds11.htm",
+          "label": "SEC — CyrusOne registration statement",
+          "sourceType": "SEC_FILING"
+        }
+      ]
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0268:hess-midstream:b85ab916",
+      "taskIndex": 268,
+      "companyName": "Hess Midstream",
+      "outcome": "EXCLUDED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0268-hess-midstream/attempt-1/terminal-decision.json",
+        "sha256": "a771d75fdb619326b1834ace405cc0d5c3af8ce2ac1358bfb4c0ddae4bd986f3"
+      }
+    }
+  ],
+  "collisionAnalysis": {
+    "independent": true,
+    "claimsSha256": "cd3ce8b7ea48f6cac58289b33dc42a3e60a8c1c6819dbb3c0d14a3c30bd2d225",
+    "sharedSourceUrls": [],
+    "conflicts": []
+  },
+  "batchSha256": "f999a77d2f76882cfeabba54655ceb54aa92efd1982bf72662c41c102531d3da"
+}
