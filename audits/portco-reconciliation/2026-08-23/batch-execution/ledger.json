@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-29T06:10:30Z",
-  "activeBatchId": "batch-0204-0208-v1",
+  "updatedAt": "2026-08-29T06:17:45.000Z",
+  "activeBatchId": null,
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -2401,7 +2401,7 @@
     },
     {
       "batchId": "batch-0204-0208-v1",
-      "state": "VERIFYING",
+      "state": "COMPLETED",
       "taskIds": [
         "ledger:0204:green-street-power-partners:9b141bba",
         "ledger:0205:gs-power-partners:c5899878",
@@ -2417,8 +2417,8 @@
         208
       ],
       "createdAt": "2026-08-29T05:35:22.270Z",
-      "updatedAt": "2026-08-29T06:10:30Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-29T06:17:45.000Z",
+      "completedAt": "2026-08-29T06:17:45.000Z",
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0204-0208-v1/batch-manifest.json",
         "sha256": "c90e86c3affb34263a5e3c499bd76dcc7ad39538610c9aa7640ce9896f766996"
@@ -2428,7 +2428,7 @@
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0204-0208-v1/production-apply/batch-apply-receipt.json",
         "sha256": "03eef8267cf62da5177042a00c662dcec13966e5d27961cd46ded4773958d819"
       },
-      "reason": null,
+      "reason": "Atomic receipt, two canonical after-images, three canonical redirects, two public detail APIs, two rendered drawers, retired-row absence, and exact receipt-commit deployment verification passed.",
       "history": [
         {
           "sequence": 1,
@@ -2478,9 +2478,20 @@
             "c90e86c3affb34263a5e3c499bd76dcc7ad39538610c9aa7640ce9896f766996"
           ],
           "reason": null
+        },
+        {
+          "sequence": 6,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-08-29T06:17:45.000Z",
+          "evidenceSha256": [
+            "03eef8267cf62da5177042a00c662dcec13966e5d27961cd46ded4773958d819",
+            "c90e86c3affb34263a5e3c499bd76dcc7ad39538610c9aa7640ce9896f766996"
+          ],
+          "reason": "Atomic receipt, two canonical after-images, three canonical redirects, two public detail APIs, two rendered drawers, retired-row absence, and exact receipt-commit deployment verification passed."
         }
       ]
     }
   ],
-  "ledgerSha256": "7c7255e3d9dcfdc5ed6e6062c97dc4d03577d194e5c6e75d93e545959e6aeee2"
+  "ledgerSha256": "14a860698761d1c1f630eed98b6c682bc460e60a844fa52f89d3d20075680355"
 }

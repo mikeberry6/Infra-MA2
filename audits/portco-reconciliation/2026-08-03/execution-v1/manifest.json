@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-29T05:27:33.000Z",
+  "updatedAt": "2026-08-29T06:17:30.000Z",
   "runStatus": "IDLE",
   "activeTaskId": null,
   "source": {
@@ -24396,23 +24396,44 @@
       "managerIndex": 34,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "bec75dbaf34b93f390d48d82e0c44c77bdfd8dc8ecace1ebc3d7a37dcc548cec",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-08-29T05:35:22.270Z",
+      "updatedAt": "2026-08-29T06:17:30.000Z",
+      "completedAt": "2026-08-29T06:17:30.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "f1a1309c932ad34a244a63daa3ce4769a284339050ab564d26d625e915e6c127",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0204-green-street-power-partners/attempt-1/locked-task-snapshot.json",
+          "sha256": "f1a1309c932ad34a244a63daa3ce4769a284339050ab564d26d625e915e6c127"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0204-gs-power-partners-v1/proposal.json",
+          "sha256": "1abe23079c0f88d658089f09517c3ef8587e446bd4abb9687499af2e753f6873"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0204-gs-power-partners-v1.json",
+          "sha256": "eedfc32f32564cdb61cb389cf9924de89a4edbcec6227f45807a6bc8dcf48ca4"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0204-0208-v1/production-apply/batch-apply-receipt.json#members/0/receipt",
+          "sha256": "b46f0879385d4391e77b05fa358c64535265aefdf1e4bc393b1bdaa7bd9a1f5b"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0204-gs-power-partners-v1/proposal.json#afterImage",
+          "sha256": "fc0d658ccfe4763c6928318ea011b147cd1671cf99803f19abea16ffcfe2d384"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-29T06:17:30.000Z",
+        "auditEventId": "cmtdzd0x3000ayd2brrd8vage",
+        "transactionId": "7ac329f2-3ff9-4338-9264-1d8639adeca5",
+        "receiptSha256": "b46f0879385d4391e77b05fa358c64535265aefdf1e4bc393b1bdaa7bd9a1f5b",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33237674261"
+      },
       "history": [
         {
           "sequence": 1,
@@ -24423,6 +24444,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-08-29T06:17:30.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0204-0208-v1.",
+          "taskSnapshotSha256": "f1a1309c932ad34a244a63daa3ce4769a284339050ab564d26d625e915e6c127",
+          "evidenceSha256": [
+            "03eef8267cf62da5177042a00c662dcec13966e5d27961cd46ded4773958d819",
+            "1abe23079c0f88d658089f09517c3ef8587e446bd4abb9687499af2e753f6873",
+            "b46f0879385d4391e77b05fa358c64535265aefdf1e4bc393b1bdaa7bd9a1f5b",
+            "c90e86c3affb34263a5e3c499bd76dcc7ad39538610c9aa7640ce9896f766996",
+            "eedfc32f32564cdb61cb389cf9924de89a4edbcec6227f45807a6bc8dcf48ca4",
+            "f1a1309c932ad34a244a63daa3ce4769a284339050ab564d26d625e915e6c127",
+            "fc0d658ccfe4763c6928318ea011b147cd1671cf99803f19abea16ffcfe2d384"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -24434,20 +24473,26 @@
       "managerIndex": 34,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "60f9b46556ac3ecd6f98d93cc4e9c3065cd881c489077035f0cb46a6e2ca6177",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
-      "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "status": "SUPERSEDED",
+      "attempts": 1,
+      "startedAt": "2026-08-29T05:35:22.270Z",
+      "updatedAt": "2026-08-29T06:17:30.000Z",
+      "completedAt": "2026-08-29T06:17:30.000Z",
+      "exceptionReason": "Task 204 resolves the same canonical platform and complete CVC DIF ownership judgment. GS Power Partners is the current brand of Green Street Power Partners, not a separate successor company. Task 204 keeps the existing GS Power Partners record, merges the former-name duplicate and preserves the April 2023 DIF Infrastructure VII majority investment, so task 205 would duplicate that work.",
+      "supersededByTaskId": "ledger:0204:green-street-power-partners:9b141bba",
+      "taskSnapshotSha256": "ba9942346aaa293f7ab54538af9fc1a7bf9a796fb7f3bba60527e573887547c6",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0205-gs-power-partners/attempt-1/locked-task-snapshot.json",
+          "sha256": "ba9942346aaa293f7ab54538af9fc1a7bf9a796fb7f3bba60527e573887547c6"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0205-gs-power-partners/attempt-1/terminal-decision.json",
+          "sha256": "df7071d91cf545c97b54bab47187baca1ab39daf9aa78083196c4c3e10f7e5cc"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -24461,6 +24506,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "SUPERSEDED",
+          "at": "2026-08-29T06:17:30.000Z",
+          "reason": "Task 204 resolves the same canonical platform and complete CVC DIF ownership judgment. GS Power Partners is the current brand of Green Street Power Partners, not a separate successor company. Task 204 keeps the existing GS Power Partners record, merges the former-name duplicate and preserves the April 2023 DIF Infrastructure VII majority investment, so task 205 would duplicate that work.",
+          "taskSnapshotSha256": "ba9942346aaa293f7ab54538af9fc1a7bf9a796fb7f3bba60527e573887547c6",
+          "evidenceSha256": [
+            "03eef8267cf62da5177042a00c662dcec13966e5d27961cd46ded4773958d819",
+            "ba9942346aaa293f7ab54538af9fc1a7bf9a796fb7f3bba60527e573887547c6",
+            "c90e86c3affb34263a5e3c499bd76dcc7ad39538610c9aa7640ce9896f766996",
+            "df7071d91cf545c97b54bab47187baca1ab39daf9aa78083196c4c3e10f7e5cc"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -24472,23 +24532,44 @@
       "managerIndex": 34,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "fec932a3c86655207484e32bd1043bcdd37289d185bf27ab41193704c30b8d06",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-08-29T05:35:22.270Z",
+      "updatedAt": "2026-08-29T06:17:30.000Z",
+      "completedAt": "2026-08-29T06:17:30.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "aee24d886db69735a44ad3e3e3b7802e9332cda035192c5eed15ce5d75a8c3da",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0206-jw-water-holdings/attempt-1/locked-task-snapshot.json",
+          "sha256": "aee24d886db69735a44ad3e3e3b7802e9332cda035192c5eed15ce5d75a8c3da"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0206-jw-water-holdings-v1/proposal.json",
+          "sha256": "8a20de5694747ab3bcba360d7610d753cdda5baa173262fb755c0de7fe0519c0"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0206-jw-water-holdings-v1.json",
+          "sha256": "02f4c786df8dd8bc6028069e8631065c7b621ae5841f5a90c24e5b08153f3a46"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0204-0208-v1/production-apply/batch-apply-receipt.json#members/2/receipt",
+          "sha256": "add56462878de21e27edbfaf287ac7b544d69279cfc5351910e84c9e73401b08"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0206-jw-water-holdings-v1/proposal.json#afterImage",
+          "sha256": "2c6ec9abe17b35ee356733dd9f4dd5592387750ebd74c3afa7185661e42b3465"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-29T06:17:30.000Z",
+        "auditEventId": "cmtdzd1hw000nyd2bwuh0m8tq",
+        "transactionId": "7ac329f2-3ff9-4338-9264-1d8639adeca5",
+        "receiptSha256": "add56462878de21e27edbfaf287ac7b544d69279cfc5351910e84c9e73401b08",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33237674261"
+      },
       "history": [
         {
           "sequence": 1,
@@ -24499,6 +24580,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-08-29T06:17:30.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0204-0208-v1.",
+          "taskSnapshotSha256": "aee24d886db69735a44ad3e3e3b7802e9332cda035192c5eed15ce5d75a8c3da",
+          "evidenceSha256": [
+            "02f4c786df8dd8bc6028069e8631065c7b621ae5841f5a90c24e5b08153f3a46",
+            "03eef8267cf62da5177042a00c662dcec13966e5d27961cd46ded4773958d819",
+            "2c6ec9abe17b35ee356733dd9f4dd5592387750ebd74c3afa7185661e42b3465",
+            "8a20de5694747ab3bcba360d7610d753cdda5baa173262fb755c0de7fe0519c0",
+            "add56462878de21e27edbfaf287ac7b544d69279cfc5351910e84c9e73401b08",
+            "aee24d886db69735a44ad3e3e3b7802e9332cda035192c5eed15ce5d75a8c3da",
+            "c90e86c3affb34263a5e3c499bd76dcc7ad39538610c9aa7640ce9896f766996"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -24510,20 +24609,26 @@
       "managerIndex": 34,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "83e6eabe38fe21d37a8617ee956caa207ccf5fe400c0a736fd527ac8956a7ce0",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
-      "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "status": "SUPERSEDED",
+      "attempts": 1,
+      "startedAt": "2026-08-29T05:35:22.270Z",
+      "updatedAt": "2026-08-29T06:17:30.000Z",
+      "completedAt": "2026-08-29T06:17:30.000Z",
+      "exceptionReason": "Task 206 resolves the same CVC DIF investment as one manager-level JW Water Holdings platform. Pima became a wholly owned JW subsidiary on November 20, 2024, while the Robson utilities are underlying regulated utilities and acquisition history rather than a separate PortCo. Task 207 is therefore superseded by task 206's canonical JW Water merge.",
+      "supersededByTaskId": "ledger:0206:jw-water-holdings:fc8ebab0",
+      "taskSnapshotSha256": "659303595d6f1361d301820bc9c99c3d143024580cea253f00df1c1ca073d6a2",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0207-robson-communities-utilities-pima-utility/attempt-1/locked-task-snapshot.json",
+          "sha256": "659303595d6f1361d301820bc9c99c3d143024580cea253f00df1c1ca073d6a2"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0207-robson-communities-utilities-pima-utility/attempt-1/terminal-decision.json",
+          "sha256": "7eb74aa886c13d038c47f0a7c0c49959cebd9755b3be5a1529383f925adc646b"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -24537,6 +24642,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "SUPERSEDED",
+          "at": "2026-08-29T06:17:30.000Z",
+          "reason": "Task 206 resolves the same CVC DIF investment as one manager-level JW Water Holdings platform. Pima became a wholly owned JW subsidiary on November 20, 2024, while the Robson utilities are underlying regulated utilities and acquisition history rather than a separate PortCo. Task 207 is therefore superseded by task 206's canonical JW Water merge.",
+          "taskSnapshotSha256": "659303595d6f1361d301820bc9c99c3d143024580cea253f00df1c1ca073d6a2",
+          "evidenceSha256": [
+            "03eef8267cf62da5177042a00c662dcec13966e5d27961cd46ded4773958d819",
+            "659303595d6f1361d301820bc9c99c3d143024580cea253f00df1c1ca073d6a2",
+            "7eb74aa886c13d038c47f0a7c0c49959cebd9755b3be5a1529383f925adc646b",
+            "c90e86c3affb34263a5e3c499bd76dcc7ad39538610c9aa7640ce9896f766996"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -24548,20 +24668,26 @@
       "managerIndex": 34,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "4a4a162f54e1a5388f11326ce9ded7817104a0859819fd7ace01a399dc7876a7",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
-      "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "status": "SUPERSEDED",
+      "attempts": 1,
+      "startedAt": "2026-08-29T05:35:22.270Z",
+      "updatedAt": "2026-08-29T06:17:30.000Z",
+      "completedAt": "2026-08-29T06:17:30.000Z",
+      "exceptionReason": "Task 206 resolves the Robson acquisition cohort within the single manager-level JW Water Holdings platform. CVC DIF acquired the eight Robson utilities alongside JW Water, and current company and regulatory evidence shows the utilities beneath JW rather than as an independent manager-level company. Task 208 would duplicate task 206's identity and ownership work.",
+      "supersededByTaskId": "ledger:0206:jw-water-holdings:fc8ebab0",
+      "taskSnapshotSha256": "12d3e51f18cd68640b68bfa74abbe061063e5d405847024a666409b41fb1b7d7",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0208-robson-utilities-portfolio/attempt-1/locked-task-snapshot.json",
+          "sha256": "12d3e51f18cd68640b68bfa74abbe061063e5d405847024a666409b41fb1b7d7"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0208-robson-utilities-portfolio/attempt-1/terminal-decision.json",
+          "sha256": "cf9563a8b75fe4a48753dad402ce5bc928549ee9426e5f87ea3bb6a8d2871fac"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -24575,6 +24701,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "SUPERSEDED",
+          "at": "2026-08-29T06:17:30.000Z",
+          "reason": "Task 206 resolves the Robson acquisition cohort within the single manager-level JW Water Holdings platform. CVC DIF acquired the eight Robson utilities alongside JW Water, and current company and regulatory evidence shows the utilities beneath JW rather than as an independent manager-level company. Task 208 would duplicate task 206's identity and ownership work.",
+          "taskSnapshotSha256": "12d3e51f18cd68640b68bfa74abbe061063e5d405847024a666409b41fb1b7d7",
+          "evidenceSha256": [
+            "03eef8267cf62da5177042a00c662dcec13966e5d27961cd46ded4773958d819",
+            "12d3e51f18cd68640b68bfa74abbe061063e5d405847024a666409b41fb1b7d7",
+            "c90e86c3affb34263a5e3c499bd76dcc7ad39538610c9aa7640ce9896f766996",
+            "cf9563a8b75fe4a48753dad402ce5bc928549ee9426e5f87ea3bb6a8d2871fac"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -35098,13 +35239,13 @@
       "managerIndex": null,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "4c91d23e94740025316af3e77ddb89e8311909389fd8c1d04b54e57face2c12c",
-      "status": "PENDING",
+      "status": "SUPERSEDED",
       "attempts": 0,
       "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
-      "supersededByTaskId": null,
+      "updatedAt": "2026-08-29T06:17:30.000Z",
+      "completedAt": "2026-08-29T06:17:30.000Z",
+      "exceptionReason": "Superseded by ledger:0206:jw-water-holdings:fc8ebab0; its verified batch after-image covers the same canonical identity and ownership judgment.",
+      "supersededByTaskId": "ledger:0206:jw-water-holdings:fc8ebab0",
       "taskSnapshotSha256": null,
       "artifacts": {
         "taskSnapshot": null,
@@ -35125,6 +35266,19 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "SUPERSEDED",
+          "at": "2026-08-29T06:17:30.000Z",
+          "reason": "Superseded by ledger:0206:jw-water-holdings:fc8ebab0; its verified batch after-image covers the same canonical identity and ownership judgment.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "03eef8267cf62da5177042a00c662dcec13966e5d27961cd46ded4773958d819",
+            "c90e86c3affb34263a5e3c499bd76dcc7ad39538610c9aa7640ce9896f766996"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -35711,5 +35865,5 @@
       ]
     }
   ],
-  "manifestSha256": "818421cfa38c7c031ba958c2e6ed2da011548ce4b931cf3bca62ec38df22e9da"
+  "manifestSha256": "a930d0f1990097ef8b63b44a9973bb516e5b89d946f3dbe8240600753457a226"
 }
