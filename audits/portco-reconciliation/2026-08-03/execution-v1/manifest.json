@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-29T12:01:21.428Z",
+  "updatedAt": "2026-08-29T13:55:45.000Z",
   "runStatus": "IDLE",
   "activeTaskId": null,
   "source": {
@@ -26580,23 +26580,44 @@
       "managerIndex": 43,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "754dd2e3173eede47d27877aae781dc97da1760e0aabab0553ef8d4aa7c9cbbb",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-08-29T12:09:37.000Z",
+      "updatedAt": "2026-08-29T13:55:45.000Z",
+      "completedAt": "2026-08-29T13:55:45.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "406cdeffc362211a4a33898b600a4c7ec0d5021ffeb2960014fe627390810643",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0234-crown-castle-small-cells-solutions/attempt-1/locked-task-snapshot.json",
+          "sha256": "406cdeffc362211a4a33898b600a4c7ec0d5021ffeb2960014fe627390810643"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0234-arium-networks-v2/proposal.json",
+          "sha256": "08969daad3475a675333809a9283bb704301e1c712f71e4f558c20c918bee2bf"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0234-arium-networks-v2.json",
+          "sha256": "d9166b39ce02755e4fd7717354dcfb11ef20b7989662d0ab26c85df03929a235"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0234-0238-v1/production-apply/batch-apply-receipt.json#members/0/receipt",
+          "sha256": "b42c2773b3193630cc553fe0d122e22b7bd57c61a252df7d6cdb08ee3d233861"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0234-arium-networks-v2/proposal.json#afterImage",
+          "sha256": "896729b0c6e4d314565a7f6ce638c822b24ca2887d0ba0fcf7e6de1b65846c7b"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-29T13:55:45.000Z",
+        "auditEventId": "cmtef42dt000dv32bm3s8qgt7",
+        "transactionId": "d53c9236-0835-454f-8bfb-8a9c7b6b56f5",
+        "receiptSha256": "b42c2773b3193630cc553fe0d122e22b7bd57c61a252df7d6cdb08ee3d233861",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33255037366"
+      },
       "history": [
         {
           "sequence": 1,
@@ -26607,6 +26628,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-08-29T13:55:45.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0234-0238-v1.",
+          "taskSnapshotSha256": "406cdeffc362211a4a33898b600a4c7ec0d5021ffeb2960014fe627390810643",
+          "evidenceSha256": [
+            "08969daad3475a675333809a9283bb704301e1c712f71e4f558c20c918bee2bf",
+            "1f5d431bfad6bb128cf9308c9c0af8a615a33d7002c3c0edeebcf97bcfbfef50",
+            "406cdeffc362211a4a33898b600a4c7ec0d5021ffeb2960014fe627390810643",
+            "896729b0c6e4d314565a7f6ce638c822b24ca2887d0ba0fcf7e6de1b65846c7b",
+            "a1fa32fc2233da578d6a16b61debb0d35912fc379bc7e2e3e2e4a5974cb1b30d",
+            "b42c2773b3193630cc553fe0d122e22b7bd57c61a252df7d6cdb08ee3d233861",
+            "d9166b39ce02755e4fd7717354dcfb11ef20b7989662d0ab26c85df03929a235"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -26618,23 +26657,44 @@
       "managerIndex": 43,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "40f26f13ca98e82c52d63f391707576d67431cbad16e0a34a3d5f2ff46da1de9",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-08-29T12:09:37.000Z",
+      "updatedAt": "2026-08-29T13:55:45.000Z",
+      "completedAt": "2026-08-29T13:55:45.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "7168d3754506d0382fafd191d60158624421b2662113703dec0027d72602a6b8",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0235-edgeconnex/attempt-1/locked-v4-task-snapshot.json",
+          "sha256": "7168d3754506d0382fafd191d60158624421b2662113703dec0027d72602a6b8"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0235-edgeconnex-v3/proposal.json",
+          "sha256": "6e7035288911ca92799f9d5367d3b1816d29c1b9a3be695e3e587815f1238e25"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0235-edgeconnex-v3.json",
+          "sha256": "2eb4642cb8c2c5e3f9ea2322e8974b26aabe16da24fe82d28e4a38dc6b8d27df"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0234-0238-v1/production-apply/batch-apply-receipt.json#members/1/receipt",
+          "sha256": "fac458161f055212d35c98a90b9b18954aef713d782ea1ae42787c81c984ad83"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0235-edgeconnex-v3/proposal.json#afterImage",
+          "sha256": "c4f7b27d043604b0e0f1479e51f5785a5c95a7fe4060b3ef2395c6e3ff4fdee6"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-29T13:55:45.000Z",
+        "auditEventId": "cmtef48gz000yv32bbn43xus7",
+        "transactionId": "d53c9236-0835-454f-8bfb-8a9c7b6b56f5",
+        "receiptSha256": "fac458161f055212d35c98a90b9b18954aef713d782ea1ae42787c81c984ad83",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33255037366"
+      },
       "history": [
         {
           "sequence": 1,
@@ -26645,6 +26705,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-08-29T13:55:45.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0234-0238-v1.",
+          "taskSnapshotSha256": "7168d3754506d0382fafd191d60158624421b2662113703dec0027d72602a6b8",
+          "evidenceSha256": [
+            "1f5d431bfad6bb128cf9308c9c0af8a615a33d7002c3c0edeebcf97bcfbfef50",
+            "2eb4642cb8c2c5e3f9ea2322e8974b26aabe16da24fe82d28e4a38dc6b8d27df",
+            "6e7035288911ca92799f9d5367d3b1816d29c1b9a3be695e3e587815f1238e25",
+            "7168d3754506d0382fafd191d60158624421b2662113703dec0027d72602a6b8",
+            "a1fa32fc2233da578d6a16b61debb0d35912fc379bc7e2e3e2e4a5974cb1b30d",
+            "c4f7b27d043604b0e0f1479e51f5785a5c95a7fe4060b3ef2395c6e3ff4fdee6",
+            "fac458161f055212d35c98a90b9b18954aef713d782ea1ae42787c81c984ad83"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -26656,20 +26734,26 @@
       "managerIndex": 44,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "1ccefb77654bb3eea58212e6e07ff9f334ff18a3314501b15649cf2ae1f0d107",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
+      "status": "DEFERRED",
+      "attempts": 1,
+      "startedAt": "2026-08-29T12:09:37.000Z",
+      "updatedAt": "2026-08-29T13:55:45.000Z",
+      "completedAt": "2026-08-29T13:55:45.000Z",
+      "exceptionReason": "The canonical ProjectCo identity is resolved and direct evidence supports JLIF's historical 100% interest through 2017 plus Jura's acquisition of JLIF in 2018. No direct evidence identifies whether AHA was included in Jura's 2019 sell-down or proves all current AHA/AHA Holdings shareholders, percentages and effective dates. Royal London's 2025 acquisition of Dalmore Capital and Resolis is a manager and servicing-business acquisition, not a publishable ProjectCo cap table. Current ownership must therefore be deferred rather than inferred; CVC DIF is excluded absent direct evidence.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "248efe64e8d7ab202f0c1a8ed547f38ae7a4f16f3b8ecd13d64c604471148d2b",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0236-abbotsford-regional-hospital-and-cancer-centre/attempt-1/locked-task-snapshot.json",
+          "sha256": "248efe64e8d7ab202f0c1a8ed547f38ae7a4f16f3b8ecd13d64c604471148d2b"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0236-abbotsford-regional-hospital-and-cancer-centre/attempt-1/terminal-decision.json",
+          "sha256": "4f5c7ca5bc110f6f7c3129e723ad622587b37dab751a177c2afe09d0e32ff769"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -26683,6 +26767,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-08-29T13:55:45.000Z",
+          "reason": "The canonical ProjectCo identity is resolved and direct evidence supports JLIF's historical 100% interest through 2017 plus Jura's acquisition of JLIF in 2018. No direct evidence identifies whether AHA was included in Jura's 2019 sell-down or proves all current AHA/AHA Holdings shareholders, percentages and effective dates. Royal London's 2025 acquisition of Dalmore Capital and Resolis is a manager and servicing-business acquisition, not a publishable ProjectCo cap table. Current ownership must therefore be deferred rather than inferred; CVC DIF is excluded absent direct evidence.",
+          "taskSnapshotSha256": "248efe64e8d7ab202f0c1a8ed547f38ae7a4f16f3b8ecd13d64c604471148d2b",
+          "evidenceSha256": [
+            "1f5d431bfad6bb128cf9308c9c0af8a615a33d7002c3c0edeebcf97bcfbfef50",
+            "248efe64e8d7ab202f0c1a8ed547f38ae7a4f16f3b8ecd13d64c604471148d2b",
+            "4f5c7ca5bc110f6f7c3129e723ad622587b37dab751a177c2afe09d0e32ff769",
+            "a1fa32fc2233da578d6a16b61debb0d35912fc379bc7e2e3e2e4a5974cb1b30d"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -26694,20 +26793,26 @@
       "managerIndex": 44,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "ef1588a5f567759173f01e7d66fee8ee34ce0a85f8cbd844b241cf492cd67191",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "EXCLUDED",
+      "attempts": 1,
+      "startedAt": "2026-08-29T12:09:37.000Z",
+      "updatedAt": "2026-08-29T13:55:45.000Z",
+      "completedAt": "2026-08-29T13:55:45.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "f3afb55b682f402b02bc4af30b4c429c2b9926fd5590cdd55acfd57ab3d8ec4d",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0237-andion-global/attempt-1/locked-v2-task-snapshot.json",
+          "sha256": "f3afb55b682f402b02bc4af30b4c429c2b9926fd5590cdd55acfd57ab3d8ec4d"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0237-andion-global/attempt-1/terminal-decision.json",
+          "sha256": "51611d9014acd3562533d8687ae8825c0a4a4b7311bb137729d3c705984eaefa"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -26721,6 +26826,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "EXCLUDED",
+          "at": "2026-08-29T13:55:45.000Z",
+          "reason": "The former Canadian Andion Global migrated to Luxembourg as ANDION CH4 Renewables S.A.S. and the current manager-level company is affirmatively a Luxembourg-domiciled European biomethane platform with European offices, assets and development markets. It is outside the North American census definition. Equitix Next Generation Fund remains supported as a leading existing shareholder, and no later Equitix exit was found; the exclusion is based on geography, not an inferred ownership change.",
+          "taskSnapshotSha256": "f3afb55b682f402b02bc4af30b4c429c2b9926fd5590cdd55acfd57ab3d8ec4d",
+          "evidenceSha256": [
+            "1f5d431bfad6bb128cf9308c9c0af8a615a33d7002c3c0edeebcf97bcfbfef50",
+            "51611d9014acd3562533d8687ae8825c0a4a4b7311bb137729d3c705984eaefa",
+            "a1fa32fc2233da578d6a16b61debb0d35912fc379bc7e2e3e2e4a5974cb1b30d",
+            "f3afb55b682f402b02bc4af30b4c429c2b9926fd5590cdd55acfd57ab3d8ec4d"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -26732,20 +26852,26 @@
       "managerIndex": 44,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "3ff5ebe198e2943b13c37a40aca94f11902a3cb04866d664e49f2fc0aab5f1c5",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
+      "status": "DEFERRED",
+      "attempts": 1,
+      "startedAt": "2026-08-29T12:09:37.000Z",
+      "updatedAt": "2026-08-29T13:55:45.000Z",
+      "completedAt": "2026-08-29T13:55:45.000Z",
+      "exceptionReason": "Reliable direct evidence resolves only 90% of current ProjectCo equity: Innisfree 55%, John Laing Health Montreal Limited 25%, and AtkinsRéalis 10%. The direct legal holder of the remaining 10% and that ownership period's effective date remain unproven, so a complete current ownership record cannot be published without speculation. The contemplated BBGI transaction was cancelled and creates no ownership period. KKR-managed funds are ultimate owners of John Laing rather than direct ProjectCo shareholders, and no direct current ProjectCo evidence supports Equitix or John Laing Investments Limited.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "177f615e7a542ae0d0a1b8bfb550dc5a6453119bfbbcda67fcee2bfc3acaaed7",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0238-centre-hospitalier-de-l-universite-de-montreal-chum/attempt-1/locked-task-snapshot.json",
+          "sha256": "177f615e7a542ae0d0a1b8bfb550dc5a6453119bfbbcda67fcee2bfc3acaaed7"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0238-centre-hospitalier-de-l-universite-de-montreal-chum/attempt-1/terminal-decision.json",
+          "sha256": "502a987c5a981936c04a499d8faba8834c49b103a13d5a4b694d18a4ed108747"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -26759,6 +26885,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-08-29T13:55:45.000Z",
+          "reason": "Reliable direct evidence resolves only 90% of current ProjectCo equity: Innisfree 55%, John Laing Health Montreal Limited 25%, and AtkinsRéalis 10%. The direct legal holder of the remaining 10% and that ownership period's effective date remain unproven, so a complete current ownership record cannot be published without speculation. The contemplated BBGI transaction was cancelled and creates no ownership period. KKR-managed funds are ultimate owners of John Laing rather than direct ProjectCo shareholders, and no direct current ProjectCo evidence supports Equitix or John Laing Investments Limited.",
+          "taskSnapshotSha256": "177f615e7a542ae0d0a1b8bfb550dc5a6453119bfbbcda67fcee2bfc3acaaed7",
+          "evidenceSha256": [
+            "177f615e7a542ae0d0a1b8bfb550dc5a6453119bfbbcda67fcee2bfc3acaaed7",
+            "1f5d431bfad6bb128cf9308c9c0af8a615a33d7002c3c0edeebcf97bcfbfef50",
+            "502a987c5a981936c04a499d8faba8834c49b103a13d5a4b694d18a4ed108747",
+            "a1fa32fc2233da578d6a16b61debb0d35912fc379bc7e2e3e2e4a5974cb1b30d"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -36820,5 +36961,5 @@
       ]
     }
   ],
-  "manifestSha256": "eaa99f5c00b65c8f36be7884a8bfdbca6c363e764d380d165676edfb9400a193"
+  "manifestSha256": "e2ac189dfba26b0bd7e1ae80ac10921d13b7fb69b65aa2c5e79ead1dcb6783f1"
 }

@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-29T13:38:47.000Z",
-  "activeBatchId": "batch-0234-0238-v1",
+  "updatedAt": "2026-08-29T13:55:45.000Z",
+  "activeBatchId": null,
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -3025,7 +3025,7 @@
     },
     {
       "batchId": "batch-0234-0238-v1",
-      "state": "VERIFYING_FAILED",
+      "state": "COMPLETED",
       "taskIds": [
         "ledger:0234:crown-castle-small-cells-solutions:2b7e932b",
         "ledger:0235:edgeconnex:0ea39b90",
@@ -3041,8 +3041,8 @@
         238
       ],
       "createdAt": "2026-08-29T12:09:37Z",
-      "updatedAt": "2026-08-29T13:38:47.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-29T13:55:45.000Z",
+      "completedAt": "2026-08-29T13:55:45.000Z",
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0234-0238-v1/batch-manifest.json",
         "sha256": "a1fa32fc2233da578d6a16b61debb0d35912fc379bc7e2e3e2e4a5974cb1b30d"
@@ -3052,7 +3052,7 @@
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0234-0238-v1/production-apply/batch-apply-receipt.json",
         "sha256": "1f5d431bfad6bb128cf9308c9c0af8a615a33d7002c3c0edeebcf97bcfbfef50"
       },
-      "reason": "Independent canonical API and rendered-card verification confirmed three newly created EdgeConneX ownership periods retained default or incomplete fund-attribution metadata. Arium Networks and both company identities, ownership periods, stakes, vehicles, sources, seed after-images and the atomic transaction are correct; no later bundle may start until the protected attribution-only repair and renewed rendered checks pass.",
+      "reason": null,
       "history": [
         {
           "sequence": 1,
@@ -3113,9 +3113,20 @@
             "a1fa32fc2233da578d6a16b61debb0d35912fc379bc7e2e3e2e4a5974cb1b30d"
           ],
           "reason": "Independent canonical API and rendered-card verification confirmed three newly created EdgeConneX ownership periods retained default or incomplete fund-attribution metadata. Arium Networks and both company identities, ownership periods, stakes, vehicles, sources, seed after-images and the atomic transaction are correct; no later bundle may start until the protected attribution-only repair and renewed rendered checks pass."
+        },
+        {
+          "sequence": 7,
+          "from": "VERIFYING_FAILED",
+          "to": "COMPLETED",
+          "at": "2026-08-29T13:55:45.000Z",
+          "evidenceSha256": [
+            "1f5d431bfad6bb128cf9308c9c0af8a615a33d7002c3c0edeebcf97bcfbfef50",
+            "a1fa32fc2233da578d6a16b61debb0d35912fc379bc7e2e3e2e4a5974cb1b30d"
+          ],
+          "reason": null
         }
       ]
     }
   ],
-  "ledgerSha256": "7b30511460cbecb30613965a410249973d7d256372e375998c42d01047e2ab55"
+  "ledgerSha256": "cd013de3ddb9b537a0cb84ada3bcc4fef56f54fc8b697e3737d6df5159ff313f"
 }
