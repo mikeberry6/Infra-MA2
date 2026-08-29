@@ -1,0 +1,241 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0274:alohanap:51454abf",
+  "taskIndex": 274,
+  "companyName": "AlohaNAP",
+  "asOfDate": "2026-08-19",
+  "decision": "EXCLUDED",
+  "confidence": "HIGH_WITH_NONCRITICAL_SELLER_SPV_AND_FUND_GAPS",
+  "researchOnly": true,
+  "generatedAt": "2026-08-29T20:47:00.000Z",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": {
+      "name": "AlohaNAP",
+      "canonicalKey": "alohanap|united-states"
+    },
+    "requestedManagers": [
+      "Harrison Street",
+      "FifteenFortySeven Critical Systems Realty / 1547 Critical Systems Realty"
+    ],
+    "decision": "EXCLUDED",
+    "confidence": "HIGH",
+    "rationale": "AlohaNAP/HAII1 is a Kapolei facility, not a manager-level platform. The buyers called it a Property added to their multi-site connectivity platform, and 1547 still lists it among its data centers. A standalone PortCo double-counts task 273; exclude it rather than merge its legal entities into 1547.",
+    "identityResolution": {
+      "canonicalIdentity": "AlohaNAP / Kapolei HI | HAII1",
+      "type": "Operating carrier-neutral data-center facility/campus and brand",
+      "location": "91-340 Farrington Highway, Kapolei, HI 96707",
+      "legalEntities": [
+        "Hawaii Pacific Data LLC: original JV/operating entity; current role UNRESOLVED",
+        "1547 CSR - ALOHANAP, LLC: active 2018 Delaware LLC and current SPV candidate; parent undisclosed"
+      ],
+      "aliases": [
+        "AlohaNAP",
+        "HAII1",
+        "Hawaii Pacific Data"
+      ],
+      "cloudNAP": "No reliable evidence of a separate Cloud NAP entity/operator.",
+      "launchDate": "2014-10-09",
+      "boundary": "Underlying Harrison Street/1547 platform asset; no evidence Harrison bought 1547."
+    },
+    "ownershipResolution": {
+      "currentOwners": [
+        {
+          "manager": "Harrison Street",
+          "organization": "Harrison Street",
+          "fund": "NOT_PUBLICLY_DISCLOSED",
+          "vehicle": "UNRESOLVED; 1547 CSR - ALOHANAP, LLC is the active SPV candidate",
+          "stake": "NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2024-10-15",
+          "entryDate": "2024-10-15",
+          "entryYear": 2024,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED; exact legal closing date not separately disclosed"
+        },
+        {
+          "manager": "FifteenFortySeven Critical Systems Realty / 1547 Critical Systems Realty",
+          "organization": "fifteenfortyseven Critical Systems Realty, LLC",
+          "fund": null,
+          "vehicle": "1547 CSR - ALOHANAP, LLC candidate; prior 1547 CSR Hawaii, LLC/Hawaii Pacific Data LLC chain",
+          "stake": "NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2024-10-15",
+          "entryDate": "UNRESOLVED",
+          "entryYear": "UNRESOLVED",
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "ACTIVE; development since 2012, direct-member evidence by 2016, current co-acquisition closed 2024-10-15"
+        }
+      ],
+      "formerOrPriorOwnerEvidence": [
+        {
+          "manager": null,
+          "organization": "Akuli, LLC",
+          "fund": null,
+          "vehicle": "Hawaii Pacific Data LLC",
+          "stake": "NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": null,
+          "entryDate": "2021-04-01",
+          "entryYear": 2021,
+          "exitDate": "UNRESOLVED",
+          "exitYear": "UNRESOLVED",
+          "isActive": null,
+          "transactionState": "Registry-derived member evidence; 2024 seller/exit mechanics UNRESOLVED"
+        }
+      ],
+      "boundary": "Harrison Street and 1547 are asset-level co-acquirers; 1547 also operates. Stakes are undisclosed; do not infer equality or Harrison ownership of 1547."
+    },
+    "operatingResolution": {
+      "operator": "1547 Critical Systems Realty",
+      "status": "Active",
+      "website": "https://www.1547realty.com/data-center/kapolei-hi-haii1/",
+      "footprintCapacity": "Current page: 10,200 sq ft and six providers. Announced 22,800 sq ft/2.7 MW was a post-Phase-1 target, not verified current capacity.",
+      "endMarkets": "Carrier-neutral interconnection/colocation for carriers, cloud/content networks and enterprises; five submarine cables and 40+ satellites.",
+      "expansion": "Phase 1 and a multi-building campus were announced; completion/current MW remain unverified."
+    },
+    "acquisitionExitCheck": {
+      "closedAcquisition": "Acquisition announced as completed 2024-10-15. Seller, price, stakes, vehicle and separate legal closing date were undisclosed.",
+      "laterCheck": "No public sale, recapitalization, transfer, operator change or signed exit found through the cutoff; HAII1 remains active on 1547's site.",
+      "pendingTransactions": []
+    },
+    "milestones": [
+      {
+        "date": "2014-10-09",
+        "event": "Grand opening marked launch.",
+        "category": "Launch"
+      },
+      {
+        "date": "2024-10-15",
+        "event": "Harrison Street/1547 acquired the Property and announced expansion.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "2026-08-19",
+        "event": "Active under 1547; no disposition found.",
+        "category": "Status"
+      }
+    ],
+    "evidence": [
+      {
+        "label": "Harrison Street acquisition release",
+        "url": "https://harrisonst.com/harrison-street-and-fifteenfortyseven-critical-systems-realty-acquire-strategically-located-carrier-hotel-data-center-in-hawaii-announce-expansion-plans/",
+        "purpose": "Acquisition, platform boundary, owners, expansion",
+        "sourceTier": "TIER_1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "1547 HAII1 page",
+        "url": "https://www.1547realty.com/data-center/kapolei-hi-haii1/",
+        "purpose": "Current identity, operator, status, footprint",
+        "sourceTier": "TIER_1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "1547 launch release",
+        "url": "https://www.1547realty.com/resource/1547-critical-systems-realty-announces-building-blessing-alohanap-facility-will-allow-north-american-companies-to-reach-asian-markets-in-a-single-hop-and-vice-versa/",
+        "purpose": "2014 launch and original 1547/HPT relationship",
+        "sourceTier": "TIER_1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Bloomberg LEI: 1547 CSR - ALOHANAP, LLC",
+        "url": "https://lei.bloomberg.com/leis/view/2549008CUOWKA6TWF028",
+        "purpose": "Active SPV candidate; parent undisclosed",
+        "sourceTier": "TIER_2",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Hawaii Pacific Data registry mirror",
+        "url": "https://www.city-data.com/business-entities/HI/HAWAII-PACIFIC-DATA-LLC-116634-C6-HI.html",
+        "purpose": "Historical member/trade-name evidence",
+        "sourceTier": "TIER_3",
+        "workingStatus": "CORROBORATIVE_ONLY",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": [
+      {
+        "field": "treatment",
+        "before": "Standalone PortCo",
+        "after": "Underlying asset excluded; link to task 273"
+      },
+      {
+        "field": "launch year",
+        "before": 2015,
+        "after": 2014
+      },
+      {
+        "field": "fund",
+        "before": "Harrison Street Digital Fund",
+        "after": "NOT_PUBLICLY_DISCLOSED"
+      },
+      {
+        "field": "owners",
+        "before": "Harrison Street only",
+        "after": "Harrison Street and 1547 co-acquirers; stakes undisclosed"
+      },
+      {
+        "field": "capacity",
+        "before": "22,800 sq ft/2.7 MW existing",
+        "after": "10,200 sq ft current page; 22,800/2.7 MW target"
+      },
+      {
+        "field": "website",
+        "before": null,
+        "after": "https://www.1547realty.com/data-center/kapolei-hi-haii1/"
+      }
+    ],
+    "excludedOrDuplicateCandidates": [
+      {
+        "candidate": "AlohaNAP standalone PortCo",
+        "treatment": "Exclude as task-273 platform asset"
+      },
+      {
+        "candidate": "Cloud NAP",
+        "treatment": "Unsupported; do not create/alias"
+      },
+      {
+        "candidate": "Hawaii Pacific Teleport/Calian",
+        "treatment": "Prior partner/adjacent teleport, not proven current owner"
+      },
+      {
+        "candidate": "Harrison ownership of 1547",
+        "treatment": "Unsupported asset-to-manager inference"
+      }
+    ],
+    "unresolvedQuestions": [
+      "Exact 2024 seller, form, closing date, price and stakes.",
+      "Beneficial/SPV chain, current Hawaii Pacific Data role and any Akuli/HPT/Calian transfer.",
+      "Harrison fund/account and expansion completion/current MW."
+    ],
+    "recommendedListAction": "Retire standalone AlohaNAP and cross-reference HAII1 under linked task 273's Harrison Street/1547 joint asset platform. Do not merge legal entities or imply Harrison owns 1547."
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0274-alohanap/attempt-1/research-decision.json",
+      "sha256": "9aa9d72d1254d65e95b0fd163ccdd58f87d49003b0df390a5f67faae8983bb0e"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0274-alohanap/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "74fa3cf26a5cf27ee1b99a3994d89dec558938b70ef8e9e3e8352ceab0ea37ee"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0274-alohanap/attempt-1/source-verification.json",
+      "sha256": "0859b7065e36245339d83a8eca8b8389db0a3b51ae6179ed6dfd56447cc7c220"
+    },
+    "acceptedResponseSha256": "74fa3cf26a5cf27ee1b99a3994d89dec558938b70ef8e9e3e8352ceab0ea37ee",
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+    "confidenceNormalization": {
+      "acceptedValue": "HIGH",
+      "stagedSummaryValue": "HIGH_WITH_NONCRITICAL_SELLER_SPV_AND_FUND_GAPS",
+      "basis": "The staged summary preserves the accepted confidence and appends the noncritical disclosure-gap qualifier; the research decision is unchanged."
+    }
+  }
+}

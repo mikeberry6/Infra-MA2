@@ -2,6 +2,7 @@
 import { createHash } from "node:crypto";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, relative, resolve } from "node:path";
+import { resolveResearchDecisionNormalization } from "./research-decision-normalization";
 
 function options(argv: string[]): Map<string, string> {
   const values = new Map<string, string>();
@@ -73,9 +74,12 @@ async function main(): Promise<void> {
     || !Array.isArray(result.evidence)) {
     throw new Error("Accepted research result lacks decision, rationale or evidence");
   }
-  if (result.decision !== source.decision) {
-    throw new Error("Accepted research decision disagrees with the staged summary");
-  }
+  const decisionNormalization = resolveResearchDecisionNormalization({
+    acceptedDecision: result.decision,
+    stagedDecision: String(source.decision),
+    rawModelDecision: source.rawModelDecision,
+    actionNormalization: source.actionNormalization,
+  });
   const acceptedConfidence = typeof result.confidence === "string" ? result.confidence : null;
   const stagedConfidence = typeof source.confidence === "string" ? source.confidence : null;
   const confidenceMatches = acceptedConfidence !== null && stagedConfidence !== null
@@ -143,6 +147,7 @@ async function main(): Promise<void> {
           basis: "The staged summary preserves the accepted confidence and appends the noncritical disclosure-gap qualifier; the research decision is unchanged.",
         },
       }),
+      ...(decisionNormalization ? { decisionNormalization } : {}),
       ...(identityCorrection ? { identityCorrection } : {}),
     },
   };
