@@ -1,0 +1,274 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_MANIFEST",
+  "methodologyVersion": "PORTCO_APPLY_BATCH_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0204-0208-v1",
+  "createdAt": "2026-08-29T05:53:00.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "818421cfa38c7c031ba958c2e6ed2da011548ce4b931cf3bca62ec38df22e9da"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0204:green-street-power-partners:9b141bba",
+      "taskIndex": 204,
+      "companyName": "Green Street Power Partners",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0204-gs-power-partners-v1/proposal.json",
+        "sha256": "1abe23079c0f88d658089f09517c3ef8587e446bd4abb9687499af2e753f6873"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0204-gs-power-partners-v1.json",
+        "sha256": "eedfc32f32564cdb61cb389cf9924de89a4edbcec6227f45807a6bc8dcf48ca4"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0204-green-street-power-partners/attempt-1/locked-production-snapshot.json",
+        "sha256": "507b835da2331e4a96358ed7077b3ffe1c387e3e970f6f965cb1bb4fc38a3c04"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0204-green-street-power-partners/attempt-1/locked-task-snapshot.json",
+        "sha256": "f1a1309c932ad34a244a63daa3ce4769a284339050ab564d26d625e915e6c127"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0204-green-street-power-partners/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "9c48c8e5497f2d60ec2d76cd177bf5f652df85f7662d5a52b4101aa25aaea357"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0204-green-street-power-partners/attempt-1/application-research-decision.json",
+        "sha256": "a6475a540ab55f9602e98e36ddec8062652fcb530cb492748828a83cb9230cfc"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0204-green-street-power-partners/attempt-1/source-verification.json",
+        "sha256": "bae258e7ad7ff9c4058000019bd03ab622217d051e50ca5586620abaf1a88b7e"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "f3824b43dce51e12d50c10ea99a90dcae00d5f9d7b4538d57ca6755c7340ca38",
+      "dependencySha256": "70e12793e15d8265c6abbaa16d4b4ac78de0274aaa713a85c1e084c64a13d8cd",
+      "afterImageSha256": "fc0d658ccfe4763c6928318ea011b147cd1671cf99803f19abea16ffcfe2d384",
+      "targetClaims": [
+        "canonical:gs-power-partners|united-states",
+        "company:cmrxpjcxy00tdivhea9p9kug7",
+        "company:cmrxpjcyj00teivhe0d58ngch",
+        "relation:cmrxpjyfn01rbivheqqa9jiv1",
+        "relation:cmrxpjyg501rcivheu7f99nh3",
+        "relation:cmrxpleu303ncivhelh4ofmz7",
+        "relation:cmrxpleur03ndivhe95yigh66",
+        "relation:cmrxplevy03neivhe58iyw1mk",
+        "relation:cmrxplewj03nfivhenh8350d6",
+        "relation:cmrxpqgqt09mkivhetb30pd8b",
+        "relation:cmrxpqgrd09mlivhehge4utye",
+        "relation:cmrxpqgs209mmivheqz1hxiyc",
+        "relation:cmrxpqgsh09mnivhe1iz193ek",
+        "seed:gs power partners|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://dif-capital-partners.euwest01.umbraco.io/media/iojnwvku/sustainability-report-2023.pdf",
+          "label": "Dif Capital Partners — Green Street Power Partners",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://gspowerpartners.com/",
+          "label": "Gspowerpartners — Green Street Power Partners",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://gspowerpartners.com/company/",
+          "label": "Gspowerpartners — Green Street Power Partners",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://gspowerpartners.com/dif-capital-partners-agrees-to-acquire-majority-interest-in-us-based-solar-platform-green-street-power-partners/",
+          "label": "Announcement date source — CVC DIF — Green Street Power Partners",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://gspowerpartners.com/gs-power-partners-announces-leadership-succession/",
+          "label": "GS Power Partners — Leadership succession",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://gspowerpartners.com/we-are-now-gs-power-partners-heres-why-were-excited/",
+          "label": "GS Power Partners — Rebrand announcement",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?aggregateId=forl-m18000009957-b8f68b7d-3c07-4d46-b267-b37dffc111c8",
+          "label": "Florida Division of Corporations — Green Street Power Partners, LLC",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.cvc.com/media/news/2024/2024-07-03-completion-of-cvc-dif-and-acquisition-of-final-stake-in-cvc-secondary-partners/",
+          "label": "CVC — CVC DIF completion",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.cvcdif.com/infrastructure/investments",
+          "label": "CVC DIF — Current infrastructure investments",
+          "sourceType": "WEBSITE"
+        }
+      ]
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0205:gs-power-partners:c5899878",
+      "taskIndex": 205,
+      "companyName": "GS Power Partners",
+      "outcome": "SUPERSEDED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0205-gs-power-partners/attempt-1/terminal-decision.json",
+        "sha256": "df7071d91cf545c97b54bab47187baca1ab39daf9aa78083196c4c3e10f7e5cc"
+      }
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0206:jw-water-holdings:fc8ebab0",
+      "taskIndex": 206,
+      "companyName": "JW Water Holdings",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0206-jw-water-holdings-v1/proposal.json",
+        "sha256": "8a20de5694747ab3bcba360d7610d753cdda5baa173262fb755c0de7fe0519c0"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0206-jw-water-holdings-v1.json",
+        "sha256": "02f4c786df8dd8bc6028069e8631065c7b621ae5841f5a90c24e5b08153f3a46"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0206-jw-water-holdings/attempt-1/locked-production-snapshot.json",
+        "sha256": "e73857cf073c70847450357b2c61f20c5e14db82c3ac3da75d37b43045c74e59"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0206-jw-water-holdings/attempt-1/locked-task-snapshot.json",
+        "sha256": "aee24d886db69735a44ad3e3e3b7802e9332cda035192c5eed15ce5d75a8c3da"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0206-jw-water-holdings/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "718e589731df32a714f86a4df17f3b07b55d9bebb3f77187c2f909dc00ddf428"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0206-jw-water-holdings/attempt-1/application-research-decision.json",
+        "sha256": "1bc16a748f5caaf654f18456a8dc260a9bcaa1a408642e0b670dca2ce68e00d2"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0206-jw-water-holdings/attempt-1/source-verification.json",
+        "sha256": "ddfaba41c00b83f0e8e2a2ef60ec3d1ecde437755bc7d17d5c241887eb066c8d"
+      },
+      "supersededTaskIds": [
+        "ledger:0482:jw-water-holdings-incl-robson-utilities:9fae287b"
+      ],
+      "taskStateSha256": "e9519c99d4fc55834a14528917e61cb792b8de09edf4a03db0dca04b84680b35",
+      "dependencySha256": "948811e12623503c891ab0023ac376122b6f66381f3d5a338e36a39d41f97b10",
+      "afterImageSha256": "2c6ec9abe17b35ee356733dd9f4dd5592387750ebd74c3afa7185661e42b3465",
+      "targetClaims": [
+        "canonical:jw-water-holdings|united-states",
+        "company:cmrxpjd0700thivhe6wdzyicz",
+        "company:cmrxpjd0s00tiivheuomhxk0o",
+        "company:cmrxpjd2w00tmivhewaupms5e",
+        "relation:cmrxpjyht01rfivheqr8qfsdl",
+        "relation:cmrxpjyib01rgivhevk92xk8v",
+        "relation:cmrxpjyks01rkivhehaofx67s",
+        "relation:cmrxplf2s03noivhemd0rwmjo",
+        "relation:cmrxplf3a03npivhe69qpet20",
+        "relation:cmrxplf3u03nqivhe08x7rqh0",
+        "relation:cmrxplf4f03nrivhesuiayyk0",
+        "relation:cmrxplf8m03nuivhepbdtvo7e",
+        "relation:cmrxplf9303nvivheuc6ppmtr",
+        "relation:cmrxplfjq03oaivhelyurbvv3",
+        "relation:cmrxplfka03obivhekkecyd32",
+        "relation:cmrxpqh5h09n6ivheb2f36qx8",
+        "relation:cmrxpqh6j09n8ivhevg9yuexo",
+        "relation:cmrxpqh7i09naivhevpsfe3vw",
+        "seed:jw water holdings (incl. robson utilities)|united states",
+        "seed:jw water holdings, llc|united states",
+        "seed:jw water holdings|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://azcc.gov/news/home/2026/08/17/august-12--2026-open-meeting-highlights",
+          "label": "Arizona Corporation Commission — August 12, 2026 meeting highlights",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://jwwater.com/",
+          "label": "JW Water — Company profile",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://jwwater.com/pima/",
+          "label": "Jwwater — Robson Communities Utilities / Pima Utility",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://jwwater.com/pima/wp-content/uploads/sites/12/2026/03/Pima-Rate-Case-FAQ.pdf",
+          "label": "JW Water — Pima rate-case FAQ",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://robson.com/contact/",
+          "label": "Robson Communities — Utility contacts",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.azcc.gov/docs/default-source/utilities-files/water/tarriffs/pima-utility-company.pdf?sfvrsn=52cb0ca3_2",
+          "label": "Azcc — Robson Communities Utilities / Pima Utility",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://www.azcc.gov/news/home/2025/11/21/november-19--2025-open-meeting-highlights",
+          "label": "Arizona Corporation Commission — November 19, 2025 meeting highlights",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.bluefieldresearch.com/research/pe-firm-cvc-lands-deal-in-arizona-utility-market/",
+          "label": "Bluefieldresearch — JW Water Holdings",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.cvc.com/media/news/2024/2024-11-21-cvc-dif-acquires-a-portfolio-of-us-regulated-water-and-wastewater-utilities/",
+          "label": "Close date source — CVC DIF — JW Water Holdings",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.pillsburylaw.com/en/news-and-insights/cvc-dif-strategic-acquisition-arizona-water-wastewater-sector.html",
+          "label": "Pillsburylaw — JW Water Holdings",
+          "sourceType": "ARTICLE"
+        }
+      ]
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0207:robson-communities-utilities-pima-utility:d965a9e0",
+      "taskIndex": 207,
+      "companyName": "Robson Communities Utilities / Pima Utility",
+      "outcome": "SUPERSEDED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0207-robson-communities-utilities-pima-utility/attempt-1/terminal-decision.json",
+        "sha256": "7eb74aa886c13d038c47f0a7c0c49959cebd9755b3be5a1529383f925adc646b"
+      }
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0208:robson-utilities-portfolio:357f70cb",
+      "taskIndex": 208,
+      "companyName": "Robson Utilities Portfolio",
+      "outcome": "SUPERSEDED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0208-robson-utilities-portfolio/attempt-1/terminal-decision.json",
+        "sha256": "cf9563a8b75fe4a48753dad402ce5bc928549ee9426e5f87ea3bb6a8d2871fac"
+      }
+    }
+  ],
+  "collisionAnalysis": {
+    "independent": true,
+    "claimsSha256": "a11493fd8c2d99ab128d78c92e9e2ec8a610fd4804f89adbfa0c79579bac8cd3",
+    "sharedSourceUrls": [],
+    "conflicts": []
+  },
+  "batchSha256": "c90e86c3affb34263a5e3c499bd76dcc7ad39538610c9aa7640ce9896f766996"
+}

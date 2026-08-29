@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-29T05:27:33Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-08-29T05:55:00.000Z",
+  "activeBatchId": "batch-0204-0208-v1",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -2398,7 +2398,55 @@
           "reason": "Atomic PortCo receipt, protected American Roads direct-program attribution receipt, four canonical APIs, one canonical redirect, four rendered drawers, archived Bernhard row absence, and exact receipt-commit deployment verification passed."
         }
       ]
+    },
+    {
+      "batchId": "batch-0204-0208-v1",
+      "state": "READY",
+      "taskIds": [
+        "ledger:0204:green-street-power-partners:9b141bba",
+        "ledger:0205:gs-power-partners:c5899878",
+        "ledger:0206:jw-water-holdings:fc8ebab0",
+        "ledger:0207:robson-communities-utilities-pima-utility:d965a9e0",
+        "ledger:0208:robson-utilities-portfolio:357f70cb"
+      ],
+      "taskIndexes": [
+        204,
+        205,
+        206,
+        207,
+        208
+      ],
+      "createdAt": "2026-08-29T05:35:22.270Z",
+      "updatedAt": "2026-08-29T05:55:00.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0204-0208-v1/batch-manifest.json",
+        "sha256": "c90e86c3affb34263a5e3c499bd76dcc7ad39538610c9aa7640ce9896f766996"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-29T05:35:22.270Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-29T05:55:00.000Z",
+          "evidenceSha256": [
+            "c90e86c3affb34263a5e3c499bd76dcc7ad39538610c9aa7640ce9896f766996"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "bc10db0d488d0d18926d203345a8bb01825216e1d2aca0d6ddc226530c5ae7ad"
+  "ledgerSha256": "65c3f0b334a1a6ba9b3f9f947ecc85890f9d594ffc26166f1dc680e52b1a51a3"
 }

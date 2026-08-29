@@ -1,0 +1,291 @@
+{
+  "generatedAt": "2026-08-29T05:48:00.000Z",
+  "actions": [
+    "CORRECT_COMPANY",
+    "MERGE_COMPANIES"
+  ],
+  "retiredCompanyIds": [
+    "cmrxpjd2w00tmivhewaupms5e",
+    "cmrxpjd0s00tiivheuomhxk0o"
+  ],
+  "relationMerges": [
+    {
+      "kind": "OWNERSHIP_PERIOD",
+      "retiredRelationId": "cmrxpjyks01rkivhehaofx67s",
+      "canonicalRelationId": "cmrxpjyht01rfivheqr8qfsdl",
+      "rationale": "The Pima and Robson row carries the same CVC DIF ownership through DIF Infrastructure VII as the canonical JW Water platform."
+    },
+    {
+      "kind": "OWNERSHIP_PERIOD",
+      "retiredRelationId": "cmrxpjyib01rgivhevk92xk8v",
+      "canonicalRelationId": "cmrxpjyht01rfivheqr8qfsdl",
+      "rationale": "The Robson portfolio row carries the same CVC DIF ownership through DIF Infrastructure VII as the canonical JW Water platform."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxplfjq03oaivhelyurbvv3",
+      "canonicalRelationId": "cmrxplf3u03nqivhe08x7rqh0",
+      "rationale": "Both milestones describe the combined Arizona utility platform's scale at the 2024 acquisition."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxplf8m03nuivhepbdtvo7e",
+      "canonicalRelationId": "cmrxplf3u03nqivhe08x7rqh0",
+      "rationale": "Both milestones describe the combined Arizona utility platform's scale at the 2024 acquisition."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxplfka03obivhekkecyd32",
+      "canonicalRelationId": "cmrxplf4f03nrivhesuiayyk0",
+      "rationale": "Both milestones describe CVC DIF's November 2024 acquisition of the Robson utilities through DIF Infrastructure VII."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxplf9303nvivheuc6ppmtr",
+      "canonicalRelationId": "cmrxplf4f03nrivhesuiayyk0",
+      "rationale": "Both milestones describe CVC DIF's November 2024 acquisition of JW Water and the Robson utility portfolio through DIF Infrastructure VII."
+    }
+  ],
+  "reviewedSeedRetirementTaskIds": [
+    "ledger:0482:jw-water-holdings-incl-robson-utilities:9fae287b"
+  ],
+  "rationale": "Merge the Robson Utilities Portfolio and Robson Communities Utilities / Pima Utility records into JW Water Holdings because direct sponsor, company and regulatory sources establish one manager-level CVC DIF platform. Preserve Pima and Robson operating history as child-utility and acquisition-cohort milestones, retain one DIF Infrastructure VII ownership period, retire the duplicate production and seed identities, and treat later utility consolidations as internal reorganizations rather than manager-level ownership changes.",
+  "evidence": [
+    {
+      "url": "https://www.cvc.com/media/news/2024/2024-11-21-cvc-dif-acquires-a-portfolio-of-us-regulated-water-and-wastewater-utilities/",
+      "purpose": "Ownership, fund attribution and platform boundary",
+      "supports": [
+        "DIF Infrastructure VII completed the JW Water and eight-utility Robson acquisitions",
+        "The combined acquisitions serve more than 50,000 Arizona customers"
+      ]
+    },
+    {
+      "url": "https://jwwater.com/",
+      "purpose": "Current identity and operating footprint",
+      "supports": [
+        "JW Water presents the integrated utility roster as one operating platform",
+        "The platform serves more than 50,000 customers in Arizona"
+      ]
+    },
+    {
+      "url": "https://jwwater.com/pima/wp-content/uploads/sites/12/2026/03/Pima-Rate-Case-FAQ.pdf",
+      "purpose": "Pima subsidiary boundary",
+      "supports": [
+        "Pima became a wholly owned JW Water Holdings subsidiary on November 20, 2024",
+        "The proposed Pima entity split is an internal utility reorganization"
+      ]
+    },
+    {
+      "url": "https://www.azcc.gov/news/home/2025/11/21/november-19--2025-open-meeting-highlights",
+      "purpose": "Regulatory ownership confirmation",
+      "supports": [
+        "The Arizona Corporation Commission identified JW Water Holdings as owner of the 18-utility group"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "afterImage": {
+    "id": "cmrxpjd0700thivhe6wdzyicz",
+    "name": "JW Water Holdings, LLC",
+    "aliases": [
+      "JW Water",
+      "JW Water Holdings",
+      "JW Water Holdings (incl. Robson Utilities)"
+    ],
+    "sector": "UTILITIES",
+    "subsector": "Regulated water and wastewater utilities",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "JW Water Holdings, LLC is a regulated water and wastewater utility platform serving more than 50,000 customers in Arizona. CVC DIF completed the acquisition of JW Water's ten-utility platform and eight Robson utilities through DIF Infrastructure VII in November 2024. Pima became a wholly owned JW Water subsidiary on November 20, 2024, and current company and Arizona Corporation Commission materials show the acquired utilities operating beneath the integrated JW Water platform. Public sources do not disclose CVC DIF's exact ownership percentage or a separate acquisition SPV. Later Pima and other utility consolidations are internal legal and regulatory reorganizations, not manager-level ownership transfers. No later sale, sponsor exit or signed pending manager-level transaction was identified through August 19, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://jwwater.com/",
+    "yearFounded": 2013,
+    "headquarters": null,
+    "lastVerifiedAt": "2026-08-19T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjyht01rfivheqr8qfsdl",
+        "managerName": "CVC DIF",
+        "organizationName": "CVC DIF",
+        "fundName": "DIF Infrastructure VII",
+        "vehicleName": null,
+        "stake": null,
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplfil03o8ivhexc8kaz2m",
+        "date": "1972",
+        "event": "Public utility materials state that Pima Utility began serving Arizona communities in 1972; Pima is retained here as a child-utility history item within JW Water.",
+        "category": "OTHER",
+        "sortDate": "1972-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.azcc.gov/docs/default-source/utilities-files/water/tarriffs/pima-utility-company.pdf?sfvrsn=52cb0ca3_2"
+        ]
+      },
+      {
+        "id": "cmrxplf3a03npivhe69qpet20",
+        "date": "2013",
+        "event": "JW Water Holdings was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2013-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.cvc.com/media/news/2024/2024-11-21-cvc-dif-acquires-a-portfolio-of-us-regulated-water-and-wastewater-utilities/"
+        ]
+      },
+      {
+        "id": "cmrxplf3u03nqivhe08x7rqh0",
+        "date": "Nov 2024",
+        "event": "CVC DIF stated that the combined Arizona utility platform would serve more than 50,000 customers; current JW materials present the integrated business as 18 legacy utility brands and 20 water and wastewater systems.",
+        "category": "EXPANSION",
+        "sortDate": "2024-11-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.cvc.com/media/news/2024/2024-11-21-cvc-dif-acquires-a-portfolio-of-us-regulated-water-and-wastewater-utilities/",
+          "https://jwwater.com/"
+        ]
+      },
+      {
+        "id": "cmrxplfj503o9ivhe9q0tz0og",
+        "date": "Nov 20, 2024",
+        "event": "Pima Utility became a wholly owned subsidiary of JW Water Holdings, confirming that Pima is an underlying utility rather than a separate manager-level PortCo.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-11-20T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://jwwater.com/pima/wp-content/uploads/sites/12/2026/03/Pima-Rate-Case-FAQ.pdf"
+        ]
+      },
+      {
+        "id": "cmrxplf4f03nrivhesuiayyk0",
+        "date": "Nov 21, 2024",
+        "event": "CVC DIF acquired JW Water and the eight-utility Robson portfolio through DIF Infrastructure VII, consolidating them as one manager-level Arizona utility platform.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-11-21T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.cvc.com/media/news/2024/2024-11-21-cvc-dif-acquires-a-portfolio-of-us-regulated-water-and-wastewater-utilities/"
+        ]
+      },
+      {
+        "id": "cmrxplf2s03noivhemd0rwmjo",
+        "date": "Nov 19, 2025",
+        "event": "The Arizona Corporation Commission approved an internal consolidation of Bensch Ranch, Pine Meadows and Verde Santa Fe utilities and identified JW Water Holdings as owner of those utilities and 15 others.",
+        "category": "OTHER",
+        "sortDate": "2025-11-19T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.azcc.gov/news/home/2025/11/21/november-19--2025-open-meeting-highlights"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Aug 12, 2026",
+        "event": "The Arizona Corporation Commission approved the internal consolidation of Quail Creek, Ridgeview and Lago Del Oro into JW Water Utility Company.",
+        "category": "OTHER",
+        "sortDate": "2026-08-12T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://azcc.gov/news/home/2026/08/17/august-12--2026-open-meeting-highlights"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqh5h09n6ivheb2f36qx8",
+        "label": "Close date source — CVC DIF — JW Water Holdings",
+        "url": "https://www.cvc.com/media/news/2024/2024-11-21-cvc-dif-acquires-a-portfolio-of-us-regulated-water-and-wastewater-utilities/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "DIF Infrastructure VII acquisition, platform boundary and November 2024 closing",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqh6j09n8ivhevg9yuexo",
+        "label": "Pillsburylaw — JW Water Holdings",
+        "url": "https://www.pillsburylaw.com/en/news-and-insights/cvc-dif-strategic-acquisition-arizona-water-wastewater-sector.html",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Transaction structure and Arizona utility acquisition context",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqh7i09naivhevpsfe3vw",
+        "label": "Bluefieldresearch — JW Water Holdings",
+        "url": "https://www.bluefieldresearch.com/research/pe-firm-cvc-lands-deal-in-arizona-utility-market/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Independent transaction and Arizona market context",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqhpz09nyivhe0itpc7y0",
+        "label": "Jwwater — Robson Communities Utilities / Pima Utility",
+        "url": "https://jwwater.com/pima/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Pima child-utility identity within the JW Water platform",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqhqt09o0ivhen9xc51v8",
+        "label": "Azcc — Robson Communities Utilities / Pima Utility",
+        "url": "https://www.azcc.gov/docs/default-source/utilities-files/water/tarriffs/pima-utility-company.pdf?sfvrsn=52cb0ca3_2",
+        "sourceType": "PRESENTATION",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Pima Utility regulatory and operating history",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "JW Water — Company profile",
+        "url": "https://jwwater.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current integrated platform identity, Arizona footprint, utility roster and customer scale",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Robson Communities — Utility contacts",
+        "url": "https://robson.com/contact/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Eight-utility Robson acquisition cohort",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "JW Water — Pima rate-case FAQ",
+        "url": "https://jwwater.com/pima/wp-content/uploads/sites/12/2026/03/Pima-Rate-Case-FAQ.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Pima transfer date, wholly owned subsidiary status and internal reorganization",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Arizona Corporation Commission — November 19, 2025 meeting highlights",
+        "url": "https://www.azcc.gov/news/home/2025/11/21/november-19--2025-open-meeting-highlights",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "JW Water ownership of the 18-utility group and internal consolidation approval",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Arizona Corporation Commission — August 12, 2026 meeting highlights",
+        "url": "https://azcc.gov/news/home/2026/08/17/august-12--2026-open-meeting-highlights",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Latest internal utility consolidation approval within JW Water",
+        "isPrimary": false
+      }
+    ]
+  }
+}
