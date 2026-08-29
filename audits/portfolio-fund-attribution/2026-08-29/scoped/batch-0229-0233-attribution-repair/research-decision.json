@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_CORRECTION_DECISION",
+  "asOfDate": "2026-08-29",
+  "triggerBatchId": "batch-0229-0233-v1",
+  "triggerBatchSha256": "0029d3f39ef468adf60e5a3a56b25636fab172ec3a4e8482753db11ed9b3cbf7",
+  "decision": "CORRECT_STALE_ATTRIBUTION_METADATA",
+  "rationale": "The atomic PortCo transaction correctly applied all five reviewed identities, owners, vehicles, stakes, dates, milestones and citations, but eight current ownership periods retained stale or generic fund-attribution metadata. Align production to the already-reviewed seed attribution records without changing any company identity, ownership economics, fund database record or legal ownership conclusion.",
+  "mutations": [
+    {
+      "ownershipPeriodId": "cmrxpjz9o01smivhe6emw3bll",
+      "companyName": "New Leaf Energy",
+      "from": "INFERRED — ECP Fund V — LOW",
+      "to": "UNRESOLVED — current ECP fund not publicly disclosed"
+    },
+    {
+      "ownershipPeriodId": "cmrxpjza701snivheqdjimc56",
+      "companyName": "Next Wave Energy Partners, LP",
+      "from": "INFERRED — ECP Fund III — MEDIUM",
+      "to": "DISCLOSED — ECP Fund IV — no normalized fund link"
+    },
+    {
+      "ownershipPeriodId": "cmrxpjzar01soivheky8l1tl7",
+      "companyName": "Pivot Energy",
+      "from": "INFERRED — ECP Fund IV — LOW",
+      "to": "DISCLOSED — ECP Fund IV — no normalized fund link"
+    },
+    {
+      "ownershipPeriodId": "cmrxpjzba01spivhee3vel7bc",
+      "companyName": "PROENERGY",
+      "from": "INFERRED — ECP Fund V — LOW",
+      "to": "DISCLOSED — ECP Fund V — existing normalized fund link retained"
+    },
+    {
+      "ownershipPeriodId": "cmteaq22x001bw32bqz186r2y",
+      "companyName": "PROENERGY",
+      "from": "UNRESOLVED — management co-investment",
+      "to": "DIRECT_PROGRAM — founder and management co-investment"
+    },
+    {
+      "ownershipPeriodId": "cmrxpjzbw01sqivheqo2vhw6z",
+      "companyName": "Restaurant Technologies, Inc.",
+      "from": "INFERRED — ECP Fund V — LOW",
+      "to": "UNRESOLVED — current ECP fund not publicly disclosed"
+    },
+    {
+      "ownershipPeriodId": "cmteaq53n001rw32bw4g0h3m1",
+      "companyName": "Restaurant Technologies, Inc.",
+      "from": "UNRESOLVED — direct corporate co-ownership",
+      "to": "DIRECT_PROGRAM — direct corporate co-ownership"
+    },
+    {
+      "ownershipPeriodId": "cmteaq56l001tw32bhapeul49",
+      "companyName": "Restaurant Technologies, Inc.",
+      "from": "UNRESOLVED — generic rationale",
+      "to": "UNRESOLVED — reviewed EHI co-investment rationale"
+    }
+  ],
+  "nonChanges": [
+    "Company identities, canonical redirects and publication status",
+    "Ownership organizations, vehicles, stakes, dates and active or former state",
+    "Fund Database records",
+    "Descriptions, milestones, citations and primary sources"
+  ],
+  "identityResolved": true,
+  "activeOwnershipResolved": true,
+  "unresolvedQuestions": []
+}

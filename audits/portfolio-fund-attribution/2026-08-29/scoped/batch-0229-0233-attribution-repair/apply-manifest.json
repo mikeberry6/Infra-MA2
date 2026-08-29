@@ -1,0 +1,250 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-08-29",
+  "ledgerSha256": "a3e73726c9f9ae53f91b4cb0bd2447fc3252c7e1a73639b75abfa316259ba675",
+  "sourceSnapshotSha256": "53a21b69913fc338e9984cdaf2f1123161bdcd049cace5aad8e060cf9150a93e",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 3,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 2,
+      "UNRESOLVED": 3
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  },
+  "expectedMutationCount": 8,
+  "mutations": [
+    {
+      "recordId": "OFA-1D158A6E02F2",
+      "ownershipPeriodId": "cmrxpjz9o01smivhe6emw3bll",
+      "companyName": "New Leaf Energy",
+      "country": "United States",
+      "investmentFirm": "ECP",
+      "currentVehicleName": "Zorro DevCo Parent, Inc. / Zorro DevCo Merger Sub, Inc.; exact current holding vehicle not publicly disclosed",
+      "databaseVehicleName": "Zorro DevCo Parent, Inc. / Zorro DevCo Merger Sub, Inc.; exact current holding vehicle not publicly disclosed",
+      "investmentYear": 2022,
+      "stake": "Control; exact percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "ECP directly supports the completed July 2022 acquisition and current ownership, but the reviewed sources do not identify the current fund or holding vehicle beyond the transaction entities. The unsupported ECP Fund V estimate is removed."
+      },
+      "evidenceUrls": [
+        "https://www.ecpgp.com/equity/portfolio/new-leaf-energy",
+        "https://www.ecpgp.com/about/news-and-insights/press-releases/2022/borrego-completes-spin-off-and-sale-of-solar-and-energy-storage-development-business-to-ecp"
+      ]
+    },
+    {
+      "recordId": "OFA-CC5B3D9E35F7",
+      "ownershipPeriodId": "cmrxpjza701snivheqdjimc56",
+      "companyName": "Next Wave Energy Partners, LP",
+      "country": "United States",
+      "investmentFirm": "ECP",
+      "currentVehicleName": "ECP Fund IV from March 2018; initial 2015 fund and transition mechanics not publicly disclosed",
+      "databaseVehicleName": "ECP Fund IV from March 2018; initial 2015 fund and transition mechanics not publicly disclosed",
+      "investmentYear": 2015,
+      "stake": "Not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "ECP Fund IV",
+        "attributionConfidence": null,
+        "attributionRationale": "ECP identifies March 2018 as the Fund IV investment date and continues to list Next Wave as current. The record preserves the earlier 2015 ECP investment while explicitly leaving its original fund and the transition mechanics undisclosed; no curated Fund IV database row is linked."
+      },
+      "evidenceUrls": [
+        "https://www.ecpgp.com/equity/portfolio/next-wave-energy-partners-lp",
+        "https://www.nextwaveenergy.com/news/next-wave-energy-partners-announces-investment-500-million-energy-capital-partners",
+        "https://www.ecpgp.com/about/news-and-insights/press-releases/2020/energy-capital-partners-raises-68-billion-for-fund-iv-and-co-investment-pools"
+      ]
+    },
+    {
+      "recordId": "OFA-BC5F27EAA8C4",
+      "ownershipPeriodId": "cmrxpjzar01soivheky8l1tl7",
+      "companyName": "Pivot Energy",
+      "country": "United States",
+      "investmentFirm": "ECP",
+      "currentVehicleName": "Pivot Energy, Inc.; owned by ECP IV-A, IV-B, IV-C and IV-D, LP",
+      "databaseVehicleName": "Pivot Energy, Inc.; owned by ECP IV-A, IV-B, IV-C and IV-D, LP",
+      "investmentYear": 2021,
+      "stake": "Control; exact economic percentages not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "ECP Fund IV",
+        "attributionConfidence": null,
+        "attributionRationale": "The receivership report identifies ECP IV-A, IV-B, IV-C and IV-D as the acquisition funds, and ECP confirms the completed 2021 acquisition and current ownership. The disclosed Fund IV attribution is retained without a curated database link."
+      },
+      "evidenceUrls": [
+        "https://www.tcafundreceivership.com/docs/DE141FourthQStatRep.pdf",
+        "https://www.ecpgp.com/about/news-and-insights/press-releases/2021/ecp-announces-acquisition-of-pivot-energy",
+        "https://www.ecpgp.com/equity/portfolio/pivot-energy"
+      ]
+    },
+    {
+      "recordId": "OFA-D71042A88A24",
+      "ownershipPeriodId": "cmrxpjzba01spivhee3vel7bc",
+      "companyName": "PROENERGY",
+      "country": "United States",
+      "investmentFirm": "Energy Capital Partners",
+      "currentVehicleName": "ECP Fund V",
+      "databaseVehicleName": null,
+      "investmentYear": 2024,
+      "stake": "Majority; exact percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": "ECP Fund V",
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": "ECP Fund V"
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "ECP Fund V",
+        "attributionConfidence": null,
+        "attributionRationale": "Bridgepoint's 2026 reporting attributes PROENERGY to ECP Fund V, while ECP confirms the majority acquisition and current status. The approved ownership period remains linked to the existing curated ECP Fund V record."
+      },
+      "evidenceUrls": [
+        "https://www.ecpgp.com/about/news-and-insights/press-releases/2024/energy-capital-partners--ecp--acquires-majority-interest-in-proe",
+        "https://www.ecpgp.com/equity/portfolio/proenergy",
+        "https://www.bridgepointgroup.com/content/dam/bridgepoint/corporate2022/documents/financial-information/results_reports_presentations/2026/bridgepoint-group-interim-results-2026-announcement.pdf.downloadasset.pdf"
+      ]
+    },
+    {
+      "recordId": "OFA-5379C52EC8D3",
+      "ownershipPeriodId": "cmteaq22x001bw32bqz186r2y",
+      "companyName": "PROENERGY",
+      "country": "United States",
+      "investmentFirm": "Jeff Canon and PROENERGY management",
+      "currentVehicleName": "Jeff Canon and PROENERGY management",
+      "databaseVehicleName": null,
+      "investmentYear": 2024,
+      "stake": "Invested alongside ECP; exact percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "ECP's acquisition release directly states that founder Jeff Canon and management invested alongside ECP. This is a management co-investment rather than an infrastructure-fund attribution, and no separate vehicle or percentage is inferred."
+      },
+      "evidenceUrls": [
+        "https://www.ecpgp.com/about/news-and-insights/press-releases/2024/energy-capital-partners--ecp--acquires-majority-interest-in-proe"
+      ]
+    },
+    {
+      "recordId": "OFA-7F84F0F6B187",
+      "ownershipPeriodId": "cmrxpjzbw01sqivheqo2vhw6z",
+      "companyName": "Restaurant Technologies, Inc.",
+      "country": "United States",
+      "investmentFirm": "ECP",
+      "currentVehicleName": "ECP",
+      "databaseVehicleName": null,
+      "investmentYear": 2022,
+      "stake": "Control or majority reported; exact percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "ECP directly supports the completed 2022 acquisition and current ownership, but the reviewed sources do not disclose the investing fund or acquisition vehicle. The unsupported ECP Fund V estimate is removed."
+      },
+      "evidenceUrls": [
+        "https://www.ecpgp.com/about/news-and-insights/press-releases/2022/ecp-to-acquire-restaurant-technologies-from-goldman-sachs-asset-management-as-sustainability-initiatives-move-to-the-forefront-of-restaurant-management",
+        "https://www.ecpgp.com/equity/portfolio/restaurant-technologies-inc"
+      ]
+    },
+    {
+      "recordId": "OFA-E875D2826345",
+      "ownershipPeriodId": "cmteaq53n001rw32bw4g0h3m1",
+      "companyName": "Restaurant Technologies, Inc.",
+      "country": "United States",
+      "investmentFirm": "Continental Grain Company",
+      "currentVehicleName": "Continental Grain Company",
+      "databaseVehicleName": null,
+      "investmentYear": null,
+      "stake": "Continuing minority investor; exact percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "ECP's acquisition release identifies Continental Grain as a continuing minority investor. This is direct corporate co-ownership rather than a fund attribution; the original investment date, vehicle and percentage are not inferred."
+      },
+      "evidenceUrls": [
+        "https://www.ecpgp.com/about/news-and-insights/press-releases/2022/ecp-to-acquire-restaurant-technologies-from-goldman-sachs-asset-management-as-sustainability-initiatives-move-to-the-forefront-of-restaurant-management",
+        "https://www.rti-inc.com/about-rti/board-of-directors/"
+      ]
+    },
+    {
+      "recordId": "OFA-29DF966C706C",
+      "ownershipPeriodId": "cmteaq56l001tw32bhapeul49",
+      "companyName": "Restaurant Technologies, Inc.",
+      "country": "United States",
+      "investmentFirm": "Enlightened Hospitality Investments",
+      "currentVehicleName": "Enlightened Hospitality Investments",
+      "databaseVehicleName": null,
+      "investmentYear": 2022,
+      "stake": "Minority co-investor; exact percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "ECP's acquisition release identifies Enlightened Hospitality Investments as a minority co-investor at the 2022 closing. The exact fund, sleeve, holding vehicle and percentage are not publicly disclosed, so no fund attribution is inferred."
+      },
+      "evidenceUrls": [
+        "https://www.ecpgp.com/about/news-and-insights/press-releases/2022/ecp-to-acquire-restaurant-technologies-from-goldman-sachs-asset-management-as-sustainability-initiatives-move-to-the-forefront-of-restaurant-management",
+        "https://www.rti-inc.com/wp-content/uploads/2022/10/RT_2022_ESGReport.pdf"
+      ]
+    }
+  ],
+  "manifestSha256": "890842493dc54ee35462e4f9817b3310f3ba9c01e0e25df92f7cb176e514e2e3"
+}
