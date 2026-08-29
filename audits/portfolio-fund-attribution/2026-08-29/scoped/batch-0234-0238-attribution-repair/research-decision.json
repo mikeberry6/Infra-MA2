@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_CORRECTION_DECISION",
+  "asOfDate": "2026-08-29",
+  "triggerBatchId": "batch-0234-0238-v1",
+  "triggerBatchSha256": "a1fa32fc2233da578d6a16b61debb0d35912fc379bc7e2e3e2e4a5974cb1b30d",
+  "decision": "ALIGN_NEW_OWNERSHIP_ATTRIBUTION_METADATA",
+  "rationale": "The protected atomic PortCo transaction correctly applied the reviewed EdgeConneX ownership periods, vehicles, stakes and dates, but the three newly created active periods began with default attribution metadata. Align production to the already-reviewed, hash-bound seed attribution records without changing company identity, ownership economics, Fund Database records or legal ownership conclusions.",
+  "mutations": [
+    {
+      "ownershipPeriodId": "cmtef467x000tv32benn3udqt",
+      "companyName": "EdgeConneX",
+      "from": "UNRESOLVED — no attribution rationale",
+      "to": "DISCLOSED — EQT Infrastructure V — no normalized fund link"
+    },
+    {
+      "ownershipPeriodId": "cmtef46e6000uv32b03e6dkzd",
+      "companyName": "EdgeConneX",
+      "from": "UNRESOLVED — linked EQT AI Infrastructure Strategy but no attribution rationale",
+      "to": "DISCLOSED — EQT AI Infrastructure Strategy — existing normalized fund link retained"
+    },
+    {
+      "ownershipPeriodId": "cmtef46h8000vv32b2a2f0c3y",
+      "companyName": "EdgeConneX",
+      "from": "UNRESOLVED — no attribution rationale",
+      "to": "UNRESOLVED — reviewed Sixth Street managed-funds disclosure limitation"
+    }
+  ],
+  "nonChanges": [
+    "Arium Networks attribution, which already matches the reviewed seed record",
+    "Company identities, canonical redirects and publication status",
+    "Ownership organizations, vehicles, stakes, dates and active or former state",
+    "Fund Database records",
+    "Descriptions, milestones, citations and primary sources"
+  ],
+  "identityResolved": true,
+  "activeOwnershipResolved": true,
+  "unresolvedQuestions": []
+}
