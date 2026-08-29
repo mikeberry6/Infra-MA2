@@ -1,0 +1,80 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:batch:apply
+> npx tsx scripts/portco-reconciliation/batch-apply-cli.ts --batch-manifest=audits/portco-reconciliation/2026-08-23/batches/batch-0209-0213-v1/batch-manifest.json --batch-sha256=b92c30918cfc5fde5cd1e648e523c01d49942ce4ac32586d4a8a11ebffd8f1a9
+
+(node:3437) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "BATCH_DRY_RUN",
+  "batchId": "batch-0209-0213-v1",
+  "batchSha256": "b92c30918cfc5fde5cd1e648e523c01d49942ce4ac32586d4a8a11ebffd8f1a9",
+  "databaseWrites": false,
+  "seedWrites": false,
+  "plans": [
+    {
+      "companyName": "ValorC3 Data Centers",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to name, aliases, subsector, description, website, headquarters, lastVerifiedAt, ownershipPeriods, milestones, citations."
+        },
+        {
+          "kind": "MERGE_COMPANIES",
+          "relationIds": [
+            "cmrxpjd3z00toivhesha276ac"
+          ],
+          "detail": "merge 1 production duplicate(s)"
+        }
+      ],
+      "changedFields": [
+        "aliases",
+        "citations",
+        "description",
+        "headquarters",
+        "lastVerifiedAt",
+        "milestones",
+        "name",
+        "ownershipPeriods",
+        "redirects",
+        "subsector",
+        "website"
+      ],
+      "retiredCompanyIds": [
+        "cmrxpjd3z00toivhesha276ac"
+      ]
+    },
+    {
+      "companyName": "Beanfield Metroconnect",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to aliases, subsector, description, website, headquarters, lastVerifiedAt, ownershipPeriods, milestones, citations."
+        },
+        {
+          "kind": "MERGE_COMPANIES",
+          "relationIds": [
+            "cmrxpjm7v017nivhet0bl1s0p"
+          ],
+          "detail": "merge 1 production duplicate(s)"
+        }
+      ],
+      "changedFields": [
+        "aliases",
+        "citations",
+        "description",
+        "headquarters",
+        "lastVerifiedAt",
+        "milestones",
+        "ownershipPeriods",
+        "redirects",
+        "subsector",
+        "website"
+      ],
+      "retiredCompanyIds": [
+        "cmrxpjm7v017nivhet0bl1s0p"
+      ]
+    }
+  ]
+}
