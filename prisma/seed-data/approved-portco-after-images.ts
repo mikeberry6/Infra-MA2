@@ -11,6 +11,15 @@ export interface ApprovedPortCoAfterImage {
 
 const afterImages = rawAfterImages as ApprovedPortCoAfterImage[];
 
+/**
+ * Expose the immutable company projection stored by each approved overlay so
+ * reconciliation controls can resolve a proposal-bound seed hash even after a
+ * later overlay has replaced or retired that identity in the evaluated seed.
+ */
+export function approvedPortCoSeedIdentityCandidates(): readonly PortCo[] {
+  return afterImages.map((entry) => entry.company);
+}
+
 function key(name: string, country: string): string {
   return `${name.trim().toLowerCase()}\u0000${country.trim().toLowerCase()}`;
 }

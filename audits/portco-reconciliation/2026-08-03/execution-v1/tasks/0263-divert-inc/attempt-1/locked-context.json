@@ -1,0 +1,234 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0263:divert-inc:e7a24939",
+  "taskIndex": 263,
+  "companyName": "Divert, Inc.",
+  "generatedAt": "2026-08-29T18:34:37.178Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0263-divert-inc/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 263,
+    "taskId": "ledger:0263:divert-inc:e7a24939",
+    "canonicalKey": "divert-inc|united-states",
+    "companyName": "Divert, Inc.",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 47,
+    "managers": [
+      "GIC"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "047-gic:repo-only:002:divert-inc"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjg9f00yeivhenhq6ifso"
+    ],
+    "seedKeys": [
+      "divert, inc.|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.prnewswire.com/news-releases/divert-inc-secures-100-million-investment-from-ara-partners-gic-and-ontario-power-generation-pension-fund-to-accelerate-deployment-of-diverts-patented-technologies-301305306.html"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: GIC OUT_OF_SCOPE: Repository includes GIC as investor, but no evidence ties the position to GIC’s infrastructure strategy; classified as growth/technology exposure.",
+    "unresolvedQuestions": [
+      "Confirm whether the manager ownership, the company itself, or only this census scope is out of scope before proposing any change."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjg9f00yeivhenhq6ifso",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "divert-inc|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjg9f00yeivhenhq6ifso",
+    "name": "Divert, Inc.",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Food waste recycling and renewable natural gas",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Divert, Inc. is a food waste processing and circularity platform serving grocery retailers and other commercial food supply-chain participants. Its customers use the platform to reduce waste disposal volumes, recover unsold food, and produce renewable natural gas and other recovered outputs. The model is asset-heavy and infrastructure-oriented, with value supported by processing facilities, logistics, and contracted commercial relationships. Public company materials state that Divert was founded in 2007 and has been building a national network to process unsold food at industrial scale. The reviewed materials did not disclose company revenue or the current ownership percentages held by GIC and other investors. Divert announced a major 2021 investment round led by Ara Partners, GIC, and Ontario Power Generation and later disclosed broader business momentum as it continued to scale its network.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2007,
+    "headquarters": "Massachusetts; multi-state U.S.",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk1xn01wrivhesg7mm9kz",
+        "managerName": "GIC",
+        "organizationName": "GIC",
+        "fundName": null,
+        "vehicleName": "GIC Infrastructure (Co-Investor)",
+        "stake": null,
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplsmo043rivheljjl9o9q",
+        "date": "2007",
+        "event": "Divert was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2007-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplsn8043sivhesbd6zfgo",
+        "date": "Jun 22, 2021",
+        "event": "Divert announced a US$100 million investment from Ara Partners, GIC, and Ontario Power Generation Pension Fund.",
+        "category": "FINANCING",
+        "sortDate": "2021-06-22T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpr7fm0aq5ivhev5t9xw9g",
+        "label": "Divertinc — Divert, Inc.",
+        "url": "https://divertinc.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Divertinc company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpr7gn0aq7ivhe68aoju6c",
+        "label": "Investment date source — GIC — Divert, Inc.",
+        "url": "https://divertinc.com/divert-inc-announces-significant-business-momentum/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "GIC initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr7hv0aq9ivhehy5t16ag",
+        "label": "Investment date source — GIC — Divert, Inc.",
+        "url": "https://www.prnewswire.com/news-releases/divert-inc-secures-100-million-investment-from-ara-partners-gic-and-ontario-power-generation-pension-fund-to-accelerate-deployment-of-diverts-patented-technologies-301305306.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "GIC initial investment / ownership",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Divert, Inc.",
+    "investmentFirm": "GIC",
+    "sector": "Power & ET",
+    "subsector": "Food waste recycling and renewable natural gas",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "GIC Infrastructure (Co-Investor)",
+    "description": "Divert, Inc. is a food waste processing and circularity platform serving grocery retailers and other commercial food supply-chain participants. Its customers use the platform to reduce waste disposal volumes, recover unsold food, and produce renewable natural gas and other recovered outputs. The model is asset-heavy and infrastructure-oriented, with value supported by processing facilities, logistics, and contracted commercial relationships. Public company materials state that Divert was founded in 2007 and has been building a national network to process unsold food at industrial scale. The reviewed materials did not disclose company revenue or the current ownership percentages held by GIC and other investors. Divert announced a major 2021 investment round led by Ara Partners, GIC, and Ontario Power Generation and later disclosed broader business momentum as it continued to scale its network.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2007,
+    "investmentYear": 2021,
+    "headquarters": "Massachusetts; multi-state U.S.",
+    "milestones": [
+      {
+        "date": "2007",
+        "event": "Divert was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "Jun 22, 2021",
+        "event": "Divert announced a US$100 million investment from Ara Partners, GIC, and Ontario Power Generation Pension Fund.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Divertinc — Divert, Inc.",
+        "url": "https://divertinc.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Investment date source — GIC — Divert, Inc.",
+        "url": "https://divertinc.com/divert-inc-announces-significant-business-momentum/",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Investment date source — GIC — Divert, Inc.",
+        "url": "https://www.prnewswire.com/news-releases/divert-inc-secures-100-million-investment-from-ara-partners-gic-and-ontario-power-generation-pension-fund-to-accelerate-deployment-of-diverts-patented-technologies-301305306.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "GIC",
+        "ownershipVehicle": "GIC Infrastructure (Co-Investor)",
+        "investmentYear": 2021,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi8wm0022ivhessbkv786",
+        "name": "GIC",
+        "updatedAt": "2026-07-23T16:09:18.742Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0263:divert-inc:e7a24939",
+    "taskIndex": 263,
+    "canonicalKey": "divert-inc|united-states",
+    "capturedAt": "2026-08-29T18:34:37.178Z",
+    "databaseRevision": "revision:15a2c2e1266967d4883d1394ca74940a314428f07abb8cfa0a3c5c0fd4a594d2",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "4be111aa6c8792eae03e118e6d10ff03ef9cc60cfe7c301173f11a635360a2bc",
+    "productionSnapshotSha256": "13ef78f899ca49a5647b05efec07baa7588f4bb577658237475b260636b81607",
+    "targetCompanySnapshotSha256": "0b5039622b8b9ae5f12eecf85b5f794b9936dcd8be55651830b1c7ed4c3476b3",
+    "seedEntrySha256": "57f84541e594c38dc6f60972c952b117d98370e6ab3a18451e58af10921760f7",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "b0f7f2fa21276446838591f143e0e9a49f2c1cdf80bed826a34ac86287a3974f",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "f4cbd2a6c0953f5e1d53b68da46d06c4c004ca04b879397775055bc877e43f67",
+      "citationsSha256": "91112cf850f7c03230b6e8c501cb7f33bc04284828458bcfb254989984a357d5",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "c96e7f2b1e5fe904def4ad38d0a5b7c47c5084b13be989710aa1ff868718c24d",
+    "stateSha256": "fcc6c3981a96d71292a36b05214cae09d008482fbe7919b687aa93a4b409a110",
+    "taskSnapshotSha256": "232e97fa8abf007fc51d7602c0ebcb3ea2c9961d90414f5cd126411ce46dbdc4"
+  },
+  "contextSha256": "add6bb0ff828f4ed4ed6ff9eef54df8ed81c146aae143a9a42bcfa6a2e3122a3"
+}

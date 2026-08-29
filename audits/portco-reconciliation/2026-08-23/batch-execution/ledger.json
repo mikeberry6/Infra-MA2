@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-29T18:24:42.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-08-29T18:56:19Z",
+  "activeBatchId": "batch-0259-0263-v6",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -3531,7 +3531,345 @@
           "reason": null
         }
       ]
+    },
+    {
+      "batchId": "batch-0259-0263-v1",
+      "state": "FAILED",
+      "taskIds": [
+        "ledger:0259:solcap-keystate-renewables-jvs:349ca18f",
+        "ledger:0260:stem-energy-storage-asset-spvs:a034fa93",
+        "ledger:0261:aces-delta:7027e92e",
+        "ledger:0262:direct-chassislink-inc-dcli:d3d4542b",
+        "ledger:0263:divert-inc:e7a24939"
+      ],
+      "taskIndexes": [
+        259,
+        260,
+        261,
+        262,
+        263
+      ],
+      "createdAt": "2026-08-29T18:31:45Z",
+      "updatedAt": "2026-08-29T18:47:21Z",
+      "completedAt": "2026-08-29T18:47:21Z",
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0259-0263-v1/batch-manifest.json",
+        "sha256": "45f9894135d72bf686d845bc8954e6be1d9c8e9d388c2d02c94293834ec37732"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": "Pre-write batch validation rejected incorrect source-manifest and research-normalization reference semantics; no seed or database write occurred.",
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-29T18:31:45Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-29T18:46:29Z",
+          "evidenceSha256": [
+            "45f9894135d72bf686d845bc8954e6be1d9c8e9d388c2d02c94293834ec37732"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "FAILED",
+          "at": "2026-08-29T18:47:21Z",
+          "evidenceSha256": [
+            "45f9894135d72bf686d845bc8954e6be1d9c8e9d388c2d02c94293834ec37732"
+          ],
+          "reason": "Pre-write batch validation rejected incorrect source-manifest and research-normalization reference semantics; no seed or database write occurred."
+        }
+      ]
+    },
+    {
+      "batchId": "batch-0259-0263-v2",
+      "state": "FAILED",
+      "taskIds": [
+        "ledger:0259:solcap-keystate-renewables-jvs:349ca18f",
+        "ledger:0260:stem-energy-storage-asset-spvs:a034fa93",
+        "ledger:0261:aces-delta:7027e92e",
+        "ledger:0262:direct-chassislink-inc-dcli:d3d4542b",
+        "ledger:0263:divert-inc:e7a24939"
+      ],
+      "taskIndexes": [
+        259,
+        260,
+        261,
+        262,
+        263
+      ],
+      "createdAt": "2026-08-29T18:47:21Z",
+      "updatedAt": "2026-08-29T18:51:26Z",
+      "completedAt": "2026-08-29T18:51:26Z",
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0259-0263-v2/batch-manifest.json",
+        "sha256": "b723e9d22e791d162c90801936d13f0248786ca83a7a534b85e1d6a7f0c6153c"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": "Pre-write dry run identified missing approved organization-provisioning prerequisites and an ownership-correction removal primitive; no seed or database write occurred.",
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-29T18:47:21Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-29T18:48:02Z",
+          "evidenceSha256": [
+            "b723e9d22e791d162c90801936d13f0248786ca83a7a534b85e1d6a7f0c6153c"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "FAILED",
+          "at": "2026-08-29T18:51:26Z",
+          "evidenceSha256": [
+            "b723e9d22e791d162c90801936d13f0248786ca83a7a534b85e1d6a7f0c6153c"
+          ],
+          "reason": "Pre-write dry run identified missing approved organization-provisioning prerequisites and an ownership-correction removal primitive; no seed or database write occurred."
+        }
+      ]
+    },
+    {
+      "batchId": "batch-0259-0263-v3",
+      "state": "FAILED",
+      "taskIds": [
+        "ledger:0259:solcap-keystate-renewables-jvs:349ca18f",
+        "ledger:0260:stem-energy-storage-asset-spvs:a034fa93",
+        "ledger:0261:aces-delta:7027e92e",
+        "ledger:0262:direct-chassislink-inc-dcli:d3d4542b",
+        "ledger:0263:divert-inc:e7a24939"
+      ],
+      "taskIndexes": [
+        259,
+        260,
+        261,
+        262,
+        263
+      ],
+      "createdAt": "2026-08-29T18:51:27Z",
+      "updatedAt": "2026-08-29T18:52:48Z",
+      "completedAt": "2026-08-29T18:52:48Z",
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0259-0263-v3/batch-manifest.json",
+        "sha256": "20471ad4dfa2a96501ce76148b36c0f89956a4e7634723b823a0a592bb092c8e"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": "Pre-write dry run rejected manager labels that could not round-trip through canonical Organization names; no seed or database write occurred.",
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-29T18:51:27Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-29T18:52:07Z",
+          "evidenceSha256": [
+            "20471ad4dfa2a96501ce76148b36c0f89956a4e7634723b823a0a592bb092c8e"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "FAILED",
+          "at": "2026-08-29T18:52:48Z",
+          "evidenceSha256": [
+            "20471ad4dfa2a96501ce76148b36c0f89956a4e7634723b823a0a592bb092c8e"
+          ],
+          "reason": "Pre-write dry run rejected manager labels that could not round-trip through canonical Organization names; no seed or database write occurred."
+        }
+      ]
+    },
+    {
+      "batchId": "batch-0259-0263-v4",
+      "state": "FAILED",
+      "taskIds": [
+        "ledger:0259:solcap-keystate-renewables-jvs:349ca18f",
+        "ledger:0260:stem-energy-storage-asset-spvs:a034fa93",
+        "ledger:0261:aces-delta:7027e92e",
+        "ledger:0262:direct-chassislink-inc-dcli:d3d4542b",
+        "ledger:0263:divert-inc:e7a24939"
+      ],
+      "taskIndexes": [
+        259,
+        260,
+        261,
+        262,
+        263
+      ],
+      "createdAt": "2026-08-29T18:52:48Z",
+      "updatedAt": "2026-08-29T18:54:15Z",
+      "completedAt": "2026-08-29T18:54:15Z",
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0259-0263-v4/batch-manifest.json",
+        "sha256": "a3e105e2a42783c26fb39b762039a72b18815b7e59feed6a6bbdf941023002f7"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": "Pre-write dry run correctly required the explicit RETRACT_ERRONEOUS_OWNERSHIP action for disproven LP-only owner rows; no seed or database write occurred.",
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-29T18:52:48Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-29T18:53:29Z",
+          "evidenceSha256": [
+            "a3e105e2a42783c26fb39b762039a72b18815b7e59feed6a6bbdf941023002f7"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "FAILED",
+          "at": "2026-08-29T18:54:15Z",
+          "evidenceSha256": [
+            "a3e105e2a42783c26fb39b762039a72b18815b7e59feed6a6bbdf941023002f7"
+          ],
+          "reason": "Pre-write dry run correctly required the explicit RETRACT_ERRONEOUS_OWNERSHIP action for disproven LP-only owner rows; no seed or database write occurred."
+        }
+      ]
+    },
+    {
+      "batchId": "batch-0259-0263-v5",
+      "state": "FAILED",
+      "taskIds": [
+        "ledger:0259:solcap-keystate-renewables-jvs:349ca18f",
+        "ledger:0260:stem-energy-storage-asset-spvs:a034fa93",
+        "ledger:0261:aces-delta:7027e92e",
+        "ledger:0262:direct-chassislink-inc-dcli:d3d4542b",
+        "ledger:0263:divert-inc:e7a24939"
+      ],
+      "taskIndexes": [
+        259,
+        260,
+        261,
+        262,
+        263
+      ],
+      "createdAt": "2026-08-29T18:54:15Z",
+      "updatedAt": "2026-08-29T18:55:37Z",
+      "completedAt": "2026-08-29T18:55:37Z",
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0259-0263-v5/batch-manifest.json",
+        "sha256": "32c23eef01f482bce8388c293a805209f9e33ef34c94abd0e7194253c75f5228"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": "Pre-write dry run rejected an over-declared DCLI RETIRE_OWNERSHIP action; the after-image only adds already-realized historical owners. No seed or database write occurred.",
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-29T18:54:15Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-29T18:54:54Z",
+          "evidenceSha256": [
+            "32c23eef01f482bce8388c293a805209f9e33ef34c94abd0e7194253c75f5228"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "FAILED",
+          "at": "2026-08-29T18:55:37Z",
+          "evidenceSha256": [
+            "32c23eef01f482bce8388c293a805209f9e33ef34c94abd0e7194253c75f5228"
+          ],
+          "reason": "Pre-write dry run rejected an over-declared DCLI RETIRE_OWNERSHIP action; the after-image only adds already-realized historical owners. No seed or database write occurred."
+        }
+      ]
+    },
+    {
+      "batchId": "batch-0259-0263-v6",
+      "state": "READY",
+      "taskIds": [
+        "ledger:0259:solcap-keystate-renewables-jvs:349ca18f",
+        "ledger:0260:stem-energy-storage-asset-spvs:a034fa93",
+        "ledger:0261:aces-delta:7027e92e",
+        "ledger:0262:direct-chassislink-inc-dcli:d3d4542b",
+        "ledger:0263:divert-inc:e7a24939"
+      ],
+      "taskIndexes": [
+        259,
+        260,
+        261,
+        262,
+        263
+      ],
+      "createdAt": "2026-08-29T18:55:37Z",
+      "updatedAt": "2026-08-29T18:56:19Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0259-0263-v6/batch-manifest.json",
+        "sha256": "e7009ead2e4c6d46c161899b9989fc43dc64483bbcb779e56bb9398012cfbfac"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-29T18:55:37Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-29T18:56:19Z",
+          "evidenceSha256": [
+            "e7009ead2e4c6d46c161899b9989fc43dc64483bbcb779e56bb9398012cfbfac"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "7a0d8c5d728a0fe2f915f5e531f040d86d03307b438a9e83869d3dff2315cee4"
+  "ledgerSha256": "2dc85b57211ffcb50bb0e8e885733f9454d189495f9cc9d99220891dd74f9170"
 }

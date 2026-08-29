@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0259:solcap-keystate-renewables-jvs:349ca18f",
+  "taskIndex": 259,
+  "companyName": "SOLCAP (KeyState Renewables JVs)",
+  "outcome": "EXCLUDED",
+  "decidedAt": "2026-08-29T18:36:15Z",
+  "rationale": "SOLCAP is KeyState's tax-credit syndication platform and a series of pooled LLCs, not a Generate/KeyState operating company. Generate owns/sponsors the solar assets; KeyState manages tax-equity capital. SEC filings classify the Generate-named vehicles as pooled funds and omit Generate as manager.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0259-solcap-keystate-renewables-jvs/attempt-1/locked-task-snapshot.json",
+    "sha256": "baf49b4fdda27c54466e5c8c4b3ffc9a1e3c5adf2fa687de7ed6e17592e49aef"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0259-solcap-keystate-renewables-jvs/attempt-1/application-research-decision.json",
+    "sha256": "bbde067c0fbb46c29e14bf8eac13a8e7888dfcb2d96ca1b7a2c9a538e4a1671a"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0259-solcap-keystate-renewables-jvs/attempt-1/source-verification.json",
+    "sha256": "ad42ba323695246f50bba6e2fd8709178388eafc9c627882b8999f430903aff5"
+  },
+  "evidence": [
+    {
+      "url": "https://generatecapital.com/generate-capital-closes-85-million-community-solar-tax-equity-fund/",
+      "purpose": "Fund X and roles"
+    },
+    {
+      "url": "https://generatecapital.com/generate-capital-and-keystate-renewables-solcap-platform-deliver-53-5-mwdc-in-community-solar-across-11-projects-in-new-york-with-latest-joint-tax-equity-facility-close/",
+      "purpose": "Facility, size, projects"
+    },
+    {
+      "url": "https://www.sol-cap.com/keystate-renewables-launches-solcap-fund-i-llc-a-solar-tax-credit-fund-for-community-bank-investors/",
+      "purpose": "Formation and managers"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/2014912/000109991024000121/xslFormDX01/primary_doc.xml",
+      "purpose": "Fund form and managers"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/2060260/000206026025000003/xslFormDX01/primary_doc.xml",
+      "purpose": "Separate 2025 fund"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/2145709/000214570926000001/xslFormDX01/primary_doc.xml",
+      "purpose": "2026-A close"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/2145713/000214571326000001/xslFormDX01/primary_doc.xml",
+      "purpose": "2026-B close"
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "b52d656bc11c5b440d5ee52ca3454d67835175bb12bad1829a189c812755f7f2"
+}

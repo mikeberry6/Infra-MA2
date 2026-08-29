@@ -1,0 +1,376 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_MANIFEST",
+  "methodologyVersion": "PORTCO_APPLY_BATCH_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0259-0263-v2",
+  "createdAt": "2026-08-29T19:10:00.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "9499f94ff7fe4f619b8284dd99cc0b89bae0d201674004ca0ea8d41d537c768f"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0259:solcap-keystate-renewables-jvs:349ca18f",
+      "taskIndex": 259,
+      "companyName": "SOLCAP (KeyState Renewables JVs)",
+      "outcome": "EXCLUDED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0259-solcap-keystate-renewables-jvs/attempt-1/terminal-decision.json",
+        "sha256": "b52d656bc11c5b440d5ee52ca3454d67835175bb12bad1829a189c812755f7f2"
+      }
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0260:stem-energy-storage-asset-spvs:a034fa93",
+      "taskIndex": 260,
+      "companyName": "Stem Energy Storage Asset SPVs",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0260-stem-energy-storage-asset-spvs-v1/proposal.json",
+        "sha256": "5306ed448d9d524bd8d165bf419e65da6f89e1f5f32ad00c77b1f23add34ef57"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0260-stem-energy-storage-asset-spvs-v1.json",
+        "sha256": "5e98ed85e5cc1feccd467a4dc2a6de2ae8e3ac19f3663f41e012944f8223fae0"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0260-stem-energy-storage-asset-spvs/attempt-1/locked-production-snapshot.json",
+        "sha256": "eac66d728aa6d7697209b602fce61e3cea7770fa088367f3b07968c6af8bd0a6"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0260-stem-energy-storage-asset-spvs/attempt-1/locked-task-snapshot.json",
+        "sha256": "418d799a0cdc93f2fab9c22b79fdfb0e2d1fead6fe5efe942f8b7c06ec540654"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0260-stem-energy-storage-asset-spvs/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "7d0db9043ebd89157b392b88a5e82fbdc2835c918d1d525a284328e946f108a0"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0260-stem-energy-storage-asset-spvs/attempt-1/application-research-decision.json",
+        "sha256": "8ab941e2a6effadafc14cf3426c41029897a07e69aa76043411a7972de9c6954"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0260-stem-energy-storage-asset-spvs/attempt-1/source-verification.json",
+        "sha256": "0850590c0ba3a4157ba1eefeb9d20021c11bf972b812094bcde0e89a734b59e5"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "c1ebe8dffd20144b9bea2823b76039a38dd3a0dcd195225274f2141f09b84b42",
+      "dependencySha256": "4681f101b6d544ab738065bd510a9b08105b9bad0d2b650a37a45e9f933aa820",
+      "afterImageSha256": "196243d434c169290044e15202e546f310a64ed8b37d12bce0ea3c632212ddc2",
+      "targetClaims": [
+        "canonical:stem-energy-storage-asset-spvs|united-states",
+        "company:cmrxpjg6300y8ivhes0xgnzrw",
+        "relation:cmrxpk1qv01wjivhesljqngxd",
+        "relation:cmrxpls6f0437ivhe4wy5905t",
+        "relation:cmrxpls6w0438ivheiuuxc71f",
+        "relation:cmrxpr6l60aoxivhebf97hwyt",
+        "relation:cmrxpr6m70aozivhew8bp4khc",
+        "relation:cmrxpr6n20ap1ivhee34jeatd",
+        "relation:cmrxpr6o10ap3ivhepxt3szci",
+        "seed:generate–stem lcr|united states",
+        "seed:stem energy storage asset spvs|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://generatecapital.com/investment/",
+          "label": "Ownership source — Generate Capital — Cambrian Innovation Water Asset SPVs",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://generatecapital.com/investment/422/",
+          "label": "Generate Capital — Stem investment archive",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.energy-storage.news/stem-takes-project-funding-to-us350-million/",
+          "label": "Investment date source — Generate Capital — Stem Energy Storage Asset SPVs",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.sce.com/about-sce/energy-procurement/solicitations/archive/lcr-rfo",
+          "label": "Southern California Edison — LCR RFO archive",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.sce.com/business/save-costs-energy/savings-strategies/what-is-demand-response",
+          "label": "Southern California Edison — demand response programs",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1758766/000175876626000016/stem-20251231.htm",
+          "label": "Stem — 2025 Form 10-K",
+          "sourceType": "SEC_FILING"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1758766/000175876626000081/stem-20260630.htm",
+          "label": "Stem — Q2 2026 Form 10-Q",
+          "sourceType": "SEC_FILING"
+        },
+        {
+          "url": "https://www.stem.com/about-stem/",
+          "label": "Stem — Stem Energy Storage Asset SPVs",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.stem.com/wp-content/uploads/2022/10/About-Stem-Brochure-Sept-2022.pdf",
+          "label": "Stem — Stem Energy Storage Asset SPVs",
+          "sourceType": "PRESENTATION"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0261:aces-delta:7027e92e",
+      "taskIndex": 261,
+      "companyName": "ACES Delta",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0261-aces-delta-v1/proposal.json",
+        "sha256": "0f0e0778d641c7ffc6e2735f1f6addbe0470e329931c35bceb4cd7a8a123bd30"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0261-aces-delta-v1.json",
+        "sha256": "13e350c36e72fd436613a84f2ac7294081d9094ca0a7a024ac02e1de46b5c01d"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0261-aces-delta/attempt-1/locked-production-snapshot.json",
+        "sha256": "66c28c421196ec8084d6d90015c46de73240ef8c7a2b8f5542975d555b9348d2"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0261-aces-delta/attempt-1/locked-task-snapshot.json",
+        "sha256": "af78cb0e99b157ac5fad02e6a05ce3fa56c7e248862130817953bcb18b4b9365"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0261-aces-delta/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "300e5dcc51e249238dfc35aae0c451a1e711e2ed757839d19d47207ab7ba7b10"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0261-aces-delta/attempt-1/application-research-decision.json",
+        "sha256": "b4aade22abea6f92d4b4adcadd0f15f75753e70a8aafa45a2da22f1424d95a3e"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0261-aces-delta/attempt-1/source-verification.json",
+        "sha256": "a835c287537570ea6493882e5c12653c6cfb205ff8a25cd4e2bdd8b85ce4a7d7"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "a1b0f4612ebe91fa856347fb7f56b9a5b952e307bdb0f84ca479eec7a3e265bf",
+      "dependencySha256": "234db9039eec735c00a1cb67636b35a4fd35567eb9e69c07e7774280f583f5f2",
+      "afterImageSha256": "0d01e326f0feaecfd7c84df2e3089d5d11893f76d38f05618aa3c5a8b4aa4084",
+      "targetClaims": [
+        "canonical:aces-delta|united-states",
+        "company:cmrxpjg8d00ycivhe43mta77q",
+        "relation:cmrxpk1t401wnivhe9e6enlfc",
+        "relation:cmrxpk1w401woivhexnk76vjb",
+        "relation:cmrxpk1wo01wpivheefqe4thd",
+        "relation:cmrxplsek043iivheakgw11cw",
+        "relation:cmrxplsf6043jivhe8mx6sd2q",
+        "relation:cmrxplsfk043kivhel8f1qygb",
+        "relation:cmrxplsg5043livhef0ugzmd2",
+        "relation:cmrxplsgo043mivhejd6j9mn7",
+        "relation:cmrxpr71r0apnivhe7lssqixv",
+        "relation:cmrxpr72s0appivhel33519ke",
+        "relation:cmrxpr7630aprivhepd2vufo1",
+        "relation:cmrxpr77r0aptivhek74iy2ug",
+        "relation:cmrxpr7a00apvivhexvzvdhit",
+        "seed:aces delta, llc|united states",
+        "seed:aces delta|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://aces-delta.com/about-us/",
+          "label": "Aces Delta — ACES Delta",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://aces-delta.com/media/us-doe-closes-504-4-million-loan-to-advanced-clean-energy-storage-project-for-hydrogen-production-and-storage/",
+          "label": "Project financing source — ACES Delta",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://hvllc.com/haddingtonesp/",
+          "label": "Investment date source — GIC — ACES Delta",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://hvllc.com/hydrogen-hubs/",
+          "label": "Haddington Ventures — hydrogen hubs portfolio",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://hydrogenpro.com/mfn_news/business-update/",
+          "label": "HydrogenPro — ACES Delta commissioning update",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.aimco.ca/insights/worlds-largest-green-hydrogen-platform",
+          "label": "Investment date source — AIMCo — ACES Delta",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.businesswire.com/news/home/20230912536953/en/Chevron-Acquires-Majority-Stake-in-the-Advanced-Clean-Energy-Storage-Hydrogen-Project-in-Delta-Utah",
+          "label": "Chevron — ACES Delta majority acquisition",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.otpp.com/en-ca/about-us/news-and-insights/2022/haddington-ventures-announces--650-million-equity-syndication-pr/",
+          "label": "Investment date source — OTPP — ACES Delta",
+          "sourceType": "WEBSITE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0262:direct-chassislink-inc-dcli:d3d4542b",
+      "taskIndex": 262,
+      "companyName": "Direct ChassisLink, Inc. (DCLI)",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0262-direct-chassislink-inc-dcli-v1/proposal.json",
+        "sha256": "a2e7451aa20d7ddd210a2b4f8bba41700d9fb7031d4a5c3e30e8b60632b06c02"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0262-direct-chassislink-inc-dcli-v1.json",
+        "sha256": "abe8983d6129804cf8adc329cbcc161e3970e2bb9141aafa63d6da39dd1600d2"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0262-direct-chassislink-inc-dcli/attempt-1/locked-production-snapshot.json",
+        "sha256": "fa2da2c3770ad75fc3d7f090ab2d41007df7379e6e5a65d12fd61a461323eba9"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0262-direct-chassislink-inc-dcli/attempt-1/locked-task-snapshot.json",
+        "sha256": "e1e250f7a228b863ba82de3fed3997d735123fe5b9d0f34afcb9f2452f5b4824"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0262-direct-chassislink-inc-dcli/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "3b9c3abe41dc6c6e5908a7b41d1adf321fccfe6ec03c79469c0d3c5d0ed36c61"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0262-direct-chassislink-inc-dcli/attempt-1/application-research-decision.json",
+        "sha256": "c9bdbd2d9bf9b96655d7c83682c742b1d6bc2dc8e5f64d500a86c194bdc5c888"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0262-direct-chassislink-inc-dcli/attempt-1/source-verification.json",
+        "sha256": "f4ec7ee20ddf47ed0266dff5b6ec0803479e56a4f14f8b0e0cbaa9706c5e7a9e"
+      },
+      "supersededTaskIds": [
+        "ledger:0369:direct-chassislink-inc:a317904f"
+      ],
+      "taskStateSha256": "061e73817d8ac9cbbfc4f77935e67242dc03f44195f3d2cab4f2630c12c728e2",
+      "dependencySha256": "f155d6eab6a5e2aa0ea163c49a775cbd1721a8fe2cebfa405262bd6e094e7c80",
+      "afterImageSha256": "72997c14139e49d80802ef6344ee4580d20e830831cdf67fc7901be174c44030",
+      "targetClaims": [
+        "canonical:direct-chassislink-inc-dcli|united-states",
+        "company:cmrxpjoz401c3ivhemhei5kyo",
+        "relation:cmrxpk1x801wqivhe2d9e9l1t",
+        "relation:cmrxpkbiz02btivhe0hamfvuo",
+        "relation:cmrxpkblk02buivhen559osw3",
+        "relation:cmrxplshs043nivhe2wggqhcs",
+        "relation:cmrxplsid043oivhegx0prgr3",
+        "relation:cmrxplsl6043pivhey5jyvmvv",
+        "relation:cmrxplsll043qivheigs92akm",
+        "relation:cmrxpmw4t05fnivhepxfmj19i",
+        "relation:cmrxpmw5a05foivhes6xe06nh",
+        "relation:cmrxpmw8905fpivhe96cm57rv",
+        "relation:cmrxpmw8r05fqivheptcee3hi",
+        "relation:cmrxpr7b00apxivhexgwolru7",
+        "relation:cmrxpr7de0aq1ivhe2xeqrzxn",
+        "relation:cmrxpr7ei0aq3ivhedracuda3",
+        "relation:cmrxpt3zr0dm7ivhe6keodcop",
+        "relation:cmrxpt4060dm8ivheg95cbe3o",
+        "relation:cmrxpt40o0dm9ivhev4tw7i9x",
+        "relation:cmrxpt41o0dmbivhe68ysaa6i",
+        "relation:cmrxpt42r0dmdivhebzlfphh7",
+        "seed:direct chassislink, inc. (dcli)|united states",
+        "seed:direct chassislink, inc.|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://dcli.com/",
+          "label": "Dcli — Direct ChassisLink Inc. (DCLI)",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://dcli.com/about-us/",
+          "label": "Dcli — Direct ChassisLink Inc. (DCLI)",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://dcli.com/investor-information/",
+          "label": "DCLI — investor information",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://dcli.com/resource/gic-omers-infrastructure-and-wren-house-to-acquire-dcli/",
+          "label": "Announcement date source — GIC — Direct ChassisLink Inc. (DCLI)",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://eqtgroup.com/news/eqt-to-sell-majority-stake-in-direct-chassislink-to-funds-managed-by-affiliates-of-apollo-global-management-2019-03-07",
+          "label": "EQT — DCLI majority sale to Apollo",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:C:2022:402:FULL",
+          "label": "European Commission — DCLI joint-control notice",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.linkedin.com/posts/direct-chassislink-inc-_gic-omers-infrastructure-and-wren-house-activity-7008545873626349568-axwv",
+          "label": "DCLI — 2022 acquisition close announcement",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.omers.com/news/gic-omers-infrastructure-and-wren-house-to-acquire-direct-chassislink-inc",
+          "label": "Announcement date source — OMERS — Direct ChassisLink, Inc.",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.omersinfrastructure.com/news/gic-omers-infrastructure-and-wren-house-to-acquire-direct-chassislink-inc",
+          "label": "OMERS Infrastructure — DCLI acquisition announcement",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.omersinfrastructure.com/news/omers-wins-m-and-a-award-for-dcli-investment",
+          "label": "Close date source — GIC — Direct ChassisLink Inc. (DCLI)",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/littlejohn--co-completes-acquisition-of-direct-chassislink-inc-143510766.html",
+          "label": "Littlejohn — DCLI acquisition close",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.whinfra.com/gic-omers-infrastructure-and-wren-house-to-acquire-direct-chassislink-inc/",
+          "label": "Announcement date source — Wren House — Direct ChassisLink, Inc.",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.whinfra.com/our-portfolio/direct-chassislink-inc-dcli/",
+          "label": "Investment date source — Wren House — Direct ChassisLink, Inc.",
+          "sourceType": "WEBSITE"
+        }
+      ]
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0263:divert-inc:e7a24939",
+      "taskIndex": 263,
+      "companyName": "Divert, Inc.",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0263-divert-inc/attempt-1/terminal-decision.json",
+        "sha256": "1004180fce4052cc37e8a4ec860e3dd162463bd4c74a85b775e466f82b87a16e"
+      }
+    }
+  ],
+  "collisionAnalysis": {
+    "independent": true,
+    "claimsSha256": "44d6389d4d7f20a20aa1fbf972dde6ad97e7a0df1b6b3d00dcf1ccdb33ed931b",
+    "sharedSourceUrls": [],
+    "conflicts": []
+  },
+  "batchSha256": "b723e9d22e791d162c90801936d13f0248786ca83a7a534b85e1d6a7f0c6153c"
+}

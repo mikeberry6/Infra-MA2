@@ -55,6 +55,7 @@ function baseSpec() {
     }],
     unresolvedQuestions: [],
     ownershipPeriodUpdates: [],
+    ownershipPeriodRemovals: [] as string[],
     ownershipPeriodAdditions: [{
       id: null,
       managerName: "Northleaf Capital",
@@ -450,6 +451,20 @@ describe("proposal patch ownership additions", () => {
       isActive: false,
       transactionState: "REALIZED",
     });
+  });
+
+  it("removes disproven ownership periods without preserving them as realized owners", () => {
+    const spec = baseSpec();
+    spec.actions = ["CORRECT_COMPANY", "ADD_OWNER", "RETIRE_OWNERSHIP"];
+    spec.ownershipPeriodRemovals = ["owner_1"];
+
+    const result = applySpec(contextFixture(), spec);
+    expect(result.afterImage?.ownershipPeriods).toEqual([
+      expect.objectContaining({
+        id: null,
+        managerName: "Northleaf Capital",
+      }),
+    ]);
   });
 
   it("copies only task-scoped reviewed seed retirements into the proposal result", () => {

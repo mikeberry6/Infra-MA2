@@ -1,0 +1,364 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0261:aces-delta:7027e92e",
+  "taskIndex": 261,
+  "companyName": "ACES Delta",
+  "generatedAt": "2026-08-29T18:45:03.950Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0261-aces-delta/attempt-1/authorization-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 261,
+    "taskId": "ledger:0261:aces-delta:7027e92e",
+    "canonicalKey": "aces-delta|united-states",
+    "companyName": "ACES Delta",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 47,
+    "managers": [
+      "GIC",
+      "Ontario Teachers Pension Plan"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "076-ontario-teachers-pension-plan:holding:001:aces-delta"
+    ],
+    "sourceRepoOnlyIds": [
+      "047-gic:repo-only:001:aces-delta"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjg8d00ycivhe43mta77q"
+    ],
+    "seedKeys": [
+      "aces delta|United States"
+    ],
+    "evidenceUrls": [
+      "https://aces-delta.com/about-us/",
+      "https://www.otpp.com/en-ca/about-us/news-and-insights/2022/haddington-ventures-announces--650-million-equity-syndication-pr/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: GIC OUT_OF_SCOPE: Repository lists GIC exposure, but evidence confirms only LP participation via Haddington ESP I, which is excluded under the contract.",
+    "unresolvedQuestions": [
+      "Confirm whether the manager ownership, the company itself, or only this census scope is out of scope before proposing any change."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjg8d00ycivhe43mta77q",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "aces-delta|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjg8d00ycivhe43mta77q",
+    "name": "ACES Delta",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Hydrogen production and storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "ACES Delta is a large-scale clean hydrogen production and storage project in Delta, Utah. Its target end markets include long-duration power storage and industrial decarbonization applications that require dispatchable low-carbon hydrogen. The project is asset-heavy and development-oriented, with economics tied to electrolysis, salt-cavern storage, and long-duration energy infrastructure rather than to a conventional merchant generation asset. U.S. Department of Energy materials state that the facility combines 220 MW of alkaline electrolysis with two 4.5 million barrel salt caverns capable of supporting long-duration storage. The reviewed materials did not disclose project-level revenue or GIC's ownership percentage within the broader equity syndication consortium. Public materials show that DOE closed a US$504.4 million loan guarantee in 2022 and that GIC participated through a Haddington-led equity financing program around the project.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Utah",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk1t401wnivhe9e6enlfc",
+        "managerName": "GIC",
+        "organizationName": "GIC",
+        "fundName": "GIC Infrastructure",
+        "vehicleName": "GIC Infrastructure (Equity Syndication Consortium)",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpk1w401woivhexnk76vjb",
+        "managerName": "OTPP",
+        "organizationName": "OTPP",
+        "fundName": null,
+        "vehicleName": "Haddington ESP I, LP",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpk1wo01wpivheefqe4thd",
+        "managerName": "AIMCo",
+        "organizationName": "AIMCo",
+        "fundName": null,
+        "vehicleName": "Haddington ESP I, LP",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplsek043iivheakgw11cw",
+        "date": "2019",
+        "event": "Advanced Clean Energy Storage was publicly announced in Utah.",
+        "category": "OTHER",
+        "sortDate": "2019-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplsf6043jivhe8mx6sd2q",
+        "date": "Apr 2022",
+        "event": "DOE's Loan Programs Office issued a conditional commitment for the first phase of ACES Delta.",
+        "category": "FINANCING",
+        "sortDate": "2022-04-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplsfk043kivhel8f1qygb",
+        "date": "Jun 9, 2022",
+        "event": "Haddington Ventures announced a $650 million equity syndication for ACES Delta with investment from AIMCo, GIC, Manulife, and Ontario Teachers' (OTPP).",
+        "category": "FINANCING",
+        "sortDate": "2022-06-09T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplsg5043livhef0ugzmd2",
+        "date": "Jun 3, 2022",
+        "event": "DOE closed a US$504.4 million loan guarantee for the project.",
+        "category": "FINANCING",
+        "sortDate": "2022-06-03T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplsgo043mivhejd6j9mn7",
+        "date": "2023",
+        "event": "Public reporting indicated Chevron had acquired a majority stake in ACES Delta from Haddington Ventures.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpr71r0apnivhe7lssqixv",
+        "label": "Aces Delta — ACES Delta",
+        "url": "https://aces-delta.com/about-us/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Aces Delta company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpr72s0appivhel33519ke",
+        "label": "Investment date source — GIC — ACES Delta",
+        "url": "https://hvllc.com/haddingtonesp/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "GIC initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr7630aprivhepd2vufo1",
+        "label": "Investment date source — AIMCo — ACES Delta",
+        "url": "https://www.aimco.ca/insights/worlds-largest-green-hydrogen-platform",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "AIMCo initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr77r0aptivhek74iy2ug",
+        "label": "Investment date source — OTPP — ACES Delta",
+        "url": "https://www.otpp.com/en-ca/about-us/news-and-insights/2022/haddington-ventures-announces--650-million-equity-syndication-pr/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "OTPP initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr7a00apvivhexvzvdhit",
+        "label": "Project financing source — ACES Delta",
+        "url": "https://aces-delta.com/media/us-doe-closes-504-4-million-loan-to-advanced-clean-energy-storage-project-for-hydrogen-production-and-storage/",
+        "sourceType": "ARTICLE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Aces Delta financing or public filing",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "ACES Delta",
+    "investmentFirm": "Blackstone",
+    "sector": "Power & ET",
+    "subsector": "Hydrogen production and storage",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "GIC Infrastructure (Equity Syndication Consortium)",
+    "description": "ACES Delta is a large-scale clean hydrogen production and storage project in Delta, Utah. Its target end markets include long-duration power storage and industrial decarbonization applications that require dispatchable low-carbon hydrogen. The project is asset-heavy and development-oriented, with economics tied to electrolysis, salt-cavern storage, and long-duration energy infrastructure rather than to a conventional merchant generation asset. U.S. Department of Energy materials state that the facility combines 220 MW of alkaline electrolysis with two 4.5 million barrel salt caverns capable of supporting long-duration storage. The reviewed materials did not disclose project-level revenue or GIC's ownership percentage within the broader equity syndication consortium. Public materials show that DOE closed a US$504.4 million loan guarantee in 2022 and that GIC participated through a Haddington-led equity financing program around the project.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2022,
+    "headquarters": "Utah",
+    "milestones": [
+      {
+        "date": "2019",
+        "event": "Advanced Clean Energy Storage was publicly announced in Utah.",
+        "category": "Other"
+      },
+      {
+        "date": "Apr 2022",
+        "event": "DOE's Loan Programs Office issued a conditional commitment for the first phase of ACES Delta.",
+        "category": "Financing"
+      },
+      {
+        "date": "Jun 9, 2022",
+        "event": "Haddington Ventures announced a $650 million equity syndication for ACES Delta with investment from AIMCo, GIC, Manulife, and Ontario Teachers' (OTPP).",
+        "category": "Financing"
+      },
+      {
+        "date": "Jun 3, 2022",
+        "event": "DOE closed a US$504.4 million loan guarantee for the project.",
+        "category": "Financing"
+      },
+      {
+        "date": "2023",
+        "event": "Public reporting indicated Chevron had acquired a majority stake in ACES Delta from Haddington Ventures.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Aces Delta — ACES Delta",
+        "url": "https://aces-delta.com/about-us/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Investment date source — GIC — ACES Delta",
+        "url": "https://hvllc.com/haddingtonesp/",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Investment date source — AIMCo — ACES Delta",
+        "url": "https://www.aimco.ca/insights/worlds-largest-green-hydrogen-platform",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Investment date source — OTPP — ACES Delta",
+        "url": "https://www.otpp.com/en-ca/about-us/news-and-insights/2022/haddington-ventures-announces--650-million-equity-syndication-pr/",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Project financing source — ACES Delta",
+        "url": "https://aces-delta.com/media/us-doe-closes-504-4-million-loan-to-advanced-clean-energy-storage-project-for-hydrogen-production-and-storage/",
+        "type": "ARTICLE",
+        "purpose": "FINANCING_FILINGS"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "GIC",
+        "ownershipVehicle": "GIC Infrastructure (Equity Syndication Consortium)",
+        "investmentYear": 2022,
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "OTPP",
+        "ownershipVehicle": "Haddington ESP I, LP",
+        "investmentYear": 2022,
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "AIMCo",
+        "ownershipVehicle": "Haddington ESP I, LP",
+        "investmentYear": 2022,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj2gj00dkivhejraeavgi",
+        "fundName": "GIC Infrastructure",
+        "managerId": "cmrxpi8wm0022ivhessbkv786",
+        "updatedAt": "2026-07-23T16:09:57.043Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi2rj0005ivhejt9pabwk",
+        "name": "AIMCo",
+        "updatedAt": "2026-07-23T16:09:10.783Z"
+      },
+      {
+        "id": "cmrxpi8wm0022ivhessbkv786",
+        "name": "GIC",
+        "updatedAt": "2026-07-23T16:09:18.742Z"
+      },
+      {
+        "id": "cmrxpih16004mivhea7i805re",
+        "name": "OTPP",
+        "updatedAt": "2026-07-23T16:09:29.274Z"
+      },
+      {
+        "id": "cmrxpiy3t00a0ivhe7r2nauj4",
+        "name": "Mitsubishi Power Americas",
+        "updatedAt": "2026-07-23T16:09:51.401Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0261:aces-delta:7027e92e",
+    "taskIndex": 261,
+    "canonicalKey": "aces-delta|united-states",
+    "capturedAt": "2026-08-29T18:45:03.950Z",
+    "databaseRevision": "revision:a117c8e476243b7f427c185d6f6c0dc825f05343cd3725a9f7a3b5671f50ee48",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "6108c5297c9c8c5bd3d200dd77cd2202af036b147e201bc076968033707bfb14",
+    "productionSnapshotSha256": "9188a9a96250f7ab9c3562651c390970bd1ce53954e59aa4997ba369a56ce4e7",
+    "targetCompanySnapshotSha256": "ef69e346057a6d35da4673d980d1dfec45d23aad204dcff5939e763e5e0221b2",
+    "seedEntrySha256": "fe7766a7497e339f6a98a4eeb23e89fa8f17a5f304e6a8512983d11ea43bf1e4",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "c58699dc00df1249bd4b5654ef95efa47785d721e350d269456e203a6c952381",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "f1029ad7656a4216be10729f35b734e92ef6bc394244201bc4d2b080e7513ef3",
+      "organizationsSha256": "c1819746859b3cc57db56352e65947cbb91487987b75506eb8dac55186e573b1",
+      "citationsSha256": "e645f57312b2a48a33b02be229f45a32458aa10cbfe0013fdf44952196d5adc8",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "234db9039eec735c00a1cb67636b35a4fd35567eb9e69c07e7774280f583f5f2",
+    "stateSha256": "a1b0f4612ebe91fa856347fb7f56b9a5b952e307bdb0f84ca479eec7a3e265bf",
+    "taskSnapshotSha256": "300e5dcc51e249238dfc35aae0c451a1e711e2ed757839d19d47207ab7ba7b10"
+  },
+  "contextSha256": "e8548ddaf8cf127507c81d6319d3328838bde1e3274200110219bab308a70a5a"
+}

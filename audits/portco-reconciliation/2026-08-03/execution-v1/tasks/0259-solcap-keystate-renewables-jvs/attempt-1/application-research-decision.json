@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0259:solcap-keystate-renewables-jvs:349ca18f",
+  "taskIndex": 259,
+  "companyName": "SOLCAP (KeyState Renewables JVs)",
+  "asOfDate": "2026-08-19",
+  "decision": "EXCLUDED",
+  "confidence": "HIGH_WITH_NONCRITICAL_TAX_EQUITY_ECONOMICS_GAPS",
+  "researchOnly": true,
+  "generatedAt": "2026-08-29T18:33:36.028Z",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "SOLCAP (KeyState Renewables JVs)",
+    "requestedManagers": [
+      "Generate Capital",
+      "KeyState Renewables"
+    ],
+    "decision": "EXCLUDED",
+    "confidence": "HIGH",
+    "rationale": "SOLCAP is KeyState's tax-credit syndication platform and a series of pooled LLCs, not a Generate/KeyState operating company. Generate owns/sponsors the solar assets; KeyState manages tax-equity capital. SEC filings classify the Generate-named vehicles as pooled funds and omit Generate as manager.",
+    "identityResolution": {
+      "canonicalIdentity": "SOLCAP — KeyState renewable tax-credit platform",
+      "legalForm": "Brand over separate investment LLCs and sponsor facilities; no operating PortCo.",
+      "generateLinkedEntities": [
+        "SOLCAP Generate 2024 LLC, fka IBA SOLCAP 2024 LLC (first sale 2024-02-22)",
+        "Generate NY Community Solar VI LLC (2024 lower-tier facility, not SOLCAP parent)",
+        "SOLCAP Generate 2025 LLC (first sale 2025-07-23; Fund X link not directly confirmed)",
+        "SOLCAP Generate 2026-A LLC and 2026-B LLC (first sales 2026-06-30; projects undisclosed)"
+      ],
+      "otherPublicEntities": "SOLCAP FUND I/SOLCAP I; SOLCAP 2021-1; SOLCAP 2023-2CH; SOLCAP 2024-PA; NJBA SOLCAP 2024; NYBA SOLCAP 38N 2025; SOLCAP Midwest 2025; SOLCAP 2025-NJBA; SOLCAP Cultivate 2026, fka ILBankers SOLCAP 2025.",
+      "boundary": "Separate tax-credit pools, not one operating platform."
+    },
+    "ownershipResolution": {
+      "owners": [
+        {
+          "manager": "KeyState Renewables",
+          "organization": "KeyState Renewables LLC",
+          "vehicle": "2024/2025/2026-A/2026-B SOLCAP Generate LLCs",
+          "stake": "75% managing member in 2024; later economics NOT_PUBLICLY_DISCLOSED",
+          "entryYear": 2019,
+          "isActive": true,
+          "transactionState": "ACTIVE_FUND_MANAGER"
+        },
+        {
+          "manager": "Corner Power",
+          "organization": "Corner Power LLC",
+          "vehicle": "Fund I/SOLCAP I/2021-1/SOLCAP Generate 2024",
+          "stake": "25% managing member in 2024; earlier economics NOT_PUBLICLY_DISCLOSED",
+          "entryYear": 2019,
+          "isActive": null,
+          "transactionState": "POST_2024_ROLE_UNRESOLVED"
+        },
+        {
+          "manager": "Generate Capital",
+          "organization": "Generate Capital PBC",
+          "vehicle": "Generate NY Community Solar VI and Fund X ProjectCos",
+          "stake": "Sponsor/direct project ownership; tax allocations NOT_PUBLICLY_DISCLOSED",
+          "entryYear": 2021,
+          "isActive": true,
+          "transactionState": "ACTIVE_PROJECT_SPONSOR_OWNER"
+        },
+        {
+          "manager": "KeyState Renewables",
+          "organization": "Undisclosed banks/corporates",
+          "vehicle": "SOLCAP Generate pooled interests",
+          "stake": "Tax equity; identities, percentages and flip terms NOT_PUBLICLY_DISCLOSED",
+          "entryYear": 2024,
+          "isActive": true,
+          "transactionState": "ACTIVE_FINANCING_EXPOSURE"
+        }
+      ],
+      "investors": "Generate-specific names are undisclosed; filings show 4 investors in 2024, 10 in 2025, 4 in 2026-A and 5 in 2026-B.",
+      "conclusion": "KeyState/Corner manage funds; Generate owns/sponsors the assets."
+    },
+    "operatingResolution": {
+      "roles": "KeyState administers tax equity; Generate develops, owns and operates solar.",
+      "portfolios": "2024: $64m, 11 operating NY projects, 53.5 MWdc. 2025 Fund X: $85m, 8 NY/IL projects, 38 MWdc, scheduled COD Q4 2025-Q1 2026. 2026-A/B sold $89.961m/$62.325m of fund interests; projects undisclosed.",
+      "projectOwners": "Generate is disclosed sponsor/owner/operator; exact project LLCs and Fund X owners are UNRESOLVED.",
+      "censusTreatment": "Tax-equity/fund interests are financing, not PortCo ownership."
+    },
+    "acquisitionExitCheck": {
+      "result": "Funds continued through 2026; no public sale, flip, buyout, refinancing, wind-down or signed ownership transfer was found.",
+      "flipStatus": "Flip dates, recapture expirations and purchase options are UNRESOLVED.",
+      "pendingTransactions": []
+    },
+    "milestones": [
+      {
+        "date": "2019-09-20",
+        "event": "KeyState and Corner Power launched SOLCAP FUND I LLC.",
+        "category": "Formation"
+      },
+      {
+        "date": "2024-08-21",
+        "event": "Generate NY Community Solar VI closed: $64m, 11 NY projects, 53.5 MWdc.",
+        "category": "Financing"
+      },
+      {
+        "date": "2025-10-09",
+        "event": "Fund X closed: $85m, 8 NY/IL projects, 38 MWdc.",
+        "category": "Financing"
+      },
+      {
+        "date": "2026-06-30",
+        "event": "2026-A/B first sales; $89.961m/$62.325m fully sold.",
+        "category": "Follow-on"
+      }
+    ],
+    "evidence": [
+      {
+        "label": "Generate Fund X",
+        "url": "https://generatecapital.com/generate-capital-closes-85-million-community-solar-tax-equity-fund/",
+        "purpose": "Fund X and roles",
+        "sourceTier": "PRIMARY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "Generate 2024 facility",
+        "url": "https://generatecapital.com/generate-capital-and-keystate-renewables-solcap-platform-deliver-53-5-mwdc-in-community-solar-across-11-projects-in-new-york-with-latest-joint-tax-equity-facility-close/",
+        "purpose": "Facility, size, projects",
+        "sourceTier": "PRIMARY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "SOLCAP Fund I",
+        "url": "https://www.sol-cap.com/keystate-renewables-launches-solcap-fund-i-llc-a-solar-tax-credit-fund-for-community-bank-investors/",
+        "purpose": "Formation and managers",
+        "sourceTier": "PRIMARY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "SEC 2024",
+        "url": "https://www.sec.gov/Archives/edgar/data/2014912/000109991024000121/xslFormDX01/primary_doc.xml",
+        "purpose": "Fund form and managers",
+        "sourceTier": "SEC",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "SEC 2025",
+        "url": "https://www.sec.gov/Archives/edgar/data/2060260/000206026025000003/xslFormDX01/primary_doc.xml",
+        "purpose": "Separate 2025 fund",
+        "sourceTier": "SEC",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "SEC 2026-A",
+        "url": "https://www.sec.gov/Archives/edgar/data/2145709/000214570926000001/xslFormDX01/primary_doc.xml",
+        "purpose": "2026-A close",
+        "sourceTier": "SEC",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "SEC 2026-B",
+        "url": "https://www.sec.gov/Archives/edgar/data/2145713/000214571326000001/xslFormDX01/primary_doc.xml",
+        "purpose": "2026-B close",
+        "sourceTier": "SEC",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": [
+      "Active Generate/KeyState PortCo → separate KeyState tax-equity funds.",
+      "Generate JV owner → project sponsor/owner; KeyState fund manager; record excluded."
+    ],
+    "excludedOrDuplicateCandidates": [
+      "Exclude the SOLCAP record and do not create PortCos for its 2024-2026 fund LLCs.",
+      "Keep qualifying assets under a Generate-owned platform; do not count projects separately."
+    ],
+    "unresolvedQuestions": [
+      "Names of the first two Generate/KeyState facilities, fourth 2024 facility and Fund X ProjectCos.",
+      "Whether SOLCAP Generate 2025 LLC is Fund X's exact upper-tier pool; public amounts differ.",
+      "Investor identities/economics, flip terms, Fund X COD and 2026-A/B project mappings."
+    ],
+    "recommendedListAction": {
+      "action": "Remove SOLCAP from the active manager-level PortCo list.",
+      "representation": "Keep Generate solar ownership under a genuine operating platform; record KeyState/SOLCAP only as tax-equity financier/manager.",
+      "deduplication": "No fund-LLC or project PortCos."
+    }
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0259-solcap-keystate-renewables-jvs/attempt-1/research-decision.json",
+      "sha256": "5da1c5f72084ae600690a2e87218520d9cbd68d71cb1ccf145329f511a765819"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0259-solcap-keystate-renewables-jvs/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "812e6fb8cf5634fc001681dcb96d73029001bff1da2984759ef78d1febd4675c"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0259-solcap-keystate-renewables-jvs/attempt-1/source-verification.json",
+      "sha256": "ad42ba323695246f50bba6e2fd8709178388eafc9c627882b8999f430903aff5"
+    },
+    "acceptedResponseSha256": "812e6fb8cf5634fc001681dcb96d73029001bff1da2984759ef78d1febd4675c",
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+    "confidenceNormalization": {
+      "acceptedValue": "HIGH",
+      "stagedSummaryValue": "HIGH_WITH_NONCRITICAL_TAX_EQUITY_ECONOMICS_GAPS",
+      "basis": "The staged summary preserves the accepted confidence and appends the noncritical disclosure-gap qualifier; the research decision is unchanged."
+    }
+  }
+}

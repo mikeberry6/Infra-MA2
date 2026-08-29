@@ -297,6 +297,11 @@ const approvedOwnershipOrganizationProvisioning = {
   "Eos Partners, L.P.": "FUND_MANAGER",
   "TCA Fund Management Group Corp.": "FUND_MANAGER",
   "Walsin Lihwa Corporation": "CORPORATE",
+  "Stem, Inc.": "CORPORATE",
+  "Chevron New Energies": "CORPORATE",
+  "Haddington Ventures": "FUND_MANAGER",
+  "A.P. Moller-Maersk": "CORPORATE",
+  "Littlejohn & Co.": "FUND_MANAGER",
 } as const;
 
 export function ownershipOrganizationTypes(

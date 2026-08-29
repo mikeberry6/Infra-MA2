@@ -1,0 +1,250 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0261:aces-delta:7027e92e",
+  "taskIndex": 261,
+  "companyName": "ACES Delta",
+  "asOfDate": "2026-08-19",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH_WITH_NONCRITICAL_PERCENTAGE_AND_ESP_INSTRUMENT_GAPS",
+  "researchOnly": true,
+  "generatedAt": "2026-08-29T18:33:36.028Z",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "ACES Delta",
+    "requestedManagers": [
+      "GIC",
+      "Ontario Teachers' Pension Plan",
+      "AIMCo",
+      "Manulife",
+      "Haddington Ventures",
+      "Chevron New Energies",
+      "Blackstone"
+    ],
+    "decision": "PROPOSED_CORRECTION",
+    "confidence": 0.93,
+    "rationale": "The 2022 institutions invested in Haddington ESP I, not directly in ACES. Chevron controls ACES Delta through Magnum; Mitsubishi is the other JV owner. Haddington sold Magnum but still manages ESP equity.",
+    "identityResolution": {
+      "canonicalKey": "aces-delta|united-states",
+      "canonicalEntity": "ACES Delta, LLC",
+      "projectCompany": "Advanced Clean Energy Storage I, LLC (ACES I), first ProjectCo/affiliate",
+      "relationship": "2019 Magnum/Mitsubishi JV; Magnum became wholly Chevron-owned in 2023. Link ACES I but do not merge it."
+    },
+    "ownershipResolution": {
+      "currentPlatformOwners": [
+        {
+          "manager": "Chevron New Energies",
+          "organization": "Chevron U.S.A. Inc.",
+          "fund": null,
+          "vehicle": "Magnum Development, LLC",
+          "stake": "MAJORITY; exact percentage NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2023-09-12",
+          "entryDate": "By 2023-09-12",
+          "entryYear": 2023,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "manager": "Mitsubishi Power",
+          "organization": "Mitsubishi Power Americas, Inc.",
+          "fund": null,
+          "vehicle": "Direct ACES Delta, LLC membership",
+          "stake": "MINORITY; exact percentage NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2019-05-30",
+          "entryDate": "2019",
+          "entryYear": 2019,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "ACTIVE"
+        }
+      ],
+      "currentProjectEquityManager": [
+        {
+          "manager": "Haddington Ventures",
+          "organization": "Haddington ESP I, LP",
+          "fund": "Haddington ESP I, LP",
+          "vehicle": "ACES I construction equity; holding instrument NOT_PUBLICLY_DISCLOSED",
+          "stake": "NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2022-06-09",
+          "entryDate": "2022",
+          "entryYear": 2022,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "ACTIVE_AS_OF_2025-06; NO_LATER_CHANGE_FOUND"
+        }
+      ],
+      "formerPlatformOwner": [
+        {
+          "manager": "Haddington Ventures",
+          "organization": "Haddington Energy Partners III, LP",
+          "fund": "Haddington Energy Partners III, LP",
+          "vehicle": "Magnum Development, LLC (Haddington-sponsored since 2008)",
+          "stake": "Former indirect majority; exact percentage NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2019-05-30",
+          "entryDate": "2019",
+          "entryYear": 2019,
+          "exitDate": "By 2023-09-12",
+          "exitYear": 2023,
+          "isActive": false,
+          "transactionState": "SOLD_100%_OF_MAGNUM_TO_CHEVRON"
+        }
+      ],
+      "lpOnly": "GIC, OTPP, AIMCo and Manulife are ESP I investors; no verified direct or managed-account equity."
+    },
+    "operatingResolution": {
+      "status": "ACTIVE_COMMISSIONING",
+      "scope": "Delta, Utah; 220 MW; up to 100 tonnes/day; two approximately 5,500-tonne caverns; more than 300 GWh.",
+      "latest": "All 40 electrolyzers/220 MW first stage were commissioned in Q1 2026; final start-up was expected H2 2026, so full operations were unconfirmed.",
+      "nonOwners": "IPA is customer/offtaker; DOE's $504.4 million loan guarantee closed 2022-06-03 and is debt."
+    },
+    "acquisitionExitCheck": {
+      "closed": "On 2023-09-12 Chevron disclosed its closed purchase of 100% of Magnum from Haddington, obtaining majority ACES Delta control.",
+      "terminatedTransactions": [
+        {
+          "direction": "INBOUND",
+          "buyer": "Chevron U.S.A. Inc./Chevron New Energies",
+          "seller": "Magnum Development/Mitsubishi Power; structure not finalized",
+          "stake": "Proposed minority interest; NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2021-09-09",
+          "closingDate": null,
+          "state": "TERMINATED_WITHOUT_CLOSING_BY_2022-06-22",
+          "evidenceUrls": [
+            "https://power.mhi.com/regions/amer/news/20210909.html",
+            "https://www.energy-storage.news/chevron-pulls-out-of-utah-green-hydrogen-energy-storage-project/"
+          ]
+        }
+      ],
+      "pendingTransactions": [],
+      "laterSearch": "No later ownership sale, transfer, cancellation or signed transaction found."
+    },
+    "milestones": [
+      {
+        "date": "2019-05-30",
+        "event": "Project announced; ACES Delta JV formed in 2019.",
+        "category": "Formation"
+      },
+      {
+        "date": "2022-06-03/09",
+        "event": "DOE loan closed; ESP I announced $650 million commitments and rights up to $1.5 billion.",
+        "category": "Financing"
+      },
+      {
+        "date": "2023-09-12",
+        "event": "Chevron disclosed closed purchase of Magnum and majority ACES Delta control.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "2026-Q1",
+        "event": "220 MW first stage commissioned; final start-up expected H2 2026.",
+        "category": "Operations"
+      }
+    ],
+    "evidence": [
+      {
+        "label": "ACES Delta About",
+        "url": "https://aces-delta.com/about-us/",
+        "purpose": "Current owners/control",
+        "sourceTier": "PRIMARY",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "Chevron acquisition release",
+        "url": "https://www.businesswire.com/news/home/20230912536953/en/Chevron-Acquires-Majority-Stake-in-the-Advanced-Clean-Energy-Storage-Hydrogen-Project-in-Delta-Utah",
+        "purpose": "Closed Magnum sale; retained ESP role",
+        "sourceTier": "PRIMARY",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Haddington ESP release",
+        "url": "https://hvllc.com/haddingtonesp/",
+        "purpose": "Fund, LPs and equity purpose",
+        "sourceTier": "PRIMARY",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "OTPP syndication release",
+        "url": "https://www.otpp.com/en-ca/about-us/news-and-insights/2022/haddington-ventures-announces--650-million-equity-syndication-pr/",
+        "purpose": "Investor-side LP confirmation",
+        "sourceTier": "PRIMARY",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Haddington portfolio",
+        "url": "https://hvllc.com/hydrogen-hubs/",
+        "purpose": "ACES I boundary and ESP equity",
+        "sourceTier": "PRIMARY",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "ACES I DOE close",
+        "url": "https://aces-delta.com/media/us-doe-closes-504-4-million-loan-to-advanced-clean-energy-storage-project-for-hydrogen-production-and-storage/",
+        "purpose": "ProjectCo, debt and scope",
+        "sourceTier": "PRIMARY",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "HydrogenPro update",
+        "url": "https://hydrogenpro.com/mfn_news/business-update/",
+        "purpose": "Commissioning status",
+        "sourceTier": "PRIMARY",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "before": [
+        "GIC, OTPP and AIMCo treated as direct owners",
+        "Chevron event unreconciled"
+      ],
+      "after": [
+        "Chevron/Magnum majority; Mitsubishi minority",
+        "Haddington ESP I managed ACES I equity",
+        "Haddington/HEP III former",
+        "Four institutions excluded as LP-only"
+      ]
+    },
+    "excludedOrDuplicateCandidates": [
+      "GIC; OTPP; AIMCo; Manulife — EXCLUDED LP-only investors.",
+      "Blackstone — EXCLUDED; no evidence. Black & Veatch is unrelated EPC.",
+      "DOE; IPA; contractors; operator; suppliers; lessor — EXCLUDED non-owners.",
+      "ACES I — linked first ProjectCo, not a duplicate."
+    ],
+    "unresolvedQuestions": [
+      "Exact Chevron/Mitsubishi percentages; 78%/22% is secondary-only.",
+      "Exact ESP instrument, ACES I stake, LP commitments and later calls.",
+      "Exact ACES formation and Chevron closing dates."
+    ],
+    "recommendedListAction": "Remove GIC/OTPP/AIMCo as direct owners; exclude them with Manulife as LP-only. Record Chevron/Magnum active majority from 2023, Mitsubishi active minority from 2019, Haddington/HEP III former through 2023, and Haddington/ESP I only as managed ACES I construction equity, stake/instrument undisclosed."
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0261-aces-delta/attempt-1/research-decision.json",
+      "sha256": "6b5ffc61b881518366eb05a8d1373f029e6da90a4451989aafe024335e062302"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0261-aces-delta/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "067b782a7c59a3bf051f797640e02e3bb342b8907298bc9b4c4bfb087b903e13"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0261-aces-delta/attempt-1/source-verification.json",
+      "sha256": "a835c287537570ea6493882e5c12653c6cfb205ff8a25cd4e2bdd8b85ce4a7d7"
+    },
+    "acceptedResponseSha256": "067b782a7c59a3bf051f797640e02e3bb342b8907298bc9b4c4bfb087b903e13",
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+    "confidenceNormalization": {
+      "acceptedValue": 0.93,
+      "stagedSummaryValue": "HIGH_WITH_NONCRITICAL_PERCENTAGE_AND_ESP_INSTRUMENT_GAPS",
+      "basis": "The staged summary preserves the accepted confidence and appends the noncritical disclosure-gap qualifier; the research decision is unchanged."
+    }
+  }
+}

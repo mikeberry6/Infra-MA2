@@ -1,0 +1,371 @@
+{
+  "generatedAt": "2026-08-29T19:00:02.000Z",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER",
+    "MERGE_COMPANIES"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "reviewedSeedRetirementTaskIds": [
+    "ledger:0369:direct-chassislink-inc:a317904f"
+  ],
+  "rationale": "Retain the existing Direct ChassisLink, Inc. (DCLI) canonical production company, retire the reciprocal Direct ChassisLink, Inc. seed identity, and complete the ownership chain. GIC, OMERS Infrastructure and Wren House closed their joint acquisition on December 13, 2022 and remain current owners with undisclosed percentages. Preserve Maersk, Littlejohn, EQT and Apollo as former owners; do not infer equal current ownership or the unresolved residual 2% in the 2019 Apollo transaction.",
+  "evidence": [
+    {
+      "url": "https://dcli.com/about-us/",
+      "purpose": "Canonical identity, operating platform and current ownership",
+      "supports": [
+        "Direct ChassisLink, Inc. and DCLI are the same legal operating platform",
+        "The current consortium comprises GIC, OMERS Infrastructure and Wren House",
+        "DCLI operates a nationwide intermodal chassis fleet"
+      ]
+    },
+    {
+      "url": "https://www.omersinfrastructure.com/news/gic-omers-infrastructure-and-wren-house-to-acquire-direct-chassislink-inc",
+      "purpose": "2022 consortium acquisition",
+      "supports": [
+        "GIC, OMERS Infrastructure and Wren House signed to acquire DCLI from Apollo and EQT-managed funds on June 24, 2022"
+      ]
+    },
+    {
+      "url": "https://eqtgroup.com/news/eqt-to-sell-majority-stake-in-direct-chassislink-to-funds-managed-by-affiliates-of-apollo-global-management-2019-03-07",
+      "purpose": "Former EQT and Apollo ownership",
+      "supports": [
+        "Apollo-managed funds acquired control in 2019",
+        "EQT retained a 20% interest until the 2022 consortium exit"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "companyFieldUpdates": {
+    "aliases": [
+      "Direct ChassisLink Inc.",
+      "Direct ChassisLink, Inc.",
+      "DCLI",
+      "Maersk Equipment Service Company, Inc."
+    ],
+    "description": "Direct ChassisLink, Inc. (DCLI) leases and manages marine and domestic intermodal chassis used to move containerized freight through more than 500 U.S. port and rail locations. The Charlotte-based platform serves ocean carriers, railroads, motor carriers, beneficial cargo owners, shippers and logistics providers and reports a fleet of approximately 290,000 chassis. GIC, OMERS Infrastructure and Wren House Infrastructure completed their joint acquisition on December 13, 2022; public materials identify the consortium as current but do not disclose member percentages, so no equal split is inferred. DCLI's former ownership chain includes Maersk, Littlejohn, EQT Infrastructure and Apollo-managed funds. The production database already redirects the retired duplicate production ID to this canonical company; this proposal also retires the reciprocal Direct ChassisLink, Inc. seed identity. No later sale or signed pending ownership transaction was identified through August 29, 2026.",
+    "website": "https://dcli.com/",
+    "yearFounded": 2009,
+    "headquarters": "Charlotte, North Carolina",
+    "lastVerifiedAt": "2026-08-29T00:00:00.000Z"
+  },
+  "ownershipPeriodUpdates": [
+    {
+      "id": "cmrxpk1x801wqivhe2d9e9l1t",
+      "set": {
+        "managerName": "GIC",
+        "organizationName": "GIC",
+        "fundName": null,
+        "vehicleName": "Epsom Investment Pte. Ltd. via DCLI BidCo LLC",
+        "stake": "Not publicly disclosed",
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    },
+    {
+      "id": "cmrxpkbiz02btivhe0hamfvuo",
+      "set": {
+        "managerName": "Wren House",
+        "organizationName": "Wren House",
+        "fundName": null,
+        "vehicleName": "Kuwait Investment Authority via DCLI BidCo LLC",
+        "stake": "Not publicly disclosed",
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    },
+    {
+      "id": "cmrxpkblk02buivhen559osw3",
+      "set": {
+        "managerName": "OMERS Infrastructure",
+        "organizationName": "OMERS",
+        "fundName": "OMERS Infrastructure",
+        "vehicleName": "OMERS Administration Corporation / OMERS SPP co-investment sleeve via DCLI BidCo LLC",
+        "stake": "Not publicly disclosed",
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    }
+  ],
+  "ownershipPeriodAdditions": [
+    {
+      "id": null,
+      "managerName": "A.P. Moller-Maersk",
+      "organizationName": null,
+      "fundName": null,
+      "vehicleName": "Maersk Equipment Service Company, Inc. / Direct ChassisLink",
+      "stake": "Control; exact percentage not publicly disclosed",
+      "investmentYear": 1988,
+      "exitYear": 2012,
+      "isActive": false,
+      "transactionState": "REALIZED"
+    },
+    {
+      "id": null,
+      "managerName": "Littlejohn & Co.",
+      "organizationName": null,
+      "fundName": null,
+      "vehicleName": "Control investment; exact acquisition vehicle and fund attribution not publicly disclosed",
+      "stake": "Control; exact percentage not publicly disclosed",
+      "investmentYear": 2012,
+      "exitYear": 2016,
+      "isActive": false,
+      "transactionState": "REALIZED"
+    },
+    {
+      "id": null,
+      "managerName": "EQT Infrastructure",
+      "organizationName": "EQT Infrastructure",
+      "fundName": null,
+      "vehicleName": "EQT Infrastructure II / III via Deck Chassis Acquisition Inc.",
+      "stake": "Control through April 2019; 20% thereafter",
+      "investmentYear": 2016,
+      "exitYear": 2022,
+      "isActive": false,
+      "transactionState": "REALIZED"
+    },
+    {
+      "id": null,
+      "managerName": "Apollo Global Management",
+      "organizationName": "Apollo Global Management",
+      "fundName": null,
+      "vehicleName": "HVF and other Apollo-managed funds; exact vehicles not publicly disclosed",
+      "stake": "78%; the residual 2% holder was not publicly identified",
+      "investmentYear": 2019,
+      "exitYear": 2022,
+      "isActive": false,
+      "transactionState": "REALIZED"
+    }
+  ],
+  "pendingOwnershipTransactionUpdates": [],
+  "pendingOwnershipTransactionAdditions": [],
+  "milestoneUpdates": [
+    {
+      "id": "cmrxplshs043nivhe2wggqhcs",
+      "set": {
+        "date": "1988",
+        "event": "Maersk established the chassis-leasing predecessor that later became Direct ChassisLink.",
+        "category": "FOUNDING",
+        "sortDate": "1988-01-01T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://dcli.com/about-us/"
+        ]
+      }
+    },
+    {
+      "id": "cmrxplsid043oivhegx0prgr3",
+      "set": {
+        "date": "2009",
+        "event": "The business launched the Direct ChassisLink identity and began expanding its U.S. chassis-leasing platform.",
+        "category": "OTHER",
+        "sortDate": "2009-01-01T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://dcli.com/about-us/"
+        ]
+      }
+    },
+    {
+      "id": "cmrxplsl6043pivhey5jyvmvv",
+      "set": {
+        "date": "Mar 20, 2012",
+        "event": "Littlejohn & Co. completed its acquisition of Direct ChassisLink from Maersk, establishing DCLI as an independent portfolio company.",
+        "category": "ACQUISITION",
+        "sortDate": "2012-03-20T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.prnewswire.com/news-releases/littlejohn--co-completes-acquisition-of-direct-chassislink-inc-143510766.html"
+        ]
+      }
+    },
+    {
+      "id": "cmrxplsll043qivheigs92akm",
+      "set": {
+        "date": "Jun 2016",
+        "event": "EQT Infrastructure acquired DCLI from Littlejohn and became the controlling owner.",
+        "category": "ACQUISITION",
+        "sortDate": "2016-06-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://eqtgroup.com/news/eqt-to-sell-majority-stake-in-direct-chassislink-to-funds-managed-by-affiliates-of-apollo-global-management-2019-03-07"
+        ]
+      }
+    },
+    {
+      "id": "cmrxpmw4t05fnivhepxfmj19i",
+      "set": {
+        "date": "Apr 10, 2019",
+        "event": "Apollo-managed funds acquired control of DCLI; EQT retained a 20% minority interest.",
+        "category": "ACQUISITION",
+        "sortDate": "2019-04-10T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://eqtgroup.com/news/eqt-to-sell-majority-stake-in-direct-chassislink-to-funds-managed-by-affiliates-of-apollo-global-management-2019-03-07"
+        ]
+      }
+    },
+    {
+      "id": "cmrxpmw5a05foivhes6xe06nh",
+      "set": {
+        "date": "Jun 24, 2022",
+        "event": "GIC, OMERS Infrastructure and Wren House announced an agreement to acquire DCLI from Apollo- and EQT-managed funds.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-06-24T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.omersinfrastructure.com/news/gic-omers-infrastructure-and-wren-house-to-acquire-direct-chassislink-inc"
+        ]
+      }
+    },
+    {
+      "id": "cmrxpmw8905fpivhe96cm57rv",
+      "set": {
+        "date": "Dec 13, 2022",
+        "event": "The GIC, OMERS Infrastructure and Wren House consortium completed its joint acquisition of DCLI; Apollo and EQT exited.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-12-13T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.linkedin.com/posts/direct-chassislink-inc-_gic-omers-infrastructure-and-wren-house-activity-7008545873626349568-axwv",
+          "https://dcli.com/about-us/"
+        ]
+      }
+    },
+    {
+      "id": "cmrxpmw8r05fqivheptcee3hi",
+      "set": {
+        "date": "2024",
+        "event": "DCLI refinanced through its BidCo structure while continuing to operate under the same three-owner consortium; the financing did not change platform ownership.",
+        "category": "FINANCING",
+        "sortDate": "2024-01-01T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://dcli.com/investor-information/"
+        ]
+      }
+    }
+  ],
+  "citationUpdates": [
+    {
+      "id": "cmrxpr7b00apxivhexgwolru7",
+      "set": {
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "DCLI operating-company homepage",
+        "isPrimary": false
+      }
+    },
+    {
+      "id": "cmrxpr7de0aq1ivhe2xeqrzxn",
+      "set": {
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "DCLI announcement of the 2022 consortium acquisition",
+        "isPrimary": false
+      }
+    },
+    {
+      "id": "cmrxpr7ei0aq3ivhedracuda3",
+      "set": {
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "OMERS confirmation of the completed DCLI investment",
+        "isPrimary": false
+      }
+    },
+    {
+      "id": "cmrxpt3zr0dm7ivhe6keodcop",
+      "set": {
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "OMERS announcement identifying the three buyers and former Apollo/EQT owners",
+        "isPrimary": false
+      }
+    },
+    {
+      "id": "cmrxpt4060dm8ivheg95cbe3o",
+      "set": {
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "OMERS post-close confirmation and investment context",
+        "isPrimary": false
+      }
+    },
+    {
+      "id": "cmrxpt40o0dm9ivhev4tw7i9x",
+      "set": {
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Canonical identity, company history, current owners and operating scale",
+        "isPrimary": true
+      }
+    },
+    {
+      "id": "cmrxpt41o0dmbivhe68ysaa6i",
+      "set": {
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Wren House current portfolio status and DCLI operating scale",
+        "isPrimary": false
+      }
+    },
+    {
+      "id": "cmrxpt42r0dmdivhebzlfphh7",
+      "set": {
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Wren House announcement of the 2022 consortium acquisition",
+        "isPrimary": false
+      }
+    }
+  ],
+  "citationAdditions": [
+    {
+      "id": null,
+      "label": "DCLI — investor information",
+      "url": "https://dcli.com/investor-information/",
+      "sourceType": "WEBSITE",
+      "purpose": "FINANCING_FILINGS",
+      "evidenceLabel": "DCLI BidCo parent structure, headquarters, fleet scale and 2024 refinancing context",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "Littlejohn — DCLI acquisition close",
+      "url": "https://www.prnewswire.com/news-releases/littlejohn--co-completes-acquisition-of-direct-chassislink-inc-143510766.html",
+      "sourceType": "PRESS_RELEASE",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "March 20, 2012 close of Littlejohn's acquisition from Maersk",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "EQT — DCLI majority sale to Apollo",
+      "url": "https://eqtgroup.com/news/eqt-to-sell-majority-stake-in-direct-chassislink-to-funds-managed-by-affiliates-of-apollo-global-management-2019-03-07",
+      "sourceType": "PRESS_RELEASE",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "EQT's 2016 acquisition, Apollo's 2019 control investment and EQT's retained 20% stake",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "OMERS Infrastructure — DCLI acquisition announcement",
+      "url": "https://www.omersinfrastructure.com/news/gic-omers-infrastructure-and-wren-house-to-acquire-direct-chassislink-inc",
+      "sourceType": "PRESS_RELEASE",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "June 24, 2022 signing by GIC, OMERS Infrastructure and Wren House",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "European Commission — DCLI joint-control notice",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:C:2022:402:FULL",
+      "sourceType": "OTHER",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Legal joint-control mapping for GIC, OMERS and Kuwait Investment Authority/Wren House",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "DCLI — 2022 acquisition close announcement",
+      "url": "https://www.linkedin.com/posts/direct-chassislink-inc-_gic-omers-infrastructure-and-wren-house-activity-7008545873626349568-axwv",
+      "sourceType": "OTHER",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "December 13, 2022 close of the current consortium acquisition",
+      "isPrimary": false
+    }
+  ]
+}

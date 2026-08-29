@@ -1,0 +1,440 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0261:aces-delta:7027e92e",
+  "taskIndex": 261,
+  "asOfDate": "2026-08-29",
+  "generatedAt": "2026-08-29T19:00:01.000Z",
+  "canonicalKey": "aces-delta|united-states",
+  "companyName": "ACES Delta",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER",
+    "RETIRE_OWNERSHIP"
+  ],
+  "sourceHoldingIds": [
+    "076-ontario-teachers-pension-plan:holding:001:aces-delta"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Correct ACES Delta's owner roster by removing the unsupported treatment of GIC, OTPP and AIMCo as direct owners. Those institutions, together with Manulife, invested as limited partners in Haddington ESP I. Current direct platform ownership is held through Chevron-controlled Magnum Development as majority owner and Mitsubishi Power Americas as minority owner. Haddington's former indirect platform ownership ended when Chevron acquired Magnum in 2023; Haddington's separately managed ACES I construction equity remains project-level context rather than a direct ACES Delta platform ownership period.",
+  "evidence": [
+    {
+      "url": "https://aces-delta.com/about-us/",
+      "purpose": "Current ownership and company identity",
+      "supports": [
+        "ACES Delta is a joint venture owned by Chevron-controlled Magnum Development and Mitsubishi Power Americas",
+        "The platform was established in 2019"
+      ]
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20230912536953/en/Chevron-Acquires-Majority-Stake-in-the-Advanced-Clean-Energy-Storage-Hydrogen-Project-in-Delta-Utah",
+      "purpose": "Chevron acquisition and Haddington exit",
+      "supports": [
+        "Chevron acquired 100% of Magnum Development from Haddington",
+        "The closed transaction gave Chevron a majority interest in ACES Delta"
+      ]
+    },
+    {
+      "url": "https://hvllc.com/haddingtonesp/",
+      "purpose": "LP and project-equity boundary",
+      "supports": [
+        "GIC, OTPP, AIMCo and Manulife committed capital to Haddington ESP I",
+        "The investors were fund LPs rather than disclosed direct ACES Delta owners"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "66c28c421196ec8084d6d90015c46de73240ef8c7a2b8f5542975d555b9348d2",
+  "currentCompanySnapshotSha256": "ef69e346057a6d35da4673d980d1dfec45d23aad204dcff5939e763e5e0221b2",
+  "executionLock": {
+    "taskSnapshotSha256": "af78cb0e99b157ac5fad02e6a05ce3fa56c7e248862130817953bcb18b4b9365",
+    "taskStateSha256": "a1b0f4612ebe91fa856347fb7f56b9a5b952e307bdb0f84ca479eec7a3e265bf",
+    "taskDependencySha256": "234db9039eec735c00a1cb67636b35a4fd35567eb9e69c07e7774280f583f5f2",
+    "seedEntrySha256": "fe7766a7497e339f6a98a4eeb23e89fa8f17a5f304e6a8512983d11ea43bf1e4",
+    "dependencies": {
+      "ownershipPeriodsSha256": "c58699dc00df1249bd4b5654ef95efa47785d721e350d269456e203a6c952381",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "f1029ad7656a4216be10729f35b734e92ef6bc394244201bc4d2b080e7513ef3",
+      "organizationsSha256": "c1819746859b3cc57db56352e65947cbb91487987b75506eb8dac55186e573b1",
+      "citationsSha256": "e645f57312b2a48a33b02be229f45a32458aa10cbfe0013fdf44952196d5adc8",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj2gj00dkivhejraeavgi",
+        "fundName": "GIC Infrastructure",
+        "managerId": "cmrxpi8wm0022ivhessbkv786",
+        "updatedAt": "2026-07-23T16:09:57.043Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi2rj0005ivhejt9pabwk",
+        "name": "AIMCo",
+        "updatedAt": "2026-07-23T16:09:10.783Z"
+      },
+      {
+        "id": "cmrxpi8wm0022ivhessbkv786",
+        "name": "GIC",
+        "updatedAt": "2026-07-23T16:09:18.742Z"
+      },
+      {
+        "id": "cmrxpih16004mivhea7i805re",
+        "name": "OTPP",
+        "updatedAt": "2026-07-23T16:09:29.274Z"
+      },
+      {
+        "id": "cmrxpiy3t00a0ivhe7r2nauj4",
+        "name": "Mitsubishi Power Americas",
+        "updatedAt": "2026-07-23T16:09:51.401Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjg8d00ycivhe43mta77q",
+    "name": "ACES Delta",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Hydrogen production and storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "ACES Delta is a large-scale clean hydrogen production and storage project in Delta, Utah. Its target end markets include long-duration power storage and industrial decarbonization applications that require dispatchable low-carbon hydrogen. The project is asset-heavy and development-oriented, with economics tied to electrolysis, salt-cavern storage, and long-duration energy infrastructure rather than to a conventional merchant generation asset. U.S. Department of Energy materials state that the facility combines 220 MW of alkaline electrolysis with two 4.5 million barrel salt caverns capable of supporting long-duration storage. The reviewed materials did not disclose project-level revenue or GIC's ownership percentage within the broader equity syndication consortium. Public materials show that DOE closed a US$504.4 million loan guarantee in 2022 and that GIC participated through a Haddington-led equity financing program around the project.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Utah",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk1t401wnivhe9e6enlfc",
+        "managerName": "GIC",
+        "organizationName": "GIC",
+        "fundName": "GIC Infrastructure",
+        "vehicleName": "GIC Infrastructure (Equity Syndication Consortium)",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpk1w401woivhexnk76vjb",
+        "managerName": "OTPP",
+        "organizationName": "OTPP",
+        "fundName": null,
+        "vehicleName": "Haddington ESP I, LP",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpk1wo01wpivheefqe4thd",
+        "managerName": "AIMCo",
+        "organizationName": "AIMCo",
+        "fundName": null,
+        "vehicleName": "Haddington ESP I, LP",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplsek043iivheakgw11cw",
+        "date": "2019",
+        "event": "Advanced Clean Energy Storage was publicly announced in Utah.",
+        "category": "OTHER",
+        "sortDate": "2019-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplsf6043jivhe8mx6sd2q",
+        "date": "Apr 2022",
+        "event": "DOE's Loan Programs Office issued a conditional commitment for the first phase of ACES Delta.",
+        "category": "FINANCING",
+        "sortDate": "2022-04-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplsfk043kivhel8f1qygb",
+        "date": "Jun 9, 2022",
+        "event": "Haddington Ventures announced a $650 million equity syndication for ACES Delta with investment from AIMCo, GIC, Manulife, and Ontario Teachers' (OTPP).",
+        "category": "FINANCING",
+        "sortDate": "2022-06-09T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplsg5043livhef0ugzmd2",
+        "date": "Jun 3, 2022",
+        "event": "DOE closed a US$504.4 million loan guarantee for the project.",
+        "category": "FINANCING",
+        "sortDate": "2022-06-03T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplsgo043mivhejd6j9mn7",
+        "date": "2023",
+        "event": "Public reporting indicated Chevron had acquired a majority stake in ACES Delta from Haddington Ventures.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpr71r0apnivhe7lssqixv",
+        "label": "Aces Delta — ACES Delta",
+        "url": "https://aces-delta.com/about-us/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Aces Delta company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpr72s0appivhel33519ke",
+        "label": "Investment date source — GIC — ACES Delta",
+        "url": "https://hvllc.com/haddingtonesp/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "GIC initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr7630aprivhepd2vufo1",
+        "label": "Investment date source — AIMCo — ACES Delta",
+        "url": "https://www.aimco.ca/insights/worlds-largest-green-hydrogen-platform",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "AIMCo initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr77r0aptivhek74iy2ug",
+        "label": "Investment date source — OTPP — ACES Delta",
+        "url": "https://www.otpp.com/en-ca/about-us/news-and-insights/2022/haddington-ventures-announces--650-million-equity-syndication-pr/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "OTPP initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr7a00apvivhexvzvdhit",
+        "label": "Project financing source — ACES Delta",
+        "url": "https://aces-delta.com/media/us-doe-closes-504-4-million-loan-to-advanced-clean-energy-storage-project-for-hydrogen-production-and-storage/",
+        "sourceType": "ARTICLE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Aces Delta financing or public filing",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "ef69e346057a6d35da4673d980d1dfec45d23aad204dcff5939e763e5e0221b2",
+  "afterImage": {
+    "id": "cmrxpjg8d00ycivhe43mta77q",
+    "name": "ACES Delta, LLC",
+    "aliases": [
+      "ACES Delta",
+      "Advanced Clean Energy Storage",
+      "Advanced Clean Energy Storage Delta"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Hydrogen production and storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "ACES Delta, LLC is a clean-hydrogen production and underground salt-cavern storage platform in Delta, Utah. The 2019 joint venture is currently owned by Chevron-controlled Magnum Development, LLC as majority owner and Mitsubishi Power Americas, Inc. as minority owner; exact percentages are not publicly disclosed. Haddington Energy Partners III formerly owned the platform indirectly through Magnum and exited that position when Chevron acquired 100% of Magnum in 2023. Haddington ESP I separately manages construction equity in the ACES I project company, while GIC, Ontario Teachers', AIMCo and Manulife are investors in that fund rather than verified direct ACES Delta owners. The first stage comprises 220 MW of electrolysis and two salt caverns supporting more than 300 GWh of storage. All 40 electrolyzers were reported commissioned in the first quarter of 2026, with final start-up still expected later in 2026. No later platform sale or signed pending ownership transaction was identified through August 29, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://aces-delta.com/",
+    "yearFounded": 2019,
+    "headquarters": "Delta, Utah",
+    "lastVerifiedAt": "2026-08-29T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": null,
+        "managerName": "Chevron New Energies",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Magnum Development, LLC",
+        "stake": "Majority; exact percentage not publicly disclosed",
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Mitsubishi Power Americas",
+        "organizationName": "Mitsubishi Power Americas",
+        "fundName": null,
+        "vehicleName": "Direct ACES Delta, LLC membership",
+        "stake": "Minority; exact percentage not publicly disclosed",
+        "investmentYear": 2019,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Haddington Ventures",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Haddington Energy Partners III, L.P. via Magnum Development, LLC",
+        "stake": "Former indirect majority; exact percentage not publicly disclosed",
+        "investmentYear": 2019,
+        "exitYear": 2023,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplsek043iivheakgw11cw",
+        "date": "May 30, 2019",
+        "event": "Magnum Development and Mitsubishi Hitachi Power Systems announced the Advanced Clean Energy Storage joint venture that became ACES Delta.",
+        "category": "FOUNDING",
+        "sortDate": "2019-05-30T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://aces-delta.com/about-us/"
+        ]
+      },
+      {
+        "id": "cmrxplsf6043jivhe8mx6sd2q",
+        "date": "Jun 3, 2022",
+        "event": "The U.S. Department of Energy closed a US$504.4 million loan guarantee for the ACES I hydrogen-production and storage project; the facility is debt rather than equity ownership.",
+        "category": "FINANCING",
+        "sortDate": "2022-06-03T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://aces-delta.com/media/us-doe-closes-504-4-million-loan-to-advanced-clean-energy-storage-project-for-hydrogen-production-and-storage/"
+        ]
+      },
+      {
+        "id": "cmrxplsfk043kivhel8f1qygb",
+        "date": "Jun 9, 2022",
+        "event": "Haddington announced US$650 million of commitments to Haddington ESP I from GIC, Ontario Teachers', AIMCo and Manulife; the institutions invested as fund LPs, not as disclosed direct ACES Delta owners.",
+        "category": "FINANCING",
+        "sortDate": "2022-06-09T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://hvllc.com/haddingtonesp/",
+          "https://www.otpp.com/en-ca/about-us/news-and-insights/2022/haddington-ventures-announces--650-million-equity-syndication-pr/"
+        ]
+      },
+      {
+        "id": "cmrxplsg5043livhef0ugzmd2",
+        "date": "Sep 12, 2023",
+        "event": "Chevron acquired 100% of Magnum Development from Haddington, obtaining a majority interest in ACES Delta; Mitsubishi Power Americas remained the minority joint-venture owner.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-09-12T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.businesswire.com/news/home/20230912536953/en/Chevron-Acquires-Majority-Stake-in-the-Advanced-Clean-Energy-Storage-Hydrogen-Project-in-Delta-Utah",
+          "https://aces-delta.com/about-us/"
+        ]
+      },
+      {
+        "id": "cmrxplsgo043mivhejd6j9mn7",
+        "date": "Q1 2026",
+        "event": "HydrogenPro reported that all 40 electrolyzers comprising the 220 MW first stage had been commissioned, while final project start-up remained expected in the second half of 2026.",
+        "category": "EXPANSION",
+        "sortDate": "2026-03-31T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://hydrogenpro.com/mfn_news/business-update/"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpr71r0apnivhe7lssqixv",
+        "label": "Aces Delta — ACES Delta",
+        "url": "https://aces-delta.com/about-us/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current Chevron-controlled Magnum majority ownership, Mitsubishi minority ownership and ACES Delta identity",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpr72s0appivhel33519ke",
+        "label": "Investment date source — GIC — ACES Delta",
+        "url": "https://hvllc.com/haddingtonesp/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Haddington ESP I fund structure and LP-only status of the institutional syndicate",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr7630aprivhepd2vufo1",
+        "label": "Investment date source — AIMCo — ACES Delta",
+        "url": "https://www.aimco.ca/insights/worlds-largest-green-hydrogen-platform",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "AIMCo participation in Haddington ESP I rather than disclosed direct platform ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr77r0aptivhek74iy2ug",
+        "label": "Investment date source — OTPP — ACES Delta",
+        "url": "https://www.otpp.com/en-ca/about-us/news-and-insights/2022/haddington-ventures-announces--650-million-equity-syndication-pr/",
+        "sourceType": "WEBSITE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Ontario Teachers' participation in Haddington ESP I rather than disclosed direct platform ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr7a00apvivhexvzvdhit",
+        "label": "Project financing source — ACES Delta",
+        "url": "https://aces-delta.com/media/us-doe-closes-504-4-million-loan-to-advanced-clean-energy-storage-project-for-hydrogen-production-and-storage/",
+        "sourceType": "ARTICLE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "DOE loan close, ACES I project-company boundary and project scale",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Chevron — ACES Delta majority acquisition",
+        "url": "https://www.businesswire.com/news/home/20230912536953/en/Chevron-Acquires-Majority-Stake-in-the-Advanced-Clean-Energy-Storage-Hydrogen-Project-in-Delta-Utah",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Chevron's closed acquisition of Magnum from Haddington and resulting majority ACES Delta ownership",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Haddington Ventures — hydrogen hubs portfolio",
+        "url": "https://hvllc.com/hydrogen-hubs/",
+        "sourceType": "WEBSITE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "ACES I project-company boundary and Haddington ESP I managed construction equity",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "HydrogenPro — ACES Delta commissioning update",
+        "url": "https://hydrogenpro.com/mfn_news/business-update/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Q1 2026 commissioning status for the 220 MW first stage",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "127ce1d008b22e95ac9f76ebabab31f40fd3985a0618b15cf5dcca1171464fc3",
+  "proposalSha256": "055b1445975f16d885f4d1a166368f78f619f17f1f7cf1f6e043ed6f1d1c6869"
+}
