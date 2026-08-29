@@ -1,0 +1,143 @@
+
+> infra-tracker@1.0.0 portfolio:fund-attribution:apply
+> npx tsx scripts/apply-portfolio-fund-attribution.ts --manifest=audits/portfolio-fund-attribution/2026-08-29/scoped/batch-0244-0248-attribution-repair/apply-manifest.json --manifest-sha256=46a5439b9e324fff8e2778d042a453858a8f21b84262efb60d3a2b5c42de1e9e --production-snapshot=audits/portfolio-fund-attribution/2026-08-29/scoped/batch-0244-0248-attribution-repair/production-snapshot.json --approval=audits/portfolio-fund-attribution/2026-08-29/scoped/batch-0244-0248-attribution-repair/approval.json --approval-sha256=8e02029e8d1925a9d559c43a3fe276f651449138cae8f95ea24ee6d132ae779f --apply=true --write-token=APPLY_REVIEWED_PORTFOLIO_FUND_ATTRIBUTION --receipt=tmp/portfolio-fund-attribution/production/apply-receipt.json
+
+(node:3075) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_RECEIPT",
+  "manifestSha256": "46a5439b9e324fff8e2778d042a453858a8f21b84262efb60d3a2b5c42de1e9e",
+  "approvalSha256": "8e02029e8d1925a9d559c43a3fe276f651449138cae8f95ea24ee6d132ae779f",
+  "environment": "production",
+  "pipelineRunId": "cmtekgff20000df2br5hs2nej",
+  "mutationCount": 6,
+  "changed": 6,
+  "idempotent": false,
+  "beforeFingerprint": "b0237335fd047d9c5669fc99efd14e723db494d9e30d1d1d3ed6d757984a0201",
+  "afterFingerprint": "2445c649f8a2a5e20e0a0daf01045c21925736335d6a8aa751c377c714d08f37",
+  "rows": [
+    {
+      "recordId": "OFA-5ED767D27E0D",
+      "ownershipPeriodId": "cmrxpk0s401uxivhee4ggxu2h",
+      "companyId": "cmrxpjf2k00woivhe7duvxzv6",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Disclosure identifies a generic vehicle, account, client pool, or transaction structure rather than an exact fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "John Laing Limited",
+        "attributionConfidence": null,
+        "attributionRationale": "Direct closing and portfolio evidence identifies John Laing's 64% ProjectCo interest, while the KKR takeover terms reserve post-takeover John Laing investments to KKR. John Laing Limited is retained as the disclosed holding platform; no specific KKR managed fund is inferred."
+      }
+    },
+    {
+      "recordId": "OFA-3F3C6855DE6B",
+      "ownershipPeriodId": "cmtejtsg1000bwa2bxei7p1za",
+      "companyId": "cmrxpjf2k00woivhe7duvxzv6",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Sacyr holds its disclosed 26% ProjectCo interest directly through the named consortium structure. No managed infrastructure fund is named or inferred."
+      }
+    },
+    {
+      "recordId": "OFA-2A5F4F781416",
+      "ownershipPeriodId": "cmtejtshv000dwa2bmkkjwx0t",
+      "companyId": "cmrxpjf2k00woivhe7duvxzv6",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Amico holds its disclosed 10% ProjectCo interest directly through the named consortium structure. No managed infrastructure fund is named or inferred."
+      }
+    },
+    {
+      "recordId": "OFA-EB876E6C0A30",
+      "ownershipPeriodId": "cmrxpk0sk01uyivhewry4wp6r",
+      "companyId": "cmrxpjf3200wpivhesjcn2qn2",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": "Fiera EagleCrest Infrastructure",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Jura Acquisition",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: Equitix | Fund: Jura Acquisition | Ownership Interest: Not publicly disclosed. Supplemental ownership detail discloses a distinct fund/vehicle that does not match funds.ts."
+      },
+      "after": {
+        "linkedFundName": "Fiera EagleCrest Infrastructure",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Fiera EagleCrest Infrastructure",
+        "attributionConfidence": null,
+        "attributionRationale": "Fiera's acquisition announcement and current asset page directly identify Woodford Social Infrastructure and attribute the investment to its EagleCrest infrastructure platform. The exact curated Fiera EagleCrest Infrastructure fund is linked without inference."
+      }
+    },
+    {
+      "recordId": "OFA-38DAD3AF4BB9",
+      "ownershipPeriodId": "cmtejtvzl0019wa2bg3zizp6g",
+      "companyId": "cmtejtvlz000vwa2baxkzmv9w",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Clearway's SEC filing identifies its direct 50% interest through Cardinal JV Purchaser LLC. Clearway is a corporate owner and no managed infrastructure fund is named or inferred."
+      }
+    },
+    {
+      "recordId": "OFA-FDB27D025709",
+      "ownershipPeriodId": "cmtejtw1u001awa2bnl6qtc8i",
+      "companyId": "cmtejtvlz000vwa2baxkzmv9w",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": "Fengate Infrastructure Yield Fund",
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": "Fengate Infrastructure Yield Fund",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Fengate Infrastructure Yield Fund",
+        "attributionConfidence": null,
+        "attributionRationale": "Fengate's closing announcement directly attributes the 50% joint-venture interest to Fengate Infrastructure Yield Fund and its named acquisition blockers. The exact curated fund is linked without inferring the allocation between blockers."
+      }
+    }
+  ],
+  "appliedAt": "2026-08-29T15:59:43.536Z",
+  "receiptSha256": "8213c26f59e08681e66875d77e1758cbb5753cbdf80f1656fe598ba4584e6b59"
+}

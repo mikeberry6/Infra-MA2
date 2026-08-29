@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_RELEASE_VERIFICATION",
+  "verifiedAt": "2026-08-29T15:59:45.974Z",
+  "manifestSha256": "46a5439b9e324fff8e2778d042a453858a8f21b84262efb60d3a2b5c42de1e9e",
+  "approvalSha256": "8e02029e8d1925a9d559c43a3fe276f651449138cae8f95ea24ee6d132ae779f",
+  "receiptSha256": "8213c26f59e08681e66875d77e1758cbb5753cbdf80f1656fe598ba4584e6b59",
+  "mutationCount": 6,
+  "changed": 6,
+  "verificationScope": "BOUNDED_STATUS_SAMPLE",
+  "sampledRows": [
+    {
+      "recordId": "OFA-5ED767D27E0D",
+      "companyId": "cmrxpjf2k00woivhe7duvxzv6",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjf2k00woivhe7duvxzv6?verification=46a5439b9e324fff8e2778d042a453858a8f21b84262efb60d3a2b5c42de1e9e",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "John Laing Limited",
+        "attributionConfidence": null,
+        "attributionRationale": "Direct closing and portfolio evidence identifies John Laing's 64% ProjectCo interest, while the KKR takeover terms reserve post-takeover John Laing investments to KKR. John Laing Limited is retained as the disclosed holding platform; no specific KKR managed fund is inferred."
+      }
+    },
+    {
+      "recordId": "OFA-3F3C6855DE6B",
+      "companyId": "cmrxpjf2k00woivhe7duvxzv6",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjf2k00woivhe7duvxzv6?verification=46a5439b9e324fff8e2778d042a453858a8f21b84262efb60d3a2b5c42de1e9e",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Sacyr holds its disclosed 26% ProjectCo interest directly through the named consortium structure. No managed infrastructure fund is named or inferred."
+      }
+    }
+  ],
+  "passed": true
+}
