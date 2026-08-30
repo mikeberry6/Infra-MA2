@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_RECEIPT",
+  "manifestSha256": "debe034eb2713abf6359e9d75b592bddeebf440861ed676091701bb07cdc8449",
+  "approvalSha256": "2a6d42ca7931c2d3e4438fbcc942d3f3de6187da0b883a5eb465bbadc1d7df51",
+  "environment": "production",
+  "pipelineRunId": "cmtfd8c4h0000fu2blv327sza",
+  "mutationCount": 1,
+  "changed": 1,
+  "idempotent": false,
+  "beforeFingerprint": "f3515bdf27772a42384dd49409df8d51cb8fdf6b37c141fd4b1d83ecbdb8a3b8",
+  "afterFingerprint": "915d593aa57d5f19d0653d2b525095d6b40d2e55b52e8f1bd6b1c8ed50eb288b",
+  "rows": [
+    {
+      "recordId": "OFA-28DF59ADE5A8",
+      "ownershipPeriodId": "cmrxpk3f401z3ivhezyulp91w",
+      "companyId": "cmrxpjhii010civhek48qprav",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": "Harrison Street Social Infrastructure Fund",
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "Harrison Street Social Infrastructure Fund",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, evergreen/permanent-capital vehicle, North America-relevant mandate; no second manager-matched fund candidate. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": "Harrison Street Social Infrastructure Fund",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Harrison Street Social Infrastructure Fund",
+        "attributionConfidence": null,
+        "attributionRationale": "Harrison Street's 2019 release states that it acquired ISQ CoolCo on behalf of the Harrison Street Social Infrastructure Fund. Current operating evidence continues to identify Harrison Street as owner; COOLCO LLC is the verified current company vehicle and the ownership percentage is not publicly disclosed."
+      }
+    }
+  ],
+  "appliedAt": "2026-08-30T05:25:14.518Z",
+  "receiptSha256": "79b522bbf0d0173b35868d48ffe0dc1b3a2544aca765a6e4b5a7dab88bb944d0"
+}
