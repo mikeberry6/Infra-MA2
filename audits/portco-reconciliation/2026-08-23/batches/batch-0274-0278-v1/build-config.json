@@ -1,0 +1,44 @@
+{
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0274-0278-v1",
+  "createdAt": "2026-08-30T04:48:00.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "b17266c868efd07b7178b375f742e5956c2af624e7bb10b7ea9b177268043453"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "e75df35e224a1c1db6f3afc11d04a07cbaf2bffce03b3f55d13a3939b5c8e083"
+  },
+  "members": [
+    {
+      "kind": "TERMINAL",
+      "decisionPath": "audits/portco-reconciliation/2026-08-23/batches/batch-0274-0278-v1/decisions/0274-alohanap.json"
+    },
+    {
+      "kind": "TERMINAL",
+      "decisionPath": "audits/portco-reconciliation/2026-08-23/batches/batch-0274-0278-v1/decisions/0275-chester-county-hyperscale-data-center.json"
+    },
+    {
+      "kind": "TERMINAL",
+      "decisionPath": "audits/portco-reconciliation/2026-08-23/batches/batch-0274-0278-v1/decisions/0276-chicago-cbd-data-center-chil2.json"
+    },
+    {
+      "kind": "MUTATION",
+      "proposalPath": "audits/portco-reconciliation/2026-08-03/proposals/0277-coolco-v1/proposal.json",
+      "authorizationPath": "audits/portco-reconciliation/2026-08-03/approvals/0277-coolco-v1.json",
+      "productionSnapshotPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0277-coolco/attempt-1/locked-v2-production-snapshot.json",
+      "taskSnapshotPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0277-coolco/attempt-1/locked-v2-task-snapshot.json",
+      "observedTaskSnapshotPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0277-coolco/attempt-1/authorization-observed-task-snapshot.json",
+      "researchDecisionPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0277-coolco/attempt-1/application-research-decision.json",
+      "sourceVerificationPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0277-coolco/attempt-1/source-verification.json",
+      "supersededTaskIds": [
+        "ledger:0474:coolco-cincinnati-district-energy:47c3df2b"
+      ]
+    },
+    {
+      "kind": "TERMINAL",
+      "decisionPath": "audits/portco-reconciliation/2026-08-23/batches/batch-0274-0278-v1/decisions/0278-district-energy-system.json"
+    }
+  ]
+}

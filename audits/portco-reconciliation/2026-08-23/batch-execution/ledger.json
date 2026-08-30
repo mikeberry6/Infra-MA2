@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-30T04:34:01.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-08-30T04:56:00.000Z",
+  "activeBatchId": "batch-0274-0278-v3",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -4294,7 +4294,181 @@
           "reason": "Atomic PortCo receipt and protected attribution-repair receipt are durable; the canonical production deployment serves the exact attribution receipt merge commit, and all four detail APIs and rendered drawers passed ownership, source, milestone, and console verification without partial application."
         }
       ]
+    },
+    {
+      "batchId": "batch-0274-0278-v1",
+      "state": "FAILED",
+      "taskIds": [
+        "ledger:0274:alohanap:51454abf",
+        "ledger:0275:chester-county-hyperscale-data-center:d9586e4e",
+        "ledger:0276:chicago-cbd-data-center-chil2:61285c3f",
+        "ledger:0277:coolco:3d977a11",
+        "ledger:0278:district-energy-system:55ee7b00"
+      ],
+      "taskIndexes": [
+        274,
+        275,
+        276,
+        277,
+        278
+      ],
+      "createdAt": "2026-08-30T04:40:21.000Z",
+      "updatedAt": "2026-08-30T04:50:00.000Z",
+      "completedAt": "2026-08-30T04:50:00.000Z",
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0274-0278-v1/batch-manifest.json",
+        "sha256": "c2476066ed574bffece6d240e34fecd6f36a945739c35d3288933766dfa8eb93"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": "Pre-release dry run rejected the bundle because build-config used byte hashes instead of the embedded canonical source-execution and research-normalization artifact hashes. No seed or database write occurred; regenerate as v2 with unchanged member decisions and proposal.",
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-30T04:40:21.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-30T04:49:00.000Z",
+          "evidenceSha256": [
+            "c2476066ed574bffece6d240e34fecd6f36a945739c35d3288933766dfa8eb93"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "FAILED",
+          "at": "2026-08-30T04:50:00.000Z",
+          "evidenceSha256": [
+            "c2476066ed574bffece6d240e34fecd6f36a945739c35d3288933766dfa8eb93"
+          ],
+          "reason": "Pre-release dry run rejected the bundle because build-config used byte hashes instead of the embedded canonical source-execution and research-normalization artifact hashes. No seed or database write occurred; regenerate as v2 with unchanged member decisions and proposal."
+        }
+      ]
+    },
+    {
+      "batchId": "batch-0274-0278-v2",
+      "state": "FAILED",
+      "taskIds": [
+        "ledger:0274:alohanap:51454abf",
+        "ledger:0275:chester-county-hyperscale-data-center:d9586e4e",
+        "ledger:0276:chicago-cbd-data-center-chil2:61285c3f",
+        "ledger:0277:coolco:3d977a11",
+        "ledger:0278:district-energy-system:55ee7b00"
+      ],
+      "taskIndexes": [
+        274,
+        275,
+        276,
+        277,
+        278
+      ],
+      "createdAt": "2026-08-30T04:50:01.000Z",
+      "updatedAt": "2026-08-30T04:52:00.000Z",
+      "completedAt": "2026-08-30T04:52:00.000Z",
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0274-0278-v2/batch-manifest.json",
+        "sha256": "0e192d3a60401fbaabef7a69bc65b2a6f33fcf3297653de812d8d6549f727852"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": "Production dry run rejected historical DTE and Cinergy ownership additions because those managers have no Organization rows in the protected dependency graph. No seed or database write occurred; v3 will preserve their sourced history in milestones while adding only the dependency-valid I Squared former ownership period.",
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-30T04:50:01.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-30T04:51:00.000Z",
+          "evidenceSha256": [
+            "0e192d3a60401fbaabef7a69bc65b2a6f33fcf3297653de812d8d6549f727852"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "FAILED",
+          "at": "2026-08-30T04:52:00.000Z",
+          "evidenceSha256": [
+            "0e192d3a60401fbaabef7a69bc65b2a6f33fcf3297653de812d8d6549f727852"
+          ],
+          "reason": "Production dry run rejected historical DTE and Cinergy ownership additions because those managers have no Organization rows in the protected dependency graph. No seed or database write occurred; v3 will preserve their sourced history in milestones while adding only the dependency-valid I Squared former ownership period."
+        }
+      ]
+    },
+    {
+      "batchId": "batch-0274-0278-v3",
+      "state": "RELEASING",
+      "taskIds": [
+        "ledger:0274:alohanap:51454abf",
+        "ledger:0275:chester-county-hyperscale-data-center:d9586e4e",
+        "ledger:0276:chicago-cbd-data-center-chil2:61285c3f",
+        "ledger:0277:coolco:3d977a11",
+        "ledger:0278:district-energy-system:55ee7b00"
+      ],
+      "taskIndexes": [
+        274,
+        275,
+        276,
+        277,
+        278
+      ],
+      "createdAt": "2026-08-30T04:52:01.000Z",
+      "updatedAt": "2026-08-30T04:56:00.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0274-0278-v3/batch-manifest.json",
+        "sha256": "9326c6d7e14548704ce7c55a88b37b201db7f350387178348d1430ddef659dd9"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-30T04:52:01.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-30T04:54:00.000Z",
+          "evidenceSha256": [
+            "9326c6d7e14548704ce7c55a88b37b201db7f350387178348d1430ddef659dd9"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "RELEASING",
+          "at": "2026-08-30T04:56:00.000Z",
+          "evidenceSha256": [
+            "9326c6d7e14548704ce7c55a88b37b201db7f350387178348d1430ddef659dd9"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "496750e16b7831caf2539f4b2254e22625d0a492b208d906a4de99b62a3c4fd9"
+  "ledgerSha256": "f80a259422d531ff5346831f5ba4ca33f53c25cc63c1ce3525cc2888ffc103e2"
 }

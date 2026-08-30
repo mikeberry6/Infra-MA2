@@ -109,11 +109,16 @@ async function main(): Promise<void> {
     queueProvesUnboundCreate,
   });
   const normalizedDecision = decisionNormalization?.finalValue ?? String(source.decision);
-  const acceptedConfidence = typeof result.confidence === "string" ? result.confidence : null;
+  const acceptedConfidence = typeof result.confidence === "string"
+    ? result.confidence
+    : result.confidence && typeof result.confidence === "object"
+      && typeof (result.confidence as Record<string, unknown>).overall === "string"
+      ? String((result.confidence as Record<string, unknown>).overall)
+      : null;
   const stagedConfidence = typeof source.confidence === "string" ? source.confidence : null;
   const confidenceMatches = acceptedConfidence !== null && stagedConfidence !== null
     && (acceptedConfidence === stagedConfidence
-      || stagedConfidence.startsWith(`${acceptedConfidence}_WITH_NONCRITICAL_`));
+      || stagedConfidence.startsWith(`${acceptedConfidence}_WITH_`));
   if (!confidenceMatches) {
     throw new Error("Accepted research confidence disagrees with the staged summary");
   }
@@ -173,7 +178,7 @@ async function main(): Promise<void> {
         confidenceNormalization: {
           acceptedValue: acceptedConfidence,
           stagedSummaryValue: stagedConfidence,
-          basis: "The staged summary preserves the accepted confidence and appends the noncritical disclosure-gap qualifier; the research decision is unchanged.",
+          basis: "The staged summary preserves the accepted overall confidence and appends a more specific evidence-gap qualifier; the research decision is unchanged.",
         },
       }),
       ...(decisionNormalization ? {

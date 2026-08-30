@@ -1,0 +1,282 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0275:chester-county-hyperscale-data-center:d9586e4e",
+  "taskIndex": 275,
+  "companyName": "Chester County Hyperscale Data Center",
+  "generatedAt": "2026-08-30T04:42:53.431Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0275-chester-county-hyperscale-data-center/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 275,
+    "taskId": "ledger:0275:chester-county-hyperscale-data-center:d9586e4e",
+    "canonicalKey": "chester-county-hyperscale-data-center|united-states",
+    "companyName": "Chester County Hyperscale Data Center",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 51,
+    "managers": [
+      "Harrison Street"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "051-harrison-street:repo-only:002:chester-county-hyperscale-data-center"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjhhn010aivhee8ifpr5g"
+    ],
+    "seedKeys": [
+      "chester county hyperscale data center|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.datacenterdynamics.com/en/news/1547-csr-planning-2-million-sq-ft-150mw-campus-outside-philadelphia-pennsylvania/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Harrison Street MATCHED_ELSEWHERE: Rolled into 1547 Critical Systems Realty platform consolidation.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjhhn010aivhee8ifpr5g",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "chester-county-hyperscale-data-center|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjhhn010aivhee8ifpr5g",
+    "name": "Chester County Hyperscale Data Center",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Hyperscale data center development",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "The Chester County Hyperscale Data Center is a planned data center campus in East Whiteland Township, Pennsylvania. Its target end market is hyperscale and large-scale digital infrastructure demand in the greater Philadelphia region. The project follows an asset-heavy development model based on land control, zoning, utility power delivery, and phased campus construction. Public reporting describes the development as a more than 100-acre parcel initially planned for two data centers totaling about 2 million square feet, with utility capacity discussed in the range of 150 MW initially and up to roughly 290 MW through later reporting on buildout. Project materials identify 1547 Critical Systems Realty and Green Fig Land Company as development partners, while Harrison Street's digital infrastructure relationship is at the platform level rather than fully disclosed at the project-company level in the sources reviewed here. Public sources therefore do not fully disclose the current project-level ownership structure, exact fund vehicle, or original project-level investment date; the 2024 date reflects the first public source reviewed that ties Harrison Street's 1547 data-center fund relationship to the Chester County campus.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Pennsylvania",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk3dy01z1ivheu451rcrn",
+        "managerName": "Harrison Street",
+        "organizationName": "Harrison Street",
+        "fundName": "Harrison Street Social Infrastructure Fund",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplxlr049iivhe214r9qyq",
+        "date": "2022",
+        "event": "1547 and Green Fig acquired land for the Chester County data center campus.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplxmc049jivhew6qygmbe",
+        "date": "Feb 2024",
+        "event": "1547's Harrison Street-linked data-center fund targeted the Chester County campus as a major 1547 development project.",
+        "category": "FINANCING",
+        "sortDate": "2024-02-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplxmv049kivhejcnskznn",
+        "date": "2025",
+        "event": "The campus moved into construction with timing for initial operations in the 2025-2026 period.",
+        "category": "EXPANSION",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxprg8r0b3givhee37ikf3f",
+        "label": "Data Center Dynamics — Chester County Hyperscale Data Center",
+        "url": "https://www.datacenterdynamics.com/en/news/1547-csr-planning-2-million-sq-ft-150mw-campus-outside-philadelphia-pennsylvania/",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Data Center Dynamics transaction or milestone detail",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxprg9q0b3iivhelimhkwer",
+        "label": "Data Center Dynamics — Chester County Hyperscale Data Center",
+        "url": "https://www.datacenterdynamics.com/en/news/1547-csr-seeks-to-raise-250m-for-data-center-fund-report/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Data Center Dynamics — Chester County Hyperscale Data Center",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprgau0b3kivheapdjgrhm",
+        "label": "Baxtel — Chester County Hyperscale Data Center",
+        "url": "https://baxtel.com/data-center/1547-chester-county-pa",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Baxtel — Chester County Hyperscale Data Center",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprgbt0b3mivhehzke5m0f",
+        "label": "Eastwhiteland — Chester County Hyperscale Data Center",
+        "url": "https://www.eastwhiteland.org/news_detail_T2_R162.php",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Eastwhiteland — Chester County Hyperscale Data Center",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprgda0b3oivhezgswqq3m",
+        "label": "Investment evidence source — Harrison Street — Chester County Hyperscale Data Center",
+        "url": "https://dcmag.fr/1547-critical-systems-realty-veut-lever-250-millions-supplementaire-pour-son-fonds-datacenters/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Investment evidence source — Harrison Street — Chester County Hyperscale Data Center",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Chester County Hyperscale Data Center",
+    "investmentFirm": "Harrison Street",
+    "sector": "Digital",
+    "subsector": "Hyperscale data center development",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "The Chester County Hyperscale Data Center is a planned data center campus in East Whiteland Township, Pennsylvania. Its target end market is hyperscale and large-scale digital infrastructure demand in the greater Philadelphia region. The project follows an asset-heavy development model based on land control, zoning, utility power delivery, and phased campus construction. Public reporting describes the development as a more than 100-acre parcel initially planned for two data centers totaling about 2 million square feet, with utility capacity discussed in the range of 150 MW initially and up to roughly 290 MW through later reporting on buildout. Project materials identify 1547 Critical Systems Realty and Green Fig Land Company as development partners, while Harrison Street's digital infrastructure relationship is at the platform level rather than fully disclosed at the project-company level in the sources reviewed here. Public sources therefore do not fully disclose the current project-level ownership structure, exact fund vehicle, or original project-level investment date; the 2024 date reflects the first public source reviewed that ties Harrison Street's 1547 data-center fund relationship to the Chester County campus.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2024,
+    "headquarters": "Pennsylvania",
+    "milestones": [
+      {
+        "date": "2022",
+        "event": "1547 and Green Fig acquired land for the Chester County data center campus.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Feb 2024",
+        "event": "1547's Harrison Street-linked data-center fund targeted the Chester County campus as a major 1547 development project.",
+        "category": "Financing"
+      },
+      {
+        "date": "2025",
+        "event": "The campus moved into construction with timing for initial operations in the 2025-2026 period.",
+        "category": "Expansion"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Data Center Dynamics — Chester County Hyperscale Data Center",
+        "url": "https://www.datacenterdynamics.com/en/news/1547-csr-planning-2-million-sq-ft-150mw-campus-outside-philadelphia-pennsylvania/",
+        "type": "ARTICLE",
+        "purpose": "MILESTONE_EVENT"
+      },
+      {
+        "label": "Data Center Dynamics — Chester County Hyperscale Data Center",
+        "url": "https://www.datacenterdynamics.com/en/news/1547-csr-seeks-to-raise-250m-for-data-center-fund-report/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Baxtel — Chester County Hyperscale Data Center",
+        "url": "https://baxtel.com/data-center/1547-chester-county-pa",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Eastwhiteland — Chester County Hyperscale Data Center",
+        "url": "https://www.eastwhiteland.org/news_detail_T2_R162.php",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Investment evidence source — Harrison Street — Chester County Hyperscale Data Center",
+        "url": "https://dcmag.fr/1547-critical-systems-realty-veut-lever-250-millions-supplementaire-pour-son-fonds-datacenters/",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Harrison Street",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2024,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj2m000duivhei7jdc4h7",
+        "fundName": "Harrison Street Social Infrastructure Fund",
+        "managerId": "cmrxpi9hc0029ivhep5jy7vm9",
+        "updatedAt": "2026-07-23T16:09:57.240Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi9hc0029ivhep5jy7vm9",
+        "name": "Harrison Street",
+        "updatedAt": "2026-07-23T16:09:19.488Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0275:chester-county-hyperscale-data-center:d9586e4e",
+    "taskIndex": 275,
+    "canonicalKey": "chester-county-hyperscale-data-center|united-states",
+    "capturedAt": "2026-08-30T04:42:53.431Z",
+    "databaseRevision": "revision:9709fc2e463fbb5a46c60455bb174a7e434d0f6fd9f6a2e62650bbfb73fee8cd",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "addfde255df51eabd8ba1278ed6eb99d4f372a066f20bb81bc57e575b8721249",
+    "productionSnapshotSha256": "295bfc032f4f5f32cc9054abf43e9e7439d1f7a424ba2baf53b4a1e943aa9579",
+    "targetCompanySnapshotSha256": "787a220ab2f0109126fe62179ab0d4b2a7b32009c4c6784f0ec6616a20437202",
+    "seedEntrySha256": "dc97906a62c231a8e366444b9818bcdd20501f3de93f0d7462e6eef8553f8869",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4ff6f97bbfb71efecc42d5d5a067ea4622dac21a8217a73029faddc006199882",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "7bf4c286f9b67cae7bf9a178ddbb5a3c16d4720913c71bc045bfdeb7bf9bb803",
+      "organizationsSha256": "aca578e15ae37e0a87c895a82541686bf8a6bc3d738a98873fb7c4419f86066a",
+      "citationsSha256": "d0c7b6003971382d2c8ffa12ba950157dfab5c3cc798368d54cba4d081ce2f35",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "5bb7925c2cb39c524cc4e5043af7eb82583001dce5a27f7fb5357e68d4028890",
+    "stateSha256": "73da72ee923b499ade3fe15e8de2ff00fd07b1fb14d30a1dd0644f853cbfb625",
+    "taskSnapshotSha256": "f69d5cb308cce93d8df1ce89cd134f7f11dead0ce0a1cd18637890b36f3cb595"
+  },
+  "contextSha256": "61587513c4429911c24840fcde236f2e29917cdeb3da929412ea037819c8d510"
+}

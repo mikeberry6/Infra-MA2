@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_SEED_ATTRIBUTION_RECONCILIATION",
+  "batchId": "batch-0274-0278-v3",
+  "batchSha256": "9326c6d7e14548704ce7c55a88b37b201db7f350387178348d1430ddef659dd9",
+  "reconciledAt": "2026-08-30T04:55:00.000Z",
+  "sourceManifestSha256": "1095a9ad9b038741ddfec134d0e2403f671805fd798f4419091ded1fa22ac526",
+  "specSha256": "2e98d5438c910593c5006dbd351daab74176f3027ca15ecb7e519c33299ca3d5",
+  "changesSha256": "2f409f7c03e2be5bf22d7e05ed929347a1af3c45cc761e2fdbfd9ebdd2cc54d4",
+  "removedRecords": [
+    {
+      "recordId": "OFA-991EE28C1BC8",
+      "companyName": "CoolCo (Cincinnati District Energy)",
+      "country": "United States",
+      "investmentFirm": "Harrison Street",
+      "currentVehicleName": "Infrastructure Fund",
+      "investmentYear": 2019,
+      "stake": null,
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Infrastructure Fund",
+      "attributionConfidence": null,
+      "attributionRationale": "Matched supplemental ownership detail: Firm: Harrison Street | Fund: Infrastructure Fund | Ownership Interest: Not publicly disclosed. Supplemental ownership detail discloses a distinct fund/vehicle that does not match funds.ts.",
+      "evidenceUrls": [
+        "https://harrisonst.com/harrison-street-acquires-28-mw-cincinnati-solar-project/",
+        "https://coolco.com/",
+        "https://coolco.com/about-us/",
+        "https://coolco.com/chilled-water-services/"
+      ]
+    }
+  ],
+  "replacedRecords": [
+    {
+      "recordId": "OFA-28DF59ADE5A8",
+      "companyName": "CoolCo",
+      "country": "United States",
+      "investmentFirm": "Harrison Street",
+      "currentVehicleName": "n.a.",
+      "investmentYear": 2019,
+      "stake": null,
+      "targetLinkedFundName": "Harrison Street Social Infrastructure Fund",
+      "fundAttribution": "INFERRED",
+      "attributedFundName": "Harrison Street Social Infrastructure Fund",
+      "attributionConfidence": "LOW",
+      "attributionRationale": "Estimated from manager match 1.00, evergreen/permanent-capital vehicle, North America-relevant mandate; no second manager-matched fund candidate. Public disclosure does not identify a distinct fund.",
+      "evidenceUrls": [
+        "https://harrisonst.com/harrison-street-acquires-28-mw-cincinnati-solar-project/",
+        "https://coolco.com/",
+        "https://coolco.com/about-us/",
+        "https://coolco.com/chilled-water-services/"
+      ]
+    }
+  ],
+  "upsertRecords": [
+    {
+      "recordId": "OFA-28DF59ADE5A8",
+      "companyName": "CoolCo",
+      "country": "United States",
+      "investmentFirm": "Harrison Street",
+      "currentVehicleName": "COOLCO LLC",
+      "investmentYear": 2019,
+      "stake": "Not publicly disclosed",
+      "targetLinkedFundName": "Harrison Street Social Infrastructure Fund",
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Harrison Street Social Infrastructure Fund",
+      "attributionConfidence": null,
+      "attributionRationale": "Harrison Street's 2019 release states that it acquired ISQ CoolCo on behalf of the Harrison Street Social Infrastructure Fund. Current operating evidence continues to identify Harrison Street as owner; COOLCO LLC is the verified current company vehicle and the ownership percentage is not publicly disclosed.",
+      "evidenceUrls": [
+        "https://harrisonst.com/harrison-street-continues-to-expand-investments-for-social-infrastructure-fund/",
+        "https://www.ever-greenenergy.com/our-work/coolco/"
+      ]
+    }
+  ],
+  "resultingRecordCount": 1315,
+  "resultingManifestSha256": "3b8ab5dadc67c9ce072619d6431ead25b481a51e4842acc43e17cb3047249a67",
+  "reconciliationSha256": "1148ad5bec72d957e6717132a47a0caeecb27aa42c6a2da61b12a3a12ec1ddb5"
+}

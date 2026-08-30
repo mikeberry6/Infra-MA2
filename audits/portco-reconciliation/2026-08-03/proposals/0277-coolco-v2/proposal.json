@@ -1,0 +1,460 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0277:coolco:3d977a11",
+  "taskIndex": 277,
+  "asOfDate": "2026-08-30",
+  "generatedAt": "2026-08-30T04:46:00.000Z",
+  "canonicalKey": "coolco|united-states",
+  "companyName": "CoolCo",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER",
+    "MERGE_COMPANIES"
+  ],
+  "sourceHoldingIds": [
+    "051-harrison-street:holding:008:coolco"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "reviewedSeedRetirements": [
+    {
+      "sourceQueueTaskId": "ledger:0474:coolco-cincinnati-district-energy:47c3df2b",
+      "sourceQueueEntrySha256": "7b64bc35a83d389b8d64f2abacc4fab25c2b57aadb2215603dc5d40fb5415ef1",
+      "name": "CoolCo (Cincinnati District Energy)",
+      "country": "United States",
+      "rawSeedEntrySha256": "d830856d014352d023c5ec8cad9f501796d209514eb47135611dc2a66979c8c7",
+      "evaluatedSeedEntrySha256": "d830856d014352d023c5ec8cad9f501796d209514eb47135611dc2a66979c8c7"
+    }
+  ],
+  "rationale": "Retain the published CoolCo record as the one canonical Cincinnati district-cooling business and retire the seed-only CoolCo (Cincinnati District Energy) identity. Direct manager, operator, regulatory and filing evidence supports Harrison Street Social Infrastructure Fund as the current owner from 2019, I Squared's 100% ownership from 2014 to 2019, DTE's predecessor ownership through June 2014 and documented Cinergy participation beginning in 1998. Exact Harrison closing date, stake and intermediate entity chain are not publicly disclosed and are preserved as disclosure limitations rather than inferred. No later sale, recapitalization or signed pending exit was identified through August 19, 2026.",
+  "evidence": [
+    {
+      "url": "https://harrisonst.com/harrison-street-continues-to-expand-investments-for-social-infrastructure-fund/",
+      "purpose": "Current Harrison Street ownership and HSSI fund attribution",
+      "supports": [
+        "Harrison Street acquired ISQ CoolCo on behalf of the Harrison Street Social Infrastructure Fund in 2019",
+        "I Squared Capital was the seller"
+      ]
+    },
+    {
+      "url": "https://www.ever-greenenergy.com/our-work/coolco/",
+      "purpose": "Current owner, operator and operating profile",
+      "supports": [
+        "Harrison Street remains the owner",
+        "CoolCo has served Cincinnati since 1997 and operates more than 10,000 tons of cooling capacity"
+      ]
+    },
+    {
+      "url": "https://2030districts.org/cincinnati/company/coolco-cincinnati-district-energy/",
+      "purpose": "Duplicate identity resolution",
+      "supports": [
+        "CoolCo - Cincinnati District Energy is the same coolco.com Cincinnati CBD system"
+      ]
+    },
+    {
+      "url": "https://mi-psc.my.site.com/sfc/servlet.shepherd/version/download/068t0000000vFVrAAM",
+      "purpose": "DTE ownership and 2014 disposition",
+      "supports": [
+        "DTE CoolCo was wholly owned by DTE Energy Services",
+        "The sale was effective June 2, 2014"
+      ]
+    },
+    {
+      "url": "https://www.infrapppworld.com/transaction/i-squared-capital-acquires-district-energy-business",
+      "purpose": "I Squared ownership and fund vehicle",
+      "supports": [
+        "I Squared acquired 100% of DTE CoolCo through ISQ Global Infrastructure Fund"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/899652/000089965202000035/formu5s2001.htm",
+      "purpose": "Early Cinergy ownership history",
+      "supports": [
+        "Trigen-Cinergy Solutions of Cincinnati was organized in 1998",
+        "Cinergy held a 51% interest at December 31, 2001"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "d7d2ea64bd3092eed5428862a147a4d94001d7fb96f9737344018b217a5c38fc",
+  "currentCompanySnapshotSha256": "177392aa70ef908d5b422e4314aba457fce3a97a629382ab9041ed900b083f49",
+  "executionLock": {
+    "taskSnapshotSha256": "bbfb843597e24ef3da050a6cc4e96b6fe7e4ba56d6177e1f628ba220971676b7",
+    "taskStateSha256": "2f5bac56c083799b9127e3f6d7ce3be6a36629e0dda863fd2b6a2703001255f1",
+    "taskDependencySha256": "dbb554fbc4412a2a7322f4dc93a05f3656695ebb8c6142d824b5011cd2efeee6",
+    "seedEntrySha256": "863cc586467abcd926373025e821f787540d1b5be08008d2cbe0fd487eae0cf7",
+    "dependencies": {
+      "ownershipPeriodsSha256": "92d9601cc8635d09bea0f92753bfad33ee2c64ec32cdcef1b453ee3966b017a8",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "7bf4c286f9b67cae7bf9a178ddbb5a3c16d4720913c71bc045bfdeb7bf9bb803",
+      "organizationsSha256": "328635080a26b77c55dea8a1b2ac1ddc96bc3400f329b334195847f468794ca6",
+      "citationsSha256": "79932b5dca6d8be2096cc6679a399b8f9cf172a75bb4d96f503cad5252b620b5",
+      "redirectsSha256": "fd672ed14d7138b041d50301d3bd54325df42f3ddf0fd3c04363f441da89d829"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj2m000duivhei7jdc4h7",
+        "fundName": "Harrison Street Social Infrastructure Fund",
+        "managerId": "cmrxpi9hc0029ivhep5jy7vm9",
+        "updatedAt": "2026-07-23T16:09:57.240Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi9hc0029ivhep5jy7vm9",
+        "name": "Harrison Street",
+        "updatedAt": "2026-07-23T16:09:19.488Z"
+      },
+      {
+        "id": "cmrxpi9mi002aivhewgvbh2ag",
+        "name": "I Squared Capital",
+        "updatedAt": "2026-07-23T16:09:19.674Z"
+      }
+    ],
+    "redirects": [
+      {
+        "retiredId": "cmrxpjhj5010divhe5p72rvmt",
+        "companyId": "cmrxpjhii010civhek48qprav",
+        "reason": "CANONICAL_MERGE",
+        "createdAt": "2026-07-29T04:08:41.288Z"
+      }
+    ]
+  },
+  "beforeImage": {
+    "id": "cmrxpjhii010civhek48qprav",
+    "name": "CoolCo",
+    "aliases": [],
+    "sector": "UTILITIES",
+    "subsector": "District cooling",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "CoolCo provides district cooling services to buildings in downtown Cincinnati. Its customer base includes commercial office, hotel, retail, government, institutional, and other downtown building owners that purchase chilled-water service for interior cooling and process loads. The system follows an asset-heavy utility model based on central plant and distribution infrastructure with recurring service revenues. Public materials state that CoolCo has served the Cincinnati central business district since 1997 and that the system can produce more than 10,000 tons of cooling. Harrison Street acquired the district energy system in 2019, and the current ownership split is not publicly disclosed. The business continues to operate as an urban district-cooling utility serving the Cincinnati core.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 1997,
+    "headquarters": "Ohio",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk3f401z3ivhezyulp91w",
+        "managerName": "Harrison Street",
+        "organizationName": "Harrison Street",
+        "fundName": "Harrison Street Social Infrastructure Fund",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2019,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplxpm049nivhed1bdjn5r",
+        "date": "1997",
+        "event": "CoolCo began providing chilled-water service in downtown Cincinnati.",
+        "category": "OTHER",
+        "sortDate": "1997-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplxq7049oivhe91lnhs8v",
+        "date": "1997",
+        "event": "CoolCo was founded.",
+        "category": "FOUNDING",
+        "sortDate": "1997-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplxqr049pivherk3k4tgr",
+        "date": "2019",
+        "event": "Harrison Street acquired the Cincinnati district energy system.",
+        "category": "ACQUISITION",
+        "sortDate": "2019-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplxrb049qivhenhoqebdm",
+        "date": "Nov 1, 2022",
+        "event": "Harrison Street identified CoolCo as its existing Cincinnati infrastructure investment when announcing the Warren County solar acquisition.",
+        "category": "FINANCING",
+        "sortDate": "2022-11-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplxvc049sivherrjd22e6",
+        "date": "1997",
+        "event": "CoolCo (Cincinnati District Energy) was founded.",
+        "category": "FOUNDING",
+        "sortDate": "1997-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxprgjy0b3wivhe3frgetlq",
+        "label": "Coolco — CoolCo",
+        "url": "https://coolco.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Coolco company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxprgky0b3yivhevbr44f93",
+        "label": "Coolco — CoolCo",
+        "url": "https://coolco.com/about-us/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Coolco company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprglz0b40ivhefp2gsvvo",
+        "label": "Coolco — CoolCo",
+        "url": "https://coolco.com/chilled-water-services/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Coolco — CoolCo",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprgmu0b42ivheeolzzxbi",
+        "label": "Harrisonst — CoolCo",
+        "url": "https://harrisonst.com/harrison-street-acquires-28-mw-cincinnati-solar-project/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Harrisonst transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprgoh0b45ivhejrm5adq4",
+        "label": "Coolco — CoolCo",
+        "url": "https://coolco.com/chilled-water-services/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Coolco — CoolCo (Cincinnati District Energy)",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "177392aa70ef908d5b422e4314aba457fce3a97a629382ab9041ed900b083f49",
+  "afterImage": {
+    "id": "cmrxpjhii010civhek48qprav",
+    "name": "CoolCo",
+    "aliases": [
+      "CoolCo - Cincinnati District Energy",
+      "CoolCo (Cincinnati District Energy)",
+      "ISQ CoolCo",
+      "DTE CoolCo"
+    ],
+    "sector": "UTILITIES",
+    "subsector": "District cooling",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "CoolCo is the district-cooling utility serving Cincinnati's central business district through central and satellite chilled-water plants and an underground distribution network. The system has operated since April 1997, serves commercial, hotel, retail, government and institutional buildings, and is reported to provide more than 10,000 tons of cooling across approximately 5.2 million square feet. Harrison Street acquired ISQ CoolCo for the Harrison Street Social Infrastructure Fund in 2019 and remains the current verified owner; its exact stake and acquisition vehicle are not publicly disclosed. I Squared Capital acquired 100% of DTE CoolCo in 2014 through ISQ Global Infrastructure Fund, following earlier DTE and Cinergy ownership. Ever-Green Energy provides operations and management services but is not the owner. No later sale or signed pending exit was identified through August 19, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://coolco.com/",
+    "yearFounded": 1997,
+    "headquarters": "Cincinnati, Ohio",
+    "lastVerifiedAt": "2026-08-19T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk3f401z3ivhezyulp91w",
+        "managerName": "Harrison Street",
+        "organizationName": "Harrison Street",
+        "fundName": "Harrison Street Social Infrastructure Fund",
+        "vehicleName": "COOLCO LLC",
+        "stake": "Not publicly disclosed",
+        "investmentYear": 2019,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "I Squared Capital",
+        "organizationName": "I Squared Capital",
+        "fundName": null,
+        "vehicleName": "ISQ Global Infrastructure Fund / ISQ CoolCo",
+        "stake": "100%",
+        "investmentYear": 2014,
+        "exitYear": 2019,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplxpm049nivhed1bdjn5r",
+        "date": "Apr 1997",
+        "event": "The Cincinnati district-cooling system began commercial operation.",
+        "category": "OTHER",
+        "sortDate": "1997-04-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.ever-greenenergy.com/our-work/coolco/"
+        ]
+      },
+      {
+        "id": "cmrxplxq7049oivhe91lnhs8v",
+        "date": "1998-2001",
+        "event": "Trigen-Cinergy Solutions of Cincinnati was organized in 1998; Cinergy reported a 51% interest at December 31, 2001.",
+        "category": "OTHER",
+        "sortDate": "2001-12-31T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/899652/000089965202000035/formu5s2001.htm"
+        ]
+      },
+      {
+        "id": "cmrxplxqr049pivherk3k4tgr",
+        "date": "Nov 26, 2019",
+        "event": "Harrison Street reported that it had acquired ISQ CoolCo from I Squared Capital on behalf of the Harrison Street Social Infrastructure Fund.",
+        "category": "ACQUISITION",
+        "sortDate": "2019-11-26T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://harrisonst.com/harrison-street-continues-to-expand-investments-for-social-infrastructure-fund/"
+        ]
+      },
+      {
+        "id": "cmrxplxrb049qivhenhoqebdm",
+        "date": "Jul 15, 2026",
+        "event": "Ever-Green Energy's current operating page continued to identify Harrison Street as CoolCo's owner and reported more than 10,000 tons of cooling capacity.",
+        "category": "OTHER",
+        "sortDate": "2026-07-15T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.ever-greenenergy.com/our-work/coolco/"
+        ]
+      },
+      {
+        "id": "cmrxplxvc049sivherrjd22e6",
+        "date": "Jun 2, 2014",
+        "event": "I Squared Capital acquired 100% of DTE CoolCo from DTE Energy Services through ISQ Global Infrastructure Fund.",
+        "category": "ACQUISITION",
+        "sortDate": "2014-06-02T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://mi-psc.my.site.com/sfc/servlet.shepherd/version/download/068t0000000vFVrAAM",
+          "https://www.infrapppworld.com/transaction/i-squared-capital-acquires-district-energy-business"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxprgjy0b3wivhe3frgetlq",
+        "label": "Coolco — CoolCo",
+        "url": "https://coolco.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Official CoolCo website and canonical company identity",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprgky0b3yivhevbr44f93",
+        "label": "Coolco — CoolCo",
+        "url": "https://coolco.com/about-us/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "CoolCo business overview and Cincinnati district-cooling services",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprglz0b40ivhefp2gsvvo",
+        "label": "Coolco — CoolCo",
+        "url": "https://coolco.com/chilled-water-services/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Coolco — CoolCo",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprgmu0b42ivheeolzzxbi",
+        "label": "Harrisonst — CoolCo",
+        "url": "https://harrisonst.com/harrison-street-acquires-28-mw-cincinnati-solar-project/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Harrison Street's separate Cincinnati infrastructure context",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprgoh0b45ivhejrm5adq4",
+        "label": "Coolco — CoolCo",
+        "url": "https://coolco.com/chilled-water-services/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Coolco — CoolCo (Cincinnati District Energy)",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Announcement date source — Harrison Street — Doug Meijer Medical Innovation Building",
+        "url": "https://harrisonst.com/harrison-street-continues-to-expand-investments-for-social-infrastructure-fund/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Harrison Street's 2019 CoolCo acquisition, HSSI fund attribution and I Squared seller",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "Ever-Green Energy - CoolCo",
+        "url": "https://www.ever-greenenergy.com/our-work/coolco/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current Harrison ownership, operating history and system scale",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Cincinnati 2030 District - CoolCo",
+        "url": "https://2030districts.org/cincinnati/company/coolco-cincinnati-district-energy/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "CoolCo Cincinnati District Energy duplicate identity and operating scope",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Michigan PSC - DTE CoolCo sale filing",
+        "url": "https://mi-psc.my.site.com/sfc/servlet.shepherd/version/download/068t0000000vFVrAAM",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "DTE's 100% ownership and June 2, 2014 sale",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "InfraPPP - I Squared acquires CoolCo",
+        "url": "https://www.infrapppworld.com/transaction/i-squared-capital-acquires-district-energy-business",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "I Squared's 100% acquisition through ISQ Global Infrastructure Fund",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "SEC - Cinergy 2001 Form U5S",
+        "url": "https://www.sec.gov/Archives/edgar/data/899652/000089965202000035/formu5s2001.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Early Cinergy ownership and 1998 entity history",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "d6d571fcd2fc8c42d5835ac078b0f40d484b8c2a1f5bc2d3d444db1cc73038af",
+  "proposalSha256": "458044345a94f229c4d1ca9b596404dcfccbec4d5b44021d9c73d7f31998b4c7"
+}

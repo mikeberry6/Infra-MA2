@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0275:chester-county-hyperscale-data-center:d9586e4e",
+  "taskIndex": 275,
+  "companyName": "Chester County Hyperscale Data Center",
+  "outcome": "EXCLUDED",
+  "decidedAt": "2026-08-30T04:44:01.000Z",
+  "rationale": "Project-level campus, not a proven Harrison Street PortCo. Township records identify Sentinel/Green Fig; 1547 marks the former joint development Sold. The 2024 fund report links Harrison only to other 1547 deals. DataCenterDynamics+3East Whiteland Township+31547 Critical Systems Realty+3",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0275-chester-county-hyperscale-data-center/attempt-1/locked-task-snapshot.json",
+    "sha256": "0a72f612b8995a4d5138104bd1fb7b63de428c0f929e526fc91fd7c23726b249"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0275-chester-county-hyperscale-data-center/attempt-1/application-research-decision.json",
+    "sha256": "8d72021726319f21875dae47573463cc075624ade0c961e08df64c5f16008733"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0275-chester-county-hyperscale-data-center/attempt-1/source-verification.json",
+    "sha256": "0153de8a0d5e5a696b0e5fd381c92c74d5654035d64a25be848be18126a87386"
+  },
+  "evidence": [
+    {
+      "url": "https://www.eastwhiteland.org/government/departments/planning_development/sentinel%2C_green_fig_data_center_on_swedesford_road.php",
+      "purpose": "Identity, approvals and status"
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20220830005696/en/fifteenfortyseven-Critical-Systems-Realty-Adds-over-100-Acres-and-150-Megawatts-in-Pennsylvania-for-Massive-Data-Center-Expansion",
+      "purpose": "2022 entry"
+    },
+    {
+      "url": "https://www.1547realty.com/data-center/chester-county-pa/",
+      "purpose": "Exit signal"
+    },
+    {
+      "url": "https://cms2.revize.com/revize/eastwhitelandtownshippa/Planning%20%26%20Development/Sentinel%2C%20Green%20Fig%20Data%20Center%20on%20Swedesford%20Road/Combined%20Comfort%20Letters.pdf?t=202605081424220",
+      "purpose": "SPVs and parcels"
+    },
+    {
+      "url": "https://www.datacenterdynamics.com/en/news/1547-csr-seeks-to-raise-250m-for-data-center-fund-report/",
+      "purpose": "Harrison test"
+    },
+    {
+      "url": "https://elementix.com/investors/pa/edward-russo",
+      "purpose": "Deed/mortgage signals"
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "1d5b205e0d1c4474a22b7d475d4221577cb82a16ec3e937df8ba7ede2ad4ad43"
+}

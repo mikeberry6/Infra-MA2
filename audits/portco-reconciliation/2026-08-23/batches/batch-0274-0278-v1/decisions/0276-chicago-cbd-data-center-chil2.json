@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0276:chicago-cbd-data-center-chil2:61285c3f",
+  "taskIndex": 276,
+  "companyName": "Chicago CBD Data Center (CHIL2)",
+  "outcome": "EXCLUDED",
+  "decidedAt": "2026-08-30T04:44:02.000Z",
+  "rationale": "CHIL2 is the 725 South Wells facility, not a separate manager-level PortCo. CIM said it sold the four-asset portfolio on 2021-11-02 to a Harrison Street Real Estate Capital/1547 JV; 1547 was already CIM's JV partner and stayed manager. Nothing reviewed shows Harrison bought the 1547 company. Retire task 276 as standalone and link it beneath a correctly bounded task 273 portfolio/JV record; do not merge the legal entities.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0276-chicago-cbd-data-center-chil2/attempt-1/locked-task-snapshot.json",
+    "sha256": "0657ba84fbf6b3727ed80d409f48447292972d39153e159458a4ceffa81f7375"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0276-chicago-cbd-data-center-chil2/attempt-1/application-research-decision.json",
+    "sha256": "2b521ada283da781f81702aa2be72c2e5801b3a197c675e43e73c032774ade2f"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0276-chicago-cbd-data-center-chil2/attempt-1/source-verification.json",
+    "sha256": "206f7d4a24390b37ef94aa95ac86bb46471c5bd626cc269a6106960315b3f08f"
+  },
+  "evidence": [
+    {
+      "url": "https://www.businesswire.com/news/home/20211102006036/en/CIM-Group-Sells-Portfolio-of-Four-Data-Center-Assets",
+      "purpose": "Closed sale, parties, portfolio boundary."
+    },
+    {
+      "url": "https://www.1547realty.com/resource/fifteenfortyseven-critical-systems-realty-and-harrison-street-acquire-portfolio-of-four-strategically-located-data-centers-in-new-york-chicago-and-wyoming/",
+      "purpose": "CHIL2 inclusion; 1547 manager."
+    },
+    {
+      "url": "https://www.cimgroup.com/press-releases/cim-group-acquires-data-center-in-chicagos-central-business-district",
+      "purpose": "DCP sale; CIM/1547 entry; identity."
+    },
+    {
+      "url": "https://www.1547realty.com/data-center/chicago-il-chil2/",
+      "purpose": "Current status and specs."
+    },
+    {
+      "url": "https://harrisonst.com/harrison-street-closes-600-million-for-digital-asset-investments/",
+      "purpose": "First dedicated pool closed in 2024."
+    },
+    {
+      "url": "https://elementix.com/investors/il/todd-raymond",
+      "purpose": "Reported SPVs and 2021 mortgage."
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "2a0d44c462dfe32d17aeb2799d9d01cced1a41208c647b5d044af4f3bd2bb560"
+}
