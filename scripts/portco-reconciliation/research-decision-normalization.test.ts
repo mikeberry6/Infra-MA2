@@ -8,19 +8,22 @@ describe("resolveResearchDecisionNormalization", () => {
       stagedDecision: "PROPOSED_CORRECTION",
       rawModelDecision: null,
       actionNormalization: null,
+      queueProvesUnboundCreate: false,
     })).toBeNull();
   });
 
-  it("allows only the documented existing-target correction of a proposed new company", () => {
+  it("preserves a proposed-new decision when the immutable queue proves there is no target", () => {
     expect(resolveResearchDecisionNormalization({
       acceptedDecision: "PROPOSED_NEW",
       stagedDecision: "PROPOSED_CORRECTION",
       rawModelDecision: "PROPOSED_NEW",
       actionNormalization: "The queue task is target-bound to the existing canonical company.",
+      queueProvesUnboundCreate: true,
     })).toEqual({
       acceptedValue: "PROPOSED_NEW",
       stagedSummaryValue: "PROPOSED_CORRECTION",
-      basis: "The queue task is target-bound to the existing canonical company.",
+      finalValue: "PROPOSED_NEW",
+      basis: "The immutable proposal queue has no production company target and requires CREATE_COMPANY, so the staged target-bound correction is rejected and the accepted model decision is preserved.",
     });
   });
 
@@ -35,6 +38,7 @@ describe("resolveResearchDecisionNormalization", () => {
       stagedDecision,
       rawModelDecision,
       actionNormalization,
+      queueProvesUnboundCreate: false,
     })).toThrow("Accepted research decision disagrees with the staged summary");
   });
 });

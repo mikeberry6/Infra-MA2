@@ -5,7 +5,7 @@
   "taskIndex": 273,
   "companyName": "1547 Critical Systems Realty",
   "asOfDate": "2026-08-19",
-  "decision": "PROPOSED_CORRECTION",
+  "decision": "PROPOSED_NEW",
   "confidence": "MEDIUM_HIGH_WITH_NONCRITICAL_STAKE_AND_UMBRELLA_ENTITY_GAPS",
   "researchOnly": true,
   "generatedAt": "2026-08-29T20:47:00.000Z",
@@ -218,7 +218,13 @@
     "decisionNormalization": {
       "acceptedValue": "PROPOSED_NEW",
       "stagedSummaryValue": "PROPOSED_CORRECTION",
-      "basis": "The model's PROPOSED_NEW label is normalized to PROPOSED_CORRECTION because task 273 is already target-bound to an existing canonical company and the proposed facts are a boundary and ownership correction, not a second company creation."
+      "finalValue": "PROPOSED_NEW",
+      "basis": "The immutable proposal queue has no production company target and requires CREATE_COMPANY, so the staged target-bound correction is rejected and the accepted model decision is preserved.",
+      "stagedBasis": "The model's PROPOSED_NEW label is normalized to PROPOSED_CORRECTION because task 273 is already target-bound to an existing canonical company and the proposed facts are a boundary and ownership correction, not a second company creation.",
+      "proposalQueue": {
+        "path": "audits/portco-reconciliation/2026-08-03/ledger-run-v4-repo-only/proposal-index.json",
+        "sha256": "8aaee9dbeb89bd2fedb47f3a80e1481d8a7050a06102b1c6002ee74e8f4c4e92"
+      }
     }
   }
 }
