@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_RECEIPT",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0279-0280-v1",
+  "batchSha256": "aa0103f8a57bdbf222e3ff6de5eb2beaf2e9bee5c5a2e659de258df2ed820485",
+  "releaseSha": "7ba098b2ee786314e11594f84c9bd17dd8efcab1",
+  "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+  "transactionId": "54fd1b1c-134c-46d8-9829-232920e645e0",
+  "appliedAt": "2026-08-30T06:12:14.012Z",
+  "members": [
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0279:drfortress:c7515be2",
+      "taskIndex": 279,
+      "companyName": "DRFortress",
+      "outcome": "DEFERRED",
+      "decisionSha256": "335c8428386adf1ad6057d7a1b8f718f1c205f61c6502b2b81c8d9cedce0df0f"
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0280:midway-technology-centre:9f8844f1",
+      "taskIndex": 280,
+      "companyName": "Midway Technology Centre",
+      "receipt": {
+        "schemaVersion": 1,
+        "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+        "runId": "portco-reconciliation-2026-08-03-v2",
+        "taskId": "ledger:0280:midway-technology-centre:9f8844f1",
+        "taskIndex": 280,
+        "companyName": "Midway Technology Centre",
+        "companyId": "cmtfaalqe0020rz2bdtobqwxo",
+        "proposalSha256": "3f5628e0a867c4d223ff0bc921d276a56f319f46c3cc9d2c1f742add128fd977",
+        "approvalSha256": "9a57d41415b12f884e75e952f4d27f040df0c8c22c12df62c7b00d9e78780ee6",
+        "productionSnapshotSha256": "10534df725dc833de41737bfdc3f29ec1906c455d1d3e664fab8b6d567e95d5d",
+        "beforeCompanySnapshotSha256": "c920684332a3703d25f5b2a21f01fb38e601f1eb3cb019d7a2915102084f6963",
+        "appliedAfterImageSha256": "95530222df4ee7f8845f9f771136cee0ac1aa35d4ad7b2a7e69c03da1c22e185",
+        "seedAfterImageSha256": "95530222df4ee7f8845f9f771136cee0ac1aa35d4ad7b2a7e69c03da1c22e185",
+        "approvedSeedEntrySha256": "c9c950f0c55365435701d8cffdd30b1647224d166dbac2a8bcfa12ef4c0b170a",
+        "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+        "transactionId": "54fd1b1c-134c-46d8-9829-232920e645e0",
+        "auditEventId": "cmtfewrkc0009ln2b8mds6hr8",
+        "appliedAt": "2026-08-30T06:12:14.012Z",
+        "verification": {
+          "databaseMatchesAfterImage": true,
+          "seedMatchesAfterImage": true,
+          "detailApiVerified": true
+        },
+        "receiptSha256": "ac9ea4f5ff3ad7c7714efb04e207c8d0122b371aca33a450cd1dd2b4eaacf812"
+      }
+    }
+  ],
+  "verification": {
+    "databaseTransactionCommitted": true,
+    "seedArtifactVerified": true,
+    "allDetailApisVerified": true,
+    "partialDatabaseApplication": false
+  },
+  "receiptSha256": "8bcefd8c26cc9e339a6beb4d823549aa1729f0038ef64af1f106baad4b1c1068"
+}

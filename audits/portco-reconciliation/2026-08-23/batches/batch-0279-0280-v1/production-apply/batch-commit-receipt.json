@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_COMMIT_RECEIPT",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0279-0280-v1",
+  "batchSha256": "aa0103f8a57bdbf222e3ff6de5eb2beaf2e9bee5c5a2e659de258df2ed820485",
+  "releaseSha": "7ba098b2ee786314e11594f84c9bd17dd8efcab1",
+  "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+  "transactionId": "54fd1b1c-134c-46d8-9829-232920e645e0",
+  "appliedAt": "2026-08-30T06:12:14.012Z",
+  "members": [
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0279:drfortress:c7515be2",
+      "taskIndex": 279,
+      "companyName": "DRFortress",
+      "outcome": "DEFERRED",
+      "decisionSha256": "335c8428386adf1ad6057d7a1b8f718f1c205f61c6502b2b81c8d9cedce0df0f"
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0280:midway-technology-centre:9f8844f1",
+      "taskIndex": 280,
+      "companyName": "Midway Technology Centre",
+      "proposalSha256": "3f5628e0a867c4d223ff0bc921d276a56f319f46c3cc9d2c1f742add128fd977",
+      "approvalSha256": "9a57d41415b12f884e75e952f4d27f040df0c8c22c12df62c7b00d9e78780ee6",
+      "afterImageSha256": "95530222df4ee7f8845f9f771136cee0ac1aa35d4ad7b2a7e69c03da1c22e185",
+      "approvedSeedEntrySha256": "c9c950f0c55365435701d8cffdd30b1647224d166dbac2a8bcfa12ef4c0b170a",
+      "companyId": "cmtfaalqe0020rz2bdtobqwxo",
+      "auditEventId": "cmtfewrkc0009ln2b8mds6hr8"
+    }
+  ],
+  "verification": {
+    "databaseTransactionCommitted": true,
+    "seedArtifactVerifiedBeforeCommit": true,
+    "detailApiVerificationPending": true,
+    "partialDatabaseApplication": false
+  },
+  "receiptSha256": "1140248096689342936ff505ca48c0fdef4498c8f7e35b290f396198247b9c98"
+}
