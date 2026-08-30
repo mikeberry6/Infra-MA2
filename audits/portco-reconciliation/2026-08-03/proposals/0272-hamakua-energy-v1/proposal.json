@@ -1,0 +1,404 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0272:hamakua-energy:72375ecc",
+  "taskIndex": 272,
+  "asOfDate": "2026-08-30",
+  "generatedAt": "2026-08-30T03:42:12.000Z",
+  "canonicalKey": "hamakua-energy|united-states",
+  "companyName": "Hamakua Energy",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER"
+  ],
+  "sourceHoldingIds": [
+    "050-harbert-management-corp:holding:002:hamakua-energy"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Correct the existing Hamakua Energy Plant record to the canonical Hamakua Energy identity rather than creating a duplicate. Pacific Current sold all interests in Hamakua Holdings to an indirect wholly owned Harbert Management Corporation subsidiary on March 10, 2025. Harbert owns the current platform at the parent level, but the buyer subsidiary and fund are not publicly disclosed; the existing Gulf Pacific attribution is unsupported and is removed. Preserve the prior Enserch/Jones, TECO, Energy Investors Funds, ArcLight and Pacific Current ownership history. No later sale or signed pending ownership transaction was identified through August 19, 2026.",
+  "evidence": [
+    {
+      "url": "https://www.hei.com/investor-relations/news-and-events/news/news-details/2025/HEI-Subsidiary-Sells-Hawaii-Island-Power-Plant-to-Experienced-Plant-Operator/default.aspx",
+      "purpose": "Current Harbert ownership and March 2025 closing",
+      "supports": [
+        "Pacific Current sold all interests in Hamakua Holdings",
+        "An indirect wholly owned Harbert Management Corporation subsidiary acquired the platform",
+        "The sale closed on March 10, 2025"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/354707/000035470726000008/he-20251231.htm",
+      "purpose": "Parent and subsidiary identity and seller exit",
+      "supports": [
+        "Hamakua Holdings is the parent of the plant and related operating entities",
+        "Pacific Current no longer owned the business after the March 2025 sale"
+      ]
+    },
+    {
+      "url": "https://www.ftc.gov/legal-library/browse/early-termination-notices/20100281",
+      "purpose": "ArcLight ownership transition",
+      "supports": [
+        "ArcLight Energy Partners Fund IV and Great Point Power were the 2010 acquiring chain"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "698ec52ea17601657e29c33526259d747aef75ce5ea2895273db5ae342103163",
+  "currentCompanySnapshotSha256": "d669a00a4192cadb33a6f03ec0bced87fa4d5d92ce9c31960bf04ec7ba6bd366",
+  "executionLock": {
+    "taskSnapshotSha256": "4c9e0888d7294d44df7fba682ca1e6ccb50a0961e42e59dff777f3c769534384",
+    "taskStateSha256": "3f2b6ce4609b6e192b0054eef415e3ab7a4a00a6d079c869d8c2032927c47a14",
+    "taskDependencySha256": "fe778fb027c2c5e88d365d5c7c80e23897f92befe04f25487fa9ec322e4e9090",
+    "seedEntrySha256": "f3ed219eddb06237534886dcaddee5e6c0e756aec5f7b87741c2f30f05abe9f9",
+    "dependencies": {
+      "ownershipPeriodsSha256": "52485f98bb248e82bd17a634142aa4e6759650d0540d741783ab719ee0603b66",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "e6474d68dceb0c196447344eee088fa158f72073995d1bb19f896cb4f296f649",
+      "citationsSha256": "0c62c94ec6c3d394f2588a281f367c733f880dfa94953039ddfc69ecdc787b29",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi435000kivhegfx84axs",
+        "name": "ArcLight Capital Partners",
+        "updatedAt": "2026-07-23T16:09:12.497Z"
+      },
+      {
+        "id": "cmrxpi9ek0028ivhedhgjrhdv",
+        "name": "Harbert Management Corporation",
+        "updatedAt": "2026-07-23T16:09:19.388Z"
+      },
+      {
+        "id": "cmrxpijlm005fivheozsm6qzp",
+        "name": "Harbert Management Corp (Harbert Infra / Gulf Pacific)",
+        "updatedAt": "2026-07-23T16:09:32.602Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjhb300zyivhekv2gws5o",
+    "name": "Hamakua Energy Plant",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Thermal power generation",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Hamakua Energy Plant is a thermal power plant located on Hawaiʻi Island. The asset serves the local island power system and contributes dispatchable generation capacity to Hawaii’s standalone electric grid. Its operating model is asset-heavy and based on ownership and operation of a utility-scale generation facility. Public disclosures identify the plant as a 60 MW facility formerly owned by Pacific Current, an affiliate of Hawaiian Electric Industries. A subsidiary of Harbert Management Corporation acquired the plant in March 2025. Public materials reviewed do not disclose the transaction value, employee count, or detailed contract structure.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Hawaii",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk37f01ypivhebnlap7vy",
+        "managerName": "Harbert Management Corp (Harbert Infra / Gulf Pacific)",
+        "organizationName": "Harbert Management Corp (Harbert Infra / Gulf Pacific)",
+        "fundName": null,
+        "vehicleName": "Harbert Infrastructure",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplwtn048oivhe85bvyftl",
+        "date": "2025",
+        "event": "The plant became part of Harbert’s Hawaii generation portfolio.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplwuf048pivheptmfnr9t",
+        "date": "Mar 2025",
+        "event": "Harbert announced the successful acquisition of the Hamakua Energy Plant.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-03-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplwuy048qivhe37uxkqko",
+        "date": "Mar 10, 2025",
+        "event": "HEI announced the closing of the sale of the 60 MW Hamakua Energy Plant to a Harbert subsidiary.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-03-10T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxprf120b1mivhe3rnuk3u3",
+        "label": "Acquisition source — Harbert Management Corp (Harbert Infra / Gulf Pacific) — Hamakua Energy Plant",
+        "url": "https://www.harbert.net/news/march-2025-harbert-management-is-pleased-to-announce-the-successful-acquisition-of-the-hamakua-energy-plant",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Harbert transaction or milestone detail",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxprf250b1oivhexqbg1420",
+        "label": "Close date source — Harbert Management Corp (Harbert Infra / Gulf Pacific) — Hamakua Energy Plant",
+        "url": "https://www.hei.com/investor-relations/news-and-events/news/news-details/2025/HEI-Subsidiary-Sells-Hawaii-Island-Power-Plant-to-Experienced-Plant-Operator/default.aspx",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Harbert Management Corp (Harbert Infra / Gulf Pacific) closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprf3e0b1qivhekckb0o1e",
+        "label": "Power Technology — Hamakua Energy Plant",
+        "url": "https://www.power-technology.com/news/hei-pacific-current-harbert-hawaii/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Power Technology — Hamakua Energy Plant",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "d669a00a4192cadb33a6f03ec0bced87fa4d5d92ce9c31960bf04ec7ba6bd366",
+  "afterImage": {
+    "id": "cmrxpjhb300zyivhekv2gws5o",
+    "name": "Hamakua Energy",
+    "aliases": [
+      "Hamakua Energy Plant",
+      "Hamakua Energy, LLC",
+      "Hamakua Holdings, LLC",
+      "Hamakua Firm Renewable Energy"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Dispatchable thermal power generation",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Hamakua Energy is a 60 MW net combined-cycle power plant at Honokaʻa on Hawaiʻi Island. The facility uses two liquid-fuel combustion turbines and a waste-heat steam turbine, supplies firm capacity under a power-purchase agreement extending through 2030 and has historically provided about one-third of the island's electricity. Pacific Current, a Hawaiian Electric Industries subsidiary, sold all interests in Hamakua Holdings to an indirect wholly owned Harbert Management Corporation subsidiary on March 10, 2025. The buyer subsidiary and Harbert fund are not publicly disclosed; Gulf Pacific is not supported as an owner or vehicle. Earlier ownership included Energy Investors Funds, ArcLight Fund IV and Pacific Current. The plant remained grid-connected after an August 2026 interruption, and no later sale or signed pending ownership transaction was identified through August 19, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://hamakuaenergyllc.com/",
+    "yearFounded": 2000,
+    "headquarters": "Honokaʻa, Hawaii",
+    "lastVerifiedAt": "2026-08-19T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk37f01ypivhebnlap7vy",
+        "managerName": "Harbert Management Corporation",
+        "organizationName": "Harbert Management Corporation",
+        "fundName": null,
+        "vehicleName": "Undisclosed HMC subsidiary through Hamakua Holdings, LLC",
+        "stake": "100% of Hamakua Holdings ownership interests",
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Enserch Corporation / J.A. Jones",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Encogen Hawaii, L.P.",
+        "stake": "Co-owned; percentages not publicly disclosed",
+        "investmentYear": null,
+        "exitYear": 2004,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      },
+      {
+        "id": null,
+        "managerName": "TECO Energy",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Hamakua Energy Partners, L.P.",
+        "stake": "50% at exit",
+        "investmentYear": 1999,
+        "exitYear": 2004,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      },
+      {
+        "id": null,
+        "managerName": "Energy Investors Funds Group",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "United States Power Fund, L.P. through Hamakua Energy Partners",
+        "stake": "50% from June 2004 and 100% from July 15, 2004",
+        "investmentYear": 2004,
+        "exitYear": 2010,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      },
+      {
+        "id": null,
+        "managerName": "ArcLight Capital Partners",
+        "organizationName": "ArcLight Capital Partners",
+        "fundName": null,
+        "vehicleName": "ArcLight Energy Partners Fund IV, L.P. through Great Point Power Hamakua Holdings",
+        "stake": "100%",
+        "investmentYear": 2010,
+        "exitYear": 2017,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      },
+      {
+        "id": null,
+        "managerName": "Hawaiian Electric Industries / Pacific Current",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Pacific Current, LLC through Hamakua Holdings, LLC",
+        "stake": "100%",
+        "investmentYear": 2017,
+        "exitYear": 2025,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplwtn048oivhe85bvyftl",
+        "date": "Jun 2004–Jun 2010",
+        "event": "United States Power Fund acquired the prior partner interests and reached 100% ownership in July 2004; ArcLight Fund IV's Great Point Power structure acquired the platform in June 2010.",
+        "category": "ACQUISITION",
+        "sortDate": "2010-06-04T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/46207/000119312505047722/d10k.htm",
+          "https://www.ftc.gov/legal-library/browse/early-termination-notices/20100281"
+        ]
+      },
+      {
+        "id": "cmrxplwuf048pivheptmfnr9t",
+        "date": "Nov 24, 2017",
+        "event": "Pacific Current completed its acquisition of the Hamakua ownership and PPA structure from the ArcLight chain.",
+        "category": "ACQUISITION",
+        "sortDate": "2017-11-24T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/46207/000035470718000024/heexhibit104d.htm"
+        ]
+      },
+      {
+        "id": "cmrxplwuy048qivhe37uxkqko",
+        "date": "Mar 10, 2025",
+        "event": "An indirect wholly owned Harbert Management Corporation subsidiary acquired all ownership interests in Hamakua Holdings from Pacific Current.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-03-10T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.hei.com/investor-relations/news-and-events/news/news-details/2025/HEI-Subsidiary-Sells-Hawaii-Island-Power-Plant-to-Experienced-Plant-Operator/default.aspx",
+          "https://www.sec.gov/Archives/edgar/data/354707/000035470726000008/he-20251231.htm"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxprf120b1mivhe3rnuk3u3",
+        "label": "Acquisition source — Harbert Management Corp (Harbert Infra / Gulf Pacific) — Hamakua Energy Plant",
+        "url": "https://www.harbert.net/news/march-2025-harbert-management-is-pleased-to-announce-the-successful-acquisition-of-the-hamakua-energy-plant",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Harbert acquisition announcement and infrastructure-strategy context",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprf250b1oivhexqbg1420",
+        "label": "Close date source — Harbert Management Corp (Harbert Infra / Gulf Pacific) — Hamakua Energy Plant",
+        "url": "https://www.hei.com/investor-relations/news-and-events/news/news-details/2025/HEI-Subsidiary-Sells-Hawaii-Island-Power-Plant-to-Experienced-Plant-Operator/default.aspx",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "March 10, 2025 sale of all Hamakua Holdings interests to an HMC subsidiary",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxprf3e0b1qivhekckb0o1e",
+        "label": "Power Technology — Hamakua Energy Plant",
+        "url": "https://www.power-technology.com/news/hei-pacific-current-harbert-hawaii/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Secondary transaction and plant-scale context",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "SEC — Hawaiian Electric Industries 2025 Form 10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/354707/000035470726000008/he-20251231.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Hamakua Holdings structure, complete Pacific Current exit and 2025 transaction accounting",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Hamakua Energy — About the plant",
+        "url": "https://hamakuaenergyllc.com/about-us/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Plant identity, operating configuration, PPA term and island-grid role",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Harbert — Infrastructure strategy",
+        "url": "https://www.harbert.net/investment-strategies/infrastructure",
+        "sourceType": "WEBSITE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Harbert Power and infrastructure strategy context without a disclosed Hamakua fund",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "SEC — Hamakua 2017 PPA notice",
+        "url": "https://www.sec.gov/Archives/edgar/data/46207/000035470718000024/heexhibit104d.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "November 24, 2017 Pacific Current ownership and PPA transfer",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "SEC — Hawaiian Electric 2004 Form 10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/46207/000119312505047722/d10k.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Enserch, Jones, TECO and United States Power Fund ownership history",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "FTC — Hamakua early-termination notice",
+        "url": "https://www.ftc.gov/legal-library/browse/early-termination-notices/20100281",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "ArcLight Fund IV and Great Point Power 2010 acquisition chain",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Hawaiian Electric — August 2026 grid update",
+        "url": "https://www.hawaiianelectric.com/8-pm-update-estimated-restoration-times-now-available-for-hawaii-island-oahu-maui",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "August 18, 2026 grid reconnection and continuing operating status",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "466d10c7860c236f8d60b171c26c5b9739d1a34560b92b4147069f106122049a",
+  "proposalSha256": "ba200d82ae551297f5d72263dea421ea3e3465bd67a84ac623753c3b45d91831"
+}

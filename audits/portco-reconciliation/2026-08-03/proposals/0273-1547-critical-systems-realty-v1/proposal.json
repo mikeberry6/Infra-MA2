@@ -1,11 +1,22 @@
 {
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0273:1547-critical-systems-realty:8e267688",
+  "taskIndex": 273,
+  "asOfDate": "2026-08-30",
   "generatedAt": "2026-08-30T03:42:13.000Z",
+  "canonicalKey": "1547-critical-systems-realty|united-states",
+  "companyName": "1547 Critical Systems Realty",
   "actions": [
     "CREATE_COMPANY"
   ],
+  "sourceHoldingIds": [
+    "051-harrison-street:holding:001:1547-critical-systems-realty"
+  ],
   "retiredCompanyIds": [],
   "relationMerges": [],
-  "reviewedSeedRetirementTaskIds": [],
   "rationale": "Create one Harrison Street–1547 data-center and connectivity platform record rather than representing Harrison Street as an owner of corporate 1547 or creating separate facility portfolio companies. Direct releases and SEC evidence establish asset-level joint ventures operated by 1547 beginning with the September 3, 2020 Wells transaction. Harrison Street and FifteenFortySeven Critical Systems Realty remain current co-owners, but exact platform stakes, the Harrison Street fund and any umbrella legal entity are not publicly disclosed. AlohaNAP, DRFortress and the other listed facilities remain assets within the platform. No later platform sale, manager change or signed pending ownership transaction was identified through August 19, 2026.",
   "evidence": [
     {
@@ -34,6 +45,34 @@
     }
   ],
   "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "26bb68270c4768372e3d091fea477a300f9214a8dd1a69a821fa1fb73bd46fcb",
+  "currentCompanySnapshotSha256": null,
+  "executionLock": {
+    "taskSnapshotSha256": "61602639b3014961a103f0e7bb9f99a51eec1fa4dfc95cb0739ed766843d3d87",
+    "taskStateSha256": "e08ff00c70ebdd82dd08f801ac51342ef4b662c0a0b49f9a256c514b7f309cca",
+    "taskDependencySha256": "55c72bda3614a39c21ab0bb6856de837e6c5851f8ec5c5d07ce7a9a853c6d4fe",
+    "seedEntrySha256": null,
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "aca578e15ae37e0a87c895a82541686bf8a6bc3d738a98873fb7c4419f86066a",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi9hc0029ivhep5jy7vm9",
+        "name": "Harrison Street",
+        "updatedAt": "2026-07-23T16:09:19.488Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": null,
+  "beforeImageSha256": null,
   "afterImage": {
     "id": null,
     "name": "Harrison Street–1547 Data Center & Connectivity Platform",
@@ -184,5 +223,7 @@
         "isPrimary": false
       }
     ]
-  }
+  },
+  "afterImageSha256": "89ea523d1b8d9b61268c86801f021103b2f72d4dfb3ddaa96a0d0955fef81c30",
+  "proposalSha256": "dff0f3c8488a21352390ae25d146daa35346bd5817a8372bfdabd27f13b5d97d"
 }

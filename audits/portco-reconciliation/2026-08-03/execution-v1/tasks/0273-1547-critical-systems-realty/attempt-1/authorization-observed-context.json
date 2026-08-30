@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0273:1547-critical-systems-realty:8e267688",
+  "taskIndex": 273,
+  "companyName": "1547 Critical Systems Realty",
+  "generatedAt": "2026-08-30T03:43:18.406Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0273-1547-critical-systems-realty/attempt-1/authorization-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 273,
+    "taskId": "ledger:0273:1547-critical-systems-realty:8e267688",
+    "canonicalKey": "1547-critical-systems-realty|united-states",
+    "companyName": "1547 Critical Systems Realty",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 51,
+    "managers": [
+      "Harrison Street"
+    ],
+    "actionScopes": {
+      "company": [
+        "CREATE_COMPANY"
+      ],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "051-harrison-street:holding:001:1547-critical-systems-realty"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://harrisonst.com/exclusive-harrison-street-and-fifteenfortyseven-acquire-four-data-center-facilities-in-u-s/",
+      "https://www.1547realty.com/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "No exact normalized production or seed match exists. Census evidence supports a new canonical company with 1 manager holding record(s).",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "1547-critical-systems-realty|united-states",
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi9hc0029ivhep5jy7vm9",
+        "name": "Harrison Street",
+        "updatedAt": "2026-07-23T16:09:19.488Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0273:1547-critical-systems-realty:8e267688",
+    "taskIndex": 273,
+    "canonicalKey": "1547-critical-systems-realty|united-states",
+    "capturedAt": "2026-08-30T03:43:18.406Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "038749b24b59b395d398d7787bc968a9a65e7f2e1c04a1dcdb503b6cb6fbf2af",
+    "productionSnapshotSha256": "3f82eb17eb5918e364ed2eefb8a1fa9c4e770a64ab69d57f835bc9ec1fbb8ddf",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "aca578e15ae37e0a87c895a82541686bf8a6bc3d738a98873fb7c4419f86066a",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "55c72bda3614a39c21ab0bb6856de837e6c5851f8ec5c5d07ce7a9a853c6d4fe",
+    "stateSha256": "e08ff00c70ebdd82dd08f801ac51342ef4b662c0a0b49f9a256c514b7f309cca",
+    "taskSnapshotSha256": "47ed2157b257ec7b32a73d5f1eff67ac83507aa68a38acb80562fbeff67a6c73"
+  },
+  "contextSha256": "579dee68afc56f88a02353dec7d2740683b725711775840a694f9570481010cb"
+}

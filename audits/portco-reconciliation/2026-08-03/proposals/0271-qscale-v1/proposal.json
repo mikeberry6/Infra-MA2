@@ -1,11 +1,22 @@
 {
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0271:qscale:f52cb49e",
+  "taskIndex": 271,
+  "asOfDate": "2026-08-30",
   "generatedAt": "2026-08-30T03:42:11.000Z",
+  "canonicalKey": "qscale|canada",
+  "companyName": "QScale",
   "actions": [
     "CREATE_COMPANY"
   ],
+  "sourceHoldingIds": [
+    "049-goldman-sachs-asset-management:holding:006:qscale"
+  ],
   "retiredCompanyIds": [],
   "relationMerges": [],
-  "reviewedSeedRetirementTaskIds": [],
   "rationale": "Create one manager-level QScale platform record. Goldman Sachs Alternatives completed a control acquisition on May 13, 2026 as the first investment of West Street Infrastructure Partners V, while QScale's founders and management retained a minority interest. Aligned Data Centers, Investissement Québec and Desjardins Capital exited in that transaction. Q01 buildings, campus subsidiaries and financing counterparties are not separate portfolio companies. No later platform sale, recapitalization, exit or signed pending ownership transaction was identified through August 19, 2026.",
   "evidence": [
     {
@@ -34,6 +45,34 @@
     }
   ],
   "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "9a950560b819d95b65bc55da304cad26e89bcdcadf7075aaf696c2e961529c2c",
+  "currentCompanySnapshotSha256": null,
+  "executionLock": {
+    "taskSnapshotSha256": "797138ad34e459418d8902bf61a9389283dc906f2b300ee2a6ffedd5f84b5a97",
+    "taskStateSha256": "bd90a0894b75bfd68f87a7329390c3be06473165248df7ca385cc49e9281916a",
+    "taskDependencySha256": "6b45416e5863c905903a14d258ede9867d6fc7bd7a9db357f9c63057123697fd",
+    "seedEntrySha256": null,
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "4feb8698526e4c87965b59817f8a2866f7a3fbd46a60befc79199050f9e5f40c",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi91j0024ivheufpwts5g",
+        "name": "Goldman Sachs Asset Management",
+        "updatedAt": "2026-07-23T16:09:18.919Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": null,
+  "beforeImageSha256": null,
   "afterImage": {
     "id": null,
     "name": "QScale",
@@ -218,5 +257,7 @@
         "isPrimary": false
       }
     ]
-  }
+  },
+  "afterImageSha256": "56c5d99b8c3dc4d61163b7d04ce67f75eb0c10ee5ead454e15b0556194a91160",
+  "proposalSha256": "bbbb449bb5bc25cce6d11ca825d13d1c2a9c894e4543f36a47026b31adc41217"
 }
