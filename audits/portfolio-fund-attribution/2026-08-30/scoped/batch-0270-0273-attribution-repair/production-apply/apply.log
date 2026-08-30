@@ -1,0 +1,163 @@
+
+> infra-tracker@1.0.0 portfolio:fund-attribution:apply
+> npx tsx scripts/apply-portfolio-fund-attribution.ts --manifest=audits/portfolio-fund-attribution/2026-08-30/scoped/batch-0270-0273-attribution-repair/apply-manifest.json --manifest-sha256=c19db2b4e502bcf270f9044939bf813d4af4e747a437de74083dab04178bf950 --production-snapshot=audits/portfolio-fund-attribution/2026-08-30/scoped/batch-0270-0273-attribution-repair/production-snapshot.json --approval=audits/portfolio-fund-attribution/2026-08-30/scoped/batch-0270-0273-attribution-repair/approval.json --approval-sha256=da26d2b6f1ee573542567eb66c7957186f95a4864a227e7ff77dd27d5d4ef3cd --apply=true --write-token=APPLY_REVIEWED_PORTFOLIO_FUND_ATTRIBUTION --receipt=tmp/portfolio-fund-attribution/production/apply-receipt.json
+
+(node:3044) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_RECEIPT",
+  "manifestSha256": "c19db2b4e502bcf270f9044939bf813d4af4e747a437de74083dab04178bf950",
+  "approvalSha256": "da26d2b6f1ee573542567eb66c7957186f95a4864a227e7ff77dd27d5d4ef3cd",
+  "environment": "production",
+  "pipelineRunId": "cmtfb18400000ck2bk71dqnhl",
+  "mutationCount": 7,
+  "changed": 7,
+  "idempotent": false,
+  "beforeFingerprint": "85d2c8a4fa377bfbf7c0c99e0e7dd25187f8e3d06fcdf2c9b7e3954aab9f9947",
+  "afterFingerprint": "f0195a9319fe9989c7544f2929472e340a600d4ef21272ea39d8a969d0eb34d1",
+  "rows": [
+    {
+      "recordId": "OFA-F2DF086EDD76",
+      "ownershipPeriodId": "cmrxpjuc801ktivheh9t7e2e9",
+      "companyId": "cmrxpj91e00ncivhexql11j44",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": "BlackRock Global Renewable Power Fund IV (GRP IV)",
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "BlackRock GIF IV",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, vintage 2024 is 0 years before investment, North America-relevant mandate; next candidate trails by 0.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": "BlackRock Global Renewable Power Fund IV (GRP IV)",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "BlackRock Global Renewable Power Fund IV (GRP IV)",
+        "attributionConfidence": null,
+        "attributionRationale": "Recurrent Energy and Canadian Solar disclosures identify BlackRock Global Renewable Power Fund IV and its GRP IV acquisition vehicle. The disclosed fund matches the curated BlackRock Global Renewable Power Fund IV record."
+      }
+    },
+    {
+      "recordId": "OFA-C02AE84A4685",
+      "ownershipPeriodId": "cmtfaaeu00009rz2bn2fjpxoj",
+      "companyId": "cmrxpj91e00ncivhexql11j44",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Canadian Solar's filings and acquisition release support direct corporate ownership through Canadian Solar Energy Group B.V.; this is not a managed infrastructure fund attribution."
+      }
+    },
+    {
+      "recordId": "OFA-AA6D99511003",
+      "ownershipPeriodId": "cmtfaah7q000xrz2bpq3anrwz",
+      "companyId": "cmtfaago0000irz2b4akigjtp",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "West Street Infrastructure Partners V",
+        "attributionConfidence": null,
+        "attributionRationale": "Goldman Sachs Alternatives identifies West Street Infrastructure Partners V as the fund behind its controlling QScale acquisition. The disclosed fund is not yet a curated Fund Database record, so it remains unlinked."
+      }
+    },
+    {
+      "recordId": "OFA-7DF125F94E20",
+      "ownershipPeriodId": "cmtfaaha4000zrz2b48aynic8",
+      "companyId": "cmtfaago0000irz2b4akigjtp",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The acquisition announcement discloses continuing founder and management minority ownership. This is rollover ownership rather than an infrastructure fund investment."
+      }
+    },
+    {
+      "recordId": "OFA-D370F8B6FE22",
+      "ownershipPeriodId": "cmrxpk37f01ypivhebnlap7vy",
+      "companyId": "cmrxpjhb300zyivhekv2gws5o",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Harbert Infrastructure",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: Harbert Management Corporation | Fund: Harbert Infrastructure | Ownership Interest: Not publicly disclosed. Supplemental ownership detail discloses a distinct fund/vehicle that does not match funds.ts."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "HEI and Harbert confirm that an HMC subsidiary acquired all Hamakua Holdings interests, but the reviewed materials do not disclose a fund or acquisition-vehicle name. Harbert's infrastructure strategy label is not treated as a fund."
+      }
+    },
+    {
+      "recordId": "OFA-0582AB6D7BA5",
+      "ownershipPeriodId": "cmtfaam72002crz2b9fjdofwo",
+      "companyId": "cmtfaalqe0020rz2bdtobqwxo",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The platform and asset disclosures establish Harrison Street as a current joint-venture owner, but do not identify one attributable Harrison Street fund for the platform. No fund is inferred from asset-level SPVs."
+      }
+    },
+    {
+      "recordId": "OFA-4D05FC27EF7E",
+      "ownershipPeriodId": "cmtfaam9a002erz2b8g58t2wg",
+      "companyId": "cmtfaalqe0020rz2bdtobqwxo",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "FifteenFortySeven is the disclosed operating and development partner across the joint platform. Because Fund II is identified only for certain assets, the platform ownership is retained as a direct manager program without a fund link."
+      }
+    }
+  ],
+  "appliedAt": "2026-08-30T04:23:43.844Z",
+  "receiptSha256": "12d9d1f65d9216ff7ba3be9aae5d97bc5b2b9afb11b0f020fa1a0c02a676c7f5"
+}

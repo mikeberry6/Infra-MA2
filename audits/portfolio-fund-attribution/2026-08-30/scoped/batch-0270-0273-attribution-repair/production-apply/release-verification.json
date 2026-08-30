@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_RELEASE_VERIFICATION",
+  "verifiedAt": "2026-08-30T04:23:46.878Z",
+  "manifestSha256": "c19db2b4e502bcf270f9044939bf813d4af4e747a437de74083dab04178bf950",
+  "approvalSha256": "da26d2b6f1ee573542567eb66c7957186f95a4864a227e7ff77dd27d5d4ef3cd",
+  "receiptSha256": "12d9d1f65d9216ff7ba3be9aae5d97bc5b2b9afb11b0f020fa1a0c02a676c7f5",
+  "mutationCount": 7,
+  "changed": 7,
+  "verificationScope": "BOUNDED_STATUS_SAMPLE",
+  "sampledRows": [
+    {
+      "recordId": "OFA-F2DF086EDD76",
+      "companyId": "cmrxpj91e00ncivhexql11j44",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpj91e00ncivhexql11j44?verification=c19db2b4e502bcf270f9044939bf813d4af4e747a437de74083dab04178bf950",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": "BlackRock Global Renewable Power Fund IV (GRP IV)",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "BlackRock Global Renewable Power Fund IV (GRP IV)",
+        "attributionConfidence": null,
+        "attributionRationale": "Recurrent Energy and Canadian Solar disclosures identify BlackRock Global Renewable Power Fund IV and its GRP IV acquisition vehicle. The disclosed fund matches the curated BlackRock Global Renewable Power Fund IV record."
+      }
+    },
+    {
+      "recordId": "OFA-C02AE84A4685",
+      "companyId": "cmrxpj91e00ncivhexql11j44",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpj91e00ncivhexql11j44?verification=c19db2b4e502bcf270f9044939bf813d4af4e747a437de74083dab04178bf950",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Canadian Solar's filings and acquisition release support direct corporate ownership through Canadian Solar Energy Group B.V.; this is not a managed infrastructure fund attribution."
+      }
+    },
+    {
+      "recordId": "OFA-D370F8B6FE22",
+      "companyId": "cmrxpjhb300zyivhekv2gws5o",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjhb300zyivhekv2gws5o?verification=c19db2b4e502bcf270f9044939bf813d4af4e747a437de74083dab04178bf950",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "HEI and Harbert confirm that an HMC subsidiary acquired all Hamakua Holdings interests, but the reviewed materials do not disclose a fund or acquisition-vehicle name. Harbert's infrastructure strategy label is not treated as a fund."
+      }
+    }
+  ],
+  "passed": true
+}
