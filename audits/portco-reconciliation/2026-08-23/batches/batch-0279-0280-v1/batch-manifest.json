@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_MANIFEST",
+  "methodologyVersion": "PORTCO_APPLY_BATCH_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0279-0280-v1",
+  "createdAt": "2026-08-30T05:54:00.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "b0beea522226bae8bbbf9e22c39cd33cac0deb9b8cc4a0f347a49fc0a7fcf3fd"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0279:drfortress:c7515be2",
+      "taskIndex": 279,
+      "companyName": "DRFortress",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0279-0280-v1/decisions/0279-drfortress.json",
+        "sha256": "335c8428386adf1ad6057d7a1b8f718f1c205f61c6502b2b81c8d9cedce0df0f"
+      }
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0280:midway-technology-centre:9f8844f1",
+      "taskIndex": 280,
+      "companyName": "Midway Technology Centre",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0280-midway-technology-centre-v3/proposal.json",
+        "sha256": "3f5628e0a867c4d223ff0bc921d276a56f319f46c3cc9d2c1f742add128fd977"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0280-midway-technology-centre-v3.json",
+        "sha256": "9a57d41415b12f884e75e952f4d27f040df0c8c22c12df62c7b00d9e78780ee6"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0280-midway-technology-centre/attempt-1/locked-production-snapshot.json",
+        "sha256": "10534df725dc833de41737bfdc3f29ec1906c455d1d3e664fab8b6d567e95d5d"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0280-midway-technology-centre/attempt-1/locked-task-snapshot.json",
+        "sha256": "2252bb97780796c4fddd91dde910d7a1807dd12a14edcaea9a3ee1b7c9b16e95"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0280-midway-technology-centre/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "a0e5482ff7c6e03cc9d0bf5f889beaf579c2911bb72a61a319dbae226a0032e3"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0280-midway-technology-centre/attempt-1/application-research-decision.json",
+        "sha256": "a6be720fb1f21447567636e57810141961df50520c4670a831eff9ed9097b085"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0280-midway-technology-centre/attempt-1/source-verification.json",
+        "sha256": "f930223d4aad667865f70c6560a277f5fb53bff55aa7301bbbee00aebfe244d4"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "55133c21d3542a7034f7fc7babe1ab67e2b25cbe92fc02e21c8ebdcb53a1f260",
+      "dependencySha256": "b29824c6ab7ef1eba97c3b8f586aad174ab4f2bd25738afc7997343695107e71",
+      "afterImageSha256": "95530222df4ee7f8845f9f771136cee0ac1aa35d4ad7b2a7e69c03da1c22e185",
+      "targetClaims": [
+        "canonical:harrison-street-1547-data-center-and-connectivity-platform|united-states",
+        "company:cmrxpjhqr010nivhe7nzdhd12",
+        "company:cmtfaalqe0020rz2bdtobqwxo",
+        "relation:cmrxpk3nc01zeivhegw9fkpil",
+        "relation:cmrxplyhs04ajivhe97ai5iuk",
+        "relation:cmtfaalu10022rz2b6xrjgw2u",
+        "relation:cmtfaalw70024rz2b5laig4o1",
+        "relation:cmtfaalxn0025rz2bncmzjptu",
+        "relation:cmtfaalzs0027rz2bukrxfb11",
+        "relation:cmtfaam1y0029rz2b5mz33xs7",
+        "relation:cmtfaam45002brz2bpjns2a59",
+        "relation:cmtfaam72002crz2b9fjdofwo",
+        "relation:cmtfaam9a002erz2b8g58t2wg",
+        "relation:cmtfaamaq002frz2bjb5pjq21",
+        "relation:cmtfaamef002grz2bw92bta7k",
+        "relation:cmtfaami2002hrz2b7c4ts9lm",
+        "relation:cmtfaamlp002irz2bivd0wwb6",
+        "seed:harrison street–1547 data center & connectivity platform|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://harrisonst.com/harrison-street-asset-management-and-fifteenfortyseven-critical-systems-realty-achieve-full-occupancy-at-orangeburg-data-center-with-further-expansion-underway/",
+          "label": "Harrison Street — Orangeburg expansion",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://property.jll.com/listings/40-e-garfield-blvd-chicago",
+          "label": "JLL — 40 E Garfield Boulevard sale listing",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.1547realty.com/data-center/chicago-il-chil1/",
+          "label": "1547 — Midway Technology Centre (CHIL1)",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.1547realty.com/data-centers/",
+          "label": "1547 — Current data-center portfolio",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.1547realty.com/resource/1547-and-harrison-street-acquire-drfortress-hawaiis-leading-carrier-neutral-data-center/",
+          "label": "1547 — DRFortress acquisition",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.1547realty.com/resource/1547-and-harrison-street-acquire-historic-milwaukee-carrier-hotel-and-data-center/",
+          "label": "Announcement date source — Harrison Street — Wells Building Data Center",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.1547realty.com/resource/fifteenfortyseven-critical-systems-realty-and-harrison-street-acquire-portfolio-of-four-strategically-located-data-centers-in-new-york-chicago-and-wyoming/",
+          "label": "1547 — Four-data-center portfolio acquisition",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.1547realty.com/resource/harrison-street-1547-acquire-carrier-hotel-data-center-hawaii-and-announce-expansion/",
+          "label": "1547 — Harrison Street–1547 national platform",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.cimgroup.com/press-releases/cim-group-sells-portfolio-of-four-data-center-assets",
+          "label": "CIM Group — Four-data-center portfolio sale",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1840644/000153949721000039/n2405-x1_premarketts.htm",
+          "label": "SEC — Pittock Block offering memorandum",
+          "sourceType": "SEC_FILING"
+        }
+      ]
+    }
+  ],
+  "collisionAnalysis": {
+    "independent": true,
+    "claimsSha256": "f3d96695197ffe2bdf891d0749a7b6204a56b1f0f1f44e1c94cd15e256c685a9",
+    "sharedSourceUrls": [],
+    "conflicts": []
+  },
+  "batchSha256": "aa0103f8a57bdbf222e3ff6de5eb2beaf2e9bee5c5a2e659de258df2ed820485"
+}
