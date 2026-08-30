@@ -1,0 +1,57 @@
+Perform one focused North American infrastructure portfolio-boundary adjudication as of 2026-08-30. Use current web research, open direct pages, and explicitly search for subsequent sales or exits. This is not a full scorecard refresh.
+
+Existing canonical record:
+Harrison Street–1547 Data Center & Connectivity Platform. It represents Harrison Street and FifteenFortySeven Critical Systems Realty's U.S. program of asset-level data-center joint ventures. It is not asserted to be one umbrella legal entity, and corporate 1547 is the operator/co-sponsor rather than a company proven to be owned by Harrison Street. Existing current owner periods are Harrison Street and FifteenFortySeven, both since 2020, with exact stakes and the Harrison Street fund not publicly disclosed.
+
+Already resolved consistently:
+- AlohaNAP, Chester County Hyperscale, and CHIL2 were treated as underlying facilities, not separate PortCos.
+- Midway Technology Centre / CHIL1 was merged into the platform.
+- The platform record already names Midway, Pittock, Orangeburg, Cheyenne, South Bend, Wells, and other facilities.
+- The methodology includes manager-level operating companies, platforms, or truly standalone assets, but excludes subsidiaries, projects, SPVs, and facilities beneath an already-counted platform. It must not count both a platform and its constituent facilities.
+
+Adjudicate these reciprocal records together:
+281 Orangeburg Data Center / ORNY1 / 1547 CSR - Orangeburg, LLC
+282 Pittock Block Data Center / PTOR1 / 1547 CSR - Pittock Block, LLC
+283 Union Station Data Center and Carrier Hotel / South Bend IN / SBIN1
+285 Wells Building Data Center / Milwaukee WI / MIWI1
+286 Wyoming Data Center / Cheyenne WY / CHWY1
+
+The prior company-level research was inconsistent: it proposed merging Orangeburg and Cheyenne, but retaining Pittock, South Bend, and Wells as standalone records. Determine whether that distinction is actually defensible under the fixed no-double-counting methodology. Do not preserve a standalone row merely because an asset has its own property SPV, deed, financing, or direct joint-venture ownership if it is also represented inside the counted Harrison Street–1547 program. Conversely, if the synthetic platform itself should not be counted because there is no umbrella operating company or common investment vehicle, say so explicitly and explain whether the correct solution is to retire the platform and retain all directly held facilities. Do not recommend a mixed result unless direct evidence proves a meaningful manager-level ownership boundary that consistently distinguishes the retained facilities from the merged ones.
+
+At minimum open and use:
+- https://www.cimgroup.com/press-releases/cim-group-sells-portfolio-of-four-data-center-assets
+- https://harrisonst.com/exclusive-harrison-street-and-fifteenfortyseven-acquire-four-data-center-facilities-in-u-s/
+- https://www.1547realty.com/data-centers/
+- https://www.1547realty.com/resource/1547-and-harrison-street-acquire-historic-milwaukee-carrier-hotel-and-data-center/
+- https://www.sec.gov/Archives/edgar/data/1840644/000153949721000039/n2405-x1_premarketts.htm
+- https://harrisonst.com/fifteenfortyseven-critical-systems-realty-and-harrison-street-acquire-the-union-station-data-center-and-carrier-hotel-in-south-bend-indiana/
+- https://www.1547realty.com/data-center/orangeburg-new-york-orny1/
+- https://www.1547realty.com/data-center/portland-or-ptor1/
+- https://www.1547realty.com/data-center/south-bend-in-sbin1/
+- https://www.1547realty.com/data-center/milwaukee-wi-miwi1/
+- https://www.1547realty.com/data-center/cheyenne-wy-chwy1/
+
+Return one fenced JSON object followed by a concise Markdown review. JSON schema:
+{
+  "asOfDate":"2026-08-30",
+  "decision":"KEEP_PLATFORM_MERGE_ALL_FACILITIES"|"RETIRE_PLATFORM_KEEP_ALL_FACILITIES"|"MIXED_BOUNDARY",
+  "confidence":"HIGH"|"MEDIUM"|"LOW",
+  "rationale":"...",
+  "platformBoundary":{"isManagerLevelCountable":true,"legalUmbrellaDisclosed":false,"why":"..."},
+  "facilities":[
+    {"taskIndex":281,"name":"...","recommendedOutcome":"MERGE_INTO_PLATFORM"|"RETAIN_STANDALONE"|"DEFER","legalEntity":"...","ownershipEvidence":"...","subsequentExitSearch":"...","reason":"..."}
+  ],
+  "mixedBoundaryEvidence":[],
+  "sources":[{"url":"https://...","purpose":"...","working":true}],
+  "unresolvedQuestions":[],
+  "implementationRecommendation":{"canonicalSurvivor":"...","singleMutationCanCoverTasks":[],"supersedeTasks":[],"separateTasks":[]}
+}
+
+Success criteria:
+- Exactly one consistent boundary rule is stated.
+- Every one of tasks 281, 282, 283, 285, and 286 receives an outcome.
+- The result distinguishes facility/SPV ownership from ownership of corporate 1547.
+- It does not infer Harrison Street Digital Fund, fund names, or ownership percentages.
+- A mixed outcome requires direct evidence, not convenience.
+- Identity or ownership uncertainty that could alter the boundary must be UNRESOLVED and must block mutation.
+
