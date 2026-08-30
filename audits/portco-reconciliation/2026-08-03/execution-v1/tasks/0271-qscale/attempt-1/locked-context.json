@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0271:qscale:f52cb49e",
+  "taskIndex": 271,
+  "companyName": "QScale",
+  "generatedAt": "2026-08-30T03:42:33.044Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0271-qscale/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 271,
+    "taskId": "ledger:0271:qscale:f52cb49e",
+    "canonicalKey": "qscale|canada",
+    "companyName": "QScale",
+    "country": "Canada",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 49,
+    "managers": [
+      "Goldman Sachs Asset Management"
+    ],
+    "actionScopes": {
+      "company": [
+        "CREATE_COMPANY"
+      ],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "049-goldman-sachs-asset-management:holding:006:qscale"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://am.gs.com/en-us/advisors/news/press-release/2026/goldman-sachs-alternatives-acquire-qscale",
+      "https://www.qscale.com/company/about-us"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "No exact normalized production or seed match exists. Census evidence supports a new canonical company with 1 manager holding record(s).",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "qscale|canada",
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi91j0024ivheufpwts5g",
+        "name": "Goldman Sachs Asset Management",
+        "updatedAt": "2026-07-23T16:09:18.919Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0271:qscale:f52cb49e",
+    "taskIndex": 271,
+    "canonicalKey": "qscale|canada",
+    "capturedAt": "2026-08-30T03:42:33.044Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "799eaf0e696ddf5a87c31a032eebb490752e05802c7e18392519b50ceb7cfeaf",
+    "productionSnapshotSha256": "9a950560b819d95b65bc55da304cad26e89bcdcadf7075aaf696c2e961529c2c",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "4feb8698526e4c87965b59817f8a2866f7a3fbd46a60befc79199050f9e5f40c",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "6b45416e5863c905903a14d258ede9867d6fc7bd7a9db357f9c63057123697fd",
+    "stateSha256": "bd90a0894b75bfd68f87a7329390c3be06473165248df7ca385cc49e9281916a",
+    "taskSnapshotSha256": "797138ad34e459418d8902bf61a9389283dc906f2b300ee2a6ffedd5f84b5a97"
+  },
+  "contextSha256": "62a4d7481fd428ddb5a321c11b9ed8992eaf0b89f7f6b2ff78bf0730c9e2e47a"
+}

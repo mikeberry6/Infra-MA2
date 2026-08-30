@@ -1,0 +1,401 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0270:recurrent-energy:9b92b574",
+  "taskIndex": 270,
+  "asOfDate": "2026-08-30",
+  "generatedAt": "2026-08-30T03:42:10.000Z",
+  "canonicalKey": "recurrent-energy|united-states-canada",
+  "companyName": "Recurrent Energy",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER"
+  ],
+  "sourceHoldingIds": [],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Retain one global Recurrent Energy platform while correcting its current and former ownership history. Canadian Solar has owned all ordinary shares since March 30, 2015. BlackRock's Global Renewable Power Fund IV invested US$500 million through GRP IV Rose Bidco in 2024 preferred shares representing 20% on a fully diluted as-converted basis at closing. Sharp, Hudson Clean Energy Partners and Mohr Davidow Ventures are former owners; projects and country subsidiaries remain inside the platform boundary. No later platform sale, redemption, conversion, exit or signed pending ownership transaction was identified through August 19, 2026.",
+  "evidence": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1375877/000141057825001046/csiq-20241231x20f.htm",
+      "purpose": "Current legal ownership, BlackRock investment terms and closing dates",
+      "supports": [
+        "Canadian Solar retained 100% of ordinary shares and 80% on an as-converted basis at closing",
+        "GRP IV Rose Bidco funded US$300 million on May 31, 2024 and US$200 million in September 2024",
+        "The preferred investment represented 20% on a fully diluted as-converted basis"
+      ]
+    },
+    {
+      "url": "https://investors.canadiansolar.com/news-releases/news-release-details/canadian-solar-completes-acquisition-recurrent-energy-sharp",
+      "purpose": "Canadian Solar ownership entry",
+      "supports": [
+        "Canadian Solar completed its acquisition of Recurrent Energy from Sharp on March 30, 2015"
+      ]
+    },
+    {
+      "url": "https://recurrentenergy.com/sharp-corp-to-acquire-recurrent-energy/",
+      "purpose": "Former ownership history",
+      "supports": [
+        "Sharp agreed to acquire 100% of Recurrent Energy in 2010",
+        "Hudson Clean Energy Partners and Mohr Davidow Ventures were selling shareholders"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "3f6264d9ea7463d054edc98aa1ed189cab8f9f71a873176dfe6323fedcc99207",
+  "currentCompanySnapshotSha256": "c208b046f49b05a6d1021998c3b4ede953969f439669b15f07c80d433ea3169c",
+  "executionLock": {
+    "taskSnapshotSha256": "d3ac713b49132575de5f71080d7ce118bde9a11a701cb30daaa21cab4e4fc447",
+    "taskStateSha256": "f1df56bba5ebc9261d5e344b30128b32645818cf014f3fc6de40ae6f5b409b50",
+    "taskDependencySha256": "81976beb3a951a874aa6bb5c4f1872c4c61647fdf4217fa7f4b0129b3ab7bdc5",
+    "seedEntrySha256": "7ba0b0e5a580d1e02b50d34c30cac2a7d231313ebd4973968c244e58004e2324",
+    "dependencies": {
+      "ownershipPeriodsSha256": "7daacc4d840bbb9a51cc63790c8f7911e3b53100a9c95c23a61984df44807e42",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "6a0a98dcb8b5ec1e74f3f51ab337378b6e38d89d638343a63df807a98d0715db",
+      "organizationsSha256": "7fbbcb0226a342f0009dc42b0ec9a859965a5106254bd3e946023b716fe28cfa",
+      "citationsSha256": "7659f950952a5075f7fa9186280e76eb81928ed2e6883fe3c4ea6c8e9aea8787",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj1bs00bvivhev1nn6jh1",
+        "fundName": "BlackRock GIF IV",
+        "managerId": "cmrxpi56u000wivhev4hy469z",
+        "updatedAt": "2026-07-23T16:09:55.576Z"
+      },
+      {
+        "id": "cmrxpj1cc00bwivhefjthmrdt",
+        "fundName": "BlackRock Global Renewable Power Fund IV (GRP IV)",
+        "managerId": "cmrxpi56u000wivhev4hy469z",
+        "updatedAt": "2026-07-23T16:09:55.596Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi56u000wivhev4hy469z",
+        "name": "BlackRock",
+        "updatedAt": "2026-07-23T16:09:13.926Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpj91e00ncivhexql11j44",
+    "name": "Recurrent Energy",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Utility-scale solar and storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States / Canada",
+    "countryTags": [
+      "United States",
+      "Canada"
+    ],
+    "description": "Recurrent Energy develops, owns, and operates utility-scale solar and energy storage projects on a global basis. Its counterparties include utilities, corporate off-takers, and other long-term buyers of renewable-power output and capacity. The business is asset-heavy and contracted because value is tied to owned project portfolios, development pipelines, and long-term power sales. Company materials in 2026 referenced approximately 12 GW of solar projects and 6.2 GWh of storage completed, with a much larger solar and storage development pipeline. Its operating footprint includes the United States and Canada as well as international markets. BlackRock committed $500 million to the company in 2024 through a convertible investment that, on closing, represented 20% of Recurrent Energy's fully diluted shares, while Canadian Solar stated that it retained majority ownership.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2006,
+    "headquarters": "United States and Canada, with international operations",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjuc801ktivheh9t7e2e9",
+        "managerName": "BlackRock",
+        "organizationName": "BlackRock",
+        "fundName": "BlackRock GIF IV",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkwsv031iivhelzdmeoog",
+        "date": "2006",
+        "event": "Company materials identify Recurrent Energy's founding year as 2006.",
+        "category": "FOUNDING",
+        "sortDate": "2006-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkwth031jivhe0iz3pyyf",
+        "date": "2024",
+        "event": "Recurrent stated that BlackRock's investment represented 20% of fully diluted shares and that Canadian Solar retained majority ownership.",
+        "category": "FINANCING",
+        "sortDate": "2024-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkwu0031kivheb5kr8pea",
+        "date": "Jan 8, 2024",
+        "event": "Recurrent Energy announced a $500 million capital commitment from BlackRock.",
+        "category": "FINANCING",
+        "sortDate": "2024-01-08T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkwug031livhexjv131ke",
+        "date": "Oct 3, 2024",
+        "event": "Recurrent Energy announced the final closing of BlackRock's $500 million investment.",
+        "category": "FINANCING",
+        "sortDate": "2024-10-03T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxppkqk08diivhed8p7u5es",
+        "label": "Recurrentenergy — Recurrent Energy",
+        "url": "https://recurrentenergy.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Recurrentenergy company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxppkrj08dkivhebjllfnsy",
+        "label": "Recurrentenergy — Recurrent Energy",
+        "url": "https://recurrentenergy.com/about/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Recurrentenergy company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppksm08dmivhe2qgu34ii",
+        "label": "Recurrentenergy — Recurrent Energy",
+        "url": "https://recurrentenergy.com/wp-content/uploads/2021/05/Papago-EXHIBIT-1-Recurrent-Energy-Company-Overview-2021.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Recurrentenergy — Recurrent Energy",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppktq08doivhelva0z8e5",
+        "label": "Close date source — BlackRock — Recurrent Energy",
+        "url": "https://recurrentenergy.com/recurrent-energy-announces-closing-of-500-million-investment-from-blackrock/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "BlackRock closing confirmation",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "c208b046f49b05a6d1021998c3b4ede953969f439669b15f07c80d433ea3169c",
+  "afterImage": {
+    "id": "cmrxpj91e00ncivhexql11j44",
+    "name": "Recurrent Energy",
+    "aliases": [
+      "Recurrent Energy B.V.",
+      "Recurrent Energy, LLC"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Utility-scale solar and energy storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States / Canada",
+    "countryTags": [
+      "United States",
+      "Canada"
+    ],
+    "description": "Recurrent Energy is Canadian Solar's global utility-scale solar and energy-storage development, ownership, operations and maintenance platform. The business develops and selectively retains contracted projects, sells projects and power to utilities and corporate off-takers, and provides long-term operations services across the United States, Canada and international markets. At March 31, 2026, Canadian Solar reported a 23.7 GWp solar development pipeline, an 80.6 GWh battery-storage pipeline and 15 GW of operations and maintenance scope for Recurrent Energy. Canadian Solar has held 100% of ordinary shares since its March 30, 2015 acquisition from Sharp. BlackRock Global Renewable Power Fund IV invested US$500 million through GRP IV Rose Bidco in 2024 preferred shares representing 20% on a fully diluted as-converted basis at closing. No later platform ownership transfer or signed pending exit was identified through August 19, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://recurrentenergy.com/",
+    "yearFounded": 2006,
+    "headquarters": "Austin, Texas",
+    "lastVerifiedAt": "2026-08-19T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjuc801ktivheh9t7e2e9",
+        "managerName": "BlackRock",
+        "organizationName": "BlackRock",
+        "fundName": "BlackRock Global Renewable Power Fund IV (GRP IV)",
+        "vehicleName": "GRP IV Rose Bidco Ltd.; assignee of GRP IV UK Holdco Limited",
+        "stake": "US$500 million Series A convertible redeemable preferred investment; 20% on a fully diluted as-converted basis at the 2024 closes",
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Canadian Solar",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Canadian Solar Energy Group B.V.",
+        "stake": "100% of ordinary shares; 80% on a fully diluted as-converted basis at the 2024 BlackRock closing",
+        "investmentYear": 2015,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Hudson Clean Energy Partners",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": null,
+        "stake": "Not publicly disclosed",
+        "investmentYear": 2008,
+        "exitYear": 2010,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      },
+      {
+        "id": null,
+        "managerName": "Mohr Davidow Ventures",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": null,
+        "stake": "Not publicly disclosed",
+        "investmentYear": null,
+        "exitYear": 2010,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      },
+      {
+        "id": null,
+        "managerName": "Sharp Corporation",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Sharp Corporation",
+        "stake": "100%",
+        "investmentYear": 2010,
+        "exitYear": 2015,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkwsv031iivhelzdmeoog",
+        "date": "2006",
+        "event": "Recurrent Energy was founded as a utility-scale solar development platform.",
+        "category": "FOUNDING",
+        "sortDate": "2006-01-01T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://recurrentenergy.com/about/"
+        ]
+      },
+      {
+        "id": "cmrxpkwth031jivhe0iz3pyyf",
+        "date": "Sep 21, 2010",
+        "event": "Sharp announced its agreement to acquire 100% of Recurrent Energy from shareholders including Hudson Clean Energy Partners and Mohr Davidow Ventures.",
+        "category": "ACQUISITION",
+        "sortDate": "2010-09-21T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://recurrentenergy.com/sharp-corp-to-acquire-recurrent-energy/"
+        ]
+      },
+      {
+        "id": "cmrxpkwu0031kivheb5kr8pea",
+        "date": "Mar 30, 2015",
+        "event": "Canadian Solar completed its approximately US$265 million acquisition of Recurrent Energy from Sharp.",
+        "category": "ACQUISITION",
+        "sortDate": "2015-03-30T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://investors.canadiansolar.com/news-releases/news-release-details/canadian-solar-completes-acquisition-recurrent-energy-sharp"
+        ]
+      },
+      {
+        "id": "cmrxpkwug031livhexjv131ke",
+        "date": "May–Sep 2024",
+        "event": "BlackRock Global Renewable Power Fund IV funded a US$500 million preferred investment through GRP IV Rose Bidco, representing 20% on a fully diluted as-converted basis at closing.",
+        "category": "FINANCING",
+        "sortDate": "2024-09-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1375877/000141057825001046/csiq-20241231x20f.htm",
+          "https://recurrentenergy.com/recurrent-energy-announces-closing-of-500-million-investment-from-blackrock/"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxppkqk08diivhed8p7u5es",
+        "label": "Recurrentenergy — Recurrent Energy",
+        "url": "https://recurrentenergy.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current Recurrent Energy operating platform and official website",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppkrj08dkivhebjllfnsy",
+        "label": "Recurrentenergy — Recurrent Energy",
+        "url": "https://recurrentenergy.com/about/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Company history, business scope and 2006 founding",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppksm08dmivhe2qgu34ii",
+        "label": "Recurrentenergy — Recurrent Energy",
+        "url": "https://recurrentenergy.com/wp-content/uploads/2021/05/Papago-EXHIBIT-1-Recurrent-Energy-Company-Overview-2021.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Historical operating profile and project-development context",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxppktq08doivhelva0z8e5",
+        "label": "Close date source — BlackRock — Recurrent Energy",
+        "url": "https://recurrentenergy.com/recurrent-energy-announces-closing-of-500-million-investment-from-blackrock/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "BlackRock fund attribution, US$500 million final close and 20% as-converted basis",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "SEC — Canadian Solar 2024 Form 20-F",
+        "url": "https://www.sec.gov/Archives/edgar/data/1375877/000141057825001046/csiq-20241231x20f.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current ordinary and preferred ownership, investment terms and 2024 closing dates",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "Canadian Solar — Recurrent Energy acquisition close",
+        "url": "https://investors.canadiansolar.com/news-releases/news-release-details/canadian-solar-completes-acquisition-recurrent-energy-sharp",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "March 30, 2015 Canadian Solar acquisition close from Sharp",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Recurrent Energy — Sharp acquisition announcement",
+        "url": "https://recurrentenergy.com/sharp-corp-to-acquire-recurrent-energy/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Sharp's 2010 acquisition and Hudson and Mohr Davidow former ownership",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Canadian Solar — Q1 2026 results",
+        "url": "https://investors.canadiansolar.com/news-releases/news-release-details/canadian-solar-reports-first-quarter-2026-results-and-announces",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current Recurrent Energy operating scale and preferred-dividend continuity",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "51c7d883554be32253c77c5b12d913a4d5611ddd148d76ff9388f2d2714b24e9",
+  "proposalSha256": "71c10d6591dd81a9ac1278446bb34cbf804c21fab531ccdad7d4c61e2ac80c7a"
+}

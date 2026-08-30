@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-29T20:41:02.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-08-30T03:46:12.000Z",
+  "activeBatchId": "batch-0270-0273-v1",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -4203,7 +4203,63 @@
           "reason": "Batch receipt, scoped attribution repair receipt, canonical receipt-publication deployment, four detail APIs, four rendered drawers and the Hess Midstream exclusion all verified; no partial application or stale attribution labels remain."
         }
       ]
+    },
+    {
+      "batchId": "batch-0270-0273-v1",
+      "state": "RELEASING",
+      "taskIds": [
+        "ledger:0270:recurrent-energy:9b92b574",
+        "ledger:0271:qscale:f52cb49e",
+        "ledger:0272:hamakua-energy:72375ecc",
+        "ledger:0273:1547-critical-systems-realty:8e267688"
+      ],
+      "taskIndexes": [
+        270,
+        271,
+        272,
+        273
+      ],
+      "createdAt": "2026-08-30T03:42:20.000Z",
+      "updatedAt": "2026-08-30T03:46:12.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0270-0273-v1/batch-manifest.json",
+        "sha256": "2c3d27e311b05440bb040ad447e0a86548e0c71648fad10125602de1531d6ce9"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-30T03:42:20.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-30T03:46:00.000Z",
+          "evidenceSha256": [
+            "2c3d27e311b05440bb040ad447e0a86548e0c71648fad10125602de1531d6ce9"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "RELEASING",
+          "at": "2026-08-30T03:46:12.000Z",
+          "evidenceSha256": [
+            "2c3d27e311b05440bb040ad447e0a86548e0c71648fad10125602de1531d6ce9"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "d941109b3b2c2f0f734515e316ae7361d47e3f5e5997d5d2b9eacd6d63b0ed08"
+  "ledgerSha256": "283c77ceab658c3d4bd4912e4eb4c8cf633d2cb1a97996f6c936e61003ba6d53"
 }

@@ -156,6 +156,22 @@ describe("task snapshot dependency specification", () => {
     });
   });
 
+  it("accepts direct HTTPS evidence for a reviewed post-queue identity", () => {
+    expect(verifyTaskSnapshotDependencySpec({
+      fundNames: [],
+      organizationNames: ["Harbert Management Corporation"],
+      reviewedIdentityEvidenceUrls: [
+        "https://www.hei.com/investor-relations/hamakua-sale",
+      ],
+    })).toEqual({
+      fundNames: [],
+      organizationNames: ["Harbert Management Corporation"],
+      reviewedIdentityEvidenceUrls: [
+        "https://www.hei.com/investor-relations/hamakua-sale",
+      ],
+    });
+  });
+
   it.each([
     null,
     [],
@@ -165,6 +181,9 @@ describe("task snapshot dependency specification", () => {
     { fundNames: [""], organizationNames: [] },
     { fundNames: [], organizationNames: ["ArcLight", " ArcLight "] },
     { fundNames: [], organizationNames: [], reviewedCanonicalTaskId: "" },
+    { fundNames: [], organizationNames: [], reviewedIdentityEvidenceUrls: [] },
+    { fundNames: [], organizationNames: [], reviewedIdentityEvidenceUrls: ["http://example.com"] },
+    { fundNames: [], organizationNames: [], reviewedIdentityEvidenceUrls: ["https://example.com", "https://example.com"] },
   ])("rejects a malformed or non-strict dependency spec: %j", (input) => {
     expect(() => verifyTaskSnapshotDependencySpec(input)).toThrow();
   });

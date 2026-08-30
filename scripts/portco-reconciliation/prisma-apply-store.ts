@@ -312,6 +312,19 @@ const approvedOwnershipOrganizationProvisioning = {
   "CyrusOne founders and management": "OTHER",
   "ABRY Partners": "FUND_MANAGER",
   "Cincinnati Bell": "CORPORATE",
+  "Canadian Solar": "CORPORATE",
+  "Hudson Clean Energy Partners": "FUND_MANAGER",
+  "Mohr Davidow Ventures": "FUND_MANAGER",
+  "Sharp Corporation": "CORPORATE",
+  "QScale founders and management": "OTHER",
+  "Aligned Data Centers": "CORPORATE",
+  "Investissement Québec": "OTHER",
+  "Desjardins Capital": "FUND_MANAGER",
+  "Enserch Corporation / J.A. Jones": "CORPORATE",
+  "TECO Energy": "CORPORATE",
+  "Energy Investors Funds Group": "FUND_MANAGER",
+  "Hawaiian Electric Industries / Pacific Current": "CORPORATE",
+  "FifteenFortySeven Critical Systems Realty": "CORPORATE",
 } as const;
 
 export function ownershipOrganizationTypes(

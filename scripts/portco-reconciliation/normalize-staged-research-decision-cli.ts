@@ -2,6 +2,7 @@
 import { createHash } from "node:crypto";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, relative, resolve } from "node:path";
+import { resolveResearchDecisionNormalization } from "./research-decision-normalization";
 
 function options(argv: string[]): Map<string, string> {
   const values = new Map<string, string>();
@@ -46,6 +47,9 @@ async function main(): Promise<void> {
   const outputPath = resolve(required(values, "output"));
   const generatedAt = required(values, "generated-at");
   const expectedTaskId = values.get("expected-task-id")?.trim() || null;
+  const proposalIndexPath = values.get("proposal-index")?.trim()
+    ? resolve(required(values, "proposal-index"))
+    : null;
   const promptPath = values.get("research-prompt")?.trim()
     ? resolve(required(values, "research-prompt"))
     : null;
@@ -73,9 +77,38 @@ async function main(): Promise<void> {
     || !Array.isArray(result.evidence)) {
     throw new Error("Accepted research result lacks decision, rationale or evidence");
   }
+  let queueProvesUnboundCreate = false;
+  let proposalQueueLineage: null | { path: string; sha256: string } = null;
   if (result.decision !== source.decision) {
-    throw new Error("Accepted research decision disagrees with the staged summary");
+    if (!proposalIndexPath) throw new Error("Decision drift requires --proposal-index");
+    const proposalIndexBytes = await readFile(proposalIndexPath);
+    const proposalIndex = object(JSON.parse(proposalIndexBytes.toString("utf8")), "Proposal index");
+    if (!Array.isArray(proposalIndex.entries)) throw new Error("Proposal index has no entries array");
+    const taskId = expectedTaskId ?? source.taskId;
+    const entry = proposalIndex.entries.find((candidate) => {
+      const row = object(candidate, "Proposal queue entry");
+      return row.taskId === taskId && row.taskIndex === source.taskIndex;
+    });
+    if (!entry) throw new Error("Proposal index does not contain the research task");
+    const queueEntry = object(entry, "Proposal queue entry");
+    const actionScopes = object(queueEntry.actionScopes, "Proposal queue action scopes");
+    queueProvesUnboundCreate = Array.isArray(queueEntry.productionCompanyIds)
+      && queueEntry.productionCompanyIds.length === 0
+      && Array.isArray(actionScopes.company)
+      && actionScopes.company.includes("CREATE_COMPANY");
+    proposalQueueLineage = {
+      path: repositoryPath(proposalIndexPath),
+      sha256: sha256(proposalIndexBytes),
+    };
   }
+  const decisionNormalization = resolveResearchDecisionNormalization({
+    acceptedDecision: result.decision,
+    stagedDecision: String(source.decision),
+    rawModelDecision: source.rawModelDecision,
+    actionNormalization: source.actionNormalization,
+    queueProvesUnboundCreate,
+  });
+  const normalizedDecision = decisionNormalization?.finalValue ?? String(source.decision);
   const acceptedConfidence = typeof result.confidence === "string" ? result.confidence : null;
   const stagedConfidence = typeof source.confidence === "string" ? source.confidence : null;
   const confidenceMatches = acceptedConfidence !== null && stagedConfidence !== null
@@ -125,7 +158,7 @@ async function main(): Promise<void> {
     taskIndex: source.taskIndex,
     companyName: source.companyName,
     asOfDate: source.asOfDate,
-    decision: source.decision,
+    decision: normalizedDecision,
     confidence: source.confidence,
     researchOnly: true,
     generatedAt: new Date(generatedAt).toISOString(),
@@ -143,6 +176,13 @@ async function main(): Promise<void> {
           basis: "The staged summary preserves the accepted confidence and appends the noncritical disclosure-gap qualifier; the research decision is unchanged.",
         },
       }),
+      ...(decisionNormalization ? {
+        decisionNormalization: {
+          ...decisionNormalization,
+          stagedBasis: source.actionNormalization,
+          proposalQueue: proposalQueueLineage,
+        },
+      } : {}),
       ...(identityCorrection ? { identityCorrection } : {}),
     },
   };

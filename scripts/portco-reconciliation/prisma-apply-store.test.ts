@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   mergeCompanyRevisionHistory,
+  ownershipOrganizationTypes,
   type CompanyRevisionHistoryRow,
 } from "./prisma-apply-store";
 
@@ -87,5 +88,16 @@ describe("CompanyRevision history merging", () => {
     expect(() => mergeCompanyRevisionHistory(canonical, retired)).toThrow(
       /incompatible audit metadata/,
     );
+  });
+});
+
+describe("approved ownership organization provisioning", () => {
+  it("classifies the task 270–273 owners that production must provision", () => {
+    expect(ownershipOrganizationTypes("Canadian Solar")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("Hudson Clean Energy Partners")).toEqual(["FUND_MANAGER"]);
+    expect(ownershipOrganizationTypes("QScale founders and management")).toEqual(["OTHER"]);
+    expect(ownershipOrganizationTypes("Investissement Québec")).toEqual(["OTHER"]);
+    expect(ownershipOrganizationTypes("Energy Investors Funds Group")).toEqual(["FUND_MANAGER"]);
+    expect(ownershipOrganizationTypes("FifteenFortySeven Critical Systems Realty")).toEqual(["CORPORATE"]);
   });
 });

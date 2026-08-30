@@ -1,0 +1,375 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_MANIFEST",
+  "methodologyVersion": "PORTCO_APPLY_BATCH_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0270-0273-v1",
+  "createdAt": "2026-08-30T03:45:10.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "c47e4ee85563d037bf50684b45ab480629c5e0a2352050cb6f52ee90b0659639"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0270:recurrent-energy:9b92b574",
+      "taskIndex": 270,
+      "companyName": "Recurrent Energy",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0270-recurrent-energy-v1/proposal.json",
+        "sha256": "71c10d6591dd81a9ac1278446bb34cbf804c21fab531ccdad7d4c61e2ac80c7a"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0270-recurrent-energy-v1.json",
+        "sha256": "a76d9f16c0f85781825598d15737f49f2fe5ac3eb8292c36ed01441f0cffdf63"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0270-recurrent-energy/attempt-1/locked-production-snapshot.json",
+        "sha256": "3f6264d9ea7463d054edc98aa1ed189cab8f9f71a873176dfe6323fedcc99207"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0270-recurrent-energy/attempt-1/locked-task-snapshot.json",
+        "sha256": "d3ac713b49132575de5f71080d7ce118bde9a11a701cb30daaa21cab4e4fc447"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0270-recurrent-energy/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "8d0afb26e2874776fb1ea4e742e396afbb7d4ce8a352aee9b41bda8cd275924a"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0270-recurrent-energy/attempt-1/application-research-decision.json",
+        "sha256": "dc5d060573906f84441f4a91e68325c72f8e0705a6eb09c6dc38a824ce4aae26"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0270-recurrent-energy/attempt-1/source-verification.json",
+        "sha256": "6cec52e2eaa1b3212cc4cd81a4e57ea8d136fc26a01a5a5b72fa8b389859037a"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "f1df56bba5ebc9261d5e344b30128b32645818cf014f3fc6de40ae6f5b409b50",
+      "dependencySha256": "81976beb3a951a874aa6bb5c4f1872c4c61647fdf4217fa7f4b0129b3ab7bdc5",
+      "afterImageSha256": "51c7d883554be32253c77c5b12d913a4d5611ddd148d76ff9388f2d2714b24e9",
+      "targetClaims": [
+        "canonical:recurrent-energy|united-states-canada",
+        "company:cmrxpj91e00ncivhexql11j44",
+        "relation:cmrxpjuc801ktivheh9t7e2e9",
+        "relation:cmrxpkwsv031iivhelzdmeoog",
+        "relation:cmrxpkwth031jivhe0iz3pyyf",
+        "relation:cmrxpkwu0031kivheb5kr8pea",
+        "relation:cmrxpkwug031livhexjv131ke",
+        "relation:cmrxppkqk08diivhed8p7u5es",
+        "relation:cmrxppkrj08dkivhebjllfnsy",
+        "relation:cmrxppksm08dmivhe2qgu34ii",
+        "relation:cmrxppktq08doivhelva0z8e5",
+        "seed:recurrent energy|united states / canada"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://investors.canadiansolar.com/news-releases/news-release-details/canadian-solar-completes-acquisition-recurrent-energy-sharp",
+          "label": "Canadian Solar — Recurrent Energy acquisition close",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://investors.canadiansolar.com/news-releases/news-release-details/canadian-solar-reports-first-quarter-2026-results-and-announces",
+          "label": "Canadian Solar — Q1 2026 results",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://recurrentenergy.com/",
+          "label": "Recurrentenergy — Recurrent Energy",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://recurrentenergy.com/about/",
+          "label": "Recurrentenergy — Recurrent Energy",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://recurrentenergy.com/recurrent-energy-announces-closing-of-500-million-investment-from-blackrock/",
+          "label": "Close date source — BlackRock — Recurrent Energy",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://recurrentenergy.com/sharp-corp-to-acquire-recurrent-energy/",
+          "label": "Recurrent Energy — Sharp acquisition announcement",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://recurrentenergy.com/wp-content/uploads/2021/05/Papago-EXHIBIT-1-Recurrent-Energy-Company-Overview-2021.pdf",
+          "label": "Recurrentenergy — Recurrent Energy",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1375877/000141057825001046/csiq-20241231x20f.htm",
+          "label": "SEC — Canadian Solar 2024 Form 20-F",
+          "sourceType": "SEC_FILING"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0271:qscale:f52cb49e",
+      "taskIndex": 271,
+      "companyName": "QScale",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0271-qscale-v1/proposal.json",
+        "sha256": "bbbb449bb5bc25cce6d11ca825d13d1c2a9c894e4543f36a47026b31adc41217"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0271-qscale-v1.json",
+        "sha256": "96d85343ffc42db4412b82fe16a286fcf97a131b030bff6e085f1a24f5781bb1"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0271-qscale/attempt-1/locked-production-snapshot.json",
+        "sha256": "9a950560b819d95b65bc55da304cad26e89bcdcadf7075aaf696c2e961529c2c"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0271-qscale/attempt-1/locked-task-snapshot.json",
+        "sha256": "797138ad34e459418d8902bf61a9389283dc906f2b300ee2a6ffedd5f84b5a97"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0271-qscale/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "03bbbf9456099ac86c2afeab36a762d950ccc6d5a1b4f2cf20f31c897dc9ff7b"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0271-qscale/attempt-1/application-research-decision.json",
+        "sha256": "d9ef62b88bad7407290000145ba5ab2e9174de1f11110d304758e4db94f2502f"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0271-qscale/attempt-1/source-verification.json",
+        "sha256": "8977feeb591f4b227fdb7e5f7ad9a4027b43f3e3223869c445716bb41654bde7"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "bd90a0894b75bfd68f87a7329390c3be06473165248df7ca385cc49e9281916a",
+      "dependencySha256": "6b45416e5863c905903a14d258ede9867d6fc7bd7a9db357f9c63057123697fd",
+      "afterImageSha256": "56c5d99b8c3dc4d61163b7d04ce67f75eb0c10ee5ead454e15b0556194a91160",
+      "targetClaims": [
+        "canonical:qscale|canada",
+        "seed:qscale|canada"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://am.gs.com/en-us/advisors/news/press-release/2026/goldman-sachs-alternatives-acquire-qscale",
+          "label": "Goldman Sachs Alternatives — QScale acquisition",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://am.gs.com/en-us/advisors/news/press-release/2026/WSIP-V-First-Close",
+          "label": "Goldman Sachs Alternatives — WSIP V first close",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://hl.com/about-us/transactions/houlihan-lokey-advises-qscale/",
+          "label": "Houlihan Lokey — QScale investment",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.bcf.ca/en/thought-leadership/case-studies/bcf-investissement-quebec-desjardins-capital-sale-qscale/",
+          "label": "BCF — QScale seller transaction",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.mccarthy.ca/fr/experience/goldman-sachs-alternatives-acquiert-qscale-s-e-c",
+          "label": "McCarthy Tétrault — QScale transaction",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.qscale.com/news/from-data-processing-to-food-self-sufficiency-financing",
+          "label": "QScale — 2021 financing",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.qscale.com/q01-campus",
+          "label": "QScale — Q01 campus",
+          "sourceType": "WEBSITE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0272:hamakua-energy:72375ecc",
+      "taskIndex": 272,
+      "companyName": "Hamakua Energy",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0272-hamakua-energy-v1/proposal.json",
+        "sha256": "ba200d82ae551297f5d72263dea421ea3e3465bd67a84ac623753c3b45d91831"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0272-hamakua-energy-v1.json",
+        "sha256": "44f8433a974d98c7d92066f1b149a123bb243f69bda46b0e20190256919df5b8"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0272-hamakua-energy/attempt-1/locked-production-snapshot.json",
+        "sha256": "698ec52ea17601657e29c33526259d747aef75ce5ea2895273db5ae342103163"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0272-hamakua-energy/attempt-1/locked-task-snapshot.json",
+        "sha256": "4c9e0888d7294d44df7fba682ca1e6ccb50a0961e42e59dff777f3c769534384"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0272-hamakua-energy/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "995f8806ab00bfc88aa873e8ee1b363ed53b48959c2a867e7d46e4598d558035"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0272-hamakua-energy/attempt-1/application-research-decision.json",
+        "sha256": "c4fe20ad01489d714d40040a1ec8a76bf3f1f5a6c0aefbae98ff716b5d16adfd"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0272-hamakua-energy/attempt-1/source-verification.json",
+        "sha256": "a231ebb2e3afe6144bab3ae36a2f92f2559d1c4f8b585ef93c22d8571e446ca1"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "3f2b6ce4609b6e192b0054eef415e3ab7a4a00a6d079c869d8c2032927c47a14",
+      "dependencySha256": "fe778fb027c2c5e88d365d5c7c80e23897f92befe04f25487fa9ec322e4e9090",
+      "afterImageSha256": "466d10c7860c236f8d60b171c26c5b9739d1a34560b92b4147069f106122049a",
+      "targetClaims": [
+        "canonical:hamakua-energy|united-states",
+        "company:cmrxpjhb300zyivhekv2gws5o",
+        "relation:cmrxpk37f01ypivhebnlap7vy",
+        "relation:cmrxplwtn048oivhe85bvyftl",
+        "relation:cmrxplwuf048pivheptmfnr9t",
+        "relation:cmrxplwuy048qivhe37uxkqko",
+        "relation:cmrxprf120b1mivhe3rnuk3u3",
+        "relation:cmrxprf250b1oivhexqbg1420",
+        "relation:cmrxprf3e0b1qivhekckb0o1e",
+        "seed:hamakua energy plant|united states",
+        "seed:hamakua energy|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://hamakuaenergyllc.com/about-us/",
+          "label": "Hamakua Energy — About the plant",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.ftc.gov/legal-library/browse/early-termination-notices/20100281",
+          "label": "FTC — Hamakua early-termination notice",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.harbert.net/investment-strategies/infrastructure",
+          "label": "Harbert — Infrastructure strategy",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.harbert.net/news/march-2025-harbert-management-is-pleased-to-announce-the-successful-acquisition-of-the-hamakua-energy-plant",
+          "label": "Acquisition source — Harbert Management Corp (Harbert Infra / Gulf Pacific) — Hamakua Energy Plant",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.hawaiianelectric.com/8-pm-update-estimated-restoration-times-now-available-for-hawaii-island-oahu-maui",
+          "label": "Hawaiian Electric — August 2026 grid update",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.hei.com/investor-relations/news-and-events/news/news-details/2025/HEI-Subsidiary-Sells-Hawaii-Island-Power-Plant-to-Experienced-Plant-Operator/default.aspx",
+          "label": "Close date source — Harbert Management Corp (Harbert Infra / Gulf Pacific) — Hamakua Energy Plant",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.power-technology.com/news/hei-pacific-current-harbert-hawaii/",
+          "label": "Power Technology — Hamakua Energy Plant",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/354707/000035470726000008/he-20251231.htm",
+          "label": "SEC — Hawaiian Electric Industries 2025 Form 10-K",
+          "sourceType": "SEC_FILING"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/46207/000035470718000024/heexhibit104d.htm",
+          "label": "SEC — Hamakua 2017 PPA notice",
+          "sourceType": "SEC_FILING"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/46207/000119312505047722/d10k.htm",
+          "label": "SEC — Hawaiian Electric 2004 Form 10-K",
+          "sourceType": "SEC_FILING"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0273:1547-critical-systems-realty:8e267688",
+      "taskIndex": 273,
+      "companyName": "1547 Critical Systems Realty",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0273-1547-critical-systems-realty-v1/proposal.json",
+        "sha256": "dff0f3c8488a21352390ae25d146daa35346bd5817a8372bfdabd27f13b5d97d"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0273-1547-critical-systems-realty-v1.json",
+        "sha256": "04d41d982808c6500d4ac0ac2c75f0b6bad40c509f2ce0df358a897453c71a1c"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0273-1547-critical-systems-realty/attempt-1/locked-production-snapshot.json",
+        "sha256": "26bb68270c4768372e3d091fea477a300f9214a8dd1a69a821fa1fb73bd46fcb"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0273-1547-critical-systems-realty/attempt-1/locked-task-snapshot.json",
+        "sha256": "61602639b3014961a103f0e7bb9f99a51eec1fa4dfc95cb0739ed766843d3d87"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0273-1547-critical-systems-realty/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "47ed2157b257ec7b32a73d5f1eff67ac83507aa68a38acb80562fbeff67a6c73"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0273-1547-critical-systems-realty/attempt-1/application-research-decision.json",
+        "sha256": "01e1fcd4d09702cd05c4a77e3619c1ea2e929fafdf6485df74eff2a7e75eccc4"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0273-1547-critical-systems-realty/attempt-1/source-verification.json",
+        "sha256": "119cecac5e2f4355cf3b9b3110c9293c564fa4d783ecc93eb2d67cc2361b22ae"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "e08ff00c70ebdd82dd08f801ac51342ef4b662c0a0b49f9a256c514b7f309cca",
+      "dependencySha256": "55c72bda3614a39c21ab0bb6856de837e6c5851f8ec5c5d07ce7a9a853c6d4fe",
+      "afterImageSha256": "89ea523d1b8d9b61268c86801f021103b2f72d4dfb3ddaa96a0d0955fef81c30",
+      "targetClaims": [
+        "canonical:1547-critical-systems-realty|united-states",
+        "seed:harrison street–1547 data center & connectivity platform|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://harrisonst.com/harrison-street-asset-management-and-fifteenfortyseven-critical-systems-realty-achieve-full-occupancy-at-orangeburg-data-center-with-further-expansion-underway/",
+          "label": "Harrison Street — Orangeburg expansion",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.1547realty.com/data-centers/",
+          "label": "1547 — Current data-center portfolio",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.1547realty.com/resource/1547-and-harrison-street-acquire-drfortress-hawaiis-leading-carrier-neutral-data-center/",
+          "label": "1547 — DRFortress acquisition",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.1547realty.com/resource/1547-and-harrison-street-acquire-historic-milwaukee-carrier-hotel-and-data-center/",
+          "label": "Announcement date source — Harrison Street — Wells Building Data Center",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.1547realty.com/resource/harrison-street-1547-acquire-carrier-hotel-data-center-hawaii-and-announce-expansion/",
+          "label": "1547 — Harrison Street–1547 national platform",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1840644/000153949721000039/n2405-x1_premarketts.htm",
+          "label": "SEC — Pittock Block offering memorandum",
+          "sourceType": "SEC_FILING"
+        }
+      ]
+    }
+  ],
+  "collisionAnalysis": {
+    "independent": true,
+    "claimsSha256": "755fcc6018943490899877b22142f3ac3038e40f76106d1013dd274dc9dd516d",
+    "sharedSourceUrls": [],
+    "conflicts": []
+  },
+  "batchSha256": "2c3d27e311b05440bb040ad447e0a86548e0c71648fad10125602de1531d6ce9"
+}

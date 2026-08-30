@@ -60,6 +60,7 @@ export interface TaskSnapshotDependencySpec {
   fundNames: string[];
   organizationNames: string[];
   reviewedCanonicalTaskId?: string;
+  reviewedIdentityEvidenceUrls?: string[];
 }
 
 export function verifyTaskSnapshotDependencySpec(input: unknown): TaskSnapshotDependencySpec {
@@ -68,7 +69,12 @@ export function verifyTaskSnapshotDependencySpec(input: unknown): TaskSnapshotDe
   }
   const record = input as Record<string, unknown>;
   const keys = Object.keys(record).sort();
-  const allowedKeys = ["fundNames", "organizationNames", "reviewedCanonicalTaskId"];
+  const allowedKeys = [
+    "fundNames",
+    "organizationNames",
+    "reviewedCanonicalTaskId",
+    "reviewedIdentityEvidenceUrls",
+  ];
   if (keys.some((key) => !allowedKeys.includes(key))
     || !keys.includes("fundNames") || !keys.includes("organizationNames")) {
     throw new Error("Task dependency spec must contain fundNames and organizationNames and may name one reviewed canonical task");
@@ -89,11 +95,36 @@ export function verifyTaskSnapshotDependencySpec(input: unknown): TaskSnapshotDe
     && (typeof reviewedCanonicalTaskId !== "string" || !reviewedCanonicalTaskId.trim())) {
     throw new Error("Task dependency spec reviewedCanonicalTaskId must be a non-empty string");
   }
+  const reviewedIdentityEvidenceUrls = record.reviewedIdentityEvidenceUrls;
+  if (reviewedIdentityEvidenceUrls !== undefined && (
+    !Array.isArray(reviewedIdentityEvidenceUrls)
+    || reviewedIdentityEvidenceUrls.length === 0
+    || reviewedIdentityEvidenceUrls.some((entry) => {
+      if (typeof entry !== "string" || !entry.trim()) return true;
+      try {
+        const parsed = new URL(entry.trim());
+        return parsed.protocol !== "https:" || Boolean(parsed.username || parsed.password);
+      } catch {
+        return true;
+      }
+    })
+  )) {
+    throw new Error("Task dependency spec reviewedIdentityEvidenceUrls must contain direct HTTPS URLs");
+  }
+  const normalizedIdentityEvidenceUrls = Array.isArray(reviewedIdentityEvidenceUrls)
+    ? reviewedIdentityEvidenceUrls.map((entry) => (entry as string).trim())
+    : [];
+  if (new Set(normalizedIdentityEvidenceUrls).size !== normalizedIdentityEvidenceUrls.length) {
+    throw new Error("Task dependency spec reviewedIdentityEvidenceUrls must not contain duplicates");
+  }
   return {
     fundNames: names("fundNames"),
     organizationNames: names("organizationNames"),
     ...(typeof reviewedCanonicalTaskId === "string"
       ? { reviewedCanonicalTaskId: reviewedCanonicalTaskId.trim() }
+      : {}),
+    ...(normalizedIdentityEvidenceUrls.length > 0
+      ? { reviewedIdentityEvidenceUrls: normalizedIdentityEvidenceUrls.sort((left, right) => left.localeCompare(right, "en")) }
       : {}),
   };
 }
@@ -197,6 +228,7 @@ export type TaskSnapshotTargetResolution =
     method: "REVIEWED_POST_QUEUE_EMBEDDED_PORTFOLIO_IDENTITY";
     targetCompanyId: string;
     linkedQueueTaskId: null;
+    reviewedEvidenceUrls?: string[];
   }
   | {
     method: "NO_EXISTING_TARGET";
@@ -233,6 +265,7 @@ export function resolveTaskSnapshotTarget(input: {
   reviewedTargetCompanyId?: string;
   reviewedCanonicalTaskId?: string;
   completedTaskIds?: readonly string[];
+  reviewedIdentityEvidenceUrls?: readonly string[];
 }): TaskSnapshotTargetResolution {
   const productionIds = input.queueEntry.productionCompanyIds;
   if (productionIds.length > 1) {
@@ -384,6 +417,9 @@ export function resolveTaskSnapshotTarget(input: {
       method: "REVIEWED_POST_QUEUE_EMBEDDED_PORTFOLIO_IDENTITY",
       targetCompanyId: reviewedTargetCompanyId,
       linkedQueueTaskId: null,
+      ...(input.reviewedIdentityEvidenceUrls?.length
+        ? { reviewedEvidenceUrls: [...input.reviewedIdentityEvidenceUrls].sort((left, right) => left.localeCompare(right, "en")) }
+        : {}),
     };
   }
   const reviewedParentheticalAliasBase = parentheticalAcronymBase(input.queueEntry.companyName);
@@ -677,7 +713,11 @@ export function assertReviewedPostQueueExactIdentity(input: {
       );
     }
     const targetUrls = new Set(input.targetCompanyImage.citations.map((citation) => citation.url));
-    if (!input.queueEntry.evidenceUrls.some((url) => targetUrls.has(url))) {
+    const immutableEvidenceMatch = input.queueEntry.evidenceUrls.some((url) => targetUrls.has(url));
+    const reviewedEvidenceUrls = input.targetResolution.reviewedEvidenceUrls ?? [];
+    const reviewedEvidenceMatch = reviewedEvidenceUrls.length > 0
+      && reviewedEvidenceUrls.every((url) => targetUrls.has(url));
+    if (!immutableEvidenceMatch && !reviewedEvidenceMatch) {
       throw new Error("Reviewed embedded-portfolio target does not share immutable queue evidence");
     }
   }
@@ -875,6 +915,7 @@ export async function buildTaskSnapshotContext(input: {
     queueEntries: input.proposalQueue.entries,
     reviewedTargetCompanyId: input.reviewedTargetCompanyId,
     reviewedCanonicalTaskId: input.dependencySpec?.reviewedCanonicalTaskId,
+    reviewedIdentityEvidenceUrls: input.dependencySpec?.reviewedIdentityEvidenceUrls,
     completedTaskIds: input.manifest.tasks
       .filter((candidate) => candidate.status === "COMPLETED")
       .map((candidate) => candidate.taskId),

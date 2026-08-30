@@ -1014,6 +1014,31 @@ describe("post-queue embedded portfolio identity binding", () => {
     })).toThrow("does not share immutable queue evidence");
   });
 
+  it("accepts a reviewed evidence URL only when it is an exact target citation", () => {
+    const queueWithoutSharedEvidence = {
+      ...queueEntry,
+      evidenceUrls: ["https://manager.example/different-page"],
+    };
+    const reviewedResolution = resolveTaskSnapshotTarget({
+      queueEntry: queueWithoutSharedEvidence,
+      queueEntries: [queueWithoutSharedEvidence],
+      reviewedTargetCompanyId: "company-agecare",
+      reviewedIdentityEvidenceUrls: ["https://manager.example/portfolio"],
+    });
+    expect(() => assertReviewedPostQueueExactIdentity({
+      queueEntry: queueWithoutSharedEvidence,
+      targetResolution: reviewedResolution,
+      targetCompanyImage: company,
+      productionCompanies,
+    })).not.toThrow();
+    expect(() => assertReviewedPostQueueExactIdentity({
+      queueEntry: queueWithoutSharedEvidence,
+      targetResolution: reviewedResolution,
+      targetCompanyImage: { ...company, citations: [{ url: "https://other.example/source" }] },
+      productionCompanies,
+    })).toThrow("does not share immutable queue evidence");
+  });
+
   it("binds the existing seed entry while retaining the immutable queue canonical identity", () => {
     expect(resolvedTaskSeedKeys({
       queueEntry,
