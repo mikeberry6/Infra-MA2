@@ -2,9 +2,10 @@
 
 - Timestamp started: 2026-08-29 01:08:42 EDT
 - Timestamp completed: 2026-08-29 11:42:05 EDT
+- Timestamp revised: 2026-08-29 23:22:01 EDT
 - Target period: August 22, 2026 through August 28, 2026
 - Required model: Gemini 3.1 Pro Deep Think (`Pro Deep Think` in the Gemini UI)
-- Workflow status: All 20 Pro Deep Think batches and the final Pro Deep Think consolidation completed. Independent source verification and weekly briefing editorial QA are complete.
+- Workflow status: All 20 Pro Deep Think batches and the final Pro Deep Think consolidation completed. Independent source verification and weekly briefing editorial QA are complete. Lancium and Westcoast Pipeline were subsequently removed from the briefing at the user's direction.
 
 ## Batch Run Log
 
@@ -1826,10 +1827,8 @@ Source links extracted from the response:
 | Announcement date | Candidate added to briefing | Determination | Primary source |
 |---|---|---|---|
 | August 24, 2026 | Anchor Point Transmission | Included — ArcLight made a US$1bn equity commitment to launch the high-voltage transmission platform. | https://www.prnewswire.com/news-releases/arclight-commits-1-0-billion-of-equity-to-launch-anchor-point-transmission-302857542.html |
-| August 24, 2026 | Lancium | Included — NVIDIA made a strategic investment in a Blackstone Energy Transition Partners-backed digital-infrastructure portfolio company. | https://lancium.com/2026/08/24/lancium-announces-partnership-with-nvidia-to-advance-gigawatt-scale-ai-factory-development-across-its-15-gw-portfolio/ |
 | August 25, 2026 | Mid-Georgia Cogen | Included — Harbert Power Fund VII acquired the operating 317 MW cogeneration facility. | https://www.harbert.net/news/august-2026-harbert-management-corporation-acquires-317-mw-cogeneration-power-plant |
 | August 27, 2026 | Atlantic Aviation | Included — Apollo-managed infrastructure funds agreed to acquire a significant interest while KKR remains a substantial investor. | https://ir.apollo.com/news-events/press-releases/detail/643/apollo-funds-and-kkr-announce-strategic-partnership-to |
-| August 27, 2026 | Westcoast Pipeline System | Included — Apollo and KKR entered a definitive C$2.7bn joint-venture investment agreement for an indirect combined 29% interest. | https://www.enbridge.com/media-center/news/details?id=123887&lang=en |
 | August 27, 2026 | American Tower Canada Portfolio | Included — DIF Infra VIII-backed Aurora Towers signed a definitive agreement to acquire approximately 255 communications sites. | https://www.cvc.com/media/news/2026/cvc-dif-s-aurora-towers-to-acquire-american-tower-corporation-s-canadian-wireless-tower-portfolio/ |
 | August 27, 2026 | Olpe-Rehringhausen Wind Project | Included — Copenhagen Infrastructure V-backed Perigus acquired the rights to the fully permitted 21 MW project. | https://www.perigusenergy.de/presse/perigus-energy-erwirbt-genehmigtes-windparkprojekt-olpe-rehringhausen/ |
 | August 27, 2026 | SK Horizon | Included — KKR's Asia-Pacific infrastructure strategy entered a definitive agreement for a 29% stake as part of a KRW3.08tn combined equity investment. | https://news.sktelecom.com/en/3290 |
@@ -1840,6 +1839,8 @@ Source links extracted from the response:
 
 | Candidate rejected | Reason |
 |---|---|
+| Lancium | Removed from the briefing at the user's editorial direction after the initial publication; no protocol reversal was asserted. |
+| Westcoast Pipeline System | Removed from the briefing at the user's editorial direction after the initial publication; no protocol reversal was asserted. |
 | Kinetik Holdings | Recurring Form 4 / Form 144 securities-sale disclosure did not constitute a newly announced definitive M&A transaction. |
 | RANCo | One NZ and 2degrees announced only a proposed network-sharing arrangement; no definitive or binding agreement was disclosed. |
 | Certain Energy | The investor was C3H, a catalytic vehicle of Temasek Trust, not the designated batch firm Temasek. |
@@ -1855,10 +1856,10 @@ Source links extracted from the response:
 
 ### Final briefing validation
 
-- Weekly deal cards: 10
-- Source links: 10 (one unique source per deal card)
-- Weekly section order: Digital (3), Power & ET (2), Utilities (2), Midstream (2), Transportation (1)
-- YTD totals: 434 by sector and 434 by region
+- Weekly deal cards: 8
+- Source links: 8 (one unique source per deal card)
+- Weekly section order: Power & ET (2), Digital (2), Utilities (2), Transportation (1), Midstream (1)
+- YTD totals: 432 by sector and 432 by region
 - YTD ordering and bar widths: validated against descending counts and the leading-row formula
 - Rejected / false-positive names in briefing body: none
 - Email table tags: balanced
