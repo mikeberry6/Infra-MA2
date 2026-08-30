@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-30T05:31:40.000Z",
+  "updatedAt": "2026-08-30T06:20:15.000Z",
   "runStatus": "IDLE",
   "activeTaskId": null,
   "source": {
@@ -29713,20 +29713,26 @@
       "managerIndex": 51,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "023f2ef49d28dcf279e5efac82878110d6f28b18665c47340fe521ff149be0cc",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
+      "status": "DEFERRED",
+      "attempts": 1,
+      "startedAt": "2026-08-30T05:44:19.000Z",
+      "updatedAt": "2026-08-30T06:20:15.000Z",
+      "completedAt": "2026-08-30T06:20:15.000Z",
+      "exceptionReason": "DRFortress is conclusively a standalone operating company rather than a facility to merge into the Harrison Street–1547 platform. Harrison Street and 1547 acquired it from GI Partners in April 2025, and GI's former majority investment is attributable to the GI Data Infrastructure Fund. Application is deferred because the public record does not establish whether the founders retained equity after the 2025 sale, the current buyer percentages or vehicles, or a Harrison Street fund; correcting the complete active cap table would therefore require unsupported inference.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "18a2aed0b7ad6423775f1cdbc5b7a2e3416b3bd8f691c661c072fb272ba8524d",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0279-drfortress/attempt-1/locked-task-snapshot.json",
+          "sha256": "18a2aed0b7ad6423775f1cdbc5b7a2e3416b3bd8f691c661c072fb272ba8524d"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0279-0280-v1/decisions/0279-drfortress.json",
+          "sha256": "335c8428386adf1ad6057d7a1b8f718f1c205f61c6502b2b81c8d9cedce0df0f"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -29740,6 +29746,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-08-30T06:20:15.000Z",
+          "reason": "DRFortress is conclusively a standalone operating company rather than a facility to merge into the Harrison Street–1547 platform. Harrison Street and 1547 acquired it from GI Partners in April 2025, and GI's former majority investment is attributable to the GI Data Infrastructure Fund. Application is deferred because the public record does not establish whether the founders retained equity after the 2025 sale, the current buyer percentages or vehicles, or a Harrison Street fund; correcting the complete active cap table would therefore require unsupported inference.",
+          "taskSnapshotSha256": "18a2aed0b7ad6423775f1cdbc5b7a2e3416b3bd8f691c661c072fb272ba8524d",
+          "evidenceSha256": [
+            "18a2aed0b7ad6423775f1cdbc5b7a2e3416b3bd8f691c661c072fb272ba8524d",
+            "335c8428386adf1ad6057d7a1b8f718f1c205f61c6502b2b81c8d9cedce0df0f",
+            "8bcefd8c26cc9e339a6beb4d823549aa1729f0038ef64af1f106baad4b1c1068",
+            "aa0103f8a57bdbf222e3ff6de5eb2beaf2e9bee5c5a2e659de258df2ed820485"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -29751,23 +29772,44 @@
       "managerIndex": 51,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "e1848eb9f4ccf02cfeef5db0083e19edd31707a2bacd7adfef65749365042bdf",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-08-30T05:44:19.000Z",
+      "updatedAt": "2026-08-30T06:20:15.000Z",
+      "completedAt": "2026-08-30T06:20:15.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "2252bb97780796c4fddd91dde910d7a1807dd12a14edcaea9a3ee1b7c9b16e95",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0280-midway-technology-centre/attempt-1/locked-task-snapshot.json",
+          "sha256": "2252bb97780796c4fddd91dde910d7a1807dd12a14edcaea9a3ee1b7c9b16e95"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0280-midway-technology-centre-v3/proposal.json",
+          "sha256": "3f5628e0a867c4d223ff0bc921d276a56f319f46c3cc9d2c1f742add128fd977"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0280-midway-technology-centre-v3.json",
+          "sha256": "9a57d41415b12f884e75e952f4d27f040df0c8c22c12df62c7b00d9e78780ee6"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0279-0280-v1/production-apply/batch-apply-receipt.json#members/1/receipt",
+          "sha256": "ac9ea4f5ff3ad7c7714efb04e207c8d0122b371aca33a450cd1dd2b4eaacf812"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0280-midway-technology-centre-v3/proposal.json#afterImage",
+          "sha256": "95530222df4ee7f8845f9f771136cee0ac1aa35d4ad7b2a7e69c03da1c22e185"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-30T06:20:15.000Z",
+        "auditEventId": "cmtfewrkc0009ln2b8mds6hr8",
+        "transactionId": "54fd1b1c-134c-46d8-9829-232920e645e0",
+        "receiptSha256": "ac9ea4f5ff3ad7c7714efb04e207c8d0122b371aca33a450cd1dd2b4eaacf812",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33296256016"
+      },
       "history": [
         {
           "sequence": 1,
@@ -29778,6 +29820,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-08-30T06:20:15.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0279-0280-v1.",
+          "taskSnapshotSha256": "2252bb97780796c4fddd91dde910d7a1807dd12a14edcaea9a3ee1b7c9b16e95",
+          "evidenceSha256": [
+            "2252bb97780796c4fddd91dde910d7a1807dd12a14edcaea9a3ee1b7c9b16e95",
+            "3f5628e0a867c4d223ff0bc921d276a56f319f46c3cc9d2c1f742add128fd977",
+            "8bcefd8c26cc9e339a6beb4d823549aa1729f0038ef64af1f106baad4b1c1068",
+            "95530222df4ee7f8845f9f771136cee0ac1aa35d4ad7b2a7e69c03da1c22e185",
+            "9a57d41415b12f884e75e952f4d27f040df0c8c22c12df62c7b00d9e78780ee6",
+            "aa0103f8a57bdbf222e3ff6de5eb2beaf2e9bee5c5a2e659de258df2ed820485",
+            "ac9ea4f5ff3ad7c7714efb04e207c8d0122b371aca33a450cd1dd2b4eaacf812"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -38256,5 +38316,5 @@
       ]
     }
   ],
-  "manifestSha256": "b0beea522226bae8bbbf9e22c39cd33cac0deb9b8cc4a0f347a49fc0a7fcf3fd"
+  "manifestSha256": "50d0d73b26fbffb33eafac88a0f0b585d704ad49556106b3774a5243aec3ef5f"
 }

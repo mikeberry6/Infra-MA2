@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-30T06:12:18Z",
-  "activeBatchId": "batch-0279-0280-v1",
+  "updatedAt": "2026-08-30T06:20:15.000Z",
+  "activeBatchId": null,
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -4506,7 +4506,7 @@
     },
     {
       "batchId": "batch-0279-0280-v1",
-      "state": "VERIFYING",
+      "state": "COMPLETED",
       "taskIds": [
         "ledger:0279:drfortress:c7515be2",
         "ledger:0280:midway-technology-centre:9f8844f1"
@@ -4516,8 +4516,8 @@
         280
       ],
       "createdAt": "2026-08-30T05:44:19Z",
-      "updatedAt": "2026-08-30T06:12:18Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-30T06:20:15.000Z",
+      "completedAt": "2026-08-30T06:20:15.000Z",
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0279-0280-v1/batch-manifest.json",
         "sha256": "aa0103f8a57bdbf222e3ff6de5eb2beaf2e9bee5c5a2e659de258df2ed820485"
@@ -4527,7 +4527,7 @@
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0279-0280-v1/production-apply/batch-apply-receipt.json",
         "sha256": "8bcefd8c26cc9e339a6beb4d823549aa1729f0038ef64af1f106baad4b1c1068"
       },
-      "reason": null,
+      "reason": "Protected atomic receipt is durable; canonical production serves the exact receipt merge commit; Midway redirects to the single Harrison Street–1547 platform with two current owners, preserved acquisition history and ten sources; DRFortress is durably deferred; API and rendered drawer checks passed with no partial application.",
       "history": [
         {
           "sequence": 1,
@@ -4577,9 +4577,20 @@
             "aa0103f8a57bdbf222e3ff6de5eb2beaf2e9bee5c5a2e659de258df2ed820485"
           ],
           "reason": null
+        },
+        {
+          "sequence": 6,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-08-30T06:20:15.000Z",
+          "evidenceSha256": [
+            "8bcefd8c26cc9e339a6beb4d823549aa1729f0038ef64af1f106baad4b1c1068",
+            "aa0103f8a57bdbf222e3ff6de5eb2beaf2e9bee5c5a2e659de258df2ed820485"
+          ],
+          "reason": "Protected atomic receipt is durable; canonical production serves the exact receipt merge commit; Midway redirects to the single Harrison Street–1547 platform with two current owners, preserved acquisition history and ten sources; DRFortress is durably deferred; API and rendered drawer checks passed with no partial application."
         }
       ]
     }
   ],
-  "ledgerSha256": "2d0e9e898160c9486f76e77d79874d1d76b0f23022be1aecfd82ebca67ea559f"
+  "ledgerSha256": "ade52addf484a0e95af410643ad0cbf5ea4895ccacbc83579090cfe84b9806b9"
 }
