@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_CORRECTION_DECISION",
+  "asOfDate": "2026-08-30",
+  "triggerBatchId": "batch-0270-0273-v1",
+  "triggerBatchSha256": "2c3d27e311b05440bb040ad447e0a86548e0c71648fad10125602de1531d6ce9",
+  "triggerBatchReceiptSha256": "6cfe69f2f45905e8e008c3d3d6dbaecf8f5175aa2048f9c2d2e9e1861bfe7c51",
+  "decision": "ALIGN_ACTIVE_OWNERSHIP_ATTRIBUTION_METADATA",
+  "rationale": "The atomic PortCo transaction correctly applied the verified company identities, legal owners, vehicles, economics and ownership dates, but the public drawer reads a separate ownership-attribution layer. Align the seven active ownership rows to the reviewed and seed-reconciled judgments: link BlackRock's disclosed GRP IV record, preserve Goldman Sachs' disclosed but unlisted WSIP V vehicle, classify Canadian Solar, the QScale rollover holders and FifteenFortySeven as direct programs, and leave the undisclosed Harbert and Harrison Street fund vehicles unresolved rather than inferred.",
+  "mutations": [
+    {
+      "companyName": "Recurrent Energy",
+      "ownershipPeriodIds": [
+        "cmrxpjuc801ktivheh9t7e2e9",
+        "cmtfaaeu00009rz2bn2fjpxoj"
+      ],
+      "outcome": "One disclosed linked fund and one direct corporate owner"
+    },
+    {
+      "companyName": "QScale",
+      "ownershipPeriodIds": [
+        "cmtfaah7q000xrz2bpq3anrwz",
+        "cmtfaaha4000zrz2b48aynic8"
+      ],
+      "outcome": "One disclosed unlisted fund vehicle and one direct founder-management rollover"
+    },
+    {
+      "companyName": "Hamakua Energy",
+      "ownershipPeriodIds": [
+        "cmrxpk37f01ypivhebnlap7vy"
+      ],
+      "outcome": "Undisclosed current Harbert fund vehicle remains unresolved"
+    },
+    {
+      "companyName": "Harrison Street–1547 Data Center & Connectivity Platform",
+      "ownershipPeriodIds": [
+        "cmtfaam72002crz2b9fjdofwo",
+        "cmtfaam9a002erz2b8g58t2wg"
+      ],
+      "outcome": "Harrison Street fund vehicle remains unresolved and FifteenFortySeven is classified as a direct manager program"
+    }
+  ],
+  "nonChanges": [
+    "Company identities, aliases, redirects and publication status",
+    "Ownership organizations, vehicle text, stakes, dates and active or former state",
+    "Descriptions, milestones, citations and primary sources",
+    "Fund Database records; the repair creates or updates no fund",
+    "The completed atomic PortCo transaction and its durable receipt"
+  ],
+  "identityResolved": true,
+  "activeOwnershipResolved": true,
+  "unresolvedQuestions": []
+}
