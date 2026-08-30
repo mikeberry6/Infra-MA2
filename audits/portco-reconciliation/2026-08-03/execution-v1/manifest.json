@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-30T04:34:01.000Z",
+  "updatedAt": "2026-08-30T05:31:40.000Z",
   "runStatus": "IDLE",
   "activeTaskId": null,
   "source": {
@@ -29400,20 +29400,26 @@
       "managerIndex": 51,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "5a3a30b337eef72990207bf744d72856f71f1ffcce1e8d1b755d6c027c097dc7",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "EXCLUDED",
+      "attempts": 1,
+      "startedAt": "2026-08-30T04:52:01.000Z",
+      "updatedAt": "2026-08-30T05:31:40.000Z",
+      "completedAt": "2026-08-30T05:31:40.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "ec5630f50be61b31c7d4e5d58ab21166fb50ea2cd64678d945efb95be5e19ecf",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0274-alohanap/attempt-1/locked-task-snapshot.json",
+          "sha256": "ec5630f50be61b31c7d4e5d58ab21166fb50ea2cd64678d945efb95be5e19ecf"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0274-0278-v1/decisions/0274-alohanap.json",
+          "sha256": "1c127caa72593e5e853aa33fc6f583edc4aba43531bebc8cf5ac0492ded6b281"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -29427,6 +29433,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "EXCLUDED",
+          "at": "2026-08-30T05:31:40.000Z",
+          "reason": "AlohaNAP/HAII1 is a Kapolei facility, not a manager-level platform. The buyers called it a Property added to their multi-site connectivity platform, and 1547 still lists it among its data centers. A standalone PortCo double-counts task 273; exclude it rather than merge its legal entities into 1547.",
+          "taskSnapshotSha256": "ec5630f50be61b31c7d4e5d58ab21166fb50ea2cd64678d945efb95be5e19ecf",
+          "evidenceSha256": [
+            "1c127caa72593e5e853aa33fc6f583edc4aba43531bebc8cf5ac0492ded6b281",
+            "9326c6d7e14548704ce7c55a88b37b201db7f350387178348d1430ddef659dd9",
+            "ec5630f50be61b31c7d4e5d58ab21166fb50ea2cd64678d945efb95be5e19ecf",
+            "f1f9285a9422e4deae4567728e15f60563d5173cc750d232b10b3b9296a6af1f"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -29438,20 +29459,26 @@
       "managerIndex": 51,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "addfde255df51eabd8ba1278ed6eb99d4f372a066f20bb81bc57e575b8721249",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "EXCLUDED",
+      "attempts": 1,
+      "startedAt": "2026-08-30T04:52:01.000Z",
+      "updatedAt": "2026-08-30T05:31:40.000Z",
+      "completedAt": "2026-08-30T05:31:40.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "f69d5cb308cce93d8df1ce89cd134f7f11dead0ce0a1cd18637890b36f3cb595",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0275-chester-county-hyperscale-data-center/attempt-1/locked-task-snapshot.json",
+          "sha256": "f69d5cb308cce93d8df1ce89cd134f7f11dead0ce0a1cd18637890b36f3cb595"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0274-0278-v1/decisions/0275-chester-county-hyperscale-data-center.json",
+          "sha256": "1d5b205e0d1c4474a22b7d475d4221577cb82a16ec3e937df8ba7ede2ad4ad43"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -29465,6 +29492,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "EXCLUDED",
+          "at": "2026-08-30T05:31:40.000Z",
+          "reason": "Project-level campus, not a proven Harrison Street PortCo. Township records identify Sentinel/Green Fig; 1547 marks the former joint development Sold. The 2024 fund report links Harrison only to other 1547 deals. DataCenterDynamics+3East Whiteland Township+31547 Critical Systems Realty+3",
+          "taskSnapshotSha256": "f69d5cb308cce93d8df1ce89cd134f7f11dead0ce0a1cd18637890b36f3cb595",
+          "evidenceSha256": [
+            "1d5b205e0d1c4474a22b7d475d4221577cb82a16ec3e937df8ba7ede2ad4ad43",
+            "9326c6d7e14548704ce7c55a88b37b201db7f350387178348d1430ddef659dd9",
+            "f1f9285a9422e4deae4567728e15f60563d5173cc750d232b10b3b9296a6af1f",
+            "f69d5cb308cce93d8df1ce89cd134f7f11dead0ce0a1cd18637890b36f3cb595"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -29476,20 +29518,26 @@
       "managerIndex": 51,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "4bb48ac7b87dd506d87d0114a38345243d2ee18ade9537124944a0ffc585f558",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "EXCLUDED",
+      "attempts": 1,
+      "startedAt": "2026-08-30T04:52:01.000Z",
+      "updatedAt": "2026-08-30T05:31:40.000Z",
+      "completedAt": "2026-08-30T05:31:40.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "0f62e394c46617b56ce7509b8c0a74ffcb7f3ec68f6b6ff8e156f67246a9d044",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0276-chicago-cbd-data-center-chil2/attempt-1/locked-task-snapshot.json",
+          "sha256": "0f62e394c46617b56ce7509b8c0a74ffcb7f3ec68f6b6ff8e156f67246a9d044"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0274-0278-v1/decisions/0276-chicago-cbd-data-center-chil2.json",
+          "sha256": "2a0d44c462dfe32d17aeb2799d9d01cced1a41208c647b5d044af4f3bd2bb560"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -29503,6 +29551,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "EXCLUDED",
+          "at": "2026-08-30T05:31:40.000Z",
+          "reason": "CHIL2 is the 725 South Wells facility, not a separate manager-level PortCo. CIM said it sold the four-asset portfolio on 2021-11-02 to a Harrison Street Real Estate Capital/1547 JV; 1547 was already CIM's JV partner and stayed manager. Nothing reviewed shows Harrison bought the 1547 company. Retire task 276 as standalone and link it beneath a correctly bounded task 273 portfolio/JV record; do not merge the legal entities.",
+          "taskSnapshotSha256": "0f62e394c46617b56ce7509b8c0a74ffcb7f3ec68f6b6ff8e156f67246a9d044",
+          "evidenceSha256": [
+            "0f62e394c46617b56ce7509b8c0a74ffcb7f3ec68f6b6ff8e156f67246a9d044",
+            "2a0d44c462dfe32d17aeb2799d9d01cced1a41208c647b5d044af4f3bd2bb560",
+            "9326c6d7e14548704ce7c55a88b37b201db7f350387178348d1430ddef659dd9",
+            "f1f9285a9422e4deae4567728e15f60563d5173cc750d232b10b3b9296a6af1f"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -29514,23 +29577,44 @@
       "managerIndex": 51,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "6786ccc2b5f1f910074e0478c4c832a911938732dc2979bead971e43c5bd6541",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-08-30T04:52:01.000Z",
+      "updatedAt": "2026-08-30T05:31:40.000Z",
+      "completedAt": "2026-08-30T05:31:40.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "bbfb843597e24ef3da050a6cc4e96b6fe7e4ba56d6177e1f628ba220971676b7",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0277-coolco/attempt-1/locked-v2-task-snapshot.json",
+          "sha256": "bbfb843597e24ef3da050a6cc4e96b6fe7e4ba56d6177e1f628ba220971676b7"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0277-coolco-v2/proposal.json",
+          "sha256": "458044345a94f229c4d1ca9b596404dcfccbec4d5b44021d9c73d7f31998b4c7"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0277-coolco-v2.json",
+          "sha256": "68946518895c25a3e483d47ff8373c7215420f2c2a113eb47e6ff7c90ed33795"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0274-0278-v3/production-apply/batch-apply-receipt.json#members/3/receipt",
+          "sha256": "6d3dcbb2ea643d0000d47aef05ad7a6fe556936d93315cabdd66bb540e387909"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0277-coolco-v2/proposal.json#afterImage",
+          "sha256": "d6d571fcd2fc8c42d5835ac078b0f40d484b8c2a1f5bc2d3d444db1cc73038af"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-30T05:31:40.000Z",
+        "auditEventId": "cmtfcmu7s000dox2b4e4tcwpx",
+        "transactionId": "8b47f538-5e70-41db-b04e-863dcbf451c7",
+        "receiptSha256": "6d3dcbb2ea643d0000d47aef05ad7a6fe556936d93315cabdd66bb540e387909",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33293959436"
+      },
       "history": [
         {
           "sequence": 1,
@@ -29541,6 +29625,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-08-30T05:31:40.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0274-0278-v3.",
+          "taskSnapshotSha256": "bbfb843597e24ef3da050a6cc4e96b6fe7e4ba56d6177e1f628ba220971676b7",
+          "evidenceSha256": [
+            "458044345a94f229c4d1ca9b596404dcfccbec4d5b44021d9c73d7f31998b4c7",
+            "68946518895c25a3e483d47ff8373c7215420f2c2a113eb47e6ff7c90ed33795",
+            "6d3dcbb2ea643d0000d47aef05ad7a6fe556936d93315cabdd66bb540e387909",
+            "9326c6d7e14548704ce7c55a88b37b201db7f350387178348d1430ddef659dd9",
+            "bbfb843597e24ef3da050a6cc4e96b6fe7e4ba56d6177e1f628ba220971676b7",
+            "d6d571fcd2fc8c42d5835ac078b0f40d484b8c2a1f5bc2d3d444db1cc73038af",
+            "f1f9285a9422e4deae4567728e15f60563d5173cc750d232b10b3b9296a6af1f"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -29552,20 +29654,26 @@
       "managerIndex": 51,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "552d62998883c13bd0e68055d90f1616588973bc310c1e2b81a0741d430b8c5e",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
+      "status": "DEFERRED",
+      "attempts": 1,
+      "startedAt": "2026-08-30T04:52:01.000Z",
+      "updatedAt": "2026-08-30T05:31:40.000Z",
+      "completedAt": "2026-08-30T05:31:40.000Z",
+      "exceptionReason": "The generic holding is resolved to the Fort Detrick Energy Production Facility at the Keenan Ft Detrick Energy LLC asset/SPV boundary, and Harrison Street's Social Infrastructure Fund is the last verified buyer. Application is deferred because the exact 2020 closing, Harrison acquisition vehicle and stake, retained minority interests, and current beneficial cap table remain unresolved; creating or correcting an active ownership record would require unsupported inference.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "d08ecccd6f66709f9cfbc89369f648f624b8a3c5291bbe3289740f89a63fa9d2",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0278-district-energy-system/attempt-1/locked-task-snapshot.json",
+          "sha256": "d08ecccd6f66709f9cfbc89369f648f624b8a3c5291bbe3289740f89a63fa9d2"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0274-0278-v1/decisions/0278-district-energy-system.json",
+          "sha256": "410fa9b4449c4cbfda2a74dbcf7a3ae12f94d46fdc8d1fa45914c8e025e6b827"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -29579,6 +29687,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-08-30T05:31:40.000Z",
+          "reason": "The generic holding is resolved to the Fort Detrick Energy Production Facility at the Keenan Ft Detrick Energy LLC asset/SPV boundary, and Harrison Street's Social Infrastructure Fund is the last verified buyer. Application is deferred because the exact 2020 closing, Harrison acquisition vehicle and stake, retained minority interests, and current beneficial cap table remain unresolved; creating or correcting an active ownership record would require unsupported inference.",
+          "taskSnapshotSha256": "d08ecccd6f66709f9cfbc89369f648f624b8a3c5291bbe3289740f89a63fa9d2",
+          "evidenceSha256": [
+            "410fa9b4449c4cbfda2a74dbcf7a3ae12f94d46fdc8d1fa45914c8e025e6b827",
+            "9326c6d7e14548704ce7c55a88b37b201db7f350387178348d1430ddef659dd9",
+            "d08ecccd6f66709f9cfbc89369f648f624b8a3c5291bbe3289740f89a63fa9d2",
+            "f1f9285a9422e4deae4567728e15f60563d5173cc750d232b10b3b9296a6af1f"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -37121,13 +37244,13 @@
       "managerIndex": null,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "7b64bc35a83d389b8d64f2abacc4fab25c2b57aadb2215603dc5d40fb5415ef1",
-      "status": "PENDING",
+      "status": "SUPERSEDED",
       "attempts": 0,
       "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
-      "supersededByTaskId": null,
+      "updatedAt": "2026-08-30T05:31:40.000Z",
+      "completedAt": "2026-08-30T05:31:40.000Z",
+      "exceptionReason": "Superseded by ledger:0277:coolco:3d977a11; its verified batch after-image covers the same canonical identity and ownership judgment.",
+      "supersededByTaskId": "ledger:0277:coolco:3d977a11",
       "taskSnapshotSha256": null,
       "artifacts": {
         "taskSnapshot": null,
@@ -37148,6 +37271,19 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "SUPERSEDED",
+          "at": "2026-08-30T05:31:40.000Z",
+          "reason": "Superseded by ledger:0277:coolco:3d977a11; its verified batch after-image covers the same canonical identity and ownership judgment.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "9326c6d7e14548704ce7c55a88b37b201db7f350387178348d1430ddef659dd9",
+            "f1f9285a9422e4deae4567728e15f60563d5173cc750d232b10b3b9296a6af1f"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -38120,5 +38256,5 @@
       ]
     }
   ],
-  "manifestSha256": "bd57fafd2414ff40da0b6907c327e5dc1f1eec07d645fdba17dc72fcd17fa90a"
+  "manifestSha256": "b0beea522226bae8bbbf9e22c39cd33cac0deb9b8cc4a0f347a49fc0a7fcf3fd"
 }

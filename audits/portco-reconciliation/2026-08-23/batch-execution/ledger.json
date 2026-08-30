@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-30T05:09:20Z",
-  "activeBatchId": "batch-0274-0278-v3",
+  "updatedAt": "2026-08-30T05:31:40.000Z",
+  "activeBatchId": null,
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -4413,7 +4413,7 @@
     },
     {
       "batchId": "batch-0274-0278-v3",
-      "state": "VERIFYING",
+      "state": "COMPLETED",
       "taskIds": [
         "ledger:0274:alohanap:51454abf",
         "ledger:0275:chester-county-hyperscale-data-center:d9586e4e",
@@ -4429,8 +4429,8 @@
         278
       ],
       "createdAt": "2026-08-30T04:52:01.000Z",
-      "updatedAt": "2026-08-30T05:09:20Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-30T05:31:40.000Z",
+      "completedAt": "2026-08-30T05:31:40.000Z",
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0274-0278-v3/batch-manifest.json",
         "sha256": "9326c6d7e14548704ce7c55a88b37b201db7f350387178348d1430ddef659dd9"
@@ -4440,7 +4440,7 @@
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0274-0278-v3/production-apply/batch-apply-receipt.json",
         "sha256": "f1f9285a9422e4deae4567728e15f60563d5173cc750d232b10b3b9296a6af1f"
       },
-      "reason": null,
+      "reason": "Atomic PortCo receipt and protected CoolCo attribution-repair receipt are durable; canonical production serves the exact attribution receipt merge commit, CoolCo API and rendered drawer show the disclosed Harrison Street fund and verified ownership history, three exclusions and one deferral are durable, and no partial application occurred.",
       "history": [
         {
           "sequence": 1,
@@ -4490,9 +4490,20 @@
             "f1f9285a9422e4deae4567728e15f60563d5173cc750d232b10b3b9296a6af1f"
           ],
           "reason": null
+        },
+        {
+          "sequence": 6,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-08-30T05:31:40.000Z",
+          "evidenceSha256": [
+            "9326c6d7e14548704ce7c55a88b37b201db7f350387178348d1430ddef659dd9",
+            "f1f9285a9422e4deae4567728e15f60563d5173cc750d232b10b3b9296a6af1f"
+          ],
+          "reason": "Atomic PortCo receipt and protected CoolCo attribution-repair receipt are durable; canonical production serves the exact attribution receipt merge commit, CoolCo API and rendered drawer show the disclosed Harrison Street fund and verified ownership history, three exclusions and one deferral are durable, and no partial application occurred."
         }
       ]
     }
   ],
-  "ledgerSha256": "346a57b2c766bb197b40cf906b7d9615245739857d1bebd696db86cdc68a9e9b"
+  "ledgerSha256": "3f422004f20d8e9f83d300a534cc7cdb3ed0bfa0cb929bb0821f8bac67cc65fb"
 }
