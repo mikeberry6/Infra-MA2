@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-30T04:04:24.000Z",
-  "activeBatchId": "batch-0270-0273-v1",
+  "updatedAt": "2026-08-30T04:34:01.000Z",
+  "activeBatchId": null,
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -4206,7 +4206,7 @@
     },
     {
       "batchId": "batch-0270-0273-v1",
-      "state": "VERIFYING",
+      "state": "COMPLETED",
       "taskIds": [
         "ledger:0270:recurrent-energy:9b92b574",
         "ledger:0271:qscale:f52cb49e",
@@ -4220,8 +4220,8 @@
         273
       ],
       "createdAt": "2026-08-30T03:42:20.000Z",
-      "updatedAt": "2026-08-30T04:04:24.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-08-30T04:34:01.000Z",
+      "completedAt": "2026-08-30T04:34:01.000Z",
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0270-0273-v1/batch-manifest.json",
         "sha256": "2c3d27e311b05440bb040ad447e0a86548e0c71648fad10125602de1531d6ce9"
@@ -4231,7 +4231,7 @@
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0270-0273-v1/production-apply/batch-apply-receipt.json",
         "sha256": "6cfe69f2f45905e8e008c3d3d6dbaecf8f5175aa2048f9c2d2e9e1861bfe7c51"
       },
-      "reason": null,
+      "reason": "Atomic PortCo receipt and protected attribution-repair receipt are durable; the canonical production deployment serves the exact attribution receipt merge commit, and all four detail APIs and rendered drawers passed ownership, source, milestone, and console verification without partial application.",
       "history": [
         {
           "sequence": 1,
@@ -4281,9 +4281,20 @@
             "6cfe69f2f45905e8e008c3d3d6dbaecf8f5175aa2048f9c2d2e9e1861bfe7c51"
           ],
           "reason": null
+        },
+        {
+          "sequence": 6,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-08-30T04:34:01.000Z",
+          "evidenceSha256": [
+            "2c3d27e311b05440bb040ad447e0a86548e0c71648fad10125602de1531d6ce9",
+            "6cfe69f2f45905e8e008c3d3d6dbaecf8f5175aa2048f9c2d2e9e1861bfe7c51"
+          ],
+          "reason": "Atomic PortCo receipt and protected attribution-repair receipt are durable; the canonical production deployment serves the exact attribution receipt merge commit, and all four detail APIs and rendered drawers passed ownership, source, milestone, and console verification without partial application."
         }
       ]
     }
   ],
-  "ledgerSha256": "20f41fc255a00083fa1584e11a9924a332c328765cd90e8103b6f7bbd944af53"
+  "ledgerSha256": "496750e16b7831caf2539f4b2254e22625d0a492b208d906a4de99b62a3c4fd9"
 }
