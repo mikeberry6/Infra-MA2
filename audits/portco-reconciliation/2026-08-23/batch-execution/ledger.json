@@ -3,7 +3,7 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-30T04:56:00.000Z",
+  "updatedAt": "2026-08-30T05:09:20Z",
   "activeBatchId": "batch-0274-0278-v3",
   "batches": [
     {
@@ -4413,7 +4413,7 @@
     },
     {
       "batchId": "batch-0274-0278-v3",
-      "state": "RELEASING",
+      "state": "VERIFYING",
       "taskIds": [
         "ledger:0274:alohanap:51454abf",
         "ledger:0275:chester-county-hyperscale-data-center:d9586e4e",
@@ -4429,14 +4429,17 @@
         278
       ],
       "createdAt": "2026-08-30T04:52:01.000Z",
-      "updatedAt": "2026-08-30T04:56:00.000Z",
+      "updatedAt": "2026-08-30T05:09:20Z",
       "completedAt": null,
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0274-0278-v3/batch-manifest.json",
         "sha256": "9326c6d7e14548704ce7c55a88b37b201db7f350387178348d1430ddef659dd9"
       },
-      "releaseSha": null,
-      "receipt": null,
+      "releaseSha": "cc49a14fed3de44ba41b165fb46300a8f5f5120f",
+      "receipt": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0274-0278-v3/production-apply/batch-apply-receipt.json",
+        "sha256": "f1f9285a9422e4deae4567728e15f60563d5173cc750d232b10b3b9296a6af1f"
+      },
       "reason": null,
       "history": [
         {
@@ -4466,9 +4469,30 @@
             "9326c6d7e14548704ce7c55a88b37b201db7f350387178348d1430ddef659dd9"
           ],
           "reason": null
+        },
+        {
+          "sequence": 4,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-08-30T05:06:25Z",
+          "evidenceSha256": [
+            "9326c6d7e14548704ce7c55a88b37b201db7f350387178348d1430ddef659dd9"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 5,
+          "from": "APPLYING",
+          "to": "VERIFYING",
+          "at": "2026-08-30T05:09:20Z",
+          "evidenceSha256": [
+            "9326c6d7e14548704ce7c55a88b37b201db7f350387178348d1430ddef659dd9",
+            "f1f9285a9422e4deae4567728e15f60563d5173cc750d232b10b3b9296a6af1f"
+          ],
+          "reason": null
         }
       ]
     }
   ],
-  "ledgerSha256": "f80a259422d531ff5346831f5ba4ca33f53c25cc63c1ce3525cc2888ffc103e2"
+  "ledgerSha256": "346a57b2c766bb197b40cf906b7d9615245739857d1bebd696db86cdc68a9e9b"
 }
