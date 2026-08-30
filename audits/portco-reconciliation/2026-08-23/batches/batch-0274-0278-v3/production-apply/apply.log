@@ -1,0 +1,94 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:batch:apply
+> npx tsx scripts/portco-reconciliation/batch-apply-cli.ts --batch-manifest=audits/portco-reconciliation/2026-08-23/batches/batch-0274-0278-v3/batch-manifest.json --batch-sha256=9326c6d7e14548704ce7c55a88b37b201db7f350387178348d1430ddef659dd9 --seed-artifact=prisma/seed-data/approved-portco-after-images.json --apply --write-token=APPLY_APPROVED_PORTCO_BATCH --commit-receipt=tmp/portco-reconciliation/production/batch-commit-receipt.json --receipt=tmp/portco-reconciliation/production/batch-apply-receipt.json --public-base-url=https://infra-ma-2.vercel.app/Infra-MA2/
+
+(node:3489) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "BATCH_APPLIED",
+  "receiptPath": "/home/runner/work/Infra-MA2/Infra-MA2/tmp/portco-reconciliation/production/batch-apply-receipt.json",
+  "receipt": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_APPLY_BATCH_RECEIPT",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "batchId": "batch-0274-0278-v3",
+    "batchSha256": "9326c6d7e14548704ce7c55a88b37b201db7f350387178348d1430ddef659dd9",
+    "releaseSha": "cc49a14fed3de44ba41b165fb46300a8f5f5120f",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "transactionId": "8b47f538-5e70-41db-b04e-863dcbf451c7",
+    "appliedAt": "2026-08-30T05:08:31.608Z",
+    "members": [
+      {
+        "kind": "TERMINAL",
+        "taskId": "ledger:0274:alohanap:51454abf",
+        "taskIndex": 274,
+        "companyName": "AlohaNAP",
+        "outcome": "EXCLUDED",
+        "decisionSha256": "1c127caa72593e5e853aa33fc6f583edc4aba43531bebc8cf5ac0492ded6b281"
+      },
+      {
+        "kind": "TERMINAL",
+        "taskId": "ledger:0275:chester-county-hyperscale-data-center:d9586e4e",
+        "taskIndex": 275,
+        "companyName": "Chester County Hyperscale Data Center",
+        "outcome": "EXCLUDED",
+        "decisionSha256": "1d5b205e0d1c4474a22b7d475d4221577cb82a16ec3e937df8ba7ede2ad4ad43"
+      },
+      {
+        "kind": "TERMINAL",
+        "taskId": "ledger:0276:chicago-cbd-data-center-chil2:61285c3f",
+        "taskIndex": 276,
+        "companyName": "Chicago CBD Data Center (CHIL2)",
+        "outcome": "EXCLUDED",
+        "decisionSha256": "2a0d44c462dfe32d17aeb2799d9d01cced1a41208c647b5d044af4f3bd2bb560"
+      },
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0277:coolco:3d977a11",
+        "taskIndex": 277,
+        "companyName": "CoolCo",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0277:coolco:3d977a11",
+          "taskIndex": 277,
+          "companyName": "CoolCo",
+          "companyId": "cmrxpjhii010civhek48qprav",
+          "proposalSha256": "458044345a94f229c4d1ca9b596404dcfccbec4d5b44021d9c73d7f31998b4c7",
+          "approvalSha256": "68946518895c25a3e483d47ff8373c7215420f2c2a113eb47e6ff7c90ed33795",
+          "productionSnapshotSha256": "d7d2ea64bd3092eed5428862a147a4d94001d7fb96f9737344018b217a5c38fc",
+          "beforeCompanySnapshotSha256": "177392aa70ef908d5b422e4314aba457fce3a97a629382ab9041ed900b083f49",
+          "appliedAfterImageSha256": "d6d571fcd2fc8c42d5835ac078b0f40d484b8c2a1f5bc2d3d444db1cc73038af",
+          "seedAfterImageSha256": "d6d571fcd2fc8c42d5835ac078b0f40d484b8c2a1f5bc2d3d444db1cc73038af",
+          "approvedSeedEntrySha256": "3cf260bff89dbf40b682f55709041f7142632f8f4715a76391bd4319cd09491a",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "8b47f538-5e70-41db-b04e-863dcbf451c7",
+          "auditEventId": "cmtfcmu7s000dox2b4e4tcwpx",
+          "appliedAt": "2026-08-30T05:08:31.608Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "6d3dcbb2ea643d0000d47aef05ad7a6fe556936d93315cabdd66bb540e387909"
+        }
+      },
+      {
+        "kind": "TERMINAL",
+        "taskId": "ledger:0278:district-energy-system:55ee7b00",
+        "taskIndex": 278,
+        "companyName": "District Energy System",
+        "outcome": "DEFERRED",
+        "decisionSha256": "410fa9b4449c4cbfda2a74dbcf7a3ae12f94d46fdc8d1fa45914c8e025e6b827"
+      }
+    ],
+    "verification": {
+      "databaseTransactionCommitted": true,
+      "seedArtifactVerified": true,
+      "allDetailApisVerified": true,
+      "partialDatabaseApplication": false
+    },
+    "receiptSha256": "f1f9285a9422e4deae4567728e15f60563d5173cc750d232b10b3b9296a6af1f"
+  }
+}
