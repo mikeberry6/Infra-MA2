@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0278:district-energy-system:55ee7b00",
+  "taskIndex": 278,
+  "companyName": "District Energy System",
+  "generatedAt": "2026-08-30T04:43:25.147Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0278-district-energy-system/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 278,
+    "taskId": "ledger:0278:district-energy-system:55ee7b00",
+    "canonicalKey": "district-energy-system|united-states",
+    "companyName": "District Energy System",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 51,
+    "managers": [
+      "Harrison Street"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "051-harrison-street:holding:013:district-energy-system"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://realassets.ipe.com/news/harrison-street-buys-us-district-energy-system-from-blackrock/10045818.article",
+      "https://www.harrisonst.com/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted census NEEDS_REVIEW for 051-harrison-street:holding:013:district-energy-system: Repository record exists but the underlying asset identity and platform boundary remain ambiguous. The accepted census result explicitly requires identity or duplicate review. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Accepted census NEEDS_REVIEW for 051-harrison-street:holding:013:district-energy-system: Repository record exists but the underlying asset identity and platform boundary remain ambiguous.",
+      "The accepted census result explicitly requires identity or duplicate review."
+    ]
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "district-energy-system|united-states",
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0278:district-energy-system:55ee7b00",
+    "taskIndex": 278,
+    "canonicalKey": "district-energy-system|united-states",
+    "capturedAt": "2026-08-30T04:43:25.147Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "552d62998883c13bd0e68055d90f1616588973bc310c1e2b81a0741d430b8c5e",
+    "productionSnapshotSha256": "56eace79470b5f1d2d1a38cbc448448f2be6bbc4c9152ef54e42ae29bfa8e9bf",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "7162f023548431ed1fed51e43a93e8e1e0a46df9edc0adf314307e96f61f1312",
+    "stateSha256": "f1fa33ddcb506f12ede1a9ab2ec7a0be464c298f66949e3288106ab5b749c5a6",
+    "taskSnapshotSha256": "d08ecccd6f66709f9cfbc89369f648f624b8a3c5291bbe3289740f89a63fa9d2"
+  },
+  "contextSha256": "b8426860b6533dba9a200e4a2fbd3ddd4c6ca78e034329307407ea085e832087"
+}

@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0278:district-energy-system:55ee7b00",
+  "taskIndex": 278,
+  "companyName": "District Energy System",
+  "asOfDate": "2026-08-19",
+  "decision": "DEFERRED",
+  "confidence": "HIGH_IDENTITY_MEDIUM_OWNERSHIP",
+  "researchOnly": true,
+  "generatedAt": "2026-08-30T04:43:32.000Z",
+  "result": {
+    "decision": "DEFERRED",
+    "rationale": "The generic holding is resolved to the Fort Detrick Energy Production Facility at the Keenan Ft Detrick Energy LLC asset/SPV boundary, and Harrison Street's Social Infrastructure Fund is the last verified buyer. Application is deferred because the exact 2020 closing, Harrison acquisition vehicle and stake, retained minority interests, and current beneficial cap table remain unresolved; creating or correcting an active ownership record would require unsupported inference.",
+    "evidence": [
+      {
+        "url": "https://www.stblaw.com/about-us/news/view/2020/05/28/simpson-thacher-advises-blackrock-s-global-energy-power-infrastructure-fund-in-the-sale-of-its-fort-detrick-energy-production-facility",
+        "purpose": "Fort Detrick asset identity, BlackRock GEPIF seller, services and 2049 contract term."
+      },
+      {
+        "url": "https://realassets.ipe.com/news/harrison-street-buys-us-district-energy-system-from-blackrock/10045818.article",
+        "purpose": "Harrison Street SIF buyer, BlackRock GEPIF seller and Fort Detrick transaction attribution."
+      },
+      {
+        "url": "https://www.powersurety.com/portfolio-items/fort-detrick-microgrid/",
+        "purpose": "Keenan Ft Detrick Energy LLC project boundary, ownership history and operator context."
+      }
+    ]
+  },
+  "lineage": {
+    "researchDecisionSha256": "197e22ec0c49da0e08987def2b77ce47f7e8dca79598663d4653cb9cd2b737b4",
+    "acceptedResponseSha256": "1648264ed9441d828f987e996a5225ad49a7914f6a365948c632af8cd2424daf",
+    "sourceVerificationSha256": "4e96b364bb170b95fd16d8275765ccb436be206c8ef86ca4bcc8fecf3e1dd3cb"
+  }
+}

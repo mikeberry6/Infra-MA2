@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0274:alohanap:51454abf",
+  "taskIndex": 274,
+  "companyName": "AlohaNAP",
+  "outcome": "EXCLUDED",
+  "decidedAt": "2026-08-30T04:44:00.000Z",
+  "rationale": "AlohaNAP/HAII1 is a Kapolei facility, not a manager-level platform. The buyers called it a Property added to their multi-site connectivity platform, and 1547 still lists it among its data centers. A standalone PortCo double-counts task 273; exclude it rather than merge its legal entities into 1547.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0274-alohanap/attempt-1/locked-task-snapshot.json",
+    "sha256": "41caa58335b473ebcf12a21d339fbf021a852f60c09218901a74e6c1ad834368"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0274-alohanap/attempt-1/application-research-decision.json",
+    "sha256": "f3f19c4321ff931744fd678f6afef73ee060fc73b9dcacdd6348b508102a239f"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0274-alohanap/attempt-1/source-verification.json",
+    "sha256": "0859b7065e36245339d83a8eca8b8389db0a3b51ae6179ed6dfd56447cc7c220"
+  },
+  "evidence": [
+    {
+      "url": "https://harrisonst.com/harrison-street-and-fifteenfortyseven-critical-systems-realty-acquire-strategically-located-carrier-hotel-data-center-in-hawaii-announce-expansion-plans/",
+      "purpose": "Acquisition, platform boundary, owners, expansion"
+    },
+    {
+      "url": "https://www.1547realty.com/data-center/kapolei-hi-haii1/",
+      "purpose": "Current identity, operator, status, footprint"
+    },
+    {
+      "url": "https://www.1547realty.com/resource/1547-critical-systems-realty-announces-building-blessing-alohanap-facility-will-allow-north-american-companies-to-reach-asian-markets-in-a-single-hop-and-vice-versa/",
+      "purpose": "2014 launch and original 1547/HPT relationship"
+    },
+    {
+      "url": "https://lei.bloomberg.com/leis/view/2549008CUOWKA6TWF028",
+      "purpose": "Active SPV candidate; parent undisclosed"
+    },
+    {
+      "url": "https://www.city-data.com/business-entities/HI/HAWAII-PACIFIC-DATA-LLC-116634-C6-HI.html",
+      "purpose": "Historical member/trade-name evidence"
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "1c127caa72593e5e853aa33fc6f583edc4aba43531bebc8cf5ac0492ded6b281"
+}

@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_MANIFEST",
+  "methodologyVersion": "PORTCO_APPLY_BATCH_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0274-0278-v3",
+  "createdAt": "2026-08-30T04:53:01.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "bd57fafd2414ff40da0b6907c327e5dc1f1eec07d645fdba17dc72fcd17fa90a"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0274:alohanap:51454abf",
+      "taskIndex": 274,
+      "companyName": "AlohaNAP",
+      "outcome": "EXCLUDED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0274-0278-v1/decisions/0274-alohanap.json",
+        "sha256": "1c127caa72593e5e853aa33fc6f583edc4aba43531bebc8cf5ac0492ded6b281"
+      }
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0275:chester-county-hyperscale-data-center:d9586e4e",
+      "taskIndex": 275,
+      "companyName": "Chester County Hyperscale Data Center",
+      "outcome": "EXCLUDED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0274-0278-v1/decisions/0275-chester-county-hyperscale-data-center.json",
+        "sha256": "1d5b205e0d1c4474a22b7d475d4221577cb82a16ec3e937df8ba7ede2ad4ad43"
+      }
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0276:chicago-cbd-data-center-chil2:61285c3f",
+      "taskIndex": 276,
+      "companyName": "Chicago CBD Data Center (CHIL2)",
+      "outcome": "EXCLUDED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0274-0278-v1/decisions/0276-chicago-cbd-data-center-chil2.json",
+        "sha256": "2a0d44c462dfe32d17aeb2799d9d01cced1a41208c647b5d044af4f3bd2bb560"
+      }
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0277:coolco:3d977a11",
+      "taskIndex": 277,
+      "companyName": "CoolCo",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0277-coolco-v2/proposal.json",
+        "sha256": "458044345a94f229c4d1ca9b596404dcfccbec4d5b44021d9c73d7f31998b4c7"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0277-coolco-v2.json",
+        "sha256": "68946518895c25a3e483d47ff8373c7215420f2c2a113eb47e6ff7c90ed33795"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0277-coolco/attempt-1/locked-v2-production-snapshot.json",
+        "sha256": "d7d2ea64bd3092eed5428862a147a4d94001d7fb96f9737344018b217a5c38fc"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0277-coolco/attempt-1/locked-v2-task-snapshot.json",
+        "sha256": "bbfb843597e24ef3da050a6cc4e96b6fe7e4ba56d6177e1f628ba220971676b7"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0277-coolco/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "42deae4bc99d21fc4b32eebd860ef91fa84b3c63bcf8ed1d843f319067789ea4"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0277-coolco/attempt-1/application-research-decision.json",
+        "sha256": "909af99d0f0e72e3fb8e5e9041d8e91b3272b019e3db81de8e100391fd309058"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0277-coolco/attempt-1/source-verification.json",
+        "sha256": "7333fda12a2708de7a219d0d2bee1557472c9680c1a77f459f0932b6dd17dc08"
+      },
+      "supersededTaskIds": [
+        "ledger:0474:coolco-cincinnati-district-energy:47c3df2b"
+      ],
+      "taskStateSha256": "2f5bac56c083799b9127e3f6d7ce3be6a36629e0dda863fd2b6a2703001255f1",
+      "dependencySha256": "dbb554fbc4412a2a7322f4dc93a05f3656695ebb8c6142d824b5011cd2efeee6",
+      "afterImageSha256": "d6d571fcd2fc8c42d5835ac078b0f40d484b8c2a1f5bc2d3d444db1cc73038af",
+      "targetClaims": [
+        "canonical:coolco|united-states",
+        "company:cmrxpjhii010civhek48qprav",
+        "relation:cmrxpk3f401z3ivhezyulp91w",
+        "relation:cmrxplxpm049nivhed1bdjn5r",
+        "relation:cmrxplxq7049oivhe91lnhs8v",
+        "relation:cmrxplxqr049pivherk3k4tgr",
+        "relation:cmrxplxrb049qivhenhoqebdm",
+        "relation:cmrxplxvc049sivherrjd22e6",
+        "relation:cmrxprgjy0b3wivhe3frgetlq",
+        "relation:cmrxprgky0b3yivhevbr44f93",
+        "relation:cmrxprglz0b40ivhefp2gsvvo",
+        "relation:cmrxprgmu0b42ivheeolzzxbi",
+        "relation:cmrxprgoh0b45ivhejrm5adq4",
+        "seed:coolco (cincinnati district energy)|united states",
+        "seed:coolco|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://2030districts.org/cincinnati/company/coolco-cincinnati-district-energy/",
+          "label": "Cincinnati 2030 District - CoolCo",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://coolco.com/",
+          "label": "Coolco — CoolCo",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://coolco.com/about-us/",
+          "label": "Coolco — CoolCo",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://coolco.com/chilled-water-services/",
+          "label": "Coolco — CoolCo",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://harrisonst.com/harrison-street-acquires-28-mw-cincinnati-solar-project/",
+          "label": "Harrisonst — CoolCo",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://harrisonst.com/harrison-street-continues-to-expand-investments-for-social-infrastructure-fund/",
+          "label": "Announcement date source — Harrison Street — Doug Meijer Medical Innovation Building",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://mi-psc.my.site.com/sfc/servlet.shepherd/version/download/068t0000000vFVrAAM",
+          "label": "Michigan PSC - DTE CoolCo sale filing",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.ever-greenenergy.com/our-work/coolco/",
+          "label": "Ever-Green Energy - CoolCo",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.infrapppworld.com/transaction/i-squared-capital-acquires-district-energy-business",
+          "label": "InfraPPP - I Squared acquires CoolCo",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/899652/000089965202000035/formu5s2001.htm",
+          "label": "SEC - Cinergy 2001 Form U5S",
+          "sourceType": "SEC_FILING"
+        }
+      ]
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0278:district-energy-system:55ee7b00",
+      "taskIndex": 278,
+      "companyName": "District Energy System",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0274-0278-v1/decisions/0278-district-energy-system.json",
+        "sha256": "410fa9b4449c4cbfda2a74dbcf7a3ae12f94d46fdc8d1fa45914c8e025e6b827"
+      }
+    }
+  ],
+  "collisionAnalysis": {
+    "independent": true,
+    "claimsSha256": "a40da26e831ac2482011781a8647a6749ec85f82dfe35292a14f965433d011f7",
+    "sharedSourceUrls": [],
+    "conflicts": []
+  },
+  "batchSha256": "9326c6d7e14548704ce7c55a88b37b201db7f350387178348d1430ddef659dd9"
+}

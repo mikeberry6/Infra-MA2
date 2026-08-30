@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0278:district-energy-system:55ee7b00",
+  "taskIndex": 278,
+  "companyName": "District Energy System",
+  "outcome": "DEFERRED",
+  "decidedAt": "2026-08-30T04:44:03.000Z",
+  "rationale": "The generic holding is resolved to the Fort Detrick Energy Production Facility at the Keenan Ft Detrick Energy LLC asset/SPV boundary, and Harrison Street's Social Infrastructure Fund is the last verified buyer. Application is deferred because the exact 2020 closing, Harrison acquisition vehicle and stake, retained minority interests, and current beneficial cap table remain unresolved; creating or correcting an active ownership record would require unsupported inference.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0278-district-energy-system/attempt-1/locked-task-snapshot.json",
+    "sha256": "517957f11711424e438218c2add6aa3e265e5f0bc1e0a489522934a5dff3e2ae"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0278-district-energy-system/attempt-1/application-research-decision.json",
+    "sha256": "03b258f995b37b6a5538bc51c6ecec0887fdb4e6ef69227d6715e7dff84abbfb"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0278-district-energy-system/attempt-1/source-verification.json",
+    "sha256": "4e96b364bb170b95fd16d8275765ccb436be206c8ef86ca4bcc8fecf3e1dd3cb"
+  },
+  "evidence": [
+    {
+      "url": "https://www.stblaw.com/about-us/news/view/2020/05/28/simpson-thacher-advises-blackrock-s-global-energy-power-infrastructure-fund-in-the-sale-of-its-fort-detrick-energy-production-facility",
+      "purpose": "Fort Detrick asset identity, BlackRock GEPIF seller, services and 2049 contract term."
+    },
+    {
+      "url": "https://realassets.ipe.com/news/harrison-street-buys-us-district-energy-system-from-blackrock/10045818.article",
+      "purpose": "Harrison Street SIF buyer, BlackRock GEPIF seller and Fort Detrick transaction attribution."
+    },
+    {
+      "url": "https://www.powersurety.com/portfolio-items/fort-detrick-microgrid/",
+      "purpose": "Keenan Ft Detrick Energy LLC project boundary, ownership history and operator context."
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "410fa9b4449c4cbfda2a74dbcf7a3ae12f94d46fdc8d1fa45914c8e025e6b827"
+}

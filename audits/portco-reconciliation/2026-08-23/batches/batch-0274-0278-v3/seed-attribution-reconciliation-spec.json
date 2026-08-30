@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_SEED_ATTRIBUTION_RECONCILIATION_SPEC",
+  "batchId": "batch-0274-0278-v3",
+  "batchSha256": "9326c6d7e14548704ce7c55a88b37b201db7f350387178348d1430ddef659dd9",
+  "reconciledAt": "2026-08-30T04:55:00.000Z",
+  "sourceManifestSha256": "1095a9ad9b038741ddfec134d0e2403f671805fd798f4419091ded1fa22ac526",
+  "rationale": "Replace CoolCo's stale inferred attribution with the directly disclosed Harrison Street Social Infrastructure Fund attribution and the approved COOLCO LLC vehicle and stake disclosure. The Harrison Street acquisition release identifies HSSI as the acquiring fund, while current operating evidence confirms Harrison Street remains the owner. No fund, stake or vehicle is inferred beyond those disclosures.",
+  "removeRecordIds": [
+    "OFA-991EE28C1BC8"
+  ],
+  "upsertRecords": [
+    {
+      "recordId": "OFA-28DF59ADE5A8",
+      "companyName": "CoolCo",
+      "country": "United States",
+      "investmentFirm": "Harrison Street",
+      "currentVehicleName": "COOLCO LLC",
+      "investmentYear": 2019,
+      "stake": "Not publicly disclosed",
+      "targetLinkedFundName": "Harrison Street Social Infrastructure Fund",
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Harrison Street Social Infrastructure Fund",
+      "attributionConfidence": null,
+      "attributionRationale": "Harrison Street's 2019 release states that it acquired ISQ CoolCo on behalf of the Harrison Street Social Infrastructure Fund. Current operating evidence continues to identify Harrison Street as owner; COOLCO LLC is the verified current company vehicle and the ownership percentage is not publicly disclosed.",
+      "evidenceUrls": [
+        "https://harrisonst.com/harrison-street-continues-to-expand-investments-for-social-infrastructure-fund/",
+        "https://www.ever-greenenergy.com/our-work/coolco/"
+      ]
+    }
+  ],
+  "specSha256": "2e98d5438c910593c5006dbd351daab74176f3027ca15ecb7e519c33299ca3d5"
+}

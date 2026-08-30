@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0276:chicago-cbd-data-center-chil2:61285c3f",
+  "taskIndex": 276,
+  "companyName": "Chicago CBD Data Center (CHIL2)",
+  "generatedAt": "2026-08-30T04:43:04.905Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0276-chicago-cbd-data-center-chil2/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 276,
+    "taskId": "ledger:0276:chicago-cbd-data-center-chil2:61285c3f",
+    "canonicalKey": "chicago-cbd-data-center-chil2|united-states",
+    "companyName": "Chicago CBD Data Center (CHIL2)",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 51,
+    "managers": [
+      "Harrison Street"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "051-harrison-street:repo-only:003:chicago-cbd-data-center-chil2"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjhi2010bivhe5mxw3m2w"
+    ],
+    "seedKeys": [
+      "chicago cbd data center (chil2)|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.1547realty.com/data-center/chicago-il-chil2/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Harrison Street MATCHED_ELSEWHERE: Rolled into 1547 Critical Systems Realty platform consolidation.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjhi2010bivhe5mxw3m2w",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "chicago-cbd-data-center-chil2|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjhi2010bivhe5mxw3m2w",
+    "name": "Chicago CBD Data Center (CHIL2)",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Carrier-neutral colocation data center",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Chicago CBD Data Center is a downtown Chicago carrier-neutral colocation facility operated within the 1547 platform. Its customers include carriers, cloud and content networks, enterprises, and other users that need central-business-district connectivity and access to regional network nodes. The asset follows an asset-heavy digital-infrastructure model based on owned data center real estate, power, cooling, and interconnection infrastructure. Public materials identify the facility at 725 South Wells and emphasize its connectivity to 350 East Cermak and other Chicago network routes. Harrison Street and 1547 acquired the facility in November 2021 as part of a four-asset U.S. data-center transaction; the ownership split is not publicly disclosed. The property remains part of the partners’ connectivity-focused North American data-center portfolio.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Illinois",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk3ej01z2ivheupu430ho",
+        "managerName": "Harrison Street",
+        "organizationName": "Harrison Street",
+        "fundName": null,
+        "vehicleName": "Harrison Street Digital Fund",
+        "stake": null,
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplxny049livhejcskh3cc",
+        "date": "Nov 2, 2021",
+        "event": "Harrison Street and 1547 announced the acquisition of four U.S. data-center facilities, including the Chicago CBD asset.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-11-02T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplxoj049mivhejdd3qh9c",
+        "date": "2026",
+        "event": "1547 identified CHIL2 as a downtown Chicago carrier-neutral facility at 725 South Wells serving enterprise and network customers.",
+        "category": "EXPANSION",
+        "sortDate": "2026-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxprged0b3qivhe49ugvo3u",
+        "label": "1547Realty — Chicago CBD Data Center (CHIL2)",
+        "url": "https://www.1547realty.com/data-center/chicago-il-chil2/",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "1547Realty transaction or milestone detail",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxprghz0b3sivhebwdxnrub",
+        "label": "Harrisonst — Chicago CBD Data Center (CHIL2)",
+        "url": "https://harrisonst.com/exclusive-harrison-street-and-fifteenfortyseven-acquire-four-data-center-facilities-in-u-s/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Harrisonst operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprgiz0b3uivhefczgo7yt",
+        "label": "1547Realty — Chicago CBD Data Center (CHIL2)",
+        "url": "https://www.1547realty.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "1547Realty company profile",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Chicago CBD Data Center (CHIL2)",
+    "investmentFirm": "Harrison Street",
+    "sector": "Digital",
+    "subsector": "Carrier-neutral colocation data center",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Harrison Street Digital Fund",
+    "description": "Chicago CBD Data Center is a downtown Chicago carrier-neutral colocation facility operated within the 1547 platform. Its customers include carriers, cloud and content networks, enterprises, and other users that need central-business-district connectivity and access to regional network nodes. The asset follows an asset-heavy digital-infrastructure model based on owned data center real estate, power, cooling, and interconnection infrastructure. Public materials identify the facility at 725 South Wells and emphasize its connectivity to 350 East Cermak and other Chicago network routes. Harrison Street and 1547 acquired the facility in November 2021 as part of a four-asset U.S. data-center transaction; the ownership split is not publicly disclosed. The property remains part of the partners’ connectivity-focused North American data-center portfolio.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2021,
+    "headquarters": "Illinois",
+    "milestones": [
+      {
+        "date": "Nov 2, 2021",
+        "event": "Harrison Street and 1547 announced the acquisition of four U.S. data-center facilities, including the Chicago CBD asset.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "2026",
+        "event": "1547 identified CHIL2 as a downtown Chicago carrier-neutral facility at 725 South Wells serving enterprise and network customers.",
+        "category": "Expansion"
+      }
+    ],
+    "sources": [
+      {
+        "label": "1547Realty — Chicago CBD Data Center (CHIL2)",
+        "url": "https://www.1547realty.com/data-center/chicago-il-chil2/",
+        "type": "ARTICLE",
+        "purpose": "MILESTONE_EVENT"
+      },
+      {
+        "label": "Harrisonst — Chicago CBD Data Center (CHIL2)",
+        "url": "https://harrisonst.com/exclusive-harrison-street-and-fifteenfortyseven-acquire-four-data-center-facilities-in-u-s/",
+        "type": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "1547Realty — Chicago CBD Data Center (CHIL2)",
+        "url": "https://www.1547realty.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Harrison Street",
+        "ownershipVehicle": "Harrison Street Digital Fund",
+        "investmentYear": 2021,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi9hc0029ivhep5jy7vm9",
+        "name": "Harrison Street",
+        "updatedAt": "2026-07-23T16:09:19.488Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0276:chicago-cbd-data-center-chil2:61285c3f",
+    "taskIndex": 276,
+    "canonicalKey": "chicago-cbd-data-center-chil2|united-states",
+    "capturedAt": "2026-08-30T04:43:04.905Z",
+    "databaseRevision": "revision:2d52a5c71c945e3d0adf3ee1e6cf0d491baf0561ac97360e130698349ad74001",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "4bb48ac7b87dd506d87d0114a38345243d2ee18ade9537124944a0ffc585f558",
+    "productionSnapshotSha256": "79af102df9f94a98c4e19b01c623aa6de0b18831bac627eeba7d9aacd824f615",
+    "targetCompanySnapshotSha256": "c77be166bf51d09b8a3ff03f6d8b9fd383dd8d4bf4529ddffe39669a7b76309f",
+    "seedEntrySha256": "9986ea34b345048b077f3b1bb4de20a4507112ccd38f2073378ed568262da258",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "df861c3752af7772a0743a39ed6053dec8857fa3195338946790d152c8b17f46",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "aca578e15ae37e0a87c895a82541686bf8a6bc3d738a98873fb7c4419f86066a",
+      "citationsSha256": "996fa241fc1a2037726697d4fb2e3b9a56a24235e7890d5482ecaf4e16a731f9",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "1e699f39387a6e5114de479d38f30b84b2a42fda005a2a008e641e5b5307ffac",
+    "stateSha256": "435c899295f11dd495f5093a52f3b70f2e426f1f1497c2e8d8d14e2daac5e555",
+    "taskSnapshotSha256": "0f62e394c46617b56ce7509b8c0a74ffcb7f3ec68f6b6ff8e156f67246a9d044"
+  },
+  "contextSha256": "1344aa6d38d81c68a55781b5d789a709c64cea1e9890963a83849b77d4511c7e"
+}
