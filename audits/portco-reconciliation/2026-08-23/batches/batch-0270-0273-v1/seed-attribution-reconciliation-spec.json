@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_SEED_ATTRIBUTION_RECONCILIATION_SPEC",
+  "batchId": "batch-0270-0273-v1",
+  "batchSha256": "2c3d27e311b05440bb040ad447e0a86548e0c71648fad10125602de1531d6ce9",
+  "reconciledAt": "2026-08-30T03:52:14.000Z",
+  "sourceManifestSha256": "14c9bcd4290a2270dbe3c46a958372d0f9086bb396e82556ffbf35a88ef1ad75",
+  "rationale": "Replace the stale Recurrent Energy and Hamakua Energy Plant attribution rows with exact records for every active owner in the approved task 270–273 after-images, and add the active owners of QScale and the Harrison Street–1547 platform. BlackRock's GRP IV investment is linked to the matching curated fund. Canadian Solar, QScale founders and FifteenFortySeven are direct strategic or founder owners. Goldman Sachs' disclosed West Street Infrastructure Partners V vehicle is preserved without a curated-fund link. Harbert's Hamakua acquisition vehicle and Harrison Street's platform vehicle remain unresolved because the reviewed public evidence does not disclose an attributable fund; no fund is inferred.",
+  "removeRecordIds": [
+    "OFA-F3EEF947499A",
+    "OFA-3C883C09293D"
+  ],
+  "upsertRecords": [
+    {
+      "recordId": "OFA-F2DF086EDD76",
+      "companyName": "Recurrent Energy",
+      "country": "United States / Canada",
+      "investmentFirm": "BlackRock",
+      "currentVehicleName": "GRP IV Rose Bidco Ltd.; assignee of GRP IV UK Holdco Limited",
+      "investmentYear": 2024,
+      "stake": "US$500 million Series A convertible redeemable preferred investment; 20% on a fully diluted as-converted basis at the 2024 closes",
+      "targetLinkedFundName": "BlackRock Global Renewable Power Fund IV (GRP IV)",
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "BlackRock Global Renewable Power Fund IV (GRP IV)",
+      "attributionConfidence": null,
+      "attributionRationale": "Recurrent Energy and Canadian Solar disclosures identify BlackRock Global Renewable Power Fund IV and its GRP IV acquisition vehicle. The disclosed fund matches the curated BlackRock Global Renewable Power Fund IV record.",
+      "evidenceUrls": [
+        "https://recurrentenergy.com/recurrent-energy-announces-closing-of-500-million-investment-from-blackrock/",
+        "https://www.sec.gov/Archives/edgar/data/1375877/000141057825001046/csiq-20241231x20f.htm"
+      ]
+    },
+    {
+      "recordId": "OFA-C02AE84A4685",
+      "companyName": "Recurrent Energy",
+      "country": "United States / Canada",
+      "investmentFirm": "Canadian Solar",
+      "currentVehicleName": "Canadian Solar Energy Group B.V.",
+      "investmentYear": 2015,
+      "stake": "100% of ordinary shares; 80% on a fully diluted as-converted basis at the 2024 BlackRock closing",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "Canadian Solar's filings and acquisition release support direct corporate ownership through Canadian Solar Energy Group B.V.; this is not a managed infrastructure fund attribution.",
+      "evidenceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/1375877/000141057825001046/csiq-20241231x20f.htm",
+        "https://investors.canadiansolar.com/news-releases/news-release-details/canadian-solar-completes-acquisition-recurrent-energy-sharp"
+      ]
+    },
+    {
+      "recordId": "OFA-AA6D99511003",
+      "companyName": "QScale",
+      "country": "Canada",
+      "investmentFirm": "Goldman Sachs Asset Management",
+      "currentVehicleName": "West Street Infrastructure Partners V; acquisition vehicle not publicly disclosed",
+      "investmentYear": 2026,
+      "stake": "Control interest; exact percentage not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "West Street Infrastructure Partners V",
+      "attributionConfidence": null,
+      "attributionRationale": "Goldman Sachs Alternatives identifies West Street Infrastructure Partners V as the fund behind its controlling QScale acquisition. The disclosed fund is not yet a curated Fund Database record, so it remains unlinked.",
+      "evidenceUrls": [
+        "https://am.gs.com/en-us/advisors/news/press-release/2026/goldman-sachs-alternatives-acquire-qscale",
+        "https://am.gs.com/en-us/advisors/news/press-release/2026/WSIP-V-First-Close"
+      ]
+    },
+    {
+      "recordId": "OFA-7DF125F94E20",
+      "companyName": "QScale",
+      "country": "Canada",
+      "investmentFirm": "QScale founders and management",
+      "currentVehicleName": "Founder and management rollover vehicles not publicly disclosed",
+      "investmentYear": null,
+      "stake": "Minority interest; exact percentage not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "The acquisition announcement discloses continuing founder and management minority ownership. This is rollover ownership rather than an infrastructure fund investment.",
+      "evidenceUrls": [
+        "https://am.gs.com/en-us/advisors/news/press-release/2026/goldman-sachs-alternatives-acquire-qscale"
+      ]
+    },
+    {
+      "recordId": "OFA-D370F8B6FE22",
+      "companyName": "Hamakua Energy",
+      "country": "United States",
+      "investmentFirm": "Harbert Management Corporation",
+      "currentVehicleName": "Undisclosed HMC subsidiary through Hamakua Holdings, LLC",
+      "investmentYear": 2025,
+      "stake": "100% of Hamakua Holdings ownership interests",
+      "targetLinkedFundName": null,
+      "fundAttribution": "UNRESOLVED",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "HEI and Harbert confirm that an HMC subsidiary acquired all Hamakua Holdings interests, but the reviewed materials do not disclose a fund or acquisition-vehicle name. Harbert's infrastructure strategy label is not treated as a fund.",
+      "evidenceUrls": [
+        "https://www.hei.com/investor-relations/news-and-events/news/news-details/2025/HEI-Subsidiary-Sells-Hawaii-Island-Power-Plant-to-Experienced-Plant-Operator/default.aspx",
+        "https://www.harbert.net/news/march-2025-harbert-management-is-pleased-to-announce-the-successful-acquisition-of-the-hamakua-energy-plant"
+      ]
+    },
+    {
+      "recordId": "OFA-0582AB6D7BA5",
+      "companyName": "Harrison Street–1547 Data Center & Connectivity Platform",
+      "country": "United States",
+      "investmentFirm": "Harrison Street",
+      "currentVehicleName": "Asset-level joint ventures and SPVs; exact Harrison Street vehicle not publicly disclosed",
+      "investmentYear": 2020,
+      "stake": "Not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "UNRESOLVED",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "The platform and asset disclosures establish Harrison Street as a current joint-venture owner, but do not identify one attributable Harrison Street fund for the platform. No fund is inferred from asset-level SPVs.",
+      "evidenceUrls": [
+        "https://www.1547realty.com/resource/harrison-street-1547-acquire-carrier-hotel-data-center-hawaii-and-announce-expansion/",
+        "https://www.1547realty.com/resource/1547-and-harrison-street-acquire-historic-milwaukee-carrier-hotel-and-data-center/"
+      ]
+    },
+    {
+      "recordId": "OFA-4D05FC27EF7E",
+      "companyName": "Harrison Street–1547 Data Center & Connectivity Platform",
+      "country": "United States",
+      "investmentFirm": "FifteenFortySeven Critical Systems Realty",
+      "currentVehicleName": "Asset-level joint ventures and SPVs; 1547 Data Center Real Estate Fund II disclosed for certain assets only",
+      "investmentYear": 2020,
+      "stake": "Not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "FifteenFortySeven is the disclosed operating and development partner across the joint platform. Because Fund II is identified only for certain assets, the platform ownership is retained as a direct manager program without a fund link.",
+      "evidenceUrls": [
+        "https://www.1547realty.com/resource/harrison-street-1547-acquire-carrier-hotel-data-center-hawaii-and-announce-expansion/",
+        "https://www.sec.gov/Archives/edgar/data/1840644/000153949721000039/n2405-x1_premarketts.htm"
+      ]
+    }
+  ],
+  "specSha256": "596eab86f78f18e9abe87578f09637f8be5bf5c85a3ab30e134f3186173cc001"
+}
