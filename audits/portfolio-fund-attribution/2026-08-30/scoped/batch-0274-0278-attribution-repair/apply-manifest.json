@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-08-30",
+  "ledgerSha256": "3b8ab5dadc67c9ce072619d6431ead25b481a51e4842acc43e17cb3047249a67",
+  "sourceSnapshotSha256": "9fe68b1bd2f50cd3fd87c86a820bc6931d97dbe15d1514d9007ac785c35efe3e",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 1,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 0,
+      "UNRESOLVED": 0
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  },
+  "expectedMutationCount": 1,
+  "mutations": [
+    {
+      "recordId": "OFA-28DF59ADE5A8",
+      "ownershipPeriodId": "cmrxpk3f401z3ivhezyulp91w",
+      "companyName": "CoolCo",
+      "country": "United States",
+      "investmentFirm": "Harrison Street",
+      "currentVehicleName": "COOLCO LLC",
+      "databaseVehicleName": "COOLCO LLC",
+      "investmentYear": 2019,
+      "stake": "Not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": "Harrison Street Social Infrastructure Fund",
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": "Harrison Street Social Infrastructure Fund"
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Harrison Street Social Infrastructure Fund",
+        "attributionConfidence": null,
+        "attributionRationale": "Harrison Street's 2019 release states that it acquired ISQ CoolCo on behalf of the Harrison Street Social Infrastructure Fund. Current operating evidence continues to identify Harrison Street as owner; COOLCO LLC is the verified current company vehicle and the ownership percentage is not publicly disclosed."
+      },
+      "evidenceUrls": [
+        "https://harrisonst.com/harrison-street-continues-to-expand-investments-for-social-infrastructure-fund/",
+        "https://www.ever-greenenergy.com/our-work/coolco/"
+      ]
+    }
+  ],
+  "manifestSha256": "debe034eb2713abf6359e9d75b592bddeebf440861ed676091701bb07cdc8449"
+}
