@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_CORRECTION_DECISION",
+  "asOfDate": "2026-08-30",
+  "triggerBatchId": "batch-0274-0278-v3",
+  "triggerBatchSha256": "9326c6d7e14548704ce7c55a88b37b201db7f350387178348d1430ddef659dd9",
+  "triggerBatchReceiptSha256": "f1f9285a9422e4deae4567728e15f60563d5173cc750d232b10b3b9296a6af1f",
+  "decision": "ALIGN_ACTIVE_OWNERSHIP_ATTRIBUTION_METADATA",
+  "rationale": "The atomic PortCo transaction correctly applied CoolCo's verified Harrison Street ownership, COOLCO LLC vehicle and Harrison Street Social Infrastructure Fund link. The public drawer reads a separate ownership-attribution layer that retained the pre-release inferred classification. Align that one active ownership row to the direct Harrison Street disclosure and the exact seed-reconciled judgment.",
+  "mutations": [
+    {
+      "companyName": "CoolCo",
+      "ownershipPeriodIds": [
+        "cmrxpk3f401z3ivhezyulp91w"
+      ],
+      "outcome": "Disclosed Harrison Street Social Infrastructure Fund attribution with the existing linked fund preserved"
+    }
+  ],
+  "nonChanges": [
+    "CoolCo identity, aliases, redirect and publication status",
+    "Ownership organization, vehicle text, stake, dates and active state",
+    "Former I Squared ownership",
+    "Description, milestones, citations and primary source",
+    "Fund Database records; the repair creates or updates no fund",
+    "The completed atomic PortCo transaction and its durable receipt"
+  ],
+  "identityResolved": true,
+  "activeOwnershipResolved": true,
+  "unresolvedQuestions": []
+}
