@@ -1,0 +1,128 @@
+{
+  "generatedAt": "2026-08-30T05:52:00.000Z",
+  "actions": [
+    "CORRECT_COMPANY",
+    "MERGE_COMPANIES"
+  ],
+  "retiredCompanyIds": [
+    "cmrxpjhqr010nivhe7nzdhd12"
+  ],
+  "relationMerges": [
+    {
+      "kind": "OWNERSHIP_PERIOD",
+      "retiredRelationId": "cmrxpk3nc01zeivhegw9fkpil",
+      "canonicalRelationId": "cmtfaam72002crz2b9fjdofwo",
+      "rationale": "The retired Midway row's Harrison Street period is an asset-level instance of Harrison Street's continuing ownership in the same Harrison Street–1547 platform; the canonical platform period began with the partnership's first 2020 acquisition and remains active."
+    }
+  ],
+  "reviewedSeedRetirementTaskIds": [],
+  "rationale": "Merge the standalone Midway Technology Centre record into the existing Harrison Street–1547 Data Center & Connectivity Platform. Direct transaction-party evidence establishes that Midway/CHIL1 was one of four facilities sold by CIM Group to the Harrison Street–1547 joint venture on November 2, 2021, with 1547 continuing as manager. Preserve Midway Technology Centre, Midway Technology Center and CHIL1 as facility aliases, retain the platform's separate Harrison Street and 1547 ownership periods, and do not infer Harrison Street ownership of corporate 1547, a Harrison Street Digital Fund attribution, or an ownership exit from the facility's live sale marketing. No buyer or later closing was identified through August 19, 2026.",
+  "evidence": [
+    {
+      "url": "https://www.cimgroup.com/press-releases/cim-group-sells-portfolio-of-four-data-center-assets",
+      "purpose": "CIM Group confirms the completed four-facility sale, buyer joint venture, Midway asset details and 1547's continuing role",
+      "supports": [
+        "Midway/CHIL1 is an asset within the four-facility portfolio",
+        "CIM Group exited the asset-level venture on November 2, 2021",
+        "Harrison Street and 1547 acquired the portfolio through a joint venture"
+      ]
+    },
+    {
+      "url": "https://www.1547realty.com/resource/fifteenfortyseven-critical-systems-realty-and-harrison-street-acquire-portfolio-of-four-strategically-located-data-centers-in-new-york-chicago-and-wyoming/",
+      "purpose": "Buyer-side confirmation of portfolio composition and 1547 management",
+      "supports": [
+        "Midway Technology Centre is one facility in the acquired portfolio",
+        "1547 remained the facilities' manager after the transaction"
+      ]
+    },
+    {
+      "url": "https://www.1547realty.com/data-center/chicago-il-chil1/",
+      "purpose": "Current CHIL1 identity, facility boundary, footprint and operating-marketing status",
+      "supports": [
+        "Midway Technology Centre and CHIL1 identify the same facility",
+        "The facility remains within 1547's current portfolio"
+      ]
+    },
+    {
+      "url": "https://property.jll.com/listings/40-e-garfield-blvd-chicago",
+      "purpose": "Current sale marketing and subsequent-exit check",
+      "supports": [
+        "The property has been marketed for sale",
+        "The listing does not evidence a buyer, signed transfer or closing"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "companyFieldUpdates": {
+    "aliases": [
+      "1547 Critical Systems Realty",
+      "fifteenfortyseven Critical Systems Realty, LLC",
+      "1547 Realty",
+      "1547 CSR",
+      "Harrison Street–1547 platform",
+      "Midway Technology Centre",
+      "Midway Technology Center",
+      "CHIL1"
+    ],
+    "description": "The Harrison Street–1547 Data Center & Connectivity Platform is a U.S. portfolio of carrier-neutral data centers and interconnection facilities held through asset-level joint ventures and operated by FifteenFortySeven Critical Systems Realty. The partnership began with its September 3, 2020 acquisition of the Wells carrier hotel in Milwaukee and later expanded through properties including Midway Technology Centre (CHIL1), Pittock Block, AlohaNAP, DRFortress and facilities in Chicago, Orangeburg, Wyoming, Michigan, South Bend and McAllen. 1547 reports more than 1.25 million square feet under management. Harrison Street and 1547 are current co-owners, but exact platform stakes, the Harrison Street fund and any umbrella legal entity are not publicly disclosed. Corporate 1547 is the operator and sponsor rather than a company proven to be owned by Harrison Street, and the individual facilities are assets within the platform. Midway has been marketed for sale, but no buyer, signed transfer or closing was identified through August 19, 2026; no platform-level sale or signed pending ownership transaction was identified.",
+    "lastVerifiedAt": "2026-08-19T00:00:00.000Z"
+  },
+  "ownershipPeriodUpdates": [],
+  "ownershipPeriodAdditions": [],
+  "pendingOwnershipTransactionUpdates": [],
+  "pendingOwnershipTransactionAdditions": [],
+  "milestoneUpdates": [
+    {
+      "id": "cmtfaamef002grz2bw92bta7k",
+      "set": {
+        "date": "Nov 2, 2021",
+        "event": "CIM Group sold Midway/CHIL1, CHIL2, ORNY1 and CHWY1 to the Harrison Street–1547 joint venture, expanding the partnership to six data centers while 1547 remained manager.",
+        "category": "EXPANSION",
+        "sortDate": "2021-11-02T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.cimgroup.com/press-releases/cim-group-sells-portfolio-of-four-data-center-assets",
+          "https://www.1547realty.com/resource/fifteenfortyseven-critical-systems-realty-and-harrison-street-acquire-portfolio-of-four-strategically-located-data-centers-in-new-york-chicago-and-wyoming/"
+        ]
+      }
+    }
+  ],
+  "citationUpdates": [],
+  "citationAdditions": [
+    {
+      "id": null,
+      "label": "CIM Group — Four-data-center portfolio sale",
+      "url": "https://www.cimgroup.com/press-releases/cim-group-sells-portfolio-of-four-data-center-assets",
+      "sourceType": "PRESS_RELEASE",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "November 2021 sale of Midway/CHIL1 and three other facilities to the Harrison Street–1547 joint venture",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "1547 — Four-data-center portfolio acquisition",
+      "url": "https://www.1547realty.com/resource/fifteenfortyseven-critical-systems-realty-and-harrison-street-acquire-portfolio-of-four-strategically-located-data-centers-in-new-york-chicago-and-wyoming/",
+      "sourceType": "PRESS_RELEASE",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Buyer-side confirmation of facility composition, joint ownership and 1547 management",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "1547 — Midway Technology Centre (CHIL1)",
+      "url": "https://www.1547realty.com/data-center/chicago-il-chil1/",
+      "sourceType": "WEBSITE",
+      "purpose": "OPERATIONS_ASSETS",
+      "evidenceLabel": "Current Midway/CHIL1 identity, facility footprint and 1547 portfolio boundary",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "JLL — 40 E Garfield Boulevard sale listing",
+      "url": "https://property.jll.com/listings/40-e-garfield-blvd-chicago",
+      "sourceType": "WEBSITE",
+      "purpose": "SUPPORTING_CONTEXT",
+      "evidenceLabel": "Current Midway property sale marketing without a disclosed buyer or closing",
+      "isPrimary": false
+    }
+  ]
+}

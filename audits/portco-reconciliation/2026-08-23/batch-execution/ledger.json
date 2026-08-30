@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-30T05:31:40.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-08-30T06:00:01.000Z",
+  "activeBatchId": "batch-0279-0280-v1",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -4503,7 +4503,59 @@
           "reason": "Atomic PortCo receipt and protected CoolCo attribution-repair receipt are durable; canonical production serves the exact attribution receipt merge commit, CoolCo API and rendered drawer show the disclosed Harrison Street fund and verified ownership history, three exclusions and one deferral are durable, and no partial application occurred."
         }
       ]
+    },
+    {
+      "batchId": "batch-0279-0280-v1",
+      "state": "RELEASING",
+      "taskIds": [
+        "ledger:0279:drfortress:c7515be2",
+        "ledger:0280:midway-technology-centre:9f8844f1"
+      ],
+      "taskIndexes": [
+        279,
+        280
+      ],
+      "createdAt": "2026-08-30T05:44:19Z",
+      "updatedAt": "2026-08-30T06:00:01.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0279-0280-v1/batch-manifest.json",
+        "sha256": "aa0103f8a57bdbf222e3ff6de5eb2beaf2e9bee5c5a2e659de258df2ed820485"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-30T05:44:19Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-30T06:00:00.000Z",
+          "evidenceSha256": [
+            "aa0103f8a57bdbf222e3ff6de5eb2beaf2e9bee5c5a2e659de258df2ed820485"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "RELEASING",
+          "at": "2026-08-30T06:00:01.000Z",
+          "evidenceSha256": [
+            "aa0103f8a57bdbf222e3ff6de5eb2beaf2e9bee5c5a2e659de258df2ed820485"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "3f422004f20d8e9f83d300a534cc7cdb3ed0bfa0cb929bb0821f8bac67cc65fb"
+  "ledgerSha256": "45895b4245cbb07a23e2fa4a42a2761e8feee1aaae1b4bd16e376f073cd5628c"
 }
