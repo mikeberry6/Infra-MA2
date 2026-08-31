@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RELEASE_PREACTIVATION_DRIFT_CHECK",
+  "batchId": "batch-0281-0285-v1",
+  "checkedAt": "2026-08-31T00:58:39.026Z",
+  "baselineSnapshot": {
+    "path": "/tmp/portco-production-2026-08-30.json",
+    "capturedAt": "2026-08-30T08:59:52.996Z",
+    "snapshotSha256": "3245cbc28442b293a8c23ad57a11e4240b8e802c0daadd506b79f7569c662c44",
+    "companyCount": 1138
+  },
+  "observedSnapshot": {
+    "path": "/tmp/portco-production-2026-08-31-prebundle.json",
+    "capturedAt": "2026-08-31T00:58:39.026Z",
+    "snapshotSha256": "d4355a6374ce45cd618c930549e260d5d42597b8ba74cd52b5f40949381e5832",
+    "companyCount": 1138,
+    "readOnly": true
+  },
+  "targets": [
+    {
+      "companyId": "cmtfaalqe0020rz2bdtobqwxo",
+      "companyName": "Harrison Street–1547 Data Center & Connectivity Platform",
+      "baselineCompanySnapshotSha256": "35b3006d51a01ba6b6e088264d872fbca22cdffa9ac6a302ea39148785e342d8",
+      "observedCompanySnapshotSha256": "35b3006d51a01ba6b6e088264d872fbca22cdffa9ac6a302ea39148785e342d8",
+      "unchanged": true
+    },
+    {
+      "companyId": "cmrxpjhrc010oivhelk9l4fdo",
+      "companyName": "Orangeburg Data Center (ORNY1)",
+      "baselineCompanySnapshotSha256": "64af7ad05db743f5a6ba6be190ed9262d72a74069685bc8a3c6dab788aa76b87",
+      "observedCompanySnapshotSha256": "64af7ad05db743f5a6ba6be190ed9262d72a74069685bc8a3c6dab788aa76b87",
+      "unchanged": true
+    },
+    {
+      "companyId": "cmrxpjhru010pivhehhrfvld0",
+      "companyName": "Pittock Block Data Center",
+      "baselineCompanySnapshotSha256": "0d0ae994c6ec5d3da8a244dda4e2add9df6c143cb41712183ab009253d31b2cf",
+      "observedCompanySnapshotSha256": "0d0ae994c6ec5d3da8a244dda4e2add9df6c143cb41712183ab009253d31b2cf",
+      "unchanged": true
+    },
+    {
+      "companyId": "cmrxpjhv3010vivhe86ahld32",
+      "companyName": "Union Station Data Center and Carrier Hotel",
+      "baselineCompanySnapshotSha256": "fb06d17c23d955f9649319feefc8620b992c943e9d8e51516472fb2311ed2c7f",
+      "observedCompanySnapshotSha256": "fb06d17c23d955f9649319feefc8620b992c943e9d8e51516472fb2311ed2c7f",
+      "unchanged": true
+    },
+    {
+      "companyId": "cmrxpjhwq010yivhe6klfgqf5",
+      "companyName": "Warren County Solar Project",
+      "baselineCompanySnapshotSha256": "d31f1cffd07a4122416ce4ae707179a21d3b98284e7a365ae1535a2cf7cbd80a",
+      "observedCompanySnapshotSha256": "d31f1cffd07a4122416ce4ae707179a21d3b98284e7a365ae1535a2cf7cbd80a",
+      "unchanged": true
+    },
+    {
+      "companyId": "cmrxpjhxb010zivhelk49c64f",
+      "companyName": "Wells Building Data Center",
+      "baselineCompanySnapshotSha256": "7ffbdb53b74fc5762633b6255a23e654e6613b22d0a5faa9bdb60d176672dcab",
+      "observedCompanySnapshotSha256": "7ffbdb53b74fc5762633b6255a23e654e6613b22d0a5faa9bdb60d176672dcab",
+      "unchanged": true
+    },
+    {
+      "companyId": "cmrxpjhza0112ivhee9ol0nj7",
+      "companyName": "Wyoming Data Center (CHWY1)",
+      "baselineCompanySnapshotSha256": "6c25fa9341a9616e075c0357741a500df2b9863c760c422574215697db596f34",
+      "observedCompanySnapshotSha256": "6c25fa9341a9616e075c0357741a500df2b9863c760c422574215697db596f34",
+      "unchanged": true
+    }
+  ],
+  "result": "PASS",
+  "conclusion": "No target-company drift was observed after preparation. This is a read-only preactivation check and does not replace the mandatory fresh task, seed and dependency snapshots captured after durable bundle activation.",
+  "databaseOrManifestWritePerformed": false
+}
