@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_COMMIT_RECEIPT",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0281-0285-v3",
+  "batchSha256": "9d9da18bc48ad5cb7f00d2f49cea03e1e652b28cdb178b98ec378d2d51388a2b",
+  "releaseSha": "6b4f0d35e080b89c84df898b1388542e6aa72adf",
+  "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+  "transactionId": "f73f925b-d2b5-427a-8eeb-dd9c11d1ff26",
+  "appliedAt": "2026-08-31T10:03:03.603Z",
+  "members": [
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0281:orangeburg-data-center-orny1:77d85b56",
+      "taskIndex": 281,
+      "companyName": "Orangeburg Data Center (ORNY1)",
+      "proposalSha256": "54583d238fb4f605283a77287ccde6707e719b80fa67c7648a0d757e3274927c",
+      "approvalSha256": "eb6fd9410ec95875f861d9316073e3f43f257b88ae890932deed5040044f4834",
+      "afterImageSha256": "67025ed643184bf8ea5789e16a48e8841b4910c03569839f7a20a1a688e6b93d",
+      "approvedSeedEntrySha256": "040e1a7a21ee872661ab5479fc6d3652647241d712336bc947ba0a2d9063be1f",
+      "companyId": "cmtfaalqe0020rz2bdtobqwxo",
+      "auditEventId": "cmth2ldfz000bwq2buyw0vjnd"
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0282:pittock-block-data-center:c904067d",
+      "taskIndex": 282,
+      "companyName": "Pittock Block Data Center",
+      "outcome": "SUPERSEDED",
+      "decisionSha256": "4f00f8b087426106ddaa03a2f81c9ce0cb1a1aa0ea2d10a73643f287ed96218c"
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0283:union-station-data-center-and-carrier-hotel:a3bf1cb4",
+      "taskIndex": 283,
+      "companyName": "Union Station Data Center and Carrier Hotel",
+      "outcome": "SUPERSEDED",
+      "decisionSha256": "1942351f60ea64d095f49756a096bb46471e004d6a7e06a0d754315a87e423c9"
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0284:warren-county-solar-project:0c3e1f95",
+      "taskIndex": 284,
+      "companyName": "Warren County Solar Project",
+      "proposalSha256": "e6e21738cc6d3a0cb3b9a7dcb67c1820f3e5014a5ce98d322e2100f9be1d047b",
+      "approvalSha256": "7735fda5c1ab8e4bcffcb063ed0e58a5898b116e417882f359bb287a73865060",
+      "afterImageSha256": "aab890a2e103b7361de641351d9bc7c32df4f78af3b2f96f44594f1ee25d0a1e",
+      "approvedSeedEntrySha256": "ee057bde5e73393c47dc2b9408c095280bc8cfc0becafb09761765d719717a4e",
+      "companyId": "cmrxpjhwq010yivhe6klfgqf5",
+      "auditEventId": "cmth2lgpg000lwq2br08w6oyr"
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0285:wells-building-data-center:43636a55",
+      "taskIndex": 285,
+      "companyName": "Wells Building Data Center",
+      "outcome": "SUPERSEDED",
+      "decisionSha256": "f0d604c0e1b2d0ad3e46bd1fa5c43920658425f37b9b9d761f4c6ff37d3d640c"
+    }
+  ],
+  "verification": {
+    "databaseTransactionCommitted": true,
+    "seedArtifactVerifiedBeforeCommit": true,
+    "detailApiVerificationPending": true,
+    "partialDatabaseApplication": false
+  },
+  "receiptSha256": "a700af71cc25907d136f05dc7d496465521e19677be22c94e04b8c279b8f36aa"
+}
