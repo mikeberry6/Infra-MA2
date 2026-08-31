@@ -1,0 +1,73 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:batch:apply
+> npx tsx scripts/portco-reconciliation/batch-apply-cli.ts --batch-manifest=audits/portco-reconciliation/2026-08-23/batches/batch-0281-0285-v3/batch-manifest.json --batch-sha256=9d9da18bc48ad5cb7f00d2f49cea03e1e652b28cdb178b98ec378d2d51388a2b
+
+(node:3501) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "BATCH_DRY_RUN",
+  "batchId": "batch-0281-0285-v3",
+  "batchSha256": "9d9da18bc48ad5cb7f00d2f49cea03e1e652b28cdb178b98ec378d2d51388a2b",
+  "databaseWrites": false,
+  "seedWrites": false,
+  "plans": [
+    {
+      "companyName": "Harrison Street–1547 Data Center & Connectivity Platform",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to aliases, description, lastVerifiedAt, milestones, citations."
+        },
+        {
+          "kind": "MERGE_COMPANIES",
+          "relationIds": [
+            "cmrxpjhrc010oivhelk9l4fdo",
+            "cmrxpjhru010pivhehhrfvld0",
+            "cmrxpjhv3010vivhe86ahld32",
+            "cmrxpjhxb010zivhelk49c64f",
+            "cmrxpjhza0112ivhee9ol0nj7"
+          ],
+          "detail": "merge 5 production duplicate(s)"
+        }
+      ],
+      "changedFields": [
+        "aliases",
+        "citations",
+        "description",
+        "lastVerifiedAt",
+        "milestones",
+        "redirects"
+      ],
+      "retiredCompanyIds": [
+        "cmrxpjhrc010oivhelk9l4fdo",
+        "cmrxpjhru010pivhehhrfvld0",
+        "cmrxpjhv3010vivhe86ahld32",
+        "cmrxpjhxb010zivhelk49c64f",
+        "cmrxpjhza0112ivhee9ol0nj7"
+      ]
+    },
+    {
+      "companyName": "CZ Solar Warren, LLC",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to name, aliases, description, yearFounded, headquarters, lastVerifiedAt, ownershipPeriods, milestones, citations."
+        }
+      ],
+      "changedFields": [
+        "aliases",
+        "citations",
+        "description",
+        "headquarters",
+        "lastVerifiedAt",
+        "milestones",
+        "name",
+        "ownershipPeriods",
+        "yearFounded"
+      ],
+      "retiredCompanyIds": []
+    }
+  ]
+}
