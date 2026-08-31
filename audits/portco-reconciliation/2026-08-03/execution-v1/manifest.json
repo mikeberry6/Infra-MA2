@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-08-30T06:20:15.000Z",
+  "updatedAt": "2026-08-31T10:15:27.000Z",
   "runStatus": "IDLE",
   "activeTaskId": null,
   "source": {
@@ -29849,23 +29849,44 @@
       "managerIndex": 51,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "3cff4106d5b7f35dd78d0bc17bc5c3fd476ce1f94aecfefee04610d2c41c7cd9",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-08-31T09:37:00.000Z",
+      "updatedAt": "2026-08-31T10:15:27.000Z",
+      "completedAt": "2026-08-31T10:15:27.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "ff472fc97fcd78368b0620fd708a73bdbbd934341c4c9160689d657246b8251d",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0281-orangeburg-data-center-orny1/attempt-1/locked-task-snapshot.json",
+          "sha256": "ff472fc97fcd78368b0620fd708a73bdbbd934341c4c9160689d657246b8251d"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0281-orangeburg-data-center-orny1-v4/proposal.json",
+          "sha256": "54583d238fb4f605283a77287ccde6707e719b80fa67c7648a0d757e3274927c"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0281-orangeburg-data-center-orny1-v4.json",
+          "sha256": "eb6fd9410ec95875f861d9316073e3f43f257b88ae890932deed5040044f4834"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0281-0285-v3/production-apply/batch-apply-receipt.json#members/0/receipt",
+          "sha256": "1e51618af20af3b34f78cf17b1ede88ae3c03061bc5861bcbf0071699c07dd83"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0281-orangeburg-data-center-orny1-v4/proposal.json#afterImage",
+          "sha256": "67025ed643184bf8ea5789e16a48e8841b4910c03569839f7a20a1a688e6b93d"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-31T10:15:27.000Z",
+        "auditEventId": "cmth2ldfz000bwq2buyw0vjnd",
+        "transactionId": "f73f925b-d2b5-427a-8eeb-dd9c11d1ff26",
+        "receiptSha256": "1e51618af20af3b34f78cf17b1ede88ae3c03061bc5861bcbf0071699c07dd83",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33380434174"
+      },
       "history": [
         {
           "sequence": 1,
@@ -29876,6 +29897,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-08-31T10:15:27.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0281-0285-v3.",
+          "taskSnapshotSha256": "ff472fc97fcd78368b0620fd708a73bdbbd934341c4c9160689d657246b8251d",
+          "evidenceSha256": [
+            "1e51618af20af3b34f78cf17b1ede88ae3c03061bc5861bcbf0071699c07dd83",
+            "54583d238fb4f605283a77287ccde6707e719b80fa67c7648a0d757e3274927c",
+            "67025ed643184bf8ea5789e16a48e8841b4910c03569839f7a20a1a688e6b93d",
+            "9d9da18bc48ad5cb7f00d2f49cea03e1e652b28cdb178b98ec378d2d51388a2b",
+            "a4badc33980f22739eb00f5ff307acabef0b610d30ee6926226ff975acc1da35",
+            "eb6fd9410ec95875f861d9316073e3f43f257b88ae890932deed5040044f4834",
+            "ff472fc97fcd78368b0620fd708a73bdbbd934341c4c9160689d657246b8251d"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -29887,20 +29926,26 @@
       "managerIndex": 51,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "cd295a6213a2ecdd113e90651d295e4597dd7e4d340148cc9a9b8746c310a18a",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
-      "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "status": "SUPERSEDED",
+      "attempts": 1,
+      "startedAt": "2026-08-31T09:37:00.000Z",
+      "updatedAt": "2026-08-31T10:15:27.000Z",
+      "completedAt": "2026-08-31T10:15:27.000Z",
+      "exceptionReason": "Pittock Block is a constituent facility and single-purpose asset vehicle within the continuing Harrison Street–1547 data-center and connectivity platform. Task 281's consolidated, hash-bound after-image preserves Pittock and PTOR1 as aliases and its January 2021 acquisition as a platform milestone, so a separate Pittock company task would duplicate the same canonical identity.",
+      "supersededByTaskId": "ledger:0281:orangeburg-data-center-orny1:77d85b56",
+      "taskSnapshotSha256": "c2d307aab6a93f5a539387c47643766d4d762813ebfedb35266ecf0137aa7850",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0282-pittock-block-data-center/attempt-1/locked-task-snapshot.json",
+          "sha256": "c2d307aab6a93f5a539387c47643766d4d762813ebfedb35266ecf0137aa7850"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0281-0285-v3/decisions/0282-pittock-block-data-center.json",
+          "sha256": "4f00f8b087426106ddaa03a2f81c9ce0cb1a1aa0ea2d10a73643f287ed96218c"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -29914,6 +29959,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "SUPERSEDED",
+          "at": "2026-08-31T10:15:27.000Z",
+          "reason": "Pittock Block is a constituent facility and single-purpose asset vehicle within the continuing Harrison Street–1547 data-center and connectivity platform. Task 281's consolidated, hash-bound after-image preserves Pittock and PTOR1 as aliases and its January 2021 acquisition as a platform milestone, so a separate Pittock company task would duplicate the same canonical identity.",
+          "taskSnapshotSha256": "c2d307aab6a93f5a539387c47643766d4d762813ebfedb35266ecf0137aa7850",
+          "evidenceSha256": [
+            "4f00f8b087426106ddaa03a2f81c9ce0cb1a1aa0ea2d10a73643f287ed96218c",
+            "9d9da18bc48ad5cb7f00d2f49cea03e1e652b28cdb178b98ec378d2d51388a2b",
+            "a4badc33980f22739eb00f5ff307acabef0b610d30ee6926226ff975acc1da35",
+            "c2d307aab6a93f5a539387c47643766d4d762813ebfedb35266ecf0137aa7850"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -29925,20 +29985,26 @@
       "managerIndex": 51,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "e7a0a6c4c59cf40e69f2b36b8bfe417292db85ebe457520fb6ec7db68b90cafa",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
-      "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "status": "SUPERSEDED",
+      "attempts": 1,
+      "startedAt": "2026-08-31T09:37:00.000Z",
+      "updatedAt": "2026-08-31T10:15:27.000Z",
+      "completedAt": "2026-08-31T10:15:27.000Z",
+      "exceptionReason": "Union Station/South Bend is a constituent facility beneath the continuing Harrison Street–1547 data-center and connectivity platform. Task 281's consolidated, hash-bound after-image preserves its names and legal SPV as aliases and its 2024 acquisition as a platform milestone, so a separate company task would duplicate the same canonical identity.",
+      "supersededByTaskId": "ledger:0281:orangeburg-data-center-orny1:77d85b56",
+      "taskSnapshotSha256": "028bac24a20f0b9670117e01131fe9cbfd4ce09b0de0891528014d0c63484024",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0283-union-station-data-center-and-carrier-hotel/attempt-1/locked-task-snapshot.json",
+          "sha256": "028bac24a20f0b9670117e01131fe9cbfd4ce09b0de0891528014d0c63484024"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0281-0285-v3/decisions/0283-union-station-data-center-and-carrier-hotel.json",
+          "sha256": "1942351f60ea64d095f49756a096bb46471e004d6a7e06a0d754315a87e423c9"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -29952,6 +30018,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "SUPERSEDED",
+          "at": "2026-08-31T10:15:27.000Z",
+          "reason": "Union Station/South Bend is a constituent facility beneath the continuing Harrison Street–1547 data-center and connectivity platform. Task 281's consolidated, hash-bound after-image preserves its names and legal SPV as aliases and its 2024 acquisition as a platform milestone, so a separate company task would duplicate the same canonical identity.",
+          "taskSnapshotSha256": "028bac24a20f0b9670117e01131fe9cbfd4ce09b0de0891528014d0c63484024",
+          "evidenceSha256": [
+            "028bac24a20f0b9670117e01131fe9cbfd4ce09b0de0891528014d0c63484024",
+            "1942351f60ea64d095f49756a096bb46471e004d6a7e06a0d754315a87e423c9",
+            "9d9da18bc48ad5cb7f00d2f49cea03e1e652b28cdb178b98ec378d2d51388a2b",
+            "a4badc33980f22739eb00f5ff307acabef0b610d30ee6926226ff975acc1da35"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -29963,23 +30044,44 @@
       "managerIndex": 51,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "fc3fa5f6063b27977872981e3e4de59bdfb70543f2c3290d9c973b5b007a5063",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-08-31T09:37:00.000Z",
+      "updatedAt": "2026-08-31T10:15:27.000Z",
+      "completedAt": "2026-08-31T10:15:27.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "2f5b8cd294f3cd4d3c6c3701a7034194c2ec278bb6f1ca034773e23745b61717",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0284-warren-county-solar-project/attempt-1/locked-task-snapshot.json",
+          "sha256": "2f5b8cd294f3cd4d3c6c3701a7034194c2ec278bb6f1ca034773e23745b61717"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0284-warren-county-solar-project-v1/proposal.json",
+          "sha256": "e6e21738cc6d3a0cb3b9a7dcb67c1820f3e5014a5ce98d322e2100f9be1d047b"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0284-warren-county-solar-project-v1.json",
+          "sha256": "7735fda5c1ab8e4bcffcb063ed0e58a5898b116e417882f359bb287a73865060"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0281-0285-v3/production-apply/batch-apply-receipt.json#members/3/receipt",
+          "sha256": "5021740c6c327d48c774b2ae0e9bc4f1feb9f2eaa664d5477afebf396105a69e"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0284-warren-county-solar-project-v1/proposal.json#afterImage",
+          "sha256": "aab890a2e103b7361de641351d9bc7c32df4f78af3b2f96f44594f1ee25d0a1e"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-08-31T10:15:27.000Z",
+        "auditEventId": "cmth2lgpg000lwq2br08w6oyr",
+        "transactionId": "f73f925b-d2b5-427a-8eeb-dd9c11d1ff26",
+        "receiptSha256": "5021740c6c327d48c774b2ae0e9bc4f1feb9f2eaa664d5477afebf396105a69e",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33380434174"
+      },
       "history": [
         {
           "sequence": 1,
@@ -29990,6 +30092,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-08-31T10:15:27.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0281-0285-v3.",
+          "taskSnapshotSha256": "2f5b8cd294f3cd4d3c6c3701a7034194c2ec278bb6f1ca034773e23745b61717",
+          "evidenceSha256": [
+            "2f5b8cd294f3cd4d3c6c3701a7034194c2ec278bb6f1ca034773e23745b61717",
+            "5021740c6c327d48c774b2ae0e9bc4f1feb9f2eaa664d5477afebf396105a69e",
+            "7735fda5c1ab8e4bcffcb063ed0e58a5898b116e417882f359bb287a73865060",
+            "9d9da18bc48ad5cb7f00d2f49cea03e1e652b28cdb178b98ec378d2d51388a2b",
+            "a4badc33980f22739eb00f5ff307acabef0b610d30ee6926226ff975acc1da35",
+            "aab890a2e103b7361de641351d9bc7c32df4f78af3b2f96f44594f1ee25d0a1e",
+            "e6e21738cc6d3a0cb3b9a7dcb67c1820f3e5014a5ce98d322e2100f9be1d047b"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -30001,20 +30121,26 @@
       "managerIndex": 51,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "5a5742470ebb17b31ca87e871e7b49403a24c9b79587e58a9218e5eb9c29d65a",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
-      "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "status": "SUPERSEDED",
+      "attempts": 1,
+      "startedAt": "2026-08-31T09:37:00.000Z",
+      "updatedAt": "2026-08-31T10:15:27.000Z",
+      "completedAt": "2026-08-31T10:15:27.000Z",
+      "exceptionReason": "Wells Building is the first constituent facility acquired for the continuing Harrison Street–1547 data-center and connectivity platform, not a separate manager-level portfolio company. Task 281's consolidated, hash-bound after-image preserves Wells, MIWI1 and its legal SPV as aliases and the September 2020 acquisition as the platform's first milestone.",
+      "supersededByTaskId": "ledger:0281:orangeburg-data-center-orny1:77d85b56",
+      "taskSnapshotSha256": "38a80d34002790a803aa2fc37c5ad04e5920703b4c34f624fe99a312d3a41a80",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0285-wells-building-data-center/attempt-1/locked-task-snapshot.json",
+          "sha256": "38a80d34002790a803aa2fc37c5ad04e5920703b4c34f624fe99a312d3a41a80"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0281-0285-v3/decisions/0285-wells-building-data-center.json",
+          "sha256": "f0d604c0e1b2d0ad3e46bd1fa5c43920658425f37b9b9d761f4c6ff37d3d640c"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -30028,6 +30154,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "SUPERSEDED",
+          "at": "2026-08-31T10:15:27.000Z",
+          "reason": "Wells Building is the first constituent facility acquired for the continuing Harrison Street–1547 data-center and connectivity platform, not a separate manager-level portfolio company. Task 281's consolidated, hash-bound after-image preserves Wells, MIWI1 and its legal SPV as aliases and the September 2020 acquisition as the platform's first milestone.",
+          "taskSnapshotSha256": "38a80d34002790a803aa2fc37c5ad04e5920703b4c34f624fe99a312d3a41a80",
+          "evidenceSha256": [
+            "38a80d34002790a803aa2fc37c5ad04e5920703b4c34f624fe99a312d3a41a80",
+            "9d9da18bc48ad5cb7f00d2f49cea03e1e652b28cdb178b98ec378d2d51388a2b",
+            "a4badc33980f22739eb00f5ff307acabef0b610d30ee6926226ff975acc1da35",
+            "f0d604c0e1b2d0ad3e46bd1fa5c43920658425f37b9b9d761f4c6ff37d3d640c"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -30039,13 +30180,13 @@
       "managerIndex": 51,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "f8c99faa6a07fbfe9cccd30431b035002b62f2b83f27fbc62d90f9eb8e399622",
-      "status": "PENDING",
+      "status": "SUPERSEDED",
       "attempts": 0,
       "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
-      "supersededByTaskId": null,
+      "updatedAt": "2026-08-31T10:15:27.000Z",
+      "completedAt": "2026-08-31T10:15:27.000Z",
+      "exceptionReason": "Superseded by ledger:0281:orangeburg-data-center-orny1:77d85b56; its verified batch after-image covers the same canonical identity and ownership judgment.",
+      "supersededByTaskId": "ledger:0281:orangeburg-data-center-orny1:77d85b56",
       "taskSnapshotSha256": null,
       "artifacts": {
         "taskSnapshot": null,
@@ -30066,6 +30207,19 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "SUPERSEDED",
+          "at": "2026-08-31T10:15:27.000Z",
+          "reason": "Superseded by ledger:0281:orangeburg-data-center-orny1:77d85b56; its verified batch after-image covers the same canonical identity and ownership judgment.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "9d9da18bc48ad5cb7f00d2f49cea03e1e652b28cdb178b98ec378d2d51388a2b",
+            "a4badc33980f22739eb00f5ff307acabef0b610d30ee6926226ff975acc1da35"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -38316,5 +38470,5 @@
       ]
     }
   ],
-  "manifestSha256": "50d0d73b26fbffb33eafac88a0f0b585d704ad49556106b3774a5243aec3ef5f"
+  "manifestSha256": "e0f5e5d82b90065b79f2c5e4f8e672a7e3ade2a30243b4cf3d344f7422c84962"
 }
