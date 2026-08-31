@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-08-30T06:20:15.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-08-31T09:57:00.000Z",
+  "activeBatchId": "batch-0281-0285-v3",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -4590,7 +4590,181 @@
           "reason": "Protected atomic receipt is durable; canonical production serves the exact receipt merge commit; Midway redirects to the single Harrison Street–1547 platform with two current owners, preserved acquisition history and ten sources; DRFortress is durably deferred; API and rendered drawer checks passed with no partial application."
         }
       ]
+    },
+    {
+      "batchId": "batch-0281-0285-v1",
+      "state": "FAILED",
+      "taskIds": [
+        "ledger:0281:orangeburg-data-center-orny1:77d85b56",
+        "ledger:0282:pittock-block-data-center:c904067d",
+        "ledger:0283:union-station-data-center-and-carrier-hotel:a3bf1cb4",
+        "ledger:0284:warren-county-solar-project:0c3e1f95",
+        "ledger:0285:wells-building-data-center:43636a55"
+      ],
+      "taskIndexes": [
+        281,
+        282,
+        283,
+        284,
+        285
+      ],
+      "createdAt": "2026-08-31T07:32:09Z",
+      "updatedAt": "2026-08-31T07:54:00.000Z",
+      "completedAt": "2026-08-31T07:54:00.000Z",
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0281-0285-v1/batch-manifest.json",
+        "sha256": "1bce6dad136ac1a6187cbb78f1044d59d3b4a29807f073c929ec9ace2e0694ea"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": "Pre-release seed staging guard rejected the bundle before any seed or database write because the build config used byte-level SHA-256 values for the source manifest and research-normalization references instead of their canonical artifact hashes. Preserve this failed formation attempt and rebuild with corrected canonical lineage.",
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-31T07:32:09Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-31T07:52:00.000Z",
+          "evidenceSha256": [
+            "1bce6dad136ac1a6187cbb78f1044d59d3b4a29807f073c929ec9ace2e0694ea"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "FAILED",
+          "at": "2026-08-31T07:54:00.000Z",
+          "evidenceSha256": [
+            "1bce6dad136ac1a6187cbb78f1044d59d3b4a29807f073c929ec9ace2e0694ea"
+          ],
+          "reason": "Pre-release seed staging guard rejected the bundle before any seed or database write because the build config used byte-level SHA-256 values for the source manifest and research-normalization references instead of their canonical artifact hashes. Preserve this failed formation attempt and rebuild with corrected canonical lineage."
+        }
+      ]
+    },
+    {
+      "batchId": "batch-0281-0285-v2",
+      "state": "FAILED",
+      "taskIds": [
+        "ledger:0281:orangeburg-data-center-orny1:77d85b56",
+        "ledger:0282:pittock-block-data-center:c904067d",
+        "ledger:0283:union-station-data-center-and-carrier-hotel:a3bf1cb4",
+        "ledger:0284:warren-county-solar-project:0c3e1f95",
+        "ledger:0285:wells-building-data-center:43636a55"
+      ],
+      "taskIndexes": [
+        281,
+        282,
+        283,
+        284,
+        285
+      ],
+      "createdAt": "2026-08-31T07:55:00.000Z",
+      "updatedAt": "2026-08-31T09:36:00.000Z",
+      "completedAt": "2026-08-31T09:36:00.000Z",
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0281-0285-v2/batch-manifest.json",
+        "sha256": "e4468f458ca0cb76618eb97a38f4400845f70656feac7550b7b15ff8a6a69c92"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": "Pre-release production dry-run rejected one milestone lineage mapping because a retired acquisition was mapped to a canonical Expansion category. No database write occurred. Preserve this failed attempt, correct category-compatible relation lineage, and rebuild.",
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-31T07:55:00.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-31T07:59:00.000Z",
+          "evidenceSha256": [
+            "e4468f458ca0cb76618eb97a38f4400845f70656feac7550b7b15ff8a6a69c92"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "FAILED",
+          "at": "2026-08-31T09:36:00.000Z",
+          "evidenceSha256": [
+            "e4468f458ca0cb76618eb97a38f4400845f70656feac7550b7b15ff8a6a69c92"
+          ],
+          "reason": "Pre-release production dry-run rejected one milestone lineage mapping because a retired acquisition was mapped to a canonical Expansion category. No database write occurred. Preserve this failed attempt, correct category-compatible relation lineage, and rebuild."
+        }
+      ]
+    },
+    {
+      "batchId": "batch-0281-0285-v3",
+      "state": "RELEASING",
+      "taskIds": [
+        "ledger:0281:orangeburg-data-center-orny1:77d85b56",
+        "ledger:0282:pittock-block-data-center:c904067d",
+        "ledger:0283:union-station-data-center-and-carrier-hotel:a3bf1cb4",
+        "ledger:0284:warren-county-solar-project:0c3e1f95",
+        "ledger:0285:wells-building-data-center:43636a55"
+      ],
+      "taskIndexes": [
+        281,
+        282,
+        283,
+        284,
+        285
+      ],
+      "createdAt": "2026-08-31T09:37:00.000Z",
+      "updatedAt": "2026-08-31T09:57:00.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0281-0285-v3/batch-manifest.json",
+        "sha256": "9d9da18bc48ad5cb7f00d2f49cea03e1e652b28cdb178b98ec378d2d51388a2b"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-08-31T09:37:00.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-08-31T09:56:00.000Z",
+          "evidenceSha256": [
+            "9d9da18bc48ad5cb7f00d2f49cea03e1e652b28cdb178b98ec378d2d51388a2b"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "RELEASING",
+          "at": "2026-08-31T09:57:00.000Z",
+          "evidenceSha256": [
+            "9d9da18bc48ad5cb7f00d2f49cea03e1e652b28cdb178b98ec378d2d51388a2b"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "ade52addf484a0e95af410643ad0cbf5ea4895ccacbc83579090cfe84b9806b9"
+  "ledgerSha256": "a14958b564aa1273a7a786e38dc23f6ad8c404dc4ddc83a9405382a55f1a6afd"
 }

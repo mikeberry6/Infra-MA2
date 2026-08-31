@@ -1,0 +1,234 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0285:wells-building-data-center:43636a55",
+  "taskIndex": 285,
+  "companyName": "Wells Building Data Center",
+  "generatedAt": "2026-08-31T07:39:21.479Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0285-wells-building-data-center/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 285,
+    "taskId": "ledger:0285:wells-building-data-center:43636a55",
+    "canonicalKey": "wells-building-data-center|united-states",
+    "companyName": "Wells Building Data Center",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 51,
+    "managers": [
+      "Harrison Street"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "051-harrison-street:repo-only:009:wells-building-data-center"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjhxb010zivhelk49c64f"
+    ],
+    "seedKeys": [
+      "wells building data center|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.1547realty.com/resource/1547-and-harrison-street-acquire-historic-milwaukee-carrier-hotel-and-data-center/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Harrison Street MATCHED_ELSEWHERE: Rolled into 1547 Critical Systems Realty platform consolidation.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjhxb010zivhelk49c64f",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "wells-building-data-center|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjhxb010zivhelk49c64f",
+    "name": "Wells Building Data Center",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Carrier hotel and colocation data center",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Wells Building Data Center is a carrier hotel and colocation facility in downtown Milwaukee. Its customers include carriers, enterprises, and network operators that need mission-critical colocation and access to a dense set of service providers in Wisconsin. The asset follows an asset-heavy digital-infrastructure model based on owned data center real estate and interconnection infrastructure. Public materials identify the site at 324 East Wisconsin Avenue and describe it as a 15-story, 165,000-square-foot building served by more than 35 telecommunications providers. Harrison Street and 1547 acquired the facility in September 2020; the ownership split is not publicly disclosed. The property remains a core Midwest carrier-hotel asset within the 1547 portfolio.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Wisconsin",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk3tv01zqivhegwn8yzu4",
+        "managerName": "Harrison Street",
+        "organizationName": "Harrison Street",
+        "fundName": null,
+        "vehicleName": "Harrison Street Digital Fund",
+        "stake": null,
+        "investmentYear": 2020,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplza704bfivhefx79p2qw",
+        "date": "Sep 3, 2020",
+        "event": "Harrison Street and 1547 announced the acquisition of the Wells Building in Milwaukee.",
+        "category": "ACQUISITION",
+        "sortDate": "2020-09-03T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplzas04bgivhe0iuhcloz",
+        "date": "Nov 2, 2021",
+        "event": "The firms referenced the Wells Building as an earlier acquisition when announcing their four-asset portfolio deal.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-11-02T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxprj230b7qivhew3iu6w31",
+        "label": "1547Realty — Wells Building Data Center",
+        "url": "https://www.1547realty.com/data-center/milwaukee-wi-miwi1/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "1547Realty — Wells Building Data Center",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxprj2z0b7sivhe2wvd3zzv",
+        "label": "Announcement date source — Harrison Street — Wells Building Data Center",
+        "url": "https://www.1547realty.com/resource/1547-and-harrison-street-acquire-historic-milwaukee-carrier-hotel-and-data-center/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Harrison Street transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprj3g0b7tivhetrtj36yi",
+        "label": "1547Realty — Chicago CBD Data Center (CHIL2)",
+        "url": "https://www.1547realty.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "1547Realty company profile",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Wells Building Data Center",
+    "investmentFirm": "Harrison Street",
+    "sector": "Digital",
+    "subsector": "Carrier hotel and colocation data center",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Harrison Street Digital Fund",
+    "description": "Wells Building Data Center is a carrier hotel and colocation facility in downtown Milwaukee. Its customers include carriers, enterprises, and network operators that need mission-critical colocation and access to a dense set of service providers in Wisconsin. The asset follows an asset-heavy digital-infrastructure model based on owned data center real estate and interconnection infrastructure. Public materials identify the site at 324 East Wisconsin Avenue and describe it as a 15-story, 165,000-square-foot building served by more than 35 telecommunications providers. Harrison Street and 1547 acquired the facility in September 2020; the ownership split is not publicly disclosed. The property remains a core Midwest carrier-hotel asset within the 1547 portfolio.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2020,
+    "headquarters": "Wisconsin",
+    "milestones": [
+      {
+        "date": "Sep 3, 2020",
+        "event": "Harrison Street and 1547 announced the acquisition of the Wells Building in Milwaukee.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Nov 2, 2021",
+        "event": "The firms referenced the Wells Building as an earlier acquisition when announcing their four-asset portfolio deal.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "1547Realty — Wells Building Data Center",
+        "url": "https://www.1547realty.com/data-center/milwaukee-wi-miwi1/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Announcement date source — Harrison Street — Wells Building Data Center",
+        "url": "https://www.1547realty.com/resource/1547-and-harrison-street-acquire-historic-milwaukee-carrier-hotel-and-data-center/",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "1547Realty — Wells Building Data Center",
+        "url": "https://www.1547realty.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Harrison Street",
+        "ownershipVehicle": "Harrison Street Digital Fund",
+        "investmentYear": 2020,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi9hc0029ivhep5jy7vm9",
+        "name": "Harrison Street",
+        "updatedAt": "2026-07-23T16:09:19.488Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0285:wells-building-data-center:43636a55",
+    "taskIndex": 285,
+    "canonicalKey": "wells-building-data-center|united-states",
+    "capturedAt": "2026-08-31T07:39:21.479Z",
+    "databaseRevision": "revision:856e2a1d5a04d152808907a938eb321c3d26f5972c075a5f6b8c70d20891c48b",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "5a5742470ebb17b31ca87e871e7b49403a24c9b79587e58a9218e5eb9c29d65a",
+    "productionSnapshotSha256": "57345404d6763593d3d85da867fe8e02378dc90021214f8caca0cca9bbf90a7a",
+    "targetCompanySnapshotSha256": "2cfc4e6b60af608ce243b2fc15b834a58f81f078b9c7b24d5ff4e16a29592dc9",
+    "seedEntrySha256": "916a63e8ff58ab053db6d73520ee2d743e6376c903dd305f3e60be715c57659c",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "008472629f89f18c8f6e09e23b5ea697dec3619923fe889d2afe85d2d0ac1371",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "aca578e15ae37e0a87c895a82541686bf8a6bc3d738a98873fb7c4419f86066a",
+      "citationsSha256": "5431563e8d3b8c3aec1e6d7da0b843f50e63cbeb9d94e04bc68643339b17b19c",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "f0a41072e4b008f68f1f0074923004ac566fa8a7bf5ddec9d729b323811afead",
+    "stateSha256": "43c92acb832449b411979ab55c323895d6b9bca7eb129c88af1063c73df1df09",
+    "taskSnapshotSha256": "38a80d34002790a803aa2fc37c5ad04e5920703b4c34f624fe99a312d3a41a80"
+  },
+  "contextSha256": "dfd0d1ed35c2a89b5279b8b5ba0afde968258332e51fe500b635dd3d884b70b5"
+}

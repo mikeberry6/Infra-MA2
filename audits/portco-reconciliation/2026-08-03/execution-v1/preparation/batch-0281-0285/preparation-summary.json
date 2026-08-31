@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RELEASE_BUNDLE_PREPARATION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "preparedAt": "2026-08-30T06:53:58Z",
+  "authoritative": false,
+  "releaseBlockedBy": {
+    "type": "VERCEL_BUILD_RATE_LIMIT",
+    "completionCommit": "7f7441bbb5625c453a4ea9508a618d0b25c63b0e",
+    "message": "The preceding completion-only commit must be served by the canonical Vercel production deployment before the next durable bundle can activate."
+  },
+  "sharedAdjudication": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/shared-adjudications/harrison-street-1547-platform-boundary/attempt-1/decision.json",
+    "decision": "KEEP_PLATFORM_MERGE_ALL_FACILITIES",
+    "confidence": "HIGH",
+    "conversationUrl": "https://chatgpt.com/c/6a93ce84-f064-83e9-a518-d672f0095d77",
+    "decisionJsonFileSha256": "f6681ea6e64cd299fccc4bbbabf2f667b790db823d43858e352c088698fe145b",
+    "sourceVerificationPath": "audits/portco-reconciliation/2026-08-03/execution-v1/shared-adjudications/harrison-street-1547-platform-boundary/attempt-1/source-verification.json"
+  },
+  "plannedMembers": [
+    {
+      "taskIndex": 281,
+      "taskId": "ledger:0281:orangeburg-data-center-orny1:77d85b56",
+      "plannedOutcome": "MUTATION",
+      "actions": [
+        "CORRECT_COMPANY",
+        "MERGE_COMPANIES"
+      ],
+      "canonicalSurvivorId": "cmtfaalqe0020rz2bdtobqwxo",
+      "retiredCompanyIds": [
+        "cmrxpjhrc010oivhelk9l4fdo",
+        "cmrxpjhru010pivhehhrfvld0",
+        "cmrxpjhv3010vivhe86ahld32",
+        "cmrxpjhxb010zivhelk49c64f",
+        "cmrxpjhza0112ivhee9ol0nj7"
+      ],
+      "supersedesTaskIndexes": [
+        282,
+        283,
+        285,
+        286
+      ],
+      "draftProposalSha256": "ac87028385efc33ab06522863bb66d9b0d86cbbda32a6748ed3a80fcd4a8f489",
+      "draftAfterImageSha256": "f64651c575970e8c41602edaf2436a2ab50fa457c6b4e7519ec1370722dd94cc",
+      "draftTargetCompanySnapshotSha256": "149c838a7637facc30f69504acb75f8998ab3c592026d40f8e5f2061c4a0f8b0",
+      "draftProductionSnapshotSha256": "9ba152c579964b709a8037ff4119634c3f021077e95df0ed53e4b727087d9ae7"
+    },
+    {
+      "taskIndex": 282,
+      "taskId": "ledger:0282:pittock-block-data-center:c904067d",
+      "plannedOutcome": "SUPERSEDED_BY_TASK_281"
+    },
+    {
+      "taskIndex": 283,
+      "taskId": "ledger:0283:union-station-data-center-and-carrier-hotel:a3bf1cb4",
+      "plannedOutcome": "SUPERSEDED_BY_TASK_281"
+    },
+    {
+      "taskIndex": 284,
+      "taskId": "ledger:0284:warren-county-solar-project:0c3e1f95",
+      "plannedOutcome": "MUTATION",
+      "actions": [
+        "CORRECT_COMPANY"
+      ],
+      "canonicalCompanyId": "cmrxpjhwq010yivhe6klfgqf5",
+      "draftProposalSha256": "e218e1edf54455427ae272f24965c7eb76270d1b2a57cfe479eb6eba84e49af4",
+      "draftAfterImageSha256": "aab890a2e103b7361de641351d9bc7c32df4f78af3b2f96f44594f1ee25d0a1e",
+      "draftTargetCompanySnapshotSha256": "5edc7856a377010a8e083d55bdb9aa5b5666fb607cab09e877185368e28b4a85",
+      "draftProductionSnapshotSha256": "da429a6d6d2c36ae8bb3d0c450cc8c0d48a6af14d98a128e417be3106dc2f2ae"
+    },
+    {
+      "taskIndex": 285,
+      "taskId": "ledger:0285:wells-building-data-center:43636a55",
+      "plannedOutcome": "SUPERSEDED_BY_TASK_281"
+    }
+  ],
+  "postBundleTerminalAction": {
+    "taskIndex": 286,
+    "taskId": "ledger:0286:wyoming-data-center-chwy1:c8f7768a",
+    "plannedOutcome": "SUPERSEDED_BY_TASK_281_AFTER_VERIFIED_APPLY"
+  },
+  "collisionAnalysis": {
+    "result": "PASS",
+    "reason": "All five Harrison Street–1547 facility identities are consolidated into one task-281 after-image, so no two mutating bundle members target the same survivor. Task 284 targets an unrelated solar-project company."
+  },
+  "requiredBeforeRelease": [
+    "Wait for canonical Vercel production to serve exact completion commit 7f7441bbb5625c453a4ea9508a618d0b25c63b0e.",
+    "Recapture one fresh production snapshot and task-scoped contexts.",
+    "Regenerate both proposals from these preparation specs; do not authorize the draft hashes recorded here.",
+    "Re-run shared-source compatibility, dependency, target, seed and collision validation.",
+    "Activate the durable bundle only after all regenerated safeguards pass."
+  ]
+}

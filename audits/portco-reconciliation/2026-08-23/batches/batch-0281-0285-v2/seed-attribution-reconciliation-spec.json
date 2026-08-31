@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_SEED_ATTRIBUTION_RECONCILIATION_SPEC",
+  "batchId": "batch-0281-0285-v2",
+  "batchSha256": "e4468f458ca0cb76618eb97a38f4400845f70656feac7550b7b15ff8a6a69c92",
+  "reconciledAt": "2026-08-31T08:02:00.000Z",
+  "sourceManifestSha256": "38ef892a8cc4a55adbb94a5bf74b72a1871e5183c2ff09921218e525ec11f2e5",
+  "rationale": "Remove the five retired facility-level Harrison Street attribution records after consolidation into the existing Harrison Street–1547 platform. Replace the Warren County Solar Project attribution with the corrected CZ Solar Warren, LLC identity and Harrison Street direct-program vehicle label; public evidence identifies the Social Infrastructure Strategy but no specific fund, vehicle or ownership percentage.",
+  "removeRecordIds": [
+    "OFA-12E498548AD3",
+    "OFA-E5879CACC06C",
+    "OFA-DBAF7ADB31F4",
+    "OFA-D315CF17BD1C",
+    "OFA-9C1E266E2CFB"
+  ],
+  "upsertRecords": [
+    {
+      "recordId": "OFA-AEA81C9BFA30",
+      "companyName": "CZ Solar Warren, LLC",
+      "country": "United States",
+      "investmentFirm": "Harrison Street",
+      "currentVehicleName": "Harrison Street",
+      "investmentYear": 2022,
+      "stake": null,
+      "targetLinkedFundName": null,
+      "fundAttribution": "UNRESOLVED",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "Harrison Street acquired Cincinnati Zoo Solar through its Social Infrastructure Strategy, but the reviewed public sources do not identify a specific fund, managed account, upstream vehicle or ownership percentage.",
+      "evidenceUrls": [
+        "https://harrisonst.com/harrison-street-acquires-28-mw-cincinnati-solar-project/",
+        "https://www.harrisonst.com/wp-content/uploads/2023/06/HS-ESG-Impact-Report_2022.pdf",
+        "https://cincinnatizoo.org/bowyer-farm-restoring-land-for-wildlife-agriculture-and-future-generations/"
+      ]
+    }
+  ],
+  "specSha256": "7c19aa6e05b18522cc2fd5bda51c0f53c6fbf276e561f3ce1e5ca4bc46a7a98f"
+}

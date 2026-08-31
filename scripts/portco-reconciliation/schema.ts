@@ -651,7 +651,7 @@ export const pendingOwnershipTransactionImageSchema = z.strictObject({
   }
 });
 
-const milestoneImageSchema = z.strictObject({
+export const milestoneImageSchema = z.strictObject({
   id: optionalText,
   date: nonEmpty,
   event: nonEmpty,

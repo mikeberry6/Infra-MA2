@@ -1,0 +1,364 @@
+{
+  "generatedAt": "2026-08-30T06:53:58.000Z",
+  "actions": [
+    "CORRECT_COMPANY",
+    "MERGE_COMPANIES"
+  ],
+  "retiredCompanyIds": [
+    "cmrxpjhrc010oivhelk9l4fdo",
+    "cmrxpjhru010pivhehhrfvld0",
+    "cmrxpjhv3010vivhe86ahld32",
+    "cmrxpjhxb010zivhelk49c64f",
+    "cmrxpjhza0112ivhee9ol0nj7"
+  ],
+  "relationMerges": [
+    {
+      "kind": "OWNERSHIP_PERIOD",
+      "retiredRelationId": "cmrxpk3nw01zfivhe78byrc81",
+      "canonicalRelationId": "cmtfaam72002crz2b9fjdofwo",
+      "rationale": "Orangeburg's asset-level Harrison Street relation is represented by the canonical platform period; the unsupported Digital Fund label is not carried forward."
+    },
+    {
+      "kind": "OWNERSHIP_PERIOD",
+      "retiredRelationId": "cmrxpk3og01zgivhedji4248j",
+      "canonicalRelationId": "cmtfaam72002crz2b9fjdofwo",
+      "rationale": "Pittock's single-purpose asset vehicle sits beneath the continuing Harrison Street platform period; the unsupported Digital Fund label is not carried forward."
+    },
+    {
+      "kind": "OWNERSHIP_PERIOD",
+      "retiredRelationId": "cmrxpk3rs01zmivhe8z2a3nto",
+      "canonicalRelationId": "cmtfaam72002crz2b9fjdofwo",
+      "rationale": "South Bend was added to the same Harrison Street–1547 program and does not create a second manager-level ownership period."
+    },
+    {
+      "kind": "OWNERSHIP_PERIOD",
+      "retiredRelationId": "cmrxpk3tv01zqivhegwn8yzu4",
+      "canonicalRelationId": "cmtfaam72002crz2b9fjdofwo",
+      "rationale": "Wells was the first asset in the same continuing Harrison Street–1547 platform period."
+    },
+    {
+      "kind": "OWNERSHIP_PERIOD",
+      "retiredRelationId": "cmrxpk3xz01ztivhece1ssvcu",
+      "canonicalRelationId": "cmtfaam72002crz2b9fjdofwo",
+      "rationale": "Cheyenne is an underlying facility from the 2021 four-asset acquisition, not a separate manager-level holding."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxplyiu04akivhebzqoih64",
+      "canonicalRelationId": "cmtfaamef002grz2bw92bta7k",
+      "rationale": "Orangeburg's acquisition is part of the canonical November 2021 four-asset platform expansion."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxplyje04alivhe27arqw0k",
+      "canonicalRelationId": "cmtfaamlp002irz2bivd0wwb6",
+      "rationale": "Orangeburg's scale and expansion detail is preserved in the canonical April 2026 milestone."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxplykk04amivhe2hseanoz",
+      "canonicalRelationId": "cmrxplyh904aiivhexr2qncwh",
+      "rationale": "Pittock's January 2021 acquisition is preserved as a canonical platform milestone."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxplz2j04b5ivhe0ei079i5",
+      "canonicalRelationId": "cmtfaami2002hrz2b7c4ts9lm",
+      "rationale": "South Bend's September 2024 acquisition is preserved in the canonical 2024 platform-acquisition milestone."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxplza704bfivhefx79p2qw",
+      "canonicalRelationId": "cmtfaamaq002frz2bjb5pjq21",
+      "rationale": "Wells' September 2020 acquisition is already the canonical first-platform milestone."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxplzas04bgivhe0iuhcloz",
+      "canonicalRelationId": "cmtfaamef002grz2bw92bta7k",
+      "rationale": "The 2021 cross-reference to the earlier Wells acquisition is preserved in the canonical four-asset acquisition milestone."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxplzip04bnivhesozr96cz",
+      "canonicalRelationId": "cmtfaamef002grz2bw92bta7k",
+      "rationale": "Cheyenne's acquisition is part of the canonical November 2021 four-asset platform expansion."
+    }
+  ],
+  "reviewedSeedRetirementTaskIds": [],
+  "rationale": "Apply one consistent platform boundary across the Harrison Street–1547 data-center program. Direct manager, co-sponsor, seller, SEC and current operator evidence shows that Wells, Pittock, Orangeburg, Cheyenne and South Bend are constituent facilities or asset SPVs inside one continuing national data-center and connectivity platform. None of the separate property, borrower, lease or project LLCs establishes a distinct manager-level operating company, and no subsequent sale of any of the five target facilities was identified through August 30, 2026. Retire all five duplicate standalone company records into the existing Harrison Street–1547 Data Center & Connectivity Platform, preserve their names and legal SPVs as aliases, retain the platform's separate Harrison Street and FifteenFortySeven owner periods, and do not infer a Harrison Street fund, vehicle, ownership percentage or ownership of corporate 1547.",
+  "evidence": [
+    {
+      "url": "https://www.cimgroup.com/press-releases/cim-group-sells-portfolio-of-four-data-center-assets",
+      "purpose": "Seller confirmation of the November 2021 four-facility sale to the Harrison Street–1547 joint venture",
+      "supports": [
+        "Orangeburg and Cheyenne were acquired as facilities in one portfolio transaction",
+        "The buyer was the Harrison Street–1547 joint venture",
+        "CIM Group exited the four asset-level holdings"
+      ]
+    },
+    {
+      "url": "https://harrisonst.com/exclusive-harrison-street-and-fifteenfortyseven-acquire-four-data-center-facilities-in-u-s/",
+      "purpose": "Harrison Street confirmation of the common portfolio boundary and six-asset relationship",
+      "supports": [
+        "The November 2021 acquisition expanded one Harrison Street–1547 relationship to six facilities",
+        "1547 continued managing the assets"
+      ]
+    },
+    {
+      "url": "https://www.1547realty.com/resource/1547-and-harrison-street-acquire-historic-milwaukee-carrier-hotel-and-data-center/",
+      "purpose": "Official evidence for the first Wells acquisition and digital-platform boundary",
+      "supports": [
+        "Wells was the first Harrison Street–1547 acquisition in September 2020",
+        "The parties described the transaction as growing their digital platform"
+      ]
+    },
+    {
+      "url": "https://www.1547realty.com/resource/1547-and-harrison-street-acquire-portland-carrier-hotel-and-data-center/",
+      "purpose": "Official evidence for Pittock's acquisition into the common connectivity platform",
+      "supports": [
+        "Pittock was acquired by 1547 in partnership with Harrison Street",
+        "The facility was added to the connectivity-focused platform"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1840644/000153949721000039/n2405-x1_premarketts.htm",
+      "purpose": "SEC evidence for Pittock's single-purpose borrower and asset-level joint-venture boundary",
+      "supports": [
+        "1547 CSR - Pittock Block, LLC is a single-purpose borrower",
+        "The sponsor is the Harrison Street–1547 joint venture",
+        "A 1547 affiliate manages the property"
+      ]
+    },
+    {
+      "url": "https://harrisonst.com/fifteenfortyseven-critical-systems-realty-and-harrison-street-acquire-the-union-station-data-center-and-carrier-hotel-in-south-bend-indiana/",
+      "purpose": "Official evidence for South Bend's addition to the common connectivity portfolio",
+      "supports": [
+        "South Bend was acquired in partnership with Harrison Street",
+        "The facility was brought under 1547's umbrella of connected facilities"
+      ]
+    },
+    {
+      "url": "https://www.1547realty.com/resource/harrison-street-1547-acquire-carrier-hotel-data-center-hawaii-and-announce-expansion/",
+      "purpose": "Official articulation of the joint national data-center and connectivity platform",
+      "supports": [
+        "The parties operate one joint national multi-site program",
+        "The platform is countable even though no umbrella legal entity is asserted"
+      ]
+    },
+    {
+      "url": "https://www.1547realty.com/data-centers/",
+      "purpose": "Current operator roster and subsequent-exit control",
+      "supports": [
+        "All five target facilities remain on 1547's current roster",
+        "Other divested facilities are explicitly marked Sold"
+      ]
+    },
+    {
+      "url": "https://www.1547realty.com/resource/harrison-street-asset-management-and-fifteenfortyseven-critical-systems-realty-achieve-full-occupancy-at-orangeburg-data-center-with-further-expansion-underway/",
+      "purpose": "April 2026 evidence of continuing joint ownership activity at Orangeburg",
+      "supports": [
+        "Orangeburg remained within the joint program",
+        "The joint venture was expanding the facility in 2026"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "companyFieldUpdates": {
+    "aliases": [
+      "1547 Critical Systems Realty",
+      "fifteenfortyseven Critical Systems Realty, LLC",
+      "1547 Realty",
+      "1547 CSR",
+      "Harrison Street–1547 platform",
+      "Midway Technology Centre",
+      "Midway Technology Center",
+      "CHIL1",
+      "Orangeburg Data Center",
+      "Orangeburg Data Center (ORNY1)",
+      "ORNY1",
+      "1547 CSR - Orangeburg, LLC",
+      "Pittock Block Data Center",
+      "Pittock Block",
+      "PTOR1",
+      "1547 CSR - Pittock Block, LLC",
+      "Union Station Data Center and Carrier Hotel",
+      "South Bend Data Center",
+      "SBIN1",
+      "1547 CSR - South Bend, LLC",
+      "Wells Building Data Center",
+      "Wells Building",
+      "MIWI1",
+      "1547 CSR - Milwaukee, LLC",
+      "Wyoming Data Center",
+      "Wyoming Data Center (CHWY1)",
+      "Cheyenne Data Center",
+      "CHWY1"
+    ],
+    "description": "Harrison Street–1547 Data Center & Connectivity Platform is the manager-level U.S. program through which Harrison Street and FifteenFortySeven Critical Systems Realty invest in and operate carrier hotels, colocation facilities and connectivity-focused data centers. The countable platform is a recurring multi-asset investment and operating program rather than one asserted umbrella legal entity; corporate 1547 is the operator and co-sponsor, not a company shown to be owned by Harrison Street. Wells was the first joint acquisition in 2020, Pittock followed in early 2021, Orangeburg and Cheyenne were included in the November 2021 four-asset portfolio acquisition, and South Bend was added in 2024. Separate title-holding, borrower, lease and project LLCs remain asset-level vehicles beneath the platform. Harrison Street's exact fund or managed account, both parties' ownership percentages and the private cap tables of individual SPVs are not publicly disclosed. Current operator and transaction sources show the five facilities continuing in the program, with no later sale identified through August 30, 2026.",
+    "lastVerifiedAt": "2026-08-30T00:00:00.000Z"
+  },
+  "ownershipPeriodUpdates": [],
+  "ownershipPeriodRemovals": [],
+  "ownershipPeriodAdditions": [],
+  "pendingOwnershipTransactionUpdates": [],
+  "pendingOwnershipTransactionAdditions": [],
+  "milestoneUpdates": [
+    {
+      "id": "cmtfaamaq002frz2bjb5pjq21",
+      "set": {
+        "date": "Sep 3, 2020",
+        "event": "Harrison Street and 1547 completed their first joint acquisition, the Wells Building carrier hotel and data center in Milwaukee, beginning the disclosed multi-site platform.",
+        "category": "ACQUISITION",
+        "sortDate": "2020-09-03T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.1547realty.com/resource/1547-and-harrison-street-acquire-historic-milwaukee-carrier-hotel-and-data-center/"
+        ]
+      }
+    },
+    {
+      "id": "cmrxplyh904aiivhexr2qncwh",
+      "set": {
+        "date": "Jan 4, 2021",
+        "event": "1547 and Harrison Street acquired Portland's Pittock Block carrier hotel and added the 302,200-square-foot facility and its dense network ecosystem to their connectivity-focused platform.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-01-04T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.1547realty.com/resource/1547-and-harrison-street-acquire-portland-carrier-hotel-and-data-center/",
+          "https://www.sec.gov/Archives/edgar/data/1840644/000153949721000039/n2405-x1_premarketts.htm"
+        ]
+      }
+    },
+    {
+      "id": "cmtfaamef002grz2bw92bta7k",
+      "set": {
+        "date": "Nov 2, 2021",
+        "event": "CIM Group sold Midway/CHIL1, CHIL2, Orangeburg/ORNY1 and Wyoming/Cheyenne/CHWY1 to the Harrison Street–1547 joint venture in a four-asset acquisition that followed the parties' earlier Wells Building acquisition, expanding the relationship to six data centers while 1547 remained manager.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-11-02T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.1547realty.com/resource/fifteenfortyseven-critical-systems-realty-and-harrison-street-acquire-portfolio-of-four-strategically-located-data-centers-in-new-york-chicago-and-wyoming/",
+          "https://www.cimgroup.com/press-releases/cim-group-sells-portfolio-of-four-data-center-assets"
+        ]
+      }
+    },
+    {
+      "id": "cmtfaami2002hrz2b7c4ts9lm",
+      "set": {
+        "date": "Sep–Oct 2024",
+        "event": "The partners added Union Station/SBIN1 in South Bend to the connectivity portfolio in September and AlohaNAP in October, when they described the joint national platform as exceeding one million square feet.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-10-15T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://harrisonst.com/fifteenfortyseven-critical-systems-realty-and-harrison-street-acquire-the-union-station-data-center-and-carrier-hotel-in-south-bend-indiana/",
+          "https://www.1547realty.com/resource/harrison-street-1547-acquire-carrier-hotel-data-center-hawaii-and-announce-expansion/"
+        ]
+      }
+    },
+    {
+      "id": "cmtfaamlp002irz2bivd0wwb6",
+      "set": {
+        "date": "Apr 28, 2026",
+        "event": "Harrison Street and 1547 announced full occupancy and further expansion at Orangeburg/ORNY1, a 232,000-square-foot facility on a 23-acre campus with 24 MW of provisioned power, confirming continuing joint platform activity.",
+        "category": "EXPANSION",
+        "sortDate": "2026-04-28T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://harrisonst.com/harrison-street-asset-management-and-fifteenfortyseven-critical-systems-realty-achieve-full-occupancy-at-orangeburg-data-center-with-further-expansion-underway/",
+          "https://www.1547realty.com/data-center/orangeburg-new-york-orny1/"
+        ]
+      }
+    }
+  ],
+  "milestoneTransfers": [
+    {
+      "id": "cmrxplynj04anivhekd81d4yi",
+      "date": "Jan 4, 2021",
+      "event": "Pittock Block added 302,200 square feet, 179 service providers, and one of the Northwest's two primary internet exchanges to the 1547-Harrison Street platform.",
+      "category": "EXPANSION",
+      "sortDate": "2021-01-04T05:00:00.000Z",
+      "evidenceUrls": []
+    },
+    {
+      "id": "cmrxplyzi04b4ivhey2csqxwz",
+      "date": "2024",
+      "event": "The buyers disclosed planned capacity and facility upgrades following the Union Station/South Bend acquisition.",
+      "category": "EXPANSION",
+      "sortDate": "2024-01-01T00:00:00.000Z",
+      "evidenceUrls": []
+    },
+    {
+      "id": "cmrxplzjc04boivhepqm8xblq",
+      "date": "Nov 2, 2021",
+      "event": "The Cheyenne data center was fully leased to a national virtual infrastructure and IT services customer when 1547 and Harrison Street acquired the portfolio.",
+      "category": "EXPANSION",
+      "sortDate": "2021-11-02T04:00:00.000Z",
+      "evidenceUrls": []
+    }
+  ],
+  "citationUpdates": [],
+  "citationAdditions": [
+    {
+      "id": null,
+      "label": "1547Realty — Orangeburg Data Center (ORNY1)",
+      "url": "https://www.1547realty.com/data-center/orangeburg-new-york-orny1/",
+      "sourceType": "ARTICLE",
+      "purpose": "OPERATIONS_ASSETS",
+      "evidenceLabel": "Current Orangeburg/ORNY1 identity, footprint, power and active facility status",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "Announcement date source — Harrison Street — Pittock Block Data Center",
+      "url": "https://www.1547realty.com/resource/1547-and-harrison-street-acquire-portland-carrier-hotel-and-data-center/",
+      "sourceType": "PRESS_RELEASE",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "January 2021 Pittock acquisition and connectivity-platform boundary",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "1547 — Pittock Block Data Center (PTOR1)",
+      "url": "https://www.1547realty.com/data-center/portland-or-ptor1/",
+      "sourceType": "ARTICLE",
+      "purpose": "OPERATIONS_ASSETS",
+      "evidenceLabel": "Current Pittock/PTOR1 identity and active facility status",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "Announcement date source — Harrison Street — Union Station Data Center and Carrier Hotel",
+      "url": "https://harrisonst.com/fifteenfortyseven-critical-systems-realty-and-harrison-street-acquire-the-union-station-data-center-and-carrier-hotel-in-south-bend-indiana/",
+      "sourceType": "PRESS_RELEASE",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "September 2024 South Bend acquisition into the connectivity-focused portfolio",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "1547 — South Bend Data Center (SBIN1)",
+      "url": "https://www.1547realty.com/data-center/south-bend-in-sbin1/",
+      "sourceType": "ARTICLE",
+      "purpose": "OPERATIONS_ASSETS",
+      "evidenceLabel": "Current South Bend/SBIN1 identity and active facility status",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "1547Realty — Wells Building Data Center",
+      "url": "https://www.1547realty.com/data-center/milwaukee-wi-miwi1/",
+      "sourceType": "ARTICLE",
+      "purpose": "OPERATIONS_ASSETS",
+      "evidenceLabel": "Current Wells/MIWI1 identity and active facility status",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "1547 — Cheyenne Data Center (CHWY1)",
+      "url": "https://www.1547realty.com/data-center/cheyenne-wy-chwy1/",
+      "sourceType": "ARTICLE",
+      "purpose": "OPERATIONS_ASSETS",
+      "evidenceLabel": "Current Cheyenne/CHWY1 identity and active facility status",
+      "isPrimary": false
+    }
+  ]
+}

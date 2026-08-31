@@ -1,0 +1,314 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0284:warren-county-solar-project:0c3e1f95",
+  "taskIndex": 284,
+  "asOfDate": "2026-08-31",
+  "generatedAt": "2026-08-30T06:49:00.000Z",
+  "canonicalKey": "warren-county-solar-project|united-states",
+  "companyName": "Warren County Solar Project",
+  "actions": [
+    "CORRECT_COMPANY"
+  ],
+  "sourceHoldingIds": [
+    "051-harrison-street:holding:007:warren-county-solar-project"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Retain one standalone active solar-project PortCo but correct its identity to the legal project company, CZ Solar Warren, LLC, with Cincinnati Zoo Solar and Warren County Solar Project retained as aliases. Harrison Street acquired the project from Soltage in September 2022 through its Social Infrastructure Strategy; public sources do not disclose a specific fund, managed account, upstream holding vehicle, or ownership percentage, so the unsupported Social Infrastructure Fund vehicle is removed rather than inferred. Melink and Soltage are preserved in the development and seller history, while Nelnet's disclosed tax-equity vehicles are treated as financing context rather than direct manager-level PortCo owners. Current Cincinnati Zoo material confirms the array is operating on Zoo-owned leased land, and no later sale, recapitalization, operator change, or signed pending exit was identified through August 19, 2026.",
+  "evidence": [
+    {
+      "url": "https://harrisonst.com/harrison-street-acquires-28-mw-cincinnati-solar-project/",
+      "purpose": "Official buyer evidence for Harrison Street's acquisition, seller, strategy, capacity, PPAs, EPC and tax-equity context",
+      "supports": [
+        "Harrison Street acquired the 28 MW project from Soltage",
+        "The investment was made through Harrison Street's Social Infrastructure Strategy rather than a publicly named fund",
+        "The project had two ten-year PPAs and Nelnet tax-equity participation"
+      ]
+    },
+    {
+      "url": "https://www.harrisonst.com/wp-content/uploads/2023/06/HS-ESG-Impact-Report_2022.pdf",
+      "purpose": "Official manager report for the September 2022 closing and Cincinnati Zoo Solar identity",
+      "supports": [
+        "Harrison Street acquired Cincinnati Zoo Solar in September 2022",
+        "The project was acquired from Soltage",
+        "The project was described as a 28 MW agrivoltaic solar asset"
+      ]
+    },
+    {
+      "url": "https://www.prnewswire.com/news-releases/soltage-and-melink-announce-28-mw-solar-project-at-cincinnati-zoo-301627648.html",
+      "purpose": "Seller-side evidence for the Melink-to-Soltage development chain and Calpine PPAs",
+      "supports": [
+        "Soltage acquired the project from Melink before selling it to Harrison Street",
+        "Two Calpine Energy Solutions PPAs covered project output"
+      ]
+    },
+    {
+      "url": "https://elibrary.ferc.gov/eLibrary/docinfo?accession_Number=20210428-3039",
+      "purpose": "Regulatory evidence for the CZ Solar Warren project-company identity and interconnection proceeding",
+      "supports": [
+        "CZ Solar Warren, LLC is the project company",
+        "The project had an indexed Duke Energy Ohio interconnection proceeding in 2021"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1258602/000125860223000026/nni-12312022xex_211.htm",
+      "purpose": "SEC evidence for Nelnet tax-equity vehicles and the distinction between vehicle percentages and direct project ownership",
+      "supports": [
+        "CZ Solar Tenant, LLC and CZ Solar Landlord, LLC were tax-equity vehicles",
+        "Disclosed tax-equity vehicle percentages should not be represented as Harrison Street's project ownership percentage"
+      ]
+    },
+    {
+      "url": "https://cincinnatizoo.org/bowyer-farm-restoring-land-for-wildlife-agriculture-and-future-generations/",
+      "purpose": "Current landowner evidence for operating status, Harrison Street lease and Bowyer Farm location",
+      "supports": [
+        "The solar array is operating on Zoo-owned leased land",
+        "The lease remained associated with Harrison Street in August 2026",
+        "No current-status evidence indicates a subsequent ownership exit"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "0efd1019ddfc62150a60dfbfb89cccdf07b14313c14309975b0fb17e410a4eef",
+  "currentCompanySnapshotSha256": "5edc7856a377010a8e083d55bdb9aa5b5666fb607cab09e877185368e28b4a85",
+  "executionLock": {
+    "taskSnapshotSha256": "2f5b8cd294f3cd4d3c6c3701a7034194c2ec278bb6f1ca034773e23745b61717",
+    "taskStateSha256": "88697c00d6337c706279ad37bbb099bd83473fe4d8bb366df2d953d652606605",
+    "taskDependencySha256": "4f2b815f06ea66b0ab762babe85a1d5bcaf766ba9be1ebeb91ca5299c27cba42",
+    "seedEntrySha256": "b0bba1f785b11698a56839d0d1a06b26f6d9b487e37d87edbf582c0a65f4638b",
+    "dependencies": {
+      "ownershipPeriodsSha256": "1122bb06c254e402a75cea10148ff3abb8e69a471315764358344b7d40a36492",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "aca578e15ae37e0a87c895a82541686bf8a6bc3d738a98873fb7c4419f86066a",
+      "citationsSha256": "7ac9b54695e96617c264389544b5b63e4f0ab79c266c4f65d71c8ad35ba813ff",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi9hc0029ivhep5jy7vm9",
+        "name": "Harrison Street",
+        "updatedAt": "2026-07-23T16:09:19.488Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjhwq010yivhe6klfgqf5",
+    "name": "Warren County Solar Project",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Utility-scale solar project",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Warren County Solar Project is a contracted solar project located on land owned by the Cincinnati Zoo in Warren County, Ohio. Its revenue base is tied to contracted electricity sales under two power-purchase agreements in the PJM market. The asset follows an asset-heavy and contracted renewable-infrastructure model based on project ownership, tax-equity financing, and long-duration offtake arrangements. Harrison Street’s announcement described the project at 28 MW, noted that it was acquired from Soltage, and stated that the site uses agrivoltaic sheep grazing for vegetation management. Harrison Street acquired the project in November 2022 through its social-infrastructure strategy; the ownership split is not publicly disclosed. The investment marked Harrison Street’s second infrastructure investment in the Cincinnati market after CoolCo.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2022,
+    "headquarters": "Ohio",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk3tb01zpivhel7rowy9i",
+        "managerName": "Harrison Street",
+        "organizationName": "Harrison Street",
+        "fundName": null,
+        "vehicleName": "Social Infrastructure Fund",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplz8n04bdivhei41c73n3",
+        "date": "2022",
+        "event": "Warren County Solar Project was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2022-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplz9404beivhefy2bojra",
+        "date": "Nov 1, 2022",
+        "event": "Harrison Street announced the acquisition of the 28 MW Warren County solar project from Soltage.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-11-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpriz60b7kivhelppwn1cf",
+        "label": "Harrisonst — CoolCo",
+        "url": "https://harrisonst.com/harrison-street-acquires-28-mw-cincinnati-solar-project/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Harrison Street transaction announcement",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxprj040b7mivhex7234cbr",
+        "label": "Cincinnatizoo — Warren County Solar Project",
+        "url": "https://cincinnatizoo.org/news-releases/solar-array-at-cincinnati-zoos-bowyer-farm-is-online/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Cincinnatizoo — Warren County Solar Project",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprj180b7oivhen1z67ck0",
+        "label": "Harrisonst — Warren County Solar Project",
+        "url": "https://www.harrisonst.com/wp-content/uploads/2023/06/HS-ESG-Impact-Report_2022.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Harrisonst — Warren County Solar Project",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "5edc7856a377010a8e083d55bdb9aa5b5666fb607cab09e877185368e28b4a85",
+  "afterImage": {
+    "id": "cmrxpjhwq010yivhe6klfgqf5",
+    "name": "CZ Solar Warren, LLC",
+    "aliases": [
+      "Warren County Solar Project",
+      "Cincinnati Zoo Solar",
+      "Bowyer Farm Solar Array",
+      "Nickel Solar"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Utility-scale solar project",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "CZ Solar Warren, LLC is the project company for Cincinnati Zoo Solar, a 28 MW utility-scale solar array on leased Cincinnati Zoo land at Bowyer Farm in Warren County, Ohio. Melink Solar Development originated the project, Soltage acquired the development interest in 2022, and Harrison Street acquired the project from Soltage in September 2022 through its Social Infrastructure Strategy. Public sources do not disclose Harrison Street's specific fund, managed account, upstream holding vehicle, or ownership percentage. The project sells output under two ten-year Calpine Energy Solutions power-purchase agreements, uses Inovateus Solar as EPC, and received tax-equity financing from Nelnet through separate tenant and landlord vehicles; those tax-equity percentages are not treated as direct PortCo ownership stakes. Cincinnati Zoo reported the array operating in 2026, and no subsequent sale or signed pending exit was identified through August 19, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Warren County, Ohio",
+    "lastVerifiedAt": "2026-08-19T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk3tb01zpivhel7rowy9i",
+        "managerName": "Harrison Street",
+        "organizationName": "Harrison Street",
+        "fundName": null,
+        "vehicleName": null,
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplz8n04bdivhei41c73n3",
+        "date": "Apr 28, 2021",
+        "event": "A FERC filing indexed CZ Solar Warren, LLC in the Duke Energy Ohio interconnection proceeding, evidencing the project company before Harrison Street's acquisition.",
+        "category": "OTHER",
+        "sortDate": "2021-04-28T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://elibrary.ferc.gov/eLibrary/docinfo?accession_Number=20210428-3039"
+        ]
+      },
+      {
+        "id": "cmrxplz9404beivhefy2bojra",
+        "date": "Sep 2022",
+        "event": "Harrison Street acquired the 28 MW Cincinnati Zoo Solar project from Soltage through its Social Infrastructure Strategy; the September closing was publicly announced on November 1, 2022.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-09-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://harrisonst.com/harrison-street-acquires-28-mw-cincinnati-solar-project/",
+          "https://www.harrisonst.com/wp-content/uploads/2023/06/HS-ESG-Impact-Report_2022.pdf"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpriz60b7kivhelppwn1cf",
+        "label": "Harrisonst — CoolCo",
+        "url": "https://harrisonst.com/harrison-street-acquires-28-mw-cincinnati-solar-project/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Harrison Street acquisition, Social Infrastructure Strategy attribution, seller and project structure",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxprj040b7mivhex7234cbr",
+        "label": "Cincinnatizoo — Warren County Solar Project",
+        "url": "https://cincinnatizoo.org/news-releases/solar-array-at-cincinnati-zoos-bowyer-farm-is-online/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Project operating status and Cincinnati Zoo site context",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprj180b7oivhen1z67ck0",
+        "label": "Harrisonst — Warren County Solar Project",
+        "url": "https://www.harrisonst.com/wp-content/uploads/2023/06/HS-ESG-Impact-Report_2022.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "September 2022 closing, Cincinnati Zoo Solar identity and 28 MW agrivoltaic scale",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "PR Newswire — Soltage and Melink Cincinnati Zoo Solar",
+        "url": "https://www.prnewswire.com/news-releases/soltage-and-melink-announce-28-mw-solar-project-at-cincinnati-zoo-301627648.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Melink-to-Soltage development chain and Calpine PPAs",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "FERC — CZ Solar Warren interconnection record",
+        "url": "https://elibrary.ferc.gov/eLibrary/docinfo?accession_Number=20210428-3039",
+        "sourceType": "OTHER",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "CZ Solar Warren, LLC identity and 2021 interconnection proceeding",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Nelnet — 2022 tax-equity exhibit",
+        "url": "https://www.sec.gov/Archives/edgar/data/1258602/000125860223000026/nni-12312022xex_211.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "CZ Solar Tenant and Landlord tax-equity vehicles and ownership-percentage boundary",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Cincinnati Zoo — Bowyer Farm solar update",
+        "url": "https://cincinnatizoo.org/bowyer-farm-restoring-land-for-wildlife-agriculture-and-future-generations/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current operating status, Zoo land lease, location and Harrison Street continuity",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "aab890a2e103b7361de641351d9bc7c32df4f78af3b2f96f44594f1ee25d0a1e",
+  "proposalSha256": "e6e21738cc6d3a0cb3b9a7dcb67c1820f3e5014a5ce98d322e2100f9be1d047b"
+}

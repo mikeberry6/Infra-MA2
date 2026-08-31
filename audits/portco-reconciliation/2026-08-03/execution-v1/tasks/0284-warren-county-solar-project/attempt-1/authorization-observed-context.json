@@ -1,0 +1,233 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0284:warren-county-solar-project:0c3e1f95",
+  "taskIndex": 284,
+  "companyName": "Warren County Solar Project",
+  "generatedAt": "2026-08-31T07:40:51.828Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0284-warren-county-solar-project/attempt-1/authorization-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 284,
+    "taskId": "ledger:0284:warren-county-solar-project:0c3e1f95",
+    "canonicalKey": "warren-county-solar-project|united-states",
+    "companyName": "Warren County Solar Project",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 51,
+    "managers": [
+      "Harrison Street"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "051-harrison-street:holding:007:warren-county-solar-project"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjhwq010yivhe6klfgqf5"
+    ],
+    "seedKeys": [
+      "warren county solar project|United States"
+    ],
+    "evidenceUrls": [
+      "https://cincinnatizoo.org/news-releases/solar-array-at-cincinnati-zoos-bowyer-farm-is-online/",
+      "https://harrisonst.com/harrison-street-acquires-28-mw-cincinnati-solar-project/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted census NEEDS_REVIEW for 051-harrison-street:holding:007:warren-county-solar-project: Project remains active but its long-term platform boundary versus broader renewable portfolio requires further review. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Accepted census NEEDS_REVIEW for 051-harrison-street:holding:007:warren-county-solar-project: Project remains active but its long-term platform boundary versus broader renewable portfolio requires further review."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjhwq010yivhe6klfgqf5",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "warren-county-solar-project|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjhwq010yivhe6klfgqf5",
+    "name": "Warren County Solar Project",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Utility-scale solar project",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Warren County Solar Project is a contracted solar project located on land owned by the Cincinnati Zoo in Warren County, Ohio. Its revenue base is tied to contracted electricity sales under two power-purchase agreements in the PJM market. The asset follows an asset-heavy and contracted renewable-infrastructure model based on project ownership, tax-equity financing, and long-duration offtake arrangements. Harrison Street’s announcement described the project at 28 MW, noted that it was acquired from Soltage, and stated that the site uses agrivoltaic sheep grazing for vegetation management. Harrison Street acquired the project in November 2022 through its social-infrastructure strategy; the ownership split is not publicly disclosed. The investment marked Harrison Street’s second infrastructure investment in the Cincinnati market after CoolCo.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2022,
+    "headquarters": "Ohio",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk3tb01zpivhel7rowy9i",
+        "managerName": "Harrison Street",
+        "organizationName": "Harrison Street",
+        "fundName": null,
+        "vehicleName": "Social Infrastructure Fund",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplz8n04bdivhei41c73n3",
+        "date": "2022",
+        "event": "Warren County Solar Project was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2022-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplz9404beivhefy2bojra",
+        "date": "Nov 1, 2022",
+        "event": "Harrison Street announced the acquisition of the 28 MW Warren County solar project from Soltage.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-11-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpriz60b7kivhelppwn1cf",
+        "label": "Harrisonst — CoolCo",
+        "url": "https://harrisonst.com/harrison-street-acquires-28-mw-cincinnati-solar-project/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Harrison Street transaction announcement",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxprj040b7mivhex7234cbr",
+        "label": "Cincinnatizoo — Warren County Solar Project",
+        "url": "https://cincinnatizoo.org/news-releases/solar-array-at-cincinnati-zoos-bowyer-farm-is-online/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Cincinnatizoo — Warren County Solar Project",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprj180b7oivhen1z67ck0",
+        "label": "Harrisonst — Warren County Solar Project",
+        "url": "https://www.harrisonst.com/wp-content/uploads/2023/06/HS-ESG-Impact-Report_2022.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Harrisonst — Warren County Solar Project",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Warren County Solar Project",
+    "investmentFirm": "Harrison Street",
+    "sector": "Power & ET",
+    "subsector": "Utility-scale solar project",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Social Infrastructure Fund",
+    "description": "Warren County Solar Project is a contracted solar project located on land owned by the Cincinnati Zoo in Warren County, Ohio. Its revenue base is tied to contracted electricity sales under two power-purchase agreements in the PJM market. The asset follows an asset-heavy and contracted renewable-infrastructure model based on project ownership, tax-equity financing, and long-duration offtake arrangements. Harrison Street’s announcement described the project at 28 MW, noted that it was acquired from Soltage, and stated that the site uses agrivoltaic sheep grazing for vegetation management. Harrison Street acquired the project in November 2022 through its social-infrastructure strategy; the ownership split is not publicly disclosed. The investment marked Harrison Street’s second infrastructure investment in the Cincinnati market after CoolCo.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2022,
+    "investmentYear": 2022,
+    "headquarters": "Ohio",
+    "milestones": [
+      {
+        "date": "2022",
+        "event": "Warren County Solar Project was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "Nov 1, 2022",
+        "event": "Harrison Street announced the acquisition of the 28 MW Warren County solar project from Soltage.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Announcement date source — Harrison Street — Warren County Solar Project",
+        "url": "https://harrisonst.com/harrison-street-acquires-28-mw-cincinnati-solar-project/",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Cincinnatizoo — Warren County Solar Project",
+        "url": "https://cincinnatizoo.org/news-releases/solar-array-at-cincinnati-zoos-bowyer-farm-is-online/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Harrisonst — Warren County Solar Project",
+        "url": "https://www.harrisonst.com/wp-content/uploads/2023/06/HS-ESG-Impact-Report_2022.pdf",
+        "type": "PRESENTATION"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Harrison Street",
+        "ownershipVehicle": "Social Infrastructure Fund",
+        "investmentYear": 2022,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi9hc0029ivhep5jy7vm9",
+        "name": "Harrison Street",
+        "updatedAt": "2026-07-23T16:09:19.488Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0284:warren-county-solar-project:0c3e1f95",
+    "taskIndex": 284,
+    "canonicalKey": "warren-county-solar-project|united-states",
+    "capturedAt": "2026-08-31T07:40:51.828Z",
+    "databaseRevision": "revision:f466873b24b57c882b29f1014d780046338ee8d251b52ff123cc91776766582f",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "fc3fa5f6063b27977872981e3e4de59bdfb70543f2c3290d9c973b5b007a5063",
+    "productionSnapshotSha256": "4b97bb1d5914429da7683cef92388b7c5c9b77c270667e5aac99b04c310ebb65",
+    "targetCompanySnapshotSha256": "5edc7856a377010a8e083d55bdb9aa5b5666fb607cab09e877185368e28b4a85",
+    "seedEntrySha256": "b0bba1f785b11698a56839d0d1a06b26f6d9b487e37d87edbf582c0a65f4638b",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "1122bb06c254e402a75cea10148ff3abb8e69a471315764358344b7d40a36492",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "aca578e15ae37e0a87c895a82541686bf8a6bc3d738a98873fb7c4419f86066a",
+      "citationsSha256": "7ac9b54695e96617c264389544b5b63e4f0ab79c266c4f65d71c8ad35ba813ff",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "4f2b815f06ea66b0ab762babe85a1d5bcaf766ba9be1ebeb91ca5299c27cba42",
+    "stateSha256": "88697c00d6337c706279ad37bbb099bd83473fe4d8bb366df2d953d652606605",
+    "taskSnapshotSha256": "35a7df36cb82f9e6d47b2019d11290c7545d3f0d9a7d17dbda907b889bf3d42d"
+  },
+  "contextSha256": "e45f2d63c15289417a88cce5926205bb846554fbfe84e5398493e6f7e0553f00"
+}

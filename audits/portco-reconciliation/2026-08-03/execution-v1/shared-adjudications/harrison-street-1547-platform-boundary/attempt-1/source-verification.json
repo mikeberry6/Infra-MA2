@@ -1,0 +1,191 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "adjudication": "Harrison Street–1547 platform boundary",
+  "asOfDate": "2026-08-30",
+  "verifiedAt": "2026-08-30T06:53:58Z",
+  "allReturnedUrlsChecked": true,
+  "summary": {
+    "urlCount": 21,
+    "working": 17,
+    "browserBlockedButVerified": 4,
+    "dead": 0
+  },
+  "methodology": {
+    "transportCheck": "Direct curl GET with redirect following and a 25-second timeout",
+    "blockedPageCheck": "Independent web open verified content for the four pages that rejected direct curl with HTTP 403",
+    "modelHealthDeclarationsTrusted": false
+  },
+  "sources": [
+    {
+      "url": "https://www.cimgroup.com/press-releases/cim-group-sells-portfolio-of-four-data-center-assets",
+      "finalUrl": "https://www.cimgroup.com/press-releases/cim-group-sells-portfolio-of-four-data-center-assets",
+      "curlHttpStatus": 200,
+      "health": "WORKING",
+      "independentOpenVerified": true,
+      "purpose": "Seller-side confirmation of the 2021 four-facility sale to the Harrison Street–1547 joint venture."
+    },
+    {
+      "url": "https://harrisonst.com/exclusive-harrison-street-and-fifteenfortyseven-acquire-four-data-center-facilities-in-u-s/",
+      "finalUrl": "https://harrisonst.com/wp-content/uploads/2025/06/EXCLUSIVE-%E2%80%94-Harrison-Street-and-fifteenfortyseven-acquire-four-data-center-facilities-in-U.pdf",
+      "curlHttpStatus": 200,
+      "health": "WORKING_REDIRECTED",
+      "independentOpenVerified": true,
+      "purpose": "Harrison Street confirmation of the four-facility acquisition and the resulting six-asset relationship with 1547."
+    },
+    {
+      "url": "https://www.1547realty.com/data-centers/",
+      "finalUrl": "https://www.1547realty.com/data-centers/",
+      "curlHttpStatus": 200,
+      "health": "WORKING",
+      "independentOpenVerified": true,
+      "purpose": "Current 1547 facility roster and explicit Sold labels for other locations."
+    },
+    {
+      "url": "https://www.1547realty.com/resource/1547-and-harrison-street-acquire-historic-milwaukee-carrier-hotel-and-data-center/",
+      "finalUrl": "https://www.1547realty.com/resource/1547-and-harrison-street-acquire-historic-milwaukee-carrier-hotel-and-data-center/",
+      "curlHttpStatus": 200,
+      "health": "WORKING",
+      "independentOpenVerified": true,
+      "purpose": "Wells acquisition and direct description of growing the Harrison Street–1547 digital platform."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1840644/000153949721000039/n2405-x1_premarketts.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1840644/000153949721000039/n2405-x1_premarketts.htm",
+      "curlHttpStatus": 403,
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "independentOpenVerified": true,
+      "purpose": "Pittock borrower-SPV, sponsor-JV, and property-management evidence."
+    },
+    {
+      "url": "https://harrisonst.com/fifteenfortyseven-critical-systems-realty-and-harrison-street-acquire-the-union-station-data-center-and-carrier-hotel-in-south-bend-indiana/",
+      "finalUrl": "https://harrisonst.com/wp-content/uploads/2025/06/fifteenfortyseven-Critical-Systems-Realty-and-Harrison-Street-Acquire-the-Union-Station-Data-Center.pdf",
+      "curlHttpStatus": 200,
+      "health": "WORKING_REDIRECTED",
+      "independentOpenVerified": true,
+      "purpose": "South Bend acquisition into the connectivity-focused portfolio and 1547 umbrella in partnership with Harrison Street."
+    },
+    {
+      "url": "https://www.1547realty.com/data-center/orangeburg-new-york-orny1/",
+      "finalUrl": "https://www.1547realty.com/data-center/orangeburg-new-york-orny1/",
+      "curlHttpStatus": 200,
+      "health": "WORKING",
+      "independentOpenVerified": true,
+      "purpose": "Current ORNY1 facility identity and operating presentation."
+    },
+    {
+      "url": "https://www.1547realty.com/data-center/portland-or-ptor1/",
+      "finalUrl": "https://www.1547realty.com/data-center/portland-or-ptor1/",
+      "curlHttpStatus": 200,
+      "health": "WORKING",
+      "independentOpenVerified": true,
+      "purpose": "Current PTOR1 facility identity and operating presentation."
+    },
+    {
+      "url": "https://www.1547realty.com/data-center/south-bend-in-sbin1/",
+      "finalUrl": "https://www.1547realty.com/data-center/south-bend-in-sbin1/",
+      "curlHttpStatus": 200,
+      "health": "WORKING",
+      "independentOpenVerified": true,
+      "purpose": "Current SBIN1 facility identity and portfolio presentation."
+    },
+    {
+      "url": "https://www.1547realty.com/data-center/milwaukee-wi-miwi1/",
+      "finalUrl": "https://www.1547realty.com/data-center/milwaukee-wi-miwi1/",
+      "curlHttpStatus": 200,
+      "health": "WORKING",
+      "independentOpenVerified": true,
+      "purpose": "Current MIWI1 facility identity and operating presentation."
+    },
+    {
+      "url": "https://www.1547realty.com/data-center/cheyenne-wy-chwy1/",
+      "finalUrl": "https://www.1547realty.com/data-center/cheyenne-wy-chwy1/",
+      "curlHttpStatus": 200,
+      "health": "WORKING",
+      "independentOpenVerified": true,
+      "purpose": "Current CHWY1 facility identity and operating presentation."
+    },
+    {
+      "url": "https://www.1547realty.com/resource/fifteenfortyseven-critical-systems-realty-and-harrison-street-acquire-portfolio-of-four-strategically-located-data-centers-in-new-york-chicago-and-wyoming/",
+      "finalUrl": "https://www.1547realty.com/resource/fifteenfortyseven-critical-systems-realty-and-harrison-street-acquire-portfolio-of-four-strategically-located-data-centers-in-new-york-chicago-and-wyoming/",
+      "curlHttpStatus": 200,
+      "health": "WORKING",
+      "independentOpenVerified": true,
+      "purpose": "Direct co-sponsor description of the 2021 portfolio, 1547 management, and expansion to six assets."
+    },
+    {
+      "url": "https://www.1547realty.com/resource/1547-and-harrison-street-acquire-portland-carrier-hotel-and-data-center/",
+      "finalUrl": "https://www.1547realty.com/resource/1547-and-harrison-street-acquire-portland-carrier-hotel-and-data-center/",
+      "curlHttpStatus": 200,
+      "health": "WORKING",
+      "independentOpenVerified": true,
+      "purpose": "Pittock acquisition into the connectivity-focused platform with Harrison Street."
+    },
+    {
+      "url": "https://www.1547realty.com/resource/1547-kicks-off-improvements-at-the-pittock-block/",
+      "finalUrl": "https://www.1547realty.com/resource/1547-kicks-off-improvements-at-the-pittock-block/",
+      "curlHttpStatus": 200,
+      "health": "WORKING",
+      "independentOpenVerified": true,
+      "purpose": "Common Harrison Street–1547 improvement strategy across Pittock, Wells, and Orangeburg."
+    },
+    {
+      "url": "https://www.1547realty.com/resource/harrison-street-asset-management-and-fifteenfortyseven-critical-systems-realty-achieve-full-occupancy-at-orangeburg-data-center-with-further-expansion-underway/",
+      "finalUrl": "https://www.1547realty.com/resource/harrison-street-asset-management-and-fifteenfortyseven-critical-systems-realty-achieve-full-occupancy-at-orangeburg-data-center-with-further-expansion-underway/",
+      "curlHttpStatus": 200,
+      "health": "WORKING",
+      "independentOpenVerified": true,
+      "purpose": "April 2026 confirmation of continuing joint-venture activity at Orangeburg."
+    },
+    {
+      "url": "https://www.1547realty.com/resource/harrison-street-1547-acquire-carrier-hotel-data-center-hawaii-and-announce-expansion/",
+      "finalUrl": "https://www.1547realty.com/resource/harrison-street-1547-acquire-carrier-hotel-data-center-hawaii-and-announce-expansion/",
+      "curlHttpStatus": 200,
+      "health": "WORKING",
+      "independentOpenVerified": true,
+      "purpose": "Direct description of the joint national data-center and connectivity platform as a manager-level multi-site program."
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20221212005036/en/1547-CSR-and-Harrison-Street-Purchase-Highly-Interconnected-Carrier-Hotel-in-McAllen-Texas",
+      "finalUrl": "https://www.businesswire.com/news/home/20221212005036/en/1547-CSR-and-Harrison-Street-Purchase-Highly-Interconnected-Carrier-Hotel-in-McAllen-Texas",
+      "curlHttpStatus": 403,
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "independentOpenVerified": true,
+      "purpose": "Joint release expressly identifying Pittock and Wells as facilities in the connectivity-focused data-center platform."
+    },
+    {
+      "url": "https://www.nypa.gov/Services/Incentives-and-Grants/ReCharge-NY/ReCharge-NY-Recipients",
+      "finalUrl": "https://www.nypa.gov/Services/Incentives-and-Grants/ReCharge-NY/ReCharge-NY-Recipients",
+      "curlHttpStatus": 200,
+      "health": "WORKING",
+      "independentOpenVerified": true,
+      "purpose": "Government identification of 1547 CSR - Orangeburg, LLC."
+    },
+    {
+      "url": "https://docs.southbendin.gov/WebLink/0/doc/412273/Page1.aspx",
+      "finalUrl": "https://docs.southbendin.gov/WebLink/DocView.aspx?dbid=0&id=412273&page=1&cr=1",
+      "curlHttpStatus": 200,
+      "health": "WORKING_REDIRECTED",
+      "independentOpenVerified": true,
+      "purpose": "August 2026 municipal evidence for 1547 CSR - South Bend, LLC and the current property/lease arrangement."
+    },
+    {
+      "url": "https://city.milwaukee.gov/ImageLibrary/Groups/cityBOZA/2021/Minutes/July-1-2021.pdf",
+      "finalUrl": "https://city.milwaukee.gov/ImageLibrary/Groups/cityBOZA/2021/Minutes/July-1-2021.pdf",
+      "curlHttpStatus": 403,
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "independentOpenVerified": true,
+      "purpose": "Municipal identification of 1547 CSR - Milwaukee, LLC as Wells Building property owner."
+    },
+    {
+      "url": "https://www.datacenterdynamics.com/en/news/lunavi-occupied-data-center-for-sale-in-cheyenne-wyoming/",
+      "finalUrl": "https://www.datacenterdynamics.com/en/news/lunavi-occupied-data-center-for-sale-in-cheyenne-wyoming/",
+      "curlHttpStatus": 403,
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "independentOpenVerified": true,
+      "purpose": "Exit-search control distinguishing the adjacent 304 Progress Circle listing from target facility 340 Progress Circle."
+    }
+  ]
+}
+

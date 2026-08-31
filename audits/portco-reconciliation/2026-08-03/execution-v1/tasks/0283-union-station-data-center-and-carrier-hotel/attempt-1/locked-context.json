@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0283:union-station-data-center-and-carrier-hotel:a3bf1cb4",
+  "taskIndex": 283,
+  "companyName": "Union Station Data Center and Carrier Hotel",
+  "generatedAt": "2026-08-31T07:39:19.507Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0283-union-station-data-center-and-carrier-hotel/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 283,
+    "taskId": "ledger:0283:union-station-data-center-and-carrier-hotel:a3bf1cb4",
+    "canonicalKey": "union-station-data-center-and-carrier-hotel|united-states",
+    "companyName": "Union Station Data Center and Carrier Hotel",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 51,
+    "managers": [
+      "Harrison Street"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "051-harrison-street:repo-only:008:union-station-data-center-and-carrier-hotel"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjhv3010vivhe86ahld32"
+    ],
+    "seedKeys": [
+      "union station data center and carrier hotel|United States"
+    ],
+    "evidenceUrls": [
+      "https://harrisonst.com/fifteenfortyseven-critical-systems-realty-and-harrison-street-acquire-the-union-station-data-center-and-carrier-hotel-in-south-bend-indiana/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Harrison Street MATCHED_ELSEWHERE: Rolled into 1547 Critical Systems Realty platform consolidation.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjhv3010vivhe86ahld32",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "union-station-data-center-and-carrier-hotel|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjhv3010vivhe86ahld32",
+    "name": "Union Station Data Center and Carrier Hotel",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Carrier hotel and interconnection data center",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Union Station Data Center & Carrier Hotel is an interconnection-focused carrier hotel in South Bend, Indiana. Its customers include telecommunication carriers, enterprises, and other network users that need access to fiber routes linking Chicago and the eastern United States. The asset follows an asset-heavy digital-infrastructure model based on owned mission-critical real estate and dense carrier interconnection infrastructure. Public acquisition materials describe the facility as a top U.S. carrier hotel with access to more than 20 telecommunications network service providers and a strategic position on transcontinental fiber routes. Harrison Street and 1547 acquired the facility in September 2024 through Harrison Street Digital Fund; the ownership split is not publicly disclosed. The investment extended the partners’ connectivity-focused platform into the South Bend market.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Indiana",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk3rs01zmivhe8z2a3nto",
+        "managerName": "Harrison Street",
+        "organizationName": "Harrison Street",
+        "fundName": null,
+        "vehicleName": "Harrison Street Digital Fund",
+        "stake": null,
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplyzi04b4ivhey2csqxwz",
+        "date": "2024",
+        "event": "The buyers disclosed planned capacity and facility upgrades following the acquisition.",
+        "category": "EXPANSION",
+        "sortDate": "2024-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplz2j04b5ivhe0ei079i5",
+        "date": "Sep 4, 2024",
+        "event": "Harrison Street and 1547 announced the acquisition of the Union Station Data Center and Carrier Hotel in South Bend.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-09-04T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxprio00b74ivhextp8env7",
+        "label": "Announcement date source — Harrison Street — Union Station Data Center and Carrier Hotel",
+        "url": "https://harrisonst.com/fifteenfortyseven-critical-systems-realty-and-harrison-street-acquire-the-union-station-data-center-and-carrier-hotel-in-south-bend-indiana/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Harrison Street transaction announcement",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpriog0b75ivheex10kr7j",
+        "label": "1547Realty — Chicago CBD Data Center (CHIL2)",
+        "url": "https://www.1547realty.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "1547Realty company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpripi0b77ivhewgcnebku",
+        "label": "Globalaccesspoint — Union Station Data Center and Carrier Hotel",
+        "url": "https://globalaccesspoint.net/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Globalaccesspoint company profile",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Union Station Data Center and Carrier Hotel",
+    "investmentFirm": "Harrison Street",
+    "sector": "Digital",
+    "subsector": "Carrier hotel and interconnection data center",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Harrison Street Digital Fund",
+    "description": "Union Station Data Center & Carrier Hotel is an interconnection-focused carrier hotel in South Bend, Indiana. Its customers include telecommunication carriers, enterprises, and other network users that need access to fiber routes linking Chicago and the eastern United States. The asset follows an asset-heavy digital-infrastructure model based on owned mission-critical real estate and dense carrier interconnection infrastructure. Public acquisition materials describe the facility as a top U.S. carrier hotel with access to more than 20 telecommunications network service providers and a strategic position on transcontinental fiber routes. Harrison Street and 1547 acquired the facility in September 2024 through Harrison Street Digital Fund; the ownership split is not publicly disclosed. The investment extended the partners’ connectivity-focused platform into the South Bend market.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2024,
+    "headquarters": "Indiana",
+    "milestones": [
+      {
+        "date": "2024",
+        "event": "The buyers disclosed planned capacity and facility upgrades following the acquisition.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Sep 4, 2024",
+        "event": "Harrison Street and 1547 announced the acquisition of the Union Station Data Center and Carrier Hotel in South Bend.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Announcement date source — Harrison Street — Union Station Data Center and Carrier Hotel",
+        "url": "https://harrisonst.com/fifteenfortyseven-critical-systems-realty-and-harrison-street-acquire-the-union-station-data-center-and-carrier-hotel-in-south-bend-indiana/",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "1547Realty — Union Station Data Center and Carrier Hotel",
+        "url": "https://www.1547realty.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Globalaccesspoint — Union Station Data Center and Carrier Hotel",
+        "url": "https://globalaccesspoint.net/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Harrison Street",
+        "ownershipVehicle": "Harrison Street Digital Fund",
+        "investmentYear": 2024,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi9hc0029ivhep5jy7vm9",
+        "name": "Harrison Street",
+        "updatedAt": "2026-07-23T16:09:19.488Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0283:union-station-data-center-and-carrier-hotel:a3bf1cb4",
+    "taskIndex": 283,
+    "canonicalKey": "union-station-data-center-and-carrier-hotel|united-states",
+    "capturedAt": "2026-08-31T07:39:19.507Z",
+    "databaseRevision": "revision:2d9f0f1ca352b603e6a90e1191104021706d5092feacd61cfdab11e9e587538c",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "e7a0a6c4c59cf40e69f2b36b8bfe417292db85ebe457520fb6ec7db68b90cafa",
+    "productionSnapshotSha256": "2776c26eb6bebee8a02e52bf1a0bad0086ca428c94f591733e49eeef63761b6b",
+    "targetCompanySnapshotSha256": "4ebf77029301635d5d2283593bbcc6d98396734195744585fb477804419a668b",
+    "seedEntrySha256": "b286567bf5ad64a4d9b19b2f0cead3d2bfbdd5b25112fe4a471ef2a3554f0677",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "7fe18232a1ec0083f06a51459d4e0b5d4c82d205109e37198d9f2feabc8d3a56",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "aca578e15ae37e0a87c895a82541686bf8a6bc3d738a98873fb7c4419f86066a",
+      "citationsSha256": "0a85478cf75d2b35b5266974aed6da1f52ae37baf5fc19b81d201bc4aa8d8420",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "21118c226dd681022ec2fbe0ec4d4d8457f619377f1e0ec8cda8d7c34be517d7",
+    "stateSha256": "3568b76936353c2d89558a3f022b9378245d6eff119f1fca36749ea26ffdd070",
+    "taskSnapshotSha256": "028bac24a20f0b9670117e01131fe9cbfd4ce09b0de0891528014d0c63484024"
+  },
+  "contextSha256": "997b11f14573148a1876a7c26bb04da6fa3fbe13ba8163a0d5a96ba5690f762f"
+}
