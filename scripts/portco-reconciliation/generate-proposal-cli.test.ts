@@ -248,6 +248,43 @@ function supersededProposalFixture(
 }
 
 describe("proposal patch ownership additions", () => {
+  it("transfers persisted milestone history into a canonical merge target", () => {
+    const context = contextFixture();
+    const transferred = {
+      id: "milestone_retired_company",
+      date: "2021",
+      event: "A retired facility completed a documented expansion.",
+      category: "EXPANSION",
+      sortDate: "2021-01-01T00:00:00.000Z",
+      evidenceUrls: ["https://acme.example.com/retired-milestone"],
+    };
+    const applied = applySpec(context, {
+      ...baseSpec(),
+      actions: ["MERGE_COMPANIES"],
+      retiredCompanyIds: ["company_retired"],
+      ownershipPeriodAdditions: [],
+      milestoneTransfers: [transferred],
+    });
+
+    expect(applied.afterImage?.milestones).toContainEqual(transferred);
+  });
+
+  it("rejects persisted milestone transfers outside a company merge", () => {
+    const context = contextFixture();
+    expect(() => applySpec(context, {
+      ...baseSpec(),
+      ownershipPeriodAdditions: [],
+      milestoneTransfers: [{
+        id: "milestone_retired_company",
+        date: "2021",
+        event: "A retired facility completed a documented expansion.",
+        category: "EXPANSION",
+        sortDate: "2021-01-01T00:00:00.000Z",
+        evidenceUrls: [],
+      }],
+    })).toThrow(/valid only for MERGE_COMPANIES/i);
+  });
+
   it("adds a signed pending transaction without reconstructing a full company image", () => {
     const context = contextFixture();
     const ownerId = context.targetCompanyImage!.ownershipPeriods[0].id!;

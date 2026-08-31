@@ -15,6 +15,7 @@ import { renderProposalMarkdown } from "./markdown";
 import {
   citationImageSchema,
   companyImageSchema,
+  milestoneImageSchema,
   ownershipPeriodImageSchema,
   pendingOwnershipTransactionImageSchema,
   proposalActions,
@@ -102,6 +103,10 @@ const milestoneUpdateSchema = z.strictObject({
     evidenceUrls: z.array(httpsUrl).optional(),
   }),
 });
+const milestoneTransferSchema = milestoneImageSchema.refine(
+  (milestone) => milestone.id !== null,
+  { message: "Transferred milestone history must retain its persisted id", path: ["id"] },
+);
 const citationUpdateSchema = z.strictObject({
   id: z.string().trim().min(1),
   set: citationImageSchema.omit({ id: true, sourceType: true }).partial().extend({
@@ -146,6 +151,7 @@ const proposalSpecSchema = z.strictObject({
   pendingOwnershipTransactionUpdates: z.array(pendingOwnershipTransactionUpdateSchema).default([]),
   pendingOwnershipTransactionAdditions: z.array(pendingOwnershipTransactionAdditionSchema).default([]),
   milestoneUpdates: z.array(milestoneUpdateSchema).default([]),
+  milestoneTransfers: z.array(milestoneTransferSchema).default([]),
   citationUpdates: z.array(citationUpdateSchema).default([]),
   citationAdditions: z.array(citationAdditionSchema).default([]),
   afterImage: companyImageSchema.optional(),
@@ -155,6 +161,20 @@ const proposalSpecSchema = z.strictObject({
       code: "custom",
       path: ["relationMerges"],
       message: "Retired relation mappings are valid only for MERGE_COMPANIES proposals",
+    });
+  }
+  if (spec.milestoneTransfers.length > 0 && !spec.actions.includes("MERGE_COMPANIES")) {
+    context.addIssue({
+      code: "custom",
+      path: ["milestoneTransfers"],
+      message: "Persisted milestone transfers are valid only for MERGE_COMPANIES proposals",
+    });
+  }
+  if (new Set(spec.milestoneTransfers.map((milestone) => milestone.id)).size !== spec.milestoneTransfers.length) {
+    context.addIssue({
+      code: "custom",
+      path: ["milestoneTransfers"],
+      message: "Transferred milestone ids must be unique",
     });
   }
   if (
@@ -184,6 +204,7 @@ const proposalSpecSchema = z.strictObject({
       || spec.pendingOwnershipTransactionUpdates.length > 0
       || spec.pendingOwnershipTransactionAdditions.length > 0
       || spec.milestoneUpdates.length > 0
+      || spec.milestoneTransfers.length > 0
       || spec.citationUpdates.length > 0
       || spec.citationAdditions.length > 0
     )
@@ -199,6 +220,7 @@ const proposalSpecSchema = z.strictObject({
     && spec.pendingOwnershipTransactionUpdates.length === 0
     && spec.pendingOwnershipTransactionAdditions.length === 0
     && spec.milestoneUpdates.length === 0
+    && spec.milestoneTransfers.length === 0
     && spec.citationUpdates.length === 0
     && spec.citationAdditions.length === 0
   ) {
@@ -440,6 +462,11 @@ export function applySpec(context: TaskSnapshotContext, specInput: unknown) {
         throw new Error(`Milestone update references unknown milestone ${id}`);
       }
     }
+    for (const milestone of spec.milestoneTransfers) {
+      if (beforeImage.milestones.some((existing) => existing.id === milestone.id)) {
+        throw new Error(`Milestone transfer duplicates canonical milestone ${milestone.id}`);
+      }
+    }
     for (const id of citationUpdates.keys()) {
       if (!beforeImage.citations.some((citation) => citation.id === id)) {
         throw new Error(`Citation update references unknown citation ${id}`);
@@ -462,7 +489,7 @@ export function applySpec(context: TaskSnapshotContext, specInput: unknown) {
       milestones: beforeImage.milestones.map((milestone) => ({
         ...milestone,
         ...(milestone.id ? milestoneUpdates.get(milestone.id) : undefined),
-      })),
+      })).concat(spec.milestoneTransfers),
       citations: beforeImage.citations.map((citation) => ({
         ...citation,
         ...(citation.id ? citationUpdates.get(citation.id) : undefined),

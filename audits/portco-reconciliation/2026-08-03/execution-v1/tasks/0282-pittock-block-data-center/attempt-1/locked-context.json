@@ -1,0 +1,234 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0282:pittock-block-data-center:c904067d",
+  "taskIndex": 282,
+  "companyName": "Pittock Block Data Center",
+  "generatedAt": "2026-08-31T07:39:17.550Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0282-pittock-block-data-center/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 282,
+    "taskId": "ledger:0282:pittock-block-data-center:c904067d",
+    "canonicalKey": "pittock-block-data-center|united-states",
+    "companyName": "Pittock Block Data Center",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 51,
+    "managers": [
+      "Harrison Street"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "051-harrison-street:repo-only:007:pittock-block-data-center"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjhru010pivhehhrfvld0"
+    ],
+    "seedKeys": [
+      "pittock block data center|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.1547realty.com/resource/1547-and-harrison-street-acquire-portland-carrier-hotel-and-data-center/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Harrison Street MATCHED_ELSEWHERE: Rolled into 1547 Critical Systems Realty platform consolidation.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjhru010pivhehhrfvld0",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "pittock-block-data-center|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjhru010pivhehhrfvld0",
+    "name": "Pittock Block Data Center",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Carrier hotel and colocation data center",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Pittock Block Data Center is a downtown Portland carrier hotel and colocation facility. Its customers include carriers, cloud and content networks, enterprises, and other users that need dense interconnection in the Pacific Northwest. The asset follows an asset-heavy digital-infrastructure model based on owned mission-critical real estate and carrier-hotel connectivity infrastructure. Public acquisition materials state that the building is home to one of only two primary Northwest internet exchanges, making it a key interconnection point in Portland. Harrison Street and 1547 acquired the facility in January 2021, and subsequent public reporting noted capital improvements to expand capacity and capabilities; the ownership split is not publicly disclosed. The property remains part of the partners’ connectivity-focused data-center portfolio.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Oregon",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk3og01zgivhedji4248j",
+        "managerName": "Harrison Street",
+        "organizationName": "Harrison Street",
+        "fundName": null,
+        "vehicleName": "Harrison Street Digital Fund",
+        "stake": null,
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplykk04amivhe2hseanoz",
+        "date": "Jan 4, 2021",
+        "event": "Harrison Street and 1547 announced the acquisition of the Pittock Block building in Portland.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-01-04T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplynj04anivhekd81d4yi",
+        "date": "Jan 4, 2021",
+        "event": "Pittock Block added 302,200 square feet, 179 service providers, and one of the Northwest's two primary internet exchanges to the 1547-Harrison Street platform.",
+        "category": "EXPANSION",
+        "sortDate": "2021-01-04T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxprhzs0b65ivhepxl7i6fz",
+        "label": "Announcement date source — Harrison Street — Pittock Block Data Center",
+        "url": "https://www.1547realty.com/resource/1547-and-harrison-street-acquire-portland-carrier-hotel-and-data-center/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Harrison Street transaction announcement",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpri080b66ivhejiw7gnc2",
+        "label": "1547Realty — Chicago CBD Data Center (CHIL2)",
+        "url": "https://www.1547realty.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "1547Realty company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpri3f0b68ivhed12isycj",
+        "label": "Data Center Dynamics — Pittock Block Data Center",
+        "url": "https://www.datacenterdynamics.com/en/news/1547-and-harrison-street-upgrade-portlands-pittock-block-data-center/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Data Center Dynamics — Pittock Block Data Center",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Pittock Block Data Center",
+    "investmentFirm": "Harrison Street",
+    "sector": "Digital",
+    "subsector": "Carrier hotel and colocation data center",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Harrison Street Digital Fund",
+    "description": "Pittock Block Data Center is a downtown Portland carrier hotel and colocation facility. Its customers include carriers, cloud and content networks, enterprises, and other users that need dense interconnection in the Pacific Northwest. The asset follows an asset-heavy digital-infrastructure model based on owned mission-critical real estate and carrier-hotel connectivity infrastructure. Public acquisition materials state that the building is home to one of only two primary Northwest internet exchanges, making it a key interconnection point in Portland. Harrison Street and 1547 acquired the facility in January 2021, and subsequent public reporting noted capital improvements to expand capacity and capabilities; the ownership split is not publicly disclosed. The property remains part of the partners’ connectivity-focused data-center portfolio.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2021,
+    "headquarters": "Oregon",
+    "milestones": [
+      {
+        "date": "Jan 4, 2021",
+        "event": "Harrison Street and 1547 announced the acquisition of the Pittock Block building in Portland.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Jan 4, 2021",
+        "event": "Pittock Block added 302,200 square feet, 179 service providers, and one of the Northwest's two primary internet exchanges to the 1547-Harrison Street platform.",
+        "category": "Expansion"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Announcement date source — Harrison Street — Pittock Block Data Center",
+        "url": "https://www.1547realty.com/resource/1547-and-harrison-street-acquire-portland-carrier-hotel-and-data-center/",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "1547Realty — Pittock Block Data Center",
+        "url": "https://www.1547realty.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Data Center Dynamics — Pittock Block Data Center",
+        "url": "https://www.datacenterdynamics.com/en/news/1547-and-harrison-street-upgrade-portlands-pittock-block-data-center/",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Harrison Street",
+        "ownershipVehicle": "Harrison Street Digital Fund",
+        "investmentYear": 2021,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi9hc0029ivhep5jy7vm9",
+        "name": "Harrison Street",
+        "updatedAt": "2026-07-23T16:09:19.488Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0282:pittock-block-data-center:c904067d",
+    "taskIndex": 282,
+    "canonicalKey": "pittock-block-data-center|united-states",
+    "capturedAt": "2026-08-31T07:39:17.550Z",
+    "databaseRevision": "revision:b0cdeef3b3cab4e793b17cb9d74a0790d8c905b6e0690e52976fb0732e471e9c",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "cd295a6213a2ecdd113e90651d295e4597dd7e4d340148cc9a9b8746c310a18a",
+    "productionSnapshotSha256": "eb19e9de019634cd329520e702f3d2bb39148b80ac4ca1b8f2847db74fb64c74",
+    "targetCompanySnapshotSha256": "8b699b00bdea34005ba6dc760e16b30eb6d225329e2f545df1eff68e806d195b",
+    "seedEntrySha256": "95d2ba6879172398fe9dfc3afae6bc74639acea58d01955b99a1ec195e919849",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "52d6411013fc34d208c2795d5452380c22a555b60920daa5cb08bc6e7f35f73b",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "aca578e15ae37e0a87c895a82541686bf8a6bc3d738a98873fb7c4419f86066a",
+      "citationsSha256": "de9cd0634cc63691288e34871481a3b89686e53a0b976877c7787a1b63c6b98a",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "99e7a82400b1b5f066b1fc2841447aa0950d632ae9db6784ab64b600248f3b27",
+    "stateSha256": "5537b93b6dbd0742eae49b15880aeb3b99c8abf2d5f7d8a81fce9c597ba9cd66",
+    "taskSnapshotSha256": "c2d307aab6a93f5a539387c47643766d4d762813ebfedb35266ecf0137aa7850"
+  },
+  "contextSha256": "cabde7aae2fe644eef9315509b97f12f8b0e74633d54ad4a7b4cf3583c7884aa"
+}

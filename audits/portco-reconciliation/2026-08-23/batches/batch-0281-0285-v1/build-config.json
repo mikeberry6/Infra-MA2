@@ -1,0 +1,51 @@
+{
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0281-0285-v1",
+  "createdAt": "2026-08-31T07:50:00.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "9e1621042a730a44e6446e9ccd8c8035e663c38db4fe0535dfde05bb80b61ff7"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "e75df35e224a1c1db6f3afc11d04a07cbaf2bffce03b3f55d13a3939b5c8e083"
+  },
+  "members": [
+    {
+      "kind": "MUTATION",
+      "proposalPath": "audits/portco-reconciliation/2026-08-03/proposals/0281-orangeburg-data-center-orny1-v1/proposal.json",
+      "authorizationPath": "audits/portco-reconciliation/2026-08-03/approvals/0281-orangeburg-data-center-orny1-v1.json",
+      "productionSnapshotPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0281-orangeburg-data-center-orny1/attempt-1/locked-production-snapshot.json",
+      "taskSnapshotPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0281-orangeburg-data-center-orny1/attempt-1/locked-task-snapshot.json",
+      "observedTaskSnapshotPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0281-orangeburg-data-center-orny1/attempt-1/authorization-observed-task-snapshot.json",
+      "researchDecisionPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0281-orangeburg-data-center-orny1/attempt-1/application-research-decision.json",
+      "sourceVerificationPath": "audits/portco-reconciliation/2026-08-03/execution-v1/shared-adjudications/harrison-street-1547-platform-boundary/attempt-1/source-verification.json",
+      "supersededTaskIds": [
+        "ledger:0286:wyoming-data-center-chwy1:c8f7768a"
+      ]
+    },
+    {
+      "kind": "TERMINAL",
+      "decisionPath": "audits/portco-reconciliation/2026-08-23/batches/batch-0281-0285-v1/decisions/0282-pittock-block-data-center.json"
+    },
+    {
+      "kind": "TERMINAL",
+      "decisionPath": "audits/portco-reconciliation/2026-08-23/batches/batch-0281-0285-v1/decisions/0283-union-station-data-center-and-carrier-hotel.json"
+    },
+    {
+      "kind": "MUTATION",
+      "proposalPath": "audits/portco-reconciliation/2026-08-03/proposals/0284-warren-county-solar-project-v1/proposal.json",
+      "authorizationPath": "audits/portco-reconciliation/2026-08-03/approvals/0284-warren-county-solar-project-v1.json",
+      "productionSnapshotPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0284-warren-county-solar-project/attempt-1/locked-production-snapshot.json",
+      "taskSnapshotPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0284-warren-county-solar-project/attempt-1/locked-task-snapshot.json",
+      "observedTaskSnapshotPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0284-warren-county-solar-project/attempt-1/authorization-observed-task-snapshot.json",
+      "researchDecisionPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0284-warren-county-solar-project/attempt-1/application-research-decision.json",
+      "sourceVerificationPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0284-warren-county-solar-project/attempt-1/source-verification.json",
+      "supersededTaskIds": []
+    },
+    {
+      "kind": "TERMINAL",
+      "decisionPath": "audits/portco-reconciliation/2026-08-23/batches/batch-0281-0285-v1/decisions/0285-wells-building-data-center.json"
+    }
+  ]
+}

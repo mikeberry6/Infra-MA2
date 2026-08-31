@@ -1,0 +1,311 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_MANIFEST",
+  "methodologyVersion": "PORTCO_APPLY_BATCH_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0281-0285-v3",
+  "createdAt": "2026-08-31T09:42:00.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "50d0d73b26fbffb33eafac88a0f0b585d704ad49556106b3774a5243aec3ef5f"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0281:orangeburg-data-center-orny1:77d85b56",
+      "taskIndex": 281,
+      "companyName": "Orangeburg Data Center (ORNY1)",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0281-orangeburg-data-center-orny1-v4/proposal.json",
+        "sha256": "54583d238fb4f605283a77287ccde6707e719b80fa67c7648a0d757e3274927c"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0281-orangeburg-data-center-orny1-v4.json",
+        "sha256": "eb6fd9410ec95875f861d9316073e3f43f257b88ae890932deed5040044f4834"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0281-orangeburg-data-center-orny1/attempt-1/locked-production-snapshot.json",
+        "sha256": "acf99808336f971e794bf5a3a2e0644943fdfccc2f768420bc2797771fcaff95"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0281-orangeburg-data-center-orny1/attempt-1/locked-task-snapshot.json",
+        "sha256": "ff472fc97fcd78368b0620fd708a73bdbbd934341c4c9160689d657246b8251d"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0281-orangeburg-data-center-orny1/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "d0cb35a1d89c80f437f1854ce2d69de1d22779d23a4b7d24e00ce804eaf1d0b9"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0281-orangeburg-data-center-orny1/attempt-1/application-research-decision.json",
+        "sha256": "a8e7133cb9d70aad036296a621bfd0c1f362d3a1c784b88ec3c04dce4218a16b"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/shared-adjudications/harrison-street-1547-platform-boundary/attempt-1/source-verification.json",
+        "sha256": "1bfd9b44b2f5792aa27b404bd9c56752932df885d75f7e272c7631c1044154c8"
+      },
+      "supersededTaskIds": [
+        "ledger:0286:wyoming-data-center-chwy1:c8f7768a"
+      ],
+      "taskStateSha256": "b180e7ab9919c6572f2104036beac9d9eff4f10070ce115309195d706c2750cd",
+      "dependencySha256": "da86e87e2ca822ce21ef6f249c41669e8cc8dfe8e73465e4d21cc6a52661fd00",
+      "afterImageSha256": "67025ed643184bf8ea5789e16a48e8841b4910c03569839f7a20a1a688e6b93d",
+      "targetClaims": [
+        "canonical:harrison-street-1547-data-center-and-connectivity-platform|united-states",
+        "company:cmrxpjhrc010oivhelk9l4fdo",
+        "company:cmrxpjhru010pivhehhrfvld0",
+        "company:cmrxpjhv3010vivhe86ahld32",
+        "company:cmrxpjhxb010zivhelk49c64f",
+        "company:cmrxpjhza0112ivhee9ol0nj7",
+        "company:cmtfaalqe0020rz2bdtobqwxo",
+        "relation:cmrxpk3nw01zfivhe78byrc81",
+        "relation:cmrxpk3og01zgivhedji4248j",
+        "relation:cmrxpk3rs01zmivhe8z2a3nto",
+        "relation:cmrxpk3tv01zqivhegwn8yzu4",
+        "relation:cmrxpk3xz01ztivhece1ssvcu",
+        "relation:cmrxplyh904aiivhexr2qncwh",
+        "relation:cmrxplyiu04akivhebzqoih64",
+        "relation:cmrxplyje04alivhe27arqw0k",
+        "relation:cmrxplykk04amivhe2hseanoz",
+        "relation:cmrxplz2j04b5ivhe0ei079i5",
+        "relation:cmrxplza704bfivhefx79p2qw",
+        "relation:cmrxplzas04bgivhe0iuhcloz",
+        "relation:cmrxplzip04bnivhesozr96cz",
+        "relation:cmtfaalu10022rz2b6xrjgw2u",
+        "relation:cmtfaalw70024rz2b5laig4o1",
+        "relation:cmtfaalxn0025rz2bncmzjptu",
+        "relation:cmtfaalzs0027rz2bukrxfb11",
+        "relation:cmtfaam1y0029rz2b5mz33xs7",
+        "relation:cmtfaam45002brz2bpjns2a59",
+        "relation:cmtfaam72002crz2b9fjdofwo",
+        "relation:cmtfaam9a002erz2b8g58t2wg",
+        "relation:cmtfaamaq002frz2bjb5pjq21",
+        "relation:cmtfaamef002grz2bw92bta7k",
+        "relation:cmtfaami2002hrz2b7c4ts9lm",
+        "relation:cmtfaamlp002irz2bivd0wwb6",
+        "relation:cmtfewnkm0001ln2b2qrohkk2",
+        "relation:cmtfewnqe0003ln2bcd27dd6u",
+        "relation:cmtfewnwb0005ln2ba5aws33q",
+        "relation:cmtfewo230007ln2bgtdgkeve",
+        "seed:harrison street–1547 data center & connectivity platform|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://harrisonst.com/fifteenfortyseven-critical-systems-realty-and-harrison-street-acquire-the-union-station-data-center-and-carrier-hotel-in-south-bend-indiana/",
+          "label": "Announcement date source — Harrison Street — Union Station Data Center and Carrier Hotel",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://harrisonst.com/harrison-street-asset-management-and-fifteenfortyseven-critical-systems-realty-achieve-full-occupancy-at-orangeburg-data-center-with-further-expansion-underway/",
+          "label": "Harrison Street — Orangeburg expansion",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://property.jll.com/listings/40-e-garfield-blvd-chicago",
+          "label": "JLL — 40 E Garfield Boulevard sale listing",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.1547realty.com/data-center/cheyenne-wy-chwy1/",
+          "label": "1547 — Cheyenne Data Center (CHWY1)",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.1547realty.com/data-center/chicago-il-chil1/",
+          "label": "1547 — Midway Technology Centre (CHIL1)",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.1547realty.com/data-center/milwaukee-wi-miwi1/",
+          "label": "1547Realty — Wells Building Data Center",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.1547realty.com/data-center/orangeburg-new-york-orny1/",
+          "label": "1547Realty — Orangeburg Data Center (ORNY1)",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.1547realty.com/data-center/portland-or-ptor1/",
+          "label": "1547 — Pittock Block Data Center (PTOR1)",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.1547realty.com/data-center/south-bend-in-sbin1/",
+          "label": "1547 — South Bend Data Center (SBIN1)",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.1547realty.com/data-centers/",
+          "label": "1547 — Current data-center portfolio",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.1547realty.com/resource/1547-and-harrison-street-acquire-drfortress-hawaiis-leading-carrier-neutral-data-center/",
+          "label": "1547 — DRFortress acquisition",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.1547realty.com/resource/1547-and-harrison-street-acquire-historic-milwaukee-carrier-hotel-and-data-center/",
+          "label": "Announcement date source — Harrison Street — Wells Building Data Center",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.1547realty.com/resource/1547-and-harrison-street-acquire-portland-carrier-hotel-and-data-center/",
+          "label": "Announcement date source — Harrison Street — Pittock Block Data Center",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.1547realty.com/resource/fifteenfortyseven-critical-systems-realty-and-harrison-street-acquire-portfolio-of-four-strategically-located-data-centers-in-new-york-chicago-and-wyoming/",
+          "label": "1547 — Four-data-center portfolio acquisition",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.1547realty.com/resource/harrison-street-1547-acquire-carrier-hotel-data-center-hawaii-and-announce-expansion/",
+          "label": "1547 — Harrison Street–1547 national platform",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.cimgroup.com/press-releases/cim-group-sells-portfolio-of-four-data-center-assets",
+          "label": "CIM Group — Four-data-center portfolio sale",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1840644/000153949721000039/n2405-x1_premarketts.htm",
+          "label": "SEC — Pittock Block offering memorandum",
+          "sourceType": "SEC_FILING"
+        }
+      ]
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0282:pittock-block-data-center:c904067d",
+      "taskIndex": 282,
+      "companyName": "Pittock Block Data Center",
+      "outcome": "SUPERSEDED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0281-0285-v3/decisions/0282-pittock-block-data-center.json",
+        "sha256": "4f00f8b087426106ddaa03a2f81c9ce0cb1a1aa0ea2d10a73643f287ed96218c"
+      }
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0283:union-station-data-center-and-carrier-hotel:a3bf1cb4",
+      "taskIndex": 283,
+      "companyName": "Union Station Data Center and Carrier Hotel",
+      "outcome": "SUPERSEDED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0281-0285-v3/decisions/0283-union-station-data-center-and-carrier-hotel.json",
+        "sha256": "1942351f60ea64d095f49756a096bb46471e004d6a7e06a0d754315a87e423c9"
+      }
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0284:warren-county-solar-project:0c3e1f95",
+      "taskIndex": 284,
+      "companyName": "Warren County Solar Project",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0284-warren-county-solar-project-v1/proposal.json",
+        "sha256": "e6e21738cc6d3a0cb3b9a7dcb67c1820f3e5014a5ce98d322e2100f9be1d047b"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0284-warren-county-solar-project-v1.json",
+        "sha256": "7735fda5c1ab8e4bcffcb063ed0e58a5898b116e417882f359bb287a73865060"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0284-warren-county-solar-project/attempt-1/locked-production-snapshot.json",
+        "sha256": "0efd1019ddfc62150a60dfbfb89cccdf07b14313c14309975b0fb17e410a4eef"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0284-warren-county-solar-project/attempt-1/locked-task-snapshot.json",
+        "sha256": "2f5b8cd294f3cd4d3c6c3701a7034194c2ec278bb6f1ca034773e23745b61717"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0284-warren-county-solar-project/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "35a7df36cb82f9e6d47b2019d11290c7545d3f0d9a7d17dbda907b889bf3d42d"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0284-warren-county-solar-project/attempt-1/application-research-decision.json",
+        "sha256": "694e6702ec018369070d334955c2b15bfceddd3afa58c2cc826579cd53212110"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0284-warren-county-solar-project/attempt-1/source-verification.json",
+        "sha256": "9d37869ae2732c487d44ef3cb89715cfc760764fef966cb9d7fdd805238eb3e0"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "88697c00d6337c706279ad37bbb099bd83473fe4d8bb366df2d953d652606605",
+      "dependencySha256": "4f2b815f06ea66b0ab762babe85a1d5bcaf766ba9be1ebeb91ca5299c27cba42",
+      "afterImageSha256": "aab890a2e103b7361de641351d9bc7c32df4f78af3b2f96f44594f1ee25d0a1e",
+      "targetClaims": [
+        "canonical:warren-county-solar-project|united-states",
+        "company:cmrxpjhwq010yivhe6klfgqf5",
+        "relation:cmrxpk3tb01zpivhel7rowy9i",
+        "relation:cmrxplz8n04bdivhei41c73n3",
+        "relation:cmrxplz9404beivhefy2bojra",
+        "relation:cmrxpriz60b7kivhelppwn1cf",
+        "relation:cmrxprj040b7mivhex7234cbr",
+        "relation:cmrxprj180b7oivhen1z67ck0",
+        "seed:cz solar warren, llc|united states",
+        "seed:warren county solar project|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://cincinnatizoo.org/bowyer-farm-restoring-land-for-wildlife-agriculture-and-future-generations/",
+          "label": "Cincinnati Zoo — Bowyer Farm solar update",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://cincinnatizoo.org/news-releases/solar-array-at-cincinnati-zoos-bowyer-farm-is-online/",
+          "label": "Cincinnatizoo — Warren County Solar Project",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://elibrary.ferc.gov/eLibrary/docinfo?accession_Number=20210428-3039",
+          "label": "FERC — CZ Solar Warren interconnection record",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://harrisonst.com/harrison-street-acquires-28-mw-cincinnati-solar-project/",
+          "label": "Harrisonst — CoolCo",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.harrisonst.com/wp-content/uploads/2023/06/HS-ESG-Impact-Report_2022.pdf",
+          "label": "Harrisonst — Warren County Solar Project",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/soltage-and-melink-announce-28-mw-solar-project-at-cincinnati-zoo-301627648.html",
+          "label": "PR Newswire — Soltage and Melink Cincinnati Zoo Solar",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1258602/000125860223000026/nni-12312022xex_211.htm",
+          "label": "Nelnet — 2022 tax-equity exhibit",
+          "sourceType": "SEC_FILING"
+        }
+      ]
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0285:wells-building-data-center:43636a55",
+      "taskIndex": 285,
+      "companyName": "Wells Building Data Center",
+      "outcome": "SUPERSEDED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0281-0285-v3/decisions/0285-wells-building-data-center.json",
+        "sha256": "f0d604c0e1b2d0ad3e46bd1fa5c43920658425f37b9b9d761f4c6ff37d3d640c"
+      }
+    }
+  ],
+  "collisionAnalysis": {
+    "independent": true,
+    "claimsSha256": "91a29ba888f68aa9b0f77cb02eb568c5bcbb2a503e4ea5ff01986857353eb1f5",
+    "sharedSourceUrls": [],
+    "conflicts": []
+  },
+  "batchSha256": "9d9da18bc48ad5cb7f00d2f49cea03e1e652b28cdb178b98ec378d2d51388a2b"
+}
