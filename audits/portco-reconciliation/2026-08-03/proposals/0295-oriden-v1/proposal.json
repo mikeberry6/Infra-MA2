@@ -1,0 +1,223 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0295:oriden:9e2a047b",
+  "taskIndex": 295,
+  "asOfDate": "2026-09-01",
+  "generatedAt": "2026-09-01T04:31:00.000Z",
+  "canonicalKey": "oriden|united-states",
+  "companyName": "Oriden",
+  "actions": [
+    "CREATE_COMPANY"
+  ],
+  "sourceHoldingIds": [
+    "053-i-squared-capital:holding:016:oriden"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Create one Oriden renewable-development platform record. I Squared's Energy Transition Infrastructure Fund completed the acquisition of Oriden LLC from Mitsubishi Power Americas on or before April 27, 2026, and I Squared continued to list the company as active. Individual projects and project SPVs remain beneath the platform boundary; the January 2026 Abes Run transaction was a project-level sale and not a sale of Oriden.",
+  "evidence": [
+    {
+      "url": "https://isquaredcapital.com/news/oriden-acquisition-renewable-energy/",
+      "purpose": "Completed acquisition, fund attribution and current platform scope",
+      "supports": [
+        "I Squared's Energy Transition Fund acquired Oriden",
+        "Mitsubishi Power Americas was the seller",
+        "Oriden had a development pipeline exceeding 5 GW"
+      ]
+    },
+    {
+      "url": "https://www.sheppard.com/news-and-events/press-releases/sheppard-advises-mitsubishi-power-americas-inc-in-sale-of-oriden-to-i-squared-capital",
+      "purpose": "Legal identity and seller confirmation",
+      "supports": [
+        "Oriden LLC was sold by Mitsubishi Power Americas",
+        "The transaction included a post-closing project milestone earnout"
+      ]
+    },
+    {
+      "url": "https://isquaredcapital.com/txnm_status/active/",
+      "purpose": "Current ownership and exit check",
+      "supports": [
+        "I Squared continued to list Oriden as active"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "c490dfb337d68ea973d9abbe6da01bd921c0936eecb04662a042087826294619",
+  "currentCompanySnapshotSha256": null,
+  "executionLock": {
+    "taskSnapshotSha256": "d491e3da21e5e429f2a8ade06eb805616aef6683109c0fe1be2cdb589e2df0a7",
+    "taskStateSha256": "632835bf0203e7a43f02957bb82738204dccd7f45c3baad6dfd399feb6be5bfe",
+    "taskDependencySha256": "377aeed93c328324142aba5e3e1c07cd25c2c241ddb0caab21c852b74d0a03e9",
+    "seedEntrySha256": null,
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "80bb1b9fbd97369aa59b500bed343eef3e3b9c5867c7525a27b7990477dc78d0",
+      "organizationsSha256": "3a6e897cb6bf74e545c692a28085dff8e712c5fcc0be550290c59c13cf02f9a8",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj2mk00dvivhegna869hx",
+        "fundName": "ISQ Energy Transition Infrastructure Fund",
+        "managerId": "cmrxpi9mi002aivhewgvbh2ag",
+        "updatedAt": "2026-07-23T16:09:57.260Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi9mi002aivhewgvbh2ag",
+        "name": "I Squared Capital",
+        "updatedAt": "2026-07-23T16:09:19.674Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": null,
+  "beforeImageSha256": null,
+  "afterImage": {
+    "id": null,
+    "name": "Oriden",
+    "aliases": [
+      "Oriden LLC"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Utility-scale renewable energy development",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Oriden is a U.S. renewable-energy development platform focused on utility-scale solar and battery storage across MISO, PJM and other eastern U.S. markets. The company covers origination, permitting, interconnection, financing, construction oversight, asset management and operations and maintenance, and disclosed a development pipeline exceeding 5 GW at acquisition. I Squared Capital's Energy Transition Infrastructure Fund completed the acquisition of Oriden LLC from Mitsubishi Power Americas on or before April 27, 2026; the exact stake, vehicle, price and legal closing date were not publicly disclosed. Mitsubishi launched the platform in 2019 and exited in the 2026 sale. Individual projects and project SPVs, including Abes Run, remain beneath the platform boundary, and no later Oriden sale or signed pending exit was identified through August 19, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.oridenpower.com/",
+    "yearFounded": 2019,
+    "headquarters": "Pittsburgh, Pennsylvania",
+    "lastVerifiedAt": "2026-08-19T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": null,
+        "managerName": "Mitsubishi Power Americas",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Corporate ownership",
+        "stake": "Former owner; exact percentage not publicly disclosed",
+        "investmentYear": 2019,
+        "exitYear": 2026,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      },
+      {
+        "id": null,
+        "managerName": "I Squared Capital",
+        "organizationName": "I Squared Capital",
+        "fundName": "ISQ Energy Transition Infrastructure Fund",
+        "vehicleName": null,
+        "stake": "Exact percentage not publicly disclosed",
+        "investmentYear": 2026,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": null,
+        "date": "Mar 27, 2019",
+        "event": "Mitsubishi Hitachi Power Systems Americas publicly launched Oriden as a U.S. renewable-development business.",
+        "category": "FOUNDING",
+        "sortDate": "2019-03-27T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.oridenpower.com/blog/oriden-announces-pittsburgh-office-grand-opening-and-new-strategic-partnership-for-distributed-renewable-deployments"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Jan 7, 2026",
+        "event": "Oriden announced an agreement to sell the Abes Run solar project; the project-level transaction did not transfer the Oriden platform.",
+        "category": "DIVESTITURE",
+        "sortDate": "2026-01-07T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.oridenpower.com/blog/tokyo-century-and-kyuden-international-corporation-to-purchase-solar-power-project-in-pennsylvania"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Apr 27, 2026",
+        "event": "I Squared Capital announced that its Energy Transition Infrastructure Fund had completed the acquisition of Oriden LLC from Mitsubishi Power Americas.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-04-27T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://isquaredcapital.com/news/oriden-acquisition-renewable-energy/",
+          "https://www.sheppard.com/news-and-events/press-releases/sheppard-advises-mitsubishi-power-americas-inc-in-sale-of-oriden-to-i-squared-capital"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": null,
+        "label": "I Squared Capital",
+        "url": "https://isquaredcapital.com/news/oriden-acquisition-renewable-energy/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Completed acquisition, Energy Transition Fund attribution and 5+ GW pipeline",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "Sheppard Mullin — Oriden sale",
+        "url": "https://www.sheppard.com/news-and-events/press-releases/sheppard-advises-mitsubishi-power-americas-inc-in-sale-of-oriden-to-i-squared-capital",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Oriden LLC legal identity, Mitsubishi seller and completed transaction",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Isquaredcapital — WhiteWater / Whistler Pipeline",
+        "url": "https://isquaredcapital.com/txnm_status/active/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current active Oriden portfolio status and exit check",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Oriden — project experience",
+        "url": "https://www.oridenpower.com/project-experience",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current development pipeline and platform-versus-project boundary",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Oriden — company launch",
+        "url": "https://www.oridenpower.com/blog/oriden-announces-pittsburgh-office-grand-opening-and-new-strategic-partnership-for-distributed-renewable-deployments",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "2019 launch, Pittsburgh identity and operating capabilities",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Oriden — Abes Run project sale",
+        "url": "https://www.oridenpower.com/blog/tokyo-century-and-kyuden-international-corporation-to-purchase-solar-power-project-in-pennsylvania",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Project-level sale distinguished from a platform ownership change",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "2bad11cb1dc1b4c29872a3e7ec49c969884ff93829b4afdbd8a0c809ebb276d8",
+  "proposalSha256": "7adbfe0f7b19a0e8948316325cafdeb9634898464f76982b4642a2354916e2fa"
+}

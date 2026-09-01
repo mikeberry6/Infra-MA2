@@ -109,12 +109,18 @@ async function main(): Promise<void> {
     queueProvesUnboundCreate,
   });
   const normalizedDecision = decisionNormalization?.finalValue ?? String(source.decision);
-  const acceptedConfidence = typeof result.confidence === "string"
+  const acceptedConfidenceValue = typeof result.confidence === "string"
+    || typeof result.confidence === "number"
     ? result.confidence
     : result.confidence && typeof result.confidence === "object"
       && typeof (result.confidence as Record<string, unknown>).overall === "string"
       ? String((result.confidence as Record<string, unknown>).overall)
       : null;
+  const acceptedConfidence = typeof acceptedConfidenceValue === "number"
+    ? acceptedConfidenceValue >= 0.9
+      ? "HIGH"
+      : acceptedConfidenceValue >= 0.5 ? "MEDIUM" : "LOW"
+    : acceptedConfidenceValue;
   const stagedConfidence = typeof source.confidence === "string" ? source.confidence : null;
   const confidenceMatches = acceptedConfidence !== null && stagedConfidence !== null
     && (acceptedConfidence === stagedConfidence
@@ -174,11 +180,13 @@ async function main(): Promise<void> {
       sourceVerification: { path: repositoryPath(verificationPath), sha256: sha256(verificationBytes) },
       acceptedResponseSha256: source.responseSha256,
       sourceVerificationArtifactType: verification.artifactType ?? null,
-      ...(acceptedConfidence === stagedConfidence ? {} : {
+      ...(acceptedConfidenceValue === stagedConfidence ? {} : {
         confidenceNormalization: {
-          acceptedValue: acceptedConfidence,
+          acceptedValue: acceptedConfidenceValue,
           stagedSummaryValue: stagedConfidence,
-          basis: "The staged summary preserves the accepted overall confidence and appends a more specific evidence-gap qualifier; the research decision is unchanged.",
+          basis: typeof acceptedConfidenceValue === "number"
+            ? "The accepted response expressed confidence as a numeric score; the staged summary preserves its deterministic HIGH, MEDIUM, or LOW band and the research decision is unchanged."
+            : "The staged summary preserves the accepted overall confidence and appends a more specific evidence-gap qualifier; the research decision is unchanged.",
         },
       }),
       ...(decisionNormalization ? {

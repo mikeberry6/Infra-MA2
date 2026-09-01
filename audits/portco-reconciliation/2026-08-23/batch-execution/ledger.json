@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-01T04:20:00Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-09-01T04:52:01Z",
+  "activeBatchId": "batch-0292-0296-v1",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -4892,7 +4892,65 @@
           "reason": null
         }
       ]
+    },
+    {
+      "batchId": "batch-0292-0296-v1",
+      "state": "RELEASING",
+      "taskIds": [
+        "ledger:0292:flexivan:05de4d37",
+        "ledger:0293:gridpoint:326d6d5b",
+        "ledger:0294:milestone-environmental-services:a293d6bf",
+        "ledger:0295:oriden:9e2a047b",
+        "ledger:0296:palmetto:ba036cf0"
+      ],
+      "taskIndexes": [
+        292,
+        293,
+        294,
+        295,
+        296
+      ],
+      "createdAt": "2026-09-01T04:26:00Z",
+      "updatedAt": "2026-09-01T04:52:01Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0292-0296-v1/batch-manifest.json",
+        "sha256": "1c5dd9833e36fb00ec38cdbc48635f2959a97191d0ea1532525aee2c5b8263d1"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-09-01T04:26:00Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-09-01T04:52:00Z",
+          "evidenceSha256": [
+            "1c5dd9833e36fb00ec38cdbc48635f2959a97191d0ea1532525aee2c5b8263d1"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "RELEASING",
+          "at": "2026-09-01T04:52:01Z",
+          "evidenceSha256": [
+            "1c5dd9833e36fb00ec38cdbc48635f2959a97191d0ea1532525aee2c5b8263d1"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "5f579bb10c9fc53d3678485ffb20cae7c8a99e88c7468dc7868783ec72c9f452"
+  "ledgerSha256": "57815d38e27c0695036fe4c885413ecdb45147a6904e622507eb930878bf470e"
 }
