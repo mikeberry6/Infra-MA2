@@ -1,0 +1,190 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:batch:apply
+> npx tsx scripts/portco-reconciliation/batch-apply-cli.ts --batch-manifest=audits/portco-reconciliation/2026-08-23/batches/batch-0379-0383-v1/batch-manifest.json --batch-sha256=93a2e1bd951372538ab334689e6f880b622c96861099a53d29559fc6284f918b --seed-artifact=prisma/seed-data/approved-portco-after-images.json --apply --write-token=APPLY_APPROVED_PORTCO_BATCH --commit-receipt=tmp/portco-reconciliation/production/batch-commit-receipt.json --receipt=tmp/portco-reconciliation/production/batch-apply-receipt.json --public-base-url=https://infra-ma-2.vercel.app/Infra-MA2/
+
+(node:3970) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "BATCH_APPLIED",
+  "receiptPath": "/home/runner/work/Infra-MA2/Infra-MA2/tmp/portco-reconciliation/production/batch-apply-receipt.json",
+  "receipt": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_APPLY_BATCH_RECEIPT",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "batchId": "batch-0379-0383-v1",
+    "batchSha256": "93a2e1bd951372538ab334689e6f880b622c96861099a53d29559fc6284f918b",
+    "releaseSha": "115da46f31a2c54328d4d372f00fcb18bdad908a",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "transactionId": "4f42e91a-eb05-4ae0-bcdb-350f580e8d5d",
+    "appliedAt": "2026-09-01T20:53:11.623Z",
+    "members": [
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0379:dimension-renewable-energy:afa21f3c",
+        "taskIndex": 379,
+        "companyName": "Dimension Renewable Energy",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0379:dimension-renewable-energy:afa21f3c",
+          "taskIndex": 379,
+          "companyName": "Dimension Renewable Energy",
+          "companyId": "cmtj597ba00002a2bspz4drmq",
+          "proposalSha256": "57aad41d9c7b317f11c2761e90d30d16a98ef7f1dcad5192e52db07ffea33d01",
+          "approvalSha256": "1ddf227cff046b7e7908ae0634db2433b115a02eb8033a5dcb1b9b75e37f90f6",
+          "productionSnapshotSha256": "63d959f28a689c968b4053b75625990c312f41690cc88a37e25ac5bbbddb7f81",
+          "beforeCompanySnapshotSha256": null,
+          "appliedAfterImageSha256": "c1866d8aae6f82536f7b40f85b6057b2f2b0ce4f96b0858ba892a3c2bbb8b6ee",
+          "seedAfterImageSha256": "c1866d8aae6f82536f7b40f85b6057b2f2b0ce4f96b0858ba892a3c2bbb8b6ee",
+          "approvedSeedEntrySha256": "53cb85c6a5ee6d117a9ef18c5f13b6a6493a643de9456f55aafa8df04b67ae85",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "4f42e91a-eb05-4ae0-bcdb-350f580e8d5d",
+          "auditEventId": "cmtj598ev000j2a2bbmbyl6rx",
+          "appliedAt": "2026-09-01T20:53:11.623Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "486686aa5530fcd592c9f6f2b0c4d864e298daa077ac41f186a74681dff7a4fb"
+        }
+      },
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0380:edgecore-digital-infrastructure:92394a7f",
+        "taskIndex": 380,
+        "companyName": "EdgeCore Digital Infrastructure",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0380:edgecore-digital-infrastructure:92394a7f",
+          "taskIndex": 380,
+          "companyName": "EdgeCore Digital Infrastructure",
+          "companyId": "cmtj598vu000k2a2bg9cs4trp",
+          "proposalSha256": "57d04181a3ecd49987716a552b9b99e74c86c65e7f0f96538f7c139be552247f",
+          "approvalSha256": "ec7f8b04b041e34fac1641d06614402cbda22cf8e3f5cbfb7cb81454f3d64e8a",
+          "productionSnapshotSha256": "e0f9231d81b2d823ebde6efda80e0273bacaa37f7f4b009b7d4f6a7abbbe6923",
+          "beforeCompanySnapshotSha256": null,
+          "appliedAfterImageSha256": "6756590908c813ea988fc80c31387b3fb17e71dad6afbf461cc8c6d519af34e3",
+          "seedAfterImageSha256": "6756590908c813ea988fc80c31387b3fb17e71dad6afbf461cc8c6d519af34e3",
+          "approvedSeedEntrySha256": "ac30e36a03ada2f4d7f69bc985c706996a880bd79945f61547367d06e7582316",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "4f42e91a-eb05-4ae0-bcdb-350f580e8d5d",
+          "auditEventId": "cmtj599vn00142a2bn8tk0e32",
+          "appliedAt": "2026-09-01T20:53:11.623Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "2627e7bb2200e45c91b94de8625837ffdd7dd70ddc51d05d7adf0b9ad9e2142f"
+        }
+      },
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0381:exus-renewables-north-america:beef769f",
+        "taskIndex": 381,
+        "companyName": "Exus Renewables North America",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0381:exus-renewables-north-america:beef769f",
+          "taskIndex": 381,
+          "companyName": "Exus Renewables North America",
+          "companyId": "cmtj59aap00152a2bkeju8781",
+          "proposalSha256": "e8fcee9898f51dd92fe87a8a252ad7b12483256efc116c54644f20e0acb2e3fb",
+          "approvalSha256": "6a449415326c146af5d24e21d996e3577a18209248dee84d59e0ba496d970375",
+          "productionSnapshotSha256": "cc8403e95040ed22c1e91b71e86f8b059c8644dfe92346bc17b501e4be74f604",
+          "beforeCompanySnapshotSha256": null,
+          "appliedAfterImageSha256": "f52987cb4ad2d56b934e6e4b856a650b60c822351d9488a674caee2b03f81445",
+          "seedAfterImageSha256": "f52987cb4ad2d56b934e6e4b856a650b60c822351d9488a674caee2b03f81445",
+          "approvedSeedEntrySha256": "d51c733e1c37211f169644635d650ee87be74ee99f8d64bb51bed61684e3ae96",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "4f42e91a-eb05-4ae0-bcdb-350f580e8d5d",
+          "auditEventId": "cmtj59b3s001k2a2bwk7utzml",
+          "appliedAt": "2026-09-01T20:53:11.623Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "335cfd36df3cc57741fc9b8cf8aa0ce5660c4f108d40cb43bf8273d06f541827"
+        }
+      },
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0382:milestone-equipment-holdings:c1b0b537",
+        "taskIndex": 382,
+        "companyName": "Milestone Equipment Holdings",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0382:milestone-equipment-holdings:c1b0b537",
+          "taskIndex": 382,
+          "companyName": "Milestone Equipment Holdings",
+          "companyId": "cmtj59bjr001l2a2bu371qye3",
+          "proposalSha256": "17ac403f31a9ea3ac619f8028ea0e985c9032fd120f99a6e39c95bafb9a986c9",
+          "approvalSha256": "74e88683acd491fa5f5c5a92b4f7dddcb16dc61010eaa0e7a1ce11b306a5f742",
+          "productionSnapshotSha256": "d6a213828b7aece9dd765c1f3ed7016e8d5be05765a8965a20b1e298670d6e1c",
+          "beforeCompanySnapshotSha256": null,
+          "appliedAfterImageSha256": "42e0a54e48f65321455e8b99a1e4e5abe5d6ef2e49345c37f615254e479e6f08",
+          "seedAfterImageSha256": "42e0a54e48f65321455e8b99a1e4e5abe5d6ef2e49345c37f615254e479e6f08",
+          "approvedSeedEntrySha256": "bb9c365f3121b9718e285b4b2fcfefb3657b191f6ba7214097c5e1b02e0ba00a",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "4f42e91a-eb05-4ae0-bcdb-350f580e8d5d",
+          "auditEventId": "cmtj59chv00252a2boxrwv6y9",
+          "appliedAt": "2026-09-01T20:53:11.623Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "dd08f951fb0b21fa59c50edcacdb5cc771a79103a2bbd7c4cc42772e8676c048"
+        }
+      },
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0383:usic:edbbd2fb",
+        "taskIndex": 383,
+        "companyName": "USIC",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0383:usic:edbbd2fb",
+          "taskIndex": 383,
+          "companyName": "USIC",
+          "companyId": "cmtj59czh00262a2bzt0pt8u6",
+          "proposalSha256": "aa40828fbe663156e0ed07829849cbc0aa659abcb54c498256297c88d7c94241",
+          "approvalSha256": "ee1eb040a9cd824f7ee9798e511c32bdd8b2aeb2e45f039b4a041424448a0cd3",
+          "productionSnapshotSha256": "a276a0ecbb534e8c6461d68e6e7115cfc052c0f2631c0b7088282ffae45199e3",
+          "beforeCompanySnapshotSha256": null,
+          "appliedAfterImageSha256": "d74e44adda79bf3fa63a46f186b62e089086d598946a8bce192ba2ab3618a488",
+          "seedAfterImageSha256": "d74e44adda79bf3fa63a46f186b62e089086d598946a8bce192ba2ab3618a488",
+          "approvedSeedEntrySha256": "8d624011b2d9c94462e0a6c4f912277f6748b2b31b2c14395bf8dabcfd9fcfec",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "4f42e91a-eb05-4ae0-bcdb-350f580e8d5d",
+          "auditEventId": "cmtj59e75002x2a2b8cpnrpwe",
+          "appliedAt": "2026-09-01T20:53:11.623Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "c160be48fbea4ef581c15aa871ec3902beb692a620cb0af67475f6cba5d639bd"
+        }
+      }
+    ],
+    "verification": {
+      "databaseTransactionCommitted": true,
+      "seedArtifactVerified": true,
+      "allDetailApisVerified": true,
+      "partialDatabaseApplication": false
+    },
+    "receiptSha256": "12d69e20436939a397d73ed9647aee6c2f9c66a1aa1dc4fd42e4f46773e3bc04"
+  }
+}
