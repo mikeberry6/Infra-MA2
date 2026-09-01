@@ -1,0 +1,63 @@
+
+> infra-tracker@1.0.0 portfolio:fund-attribution:apply
+> npx tsx scripts/apply-portfolio-fund-attribution.ts --manifest=audits/portfolio-fund-attribution/2026-09-01/scoped/liveoak-hicl-removal/apply-manifest.json --manifest-sha256=b51cad2690d901d7a8bf504d55c5a03d391cdc07a79d8c257b3612bd10c5294f --production-snapshot=audits/portfolio-fund-attribution/2026-09-01/scoped/liveoak-hicl-removal/production-snapshot.json --approval=audits/portfolio-fund-attribution/2026-09-01/scoped/liveoak-hicl-removal/approval.json --approval-sha256=87551d02c5d76799049286b2be012bc26e24fd03d3929a4bb2fc1de8c2d812c2 --apply=true --write-token=APPLY_REVIEWED_PORTFOLIO_FUND_ATTRIBUTION --receipt=tmp/portfolio-fund-attribution/production/apply-receipt.json
+
+(node:3003) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_RECEIPT",
+  "manifestSha256": "b51cad2690d901d7a8bf504d55c5a03d391cdc07a79d8c257b3612bd10c5294f",
+  "approvalSha256": "87551d02c5d76799049286b2be012bc26e24fd03d3929a4bb2fc1de8c2d812c2",
+  "environment": "production",
+  "pipelineRunId": "cmtiic8xn0000bf2borbu0swz",
+  "mutationCount": 2,
+  "changed": 2,
+  "idempotent": false,
+  "beforeFingerprint": "1caa608852f5677caf43173f0e607c9dbc3d9e6930d02bd8284e490eff34909e",
+  "afterFingerprint": "1c96b35720f0f96cdc0948bd595ba2318d6cbd56df32899aa28a09ca1c5b1c9c",
+  "rows": [
+    {
+      "recordId": "OFA-9728A2D40F9D",
+      "ownershipPeriodId": "cmrxpk4y9021eivheolgpxte4",
+      "companyId": "cmrxpjizj012kivhedxjyog86",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "HICL Infrastructure PLC",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, evergreen/permanent-capital vehicle, North America-relevant mandate; next candidate trails by 2.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "InfraRed directly states that its value-add strategies retain majority ownership, but the exact fund and legal investment vehicle are not publicly disclosed. The prior HICL attribution is retracted and no replacement fund is inferred."
+      }
+    },
+    {
+      "recordId": "OFA-AA7F091385D2",
+      "ownershipPeriodId": "cmtihws3v0002sq2bn4gw12h4",
+      "companyId": "cmrxpjizj012kivhedxjyog86",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "InfraRed LiveOak CIV LP",
+        "attributionConfidence": null,
+        "attributionRationale": "InfraRed and MEAG disclose the 2024 minority co-investment through InfraRed LiveOak CIV LP. No matching published fund record or exact portfolio-company percentage is available."
+      }
+    }
+  ],
+  "appliedAt": "2026-09-01T10:11:33.784Z",
+  "receiptSha256": "eeda6eb686d1b92795ef8ab565c2da9faf81c3b429a7b035809eec18d5d4fdbe"
+}

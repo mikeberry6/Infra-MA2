@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_RECEIPT",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0312-0317-v1",
+  "batchSha256": "28b09180ae3de3fd426336986750003224325c6ab81810e6b261798216ba4f20",
+  "releaseSha": "d9c8c90e6438731f8c0d3c890990b5e230af1de7",
+  "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+  "transactionId": "61590e10-ae6c-4564-8e3b-1afef86b18da",
+  "appliedAt": "2026-09-01T09:59:39.949Z",
+  "members": [
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0312:aptum-technologies:d1225fa3",
+      "taskIndex": 312,
+      "companyName": "Aptum Technologies",
+      "outcome": "VERIFIED_NO_CHANGE",
+      "decisionSha256": "06788bdb1e420b1bc657e593025dd88c8a55123a78b45e51156ba1cc61761e9b"
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0314:zayo-group-holdings-inc:46e9b5e3",
+      "taskIndex": 314,
+      "companyName": "Zayo Group Holdings, Inc.",
+      "outcome": "VERIFIED_NO_CHANGE",
+      "decisionSha256": "f9c326aac20e21bf8f991c068e627718b53e560e5d7136fe915c8fd17d70c5f9"
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0315:liveoak-fiber:e69e52a2",
+      "taskIndex": 315,
+      "companyName": "LiveOak Fiber",
+      "receipt": {
+        "schemaVersion": 1,
+        "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+        "runId": "portco-reconciliation-2026-08-03-v2",
+        "taskId": "ledger:0315:liveoak-fiber:e69e52a2",
+        "taskIndex": 315,
+        "companyName": "LiveOak Fiber",
+        "companyId": "cmrxpjizj012kivhedxjyog86",
+        "proposalSha256": "94d1a760b4c7db03813fc5219c4b6a7de9a0b1611d9125040aab9d9711309f7d",
+        "approvalSha256": "b3cde469ff2904f546d0dd0582357982369291559115cecfc43249cb25866f2f",
+        "productionSnapshotSha256": "340c72bac27cbf313c9781542e8fcb272e9c0014ab85631971981b748ec14576",
+        "beforeCompanySnapshotSha256": "4b00a058a77e9499127aefb4a4f93aaf157153273fcd2673c41014d50060540c",
+        "appliedAfterImageSha256": "cb1fb410928d2c5ebf5587ffc1d778bc197e888e9b424f47d135382103774fb5",
+        "seedAfterImageSha256": "cb1fb410928d2c5ebf5587ffc1d778bc197e888e9b424f47d135382103774fb5",
+        "approvedSeedEntrySha256": "6a2116ad89945ee9ccda428b9637db83c79e14028649b5b57e36c923c38e51e5",
+        "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+        "transactionId": "61590e10-ae6c-4564-8e3b-1afef86b18da",
+        "auditEventId": "cmtihwt720004sq2bt6cchdzk",
+        "appliedAt": "2026-09-01T09:59:39.949Z",
+        "verification": {
+          "databaseMatchesAfterImage": true,
+          "seedMatchesAfterImage": true,
+          "detailApiVerified": true
+        },
+        "receiptSha256": "efcf2ff4ee882415854697f665ed7282f1a1955557adc22096bc920d5cab0397"
+      }
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0316:wind-facility:66fa043e",
+      "taskIndex": 316,
+      "companyName": "Wind Facility",
+      "receipt": {
+        "schemaVersion": 1,
+        "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+        "runId": "portco-reconciliation-2026-08-03-v2",
+        "taskId": "ledger:0316:wind-facility:66fa043e",
+        "taskIndex": 316,
+        "companyName": "Wind Facility",
+        "companyId": "cmrxpjj6e012wivhe4nxzbbvd",
+        "proposalSha256": "15fff5a2061419170d536386d649257257cdc692f0531745dedf2188fbea9636",
+        "approvalSha256": "4ca8f202ee52f90fe95cf5d8ea803104003cec4474f8166b7c9cc1508fa35654",
+        "productionSnapshotSha256": "955401b12669dcf28f41d4566ded781b29e557214e8b420b0466b48ee5a4d7ea",
+        "beforeCompanySnapshotSha256": "42ea74cf8bdfe91191da9decee2899da24a4fdfea1c1711d4abd44ef8a74df77",
+        "appliedAfterImageSha256": "aa10204505a93fa34c4c5c0fd021819f5012fd5ed9cc6937f57d63eac09cc538",
+        "seedAfterImageSha256": "aa10204505a93fa34c4c5c0fd021819f5012fd5ed9cc6937f57d63eac09cc538",
+        "approvedSeedEntrySha256": "8ba1b26b85b97c33a130b3e7e12204f59db1c99110fbfc8ad969d0ebb16bf74b",
+        "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+        "transactionId": "61590e10-ae6c-4564-8e3b-1afef86b18da",
+        "auditEventId": "cmtihwvor000csq2brdcxicq5",
+        "appliedAt": "2026-09-01T09:59:39.949Z",
+        "verification": {
+          "databaseMatchesAfterImage": true,
+          "seedMatchesAfterImage": true,
+          "detailApiVerified": true
+        },
+        "receiptSha256": "5771220bbfae9a960a9587d1d8ae92b58daf7ca1e42462cde264b672ede836cc"
+      }
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0317:longroad-energy:c89b5c17",
+      "taskIndex": 317,
+      "companyName": "Longroad Energy",
+      "receipt": {
+        "schemaVersion": 1,
+        "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+        "runId": "portco-reconciliation-2026-08-03-v2",
+        "taskId": "ledger:0317:longroad-energy:c89b5c17",
+        "taskIndex": 317,
+        "companyName": "Longroad Energy",
+        "companyId": "cmrxpjlg8016fivheuurs3oft",
+        "proposalSha256": "130295e627ed972fac6cb1f22e9ecc189b83940bff10f04649362e6ad0a79cb4",
+        "approvalSha256": "f3587f9724c2a697672f4fda16e76f2bd2f228a377442974b0ab18b507f90914",
+        "productionSnapshotSha256": "cb0bfe10cdb0b2d66a1622b8c13289150fc6c5538decdfc951a17917d8e42a2b",
+        "beforeCompanySnapshotSha256": "9318917ff46a37e0330be83a2cc5e0351f699583b36f13a5b4f55fa9f62b6a03",
+        "appliedAfterImageSha256": "ef9e32291043807ea910c0d4f816127e0113649aa9776398a5decfbf34565c46",
+        "seedAfterImageSha256": "ef9e32291043807ea910c0d4f816127e0113649aa9776398a5decfbf34565c46",
+        "approvedSeedEntrySha256": "93e4b0b281fc703749d82fc4cd415060ecf3df66e045e81602b5c9b3a4010512",
+        "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+        "transactionId": "61590e10-ae6c-4564-8e3b-1afef86b18da",
+        "auditEventId": "cmtihwy91000ksq2bhkkjey4s",
+        "appliedAt": "2026-09-01T09:59:39.949Z",
+        "verification": {
+          "databaseMatchesAfterImage": true,
+          "seedMatchesAfterImage": true,
+          "detailApiVerified": true
+        },
+        "receiptSha256": "3d72462f6849f1928fb510bb937fb34b792513291c013159e59ab9a710b2e2b8"
+      }
+    }
+  ],
+  "verification": {
+    "databaseTransactionCommitted": true,
+    "seedArtifactVerified": true,
+    "allDetailApisVerified": true,
+    "partialDatabaseApplication": false
+  },
+  "receiptSha256": "d473a1460543cbb31e115304b1f275a728146474d7d15d14b5cf51bb1aebac3f"
+}

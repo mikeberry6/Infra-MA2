@@ -1,0 +1,32 @@
+
+> infra-tracker@1.0.0 portfolio:fund-attribution:apply
+> npx tsx scripts/apply-portfolio-fund-attribution.ts --manifest=audits/portfolio-fund-attribution/2026-09-01/scoped/liveoak-hicl-removal/apply-manifest.json --manifest-sha256=b51cad2690d901d7a8bf504d55c5a03d391cdc07a79d8c257b3612bd10c5294f --production-snapshot=audits/portfolio-fund-attribution/2026-09-01/scoped/liveoak-hicl-removal/production-snapshot.json --approval=audits/portfolio-fund-attribution/2026-09-01/scoped/liveoak-hicl-removal/approval.json --approval-sha256=87551d02c5d76799049286b2be012bc26e24fd03d3929a4bb2fc1de8c2d812c2 --validate-only=true
+
+{
+  "mode": "VALIDATE_ONLY",
+  "databaseWrites": false,
+  "manifestSha256": "b51cad2690d901d7a8bf504d55c5a03d391cdc07a79d8c257b3612bd10c5294f",
+  "approvalSha256": "87551d02c5d76799049286b2be012bc26e24fd03d3929a4bb2fc1de8c2d812c2",
+  "mutationCount": 2,
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 1,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 0,
+      "UNRESOLVED": 1
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  }
+}

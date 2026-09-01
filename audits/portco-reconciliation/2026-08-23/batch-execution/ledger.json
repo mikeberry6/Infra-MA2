@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-01T09:45:37.000Z",
-  "activeBatchId": "batch-0312-0317-v1",
+  "updatedAt": "2026-09-01T10:17:05.000Z",
+  "activeBatchId": null,
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -5308,7 +5308,7 @@
     },
     {
       "batchId": "batch-0312-0317-v1",
-      "state": "READY",
+      "state": "COMPLETED",
       "taskIds": [
         "ledger:0312:aptum-technologies:d1225fa3",
         "ledger:0314:zayo-group-holdings-inc:46e9b5e3",
@@ -5324,15 +5324,18 @@
         317
       ],
       "createdAt": "2026-09-01T09:11:57.000Z",
-      "updatedAt": "2026-09-01T09:45:37.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-09-01T10:17:05.000Z",
+      "completedAt": "2026-09-01T10:17:05.000Z",
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0312-0317-v1/batch-manifest-v5.json",
         "sha256": "28b09180ae3de3fd426336986750003224325c6ab81810e6b261798216ba4f20"
       },
-      "releaseSha": null,
-      "receipt": null,
-      "reason": null,
+      "releaseSha": "d9c8c90e6438731f8c0d3c890990b5e230af1de7",
+      "receipt": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0312-0317-v1/production-apply/batch-apply-receipt.json",
+        "sha256": "d473a1460543cbb31e115304b1f275a728146474d7d15d14b5cf51bb1aebac3f"
+      },
+      "reason": "Production database, seed after-images, detail APIs, redirects and rendered scorecards verified; scoped LiveOak attribution recovery receipt eeda6eb686d1b92795ef8ab565c2da9faf81c3b429a7b035809eec18d5d4fdbe closed the prior verification failure.",
       "history": [
         {
           "sequence": 1,
@@ -5351,9 +5354,73 @@
             "28b09180ae3de3fd426336986750003224325c6ab81810e6b261798216ba4f20"
           ],
           "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "RELEASING",
+          "at": "2026-09-01T09:56:57.000Z",
+          "evidenceSha256": [
+            "28b09180ae3de3fd426336986750003224325c6ab81810e6b261798216ba4f20"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 4,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-09-01T09:57:17.000Z",
+          "evidenceSha256": [
+            "28b09180ae3de3fd426336986750003224325c6ab81810e6b261798216ba4f20"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 5,
+          "from": "APPLYING",
+          "to": "VERIFYING",
+          "at": "2026-09-01T10:02:40.000Z",
+          "evidenceSha256": [
+            "28b09180ae3de3fd426336986750003224325c6ab81810e6b261798216ba4f20",
+            "d473a1460543cbb31e115304b1f275a728146474d7d15d14b5cf51bb1aebac3f"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 6,
+          "from": "VERIFYING",
+          "to": "VERIFYING_FAILED",
+          "at": "2026-09-01T10:02:41.000Z",
+          "evidenceSha256": [
+            "28b09180ae3de3fd426336986750003224325c6ab81810e6b261798216ba4f20",
+            "d473a1460543cbb31e115304b1f275a728146474d7d15d14b5cf51bb1aebac3f"
+          ],
+          "reason": "Rendered LiveOak Fiber owner row still exposes the retired HICL Infrastructure PLC inferred attribution; seed and canonical owner after-image are correct, but the ownership-period attribution enrichment requires scoped recovery before completion."
+        },
+        {
+          "sequence": 7,
+          "from": "VERIFYING_FAILED",
+          "to": "VERIFYING",
+          "at": "2026-09-01T10:16:00.000Z",
+          "evidenceSha256": [
+            "28b09180ae3de3fd426336986750003224325c6ab81810e6b261798216ba4f20",
+            "d473a1460543cbb31e115304b1f275a728146474d7d15d14b5cf51bb1aebac3f"
+          ],
+          "reason": "Recovered by scoped LiveOak ownership-attribution correction b51cad2690d901d7a8bf504d55c5a03d391cdc07a79d8c257b3612bd10c5294f; production receipt eeda6eb686d1b92795ef8ab565c2da9faf81c3b429a7b035809eec18d5d4fdbe and rendered/API verification are valid."
+        },
+        {
+          "sequence": 8,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-09-01T10:17:05.000Z",
+          "evidenceSha256": [
+            "28b09180ae3de3fd426336986750003224325c6ab81810e6b261798216ba4f20",
+            "d473a1460543cbb31e115304b1f275a728146474d7d15d14b5cf51bb1aebac3f"
+          ],
+          "reason": "Production database, seed after-images, detail APIs, redirects and rendered scorecards verified; scoped LiveOak attribution recovery receipt eeda6eb686d1b92795ef8ab565c2da9faf81c3b429a7b035809eec18d5d4fdbe closed the prior verification failure."
         }
       ]
     }
   ],
-  "ledgerSha256": "ab0b748fb0e2dd7df59a1ad95138a619fe91e618c82d74a88d9c62722e92dc82"
+  "ledgerSha256": "4fa144f493a578daaf9767239ee905386c79347fd653f1ba67c7b4cb087531de"
 }

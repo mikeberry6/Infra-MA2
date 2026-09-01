@@ -1,0 +1,106 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:batch:apply
+> npx tsx scripts/portco-reconciliation/batch-apply-cli.ts --batch-manifest=audits/portco-reconciliation/2026-08-23/batches/batch-0312-0317-v1/batch-manifest-v5.json --batch-sha256=28b09180ae3de3fd426336986750003224325c6ab81810e6b261798216ba4f20
+
+(node:3358) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "BATCH_DRY_RUN",
+  "batchId": "batch-0312-0317-v1",
+  "batchSha256": "28b09180ae3de3fd426336986750003224325c6ab81810e6b261798216ba4f20",
+  "databaseWrites": false,
+  "seedWrites": false,
+  "plans": [
+    {
+      "companyName": "LiveOak Fiber",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to description, website, headquarters, lastVerifiedAt, ownershipPeriods, milestones, citations."
+        },
+        {
+          "kind": "ADD_OWNER",
+          "relationIds": [],
+          "detail": "Add 1 approved ownership period(s)."
+        }
+      ],
+      "changedFields": [
+        "citations",
+        "description",
+        "headquarters",
+        "lastVerifiedAt",
+        "milestones",
+        "ownershipPeriods",
+        "website"
+      ],
+      "retiredCompanyIds": []
+    },
+    {
+      "companyName": "Mesteño Wind Project",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to name, aliases, description, headquarters, lastVerifiedAt, milestones, citations."
+        },
+        {
+          "kind": "RETRACT_ERRONEOUS_OWNERSHIP",
+          "relationIds": [
+            "cmrxpk571021qivheiyjosg0k"
+          ],
+          "detail": "Retract 1 proven erroneous ownership period(s); revision history preserves the prior claim."
+        },
+        {
+          "kind": "ADD_OWNER",
+          "relationIds": [],
+          "detail": "Add 2 approved ownership period(s)."
+        }
+      ],
+      "changedFields": [
+        "aliases",
+        "citations",
+        "description",
+        "headquarters",
+        "lastVerifiedAt",
+        "milestones",
+        "name",
+        "ownershipPeriods"
+      ],
+      "retiredCompanyIds": []
+    },
+    {
+      "companyName": "Longroad Energy",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to description, website, headquarters, lastVerifiedAt, milestones, citations."
+        },
+        {
+          "kind": "RETRACT_ERRONEOUS_OWNERSHIP",
+          "relationIds": [
+            "cmrxpk7pv025pivhezyjxrgej",
+            "cmrxpk7qe025qivhe91z3fj0n"
+          ],
+          "detail": "Retract 2 proven erroneous ownership period(s); revision history preserves the prior claim."
+        },
+        {
+          "kind": "ADD_OWNER",
+          "relationIds": [],
+          "detail": "Add 2 approved ownership period(s)."
+        }
+      ],
+      "changedFields": [
+        "citations",
+        "description",
+        "headquarters",
+        "lastVerifiedAt",
+        "milestones",
+        "ownershipPeriods",
+        "website"
+      ],
+      "retiredCompanyIds": []
+    }
+  ]
+}
