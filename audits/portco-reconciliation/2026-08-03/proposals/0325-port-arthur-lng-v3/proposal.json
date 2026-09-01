@@ -1,0 +1,380 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0325:port-arthur-lng:d837cc61",
+  "taskIndex": 325,
+  "asOfDate": "2026-09-01",
+  "generatedAt": "2026-09-01T11:25:30.000Z",
+  "canonicalKey": "port-arthur-lng|united-states",
+  "companyName": "Port Arthur LNG",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER"
+  ],
+  "sourceHoldingIds": [],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Keep one two-phase Port Arthur LNG project record, replace the unsupported generic K-INFRA attribution, record the directly evidenced Phase 1 and Phase 2 ownership periods separately, and keep the distinct SI Partners platform sale outside this project's active ownership until it closes.",
+  "evidence": [
+    {
+      "url": "https://www.sempra.com/newsroom/press-releases/sempra-infrastructure-completes-sale-non-controlling-interest-port-arthur",
+      "purpose": "Phase 1 KKR closing.",
+      "supports": [
+        "KKR closed a 42% indirect Phase 1 interest on September 12, 2023.",
+        "Sempra and ConocoPhillips retained 28% and 30% indirect interests."
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1032208/000103220826000010/sre-20251231.htm",
+      "purpose": "Current Phase 1 ownership and project status.",
+      "supports": [
+        "Phase 1 remains owned 28% by SI Partners, 42% by KKR Denali and 30% by ConocoPhillips.",
+        "Phase 1 remains under construction."
+      ]
+    },
+    {
+      "url": "https://www.energy.gov/sites/default/files/2026-01/Port%20Arthur%20LNG%20Phase%20II%20CIC%20Response%20-%20FINAL%2001.09.2026.pdf",
+      "purpose": "Phase 2 legal direct ownership chain.",
+      "supports": [
+        "Phase 2 direct legal members hold 50.1%, 40.0% and 9.9% interests.",
+        "The 40% member's parent consortium includes KKR, Apollo and Goldman Sachs, but KKR's individual percentage is not publicly disclosed."
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1032208/000103220825000055/sempra-20250922.htm",
+      "purpose": "Phase 2 FID and closed equity issuance.",
+      "supports": [
+        "Phase 2 reached FID and the project equity issuance closed on September 22, 2025.",
+        "The separate SI Partners platform transaction is not the same as project-level ownership."
+      ]
+    },
+    {
+      "url": "https://www.sempra.com/press-releases",
+      "purpose": "Current exit and subsequent-transaction search.",
+      "supports": [
+        "Sempra continued to describe the separate SI Partners stake sale as pending in Q3 2026."
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "bafa6944650766ea3953cd7e5ebc3ed2ed4607a4206628ded2e33a6a9a64c84a",
+  "currentCompanySnapshotSha256": "cdfd5a39a9a5164cf16fc10a2041f681dd55ee922dc37280a728f8075c5a9cd9",
+  "executionLock": {
+    "taskSnapshotSha256": "226c45026839d6eb73f60918afafce507aefd5ead00a246fb9ee5cf7e54f2db0",
+    "taskStateSha256": "d9d7448104838053fd5daf816b1ad0d2de1b0932ff4ad4d714294b9793fcfd2f",
+    "taskDependencySha256": "82ce9184d46deac66611640a5256858346a7221d47430234cf09dd6a522eb895",
+    "seedEntrySha256": "5f70cba22bc44ff8d4bba025b402a0acd696adea427f041ea99a71b2313a12c1",
+    "dependencies": {
+      "ownershipPeriodsSha256": "11a608796c034da8901079ef9430ae98753ce64dd2dac9f2d91be9f87ea3bee9",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "b0f7cda16085f90569c7b4dbfeeb82a1689ce03b97da6f5b2c27affb37f970fa",
+      "organizationsSha256": "424c2494c42c616e64df8d07fbb06e79ac6786f232a3cc5e8acea83178b3262d",
+      "citationsSha256": "182320aedcffe24dd988b3d64e87243de43b5a6f7282adab46a00749489f57b3",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj2yp00ecivheouv7ybld",
+        "fundName": "K-INFRA",
+        "managerId": "cmrxpiay4002pivhed6sjuu9i",
+        "updatedAt": "2026-07-23T16:09:57.697Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi5em000yivhekda3otkf",
+        "name": "Blackstone",
+        "updatedAt": "2026-07-23T16:09:14.206Z"
+      },
+      {
+        "id": "cmrxpiay4002pivhed6sjuu9i",
+        "name": "KKR",
+        "updatedAt": "2026-07-23T16:09:21.388Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjjwz0142ivhel1oxig89",
+    "name": "Port Arthur LNG",
+    "aliases": [],
+    "sector": "MIDSTREAM",
+    "subsector": "LNG export terminal",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Port Arthur LNG is a liquefied natural gas export project under development on the U.S. Gulf Coast in Jefferson County, Texas. Its customer base consists of global LNG buyers, gas suppliers, and counterparties seeking long-term liquefaction capacity and U.S. Gulf Coast export access. The operating model is asset-heavy and project based, centered on large liquefaction trains, storage tanks, marine infrastructure, and long-term commercial contracts. Public project materials describe a four-train, two-phase facility with approximately 26 million tonnes per annum of nameplate capacity across Phases 1 and 2 and characterize the development as a $27 billion energy infrastructure investment. Sempra Infrastructure announced in September 2023 that it had completed the sale of a 42% indirect non-controlling interest in Port Arthur LNG Phase 1 to KKR after the project reached final investment decision.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Texas",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk5y7022wivhe4xw352ck",
+        "managerName": "KKR",
+        "organizationName": "KKR",
+        "fundName": "K-INFRA",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpm7ri04lfivhegulvifq0",
+        "date": "Mar 2023",
+        "event": "Port Arthur LNG Phase 1 reached final investment decision.",
+        "category": "FINANCING",
+        "sortDate": "2023-03-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm7s204lgivhea93vbxc3",
+        "date": "Sep 12, 2023",
+        "event": "Sempra Infrastructure completed the sale of a 42% indirect non-controlling interest in Port Arthur LNG Phase 1 to KKR.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-09-12T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpry5y0buaivhe15ub2hrt",
+        "label": "Portarthurlng — Port Arthur LNG",
+        "url": "https://portarthurlng.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Portarthurlng company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpry6w0bucivhe9whefa83",
+        "label": "Semprainfrastructure — Port Arthur LNG",
+        "url": "https://semprainfrastructure.com/what-we-do/lng/port-arthur-lng/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Semprainfrastructure — Port Arthur LNG",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprya80bueivheu0spqwb7",
+        "label": "Close date source — KKR — Port Arthur LNG",
+        "url": "https://www.sempra.com/newsroom/press-releases/sempra-infrastructure-completes-sale-non-controlling-interest-port-arthur",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "KKR closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpryba0bugivheku9sxvfo",
+        "label": "Kirkland — Port Arthur LNG",
+        "url": "https://www.kirkland.com/news/press-release/2025/09/kirkland-advises-kkr-on-investment-in-sempra-infrastructure-partners-port-arthur-lng-project",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Kirkland operations / asset details",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "cdfd5a39a9a5164cf16fc10a2041f681dd55ee922dc37280a728f8075c5a9cd9",
+  "afterImage": {
+    "id": "cmrxpjjwz0142ivhel1oxig89",
+    "name": "Port Arthur LNG",
+    "aliases": [
+      "PALNG",
+      "Port Arthur LNG Phase 1",
+      "Port Arthur LNG Phase 2"
+    ],
+    "sector": "MIDSTREAM",
+    "subsector": "LNG export terminal",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Port Arthur LNG is a two-phase liquefied-natural-gas export development in Jefferson County, Texas. Phase 1 comprises two liquefaction trains with approximately 13 Mtpa of nameplate capacity and is owned indirectly by KKR Denali (42%), Sempra Infrastructure Partners (28%) and ConocoPhillips (30%). Phase 2 adds approximately 13 Mtpa across two further trains and reached FID in September 2025; its direct legal members hold 50.1%, 40.0% and 9.9% interests, with KKR participating within the 40% member's parent consortium. The project is distinct from Sempra Infrastructure Partners, whose separate KKR-led platform transaction remained pending as of the latest verification.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://portarthurlng.com/",
+    "yearFounded": null,
+    "headquarters": "Jefferson County, Texas, United States",
+    "lastVerifiedAt": "2026-09-01T11:24:30.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk5y7022wivhe4xw352ck",
+        "managerName": "KKR",
+        "organizationName": "KKR",
+        "fundName": null,
+        "vehicleName": "KKR Denali Holdco LLC; 60% of Sempra PALNG Holdings LLC",
+        "stake": "42% indirect interest in Phase 1",
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Sempra Infrastructure",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Sempra PALNG Holdings LLC",
+        "stake": "28% indirect interest in Phase 1",
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "ConocoPhillips",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "ConocoPhillips Port Arthur LNG LLC",
+        "stake": "30% direct interest in the Phase 1 parent",
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Sempra Infrastructure",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Port Arthur Liquefaction Holdings Phase II LLC",
+        "stake": "50.1% direct interest in the Phase 2 JVCo",
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Blackstone-led consortium (including KKR, Apollo and Goldman Sachs)",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "BX Frontier Member I LLC; BX Frontier Member I Holdings LLC",
+        "stake": "40.0% direct interest in the Phase 2 JVCo; KKR's individual consortium share is not publicly disclosed",
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Blackstone",
+        "organizationName": "Blackstone",
+        "fundName": null,
+        "vehicleName": "BX Frontier Member II LLC; Blackstone Private Credit Fund",
+        "stake": "9.9% direct interest in the Phase 2 JVCo",
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpm7ri04lfivhegulvifq0",
+        "date": "Mar 20, 2023",
+        "event": "Phase 1 reached final investment decision; ConocoPhillips closed its 30% interest and KKR signed to acquire a 42% indirect interest.",
+        "category": "FINANCING",
+        "sortDate": "2023-03-20T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sempra.com/newsroom/press-releases/sempra-infrastructure-completes-sale-non-controlling-interest-port-arthur"
+        ]
+      },
+      {
+        "id": "cmrxpm7s204lgivhea93vbxc3",
+        "date": "Sep 12, 2023",
+        "event": "KKR closed its 42% indirect Phase 1 acquisition; Sempra Infrastructure and ConocoPhillips retained 28% and 30% interests.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-09-12T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sempra.com/newsroom/press-releases/sempra-infrastructure-completes-sale-non-controlling-interest-port-arthur"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpry5y0buaivhe15ub2hrt",
+        "label": "Portarthurlng — Port Arthur LNG",
+        "url": "https://portarthurlng.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Official project profile and operating scope",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpry6w0bucivhe9whefa83",
+        "label": "Semprainfrastructure — Port Arthur LNG",
+        "url": "https://semprainfrastructure.com/what-we-do/lng/port-arthur-lng/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Semprainfrastructure — Port Arthur LNG",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprya80bueivheu0spqwb7",
+        "label": "Close date source — KKR — Port Arthur LNG",
+        "url": "https://www.sempra.com/newsroom/press-releases/sempra-infrastructure-completes-sale-non-controlling-interest-port-arthur",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "KKR closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpryba0bugivheku9sxvfo",
+        "label": "Kirkland — Port Arthur LNG",
+        "url": "https://www.kirkland.com/news/press-release/2025/09/kirkland-advises-kkr-on-investment-in-sempra-infrastructure-partners-port-arthur-lng-project",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Kirkland operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Sempra 2025 Form 10-K — Port Arthur LNG ownership",
+        "url": "https://www.sec.gov/Archives/edgar/data/1032208/000103220826000010/sre-20251231.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current Phase 1 ownership and Phase 2 project disclosure",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "U.S. Department of Energy — Port Arthur LNG Phase II control response",
+        "url": "https://www.energy.gov/sites/default/files/2026-01/Port%20Arthur%20LNG%20Phase%20II%20CIC%20Response%20-%20FINAL%2001.09.2026.pdf",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Phase 2 legal member chain and direct ownership interests",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Sempra 2025 Form 8-K — Phase 2 FID and equity closing",
+        "url": "https://www.sec.gov/Archives/edgar/data/1032208/000103220825000055/sempra-20250922.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Phase 2 equity closing and separate SI Partners platform transaction",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "97507af11312b377eb8e9f395365e612d9cd81ab616f6c1b38635f0cc67384b8",
+  "proposalSha256": "9466cf2ab26a62ce9b6ba8ab542e8bc35803a8708c4696cea43e3979323fe5fa"
+}

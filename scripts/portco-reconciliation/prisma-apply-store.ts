@@ -336,6 +336,14 @@ const approvedOwnershipOrganizationProvisioning = {
   "Meketa Capital": "FUND_MANAGER",
   "Warburg Pincus": "FUND_MANAGER",
   "Kelso & Company": "FUND_MANAGER",
+  "Pembina Pipeline Corporation": "CORPORATE",
+  "Sempra Infrastructure": "CORPORATE",
+  "ConocoPhillips": "CORPORATE",
+  "Blackstone-led consortium (including KKR, Apollo and Goldman Sachs)": "OTHER",
+  "Mitsui O.S.K. Lines": "CORPORATE",
+  "Jacksonville Port Authority": "OTHER",
+  "Rest": "PENSION",
+  "Orient Overseas (International) Limited": "CORPORATE",
 } as const;
 
 export function ownershipOrganizationTypes(

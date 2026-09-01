@@ -1,0 +1,278 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_SEED_ATTRIBUTION_RECONCILIATION_SPEC",
+  "batchId": "batch-0324-0328-v1",
+  "batchSha256": "afcf0066637b5767f0485196161d05e5b1b11bc8c57e0781844277025f41fca1",
+  "reconciledAt": "2026-09-01T11:58:00.000Z",
+  "sourceManifestSha256": "2c264fad880043942a484ced1467a48db8a314b9d1a4aa15ed30d76473c55cf3",
+  "rationale": "Align the active-owner attribution manifest with the approved Pembina Gas Infrastructure, Port Arthur LNG, TotalEnergies North American solar portfolio, Dames Point Jacksonville and LBCT after-images. Remove stale KKR-only and legacy-name rows, preserve disclosed fund links only where directly supported, classify corporate and pension ownership as direct programs, and leave undisclosed infrastructure-fund vehicles unresolved rather than inferred.",
+  "removeRecordIds": [
+    "OFA-44787427FCD0",
+    "OFA-3BC019332476",
+    "OFA-69430DBB60B5",
+    "OFA-DD0B3BC00A42"
+  ],
+  "upsertRecords": [
+    {
+      "recordId": "OFA-2159F8B2E8F7",
+      "companyName": "Pembina Gas Infrastructure Inc.",
+      "country": "Canada",
+      "investmentFirm": "Pembina Pipeline Corporation",
+      "currentVehicleName": "Pembina Pipeline Corporation",
+      "investmentYear": 2022,
+      "stake": "60%",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "Pembina directly owns and operates 60% of PGI; this is corporate ownership rather than a fund attribution.",
+      "evidenceUrls": [
+        "https://www.pembina.com/operations/partnerships/pembina-gas-infrastructure/about-us"
+      ]
+    },
+    {
+      "recordId": "OFA-A42390BB377B",
+      "companyName": "Pembina Gas Infrastructure Inc.",
+      "country": "Canada",
+      "investmentFirm": "Apollo Global Management",
+      "currentVehicleName": "Apollo Global Management",
+      "investmentYear": 2026,
+      "stake": "40%",
+      "targetLinkedFundName": null,
+      "fundAttribution": "UNRESOLVED",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "Apollo-managed funds are directly evidenced as the 40% owner, but no reviewed source identifies the exact fund or legal acquisition vehicle.",
+      "evidenceUrls": [
+        "https://www.apollo.com/insights-news/pressreleases/2026/04/apollo-funds-to-acquire-40-interest-in-pembina-gas-infrastructure-3279810",
+        "https://www.pembina.com/operations/partnerships/pembina-gas-infrastructure/about-us"
+      ]
+    },
+    {
+      "recordId": "OFA-E10FA0D9B9EA",
+      "companyName": "Port Arthur LNG",
+      "country": "United States",
+      "investmentFirm": "KKR",
+      "currentVehicleName": "KKR Denali Holdco LLC; 60% of Sempra PALNG Holdings LLC",
+      "investmentYear": 2023,
+      "stake": "42% indirect interest in Phase 1",
+      "targetLinkedFundName": null,
+      "fundAttribution": "UNRESOLVED",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "KKR's 42% indirect Phase 1 ownership is directly evidenced, but no reviewed production source supports the former generic K-INFRA link or a target-linked fund record.",
+      "evidenceUrls": [
+        "https://www.sempra.com/newsroom/press-releases/sempra-infrastructure-completes-sale-non-controlling-interest-port-arthur",
+        "https://www.sec.gov/Archives/edgar/data/1032208/000103220826000010/sre-20251231.htm"
+      ]
+    },
+    {
+      "recordId": "OFA-AF2615F482CD",
+      "companyName": "Port Arthur LNG",
+      "country": "United States",
+      "investmentFirm": "Sempra Infrastructure",
+      "currentVehicleName": "Sempra PALNG Holdings LLC",
+      "investmentYear": 2023,
+      "stake": "28% indirect interest in Phase 1",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "Sempra Infrastructure directly retains its Phase 1 interest through the project holding chain; this is corporate ownership rather than a fund attribution.",
+      "evidenceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/1032208/000103220826000010/sre-20251231.htm"
+      ]
+    },
+    {
+      "recordId": "OFA-C43DA9E1FF5C",
+      "companyName": "Port Arthur LNG",
+      "country": "United States",
+      "investmentFirm": "ConocoPhillips",
+      "currentVehicleName": "ConocoPhillips Port Arthur LNG LLC",
+      "investmentYear": 2023,
+      "stake": "30% direct interest in the Phase 1 parent",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "ConocoPhillips directly owns its Phase 1 project interest; this is corporate ownership rather than a fund attribution.",
+      "evidenceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/1032208/000103220826000010/sre-20251231.htm"
+      ]
+    },
+    {
+      "recordId": "OFA-C509098CFF3C",
+      "companyName": "Port Arthur LNG",
+      "country": "United States",
+      "investmentFirm": "Sempra Infrastructure",
+      "currentVehicleName": "Port Arthur Liquefaction Holdings Phase II LLC",
+      "investmentYear": 2025,
+      "stake": "50.1% direct interest in the Phase 2 JVCo",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "Sempra Infrastructure directly owns the 50.1% Phase 2 member interest; this is corporate ownership rather than a fund attribution.",
+      "evidenceUrls": [
+        "https://www.energy.gov/sites/default/files/2026-01/Port%20Arthur%20LNG%20Phase%20II%20CIC%20Response%20-%20FINAL%2001.09.2026.pdf"
+      ]
+    },
+    {
+      "recordId": "OFA-A276FFB1126F",
+      "companyName": "Port Arthur LNG",
+      "country": "United States",
+      "investmentFirm": "Blackstone-led consortium (including KKR, Apollo and Goldman Sachs)",
+      "currentVehicleName": "BX Frontier Member I LLC; BX Frontier Member I Holdings LLC",
+      "investmentYear": 2025,
+      "stake": "40.0% direct interest in the Phase 2 JVCo; KKR's individual consortium share is not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "UNRESOLVED",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "The consortium's 40% direct Phase 2 member interest is evidenced, but sponsor-level allocations and target-linked funds are not publicly disclosed.",
+      "evidenceUrls": [
+        "https://www.energy.gov/sites/default/files/2026-01/Port%20Arthur%20LNG%20Phase%20II%20CIC%20Response%20-%20FINAL%2001.09.2026.pdf"
+      ]
+    },
+    {
+      "recordId": "OFA-E2F9B7DECB2C",
+      "companyName": "Port Arthur LNG",
+      "country": "United States",
+      "investmentFirm": "Blackstone",
+      "currentVehicleName": "BX Frontier Member II LLC; Blackstone Private Credit Fund",
+      "investmentYear": 2025,
+      "stake": "9.9% direct interest in the Phase 2 JVCo",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Blackstone Private Credit Fund",
+      "attributionConfidence": null,
+      "attributionRationale": "The Phase 2 control filing directly names Blackstone Private Credit Fund in the 9.9% ownership chain; no matching published fund record is linked.",
+      "evidenceUrls": [
+        "https://www.energy.gov/sites/default/files/2026-01/Port%20Arthur%20LNG%20Phase%20II%20CIC%20Response%20-%20FINAL%2001.09.2026.pdf"
+      ]
+    },
+    {
+      "recordId": "OFA-0AF3F4BFA474",
+      "companyName": "TotalEnergies North American Solar Portfolio (KKR co-investment)",
+      "country": "United States",
+      "investmentFirm": "KKR",
+      "currentVehicleName": "JVPTR LLC; KKR Multi-Strategy Alternatives Fund LP for Maverick; Big Sky buyer not publicly disclosed",
+      "investmentYear": 2025,
+      "stake": "50% of each target",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "KKR Multi-Strategy Alternatives Fund LP",
+      "attributionConfidence": null,
+      "attributionRationale": "The Maverick regulatory filing names KKR Multi-Strategy Alternatives Fund LP in the buyer chain; the Canadian Big Sky buyer remains undisclosed and no matching published fund record is linked.",
+      "evidenceUrls": [
+        "https://services.psc.ga.gov/api/v1/External/Public/Get/Document/DownloadFile/225248/106514"
+      ]
+    },
+    {
+      "recordId": "OFA-6E78611678D1",
+      "companyName": "TotalEnergies North American Solar Portfolio (KKR co-investment)",
+      "country": "United States",
+      "investmentFirm": "TotalEnergies",
+      "currentVehicleName": "Maverick Sponsor Member LLC and TotalEnergies Renewables USA LLC; Canadian chain not publicly disclosed",
+      "investmentYear": 2025,
+      "stake": "50% retained in each target; joint control and operator",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "TotalEnergies directly retained 50%, joint control and the operator role; this is corporate ownership rather than a fund attribution.",
+      "evidenceUrls": [
+        "https://totalenergies.com/newsroom/renewables-totalenergies-divests-50-14-gw-solar-portfolio-north-america/?lang=eng",
+        "https://www.sec.gov/Archives/edgar/data/879764/000110465926035876/R9.htm"
+      ]
+    },
+    {
+      "recordId": "OFA-60B240E8256B",
+      "companyName": "Dames Point Jacksonville LLC",
+      "country": "United States",
+      "investmentFirm": "Jacksonville Port Authority",
+      "currentVehicleName": "Dames Point Jacksonville LLC business and assets",
+      "investmentYear": 2023,
+      "stake": "Full ownership; legal allocation not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "JAXPORT directly acquired and continues to own the Dames Point business and assets; this is public-port ownership rather than a fund attribution.",
+      "evidenceUrls": [
+        "https://www.jaxport.com/wp-content/uploads/2025/03/20232024-Annual-report.pdf"
+      ]
+    },
+    {
+      "recordId": "OFA-78C559B07E07",
+      "companyName": "LBCT LLC",
+      "country": "United States",
+      "investmentFirm": "Macquarie Asset Management",
+      "currentVehicleName": "Olivia Holdings LLC",
+      "investmentYear": 2019,
+      "stake": "Not publicly disclosed",
+      "targetLinkedFundName": "Macquarie Infrastructure Partners IV",
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Macquarie Infrastructure Partners IV",
+      "attributionConfidence": null,
+      "attributionRationale": "Macquarie Infrastructure Partners IV is directly disclosed as the Macquarie-managed fund in the Olivia Holdings investor consortium.",
+      "evidenceUrls": [
+        "https://www.lbct.com/wp-content/uploads/2025/12/NZ2025ProgReport3.pdf",
+        "https://www.ooilgroup.com/newsroom/informationtoshareholders/2019/Documents/e_Major%20Transaction%20Circular%20%2831%20Jul%202019%29.PDF"
+      ]
+    },
+    {
+      "recordId": "OFA-EBCA3D5D4FBA",
+      "companyName": "LBCT LLC",
+      "country": "United States",
+      "investmentFirm": "MEAG",
+      "currentVehicleName": "MR Olivia LP",
+      "investmentYear": 2019,
+      "stake": "8.8% of Olivia Holdings at December 31, 2025",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "Munich Re's annual report directly discloses the MR Olivia LP interest; the reviewed evidence supports direct insurance-group ownership rather than a named fund.",
+      "evidenceUrls": [
+        "https://www.munichre.com/content/dam/munichre/mrwebsiteslaunches/2025-annual-report/MunichRe-Group-Annual-Report-2025-en.pdf/_jcr_content/renditions/original./MunichRe-Group-Annual-Report-2025-en.pdf"
+      ]
+    },
+    {
+      "recordId": "OFA-8462C2E95053",
+      "companyName": "LBCT LLC",
+      "country": "United States",
+      "investmentFirm": "Manulife Investment Management",
+      "currentVehicleName": "John Hancock Infrastructure Fund LP",
+      "investmentYear": null,
+      "stake": "Not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "John Hancock Infrastructure Fund LP",
+      "attributionConfidence": null,
+      "attributionRationale": "LBCT's investor disclosure and Manulife materials support John Hancock Infrastructure Fund LP as the investor vehicle; no matching published fund record is linked.",
+      "evidenceUrls": [
+        "https://www.lbct.com/wp-content/uploads/2025/12/NZ2025ProgReport3.pdf",
+        "https://www.manulifeim.com/institutional/global/en/strategies/private-markets/infrastructure/infrastructure-team"
+      ]
+    },
+    {
+      "recordId": "OFA-B7E821334C9E",
+      "companyName": "LBCT LLC",
+      "country": "United States",
+      "investmentFirm": "Rest",
+      "currentVehicleName": "Retail Employees Superannuation Trust",
+      "investmentYear": 2019,
+      "stake": "Not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "Rest participates through the Retail Employees Superannuation Trust; this is pension-plan ownership rather than a fund attribution.",
+      "evidenceUrls": [
+        "https://www.lbct.com/wp-content/uploads/2025/12/NZ2025ProgReport3.pdf"
+      ]
+    }
+  ],
+  "specSha256": "5a51b2e828572ce153fb73162107a24297db2db8b7d3a2d240136f9dc8013995"
+}
