@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_SEED_ATTRIBUTION_RECONCILIATION_SPEC",
+  "batchId": "batch-0312-0317-v1",
+  "batchSha256": "28b09180ae3de3fd426336986750003224325c6ab81810e6b261798216ba4f20",
+  "reconciledAt": "2026-09-01T09:33:00.000Z",
+  "sourceManifestSha256": "2c1af366fabb2d949818d0bdb795d322086a852baa2c5a951e7837874513fd8c",
+  "rationale": "Reconcile every in-scope active-manager identity changed by batch 0312-0317. Remove LiveOak's erroneous HICL inference and record InfraRed's undisclosed value-add vehicle plus MEAG's disclosed LiveOak CIV. Replace the generic Wind Facility attribution with Mesteño's disclosed Fund A and Fund B ownership chain. Remove Longroad's erroneous Morrison owner row and record Infratil and MEAG as the two in-scope manager attributions; New Zealand Super Fund and management remain disclosed in the company narrative because the current ownership model does not contain those manager organizations. No fund is inferred where the exact mandate or linked fund does not exist.",
+  "removeRecordIds": [
+    "OFA-512F79059890"
+  ],
+  "upsertRecords": [
+    {
+      "recordId": "OFA-9728A2D40F9D",
+      "companyName": "LiveOak Fiber",
+      "country": "United States",
+      "investmentFirm": "InfraRed Capital Partners",
+      "currentVehicleName": "InfraRed-managed value-add strategies; exact vehicle not publicly disclosed",
+      "investmentYear": 2022,
+      "stake": "Majority; exact percentage not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "UNRESOLVED",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "InfraRed directly states that its value-add strategies retain majority ownership, but the exact fund and legal investment vehicle are not publicly disclosed. The prior HICL attribution is retracted and no replacement fund is inferred.",
+      "evidenceUrls": [
+        "https://www.ircp.com/news/infrared-partners-with-meag-on-liveoak-fiber-via-co-investment/",
+        "https://www.ircp.com/wp-content/uploads/2026/06/InfraRed-2026-Sustainability-Report.pdf"
+      ]
+    },
+    {
+      "recordId": "OFA-AA7F091385D2",
+      "companyName": "LiveOak Fiber",
+      "country": "United States",
+      "investmentFirm": "MEAG",
+      "currentVehicleName": "InfraRed LiveOak CIV LP",
+      "investmentYear": 2024,
+      "stake": "Minority; exact percentage not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "InfraRed LiveOak CIV LP",
+      "attributionConfidence": null,
+      "attributionRationale": "InfraRed and MEAG disclose the 2024 minority co-investment through InfraRed LiveOak CIV LP. No matching published fund record or exact portfolio-company percentage is available.",
+      "evidenceUrls": [
+        "https://www.ircp.com/news/infrared-partners-with-meag-on-liveoak-fiber-via-co-investment/"
+      ]
+    },
+    {
+      "recordId": "OFA-6E5517F51603",
+      "companyName": "Mesteño Wind Project",
+      "country": "United States",
+      "investmentFirm": "InfraRed Capital Partners",
+      "currentVehicleName": "InfraRed Energy Transition Fund A LP → Mesteno Aggregator LLC",
+      "investmentYear": 2024,
+      "stake": "3.48% direct",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "InfraRed Energy Transition Fund A LP",
+      "attributionConfidence": null,
+      "attributionRationale": "Texas PUCT records disclose Fund A's direct 3.48% interest in Mesteno Aggregator LLC. The fund is named in the ownership chain but has no matching published fund record, so no fund link is created.",
+      "evidenceUrls": [
+        "https://interchange.puc.texas.gov/Documents/56766_1_1406189.PDF",
+        "https://interchange.puc.texas.gov/Documents/59131_64_1590666.PDF"
+      ]
+    },
+    {
+      "recordId": "OFA-891A11B8BD73",
+      "companyName": "Mesteño Wind Project",
+      "country": "United States",
+      "investmentFirm": "InfraRed Capital Partners",
+      "currentVehicleName": "InfraRed Energy Transition Fund B LP → Mesteno HoldCo LLC → Mesteno Aggregator LLC",
+      "investmentYear": 2024,
+      "stake": "96.52% indirect",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "InfraRed Energy Transition Fund B LP",
+      "attributionConfidence": null,
+      "attributionRationale": "Texas PUCT records disclose Fund B's 96.52% indirect interest through Mesteno HoldCo LLC. The fund is named in the ownership chain but has no matching published fund record, so no fund link is created.",
+      "evidenceUrls": [
+        "https://interchange.puc.texas.gov/Documents/56766_1_1406189.PDF",
+        "https://interchange.puc.texas.gov/Documents/59131_64_1590666.PDF"
+      ]
+    },
+    {
+      "recordId": "OFA-745F1D254F58",
+      "companyName": "Longroad Energy",
+      "country": "United States",
+      "investmentFirm": "Infratil",
+      "currentVehicleName": "Infratil US Renewables, Inc.",
+      "investmentYear": 2016,
+      "stake": "42.5% at Mar 31, 2026; current live page reports 42.0%",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Infratil",
+      "attributionConfidence": null,
+      "attributionRationale": "Infratil's current investment page and 2026 annual report directly support its continuing Longroad interest. Morrison is the manager or adviser and is not a separate beneficial owner.",
+      "evidenceUrls": [
+        "https://infratil.com/our-investments/renewables/",
+        "https://infratil.com/for-investors/financial-reports/annual-report-2026/"
+      ]
+    },
+    {
+      "recordId": "OFA-5E60EA548936",
+      "companyName": "Longroad Energy",
+      "country": "United States",
+      "investmentFirm": "MEAG",
+      "currentVehicleName": "MR Hunu LP (Munich Re beneficial interest managed by MEAG)",
+      "investmentYear": 2022,
+      "stake": "9.7%",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "MR Hunu LP",
+      "attributionConfidence": null,
+      "attributionRationale": "Current disclosures identify Munich Re as the 9.7% beneficial owner and MEAG as manager of the interest through MR Hunu LP. No matching published external fund record applies.",
+      "evidenceUrls": [
+        "https://infratil.com/our-investments/renewables/",
+        "https://www.longroadenergy.com/longroad-energy-broadens-executive-leadership-team-to-capitalize-on-market-momentum-and-accelerate-next-phase-of-growth/"
+      ]
+    }
+  ],
+  "specSha256": "95a738e0bd519d180cf5dff0a2be56407ae3ea89041b9c93accace6c92d10f81"
+}

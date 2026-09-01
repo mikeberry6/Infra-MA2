@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0312:aptum-technologies:d1225fa3",
+  "taskIndex": 312,
+  "companyName": "Aptum Technologies",
+  "outcome": "VERIFIED_NO_CHANGE",
+  "decidedAt": "2026-09-01T09:23:27.000Z",
+  "rationale": "The InfraBridge repo-only judgment is false and maps to the existing canonical Aptum Technologies record and verified DigitalBridge census holding 036-digitalbridge:holding:001:aptum-technologies. Production already records Aptum under DigitalBridge and no InfraBridge owner is present, so no company, ownership, seed, or redirect mutation is required.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0312-aptum-technologies/attempt-1/locked-batch-v2-task-snapshot.json",
+    "sha256": "72c1903f1b081f5d95f953540bbbee397832f6845d75d8bb16fe40591e3166d9"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0312-aptum-technologies/attempt-1/terminal-research-decision-v2.json",
+    "sha256": "b76e9901cd6496e27b50224882600b2206440994922016b6d0f2ef504e786c26"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0312-aptum-technologies/attempt-1/source-verification-2026-09-01.json",
+    "sha256": "37f079dca7f9bffc356f1b7f2add79f87bef8134cb6da9bbffad574035941542"
+  },
+  "evidence": [
+    {
+      "url": "https://www.digitalbridge.com/portfolio/",
+      "purpose": "Current DigitalBridge ownership and canonical Aptum platform identity."
+    },
+    {
+      "url": "https://www.infrabridge.com/our-portfolio",
+      "purpose": "Current InfraBridge portfolio check and exclusion of false InfraBridge ownership."
+    },
+    {
+      "url": "https://corpo.cogeco.com/cca/en/press-room/press-releases/cogeco-communications-releases-its-results-third-quarter-fiscal-2019/",
+      "purpose": "2019 Digital Colony acquisition closing and Aptum identity chain."
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "06788bdb1e420b1bc657e593025dd88c8a55123a78b45e51156ba1cc61761e9b"
+}

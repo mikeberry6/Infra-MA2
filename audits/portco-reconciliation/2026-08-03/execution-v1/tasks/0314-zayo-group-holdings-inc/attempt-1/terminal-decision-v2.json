@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0314:zayo-group-holdings-inc:46e9b5e3",
+  "taskIndex": 314,
+  "companyName": "Zayo Group Holdings, Inc.",
+  "outcome": "VERIFIED_NO_CHANGE",
+  "decidedAt": "2026-09-01T09:23:27.000Z",
+  "rationale": "The InfraBridge repo-only judgment is false and maps to the existing canonical Zayo Group Holdings record and verified DigitalBridge and EQT census holdings. Production already records both active infrastructure owners and no InfraBridge owner is present, so no company, ownership, seed, or redirect mutation is required.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0314-zayo-group-holdings-inc/attempt-1/locked-batch-v2-task-snapshot.json",
+    "sha256": "0f1fcd36c28d26d52cc4ce9cbfeba595a79833da824707ab18588c48813b4f5c"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0314-zayo-group-holdings-inc/attempt-1/terminal-research-decision-v2.json",
+    "sha256": "b5d7db64a097d22537802f8ef4d880c8d7f5f257565e34e71bf76469d7a42f29"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0314-zayo-group-holdings-inc/attempt-1/source-verification-2026-09-01.json",
+    "sha256": "d62438bd5591f95d5e3e1b1a1d73cad68be907891d431629d35261decfa411cd"
+  },
+  "evidence": [
+    {
+      "url": "https://docs.fcc.gov/public/attachments/DA-26-638A1.pdf",
+      "purpose": "Current regulatory evidence for the DigitalBridge/Digital Colony and EQT ownership interests."
+    },
+    {
+      "url": "https://eqtgroup.com/about/current-portfolio/zayo",
+      "purpose": "Current EQT portfolio attribution."
+    },
+    {
+      "url": "https://www.infrabridge.com/our-portfolio",
+      "purpose": "Current InfraBridge portfolio check and exclusion of false InfraBridge ownership."
+    },
+    {
+      "url": "https://www.zayo.com/newsroom/zayo-completes-transition-to-a-private-company/",
+      "purpose": "2020 Digital Colony and EQT take-private closing."
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "f9c326aac20e21bf8f991c068e627718b53e560e5d7136fe915c8fd17d70c5f9"
+}

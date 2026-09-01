@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TERMINAL_RESEARCH_DECISION",
+  "taskId": "ledger:0312:aptum-technologies:d1225fa3",
+  "taskIndex": 312,
+  "companyName": "Aptum Technologies",
+  "asOfDate": "2026-09-01",
+  "decision": "NO_CHANGE",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-01T09:22:50.000Z",
+  "result": {
+    "decision": "NO_CHANGE",
+    "rationale": "The InfraBridge repo-only judgment is false and maps to the existing canonical Aptum Technologies record and verified DigitalBridge census holding 036-digitalbridge:holding:001:aptum-technologies. Production already records Aptum under DigitalBridge and no InfraBridge owner is present, so no company, ownership, seed, or redirect mutation is required.",
+    "evidence": [
+      {
+        "url": "https://www.digitalbridge.com/portfolio/",
+        "purpose": "Current DigitalBridge ownership and canonical Aptum platform identity."
+      },
+      {
+        "url": "https://www.infrabridge.com/our-portfolio",
+        "purpose": "Current InfraBridge portfolio check and exclusion of false InfraBridge ownership."
+      },
+      {
+        "url": "https://corpo.cogeco.com/cca/en/press-room/press-releases/cogeco-communications-releases-its-results-third-quarter-fiscal-2019/",
+        "purpose": "2019 Digital Colony acquisition closing and Aptum identity chain."
+      }
+    ]
+  },
+  "lineage": {
+    "applicationResearchDecision": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0312-aptum-technologies/attempt-1/application-research-decision-v2.json",
+    "canonicalHoldingId": "036-digitalbridge:holding:001:aptum-technologies",
+    "canonicalProductionCompanyId": "cmrxpjd7s00trivhew4m5dmlk",
+    "normalizationNote": "The model's SUPERSEDED conclusion applies to the false InfraBridge repo-only judgment. Because its survivor is a verified census holding rather than a second execution-manifest task, the execution outcome is normalized to NO_CHANGE instead of inventing a superseding task id."
+  }
+}

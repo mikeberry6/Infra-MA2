@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-01T09:03:10.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-09-01T09:45:37.000Z",
+  "activeBatchId": "batch-0312-0317-v1",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -5305,7 +5305,55 @@
           "reason": null
         }
       ]
+    },
+    {
+      "batchId": "batch-0312-0317-v1",
+      "state": "READY",
+      "taskIds": [
+        "ledger:0312:aptum-technologies:d1225fa3",
+        "ledger:0314:zayo-group-holdings-inc:46e9b5e3",
+        "ledger:0315:liveoak-fiber:e69e52a2",
+        "ledger:0316:wind-facility:66fa043e",
+        "ledger:0317:longroad-energy:c89b5c17"
+      ],
+      "taskIndexes": [
+        312,
+        314,
+        315,
+        316,
+        317
+      ],
+      "createdAt": "2026-09-01T09:11:57.000Z",
+      "updatedAt": "2026-09-01T09:45:37.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0312-0317-v1/batch-manifest-v5.json",
+        "sha256": "28b09180ae3de3fd426336986750003224325c6ab81810e6b261798216ba4f20"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-09-01T09:11:57.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-09-01T09:45:37.000Z",
+          "evidenceSha256": [
+            "28b09180ae3de3fd426336986750003224325c6ab81810e6b261798216ba4f20"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "72c8335aae0a014aae671af68729a1213a68fd774da5ce0ea4b2233238b70ee9"
+  "ledgerSha256": "ab0b748fb0e2dd7df59a1ad95138a619fe91e618c82d74a88d9c62722e92dc82"
 }

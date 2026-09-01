@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TERMINAL_RESEARCH_DECISION",
+  "taskId": "ledger:0314:zayo-group-holdings-inc:46e9b5e3",
+  "taskIndex": 314,
+  "companyName": "Zayo Group Holdings, Inc.",
+  "asOfDate": "2026-09-01",
+  "decision": "NO_CHANGE",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-01T09:22:50.000Z",
+  "result": {
+    "decision": "NO_CHANGE",
+    "rationale": "The InfraBridge repo-only judgment is false and maps to the existing canonical Zayo Group Holdings record and verified DigitalBridge and EQT census holdings. Production already records both active infrastructure owners and no InfraBridge owner is present, so no company, ownership, seed, or redirect mutation is required.",
+    "evidence": [
+      {
+        "url": "https://docs.fcc.gov/public/attachments/DA-26-638A1.pdf",
+        "purpose": "Current regulatory evidence for the DigitalBridge/Digital Colony and EQT ownership interests."
+      },
+      {
+        "url": "https://eqtgroup.com/about/current-portfolio/zayo",
+        "purpose": "Current EQT portfolio attribution."
+      },
+      {
+        "url": "https://www.infrabridge.com/our-portfolio",
+        "purpose": "Current InfraBridge portfolio check and exclusion of false InfraBridge ownership."
+      },
+      {
+        "url": "https://www.zayo.com/newsroom/zayo-completes-transition-to-a-private-company/",
+        "purpose": "2020 Digital Colony and EQT take-private closing."
+      }
+    ]
+  },
+  "lineage": {
+    "applicationResearchDecision": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0314-zayo-group-holdings-inc/attempt-1/application-research-decision-v2.json",
+    "canonicalHoldingIds": [
+      "036-digitalbridge:holding:018:zayo-group",
+      "043-eqt-infrastructure:holding:017:zayo-group-holdings-inc"
+    ],
+    "canonicalProductionCompanyId": "cmrxpjded00u3ivhegohk21bs",
+    "normalizationNote": "The model's SUPERSEDED conclusion applies to the false InfraBridge repo-only judgment. Because its survivor is represented by verified census holdings rather than a second execution-manifest task, the execution outcome is normalized to NO_CHANGE instead of inventing a superseding task id."
+  }
+}
