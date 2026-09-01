@@ -20,6 +20,9 @@ type SnapshotRecord = AttributionProductionSnapshot["records"][number] & {
   displayVehicleName: string;
   currentLinkedFundName: string | null;
   currentFundAttribution: "DISCLOSED" | "INFERRED" | "DIRECT_PROGRAM" | "UNRESOLVED";
+  currentAttributedFundName: string | null;
+  currentAttributionConfidence: "HIGH" | "MEDIUM" | "LOW" | null;
+  currentAttributionRationale: string | null;
   investmentYear: number | null;
   stake: string | null;
 };
@@ -81,6 +84,9 @@ export function buildScopedAttributionRepair(input: {
     const differs = (
       record.currentFundAttribution !== desired.fundAttribution
       || record.currentLinkedFundName !== desired.targetLinkedFundName
+      || record.currentAttributedFundName !== desired.attributedFundName
+      || record.currentAttributionConfidence !== desired.attributionConfidence
+      || record.currentAttributionRationale !== desired.attributionRationale
     );
     if (!differs) return [];
     return [{

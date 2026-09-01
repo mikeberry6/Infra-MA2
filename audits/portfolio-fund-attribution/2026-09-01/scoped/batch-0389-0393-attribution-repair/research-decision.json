@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_CORRECTION_DECISION",
+  "asOfDate": "2026-09-01",
+  "triggerBatchId": "batch-0389-0393-v1",
+  "triggerBatchSha256": "25596bfcdb64d165bc534849e9c48cd4af960fd4da25059de012c6c022c8883d",
+  "triggerBatchReceiptSha256": "6e9f810c0aef5ec336ee300bc4e783dd99eea54aed15a5c8f1d89e826e2d1aa6",
+  "triggerReleaseSha": "b7093b67a967709fbfc00ff24e7443ad2e71a9ba",
+  "seedAttributionManifestSha256": "1e8037e1434798236c768e678a6104363c27e256f4dd566d4a4ee15d963a3eb8",
+  "productionSnapshotSha256": "c9cc8647eeec67aac51e9a2cd5534b7a0db5b5ff7a8106fa4f601488d4081f06",
+  "decision": "ALIGN_ACTIVE_OWNERSHIP_ATTRIBUTION_METADATA",
+  "rationale": "The atomic PortCo transaction correctly applied the approved companies, ownership periods and project redirects. Independent rendered verification found that the separate ownership-attribution layer retained six stale classifications or display fields. Align those six exact rows to the reviewed seed judgments before completing the PortCo bundle.",
+  "mutations": [
+    {
+      "companyName": "Network FiberCo, LLC",
+      "ownershipPeriodIds": [
+        "cmtj91wwi00092h2bqmcc5u47",
+        "cmtj91x2r000b2h2b6ng0yees"
+      ],
+      "outcome": "Classify the disclosed PSP and BCE ownership chains without creating or linking a curated fund"
+    },
+    {
+      "companyName": "CenTrio",
+      "ownershipPeriodIds": [
+        "cmrxpk8z6027pivhe483gv8jm",
+        "cmrxpk8zm027qivhe3ladg5du"
+      ],
+      "outcome": "Replace stale Ullico display metadata and QIC's direct-program label with the disclosed current holding chains"
+    },
+    {
+      "companyName": "Primergy",
+      "ownershipPeriodIds": [
+        "cmrxpk96q027zivheu1eri9ch"
+      ],
+      "outcome": "Remove the unsupported Low Carbon Power Fund inference and retain direct Quinbrook-managed platform attribution"
+    },
+    {
+      "companyName": "GlidePath Power Solutions",
+      "ownershipPeriodIds": [
+        "cmrxpk91m027uivherjrqsi5p"
+      ],
+      "outcome": "Replace the estimated label with the disclosed Quinbrook Low Carbon Power Fund attribution"
+    }
+  ],
+  "verifiedNonChanges": [
+    "Company identities, aliases, redirects and publication status",
+    "Ownership organizations, vehicles, stakes, dates and active state",
+    "Former ownership periods and project-to-platform boundaries",
+    "Descriptions, milestones, citations and primary sources",
+    "Fund Database records; the repair creates or updates no fund",
+    "The completed atomic PortCo transaction and its durable receipts"
+  ],
+  "identityResolved": true,
+  "activeOwnershipResolved": true,
+  "unresolvedQuestions": []
+}
