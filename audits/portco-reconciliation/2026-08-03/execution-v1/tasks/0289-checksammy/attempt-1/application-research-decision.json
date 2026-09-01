@@ -1,0 +1,198 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0289:checksammy:c0009a91",
+  "taskIndex": 289,
+  "companyName": "CheckSammy",
+  "asOfDate": "2026-08-19",
+  "decision": "EXCLUDED",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-08-31T10:30:48.000Z",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": {
+      "name": "CheckSammy",
+      "canonicalKey": "checksammy|united-states",
+      "task": "ledger:0289:checksammy:c0009a91"
+    },
+    "requestedManagers": [
+      "I Squared Capital"
+    ],
+    "decision": "EXCLUDED",
+    "confidence": "HIGH",
+    "rationale": "Exclude CheckSammy entirely, not only I Squared's period. I Squared's January 2024 growth equity is attributable to ISQ Global InfraTech Fund, L.P., which the manager defines as a proprietary growth-stage venture strategy and therefore fails the direct-infrastructure mandate test. CheckSammy is no longer purely asset-light: it still orchestrates independent haulers and software but now claims four owned-and-operated ZeroPoint hubs. ZIP, GLIN and Kensington's candidate exposure are venture/growth/impact; lenders are not equity.",
+    "identityResolution": {
+      "finding": "Canonical operator is CheckSammy Inc., a Delaware corporation headquartered in Dallas/Addison, Texas. CheckSammy Technologies, Inc. is its disclosed parent/legacy Canadian issuer, not a duplicate.",
+      "url": "https://checksammy.com/terms/general-driver"
+    },
+    "ownershipResolution": {
+      "owners": [
+        {
+          "manager": "I Squared Capital",
+          "organization": "I Squared Capital",
+          "fund": "ISQ Global InfraTech Fund, L.P.",
+          "vehicle": "InfraTech growth equity",
+          "stake": "NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2024-01-24",
+          "entryDate": "2024-01-24",
+          "entryYear": 2024,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED"
+        },
+        {
+          "manager": "Zero Infinity Partners",
+          "organization": "Zero Infinity Partners",
+          "fund": "NOT_PUBLICLY_DISCLOSED",
+          "vehicle": "infra-tech venture equity",
+          "stake": "NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2022-11-30",
+          "entryDate": "2022-11-30",
+          "entryYear": 2022,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED"
+        },
+        {
+          "manager": "GLIN Impact Capital",
+          "organization": "GLIN Impact Capital",
+          "fund": "NOT_PUBLICLY_DISCLOSED",
+          "vehicle": "impact venture equity",
+          "stake": "NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2026-04-30",
+          "entryDate": "2026-04-30",
+          "entryYear": 2026,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED"
+        }
+      ],
+      "capitalAndStatus": "The US$45 million 2024 package combined I Squared-led growth equity, ZIP participation and a TriplePoint revolver; split, valuation, stakes and control were undisclosed. TriplePoint was a lender. FirePower and PaceZero provided 2022 term debt; FirePower was repaid after the 2024 financing, while PaceZero's payoff is undisclosed. I Squared still lists CheckSammy under InfraTech and no equity exit was found."
+    },
+    "operatingResolution": "Hybrid managed marketplace/software plus four controlled ZeroPoint hubs that receive, weigh, sort, depackage, separate and aggregate materials for recycling partners. The September 2025 network exceeded 500,000 square feet, adding Indianapolis and Lakeland. Customers include retailers, manufacturers, 3PLs and other enterprises across the U.S., Canada, Mexico and Europe. No landfill ownership was found; property title versus leasehold is undisclosed. Operationally it meets the asset limb on its claims, but no disclosed investor meets the qualifying-mandate limb.",
+    "acquisitionExitCheck": {
+      "throughDate": "2026-08-19",
+      "laterFinancing": "GLIN completed an investment on 2026-04-30; amount, security and stake were undisclosed.",
+      "exitOrRecap": "No acquisition, disclosed add-on, sale, recapitalization, equity exit or signed pending deal was found; FirePower debt was repaid after the 2024 round.",
+      "pendingTransactions": []
+    },
+    "milestones": [
+      {
+        "date": "2022-11-30",
+        "event": "US$15 million package: ZIP equity; FirePower/PaceZero term debt; asset-light model.",
+        "category": "Financing"
+      },
+      {
+        "date": "2024-01-24",
+        "event": "US$45 million close: I Squared-led growth equity, ZIP follow-on and TriplePoint revolver.",
+        "category": "Financing"
+      },
+      {
+        "date": "2025-09-10",
+        "event": "ZeroPoint doubled to four sites and exceeded 500,000 square feet.",
+        "category": "Operations"
+      },
+      {
+        "date": "2026-04-30",
+        "event": "GLIN completed an investment; amount and stake undisclosed.",
+        "category": "Financing"
+      }
+    ],
+    "evidence": [
+      {
+        "label": "InfraTech mandate",
+        "url": "https://isquaredcapital.com/news/i-squared-capital-appoints-grant-allen-as-partner-for-infratech-strategy/",
+        "purpose": "Defines InfraTech as a growth-stage venture strategy.",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "Current I Squared listing",
+        "url": "https://isquaredcapital.com/txnm_strategy/infratech/",
+        "purpose": "Lists CheckSammy under InfraTech at cutoff.",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "2024 closing",
+        "url": "https://www.osler.com/en/about-us/representative-work/checksammy/",
+        "purpose": "Confirms US$45 million, 2024-01-24 close and TriplePoint revolver.",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Current operations",
+        "url": "https://checksammy.com/",
+        "purpose": "Claims four owned-operated hubs plus managed marketplace and footprint.",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "ZeroPoint expansion",
+        "url": "https://checksammy.com/news/checksammy-doubles-zeropoint-facility-network",
+        "purpose": "Dates four-site, 500,000-square-foot network and new locations.",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "2022 financing",
+        "url": "https://checksammy.com/news/tech-driven-sustainability-and-waste-removal-start-up-checksammy-hauls-in-15-million-investment",
+        "purpose": "Confirms ZIP equity, FirePower/PaceZero debt and asset-light model.",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "2026 GLIN investment",
+        "url": "https://prtimes.jp/main/html/rd/p/000000038.000076593.html",
+        "purpose": "Confirms completed GLIN impact investment.",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "before": "Active I Squared PortCo described mainly as asset-light waste diversion.",
+      "after": "Exclude company entirely; profile it as hybrid marketplace/software plus four controlled hubs, with disclosed capital classified as venture/growth/impact equity or credit."
+    },
+    "excludedOrDuplicateCandidates": [
+      "I Squared/ISQ Global InfraTech Fund—exclude: venture/growth mandate.",
+      "Zero Infinity Partners—exclude: infra-tech venture mandate.",
+      "GLIN Impact Capital—exclude: impact venture mandate.",
+      "Kensington lists CheckSammy as a current portfolio exposure, but direct versus indirect route and entry date are unresolved; its applicable strategy is venture/growth (https://kcpl.ca/portfolio/).",
+      "TriplePoint, FirePower and PaceZero—credit, not qualifying equity.",
+      "No duplicate; legacy CheckSammy Technologies is the same group."
+    ],
+    "unresolvedQuestions": [
+      "Exact stakes, valuation, I Squared SPV and full cap table are not public.",
+      "Kensington's route and PaceZero's payoff are undisclosed.",
+      "ZeroPoint property may be owned or leased; original two locations are undisclosed."
+    ],
+    "recommendedListAction": "Remove CheckSammy entirely from the North American infrastructure PortCo list; reconsider only if a qualifying direct-infrastructure equity owner is evidenced."
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0289-checksammy/attempt-1/research-decision.json",
+      "sha256": "23b09ae66acd9aab6fc95a143c6b5deeeee5eed0b6830a1cf40a3d0224b36704"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0289-checksammy/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "45ce9c95b613025bd0aa2f82065b1ed4c909e97389e7f04e966a4bec98c6bb3f"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0289-checksammy/attempt-1/source-verification.json",
+      "sha256": "40b771448c226b690d3b4677788869597fd9680a8fddd5dee46469a80b1ef3b4"
+    },
+    "acceptedResponseSha256": "1680558283b6dac85307c945b1977546a5bc322a7bb00d8741a5a499e6f63454",
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION"
+  }
+}

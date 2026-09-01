@@ -1,0 +1,261 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0289:checksammy:c0009a91",
+  "taskIndex": 289,
+  "companyName": "CheckSammy",
+  "generatedAt": "2026-08-31T10:28:30.942Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0289-checksammy/attempt-1/authorization-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 289,
+    "taskId": "ledger:0289:checksammy:c0009a91",
+    "canonicalKey": "checksammy|united-states",
+    "companyName": "CheckSammy",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 53,
+    "managers": [
+      "I Squared Capital"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "053-i-squared-capital:repo-only:003:checksammy"
+    ],
+    "productionCompanyIds": [
+      "cmrxpji3k0116ivhe3prvbtya"
+    ],
+    "seedKeys": [
+      "checksammy|United States"
+    ],
+    "evidenceUrls": [
+      "https://isquaredcapital.com/txnm_fund/infratech/",
+      "https://www.prnewswire.com/news-releases/checksammy-secures-45m-strategic-investment-to-expand-waste-diversion-from-landfills-302043315.html"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: I Squared Capital OUT_OF_SCOPE: InfraTech strategy investment rather than infrastructure ownership.",
+    "unresolvedQuestions": [
+      "Confirm whether the manager ownership, the company itself, or only this census scope is out of scope before proposing any change."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpji3k0116ivhe3prvbtya",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "checksammy|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpji3k0116ivhe3prvbtya",
+    "name": "CheckSammy",
+    "aliases": [],
+    "sector": "UTILITIES",
+    "subsector": "Waste diversion and recycling services",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "CheckSammy provides bulk waste, recycling, and sustainability services through a technology-enabled service network across North America. Its customers include multi-site commercial and industrial users that need recurring waste diversion, recycling, and sustainability program execution. The business follows an asset-light operating model built around software, service orchestration, and third-party service-provider networks rather than ownership of heavy disposal infrastructure. Public materials state that the company was founded in 2018 and serves more than 25,000 facilities across North America. I Squared led a $45 million strategic investment in January 2024 through its InfraTech strategy; the resulting ownership percentage is not publicly disclosed. The investment was positioned to support growth in waste diversion and sustainability workflow technology.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2018,
+    "headquarters": "North America",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk40801zxivheetdqvzxb",
+        "managerName": "I Squared Capital",
+        "organizationName": "I Squared Capital",
+        "fundName": null,
+        "vehicleName": "ISQ Global InfraTech Fund",
+        "stake": null,
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplzrf04bzivhedcbq0dh6",
+        "date": "2018",
+        "event": "CheckSammy was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2018-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplzry04c0ivheg3m6x5sz",
+        "date": "2020",
+        "event": "The company’s 2024 financing announcement stated that revenue had increased materially since commercialization in 2020.",
+        "category": "FINANCING",
+        "sortDate": "2020-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplzsc04c1ivhe513mybhk",
+        "date": "2024",
+        "event": "The company launched its Veridiant software offering alongside the financing announcement.",
+        "category": "FINANCING",
+        "sortDate": "2024-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplzv704c2ivhe3ypl005m",
+        "date": "Jan 24, 2024",
+        "event": "CheckSammy announced a $45 million strategic investment led by I Squared Capital.",
+        "category": "FINANCING",
+        "sortDate": "2024-01-24T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxprjt40b8wivhem2spig6x",
+        "label": "Checksammy — CheckSammy",
+        "url": "https://www.checksammy.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Checksammy company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxprjty0b8yivhebgdzz90f",
+        "label": "Checksammy — CheckSammy",
+        "url": "https://www.checksammy.com/about-us/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Checksammy company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprjux0b90ivheauowpu94",
+        "label": "Financing date source — CheckSammy — I Squared investment",
+        "url": "https://www.prnewswire.com/news-releases/checksammy-secures-45m-strategic-investment-to-expand-waste-diversion-from-landfills-302043315.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "PR Newswire financing or public filing",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "CheckSammy",
+    "investmentFirm": "I Squared Capital",
+    "sector": "Utilities",
+    "subsector": "Waste diversion and recycling services",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "ISQ Global InfraTech Fund",
+    "description": "CheckSammy provides bulk waste, recycling, and sustainability services through a technology-enabled service network across North America. Its customers include multi-site commercial and industrial users that need recurring waste diversion, recycling, and sustainability program execution. The business follows an asset-light operating model built around software, service orchestration, and third-party service-provider networks rather than ownership of heavy disposal infrastructure. Public materials state that the company was founded in 2018 and serves more than 25,000 facilities across North America. I Squared led a $45 million strategic investment in January 2024 through its InfraTech strategy; the resulting ownership percentage is not publicly disclosed. The investment was positioned to support growth in waste diversion and sustainability workflow technology.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2018,
+    "investmentYear": 2024,
+    "headquarters": "North America",
+    "milestones": [
+      {
+        "date": "2018",
+        "event": "CheckSammy was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "2020",
+        "event": "The company’s 2024 financing announcement stated that revenue had increased materially since commercialization in 2020.",
+        "category": "Financing"
+      },
+      {
+        "date": "2024",
+        "event": "The company launched its Veridiant software offering alongside the financing announcement.",
+        "category": "Financing"
+      },
+      {
+        "date": "Jan 24, 2024",
+        "event": "CheckSammy announced a $45 million strategic investment led by I Squared Capital.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Checksammy — CheckSammy",
+        "url": "https://www.checksammy.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Checksammy — CheckSammy",
+        "url": "https://www.checksammy.com/about-us/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Financing date source — CheckSammy — I Squared investment",
+        "url": "https://www.prnewswire.com/news-releases/checksammy-secures-45m-strategic-investment-to-expand-waste-diversion-from-landfills-302043315.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "FINANCING_FILINGS"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "I Squared Capital",
+        "ownershipVehicle": "ISQ Global InfraTech Fund",
+        "investmentYear": 2024,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi9mi002aivhewgvbh2ag",
+        "name": "I Squared Capital",
+        "updatedAt": "2026-07-23T16:09:19.674Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0289:checksammy:c0009a91",
+    "taskIndex": 289,
+    "canonicalKey": "checksammy|united-states",
+    "capturedAt": "2026-08-31T10:28:30.942Z",
+    "databaseRevision": "revision:543ead90d42ae291354b2a6187be63ab1a01f75771dd891ce337c22ddd537eea",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "efd22d30e2c38ac62cf662b985b5ae2920f8f97ff6873d973182660ac5e20f2b",
+    "productionSnapshotSha256": "e863cfe6a88dc734068c6e423f1acbabff1350f5e65b582147e77a1689b5378f",
+    "targetCompanySnapshotSha256": "9c1d61a697e654dde673060d48f7993bc4220c7c7847112816b5cbaa6dadb827",
+    "seedEntrySha256": "0f2310bbdbe28576c4d2482373e6c29da42a8e6cf466c9c28f8cff535399586f",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "905148ee1ca9733ecf203ac63213168d8eb0277e8f8bd123fbeee0e31a07d972",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "3a6e897cb6bf74e545c692a28085dff8e712c5fcc0be550290c59c13cf02f9a8",
+      "citationsSha256": "cbf57ef227c49c6362f8e6227e64facfcd03ae9f578b5d5152a0d353e75d7502",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "fd4bf538dae372cfce543a76d143a1df08cc2ebc1a2614066882aeda360355ea",
+    "stateSha256": "028b1ca5430810908624b5419f77902945476debf1b77735b514468ab5adfafd",
+    "taskSnapshotSha256": "0f4c38ff63fe45fd7224edd4e1c032cde82ca4248479b52a99365fb5a30a3a5b"
+  },
+  "contextSha256": "69699b1a57c8696c66b91acbfb7c986afeb8911e52504fe49c4ce01059c51a1c"
+}
