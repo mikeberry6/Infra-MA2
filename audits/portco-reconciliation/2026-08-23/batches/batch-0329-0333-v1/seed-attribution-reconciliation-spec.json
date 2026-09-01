@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_SEED_ATTRIBUTION_RECONCILIATION_SPEC",
+  "batchId": "batch-0329-0333-v1",
+  "batchSha256": "bdad1cb0ee12a131a302e78d6e3ce61fc169d19aa85fbebd4e81febea93ac65d",
+  "reconciledAt": "2026-09-01T12:51:00.000Z",
+  "sourceManifestSha256": "396f5553de9901a0b0d94c28a78a23f90ebd9ab3fdd85223512a1ce490a31d3a",
+  "rationale": "Align the active-owner attribution manifest with the approved Silver Holdco realization, Pinsly creation, Potters closed consortium ownership, TraPac 51/49 ownership and Treaty Oak creation. Remove the three stale active-owner identities, retain disclosed MIP V and MIP VI links, classify corporate and pension co-investments as direct programs, and leave undisclosed co-investment vehicles unlinked rather than inferred.",
+  "removeRecordIds": [
+    "OFA-A771B127794E",
+    "OFA-E98E03CE8D5B",
+    "OFA-87A338C81093"
+  ],
+  "upsertRecords": [
+    {
+      "recordId": "OFA-0CD4FB3B97B9",
+      "companyName": "Pinsly Railroad Company",
+      "country": "United States",
+      "investmentFirm": "Macquarie Asset Management",
+      "currentVehicleName": "MIP V Rail, LLC / Pinsly Holdco, LLC",
+      "investmentYear": 2022,
+      "stake": "100%",
+      "targetLinkedFundName": "Macquarie Infrastructure Partners V",
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Macquarie Infrastructure Partners V",
+      "attributionConfidence": null,
+      "attributionRationale": "The Macquarie portfolio page and federal control filing directly attribute Pinsly's predecessor RailUSA acquisition and current ownership chain to Macquarie Infrastructure Partners V.",
+      "evidenceUrls": [
+        "https://www.macquarie.com/au/en/about/company/macquarie-asset-management/our-portfolio/pinsly-railroad-company.html",
+        "https://www.federalregister.gov/d/2021-26697"
+      ]
+    },
+    {
+      "recordId": "OFA-07C6CF3CA6C6",
+      "companyName": "Potters Industries, LLC",
+      "country": "United States",
+      "investmentFirm": "Macquarie Asset Management",
+      "currentVehicleName": "MSOF Beacon, LLC / Macquarie Strategic Opportunities Fund",
+      "investmentYear": 2025,
+      "stake": "Controlling interest; exact percentage not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Macquarie Strategic Opportunities Fund (MSOF)",
+      "attributionConfidence": null,
+      "attributionRationale": "Macquarie and regulatory evidence identify MSOF Beacon and the Macquarie Strategic Opportunities Fund infrastructure-adjacent private-equity strategy; no matching published fund record is linked.",
+      "evidenceUrls": [
+        "https://www.macquarie.com/au/en/about/news/2025/mam-led-consortium-agrees-to-acquire-potters-industries-from-tjc.html",
+        "https://www.sec.gov/Archives/edgar/data/1859919/000114036126019204/ny20067676x6_424b3.htm"
+      ]
+    },
+    {
+      "recordId": "OFA-678D352C2721",
+      "companyName": "Potters Industries, LLC",
+      "country": "United States",
+      "investmentFirm": "UniSuper",
+      "currentVehicleName": "Macquarie infrastructure-adjacency co-investment vehicle not publicly disclosed",
+      "investmentYear": 2025,
+      "stake": "Approximately 30%",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "UniSuper directly disclosed its approximately 30% Potters co-investment; the legal co-investment vehicle is not public and no separate curated fund link is inferred.",
+      "evidenceUrls": [
+        "https://www.unisuper.com.au/about-us/media-centre/2025/unisuper-commits-usd500-million-to-new-macquarie-infrastructure-adjacency-strategy"
+      ]
+    },
+    {
+      "recordId": "OFA-60E496FF6A3F",
+      "companyName": "Potters Industries, LLC",
+      "country": "United States",
+      "investmentFirm": "Partners Capital",
+      "currentVehicleName": "Co-investment vehicle not publicly disclosed",
+      "investmentYear": 2025,
+      "stake": "Not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "UNRESOLVED",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "Partners Capital is a directly named co-investor, but its stake, legal vehicle and fund allocation are not publicly disclosed.",
+      "evidenceUrls": [
+        "https://www.macquarie.com/au/en/about/news/2025/mam-led-consortium-agrees-to-acquire-potters-industries-from-tjc.html"
+      ]
+    },
+    {
+      "recordId": "OFA-8033367B36F9",
+      "companyName": "TraPac, LLC",
+      "country": "United States",
+      "investmentFirm": "Macquarie Asset Management",
+      "currentVehicleName": "Skipjack Terminal Holdings, L.P. / Skipjack (ECI) Holdings, LLC",
+      "investmentYear": 2023,
+      "stake": "49%",
+      "targetLinkedFundName": "Macquarie Infrastructure Partners VI",
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Macquarie Infrastructure Partners VI",
+      "attributionConfidence": null,
+      "attributionRationale": "The reviewed transaction and Macquarie portfolio evidence directly identify Macquarie Infrastructure Partners VI as the 49% TraPac investor.",
+      "evidenceUrls": [
+        "https://portoflosangeles.org/commission/agenda-archive-and-videos/agendas/2023/05252023-special-agenda",
+        "https://www.macquarie.com/au/en/about/company/macquarie-asset-management/our-portfolio/trapac.html"
+      ]
+    },
+    {
+      "recordId": "OFA-E3BF7EAB34AB",
+      "companyName": "TraPac, LLC",
+      "country": "United States",
+      "investmentFirm": "Ocean Network Express",
+      "currentVehicleName": "United Pacific Ports B (UK) Ltd.",
+      "investmentYear": 2023,
+      "stake": "51%",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "Ocean Network Express directly owns 51% through United Pacific Ports B (UK) Ltd.; this is corporate ownership rather than a fund attribution.",
+      "evidenceUrls": [
+        "https://portoflosangeles.org/commission/agenda-archive-and-videos/agendas/2023/05252023-special-agenda",
+        "https://ir.mol.co.jp/en/ir/stock/gms/main/05/teaserItems1/018/linkList/01/link/notice24.pdf"
+      ]
+    },
+    {
+      "recordId": "OFA-355EF571A9F3",
+      "companyName": "Treaty Oak Clean Energy, LLC",
+      "country": "United States",
+      "investmentFirm": "Macquarie Asset Management",
+      "currentVehicleName": "Macquarie Green Energy and Climate Opportunities Fund; immediate legal holding vehicle not publicly disclosed",
+      "investmentYear": 2022,
+      "stake": "100% collectively",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Macquarie Green Energy and Climate Opportunities Fund",
+      "attributionConfidence": null,
+      "attributionRationale": "Macquarie directly identifies MGECOF as acquiring Treaty Oak from its balance sheet; the legal holding vehicle is undisclosed and no matching published fund record is linked.",
+      "evidenceUrls": [
+        "https://www.macquarie.com/au/en/about/news/2024/macquarie-green-energy-and-climate-opportunities-fund-acquires-portfolio-of-six-investments.html",
+        "https://www.macquarie.com/au/en/about/company/macquarie-asset-management/our-portfolio/treaty-oak-clean-energy.html"
+      ]
+    }
+  ],
+  "specSha256": "3507fc0b634977463a16994dd84c0e6ee0f5ce4534a4f6fafc94f4430e999f53"
+}

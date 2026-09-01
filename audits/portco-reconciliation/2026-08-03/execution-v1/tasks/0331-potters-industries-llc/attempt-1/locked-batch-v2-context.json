@@ -1,0 +1,300 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0331:potters-industries-llc:e5212b53",
+  "taskIndex": 331,
+  "companyName": "Potters Industries LLC",
+  "generatedAt": "2026-09-01T12:22:32.678Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0331-potters-industries-llc/attempt-1/locked-batch-v2-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 331,
+    "taskId": "ledger:0331:potters-industries-llc:e5212b53",
+    "canonicalKey": "potters-industries-llc|united-states",
+    "companyName": "Potters Industries LLC",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 65,
+    "managers": [
+      "Macquarie Asset Management"
+    ],
+    "actionScopes": {
+      "company": [
+        "CORRECT_COMPANY"
+      ],
+      "ownership": [
+        "ADD_PENDING_TRANSACTION"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "065-macquarie-asset-management:holding:021:potters-industries-llc"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjkc9014qivheyfmy3lle"
+    ],
+    "seedKeys": [
+      "potters industries llc|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.macquarie.com/au/en/about/news/2025/mam-led-consortium-agrees-to-acquire-potters-industries-from-tjc.html"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_PENDING_TRANSACTION, CORRECT_COMPANY requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjkc9014qivheyfmy3lle",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "potters-industries-llc|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjkc9014qivheyfmy3lle",
+    "name": "Potters Industries LLC",
+    "aliases": [],
+    "sector": "TRANSPORTATION",
+    "subsector": "Road-marking materials and engineered glass media",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Potters Industries manufactures glass beads, microspheres, and related engineered materials used in road markings, runway markings, and specialized industrial applications. Its end markets include transportation safety, infrastructure maintenance, and industrial customers that use reflective media and specialty materials in their operations. The operating model is asset-heavy and manufacturing based, supported by a network of production and logistics sites across North America and Europe. Macquarie stated in November 2025 that Potters operates 26 manufacturing and logistics sites across North America and Europe and has additional presence in South America and Asia, while company materials identify Malvern, Pennsylvania as its global headquarters. Macquarie Asset Management and co-investors including UniSuper and Partners Capital announced an agreement in November 2025 to acquire a majority stake from TJC, but the reviewed sources did not confirm a completed closing or disclose the current post-transaction ownership structure as of the review date.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Pennsylvania; North America; Europe",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk6f6023oivhefg59zjtd",
+        "managerName": "Macquarie Asset Management",
+        "organizationName": "Macquarie Asset Management",
+        "fundName": "Macquarie Infrastructure Partners VI",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpm9rp04ntivhesi6fax0x",
+        "date": "2021",
+        "event": "Potters moved to a new joint corporate and R&D headquarters in Malvern, Pennsylvania.",
+        "category": "OTHER",
+        "sortDate": "2021-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm9sa04nuivheun4tfgck",
+        "date": "2024",
+        "event": "Potters acquired Franklin Paint and UCM according to company history materials.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm9su04nvivhemq7l2gic",
+        "date": "2025",
+        "event": "Potters opened a new plant in Wilson, North Carolina.",
+        "category": "EXPANSION",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm9te04nwivhem3z7biz6",
+        "date": "Nov 11, 2025",
+        "event": "Macquarie Asset Management-led consortium agreed to acquire a majority stake in Potters from TJC.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-11-11T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm9tx04nxivhe8706xk04",
+        "date": "2026",
+        "event": "No reviewed public source confirmed completion of the announced Macquarie-led transaction.",
+        "category": "OTHER",
+        "sortDate": "2026-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxps1pu0bzsivhe2w5jqt9m",
+        "label": "Announcement source — Macquarie Asset Management — Potters Industries LLC",
+        "url": "https://www.macquarie.com/au/en/about/news/2025/mam-led-consortium-agrees-to-acquire-potters-industries-from-tjc.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Macquarie transaction or milestone detail",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxps1qw0bzuivhefjwhru1u",
+        "label": "Pottersindustries — Potters Industries LLC",
+        "url": "https://www.pottersindustries.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Pottersindustries company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxps1rv0bzwivhetsm26ocv",
+        "label": "Pottersindustries — Potters Industries LLC",
+        "url": "https://www.pottersindustries.com/contact/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Pottersindustries — Potters Industries LLC",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxps1st0bzyivhegjfj6103",
+        "label": "Pottersindustries — Potters Industries LLC",
+        "url": "https://www.pottersindustries.com/about-us/history/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Pottersindustries company profile",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Potters Industries LLC",
+    "investmentFirm": "Macquarie Asset Management",
+    "sector": "Transportation",
+    "subsector": "Road-marking materials and engineered glass media",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "Potters Industries manufactures glass beads, microspheres, and related engineered materials used in road markings, runway markings, and specialized industrial applications. Its end markets include transportation safety, infrastructure maintenance, and industrial customers that use reflective media and specialty materials in their operations. The operating model is asset-heavy and manufacturing based, supported by a network of production and logistics sites across North America and Europe. Macquarie stated in November 2025 that Potters operates 26 manufacturing and logistics sites across North America and Europe and has additional presence in South America and Asia, while company materials identify Malvern, Pennsylvania as its global headquarters. Macquarie Asset Management and co-investors including UniSuper and Partners Capital announced an agreement in November 2025 to acquire a majority stake from TJC, but the reviewed sources did not confirm a completed closing or disclose the current post-transaction ownership structure as of the review date.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2025,
+    "headquarters": "Pennsylvania; North America; Europe",
+    "milestones": [
+      {
+        "date": "2021",
+        "event": "Potters moved to a new joint corporate and R&D headquarters in Malvern, Pennsylvania.",
+        "category": "Other"
+      },
+      {
+        "date": "2024",
+        "event": "Potters acquired Franklin Paint and UCM according to company history materials.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "2025",
+        "event": "Potters opened a new plant in Wilson, North Carolina.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Nov 11, 2025",
+        "event": "Macquarie Asset Management-led consortium agreed to acquire a majority stake in Potters from TJC.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "2026",
+        "event": "No reviewed public source confirmed completion of the announced Macquarie-led transaction.",
+        "category": "Other"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Announcement source — Macquarie Asset Management — Potters Industries LLC",
+        "url": "https://www.macquarie.com/au/en/about/news/2025/mam-led-consortium-agrees-to-acquire-potters-industries-from-tjc.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT"
+      },
+      {
+        "label": "Pottersindustries — Potters Industries LLC",
+        "url": "https://www.pottersindustries.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Pottersindustries — Potters Industries LLC",
+        "url": "https://www.pottersindustries.com/contact/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Pottersindustries — Potters Industries LLC",
+        "url": "https://www.pottersindustries.com/about-us/history/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Macquarie Asset Management",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2025,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj36z00emivhe92lfsr7g",
+        "fundName": "Macquarie Infrastructure Partners VI",
+        "managerId": "cmrxpibdo002uivheekmgpdbp",
+        "updatedAt": "2026-07-23T16:09:57.995Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpibdo002uivheekmgpdbp",
+        "name": "Macquarie Asset Management",
+        "updatedAt": "2026-07-23T16:09:21.948Z"
+      },
+      {
+        "id": "cmrxpin2x006iivhewyd2w4yo",
+        "name": "UniSuper",
+        "updatedAt": "2026-07-23T16:09:37.113Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0331:potters-industries-llc:e5212b53",
+    "taskIndex": 331,
+    "canonicalKey": "potters-industries-llc|united-states",
+    "capturedAt": "2026-09-01T12:22:32.678Z",
+    "databaseRevision": "revision:fb7c47dc728b17b5097112134b62ba521ccfde6878792278a6ac1f0544c3a8b1",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "3fb6643be86b84e70438d52d682bd196ecf51af171d639d04eb1e6bd0d2ae828",
+    "productionSnapshotSha256": "ec86da5c9921f2f8f996ce10af18180a152843a5bf3049dccf33e9ebab6faadf",
+    "targetCompanySnapshotSha256": "bd23d082d5244b89690206e6ebc5f56ec33b888006dfeea38292e79d5eea61af",
+    "seedEntrySha256": "17fd843c39dc898c91648489c1d3c0452eab207a4a9ccea968497b55e828b717",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "9f184b06c650431a3d86bda763821dd2b44967703901e94dd26cdbcb2ced2867",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "ed549e1b186e0f56f80676904c0c7149c7f62decf5f2039b3c532b0e0526855a",
+      "organizationsSha256": "bb38fbfbe23c13bd022d564e004fb2a26f65db6f5fad04d77f47f21fc64a5f34",
+      "citationsSha256": "994e930220b18bac9c16366b973f1ec1e7af715cc007801fbcc299cb1e4b78ee",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "25c23541fc28a9f2d9a391fa9c97515bb06fa31b82ef66d31cd7bfc553fd1a60",
+    "stateSha256": "58c98ceb0190e437eab955fd2872ced0e9f13a5daab0eeb8c9c2e0a5f6c89a18",
+    "taskSnapshotSha256": "d5105a213082009ac0ca209e623b0cd76d8e465f6565829e7815065574e43905"
+  },
+  "contextSha256": "fe4d829718e437b2067a2e7da08a3f0d5c8a7c8a07f2f9e4100a012bb43e44d2"
+}

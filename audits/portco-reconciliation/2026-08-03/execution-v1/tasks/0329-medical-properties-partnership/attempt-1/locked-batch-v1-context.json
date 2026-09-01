@@ -1,0 +1,279 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0329:medical-properties-partnership:c29a0cad",
+  "taskIndex": 329,
+  "companyName": "Medical Properties Partnership",
+  "generatedAt": "2026-09-01T12:18:28.390Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0329-medical-properties-partnership/attempt-1/locked-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 329,
+    "taskId": "ledger:0329:medical-properties-partnership:c29a0cad",
+    "canonicalKey": "medical-properties-partnership|united-states",
+    "companyName": "Medical Properties Partnership",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 65,
+    "managers": [
+      "Macquarie Asset Management"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "065-macquarie-asset-management:holding:016:medical-properties-partnership"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjkab014mivhe72i1zmv9"
+    ],
+    "seedKeys": [
+      "medical properties partnership|United States"
+    ],
+    "evidenceUrls": [
+      "https://ir.medicalpropertiestrust.com/news/news-details/2021/Medical-Properties-Trust-and-Macquarie-Infrastructure-Partners-V-Enter-Partnership-for-Eight-Massachusetts-Hospitals-Valued-at-1-78-Billion-09-01-2021/default.aspx"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted census NEEDS_REVIEW for 065-macquarie-asset-management:holding:016:medical-properties-partnership: Ownership continuity and infrastructure classification remain uncertain despite evidence of ongoing partnership. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Accepted census NEEDS_REVIEW for 065-macquarie-asset-management:holding:016:medical-properties-partnership: Ownership continuity and infrastructure classification remain uncertain despite evidence of ongoing partnership"
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjkab014mivhe72i1zmv9",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "medical-properties-partnership|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjkab014mivhe72i1zmv9",
+    "name": "Medical Properties Partnership",
+    "aliases": [],
+    "sector": "SOCIAL_INFRA",
+    "subsector": "Acute-care hospital real estate partnership",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Medical Properties Partnership is a joint venture that owns eight Massachusetts general acute care hospitals. Its end market is healthcare infrastructure, with cash flows tied to leased hospital real estate operated by healthcare providers rather than direct clinical service delivery. The operating model is asset-heavy and contracted, centered on essential hospital properties with long-term rental income and infrastructure-like real estate characteristics. Macquarie and Medical Properties Trust stated in 2021 and 2022 that the transaction covered eight Steward-operated hospitals in Massachusetts at a portfolio value of approximately $1.78 billion. A Macquarie Infrastructure Partners V-controlled subsidiary completed the acquisition of a 50 percent interest in the portfolio in March 2022, leaving Medical Properties Trust with the remaining 50 percent stake.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2022,
+    "headquarters": "Massachusetts",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk6d1023kivhebk1u7wdq",
+        "managerName": "Macquarie Asset Management",
+        "organizationName": "Macquarie Asset Management",
+        "fundName": "Macquarie Infrastructure Partners V",
+        "vehicleName": "Macquarie Infrastructure Partners V",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpm9f504neivheolte1gtu",
+        "date": "Sep 1, 2021",
+        "event": "Macquarie Infrastructure Partners V and Medical Properties Trust announced their partnership for eight Massachusetts hospitals.",
+        "category": "FINANCING",
+        "sortDate": "2021-09-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm9fm04nfivhepfj9bhwn",
+        "date": "2022",
+        "event": "Medical Properties Partnership was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2022-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm9gc04ngivhe1a1z6o4h",
+        "date": "Mar 16, 2022",
+        "event": "Medical Properties Trust announced completion of the hospital partnership with Macquarie.",
+        "category": "FINANCING",
+        "sortDate": "2022-03-16T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm9gq04nhivhej1jg0efv",
+        "date": "Mar 30, 2023",
+        "event": "Medical Properties Trust reaffirmed the March 2022 50/50 partnership structure in shareholder communications.",
+        "category": "FINANCING",
+        "sortDate": "2023-03-30T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxps15r0bywivhe1uth9nu9",
+        "label": "Announcement source — Macquarie Asset Management — Medical Properties Partnership",
+        "url": "https://www.macquarie.com/au/en/about/news/2021/macquarie-infrastructure-partners-v-and-medical-properties-trust-enter-partnership-for-eight-massachusetts-hospitals-valued-at-1-78-billion-usd.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Macquarie transaction or milestone detail",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxps16q0byyivheeqfoiscl",
+        "label": "Ir — Medical Properties Partnership",
+        "url": "https://ir.medicalpropertiestrust.com/news/news-details/2021/Medical-Properties-Trust-and-Macquarie-Infrastructure-Partners-V-Enter-Partnership-for-Eight-Massachusetts-Hospitals-Valued-at-1-78-Billion-09-01-2021/default.aspx",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Ir — Medical Properties Partnership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxps17t0bz0ivhefwx4terp",
+        "label": "S206 — Medical Properties Partnership",
+        "url": "https://s206.q4cdn.com/146646187/files/doc_news/Medical-Properties-Trust-Completes-Hospital-Partnership-With-Macquarie-Asset-Management-03-16-2022-2022.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "S206 — Medical Properties Partnership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxps18z0bz2ivhe5kbtjsop",
+        "label": "Ir — Medical Properties Partnership",
+        "url": "https://ir.medicalpropertiestrust.com/news/news-details/2023/Medical-Properties-Trust-Files-Lawsuit-Against-Short-Seller-Viceroy-Research-and-Its-Members-Sends-Letter-to-Shareholders-03-30-2023/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Ir — Medical Properties Partnership",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Medical Properties Partnership",
+    "investmentFirm": "Macquarie Asset Management",
+    "sector": "Social Infra",
+    "subsector": "Acute-care hospital real estate partnership",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Macquarie Infrastructure Partners V",
+    "description": "Medical Properties Partnership is a joint venture that owns eight Massachusetts general acute care hospitals. Its end market is healthcare infrastructure, with cash flows tied to leased hospital real estate operated by healthcare providers rather than direct clinical service delivery. The operating model is asset-heavy and contracted, centered on essential hospital properties with long-term rental income and infrastructure-like real estate characteristics. Macquarie and Medical Properties Trust stated in 2021 and 2022 that the transaction covered eight Steward-operated hospitals in Massachusetts at a portfolio value of approximately $1.78 billion. A Macquarie Infrastructure Partners V-controlled subsidiary completed the acquisition of a 50 percent interest in the portfolio in March 2022, leaving Medical Properties Trust with the remaining 50 percent stake.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2022,
+    "investmentYear": 2022,
+    "headquarters": "Massachusetts",
+    "milestones": [
+      {
+        "date": "Sep 1, 2021",
+        "event": "Macquarie Infrastructure Partners V and Medical Properties Trust announced their partnership for eight Massachusetts hospitals.",
+        "category": "Financing"
+      },
+      {
+        "date": "2022",
+        "event": "Medical Properties Partnership was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "Mar 16, 2022",
+        "event": "Medical Properties Trust announced completion of the hospital partnership with Macquarie.",
+        "category": "Financing"
+      },
+      {
+        "date": "Mar 30, 2023",
+        "event": "Medical Properties Trust reaffirmed the March 2022 50/50 partnership structure in shareholder communications.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Announcement source — Macquarie Asset Management — Medical Properties Partnership",
+        "url": "https://www.macquarie.com/au/en/about/news/2021/macquarie-infrastructure-partners-v-and-medical-properties-trust-enter-partnership-for-eight-massachusetts-hospitals-valued-at-1-78-billion-usd.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT"
+      },
+      {
+        "label": "Ir — Medical Properties Partnership",
+        "url": "https://ir.medicalpropertiestrust.com/news/news-details/2021/Medical-Properties-Trust-and-Macquarie-Infrastructure-Partners-V-Enter-Partnership-for-Eight-Massachusetts-Hospitals-Valued-at-1-78-Billion-09-01-2021/default.aspx",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "S206 — Medical Properties Partnership",
+        "url": "https://s206.q4cdn.com/146646187/files/doc_news/Medical-Properties-Trust-Completes-Hospital-Partnership-With-Macquarie-Asset-Management-03-16-2022-2022.pdf",
+        "type": "PRESENTATION"
+      },
+      {
+        "label": "Ir — Medical Properties Partnership",
+        "url": "https://ir.medicalpropertiestrust.com/news/news-details/2023/Medical-Properties-Trust-Files-Lawsuit-Against-Short-Seller-Viceroy-Research-and-Its-Members-Sends-Letter-to-Shareholders-03-30-2023/",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Macquarie Asset Management",
+        "ownershipVehicle": "Macquarie Infrastructure Partners V",
+        "investmentYear": 2022,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj34r00eiivhe8tq16olg",
+        "fundName": "Macquarie Infrastructure Partners V",
+        "managerId": "cmrxpibdo002uivheekmgpdbp",
+        "updatedAt": "2026-07-23T16:09:57.915Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpibdo002uivheekmgpdbp",
+        "name": "Macquarie Asset Management",
+        "updatedAt": "2026-07-23T16:09:21.948Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0329:medical-properties-partnership:c29a0cad",
+    "taskIndex": 329,
+    "canonicalKey": "medical-properties-partnership|united-states",
+    "capturedAt": "2026-09-01T12:18:28.390Z",
+    "databaseRevision": "revision:98b44b06d0e8f863ff65a85bf9c6c63afcc9ad6febf1f93389dd21a8970eed17",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "0a3423a69cdd094ad6fdd317d3ac4ec84839ed9ae595558f939cdd7f2e661a1d",
+    "productionSnapshotSha256": "2cd2b05b80bd8c596a9b01e6d99b99ecf2d71f2668238e547624b857221f005f",
+    "targetCompanySnapshotSha256": "b586e67747eae1cd5b9ec2b4fc3c84172514f1582bc70a132191b24b77f25ae0",
+    "seedEntrySha256": "42b87904550512c2e5a008be22682392d1695d8f9ea80ce56a8d62794c1f58dd",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "d5d0f1bd6277e5b454e498fc13510d3bf810ecec4d11ce651610defb316e5885",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "87f3898a56319333b923b20e6532388be1fe977e0068e9a63071c1a3a23dd987",
+      "organizationsSha256": "d1bf22f74b7389af188f4a2b3b82e0246d17c60ead7f84f073147c4a049757f2",
+      "citationsSha256": "c9c0940795f6609d2b49d6b1dd2e0fe48a85cf14ffd97f78ef33ee0e10944190",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "ab8f257fa8ea841ad80543fdc57381d22f45a8e897b4f355f7a48e75efc4962c",
+    "stateSha256": "22ab30f95df1994478ba7eb5aa03cfe6c2235d7a0674a2da809163cdcff5520d",
+    "taskSnapshotSha256": "17a2ba58ffb539b90cd3dd5e6c72882beec278097e183d9dddcbd512f8cd84ef"
+  },
+  "contextSha256": "67dd32df90792edb0a2486b7d1d0198e620985ba88a6a3345ef6e0f8c0cde555"
+}

@@ -344,6 +344,12 @@ const approvedOwnershipOrganizationProvisioning = {
   "Jacksonville Port Authority": "OTHER",
   "Rest": "PENSION",
   "Orient Overseas (International) Limited": "CORPORATE",
+  "Medical Properties Trust": "CORPORATE",
+  "American Rail Partners": "CORPORATE",
+  "Partners Capital": "FUND_MANAGER",
+  "TJC": "FUND_MANAGER",
+  "PQ Corporation": "CORPORATE",
+  "Ocean Network Express": "CORPORATE",
 } as const;
 
 export function ownershipOrganizationTypes(
