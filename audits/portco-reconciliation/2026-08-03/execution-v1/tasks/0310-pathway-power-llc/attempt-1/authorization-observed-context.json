@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0310:pathway-power-llc:f9eee1e3",
+  "taskIndex": 310,
+  "companyName": "Pathway Power LLC",
+  "generatedAt": "2026-09-01T08:23:01.560Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0310-pathway-power-llc/attempt-1/authorization-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 310,
+    "taskId": "ledger:0310:pathway-power-llc:f9eee1e3",
+    "canonicalKey": "pathway-power-llc|united-states",
+    "companyName": "Pathway Power LLC",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 56,
+    "managers": [
+      "Igneo Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [
+        "CREATE_COMPANY"
+      ],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "056-igneo-infrastructure-partners:holding:006:pathway-power-llc"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://www.igneoip.com/usa/en/institutional/news-and-insights/press/igneo-completes-investment-in-pathway-power.html"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "No exact normalized production or seed match exists. Census evidence supports a new canonical company with 1 manager holding record(s).",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "pathway-power-llc|united-states",
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpiaa1002iivhepz4cndl9",
+        "name": "Igneo Infrastructure Partners",
+        "updatedAt": "2026-07-23T16:09:20.521Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0310:pathway-power-llc:f9eee1e3",
+    "taskIndex": 310,
+    "canonicalKey": "pathway-power-llc|united-states",
+    "capturedAt": "2026-09-01T08:23:01.560Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "8b4acf3a4764a4791e78d49e9411203e351dfd504eda1444395d230dc5868520",
+    "productionSnapshotSha256": "6ab26608e8b0042560c7dff6e3a2bb96fc3822f2b1c46593c2f12b9ee777874b",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "689d7cdeb3630ad565e994a72fb6a3f56f9adf69f39bf3a2a10009ff8aa580a3",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "c978e580d34b5f9f1811c3ac1a61f48495d21ef912d9513c45d6a0b06f4be66c",
+    "stateSha256": "303239fb3791adc03277c07d2575c8e3ada48387428c7fc9bd31d991d3e9a8a6",
+    "taskSnapshotSha256": "e8ab700053c55f6eaa1791804504fde56f53da99ad27a795796da54c976c3ee8"
+  },
+  "contextSha256": "b250f61f933076a06d981459c3f66c34a966a4ff4f54601a2891a2b2a8e31aaa"
+}

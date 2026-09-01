@@ -311,6 +311,7 @@ const approvedOwnershipOrganizationProvisioning = {
   "Wecom founders": "OTHER",
   "Elliott Investment Management": "FUND_MANAGER",
   "Fortistar": "FUND_MANAGER",
+  "Global Infrastructure Partners": "FUND_MANAGER",
   "Reliant Energy": "CORPORATE",
   "CyrusOne founders and management": "OTHER",
   "ABRY Partners": "FUND_MANAGER",

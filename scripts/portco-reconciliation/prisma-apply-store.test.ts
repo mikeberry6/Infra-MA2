@@ -99,5 +99,6 @@ describe("approved ownership organization provisioning", () => {
     expect(ownershipOrganizationTypes("Investissement Québec")).toEqual(["OTHER"]);
     expect(ownershipOrganizationTypes("Energy Investors Funds Group")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("FifteenFortySeven Critical Systems Realty")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("Global Infrastructure Partners")).toEqual(["FUND_MANAGER"]);
   });
 });

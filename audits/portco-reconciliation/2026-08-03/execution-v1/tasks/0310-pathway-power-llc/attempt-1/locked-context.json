@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0310:pathway-power-llc:f9eee1e3",
+  "taskIndex": 310,
+  "companyName": "Pathway Power LLC",
+  "generatedAt": "2026-09-01T08:18:16.981Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0310-pathway-power-llc/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 310,
+    "taskId": "ledger:0310:pathway-power-llc:f9eee1e3",
+    "canonicalKey": "pathway-power-llc|united-states",
+    "companyName": "Pathway Power LLC",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 56,
+    "managers": [
+      "Igneo Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [
+        "CREATE_COMPANY"
+      ],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "056-igneo-infrastructure-partners:holding:006:pathway-power-llc"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://www.igneoip.com/usa/en/institutional/news-and-insights/press/igneo-completes-investment-in-pathway-power.html"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "No exact normalized production or seed match exists. Census evidence supports a new canonical company with 1 manager holding record(s).",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "pathway-power-llc|united-states",
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpiaa1002iivhepz4cndl9",
+        "name": "Igneo Infrastructure Partners",
+        "updatedAt": "2026-07-23T16:09:20.521Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0310:pathway-power-llc:f9eee1e3",
+    "taskIndex": 310,
+    "canonicalKey": "pathway-power-llc|united-states",
+    "capturedAt": "2026-09-01T08:18:16.981Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "8b4acf3a4764a4791e78d49e9411203e351dfd504eda1444395d230dc5868520",
+    "productionSnapshotSha256": "f5a7e8c1159e36744d01de96f9369276e7e737ec5bf6635751e88a080577985a",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "689d7cdeb3630ad565e994a72fb6a3f56f9adf69f39bf3a2a10009ff8aa580a3",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "c978e580d34b5f9f1811c3ac1a61f48495d21ef912d9513c45d6a0b06f4be66c",
+    "stateSha256": "303239fb3791adc03277c07d2575c8e3ada48387428c7fc9bd31d991d3e9a8a6",
+    "taskSnapshotSha256": "3777c13f35c93523f4b5673342c94fae038bf57b488d4c0fdc3455d08fd18017"
+  },
+  "contextSha256": "1de8c0cdf6d2688e77431fa26561a595dd62017d91e85f8b5e7e742b1c8bf0b2"
+}

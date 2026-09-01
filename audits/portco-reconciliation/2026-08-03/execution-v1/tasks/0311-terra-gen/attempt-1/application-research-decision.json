@@ -1,0 +1,225 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0311:terra-gen:621138d4",
+  "taskIndex": 311,
+  "companyName": "Terra-Gen",
+  "asOfDate": "2026-08-19",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-01T08:16:03.619Z",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "Terra-Gen",
+    "requestedManagers": [
+      "Igneo Infrastructure Partners",
+      "Pantheon Ventures / Pantheon Infrastructure Plc"
+    ],
+    "decision": "PROPOSED_CORRECTION",
+    "confidence": "HIGH",
+    "rationale": "Add Masdar and former owners. Current legal ownership remains Igneo/GDIF 50% and Masdar 50%. PINT's company-specific co-investment commitment qualifies, but its stake, instrument, vehicle and close are NOT_PUBLICLY_DISCLOSED; keep it pending.",
+    "identityResolution": {
+      "status": "RESOLVED",
+      "canonical": "Terra-Gen Power Holdings II, LLC parent > Terra-Gen, LLC platform > project SPVs; SPVs are underlying assets.",
+      "chain": "GDIF > Golden NA Power Hold Co. LLC > Golden NA Power Holdings LLC > 50%; Masdar TG Holding LLC + Masdar TG Merger Corporation > aggregate 50%.",
+      "gdif": "Global Diversified Infrastructure Fund (North America) LP; GP First Sentier Investors (US) Infrastructure GP LLC."
+    },
+    "ownershipResolution": {
+      "status": "CURRENT_RESOLVED; PINT_PENDING",
+      "publicCapTable": "Igneo/GDIF 50%; Masdar 50%",
+      "owners": [
+        {
+          "manager": "ArcLight Capital Partners",
+          "stake": "Controlling; exact stake NOT_PUBLICLY_DISCLOSED",
+          "entryYear": 2007,
+          "exitYear": 2015,
+          "isActive": false,
+          "transactionState": "FORMER"
+        },
+        {
+          "manager": "Global Infrastructure Partners",
+          "stake": "Up to 40% convertible preferred",
+          "announcementDate": "2009-10-30",
+          "entryYear": 2009,
+          "exitYear": 2015,
+          "isActive": false,
+          "transactionState": "FORMER"
+        },
+        {
+          "manager": "Energy Capital Partners",
+          "fund": "ECP III; legal constituents NOT_PUBLICLY_DISCLOSED",
+          "stake": "100%; 60% after 2020-12-31",
+          "entryYear": 2015,
+          "exitDate": "2021-03-31",
+          "exitYear": 2021,
+          "isActive": false,
+          "transactionState": "CLOSED_EXIT"
+        },
+        {
+          "manager": "Energy Capital Partners",
+          "fund": "ECP Terra-Gen Growth Fund, LP / Fund B, LP",
+          "stake": "50%",
+          "entryDate": "2021-03-31",
+          "entryYear": 2021,
+          "exitDate": "2024-10-01",
+          "exitYear": 2024,
+          "isActive": false,
+          "transactionState": "CLOSED_EXIT_TO_MASDAR",
+          "vehicle": "ECP Terra-Gen Growth Fund GP, LP; direct TGPH II holder NOT_PUBLICLY_DISCLOSED"
+        },
+        {
+          "manager": "Igneo Infrastructure Partners",
+          "organization": "First Sentier Investors (US) LLC",
+          "fund": "Global Diversified Infrastructure Fund (North America) LP",
+          "vehicle": "Golden NA Power Hold Co. LLC > Golden NA Power Holdings LLC",
+          "stake": "50%",
+          "announcementDate": "2020-08-27",
+          "entryDate": "2020-12-31",
+          "entryYear": 2020,
+          "isActive": true,
+          "transactionState": "CLOSED; 50% FROM 2021-03-31"
+        },
+        {
+          "manager": "Masdar",
+          "organization": "Abu Dhabi Future Energy Company PJSC - Masdar",
+          "vehicle": "Masdar TG Holding LLC + Masdar TG Merger Corporation",
+          "stake": "50%",
+          "announcementDate": "2024-03-19",
+          "entryDate": "2024-10-01",
+          "entryYear": 2024,
+          "isActive": true,
+          "transactionState": "CLOSED"
+        },
+        {
+          "manager": "Pantheon Ventures (UK) LLP",
+          "organization": "Pantheon Infrastructure Plc",
+          "vehicle": "Igneo-managed Terra-Gen co-investment vehicle; name/chain NOT_PUBLICLY_DISCLOSED",
+          "stake": "NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2026-06-22",
+          "entryYear": 2026,
+          "isActive": false,
+          "transactionState": "COMMITTED; CLOSE/FUNDING NOT_PUBLICLY_CONFIRMED"
+        }
+      ],
+      "pantheon": "Asset-specific direct co-investment through an Igneo vehicle, not GDIF LP/fund-of-funds exposure; do not infer a stake or reduce Igneo's 50%."
+    },
+    "operatingResolution": {
+      "status": "ACTIVE",
+      "scale": "4.2GW gross operating; 5.6GWh storage; 34 U.S. sites at 2026-07-31",
+      "pipeline": "~16GW",
+      "website": "https://terra-gen.com/"
+    },
+    "acquisitionExitCheck": {
+      "through": "2026-08-19",
+      "result": "No later corporate owner change/exit found. The 2026-07-31 Cypress deal was project-level, not TGPH II equity.",
+      "pendingTransactions": [
+        {
+          "direction": "INBOUND",
+          "buyer": "Pantheon Infrastructure Plc via Igneo vehicle",
+          "seller": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2026-06-22",
+          "closingDate": null,
+          "state": "COMMITTED 2026-06-19; CLOSE/FUNDING NOT_PUBLICLY_CONFIRMED",
+          "evidenceUrls": [
+            "https://www.londonstockexchange.com/news-article/PINT/investment-in-us-renewable-energy-company/17649609",
+            "https://cdn1.pantheoninfrastructure.com/app/uploads/2026/08/PINT-Newsletter-August-2.pdf"
+          ]
+        }
+      ]
+    },
+    "milestones": [
+      "2007-2015: ArcLight formed Terra-Gen from Caithness assets; GIP took up to 40%; ECP III acquired it.",
+      "2020-12-31/2021-03-31: FSI closed 40%, rose to 50%; ECP continuation acquired 50%; ECP III exited.",
+      "2024-03-19/2024-10-01: Masdar announced then closed its 50% purchase; ECP exited.",
+      "2026-06-19/2026-06-22: PINT committed £41m/$55m via an Igneo vehicle; no close disclosed."
+    ],
+    "evidence": [
+      {
+        "label": "NYPSC",
+        "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B90212793-0000-CC39-A8FF-DBA29A84F19B%7D",
+        "purpose": "Chain/cap table/SPV boundary",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "Terra-Gen",
+        "url": "https://terra-gen.com/media-1/",
+        "purpose": "2020 40%; 2021 increase/continuation",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "ECP",
+        "url": "https://www.ecpgp.com/about/news-and-insights/press-releases/2021/ecp-announces-successful-closing-of-12-billion-continuation-fund-for-renewables-platform-terra-gen",
+        "purpose": "2021 close/ECP III exit/2015 entry",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Masdar",
+        "url": "https://terra-gen.com/masdar-accelerates-u-s-renewables-expansion-closes-acquisition-of-50-stake-in-terra-gen/",
+        "purpose": "2024 close/ECP exit/Igneo retention",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "PINT RNS",
+        "url": "https://www.londonstockexchange.com/news-article/PINT/investment-in-us-renewable-energy-company/17649609",
+        "purpose": "Commitment/Igneo vehicle",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "SEC Form D",
+        "url": "https://www.sec.gov/Archives/edgar/data/1852171/000156761921006744/xslFormDX01/primary_doc.xml",
+        "purpose": "Continuation fund/GP legal names",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "before": "Igneo only; PINT absent",
+      "after": "Igneo 50% + Masdar 50% active; ArcLight/GIP/ECP former; PINT pending"
+    },
+    "excludedOrDuplicateCandidates": [
+      "Caithness: predecessor asset seller.",
+      "Continuation LPs/Fund C feeder: upstream exposure.",
+      "MUFG/First Sentier parents and Masdar shareholders: upstream only.",
+      "Cypress/APG/Axium/project LLCs: asset/SPV exposure."
+    ],
+    "unresolvedQuestions": [
+      "PINT vehicle, instrument, seller, stake, chain position and close/funding date: NOT_PUBLICLY_DISCLOSED.",
+      "PINT reallocation within Igneo's 50%: NOT_PUBLICLY_DISCLOSED; cap table unchanged.",
+      "Final ArcLight/GIP stakes and 2015 close date: NOT_PUBLICLY_DISCLOSED; non-blocking."
+    ],
+    "recommendedListAction": {
+      "action": "PROPOSED_CORRECTION",
+      "applicationBlocked": false,
+      "instruction": "Keep one Terra-Gen; add Masdar active 50%, retain Igneo active 50%, add ArcLight/GIP/ECP former periods, and add PINT only as pending direct co-investment with no inferred stake."
+    }
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0311-terra-gen/attempt-1/research-decision.json",
+      "sha256": "337ea8906f37370d1d66e2c134988d02f2a9020bbb1e9d4d3f904d7a21bf0e0b"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0311-terra-gen/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "1bf60393ef2131a60cb70f1a7d5c5a60ba586faf24adeeaea7481d3fc932602a"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0311-terra-gen/attempt-1/source-verification.json",
+      "sha256": "211f28e2ab83f0fbf9cd9cd924835a17414af3b9bbec95ba2a31e23aff7dd925"
+    },
+    "acceptedResponseSha256": "3bffabfbff7fcb91d83ee507e955dfc6e5f842af778186c47893edb4e03a445a",
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION"
+  }
+}

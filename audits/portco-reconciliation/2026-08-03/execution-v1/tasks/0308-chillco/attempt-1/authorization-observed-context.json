@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0308:chillco:26fda8bd",
+  "taskIndex": 308,
+  "companyName": "ChillCo",
+  "generatedAt": "2026-09-01T08:22:58.530Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0308-chillco/attempt-1/authorization-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 308,
+    "taskId": "ledger:0308:chillco:26fda8bd",
+    "canonicalKey": "chillco|united-states",
+    "companyName": "ChillCo",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 56,
+    "managers": [
+      "Igneo Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [
+        "CREATE_COMPANY"
+      ],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "056-igneo-infrastructure-partners:holding:011:chillco"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://www.chillco-logistics.com/",
+      "https://www.igneoip.com/asia/en/institutional/our-offering/assets/chillco.html",
+      "https://www.igneoip.com/usa/en/institutional/news-and-insights/press/igneo-announces-establishment-of-cold-storage-platform-with-acquisition-of-mattingly.html"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "No exact normalized production or seed match exists. Census evidence supports a new canonical company with 1 manager holding record(s).",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "chillco|united-states",
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpiaa1002iivhepz4cndl9",
+        "name": "Igneo Infrastructure Partners",
+        "updatedAt": "2026-07-23T16:09:20.521Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0308:chillco:26fda8bd",
+    "taskIndex": 308,
+    "canonicalKey": "chillco|united-states",
+    "capturedAt": "2026-09-01T08:22:58.530Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "879afc5399f89cd61415b7751c9d888ef304f5774d43514390263b9eed684589",
+    "productionSnapshotSha256": "9b6f89176ce7ed2bb9fc03fe3ddcc6921ad29eee8971e485e9706b01f1e84bc9",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "689d7cdeb3630ad565e994a72fb6a3f56f9adf69f39bf3a2a10009ff8aa580a3",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "c978e580d34b5f9f1811c3ac1a61f48495d21ef912d9513c45d6a0b06f4be66c",
+    "stateSha256": "7c2d9a90589e120436e09b7a20c39729180f8c49ffd433beb273942b23133b2b",
+    "taskSnapshotSha256": "5904fa4d534df5364afadc924b0add202d9ddc1045063dda36b39ee023cf255a"
+  },
+  "contextSha256": "677711de55b23200c90dbb8b16bc56ea9907a6a094e07f3713f81cf84b5b71a9"
+}
