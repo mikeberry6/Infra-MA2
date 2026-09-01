@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_SEED_ATTRIBUTION_RECONCILIATION_SPEC",
+  "batchId": "batch-0389-0393-v1",
+  "batchSha256": "25596bfcdb64d165bc534849e9c48cd4af960fd4da25059de012c6c022c8883d",
+  "reconciledAt": "2026-09-01T22:25:52.000Z",
+  "sourceManifestSha256": "702ebb063a4ec950cdbebecde1a81b5399544dcc3127b54e23eb2d9264ec4d35",
+  "rationale": "Reconcile the batch's staged active-owner after-images exactly once. Add the two disclosed Network FiberCo ownership chains; replace CenTrio's generic owner metadata with the current 75% QIC-managed and 25% Ullico ownership structure; retain Primergy as a direct Quinbrook-managed platform without inferring an undisclosed fund; attribute GlidePath to its disclosed Quinbrook Low Carbon Power Fund vehicle; and remove the Ash Creek, Byrd Ranch, and Meyersdale project-level records after their canonical merges into Primergy and GlidePath.",
+  "removeRecordIds": [
+    "OFA-F85DED3F6CE5",
+    "OFA-FEC3E9703F91",
+    "OFA-1AAB660F1564"
+  ],
+  "upsertRecords": [
+    {
+      "recordId": "OFA-389000000001",
+      "companyName": "Network FiberCo, LLC",
+      "country": "United States",
+      "investmentFirm": "PSP Investments",
+      "currentVehicleName": "PSPIB Quadratic Blocker, LLC; High Inflation Correlated Infrastructure Portfolio",
+      "investmentYear": 2025,
+      "stake": "51%",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "PSPIB Quadratic Blocker, LLC; High Inflation Correlated Infrastructure Portfolio",
+      "attributionConfidence": null,
+      "attributionRationale": "PSP's announcement and the Idaho Public Utilities Commission filing disclose PSP's 51% interest, holding entity, and infrastructure-program attribution.",
+      "evidenceUrls": [
+        "https://www.investpsp.com/en/news/bce-and-psp-investments-announce-strategic-partnership-to-create-network-fiberco/",
+        "https://lf-puc.idaho.gov/WebLink/DocView.aspx?dbid=0&id=157861"
+      ]
+    },
+    {
+      "recordId": "OFA-389000000002",
+      "companyName": "Network FiberCo, LLC",
+      "country": "United States",
+      "investmentFirm": "BCE Inc.",
+      "currentVehicleName": "Northwest Fiber, LLC d/b/a Ziply Fiber",
+      "investmentYear": 2025,
+      "stake": "49%",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Northwest Fiber, LLC d/b/a Ziply Fiber",
+      "attributionConfidence": null,
+      "attributionRationale": "The Idaho Public Utilities Commission filing discloses BCE's 49% Network FiberCo interest through Northwest Fiber/Ziply, and Ziply's closing release confirms the relevant operating-company chain.",
+      "evidenceUrls": [
+        "https://lf-puc.idaho.gov/WebLink/DocView.aspx?dbid=0&id=157861",
+        "https://ziplyfiber.com/news/press-release/ziply-bce"
+      ]
+    },
+    {
+      "recordId": "OFA-EEA729FDE6E8",
+      "companyName": "CenTrio",
+      "country": "United States",
+      "investmentFirm": "Ullico",
+      "currentVehicleName": "Ullico Infrastructure Fund; Ullico District Energy Blocked Holdco through Lowry Holdings",
+      "investmentYear": 2021,
+      "stake": "25%",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Ullico Infrastructure Fund; Ullico District Energy Blocked Holdco through Lowry Holdings",
+      "attributionConfidence": null,
+      "attributionRationale": "The New York Public Service Commission ownership diagram discloses Ullico's 25% interest and holding chain; CenTrio's July 2026 refinancing reconfirms Ullico as a current sponsor.",
+      "evidenceUrls": [
+        "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B8B6B5CAD-61FA-4314-9A9B-D126D98D1BE1%7D",
+        "https://www.centrioenergy.com/news/centrio-successfully-completes-485-million-comprehensive-refinancing-to-support-long-term-growth/"
+      ]
+    },
+    {
+      "recordId": "OFA-B47D677A6B9F",
+      "companyName": "CenTrio",
+      "country": "United States",
+      "investmentFirm": "QIC",
+      "currentVehicleName": "Golden Reef Trust and QGIF Raptor Aggregator 1 LP through Lowry Holdings",
+      "investmentYear": 2021,
+      "stake": "75% managed interest (60% CalPERS/Golden Reef Trust; 15% QGIF)",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Golden Reef Trust and QGIF Raptor Aggregator 1 LP through Lowry Holdings",
+      "attributionConfidence": null,
+      "attributionRationale": "The New York Public Service Commission ownership diagram discloses the 60% Golden Reef Trust and 15% QGIF components of QIC's managed 75% interest, while QIC continues to list CenTrio in its infrastructure portfolio.",
+      "evidenceUrls": [
+        "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B8B6B5CAD-61FA-4314-9A9B-D126D98D1BE1%7D",
+        "https://www.qic.com/Investment-Capabilities/Infrastructure/Global-Portfolio/CenTrio"
+      ]
+    },
+    {
+      "recordId": "OFA-CF205BB60723",
+      "companyName": "Primergy",
+      "country": "United States",
+      "investmentFirm": "Quinbrook",
+      "currentVehicleName": "Quinbrook-managed Primergy platform",
+      "investmentYear": 2020,
+      "stake": "100%",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "Quinbrook identifies Primergy as its 100%-owned platform, but the approved evidence does not support assigning the platform to a specific fund; the record therefore preserves direct manager-program attribution without inference.",
+      "evidenceUrls": [
+        "https://www.quinbrook.com/portfolio/primergy/",
+        "https://www.primergypower.com/news/quinbrook-launches-primergy-solar-to-develop-solar-and-battery-storage-across-north-america"
+      ]
+    },
+    {
+      "recordId": "OFA-A47D16BE9020",
+      "companyName": "GlidePath Power Solutions",
+      "country": "United States",
+      "investmentFirm": "Quinbrook",
+      "currentVehicleName": "Quinbrook Low Carbon Power Fund",
+      "investmentYear": 2017,
+      "stake": "100%",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Quinbrook Low Carbon Power Fund",
+      "attributionConfidence": null,
+      "attributionRationale": "Quinbrook's portfolio materials and acquisition disclosure identify GlidePath as the manager-level platform acquired through Quinbrook's low-carbon power strategy; the approved ownership after-image records the disclosed Low Carbon Power Fund vehicle and 100% stake.",
+      "evidenceUrls": [
+        "https://www.quinbrook.com/portfolio/glidepath/",
+        "https://www.prnewswire.com/news-releases/quinbrook-acquires-223-mw-wind-power-portfolio-300584615.html"
+      ]
+    }
+  ],
+  "specSha256": "4641fbde71c77861dee3408ddb88f15ba02ed9bfd8d9ba1e3b1efc4fecc96b0c"
+}

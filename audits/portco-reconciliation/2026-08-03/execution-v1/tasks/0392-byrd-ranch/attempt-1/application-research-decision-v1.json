@@ -1,0 +1,184 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0392:byrd-ranch:e6076e80",
+  "taskIndex": 392,
+  "companyName": "Byrd Ranch",
+  "asOfDate": "2026-08-19",
+  "decision": "PROPOSED_MERGE",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-01T22:05:00.000Z",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "Byrd Ranch",
+    "requestedManagers": [
+      "Quinbrook Infrastructure Partners"
+    ],
+    "decision": "PROPOSED_MERGE",
+    "confidence": "HIGH",
+    "rationale": "Byrd Ranch is an operating project/SPV, but Quinbrook identifies GlidePath as the portfolio company and Byrd Ranch as its project. GlidePath said it would own/manage the facility; no separate Quinbrook co-investment, equity partner or later sponsor transfer was found. The standalone record crosses the platform boundary. Quinbrook+1",
+    "identityResolution": {
+      "canonicalName": "Byrd Ranch",
+      "aliases": [
+        "Byrd Ranch Storage",
+        "Byrd Ranch Storage Project"
+      ],
+      "legalEntity": "Byrd Ranch Storage LLC",
+      "type": "PROJECT_ASSET_AND_SPV",
+      "platform": "GlidePath Power Solutions LLC",
+      "boundary": "Subordinate GlidePath project, not a manager-level PortCo. Quinbrook"
+    },
+    "ownershipResolution": {
+      "currentChain": "Byrd Ranch asset -> Byrd Ranch Storage LLC -> GlidePath Power Solutions LLC -> Quinbrook Low Carbon Power Fund/Quinbrook. Quinbrook+1",
+      "owners": [
+        {
+          "manager": "Quinbrook Infrastructure Partners",
+          "organization": "GlidePath Power Solutions LLC",
+          "fund": "Quinbrook Low Carbon Power Fund",
+          "vehicle": "Byrd Ranch Storage LLC",
+          "stake": "NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "NOT_PUBLICLY_DISCLOSED",
+          "entryDate": "NOT_PUBLICLY_DISCLOSED",
+          "entryYear": 2019,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CURRENT_NO_PUBLIC_TRANSFER_FOUND"
+        }
+      ],
+      "formerDirectOwners": [],
+      "platformEntry": "Quinbrook Low Carbon Power Fund acquired GlidePath in 2017; no later public vehicle change was found. PR Newswire+1",
+      "nonEquityParties": [
+        "Habitat Energy—optimizer/market agent; IHI Terrasun—integrator/servicer; Texas-New Mexico Power—interconnection utility; ERCOT—market. None is shown as an owner. Business Wire+1",
+        "Lender and any tax investor: NOT_PUBLICLY_DISCLOSED; no equity evidence. Quinbrook"
+      ]
+    },
+    "operatingResolution": {
+      "status": "OPERATIONAL",
+      "profile": "50 MW/50 MWh one-hour lithium-ion BESS near Sweeny Substation in Sweeny, Brazoria County, Texas; COD November 2022; ERCOT frequency regulation, responsive reserve and energy arbitrage. Quinbrook",
+      "ownerOperator": "Byrd Ranch Storage LLC is the legal project operator; GlidePath owns/manages it commercially. Quinbrook+1",
+      "currentCheck": "Quinbrook still lists Byrd Ranch under GlidePath; a February 26, 2026 Texas filing remained in Byrd Ranch Storage LLC's name. Quinbrook+1"
+    },
+    "acquisitionExitCheck": {
+      "projectEntry": {
+        "year": 2019,
+        "exactDate": "NOT_PUBLICLY_DISCLOSED",
+        "seller": "NOT_PUBLICLY_DISCLOSED",
+        "state": "PROJECT_LEVEL_ENTRY_WITHIN_GLIDEPATH"
+      },
+      "platformEntry": {
+        "year": 2017,
+        "fund": "Quinbrook Low Carbon Power Fund"
+      },
+      "searchThrough": "2026-08-19",
+      "result": "No public Byrd Ranch equity sale, sponsor change, recapitalization or signed pending transaction was found; current manager and 2026 regulatory records remain consistent with GlidePath control. Quinbrook+1",
+      "pendingTransactions": []
+    },
+    "milestones": [
+      {
+        "date": "2017",
+        "event": "Quinbrook Low Carbon Power Fund acquired GlidePath. PR Newswire"
+      },
+      {
+        "date": "2019",
+        "event": "Quinbrook records Byrd Ranch's project acquisition year; exact date/seller are undisclosed. Quinbrook"
+      },
+      {
+        "date": "2022-01-25",
+        "event": "GlidePath announced financing complete and construction started, stating it would own/manage the completed project. Quinbrook"
+      },
+      {
+        "date": "2022-11-07",
+        "event": "GlidePath announced construction/commissioning complete and operations begun; COD was November 2022. Business Wire+1"
+      }
+    ],
+    "evidence": [
+      {
+        "label": "QIP—GlidePath",
+        "url": "https://www.quinbrook.com/portfolio/glidepath/",
+        "purpose": "Defines GlidePath as the PortCo and Byrd Ranch as its project Quinbrook",
+        "sourceTier": "MANAGER_PRIMARY",
+        "workingStatus": "LIVE",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "QIP—Byrd Ranch",
+        "url": "https://www.quinbrook.com/projects/byrd-ranch/",
+        "purpose": "Current status, 2019 entry, capacity, market role and COD Quinbrook",
+        "sourceTier": "MANAGER_PRIMARY",
+        "workingStatus": "LIVE",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "QIP—construction release",
+        "url": "https://www.quinbrook.com/news-insights/glidepath-adds-50mw-to-texas-battery-storage-portfolio/",
+        "purpose": "Construction, financing and GlidePath ownership/management statement Quinbrook",
+        "sourceTier": "COMPANY_PRIMARY",
+        "workingStatus": "LIVE",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "GlidePath—operations release",
+        "url": "https://www.businesswire.com/news/home/20221107005085/en/GlidePath-Begins-Operations-at-New-50MW-Battery-Storage-Facility-Near-Houston-TX",
+        "purpose": "COD and Habitat/IHI non-equity roles Business Wire",
+        "sourceTier": "ISSUER_PRIMARY",
+        "workingStatus": "LIVE",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "QIP—fund attribution",
+        "url": "https://www.prnewswire.com/news-releases/quinbrook-acquires-223-mw-wind-power-portfolio-300584615.html",
+        "purpose": "Attributes GlidePath's 2017 acquisition to Quinbrook Low Carbon Power Fund PR Newswire",
+        "sourceTier": "MANAGER_ISSUER",
+        "workingStatus": "LIVE",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "PUCT—2026 capacity filing",
+        "url": "https://interchange.puc.texas.gov/search/filings/?ControlNumber=59141&DocumentType=ALL&SortBy=ItemNumber&SortOrder=Descending&UtilityType=E",
+        "purpose": "Current 2026 filing under Byrd Ranch Storage LLC Interchange",
+        "sourceTier": "STATE_REGULATORY",
+        "workingStatus": "SEARCH_INDEXED; DIRECT_PAGE_INTERMITTENT",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "before": "Standalone Byrd Ranch Quinbrook PortCo (cmrxpjmjy0187ivhehg62f3yx).",
+      "after": "Merge into GlidePath; retain Byrd Ranch/Byrd Ranch Storage LLC as project/SPV and milestone."
+    },
+    "excludedOrDuplicateCandidates": [
+      {
+        "name": "GlidePath Power Solutions LLC",
+        "disposition": "MERGE_TARGET",
+        "reason": "Manager-level Quinbrook PortCo."
+      },
+      {
+        "name": "Prospect Storage / West Columbia Storage LLC",
+        "disposition": "NOT_DUPLICATE",
+        "reason": "Separate 10 MW/10 MWh GlidePath project in West Columbia. Quinbrook"
+      }
+    ],
+    "unresolvedQuestions": [
+      "Exact 2019 entry date, seller and acquisition-versus-origination path.",
+      "Exact upstream stakes and any non-public lender/tax-investor arrangements; not boundary-changing absent equity evidence."
+    ],
+    "recommendedListAction": "Merge the standalone Byrd Ranch record into GlidePath Power Solutions LLC. Preserve Byrd Ranch/Byrd Ranch Storage LLC as GlidePath's 50 MW/50 MWh operating ERCOT project and legal SPV. Do not record lenders, tax investors, Habitat, IHI Terrasun, Texas-New Mexico Power or market counterparties as owners absent equity evidence."
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0392-byrd-ranch/attempt-1/research-decision.json",
+      "sha256": "7d1c257f7958e400616a7b5e95ff1f9625a9c79f33f77d5215a38a9372d5c1a9"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0392-byrd-ranch/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "4dca81ea3e54cd9e4664455cfe1ddb4bba7c348e6a9acc5014200aba862f21b4"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0392-byrd-ranch/attempt-1/source-verification.json",
+      "sha256": "a0e980f3fe2601583074565e59843f323da6a5ab61ed08f84ec7bb7e813e4fa9"
+    },
+    "acceptedResponseSha256": "534e1a71f62b4ec86c858b1fa09fde6c0050bedaaaf59f6ba329e5d7522b874d",
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION"
+  }
+}

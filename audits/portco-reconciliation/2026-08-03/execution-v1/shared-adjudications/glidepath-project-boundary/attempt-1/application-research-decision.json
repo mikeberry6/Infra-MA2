@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0392:byrd-ranch:e6076e80",
+  "taskIndex": 392,
+  "companyName": "Byrd Ranch",
+  "asOfDate": "2026-09-01",
+  "decision": "PROPOSED_MERGE",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-01T22:18:00.000Z",
+  "result": {
+    "decision": "PROPOSED_MERGE",
+    "confidence": "HIGH",
+    "rationale": "Consolidate the reciprocal Byrd Ranch and Meyersdale Energy Storage project tasks into one GlidePath mutation. Quinbrook identifies GlidePath as the manager-level portfolio company and both facilities as operating projects beneath it. No separate project-level sponsor mandate, co-owner, later equity transfer or signed pending transaction was identified. Task 392 preserves both project/SPV identities and histories in one hash-bound GlidePath after-image; task 393 is superseded by that consolidated mutation.",
+    "evidence": [
+      {
+        "url": "https://www.quinbrook.com/portfolio/glidepath/",
+        "purpose": "Canonical GlidePath portfolio-company boundary and current project roster"
+      },
+      {
+        "url": "https://www.quinbrook.com/projects/byrd-ranch/",
+        "purpose": "Byrd Ranch operating-project status, scale and 2019 entry"
+      },
+      {
+        "url": "https://www.quinbrook.com/projects/meyersdale-battery/",
+        "purpose": "Meyersdale operating-project status, 2019 acquisition and 2024 repowering"
+      },
+      {
+        "url": "https://mbrweb.ferc.gov/SearchMBRAssetAppendix/AssetAppendixDetails?AssetAppendixId=7715",
+        "purpose": "Meyersdale legal SPV, capacity and upstream GlidePath/Quinbrook ownership chain"
+      }
+    ]
+  },
+  "lineage": {
+    "byrdRanchResearchDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0392-byrd-ranch/attempt-1/application-research-decision-v1.json",
+      "sha256": "b0cc76b7b60b75a619e62c47379fca1462ecce01d554aa88bd50d0c7474b6a69"
+    },
+    "meyersdaleResearchDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0393-meyersdale-energy-storage/attempt-1/application-research-decision-v1.json",
+      "sha256": "149658a407edb79b0bfb780b6bfe0cdbd7bc36104b66adfc14cf172dcc5ad927"
+    },
+    "byrdRanchSourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0392-byrd-ranch/attempt-1/source-verification.json",
+      "sha256": "a0e980f3fe2601583074565e59843f323da6a5ab61ed08f84ec7bb7e813e4fa9"
+    },
+    "meyersdaleSourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0393-meyersdale-energy-storage/attempt-1/source-verification.json",
+      "sha256": "450abdadd105d1d1f6eae47bca282ddaa547c141569fc879a3174295f756a7ad"
+    }
+  }
+}

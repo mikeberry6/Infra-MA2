@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-01T21:45:04.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-09-01T22:29:00.000Z",
+  "activeBatchId": "batch-0389-0393-v1",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -6707,7 +6707,55 @@
           "reason": "Exact release SHA, atomic database after-images, seed parity, detail APIs, ownership history, and all five rendered production drawers verified; no partial application."
         }
       ]
+    },
+    {
+      "batchId": "batch-0389-0393-v1",
+      "state": "READY",
+      "taskIds": [
+        "ledger:0389:network-fiberco:3f7436bc",
+        "ledger:0390:centrio:1635b638",
+        "ledger:0391:ash-creek-solar:5c31cc8f",
+        "ledger:0392:byrd-ranch:e6076e80",
+        "ledger:0393:meyersdale-energy-storage:efa8f53e"
+      ],
+      "taskIndexes": [
+        389,
+        390,
+        391,
+        392,
+        393
+      ],
+      "createdAt": "2026-09-01T21:50:50.000Z",
+      "updatedAt": "2026-09-01T22:29:00.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0389-0393-v1/batch-manifest-v8.json",
+        "sha256": "25596bfcdb64d165bc534849e9c48cd4af960fd4da25059de012c6c022c8883d"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-09-01T21:50:50.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-09-01T22:29:00.000Z",
+          "evidenceSha256": [
+            "25596bfcdb64d165bc534849e9c48cd4af960fd4da25059de012c6c022c8883d"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "5eb132018c4d78f43197f28ca6bcb26872231bb7086929c164ae9309c5d91ccc"
+  "ledgerSha256": "258dffb214b874df8291030b86c2024e4ad0674dc05cfb0bf1571951608ae50e"
 }

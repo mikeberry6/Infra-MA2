@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0393:meyersdale-energy-storage:efa8f53e",
+  "taskIndex": 393,
+  "companyName": "Meyersdale Energy Storage",
+  "outcome": "SUPERSEDED",
+  "decidedAt": "2026-09-01T22:32:02.000Z",
+  "rationale": "Meyersdale Energy Storage is a project/SPV beneath GlidePath, not a separate manager-level portfolio company. Task 392's consolidated GlidePath proposal c2cb2836e291745d079e49166cd1c9a1653f704f9abe1b44ec7f3e48a2e9542d retires the Meyersdale standalone record and preserves Meyersdale Storage, LLC, its 18 MW/12 MWh scale, 2015 service, March 19, 2019 acquisition and 2024 repowering in the same after-image. A second mutation would collide with and duplicate that canonical GlidePath update.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0393-meyersdale-energy-storage/attempt-1/locked-batch-v1-task-snapshot.json",
+    "sha256": "21bedb36bf9b5884ea78aed71a23b41f6be5771da60b5acb0ae650fc44ab19eb"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0393-meyersdale-energy-storage/attempt-1/application-terminal-research-decision-v1.json",
+    "sha256": "901e8ec78e828d5e066ab56a822be2972fb57e00fe77e52d7d738ed60cbdfed5"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0393-meyersdale-energy-storage/attempt-1/source-verification.json",
+    "sha256": "450abdadd105d1d1f6eae47bca282ddaa547c141569fc879a3174295f756a7ad"
+  },
+  "evidence": [
+    {
+      "url": "https://www.quinbrook.com/portfolio/glidepath/",
+      "purpose": "Official evidence that GlidePath is the portfolio company and Meyersdale is one of its operating projects"
+    },
+    {
+      "url": "https://www.quinbrook.com/projects/meyersdale-battery/",
+      "purpose": "Official Meyersdale project history and current operating status beneath GlidePath"
+    },
+    {
+      "url": "https://mbrweb.ferc.gov/SearchMBRAssetAppendix/AssetAppendixDetails?AssetAppendixId=7715",
+      "purpose": "Regulatory evidence for the Meyersdale SPV, capacity and GlidePath/Quinbrook ownership chain"
+    }
+  ],
+  "supersededByTaskId": "ledger:0392:byrd-ranch:e6076e80",
+  "decisionSha256": "4bd8a49e745974fda978efb31a39eac4b33b253e6e83b91e8ae590b8978c02ab"
+}

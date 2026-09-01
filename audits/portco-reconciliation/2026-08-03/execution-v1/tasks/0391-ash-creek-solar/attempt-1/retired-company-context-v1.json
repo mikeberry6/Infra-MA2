@@ -1,0 +1,317 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0391:ash-creek-solar:5c31cc8f",
+  "taskIndex": 391,
+  "companyName": "Ash Creek Solar",
+  "generatedAt": "2026-09-01T21:55:22.465Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0391-ash-creek-solar/attempt-1/retired-company-production-snapshot-v1.json",
+  "sourceQueueEntry": {
+    "taskIndex": 391,
+    "taskId": "ledger:0391:ash-creek-solar:5c31cc8f",
+    "canonicalKey": "ash-creek-solar|united-states",
+    "companyName": "Ash Creek Solar",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 83,
+    "managers": [
+      "Quinbrook Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "083-quinbrook-infrastructure-partners:repo-only:001:ash-creek-solar"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjmjj0186ivhewu4o37et"
+    ],
+    "seedKeys": [
+      "ash creek solar|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.primergypower.com/projects/ash-creek-solar-project",
+      "https://www.quinbrook.com/portfolio/primergy-solar/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Quinbrook Infrastructure Partners MATCHED_ELSEWHERE: Utility-scale solar project developed and operated under the Primergy Solar platform, which is already counted as the manager-level holding.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjmjj0186ivhewu4o37et",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "ash-creek-solar|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjmjj0186ivhewu4o37et",
+    "name": "Ash Creek Solar",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Utility-scale solar generation",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Ash Creek Solar is a utility-scale photovoltaic project in Hill County, Texas. The facility serves the Texas power market under a long-term power purchase agreement with Microsoft and operates under an asset-heavy contracted generation model. Primergy describes Ash Creek as a 408 MWac project, placing it among the larger single-site solar assets now entering service in Texas. The asset is concentrated in Texas and forms part of Quinbrook's U.S. power portfolio through Primergy. Primergy acquired the project from Orion Renewable Energy Group in 2021, closed $588 million of project financing and a Microsoft PPA in 2024, secured additional tax equity in 2024, and reached commercial operation in 2025.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Texas",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk903027rivhelk2v5qhb",
+        "managerName": "Quinbrook",
+        "organizationName": "Quinbrook",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmko5051bivhefvfcltsl",
+        "date": "2021",
+        "event": "Quinbrook's Primergy acquired the Ash Creek project from Orion Renewable Energy Group.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmkoq051civhe7dr0vaw6",
+        "date": "Mar 2024",
+        "event": "Primergy signed a long-term power purchase agreement with Microsoft for the project.",
+        "category": "FINANCING",
+        "sortDate": "2024-03-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmkpa051divhe9fdg7hxz",
+        "date": "Mar 12, 2024",
+        "event": "Primergy closed $588 million of project financing and a long-term PPA with Microsoft.",
+        "category": "FINANCING",
+        "sortDate": "2024-03-12T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmkpv051eivhe3cg3i2yp",
+        "date": "Oct 18, 2024",
+        "event": "Primergy secured an additional $350 million of tax equity financing for Ash Creek.",
+        "category": "FINANCING",
+        "sortDate": "2024-10-18T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmkqe051fivhesudvv221",
+        "date": "Jul 17, 2025",
+        "event": "Ash Creek reached commercial operation.",
+        "category": "EXPANSION",
+        "sortDate": "2025-07-17T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsk490crkivhe6clniwu2",
+        "label": "Primergypower — Ash Creek Solar",
+        "url": "https://www.primergypower.com/projects/ash-creek-solar-project",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Primergypower operations / asset details",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpsk5w0crmivhepffzhzse",
+        "label": "Primergypower — Ash Creek Solar",
+        "url": "https://www.primergypower.com/news/primergy-announces-the-commissioning-of-ash-creek-solar-in-texas-302507405.html",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Primergypower — Ash Creek Solar",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsk6v0croivhel0t9trcb",
+        "label": "Pv Tech — Ash Creek Solar",
+        "url": "https://www.pv-tech.org/primergy-starts-commercial-operations-408mwac-ash-creek-solar-in-texas/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Pv Tech operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsk810crqivheh17ewnk6",
+        "label": "Investment date source — Quinbrook — Ash Creek Solar",
+        "url": "https://www.primergypower.com/news/primergy-secures-588m-in-project-financing-and-power-purchase-agreement-with-microsoft-for-408-mw-solar-project-in-texas",
+        "sourceType": "ARTICLE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Quinbrook initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsk910crsivheoxjywzxi",
+        "label": "Primergypower — Ash Creek Solar",
+        "url": "https://www.primergypower.com/news/primergy-announces-the-commissioning-of-ash-creek-solar-in-texas",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Primergypower — Ash Creek Solar",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpska00cruivhe1xwx7s7j",
+        "label": "Primergypower — Ash Creek Solar",
+        "url": "https://www.primergypower.com/news",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Primergypower — Ash Creek Solar",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Ash Creek Solar",
+    "investmentFirm": "Quinbrook",
+    "sector": "Power & ET",
+    "subsector": "Utility-scale solar generation",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "Ash Creek Solar is a utility-scale photovoltaic project in Hill County, Texas. The facility serves the Texas power market under a long-term power purchase agreement with Microsoft and operates under an asset-heavy contracted generation model. Primergy describes Ash Creek as a 408 MWac project, placing it among the larger single-site solar assets now entering service in Texas. The asset is concentrated in Texas and forms part of Quinbrook's U.S. power portfolio through Primergy. Primergy acquired the project from Orion Renewable Energy Group in 2021, closed $588 million of project financing and a Microsoft PPA in 2024, secured additional tax equity in 2024, and reached commercial operation in 2025.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2021,
+    "headquarters": "Texas",
+    "milestones": [
+      {
+        "date": "2021",
+        "event": "Quinbrook's Primergy acquired the Ash Creek project from Orion Renewable Energy Group.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Mar 2024",
+        "event": "Primergy signed a long-term power purchase agreement with Microsoft for the project.",
+        "category": "Financing"
+      },
+      {
+        "date": "Mar 12, 2024",
+        "event": "Primergy closed $588 million of project financing and a long-term PPA with Microsoft.",
+        "category": "Financing"
+      },
+      {
+        "date": "Oct 18, 2024",
+        "event": "Primergy secured an additional $350 million of tax equity financing for Ash Creek.",
+        "category": "Financing"
+      },
+      {
+        "date": "Jul 17, 2025",
+        "event": "Ash Creek reached commercial operation.",
+        "category": "Expansion"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Primergypower — Ash Creek Solar",
+        "url": "https://www.primergypower.com/projects/ash-creek-solar-project",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Primergypower — Ash Creek Solar",
+        "url": "https://www.primergypower.com/news/primergy-announces-the-commissioning-of-ash-creek-solar-in-texas-302507405.html",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Pv Tech — Ash Creek Solar",
+        "url": "https://www.pv-tech.org/primergy-starts-commercial-operations-408mwac-ash-creek-solar-in-texas/",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Investment date source — Quinbrook — Ash Creek Solar",
+        "url": "https://www.primergypower.com/news/primergy-secures-588m-in-project-financing-and-power-purchase-agreement-with-microsoft-for-408-mw-solar-project-in-texas",
+        "type": "ARTICLE",
+        "purpose": "FINANCING_FILINGS"
+      },
+      {
+        "label": "Primergypower — Ash Creek Solar",
+        "url": "https://www.primergypower.com/news/primergy-announces-the-commissioning-of-ash-creek-solar-in-texas",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Primergypower — Ash Creek Solar",
+        "url": "https://www.primergypower.com/news",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Quinbrook",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2021,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpigao004eivhedx8km4yh",
+        "name": "Quinbrook",
+        "updatedAt": "2026-07-23T16:09:28.320Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0391:ash-creek-solar:5c31cc8f",
+    "taskIndex": 391,
+    "canonicalKey": "ash-creek-solar|united-states",
+    "capturedAt": "2026-09-01T21:55:22.465Z",
+    "databaseRevision": "revision:a1a83279be67308b4cd1ab3c556b958d09e7721fde740fc0b6e604dbe3ab732f",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "2972c262d0367932ba055432118b7a36d4343c52fc0ef08ffb7701348afbab82",
+    "productionSnapshotSha256": "bb8e71a94f3eea1c2bce8685e56e138b958e0a3a42d463a59460cf603191dbb2",
+    "targetCompanySnapshotSha256": "7990a389173a10022d00f2441afcda6762b9a6fd9a04057eed9bff0ffa3bdf2e",
+    "seedEntrySha256": "096c47c03ae4dbdf951f3455a9fe743c602164e1dd3c3298966f2e4ac4104129",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "2aa62f3e8403218ddfbbe8c33e8aa46eb30218329281d129d158ddee0609d581",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "52c944c13a5e74630cefca11499339fafbdd9f1705bdf046c1d4d1c3542bd283",
+      "citationsSha256": "c0b80c1b627201ae6b905c2fe59b9b83539df31b4ec0ac24fd4a2006ca429a3d",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "406f589c3dabc7e44add2778d73329195296cb10c989128b3fc87abb60fc9c3e",
+    "stateSha256": "51a84bbdddf64d9231650fc28e10326c0787b68059fa7024e54f60e414a850f6",
+    "taskSnapshotSha256": "3eb7b57df3a31fd335066ec519b8661321d80acd523d538d9a7a26bf0912fc3e"
+  },
+  "contextSha256": "2d6ce6a72b68e4b28080079c507d260c8a53b5daf0ef45e672754232f26f99ac"
+}

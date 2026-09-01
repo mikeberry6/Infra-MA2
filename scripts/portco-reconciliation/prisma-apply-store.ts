@@ -239,6 +239,7 @@ const approvedOwnershipOrganizationProvisioning = {
   "AgeCare": "CORPORATE",
   "BC Partners": "FUND_MANAGER",
   "BBGI": "FUND_MANAGER",
+  "BCE Inc.": "CORPORATE",
   "Canadian Business Growth Fund": "FUND_MANAGER",
   "Capital Power Corporation": "CORPORATE",
   "China-Mexico Fund II": "OTHER",

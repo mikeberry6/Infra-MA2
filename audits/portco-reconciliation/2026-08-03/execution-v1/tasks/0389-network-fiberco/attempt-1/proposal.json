@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0389:network-fiberco:3f7436bc",
+  "taskIndex": 389,
+  "asOfDate": "2026-09-01",
+  "generatedAt": "2026-09-01T22:10:00.000Z",
+  "canonicalKey": "network-fiberco|united-states",
+  "companyName": "Network FiberCo",
+  "actions": [
+    "CREATE_COMPANY"
+  ],
+  "sourceHoldingIds": [
+    "081-psp-investments:holding:005:network-fiberco"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Create one canonical Network FiberCo, LLC parent platform. The joint venture closed on August 1, 2025 with PSP Investments holding 51% through PSPIB Quadratic Blocker, LLC and BCE/Ziply holding 49% through Northwest Fiber, LLC. Network FiberCo's subsidiaries own and build wholesale fiber while Ziply is the exclusive operator and retail ISP; Ziply remains a separate company and NFC Management and NFC Northwest remain rolled into this parent boundary. No later equity transfer or signed pending ownership transaction was identified through September 1, 2026.",
+  "evidence": [
+    {
+      "url": "https://lf-puc.idaho.gov/WebLink/DocView.aspx?dbid=0&id=157861",
+      "purpose": "Current legal ownership chain and operating boundary",
+      "supports": [
+        "PSP holds 51% through PSPIB Quadratic Blocker, LLC",
+        "BCE/Ziply holds 49% through Northwest Fiber, LLC",
+        "NFC Management and NFC Northwest are subsidiaries of Network FiberCo"
+      ]
+    },
+    {
+      "url": "https://www.investpsp.com/en/news/bce-and-psp-investments-announce-strategic-partnership-to-create-network-fiberco/",
+      "purpose": "Joint-venture announcement, stakes and infrastructure-strategy basis",
+      "supports": [
+        "PSP and BCE announced a 51%/49% wholesale-fiber platform",
+        "PSP attributed the investment to its high-inflation-correlated infrastructure portfolio"
+      ]
+    },
+    {
+      "url": "https://www.goodmans.ca/expertise/case/psp-investments-and-bce-inc.-announce-strategic-partnership-to-create-network-fiberco",
+      "purpose": "Transaction closing",
+      "supports": [
+        "The Network FiberCo joint venture completed on August 1, 2025"
+      ]
+    },
+    {
+      "url": "https://ziplyfiber.com/news/press-release/ziply-bce",
+      "purpose": "Ziply acquisition and company-boundary evidence",
+      "supports": [
+        "BCE's acquisition of Ziply was a separate transaction",
+        "Ziply is Network FiberCo's operating and retail partner"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "81d834c20cccfaea84978ab255dec9b45613bc7cd982b7cb8290a76ea8dc81ea",
+  "currentCompanySnapshotSha256": null,
+  "executionLock": {
+    "taskSnapshotSha256": "954e70c2339ccf972ecf9702bffea59db1cabbdf89d624217b4234da1634d2eb",
+    "taskStateSha256": "62559a17cc68cb6d4d016f72778c6361fcc009cec8e8f6011d02b6b6c671fe19",
+    "taskDependencySha256": "6a49bb17c530562210168e8b42e4597bd40390adc2bbe6a3675d1cbd04658a7b",
+    "seedEntrySha256": null,
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "b7732b05258a9659155996231e0f8ae9c312aff79a8c281d0798cf9dcd606aa1",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpih6o004oivhejmzw2gfv",
+        "name": "PSP Investments",
+        "updatedAt": "2026-07-23T16:09:29.472Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": null,
+  "beforeImageSha256": null,
+  "afterImage": {
+    "id": null,
+    "name": "Network FiberCo, LLC",
+    "aliases": [
+      "Network FiberCo"
+    ],
+    "sector": "DIGITAL",
+    "subsector": "Wholesale fiber network development and ownership",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Network FiberCo, LLC is a U.S. wholesale-fiber joint venture formed by PSP Investments and BCE in August 2025. Through NFC Management and NFC Northwest, the platform owns and develops fiber infrastructure initially focused on Washington, Oregon, Idaho and Montana and intended to expand into additional underserved U.S. markets. Ziply Fiber is the exclusive network operator and retail internet service provider. PSP Investments holds 51% through PSPIB Quadratic Blocker, LLC and BCE/Ziply holds 49% through Northwest Fiber, LLC. Network FiberCo is counted separately from BCE-owned Ziply because it has a distinct cap table and wholesale asset base; its wholly owned subsidiaries are not counted separately. No later equity transfer or signed pending ownership transaction was identified through September 1, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2025,
+    "headquarters": "Kirkland, Washington",
+    "lastVerifiedAt": "2026-09-01T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": null,
+        "managerName": "PSP Investments",
+        "organizationName": "PSP Investments",
+        "fundName": null,
+        "vehicleName": "PSPIB Quadratic Blocker, LLC; High Inflation Correlated Infrastructure Portfolio",
+        "stake": "51%",
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "BCE Inc.",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Northwest Fiber, LLC d/b/a Ziply Fiber",
+        "stake": "49%",
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": null,
+        "date": "May 8, 2025",
+        "event": "PSP Investments and BCE announced Network FiberCo as a 51%/49% wholesale-fiber joint venture.",
+        "category": "FINANCING",
+        "sortDate": "2025-05-08T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.investpsp.com/en/news/bce-and-psp-investments-announce-strategic-partnership-to-create-network-fiberco/"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Aug 1, 2025",
+        "event": "PSP Investments and BCE completed the formation of Network FiberCo, LLC.",
+        "category": "FOUNDING",
+        "sortDate": "2025-08-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.goodmans.ca/expertise/case/psp-investments-and-bce-inc.-announce-strategic-partnership-to-create-network-fiberco"
+        ]
+      },
+      {
+        "id": null,
+        "date": "May 1, 2026",
+        "event": "An Idaho regulatory filing documented Network FiberCo's current ownership chain, subsidiaries and wholesale operating model.",
+        "category": "EXPANSION",
+        "sortDate": "2026-05-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://lf-puc.idaho.gov/WebLink/DocView.aspx?dbid=0&id=157861"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": null,
+        "label": "Idaho Public Utilities Commission — Network FiberCo application",
+        "url": "https://lf-puc.idaho.gov/WebLink/DocView.aspx?dbid=0&id=157861",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current 51%/49% ownership, legal chain, headquarters and operating boundary",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "PSP Investments — Network FiberCo announcement",
+        "url": "https://www.investpsp.com/en/news/bce-and-psp-investments-announce-strategic-partnership-to-create-network-fiberco/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "PSP/BCE stakes, infrastructure-strategy attribution and announced platform scope",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Goodmans — Network FiberCo closing",
+        "url": "https://www.goodmans.ca/expertise/case/psp-investments-and-bce-inc.-announce-strategic-partnership-to-create-network-fiberco",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "August 1, 2025 formation closing",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Ziply Fiber — BCE acquisition closing",
+        "url": "https://ziplyfiber.com/news/press-release/ziply-bce",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Separate Ziply acquisition and operating-company boundary",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "0bdb8757c637616c4dc8a51f7686ccf90ed0f982177b29be7ee4fe2974eb8551",
+  "proposalSha256": "a999d0b92d2a743921c3394fdbdecbf045e7ed2956d36c33ef41f64da073d806"
+}

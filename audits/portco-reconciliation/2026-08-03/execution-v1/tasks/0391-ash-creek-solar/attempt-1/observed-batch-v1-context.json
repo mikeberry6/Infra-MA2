@@ -1,0 +1,263 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0391:ash-creek-solar:5c31cc8f",
+  "taskIndex": 391,
+  "companyName": "Ash Creek Solar",
+  "generatedAt": "2026-09-01T22:09:54.262Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0391-ash-creek-solar/attempt-1/observed-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 391,
+    "taskId": "ledger:0391:ash-creek-solar:5c31cc8f",
+    "canonicalKey": "ash-creek-solar|united-states",
+    "companyName": "Ash Creek Solar",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 83,
+    "managers": [
+      "Quinbrook Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "083-quinbrook-infrastructure-partners:repo-only:001:ash-creek-solar"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjmjj0186ivhewu4o37et"
+    ],
+    "seedKeys": [
+      "ash creek solar|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.primergypower.com/projects/ash-creek-solar-project",
+      "https://www.quinbrook.com/portfolio/primergy-solar/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Quinbrook Infrastructure Partners MATCHED_ELSEWHERE: Utility-scale solar project developed and operated under the Primergy Solar platform, which is already counted as the manager-level holding.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "REVIEWED_MERGE_CANONICAL_TARGET",
+    "targetCompanyId": "cmrxpjmnj018eivhe8a4fk54r",
+    "linkedQueueTaskId": null,
+    "immutableRetiredCompanyId": "cmrxpjmjj0186ivhewu4o37et"
+  },
+  "resolvedCanonicalKey": "primergy|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjmnj018eivhe8a4fk54r",
+    "name": "Primergy",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Utility-scale solar and battery storage development",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Primergy develops, finances, owns, and operates utility-scale solar photovoltaic and battery storage projects across North America. Its customers are utilities, corporate offtakers, and other power-market counterparties that contract for large-scale renewable generation and storage capacity. The business model is asset-heavy and development-led, with the platform taking projects from siting and financing through construction, ownership, and operations. Company materials state that lifetime closed transactions exceeded $5 billion as of March 2026. Quinbrook launched Primergy in 2020 as a wholly owned portfolio company.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2020,
+    "headquarters": "California; Texas; Arkansas; Nevada",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk96q027zivheu1eri9ch",
+        "managerName": "Quinbrook",
+        "organizationName": "Quinbrook",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2020,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmldv0526ivhetmltdv08",
+        "date": "May 18, 2020",
+        "event": "Quinbrook launched Primergy as a new portfolio company to develop solar and battery storage projects across North America.",
+        "category": "FINANCING",
+        "sortDate": "2020-05-18T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmlee0527ivhei8mk8p55",
+        "date": "Oct 2022",
+        "event": "Quinbrook and Primergy announced APG's investment in the Gemini Solar + Storage project.",
+        "category": "FINANCING",
+        "sortDate": "2022-10-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmlez0528ivhe9yi00oxj",
+        "date": "Jul 2025",
+        "event": "Primergy announced commercial operation of the 408 MWac Ash Creek Solar project in Texas.",
+        "category": "EXPANSION",
+        "sortDate": "2025-07-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmlfi0529ivheeuligxm0",
+        "date": "Mar 2026",
+        "event": "Primergy reported lifetime closed transactions of more than $5 billion.",
+        "category": "FINANCING",
+        "sortDate": "2026-03-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsl960cteivhe01m5n9fp",
+        "label": "Primergypower — Primergy",
+        "url": "https://www.primergypower.com/about/primergy",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Primergypower company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpslcu0ctgivhejae985iu",
+        "label": "Investment date source — Quinbrook — Primergy",
+        "url": "https://www.primergypower.com/news/quinbrook-launches-primergy-solar-to-develop-solar-and-battery-storage-across-north-america",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Quinbrook initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpslde0cthivhej1s8txmz",
+        "label": "Close date source — Quinbrook — Gemini Solar + Storage",
+        "url": "https://www.quinbrook.com/news-insights/quinbrook-closes-600m-solarstorage-continuation-fund/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Quinbrook — Primergy",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Primergy",
+    "investmentFirm": "Quinbrook",
+    "sector": "Power & ET",
+    "subsector": "Utility-scale solar and battery storage development",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "Primergy develops, finances, owns, and operates utility-scale solar photovoltaic and battery storage projects across North America. Its customers are utilities, corporate offtakers, and other power-market counterparties that contract for large-scale renewable generation and storage capacity. The business model is asset-heavy and development-led, with the platform taking projects from siting and financing through construction, ownership, and operations. Company materials state that lifetime closed transactions exceeded $5 billion as of March 2026. Quinbrook launched Primergy in 2020 as a wholly owned portfolio company.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2020,
+    "investmentYear": 2020,
+    "headquarters": "California; Texas; Arkansas; Nevada",
+    "milestones": [
+      {
+        "date": "May 18, 2020",
+        "event": "Quinbrook launched Primergy as a new portfolio company to develop solar and battery storage projects across North America.",
+        "category": "Financing"
+      },
+      {
+        "date": "Oct 2022",
+        "event": "Quinbrook and Primergy announced APG's investment in the Gemini Solar + Storage project.",
+        "category": "Financing"
+      },
+      {
+        "date": "Jul 2025",
+        "event": "Primergy announced commercial operation of the 408 MWac Ash Creek Solar project in Texas.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Mar 2026",
+        "event": "Primergy reported lifetime closed transactions of more than $5 billion.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Primergypower — Primergy",
+        "url": "https://www.primergypower.com/about/primergy",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Investment date source — Quinbrook — Primergy",
+        "url": "https://www.primergypower.com/news/quinbrook-launches-primergy-solar-to-develop-solar-and-battery-storage-across-north-america",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Quinbrook — Primergy",
+        "url": "https://www.quinbrook.com/news-insights/quinbrook-closes-600m-solarstorage-continuation-fund/",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Quinbrook",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2020,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpigao004eivhedx8km4yh",
+        "name": "Quinbrook",
+        "updatedAt": "2026-07-23T16:09:28.320Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0391:ash-creek-solar:5c31cc8f",
+    "taskIndex": 391,
+    "canonicalKey": "ash-creek-solar|united-states",
+    "capturedAt": "2026-09-01T22:09:54.262Z",
+    "databaseRevision": "revision:cccf9c7dc75755537cdbe4522381f605d9acb4f56514508b62c1fef1bde5a0bf",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "2972c262d0367932ba055432118b7a36d4343c52fc0ef08ffb7701348afbab82",
+    "productionSnapshotSha256": "347847dc7c1d6ae71ceecd263891c8be62c764760d9caa0115ce0849f1dd9f36",
+    "targetCompanySnapshotSha256": "b962f98682fca57127ae3e9faa5614cdb92964247f204acfa192f7ccbaf5c3b0",
+    "seedEntrySha256": "c4052f43ba172f3c2cf804d51731835e8d2e08bc7e52b824148af30fba6bf130",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "b868c7997b542cdf1b5952a4d4c771249856beaae3e4dc8b85ead4314ceebb8c",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "52c944c13a5e74630cefca11499339fafbdd9f1705bdf046c1d4d1c3542bd283",
+      "citationsSha256": "d7d0c7ed8c8df58eb555d8d3809ec0a6aa2eb30cca66adb91cf9742f6b6bdb23",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "4a8f912a875410b17b3fe33bd88dec7330e38c6b7a01be1ed881d5be640ccdcd",
+    "stateSha256": "6bb65668853437260a521b43d05e4622402d4e2c238dd3e06877414f835d6733",
+    "taskSnapshotSha256": "2d1b4a83921086a1022d9f6204ecd58fd652e48cb5c67147055f421cc051b3f2"
+  },
+  "contextSha256": "290664b59085125d04da9d831f081b01f9f262ba3ab3245fcd32c8b8fa994c19"
+}
