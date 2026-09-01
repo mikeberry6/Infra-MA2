@@ -1,0 +1,138 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:batch:apply
+> npx tsx scripts/portco-reconciliation/batch-apply-cli.ts --batch-manifest=audits/portco-reconciliation/2026-08-23/batches/batch-0329-0333-v1/batch-manifest-v3.json --batch-sha256=bdad1cb0ee12a131a302e78d6e3ce61fc169d19aa85fbebd4e81febea93ac65d
+
+(node:3487) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "BATCH_DRY_RUN",
+  "batchId": "batch-0329-0333-v1",
+  "batchSha256": "bdad1cb0ee12a131a302e78d6e3ce61fc169d19aa85fbebd4e81febea93ac65d",
+  "databaseWrites": false,
+  "seedWrites": false,
+  "plans": [
+    {
+      "companyName": "Silver Holdco JV, LLC",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to name, aliases, description, headquarters, lastVerifiedAt, milestones, citations."
+        },
+        {
+          "kind": "ADD_OWNER",
+          "relationIds": [],
+          "detail": "Add 1 approved ownership period(s)."
+        },
+        {
+          "kind": "RETIRE_OWNERSHIP",
+          "relationIds": [
+            "cmrxpk6d1023kivhebk1u7wdq"
+          ],
+          "detail": "Retire 1 ownership period(s) without deleting history."
+        },
+        {
+          "kind": "REALIZE_COMPANY",
+          "relationIds": [],
+          "detail": "Mark the company realized after all active ownership has ended."
+        }
+      ],
+      "changedFields": [
+        "aliases",
+        "citations",
+        "companyStatus",
+        "description",
+        "headquarters",
+        "lastVerifiedAt",
+        "milestones",
+        "name",
+        "ownershipPeriods"
+      ],
+      "retiredCompanyIds": []
+    },
+    {
+      "companyName": "Pinsly Railroad Company",
+      "mutations": [
+        {
+          "kind": "CREATE_COMPANY",
+          "relationIds": [],
+          "detail": "Create the approved canonical company and all approved relations."
+        }
+      ],
+      "changedFields": [
+        "company"
+      ],
+      "retiredCompanyIds": []
+    },
+    {
+      "companyName": "Potters Industries, LLC",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to name, aliases, subsector, description, website, yearFounded, headquarters, lastVerifiedAt, ownershipPeriods, milestones, citations."
+        },
+        {
+          "kind": "ADD_OWNER",
+          "relationIds": [],
+          "detail": "Add 4 approved ownership period(s)."
+        }
+      ],
+      "changedFields": [
+        "aliases",
+        "citations",
+        "description",
+        "headquarters",
+        "lastVerifiedAt",
+        "milestones",
+        "name",
+        "ownershipPeriods",
+        "subsector",
+        "website",
+        "yearFounded"
+      ],
+      "retiredCompanyIds": []
+    },
+    {
+      "companyName": "TraPac, LLC",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to name, aliases, description, website, headquarters, lastVerifiedAt, ownershipPeriods, milestones, citations."
+        },
+        {
+          "kind": "ADD_OWNER",
+          "relationIds": [],
+          "detail": "Add 3 approved ownership period(s)."
+        }
+      ],
+      "changedFields": [
+        "aliases",
+        "citations",
+        "description",
+        "headquarters",
+        "lastVerifiedAt",
+        "milestones",
+        "name",
+        "ownershipPeriods",
+        "website"
+      ],
+      "retiredCompanyIds": []
+    },
+    {
+      "companyName": "Treaty Oak Clean Energy, LLC",
+      "mutations": [
+        {
+          "kind": "CREATE_COMPANY",
+          "relationIds": [],
+          "detail": "Create the approved canonical company and all approved relations."
+        }
+      ],
+      "changedFields": [
+        "company"
+      ],
+      "retiredCompanyIds": []
+    }
+  ]
+}
