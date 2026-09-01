@@ -23,6 +23,9 @@ function snapshot() {
         displayVehicleName: "Vehicle",
         currentLinkedFundName: null,
         currentFundAttribution: "UNRESOLVED",
+        currentAttributedFundName: null,
+        currentAttributionConfidence: null,
+        currentAttributionRationale: null,
         investmentYear: 2026,
         stake: null,
         milestones: [],
@@ -39,6 +42,9 @@ function snapshot() {
         displayVehicleName: "Direct",
         currentLinkedFundName: null,
         currentFundAttribution: "DIRECT_PROGRAM",
+        currentAttributedFundName: null,
+        currentAttributionConfidence: null,
+        currentAttributionRationale: "Reviewed direct investment.",
         investmentYear: 2026,
         stake: null,
         milestones: [],
@@ -120,5 +126,25 @@ describe("scoped attribution repair", () => {
       seedManifest: broken,
       companyNames: ["Example"],
     })).toThrow(/Expected one seed attribution/);
+  });
+
+  it("emits a repair when the classification matches but displayed metadata is stale", () => {
+    const current = snapshot();
+    current.records[1].currentAttributionRationale = "Stale rationale.";
+    const result = buildScopedAttributionRepair({
+      asOfDate: "2026-09-01",
+      productionSnapshot: current,
+      seedManifest: seed(),
+      companyNames: ["Example"],
+    });
+    expect(result.mutations).toContainEqual(expect.objectContaining({
+      ownershipPeriodId: "owner-2",
+      expected: { fundAttribution: "DIRECT_PROGRAM", currentLinkedFundName: null },
+      set: expect.objectContaining({
+        fundAttribution: "DIRECT_PROGRAM",
+        attributedFundName: null,
+        attributionRationale: "Reviewed direct investment.",
+      }),
+    }));
   });
 });
