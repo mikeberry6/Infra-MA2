@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-09-01",
+  "ledgerSha256": "b9f9c446cd739c6b1f1317c0356116a05340f6512f28573a7c55b9430d9bfe3e",
+  "sourceSnapshotSha256": "40834d12ccefe27f811d9abf873ecb480aa552982ad1fc5a7696cced826f4a4b",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 2,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 1,
+      "UNRESOLVED": 0
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  },
+  "expectedMutationCount": 3,
+  "mutations": [
+    {
+      "recordId": "OFA-B55C1540DCC6",
+      "ownershipPeriodId": "cmrxpk42e0201ivheoxpgzo1i",
+      "companyName": "FlexiVan",
+      "country": "United States",
+      "investmentFirm": "I Squared Capital",
+      "currentVehicleName": "ISQ Global Infrastructure Fund I (Fund 1)",
+      "databaseVehicleName": "ISQ Global Infrastructure Fund I (Fund 1)",
+      "investmentYear": 2020,
+      "stake": "Controlling interest; exact percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "ISQ Global Infrastructure Fund I (Fund 1)",
+        "attributionConfidence": null,
+        "attributionRationale": "I Squared's Fund 1 portfolio page identifies FlexiVan as a Fund 1 investment, while the January and February 2020 transaction announcements establish the controlling investment and legal close. The disclosed vehicle is not a curated Fund Database record, so no fund link is invented."
+      },
+      "evidenceUrls": [
+        "https://isquaredcapital.com/txnm_fund/fund-1/",
+        "https://www.businesswire.com/news/home/20200127005431/en/I-Squared-Capital-to-Combine-American-Intermodal-Management-With-FlexiVan-to-Become-a-Leader-in-Marine-Chassis-Leasing-Across-the-U.S.",
+        "https://www.ajot.com/news/flexivan-aim-merger-complete"
+      ]
+    },
+    {
+      "recordId": "OFA-ADB8E0956F3E",
+      "ownershipPeriodId": "cmti76ghh000xw62bsnkfhxlq",
+      "companyName": "Milestone Environmental Services",
+      "country": "United States",
+      "investmentFirm": "Gabriel Rio",
+      "currentVehicleName": "Management rollover vehicle not publicly disclosed",
+      "databaseVehicleName": "Management rollover vehicle not publicly disclosed",
+      "investmentYear": 2023,
+      "stake": "Significant retained equity; exact percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "SK Capital's completed 2023 acquisition announcement states that chief executive Gabriel Rio retained a significant ownership interest. The interest is management rollover ownership rather than a commingled fund, and the exact vehicle and percentage were not publicly disclosed."
+      },
+      "evidenceUrls": [
+        "https://skcapitalpartners.com/sk-capital-acquires-milestone-environmental-services/"
+      ]
+    },
+    {
+      "recordId": "OFA-D8CE82C5CFEA",
+      "ownershipPeriodId": "cmti76jio001hw62b4bdxkrrj",
+      "companyName": "Oriden",
+      "country": "United States",
+      "investmentFirm": "I Squared Capital",
+      "currentVehicleName": "ISQ Energy Transition Infrastructure Fund",
+      "databaseVehicleName": null,
+      "investmentYear": 2026,
+      "stake": "Exact percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": "ISQ Energy Transition Infrastructure Fund",
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": "ISQ Energy Transition Infrastructure Fund"
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "ISQ Energy Transition Infrastructure Fund",
+        "attributionConfidence": null,
+        "attributionRationale": "I Squared's completed-acquisition announcement directly attributes Oriden to the ISQ Energy Transition Infrastructure Fund. That exact fund is already curated in the Fund Database, so the active ownership can be linked without inference."
+      },
+      "evidenceUrls": [
+        "https://isquaredcapital.com/news/oriden-acquisition-renewable-energy/",
+        "https://www.sheppard.com/news-and-events/press-releases/sheppard-advises-mitsubishi-power-americas-inc-in-sale-of-oriden-to-i-squared-capital"
+      ]
+    }
+  ],
+  "manifestSha256": "f29e1b97ff1c77b1e511b14d203e7360fce66453dd8c82f31eab092c70492ddb"
+}

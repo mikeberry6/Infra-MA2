@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_CORRECTION_DECISION",
+  "asOfDate": "2026-09-01",
+  "triggerBatchId": "batch-0292-0296-v1",
+  "triggerBatchSha256": "1c5dd9833e36fb00ec38cdbc48635f2959a97191d0ea1532525aee2c5b8263d1",
+  "triggerBatchReceiptSha256": "e8e7b86441a435ec095484e439708299254ee8ef3f336968cc68ad2566e2efa0",
+  "decision": "ALIGN_ACTIVE_OWNERSHIP_ATTRIBUTION_METADATA",
+  "rationale": "The atomic PortCo transaction correctly applied FlexiVan's disclosed Fund 1 vehicle, Milestone Environmental Services' current SK Capital and Gabriel Rio ownership, and Oriden's disclosed Energy Transition Infrastructure Fund ownership. The public drawer reads a separate ownership-attribution layer that retained pre-release classifications. Align the three differing active ownership rows to the exact seed-reconciled judgments before completing the PortCo bundle.",
+  "mutations": [
+    {
+      "companyName": "FlexiVan",
+      "ownershipPeriodIds": [
+        "cmrxpk42e0201ivheoxpgzo1i"
+      ],
+      "outcome": "Disclosed ISQ Global Infrastructure Fund I (Fund 1) attribution without inventing a curated-fund link"
+    },
+    {
+      "companyName": "Milestone Environmental Services",
+      "ownershipPeriodIds": [
+        "cmti76ghh000xw62bsnkfhxlq"
+      ],
+      "outcome": "Direct-program classification for Gabriel Rio's retained management ownership"
+    },
+    {
+      "companyName": "Oriden",
+      "ownershipPeriodIds": [
+        "cmti76jio001hw62b4bdxkrrj"
+      ],
+      "outcome": "Disclosed ISQ Energy Transition Infrastructure Fund attribution with the existing curated-fund link preserved"
+    }
+  ],
+  "verifiedNonChanges": [
+    "Milestone Environmental Services' active SK Capital ownership already has the correct unresolved fund-attribution state because direct sources do not name the applicable SK-advised fund",
+    "Company identities, aliases, redirects and publication status",
+    "Ownership organizations, vehicle text, stakes, dates and active state",
+    "Former owners and signed pending buyers",
+    "Descriptions, milestones, citations and primary sources",
+    "Fund Database records; the repair creates or updates no fund",
+    "The completed atomic PortCo transaction and its durable receipt"
+  ],
+  "identityResolved": true,
+  "activeOwnershipResolved": true,
+  "unresolvedQuestions": []
+}
