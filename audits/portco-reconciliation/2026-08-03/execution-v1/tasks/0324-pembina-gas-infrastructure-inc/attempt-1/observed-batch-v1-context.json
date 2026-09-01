@@ -1,0 +1,298 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0324:pembina-gas-infrastructure-inc:de0cbf95",
+  "taskIndex": 324,
+  "companyName": "Pembina Gas Infrastructure Inc.",
+  "generatedAt": "2026-09-01T11:40:42.455Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0324-pembina-gas-infrastructure-inc/attempt-1/observed-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 324,
+    "taskId": "ledger:0324:pembina-gas-infrastructure-inc:de0cbf95",
+    "canonicalKey": "pembina-gas-infrastructure-inc|canada",
+    "companyName": "Pembina Gas Infrastructure Inc.",
+    "country": "Canada",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 64,
+    "managers": [
+      "KKR"
+    ],
+    "actionScopes": {
+      "company": [
+        "CORRECT_COMPANY"
+      ],
+      "ownership": [
+        "ADD_PENDING_TRANSACTION"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "064-kkr:holding:014:pembina-gas-infrastructure-inc"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjjwg0141ivhecv1bf8dw"
+    ],
+    "seedKeys": [
+      "pembina gas infrastructure inc.|Canada"
+    ],
+    "evidenceUrls": [
+      "https://www.apollo.com/insights-news/pressreleases/2026/04/apollo-funds-to-acquire-40-interest-in-pembina-gas-infrastructure-3279810"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_PENDING_TRANSACTION, CORRECT_COMPANY requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjjwg0141ivhecv1bf8dw",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "pembina-gas-infrastructure-inc|canada",
+  "targetCompanyImage": {
+    "id": "cmrxpjjwg0141ivhecv1bf8dw",
+    "name": "Pembina Gas Infrastructure Inc.",
+    "aliases": [],
+    "sector": "MIDSTREAM",
+    "subsector": "Natural gas processing, transportation, and NGL services",
+    "region": "NORTH_AMERICA",
+    "country": "Canada",
+    "countryTags": [
+      "Canada"
+    ],
+    "description": "Pembina Gas Infrastructure is a Western Canadian gas processing and midstream platform providing natural gas and natural gas liquids processing, transportation, and related services. Its customers are upstream producers in the Montney and Duvernay regions that need processing and takeaway capacity for natural gas and liquids production. The operating model is asset-heavy and fee-based, supported by large processing and transportation infrastructure with long-life industrial use and recurring customer throughput. Public company materials describe combined processing capacity of 5 billion cubic feet per day and a footprint extending from central Alberta to northeast British Columbia. Pembina and KKR formed the joint venture in 2022, with Pembina retaining 60% ownership and operating control and KKR's global infrastructure funds holding the remaining 40%.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2022,
+    "headquarters": "Alberta; British Columbia",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk5xq022vivhef3kubyqk",
+        "managerName": "KKR",
+        "organizationName": "KKR",
+        "fundName": null,
+        "vehicleName": "KKR Global Infrastructure Funds",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpm7oq04lbivheewjpr5ve",
+        "date": "2022",
+        "event": "Pembina Gas Infrastructure Inc. was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2022-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm7pa04lcivhejpbroimf",
+        "date": "Mar 1, 2022",
+        "event": "Pembina and KKR announced agreements to combine their Western Canadian processing assets into Pembina Gas Infrastructure.",
+        "category": "FINANCING",
+        "sortDate": "2022-03-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm7pv04ldivhegzpfo31e",
+        "date": "Aug 15, 2022",
+        "event": "Pembina announced closing of the PGI joint venture and disclosed the 60% Pembina and 40% KKR ownership split.",
+        "category": "FINANCING",
+        "sortDate": "2022-08-15T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm7qe04leivhehx1pleqm",
+        "date": "Apr 23, 2026",
+        "event": "Apollo-managed funds agreed to acquire KKR's 40% interest in Pembina Gas Infrastructure, with closing expected by the end of Q2 2026.",
+        "category": "DIVESTITURE",
+        "sortDate": "2026-04-23T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpry160bu1ivheb3s89app",
+        "label": "Pembina — Pembina Gas Infrastructure Inc.",
+        "url": "https://www.pembina.com/operations/partnerships/pembina-gas-infrastructure",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Pembina operations / asset details",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpry240bu3ivhe4xuo3n66",
+        "label": "Pembina — Pembina Gas Infrastructure Inc.",
+        "url": "https://www.pembina.com/operations/partnerships/pembina-gas-infrastructure/about-us",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Pembina operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpry340bu5ivhermpmhcxi",
+        "label": "Announcement source — KKR — Pembina Gas Infrastructure Inc.",
+        "url": "https://www.prnewswire.com/news-releases/pembina-pipeline-corporation-and-kkr-create-joint-venture-to-merge-western-canadian-processing-assets-301492668.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "PR Newswire operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpry400bu7ivheikkmz7ba",
+        "label": "Close date source — KKR — Pembina Gas Infrastructure Inc.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1546066/000127956922001364/ex991.pdf",
+        "sourceType": "SEC_FILING",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "KKR closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpry4z0bu8ivheqnluqz4h",
+        "label": "Apollo",
+        "url": "https://www.apollo.com/insights-news/pressreleases/2026/04/apollo-funds-to-acquire-40-interest-in-pembina-gas-infrastructure-3279810",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Apollo agreed to acquire KKR's 40% interest; expected close by end of Q2 2026",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Pembina Gas Infrastructure Inc.",
+    "investmentFirm": "KKR",
+    "sector": "Midstream",
+    "subsector": "Natural gas processing, transportation, and NGL services",
+    "region": "North America",
+    "country": "Canada",
+    "ownershipVehicle": "KKR Global Infrastructure Funds",
+    "description": "Pembina Gas Infrastructure is a Western Canadian gas processing and midstream platform providing natural gas and natural gas liquids processing, transportation, and related services. Its customers are upstream producers in the Montney and Duvernay regions that need processing and takeaway capacity for natural gas and liquids production. The operating model is asset-heavy and fee-based, supported by large processing and transportation infrastructure with long-life industrial use and recurring customer throughput. Public company materials describe combined processing capacity of 5 billion cubic feet per day and a footprint extending from central Alberta to northeast British Columbia. Pembina and KKR formed the joint venture in 2022, with Pembina retaining 60% ownership and operating control and KKR's global infrastructure funds holding the remaining 40%.",
+    "status": "Active",
+    "countryTags": [
+      "Canada"
+    ],
+    "yearFounded": 2022,
+    "investmentYear": 2022,
+    "headquarters": "Alberta; British Columbia",
+    "milestones": [
+      {
+        "date": "2022",
+        "event": "Pembina Gas Infrastructure Inc. was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "Mar 1, 2022",
+        "event": "Pembina and KKR announced agreements to combine their Western Canadian processing assets into Pembina Gas Infrastructure.",
+        "category": "Financing"
+      },
+      {
+        "date": "Aug 15, 2022",
+        "event": "Pembina announced closing of the PGI joint venture and disclosed the 60% Pembina and 40% KKR ownership split.",
+        "category": "Financing"
+      },
+      {
+        "date": "Apr 23, 2026",
+        "event": "Apollo-managed funds agreed to acquire KKR's 40% interest in Pembina Gas Infrastructure, with closing expected by the end of Q2 2026.",
+        "category": "Divestiture"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Pembina — Pembina Gas Infrastructure Inc.",
+        "url": "https://www.pembina.com/operations/partnerships/pembina-gas-infrastructure",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Pembina — Pembina Gas Infrastructure Inc.",
+        "url": "https://www.pembina.com/operations/partnerships/pembina-gas-infrastructure/about-us",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Announcement source — KKR — Pembina Gas Infrastructure Inc.",
+        "url": "https://www.prnewswire.com/news-releases/pembina-pipeline-corporation-and-kkr-create-joint-venture-to-merge-western-canadian-processing-assets-301492668.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Close date source — KKR — Pembina Gas Infrastructure Inc.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1546066/000127956922001364/ex991.pdf",
+        "type": "SEC_FILING",
+        "purpose": "FINANCING_FILINGS"
+      },
+      {
+        "label": "Announcement source — Apollo Global Management — Pembina Gas Infrastructure Inc.",
+        "url": "https://www.apollo.com/insights-news/pressreleases/2026/04/apollo-funds-to-acquire-40-interest-in-pembina-gas-infrastructure-3279810",
+        "type": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Apollo agreed to acquire KKR's 40% interest; expected close by end of Q2 2026"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "KKR",
+        "ownershipVehicle": "KKR Global Infrastructure Funds",
+        "investmentYear": 2022,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi3q1000givhe0rxho1m0",
+        "name": "Apollo Global Management",
+        "updatedAt": "2026-07-23T16:09:12.025Z"
+      },
+      {
+        "id": "cmrxpiay4002pivhed6sjuu9i",
+        "name": "KKR",
+        "updatedAt": "2026-07-23T16:09:21.388Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0324:pembina-gas-infrastructure-inc:de0cbf95",
+    "taskIndex": 324,
+    "canonicalKey": "pembina-gas-infrastructure-inc|canada",
+    "capturedAt": "2026-09-01T11:40:42.455Z",
+    "databaseRevision": "revision:03f3bf25e162663c19d4c2d857742d3a236603b0a2a78c7cd1f0c659a2f32c10",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "8833f20c4e1e68bc911f4aefac29d18571737a133260f5f7768982d4536bdc18",
+    "productionSnapshotSha256": "3341d14d4a2e15853a3d33f7679230f795ebb6a2d83e4f43f61c4af8aaa30858",
+    "targetCompanySnapshotSha256": "2bc9be5b4114757f4308028a7930684ba5da567c1977aa8e5b746dddba123171",
+    "seedEntrySha256": "1bb78371e57d56f7a0be2b12dc85301f0059165133247eda659f19b05650b209",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "0c25d3c54343c543451ba8557b55ab73964a7799b705f715678aca48b84bdda3",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "1b0f59a879f2c10c79997111a43661bf64f9d5d267e9bfd8d9dd45510a8c75b0",
+      "citationsSha256": "f87d4a34c07888745ea991eb12ceaf814c7b504d6019ea4961357b553878b57f",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "76d72187eeff9db6d0b221e5e810492ea4a79fcf9bb66f731da8f35b6a50580c",
+    "stateSha256": "9f071bd1c3b35cf688663ccf3aca0687c1224ed76a9f5aaa2a023edebf816327",
+    "taskSnapshotSha256": "7d21043f0c2656d5b4081d3651b549beaaf22ab51203f18be303716b9dd94d06"
+  },
+  "contextSha256": "02358576154a426fcfaa5c898396f5052fc570866be3d8627e96108e51a82369"
+}

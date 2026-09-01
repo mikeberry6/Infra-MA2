@@ -1,0 +1,262 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0325:port-arthur-lng:d837cc61",
+  "taskIndex": 325,
+  "companyName": "Port Arthur LNG",
+  "generatedAt": "2026-09-01T11:40:44.588Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0325-port-arthur-lng/attempt-1/observed-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 325,
+    "taskId": "ledger:0325:port-arthur-lng:d837cc61",
+    "canonicalKey": "port-arthur-lng|united-states",
+    "companyName": "Port Arthur LNG",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 64,
+    "managers": [
+      "KKR"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "064-kkr:repo-only:001:port-arthur-lng"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjjwz0142ivhel1oxig89"
+    ],
+    "seedKeys": [
+      "port arthur lng|United States"
+    ],
+    "evidenceUrls": [
+      "https://semprainfrastructure.com/what-we-do/lng/port-arthur-lng/",
+      "https://www.sempra.com/newsroom/press-releases/sempra-infrastructure-completes-sale-non-controlling-interest-port-arthur"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: KKR MATCHED_ELSEWHERE: Repository record corresponds to a project held within Sempra Infrastructure Partners and is therefore already captured at the platform level.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjjwz0142ivhel1oxig89",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "port-arthur-lng|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjjwz0142ivhel1oxig89",
+    "name": "Port Arthur LNG",
+    "aliases": [],
+    "sector": "MIDSTREAM",
+    "subsector": "LNG export terminal",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Port Arthur LNG is a liquefied natural gas export project under development on the U.S. Gulf Coast in Jefferson County, Texas. Its customer base consists of global LNG buyers, gas suppliers, and counterparties seeking long-term liquefaction capacity and U.S. Gulf Coast export access. The operating model is asset-heavy and project based, centered on large liquefaction trains, storage tanks, marine infrastructure, and long-term commercial contracts. Public project materials describe a four-train, two-phase facility with approximately 26 million tonnes per annum of nameplate capacity across Phases 1 and 2 and characterize the development as a $27 billion energy infrastructure investment. Sempra Infrastructure announced in September 2023 that it had completed the sale of a 42% indirect non-controlling interest in Port Arthur LNG Phase 1 to KKR after the project reached final investment decision.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Texas",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk5y7022wivhe4xw352ck",
+        "managerName": "KKR",
+        "organizationName": "KKR",
+        "fundName": "K-INFRA",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpm7ri04lfivhegulvifq0",
+        "date": "Mar 2023",
+        "event": "Port Arthur LNG Phase 1 reached final investment decision.",
+        "category": "FINANCING",
+        "sortDate": "2023-03-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm7s204lgivhea93vbxc3",
+        "date": "Sep 12, 2023",
+        "event": "Sempra Infrastructure completed the sale of a 42% indirect non-controlling interest in Port Arthur LNG Phase 1 to KKR.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-09-12T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpry5y0buaivhe15ub2hrt",
+        "label": "Portarthurlng — Port Arthur LNG",
+        "url": "https://portarthurlng.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Portarthurlng company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpry6w0bucivhe9whefa83",
+        "label": "Semprainfrastructure — Port Arthur LNG",
+        "url": "https://semprainfrastructure.com/what-we-do/lng/port-arthur-lng/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Semprainfrastructure — Port Arthur LNG",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprya80bueivheu0spqwb7",
+        "label": "Close date source — KKR — Port Arthur LNG",
+        "url": "https://www.sempra.com/newsroom/press-releases/sempra-infrastructure-completes-sale-non-controlling-interest-port-arthur",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "KKR closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpryba0bugivheku9sxvfo",
+        "label": "Kirkland — Port Arthur LNG",
+        "url": "https://www.kirkland.com/news/press-release/2025/09/kirkland-advises-kkr-on-investment-in-sempra-infrastructure-partners-port-arthur-lng-project",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Kirkland operations / asset details",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Port Arthur LNG",
+    "investmentFirm": "KKR",
+    "sector": "Midstream",
+    "subsector": "LNG export terminal",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "Port Arthur LNG is a liquefied natural gas export project under development on the U.S. Gulf Coast in Jefferson County, Texas. Its customer base consists of global LNG buyers, gas suppliers, and counterparties seeking long-term liquefaction capacity and U.S. Gulf Coast export access. The operating model is asset-heavy and project based, centered on large liquefaction trains, storage tanks, marine infrastructure, and long-term commercial contracts. Public project materials describe a four-train, two-phase facility with approximately 26 million tonnes per annum of nameplate capacity across Phases 1 and 2 and characterize the development as a $27 billion energy infrastructure investment. Sempra Infrastructure announced in September 2023 that it had completed the sale of a 42% indirect non-controlling interest in Port Arthur LNG Phase 1 to KKR after the project reached final investment decision.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2023,
+    "headquarters": "Texas",
+    "milestones": [
+      {
+        "date": "Mar 2023",
+        "event": "Port Arthur LNG Phase 1 reached final investment decision.",
+        "category": "Financing"
+      },
+      {
+        "date": "Sep 12, 2023",
+        "event": "Sempra Infrastructure completed the sale of a 42% indirect non-controlling interest in Port Arthur LNG Phase 1 to KKR.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Portarthurlng — Port Arthur LNG",
+        "url": "https://portarthurlng.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Semprainfrastructure — Port Arthur LNG",
+        "url": "https://semprainfrastructure.com/what-we-do/lng/port-arthur-lng/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Close date source — KKR — Port Arthur LNG",
+        "url": "https://www.sempra.com/newsroom/press-releases/sempra-infrastructure-completes-sale-non-controlling-interest-port-arthur",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Kirkland — Port Arthur LNG",
+        "url": "https://www.kirkland.com/news/press-release/2025/09/kirkland-advises-kkr-on-investment-in-sempra-infrastructure-partners-port-arthur-lng-project",
+        "type": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "KKR",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2023,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj2yp00ecivheouv7ybld",
+        "fundName": "K-INFRA",
+        "managerId": "cmrxpiay4002pivhed6sjuu9i",
+        "updatedAt": "2026-07-23T16:09:57.697Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi5em000yivhekda3otkf",
+        "name": "Blackstone",
+        "updatedAt": "2026-07-23T16:09:14.206Z"
+      },
+      {
+        "id": "cmrxpiay4002pivhed6sjuu9i",
+        "name": "KKR",
+        "updatedAt": "2026-07-23T16:09:21.388Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0325:port-arthur-lng:d837cc61",
+    "taskIndex": 325,
+    "canonicalKey": "port-arthur-lng|united-states",
+    "capturedAt": "2026-09-01T11:40:44.588Z",
+    "databaseRevision": "revision:ca5444652f039c60a47e0612001e88b64d6ca9c729ed8deaf410cd4ef8ba35c7",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "99cec0011e5c76c6df90384307ed9fd49efbe068f87019efe3b070f7b3c68652",
+    "productionSnapshotSha256": "7e5de2e9e3f52f05abd1d5d51b5bab1c46f6b67a4213b467c53db824e02411b6",
+    "targetCompanySnapshotSha256": "cdfd5a39a9a5164cf16fc10a2041f681dd55ee922dc37280a728f8075c5a9cd9",
+    "seedEntrySha256": "5f70cba22bc44ff8d4bba025b402a0acd696adea427f041ea99a71b2313a12c1",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "11a608796c034da8901079ef9430ae98753ce64dd2dac9f2d91be9f87ea3bee9",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "b0f7cda16085f90569c7b4dbfeeb82a1689ce03b97da6f5b2c27affb37f970fa",
+      "organizationsSha256": "424c2494c42c616e64df8d07fbb06e79ac6786f232a3cc5e8acea83178b3262d",
+      "citationsSha256": "182320aedcffe24dd988b3d64e87243de43b5a6f7282adab46a00749489f57b3",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "82ce9184d46deac66611640a5256858346a7221d47430234cf09dd6a522eb895",
+    "stateSha256": "d9d7448104838053fd5daf816b1ad0d2de1b0932ff4ad4d714294b9793fcfd2f",
+    "taskSnapshotSha256": "7c2a1bf145f8a6f05c98012b183480e98db7679a94df6b53843d8ddabb828f4e"
+  },
+  "contextSha256": "c196f61923669b14f8e5aaf7a20a16a9261a508206d12f594770136d8fa193c5"
+}

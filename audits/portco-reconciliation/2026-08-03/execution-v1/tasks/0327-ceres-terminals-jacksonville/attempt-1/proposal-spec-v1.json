@@ -1,0 +1,229 @@
+{
+  "generatedAt": "2026-09-01T11:33:30.000Z",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER",
+    "RETIRE_OWNERSHIP"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "reviewedSeedRetirementTaskIds": [],
+  "rationale": "Recanonicalize the local Jacksonville concession as Dames Point Jacksonville LLC, distinguish it from the broader Ceres platform sold to Carrix, record Macquarie as a 2022-2023 former owner, and add JAXPORT as the continuing legal owner while treating SSA solely as operator.",
+  "evidence": [
+    {
+      "url": "https://www.jaxport.com/index.php?field-id=7&form-id=4&gf-download=2022%2F02%2F2022.02.14.Sp_.BOD_.Packet.pdf&gv-iframe=true&hash=08ff72b71b93193507da9b38dea7d3468f31a3425e7672e392ac560e300eb74d",
+      "purpose": "Local identity, 2022 acquisition and lease.",
+      "supports": [
+        "Ceres acquired 100% of TraPac Jacksonville effective March 1, 2022.",
+        "The business held the Dames Point terminal and ICTF lease."
+      ]
+    },
+    {
+      "url": "https://www.macquarie.com/au/en/about/news/2023/macquarie-infrastructure-partners-iii-announces-agreement-to-divest-ceres-terminals.html",
+      "purpose": "Carrix sale boundary.",
+      "supports": [
+        "Jacksonville and its ICTF were excluded from Macquarie's sale of the broader Ceres platform."
+      ]
+    },
+    {
+      "url": "https://search.sunbiz.org/Inquiry/CorporationSearch/ConvertTiffToPDF?documentNumber=M14000004101&storagePath=COR%5C2023%5C1102%5C00378998.Tif",
+      "purpose": "Legal identity and retained chain.",
+      "supports": [
+        "The local SPV was renamed Dames Point Jacksonville LLC and held through MIP III Bluefin B Holdco."
+      ]
+    },
+    {
+      "url": "https://www.jaxport.com/wp-content/uploads/2025/03/20232024-Annual-report.pdf",
+      "purpose": "Current ownership.",
+      "supports": [
+        "JAXPORT acquired the local business and assets in November 2023 and remains the public-port owner."
+      ]
+    },
+    {
+      "url": "https://www.jaxport.com/wp-content/uploads/2025/12/Tariff2025_A-2025.12.15.pdf",
+      "purpose": "Operator distinction.",
+      "supports": [
+        "SSA operates Dames Point; no equity ownership by SSA is evidenced."
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "companyFieldUpdates": {
+    "name": "Dames Point Jacksonville LLC",
+    "aliases": [
+      "Ceres Terminals Jacksonville",
+      "Ceres Terminals Jacksonville LLC",
+      "TraPac Jacksonville LLC",
+      "Dames Point Jacksonville",
+      "CTJ"
+    ],
+    "description": "Dames Point Jacksonville LLC is the local operating and concession entity associated with JAXPORT's 158-acre Dames Point container terminal and adjacent intermodal container transfer facility in Jacksonville, Florida. The business handles container, stevedoring, crane, yard and rail-transfer activity for ocean carriers, cargo owners and military users under long-term port rights. Ceres acquired the former TraPac Jacksonville entity in 2022; Macquarie retained the renamed local SPV when the broader Ceres platform was sold to Carrix, then sold the Jacksonville business and assets separately to JAXPORT in November 2023. JAXPORT is the current owner and SSA is the contract operator, not an equity owner.",
+    "companyStatus": "ACTIVE",
+    "website": "https://www.jaxport.com/cargo/facilities/dames-point-marine-terminal/",
+    "yearFounded": null,
+    "headquarters": "Jacksonville, Florida, United States",
+    "lastVerifiedAt": "2026-09-01T11:33:00.000Z"
+  },
+  "ownershipPeriodUpdates": [
+    {
+      "id": "cmrxpk62g0234ivhecms51wwu",
+      "set": {
+        "vehicleName": "Ceres Terminals Holdings LLC; later MIP III Bluefin B Holdco LP",
+        "stake": "100%",
+        "investmentYear": 2022,
+        "exitYear": 2023,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    }
+  ],
+  "ownershipPeriodRemovals": [],
+  "ownershipPeriodAdditions": [
+    {
+      "id": null,
+      "managerName": "Mitsui O.S.K. Lines",
+      "organizationName": null,
+      "fundName": null,
+      "vehicleName": "TraPac Jacksonville LLC",
+      "stake": "100%",
+      "investmentYear": null,
+      "exitYear": 2022,
+      "isActive": false,
+      "transactionState": "REALIZED"
+    },
+    {
+      "id": null,
+      "managerName": "Jacksonville Port Authority",
+      "organizationName": null,
+      "fundName": null,
+      "vehicleName": "Dames Point Jacksonville LLC business and assets",
+      "stake": "Full ownership; legal allocation not publicly disclosed",
+      "investmentYear": 2023,
+      "exitYear": null,
+      "isActive": true,
+      "transactionState": "CLOSED_ACTIVE"
+    }
+  ],
+  "pendingOwnershipTransactionUpdates": [],
+  "pendingOwnershipTransactionAdditions": [],
+  "milestoneUpdates": [
+    {
+      "id": "cmrxpm8ei04m4ivhekixm9hst",
+      "set": {
+        "date": "2015",
+        "event": "Macquarie Infrastructure Partners III acquired 49% of the broader Ceres Terminals platform; this was platform history rather than the local Jacksonville entry date.",
+        "category": "ACQUISITION",
+        "sortDate": "2015-01-01T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.macquarie.com/au/en/about/news/2023/macquarie-infrastructure-partners-iii-announces-agreement-to-divest-ceres-terminals.html"
+        ]
+      }
+    },
+    {
+      "id": "cmrxpm8f204m5ivhe2fljdf5p",
+      "set": {
+        "date": "2019",
+        "event": "Macquarie Infrastructure Partners III increased its interest in the broader Ceres Terminals platform to 100%.",
+        "category": "ACQUISITION",
+        "sortDate": "2019-01-01T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.macquarie.com/au/en/about/news/2023/macquarie-infrastructure-partners-iii-announces-agreement-to-divest-ceres-terminals.html"
+        ]
+      }
+    },
+    {
+      "id": "cmrxpm8fm04m6ivheixgwj5nb",
+      "set": {
+        "date": "Mar 1, 2022",
+        "event": "Ceres acquired 100% of TraPac Jacksonville and began the 20-year terminal and ICTF lease, establishing Macquarie's local Jacksonville ownership period.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-03-01T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.jaxport.com/index.php?field-id=7&form-id=4&gf-download=2022%2F02%2F2022.02.14.Sp_.BOD_.Packet.pdf&gv-iframe=true&hash=08ff72b71b93193507da9b38dea7d3468f31a3425e7672e392ac560e300eb74d"
+        ]
+      }
+    },
+    {
+      "id": "cmrxpm8g704m7ivheihzopum8",
+      "set": {
+        "date": "Jun-Nov 2023",
+        "event": "Macquarie agreed to sell the broader Ceres platform to Carrix while expressly retaining Jacksonville; the local SPV was renamed Dames Point Jacksonville LLC and moved under Bluefin.",
+        "category": "DIVESTITURE",
+        "sortDate": "2023-11-02T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.macquarie.com/au/en/about/news/2023/macquarie-infrastructure-partners-iii-announces-agreement-to-divest-ceres-terminals.html",
+          "https://search.sunbiz.org/Inquiry/CorporationSearch/ConvertTiffToPDF?documentNumber=M14000004101&storagePath=COR%5C2023%5C1102%5C00378998.Tif"
+        ]
+      }
+    },
+    {
+      "id": "cmrxpm8gq04m8ivhes29gz85a",
+      "set": {
+        "date": "Nov 2023",
+        "event": "JAXPORT acquired the Dames Point Jacksonville business and assets; SSA subsequently operated the terminal under contract.",
+        "category": "DIVESTITURE",
+        "sortDate": "2023-11-30T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.jaxport.com/wp-content/uploads/2025/03/20232024-Annual-report.pdf",
+          "https://www.jaxport.com/wp-content/uploads/2025/12/Tariff2025_A-2025.12.15.pdf"
+        ]
+      }
+    }
+  ],
+  "milestoneTransfers": [],
+  "citationUpdates": [
+    {
+      "id": "cmrxprzam0bw2ivhe6fhvpskf",
+      "set": {
+        "label": "JAXPORT FY2024 annual report — Dames Point acquisition",
+        "url": "https://www.jaxport.com/wp-content/uploads/2025/03/20232024-Annual-report.pdf",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "JAXPORT's November 2023 acquisition and current ownership",
+        "isPrimary": true
+      }
+    },
+    {
+      "id": "cmrxprzbr0bw4ivheupao8vle",
+      "set": {
+        "label": "Macquarie — Ceres Terminals Jacksonville",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Broader Ceres ownership history and exclusion of Jacksonville from the Carrix sale",
+        "isPrimary": false
+      }
+    },
+    {
+      "id": "cmrxprzcr0bw6ivhezwpoczxh",
+      "set": {
+        "label": "Florida filing — Dames Point Jacksonville rename",
+        "url": "https://search.sunbiz.org/Inquiry/CorporationSearch/ConvertTiffToPDF?documentNumber=M14000004101&storagePath=COR%5C2023%5C1102%5C00378998.Tif",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Legal-name change and Bluefin ownership chain",
+        "isPrimary": false
+      }
+    },
+    {
+      "id": "cmrxprzdn0bw8ivhevr4id5wy",
+      "set": {
+        "label": "JAXPORT tariff — Dames Point operator",
+        "url": "https://www.jaxport.com/wp-content/uploads/2025/12/Tariff2025_A-2025.12.15.pdf",
+        "sourceType": "OTHER",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "SSA's current operator role at Dames Point",
+        "isPrimary": false
+      }
+    }
+  ],
+  "citationAdditions": [
+    {
+      "id": null,
+      "label": "JAXPORT board packet — TraPac Jacksonville acquisition and lease",
+      "url": "https://www.jaxport.com/index.php?field-id=7&form-id=4&gf-download=2022%2F02%2F2022.02.14.Sp_.BOD_.Packet.pdf&gv-iframe=true&hash=08ff72b71b93193507da9b38dea7d3468f31a3425e7672e392ac560e300eb74d",
+      "sourceType": "OTHER",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Local identity, 100% control transfer and 20-year terminal lease",
+      "isPrimary": false
+    }
+  ]
+}

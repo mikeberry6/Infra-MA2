@@ -1,0 +1,295 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0327:ceres-terminals-jacksonville:001d4d4e",
+  "taskIndex": 327,
+  "companyName": "Ceres Terminals Jacksonville",
+  "generatedAt": "2026-09-01T11:25:35.937Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0327-ceres-terminals-jacksonville/attempt-1/locked-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 327,
+    "taskId": "ledger:0327:ceres-terminals-jacksonville:001d4d4e",
+    "canonicalKey": "ceres-terminals-jacksonville|united-states",
+    "companyName": "Ceres Terminals Jacksonville",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 65,
+    "managers": [
+      "Macquarie Asset Management"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "RETIRE_OWNERSHIP"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "065-macquarie-asset-management:repo-only:002:ceres-terminals-jacksonville"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjk3t014aivhevebx57qf"
+    ],
+    "seedKeys": [
+      "ceres terminals jacksonville|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.macquarie.com/us/en/about/news/2023/macquarie-infrastructure-partners-iii-completes-sales-of-ceres-terminals.html"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Macquarie Asset Management PROPOSED_RETIRE: Part of Ceres platform divested in 2023 and should not remain in active repository set",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjk3t014aivhevebx57qf",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "ceres-terminals-jacksonville|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjk3t014aivhevebx57qf",
+    "name": "Ceres Terminals Jacksonville",
+    "aliases": [],
+    "sector": "TRANSPORTATION",
+    "subsector": "Marine container terminal",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Ceres Terminals Jacksonville is a marine terminal operation at JAXPORT serving container and related port logistics activity. Its customers include shipping lines, cargo owners, trucking operators, and logistics providers moving containerized freight through Jacksonville. The operating model is asset-heavy and concession based, relying on terminal lease rights, yard and berth infrastructure, cargo-handling equipment, and throughput-linked operating revenue. Public materials reviewed indicate that Ceres signed a long-term lease and modernization program for the TraPac Jacksonville terminal in 2022, while Macquarie later announced the divestment of Ceres Terminals in 2023. Because the reviewed current ownership structure for the Jacksonville terminal after that broader divestment was not publicly disclosed in the reviewed primary sources, the current ownership details are listed as not publicly disclosed.",
+    "companyStatus": "REALIZED",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Florida",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk62g0234ivhecms51wwu",
+        "managerName": "Macquarie Asset Management",
+        "organizationName": "Macquarie Asset Management",
+        "fundName": "Macquarie Infrastructure Partners III",
+        "vehicleName": "Macquarie Infrastructure Partners III",
+        "stake": null,
+        "investmentYear": 2015,
+        "exitYear": 2023,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpm8ei04m4ivhekixm9hst",
+        "date": "2015",
+        "event": "Macquarie Infrastructure Partners III made an initial investment in Ceres Terminals, acquiring a 49% interest.",
+        "category": "ACQUISITION",
+        "sortDate": "2015-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm8f204m5ivhe2fljdf5p",
+        "date": "2019",
+        "event": "Macquarie Infrastructure Partners III acquired 100% of Ceres Terminals.",
+        "category": "ACQUISITION",
+        "sortDate": "2019-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm8fm04m6ivheixgwj5nb",
+        "date": "Feb 14, 2022",
+        "event": "JAXPORT approved a 20-year agreement with Ceres for the lease and modernization of the TraPac Jacksonville container terminal.",
+        "category": "EXPANSION",
+        "sortDate": "2022-02-14T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm8g704m7ivheihzopum8",
+        "date": "Jun 28, 2023",
+        "event": "Macquarie announced an agreement to divest Ceres Terminals to Carrix.",
+        "category": "DIVESTITURE",
+        "sortDate": "2023-06-28T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm8gq04m8ivhes29gz85a",
+        "date": "Oct 12, 2023",
+        "event": "Macquarie announced completion of the sale of Ceres Terminals to Carrix.",
+        "category": "DIVESTITURE",
+        "sortDate": "2023-10-12T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxprzam0bw2ivhe6fhvpskf",
+        "label": "Jaxport — Ceres Terminals Jacksonville",
+        "url": "https://www.jaxport.com/ceres-terminals-and-jaxport-announce-long-term-60-million-investment-in-trapac-jacksonville-container-terminal/",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Jaxport transaction or milestone detail",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxprzbr0bw4ivheupao8vle",
+        "label": "Macquarie — Ceres Terminals Jacksonville",
+        "url": "https://www.macquarie.com/au/en/about/news/2023/macquarie-infrastructure-partners-iii-announces-agreement-to-divest-ceres-terminals.html",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Macquarie company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprzcr0bw6ivhezwpoczxh",
+        "label": "Macquarie — Ceres Terminals Jacksonville",
+        "url": "https://www.macquarie.com/us/en/about/news/2023/macquarie-infrastructure-partners-iii-completes-sales-of-ceres-terminals.html",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Macquarie company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprzdn0bw8ivhevr4id5wy",
+        "label": "Macquarie — Ceres Terminals Jacksonville",
+        "url": "https://www.macquarie.com/au/en/about/company/macquarie-asset-management/our-portfolio/maher-terminals.html",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Macquarie operations / asset details",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Ceres Terminals Jacksonville",
+    "investmentFirm": "Macquarie Asset Management",
+    "sector": "Transportation",
+    "subsector": "Marine container terminal",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Macquarie Infrastructure Partners III",
+    "description": "Ceres Terminals Jacksonville is a marine terminal operation at JAXPORT serving container and related port logistics activity. Its customers include shipping lines, cargo owners, trucking operators, and logistics providers moving containerized freight through Jacksonville. The operating model is asset-heavy and concession based, relying on terminal lease rights, yard and berth infrastructure, cargo-handling equipment, and throughput-linked operating revenue. Public materials reviewed indicate that Ceres signed a long-term lease and modernization program for the TraPac Jacksonville terminal in 2022, while Macquarie later announced the divestment of Ceres Terminals in 2023. Because the reviewed current ownership structure for the Jacksonville terminal after that broader divestment was not publicly disclosed in the reviewed primary sources, the current ownership details are listed as not publicly disclosed.",
+    "status": "Realized",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2015,
+    "headquarters": "Florida",
+    "milestones": [
+      {
+        "date": "2015",
+        "event": "Macquarie Infrastructure Partners III made an initial investment in Ceres Terminals, acquiring a 49% interest.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "2019",
+        "event": "Macquarie Infrastructure Partners III acquired 100% of Ceres Terminals.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Feb 14, 2022",
+        "event": "JAXPORT approved a 20-year agreement with Ceres for the lease and modernization of the TraPac Jacksonville container terminal.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Jun 28, 2023",
+        "event": "Macquarie announced an agreement to divest Ceres Terminals to Carrix.",
+        "category": "Divestiture"
+      },
+      {
+        "date": "Oct 12, 2023",
+        "event": "Macquarie announced completion of the sale of Ceres Terminals to Carrix.",
+        "category": "Divestiture"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Jaxport — Ceres Terminals Jacksonville",
+        "url": "https://www.jaxport.com/ceres-terminals-and-jaxport-announce-long-term-60-million-investment-in-trapac-jacksonville-container-terminal/",
+        "type": "ARTICLE",
+        "purpose": "MILESTONE_EVENT"
+      },
+      {
+        "label": "Macquarie — Ceres Terminals Jacksonville",
+        "url": "https://www.macquarie.com/au/en/about/news/2023/macquarie-infrastructure-partners-iii-announces-agreement-to-divest-ceres-terminals.html",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Macquarie — Ceres Terminals Jacksonville",
+        "url": "https://www.macquarie.com/us/en/about/news/2023/macquarie-infrastructure-partners-iii-completes-sales-of-ceres-terminals.html",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Macquarie — Ceres Terminals Jacksonville",
+        "url": "https://www.macquarie.com/au/en/about/company/macquarie-asset-management/our-portfolio/maher-terminals.html",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Macquarie Asset Management",
+        "ownershipVehicle": "Macquarie Infrastructure Partners III",
+        "investmentYear": 2015,
+        "exitYear": 2023,
+        "status": "Realized"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj31600egivheozs3cnth",
+        "fundName": "Macquarie Infrastructure Partners III",
+        "managerId": "cmrxpibdo002uivheekmgpdbp",
+        "updatedAt": "2026-07-23T16:09:57.786Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpibdo002uivheekmgpdbp",
+        "name": "Macquarie Asset Management",
+        "updatedAt": "2026-07-23T16:09:21.948Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0327:ceres-terminals-jacksonville:001d4d4e",
+    "taskIndex": 327,
+    "canonicalKey": "ceres-terminals-jacksonville|united-states",
+    "capturedAt": "2026-09-01T11:25:35.937Z",
+    "databaseRevision": "company-state:85ae68385b1c658d73ecc8b615a134b9d80d0a47cb42f1cc488a0d07ba33ec52",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "b85b08c141e8f3d7bc8fca35755f4351a6854c8d0e88372e8e09565b970ab4e4",
+    "productionSnapshotSha256": "344644b4b38535294b6855dc32656e4c741d040aff9c4454c410d7062ad0b3a1",
+    "targetCompanySnapshotSha256": "85ae68385b1c658d73ecc8b615a134b9d80d0a47cb42f1cc488a0d07ba33ec52",
+    "seedEntrySha256": "9907ea2be1abf651cf752b7a58d8114c4ae053ed9bdd0081d72ab957169d052f",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "56bd1dfcb4990073cf5b65e48d3b0e909a1ad4c8d2b9e1d0e6c5546ecf3d8998",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "76b31d2ab840e4441172d4ee1b078d858fa25258924329837a1a89cfe03f5f11",
+      "organizationsSha256": "d1bf22f74b7389af188f4a2b3b82e0246d17c60ead7f84f073147c4a049757f2",
+      "citationsSha256": "7bb58f05ad04b74dd39d729f7e18d0ed5124c4c8d727b049f4e05e3b2bd2315c",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "1b6e729d65e008e352e3e037b1724d07720bf757bfb27b5e5fb7eb01b228eae5",
+    "stateSha256": "3e431058a41e7a1b5c1ec7ad3777087d9960246341e7cf9f0723dbfed1d516d0",
+    "taskSnapshotSha256": "577d238fcf7061f3825fe2f95ea4a948cd3195b3bc65f1fb0d1b6c49ecdc358c"
+  },
+  "contextSha256": "4de8b8742f72aaf88ca1f831c3c17b0417197e63de9fc1e0b75eac7cea6a6b88"
+}

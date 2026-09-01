@@ -1,0 +1,306 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0328:long-beach-container-terminal:d95cebc8",
+  "taskIndex": 328,
+  "companyName": "Long Beach Container Terminal",
+  "generatedAt": "2026-09-01T11:27:52.936Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0328-long-beach-container-terminal/attempt-1/locked-batch-v2-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 328,
+    "taskId": "ledger:0328:long-beach-container-terminal:d95cebc8",
+    "canonicalKey": "long-beach-container-terminal|united-states",
+    "companyName": "Long Beach Container Terminal",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 65,
+    "managers": [
+      "Macquarie Asset Management",
+      "MEAG"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "065-macquarie-asset-management:holding:014:long-beach-container-terminal",
+      "066-meag:holding:006:long-beach-container-terminal"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjk8n014jivhecvfuv0ei"
+    ],
+    "seedKeys": [
+      "long beach container terminal|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.macquarie.com/au/en/about/company/macquarie-asset-management/our-portfolio/long-beach-container-terminal.html",
+      "https://www.meag.com/en/news/meag-invests-in-container-terminal-in-long-beach.html"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_OWNER requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjk8n014jivhecvfuv0ei",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "long-beach-container-terminal|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjk8n014jivhecvfuv0ei",
+    "name": "Long Beach Container Terminal",
+    "aliases": [],
+    "sector": "TRANSPORTATION",
+    "subsector": "Marine container terminal",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Long Beach Container Terminal operates an automated marine container terminal at the Port of Long Beach. Its customers include shipping lines, trucking operators, rail providers, and beneficial cargo owners moving import and export freight through Southern California. The operating model is asset-heavy and concession based, relying on large-scale terminal infrastructure, automated equipment, and throughput-linked port operations. Company materials state that the current Pier E facility opened in 2016, and Macquarie describes it as an automated terminal that plays a significant role in the Los Angeles-Long Beach port complex. A Macquarie-managed fund acquired LBCT in 2019, and Macquarie continues to position the asset around operating performance and decarbonization initiatives including the terminal’s Net Zero 2030 plan.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2016,
+    "headquarters": "California",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk693023hivhe0r3tni23",
+        "managerName": "Macquarie Asset Management",
+        "organizationName": "Macquarie Asset Management",
+        "fundName": "Macquarie Infrastructure Partners IV",
+        "vehicleName": "Macquarie Infrastructure Partners IV",
+        "stake": null,
+        "investmentYear": 2019,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpm98904n5ivhegl4sh12a",
+        "date": "2016",
+        "event": "The current Pier E facility opened at the Port of Long Beach.",
+        "category": "EXPANSION",
+        "sortDate": "2016-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm98t04n6ivhefjtjtrvl",
+        "date": "2016",
+        "event": "Long Beach Container Terminal was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2016-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm99e04n7ivhek5jym1uh",
+        "date": "2019",
+        "event": "A Macquarie-managed fund acquired Long Beach Container Terminal.",
+        "category": "ACQUISITION",
+        "sortDate": "2019-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm99y04n8ivheo4b6pmw5",
+        "date": "2022",
+        "event": "LBCT launched its Net Zero 2030 Climate Action Plan.",
+        "category": "MANAGEMENT",
+        "sortDate": "2022-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm9ao04n9ivheih5sd9pb",
+        "date": "2025",
+        "event": "Macquarie highlighted LBCT as a case study in port decarbonization and terminal modernization.",
+        "category": "MANAGEMENT",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxps0r90by9ivhewjhv3sh0",
+        "label": "Lbct — Long Beach Container Terminal",
+        "url": "https://www.lbct.com/about-us/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Lbct company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxps0sh0bybivheaxzwltsz",
+        "label": "Lbct — Long Beach Container Terminal",
+        "url": "https://www.lbct.com/net-zero/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Lbct — Long Beach Container Terminal",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxps0te0bydivhe2sd7tn8p",
+        "label": "Investment date source — Macquarie Asset Management — Long Beach Container Terminal",
+        "url": "https://www.macquarie.com/au/en/about/company/macquarie-asset-management/our-portfolio/long-beach-container-terminal.html",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Macquarie Asset Management initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxps0uc0byfivhehfndhw6v",
+        "label": "Macquarie — Long Beach Container Terminal",
+        "url": "https://www.macquarie.com/au/en/insights/supporting-long-term-and-sustainable-outcomes-in-us-shipping.html",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Macquarie — Long Beach Container Terminal",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Long Beach Container Terminal",
+    "investmentFirm": "Macquarie Asset Management",
+    "sector": "Transportation",
+    "subsector": "Marine container terminal",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Macquarie Infrastructure Partners IV",
+    "description": "Long Beach Container Terminal operates an automated marine container terminal at the Port of Long Beach. Its customers include shipping lines, trucking operators, rail providers, and beneficial cargo owners moving import and export freight through Southern California. The operating model is asset-heavy and concession based, relying on large-scale terminal infrastructure, automated equipment, and throughput-linked port operations. Company materials state that the current Pier E facility opened in 2016, and Macquarie describes it as an automated terminal that plays a significant role in the Los Angeles-Long Beach port complex. A Macquarie-managed fund acquired LBCT in 2019, and Macquarie continues to position the asset around operating performance and decarbonization initiatives including the terminal’s Net Zero 2030 plan.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2016,
+    "investmentYear": 2019,
+    "headquarters": "California",
+    "milestones": [
+      {
+        "date": "2016",
+        "event": "The current Pier E facility opened at the Port of Long Beach.",
+        "category": "Expansion"
+      },
+      {
+        "date": "2016",
+        "event": "Long Beach Container Terminal was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "2019",
+        "event": "A Macquarie-managed fund acquired Long Beach Container Terminal.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "2022",
+        "event": "LBCT launched its Net Zero 2030 Climate Action Plan.",
+        "category": "Management"
+      },
+      {
+        "date": "2025",
+        "event": "Macquarie highlighted LBCT as a case study in port decarbonization and terminal modernization.",
+        "category": "Management"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Lbct — Long Beach Container Terminal",
+        "url": "https://www.lbct.com/about-us/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Lbct — Long Beach Container Terminal",
+        "url": "https://www.lbct.com/net-zero/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Investment date source — Macquarie Asset Management — Long Beach Container Terminal",
+        "url": "https://www.macquarie.com/au/en/about/company/macquarie-asset-management/our-portfolio/long-beach-container-terminal.html",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Macquarie — Long Beach Container Terminal",
+        "url": "https://www.macquarie.com/au/en/insights/supporting-long-term-and-sustainable-outcomes-in-us-shipping.html",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Macquarie Asset Management",
+        "ownershipVehicle": "Macquarie Infrastructure Partners IV",
+        "investmentYear": 2019,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj34500ehivheow3sq27p",
+        "fundName": "Macquarie Infrastructure Partners IV",
+        "managerId": "cmrxpibdo002uivheekmgpdbp",
+        "updatedAt": "2026-07-23T16:09:57.893Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpibdo002uivheekmgpdbp",
+        "name": "Macquarie Asset Management",
+        "updatedAt": "2026-07-23T16:09:21.948Z"
+      },
+      {
+        "id": "cmrxpibim002wivhet9rhv26m",
+        "name": "Manulife Investment Management",
+        "updatedAt": "2026-07-23T16:09:22.126Z"
+      },
+      {
+        "id": "cmrxpin85006kivhejb3tntsv",
+        "name": "MEAG",
+        "updatedAt": "2026-07-23T16:09:37.301Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0328:long-beach-container-terminal:d95cebc8",
+    "taskIndex": 328,
+    "canonicalKey": "long-beach-container-terminal|united-states",
+    "capturedAt": "2026-09-01T11:27:52.936Z",
+    "databaseRevision": "revision:7011cf18318f4788fa7fc7121e51b722028331fbc755119faedb4458ecbb76fe",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "27e8fc5b826e444fe633b144d2194cab2916337f532f72ad328e1f3382361017",
+    "productionSnapshotSha256": "f1f170495636ebac6c8837e5e47f4f81b4db68c60a46a6aad3e40dedf04bcb4e",
+    "targetCompanySnapshotSha256": "c026fdad654541870891c61a5f5bb5c33f23c4b90854f09c229983d90b4e6502",
+    "seedEntrySha256": "631602c6dff7a57051f2545f3eef0552f5c599e7bd618f4110296db2bf00ce77",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4019c9dbe2bdd102efe9d472072741b030d59585247ec294f7b672c518a40094",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "0a8ef0fb3aaa0788e1f50aca90f4ee885e90528a9cd289ab3c13e007ebc5da38",
+      "organizationsSha256": "0dc8a4d6ec5a1372bad1ad5a4ca7bfa73b7dc598b49eb65bc456bc7ed13012d2",
+      "citationsSha256": "b7951184e54084790a59100cf3e9b61301b5a3f73151594605d5976dc9229ab6",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "44e9458d641d284c3f605eeef0bf5e0b56f0a59a8fdbbb8c83309224f95d809e",
+    "stateSha256": "40ad1d4338d6dd7a5a1e8a2b7174c92d44c886605daa28f9aa93ee4d0c822d98",
+    "taskSnapshotSha256": "8e9e274183fed26b0412731c4bf5ed3a1b4f47d55e96952d68a26dd1041fcf8c"
+  },
+  "contextSha256": "a30ac6531ccf73f9724a141d58655fbf38ff626f937cb3b437416c0d66c787c5"
+}

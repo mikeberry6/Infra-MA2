@@ -26,7 +26,7 @@ describe("portfolio fund attribution ledger", () => {
 
   it("leaves reviewed owners unresolved when the current vehicle is not a disclosed fund", () => {
     const unresolved = ledger.rows.filter((row) => row.attribution === "UNRESOLVED");
-    expect(unresolved).toHaveLength(28);
+    expect(unresolved).toHaveLength(33);
     expect(unresolved).toContainEqual(expect.objectContaining({
       companyName: "38 Degrees North",
       investmentFirm: "Climate Adaptive Infrastructure",
