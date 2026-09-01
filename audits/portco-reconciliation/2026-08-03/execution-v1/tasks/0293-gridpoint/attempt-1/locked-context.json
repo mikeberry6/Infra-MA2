@@ -1,0 +1,275 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0293:gridpoint:326d6d5b",
+  "taskIndex": 293,
+  "companyName": "GridPoint",
+  "generatedAt": "2026-09-01T04:29:52.718Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0293-gridpoint/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 293,
+    "taskId": "ledger:0293:gridpoint:326d6d5b",
+    "canonicalKey": "gridpoint|united-states",
+    "companyName": "GridPoint",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 53,
+    "managers": [
+      "I Squared Capital"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "053-i-squared-capital:repo-only:005:gridpoint"
+    ],
+    "productionCompanyIds": [
+      "cmrxpji6e011bivhena1i4gjh"
+    ],
+    "seedKeys": [
+      "gridpoint|United States"
+    ],
+    "evidenceUrls": [
+      "https://isquaredcapital.com/txnm_fund/infratech/",
+      "https://www.gridpoint.com/news/gridpoint-secures-45-million-to-accelerate-commercial-building-electrification/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: I Squared Capital OUT_OF_SCOPE: InfraTech investment in software-driven energy management platform.",
+    "unresolvedQuestions": [
+      "Confirm whether the manager ownership, the company itself, or only this census scope is out of scope before proposing any change."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpji6e011bivhena1i4gjh",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "gridpoint|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpji6e011bivhena1i4gjh",
+    "name": "GridPoint",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Distributed energy management software and controls",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "GridPoint provides energy-management software, controls, and analytics for commercial buildings. Its customers are multi-site commercial and industrial building owners and operators that use the platform to reduce energy costs, improve resilience, and optimize distributed equipment. The business follows an asset-light technology model centered on software subscriptions, controls hardware, and recurring service revenues rather than ownership of regulated utility assets. Public materials state that the company was founded in 2003 and that its platform manages energy performance across more than 15,000 commercial buildings. I Squared's own history identifies GridPoint as the first investment of the Global InfraTech Fund, launched in 2021; later 2022 financing materials continued to identify I Squared among GridPoint's investors. The resulting ownership percentage is not publicly disclosed. The company sits at the intersection of energy efficiency, grid responsiveness, and commercial-building digitization.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2003,
+    "headquarters": "United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk42w0202ivhed3t4srh3",
+        "managerName": "I Squared Capital",
+        "organizationName": "I Squared Capital",
+        "fundName": null,
+        "vehicleName": "ISQ Global InfraTech Fund",
+        "stake": null,
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpm03j04cdivhepjiadjdg",
+        "date": "2003",
+        "event": "Public materials identify GridPoint’s founding year.",
+        "category": "FOUNDING",
+        "sortDate": "2003-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm04404ceivhevrx8y9mk",
+        "date": "2021",
+        "event": "I Squared's Global InfraTech Fund launched and made GridPoint its first investment.",
+        "category": "FINANCING",
+        "sortDate": "2021-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm04n04cfivhedny7v382",
+        "date": "Mar 1, 2022",
+        "event": "GridPoint announced a $75 million strategic capital raise and identified I Squared Capital among its investors.",
+        "category": "FINANCING",
+        "sortDate": "2022-03-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm05304cgivhetz55k02y",
+        "date": "2025",
+        "event": "GridPoint announced additional financing to support commercial-building electrification growth.",
+        "category": "FINANCING",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxprkd40b9qivhejtwf2wup",
+        "label": "Gridpoint — GridPoint",
+        "url": "https://www.gridpoint.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Gridpoint company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxprke20b9sivhe13vdcirt",
+        "label": "Investment date source — I Squared Capital — GridPoint",
+        "url": "https://isquaredcapital.com/who-we-are/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "I Squared Capital initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprkf00b9uivhe877e6j1n",
+        "label": "Financing date source — GridPoint — 2022 strategic capital raise",
+        "url": "https://www.gridpoint.com/news/gridpoint-closes-75m-strategic-investment-from-goldman-sachs-asset-management-and-shell-ventures/",
+        "sourceType": "ARTICLE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Gridpoint financing or public filing",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprkg30b9wivhesm36lbox",
+        "label": "Gridpoint — GridPoint",
+        "url": "https://www.gridpoint.com/news/gridpoint-secures-45-million-to-accelerate-commercial-building-electrification/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Gridpoint — GridPoint",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "GridPoint",
+    "investmentFirm": "I Squared Capital",
+    "sector": "Power & ET",
+    "subsector": "Distributed energy management software and controls",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "ISQ Global InfraTech Fund",
+    "description": "GridPoint provides energy-management software, controls, and analytics for commercial buildings. Its customers are multi-site commercial and industrial building owners and operators that use the platform to reduce energy costs, improve resilience, and optimize distributed equipment. The business follows an asset-light technology model centered on software subscriptions, controls hardware, and recurring service revenues rather than ownership of regulated utility assets. Public materials state that the company was founded in 2003 and that its platform manages energy performance across more than 15,000 commercial buildings. I Squared's own history identifies GridPoint as the first investment of the Global InfraTech Fund, launched in 2021; later 2022 financing materials continued to identify I Squared among GridPoint's investors. The resulting ownership percentage is not publicly disclosed. The company sits at the intersection of energy efficiency, grid responsiveness, and commercial-building digitization.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2003,
+    "investmentYear": 2021,
+    "headquarters": "United States",
+    "milestones": [
+      {
+        "date": "2003",
+        "event": "Public materials identify GridPoint’s founding year.",
+        "category": "Founding"
+      },
+      {
+        "date": "2021",
+        "event": "I Squared's Global InfraTech Fund launched and made GridPoint its first investment.",
+        "category": "Financing"
+      },
+      {
+        "date": "Mar 1, 2022",
+        "event": "GridPoint announced a $75 million strategic capital raise and identified I Squared Capital among its investors.",
+        "category": "Financing"
+      },
+      {
+        "date": "2025",
+        "event": "GridPoint announced additional financing to support commercial-building electrification growth.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Gridpoint — GridPoint",
+        "url": "https://www.gridpoint.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Investment date source — I Squared Capital — GridPoint",
+        "url": "https://isquaredcapital.com/who-we-are/",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Financing date source — GridPoint — 2022 strategic capital raise",
+        "url": "https://www.gridpoint.com/news/gridpoint-closes-75m-strategic-investment-from-goldman-sachs-asset-management-and-shell-ventures/",
+        "type": "ARTICLE",
+        "purpose": "FINANCING_FILINGS"
+      },
+      {
+        "label": "Gridpoint — GridPoint",
+        "url": "https://www.gridpoint.com/news/gridpoint-secures-45-million-to-accelerate-commercial-building-electrification/",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "I Squared Capital",
+        "ownershipVehicle": "ISQ Global InfraTech Fund",
+        "investmentYear": 2021,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi9mi002aivhewgvbh2ag",
+        "name": "I Squared Capital",
+        "updatedAt": "2026-07-23T16:09:19.674Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0293:gridpoint:326d6d5b",
+    "taskIndex": 293,
+    "canonicalKey": "gridpoint|united-states",
+    "capturedAt": "2026-09-01T04:29:52.718Z",
+    "databaseRevision": "revision:6b23a35a193980210ac74c572c1abc97c842344b07880ac564b330388b5bc4ce",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "1fcd8fc666191687c59ae76a7b85ba8852b6c03bfdf8a9dd47fdca048d92539e",
+    "productionSnapshotSha256": "5aad79438efca9fb52fa23799d5092c775d850cb86fc227ba310e9e62782109d",
+    "targetCompanySnapshotSha256": "67acd84abef355d840bbd778956b4f190863f64aa9459bfb2e60d6b8415a265e",
+    "seedEntrySha256": "674a7eda24e69cdc7fc1c8b274d83b3cb6a981734dc13eb54bbf71bff1d18f27",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "d5e697d52029db69d46da6c2db04c2fc3c451f4a7ff7309dd23487793ef84c42",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "3a6e897cb6bf74e545c692a28085dff8e712c5fcc0be550290c59c13cf02f9a8",
+      "citationsSha256": "4340b3909605b033c9bf1ed31de7198f4f352d8622ee8636a8ae6b56ca208af5",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "e905b5a2565566f0d8b275b2470c432593b1f94bcffac42ae04cc6d7de95b9ad",
+    "stateSha256": "a26736c091d0c941715d7f010fe2166d28e75915aee44fb61ac29bd67f329c21",
+    "taskSnapshotSha256": "efdb9819f48fa79b58a91bd2ed404840a421babf9caf6be6fba73b85690b11d7"
+  },
+  "contextSha256": "9339ee71280dbb13204c03b06ed77067d618678d2295a13b1014f69fe576de0f"
+}

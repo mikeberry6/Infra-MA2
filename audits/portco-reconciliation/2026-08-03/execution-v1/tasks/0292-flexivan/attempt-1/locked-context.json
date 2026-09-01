@@ -1,0 +1,236 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0292:flexivan:05de4d37",
+  "taskIndex": 292,
+  "companyName": "FlexiVan",
+  "generatedAt": "2026-09-01T04:28:59.316Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0292-flexivan/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 292,
+    "taskId": "ledger:0292:flexivan:05de4d37",
+    "canonicalKey": "flexivan|united-states",
+    "companyName": "FlexiVan",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 53,
+    "managers": [
+      "I Squared Capital"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "053-i-squared-capital:repo-only:001:flexivan"
+    ],
+    "productionCompanyIds": [
+      "cmrxpji5n011aivher22cetu6"
+    ],
+    "seedKeys": [
+      "flexivan|United States"
+    ],
+    "evidenceUrls": [
+      "https://tenleasing.com/en/about/",
+      "https://www.prnewswire.com/news-releases/i-squared-capital-combines-flexivan-and-american-intermodal-management-to-create-leading-intermodal-equipment-provider-300993577.html"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: I Squared Capital MATCHED_ELSEWHERE: Underlying asset platform consolidated into Transportation Equipment Network and not counted separately.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpji5n011aivher22cetu6",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "flexivan|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpji5n011aivher22cetu6",
+    "name": "FlexiVan",
+    "aliases": [],
+    "sector": "TRANSPORTATION",
+    "subsector": "Intermodal chassis leasing",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "FlexiVan leases and manages intermodal chassis used in North American container transport. Its customers include ocean carriers, ports, logistics providers, and drayage users that require marine chassis and fleet management services. The business follows an asset-heavy transportation model based on owned chassis fleets, maintenance networks, and recurring leasing revenues. Public materials indicate that the company was founded in 1955 and operates one of the largest chassis fleets in the United States, measured at more than 120,000 units in recent disclosures. I Squared took a controlling interest in FlexiVan in January 2020 by combining the company with American Intermodal Management, while Castle & Cooke retained a minority position; exact ownership percentages were not publicly disclosed. The transaction created a larger platform across intermodal equipment leasing and fleet management.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 1955,
+    "headquarters": "United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk42e0201ivheoxpgzo1i",
+        "managerName": "I Squared Capital",
+        "organizationName": "I Squared Capital",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2020,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpm02204cbivher7tozzwn",
+        "date": "1955",
+        "event": "Public company materials identify FlexiVan’s founding year.",
+        "category": "FOUNDING",
+        "sortDate": "1955-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm02i04ccivheyxyhl0gk",
+        "date": "Jan 27, 2020",
+        "event": "I Squared Capital announced the combination of FlexiVan and American Intermodal Management and its acquisition of a controlling interest.",
+        "category": "ACQUISITION",
+        "sortDate": "2020-01-27T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxprk9s0b9kivhe56jifcxk",
+        "label": "Flexivan — FlexiVan",
+        "url": "https://www.flexivan.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Flexivan company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxprkav0b9mivheratwd4y3",
+        "label": "Isquaredcapital — FlexiVan",
+        "url": "https://isquaredcapital.com/txnm_strategy/global-equity/page/4/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Isquaredcapital — FlexiVan",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprkc20b9oivhekgdhyry6",
+        "label": "Announcement date source — I Squared Capital — FlexiVan",
+        "url": "https://www.prnewswire.com/news-releases/i-squared-capital-combines-flexivan-and-american-intermodal-management-to-create-leading-intermodal-equipment-provider-300993577.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "I Squared Capital transaction announcement",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "FlexiVan",
+    "investmentFirm": "I Squared Capital",
+    "sector": "Transportation",
+    "subsector": "Intermodal chassis leasing",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "FlexiVan leases and manages intermodal chassis used in North American container transport. Its customers include ocean carriers, ports, logistics providers, and drayage users that require marine chassis and fleet management services. The business follows an asset-heavy transportation model based on owned chassis fleets, maintenance networks, and recurring leasing revenues. Public materials indicate that the company was founded in 1955 and operates one of the largest chassis fleets in the United States, measured at more than 120,000 units in recent disclosures. I Squared took a controlling interest in FlexiVan in January 2020 by combining the company with American Intermodal Management, while Castle & Cooke retained a minority position; exact ownership percentages were not publicly disclosed. The transaction created a larger platform across intermodal equipment leasing and fleet management.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 1955,
+    "investmentYear": 2020,
+    "headquarters": "United States",
+    "milestones": [
+      {
+        "date": "1955",
+        "event": "Public company materials identify FlexiVan’s founding year.",
+        "category": "Founding"
+      },
+      {
+        "date": "Jan 27, 2020",
+        "event": "I Squared Capital announced the combination of FlexiVan and American Intermodal Management and its acquisition of a controlling interest.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Flexivan — FlexiVan",
+        "url": "https://www.flexivan.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Isquaredcapital — FlexiVan",
+        "url": "https://isquaredcapital.com/txnm_strategy/global-equity/page/4/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Announcement date source — I Squared Capital — FlexiVan",
+        "url": "https://www.prnewswire.com/news-releases/i-squared-capital-combines-flexivan-and-american-intermodal-management-to-create-leading-intermodal-equipment-provider-300993577.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "I Squared Capital",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2020,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi9mi002aivhewgvbh2ag",
+        "name": "I Squared Capital",
+        "updatedAt": "2026-07-23T16:09:19.674Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0292:flexivan:05de4d37",
+    "taskIndex": 292,
+    "canonicalKey": "flexivan|united-states",
+    "capturedAt": "2026-09-01T04:28:59.316Z",
+    "databaseRevision": "revision:55171f7853af6393ee59fdc33d40e3c5e17ce174f20241e00e2c2e04f89b38b6",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "f5996ab92256eb3b0a448c010a64a77d245847db06f1cc83c00e1ccff7ba7948",
+    "productionSnapshotSha256": "60ae5e37af83ab867bde01e14516c700d584440e9942e5e85a74d3b65af3caf7",
+    "targetCompanySnapshotSha256": "f3be2c2669deb1efd82ea9a6614d08ea6a58b81ff1c01748ab87d7591a72692b",
+    "seedEntrySha256": "878b2cb184fb9911d4f012b2d979dd518bc4861d479b6284a6197f3b83c6ad3f",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "afe34314dfafdd14da773318e2b42786d331b5bb855ede8e48581884468a5637",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "3a6e897cb6bf74e545c692a28085dff8e712c5fcc0be550290c59c13cf02f9a8",
+      "citationsSha256": "bf5dd84b97b967808e6d1055964e3d8f54557bc5e60108827b96123e1fb36d5b",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "7c505449ed209d177603586963987796876c0e5acc9dbd23f0fa3064b6ca5e0d",
+    "stateSha256": "744536aeea7e78dd288c29c9656a38bd9599ead3360200379dfe541791879888",
+    "taskSnapshotSha256": "7264d0ec4732ed772c45cc2f2d8e36ed936c92f39916006c51ca45b3e831ee17"
+  },
+  "contextSha256": "4eaff848c0fbd04c14bf8c882d32d436b1054286a8d654a7c077a6d0355ce130"
+}

@@ -1,0 +1,264 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0296:palmetto:ba036cf0",
+  "taskIndex": 296,
+  "companyName": "Palmetto",
+  "generatedAt": "2026-09-01T04:39:02.237Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0296-palmetto/attempt-1/authorization-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 296,
+    "taskId": "ledger:0296:palmetto:ba036cf0",
+    "canonicalKey": "palmetto|united-states",
+    "companyName": "Palmetto",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 53,
+    "managers": [
+      "I Squared Capital"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "053-i-squared-capital:repo-only:006:palmetto"
+    ],
+    "productionCompanyIds": [
+      "cmrxpji8s011fivhedek2glrv"
+    ],
+    "seedKeys": [
+      "palmetto|United States"
+    ],
+    "evidenceUrls": [
+      "https://isquaredcapital.com/txnm_fund/infratech/",
+      "https://palmetto.com/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: I Squared Capital OUT_OF_SCOPE: InfraTech investment in residential solar platform rather than infrastructure equity.",
+    "unresolvedQuestions": [
+      "Confirm whether the manager ownership, the company itself, or only this census scope is out of scope before proposing any change."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpji8s011fivhedek2glrv",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "palmetto|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpji8s011fivhedek2glrv",
+    "name": "Palmetto",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Residential solar and home electrification platform",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Palmetto is a technology-enabled residential solar and home-electrification platform. Its customers are homeowners and channel partners that use the platform for rooftop solar, financing, and broader residential energy-upgrade solutions. The business follows a technology-enabled operating model built around software, customer acquisition, financing, and distributed energy service delivery rather than ownership of a single contracted generation portfolio. I Squared lists Palmetto within its InfraTech portfolio, and funding databases identify I Squared Capital as a participant in Palmetto's 2022 Series C round. The resulting ownership percentage was not publicly disclosed. The investment fits I Squared's strategy of backing technology-enabled businesses linked to electrification and distributed energy adoption.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk4540206ivhep9084dps",
+        "managerName": "I Squared Capital",
+        "organizationName": "I Squared Capital",
+        "fundName": null,
+        "vehicleName": "ISQ Global InfraTech Fund",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpm0gj04cqivhecbkulzqd",
+        "date": "Feb 24, 2022",
+        "event": "I Squared Capital was identified as an investor in Palmetto's Series C round to support expansion of the residential solar platform.",
+        "category": "FINANCING",
+        "sortDate": "2022-02-24T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm0h304crivhe6gmejo9l",
+        "date": "2024",
+        "event": "Palmetto secured additional large-scale capital formation to support home electrification and residential energy deployment.",
+        "category": "FINANCING",
+        "sortDate": "2024-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxprkuo0bakivhec4l3he3g",
+        "label": "Palmetto — Palmetto",
+        "url": "https://palmetto.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Palmetto company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxprkyi0bamivhevpiozl6x",
+        "label": "Portfolio evidence — I Squared Capital — Palmetto",
+        "url": "https://isquaredcapital.com/txnm_fund/infratech/",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Portfolio Evidence transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprkzm0baoivherlmq2dxj",
+        "label": "Palmetto — Palmetto",
+        "url": "https://www.palmetto.com/about-us",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Palmetto company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprl0s0baqivhebu729cbw",
+        "label": "Investment date source — I Squared Capital — Palmetto",
+        "url": "https://www.crunchbase.com/funding_round/palmetto-series-c--905d1165",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "I Squared Capital initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprl200basivhekk64ehc8",
+        "label": "Announcement date source — Palmetto Series C",
+        "url": "https://www.prnewswire.com/news-releases/palmetto-raises-375-million-to-accelerate-residential-clean-energy-independence-301490295.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Palmetto Series C transaction announcement",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Palmetto",
+    "investmentFirm": "I Squared Capital",
+    "sector": "Power & ET",
+    "subsector": "Residential solar and home electrification platform",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "ISQ Global InfraTech Fund",
+    "description": "Palmetto is a technology-enabled residential solar and home-electrification platform. Its customers are homeowners and channel partners that use the platform for rooftop solar, financing, and broader residential energy-upgrade solutions. The business follows a technology-enabled operating model built around software, customer acquisition, financing, and distributed energy service delivery rather than ownership of a single contracted generation portfolio. I Squared lists Palmetto within its InfraTech portfolio, and funding databases identify I Squared Capital as a participant in Palmetto's 2022 Series C round. The resulting ownership percentage was not publicly disclosed. The investment fits I Squared's strategy of backing technology-enabled businesses linked to electrification and distributed energy adoption.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2022,
+    "headquarters": "United States",
+    "milestones": [
+      {
+        "date": "Feb 24, 2022",
+        "event": "I Squared Capital was identified as an investor in Palmetto's Series C round to support expansion of the residential solar platform.",
+        "category": "Financing"
+      },
+      {
+        "date": "2024",
+        "event": "Palmetto secured additional large-scale capital formation to support home electrification and residential energy deployment.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Palmetto — Palmetto",
+        "url": "https://palmetto.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Portfolio evidence — I Squared Capital — Palmetto",
+        "url": "https://isquaredcapital.com/txnm_fund/infratech/",
+        "type": "ARTICLE",
+        "purpose": "MILESTONE_EVENT"
+      },
+      {
+        "label": "Palmetto — Palmetto",
+        "url": "https://www.palmetto.com/about-us",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Investment date source — I Squared Capital — Palmetto",
+        "url": "https://www.crunchbase.com/funding_round/palmetto-series-c--905d1165",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Announcement date source — Palmetto Series C",
+        "url": "https://www.prnewswire.com/news-releases/palmetto-raises-375-million-to-accelerate-residential-clean-energy-independence-301490295.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "I Squared Capital",
+        "ownershipVehicle": "ISQ Global InfraTech Fund",
+        "investmentYear": 2022,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi9mi002aivhewgvbh2ag",
+        "name": "I Squared Capital",
+        "updatedAt": "2026-07-23T16:09:19.674Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0296:palmetto:ba036cf0",
+    "taskIndex": 296,
+    "canonicalKey": "palmetto|united-states",
+    "capturedAt": "2026-09-01T04:39:02.237Z",
+    "databaseRevision": "revision:d869e2d969a0b579589086c52ce2eaefc96d56cb165c8b88cb82ed7ed82703da",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "fec60791a421212f6511e27d2d15f6856b1c61ffd27f53ae3f27240405222a66",
+    "productionSnapshotSha256": "559c38b22fa5a93890d1408e0142e9f546d250c03229ee0fe2be564b8c919ea8",
+    "targetCompanySnapshotSha256": "14e65dab95c7b1e48d6934a29773355e29c97263bcc35bc8302d924cdf6c6902",
+    "seedEntrySha256": "6762e46037e4d76835cd71fe96731f722795bb16c7015a1d6174298246c58db5",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "dbe9c36ed33dd0b4ef71df9be072b9328ab8bda33c49102afc1e05af2a0d4500",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "3a6e897cb6bf74e545c692a28085dff8e712c5fcc0be550290c59c13cf02f9a8",
+      "citationsSha256": "6db5f4786253b43fea1decd412d673f4ef146ec4db8e4e39c414d44f417c1823",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "85d1f43496e847b514def054447ba796ee0ac057e79ac8b295d834b251cbd208",
+    "stateSha256": "53a4153d827af77dac12569aac97083600ad409720f98647185e69a016fa0440",
+    "taskSnapshotSha256": "b245d36683f697315fa4925cc223e8a7e026a02f84e08adac96cd9726a07be26"
+  },
+  "contextSha256": "ceb84649af4449174022bbb4e8cc2ea154afeb1d18560f1f991130eb4822ffdb"
+}

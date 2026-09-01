@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0295:oriden:9e2a047b",
+  "taskIndex": 295,
+  "companyName": "Oriden",
+  "generatedAt": "2026-09-01T04:39:00.643Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0295-oriden/attempt-1/authorization-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 295,
+    "taskId": "ledger:0295:oriden:9e2a047b",
+    "canonicalKey": "oriden|united-states",
+    "companyName": "Oriden",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 53,
+    "managers": [
+      "I Squared Capital"
+    ],
+    "actionScopes": {
+      "company": [
+        "CREATE_COMPANY"
+      ],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "053-i-squared-capital:holding:016:oriden"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://isquaredcapital.com/news/oriden-acquisition-renewable-energy/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "No exact normalized production or seed match exists. Census evidence supports a new canonical company with 1 manager holding record(s).",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "oriden|united-states",
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj2mk00dvivhegna869hx",
+        "fundName": "ISQ Energy Transition Infrastructure Fund",
+        "managerId": "cmrxpi9mi002aivhewgvbh2ag",
+        "updatedAt": "2026-07-23T16:09:57.260Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi9mi002aivhewgvbh2ag",
+        "name": "I Squared Capital",
+        "updatedAt": "2026-07-23T16:09:19.674Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0295:oriden:9e2a047b",
+    "taskIndex": 295,
+    "canonicalKey": "oriden|united-states",
+    "capturedAt": "2026-09-01T04:39:00.643Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "a793922d2c488c82e97e678e405926733f07e92a776dc0e96ff242cc80c1a141",
+    "productionSnapshotSha256": "ff343605f80e714a737a7314d0563af3ac660ff3a2fbb5259324dc5f4842458d",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "80bb1b9fbd97369aa59b500bed343eef3e3b9c5867c7525a27b7990477dc78d0",
+      "organizationsSha256": "3a6e897cb6bf74e545c692a28085dff8e712c5fcc0be550290c59c13cf02f9a8",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "377aeed93c328324142aba5e3e1c07cd25c2c241ddb0caab21c852b74d0a03e9",
+    "stateSha256": "632835bf0203e7a43f02957bb82738204dccd7f45c3baad6dfd399feb6be5bfe",
+    "taskSnapshotSha256": "729ff9071e1e3645ffcd9814538ed2d446a3462b792f0e3b4da97803860c890c"
+  },
+  "contextSha256": "e2ed45fda637b43b70906f4da94fb8103b58352c436048e1a62d69201f59d5d5"
+}

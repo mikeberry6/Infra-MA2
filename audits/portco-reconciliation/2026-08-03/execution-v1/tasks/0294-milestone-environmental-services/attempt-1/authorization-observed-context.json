@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0294:milestone-environmental-services:a293d6bf",
+  "taskIndex": 294,
+  "companyName": "Milestone Environmental Services",
+  "generatedAt": "2026-09-01T04:38:59.108Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0294-milestone-environmental-services/attempt-1/authorization-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 294,
+    "taskId": "ledger:0294:milestone-environmental-services:a293d6bf",
+    "canonicalKey": "milestone-environmental-services|united-states",
+    "companyName": "Milestone Environmental Services",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 53,
+    "managers": [
+      "I Squared Capital"
+    ],
+    "actionScopes": {
+      "company": [
+        "CREATE_COMPANY"
+      ],
+      "ownership": [
+        "ADD_PENDING_TRANSACTION"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "053-i-squared-capital:holding:018:milestone-environmental-services"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://isquaredcapital.com/news/acquisition-agreement-milestone-environmental/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "No exact normalized production or seed match exists. Census evidence supports a new canonical company with 1 manager holding record(s).",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "milestone-environmental-services|united-states",
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi9mi002aivhewgvbh2ag",
+        "name": "I Squared Capital",
+        "updatedAt": "2026-07-23T16:09:19.674Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0294:milestone-environmental-services:a293d6bf",
+    "taskIndex": 294,
+    "canonicalKey": "milestone-environmental-services|united-states",
+    "capturedAt": "2026-09-01T04:38:59.108Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "13c7999a8a91aaaa4fd3ce5a6c69262e3b6f99b8360edc4f8c82dd79fe647b65",
+    "productionSnapshotSha256": "3e037bc90658af8512413b31ef2cb9ac8ae4940be294513f1ef21ba1be56ec7e",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "3a6e897cb6bf74e545c692a28085dff8e712c5fcc0be550290c59c13cf02f9a8",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "7b92eaf0c7a5073ab768a0b0b2e0f64544bf347373b9e6c0630d9ad2bda95487",
+    "stateSha256": "2c1845f14d52b032c91553c28cdc6d38305cd3b447aca583716075c9c358492c",
+    "taskSnapshotSha256": "03c8493e2125d7452ee3edec79f2f883fc0c286def9f6121d08c0f47a8e53bbf"
+  },
+  "contextSha256": "c93f78c8a28c4b638db2ea8e8e5e6ceb0647dc079019de1cced8b3c8538db27c"
+}
