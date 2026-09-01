@@ -1,0 +1,40 @@
+{
+  "generatedAt": "2026-09-01T19:50:00.000Z",
+  "actions": ["CORRECT_COMPANY", "ADD_OWNER"],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "reviewedSeedRetirementTaskIds": [],
+  "rationale": "Retain one canonical Teranet Inc. record, correct OMERS Infrastructure's current holding to 100% from 2008 through the Borealis acquisition structure, and add the verified Ontario, Teramira and public-income-fund ownership history. Teranet and OMERS continue to identify the business as an active OMERS holding; no later sale or signed ownership transfer was identified. Statutory registry licences, operating subsidiaries and temporary acquisition vehicles remain within the same company boundary.",
+  "evidence": [
+    {"url": "https://www.teranet.ca/about-teranet/", "purpose": "Current identity, company history, ownership and operating scale", "supports": ["Teranet remains OMERS-owned", "The registry platform dates to 1991"]},
+    {"url": "https://www.omersinfrastructure.com/investments/teranet", "purpose": "Current OMERS ownership and investment year", "supports": ["OMERS Infrastructure lists Teranet as a current investment", "OMERS records its investment in 2008"]},
+    {"url": "https://media.corporate-ir.net/media_files/irol/19/198264/Teranet%202007%20AIF.pdf", "purpose": "Historical ownership and public-fund structure", "supports": ["Ontario and Teramira ownership history", "2006 Teranet Income Fund structure"]},
+    {"url": "https://news.gov.mb.ca/news/index.html?item=30649", "purpose": "Manitoba registry agreement and operating boundary", "supports": ["The 30-year Manitoba registry agreement took effect in 2014", "Government retained ownership of registry data"]}
+  ],
+  "unresolvedQuestions": [],
+  "companyFieldUpdates": {
+    "aliases": ["Teranet", "Teranet Holdings LP", "Teranet Income Fund"],
+    "description": "Teranet Inc. is a Canadian statutory-registry and digital public-service infrastructure platform. It operates Ontario's electronic land-search and registration system and Manitoba's land titles and personal-property registries under long-term contractual arrangements, serving governments, legal professionals, lenders, utilities, businesses and citizens. Teranet reports more than 850 employees, over 10 million annual transactions and more than 200 million registry images. OMERS Infrastructure acquired control in 2008 through a Borealis acquisition vehicle and owns 100% through Teranet Holdings LP. Earlier ownership comprised the Government of Ontario and Teramira consortium, followed by Teranet Income Fund's public structure. Registry data remains government-owned and regulated; operating subsidiaries and acquired service businesses are not separate PortCos. No later sale, exit or signed pending ownership transfer was identified through August 19, 2026.",
+    "website": "https://www.teranet.ca/",
+    "headquarters": "Toronto, Ontario",
+    "lastVerifiedAt": "2026-08-19T00:00:00.000Z"
+  },
+  "ownershipPeriodUpdates": [
+    {"id": "cmrxpk8o00278ivhe38d04pxw", "set": {"managerName": "OMERS Infrastructure", "organizationName": "OMERS", "fundName": "OMERS Infrastructure", "vehicleName": "Borealis acquisition vehicle; Teranet Holdings LP", "stake": "100%", "investmentYear": 2008, "exitYear": null, "isActive": true, "transactionState": "CLOSED_ACTIVE"}}
+  ],
+  "ownershipPeriodAdditions": [
+    {"id": null, "managerName": "Government of Ontario", "organizationName": null, "fundName": null, "vehicleName": "Ontario SuperBuild Corporation / Province-held securities", "stake": "50%", "investmentYear": 1991, "exitYear": 2003, "isActive": false, "transactionState": "REALIZED"},
+    {"id": null, "managerName": "Teramira Holdings Inc.", "organizationName": null, "fundName": null, "vehicleName": "Teramira consortium holding companies", "stake": "50% from 1991; 100% from 2003", "investmentYear": 1991, "exitYear": 2006, "isActive": false, "transactionState": "REALIZED"},
+    {"id": null, "managerName": "Teranet Income Fund", "organizationName": null, "fundName": null, "vehicleName": "Teranet Operating Trust / Teranet Holdings Limited Partnership", "stake": "100% direct through THLP; ultimate public interests", "investmentYear": 2006, "exitYear": 2008, "isActive": false, "transactionState": "REALIZED"}
+  ],
+  "milestoneUpdates": [
+    {"id": "cmrxpmjgq04zuivheydhobr7o", "set": {"date": "1991", "event": "The Government of Ontario and the Teramira private-investor consortium formed Teranet as a 50/50 land-registry partnership.", "category": "FOUNDING", "sortDate": "1991-01-01T05:00:00.000Z", "evidenceUrls": ["https://www.teranet.ca/about-teranet/", "https://media.corporate-ir.net/media_files/irol/19/198264/Teranet%202007%20AIF.pdf"]}},
+    {"id": "cmrxpmjhb04zvivheag382njg", "set": {"date": "Nov 11, 2008", "event": "Borealis Infrastructure completed the acquisition of control of Teranet Income Fund for OMERS; OMERS subsequently acquired the remaining public interests.", "category": "ACQUISITION", "sortDate": "2008-11-11T05:00:00.000Z", "evidenceUrls": ["https://www.omersinfrastructure.com/investments/teranet"]}}
+  ],
+  "citationUpdates": [],
+  "citationAdditions": [
+    {"id": null, "label": "OMERS Infrastructure — Teranet", "url": "https://www.omersinfrastructure.com/investments/teranet", "sourceType": "WEBSITE", "purpose": "OWNERSHIP_INVESTMENT", "evidenceLabel": "Current OMERS ownership and 2008 investment year", "isPrimary": false},
+    {"id": null, "label": "Teranet — 2007 Annual Information Form", "url": "https://media.corporate-ir.net/media_files/irol/19/198264/Teranet%202007%20AIF.pdf", "sourceType": "PRESENTATION", "purpose": "OWNERSHIP_INVESTMENT", "evidenceLabel": "Ontario, Teramira and Teranet Income Fund ownership history", "isPrimary": false},
+    {"id": null, "label": "Manitoba — Teranet registry agreement", "url": "https://news.gov.mb.ca/news/index.html?item=30649", "sourceType": "PRESS_RELEASE", "purpose": "OPERATIONS_ASSETS", "evidenceLabel": "2014 Manitoba registry agreement and statutory operating boundary", "isPrimary": false}
+  ]
+}

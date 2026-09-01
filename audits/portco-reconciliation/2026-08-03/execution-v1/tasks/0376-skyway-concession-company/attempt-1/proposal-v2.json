@@ -1,0 +1,470 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0376:skyway-concession-company:7c24f455",
+  "taskIndex": 376,
+  "asOfDate": "2026-09-01",
+  "generatedAt": "2026-09-01T20:05:00.000Z",
+  "canonicalKey": "skyway-concession-company|united-states",
+  "companyName": "Skyway Concession Company",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER"
+  ],
+  "sourceHoldingIds": [],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Correct the canonical legal name to Skyway Concession Company LLC and represent the current 66.67% Atlas Arteria / 33.33% Ontario Teachers' ownership. CPP Investments and OMERS sold their one-third interests to Atlas at the December 1, 2022 close; Ontario Teachers' retained its one-third interest. Preserve the verified 2005-2016 Cintra/Macquarie and 2016-2022 pension ownership history. The 2026 sale process was paused and created no signed pending transfer.",
+  "evidence": [
+    {
+      "url": "https://www.atlasarteria.com/portfolio/chicago-skyway",
+      "purpose": "Current ownership, legal structure and concession profile",
+      "supports": [
+        "Atlas Arteria owns 66.67%",
+        "Ontario Teachers' owns 33.33%",
+        "The company operates the Chicago Skyway concession"
+      ]
+    },
+    {
+      "url": "https://www.otpp.com/en-ca/about-us/news-and-insights/2015/canada-pension-plan-investment-board-omers-and-ontario-teachers-pension-plan-to-acquire-chicago-skyway-toll-road/",
+      "purpose": "2015 signing and equal pension stakes",
+      "supports": [
+        "CPP, OMERS and Ontario Teachers' agreed to acquire equal one-third stakes"
+      ]
+    },
+    {
+      "url": "https://www.cppinvestments.com/newsroom/cpp-investments-omers-infrastructure-announce-sale-of-their-stakes-in-skyway-concession-company-llc-to-atlas-arteria/",
+      "purpose": "2022 seller identities and stake transfer",
+      "supports": [
+        "CPP and OMERS each sold 33.33%",
+        "Atlas acquired their combined 66.67%"
+      ]
+    },
+    {
+      "url": "https://www.fhwa.dot.gov/ipd/project_profiles/il_chicago_skyway.aspx",
+      "purpose": "Concession award, term and operating scope",
+      "supports": [
+        "The 99-year concession began in 2005",
+        "The road is a 7.8-mile toll facility"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "b80ac515ead02ac0b53d07282589b88fec9c551e863ea7bfbb6df25b14f41536",
+  "currentCompanySnapshotSha256": "e3713a45fc7c472ddb3ea0a318e473353a9b577343e32c343e7c5c4cdf21e5b6",
+  "executionLock": {
+    "taskSnapshotSha256": "3261d04a492847502d84e4d00ed73cb9294d2647582733eee4f59be3aeeba5c6",
+    "taskStateSha256": "e39a0a885bda8e943f67f1c7a2878c96df51a854c3712fbf5caef6c0e8f2c750",
+    "taskDependencySha256": "395fdde10df71585452a7c9cfc941aeca210e6657e4e4b70c3b42192d54b6ee3",
+    "seedEntrySha256": "571b08fd33cdb931014ba1fa040289296cb8876b9518274ed531c5dfb5288046",
+    "dependencies": {
+      "ownershipPeriodsSha256": "dcec6df539f55820802baec9a545b73508288cd990fd0d5f2312d53e34ecc50b",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "fc60d74838fd3d1cb42821d71d86c12cd43d462c31d118c10a5aef8b393c1776",
+      "citationsSha256": "5014470a9e1f0efb756418a30e4d694692150d73648b0c21d5e9aa65492df1d8",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi6gh001aivhefuh9d1bo",
+        "name": "CPP Investments",
+        "updatedAt": "2026-07-23T16:09:15.569Z"
+      },
+      {
+        "id": "cmrxpih16004mivhea7i805re",
+        "name": "OTPP",
+        "updatedAt": "2026-07-23T16:09:29.274Z"
+      },
+      {
+        "id": "cmrxpij0a0058ivhemf1et807",
+        "name": "OMERS",
+        "updatedAt": "2026-07-23T16:09:31.834Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjmfz0183ivhe4rnk8kic",
+    "name": "Skyway Concession Company",
+    "aliases": [],
+    "sector": "TRANSPORTATION",
+    "subsector": "Toll road concession",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Skyway Concession Company operates the Chicago Skyway toll bridge and roadway linking Chicago with the Indiana Toll Road. The asset serves passenger vehicles, commercial traffic, and regional freight flows, with revenue derived from toll collections under a long-term concession structure. Its business model is asset-heavy and concession-based, with operations and maintenance responsibilities concentrated on a 7.8-mile corridor in Illinois. Public infrastructure profiles show that SCC assumed operations in 2005 under a 99-year lease, and the asset was acquired by a Canadian pension-fund consortium in 2016. Ontario Teachers' remains an investor in the asset, although detailed current fund-level ownership allocations for the retained interest are not publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2005,
+    "headquarters": "Illinois; Indiana",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk8y4027nivhef1shg15y",
+        "managerName": "OTPP",
+        "organizationName": "OTPP",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2016,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmkc6050wivhepns0cigt",
+        "date": "2005",
+        "event": "Skyway Concession Company was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2005-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmkcp050xivhessaok0mi",
+        "date": "Jan 2016",
+        "event": "The consortium including Ontario Teachers' (OTPP) completed the acquisition of Skyway Concession Company.",
+        "category": "ACQUISITION",
+        "sortDate": "2016-01-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmkd9050yivhe6k3lcf8b",
+        "date": "Feb 2016",
+        "event": "Ontario Teachers’ (OTPP) and other Canadian pension investors acquired the Chicago Skyway concession.",
+        "category": "ACQUISITION",
+        "sortDate": "2016-02-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmkds050zivhetcpfipqv",
+        "date": "2022",
+        "event": "Atlas Arteria acquired a 66.67% stake while the Canadian consortium retained the balance. (Ownership change)",
+        "category": "DIVESTITURE",
+        "sortDate": "2022-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmked0510ivhehgty4cmp",
+        "date": "Apr 2022",
+        "event": "OMERS announced the sale of its stake in the concession.",
+        "category": "DIVESTITURE",
+        "sortDate": "2022-04-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsjk30cqrivhec14xkjqf",
+        "label": "Cppinvestments — Skyway Concession Company",
+        "url": "https://www.cppinvestments.com/newsroom/cppib-consortium/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Cppinvestments — Skyway Concession Company",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpsjl30cqtivhebg6080e4",
+        "label": "Announcement date source — OTPP — Skyway Concession Company",
+        "url": "https://www.omersinfrastructure.com/news/canada-pension-plan-investment-board-omers-and-ontario-teachers-pension-plan",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "OTPP transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsjm60cqvivhewxwtoww1",
+        "label": "Omers — Skyway Concession Company",
+        "url": "https://www.omers.com/news/omers-infrastructure-announces-sale-of-its-stake-in-skyway-concession",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Omers transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsjmq0cqwivheyl5dhogm",
+        "label": "Otpp — Pacifico Sur",
+        "url": "https://www.otpp.com/en-ca/investments/our-advantage/our-performance-and-track-record/major-investments/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Otpp company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsjqn0cqyivhe0dyi3ypk",
+        "label": "Chicagoskyway — Skyway Concession Company",
+        "url": "https://www.chicagoskyway.org/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Chicagoskyway company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsjrp0cr0ivheubafsiu7",
+        "label": "Close date source — OTPP — Skyway Concession Company",
+        "url": "https://www.fhwa.dot.gov/ipd/project_profiles/il_chicago_skyway.aspx",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "OTPP closing confirmation",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "e3713a45fc7c472ddb3ea0a318e473353a9b577343e32c343e7c5c4cdf21e5b6",
+  "afterImage": {
+    "id": "cmrxpjmfz0183ivhe4rnk8kic",
+    "name": "Skyway Concession Company LLC",
+    "aliases": [
+      "Skyway Concession Company",
+      "Chicago Skyway",
+      "Chicago Skyway Toll Bridge System"
+    ],
+    "sector": "TRANSPORTATION",
+    "subsector": "Toll road concession",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Skyway Concession Company LLC is the concessionaire and operator of the Chicago Skyway, a 7.8-mile, six-lane toll road linking Chicago's Dan Ryan Expressway with the Indiana Toll Road. The company operates, maintains and tolls the facility under a 99-year concession that began on January 26, 2005 and runs to January 2104. Atlas Arteria owns 66.67% after acquiring the former CPP Investments and OMERS interests on December 1, 2022; Ontario Teachers' Pension Plan retains 33.33% from the 2016 pension-consortium acquisition. The City of Chicago and the roadway are not separate PortCos, and upstream holding entities are ownership vehicles. No signed pending sale or later ownership change was identified through August 19, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.chicagoskyway.org/",
+    "yearFounded": 2005,
+    "headquarters": "Chicago, Illinois",
+    "lastVerifiedAt": "2026-08-19T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk8y4027nivhef1shg15y",
+        "managerName": "OTPP",
+        "organizationName": "OTPP",
+        "fundName": null,
+        "vehicleName": "Calumet Concession Partners / CCPI ownership chain",
+        "stake": "33.33%",
+        "investmentYear": 2016,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Atlas Arteria",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Atlas Arteria Holdings Australia Pty Ltd / CCPI",
+        "stake": "66.67%",
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "CPP Investments",
+        "organizationName": "CPP Investments",
+        "fundName": null,
+        "vehicleName": "Calumet Concession Partners / CCPI",
+        "stake": "33.33%",
+        "investmentYear": 2016,
+        "exitYear": 2022,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      },
+      {
+        "id": null,
+        "managerName": "OMERS",
+        "organizationName": "OMERS",
+        "fundName": null,
+        "vehicleName": "Calumet Concession Partners / CCPI",
+        "stake": "33.33%",
+        "investmentYear": 2016,
+        "exitYear": 2022,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      },
+      {
+        "id": null,
+        "managerName": "Cintra",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Cintra Skyway LLC / Skyway Concession Company Holdings",
+        "stake": "55%",
+        "investmentYear": 2005,
+        "exitYear": 2016,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      },
+      {
+        "id": null,
+        "managerName": "Macquarie Group",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Macquarie Infrastructure Group / Macquarie Atlas Roads",
+        "stake": "45% initially; 22.5% after 2006",
+        "investmentYear": 2005,
+        "exitYear": 2016,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      },
+      {
+        "id": null,
+        "managerName": "Macquarie Infrastructure Partners",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "MIP A, Canada and parallel vehicles",
+        "stake": "22.5%",
+        "investmentYear": 2006,
+        "exitYear": 2016,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmkc6050wivhepns0cigt",
+        "date": "Jan 26, 2005",
+        "event": "Skyway Concession Company assumed operations under the 99-year Chicago Skyway concession awarded for US$1.83 billion.",
+        "category": "FOUNDING",
+        "sortDate": "2005-01-26T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.fhwa.dot.gov/ipd/project_profiles/il_chicago_skyway.aspx"
+        ]
+      },
+      {
+        "id": "cmrxpmkcp050xivhessaok0mi",
+        "date": "Feb 25, 2016",
+        "event": "CPP Investments, OMERS and Ontario Teachers' completed their US$2.8 billion acquisition, each taking 33.33%.",
+        "category": "ACQUISITION",
+        "sortDate": "2016-02-25T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.otpp.com/en-ca/about-us/news-and-insights/2015/canada-pension-plan-investment-board-omers-and-ontario-teachers-pension-plan-to-acquire-chicago-skyway-toll-road/"
+        ]
+      },
+      {
+        "id": "cmrxpmkd9050yivhe6k3lcf8b",
+        "date": "Dec 1, 2022",
+        "event": "Atlas Arteria completed its purchase of CPP Investments' and OMERS' combined 66.67% interest; Ontario Teachers' retained 33.33%.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-12-01T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.atlasarteria.com/portfolio/chicago-skyway",
+          "https://www.cppinvestments.com/newsroom/cpp-investments-omers-infrastructure-announce-sale-of-their-stakes-in-skyway-concession-company-llc-to-atlas-arteria/"
+        ]
+      },
+      {
+        "id": "cmrxpmkds050zivhetcpfipqv",
+        "date": "2022",
+        "event": "Atlas Arteria acquired a 66.67% stake while the Canadian consortium retained the balance. (Ownership change)",
+        "category": "DIVESTITURE",
+        "sortDate": "2022-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmked0510ivhehgty4cmp",
+        "date": "Apr 2022",
+        "event": "OMERS announced the sale of its stake in the concession.",
+        "category": "DIVESTITURE",
+        "sortDate": "2022-04-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsjk30cqrivhec14xkjqf",
+        "label": "Cppinvestments — Skyway Concession Company",
+        "url": "https://www.cppinvestments.com/newsroom/cppib-consortium/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Cppinvestments — Skyway Concession Company",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsjl30cqtivhebg6080e4",
+        "label": "Announcement date source — OTPP — Skyway Concession Company",
+        "url": "https://www.omersinfrastructure.com/news/canada-pension-plan-investment-board-omers-and-ontario-teachers-pension-plan",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "OTPP transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsjm60cqvivhewxwtoww1",
+        "label": "Omers — Skyway Concession Company",
+        "url": "https://www.omers.com/news/omers-infrastructure-announces-sale-of-its-stake-in-skyway-concession",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Omers transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsjmq0cqwivheyl5dhogm",
+        "label": "Otpp — Pacifico Sur",
+        "url": "https://www.otpp.com/en-ca/investments/our-advantage/our-performance-and-track-record/major-investments/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Otpp company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsjqn0cqyivhe0dyi3ypk",
+        "label": "Chicagoskyway — Skyway Concession Company",
+        "url": "https://www.chicagoskyway.org/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Chicagoskyway company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsjrp0cr0ivheubafsiu7",
+        "label": "Close date source — OTPP — Skyway Concession Company",
+        "url": "https://www.fhwa.dot.gov/ipd/project_profiles/il_chicago_skyway.aspx",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "OTPP closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Atlas Arteria — Chicago Skyway",
+        "url": "https://www.atlasarteria.com/portfolio/chicago-skyway",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current 66.67% Atlas and 33.33% Ontario Teachers' ownership",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "Ontario Teachers' — Chicago Skyway acquisition",
+        "url": "https://www.otpp.com/en-ca/about-us/news-and-insights/2015/canada-pension-plan-investment-board-omers-and-ontario-teachers-pension-plan-to-acquire-chicago-skyway-toll-road/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "2015 signing and equal pension-consortium stakes",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "CPP Investments and OMERS — Chicago Skyway sale",
+        "url": "https://www.cppinvestments.com/newsroom/cpp-investments-omers-infrastructure-announce-sale-of-their-stakes-in-skyway-concession-company-llc-to-atlas-arteria/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "2022 sale of the combined 66.67% interest to Atlas Arteria",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "db6e78570b5f3d99d5ae39b532caa867cefa37a6789765f1b47d7402b038580e",
+  "proposalSha256": "25d6ba10a3a755530b419fb68f2ff7bc3044e063b0ae1369aae2fd121b27bcd8"
+}

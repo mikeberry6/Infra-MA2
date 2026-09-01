@@ -70,12 +70,18 @@ async function main(): Promise<void> {
   const result = object(JSON.parse(match[1]), "Accepted research result");
   const verification = object(JSON.parse(verificationBytes.toString("utf8")), "Source verification");
 
-  for (const field of ["taskId", "taskIndex", "companyName"] as const) {
-    if ((typeof source[field] !== "string" && field !== "taskIndex")
-      || (field === "taskIndex" && typeof source[field] !== "number")) {
-      throw new Error(`Source research decision ${field} is malformed`);
-    }
+  if (typeof source.taskId !== "string" || typeof source.companyName !== "string") {
+    throw new Error("Source research decision identity is malformed");
   }
+  const sourceTaskIndex = typeof source.taskIndex === "number"
+    ? source.taskIndex
+    : typeof source.sequence === "number" ? source.sequence : null;
+  if (sourceTaskIndex === null) {
+    throw new Error("Source research decision taskIndex/sequence is malformed");
+  }
+  const sourceResponseSha256 = typeof source.responseSha256 === "string"
+    ? source.responseSha256
+    : typeof source.acceptedResponseSha256 === "string" ? source.acceptedResponseSha256 : null;
   if (typeof result.decision !== "string" || typeof result.rationale !== "string"
     || !Array.isArray(result.evidence)) {
     throw new Error("Accepted research result lacks decision, rationale or evidence");
@@ -96,7 +102,7 @@ async function main(): Promise<void> {
     const taskId = expectedTaskId ?? source.taskId;
     const entry = proposalIndex.entries.find((candidate) => {
       const row = object(candidate, "Proposal queue entry");
-      return row.taskId === taskId && row.taskIndex === source.taskIndex;
+      return row.taskId === taskId && row.taskIndex === sourceTaskIndex;
     });
     if (!entry) throw new Error("Proposal index does not contain the research task");
     const queueEntry = object(entry, "Proposal queue entry");
@@ -137,7 +143,8 @@ async function main(): Promise<void> {
   const confidenceMatches = acceptedConfidence !== null && stagedConfidence !== null
     && (acceptedConfidence === stagedConfidence
       || stagedConfidence.startsWith(`${acceptedConfidence}_`)
-      || stagedConfidence.startsWith(`${acceptedConfidence};`));
+      || stagedConfidence.startsWith(`${acceptedConfidence};`)
+      || stagedConfidence.startsWith(`${acceptedConfidence}-`));
   if (!confidenceMatches) {
     throw new Error("Accepted research confidence disagrees with the staged summary");
   }
@@ -185,7 +192,7 @@ async function main(): Promise<void> {
       const taskRecord = object(task, "Identity manifest task");
       const stagedCanonicalKey = object(source.repoReconciliation, "Source repo reconciliation").canonicalKey;
       if (
-        taskRecord.sequence !== source.taskIndex
+        taskRecord.sequence !== sourceTaskIndex
         || taskRecord.subject !== source.companyName
         || typeof stagedCanonicalKey !== "string"
         || taskRecord.canonicalKey !== stagedCanonicalKey
@@ -212,7 +219,7 @@ async function main(): Promise<void> {
     schemaVersion: 1,
     artifactType: "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
     taskId: expectedTaskId ?? source.taskId,
-    taskIndex: source.taskIndex,
+    taskIndex: sourceTaskIndex,
     companyName: source.companyName,
     asOfDate: source.asOfDate,
     decision: normalizedDecision,
@@ -224,7 +231,7 @@ async function main(): Promise<void> {
       sourceDecision: { path: repositoryPath(sourcePath), sha256: sha256(sourceBytes) },
       acceptedResponse: { path: repositoryPath(responsePath), sha256: sha256(responseBytes) },
       sourceVerification: { path: repositoryPath(verificationPath), sha256: sha256(verificationBytes) },
-      acceptedResponseSha256: source.responseSha256,
+      acceptedResponseSha256: sourceResponseSha256,
       sourceVerificationArtifactType: verification.artifactType ?? null,
       ...(acceptedConfidenceValue === stagedConfidence ? {} : {
         confidenceNormalization: {

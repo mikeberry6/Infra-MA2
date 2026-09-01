@@ -1,0 +1,285 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0373:teranet-inc:fc015f26",
+  "taskIndex": 373,
+  "companyName": "Teranet Inc.",
+  "generatedAt": "2026-09-01T19:51:09.081Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0373-teranet-inc/attempt-1/observed-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 373,
+    "taskId": "ledger:0373:teranet-inc:fc015f26",
+    "canonicalKey": "teranet-inc|canada",
+    "companyName": "Teranet Inc.",
+    "country": "Canada",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 75,
+    "managers": [
+      "OMERS Infrastructure"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "075-omers-infrastructure:holding:006:teranet-inc"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjmak017sivhejvwtnhn2"
+    ],
+    "seedKeys": [
+      "teranet inc.|Canada"
+    ],
+    "evidenceUrls": [
+      "https://www.omersinfrastructure.com/investments/teranet"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_OWNER requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjmak017sivhejvwtnhn2",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "teranet-inc|canada",
+  "targetCompanyImage": {
+    "id": "cmrxpjmak017sivhejvwtnhn2",
+    "name": "Teranet Inc.",
+    "aliases": [],
+    "sector": "SOCIAL_INFRA",
+    "subsector": "Land registry and statutory services concession",
+    "region": "NORTH_AMERICA",
+    "country": "Canada",
+    "countryTags": [
+      "Canada"
+    ],
+    "description": "Teranet Inc. provides electronic property search and registration services and related statutory registry technology solutions. Its customers or end markets include legal professionals, lenders, governments, and real estate market participants. The operating model is a concession and mission-critical service model based on long-term contractual rights and digital platform operations. Operations are concentrated in Ontario and Manitoba. Public materials indicate exclusive operation of Ontario’s electronic land registration system and Manitoba registry services according to company materials. Current ownership is wholly held by OMERS, with Teranet publicly stating that the business is overseen by OMERS Infrastructure.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 1991,
+    "headquarters": "Ontario and Manitoba",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk8o00278ivhe38d04pxw",
+        "managerName": "OMERS Infrastructure",
+        "organizationName": "OMERS",
+        "fundName": "OMERS Infrastructure",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2008,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmjgq04zuivheydhobr7o",
+        "date": "1991",
+        "event": "Teranet was founded.",
+        "category": "FOUNDING",
+        "sortDate": "1991-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmjhb04zvivheag382njg",
+        "date": "Oct 2008",
+        "event": "Borealis Infrastructure (OMERS) completed its acquisition of the outstanding units of Teranet Income Fund.",
+        "category": "ACQUISITION",
+        "sortDate": "2008-10-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmjhu04zwivhemd1nqscw",
+        "date": "2025",
+        "event": "Teranet announced a return to conveyancing in Ontario through a Goveyance partnership.",
+        "category": "EXPANSION",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmjid04zxivhe38ve1jfc",
+        "date": "2025",
+        "event": "Teranet disclosed an investment in Goveyance.",
+        "category": "FINANCING",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsi7c0copivheb5knoik1",
+        "label": "Teranet — Teranet Inc.",
+        "url": "https://www.teranet.ca/about-teranet/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Teranet company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpsi8h0corivheloaio8c4",
+        "label": "Teranet — Teranet Inc.",
+        "url": "https://www.teranet.ca/press-releases/teranet-returns-to-conveyancing-in-ontario-with-goveyance-partnership/",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Teranet transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsi9k0cotivhef1nq58uc",
+        "label": "Teranet — Teranet Inc.",
+        "url": "https://www.teranet.ca/insights/teranet-invests-in-goveyance/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Teranet — Teranet Inc.",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsiaj0covivhe8vk7nmyy",
+        "label": "Investment history source — OMERS — Teranet Inc.",
+        "url": "https://www.omers.com/history",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Investment history source — OMERS — Teranet Inc.",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Teranet Inc.",
+    "investmentFirm": "OMERS",
+    "sector": "Social Infra",
+    "subsector": "Land registry and statutory services concession",
+    "region": "North America",
+    "country": "Canada",
+    "ownershipVehicle": "n.a.",
+    "description": "Teranet Inc. provides electronic property search and registration services and related statutory registry technology solutions. Its customers or end markets include legal professionals, lenders, governments, and real estate market participants. The operating model is a concession and mission-critical service model based on long-term contractual rights and digital platform operations. Operations are concentrated in Ontario and Manitoba. Public materials indicate exclusive operation of Ontario’s electronic land registration system and Manitoba registry services according to company materials. Current ownership is wholly held by OMERS, with Teranet publicly stating that the business is overseen by OMERS Infrastructure.",
+    "status": "Active",
+    "countryTags": [
+      "Canada"
+    ],
+    "yearFounded": 1991,
+    "investmentYear": 2008,
+    "headquarters": "Ontario and Manitoba",
+    "milestones": [
+      {
+        "date": "1991",
+        "event": "Teranet was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "Oct 2008",
+        "event": "Borealis Infrastructure (OMERS) completed its acquisition of the outstanding units of Teranet Income Fund.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "2025",
+        "event": "Teranet announced a return to conveyancing in Ontario through a Goveyance partnership.",
+        "category": "Expansion"
+      },
+      {
+        "date": "2025",
+        "event": "Teranet disclosed an investment in Goveyance.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Teranet — Teranet Inc.",
+        "url": "https://www.teranet.ca/about-teranet/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Teranet — Teranet Inc.",
+        "url": "https://www.teranet.ca/press-releases/teranet-returns-to-conveyancing-in-ontario-with-goveyance-partnership/",
+        "type": "ARTICLE",
+        "purpose": "MILESTONE_EVENT"
+      },
+      {
+        "label": "Teranet — Teranet Inc.",
+        "url": "https://www.teranet.ca/insights/teranet-invests-in-goveyance/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Investment history source — OMERS — Teranet Inc.",
+        "url": "https://www.omers.com/history",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "OMERS",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2008,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj3fm00f1ivhehhc270qc",
+        "fundName": "OMERS Infrastructure",
+        "managerId": "cmrxpic6e0033ivheho9lmsp6",
+        "updatedAt": "2026-07-23T16:09:58.306Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpic6e0033ivheho9lmsp6",
+        "name": "OMERS Infrastructure",
+        "updatedAt": "2026-07-23T16:09:22.983Z"
+      },
+      {
+        "id": "cmrxpij0a0058ivhemf1et807",
+        "name": "OMERS",
+        "updatedAt": "2026-07-23T16:09:31.834Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0373:teranet-inc:fc015f26",
+    "taskIndex": 373,
+    "canonicalKey": "teranet-inc|canada",
+    "capturedAt": "2026-09-01T19:51:09.081Z",
+    "databaseRevision": "revision:ff80698f0c99a4f2d6f6a56addca201b14dc0c853a9f2e0ad64f4aaaac49d168",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "f89245b572e2a5b2048a83613ae1c754508e5560c81533bad216a782ccaddc4e",
+    "productionSnapshotSha256": "4c38006988ea2c53e483ded9efe272dc8751ddecacff459aa6b33f58901e1663",
+    "targetCompanySnapshotSha256": "749fa50be34c3b4d17e0e2dba388b3bb2e769ca2678c067576056ac26a543053",
+    "seedEntrySha256": "8d0e2e32e5c3598516c305fa6c32c83b921a7a34e939f45a3e5dc7bc9513f1b0",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4a4de70c86987b8b8b789ae2f6790d0652311d5dcab85b42ec738e0923a3a8e3",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "fac4fa7335c127e73abe52490df9652aca3bb882b516d47a38d8dfc92ad1e3f0",
+      "organizationsSha256": "51daa9d25d117624d548b1248c5c75769c9b8f45a78c529b3d24f913fecc0c93",
+      "citationsSha256": "510442abf45f5bc6b1573c7aefed51f1090565af87a4922195bbce7be6b0d4c2",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "e6093a97947f2247bb0ff5192eab9146e23c3d67b63df9361a2982bc1f625187",
+    "stateSha256": "61249b0043564f39798257aa89c9484b15cb3a19a90e90308866551598b3dfbc",
+    "taskSnapshotSha256": "2e08a03ef084d3e91c7e41a6425601e0ac7f09882b782901de4bfb9e341e8953"
+  },
+  "contextSha256": "7ddb38d6cebb6523f10708a8537528c294c93a497937afff5613899fe57c2d94"
+}

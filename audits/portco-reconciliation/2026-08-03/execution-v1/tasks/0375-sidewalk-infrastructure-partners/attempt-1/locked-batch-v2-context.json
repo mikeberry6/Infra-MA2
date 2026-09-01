@@ -1,0 +1,234 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0375:sidewalk-infrastructure-partners:80a3f3bf",
+  "taskIndex": 375,
+  "companyName": "Sidewalk Infrastructure Partners",
+  "generatedAt": "2026-09-01T19:45:33.575Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0375-sidewalk-infrastructure-partners/attempt-1/locked-batch-v2-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 375,
+    "taskId": "ledger:0375:sidewalk-infrastructure-partners:80a3f3bf",
+    "canonicalKey": "sidewalk-infrastructure-partners|united-states",
+    "companyName": "Sidewalk Infrastructure Partners",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 76,
+    "managers": [
+      "Ontario Teachers Pension Plan"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "076-ontario-teachers-pension-plan:holding:012:sidewalk-infrastructure-partners"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjmfj0182ivhe6hw93qwj"
+    ],
+    "seedKeys": [
+      "sidewalk infrastructure partners|United States"
+    ],
+    "evidenceUrls": [
+      "https://sidewalkinfra.com/about",
+      "https://www.otpp.com/en-ca/investments/our-advantage/our-performance-and-track-record/major-investments/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted census NEEDS_REVIEW for 076-ontario-teachers-pension-plan:holding:012:sidewalk-infrastructure-partners: Ownership is confirmed but classification as direct infrastructure versus development platform remains borderline and requires further validation. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Accepted census NEEDS_REVIEW for 076-ontario-teachers-pension-plan:holding:012:sidewalk-infrastructure-partners: Ownership is confirmed but classification as direct infrastructure versus development platform remains borderline and requires further validation."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjmfj0182ivhe6hw93qwj",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "sidewalk-infrastructure-partners|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjmfj0182ivhe6hw93qwj",
+    "name": "Sidewalk Infrastructure Partners",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Infrastructure development platform",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Sidewalk Infrastructure Partners develops next-generation infrastructure projects and enabling technologies in partnership with public and private counterparties. Its addressable end markets include transportation, energy, logistics, broadband, and other infrastructure systems where new delivery models are being tested. The operating model is platform-based and development-led, with the business originating, structuring, and scaling projects rather than operating a single regulated utility. Public materials describe the company as launched out of Alphabet's Sidewalk Labs and backed by Alphabet, StepStone, and Ontario Teachers'. Ontario Teachers' continues to list the platform as a current portfolio investment.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2019,
+    "headquarters": "New York",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk8xj027mivhefphrlgo7",
+        "managerName": "OTPP",
+        "organizationName": "OTPP",
+        "fundName": null,
+        "vehicleName": "Partnership platform",
+        "stake": null,
+        "investmentYear": 2019,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmkai050uivhevfi83icu",
+        "date": "2019",
+        "event": "Sidewalk Infrastructure Partners was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2019-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmkb2050vivhedhzgiua6",
+        "date": "Aug 2019",
+        "event": "Sidewalk Infrastructure Partners launched as a spin-out from Alphabet's Sidewalk Labs, with OTPP / Ontario Teachers' as a founding backer alongside Alphabet and StepStone.",
+        "category": "FINANCING",
+        "sortDate": "2019-08-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsjhg0cqmivhet8mxg650",
+        "label": "Sidewalkinfra — Sidewalk Infrastructure Partners",
+        "url": "https://sidewalkinfra.com/about",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Sidewalkinfra company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpsjii0cqoivhev2f72n23",
+        "label": "Insights — Sidewalk Infrastructure Partners",
+        "url": "https://insights.som.yale.edu/insights/imagining-future-ready-infrastructure",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Insights — Sidewalk Infrastructure Partners",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsjiz0cqpivheqvwgbtmz",
+        "label": "Otpp — Pacifico Sur",
+        "url": "https://www.otpp.com/en-ca/investments/our-advantage/our-performance-and-track-record/major-investments/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "OTPP initial investment / ownership",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Sidewalk Infrastructure Partners",
+    "investmentFirm": "OTPP",
+    "sector": "Digital",
+    "subsector": "Infrastructure development platform",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Partnership platform",
+    "description": "Sidewalk Infrastructure Partners develops next-generation infrastructure projects and enabling technologies in partnership with public and private counterparties. Its addressable end markets include transportation, energy, logistics, broadband, and other infrastructure systems where new delivery models are being tested. The operating model is platform-based and development-led, with the business originating, structuring, and scaling projects rather than operating a single regulated utility. Public materials describe the company as launched out of Alphabet's Sidewalk Labs and backed by Alphabet, StepStone, and Ontario Teachers'. Ontario Teachers' continues to list the platform as a current portfolio investment.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2019,
+    "investmentYear": 2019,
+    "headquarters": "New York",
+    "milestones": [
+      {
+        "date": "2019",
+        "event": "Sidewalk Infrastructure Partners was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "Aug 2019",
+        "event": "Sidewalk Infrastructure Partners launched as a spin-out from Alphabet's Sidewalk Labs, with OTPP / Ontario Teachers' as a founding backer alongside Alphabet and StepStone.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Sidewalkinfra — Sidewalk Infrastructure Partners",
+        "url": "https://sidewalkinfra.com/about",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Insights — Sidewalk Infrastructure Partners",
+        "url": "https://insights.som.yale.edu/insights/imagining-future-ready-infrastructure",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Investment date source — OTPP — Sidewalk Infrastructure Partners",
+        "url": "https://www.otpp.com/en-ca/investments/our-advantage/our-performance-and-track-record/major-investments/",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "OTPP",
+        "ownershipVehicle": "Partnership platform",
+        "investmentYear": 2019,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpih16004mivhea7i805re",
+        "name": "OTPP",
+        "updatedAt": "2026-07-23T16:09:29.274Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0375:sidewalk-infrastructure-partners:80a3f3bf",
+    "taskIndex": 375,
+    "canonicalKey": "sidewalk-infrastructure-partners|united-states",
+    "capturedAt": "2026-09-01T19:45:33.575Z",
+    "databaseRevision": "revision:5d61fc4a0ca1a77c0b4853a29472997c5263bae368556960feb67f9954d2cea3",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "1e648730b6ef6a83d79f29a30f92b59d494013c7abc642b78481dcced9e0f4e4",
+    "productionSnapshotSha256": "14cda7004610499e9facd64a1c668a42b6c811cf082c0991046f27197bb68947",
+    "targetCompanySnapshotSha256": "661ad6392afe481c12610fa0fb645ec6d68667555518a506470f0747f0a42eb8",
+    "seedEntrySha256": "0421b0a94cf0bc63af37a12cf622276a9cd62a39f63fbff0acb2f558fd437437",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "c0a91e6d781858e966843e1032f3654973c4f42c182a6fe03004adeb09b0220b",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "a2f3015c2542ed4087255e1905bdc85c5dda35d885a51c9178a508c1ce0301b3",
+      "citationsSha256": "1ffce5f43a0dab634d3e0da8743f3505162102d2d8f8f71bf3e23339424c03aa",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "f4169b9e380534bc6bd5635c82b21caa7e6c517906f84960eac4c1a997d9f39c",
+    "stateSha256": "3f06871e2e374dec92ffbf48369106a1c0e0aa0a9339426d789fdeb06469af14",
+    "taskSnapshotSha256": "d59f41ca9da5b7963b3ec2fb292bd5e8576eba2d77084c61405ae0c6938d3731"
+  },
+  "contextSha256": "0ea986555205e904f9419d0ce82773c1317ab2ea760145fad978bd2f47a91789"
+}

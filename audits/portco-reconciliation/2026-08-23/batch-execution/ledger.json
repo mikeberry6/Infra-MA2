@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-01T19:28:28.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-09-01T20:20:00.000Z",
+  "activeBatchId": "batch-0373-0378-v1",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -6428,7 +6428,65 @@
           "reason": "Exact release SHA, atomic database after-images, seed parity, detail APIs, ownership history, and all five rendered production drawers verified; no partial application."
         }
       ]
+    },
+    {
+      "batchId": "batch-0373-0378-v1",
+      "state": "RELEASING",
+      "taskIds": [
+        "ledger:0373:teranet-inc:fc015f26",
+        "ledger:0375:sidewalk-infrastructure-partners:80a3f3bf",
+        "ledger:0376:skyway-concession-company:7c24f455",
+        "ledger:0377:intersect-power:2076089f",
+        "ledger:0378:budderfly:719981ef"
+      ],
+      "taskIndexes": [
+        373,
+        375,
+        376,
+        377,
+        378
+      ],
+      "createdAt": "2026-09-01T19:34:57.000Z",
+      "updatedAt": "2026-09-01T20:20:00.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0373-0378-v1/batch-manifest-v4.json",
+        "sha256": "f845c9d5e737c7fc834f621b9a51f8fa6d4703fbf1a9870b9b2b92f8c001deb2"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-09-01T19:34:57.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-09-01T20:15:00.000Z",
+          "evidenceSha256": [
+            "f845c9d5e737c7fc834f621b9a51f8fa6d4703fbf1a9870b9b2b92f8c001deb2"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "RELEASING",
+          "at": "2026-09-01T20:20:00.000Z",
+          "evidenceSha256": [
+            "f845c9d5e737c7fc834f621b9a51f8fa6d4703fbf1a9870b9b2b92f8c001deb2"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "f2a3f9f921b7ac1c554b8fb4a83801e917c261b5a79bfdcdc87a3df1f98330d5"
+  "ledgerSha256": "a51b82c08c5f76132daebfe8295c19b80f3ba9a9fec1d3db9978ffc832ecdab5"
 }

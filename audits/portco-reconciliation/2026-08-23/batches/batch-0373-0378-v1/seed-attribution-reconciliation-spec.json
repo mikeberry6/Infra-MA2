@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_SEED_ATTRIBUTION_RECONCILIATION_SPEC",
+  "batchId": "batch-0373-0378-v1",
+  "batchSha256": "f845c9d5e737c7fc834f621b9a51f8fa6d4703fbf1a9870b9b2b92f8c001deb2",
+  "reconciledAt": "2026-09-01T20:12:00.000Z",
+  "sourceManifestSha256": "13325ac68cfd1b1b0a290ee0533a439e5a05c1ae278f0dd5b16cd68907a96568",
+  "rationale": "Align the active-owner attribution ledger with the approved Teranet, Skyway, Intersect Power and Budderfly after-images. Replace the legacy inferred Teranet entry with disclosed 100% OMERS ownership, rename and expand Skyway's current owner set, and add the directly supported current owners of the two newly created companies. Historical owners remain in the company ledger but are excluded from the active-owner attribution manifest.",
+  "removeRecordIds": [
+    "OFA-0A30DA4A0273"
+  ],
+  "upsertRecords": [
+    {
+      "recordId": "OFA-48BB11EC1624",
+      "companyName": "Teranet Inc.",
+      "country": "Canada",
+      "investmentFirm": "OMERS",
+      "currentVehicleName": "Borealis acquisition vehicle; Teranet Holdings LP",
+      "investmentYear": 2008,
+      "stake": "100%",
+      "targetLinkedFundName": "OMERS Infrastructure",
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "OMERS Infrastructure",
+      "attributionConfidence": null,
+      "attributionRationale": "Teranet and OMERS Infrastructure identify Teranet as wholly OMERS-owned and OMERS records 2008 entry through the Borealis acquisition lineage and Teranet Holdings LP.",
+      "evidenceUrls": [
+        "https://www.teranet.ca/about-teranet/",
+        "https://www.omersinfrastructure.com/investments/teranet"
+      ]
+    },
+    {
+      "recordId": "OFA-80AA65908E21",
+      "companyName": "Skyway Concession Company LLC",
+      "country": "United States",
+      "investmentFirm": "OTPP",
+      "currentVehicleName": "Calumet Concession Partners / CCPI ownership chain",
+      "investmentYear": 2016,
+      "stake": "33.33%",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Calumet Concession Partners / CCPI ownership chain",
+      "attributionConfidence": null,
+      "attributionRationale": "Atlas Arteria and the 2015 pension-consortium announcement support Ontario Teachers' continuing 33.33% ownership through the CCPI chain.",
+      "evidenceUrls": [
+        "https://www.atlasarteria.com/portfolio/chicago-skyway",
+        "https://www.otpp.com/en-ca/about-us/news-and-insights/2015/canada-pension-plan-investment-board-omers-and-ontario-teachers-pension-plan-to-acquire-chicago-skyway-toll-road/"
+      ]
+    },
+    {
+      "recordId": "OFA-1B65BE3F7238",
+      "companyName": "Skyway Concession Company LLC",
+      "country": "United States",
+      "investmentFirm": "Atlas Arteria",
+      "currentVehicleName": "Atlas Arteria Holdings Australia Pty Ltd / CCPI",
+      "investmentYear": 2022,
+      "stake": "66.67%",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Atlas Arteria Holdings Australia Pty Ltd / CCPI",
+      "attributionConfidence": null,
+      "attributionRationale": "Atlas Arteria's current portfolio page and the CPP/OMERS sale announcement support its 66.67% interest acquired in 2022 through the CCPI ownership chain.",
+      "evidenceUrls": [
+        "https://www.atlasarteria.com/portfolio/chicago-skyway",
+        "https://www.cppinvestments.com/newsroom/cpp-investments-omers-infrastructure-announce-sale-of-their-stakes-in-skyway-concession-company-llc-to-atlas-arteria/"
+      ]
+    },
+    {
+      "recordId": "OFA-4E07DAA3E43E",
+      "companyName": "Intersect Power",
+      "country": "United States",
+      "investmentFirm": "Alphabet Inc.",
+      "currentVehicleName": "Google acquisition affiliate; exact legal holder not publicly disclosed",
+      "investmentYear": 2024,
+      "stake": "Minority from 2024; 100% control after the 2026 carve-out and acquisition",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Google acquisition affiliate; exact legal holder not publicly disclosed",
+      "attributionConfidence": null,
+      "attributionRationale": "Alphabet and TPG announcements support Google's 2024 minority investment and March 2026 acquisition of control after the IPX asset carve-out.",
+      "evidenceUrls": [
+        "https://abc.xyz/investor/news/news-details/2025/Alphabet-Announces-Agreement-to-Acquire-Intersect-to-Advance-U-S--Energy-Innovation-2025-DVIuVDM9wW/default.aspx",
+        "https://www.tpg.com/news-and-insights/tpg-announces-completion-of-4-75-billion-sale-of-intersect-to-google-launches-ipx-power-as-independent-power-producer"
+      ]
+    },
+    {
+      "recordId": "OFA-49D522DA139D",
+      "companyName": "Budderfly",
+      "country": "United States",
+      "investmentFirm": "Partners Group",
+      "currentVehicleName": "Encore Holdings LP; Partners Group direct-infrastructure strategy",
+      "investmentYear": 2022,
+      "stake": "Majority; exact percentage not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Encore Holdings LP; Partners Group direct-infrastructure strategy",
+      "attributionConfidence": null,
+      "attributionRationale": "Partners Group's acquisition announcement and its SEC filing support current majority ownership from July 2022 through Encore Holdings LP.",
+      "evidenceUrls": [
+        "https://www.partnersgroup.com/news-and-views/press-releases/investment-news/detail?news_id=cb7dc74e-032f-4f1d-8a48-bf3c85e01b9b",
+        "https://www.sec.gov/Archives/edgar/data/1447247/000139834426010605/fp0098460-3_ncsr.htm"
+      ]
+    },
+    {
+      "recordId": "OFA-D9A1E15566B4",
+      "companyName": "Budderfly",
+      "country": "United States",
+      "investmentFirm": "Budderfly management",
+      "currentVehicleName": "Management rollover equity",
+      "investmentYear": 2007,
+      "stake": "Minority; exact percentage not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Management rollover equity",
+      "attributionConfidence": null,
+      "attributionRationale": "Partners Group's transaction announcement states that Budderfly management retained minority ownership through rollover equity in the majority recapitalization.",
+      "evidenceUrls": [
+        "https://www.partnersgroup.com/news-and-views/press-releases/investment-news/detail?news_id=cb7dc74e-032f-4f1d-8a48-bf3c85e01b9b"
+      ]
+    }
+  ],
+  "specSha256": "08cceae6df0436417b68a556d0360c8dc0c112c4fd3048beac73b4efc502cb6d"
+}

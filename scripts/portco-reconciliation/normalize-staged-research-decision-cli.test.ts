@@ -104,6 +104,35 @@ describe("staged research identity normalization", () => {
     });
   });
 
+  it("accepts a staged confidence band followed by a hyphen qualifier", async () => {
+    const input = await fixture();
+    const source = JSON.parse(await readFile(input.paths.source, "utf8"));
+    source.confidence = "HIGH-MODERATE";
+    await writeFile(input.paths.source, JSON.stringify(source));
+    await expect(run(input)).resolves.toMatchObject({ stderr: "" });
+    const normalized = JSON.parse(await readFile(input.paths.output, "utf8"));
+    expect(normalized.lineage.confidenceNormalization).toMatchObject({
+      acceptedValue: "HIGH",
+      stagedSummaryValue: "HIGH-MODERATE",
+    });
+  });
+
+  it("accepts legacy sequence and accepted-response hash field names", async () => {
+    const input = await fixture();
+    const source = JSON.parse(await readFile(input.paths.source, "utf8"));
+    source.sequence = source.taskIndex;
+    source.acceptedResponseSha256 = source.responseSha256;
+    delete source.taskIndex;
+    delete source.responseSha256;
+    await writeFile(input.paths.source, JSON.stringify(source));
+    await expect(run(input)).resolves.toMatchObject({ stderr: "" });
+    const normalized = JSON.parse(await readFile(input.paths.output, "utf8"));
+    expect(normalized).toMatchObject({
+      taskIndex: 343,
+      lineage: { acceptedResponseSha256: "a".repeat(64) },
+    });
+  });
+
   it("rejects an identity manifest whose canonical key does not match the staged research", async () => {
     const input = await fixture("different-company");
     await expect(run(input)).rejects.toMatchObject({
