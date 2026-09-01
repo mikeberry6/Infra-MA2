@@ -393,6 +393,15 @@ const approvedOwnershipOrganizationProvisioning = {
   "Budderfly management": "OTHER",
   "Edison Partners": "FUND_MANAGER",
   "Balance Point Capital": "FUND_MANAGER",
+  "FTC Solar, Inc.": "CORPORATE",
+  "Mount Elbert Capital Partners": "FUND_MANAGER",
+  "Exus founders and management": "OTHER",
+  "Barings": "FUND_MANAGER",
+  "Wood Creek Capital Management": "FUND_MANAGER",
+  "Blackstone Tactical Opportunities": "FUND_MANAGER",
+  "Kohlberg": "FUND_MANAGER",
+  "OMERS Private Equity": "FUND_MANAGER",
+  "Leonard Green": "FUND_MANAGER",
 } as const;
 
 export function ownershipOrganizationTypes(

@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0381:exus-renewables-north-america:beef769f",
+  "taskIndex": 381,
+  "companyName": "Exus Renewables North America",
+  "generatedAt": "2026-09-01T20:31:07.425Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0381-exus-renewables-north-america/attempt-1/locked-batch-v2-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 381,
+    "taskId": "ledger:0381:exus-renewables-north-america:beef769f",
+    "canonicalKey": "exus-renewables-north-america|united-states",
+    "companyName": "Exus Renewables North America",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 78,
+    "managers": [
+      "Partners Group"
+    ],
+    "actionScopes": {
+      "company": [
+        "CREATE_COMPANY"
+      ],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "078-partners-group:holding:005:exus-renewables-north-america"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://www.partnersgroup.com/en/news/exus-renewables/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "No exact normalized production or seed match exists. Census evidence supports a new canonical company with 1 manager holding record(s).",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "exus-renewables-north-america|united-states",
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpicbn0035ivhecvphs6ll",
+        "name": "Partners Group",
+        "updatedAt": "2026-07-23T16:09:23.171Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0381:exus-renewables-north-america:beef769f",
+    "taskIndex": 381,
+    "canonicalKey": "exus-renewables-north-america|united-states",
+    "capturedAt": "2026-09-01T20:31:07.425Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "8c34ebc2183a07e9c542e71214e84d3471401a7a61ac197eb998ae114ecfdbb3",
+    "productionSnapshotSha256": "cc8403e95040ed22c1e91b71e86f8b059c8644dfe92346bc17b501e4be74f604",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "da6b96df770d43f16e819850e912cf176640bcf2e996fbf31b54fbbdb542f09b",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "ad8fabea1d23851c0c7369ea4b122b23c56959fc71b8ade106224e6d1109b242",
+    "stateSha256": "0f717802379ade26a23f624792a7da5b30a29f2e9f4d0646e111de859568e00e",
+    "taskSnapshotSha256": "c24e4936e2ac2c17c597295178c36782d7568767804fbc3e370e6589b55a553c"
+  },
+  "contextSha256": "b928fe39113cabc987682140dd42bb06cc5ef02994658d0690c7ecc6015b23ec"
+}

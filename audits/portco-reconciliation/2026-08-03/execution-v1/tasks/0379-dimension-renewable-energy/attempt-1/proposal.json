@@ -1,0 +1,218 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0379:dimension-renewable-energy:afa21f3c",
+  "taskIndex": 379,
+  "asOfDate": "2026-09-01",
+  "generatedAt": "2026-09-01T20:30:00.000Z",
+  "canonicalKey": "dimension-renewable-energy|united-states",
+  "companyName": "Dimension Renewable Energy",
+  "actions": [
+    "CREATE_COMPANY"
+  ],
+  "sourceHoldingIds": [
+    "078-partners-group:holding:002:dimension-renewable-energy"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Create one canonical Dimension Energy distributed-energy platform, retaining Dimension Renewable Energy as its former-name alias. Partners Group acquired control on June 24, 2021 and Dimension confirmed that ownership again on August 17, 2026. FTC Solar is preserved as a former approximately 23% owner that sold its entire interest at closing. Project LLCs, project joint ventures, lenders and tax-equity investors are not separate platform owners.",
+  "evidence": [
+    {
+      "url": "https://www.partnersgroup.com/en/news-and-views/press-releases/investment-news/detail?news_id=7ee9d7d3-c405-481e-b293-1ae11b818e4c",
+      "purpose": "Partners Group control investment and infrastructure strategy",
+      "supports": [
+        "Partners Group acquired a controlling stake",
+        "Dimension is a U.S. community-solar and storage platform"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1828161/000095017021001227/ftci-20210630.htm",
+      "purpose": "Acquisition close and FTC Solar exit",
+      "supports": [
+        "The transaction closed on June 24, 2021",
+        "FTC Solar sold its entire approximately 23% interest"
+      ]
+    },
+    {
+      "url": "https://www.dimension-energy.com/news-article/dimension-energy-secures-857-million-in-additional-capital-to-accelerate-distributed-solar-growth",
+      "purpose": "Current ownership and operating scale",
+      "supports": [
+        "Dimension remained owned by Partners Group in August 2026",
+        "Dimension owns and operates distributed-energy assets"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "63d959f28a689c968b4053b75625990c312f41690cc88a37e25ac5bbbddb7f81",
+  "currentCompanySnapshotSha256": null,
+  "executionLock": {
+    "taskSnapshotSha256": "70032c4812ac884991aeb4091316a012f0f41815c1ba1d6fa4b95f05d799019c",
+    "taskStateSha256": "7570793ae08942f1b3a3259923156a6d2c16317fe72b98a02b18524ced1d627d",
+    "taskDependencySha256": "ad8fabea1d23851c0c7369ea4b122b23c56959fc71b8ade106224e6d1109b242",
+    "seedEntrySha256": null,
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "da6b96df770d43f16e819850e912cf176640bcf2e996fbf31b54fbbdb542f09b",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpicbn0035ivhecvphs6ll",
+        "name": "Partners Group",
+        "updatedAt": "2026-07-23T16:09:23.171Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": null,
+  "beforeImageSha256": null,
+  "afterImage": {
+    "id": null,
+    "name": "Dimension Energy",
+    "aliases": [
+      "Dimension Energy LLC",
+      "Dimension Renewable Energy"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Distributed solar, storage, and localized power infrastructure",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Dimension Energy LLC is a U.S. distributed-energy platform that develops, finances, owns and operates community solar, battery storage and localized power infrastructure. The platform serves households, businesses, utilities and large energy users across multiple U.S. markets and reported more than 600 MW operating or under construction, over US$2 billion invested and more than 35,000 subscribers by August 2026. Partners Group acquired control on June 24, 2021 through PG Delta Holdco LLC; FTC Solar sold its entire approximately 23% interest at closing. Dimension Renewable Energy is the former brand, while project LLCs, project joint ventures, lenders and tax-equity vehicles remain within or outside the platform boundary rather than separate PortCos. No later sale or signed pending ownership transfer was identified through September 1, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.dimension-energy.com/",
+    "yearFounded": 2018,
+    "headquarters": "Atlanta, Georgia",
+    "lastVerifiedAt": "2026-09-01T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": null,
+        "managerName": "Partners Group",
+        "organizationName": "Partners Group",
+        "fundName": null,
+        "vehicleName": "PG Delta Holdco LLC; client infrastructure accounts",
+        "stake": "Controlling; exact manager-level percentage not publicly disclosed",
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "FTC Solar, Inc.",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Direct Class A units of Dimension Energy LLC",
+        "stake": "Approximately 23%; entire interest sold",
+        "investmentYear": 2018,
+        "exitYear": 2021,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": null,
+        "date": "2018",
+        "event": "Dimension Renewable Energy launched as a U.S. distributed-energy platform.",
+        "category": "FOUNDING",
+        "sortDate": "2018-01-01T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1828161/000114036121014407/nt10018987x11_s1a.htm"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Jun 24, 2021",
+        "event": "Partners Group completed its controlling investment and FTC Solar sold its entire approximately 23% interest.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-06-24T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.partnersgroup.com/en/news-and-views/press-releases/investment-news/detail?news_id=7ee9d7d3-c405-481e-b293-1ae11b818e4c",
+          "https://www.sec.gov/Archives/edgar/data/1828161/000095017021001227/ftci-20210630.htm"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Jul 16, 2024",
+        "event": "The platform rebranded from Dimension Renewable Energy to Dimension Energy.",
+        "category": "OTHER",
+        "sortDate": "2024-07-16T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.dimension-energy.com/news-article/dimension-energy-announces-500mw-of-operating-community-solar-assets-and-1-1b-invested-by-end-of-2025"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Aug 17, 2026",
+        "event": "Dimension confirmed Partners Group ownership and reported more than 600 MW operating or under construction.",
+        "category": "EXPANSION",
+        "sortDate": "2026-08-17T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.dimension-energy.com/news-article/dimension-energy-secures-857-million-in-additional-capital-to-accelerate-distributed-solar-growth"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": null,
+        "label": "Partners Group — Dimension investment",
+        "url": "https://www.partnersgroup.com/en/news-and-views/press-releases/investment-news/detail?news_id=7ee9d7d3-c405-481e-b293-1ae11b818e4c",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Controlling acquisition and infrastructure strategy",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "SEC — FTC Solar second-quarter 2021 report",
+        "url": "https://www.sec.gov/Archives/edgar/data/1828161/000095017021001227/ftci-20210630.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "June 24, 2021 closing and FTC Solar exit",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "SEC — FTC Solar prospectus",
+        "url": "https://www.sec.gov/Archives/edgar/data/1828161/000114036121014407/nt10018987x11_s1a.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Dimension Energy LLC identity and historical ownership",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Dimension Energy — Rebrand and operating scale",
+        "url": "https://www.dimension-energy.com/news-article/dimension-energy-announces-500mw-of-operating-community-solar-assets-and-1-1b-invested-by-end-of-2025",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Dimension Energy brand and operating portfolio",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Dimension Energy — August 2026 financing update",
+        "url": "https://www.dimension-energy.com/news-article/dimension-energy-secures-857-million-in-additional-capital-to-accelerate-distributed-solar-growth",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current Partners Group ownership and distributed-energy scale",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "c1866d8aae6f82536f7b40f85b6057b2f2b0ce4f96b0858ba892a3c2bbb8b6ee",
+  "proposalSha256": "57aad41d9c7b317f11c2761e90d30d16a98ef7f1dcad5192e52db07ffea33d01"
+}
