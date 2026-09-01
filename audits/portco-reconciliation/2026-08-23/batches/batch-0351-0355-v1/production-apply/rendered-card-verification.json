@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_RENDERED_CARD_VERIFICATION",
+  "batchId": "batch-0351-0355-v1",
+  "batchSha256": "44f817fab99cf55c7ec2ef846cc01c38e4123a60ee8abe0bb361f6a9466df7ab",
+  "batchReceiptSha256": "a2f1e09a61ca88338b007cd772f7f5cf6179a51a1947a155d4b53c5b7d326098",
+  "verifiedAt": "2026-09-01T17:20:00.000Z",
+  "canonicalProductionUrl": "https://infra-ma-2.vercel.app",
+  "batchApplyDeploymentId": "dpl_5zzDa2ag56MSSfsoW53RBz1c6BxB",
+  "batchApplyReleaseSha": "9ec6a1a247a05298158aff7902efb6aa9897c428",
+  "members": [
+    {
+      "taskIndex": 351,
+      "canonicalName": "Power Factors",
+      "terminalOutcome": "EXCLUDED",
+      "renderedVerificationNotApplicable": true,
+      "checks": {
+        "noDatabaseMutation": true,
+        "durableExclusionRecorded": true
+      }
+    },
+    {
+      "taskIndex": 352,
+      "canonicalName": "CSV Midstream",
+      "terminalOutcome": "SUPERSEDED",
+      "renderedDrawerVerified": true,
+      "checks": {
+        "canonicalCompanyId": "cmrxpjlu70171ivheax0ogxib",
+        "canonicalCompanyName": "CSV Midstream Solutions Corp.",
+        "legacyCompanyId": "cmrxpjltm0170ivheiq4ug9t2",
+        "legacyDetailApiRedirectsToCanonicalCompany": true,
+        "duplicatePublishedRowAbsent": true
+      }
+    },
+    {
+      "taskIndex": 353,
+      "companyId": "cmrxpjlu70171ivheax0ogxib",
+      "canonicalName": "CSV Midstream Solutions Corp.",
+      "detailApiStatus": 200,
+      "renderedDrawerVerified": true,
+      "checks": {
+        "currentOwner": "Northleaf",
+        "currentStake": "100%",
+        "currentPeriod": "2019-Present",
+        "formerApolloPeriodAvailable": true,
+        "descriptionAndMilestonesVisible": true
+      }
+    },
+    {
+      "taskIndex": 354,
+      "companyId": "cmtixlc8x0009yr2b5s2xj4t1",
+      "canonicalName": "Mercury Fiber",
+      "detailApiStatus": 200,
+      "renderedDrawerVerified": true,
+      "checks": {
+        "currentOwner": "Northleaf",
+        "currentPeriod": "2022-Present",
+        "stake": "Controlling interest; exact percentage not publicly disclosed",
+        "vehicle": "NCP Mercury AIV LP / Mercury TopCo, LLC",
+        "descriptionAndMilestonesVisible": true
+      }
+    },
+    {
+      "taskIndex": 355,
+      "companyId": "cmrxpjlvr0174ivhejzd6e2vk",
+      "canonicalName": "Millennium Parking Garages, LLC",
+      "detailApiStatus": 200,
+      "renderedDrawerVerified": true,
+      "checks": {
+        "currentOwners": [
+          "InfraBridge (DigitalBridge)",
+          "Northleaf"
+        ],
+        "currentStakes": [
+          "50%",
+          "50% (inferred from equal US$185 million buyer contributions; not directly disclosed)"
+        ],
+        "infrabridgeCurrentPeriod": "2023-Present",
+        "northleafCurrentPeriod": "2016-Present",
+        "formerAmpManagedPeriodAvailable": true,
+        "descriptionAndMilestonesVisible": true
+      }
+    }
+  ],
+  "detailApisVerified": 3,
+  "redirectApisVerified": 1,
+  "rawPipelineLabelCount": 0,
+  "partialApplication": false,
+  "apiVerificationPassed": true,
+  "renderedVerificationPassed": true,
+  "result": "PASS"
+}

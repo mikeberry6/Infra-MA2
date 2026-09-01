@@ -1,0 +1,142 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:batch:apply
+> npx tsx scripts/portco-reconciliation/batch-apply-cli.ts --batch-manifest=audits/portco-reconciliation/2026-08-23/batches/batch-0351-0355-v1/batch-manifest-v8.json --batch-sha256=44f817fab99cf55c7ec2ef846cc01c38e4123a60ee8abe0bb361f6a9466df7ab --seed-artifact=prisma/seed-data/approved-portco-after-images.json --apply --write-token=APPLY_APPROVED_PORTCO_BATCH --commit-receipt=tmp/portco-reconciliation/production/batch-commit-receipt.json --receipt=tmp/portco-reconciliation/production/batch-apply-receipt.json --public-base-url=https://infra-ma-2.vercel.app/Infra-MA2/
+
+(node:3843) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "BATCH_APPLIED",
+  "receiptPath": "/home/runner/work/Infra-MA2/Infra-MA2/tmp/portco-reconciliation/production/batch-apply-receipt.json",
+  "receipt": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_APPLY_BATCH_RECEIPT",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "batchId": "batch-0351-0355-v1",
+    "batchSha256": "44f817fab99cf55c7ec2ef846cc01c38e4123a60ee8abe0bb361f6a9466df7ab",
+    "releaseSha": "9ec6a1a247a05298158aff7902efb6aa9897c428",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "transactionId": "6a80ce3e-ff02-4196-9d97-16816185e945",
+    "appliedAt": "2026-09-01T17:18:37.414Z",
+    "members": [
+      {
+        "kind": "TERMINAL",
+        "taskId": "ledger:0351:power-factors:44709f47",
+        "taskIndex": 351,
+        "companyName": "Power Factors",
+        "outcome": "EXCLUDED",
+        "decisionSha256": "85fc5deda7850cb0f0a5321bbaf6a017518c04d59de5358dc38c75c2c7e33b6d"
+      },
+      {
+        "kind": "TERMINAL",
+        "taskId": "ledger:0352:csv-midstream:d544fe04",
+        "taskIndex": 352,
+        "companyName": "CSV Midstream",
+        "outcome": "SUPERSEDED",
+        "decisionSha256": "f7684b7c201ce15138dbfddbf8c615fce3c27fd19ce537ab716ee2921f3c464a"
+      },
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0353:csv-midstream-solutions-corp:99793919",
+        "taskIndex": 353,
+        "companyName": "CSV Midstream Solutions Corp.",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0353:csv-midstream-solutions-corp:99793919",
+          "taskIndex": 353,
+          "companyName": "CSV Midstream Solutions Corp.",
+          "companyId": "cmrxpjlu70171ivheax0ogxib",
+          "proposalSha256": "7ab778823c76286aa8488e470173da1b1f2aa329f4257013eaa85ea432dfc9e2",
+          "approvalSha256": "e73908dafda2bcd2ed1ab166e10b3ac952633f09a6d889c266b7ee5b0f948d41",
+          "productionSnapshotSha256": "eadbcdd451bfa7f87bea7691ea5a87e6a57ed1304a6faa581a96637e7637d499",
+          "beforeCompanySnapshotSha256": "830ff8f1ceb07b859cd8991dacb30d5d95d0c4e89487ed565a5de3473e113cc8",
+          "appliedAfterImageSha256": "0ed42f7897a5a2ac3e1018e286a2d9aff501a22fe7d960e3a2b5500cb0a51cd5",
+          "seedAfterImageSha256": "0ed42f7897a5a2ac3e1018e286a2d9aff501a22fe7d960e3a2b5500cb0a51cd5",
+          "approvedSeedEntrySha256": "fd7f4d5ec6f9bb784ad749c47ae4d7a46729f0d203db723dea49a79ee8f59be1",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "6a80ce3e-ff02-4196-9d97-16816185e945",
+          "auditEventId": "cmtixlbjg0008yr2b69bqswgq",
+          "appliedAt": "2026-09-01T17:18:37.414Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "82312ccc9868d146822ee6d49efd8427ed488f7111bfce031f8406219005c31d"
+        }
+      },
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0354:mercury-broadband:1dda7bce",
+        "taskIndex": 354,
+        "companyName": "Mercury Broadband",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0354:mercury-broadband:1dda7bce",
+          "taskIndex": 354,
+          "companyName": "Mercury Broadband",
+          "companyId": "cmtixlc8x0009yr2b5s2xj4t1",
+          "proposalSha256": "80fd3d198fc436e9235387b96922e4b358c6c049932b8e300138e258104cf1fd",
+          "approvalSha256": "2f50d60e9e1eb4ce52701336f925a96fb840b86e2e2013c4855674f951761376",
+          "productionSnapshotSha256": "074f25fc3f4de3f8591b494d08d98b41c91509faa402a16752b38ddceb48d43b",
+          "beforeCompanySnapshotSha256": null,
+          "appliedAfterImageSha256": "f52c8f12654a5d29f625fac36897ee50d80a552b40d0d26f487f6813bb1ef0ba",
+          "seedAfterImageSha256": "f52c8f12654a5d29f625fac36897ee50d80a552b40d0d26f487f6813bb1ef0ba",
+          "approvedSeedEntrySha256": "df379e23cb21dcd2c03a12ab7eceaeee4af302e7b98f57e15b135036c9f185cf",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "6a80ce3e-ff02-4196-9d97-16816185e945",
+          "auditEventId": "cmtixldpr000nyr2b97enuerf",
+          "appliedAt": "2026-09-01T17:18:37.414Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "21b2f32bc1efbf5d8a3bc8ceb70d5ff2e4fac73fc5369395ede06c446b900064"
+        }
+      },
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0355:millennium-parking-garages-llc:9385654a",
+        "taskIndex": 355,
+        "companyName": "Millennium Parking Garages, LLC",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0355:millennium-parking-garages-llc:9385654a",
+          "taskIndex": 355,
+          "companyName": "Millennium Parking Garages, LLC",
+          "companyId": "cmrxpjlvr0174ivhejzd6e2vk",
+          "proposalSha256": "f12f6c7df4acc9dd0315bab12c0208bb64ad1be2b952e916682c9d7c299f3299",
+          "approvalSha256": "0eedb44ff9da80b2a3f440aee6afa27b776975d142ae821a160245fbf5f9317a",
+          "productionSnapshotSha256": "991634f393cb7905dd9f5e9a7220ff9dd1d75895b78002556a1461b25fce259d",
+          "beforeCompanySnapshotSha256": "cf9277148919de3caa666a5d5cdae1ba4116db903d73d9776bf03aea11383cb7",
+          "appliedAfterImageSha256": "7243613e3ce5c5e48e04f19e5a1a95eb6ba7553b1777743f9b3a984fd1a8867c",
+          "seedAfterImageSha256": "7243613e3ce5c5e48e04f19e5a1a95eb6ba7553b1777743f9b3a984fd1a8867c",
+          "approvedSeedEntrySha256": "357885227f15ab50ca601825f1152f0568b57bacdeeaf3c0acd3ad70b71bd598",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "6a80ce3e-ff02-4196-9d97-16816185e945",
+          "auditEventId": "cmtixlgdh000tyr2boumyntas",
+          "appliedAt": "2026-09-01T17:18:37.414Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "36ad8e3369137aa5881809612ee79a6deca691fdbae4ad14c6ab85559a0a87eb"
+        }
+      }
+    ],
+    "verification": {
+      "databaseTransactionCommitted": true,
+      "seedArtifactVerified": true,
+      "allDetailApisVerified": true,
+      "partialDatabaseApplication": false
+    },
+    "receiptSha256": "a2f1e09a61ca88338b007cd772f7f5cf6179a51a1947a155d4b53c5b7d326098"
+  }
+}
