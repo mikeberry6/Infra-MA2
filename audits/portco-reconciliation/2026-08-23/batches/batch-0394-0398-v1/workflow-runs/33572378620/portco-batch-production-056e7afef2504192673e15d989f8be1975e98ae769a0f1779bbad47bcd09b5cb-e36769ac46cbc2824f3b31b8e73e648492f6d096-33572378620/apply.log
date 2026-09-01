@@ -1,0 +1,142 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:batch:apply
+> npx tsx scripts/portco-reconciliation/batch-apply-cli.ts --batch-manifest=audits/portco-reconciliation/2026-08-23/batches/batch-0394-0398-v1/batch-manifest-v6.json --batch-sha256=056e7afef2504192673e15d989f8be1975e98ae769a0f1779bbad47bcd09b5cb --seed-artifact=prisma/seed-data/approved-portco-after-images.json --apply --write-token=APPLY_APPROVED_PORTCO_BATCH --commit-receipt=tmp/portco-reconciliation/production/batch-commit-receipt.json --receipt=tmp/portco-reconciliation/production/batch-apply-receipt.json --public-base-url=https://infra-ma-2.vercel.app/Infra-MA2/
+
+(node:3854) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "BATCH_APPLIED",
+  "receiptPath": "/home/runner/work/Infra-MA2/Infra-MA2/tmp/portco-reconciliation/production/batch-apply-receipt.json",
+  "receipt": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_APPLY_BATCH_RECEIPT",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "batchId": "batch-0394-0398-v1",
+    "batchSha256": "056e7afef2504192673e15d989f8be1975e98ae769a0f1779bbad47bcd09b5cb",
+    "releaseSha": "e36769ac46cbc2824f3b31b8e73e648492f6d096",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "transactionId": "20317646-f3b6-41c4-9404-cba1d35d73a3",
+    "appliedAt": "2026-09-01T23:47:23.538Z",
+    "members": [
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0394:middlebury-resource-recovery-center:08b27d77",
+        "taskIndex": 394,
+        "companyName": "Middlebury Resource Recovery Center",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0394:middlebury-resource-recovery-center:08b27d77",
+          "taskIndex": 394,
+          "companyName": "Middlebury Resource Recovery Center",
+          "companyId": "cmrxpjmoi018givhecyo0ujvv",
+          "proposalSha256": "659ab2d3f4299f48b6bbd0c47c9f820c2f70f66113cff62b7cd1ae1e055737f7",
+          "approvalSha256": "04d30c3811b09e7c1166cfeac909c775d6dedec4906135e907247497abf1b910",
+          "productionSnapshotSha256": "ba4eabcee0c11c7dc7c32bd994e1b32a2b49e1143c73a4ff0ac55a002aa17b15",
+          "beforeCompanySnapshotSha256": "2c264a91c38d005b615cafacc5a4a9bea569e4359c27cef9e4f13c17990136e3",
+          "appliedAfterImageSha256": "c775558ac30e0f68497d7071fca69a10f9d53b6990271b887b142cc1520c3f47",
+          "seedAfterImageSha256": "c775558ac30e0f68497d7071fca69a10f9d53b6990271b887b142cc1520c3f47",
+          "approvedSeedEntrySha256": "6122f924f98957319bc0448da77df392dfe5086ef88b2685eb9e716c19582aca",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "20317646-f3b6-41c4-9404-cba1d35d73a3",
+          "auditEventId": "cmtjbgwcn000dz22bly96i07b",
+          "appliedAt": "2026-09-01T23:47:23.538Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "c8a0b79e74a215d0b964ec9fb6d1b934ae55ca290664e78506dbe6a5b6da4fe2"
+        }
+      },
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0395:prairie-mist-solar:44443a02",
+        "taskIndex": 395,
+        "companyName": "Prairie Mist Solar",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0395:prairie-mist-solar:44443a02",
+          "taskIndex": 395,
+          "companyName": "Prairie Mist Solar",
+          "companyId": "cmrxpjmnj018eivhe8a4fk54r",
+          "proposalSha256": "d6804b53b6575a8c34e5bfaa46015249f840d694aadbfebf82eaf22696c69d97",
+          "approvalSha256": "907fe07a2b97830756d2a042aa44be0246f461348d1fe749ff1549dfd88e19e9",
+          "productionSnapshotSha256": "44affda4571d26835cfe25d2ddfdfda4de0f18cfbd08450844776b48ee744656",
+          "beforeCompanySnapshotSha256": "b9d9797ac598756b8a3b86f166716c3649a7dc51308c6dea08c9b10b28756527",
+          "appliedAfterImageSha256": "005ad0b23e1e745639b775f52d8467799b331e1e15cf5e7f71758039f0ca7d97",
+          "seedAfterImageSha256": "005ad0b23e1e745639b775f52d8467799b331e1e15cf5e7f71758039f0ca7d97",
+          "approvedSeedEntrySha256": "6f5ad397c5e5bca13306454a84ce3116f75adc45adc14b147ad5a21dd685e895",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "20317646-f3b6-41c4-9404-cba1d35d73a3",
+          "auditEventId": "cmtjbh5bg000kz22bjeydx8ob",
+          "appliedAt": "2026-09-01T23:47:23.538Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "1bd0763fdaba85e1cee598cc9f0635386e6a7a3d66e9d6a3167b5cbcc2d20a0b"
+        }
+      },
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0396:prospect-storage:78e66bf0",
+        "taskIndex": 396,
+        "companyName": "Prospect Storage",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0396:prospect-storage:78e66bf0",
+          "taskIndex": 396,
+          "companyName": "Prospect Storage",
+          "companyId": "cmrxpjmkz0189ivheyzth0dam",
+          "proposalSha256": "544c41b17019d5f9481a7aadea6a828e700d00733ab12429505e2d891bb9acb2",
+          "approvalSha256": "5bdb4c3fda3dc229c3ee2738dc9a78cfd65f3f8ec9d087bb31fd56394ac9d41e",
+          "productionSnapshotSha256": "1d819280931968d1d01d7b890073a048fa4e77d928f997ecd0bdd347de8ab9c1",
+          "beforeCompanySnapshotSha256": "a60f87a17b1afa9471693177c698888ddc55dad89526431702807c94470e6149",
+          "appliedAfterImageSha256": "2ec29d5d1849053e4cc509e5ab4d81c5dae661c6f12710a3d13461da69558a85",
+          "seedAfterImageSha256": "2ec29d5d1849053e4cc509e5ab4d81c5dae661c6f12710a3d13461da69558a85",
+          "approvedSeedEntrySha256": "cea643a56b8735d37bee647acb4c41f0b3d4760d8a4e2197ba9b80516b424855",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "20317646-f3b6-41c4-9404-cba1d35d73a3",
+          "auditEventId": "cmtjbhevf000sz22bthj9rade",
+          "appliedAt": "2026-09-01T23:47:23.538Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "95d650aac46a793ece11da7440ba1b0ef3288b0a3b0b95d8760d730580cb1f0d"
+        }
+      },
+      {
+        "kind": "TERMINAL",
+        "taskId": "ledger:0397:purposeenergy-minster:d96ff6cd",
+        "taskIndex": 397,
+        "companyName": "PurposeEnergy Minster",
+        "outcome": "SUPERSEDED",
+        "decisionSha256": "8ea4010841a3c144c96ebe3bbf0b872cdac887eedc84ae1453974d269ffabe69"
+      },
+      {
+        "kind": "TERMINAL",
+        "taskId": "ledger:0398:purposeenergy-south-burlington:5ec5aa6b",
+        "taskIndex": 398,
+        "companyName": "PurposeEnergy South Burlington",
+        "outcome": "SUPERSEDED",
+        "decisionSha256": "fee8dfb839a83a78c2de613efd312bc6563fc092cff0111efcdb1c42b7a2d5b8"
+      }
+    ],
+    "verification": {
+      "databaseTransactionCommitted": true,
+      "seedArtifactVerified": true,
+      "allDetailApisVerified": true,
+      "partialDatabaseApplication": false
+    },
+    "receiptSha256": "4c6aada2d44de5eb2061b1f4d1498efed1284d6356808348f1eca851963695f4"
+  }
+}

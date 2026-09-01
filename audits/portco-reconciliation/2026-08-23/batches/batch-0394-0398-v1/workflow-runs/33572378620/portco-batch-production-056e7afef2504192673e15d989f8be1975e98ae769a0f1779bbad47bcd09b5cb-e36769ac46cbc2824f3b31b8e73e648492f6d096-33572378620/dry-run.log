@@ -1,0 +1,103 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:batch:apply
+> npx tsx scripts/portco-reconciliation/batch-apply-cli.ts --batch-manifest=audits/portco-reconciliation/2026-08-23/batches/batch-0394-0398-v1/batch-manifest-v6.json --batch-sha256=056e7afef2504192673e15d989f8be1975e98ae769a0f1779bbad47bcd09b5cb
+
+(node:3585) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "BATCH_DRY_RUN",
+  "batchId": "batch-0394-0398-v1",
+  "batchSha256": "056e7afef2504192673e15d989f8be1975e98ae769a0f1779bbad47bcd09b5cb",
+  "databaseWrites": false,
+  "seedWrites": false,
+  "plans": [
+    {
+      "companyName": "PurposeEnergy",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to aliases, description, website, lastVerifiedAt, ownershipPeriods, milestones, citations."
+        },
+        {
+          "kind": "MERGE_COMPANIES",
+          "relationIds": [
+            "cmrxpjmmo018civhe8frg363n",
+            "cmrxpjmp1018hivheqruh0kpn",
+            "cmrxpjmpo018iivhexgpftme7"
+          ],
+          "detail": "merge 3 production duplicate(s)"
+        }
+      ],
+      "changedFields": [
+        "aliases",
+        "citations",
+        "description",
+        "lastVerifiedAt",
+        "milestones",
+        "ownershipPeriods",
+        "redirects",
+        "website"
+      ],
+      "retiredCompanyIds": [
+        "cmrxpjmmo018civhe8frg363n",
+        "cmrxpjmp1018hivheqruh0kpn",
+        "cmrxpjmpo018iivhexgpftme7"
+      ]
+    },
+    {
+      "companyName": "Primergy",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to aliases, description, milestones, citations."
+        },
+        {
+          "kind": "MERGE_COMPANIES",
+          "relationIds": [
+            "cmrxpjmn3018divhea2b9e4gv"
+          ],
+          "detail": "merge 1 production duplicate(s)"
+        }
+      ],
+      "changedFields": [
+        "aliases",
+        "citations",
+        "description",
+        "milestones",
+        "redirects"
+      ],
+      "retiredCompanyIds": [
+        "cmrxpjmn3018divhea2b9e4gv"
+      ]
+    },
+    {
+      "companyName": "GlidePath Power Solutions",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to aliases, description, milestones, citations."
+        },
+        {
+          "kind": "MERGE_COMPANIES",
+          "relationIds": [
+            "cmrxpjmo2018fivhesphmyffh"
+          ],
+          "detail": "merge 1 production duplicate(s)"
+        }
+      ],
+      "changedFields": [
+        "aliases",
+        "citations",
+        "description",
+        "milestones",
+        "redirects"
+      ],
+      "retiredCompanyIds": [
+        "cmrxpjmo2018fivhesphmyffh"
+      ]
+    }
+  ]
+}

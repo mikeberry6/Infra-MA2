@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-09-01",
+  "ledgerSha256": "0eeb7cbc316a9bb3bee4a9406db8d6d8aef3cd51ac33204ea6b55822fc65ac44",
+  "sourceSnapshotSha256": "cbe74feed81d4cc0833c8cc12a37e2a8638224b71de434898961d3f0e242c7f0",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 1,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 0,
+      "UNRESOLVED": 0
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  },
+  "expectedMutationCount": 1,
+  "mutations": [
+    {
+      "recordId": "OFA-D3FB6EC50984",
+      "ownershipPeriodId": "cmrxpk98h0281ivhe89hg0afj",
+      "companyName": "PurposeEnergy",
+      "country": "United States",
+      "investmentFirm": "Quinbrook",
+      "currentVehicleName": "Quinbrook Net Zero Power Fund strategy",
+      "databaseVehicleName": "Quinbrook Net Zero Power Fund strategy",
+      "investmentYear": 2023,
+      "stake": null,
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Quinbrook Net Zero Power Fund strategy",
+        "attributionConfidence": null,
+        "attributionRationale": "Quinbrook's April 2023 acquisition announcement establishes the investment, and its Net Zero Power strategy close identifies PurposeEnergy among the strategy's investments. The exact legal holding vehicle and stake were not publicly disclosed."
+      },
+      "evidenceUrls": [
+        "https://www.quinbrook.com/news-insights/quinbrook-moves-into-renewable-fuels/",
+        "https://www.quinbrook.com/news-insights/quinbrook-exceeds-target-for-net-zero-power-strategy-raising-usd-3-billion-in-capital-commitments/"
+      ]
+    }
+  ],
+  "manifestSha256": "92b8f54db82616971f097bd51893208d50243711931897043913f2ddacbf35df"
+}
