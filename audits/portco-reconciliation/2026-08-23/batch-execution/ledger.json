@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-01T21:45:00.000Z",
-  "activeBatchId": "batch-0384-0388-v1",
+  "updatedAt": "2026-09-01T21:45:04.000Z",
+  "activeBatchId": null,
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -6617,7 +6617,7 @@
     },
     {
       "batchId": "batch-0384-0388-v1",
-      "state": "READY",
+      "state": "COMPLETED",
       "taskIds": [
         "ledger:0384:407-international-inc:e9ed737e",
         "ledger:0385:aep-indiana-michigan-transmission-company:45ae9c1c",
@@ -6633,15 +6633,18 @@
         388
       ],
       "createdAt": "2026-09-01T21:05:00.000Z",
-      "updatedAt": "2026-09-01T21:45:00.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-09-01T21:45:04.000Z",
+      "completedAt": "2026-09-01T21:45:04.000Z",
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0384-0388-v1/batch-manifest-v3.json",
         "sha256": "a12063436d8b013c30f67716f9a414f6977b8d68a94254bf56c6d0d5f419973c"
       },
-      "releaseSha": null,
-      "receipt": null,
-      "reason": null,
+      "releaseSha": "276c457e6e45e602cc733ae03f281e1816e6736e",
+      "receipt": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0384-0388-v1/production-apply/batch-apply-receipt.json",
+        "sha256": "f12c6b80d9176a7e1025c345ed8f6a034596417112a5dc4512daf9256182e851"
+      },
+      "reason": "Exact release SHA, atomic database after-images, seed parity, detail APIs, ownership history, and all five rendered production drawers verified; no partial application.",
       "history": [
         {
           "sequence": 1,
@@ -6660,9 +6663,51 @@
             "a12063436d8b013c30f67716f9a414f6977b8d68a94254bf56c6d0d5f419973c"
           ],
           "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "RELEASING",
+          "at": "2026-09-01T21:45:01.000Z",
+          "evidenceSha256": [
+            "a12063436d8b013c30f67716f9a414f6977b8d68a94254bf56c6d0d5f419973c"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 4,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-09-01T21:45:02.000Z",
+          "evidenceSha256": [
+            "a12063436d8b013c30f67716f9a414f6977b8d68a94254bf56c6d0d5f419973c"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 5,
+          "from": "APPLYING",
+          "to": "VERIFYING",
+          "at": "2026-09-01T21:45:03.000Z",
+          "evidenceSha256": [
+            "a12063436d8b013c30f67716f9a414f6977b8d68a94254bf56c6d0d5f419973c",
+            "f12c6b80d9176a7e1025c345ed8f6a034596417112a5dc4512daf9256182e851"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 6,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-09-01T21:45:04.000Z",
+          "evidenceSha256": [
+            "a12063436d8b013c30f67716f9a414f6977b8d68a94254bf56c6d0d5f419973c",
+            "f12c6b80d9176a7e1025c345ed8f6a034596417112a5dc4512daf9256182e851"
+          ],
+          "reason": "Exact release SHA, atomic database after-images, seed parity, detail APIs, ownership history, and all five rendered production drawers verified; no partial application."
         }
       ]
     }
   ],
-  "ledgerSha256": "2db79d242e9b77ffc2efcbaf0c1a05c650d61a28670a4b0a1698e681eb239a0e"
+  "ledgerSha256": "5eb132018c4d78f43197f28ca6bcb26872231bb7086929c164ae9309c5d91ccc"
 }
