@@ -1,0 +1,166 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:batch:apply
+> npx tsx scripts/portco-reconciliation/batch-apply-cli.ts --batch-manifest=audits/portco-reconciliation/2026-08-23/batches/batch-0307-0311-v1/batch-manifest-v4.json --batch-sha256=00b205ca90ef41a72062d56c0029183b5129a2ca004d71d1495bde07105027e0 --seed-artifact=prisma/seed-data/approved-portco-after-images.json --apply --write-token=APPLY_APPROVED_PORTCO_BATCH --commit-receipt=tmp/portco-reconciliation/production/batch-commit-receipt.json --receipt=tmp/portco-reconciliation/production/batch-apply-receipt.json --public-base-url=https://infra-ma-2.vercel.app/Infra-MA2/
+
+(node:3781) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "BATCH_APPLIED",
+  "receiptPath": "/home/runner/work/Infra-MA2/Infra-MA2/tmp/portco-reconciliation/production/batch-apply-receipt.json",
+  "receipt": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_APPLY_BATCH_RECEIPT",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "batchId": "batch-0307-0311-v1",
+    "batchSha256": "00b205ca90ef41a72062d56c0029183b5129a2ca004d71d1495bde07105027e0",
+    "releaseSha": "7bbc32e0ad2b3294fea1b5c76938f9ced127f185",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "transactionId": "a03adad5-bd37-4e80-96a4-9bed70ab2dd9",
+    "appliedAt": "2026-09-01T08:44:00.825Z",
+    "members": [
+      {
+        "kind": "TERMINAL",
+        "taskId": "ledger:0307:advowaste-medical-services:42ae6d6b",
+        "taskIndex": 307,
+        "companyName": "AdvoWaste Medical Services",
+        "outcome": "SUPERSEDED",
+        "decisionSha256": "4f0cf6c9f3422ce0664e18b76393bea14f6af3e26b05523f70819982b82011f6"
+      },
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0308:chillco:26fda8bd",
+        "taskIndex": 308,
+        "companyName": "ChillCo",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0308:chillco:26fda8bd",
+          "taskIndex": 308,
+          "companyName": "ChillCo",
+          "companyId": "cmtif7mla0000x12b5myc9med",
+          "proposalSha256": "89f8a9b9806a1d3acf945e4e5defbd3b023dedd97d34d309c849133ef021373a",
+          "approvalSha256": "7bd0988afa7bfdc13a1cf0ee124b6df7c4d72c23b4ae9821132cea71ff4d655f",
+          "productionSnapshotSha256": "75bcd08ec123ea2490d528bbfe2db6b229e5633325dece74eef782eed158f697",
+          "beforeCompanySnapshotSha256": null,
+          "appliedAfterImageSha256": "6c7fda808f0e359a073423ec49c030c3d433770b1b82714e4dadf3c6211ee145",
+          "seedAfterImageSha256": "6c7fda808f0e359a073423ec49c030c3d433770b1b82714e4dadf3c6211ee145",
+          "approvedSeedEntrySha256": "46f37bb9f342294121d60926f61342acfcad6742915ab2184a49aa0b15d03116",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "a03adad5-bd37-4e80-96a4-9bed70ab2dd9",
+          "auditEventId": "cmtif7mtu000cx12bj0cbupgz",
+          "appliedAt": "2026-09-01T08:44:00.825Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "fed1ccb8303023ba6f73fead4cd383719ab82274d57cf838219e14f233dc7f7f"
+        }
+      },
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0309:cyntox-biohazard-solutions:1dc97c03",
+        "taskIndex": 309,
+        "companyName": "Cyntox Biohazard Solutions",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0309:cyntox-biohazard-solutions:1dc97c03",
+          "taskIndex": 309,
+          "companyName": "Cyntox Biohazard Solutions",
+          "companyId": "cmtif7mxr000dx12bdjsg7gv5",
+          "proposalSha256": "22d5b7715cc71f7ab76ec5886eadb6f436eeaf6c65e74ac2c4180d258bcee499",
+          "approvalSha256": "0f7a0d280067008c8b6f675a7c3eeba88d9559871d57f64e08f6caaa7823c68d",
+          "productionSnapshotSha256": "1f7ff22aa72a6de4d7d86aec5cf54c6d690174ab86a72202ca29ac44f08a7223",
+          "beforeCompanySnapshotSha256": null,
+          "appliedAfterImageSha256": "4e41659c91aacba8a2a1a7d2f88f6cba75527e38bfb2cde1145dca2388757692",
+          "seedAfterImageSha256": "4e41659c91aacba8a2a1a7d2f88f6cba75527e38bfb2cde1145dca2388757692",
+          "approvedSeedEntrySha256": "9593aa7e51acafa52eded429bc690000fd6f768311d9693e94120cf179804ca2",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "a03adad5-bd37-4e80-96a4-9bed70ab2dd9",
+          "auditEventId": "cmtif7n4f000ux12btt9g202a",
+          "appliedAt": "2026-09-01T08:44:00.825Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "4b3cc39943a797b4fc0db6909d575f6756631e476bc6f42951c159559afdeac9"
+        }
+      },
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0310:pathway-power-llc:f9eee1e3",
+        "taskIndex": 310,
+        "companyName": "Pathway Power LLC",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0310:pathway-power-llc:f9eee1e3",
+          "taskIndex": 310,
+          "companyName": "Pathway Power LLC",
+          "companyId": "cmtif7n80000vx12bmafw4jnu",
+          "proposalSha256": "0fdf5cf92dbf18af9cb33b0a1ce657da3da0b0cf6134305293961b8377ddcb0b",
+          "approvalSha256": "60bf29d90db7c75e9b8dd4343ea93d2d3cd736821887f7a6ac2cc1b4dc3ff538",
+          "productionSnapshotSha256": "f5a7e8c1159e36744d01de96f9369276e7e737ec5bf6635751e88a080577985a",
+          "beforeCompanySnapshotSha256": null,
+          "appliedAfterImageSha256": "4611f3e45e8b237622f6404c77646d153f238aa170da64a958fb94adfd33ea20",
+          "seedAfterImageSha256": "4611f3e45e8b237622f6404c77646d153f238aa170da64a958fb94adfd33ea20",
+          "approvedSeedEntrySha256": "afc4c46464ad87834a52964a902e4cfc7c31b6bfa50314c7da6a787b7b2e3b76",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "a03adad5-bd37-4e80-96a4-9bed70ab2dd9",
+          "auditEventId": "cmtif7nej001dx12bmxxpzrz4",
+          "appliedAt": "2026-09-01T08:44:00.825Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "89de5aa829dc8772d93da12b6a97dac61e34078ea8c151862923de6b49f6832f"
+        }
+      },
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0311:terra-gen:621138d4",
+        "taskIndex": 311,
+        "companyName": "Terra-Gen",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0311:terra-gen:621138d4",
+          "taskIndex": 311,
+          "companyName": "Terra-Gen",
+          "companyId": "cmrxpjiqj0128ivhepgbwb3mj",
+          "proposalSha256": "d127fb55a6b1a06af36f8407f8a0e0b072b81a099ec31abc6878bb992673da2b",
+          "approvalSha256": "f3bc93a53c89f981f6765c76d54e0a787b4351f8b10d794fa112dd5636b59580",
+          "productionSnapshotSha256": "5f93fae945d03934e8fb080b0526c23373a860a4cf2d86486946025f3c5c36c2",
+          "beforeCompanySnapshotSha256": "c97215363975b779874e2d5286e746c74204c3fcb63c91aeaf346c24944dcfdd",
+          "appliedAfterImageSha256": "cef8b9325e1af04a41f5f6f56d0ad0dee967710292dd02d47253d6ae6115b9ed",
+          "seedAfterImageSha256": "cef8b9325e1af04a41f5f6f56d0ad0dee967710292dd02d47253d6ae6115b9ed",
+          "approvedSeedEntrySha256": "ec7e0709e3a8b4492eab9f413d5b55edaf405fdc89833b800d7e8d2fe59236ce",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "a03adad5-bd37-4e80-96a4-9bed70ab2dd9",
+          "auditEventId": "cmtif7nvw001xx12b5l0opw9v",
+          "appliedAt": "2026-09-01T08:44:00.825Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "3a746f9108900ad68c2ac415e32d6273ec442b2772ecff19d363703fc184e8cb"
+        }
+      }
+    ],
+    "verification": {
+      "databaseTransactionCommitted": true,
+      "seedArtifactVerified": true,
+      "allDetailApisVerified": true,
+      "partialDatabaseApplication": false
+    },
+    "receiptSha256": "466fc28e007515a531270818d2323d1047926352d23b677edab9368e5cb561cd"
+  }
+}

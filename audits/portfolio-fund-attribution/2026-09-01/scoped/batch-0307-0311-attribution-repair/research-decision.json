@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_CORRECTION_DECISION",
+  "asOfDate": "2026-09-01",
+  "triggerBatchId": "batch-0307-0311-v1",
+  "triggerBatchSha256": "00b205ca90ef41a72062d56c0029183b5129a2ca004d71d1495bde07105027e0",
+  "triggerBatchReceiptSha256": "466fc28e007515a531270818d2323d1047926352d23b677edab9368e5cb561cd",
+  "decision": "ALIGN_ACTIVE_OWNERSHIP_ATTRIBUTION_METADATA",
+  "rationale": "The atomic PortCo transaction correctly created or corrected all approved company and ownership records. The public drawer reads a separate ownership-attribution field, and Terra-Gen's newly created Masdar ownership period retained the default unresolved classification even though the reviewed seed judgment identifies it as a direct corporate investment program. Align that one metadata field before completing the PortCo bundle.",
+  "mutations": [
+    {
+      "companyName": "Terra-Gen",
+      "ownershipPeriodIds": [
+        "cmtif7nn2001mx12b5hwgdpks"
+      ],
+      "outcome": "Classify Masdar's 50% ownership as DIRECT_PROGRAM without creating or linking a fund"
+    }
+  ],
+  "verifiedNonChanges": [
+    "ChillCo remains UNRESOLVED at the fund level because Igneo did not disclose an exact fund or legal vehicle",
+    "Cyntox Biohazard Solutions remains UNRESOLVED at the fund level because Igneo did not disclose an exact fund or legal vehicle",
+    "Pathway Power remains UNRESOLVED at the fund level because North American strategy is not an exact disclosed fund",
+    "Terra-Gen's Igneo ownership remains linked to Global Diversified Infrastructure Fund (GDIF)",
+    "Company identities, aliases, redirects and publication status",
+    "Ownership organizations, vehicles, stakes, dates and active state",
+    "Former owners and the signed pending Pantheon counterparty",
+    "Descriptions, milestones, citations and primary sources",
+    "Fund Database records; the repair creates or updates no fund",
+    "The completed atomic PortCo transaction and its durable receipt"
+  ],
+  "identityResolved": true,
+  "activeOwnershipResolved": true,
+  "unresolvedQuestions": []
+}
