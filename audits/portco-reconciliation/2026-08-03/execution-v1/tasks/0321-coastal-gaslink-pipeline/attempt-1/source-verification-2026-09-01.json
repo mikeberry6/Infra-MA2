@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0321:coastal-gaslink-pipeline:b82e2db4",
+  "taskIndex": 321,
+  "verifiedAt": "2026-09-01T10:30:00.000Z",
+  "summary": {
+    "checked": 4,
+    "working": 4,
+    "browserBlockedButVerified": 0,
+    "dead": 0
+  },
+  "sources": [
+    {
+      "url": "https://www.tcenergy.com/announcements/2019/2019-12-26tc-energy-announces-the-partial-monetization-of-the-coastal-gaslink-pipeline-project/",
+      "httpStatus": 200,
+      "health": "WORKING",
+      "purpose": "Confirms the one pipeline identity, TC Energy's retained 35%, and the combined 65% KKR/AIMCo sale."
+    },
+    {
+      "url": "https://www.tcenergy.com/siteassets/pdfs/investors/reports-and-filings/annual-and-quarterly-reports/2020/tc-2020-q2-quarterly-report.pdf",
+      "httpStatus": 200,
+      "health": "WORKING",
+      "purpose": "Confirms the May 2020 closing and ownership vehicles."
+    },
+    {
+      "url": "https://www.tcenergy.com/newsroom/statements/coastal-gaslink-completes-largest-corporate-bond-offering-in-canadian-history/",
+      "httpStatus": 200,
+      "health": "WORKING",
+      "purpose": "Confirms the continuing TC Energy, KKR, and AIMCo ownership groups."
+    },
+    {
+      "url": "https://www.tcenergy.com/siteassets/pdfs/investors/reports-and-filings/annual-and-quarterly-reports/2026/tce-2026-q2-quarterly-report.pdf",
+      "httpStatus": 200,
+      "health": "WORKING",
+      "purpose": "Confirms TC Energy's current investment and no completed Indigenous ownership transfer by the reporting cutoff."
+    }
+  ],
+  "exitSearch": "No later KKR, AIMCo, or TC Energy exit was identified. The Indigenous equity option remains signed but not evidenced as legally closed.",
+  "valid": true
+}

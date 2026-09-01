@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0322:edf-power-solutions-north-america:20c2fa23",
+  "taskIndex": 322,
+  "verifiedAt": "2026-09-01T10:30:30.000Z",
+  "summary": {
+    "checked": 4,
+    "working": 3,
+    "browserBlockedButVerified": 1,
+    "dead": 0
+  },
+  "sources": [
+    {
+      "url": "https://www.edf.fr/en/the-edf-group/dedicated-sections/journalists/all-press-releases/edf-announces-the-signature-of-an-agreement-to-sell-to-kkr-edf-power-solutions-in-the-united-states-and-canada",
+      "httpStatus": 403,
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "browserTitle": "EDF announces the signature of an agreement to sell to KKR EDF power solutions in the United States and Canada - 2026/06/30 | Groupe EDF",
+      "purpose": "Direct seller source confirms a signed sale of the U.S. and Canadian operations, customary conditions, and expected second-half 2026 closing."
+    },
+    {
+      "url": "https://www.kkr.com/content/dam/kkr/country-sites/fr/press-release/20260630-kkr-to-acquire-edf-power-solutions-north-american-operations.pdf",
+      "httpStatus": 200,
+      "health": "WORKING",
+      "purpose": "Direct buyer source confirms KKR, the U.S./Canada scope, and infrastructure-strategy basis."
+    },
+    {
+      "url": "https://www.kkr.com/content/dam/kkr/country-sites/fr/press-release/20260803-kkr-closes-19-billion-infrastructure-fund.pdf",
+      "httpStatus": 200,
+      "health": "WORKING",
+      "purpose": "Direct KKR source supports the Fund V vehicle attribution."
+    },
+    {
+      "url": "https://documents.dps.ny.gov/public/MatterManagement/CaseMaster.aspx?MatterSeq=89586",
+      "httpStatus": 200,
+      "health": "WORKING",
+      "purpose": "Current regulatory docket supports continued pending status rather than legal closing."
+    }
+  ],
+  "closingSearch": "No legal closing, termination, or replacement buyer was identified through September 1, 2026; EDF remains active and KKR remains pending incoming.",
+  "valid": true
+}

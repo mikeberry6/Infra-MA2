@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0322:edf-power-solutions-north-america:20c2fa23",
+  "taskIndex": 322,
+  "companyName": "EDF Power Solutions North America",
+  "generatedAt": "2026-09-01T10:32:35.674Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0322-edf-power-solutions-north-america/attempt-1/locked-batch-v2-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 322,
+    "taskId": "ledger:0322:edf-power-solutions-north-america:20c2fa23",
+    "canonicalKey": "edf-power-solutions-north-america|canada",
+    "companyName": "EDF Power Solutions North America",
+    "country": "Canada / Mexico / United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 64,
+    "managers": [
+      "KKR"
+    ],
+    "actionScopes": {
+      "company": [
+        "CREATE_COMPANY"
+      ],
+      "ownership": [
+        "ADD_PENDING_TRANSACTION"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "064-kkr:holding:021:edf-power-solutions-north-america"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://www.edf-re.com/press-releases/kkr-to-acquire-edf-power-solutions-north-america/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "No exact normalized production or seed match exists. Census evidence supports a new canonical company with 1 manager holding record(s).",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "edf-power-solutions-north-america|canada",
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj2y500ebivhe1p2bph1k",
+        "fundName": "KKR Global Infrastructure Investors V",
+        "managerId": "cmrxpiay4002pivhed6sjuu9i",
+        "updatedAt": "2026-08-03T17:25:52.281Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpiay4002pivhed6sjuu9i",
+        "name": "KKR",
+        "updatedAt": "2026-07-23T16:09:21.388Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0322:edf-power-solutions-north-america:20c2fa23",
+    "taskIndex": 322,
+    "canonicalKey": "edf-power-solutions-north-america|canada",
+    "capturedAt": "2026-09-01T10:32:35.674Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "5c1621b8ffa5e1a6ab5d42e6e2e777004da1b248ba1a4c86273dba7e478e93d0",
+    "productionSnapshotSha256": "0074bd648afd369089a14dee6c4e59455baadbac89a8a688b2747c9bd7d10264",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "338b07b657baee9dda327dc33840779af81c73938679ecd95473e811be2c54ec",
+      "organizationsSha256": "7ac464ae461ed24153b86c45c21c7739fcb4aadf9711ad938af8eddcfcba5d14",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "b2f4be369f2670ba82ac915e8a0bbe8b0fcd14991b57db06fc14d09bfcc715ce",
+    "stateSha256": "f7419953bae2081e8e66f8bd39368f2d73fdee8fb42b7f1b1bc0b2dd72a28193",
+    "taskSnapshotSha256": "97a42ead6de3c29e19c1c9497ca1799cfe89e0c95253c6156ee2707df48ad289"
+  },
+  "contextSha256": "b8aae5bef75ae21cd2556ed421fbe660f16958415ebaf78bcd88645355d4f8dc"
+}

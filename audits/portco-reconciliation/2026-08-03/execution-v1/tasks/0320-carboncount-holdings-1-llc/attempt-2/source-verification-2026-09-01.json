@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0320:carboncount-holdings-1-llc:1dcdc974",
+  "taskIndex": 320,
+  "verifiedAt": "2026-09-01T10:29:30.000Z",
+  "summary": {
+    "checked": 3,
+    "working": 2,
+    "browserBlockedButVerified": 1,
+    "dead": 0
+  },
+  "sources": [
+    {
+      "url": "https://investors.hasi.com/news/press-releases/detail/288/hasi-and-kkr-establish-2-billion-strategic-partnership-to-invest-in-sustainable-infrastructure-projects",
+      "httpStatus": 200,
+      "health": "WORKING",
+      "purpose": "Confirms formation, 50/50 co-investment mandate, and vehicle purpose."
+    },
+    {
+      "url": "https://investors.hasi.com/news/press-releases/detail/318/hasi-and-kkr-commit-additional-1-billion-to-carboncount-holdings-1",
+      "httpStatus": 200,
+      "health": "WORKING",
+      "purpose": "Confirms the vehicle remained active and received additional member commitments."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1561894/000156189426000136/hasi-20260630.htm",
+      "httpStatus": 403,
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "browserTitle": "hasi-20260630",
+      "purpose": "Current SEC filing confirms active 50/50 co-investment-vehicle ownership, funded commitments, assets, debt, and affiliate servicing rather than a standalone operating business."
+    }
+  ],
+  "boundaryDecision": "CarbonCount Holdings 1 LLC is an active investment, aggregation, and financing vehicle rather than a manager-level operating portfolio company; archive the published PortCo row while preserving durable ownership and evidence history.",
+  "valid": true
+}
