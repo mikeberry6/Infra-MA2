@@ -1,0 +1,96 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:batch:apply
+> npx tsx scripts/portco-reconciliation/batch-apply-cli.ts --batch-manifest=audits/portco-reconciliation/2026-08-23/batches/batch-0373-0378-v1/batch-manifest-v4.json --batch-sha256=f845c9d5e737c7fc834f621b9a51f8fa6d4703fbf1a9870b9b2b92f8c001deb2
+
+(node:3628) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "BATCH_DRY_RUN",
+  "batchId": "batch-0373-0378-v1",
+  "batchSha256": "f845c9d5e737c7fc834f621b9a51f8fa6d4703fbf1a9870b9b2b92f8c001deb2",
+  "databaseWrites": false,
+  "seedWrites": false,
+  "plans": [
+    {
+      "companyName": "Teranet Inc.",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to aliases, description, website, headquarters, lastVerifiedAt, ownershipPeriods, milestones, citations."
+        },
+        {
+          "kind": "ADD_OWNER",
+          "relationIds": [],
+          "detail": "Add 3 approved ownership period(s)."
+        }
+      ],
+      "changedFields": [
+        "aliases",
+        "citations",
+        "description",
+        "headquarters",
+        "lastVerifiedAt",
+        "milestones",
+        "ownershipPeriods",
+        "website"
+      ],
+      "retiredCompanyIds": []
+    },
+    {
+      "companyName": "Skyway Concession Company LLC",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to name, aliases, description, website, headquarters, lastVerifiedAt, ownershipPeriods, milestones, citations."
+        },
+        {
+          "kind": "ADD_OWNER",
+          "relationIds": [],
+          "detail": "Add 6 approved ownership period(s)."
+        }
+      ],
+      "changedFields": [
+        "aliases",
+        "citations",
+        "description",
+        "headquarters",
+        "lastVerifiedAt",
+        "milestones",
+        "name",
+        "ownershipPeriods",
+        "website"
+      ],
+      "retiredCompanyIds": []
+    },
+    {
+      "companyName": "Intersect Power",
+      "mutations": [
+        {
+          "kind": "CREATE_COMPANY",
+          "relationIds": [],
+          "detail": "Create the approved canonical company and all approved relations."
+        }
+      ],
+      "changedFields": [
+        "company"
+      ],
+      "retiredCompanyIds": []
+    },
+    {
+      "companyName": "Budderfly",
+      "mutations": [
+        {
+          "kind": "CREATE_COMPANY",
+          "relationIds": [],
+          "detail": "Create the approved canonical company and all approved relations."
+        }
+      ],
+      "changedFields": [
+        "company"
+      ],
+      "retiredCompanyIds": []
+    }
+  ]
+}
