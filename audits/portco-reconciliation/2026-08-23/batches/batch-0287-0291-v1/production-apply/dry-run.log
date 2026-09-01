@@ -1,0 +1,89 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:batch:apply
+> npx tsx scripts/portco-reconciliation/batch-apply-cli.ts --batch-manifest=audits/portco-reconciliation/2026-08-23/batches/batch-0287-0291-v1/batch-manifest.json --batch-sha256=58822442152edd669f2cfdad337d1bd03e7121b25cb6bd0089e0f9466ff19e47
+
+(node:3486) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "BATCH_DRY_RUN",
+  "batchId": "batch-0287-0291-v1",
+  "batchSha256": "58822442152edd669f2cfdad337d1bd03e7121b25cb6bd0089e0f9466ff19e47",
+  "databaseWrites": false,
+  "seedWrites": false,
+  "plans": [
+    {
+      "companyName": "Ambient Photonics",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to recordStatus, lastVerifiedAt."
+        }
+      ],
+      "changedFields": [
+        "lastVerifiedAt",
+        "recordStatus"
+      ],
+      "retiredCompanyIds": []
+    },
+    {
+      "companyName": "Bear River Midstream",
+      "mutations": [
+        {
+          "kind": "CREATE_COMPANY",
+          "relationIds": [],
+          "detail": "Create the approved canonical company and all approved relations."
+        }
+      ],
+      "changedFields": [
+        "company"
+      ],
+      "retiredCompanyIds": []
+    },
+    {
+      "companyName": "CheckSammy",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to recordStatus, lastVerifiedAt."
+        }
+      ],
+      "changedFields": [
+        "lastVerifiedAt",
+        "recordStatus"
+      ],
+      "retiredCompanyIds": []
+    },
+    {
+      "companyName": "ENTEK Technology Holdings",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to recordStatus, lastVerifiedAt."
+        }
+      ],
+      "changedFields": [
+        "lastVerifiedAt",
+        "recordStatus"
+      ],
+      "retiredCompanyIds": []
+    },
+    {
+      "companyName": "Epirus",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to recordStatus, lastVerifiedAt."
+        }
+      ],
+      "changedFields": [
+        "lastVerifiedAt",
+        "recordStatus"
+      ],
+      "retiredCompanyIds": []
+    }
+  ]
+}
