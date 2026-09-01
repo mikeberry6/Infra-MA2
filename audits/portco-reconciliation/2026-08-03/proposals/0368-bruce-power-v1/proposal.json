@@ -1,0 +1,410 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0368:bruce-power:9c7e76e5",
+  "taskIndex": 368,
+  "asOfDate": "2026-09-01",
+  "generatedAt": "2026-09-01T19:00:00.000Z",
+  "canonicalKey": "bruce-power|canada",
+  "companyName": "Bruce Power",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER"
+  ],
+  "sourceHoldingIds": [
+    "075-omers-infrastructure:holding:004:bruce-power"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Keep one Bruce Power operating platform and one continuous OMERS ownership period. Correct OMERS to 48.26% through BPC Generation Infrastructure Trust from the February 14, 2003 close, add the current TC Energy, Power Workers' Union and aggregate Society/employee/GP interests, and preserve the former British Energy and Cameco periods. OPG remains the site owner and lessor, not a Bruce Power equity owner.",
+  "evidence": [
+    {
+      "url": "https://www.brucepower.com/about-us/",
+      "purpose": "Current platform, partner and operating-boundary evidence.",
+      "supports": [
+        "Bruce Power is the operating platform for the leased nuclear site.",
+        "The current partner roster includes OMERS, TC Energy and union or employee interests."
+      ]
+    },
+    {
+      "url": "https://dbrs.morningstar.com/issuers/21946/bruce-power-lp",
+      "purpose": "Current ownership percentages.",
+      "supports": [
+        "OMERS and TC Energy each hold 48.26%.",
+        "Power Workers' Union holds 2.22% and the remaining interests aggregate 1.26%."
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1009001/000113031905000179/o15894exv1.htm",
+      "purpose": "Original and 2003 ownership history.",
+      "supports": [
+        "British Energy was the original controlling owner.",
+        "The February 14, 2003 restructuring established the OMERS, TransCanada and Cameco sponsor group."
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "03198c3d82de9da6a3e186073dfe0c8735f943d42c5aac736e5450f95d349db3",
+  "currentCompanySnapshotSha256": "359e362318ae290f2d68cf226b40df5388a2861af95563a360cfa11628985ea2",
+  "executionLock": {
+    "taskSnapshotSha256": "749164203926018f26d43562cec15bc34a5dcedeb08a306872ccdd0b907812d0",
+    "taskStateSha256": "b7fd8fc57f1663ba0031a47a335917d722115d7702a96e4683ab9307f33ac2b4",
+    "taskDependencySha256": "38f0883d6732d050406530c86562276005a3d5dcb8748eaabc2c5078df650bdb",
+    "seedEntrySha256": "48f2dee7ad544faf5f6b1561e4e9b3d387ad1345f2a932c464e02f5ebaf5e860",
+    "dependencies": {
+      "ownershipPeriodsSha256": "30aa3079d86a835cc93d5fa32d7cb059650da08d4069a5fcc8b0ff7fc08dd169",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "fac4fa7335c127e73abe52490df9652aca3bb882b516d47a38d8dfc92ad1e3f0",
+      "organizationsSha256": "46932e5bee6037e427d58b53af5fd4a3b24efe830239ca03890ac6f2564b3c56",
+      "citationsSha256": "b70a01588215a7f9a2ac00caef2c4ccacede9cfeeca644300f80b9bb05a6a358",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj3fm00f1ivhehhc270qc",
+        "fundName": "OMERS Infrastructure",
+        "managerId": "cmrxpic6e0033ivheho9lmsp6",
+        "updatedAt": "2026-07-23T16:09:58.306Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpic6e0033ivheho9lmsp6",
+        "name": "OMERS Infrastructure",
+        "updatedAt": "2026-07-23T16:09:22.983Z"
+      },
+      {
+        "id": "cmrxpij0a0058ivhemf1et807",
+        "name": "OMERS",
+        "updatedAt": "2026-07-23T16:09:31.834Z"
+      },
+      {
+        "id": "cmt5so1kc00112oyyjbytpdlt",
+        "name": "TC Energy Corporation",
+        "updatedAt": "2026-08-23T12:39:39.756Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjm8e017oivhe1inhdhjr",
+    "name": "Bruce Power",
+    "aliases": [],
+    "sector": "UTILITIES",
+    "subsector": "Nuclear generation",
+    "region": "NORTH_AMERICA",
+    "country": "Canada",
+    "countryTags": [
+      "Canada"
+    ],
+    "description": "Bruce Power operates a multi-unit nuclear generating facility that supplies baseload electricity and medical isotopes. Its customers or end markets include the Ontario electricity system and isotope markets. The operating model is an asset-heavy regulated-style generation model under long-term contractual and market frameworks in Ontario. Operations are concentrated in Bruce County, Ontario. Public materials indicate peak output of about 6,550 MW and roughly 30% of Ontario’s electricity supply according to OMERS. Current ownership includes OMERS Infrastructure, which has publicly described its holding as approximately 50% and dates its investment to 2003.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Ontario",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk8lw0274ivhekizsvd72",
+        "managerName": "OMERS Infrastructure",
+        "organizationName": "OMERS",
+        "fundName": "OMERS Infrastructure",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2003,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmj5i04ziivheesqmjcd7",
+        "date": "2003",
+        "event": "OMERS made its initial investment in Bruce Power.",
+        "category": "FINANCING",
+        "sortDate": "2003-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmj6204zjivhe7aigv852",
+        "date": "2024",
+        "event": "Bruce Power produced approximately 30% of Ontario's electricity.",
+        "category": "EXPANSION",
+        "sortDate": "2024-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmj6l04zkivhe6rritd3v",
+        "date": "Dec 2025",
+        "event": "Bruce Power announced an additional $950 million green bond issue.",
+        "category": "FINANCING",
+        "sortDate": "2025-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmj7504zlivhevbatwu6v",
+        "date": "Feb 2026",
+        "event": "Ontario backed expansion of the Bruce Power isotopes partnership.",
+        "category": "EXPANSION",
+        "sortDate": "2026-02-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpshqm0cnxivhehngysoem",
+        "label": "Omers — Bruce Power",
+        "url": "https://www.omers.com/omers-community/son-bruce-power-record-investment-for-an-indigenous-nation",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Omers — Bruce Power",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpshrt0cnzivhebyi8zydc",
+        "label": "Omersinfrastructure — Bruce Power",
+        "url": "https://www.omersinfrastructure.com/news/omers-achieves-milestone-in-canadian-infrastructure-financing-with-bruce",
+        "sourceType": "ARTICLE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Omersinfrastructure financing or public filing",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpshst0co1ivhege68m0rm",
+        "label": "Omers — Bruce Power",
+        "url": "https://www.omers.com/omers-2025-annual-meeting-transcript",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Omers — Bruce Power",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpshtn0co3ivhersd19bhf",
+        "label": "Omers — Bruce Power",
+        "url": "https://www.omers.com/omers-2024-annual-report",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Omers — Bruce Power",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "359e362318ae290f2d68cf226b40df5388a2861af95563a360cfa11628985ea2",
+  "afterImage": {
+    "id": "cmrxpjm8e017oivhe1inhdhjr",
+    "name": "Bruce Power",
+    "aliases": [
+      "Bruce Power L.P.",
+      "BPLP"
+    ],
+    "sector": "UTILITIES",
+    "subsector": "Nuclear generation",
+    "region": "NORTH_AMERICA",
+    "country": "Canada",
+    "countryTags": [
+      "Canada"
+    ],
+    "description": "Bruce Power operates eight CANDU nuclear generating units at the leased Bruce site in Ontario and supplies roughly 30% of the province's electricity together with medical isotopes. OMERS and TC Energy each own 48.26%, Power Workers' Union owns 2.22%, and Society, employee-trust and general-partner interests aggregate 1.26%. OMERS entered at the February 14, 2003 close through BPC Generation Infrastructure Trust. No later equity transfer or signed pending sale was identified through September 1, 2026. Ontario Power Generation owns and leases the site and is not a Bruce Power equity owner; station units, refurbishment programs, isotope ventures, contracts and financing entities remain beneath the single platform boundary.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.brucepower.com/",
+    "yearFounded": 2001,
+    "headquarters": "Tiverton, Ontario, Canada",
+    "lastVerifiedAt": "2026-09-01T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk8lw0274ivhekizsvd72",
+        "managerName": "OMERS Infrastructure",
+        "organizationName": "OMERS",
+        "fundName": "OMERS Infrastructure",
+        "vehicleName": "BPC Generation Infrastructure Trust",
+        "stake": "48.26%",
+        "investmentYear": 2003,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "TC Energy Corporation",
+        "organizationName": "TC Energy Corporation",
+        "fundName": null,
+        "vehicleName": "TransCanada Energy Investments Ltd. lineage",
+        "stake": "48.26%",
+        "investmentYear": 2003,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Power Workers' Union",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "PWU Trust No. 1 lineage",
+        "stake": "2.22%",
+        "investmentYear": 2001,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Society/Employees/BPI",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Society trust, employee investment trust and Bruce Power Inc. general-partner interests",
+        "stake": "1.26% aggregate; component splits are not publicly disclosed",
+        "investmentYear": 2001,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "British Energy",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "British Energy (Canada) Ltd.",
+        "stake": "82.4%",
+        "investmentYear": 2001,
+        "exitYear": 2003,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      },
+      {
+        "id": null,
+        "managerName": "Cameco",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Cameco Bruce Holdings I/II",
+        "stake": "15% at entry; 31.6% from 2003 until exit",
+        "investmentYear": 2001,
+        "exitYear": 2014,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmj5i04ziivheesqmjcd7",
+        "date": "Feb 14, 2003",
+        "event": "British Energy exited and OMERS, TransCanada and Cameco each acquired 31.6% interests in Bruce Power, with union interests retaining the balance.",
+        "category": "FINANCING",
+        "sortDate": "2003-02-14T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1009001/000113031905000179/o15894exv1.htm"
+        ]
+      },
+      {
+        "id": "cmrxpmj6204zjivhe7aigv852",
+        "date": "2024",
+        "event": "Bruce Power produced approximately 30% of Ontario's electricity.",
+        "category": "EXPANSION",
+        "sortDate": "2024-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmj6l04zkivhe6rritd3v",
+        "date": "Dec 2025",
+        "event": "Bruce Power announced an additional $950 million green bond issue.",
+        "category": "FINANCING",
+        "sortDate": "2025-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmj7504zlivhevbatwu6v",
+        "date": "Feb 2026",
+        "event": "Ontario backed expansion of the Bruce Power isotopes partnership.",
+        "category": "EXPANSION",
+        "sortDate": "2026-02-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpshqm0cnxivhehngysoem",
+        "label": "Omers — Bruce Power",
+        "url": "https://www.omers.com/omers-community/son-bruce-power-record-investment-for-an-indigenous-nation",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Omers — Bruce Power",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpshrt0cnzivhebyi8zydc",
+        "label": "Omersinfrastructure — Bruce Power",
+        "url": "https://www.omersinfrastructure.com/news/omers-achieves-milestone-in-canadian-infrastructure-financing-with-bruce",
+        "sourceType": "ARTICLE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Omersinfrastructure financing or public filing",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpshst0co1ivhege68m0rm",
+        "label": "Omers — Bruce Power",
+        "url": "https://www.omers.com/omers-2025-annual-meeting-transcript",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Omers — Bruce Power",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpshtn0co3ivhersd19bhf",
+        "label": "Omers — Bruce Power",
+        "url": "https://www.omers.com/omers-2024-annual-report",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Omers — Bruce Power",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Bruce Power — About Us",
+        "url": "https://www.brucepower.com/about-us/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current partners, platform boundary and operating profile",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "DBRS Morningstar — Bruce Power L.P.",
+        "url": "https://dbrs.morningstar.com/issuers/21946/bruce-power-lp",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Exact current ownership percentages",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Cameco — 2004 annual information form",
+        "url": "https://www.sec.gov/Archives/edgar/data/1009001/000113031905000179/o15894exv1.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Original owners and February 14, 2003 ownership restructuring",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Cameco — 2015 annual report note 6",
+        "url": "https://www.cameco.com/annual_report/2015/financial-information/notes/note-6/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Cameco's March 2014 exit",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "db7b8f5caf9223b20c2874abec5238de02530015d4f16c29bab41c051e21924f",
+  "proposalSha256": "87a29530ea1883e69d5f5fb3961c6e9e2c1fc558fd77a35142cac43f4e41b6f3"
+}

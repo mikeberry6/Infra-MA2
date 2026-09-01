@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0371:navisun-llc:67b86252",
+  "taskIndex": 371,
+  "companyName": "Navisun LLC",
+  "generatedAt": "2026-09-01T19:03:12.413Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0371-navisun-llc/attempt-1/observed-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 371,
+    "taskId": "ledger:0371:navisun-llc:67b86252",
+    "canonicalKey": "navisun-llc|united-states",
+    "companyName": "Navisun LLC",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 75,
+    "managers": [
+      "OMERS Infrastructure"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "075-omers-infrastructure:holding:009:navisun-llc"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjm9a017qivheb5o60hza"
+    ],
+    "seedKeys": [
+      "navisun llc|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.omersinfrastructure.com/investments/navisun"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_OWNER requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjm9a017qivheb5o60hza",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "navisun-llc|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjm9a017qivheb5o60hza",
+    "name": "Navisun LLC",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Distributed solar and storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Navisun LLC develops, finances, owns, and operates distributed and small utility-scale solar and storage projects. Its customers or end markets include commercial, industrial, community solar, and utility counterparties in U.S. distributed generation markets. The operating model is a development-to-ownership model with contracted power sales and project financing at the asset level. Operations are concentrated in multiple U.S. states. Public materials indicate a distributed generation platform rather than a single-asset owner, with activity across solar and storage segments. OMERS Infrastructure announced in 2021 that it signed an agreement to acquire 100% of Navisun from Ares Management; no public close date was found in the reviewed sources.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Multi-state United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk8mv0276ivheokfkrftv",
+        "managerName": "OMERS Infrastructure",
+        "organizationName": "OMERS",
+        "fundName": "OMERS Infrastructure",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmjcu04zpivhewq7u5tbh",
+        "date": "2021",
+        "event": "The acquisition marked OMERS’s entry into the distributed generation segment.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmjdf04zqivhergvcy50b",
+        "date": "Nov 2021",
+        "event": "OMERS Infrastructure signed an agreement to acquire 100% of Navisun from Ares Management.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-11-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpshyj0codivhe08bviud3",
+        "label": "Navisunllc — Navisun LLC",
+        "url": "https://navisunllc.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Navisunllc company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpshzq0cofivhe458lqvea",
+        "label": "Announcement date source — OMERS — Navisun LLC",
+        "url": "https://navisunllc.com/news/omers-infrastructure-signs-agreement-with-ares-management-to-acquire-100-of-navisun-llc-signals-entry-into-distributed-generation-space",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "OMERS transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsi0u0cohivhe553gjlzq",
+        "label": "Navisunllc — Navisun LLC",
+        "url": "https://navisunllc.com/category/press-releases",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Navisunllc — Navisun LLC",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Navisun LLC",
+    "investmentFirm": "OMERS",
+    "sector": "Power & ET",
+    "subsector": "Distributed solar and storage",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "Navisun LLC develops, finances, owns, and operates distributed and small utility-scale solar and storage projects. Its customers or end markets include commercial, industrial, community solar, and utility counterparties in U.S. distributed generation markets. The operating model is a development-to-ownership model with contracted power sales and project financing at the asset level. Operations are concentrated in multiple U.S. states. Public materials indicate a distributed generation platform rather than a single-asset owner, with activity across solar and storage segments. OMERS Infrastructure announced in 2021 that it signed an agreement to acquire 100% of Navisun from Ares Management; no public close date was found in the reviewed sources.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2021,
+    "headquarters": "Multi-state United States",
+    "milestones": [
+      {
+        "date": "2021",
+        "event": "The acquisition marked OMERS’s entry into the distributed generation segment.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Nov 2021",
+        "event": "OMERS Infrastructure signed an agreement to acquire 100% of Navisun from Ares Management.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Navisunllc — Navisun LLC",
+        "url": "https://navisunllc.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Announcement date source — OMERS — Navisun LLC",
+        "url": "https://navisunllc.com/news/omers-infrastructure-signs-agreement-with-ares-management-to-acquire-100-of-navisun-llc-signals-entry-into-distributed-generation-space",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Navisunllc — Navisun LLC",
+        "url": "https://navisunllc.com/category/press-releases",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "OMERS",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2021,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj3fm00f1ivhehhc270qc",
+        "fundName": "OMERS Infrastructure",
+        "managerId": "cmrxpic6e0033ivheho9lmsp6",
+        "updatedAt": "2026-07-23T16:09:58.306Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi48n000mivhewkoz0k55",
+        "name": "Ares Management",
+        "updatedAt": "2026-07-23T16:09:12.695Z"
+      },
+      {
+        "id": "cmrxpic6e0033ivheho9lmsp6",
+        "name": "OMERS Infrastructure",
+        "updatedAt": "2026-07-23T16:09:22.983Z"
+      },
+      {
+        "id": "cmrxpij0a0058ivhemf1et807",
+        "name": "OMERS",
+        "updatedAt": "2026-07-23T16:09:31.834Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0371:navisun-llc:67b86252",
+    "taskIndex": 371,
+    "canonicalKey": "navisun-llc|united-states",
+    "capturedAt": "2026-09-01T19:03:12.413Z",
+    "databaseRevision": "revision:641228ebc760c4e3c04cf2df256f24d6a8739653b0bec50908326d7fc4f10d68",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "96196a9123e5101d2aa58c4973c5164883a2062e105beabd07881de61e5b7f72",
+    "productionSnapshotSha256": "dd1d7ddb199264bd3ea54c6583a0c8ea6f54f4171d17fe54eac44c312c719a4d",
+    "targetCompanySnapshotSha256": "6d7a30e5c134559deb92cd57483a8db6c332ce0159568c2ec129007967e69656",
+    "seedEntrySha256": "483bf9cefe549508b3e9ceb1ad0334830d447af3c66ddfc7b3c730ff6c883306",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "37d356a2a26c6045182fefd87dbab25547fc773155875807e13471655c92fced",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "fac4fa7335c127e73abe52490df9652aca3bb882b516d47a38d8dfc92ad1e3f0",
+      "organizationsSha256": "8eb1a40fa76d0cc4312b2dc5524e66cbb92fcffe4772f5c1a86ec41ce8da2457",
+      "citationsSha256": "85f89ebb956422fdae06bcb224022e2365646f7126fcb9d4f76b564cde9e44fd",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "332c19a41bf550681d1fda9dba8ba421f55e5ec73207bcebb3a22f1b4dd78b21",
+    "stateSha256": "5634d72b6009ac70c9e1141ea9a66f2035b8324b550d6c7ba5e236bff17caf0d",
+    "taskSnapshotSha256": "e8a037099ab80e9548033a2d20c0449bb1b824aea988f640aff4745dde66a3b5"
+  },
+  "contextSha256": "c4d25396bbdc138e4cc24825d63923d1e37024a1802765c6e89f8ed4c23bc7ff"
+}

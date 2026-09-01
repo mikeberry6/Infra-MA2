@@ -1,0 +1,313 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0371:navisun-llc:67b86252",
+  "taskIndex": 371,
+  "asOfDate": "2026-09-01",
+  "generatedAt": "2026-09-01T19:00:00.000Z",
+  "canonicalKey": "navisun-llc|united-states",
+  "companyName": "Navisun LLC",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER"
+  ],
+  "sourceHoldingIds": [
+    "075-omers-infrastructure:holding:009:navisun-llc"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Keep one Navisun platform and reject the queued duplicate OMERS owner addition. Correct OMERS's legal entry from the November 2021 signing to the January 18, 2022 close, record the 100% Magnet Acquisition Holdings and Magnet US chain, and add Ares Management through Ares Capital Corporation as a former owner. Reported Catalyze talks were not signed or closed and do not change active ownership.",
+  "evidence": [
+    {
+      "url": "https://interchange.puc.texas.gov/Documents/54941_631_1559824.PDF",
+      "purpose": "Legal closing and current ownership-chain evidence.",
+      "supports": [
+        "Magnet US Acquisition Corporation acquired indirect ownership on January 18, 2022.",
+        "The Magnet entities form the 100% OMERS ownership chain."
+      ]
+    },
+    {
+      "url": "https://www.omersinfrastructure.com/investments/navisun",
+      "purpose": "Current OMERS portfolio status.",
+      "supports": [
+        "OMERS continues to list Navisun as a current investment.",
+        "OMERS identifies 2022 as the investment year."
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1287750/000128775022000007/arccq4-202110k.htm",
+      "purpose": "Former Ares ownership and entry evidence.",
+      "supports": [
+        "Ares Capital Corporation held direct Navisun securities.",
+        "The disclosed Ares investment began on November 15, 2017."
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "adad3343786a288b8f559488799eedd61f86904b4df337db20f9c77cffea3fc7",
+  "currentCompanySnapshotSha256": "6d7a30e5c134559deb92cd57483a8db6c332ce0159568c2ec129007967e69656",
+  "executionLock": {
+    "taskSnapshotSha256": "d1def7b0dd9d168ebb885662ab3d565adf4a8471054f950d71a94a663c40ffb0",
+    "taskStateSha256": "5634d72b6009ac70c9e1141ea9a66f2035b8324b550d6c7ba5e236bff17caf0d",
+    "taskDependencySha256": "332c19a41bf550681d1fda9dba8ba421f55e5ec73207bcebb3a22f1b4dd78b21",
+    "seedEntrySha256": "483bf9cefe549508b3e9ceb1ad0334830d447af3c66ddfc7b3c730ff6c883306",
+    "dependencies": {
+      "ownershipPeriodsSha256": "37d356a2a26c6045182fefd87dbab25547fc773155875807e13471655c92fced",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "fac4fa7335c127e73abe52490df9652aca3bb882b516d47a38d8dfc92ad1e3f0",
+      "organizationsSha256": "8eb1a40fa76d0cc4312b2dc5524e66cbb92fcffe4772f5c1a86ec41ce8da2457",
+      "citationsSha256": "85f89ebb956422fdae06bcb224022e2365646f7126fcb9d4f76b564cde9e44fd",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj3fm00f1ivhehhc270qc",
+        "fundName": "OMERS Infrastructure",
+        "managerId": "cmrxpic6e0033ivheho9lmsp6",
+        "updatedAt": "2026-07-23T16:09:58.306Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi48n000mivhewkoz0k55",
+        "name": "Ares Management",
+        "updatedAt": "2026-07-23T16:09:12.695Z"
+      },
+      {
+        "id": "cmrxpic6e0033ivheho9lmsp6",
+        "name": "OMERS Infrastructure",
+        "updatedAt": "2026-07-23T16:09:22.983Z"
+      },
+      {
+        "id": "cmrxpij0a0058ivhemf1et807",
+        "name": "OMERS",
+        "updatedAt": "2026-07-23T16:09:31.834Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjm9a017qivheb5o60hza",
+    "name": "Navisun LLC",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Distributed solar and storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Navisun LLC develops, finances, owns, and operates distributed and small utility-scale solar and storage projects. Its customers or end markets include commercial, industrial, community solar, and utility counterparties in U.S. distributed generation markets. The operating model is a development-to-ownership model with contracted power sales and project financing at the asset level. Operations are concentrated in multiple U.S. states. Public materials indicate a distributed generation platform rather than a single-asset owner, with activity across solar and storage segments. OMERS Infrastructure announced in 2021 that it signed an agreement to acquire 100% of Navisun from Ares Management; no public close date was found in the reviewed sources.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Multi-state United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk8mv0276ivheokfkrftv",
+        "managerName": "OMERS Infrastructure",
+        "organizationName": "OMERS",
+        "fundName": "OMERS Infrastructure",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmjcu04zpivhewq7u5tbh",
+        "date": "2021",
+        "event": "The acquisition marked OMERS’s entry into the distributed generation segment.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmjdf04zqivhergvcy50b",
+        "date": "Nov 2021",
+        "event": "OMERS Infrastructure signed an agreement to acquire 100% of Navisun from Ares Management.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-11-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpshyj0codivhe08bviud3",
+        "label": "Navisunllc — Navisun LLC",
+        "url": "https://navisunllc.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Navisunllc company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpshzq0cofivhe458lqvea",
+        "label": "Announcement date source — OMERS — Navisun LLC",
+        "url": "https://navisunllc.com/news/omers-infrastructure-signs-agreement-with-ares-management-to-acquire-100-of-navisun-llc-signals-entry-into-distributed-generation-space",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "OMERS transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsi0u0cohivhe553gjlzq",
+        "label": "Navisunllc — Navisun LLC",
+        "url": "https://navisunllc.com/category/press-releases",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Navisunllc — Navisun LLC",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "6d7a30e5c134559deb92cd57483a8db6c332ce0159568c2ec129007967e69656",
+  "afterImage": {
+    "id": "cmrxpjm9a017qivheb5o60hza",
+    "name": "Navisun LLC",
+    "aliases": [
+      "Navisun"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Distributed solar and storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Navisun LLC is a Hingham, Massachusetts-based distributed solar and storage platform that develops, acquires, finances, owns and operates community, commercial and small utility-scale projects across the United States. OMERS completed its acquisition of 100% of Navisun on January 18, 2022 through Magnet Acquisition Holdings Corporation and Magnet US Acquisition Corporation; the November 2, 2021 event was the signing, not the ownership entry. Ares Management through Ares Capital Corporation is recorded as a former owner from 2017 to closing. No signed or closed platform sale was identified through September 1, 2026. Projects, portfolios, tax-equity vehicles, lenders and asset-level joint ventures remain beneath the single Navisun platform boundary.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.navisunllc.com/",
+    "yearFounded": 2017,
+    "headquarters": "Hingham, Massachusetts, United States",
+    "lastVerifiedAt": "2026-09-01T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk8mv0276ivheokfkrftv",
+        "managerName": "OMERS Infrastructure",
+        "organizationName": "OMERS",
+        "fundName": "OMERS Infrastructure",
+        "vehicleName": "Magnet Acquisition Holdings Corporation / Magnet US Acquisition Corporation",
+        "stake": "100%",
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Ares Management",
+        "organizationName": "Ares Management",
+        "fundName": null,
+        "vehicleName": "Ares Capital Corporation / direct Navisun LLC and Navisun Holdings LLC securities",
+        "stake": "100% Series A preferred and 55% Class A; other pre-close Class A holders are not publicly disclosed",
+        "investmentYear": 2017,
+        "exitYear": 2022,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmjcu04zpivhewq7u5tbh",
+        "date": "Jan 18, 2022",
+        "event": "OMERS completed its acquisition of 100% of Navisun through the Magnet acquisition-vehicle chain, ending the Ares ownership period.",
+        "category": "FINANCING",
+        "sortDate": "2022-01-18T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://interchange.puc.texas.gov/Documents/54941_631_1559824.PDF"
+        ]
+      },
+      {
+        "id": "cmrxpmjdf04zqivhergvcy50b",
+        "date": "Nov 2, 2021",
+        "event": "OMERS signed an agreement to acquire 100% of Navisun from an Ares-managed seller, subject to closing conditions.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-11-02T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.omersinfrastructure.com/news/omers-infrastructure-signs-agreement-with-ares-management-to-acquire-100-of"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpshyj0codivhe08bviud3",
+        "label": "Navisunllc — Navisun LLC",
+        "url": "https://navisunllc.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Navisunllc company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpshzq0cofivhe458lqvea",
+        "label": "Announcement date source — OMERS — Navisun LLC",
+        "url": "https://navisunllc.com/news/omers-infrastructure-signs-agreement-with-ares-management-to-acquire-100-of-navisun-llc-signals-entry-into-distributed-generation-space",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "OMERS transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsi0u0cohivhe553gjlzq",
+        "label": "Navisunllc — Navisun LLC",
+        "url": "https://navisunllc.com/category/press-releases",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Navisunllc — Navisun LLC",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Texas PUC-filed FERC disclosure — Navisun ownership",
+        "url": "https://interchange.puc.texas.gov/Documents/54941_631_1559824.PDF",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "January 18, 2022 close and 100% Magnet/OMERS ownership chain",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "OMERS Infrastructure — Navisun",
+        "url": "https://www.omersinfrastructure.com/investments/navisun",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current OMERS portfolio status and 2022 investment year",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "OMERS — Navisun acquisition agreement",
+        "url": "https://www.omersinfrastructure.com/news/omers-infrastructure-signs-agreement-with-ares-management-to-acquire-100-of",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "November 2, 2021 signing, 100% scope and Ares seller",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Ares Capital Corporation — 2021 Form 10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1287750/000128775022000007/arccq4-202110k.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Former Ares securities and November 15, 2017 entry",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "d7425c7d62561568e1a3586711f750a26d6f987749349422eb12f0d5f5e43af1",
+  "proposalSha256": "1f28d2f738d6904f798297e9901709ae1ca6e4179ff157d7cf264e872f141c65"
+}

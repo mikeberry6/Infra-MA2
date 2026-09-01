@@ -1,0 +1,284 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0370:leeward-renewable-energy:acc199f8",
+  "taskIndex": 370,
+  "companyName": "Leeward Renewable Energy",
+  "generatedAt": "2026-09-01T19:03:10.405Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0370-leeward-renewable-energy/attempt-1/observed-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 370,
+    "taskId": "ledger:0370:leeward-renewable-energy:acc199f8",
+    "canonicalKey": "leeward-renewable-energy|united-states",
+    "companyName": "Leeward Renewable Energy",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 75,
+    "managers": [
+      "OMERS Infrastructure"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "075-omers-infrastructure:holding:008:leeward-renewable-energy"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjm8v017pivhepl8l8kkk"
+    ],
+    "seedKeys": [
+      "leeward renewable energy|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.omersinfrastructure.com/investments/leeward-renewable-energy"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_OWNER requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjm8v017pivhepl8l8kkk",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "leeward-renewable-energy|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjm8v017pivhepl8l8kkk",
+    "name": "Leeward Renewable Energy",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Utility-scale wind, solar, and storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Leeward Renewable Energy develops, owns, and operates utility-scale wind, solar, and energy storage assets across the United States. Its customers or end markets include utilities, corporates, and wholesale power markets contracting for renewable generation and storage capacity. The operating model is a development-to-ownership model supported by project-level financing and long-term power offtake structures. Operations are concentrated in multiple U.S. states. Public materials indicate an operating portfolio of roughly 4 GW according to current company materials. Current ownership dates to OMERS Infrastructure’s acquisition of the business from ArcLight in 2018.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Multi-state United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk8me0275ivhe9of0b23y",
+        "managerName": "OMERS Infrastructure",
+        "organizationName": "OMERS",
+        "fundName": "OMERS Infrastructure",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2018,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmjap04zmivhe9lg6by3d",
+        "date": "2018",
+        "event": "Leeward became an OMERS Infrastructure portfolio company.",
+        "category": "ACQUISITION",
+        "sortDate": "2018-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmjb904znivhehvs3x50v",
+        "date": "Mar 2018",
+        "event": "OMERS Infrastructure announced an agreement to acquire Leeward Renewable Energy from ArcLight.",
+        "category": "ACQUISITION",
+        "sortDate": "2018-03-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmjbs04zoivhebsybdeju",
+        "date": "Apr 2021",
+        "event": "Leeward completed the acquisition of First Solar’s U.S. development platform.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-04-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpshul0co5ivhe5cswlwtr",
+        "label": "Announcement date source — OMERS — Leeward Renewable Energy",
+        "url": "https://www.omers.com/news/omers-infrastructure-announces-agreement-to-acquire-leeward-renewable-energy",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "OMERS transaction announcement",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpshvi0co7ivhezpfgts3u",
+        "label": "Omersinfrastructure — Leeward Renewable Energy",
+        "url": "https://www.omersinfrastructure.com/news/leeward-renewable-energy-completes-acquisition-of-solar-development-platform",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Omersinfrastructure transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpshwp0co9ivhev3m447gj",
+        "label": "Lreus — Leeward Renewable Energy",
+        "url": "https://www.lreus.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Lreus company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpshxm0cobivhefnqfo1r5",
+        "label": "SEC — Leeward Renewable Energy",
+        "url": "https://www.sec.gov/Archives/edgar/data/1274494/000162828021000753/a8-kex991pressreleasejan21.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "SEC filing",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Leeward Renewable Energy",
+    "investmentFirm": "OMERS",
+    "sector": "Power & ET",
+    "subsector": "Utility-scale wind, solar, and storage",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "Leeward Renewable Energy develops, owns, and operates utility-scale wind, solar, and energy storage assets across the United States. Its customers or end markets include utilities, corporates, and wholesale power markets contracting for renewable generation and storage capacity. The operating model is a development-to-ownership model supported by project-level financing and long-term power offtake structures. Operations are concentrated in multiple U.S. states. Public materials indicate an operating portfolio of roughly 4 GW according to current company materials. Current ownership dates to OMERS Infrastructure’s acquisition of the business from ArcLight in 2018.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2018,
+    "headquarters": "Multi-state United States",
+    "milestones": [
+      {
+        "date": "2018",
+        "event": "Leeward became an OMERS Infrastructure portfolio company.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Mar 2018",
+        "event": "OMERS Infrastructure announced an agreement to acquire Leeward Renewable Energy from ArcLight.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Apr 2021",
+        "event": "Leeward completed the acquisition of First Solar’s U.S. development platform.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Announcement date source — OMERS — Leeward Renewable Energy",
+        "url": "https://www.omers.com/news/omers-infrastructure-announces-agreement-to-acquire-leeward-renewable-energy",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Omersinfrastructure — Leeward Renewable Energy",
+        "url": "https://www.omersinfrastructure.com/news/leeward-renewable-energy-completes-acquisition-of-solar-development-platform",
+        "type": "ARTICLE",
+        "purpose": "MILESTONE_EVENT"
+      },
+      {
+        "label": "Lreus — Leeward Renewable Energy",
+        "url": "https://www.lreus.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "SEC — Leeward Renewable Energy",
+        "url": "https://www.sec.gov/Archives/edgar/data/1274494/000162828021000753/a8-kex991pressreleasejan21.htm",
+        "type": "SEC_FILING",
+        "purpose": "FINANCING_FILINGS"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "OMERS",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2018,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj3fm00f1ivhehhc270qc",
+        "fundName": "OMERS Infrastructure",
+        "managerId": "cmrxpic6e0033ivheho9lmsp6",
+        "updatedAt": "2026-07-23T16:09:58.306Z"
+      },
+      {
+        "id": "cmsdi3oz600317h4s25n36p6m",
+        "fundName": "ArcLight Energy Partners Fund VI, L.P.",
+        "managerId": "cmrxpi435000kivhegfx84axs",
+        "updatedAt": "2026-08-03T17:26:21.234Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi435000kivhegfx84axs",
+        "name": "ArcLight Capital Partners",
+        "updatedAt": "2026-07-23T16:09:12.497Z"
+      },
+      {
+        "id": "cmrxpic6e0033ivheho9lmsp6",
+        "name": "OMERS Infrastructure",
+        "updatedAt": "2026-07-23T16:09:22.983Z"
+      },
+      {
+        "id": "cmrxpij0a0058ivhemf1et807",
+        "name": "OMERS",
+        "updatedAt": "2026-07-23T16:09:31.834Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0370:leeward-renewable-energy:acc199f8",
+    "taskIndex": 370,
+    "canonicalKey": "leeward-renewable-energy|united-states",
+    "capturedAt": "2026-09-01T19:03:10.405Z",
+    "databaseRevision": "revision:27cbbd6dbfdf95daf7c01470cd2d864fe09ce0f810657fa44ecb29939067ef8c",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "85a913a57d0639867406d21f85ea444d6d8067fb81ee9dc577dfac757c255b03",
+    "productionSnapshotSha256": "ce5094ce55f66e9f07042f657ade5d0659137bd1636e72efea4f28a96dfcf061",
+    "targetCompanySnapshotSha256": "408c021898eadbc625a71301c5ccaa9de17adc6fa1d81a310d9b4863c4a082db",
+    "seedEntrySha256": "0c40ded347cbfbd6f33f63554fe94179f98cb97cce56aeddbccc2047cccb8c46",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "a208817f9a1734374372e0e9d1b9367d3fa4a245fde4f15fa63642bfe0980c41",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "a8cd4aff043c7f32dd57eeccba901a8fdcc6874e620b929bcf60a7903064d628",
+      "organizationsSha256": "9bf5a38a26e01ede53ccb2c8075dede1d2e384634f7d0984c93242b28ffc2279",
+      "citationsSha256": "e0c0eec9777b1700ab1c10f9a113f14bdb878dfffa16c10f5d994a50ce2296cf",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "b19432bb13874044f3034552f206d4e03a2ff70359e90427658879d4f4aa2e7b",
+    "stateSha256": "93ce46aaa757db93a61078fc953283e493b956e31b49f7eb0b27e1f904d185d5",
+    "taskSnapshotSha256": "a1ba8883fcfc2f315e8897ec0e15b19450ca70bc83bce1ea72eb24e1343eaa1a"
+  },
+  "contextSha256": "fc8f9a506931be1f24fbb516f1195037630ef9a4eeabe1cf65526dd99f1a9643"
+}

@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-01T18:44:13.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-09-01T19:13:39.000Z",
+  "activeBatchId": "batch-0367-0372-v1",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -6335,7 +6335,65 @@
           "reason": null
         }
       ]
+    },
+    {
+      "batchId": "batch-0367-0372-v1",
+      "state": "RELEASING",
+      "taskIds": [
+        "ledger:0367:i-595-express-corridor-improvements-project:6895d500",
+        "ledger:0368:bruce-power:9c7e76e5",
+        "ledger:0370:leeward-renewable-energy:acc199f8",
+        "ledger:0371:navisun-llc:67b86252",
+        "ledger:0372:northstar-new-jersey-lottery-group:968abd3a"
+      ],
+      "taskIndexes": [
+        367,
+        368,
+        370,
+        371,
+        372
+      ],
+      "createdAt": "2026-09-01T18:51:22.000Z",
+      "updatedAt": "2026-09-01T19:13:39.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0367-0372-v1/batch-manifest-v2.json",
+        "sha256": "35247ebc4df64caf16dbc2b71873436ef99d45782d54f845afd158395e222ea7"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-09-01T18:51:22.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-09-01T19:13:38.000Z",
+          "evidenceSha256": [
+            "35247ebc4df64caf16dbc2b71873436ef99d45782d54f845afd158395e222ea7"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "RELEASING",
+          "at": "2026-09-01T19:13:39.000Z",
+          "evidenceSha256": [
+            "35247ebc4df64caf16dbc2b71873436ef99d45782d54f845afd158395e222ea7"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "299b05e0432d896a7320fa0bb74d63070bef0da3103008c074a1b95ee07cabd7"
+  "ledgerSha256": "2b945cc8084770cf77f5d95930386ad57e5d8b10b55d66bc7fc6f392ad169e94"
 }

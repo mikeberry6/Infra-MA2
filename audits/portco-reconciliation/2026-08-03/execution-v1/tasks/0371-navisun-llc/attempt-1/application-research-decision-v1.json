@@ -1,0 +1,185 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0371:navisun-llc:67b86252",
+  "taskIndex": 371,
+  "companyName": "Navisun LLC",
+  "asOfDate": "2026-08-19",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-01T19:02:10.000Z",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "Navisun LLC",
+    "requestedManagers": [
+      "OMERS Infrastructure"
+    ],
+    "decision": "PROPOSED_CORRECTION",
+    "confidence": "HIGH",
+    "rationale": "The 2021 event was a conditional signing, not OMERS's entry. Regulatory evidence fixes closing at 2022-01-18 and the OMERS vehicle chain; current direct evidence supports continued ownership. Correct the OMERS period, add former holder Ares Capital Corporation, and do not add duplicate OMERS. Catalyze talks were not signed or closed.",
+    "identityResolution": {
+      "canonicalIdentity": "Navisun LLC; commercial alias Navisun",
+      "officialWebsite": "https://www.navisunllc.com/",
+      "headquartersFounding": "Hingham, Massachusetts; founded 2017 by John Malloy and Doug Johnsen with Ares Capital Corporation",
+      "predecessorSuccessor": "None found",
+      "boundary": "Count once. Navisun Holdings LLC was a holding/financing affiliate; projects, portfolios, SPVs, tax-equity vehicles and asset JVs are underlying operations.",
+      "canonicalKey": "navisun-llc|united-states"
+    },
+    "ownershipResolution": {
+      "currentOwners": [
+        {
+          "manager": "OMERS Infrastructure",
+          "organization": "Magnet US Acquisition Corporation",
+          "fund": "OMERS Administration Corporation; named fund NOT_PUBLICLY_DISCLOSED",
+          "vehicle": "Magnet Acquisition Holdings Corporation > Magnet US Acquisition Corporation",
+          "stake": "100% of Navisun LLC",
+          "announcementDate": "2021-11-02",
+          "entryDate": "2022-01-18",
+          "entryYear": 2022,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE"
+        }
+      ],
+      "formerOwners": [
+        {
+          "manager": "Ares Management Corporation / Ares Capital Management LLC",
+          "organization": "Ares Capital Corporation",
+          "fund": "Ares Capital Corporation BDC",
+          "vehicle": "Direct Navisun LLC/Navisun Holdings LLC securities",
+          "stake": "100% Series A preferred and 55% Class A; remaining 45% Class A holders UNRESOLVED",
+          "announcementDate": null,
+          "entryDate": "2017-11-15",
+          "entryYear": 2017,
+          "exitDate": "2022-01-18",
+          "exitYear": 2022,
+          "isActive": false,
+          "transactionState": "CLOSED_EXIT"
+        }
+      ],
+      "conclusion": "MUAC is Navisun's immediate 100% parent; MAHC is MUAC's parent and an indirect OMERS Administration Corporation investment entity. No platform co-investor or retained management equity was disclosed."
+    },
+    "operatingResolution": {
+      "profile": "U.S. distributed solar/storage IPP that develops, acquires, constructs, finances, owns and operates distributed and small utility-scale projects.",
+      "offerings": "Community/C&I solar, storage, co-development, construction, financing, offtake and long-term operations.",
+      "scaleFootprint": "Nationwide; over 130 MWdc at 2025 year-end after adding about 16 MWdc solar and 9 MWh storage. Entering 2026, about 100 MWdc was in advanced development, with about 70 MWdc expected to start construction and 16 MWdc expected in service.",
+      "customersQualification": "Municipal, commercial, industrial, residential/community-solar, utility and institutional customers; qualifying power/energy-transition infrastructure because Navisun owns and operates generation and storage assets."
+    },
+    "acquisitionExitCheck": {
+      "announcementConclusion": "SIGNED 2021-11-02 for OMERS to acquire 100% from an Ares-managed fund; Q1 2022 closing remained conditional.",
+      "closingConclusion": "CLOSED 2022-01-18. A Texas PUC-filed FERC disclosure states MUAC acquired indirect ownership effective that date.",
+      "laterOwnershipConclusion": "Sale process launched in 2025 and Catalyze talks were reported 2026-03-04, but no signed agreement, regulatory transfer or closing was found through 2026-08-19; current direct pages still show OMERS.",
+      "pendingTransactions": [
+        {
+          "direction": "OUTBOUND",
+          "buyer": "Catalyze",
+          "seller": "OMERS Infrastructure",
+          "stake": "NOT_PUBLICLY_DISCLOSED; reported platform sale",
+          "announcementDate": null,
+          "closingDate": null,
+          "state": "UNCONFIRMED_REPORTED_TALKS;NOT_SIGNED_OR_CLOSED",
+          "evidenceUrls": [
+            "https://ionanalytics.com/insights/infralogic/omers-in-advanced-talks-to-sell-navisun-to-catalyze/"
+          ]
+        }
+      ]
+    },
+    "milestones": [
+      {
+        "date": "2017-11-15",
+        "event": "Ares Capital's disclosed Navisun equity investment began.",
+        "state": "CLOSED_ENTRY"
+      },
+      {
+        "date": "2021-11-02",
+        "event": "OMERS signed for 100%; closing conditional.",
+        "state": "SIGNED_PENDING"
+      },
+      {
+        "date": "2022-01-18",
+        "event": "MUAC acquired ownership; OMERS entry/Ares exit.",
+        "state": "CLOSED"
+      },
+      {
+        "date": "2026-03-04",
+        "event": "Catalyze talks reported; no signed or closed deal found.",
+        "state": "UNCONFIRMED_PROCESS"
+      }
+    ],
+    "evidence": [
+      {
+        "label": "Texas PUC-filed FERC ownership disclosure",
+        "url": "https://interchange.puc.texas.gov/Documents/54941_631_1559824.PDF",
+        "purpose": "2022-01-18 close, 100% MUAC parent and MAHC/OMERS chain.",
+        "sourceTier": "T1_REGULATORY",
+        "workingStatus": "INDEXED;ORIGIN_502",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "OMERS current Navisun page",
+        "url": "https://www.omersinfrastructure.com/investments/navisun",
+        "purpose": "Current portfolio status and 2022 investment year.",
+        "sourceTier": "T1_MANAGER",
+        "workingStatus": "LIVE",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "OMERS acquisition announcement",
+        "url": "https://www.omersinfrastructure.com/news/omers-infrastructure-signs-agreement-with-ares-management-to-acquire-100-of",
+        "purpose": "2021 signing, 100% scope, Ares seller, conditional close.",
+        "sourceTier": "T1_TRANSACTION_PARTY",
+        "workingStatus": "LIVE",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Ares Capital 2021 Form 10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1287750/000128775022000007/arccq4-202110k.htm",
+        "purpose": "Ares direct securities, 2017 entry and class stakes.",
+        "sourceTier": "T1_REGULATORY",
+        "workingStatus": "INDEXED;TOO_LARGE",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Navisun 2025 review",
+        "url": "https://www.navisunllc.com/news/powering-growth-and-communities-navisun-reflects-on-a-year-of-success",
+        "purpose": "Operating scale and 2026 pipeline.",
+        "sourceTier": "T1_COMPANY",
+        "workingStatus": "LIVE",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "before": "OMERS active from 2021 based only on signing; no Ares period or vehicle.",
+      "after": "Keep one OMERS period: announced 2021-11-02, active from 2022-01-18 at 100% via MAHC>MUAC. Add Ares Capital Corporation for 2017-11-15–2022-01-18. Do not add Catalyze or duplicate OMERS."
+    },
+    "excludedOrDuplicateCandidates": [
+      "Navisun Holdings LLC: affiliate, not separate platform.",
+      "Catalyze: potential buyer only.",
+      "Financing parties and project-level entities/counterparties: not Navisun owners."
+    ],
+    "unresolvedQuestions": [
+      "UNRESOLVED: holders of the remaining 45% Class A before closing.",
+      "NOT_PUBLICLY_DISCLOSED: exact Ares fund/account label beyond Ares Capital Corporation.",
+      "NOT_PUBLICLY_DISCLOSED: founder/management rollover economics; announced scope was 100%."
+    ],
+    "recommendedListAction": "Correct cmrxpjm9a017qivheb5o60hza: keep Navisun once; set OMERS announcement 2021-11-02 and entry 2022-01-18, attach MAHC>MUAC at 100%; add Ares Capital Corporation for 2017-11-15–2022-01-18; do not add duplicate OMERS; log Catalyze only as unconfirmed."
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0371-navisun-llc/attempt-1/research-decision.json",
+      "sha256": "7f334998c71327ec06563fe50aa983e87b7c828120f79327fe8e7ce416a0cf1e"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0371-navisun-llc/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "6c74817bd45d4071cc364e0d0d3758488a20f7cc09e4d89b65bf9511b1b47916"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0371-navisun-llc/attempt-1/source-verification.json",
+      "sha256": "2d3e4f5057666b57e8faaa69f2c7fc4f36648c830c3a2c3b5a1bf3f578d83f2e"
+    },
+    "acceptedResponseSha256": "bbd94e86d2e43cc634f22ad3f0ec25403e11f80b340b4a2709d57bd072172c40",
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION"
+  }
+}

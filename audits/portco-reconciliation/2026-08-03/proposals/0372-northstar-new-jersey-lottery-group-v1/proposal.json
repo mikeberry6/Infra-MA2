@@ -1,0 +1,365 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0372:northstar-new-jersey-lottery-group:968abd3a",
+  "taskIndex": 372,
+  "asOfDate": "2026-09-01",
+  "generatedAt": "2026-09-01T19:00:00.000Z",
+  "canonicalKey": "northstar-new-jersey-lottery-group|united-states",
+  "companyName": "Northstar New Jersey Lottery Group",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER"
+  ],
+  "sourceHoldingIds": [
+    "075-omers-infrastructure:holding:010:northstar-new-jersey-lottery-group"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Keep one active Northstar New Jersey Lottery Group concession platform and reject the queued duplicate OMERS owner addition. Preserve OMERS through its residual HoldCo interest, add Brightstar and the Brookfield-sponsored Scientific Games owner, and end the legacy Scientific Games/Light & Wonder period at the April 4, 2022 lottery-business sale. The original contract expiry remains June 30, 2029 and no pending ownership transaction was found.",
+  "evidence": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1619762/000162828026018232/a2025ukreportsandaccount.htm",
+      "purpose": "Current ownership structure, contract term and operating scale.",
+      "supports": [
+        "Northstar New Jersey Holding Company owns 72% and Scientific Games New Jersey owns 28%.",
+        "Brightstar owns 90.70% of the holding company and the contract expires June 30, 2029."
+      ]
+    },
+    {
+      "url": "https://www.scientificgames.com/news/media-releases/scientific-games-joint-venture-signs-services-agreement-with-new-jersey-lottery/",
+      "purpose": "Original consortium, service scope and contract term.",
+      "supports": [
+        "Brightstar predecessor GTECH, Scientific Games and OMERS formed the original consortium.",
+        "The operating agreement began in 2013 and retained state control of the lottery."
+      ]
+    },
+    {
+      "url": "https://www.scientificgames.com/news/media-releases/scientific-games-celebrates-sale-to-brookfield/",
+      "purpose": "Brookfield-sponsored ownership closing.",
+      "supports": [
+        "The sale of the Scientific Games lottery business to Brookfield closed on April 4, 2022.",
+        "The Northstar interest transferred with the lottery business."
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "862026ec65a35dded4726e5cb49596f85364a71a2bceec083b87d30fc13d82b7",
+  "currentCompanySnapshotSha256": "d6bdadc3596c611b3c83d34d30fc22147a48a48d6efd3765274434df6192419c",
+  "executionLock": {
+    "taskSnapshotSha256": "d0c5ec487d0b9a65619c6f2ea56525add3afb951210089caee469235009281e0",
+    "taskStateSha256": "31a523b1762318ccb5adca74b85bf61a8e1aea14190345328c26ab644cafbf0a",
+    "taskDependencySha256": "cf166a0485dbf5f60ff0c11ebd056543b77ab32d23cc59793ddf891db508bfdd",
+    "seedEntrySha256": "fe3272311dfc5b0f258d411cbed4d527b7c6c38adc9dec1cf000fc4de3cea5cf",
+    "dependencies": {
+      "ownershipPeriodsSha256": "e3a2a355eeb06f832e57fbb6249cab62b31b5d2c825419c60e039141f4b2bf4e",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "fac4fa7335c127e73abe52490df9652aca3bb882b516d47a38d8dfc92ad1e3f0",
+      "organizationsSha256": "f802fe02d7ca2e4e997a22123ce2f4ce435b70e012c824022ef0d7053c045457",
+      "citationsSha256": "c3190d7dbd3cf4fc366d993cbe60f65cb1ad34896f34edc6de60df2419e9f67f",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj3fm00f1ivhehhc270qc",
+        "fundName": "OMERS Infrastructure",
+        "managerId": "cmrxpic6e0033ivheho9lmsp6",
+        "updatedAt": "2026-07-23T16:09:58.306Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi5qu0012ivhe6qnjjtse",
+        "name": "Brookfield",
+        "updatedAt": "2026-07-23T16:09:14.646Z"
+      },
+      {
+        "id": "cmrxpic6e0033ivheho9lmsp6",
+        "name": "OMERS Infrastructure",
+        "updatedAt": "2026-07-23T16:09:22.983Z"
+      },
+      {
+        "id": "cmrxpij0a0058ivhemf1et807",
+        "name": "OMERS",
+        "updatedAt": "2026-07-23T16:09:31.834Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjm9w017rivhehloswadj",
+    "name": "Northstar New Jersey Lottery Group",
+    "aliases": [],
+    "sector": "SOCIAL_INFRA",
+    "subsector": "Lottery concession and operations",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Northstar New Jersey Lottery Group holds the long-term contract to manage marketing and sales operations for the New Jersey Lottery. Its customers or end markets include the State of New Jersey through the lottery concession framework and retail lottery distribution channels. The operating model is a concession-based operating model rather than ownership of utility-style hard assets. Operations are concentrated in New Jersey. Public materials indicate a contract structure originally awarded for 15 years and extended through June 2029 according to public disclosures. Current ownership was publicly disclosed at award as a consortium including Brightstar, Scientific Games, and an OMERS affiliate, although current percentage ownership has not been publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2013,
+    "headquarters": "New Jersey",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk8nf0277ivhe04k7umoj",
+        "managerName": "OMERS Infrastructure",
+        "organizationName": "OMERS",
+        "fundName": "OMERS Infrastructure",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2013,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmjem04zrivhe7s40g9ba",
+        "date": "2013",
+        "event": "Northstar New Jersey Lottery Group was formed for the New Jersey Lottery concession.",
+        "category": "FOUNDING",
+        "sortDate": "2013-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmjf304zsivhegl7efv9n",
+        "date": "Jun 2013",
+        "event": "OMERS entered the Northstar New Jersey Lottery Group consortium for the 15-year New Jersey Lottery concession.",
+        "category": "ACQUISITION",
+        "sortDate": "2013-06-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmjfn04ztivheqy8d025k",
+        "date": "2019",
+        "event": "Scientific Games disclosed ownership information related to Northstar New Jersey Holding Co.",
+        "category": "FINANCING",
+        "sortDate": "2019-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsi4g0cojivhe16in3npr",
+        "label": "Investment date source — OMERS — Northstar New Jersey Lottery Group",
+        "url": "https://www.jonesday.com/en/practices/experience/2013/06/omers-enters-consortium-for-15-year-concession-with-state-of-new-jersey-to-run-new-jersey-lottery",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "OMERS initial investment / ownership",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpsi5i0colivhet8dq9ip6",
+        "label": "Northstarnewjerseylottery — Northstar New Jersey Lottery Group",
+        "url": "https://www.northstarnewjerseylottery.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Northstarnewjerseylottery company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsi6d0conivher9q3zgbn",
+        "label": "S205 — Northstar New Jersey Lottery Group",
+        "url": "https://s205.q4cdn.com/821653831/files/doc_financials/2019/ar/Annual-Report-2019.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "S205 — Northstar New Jersey Lottery Group",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "d6bdadc3596c611b3c83d34d30fc22147a48a48d6efd3765274434df6192419c",
+  "afterImage": {
+    "id": "cmrxpjm9w017rivhehloswadj",
+    "name": "Northstar New Jersey Lottery Group, LLC",
+    "aliases": [
+      "Northstar New Jersey Lottery Group",
+      "Northstar New Jersey Lottery"
+    ],
+    "sector": "SOCIAL_INFRA",
+    "subsector": "Lottery concession and operations",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Northstar New Jersey Lottery Group, LLC operates marketing, sales, retailer support, games and systems services for the New Jersey Lottery under a long-term public-service agreement that began in 2013 and expires June 30, 2029. Brightstar owns an effective 65.304% through Northstar New Jersey Holding Company, Scientific Games New Jersey holds 28% under a Brookfield-sponsored ownership group, and OMERS retains the residual HoldCo interest. The exact current OMERS nominee and direct percentage are not separately disclosed; 6.696% is the mathematically implied residual from audited 2025 ownership data. No later sale, extension, termination or signed pending transaction was identified through September 1, 2026. The New Jersey Lottery remains the state counterparty and regulator rather than an equity owner, and holding companies and service affiliates remain within the single Northstar platform boundary.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.northstarnewjerseylottery.com/",
+    "yearFounded": 2013,
+    "headquarters": "Lawrenceville, New Jersey, United States",
+    "lastVerifiedAt": "2026-09-01T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk8nf0277ivhe04k7umoj",
+        "managerName": "OMERS Infrastructure",
+        "organizationName": "OMERS",
+        "fundName": "OMERS Infrastructure",
+        "vehicleName": "OSI LTT NJ Grantor Trust / Northstar New Jersey Holding Company",
+        "stake": "Residual HoldCo interest; 6.696% is implied by audited 2025 ownership data",
+        "investmentYear": 2013,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Brightstar Global Solutions Corp.",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Northstar New Jersey Holding Company, LLC",
+        "stake": "65.304% effective at December 31, 2025",
+        "investmentYear": 2013,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Brookfield",
+        "organizationName": "Brookfield",
+        "fundName": null,
+        "vehicleName": "BCP Acquisitions LLC / Scientific Games New Jersey, LLC",
+        "stake": "28% held by Scientific Games New Jersey; Brookfield Business Partners' disclosed look-through is 9.24%",
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Light & Wonder",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Scientific Games New Jersey, LLC",
+        "stake": "Approximately 18% at entry; 17.69% at 2021 year-end",
+        "investmentYear": 2013,
+        "exitYear": 2022,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmjem04zrivhe7s40g9ba",
+        "date": "Apr 12, 2013",
+        "event": "New Jersey selected the Northstar consortium to operate lottery marketing and sales services under a 15-year agreement.",
+        "category": "FOUNDING",
+        "sortDate": "2013-04-12T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.scientificgames.com/news/media-releases/scientific-games-joint-venture-signs-services-agreement-with-new-jersey-lottery/"
+        ]
+      },
+      {
+        "id": "cmrxpmjf304zsivhegl7efv9n",
+        "date": "Jun 20, 2013",
+        "event": "The Northstar services agreement closed and Brightstar predecessor GTECH, OMERS and Scientific Games began their ownership periods.",
+        "category": "FINANCING",
+        "sortDate": "2013-06-20T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.scientificgames.com/news/media-releases/scientific-games-joint-venture-signs-services-agreement-with-new-jersey-lottery/"
+        ]
+      },
+      {
+        "id": "cmrxpmjfn04ztivheqy8d025k",
+        "date": "Apr 4, 2022",
+        "event": "Brookfield-sponsored investors completed the acquisition of Scientific Games' lottery business, transferring the Scientific Games New Jersey interest and ending the legacy Light & Wonder period.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-04-04T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.scientificgames.com/news/media-releases/scientific-games-celebrates-sale-to-brookfield/"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsi4g0cojivhe16in3npr",
+        "label": "Investment date source — OMERS — Northstar New Jersey Lottery Group",
+        "url": "https://www.jonesday.com/en/practices/experience/2013/06/omers-enters-consortium-for-15-year-concession-with-state-of-new-jersey-to-run-new-jersey-lottery",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "OMERS initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsi5i0colivhet8dq9ip6",
+        "label": "Northstarnewjerseylottery — Northstar New Jersey Lottery Group",
+        "url": "https://www.northstarnewjerseylottery.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Northstarnewjerseylottery company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsi6d0conivher9q3zgbn",
+        "label": "S205 — Northstar New Jersey Lottery Group",
+        "url": "https://s205.q4cdn.com/821653831/files/doc_financials/2019/ar/Annual-Report-2019.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "S205 — Northstar New Jersey Lottery Group",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Brightstar — 2025 annual report",
+        "url": "https://www.sec.gov/Archives/edgar/data/1619762/000162828026018232/a2025ukreportsandaccount.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current ownership structure, contract term and operating scale",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "New Jersey contract 84144",
+        "url": "https://www.njstart.gov/bso/external/purchaseorder/poSummary.sdo?docId=84144&parentUrl=contract&releaseNbr=0",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Active vendor record and original 2013-2029 contract term",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Scientific Games — New Jersey services agreement",
+        "url": "https://www.scientificgames.com/news/media-releases/scientific-games-joint-venture-signs-services-agreement-with-new-jersey-lottery/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Original owners, service scope and contract expiry",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Scientific Games — Brookfield sale closing",
+        "url": "https://www.scientificgames.com/news/media-releases/scientific-games-celebrates-sale-to-brookfield/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "April 4, 2022 lottery-business sale closing",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "OMERS Infrastructure — Northstar New Jersey Lottery",
+        "url": "https://www.omersinfrastructure.com/investments/northstar-new-jersey-lottery",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current OMERS portfolio status and 2013 entry",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "f09289c4e3a4ebe3449f4b7d805c3f15cd2b6335a4e8ef668c9d4da234363582",
+  "proposalSha256": "aae04bf947ffdd32bd80ea2e34039c2876ace083332e4a4118f4f2e66e9d4301"
+}

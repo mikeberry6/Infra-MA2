@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0367:i-595-express-corridor-improvements-project:6895d500",
+  "taskIndex": 367,
+  "companyName": "I-595 Express Corridor Improvements Project",
+  "generatedAt": "2026-09-01T18:56:13.952Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0367-i-595-express-corridor-improvements-project/attempt-1/locked-batch-v2-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 367,
+    "taskId": "ledger:0367:i-595-express-corridor-improvements-project:6895d500",
+    "canonicalKey": "i-595-express-corridor-improvements-project|united-states",
+    "companyName": "I-595 Express Corridor Improvements Project",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 73,
+    "managers": [
+      "Nuveen Infrastructure"
+    ],
+    "actionScopes": {
+      "company": [
+        "CREATE_COMPANY"
+      ],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "073-nuveen-infrastructure:holding:003:i-595-express-corridor-improvements-project"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://www.fdot.gov/projects/i595/",
+      "https://www.tiaa.org/public/about-tiaa/news-press/press-releases/2013/2013-03-18-infrastructure-investment"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "No exact normalized production or seed match exists. Census evidence supports a new canonical company with 1 manager holding record(s).",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "i-595-express-corridor-improvements-project|united-states",
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpirz10081ivheut9hcdsg",
+        "name": "Nuveen Infrastructure",
+        "updatedAt": "2026-07-23T16:09:43.453Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0367:i-595-express-corridor-improvements-project:6895d500",
+    "taskIndex": 367,
+    "canonicalKey": "i-595-express-corridor-improvements-project|united-states",
+    "capturedAt": "2026-09-01T18:56:13.952Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "e89f438ec57a1258ae60384895b148f4d6cbe38dabd23239e911b6c7feeaad0b",
+    "productionSnapshotSha256": "0ba1daa9efcc084c42e20eeffe320a096c55db0624d33296c2c11fe453e13800",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "168c96ab90bd0618a944fd9eb222e67f61e76e47a5203e8a0976e5df889300a1",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "999268c0a64b05e9e36df8974becde8d340d38797eb0b8c66786bc6a69c4d5a4",
+    "stateSha256": "ffe4bebc7162895d95f5095147789e5cbcf4812ed8800f361dde60729d2c8ef9",
+    "taskSnapshotSha256": "fc95f5a074de2f4230f6627f52d6727533bf09de2dcd516a719b918b9086e37b"
+  },
+  "contextSha256": "1e25cfbfe773601ff2b0c15b4aad1693beb21a915d129bf802a2a389fe586137"
+}
