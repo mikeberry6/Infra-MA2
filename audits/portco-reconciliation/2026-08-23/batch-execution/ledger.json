@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-01T20:20:00.000Z",
-  "activeBatchId": "batch-0373-0378-v1",
+  "updatedAt": "2026-09-01T20:20:04.000Z",
+  "activeBatchId": null,
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -6431,7 +6431,7 @@
     },
     {
       "batchId": "batch-0373-0378-v1",
-      "state": "RELEASING",
+      "state": "COMPLETED",
       "taskIds": [
         "ledger:0373:teranet-inc:fc015f26",
         "ledger:0375:sidewalk-infrastructure-partners:80a3f3bf",
@@ -6447,15 +6447,18 @@
         378
       ],
       "createdAt": "2026-09-01T19:34:57.000Z",
-      "updatedAt": "2026-09-01T20:20:00.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-09-01T20:20:04.000Z",
+      "completedAt": "2026-09-01T20:20:04.000Z",
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0373-0378-v1/batch-manifest-v4.json",
         "sha256": "f845c9d5e737c7fc834f621b9a51f8fa6d4703fbf1a9870b9b2b92f8c001deb2"
       },
-      "releaseSha": null,
-      "receipt": null,
-      "reason": null,
+      "releaseSha": "3187544492bfdfb57d865144301285aab692c2ad",
+      "receipt": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0373-0378-v1/production-apply/batch-apply-receipt.json",
+        "sha256": "669c889e55a58f3365a84ee7c1fbe472b37649a99bf6b52430859b5d446800af"
+      },
+      "reason": "Exact release SHA, atomic database after-images, seed parity, detail APIs, ownership history, and all four mutated production drawers verified; terminal Sidewalk deferral preserved; no partial application.",
       "history": [
         {
           "sequence": 1,
@@ -6484,9 +6487,41 @@
             "f845c9d5e737c7fc834f621b9a51f8fa6d4703fbf1a9870b9b2b92f8c001deb2"
           ],
           "reason": null
+        },
+        {
+          "sequence": 4,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-09-01T20:20:01.000Z",
+          "evidenceSha256": [
+            "f845c9d5e737c7fc834f621b9a51f8fa6d4703fbf1a9870b9b2b92f8c001deb2"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 5,
+          "from": "APPLYING",
+          "to": "VERIFYING",
+          "at": "2026-09-01T20:20:02.000Z",
+          "evidenceSha256": [
+            "669c889e55a58f3365a84ee7c1fbe472b37649a99bf6b52430859b5d446800af",
+            "f845c9d5e737c7fc834f621b9a51f8fa6d4703fbf1a9870b9b2b92f8c001deb2"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 6,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-09-01T20:20:04.000Z",
+          "evidenceSha256": [
+            "669c889e55a58f3365a84ee7c1fbe472b37649a99bf6b52430859b5d446800af",
+            "f845c9d5e737c7fc834f621b9a51f8fa6d4703fbf1a9870b9b2b92f8c001deb2"
+          ],
+          "reason": "Exact release SHA, atomic database after-images, seed parity, detail APIs, ownership history, and all four mutated production drawers verified; terminal Sidewalk deferral preserved; no partial application."
         }
       ]
     }
   ],
-  "ledgerSha256": "a51b82c08c5f76132daebfe8295c19b80f3ba9a9fec1d3db9978ffc832ecdab5"
+  "ledgerSha256": "8cf2dba159fbe2cb1b0450317a05794f00c5dccc54bcf3083ac28431f974886b"
 }
