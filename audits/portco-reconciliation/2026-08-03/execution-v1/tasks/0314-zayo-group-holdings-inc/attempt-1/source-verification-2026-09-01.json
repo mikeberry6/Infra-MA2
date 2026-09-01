@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0314:zayo-group-holdings-inc:46e9b5e3",
+  "taskIndex": 314,
+  "verifiedAt": "2026-09-01T09:21:15.000Z",
+  "allReturnedUrlsChecked": true,
+  "summary": { "urlCount": 4, "working": 4, "browserBlockedButVerified": 0, "dead": 0 },
+  "sources": [
+    {
+      "url": "https://docs.fcc.gov/public/attachments/DA-26-638A1.pdf",
+      "finalUrl": "https://docs.fcc.gov/public/attachments/DA-26-638A1.pdf",
+      "httpStatus": 200,
+      "mediaType": "application/pdf; charset=UTF-8",
+      "bytes": 57050,
+      "sha256": "d54fec960c51607d3d23e8caaaaaa95eeec8412b1020b8b73ec2efd67b151fa0",
+      "health": "WORKING",
+      "claimCheck": "The FCC's June 2026 decision identifies the DigitalBridge/Digital Colony and EQT ownership interests and the pending SoftBank upstream transaction."
+    },
+    {
+      "url": "https://eqtgroup.com/about/current-portfolio/zayo",
+      "finalUrl": "https://eqtgroup.com/about/current-portfolio/zayo",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 190992,
+      "sha256": "6245b7a8bf2cad46540b496f2b666e2426755f62d1767d03378aaa12dca24111",
+      "health": "WORKING",
+      "claimCheck": "EQT's current portfolio page continues to list Zayo and supports the existing EQT attribution."
+    },
+    {
+      "url": "https://www.infrabridge.com/our-portfolio",
+      "finalUrl": "https://www.infrabridge.com/our-portfolio",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 53170,
+      "sha256": "e936f46a84d1863f4781eaebcf4930b929f0c1cb5bce25f476612e134742137e",
+      "health": "WORKING",
+      "claimCheck": "InfraBridge's current portfolio page does not list Zayo, supporting exclusion of the false InfraBridge attribution."
+    },
+    {
+      "url": "https://www.zayo.com/newsroom/zayo-completes-transition-to-a-private-company/",
+      "finalUrl": "https://www.zayo.com/newsroom/zayo-completes-transition-to-a-private-company/",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 170978,
+      "sha256": "e1aec182f6b4a2aa57e3a5f07c489bd558a1d33c551098952ae9239ea2946d71",
+      "health": "WORKING",
+      "claimCheck": "Zayo confirms the 2020 Digital Colony and EQT take-private closing."
+    }
+  ]
+}

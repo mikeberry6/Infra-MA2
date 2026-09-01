@@ -1,0 +1,211 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0314:zayo-group-holdings-inc:46e9b5e3",
+  "taskIndex": 314,
+  "companyName": "Zayo Group Holdings, Inc.",
+  "asOfDate": "2026-08-19",
+  "decision": "SUPERSEDED",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-01T09:22:50.000Z",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "Zayo Group Holdings, Inc.",
+    "requestedManagers": [
+      "InfraBridge",
+      "DigitalBridge",
+      "EQT Infrastructure"
+    ],
+    "decision": "SUPERSEDED",
+    "confidence": "HIGH",
+    "rationale": "False InfraBridge attribution. Zayo belongs to DigitalBridge/Digital Colony and EQT Infrastructure IV, with FMR minority equity. Supersede into the existing canonical company; add no InfraBridge owner or duplicate.",
+    "identityResolution": {
+      "canonicalName": "Zayo Group Holdings, Inc.",
+      "canonicalKey": "zayo-group-holdings-inc|united-states-canada",
+      "existingRecord": "cmrxpjded00u3ivhegohk21bs / zayo group holdings, inc.|United States / Canada",
+      "resolution": "The Delaware corporation survived the 2020 merger beneath Front Range TopCo, Inc.; Zayo Group, LLC is its operating subsidiary. Keep one sponsor-level Zayo platform covering Zayo North America, Zayo Europe and Zayo Global Reach."
+    },
+    "ownershipResolution": {
+      "owners": [
+        {
+          "manager": "DigitalBridge (Digital Colony at entry)",
+          "organization": "DigitalBridge Group, Inc. / Digital Colony Management, LLC",
+          "fund": "Digital Colony Partners, LP (DCP I)",
+          "vehicle": "Digital Colony Partners (DE AIV), LP; DC Front Range Holdings I, LP; DC Front Range Holdings-F, LP; DC Front Range Holdings, LP; Front Range JV, LP",
+          "stake": "~45.2% indirect equity; 45% voting/negative control",
+          "announcementDate": "2019-05-08",
+          "entryDate": "2020-03-09",
+          "entryYear": 2020,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "manager": "EQT Infrastructure",
+          "organization": "EQT AB / EQT Fund Management S.à r.l.",
+          "fund": "EQT Infrastructure IV",
+          "vehicle": "EQT Infrastructure IV EUR/USD SCSp; Co-Investment B/D SCSp; EQT Saber aggregators/sidecars; Front Range JV, LP",
+          "stake": "~45.2% indirect equity; 45% voting/negative control",
+          "announcementDate": "2019-05-08",
+          "entryDate": "2020-03-09",
+          "entryYear": 2020,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "manager": "FMR LLC",
+          "organization": "FMR LLC (Devonshire Investors at entry)",
+          "fund": "NOT_PUBLICLY_DISCLOSED",
+          "vehicle": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "~7.6% indirect equity; one board nominee",
+          "announcementDate": "2019-05-08",
+          "entryDate": "2020-03-09",
+          "entryYear": 2020,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE"
+        }
+      ],
+      "seller": "Pre-close public shareholders, cashed out at $35/share; Zayo survived the merger.",
+      "managerAliases": "Digital Colony normalizes to DigitalBridge. InfraBridge is the separate former AMP Capital infrastructure unit and never owned Zayo."
+    },
+    "operatingResolution": "The 2024 Zayo Europe/global-services carve-outs stayed under common ownership; current branding is Zayo North America, Zayo Europe and Zayo Global Reach. Crown Castle Fiber Solutions closed into the sponsor-controlled Zayo/Fiber NewCo structure on 2026-05-01. These are regional/asset boundaries, not separate manager-level PortCos.",
+    "acquisitionExitCheck": {
+      "takePrivate": "Signed 2019-05-08 by Zayo, Front Range TopCo and Front Range BidCo; closed 2020-03-09 for $14.3bn including debt.",
+      "exitSearch": "No sponsor sell-down, continuation transfer or Zayo-level exit found through the cutoff. 2025 debt financings did not change equity ownership.",
+      "pendingTransactions": [
+        {
+          "direction": "UPSTREAM_INCOMING",
+          "buyer": "SoftBank Group Corp. via Duncan Holdco LLC",
+          "seller": "DigitalBridge public shareholders",
+          "stake": "100% of DigitalBridge common equity; no direct Zayo fund-interest transfer",
+          "announcementDate": "2025-12-29",
+          "closingDate": null,
+          "state": "SIGNED_PENDING_AS_OF_2026-08-19; stockholder/FCC approvals obtained; filings say no Zayo equity, board or operating change",
+          "evidenceUrls": [
+            "https://ir.digitalbridge.com/node/15386/html",
+            "https://docs.fcc.gov/public/attachments/DA-26-710A1.pdf",
+            "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BF025B59C-0000-C97F-8532-71B20A29CF78%7D"
+          ]
+        }
+      ]
+    },
+    "milestones": [
+      {
+        "date": "2019-05-08",
+        "event": "Take-private signed; DCP, EQT IV and FMR identified."
+      },
+      {
+        "date": "2020-03-09",
+        "event": "Take-private closed; Zayo delisted."
+      },
+      {
+        "date": "2024-05-07",
+        "event": "Regional/service carve-outs announced under common ownership."
+      },
+      {
+        "date": "2026-05-01",
+        "event": "Crown Castle Fiber Solutions acquisition closed."
+      }
+    ],
+    "evidence": [
+      {
+        "label": "FCC 2026 ownership grant",
+        "url": "https://docs.fcc.gov/public/attachments/DA-26-710A1.pdf",
+        "purpose": "Current owners, control, vehicles and FMR stake.",
+        "sourceTier": "T1_REGULATOR",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "EQT current portfolio",
+        "url": "https://eqtgroup.com/about/current-portfolio/zayo",
+        "purpose": "Active EQT Infrastructure IV holding; 2020 entry.",
+        "sourceTier": "T1_MANAGER",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Zayo merger proxy",
+        "url": "https://www.sec.gov/Archives/edgar/data/1608249/000114036119010242/nc10002161x1_prem14a.htm",
+        "purpose": "Purchasers, funds, vehicles, FMR and sellers.",
+        "sourceTier": "T1_SEC",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Zayo 2020 closing",
+        "url": "https://www.zayo.com/newsroom/zayo-completes-transition-to-a-private-company/",
+        "purpose": "Closing date, price and delisting.",
+        "sourceTier": "T1_COMPANY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "InfraBridge portfolio",
+        "url": "https://www.infrabridge.com/our-portfolio",
+        "purpose": "Current/realized portfolio checked; no Zayo.",
+        "sourceTier": "T1_MANAGER",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Zayo 2024 carve-outs",
+        "url": "https://www.zayo.com/newsroom/zayo-group-to-accelerate-growth-in-north-america-and-europe-through-carve-out-of-strategic-businesses/",
+        "purpose": "Boundary and unchanged ownership.",
+        "sourceTier": "T1_COMPANY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Crown Fiber closing",
+        "url": "https://www.zayo.com/newsroom/strengthening-the-digital-infrastructure-backbone-for-ai-zayo-completes-acquisition-of-crown-castles-fiber-solutions-business/",
+        "purpose": "2026 close and platform expansion.",
+        "sourceTier": "T1_COMPANY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "before": "Two owners; DigitalBridge vehicle undisclosed; no stakes/FMR; false InfraBridge row.",
+      "after": "Same canonical company; no InfraBridge; disclose DCP/Front Range and EQT IV/Saber vehicles, ~45.2% each, plus FMR ~7.6%; SoftBank remains pending upstream."
+    },
+    "excludedOrDuplicateCandidates": [
+      {
+        "candidate": "058-infrabridge:repo-only:014:zayo-group-holdings-inc",
+        "result": "SUPERSEDE_TO_EXISTING"
+      },
+      {
+        "candidate": "InfraBridge / AMP Capital",
+        "result": "EXCLUDE_AS_OWNER"
+      },
+      {
+        "candidate": "Zayo regional units and Crown Fiber/Fiber NewCo",
+        "result": "NO_SEPARATE_MANAGER_PORTCO"
+      }
+    ],
+    "unresolvedQuestions": [],
+    "recommendedListAction": "Supersede this ledger task and repo-only row into the existing Zayo canonical record; apply the owner/vehicle correction, add no InfraBridge owner, and create no company."
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0314-zayo-group-holdings-inc/attempt-1/research-decision.json",
+      "sha256": "b29622be3561cc8cb2d88603f55e8c99c0a0f8550253df10f16e66fa48337c12"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0314-zayo-group-holdings-inc/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "47e513841090d9544378370d24a2d11ad21f6aeaa6ec11516cbac7d11a7daa18"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0314-zayo-group-holdings-inc/attempt-1/source-verification-2026-09-01.json",
+      "sha256": "d62438bd5591f95d5e3e1b1a1d73cad68be907891d431629d35261decfa411cd"
+    },
+    "acceptedResponseSha256": "6a25ec585a5a8fad8d847305ac3a9e19d78bd5b647f3d853bce625985e868de6",
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION"
+  }
+}

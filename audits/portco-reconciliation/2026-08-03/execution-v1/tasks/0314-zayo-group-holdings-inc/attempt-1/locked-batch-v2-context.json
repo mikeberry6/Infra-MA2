@@ -1,0 +1,362 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0314:zayo-group-holdings-inc:46e9b5e3",
+  "taskIndex": 314,
+  "companyName": "Zayo Group Holdings, Inc.",
+  "generatedAt": "2026-09-01T09:14:53.054Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0314-zayo-group-holdings-inc/attempt-1/locked-batch-v2-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 314,
+    "taskId": "ledger:0314:zayo-group-holdings-inc:46e9b5e3",
+    "canonicalKey": null,
+    "companyName": "Zayo Group Holdings, Inc.",
+    "country": "United States / Canada",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "REPO_ONLY_JUDGMENT",
+    "earliestManagerIndex": 58,
+    "managers": [
+      "InfraBridge"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "058-infrabridge:repo-only:014:zayo-group-holdings-inc"
+    ],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://www.digitalbridge.com/portfolio/zayo-group-holdings"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted repo-only MATCHED_ELSEWHERE judgment for InfraBridge: Attributed to DigitalBridge digital strategy rather than InfraBridge.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment.",
+      "Repo-only identity has no matching production or evaluated-seed record in the captured snapshots."
+    ]
+  },
+  "targetResolution": {
+    "method": "REVIEWED_POST_QUEUE_EXACT_IDENTITY",
+    "targetCompanyId": "cmrxpjded00u3ivhegohk21bs",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "zayo-group-holdings-inc|united-states-canada",
+  "targetCompanyImage": {
+    "id": "cmrxpjded00u3ivhegohk21bs",
+    "name": "Zayo Group Holdings, Inc.",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Fiber networks and bandwidth infrastructure",
+    "region": "NORTH_AMERICA",
+    "country": "United States / Canada",
+    "countryTags": [
+      "United States",
+      "Canada"
+    ],
+    "description": "Zayo Group Holdings, Inc. provides dark fiber, transport, wavelength, Ethernet, internet access, and colocation services across major connectivity markets. It serves cloud providers, carriers, large enterprises, and public-sector users with high-bandwidth networking needs. The business is asset-heavy and largely contracted because it owns extensive fiber infrastructure and sells recurring connectivity services over that network. Sponsor and company materials describe a network spanning more than 125,000 route miles in North America and Europe, with current public materials also highlighting major strategic carve-outs and acquisitions. DigitalBridge and EQT announced the take-private acquisition in 2019 and the company has remained jointly backed by those investors since the 2020 close.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2007,
+    "headquarters": "North America and Western Europe",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjz2k01s9ivhez68sapur",
+        "managerName": "DigitalBridge",
+        "organizationName": "DigitalBridge",
+        "fundName": "DigitalBridge Partners II, LP",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2020,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjz3301saivhecoenk25g",
+        "managerName": "EQT Infrastructure",
+        "organizationName": "EQT Infrastructure",
+        "fundName": null,
+        "vehicleName": "EQT Infrastructure IV",
+        "stake": null,
+        "investmentYear": 2020,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplgzo03pzivheg7ah19tq",
+        "date": "2007",
+        "event": "Zayo Group Holdings, Inc. was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2007-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplh0a03q0ivhepnvx6i94",
+        "date": "May 8, 2019",
+        "event": "Zayo announced a definitive agreement to be acquired by Digital Colony and EQT.",
+        "category": "ACQUISITION",
+        "sortDate": "2019-05-08T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplh0t03q1ivhe3t6p7ln7",
+        "date": "Mar 9, 2020",
+        "event": "Zayo completed its take-private acquisition by Digital Colony (now DigitalBridge) and EQT.",
+        "category": "ACQUISITION",
+        "sortDate": "2020-03-09T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplh1903q2ivhe3pkk2bex",
+        "date": "May 7, 2024",
+        "event": "Zayo announced plans to carve out strategic businesses in North America and Europe.",
+        "category": "OTHER",
+        "sortDate": "2024-05-07T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplh1t03q3ivhecr1ptkjy",
+        "date": "Feb 20, 2025",
+        "event": "Zayo announced an agreement to acquire Crown Castle's Fiber Solutions business.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-02-20T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqkcz09rwivheqvaw4tpx",
+        "label": "Zayo — Zayo Group Holdings, Inc.",
+        "url": "https://www.zayo.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Zayo company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqke309ryivhe5qp2eolj",
+        "label": "Digitalbridge — Zayo Group Holdings, Inc.",
+        "url": "https://www.digitalbridge.com/portfolio/zayo-group-holdings",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Digitalbridge operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqkf709s0ivhe02h85yoy",
+        "label": "Announcement date source — DigitalBridge — Zayo Group Holdings, Inc.",
+        "url": "https://www.zayo.com/newsroom/zayo-announces-definitive-agreement-to-be-acquired-by-digital-colony-and-eqt/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "DigitalBridge transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqkjg09s2ivhemqbcukk1",
+        "label": "Close date source — DigitalBridge — Zayo Group Holdings, Inc.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1502756/000155837020002206/ex-99d1.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "DigitalBridge closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqkkm09s4ivhesw9mt5po",
+        "label": "Close date source — DigitalBridge — Zayo Group Holdings, Inc.",
+        "url": "https://www.zayo.com/newsroom/zayo-completes-transition-to-a-private-company/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "DigitalBridge closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqklm09s6ivheoktlvqwy",
+        "label": "Close date source — EQT Infrastructure — Zayo Group Holdings, Inc.",
+        "url": "https://eqtgroup.com/news/eqt-and-digital-colony-complete-acquisition-of-zayo",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "EQT Infrastructure closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqkmk09s8ivhevgq9uvwj",
+        "label": "Eqtgroup — Zayo Group Holdings, Inc.",
+        "url": "https://eqtgroup.com/en/about/current-portfolio/zayo",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Eqtgroup operations / asset details",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Zayo Group Holdings, Inc.",
+    "investmentFirm": "DigitalBridge",
+    "sector": "Digital",
+    "subsector": "Fiber networks and bandwidth infrastructure",
+    "region": "North America",
+    "country": "United States / Canada",
+    "ownershipVehicle": "n.a.",
+    "description": "Zayo Group Holdings, Inc. provides dark fiber, transport, wavelength, Ethernet, internet access, and colocation services across major connectivity markets. It serves cloud providers, carriers, large enterprises, and public-sector users with high-bandwidth networking needs. The business is asset-heavy and largely contracted because it owns extensive fiber infrastructure and sells recurring connectivity services over that network. Sponsor and company materials describe a network spanning more than 125,000 route miles in North America and Europe, with current public materials also highlighting major strategic carve-outs and acquisitions. DigitalBridge and EQT announced the take-private acquisition in 2019 and the company has remained jointly backed by those investors since the 2020 close.",
+    "status": "Active",
+    "countryTags": [
+      "United States",
+      "Canada"
+    ],
+    "yearFounded": 2007,
+    "investmentYear": 2020,
+    "headquarters": "North America and Western Europe",
+    "milestones": [
+      {
+        "date": "2007",
+        "event": "Zayo Group Holdings, Inc. was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "May 8, 2019",
+        "event": "Zayo announced a definitive agreement to be acquired by Digital Colony and EQT.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Mar 9, 2020",
+        "event": "Zayo completed its take-private acquisition by Digital Colony (now DigitalBridge) and EQT.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "May 7, 2024",
+        "event": "Zayo announced plans to carve out strategic businesses in North America and Europe.",
+        "category": "Other"
+      },
+      {
+        "date": "Feb 20, 2025",
+        "event": "Zayo announced an agreement to acquire Crown Castle's Fiber Solutions business.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Zayo — Zayo Group Holdings, Inc.",
+        "url": "https://www.zayo.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Digitalbridge — Zayo Group Holdings, Inc.",
+        "url": "https://www.digitalbridge.com/portfolio/zayo-group-holdings",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Announcement date source — DigitalBridge — Zayo Group Holdings, Inc.",
+        "url": "https://www.zayo.com/newsroom/zayo-announces-definitive-agreement-to-be-acquired-by-digital-colony-and-eqt/",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Close date source — DigitalBridge — Zayo Group Holdings, Inc.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1502756/000155837020002206/ex-99d1.htm",
+        "type": "SEC_FILING",
+        "purpose": "FINANCING_FILINGS"
+      },
+      {
+        "label": "Close date source — DigitalBridge — Zayo Group Holdings, Inc.",
+        "url": "https://www.zayo.com/newsroom/zayo-completes-transition-to-a-private-company/",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Close date source — EQT Infrastructure — Zayo Group Holdings, Inc.",
+        "url": "https://eqtgroup.com/news/eqt-and-digital-colony-complete-acquisition-of-zayo",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Eqtgroup — Zayo Group Holdings, Inc.",
+        "url": "https://eqtgroup.com/en/about/current-portfolio/zayo",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "DigitalBridge",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2020,
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "EQT Infrastructure",
+        "ownershipVehicle": "EQT Infrastructure IV",
+        "investmentYear": 2020,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmsdi3y2s004f7h4sfgnd0i96",
+        "fundName": "DigitalBridge Partners II, LP",
+        "managerId": "cmrxpi6te001eivheobw69a9c",
+        "updatedAt": "2026-08-03T17:26:33.028Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi6te001eivheobw69a9c",
+        "name": "DigitalBridge",
+        "updatedAt": "2026-07-23T16:09:16.034Z"
+      },
+      {
+        "id": "cmrxpi7yv001rivhe44fyzxcs",
+        "name": "EQT Infrastructure",
+        "updatedAt": "2026-07-23T16:09:17.527Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0314:zayo-group-holdings-inc:46e9b5e3",
+    "taskIndex": 314,
+    "canonicalKey": null,
+    "capturedAt": "2026-09-01T09:14:53.054Z",
+    "databaseRevision": "revision:b025bb2f36fbe7a926990f8d940b461b83aa3957560a5aebc1a400e597f8ebb4",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "cc986bc8a49175c317d7916baed431c684090c1870148ff7f6a36381662c3767",
+    "productionSnapshotSha256": "1914760923d0368f6c044151383b9c3f2da73cca3fec14015e9ffdf717fc4d68",
+    "targetCompanySnapshotSha256": "eccb34135c4eda6b83ff9fff279b55954a6c0bed73960f1f92836884571f5238",
+    "seedEntrySha256": "9480d3a114e90ec8b2bf95381b047eb109f90cfaea0532d8040aac280ca35726",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "964c8e4c951ef97435316732a880736b6ecb6b890a7dfb3b682d9c8cd74bc385",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "209944edef2ef89a8fd3ee6c77be9c63ecd832b1d2d4dfa6d0a83ae642975dc2",
+      "organizationsSha256": "ca3913213c2c96edd2814ff3ba03b13aaec6666e60e2c14593eafe57bec18b45",
+      "citationsSha256": "6f3633f8fb34219ccd8512476dad9d7581eb07b32faa2871b52a0030a71164f0",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "8b6d6f931d2e381ebe8721ee299e10b258b4f87960e60e2da8332242615f6273",
+    "stateSha256": "d028e85eb797c245409ebe5424c451ecf6fbfab4d0a9701ce92fedaf09335695",
+    "taskSnapshotSha256": "0d6f73293ff894186f0eaf5f78642a348445d387126ed6ac9901262ba6805422"
+  },
+  "contextSha256": "e25dd8fd1c319075077975acdf69cd8cbd4adbfcb5aa53a3571d951fa8a5c693"
+}

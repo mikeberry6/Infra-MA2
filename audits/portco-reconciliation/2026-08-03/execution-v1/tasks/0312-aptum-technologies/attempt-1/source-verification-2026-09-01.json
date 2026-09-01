@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0312:aptum-technologies:d1225fa3",
+  "taskIndex": 312,
+  "verifiedAt": "2026-09-01T09:21:15.000Z",
+  "allReturnedUrlsChecked": true,
+  "summary": { "urlCount": 3, "working": 3, "browserBlockedButVerified": 0, "dead": 0 },
+  "sources": [
+    {
+      "url": "https://www.digitalbridge.com/portfolio/",
+      "finalUrl": "https://www.digitalbridge.com/portfolio/",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 45583,
+      "sha256": "1158c546e73bc4d32ddee10a1fb1db97925c34a4d40c2d5344452e5e130f2680",
+      "health": "WORKING",
+      "claimCheck": "DigitalBridge's live portfolio page lists Aptum as a current DigitalBridge investment."
+    },
+    {
+      "url": "https://www.infrabridge.com/our-portfolio",
+      "finalUrl": "https://www.infrabridge.com/our-portfolio",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 53173,
+      "sha256": "3d4d3692587b1b1208b7e366863fde09066fab2a003a4a03bc2fcdd31411ab30",
+      "health": "WORKING",
+      "claimCheck": "InfraBridge's current portfolio page does not list Aptum, supporting exclusion of the false InfraBridge attribution."
+    },
+    {
+      "url": "https://corpo.cogeco.com/cca/en/press-room/press-releases/cogeco-communications-releases-its-results-third-quarter-fiscal-2019/",
+      "finalUrl": "https://corpo.cogeco.com/cca/en/press-room/press-releases/cogeco-communications-releases-its-results-third-quarter-fiscal-2019/",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 32507,
+      "sha256": "2526b51e6cbe885585db8b1e0e0711feec06b52135b29b6c10e7daa96bbca2dc",
+      "health": "WORKING",
+      "claimCheck": "Cogeco confirms the 2019 closing of Cogeco Peer 1's sale to Digital Colony, supporting Aptum's identity chain and owner entry."
+    }
+  ]
+}

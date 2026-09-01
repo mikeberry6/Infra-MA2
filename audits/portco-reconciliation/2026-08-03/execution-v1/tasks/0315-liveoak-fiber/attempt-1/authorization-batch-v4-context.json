@@ -1,0 +1,289 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0315:liveoak-fiber:e69e52a2",
+  "taskIndex": 315,
+  "companyName": "LiveOak Fiber",
+  "generatedAt": "2026-09-01T09:29:26.854Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0315-liveoak-fiber/attempt-1/authorization-batch-v4-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 315,
+    "taskId": "ledger:0315:liveoak-fiber:e69e52a2",
+    "canonicalKey": "liveoak-fiber|united-states",
+    "companyName": "LiveOak Fiber",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 59,
+    "managers": [
+      "InfraRed Capital Partners",
+      "MEAG"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "059-infrared-capital-partners:holding:012:liveoak-fiber",
+      "066-meag:holding:008:liveoak-fiber"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjizj012kivhedxjyog86"
+    ],
+    "seedKeys": [
+      "liveoak fiber|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.ircp.com/news/infrared-capital-partners-expands-us-150m-critical-greenfield-digital-infrastructure/",
+      "https://www.ircp.com/news/infrared-partners-with-meag-on-liveoak-fiber-via-co-investment/",
+      "https://www.meag.com/en/news/meag-invests-in-liveoak-fiber.html"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_OWNER requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjizj012kivhedxjyog86",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "liveoak-fiber|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjizj012kivhedxjyog86",
+    "name": "LiveOak Fiber",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Fiber-to-the-premises broadband",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "LiveOak Fiber is a regional broadband provider building and operating fiber-to-the-premises networks in the southeastern United States. Its customers include residential households and businesses in historically underinvested communities that require high-speed broadband connectivity. The operating model is asset-heavy and recurring because the company invests in last-mile fiber infrastructure and generates subscription revenues from connected premises. Public materials state that LiveOak was founded in 2022, has invested more than $200 million, built over 1,000 miles of fiber, and serves markets in Florida and Georgia. InfraRed committed initial growth capital in 2022 and partnered with MEAG in a 2024 co-investment, while the current ownership percentages were not publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2022,
+    "headquarters": "Florida; Georgia",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk4y9021eivheolgpxte4",
+        "managerName": "InfraRed Capital Partners",
+        "organizationName": "InfraRed Capital Partners",
+        "fundName": "HICL Infrastructure PLC",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpm3oy04gnivheroyw2rt3",
+        "date": "Jun 2022",
+        "event": "LiveOak Fiber was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2022-06-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm3pk04goivhepamdxib0",
+        "date": "Jul 13, 2022",
+        "event": "InfraRed announced a US$150 million commitment to establish LiveOak Fiber.",
+        "category": "FINANCING",
+        "sortDate": "2022-07-13T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm3q404gpivheh61wsjza",
+        "date": "Jul 11, 2024",
+        "event": "LiveOak announced a $250 million financing underwritten by J.P. Morgan.",
+        "category": "FINANCING",
+        "sortDate": "2024-07-11T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm3qo04gqivheul0aztzu",
+        "date": "Sep 3, 2024",
+        "event": "InfraRed announced a co-investment partnership with MEAG to provide additional funding to LiveOak.",
+        "category": "FINANCING",
+        "sortDate": "2024-09-03T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxprqu70bjcivheba1dbs39",
+        "label": "Ircp — LiveOak Fiber",
+        "url": "https://www.ircp.com/news/infrared-capital-partners-expands-us-150m-critical-greenfield-digital-infrastructure/",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Ircp transaction or milestone detail",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxprqvc0bjeivhetn5ld458",
+        "label": "Ircp — LiveOak Fiber",
+        "url": "https://www.ircp.com/news/infrared-partners-with-meag-on-liveoak-fiber-via-co-investment/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Ircp — LiveOak Fiber",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprqwb0bjgivheb8q55ooi",
+        "label": "Liveoakfiber — LiveOak Fiber",
+        "url": "https://liveoakfiber.com/liveoak-fiber-secures-additional-funding-to-expand-high-speed-broadband-access/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Liveoakfiber — LiveOak Fiber",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprqx60bjiivhevuh6609s",
+        "label": "Liveoakfiber — LiveOak Fiber",
+        "url": "https://liveoakfiber.com/liveoak-fiber-secures-250-million-to-expand-southeast-fiber-network/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Liveoakfiber operations / asset details",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "LiveOak Fiber",
+    "investmentFirm": "InfraRed Capital Partners",
+    "sector": "Digital",
+    "subsector": "Fiber-to-the-premises broadband",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "LiveOak Fiber is a regional broadband provider building and operating fiber-to-the-premises networks in the southeastern United States. Its customers include residential households and businesses in historically underinvested communities that require high-speed broadband connectivity. The operating model is asset-heavy and recurring because the company invests in last-mile fiber infrastructure and generates subscription revenues from connected premises. Public materials state that LiveOak was founded in 2022, has invested more than $200 million, built over 1,000 miles of fiber, and serves markets in Florida and Georgia. InfraRed committed initial growth capital in 2022 and partnered with MEAG in a 2024 co-investment, while the current ownership percentages were not publicly disclosed.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2022,
+    "investmentYear": 2022,
+    "headquarters": "Florida; Georgia",
+    "milestones": [
+      {
+        "date": "Jun 2022",
+        "event": "LiveOak Fiber was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "Jul 13, 2022",
+        "event": "InfraRed announced a US$150 million commitment to establish LiveOak Fiber.",
+        "category": "Financing"
+      },
+      {
+        "date": "Jul 11, 2024",
+        "event": "LiveOak announced a $250 million financing underwritten by J.P. Morgan.",
+        "category": "Financing"
+      },
+      {
+        "date": "Sep 3, 2024",
+        "event": "InfraRed announced a co-investment partnership with MEAG to provide additional funding to LiveOak.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Ircp — LiveOak Fiber",
+        "url": "https://www.ircp.com/news/infrared-capital-partners-expands-us-150m-critical-greenfield-digital-infrastructure/",
+        "type": "ARTICLE",
+        "purpose": "MILESTONE_EVENT"
+      },
+      {
+        "label": "Ircp — LiveOak Fiber",
+        "url": "https://www.ircp.com/news/infrared-partners-with-meag-on-liveoak-fiber-via-co-investment/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Liveoakfiber — LiveOak Fiber",
+        "url": "https://liveoakfiber.com/liveoak-fiber-secures-additional-funding-to-expand-high-speed-broadband-access/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Liveoakfiber — LiveOak Fiber",
+        "url": "https://liveoakfiber.com/liveoak-fiber-secures-250-million-to-expand-southeast-fiber-network/",
+        "type": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "InfraRed Capital Partners",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2022,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj2v600e6ivhexgbdnjxe",
+        "fundName": "HICL Infrastructure PLC",
+        "managerId": "cmrxpiano002mivhegqrtcahq",
+        "updatedAt": "2026-07-23T16:09:57.570Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpiano002mivhegqrtcahq",
+        "name": "InfraRed Capital Partners",
+        "updatedAt": "2026-07-23T16:09:21.012Z"
+      },
+      {
+        "id": "cmrxpin85006kivhejb3tntsv",
+        "name": "MEAG",
+        "updatedAt": "2026-07-23T16:09:37.301Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0315:liveoak-fiber:e69e52a2",
+    "taskIndex": 315,
+    "canonicalKey": "liveoak-fiber|united-states",
+    "capturedAt": "2026-09-01T09:29:26.854Z",
+    "databaseRevision": "revision:d80400d40946cf116986f17d8e058efb775474c44e4ede8d2176a316e0d40384",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "7e929209493ee343f1f4775503470561d2e3369d644e2993412cec2bf5401ff7",
+    "productionSnapshotSha256": "e7fcba8d3238c9657dc87fa4c4ec994f6e9ec76edaec32e723f94665dd53eb1c",
+    "targetCompanySnapshotSha256": "4b00a058a77e9499127aefb4a4f93aaf157153273fcd2673c41014d50060540c",
+    "seedEntrySha256": "86b0dcc6b29cd8aae01582196c2983ba21d62f49271fbeec731faa5f6a820e7c",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "1ee4ff173f98ae5e7f9bb883df39233ff8744bdbf25e50d1e8767f2c8a4cf3a4",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "e67b3774098eff76be5a1bc78e12108fbf322fcc421876c3afae37e1cfc0b80e",
+      "organizationsSha256": "c57c70c36304e0bdcdfe325a953c1087b0196e3bc180aef4b67521166882b4b6",
+      "citationsSha256": "8f6e5a9118141e5a575bb8727b2ffc8190ed040cd890763341507a2ec80074bc",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "f260ce67ce1e86cdfad4efeeb008476854985e64258cac943bbc55a9e4baef46",
+    "stateSha256": "448d886115e67b2bbfcde3db0773cb9973f6b0dc01a77684fa5bbfa34ef23318",
+    "taskSnapshotSha256": "37d3bd42e64134011b23a3534539536583ba4377b76983534f5c664c9bdc1ef3"
+  },
+  "contextSha256": "823b93ac67307423d9d9c1216c29b614946d0bc545272390ef7d1a8a1dc7f5a0"
+}

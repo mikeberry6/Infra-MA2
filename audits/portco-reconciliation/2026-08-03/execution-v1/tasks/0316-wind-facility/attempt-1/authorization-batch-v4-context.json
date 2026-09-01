@@ -1,0 +1,254 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0316:wind-facility:66fa043e",
+  "taskIndex": 316,
+  "companyName": "Wind Facility",
+  "generatedAt": "2026-09-01T09:29:28.681Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0316-wind-facility/attempt-1/authorization-batch-v4-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 316,
+    "taskId": "ledger:0316:wind-facility:66fa043e",
+    "canonicalKey": "wind-facility|united-states",
+    "companyName": "Wind Facility",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 59,
+    "managers": [
+      "InfraRed Capital Partners"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "059-infrared-capital-partners:holding:010:wind-facility"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjj6e012wivhe4nxzbbvd"
+    ],
+    "seedKeys": [
+      "wind facility|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.ircp.com/news/infrared-announces-acquisition-of-texas-onshore-wind-farm/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted census NEEDS_REVIEW for 059-infrared-capital-partners:holding:010:wind-facility: Repository entry reflects a generic wind asset; ownership is confirmed but public sources do not disclose a specific asset identity. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Accepted census NEEDS_REVIEW for 059-infrared-capital-partners:holding:010:wind-facility: Repository entry reflects a generic wind asset; ownership is confirmed but public sources do not disclose a specific asset identity."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjj6e012wivhe4nxzbbvd",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "wind-facility|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjj6e012wivhe4nxzbbvd",
+    "name": "Wind Facility",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Onshore wind generation",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "This row refers to an InfraRed-owned onshore wind asset in Texas whose specific project name was not clearly disclosed in the reviewed public materials. The available public source describes the asset as a 202 MW operational onshore wind farm in south Texas serving wholesale power markets and generating renewable energy credits. The operating model is asset-heavy and merchant-sensitive because value depends on a physical wind generation facility that sells output into the wholesale market rather than under fully disclosed long-term utility regulation. InfraRed stated that the project commenced operations in 2019, uses Vestas turbines, and was acquired with all-cash equity and no leverage or tax equity financing. InfraRed announced the acquisition from Duke Energy in May 2024, while the project name and detailed ownership structure were not publicly disclosed in the reviewed source.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2019,
+    "headquarters": "Texas",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk571021qivheiyjosg0k",
+        "managerName": "InfraRed Capital Partners",
+        "organizationName": "InfraRed Capital Partners",
+        "fundName": "InfraRed Infrastructure Fund VI",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpm4j204hlivhelm7ghznk",
+        "date": "2019",
+        "event": "InfraRed's acquisition announcement stated that the wind farm commenced operations in 2019.",
+        "category": "EXPANSION",
+        "sortDate": "2019-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm4jn04hmivhevazgvqdy",
+        "date": "May 30, 2024",
+        "event": "InfraRed announced acquisition of a 202 MW operational onshore wind farm in south Texas from Duke Energy.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-05-30T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm4k804hnivhezgaisbr2",
+        "date": "May 30, 2024",
+        "event": "InfraRed disclosed that the asset had been acquired with all-cash equity and no leverage or tax equity financing.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-05-30T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxprs340bl9ivhen28hsua8",
+        "label": "Ircp — Wind Facility",
+        "url": "https://www.ircp.com/news/infrared-announces-acquisition-of-texas-onshore-wind-farm/",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Ircp transaction or milestone detail",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxprs3n0blaivhepuijyynl",
+        "label": "Ircp — Hawtree Solar Project",
+        "url": "https://www.ircp.com/investments/energy-transition-renewables/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Ircp company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprs4t0blcivhe9ejhqsvo",
+        "label": "Ircp — Wind Facility",
+        "url": "https://www.ircp.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Ircp company profile",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Wind Facility",
+    "investmentFirm": "InfraRed Capital Partners",
+    "sector": "Power & ET",
+    "subsector": "Onshore wind generation",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "This row refers to an InfraRed-owned onshore wind asset in Texas whose specific project name was not clearly disclosed in the reviewed public materials. The available public source describes the asset as a 202 MW operational onshore wind farm in south Texas serving wholesale power markets and generating renewable energy credits. The operating model is asset-heavy and merchant-sensitive because value depends on a physical wind generation facility that sells output into the wholesale market rather than under fully disclosed long-term utility regulation. InfraRed stated that the project commenced operations in 2019, uses Vestas turbines, and was acquired with all-cash equity and no leverage or tax equity financing. InfraRed announced the acquisition from Duke Energy in May 2024, while the project name and detailed ownership structure were not publicly disclosed in the reviewed source.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2019,
+    "investmentYear": 2024,
+    "headquarters": "Texas",
+    "milestones": [
+      {
+        "date": "2019",
+        "event": "InfraRed's acquisition announcement stated that the wind farm commenced operations in 2019.",
+        "category": "Expansion"
+      },
+      {
+        "date": "May 30, 2024",
+        "event": "InfraRed announced acquisition of a 202 MW operational onshore wind farm in south Texas from Duke Energy.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "May 30, 2024",
+        "event": "InfraRed disclosed that the asset had been acquired with all-cash equity and no leverage or tax equity financing.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Ircp — Wind Facility",
+        "url": "https://www.ircp.com/news/infrared-announces-acquisition-of-texas-onshore-wind-farm/",
+        "type": "ARTICLE",
+        "purpose": "MILESTONE_EVENT"
+      },
+      {
+        "label": "Ircp — Wind Facility",
+        "url": "https://www.ircp.com/investments/energy-transition-renewables/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Ircp — Wind Facility",
+        "url": "https://www.ircp.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "InfraRed Capital Partners",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2024,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmsdi40pi004u7h4s2rv15xo9",
+        "fundName": "InfraRed Infrastructure Fund VI",
+        "managerId": "cmrxpiano002mivhegqrtcahq",
+        "updatedAt": "2026-08-03T17:26:36.438Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpiano002mivhegqrtcahq",
+        "name": "InfraRed Capital Partners",
+        "updatedAt": "2026-07-23T16:09:21.012Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0316:wind-facility:66fa043e",
+    "taskIndex": 316,
+    "canonicalKey": "wind-facility|united-states",
+    "capturedAt": "2026-09-01T09:29:28.681Z",
+    "databaseRevision": "revision:6c970a517d89ccfc3e9fc10f1f3575f2cbf4843720e4cd7a7a3cf30f5f518973",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "bbf5b9cc9f462e045eead576d41aeae55763d3b34833587b595a3a674b9b2ff7",
+    "productionSnapshotSha256": "f51bc44eb171659d5a69cbee020ccac8a2498315db63933acc6b5a8e4067000b",
+    "targetCompanySnapshotSha256": "42ea74cf8bdfe91191da9decee2899da24a4fdfea1c1711d4abd44ef8a74df77",
+    "seedEntrySha256": "b2992411ee6b6dd407233b9b485d6ada2b82040e9366a34c87a31e7fb5d475e0",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "882ff293a92e07da851db0bb14ddce0740c620c3db295a577491b0b96005018f",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4d646050c90f619ff1b0a26241bf4d4bc97a2efbd806fa57e659b5f379fc41af",
+      "organizationsSha256": "b44bd1a03fdeed8ee704558dac391fe5818f359c253f44815e5e719561c74334",
+      "citationsSha256": "e13a7ff3b2f3003aaa6a5f29556773ae1e377be19c70a3a1b197c26b4de4de11",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "632f30405ff2f0e3f4f45034dbb8e013c44dd6fecac6f251a6c653490c177536",
+    "stateSha256": "2840bfaa011e6c5e7e934f276f3d70b8e97edb601080cd259bd5b17f2a57cd34",
+    "taskSnapshotSha256": "6521ad460d980f0f681c1d69df6d998282f6422561ab0ef7d5cc127a0b2fc9c7"
+  },
+  "contextSha256": "15df8fa983827a59c4a6a86358645a40e979797c2d277c8da7f823c4b85e74d3"
+}

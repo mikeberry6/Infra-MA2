@@ -1,0 +1,200 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0315:liveoak-fiber:e69e52a2",
+  "taskIndex": 315,
+  "companyName": "LiveOak Fiber",
+  "asOfDate": "2026-08-19",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-01T09:22:50.000Z",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "LiveOak Fiber",
+    "requestedManagers": [
+      "InfraRed Capital Partners",
+      "MEAG"
+    ],
+    "decision": "PROPOSED_CORRECTION",
+    "confidence": "HIGH",
+    "rationale": "MEAG's 2024 dedicated co-investment is minority equity, not debt or blind-pool LP exposure; InfraRed retained majority control. Add MEAG to the existing company and exclude lenders.",
+    "identityResolution": {
+      "status": "RESOLVED",
+      "canonicalKey": "liveoak-fiber|united-states",
+      "canonicalName": "LiveOak Fiber",
+      "legalStructure": "LiveOak Fiber Holdings, LLC (Delaware HoldCo/sole member) -> LiveOak Fiber, LLC (Delaware OpCo)",
+      "formation": "Founded June 2022 by InfraRed and management; exact formation/close day NOT_PUBLICLY_DISCLOSED",
+      "boundary": "One PortCo; HoldCo, OpCo, local builds and financing entities are not separate PortCos",
+      "website": "https://liveoakfiber.com/",
+      "headquarters": "Brunswick, GA operating base; HoldCo HQ: 730 Third Ave., New York, NY"
+    },
+    "ownershipResolution": {
+      "status": "RESOLVED",
+      "owners": [
+        {
+          "manager": "InfraRed Capital Partners",
+          "organization": "InfraRed-managed funds",
+          "fund": "InfraRed value-add strategies; exact fund NOT_PUBLICLY_DISCLOSED",
+          "vehicle": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "MAJORITY; exact % NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2022-07-11",
+          "entryDate": "2022-06; exact day NOT_PUBLICLY_DISCLOSED",
+          "entryYear": 2022,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "manager": "MEAG",
+          "organization": "MEAG clients; Munich Reinsurance Company evidenced",
+          "fund": "Americas infrastructure-equity mandate; exact mandate(s) NOT_PUBLICLY_DISCLOSED",
+          "vehicle": "InfraRed LiveOak CIV LP",
+          "stake": "MINORITY through CIV; PortCo % NOT_PUBLICLY_DISCLOSED; Munich Re's 14.2075% is CIV-level only",
+          "announcementDate": "2024-09-03",
+          "entryDate": "BY_2024-09-03; exact day NOT_PUBLICLY_DISCLOSED",
+          "entryYear": 2024,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "manager": "NOT_APPLICABLE",
+          "organization": "Jan Geldmacher",
+          "fund": "NOT_APPLICABLE",
+          "vehicle": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2026-07-16",
+          "entryDate": null,
+          "entryYear": null,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "ACTIVE_SHAREHOLDER_CONFIRMED"
+        }
+      ],
+      "fundingMechanics": "Counsel calls it an InfraRed minority-stake sale; releases also call it funding to LiveOak. Primary/secondary split NOT_PUBLICLY_DISCLOSED.",
+      "governance": "InfraRed board seat confirmed July 2026; MEAG rights NOT_PUBLICLY_DISCLOSED.",
+      "currentBasis": "Munich Re listed the CIV at 2025-12-31; no later owner exit found.",
+      "upstream": "Sun Life/SLC is InfraRed's parent, not a separate co-investor."
+    },
+    "operatingResolution": {
+      "status": "ACTIVE",
+      "footprint": "Current site: FL—Bay, Okaloosa, Walton, Santa Rosa; GA—Chatham, Glynn. Camden appeared in 2023-24 materials but not the current menu; no sale found.",
+      "scale": ">1,000 fiber miles by Sep-2024; >25,000 subscribers by 2025-04-08; premises passed NOT_PUBLICLY_DISCLOSED",
+      "headquarters": "Brunswick, GA operating base; New York HoldCo HQ",
+      "currentPortfolioStatus": "InfraRed role confirmed in 2026; MEAG/Munich Re CIV holding confirmed at 2025 year-end."
+    },
+    "acquisitionExitCheck": {
+      "completedAcquisitions": [
+        "2023-05-08: ATC/Alma fiber assets in Glynn and Camden; asset deal only"
+      ],
+      "nonOwnershipFinancings": [
+        "2024-07-01: $250m J.P. Morgan financing",
+        "2026-04-02 anticipated close/04-09 announced secured: $425m OHA/Palistar facility; no sole-member or management change"
+      ],
+      "pendingTransactions": [],
+      "result": "No signed sale, change of control, owner exit or pending ownership deal found through the cutoff."
+    },
+    "milestones": [
+      {
+        "date": "2022-06/07-11",
+        "event": "Founded; InfraRed announced $150m greenfield capital."
+      },
+      {
+        "date": "2023-05-08",
+        "event": "Completed ATC network-asset acquisition."
+      },
+      {
+        "date": "2024-09-03",
+        "event": "Closed MEAG minority co-investment announced; InfraRed retained majority."
+      },
+      {
+        "date": "2026-04-02/04-09",
+        "event": "Apr-2 anticipated close; Apr-9 announced secured: $425m facility with no ownership-structure change."
+      }
+    ],
+    "evidence": [
+      {
+        "label": "InfraRed-MEAG release",
+        "url": "https://www.ircp.com/news/infrared-partners-with-meag-on-liveoak-fiber-via-co-investment/",
+        "purpose": "Closed equity co-investment, InfraRed majority, 2022 founding",
+        "sourceTier": "T1_MANAGER_DIRECT",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "Munich Re 2025 annual report",
+        "url": "https://www.munichre.com/content/dam/munichre/mrwebsiteslaunches/2025-annual-report/MunichRe-Annual-Report-Company-2025-en.pdf/_jcr_content/renditions/original./MunichRe-Annual-Report-Company-2025-en.pdf",
+        "purpose": "CIV name and Munich Re's 14.2075% vehicle interest at 2025-12-31",
+        "sourceTier": "T1_AUDITED_OWNER",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "InfraRed 2022 release",
+        "url": "https://www.ircp.com/news/infrared-capital-partners-expands-us-150m-critical-greenfield-digital-infrastructure/",
+        "purpose": "Initial $150m capital and launch",
+        "sourceTier": "T1_MANAGER_DIRECT",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Latham transaction record",
+        "url": "https://www.lw.com/en/people/joseph-maurantonio",
+        "purpose": "Minority-stake sale by InfraRed to MEAG",
+        "sourceTier": "T2_TRANSACTION_COUNSEL",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Georgia PSC application",
+        "url": "https://services.psc.ga.gov/api/v1/External/Public/Get/Document/DownloadFile/226036/107369",
+        "purpose": "HoldCo/OpCo, HQ and debt characterization",
+        "sourceTier": "T1_REGULATOR",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "before": "One InfraRed owner; no website; HQ shown as Florida/Georgia.",
+      "after": "One company; InfraRed active majority from 2022; MEAG active minority from 2024 via InfraRed LiveOak CIV LP.",
+      "changes": [
+        "Add MEAG; do not apply Munich Re's 14.2075% CIV figure to LiveOak",
+        "Note Jan Geldmacher as an active individual shareholder",
+        "Add website/legal structure; exclude lenders and duplicates"
+      ]
+    },
+    "excludedOrDuplicateCandidates": [
+      "HoldCo and OpCo: same PortCo.",
+      "Local builds/financing entities: not PortCos.",
+      "J.P. Morgan, OHA and Palistar: debt/advisory, not equity.",
+      "Sun Life/SLC: upstream parent, not co-investor.",
+      "ATC/Alma: acquired assets, not a separate current PortCo."
+    ],
+    "unresolvedQuestions": [
+      "No material UNRESOLVED identity or current institutional-owner issue.",
+      "NOT_PUBLICLY_DISCLOSED: InfraRed fund/vehicle, exact June-2022 close, PortCo percentages, full management cap table, MEAG rights/client mandates and primary/secondary split.",
+      "NOT_PUBLICLY_DISCLOSED: current premises passed and newer exact fiber miles."
+    ],
+    "recommendedListAction": "Add MEAG as active minority co-owner from 2024 through InfraRed LiveOak CIV LP; retain InfraRed as active majority from June 2022; keep one LiveOak record; note Geldmacher separately; exclude lenders."
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0315-liveoak-fiber/attempt-1/research-decision.json",
+      "sha256": "ed1df6abf884b07845694ee7381c14ed07226adadd8f9e2380bc302c228f5812"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0315-liveoak-fiber/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "9ee4c94cb6aebe7c8916a3958d3a5569d37f7921324978903385251fdc41f89a"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0315-liveoak-fiber/attempt-1/source-verification-2026-09-01.json",
+      "sha256": "b355414052f4a037a7451bf444d8f76cd14420c3b188c7eb3b0649c3669d7d9d"
+    },
+    "acceptedResponseSha256": "984308439937bd68653ca2aa79e05e373d3ebc2ee21f66870a714c8ff1433af5",
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION"
+  }
+}

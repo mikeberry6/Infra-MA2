@@ -1,0 +1,309 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0316:wind-facility:66fa043e",
+  "taskIndex": 316,
+  "asOfDate": "2026-09-01",
+  "generatedAt": "2026-09-01T09:29:00.000Z",
+  "canonicalKey": "wind-facility|united-states",
+  "companyName": "Wind Facility",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER",
+    "RETRACT_ERRONEOUS_OWNERSHIP"
+  ],
+  "sourceHoldingIds": [
+    "059-infrared-capital-partners:holding:010:wind-facility"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Resolve the generic Wind Facility placeholder as Mesteño Wind Project and replace its unsupported InfraRed Infrastructure Fund VI attribution with the regulatory ownership chain. Texas PUCT records establish a May 29, 2024 closing through Mesteno Aggregator LLC, owned 3.48% directly by InfraRed Energy Transition Fund A LP and 96.52% indirectly by InfraRed Energy Transition Fund B LP through Mesteno HoldCo LLC. InfraRed announced the acquisition from Duke Energy on May 30, 2024. No later owner exit or signed ownership change was identified through September 1, 2026.",
+  "evidence": [
+    {
+      "url": "https://interchange.puc.texas.gov/Documents/56766_1_1406189.PDF",
+      "purpose": "Legal identity, closing and exact Fund A/B ownership chain",
+      "supports": [
+        "Mesteno Windpower, LLC is the project company",
+        "Mesteno Aggregator LLC acquired the project on May 29, 2024",
+        "Fund A owns 3.48% directly and Fund B owns 96.52% indirectly through Mesteno HoldCo LLC"
+      ]
+    },
+    {
+      "url": "https://www.ircp.com/news/infrared-announces-acquisition-of-texas-onshore-wind-farm/",
+      "purpose": "Buyer announcement, seller, geography, capacity and financing",
+      "supports": [
+        "InfraRed acquired the operational south Texas wind farm from Duke Energy",
+        "The asset has approximately 202 MW of capacity and commenced operations in 2019",
+        "The acquisition used all-cash equity without leverage or tax equity"
+      ]
+    },
+    {
+      "url": "https://interchange.puc.texas.gov/Documents/59131_64_1590666.PDF",
+      "purpose": "Current regulatory continuity",
+      "supports": [
+        "The Mesteño legal entities and Fund A/B chain remain reflected in 2026 regulatory records"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "955401b12669dcf28f41d4566ded781b29e557214e8b420b0466b48ee5a4d7ea",
+  "currentCompanySnapshotSha256": "42ea74cf8bdfe91191da9decee2899da24a4fdfea1c1711d4abd44ef8a74df77",
+  "executionLock": {
+    "taskSnapshotSha256": "f163170deb780c11549e6b8ab96e35b73621923fa7f33eddd2e07fed1f4eb91c",
+    "taskStateSha256": "2840bfaa011e6c5e7e934f276f3d70b8e97edb601080cd259bd5b17f2a57cd34",
+    "taskDependencySha256": "632f30405ff2f0e3f4f45034dbb8e013c44dd6fecac6f251a6c653490c177536",
+    "seedEntrySha256": "b2992411ee6b6dd407233b9b485d6ada2b82040e9366a34c87a31e7fb5d475e0",
+    "dependencies": {
+      "ownershipPeriodsSha256": "882ff293a92e07da851db0bb14ddce0740c620c3db295a577491b0b96005018f",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4d646050c90f619ff1b0a26241bf4d4bc97a2efbd806fa57e659b5f379fc41af",
+      "organizationsSha256": "b44bd1a03fdeed8ee704558dac391fe5818f359c253f44815e5e719561c74334",
+      "citationsSha256": "e13a7ff3b2f3003aaa6a5f29556773ae1e377be19c70a3a1b197c26b4de4de11",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmsdi40pi004u7h4s2rv15xo9",
+        "fundName": "InfraRed Infrastructure Fund VI",
+        "managerId": "cmrxpiano002mivhegqrtcahq",
+        "updatedAt": "2026-08-03T17:26:36.438Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpiano002mivhegqrtcahq",
+        "name": "InfraRed Capital Partners",
+        "updatedAt": "2026-07-23T16:09:21.012Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjj6e012wivhe4nxzbbvd",
+    "name": "Wind Facility",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Onshore wind generation",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "This row refers to an InfraRed-owned onshore wind asset in Texas whose specific project name was not clearly disclosed in the reviewed public materials. The available public source describes the asset as a 202 MW operational onshore wind farm in south Texas serving wholesale power markets and generating renewable energy credits. The operating model is asset-heavy and merchant-sensitive because value depends on a physical wind generation facility that sells output into the wholesale market rather than under fully disclosed long-term utility regulation. InfraRed stated that the project commenced operations in 2019, uses Vestas turbines, and was acquired with all-cash equity and no leverage or tax equity financing. InfraRed announced the acquisition from Duke Energy in May 2024, while the project name and detailed ownership structure were not publicly disclosed in the reviewed source.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2019,
+    "headquarters": "Texas",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk571021qivheiyjosg0k",
+        "managerName": "InfraRed Capital Partners",
+        "organizationName": "InfraRed Capital Partners",
+        "fundName": "InfraRed Infrastructure Fund VI",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpm4j204hlivhelm7ghznk",
+        "date": "2019",
+        "event": "InfraRed's acquisition announcement stated that the wind farm commenced operations in 2019.",
+        "category": "EXPANSION",
+        "sortDate": "2019-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm4jn04hmivhevazgvqdy",
+        "date": "May 30, 2024",
+        "event": "InfraRed announced acquisition of a 202 MW operational onshore wind farm in south Texas from Duke Energy.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-05-30T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm4k804hnivhezgaisbr2",
+        "date": "May 30, 2024",
+        "event": "InfraRed disclosed that the asset had been acquired with all-cash equity and no leverage or tax equity financing.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-05-30T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxprs340bl9ivhen28hsua8",
+        "label": "Ircp — Wind Facility",
+        "url": "https://www.ircp.com/news/infrared-announces-acquisition-of-texas-onshore-wind-farm/",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Ircp transaction or milestone detail",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxprs3n0blaivhepuijyynl",
+        "label": "Ircp — Hawtree Solar Project",
+        "url": "https://www.ircp.com/investments/energy-transition-renewables/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Ircp company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprs4t0blcivhe9ejhqsvo",
+        "label": "Ircp — Wind Facility",
+        "url": "https://www.ircp.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Ircp company profile",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "42ea74cf8bdfe91191da9decee2899da24a4fdfea1c1711d4abd44ef8a74df77",
+  "afterImage": {
+    "id": "cmrxpjj6e012wivhe4nxzbbvd",
+    "name": "Mesteño Wind Project",
+    "aliases": [
+      "Mesteno Windpower, LLC",
+      "Mesteno Windpower",
+      "Mesteño Windpower",
+      "Mesteno Wind",
+      "Wind Facility"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Onshore wind generation",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Mesteño Wind Project is a 201.6 MW onshore wind facility in Starr County, Texas, commonly described as a 202 MW project. The facility comprises 56 Vestas V136-3.6 MW turbines, began commercial operation in 2019 and participates in the ERCOT market. InfraRed Capital Partners acquired the project company, Mesteno Windpower, LLC, from Duke Energy through Mesteno Aggregator LLC on May 29, 2024. Current regulatory records show InfraRed Energy Transition Fund A LP holding 3.48% directly in the aggregator and InfraRed Energy Transition Fund B LP holding 96.52% indirectly through Mesteno HoldCo LLC. The two positions together represent 100% InfraRed-controlled ownership. No later owner exit or signed ownership change was identified through September 1, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2019,
+    "headquarters": "Starr County, Texas",
+    "lastVerifiedAt": "2026-09-01T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": null,
+        "managerName": "InfraRed Capital Partners",
+        "organizationName": "InfraRed Capital Partners",
+        "fundName": null,
+        "vehicleName": "InfraRed Energy Transition Fund A LP → Mesteno Aggregator LLC",
+        "stake": "3.48% direct",
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "InfraRed Capital Partners",
+        "organizationName": "InfraRed Capital Partners",
+        "fundName": null,
+        "vehicleName": "InfraRed Energy Transition Fund B LP → Mesteno HoldCo LLC → Mesteno Aggregator LLC",
+        "stake": "96.52% indirect",
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpm4j204hlivhelm7ghznk",
+        "date": "Dec 31, 2019",
+        "event": "Mesteño Wind Project reached commercial operation in Starr County, Texas.",
+        "category": "EXPANSION",
+        "sortDate": "2019-12-31T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.ircp.com/news/infrared-announces-acquisition-of-texas-onshore-wind-farm/"
+        ]
+      },
+      {
+        "id": "cmrxpm4jn04hmivhevazgvqdy",
+        "date": "May 29, 2024",
+        "event": "InfraRed completed the acquisition of Mesteno Windpower, LLC through Mesteno Aggregator LLC from Duke Energy.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-05-29T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://interchange.puc.texas.gov/Documents/56766_1_1406189.PDF"
+        ]
+      },
+      {
+        "id": "cmrxpm4k804hnivhezgaisbr2",
+        "date": "May 30, 2024",
+        "event": "InfraRed announced the Mesteño acquisition and disclosed all-cash equity financing with no leverage or tax equity.",
+        "category": "FINANCING",
+        "sortDate": "2024-05-30T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.ircp.com/news/infrared-announces-acquisition-of-texas-onshore-wind-farm/"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxprs340bl9ivhen28hsua8",
+        "label": "Ircp — Wind Facility",
+        "url": "https://www.ircp.com/news/infrared-announces-acquisition-of-texas-onshore-wind-farm/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Buyer announcement, seller, project scope and financing",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxprs3n0blaivhepuijyynl",
+        "label": "Ircp — Hawtree Solar Project",
+        "url": "https://www.ircp.com/investments/energy-transition-renewables/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "InfraRed energy-transition strategy context",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprs4t0blcivhe9ejhqsvo",
+        "label": "Ircp — Wind Facility",
+        "url": "https://www.ircp.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Manager identity",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Texas PUCT — Mesteño ownership filing",
+        "url": "https://interchange.puc.texas.gov/Documents/56766_1_1406189.PDF",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "May 2024 close and exact Fund A/B ownership chain",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Texas PUCT — 2026 affiliate filing",
+        "url": "https://interchange.puc.texas.gov/Documents/59131_64_1590666.PDF",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "2026 regulatory continuity of the Mesteño entities and ownership chain",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "aa10204505a93fa34c4c5c0fd021819f5012fd5ed9cc6937f57d63eac09cc538",
+  "proposalSha256": "15fff5a2061419170d536386d649257257cdc692f0531745dedf2188fbea9636"
+}

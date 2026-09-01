@@ -1,0 +1,288 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_MANIFEST",
+  "methodologyVersion": "PORTCO_APPLY_BATCH_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0312-0317-v1",
+  "createdAt": "2026-09-01T09:39:45.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "c36eec6d7becbf8cc3bb0832eacc1e5a47c58c4461859c000d074f0dc0deea46"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0312:aptum-technologies:d1225fa3",
+      "taskIndex": 312,
+      "companyName": "Aptum Technologies",
+      "outcome": "VERIFIED_NO_CHANGE",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0312-aptum-technologies/attempt-1/terminal-decision-v2.json",
+        "sha256": "06788bdb1e420b1bc657e593025dd88c8a55123a78b45e51156ba1cc61761e9b"
+      }
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0314:zayo-group-holdings-inc:46e9b5e3",
+      "taskIndex": 314,
+      "companyName": "Zayo Group Holdings, Inc.",
+      "outcome": "VERIFIED_NO_CHANGE",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0314-zayo-group-holdings-inc/attempt-1/terminal-decision-v2.json",
+        "sha256": "f9c326aac20e21bf8f991c068e627718b53e560e5d7136fe915c8fd17d70c5f9"
+      }
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0315:liveoak-fiber:e69e52a2",
+      "taskIndex": 315,
+      "companyName": "LiveOak Fiber",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0315-liveoak-fiber-v2/proposal.json",
+        "sha256": "94d1a760b4c7db03813fc5219c4b6a7de9a0b1611d9125040aab9d9711309f7d"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0315-liveoak-fiber-v2.json",
+        "sha256": "b3cde469ff2904f546d0dd0582357982369291559115cecfc43249cb25866f2f"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0315-liveoak-fiber/attempt-1/locked-batch-v3-production-snapshot.json",
+        "sha256": "340c72bac27cbf313c9781542e8fcb272e9c0014ab85631971981b748ec14576"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0315-liveoak-fiber/attempt-1/locked-batch-v3-task-snapshot.json",
+        "sha256": "2e55c05c8deb911dfb3465c7bd0ca3f4c47d3b358bb78c7b3e69d5a37a5892ba"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0315-liveoak-fiber/attempt-1/authorization-batch-v4-task-snapshot.json",
+        "sha256": "37d3bd42e64134011b23a3534539536583ba4377b76983534f5c664c9bdc1ef3"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0315-liveoak-fiber/attempt-1/application-research-decision-v2.json",
+        "sha256": "20bbf2419a075f2b372571b396ec464e31924fcd175b7fceac977ed384e2bdcc"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0315-liveoak-fiber/attempt-1/source-verification-2026-09-01.json",
+        "sha256": "b355414052f4a037a7451bf444d8f76cd14420c3b188c7eb3b0649c3669d7d9d"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "448d886115e67b2bbfcde3db0773cb9973f6b0dc01a77684fa5bbfa34ef23318",
+      "dependencySha256": "f260ce67ce1e86cdfad4efeeb008476854985e64258cac943bbc55a9e4baef46",
+      "afterImageSha256": "cb1fb410928d2c5ebf5587ffc1d778bc197e888e9b424f47d135382103774fb5",
+      "targetClaims": [
+        "canonical:liveoak-fiber|united-states",
+        "company:cmrxpjizj012kivhedxjyog86",
+        "relation:cmrxpk4y9021eivheolgpxte4",
+        "relation:cmrxpm3oy04gnivheroyw2rt3",
+        "relation:cmrxpm3pk04goivhepamdxib0",
+        "relation:cmrxpm3q404gpivheh61wsjza",
+        "relation:cmrxpm3qo04gqivheul0aztzu",
+        "relation:cmrxprqu70bjcivheba1dbs39",
+        "relation:cmrxprqvc0bjeivhetn5ld458",
+        "relation:cmrxprqwb0bjgivheb8q55ooi",
+        "relation:cmrxprqx60bjiivhevuh6609s",
+        "seed:liveoak fiber|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://liveoakfiber.com/liveoak-fiber-secures-250-million-to-expand-southeast-fiber-network/",
+          "label": "Liveoakfiber — LiveOak Fiber",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://liveoakfiber.com/liveoak-fiber-secures-additional-funding-to-expand-high-speed-broadband-access/",
+          "label": "Liveoakfiber — LiveOak Fiber",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.ircp.com/news/infrared-capital-partners-expands-us-150m-critical-greenfield-digital-infrastructure/",
+          "label": "Ircp — LiveOak Fiber",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.ircp.com/news/infrared-partners-with-meag-on-liveoak-fiber-via-co-investment/",
+          "label": "Ircp — LiveOak Fiber",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.ircp.com/wp-content/uploads/2026/06/InfraRed-2026-Sustainability-Report.pdf",
+          "label": "InfraRed — 2026 sustainability report",
+          "sourceType": "PRESENTATION"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0316:wind-facility:66fa043e",
+      "taskIndex": 316,
+      "companyName": "Wind Facility",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0316-wind-facility-v2/proposal.json",
+        "sha256": "15fff5a2061419170d536386d649257257cdc692f0531745dedf2188fbea9636"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0316-wind-facility-v2.json",
+        "sha256": "4ca8f202ee52f90fe95cf5d8ea803104003cec4474f8166b7c9cc1508fa35654"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0316-wind-facility/attempt-1/locked-batch-v3-production-snapshot.json",
+        "sha256": "955401b12669dcf28f41d4566ded781b29e557214e8b420b0466b48ee5a4d7ea"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0316-wind-facility/attempt-1/locked-batch-v3-task-snapshot.json",
+        "sha256": "f163170deb780c11549e6b8ab96e35b73621923fa7f33eddd2e07fed1f4eb91c"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0316-wind-facility/attempt-1/authorization-batch-v4-task-snapshot.json",
+        "sha256": "6521ad460d980f0f681c1d69df6d998282f6422561ab0ef7d5cc127a0b2fc9c7"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0316-wind-facility/attempt-1/application-research-decision-v2.json",
+        "sha256": "096b3857018f703eae83df34824121e81c5201ede2de03ae534135258a63fce2"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0316-wind-facility/attempt-1/source-verification-2026-09-01.json",
+        "sha256": "fe1aa6875c8f6e16417e30ba9638bf0f7121d07a3821290ee50e08ed4933374a"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "2840bfaa011e6c5e7e934f276f3d70b8e97edb601080cd259bd5b17f2a57cd34",
+      "dependencySha256": "632f30405ff2f0e3f4f45034dbb8e013c44dd6fecac6f251a6c653490c177536",
+      "afterImageSha256": "aa10204505a93fa34c4c5c0fd021819f5012fd5ed9cc6937f57d63eac09cc538",
+      "targetClaims": [
+        "canonical:wind-facility|united-states",
+        "company:cmrxpjj6e012wivhe4nxzbbvd",
+        "relation:cmrxpk571021qivheiyjosg0k",
+        "relation:cmrxpm4j204hlivhelm7ghznk",
+        "relation:cmrxpm4jn04hmivhevazgvqdy",
+        "relation:cmrxpm4k804hnivhezgaisbr2",
+        "relation:cmrxprs340bl9ivhen28hsua8",
+        "relation:cmrxprs3n0blaivhepuijyynl",
+        "relation:cmrxprs4t0blcivhe9ejhqsvo",
+        "seed:mesteño wind project|united states",
+        "seed:wind facility|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://interchange.puc.texas.gov/Documents/56766_1_1406189.PDF",
+          "label": "Texas PUCT — Mesteño ownership filing",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://interchange.puc.texas.gov/Documents/59131_64_1590666.PDF",
+          "label": "Texas PUCT — 2026 affiliate filing",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.ircp.com/",
+          "label": "Ircp — Wind Facility",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.ircp.com/investments/energy-transition-renewables/",
+          "label": "Ircp — Hawtree Solar Project",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.ircp.com/news/infrared-announces-acquisition-of-texas-onshore-wind-farm/",
+          "label": "Ircp — Wind Facility",
+          "sourceType": "ARTICLE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0317:longroad-energy:c89b5c17",
+      "taskIndex": 317,
+      "companyName": "Longroad Energy",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0317-longroad-energy-v4/proposal.json",
+        "sha256": "130295e627ed972fac6cb1f22e9ecc189b83940bff10f04649362e6ad0a79cb4"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0317-longroad-energy-v4.json",
+        "sha256": "f3587f9724c2a697672f4fda16e76f2bd2f228a377442974b0ab18b507f90914"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0317-longroad-energy/attempt-1/locked-batch-v3-production-snapshot.json",
+        "sha256": "cb0bfe10cdb0b2d66a1622b8c13289150fc6c5538decdfc951a17917d8e42a2b"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0317-longroad-energy/attempt-1/locked-batch-v3-task-snapshot.json",
+        "sha256": "32e0a1c9c606213e945dbd3facc09d5d585a3aa424eb5e48c4670bf3f77e9340"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0317-longroad-energy/attempt-1/authorization-batch-v4-task-snapshot.json",
+        "sha256": "a5fdf09ea2c655571dee16e4a187e0644c4cf161f3257e31e9c60c2b733d47eb"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0317-longroad-energy/attempt-1/application-research-decision-v2.json",
+        "sha256": "63e801b6727731921d69063c49c5b7f944c6570cb0c142c7b28b5f6f428892d7"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0317-longroad-energy/attempt-1/source-verification-2026-09-01.json",
+        "sha256": "378fbe0ac9f95cb644a996616bec775f7ab421f4fd245e5f6211afb1777d31ab"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "4c039c2d57435a581653f6a41ebc56e78a0b1815da769bf8b2664f01cfc6c7b9",
+      "dependencySha256": "c84adc8e60384b8aca99c34298b09fec32467a9e0ad26518349ba001a12da116",
+      "afterImageSha256": "ef9e32291043807ea910c0d4f816127e0113649aa9776398a5decfbf34565c46",
+      "targetClaims": [
+        "canonical:longroad-energy|united-states",
+        "company:cmrxpjlg8016fivheuurs3oft",
+        "relation:cmrxpk7pv025pivhezyjxrgej",
+        "relation:cmrxpk7qe025qivhe91z3fj0n",
+        "relation:cmrxpmfb104uoivheuseumof4",
+        "relation:cmrxpmfbo04upivheekl3dldl",
+        "relation:cmrxpmfc604uqivhertfl4hru",
+        "relation:cmrxpsaql0cdpivheeny0l0ef",
+        "relation:cmrxpsaub0cdrivherzmd4cre",
+        "relation:cmrxpsava0cdtivhedcj5n5yw",
+        "relation:cmrxpsawb0cdvivhelwnvjbmo",
+        "seed:longroad energy|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://infratil.com/for-investors/financial-reports/annual-report-2026/",
+          "label": "Infratil — 2026 annual report",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://infratil.com/our-investments/renewables/",
+          "label": "Infratil — Longroad Energy",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://morrisonglobal.com/news-insights/portfolio-company-longroad-energy-to-receive-significant-new-capital-from-current-investors-and-a-new-co-investor/",
+          "label": "Morrisonglobal — Longroad Energy",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.longroadenergy.com/longroad-announces-new-investors/",
+          "label": "Investment date source — Morrison — Longroad Energy",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.longroadenergy.com/longroad-energy-announces-500-million-equity-investment-from-meag-nz-super-fund-and-infratil/",
+          "label": "Longroadenergy — Longroad Energy",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.longroadenergy.com/longroad-energy-broadens-executive-leadership-team-to-capitalize-on-market-momentum-and-accelerate-next-phase-of-growth/",
+          "label": "Longroad — July 2026 owner update",
+          "sourceType": "PRESS_RELEASE"
+        }
+      ]
+    }
+  ],
+  "collisionAnalysis": {
+    "independent": true,
+    "claimsSha256": "ef7cad1b5f0b7d6ed50cfe10a90ab8d9cf6e55e9510f43ec52bba41d02761d6d",
+    "sharedSourceUrls": [],
+    "conflicts": []
+  },
+  "batchSha256": "28b09180ae3de3fd426336986750003224325c6ab81810e6b261798216ba4f20"
+}

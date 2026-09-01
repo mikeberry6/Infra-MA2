@@ -1,0 +1,309 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0317:longroad-energy:c89b5c17",
+  "taskIndex": 317,
+  "companyName": "Longroad Energy",
+  "generatedAt": "2026-09-01T09:25:37.818Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0317-longroad-energy/attempt-1/locked-batch-v3-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 317,
+    "taskId": "ledger:0317:longroad-energy:c89b5c17",
+    "canonicalKey": "longroad-energy|united-states",
+    "companyName": "Longroad Energy",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 61,
+    "managers": [
+      "Infratil",
+      "MEAG"
+    ],
+    "actionScopes": {
+      "company": [
+        "CORRECT_COMPANY"
+      ],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "061-infratil:holding:001:longroad-energy",
+      "066-meag:holding:001:longroad-energy"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjlg8016fivheuurs3oft"
+    ],
+    "seedKeys": [
+      "longroad energy|United States"
+    ],
+    "evidenceUrls": [
+      "https://infratil.com/news/",
+      "https://infratil.com/our-investments/renewables/",
+      "https://www.longroadenergy.com/",
+      "https://www.longroadenergy.com/longroad-announces-new-investors/",
+      "https://www.meag.com/en/news/meag-invests-longroad-energy.html"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_OWNER, CORRECT_COMPANY requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjlg8016fivheuurs3oft",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "longroad-energy|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjlg8016fivheuurs3oft",
+    "name": "Longroad Energy",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Utility-scale wind, solar, and storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Longroad Energy develops, owns, and operates utility-scale wind, solar, and storage projects in the United States. Its customers or end markets include utilities, corporations, and wholesale power markets seeking renewable generation and storage capacity. The operating model is a development-to-ownership model with contracted offtake, asset management, and project-level financing. Operations are concentrated in multiple U.S. markets across a large national development pipeline. Public materials indicate approximately 28 GW of development pipeline and a portfolio of owned and managed renewable assets according to public company materials. Current ownership includes Infratil and New Zealand Super Fund as the principal sponsors, with MEAG joining the shareholder group in 2022.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2016,
+    "headquarters": "Multi-state United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk7pv025pivhezyjxrgej",
+        "managerName": "Morrison & Co",
+        "organizationName": "Morrison",
+        "fundName": "Infratil",
+        "vehicleName": "Infratil",
+        "stake": null,
+        "investmentYear": 2016,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpk7qe025qivhe91z3fj0n",
+        "managerName": "Morrison & Co",
+        "organizationName": "Infratil",
+        "fundName": "Infratil",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2016,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmfb104uoivheuseumof4",
+        "date": "2016",
+        "event": "Infratil and New Zealand Super Fund closed their equity investment in Longroad Energy, with Morrison & Co managing the investment.",
+        "category": "FINANCING",
+        "sortDate": "2016-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmfbo04upivheekl3dldl",
+        "date": "2022",
+        "event": "Public disclosures updated the shareholder split following the MEAG investment.",
+        "category": "FINANCING",
+        "sortDate": "2022-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmfc604uqivhertfl4hru",
+        "date": "Aug 2022",
+        "event": "MEAG made a $500 million equity investment in Longroad Energy.",
+        "category": "FINANCING",
+        "sortDate": "2022-08-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsaql0cdpivheeny0l0ef",
+        "label": "Investment date source — Morrison — Longroad Energy",
+        "url": "https://www.longroadenergy.com/longroad-announces-new-investors/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Morrison initial investment / ownership",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpsaub0cdrivherzmd4cre",
+        "label": "Longroadenergy — Longroad Energy",
+        "url": "https://www.longroadenergy.com/longroad-energy-announces-500-million-equity-investment-from-meag-nz-super-fund-and-infratil/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Longroadenergy — Longroad Energy",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsava0cdtivhedcj5n5yw",
+        "label": "Infratil — Longroad Energy",
+        "url": "https://infratil.com/our-investments/renewables/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Infratil company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsawb0cdvivhelwnvjbmo",
+        "label": "Morrisonglobal — Longroad Energy",
+        "url": "https://morrisonglobal.com/news-insights/portfolio-company-longroad-energy-to-receive-significant-new-capital-from-current-investors-and-a-new-co-investor/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Morrisonglobal operations / asset details",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Longroad Energy",
+    "investmentFirm": "Morrison",
+    "sector": "Power & ET",
+    "subsector": "Utility-scale wind, solar, and storage",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Infratil",
+    "description": "Longroad Energy develops, owns, and operates utility-scale wind, solar, and storage projects in the United States. Its customers or end markets include utilities, corporations, and wholesale power markets seeking renewable generation and storage capacity. The operating model is a development-to-ownership model with contracted offtake, asset management, and project-level financing. Operations are concentrated in multiple U.S. markets across a large national development pipeline. Public materials indicate approximately 28 GW of development pipeline and a portfolio of owned and managed renewable assets according to public company materials. Current ownership includes Infratil and New Zealand Super Fund as the principal sponsors, with MEAG joining the shareholder group in 2022.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2016,
+    "investmentYear": 2016,
+    "headquarters": "Multi-state United States",
+    "milestones": [
+      {
+        "date": "2016",
+        "event": "Infratil and New Zealand Super Fund closed their equity investment in Longroad Energy, with Morrison & Co managing the investment.",
+        "category": "Financing"
+      },
+      {
+        "date": "2022",
+        "event": "Public disclosures updated the shareholder split following the MEAG investment.",
+        "category": "Financing"
+      },
+      {
+        "date": "Aug 2022",
+        "event": "MEAG made a $500 million equity investment in Longroad Energy.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Investment date source — Morrison — Longroad Energy",
+        "url": "https://www.longroadenergy.com/longroad-announces-new-investors/",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Longroadenergy — Longroad Energy",
+        "url": "https://www.longroadenergy.com/longroad-energy-announces-500-million-equity-investment-from-meag-nz-super-fund-and-infratil/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Infratil — Longroad Energy",
+        "url": "https://infratil.com/our-investments/renewables/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Morrisonglobal — Longroad Energy",
+        "url": "https://morrisonglobal.com/news-insights/portfolio-company-longroad-energy-to-receive-significant-new-capital-from-current-investors-and-a-new-co-investor/",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Morrison",
+        "ownershipVehicle": "Infratil",
+        "investmentYear": 2016,
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "Infratil",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2016,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj3bt00euivhehwytph25",
+        "fundName": "Infratil",
+        "managerId": "cmrxpibt1002zivhe8lqx5kvd",
+        "updatedAt": "2026-07-23T16:09:58.169Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpibt1002zivhe8lqx5kvd",
+        "name": "Morrison & Co",
+        "updatedAt": "2026-07-23T16:09:22.501Z"
+      },
+      {
+        "id": "cmrxpik6f005livhedfsb3l3a",
+        "name": "Morrison",
+        "updatedAt": "2026-07-23T16:09:33.351Z"
+      },
+      {
+        "id": "cmrxpik97005mivhe6pa7qew2",
+        "name": "Infratil",
+        "updatedAt": "2026-07-23T16:09:33.451Z"
+      },
+      {
+        "id": "cmrxpin85006kivhejb3tntsv",
+        "name": "MEAG",
+        "updatedAt": "2026-07-23T16:09:37.301Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0317:longroad-energy:c89b5c17",
+    "taskIndex": 317,
+    "canonicalKey": "longroad-energy|united-states",
+    "capturedAt": "2026-09-01T09:25:37.818Z",
+    "databaseRevision": "revision:be9373a4a08e9ddf7c83def718dbca184326e491e30c7d8c83ce9f2927d6d67c",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "df279115634131b4d99a8b22b944b23f3726ee1049734d2a80bb48567530080d",
+    "productionSnapshotSha256": "cb0bfe10cdb0b2d66a1622b8c13289150fc6c5538decdfc951a17917d8e42a2b",
+    "targetCompanySnapshotSha256": "9318917ff46a37e0330be83a2cc5e0351f699583b36f13a5b4f55fa9f62b6a03",
+    "seedEntrySha256": "cfd0d2201325cc3effdb8ad53319fe676eaccfce6feb0cebb3c16ecf7922efd6",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "8323177ed23a2307e9a924cd017139bcdf4c7169339b1106c8ec7fecf54dc853",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "5c584a3a57c808253d513849e8a29a36c212aa780ed3dd58c6f451f5e1d98648",
+      "organizationsSha256": "7a69ad60a05db8074fe92840c937d64336d033b0bcd4dd305a5ff4b8ecdcdd1f",
+      "citationsSha256": "b8f3e6c0c697065a8e002afb3a86392628fe5c6ee016cb12963b4114c3f58422",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "c84adc8e60384b8aca99c34298b09fec32467a9e0ad26518349ba001a12da116",
+    "stateSha256": "4c039c2d57435a581653f6a41ebc56e78a0b1815da769bf8b2664f01cfc6c7b9",
+    "taskSnapshotSha256": "32e0a1c9c606213e945dbd3facc09d5d585a3aa424eb5e48c4670bf3f77e9340"
+  },
+  "contextSha256": "c9cb51fa0c090e5a4058eb35d7ad62adf6025aa9af3531e584d24a47121df68b"
+}
