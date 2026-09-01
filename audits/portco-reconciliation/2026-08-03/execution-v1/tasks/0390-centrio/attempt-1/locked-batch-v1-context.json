@@ -1,0 +1,323 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0390:centrio:1635b638",
+  "taskIndex": 390,
+  "companyName": "CenTrio",
+  "generatedAt": "2026-09-01T21:54:20.751Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0390-centrio/attempt-1/locked-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 390,
+    "taskId": "ledger:0390:centrio:1635b638",
+    "canonicalKey": "centrio|united-states",
+    "companyName": "CenTrio",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 82,
+    "managers": [
+      "QIC Global Infrastructure"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "082-qic-global-infrastructure:holding:001:centrio"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjmj60185ivhe7judizjz"
+    ],
+    "seedKeys": [
+      "centrio|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.qic.com/what-we-do/infrastructure/global-portfolio/centrio/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_OWNER requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjmj60185ivhe7judizjz",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "centrio|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjmj60185ivhe7judizjz",
+    "name": "CenTrio",
+    "aliases": [],
+    "sector": "UTILITIES",
+    "subsector": "District energy",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "CenTrio provides district heating, cooling, and electricity services through urban energy systems in major U.S. cities. Its customers or end markets include universities, hospitals, school districts, commercial buildings, and other large real estate users. The operating model is an asset-heavy utility model based on long-lived central plants and networked thermal systems. Operations are concentrated in nine U.S. cities including Chicago, Houston, New Orleans, Denver, Seattle, Portland, Los Angeles, Syracuse, and San Francisco-area locations. Public materials indicate service to more than 370 customers across roughly 170 million square feet according to QIC. Current ownership reflects QIC and Ullico’s completion of the CenTrio acquisition in 2021, with QIC disclosing a 75% interest.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Illinois, Louisiana, Oregon, Texas, Washington, Colorado, New York, and California",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk8z6027pivhe483gv8jm",
+        "managerName": "Ullico",
+        "organizationName": "Ullico",
+        "fundName": null,
+        "vehicleName": "UIF",
+        "stake": null,
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpk8zm027qivhe3ladg5du",
+        "managerName": "QIC",
+        "organizationName": "QIC",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmkkv0516ivheyknizlso",
+        "date": "2021",
+        "event": "CenTrio was established as an independent district energy platform following the transaction.",
+        "category": "FOUNDING",
+        "sortDate": "2021-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmklh0517ivhe9y1101y9",
+        "date": "Jul 2021",
+        "event": "QIC and Ullico completed the acquisition of CenTrio.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-07-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmklz0518ivheksrvl6ng",
+        "date": "Feb 2021",
+        "event": "QIC and Ullico signed a definitive agreement to acquire Enwave Energy's U.S. business.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-02-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmkmi0519ivhefo7j217y",
+        "date": "Jan 2022",
+        "event": "Eric Miller joined the company as Chief Financial Officer.",
+        "category": "MANAGEMENT",
+        "sortDate": "2022-01-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmkn2051aivheo00vy2sn",
+        "date": "Feb 2024",
+        "event": "Eric Miller was promoted to Chief Executive Officer.",
+        "category": "MANAGEMENT",
+        "sortDate": "2024-02-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsjwz0craivhediobilxs",
+        "label": "Close date source — QIC / Ullico — CenTrio",
+        "url": "https://www.prnewswire.com/news-releases/qic-and-ullico-complete-acquisition-of-centrio-leading-us-district-energy-platform-301335780.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "QIC / Ullico closing confirmation",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpsjxx0crcivhelgc5d5ss",
+        "label": "Ullico — CenTrio",
+        "url": "https://www.ullico.com/qic-and-ullico-acquire-interest-in-enwave-energy/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Ullico — CenTrio",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsjyu0creivhexb1w19af",
+        "label": "Ullico — CenTrio",
+        "url": "https://www.ullico.com/uif-portfolio/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Ullico operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsjzx0crgivheiw26kas7",
+        "label": "Qic — CenTrio",
+        "url": "https://www.qic.com/Investment-Capabilities/Infrastructure/Global-Portfolio/CenTrio",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Qic operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsk100criivhe0tso69qw",
+        "label": "Qic — CenTrio",
+        "url": "https://www.qic.com/News-and-Insights/CenTrio-Accelerating-the-US-energy-transition-with-costeffective-and-sustainable-solutions",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Qic — CenTrio",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "CenTrio",
+    "investmentFirm": "QIC",
+    "sector": "Utilities",
+    "subsector": "District energy",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "CenTrio provides district heating, cooling, and electricity services through urban energy systems in major U.S. cities. Its customers or end markets include universities, hospitals, school districts, commercial buildings, and other large real estate users. The operating model is an asset-heavy utility model based on long-lived central plants and networked thermal systems. Operations are concentrated in nine U.S. cities including Chicago, Houston, New Orleans, Denver, Seattle, Portland, Los Angeles, Syracuse, and San Francisco-area locations. Public materials indicate service to more than 370 customers across roughly 170 million square feet according to QIC. Current ownership reflects QIC and Ullico’s completion of the CenTrio acquisition in 2021, with QIC disclosing a 75% interest.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2021,
+    "headquarters": "Illinois, Louisiana, Oregon, Texas, Washington, Colorado, New York, and California",
+    "milestones": [
+      {
+        "date": "2021",
+        "event": "CenTrio was established as an independent district energy platform following the transaction.",
+        "category": "Founding"
+      },
+      {
+        "date": "Jul 2021",
+        "event": "QIC and Ullico completed the acquisition of CenTrio.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Feb 2021",
+        "event": "QIC and Ullico signed a definitive agreement to acquire Enwave Energy's U.S. business.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Jan 2022",
+        "event": "Eric Miller joined the company as Chief Financial Officer.",
+        "category": "Management"
+      },
+      {
+        "date": "Feb 2024",
+        "event": "Eric Miller was promoted to Chief Executive Officer.",
+        "category": "Management"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Close date source — QIC / Ullico — CenTrio",
+        "url": "https://www.prnewswire.com/news-releases/qic-and-ullico-complete-acquisition-of-centrio-leading-us-district-energy-platform-301335780.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Ullico — CenTrio",
+        "url": "https://www.ullico.com/qic-and-ullico-acquire-interest-in-enwave-energy/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Ullico — CenTrio",
+        "url": "https://www.ullico.com/uif-portfolio/",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Qic — CenTrio",
+        "url": "https://www.qic.com/Investment-Capabilities/Infrastructure/Global-Portfolio/CenTrio",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Qic — CenTrio",
+        "url": "https://www.qic.com/News-and-Insights/CenTrio-Accelerating-the-US-energy-transition-with-costeffective-and-sustainable-solutions",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Ullico",
+        "ownershipVehicle": "UIF",
+        "investmentYear": 2021,
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "QIC",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2021,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpiclq0038ivhe8d6qcg7j",
+        "name": "QIC",
+        "updatedAt": "2026-07-23T16:09:23.534Z"
+      },
+      {
+        "id": "cmrxpieop003wivhet5qq95ev",
+        "name": "Ullico",
+        "updatedAt": "2026-07-23T16:09:26.233Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0390:centrio:1635b638",
+    "taskIndex": 390,
+    "canonicalKey": "centrio|united-states",
+    "capturedAt": "2026-09-01T21:54:20.751Z",
+    "databaseRevision": "revision:82f07e6bd8aafb19e6bdabccad2bedde8a14f4c71c1aa7866dd6a6036585a6fe",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "b4066a351793d54db2072a737852c8d9a5f497bb3d520ebe4e1c81d37cb5b8c5",
+    "productionSnapshotSha256": "d9c96cbac5626389b6d654752350c5a73c71f9d465d8676fc0d9ccda39c2e4a7",
+    "targetCompanySnapshotSha256": "69a1bbbf069997303f183d439f08aff5ff9b45250d92937732d9ca575af924fa",
+    "seedEntrySha256": "e439d9c981cb1ecda845805b1f8aeb24ceb697e9ad94487b83ec7a117027bbbd",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "9b74566d75cd6710adbc64435b56b06df383d56fa71db036034de3db08a743c8",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "e058b1206d3fbf01bde5f3bb57d7794ea09233b0d2bcf400d61110adc2a8fe59",
+      "citationsSha256": "b9495d4db5cf89638bd45e28f91116a7ddc8deada2f87bb61f00eb27219d60c3",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "607d60b946631a9611bd3ceaca819b3f5ab03211e7117556eb1fc468f2076f8c",
+    "stateSha256": "c03dec3a83b35aba7efdd7f98e24326ba854b45eb0009c1a82360a70074cd46f",
+    "taskSnapshotSha256": "3ba2679c67dafca18dd2e148884a309694feab6746a32e0b5000ebf8a4433383"
+  },
+  "contextSha256": "f05c75c75d07e571d3aabb679264e004dccae9c17b18604b9e2f5107af3ed0a3"
+}

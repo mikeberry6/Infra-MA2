@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0393:meyersdale-energy-storage:efa8f53e",
+  "taskIndex": 393,
+  "companyName": "Meyersdale Energy Storage",
+  "asOfDate": "2026-08-19",
+  "decision": "PROPOSED_MERGE",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-01T22:05:00.000Z",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "Meyersdale Energy Storage",
+    "requestedManagers": [
+      "Quinbrook Infrastructure Partners"
+    ],
+    "decision": "PROPOSED_MERGE",
+    "confidence": "HIGH",
+    "rationale": "Sponsor and regulatory sources identify Meyersdale as a battery/SPV beneath GlidePath, Quinbrook's manager-level PortCo. No Meyersdale-specific sponsor mandate, co-owner or later equity transfer was found.",
+    "identityResolution": {
+      "canonicalIdentity": "Meyersdale Energy Storage",
+      "legalEntity": "Meyersdale Storage, LLC",
+      "aliases": [
+        "Meyersdale Battery",
+        "Meyersdale Storage"
+      ],
+      "canonicalKey": "meyersdale-energy-storage|united-states",
+      "boundary": "Project/SPV beneath GlidePath Power Solutions; not a standalone Quinbrook PortCo.",
+      "notSameAs": [
+        "Meyersdale Windpower, LLC (30 MW wind)",
+        "Green Mountain Storage, LLC (10.4 MW battery)"
+      ]
+    },
+    "ownershipResolution": {
+      "assetOwner": "Meyersdale Storage, LLC",
+      "currentDirectOwners": [
+        {
+          "manager": "Quinbrook Infrastructure Partners",
+          "organization": "GlidePath Storage Operations LLC",
+          "fund": "Quinbrook Low Carbon Power LP; Quinbrook Low Carbon Power Parallel Fund (US) LP; US Wind Co-Investment Partners LP",
+          "vehicle": "Meyersdale Storage, LLC",
+          "stake": "NOT_PUBLICLY_DISCLOSED; apparent sole control",
+          "announcementDate": "NOT_PUBLICLY_DISCLOSED",
+          "entryDate": "2019-03-19",
+          "entryYear": 2019,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED"
+        }
+      ],
+      "formerDirectOwners": [
+        {
+          "manager": "NextEra Energy Resources",
+          "organization": "Immediate member NOT_PUBLICLY_DISCLOSED; NextEra/FPL group",
+          "fund": null,
+          "vehicle": "Meyersdale Storage, LLC",
+          "stake": "NOT_PUBLICLY_DISCLOSED; apparent sole control",
+          "announcementDate": null,
+          "entryDate": "NOT_PUBLICLY_DISCLOSED",
+          "entryYear": 2015,
+          "exitDate": "2019-03-19",
+          "exitYear": 2019,
+          "isActive": false,
+          "transactionState": "CLOSED"
+        }
+      ],
+      "chain": "Meyersdale Storage, LLC → GlidePath Storage Operations LLC → GlidePath Power Operations LLC → GlidePath Power Solutions LLC/GlidePath Power LLC → three Quinbrook fund entities under common GP Quinbrook Infrastructure Partners (GP1) Ltd.",
+      "boundaryFinding": "FERC groups US Wind Co-Investment Partners LP with two Quinbrook funds under one common GP; no Meyersdale-specific co-investment or project co-owner was found.",
+      "nonEquityParties": "PJM/Penelec are market/interconnection parties; no lender, tax-equity investor, tolling party or contractor was evidenced as equity."
+    },
+    "operatingResolution": {
+      "status": "Operational",
+      "location": "Somerset County, Pennsylvania",
+      "technology": "Lithium-ion BESS",
+      "capacity": "18 MW/12 MWh",
+      "constructionStart": "NOT_PUBLICLY_DISCLOSED",
+      "commercialOperation": "2015-11; exact day NOT_PUBLICLY_DISCLOSED",
+      "ownerOperator": "GlidePath",
+      "marketRole": "PJM Reg-D/grid support; Penelec zone",
+      "repowering": "Completed late 2024",
+      "currentCheck": "Current Quinbrook/GlidePath pages still list it as operating."
+    },
+    "acquisitionExitCheck": {
+      "acquisition": "Section 203 filed 2019-01-18; sale from NextEra/FPL to GlidePath Storage Operations LLC closed 2019-03-19.",
+      "laterSales": "None found through 2026-08-19.",
+      "relatedTransaction": "The 2022 Meyersdale Windpower sale was separate; the battery remained in Quinbrook's fund chain.",
+      "recapitalization": "No project equity recapitalization found; the 2024 repowering did not evidence an ownership change.",
+      "pendingTransactions": [],
+      "result": "No exit or signed pending transaction found."
+    },
+    "milestones": [
+      {
+        "date": "2015-11",
+        "event": "18 MW battery entered PJM service."
+      },
+      {
+        "date": "2019-01-18/2019-03-19",
+        "event": "Section 203 filed; sale to GlidePath closed."
+      },
+      {
+        "date": "2024-Q4",
+        "event": "GlidePath completed repowering."
+      }
+    ],
+    "evidence": [
+      {
+        "label": "Quinbrook: GlidePath",
+        "url": "https://www.quinbrook.com/portfolio/glidepath/",
+        "purpose": "Current taxonomy: GlidePath PortCo; Meyersdale project.",
+        "sourceTier": "T1 sponsor",
+        "workingStatus": "VERIFIED",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "Quinbrook: Meyersdale",
+        "url": "https://www.quinbrook.com/projects/meyersdale-battery/",
+        "purpose": "Capacity, status, 2019 acquisition, Reg-D, 2024 repower.",
+        "sourceTier": "T1 sponsor",
+        "workingStatus": "VERIFIED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "FERC MBR Appendix 7715",
+        "url": "https://mbrweb.ferc.gov/SearchMBRAssetAppendix/AssetAppendixDetails?AssetAppendixId=7715",
+        "purpose": "SPV, 18 MW, 2015 service, funds/GP, separate wind sale.",
+        "sourceTier": "T1 regulator",
+        "workingStatus": "VERIFIED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "FPL/Florida PSC schedule",
+        "url": "https://www.psc.state.fl.us/library/filings/2021/02800-2021/02800-2021.pdf",
+        "purpose": "2019-03-19 sale to GlidePath Storage Operations.",
+        "sourceTier": "T1 seller filing",
+        "workingStatus": "VERIFIED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Federal Register EC19-47",
+        "url": "https://www.govinfo.gov/content/pkg/FR-2019-01-31/html/2019-00522.htm",
+        "purpose": "Section 203 filing date/docket.",
+        "sourceTier": "T1 federal notice",
+        "workingStatus": "VERIFIED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "2019 PJM settlement copy",
+        "url": "https://energystorageassociationarchive.org/wp-content/uploads/2019/08/2019.4.23_er19-1640_settlement_with_pjm_on_regulation_market_issues.pdf",
+        "purpose": "Immediate/upstream owner chain.",
+        "sourceTier": "T2 filing archive",
+        "workingStatus": "VERIFIED",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "before": "Standalone Quinbrook PortCo: Meyersdale.",
+      "after": "GlidePath is the manager-level PortCo; Meyersdale becomes project/SPV data.",
+      "preserve": "Meyersdale Storage, LLC; 18 MW/12 MWh; Somerset County; 2015 service; 2019 buy; Reg-D; 2024 repower."
+    },
+    "excludedOrDuplicateCandidates": [
+      {
+        "candidate": "Meyersdale standalone PortCo",
+        "treatment": "MERGE into GlidePath"
+      },
+      {
+        "candidate": "Meyersdale Windpower, LLC",
+        "treatment": "EXCLUDE; separate 30 MW wind asset"
+      },
+      {
+        "candidate": "Green Mountain Storage, LLC",
+        "treatment": "EXCLUDE; separate 10.4 MW battery"
+      }
+    ],
+    "unresolvedQuestions": [
+      "Pre-2019 immediate NextEra/FPL member and purchase price are NOT_PUBLICLY_DISCLOSED.",
+      "Quinbrook fund economic split and project debt terms are NOT_PUBLICLY_DISCLOSED.",
+      "Construction-start and exact repower dates are NOT_PUBLICLY_DISCLOSED; neither affects the boundary."
+    ],
+    "recommendedListAction": {
+      "action": "MERGE_COMPANIES",
+      "target": "GlidePath Power Solutions",
+      "disposition": "Remove/archive standalone Meyersdale; preserve it as GlidePath project/SPV data.",
+      "ownerTreatment": "Roll Quinbrook attribution to GlidePath; no separate Meyersdale owner row.",
+      "transactionTreatment": "No exit or pending transaction."
+    }
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0393-meyersdale-energy-storage/attempt-1/research-decision.json",
+      "sha256": "6e69ea68362155110cd93417526faaa3e0ebdd50e9851a03d210102b51fdb3a9"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0393-meyersdale-energy-storage/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "2e249ec9086e1d611e14407d14d30a9fe59f211f1c9075d2905c748ff71fccf1"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0393-meyersdale-energy-storage/attempt-1/source-verification.json",
+      "sha256": "450abdadd105d1d1f6eae47bca282ddaa547c141569fc879a3174295f756a7ad"
+    },
+    "acceptedResponseSha256": "a5dc90c5ef4efe710df1e428ef92e8984813202740025a6b7379a0b0586ff47a",
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION"
+  }
+}

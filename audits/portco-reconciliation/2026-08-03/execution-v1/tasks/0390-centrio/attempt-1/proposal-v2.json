@@ -1,0 +1,435 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0390:centrio:1635b638",
+  "taskIndex": 390,
+  "asOfDate": "2026-09-01",
+  "generatedAt": "2026-09-01T22:12:00.000Z",
+  "canonicalKey": "centrio|united-states",
+  "companyName": "CenTrio",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER"
+  ],
+  "sourceHoldingIds": [
+    "082-qic-global-infrastructure:holding:001:centrio"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Correct the existing CenTrio platform rather than add QIC Global Infrastructure as a third owner. QIC Global Infrastructure is the existing QIC manager lineage. The current sponsor aggregation is a QIC-managed 75% interest and Ullico Infrastructure Fund 25%; regulatory evidence attributes the QIC-managed interest to CalPERS/Golden Reef Trust at 60% and QGIF at 15%. Brookfield formerly owned 100% of the U.S. district-energy business and completed its exit on July 16, 2021. A July 2026 refinancing reconfirmed QIC and Ullico sponsorship and did not transfer equity, and no later sale or signed pending ownership transaction was identified through September 1, 2026.",
+  "evidence": [
+    {
+      "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B8B6B5CAD-61FA-4314-9A9B-D126D98D1BE1%7D",
+      "purpose": "Current ownership percentages and acquisition vehicles",
+      "supports": [
+        "QIC-managed capital represents 75% through a 60% Golden Reef Trust interest and a 15% QGIF interest",
+        "Ullico Infrastructure Fund represents 25%"
+      ]
+    },
+    {
+      "url": "https://bip.brookfield.com/generation/pdf/document-file.pdf?path=%2Fpress-releases%2Fbip%2Fbrookfield-infrastructure-completes-sale-north-american-district-energy-business",
+      "purpose": "Brookfield ownership exit and closing",
+      "supports": [
+        "Brookfield completed the sale of its North American district-energy business on July 16, 2021",
+        "The sale transferred the entire U.S. business to the QIC/Ullico consortium"
+      ]
+    },
+    {
+      "url": "https://www.qic.com/Investment-Capabilities/Infrastructure/Global-Portfolio/CenTrio",
+      "purpose": "Current QIC portfolio status",
+      "supports": [
+        "QIC currently lists CenTrio as an infrastructure portfolio company",
+        "QIC discloses a 75% interest"
+      ]
+    },
+    {
+      "url": "https://www.centrioenergy.com/news/centrio-successfully-completes-485-million-comprehensive-refinancing-to-support-long-term-growth/",
+      "purpose": "Latest sponsor and exit check",
+      "supports": [
+        "CenTrio remained backed by QIC and Ullico in July 2026",
+        "The disclosed transaction was a refinancing rather than an equity transfer"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "39fabdd64cd1e4a0797c59b98ba039c4c32a444429ae1c5453df0edcfd1a9f60",
+  "currentCompanySnapshotSha256": "69a1bbbf069997303f183d439f08aff5ff9b45250d92937732d9ca575af924fa",
+  "executionLock": {
+    "taskSnapshotSha256": "19465b40d8c6b7ee5efb32e186eca97c8ae3b20f897b9d0a0c9b815455376b42",
+    "taskStateSha256": "83d95e994c232c0a90925b9d4ff83df7e51544343b574d68f0bb1c18decb1a7b",
+    "taskDependencySha256": "b60025e3d120c5fa67fa94a325de3ad863a2e81badf2086b91104b98abd1f17c",
+    "seedEntrySha256": "e439d9c981cb1ecda845805b1f8aeb24ceb697e9ad94487b83ec7a117027bbbd",
+    "dependencies": {
+      "ownershipPeriodsSha256": "9b74566d75cd6710adbc64435b56b06df383d56fa71db036034de3db08a743c8",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "5df08ef015d5f0c8af4d27314639eeebaaf72bf503219acf5fd397bf2efbbf25",
+      "citationsSha256": "b9495d4db5cf89638bd45e28f91116a7ddc8deada2f87bb61f00eb27219d60c3",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpiclq0038ivhe8d6qcg7j",
+        "name": "QIC",
+        "updatedAt": "2026-07-23T16:09:23.534Z"
+      },
+      {
+        "id": "cmrxpieop003wivhet5qq95ev",
+        "name": "Ullico",
+        "updatedAt": "2026-07-23T16:09:26.233Z"
+      },
+      {
+        "id": "cmrxpifpw0047ivhexsim174k",
+        "name": "Brookfield Asset Management",
+        "updatedAt": "2026-07-23T16:09:27.572Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjmj60185ivhe7judizjz",
+    "name": "CenTrio",
+    "aliases": [],
+    "sector": "UTILITIES",
+    "subsector": "District energy",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "CenTrio provides district heating, cooling, and electricity services through urban energy systems in major U.S. cities. Its customers or end markets include universities, hospitals, school districts, commercial buildings, and other large real estate users. The operating model is an asset-heavy utility model based on long-lived central plants and networked thermal systems. Operations are concentrated in nine U.S. cities including Chicago, Houston, New Orleans, Denver, Seattle, Portland, Los Angeles, Syracuse, and San Francisco-area locations. Public materials indicate service to more than 370 customers across roughly 170 million square feet according to QIC. Current ownership reflects QIC and Ullico’s completion of the CenTrio acquisition in 2021, with QIC disclosing a 75% interest.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Illinois, Louisiana, Oregon, Texas, Washington, Colorado, New York, and California",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk8z6027pivhe483gv8jm",
+        "managerName": "Ullico",
+        "organizationName": "Ullico",
+        "fundName": null,
+        "vehicleName": "UIF",
+        "stake": null,
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpk8zm027qivhe3ladg5du",
+        "managerName": "QIC",
+        "organizationName": "QIC",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmkkv0516ivheyknizlso",
+        "date": "2021",
+        "event": "CenTrio was established as an independent district energy platform following the transaction.",
+        "category": "FOUNDING",
+        "sortDate": "2021-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmklh0517ivhe9y1101y9",
+        "date": "Jul 2021",
+        "event": "QIC and Ullico completed the acquisition of CenTrio.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-07-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmklz0518ivheksrvl6ng",
+        "date": "Feb 2021",
+        "event": "QIC and Ullico signed a definitive agreement to acquire Enwave Energy's U.S. business.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-02-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmkmi0519ivhefo7j217y",
+        "date": "Jan 2022",
+        "event": "Eric Miller joined the company as Chief Financial Officer.",
+        "category": "MANAGEMENT",
+        "sortDate": "2022-01-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmkn2051aivheo00vy2sn",
+        "date": "Feb 2024",
+        "event": "Eric Miller was promoted to Chief Executive Officer.",
+        "category": "MANAGEMENT",
+        "sortDate": "2024-02-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsjwz0craivhediobilxs",
+        "label": "Close date source — QIC / Ullico — CenTrio",
+        "url": "https://www.prnewswire.com/news-releases/qic-and-ullico-complete-acquisition-of-centrio-leading-us-district-energy-platform-301335780.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "QIC / Ullico closing confirmation",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpsjxx0crcivhelgc5d5ss",
+        "label": "Ullico — CenTrio",
+        "url": "https://www.ullico.com/qic-and-ullico-acquire-interest-in-enwave-energy/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Ullico — CenTrio",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsjyu0creivhexb1w19af",
+        "label": "Ullico — CenTrio",
+        "url": "https://www.ullico.com/uif-portfolio/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Ullico operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsjzx0crgivheiw26kas7",
+        "label": "Qic — CenTrio",
+        "url": "https://www.qic.com/Investment-Capabilities/Infrastructure/Global-Portfolio/CenTrio",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Qic operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsk100criivhe0tso69qw",
+        "label": "Qic — CenTrio",
+        "url": "https://www.qic.com/News-and-Insights/CenTrio-Accelerating-the-US-energy-transition-with-costeffective-and-sustainable-solutions",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Qic — CenTrio",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "69a1bbbf069997303f183d439f08aff5ff9b45250d92937732d9ca575af924fa",
+  "afterImage": {
+    "id": "cmrxpjmj60185ivhe7judizjz",
+    "name": "CenTrio",
+    "aliases": [
+      "CenTrio Energy",
+      "Enwave Energy US",
+      "Enwave Energy USA"
+    ],
+    "sector": "UTILITIES",
+    "subsector": "District energy",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "CenTrio, legally held through CenTrio Energy USA Holdings LLC, owns and operates district heating, cooling and power systems across ten U.S. markets. The Houston-based platform serves commercial, industrial, residential, hospitality, healthcare, research, campus, data-center and government customers through long-lived central plants and thermal networks. The former Enwave U.S. business adopted the CenTrio name in April 2021. Brookfield completed the sale of the platform on July 16, 2021; current sponsor ownership is QIC-managed capital at 75% and Ullico Infrastructure Fund at 25%. QIC's managed interest comprises a disclosed 60% CalPERS/Golden Reef Trust interest and 15% QGIF interest. A July 2026 refinancing reconfirmed QIC and Ullico sponsorship and did not transfer equity. No later equity sale or signed pending ownership transaction was identified through September 1, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.centrioenergy.com/",
+    "yearFounded": null,
+    "headquarters": "Houston, Texas",
+    "lastVerifiedAt": "2026-09-01T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk8z6027pivhe483gv8jm",
+        "managerName": "Ullico",
+        "organizationName": "Ullico",
+        "fundName": null,
+        "vehicleName": "Ullico Infrastructure Fund; Ullico District Energy Blocked Holdco through Lowry Holdings",
+        "stake": "25%",
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpk8zm027qivhe3ladg5du",
+        "managerName": "QIC",
+        "organizationName": "QIC",
+        "fundName": null,
+        "vehicleName": "Golden Reef Trust and QGIF Raptor Aggregator 1 LP through Lowry Holdings",
+        "stake": "75% managed interest (60% CalPERS/Golden Reef Trust; 15% QGIF)",
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Brookfield Asset Management",
+        "organizationName": "Brookfield Asset Management",
+        "fundName": null,
+        "vehicleName": "BIF II US District Energy Holdings LLC",
+        "stake": "100% before sale",
+        "investmentYear": 2012,
+        "exitYear": 2021,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmkkv0516ivheyknizlso",
+        "date": "Apr 8, 2021",
+        "event": "Enwave's U.S. district-energy business adopted the CenTrio name before the ownership closing.",
+        "category": "FOUNDING",
+        "sortDate": "2021-04-08T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.centrioenergy.com/news/enwave-s-u-s-district-energy-business-announces-new-name-centrio/"
+        ]
+      },
+      {
+        "id": "cmrxpmklh0517ivhe9y1101y9",
+        "date": "Jul 16, 2021",
+        "event": "QIC and Ullico completed the acquisition of CenTrio, and Brookfield exited the U.S. district-energy business.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-07-16T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://bip.brookfield.com/generation/pdf/document-file.pdf?path=%2Fpress-releases%2Fbip%2Fbrookfield-infrastructure-completes-sale-north-american-district-energy-business"
+        ]
+      },
+      {
+        "id": "cmrxpmklz0518ivheksrvl6ng",
+        "date": "Feb 2, 2021",
+        "event": "Brookfield agreed to sell 100% of its North American district-energy business to the QIC and Ullico consortium.",
+        "category": "DIVESTITURE",
+        "sortDate": "2021-02-02T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://bip.brookfield.com/generation/pdf/document-file.pdf?path=%2Fpress-releases%2Fbip%2Fbrookfield-infrastructure-announces-sale-north-american-district-energy-business"
+        ]
+      },
+      {
+        "id": "cmrxpmkmi0519ivhefo7j217y",
+        "date": "Jan 2022",
+        "event": "Eric Miller joined the company as Chief Financial Officer.",
+        "category": "MANAGEMENT",
+        "sortDate": "2022-01-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmkn2051aivheo00vy2sn",
+        "date": "Feb 2024",
+        "event": "Eric Miller was promoted to Chief Executive Officer.",
+        "category": "MANAGEMENT",
+        "sortDate": "2024-02-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsjwz0craivhediobilxs",
+        "label": "Close date source — QIC / Ullico — CenTrio",
+        "url": "https://www.prnewswire.com/news-releases/qic-and-ullico-complete-acquisition-of-centrio-leading-us-district-energy-platform-301335780.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "July 16, 2021 QIC/Ullico acquisition closing",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsjxx0crcivhelgc5d5ss",
+        "label": "Ullico — CenTrio",
+        "url": "https://www.ullico.com/qic-and-ullico-acquire-interest-in-enwave-energy/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Ullico — CenTrio",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsjyu0creivhexb1w19af",
+        "label": "Ullico — CenTrio",
+        "url": "https://www.ullico.com/uif-portfolio/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Ullico operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsjzx0crgivheiw26kas7",
+        "label": "Qic — CenTrio",
+        "url": "https://www.qic.com/Investment-Capabilities/Infrastructure/Global-Portfolio/CenTrio",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Qic operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsk100criivhe0tso69qw",
+        "label": "Qic — CenTrio",
+        "url": "https://www.qic.com/News-and-Insights/CenTrio-Accelerating-the-US-energy-transition-with-costeffective-and-sustainable-solutions",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Qic — CenTrio",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "New York Public Service Commission — CenTrio ownership diagram",
+        "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B8B6B5CAD-61FA-4314-9A9B-D126D98D1BE1%7D",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Disclosed 60% Golden Reef Trust, 15% QGIF and 25% Ullico ownership structure and vehicles",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "Brookfield Infrastructure — CenTrio sale closing",
+        "url": "https://bip.brookfield.com/generation/pdf/document-file.pdf?path=%2Fpress-releases%2Fbip%2Fbrookfield-infrastructure-completes-sale-north-american-district-energy-business",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Brookfield's July 16, 2021 completed exit",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Brookfield Infrastructure — CenTrio sale agreement",
+        "url": "https://bip.brookfield.com/generation/pdf/document-file.pdf?path=%2Fpress-releases%2Fbip%2Fbrookfield-infrastructure-announces-sale-north-american-district-energy-business",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "February 2, 2021 agreement to sell the U.S. district-energy business",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "CenTrio — Enwave U.S. rebrand",
+        "url": "https://www.centrioenergy.com/news/enwave-s-u-s-district-energy-business-announces-new-name-centrio/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "April 8, 2021 CenTrio name adoption and identity continuity",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "CenTrio — 2026 refinancing",
+        "url": "https://www.centrioenergy.com/news/centrio-successfully-completes-485-million-comprehensive-refinancing-to-support-long-term-growth/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "July 2026 QIC and Ullico sponsor confirmation and non-equity refinancing",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "ed08a2606da8a30415991dc300a0135110ace0cb03ed6516fbb944c50f925c07",
+  "proposalSha256": "c9fc4097feaa0ee5c54f85d84e7eba11d5669eaa683b54d47a3a4132ee968726"
+}

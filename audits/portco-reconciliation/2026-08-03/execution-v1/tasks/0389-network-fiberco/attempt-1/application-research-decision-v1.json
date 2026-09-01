@@ -1,0 +1,192 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0389:network-fiberco:3f7436bc",
+  "taskIndex": 389,
+  "companyName": "Network FiberCo",
+  "asOfDate": "2026-08-19",
+  "decision": "PROPOSED_NEW",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-01T22:05:00.000Z",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "Network FiberCo",
+    "requestedManagers": [
+      "PSP Investments"
+    ],
+    "decision": "PROPOSED_NEW",
+    "confidence": "HIGH",
+    "rationale": "Network FiberCo, LLC is a closed U.S. wholesale-fiber platform, not acquisition debt or the Ziply acquisition holdco. PSP owns 51% and BCE 49% through Ziply; its subsidiaries own/build fiber while Ziply is exclusive ISP/operator. Create the parent once and roll up its subsidiaries. PSP Investments+2Goodmans LLP+2",
+    "identityResolution": {
+      "canonicalName": "Network FiberCo, LLC",
+      "canonicalKey": "network-fiberco|united-states",
+      "aliases": [
+        "Network FiberCo"
+      ],
+      "type": "JV parent/wholesale fiber platform",
+      "formationYear": 2025,
+      "closingDate": "2025-08-01",
+      "headquarters": "135 Lake Street South, Suite 155, Kirkland, WA 98033",
+      "officialWebsite": "NOT_PUBLICLY_DISCLOSED",
+      "operatingWebsite": "https://ziplyfiber.com/",
+      "relationship": "BCE separately acquired Northwest Fiber Holdco, LLC dba Ziply. The JV's disclosed 49% member is Northwest Fiber, LLC dba Ziply; Network FiberCo owns NFC Management, which owns NFC Northwest.",
+      "boundary": "Count Network FiberCo for its distinct cap table and wholesale asset base. Roll up NFC Management/NFC Northwest; do not merge it into BCE-owned Ziply."
+    },
+    "ownershipResolution": {
+      "currentOwners": [
+        {
+          "manager": "PSP Investments",
+          "organization": "Public Sector Pension Investment Board",
+          "fund": "High Inflation Correlated Infrastructure Portfolio (HICI)",
+          "vehicle": "PSPIB Quadratic Blocker, LLC",
+          "stake": "51%",
+          "announcementDate": "2025-05-08",
+          "entryDate": "2025-08-01",
+          "entryYear": 2025,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED"
+        },
+        {
+          "manager": "BCE Inc.",
+          "organization": "Bell Canada",
+          "fund": "NOT_APPLICABLE",
+          "vehicle": "Northwest Fiber, LLC dba Ziply Fiber",
+          "stake": "49%",
+          "announcementDate": "2025-05-08",
+          "entryDate": "2025-08-01",
+          "entryYear": 2025,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED"
+        }
+      ],
+      "formerDirectOwners": [],
+      "control": "PSP is majority member; BCE has 49% plus Ziply's operating role. Board, veto and reserved-matter terms are NOT_PUBLICLY_DISCLOSED.",
+      "capital": "PSP's potential commitment exceeds US$1.5bn; required equity is funded pro rata and non-recourse debt was expected to provide most capital over time. Actual funded equity and any debt closing are NOT_PUBLICLY_DISCLOSED."
+    },
+    "operatingResolution": {
+      "brand": "No separate retail brand; Ziply is exclusive ISP/operator",
+      "model": "NFC Northwest owns/builds access fiber and sells wholesale private-line/transport; Ziply Fiber Pacific owns backhaul and handles operations, maintenance, billing and retail service.",
+      "markets": "Initial target: WA, OR, ID and MT plus underserved markets beyond Ziply's incumbent footprint; activated passings by state are NOT_PUBLICLY_DISCLOSED.",
+      "scale": "Target ~1m passings in Ziply's existing states plus up to 5m elsewhere; combined Ziply/Network FiberCo reach could be up to 8m. These are build targets, not current scale.",
+      "customers": "Ziply; residential, business, enterprise, government and institutional endpoints",
+      "boundary": "Exclude BCE/Bell Canadian assets and BCE's existing Ziply network unless contributed to a Network FiberCo subsidiary."
+    },
+    "acquisitionExitCheck": {
+      "announcementDate": "2025-05-08",
+      "closingDate": "2025-08-01",
+      "state": "CLOSED",
+      "scope": "JV formation was contingent on but distinct from BCE's 100% Ziply acquisition.",
+      "approvals": "Both transactions closed 2025-08-01; NFC Northwest later pursued state certificates and rights-of-way.",
+      "laterCheck": "No public evidence through 2026-08-19 of a stake transfer, new investor, recapitalization, exit or signed pending ownership deal. BCE still referenced the active platform in Q2 2026; member contributions remain undisclosed. BCE+1",
+      "pendingTransactions": []
+    },
+    "milestones": [
+      {
+        "date": "2025-05-08",
+        "event": "51% PSP/49% BCE JV announced; PSP potential commitment >US$1.5bn."
+      },
+      {
+        "date": "2025-08-01",
+        "event": "Network FiberCo formed; BCE separately closed Ziply acquisition."
+      },
+      {
+        "date": "2025-09-30",
+        "event": "NFC Northwest formed as wholesale fiber-asset subsidiary."
+      },
+      {
+        "date": "2026-05-01",
+        "event": "Idaho filing confirmed current owners, legal chain and operating split."
+      }
+    ],
+    "evidence": [
+      {
+        "label": "Idaho PUC application",
+        "url": "https://lf-puc.idaho.gov/WebLink/DocView.aspx?dbid=0&id=157861",
+        "purpose": "Current owners, chain, HQ and operations",
+        "sourceTier": "PRIMARY_REGULATORY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "PSP/BCE announcement",
+        "url": "https://www.investpsp.com/en/news/bce-and-psp-investments-announce-strategic-partnership-to-create-network-fiberco/",
+        "purpose": "HICI, stakes, capital and scale",
+        "sourceTier": "PRIMARY_COMPANY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Goodmans completion record",
+        "url": "https://www.goodmans.ca/expertise/case/psp-investments-and-bce-inc.-announce-strategic-partnership-to-create-network-fiberco",
+        "purpose": "Exact formation close",
+        "sourceTier": "TRANSACTION_COUNSEL",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Ziply closing release",
+        "url": "https://ziplyfiber.com/news/press-release/ziply-bce",
+        "purpose": "Separate acquisition, target and boundary",
+        "sourceTier": "PRIMARY_COMPANY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "BCE Q2 2026 results",
+        "url": "https://www.bce.ca/news-and-media/newsroom?article=bce-reports-second-quarter-2026-results",
+        "purpose": "Latest pre-cutoff status check",
+        "sourceTier": "PRIMARY_COMPANY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "before": "Unverified 2025 PSP/BCE platform based only on BCE's general site.",
+      "after": "Verified active platform: PSP 51% via HICI/PSPIB Quadratic Blocker and BCE 49% via Northwest Fiber/Ziply from 2025-08-01."
+    },
+    "excludedOrDuplicateCandidates": [
+      {
+        "name": "Ziply Fiber / Northwest Fiber Holdco, LLC",
+        "disposition": "NOT_DUPLICATE",
+        "reason": "Separate BCE-owned retail/operator and acquisition target."
+      },
+      {
+        "name": "NFC Management, LLC",
+        "disposition": "EXCLUDE_SUBSIDIARY",
+        "reason": "Wholly owned intermediate."
+      },
+      {
+        "name": "NFC Northwest, LLC",
+        "disposition": "EXCLUDE_SUBSIDIARY",
+        "reason": "Wholly owned asset/wholesale subsidiary; roll up."
+      }
+    ],
+    "unresolvedQuestions": [
+      "Actual cumulative member equity and any closed non-recourse debt.",
+      "Board, veto, reserved-matter and transfer terms.",
+      "Asset-by-asset timing of Ziply network contributions; PSP's former Ziply stake/vehicle was not disclosed."
+    ],
+    "recommendedListAction": "Create Network FiberCo, LLC; add PSP as active 51% owner via HICI/PSPIB Quadratic Blocker and BCE as active 49% co-owner via Northwest Fiber, LLC from 2025-08-01. Roll up NFC Management/NFC Northwest; do not map PSP's stake to Ziply."
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0389-network-fiberco/attempt-1/research-decision.json",
+      "sha256": "f8a1340278ea9d3bc6f59e20b559cac0c55fd45fcf5ed598209813306278d051"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0389-network-fiberco/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "f9664cf9bdc78e83546db66c784f412c1c0469e3675a7238fb2d484ea764f5fa"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0389-network-fiberco/attempt-1/source-verification.json",
+      "sha256": "5f1aa78cbdc5cece90fc3d3b47f77263004c12ebeebc54c97ee556dde3a608f5"
+    },
+    "acceptedResponseSha256": "aee42ff609bc64d8fab9b77e55b25cb3bbfc74f5e363d43343912e943a4dab2f",
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION"
+  }
+}

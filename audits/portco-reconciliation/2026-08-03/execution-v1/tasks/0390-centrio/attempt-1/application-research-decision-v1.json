@@ -1,0 +1,209 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0390:centrio:1635b638",
+  "taskIndex": 390,
+  "companyName": "CenTrio",
+  "asOfDate": "2026-08-19",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-01T22:05:00.000Z",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "CenTrio",
+    "requestedManagers": [
+      "QIC Global Infrastructure"
+    ],
+    "decision": "PROPOSED_CORRECTION",
+    "confidence": "HIGH",
+    "rationale": "ADD_OWNER is an alias false positive. QIC Global Infrastructure is the existing QIC lineage. Correct its 75% managed interest to the disclosed closing components—CalPERS/Golden Reef 60% plus QGIF 15%—beside UIF 25%, and add/confirm Brookfield as former 100% owner. No later equity transfer found.",
+    "identityResolution": {
+      "name": "CenTrio",
+      "aliases": [
+        "CenTrio Energy",
+        "Enwave Energy US/USA"
+      ],
+      "legalParent": "CenTrio Energy USA Holdings LLC",
+      "website": "https://www.centrioenergy.com/",
+      "history": "Enwave U.S. was renamed CenTrio on 2021-04-08; consortium ownership began 2021-07-16. Brookfield first invested in Enwave in 2012.",
+      "boundary": "One U.S. platform; exclude city systems, plants, campuses, concessions, projects and financing subsidiaries."
+    },
+    "ownershipResolution": {
+      "currentOwners": [
+        {
+          "manager": "QIC Infrastructure",
+          "organization": "CalPERS",
+          "fund": "Golden Reef Trust (QIC SMA)",
+          "vehicle": "Golden Reef Trust→Lowry Holdings",
+          "stake": "60%; within QIC 75%",
+          "announcementDate": "2021-02-02",
+          "entryDate": "2021-07-16",
+          "entryYear": 2021,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED"
+        },
+        {
+          "manager": "QIC Infrastructure",
+          "organization": "QIC Limited",
+          "fund": "QGIF",
+          "vehicle": "QGIF Raptor Aggregator 1 LP→Lowry",
+          "stake": "15%; within QIC 75%",
+          "announcementDate": "2021-02-02",
+          "entryDate": "2021-07-16",
+          "entryYear": 2021,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED"
+        },
+        {
+          "manager": "Ullico Investment Advisors",
+          "organization": "Ullico Infrastructure Master Fund LP",
+          "fund": "UIF",
+          "vehicle": "Ullico District Energy Blocked Holdco→Lowry",
+          "stake": "25%",
+          "announcementDate": "2021-02-02",
+          "entryDate": "2021-07-16",
+          "entryYear": 2021,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED"
+        }
+      ],
+      "formerOwners": [
+        {
+          "manager": "Brookfield Asset Management",
+          "organization": "Brookfield Infrastructure Partners and institutional partners",
+          "fund": "Brookfield Infrastructure Fund II",
+          "vehicle": "BIF II US District Energy Holdings LLC",
+          "stake": "100% pre-sale",
+          "announcementDate": "2021-02-02",
+          "entryDate": "NOT_PUBLICLY_DISCLOSED",
+          "entryYear": 2012,
+          "exitDate": "2021-07-16",
+          "exitYear": 2021,
+          "isActive": false,
+          "transactionState": "CLOSED_EXIT"
+        }
+      ],
+      "managerCapTable": "Current sponsor aggregation: QIC-managed 75%/UIF 25%; QIC's 75% is managed capital, not solely QIC corporate capital.",
+      "controlAndRetainedInterest": "QIC is majority sponsor and has board participation; exact seats/vetoes are NOT_PUBLICLY_DISCLOSED. Buyers acquired 100%; no seller or management equity retained.",
+      "relationships": "UIA manages UIF/Ullico Infrastructure Master Fund LP. Union Labor Life is an Ullico affiliate, not a separately evidenced shareholder."
+    },
+    "operatingResolution": {
+      "headquarters": "1301 McKinney St, Suite 2060, Houston, TX 77010; supersedes 2021 New Orleans.",
+      "services": "District heating, cooling and power; P3 development, financing, modernization and operation.",
+      "endMarkets": "Commercial/industrial, residential/hospitality, healthcare/research, campuses, data centers and government.",
+      "scale": "380+ customers/partners; 146+ million sq ft; 10 U.S. markets.",
+      "cities": "Baton Rouge; Chicago; Denver; Houston; Los Angeles; New Orleans; Portland; Seattle; Syracuse; Ypsilanti."
+    },
+    "acquisitionExitCheck": {
+      "searchedThrough": "2026-08-19",
+      "laterEquityTransactionFound": false,
+      "pendingTransactions": [],
+      "finding": "No equity sale, stake change, continuation vehicle, merger, exit or signed pending deal found. The 2026-07-01 $485m refinancing and sponsor capital were financing, not an equity transfer; QIC and Ullico remained joint sponsors."
+    },
+    "milestones": [
+      "2021-02-02—Brookfield signed the 100% U.S. sale.",
+      "2021-04-08—Enwave U.S. renamed CenTrio.",
+      "2021-07-16—sale closed; Brookfield exited.",
+      "2026-07-01—refinancing reconfirmed QIC/Ullico sponsorship."
+    ],
+    "evidence": [
+      {
+        "label": "NYPSC ownership diagram",
+        "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B8B6B5CAD-61FA-4314-9A9B-D126D98D1BE1%7D",
+        "purpose": "60/15/25 stakes/vehicles",
+        "sourceTier": "T1_REG",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "Brookfield signing",
+        "url": "https://bip.brookfield.com/generation/pdf/document-file.pdf?path=%2Fpress-releases%2Fbip%2Fbrookfield-infrastructure-announces-sale-north-american-district-energy-business",
+        "purpose": "signing/seller/100%",
+        "sourceTier": "T1_SELLER",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Brookfield closing",
+        "url": "https://bip.brookfield.com/generation/pdf/document-file.pdf?path=%2Fpress-releases%2Fbip%2Fbrookfield-infrastructure-completes-sale-north-american-district-energy-business",
+        "purpose": "close/full exit",
+        "sourceTier": "T1_SELLER",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "CenTrio rename",
+        "url": "https://www.centrioenergy.com/news/enwave-s-u-s-district-energy-business-announces-new-name-centrio/",
+        "purpose": "identity/rebrand",
+        "sourceTier": "T1_COMPANY",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "QIC portfolio",
+        "url": "https://www.qic.com/Investment-Capabilities/Infrastructure/Global-Portfolio/CenTrio",
+        "purpose": "current QIC 75%",
+        "sourceTier": "T1_MANAGER",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "2026 refinancing",
+        "url": "https://www.centrioenergy.com/news/centrio-successfully-completes-485-million-comprehensive-refinancing-to-support-long-term-growth/",
+        "purpose": "current sponsors/no equity transfer",
+        "sourceTier": "T1_COMPANY",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "NYPSC 2026 order",
+        "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=5090BC9E-0000-CA30-A56D-431686716F8B&DocTitle=Order+Approving+Financing",
+        "purpose": "current legal parent",
+        "sourceTier": "T1_REG",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": [
+      "Reject a third QIC Global Infrastructure owner; normalize the alias.",
+      "Retain QIC-managed 75%/UIF 25%, with CalPERS/Golden Reef 60% and QGIF 15% attribution.",
+      "Add/confirm Brookfield former 100% ownership; update legal parent and Houston HQ."
+    ],
+    "excludedOrDuplicateCandidates": [
+      "QIC Global Infrastructure—manager alias.",
+      "Union Labor Life—Ullico affiliate, no separate stake.",
+      "Canadian Enwave, city/project/concession entities and lenders—outside the company-equity boundary."
+    ],
+    "unresolvedQuestions": [
+      "Exact board/minority-consent rights and Brookfield-era beneficial co-investor shares are NOT_PUBLICLY_DISCLOSED.",
+      "No post-close public cap table reprints 60/15/25; current status rests on QIC's 75%, 2026 sponsor confirmation and no discovered transfer."
+    ],
+    "recommendedListAction": {
+      "action": "CORRECT_EXISTING_COMPANY",
+      "details": "Do not add a third QIC owner. Keep one CenTrio platform; retain QIC-managed 75%/UIF 25% from 2021-07-16, attribute 60% CalPERS/Golden Reef and 15% QGIF if economic holders are tracked, add/confirm Brookfield former ownership, and update legal parent/HQ. No pending deal."
+    }
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0390-centrio/attempt-1/research-decision.json",
+      "sha256": "b50d2a22f9e07ca7f6604dd9f8fcb221de53e2efff4e06123b5112c328b7fc7b"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0390-centrio/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "3d5a0f33167731319904916a1aaedf32379eee77ab868a53591dc7ca62135e74"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0390-centrio/attempt-1/source-verification.json",
+      "sha256": "d42accac3bf2c0c6d307ca790a405fd1dd60ed55d97ddc47f58ec5ba37d7deb8"
+    },
+    "acceptedResponseSha256": "c8059b27f951a3ca5e821e72de33c1a4847810be1525c2cb0ad91e3a671eecdf",
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION"
+  }
+}

@@ -1,0 +1,212 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0391:ash-creek-solar:5c31cc8f",
+  "taskIndex": 391,
+  "companyName": "Ash Creek Solar",
+  "asOfDate": "2026-08-19",
+  "decision": "PROPOSED_MERGE",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-01T22:05:00.000Z",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "Ash Creek Solar",
+    "requestedManagers": [
+      "Quinbrook Infrastructure Partners"
+    ],
+    "decision": "PROPOSED_MERGE",
+    "confidence": "HIGH",
+    "rationale": "Quinbrook defines Primergy as its 100%-owned PortCo and lists Ash Creek beneath it as a project. Primergy acquired Ash Creek in 2021; no separate project fund, co-investment, governance package or sponsor transfer comparable to Gemini was found.",
+    "identityResolution": {
+      "canonicalName": "Ash Creek Solar",
+      "legalEntity": "Ash Creek Solar LLC (Delaware)",
+      "boundary": "408 MWac solar project and project-company SPV beneath Primergy Solar LLC",
+      "platformParent": "Primergy Solar LLC",
+      "ultimateManager": "Quinbrook Infrastructure Partners",
+      "aliases": [
+        "Sam Switch Solar (internal legacy name; no LLC)"
+      ],
+      "notSeparatePortCo": true
+    },
+    "ownershipResolution": {
+      "currentFormerOwners": [
+        {
+          "manager": "Quinbrook Infrastructure Partners",
+          "organization": "Primergy Solar LLC",
+          "fund": "Primergy-level NZPF attribution; Ash Creek allocation NOT_PUBLICLY_DISCLOSED",
+          "vehicle": "Ash Creek Solar LLC",
+          "stake": "CONTROL; exact project economics NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "NOT_PUBLICLY_DISCLOSED",
+          "entryDate": "NOT_PUBLICLY_DISCLOSED",
+          "entryYear": 2021,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED"
+        },
+        {
+          "manager": "Orion Renewable Energy Group LLC / Eolian",
+          "organization": "Orion Power Generation LLC",
+          "fund": "NOT_PUBLICLY_DISCLOSED",
+          "vehicle": "Orion project entities/development rights",
+          "stake": "NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "NOT_PUBLICLY_DISCLOSED",
+          "entryDate": "NOT_PUBLICLY_DISCLOSED",
+          "entryYear": 2016,
+          "exitDate": "NOT_PUBLICLY_DISCLOSED",
+          "exitYear": 2021,
+          "isActive": false,
+          "transactionState": "CLOSED"
+        }
+      ],
+      "directOwnerFinding": "Ash Creek Solar LLC owns/operates the facility and is an indirect Primergy Solar LLC subsidiary. Primergy Solar Management LLC is a disclosed contact/manager, not a separately proven owner; immediate parent and tax-equity percentages are not public.",
+      "nonOwners": {
+        "debt": "$588m construction/bridge/LC package led by MUFG and SMBC; other lenders BNP Paribas, Commerzbank, Crédit Agricole CIB, ING, KeyBank, NORD/LB and Rabobank.",
+        "taxEquity": "$350m from an unnamed Fortune 500 telecom and Truist Bank; excluded under the instructed boundary.",
+        "offtaker": "Microsoft, long-term PPA.",
+        "epc": "SOLV Energy."
+      }
+    },
+    "operatingResolution": {
+      "status": "OPERATING",
+      "location": "Hill County, Texas, near Abbott/Penelope; ERCOT",
+      "capacity": "408 MWac solar PV (Quinbrook rounds to 409 MW)",
+      "batteryStorage": "None disclosed as operating; a 2022 filing proposed 306 MW BESS, but current/COD disclosures are solar-only.",
+      "construction": "Underway by 2024-03-12; exact start NOT_PUBLICLY_DISCLOSED.",
+      "commercialOperation": "Announced 2025-07-17; exact contractual COD NOT_PUBLICLY_DISCLOSED.",
+      "ownerOperator": "Ash Creek Solar LLC / Primergy Solar LLC",
+      "offtake": "Microsoft, long-term PPA"
+    },
+    "acquisitionExitCheck": {
+      "searchThrough": "2026-08-19",
+      "primergyAcquisition": "Closed in 2021; exact announcement/close date, price and stake NOT_PUBLICLY_DISCLOSED.",
+      "laterEquitySaleOrTransfer": "NONE_FOUND",
+      "recapitalizations": "2024 debt and tax equity were financing, not sponsor exits.",
+      "pendingTransactions": [],
+      "currentStatus": "Current manager/company pages and a March 2026 Texas PUC filing still show an operating Primergy project/SPV."
+    },
+    "milestones": [
+      {
+        "date": "2016",
+        "event": "Orion Power Generation began development."
+      },
+      {
+        "date": "2021",
+        "event": "Primergy acquired the project; exact close date undisclosed."
+      },
+      {
+        "date": "2024-03-12",
+        "event": "$588m debt, Microsoft PPA and construction underway announced."
+      },
+      {
+        "date": "2025-07-17",
+        "event": "Commercial operation of 408 MWac announced."
+      }
+    ],
+    "evidence": [
+      {
+        "label": "Quinbrook: Primergy",
+        "url": "https://www.quinbrook.com/portfolio/primergy/",
+        "purpose": "100%-owned PortCo; Ash Creek listed as project.",
+        "sourceTier": "TIER_1_MANAGER",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "Quinbrook: Ash Creek",
+        "url": "https://www.quinbrook.com/projects/ash-creek/",
+        "purpose": "Project status, 2021 acquisition and 409 MW.",
+        "sourceTier": "TIER_1_MANAGER",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Primergy commissioning release",
+        "url": "https://www.primergypower.com/news/primergy-announces-the-commissioning-of-ash-creek-solar-in-texas",
+        "purpose": "COD, capacity, PPA, Orion history and 2021 acquisition.",
+        "sourceTier": "TIER_1_COMPANY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Primergy financing release",
+        "url": "https://www.primergypower.com/news/primergy-secures-588m-in-project-financing-and-power-purchase-agreement-with-microsoft-for-408-mw-solar-project-in-texas",
+        "purpose": "Debt lenders, PPA, EPC and construction.",
+        "sourceTier": "TIER_1_COMPANY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Texas PUC registration",
+        "url": "https://interchange.puc.texas.gov/Documents/57281_2_1442430.PDF",
+        "purpose": "Project LLC owner/operator and Primergy parent.",
+        "sourceTier": "TIER_1_REGULATOR",
+        "workingStatus": "SEARCH_INDEXED; DIRECT_FETCH_502",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Texas Comptroller record",
+        "url": "https://assets.comptroller.texas.gov/ch313/1843/1843-penelope-ash-cert.pdf",
+        "purpose": "SPV identity, Sam Switch alias and Orion assignments.",
+        "sourceTier": "TIER_1_GOVERNMENT",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Quinbrook NZPF close",
+        "url": "https://www.quinbrook.com/news-insights/quinbrook-exceeds-target-for-net-zero-power-strategy-raising-usd-3-billion-in-capital-commitments/",
+        "purpose": "Primergy, not Ash Creek, disclosed as fund investment.",
+        "sourceTier": "TIER_1_MANAGER",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Quinbrook Valley of Fire fund",
+        "url": "https://www.quinbrook.com/news-insights/quinbrook-closes-600m-solarstorage-continuation-fund/",
+        "purpose": "Comparator: explicit Gemini asset-level fund/co-owner structure.",
+        "sourceTier": "TIER_1_MANAGER",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "before": "Standalone Quinbrook PortCo record for Ash Creek Solar.",
+      "after": "Merge cmrxpjmjj0186ivhewu4o37et into Primergy Solar; retain Ash Creek Solar LLC as a project asset with 2021 acquisition and 2025 COD milestones."
+    },
+    "excludedOrDuplicateCandidates": [
+      {
+        "candidate": "Sam Switch Solar",
+        "disposition": "EXCLUDE_AS_ALIAS",
+        "reason": "Internal name; no LLC."
+      },
+      {
+        "candidate": "Ash Creek BESS",
+        "disposition": "DO_NOT_CREATE",
+        "reason": "Proposed earlier; absent from current operating disclosures."
+      }
+    ],
+    "unresolvedQuestions": [
+      "Exact 2021 acquisition/closing date, consideration and predecessor transfer chain.",
+      "Immediate parent above Ash Creek Solar LLC and exact sponsor/tax-equity economics.",
+      "Unnamed telecom tax-equity investor and exact contractual COD."
+    ],
+    "recommendedListAction": "Merge/remove Ash Creek as a standalone PortCo and preserve it under Primergy as an operating project/SPV. Do not add lenders, tax-equity investors, Microsoft or SOLV as company owners."
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0391-ash-creek-solar/attempt-1/research-decision.json",
+      "sha256": "7d4b9758d3b8246c39d409ed176887ebd95a0633d94ed5f7131a064933db533c"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0391-ash-creek-solar/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "068064369db509cf7c69bbbf002e1eec3df1051e8d11d7768bd029ae066e4183"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0391-ash-creek-solar/attempt-1/source-verification.json",
+      "sha256": "73e7a7be862f3c8617816c399ab920d2ccbba093440f4819acb9a68a3bb599a2"
+    },
+    "acceptedResponseSha256": "df0e288aca5b54611c7d75d356560b73f4c4fcb2d65bb348b8f52c92918303b5",
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION"
+  }
+}

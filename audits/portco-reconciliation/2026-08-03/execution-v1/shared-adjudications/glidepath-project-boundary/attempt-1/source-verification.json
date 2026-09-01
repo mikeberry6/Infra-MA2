@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0392:byrd-ranch:e6076e80",
+  "checkedAt": "2026-09-01T22:18:00.000Z",
+  "method": "Consolidated immutable direct-source verification for the reciprocal Byrd Ranch and Meyersdale project-boundary tasks; source bytes and health results are inherited from the two cited source-verification artifacts.",
+  "sources": [
+    {
+      "url": "https://www.quinbrook.com/portfolio/glidepath/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.quinbrook.com/portfolio/glidepath/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 51073,
+      "sha256": "283da1a0f702fa4ab888faa947110f4bdd8128d9d98288a140a28b54e7efbb8a",
+      "healthStatus": "WORKING",
+      "verifiedClaims": ["Quinbrook defines GlidePath as the portfolio company and lists Byrd Ranch and Meyersdale as projects beneath it"]
+    },
+    {
+      "url": "https://www.quinbrook.com/projects/byrd-ranch/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.quinbrook.com/projects/byrd-ranch/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 47394,
+      "sha256": "7bcfb4634fcf3c5c7b67fccc3a8e06309c0825efe67083cc31af4af9481d8f1a",
+      "healthStatus": "WORKING",
+      "verifiedClaims": ["Byrd Ranch is an operating 50 MW/50 MWh GlidePath project acquired in 2019"]
+    },
+    {
+      "url": "https://www.quinbrook.com/news-insights/glidepath-adds-50mw-to-texas-battery-storage-portfolio/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.quinbrook.com/news-insights/glidepath-adds-50mw-to-texas-battery-storage-portfolio/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 56426,
+      "sha256": "d97861eb038d121e425f0db5ef8a9a5c4241666f07f91bd5dc4e605326bb6625",
+      "healthStatus": "WORKING",
+      "verifiedClaims": ["GlidePath completed financing and began Byrd Ranch construction in January 2022"]
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20221107005085/en/GlidePath-Begins-Operations-at-New-50MW-Battery-Storage-Facility-Near-Houston-TX",
+      "httpStatus": 403,
+      "finalUrl": "https://www.businesswire.com/news/home/20221107005085/en/GlidePath-Begins-Operations-at-New-50MW-Battery-Storage-Facility-Near-Houston-TX",
+      "mediaType": "text/html",
+      "bytes": 540,
+      "sha256": "0038c7524d68696b854dd025ae12b41f7aa2904af6c4ee310955e11599b823d3",
+      "healthStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verifiedClaims": ["GlidePath announced Byrd Ranch operations on November 7, 2022"]
+    },
+    {
+      "url": "https://www.prnewswire.com/news-releases/quinbrook-acquires-223-mw-wind-power-portfolio-300584615.html",
+      "httpStatus": 200,
+      "finalUrl": "https://www.prnewswire.com/news-releases/quinbrook-acquires-223-mw-wind-power-portfolio-300584615.html",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 203226,
+      "sha256": "674db95a424f6b46c120e3d21eaacc11a0f83937ce7333f0b5c2c439fa87bb3a",
+      "healthStatus": "WORKING",
+      "verifiedClaims": ["Quinbrook Low Carbon Power Fund acquired GlidePath in 2017"]
+    },
+    {
+      "url": "https://www.quinbrook.com/projects/meyersdale-battery/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.quinbrook.com/projects/meyersdale-battery/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 47483,
+      "sha256": "47c49300959b63e9c99f6f41ff581b50660f70b633b38ff2037c8c86376e9ea0",
+      "healthStatus": "WORKING",
+      "verifiedClaims": ["Meyersdale is an operating 18 MW/12 MWh GlidePath project acquired in 2019 and repowered in late 2024"]
+    },
+    {
+      "url": "https://mbrweb.ferc.gov/SearchMBRAssetAppendix/AssetAppendixDetails?AssetAppendixId=7715",
+      "httpStatus": 200,
+      "finalUrl": "https://mbrweb.ferc.gov/SearchMBRAssetAppendix/AssetAppendixDetails?AssetAppendixId=7715",
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 69499,
+      "sha256": "88de7c07888ceb6cc76d4c1f0d583c2bb1db63a2925bd4ed9278f19ff2ed0d5d",
+      "healthStatus": "WORKING",
+      "verifiedClaims": ["Meyersdale Storage, LLC is an 18 MW PJM asset beneath GlidePath and Quinbrook-controlled fund entities"]
+    },
+    {
+      "url": "https://www.psc.state.fl.us/library/filings/2021/02800-2021/02800-2021.pdf",
+      "httpStatus": 200,
+      "finalUrl": "https://www.psc.state.fl.us/library/filings/2021/02800-2021/02800-2021.pdf",
+      "mediaType": "application/pdf",
+      "bytes": 3309130,
+      "sha256": "dfde755ced859fd7ee3b02e2b433fea4ab5f7bd6a861fa7d5e620aba4a9d0477",
+      "healthStatus": "WORKING",
+      "verifiedClaims": ["Meyersdale Storage, LLC was sold to GlidePath Storage Operations LLC on March 19, 2019"]
+    }
+  ],
+  "lineage": {
+    "byrdRanchSourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0392-byrd-ranch/attempt-1/source-verification.json",
+      "sha256": "a0e980f3fe2601583074565e59843f323da6a5ab61ed08f84ec7bb7e813e4fa9"
+    },
+    "meyersdaleSourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0393-meyersdale-energy-storage/attempt-1/source-verification.json",
+      "sha256": "450abdadd105d1d1f6eae47bca282ddaa547c141569fc879a3174295f756a7ad"
+    }
+  },
+  "allEvidenceUrlsDirectHttps": true,
+  "allSourcesWorkingOrVerified": true,
+  "deadSourceCount": 0
+}

@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0389:network-fiberco:3f7436bc",
+  "taskIndex": 389,
+  "companyName": "Network FiberCo",
+  "generatedAt": "2026-09-01T21:53:50.890Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0389-network-fiberco/attempt-1/locked-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 389,
+    "taskId": "ledger:0389:network-fiberco:3f7436bc",
+    "canonicalKey": "network-fiberco|united-states",
+    "companyName": "Network FiberCo",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 81,
+    "managers": [
+      "PSP Investments"
+    ],
+    "actionScopes": {
+      "company": [
+        "CREATE_COMPANY"
+      ],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "081-psp-investments:holding:005:network-fiberco"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://www.bce.ca/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "No exact normalized production or seed match exists. Census evidence supports a new canonical company with 1 manager holding record(s).",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "network-fiberco|united-states",
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpih6o004oivhejmzw2gfv",
+        "name": "PSP Investments",
+        "updatedAt": "2026-07-23T16:09:29.472Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0389:network-fiberco:3f7436bc",
+    "taskIndex": 389,
+    "canonicalKey": "network-fiberco|united-states",
+    "capturedAt": "2026-09-01T21:53:50.890Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "1328b41514b406f5177445a676c0ed09ef764c190ce011875f71a1dc4c873ad8",
+    "productionSnapshotSha256": "81d834c20cccfaea84978ab255dec9b45613bc7cd982b7cb8290a76ea8dc81ea",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "b7732b05258a9659155996231e0f8ae9c312aff79a8c281d0798cf9dcd606aa1",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "6a49bb17c530562210168e8b42e4597bd40390adc2bbe6a3675d1cbd04658a7b",
+    "stateSha256": "62559a17cc68cb6d4d016f72778c6361fcc009cec8e8f6011d02b6b6c671fe19",
+    "taskSnapshotSha256": "954e70c2339ccf972ecf9702bffea59db1cabbdf89d624217b4234da1634d2eb"
+  },
+  "contextSha256": "0abe9c765dbb932972761be3febfc919983bcdf9723f5a214af43a66204055a0"
+}

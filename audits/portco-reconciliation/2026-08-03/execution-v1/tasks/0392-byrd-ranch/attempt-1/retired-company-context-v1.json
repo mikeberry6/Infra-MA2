@@ -1,0 +1,262 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0392:byrd-ranch:e6076e80",
+  "taskIndex": 392,
+  "companyName": "Byrd Ranch",
+  "generatedAt": "2026-09-01T21:55:24.504Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0392-byrd-ranch/attempt-1/retired-company-production-snapshot-v1.json",
+  "sourceQueueEntry": {
+    "taskIndex": 392,
+    "taskId": "ledger:0392:byrd-ranch:e6076e80",
+    "canonicalKey": "byrd-ranch|united-states",
+    "companyName": "Byrd Ranch",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 83,
+    "managers": [
+      "Quinbrook Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "083-quinbrook-infrastructure-partners:repo-only:004:byrd-ranch"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjmjy0187ivhehg62f3yx"
+    ],
+    "seedKeys": [
+      "byrd ranch|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.quinbrook.com/portfolio/glidepath/",
+      "https://www.quinbrook.com/projects/byrd-ranch/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Quinbrook Infrastructure Partners MATCHED_ELSEWHERE: Battery storage project developed under GlidePath Power Solutions, which is the relevant manager-level platform.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjmjy0187ivhehg62f3yx",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "byrd-ranch|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjmjy0187ivhehg62f3yx",
+    "name": "Byrd Ranch",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Battery energy storage system",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Byrd Ranch is a utility-scale lithium-ion battery storage project in Sweeny, Texas that provides grid support services in ERCOT. Its end markets are wholesale ancillary services and power market applications that reward flexible storage capacity rather than traditional contracted utility rate base revenues. The project follows an asset-heavy merchant storage model supported by transmission interconnection, battery systems, and market optimization infrastructure. Public materials describe a 50 MW / 50 MWh project that began operations in 2022 and is managed through Quinbrook's GlidePath platform. Quinbrook identifies Byrd Ranch as a project acquired in 2019, with construction and operational delivery completed under GlidePath.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Texas",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk90l027sivherzhu8kbv",
+        "managerName": "Quinbrook",
+        "organizationName": "Quinbrook",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2019,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmkri051givhevf5aapge",
+        "date": "2019",
+        "event": "Quinbrook recorded the acquisition year for Byrd Ranch.",
+        "category": "ACQUISITION",
+        "sortDate": "2019-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmks3051hivhe9fuavyja",
+        "date": "2022",
+        "event": "Construction and commissioning activities were completed for the project.",
+        "category": "EXPANSION",
+        "sortDate": "2022-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmkso051iivhe72q35zqg",
+        "date": "Jan 2022",
+        "event": "GlidePath announced the project as an addition to its Texas battery storage portfolio.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-01-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmkte051jivhe7ado9gvr",
+        "date": "Nov 2022",
+        "event": "Byrd Ranch began operations.",
+        "category": "EXPANSION",
+        "sortDate": "2022-11-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpskb10crwivhefjrsdwf6",
+        "label": "Quinbrook — Byrd Ranch",
+        "url": "https://www.quinbrook.com/projects/byrd-ranch/",
+        "sourceType": "WEBSITE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Quinbrook transaction or milestone detail",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpskby0cryivhes8k9ro7y",
+        "label": "Glidepath — Byrd Ranch",
+        "url": "https://glidepath.net/projects/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Glidepath operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpskcv0cs0ivhe1ay7isjj",
+        "label": "Quinbrook — Byrd Ranch",
+        "url": "https://www.quinbrook.com/news-insights/glidepath-adds-50mw-to-texas-battery-storage-portfolio/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Quinbrook operations / asset details",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Byrd Ranch",
+    "investmentFirm": "Quinbrook",
+    "sector": "Power & ET",
+    "subsector": "Battery energy storage system",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "Byrd Ranch is a utility-scale lithium-ion battery storage project in Sweeny, Texas that provides grid support services in ERCOT. Its end markets are wholesale ancillary services and power market applications that reward flexible storage capacity rather than traditional contracted utility rate base revenues. The project follows an asset-heavy merchant storage model supported by transmission interconnection, battery systems, and market optimization infrastructure. Public materials describe a 50 MW / 50 MWh project that began operations in 2022 and is managed through Quinbrook's GlidePath platform. Quinbrook identifies Byrd Ranch as a project acquired in 2019, with construction and operational delivery completed under GlidePath.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2019,
+    "headquarters": "Texas",
+    "milestones": [
+      {
+        "date": "2019",
+        "event": "Quinbrook recorded the acquisition year for Byrd Ranch.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "2022",
+        "event": "Construction and commissioning activities were completed for the project.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Jan 2022",
+        "event": "GlidePath announced the project as an addition to its Texas battery storage portfolio.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Nov 2022",
+        "event": "Byrd Ranch began operations.",
+        "category": "Expansion"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Quinbrook — Byrd Ranch",
+        "url": "https://www.quinbrook.com/projects/byrd-ranch/",
+        "type": "WEBSITE",
+        "purpose": "MILESTONE_EVENT"
+      },
+      {
+        "label": "Glidepath — Byrd Ranch",
+        "url": "https://glidepath.net/projects/",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Quinbrook — Byrd Ranch",
+        "url": "https://www.quinbrook.com/news-insights/glidepath-adds-50mw-to-texas-battery-storage-portfolio/",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Quinbrook",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2019,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpigao004eivhedx8km4yh",
+        "name": "Quinbrook",
+        "updatedAt": "2026-07-23T16:09:28.320Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0392:byrd-ranch:e6076e80",
+    "taskIndex": 392,
+    "canonicalKey": "byrd-ranch|united-states",
+    "capturedAt": "2026-09-01T21:55:24.504Z",
+    "databaseRevision": "revision:76bb3092f7048f58aabe9cacbe9d93fd38e5493a2b44a013787bcaec01031852",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "0c38574ea8c5bc1a9a21f7ade07d8bb5974467456e366f4e21380ab988d371ad",
+    "productionSnapshotSha256": "ab3632cb2b21e8d7987cdcaa72fb5be77e6fe5feaf163af257ff3833c5f50e4c",
+    "targetCompanySnapshotSha256": "340ae51cb36d80fa777b8e5449c3ac9047a315dbfbff6f3871c542a35f245f93",
+    "seedEntrySha256": "581d3ef7a14460428e1145f7672ce02dc6332c5ad54364860f3c90f0550d5a2e",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "5312b8456d0b443b0b4202a275c018f4f8b52cac1046f479e7f4217c319c18e5",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "52c944c13a5e74630cefca11499339fafbdd9f1705bdf046c1d4d1c3542bd283",
+      "citationsSha256": "f224f52a3bdeb3591ca84a481feb61beb5e5156c0f6cfa15f1b09b3dceaa6e4e",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "3fc255d6f605f48aa5b08b1d165213f7e0bc2e9ed2548723d604210986eaed78",
+    "stateSha256": "494b4c5b2902078efdd85adad9d58af54b100b6a1d948fff674f845e902bebf4",
+    "taskSnapshotSha256": "1df61203fe9d3831ae6211fc043ee5d183481fb08a535607ace55b3ff4c5d5d1"
+  },
+  "contextSha256": "4f49268bfaa0240937c3ff888d9683df8a902d6b4926dafda409c185e75a68c6"
+}
