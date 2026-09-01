@@ -1,0 +1,85 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:batch:apply
+> npx tsx scripts/portco-reconciliation/batch-apply-cli.ts --batch-manifest=audits/portco-reconciliation/2026-08-23/batches/batch-0379-0383-v1/batch-manifest.json --batch-sha256=93a2e1bd951372538ab334689e6f880b622c96861099a53d29559fc6284f918b
+
+(node:3705) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "BATCH_DRY_RUN",
+  "batchId": "batch-0379-0383-v1",
+  "batchSha256": "93a2e1bd951372538ab334689e6f880b622c96861099a53d29559fc6284f918b",
+  "databaseWrites": false,
+  "seedWrites": false,
+  "plans": [
+    {
+      "companyName": "Dimension Energy",
+      "mutations": [
+        {
+          "kind": "CREATE_COMPANY",
+          "relationIds": [],
+          "detail": "Create the approved canonical company and all approved relations."
+        }
+      ],
+      "changedFields": [
+        "company"
+      ],
+      "retiredCompanyIds": []
+    },
+    {
+      "companyName": "EdgeCore Digital Infrastructure",
+      "mutations": [
+        {
+          "kind": "CREATE_COMPANY",
+          "relationIds": [],
+          "detail": "Create the approved canonical company and all approved relations."
+        }
+      ],
+      "changedFields": [
+        "company"
+      ],
+      "retiredCompanyIds": []
+    },
+    {
+      "companyName": "Exus Renewables North America",
+      "mutations": [
+        {
+          "kind": "CREATE_COMPANY",
+          "relationIds": [],
+          "detail": "Create the approved canonical company and all approved relations."
+        }
+      ],
+      "changedFields": [
+        "company"
+      ],
+      "retiredCompanyIds": []
+    },
+    {
+      "companyName": "Milestone Equipment Holdings, LLC",
+      "mutations": [
+        {
+          "kind": "CREATE_COMPANY",
+          "relationIds": [],
+          "detail": "Create the approved canonical company and all approved relations."
+        }
+      ],
+      "changedFields": [
+        "company"
+      ],
+      "retiredCompanyIds": []
+    },
+    {
+      "companyName": "USIC",
+      "mutations": [
+        {
+          "kind": "CREATE_COMPANY",
+          "relationIds": [],
+          "detail": "Create the approved canonical company and all approved relations."
+        }
+      ],
+      "changedFields": [
+        "company"
+      ],
+      "retiredCompanyIds": []
+    }
+  ]
+}

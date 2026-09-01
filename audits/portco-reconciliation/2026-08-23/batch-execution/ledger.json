@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-01T20:44:00.000Z",
-  "activeBatchId": "batch-0379-0383-v1",
+  "updatedAt": "2026-09-01T20:55:00.000Z",
+  "activeBatchId": null,
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -6524,7 +6524,7 @@
     },
     {
       "batchId": "batch-0379-0383-v1",
-      "state": "READY",
+      "state": "COMPLETED",
       "taskIds": [
         "ledger:0379:dimension-renewable-energy:afa21f3c",
         "ledger:0380:edgecore-digital-infrastructure:92394a7f",
@@ -6540,15 +6540,18 @@
         383
       ],
       "createdAt": "2026-09-01T20:27:00.000Z",
-      "updatedAt": "2026-09-01T20:44:00.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-09-01T20:55:00.000Z",
+      "completedAt": "2026-09-01T20:55:00.000Z",
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0379-0383-v1/batch-manifest.json",
         "sha256": "93a2e1bd951372538ab334689e6f880b622c96861099a53d29559fc6284f918b"
       },
-      "releaseSha": null,
-      "receipt": null,
-      "reason": null,
+      "releaseSha": "115da46f31a2c54328d4d372f00fcb18bdad908a",
+      "receipt": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0379-0383-v1/production-apply/batch-apply-receipt.json",
+        "sha256": "12d69e20436939a397d73ed9647aee6c2f9c66a1aa1dc4fd42e4f46773e3bc04"
+      },
+      "reason": "Exact release SHA, atomic database after-images, seed parity, detail APIs, ownership history, and all five rendered production drawers verified; no partial application.",
       "history": [
         {
           "sequence": 1,
@@ -6567,9 +6570,51 @@
             "93a2e1bd951372538ab334689e6f880b622c96861099a53d29559fc6284f918b"
           ],
           "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "RELEASING",
+          "at": "2026-09-01T20:48:26.000Z",
+          "evidenceSha256": [
+            "93a2e1bd951372538ab334689e6f880b622c96861099a53d29559fc6284f918b"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 4,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-09-01T20:53:10.000Z",
+          "evidenceSha256": [
+            "93a2e1bd951372538ab334689e6f880b622c96861099a53d29559fc6284f918b"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 5,
+          "from": "APPLYING",
+          "to": "VERIFYING",
+          "at": "2026-09-01T20:53:17.000Z",
+          "evidenceSha256": [
+            "12d69e20436939a397d73ed9647aee6c2f9c66a1aa1dc4fd42e4f46773e3bc04",
+            "93a2e1bd951372538ab334689e6f880b622c96861099a53d29559fc6284f918b"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 6,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-09-01T20:55:00.000Z",
+          "evidenceSha256": [
+            "12d69e20436939a397d73ed9647aee6c2f9c66a1aa1dc4fd42e4f46773e3bc04",
+            "93a2e1bd951372538ab334689e6f880b622c96861099a53d29559fc6284f918b"
+          ],
+          "reason": "Exact release SHA, atomic database after-images, seed parity, detail APIs, ownership history, and all five rendered production drawers verified; no partial application."
         }
       ]
     }
   ],
-  "ledgerSha256": "9113ad41139930e8e8c15fdc618ec27bac7133b29c4755402161b5a593172727"
+  "ledgerSha256": "aaf4a746a01626d540c016eaeac1c91e92fb1303612fc8dd3e95e8c7ac4c9461"
 }
