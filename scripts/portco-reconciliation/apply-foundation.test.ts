@@ -945,6 +945,43 @@ describe("approved PortCo apply planner", () => {
     })).toThrow(/retired ownership period history owner_retired/i);
   });
 
+  it("allows a duplicate retired milestone to map to a compatible milestone transferred from the same reviewed company", () => {
+    const { snapshot, before, retiredImage, fresh } = retiredMergeFixture();
+    const transferred = {
+      ...retiredImage.milestones[0],
+      id: "milestone_transferred",
+      event: "3i invested in the Acme Infrastructure platform in September 2020.",
+    };
+    retiredImage.milestones.push(transferred);
+    fresh.retiredCompanies[0].image = retiredImage;
+    const after = structuredClone(before);
+    after.milestones.push(transferred);
+    const approved = approvedCorrection({
+      before,
+      after,
+      actions: ["MERGE_COMPANIES"],
+      retiredCompanyIds: ["company_retired"],
+      relationMerges: [{
+        kind: "OWNERSHIP_PERIOD",
+        retiredRelationId: "owner_retired",
+        canonicalRelationId: "owner_1",
+        rationale: "Both rows represent the same 3i ownership period.",
+      }, {
+        kind: "MILESTONE",
+        retiredRelationId: "milestone_retired",
+        canonicalRelationId: "milestone_transferred",
+        rationale: "The exact retained row supersedes the duplicate milestone.",
+      }],
+      snapshot,
+    });
+
+    expect(planApprovedApply({
+      ...approved,
+      approvedProductionSnapshot: snapshot,
+      fresh,
+    }).mutations.map((mutation) => mutation.kind)).toEqual(["MERGE_COMPANIES"]);
+  });
+
   it("rejects missing, mis-typed, or incompatible retired relation mappings", () => {
     const { snapshot, before, fresh } = retiredMergeFixture();
     const proposalFor = (relationMerges: NonNullable<ReconciliationProposal["relationMerges"]>) =>

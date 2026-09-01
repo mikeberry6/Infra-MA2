@@ -1,0 +1,538 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0395:prairie-mist-solar:44443a02",
+  "taskIndex": 395,
+  "asOfDate": "2026-09-01",
+  "generatedAt": "2026-09-01T23:11:00.000Z",
+  "canonicalKey": "primergy|united-states",
+  "companyName": "Prairie Mist Solar",
+  "actions": [
+    "CORRECT_COMPANY",
+    "MERGE_COMPANIES"
+  ],
+  "sourceHoldingIds": [],
+  "retiredCompanyIds": [
+    "cmrxpjmn3018divhea2b9e4gv"
+  ],
+  "relationMerges": [
+    {
+      "kind": "OWNERSHIP_PERIOD",
+      "retiredRelationId": "cmrxpk93p027yivheadgv56pq",
+      "canonicalRelationId": "cmrxpk96q027zivheu1eri9ch",
+      "rationale": "Prairie Mist's owner row is a project-level duplicate of Quinbrook's continuing 100% ownership of Primergy."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxpmlce0524ivhe2uulvipa",
+      "canonicalRelationId": "cmrxpmlcu0525ivhehie8hnmf",
+      "rationale": "The month-only Prairie Mist operating milestone is preserved by the exact December 18, 2024 milestone."
+    }
+  ],
+  "rationale": "Merge Prairie Mist Solar into Primergy. Quinbrook identifies Primergy as its 100%-owned portfolio company and Prairie Mist as a 100 MWac operating project beneath it. Primergy acquired the project in 2021, closed $300 million of debt and tax-equity commitments in November 2023, and announced commercial operation on December 18, 2024. Financing providers, Amazon, North Little Rock, Primoris and Entergy/MISO are not treated as sponsor owners. The project identity and material history are preserved on Primergy.",
+  "evidence": [
+    {
+      "url": "https://www.quinbrook.com/portfolio/primergy/",
+      "purpose": "Canonical portfolio-company and project boundary",
+      "supports": [
+        "Primergy is Quinbrook's 100%-owned portfolio company",
+        "Prairie Mist is a project beneath Primergy"
+      ]
+    },
+    {
+      "url": "https://www.quinbrook.com/projects/prairie-mist/",
+      "purpose": "Prairie Mist project status and chronology",
+      "supports": [
+        "The project is operating, 100 MW, and entered the portfolio in 2021"
+      ]
+    },
+    {
+      "url": "https://www.primergypower.com/news/primergys-prairie-mist-solar-project-reaches-commercial-operation",
+      "purpose": "Commercial-operation milestone",
+      "supports": [
+        "Primergy announced full operation on December 18, 2024"
+      ]
+    },
+    {
+      "url": "https://www.primergypower.com/news/primergy-secures-300m-debt-and-tax-equity-investment-for-prairie-mist-solar-project",
+      "purpose": "Financing milestone and non-owner capital roles",
+      "supports": [
+        "Primergy closed $300 million of debt and tax-equity commitments in November 2023"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "44affda4571d26835cfe25d2ddfdfda4de0f18cfbd08450844776b48ee744656",
+  "currentCompanySnapshotSha256": "b9d9797ac598756b8a3b86f166716c3649a7dc51308c6dea08c9b10b28756527",
+  "executionLock": {
+    "taskSnapshotSha256": "78c6d7ca0d46413e1317f297e36e95f0022be0bfdf001e327421c5694a8aa792",
+    "taskStateSha256": "1e4b7692bd5e2098e566582fd2277cf2861245a41db31b69158e8ff518ef1bb2",
+    "taskDependencySha256": "9209cd14c6c1112f720e6e0ec1b377bf666ce62fdb0539dfd82605dd91dac1b1",
+    "seedEntrySha256": "2132ce9f9a7957207cedeb0212bde53b8cee32f45337ce05bbb067d23109f092",
+    "dependencies": {
+      "ownershipPeriodsSha256": "53e55e451ebdac8492ba7b8e21feb41f63689446f054f4bac9779e2c4afb3480",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "52c944c13a5e74630cefca11499339fafbdd9f1705bdf046c1d4d1c3542bd283",
+      "citationsSha256": "ccc52935875543a59af065e5a229b39cfd398c64b4930fbac769286b46dcbce5",
+      "redirectsSha256": "0f3df5b7688fff4fe1a1ee0aa6d8c35c3681159d20e74d14d69467d016f3902a"
+    },
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpigao004eivhedx8km4yh",
+        "name": "Quinbrook",
+        "updatedAt": "2026-07-23T16:09:28.320Z"
+      }
+    ],
+    "redirects": [
+      {
+        "retiredId": "cmrxpjmjj0186ivhewu4o37et",
+        "companyId": "cmrxpjmnj018eivhe8a4fk54r",
+        "reason": "CANONICAL_MERGE",
+        "createdAt": "2026-09-01T22:39:40.029Z"
+      }
+    ]
+  },
+  "beforeImage": {
+    "id": "cmrxpjmnj018eivhe8a4fk54r",
+    "name": "Primergy",
+    "aliases": [
+      "Primergy Solar LLC",
+      "Ash Creek Solar",
+      "Ash Creek Solar LLC",
+      "Sam Switch Solar"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Utility-scale solar and battery storage development",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Primergy develops, finances, owns and operates utility-scale solar and battery-storage projects across North America. Quinbrook launched the platform in 2020 and continues to identify it as a 100%-owned portfolio company. Primergy's projects include Ash Creek Solar, a 408 MWac operating solar facility in Hill County, Texas that Primergy acquired in 2021, financed in 2024 under a long-term Microsoft PPA and brought into commercial operation on July 17, 2025. Ash Creek Solar LLC and the legacy Sam Switch Solar name are project/SPV identities within Primergy and are not separate manager-level portfolio companies. No later Primergy sale or signed pending ownership transaction was identified through September 1, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.primergypower.com/",
+    "yearFounded": 2020,
+    "headquarters": "California; Texas; Arkansas; Nevada",
+    "lastVerifiedAt": "2026-09-01T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk96q027zivheu1eri9ch",
+        "managerName": "Quinbrook",
+        "organizationName": "Quinbrook",
+        "fundName": null,
+        "vehicleName": "Quinbrook-managed Primergy platform",
+        "stake": "100%",
+        "investmentYear": 2020,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmko5051bivhefvfcltsl",
+        "date": "2021",
+        "event": "Primergy acquired the Ash Creek project from Orion Renewable Energy Group; the exact closing date was not publicly disclosed.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.primergypower.com/news/primergy-announces-the-commissioning-of-ash-creek-solar-in-texas"
+        ]
+      },
+      {
+        "id": "cmrxpmkoq051civhe7dr0vaw6",
+        "date": "Mar 2024",
+        "event": "Primergy signed a long-term power purchase agreement with Microsoft for the Ash Creek project.",
+        "category": "FINANCING",
+        "sortDate": "2024-03-01T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.primergypower.com/news/primergy-secures-588m-in-project-financing-and-power-purchase-agreement-with-microsoft-for-408-mw-solar-project-in-texas"
+        ]
+      },
+      {
+        "id": "cmrxpmkpa051divhe9fdg7hxz",
+        "date": "Mar 12, 2024",
+        "event": "Primergy closed $588 million of project financing and a long-term power purchase agreement with Microsoft for Ash Creek.",
+        "category": "FINANCING",
+        "sortDate": "2024-03-12T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.primergypower.com/news/primergy-secures-588m-in-project-financing-and-power-purchase-agreement-with-microsoft-for-408-mw-solar-project-in-texas"
+        ]
+      },
+      {
+        "id": "cmrxpmkpv051eivhe3cg3i2yp",
+        "date": "Oct 18, 2024",
+        "event": "Primergy secured $350 million of tax-equity financing for Ash Creek; the investor positions are financing rather than sponsor ownership.",
+        "category": "FINANCING",
+        "sortDate": "2024-10-18T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.primergypower.com/news/primergy-announces-the-commissioning-of-ash-creek-solar-in-texas"
+        ]
+      },
+      {
+        "id": "cmrxpmldv0526ivhetmltdv08",
+        "date": "May 18, 2020",
+        "event": "Quinbrook launched Primergy as a new portfolio company to develop solar and battery storage projects across North America.",
+        "category": "FINANCING",
+        "sortDate": "2020-05-18T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.primergypower.com/news/quinbrook-launches-primergy-solar-to-develop-solar-and-battery-storage-across-north-america"
+        ]
+      },
+      {
+        "id": "cmrxpmlee0527ivhei8mk8p55",
+        "date": "Oct 2022",
+        "event": "Quinbrook and Primergy announced APG's investment in the Gemini Solar + Storage project.",
+        "category": "FINANCING",
+        "sortDate": "2022-10-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmlez0528ivhe9yi00oxj",
+        "date": "Jul 17, 2025",
+        "event": "Primergy announced commercial operation of the 408 MWac Ash Creek Solar project in Texas.",
+        "category": "EXPANSION",
+        "sortDate": "2025-07-17T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.primergypower.com/news/primergy-announces-the-commissioning-of-ash-creek-solar-in-texas"
+        ]
+      },
+      {
+        "id": "cmrxpmlfi0529ivheeuligxm0",
+        "date": "Mar 2026",
+        "event": "Primergy reported lifetime closed transactions of more than $5 billion.",
+        "category": "FINANCING",
+        "sortDate": "2026-03-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsl960cteivhe01m5n9fp",
+        "label": "Primergypower — Primergy",
+        "url": "https://www.primergypower.com/about/primergy",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Primergy company profile and operating-platform identity",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpslcu0ctgivhejae985iu",
+        "label": "Investment date source — Quinbrook — Primergy",
+        "url": "https://www.primergypower.com/news/quinbrook-launches-primergy-solar-to-develop-solar-and-battery-storage-across-north-america",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Quinbrook initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpslde0cthivhej1s8txmz",
+        "label": "Close date source — Quinbrook — Gemini Solar + Storage",
+        "url": "https://www.quinbrook.com/news-insights/quinbrook-closes-600m-solarstorage-continuation-fund/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Quinbrook — Primergy",
+        "isPrimary": false
+      },
+      {
+        "id": "cmtj928r1000v2h2byihkau3a",
+        "label": "Quinbrook — Primergy portfolio",
+        "url": "https://www.quinbrook.com/portfolio/primergy/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Quinbrook's 100% Primergy ownership and Ash Creek project boundary",
+        "isPrimary": false
+      },
+      {
+        "id": "cmtj928wr000x2h2b1hdyboca",
+        "label": "Quinbrook — Ash Creek project",
+        "url": "https://www.quinbrook.com/projects/ash-creek/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Ash Creek's status as an operating project within Primergy",
+        "isPrimary": false
+      },
+      {
+        "id": "cmtj9290k000y2h2b6hmernh0",
+        "label": "Primergypower — Ash Creek Solar",
+        "url": "https://www.primergypower.com/news/primergy-announces-the-commissioning-of-ash-creek-solar-in-texas",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "2021 project acquisition and July 17, 2025 commercial operation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmtj9294d000z2h2bdqaa30li",
+        "label": "Investment date source — Quinbrook — Ash Creek Solar",
+        "url": "https://www.primergypower.com/news/primergy-secures-588m-in-project-financing-and-power-purchase-agreement-with-microsoft-for-408-mw-solar-project-in-texas",
+        "sourceType": "ARTICLE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "March 2024 project financing, PPA and construction milestone",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "b9d9797ac598756b8a3b86f166716c3649a7dc51308c6dea08c9b10b28756527",
+  "afterImage": {
+    "id": "cmrxpjmnj018eivhe8a4fk54r",
+    "name": "Primergy",
+    "aliases": [
+      "Primergy Solar LLC",
+      "Ash Creek Solar",
+      "Ash Creek Solar LLC",
+      "Sam Switch Solar",
+      "Prairie Mist Solar",
+      "Prairie Mist Solar Project, LLC",
+      "Amazon Solar Farm Arkansas - Prairie Mist"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Utility-scale solar and battery storage development",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Primergy develops, finances, owns and operates utility-scale solar and battery-storage projects across North America. Quinbrook launched the platform in 2020 and continues to identify it as a 100%-owned portfolio company. Primergy's operating projects include Ash Creek Solar, a 408 MWac Texas facility that entered commercial operation on July 17, 2025, and Prairie Mist Solar, a 100 MWac Ashley County, Arkansas facility acquired in 2021, financed with $300 million of debt and tax-equity commitments in November 2023, and brought into commercial operation on December 18, 2024. Ash Creek Solar LLC, Prairie Mist Solar Project, LLC and related project names are project/SPV identities within Primergy and are not separate manager-level portfolio companies. No later Primergy sale or signed pending ownership transaction was identified through September 1, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.primergypower.com/",
+    "yearFounded": 2020,
+    "headquarters": "California; Texas; Arkansas; Nevada",
+    "lastVerifiedAt": "2026-09-01T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk96q027zivheu1eri9ch",
+        "managerName": "Quinbrook",
+        "organizationName": "Quinbrook",
+        "fundName": null,
+        "vehicleName": "Quinbrook-managed Primergy platform",
+        "stake": "100%",
+        "investmentYear": 2020,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmko5051bivhefvfcltsl",
+        "date": "2021",
+        "event": "Primergy acquired the Ash Creek project from Orion Renewable Energy Group; the exact closing date was not publicly disclosed.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.primergypower.com/news/primergy-announces-the-commissioning-of-ash-creek-solar-in-texas"
+        ]
+      },
+      {
+        "id": "cmrxpmkoq051civhe7dr0vaw6",
+        "date": "Mar 2024",
+        "event": "Primergy signed a long-term power purchase agreement with Microsoft for the Ash Creek project.",
+        "category": "FINANCING",
+        "sortDate": "2024-03-01T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.primergypower.com/news/primergy-secures-588m-in-project-financing-and-power-purchase-agreement-with-microsoft-for-408-mw-solar-project-in-texas"
+        ]
+      },
+      {
+        "id": "cmrxpmkpa051divhe9fdg7hxz",
+        "date": "Mar 12, 2024",
+        "event": "Primergy closed $588 million of project financing and a long-term power purchase agreement with Microsoft for Ash Creek.",
+        "category": "FINANCING",
+        "sortDate": "2024-03-12T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.primergypower.com/news/primergy-secures-588m-in-project-financing-and-power-purchase-agreement-with-microsoft-for-408-mw-solar-project-in-texas"
+        ]
+      },
+      {
+        "id": "cmrxpmkpv051eivhe3cg3i2yp",
+        "date": "Oct 18, 2024",
+        "event": "Primergy secured $350 million of tax-equity financing for Ash Creek; the investor positions are financing rather than sponsor ownership.",
+        "category": "FINANCING",
+        "sortDate": "2024-10-18T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.primergypower.com/news/primergy-announces-the-commissioning-of-ash-creek-solar-in-texas"
+        ]
+      },
+      {
+        "id": "cmrxpmldv0526ivhetmltdv08",
+        "date": "May 18, 2020",
+        "event": "Quinbrook launched Primergy as a new portfolio company to develop solar and battery storage projects across North America.",
+        "category": "FINANCING",
+        "sortDate": "2020-05-18T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.primergypower.com/news/quinbrook-launches-primergy-solar-to-develop-solar-and-battery-storage-across-north-america"
+        ]
+      },
+      {
+        "id": "cmrxpmlee0527ivhei8mk8p55",
+        "date": "Oct 2022",
+        "event": "Quinbrook and Primergy announced APG's investment in the Gemini Solar + Storage project.",
+        "category": "FINANCING",
+        "sortDate": "2022-10-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmlez0528ivhe9yi00oxj",
+        "date": "Jul 17, 2025",
+        "event": "Primergy announced commercial operation of the 408 MWac Ash Creek Solar project in Texas.",
+        "category": "EXPANSION",
+        "sortDate": "2025-07-17T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.primergypower.com/news/primergy-announces-the-commissioning-of-ash-creek-solar-in-texas"
+        ]
+      },
+      {
+        "id": "cmrxpmlfi0529ivheeuligxm0",
+        "date": "Mar 2026",
+        "event": "Primergy reported lifetime closed transactions of more than $5 billion.",
+        "category": "FINANCING",
+        "sortDate": "2026-03-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmlc00523ivheubd71c1x",
+        "date": "2021",
+        "event": "Primergy acquired the Prairie Mist Solar project; the exact closing date and seller were not publicly disclosed.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.quinbrook.com/projects/prairie-mist/"
+        ]
+      },
+      {
+        "id": "cmrxpmlbi0522ivhemzv30w4q",
+        "date": "Nov 29, 2023",
+        "event": "Primergy closed $300 million of debt and tax-equity commitments for Prairie Mist Solar; the capital providers are financing parties rather than separate sponsor owners.",
+        "category": "FINANCING",
+        "sortDate": "2023-11-29T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.primergypower.com/news/primergy-secures-300m-debt-and-tax-equity-investment-for-prairie-mist-solar-project"
+        ]
+      },
+      {
+        "id": "cmrxpmlcu0525ivhehie8hnmf",
+        "date": "Dec 18, 2024",
+        "event": "Primergy announced that the 100 MWac Prairie Mist Solar project was fully operational in Arkansas.",
+        "category": "EXPANSION",
+        "sortDate": "2024-12-18T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.primergypower.com/news/primergys-prairie-mist-solar-project-reaches-commercial-operation"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsl960cteivhe01m5n9fp",
+        "label": "Primergypower — Primergy",
+        "url": "https://www.primergypower.com/about/primergy",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Primergy company profile and operating-platform identity",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpslcu0ctgivhejae985iu",
+        "label": "Investment date source — Quinbrook — Primergy",
+        "url": "https://www.primergypower.com/news/quinbrook-launches-primergy-solar-to-develop-solar-and-battery-storage-across-north-america",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Quinbrook initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpslde0cthivhej1s8txmz",
+        "label": "Close date source — Quinbrook — Gemini Solar + Storage",
+        "url": "https://www.quinbrook.com/news-insights/quinbrook-closes-600m-solarstorage-continuation-fund/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Quinbrook — Primergy",
+        "isPrimary": false
+      },
+      {
+        "id": "cmtj928r1000v2h2byihkau3a",
+        "label": "Quinbrook — Primergy portfolio",
+        "url": "https://www.quinbrook.com/portfolio/primergy/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Quinbrook's 100% Primergy ownership and Ash Creek project boundary",
+        "isPrimary": false
+      },
+      {
+        "id": "cmtj928wr000x2h2b1hdyboca",
+        "label": "Quinbrook — Ash Creek project",
+        "url": "https://www.quinbrook.com/projects/ash-creek/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Ash Creek's status as an operating project within Primergy",
+        "isPrimary": false
+      },
+      {
+        "id": "cmtj9290k000y2h2b6hmernh0",
+        "label": "Primergypower — Ash Creek Solar",
+        "url": "https://www.primergypower.com/news/primergy-announces-the-commissioning-of-ash-creek-solar-in-texas",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "2021 project acquisition and July 17, 2025 commercial operation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmtj9294d000z2h2bdqaa30li",
+        "label": "Investment date source — Quinbrook — Ash Creek Solar",
+        "url": "https://www.primergypower.com/news/primergy-secures-588m-in-project-financing-and-power-purchase-agreement-with-microsoft-for-408-mw-solar-project-in-texas",
+        "sourceType": "ARTICLE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "March 2024 project financing, PPA and construction milestone",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Quinbrook — Prairie Mist project",
+        "url": "https://www.quinbrook.com/projects/prairie-mist/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Prairie Mist project boundary, 2021 entry, 100 MW scale and operating status",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Primergypower — Prairie Mist Solar",
+        "url": "https://www.primergypower.com/projects/amazon-solar-farm-arkansas---prairie-mist",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Primergy's operating 100 MWac Prairie Mist project",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Primergypower — Prairie Mist Solar",
+        "url": "https://www.primergypower.com/news/primergys-prairie-mist-solar-project-reaches-commercial-operation",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "December 18, 2024 commercial-operation announcement",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Close date source — Quinbrook — Prairie Mist Solar",
+        "url": "https://www.primergypower.com/news/primergy-secures-300m-debt-and-tax-equity-investment-for-prairie-mist-solar-project",
+        "sourceType": "ARTICLE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "November 2023 debt and tax-equity commitments",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "005ad0b23e1e745639b775f52d8467799b331e1e15cf5e7f71758039f0ca7d97",
+  "proposalSha256": "d6804b53b6575a8c34e5bfaa46015249f840d694aadbfebf82eaf22696c69d97"
+}

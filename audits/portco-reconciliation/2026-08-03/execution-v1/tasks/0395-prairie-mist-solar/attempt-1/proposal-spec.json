@@ -1,0 +1,157 @@
+{
+  "generatedAt": "2026-09-01T23:11:00.000Z",
+  "actions": [
+    "CORRECT_COMPANY",
+    "MERGE_COMPANIES"
+  ],
+  "retiredCompanyIds": [
+    "cmrxpjmn3018divhea2b9e4gv"
+  ],
+  "relationMerges": [
+    {
+      "kind": "OWNERSHIP_PERIOD",
+      "retiredRelationId": "cmrxpk93p027yivheadgv56pq",
+      "canonicalRelationId": "cmrxpk96q027zivheu1eri9ch",
+      "rationale": "Prairie Mist's owner row is a project-level duplicate of Quinbrook's continuing 100% ownership of Primergy."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxpmlce0524ivhe2uulvipa",
+      "canonicalRelationId": "cmrxpmlcu0525ivhehie8hnmf",
+      "rationale": "The month-only Prairie Mist operating milestone is preserved by the exact December 18, 2024 milestone."
+    }
+  ],
+  "reviewedSeedRetirementTaskIds": [],
+  "rationale": "Merge Prairie Mist Solar into Primergy. Quinbrook identifies Primergy as its 100%-owned portfolio company and Prairie Mist as a 100 MWac operating project beneath it. Primergy acquired the project in 2021, closed $300 million of debt and tax-equity commitments in November 2023, and announced commercial operation on December 18, 2024. Financing providers, Amazon, North Little Rock, Primoris and Entergy/MISO are not treated as sponsor owners. The project identity and material history are preserved on Primergy.",
+  "evidence": [
+    {
+      "url": "https://www.quinbrook.com/portfolio/primergy/",
+      "purpose": "Canonical portfolio-company and project boundary",
+      "supports": [
+        "Primergy is Quinbrook's 100%-owned portfolio company",
+        "Prairie Mist is a project beneath Primergy"
+      ]
+    },
+    {
+      "url": "https://www.quinbrook.com/projects/prairie-mist/",
+      "purpose": "Prairie Mist project status and chronology",
+      "supports": [
+        "The project is operating, 100 MW, and entered the portfolio in 2021"
+      ]
+    },
+    {
+      "url": "https://www.primergypower.com/news/primergys-prairie-mist-solar-project-reaches-commercial-operation",
+      "purpose": "Commercial-operation milestone",
+      "supports": [
+        "Primergy announced full operation on December 18, 2024"
+      ]
+    },
+    {
+      "url": "https://www.primergypower.com/news/primergy-secures-300m-debt-and-tax-equity-investment-for-prairie-mist-solar-project",
+      "purpose": "Financing milestone and non-owner capital roles",
+      "supports": [
+        "Primergy closed $300 million of debt and tax-equity commitments in November 2023"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "companyFieldUpdates": {
+    "aliases": [
+      "Primergy Solar LLC",
+      "Ash Creek Solar",
+      "Ash Creek Solar LLC",
+      "Sam Switch Solar",
+      "Prairie Mist Solar",
+      "Prairie Mist Solar Project, LLC",
+      "Amazon Solar Farm Arkansas - Prairie Mist"
+    ],
+    "description": "Primergy develops, finances, owns and operates utility-scale solar and battery-storage projects across North America. Quinbrook launched the platform in 2020 and continues to identify it as a 100%-owned portfolio company. Primergy's operating projects include Ash Creek Solar, a 408 MWac Texas facility that entered commercial operation on July 17, 2025, and Prairie Mist Solar, a 100 MWac Ashley County, Arkansas facility acquired in 2021, financed with $300 million of debt and tax-equity commitments in November 2023, and brought into commercial operation on December 18, 2024. Ash Creek Solar LLC, Prairie Mist Solar Project, LLC and related project names are project/SPV identities within Primergy and are not separate manager-level portfolio companies. No later Primergy sale or signed pending ownership transaction was identified through September 1, 2026.",
+    "website": "https://www.primergypower.com/",
+    "lastVerifiedAt": "2026-09-01T00:00:00.000Z"
+  },
+  "ownershipPeriodUpdates": [],
+  "ownershipPeriodRemovals": [],
+  "ownershipPeriodAdditions": [],
+  "pendingOwnershipTransactionUpdates": [],
+  "pendingOwnershipTransactionAdditions": [],
+  "milestoneUpdates": [],
+  "milestoneTransfers": [
+    {
+      "id": "cmrxpmlc00523ivheubd71c1x",
+      "date": "2021",
+      "event": "Primergy acquired the Prairie Mist Solar project; the exact closing date and seller were not publicly disclosed.",
+      "category": "ACQUISITION",
+      "sortDate": "2021-01-01T00:00:00.000Z",
+      "evidenceUrls": [
+        "https://www.quinbrook.com/projects/prairie-mist/"
+      ]
+    },
+    {
+      "id": "cmrxpmlbi0522ivhemzv30w4q",
+      "date": "Nov 29, 2023",
+      "event": "Primergy closed $300 million of debt and tax-equity commitments for Prairie Mist Solar; the capital providers are financing parties rather than separate sponsor owners.",
+      "category": "FINANCING",
+      "sortDate": "2023-11-29T05:00:00.000Z",
+      "evidenceUrls": [
+        "https://www.primergypower.com/news/primergy-secures-300m-debt-and-tax-equity-investment-for-prairie-mist-solar-project"
+      ]
+    },
+    {
+      "id": "cmrxpmlcu0525ivhehie8hnmf",
+      "date": "Dec 18, 2024",
+      "event": "Primergy announced that the 100 MWac Prairie Mist Solar project was fully operational in Arkansas.",
+      "category": "EXPANSION",
+      "sortDate": "2024-12-18T05:00:00.000Z",
+      "evidenceUrls": [
+        "https://www.primergypower.com/news/primergys-prairie-mist-solar-project-reaches-commercial-operation"
+      ]
+    }
+  ],
+  "citationUpdates": [
+    {
+      "id": "cmrxpsl960cteivhe01m5n9fp",
+      "set": {
+        "evidenceLabel": "Primergy company profile and operating-platform identity",
+        "isPrimary": true
+      }
+    }
+  ],
+  "citationAdditions": [
+    {
+      "id": null,
+      "label": "Quinbrook — Prairie Mist project",
+      "url": "https://www.quinbrook.com/projects/prairie-mist/",
+      "sourceType": "WEBSITE",
+      "purpose": "OPERATIONS_ASSETS",
+      "evidenceLabel": "Prairie Mist project boundary, 2021 entry, 100 MW scale and operating status",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "Primergypower — Prairie Mist Solar",
+      "url": "https://www.primergypower.com/projects/amazon-solar-farm-arkansas---prairie-mist",
+      "sourceType": "WEBSITE",
+      "purpose": "OPERATIONS_ASSETS",
+      "evidenceLabel": "Primergy's operating 100 MWac Prairie Mist project",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "Primergypower — Prairie Mist Solar",
+      "url": "https://www.primergypower.com/news/primergys-prairie-mist-solar-project-reaches-commercial-operation",
+      "sourceType": "ARTICLE",
+      "purpose": "MILESTONE_EVENT",
+      "evidenceLabel": "December 18, 2024 commercial-operation announcement",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "Close date source — Quinbrook — Prairie Mist Solar",
+      "url": "https://www.primergypower.com/news/primergy-secures-300m-debt-and-tax-equity-investment-for-prairie-mist-solar-project",
+      "sourceType": "ARTICLE",
+      "purpose": "FINANCING_FILINGS",
+      "evidenceLabel": "November 2023 debt and tax-equity commitments",
+      "isPrimary": false
+    }
+  ]
+}

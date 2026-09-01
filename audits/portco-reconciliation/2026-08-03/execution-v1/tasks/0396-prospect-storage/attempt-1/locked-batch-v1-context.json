@@ -1,0 +1,514 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0396:prospect-storage:78e66bf0",
+  "taskIndex": 396,
+  "companyName": "Prospect Storage",
+  "generatedAt": "2026-09-01T23:09:32.623Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0396-prospect-storage/attempt-1/locked-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 396,
+    "taskId": "ledger:0396:prospect-storage:78e66bf0",
+    "canonicalKey": "prospect-storage|united-states",
+    "companyName": "Prospect Storage",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 83,
+    "managers": [
+      "Quinbrook Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "083-quinbrook-infrastructure-partners:repo-only:006:prospect-storage"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjmo2018fivhesphmyffh"
+    ],
+    "seedKeys": [
+      "prospect storage|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.quinbrook.com/portfolio/glidepath/",
+      "https://www.quinbrook.com/projects/prospect-storage/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Quinbrook Infrastructure Partners MATCHED_ELSEWHERE: Battery storage project owned and operated through GlidePath; not a separate Quinbrook platform investment.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "REVIEWED_MERGE_CANONICAL_TARGET",
+    "targetCompanyId": "cmrxpjmkz0189ivheyzth0dam",
+    "linkedQueueTaskId": null,
+    "immutableRetiredCompanyId": "cmrxpjmo2018fivhesphmyffh"
+  },
+  "resolvedCanonicalKey": "glidepath-power-solutions|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjmkz0189ivheyzth0dam",
+    "name": "GlidePath Power Solutions",
+    "aliases": [
+      "GlidePath Power Solutions LLC",
+      "GlidePath",
+      "Byrd Ranch",
+      "Byrd Ranch Storage",
+      "Byrd Ranch Storage Project",
+      "Byrd Ranch Storage LLC",
+      "Meyersdale Energy Storage",
+      "Meyersdale Battery",
+      "Meyersdale Storage",
+      "Meyersdale Storage, LLC"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Battery energy storage development and operation",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "GlidePath Power Solutions develops, owns and operates battery-energy-storage projects across U.S. power markets. Quinbrook acquired the platform in 2017 through its low-carbon power strategy and continues to list GlidePath as a portfolio company. The platform's operating projects include Byrd Ranch, a 50 MW/50 MWh ERCOT battery facility in Sweeny, Texas held through Byrd Ranch Storage LLC, and Meyersdale, an 18 MW/12 MWh PJM battery facility in Somerset County, Pennsylvania held through Meyersdale Storage, LLC. Byrd Ranch entered the portfolio in 2019 and began operating in November 2022; Meyersdale entered service in 2015, was acquired by GlidePath on March 19, 2019 and was repowered in late 2024. These project/SPV identities are not separate manager-level portfolio companies. No later GlidePath sale or signed pending ownership transaction was identified through September 1, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://glidepath.net/",
+    "yearFounded": null,
+    "headquarters": "Chicago, Illinois",
+    "lastVerifiedAt": "2026-09-01T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk91m027uivherjrqsi5p",
+        "managerName": "Quinbrook",
+        "organizationName": "Quinbrook",
+        "fundName": null,
+        "vehicleName": "Quinbrook Low Carbon Power Fund",
+        "stake": "100%",
+        "investmentYear": 2017,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmkri051givhevf5aapge",
+        "date": "2019",
+        "event": "Byrd Ranch entered the GlidePath project portfolio; the exact acquisition date and seller were not publicly disclosed.",
+        "category": "ACQUISITION",
+        "sortDate": "2019-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.quinbrook.com/projects/byrd-ranch/"
+        ]
+      },
+      {
+        "id": "cmrxpmkso051iivhe72q35zqg",
+        "date": "Jan 25, 2022",
+        "event": "GlidePath announced Byrd Ranch as a new 50 MW/50 MWh addition to its Texas battery-storage portfolio.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-01-25T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.quinbrook.com/news-insights/glidepath-adds-50mw-to-texas-battery-storage-portfolio/"
+        ]
+      },
+      {
+        "id": "cmrxpmkte051jivhe7ado9gvr",
+        "date": "Nov 7, 2022",
+        "event": "GlidePath announced that Byrd Ranch had completed construction and commissioning and begun operations.",
+        "category": "EXPANSION",
+        "sortDate": "2022-11-07T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.businesswire.com/news/home/20221107005085/en/GlidePath-Begins-Operations-at-New-50MW-Battery-Storage-Facility-Near-Houston-TX"
+        ]
+      },
+      {
+        "id": "cmrxpmkzo051oivhefbg0gz9b",
+        "date": "2017",
+        "event": "Quinbrook acquired GlidePath through its low-carbon power strategy.",
+        "category": "ACQUISITION",
+        "sortDate": "2017-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.prnewswire.com/news-releases/quinbrook-acquires-223-mw-wind-power-portfolio-300584615.html"
+        ]
+      },
+      {
+        "id": "cmrxpml06051pivheifz3w2u0",
+        "date": "Jan 2018",
+        "event": "GlidePath acquired a wind power portfolio under Quinbrook ownership.",
+        "category": "ACQUISITION",
+        "sortDate": "2018-01-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpml0r051qivheqs6lb8p5",
+        "date": "Jan 18, 2018",
+        "event": "GlidePath acquired a 223 MW operational wind portfolio from NextEra.",
+        "category": "ACQUISITION",
+        "sortDate": "2018-01-18T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpml1a051rivhe04sqwb0u",
+        "date": "Jan 25, 2022",
+        "event": "GlidePath completed financing and began construction of the 50 MW/50 MWh Byrd Ranch storage project in Texas.",
+        "category": "EXPANSION",
+        "sortDate": "2022-01-25T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.quinbrook.com/news-insights/glidepath-adds-50mw-to-texas-battery-storage-portfolio/"
+        ]
+      },
+      {
+        "id": "cmrxpml1u051sivhelsno6c1i",
+        "date": "Jan 2024",
+        "event": "GlidePath appointed a new chief commercial officer.",
+        "category": "MANAGEMENT",
+        "sortDate": "2024-01-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpml56051wivhef4ogbwk0",
+        "date": "Nov 2015",
+        "event": "The 18 MW/12 MWh Meyersdale battery entered service in PJM.",
+        "category": "EXPANSION",
+        "sortDate": "2015-11-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://mbrweb.ferc.gov/SearchMBRAssetAppendix/AssetAppendixDetails?AssetAppendixId=7715"
+        ]
+      },
+      {
+        "id": "cmrxpml5p051xivheergo2qep",
+        "date": "Mar 19, 2019",
+        "event": "GlidePath Storage Operations completed the acquisition of Meyersdale Storage from the NextEra/FPL group.",
+        "category": "ACQUISITION",
+        "sortDate": "2019-03-19T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.psc.state.fl.us/library/filings/2021/02800-2021/02800-2021.pdf"
+        ]
+      },
+      {
+        "id": "cmrxpml68051yivhepxp89cc8",
+        "date": "Late 2024",
+        "event": "GlidePath completed the repowering of the Meyersdale battery project.",
+        "category": "EXPANSION",
+        "sortDate": "2024-12-31T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.quinbrook.com/projects/meyersdale-battery/"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpskl10cs9ivhet2i6ou65",
+        "label": "Glidepath — GlidePath Power Solutions",
+        "url": "https://glidepath.net/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "GlidePath company profile and operating-platform identity",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpsklv0csbivhexbnjub0f",
+        "label": "Investment date source — Quinbrook — GlidePath Power Solutions",
+        "url": "https://www.quinbrook.com/portfolio/glidepath/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current GlidePath portfolio-company status and Byrd Ranch/Meyersdale project boundary",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpskmt0csdivhenszb6q29",
+        "label": "Quinbrook — GlidePath Power Solutions",
+        "url": "https://www.quinbrook.com/news-insights/glidepath-partners-with-renewance-to-advance-battery-recycling-for-energy-storage-systems/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Quinbrook — GlidePath Power Solutions",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsknr0csfivhe8x9rfi3t",
+        "label": "PR Newswire — GlidePath Power Solutions",
+        "url": "https://www.prnewswire.com/news-releases/quinbrook-acquires-223-mw-wind-power-portfolio-300584615.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "PR Newswire transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsko80csgivhec4412qy5",
+        "label": "Quinbrook — Byrd Ranch",
+        "url": "https://www.quinbrook.com/news-insights/glidepath-adds-50mw-to-texas-battery-storage-portfolio/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Quinbrook operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmtj92gnz00122h2b2g76cod7",
+        "label": "Quinbrook — Byrd Ranch",
+        "url": "https://www.quinbrook.com/projects/byrd-ranch/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Byrd Ranch capacity, 2019 entry and operating status within GlidePath",
+        "isPrimary": false
+      },
+      {
+        "id": "cmtj92gtu00142h2bgnkfmcqa",
+        "label": "GlidePath — Byrd Ranch operations",
+        "url": "https://www.businesswire.com/news/home/20221107005085/en/GlidePath-Begins-Operations-at-New-50MW-Battery-Storage-Facility-Near-Houston-TX",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "November 7, 2022 Byrd Ranch operating commencement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmtj92gxn00152h2b4h8b8q33",
+        "label": "Investment date source — Quinbrook — Meyersdale Energy Storage",
+        "url": "https://www.quinbrook.com/projects/meyersdale-battery/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Meyersdale capacity, current operating status and 2024 repowering",
+        "isPrimary": false
+      },
+      {
+        "id": "cmtj92h1g00162h2bcv2u09qb",
+        "label": "FERC — Sequitur asset appendix",
+        "url": "https://mbrweb.ferc.gov/SearchMBRAssetAppendix/AssetAppendixDetails?AssetAppendixId=7715",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Meyersdale Storage legal identity, capacity and Quinbrook/GlidePath ownership chain",
+        "isPrimary": false
+      },
+      {
+        "id": "cmtj92h7500182h2bnqz6kxqv",
+        "label": "Florida Public Service Commission — Meyersdale sale schedule",
+        "url": "https://www.psc.state.fl.us/library/filings/2021/02800-2021/02800-2021.pdf",
+        "sourceType": "OTHER",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "March 19, 2019 completed sale to GlidePath Storage Operations",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "GlidePath Power Solutions",
+    "investmentFirm": "Quinbrook",
+    "sector": "Power & ET",
+    "subsector": "Battery energy storage development and operation",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Quinbrook Low Carbon Power Fund",
+    "description": "GlidePath Power Solutions develops, owns and operates battery-energy-storage projects across U.S. power markets. Quinbrook acquired the platform in 2017 through its low-carbon power strategy and continues to list GlidePath as a portfolio company. The platform's operating projects include Byrd Ranch, a 50 MW/50 MWh ERCOT battery facility in Sweeny, Texas held through Byrd Ranch Storage LLC, and Meyersdale, an 18 MW/12 MWh PJM battery facility in Somerset County, Pennsylvania held through Meyersdale Storage, LLC. Byrd Ranch entered the portfolio in 2019 and began operating in November 2022; Meyersdale entered service in 2015, was acquired by GlidePath on March 19, 2019 and was repowered in late 2024. These project/SPV identities are not separate manager-level portfolio companies. No later GlidePath sale or signed pending ownership transaction was identified through September 1, 2026.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "website": "https://glidepath.net/",
+    "investmentYear": 2017,
+    "headquarters": "Chicago, Illinois",
+    "milestones": [
+      {
+        "date": "2017",
+        "event": "Quinbrook acquired GlidePath through its low-carbon power strategy.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Jan 2018",
+        "event": "GlidePath acquired a wind power portfolio under Quinbrook ownership.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Jan 18, 2018",
+        "event": "GlidePath acquired a 223 MW operational wind portfolio from NextEra.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Jan 25, 2022",
+        "event": "GlidePath completed financing and began construction of the 50 MW/50 MWh Byrd Ranch storage project in Texas.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Jan 2024",
+        "event": "GlidePath appointed a new chief commercial officer.",
+        "category": "Management"
+      },
+      {
+        "date": "2019",
+        "event": "Byrd Ranch entered the GlidePath project portfolio; the exact acquisition date and seller were not publicly disclosed.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Jan 25, 2022",
+        "event": "GlidePath announced Byrd Ranch as a new 50 MW/50 MWh addition to its Texas battery-storage portfolio.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Nov 7, 2022",
+        "event": "GlidePath announced that Byrd Ranch had completed construction and commissioning and begun operations.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Nov 2015",
+        "event": "The 18 MW/12 MWh Meyersdale battery entered service in PJM.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Mar 19, 2019",
+        "event": "GlidePath Storage Operations completed the acquisition of Meyersdale Storage from the NextEra/FPL group.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Late 2024",
+        "event": "GlidePath completed the repowering of the Meyersdale battery project.",
+        "category": "Expansion"
+      }
+    ],
+    "management": [],
+    "sources": [
+      {
+        "label": "Glidepath — GlidePath Power Solutions",
+        "url": "https://glidepath.net/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "GlidePath company profile and operating-platform identity"
+      },
+      {
+        "label": "Investment date source — Quinbrook — GlidePath Power Solutions",
+        "url": "https://www.quinbrook.com/portfolio/glidepath/",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current GlidePath portfolio-company status and Byrd Ranch/Meyersdale project boundary"
+      },
+      {
+        "label": "Quinbrook — GlidePath Power Solutions",
+        "url": "https://www.quinbrook.com/news-insights/glidepath-partners-with-renewance-to-advance-battery-recycling-for-energy-storage-systems/",
+        "type": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Quinbrook — GlidePath Power Solutions"
+      },
+      {
+        "label": "PR Newswire — GlidePath Power Solutions",
+        "url": "https://www.prnewswire.com/news-releases/quinbrook-acquires-223-mw-wind-power-portfolio-300584615.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "PR Newswire transaction or milestone detail"
+      },
+      {
+        "label": "Quinbrook — Byrd Ranch",
+        "url": "https://www.quinbrook.com/news-insights/glidepath-adds-50mw-to-texas-battery-storage-portfolio/",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Quinbrook operations / asset details"
+      },
+      {
+        "label": "Quinbrook — Byrd Ranch",
+        "url": "https://www.quinbrook.com/projects/byrd-ranch/",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Byrd Ranch capacity, 2019 entry and operating status within GlidePath"
+      },
+      {
+        "label": "GlidePath — Byrd Ranch operations",
+        "url": "https://www.businesswire.com/news/home/20221107005085/en/GlidePath-Begins-Operations-at-New-50MW-Battery-Storage-Facility-Near-Houston-TX",
+        "type": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "November 7, 2022 Byrd Ranch operating commencement"
+      },
+      {
+        "label": "Investment date source — Quinbrook — Meyersdale Energy Storage",
+        "url": "https://www.quinbrook.com/projects/meyersdale-battery/",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Meyersdale capacity, current operating status and 2024 repowering"
+      },
+      {
+        "label": "FERC — Sequitur asset appendix",
+        "url": "https://mbrweb.ferc.gov/SearchMBRAssetAppendix/AssetAppendixDetails?AssetAppendixId=7715",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Meyersdale Storage legal identity, capacity and Quinbrook/GlidePath ownership chain"
+      },
+      {
+        "label": "Florida Public Service Commission — Meyersdale sale schedule",
+        "url": "https://www.psc.state.fl.us/library/filings/2021/02800-2021/02800-2021.pdf",
+        "type": "OTHER",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "March 19, 2019 completed sale to GlidePath Storage Operations"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Quinbrook",
+        "ownershipVehicle": "Quinbrook Low Carbon Power Fund",
+        "vehicleName": "Quinbrook Low Carbon Power Fund",
+        "investmentYear": 2017,
+        "stake": "100%",
+        "status": "Active",
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpigao004eivhedx8km4yh",
+        "name": "Quinbrook",
+        "updatedAt": "2026-07-23T16:09:28.320Z"
+      }
+    ],
+    "redirects": [
+      {
+        "retiredId": "cmrxpjmjy0187ivhehg62f3yx",
+        "companyId": "cmrxpjmkz0189ivheyzth0dam",
+        "reason": "CANONICAL_MERGE",
+        "createdAt": "2026-09-01T22:39:51.407Z"
+      },
+      {
+        "retiredId": "cmrxpjmm2018bivhe2b0c28o5",
+        "companyId": "cmrxpjmkz0189ivheyzth0dam",
+        "reason": "CANONICAL_MERGE",
+        "createdAt": "2026-09-01T22:39:51.544Z"
+      }
+    ]
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0396:prospect-storage:78e66bf0",
+    "taskIndex": 396,
+    "canonicalKey": "prospect-storage|united-states",
+    "capturedAt": "2026-09-01T23:09:32.623Z",
+    "databaseRevision": "revision:dd9440e316dd2e91c5f1e5488e9acff7864f9be8c27b21e9c519cf71a83dc6dd",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "6998858c03a25a808476ebc427b66f73d56872e32649ca2c91c7fb97f8f71900",
+    "productionSnapshotSha256": "1d819280931968d1d01d7b890073a048fa4e77d928f997ecd0bdd347de8ab9c1",
+    "targetCompanySnapshotSha256": "a60f87a17b1afa9471693177c698888ddc55dad89526431702807c94470e6149",
+    "seedEntrySha256": "56aac3c1e43b34e4be44954cbe61d14b640b304cd9df6b256fe6012e22536fe2",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "63def98fd9082f8e2d91cb91c98f8c63f1fde89b4f9c1d1ea74d53c8446a9c2e",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "52c944c13a5e74630cefca11499339fafbdd9f1705bdf046c1d4d1c3542bd283",
+      "citationsSha256": "05f6b0232dc8741a8bab906181fc61e543f46b6863b32620cfd020404a8eb6d4",
+      "redirectsSha256": "ef623f58532675dd02169ff7f0ca9c1d39eb83acec44d0d410f2eb041e188fde"
+    },
+    "dependencySha256": "2c4f1085d336299aa8d1a7f065c683bbdda357cc1cf2f733b31766b6e6cad614",
+    "stateSha256": "fce463a7164d8a10f4680048f2e2b4dfcf5630c0158e557def381bed6ec3e077",
+    "taskSnapshotSha256": "17b306f86456ba863ef2c54452eabdbaa4e967477c86b595de4c5d232b36a512"
+  },
+  "contextSha256": "91ef77712ec33b5eca65db647f5ca093e1ab50dcabe59ee33010c4144431f19b"
+}

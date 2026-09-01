@@ -1,0 +1,277 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0397:purposeenergy-minster:d96ff6cd",
+  "taskIndex": 397,
+  "companyName": "PurposeEnergy Minster",
+  "generatedAt": "2026-09-01T23:09:43.413Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0397-purposeenergy-minster/attempt-1/locked-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 397,
+    "taskId": "ledger:0397:purposeenergy-minster:d96ff6cd",
+    "canonicalKey": "purposeenergy-minster|united-states",
+    "companyName": "PurposeEnergy Minster",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 83,
+    "managers": [
+      "Quinbrook Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "083-quinbrook-infrastructure-partners:repo-only:007:purposeenergy-minster"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjmp1018hivheqruh0kpn"
+    ],
+    "seedKeys": [
+      "purposeenergy minster|United States"
+    ],
+    "evidenceUrls": [
+      "https://purposeenergy.com/project/minster/",
+      "https://www.quinbrook.com/portfolio/purposeenergy/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Quinbrook Infrastructure Partners MATCHED_ELSEWHERE: Anaerobic digestion facility within the PurposeEnergy platform; counted under the parent platform.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "REVIEWED_MERGE_CANONICAL_TARGET",
+    "targetCompanyId": "cmrxpjmoi018givhecyo0ujvv",
+    "linkedQueueTaskId": null,
+    "immutableRetiredCompanyId": "cmrxpjmp1018hivheqruh0kpn"
+  },
+  "resolvedCanonicalKey": "purposeenergy|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjmoi018givhecyo0ujvv",
+    "name": "PurposeEnergy",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Organics-to-energy and renewable fuels",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "PurposeEnergy develops, owns, and operates organics-to-energy infrastructure that converts food and beverage waste into biogas, renewable electricity, renewable natural gas, clean water, and related by-products. Its customers are food and beverage manufacturers, breweries, processors, and other industrial waste generators that need onsite or near-site treatment and energy recovery. The operating model is asset-heavy and based on anaerobic digestion and related treatment infrastructure tied to industrial waste streams. Company materials state that the platform has developed, owned, and operated multiple projects over the last 15 years. Quinbrook acquired PurposeEnergy in 2023 as its entry platform in renewable fuels.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2007,
+    "headquarters": "New Hampshire; Vermont; Ohio",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk98h0281ivhe89hg0afj",
+        "managerName": "Quinbrook",
+        "organizationName": "Quinbrook",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmljd052eivhe59vew4sw",
+        "date": "2007",
+        "event": "Public sources identify PurposeEnergy's founding year as 2007.",
+        "category": "FOUNDING",
+        "sortDate": "2007-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmljy052fivhe45pfakxn",
+        "date": "2023",
+        "event": "Quinbrook said the acquisition marked its move into renewable fuels infrastructure.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmlki052givhe0ji6e568",
+        "date": "Apr 2023",
+        "event": "Quinbrook announced the acquisition of PurposeEnergy.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-04-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmll0052hivhe6wwepw05",
+        "date": "Oct 2024",
+        "event": "PurposeEnergy opened its Middlebury, Vermont facility.",
+        "category": "EXPANSION",
+        "sortDate": "2024-10-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmlli052iivheuzo8rvmj",
+        "date": "May 2025",
+        "event": "PurposeEnergy opened its St. Albans, Vermont facility.",
+        "category": "EXPANSION",
+        "sortDate": "2025-05-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpslhg0ctpivheidw5s3lv",
+        "label": "Purposeenergy — PurposeEnergy",
+        "url": "https://purposeenergy.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Purposeenergy company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpslio0ctrivhepfosisat",
+        "label": "Announcement date source — Quinbrook — PurposeEnergy",
+        "url": "https://www.quinbrook.com/news-insights/quinbrook-moves-into-renewable-fuels/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Quinbrook transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsljn0cttivheiav9alzc",
+        "label": "Investment date source — Quinbrook — PurposeEnergy",
+        "url": "https://www.quinbrook.com/portfolio/purposeenergy/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Quinbrook initial investment / ownership",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "PurposeEnergy",
+    "investmentFirm": "Quinbrook",
+    "sector": "Power & ET",
+    "subsector": "Organics-to-energy and renewable fuels",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "PurposeEnergy develops, owns, and operates organics-to-energy infrastructure that converts food and beverage waste into biogas, renewable electricity, renewable natural gas, clean water, and related by-products. Its customers are food and beverage manufacturers, breweries, processors, and other industrial waste generators that need onsite or near-site treatment and energy recovery. The operating model is asset-heavy and based on anaerobic digestion and related treatment infrastructure tied to industrial waste streams. Company materials state that the platform has developed, owned, and operated multiple projects over the last 15 years. Quinbrook acquired PurposeEnergy in 2023 as its entry platform in renewable fuels.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2007,
+    "investmentYear": 2023,
+    "headquarters": "New Hampshire; Vermont; Ohio",
+    "milestones": [
+      {
+        "date": "2007",
+        "event": "Public sources identify PurposeEnergy's founding year as 2007.",
+        "category": "Founding"
+      },
+      {
+        "date": "2023",
+        "event": "Quinbrook said the acquisition marked its move into renewable fuels infrastructure.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Apr 2023",
+        "event": "Quinbrook announced the acquisition of PurposeEnergy.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Oct 2024",
+        "event": "PurposeEnergy opened its Middlebury, Vermont facility.",
+        "category": "Expansion"
+      },
+      {
+        "date": "May 2025",
+        "event": "PurposeEnergy opened its St. Albans, Vermont facility.",
+        "category": "Expansion"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Purposeenergy — PurposeEnergy",
+        "url": "https://purposeenergy.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Announcement date source — Quinbrook — PurposeEnergy",
+        "url": "https://www.quinbrook.com/news-insights/quinbrook-moves-into-renewable-fuels/",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Investment date source — Quinbrook — PurposeEnergy",
+        "url": "https://www.quinbrook.com/portfolio/purposeenergy/",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Quinbrook",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2023,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpigao004eivhedx8km4yh",
+        "name": "Quinbrook",
+        "updatedAt": "2026-07-23T16:09:28.320Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0397:purposeenergy-minster:d96ff6cd",
+    "taskIndex": 397,
+    "canonicalKey": "purposeenergy-minster|united-states",
+    "capturedAt": "2026-09-01T23:09:43.413Z",
+    "databaseRevision": "revision:d7c1ec45ff12cb4a8fd1fd3c154b92d91c5287eef6a8f344861089551311d70e",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "07a4213e2fe6da8c343ed8ba5986e3281c4bc1038d162851c9ae68290017bbf9",
+    "productionSnapshotSha256": "c5efb92aeaea32771efa1b72cd2e783637c89779fe44c276b0bc5082dea9fd44",
+    "targetCompanySnapshotSha256": "2c264a91c38d005b615cafacc5a4a9bea569e4359c27cef9e4f13c17990136e3",
+    "seedEntrySha256": "6b0fc93ff378fd5863834cf5155c7bee93ece90c56f195ec01788fbcade14c61",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "fcdfb6da7f28f00e6b2a93619a7a8269c69fa48c33927b04a5f896348ff94c43",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "52c944c13a5e74630cefca11499339fafbdd9f1705bdf046c1d4d1c3542bd283",
+      "citationsSha256": "12f0e37f7ec012e83fee43df5459bfa41066641b7889bb6e7dd67139db3c218b",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "5d44244a4cbf52295b8806469d9600db8c4d1ae1729cc2ba7d75ae5ac0c78b2b",
+    "stateSha256": "44d9391269981a802280379ba1f84d130e12bc31b13a640b19574bd36dbc6230",
+    "taskSnapshotSha256": "86030a33ed52e318189ae2591f63a8488226bdb660bb4f2961164f7c48e33e34"
+  },
+  "contextSha256": "fb715a29a7a9c752f3674e1b10c1985dc584e311ffe64c5db00de8ccece45f4a"
+}

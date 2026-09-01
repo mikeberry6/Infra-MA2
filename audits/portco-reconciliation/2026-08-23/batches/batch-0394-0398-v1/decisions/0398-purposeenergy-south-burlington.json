@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0398:purposeenergy-south-burlington:5ec5aa6b",
+  "taskIndex": 398,
+  "companyName": "PurposeEnergy South Burlington",
+  "outcome": "SUPERSEDED",
+  "decidedAt": "2026-09-01T23:14:01.000Z",
+  "rationale": "PurposeEnergy South Burlington is a project beneath PurposeEnergy, not a separate manager-level portfolio company. Task 394's consolidated PurposeEnergy proposal dd9a2f921915afa310da94430afb5d637b144c4d26fe905ebf1001a4d8ee940f retires the standalone record and preserves the South Burlington, Zero Gravity, and Magic Hat project identities, the qualified 2008-2011 development chronology, operating profile, and direct sources in the same canonical after-image. A second mutation would collide with the PurposeEnergy update.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0398-purposeenergy-south-burlington/attempt-1/locked-batch-v1-task-snapshot.json",
+    "sha256": "9093e248a261ca688c12c6cb90e8f9f399338ca712ed807cb4915f8e42416d84"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0398-purposeenergy-south-burlington/attempt-1/application-terminal-research-decision-v1.json",
+    "sha256": "123895ac0d74468b150fbff950dde226c373503963ec9e5a303601821a08ab72"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0398-purposeenergy-south-burlington/attempt-1/source-verification.json",
+    "sha256": "b9d20ab7e4a6e94a032e523ff6439334bc9515293efc7f84e1410111e5a16c90"
+  },
+  "evidence": [
+    {
+      "url": "https://www.quinbrook.com/portfolio/purposeenergy/",
+      "purpose": "Official evidence that PurposeEnergy is the portfolio company and South Burlington is a project beneath it"
+    },
+    {
+      "url": "https://purposeenergy.com/project/zero-gravity-brewery/",
+      "purpose": "Official South Burlington project identity, hosts, and operating profile"
+    },
+    {
+      "url": "https://www.biocycle.net/digester-in-magic-hats-sustainability-mix/",
+      "purpose": "Historical evidence that Purpose Energy built, owns, and operates the digester and for the qualified development chronology"
+    }
+  ],
+  "supersededByTaskId": "ledger:0394:middlebury-resource-recovery-center:08b27d77",
+  "decisionSha256": "fee8dfb839a83a78c2de613efd312bc6563fc092cff0111efcdb1c42b7a2d5b8"
+}

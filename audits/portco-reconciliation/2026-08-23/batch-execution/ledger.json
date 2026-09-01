@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-01T22:58:32Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-09-02T00:04:00.000Z",
+  "activeBatchId": "batch-0394-0398-v1",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -6822,7 +6822,65 @@
           "reason": "Batch and its six-row attribution repair are production-applied, receipt-verified, API-verified, and rendered-verified."
         }
       ]
+    },
+    {
+      "batchId": "batch-0394-0398-v1",
+      "state": "RELEASING",
+      "taskIds": [
+        "ledger:0394:middlebury-resource-recovery-center:08b27d77",
+        "ledger:0395:prairie-mist-solar:44443a02",
+        "ledger:0396:prospect-storage:78e66bf0",
+        "ledger:0397:purposeenergy-minster:d96ff6cd",
+        "ledger:0398:purposeenergy-south-burlington:5ec5aa6b"
+      ],
+      "taskIndexes": [
+        394,
+        395,
+        396,
+        397,
+        398
+      ],
+      "createdAt": "2026-09-01T23:06:30Z",
+      "updatedAt": "2026-09-02T00:04:00.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0394-0398-v1/batch-manifest-v6.json",
+        "sha256": "056e7afef2504192673e15d989f8be1975e98ae769a0f1779bbad47bcd09b5cb"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-09-01T23:06:30Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-09-02T00:00:00.000Z",
+          "evidenceSha256": [
+            "056e7afef2504192673e15d989f8be1975e98ae769a0f1779bbad47bcd09b5cb"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "RELEASING",
+          "at": "2026-09-02T00:04:00.000Z",
+          "evidenceSha256": [
+            "056e7afef2504192673e15d989f8be1975e98ae769a0f1779bbad47bcd09b5cb"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "7888caf2bb80da33d8f09cd904ead6d8a320125a5c43653392a2834b93b4ce3f"
+  "ledgerSha256": "1d391420598683768627839ac8c2e81e26f1114031d84a2872316347221abd1b"
 }
