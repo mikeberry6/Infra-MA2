@@ -1,0 +1,297 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0344:bayonne-energy-center:2a01ade1",
+  "taskIndex": 344,
+  "companyName": "Bayonne Energy Center",
+  "generatedAt": "2026-09-01T15:45:26.009Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0344-bayonne-energy-center/attempt-1/locked-batch-v2-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 344,
+    "taskId": "ledger:0344:bayonne-energy-center:2a01ade1",
+    "canonicalKey": "bayonne-energy-center|united-states",
+    "companyName": "Bayonne Energy Center",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 69,
+    "managers": [
+      "Morgan Stanley Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "ADD_PENDING_TRANSACTION"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "069-morgan-stanley-infrastructure-partners:holding:004:bayonne-energy-center"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjlhd016hivheffuojgmg"
+    ],
+    "seedKeys": [
+      "bayonne energy center|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.morganstanley.com/im/en-us/institutional-investor/insights/private-markets/private-infrastructure.html",
+      "https://www.reuters.com/business/energy/jera-nj-power-plant-acquisition-2025-03-18/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_PENDING_TRANSACTION requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjlhd016hivheffuojgmg",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "bayonne-energy-center|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjlhd016hivheffuojgmg",
+    "name": "Bayonne Energy Center",
+    "aliases": [],
+    "sector": "UTILITIES",
+    "subsector": "Gas-fired merchant power generation",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Bayonne Energy Center is a gas-fired generating facility located in Bayonne, New Jersey. Its customer market is New York City, where the plant sells electricity, capacity, and ancillary services through a dedicated subsea cable connection into NYISO Zone J. The business follows an asset-heavy generation model with wholesale market exposure rather than a regulated utility model. Morgan Stanley describes the facility as a 660 MW dual-fuel plant and states that it acquired the asset in 2018 and has managed it through its TigerGenCo power asset management platform. The plant serves a tightly constrained urban load pocket and is positioned as dispatchable support for New York City's grid reliability. In March 2026, Morgan Stanley Infrastructure Partners announced an agreement to sell the asset, but reviewed sources indicate that closing had not yet been completed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "New Jersey",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk7rg025sivhe9dxk8h02",
+        "managerName": "Morgan Stanley Infrastructure Partners",
+        "organizationName": "MSIP",
+        "fundName": "North Haven Infrastructure Partners II (NHIP II)",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2018,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmfgm04uwivhe2063g92q",
+        "date": "2012",
+        "event": "Bayonne Energy Center entered service.",
+        "category": "EXPANSION",
+        "sortDate": "2012-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmfh404uxivhe0kzzmgqo",
+        "date": "2015",
+        "event": "Macquarie Infrastructure acquired the project from ArcLight.",
+        "category": "ACQUISITION",
+        "sortDate": "2015-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmfhl04uyivhedrl1dmuh",
+        "date": "2018",
+        "event": "Expansion activity increased the facility's generating capability.",
+        "category": "OTHER",
+        "sortDate": "2018-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmfi504uzivhe8smhmf34",
+        "date": "Oct 2018",
+        "event": "MSIP / Morgan Stanley Infrastructure Partners acquired Bayonne Energy Center.",
+        "category": "ACQUISITION",
+        "sortDate": "2018-10-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmfip04v0ivhe01w76uyi",
+        "date": "Mar 2026",
+        "event": "Morgan Stanley Infrastructure Partners announced an agreement to sell Bayonne Energy Center.",
+        "category": "DIVESTITURE",
+        "sortDate": "2026-03-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsb1h0ce5ivhe0436e957",
+        "label": "Investment date source — MSIP — Bayonne Energy Center",
+        "url": "https://www.morganstanley.com/im/en-us/capital-seeker/companies/bayonne-energy-center.html",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "MSIP initial investment / ownership",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpsb1y0ce6ivhe44crldlj",
+        "label": "Morgan Stanley",
+        "url": "https://www.morganstanley.com/press-releases/msip-agrees-to-sell-bayonne-energy-center",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Morganstanley — Bayonne Energy Center",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsb330ce8ivhe54qdiyvt",
+        "label": "Morganstanley — Bayonne Energy Center",
+        "url": "https://www.morganstanley.com/im/en-us/individual-investor/insights/press-release/msip-agrees-to-sell-bayonne-energy-center.html",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Morganstanley — Bayonne Energy Center",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsb460ceaivhevnnmnvz7",
+        "label": "Nj — Bayonne Energy Center",
+        "url": "https://www.nj.gov/bpu/pdf/energy/Bayonne_Energy_Center.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Nj — Bayonne Energy Center",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Bayonne Energy Center",
+    "investmentFirm": "MSIP",
+    "sector": "Utilities",
+    "subsector": "Gas-fired merchant power generation",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "Bayonne Energy Center is a gas-fired generating facility located in Bayonne, New Jersey. Its customer market is New York City, where the plant sells electricity, capacity, and ancillary services through a dedicated subsea cable connection into NYISO Zone J. The business follows an asset-heavy generation model with wholesale market exposure rather than a regulated utility model. Morgan Stanley describes the facility as a 660 MW dual-fuel plant and states that it acquired the asset in 2018 and has managed it through its TigerGenCo power asset management platform. The plant serves a tightly constrained urban load pocket and is positioned as dispatchable support for New York City's grid reliability. In March 2026, Morgan Stanley Infrastructure Partners announced an agreement to sell the asset, but reviewed sources indicate that closing had not yet been completed.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2018,
+    "headquarters": "New Jersey",
+    "milestones": [
+      {
+        "date": "2012",
+        "event": "Bayonne Energy Center entered service.",
+        "category": "Expansion"
+      },
+      {
+        "date": "2015",
+        "event": "Macquarie Infrastructure acquired the project from ArcLight.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "2018",
+        "event": "Expansion activity increased the facility's generating capability.",
+        "category": "Other"
+      },
+      {
+        "date": "Oct 2018",
+        "event": "MSIP / Morgan Stanley Infrastructure Partners acquired Bayonne Energy Center.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Mar 2026",
+        "event": "Morgan Stanley Infrastructure Partners announced an agreement to sell Bayonne Energy Center.",
+        "category": "Divestiture"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Investment date source — MSIP — Bayonne Energy Center",
+        "url": "https://www.morganstanley.com/im/en-us/capital-seeker/companies/bayonne-energy-center.html",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Morganstanley — Bayonne Energy Center",
+        "url": "https://www.morganstanley.com/press-releases/msip-agrees-to-sell-bayonne-energy-center",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Morganstanley — Bayonne Energy Center",
+        "url": "https://www.morganstanley.com/im/en-us/individual-investor/insights/press-release/msip-agrees-to-sell-bayonne-energy-center.html",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Nj — Bayonne Energy Center",
+        "url": "https://www.nj.gov/bpu/pdf/energy/Bayonne_Energy_Center.pdf",
+        "type": "PRESENTATION"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "MSIP",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2018,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj3bb00etivhejjezcn8j",
+        "fundName": "North Haven Infrastructure Partners II (NHIP II)",
+        "managerId": "cmrxpibqa002yivhe44v34tdd",
+        "updatedAt": "2026-07-23T16:09:58.151Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpibqa002yivhe44v34tdd",
+        "name": "Morgan Stanley Infrastructure Partners",
+        "updatedAt": "2026-07-23T16:09:22.402Z"
+      },
+      {
+        "id": "cmrxpifi80045ivhe1qqdd4g8",
+        "name": "MSIP",
+        "updatedAt": "2026-07-23T16:09:27.296Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0344:bayonne-energy-center:2a01ade1",
+    "taskIndex": 344,
+    "canonicalKey": "bayonne-energy-center|united-states",
+    "capturedAt": "2026-09-01T15:45:26.009Z",
+    "databaseRevision": "revision:0f3a59ac646d2d2e4be06949479e9194ef50b370ea0eb3e38459b568223d4caf",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "5988d7987b5bd403e6521400fc6956fbf34c1c675b495da22797a3a84bfafbef",
+    "productionSnapshotSha256": "79e51e0ec21e1451246699b6996badfb0febba73cc8c1b9b6b4233640296582e",
+    "targetCompanySnapshotSha256": "aabd0d3a3956d3b9e0fa401e62a9928926973cf31cbb6eec0cf93c15a383bcfd",
+    "seedEntrySha256": "6ecab92a07003ddf25d1b1bb264a96e25a651131af0732fd1d6857a77e18488d",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "9096380a2687d2eac5b1c365a35b28750c920b1523bafdc5aae9018801a4c3f8",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "c976deeab70c9120fe1e5069cc2568302283c4726cfdd684e20394886056bb1e",
+      "organizationsSha256": "3fc6e727475ad9466037a4f9786ab7b3fcd9d576837105e71290a4e4d890a5c6",
+      "citationsSha256": "89d5a734152d304507d12cc45cbd23baaccab1da5410227b71475ae112b4ebe7",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "b721e1f010826acb07a34ed1d20b1380407b2af88717c71713bdf6129690ef1e",
+    "stateSha256": "9c5366471b579a4371804ffb5df21d1a4054e4841291b0b04ff6f3856c1e585d",
+    "taskSnapshotSha256": "9e553aaee5234f5113e9b06c766439ba2972c87955e8663d969ac679b31d750c"
+  },
+  "contextSha256": "51e74b1ab4ef9dd36a7179623cf4296b7ed5666fd087eacb01c6f08237b2b3ee"
+}

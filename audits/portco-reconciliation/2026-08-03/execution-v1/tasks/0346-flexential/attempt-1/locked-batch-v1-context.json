@@ -1,0 +1,268 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0346:flexential:a1d629db",
+  "taskIndex": 346,
+  "companyName": "Flexential",
+  "generatedAt": "2026-09-01T15:37:36.364Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0346-flexential/attempt-1/locked-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 346,
+    "taskId": "ledger:0346:flexential:a1d629db",
+    "canonicalKey": "flexential|united-states",
+    "companyName": "Flexential",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 69,
+    "managers": [
+      "Morgan Stanley Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "069-morgan-stanley-infrastructure-partners:holding:002:flexential"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjljl016livheqq1befhk"
+    ],
+    "seedKeys": [
+      "flexential|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.flexential.com/about-us",
+      "https://www.morganstanley.com/im/en-us/institutional-investor/insights/private-markets/private-infrastructure.html"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_OWNER requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjljl016livheqq1befhk",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "flexential|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjljl016livheqq1befhk",
+    "name": "Flexential",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Colocation, cloud, and connectivity data centers",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Flexential provides colocation, cloud, connectivity, data protection, and related managed infrastructure services. Its customers are enterprises, cloud users, and increasingly AI and high-density computing workloads, and the business operates through an asset-heavy data center platform tied together by a private network backbone. Public disclosures describe 42 data centers across 19 highly connected U.S. markets on a 100Gbps private network. The platform's footprint spans major enterprise and carrier hubs, with interconnection and hybrid-cloud capabilities embedded in the operating model. Morgan Stanley Infrastructure Partners announced a strategic investment in Flexential in October 2024 and said it joined GI Partners as a co-controlling owner. The reviewed public materials do not disclose the current ownership percentages of the co-controlling investors.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "19 U.S. markets",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk7u7025xivhegjy9uc73",
+        "managerName": "Morgan Stanley Infrastructure Partners",
+        "organizationName": "MSIP",
+        "fundName": "North Haven Infrastructure Partners III",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmfvt04veivhef6zjzgsc",
+        "date": "May 2024",
+        "event": "Flexential announced the expansion of its FlexAnywhere platform and said it operated 42 data centers.",
+        "category": "OTHER",
+        "sortDate": "2024-05-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmfwe04vfivhe7ctfwaa8",
+        "date": "Oct 2024",
+        "event": "MSIP / Morgan Stanley Infrastructure Partners announced a strategic investment in Flexential alongside GI Partners.",
+        "category": "FINANCING",
+        "sortDate": "2024-10-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmfwy04vgivhe5utccud1",
+        "date": "Mar 2025",
+        "event": "Flexential announced expanded network-as-a-service capabilities with Lumen.",
+        "category": "EXPANSION",
+        "sortDate": "2025-03-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsc100cf4ivheaen30kbs",
+        "label": "Flexential — Flexential",
+        "url": "https://www.flexential.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Flexential company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpsc2c0cf6ivhe6lbmj9cs",
+        "label": "Flexential — Flexential",
+        "url": "https://www.flexential.com/resources/press-release/flexentials-growth-and-innovation-build-momentum-2024",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Flexential — Flexential",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsc3h0cf8ivhe2d0oashy",
+        "label": "Announcement date source — MSIP — Flexential",
+        "url": "https://www.morganstanley.com/im/en-us/capital-seeker/about-us/news-and-insights/press-release/flexential-to-accelerate-expansion-and-growth-MSIP.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "MSIP transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsc4e0cfaivhe3t29ql8t",
+        "label": "Flexential — Flexential",
+        "url": "https://www.flexential.com/resources/press-release/flexential-and-lumen-expand-network-service-capabilities-businesses",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Flexential operations / asset details",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Flexential",
+    "investmentFirm": "MSIP",
+    "sector": "Digital",
+    "subsector": "Colocation, cloud, and connectivity data centers",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "Flexential provides colocation, cloud, connectivity, data protection, and related managed infrastructure services. Its customers are enterprises, cloud users, and increasingly AI and high-density computing workloads, and the business operates through an asset-heavy data center platform tied together by a private network backbone. Public disclosures describe 42 data centers across 19 highly connected U.S. markets on a 100Gbps private network. The platform's footprint spans major enterprise and carrier hubs, with interconnection and hybrid-cloud capabilities embedded in the operating model. Morgan Stanley Infrastructure Partners announced a strategic investment in Flexential in October 2024 and said it joined GI Partners as a co-controlling owner. The reviewed public materials do not disclose the current ownership percentages of the co-controlling investors.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2024,
+    "headquarters": "19 U.S. markets",
+    "milestones": [
+      {
+        "date": "May 2024",
+        "event": "Flexential announced the expansion of its FlexAnywhere platform and said it operated 42 data centers.",
+        "category": "Other"
+      },
+      {
+        "date": "Oct 2024",
+        "event": "MSIP / Morgan Stanley Infrastructure Partners announced a strategic investment in Flexential alongside GI Partners.",
+        "category": "Financing"
+      },
+      {
+        "date": "Mar 2025",
+        "event": "Flexential announced expanded network-as-a-service capabilities with Lumen.",
+        "category": "Expansion"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Flexential — Flexential",
+        "url": "https://www.flexential.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Flexential — Flexential",
+        "url": "https://www.flexential.com/resources/press-release/flexentials-growth-and-innovation-build-momentum-2024",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Announcement date source — MSIP — Flexential",
+        "url": "https://www.morganstanley.com/im/en-us/capital-seeker/about-us/news-and-insights/press-release/flexential-to-accelerate-expansion-and-growth-MSIP.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Flexential — Flexential",
+        "url": "https://www.flexential.com/resources/press-release/flexential-and-lumen-expand-network-service-capabilities-businesses",
+        "type": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "MSIP",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2024,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmsdi41gb004y7h4sql1igk6u",
+        "fundName": "North Haven Infrastructure Partners III",
+        "managerId": "cmrxpibqa002yivhe44v34tdd",
+        "updatedAt": "2026-08-03T17:26:37.403Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpifi80045ivhe1qqdd4g8",
+        "name": "MSIP",
+        "updatedAt": "2026-07-23T16:09:27.296Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0346:flexential:a1d629db",
+    "taskIndex": 346,
+    "canonicalKey": "flexential|united-states",
+    "capturedAt": "2026-09-01T15:37:36.364Z",
+    "databaseRevision": "revision:32912f7084c92c9a1d977ebaaf6860b9175a581fdb174736ad86fa9bbfedf6bd",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "56b62f1a71653bb5b13490f69b2ed7cf2f0fa400c7a7b3953804151e07badc50",
+    "productionSnapshotSha256": "cad3ccfaf8e208f0be2427c39e205acf16063e56fb43debdf0f33fa0abb4ae8d",
+    "targetCompanySnapshotSha256": "296a686bddda700f8369e67caa4c91c8835000734823d9049b7b63e74be02645",
+    "seedEntrySha256": "8d05a24360ad853c912e0d1cd055a2211e1292cb63c68ad7faa1e27088a85a86",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "8a0aeea52cb141bb564ee2b1116ab9708e78a5f95b6c9af755f519fb8acd6a9a",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "7e3d71f6a3d51f7bcfb141c095c649e930428b5ce0ce222c371e65829254ffda",
+      "organizationsSha256": "b5c0ff774816ee23edf724024a371230616567a92c04c7d261e64f295f9e93b4",
+      "citationsSha256": "a3ad673cb41c4f0e3cff60fc1adbe1b9f4478ea2df37eb3518cdb82e948d0aa5",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "73f6c157de15478f639d4bcbcf097228c3083bc000f009117cd7059a0db20419",
+    "stateSha256": "bf041a2a9de77676884ccae4871a8b6f5c13e069e9643ffa560758762cc80343",
+    "taskSnapshotSha256": "5ec7e3c349d7e0ee132b932719f5d24e359df931bd062cc8969bee94e409d8ea"
+  },
+  "contextSha256": "9e3293ed16c36a1cd43172a3e7179af2049472f343ebfc9bedceceb12fad8b6c"
+}

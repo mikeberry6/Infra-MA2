@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_SEED_ATTRIBUTION_RECONCILIATION_SPEC",
+  "batchId": "batch-0344-0350-v1",
+  "batchSha256": "c864c879e4bb7f0b0a9bf5be49482d1b2bb7d2f653dcb1d232de8d5c621ff65b",
+  "reconciledAt": "2026-09-01T16:10:00.000Z",
+  "sourceManifestSha256": "a7038e82d402aa66ba38746be47c52fa3987276e8d98e8f486a09ec1ff643742",
+  "rationale": "Align the seed attribution manifest with the five approved after-images. Replace the exited Bayonne MSIP owner with Elliott, preserve both verified Flexential co-owners without inferring an MSIP fund, canonicalize Lightpath and its disclosed 50.01%/49.99% ownership split, remove the unsupported Torch fund inference, and remove the excluded NextDecade public-stock exposure.",
+  "removeRecordIds": [
+    "OFA-25A81BF9C1CB",
+    "OFA-0C8CF27916D1"
+  ],
+  "upsertRecords": [
+    {
+      "recordId": "OFA-131B94987056",
+      "companyName": "Bayonne Energy Center",
+      "country": "United States",
+      "investmentFirm": "Elliott Investment Management",
+      "currentVehicleName": "Tunnel Energy Investor LLC (formerly Jupiter Energy Investor LLC)",
+      "investmentYear": 2026,
+      "stake": "100% indirect",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "The regulatory closing record establishes Elliott-managed ownership through Tunnel Energy Investor but does not identify a separate Elliott fund, so no fund is inferred.",
+      "evidenceUrls": [
+        "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B2008B99F-0000-CD12-90AA-6AB830772000%7D",
+        "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B70A8259D-0000-CC2D-ADEE-B0DFFB934636%7D"
+      ]
+    },
+    {
+      "recordId": "OFA-A2C7BDDFB2E2",
+      "companyName": "Flexential",
+      "country": "United States",
+      "investmentFirm": "MSIP",
+      "currentVehicleName": "MSIP",
+      "investmentYear": 2024,
+      "stake": "Common-equity co-control with GI Partners; exact percentage not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "MSIP's common-equity co-control investment is directly disclosed, but the public evidence does not identify a fund or acquisition vehicle, so the former NHIP III inference is removed.",
+      "evidenceUrls": [
+        "https://www.flexential.com/resources/press-release/flexential-accelerate-expansion-and-growth-strategic-investment-morgan",
+        "https://www.morganstanley.com/im/en-us/individual-investor/companies/flexential.html"
+      ]
+    },
+    {
+      "recordId": "OFA-42770CD84675",
+      "companyName": "Flexential",
+      "country": "United States",
+      "investmentFirm": "GI Partners",
+      "currentVehicleName": "GI Partners Fund IV at entry; 2025 continuation and GI Data Infrastructure vehicles",
+      "investmentYear": 2014,
+      "stake": "Co-control with MSIP; exact percentage not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "GI Partners Fund IV at entry; 2025 continuation and GI Data Infrastructure vehicles",
+      "attributionConfidence": null,
+      "attributionRationale": "GI Partners' disclosures establish its continuing ownership through the named entry and continuation vehicles, which are retained as disclosed without creating an inferred curated-fund link.",
+      "evidenceUrls": [
+        "https://www.gipartners.com/news/gi-partners-closes-continuation-vehicle-and-strategic-investment-from-gi-data-infrastructure-in-flexential"
+      ]
+    },
+    {
+      "recordId": "OFA-9B56FA1DB7DF",
+      "companyName": "Lightpath",
+      "country": "United States",
+      "investmentFirm": "MSIP",
+      "currentVehicleName": "NHIP III Lantern Holding LLC",
+      "investmentYear": 2020,
+      "stake": "49.99% non-controlling common equity",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "NHIP III Lantern Holding LLC",
+      "attributionConfidence": null,
+      "attributionRationale": "Regulatory and transaction-party evidence directly identifies NHIP III Lantern Holding LLC as the 49.99% MSIP-led owner; the legal vehicle is retained without inferring a separate curated fund link.",
+      "evidenceUrls": [
+        "https://documents.dps.ny.gov/search/Home/ViewDoc/Find?ext=pdf&id=%7B3066D197-0000-C43B-86C9-1DFE7BEEA84D%7D",
+        "https://investors.optimum.com/news-events/press-releases/detail/35/altice-usa-announces-closing-of-sale-of-49-99-of-lightpath"
+      ]
+    },
+    {
+      "recordId": "OFA-74102D77C6CC",
+      "companyName": "Lightpath",
+      "country": "United States",
+      "investmentFirm": "Optimum Communications",
+      "currentVehicleName": "Cablevision Lightpath Holdings LLC and Lightpath Holdco 2, Inc.",
+      "investmentYear": 2020,
+      "stake": "50.01% controlling common equity",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "Optimum retains the disclosed controlling common-equity interest through its corporate holding chain. This is direct corporate ownership, not a fund attribution.",
+      "evidenceUrls": [
+        "https://documents.dps.ny.gov/search/Home/ViewDoc/Find?ext=pdf&id=%7B3066D197-0000-C43B-86C9-1DFE7BEEA84D%7D",
+        "https://investors.optimum.com/news-events/press-releases/detail/35/altice-usa-announces-closing-of-sale-of-49-99-of-lightpath"
+      ]
+    },
+    {
+      "recordId": "OFA-A58AFA453D16",
+      "companyName": "Torch Clean Energy",
+      "country": "United States",
+      "investmentFirm": "MSIP",
+      "currentVehicleName": "MSIP",
+      "investmentYear": 2025,
+      "stake": null,
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "The official disclosures establish an MSIP platform-equity investment but do not identify a specific fund or acquisition vehicle, so the former North Haven IV inference is removed.",
+      "evidenceUrls": [
+        "https://www.morganstanley.com/press-releases/morgan-stanley-infrastructure-partners--torch-clean-energy",
+        "https://www.morganstanley.com/im/en-us/institutional-investor/companies/torch-clean-energy.html"
+      ]
+    }
+  ],
+  "specSha256": "f69b2044aa3b4ff5b5b7c50b451144034d002514bf8632ac7133d0106dc78a72"
+}

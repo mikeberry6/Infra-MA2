@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0347:lightpath:c411cbd2",
+  "taskIndex": 347,
+  "companyName": "Lightpath",
+  "asOfDate": "2026-08-19",
+  "decision": "PROPOSED_MERGE",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-01T15:38:30.000Z",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "Lightpath",
+    "requestedManagers": [
+      "Morgan Stanley Infrastructure Partners (MSIP)"
+    ],
+    "decision": "PROPOSED_MERGE",
+    "confidence": "HIGH",
+    "rationale": "Lightpath is the operating brand, Cablevision Lightpath LLC is its operating company and Lightpath Holdings LLC is the ownership parent; the MSIP portfolio company and the repository candidate are the same platform, so creating a new company would duplicate the existing record.",
+    "identityResolution": {
+      "canonicalName": "Lightpath",
+      "canonicalKey": "lightpath|united-states",
+      "parent": "Lightpath Holdings LLC",
+      "operatingCompany": "Cablevision Lightpath LLC",
+      "aliases": [
+        "Lightpath Holdings LLC",
+        "Cablevision Lightpath LLC",
+        "Cablevision Lightpath, Inc."
+      ],
+      "predecessor": "Cablevision Lightpath, Inc.",
+      "boundary": "One enterprise fiber platform; exclude holding companies, subsidiaries, acquired route networks, financing entities, construction projects and customer sites."
+    },
+    "ownershipResolution": {
+      "currentOwners": [
+        {
+          "manager": "Morgan Stanley Infrastructure Partners",
+          "organization": "Morgan Stanley Infrastructure, Inc.",
+          "fund": "NOT_PUBLICLY_DISCLOSED",
+          "vehicle": "NHIP III Lantern Holding LLC",
+          "stake": "49.99% non-controlling common equity",
+          "announcementDate": "2020-07-28",
+          "entryDate": "2020-12-01",
+          "entryYear": 2020,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "ACTIVE"
+        },
+        {
+          "manager": null,
+          "organization": "Optimum Communications, Inc. (fka Altice USA, Inc.)",
+          "fund": null,
+          "vehicle": "Cablevision Lightpath Holdings LLC 45.01%; Lightpath Holdco 2, Inc. 5.00%",
+          "stake": "50.01% controlling common equity",
+          "announcementDate": "2020-07-28",
+          "entryDate": "NOT_PUBLICLY_DISCLOSED",
+          "entryYear": null,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "ACTIVE"
+        },
+        {
+          "manager": null,
+          "organization": "Lightpath employees",
+          "fund": null,
+          "vehicle": "Lightpath Management Incentive Aggregator LLC",
+          "stake": "NOT_PUBLICLY_DISCLOSED incentive interests; sponsor split unchanged",
+          "announcementDate": null,
+          "entryDate": "NOT_PUBLICLY_DISCLOSED",
+          "entryYear": 2021,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "ACTIVE"
+        }
+      ],
+      "formerOwners": [],
+      "history": "Before the 2020 closing Lightpath Holdings was wholly owned indirectly within the Altice/Cablevision group; former direct-member allocation is NOT_PUBLICLY_DISCLOSED.",
+      "governance": "Optimum retains control; publicly disclosed governance gives Optimum majority board appointment rights while MSIP/NHIP retains major-action protections.",
+      "laterChanges": "Altice USA's legal rebrand to Optimum Communications and 2026 upstream preferred/reorganization disclosures did not publicly change the 50.01%/49.99% common-equity split; no later equity transfer, recapitalization or sponsor exit was found."
+    },
+    "operatingResolution": {
+      "headquarters": "1111 Stewart Avenue, Bethpage, NY 11714",
+      "website": "https://lightpathfiber.com",
+      "profile": "As of July 2026 the company reports 12,100+ route miles, 18,000+ service locations, 190+ on-net data centers, eight cable landing stations and operations across 11 metro markets.",
+      "markets": "New York City, Long Island, New Jersey, southern Connecticut, Boston, eastern Pennsylvania, Ashburn, Miami, Columbus, Phoenix and Atlanta.",
+      "servicesAndCustomers": "Enterprise connectivity, Internet, Ethernet, transport, wavelengths, private networks, dark fiber, voice and managed connectivity for enterprise, hyperscale, carrier, wireless, government and institutional customers.",
+      "routeMetrics": "2020 disclosures used >18,600 total network miles including shared infrastructure; 2023 disclosed 21,300 sheath miles (12,200 owned plus 9,100 IRU); 2024 disclosed 11,300 unique route miles; July 2026 reports 12,100+ route miles. Metrics use different methodologies and should remain date-qualified."
+    },
+    "acquisitionExitCheck": {
+      "searchedThrough": "2026-08-19",
+      "pendingTransactions": [],
+      "result": "No public sale, partial transfer, new direct common-equity investor, signed pending equity transaction or MSIP exit superseding the December 2020 ownership structure was found.",
+      "excludedEvents": "Fiber acquisitions, construction projects, government contracts, asset-backed financing and upstream parent transactions did not change manager-level Lightpath equity."
+    },
+    "milestones": [
+      {
+        "date": "2020-07-28",
+        "event": "Altice announced sale of 49.99% of Lightpath Holdings to the MSIP-led vehicle.",
+        "state": "SIGNED"
+      },
+      {
+        "date": "2020-12-01",
+        "event": "Transaction closed; Altice retained 50.01% control.",
+        "state": "CLOSED"
+      },
+      {
+        "date": "2026-05-29",
+        "event": "Upstream Optimum preferred/reorganization disclosed with no Lightpath common-equity transfer.",
+        "state": "NON_OWNERSHIP"
+      }
+    ],
+    "evidence": [
+      {
+        "label": "2025 New York regulatory ownership petition",
+        "url": "https://documents.dps.ny.gov/search/Home/ViewDoc/Find?ext=pdf&id=%7B3066D197-0000-C43B-86C9-1DFE7BEEA84D%7D",
+        "purpose": "Identity, ownership chain, governance and current platform.",
+        "sourceTier": "REGULATOR",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "Morgan Stanley Lightpath portfolio page",
+        "url": "https://www.morganstanley.com/im/en-us/individual-investor/companies/lightpath.html",
+        "purpose": "MSIP attribution and continuing portfolio status.",
+        "sourceTier": "MANAGER",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Altice closing announcement",
+        "url": "https://investors.optimum.com/news-events/press-releases/detail/35/altice-usa-announces-closing-of-sale-of-49-99-of-lightpath",
+        "purpose": "Closing date and retained ownership.",
+        "sourceTier": "TRANSACTION_PARTY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "2023 regulatory ownership report",
+        "url": "https://pscdocs.utah.gov/telecom/24docs/24265301/337234Aplctn12-20-2024.pdf",
+        "purpose": "Governance, ownership split and network metrics.",
+        "sourceTier": "REGULATOR",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Optimum Q2 2026 filing",
+        "url": "https://www.sec.gov/Archives/edgar/data/1702780/000170278026000048/optu-20260630.htm",
+        "purpose": "Confirmed no disclosed equity exit through 2026.",
+        "sourceTier": "SEC",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Lightpath July 2026 product sheet",
+        "url": "https://lightpathfiber.com/wp-content/uploads/2026/07/lightpath_channel_partners_general_product_sheet.pdf",
+        "purpose": "Current footprint and operating profile.",
+        "sourceTier": "COMPANY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "before": "Census proposed a new Lightpath company despite an existing repository candidate with incomplete ownership detail.",
+      "after": "Merge the census key into the existing platform, retain the existing company, correct aliases, ownership structure, vehicles, stakes and date-qualified operating metrics."
+    },
+    "excludedOrDuplicateCandidates": "Lightpath Holdings LLC is the same platform and should be merged rather than duplicated; subsidiaries, financing entities and acquired route networks are not separate manager-level portfolio companies.",
+    "unresolvedQuestions": [
+      "Exact NHIP fund legal name: NOT_PUBLICLY_DISCLOSED.",
+      "Former direct-member allocation before the December 2020 closing: NOT_PUBLICLY_DISCLOSED.",
+      "Management incentive ownership percentages: NOT_PUBLICLY_DISCLOSED."
+    ],
+    "recommendedListAction": "Merge the census Lightpath record into the existing Lightpath Holdings LLC platform record; canonicalize the company as Lightpath and update aliases, ownership, vehicles, stakes and dated network metrics rather than creating a new company."
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0347-lightpath/attempt-1/research-decision.json",
+      "sha256": "7c04a4a1f9954fab73724bc5d18ff692e92e05251fc1a1f765d754f997ccb994"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0347-lightpath/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "f8e0bf621a55e5e2ea63d255adc3eb00775349e323c8735c363b0f2d48602cb5"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0347-lightpath/attempt-1/source-verification.json",
+      "sha256": "878e372d0cf8edbc9f3884aa7b65480cb9f12853f7d955002f4f23aba332136e"
+    },
+    "acceptedResponseSha256": "99962f965826c8184bca0dfd0922a2be3b1ba5fad83e6ced912f0e66d6f14845",
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION"
+  }
+}

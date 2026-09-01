@@ -1,0 +1,460 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_MANIFEST",
+  "methodologyVersion": "PORTCO_APPLY_BATCH_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0344-0350-v1",
+  "createdAt": "2026-09-01T16:07:00.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "8a73817ffe4cd306ea8b43edf6c278791dc581ca29f2e1311eed2640f266806e"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0344:bayonne-energy-center:2a01ade1",
+      "taskIndex": 344,
+      "companyName": "Bayonne Energy Center",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0344-bayonne-energy-center-v1/proposal.json",
+        "sha256": "54c60b7682014d21f55e3df3c804ea4039e4caff566049dce1bf5ac9422a5dcb"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0344-bayonne-energy-center-v1.json",
+        "sha256": "5031a36078f07a1b4e8b2cadbd325962edf338e311bdbbf97eff37f56f81eb5c"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0344-bayonne-energy-center/attempt-1/locked-batch-v2-production-snapshot.json",
+        "sha256": "79e51e0ec21e1451246699b6996badfb0febba73cc8c1b9b6b4233640296582e"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0344-bayonne-energy-center/attempt-1/locked-batch-v2-task-snapshot.json",
+        "sha256": "9e553aaee5234f5113e9b06c766439ba2972c87955e8663d969ac679b31d750c"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0344-bayonne-energy-center/attempt-1/observed-batch-v1-task-snapshot.json",
+        "sha256": "aab51ca6ff9d8fe65700b0773156831479e25d0e3441a9e25080795072604060"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0344-bayonne-energy-center/attempt-1/application-research-decision-v1.json",
+        "sha256": "eaa253ab19da1d3a3dfb7a4aff2b2b76f4e08a583e984ddcb46863b7c415e093"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0344-bayonne-energy-center/attempt-1/source-verification.json",
+        "sha256": "d2935e0fe4498dcf735573b66ba9343f8d30f20d09437ba6edca3af1da7340cc"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "9c5366471b579a4371804ffb5df21d1a4054e4841291b0b04ff6f3856c1e585d",
+      "dependencySha256": "b721e1f010826acb07a34ed1d20b1380407b2af88717c71713bdf6129690ef1e",
+      "afterImageSha256": "0adb726d83a687d82a02b34cf656288694515712f2605c0b3edb89eac97ce864",
+      "targetClaims": [
+        "canonical:bayonne-energy-center|united-states",
+        "company:cmrxpjlhd016hivheffuojgmg",
+        "relation:cmrxpk7rg025sivhe9dxk8h02",
+        "relation:cmrxpmfgm04uwivhe2063g92q",
+        "relation:cmrxpmfh404uxivhe0kzzmgqo",
+        "relation:cmrxpmfhl04uyivhedrl1dmuh",
+        "relation:cmrxpmfi504uzivhe8smhmf34",
+        "relation:cmrxpmfip04v0ivhe01w76uyi",
+        "relation:cmrxpsb1h0ce5ivhe0436e957",
+        "relation:cmrxpsb1y0ce6ivhe44crldlj",
+        "relation:cmrxpsb330ce8ivhe54qdiyvt",
+        "relation:cmrxpsb460ceaivhevnnmnvz7",
+        "seed:bayonne energy center|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B2008B99F-0000-CD12-90AA-6AB830772000%7D",
+          "label": "NYPSC — Bayonne Energy Center closing notice",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B70A8259D-0000-CC2D-ADEE-B0DFFB934636%7D",
+          "label": "NYPSC — Bayonne Energy Center transfer petition",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.morganstanley.com/im/en-us/capital-seeker/companies/bayonne-energy-center.html",
+          "label": "Investment date source — MSIP — Bayonne Energy Center",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.morganstanley.com/im/en-us/individual-investor/insights/press-release/msip-agrees-to-sell-bayonne-energy-center.html",
+          "label": "Morganstanley — Bayonne Energy Center",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.morganstanley.com/press-releases/msip-agrees-to-sell-bayonne-energy-center",
+          "label": "Morgan Stanley",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.nj.gov/bpu/pdf/energy/Bayonne_Energy_Center.pdf",
+          "label": "Nj — Bayonne Energy Center",
+          "sourceType": "PRESENTATION"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0346:flexential:a1d629db",
+      "taskIndex": 346,
+      "companyName": "Flexential",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0346-flexential-v2/proposal.json",
+        "sha256": "c1796a13bd4824ff5af43e10b28b882251c9172001b400e61246dece535009a2"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0346-flexential-v2.json",
+        "sha256": "7af1478615ff2b6314940669af5b9a1467ef940d062dfabead024fec160e2c31"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0346-flexential/attempt-1/locked-batch-v1-production-snapshot.json",
+        "sha256": "cad3ccfaf8e208f0be2427c39e205acf16063e56fb43debdf0f33fa0abb4ae8d"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0346-flexential/attempt-1/locked-batch-v1-task-snapshot.json",
+        "sha256": "5ec7e3c349d7e0ee132b932719f5d24e359df931bd062cc8969bee94e409d8ea"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0346-flexential/attempt-1/observed-batch-v1-task-snapshot.json",
+        "sha256": "be7f974061bb2e6053d609eb424c0355a3ec182ef785d6bfb3cb441503b40bc2"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0346-flexential/attempt-1/application-research-decision-v1.json",
+        "sha256": "aa538ebfe9961fe2e286741a448b7612132e0a94b1e9b00a2f99bf5e6750f8f6"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0346-flexential/attempt-1/source-verification.json",
+        "sha256": "b2da4bc18ecad2958e9775a6777a587d8557abfe500f17eeca000b78d8daa5b4"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "bf041a2a9de77676884ccae4871a8b6f5c13e069e9643ffa560758762cc80343",
+      "dependencySha256": "73f6c157de15478f639d4bcbcf097228c3083bc000f009117cd7059a0db20419",
+      "afterImageSha256": "383dfb59179fe4f038e222ea052b924d4d170b43fb3ec8077bb281168484fc7c",
+      "targetClaims": [
+        "canonical:flexential|united-states",
+        "company:cmrxpjljl016livheqq1befhk",
+        "relation:cmrxpk7u7025xivhegjy9uc73",
+        "relation:cmrxpmfvt04veivhef6zjzgsc",
+        "relation:cmrxpmfwe04vfivhe7ctfwaa8",
+        "relation:cmrxpmfwy04vgivhe5utccud1",
+        "relation:cmrxpsc100cf4ivheaen30kbs",
+        "relation:cmrxpsc2c0cf6ivhe6lbmj9cs",
+        "relation:cmrxpsc3h0cf8ivhe2d0oashy",
+        "relation:cmrxpsc4e0cfaivhe3t29ql8t",
+        "seed:flexential|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://www.flexential.com/",
+          "label": "Flexential — Flexential",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.flexential.com/resources/press-release/flexential-and-lumen-expand-network-service-capabilities-businesses",
+          "label": "Flexential — Flexential",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.flexential.com/resources/press-release/flexential-secures-800-million-fund-data-center-development",
+          "label": "Flexential — 2026 development financing",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.flexential.com/resources/press-release/flexentials-growth-and-innovation-build-momentum-2024",
+          "label": "Flexential — Flexential",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.gipartners.com/news/gi-partners-closes-continuation-vehicle-and-strategic-investment-from-gi-data-infrastructure-in-flexential",
+          "label": "GI Partners — Flexential continuation recapitalization",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.morganstanley.com/im/en-us/capital-seeker/about-us/news-and-insights/press-release/flexential-to-accelerate-expansion-and-growth-MSIP.html",
+          "label": "Announcement date source — MSIP — Flexential",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.morganstanley.com/im/en-us/individual-investor/companies/flexential.html",
+          "label": "Morgan Stanley — Flexential portfolio",
+          "sourceType": "WEBSITE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0347:lightpath:c411cbd2",
+      "taskIndex": 347,
+      "companyName": "Lightpath",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0347-lightpath-v3/proposal.json",
+        "sha256": "6726555865920cb359abe02ae9a69c87c0b1014db9fa987f5be41d8da81df00a"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0347-lightpath-v3.json",
+        "sha256": "dce09ae03fcef1f95c65f6d7b0c2833dd363b846bbea90058c034bcf1e5260fa"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0347-lightpath/attempt-1/locked-batch-v2-production-snapshot.json",
+        "sha256": "4321a6bfa570f2c49984c519ddf32725e1af5e03c46c2f5de5e8d628001fca23"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0347-lightpath/attempt-1/locked-batch-v2-task-snapshot.json",
+        "sha256": "d523df9b9bd6d4595e71bf2b91f7a9f474bde4cbc92e42c8a50b8cd133dd9442"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0347-lightpath/attempt-1/observed-batch-v1-task-snapshot.json",
+        "sha256": "9c1e08a7de12a5e366be71ce3774946f2248a4d3fd1ab3ab031ac154b109b5e3"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0347-lightpath/attempt-1/application-research-decision-v1.json",
+        "sha256": "88c24703abd8c231cb997cd3270fe9fb382e90cae939476fc241e6c87e19ee3b"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0347-lightpath/attempt-1/source-verification.json",
+        "sha256": "878e372d0cf8edbc9f3884aa7b65480cb9f12853f7d955002f4f23aba332136e"
+      },
+      "supersededTaskIds": [
+        "ledger:0483:lightpath-holdings-llc:26856215"
+      ],
+      "taskStateSha256": "f1d799771cc602be51af2557a3154c215005a2ade1acee6c2563ef421ac1892b",
+      "dependencySha256": "6bcfb704e0308343f305e4b46955d9cf7944dfba4dac1cebcc4f7954acf99515",
+      "afterImageSha256": "4bbf882b8ae351f19745a35bc70e9ede390d5d4c9c9300f9142d6e7ce44c812f",
+      "targetClaims": [
+        "canonical:lightpath|united-states",
+        "company:cmrxpjlkj016nivhekkqd6jy8",
+        "relation:cmrxpk7vb025zivhehw6apbvt",
+        "relation:cmrxpmg2704vjivhelgwpiu8o",
+        "relation:cmrxpmg2p04vkivhebazhh1bc",
+        "relation:cmrxpmg3904vlivheeleea4im",
+        "relation:cmrxpmg3u04vmivhelcn5h31z",
+        "relation:cmrxpmg4f04vnivhevb5rixdf",
+        "relation:cmrxpsc9b0cfjivheha3tbwht",
+        "relation:cmrxpsca90cflivhevfzpnjgt",
+        "relation:cmrxpscbf0cfnivheodctfopp",
+        "relation:cmrxpsccg0cfpivheol5zatq5",
+        "seed:lightpath holdings llc|united states",
+        "seed:lightpath|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://documents.dps.ny.gov/search/Home/ViewDoc/Find?ext=pdf&id=%7B3066D197-0000-C43B-86C9-1DFE7BEEA84D%7D",
+          "label": "NYPSC — Lightpath ownership petition",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://investors.optimum.com/news-events/press-releases/detail/35/altice-usa-announces-closing-of-sale-of-49-99-of-lightpath",
+          "label": "Optimum — Lightpath ownership closing",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://lightpathfiber.com/news/lightpath-awarded-gsa-multiple-award-schedule-contract",
+          "label": "Lightpathfiber — Lightpath Holdings LLC",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://lightpathfiber.com/our-network",
+          "label": "Lightpathfiber — Lightpath Holdings LLC",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://lightpathfiber.com/wp-content/uploads/2026/07/lightpath_channel_partners_general_product_sheet.pdf",
+          "label": "Lightpath — July 2026 product sheet",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://www.morganstanley.com/im/en-us/individual-investor/companies/lightpath.html",
+          "label": "Morgan Stanley — Lightpath portfolio",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1702780/000110465920111136/tm2032040d1_8k.htm",
+          "label": "Acquisition agreement source — MSIP — Lightpath Holdings LLC",
+          "sourceType": "SEC_FILING"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1702780/000162828021001795/atusq42020exhibit991.htm",
+          "label": "Close date source — MSIP — Lightpath Holdings LLC",
+          "sourceType": "SEC_FILING"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0348:torch-clean-energy:6be03d62",
+      "taskIndex": 348,
+      "companyName": "Torch Clean Energy",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0348-torch-clean-energy-v2/proposal.json",
+        "sha256": "1c73508fd8e7ab5e5cd5d6387c45af5ab11c9c95b7a4d35437eec3d873583a00"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0348-torch-clean-energy-v2.json",
+        "sha256": "4128ff4600cd020b7675d8604a89bbf08b84621866a1d0441103a412de7f78ea"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0348-torch-clean-energy/attempt-1/locked-batch-v1-production-snapshot.json",
+        "sha256": "8b681c17013e4d9a26cf511dfa95a778a00cf8ef926d7d745c9676b419817152"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0348-torch-clean-energy/attempt-1/locked-batch-v1-task-snapshot.json",
+        "sha256": "58dbff8dca718356c2b4d0157dad18961c0c700527f810ab5a87b62266911890"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0348-torch-clean-energy/attempt-1/observed-batch-v1-task-snapshot.json",
+        "sha256": "b3f1088eea9829fbec71a61e9b32118978f61d38e67bbb7ecd9b338adc35eb27"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0348-torch-clean-energy/attempt-1/application-research-decision-v1.json",
+        "sha256": "357511e82dc55962f011c07e19d4d0245152e99cedc7491da09249e5b96b3734"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0348-torch-clean-energy/attempt-1/source-verification.json",
+        "sha256": "46bb9cf341708938e2d9cd79f7733df74bcd02907ea768bdba0a50ee284fc60c"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "ce3b8457c35b38f0093e008a08c39f97a916b08ebabf7ac06a9de33bfe73836f",
+      "dependencySha256": "5a4a8cf68340c1441cf70a2512f1339eaa672ea56e44ec252eaea088415fe9ea",
+      "afterImageSha256": "3c5c8040aa4ead13b56eddefd84cc0bf2f9d4cb85ce655e20e242de8a98653b0",
+      "targetClaims": [
+        "canonical:torch-clean-energy|united-states",
+        "company:cmrxpjlli016pivhe3nj9izvg",
+        "relation:cmrxpk7yn0261ivheqfccpykg",
+        "relation:cmrxpmg8504vsivhea0f3o0ox",
+        "relation:cmrxpmg8q04vtivhed3um7ful",
+        "relation:cmrxpscjz0cfzivheqtq4d54v",
+        "relation:cmrxpscky0cg1ivhegk3f1u17",
+        "relation:cmrxpscm20cg3ivheh8zto4sz",
+        "relation:cmrxpscn90cg5ivhekc637c76",
+        "seed:torch clean energy|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://torchcleanenergy.com/winchester-battery-energy-storage-project/",
+          "label": "Torchcleanenergy — Torch Clean Energy",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.key.com/businesses-institutions/our-transactions/deals.torch-clean-energy.html",
+          "label": "Key — Torch Clean Energy",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.morganstanley.com/press-releases/morgan-stanley-infrastructure-partners--torch-clean-energy",
+          "label": "Announcement date source — MSIP — Torch Clean Energy",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.torchcleanenergy.com/",
+          "label": "Torchcleanenergy — Torch Clean Energy",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.torchcleanenergy.com/projects",
+          "label": "Torch Clean Energy — projects",
+          "sourceType": "WEBSITE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0350:nextdecade-corporation:a6b7db27",
+      "taskIndex": 350,
+      "companyName": "NextDecade Corporation",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0350-nextdecade-corporation-v1/proposal.json",
+        "sha256": "e7b8d15f05bb58869656c93ff72159c44e8dccde48fc457bd888057bb4504b3e"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0350-nextdecade-corporation-v1.json",
+        "sha256": "e62543f872e2384b92aab48346815bb7c5a428e312d48892bc4c49699c21199c"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0350-nextdecade-corporation/attempt-1/locked-batch-v1-production-snapshot.json",
+        "sha256": "90d70bce6826c50ec94f5a10120bbdb220d899be204d52f2de8be31da3251a46"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0350-nextdecade-corporation/attempt-1/locked-batch-v1-task-snapshot.json",
+        "sha256": "0fb48e6bbe32e46716c77473b80e4dd1e880da3b454de9eba248a4fadf24e72a"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0350-nextdecade-corporation/attempt-1/observed-batch-v1-task-snapshot.json",
+        "sha256": "c7e3e1164fd66884fea9f8447bd78e779cd8afb1ba597275b8e9e61e9baf1b00"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0350-nextdecade-corporation/attempt-1/application-research-decision-v1.json",
+        "sha256": "4fbc7edc8fb307c84e3de9dc92709e46ce94552dee426494f507257486fd810f"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0350-nextdecade-corporation/attempt-1/source-verification.json",
+        "sha256": "7e2a13456e649450f20c4a46c67ebea42a3108abf2eace3e7305004ee7d8569f"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "c08428637f45e3a60d2e95aa9129d272725b21e51014f9b4aaac0b55420fc354",
+      "dependencySha256": "5442b1970af6eb956934c2545bb3c39e1236f221fb022e917afd9fb189cfeb8f",
+      "afterImageSha256": "8c300a9a6cb049dde7d52199bb0bb301a80e7022c5584a63b3fd41e6a9f93ed8",
+      "targetClaims": [
+        "canonical:nextdecade-corporation|united-states",
+        "company:cmrxpjlpv016tivheo8lwhkzy",
+        "relation:cmrxpk81x0267ivhe326uytex",
+        "relation:cmrxpmgk604w7ivheh5uwj2sn",
+        "relation:cmrxpmgkq04w8ivhe6lk8m078",
+        "relation:cmrxpmgla04w9ivhemmwi1q34",
+        "relation:cmrxpmglu04waivhex7r0p8uy",
+        "relation:cmrxpmgm904wbivhej9inguvp",
+        "relation:cmrxpsddt0ch7ivhehwa202ok",
+        "relation:cmrxpsdf40ch9ivhehd5bk4os",
+        "relation:cmrxpsdgb0chbivheltqpz3gu",
+        "relation:cmrxpsdh80chdivhe1csw4lwh",
+        "relation:cmrxpsdi90chfivheml1g27bd",
+        "relation:cmrxpsdjc0chhivheugz4wlpf",
+        "seed:nextdecade corporation|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://investors.next-decade.com/news-releases/news-release-details/nextdecade-announces-us50-million-investment-mubadala",
+          "label": "Announcement date source — Mubadala — NextDecade Corporation",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://investors.next-decade.com/news-releases/news-release-details/nextdecade-registers-shares-previously-issued-mubadala",
+          "label": "Investment date source — Mubadala — NextDecade Corporation",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.global-infra.com/media/press-releases/2023/07/12/global-infrastructure-partners-announces-investment-in-rio-grande-lng-phase-1/",
+          "label": "Global Infra — NextDecade Corporation",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.next-decade.com/",
+          "label": "Next Decade — NextDecade Corporation",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.next-decade.com/press-release/nextdecade-announces-positive-final-investment-decision-and-financing-for-rio-grande-lng-train-5/",
+          "label": "Next Decade — NextDecade Corporation",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.next-decade.com/who-we-are/",
+          "label": "Next Decade — NextDecade Corporation",
+          "sourceType": "ARTICLE"
+        }
+      ]
+    }
+  ],
+  "collisionAnalysis": {
+    "independent": true,
+    "claimsSha256": "5e03a834911601a20df8e9feb47b25880755501f35b457bce568291e9deee0f1",
+    "sharedSourceUrls": [],
+    "conflicts": []
+  },
+  "batchSha256": "c864c879e4bb7f0b0a9bf5be49482d1b2bb7d2f653dcb1d232de8d5c621ff65b"
+}
