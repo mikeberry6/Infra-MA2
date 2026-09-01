@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-01T10:17:05.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-09-01T10:51:27.000Z",
+  "activeBatchId": "batch-0319-0323-v1",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -5420,7 +5420,65 @@
           "reason": "Production database, seed after-images, detail APIs, redirects and rendered scorecards verified; scoped LiveOak attribution recovery receipt eeda6eb686d1b92795ef8ab565c2da9faf81c3b429a7b035809eec18d5d4fdbe closed the prior verification failure."
         }
       ]
+    },
+    {
+      "batchId": "batch-0319-0323-v1",
+      "state": "RELEASING",
+      "taskIds": [
+        "ledger:0319:38-degrees-north:98964650",
+        "ledger:0320:carboncount-holdings-1-llc:1dcdc974",
+        "ledger:0321:coastal-gaslink-pipeline:b82e2db4",
+        "ledger:0322:edf-power-solutions-north-america:20c2fa23",
+        "ledger:0323:helix-digital-infrastructure:89ceeefd"
+      ],
+      "taskIndexes": [
+        319,
+        320,
+        321,
+        322,
+        323
+      ],
+      "createdAt": "2026-09-01T10:23:41.000Z",
+      "updatedAt": "2026-09-01T10:51:27.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0319-0323-v1/batch-manifest-v4.json",
+        "sha256": "9590aadea6ee68e30c519d0160e3c4df5439bc9a3b46dec3942732de5b76fafc"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-09-01T10:23:41.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-09-01T10:51:07.000Z",
+          "evidenceSha256": [
+            "9590aadea6ee68e30c519d0160e3c4df5439bc9a3b46dec3942732de5b76fafc"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "RELEASING",
+          "at": "2026-09-01T10:51:27.000Z",
+          "evidenceSha256": [
+            "9590aadea6ee68e30c519d0160e3c4df5439bc9a3b46dec3942732de5b76fafc"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "4fa144f493a578daaf9767239ee905386c79347fd653f1ba67c7b4cb087531de"
+  "ledgerSha256": "fb067ea0e9581737d9e7ef935646497aa480efa51a76ff8e0e24bf25592eefb6"
 }

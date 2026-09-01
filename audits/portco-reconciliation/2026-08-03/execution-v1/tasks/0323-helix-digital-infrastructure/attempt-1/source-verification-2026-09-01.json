@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0323:helix-digital-infrastructure:89ceeefd",
+  "taskIndex": 323,
+  "verifiedAt": "2026-09-01T10:31:00.000Z",
+  "summary": {
+    "checked": 3,
+    "working": 1,
+    "browserBlockedButVerified": 2,
+    "dead": 0
+  },
+  "sources": [
+    {
+      "url": "https://www.helixdi.com/news-insights/kkr-launches-helix-digital-infrastructure-to-finance-and-deliver-the-next-generation-of-ai-infrastructure/",
+      "httpStatus": 403,
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "browserTitle": "KKR Launches Helix Digital Infrastructure, a New Company to Finance and Deliver the Next Generation of AI Infrastructure | Helix Digital Infrastructure",
+      "purpose": "Direct company source confirms platform launch, infrastructure mandate, capital commitments, leadership, and the distinct investor/partner roles."
+    },
+    {
+      "url": "https://www.helixdi.com/helix-privacy-notice/",
+      "httpStatus": 403,
+      "health": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "browserTitle": "Helix Privacy Notice | Helix Digital Infrastructure",
+      "purpose": "Direct legal disclosure states that Helix Digital Infrastructure LLC is a wholly owned subsidiary of KKR & Co. Inc."
+    },
+    {
+      "url": "https://files.brokercheck.finra.org/firm/firm_8326.pdf",
+      "httpStatus": 200,
+      "health": "WORKING",
+      "purpose": "Supports KKR's legal and business-address context."
+    }
+  ],
+  "boundaryDecision": "Record KKR as the sole direct LLC owner. KIA, NVIDIA, and Vistra are strategy-level investors or partners and are not added as direct Helix company owners.",
+  "exitSearch": "No platform sale, owner exit, signed ownership change, or later direct LLC owner was identified through September 1, 2026.",
+  "valid": true
+}

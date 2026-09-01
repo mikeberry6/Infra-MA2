@@ -1,0 +1,428 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0321:coastal-gaslink-pipeline:b82e2db4",
+  "taskIndex": 321,
+  "companyName": "Coastal GasLink Pipeline",
+  "generatedAt": "2026-09-01T10:25:37.079Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0321-coastal-gaslink-pipeline/attempt-1/locked-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 321,
+    "taskId": "ledger:0321:coastal-gaslink-pipeline:b82e2db4",
+    "canonicalKey": "coastal-gaslink-pipeline|canada",
+    "companyName": "Coastal GasLink Pipeline",
+    "country": "Canada",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 64,
+    "managers": [
+      "KKR"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "064-kkr:holding:006:coastal-gaslink-pipeline"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpj4e100geivhe4lo6qn4w"
+    ],
+    "seedKeys": [
+      "coastal gaslink pipeline|Canada"
+    ],
+    "evidenceUrls": [
+      "https://www.coastalgaslink.com/whats-new/news-stories/2020/tc-energy-completes-partial-monetization-and-project-financing-transactions-for-coastal-gaslink/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Heuristic identity overlap with coastal-gaslink-pipeline-project|canada; no automatic merge was made. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Heuristic identity overlap with coastal-gaslink-pipeline-project|canada; no automatic merge was made."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj4e100geivhe4lo6qn4w",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "coastal-gaslink-pipeline|canada",
+  "targetCompanyImage": {
+    "id": "cmrxpj4e100geivhe4lo6qn4w",
+    "name": "Coastal GasLink Pipeline",
+    "aliases": [],
+    "sector": "MIDSTREAM",
+    "subsector": "Natural gas transmission pipeline",
+    "region": "NORTH_AMERICA",
+    "country": "Canada",
+    "countryTags": [
+      "Canada"
+    ],
+    "description": "Coastal GasLink Pipeline Project is a 670-kilometre natural gas transmission project connecting northeastern British Columbia to LNG Canada’s export terminal in Kitimat. Its customers or end markets include LNG Canada and upstream natural gas production in the Montney region. The operating model is an asset-heavy transmission pipeline supported by long-term transportation arrangements rather than merchant commodity exposure. Operations are concentrated in British Columbia along the Dawson Creek-to-Kitimat corridor. Public materials indicate route length of 670 kilometres and design capacity of approximately 2.1 Bcf/d. Current ownership includes TC Energy, which retained 35% when KKR and AIMCo acquired a combined 65% interest in 2019; AIMCo’s exact split has not been publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2012,
+    "headquarters": "British Columbia",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjpim01czivhefcuxtvf5",
+        "managerName": "AIMCo",
+        "organizationName": "AIMCo",
+        "fundName": "AIMCo Direct Infrastructure Investment",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2020,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpk5ra022nivhet9onm4fd",
+        "managerName": "KKR",
+        "organizationName": "KKR",
+        "fundName": "K-INFRA",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2020,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkdgm02edivhe4kvdr73w",
+        "date": "Dec 2019",
+        "event": "TC Energy announced the sale of a combined 65% interest in Coastal GasLink to KKR and AIMCo while retaining 35%.",
+        "category": "ACQUISITION",
+        "sortDate": "2019-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkdh702eeivheplfmtgai",
+        "date": "May 2020",
+        "event": "TC Energy closed the sale of 65% of Coastal GasLink to KKR and AIMCo, retaining 35%.",
+        "category": "ACQUISITION",
+        "sortDate": "2020-05-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkdhs02efivhecot6izxg",
+        "date": "Mar 2022",
+        "event": "TC Energy signed equity option agreements with Indigenous communities along the project corridor.",
+        "category": "OTHER",
+        "sortDate": "2022-03-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkdie02egivhepycir8r4",
+        "date": "Nov 2023",
+        "event": "TC Energy reported mechanical completion of the pipeline project.",
+        "category": "EXPANSION",
+        "sortDate": "2023-11-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkdiw02ehivhe87x1epn0",
+        "date": "Nov 2024",
+        "event": "Coastal GasLink announced commercial in-service.",
+        "category": "EXPANSION",
+        "sortDate": "2024-11-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm76u04kqivhefwfhz6xe",
+        "date": "2012",
+        "event": "TC Energy was selected to design, build, own, and operate the Coastal GasLink pipeline.",
+        "category": "EXPANSION",
+        "sortDate": "2012-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm77f04krivheyqo0v89j",
+        "date": "2012",
+        "event": "Coastal GasLink Pipeline was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2012-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm78104ksivhew5em96ro",
+        "date": "Dec 26, 2019",
+        "event": "TC Energy announced the sale of a combined 65% equity interest in Coastal GasLink to KKR and AIMCo.",
+        "category": "ACQUISITION",
+        "sortDate": "2019-12-26T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm78i04ktivhe5h02dl3x",
+        "date": "May 25, 2020",
+        "event": "TC Energy closed the sale of a combined 65% equity interest in Coastal GasLink to KKR and AIMCo.",
+        "category": "ACQUISITION",
+        "sortDate": "2020-05-25T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm78y04kuivhevw8ygubx",
+        "date": "Jun 13, 2024",
+        "event": "Coastal GasLink announced completion of a major corporate bond offering and described the project as owned by affiliates of TC Energy, KKR, and AIMCo.",
+        "category": "FINANCING",
+        "sortDate": "2024-06-13T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpoln006x8ivhen2ho9pvw",
+        "label": "Coastalgaslink — Coastal GasLink Pipeline Project",
+        "url": "https://www.coastalgaslink.com/about/faqs/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Coastalgaslink company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpolqj06xaivhe6aucct8i",
+        "label": "Coastalgaslink — Coastal GasLink Pipeline Project",
+        "url": "https://www.coastalgaslink.com/whats-new/news-stories/2019/Partial-Monetization-of-CGL-Announced/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Coastalgaslink — Coastal GasLink Pipeline Project",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpolrd06xcivhe5dk0qnl6",
+        "label": "Close date source — AIMCo — Coastal GasLink Pipeline Project",
+        "url": "https://www.coastalgaslink.com/whats-new/news-stories/2020/tc-energy-completes-partial-monetization-and-project-financing-transactions-for-coastal-gaslink/",
+        "sourceType": "ARTICLE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "AIMCo closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpolsh06xeivhe7ymfvyo0",
+        "label": "Tcenergy — Coastal GasLink Pipeline Project",
+        "url": "https://www.tcenergy.com/announcements/2019/2019-12-26tc-energy-announces-the-partial-monetization-of-the-coastal-gaslink-pipeline-project/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Tcenergy operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpoltk06xgivheashn6kzp",
+        "label": "Tcenergy — Coastal GasLink Pipeline Project",
+        "url": "https://www.tcenergy.com/announcements/2022/2022-03-09-tc-energy-signs-equity-option-agreements-with-indigenous-communities-across-the-coastal-gaslink-project-corridor/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Tcenergy operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprwwb0bseivhejq02q10z",
+        "label": "Tcenergy — Coastal GasLink Pipeline",
+        "url": "https://www.tcenergy.com/operations/natural-gas/coastal-gaslink/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Tcenergy operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprwxb0bsgivhecaoqg3yt",
+        "label": "Coastalgaslink — Coastal GasLink Pipeline",
+        "url": "https://www.coastalgaslink.com/about/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Coastalgaslink company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprwy70bsiivheaht5ee1y",
+        "label": "Coastalgaslink — Coastal GasLink Pipeline",
+        "url": "https://www.coastalgaslink.com/whats-new/news-stories/2024/coastal-gaslink-completes-largest-corporate-bond-offering-in-canadian-history/",
+        "sourceType": "ARTICLE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Coastalgaslink financing or public filing",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprwz70bskivhezc81jms1",
+        "label": "Close date source — KKR / AIMCo — Coastal GasLink Pipeline",
+        "url": "https://www.aimco.ca/insights/investment-in-tc-energy-coastal-gaslink-pipeline-project",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "KKR / AIMCo closing confirmation",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Coastal GasLink Pipeline",
+    "investmentFirm": "KKR",
+    "sector": "Midstream",
+    "subsector": "Natural gas transmission pipeline",
+    "region": "North America",
+    "country": "Canada",
+    "ownershipVehicle": "n.a.",
+    "description": "Coastal GasLink is a long-haul natural gas transmission pipeline connecting northeastern British Columbia supply to the LNG Canada export facility near Kitimat. Its end market is LNG export and related upstream gas production, with transportation services supporting feedgas delivery from the Western Canadian Sedimentary Basin. The operating model is asset-heavy and infrastructure based, with value derived from long-life pipeline transportation under contracted or utility-style tolling arrangements rather than asset-light services. Public materials describe an approximately 670-kilometre pipeline across northern British Columbia that entered commercial service and is positioned to support LNG Canada. TC Energy announced in 2019 that it would sell a combined 65% equity interest in the project to KKR and AIMCo while retaining 35%, and 2024 Coastal GasLink materials continued to describe the project as owned by affiliates of those three parties.",
+    "status": "Active",
+    "countryTags": [
+      "Canada"
+    ],
+    "yearFounded": 2012,
+    "investmentYear": 2020,
+    "headquarters": "British Columbia",
+    "milestones": [
+      {
+        "date": "2012",
+        "event": "TC Energy was selected to design, build, own, and operate the Coastal GasLink pipeline.",
+        "category": "Expansion"
+      },
+      {
+        "date": "2012",
+        "event": "Coastal GasLink Pipeline was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "Dec 26, 2019",
+        "event": "TC Energy announced the sale of a combined 65% equity interest in Coastal GasLink to KKR and AIMCo.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "May 25, 2020",
+        "event": "TC Energy closed the sale of a combined 65% equity interest in Coastal GasLink to KKR and AIMCo.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Jun 13, 2024",
+        "event": "Coastal GasLink announced completion of a major corporate bond offering and described the project as owned by affiliates of TC Energy, KKR, and AIMCo.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Tcenergy — Coastal GasLink Pipeline",
+        "url": "https://www.tcenergy.com/operations/natural-gas/coastal-gaslink/",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Coastalgaslink — Coastal GasLink Pipeline",
+        "url": "https://www.coastalgaslink.com/about/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Coastalgaslink — Coastal GasLink Pipeline",
+        "url": "https://www.coastalgaslink.com/whats-new/news-stories/2024/coastal-gaslink-completes-largest-corporate-bond-offering-in-canadian-history/",
+        "type": "ARTICLE",
+        "purpose": "FINANCING_FILINGS"
+      },
+      {
+        "label": "Close date source — KKR / AIMCo — Coastal GasLink Pipeline",
+        "url": "https://www.aimco.ca/insights/investment-in-tc-energy-coastal-gaslink-pipeline-project",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "KKR",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2020,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [
+    {
+      "sourceQueueTaskId": "ledger:0473:coastal-gaslink-pipeline-project:816af47c",
+      "sourceQueueEntrySha256": "3eef4cb7fe5bf69ceaf71e39222af8a103ce481c51b7cd4766a2532b0178de75",
+      "name": "Coastal GasLink Pipeline Project",
+      "country": "Canada",
+      "rawSeedEntrySha256": "e23ae52e7e4b5aaee5e3d6d067a7fb84c7f60fd378c8cd0291e856e08649ab0e",
+      "evaluatedSeedEntrySha256": "e23ae52e7e4b5aaee5e3d6d067a7fb84c7f60fd378c8cd0291e856e08649ab0e"
+    }
+  ],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj0r500ayivhejf0kb254",
+        "fundName": "AIMCo Direct Infrastructure Investment",
+        "managerId": "cmrxpi2rj0005ivhejt9pabwk",
+        "updatedAt": "2026-07-23T16:09:54.833Z"
+      },
+      {
+        "id": "cmrxpj2yp00ecivheouv7ybld",
+        "fundName": "K-INFRA",
+        "managerId": "cmrxpiay4002pivhed6sjuu9i",
+        "updatedAt": "2026-07-23T16:09:57.697Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi2rj0005ivhejt9pabwk",
+        "name": "AIMCo",
+        "updatedAt": "2026-07-23T16:09:10.783Z"
+      },
+      {
+        "id": "cmrxpiay4002pivhed6sjuu9i",
+        "name": "KKR",
+        "updatedAt": "2026-07-23T16:09:21.388Z"
+      }
+    ],
+    "redirects": [
+      {
+        "retiredId": "cmrxpjjse013tivhew5dent2f",
+        "companyId": "cmrxpj4e100geivhe4lo6qn4w",
+        "reason": "CANONICAL_MERGE",
+        "createdAt": "2026-07-29T04:08:40.636Z"
+      }
+    ]
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0321:coastal-gaslink-pipeline:b82e2db4",
+    "taskIndex": 321,
+    "canonicalKey": "coastal-gaslink-pipeline|canada",
+    "capturedAt": "2026-09-01T10:25:37.079Z",
+    "databaseRevision": "revision:7b7c9d3781a90f55b8f1e3617c4c94ed8a4a92c52441063bc82d185252846822",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "0ead045a0df5f62bd4390f1682a3c4816ac120236cb980a1e2a2bdd554efdbb7",
+    "productionSnapshotSha256": "7dc615bffa129dcfc75abc0cade3df04cf40de39fed41b4c48961f9dd36e43a6",
+    "targetCompanySnapshotSha256": "38ba2a688ac8a1720990f6d3e6e62d60e1c0d46704a0c265165750a12069ccd9",
+    "seedEntrySha256": "3c28966e9b1649a19a1601153806ec7ef265bcad43526bb29cc25799deae6eb6",
+    "seedRetirementCandidates": [
+      {
+        "sourceQueueTaskId": "ledger:0473:coastal-gaslink-pipeline-project:816af47c",
+        "sourceQueueEntrySha256": "3eef4cb7fe5bf69ceaf71e39222af8a103ce481c51b7cd4766a2532b0178de75",
+        "name": "Coastal GasLink Pipeline Project",
+        "country": "Canada",
+        "rawSeedEntrySha256": "e23ae52e7e4b5aaee5e3d6d067a7fb84c7f60fd378c8cd0291e856e08649ab0e",
+        "evaluatedSeedEntrySha256": "e23ae52e7e4b5aaee5e3d6d067a7fb84c7f60fd378c8cd0291e856e08649ab0e"
+      }
+    ],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4d5aad0955a2c001ae38257a65d483d3ca4ea32f4df7a441cea0aeab3ead2cfd",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "33dbb3b634acc1a5d3442e4c204bca1c4abc4b6c48c07edf7d61458e553b1461",
+      "organizationsSha256": "b2f38d8eea99cf095cf17da94dbb0bb6b6972a0c1686c777bfd059354480bcf3",
+      "citationsSha256": "63caf3373c5b64e256de4fff601ec3e09aa76f2fb1616d1506b039b7bfb71e36",
+      "redirectsSha256": "909cbd2637d377abd0ab3113269160c05c59e1ce61a9d6d5dd7142eeb626e59f"
+    },
+    "dependencySha256": "491db65dea6f1beaad1707dcecb0d7d6402dd820dcf97aae593e3697297c2729",
+    "stateSha256": "1e6a288ef061ebf334082287f0b60c7778efd9005be958e24ffa0dff9bac9315",
+    "taskSnapshotSha256": "d45bba7fa5926128ab0aadabfea862a7d172a635ba8c073074279ece4d151632"
+  },
+  "contextSha256": "b4d443e4f110eeadfaeca99bbe1e130b130ecf860a2fb529eab4ca2679423846"
+}

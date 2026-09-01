@@ -1,0 +1,297 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0320:carboncount-holdings-1-llc:1dcdc974",
+  "taskIndex": 320,
+  "asOfDate": "2026-09-01",
+  "generatedAt": "2026-09-01T10:32:30.000Z",
+  "canonicalKey": "carboncount-holdings-1-llc|united-states",
+  "companyName": "CarbonCount Holdings 1 LLC",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER"
+  ],
+  "sourceHoldingIds": [
+    "064-kkr:holding:005:carboncount-holdings-1-llc"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Archive CarbonCount Holdings 1 LLC from published operating PortCo views while preserving its active legal identity, 50/50 member ownership, financing milestones, and evidence. Current HASI and SEC materials consistently describe CCH1 as a jointly governed investment, aggregation, and financing vehicle holding project interests, receivables, and debt securities rather than a manager-level operating infrastructure company.",
+  "evidence": [
+    {
+      "url": "https://investors.hasi.com/news/press-releases/detail/288/hasi-and-kkr-establish-2-billion-strategic-partnership-to-invest-in-sustainable-infrastructure-projects",
+      "purpose": "Vehicle formation and boundary",
+      "supports": [
+        "CCH1 is a 50/50 co-investment vehicle",
+        "HASI and KKR invest through member vehicles"
+      ]
+    },
+    {
+      "url": "https://investors.hasi.com/news/press-releases/detail/318/hasi-and-kkr-commit-additional-1-billion-to-carboncount-holdings-1",
+      "purpose": "Current active vehicle status",
+      "supports": [
+        "Both members made additional commitments",
+        "CCH1 remained an active investment vehicle"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1561894/000156189426000136/hasi-20260630.htm",
+      "purpose": "Current SEC ownership and operating-boundary evidence",
+      "supports": [
+        "HASI and KKR each own 50% through their member vehicles",
+        "CCH1 holds a mixed investment portfolio and uses affiliate service providers"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "b59e4201ca48150c60efe0b41d8b4c2c60685bdf5e1cedc6624cc73a1a90caa6",
+  "currentCompanySnapshotSha256": "3837ff634e9c2e37ada651a03706368aad0d68a6c307ec29377e4c8620dd7c82",
+  "executionLock": {
+    "taskSnapshotSha256": "e1738c336beec413b66b18c7fa9e54e88029c7e1de7c6a96f78e10e4efeb406e",
+    "taskStateSha256": "e9e0a8bbb14f2182600dce70c8ae2eefec957e7dbc2c45374b5d87fc7c8ccbcd",
+    "taskDependencySha256": "553490dd40cdd4caa5aa1ba9417a8982298c62f1a8b0532b26c6ae8afaf04ebf",
+    "seedEntrySha256": "d4117c23d6ed11bee9cfeb94dabc4a6439cb42356eadef57d19512ed3136355c",
+    "dependencies": {
+      "ownershipPeriodsSha256": "23c1b1a02bd74c5ded3fe6b5bc1f9ce69fa34b6ef5f518aaef9ad54f85397f60",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "7ac464ae461ed24153b86c45c21c7739fcb4aadf9711ad938af8eddcfcba5d14",
+      "citationsSha256": "e2e8d834b961db5cc085a5cbbd9d07f10735848141e71b38aba7230c17d0a1e3",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpiay4002pivhed6sjuu9i",
+        "name": "KKR",
+        "updatedAt": "2026-07-23T16:09:21.388Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjjrz013sivhes0xv1fyr",
+    "name": "CarbonCount Holdings 1 LLC",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Sustainable infrastructure investment vehicle",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "CarbonCount Holdings 1 is a sustainable infrastructure investment vehicle that provides capital to clean energy and climate-positive projects in the United States. Its end markets include developers and owners of renewable, efficiency, and other sustainable infrastructure assets that require long-duration capital solutions. The operating model is capital-intensive but portfolio based, deploying equity and leverage into infrastructure investments rather than running a single operating asset platform. Public disclosures state that the HASI-KKR partnership had closed nearly $3 billion of investment commitments across multiple sustainable infrastructure asset classes through November 2025 and had increased total investment capacity to nearly $5 billion. HASI and KKR formed CCH1 in 2024 and announced an additional $1 billion of capital commitments in December 2025.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2024,
+    "headquarters": "United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk5qr022mivheevc6b9be",
+        "managerName": "KKR",
+        "organizationName": "KKR",
+        "fundName": null,
+        "vehicleName": "KKR Core Infrastructure",
+        "stake": null,
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpm72e04knivhei8rhxwfq",
+        "date": "May 2024",
+        "event": "CCH1 was formed as a strategic partnership between HASI and KKR to invest in sustainable infrastructure projects in the United States.",
+        "category": "FINANCING",
+        "sortDate": "2024-05-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm72r04koivhelenbpadp",
+        "date": "Jun 9, 2025",
+        "event": "CCH1 announced a $592 million senior unsecured notes issuance and disclosed increased investment capacity of $2.6 billion.",
+        "category": "FINANCING",
+        "sortDate": "2025-06-09T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm75r04kpivhe3cmx0nei",
+        "date": "Dec 15, 2025",
+        "event": "HASI and KKR announced an additional $1 billion of capital commitments, bringing total investment capacity to nearly $5 billion.",
+        "category": "FINANCING",
+        "sortDate": "2025-12-15T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxprws30bs6ivhehoqdb8vy",
+        "label": "Investment-date source — KKR / HASI — CarbonCount Holdings 1 LLC",
+        "url": "https://investors.hasi.com/news/press-releases/detail/306/carboncount-holdings-1-llc-to-issue-592-million-of-20-year-fixed-rate-senior-unsecured-notes",
+        "sourceType": "ARTICLE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Investment financing or public filing",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxprwt40bs8ivhexbdw6o3i",
+        "label": "Follow-on commitment source — KKR / HASI — CarbonCount Holdings 1 LLC",
+        "url": "https://investors.hasi.com/news/press-releases/detail/318/hasi-and-kkr-commit-additional-1-billion-to-carboncount-holdings-1",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Follow-on commitment source — KKR / HASI — CarbonCount Holdings 1 LLC",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprwua0bsaivhedy12dm9k",
+        "label": "Kkr — CarbonCount Holdings 1 LLC",
+        "url": "https://www.kkr.com/businesses/infrastructure",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Kkr — CarbonCount Holdings 1 LLC",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprwvf0bscivhe8h563pyi",
+        "label": "SEC — CarbonCount Holdings 1 LLC",
+        "url": "https://www.sec.gov/Archives/edgar/data/1561894/000156189425000007/R15.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "SEC filing",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "3837ff634e9c2e37ada651a03706368aad0d68a6c307ec29377e4c8620dd7c82",
+  "afterImage": {
+    "id": "cmrxpjjrz013sivhes0xv1fyr",
+    "name": "CarbonCount Holdings 1 LLC",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Sustainable infrastructure investment vehicle",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "CarbonCount Holdings 1 LLC is a 50/50 HASI-KKR co-investment, aggregation, and financing vehicle established to invest in eligible climate-positive projects and related interests in the United States. Public filings show a mixed portfolio of equity-method investments, receivables, and debt securities and identify affiliate service providers rather than a standalone workforce or customer-facing operating business. It remains an active legal investment vehicle, but it is archived from the direct operating infrastructure PortCo universe because it does not meet the manager-level operating-company boundary.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "ARCHIVED",
+    "website": null,
+    "yearFounded": 2024,
+    "headquarters": "United States",
+    "lastVerifiedAt": "2026-09-01T10:32:30.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk5qr022mivheevc6b9be",
+        "managerName": "KKR",
+        "organizationName": "KKR",
+        "fundName": null,
+        "vehicleName": "Hoops Midco, LLC / KKR-managed investment vehicle",
+        "stake": "50% membership interest",
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "HASI",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "HASI CarbonCount Holdings 1, LLC",
+        "stake": "50% membership interest",
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpm72e04knivhei8rhxwfq",
+        "date": "May 2024",
+        "event": "CCH1 was formed as a strategic partnership between HASI and KKR to invest in sustainable infrastructure projects in the United States.",
+        "category": "FINANCING",
+        "sortDate": "2024-05-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm72r04koivhelenbpadp",
+        "date": "Jun 9, 2025",
+        "event": "CCH1 announced a $592 million senior unsecured notes issuance and disclosed increased investment capacity of $2.6 billion.",
+        "category": "FINANCING",
+        "sortDate": "2025-06-09T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm75r04kpivhe3cmx0nei",
+        "date": "Dec 15, 2025",
+        "event": "HASI and KKR announced an additional $1 billion of capital commitments, bringing total investment capacity to nearly $5 billion.",
+        "category": "FINANCING",
+        "sortDate": "2025-12-15T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxprws30bs6ivhehoqdb8vy",
+        "label": "Investment-date source — KKR / HASI — CarbonCount Holdings 1 LLC",
+        "url": "https://investors.hasi.com/news/press-releases/detail/306/carboncount-holdings-1-llc-to-issue-592-million-of-20-year-fixed-rate-senior-unsecured-notes",
+        "sourceType": "ARTICLE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Investment financing or public filing",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxprwt40bs8ivhexbdw6o3i",
+        "label": "Follow-on commitment source — KKR / HASI — CarbonCount Holdings 1 LLC",
+        "url": "https://investors.hasi.com/news/press-releases/detail/318/hasi-and-kkr-commit-additional-1-billion-to-carboncount-holdings-1",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Follow-on commitment source — KKR / HASI — CarbonCount Holdings 1 LLC",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprwua0bsaivhedy12dm9k",
+        "label": "Kkr — CarbonCount Holdings 1 LLC",
+        "url": "https://www.kkr.com/businesses/infrastructure",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Kkr — CarbonCount Holdings 1 LLC",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprwvf0bscivhe8h563pyi",
+        "label": "SEC — CarbonCount Holdings 1 LLC",
+        "url": "https://www.sec.gov/Archives/edgar/data/1561894/000156189425000007/R15.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "SEC filing",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "HASI 2026 Q2 Form 10-Q — CarbonCount Holdings 1 LLC",
+        "url": "https://www.sec.gov/Archives/edgar/data/1561894/000156189426000136/hasi-20260630.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current 50/50 membership and investment-vehicle boundary",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "9ec1380d37dbd74c1275da654441e96ca2e253bdc9555da7239a6a469862c80c",
+  "proposalSha256": "861966456599910ac946a5ee7b6c6b6d6c161df8665961a5fa881bac85ebf841"
+}

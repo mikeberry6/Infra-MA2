@@ -1,0 +1,248 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0319:38-degrees-north:98964650",
+  "taskIndex": 319,
+  "companyName": "38 Degrees North",
+  "generatedAt": "2026-09-01T10:25:06.700Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0319-38-degrees-north/attempt-1/locked-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 319,
+    "taskId": "ledger:0319:38-degrees-north:98964650",
+    "canonicalKey": "38-degrees-north|united-states",
+    "companyName": "38 Degrees North",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 63,
+    "managers": [
+      "Kimmeridge Energy"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "063-kimmeridge-energy:holding:002:38-degrees-north"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjjk4013iivhews9hbpmo"
+    ],
+    "seedKeys": [
+      "38 degrees north|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.kimmeridge.com/select-investments",
+      "https://www.prnewswire.com/news-releases/kimmeridge-invests-in-38-degrees-north-302115939.html"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_OWNER requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjjk4013iivhews9hbpmo",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "38-degrees-north|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjjk4013iivhews9hbpmo",
+    "name": "38 Degrees North",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Distributed generation, community solar, and battery storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "38 Degrees North develops, owns, and operates distributed generation, community solar, battery storage, and related sustainable infrastructure assets. Its end markets include communities, development partners, capital providers, utilities, and commercial counterparties seeking distributed clean-energy solutions. The operating model combines development and ownership of physical energy assets with flexible capital partnerships, making it more infrastructure oriented than a software-only platform. Public materials describe a focus on community solar, distributed generation, and storage, and a July 2025 funding announcement stated that the company had raised more than $230 million of corporate growth capital and acquired U.S. Light Energy's 250 MW-plus pipeline. Kimmeridge made a growth equity investment alongside Climate Adaptive Infrastructure in 2025.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk5l8022civhep7fmqbfj",
+        "managerName": "Kimmeridge",
+        "organizationName": "Kimmeridge",
+        "fundName": null,
+        "vehicleName": "Kimmeridge Carbon Solutions",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpm6fi04jwivheywdtpulj",
+        "date": "Jul 17, 2025",
+        "event": "38 Degrees North announced more than $230 million of corporate growth capital and new equity investment from Climate Adaptive Infrastructure and Kimmeridge.",
+        "category": "FINANCING",
+        "sortDate": "2025-07-17T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm6g204jxivhel6duk9f0",
+        "date": "Jul 17, 2025",
+        "event": "The company also announced completion of the acquisition of U.S. Light Energy, including a pipeline of more than 250 MW of projects.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-07-17T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxprv7y0bptivheqgkaa514",
+        "label": "38Degreesn — 38 Degrees North",
+        "url": "https://www.38degreesn.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "38Degreesn company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxprv8y0bpvivhe7fxmlk74",
+        "label": "Investment date source — Kimmeridge — 38 Degrees North",
+        "url": "https://www.prnewswire.com/news-releases/38-degrees-north-announces-over-230-million-of-corporate-growth-capital-raised-and-welcomes-new-equity-investors-climate-adaptive-infrastructure-and-kimmeridge-302507588.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Kimmeridge initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprv9w0bpxivhebqp4bbvy",
+        "label": "Foley — 38 Degrees North",
+        "url": "https://www.foley.com/news/2025/07/kimmeridge-sale-us-light-energy-growth-equity-38-degrees-north/",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Foley transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprvbs0bpzivheiy1kbdhf",
+        "label": "38Degreesn — 38 Degrees North",
+        "url": "https://www.38degreesn.com/team",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "38Degreesn — 38 Degrees North",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "38 Degrees North",
+    "investmentFirm": "Kimmeridge",
+    "sector": "Power & ET",
+    "subsector": "Distributed generation, community solar, and battery storage",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Kimmeridge Carbon Solutions",
+    "description": "38 Degrees North develops, owns, and operates distributed generation, community solar, battery storage, and related sustainable infrastructure assets. Its end markets include communities, development partners, capital providers, utilities, and commercial counterparties seeking distributed clean-energy solutions. The operating model combines development and ownership of physical energy assets with flexible capital partnerships, making it more infrastructure oriented than a software-only platform. Public materials describe a focus on community solar, distributed generation, and storage, and a July 2025 funding announcement stated that the company had raised more than $230 million of corporate growth capital and acquired U.S. Light Energy's 250 MW-plus pipeline. Kimmeridge made a growth equity investment alongside Climate Adaptive Infrastructure in 2025.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2025,
+    "headquarters": "United States",
+    "milestones": [
+      {
+        "date": "Jul 17, 2025",
+        "event": "38 Degrees North announced more than $230 million of corporate growth capital and new equity investment from Climate Adaptive Infrastructure and Kimmeridge.",
+        "category": "Financing"
+      },
+      {
+        "date": "Jul 17, 2025",
+        "event": "The company also announced completion of the acquisition of U.S. Light Energy, including a pipeline of more than 250 MW of projects.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "38Degreesn — 38 Degrees North",
+        "url": "https://www.38degreesn.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Investment date source — Kimmeridge — 38 Degrees North",
+        "url": "https://www.prnewswire.com/news-releases/38-degrees-north-announces-over-230-million-of-corporate-growth-capital-raised-and-welcomes-new-equity-investors-climate-adaptive-infrastructure-and-kimmeridge-302507588.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Foley — 38 Degrees North",
+        "url": "https://www.foley.com/news/2025/07/kimmeridge-sale-us-light-energy-growth-equity-38-degrees-north/",
+        "type": "ARTICLE",
+        "purpose": "MILESTONE_EVENT"
+      },
+      {
+        "label": "38Degreesn — 38 Degrees North",
+        "url": "https://www.38degreesn.com/team",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Kimmeridge",
+        "ownershipVehicle": "Kimmeridge Carbon Solutions",
+        "investmentYear": 2025,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpijtm005hivheogcm0zek",
+        "name": "Kimmeridge",
+        "updatedAt": "2026-07-23T16:09:32.890Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0319:38-degrees-north:98964650",
+    "taskIndex": 319,
+    "canonicalKey": "38-degrees-north|united-states",
+    "capturedAt": "2026-09-01T10:25:06.700Z",
+    "databaseRevision": "revision:8550883bbbbbc169fbae08de45dccd111e08638bdede9cb61590f16c79ad1853",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "3ab848a3b5efab05ecd7d6b1d529bb1ae532550da6ee2e5117e4890ed9108b4e",
+    "productionSnapshotSha256": "112e9b18c35aa5bde87299755b918524cc2d25581e0f65deedf4df1cf3057d88",
+    "targetCompanySnapshotSha256": "e8ae9a4aa9ea19f502a916d41d6d56fbb69fdf8d248e8d7808c37bcfe1847ecb",
+    "seedEntrySha256": "f01ade01514297b830562a3885a327e186849db4e9e94c8bedc0a110e04600d9",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "8104c53ea8ae42d96103859eccd596b912bfe52fe076592b49454c0e374787ed",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "23c8922ef02458879c7fb266f3b7dcf5fca1b08cf3fc49571e152d375650c9c1",
+      "citationsSha256": "3a2886e41274d11a991f94275f7f9090d880dbcc39f0f8329728c1c087e450e0",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "3b9e034ada1db8d43ce158613947420174344c8016c4424473fb7bdbe7930ac1",
+    "stateSha256": "1f651760193c06fd20a031acc514e78e21c02e469b94173f0ef62e2f39cf1c11",
+    "taskSnapshotSha256": "794b2960641be90e7b5208f8366699aa7ccbc1e5a06b13bf19622b77ede1261e"
+  },
+  "contextSha256": "6fc222e1756158f30be349ea0aadb5e8c31ce8f6adac8a4a5945c42bec958862"
+}

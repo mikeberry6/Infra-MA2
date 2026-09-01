@@ -1,0 +1,113 @@
+{
+  "generatedAt": "2026-09-01T10:33:00.000Z",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER",
+    "ADD_PENDING_TRANSACTION",
+    "MERGE_COMPANIES"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "reviewedSeedRetirementTaskIds": [
+    "ledger:0473:coastal-gaslink-pipeline-project:816af47c"
+  ],
+  "rationale": "Maintain one canonical Coastal GasLink Pipeline record and retire the duplicate seed identity. Preserve TC Energy's current 35% interest and the combined 65% KKR/AIMCo interest without inventing the private KKR/AIMCo split. Record the Indigenous equity option as signed pending incoming because no legal closing was identified.",
+  "evidence": [
+    {
+      "url": "https://www.tcenergy.com/announcements/2019/2019-12-26tc-energy-announces-the-partial-monetization-of-the-coastal-gaslink-pipeline-project/",
+      "purpose": "Canonical identity and ownership split",
+      "supports": [
+        "One Coastal GasLink Pipeline asset",
+        "TC Energy retained 35%",
+        "KKR and AIMCo acquired a combined 65%"
+      ]
+    },
+    {
+      "url": "https://www.tcenergy.com/siteassets/pdfs/investors/reports-and-filings/annual-and-quarterly-reports/2020/tc-2020-q2-quarterly-report.pdf",
+      "purpose": "Legal closing",
+      "supports": [
+        "The combined 65% sale closed in May 2020"
+      ]
+    },
+    {
+      "url": "https://www.tcenergy.com/siteassets/pdfs/investors/reports-and-filings/annual-and-quarterly-reports/2026/tce-2026-q2-quarterly-report.pdf",
+      "purpose": "Current ownership and exit search",
+      "supports": [
+        "TC Energy retained its current investment",
+        "No completed owner exit was reported"
+      ]
+    },
+    {
+      "url": "https://www.tcenergy.com/announcements/2022/2022-03-09-tc-energy-signs-equity-option-agreements-with-indigenous-communities-across-the-coastal-gaslink-project-corridor/",
+      "purpose": "Pending Indigenous equity option",
+      "supports": [
+        "Signed equity option agreements",
+        "Potential incoming interest of up to 10%",
+        "No legal closing date disclosed"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "companyFieldUpdates": {
+    "lastVerifiedAt": "2026-09-01T10:33:00.000Z"
+  },
+  "ownershipPeriodUpdates": [
+    {
+      "id": "cmrxpjpim01czivhefcuxtvf5",
+      "set": {
+        "stake": "Part of combined 65% KKR/AIMCo interest; individual split not publicly disclosed"
+      }
+    },
+    {
+      "id": "cmrxpk5ra022nivhet9onm4fd",
+      "set": {
+        "stake": "Part of combined 65% KKR/AIMCo interest; individual split not publicly disclosed"
+      }
+    }
+  ],
+  "ownershipPeriodRemovals": [],
+  "ownershipPeriodAdditions": [
+    {
+      "id": null,
+      "managerName": "TC Energy Corporation",
+      "organizationName": null,
+      "fundName": null,
+      "vehicleName": "Coastal GasLink Pipeline Limited Partnership",
+      "stake": "35%",
+      "investmentYear": 2012,
+      "exitYear": null,
+      "isActive": true,
+      "transactionState": "CLOSED_ACTIVE"
+    }
+  ],
+  "pendingOwnershipTransactionUpdates": [],
+  "pendingOwnershipTransactionAdditions": [
+    {
+      "id": null,
+      "direction": "INCOMING",
+      "transactionState": "SIGNED_PENDING_INCOMING",
+      "counterpartyName": "Participating Indigenous communities along the Coastal GasLink corridor",
+      "transactionDescription": "Equity option agreements for a potential combined interest of up to 10% in Coastal GasLink; legal closing not publicly evidenced.",
+      "announcedAt": "2022-03-09",
+      "expectedClosing": "Not publicly disclosed",
+      "relatedOwnershipPeriodIds": [],
+      "evidenceUrls": [
+        "https://www.tcenergy.com/announcements/2022/2022-03-09-tc-energy-signs-equity-option-agreements-with-indigenous-communities-across-the-coastal-gaslink-project-corridor/"
+      ]
+    }
+  ],
+  "milestoneUpdates": [],
+  "milestoneTransfers": [],
+  "citationUpdates": [],
+  "citationAdditions": [
+    {
+      "id": null,
+      "label": "TC Energy 2026 Q2 report — Coastal GasLink current ownership",
+      "url": "https://www.tcenergy.com/siteassets/pdfs/investors/reports-and-filings/annual-and-quarterly-reports/2026/tce-2026-q2-quarterly-report.pdf",
+      "sourceType": "PRESENTATION",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Current ownership and exit search",
+      "isPrimary": false
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0323:helix-digital-infrastructure:89ceeefd",
+  "taskIndex": 323,
+  "companyName": "Helix Digital Infrastructure",
+  "generatedAt": "2026-09-01T10:39:51.276Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0323-helix-digital-infrastructure/attempt-1/observed-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 323,
+    "taskId": "ledger:0323:helix-digital-infrastructure:89ceeefd",
+    "canonicalKey": "helix-digital-infrastructure|united-states",
+    "companyName": "Helix Digital Infrastructure",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 64,
+    "managers": [
+      "KKR"
+    ],
+    "actionScopes": {
+      "company": [
+        "CREATE_COMPANY"
+      ],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "064-kkr:holding:020:helix-digital-infrastructure"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://www.kkr.com/newsroom/kkr-announces-launch-of-helix-digital-infrastructure"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "No exact normalized production or seed match exists. Census evidence supports a new canonical company with 1 manager holding record(s).",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "helix-digital-infrastructure|united-states",
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpiay4002pivhed6sjuu9i",
+        "name": "KKR",
+        "updatedAt": "2026-07-23T16:09:21.388Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0323:helix-digital-infrastructure:89ceeefd",
+    "taskIndex": 323,
+    "canonicalKey": "helix-digital-infrastructure|united-states",
+    "capturedAt": "2026-09-01T10:39:51.276Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "c707ce7fc97095efa55ace8e6f116f6306393c1c782e2cebc40f3432bbd168a3",
+    "productionSnapshotSha256": "d3f6590432b2102997070bf4d6658466e04f6b6b284df9829a37606d9bdf63e1",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "7ac464ae461ed24153b86c45c21c7739fcb4aadf9711ad938af8eddcfcba5d14",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "f241ab4e5fbe49cc3e5ab65daf88f4b20f83e11b3ca27bdb4eb09dbcea667e38",
+    "stateSha256": "c80236fef16af5e53bce58a4d982f361684a954521d10e9773bf9082ec1ec04c",
+    "taskSnapshotSha256": "601f8fd635f91e3264dc230ade180189ba93f766d9c68b0a43ecfdcb35ec0130"
+  },
+  "contextSha256": "43c016fd0f344fa8020027a6c61ade915c2cf5bc21d0781a115bbe6a0a344b35"
+}
