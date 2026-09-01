@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_COMMIT_RECEIPT",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0339-0343-v2",
+  "batchSha256": "e9fc9705e80c19c41f3e0c23ef3b67a69980bcaf1c600860c1cc74521bf227e8",
+  "releaseSha": "80135ed31bafcdde2144cad48f27f7f92361aef1",
+  "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+  "transactionId": "0c6c043d-b570-483b-ab0c-186421003d80",
+  "appliedAt": "2026-09-01T15:23:04.866Z",
+  "members": [
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0339:race-communications:debd2ccc",
+      "taskIndex": 339,
+      "companyName": "Race Communications",
+      "proposalSha256": "047273003ece4d8bc24ef96d1a7647f23f492c016929006460a4f9f26cd8bed1",
+      "approvalSha256": "52053889d40a8a30912617bb818f5c5ca82cf3d38c91d033d499f9c96293ffc5",
+      "afterImageSha256": "7d8950fb3ae97bffc1c7d1afba22202d96116dd11bb095d1f44f7ee72088965f",
+      "approvedSeedEntrySha256": "0326f4bd69fcab4e252e01e09ad1437fa36796bfae0dcacbe47e8b925bcf7f13",
+      "companyId": "cmtitg5el0000482b1lrael9x",
+      "auditEventId": "cmtitg918000f482b6qo5o50l"
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0340:towerpoint-infrastructure-partners:4a5032aa",
+      "taskIndex": 340,
+      "companyName": "TowerPoint Infrastructure Partners",
+      "proposalSha256": "291072962158dc533280e472a57da44a05dbcaa4682b1b307775be8668c64b74",
+      "approvalSha256": "1015e4fa0be2f5fad3b50e58b31e4e3e35e49cf6919ed39295efa4f93d455094",
+      "afterImageSha256": "690c0a4d0b702bf14bc65709879164945a1f8def6f3da7800891906cfeec95f1",
+      "approvedSeedEntrySha256": "eb3a3e024d0351f33c7515ef43cce93d345fb604ef7d62e92ce58f6e72874122",
+      "companyId": "cmrxpjops01bpivhejgre011g",
+      "auditEventId": "cmtitgf7h000q482b08oy15aa"
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0341:crchum:38aca414",
+      "taskIndex": 341,
+      "companyName": "CRCHUM",
+      "proposalSha256": "fe3225fb6240d973e9bffbcbb58e23313b02c585555b7c5032b7ba9295e0213f",
+      "approvalSha256": "15fc6c4e1ed2e69873186a6e596bb4be5443aa9fd878da4b37c74c83ff7e837c",
+      "afterImageSha256": "2527723ad3e39f1f83088c81b4947b370bf4199b1e9cae4c11f3d0cb7cef0ded",
+      "approvedSeedEntrySha256": "d9d9b3b9deb4d15a1ae768371afde71bdf52d45cd96a0a9c92558292408e72a2",
+      "companyId": "cmrxpjl0x015rivhelfa10iff",
+      "auditEventId": "cmtitgnc4000z482b7218u613"
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0342:montreal-university-hospital-research-center-crchum:8cde81e2",
+      "taskIndex": 342,
+      "companyName": "Montreal University Hospital Research Center (CRCHUM)",
+      "outcome": "SUPERSEDED",
+      "decisionSha256": "b9779c2864a9ee3cf5bc73dee1b50c6b833e91dd639cab05b79bd4a8b7dd1be1"
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0343:altan-redes:7bef6b1d",
+      "taskIndex": 343,
+      "companyName": "Altán Redes",
+      "proposalSha256": "b994c796f7ecb83697bde2a8f967f206ad986b80c6728f62ae6aa23529e4f8a9",
+      "approvalSha256": "a50ac28d3b6446a1a98975567ae5ba378255052a44d208e7c08b732cff640818",
+      "afterImageSha256": "d908a764407d4ca4e5e521322c82e31713cf05e0803592789dc11e24de8673b4",
+      "approvedSeedEntrySha256": "6de280271d8edee4501b1e00856aedafec97403784bb7fc498ca8c2907146f28",
+      "companyId": "cmrxpjlgs016givheuucuma16",
+      "auditEventId": "cmtitgv4k001p482bodkl0q3x"
+    }
+  ],
+  "verification": {
+    "databaseTransactionCommitted": true,
+    "seedArtifactVerifiedBeforeCommit": true,
+    "detailApiVerificationPending": true,
+    "partialDatabaseApplication": false
+  },
+  "receiptSha256": "4f5970be5596e48f14a2f1058281a27ea4e394c193a86e4c5deef950c7075b1f"
+}
