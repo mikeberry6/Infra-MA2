@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0336:astoria-energy-partners:b7f656e5",
+  "taskIndex": 336,
+  "companyName": "Astoria Energy Partners",
+  "asOfDate": "2026-08-19",
+  "decision": "DEFERRED",
+  "confidence": "HIGH identity/close; MODERATE current cap table",
+  "researchOnly": true,
+  "generatedAt": "2026-09-01T13:10:00.000Z",
+  "result": {
+    "decision": "DEFERRED",
+    "rationale": "Astoria Energy Partners resolves to the existing Astoria Power Partners Holding, LLC platform and Munich Re/MEAG's 20.0000% interest is current, but the latest evidence does not establish the current continuity and exact upstream allocations for APG, CalSTRS, Clal, Harbert and GPP/CalPERS. That active-ownership gap blocks a safe canonical merge and ownership correction until the cap table is directly evidenced.",
+    "evidence": [
+      {
+        "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B135E31CA-84CC-499B-A3DF-69F7E373218C%7D",
+        "purpose": "New York regulatory evidence for the APPH hierarchy, historical stakes and sellers."
+      },
+      {
+        "url": "https://www.munichre.com/content/dam/munichre/mrwebsiteslaunches/2020-half-year-financial-report/MunichRe-Half-Year-Financial-Report-2020-en.pdf",
+        "purpose": "Munich Re evidence for the 2020 close and 20% interest."
+      },
+      {
+        "url": "https://www.munichre.com/content/dam/munichre/mrwebsiteslaunches/2025-annual-report/MunichRe-Annual-Report-Company-2025-en.pdf",
+        "purpose": "Latest direct evidence for Munich Re/MEAG's continuing 20.0000% APPH interest."
+      },
+      {
+        "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B501D2B8F-0000-C03A-B351-F218769CBBC2%7D",
+        "purpose": "Latest exact disclosed APP II ownership split."
+      }
+    ]
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0336-astoria-energy-partners/attempt-1/research-decision.json",
+      "sha256": "0106eb1b6643c5dae5fd5ebf7155c1d695f5fa0d4e13ba2a6c3b3afe10cde0a8"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0336-astoria-energy-partners/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "a7f69c0de96e549fb7e4639c330e8c6736b5f44d78156f68aaef6f5640c7d313"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0336-astoria-energy-partners/attempt-1/source-verification.json",
+      "sha256": "29cbf14dd0c6168b1718113d2d8a193702b4e674c72cc6b2e7331848c7fd72f8"
+    },
+    "applicationDecisionBasis": "The staged research explicitly set applicationBlocked=true because current active ownership remains unresolved."
+  }
+}

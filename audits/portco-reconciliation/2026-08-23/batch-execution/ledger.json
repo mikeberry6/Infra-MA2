@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-01T13:03:09.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-09-01T13:55:00.000Z",
+  "activeBatchId": "batch-0334-0338-v1",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -5699,7 +5699,55 @@
           "reason": null
         }
       ]
+    },
+    {
+      "batchId": "batch-0334-0338-v1",
+      "state": "READY",
+      "taskIds": [
+        "ledger:0334:us-distributed-solar-residential-solar-platform:d9e011d4",
+        "ledger:0335:yusen-terminals-llc:b7587254",
+        "ledger:0336:astoria-energy-partners:b7f656e5",
+        "ledger:0337:maverick-6:cf60cd63",
+        "ledger:0338:maverick-7:4af1c5e7"
+      ],
+      "taskIndexes": [
+        334,
+        335,
+        336,
+        337,
+        338
+      ],
+      "createdAt": "2026-09-01T13:09:14.000Z",
+      "updatedAt": "2026-09-01T13:55:00.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0334-0338-v1/batch-manifest-v5.json",
+        "sha256": "a1186bdbd71d02b197832fd6abe3beb27a952e09d26a3f82e70a60f032c32f6f"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-09-01T13:09:14.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-09-01T13:55:00.000Z",
+          "evidenceSha256": [
+            "a1186bdbd71d02b197832fd6abe3beb27a952e09d26a3f82e70a60f032c32f6f"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "36704eff65a0a397b9822bc6ddb5055e5cf101708fd7d083de80d261e40d30cf"
+  "ledgerSha256": "618cded2d41eea77e652f264edb03ceb2cbdc78af4e0d4c9bff2a0c8f0a48c19"
 }

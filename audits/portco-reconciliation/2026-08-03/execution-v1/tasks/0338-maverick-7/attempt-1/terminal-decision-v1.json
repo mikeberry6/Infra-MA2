@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0338:maverick-7:4af1c5e7",
+  "taskIndex": 338,
+  "companyName": "Maverick 7",
+  "outcome": "SUPERSEDED",
+  "decidedAt": "2026-09-01T13:12:00.000Z",
+  "rationale": "Maverick 7 is one of two project SPVs held through the same Maverick 67 holdco structure as Maverick 6. Task 337 creates the single canonical Maverick 6 & 7 portfolio with Munich Re/MEAG and EDF each at 50%; completing task 338 separately would duplicate the same manager-level platform.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0338-maverick-7/attempt-1/locked-batch-v1-task-snapshot.json",
+    "sha256": "e024b9a8ff621805bd36de4176acfeea8a6df43bd8cd834e60e70696dcb466e0"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0338-maverick-7/attempt-1/application-research-decision-v1.json",
+    "sha256": "c006cb78b35ef47a54567aa6528e11e11eb8ed53977dc00a93320a2c4d048795"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0338-maverick-7/attempt-1/source-verification.json",
+    "sha256": "d537831d51a42b6586c1447578147bad64dcc9278aed3ba231e3e5d505093974"
+  },
+  "evidence": [
+    {
+      "url": "https://www.munichre.com/content/dam/munichre/mrwebsiteslaunches/2025-annual-report/MunichRe-Group-Annual-Report-2025-en.pdf",
+      "purpose": "Current Munich Re evidence for the shared Maverick 67 holdco ownership."
+    },
+    {
+      "url": "https://www.munichre.com/content/dam/munichre/mrwebsiteslaunches/2022-annual-report/MunichRe-Group-Annual-Report-2022-en.pdf",
+      "purpose": "Close, seller, vehicle and 50/50 ownership evidence."
+    },
+    {
+      "url": "https://www.edf-re.com/press-release/edf-renewables-north-america-and-meag-munich-re-agree-to-partner-in-two-us-renewable-energy-projects-in-the-united-states/",
+      "purpose": "Company evidence that Maverick 6 and Maverick 7 were one two-project partnership transaction."
+    }
+  ],
+  "supersededByTaskId": "ledger:0337:maverick-6:cf60cd63",
+  "decisionSha256": "3a3a2c34f859623fe796d5d3f458362a6a1b14078b6201d8f29c57fae3998653"
+}

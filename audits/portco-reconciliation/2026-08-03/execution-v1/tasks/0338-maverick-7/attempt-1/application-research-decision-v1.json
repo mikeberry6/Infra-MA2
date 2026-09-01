@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0338:maverick-7:4af1c5e7",
+  "taskIndex": 338,
+  "companyName": "Maverick 7",
+  "asOfDate": "2026-08-19",
+  "decision": "SUPERSEDED",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-01T13:10:00.000Z",
+  "result": {
+    "decision": "SUPERSEDED",
+    "rationale": "Maverick 7 is one of two project SPVs held through the same Maverick 67 holdco structure as Maverick 6. Task 337 creates the single canonical Maverick 6 & 7 portfolio with Munich Re/MEAG and EDF each at 50%; completing task 338 separately would duplicate the same manager-level platform.",
+    "evidence": [
+      {
+        "url": "https://www.munichre.com/content/dam/munichre/mrwebsiteslaunches/2025-annual-report/MunichRe-Group-Annual-Report-2025-en.pdf",
+        "purpose": "Current Munich Re evidence for the shared Maverick 67 holdco ownership."
+      },
+      {
+        "url": "https://www.munichre.com/content/dam/munichre/mrwebsiteslaunches/2022-annual-report/MunichRe-Group-Annual-Report-2022-en.pdf",
+        "purpose": "Close, seller, vehicle and 50/50 ownership evidence."
+      },
+      {
+        "url": "https://www.edf-re.com/press-release/edf-renewables-north-america-and-meag-munich-re-agree-to-partner-in-two-us-renewable-energy-projects-in-the-united-states/",
+        "purpose": "Company evidence that Maverick 6 and Maverick 7 were one two-project partnership transaction."
+      }
+    ]
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0338-maverick-7/attempt-1/research-decision.json",
+      "sha256": "871ee07f191ba6e0cf5bc59cc3ff0a91f035507dd90436f1b445a7f1a87bbc1c"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0338-maverick-7/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "7243dac90ed3ee99c30a985820f6df986f0d6527a83c659883b0fe568e263d4e"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0338-maverick-7/attempt-1/source-verification.json",
+      "sha256": "d537831d51a42b6586c1447578147bad64dcc9278aed3ba231e3e5d505093974"
+    },
+    "consolidatingTaskId": "ledger:0337:maverick-6:cf60cd63"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0334:us-distributed-solar-residential-solar-platform:d9e011d4",
+  "taskIndex": 334,
+  "companyName": "US Distributed Solar / Residential Solar Platform",
+  "generatedAt": "2026-09-01T13:12:50.229Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0334-us-distributed-solar-residential-solar-platform/attempt-1/locked-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 334,
+    "taskId": "ledger:0334:us-distributed-solar-residential-solar-platform:d9e011d4",
+    "canonicalKey": "us-distributed-solar-residential-solar-platform|united-states",
+    "companyName": "US Distributed Solar / Residential Solar Platform",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 65,
+    "managers": [
+      "Macquarie Asset Management"
+    ],
+    "actionScopes": {
+      "company": [
+        "CREATE_COMPANY"
+      ],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "065-macquarie-asset-management:holding:030:us-distributed-solar-residential-solar-platform"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://www.macquarie.com/au/en/about/company/macquarie-asset-management/our-portfolio.html"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "No exact normalized production or seed match exists. Census evidence supports a new canonical company with 1 manager holding record(s).",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "us-distributed-solar-residential-solar-platform|united-states",
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0334:us-distributed-solar-residential-solar-platform:d9e011d4",
+    "taskIndex": 334,
+    "canonicalKey": "us-distributed-solar-residential-solar-platform|united-states",
+    "capturedAt": "2026-09-01T13:12:50.229Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "5296e242883d931b25594976c60280ca1831e9096af39da57826496b6561fbda",
+    "productionSnapshotSha256": "86ea41864e76645b44520ec9ea58a788d6a778103713a8280cddb9cd5cc093be",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "7162f023548431ed1fed51e43a93e8e1e0a46df9edc0adf314307e96f61f1312",
+    "stateSha256": "f6ee3b21e2aa32d04f8183325f2e4270ae6c414a8a2430815f931b254f1cdad3",
+    "taskSnapshotSha256": "ab18f26005b094c520dec29e62fcd43468cccd3efd6654537e5fa83ef34ae0ba"
+  },
+  "contextSha256": "bd12bf1436ef18d1079e095d8bcfdaf8deb43859b64db283f503ddf912d9b18a"
+}

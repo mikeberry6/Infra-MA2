@@ -1,0 +1,238 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_MANIFEST",
+  "methodologyVersion": "PORTCO_APPLY_BATCH_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0334-0338-v1",
+  "createdAt": "2026-09-01T13:31:00.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "c0126efad1f88a98087be443e5185491b6da46e2b841afb0ff10bb71590b109b"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0334:us-distributed-solar-residential-solar-platform:d9e011d4",
+      "taskIndex": 334,
+      "companyName": "US Distributed Solar / Residential Solar Platform",
+      "outcome": "EXCLUDED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0334-us-distributed-solar-residential-solar-platform/attempt-1/terminal-decision-v1.json",
+        "sha256": "118fdfd277b28a19c6bc9825419d4553934e8c9041e1c40d21e9e06a95dc2e2f"
+      }
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0335:yusen-terminals-llc:b7587254",
+      "taskIndex": 335,
+      "companyName": "Yusen Terminals LLC",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0335-yusen-terminals-llc-v4/proposal.json",
+        "sha256": "db98134b1529530d5b0d7ba1378fdd8054d5e3275a0ade04eb1b5a300854ac8a"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0335-yusen-terminals-llc-v4.json",
+        "sha256": "ded982b113372c61a1c2a6e96412f723479872d8413b8bb1a33ef71bfbe3d7ac"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0335-yusen-terminals-llc/attempt-1/locked-batch-v1-production-snapshot.json",
+        "sha256": "1f10ea7fba27431e4be99ed291db027c9589cb7452ce038ad9571aea0efaacfc"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0335-yusen-terminals-llc/attempt-1/locked-batch-v1-task-snapshot.json",
+        "sha256": "0fa7efa3c9e78b8044f10b2c2b2b413ad2d8f2b248c127427d840643cb1206bf"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0335-yusen-terminals-llc/attempt-1/observed-batch-v1-task-snapshot.json",
+        "sha256": "f1f2ba50f7b940b20ec99af0a3a40d58e4ebe6c36805ef700fd993acce25772e"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0335-yusen-terminals-llc/attempt-1/application-research-decision-v1.json",
+        "sha256": "5febf41a9d08eed4e7fcbd48554bddea761cec2bf5379190695c1f2b5a783359"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0335-yusen-terminals-llc/attempt-1/source-verification.json",
+        "sha256": "313a3bba7db2630a9e6001ee4548902cb291b2a5ee1d267cd55a5b1af443c01e"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "9eecb7d2847b7325008931c5fbd89d4521b93813c51e8e8fdcb7b73907df2a21",
+      "dependencySha256": "8c8ac82f7b1f9da87350466903a59fc54a76b0c0ff48972b5bee30f6acee4414",
+      "afterImageSha256": "60d1d314305ada8c471d153b40a51d0f7a736c7ab0109966d230457c805d692b",
+      "targetClaims": [
+        "canonical:yusen-terminals-llc|united-states",
+        "company:cmrxpjkid014xivhe2cjdm9ff",
+        "relation:cmrxpk6ln0240ivhev26gwa8k",
+        "relation:cmrxpmafq04omivhebqswxy5b",
+        "relation:cmrxpmagf04onivhe4gvhdmcx",
+        "relation:cmrxpmagy04ooivheyqvxopwn",
+        "relation:cmrxpmahe04opivhe6xfhvepk",
+        "relation:cmrxpmahy04oqivheh9o1p9fe",
+        "relation:cmrxps2wc0c1oivhe6o7646ed",
+        "relation:cmrxps2xb0c1qivhe67adiusb",
+        "relation:cmrxps2xt0c1rivhehw1xr9y7",
+        "relation:cmrxps2yu0c1tivhe6enm11p8",
+        "relation:cmrxps2zx0c1vivhea1bscjwa",
+        "seed:yusen terminals llc|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://cityclerk.lacity.org/onlinedocs/2014/14-0094-S2_misc_100_8-18-23.pdf",
+          "label": "City of Los Angeles — Yusen Terminals ownership-transfer report",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://ec.europa.eu/competition/mergers/cases1/202314/M_11006_9088659_52_3.pdf",
+          "label": "European Commission — ONE acquisition of Yusen Terminals",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.gibsondunn.com/practice/transportation-and-space/",
+          "label": "Gibson Dunn — Bluefin terminal-interest sale",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.linkedin.com/company/yusen-terminals",
+          "label": "Yusen Terminals — current company profile",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.macquarie.com/au/en/about/news/2023/macquarie-infrastructure-partners-iii-completes-sales-of-ceres-terminals.html",
+          "label": "Macquarie — Yusen Terminals LLC",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.marketscreener.com/quote/stock/NIPPON-YUSEN-KABUSHIKI-KA-6491189/news/Macquarie-Infrastructure-Partners-Inc-through-its-fund-Macquarie-Infrastructure-Partners-III-comple-38456438/",
+          "label": "Close date source — Macquarie Asset Management — Yusen Terminals LLC",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.one-line.com/en/news/one-strengthens-global-presence-terminal-acquisitions-us-west-coast-and-rotterdam",
+          "label": "Close date source — Macquarie Asset Management — TraPac LLC",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://yti.com/",
+          "label": "Yti — Yusen Terminals LLC",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://yti.com/about-us/",
+          "label": "Yti — Yusen Terminals LLC",
+          "sourceType": "WEBSITE"
+        }
+      ]
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0336:astoria-energy-partners:b7f656e5",
+      "taskIndex": 336,
+      "companyName": "Astoria Energy Partners",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0336-astoria-energy-partners/attempt-1/terminal-decision-v1.json",
+        "sha256": "abdb08c789976d95a0f6119407521c97e5f03b482b9ee4f2a7e682e30448bb00"
+      }
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0337:maverick-6:cf60cd63",
+      "taskIndex": 337,
+      "companyName": "Maverick 6",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0337-maverick-6-v1/proposal.json",
+        "sha256": "0f6f3e6b7e737c55f28c95d578e0b1df051d1a7e10dd1f913142ce4fa2ffdb3e"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0337-maverick-6-v1.json",
+        "sha256": "e054797647744c23bf4e4d5d7e257444644031dfc807364ad12f5c2200d61052"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0337-maverick-6/attempt-1/locked-batch-v1-production-snapshot.json",
+        "sha256": "110422ab66a57c1f1f15e98627aa0c2b72007918b52f144fff9a54ee2935844d"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0337-maverick-6/attempt-1/locked-batch-v1-task-snapshot.json",
+        "sha256": "f631b54b54f61f9ed8f9ba0d118fe64b1263bd178cd67a28db160c0265209612"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0337-maverick-6/attempt-1/observed-batch-v1-task-snapshot.json",
+        "sha256": "5ef186f1abbe0eb9b3bbccf7c444747ff03c05e23eea3dc96506d40178ff47f3"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0337-maverick-6/attempt-1/application-research-decision-v1.json",
+        "sha256": "4dfeaab91fd2b6e584e16983869513ae3b287c6a31134b68573594b1ebd0dd4a"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0337-maverick-6/attempt-1/source-verification.json",
+        "sha256": "f28c53593ba0b408eb59c2b9eb2c6a8346935ba0f149e29c7e07429556d70fe7"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "8cbb8bd88bc255bd6d620a607e9c309b9261e93e10d6d379241e424f9b8f15b0",
+      "dependencySha256": "7162f023548431ed1fed51e43a93e8e1e0a46df9edc0adf314307e96f61f1312",
+      "afterImageSha256": "d906aa46e15fa78f23637b9472232b8460b80f68dd3a90e88bb2b7c957c760eb",
+      "targetClaims": [
+        "canonical:maverick-6|united-states",
+        "seed:maverick 6 & 7|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://mbrweb.ferc.gov/SearchMBRAssetAppendix/AssetAppendixDetails?AssetAppendixId=5285",
+          "label": "FERC — Maverick generation-asset appendix",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.edf-re.com/press-release/edf-renewables-north-america-and-meag-munich-re-agree-to-partner-in-two-us-renewable-energy-projects-in-the-united-states/",
+          "label": "EDF Renewables and MEAG — Maverick partnership announcement",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.edf-re.com/press-release/edf-renewables-north-america-announces-the-palen-solar-site-is-fully-operational/",
+          "label": "EDF Renewables — Maverick 6 operating announcement",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.edf-re.com/press-release/edf-renewables-north-america-signs-power-purchase-agreement-with-cleanpowersf-for-storage-expansion-at-maverick-6-solar-project/",
+          "label": "EDF Renewables — CleanPowerSF storage expansion",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.govinfo.gov/content/pkg/FR-2025-07-08/html/2025-12650.htm",
+          "label": "Federal Register — EDF 2025 triennial filing",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.munichre.com/content/dam/munichre/mrwebsiteslaunches/2022-annual-report/MunichRe-Group-Annual-Report-2022-en.pdf",
+          "label": "Munich Re — Group Annual Report 2022",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://www.munichre.com/content/dam/munichre/mrwebsiteslaunches/2025-annual-report/MunichRe-Annual-Report-Company-2025-en.pdf/_jcr_content/renditions/original./MunichRe-Annual-Report-Company-2025-en.pdf",
+          "label": "Munich Re — Company Annual Report 2025",
+          "sourceType": "PRESENTATION"
+        }
+      ]
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0338:maverick-7:4af1c5e7",
+      "taskIndex": 338,
+      "companyName": "Maverick 7",
+      "outcome": "SUPERSEDED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0338-maverick-7/attempt-1/terminal-decision-v1.json",
+        "sha256": "3a3a2c34f859623fe796d5d3f458362a6a1b14078b6201d8f29c57fae3998653"
+      }
+    }
+  ],
+  "collisionAnalysis": {
+    "independent": true,
+    "claimsSha256": "e7b88edfc426b7a5a8ae045c302dbd54602ab4687f3bda602c816d88a0bce9f8",
+    "sharedSourceUrls": [],
+    "conflicts": []
+  },
+  "batchSha256": "a1186bdbd71d02b197832fd6abe3beb27a952e09d26a3f82e70a60f032c32f6f"
+}
