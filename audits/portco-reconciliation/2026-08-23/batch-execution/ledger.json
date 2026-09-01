@@ -3,7 +3,7 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-01T04:52:01Z",
+  "updatedAt": "2026-09-01T05:01:00Z",
   "activeBatchId": "batch-0292-0296-v1",
   "batches": [
     {
@@ -4895,7 +4895,7 @@
     },
     {
       "batchId": "batch-0292-0296-v1",
-      "state": "RELEASING",
+      "state": "VERIFYING",
       "taskIds": [
         "ledger:0292:flexivan:05de4d37",
         "ledger:0293:gridpoint:326d6d5b",
@@ -4911,14 +4911,17 @@
         296
       ],
       "createdAt": "2026-09-01T04:26:00Z",
-      "updatedAt": "2026-09-01T04:52:01Z",
+      "updatedAt": "2026-09-01T05:01:00Z",
       "completedAt": null,
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0292-0296-v1/batch-manifest.json",
         "sha256": "1c5dd9833e36fb00ec38cdbc48635f2959a97191d0ea1532525aee2c5b8263d1"
       },
-      "releaseSha": null,
-      "receipt": null,
+      "releaseSha": "243774bcfa0d963805982b676b950a7d9bfa11b6",
+      "receipt": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0292-0296-v1/production-apply/batch-apply-receipt.json",
+        "sha256": "e8e7b86441a435ec095484e439708299254ee8ef3f336968cc68ad2566e2efa0"
+      },
       "reason": null,
       "history": [
         {
@@ -4948,9 +4951,30 @@
             "1c5dd9833e36fb00ec38cdbc48635f2959a97191d0ea1532525aee2c5b8263d1"
           ],
           "reason": null
+        },
+        {
+          "sequence": 4,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-09-01T04:57:30Z",
+          "evidenceSha256": [
+            "1c5dd9833e36fb00ec38cdbc48635f2959a97191d0ea1532525aee2c5b8263d1"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 5,
+          "from": "APPLYING",
+          "to": "VERIFYING",
+          "at": "2026-09-01T05:01:00Z",
+          "evidenceSha256": [
+            "1c5dd9833e36fb00ec38cdbc48635f2959a97191d0ea1532525aee2c5b8263d1",
+            "e8e7b86441a435ec095484e439708299254ee8ef3f336968cc68ad2566e2efa0"
+          ],
+          "reason": null
         }
       ]
     }
   ],
-  "ledgerSha256": "57815d38e27c0695036fe4c885413ecdb45147a6904e622507eb930878bf470e"
+  "ledgerSha256": "1965a0a55123c96e3c9d39a525d7b40b5a71ad5825dfede30f9e978854227af4"
 }

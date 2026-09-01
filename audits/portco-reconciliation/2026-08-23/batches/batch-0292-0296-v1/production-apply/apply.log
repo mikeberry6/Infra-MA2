@@ -1,0 +1,190 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:batch:apply
+> npx tsx scripts/portco-reconciliation/batch-apply-cli.ts --batch-manifest=audits/portco-reconciliation/2026-08-23/batches/batch-0292-0296-v1/batch-manifest.json --batch-sha256=1c5dd9833e36fb00ec38cdbc48635f2959a97191d0ea1532525aee2c5b8263d1 --seed-artifact=prisma/seed-data/approved-portco-after-images.json --apply --write-token=APPLY_APPROVED_PORTCO_BATCH --commit-receipt=tmp/portco-reconciliation/production/batch-commit-receipt.json --receipt=tmp/portco-reconciliation/production/batch-apply-receipt.json --public-base-url=https://infra-ma-2.vercel.app/Infra-MA2/
+
+(node:3750) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "BATCH_APPLIED",
+  "receiptPath": "/home/runner/work/Infra-MA2/Infra-MA2/tmp/portco-reconciliation/production/batch-apply-receipt.json",
+  "receipt": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_APPLY_BATCH_RECEIPT",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "batchId": "batch-0292-0296-v1",
+    "batchSha256": "1c5dd9833e36fb00ec38cdbc48635f2959a97191d0ea1532525aee2c5b8263d1",
+    "releaseSha": "243774bcfa0d963805982b676b950a7d9bfa11b6",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "transactionId": "3b57e32b-a9c4-40ba-a5cf-5c531a63cea9",
+    "appliedAt": "2026-09-01T04:59:15.565Z",
+    "members": [
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0292:flexivan:05de4d37",
+        "taskIndex": 292,
+        "companyName": "FlexiVan",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0292:flexivan:05de4d37",
+          "taskIndex": 292,
+          "companyName": "FlexiVan",
+          "companyId": "cmrxpji5n011aivher22cetu6",
+          "proposalSha256": "dcf7947845ef890e0cabe9bf28f98764dd70ab0179276f51d0c924739fae6175",
+          "approvalSha256": "da743f862341d31635147a9bd624d7576edafe333e313af7908f225d70878e46",
+          "productionSnapshotSha256": "60ae5e37af83ab867bde01e14516c700d584440e9942e5e85a74d3b65af3caf7",
+          "beforeCompanySnapshotSha256": "f3be2c2669deb1efd82ea9a6614d08ea6a58b81ff1c01748ab87d7591a72692b",
+          "appliedAfterImageSha256": "13031c098a25fec9256ca624d09d38aaa5d5916bd71e786b86586dfc8e162da3",
+          "seedAfterImageSha256": "13031c098a25fec9256ca624d09d38aaa5d5916bd71e786b86586dfc8e162da3",
+          "approvedSeedEntrySha256": "80a09384ebeefdefd6eac11d57cd958bebd7b41e80a0656aa58b6b0dff68589b",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "3b57e32b-a9c4-40ba-a5cf-5c531a63cea9",
+          "auditEventId": "cmti76cqf000bw62bhuwj9p8r",
+          "appliedAt": "2026-09-01T04:59:15.565Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "f2e6e04f299af199c76e66c56c30397ee4fdf1ac3886c9d73a1bc3f67497284b"
+        }
+      },
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0293:gridpoint:326d6d5b",
+        "taskIndex": 293,
+        "companyName": "GridPoint",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0293:gridpoint:326d6d5b",
+          "taskIndex": 293,
+          "companyName": "GridPoint",
+          "companyId": "cmrxpji6e011bivhena1i4gjh",
+          "proposalSha256": "478af0e0668d5cedaf3693e9e592f90b527d395177beabd8ccf15491825eae71",
+          "approvalSha256": "85cd9bbe2e7c4e351a7576897577d31fe1233e170d8276c8ce3fc750181ab82f",
+          "productionSnapshotSha256": "5aad79438efca9fb52fa23799d5092c775d850cb86fc227ba310e9e62782109d",
+          "beforeCompanySnapshotSha256": "67acd84abef355d840bbd778956b4f190863f64aa9459bfb2e60d6b8415a265e",
+          "appliedAfterImageSha256": "44041492844bdc87aea0f07926a16ce79b29db8e9dcc67796c198a305604db9c",
+          "seedAfterImageSha256": "44041492844bdc87aea0f07926a16ce79b29db8e9dcc67796c198a305604db9c",
+          "approvedSeedEntrySha256": "ee293fc1fc97d240544cdfb8301948c9f36a8ba176d0bf8ad11a82e4c145d1de",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "3b57e32b-a9c4-40ba-a5cf-5c531a63cea9",
+          "auditEventId": "cmti76epu000dw62bmf5oprb4",
+          "appliedAt": "2026-09-01T04:59:15.565Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "d54b383a8cfe2f0742071b68fac1826100c2826196bd4a82b68082cf99eb3fbd"
+        }
+      },
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0294:milestone-environmental-services:a293d6bf",
+        "taskIndex": 294,
+        "companyName": "Milestone Environmental Services",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0294:milestone-environmental-services:a293d6bf",
+          "taskIndex": 294,
+          "companyName": "Milestone Environmental Services",
+          "companyId": "cmti76fl7000ew62badppz6h8",
+          "proposalSha256": "96a54335e10679ce5b1a03dc2fbfad6e048d140ef0183f68ca47f90fbeee63fc",
+          "approvalSha256": "99b1aa008346d866f349e6a2885b2386168440eb6dcd1409dec16ed3bee489b4",
+          "productionSnapshotSha256": "39d8c6033b19d7e8856ca175a1e9d193d9248fed173eb8fbc618cac0a9e2a59c",
+          "beforeCompanySnapshotSha256": null,
+          "appliedAfterImageSha256": "ab8bbb85402587c3fb0bd70c03568c1c5eead45e8bed7a6c318e294a071b6a72",
+          "seedAfterImageSha256": "ab8bbb85402587c3fb0bd70c03568c1c5eead45e8bed7a6c318e294a071b6a72",
+          "approvedSeedEntrySha256": "217b6b35a815deb1a95dc4697589eca3f05a98529da02938327444607bf6c9c4",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "3b57e32b-a9c4-40ba-a5cf-5c531a63cea9",
+          "auditEventId": "cmti76hx70014w62b27bqsgk1",
+          "appliedAt": "2026-09-01T04:59:15.565Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "0a8ae5a3a214ce28eaaedb925299b37f4b51988a6a0639fda04c0a3995bd50e0"
+        }
+      },
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0295:oriden:9e2a047b",
+        "taskIndex": 295,
+        "companyName": "Oriden",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0295:oriden:9e2a047b",
+          "taskIndex": 295,
+          "companyName": "Oriden",
+          "companyId": "cmti76itd0015w62bd7ogupzg",
+          "proposalSha256": "7adbfe0f7b19a0e8948316325cafdeb9634898464f76982b4642a2354916e2fa",
+          "approvalSha256": "b09ae21b09e35cebb5cb751e47ad4fea631a65cb91696b3adc79ebca5a711951",
+          "productionSnapshotSha256": "c490dfb337d68ea973d9abbe6da01bd921c0936eecb04662a042087826294619",
+          "beforeCompanySnapshotSha256": null,
+          "appliedAfterImageSha256": "2bad11cb1dc1b4c29872a3e7ec49c969884ff93829b4afdbd8a0c809ebb276d8",
+          "seedAfterImageSha256": "2bad11cb1dc1b4c29872a3e7ec49c969884ff93829b4afdbd8a0c809ebb276d8",
+          "approvedSeedEntrySha256": "3491e9d9997b1668d3a03c2a546551cd60fc518181b5ed7afdffa63ebaa40d13",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "3b57e32b-a9c4-40ba-a5cf-5c531a63cea9",
+          "auditEventId": "cmti76klb001mw62b1zkiibua",
+          "appliedAt": "2026-09-01T04:59:15.565Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "b6ea73b5b80b81ff92a3822fe6c06475bbf7070b84191c16dd9cf02ecae8e9ed"
+        }
+      },
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0296:palmetto:ba036cf0",
+        "taskIndex": 296,
+        "companyName": "Palmetto",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0296:palmetto:ba036cf0",
+          "taskIndex": 296,
+          "companyName": "Palmetto",
+          "companyId": "cmrxpji8s011fivhedek2glrv",
+          "proposalSha256": "dddcbd226d0c12abd7c6f4c568a0d3b7d12d4c9ef0c686e29335694c46ceaff9",
+          "approvalSha256": "77169dc1a742597f116c6a7ebc05c7bfed00963f12fd75a0abd5a4ad6ab0bb39",
+          "productionSnapshotSha256": "b088b2719454e45a6d280dbecf5dbfa1aba73ece7738790034d0aa487607bb87",
+          "beforeCompanySnapshotSha256": "14e65dab95c7b1e48d6934a29773355e29c97263bcc35bc8302d924cdf6c6902",
+          "appliedAfterImageSha256": "f2699be50aa285033d1305e9b17916d035160ecf19d2be07b76f0a78139481fd",
+          "seedAfterImageSha256": "f2699be50aa285033d1305e9b17916d035160ecf19d2be07b76f0a78139481fd",
+          "approvedSeedEntrySha256": "cac94bb65ccec5730341305b69f9017b3e40f1b3723855071d8e68cb1517f0b0",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "3b57e32b-a9c4-40ba-a5cf-5c531a63cea9",
+          "auditEventId": "cmti76mj8001ow62bwu3auukf",
+          "appliedAt": "2026-09-01T04:59:15.565Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "8ddc125eedcee1c8d62cc08877b35c3fb965de54bf1ba717bf8302af161ce11d"
+        }
+      }
+    ],
+    "verification": {
+      "databaseTransactionCommitted": true,
+      "seedArtifactVerified": true,
+      "allDetailApisVerified": true,
+      "partialDatabaseApplication": false
+    },
+    "receiptSha256": "e8e7b86441a435ec095484e439708299254ee8ef3f336968cc68ad2566e2efa0"
+  }
+}
