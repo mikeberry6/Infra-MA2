@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-01T20:20:04.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-09-01T20:44:00.000Z",
+  "activeBatchId": "batch-0379-0383-v1",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -6521,7 +6521,55 @@
           "reason": "Exact release SHA, atomic database after-images, seed parity, detail APIs, ownership history, and all four mutated production drawers verified; terminal Sidewalk deferral preserved; no partial application."
         }
       ]
+    },
+    {
+      "batchId": "batch-0379-0383-v1",
+      "state": "READY",
+      "taskIds": [
+        "ledger:0379:dimension-renewable-energy:afa21f3c",
+        "ledger:0380:edgecore-digital-infrastructure:92394a7f",
+        "ledger:0381:exus-renewables-north-america:beef769f",
+        "ledger:0382:milestone-equipment-holdings:c1b0b537",
+        "ledger:0383:usic:edbbd2fb"
+      ],
+      "taskIndexes": [
+        379,
+        380,
+        381,
+        382,
+        383
+      ],
+      "createdAt": "2026-09-01T20:27:00.000Z",
+      "updatedAt": "2026-09-01T20:44:00.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0379-0383-v1/batch-manifest.json",
+        "sha256": "93a2e1bd951372538ab334689e6f880b622c96861099a53d29559fc6284f918b"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-09-01T20:27:00.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-09-01T20:44:00.000Z",
+          "evidenceSha256": [
+            "93a2e1bd951372538ab334689e6f880b622c96861099a53d29559fc6284f918b"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "8cf2dba159fbe2cb1b0450317a05794f00c5dccc54bcf3083ac28431f974886b"
+  "ledgerSha256": "9113ad41139930e8e8c15fdc618ec27bac7133b29c4755402161b5a593172727"
 }

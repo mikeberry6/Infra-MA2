@@ -114,5 +114,14 @@ describe("approved ownership organization provisioning", () => {
     expect(ownershipOrganizationTypes("Budderfly management")).toEqual(["OTHER"]);
     expect(ownershipOrganizationTypes("Edison Partners")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("Balance Point Capital")).toEqual(["FUND_MANAGER"]);
+    expect(ownershipOrganizationTypes("FTC Solar, Inc.")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("Mount Elbert Capital Partners")).toEqual(["FUND_MANAGER"]);
+    expect(ownershipOrganizationTypes("Exus founders and management")).toEqual(["OTHER"]);
+    expect(ownershipOrganizationTypes("Barings")).toEqual(["FUND_MANAGER"]);
+    expect(ownershipOrganizationTypes("Wood Creek Capital Management")).toEqual(["FUND_MANAGER"]);
+    expect(ownershipOrganizationTypes("Blackstone Tactical Opportunities")).toEqual(["FUND_MANAGER"]);
+    expect(ownershipOrganizationTypes("Kohlberg")).toEqual(["FUND_MANAGER"]);
+    expect(ownershipOrganizationTypes("OMERS Private Equity")).toEqual(["FUND_MANAGER"]);
+    expect(ownershipOrganizationTypes("Leonard Green")).toEqual(["FUND_MANAGER"]);
   });
 });

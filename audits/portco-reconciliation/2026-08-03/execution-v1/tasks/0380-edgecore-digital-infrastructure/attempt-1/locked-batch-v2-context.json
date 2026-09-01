@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0380:edgecore-digital-infrastructure:92394a7f",
+  "taskIndex": 380,
+  "companyName": "EdgeCore Digital Infrastructure",
+  "generatedAt": "2026-09-01T20:31:05.779Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0380-edgecore-digital-infrastructure/attempt-1/locked-batch-v2-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 380,
+    "taskId": "ledger:0380:edgecore-digital-infrastructure:92394a7f",
+    "canonicalKey": "edgecore-digital-infrastructure|united-states",
+    "companyName": "EdgeCore Digital Infrastructure",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 78,
+    "managers": [
+      "Partners Group"
+    ],
+    "actionScopes": {
+      "company": [
+        "CREATE_COMPANY"
+      ],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "078-partners-group:holding:001:edgecore-digital-infrastructure"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://www.partnersgroup.com/en/news/edgecore-acquisition/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "No exact normalized production or seed match exists. Census evidence supports a new canonical company with 1 manager holding record(s).",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "edgecore-digital-infrastructure|united-states",
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi8wm0022ivhessbkv786",
+        "name": "GIC",
+        "updatedAt": "2026-07-23T16:09:18.742Z"
+      },
+      {
+        "id": "cmrxpicbn0035ivhecvphs6ll",
+        "name": "Partners Group",
+        "updatedAt": "2026-07-23T16:09:23.171Z"
+      },
+      {
+        "id": "cmt5km2n10010y8yyo7ihesih",
+        "name": "OPTrust",
+        "updatedAt": "2026-08-23T08:54:10.909Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0380:edgecore-digital-infrastructure:92394a7f",
+    "taskIndex": 380,
+    "canonicalKey": "edgecore-digital-infrastructure|united-states",
+    "capturedAt": "2026-09-01T20:31:05.779Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "6defa65b68c26352fb9d16e6e369252bf5f4039ca10eff1a4392ecca60cc45d7",
+    "productionSnapshotSha256": "e0f9231d81b2d823ebde6efda80e0273bacaa37f7f4b009b7d4f6a7abbbe6923",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "03477ae6730074eff15497332f967eba50ff5fce9f2a63ad95526b55926d4113",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "1afc08756e483340248c985ce03fd3a27a6199f5c950e5b33088e4153426afdd",
+    "stateSha256": "e689dceea99a17d6124e01c03ba5e535497b5f4be97e866f5654452f3db1adde",
+    "taskSnapshotSha256": "1d5eb0b1a8f493598efe4c38b2a6baea64576aa1d364ec8957c524d614354ada"
+  },
+  "contextSha256": "5e029d1da403a1de0e21c34c4e5154d42af8bd2094297f0d6fbe86d6ad8f9ca7"
+}
