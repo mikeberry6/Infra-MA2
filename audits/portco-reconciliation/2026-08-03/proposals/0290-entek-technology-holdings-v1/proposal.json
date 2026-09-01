@@ -1,0 +1,262 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0290:entek-technology-holdings:3d9d2806",
+  "taskIndex": 290,
+  "asOfDate": "2026-08-31",
+  "generatedAt": "2026-08-30T07:04:02.000Z",
+  "canonicalKey": "entek-technology-holdings|united-states",
+  "companyName": "ENTEK Technology Holdings",
+  "actions": [
+    "CORRECT_COMPANY"
+  ],
+  "sourceHoldingIds": [
+    "053-i-squared-capital:holding:015:entek-technology-holdings"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Archive ENTEK Technology Holdings from the infrastructure PortCo list. I Squared's approximately 63.3% control investment is verified as closed through qualifying infrastructure-equity vehicles, but ENTEK manufactures battery separators and industrial extrusion equipment rather than owning or operating infrastructure. Preserve the verified ownership, financing, manufacturing and source history while removing ENTEK and its plants from published direct-infrastructure portfolio views.",
+  "evidence": [
+    {
+      "url": "https://uohs.gov.cz/cs/hospodarska-soutez/sbirky-rozhodnuti/detail-23743.html",
+      "purpose": "Competition-regulator ownership and business-model evidence",
+      "supports": [
+        "I Squared obtained indirect sole control",
+        "ENTEK's business is manufacturing"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/2059924/000121390026057486/ea0290488-10q_isqopen.htm",
+      "purpose": "SEC evidence that the I Squared investment closed",
+      "supports": [
+        "ENTEK equity was held through ISQ Liberty Aggregator by March 31, 2026"
+      ]
+    },
+    {
+      "url": "https://isquaredcapital.com/news/i-squared-capital-acquires-majority-stake-in-entek-to-reshore-critical-u-s-battery-manufacturing/",
+      "purpose": "Official manager description of the target",
+      "supports": [
+        "ENTEK is a battery-separator manufacturer, not an infrastructure owner or operator"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "13c406520dcea0686159b0858c2a61c74feb1d1ae26be9426a8dd7f9a31fe19a",
+  "currentCompanySnapshotSha256": "71ff055fae48e8bfa6df127c98a7bf0b64778aef51372b0fe8c0e32babb4776b",
+  "executionLock": {
+    "taskSnapshotSha256": "05660fedf5a9767dd085afa485ddc6e489344b19e13df8dbad58350f6dafc9cf",
+    "taskStateSha256": "ff7d08e307cc58b85a7b4f774b42f26bda7a435767eddbee314e59421fa98c66",
+    "taskDependencySha256": "ea571252ccbf4ecaed341212b3c5f3b136638c0ed47737a67b1e7baa884cd6db",
+    "seedEntrySha256": "7b85a78b88e3f979197a43e7de1f3ec0abae951491cb98c8548b9132aac1327c",
+    "dependencies": {
+      "ownershipPeriodsSha256": "eed6ac5faf8a83cdb3dce372e15153c8a718243b86e0be2aed0793b1bac70cc2",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "80bb1b9fbd97369aa59b500bed343eef3e3b9c5867c7525a27b7990477dc78d0",
+      "organizationsSha256": "3a6e897cb6bf74e545c692a28085dff8e712c5fcc0be550290c59c13cf02f9a8",
+      "citationsSha256": "7a1fc268352d03ca85be7d494b7a81f03b6b6ca1814cd41fb3c25535f8979591",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj2mk00dvivhegna869hx",
+        "fundName": "ISQ Energy Transition Infrastructure Fund",
+        "managerId": "cmrxpi9mi002aivhewgvbh2ag",
+        "updatedAt": "2026-07-23T16:09:57.260Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi9mi002aivhewgvbh2ag",
+        "name": "I Squared Capital",
+        "updatedAt": "2026-07-23T16:09:19.674Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpji440117ivheou5ldq15",
+    "name": "ENTEK Technology Holdings",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Battery separator manufacturing",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "ENTEK Technology Holdings manufactures battery separators and related components used in lithium-ion battery applications. Its customers are battery manufacturers and other participants in the electric-vehicle and energy-storage supply chain that require separator materials and domestic manufacturing capacity. The business follows an asset-heavy industrial model based on specialized manufacturing plants, process technology, and long-term customer qualification cycles. Public materials describe ENTEK as operating in Oregon and expanding manufacturing capacity in Indiana as part of a broader effort to reshore critical U.S. battery supply-chain infrastructure. I Squared announced an agreement to acquire a majority equity interest in September 2025 and committed up to $800 million to support expansion; the exact current ownership percentage is not publicly disclosed in the company announcement. The investment aligns with I Squared’s energy-transition strategy around industrial infrastructure needed for electrification.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Indiana; Oregon",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk40r01zyivheoeds68ip",
+        "managerName": "I Squared Capital",
+        "organizationName": "I Squared Capital",
+        "fundName": "ISQ Energy Transition Infrastructure Fund",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplzwh04c3ivhelqrt2of0",
+        "date": "2024",
+        "event": "DOE announced a conditional financing commitment related to ENTEK’s battery-separator expansion plans.",
+        "category": "FINANCING",
+        "sortDate": "2024-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplzwz04c4ivhetj8cq1ak",
+        "date": "2025",
+        "event": "I Squared disclosed up to $800 million of support for ENTEK’s U.S. manufacturing expansion.",
+        "category": "FINANCING",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplzxk04c5ivhe58u6qs2p",
+        "date": "Sep 17, 2025",
+        "event": "I Squared announced an agreement to acquire a majority equity interest in ENTEK.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-09-17T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxprjvt0b92ivhernnmr1k1",
+        "label": "Entek — ENTEK Technology Holdings",
+        "url": "https://entek.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Entek company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxprjxx0b94ivhe7t7c0tqz",
+        "label": "Announcement date source — I Squared Capital — ENTEK Technology Holdings",
+        "url": "https://isquaredcapital.com/cpt_news/i-squared-capital-acquires-majority-stake-in-entek-to-reshore-critical-u-s-battery-manufacturing/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "I Squared Capital transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprjyy0b96ivhez3h75pvg",
+        "label": "Energy — ENTEK Technology Holdings",
+        "url": "https://www.energy.gov/lpo/articles/lpo-offers-conditional-commitment-entek-lithium-separators-llc",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Energy — ENTEK Technology Holdings",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "71ff055fae48e8bfa6df127c98a7bf0b64778aef51372b0fe8c0e32babb4776b",
+  "afterImage": {
+    "id": "cmrxpji440117ivheou5ldq15",
+    "name": "ENTEK Technology Holdings",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Battery separator manufacturing",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "ENTEK Technology Holdings manufactures battery separators and related components used in lithium-ion battery applications. Its customers are battery manufacturers and other participants in the electric-vehicle and energy-storage supply chain that require separator materials and domestic manufacturing capacity. The business follows an asset-heavy industrial model based on specialized manufacturing plants, process technology, and long-term customer qualification cycles. Public materials describe ENTEK as operating in Oregon and expanding manufacturing capacity in Indiana as part of a broader effort to reshore critical U.S. battery supply-chain infrastructure. I Squared announced an agreement to acquire a majority equity interest in September 2025 and committed up to $800 million to support expansion; the exact current ownership percentage is not publicly disclosed in the company announcement. The investment aligns with I Squared’s energy-transition strategy around industrial infrastructure needed for electrification.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "ARCHIVED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Indiana; Oregon",
+    "lastVerifiedAt": "2026-08-19T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk40r01zyivheoeds68ip",
+        "managerName": "I Squared Capital",
+        "organizationName": "I Squared Capital",
+        "fundName": "ISQ Energy Transition Infrastructure Fund",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplzwh04c3ivhelqrt2of0",
+        "date": "2024",
+        "event": "DOE announced a conditional financing commitment related to ENTEK’s battery-separator expansion plans.",
+        "category": "FINANCING",
+        "sortDate": "2024-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplzwz04c4ivhetj8cq1ak",
+        "date": "2025",
+        "event": "I Squared disclosed up to $800 million of support for ENTEK’s U.S. manufacturing expansion.",
+        "category": "FINANCING",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplzxk04c5ivhe58u6qs2p",
+        "date": "Sep 17, 2025",
+        "event": "I Squared announced an agreement to acquire a majority equity interest in ENTEK.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-09-17T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxprjvt0b92ivhernnmr1k1",
+        "label": "Entek — ENTEK Technology Holdings",
+        "url": "https://entek.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Entek company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxprjxx0b94ivhe7t7c0tqz",
+        "label": "Announcement date source — I Squared Capital — ENTEK Technology Holdings",
+        "url": "https://isquaredcapital.com/cpt_news/i-squared-capital-acquires-majority-stake-in-entek-to-reshore-critical-u-s-battery-manufacturing/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "I Squared Capital transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprjyy0b96ivhez3h75pvg",
+        "label": "Energy — ENTEK Technology Holdings",
+        "url": "https://www.energy.gov/lpo/articles/lpo-offers-conditional-commitment-entek-lithium-separators-llc",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Energy — ENTEK Technology Holdings",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "c378ca24dcccef21ab7bcf1bfb14a36533ee7a1ef4e574c9975003441eb9cfca",
+  "proposalSha256": "32f0d89cb96046a099d1c738ffc2f003da3191ba279fe91d711fd7dda1ae9344"
+}

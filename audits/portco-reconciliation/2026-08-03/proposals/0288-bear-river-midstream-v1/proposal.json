@@ -1,0 +1,232 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0288:bear-river-midstream:6266be72",
+  "taskIndex": 288,
+  "asOfDate": "2026-08-31",
+  "generatedAt": "2026-08-30T07:04:04.000Z",
+  "canonicalKey": "bear-river-midstream|united-states",
+  "companyName": "Bear River Midstream",
+  "actions": [
+    "CREATE_COMPANY"
+  ],
+  "sourceHoldingIds": [
+    "053-i-squared-capital:holding:017:bear-river-midstream"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Create one manager-level active U.S. gas-storage platform for Bear River Midstream, LLC. An I Squared affiliate completed the acquisition of 100% of Belle Butte LLC from Spire Midstream on June 30, 2026 and launched Bear River to operate the Stallion and Salt Plains storage businesses. The purchase agreement identifies ISQ Global Infrastructure Fund III, L.P. as the buyer fund and equity provider, while Subterra Energy Holdings, LLC and its successor Subterra Energy Borrower, LLC form the disclosed acquisition chain. Because that fund does not yet exist as a production Fund record, preserve the verified fund and vehicle names in vehicle text without inventing a fund link. Keep Belle Butte, the storage operators, their fields, interconnects, pipelines and other subsidiaries beneath the single platform. No later sale, recapitalization or signed pending ownership transaction was identified through August 19, 2026.",
+  "evidence": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1126956/000119312526290674/sr-20260630.htm",
+      "purpose": "Spire closing filing for the completed sale, buyer, acquired entities and consideration",
+      "supports": [
+        "Subterra Energy Borrower, LLC completed the acquisition on June 30, 2026",
+        "The buyer acquired 100% of Belle Butte LLC and both storage operators",
+        "The buyer was identified as an I Squared affiliate"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1126956/000119312526155936/sr-ex10_1.htm",
+      "purpose": "Purchase agreement for fund and acquisition-chain attribution",
+      "supports": [
+        "ISQ Global Infrastructure Fund III, L.P. was the disclosed buyer fund and equity provider",
+        "Subterra Energy Holdings, LLC signed as buyer",
+        "The agreement covered 100% of Belle Butte LLC"
+      ]
+    },
+    {
+      "url": "https://isquaredcapital.com/news/acquisition-spire-storage-assets-bear-river-midstream/",
+      "purpose": "Official manager evidence for the Bear River platform launch and operating scope",
+      "supports": [
+        "I Squared launched Bear River Midstream after the acquisition",
+        "The platform includes Stallion and Salt Plains",
+        "The two facilities provide 72 Bcf of certificated working-gas capacity"
+      ]
+    },
+    {
+      "url": "https://www.brmidstream.com/terms-of-use",
+      "purpose": "Company legal identity and headquarters",
+      "supports": [
+        "Bear River Midstream, LLC is the company identity",
+        "The company lists a Houston headquarters address"
+      ]
+    },
+    {
+      "url": "https://www.brmidstream.com/assets",
+      "purpose": "Current operating assets and platform boundary",
+      "supports": [
+        "Stallion and Salt Plains are underlying facilities",
+        "The facilities, fields and interconnects should not be separate PortCos"
+      ]
+    },
+    {
+      "url": "https://www.govinfo.gov/content/pkg/FR-2026-07-20/html/2026-14562.htm",
+      "purpose": "Post-closing regulatory continuity",
+      "supports": [
+        "Salt Plains filed a post-closing change-in-circumstances report in July 2026"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "e1ed5d2262ab146b526696b50b7e8f6671e5a3106b191fec3de221b04e2a3200",
+  "currentCompanySnapshotSha256": null,
+  "executionLock": {
+    "taskSnapshotSha256": "9c0cc36aa2793d510238b19559af8b90c2ce7e00000db5cfe1b6cfe15e44f124",
+    "taskStateSha256": "d0d74704cc9b74f40127d8555a065f1455a05fade85385b1b0a866df1a51f87a",
+    "taskDependencySha256": "7b92eaf0c7a5073ab768a0b0b2e0f64544bf347373b9e6c0630d9ad2bda95487",
+    "seedEntrySha256": null,
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "3a6e897cb6bf74e545c692a28085dff8e712c5fcc0be550290c59c13cf02f9a8",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi9mi002aivhewgvbh2ag",
+        "name": "I Squared Capital",
+        "updatedAt": "2026-07-23T16:09:19.674Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": null,
+  "beforeImageSha256": null,
+  "afterImage": {
+    "id": null,
+    "name": "Bear River Midstream",
+    "aliases": [
+      "Bear River Midstream, LLC",
+      "Spire Storage",
+      "Belle Butte LLC"
+    ],
+    "sector": "MIDSTREAM",
+    "subsector": "Natural gas storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Bear River Midstream is a U.S. natural-gas-storage platform operating Stallion Gas Storage in Wyoming and Salt Plains Gas Storage in Oklahoma. Together the facilities comprise three storage fields with 72 Bcf of certificated working-gas capacity and interconnections serving utilities, pipelines, power generators, industrial users, marketers and producers. An I Squared affiliate completed the acquisition of 100% of Belle Butte LLC from Spire Midstream on June 30, 2026 and launched Bear River as the manager-level platform. The purchase agreement identifies ISQ Global Infrastructure Fund III, L.P. as the buyer fund and equity provider, with Subterra Energy Holdings, LLC and successor Subterra Energy Borrower, LLC in the acquisition chain. The exact upstream equity link to Bear River Midstream, LLC and any co-investor percentages are not publicly disclosed, so no manager-level percentage is inferred. Belle Butte, Stallion, Salt Plains, their fields, interconnects, pipelines and legal subsidiaries are treated as underlying assets rather than separate PortCos. No later sale or signed pending exit was identified through August 19, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://bearrivermidstream.com/",
+    "yearFounded": 2026,
+    "headquarters": "Houston, Texas",
+    "lastVerifiedAt": "2026-08-19T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": null,
+        "managerName": "I Squared Capital",
+        "organizationName": "I Squared Capital",
+        "fundName": null,
+        "vehicleName": "ISQ Global Infrastructure Fund III, L.P.; Subterra Energy Holdings, LLC / Subterra Energy Borrower, LLC",
+        "stake": "100% of Belle Butte LLC; Bear River upstream percentage not publicly disclosed",
+        "investmentYear": 2026,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": null,
+        "date": "Apr 14, 2026",
+        "event": "Spire Midstream and Subterra Energy Holdings executed the agreement for the sale of 100% of Belle Butte LLC, with ISQ Global Infrastructure Fund III identified as the buyer fund and equity provider.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-04-14T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1126956/000119312526155936/sr-ex10_1.htm"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Jun 30, 2026",
+        "event": "Subterra Energy Borrower completed the acquisition of Belle Butte and its two storage operators from Spire, and I Squared launched Bear River Midstream as the operating platform.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-06-30T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1126956/000119312526290674/sr-20260630.htm",
+          "https://isquaredcapital.com/news/acquisition-spire-storage-assets-bear-river-midstream/"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Jul 10, 2026",
+        "event": "Salt Plains Gas Storage filed a post-closing change-in-circumstances report with FERC, confirming regulatory continuity after the acquisition.",
+        "category": "OTHER",
+        "sortDate": "2026-07-10T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.govinfo.gov/content/pkg/FR-2026-07-20/html/2026-14562.htm"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": null,
+        "label": "Spire — Bear River acquisition closing",
+        "url": "https://www.sec.gov/Archives/edgar/data/1126956/000119312526290674/sr-20260630.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "June 30, 2026 closing, buyer, acquired entities and final consideration",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "Spire — Bear River purchase agreement",
+        "url": "https://www.sec.gov/Archives/edgar/data/1126956/000119312526155936/sr-ex10_1.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Fund III attribution, Subterra buyer chain, signing and asset boundary",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "I Squared Capital — Bear River Midstream launch",
+        "url": "https://isquaredcapital.com/news/acquisition-spire-storage-assets-bear-river-midstream/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "I Squared attribution, platform launch and storage-facility scope",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Bear River Midstream — Terms of Use",
+        "url": "https://www.brmidstream.com/terms-of-use",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Legal company identity and Houston headquarters",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Bear River Midstream — Assets",
+        "url": "https://www.brmidstream.com/assets",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Stallion and Salt Plains facility scope, capacity, fields and interconnects",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Federal Register — Salt Plains filing",
+        "url": "https://www.govinfo.gov/content/pkg/FR-2026-07-20/html/2026-14562.htm",
+        "sourceType": "OTHER",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "July 2026 post-closing FERC change-in-circumstances notice",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "24dfeafb9a539aef52a0e926ac8707ed5db8fd098c4b4ecde92bd86db78b8cc4",
+  "proposalSha256": "fdf5e93a43fb1ba83600a2084345f2a32efd42319d64ceaddfdff61042cecf0f"
+}

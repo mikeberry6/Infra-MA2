@@ -1,0 +1,247 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0287:ambient-photonics:ce65fde2",
+  "taskIndex": 287,
+  "companyName": "Ambient Photonics",
+  "generatedAt": "2026-08-31T10:28:27.435Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0287-ambient-photonics/attempt-1/authorization-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 287,
+    "taskId": "ledger:0287:ambient-photonics:ce65fde2",
+    "canonicalKey": "ambient-photonics|united-states",
+    "companyName": "Ambient Photonics",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 53,
+    "managers": [
+      "I Squared Capital"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "053-i-squared-capital:repo-only:002:ambient-photonics"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjhzs0113ivhef2kq2td6"
+    ],
+    "seedKeys": [
+      "ambient photonics|United States"
+    ],
+    "evidenceUrls": [
+      "https://ambientphotonics.com/ambient-photonics-announces-15-million-series-a-financing/",
+      "https://isquaredcapital.com/txnm_fund/infratech/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: I Squared Capital OUT_OF_SCOPE: InfraTech fund investment; not a direct infrastructure equity holding.",
+    "unresolvedQuestions": [
+      "Confirm whether the manager ownership, the company itself, or only this census scope is out of scope before proposing any change."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjhzs0113ivhef2kq2td6",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "ambient-photonics|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjhzs0113ivhef2kq2td6",
+    "name": "Ambient Photonics",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Low-light photovoltaic technology",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Ambient Photonics develops low-light photovoltaic technology used to power small connected devices indoors. Its target end markets include consumer electronics, smart-home devices, and other low-power applications that can benefit from battery-free or battery-extended operation. The business follows a technology-enabled manufacturing model centered on photovoltaic materials, product design, and device integration rather than contracted infrastructure ownership. Public materials state that the company was founded in 2019 and opened a U.S. manufacturing facility for low-light photovoltaic cells in California in 2023. I Squared participated in Ambient Photonics’ Series A financing in 2022 through its InfraTech strategy; the resulting ownership percentage is not publicly disclosed. The company represents an energy-transition technology investment rather than a conventional utility-scale infrastructure asset.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2019,
+    "headquarters": "California",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk3yk01zuivheb7bv30bj",
+        "managerName": "I Squared Capital",
+        "organizationName": "I Squared Capital",
+        "fundName": null,
+        "vehicleName": "ISQ Global InfraTech Fund",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplzkb04bpivhewuox91yx",
+        "date": "2019",
+        "event": "Ambient Photonics was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2019-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplzkx04bqivheljw1mr90",
+        "date": "May 10, 2022",
+        "event": "Ambient Photonics announced a $31 million Series A financing, which included participation from I Squared Capital.",
+        "category": "FINANCING",
+        "sortDate": "2022-05-10T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplzlh04brivheugjycgfq",
+        "date": "Apr 24, 2023",
+        "event": "The company announced the opening of a U.S. manufacturing facility for low-light photovoltaic cells.",
+        "category": "EXPANSION",
+        "sortDate": "2023-04-24T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxprjg20b8civhebuu33nbg",
+        "label": "Ambientphotonics — Ambient Photonics",
+        "url": "https://ambientphotonics.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Ambientphotonics company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxprjgz0b8eivhesgedlokq",
+        "label": "Ambientphotonics — Ambient Photonics",
+        "url": "https://ambientphotonics.com/ambient-photonics-opens-u-s-manufacturing-facility-for-low-light-indoor-solar-cells/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Ambientphotonics — Ambient Photonics",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprji40b8givhehwf72nil",
+        "label": "Financing date source — Ambient Photonics — Series A",
+        "url": "https://ambientphotonics.com/press-release/ambient-31-million-series-a-financing-co-led-by-amazon-and-eif",
+        "sourceType": "ARTICLE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Ambientphotonics financing or public filing",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Ambient Photonics",
+    "investmentFirm": "I Squared Capital",
+    "sector": "Power & ET",
+    "subsector": "Low-light photovoltaic technology",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "ISQ Global InfraTech Fund",
+    "description": "Ambient Photonics develops low-light photovoltaic technology used to power small connected devices indoors. Its target end markets include consumer electronics, smart-home devices, and other low-power applications that can benefit from battery-free or battery-extended operation. The business follows a technology-enabled manufacturing model centered on photovoltaic materials, product design, and device integration rather than contracted infrastructure ownership. Public materials state that the company was founded in 2019 and opened a U.S. manufacturing facility for low-light photovoltaic cells in California in 2023. I Squared participated in Ambient Photonics’ Series A financing in 2022 through its InfraTech strategy; the resulting ownership percentage is not publicly disclosed. The company represents an energy-transition technology investment rather than a conventional utility-scale infrastructure asset.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2019,
+    "investmentYear": 2022,
+    "headquarters": "California",
+    "milestones": [
+      {
+        "date": "2019",
+        "event": "Ambient Photonics was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "May 10, 2022",
+        "event": "Ambient Photonics announced a $31 million Series A financing, which included participation from I Squared Capital.",
+        "category": "Financing"
+      },
+      {
+        "date": "Apr 24, 2023",
+        "event": "The company announced the opening of a U.S. manufacturing facility for low-light photovoltaic cells.",
+        "category": "Expansion"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Ambientphotonics — Ambient Photonics",
+        "url": "https://ambientphotonics.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Ambientphotonics — Ambient Photonics",
+        "url": "https://ambientphotonics.com/ambient-photonics-opens-u-s-manufacturing-facility-for-low-light-indoor-solar-cells/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Financing date source — Ambient Photonics — Series A",
+        "url": "https://ambientphotonics.com/press-release/ambient-31-million-series-a-financing-co-led-by-amazon-and-eif",
+        "type": "ARTICLE",
+        "purpose": "FINANCING_FILINGS"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "I Squared Capital",
+        "ownershipVehicle": "ISQ Global InfraTech Fund",
+        "investmentYear": 2022,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi9mi002aivhewgvbh2ag",
+        "name": "I Squared Capital",
+        "updatedAt": "2026-07-23T16:09:19.674Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0287:ambient-photonics:ce65fde2",
+    "taskIndex": 287,
+    "canonicalKey": "ambient-photonics|united-states",
+    "capturedAt": "2026-08-31T10:28:27.435Z",
+    "databaseRevision": "revision:1f827b84115d3da2e79536ca998edcecb510e0a2e2bb04169b40d09c918c5599",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "3650993f6090bfcf68d64bf1e841c2ac8dbb7f157389ce4a68d36fa1b6d709fe",
+    "productionSnapshotSha256": "eb6bcb45d7e243d1dbc51ff2945370908c4078abcf466746c67b191e56dcdba6",
+    "targetCompanySnapshotSha256": "6f82ca1c7df84bd79914bbafbbe77527f4c470a3df8378cc9025e089ee0527f8",
+    "seedEntrySha256": "cb1a9cb5232df7e0e9ebc4d70954fff48f71133d8c0587ef247547278c8f1857",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "b9a0922290ea3e912256f7dbd16b538f46063091a785862a004de59840691f1d",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "3a6e897cb6bf74e545c692a28085dff8e712c5fcc0be550290c59c13cf02f9a8",
+      "citationsSha256": "7b4511e834f540a6171e00d086734c7807b41e3760783a8e635259f6e943ab39",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "a1b8cb3cbebdfa3afb28d09798aadff8b14b2162d7b0114132d9e576b3168236",
+    "stateSha256": "48614539b3973aef2b39d0624940e6e1907b32bf520218059d41bf64fa2abb2a",
+    "taskSnapshotSha256": "e175f85c72d9d6a1de3a2a2535ad7f728f40010bda66c0da44e3153563b75937"
+  },
+  "contextSha256": "a8f1be635d37005d5cc6cc882aeb3a53405000654044ca82df6f40f7c589b1bc"
+}

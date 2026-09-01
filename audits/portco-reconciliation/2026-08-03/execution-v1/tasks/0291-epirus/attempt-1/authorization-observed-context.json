@@ -1,0 +1,246 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0291:epirus:00b0659d",
+  "taskIndex": 291,
+  "companyName": "Epirus",
+  "generatedAt": "2026-08-31T10:28:34.978Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0291-epirus/attempt-1/authorization-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 291,
+    "taskId": "ledger:0291:epirus:00b0659d",
+    "canonicalKey": "epirus|united-states",
+    "companyName": "Epirus",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 53,
+    "managers": [
+      "I Squared Capital"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "053-i-squared-capital:repo-only:004:epirus"
+    ],
+    "productionCompanyIds": [
+      "cmrxpji4n0118ivheb0bo1lts"
+    ],
+    "seedKeys": [
+      "epirus|United States"
+    ],
+    "evidenceUrls": [
+      "https://isquaredcapital.com/txnm_fund/infratech/",
+      "https://www.epirusinc.com/epirus-announces-200m-series-c-funding-round/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: I Squared Capital OUT_OF_SCOPE: InfraTech investment in power electronics technology platform.",
+    "unresolvedQuestions": [
+      "Confirm whether the manager ownership, the company itself, or only this census scope is out of scope before proposing any change."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpji4n0118ivheb0bo1lts",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "epirus|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpji4n0118ivheb0bo1lts",
+    "name": "Epirus",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "High-power electronics and power systems",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Epirus develops solid-state, software-defined high-power microwave systems and related power-management technologies. Its customers include defense and government users as well as other organizations that need counter-electronics systems and advanced power-efficiency solutions. The business follows a technology and manufacturing model based on engineered hardware, software, and mission-critical electronics rather than regulated infrastructure ownership. Public materials describe a more than 100,000-square-foot headquarters in Torrance, California and show the company raising large private financing rounds to scale production. I Squared participated in Epirus’s February 2022 Series C financing through its InfraTech strategy; the resulting ownership percentage is not publicly disclosed. The investment gives I Squared exposure to power-electronics technologies adjacent to resilience, defense, and energy systems.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "California",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk41b01zzivhebngnvmj0",
+        "managerName": "I Squared Capital",
+        "organizationName": "I Squared Capital",
+        "fundName": null,
+        "vehicleName": "ISQ Global InfraTech Fund",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplzyk04c6ivhehvkjxrt2",
+        "date": "Nov 2021",
+        "event": "Epirus announced the opening of its new Torrance, California headquarters.",
+        "category": "EXPANSION",
+        "sortDate": "2021-11-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplzz204c7ivheofalxdos",
+        "date": "Feb 15, 2022",
+        "event": "Epirus announced a $200 million Series C financing that included participation from I Squared Capital.",
+        "category": "FINANCING",
+        "sortDate": "2022-02-15T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplzzk04c8ivhe0a2zl4us",
+        "date": "Mar 5, 2025",
+        "event": "Epirus announced a $250 million Series D financing and disclosed cumulative funding above $550 million.",
+        "category": "FINANCING",
+        "sortDate": "2025-03-05T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxprk040b98ivheots7gl4f",
+        "label": "Epirusinc — Epirus",
+        "url": "https://www.epirusinc.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Epirusinc company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxprk150b9aivhejql1yvqg",
+        "label": "Financing date source — Epirus — Series C",
+        "url": "https://www.epirusinc.com/epirus-announces-200m-series-c-funding-round/",
+        "sourceType": "ARTICLE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Epirusinc financing or public filing",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprk5b0b9civheaukcwmx2",
+        "label": "Epirusinc — Epirus",
+        "url": "https://www.epirusinc.com/epirus-opens-new-headquarters-in-torrance-california/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Epirusinc — Epirus",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Epirus",
+    "investmentFirm": "I Squared Capital",
+    "sector": "Digital",
+    "subsector": "High-power electronics and power systems",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "ISQ Global InfraTech Fund",
+    "description": "Epirus develops solid-state, software-defined high-power microwave systems and related power-management technologies. Its customers include defense and government users as well as other organizations that need counter-electronics systems and advanced power-efficiency solutions. The business follows a technology and manufacturing model based on engineered hardware, software, and mission-critical electronics rather than regulated infrastructure ownership. Public materials describe a more than 100,000-square-foot headquarters in Torrance, California and show the company raising large private financing rounds to scale production. I Squared participated in Epirus’s February 2022 Series C financing through its InfraTech strategy; the resulting ownership percentage is not publicly disclosed. The investment gives I Squared exposure to power-electronics technologies adjacent to resilience, defense, and energy systems.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2022,
+    "headquarters": "California",
+    "milestones": [
+      {
+        "date": "Nov 2021",
+        "event": "Epirus announced the opening of its new Torrance, California headquarters.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Feb 15, 2022",
+        "event": "Epirus announced a $200 million Series C financing that included participation from I Squared Capital.",
+        "category": "Financing"
+      },
+      {
+        "date": "Mar 5, 2025",
+        "event": "Epirus announced a $250 million Series D financing and disclosed cumulative funding above $550 million.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Epirusinc — Epirus",
+        "url": "https://www.epirusinc.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Financing date source — Epirus — Series C",
+        "url": "https://www.epirusinc.com/epirus-announces-200m-series-c-funding-round/",
+        "type": "ARTICLE",
+        "purpose": "FINANCING_FILINGS"
+      },
+      {
+        "label": "Epirusinc — Epirus",
+        "url": "https://www.epirusinc.com/epirus-opens-new-headquarters-in-torrance-california/",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "I Squared Capital",
+        "ownershipVehicle": "ISQ Global InfraTech Fund",
+        "investmentYear": 2022,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi9mi002aivhewgvbh2ag",
+        "name": "I Squared Capital",
+        "updatedAt": "2026-07-23T16:09:19.674Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0291:epirus:00b0659d",
+    "taskIndex": 291,
+    "canonicalKey": "epirus|united-states",
+    "capturedAt": "2026-08-31T10:28:34.978Z",
+    "databaseRevision": "revision:53b7367a99990c39e94b50d002a8bff238bbb15fba6ddd2398e7d38fcb146115",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "fb42354d31406628a1d42794779f9cda53c5a8991182cc24c995b82b9cd8e44c",
+    "productionSnapshotSha256": "3cc26b16ea1d3a6956be292a0e11b497f97fe5c896c9c4ac64daa5d38fa23980",
+    "targetCompanySnapshotSha256": "eb3af5c59cd8fb0a9afc9a4b2ee7a2f379eaf8f2b5cdc86a672379ae4be91b32",
+    "seedEntrySha256": "2651b79b66f94bd4f90a8a631c7bdd14f84c6171ec50cd377c445c7373d2c08a",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "2d870447bf650b8d3829298333a965e4a010593ff9a58450467ef8d1edf20e9e",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "3a6e897cb6bf74e545c692a28085dff8e712c5fcc0be550290c59c13cf02f9a8",
+      "citationsSha256": "f20d9e4e115bd0a281b06f41449a2bea64878f106f653c44a84b6b0672a354c2",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "ca0a8cbc8b8fe84f1681d325d5629b25c409cc4da25947a4786461d8e96856f3",
+    "stateSha256": "b2f7c925915c11a12ac785fa2fc11fdebbcf4a3eab19e893c9eed213b90a869c",
+    "taskSnapshotSha256": "e3aa840566a6d1e838329b698b2b965970ddd9074258b4b51a5af0392a46cd6a"
+  },
+  "contextSha256": "2611bb45a06c0bb66752a738722f25f9a18e81a9121087097ba3c90bfaadb90e"
+}

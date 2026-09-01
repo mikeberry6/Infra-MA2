@@ -1,0 +1,253 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0290:entek-technology-holdings:3d9d2806",
+  "taskIndex": 290,
+  "companyName": "ENTEK Technology Holdings",
+  "generatedAt": "2026-08-31T10:28:32.932Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0290-entek-technology-holdings/attempt-1/authorization-observed-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 290,
+    "taskId": "ledger:0290:entek-technology-holdings:3d9d2806",
+    "canonicalKey": "entek-technology-holdings|united-states",
+    "companyName": "ENTEK Technology Holdings",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 53,
+    "managers": [
+      "I Squared Capital"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "053-i-squared-capital:holding:015:entek-technology-holdings"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpji440117ivheou5ldq15"
+    ],
+    "seedKeys": [
+      "entek technology holdings|United States"
+    ],
+    "evidenceUrls": [
+      "https://isquaredcapital.com/cpt_news/i-squared-capital-acquires-majority-stake-in-entek-to-reshore-critical-u-s-battery-manufacturing/",
+      "https://isquaredcapital.com/txnm_region/north-america/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted census NEEDS_REVIEW for 053-i-squared-capital:holding:015:entek-technology-holdings: Ownership confirmed but classification as infrastructure vs manufacturing remains borderline. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Accepted census NEEDS_REVIEW for 053-i-squared-capital:holding:015:entek-technology-holdings: Ownership confirmed but classification as infrastructure vs manufacturing remains borderline"
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpji440117ivheou5ldq15",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "entek-technology-holdings|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpji440117ivheou5ldq15",
+    "name": "ENTEK Technology Holdings",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Battery separator manufacturing",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "ENTEK Technology Holdings manufactures battery separators and related components used in lithium-ion battery applications. Its customers are battery manufacturers and other participants in the electric-vehicle and energy-storage supply chain that require separator materials and domestic manufacturing capacity. The business follows an asset-heavy industrial model based on specialized manufacturing plants, process technology, and long-term customer qualification cycles. Public materials describe ENTEK as operating in Oregon and expanding manufacturing capacity in Indiana as part of a broader effort to reshore critical U.S. battery supply-chain infrastructure. I Squared announced an agreement to acquire a majority equity interest in September 2025 and committed up to $800 million to support expansion; the exact current ownership percentage is not publicly disclosed in the company announcement. The investment aligns with I Squared’s energy-transition strategy around industrial infrastructure needed for electrification.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Indiana; Oregon",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk40r01zyivheoeds68ip",
+        "managerName": "I Squared Capital",
+        "organizationName": "I Squared Capital",
+        "fundName": "ISQ Energy Transition Infrastructure Fund",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplzwh04c3ivhelqrt2of0",
+        "date": "2024",
+        "event": "DOE announced a conditional financing commitment related to ENTEK’s battery-separator expansion plans.",
+        "category": "FINANCING",
+        "sortDate": "2024-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplzwz04c4ivhetj8cq1ak",
+        "date": "2025",
+        "event": "I Squared disclosed up to $800 million of support for ENTEK’s U.S. manufacturing expansion.",
+        "category": "FINANCING",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplzxk04c5ivhe58u6qs2p",
+        "date": "Sep 17, 2025",
+        "event": "I Squared announced an agreement to acquire a majority equity interest in ENTEK.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-09-17T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxprjvt0b92ivhernnmr1k1",
+        "label": "Entek — ENTEK Technology Holdings",
+        "url": "https://entek.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Entek company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxprjxx0b94ivhe7t7c0tqz",
+        "label": "Announcement date source — I Squared Capital — ENTEK Technology Holdings",
+        "url": "https://isquaredcapital.com/cpt_news/i-squared-capital-acquires-majority-stake-in-entek-to-reshore-critical-u-s-battery-manufacturing/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "I Squared Capital transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprjyy0b96ivhez3h75pvg",
+        "label": "Energy — ENTEK Technology Holdings",
+        "url": "https://www.energy.gov/lpo/articles/lpo-offers-conditional-commitment-entek-lithium-separators-llc",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Energy — ENTEK Technology Holdings",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "ENTEK Technology Holdings",
+    "investmentFirm": "I Squared Capital",
+    "sector": "Power & ET",
+    "subsector": "Battery separator manufacturing",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "ENTEK Technology Holdings manufactures battery separators and related components used in lithium-ion battery applications. Its customers are battery manufacturers and other participants in the electric-vehicle and energy-storage supply chain that require separator materials and domestic manufacturing capacity. The business follows an asset-heavy industrial model based on specialized manufacturing plants, process technology, and long-term customer qualification cycles. Public materials describe ENTEK as operating in Oregon and expanding manufacturing capacity in Indiana as part of a broader effort to reshore critical U.S. battery supply-chain infrastructure. I Squared announced an agreement to acquire a majority equity interest in September 2025 and committed up to $800 million to support expansion; the exact current ownership percentage is not publicly disclosed in the company announcement. The investment aligns with I Squared’s energy-transition strategy around industrial infrastructure needed for electrification.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2025,
+    "headquarters": "Indiana; Oregon",
+    "milestones": [
+      {
+        "date": "2024",
+        "event": "DOE announced a conditional financing commitment related to ENTEK’s battery-separator expansion plans.",
+        "category": "Financing"
+      },
+      {
+        "date": "2025",
+        "event": "I Squared disclosed up to $800 million of support for ENTEK’s U.S. manufacturing expansion.",
+        "category": "Financing"
+      },
+      {
+        "date": "Sep 17, 2025",
+        "event": "I Squared announced an agreement to acquire a majority equity interest in ENTEK.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Entek — ENTEK Technology Holdings",
+        "url": "https://entek.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Announcement date source — I Squared Capital — ENTEK Technology Holdings",
+        "url": "https://isquaredcapital.com/cpt_news/i-squared-capital-acquires-majority-stake-in-entek-to-reshore-critical-u-s-battery-manufacturing/",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Energy — ENTEK Technology Holdings",
+        "url": "https://www.energy.gov/lpo/articles/lpo-offers-conditional-commitment-entek-lithium-separators-llc",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "I Squared Capital",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2025,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj2mk00dvivhegna869hx",
+        "fundName": "ISQ Energy Transition Infrastructure Fund",
+        "managerId": "cmrxpi9mi002aivhewgvbh2ag",
+        "updatedAt": "2026-07-23T16:09:57.260Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi9mi002aivhewgvbh2ag",
+        "name": "I Squared Capital",
+        "updatedAt": "2026-07-23T16:09:19.674Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0290:entek-technology-holdings:3d9d2806",
+    "taskIndex": 290,
+    "canonicalKey": "entek-technology-holdings|united-states",
+    "capturedAt": "2026-08-31T10:28:32.932Z",
+    "databaseRevision": "revision:cccbc2783fa57f24f689486a316a64b0d12c68265c869fc171ce30bc90b1dd3b",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "0a08fec162f85ce5f12022593aa905ea51f3dad5fbf33fd9915128784674cf26",
+    "productionSnapshotSha256": "7126ad8bd17717de2f9e107b4bacac1a26cc34c7b4595737b6ce0ae91cd72517",
+    "targetCompanySnapshotSha256": "71ff055fae48e8bfa6df127c98a7bf0b64778aef51372b0fe8c0e32babb4776b",
+    "seedEntrySha256": "7b85a78b88e3f979197a43e7de1f3ec0abae951491cb98c8548b9132aac1327c",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "eed6ac5faf8a83cdb3dce372e15153c8a718243b86e0be2aed0793b1bac70cc2",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "80bb1b9fbd97369aa59b500bed343eef3e3b9c5867c7525a27b7990477dc78d0",
+      "organizationsSha256": "3a6e897cb6bf74e545c692a28085dff8e712c5fcc0be550290c59c13cf02f9a8",
+      "citationsSha256": "7a1fc268352d03ca85be7d494b7a81f03b6b6ca1814cd41fb3c25535f8979591",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "ea571252ccbf4ecaed341212b3c5f3b136638c0ed47737a67b1e7baa884cd6db",
+    "stateSha256": "ff7d08e307cc58b85a7b4f774b42f26bda7a435767eddbee314e59421fa98c66",
+    "taskSnapshotSha256": "0cf75e32ddf8d911bf64953a87e00eb50e89842220e07a01f9d069fd38694f12"
+  },
+  "contextSha256": "37ef76b454973b7c8ae9c3a6234c34f4d79661ffaac0d19a995aefef361fe6de"
+}

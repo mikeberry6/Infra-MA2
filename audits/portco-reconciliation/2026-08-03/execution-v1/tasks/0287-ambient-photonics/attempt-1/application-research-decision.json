@@ -1,0 +1,210 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0287:ambient-photonics:ce65fde2",
+  "taskIndex": 287,
+  "companyName": "Ambient Photonics",
+  "asOfDate": "2026-08-19",
+  "decision": "EXCLUDED",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-08-31T10:30:47.000Z",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "Ambient Photonics",
+    "requestedManagers": [
+      "I Squared Capital"
+    ],
+    "decision": "EXCLUDED",
+    "confidence": "HIGH",
+    "rationale": "Ambient was a low-light PV component manufacturer, not an infrastructure owner/operator. I Squared's InfraTech fund is legally classified as venture capital and is described by I Squared as a venture strategy for growth-stage technology companies. No qualifying alternative infrastructure owner was found; exclude the whole company, not merely I Squared's ownership period. Ambient entered an ABC liquidation in 2025.",
+    "identityResolution": {
+      "name": "Ambient Photonics, Inc.",
+      "canonicalKey": "ambient-photonics|united-states",
+      "formed": "Delaware, 2019",
+      "locations": "Mill Valley then Scotts Valley, California",
+      "match": "CONFIRMED",
+      "cutoffStatus": "Assets assigned for creditor liquidation on 2025-12-02; no active operating PortCo"
+    },
+    "ownershipResolution": {
+      "owners": [
+        {
+          "manager": "I Squared Capital",
+          "organization": "I Squared Capital Advisors (US) LLC",
+          "fund": "ISQ Global InfraTech Fund, L.P.",
+          "vehicle": "InfraTech venture strategy; holding SPV NOT_PUBLICLY_DISCLOSED",
+          "stake": "NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2022-05-10",
+          "entryDate": "NOT_PUBLICLY_DISCLOSED",
+          "entryYear": 2022,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": false,
+          "transactionState": "Minority Series A equity participant; joined 2023 Series A2; no control or sale disclosed; post-ABC legal share status UNRESOLVED"
+        }
+      ],
+      "otherEquityInvestors": [
+        "Cthulhu Ventures",
+        "Amazon Climate Pledge Fund",
+        "Ecosystem Integrity Fund",
+        "Future Shape",
+        "Fine Structure Ventures",
+        "Helios Climate Ventures",
+        "Regeneration.VC",
+        "Sustainable Future Ventures",
+        "At One Ventures"
+      ],
+      "debtOrEquityLinked": [
+        "Silicon Valley Bank",
+        "Trinity Capital"
+      ],
+      "qualifyingAlternativeOwnerFound": false
+    },
+    "operatingResolution": {
+      "model": "Designed and manufactured dye-sensitized low-light PV cells for connected devices",
+      "assets": "Approximately 43,000-square-foot Scotts Valley factory and automated equipment, later assigned for sale",
+      "endMarkets": [
+        "consumer electronics",
+        "smart home",
+        "IoT/industrial sensors",
+        "electronic shelf labels"
+      ],
+      "scope": "Non-infrastructure technology manufacturer; factory ownership is incidental"
+    },
+    "acquisitionExitCheck": {
+      "seriesA": "$31,059,647 equity; first sale 2022-04-26; announced 2022-05-10; I Squared participated, not co-lead",
+      "debt": "$17.5 million equipment financing from SVB and Trinity announced 2022-09-07; Trinity also held a warrant",
+      "seriesA2": "$30 million announced 2023-09-05; Fine Structure led; I Squared followed on",
+      "laterRound": "At One investment announced 2025-04-22; amount/security/closing date NOT_PUBLICLY_DISCLOSED",
+      "exit": "No acquisition, recapitalization, buyer, manager exit or signed pending deal found through cutoff; assets assigned to API (ABC), LLC for liquidation",
+      "pendingTransactions": []
+    },
+    "milestones": [
+      {
+        "date": "2022-05-10",
+        "event": "$31.06 million Series A announced; I Squared participated; first sale 2022-04-26."
+      },
+      {
+        "date": "2023-09-05",
+        "event": "$30 million Series A2; I Squared, EIF and Cthulhu followed on."
+      },
+      {
+        "date": "2025-04-22",
+        "event": "At One Ventures announced an investment; terms undisclosed."
+      },
+      {
+        "date": "2025-12-02",
+        "event": "Assets assigned to API (ABC), LLC for sale and creditor distributions."
+      }
+    ],
+    "evidence": [
+      {
+        "label": "Ambient 2022 Form D",
+        "url": "https://www.sec.gov/Archives/edgar/data/1927510/000192751022000001/xslFormDX01/primary_doc.xml",
+        "purpose": "Identity, equity security, first-sale date, amount and investor count",
+        "sourceTier": "Primary-regulatory",
+        "workingStatus": "OPENED",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "Ambient Series A release",
+        "url": "https://www.businesswire.com/news/home/20220510006161/en/Ambient-Photonics-Energy-Harvesting-Technology-Reduces-IoT-Carbon-Footprint-%2431-Million-Series-A-Financing-Co-Led-by-Amazon-through-its-Climate-Pledge-Fund-and-Ecosystem-Integrity-Fund",
+        "purpose": "Participants, products, factory and markets",
+        "sourceTier": "Primary-company",
+        "workingStatus": "OPENED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Ambient Series A2 release",
+        "url": "https://www.businesswire.com/news/home/20230905276790/en/Ambient-Photonics-Raises-%2430M-in-Series-A2-Funding-Propelling-the-Future-of-Battery-Free-Connected-Devices",
+        "purpose": "A2 participants and I Squared follow-on",
+        "sourceTier": "Primary-company",
+        "workingStatus": "OPENED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "At One investment memo",
+        "url": "https://www.atoneventures.com/insights/welcome-our-latest-investment-ambient-photonics",
+        "purpose": "2025 investment and operating model",
+        "sourceTier": "Primary-investor",
+        "workingStatus": "OPENED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "I Squared InfraTech description",
+        "url": "https://isquaredcapital.com/news/i-squared-capital-appoints-grant-allen-as-partner-for-infratech-strategy/",
+        "purpose": "InfraTech is a venture strategy",
+        "sourceTier": "Primary-manager",
+        "workingStatus": "OPENED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "ISQ Global InfraTech Fund Form D",
+        "url": "https://www.sec.gov/Archives/edgar/data/1835739/000156761921002258/xslFormDX01/primary_doc.xml",
+        "purpose": "Exact fund, manager and VC classification",
+        "sourceTier": "Primary-regulatory",
+        "workingStatus": "OPENED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Ambient ABC portal",
+        "url": "https://www.hometeamsonline.com/teams/default.asp?p=custom&pagename=Ambient+Photonics+Info&s=htosports&u=ROCKCREEKFA",
+        "purpose": "Assignment date and liquidation purpose",
+        "sourceTier": "Primary-estate",
+        "workingStatus": "OPENED",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "scope": "Active I Squared infrastructure PortCo -> entire company excluded",
+      "owner": "Qualifying I Squared owner -> historical nonqualifying InfraTech venture investor",
+      "status": "Active -> assets in ABC liquidation",
+      "history": "Add 2023 A2, 2025 At One investment and 2025 ABC"
+    },
+    "excludedOrDuplicateCandidates": {
+      "entireCompanyExclusion": true,
+      "duplicateCandidates": [],
+      "nonqualifyingCapitalProviders": [
+        "I Squared InfraTech",
+        "Cthulhu",
+        "Amazon Climate Pledge Fund",
+        "EIF",
+        "Future Shape",
+        "Fine Structure",
+        "Helios Climate",
+        "Regeneration.VC",
+        "Sustainable Future",
+        "At One",
+        "SVB",
+        "Trinity"
+      ],
+      "qualifyingAlternativeOwnerFound": false
+    },
+    "unresolvedQuestions": [
+      "I Squared's holding SPV, stake and investor-specific closing date are not public.",
+      "At One's 2025 security, amount, co-investors and closing date are not public.",
+      "Formal equity/warrant disposition in the ABC remains UNRESOLVED but does not affect scope."
+    ],
+    "recommendedListAction": {
+      "action": "Remove Ambient Photonics from the infrastructure PortCo list",
+      "scope": "Entire company, not only I Squared's ownership period",
+      "history": "Retain only as an excluded technology investment with inactive/ABC status"
+    }
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0287-ambient-photonics/attempt-1/research-decision.json",
+      "sha256": "cd11abd2e1d1f2ba45c9fc6f7232d9b63f2317b71cac0dc6b05186c4d5177186"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0287-ambient-photonics/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "773ff62ded555d1f3644423248da4e0a3735f983249132fd4608d66860953015"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0287-ambient-photonics/attempt-1/source-verification.json",
+      "sha256": "c2ea46502d29c063ee16c6cccc5855dee5a29aa0bc4cac0f3f334aa8cbbb43a6"
+    },
+    "acceptedResponseSha256": "acd604e6a7c9f1b6599ff3d42c99506d4c2718ef218d39afe1c7d1ad3702cc90",
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION"
+  }
+}
