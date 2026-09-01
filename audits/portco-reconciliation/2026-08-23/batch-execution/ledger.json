@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-01T10:51:27.000Z",
-  "activeBatchId": "batch-0319-0323-v1",
+  "updatedAt": "2026-09-01T11:13:00.000Z",
+  "activeBatchId": null,
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -5423,7 +5423,7 @@
     },
     {
       "batchId": "batch-0319-0323-v1",
-      "state": "RELEASING",
+      "state": "COMPLETED",
       "taskIds": [
         "ledger:0319:38-degrees-north:98964650",
         "ledger:0320:carboncount-holdings-1-llc:1dcdc974",
@@ -5439,15 +5439,18 @@
         323
       ],
       "createdAt": "2026-09-01T10:23:41.000Z",
-      "updatedAt": "2026-09-01T10:51:27.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-09-01T11:13:00.000Z",
+      "completedAt": "2026-09-01T11:13:00.000Z",
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0319-0323-v1/batch-manifest-v4.json",
         "sha256": "9590aadea6ee68e30c519d0160e3c4df5439bc9a3b46dec3942732de5b76fafc"
       },
-      "releaseSha": null,
-      "receipt": null,
-      "reason": null,
+      "releaseSha": "2cf6b9a9195bb13d58c658822bf732620cc7265b",
+      "receipt": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0319-0323-v1/production-apply/batch-apply-receipt.json",
+        "sha256": "e6d3bb08233be418a9ad9bd5f041bd6aaad59cc11e72981c6274c843982c884d"
+      },
+      "reason": "Production database, seed after-images, detail APIs, ownership, archived-row behavior and rendered scorecards verified for all five members; no partial application.",
       "history": [
         {
           "sequence": 1,
@@ -5476,9 +5479,41 @@
             "9590aadea6ee68e30c519d0160e3c4df5439bc9a3b46dec3942732de5b76fafc"
           ],
           "reason": null
+        },
+        {
+          "sequence": 4,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-09-01T11:02:37.000Z",
+          "evidenceSha256": [
+            "9590aadea6ee68e30c519d0160e3c4df5439bc9a3b46dec3942732de5b76fafc"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 5,
+          "from": "APPLYING",
+          "to": "VERIFYING",
+          "at": "2026-09-01T11:11:34.000Z",
+          "evidenceSha256": [
+            "9590aadea6ee68e30c519d0160e3c4df5439bc9a3b46dec3942732de5b76fafc",
+            "e6d3bb08233be418a9ad9bd5f041bd6aaad59cc11e72981c6274c843982c884d"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 6,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-09-01T11:13:00.000Z",
+          "evidenceSha256": [
+            "9590aadea6ee68e30c519d0160e3c4df5439bc9a3b46dec3942732de5b76fafc",
+            "e6d3bb08233be418a9ad9bd5f041bd6aaad59cc11e72981c6274c843982c884d"
+          ],
+          "reason": "Production database, seed after-images, detail APIs, ownership, archived-row behavior and rendered scorecards verified for all five members; no partial application."
         }
       ]
     }
   ],
-  "ledgerSha256": "fb067ea0e9581737d9e7ef935646497aa480efa51a76ff8e0e24bf25592eefb6"
+  "ledgerSha256": "97247cf0c087729fea5eb65b3fd3d1f6541d3b2753c5b87582f67847edecc7a2"
 }
