@@ -3,7 +3,7 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-02T00:04:00.000Z",
+  "updatedAt": "2026-09-02T00:06:00.000Z",
   "activeBatchId": "batch-0394-0398-v1",
   "batches": [
     {
@@ -6825,7 +6825,7 @@
     },
     {
       "batchId": "batch-0394-0398-v1",
-      "state": "RELEASING",
+      "state": "VERIFYING",
       "taskIds": [
         "ledger:0394:middlebury-resource-recovery-center:08b27d77",
         "ledger:0395:prairie-mist-solar:44443a02",
@@ -6841,14 +6841,17 @@
         398
       ],
       "createdAt": "2026-09-01T23:06:30Z",
-      "updatedAt": "2026-09-02T00:04:00.000Z",
+      "updatedAt": "2026-09-02T00:06:00.000Z",
       "completedAt": null,
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0394-0398-v1/batch-manifest-v6.json",
         "sha256": "056e7afef2504192673e15d989f8be1975e98ae769a0f1779bbad47bcd09b5cb"
       },
-      "releaseSha": null,
-      "receipt": null,
+      "releaseSha": "e36769ac46cbc2824f3b31b8e73e648492f6d096",
+      "receipt": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0394-0398-v1/production-apply/batch-apply-receipt.json",
+        "sha256": "4c6aada2d44de5eb2061b1f4d1498efed1284d6356808348f1eca851963695f4"
+      },
       "reason": null,
       "history": [
         {
@@ -6878,9 +6881,30 @@
             "056e7afef2504192673e15d989f8be1975e98ae769a0f1779bbad47bcd09b5cb"
           ],
           "reason": null
+        },
+        {
+          "sequence": 4,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-09-02T00:05:00.000Z",
+          "evidenceSha256": [
+            "056e7afef2504192673e15d989f8be1975e98ae769a0f1779bbad47bcd09b5cb"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 5,
+          "from": "APPLYING",
+          "to": "VERIFYING",
+          "at": "2026-09-02T00:06:00.000Z",
+          "evidenceSha256": [
+            "056e7afef2504192673e15d989f8be1975e98ae769a0f1779bbad47bcd09b5cb",
+            "4c6aada2d44de5eb2061b1f4d1498efed1284d6356808348f1eca851963695f4"
+          ],
+          "reason": null
         }
       ]
     }
   ],
-  "ledgerSha256": "1d391420598683768627839ac8c2e81e26f1114031d84a2872316347221abd1b"
+  "ledgerSha256": "1ce5fd9f6b21e194e7cfa594bb9fe90586bfe25edb83ec349efc623191357a92"
 }
