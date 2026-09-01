@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0302:corporation:ac485f35",
+  "taskIndex": 302,
+  "companyName": "Corporation",
+  "asOfDate": "2026-08-19",
+  "decision": "EXCLUDED",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-01T06:58:00.000Z",
+  "result": {
+    "decision": "EXCLUDED",
+    "confidence": "HIGH",
+    "rationale": "Exclude the standalone Corporation queue identity as a malformed parser artifact. The underlying sources refer to Enwave Energy Corporation's Canadian district-energy business, which already exists as canonical Enwave Energy; no separate U.S. company named Corporation exists, and this task has no independent production or seed target to merge or mutate.",
+    "evidence": [
+      {
+        "url": "https://www.ifminvestors.com/news-and-insights/media-centre/ifm-investors-and-ontario-teachers-pension-plan-board-jointly-acquire-canadian-district-energy-operations-owned-by-enwave-energy-corporation/",
+        "purpose": "Establishes that Corporation was detached from the Enwave Energy Corporation legal name and that the transaction concerned the Canadian Enwave business."
+      },
+      {
+        "url": "https://www.otpp.com/en-ca/about-us/news-and-insights/2021/enwave-s-new-owners-ignite-next-era-of-growth-for-canadian-sustainable-energy-company/",
+        "purpose": "Confirms the Canadian Enwave identity and 2021 closing rather than a standalone Corporation company."
+      },
+      {
+        "url": "https://www.ifminvestors.com/en-au/capabilities/infrastructure/asset-portfolio/enwave/",
+        "purpose": "Confirms the surviving canonical Enwave portfolio identity and current IFM stake."
+      },
+      {
+        "url": "https://www.enwave.com/about",
+        "purpose": "Confirms Enwave's operating identity and current investors."
+      },
+      {
+        "url": "https://competition-bureau.canada.ca/en/mergers-and-acquisitions/archived-report-merger-reviews?wbdisable=true",
+        "purpose": "Regulatory evidence naming Enwave Energy Corporation and the actual transaction parties."
+      },
+      {
+        "url": "https://www.cnmv.es/WebServices/VerDocumento/Ver?e=Iq62wi3Bklcct9syY4GXo0%2BGdzDW%2Br8xdxvYJ6h7QbouVaha1OXoqrOfTTgx%2BSwV",
+        "purpose": "Regulatory evidence linking IFM's vehicle to Enwave Canada."
+      },
+      {
+        "url": "https://www.centrioenergy.com/news/qic-and-ullico-complete-acquisition-of-centrio-leading-u-s-district-energy-platform/",
+        "purpose": "Separates the independently sold U.S. CenTrio business from the Canadian Enwave boundary."
+      }
+    ],
+    "recommendedListAction": "Record this malformed repo-only judgment as EXCLUDED with a durable mapping note to existing canonical Enwave Energy; do not create, merge, or mutate a company from the Corporation identity."
+  },
+  "lineage": {
+    "sourceDecision": "application-research-decision.json",
+    "acceptedResponse": "chatgpt-accepted-response.txt",
+    "sourceVerification": "source-verification.json",
+    "operationalNormalization": {
+      "from": "SUPERSEDED",
+      "to": "EXCLUDED",
+      "basis": "SUPERSEDED requires a replacement queue task, but the reviewed identity maps directly to an already-existing canonical production company and has no replacement task. EXCLUDED is the truthful terminal state for the nonexistent standalone parser artifact; it does not exclude or alter canonical Enwave Energy."
+    }
+  }
+}

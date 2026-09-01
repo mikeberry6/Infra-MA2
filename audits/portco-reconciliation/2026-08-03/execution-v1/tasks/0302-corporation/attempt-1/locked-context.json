@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0302:corporation:ac485f35",
+  "taskIndex": 302,
+  "companyName": "Corporation",
+  "generatedAt": "2026-09-01T06:54:17.605Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0302-corporation/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 302,
+    "taskId": "ledger:0302:corporation:ac485f35",
+    "canonicalKey": null,
+    "companyName": "Corporation",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "REPO_ONLY_JUDGMENT",
+    "earliestManagerIndex": 55,
+    "managers": [
+      "IFM Investors"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "055-ifm-investors:repo-only:001:corporation"
+    ],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://www.ifminvestors.com/capabilities/infrastructure/our-portfolio/enwave/",
+      "https://www.ifminvestors.com/news-and-insights/media-centre/ifm-investors-and-ontario-teachers-pension-plan-board-jointly-acquire-canadian-district-energy-operations-owned-by-enwave-energy-corporation/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted repo-only MATCHED_ELSEWHERE judgment for IFM Investors: Duplicate malformed entry mapped to Enwave Energy Corporation based on identical acquisition evidence.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment.",
+      "Repo-only identity has no matching production or evaluated-seed record in the captured snapshots."
+    ]
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": null,
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0302:corporation:ac485f35",
+    "taskIndex": 302,
+    "canonicalKey": null,
+    "capturedAt": "2026-09-01T06:54:17.605Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "1351967df410c31c6af375da6c2ddff94014f65abb1ec48a589be04cd5f09ae1",
+    "productionSnapshotSha256": "a8f92bb8d1bc4dfe46011d6bc41588258e8ecc1d642b2168f29a672291796ece",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "7162f023548431ed1fed51e43a93e8e1e0a46df9edc0adf314307e96f61f1312",
+    "stateSha256": "34321c356d43dc901f53eb8d64ded90caf1df03006aeec964a6393aec0b5a213",
+    "taskSnapshotSha256": "602cbcefb899f1a9d45c466cb2de16bc6647eb54380aad00b8595fc688938d3b"
+  },
+  "contextSha256": "67776166be6a07e5618db5f617f486ee053cb54576d6073a1e86453ec3af7a9f"
+}

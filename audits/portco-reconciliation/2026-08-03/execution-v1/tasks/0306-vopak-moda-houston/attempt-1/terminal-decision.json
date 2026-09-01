@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0306:vopak-moda-houston:8614eb7b",
+  "taskIndex": 306,
+  "companyName": "Vopak Moda Houston",
+  "outcome": "EXCLUDED",
+  "decidedAt": "2026-09-01T07:08:02.000Z",
+  "rationale": "No IFM infrastructure-equity ownership was found. Primary sources resolve a 50/50 Royal Vopak-Exolum terminal JV beneath those operating platforms; creating a standalone IFM PortCo would misattribute ownership and double-count an asset.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0306-vopak-moda-houston/attempt-1/locked-task-snapshot.json",
+    "sha256": "2077a8eb04ff717622d597f849fe43f3361730aa7993d6c15e798793763cfaec"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0306-vopak-moda-houston/attempt-1/application-research-decision.json",
+    "sha256": "c1778e681e37be53858d844d0a95eca94c51b58fadf1e31e87efeb0f023bbd06"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0306-vopak-moda-houston/attempt-1/source-verification.json",
+    "sha256": "1cd09d66f15008ef5ee9297fc418388865ca3a9d78b378fccd172f63dc9aeff5"
+  },
+  "evidence": [
+    {
+      "url": "https://www.cnmc.es/sites/default/files/5293992.pdf",
+      "purpose": "Target, vehicles, stakes, SPA and closing."
+    },
+    {
+      "url": "https://www.rrc.texas.gov/media/sffbnti2/gud-10597-first-amended-proposal-for-decision-1-29-2021.pdf",
+      "purpose": "Initial JV parties and Vopak vehicle."
+    },
+    {
+      "url": "https://exolum.com/en/noticia/exolum-announces-agreement-to-acquire-50-of-a-leading-ammonia-and-ngl-storage-terminal-in-houston-texas-usa-from-moda-midstream/",
+      "purpose": "Announcement and 50% purchase."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/60714/000095017025029046/lxu-20241231.htm",
+      "purpose": "Current operating LLC, former name and JV parents."
+    },
+    {
+      "url": "https://porthouston.com/wp-content/uploads/2025/07/WEBSITE-POSTING-PC-MEETING-JULY.pdf",
+      "purpose": "Current holdco name and leaseholder."
+    },
+    {
+      "url": "https://exolum.com/en/services/where-we-operate/",
+      "purpose": "Current active 50/50 ownership."
+    },
+    {
+      "url": "https://exolum.com/en/shareholders-and-investors/distribution-of-share-capital/",
+      "purpose": "No disclosed IFM parent stake."
+    },
+    {
+      "url": "https://www.ifminvestors.com/capabilities/infrastructure/our-portfolio/",
+      "purpose": "No VMH, Vopak or Exolum equity tie found."
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "9cf0c3b40c4d9c1a8eb37348bba119dc5231bdbaa76b1b7658dfdf980c60697b"
+}
