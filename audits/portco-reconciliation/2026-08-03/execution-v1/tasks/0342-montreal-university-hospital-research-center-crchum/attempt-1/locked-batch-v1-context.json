@@ -1,0 +1,274 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0342:montreal-university-hospital-research-center-crchum:8cde81e2",
+  "taskIndex": 342,
+  "companyName": "Montreal University Hospital Research Center (CRCHUM)",
+  "generatedAt": "2026-09-01T14:22:47.937Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0342-montreal-university-hospital-research-center-crchum/attempt-1/locked-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 342,
+    "taskId": "ledger:0342:montreal-university-hospital-research-center-crchum:8cde81e2",
+    "canonicalKey": "montreal-university-hospital-research-center-crchum|canada",
+    "companyName": "Montreal University Hospital Research Center (CRCHUM)",
+    "country": "Canada",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 67,
+    "managers": [
+      "Meridiam"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "067-meridiam:repo-only:001:montreal-university-hospital-research-center-crchum"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjl630160ivhex0vonvz0"
+    ],
+    "seedKeys": [
+      "montreal university hospital research center (crchum)|Canada"
+    ],
+    "evidenceUrls": [
+      "https://www.meridiam.com/assets/montreal-university-hospital-research-center-crchum-canada/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Meridiam MATCHED_ELSEWHERE: This record represents the same underlying CRCHUM hospital PPP asset already included under the canonical CRCHUM identity and should be deduplicated.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjl630160ivhex0vonvz0",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "montreal-university-hospital-research-center-crchum|canada",
+  "targetCompanyImage": {
+    "id": "cmrxpjl630160ivhex0vonvz0",
+    "name": "Montreal University Hospital Research Center (CRCHUM)",
+    "aliases": [],
+    "sector": "SOCIAL_INFRA",
+    "subsector": "Hospital research facility",
+    "region": "NORTH_AMERICA",
+    "country": "Canada",
+    "countryTags": [
+      "Canada"
+    ],
+    "description": "CRCHUM is a hospital research center that supports biomedical, clinical, and population health research in Montreal. Its users include researchers, graduate students, fellows, clinicians, and affiliated academic institutions. The operating model is a long-term social infrastructure public-private partnership tied to the delivery and operation of specialized research facilities. Meridiam states that the facility totals about 70,000 square meters and accommodates more than 1,700 people, including around 450 researchers and more than 400 graduate students and postgraduate fellows. The consortium reached commercial and financial close in May 2010, substantial completion in September 2013, and final completion in March 2014. Current public materials do not disclose a current ownership percentage beyond Meridiam's portfolio presentation of the asset.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Quebec",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk7fq025aivheljn5eboh",
+        "managerName": "Meridiam",
+        "organizationName": "Meridiam",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2010,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmdw704syivhervp2op1n",
+        "date": "Mar 2010",
+        "event": "The CRCHUM consortium was selected as successful proponent.",
+        "category": "EXPANSION",
+        "sortDate": "2010-03-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmdwq04szivhew6xtvfd9",
+        "date": "May 2010",
+        "event": "Meridiam reached commercial and financial close for the CRCHUM facility.",
+        "category": "FINANCING",
+        "sortDate": "2010-05-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmdxd04t0ivhequdbz1bj",
+        "date": "Sep 2013",
+        "event": "The project achieved substantial completion.",
+        "category": "EXPANSION",
+        "sortDate": "2013-09-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmdxu04t1ivhekygguvec",
+        "date": "Mar 2014",
+        "event": "Final completion was reached.",
+        "category": "OTHER",
+        "sortDate": "2014-03-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxps8n30cakivherei28lvp",
+        "label": "Close date source — Meridiam — CRCHUM",
+        "url": "https://www.meridiam.com/assets/montreal-university-hospital-research-center-crchum-canada/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Meridiam closing confirmation",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxps8nk0calivhe7bpidhrv",
+        "label": "Chumontreal — CRCHUM",
+        "url": "https://www.chumontreal.qc.ca/en/crchum",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Chumontreal — Montreal University Hospital Research Center (CRCHUM)",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxps8oj0canivhe33pawouu",
+        "label": "Op3 — Montreal University Hospital Research Center (CRCHUM)",
+        "url": "https://op3.dc.gov/sites/default/files/dc/sites/op3/publication/attachments/Daly%20Unsolicited%20Proposal%20-%20Published%2004.24.18_0.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Op3 — Montreal University Hospital Research Center (CRCHUM)",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxps8pq0capivherbmaqh6g",
+        "label": "Meridiam — Montreal University Hospital Research Center (CRCHUM)",
+        "url": "https://www.meridiam.com/assets/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Meridiam operations / asset details",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Montreal University Hospital Research Center (CRCHUM)",
+    "investmentFirm": "Meridiam",
+    "sector": "Social Infra",
+    "subsector": "Hospital research facility",
+    "region": "North America",
+    "country": "Canada",
+    "ownershipVehicle": "n.a.",
+    "description": "CRCHUM is a hospital research center that supports biomedical, clinical, and population health research in Montreal. Its users include researchers, graduate students, fellows, clinicians, and affiliated academic institutions. The operating model is a long-term social infrastructure public-private partnership tied to the delivery and operation of specialized research facilities. Meridiam states that the facility totals about 70,000 square meters and accommodates more than 1,700 people, including around 450 researchers and more than 400 graduate students and postgraduate fellows. The consortium reached commercial and financial close in May 2010, substantial completion in September 2013, and final completion in March 2014. Current public materials do not disclose a current ownership percentage beyond Meridiam's portfolio presentation of the asset.",
+    "status": "Active",
+    "countryTags": [
+      "Canada"
+    ],
+    "investmentYear": 2010,
+    "headquarters": "Quebec",
+    "milestones": [
+      {
+        "date": "Mar 2010",
+        "event": "The CRCHUM consortium was selected as successful proponent.",
+        "category": "Expansion"
+      },
+      {
+        "date": "May 2010",
+        "event": "Meridiam reached commercial and financial close for the CRCHUM facility.",
+        "category": "Financing"
+      },
+      {
+        "date": "Sep 2013",
+        "event": "The project achieved substantial completion.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Mar 2014",
+        "event": "Final completion was reached.",
+        "category": "Other"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Close date source — Meridiam — Montreal University Hospital Research Center (CRCHUM)",
+        "url": "https://www.meridiam.com/assets/montreal-university-hospital-research-center-crchum-canada/",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Chumontreal — Montreal University Hospital Research Center (CRCHUM)",
+        "url": "https://www.chumontreal.qc.ca/en/crchum",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Op3 — Montreal University Hospital Research Center (CRCHUM)",
+        "url": "https://op3.dc.gov/sites/default/files/dc/sites/op3/publication/attachments/Daly%20Unsolicited%20Proposal%20-%20Published%2004.24.18_0.pdf",
+        "type": "PRESENTATION"
+      },
+      {
+        "label": "Meridiam — Montreal University Hospital Research Center (CRCHUM)",
+        "url": "https://www.meridiam.com/assets/",
+        "type": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Meridiam",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2010,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpibnj002xivhe7vh7wmuk",
+        "name": "Meridiam",
+        "updatedAt": "2026-07-23T16:09:22.303Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0342:montreal-university-hospital-research-center-crchum:8cde81e2",
+    "taskIndex": 342,
+    "canonicalKey": "montreal-university-hospital-research-center-crchum|canada",
+    "capturedAt": "2026-09-01T14:22:47.937Z",
+    "databaseRevision": "revision:a551ec0a407b8dbeb6f884ceb7926a2320e8087217142f1a230ef7dd1243978c",
+    "databaseTargetFingerprint": "2a1bc8fd92634136a3b174f79ce1a63e280b46d22d49fbf3accbfb1943bd1b34",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "50f519c5b93649d953c66fa05a437f5fbd3186ac70ffcb1b79d6296bce013a5a",
+    "productionSnapshotSha256": "6e2896afdf99f567d6269232b7ffc1e96a153b455cb7c1140fd5d6390fd96e6b",
+    "targetCompanySnapshotSha256": "b46d6d42cfa9606bf83826ef8b8eca23df651283f90186703fb5c3543dc47c81",
+    "seedEntrySha256": "1f1741f0d0a16bebb4c5f290bc10bd86785b64eea779c6b6498ebc551c8fac8a",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "df322bd5298bc727ea39c07192ebbc59b6bc720765e00a9e5bf7bcf750d7b960",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "289e2bace5b65ccd28ace18668f80cc79b5aea289ef0c7ec6ebc6d2b4ed4c84c",
+      "citationsSha256": "a9f412787445e74250977fc3b84c27c795714357a5cc9e36decce126bbd5cba3",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "c5420e3a3c5117d7936713753484c146657dc362dbe01186a511bb005e48b29e",
+    "stateSha256": "51b65716fd69e86fab75711e834eb952066ee9ab051c76d4213dc6c0689fcf59",
+    "taskSnapshotSha256": "fb5839a832ac512bd0359ec26f3630ede2ad16019e407588d8129032f1b9a267"
+  },
+  "contextSha256": "a006bae025fc2e5e77280aa26ebd0ebb05784591c953e69cc21fb1001ad8f2fc"
+}

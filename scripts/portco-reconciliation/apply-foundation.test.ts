@@ -57,12 +57,14 @@ describe("approved ownership organization provisioning", () => {
     expect(ownershipOrganizationTypes("BBGI")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("Canadian Business Growth Fund")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("Capital Power Corporation")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("China-Mexico Fund II")).toEqual(["OTHER"]);
     expect(ownershipOrganizationTypes("Clearway Energy")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Cleveland Clinic Foundation")).toEqual(["OTHER"]);
     expect(ownershipOrganizationTypes("Continental Grain Company")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Cresta Fund Management")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("Cox Enterprises")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("CSG Investments, Inc.")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("Comisión Federal de Electricidad (CFE)")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Donato Ardellini")).toEqual(["OTHER"]);
     expect(ownershipOrganizationTypes("Dalmore Capital")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("Energy Transfer LP")).toEqual(["CORPORATE"]);
@@ -78,6 +80,7 @@ describe("approved ownership organization provisioning", () => {
     expect(ownershipOrganizationTypes("Gilbane Development Company")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("GE Renewable Energy")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("HPS Investment Partners")).toEqual(["FUND_MANAGER"]);
+    expect(ownershipOrganizationTypes("Hansam")).toEqual(["OTHER"]);
     expect(ownershipOrganizationTypes("Harvestone Group")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("GFL Environmental Inc.")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Jeff Canon and PROENERGY management")).toEqual(["OTHER"]);
@@ -121,6 +124,14 @@ describe("approved ownership organization provisioning", () => {
     expect(ownershipOrganizationTypes("CyrusOne founders and management")).toEqual(["OTHER"]);
     expect(ownershipOrganizationTypes("ABRY Partners")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("Cincinnati Bell")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("International Finance Corporation (IFC)")).toEqual(["OTHER"]);
+    expect(ownershipOrganizationTypes("Invex Trust F/2292")).toEqual(["OTHER"]);
+    expect(ownershipOrganizationTypes("Invex Trust F/2431")).toEqual(["OTHER"]);
+    expect(ownershipOrganizationTypes("Isla Guadalupe Investments")).toEqual(["OTHER"]);
+    expect(ownershipOrganizationTypes("Meritage Group")).toEqual(["FUND_MANAGER"]);
+    expect(ownershipOrganizationTypes("Oak Hill Capital")).toEqual(["FUND_MANAGER"]);
+    expect(ownershipOrganizationTypes("Telefonía Digital")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("Axtel")).toEqual(["CORPORATE"]);
   });
 
   it("provisions only exact approved missing owner organizations during the protected apply phase", async () => {
@@ -132,12 +143,14 @@ describe("approved ownership organization provisioning", () => {
       ["BBGI", "FUND_MANAGER"],
       ["Canadian Business Growth Fund", "FUND_MANAGER"],
       ["Capital Power Corporation", "CORPORATE"],
+      ["China-Mexico Fund II", "OTHER"],
       ["Clearway Energy", "CORPORATE"],
       ["Cleveland Clinic Foundation", "OTHER"],
       ["Continental Grain Company", "CORPORATE"],
       ["Cresta Fund Management", "FUND_MANAGER"],
       ["Cox Enterprises", "CORPORATE"],
       ["CSG Investments, Inc.", "CORPORATE"],
+      ["Comisión Federal de Electricidad (CFE)", "CORPORATE"],
       ["Donato Ardellini", "OTHER"],
       ["Dalmore Capital", "FUND_MANAGER"],
       ["Energy Transfer LP", "CORPORATE"],
@@ -155,6 +168,7 @@ describe("approved ownership organization provisioning", () => {
       ["GFL Environmental Inc.", "CORPORATE"],
       ["Jeff Canon and PROENERGY management", "OTHER"],
       ["HPS Investment Partners", "FUND_MANAGER"],
+      ["Hansam", "OTHER"],
       ["Harvestone Group", "CORPORATE"],
       ["Kinder Morgan, Inc.", "CORPORATE"],
       ["MAP Energy, LLC", "FUND_MANAGER"],
@@ -193,6 +207,14 @@ describe("approved ownership organization provisioning", () => {
       ["CyrusOne founders and management", "OTHER"],
       ["ABRY Partners", "FUND_MANAGER"],
       ["Cincinnati Bell", "CORPORATE"],
+      ["International Finance Corporation (IFC)", "OTHER"],
+      ["Invex Trust F/2292", "OTHER"],
+      ["Invex Trust F/2431", "OTHER"],
+      ["Isla Guadalupe Investments", "OTHER"],
+      ["Meritage Group", "FUND_MANAGER"],
+      ["Oak Hill Capital", "FUND_MANAGER"],
+      ["Telefonía Digital", "CORPORATE"],
+      ["Axtel", "CORPORATE"],
     ] as const) {
       const create = vi.fn().mockResolvedValue({
         id: `org-${name}`,

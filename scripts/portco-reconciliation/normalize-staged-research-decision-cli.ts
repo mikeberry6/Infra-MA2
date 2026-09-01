@@ -47,6 +47,9 @@ async function main(): Promise<void> {
   const outputPath = resolve(required(values, "output"));
   const generatedAt = required(values, "generated-at");
   const expectedTaskId = values.get("expected-task-id")?.trim() || null;
+  const identityManifestPath = values.get("identity-manifest")?.trim()
+    ? resolve(required(values, "identity-manifest"))
+    : null;
   const proposalIndexPath = values.get("proposal-index")?.trim()
     ? resolve(required(values, "proposal-index"))
     : null;
@@ -77,9 +80,15 @@ async function main(): Promise<void> {
     || !Array.isArray(result.evidence)) {
     throw new Error("Accepted research result lacks decision, rationale or evidence");
   }
+  const stagedDecision = typeof source.decision === "string"
+    ? source.decision
+    : typeof source.modelDecision === "string"
+      ? source.modelDecision
+      : null;
+  if (!stagedDecision) throw new Error("Source research decision has no staged decision");
   let queueProvesUnboundCreate = false;
   let proposalQueueLineage: null | { path: string; sha256: string } = null;
-  if (result.decision !== source.decision) {
+  if (result.decision !== stagedDecision) {
     if (!proposalIndexPath) throw new Error("Decision drift requires --proposal-index");
     const proposalIndexBytes = await readFile(proposalIndexPath);
     const proposalIndex = object(JSON.parse(proposalIndexBytes.toString("utf8")), "Proposal index");
@@ -103,12 +112,12 @@ async function main(): Promise<void> {
   }
   const decisionNormalization = resolveResearchDecisionNormalization({
     acceptedDecision: result.decision,
-    stagedDecision: String(source.decision),
+    stagedDecision,
     rawModelDecision: source.rawModelDecision,
     actionNormalization: source.actionNormalization,
     queueProvesUnboundCreate,
   });
-  const normalizedDecision = decisionNormalization?.finalValue ?? String(source.decision);
+  const normalizedDecision = decisionNormalization?.finalValue ?? stagedDecision;
   const acceptedConfidenceValue = typeof result.confidence === "string"
     || typeof result.confidence === "number"
     ? result.confidence
@@ -127,7 +136,7 @@ async function main(): Promise<void> {
   const stagedConfidence = typeof source.confidence === "string" ? source.confidence : null;
   const confidenceMatches = acceptedConfidence !== null && stagedConfidence !== null
     && (acceptedConfidence === stagedConfidence
-      || stagedConfidence.startsWith(`${acceptedConfidence}_WITH_`));
+      || stagedConfidence.startsWith(`${acceptedConfidence}_`));
   if (!confidenceMatches) {
     throw new Error("Accepted research confidence disagrees with the staged summary");
   }
@@ -144,6 +153,7 @@ async function main(): Promise<void> {
     correctedTaskId: string;
     basis: string;
     researchPrompt: { path: string; sha256: string };
+    identityManifest?: { path: string; sha256: string };
   } = null;
   if (expectedTaskId && expectedTaskId !== source.taskId) {
     if (!promptPath) {
@@ -151,17 +161,49 @@ async function main(): Promise<void> {
     }
     const promptBytes = await readFile(promptPath);
     const prompt = promptBytes.toString("utf8");
-    if (!prompt.split(/\r?\n/).includes(`TASK: ${expectedTaskId}`)) {
-      throw new Error("Research prompt does not bind the expected task id");
-    }
     if (!prompt.split(/\r?\n/).includes(`REQUESTED COMPANY: ${source.companyName}`)) {
       throw new Error("Research prompt does not bind the staged company identity");
+    }
+    const promptBindsExpectedTask = prompt.split(/\r?\n/).includes(`TASK: ${expectedTaskId}`);
+    let identityManifest: { path: string; sha256: string } | undefined;
+    if (!promptBindsExpectedTask) {
+      if (!identityManifestPath) {
+        throw new Error("Research prompt does not bind the expected task id");
+      }
+      if (!prompt.split(/\r?\n/).includes(`TASK: ${source.taskId}`)) {
+        throw new Error("Research prompt binds neither the staged nor expected task id");
+      }
+      const manifestBytes = await readFile(identityManifestPath);
+      const manifest = object(JSON.parse(manifestBytes.toString("utf8")), "Identity manifest");
+      if (!Array.isArray(manifest.tasks)) throw new Error("Identity manifest has no tasks array");
+      const task = manifest.tasks.find((candidate) => {
+        const row = object(candidate, "Identity manifest task");
+        return row.taskId === expectedTaskId;
+      });
+      if (!task) throw new Error("Identity manifest does not contain the expected task id");
+      const taskRecord = object(task, "Identity manifest task");
+      const stagedCanonicalKey = object(source.repoReconciliation, "Source repo reconciliation").canonicalKey;
+      if (
+        taskRecord.sequence !== source.taskIndex
+        || taskRecord.subject !== source.companyName
+        || typeof stagedCanonicalKey !== "string"
+        || taskRecord.canonicalKey !== stagedCanonicalKey
+      ) {
+        throw new Error("Identity manifest does not prove the staged task sequence, company and canonical key");
+      }
+      identityManifest = {
+        path: repositoryPath(identityManifestPath),
+        sha256: sha256(manifestBytes),
+      };
     }
     identityCorrection = {
       originalTaskId: String(source.taskId),
       correctedTaskId: expectedTaskId,
-      basis: "The immutable research prompt carries the canonical queue task id; only the downstream transport metadata used a stale task suffix.",
+      basis: promptBindsExpectedTask
+        ? "The immutable research prompt carries the canonical queue task id; only the downstream transport metadata used a stale task suffix."
+        : "The immutable research prompt carries the staged task id, sequence, company and canonical key; the immutable execution manifest proves the corrected queue task id for that same identity.",
       researchPrompt: { path: repositoryPath(promptPath), sha256: sha256(promptBytes) },
+      ...(identityManifest ? { identityManifest } : {}),
     };
   }
 

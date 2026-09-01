@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-01T14:04:53.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-09-01T14:56:00.000Z",
+  "activeBatchId": "batch-0339-0343-v1",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -5792,7 +5792,65 @@
           "reason": null
         }
       ]
+    },
+    {
+      "batchId": "batch-0339-0343-v1",
+      "state": "RELEASING",
+      "taskIds": [
+        "ledger:0339:race-communications:debd2ccc",
+        "ledger:0340:towerpoint-infrastructure-partners:4a5032aa",
+        "ledger:0341:crchum:38aca414",
+        "ledger:0342:montreal-university-hospital-research-center-crchum:8cde81e2",
+        "ledger:0343:altan-redes:7bef6b1d"
+      ],
+      "taskIndexes": [
+        339,
+        340,
+        341,
+        342,
+        343
+      ],
+      "createdAt": "2026-09-01T14:16:47.000Z",
+      "updatedAt": "2026-09-01T14:56:00.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0339-0343-v1/batch-manifest-v5.json",
+        "sha256": "e0576fd6e64d37d87ce72b04ae87453742f679ac3556148358e17f66e61d0fda"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-09-01T14:16:47.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-09-01T14:50:00.000Z",
+          "evidenceSha256": [
+            "e0576fd6e64d37d87ce72b04ae87453742f679ac3556148358e17f66e61d0fda"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "RELEASING",
+          "at": "2026-09-01T14:56:00.000Z",
+          "evidenceSha256": [
+            "e0576fd6e64d37d87ce72b04ae87453742f679ac3556148358e17f66e61d0fda"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "031055f52ee6e8f9e5c2195496d0a191326fa800755e541989cf10e9db6cedbd"
+  "ledgerSha256": "e5f27dc5e953d81077659020244fc839c447604528b432a38aa9c8cf6847ce16"
 }

@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_SEED_ATTRIBUTION_RECONCILIATION_SPEC",
+  "batchId": "batch-0339-0343-v1",
+  "batchSha256": "e0576fd6e64d37d87ce72b04ae87453742f679ac3556148358e17f66e61d0fda",
+  "reconciledAt": "2026-09-01T14:51:00.000Z",
+  "sourceManifestSha256": "3efd50320013148972e6cc8e9f004c4a0382749d496704ce642724c33a0498b9",
+  "rationale": "Align active-owner attribution with the approved Race creation, TowerPoint correction, three-record CRCHUM consolidation, and Altán ownership correction. Retain only current owners, preserve a disclosed fund link only where the evidence identifies one, and avoid inferring undisclosed funds for direct corporate, manager-account, or named legal-vehicle ownership.",
+  "removeRecordIds": [
+    "OFA-884201DF7A08"
+  ],
+  "upsertRecords": [
+    {
+      "recordId": "OFA-FDEF75CA65DE",
+      "companyName": "Race Communications",
+      "country": "United States",
+      "investmentFirm": "Oak Hill Capital",
+      "currentVehicleName": "Hometown Parent, L.P. / Hometown Purchaser, LLC",
+      "investmentYear": 2020,
+      "stake": "Majority; at least 75% at the 2020 close, current exact percentage not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "Oak Hill controls Race through the Hometown ownership chain. The evidence establishes direct current ownership but does not publicly identify a specific Oak Hill fund, so no fund is inferred.",
+      "evidenceUrls": [
+        "https://race.com/resources/articles/post/race-communications-announces-new-capital-raise-to-accelerate-california-expansion",
+        "https://docs.fcc.gov/public/attachments/DA-20-1363A1.docx",
+        "https://oakhill.com/investments/"
+      ]
+    },
+    {
+      "recordId": "OFA-B2C3AD15DE74",
+      "companyName": "Race Communications",
+      "country": "United States",
+      "investmentFirm": "MEAG",
+      "currentVehicleName": "MR Redwood LP / Hometown Purchaser, LLC",
+      "investmentYear": 2024,
+      "stake": "7.1264%",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "Munich Re directly holds 7.1264% through MR Redwood with MEAG as investment manager. No separate fund is publicly disclosed, so no fund is inferred.",
+      "evidenceUrls": [
+        "https://www.munichre.com/content/dam/munichre/mrwebsiteslaunches/2025-annual-report/MunichRe-Annual-Report-Company-2025-en.pdf/_jcr_content/renditions/original./MunichRe-Annual-Report-Company-2025-en.pdf",
+        "https://race.com/resources/articles/post/race-communications-announces-new-capital-raise-to-accelerate-california-expansion"
+      ]
+    },
+    {
+      "recordId": "OFA-EDEA05546B1A",
+      "companyName": "TowerPoint Infrastructure Partners",
+      "country": "United States",
+      "investmentFirm": "Ullico",
+      "currentVehicleName": "UIF Tax-Exempt Fund, LP and UIF Taxable Fund, LP",
+      "investmentYear": 2024,
+      "stake": null,
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "UIF Tax-Exempt Fund, LP and UIF Taxable Fund, LP",
+      "attributionConfidence": null,
+      "attributionRationale": "Ullico's closing disclosure identifies UIF Tax-Exempt Fund and UIF Taxable Fund as the investing vehicles. Those disclosed vehicles are not represented as one matching curated fund record, so no database fund link is created.",
+      "evidenceUrls": [
+        "https://www.ullico.com/ullico-closes-investment-in-wireless-infrastructure-platform/",
+        "https://www.prnewswire.com/news-releases/meritage-group-and-towerpoint-capital-recapitalize-wireless-infrastructure-platform-and-announce-formation-of-towerpoint-infrastructure-partners-302379635.html"
+      ]
+    },
+    {
+      "recordId": "OFA-C8BA592A4CAB",
+      "companyName": "TowerPoint Infrastructure Partners",
+      "country": "United States",
+      "investmentFirm": "Meritage Group",
+      "currentVehicleName": "Affiliated funds; exact vehicle not publicly disclosed",
+      "investmentYear": 2024,
+      "stake": null,
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "Meritage is a current owner from the 2024 recapitalization, but the exact affiliated investment vehicle is not publicly disclosed. No fund is inferred.",
+      "evidenceUrls": [
+        "https://www.prnewswire.com/news-releases/meritage-group-and-towerpoint-capital-recapitalize-wireless-infrastructure-platform-and-announce-formation-of-towerpoint-infrastructure-partners-302379635.html",
+        "https://towerpoint.com/towerpoint-prices-inaugural-386m-securitization-achieving-record-execution-levels/"
+      ]
+    },
+    {
+      "recordId": "OFA-5F210724DDA7",
+      "companyName": "TowerPoint Infrastructure Partners",
+      "country": "United States",
+      "investmentFirm": "MEAG",
+      "currentVehicleName": "MR Highland LP / Munich Re account",
+      "investmentYear": 2025,
+      "stake": "15.0%",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "Munich Re owns 15.0% through MR Highland with MEAG as investment manager. The evidence does not identify a separate fund, so no fund is inferred.",
+      "evidenceUrls": [
+        "https://legacy.insurance.ohio.gov/FRAnnuals/2025/Q3/42722Q32025.pdf",
+        "https://www.meag.com/en/inform/34340.html"
+      ]
+    },
+    {
+      "recordId": "OFA-2826E091BB89",
+      "companyName": "Centre de recherche du CHUM (CRCHUM)",
+      "country": "Canada",
+      "investmentFirm": "Meridiam",
+      "currentVehicleName": "Meridiam Infrastructure Canada Finance ULC / Accès Recherche Montréal L.P.",
+      "investmentYear": 2010,
+      "stake": "40% at the 2010 close; acquired QIC's 19.6% in September 2023; current exact percentage not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "The ProjectCo and manager evidence identify Meridiam's legal ownership chain but do not establish a specific fund. The former inferred fund is removed rather than retained as fact.",
+      "evidenceUrls": [
+        "https://www.chumontreal.qc.ca/sites/default/files/inline-files/Annexe%2003%20-%20Renseignements%20sur%20ProjetCo.pdf",
+        "https://www.meridiam.com/assets/montreal-university-hospital-research-center-crchum-canada/",
+        "https://www.qic.com/Investment-Capabilities/Infrastructure/Global-Portfolio/Montreal-Hospital-Research-Centre"
+      ]
+    },
+    {
+      "recordId": "OFA-93B40FE54060",
+      "companyName": "Centre de recherche du CHUM (CRCHUM)",
+      "country": "Canada",
+      "investmentFirm": "Axium Infrastructure",
+      "currentVehicleName": "Fiera Axium Recherche s.e.c. / Axium Recherche L.P.",
+      "investmentYear": 2010,
+      "stake": "60% at the 2010 close; current exact percentage not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Fiera Axium Recherche s.e.c. / Axium Recherche L.P.",
+      "attributionConfidence": null,
+      "attributionRationale": "The ProjectCo evidence identifies the Axium legal ownership vehicle directly. It is retained as a disclosed vehicle without inventing a separate fund-database link.",
+      "evidenceUrls": [
+        "https://www.chumontreal.qc.ca/sites/default/files/inline-files/Annexe%2003%20-%20Renseignements%20sur%20ProjetCo.pdf",
+        "https://www.axiuminfra.com/portfolio-assets/?lang=en&portfolio_category=89"
+      ]
+    },
+    {
+      "recordId": "OFA-94F75C690190",
+      "companyName": "Altán Redes, S.A.P.I. de C.V.",
+      "country": "Mexico",
+      "investmentFirm": "MSIP",
+      "currentVehicleName": "Marapendi Holding B.V. via NHIP II Holdings / International Holdings C.V.",
+      "investmentYear": 2017,
+      "stake": "51.37%",
+      "targetLinkedFundName": "North Haven Infrastructure Partners II (NHIP II)",
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "North Haven Infrastructure Partners II (NHIP II)",
+      "attributionConfidence": null,
+      "attributionRationale": "Regulatory and manager evidence establish Marapendi's 51.37% interest through the NHIP II ownership chain. The existing inferred attribution is upgraded to disclosed.",
+      "evidenceUrls": [
+        "https://www.morganstanley.com/im/en-us/capital-seeker/companies/alt-n-redes.html",
+        "https://www.ift.org.mx/sites/default/files/conocenos/pleno/sesiones_pleno/acuerdo_liga/vp_270825_281_confidencial.pdf",
+        "https://www.ift.org.mx/sites/default/files/conocenos/pleno/sesiones/acuerdoliga/pift060317108.pdf"
+      ]
+    },
+    {
+      "recordId": "OFA-65FE88FE19D9",
+      "companyName": "Altán Redes, S.A.P.I. de C.V.",
+      "country": "Mexico",
+      "investmentFirm": "Comisión Federal de Electricidad (CFE)",
+      "currentVehicleName": "F/1320, with Banco Azteca as trustee",
+      "investmentYear": 2025,
+      "stake": "48.63%",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "CFE directly owns 48.63% through trust F/1320 following the 2025 acquisition. This is corporate ownership, not a fund attribution.",
+      "evidenceUrls": [
+        "https://www.ift.org.mx/sites/default/files/conocenos/pleno/sesiones_pleno/acuerdo_liga/vp_270825_281_confidencial.pdf"
+      ]
+    }
+  ],
+  "specSha256": "67347c2c2f5e13bcfb8506e8c34eee2a7a176c6ee6a64b4b3e70ae9c084cfd8b"
+}

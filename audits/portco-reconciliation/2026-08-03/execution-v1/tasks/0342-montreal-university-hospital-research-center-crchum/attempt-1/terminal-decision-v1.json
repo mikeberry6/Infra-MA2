@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0342:montreal-university-hospital-research-center-crchum:8cde81e2",
+  "taskIndex": 342,
+  "companyName": "Montreal University Hospital Research Center (CRCHUM)",
+  "outcome": "SUPERSEDED",
+  "decidedAt": "2026-09-01T14:32:04.000Z",
+  "rationale": "The Montreal University Hospital Research Center label is the same Accès Recherche Montréal social-infrastructure PPP researched under task 341. Task 341 will retain one canonical Centre de recherche du CHUM (CRCHUM) record, consolidate the duplicate production identities, and preserve Axium and Meridiam as current owners plus QIC as a former owner. Completing task 342 separately would duplicate the same company and ownership periods.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0342-montreal-university-hospital-research-center-crchum/attempt-1/locked-batch-v1-task-snapshot.json",
+    "sha256": "78f63f7e4b3cbd95724b860ac27b62a23b0517c0d34186f81c1f8cd1f1f3290c"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0342-montreal-university-hospital-research-center-crchum/attempt-1/application-research-decision-v1.json",
+    "sha256": "a58c1e9d029311f820b5ba27742ec9ebfd5dd024be10c3f82c24b28235dfe3b3"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0341-crchum/attempt-1/source-verification.json",
+    "sha256": "42d0f477eb19da2992d90e7e4a4e0b4ede49bea1c915f8c27f76c846afd5aa62"
+  },
+  "evidence": [
+    {
+      "url": "https://www.chumontreal.qc.ca/sites/default/files/inline-files/Annexe%2003%20-%20Renseignements%20sur%20ProjetCo.pdf",
+      "purpose": "Public ProjectCo evidence for the common Accès Recherche Montréal identity, original ownership and PPP boundary."
+    },
+    {
+      "url": "https://www.meridiam.com/assets/montreal-university-hospital-research-center-crchum-canada/",
+      "purpose": "Meridiam's asset page ties the English label to the same current CRCHUM project."
+    },
+    {
+      "url": "https://www.qic.com/Investment-Capabilities/Infrastructure/Global-Portfolio/Montreal-Hospital-Research-Centre",
+      "purpose": "Former-owner evidence for QIC's 19.6% interest and September 2023 exit from the same project."
+    }
+  ],
+  "supersededByTaskId": "ledger:0341:crchum:38aca414",
+  "decisionSha256": "b9779c2864a9ee3cf5bc73dee1b50c6b833e91dd639cab05b79bd4a8b7dd1be1"
+}

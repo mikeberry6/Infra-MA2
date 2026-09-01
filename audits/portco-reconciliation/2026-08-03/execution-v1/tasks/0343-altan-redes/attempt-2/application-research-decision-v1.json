@@ -1,0 +1,204 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0343:altan-redes:7bef6b1d",
+  "taskIndex": 343,
+  "companyName": "Altán Redes",
+  "asOfDate": "2026-08-22",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-01T14:24:04.000Z",
+  "result": {
+    "asOfDate": "2026-08-22",
+    "requestedCompany": "Altán Redes",
+    "requestedManagers": [
+      "MSIP",
+      "Mexican state",
+      "all owners/vehicles"
+    ],
+    "decision": "PROPOSED_CORRECTION",
+    "confidence": "HIGH",
+    "rationale": "Altán/MSIP remain eligible, but MSIP is not sole owner: Marapendi/MSIP 51.37%, CFE/F/1320 48.63%; state-bank rights are debt governance, not equity.",
+    "identityResolution": {
+      "legalName": "Altán Redes, S.A.P.I. de C.V.",
+      "aliases": "Altán; Red Compartida/Red de Altán/Red de Todos=network names",
+      "formed": 2016,
+      "parent": "None",
+      "website": "https://www.altanredes.com/",
+      "headquarters": "Mexico City, Mexico",
+      "boundary": "Altán is operator/concessionaire; the network is not another company."
+    },
+    "ownershipResolution": {
+      "current": [
+        {
+          "manager": "MSIP",
+          "organization": "Morgan Stanley",
+          "fund": "NHIP II,L.P.;NHIP II-AIV II,L.P.",
+          "vehicle": "Marapendi Holding B.V. via NHIP II Holdings/International Holdings C.V.",
+          "stake": "51.37% capital;15.85% trust rights",
+          "announcementDate": "NOT_PUBLICLY_DISCLOSED",
+          "entryDate": "2017-03",
+          "entryYear": 2017,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "ACTIVE"
+        },
+        {
+          "manager": "Mexican government",
+          "organization": "CFE",
+          "fund": "NOT_APPLICABLE",
+          "vehicle": "F/1320 (Banco Azteca trustee)",
+          "stake": "48.63% capital;23.08% trust rights",
+          "announcementDate": "2025-01-15",
+          "entryDate": "2025; close date REDACTED",
+          "entryYear": 2025,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE"
+        }
+      ],
+      "rights": [
+        {
+          "manager": "Mexican government",
+          "organization": "Banobras;Nafin;Bancomext",
+          "fund": "Jumbo DIP Tramo B",
+          "vehicle": "Jumbo-DIP trust (Nafin trustee)",
+          "stake": "0% capital;61.07% rights;6/11 directors while unpaid",
+          "announcementDate": "2022-06-01",
+          "entryDate": "2022",
+          "entryYear": 2022,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CREDITOR_RIGHTS"
+        }
+      ],
+      "former": [
+        {
+          "manager": "CMF: IFC/Macquarie;others named",
+          "organization": "CMF II;Hansam;Telefonía;Axtel;Invex F/2431;Invex F/2292;Isla;IFC",
+          "fund": "China-Mexico Fund;CKDIM/CDPQ;FFLATAM",
+          "vehicle": "Direct/share-trust interests",
+          "stake": "2025:26.34/15.99/4.21/2.10%;2022:14.40/6.41/4.58/3.27%,same order",
+          "announcementDate": "2022-06-01/2025-01-15",
+          "entryDate": "2016",
+          "entryYear": 2016,
+          "exitDate": "2022/2025",
+          "exitYear": "2022/2025",
+          "isActive": false,
+          "transactionState": "EXITED"
+        }
+      ],
+      "conclusion": "CFE alone was noncontrolling; state governance is restructuring-based. Marapendi remains majority owner; CMF/Macquarie—not MSIP—exited."
+    },
+    "operatingResolution": {
+      "status": "Active Mexico wholesale 4.5G-LTE network; MVNO/operator customers; >94% population/>110m people.",
+      "assets": "90 MHz at 700 MHz+Red Troncal fiber; rights/network assets are not PortCos.",
+      "count": "One qualifying company."
+    },
+    "acquisitionExitCheck": {
+      "result": "CFE closed in 2025; no later recap,sale,MSIP exit,concession transfer or pending deal.",
+      "pendingTransactions": []
+    },
+    "milestones": [
+      {
+        "date": "2017-03",
+        "event": "Original: Marapendi 33.38%;CMF 23.36%;F/2431 12.68%;Hansam 9.35%;FFLATAM 6.54%;Mega Cable/Axtel 4.01%;Isla/IFC 3.34%."
+      },
+      {
+        "date": "2021-07/2022",
+        "event": "Concurso began July 2021. Mini-DIP left Marapendi/CMF/Hansam/Telefonía/Axtel 51.36/26.34/15.99/4.21/2.10%; four blocks zeroed; bank rights were not equity."
+      },
+      {
+        "date": "2025",
+        "event": "CFE/F/1320 bought all non-Marapendi blocks: CFE 48.63%,Marapendi 51.37%; date/price redacted."
+      }
+    ],
+    "evidence": [
+      {
+        "label": "IFT 2025 close",
+        "url": "https://www.ift.org.mx/sites/default/files/conocenos/pleno/sesiones_pleno/acuerdo_liga/vp_270825_281_confidencial.pdf",
+        "purpose": "Current capital/rights/sellers.",
+        "sourceTier": "REGULATOR",
+        "workingStatus": "OPENED",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "IFT 2022 recap",
+        "url": "https://www.ift.org.mx/sites/default/files/conocenos/pleno/sesiones/acuerdoliga/vp010622354_0.pdf",
+        "purpose": "Concurso,fund chain,recap,bank rights.",
+        "sourceTier": "REGULATOR",
+        "workingStatus": "OPENED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "IFT 2017 owners",
+        "url": "https://www.ift.org.mx/sites/default/files/conocenos/pleno/sesiones/acuerdoliga/pift060317108.pdf",
+        "purpose": "Original owners/concession/trust.",
+        "sourceTier": "REGULATOR",
+        "workingStatus": "OPENED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Morgan Stanley",
+        "url": "https://www.morganstanley.com/im/en-us/capital-seeker/companies/alt-n-redes.html",
+        "purpose": "MSIP entry/portfolio.",
+        "sourceTier": "MANAGER",
+        "workingStatus": "OPENED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Altán",
+        "url": "https://www.altanredes.com/",
+        "purpose": "Current operations/coverage.",
+        "sourceTier": "COMPANY",
+        "workingStatus": "OPENED",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "before": "MSIP sole owner; state role unclear.",
+      "after": "MSIP 51.37%+CFE 48.63%; bank rights separate; others exited."
+    },
+    "excludedOrDuplicateCandidates": [
+      "Red Compartida/network names are aliases, not companies.",
+      "F/1320,Jumbo-DIP/2017 guarantee trusts are vehicles, not PortCos; lenders,rights,assets and projects are excluded."
+    ],
+    "unresolvedQuestions": [
+      "CFE close date/price: REDACTED/NOT_PUBLICLY_DISCLOSED.",
+      "Tramo B balance/reversion date: NOT_PUBLICLY_DISCLOSED."
+    ],
+    "recommendedListAction": "Retain one altan-redes|mexico MSIP PortCo; correct owners/history; no separate network/trust/lender record."
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0343-altan-redes/attempt-2/research-decision.json",
+      "sha256": "de2abcf3f41b5884f080be61977308ed32fc9a372c17cf9632abd5c3d05b3836"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0343-altan-redes/attempt-2/chatgpt-accepted-response.txt",
+      "sha256": "0c7f0ee4d7332e75d07558bc1eed9df133cc9ef59929bbdb9eaa99b1fc10b0d6"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0343-altan-redes/attempt-2/source-verification.json",
+      "sha256": "3fbf0d986b3f1585bfb2e262cd5fc501efb0975d68177174bce6744ea4cef113"
+    },
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+    "identityCorrection": {
+      "originalTaskId": "ledger:0343:altan-redes:8c5ff493",
+      "correctedTaskId": "ledger:0343:altan-redes:7bef6b1d",
+      "basis": "The immutable research prompt carries the staged task id, sequence, company and canonical key; the immutable execution manifest proves the corrected queue task id for that same identity.",
+      "researchPrompt": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0343-altan-redes/attempt-2/research-prompt.md",
+        "sha256": "ef1fe6f2993d21cf43681fa6e722ca10b1e67c098b9b7a75cf30afe959cc4e58"
+      },
+      "identityManifest": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+        "sha256": "82384e577a0ce55c4c004bcd9536d40ec1a2dcfdf9061dccf6724904698d21aa"
+      }
+    }
+  }
+}

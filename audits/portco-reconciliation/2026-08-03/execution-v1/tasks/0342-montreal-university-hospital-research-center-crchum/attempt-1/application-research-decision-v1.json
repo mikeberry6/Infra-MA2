@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0342:montreal-university-hospital-research-center-crchum:8cde81e2",
+  "taskIndex": 342,
+  "companyName": "Montreal University Hospital Research Center (CRCHUM)",
+  "asOfDate": "2026-08-19",
+  "decision": "SUPERSEDED",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-01T14:24:00.000Z",
+  "result": {
+    "decision": "SUPERSEDED",
+    "rationale": "The Montreal University Hospital Research Center label is the same Accès Recherche Montréal social-infrastructure PPP researched under task 341. Task 341 will retain one canonical Centre de recherche du CHUM (CRCHUM) record, consolidate the duplicate production identities, and preserve Axium and Meridiam as current owners plus QIC as a former owner. Completing task 342 separately would duplicate the same company and ownership periods.",
+    "evidence": [
+      {
+        "url": "https://www.chumontreal.qc.ca/sites/default/files/inline-files/Annexe%2003%20-%20Renseignements%20sur%20ProjetCo.pdf",
+        "purpose": "Public ProjectCo evidence for the common Accès Recherche Montréal identity, original ownership and PPP boundary."
+      },
+      {
+        "url": "https://www.meridiam.com/assets/montreal-university-hospital-research-center-crchum-canada/",
+        "purpose": "Meridiam's asset page ties the English label to the same current CRCHUM project."
+      },
+      {
+        "url": "https://www.qic.com/Investment-Capabilities/Infrastructure/Global-Portfolio/Montreal-Hospital-Research-Centre",
+        "purpose": "Former-owner evidence for QIC's 19.6% interest and September 2023 exit from the same project."
+      }
+    ]
+  },
+  "lineage": {
+    "coveredByTaskId": "ledger:0341:crchum:38aca414",
+    "sourceDecision": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0341-crchum/attempt-1/research-decision.json",
+    "acceptedResponse": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0341-crchum/attempt-1/chatgpt-accepted-response.txt",
+    "sourceVerification": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0341-crchum/attempt-1/source-verification.json"
+  }
+}

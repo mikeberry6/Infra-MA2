@@ -1,0 +1,259 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0340:towerpoint-infrastructure-partners:4a5032aa",
+  "taskIndex": 340,
+  "companyName": "TowerPoint Infrastructure Partners",
+  "generatedAt": "2026-09-01T14:22:43.911Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0340-towerpoint-infrastructure-partners/attempt-2/locked-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 340,
+    "taskId": "ledger:0340:towerpoint-infrastructure-partners:4a5032aa",
+    "canonicalKey": "towerpoint-infrastructure-partners|united-states",
+    "companyName": "TowerPoint Infrastructure Partners",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 66,
+    "managers": [
+      "MEAG"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "066-meag:holding:007:towerpoint-infrastructure-partners"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjops01bpivhejgre011g"
+    ],
+    "seedKeys": [
+      "towerpoint infrastructure partners|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.meag.com/en/news/meag-invests-in-towerpoint-infrastructure-partners.html"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_OWNER requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjops01bpivhejgre011g",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "towerpoint-infrastructure-partners|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjops01bpivhejgre011g",
+    "name": "TowerPoint Infrastructure Partners",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Wireless towers and telecom sites",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "TowerPoint Infrastructure Partners is a wireless infrastructure platform that sources, owns, manages, and operates wireless tower and related site assets. Its customers are wireless carriers and other network operators that need long-term access to communications sites. The company follows an asset-heavy lease-based digital infrastructure model with recurring cash flow from site ownership and management. Operations are focused on the United States, and public disclosures reviewed do not specify current tower count or revenue. The platform was formed following a recapitalization announced in early 2025, and Ullico closed an investment in the business in February 2025 alongside Meritage Group and TowerPoint Capital.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2025,
+    "headquarters": "Georgia and multi-state United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpkbbz02bfivhear3bk2gt",
+        "managerName": "Ullico",
+        "organizationName": "Ullico",
+        "fundName": null,
+        "vehicleName": "UIF",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmv2h05e9ivheytrccuj7",
+        "date": "Dec 2024",
+        "event": "Meritage Group and TowerPoint Capital completed the recapitalization of a wireless infrastructure platform.",
+        "category": "FINANCING",
+        "sortDate": "2024-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmv3205eaivhekxqm1tnu",
+        "date": "Feb 2025",
+        "event": "TowerPoint Infrastructure Partners was launched.",
+        "category": "FOUNDING",
+        "sortDate": "2025-02-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmv3m05ebivhe6slnauyp",
+        "date": "Feb 2025",
+        "event": "Ullico announced the closing of its investment in TowerPoint Infrastructure Partners.",
+        "category": "FINANCING",
+        "sortDate": "2025-02-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmv4505ecivhesm23byx9",
+        "date": "Oct 2025",
+        "event": "MEAG joined TowerPoint Infrastructure Partners as an investor.",
+        "category": "FINANCING",
+        "sortDate": "2025-10-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpt21f0dj7ivhelhb9vtpo",
+        "label": "Close date source — Ullico — TowerPoint Infrastructure Partners",
+        "url": "https://www.ullico.com/ullico-closes-investment-in-wireless-infrastructure-platform/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Ullico closing confirmation",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpt22j0dj9ivheyp3o6gss",
+        "label": "Towerpoint — TowerPoint Infrastructure Partners",
+        "url": "https://www.towerpoint.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Towerpoint company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpt23j0djbivhegqlihv2c",
+        "label": "PR Newswire — TowerPoint Infrastructure Partners",
+        "url": "https://www.prnewswire.com/news-releases/meritage-group-and-towerpoint-capital-recapitalize-wireless-infrastructure-platform-and-announce-formation-of-towerpoint-infrastructure-partners-302379635.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "PR Newswire — TowerPoint Infrastructure Partners",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "TowerPoint Infrastructure Partners",
+    "investmentFirm": "Ullico",
+    "sector": "Digital",
+    "subsector": "Wireless towers and telecom sites",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "UIF",
+    "description": "TowerPoint Infrastructure Partners is a wireless infrastructure platform that sources, owns, manages, and operates wireless tower and related site assets. Its customers are wireless carriers and other network operators that need long-term access to communications sites. The company follows an asset-heavy lease-based digital infrastructure model with recurring cash flow from site ownership and management. Operations are focused on the United States, and public disclosures reviewed do not specify current tower count or revenue. The platform was formed following a recapitalization announced in early 2025, and Ullico closed an investment in the business in February 2025 alongside Meritage Group and TowerPoint Capital.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2025,
+    "investmentYear": 2025,
+    "headquarters": "Georgia and multi-state United States",
+    "milestones": [
+      {
+        "date": "Dec 2024",
+        "event": "Meritage Group and TowerPoint Capital completed the recapitalization of a wireless infrastructure platform.",
+        "category": "Financing"
+      },
+      {
+        "date": "Feb 2025",
+        "event": "TowerPoint Infrastructure Partners was launched.",
+        "category": "Founding"
+      },
+      {
+        "date": "Feb 2025",
+        "event": "Ullico announced the closing of its investment in TowerPoint Infrastructure Partners.",
+        "category": "Financing"
+      },
+      {
+        "date": "Oct 2025",
+        "event": "MEAG joined TowerPoint Infrastructure Partners as an investor.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Close date source — Ullico — TowerPoint Infrastructure Partners",
+        "url": "https://www.ullico.com/ullico-closes-investment-in-wireless-infrastructure-platform/",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Towerpoint — TowerPoint Infrastructure Partners",
+        "url": "https://www.towerpoint.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "PR Newswire — TowerPoint Infrastructure Partners",
+        "url": "https://www.prnewswire.com/news-releases/meritage-group-and-towerpoint-capital-recapitalize-wireless-infrastructure-platform-and-announce-formation-of-towerpoint-infrastructure-partners-302379635.html",
+        "type": "PRESS_RELEASE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Ullico",
+        "ownershipVehicle": "UIF",
+        "investmentYear": 2025,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpieop003wivhet5qq95ev",
+        "name": "Ullico",
+        "updatedAt": "2026-07-23T16:09:26.233Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0340:towerpoint-infrastructure-partners:4a5032aa",
+    "taskIndex": 340,
+    "canonicalKey": "towerpoint-infrastructure-partners|united-states",
+    "capturedAt": "2026-09-01T14:22:43.911Z",
+    "databaseRevision": "revision:d9a8fc875d611d3563f353f034b4cea6577eef9305506fbab433947ffd94ee35",
+    "databaseTargetFingerprint": "2a1bc8fd92634136a3b174f79ce1a63e280b46d22d49fbf3accbfb1943bd1b34",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "4a56119d87b13b182318312cf5d3c16ed60e546eea9bc3449b6a44e6931e9c8a",
+    "productionSnapshotSha256": "655a9f7b75f146d29e139fd60369c21cfce93521643281519132e0c7638f19cf",
+    "targetCompanySnapshotSha256": "6600465de68eb6ee3ef8fb3f6eed7fa6c6970a9ff6a79454a4f9fc340ac4b4a7",
+    "seedEntrySha256": "02182513f4698c88d2df4d97f9e32bfed3951a1ac4d79d35e013979f273c9c4a",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "d7fdf39207c166f9d2d19a9f35471da529bcfd0e7ba5d3677ed9bbb579ec169c",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "3dc64a3df270233c63486f379177f08e0121e3abdfea7635fada1319d9b86292",
+      "citationsSha256": "aa8a4ec1761d97a01bec992f2b7739cceb7ab2775c4e6d9976b085dace56204d",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "c18085bc34eb710344633cc1c14a494e4ca58b939d2285892ffbb84556914a71",
+    "stateSha256": "237bb14dd4e359d72b5bb095fdff4f9b80ac9c45212f2829142c0e78de9561e8",
+    "taskSnapshotSha256": "7d7af95d49cdf910fcec870a66af1d4601de15f61d5ababc66b039ee04f642fc"
+  },
+  "contextSha256": "ea5b59043aad754907b3e80a99c91055ff4b992961c3b2fd6ad03035ad2d1500"
+}

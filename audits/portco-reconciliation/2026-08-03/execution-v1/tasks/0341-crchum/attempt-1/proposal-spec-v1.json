@@ -1,0 +1,263 @@
+{
+  "generatedAt": "2026-09-01T14:30:00.000Z",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER",
+    "MERGE_COMPANIES"
+  ],
+  "retiredCompanyIds": [
+    "cmrxpj7rh00lbivhecb0tu96n",
+    "cmrxpjl630160ivhex0vonvz0"
+  ],
+  "relationMerges": [
+    {
+      "kind": "OWNERSHIP_PERIOD",
+      "retiredRelationId": "cmrxpk7fq025aivheljn5eboh",
+      "canonicalRelationId": "cmrxpk7ar0251ivhe2d8g3bhi",
+      "rationale": "The English-label record's Meridiam period is the same continuous 2010 ownership period retained on the canonical CRCHUM company."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxpmdwq04szivhew6xtvfd9",
+      "canonicalRelationId": "cmrxpmd4304rzivhett2z2d4k",
+      "rationale": "Both milestones describe Meridiam's May 2010 financial close for the same Accès Recherche Montréal PPP."
+    }
+  ],
+  "reviewedSeedRetirementTaskIds": [],
+  "rationale": "Consolidate all three production labels for the same Accès Recherche Montréal social-infrastructure PPP into one Centre de recherche du CHUM (CRCHUM) company. Preserve Axium and Meridiam as current owners, QIC as a former 19.6% owner after its September 2023 sale to Meridiam, and retain the distinct main CHUM hospital PPP outside this record.",
+  "evidence": [
+    {
+      "url": "https://www.chumontreal.qc.ca/sites/default/files/inline-files/Annexe%2003%20-%20Renseignements%20sur%20ProjetCo.pdf",
+      "purpose": "Public ProjectCo evidence for Accès Recherche Montréal, the 2010 ownership structure and the research-center PPP boundary.",
+      "supports": [
+        "canonical project identity",
+        "Axium and Meridiam 2010 ownership",
+        "PPP boundary"
+      ]
+    },
+    {
+      "url": "https://www.qic.com/Investment-Capabilities/Infrastructure/Global-Portfolio/Montreal-Hospital-Research-Centre",
+      "purpose": "Former-owner evidence for QIC's 19.6% interest, 2012 entry and September 2023 exit.",
+      "supports": [
+        "QIC former ownership",
+        "19.6% stake",
+        "2023 exit"
+      ]
+    },
+    {
+      "url": "https://www.meridiam.com/assets/montreal-university-hospital-research-center-crchum-canada/",
+      "purpose": "Current Meridiam portfolio evidence tying the English name to the same operating CRCHUM asset.",
+      "supports": [
+        "current Meridiam ownership",
+        "duplicate identity",
+        "operating status"
+      ]
+    },
+    {
+      "url": "https://www.axiuminfra.com/portfolio-assets/?lang=en&portfolio_category=89",
+      "purpose": "Current Axium portfolio evidence for continuing ownership of the CRCHUM research-center PPP.",
+      "supports": [
+        "current Axium ownership",
+        "single asset boundary"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "afterImage": {
+    "id": "cmrxpjl0x015rivhelfa10iff",
+    "name": "Centre de recherche du CHUM (CRCHUM)",
+    "aliases": [
+      "CRCHUM",
+      "CHUM Research Centre (CRCHUM)",
+      "Montreal University Hospital Research Center (CRCHUM)",
+      "University of Montreal Hospital Research Centre",
+      "Montreal Hospital Research Centre",
+      "Accès Recherche Montréal s.e.c.",
+      "Accès Recherche Montréal L.P."
+    ],
+    "sector": "SOCIAL_INFRA",
+    "subsector": "Healthcare research PPP",
+    "region": "NORTH_AMERICA",
+    "country": "Canada",
+    "countryTags": [
+      "Canada"
+    ],
+    "description": "Centre de recherche du CHUM (CRCHUM) is a long-term social-infrastructure public-private partnership in Montréal that houses health-research, learning, simulation, and administrative functions for the Centre hospitalier de l'Université de Montréal. The approximately 68,000-square-meter facility operates under the Accès Recherche Montréal project company and an availability-payment DBFM structure extending to September 2043. Axium Infrastructure and Meridiam remain the current infrastructure owners; QIC held a 19.6% interest from 2012 until selling it to Meridiam in September 2023. The separate main CHUM hospital PPP is not part of this record.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.chumontreal.qc.ca/en/crchum",
+    "yearFounded": 1996,
+    "headquarters": "Montréal, Quebec, Canada",
+    "lastVerifiedAt": "2026-09-01T14:30:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk7ar0251ivhe2d8g3bhi",
+        "managerName": "Meridiam",
+        "organizationName": "Meridiam",
+        "fundName": null,
+        "vehicleName": "Meridiam Infrastructure Canada Finance ULC / Accès Recherche Montréal L.P.",
+        "stake": "40% at the 2010 close; acquired QIC's 19.6% in September 2023; current exact percentage not publicly disclosed",
+        "investmentYear": 2010,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjstz01idivhe3h4tdzf7",
+        "managerName": "Axium Infrastructure",
+        "organizationName": "Axium Infrastructure",
+        "fundName": null,
+        "vehicleName": "Fiera Axium Recherche s.e.c. / Axium Recherche L.P.",
+        "stake": "60% at the 2010 close; current exact percentage not publicly disclosed",
+        "investmentYear": 2010,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "QIC",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "QIC CRCHUM Trust",
+        "stake": "19.6%",
+        "investmentYear": 2012,
+        "exitYear": 2023,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmd3h04ryivhefff7dka0",
+        "date": "1996",
+        "event": "CRCHUM was founded.",
+        "category": "FOUNDING",
+        "sortDate": "1996-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmd4l04s0ivheck0mb6n8",
+        "date": "Mar 2010",
+        "event": "Construction of the current CRCHUM building began. (Construction)",
+        "category": "EXPANSION",
+        "sortDate": "2010-03-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmd4304rzivhett2z2d4k",
+        "date": "May 2010",
+        "event": "Meridiam reached commercial and financial close for the CRCHUM facility.",
+        "category": "FINANCING",
+        "sortDate": "2010-05-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkrft02v2ivheprchxu5p",
+        "date": "May 26, 2010",
+        "event": "Fiera Axium achieved financial close on phase 1 of the CHUM modernization project.",
+        "category": "FINANCING",
+        "sortDate": "2010-05-26T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkrgc02v3ivheknr6auyw",
+        "date": "Feb 18, 2011",
+        "event": "Fiera Axium cited CRCHUM as one of the first assets in its Canadian infrastructure fund.",
+        "category": "OTHER",
+        "sortDate": "2011-02-18T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmdw704syivhervp2op1n",
+        "date": "Mar 2010",
+        "event": "The CRCHUM consortium was selected as successful proponent.",
+        "category": "EXPANSION",
+        "sortDate": "2010-03-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmdxd04t0ivhequdbz1bj",
+        "date": "Sep 2013",
+        "event": "The project achieved substantial completion.",
+        "category": "EXPANSION",
+        "sortDate": "2013-09-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmd5504s1ivheq8gqa7vx",
+        "date": "2013",
+        "event": "The CRCHUM facility opened in Montréal. (Operations)",
+        "category": "EXPANSION",
+        "sortDate": "2013-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmdxu04t1ivhekygguvec",
+        "date": "Mar 2014",
+        "event": "Final completion was reached.",
+        "category": "OTHER",
+        "sortDate": "2014-03-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxps7gh0c8oivhemgpy43tb",
+        "label": "Close date source — Meridiam — CRCHUM",
+        "url": "https://www.meridiam.com/assets/montreal-university-hospital-research-center-crchum-canada/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Meridiam closing confirmation and current portfolio listing",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxps7hf0c8qivhek3ms67c9",
+        "label": "Chumontreal — CRCHUM",
+        "url": "https://www.chumontreal.qc.ca/en/crchum",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Official CRCHUM operating profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxps7ks0c8sivheywrj7evc",
+        "label": "Chumontreal — CRCHUM",
+        "url": "https://www.chumontreal.qc.ca/en/crchum/crchum-glance",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Facility scale and institutional users",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "CHUM — Accès Recherche Montréal ProjectCo annex",
+        "url": "https://www.chumontreal.qc.ca/sites/default/files/inline-files/Annexe%2003%20-%20Renseignements%20sur%20ProjetCo.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Canonical ProjectCo identity and original ownership structure",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "QIC — Montreal Hospital Research Centre",
+        "url": "https://www.qic.com/Investment-Capabilities/Infrastructure/Global-Portfolio/Montreal-Hospital-Research-Centre",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "QIC entry, 19.6% stake and September 2023 exit",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Axium Infrastructure — current portfolio",
+        "url": "https://www.axiuminfra.com/portfolio-assets/?lang=en&portfolio_category=89",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current Axium portfolio inclusion",
+        "isPrimary": false
+      }
+    ]
+  }
+}
