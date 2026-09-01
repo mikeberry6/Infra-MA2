@@ -1,0 +1,145 @@
+{
+  "generatedAt": "2026-09-01T17:00:00.000Z",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "reviewedSeedRetirementTaskIds": [],
+  "rationale": "Keep one Millennium Parking Garages concession record, retain Northleaf as a current 50% owner, add InfraBridge-managed Global Infrastructure Fund I as the second current 50% owner from the February 2023 manager succession, and preserve AMP Capital as the predecessor manager of that same interest.",
+  "evidence": [
+    {
+      "url": "https://www.fhwa.dot.gov/ipd/project_profiles/il_millennium_parking_garages_concession.aspx",
+      "purpose": "Government evidence for the concession, buyer group and May 2016 acquisition.",
+      "supports": [
+        "Millennium Parking Garages is one four-garage concession platform.",
+        "Northleaf and AMP Capital acquired the concession in May 2016."
+      ]
+    },
+    {
+      "url": "https://www.infrabridge.com/our-portfolio",
+      "purpose": "Current manager portfolio evidence.",
+      "supports": [
+        "InfraBridge currently manages the Millennium Garages investment.",
+        "The investment remains in Global Infrastructure Fund I."
+      ]
+    },
+    {
+      "url": "https://www.infrabridge.com/news/2023-02-03-digitalbridge-completes-acquisition-of-amp-capital-global-infrastructure-equity-investment-management-business",
+      "purpose": "Official manager-succession evidence.",
+      "supports": [
+        "InfraBridge succeeded AMP Capital as manager on February 2, 2023.",
+        "The underlying fund interest continued through the manager succession."
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "companyFieldUpdates": {
+    "website": "https://www.millenniumgarages.com/",
+    "headquarters": "Chicago, Illinois, United States",
+    "description": "Millennium Parking Garages, LLC operates the long-term concession for four underground parking garages beneath Millennium, Grant and Maggie Daley Parks in downtown Chicago. The system serves commuters, residents, visitors and event traffic through approximately 9,176 spaces across 3.8 million square feet. Northleaf and AMP Capital acquired the concession on May 18, 2016. Northleaf continues to hold an inferred 50% interest, while InfraBridge manages the other 50% through Global Infrastructure Fund I following its February 2, 2023 succession to AMP Capital's infrastructure-equity management business. No subsequent sale or signed ownership transfer was identified through September 1, 2026.",
+    "lastVerifiedAt": "2026-09-01T00:00:00.000Z"
+  },
+  "ownershipPeriodUpdates": [
+    {
+      "id": "cmrxpk885026jivhe6e9lh3hs",
+      "set": {
+        "managerName": "Northleaf",
+        "fundName": null,
+        "vehicleName": "Northleaf-managed infrastructure vehicle; exact fund/SPV not publicly disclosed",
+        "stake": "50% (inferred from equal US$185 million buyer contributions; not directly disclosed)",
+        "investmentYear": 2016,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    }
+  ],
+  "ownershipPeriodRemovals": [],
+  "ownershipPeriodAdditions": [
+    {
+      "id": null,
+      "managerName": "InfraBridge (DigitalBridge)",
+      "organizationName": "InfraBridge (DigitalBridge)",
+      "fundName": null,
+      "vehicleName": "Global Infrastructure Fund I",
+      "stake": "50%",
+      "investmentYear": 2023,
+      "exitYear": null,
+      "isActive": true,
+      "transactionState": "CLOSED_ACTIVE"
+    },
+    {
+      "id": null,
+      "managerName": "InfraBridge (DigitalBridge)",
+      "organizationName": "InfraBridge (DigitalBridge)",
+      "fundName": null,
+      "vehicleName": "Global Infrastructure Fund I (then managed by AMP Capital)",
+      "stake": "50%",
+      "investmentYear": 2016,
+      "exitYear": 2023,
+      "isActive": false,
+      "transactionState": "REALIZED"
+    }
+  ],
+  "pendingOwnershipTransactionUpdates": [],
+  "pendingOwnershipTransactionAdditions": [],
+  "milestoneUpdates": [
+    {
+      "id": "cmrxpmhg604xdivhe105n6i5o",
+      "set": {
+        "date": "May 18, 2016",
+        "event": "Northleaf and AMP Capital completed their acquisition of the Millennium Garages concession.",
+        "category": "ACQUISITION",
+        "sortDate": "2016-05-18T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.fhwa.dot.gov/ipd/project_profiles/il_millennium_parking_garages_concession.aspx"
+        ]
+      }
+    },
+    {
+      "id": "cmrxpmhgq04xeivheiurhqy3i",
+      "set": {
+        "date": "Feb 2, 2023",
+        "event": "InfraBridge succeeded AMP Capital as manager of Global Infrastructure Fund I, preserving the fund's 50% interest in Millennium Garages.",
+        "category": "OTHER",
+        "sortDate": "2023-02-02T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.infrabridge.com/news/2023-02-03-digitalbridge-completes-acquisition-of-amp-capital-global-infrastructure-equity-investment-management-business",
+          "https://www.infrabridge.com/our-portfolio"
+        ]
+      }
+    }
+  ],
+  "milestoneTransfers": [],
+  "citationUpdates": [
+    {
+      "id": "cmrxpsf0q0cjnivhefq5n4rzi",
+      "set": {
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "May 18, 2016 concession acquisition and buyer group"
+      }
+    }
+  ],
+  "citationAdditions": [
+    {
+      "id": null,
+      "label": "Investment date source — DigitalBridge — Invenergy AMPCI Thermal Power",
+      "url": "https://www.infrabridge.com/our-portfolio",
+      "sourceType": "WEBSITE",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Current Millennium Garages portfolio listing and Global Infrastructure Fund I attribution",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "InfraBridge GIF III",
+      "url": "https://www.infrabridge.com/news/2023-02-03-digitalbridge-completes-acquisition-of-amp-capital-global-infrastructure-equity-investment-management-business",
+      "sourceType": "ARTICLE",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "February 2, 2023 manager succession",
+      "isPrimary": false
+    }
+  ]
+}

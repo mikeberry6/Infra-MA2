@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0354:mercury-broadband:1dda7bce",
+  "taskIndex": 354,
+  "companyName": "Mercury Broadband",
+  "generatedAt": "2026-09-01T16:55:53.636Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0354-mercury-broadband/attempt-1/locked-batch-v2-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 354,
+    "taskId": "ledger:0354:mercury-broadband:1dda7bce",
+    "canonicalKey": "mercury-broadband|united-states",
+    "companyName": "Mercury Broadband",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 71,
+    "managers": [
+      "Northleaf Capital"
+    ],
+    "actionScopes": {
+      "company": [
+        "CREATE_COMPANY"
+      ],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "071-northleaf-capital:holding:016:mercury-broadband"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://www.northleafcapital.com/news/northleaf-acquires-mercury-broadband"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "No exact normalized production or seed match exists. Census evidence supports a new canonical company with 1 manager holding record(s).",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "mercury-broadband|united-states",
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpihww004wivhek83snno3",
+        "name": "Northleaf",
+        "updatedAt": "2026-07-23T16:09:30.416Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0354:mercury-broadband:1dda7bce",
+    "taskIndex": 354,
+    "canonicalKey": "mercury-broadband|united-states",
+    "capturedAt": "2026-09-01T16:55:53.636Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "32a5e5663fd3d878019a062ecae7b50c997abee2ec477fd8177e9cff083dbc71",
+    "productionSnapshotSha256": "074f25fc3f4de3f8591b494d08d98b41c91509faa402a16752b38ddceb48d43b",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "72209f69314e323ca933f0a7899ae46a5cf7532ef54c6897e49f738918d98320",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "2e5a8d36777f3832ba739a6a0376e4d2e95f9f01e8dce45273f649895907531b",
+    "stateSha256": "ae6bf76d84aeca324acc4f9d2d5fb5b1969a0bc98b76f0a32cbe45bf3007f0b3",
+    "taskSnapshotSha256": "6a76e580e5ceb4a7a676a0c982bb996bef875f8e324e3d195fb60d8943f2d050"
+  },
+  "contextSha256": "ae890e5be647db25c67910d5173dafebef6ee8f423af72fea94dff0ea529c067"
+}

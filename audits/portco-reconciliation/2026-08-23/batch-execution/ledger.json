@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-01T16:36:00.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-09-01T17:26:00.000Z",
+  "activeBatchId": "batch-0351-0355-v1",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -6056,7 +6056,65 @@
           "reason": "Atomic PortCo after-images, reviewed seed overlay, six-row attribution repair, five detail APIs, redirects, ownership, and rendered production cards verified; no partial application."
         }
       ]
+    },
+    {
+      "batchId": "batch-0351-0355-v1",
+      "state": "RELEASING",
+      "taskIds": [
+        "ledger:0351:power-factors:44709f47",
+        "ledger:0352:csv-midstream:d544fe04",
+        "ledger:0353:csv-midstream-solutions-corp:99793919",
+        "ledger:0354:mercury-broadband:1dda7bce",
+        "ledger:0355:millennium-parking-garages-llc:9385654a"
+      ],
+      "taskIndexes": [
+        351,
+        352,
+        353,
+        354,
+        355
+      ],
+      "createdAt": "2026-09-01T16:50:00.000Z",
+      "updatedAt": "2026-09-01T17:26:00.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0351-0355-v1/batch-manifest-v8.json",
+        "sha256": "44f817fab99cf55c7ec2ef846cc01c38e4123a60ee8abe0bb361f6a9466df7ab"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-09-01T16:50:00.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-09-01T17:24:00.000Z",
+          "evidenceSha256": [
+            "44f817fab99cf55c7ec2ef846cc01c38e4123a60ee8abe0bb361f6a9466df7ab"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "RELEASING",
+          "at": "2026-09-01T17:26:00.000Z",
+          "evidenceSha256": [
+            "44f817fab99cf55c7ec2ef846cc01c38e4123a60ee8abe0bb361f6a9466df7ab"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "9ea4e993968e4aa0e7a13e2b0c2b6308cf339aed7fbe348411d90c862850a43a"
+  "ledgerSha256": "921483fa978a0d62524b4b6d9a3b6cc4bc4d1d11203da0a4efe2393cb51d4599"
 }
