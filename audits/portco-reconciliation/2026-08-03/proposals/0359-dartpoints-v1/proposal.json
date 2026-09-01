@@ -1,0 +1,230 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0359:dartpoints:8deeccd5",
+  "taskIndex": 359,
+  "asOfDate": "2026-09-01",
+  "generatedAt": "2026-09-01T17:35:00.000Z",
+  "canonicalKey": "dartpoints|united-states",
+  "companyName": "DartPoints",
+  "actions": [
+    "CREATE_COMPANY"
+  ],
+  "sourceHoldingIds": [
+    "072-nova-infrastructure:holding:007:dartpoints"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Create one DartPoints Holding Company, LLC record, record NOVA's controlling ownership and Astra's and Orion Infrastructure Capital's retained or new minority equity, and keep acquired brands, individual data centers, real estate and financing SPVs beneath the platform.",
+  "evidence": [
+    {
+      "url": "https://www.novainfrastructure.com/nova-infrastructure-invests-in-dartpoints-to-accelerate-growth",
+      "purpose": "Official transaction evidence for NOVA control, Astra rollover and OIC's minority equity participation.",
+      "supports": [
+        "NOVA acquired control of DartPoints in April 2025.",
+        "Astra retained a minority interest and OIC invested minority equity."
+      ]
+    },
+    {
+      "url": "https://www.velaw.com/news/nova-infrastructure-invests-in-dartpoints-to-accelerate-growth-and-expand-strategic-infrastructure/",
+      "purpose": "Transaction-counsel evidence for the April 24, 2025 legal closing.",
+      "supports": [
+        "The control transaction closed on April 24, 2025."
+      ]
+    },
+    {
+      "url": "https://dartpoints.com/",
+      "purpose": "Official company evidence for current identity, services and operating footprint.",
+      "supports": [
+        "DartPoints is an operating data-center and interconnection platform.",
+        "Individual facilities and acquired brands sit beneath the platform."
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "4e7464d48423d54cb678d52dd7be081708286d5437cfa4e49874c9d13bd9fbf7",
+  "currentCompanySnapshotSha256": null,
+  "executionLock": {
+    "taskSnapshotSha256": "64ac487f6e2f17d17e2ac9a3bf6b98989d73ba26beffd4917bb94ccd480a586e",
+    "taskStateSha256": "f84fca9fd621ba1930a2cd102a4c998fcd40009508fb1322c89ba1479d0737c3",
+    "taskDependencySha256": "276c7e757f588b095091059e787403e5844609832deca7a380299134253a8171",
+    "seedEntrySha256": null,
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "bf2a48cc853dca16c66acb74ab25cb37da4631785fd6f7a2520f1ee82ce46b81",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpizw500alivhelc3ewblk",
+        "name": "NOVA Infrastructure",
+        "updatedAt": "2026-07-23T16:09:53.717Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": null,
+  "beforeImageSha256": null,
+  "afterImage": {
+    "id": null,
+    "name": "DartPoints Holding Company, LLC",
+    "aliases": [
+      "DartPoints",
+      "DartPoints Holding Co., LLC",
+      "DartPoints, LLC"
+    ],
+    "sector": "DIGITAL",
+    "subsector": "Regional data centers, colocation and interconnection",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "DartPoints Holding Company, LLC is a regional digital-infrastructure platform providing colocation, interconnection, cloud, disaster recovery, managed IT and cybersecurity services from edge and regional data centers across the central and southeastern United States. NOVA Infrastructure Fund II acquired control on April 24, 2025. Astra Capital Management retained a meaningful minority interest after selling control, and Orion Infrastructure Capital invested minority equity alongside senior secured debt. Exact economic percentages and acquisition vehicles are not publicly disclosed. Acquired brands, individual sites, real estate and financing SPVs remain beneath the single platform record.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://dartpoints.com/",
+    "yearFounded": 2012,
+    "headquarters": "Dallas, Texas, United States",
+    "lastVerifiedAt": "2026-09-01T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": null,
+        "managerName": "NOVA Infrastructure",
+        "organizationName": "NOVA Infrastructure",
+        "fundName": null,
+        "vehicleName": "NOVA Infrastructure Fund II",
+        "stake": "Controlling majority; exact percentage not publicly disclosed",
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Astra Capital Management",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Astra investment vehicle; exact vehicle not publicly disclosed",
+        "stake": "Meaningful minority retained after 2025 control sale; exact percentage not publicly disclosed",
+        "investmentYear": 2020,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Orion Infrastructure Capital",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "OIC Credit Opportunities Fund IV",
+        "stake": "Minority equity; exact percentage not publicly disclosed",
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": null,
+        "date": "2012",
+        "event": "DartPoints was formed in Texas as a regional digital-infrastructure operator.",
+        "category": "FOUNDING",
+        "sortDate": "2012-01-01T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://dartpoints.com/"
+        ]
+      },
+      {
+        "id": null,
+        "date": "May 5, 2020",
+        "event": "Astra Capital Management acquired a majority interest in DartPoints.",
+        "category": "FINANCING",
+        "sortDate": "2020-05-05T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.astracapitalmgmt.com/news/2020/5/6/dartpoints-receives-investment-from-astra-capital-management"
+        ]
+      },
+      {
+        "id": null,
+        "date": "2020-2023",
+        "event": "DartPoints expanded through the Metro Data Centers, Immedion and Venyu acquisitions.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-05-02T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://dartpoints.com/press/dartpoints-acquires-venyu-adding-three-louisiana-data-centers-to-portfolio/"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Apr 24, 2025",
+        "event": "NOVA Infrastructure acquired control; Astra retained minority equity and Orion Infrastructure Capital joined as a minority equity investor and lender.",
+        "category": "FINANCING",
+        "sortDate": "2025-04-24T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.novainfrastructure.com/nova-infrastructure-invests-in-dartpoints-to-accelerate-growth",
+          "https://www.velaw.com/news/nova-infrastructure-invests-in-dartpoints-to-accelerate-growth-and-expand-strategic-infrastructure/"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": null,
+        "label": "NOVA Infrastructure — DartPoints investment",
+        "url": "https://www.novainfrastructure.com/nova-infrastructure-invests-in-dartpoints-to-accelerate-growth",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "NOVA control, Astra retained minority and OIC minority equity participation",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "Vinson & Elkins — DartPoints transaction closing",
+        "url": "https://www.velaw.com/news/nova-infrastructure-invests-in-dartpoints-to-accelerate-growth-and-expand-strategic-infrastructure/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "April 24, 2025 legal closing",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "DartPoints — company website",
+        "url": "https://dartpoints.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current identity, services and data-center footprint",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Astra Capital Management — DartPoints investment",
+        "url": "https://www.astracapitalmgmt.com/news/2020/5/6/dartpoints-receives-investment-from-astra-capital-management",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Astra's May 2020 majority investment",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "DartPoints — Venyu acquisition",
+        "url": "https://dartpoints.com/press/dartpoints-acquires-venyu-adding-three-louisiana-data-centers-to-portfolio/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Venyu acquisition and platform expansion",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "b646da1288ded8ad88448a3fd1f83d697382c8ec8fc0f8be444cef14fb81caf5",
+  "proposalSha256": "7c6fda29c29943320d907b68d00adc865447a3eb4aaef30d7eb7d6166498403b"
+}

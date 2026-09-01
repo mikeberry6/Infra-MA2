@@ -1,0 +1,376 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_MANIFEST",
+  "methodologyVersion": "PORTCO_APPLY_BATCH_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0356-0360-v1",
+  "createdAt": "2026-09-01T17:28:52.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "65d8b6ab9df0e10fcde90a342382859ecfe9100a32cfe86f803ffa89e6bbac29"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0356:odfjell-terminals-us:5f8f7651",
+      "taskIndex": 356,
+      "companyName": "Odfjell Terminals US",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0356-odfjell-terminals-us-v3/proposal.json",
+        "sha256": "edc52d6b367d0b7b9d9e00e3e4aeacc8e7244878fdfa5ece22b83d5236a00a65"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0356-odfjell-terminals-us-v3.json",
+        "sha256": "4ab55e6fbc8179679fbb2d058bdc6c7ab2b0e65ba1eca17b5cf3505269abbc94"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0356-odfjell-terminals-us/attempt-1/locked-batch-v1-production-snapshot.json",
+        "sha256": "ff316a4b4e4238ba998c3a230284c289ffecbe3194ccf67f9146407bcb53b27a"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0356-odfjell-terminals-us/attempt-1/locked-batch-v1-task-snapshot.json",
+        "sha256": "dd4dc8ad6e90a6b380fd3f189bad9044565df8de226363de843e3dbadbba6927"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0356-odfjell-terminals-us/attempt-1/observed-batch-v2-task-snapshot.json",
+        "sha256": "01f3ee35a6b2e88f1ce1ceaaaed419b848d9683cb333c83f7a848245810b0d44"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0356-odfjell-terminals-us/attempt-1/application-research-decision-v1.json",
+        "sha256": "7dcd6ca979c70b75ae58e320f5272e3b698cc17089b6880f1663f98441328777"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0356-odfjell-terminals-us/attempt-1/source-verification.json",
+        "sha256": "7596c3c326ced1a8f30a831a261537cdee79b4db1c7344203f99cdb31cba1928"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "4c4fe8adeb5ac7a72c39948c77750a34c6a51f0885ef3b1ab29e682b32c59165",
+      "dependencySha256": "c5496e5b5108bc8558710b2e5e54bfa463f06bf171c0df2ec1b861c29be10946",
+      "afterImageSha256": "23582d8334339ea97c4bcd034a6271b7788d79fe519b9e661d620ecf1831f33c",
+      "targetClaims": [
+        "canonical:odfjell-terminals-us|united-states",
+        "company:cmrxpjlw50175ivhez9ani7qd",
+        "relation:cmrxpk88n026kivhei801lcbr",
+        "relation:cmrxpmhht04xfivhex549bp6e",
+        "relation:cmrxpmhi904xgivhevms2qcn4",
+        "relation:cmrxpmhip04xhivhematmigqw",
+        "relation:cmrxpsf2l0cjrivhelos43m0v",
+        "relation:cmrxpsf3u0cjtivhe3prjtbtu",
+        "relation:cmrxpsf4u0cjvivhev32e0x3f",
+        "seed:odfjell terminals us holdings llc|united states",
+        "seed:odfjell terminals us|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://courts.delaware.gov/opinions/download.aspx?id=399380",
+          "label": "Delaware Court of Chancery — OTUS post-trial opinion",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.lindsaygoldbergllc.com/wp-content/uploads/2019/04/091611.pdf",
+          "label": "Lindsay Goldberg — Odfjell terminal joint venture closing",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.odfjell.com/about/our-stories/northleaf-capital-partner-transaction-with-lindsay-goldberg-is-closed/",
+          "label": "Close date source — Northleaf — Odfjell Terminals US",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.odfjell.com/terminals",
+          "label": "Odfjell — Odfjell Terminals US",
+          "sourceType": "ARTICLE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0357:pocahontas-parkway:d86a6391",
+      "taskIndex": 357,
+      "companyName": "Pocahontas Parkway",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0357-pocahontas-parkway-v5/proposal.json",
+        "sha256": "b06f359cea0f28f0f586e863f7acc7c9ae5753c4099b4703f6e8b2cea69ed1ff"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0357-pocahontas-parkway-v5.json",
+        "sha256": "37bc8da58db6622d0eb58a3f0628d59a99ff0b4e1cfb9169d57eab3083869091"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0357-pocahontas-parkway/attempt-1/locked-batch-v2-production-snapshot.json",
+        "sha256": "d09d4c14df6a90a5c1d993e129e2babc5c3d9b136632921933d51e31a51ec6fc"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0357-pocahontas-parkway/attempt-1/locked-batch-v2-task-snapshot.json",
+        "sha256": "047f81dc9a77f577924255fdb2b7fd027a57fb90b743904bd7cf4c565204aa93"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0357-pocahontas-parkway/attempt-1/observed-batch-v3-task-snapshot.json",
+        "sha256": "d95cb64bc48abe09b83a0693644e08cb8a657df7110bdb4b8b8bfd4276bb2e8d"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0357-pocahontas-parkway/attempt-1/application-research-decision-v1.json",
+        "sha256": "f585d6dce8c36c4335b383456950e7adebacbf0aa4609fcc3be36412fec24c3f"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0357-pocahontas-parkway/attempt-1/source-verification.json",
+        "sha256": "b3e2dba737f0762314033bae7d252e203859b94ecbb82f1b32def5418615eba7"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "291817f4c229b191fa45c08fbaa3db31ac4d8446fccac473f4f574e53eda3746",
+      "dependencySha256": "f302cf7cb76243505ad5ffdee7904763316b9ef71be3a4d29fafce8c5ad798f7",
+      "afterImageSha256": "b19d84ae9903bacfcb6de5615f094e378a417ca113131fa31f21c8cbb6bacff4",
+      "targetClaims": [
+        "canonical:pocahontas-parkway|united-states",
+        "company:cmrxpjlwk0176ivhe4a6yfbqj",
+        "relation:cmrxpk896026livhe2zo3fdby",
+        "relation:cmrxpmhjq04xiivheixnpks78",
+        "relation:cmrxpmhka04xjivhecoh06mkk",
+        "relation:cmrxpmhku04xkivhetyzhn3ai",
+        "relation:cmrxpmhla04xlivheyucr8p44",
+        "relation:cmrxpmhny04xmivhed5yx8pox",
+        "relation:cmrxpsf5q0cjxivhemyg3wtu0",
+        "relation:cmrxpsf6q0cjzivhe49666ebh",
+        "relation:cmrxpsfag0ck1ivhevp1ihmdp",
+        "relation:cmrxpsfau0ck2ivherkyr00m0",
+        "seed:pocahontas parkway operations, llc|united states",
+        "seed:pocahontas parkway|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://www.globalvia.com/en/inicio/movilidad/concesion/pocahontas-parkway/",
+          "label": "Globalvia — Pocahontas Parkway concession",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.globalvia.com/en/noticia/globalvia-successfully-completes-the-purchase-of-the-pocahontas-parkway-its-first-us-concession/",
+          "label": "Globalvia — Pocahontas Parkway",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.northleafcapital.com/infrastructure-investments?page=1",
+          "label": "Northleafcapital — Canadian Breaks",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.transportation.gov/buildamerica/projects/pocahontas-parkway-richmond-airport-connector",
+          "label": "Transportation — Pocahontas Parkway",
+          "sourceType": "WEBSITE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0358:ascension-fbo-network:b081e384",
+      "taskIndex": 358,
+      "companyName": "Ascension FBO Network",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0358-ascension-fbo-network-v1/proposal.json",
+        "sha256": "eea0b0f872e20c8b2586bd4d1d7cc1b90a375c141ee117bde55f521ac86cf10e"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0358-ascension-fbo-network-v1.json",
+        "sha256": "079ca7fb14ed90a29d867873ddc5b00ae7b32f53a63c11b5914bea452ddbe7e6"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0358-ascension-fbo-network/attempt-1/locked-batch-v1-production-snapshot.json",
+        "sha256": "ae2ceae6a2fb04c0b8a58d3f4c3d2ba0cb45aaed1fa121f91fb8bae87066946e"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0358-ascension-fbo-network/attempt-1/locked-batch-v1-task-snapshot.json",
+        "sha256": "25186a1b389a58b5d6cfc286fe2777b52c1f4d5c5b26e6d75de3315b7627ea01"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0358-ascension-fbo-network/attempt-1/observed-batch-v2-task-snapshot.json",
+        "sha256": "ca0cb05f6471e18ef0d0e1615ff0018e110c61e89f147c2f4958c9cfaa2250f4"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0358-ascension-fbo-network/attempt-1/application-research-decision-v1.json",
+        "sha256": "d5f8bb77f4adfcdcb9005ae5fa90aa14bb49ca29161c1d319ab35bf8a8435461"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0358-ascension-fbo-network/attempt-1/source-verification.json",
+        "sha256": "f715e409418f9513e241ae7347b64c9dda899ccdfb1c51060f7e3212d742197f"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "3fd476a34b270648782186960fe354264980a0fdea5498718fd07445bf2d24bb",
+      "dependencySha256": "ada690f93788b8c62b1ba29840254c5e508357fbd3f52538c7db37189f6df534",
+      "afterImageSha256": "d1f8474e7cf75da3436b9c653b1e2f90d46783fa241a8c593550679375c59be1",
+      "targetClaims": [
+        "canonical:ascension-fbo-network|united-states",
+        "seed:ascension fbo network|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://ascensionfbo.com/",
+          "label": "Ascension FBO Network — company website",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.nexphase.com/hawthorne-global-aviation-services-acquires-excelaire-llc-a-new-york-based-fbo-aircraft-charter-management-company/",
+          "label": "NexPhase — Hawthorne platform history",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.novainfrastructure.com/investments-index",
+          "label": "NOVA Infrastructure — current investments",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.williamblair.com/News/Hawthorne-Global-Aviation-and-NOVA-Transaction",
+          "label": "William Blair — Hawthorne transaction",
+          "sourceType": "PRESS_RELEASE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0359:dartpoints:8deeccd5",
+      "taskIndex": 359,
+      "companyName": "DartPoints",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0359-dartpoints-v1/proposal.json",
+        "sha256": "7c6fda29c29943320d907b68d00adc865447a3eb4aaef30d7eb7d6166498403b"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0359-dartpoints-v1.json",
+        "sha256": "67e7fd087aae6a2464c4bd30d722b9c6505874fe459df20fa9706e057f7f9f7b"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0359-dartpoints/attempt-1/locked-batch-v1-production-snapshot.json",
+        "sha256": "4e7464d48423d54cb678d52dd7be081708286d5437cfa4e49874c9d13bd9fbf7"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0359-dartpoints/attempt-1/locked-batch-v1-task-snapshot.json",
+        "sha256": "64ac487f6e2f17d17e2ac9a3bf6b98989d73ba26beffd4917bb94ccd480a586e"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0359-dartpoints/attempt-1/observed-batch-v2-task-snapshot.json",
+        "sha256": "7bc21ff0407e30f655f137c55568468c357feac55d7d65bb48b73ed40e0d3bc9"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0359-dartpoints/attempt-1/application-research-decision-v1.json",
+        "sha256": "0e9ca6f2da795eccb42f83f845a2ef27b657b283e4f71a2309f93a121debcc30"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0359-dartpoints/attempt-1/source-verification.json",
+        "sha256": "6b5d4cfa3fd97f8f7a7707d3dadad06f6b61115649b0e8a03511685a6d8d2198"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "f84fca9fd621ba1930a2cd102a4c998fcd40009508fb1322c89ba1479d0737c3",
+      "dependencySha256": "276c7e757f588b095091059e787403e5844609832deca7a380299134253a8171",
+      "afterImageSha256": "b646da1288ded8ad88448a3fd1f83d697382c8ec8fc0f8be444cef14fb81caf5",
+      "targetClaims": [
+        "canonical:dartpoints|united-states",
+        "seed:dartpoints holding company, llc|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://dartpoints.com/",
+          "label": "DartPoints — company website",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://dartpoints.com/press/dartpoints-acquires-venyu-adding-three-louisiana-data-centers-to-portfolio/",
+          "label": "DartPoints — Venyu acquisition",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.astracapitalmgmt.com/news/2020/5/6/dartpoints-receives-investment-from-astra-capital-management",
+          "label": "Astra Capital Management — DartPoints investment",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.novainfrastructure.com/nova-infrastructure-invests-in-dartpoints-to-accelerate-growth",
+          "label": "NOVA Infrastructure — DartPoints investment",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.velaw.com/news/nova-infrastructure-invests-in-dartpoints-to-accelerate-growth-and-expand-strategic-infrastructure/",
+          "label": "Vinson & Elkins — DartPoints transaction closing",
+          "sourceType": "PRESS_RELEASE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0360:harbor-logistics-llc:69a79d6e",
+      "taskIndex": 360,
+      "companyName": "Harbor Logistics LLC",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0360-harbor-logistics-llc-v1/proposal.json",
+        "sha256": "9a723d18fe6e8f2002c63bd760f58f9a13f98e5fc2cfaaaf5fb7db40494e1b47"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0360-harbor-logistics-llc-v1.json",
+        "sha256": "8cdb341ccc5c7aecf49e94d703596950f356300a5059da4c4bb1647d32617075"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0360-harbor-logistics-llc/attempt-1/locked-batch-v1-production-snapshot.json",
+        "sha256": "1b93ce12071bc79bc221ac08cbcd049b30e6b1b9d409c835ed4d003da7160722"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0360-harbor-logistics-llc/attempt-1/locked-batch-v1-task-snapshot.json",
+        "sha256": "251d64e93aaade7ba0e5c20404f6d88859fb0a47ba54d6ae26410184f45d1b32"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0360-harbor-logistics-llc/attempt-1/observed-batch-v2-task-snapshot.json",
+        "sha256": "51ba76cd2b68e57eed88210caef851e4957420043e4c60efd67763ab3ec2b5e5"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0360-harbor-logistics-llc/attempt-1/application-research-decision-v1.json",
+        "sha256": "5dc7fdef8babd8563b27067b28cbecd406d666d19037b04d88ede6e89d58cd1f"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0360-harbor-logistics-llc/attempt-1/source-verification.json",
+        "sha256": "5f86abd456970c2674bfb4c91cc661996819ae36635a938e83470bd1c990cc1f"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "63bbe880a19ef40454698546cf41fb524352b1000be9462626491b3d73d9308a",
+      "dependencySha256": "276c7e757f588b095091059e787403e5844609832deca7a380299134253a8171",
+      "afterImageSha256": "b365414da4fecbee7a06634841403836fb4ebfa5cf8494afad329332259ef6cc",
+      "targetClaims": [
+        "canonical:harbor-logistics-llc|united-states",
+        "seed:harbor logistics, llc|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://harborlogistics.com/",
+          "label": "Harbor Logistics — company website",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://harborlogistics.com/harbor-logistics-and-ar-bulk-pak-combine-to-provide-comprehensive-warehousing-transportation-transloading-and-brokerage-services-to-the-southeast-usa/",
+          "label": "Harbor Logistics — A&R combination",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://harborlogistics.com/harbor-logistics-announces-leadership-transition-and-appointment-of-scott-auslund-as-chief-executive-officer/",
+          "label": "Harbor Logistics — April 2026 owner statement",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.businesswire.com/news/home/20230105005247/en/NOVA-Infrastructure-Acquires-ATS-for-Harbor-Logistics",
+          "label": "NOVA Infrastructure — ATS acquisition",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.novainfrastructure.com/nova-invests-in-warehousing-logistics-business",
+          "label": "NOVA Infrastructure — Premier investment",
+          "sourceType": "PRESS_RELEASE"
+        }
+      ]
+    }
+  ],
+  "collisionAnalysis": {
+    "independent": true,
+    "claimsSha256": "f0d658914a7799c0d0e8ff05a33c6de1d29e2c85e6a1cfe610751b0b1ba51d07",
+    "sharedSourceUrls": [],
+    "conflicts": []
+  },
+  "batchSha256": "c99a4cbe9b1bf12a5c0bf537cd0637184fef6baaa2f3609a5069cbebc98aaaa3"
+}

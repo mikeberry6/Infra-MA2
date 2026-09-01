@@ -1,0 +1,182 @@
+{
+  "generatedAt": "2026-09-01T17:35:00.000Z",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "reviewedSeedRetirementTaskIds": [],
+  "rationale": "Retain one Odfjell U.S. terminal platform, correct the legal top-company identity, preserve Houston and Charleston beneath it, and record the verified Northleaf 49% / Odfjell 51% current ownership plus Lindsay Goldberg's former period. The August 2026 Delaware ruling did not transfer equity.",
+  "evidence": [
+    {
+      "url": "https://courts.delaware.gov/opinions/download.aspx?id=399380",
+      "purpose": "Delaware Court of Chancery evidence for legal identity, current members, stakes, investment price, terminal boundary and the August 2026 judgment.",
+      "supports": [
+        "Odfjell Terminals US Holdings LLC is the legal top company.",
+        "NCP US Terminals LP holds 49% and Odfjell Terminals Americas LLC holds 51%.",
+        "The 2026 judgment did not change ownership."
+      ]
+    },
+    {
+      "url": "https://www.odfjell.com/about/our-stories/northleaf-capital-partner-transaction-with-lindsay-goldberg-is-closed/",
+      "purpose": "Official transaction-party evidence for Northleaf's June 2019 acquisition from Lindsay Goldberg.",
+      "supports": [
+        "Lindsay Goldberg sold its 49% shareholding to funds managed by Northleaf.",
+        "Odfjell retained its interest and remained the industrial partner."
+      ]
+    },
+    {
+      "url": "https://www.lindsaygoldbergllc.com/wp-content/uploads/2019/04/091611.pdf",
+      "purpose": "Former-owner evidence for the initial 2011 joint venture.",
+      "supports": [
+        "Lindsay Goldberg acquired 49% in 2011 while Odfjell retained 51%."
+      ]
+    },
+    {
+      "url": "https://www.odfjell.com/terminals",
+      "purpose": "Current operator evidence for the U.S. terminal network and operating platform.",
+      "supports": [
+        "The Houston and Charleston terminals remain within the Odfjell U.S. terminal platform."
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "companyFieldUpdates": {
+    "name": "Odfjell Terminals US Holdings LLC",
+    "aliases": [
+      "Odfjell Terminals US",
+      "OTUS",
+      "Topco LLC"
+    ],
+    "website": "https://www.odfjell.com/terminals",
+    "headquarters": "Houston, Texas and North Charleston, South Carolina, United States",
+    "description": "Odfjell Terminals US Holdings LLC is the joint-venture parent of Odfjell's marine-connected bulk-liquid storage terminals in Houston, Texas and North Charleston, South Carolina. The platform provides tank storage and multimodal handling for chemicals, petrochemicals, oil products, biofuels, edible oils and gases through marine, barge, rail, truck and pipeline infrastructure. Northleaf acquired a 49% interest from Lindsay Goldberg on June 7, 2019 through NCP US Terminals LP; Odfjell SE retains 51% through Odfjell Terminals Americas LLC and remains the operating partner. The August 6, 2026 Delaware Chancery judgment resolved the shareholder dispute without changing ownership.",
+    "lastVerifiedAt": "2026-09-01T00:00:00.000Z"
+  },
+  "ownershipPeriodUpdates": [
+    {
+      "id": "cmrxpk88n026kivhei801lcbr",
+      "set": {
+        "managerName": "Northleaf",
+        "organizationName": "Northleaf",
+        "fundName": null,
+        "vehicleName": "NCP US Terminals LP",
+        "stake": "49%",
+        "investmentYear": 2019,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    }
+  ],
+  "ownershipPeriodRemovals": [],
+  "ownershipPeriodAdditions": [
+    {
+      "id": null,
+      "managerName": "Odfjell SE",
+      "organizationName": null,
+      "fundName": null,
+      "vehicleName": "Odfjell Terminals Americas LLC",
+      "stake": "51%",
+      "investmentYear": 2011,
+      "exitYear": null,
+      "isActive": true,
+      "transactionState": "CLOSED_ACTIVE"
+    },
+    {
+      "id": null,
+      "managerName": "Lindsay Goldberg",
+      "organizationName": null,
+      "fundName": null,
+      "vehicleName": "Odfjell Terminals B.V. / U.S. joint-venture vehicle",
+      "stake": "49%",
+      "investmentYear": 2011,
+      "exitYear": 2019,
+      "isActive": false,
+      "transactionState": "REALIZED"
+    }
+  ],
+  "pendingOwnershipTransactionUpdates": [],
+  "pendingOwnershipTransactionAdditions": [],
+  "milestoneUpdates": [
+    {
+      "id": "cmrxpmhht04xfivhex549bp6e",
+      "set": {
+        "date": "Sep 16, 2011",
+        "event": "Lindsay Goldberg acquired 49% of the Houston and Charleston terminal platform while Odfjell retained 51%.",
+        "category": "ACQUISITION",
+        "sortDate": "2011-09-16T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.lindsaygoldbergllc.com/wp-content/uploads/2019/04/091611.pdf"
+        ]
+      }
+    },
+    {
+      "id": "cmrxpmhi904xgivhevms2qcn4",
+      "set": {
+        "date": "Jun 7, 2019",
+        "event": "Northleaf-managed funds completed the acquisition of Lindsay Goldberg's 49% interest through NCP US Terminals LP.",
+        "category": "FINANCING",
+        "sortDate": "2019-06-07T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.odfjell.com/about/our-stories/northleaf-capital-partner-transaction-with-lindsay-goldberg-is-closed/",
+          "https://courts.delaware.gov/opinions/download.aspx?id=399380"
+        ]
+      }
+    },
+    {
+      "id": "cmrxpmhip04xhivhematmigqw",
+      "set": {
+        "date": "Aug 6, 2026",
+        "event": "The Delaware Court of Chancery entered judgment for Odfjell in the shareholder dispute; the 49% / 51% ownership split remained unchanged.",
+        "category": "OTHER",
+        "sortDate": "2026-08-06T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://courts.delaware.gov/opinions/download.aspx?id=399380"
+        ]
+      }
+    }
+  ],
+  "milestoneTransfers": [],
+  "citationUpdates": [
+    {
+      "id": "cmrxpsf2l0cjrivhelos43m0v",
+      "set": {
+        "label": "Delaware Court of Chancery — OTUS post-trial opinion",
+        "url": "https://courts.delaware.gov/opinions/download.aspx?id=399380",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Legal identity, current members, ownership stakes, platform boundary and August 2026 judgment",
+        "isPrimary": true
+      }
+    },
+    {
+      "id": "cmrxpsf3u0cjtivhe3prjtbtu",
+      "set": {
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "June 7, 2019 closing of Northleaf's 49% acquisition"
+      }
+    },
+    {
+      "id": "cmrxpsf4u0cjvivhev32e0x3f",
+      "set": {
+        "url": "https://www.odfjell.com/terminals",
+      "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current Houston and Charleston terminal operating platform"
+      }
+    }
+  ],
+  "citationAdditions": [
+    {
+      "id": null,
+      "label": "Lindsay Goldberg — Odfjell terminal joint venture closing",
+      "url": "https://www.lindsaygoldbergllc.com/wp-content/uploads/2019/04/091611.pdf",
+      "sourceType": "PRESS_RELEASE",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "September 16, 2011 initial 49% / 51% joint venture closing",
+      "isPrimary": false
+    }
+  ]
+}

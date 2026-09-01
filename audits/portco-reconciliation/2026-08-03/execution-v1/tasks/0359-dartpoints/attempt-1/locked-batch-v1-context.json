@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0359:dartpoints:8deeccd5",
+  "taskIndex": 359,
+  "companyName": "DartPoints",
+  "generatedAt": "2026-09-01T17:31:34.271Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0359-dartpoints/attempt-1/locked-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 359,
+    "taskId": "ledger:0359:dartpoints:8deeccd5",
+    "canonicalKey": "dartpoints|united-states",
+    "companyName": "DartPoints",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 72,
+    "managers": [
+      "NOVA Infrastructure"
+    ],
+    "actionScopes": {
+      "company": [
+        "CREATE_COMPANY"
+      ],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "072-nova-infrastructure:holding:007:dartpoints"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://novainfrastructure.com/investments/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "No exact normalized production or seed match exists. Census evidence supports a new canonical company with 1 manager holding record(s).",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "dartpoints|united-states",
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpizw500alivhelc3ewblk",
+        "name": "NOVA Infrastructure",
+        "updatedAt": "2026-07-23T16:09:53.717Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0359:dartpoints:8deeccd5",
+    "taskIndex": 359,
+    "canonicalKey": "dartpoints|united-states",
+    "capturedAt": "2026-09-01T17:31:34.271Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "2dd8ce1988c2c4f3b0239cd70ad04c50af15e13cf82bd846b22a13a2ba7a62b9",
+    "productionSnapshotSha256": "4e7464d48423d54cb678d52dd7be081708286d5437cfa4e49874c9d13bd9fbf7",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "bf2a48cc853dca16c66acb74ab25cb37da4631785fd6f7a2520f1ee82ce46b81",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "276c7e757f588b095091059e787403e5844609832deca7a380299134253a8171",
+    "stateSha256": "f84fca9fd621ba1930a2cd102a4c998fcd40009508fb1322c89ba1479d0737c3",
+    "taskSnapshotSha256": "64ac487f6e2f17d17e2ac9a3bf6b98989d73ba26beffd4917bb94ccd480a586e"
+  },
+  "contextSha256": "7b637c7ea07e10e25b8a01f847e761be4da7e17e8289b380644a2fee6645dcf6"
+}

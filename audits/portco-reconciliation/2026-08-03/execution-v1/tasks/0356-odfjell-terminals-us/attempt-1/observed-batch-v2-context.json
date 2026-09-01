@@ -1,0 +1,253 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0356:odfjell-terminals-us:5f8f7651",
+  "taskIndex": 356,
+  "companyName": "Odfjell Terminals US",
+  "generatedAt": "2026-09-01T17:38:49.371Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0356-odfjell-terminals-us/attempt-1/observed-batch-v2-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 356,
+    "taskId": "ledger:0356:odfjell-terminals-us:5f8f7651",
+    "canonicalKey": "odfjell-terminals-us|united-states",
+    "companyName": "Odfjell Terminals US",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 71,
+    "managers": [
+      "Northleaf Capital"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "071-northleaf-capital:holding:009:odfjell-terminals-us"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjlw50175ivhez9ani7qd"
+    ],
+    "seedKeys": [
+      "odfjell terminals us|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.northleafcapital.com/infrastructure-investments?page=1",
+      "https://www.odfjell.com/about/our-stories/northleaf-capital-partner-transaction-with-lindsay-goldberg-is-closed/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted census NEEDS_REVIEW for 071-northleaf-capital:holding:009:odfjell-terminals-us: Ownership is supported but current stake and ownership vehicle are not clearly disclosed following transaction evolution. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Accepted census NEEDS_REVIEW for 071-northleaf-capital:holding:009:odfjell-terminals-us: Ownership is supported but current stake and ownership vehicle are not clearly disclosed following transaction evolution."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjlw50175ivhez9ani7qd",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "odfjell-terminals-us|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjlw50175ivhez9ani7qd",
+    "name": "Odfjell Terminals US",
+    "aliases": [],
+    "sector": "MIDSTREAM",
+    "subsector": "Bulk liquid storage terminals",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Odfjell Terminals US owns and operates bulk liquid storage terminals that handle chemicals, oil products, and other specialty liquids at major shipping locations. Its customers are industrial and trading counterparties that require marine-connected storage and handling infrastructure rather than inland distribution assets. The business follows an asset-heavy contracted terminal model built around tanks, marine access, and associated operating infrastructure at strategic ports. Public materials describe U.S. terminals in Houston, Texas, and Charleston, South Carolina as part of Odfjell's global terminal network. Funds managed by Northleaf acquired a 49% shareholding in June 2019, with Odfjell SE retaining 51% and continuing as the industrial partner.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Texas and South Carolina",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk88n026kivhei801lcbr",
+        "managerName": "Northleaf Capital Partners",
+        "organizationName": "Northleaf",
+        "fundName": "Northleaf NEIF",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2019,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmhht04xfivhex549bp6e",
+        "date": "2019",
+        "event": "Northleaf listed Odfjell Terminals as an active infrastructure investment.",
+        "category": "FINANCING",
+        "sortDate": "2019-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmhi904xgivhevms2qcn4",
+        "date": "Jun 2019",
+        "event": "Odfjell announced the closing of Northleaf's acquisition of a 49% stake in Odfjell Holdings (US) Inc.",
+        "category": "ACQUISITION",
+        "sortDate": "2019-06-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmhip04xhivhematmigqw",
+        "date": "Dec 2024",
+        "event": "Odfjell disclosed a dispute with Northleaf regarding leverage at the U.S. terminals joint venture.",
+        "category": "FINANCING",
+        "sortDate": "2024-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsf2l0cjrivhelos43m0v",
+        "label": "Northleafcapital — Canadian Breaks",
+        "url": "https://www.northleafcapital.com/infrastructure-investments?page=1",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Northleafcapital company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpsf3u0cjtivhe3prjtbtu",
+        "label": "Close date source — Northleaf — Odfjell Terminals US",
+        "url": "https://www.odfjell.com/about/our-stories/northleaf-capital-partner-transaction-with-lindsay-goldberg-is-closed/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Northleaf closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsf4u0cjvivhev32e0x3f",
+        "label": "Odfjell — Odfjell Terminals US",
+        "url": "https://www.odfjell.com/terminals",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Odfjell — Odfjell Terminals US",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Odfjell Terminals US",
+    "investmentFirm": "Northleaf",
+    "sector": "Midstream",
+    "subsector": "Bulk liquid storage terminals",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "Odfjell Terminals US owns and operates bulk liquid storage terminals that handle chemicals, oil products, and other specialty liquids at major shipping locations. Its customers are industrial and trading counterparties that require marine-connected storage and handling infrastructure rather than inland distribution assets. The business follows an asset-heavy contracted terminal model built around tanks, marine access, and associated operating infrastructure at strategic ports. Public materials describe U.S. terminals in Houston, Texas, and Charleston, South Carolina as part of Odfjell's global terminal network. Funds managed by Northleaf acquired a 49% shareholding in June 2019, with Odfjell SE retaining 51% and continuing as the industrial partner.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2019,
+    "headquarters": "Texas and South Carolina",
+    "milestones": [
+      {
+        "date": "2019",
+        "event": "Northleaf listed Odfjell Terminals as an active infrastructure investment.",
+        "category": "Financing"
+      },
+      {
+        "date": "Jun 2019",
+        "event": "Odfjell announced the closing of Northleaf's acquisition of a 49% stake in Odfjell Holdings (US) Inc.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Dec 2024",
+        "event": "Odfjell disclosed a dispute with Northleaf regarding leverage at the U.S. terminals joint venture.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Northleafcapital — Odfjell Terminals US",
+        "url": "https://www.northleafcapital.com/infrastructure-investments?page=1",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Close date source — Northleaf — Odfjell Terminals US",
+        "url": "https://www.odfjell.com/about/our-stories/northleaf-capital-partner-transaction-with-lindsay-goldberg-is-closed/",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Odfjell — Odfjell Terminals US",
+        "url": "https://www.odfjell.com/terminals",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Northleaf",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2019,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj3ek00ezivhe3cnm6515",
+        "fundName": "Northleaf NEIF",
+        "managerId": "cmrxpic3o0032ivhe1bvmxxsl",
+        "updatedAt": "2026-07-23T16:09:58.268Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpihww004wivhek83snno3",
+        "name": "Northleaf",
+        "updatedAt": "2026-07-23T16:09:30.416Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0356:odfjell-terminals-us:5f8f7651",
+    "taskIndex": 356,
+    "canonicalKey": "odfjell-terminals-us|united-states",
+    "capturedAt": "2026-09-01T17:38:49.371Z",
+    "databaseRevision": "revision:5231c16060a1c693bbc61fb0171c321091f519869a398ad0a4e8442f144b62fa",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "6b03cf690838e098a29ea647dc59f10d868a2a9e571942476e479b633380bb2d",
+    "productionSnapshotSha256": "651bee3c919d4dcc9dc6973a726e7013c318a2bc5a51d39e07349fc897976416",
+    "targetCompanySnapshotSha256": "f64db19e591899bf2c544ecb91fcaf5ad0c4bb5bfa6219e5f6ae0cf49cc1d8be",
+    "seedEntrySha256": "f967fb210b67e90f98801ff48e0464e0707fc2006722e6a7b3edd0a43613a2d7",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "8993af48d5bc818e864cd032f260aa6a63dcf5369c96765241bc2d680fd0db08",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "63f45cb752efd9f952fb32ed17c1967687e58cdb8a58e506f40736c7b5f3dc26",
+      "organizationsSha256": "72209f69314e323ca933f0a7899ae46a5cf7532ef54c6897e49f738918d98320",
+      "citationsSha256": "eef1fa4cbb12f570ff16166bc8b71f6dbd2a214b7fc35528784006c3e7bfb126",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "c5496e5b5108bc8558710b2e5e54bfa463f06bf171c0df2ec1b861c29be10946",
+    "stateSha256": "4c4fe8adeb5ac7a72c39948c77750a34c6a51f0885ef3b1ab29e682b32c59165",
+    "taskSnapshotSha256": "01f3ee35a6b2e88f1ce1ceaaaed419b848d9683cb333c83f7a848245810b0d44"
+  },
+  "contextSha256": "56739ddc5dbec139426dca12cad498da56fe7c95dcf6ceeb57663f43b69887e8"
+}
