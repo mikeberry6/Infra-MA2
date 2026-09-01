@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0358:ascension-fbo-network:b081e384",
+  "taskIndex": 358,
+  "companyName": "Ascension FBO Network",
+  "generatedAt": "2026-09-01T17:38:53.748Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0358-ascension-fbo-network/attempt-1/observed-batch-v2-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 358,
+    "taskId": "ledger:0358:ascension-fbo-network:b081e384",
+    "canonicalKey": "ascension-fbo-network|united-states",
+    "companyName": "Ascension FBO Network",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 72,
+    "managers": [
+      "NOVA Infrastructure",
+      "Wafra"
+    ],
+    "actionScopes": {
+      "company": [
+        "CREATE_COMPANY"
+      ],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "072-nova-infrastructure:holding:003:ascension-fbo-network",
+      "098-wafra:holding:008:ascension-fbo-network"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://novainfrastructure.com/investments/",
+      "https://www.wafra.com/news/wafra-and-nova-infrastructure-acquire-hawthorne-global-aviation-services",
+      "https://www.wafra.com/our-people/michael-coleman-2/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "No exact normalized production or seed match exists. Census evidence supports a new canonical company with 2 manager holding record(s).",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "ascension-fbo-network|united-states",
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpizw500alivhelc3ewblk",
+        "name": "NOVA Infrastructure",
+        "updatedAt": "2026-07-23T16:09:53.717Z"
+      },
+      {
+        "id": "cmrxpj00u00anivhes8q1cv1p",
+        "name": "Wafra",
+        "updatedAt": "2026-07-23T16:09:53.886Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0358:ascension-fbo-network:b081e384",
+    "taskIndex": 358,
+    "canonicalKey": "ascension-fbo-network|united-states",
+    "capturedAt": "2026-09-01T17:38:53.748Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "15a1e92a42bc786c720348bd1d1920d41e8c11107fa90a9cd95acc9fd4489e53",
+    "productionSnapshotSha256": "ab7ffbe0489b2d3905cea9a73216de3f33e5d092f496c98fd0069305e9e30351",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "78174b188f92022e5826200ef185fb409287d210d9748f66948477e7dcf74c83",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "ada690f93788b8c62b1ba29840254c5e508357fbd3f52538c7db37189f6df534",
+    "stateSha256": "3fd476a34b270648782186960fe354264980a0fdea5498718fd07445bf2d24bb",
+    "taskSnapshotSha256": "ca0cb05f6471e18ef0d0e1615ff0018e110c61e89f147c2f4958c9cfaa2250f4"
+  },
+  "contextSha256": "9b2a010d5cae6067a559ef597901c328d632f1d422e28a8639d6c99d41833a42"
+}

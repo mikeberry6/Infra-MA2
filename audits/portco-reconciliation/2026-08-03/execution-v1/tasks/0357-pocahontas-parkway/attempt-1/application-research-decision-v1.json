@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0357:pocahontas-parkway:d86a6391",
+  "taskIndex": 357,
+  "companyName": "Pocahontas Parkway",
+  "asOfDate": "2026-09-01",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-01T17:35:00.000Z",
+  "result": {
+    "decision": "PROPOSED_CORRECTION",
+    "rationale": "Retain one active concession, correct the operating-company identity and boundary, add Globalvia's directly disclosed 68.14% current stake, retain Northleaf's qualified residual co-investment, and preserve the attributable institutional ownership history.",
+    "evidence": [
+      {
+        "url": "https://www.globalvia.com/en/inicio/movilidad/concesion/pocahontas-parkway/",
+        "purpose": "Current Globalvia stake, concession company, term and scale."
+      },
+      {
+        "url": "https://www.northleafcapital.com/infrastructure-investments?page=1",
+        "purpose": "Northleaf active 2017 co-investment."
+      },
+      {
+        "url": "https://www.globalvia.com/en/noticia/globalvia-successfully-completes-the-purchase-of-the-pocahontas-parkway-its-first-us-concession/",
+        "purpose": "December 20, 2016 Globalvia closing."
+      },
+      {
+        "url": "https://www.transportation.gov/buildamerica/projects/pocahontas-parkway-richmond-airport-connector",
+        "purpose": "Concession boundary, history and public counterparties."
+      }
+    ]
+  },
+  "lineage": {
+    "sourceDecision": "research-decision.json",
+    "sourceVerification": "source-verification.json",
+    "acceptedResponse": "chatgpt-accepted-response.txt",
+    "deltaCheckThrough": "2026-09-01"
+  }
+}

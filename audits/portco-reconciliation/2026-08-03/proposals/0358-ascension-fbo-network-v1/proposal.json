@@ -1,0 +1,228 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0358:ascension-fbo-network:b081e384",
+  "taskIndex": 358,
+  "asOfDate": "2026-09-01",
+  "generatedAt": "2026-09-01T17:35:00.000Z",
+  "canonicalKey": "ascension-fbo-network|united-states",
+  "companyName": "Ascension FBO Network",
+  "actions": [
+    "CREATE_COMPANY"
+  ],
+  "sourceHoldingIds": [
+    "072-nova-infrastructure:holding:003:ascension-fbo-network",
+    "098-wafra:holding:008:ascension-fbo-network"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Create one Ascension FBO Network company as the commercial successor to Hawthorne Global Aviation Services, record NOVA Infrastructure and Wafra as current co-owners from the March 15, 2022 close, and keep individual FBOs and add-ons beneath the platform.",
+  "evidence": [
+    {
+      "url": "https://www.novainfrastructure.com/investments-index",
+      "purpose": "Official NOVA portfolio evidence for current ownership, Fund I attribution, infrastructure qualification and network scale.",
+      "supports": [
+        "Ascension is a current NOVA Infrastructure investment.",
+        "The platform is attributed to NOVA Infrastructure Fund I and operates an 11-location FBO network."
+      ]
+    },
+    {
+      "url": "https://www.williamblair.com/News/Hawthorne-Global-Aviation-and-NOVA-Transaction",
+      "purpose": "Transaction-adviser evidence for the NOVA and Wafra acquisition and March 15, 2022 close.",
+      "supports": [
+        "NOVA Infrastructure and Wafra acquired the platform together.",
+        "The transaction closed on March 15, 2022."
+      ]
+    },
+    {
+      "url": "https://ascensionfbo.com/",
+      "purpose": "Official company evidence for the Ascension identity, services and current network.",
+      "supports": [
+        "Ascension FBO Network is the current commercial brand.",
+        "The company provides fixed-base operator services across its U.S. network."
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "ae2ceae6a2fb04c0b8a58d3f4c3d2ba0cb45aaed1fa121f91fb8bae87066946e",
+  "currentCompanySnapshotSha256": null,
+  "executionLock": {
+    "taskSnapshotSha256": "25186a1b389a58b5d6cfc286fe2777b52c1f4d5c5b26e6d75de3315b7627ea01",
+    "taskStateSha256": "3fd476a34b270648782186960fe354264980a0fdea5498718fd07445bf2d24bb",
+    "taskDependencySha256": "ada690f93788b8c62b1ba29840254c5e508357fbd3f52538c7db37189f6df534",
+    "seedEntrySha256": null,
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "78174b188f92022e5826200ef185fb409287d210d9748f66948477e7dcf74c83",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpizw500alivhelc3ewblk",
+        "name": "NOVA Infrastructure",
+        "updatedAt": "2026-07-23T16:09:53.717Z"
+      },
+      {
+        "id": "cmrxpj00u00anivhes8q1cv1p",
+        "name": "Wafra",
+        "updatedAt": "2026-07-23T16:09:53.886Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": null,
+  "beforeImageSha256": null,
+  "afterImage": {
+    "id": null,
+    "name": "Ascension FBO Network",
+    "aliases": [
+      "Hawthorne Global Aviation Services",
+      "Hawthorne Global Aviation",
+      "Hawthorne Aviation"
+    ],
+    "sector": "TRANSPORTATION",
+    "subsector": "Fixed-base operator network",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Ascension FBO Network is an 11-location U.S. fixed-base operator platform that provides aircraft fueling, hangaring, ground handling and passenger and crew services for business and general aviation, with selected airline and military support. The platform was formed as Hawthorne Global Aviation Services in 2011 and adopted the Ascension commercial brand during 2025. NOVA Infrastructure and Wafra completed their joint acquisition on March 15, 2022 through Hawthorne FBO Acquisition Co.; exact economic percentages and Wafra's fund allocation are not publicly disclosed. Individual airport locations, leases and add-on businesses remain beneath the single manager-level platform.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://ascensionfbo.com/",
+    "yearFounded": 2011,
+    "headquarters": "Houston, Texas, United States",
+    "lastVerifiedAt": "2026-09-01T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": null,
+        "managerName": "NOVA Infrastructure",
+        "organizationName": "NOVA Infrastructure",
+        "fundName": null,
+        "vehicleName": "NOVA Infrastructure Fund I / Hawthorne FBO Acquisition Co.",
+        "stake": "Co-owner; exact percentage not publicly disclosed",
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Wafra",
+        "organizationName": "Wafra",
+        "fundName": null,
+        "vehicleName": "Hawthorne FBO Acquisition Co.; fund allocation not publicly disclosed",
+        "stake": "Co-owner; exact percentage not publicly disclosed",
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Moelis Capital Partners / NexPhase Capital",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Hawthorne Global Aviation Services",
+        "stake": "Control; exact percentage not publicly disclosed",
+        "investmentYear": 2011,
+        "exitYear": 2022,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": null,
+        "date": "Nov 2011",
+        "event": "Moelis Capital Partners and Hawthorne Corporation formed Hawthorne Global Aviation Services as an FBO platform.",
+        "category": "FOUNDING",
+        "sortDate": "2011-11-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.nexphase.com/hawthorne-global-aviation-services-acquires-excelaire-llc-a-new-york-based-fbo-aircraft-charter-management-company/"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Mar 15, 2022",
+        "event": "NOVA Infrastructure and Wafra completed their joint acquisition of Hawthorne Global Aviation Services.",
+        "category": "FINANCING",
+        "sortDate": "2022-03-15T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.williamblair.com/News/Hawthorne-Global-Aviation-and-NOVA-Transaction",
+          "https://www.novainfrastructure.com/investments-index"
+        ]
+      },
+      {
+        "id": null,
+        "date": "2022-2023",
+        "event": "The platform expanded through the Choice Aviation Services and Dolphin Aviation acquisitions and an additional KAVP transaction.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-12-01T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.novainfrastructure.com/investments-index"
+        ]
+      },
+      {
+        "id": null,
+        "date": "2025",
+        "event": "Hawthorne Global Aviation Services adopted the Ascension FBO Network commercial brand.",
+        "category": "OTHER",
+        "sortDate": "2025-04-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://ascensionfbo.com/"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": null,
+        "label": "NOVA Infrastructure — current investments",
+        "url": "https://www.novainfrastructure.com/investments-index",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current NOVA ownership, Fund I attribution, infrastructure basis and network scale",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "William Blair — Hawthorne transaction",
+        "url": "https://www.williamblair.com/News/Hawthorne-Global-Aviation-and-NOVA-Transaction",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "NOVA and Wafra acquisition parties and March 15, 2022 closing",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Ascension FBO Network — company website",
+        "url": "https://ascensionfbo.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current commercial identity, services and location network",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "NexPhase — Hawthorne platform history",
+        "url": "https://www.nexphase.com/hawthorne-global-aviation-services-acquires-excelaire-llc-a-new-york-based-fbo-aircraft-charter-management-company/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "2011 platform formation and former ownership history",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "d1f8474e7cf75da3436b9c653b1e2f90d46783fa241a8c593550679375c59be1",
+  "proposalSha256": "eea0b0f872e20c8b2586bd4d1d7cc1b90a375c141ee117bde55f521ac86cf10e"
+}

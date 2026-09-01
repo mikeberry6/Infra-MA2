@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0356:odfjell-terminals-us:5f8f7651",
+  "taskIndex": 356,
+  "companyName": "Odfjell Terminals US",
+  "asOfDate": "2026-09-01",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-01T17:35:00.000Z",
+  "result": {
+    "decision": "PROPOSED_CORRECTION",
+    "rationale": "Retain one Odfjell U.S. terminal platform, correct the legal top-company identity, and preserve the verified Northleaf 49% / Odfjell 51% ownership plus Lindsay Goldberg's former period. The August 2026 Delaware ruling did not transfer equity.",
+    "evidence": [
+      {
+        "url": "https://courts.delaware.gov/opinions/download.aspx?id=399380",
+        "purpose": "Legal identity, current members, stakes, platform boundary and August 2026 judgment."
+      },
+      {
+        "url": "https://www.odfjell.com/about/our-stories/northleaf-capital-partner-transaction-with-lindsay-goldberg-is-closed/",
+        "purpose": "June 2019 Northleaf acquisition closing."
+      },
+      {
+        "url": "https://www.lindsaygoldbergllc.com/wp-content/uploads/2019/04/091611.pdf",
+        "purpose": "September 2011 joint-venture ownership."
+      },
+      {
+        "url": "https://www.odfjell.com/terminals",
+        "purpose": "Current U.S. terminal operating platform."
+      }
+    ]
+  },
+  "lineage": {
+    "sourceDecision": "research-decision.json",
+    "sourceVerification": "source-verification.json",
+    "acceptedResponse": "chatgpt-accepted-response.txt",
+    "deltaCheckThrough": "2026-09-01"
+  }
+}
