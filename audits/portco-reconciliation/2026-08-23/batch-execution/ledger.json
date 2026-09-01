@@ -3,7 +3,7 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-01T04:04:00.000Z",
+  "updatedAt": "2026-09-01T04:11:00Z",
   "activeBatchId": "batch-0287-0291-v1",
   "batches": [
     {
@@ -4802,7 +4802,7 @@
     },
     {
       "batchId": "batch-0287-0291-v1",
-      "state": "RELEASING",
+      "state": "VERIFYING",
       "taskIds": [
         "ledger:0287:ambient-photonics:ce65fde2",
         "ledger:0288:bear-river-midstream:6266be72",
@@ -4818,14 +4818,17 @@
         291
       ],
       "createdAt": "2026-08-31T10:23:46.000Z",
-      "updatedAt": "2026-09-01T04:04:00.000Z",
+      "updatedAt": "2026-09-01T04:11:00Z",
       "completedAt": null,
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0287-0291-v1/batch-manifest.json",
         "sha256": "58822442152edd669f2cfdad337d1bd03e7121b25cb6bd0089e0f9466ff19e47"
       },
-      "releaseSha": null,
-      "receipt": null,
+      "releaseSha": "58e645405b08ccebde7d413f62924cd5e22cdec5",
+      "receipt": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0287-0291-v1/production-apply/batch-apply-receipt.json",
+        "sha256": "8fd8649c89ad0534da5e3419696ea75de365d73b87690db027b2b41489e025f4"
+      },
       "reason": null,
       "history": [
         {
@@ -4855,9 +4858,30 @@
             "58822442152edd669f2cfdad337d1bd03e7121b25cb6bd0089e0f9466ff19e47"
           ],
           "reason": null
+        },
+        {
+          "sequence": 4,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-09-01T04:09:00Z",
+          "evidenceSha256": [
+            "58822442152edd669f2cfdad337d1bd03e7121b25cb6bd0089e0f9466ff19e47"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 5,
+          "from": "APPLYING",
+          "to": "VERIFYING",
+          "at": "2026-09-01T04:11:00Z",
+          "evidenceSha256": [
+            "58822442152edd669f2cfdad337d1bd03e7121b25cb6bd0089e0f9466ff19e47",
+            "8fd8649c89ad0534da5e3419696ea75de365d73b87690db027b2b41489e025f4"
+          ],
+          "reason": null
         }
       ]
     }
   ],
-  "ledgerSha256": "e1f0ac2d2cad83cb7a86f25fdbc0cdb36fb665f2f527f1f413aed5def9fa65d3"
+  "ledgerSha256": "b393659f6bd6f7893b97e0abca66dc64db806f8deb76b56f54f967bc19fc0d86"
 }
