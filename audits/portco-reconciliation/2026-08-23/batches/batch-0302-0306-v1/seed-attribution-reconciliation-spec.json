@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_SEED_ATTRIBUTION_RECONCILIATION_SPEC",
+  "batchId": "batch-0302-0306-v1",
+  "batchSha256": "a947c038d2232d9b29bacf21b9f63c6665d12d8b4a8e1cc8ca51468465cfcec3",
+  "reconciledAt": "2026-09-01T07:20:00.000Z",
+  "sourceManifestSha256": "0fab511fec43834b6480ae02963086b76886ca8eef4ac127674604572fc671c7",
+  "rationale": "Replace Prospect Power's stale 2026 Elevate vehicle attribution with the reviewed active ownership identity released by this bundle: ArcLight Capital Partners through ArcLight Energy Partners Fund VII, L.P. and the Elevate Renewables / Elevate Infrastructure platform from 2025. Preserve the existing record ID and do not infer a project-level ownership percentage.",
+  "removeRecordIds": [],
+  "upsertRecords": [
+    {
+      "recordId": "OFA-CFAB054E7339",
+      "companyName": "Prospect Power",
+      "country": "United States",
+      "investmentFirm": "ArcLight Capital Partners",
+      "currentVehicleName": "Elevate Renewables / Elevate Infrastructure",
+      "investmentYear": 2025,
+      "stake": null,
+      "targetLinkedFundName": "ArcLight Energy Partners Fund VII, L.P.",
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "ArcLight Energy Partners Fund VII, L.P.",
+      "attributionConfidence": null,
+      "attributionRationale": "ArcLight identifies Elevate as an ArcLight Energy Partners Fund VII portfolio platform, and the reviewed transaction sources establish that Elevate acquired Prospect in the December 2025 closing period. The exact project-level percentage is not publicly disclosed.",
+      "evidenceUrls": [
+        "https://arclight.com/portfolio-services/",
+        "https://www.elevateinfra.com/press",
+        "https://swiftcurrentenergy.com/swift-current-energy-executes-sale-of-prospect-power-to-elevate/"
+      ]
+    }
+  ],
+  "specSha256": "d7605ed71b0e41b32f3b5e9313141d1715bd4309c66c1864b6de71ed086c042e"
+}

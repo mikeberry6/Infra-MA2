@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0303:enbridge-gas-ohio:8007deaa",
+  "taskIndex": 303,
+  "companyName": "Enbridge Gas Ohio",
+  "outcome": "EXCLUDED",
+  "decidedAt": "2026-09-01T07:08:01.000Z",
+  "rationale": "Direct filings show that Enbridge Inc., not IFM Investors, acquired and owns the utility. Enbridge Elephant Holdings, LLC bought the East Ohio parent package from Dominion Energy, leaving The East Ohio Gas Company wholly owned by Enbridge. No direct IFM infrastructure equity, co-investment, managed-account stake, acquisition financing, later purchase or pending ownership transaction was found. Reverse CREATE_COMPANY/ADD_OWNER.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0303-enbridge-gas-ohio/attempt-1/locked-task-snapshot.json",
+    "sha256": "1cd46cd2cd33753b2c9a01b1678fd07f9cbba8466d7f26d3927651a4bea355f8"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0303-enbridge-gas-ohio/attempt-1/application-research-decision.json",
+    "sha256": "1bf7e0e2cff8240d3ecb9a705e25a068c1b5f77a6f8ac8a1b9ec6ffdc01b97cb"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0303-enbridge-gas-ohio/attempt-1/source-verification.json",
+    "sha256": "1eac1c73e9533e606f79dfdd78a8bf4217ee0c209dee3bd756b39102d0b31cf8"
+  },
+  "evidence": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/715957/000119312524061495/d762900d8k.htm",
+      "purpose": "Closing date, purchaser, all-share sale and US$4.3 billion cash plus US$2.3 billion debt."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/715957/000119312523228542/d437307dex21.htm",
+      "purpose": "Seller, buyer, Enbridge parent guarantee and purchase of all target shares."
+    },
+    {
+      "url": "https://www.enbridge.com/~/media/Enb/Documents/Investor-Relations/Enbridge-Ohio-Gas/EOG_2025_Q4_financials.pdf?hash=C17A3D7F37B8F3A0D88BB2E2CF366721&rev=f14b29ed98184f1ea16c11af78aee205",
+      "purpose": "Legal identity, d/b/a history, closing and wholly-owned Enbridge status."
+    },
+    {
+      "url": "https://www.enbridge.com/~/media/Enb/Documents/Investor-Relations/Enbridge-Ohio-Gas/EOG_2026_Q1_financials.pdf?hash=C055621D5BCF2AA0717008848EAAFCD9&rev=dd8bc133d1e54fac9ec483c11305c9bb",
+      "purpose": "EOG remained an Enbridge subsidiary; events evaluated through May 27, 2026."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/895728/000119312526326744/enb-ex99_1.htm",
+      "purpose": "EOG remained in Enbridge's U.S. Gas Utilities reporting through Q2 2026."
+    },
+    {
+      "url": "https://www.ifminvestors.com/capabilities/infrastructure/our-portfolio/",
+      "purpose": "No EOG, Enbridge Gas Ohio or Dominion Energy Ohio holding identified; no direct IFM ownership release found."
+    },
+    {
+      "url": "https://puco.ohio.gov/wps/portal/gov/puco/news/puco-approves-sale-of-dominion-energy-ohio",
+      "purpose": "Regulator confirmation of Enbridge Elephant's purchase and utility identity."
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "107b5ce4b6a28f8c963dce43faf6911afa768313846cb923f5dcf21c0d357407"
+}

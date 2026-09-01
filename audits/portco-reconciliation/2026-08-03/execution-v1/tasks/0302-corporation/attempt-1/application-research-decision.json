@@ -1,0 +1,194 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0302:corporation:ac485f35",
+  "taskIndex": 302,
+  "companyName": "Corporation",
+  "asOfDate": "2026-08-19",
+  "decision": "SUPERSEDED",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-01T06:52:00.000Z",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "Corporation",
+    "requestedManagers": [
+      "IFM Investors",
+      "Ontario Teachers' Pension Plan"
+    ],
+    "decision": "SUPERSEDED",
+    "confidence": "HIGH",
+    "rationale": "Sources concern Enwave Energy Corporation and its Canadian business; none supports a standalone U.S. Corporation. The row is a detached legal suffix matched to canonical Enwave.",
+    "identityResolution": {
+      "canonicalName": "Enwave Energy",
+      "legalName": "Enwave Energy Corporation",
+      "canonicalKey": "enwave-energy|canada",
+      "productionCompanyId": "cmrxpjiln011zivheeuse5tr6",
+      "seedKey": "enwave energy|Canada",
+      "match": "MATCHED_ELSEWHERE",
+      "parsingFinding": "Corporation was detached from the phrase 'owned by Enwave Energy Corporation'.",
+      "independentUSCompanySupported": false
+    },
+    "ownershipResolution": {
+      "seller": "Brookfield Infrastructure",
+      "value": "C$2.8 billion enterprise value",
+      "owners": [
+        {
+          "manager": "IFM Investors",
+          "organization": "IFM Investors Pty Ltd",
+          "fund": "IFM Global Infrastructure Fund",
+          "vehicle": "Global InfraCo Sarl",
+          "stake": "50%",
+          "announcementDate": "2021-02-02",
+          "entryDate": "2021-06-07",
+          "entryYear": 2021,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "manager": "Ontario Teachers' Pension Plan",
+          "organization": "Ontario Teachers' Pension Plan Board",
+          "fund": "NOT_PUBLICLY_DISCLOSED",
+          "vehicle": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "50%",
+          "announcementDate": "2021-02-02",
+          "entryDate": "2021-06-07",
+          "entryYear": 2021,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "manager": "Brookfield Infrastructure",
+          "organization": "Brookfield Infrastructure Partners L.P.",
+          "fund": "NOT_PUBLICLY_DISCLOSED",
+          "vehicle": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "100% before sale",
+          "announcementDate": "2021-02-02",
+          "entryDate": null,
+          "entryYear": null,
+          "exitDate": "2021-06-07",
+          "exitYear": 2021,
+          "isActive": false,
+          "transactionState": "CLOSED_EXITED"
+        }
+      ],
+      "holdingStructure": "Each current owner holds 50% through an SPV. The joint downstream SPV name is NOT_PUBLICLY_DISCLOSED; IFM GIF owns Global InfraCo Sarl, whose holdings include Enwave Canada Investment Holdings Inc.",
+      "currentCheck": "IFM reported 50% as of 2026-06-30; Enwave names both investors. No later owner change found."
+    },
+    "operatingResolution": {
+      "country": "Canada",
+      "headquarters": "Toronto, Ontario, Canada",
+      "sector": "Utilities",
+      "subsector": "District energy systems",
+      "status": "Active",
+      "website": "https://www.enwave.com",
+      "includedBoundary": "The deal covered 100% of Canadian operations in Toronto, London, Windsor and Charlottetown and retained the Enwave brand.",
+      "excludedBoundary": "Enwave Energy US was sold separately to QIC and Ullico, closed 2021-07-16 and became CenTrio.",
+      "projectBoundary": "Systems, plants, projects and project entities are components, not a company called Corporation."
+    },
+    "acquisitionExitCheck": {
+      "announcementDate": "2021-02-02",
+      "closingDate": "2021-06-07",
+      "laterTransactions": "No equity recapitalization, exit, owner change or signed pending ownership deal found through the cutoff; financings did not change ownership.",
+      "pendingTransactions": []
+    },
+    "milestones": [
+      "2021-02-02: IFM and Ontario Teachers' agreed to buy 100% of Canadian Enwave from Brookfield, 50% each.",
+      "2021-06-07: Canadian acquisition closed.",
+      "2021-07-16: Separate U.S. sale closed to QIC/Ullico and became CenTrio.",
+      "2026-06-30: IFM still reported a 50% Enwave stake."
+    ],
+    "evidence": [
+      {
+        "label": "IFM acquisition announcement",
+        "url": "https://www.ifminvestors.com/news-and-insights/media-centre/ifm-investors-and-ontario-teachers-pension-plan-board-jointly-acquire-canadian-district-energy-operations-owned-by-enwave-energy-corporation/",
+        "purpose": "Legal-name phrase, Canadian perimeter, seller, value, 100% purchase and 50/50 stakes.",
+        "sourceTier": "TIER_1_MANAGER",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "Ontario Teachers' closing release",
+        "url": "https://www.otpp.com/en-ca/about-us/news-and-insights/2021/enwave-s-new-owners-ignite-next-era-of-growth-for-canadian-sustainable-energy-company/",
+        "purpose": "Both buyers took ownership at the 2021-06-07 close.",
+        "sourceTier": "TIER_1_CO_OWNER",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "IFM current portfolio page",
+        "url": "https://www.ifminvestors.com/en-au/capabilities/infrastructure/asset-portfolio/enwave/",
+        "purpose": "Canadian asset, 50% IFM stake and current status as of 2026-06-30.",
+        "sourceTier": "TIER_1_MANAGER_CURRENT",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Enwave About page",
+        "url": "https://www.enwave.com/about",
+        "purpose": "Operating identity and both current investors.",
+        "sourceTier": "TIER_1_COMPANY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Competition Bureau merger review",
+        "url": "https://competition-bureau.canada.ca/en/mergers-and-acquisitions/archived-report-merger-reviews?wbdisable=true",
+        "purpose": "Names Ontario Teachers', Global InfraCo Sarl and Enwave Energy Corporation in the transaction.",
+        "sourceTier": "TIER_1_REGULATOR",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "CNMV IFM ownership filing",
+        "url": "https://www.cnmv.es/WebServices/VerDocumento/Ver?e=Iq62wi3Bklcct9syY4GXo0%2BGdzDW%2Br8xdxvYJ6h7QbouVaha1OXoqrOfTTgx%2BSwV",
+        "purpose": "Links IFM GIF, Global InfraCo and Enwave Canada Investment Holdings Inc.",
+        "sourceTier": "TIER_1_REGULATOR",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "CenTrio U.S. closing release",
+        "url": "https://www.centrioenergy.com/news/qic-and-ullico-complete-acquisition-of-centrio-leading-u-s-district-energy-platform/",
+        "purpose": "Separate U.S. perimeter, buyers, close and CenTrio name.",
+        "sourceTier": "TIER_1_COMPANY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "malformedRecord": "Corporation | United States | no key -> SUPERSEDED as Enwave Energy | Canada | enwave-energy|canada.",
+      "canonicalRecord": "Retain identity, Canada, active status and 2021 ownership period; populate 50% stakes and IFM fund/vehicle. Correct yearFounded=1990 to NOT_PUBLICLY_DISCLOSED because the cited release's 1990 refers to Ontario Teachers' founding, not Enwave; website and Toronto headquarters are supported."
+    },
+    "excludedOrDuplicateCandidates": {
+      "Corporation": "SUPERSEDED_PARSING_ARTIFACT",
+      "CenTrio formerly Enwave Energy US": "EXCLUDED_SEPARATE_US_BUSINESS",
+      "Enwave systems/projects/entities": "EXCLUDED_OPERATING_COMPONENTS"
+    },
+    "unresolvedQuestions": [
+      "Exact joint downstream SPV name is NOT_PUBLICLY_DISCLOSED; non-blocking.",
+      "Enwave's exact founding year remains NOT_PUBLICLY_DISCLOSED; 1990 is a source-attribution error and should not remain."
+    ],
+    "recommendedListAction": "Supersede ledger:0302:corporation:ac485f35 as MATCHED_ELSEWHERE to Enwave Energy; do not create or merge. Keep the canonical company and ownership periods, add documented stakes and IFM fund/vehicle, correct the misattributed 1990 founding year, and add supported website/headquarters."
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0302-corporation/attempt-1/research-decision.json",
+      "sha256": "102a22fc905eb06eaac22c15f68acb1a433725b531a903ad0e375f468e57222d"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0302-corporation/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "2bb6ea3f4ecd27304d348027389e08b3f2fd7a2dbcc3a8b2f0de20df379aade7"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0302-corporation/attempt-1/source-verification.json",
+      "sha256": "7d97e88ac6d247478add1cbf8ba6432719ba2ec7d3fe895d0caf905589bed254"
+    },
+    "acceptedResponseSha256": "111da3e3792f8360b0ba336d632cfe5fef056e454713efbc435789a3458d148b",
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION"
+  }
+}

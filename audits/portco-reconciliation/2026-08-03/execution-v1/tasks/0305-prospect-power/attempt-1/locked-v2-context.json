@@ -1,0 +1,278 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0305:prospect-power:12690790",
+  "taskIndex": 305,
+  "companyName": "Prospect Power",
+  "generatedAt": "2026-09-01T06:56:43.165Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0305-prospect-power/attempt-1/locked-v2-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 305,
+    "taskId": "ledger:0305:prospect-power:12690790",
+    "canonicalKey": "prospect-power|united-states",
+    "companyName": "Prospect Power",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 55,
+    "managers": [
+      "IFM Investors"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "RETIRE_OWNERSHIP"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "055-ifm-investors:repo-only:002:prospect-power"
+    ],
+    "productionCompanyIds": [
+      "cmrxpj6j700jfivhen42ptow2"
+    ],
+    "seedKeys": [
+      "prospect power|United States"
+    ],
+    "evidenceUrls": [
+      "https://swiftcurrentenergy.com/swift-current-energy-executes-sale-of-prospect-power-to-elevate/",
+      "https://www.businesswire.com/news/home/20260115405115/en/Elevate-Acquires-Prospect-Power-Storage-a-150-MW-Battery-Asset-in-Northern-Virginia"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: IFM Investors PROPOSED_RETIRE: Asset exited in 2026 and no longer qualifies as an active IFM infrastructure holding.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpj6j700jfivhen42ptow2",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "prospect-power|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpj6j700jfivhen42ptow2",
+    "name": "Prospect Power",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Battery Energy Storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Prospect Power is a standalone battery storage project in Rockingham County, Virginia. The asset is designed to serve grid reliability and wholesale market needs through an asset-heavy storage model rather than retail electricity supply. Public disclosures describe the project as a 150 MW and 600 MWh facility near Northern Virginia's Data Center Alley, with operations expected in 2026. The project is positioned within PJM and reflects the growing role of storage assets in balancing high-load power markets. Elevate Renewables announced in January 2026 that it had acquired Prospect Power from Swift Current Energy, while public sources do not disclose the detailed ownership percentages within ArcLight's platform.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Virginia",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjrju01gaivheyreqldij",
+        "managerName": "ArcLight Capital Partners",
+        "organizationName": "ArcLight Capital Partners",
+        "fundName": null,
+        "vehicleName": "Elevate Renewables / ArcLight",
+        "stake": null,
+        "investmentYear": 2026,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjrkd01gbivhepnv27o1y",
+        "managerName": "IFM Investors",
+        "organizationName": "IFM Investors",
+        "fundName": null,
+        "vehicleName": "Prior ownership via Swift Current Energy",
+        "stake": null,
+        "investmentYear": 2024,
+        "exitYear": 2026,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkmbi02p6ivhe0pjmq60j",
+        "date": "2024",
+        "event": "IFM Investors invested in Prospect Power through Prior ownership via Swift Current Energy.",
+        "category": "FINANCING",
+        "sortDate": "2024-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkmc002p7ivhe0rx2o08s",
+        "date": "2026",
+        "event": "The project was reported to be under construction with expected operations in mid-2026.",
+        "category": "EXPANSION",
+        "sortDate": "2026-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkmcj02p8ivhel0j07h1l",
+        "date": "Jan 15, 2026",
+        "event": "Elevate Renewables, an ArcLight platform, acquired Prospect Power from Swift Current Energy.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-01-15T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpp0v307jkivhevh5oa61s",
+        "label": "Business Wire",
+        "url": "https://www.businesswire.com/news/home/20260115405115/en/Elevate-Acquires-Prospect-Power-Storage-a-150-MW-Battery-Asset-in-Northern-Virginia",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "ArcLight Capital Partners closing confirmation",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpp0vz07jmivheflyhh0m7",
+        "label": "Swiftcurrentenergy — Prospect Power",
+        "url": "https://swiftcurrentenergy.com/swift-current-energy-executes-sale-of-prospect-power-to-elevate/",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Swiftcurrentenergy transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp0x007joivheqdfe8jt7",
+        "label": "PR Newswire — Prospect Power",
+        "url": "https://www.prnewswire.com/news-releases/swift-current-energy-executes-sale-of-prospect-power-to-elevate-302661837.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "PR Newswire transaction or milestone detail",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Prospect Power",
+    "investmentFirm": "ArcLight Capital Partners",
+    "sector": "Power & ET",
+    "subsector": "Battery Energy Storage",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Elevate Renewables / ArcLight",
+    "description": "Prospect Power is a standalone battery storage project in Rockingham County, Virginia. The asset is designed to serve grid reliability and wholesale market needs through an asset-heavy storage model rather than retail electricity supply. Public disclosures describe the project as a 150 MW and 600 MWh facility near Northern Virginia's Data Center Alley, with operations expected in 2026. The project is positioned within PJM and reflects the growing role of storage assets in balancing high-load power markets. Elevate Renewables announced in January 2026 that it had acquired Prospect Power from Swift Current Energy, while public sources do not disclose the detailed ownership percentages within ArcLight's platform.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2026,
+    "headquarters": "Virginia",
+    "milestones": [
+      {
+        "date": "2024",
+        "event": "IFM Investors invested in Prospect Power through Prior ownership via Swift Current Energy.",
+        "category": "Financing"
+      },
+      {
+        "date": "2026",
+        "event": "The project was reported to be under construction with expected operations in mid-2026.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Jan 15, 2026",
+        "event": "Elevate Renewables, an ArcLight platform, acquired Prospect Power from Swift Current Energy.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Close date source — ArcLight Capital Partners — Prospect Power",
+        "url": "https://www.businesswire.com/news/home/20260115405115/en/Elevate-Acquires-Prospect-Power-Storage-a-150-MW-Battery-Asset-in-Northern-Virginia",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Swiftcurrentenergy — Prospect Power",
+        "url": "https://swiftcurrentenergy.com/swift-current-energy-executes-sale-of-prospect-power-to-elevate/",
+        "type": "ARTICLE",
+        "purpose": "MILESTONE_EVENT"
+      },
+      {
+        "label": "PR Newswire — Prospect Power",
+        "url": "https://www.prnewswire.com/news-releases/swift-current-energy-executes-sale-of-prospect-power-to-elevate-302661837.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "ArcLight Capital Partners",
+        "ownershipVehicle": "Elevate Renewables / ArcLight",
+        "investmentYear": 2026,
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "IFM Investors",
+        "ownershipVehicle": "Prior ownership via Swift Current Energy",
+        "investmentYear": 2024,
+        "exitYear": 2026,
+        "status": "Realized"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmsdi3ppx00357h4sa1kokybn",
+        "fundName": "ArcLight Energy Partners Fund VII, L.P.",
+        "managerId": "cmrxpi435000kivhegfx84axs",
+        "updatedAt": "2026-08-03T17:26:22.197Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi435000kivhegfx84axs",
+        "name": "ArcLight Capital Partners",
+        "updatedAt": "2026-07-23T16:09:12.497Z"
+      },
+      {
+        "id": "cmrxpi9zp002eivheuaj1gpqj",
+        "name": "IFM Investors",
+        "updatedAt": "2026-07-23T16:09:20.149Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0305:prospect-power:12690790",
+    "taskIndex": 305,
+    "canonicalKey": "prospect-power|united-states",
+    "capturedAt": "2026-09-01T06:56:43.165Z",
+    "databaseRevision": "revision:76d8264931dd462a0a5bf1fa207e696fbc59d2ac6ca5bd85be165ff4be8eb4be",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "97a29b1656043a5ca9d4d0365a6a845fb493b0b27ad9eebcb92857fae7ee2f87",
+    "productionSnapshotSha256": "0ac23d6e93aec4986a8f94024b538c8e6f15372f5d5c5ae308fb554ab6db8491",
+    "targetCompanySnapshotSha256": "9903e9124713603275ed990c0ae3e2a1b40be9792d78506f87a40d2bb7a9195e",
+    "seedEntrySha256": "e2678d17baa9244c3753e9b5c573f0467482d51f254c3f5dd50d3c4ed6ba4827",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "8fedcad2519ef38a2a1fc4547235dbdb7831c298c3bca163dc4b276d81e71a6a",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "b1c52364d8d6e044359069cf8d11e3edc4f275b988658c7a9e0983ccd14105ef",
+      "organizationsSha256": "29d1a03f9024f46257b8f3c198f7615994e74e0cd03a68fe287c8a5548e19d21",
+      "citationsSha256": "c695cd7b0126bbf08c1a3727bb7f72a237b6aba60dac6804e4ad865f5e438603",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "048771b334ee1d44923be7460c1ae0cfe22e389d641f5dc34c30bfa49d7c1faa",
+    "stateSha256": "33a6ce0befadd3f4646424a90eefdc0f45c0fe3f7d1f861b2f6ccf7c6281361c",
+    "taskSnapshotSha256": "a64d4be732bc6afc542bef082c0086748e759a6727cb28597dc0e71844767aab"
+  },
+  "contextSha256": "ce58fb892ec0492b4b8a95e04553261536bdad704421372845f7ff8d5ed5647d"
+}

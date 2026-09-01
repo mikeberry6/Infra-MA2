@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-01T06:39:31.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-09-01T07:11:11.000Z",
+  "activeBatchId": "batch-0302-0306-v1",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -5078,7 +5078,96 @@
           "reason": null
         }
       ]
+    },
+    {
+      "batchId": "batch-0302-0307-v1",
+      "state": "FAILED",
+      "taskIds": [
+        "ledger:0302:corporation:ac485f35",
+        "ledger:0303:enbridge-gas-ohio:8007deaa",
+        "ledger:0305:prospect-power:12690790",
+        "ledger:0306:vopak-moda-houston:8614eb7b",
+        "ledger:0307:advowaste-medical-services:42ae6d6b"
+      ],
+      "taskIndexes": [
+        302,
+        303,
+        305,
+        306,
+        307
+      ],
+      "createdAt": "2026-09-01T06:49:30.000Z",
+      "updatedAt": "2026-09-01T06:50:56.000Z",
+      "completedAt": "2026-09-01T06:50:56.000Z",
+      "batchManifest": null,
+      "releaseSha": null,
+      "receipt": null,
+      "reason": "Formation dependency check found task 307 AdvoWaste must be resolved in the same bundle as task 309 Cyntox, its canonical survivor. No proposal, authorization, release, seed, or database mutation occurred.",
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-09-01T06:49:30.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "FAILED",
+          "at": "2026-09-01T06:50:56.000Z",
+          "evidenceSha256": [],
+          "reason": "Formation dependency check found task 307 AdvoWaste must be resolved in the same bundle as task 309 Cyntox, its canonical survivor. No proposal, authorization, release, seed, or database mutation occurred."
+        }
+      ]
+    },
+    {
+      "batchId": "batch-0302-0306-v1",
+      "state": "READY",
+      "taskIds": [
+        "ledger:0302:corporation:ac485f35",
+        "ledger:0303:enbridge-gas-ohio:8007deaa",
+        "ledger:0305:prospect-power:12690790",
+        "ledger:0306:vopak-moda-houston:8614eb7b"
+      ],
+      "taskIndexes": [
+        302,
+        303,
+        305,
+        306
+      ],
+      "createdAt": "2026-09-01T06:50:56.000Z",
+      "updatedAt": "2026-09-01T07:11:11.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0302-0306-v1/batch-manifest-v3.json",
+        "sha256": "a947c038d2232d9b29bacf21b9f63c6665d12d8b4a8e1cc8ca51468465cfcec3"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-09-01T06:50:56.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-09-01T07:11:11.000Z",
+          "evidenceSha256": [
+            "a947c038d2232d9b29bacf21b9f63c6665d12d8b4a8e1cc8ca51468465cfcec3"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "3a486cb57f22c73cf3d59f998149c87bc83057addf7059475f8d7393ec072fc9"
+  "ledgerSha256": "5a72105e8372ae6b10718a3c30b011df9593363e3ae6bd32b2c4b2d736baad65"
 }

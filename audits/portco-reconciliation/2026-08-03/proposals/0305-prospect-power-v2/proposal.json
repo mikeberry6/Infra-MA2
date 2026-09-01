@@ -1,0 +1,376 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0305:prospect-power:12690790",
+  "taskIndex": 305,
+  "asOfDate": "2026-09-01",
+  "generatedAt": "2026-09-01T07:05:00.000Z",
+  "canonicalKey": "prospect-power|united-states",
+  "companyName": "Prospect Power",
+  "actions": [
+    "CORRECT_COMPANY",
+    "RETIRE_OWNERSHIP"
+  ],
+  "sourceHoldingIds": [],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Correct Prospect Power in place as one operating 150 MW / 600 MWh battery-storage project in Rockingham County, Virginia. Swift Current Energy acquired the project in 2023 while IFM-controlled, and IFM reports the completed sale to Elevate in December 2025; January 15, 2026 releases announced that already-completed transfer. ArcLight Energy Partners Fund VII's Elevate platform remains the current owner and operator. The exact closing day, project-level ownership percentage and acquisition SPV are not publicly disclosed, so only supported year-level ownership dates are persisted and no percentage is inferred.",
+  "evidence": [
+    {
+      "url": "https://www.ifminvestors.com/news-and-insights/thought-leadership/batteries-in-the-energy-transition/",
+      "purpose": "IFM ownership history and December 2025 exit",
+      "supports": [
+        "Swift held Prospect while IFM-controlled",
+        "IFM reports the Prospect sale in December 2025"
+      ]
+    },
+    {
+      "url": "https://swiftcurrentenergy.com/swift-current-energy-executes-sale-of-prospect-power-to-elevate/",
+      "purpose": "Completed sale and transaction parties",
+      "supports": [
+        "Swift sold Prospect Power to Elevate",
+        "The transaction had completed before the January 2026 announcement"
+      ]
+    },
+    {
+      "url": "https://arclight.com/portfolio-services/",
+      "purpose": "ArcLight Fund VII attribution and Elevate platform boundary",
+      "supports": [
+        "Elevate is an ArcLight Energy Partners Fund VII portfolio platform",
+        "Prospect remains an asset beneath the Elevate platform"
+      ]
+    },
+    {
+      "url": "https://www.elevateinfra.com/press",
+      "purpose": "Current owner, operating status and project scale",
+      "supports": [
+        "Elevate identifies Prospect as acquired and operating",
+        "The project is a 150 MW / 600 MWh battery-storage facility"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "0ac23d6e93aec4986a8f94024b538c8e6f15372f5d5c5ae308fb554ab6db8491",
+  "currentCompanySnapshotSha256": "9903e9124713603275ed990c0ae3e2a1b40be9792d78506f87a40d2bb7a9195e",
+  "executionLock": {
+    "taskSnapshotSha256": "a64d4be732bc6afc542bef082c0086748e759a6727cb28597dc0e71844767aab",
+    "taskStateSha256": "33a6ce0befadd3f4646424a90eefdc0f45c0fe3f7d1f861b2f6ccf7c6281361c",
+    "taskDependencySha256": "048771b334ee1d44923be7460c1ae0cfe22e389d641f5dc34c30bfa49d7c1faa",
+    "seedEntrySha256": "e2678d17baa9244c3753e9b5c573f0467482d51f254c3f5dd50d3c4ed6ba4827",
+    "dependencies": {
+      "ownershipPeriodsSha256": "8fedcad2519ef38a2a1fc4547235dbdb7831c298c3bca163dc4b276d81e71a6a",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "b1c52364d8d6e044359069cf8d11e3edc4f275b988658c7a9e0983ccd14105ef",
+      "organizationsSha256": "29d1a03f9024f46257b8f3c198f7615994e74e0cd03a68fe287c8a5548e19d21",
+      "citationsSha256": "c695cd7b0126bbf08c1a3727bb7f72a237b6aba60dac6804e4ad865f5e438603",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmsdi3ppx00357h4sa1kokybn",
+        "fundName": "ArcLight Energy Partners Fund VII, L.P.",
+        "managerId": "cmrxpi435000kivhegfx84axs",
+        "updatedAt": "2026-08-03T17:26:22.197Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi435000kivhegfx84axs",
+        "name": "ArcLight Capital Partners",
+        "updatedAt": "2026-07-23T16:09:12.497Z"
+      },
+      {
+        "id": "cmrxpi9zp002eivheuaj1gpqj",
+        "name": "IFM Investors",
+        "updatedAt": "2026-07-23T16:09:20.149Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpj6j700jfivhen42ptow2",
+    "name": "Prospect Power",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Battery Energy Storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Prospect Power is a standalone battery storage project in Rockingham County, Virginia. The asset is designed to serve grid reliability and wholesale market needs through an asset-heavy storage model rather than retail electricity supply. Public disclosures describe the project as a 150 MW and 600 MWh facility near Northern Virginia's Data Center Alley, with operations expected in 2026. The project is positioned within PJM and reflects the growing role of storage assets in balancing high-load power markets. Elevate Renewables announced in January 2026 that it had acquired Prospect Power from Swift Current Energy, while public sources do not disclose the detailed ownership percentages within ArcLight's platform.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Virginia",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjrju01gaivheyreqldij",
+        "managerName": "ArcLight Capital Partners",
+        "organizationName": "ArcLight Capital Partners",
+        "fundName": null,
+        "vehicleName": "Elevate Renewables / ArcLight",
+        "stake": null,
+        "investmentYear": 2026,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjrkd01gbivhepnv27o1y",
+        "managerName": "IFM Investors",
+        "organizationName": "IFM Investors",
+        "fundName": null,
+        "vehicleName": "Prior ownership via Swift Current Energy",
+        "stake": null,
+        "investmentYear": 2024,
+        "exitYear": 2026,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkmbi02p6ivhe0pjmq60j",
+        "date": "2024",
+        "event": "IFM Investors invested in Prospect Power through Prior ownership via Swift Current Energy.",
+        "category": "FINANCING",
+        "sortDate": "2024-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkmc002p7ivhe0rx2o08s",
+        "date": "2026",
+        "event": "The project was reported to be under construction with expected operations in mid-2026.",
+        "category": "EXPANSION",
+        "sortDate": "2026-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkmcj02p8ivhel0j07h1l",
+        "date": "Jan 15, 2026",
+        "event": "Elevate Renewables, an ArcLight platform, acquired Prospect Power from Swift Current Energy.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-01-15T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpp0v307jkivhevh5oa61s",
+        "label": "Business Wire",
+        "url": "https://www.businesswire.com/news/home/20260115405115/en/Elevate-Acquires-Prospect-Power-Storage-a-150-MW-Battery-Asset-in-Northern-Virginia",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "ArcLight Capital Partners closing confirmation",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpp0vz07jmivheflyhh0m7",
+        "label": "Swiftcurrentenergy — Prospect Power",
+        "url": "https://swiftcurrentenergy.com/swift-current-energy-executes-sale-of-prospect-power-to-elevate/",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Swiftcurrentenergy transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp0x007joivheqdfe8jt7",
+        "label": "PR Newswire — Prospect Power",
+        "url": "https://www.prnewswire.com/news-releases/swift-current-energy-executes-sale-of-prospect-power-to-elevate-302661837.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "PR Newswire transaction or milestone detail",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "9903e9124713603275ed990c0ae3e2a1b40be9792d78506f87a40d2bb7a9195e",
+  "afterImage": {
+    "id": "cmrxpj6j700jfivhen42ptow2",
+    "name": "Prospect Power",
+    "aliases": [
+      "Prospect Power Storage",
+      "Prospect Power, LLC",
+      "Lighthouse Prospect Power, LLC"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Battery Energy Storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Prospect Power is an operating 150 MW / 600 MWh four-hour standalone battery-energy-storage project in Rockingham County, Virginia, serving PJM and northern Virginia load through a 15-year Dominion Energy Virginia power-purchase arrangement. Swift Current Energy acquired the project from Clean Planet Renewable Energy in 2023 while Swift was controlled by IFM-managed funds. IFM reports that Swift completed the sale to Elevate in December 2025, while January 15, 2026 company releases announced the already-completed transfer. Elevate, an ArcLight Energy Partners Fund VII platform, is the current owner and operator, and the project was operating by June 2026. Prospect Power, LLC and tariff successor Lighthouse Prospect Power, LLC are treated as one project identity; Swift and Elevate are sponsor platforms rather than duplicate PortCos. Public sources do not disclose the exact sale-closing day, project-level ownership percentage or immediate acquisition SPV, and no later sale or signed pending transfer was identified through August 19, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Rockingham County, Virginia",
+    "lastVerifiedAt": "2026-08-19T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjrju01gaivheyreqldij",
+        "managerName": "ArcLight Capital Partners",
+        "organizationName": "ArcLight Capital Partners",
+        "fundName": "ArcLight Energy Partners Fund VII, L.P.",
+        "vehicleName": "Elevate Renewables / Elevate Infrastructure",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjrkd01gbivhepnv27o1y",
+        "managerName": "IFM Investors",
+        "organizationName": "IFM Investors",
+        "fundName": null,
+        "vehicleName": "Swift Current Energy",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": 2025,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkmbi02p6ivhe0pjmq60j",
+        "date": "2023",
+        "event": "Swift Current Energy acquired Prospect Power from Clean Planet Renewable Energy while Swift was controlled by IFM-managed funds.",
+        "category": "ACQUISITION",
+        "sortDate": null,
+        "evidenceUrls": [
+          "https://swiftcurrentenergy.com/swift-current-energy-secures-project-financing-for-the-largest-battery-storage-project-in-pjm/"
+        ]
+      },
+      {
+        "id": "cmrxpkmc002p7ivhe0rx2o08s",
+        "date": "Jun 11, 2026",
+        "event": "Elevate and ArcLight reported Prospect Power completed and operating as a 150 MW / 600 MWh four-hour battery-storage facility following its operating-period financing.",
+        "category": "EXPANSION",
+        "sortDate": "2026-06-11T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.elevateinfra.com/press",
+          "https://www.key.com/businesses-institutions/our-transactions/deals.elevate-infrastructure.html"
+        ]
+      },
+      {
+        "id": "cmrxpkmcj02p8ivhel0j07h1l",
+        "date": "Dec 2025 / announced Jan 15, 2026",
+        "event": "Swift Current Energy completed the sale of Prospect Power to Elevate; IFM dates the sale to December 2025, while the parties publicly announced the completed transfer on January 15, 2026.",
+        "category": "ACQUISITION",
+        "sortDate": null,
+        "evidenceUrls": [
+          "https://www.ifminvestors.com/news-and-insights/thought-leadership/batteries-in-the-energy-transition/",
+          "https://swiftcurrentenergy.com/swift-current-energy-executes-sale-of-prospect-power-to-elevate/",
+          "https://www.businesswire.com/news/home/20260115405115/en/Elevate-Acquires-Prospect-Power-Storage-a-150-MW-Battery-Asset-in-Northern-Virginia"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpp0v307jkivhevh5oa61s",
+        "label": "Business Wire",
+        "url": "https://www.businesswire.com/news/home/20260115405115/en/Elevate-Acquires-Prospect-Power-Storage-a-150-MW-Battery-Asset-in-Northern-Virginia",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Completed Elevate acquisition, project scale and January 2026 public announcement",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpp0vz07jmivheflyhh0m7",
+        "label": "Swiftcurrentenergy — Prospect Power",
+        "url": "https://swiftcurrentenergy.com/swift-current-energy-executes-sale-of-prospect-power-to-elevate/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Swift sale to Elevate, completed transaction state and seller role",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpp0x007joivheqdfe8jt7",
+        "label": "PR Newswire — Prospect Power",
+        "url": "https://www.prnewswire.com/news-releases/swift-current-energy-executes-sale-of-prospect-power-to-elevate-302661837.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Syndicated January 2026 announcement of the completed sale",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "IFM Investors — batteries in the energy transition",
+        "url": "https://www.ifminvestors.com/news-and-insights/thought-leadership/batteries-in-the-energy-transition/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "IFM and Swift ownership history and December 2025 Prospect sale",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Elevate Infrastructure — Prospect Power",
+        "url": "https://www.elevateinfra.com/press",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current Elevate ownership, operating status and 150 MW / 600 MWh scale",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Swift Current Energy — Prospect financing",
+        "url": "https://swiftcurrentenergy.com/swift-current-energy-secures-project-financing-for-the-largest-battery-storage-project-in-pjm/",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Swift's 2023 acquisition from Clean Planet and project financing",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Virginia DEQ — Prospect Power notice",
+        "url": "https://townhall.virginia.gov/L/ViewNotice.cfm?gnid=2831",
+        "sourceType": "OTHER",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Project entity, Rockingham County location and 150 MW / 600 MWh capacity",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Arclight — Alpha Generation (AlphaGen)",
+        "url": "https://arclight.com/portfolio-services/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Elevate platform attribution to ArcLight Energy Partners Fund VII",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "KeyBank — Elevate Infrastructure financing",
+        "url": "https://www.key.com/businesses-institutions/our-transactions/deals.elevate-infrastructure.html",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Operating-period financing and current Elevate owner attribution",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Federal Register — Prospect tariff succession",
+        "url": "https://www.federalregister.gov/documents/2026/06/30/2026-13161/combined-notice-of-filings-1",
+        "sourceType": "OTHER",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Lighthouse Prospect Power tariff succession effective June 2026",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "0b9563e67ad0c05fb40109836b7deb812180ddb0c17b682eb81eac4dce8c18bd",
+  "proposalSha256": "e6cbdf05964a0fe4154c867f610c31e579ba84ffede42ebaf8b2706cbdccf4e5"
+}

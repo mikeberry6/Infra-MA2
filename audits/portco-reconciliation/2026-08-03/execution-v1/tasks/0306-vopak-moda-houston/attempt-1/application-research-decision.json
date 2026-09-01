@@ -1,0 +1,237 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0306:vopak-moda-houston:8614eb7b",
+  "taskIndex": 306,
+  "companyName": "Vopak Moda Houston",
+  "asOfDate": "2026-08-19",
+  "decision": "EXCLUDED",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-01T06:52:00.000Z",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "Vopak Moda Houston",
+    "requestedManagers": [
+      "IFM Investors"
+    ],
+    "decision": "EXCLUDED",
+    "confidence": "HIGH",
+    "rationale": "No IFM infrastructure-equity ownership was found. Primary sources resolve a 50/50 Royal Vopak-Exolum terminal JV beneath those operating platforms; creating a standalone IFM PortCo would misattribute ownership and double-count an asset.",
+    "identityResolution": {
+      "status": "RESOLVED",
+      "holdco": "Vopak Exolum Houston Holdco LLC (formerly Vopak Moda Houston Holdco LLC)",
+      "operatingCompany": "Vopak Exolum Houston LLC (formerly Vopak Moda Houston LLC)",
+      "brand": "Vopak Exolum Houston",
+      "structure": "The holdco is parent of the terminal LLC and Port Houston leaseholder.",
+      "formationDate": "2016-02-26",
+      "renameDate": "NOT_PUBLICLY_DISCLOSED",
+      "canonicalTreatment": "Do not create the requested key; retain it only as a former-name alias to vopak-exolum-houston|united-states if asset aliases are maintained."
+    },
+    "ownershipResolution": {
+      "status": "RESOLVED",
+      "currentOwners": [
+        {
+          "manager": null,
+          "organization": "Koninklijke Vopak N.V. (Royal Vopak)",
+          "fund": null,
+          "vehicle": "Vopak Terminals North America, Inc.",
+          "stake": "50%",
+          "announcementDate": "NOT_PUBLICLY_DISCLOSED",
+          "entryDate": "2016-02-26",
+          "entryYear": 2016,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "ACTIVE"
+        },
+        {
+          "manager": null,
+          "organization": "Exolum Corporation, S.A.",
+          "fund": null,
+          "vehicle": "Exolum America Inc. (transaction text: CLH America Inc.)",
+          "stake": "50%",
+          "announcementDate": "2023-12-13",
+          "entryDate": "2024-01-11",
+          "entryYear": 2024,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "ACTIVE"
+        }
+      ],
+      "formerOwners": [
+        {
+          "manager": "EnCap Flatrock Midstream",
+          "organization": "Moda Midstream LLC",
+          "fund": "NOT_PUBLICLY_DISCLOSED",
+          "vehicle": "Moda Infrastructure LLC",
+          "stake": "50%",
+          "announcementDate": "2023-12-13",
+          "entryDate": "2016-02-26",
+          "entryYear": 2016,
+          "exitDate": "2024-01-11",
+          "exitYear": 2024,
+          "isActive": false,
+          "transactionState": "EXITED"
+        }
+      ],
+      "ifmFinding": "NO_EQUITY_EVIDENCE",
+      "managerBoundary": "Use Exolum as the PortCo boundary for its upstream financial owners; Royal Vopak is the other strategic parent. Do not count the terminal separately."
+    },
+    "operatingResolution": {
+      "status": "ACTIVE",
+      "asset": "Ammonia and NGL marine terminal",
+      "location": "Deer Park, Texas",
+      "operator": "Vopak Exolum Houston LLC",
+      "standaloneManagerPortCo": false
+    },
+    "acquisitionExitCheck": {
+      "agreementDate": "2023-11-17",
+      "publicAnnouncementDate": "2023-12-13",
+      "legalClosingDate": "2024-01-11",
+      "target": "Vopak Moda Houston Holdco LLC",
+      "seller": "Moda Infrastructure LLC (press: Moda Midstream LLC)",
+      "buyerVehicle": "Exolum America Inc. / CLH America Inc.",
+      "stake": "50%",
+      "consideration": "NOT_PUBLICLY_DISCLOSED",
+      "laterTerminalOwnerChange": "NONE_FOUND",
+      "terminalPendingTransactions": [],
+      "parentPlatformPendingTransactions": [
+        {
+          "direction": "PARENT_LEVEL_EXIT",
+          "buyer": "Stoneshield Capital (15%) and unnamed buyer (10%)",
+          "seller": "OMERS",
+          "stake": "Approximately 25% of Exolum",
+          "announcementDate": "2026-05-22",
+          "closingDate": "NOT_PUBLICLY_DISCLOSED",
+          "state": "SIGNED_PENDING_Q3_2026_AT_CUTOFF",
+          "evidenceUrls": [
+            "https://www.globenewswire.com/news-release/2026/05/22/3300241/0/en/stoneshield-capital-to-acquire-15-stake-in-exolum-from-omers.html"
+          ]
+        }
+      ],
+      "ifmImplication": "The unnamed Exolum buyer is not identified as IFM; parent ownership cannot be converted into direct terminal ownership."
+    },
+    "milestones": [
+      {
+        "date": "2016-02-26",
+        "event": "Vopak Moda Houston formed as a 50/50 Vopak-Moda venture."
+      },
+      {
+        "date": "2023-11-17",
+        "event": "Exolum's U.S. vehicle signed to buy Moda's 50%; announced 2023-12-13."
+      },
+      {
+        "date": "2024-01-11",
+        "event": "Exolum's stated legal closing date."
+      },
+      {
+        "date": "2025-07-22",
+        "event": "Port Houston materials identify the renamed Vopak Exolum Houston Holdco LLC."
+      }
+    ],
+    "evidence": [
+      {
+        "label": "CNMC decision",
+        "url": "https://www.cnmc.es/sites/default/files/5293992.pdf",
+        "purpose": "Target, vehicles, stakes, SPA and closing.",
+        "sourceTier": "Regulator",
+        "workingStatus": "VERIFIED",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "Texas RRC decision",
+        "url": "https://www.rrc.texas.gov/media/sffbnti2/gud-10597-first-amended-proposal-for-decision-1-29-2021.pdf",
+        "purpose": "Initial JV parties and Vopak vehicle.",
+        "sourceTier": "Regulator",
+        "workingStatus": "VERIFIED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Exolum agreement",
+        "url": "https://exolum.com/en/noticia/exolum-announces-agreement-to-acquire-50-of-a-leading-ammonia-and-ngl-storage-terminal-in-houston-texas-usa-from-moda-midstream/",
+        "purpose": "Announcement and 50% purchase.",
+        "sourceTier": "Owner",
+        "workingStatus": "VERIFIED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "LSB 2024 Form 10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/60714/000095017025029046/lxu-20241231.htm",
+        "purpose": "Current operating LLC, former name and JV parents.",
+        "sourceTier": "SEC",
+        "workingStatus": "VERIFIED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Port Houston agenda",
+        "url": "https://porthouston.com/wp-content/uploads/2025/07/WEBSITE-POSTING-PC-MEETING-JULY.pdf",
+        "purpose": "Current holdco name and leaseholder.",
+        "sourceTier": "PublicAuthority",
+        "workingStatus": "VERIFIED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Exolum footprint",
+        "url": "https://exolum.com/en/services/where-we-operate/",
+        "purpose": "Current active 50/50 ownership.",
+        "sourceTier": "Owner",
+        "workingStatus": "VERIFIED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Exolum shareholders",
+        "url": "https://exolum.com/en/shareholders-and-investors/distribution-of-share-capital/",
+        "purpose": "No disclosed IFM parent stake.",
+        "sourceTier": "Parent",
+        "workingStatus": "VERIFIED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "IFM portfolio",
+        "url": "https://www.ifminvestors.com/capabilities/infrastructure/our-portfolio/",
+        "purpose": "No VMH, Vopak or Exolum equity tie found.",
+        "sourceTier": "Manager",
+        "workingStatus": "VERIFIED_NO_MATCH",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "before": "Create active Vopak Moda Houston as an IFM holding with undisclosed stake and vehicle.",
+      "after": "Create no IFM company or owner; treat Vopak Exolum Houston as a 50/50 Royal Vopak-Exolum underlying asset."
+    },
+    "excludedOrDuplicateCandidates": [
+      {
+        "candidate": "Vopak Moda Houston",
+        "reason": "Former name/alias; not an IFM PortCo."
+      },
+      {
+        "candidate": "Vopak Exolum Houston",
+        "reason": "Underlying JV beneath Exolum and Royal Vopak; exclude from manager-level double-counting."
+      }
+    ],
+    "unresolvedQuestions": [
+      "Exact holdco and operating-LLC rename dates are not public.",
+      "The unnamed 10% Exolum buyer in OMERS's signed 2026 sale is undisclosed; no evidence ties it to IFM.",
+      "Exolum's repository presence is not publicly verifiable; cross-reference it if present."
+    ],
+    "recommendedListAction": "Reverse CREATE_COMPANY/ADD_OWNER; exclude the terminal from IFM's manager-level portfolio and retain only a former-name alias or asset cross-reference to an existing Exolum platform record if maintained."
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0306-vopak-moda-houston/attempt-1/research-decision.json",
+      "sha256": "9d7a7b33dfa98c7067990bf548fec314eddd13c8ad005e07997c99ab6810f033"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0306-vopak-moda-houston/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "b7b4d363dbafb874567726d1af702b965a4300e9c71f0fd6628576dbeba66600"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0306-vopak-moda-houston/attempt-1/source-verification.json",
+      "sha256": "1cd09d66f15008ef5ee9297fc418388865ca3a9d78b378fccd172f63dc9aeff5"
+    },
+    "acceptedResponseSha256": "2499c6c735741ea0ec2bfa4521cef56ad096ea8c77ccb3fadf8731e5aa195e9f",
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION"
+  }
+}
