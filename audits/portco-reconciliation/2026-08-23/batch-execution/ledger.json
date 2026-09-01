@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-01T17:26:00.000Z",
-  "activeBatchId": "batch-0351-0355-v1",
+  "updatedAt": "2026-09-01T17:29:00.000Z",
+  "activeBatchId": null,
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -6059,7 +6059,7 @@
     },
     {
       "batchId": "batch-0351-0355-v1",
-      "state": "RELEASING",
+      "state": "COMPLETED",
       "taskIds": [
         "ledger:0351:power-factors:44709f47",
         "ledger:0352:csv-midstream:d544fe04",
@@ -6075,15 +6075,18 @@
         355
       ],
       "createdAt": "2026-09-01T16:50:00.000Z",
-      "updatedAt": "2026-09-01T17:26:00.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-09-01T17:29:00.000Z",
+      "completedAt": "2026-09-01T17:29:00.000Z",
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0351-0355-v1/batch-manifest-v8.json",
         "sha256": "44f817fab99cf55c7ec2ef846cc01c38e4123a60ee8abe0bb361f6a9466df7ab"
       },
-      "releaseSha": null,
-      "receipt": null,
-      "reason": null,
+      "releaseSha": "9ec6a1a247a05298158aff7902efb6aa9897c428",
+      "receipt": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0351-0355-v1/production-apply/batch-apply-receipt.json",
+        "sha256": "a2f1e09a61ca88338b007cd772f7f5cf6179a51a1947a155d4b53c5b7d326098"
+      },
+      "reason": "All three database after-images, approved seed entries, canonical and redirect APIs, and rendered production drawers verified; two terminal outcomes are durable.",
       "history": [
         {
           "sequence": 1,
@@ -6112,9 +6115,41 @@
             "44f817fab99cf55c7ec2ef846cc01c38e4123a60ee8abe0bb361f6a9466df7ab"
           ],
           "reason": null
+        },
+        {
+          "sequence": 4,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-09-01T17:27:00.000Z",
+          "evidenceSha256": [
+            "44f817fab99cf55c7ec2ef846cc01c38e4123a60ee8abe0bb361f6a9466df7ab"
+          ],
+          "reason": "Protected PR #839 merged and canonical Vercel production served the exact release SHA before the atomic workflow began."
+        },
+        {
+          "sequence": 5,
+          "from": "APPLYING",
+          "to": "VERIFYING",
+          "at": "2026-09-01T17:28:00.000Z",
+          "evidenceSha256": [
+            "44f817fab99cf55c7ec2ef846cc01c38e4123a60ee8abe0bb361f6a9466df7ab",
+            "a2f1e09a61ca88338b007cd772f7f5cf6179a51a1947a155d4b53c5b7d326098"
+          ],
+          "reason": "Atomic transaction committed with no partial application; seed parity, cache revalidation, and three detail APIs passed."
+        },
+        {
+          "sequence": 6,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-09-01T17:29:00.000Z",
+          "evidenceSha256": [
+            "44f817fab99cf55c7ec2ef846cc01c38e4123a60ee8abe0bb361f6a9466df7ab",
+            "a2f1e09a61ca88338b007cd772f7f5cf6179a51a1947a155d4b53c5b7d326098"
+          ],
+          "reason": "All three database after-images, approved seed entries, canonical and redirect APIs, and rendered production drawers verified; two terminal outcomes are durable."
         }
       ]
     }
   ],
-  "ledgerSha256": "921483fa978a0d62524b4b6d9a3b6cc4bc4d1d11203da0a4efe2393cb51d4599"
+  "ledgerSha256": "f547915a1ec83ab05340ee628d0cc269236b5d5936928fb6304af3ff11fc1cad"
 }
