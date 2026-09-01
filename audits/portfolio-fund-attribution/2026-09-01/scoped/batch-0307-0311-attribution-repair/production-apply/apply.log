@@ -1,0 +1,43 @@
+
+> infra-tracker@1.0.0 portfolio:fund-attribution:apply
+> npx tsx scripts/apply-portfolio-fund-attribution.ts --manifest=audits/portfolio-fund-attribution/2026-09-01/scoped/batch-0307-0311-attribution-repair/apply-manifest.json --manifest-sha256=f6f7d8d35538cc290e9a7280e90cf975cc14b74651000465846c24d14708e120 --production-snapshot=audits/portfolio-fund-attribution/2026-09-01/scoped/batch-0307-0311-attribution-repair/production-snapshot.json --approval=audits/portfolio-fund-attribution/2026-09-01/scoped/batch-0307-0311-attribution-repair/approval.json --approval-sha256=1ce2f791a2013ecd343261b3e9133f25cc0e4f12e192f21b2464f865ba22dfac --apply=true --write-token=APPLY_REVIEWED_PORTFOLIO_FUND_ATTRIBUTION --receipt=tmp/portfolio-fund-attribution/production/apply-receipt.json
+
+(node:2941) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_RECEIPT",
+  "manifestSha256": "f6f7d8d35538cc290e9a7280e90cf975cc14b74651000465846c24d14708e120",
+  "approvalSha256": "1ce2f791a2013ecd343261b3e9133f25cc0e4f12e192f21b2464f865ba22dfac",
+  "environment": "production",
+  "pipelineRunId": "cmtifsfsv00009p2bktm3a9c2",
+  "mutationCount": 1,
+  "changed": 1,
+  "idempotent": false,
+  "beforeFingerprint": "03941a4d8c64fe2a27dbc98fb6f2a2217d862b1d2871cd2a733a0fd14ddd9610",
+  "afterFingerprint": "4c74b3dc4f9d08f82115dbd292b57bfc3994360b80ab08e0fb78214f24a86569",
+  "rows": [
+    {
+      "recordId": "OFA-9F2026314F62",
+      "ownershipPeriodId": "cmtif7nn2001mx12b5hwgdpks",
+      "companyId": "cmrxpjiqj0128ivhepgbwb3mj",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Masdar completed the acquisition of a 50% Terra-Gen interest through its disclosed acquisition chain as a direct corporate investment; no external fund attribution applies."
+      }
+    }
+  ],
+  "appliedAt": "2026-09-01T09:00:10.332Z",
+  "receiptSha256": "7f42fb55c1975958733980a6384a6fe73486df41b4b14cedecb212ab1a3889ff"
+}
