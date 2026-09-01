@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-09-01",
+  "ledgerSha256": "afd64c2db35deb8a7065a9e8fe94235b0995973478152e7945a2f150c92b69dc",
+  "sourceSnapshotSha256": "37db265f894c67527e6b97ff34db5f86404aaa8ce7e0ba1a4c437e42a14282c7",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 1,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 0,
+      "UNRESOLVED": 1
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  },
+  "expectedMutationCount": 2,
+  "mutations": [
+    {
+      "recordId": "OFA-9728A2D40F9D",
+      "ownershipPeriodId": "cmrxpk4y9021eivheolgpxte4",
+      "companyName": "LiveOak Fiber",
+      "country": "United States",
+      "investmentFirm": "InfraRed Capital Partners",
+      "currentVehicleName": "InfraRed-managed value-add strategies; exact vehicle not publicly disclosed",
+      "databaseVehicleName": "InfraRed-managed value-add strategies; exact vehicle not publicly disclosed",
+      "investmentYear": 2022,
+      "stake": "Majority; exact percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "InfraRed directly states that its value-add strategies retain majority ownership, but the exact fund and legal investment vehicle are not publicly disclosed. The prior HICL attribution is retracted and no replacement fund is inferred."
+      },
+      "evidenceUrls": [
+        "https://www.ircp.com/news/infrared-partners-with-meag-on-liveoak-fiber-via-co-investment/",
+        "https://www.ircp.com/wp-content/uploads/2026/06/InfraRed-2026-Sustainability-Report.pdf"
+      ]
+    },
+    {
+      "recordId": "OFA-AA7F091385D2",
+      "ownershipPeriodId": "cmtihws3v0002sq2bn4gw12h4",
+      "companyName": "LiveOak Fiber",
+      "country": "United States",
+      "investmentFirm": "MEAG",
+      "currentVehicleName": "InfraRed LiveOak CIV LP",
+      "databaseVehicleName": "InfraRed LiveOak CIV LP",
+      "investmentYear": 2024,
+      "stake": "Minority; exact percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "InfraRed LiveOak CIV LP",
+        "attributionConfidence": null,
+        "attributionRationale": "InfraRed and MEAG disclose the 2024 minority co-investment through InfraRed LiveOak CIV LP. No matching published fund record or exact portfolio-company percentage is available."
+      },
+      "evidenceUrls": [
+        "https://www.ircp.com/news/infrared-partners-with-meag-on-liveoak-fiber-via-co-investment/"
+      ]
+    }
+  ],
+  "manifestSha256": "b51cad2690d901d7a8bf504d55c5a03d391cdc07a79d8c257b3612bd10c5294f"
+}
