@@ -1,0 +1,288 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0368:bruce-power:9c7e76e5",
+  "taskIndex": 368,
+  "companyName": "Bruce Power",
+  "generatedAt": "2026-09-01T18:56:15.425Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0368-bruce-power/attempt-1/locked-batch-v2-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 368,
+    "taskId": "ledger:0368:bruce-power:9c7e76e5",
+    "canonicalKey": "bruce-power|canada",
+    "companyName": "Bruce Power",
+    "country": "Canada",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 75,
+    "managers": [
+      "OMERS Infrastructure"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "075-omers-infrastructure:holding:004:bruce-power"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjm8e017oivhe1inhdhjr"
+    ],
+    "seedKeys": [
+      "bruce power|Canada"
+    ],
+    "evidenceUrls": [
+      "https://www.omersinfrastructure.com/investments/bruce-power"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_OWNER requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjm8e017oivhe1inhdhjr",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "bruce-power|canada",
+  "targetCompanyImage": {
+    "id": "cmrxpjm8e017oivhe1inhdhjr",
+    "name": "Bruce Power",
+    "aliases": [],
+    "sector": "UTILITIES",
+    "subsector": "Nuclear generation",
+    "region": "NORTH_AMERICA",
+    "country": "Canada",
+    "countryTags": [
+      "Canada"
+    ],
+    "description": "Bruce Power operates a multi-unit nuclear generating facility that supplies baseload electricity and medical isotopes. Its customers or end markets include the Ontario electricity system and isotope markets. The operating model is an asset-heavy regulated-style generation model under long-term contractual and market frameworks in Ontario. Operations are concentrated in Bruce County, Ontario. Public materials indicate peak output of about 6,550 MW and roughly 30% of Ontario’s electricity supply according to OMERS. Current ownership includes OMERS Infrastructure, which has publicly described its holding as approximately 50% and dates its investment to 2003.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Ontario",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk8lw0274ivhekizsvd72",
+        "managerName": "OMERS Infrastructure",
+        "organizationName": "OMERS",
+        "fundName": "OMERS Infrastructure",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2003,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmj5i04ziivheesqmjcd7",
+        "date": "2003",
+        "event": "OMERS made its initial investment in Bruce Power.",
+        "category": "FINANCING",
+        "sortDate": "2003-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmj6204zjivhe7aigv852",
+        "date": "2024",
+        "event": "Bruce Power produced approximately 30% of Ontario's electricity.",
+        "category": "EXPANSION",
+        "sortDate": "2024-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmj6l04zkivhe6rritd3v",
+        "date": "Dec 2025",
+        "event": "Bruce Power announced an additional $950 million green bond issue.",
+        "category": "FINANCING",
+        "sortDate": "2025-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmj7504zlivhevbatwu6v",
+        "date": "Feb 2026",
+        "event": "Ontario backed expansion of the Bruce Power isotopes partnership.",
+        "category": "EXPANSION",
+        "sortDate": "2026-02-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpshqm0cnxivhehngysoem",
+        "label": "Omers — Bruce Power",
+        "url": "https://www.omers.com/omers-community/son-bruce-power-record-investment-for-an-indigenous-nation",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Omers — Bruce Power",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpshrt0cnzivhebyi8zydc",
+        "label": "Omersinfrastructure — Bruce Power",
+        "url": "https://www.omersinfrastructure.com/news/omers-achieves-milestone-in-canadian-infrastructure-financing-with-bruce",
+        "sourceType": "ARTICLE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Omersinfrastructure financing or public filing",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpshst0co1ivhege68m0rm",
+        "label": "Omers — Bruce Power",
+        "url": "https://www.omers.com/omers-2025-annual-meeting-transcript",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Omers — Bruce Power",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpshtn0co3ivhersd19bhf",
+        "label": "Omers — Bruce Power",
+        "url": "https://www.omers.com/omers-2024-annual-report",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Omers — Bruce Power",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Bruce Power",
+    "investmentFirm": "OMERS",
+    "sector": "Utilities",
+    "subsector": "Nuclear generation",
+    "region": "North America",
+    "country": "Canada",
+    "ownershipVehicle": "n.a.",
+    "description": "Bruce Power operates a multi-unit nuclear generating facility that supplies baseload electricity and medical isotopes. Its customers or end markets include the Ontario electricity system and isotope markets. The operating model is an asset-heavy regulated-style generation model under long-term contractual and market frameworks in Ontario. Operations are concentrated in Bruce County, Ontario. Public materials indicate peak output of about 6,550 MW and roughly 30% of Ontario’s electricity supply according to OMERS. Current ownership includes OMERS Infrastructure, which has publicly described its holding as approximately 50% and dates its investment to 2003.",
+    "status": "Active",
+    "countryTags": [
+      "Canada"
+    ],
+    "investmentYear": 2003,
+    "headquarters": "Ontario",
+    "milestones": [
+      {
+        "date": "2003",
+        "event": "OMERS made its initial investment in Bruce Power.",
+        "category": "Financing"
+      },
+      {
+        "date": "2024",
+        "event": "Bruce Power produced approximately 30% of Ontario's electricity.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Dec 2025",
+        "event": "Bruce Power announced an additional $950 million green bond issue.",
+        "category": "Financing"
+      },
+      {
+        "date": "Feb 2026",
+        "event": "Ontario backed expansion of the Bruce Power isotopes partnership.",
+        "category": "Expansion"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Omers — Bruce Power",
+        "url": "https://www.omers.com/omers-community/son-bruce-power-record-investment-for-an-indigenous-nation",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Omersinfrastructure — Bruce Power",
+        "url": "https://www.omersinfrastructure.com/news/omers-achieves-milestone-in-canadian-infrastructure-financing-with-bruce",
+        "type": "ARTICLE",
+        "purpose": "FINANCING_FILINGS"
+      },
+      {
+        "label": "Omers — Bruce Power",
+        "url": "https://www.omers.com/omers-2025-annual-meeting-transcript",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Omers — Bruce Power",
+        "url": "https://www.omers.com/omers-2024-annual-report",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "OMERS",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2003,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj3fm00f1ivhehhc270qc",
+        "fundName": "OMERS Infrastructure",
+        "managerId": "cmrxpic6e0033ivheho9lmsp6",
+        "updatedAt": "2026-07-23T16:09:58.306Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpic6e0033ivheho9lmsp6",
+        "name": "OMERS Infrastructure",
+        "updatedAt": "2026-07-23T16:09:22.983Z"
+      },
+      {
+        "id": "cmrxpij0a0058ivhemf1et807",
+        "name": "OMERS",
+        "updatedAt": "2026-07-23T16:09:31.834Z"
+      },
+      {
+        "id": "cmt5so1kc00112oyyjbytpdlt",
+        "name": "TC Energy Corporation",
+        "updatedAt": "2026-08-23T12:39:39.756Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0368:bruce-power:9c7e76e5",
+    "taskIndex": 368,
+    "canonicalKey": "bruce-power|canada",
+    "capturedAt": "2026-09-01T18:56:15.425Z",
+    "databaseRevision": "revision:8fa400571f3ad3d6d05c090f440a2117697cd45c2d9d4c97546d68d66e55f5fe",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "053e97f3eca110333d6468922635d95a0b9dcd36ba9895bced13d547e61efdec",
+    "productionSnapshotSha256": "03198c3d82de9da6a3e186073dfe0c8735f943d42c5aac736e5450f95d349db3",
+    "targetCompanySnapshotSha256": "359e362318ae290f2d68cf226b40df5388a2861af95563a360cfa11628985ea2",
+    "seedEntrySha256": "48f2dee7ad544faf5f6b1561e4e9b3d387ad1345f2a932c464e02f5ebaf5e860",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "30aa3079d86a835cc93d5fa32d7cb059650da08d4069a5fcc8b0ff7fc08dd169",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "fac4fa7335c127e73abe52490df9652aca3bb882b516d47a38d8dfc92ad1e3f0",
+      "organizationsSha256": "46932e5bee6037e427d58b53af5fd4a3b24efe830239ca03890ac6f2564b3c56",
+      "citationsSha256": "b70a01588215a7f9a2ac00caef2c4ccacede9cfeeca644300f80b9bb05a6a358",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "38f0883d6732d050406530c86562276005a3d5dcb8748eaabc2c5078df650bdb",
+    "stateSha256": "b7fd8fc57f1663ba0031a47a335917d722115d7702a96e4683ab9307f33ac2b4",
+    "taskSnapshotSha256": "749164203926018f26d43562cec15bc34a5dcedeb08a306872ccdd0b907812d0"
+  },
+  "contextSha256": "f4f2651af79229608e7eb0691ae51965e29d9d0080795be1d403e7814a35e21c"
+}

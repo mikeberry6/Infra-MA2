@@ -1,0 +1,365 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0370:leeward-renewable-energy:acc199f8",
+  "taskIndex": 370,
+  "asOfDate": "2026-09-01",
+  "generatedAt": "2026-09-01T19:00:00.000Z",
+  "canonicalKey": "leeward-renewable-energy|united-states",
+  "companyName": "Leeward Renewable Energy",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER"
+  ],
+  "sourceHoldingIds": [
+    "075-omers-infrastructure:holding:008:leeward-renewable-energy"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Keep one Leeward Renewable Energy platform and reject the queued duplicate OMERS owner addition. Correct the current OMERS period to the September 6, 2018 close at 100% through Commodore US Holding Corporation and add ArcLight Energy Partners Fund VI as the former owner from October 28, 2015 to closing. No signed or closed outcome was found for the reported 2024 minority-stake process.",
+  "evidence": [
+    {
+      "url": "https://www.omersinfrastructure.com/investments/leeward",
+      "purpose": "Current OMERS ownership and operating scale.",
+      "supports": [
+        "OMERS continues to list Leeward as a current investment.",
+        "Leeward operates more than 4 GW across more than 30 projects."
+      ]
+    },
+    {
+      "url": "https://www.prnewswire.com/news-releases/arclight-capital-partners-announces-closing-of-transaction-to-acquire-infigen-energys-us-assets-300168337.html",
+      "purpose": "ArcLight platform formation and entry.",
+      "supports": [
+        "ArcLight closed the acquisition of Infigen's U.S. assets on October 28, 2015.",
+        "The acquired business became the Leeward platform."
+      ]
+    },
+    {
+      "url": "https://dms.psc.sc.gov/Attachments/Matter/939f3f5a-d0ed-4732-a2f6-b52089f84011",
+      "purpose": "Current 100% OMERS ownership chain.",
+      "supports": [
+        "Commodore US Holding Corporation is Leeward's parent.",
+        "OMERS Administration Corporation is the ultimate owner."
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "1c6f3f3705629ed643c12bbe9a7bcf9b28963d5e9fd0cbf4c1c0549bc9ebc392",
+  "currentCompanySnapshotSha256": "408c021898eadbc625a71301c5ccaa9de17adc6fa1d81a310d9b4863c4a082db",
+  "executionLock": {
+    "taskSnapshotSha256": "8bd86944ce71f0b02b59a24a774afc5d8eb1bf69b36602c19db556befebf2f87",
+    "taskStateSha256": "93ce46aaa757db93a61078fc953283e493b956e31b49f7eb0b27e1f904d185d5",
+    "taskDependencySha256": "b19432bb13874044f3034552f206d4e03a2ff70359e90427658879d4f4aa2e7b",
+    "seedEntrySha256": "0c40ded347cbfbd6f33f63554fe94179f98cb97cce56aeddbccc2047cccb8c46",
+    "dependencies": {
+      "ownershipPeriodsSha256": "a208817f9a1734374372e0e9d1b9367d3fa4a245fde4f15fa63642bfe0980c41",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "a8cd4aff043c7f32dd57eeccba901a8fdcc6874e620b929bcf60a7903064d628",
+      "organizationsSha256": "9bf5a38a26e01ede53ccb2c8075dede1d2e384634f7d0984c93242b28ffc2279",
+      "citationsSha256": "e0c0eec9777b1700ab1c10f9a113f14bdb878dfffa16c10f5d994a50ce2296cf",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj3fm00f1ivhehhc270qc",
+        "fundName": "OMERS Infrastructure",
+        "managerId": "cmrxpic6e0033ivheho9lmsp6",
+        "updatedAt": "2026-07-23T16:09:58.306Z"
+      },
+      {
+        "id": "cmsdi3oz600317h4s25n36p6m",
+        "fundName": "ArcLight Energy Partners Fund VI, L.P.",
+        "managerId": "cmrxpi435000kivhegfx84axs",
+        "updatedAt": "2026-08-03T17:26:21.234Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi435000kivhegfx84axs",
+        "name": "ArcLight Capital Partners",
+        "updatedAt": "2026-07-23T16:09:12.497Z"
+      },
+      {
+        "id": "cmrxpic6e0033ivheho9lmsp6",
+        "name": "OMERS Infrastructure",
+        "updatedAt": "2026-07-23T16:09:22.983Z"
+      },
+      {
+        "id": "cmrxpij0a0058ivhemf1et807",
+        "name": "OMERS",
+        "updatedAt": "2026-07-23T16:09:31.834Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjm8v017pivhepl8l8kkk",
+    "name": "Leeward Renewable Energy",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Utility-scale wind, solar, and storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Leeward Renewable Energy develops, owns, and operates utility-scale wind, solar, and energy storage assets across the United States. Its customers or end markets include utilities, corporates, and wholesale power markets contracting for renewable generation and storage capacity. The operating model is a development-to-ownership model supported by project-level financing and long-term power offtake structures. Operations are concentrated in multiple U.S. states. Public materials indicate an operating portfolio of roughly 4 GW according to current company materials. Current ownership dates to OMERS Infrastructure’s acquisition of the business from ArcLight in 2018.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Multi-state United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk8me0275ivhe9of0b23y",
+        "managerName": "OMERS Infrastructure",
+        "organizationName": "OMERS",
+        "fundName": "OMERS Infrastructure",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2018,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmjap04zmivhe9lg6by3d",
+        "date": "2018",
+        "event": "Leeward became an OMERS Infrastructure portfolio company.",
+        "category": "ACQUISITION",
+        "sortDate": "2018-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmjb904znivhehvs3x50v",
+        "date": "Mar 2018",
+        "event": "OMERS Infrastructure announced an agreement to acquire Leeward Renewable Energy from ArcLight.",
+        "category": "ACQUISITION",
+        "sortDate": "2018-03-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmjbs04zoivhebsybdeju",
+        "date": "Apr 2021",
+        "event": "Leeward completed the acquisition of First Solar’s U.S. development platform.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-04-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpshul0co5ivhe5cswlwtr",
+        "label": "Announcement date source — OMERS — Leeward Renewable Energy",
+        "url": "https://www.omers.com/news/omers-infrastructure-announces-agreement-to-acquire-leeward-renewable-energy",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "OMERS transaction announcement",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpshvi0co7ivhezpfgts3u",
+        "label": "Omersinfrastructure — Leeward Renewable Energy",
+        "url": "https://www.omersinfrastructure.com/news/leeward-renewable-energy-completes-acquisition-of-solar-development-platform",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Omersinfrastructure transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpshwp0co9ivhev3m447gj",
+        "label": "Lreus — Leeward Renewable Energy",
+        "url": "https://www.lreus.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Lreus company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpshxm0cobivhefnqfo1r5",
+        "label": "SEC — Leeward Renewable Energy",
+        "url": "https://www.sec.gov/Archives/edgar/data/1274494/000162828021000753/a8-kex991pressreleasejan21.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "SEC filing",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "408c021898eadbc625a71301c5ccaa9de17adc6fa1d81a310d9b4863c4a082db",
+  "afterImage": {
+    "id": "cmrxpjm8v017pivhepl8l8kkk",
+    "name": "Leeward Renewable Energy",
+    "aliases": [
+      "Leeward Renewable Energy, LLC",
+      "LRE"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Utility-scale wind, solar, and storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Leeward Renewable Energy is a Dallas-based U.S. utility-scale wind, solar and battery-storage owner, developer and operator with more than 4 GW operating across more than 30 projects and a development pipeline exceeding 30 GW. ArcLight formed the platform around Infigen's U.S. business in 2015 and sold it to OMERS at the September 6, 2018 close. OMERS remains the sole current owner through Commodore US Holding Corporation. No signed or closed platform ownership change was identified through September 1, 2026. Development, operating and project SPVs, tax-equity investors, lenders, asset acquisitions and joint-development arrangements remain beneath the single Leeward platform boundary.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.lreus.com/",
+    "yearFounded": 2015,
+    "headquarters": "Dallas, Texas, United States",
+    "lastVerifiedAt": "2026-09-01T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk8me0275ivhe9of0b23y",
+        "managerName": "OMERS Infrastructure",
+        "organizationName": "OMERS",
+        "fundName": "OMERS Infrastructure",
+        "vehicleName": "Hamilton Infrastructure Trust / Commodore US Holding Corporation",
+        "stake": "100% through Commodore US Holding Corporation",
+        "investmentYear": 2018,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "ArcLight Capital Partners",
+        "organizationName": "ArcLight Capital Partners",
+        "fundName": "ArcLight Energy Partners Fund VI, L.P.",
+        "vehicleName": null,
+        "stake": "Control investment; exact percentage not publicly disclosed",
+        "investmentYear": 2015,
+        "exitYear": 2018,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmjap04zmivhe9lg6by3d",
+        "date": "Sep 6, 2018",
+        "event": "OMERS completed its acquisition of Leeward Renewable Energy from ArcLight, becoming the platform's sole owner.",
+        "category": "FINANCING",
+        "sortDate": "2018-09-06T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.omersinfrastructure.com/investments/leeward"
+        ]
+      },
+      {
+        "id": "cmrxpmjb904znivhehvs3x50v",
+        "date": "Mar 22, 2018",
+        "event": "OMERS announced an agreement to acquire Leeward Renewable Energy from ArcLight affiliates.",
+        "category": "ACQUISITION",
+        "sortDate": "2018-03-22T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.omersinfrastructure.com/news/omers-infrastructure-announces-agreement-to-acquire-leeward-renewable-energy"
+        ]
+      },
+      {
+        "id": "cmrxpmjbs04zoivhebsybdeju",
+        "date": "Mar 31, 2021",
+        "event": "Leeward completed the acquisition of First Solar's approximately 10 GWac U.S. development platform without changing Leeward's ownership.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-03-31T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1274494/000162828021000753/a8-kex991pressreleasejan21.htm"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpshul0co5ivhe5cswlwtr",
+        "label": "Announcement date source — OMERS — Leeward Renewable Energy",
+        "url": "https://www.omers.com/news/omers-infrastructure-announces-agreement-to-acquire-leeward-renewable-energy",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "OMERS transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpshvi0co7ivhezpfgts3u",
+        "label": "Omersinfrastructure — Leeward Renewable Energy",
+        "url": "https://www.omersinfrastructure.com/news/leeward-renewable-energy-completes-acquisition-of-solar-development-platform",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Omersinfrastructure transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpshwp0co9ivhev3m447gj",
+        "label": "Lreus — Leeward Renewable Energy",
+        "url": "https://www.lreus.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Lreus company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpshxm0cobivhefnqfo1r5",
+        "label": "SEC — Leeward Renewable Energy",
+        "url": "https://www.sec.gov/Archives/edgar/data/1274494/000162828021000753/a8-kex991pressreleasejan21.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "SEC filing",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "OMERS Infrastructure — Leeward Renewable Energy",
+        "url": "https://www.omersinfrastructure.com/investments/leeward",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current OMERS portfolio status, 2018 investment year and operating scale",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "OMERS Infrastructure — Leeward acquisition agreement",
+        "url": "https://www.omersinfrastructure.com/news/omers-infrastructure-announces-agreement-to-acquire-leeward-renewable-energy",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "March 22, 2018 signing and ArcLight seller",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "ArcLight — Infigen U.S. assets acquisition closing",
+        "url": "https://www.prnewswire.com/news-releases/arclight-capital-partners-announces-closing-of-transaction-to-acquire-infigen-energys-us-assets-300168337.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "October 28, 2015 ArcLight entry and Leeward platform formation",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "FERC Form 556 — Leeward ownership chain",
+        "url": "https://dms.psc.sc.gov/Attachments/Matter/939f3f5a-d0ed-4732-a2f6-b52089f84011",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "100% Leeward-Commodore-OMERS ownership chain",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Leeward Renewable Energy — Investors",
+        "url": "https://www.lreus.com/partner-with-us/investors/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Legal identity, headquarters and development scale",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "458011b25aaa8dc63c0cb29cfdbb748daa8f648f3102ca216a5068e7d57d5fb5",
+  "proposalSha256": "e70e12855b8198b39398487ab377b0cb428ef2402f5dcc0ee8c9023308024576"
+}

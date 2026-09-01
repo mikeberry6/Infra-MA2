@@ -1,0 +1,217 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_SEED_ATTRIBUTION_RECONCILIATION_SPEC",
+  "batchId": "batch-0367-0372-v1",
+  "batchSha256": "35247ebc4df64caf16dbc2b71873436ef99d45782d54f845afd158395e222ea7",
+  "reconciledAt": "2026-09-01T19:08:45.000Z",
+  "sourceManifestSha256": "80e61b50d4caf263e3a3d5fcfade86c78f45c3bc1f0d61ab893199aba6056ecd",
+  "rationale": "Align the active-owner attribution ledger with the approved five-company after-images. Replace legacy inferred OMERS placeholders with directly evidenced program and holding-vehicle records, add every disclosed current co-owner, preserve only active ownership periods, and avoid assigning a curated fund where the public evidence identifies only a corporate or legal holding vehicle.",
+  "removeRecordIds": [],
+  "upsertRecords": [
+    {
+      "recordId": "OFA-F0A043893E8E",
+      "companyName": "I-595 Express, LLC",
+      "country": "United States",
+      "investmentFirm": "Nuveen Infrastructure",
+      "currentVehicleName": "TIAA General Account / I 595 Toll Road, LLC",
+      "investmentYear": 2011,
+      "stake": "87.5%",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "TIAA General Account / I 595 Toll Road, LLC",
+      "attributionConfidence": null,
+      "attributionRationale": "The concessionaire page, TIAA ownership filing and ACS closing release identify TIAA's current 87.5% interest through the TIAA General Account and I 595 Toll Road, LLC; no narrower curated fund is disclosed.",
+      "evidenceUrls": [
+        "https://www.i595express.com/about.php",
+        "https://documents.nuveen.com/Documents/Nuveen/Viewer.aspx?uniqueId=5e020f65-f797-4b0c-9598-9d3ea00b2625",
+        "https://pressroom.grupoacs.com/en/news/acs-group-completes-partial-sale-of-i-595-highway-project-in-florida"
+      ]
+    },
+    {
+      "recordId": "OFA-1B79030F99AD",
+      "companyName": "I-595 Express, LLC",
+      "country": "United States",
+      "investmentFirm": "ACS / Iridium",
+      "currentVehicleName": "ACS Infrastructure Development, Inc.",
+      "investmentYear": 2009,
+      "stake": "12.5%",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "ACS Infrastructure Development, Inc.",
+      "attributionConfidence": null,
+      "attributionRationale": "The concessionaire page and ACS closing release identify ACS/Iridium's retained 12.5% interest through ACS Infrastructure Development, Inc.; no fund attribution is inferred.",
+      "evidenceUrls": [
+        "https://www.i595express.com/about.php",
+        "https://pressroom.grupoacs.com/en/news/acs-group-completes-partial-sale-of-i-595-highway-project-in-florida"
+      ]
+    },
+    {
+      "recordId": "OFA-E5D7901A799D",
+      "companyName": "Bruce Power",
+      "country": "Canada",
+      "investmentFirm": "OMERS",
+      "currentVehicleName": "BPC Generation Infrastructure Trust",
+      "investmentYear": 2003,
+      "stake": "48.26%",
+      "targetLinkedFundName": "OMERS Infrastructure",
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "OMERS Infrastructure",
+      "attributionConfidence": null,
+      "attributionRationale": "Bruce Power identifies OMERS as a current partner, DBRS discloses the 48.26% interest, and OMERS Infrastructure evidence supports the current program attribution and BPC Generation Infrastructure Trust holding vehicle.",
+      "evidenceUrls": [
+        "https://www.brucepower.com/about-us/",
+        "https://dbrs.morningstar.com/issuers/21946/bruce-power-lp",
+        "https://www.omersinfrastructure.com/news/omers-achieves-milestone-in-canadian-infrastructure-financing-with-bruce"
+      ]
+    },
+    {
+      "recordId": "OFA-C84C7DF7BEFF",
+      "companyName": "Bruce Power",
+      "country": "Canada",
+      "investmentFirm": "TC Energy Corporation",
+      "currentVehicleName": "TransCanada Energy Investments Ltd. lineage",
+      "investmentYear": 2003,
+      "stake": "48.26%",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "TransCanada Energy Investments Ltd. lineage",
+      "attributionConfidence": null,
+      "attributionRationale": "Bruce Power and DBRS identify TC Energy's current 48.26% interest; the approved ownership record preserves the disclosed TransCanada Energy Investments lineage without a fund link.",
+      "evidenceUrls": [
+        "https://www.brucepower.com/about-us/",
+        "https://dbrs.morningstar.com/issuers/21946/bruce-power-lp",
+        "https://www.sec.gov/Archives/edgar/data/1009001/000113031905000179/o15894exv1.htm"
+      ]
+    },
+    {
+      "recordId": "OFA-3487E9B27A00",
+      "companyName": "Bruce Power",
+      "country": "Canada",
+      "investmentFirm": "Power Workers' Union",
+      "currentVehicleName": "PWU Trust No. 1 lineage",
+      "investmentYear": 2001,
+      "stake": "2.22%",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "PWU Trust No. 1 lineage",
+      "attributionConfidence": null,
+      "attributionRationale": "Bruce Power and DBRS identify the Power Workers' Union as a current partner with a 2.22% interest through the PWU trust lineage; no fund link applies.",
+      "evidenceUrls": [
+        "https://www.brucepower.com/about-us/",
+        "https://dbrs.morningstar.com/issuers/21946/bruce-power-lp"
+      ]
+    },
+    {
+      "recordId": "OFA-2446BC4EA633",
+      "companyName": "Bruce Power",
+      "country": "Canada",
+      "investmentFirm": "Society/Employees/BPI",
+      "currentVehicleName": "Society trust, employee investment trust and Bruce Power Inc. general-partner interests",
+      "investmentYear": 2001,
+      "stake": "1.26% aggregate; component splits are not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Society trust, employee investment trust and Bruce Power Inc. general-partner interests",
+      "attributionConfidence": null,
+      "attributionRationale": "Bruce Power and DBRS support the aggregate current interests held through the Society trust, employee investment trust and Bruce Power Inc. general-partner structure; component percentages remain undisclosed.",
+      "evidenceUrls": [
+        "https://www.brucepower.com/about-us/",
+        "https://dbrs.morningstar.com/issuers/21946/bruce-power-lp"
+      ]
+    },
+    {
+      "recordId": "OFA-A1A39FB4B384",
+      "companyName": "Leeward Renewable Energy",
+      "country": "United States",
+      "investmentFirm": "OMERS",
+      "currentVehicleName": "Hamilton Infrastructure Trust / Commodore US Holding Corporation",
+      "investmentYear": 2018,
+      "stake": "100% through Commodore US Holding Corporation",
+      "targetLinkedFundName": "OMERS Infrastructure",
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "OMERS Infrastructure",
+      "attributionConfidence": null,
+      "attributionRationale": "OMERS Infrastructure's current portfolio page, acquisition evidence and FERC ownership disclosure support the 100% interest and Hamilton/Commodore holding chain.",
+      "evidenceUrls": [
+        "https://www.omersinfrastructure.com/investments/leeward",
+        "https://www.omersinfrastructure.com/news/omers-infrastructure-announces-agreement-to-acquire-leeward-renewable-energy",
+        "https://dms.psc.sc.gov/Attachments/Matter/939f3f5a-d0ed-4732-a2f6-b52089f84011"
+      ]
+    },
+    {
+      "recordId": "OFA-B1F8C14A2ED5",
+      "companyName": "Navisun LLC",
+      "country": "United States",
+      "investmentFirm": "OMERS",
+      "currentVehicleName": "Magnet Acquisition Holdings Corporation / Magnet US Acquisition Corporation",
+      "investmentYear": 2022,
+      "stake": "100%",
+      "targetLinkedFundName": "OMERS Infrastructure",
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "OMERS Infrastructure",
+      "attributionConfidence": null,
+      "attributionRationale": "OMERS Infrastructure's current portfolio page and the filed ownership disclosure support its 100% interest through the Magnet acquisition entities following the January 2022 close.",
+      "evidenceUrls": [
+        "https://www.omersinfrastructure.com/investments/navisun",
+        "https://interchange.puc.texas.gov/Documents/54941_631_1559824.PDF",
+        "https://www.omersinfrastructure.com/news/omers-infrastructure-signs-agreement-with-ares-management-to-acquire-100-of"
+      ]
+    },
+    {
+      "recordId": "OFA-33F884FC5EB0",
+      "companyName": "Northstar New Jersey Lottery Group, LLC",
+      "country": "United States",
+      "investmentFirm": "OMERS",
+      "currentVehicleName": "OSI LTT NJ Grantor Trust / Northstar New Jersey Holding Company",
+      "investmentYear": 2013,
+      "stake": "Residual HoldCo interest; 6.696% is implied by audited 2025 ownership data",
+      "targetLinkedFundName": "OMERS Infrastructure",
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "OMERS Infrastructure",
+      "attributionConfidence": null,
+      "attributionRationale": "OMERS Infrastructure continues to list Northstar as a current investment, while Brightstar's audited 2025 ownership data imply a 6.696% residual consortium interest held through the OSI trust and Northstar holding company.",
+      "evidenceUrls": [
+        "https://www.omersinfrastructure.com/investments/northstar-new-jersey-lottery",
+        "https://www.sec.gov/Archives/edgar/data/1619762/000162828026018232/a2025ukreportsandaccount.htm",
+        "https://www.jonesday.com/en/practices/experience/2013/06/omers-enters-consortium-for-15-year-concession-with-state-of-new-jersey-to-run-new-jersey-lottery"
+      ]
+    },
+    {
+      "recordId": "OFA-4432E7E387BA",
+      "companyName": "Northstar New Jersey Lottery Group, LLC",
+      "country": "United States",
+      "investmentFirm": "Brightstar Global Solutions Corp.",
+      "currentVehicleName": "Northstar New Jersey Holding Company, LLC",
+      "investmentYear": 2013,
+      "stake": "65.304% effective at December 31, 2025",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Northstar New Jersey Holding Company, LLC",
+      "attributionConfidence": null,
+      "attributionRationale": "Brightstar's audited 2025 annual report discloses its 65.304% effective interest through Northstar New Jersey Holding Company, LLC; no infrastructure fund attribution applies.",
+      "evidenceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/1619762/000162828026018232/a2025ukreportsandaccount.htm",
+        "https://www.scientificgames.com/news/media-releases/scientific-games-joint-venture-signs-services-agreement-with-new-jersey-lottery/"
+      ]
+    },
+    {
+      "recordId": "OFA-1DEC2B2A9B8B",
+      "companyName": "Northstar New Jersey Lottery Group, LLC",
+      "country": "United States",
+      "investmentFirm": "Brookfield",
+      "currentVehicleName": "BCP Acquisitions LLC / Scientific Games New Jersey, LLC",
+      "investmentYear": 2022,
+      "stake": "28% held by Scientific Games New Jersey; Brookfield Business Partners' disclosed look-through is 9.24%",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "BCP Acquisitions LLC / Scientific Games New Jersey, LLC",
+      "attributionConfidence": null,
+      "attributionRationale": "Brightstar's audited ownership data and Scientific Games' 2022 sale closing identify the 28% Northstar interest now held through the Brookfield-sponsored BCP Acquisitions and Scientific Games New Jersey structure.",
+      "evidenceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/1619762/000162828026018232/a2025ukreportsandaccount.htm",
+        "https://www.scientificgames.com/news/media-releases/scientific-games-celebrates-sale-to-brookfield/"
+      ]
+    }
+  ],
+  "specSha256": "847536641a56a04981f9f26e3a3bac0ad74e9bbc5faf2df8e35282afa0d9c319"
+}

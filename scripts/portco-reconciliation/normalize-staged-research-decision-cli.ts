@@ -136,7 +136,8 @@ async function main(): Promise<void> {
   const stagedConfidence = typeof source.confidence === "string" ? source.confidence : null;
   const confidenceMatches = acceptedConfidence !== null && stagedConfidence !== null
     && (acceptedConfidence === stagedConfidence
-      || stagedConfidence.startsWith(`${acceptedConfidence}_`));
+      || stagedConfidence.startsWith(`${acceptedConfidence}_`)
+      || stagedConfidence.startsWith(`${acceptedConfidence};`));
   if (!confidenceMatches) {
     throw new Error("Accepted research confidence disagrees with the staged summary");
   }
