@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-01T20:55:00.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-09-01T21:45:00.000Z",
+  "activeBatchId": "batch-0384-0388-v1",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -6614,7 +6614,55 @@
           "reason": "Exact release SHA, atomic database after-images, seed parity, detail APIs, ownership history, and all five rendered production drawers verified; no partial application."
         }
       ]
+    },
+    {
+      "batchId": "batch-0384-0388-v1",
+      "state": "READY",
+      "taskIds": [
+        "ledger:0384:407-international-inc:e9ed737e",
+        "ledger:0385:aep-indiana-michigan-transmission-company:45ae9c1c",
+        "ledger:0386:aep-ohio-transmission-company:b61a164a",
+        "ledger:0387:aerostar-airport-holdings-luis-munoz-marin-airport:289dd4e3",
+        "ledger:0388:firstlight-usa-llc:61bc946d"
+      ],
+      "taskIndexes": [
+        384,
+        385,
+        386,
+        387,
+        388
+      ],
+      "createdAt": "2026-09-01T21:05:00.000Z",
+      "updatedAt": "2026-09-01T21:45:00.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0384-0388-v1/batch-manifest-v3.json",
+        "sha256": "a12063436d8b013c30f67716f9a414f6977b8d68a94254bf56c6d0d5f419973c"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-09-01T21:05:00.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-09-01T21:45:00.000Z",
+          "evidenceSha256": [
+            "a12063436d8b013c30f67716f9a414f6977b8d68a94254bf56c6d0d5f419973c"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "aaf4a746a01626d540c016eaeac1c91e92fb1303612fc8dd3e95e8c7ac4c9461"
+  "ledgerSha256": "2db79d242e9b77ffc2efcbaf0c1a05c650d61a28670a4b0a1698e681eb239a0e"
 }

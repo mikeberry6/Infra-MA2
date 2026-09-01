@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0385:aep-indiana-michigan-transmission-company:45ae9c1c",
+  "taskIndex": 385,
+  "companyName": "AEP Indiana Michigan Transmission Company",
+  "generatedAt": "2026-09-01T21:11:58.436Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0385-aep-indiana-michigan-transmission-company/attempt-1/locked-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 385,
+    "taskId": "ledger:0385:aep-indiana-michigan-transmission-company:45ae9c1c",
+    "canonicalKey": "aep-indiana-michigan-transmission-company|united-states",
+    "companyName": "AEP Indiana Michigan Transmission Company",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 81,
+    "managers": [
+      "PSP Investments"
+    ],
+    "actionScopes": {
+      "company": [
+        "CREATE_COMPANY"
+      ],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "081-psp-investments:holding:003:aep-indiana-michigan-transmission-company"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://www.aep.com/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "No exact normalized production or seed match exists. Census evidence supports a new canonical company with 1 manager holding record(s).",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "aep-indiana-michigan-transmission-company|united-states",
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpiay4002pivhed6sjuu9i",
+        "name": "KKR",
+        "updatedAt": "2026-07-23T16:09:21.388Z"
+      },
+      {
+        "id": "cmrxpih6o004oivhejmzw2gfv",
+        "name": "PSP Investments",
+        "updatedAt": "2026-07-23T16:09:29.472Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0385:aep-indiana-michigan-transmission-company:45ae9c1c",
+    "taskIndex": 385,
+    "canonicalKey": "aep-indiana-michigan-transmission-company|united-states",
+    "capturedAt": "2026-09-01T21:11:58.436Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "dafb2f2241188fded77cd2f506e563cab0bfd7776d4eaeee36cca65593350e0d",
+    "productionSnapshotSha256": "45b79a0756fe63dc7f4498ab02ad9e2a92e8c9b72893b564bb883ef8a9121509",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "81cda25b29a081af48c903659025d76b68356678d605af2667cab0282a095da7",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "a76106f0130bbad4141e3c011dec166b23f318c7748896f48c49e99e36c4e98f",
+    "stateSha256": "d838db2474e991db0411ef4856cfd2c513e29f3c53f1c3ae16c25e07c3b31607",
+    "taskSnapshotSha256": "95c2a780dab64c48d051e574083c97af785397fce0d5c40d5748d4c9c92881b2"
+  },
+  "contextSha256": "517ad213db4503ceca643ef24ac1edfdec7e737843df6ca31e33ee84050f52d5"
+}

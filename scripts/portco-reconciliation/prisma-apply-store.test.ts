@@ -123,5 +123,8 @@ describe("approved ownership organization provisioning", () => {
     expect(ownershipOrganizationTypes("Kohlberg")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("OMERS Private Equity")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("Leonard Green")).toEqual(["FUND_MANAGER"]);
+    expect(ownershipOrganizationTypes("AtkinsRéalis")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("American Electric Power")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("Grupo Aeroportuario del Sureste")).toEqual(["CORPORATE"]);
   });
 });

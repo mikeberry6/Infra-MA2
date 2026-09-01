@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0388:firstlight-usa-llc:61bc946d",
+  "taskIndex": 388,
+  "companyName": "FirstLight USA, LLC",
+  "generatedAt": "2026-09-01T21:19:23.862Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0388-firstlight-usa-llc/attempt-1/observed-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 388,
+    "taskId": "ledger:0388:firstlight-usa-llc:61bc946d",
+    "canonicalKey": "firstlight-usa-llc|united-states",
+    "companyName": "FirstLight USA, LLC",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 81,
+    "managers": [
+      "PSP Investments"
+    ],
+    "actionScopes": {
+      "company": [
+        "CORRECT_COMPANY",
+        "CREATE_COMPANY"
+      ],
+      "ownership": [
+        "ADD_PENDING_TRANSACTION"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "081-psp-investments:holding:007:firstlight-usa-llc"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://www.investpsp.com/en/news/psp-investments-announces-sale-of-firstlights-us-portfolio-to-hull-street-energy"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "No exact normalized production or seed match exists. Census evidence supports a new canonical company with 1 manager holding record(s).",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "firstlight-usa-llc|united-states",
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi79j001jivhe2rmjalkq",
+        "name": "Energy Capital Partners",
+        "updatedAt": "2026-07-23T16:09:16.615Z"
+      },
+      {
+        "id": "cmrxpih6o004oivhejmzw2gfv",
+        "name": "PSP Investments",
+        "updatedAt": "2026-07-23T16:09:29.472Z"
+      },
+      {
+        "id": "cmtehg176000msm2bbos0mcgi",
+        "name": "ENGIE",
+        "updatedAt": "2026-08-29T14:35:25.842Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0388:firstlight-usa-llc:61bc946d",
+    "taskIndex": 388,
+    "canonicalKey": "firstlight-usa-llc|united-states",
+    "capturedAt": "2026-09-01T21:19:23.862Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "a8f35f9e06e49cc86f02d5f48bec52f46862de9595f4044ef20e15edf16d1d3b",
+    "productionSnapshotSha256": "a39edd734f4198f41cb832a2493af86e73cd0be5b66c47af1aa2a64ed003bdf0",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "39921c6ead6ae1f769a18bacbec00a22298982e11ce435044243c40c97f6a312",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "f74e24cd7d7c5f8b84821c2ea86ce17af16475b281490a984526e070ce1cf659",
+    "stateSha256": "c760f9ea8069c17b05d5fd65bdcece8a8c9cb976fe99f5ed8cf015804cf7fc7d",
+    "taskSnapshotSha256": "830cf4ad0e4560edab1c1b43f9e8c695c9622969744f9aa2fd092ff13447741e"
+  },
+  "contextSha256": "376e65af59e20483af163c51ad8d6aa49414418f2ba4e73938c8d3feaa70ed20"
+}

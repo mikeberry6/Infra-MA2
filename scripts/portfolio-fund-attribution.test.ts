@@ -26,7 +26,7 @@ describe("portfolio fund attribution ledger", () => {
 
   it("leaves reviewed owners unresolved when the current vehicle is not a disclosed fund", () => {
     const unresolved = ledger.rows.filter((row) => row.attribution === "UNRESOLVED");
-    expect(unresolved).toHaveLength(57);
+    expect(unresolved).toHaveLength(60);
     expect(unresolved).toContainEqual(expect.objectContaining({
       companyName: "Potters Industries, LLC",
       investmentFirm: "UniSuper",

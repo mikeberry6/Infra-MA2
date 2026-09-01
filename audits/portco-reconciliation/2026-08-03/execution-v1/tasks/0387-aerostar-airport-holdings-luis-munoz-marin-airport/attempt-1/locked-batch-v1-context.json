@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0387:aerostar-airport-holdings-luis-munoz-marin-airport:289dd4e3",
+  "taskIndex": 387,
+  "companyName": "Aerostar Airport Holdings (Luis Muñoz Marín Airport)",
+  "generatedAt": "2026-09-01T21:12:02.251Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0387-aerostar-airport-holdings-luis-munoz-marin-airport/attempt-1/locked-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 387,
+    "taskId": "ledger:0387:aerostar-airport-holdings-luis-munoz-marin-airport:289dd4e3",
+    "canonicalKey": "aerostar-airport-holdings-luis-munoz-marin-airport|united-states",
+    "companyName": "Aerostar Airport Holdings (Luis Muñoz Marín Airport)",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 81,
+    "managers": [
+      "PSP Investments"
+    ],
+    "actionScopes": {
+      "company": [
+        "CREATE_COMPANY"
+      ],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "081-psp-investments:holding:004:aerostar-airport-holdings-luis-munoz-marin-airport"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://aeropuertosju.com/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "No exact normalized production or seed match exists. Census evidence supports a new canonical company with 1 manager holding record(s).",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "aerostar-airport-holdings-luis-munoz-marin-airport|united-states",
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpih6o004oivhejmzw2gfv",
+        "name": "PSP Investments",
+        "updatedAt": "2026-07-23T16:09:29.472Z"
+      },
+      {
+        "id": "cmrxpj0dd00arivhegqyga3w8",
+        "name": "Oaktree Capital",
+        "updatedAt": "2026-07-23T16:09:54.337Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0387:aerostar-airport-holdings-luis-munoz-marin-airport:289dd4e3",
+    "taskIndex": 387,
+    "canonicalKey": "aerostar-airport-holdings-luis-munoz-marin-airport|united-states",
+    "capturedAt": "2026-09-01T21:12:02.251Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "798b147396324ccdf21c2e5b8cbb2c5829da5fff4153daa6107ef806d6322896",
+    "productionSnapshotSha256": "1ec467c9b2734b25679bfc28476bfcacf23606ef747ac0b9e21503b77517466e",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "5fb1069d85777d8ad775bcc8a42cb8619ebfc03c0d92b551868c59ab4b9ab6e1",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "a8e01bb1bb89f6db650e25f5137acb2050df1d5b1e4fa2aff68e982f5a67f16b",
+    "stateSha256": "59527a5ffe1e0ad8421f9bd11099f14d561a010ff1850d975e5deeeca7944d44",
+    "taskSnapshotSha256": "65d65c10d53115d28b99fbef8fdbc29a479fda97553e3177345d57b7fee3bfa9"
+  },
+  "contextSha256": "7ab50acfbbcece87a1c7acee9c3a16bbaac380b53a74f7f83aab143846b66e59"
+}
