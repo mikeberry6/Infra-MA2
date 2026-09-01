@@ -1,0 +1,86 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:batch:apply
+> npx tsx scripts/portco-reconciliation/batch-apply-cli.ts --batch-manifest=audits/portco-reconciliation/2026-08-23/batches/batch-0302-0306-v1/batch-manifest-v3.json --batch-sha256=a947c038d2232d9b29bacf21b9f63c6665d12d8b4a8e1cc8ca51468465cfcec3 --seed-artifact=prisma/seed-data/approved-portco-after-images.json --apply --write-token=APPLY_APPROVED_PORTCO_BATCH --commit-receipt=tmp/portco-reconciliation/production/batch-commit-receipt.json --receipt=tmp/portco-reconciliation/production/batch-apply-receipt.json --public-base-url=https://infra-ma-2.vercel.app/Infra-MA2/
+
+(node:3632) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "BATCH_APPLIED",
+  "receiptPath": "/home/runner/work/Infra-MA2/Infra-MA2/tmp/portco-reconciliation/production/batch-apply-receipt.json",
+  "receipt": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_APPLY_BATCH_RECEIPT",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "batchId": "batch-0302-0306-v1",
+    "batchSha256": "a947c038d2232d9b29bacf21b9f63c6665d12d8b4a8e1cc8ca51468465cfcec3",
+    "releaseSha": "4bde1092c8910d1900870aeb91deb2bfab63fcbe",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "transactionId": "78d52524-38b2-4d55-a2fe-56146671bbbe",
+    "appliedAt": "2026-09-01T07:57:49.959Z",
+    "members": [
+      {
+        "kind": "TERMINAL",
+        "taskId": "ledger:0302:corporation:ac485f35",
+        "taskIndex": 302,
+        "companyName": "Corporation",
+        "outcome": "EXCLUDED",
+        "decisionSha256": "2f6031cc2679a2eb04d6ffda57e7d43a36d7dd487013677a8ab3e3efa1b9600d"
+      },
+      {
+        "kind": "TERMINAL",
+        "taskId": "ledger:0303:enbridge-gas-ohio:8007deaa",
+        "taskIndex": 303,
+        "companyName": "Enbridge Gas Ohio",
+        "outcome": "EXCLUDED",
+        "decisionSha256": "107b5ce4b6a28f8c963dce43faf6911afa768313846cb923f5dcf21c0d357407"
+      },
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0305:prospect-power:12690790",
+        "taskIndex": 305,
+        "companyName": "Prospect Power",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0305:prospect-power:12690790",
+          "taskIndex": 305,
+          "companyName": "Prospect Power",
+          "companyId": "cmrxpj6j700jfivhen42ptow2",
+          "proposalSha256": "e6cbdf05964a0fe4154c867f610c31e579ba84ffede42ebaf8b2706cbdccf4e5",
+          "approvalSha256": "324c16a2657bff93f73bdbc8c58c9b8bac94bf266df3cb3cb4b81bbe997dc3d3",
+          "productionSnapshotSha256": "0ac23d6e93aec4986a8f94024b538c8e6f15372f5d5c5ae308fb554ab6db8491",
+          "beforeCompanySnapshotSha256": "9903e9124713603275ed990c0ae3e2a1b40be9792d78506f87a40d2bb7a9195e",
+          "appliedAfterImageSha256": "0b9563e67ad0c05fb40109836b7deb812180ddb0c17b682eb81eac4dce8c18bd",
+          "seedAfterImageSha256": "0b9563e67ad0c05fb40109836b7deb812180ddb0c17b682eb81eac4dce8c18bd",
+          "approvedSeedEntrySha256": "887a453f8a904245ab36e2efaacfbd78ce021435256ab2524704b75f518f99d9",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "78d52524-38b2-4d55-a2fe-56146671bbbe",
+          "auditEventId": "cmtidk9ou000esw2bbjpt4s9t",
+          "appliedAt": "2026-09-01T07:57:49.959Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "83e2a8d7c0c7a5c13ef77eedfa92cc3af4c5107aed8a05d09899aedc0fe9c2aa"
+        }
+      },
+      {
+        "kind": "TERMINAL",
+        "taskId": "ledger:0306:vopak-moda-houston:8614eb7b",
+        "taskIndex": 306,
+        "companyName": "Vopak Moda Houston",
+        "outcome": "EXCLUDED",
+        "decisionSha256": "9cf0c3b40c4d9c1a8eb37348bba119dc5231bdbaa76b1b7658dfdf980c60697b"
+      }
+    ],
+    "verification": {
+      "databaseTransactionCommitted": true,
+      "seedArtifactVerified": true,
+      "allDetailApisVerified": true,
+      "partialDatabaseApplication": false
+    },
+    "receiptSha256": "69e1252fcb983ee8f3386bea2785c55bfee72d0c9f939e96cb76c4e0aa054229"
+  }
+}

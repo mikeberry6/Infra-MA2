@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_POST_APPLY_FUND_ATTRIBUTION_CHECK",
+  "checkedAt": "2026-09-01T08:04:25Z",
+  "batchId": "batch-0302-0306-v1",
+  "releaseSha": "4bde1092c8910d1900870aeb91deb2bfab63fcbe",
+  "companyId": "cmrxpj6j700jfivhen42ptow2",
+  "companyName": "Prospect Power",
+  "productionSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0302-0306-v1/production-apply/post-apply-fund-attribution-production-snapshot.json",
+    "snapshotSha256": "399eb8b16ea47fd0a06ef1279b1c1956e09c89a7fbdfdcb486b5b8d30618a096",
+    "companyCount": 1111,
+    "activeOwnershipCount": 1300,
+    "publishedFundCount": 194
+  },
+  "seedManifest": {
+    "path": "prisma/seed-data/ownership-attributions.manifest.json",
+    "manifestSha256": "29c9fd9af55a6fa97315677824656010891510d5c74d23c9da550e3f1475e098"
+  },
+  "repairGenerator": "scripts/portfolio-fund-attribution/build-scoped-repair.ts",
+  "result": "MATCH",
+  "mutationCount": 0,
+  "message": "Selected companies already match the reviewed seed attribution manifest"
+}
