@@ -1,0 +1,343 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_MANIFEST",
+  "methodologyVersion": "PORTCO_APPLY_BATCH_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0307-0311-v1",
+  "createdAt": "2026-09-01T08:26:00.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "bd17f4537a3eb869657209a9f8107586adf35bd21f147d920f783dfd54de9fb3"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0307:advowaste-medical-services:42ae6d6b",
+      "taskIndex": 307,
+      "companyName": "AdvoWaste Medical Services",
+      "outcome": "SUPERSEDED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0307-advowaste-medical-services/attempt-1/terminal-decision.json",
+        "sha256": "4f0cf6c9f3422ce0664e18b76393bea14f6af3e26b05523f70819982b82011f6"
+      }
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0308:chillco:26fda8bd",
+      "taskIndex": 308,
+      "companyName": "ChillCo",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0308-chillco-v2/proposal.json",
+        "sha256": "89f8a9b9806a1d3acf945e4e5defbd3b023dedd97d34d309c849133ef021373a"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0308-chillco-v2.json",
+        "sha256": "7bd0988afa7bfdc13a1cf0ee124b6df7c4d72c23b4ae9821132cea71ff4d655f"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0308-chillco/attempt-1/locked-production-snapshot.json",
+        "sha256": "75bcd08ec123ea2490d528bbfe2db6b229e5633325dece74eef782eed158f697"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0308-chillco/attempt-1/locked-task-snapshot.json",
+        "sha256": "c2b907472ca46e9e935ca7f0feb4e8ae2acd6a8b51620f8befc31830a6f21389"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0308-chillco/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "5904fa4d534df5364afadc924b0add202d9ddc1045063dda36b39ee023cf255a"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0308-chillco/attempt-1/application-research-decision.json",
+        "sha256": "aaf036a38491df38c1d687303590d214f80db4c57ee22ab91a55a048498833f9"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0308-chillco/attempt-1/source-verification.json",
+        "sha256": "7a327e8455e9039d16293648fcabc82c02bb8fc8fb7ebbe2e71152da4493c504"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "7c2d9a90589e120436e09b7a20c39729180f8c49ffd433beb273942b23133b2b",
+      "dependencySha256": "c978e580d34b5f9f1811c3ac1a61f48495d21ef912d9513c45d6a0b06f4be66c",
+      "afterImageSha256": "6c7fda808f0e359a073423ec49c030c3d433770b1b82714e4dadf3c6211ee145",
+      "targetClaims": [
+        "canonical:chillco|united-states",
+        "seed:chillco|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://www.chillco-logistics.com/",
+          "label": "ChillCo",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.chillco-logistics.com/chillco-logistics-partners-with-mattingly-cold-storage-to-launch-midwest-platform/",
+          "label": "ChillCo — Mattingly partnership",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.igneoip.com/usa/en/institutional/news-and-insights/press/igneo-announces-establishment-of-cold-storage-platform-with-acquisition-of-mattingly.html",
+          "label": "Igneo Infrastructure Partners",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.igneoip.com/usa/en/institutional/our-offering/assets/chillco.html",
+          "label": "Igneo — ChillCo asset",
+          "sourceType": "WEBSITE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0309:cyntox-biohazard-solutions:1dc97c03",
+      "taskIndex": 309,
+      "companyName": "Cyntox Biohazard Solutions",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0309-cyntox-biohazard-solutions-v1/proposal.json",
+        "sha256": "c75e306f9b50156d18f14728cf44e80372e69c0ebf57b4f129d1203e7166f43e"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0309-cyntox-biohazard-solutions-v1.json",
+        "sha256": "9aca16729dcd74f3cb9834ac9edc7b29abc3f44f8d12478dc013f62e65b7a6dd"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0309-cyntox-biohazard-solutions/attempt-1/locked-production-snapshot.json",
+        "sha256": "1f7ff22aa72a6de4d7d86aec5cf54c6d690174ab86a72202ca29ac44f08a7223"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0309-cyntox-biohazard-solutions/attempt-1/locked-task-snapshot.json",
+        "sha256": "6f0992844c7abd68aa887d4a044d7a161736795cbdca82ccc5ae6e3059297216"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0309-cyntox-biohazard-solutions/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "25b34a7b0505a444b1ed3ef17de91f46ec4eca3a57c68adfe55468c6ff7bf054"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0309-cyntox-biohazard-solutions/attempt-1/application-research-decision.json",
+        "sha256": "9e3dcf15c28f6044b5adb8c7eeddc10fb178d495339f4f0ba0741ace95acb2b2"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0309-cyntox-biohazard-solutions/attempt-1/source-verification.json",
+        "sha256": "244cd32b3d9aa9303a1c3d93416735fecf279d8b8fe25a64c6b7b184fdfa7496"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "84bb1e7d6561a5adfd04f167d1f55cb928d7d936819517f2e4aac9d54db3d21e",
+      "dependencySha256": "c978e580d34b5f9f1811c3ac1a61f48495d21ef912d9513c45d6a0b06f4be66c",
+      "afterImageSha256": "5aeb00fabb0fee3e1d0c74807f128979b2155e151ab559645543559d8c2f4527",
+      "targetClaims": [
+        "canonical:cyntox-biohazard-solutions|united-states",
+        "seed:cyntox biohazard solutions|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://cyntox.com/",
+          "label": "Cyntox",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://safer.fmcsa.dot.gov/query.asp?query_param=USDOT&query_string=2515320&query_type=queryCarrierSnapshot&searchtype=ANY",
+          "label": "FMCSA — Cyntox LLC",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://safer.fmcsa.dot.gov/query.asp?query_param=USDOT&query_string=2557006&query_type=queryCarrierSnapshot&searchtype=ANY",
+          "label": "FMCSA — AdvoWaste Medical Services LLC",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.igneoip.com/usa/en/institutional/news-and-insights/press/igneo-acquires-two-us-medical-waste-management-businesses.html",
+          "label": "Igneo — Cyntox and AdvoWaste acquisitions",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.igneoip.com/usa/en/institutional/our-offering/assets/cyntox-biohazard-solutions.html",
+          "label": "Igneo — Cyntox asset",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.waste360.com/industry-insights/cyntox-biohazard-solutions-and-advowaste-medical-services-unite-to-create-one-of-the-nation-s-largest-independent-medical-waste-management-companies",
+          "label": "Waste360 — Cyntox and AdvoWaste combination",
+          "sourceType": "PRESS_RELEASE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0310:pathway-power-llc:f9eee1e3",
+      "taskIndex": 310,
+      "companyName": "Pathway Power LLC",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0310-pathway-power-llc-v1/proposal.json",
+        "sha256": "0fdf5cf92dbf18af9cb33b0a1ce657da3da0b0cf6134305293961b8377ddcb0b"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0310-pathway-power-llc-v1.json",
+        "sha256": "60bf29d90db7c75e9b8dd4343ea93d2d3cd736821887f7a6ac2cc1b4dc3ff538"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0310-pathway-power-llc/attempt-1/locked-production-snapshot.json",
+        "sha256": "f5a7e8c1159e36744d01de96f9369276e7e737ec5bf6635751e88a080577985a"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0310-pathway-power-llc/attempt-1/locked-task-snapshot.json",
+        "sha256": "3777c13f35c93523f4b5673342c94fae038bf57b488d4c0fdc3455d08fd18017"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0310-pathway-power-llc/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "e8ab700053c55f6eaa1791804504fde56f53da99ad27a795796da54c976c3ee8"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0310-pathway-power-llc/attempt-1/application-research-decision.json",
+        "sha256": "158d5ac8dc2d63cbe55b4376aa8170bf738cfd448f6d6720b8e02bfff3ede94c"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0310-pathway-power-llc/attempt-1/source-verification.json",
+        "sha256": "2bcfceab49db15a29c40c24874851062c7391327223f1133be2745943a5ec2cf"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "303239fb3791adc03277c07d2575c8e3ada48387428c7fc9bd31d991d3e9a8a6",
+      "dependencySha256": "c978e580d34b5f9f1811c3ac1a61f48495d21ef912d9513c45d6a0b06f4be66c",
+      "afterImageSha256": "4611f3e45e8b237622f6404c77646d153f238aa170da64a958fb94adfd33ea20",
+      "targetClaims": [
+        "canonical:pathway-power-llc|united-states",
+        "seed:pathway power llc|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://pathway-power.com/",
+          "label": "Pathway Power",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.igneoip.com/usa/en/institutional/news-and-insights/press/igneo-completes-investment-in-pathway-power.html",
+          "label": "Igneo — Pathway Power investment",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.igneoip.com/usa/en/institutional/our-offering/assets/pathway.html",
+          "label": "Igneo — Pathway asset",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/pathway-power-finalizes-150-million-funding-from-ab-carval-to-finalize-development-of-battery-storage-assets-302792657.html",
+          "label": "AB CarVal — Pathway senior debt",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.rabobankna.com/rabobank-leads-pathway-powers-innovative-interconnection-financing-facility/",
+          "label": "Rabobank — Pathway interconnection facility",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.renovainc.com/en/news/business/pdf/e20240112_01_PRESS.pdf",
+          "label": "Renova — Pathway financing",
+          "sourceType": "OTHER"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0311:terra-gen:621138d4",
+      "taskIndex": 311,
+      "companyName": "Terra-Gen",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0311-terra-gen-v1/proposal.json",
+        "sha256": "e284db073d19172fb4b7527510a8434bbb1a9a4c2665c56c0456541c0684675f"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0311-terra-gen-v1.json",
+        "sha256": "7e8ab637948aebc3205f8cd68a2fb19db1895a9772aa51dd321db8a59518c467"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0311-terra-gen/attempt-1/locked-production-snapshot.json",
+        "sha256": "5f93fae945d03934e8fb080b0526c23373a860a4cf2d86486946025f3c5c36c2"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0311-terra-gen/attempt-1/locked-task-snapshot.json",
+        "sha256": "b1d9fcbe274924dfad8d34cf2448fc55fa71bfd77b39407cb1b4f29024ad28ef"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0311-terra-gen/attempt-1/authorization-observed-task-snapshot.json",
+        "sha256": "4ca9dabf648ac7e4464b4c76966cd2f1969bff1142542e20d219e9d60eac606f"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0311-terra-gen/attempt-1/application-research-decision.json",
+        "sha256": "90336a740e722960b788270c54d554eac5424c15e59e240a1e0b6d8276575844"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0311-terra-gen/attempt-1/source-verification.json",
+        "sha256": "211f28e2ab83f0fbf9cd9cd924835a17414af3b9bbec95ba2a31e23aff7dd925"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "2d6785fe2e3c0b265acfc51accb693256c22d43ea6eebacade8d66ab09a16c75",
+      "dependencySha256": "47aee56bcc8b88a751c376412c00f6c2aced38ba4858b6a2dc7ad51c96b902ea",
+      "afterImageSha256": "fe13fd08c2bd155e4f7e30faebc25e94832b857e04a1be75659d084196ecbea3",
+      "targetClaims": [
+        "canonical:terra-gen|united-states",
+        "company:cmrxpjiqj0128ivhepgbwb3mj",
+        "relation:cmrxpk4rz0212ivheuy8n5y26",
+        "relation:cmrxpm2u204flivhep1krk2gv",
+        "relation:cmrxpm2um04fmivhe8o161tbj",
+        "relation:cmrxpm2v204fnivhertn6dywl",
+        "relation:cmrxpm2vj04foivhefwcs6qkz",
+        "relation:cmrxprp630bgyivhec6ybg068",
+        "relation:cmrxprp700bh0ivhemvfua9xj",
+        "relation:cmrxprp830bh2ivhef7xdbeaf",
+        "relation:cmrxprp980bh4ivhe3lbzi32y",
+        "relation:cmrxprpa50bh6ivhe4x39kw7g",
+        "seed:terra-gen|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://cdn1.pantheoninfrastructure.com/app/uploads/2026/08/PINT-Newsletter-August-2.pdf",
+          "label": "Pantheon Infrastructure — August 2026 newsletter",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B90212793-0000-CC39-A8FF-DBA29A84F19B%7D",
+          "label": "New York DPS — Terra-Gen ownership",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://terra-gen.com/",
+          "label": "Terra-Gen",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://terra-gen.com/masdar-accelerates-u-s-renewables-expansion-closes-acquisition-of-50-stake-in-terra-gen/",
+          "label": "Terra-Gen — Masdar closing",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://terra-gen.com/masdar-to-acquire-50-stake-in-terra-gen-from-energy-capital-partners/",
+          "label": "Terra-Gen — Masdar announcement",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.ecpgp.com/about/news-and-insights/press-releases/2021/ecp-announces-successful-closing-of-12-billion-continuation-fund-for-renewables-platform-terra-gen",
+          "label": "ECP — Terra-Gen continuation fund",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.igneoip.com/usa/en/institutional/our-offering/assets/terra-gen-soltage.html",
+          "label": "Igneo — Terra-Gen asset",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.londonstockexchange.com/news-article/PINT/investment-in-us-renewable-energy-company/17649609",
+          "label": "London Stock Exchange — Pantheon Terra-Gen commitment",
+          "sourceType": "OTHER"
+        }
+      ]
+    }
+  ],
+  "collisionAnalysis": {
+    "independent": true,
+    "claimsSha256": "6c4649215cbd0fc77972499fefdbbb3c06fb72bf2a017b9c2fa70634e0bbac03",
+    "sharedSourceUrls": [],
+    "conflicts": []
+  },
+  "batchSha256": "931971fd2eb0b9e25491353de8980a377e28a172e9b069197644dddb3389f5ab"
+}

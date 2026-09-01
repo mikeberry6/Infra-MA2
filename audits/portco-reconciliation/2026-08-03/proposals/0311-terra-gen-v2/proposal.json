@@ -1,0 +1,486 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0311:terra-gen:621138d4",
+  "taskIndex": 311,
+  "asOfDate": "2026-09-01",
+  "generatedAt": "2026-09-01T08:18:00.000Z",
+  "canonicalKey": "terra-gen|united-states",
+  "companyName": "Terra-Gen",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER",
+    "ADD_PENDING_TRANSACTION"
+  ],
+  "sourceHoldingIds": [
+    "056-igneo-infrastructure-partners:holding:009:terra-gen",
+    "077-pantheon-ventures:holding:001:terra-gen"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Correct Terra-Gen to preserve its full ownership history and current 50/50 legal ownership. Regulatory and company sources establish Igneo's GDIF chain at 50% and Masdar at 50%, with ArcLight, Global Infrastructure Partners and Energy Capital Partners as former sponsors. Pantheon Infrastructure Plc committed to a Terra-Gen-specific co-investment through an Igneo-managed vehicle in June 2026, but no public source establishes closing, funding, a stake or a reduction of Igneo's 50%; it is therefore recorded only as a signed pending incoming transaction. No later corporate ownership change or exit was identified through August 19, 2026.",
+  "evidence": [
+    {
+      "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B90212793-0000-CC39-A8FF-DBA29A84F19B%7D",
+      "purpose": "Current legal chain, cap table and platform boundary",
+      "supports": [
+        "Igneo's GDIF ownership chain holds 50% of Terra-Gen",
+        "Masdar's acquisition chain holds the other 50%",
+        "Project SPVs remain beneath the Terra-Gen platform"
+      ]
+    },
+    {
+      "url": "https://terra-gen.com/masdar-accelerates-u-s-renewables-expansion-closes-acquisition-of-50-stake-in-terra-gen/",
+      "purpose": "Masdar closing and retained Igneo ownership",
+      "supports": [
+        "Masdar closed its 50% acquisition on October 1, 2024",
+        "Igneo retained its 50% interest"
+      ]
+    },
+    {
+      "url": "https://www.ecpgp.com/about/news-and-insights/press-releases/2021/ecp-announces-successful-closing-of-12-billion-continuation-fund-for-renewables-platform-terra-gen",
+      "purpose": "ECP ownership history and 2021 continuation transaction",
+      "supports": [
+        "ECP III acquired Terra-Gen in 2015 and exited in the 2021 continuation transaction",
+        "The continuation vehicle held 50% after Igneo increased to 50%"
+      ]
+    },
+    {
+      "url": "https://www.londonstockexchange.com/news-article/PINT/investment-in-us-renewable-energy-company/17649609",
+      "purpose": "Pantheon company-specific co-investment commitment",
+      "supports": [
+        "Pantheon Infrastructure committed to a Terra-Gen investment through an Igneo-managed vehicle",
+        "The announcement does not establish closing, funding or a percentage stake"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "5f93fae945d03934e8fb080b0526c23373a860a4cf2d86486946025f3c5c36c2",
+  "currentCompanySnapshotSha256": "c97215363975b779874e2d5286e746c74204c3fcb63c91aeaf346c24944dcfdd",
+  "executionLock": {
+    "taskSnapshotSha256": "b1d9fcbe274924dfad8d34cf2448fc55fa71bfd77b39407cb1b4f29024ad28ef",
+    "taskStateSha256": "2d6785fe2e3c0b265acfc51accb693256c22d43ea6eebacade8d66ab09a16c75",
+    "taskDependencySha256": "47aee56bcc8b88a751c376412c00f6c2aced38ba4858b6a2dc7ad51c96b902ea",
+    "seedEntrySha256": "4fd148cfa59b67b00d3d7233a12491ea09950f5085446bc7462d346a036aa98d",
+    "dependencies": {
+      "ownershipPeriodsSha256": "a16d9fb65414a7b3a4bd9884022a571befc038e8ca40a1c2ca2fe9f44a97869b",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "aa6ca4b8a6a0586b7b5a4d947cde653c150a24537205ed5e754e97d7d862d1da",
+      "organizationsSha256": "8cf8fdb30b9ffd1593e7e8d26dff4b94aa72223e7270f7a7cc13a6caf726d693",
+      "citationsSha256": "81eaa65400fa610194647e7ad285d5021cb736c74977568a7f47c17cc72e7e97",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj2rt00e0ivhear3pqwj6",
+        "fundName": "Global Diversified Infrastructure Fund (GDIF)",
+        "managerId": "cmrxpiaa1002iivhepz4cndl9",
+        "updatedAt": "2026-07-23T16:09:57.449Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi435000kivhegfx84axs",
+        "name": "ArcLight Capital Partners",
+        "updatedAt": "2026-07-23T16:09:12.497Z"
+      },
+      {
+        "id": "cmrxpi79j001jivhe2rmjalkq",
+        "name": "Energy Capital Partners",
+        "updatedAt": "2026-07-23T16:09:16.615Z"
+      },
+      {
+        "id": "cmrxpiaa1002iivhepz4cndl9",
+        "name": "Igneo Infrastructure Partners",
+        "updatedAt": "2026-07-23T16:09:20.521Z"
+      },
+      {
+        "id": "cmrxpipev0078ivhevp0wiq56",
+        "name": "Masdar",
+        "updatedAt": "2026-07-23T16:09:40.135Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjiqj0128ivhepgbwb3mj",
+    "name": "Terra-Gen",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Utility-scale wind, solar, and battery storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Terra-Gen develops, constructs, owns, and operates utility-scale wind, solar, and battery storage projects in the United States. Its end markets include utilities, corporate offtakers, and wholesale power markets that require large-scale renewable generation and storage capacity. The operating model is asset-heavy and development-to-ownership because the business originates, finances, builds, and operates physical generation and storage assets with a mix of contracted and market-based revenues. Public disclosures describe a portfolio concentrated in California with additional assets in Texas and New York, including roughly 3.8 GW of operating capacity and 5.1 GWh of storage across about 30 sites, plus a development pipeline exceeding 12 GW. Terra-Gen was formed in 2007, Igneo made its initial investment through Global Diversified Infrastructure Fund (GDIF) in December 2020, and Masdar closed the acquisition of a 50 percent stake in October 2024 while Igneo retained its 50 percent interest.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2007,
+    "headquarters": "California; Texas; New York",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk4rz0212ivheuy8n5y26",
+        "managerName": "Igneo Infrastructure Partners",
+        "organizationName": "Igneo Infrastructure Partners",
+        "fundName": "Global Diversified Infrastructure Fund (GDIF)",
+        "vehicleName": "Global Diversified Infrastructure Fund (GDIF)",
+        "stake": null,
+        "investmentYear": 2020,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpm2u204flivhep1krk2gv",
+        "date": "2007",
+        "event": "Terra-Gen was formed.",
+        "category": "FOUNDING",
+        "sortDate": "2007-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm2um04fmivhe8o161tbj",
+        "date": "Dec 2020",
+        "event": "Igneo made its initial investment in Terra-Gen through Global Diversified Infrastructure Fund (GDIF).",
+        "category": "FINANCING",
+        "sortDate": "2020-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm2v204fnivhertn6dywl",
+        "date": "Mar 19, 2024",
+        "event": "Masdar announced an agreement to acquire a 50% stake in Terra-Gen from Energy Capital Partners.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-03-19T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm2vj04foivhefwcs6qkz",
+        "date": "Oct 1, 2024",
+        "event": "Masdar completed the acquisition and Igneo retained its 50% interest.",
+        "category": "FINANCING",
+        "sortDate": "2024-10-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxprp630bgyivhec6ybg068",
+        "label": "Terra Gen — Terra-Gen",
+        "url": "https://terra-gen.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Terra Gen company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxprp700bh0ivhemvfua9xj",
+        "label": "Terra Gen — Terra-Gen",
+        "url": "https://terra-gen.com/masdar-accelerates-u-s-renewables-expansion-closes-acquisition-of-50-stake-in-terra-gen/",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Terra Gen transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprp830bh2ivhef7xdbeaf",
+        "label": "Terra Gen — Terra-Gen",
+        "url": "https://terra-gen.com/masdar-to-acquire-50-stake-in-terra-gen-from-energy-capital-partners/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Terra Gen — Terra-Gen",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprp980bh4ivhe3lbzi32y",
+        "label": "Investment date source — Igneo Infrastructure Partners — Terra-Gen",
+        "url": "https://www.igneoip.com/usa/en/institutional/our-offering/assets/terra-gen-soltage.html",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Igneo Infrastructure Partners initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprpa50bh6ivhe4x39kw7g",
+        "label": "New York DPS — Terra-Gen",
+        "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B90212793-0000-CC39-A8FF-DBA29A84F19B%7D",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Regulatory filing states that Igneo acquired its 50% interest in Terra-Gen through Global Diversified Infrastructure Fund (North America).",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "c97215363975b779874e2d5286e746c74204c3fcb63c91aeaf346c24944dcfdd",
+  "afterImage": {
+    "id": "cmrxpjiqj0128ivhepgbwb3mj",
+    "name": "Terra-Gen",
+    "aliases": [
+      "Terra-Gen, LLC",
+      "Terra-Gen Power Holdings II, LLC",
+      "TGPH II"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Utility-scale wind, solar, and battery storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Terra-Gen develops, owns and operates utility-scale wind, solar and battery-storage assets across the United States. Public disclosures through July 2026 describe approximately 4.2 GW of gross operating capacity, 5.6 GWh of storage, 34 sites and a roughly 16 GW development pipeline. Terra-Gen Power Holdings II, LLC is the parent platform, Terra-Gen, LLC is the operating business and individual project SPVs remain subordinate assets. Current legal ownership is 50% through Igneo Infrastructure Partners' Global Diversified Infrastructure Fund chain and 50% through Masdar's acquisition chain. ArcLight formed the platform in 2007, Global Infrastructure Partners invested in 2009, Energy Capital Partners acquired it in 2015 and used a 2021 continuation vehicle for its retained 50% before Masdar closed its purchase on October 1, 2024. Pantheon Infrastructure Plc committed to a Terra-Gen-specific co-investment through an Igneo-managed vehicle in June 2026, but closing, funding, the security and stake were not publicly confirmed; Igneo remains recorded at 50% pending evidence. No later corporate ownership change or signed exit was identified through August 19, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://terra-gen.com/",
+    "yearFounded": 2007,
+    "headquarters": "California; Texas; New York",
+    "lastVerifiedAt": "2026-08-19T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk4rz0212ivheuy8n5y26",
+        "managerName": "Igneo Infrastructure Partners",
+        "organizationName": "Igneo Infrastructure Partners",
+        "fundName": "Global Diversified Infrastructure Fund (GDIF)",
+        "vehicleName": "Golden NA Power Hold Co. LLC > Golden NA Power Holdings LLC",
+        "stake": "50%",
+        "investmentYear": 2020,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Masdar",
+        "organizationName": "Masdar",
+        "fundName": null,
+        "vehicleName": "Masdar TG Holding LLC + Masdar TG Merger Corporation",
+        "stake": "50%",
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "ArcLight Capital Partners",
+        "organizationName": "ArcLight Capital Partners",
+        "fundName": null,
+        "vehicleName": null,
+        "stake": "Controlling former sponsor; exact percentage not publicly disclosed",
+        "investmentYear": 2007,
+        "exitYear": 2015,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      },
+      {
+        "id": null,
+        "managerName": "Global Infrastructure Partners",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Convertible preferred investment",
+        "stake": "Up to 40%",
+        "investmentYear": 2009,
+        "exitYear": 2015,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      },
+      {
+        "id": null,
+        "managerName": "Energy Capital Partners",
+        "organizationName": "Energy Capital Partners",
+        "fundName": null,
+        "vehicleName": "ECP III",
+        "stake": "100% before Igneo's 2020 entry; 60% until March 2021",
+        "investmentYear": 2015,
+        "exitYear": 2021,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      },
+      {
+        "id": null,
+        "managerName": "Energy Capital Partners",
+        "organizationName": "Energy Capital Partners",
+        "fundName": null,
+        "vehicleName": "ECP Terra-Gen Growth Fund, LP / Fund B, LP",
+        "stake": "50%",
+        "investmentYear": 2021,
+        "exitYear": 2024,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [
+      {
+        "id": null,
+        "direction": "INCOMING",
+        "transactionState": "SIGNED_PENDING_INCOMING",
+        "counterpartyName": "Pantheon Infrastructure Plc",
+        "transactionDescription": "Pantheon Infrastructure Plc committed approximately £41 million / $55 million to a Terra-Gen-specific direct co-investment through an Igneo-managed vehicle; the vehicle, security, stake, seller and legal closing or funding date were not publicly disclosed, and Igneo's current 50% interest is not reduced without closing evidence.",
+        "announcedAt": "2026-06-22",
+        "expectedClosing": "Closing or funding not publicly confirmed as of August 19, 2026",
+        "relatedOwnershipPeriodIds": [
+          "cmrxpk4rz0212ivheuy8n5y26"
+        ],
+        "evidenceUrls": [
+          "https://www.londonstockexchange.com/news-article/PINT/investment-in-us-renewable-energy-company/17649609",
+          "https://cdn1.pantheoninfrastructure.com/app/uploads/2026/08/PINT-Newsletter-August-2.pdf"
+        ]
+      }
+    ],
+    "milestones": [
+      {
+        "id": "cmrxpm2u204flivhep1krk2gv",
+        "date": "2007",
+        "event": "ArcLight formed Terra-Gen from renewable-generation assets acquired from Caithness.",
+        "category": "FOUNDING",
+        "sortDate": "2007-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": null,
+        "date": "Oct 30, 2009",
+        "event": "Global Infrastructure Partners agreed to invest through convertible preferred securities representing up to a 40% interest in Terra-Gen.",
+        "category": "FINANCING",
+        "sortDate": "2009-10-30T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": null,
+        "date": "2015",
+        "event": "Energy Capital Partners III acquired Terra-Gen, ending the ArcLight and Global Infrastructure Partners ownership periods.",
+        "category": "ACQUISITION",
+        "sortDate": "2015-12-31T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.ecpgp.com/about/news-and-insights/press-releases/2021/ecp-announces-successful-closing-of-12-billion-continuation-fund-for-renewables-platform-terra-gen"
+        ]
+      },
+      {
+        "id": "cmrxpm2um04fmivhe8o161tbj",
+        "date": "Dec 31, 2020 / Mar 31, 2021",
+        "event": "Igneo's Global Diversified Infrastructure Fund closed an initial 40% investment and increased its Terra-Gen interest to 50%; ECP transferred its retained 50% into a continuation vehicle.",
+        "category": "FINANCING",
+        "sortDate": "2021-03-31T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://terra-gen.com/media-1/",
+          "https://www.ecpgp.com/about/news-and-insights/press-releases/2021/ecp-announces-successful-closing-of-12-billion-continuation-fund-for-renewables-platform-terra-gen"
+        ]
+      },
+      {
+        "id": "cmrxpm2v204fnivhertn6dywl",
+        "date": "Mar 19, 2024",
+        "event": "Masdar announced an agreement to acquire Energy Capital Partners' 50% Terra-Gen stake while Igneo retained its 50% interest.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-03-19T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://terra-gen.com/masdar-to-acquire-50-stake-in-terra-gen-from-energy-capital-partners/"
+        ]
+      },
+      {
+        "id": "cmrxpm2vj04foivhefwcs6qkz",
+        "date": "Oct 1, 2024",
+        "event": "Masdar completed its 50% acquisition from Energy Capital Partners, leaving Terra-Gen owned 50% by Masdar and 50% by Igneo's GDIF chain.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-10-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://terra-gen.com/masdar-accelerates-u-s-renewables-expansion-closes-acquisition-of-50-stake-in-terra-gen/"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Jun 22, 2026",
+        "event": "Pantheon Infrastructure announced a Terra-Gen-specific co-investment commitment through an Igneo-managed vehicle; closing, funding and the resulting stake were not publicly confirmed.",
+        "category": "FINANCING",
+        "sortDate": "2026-06-22T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.londonstockexchange.com/news-article/PINT/investment-in-us-renewable-energy-company/17649609"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxprp630bgyivhec6ybg068",
+        "label": "Terra Gen — Terra-Gen",
+        "url": "https://terra-gen.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current platform identity, operating scope and website",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprp700bh0ivhemvfua9xj",
+        "label": "Terra Gen — Terra-Gen",
+        "url": "https://terra-gen.com/masdar-accelerates-u-s-renewables-expansion-closes-acquisition-of-50-stake-in-terra-gen/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "October 2024 Masdar 50% closing and retained Igneo 50% ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprp830bh2ivhef7xdbeaf",
+        "label": "Terra Gen — Terra-Gen",
+        "url": "https://terra-gen.com/masdar-to-acquire-50-stake-in-terra-gen-from-energy-capital-partners/",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "March 2024 Masdar acquisition announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprp980bh4ivhe3lbzi32y",
+        "label": "Investment date source — Igneo Infrastructure Partners — Terra-Gen",
+        "url": "https://www.igneoip.com/usa/en/institutional/our-offering/assets/terra-gen-soltage.html",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Igneo current asset and initial investment history",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprpa50bh6ivhe4x39kw7g",
+        "label": "New York DPS — Terra-Gen",
+        "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B90212793-0000-CC39-A8FF-DBA29A84F19B%7D",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current legal chain, 50/50 cap table and platform-versus-SPV boundary",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "ECP — Terra-Gen continuation fund",
+        "url": "https://www.ecpgp.com/about/news-and-insights/press-releases/2021/ecp-announces-successful-closing-of-12-billion-continuation-fund-for-renewables-platform-terra-gen",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "2015 ECP entry, 2021 continuation close and ECP III exit",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "London Stock Exchange — Pantheon Terra-Gen commitment",
+        "url": "https://www.londonstockexchange.com/news-article/PINT/investment-in-us-renewable-energy-company/17649609",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "June 2026 asset-specific co-investment commitment through an Igneo vehicle",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Pantheon Infrastructure — August 2026 newsletter",
+        "url": "https://cdn1.pantheoninfrastructure.com/app/uploads/2026/08/PINT-Newsletter-August-2.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Commitment remained described as committed without disclosed closing or stake",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "c3d108f98ff4f377d808e07eedf44f23f8e3d9da958d9fa584afdf5c1e1dad48",
+  "proposalSha256": "1cb98a0e3463bd9889b33c078c1b602a3b772afd73826e570ac25d88220b0b64"
+}

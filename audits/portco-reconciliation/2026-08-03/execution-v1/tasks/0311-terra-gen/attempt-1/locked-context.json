@@ -1,0 +1,316 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0311:terra-gen:621138d4",
+  "taskIndex": 311,
+  "companyName": "Terra-Gen",
+  "generatedAt": "2026-09-01T08:18:18.450Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0311-terra-gen/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 311,
+    "taskId": "ledger:0311:terra-gen:621138d4",
+    "canonicalKey": "terra-gen|united-states",
+    "companyName": "Terra-Gen",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 56,
+    "managers": [
+      "Igneo Infrastructure Partners",
+      "Pantheon Ventures"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "056-igneo-infrastructure-partners:holding:009:terra-gen",
+      "077-pantheon-ventures:holding:001:terra-gen"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjiqj0128ivhepgbwb3mj"
+    ],
+    "seedKeys": [
+      "terra-gen|United States"
+    ],
+    "evidenceUrls": [
+      "https://terra-gen.com/masdar-accelerates-u-s-renewables-expansion-closes-acquisition-of-50-stake-in-terra-gen/",
+      "https://www.igneoip.com/usa/en/institutional/our-offering/assets/terra-gen-soltage.html",
+      "https://www.pantheoninfrastructure.com/portfolio"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_OWNER requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjiqj0128ivhepgbwb3mj",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "terra-gen|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjiqj0128ivhepgbwb3mj",
+    "name": "Terra-Gen",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Utility-scale wind, solar, and battery storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Terra-Gen develops, constructs, owns, and operates utility-scale wind, solar, and battery storage projects in the United States. Its end markets include utilities, corporate offtakers, and wholesale power markets that require large-scale renewable generation and storage capacity. The operating model is asset-heavy and development-to-ownership because the business originates, finances, builds, and operates physical generation and storage assets with a mix of contracted and market-based revenues. Public disclosures describe a portfolio concentrated in California with additional assets in Texas and New York, including roughly 3.8 GW of operating capacity and 5.1 GWh of storage across about 30 sites, plus a development pipeline exceeding 12 GW. Terra-Gen was formed in 2007, Igneo made its initial investment through Global Diversified Infrastructure Fund (GDIF) in December 2020, and Masdar closed the acquisition of a 50 percent stake in October 2024 while Igneo retained its 50 percent interest.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2007,
+    "headquarters": "California; Texas; New York",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk4rz0212ivheuy8n5y26",
+        "managerName": "Igneo Infrastructure Partners",
+        "organizationName": "Igneo Infrastructure Partners",
+        "fundName": "Global Diversified Infrastructure Fund (GDIF)",
+        "vehicleName": "Global Diversified Infrastructure Fund (GDIF)",
+        "stake": null,
+        "investmentYear": 2020,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpm2u204flivhep1krk2gv",
+        "date": "2007",
+        "event": "Terra-Gen was formed.",
+        "category": "FOUNDING",
+        "sortDate": "2007-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm2um04fmivhe8o161tbj",
+        "date": "Dec 2020",
+        "event": "Igneo made its initial investment in Terra-Gen through Global Diversified Infrastructure Fund (GDIF).",
+        "category": "FINANCING",
+        "sortDate": "2020-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm2v204fnivhertn6dywl",
+        "date": "Mar 19, 2024",
+        "event": "Masdar announced an agreement to acquire a 50% stake in Terra-Gen from Energy Capital Partners.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-03-19T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm2vj04foivhefwcs6qkz",
+        "date": "Oct 1, 2024",
+        "event": "Masdar completed the acquisition and Igneo retained its 50% interest.",
+        "category": "FINANCING",
+        "sortDate": "2024-10-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxprp630bgyivhec6ybg068",
+        "label": "Terra Gen — Terra-Gen",
+        "url": "https://terra-gen.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Terra Gen company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxprp700bh0ivhemvfua9xj",
+        "label": "Terra Gen — Terra-Gen",
+        "url": "https://terra-gen.com/masdar-accelerates-u-s-renewables-expansion-closes-acquisition-of-50-stake-in-terra-gen/",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Terra Gen transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprp830bh2ivhef7xdbeaf",
+        "label": "Terra Gen — Terra-Gen",
+        "url": "https://terra-gen.com/masdar-to-acquire-50-stake-in-terra-gen-from-energy-capital-partners/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Terra Gen — Terra-Gen",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprp980bh4ivhe3lbzi32y",
+        "label": "Investment date source — Igneo Infrastructure Partners — Terra-Gen",
+        "url": "https://www.igneoip.com/usa/en/institutional/our-offering/assets/terra-gen-soltage.html",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Igneo Infrastructure Partners initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprpa50bh6ivhe4x39kw7g",
+        "label": "New York DPS — Terra-Gen",
+        "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B90212793-0000-CC39-A8FF-DBA29A84F19B%7D",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Regulatory filing states that Igneo acquired its 50% interest in Terra-Gen through Global Diversified Infrastructure Fund (North America).",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Terra-Gen",
+    "investmentFirm": "Igneo Infrastructure Partners",
+    "sector": "Power & ET",
+    "subsector": "Utility-scale wind, solar, and battery storage",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Global Diversified Infrastructure Fund (GDIF)",
+    "description": "Terra-Gen develops, constructs, owns, and operates utility-scale wind, solar, and battery storage projects in the United States. Its end markets include utilities, corporate offtakers, and wholesale power markets that require large-scale renewable generation and storage capacity. The operating model is asset-heavy and development-to-ownership because the business originates, finances, builds, and operates physical generation and storage assets with a mix of contracted and market-based revenues. Public disclosures describe a portfolio concentrated in California with additional assets in Texas and New York, including roughly 3.8 GW of operating capacity and 5.1 GWh of storage across about 30 sites, plus a development pipeline exceeding 12 GW. Terra-Gen was formed in 2007, Igneo made its initial investment through Global Diversified Infrastructure Fund (GDIF) in December 2020, and Masdar closed the acquisition of a 50 percent stake in October 2024 while Igneo retained its 50 percent interest.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2007,
+    "investmentYear": 2020,
+    "headquarters": "California; Texas; New York",
+    "milestones": [
+      {
+        "date": "2007",
+        "event": "Terra-Gen was formed.",
+        "category": "Founding"
+      },
+      {
+        "date": "Dec 2020",
+        "event": "Igneo made its initial investment in Terra-Gen through Global Diversified Infrastructure Fund (GDIF).",
+        "category": "Financing"
+      },
+      {
+        "date": "Mar 19, 2024",
+        "event": "Masdar announced an agreement to acquire a 50% stake in Terra-Gen from Energy Capital Partners.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Oct 1, 2024",
+        "event": "Masdar completed the acquisition and Igneo retained its 50% interest.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Terra Gen — Terra-Gen",
+        "url": "https://terra-gen.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Terra Gen — Terra-Gen",
+        "url": "https://terra-gen.com/masdar-accelerates-u-s-renewables-expansion-closes-acquisition-of-50-stake-in-terra-gen/",
+        "type": "ARTICLE",
+        "purpose": "MILESTONE_EVENT"
+      },
+      {
+        "label": "Terra Gen — Terra-Gen",
+        "url": "https://terra-gen.com/masdar-to-acquire-50-stake-in-terra-gen-from-energy-capital-partners/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Investment date source — Igneo Infrastructure Partners — Terra-Gen",
+        "url": "https://www.igneoip.com/usa/en/institutional/our-offering/assets/terra-gen-soltage.html",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "New York DPS — Terra-Gen",
+        "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B90212793-0000-CC39-A8FF-DBA29A84F19B%7D",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Regulatory filing states that Igneo acquired its 50% interest in Terra-Gen through Global Diversified Infrastructure Fund (North America)."
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Igneo Infrastructure Partners",
+        "ownershipVehicle": "Global Diversified Infrastructure Fund (GDIF)",
+        "investmentYear": 2020,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj2rt00e0ivhear3pqwj6",
+        "fundName": "Global Diversified Infrastructure Fund (GDIF)",
+        "managerId": "cmrxpiaa1002iivhepz4cndl9",
+        "updatedAt": "2026-07-23T16:09:57.449Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi435000kivhegfx84axs",
+        "name": "ArcLight Capital Partners",
+        "updatedAt": "2026-07-23T16:09:12.497Z"
+      },
+      {
+        "id": "cmrxpi79j001jivhe2rmjalkq",
+        "name": "Energy Capital Partners",
+        "updatedAt": "2026-07-23T16:09:16.615Z"
+      },
+      {
+        "id": "cmrxpiaa1002iivhepz4cndl9",
+        "name": "Igneo Infrastructure Partners",
+        "updatedAt": "2026-07-23T16:09:20.521Z"
+      },
+      {
+        "id": "cmrxpipev0078ivhevp0wiq56",
+        "name": "Masdar",
+        "updatedAt": "2026-07-23T16:09:40.135Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0311:terra-gen:621138d4",
+    "taskIndex": 311,
+    "canonicalKey": "terra-gen|united-states",
+    "capturedAt": "2026-09-01T08:18:18.450Z",
+    "databaseRevision": "revision:52318a4d9efc7b61cfc5e67f56da8aceeae2eebfc9f8e156f9b153dd86ff35d1",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "d24d522cf56a365a876c2186a07000a8cdec7b3e590e040c41627363cd80abd6",
+    "productionSnapshotSha256": "5f93fae945d03934e8fb080b0526c23373a860a4cf2d86486946025f3c5c36c2",
+    "targetCompanySnapshotSha256": "c97215363975b779874e2d5286e746c74204c3fcb63c91aeaf346c24944dcfdd",
+    "seedEntrySha256": "4fd148cfa59b67b00d3d7233a12491ea09950f5085446bc7462d346a036aa98d",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "a16d9fb65414a7b3a4bd9884022a571befc038e8ca40a1c2ca2fe9f44a97869b",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "aa6ca4b8a6a0586b7b5a4d947cde653c150a24537205ed5e754e97d7d862d1da",
+      "organizationsSha256": "8cf8fdb30b9ffd1593e7e8d26dff4b94aa72223e7270f7a7cc13a6caf726d693",
+      "citationsSha256": "81eaa65400fa610194647e7ad285d5021cb736c74977568a7f47c17cc72e7e97",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "47aee56bcc8b88a751c376412c00f6c2aced38ba4858b6a2dc7ad51c96b902ea",
+    "stateSha256": "2d6785fe2e3c0b265acfc51accb693256c22d43ea6eebacade8d66ab09a16c75",
+    "taskSnapshotSha256": "b1d9fcbe274924dfad8d34cf2448fc55fa71bfd77b39407cb1b4f29024ad28ef"
+  },
+  "contextSha256": "20f52c66b18652d882a51befdc361fc6e13f8683fc4a96ac2308679892ada889"
+}

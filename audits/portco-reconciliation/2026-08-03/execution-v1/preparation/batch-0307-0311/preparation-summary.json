@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_NON_AUTHORITATIVE_PREPARATION",
+  "preparedAt": "2026-09-01T07:26:56Z",
+  "authoritativeSourceManifestSha256": "87246ef41729cae0c1c0d4132f40d37edd7919b828012f7a77b4ef630c711093",
+  "blockedByActiveBatchId": "batch-0302-0306-v1",
+  "activationAllowed": false,
+  "requiredActivationCondition": "batch-0302-0306-v1 must be production-deployed, atomically applied, receipt-verified, rendered-verified and COMPLETED with no active bundle remaining",
+  "plannedBatchId": "batch-0307-0311-v1",
+  "orderedTaskIndexes": [
+    307,
+    308,
+    309,
+    310,
+    311
+  ],
+  "dependencyRules": [
+    {
+      "predecessorTaskIndex": 307,
+      "survivorTaskIndex": 309,
+      "rule": "Task 307 may be superseded only by the same bound after-image that creates the canonical Cyntox Biohazard Solutions platform for task 309."
+    }
+  ],
+  "members": [
+    {
+      "taskIndex": 307,
+      "taskId": "ledger:0307:advowaste-medical-services:42ae6d6b",
+      "requestedCompany": "AdvoWaste Medical Services",
+      "preparedDecision": "SUPERSEDED",
+      "canonicalCompany": "Cyntox Biohazard Solutions",
+      "applicationBlocked": false,
+      "researchDecisionSha256": "04fb27973117861174b74714eb4f9dc731ac10f142db37d1d5736a89028b3efc",
+      "sourceVerificationSha256": "7202a28966e7cd379a68a91d0d1dff42e4908925e45a7232f67a156c96c002d1"
+    },
+    {
+      "taskIndex": 308,
+      "taskId": "ledger:0308:chillco:26fda8bd",
+      "requestedCompany": "ChillCo",
+      "preparedDecision": "PROPOSED_NEW",
+      "canonicalCompany": "ChillCo",
+      "applicationBlocked": false,
+      "researchDecisionSha256": "084382d39a3b97cefbb8a5ebc07a7a9fd0666b2afbf877ca43d0b6ead520bece",
+      "sourceVerificationSha256": "7a327e8455e9039d16293648fcabc82c02bb8fc8fb7ebbe2e71152da4493c504"
+    },
+    {
+      "taskIndex": 309,
+      "taskId": "ledger:0309:cyntox-biohazard-solutions:1dc97c03",
+      "requestedCompany": "Cyntox Biohazard Solutions",
+      "preparedDecision": "PROPOSED_NEW",
+      "canonicalCompany": "Cyntox Biohazard Solutions",
+      "applicationBlocked": false,
+      "researchDecisionSha256": "64d845fce8adfeac2b1724f1867d49b7a58abf3f2c20e3f57b61c8439d2d9530",
+      "sourceVerificationSha256": "244cd32b3d9aa9303a1c3d93416735fecf279d8b8fe25a64c6b7b184fdfa7496"
+    },
+    {
+      "taskIndex": 310,
+      "taskId": "ledger:0310:pathway-power-llc:f9eee1e3",
+      "requestedCompany": "Pathway Power LLC",
+      "preparedDecision": "PROPOSED_NEW",
+      "canonicalCompany": "Pathway Power LLC",
+      "applicationBlocked": false,
+      "researchDecisionSha256": "c3a6f9788ea47e5e58224dcf012af7e5231b311b4f9953d7d726dec56d018a3d",
+      "sourceVerificationSha256": "2bcfceab49db15a29c40c24874851062c7391327223f1133be2745943a5ec2cf"
+    },
+    {
+      "taskIndex": 311,
+      "taskId": "ledger:0311:terra-gen:621138d4",
+      "requestedCompany": "Terra-Gen",
+      "preparedDecision": "PROPOSED_CORRECTION",
+      "canonicalCompany": "Terra-Gen",
+      "applicationBlocked": false,
+      "researchDecisionSha256": "337ea8906f37370d1d66e2c134988d02f2a9020bbb1e9d4d3f904d7a21bf0e0b",
+      "sourceVerificationSha256": "211f28e2ab83f0fbf9cd9cd924835a17414af3b9bbec95ba2a31e23aff7dd925"
+    }
+  ],
+  "preflight": {
+    "orderedCoverage": true,
+    "allResearchDecisionsValidated": true,
+    "allRecordedSourcesPreviouslyVerified": true,
+    "allBlockingQuestionsEmpty": true,
+    "freshProductionSnapshotRequiredAtActivation": true,
+    "freshDependencySnapshotsRequiredAtActivation": true,
+    "proposalsAndAuthorizationsMustBeRegeneratedAtActivation": true,
+    "collisionCheckRequiredAtActivation": true,
+    "sharedSourceCompatibilityCheckRequiredAtActivation": true
+  }
+}

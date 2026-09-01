@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-01T08:06:05Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-09-01T08:36:00.000Z",
+  "activeBatchId": "batch-0307-0311-v1",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -5212,7 +5212,55 @@
           "reason": null
         }
       ]
+    },
+    {
+      "batchId": "batch-0307-0311-v1",
+      "state": "READY",
+      "taskIds": [
+        "ledger:0307:advowaste-medical-services:42ae6d6b",
+        "ledger:0308:chillco:26fda8bd",
+        "ledger:0309:cyntox-biohazard-solutions:1dc97c03",
+        "ledger:0310:pathway-power-llc:f9eee1e3",
+        "ledger:0311:terra-gen:621138d4"
+      ],
+      "taskIndexes": [
+        307,
+        308,
+        309,
+        310,
+        311
+      ],
+      "createdAt": "2026-09-01T08:13:49.198Z",
+      "updatedAt": "2026-09-01T08:36:00.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0307-0311-v1/batch-manifest-v4.json",
+        "sha256": "00b205ca90ef41a72062d56c0029183b5129a2ca004d71d1495bde07105027e0"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-09-01T08:13:49.198Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-09-01T08:36:00.000Z",
+          "evidenceSha256": [
+            "00b205ca90ef41a72062d56c0029183b5129a2ca004d71d1495bde07105027e0"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "755df2c0d0ab76d495cc9341957cda5f8f97bcfccd7d4769f23e90ae2f1d533c"
+  "ledgerSha256": "29d17e6ba612844b96d1d2bfff7081b277e183e64c674947d7664d46a8d4f8fe"
 }
