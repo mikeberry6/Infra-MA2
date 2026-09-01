@@ -1,0 +1,229 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0299:unnamed-ai-edge-colocation-platform:46b72976",
+  "taskIndex": 299,
+  "companyName": "Unnamed AI / edge colocation platform",
+  "asOfDate": "2026-08-19",
+  "decision": "PROPOSED_NEW",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-01T05:31:00.000Z",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "Unnamed AI / edge colocation platform",
+    "requestedManagers": [
+      "I Squared Capital"
+    ],
+    "decision": "PROPOSED_NEW",
+    "confidence": "HIGH",
+    "rationale": "SEC filings show Cogent Fiber sold ten sites for $225 million to ISQ Citadel Aggregator on 2026-06-29; I Squared launched Saragon on 2026-08-19. Identity, control and entry are resolved. Site-title SPVs, any separate Saragon entity and ownership percentage are non-public but non-blocking.",
+    "identityResolution": {
+      "status": "RESOLVED",
+      "canonicalName": "Saragon",
+      "canonicalKey": "saragon|united-states",
+      "formerPlaceholder": "Unnamed AI / edge colocation platform",
+      "nameEffectiveDate": "2026-08-19",
+      "website": "https://www.saragoninfra.com/",
+      "country": "United States",
+      "headquarters": "Phoenix, Arizona",
+      "legalIdentity": "Saragon operating brand; ISQ Citadel Aggregator, L.P. buyer vehicle; separate Saragon entity not found.",
+      "targetEntity": "No target company; Cogent Fiber sold an asset portfolio."
+    },
+    "ownershipResolution": {
+      "status": "RESOLVED_AT_MANAGER_LEVEL",
+      "seller": "Cogent Fiber, LLC, an indirect wholly owned Cogent subsidiary",
+      "currentLegalOwner": "ISQ Citadel Aggregator, L.P., disclosed purchaser and closing buyer",
+      "siteTitleHolders": "NOT_PUBLICLY_DISCLOSED; PSA allowed wholly owned buyer assignees",
+      "fundStrategy": "ISQ Global Infrastructure Fund IV family; exact parallel LP NOT_PUBLICLY_DISCLOSED",
+      "owners": [
+        {
+          "manager": "I Squared Capital",
+          "organization": "Saragon",
+          "fund": "ISQ Global Infrastructure Fund IV family",
+          "vehicle": "ISQ Citadel Aggregator, L.P.",
+          "stake": "CONTROL; percentage NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2026-05-26",
+          "entryDate": "2026-06-29",
+          "entryYear": 2026,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "manager": null,
+          "organization": "Cogent Communications Holdings, Inc.",
+          "fund": null,
+          "vehicle": "Cogent Fiber, LLC",
+          "stake": "FEE_SIMPLE_ASSET_OWNER",
+          "announcementDate": null,
+          "entryDate": null,
+          "entryYear": null,
+          "exitDate": "2026-06-29",
+          "exitYear": 2026,
+          "isActive": false,
+          "transactionState": "SOLD"
+        }
+      ],
+      "transactions": [
+        {
+          "direction": "INCOMING",
+          "buyer": "ISQ Citadel Aggregator, L.P.",
+          "seller": "Cogent Fiber, LLC",
+          "stake": "ASSET_ACQUISITION; percentage NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2026-05-26",
+          "closingDate": "2026-06-29",
+          "state": "CLOSED",
+          "evidenceUrls": [
+            "https://www.sec.gov/Archives/edgar/data/1158324/000110465926066279/tm2615510d1_ex10-1.htm",
+            "https://www.sec.gov/Archives/edgar/data/1158324/000110465926078858/tm2619124d1_8k.htm"
+          ]
+        }
+      ]
+    },
+    "operatingResolution": {
+      "status": "RESOLVED",
+      "boundary": "One PortCo, Saragon; ten facilities are assets only",
+      "sector": "Digital",
+      "subsector": "AI inference and edge colocation data centers",
+      "footprint": "10 facilities; 9 U.S. markets; about 53 MW/259,000 sq ft",
+      "perimeter": "Included fee-simple sites, improvements/fixtures, onsite equipment, assigned contracts, permits and records; excluded Cogent IP/software/domains, employees, cash and pre-close items. Cogent retained fiber-easement/colocation rights.",
+      "facilities": [
+        "ATL|Atlanta|1190 Allene Ave SW, Atlanta, GA",
+        "BWI|Baltimore|6050 Race Rd, Elkridge, MD",
+        "BUR|Los Angeles|100 S Flower St, Burbank, CA",
+        "CHI|Chicago|4200 W 40th St, Chicago, IL",
+        "HOU|Houston|8902 Point Six Cir, Houston, TX",
+        "KCY|Kansas City|101 Holmes St, Kansas City, MO",
+        "BNA|Nashville|338 Woodycrest Ave, Nashville, TN",
+        "ANA|Los Angeles|1750 W Penhall Way, Anaheim, CA",
+        "PHX|Phoenix|1530 E Roeser Rd, Phoenix, AZ",
+        "STK|Stockton|3807 Coronado Ave, Stockton, CA"
+      ],
+      "capitalCommitment": "Up to $1 billion from I Squared"
+    },
+    "acquisitionExitCheck": {
+      "searchThrough": "2026-08-19",
+      "signingDate": "2026-05-22",
+      "announcementDate": "2026-05-26",
+      "announcedClose": "I Squared: Q3 2026; PSA: HSR/other conditions; outside date 2026-11-18",
+      "actualClosingDate": "2026-06-29",
+      "consideration": "$225 million cash",
+      "regulatory": "HSR condition; no public challenge/remedy found",
+      "laterCheck": "Saragon launched 2026-08-19; no later amendment, termination, recap or sale found",
+      "currentState": "CLOSED_ACTIVE"
+    },
+    "milestones": [
+      "2026-05-22|PSA signed",
+      "2026-05-26|Transaction announced",
+      "2026-06-29|$225 million sale closed",
+      "2026-08-19|Saragon launched"
+    ],
+    "evidence": [
+      {
+        "label": "Cogent closing 8-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1158324/000110465926078858/tm2619124d1_8k.htm",
+        "purpose": "Direct close date and price",
+        "sourceTier": "TIER_1_SEC",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "Filed PSA",
+        "url": "https://www.sec.gov/Archives/edgar/data/1158324/000110465926066279/tm2615510d1_ex10-1.htm",
+        "purpose": "Parties, buyer vehicle, Fund IV GP, perimeter, sites and conditions",
+        "sourceTier": "TIER_1_SEC",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "I Squared deal release",
+        "url": "https://isquaredcapital.com/news/us-ai-inference-edge-colocation-data-center-platform/",
+        "purpose": "Seller, scope, markets and expected close",
+        "sourceTier": "TIER_1_PARTY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "I Squared Saragon release",
+        "url": "https://isquaredcapital.com/news/launching-saragon-data-center-platform/",
+        "purpose": "Post-close name and launch date",
+        "sourceTier": "TIER_1_PARTY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Saragon site",
+        "url": "https://www.saragoninfra.com/",
+        "purpose": "Brand, HQ, footprint, sites and services",
+        "sourceTier": "TIER_1_OPERATOR",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "ISQ Fund IV Form D",
+        "url": "https://www.sec.gov/Archives/edgar/data/2049770/000204977025000002/xslFormDX01/primary_doc.xml",
+        "purpose": "Fund IV name/GP corroboration",
+        "sourceTier": "TIER_1_SEC",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "name": [
+        "Unnamed AI / edge colocation platform",
+        "Saragon"
+      ],
+      "canonicalKey": [
+        "unnamed-ai-edge-colocation-platform|united-states",
+        "saragon|united-states"
+      ],
+      "ownershipState": [
+        "SIGNED_PENDING_INCOMING",
+        "CLOSED_ACTIVE"
+      ],
+      "owner": [
+        "Cogent Fiber active; I Squared pending",
+        "I Squared active via ISQ Citadel Aggregator; Cogent exited 2026-06-29"
+      ]
+    },
+    "excludedOrDuplicateCandidates": [
+      "Cogent Fiber/Cogent Communications|former seller/parent, not PortCo",
+      "ISQ Citadel Aggregator, L.P.|acquisition vehicle, not second PortCo",
+      "Cogent Data Centers|former label, not separate disclosed target",
+      "Ten facilities/title assignees|assets/SPVs under Saragon, not PortCos"
+    ],
+    "unresolvedQuestions": [
+      "NON_BLOCKING|Each site's deed grantee/assignee: NOT_PUBLICLY_DISCLOSED",
+      "NON_BLOCKING|Separate Saragon entity, exact Fund IV parallel LP and equity percentage: NOT_PUBLICLY_DISCLOSED"
+    ],
+    "recommendedListAction": {
+      "action": "CREATE_ACTIVE_COMPANY",
+      "canonicalName": "Saragon",
+      "canonicalKey": "saragon|united-states",
+      "manager": "I Squared Capital",
+      "entryDate": "2026-06-29",
+      "investmentYear": 2026,
+      "ownershipState": "CLOSED_ACTIVE",
+      "boundary": "One PortCo; ten facilities as assets",
+      "doNotCreate": "Placeholder, buyer vehicle or site-level PortCos"
+    }
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0299-unnamed-ai-edge-colocation-platform/attempt-1/research-decision.json",
+      "sha256": "8a033a501b851e9a6631258d31617a1d107b25b818fef3d5a1335e0506a3317b"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0299-unnamed-ai-edge-colocation-platform/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "f42514ca83ab5e6cbfcbca74c38bc6622a43ecf55cc83eaac37cdcd391071225"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0299-unnamed-ai-edge-colocation-platform/attempt-1/source-verification.json",
+      "sha256": "03b54d7bc4baa1f61d634dc209b8efd6a2e610a5425c13fd41d391488e08b476"
+    },
+    "acceptedResponseSha256": "aa580404199167320d558a327d0d9586fc53696a038945618c1fe25f0284b06f",
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION"
+  }
+}

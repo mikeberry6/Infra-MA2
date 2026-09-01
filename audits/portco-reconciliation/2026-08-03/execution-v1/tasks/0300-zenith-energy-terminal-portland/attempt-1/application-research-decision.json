@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0300:zenith-energy-terminal-portland:377bcbbb",
+  "taskIndex": 300,
+  "companyName": "Zenith Energy Terminal Portland",
+  "asOfDate": "2026-08-19",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-01T05:31:00.000Z",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "Zenith Energy Terminal Portland",
+    "requestedManagers": [
+      "I Squared Capital"
+    ],
+    "decision": "PROPOSED_CORRECTION",
+    "confidence": "HIGH",
+    "rationale": "No direct closing evidence exists. I Squared signed for 100%, but Portland's required franchise-transfer ordinance was referred to full Council on 2026-08-06 and remained unscheduled. Zenith stays active; I Squared is SIGNED_PENDING_INCOMING with no 2025 entry year.",
+    "identityResolution": {
+      "canonicalKey": "zenith-energy-terminal-portland|united-states",
+      "canonicalName": "Zenith Energy Portland Terminal",
+      "legalEntity": "Zenith Energy Terminals Holdings LLC",
+      "formerName": "Arc Terminals Holdings LLC",
+      "address": "5501 NW Front Avenue, Portland, Oregon 97210",
+      "boundary": "Standalone Portland terminal PortCo; do not merge with Zenith's broader platform.",
+      "status": "RESOLVED"
+    },
+    "ownershipResolution": {
+      "currentLegalOwner": "Zenith Energy Terminals Holdings LLC",
+      "seller": "Zenith Energy Terminals Holdings LLC",
+      "ultimateAcquiredParty": "Zenith Energy U.S., L.P.",
+      "sellerChain": "Zenith Energy U.S., L.P./Zenith U.S. GP, LLC > historically Arc Logistics > Zenith Energy Terminals Holdings LLC.",
+      "owners": [
+        {
+          "manager": "Warburg Pincus",
+          "organization": "Zenith Energy U.S., L.P.",
+          "fund": "NOT_PUBLICLY_DISCLOSED",
+          "vehicle": "Zenith Energy U.S., L.P.",
+          "stake": "Lead sponsor; % NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2017-08-29",
+          "entryDate": "2017-12-21",
+          "entryYear": 2017,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CURRENT_PENDING_EXIT"
+        },
+        {
+          "manager": "Kelso & Company",
+          "organization": "Zenith Energy U.S., L.P.",
+          "fund": "Kelso Fund IX",
+          "vehicle": "Zenith Energy U.S., L.P.",
+          "stake": "Sponsor; % NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2017-08-29",
+          "entryDate": "2017-12-21",
+          "entryYear": 2017,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CURRENT_PENDING_EXIT"
+        },
+        {
+          "manager": "I Squared Capital",
+          "organization": "ISQ Springer Holdings, LLC",
+          "fund": "ISQ Energy Transition Fund (EU) Euro SCSp (ETIF)",
+          "vehicle": "ISQ Springer Aggregator, L.P. > ISQ Springer Holdings, LLC",
+          "stake": "100% signed terminal perimeter",
+          "announcementDate": "2025-12-16",
+          "entryDate": null,
+          "entryYear": null,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": false,
+          "transactionState": "SIGNED_PENDING_INCOMING"
+        }
+      ],
+      "status": "RESOLVED"
+    },
+    "operatingResolution": {
+      "operator": "Zenith Energy Terminals Holdings LLC",
+      "status": "ACTIVE",
+      "capacity": "1,518,200 barrels operator-listed; buyer rounds to 1.7 million.",
+      "connections": "Rail, marine, truck and pipeline.",
+      "products": "Renewable fuels, SAF components/blends, biodiesel, aviation gasoline, distillates and crude oil during transition.",
+      "customers": "Portland customers NOT_PUBLICLY_DISCLOSED; broader Zenith platform reports 80+.",
+      "permits": "City pipeline franchise remains with Zenith; DEQ issued its air permit on 2025-10-09. Crude handling/storage must cease by October 2027; new infrastructure is restricted to permitted renewable, aviation and non-fuel uses."
+    },
+    "acquisitionExitCheck": {
+      "pendingTransaction": {
+        "direction": "INCOMING",
+        "buyer": "ISQ Springer Holdings, LLC via ISQ Springer Aggregator, L.P.; ETIF majority-owned and I Squared-managed",
+        "seller": "Zenith Energy Terminals Holdings LLC; ultimate acquired party Zenith Energy U.S., L.P.",
+        "stake": "100%",
+        "announcementDate": "2025-12-16",
+        "closingDate": null,
+        "state": "SIGNED_PENDING_INCOMING",
+        "evidenceUrls": [
+          "https://isquaredcapital.com/news/i-squared-capital-accelerates-u-s-energy-transition-with-acquisition-of-oregons-premier-renewable-fuels-terminal/",
+          "https://www.portland.gov/sites/default/files/council-documents/2026/2026-01-07_Final_ISQ-Springer-Letter-to-City-RE-Franchise-Transfer-Request.pdf"
+        ]
+      },
+      "approvals": "HSR clearance granted 2026-01-16; required City consent remained pending.",
+      "expectedClosing": "Parties cited February 2026 at earliest; not achieved.",
+      "laterCheck": "No completion, termination, amendment, recapitalization or replacement buyer found."
+    },
+    "milestones": [
+      {
+        "date": "2018-12-21",
+        "event": "Zenith bought the Portland property from LCP Oregon Holdings LLC.",
+        "category": "Ownership"
+      },
+      {
+        "date": "2025-12-16",
+        "event": "ETIF signed for 100%, subject to approvals/conditions.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "2026-08-06",
+        "event": "Portland committee referred ordinance 2026-263; Council remained unscheduled.",
+        "category": "Approval"
+      }
+    ],
+    "evidence": [
+      {
+        "label": "Portland docket 2026-263",
+        "url": "https://www.portland.gov/council/documents/ordinance/zenith-franchise-transfer-isq-holdings",
+        "purpose": "Required consent, parties and pending status.",
+        "sourceTier": "GOV_PRIMARY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "January 7 City submission",
+        "url": "https://www.portland.gov/sites/default/files/council-documents/2026/2026-01-07_Final_ISQ-Springer-Letter-to-City-RE-Franchise-Transfer-Request.pdf",
+        "purpose": "Seller, buyer chain and future closing/permit transfer.",
+        "sourceTier": "PARTY_GOV_FILING",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "FTC HSR notice 20260593",
+        "url": "https://www.ftc.gov/legal-library/browse/early-termination-notices/20260593",
+        "purpose": "Acquirer, acquired party/entity and HSR clearance.",
+        "sourceTier": "GOV_PRIMARY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "I Squared announcement",
+        "url": "https://isquaredcapital.com/news/i-squared-capital-accelerates-u-s-energy-transition-with-acquisition-of-oregons-premier-renewable-fuels-terminal/",
+        "purpose": "Signed 100% perimeter, ETIF and asset profile.",
+        "sourceTier": "BUYER_PRIMARY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Zenith Portland page",
+        "url": "https://www.zenithterminals.com/terminals/portland-terminal",
+        "purpose": "Active identity, capacity, products and logistics.",
+        "sourceTier": "OPERATOR_PRIMARY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Oregon DEQ Zenith page",
+        "url": "https://www.oregon.gov/deq/programs/pages/zenith.aspx",
+        "purpose": "Permit holder, permit status and restrictions.",
+        "sourceTier": "GOV_PRIMARY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "before": "I Squared active at 100% with 2025 entry year.",
+      "after": "Zenith/sponsors active pending exit; I Squared/ETIF signed-pending with null entry date/year."
+    },
+    "excludedOrDuplicateCandidates": [
+      "Do not merge Portland into the broader Zenith platform.",
+      "Exclude tanks, docks, pipeline, racks and conversion projects as subordinate assets/projects."
+    ],
+    "unresolvedQuestions": [
+      "Warburg fund, sponsor percentages and current minority roster are NOT_PUBLICLY_DISCLOSED.",
+      "Any pre-close entity reorganization and Portland customer/contracts are NOT_PUBLICLY_DISCLOSED."
+    ],
+    "recommendedListAction": "Keep the standalone terminal active under Zenith; remove I Squared's active flag/2025 entry year; add I Squared/ETIF via ISQ Springer as 100% SIGNED_PENDING_INCOMING with null close date/year, leaving Zenith/Warburg/Kelso open."
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0300-zenith-energy-terminal-portland/attempt-1/research-decision.json",
+      "sha256": "8140d67584f04f8f5b780cd10fb43a03ba105351223d297118effd35ece570a3"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0300-zenith-energy-terminal-portland/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "68f6dcbd111f23fcf934d462956ebc17e5144aebf6d6f0276d69e957e0e25aa7"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0300-zenith-energy-terminal-portland/attempt-1/source-verification.json",
+      "sha256": "97d07a8b063cc0ebf94862c587312057c47ce4915dbd81446adaaaa75c12c462"
+    },
+    "acceptedResponseSha256": "4f6e87d99b843783c57713cfed6d5b487ee0c18cd56691e121d422b9fcf0a272",
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION"
+  }
+}

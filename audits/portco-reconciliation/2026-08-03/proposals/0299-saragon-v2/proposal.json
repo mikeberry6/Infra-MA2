@@ -1,0 +1,223 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0299:unnamed-ai-edge-colocation-platform:46b72976",
+  "taskIndex": 299,
+  "asOfDate": "2026-09-01",
+  "generatedAt": "2026-09-01T05:40:00.000Z",
+  "canonicalKey": "unnamed-ai-edge-colocation-platform|united-states",
+  "companyName": "Unnamed AI / edge colocation platform",
+  "actions": [
+    "CREATE_COMPANY"
+  ],
+  "sourceHoldingIds": [
+    "053-i-squared-capital:holding:019:unnamed-ai-edge-colocation-platform"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Create one active Saragon platform record for the ten-site U.S. edge-colocation portfolio acquired from Cogent Fiber. The filed purchase agreement identifies ISQ Citadel Aggregator, L.P. as buyer and ties it to I Squared's Fund IV family; Cogent's June 29, 2026 Form 8-K confirms the $225 million closing, and I Squared launched the Saragon brand on August 19. The ten facilities are subordinate assets, not separate PortCos.",
+  "evidence": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1158324/000110465926078858/tm2619124d1_8k.htm",
+      "purpose": "Legal closing and consideration",
+      "supports": [
+        "Cogent Fiber completed the ten-site sale on June 29, 2026",
+        "The reported purchase price was $225 million"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1158324/000110465926066279/tm2615510d1_ex10-1.htm",
+      "purpose": "Buyer vehicle, Fund IV attribution and asset perimeter",
+      "supports": [
+        "ISQ Citadel Aggregator, L.P. was the disclosed buyer vehicle",
+        "The acquisition concerned ten fee-simple data-center sites",
+        "The buyer was associated with I Squared's Fund IV family"
+      ]
+    },
+    {
+      "url": "https://isquaredcapital.com/news/launching-saragon-data-center-platform/",
+      "purpose": "Post-closing identity and current platform status",
+      "supports": [
+        "I Squared launched Saragon as the operating platform on August 19, 2026",
+        "The ten facilities operate as one manager-level platform"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "c744438a78bf543399666fa5ee9275235079827544b38d752e2acb395cf0a118",
+  "currentCompanySnapshotSha256": null,
+  "executionLock": {
+    "taskSnapshotSha256": "9967d77e565f466da431be5d6ddb39c290d97d5355a76547b0f5edc76ae35530",
+    "taskStateSha256": "ac3e05238a9c95af54f599d92ee320ff51c0ed7c7bab6a28286d1db8de7f9c6b",
+    "taskDependencySha256": "1cc6868766b69c1eb280187f0fdc8fd7c06bb6589c30401ba9896a982250c9d8",
+    "seedEntrySha256": null,
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "2746499665392c9916cdd45262817a6751856bc79a9b39837c621c43d9fde53b",
+      "organizationsSha256": "3a6e897cb6bf74e545c692a28085dff8e712c5fcc0be550290c59c13cf02f9a8",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj2pm00dwivhek1esyo4m",
+        "fundName": "ISQ Global Infrastructure Fund IV",
+        "managerId": "cmrxpi9mi002aivhewgvbh2ag",
+        "updatedAt": "2026-08-03T17:25:44.728Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi9mi002aivhewgvbh2ag",
+        "name": "I Squared Capital",
+        "updatedAt": "2026-07-23T16:09:19.674Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": null,
+  "beforeImageSha256": null,
+  "afterImage": {
+    "id": null,
+    "name": "Saragon",
+    "aliases": [
+      "Unnamed AI / edge colocation platform",
+      "Cogent data center portfolio",
+      "ISQ Citadel Aggregator, L.P."
+    ],
+    "sector": "DIGITAL",
+    "subsector": "AI inference and edge colocation data centers",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Saragon is an I Squared Capital digital-infrastructure platform providing power-dense colocation capacity for AI inference, edge computing and interconnection workloads. The platform comprises ten fee-simple data-center properties across nine U.S. markets, with approximately 53 MW of capacity and 259,000 square feet. Its facilities are located in Atlanta, Baltimore, the Los Angeles area, Chicago, Houston, Kansas City, Nashville, Phoenix and Stockton. Cogent Fiber signed the sale agreement with ISQ Citadel Aggregator, L.P. on May 22, 2026, announced it on May 26 and completed the $225 million sale on June 29. I Squared launched the Saragon brand on August 19 and disclosed up to $1 billion of capital for the platform. The acquisition is attributable to the ISQ Global Infrastructure Fund IV family; the precise parallel fund, legal titleholders for individual sites and manager-level equity percentage are not publicly disclosed. Saragon is counted once as the manager-level platform, while its ten facilities remain subordinate assets. No subsequent sale or signed pending exit was identified through August 19, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.saragoninfra.com/",
+    "yearFounded": 2026,
+    "headquarters": "Phoenix, Arizona",
+    "lastVerifiedAt": "2026-08-19T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": null,
+        "managerName": "I Squared Capital",
+        "organizationName": "I Squared Capital",
+        "fundName": "ISQ Global Infrastructure Fund IV",
+        "vehicleName": "ISQ Citadel Aggregator, L.P.",
+        "stake": "Control position; exact percentage not publicly disclosed",
+        "investmentYear": 2026,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": null,
+        "date": "May 22, 2026",
+        "event": "Cogent Fiber and ISQ Citadel Aggregator signed the purchase agreement for ten U.S. data-center sites.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-05-22T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1158324/000110465926066279/tm2615510d1_ex10-1.htm"
+        ]
+      },
+      {
+        "id": null,
+        "date": "May 26, 2026",
+        "event": "I Squared announced the planned acquisition and described a ten-site, nine-market U.S. AI-inference and edge-colocation platform.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-05-26T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://isquaredcapital.com/news/us-ai-inference-edge-colocation-data-center-platform/"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Jun 29, 2026",
+        "event": "Cogent completed the $225 million sale of the ten data-center properties to the I Squared acquisition vehicle.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-06-29T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1158324/000110465926078858/tm2619124d1_8k.htm"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Aug 19, 2026",
+        "event": "I Squared launched Saragon as the operating platform and disclosed up to $1 billion of capital for expansion.",
+        "category": "FOUNDING",
+        "sortDate": "2026-08-19T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://isquaredcapital.com/news/launching-saragon-data-center-platform/"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": null,
+        "label": "SEC — Cogent closing Form 8-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1158324/000110465926078858/tm2619124d1_8k.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "June 29, 2026 closing and $225 million consideration",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "SEC — Cogent data-center purchase agreement",
+        "url": "https://www.sec.gov/Archives/edgar/data/1158324/000110465926066279/tm2615510d1_ex10-1.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Buyer vehicle, Fund IV attribution, signing date and ten-site perimeter",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Isquaredcapital",
+        "url": "https://isquaredcapital.com/news/us-ai-inference-edge-colocation-data-center-platform/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Transaction announcement, market scope and planned investment",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "I Squared Capital — Saragon launch",
+        "url": "https://isquaredcapital.com/news/launching-saragon-data-center-platform/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Saragon name, August 2026 launch and current platform scope",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Saragon",
+        "url": "https://www.saragoninfra.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Headquarters, facilities, markets and current operating profile",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "ISQ Global Infrastructure Fund IV",
+        "url": "https://www.sec.gov/Archives/edgar/data/2049770/000204977025000002/xslFormDX01/primary_doc.xml",
+        "sourceType": "SEC_FILING",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Fund IV family name and general-partner corroboration",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "745f09744abe9bdb3bbbaea758e4a76c162d19b7bbd9cbf5aa47e174ba8cef2f",
+  "proposalSha256": "037413197a70d6f211479c498ccb2a1754d3e1f04bf44478ff66ac31bf87d3d7"
+}

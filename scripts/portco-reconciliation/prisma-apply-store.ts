@@ -328,6 +328,9 @@ const approvedOwnershipOrganizationProvisioning = {
   "Energy Investors Funds Group": "FUND_MANAGER",
   "Hawaiian Electric Industries / Pacific Current": "CORPORATE",
   "FifteenFortySeven Critical Systems Realty": "CORPORATE",
+  "Meketa Capital": "FUND_MANAGER",
+  "Warburg Pincus": "FUND_MANAGER",
+  "Kelso & Company": "FUND_MANAGER",
 } as const;
 
 export function ownershipOrganizationTypes(

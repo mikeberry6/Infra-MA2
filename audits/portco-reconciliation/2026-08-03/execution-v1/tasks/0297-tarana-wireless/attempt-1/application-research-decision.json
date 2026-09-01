@@ -1,0 +1,223 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0297:tarana-wireless:7b60f5b2",
+  "taskIndex": 297,
+  "companyName": "Tarana Wireless",
+  "asOfDate": "2026-08-19",
+  "decision": "EXCLUDED",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-01T05:31:00.000Z",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": {
+      "name": "Tarana Wireless",
+      "canonicalKey": "tarana-wireless|united-states"
+    },
+    "requestedManagers": [
+      "I Squared Capital"
+    ],
+    "decision": "EXCLUDED",
+    "confidence": "HIGH",
+    "rationale": "Tarana sells fixed-wireless radios and cloud software to independent operators. I Squared invested through its growth-stage Global InfraTech Fund, not a direct-infrastructure mandate, and no Tarana-owned commercial broadband network, towers, fiber, service spectrum or subscribers were found.",
+    "identityResolution": {
+      "status": "RESOLVED",
+      "legalName": "Tarana Wireless, Inc.",
+      "jurisdiction": "Delaware corporation",
+      "founded": 2009,
+      "headquarters": "630 Alder Drive, Milpitas, CA 95035",
+      "footprint": "Milpitas HQ; Pune, India R&D; 300+ operators in 24 countries and 47 US states.",
+      "boundary": "Customer ISPs/deployments are not Tarana assets.",
+      "mergeRequired": false
+    },
+    "ownershipResolution": {
+      "qualifyingDirectInfrastructureOwners": [],
+      "owners": [
+        {
+          "manager": "I Squared Capital",
+          "organization": "I Squared Capital",
+          "fund": "Global InfraTech Fund",
+          "vehicle": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2022-03-23",
+          "entryDate": "2022-03-23",
+          "entryYear": 2022,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED growth round; terms undisclosed; current listing/board; no exit found."
+        },
+        {
+          "manager": "Digital Alpha Advisors",
+          "organization": "Digital Alpha Advisors, LLC",
+          "fund": "NOT_PUBLICLY_DISCLOSED",
+          "vehicle": "Growth equity",
+          "stake": "NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2023-09-13",
+          "entryDate": "2023-09-13",
+          "entryYear": 2023,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": null,
+          "transactionState": "CLOSED $50M up round; current holding UNRESOLVED."
+        },
+        {
+          "manager": "Trinity Capital / Eagle Point",
+          "organization": "Trinity Capital Inc.; Eagle Point Trinity Senior Secured Lending Company",
+          "fund": "Lending vehicles",
+          "vehicle": "Secured venture debt and warrants",
+          "stake": "No disclosed control stake",
+          "announcementDate": null,
+          "entryDate": "2021-06-30",
+          "entryYear": 2021,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "Loans/warrants reported in 2026; excluded credit/equity-kicker."
+        },
+        {
+          "manager": "Hercules Capital",
+          "organization": "Hercules Capital, Inc.",
+          "fund": "Balance sheet",
+          "vehicle": "Senior secured debt and warrant",
+          "stake": "$11M principal at 2026-03-31; no disclosed control stake",
+          "announcementDate": null,
+          "entryDate": null,
+          "entryYear": 2026,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "2026-03-20 warrant; March 2030 loan current at 2026-06-30; excluded credit."
+        }
+      ],
+      "otherKnownEquityInvestors": [
+        "1010 Holdings/Greg Wyler; Khosla Ventures; EchoStar; AT&T; Deutsche Telekom; Prime Movers Lab; Liberty Latin America Ventures; Liberty Global Ventures; Axon Capital; Michigan State Pension Fund; two unnamed 2022 institutions; other unnamed investors. Stakes/current status UNRESOLVED."
+      ],
+      "nonOwnerProviders": [
+        "Barclays: 2022 placement agent.",
+        "Banc of California: 2024 patent security interest; role/release UNRESOLVED.",
+        "Digital Alpha funded Element 8 and Wisper ISP customer networks, not Tarana."
+      ],
+      "finding": "No qualifying direct-infrastructure owner."
+    },
+    "operatingResolution": {
+      "products": "G1/G2 radios, custom silicon, cloud/install software and support.",
+      "customers": "Independent ISPs/operators deploy the platform and serve subscribers.",
+      "manufacturing": "Tarana scales hardware manufacturing and owns patented designs; factory/contract-manufacturing structure is undisclosed.",
+      "networkAssets": "A 2020 demonstration network was product validation; commercial deployments are customer networks.",
+      "scopeConclusion": "Equipment/software vendor; outside this census."
+    },
+    "acquisitionExitCheck": {
+      "result": "No acquisition, merger, IPO, control sale, investor exit or signed pending transaction found through 2026-08-19; Tarana and I Squared pages remain active.",
+      "pendingTransactions": []
+    },
+    "milestones": [
+      {
+        "date": "2009",
+        "event": "Founded."
+      },
+      {
+        "date": "2021-05-12",
+        "event": "Closed $50M preferred financing led by Prime Movers Lab."
+      },
+      {
+        "date": "2022-03-23",
+        "event": "Closed $170M round at $1B valuation; I Squared participated through Global InfraTech."
+      },
+      {
+        "date": "2026-06-30",
+        "event": "Trinity/Eagle Point and Hercules filings showed debt/warrants, not infrastructure ownership."
+      }
+    ],
+    "evidence": [
+      {
+        "label": "Tarana About",
+        "url": "https://taranawireless.com/about/",
+        "purpose": "Products, customers, footprint, IP and funding.",
+        "sourceTier": "PRIMARY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "2022 round",
+        "url": "https://taranawireless.com/tarana-raises-170m-and-leads-in-fiber-class-broadband/",
+        "purpose": "Round, investors, valuation and operator model.",
+        "sourceTier": "PRIMARY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "I Squared InfraTech",
+        "url": "https://isquaredcapital.com/txnm_fund/infratech/",
+        "purpose": "Current listing and equipment-vendor description.",
+        "sourceTier": "MANAGER",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "InfraTech mandate",
+        "url": "https://www.businesswire.com/news/home/20220125005206/en/I-Squared-Capitals-Global-InfraTech-Fund-invests-in-IoT-company-1NCE",
+        "purpose": "Growth-stage technology mandate.",
+        "sourceTier": "MANAGER_RELEASE",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Digital Alpha round",
+        "url": "https://taranawireless.com/tarana-raises-50m-with-digital-alpha/",
+        "purpose": "Equity versus customer-network financing.",
+        "sourceTier": "PRIMARY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Trinity Q1 2026",
+        "url": "https://www.sec.gov/Archives/edgar/data/1786108/000119312526207620/trin-20260331.htm",
+        "purpose": "Debt and warrant exposure.",
+        "sourceTier": "FILING",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Hercules Q2 2026",
+        "url": "https://www.sec.gov/Archives/edgar/data/1280784/000128078426000042/htgc-20260630.htm",
+        "purpose": "Current loan/warrant exposure.",
+        "sourceTier": "FILING",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "before": "Active I Squared Digital PortCo.",
+      "after": "Current I Squared InfraTech investment, but excluded entirely from the direct-infrastructure PortCo census."
+    },
+    "excludedOrDuplicateCandidates": [
+      "Customer networks/towers/spectrum/subscribers: not Tarana assets.",
+      "Element 8/Wisper financings: customer infrastructure, not Tarana ownership.",
+      "Barclays, Trinity/Eagle Point, Hercules and Banc of California: agency/credit/security roles."
+    ],
+    "unresolvedQuestions": [
+      "I Squared security, vehicle, stake and dilution.",
+      "Current cap-table positions and private exits.",
+      "Manufacturing structure and Banc security-interest release."
+    ],
+    "recommendedListAction": "Remove Tarana Wireless entirely from the North American direct-infrastructure PortCo list; retain only as an excluded I Squared Global InfraTech technology investment. Do not attribute customer networks to Tarana."
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0297-tarana-wireless/attempt-1/research-decision.json",
+      "sha256": "3310507c028bc46534b3c20111545cfbd14783f3bee21e341c8b385cfc79e871"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0297-tarana-wireless/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "ae29ef4d5051ac65c28bfcb23f9febf6dbe86ba7a06f9f16a8adb940a484003d"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0297-tarana-wireless/attempt-1/source-verification.json",
+      "sha256": "a2f0b9f7e594ddbea2697529aa99e23148a23af449c84ce819b40b4f23cf9ba6"
+    },
+    "acceptedResponseSha256": "ba37f35a22da8b233eb60f06f03d7433319e29b0bde029e74f3f27db61dcb54f",
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION"
+  }
+}

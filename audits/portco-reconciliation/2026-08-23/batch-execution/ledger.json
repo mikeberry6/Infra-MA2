@@ -3,7 +3,7 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-01T05:29:00.000Z",
+  "updatedAt": "2026-09-01T06:17:01.000Z",
   "activeBatchId": "batch-0297-0301-v1",
   "batches": [
     {
@@ -4988,7 +4988,7 @@
     },
     {
       "batchId": "batch-0297-0301-v1",
-      "state": "FORMING",
+      "state": "RELEASING",
       "taskIds": [
         "ledger:0297:tarana-wireless:7b60f5b2",
         "ledger:0298:transportation-equipment-network:8eb51003",
@@ -5004,9 +5004,12 @@
         301
       ],
       "createdAt": "2026-09-01T05:29:00.000Z",
-      "updatedAt": "2026-09-01T05:29:00.000Z",
+      "updatedAt": "2026-09-01T06:17:01.000Z",
       "completedAt": null,
-      "batchManifest": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0297-0301-v1/batch-manifest-v3.json",
+        "sha256": "d3e2562a9c1686bb6a189868188db766c574f56d6927c98fa3bfe94cd78b2416"
+      },
       "releaseSha": null,
       "receipt": null,
       "reason": null,
@@ -5018,9 +5021,29 @@
           "at": "2026-09-01T05:29:00.000Z",
           "evidenceSha256": [],
           "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-09-01T06:17:00.000Z",
+          "evidenceSha256": [
+            "d3e2562a9c1686bb6a189868188db766c574f56d6927c98fa3bfe94cd78b2416"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "RELEASING",
+          "at": "2026-09-01T06:17:01.000Z",
+          "evidenceSha256": [
+            "d3e2562a9c1686bb6a189868188db766c574f56d6927c98fa3bfe94cd78b2416"
+          ],
+          "reason": null
         }
       ]
     }
   ],
-  "ledgerSha256": "42b3fe4f8d853a3c335b77c8528adccd5b221876fb3b8df09ea7c6a4faed8d65"
+  "ledgerSha256": "86bc4daa9eb97d91015999dfdd353a7dce8c9c8409d74e86bd1909649cc6698a"
 }

@@ -1,0 +1,256 @@
+{
+  "generatedAt": "2026-09-01T05:40:00.000Z",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER",
+    "MERGE_COMPANIES"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "reviewedSeedRetirementTaskIds": [
+    "ledger:0494:transportation-equipment-network-ten:c5e0a020"
+  ],
+  "rationale": "Retain the existing production company as the sole canonical Transportation Equipment Network record, retire the duplicate parenthetical seed identity, and correct the platform's ownership and history. Direct manager evidence establishes that I Squared began building the platform by acquiring Star Leasing through Fund II in March 2021, then brought Mubadala, QIA and other co-investors into TEN in July 2024. Meketa identifies TEN as a current MIFAX co-investment, and an SEC filing discloses a separate 6.29% Series II common-stock interest as of March 31, 2026. Exact percentages and vehicles for the other current owners are not publicly disclosed, so no equal ownership is inferred.",
+  "evidence": [
+    {
+      "url": "https://isquaredcapital.com/news/i-squared-announces-new-shareholders-in-transportation-equipment-network-ten-the-leading-north-american-full-service-trailer-lessor/",
+      "purpose": "Canonical identity, current co-owners and 2024 recapitalization",
+      "supports": [
+        "TEN became the single platform identity effective July 1, 2024",
+        "Mubadala and QIA invested alongside I Squared and other co-investors",
+        "The business is a North American asset-owning trailer lessor"
+      ]
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20210324005278/en/I-Squared-Capital-Acquires-Star-Leasing-A-Leading-Trailer-Lessor-in-the-United-States",
+      "purpose": "Initial I Squared entry and Fund II attribution",
+      "supports": [
+        "ISQ Global Infrastructure Fund II acquired employee-owned Star Leasing on March 24, 2021"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/2059924/000121390026057486/ea0290488-10q_isqopen.htm",
+      "purpose": "Series II current ownership evidence",
+      "supports": [
+        "ISQ Open Infrastructure Company Series II held an indirect 6.29% common-stock interest in TEN at March 31, 2026"
+      ]
+    },
+    {
+      "url": "https://meketacapital.com/co-investments",
+      "purpose": "Meketa current co-investment evidence",
+      "supports": [
+        "Meketa Infrastructure Fund lists TEN as a co-investment"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "companyFieldUpdates": {
+    "aliases": [
+      "TEN",
+      "Transportation Equipment Network (TEN)",
+      "Star Leasing Company, LLC d/b/a TEN"
+    ],
+    "description": "Transportation Equipment Network (TEN) is an asset-owning North American commercial-trailer leasing and fleet-services platform serving carriers, shippers and logistics operators. It provides trailer leasing and rentals, maintenance, fleet technology and advisory services, refrigerated-equipment support and storage through an integrated network assembled from Star Leasing, Cooling Concepts, NETS, Commercial Trailer Leasing, TIP Canada and Boston Trailer. Current company disclosures describe approximately 83,000 trailers, about 1,000 employees and nearly 50 locations across the United States and Canada. I Squared began building the platform through ISQ Global Infrastructure Fund II's March 2021 acquisition of employee-owned Star Leasing. TEN became the common trade identity effective July 1, 2024, when Mubadala, QIA and other co-investors invested more than $600 million. Meketa Infrastructure Fund and a separate ISQ Open Infrastructure Company Series II position are also publicly disclosed current interests. Exact post-2024 ownership percentages, securities and vehicles are not fully public; the only precise current percentage found is Series II's 6.29% indirect common-stock interest at March 31, 2026. No later platform sale or signed pending exit was identified through August 19, 2026.",
+    "website": "https://tenleasing.com/",
+    "yearFounded": 1974,
+    "headquarters": "Dublin, Ohio",
+    "lastVerifiedAt": "2026-08-19T00:00:00.000Z"
+  },
+  "ownershipPeriodUpdates": [
+    {
+      "id": "cmrxpk47u020bivhe3g8vbgkl",
+      "set": {
+        "fundName": null,
+        "vehicleName": "ISQ Global Infrastructure Fund II",
+        "stake": "Lead sponsor; exact current percentage not publicly disclosed",
+        "investmentYear": 2021
+      }
+    },
+    {
+      "id": "cmrxpk82f0268ivhe03hwtmkt",
+      "set": {
+        "fundName": null,
+        "vehicleName": null,
+        "stake": "Exact percentage not publicly disclosed"
+      }
+    },
+    {
+      "id": "cmrxpk82z0269ivhegqatfbde",
+      "set": {
+        "managerName": "Mubadala",
+        "fundName": null,
+        "vehicleName": null,
+        "stake": "Exact percentage not publicly disclosed"
+      }
+    }
+  ],
+  "ownershipPeriodRemovals": [],
+  "ownershipPeriodAdditions": [
+    {
+      "id": null,
+      "managerName": "Meketa Capital",
+      "organizationName": null,
+      "fundName": null,
+      "vehicleName": "Meketa Infrastructure Fund (MIFAX)",
+      "stake": "Exact percentage not publicly disclosed",
+      "investmentYear": 2024,
+      "exitYear": null,
+      "isActive": true,
+      "transactionState": "CLOSED_ACTIVE"
+    },
+    {
+      "id": null,
+      "managerName": "I Squared Capital",
+      "organizationName": "I Squared Capital",
+      "fundName": null,
+      "vehicleName": "ISQ Open Infrastructure Company LLC—Series II",
+      "stake": "6.29% indirect common-stock interest at March 31, 2026",
+      "investmentYear": 2025,
+      "exitYear": null,
+      "isActive": true,
+      "transactionState": "CLOSED_ACTIVE"
+    }
+  ],
+  "pendingOwnershipTransactionUpdates": [],
+  "pendingOwnershipTransactionAdditions": [],
+  "milestoneUpdates": [
+    {
+      "id": "cmrxpm0ry04d2ivhe2pcx14dr",
+      "set": {
+        "date": "1974",
+        "event": "Star Leasing, the predecessor at the core of today's TEN platform, was founded in Ohio.",
+        "category": "FOUNDING",
+        "sortDate": "1974-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    },
+    {
+      "id": "cmrxpm0sj04d3ivheuekml70u",
+      "set": {
+        "date": "Mar 24, 2021",
+        "event": "ISQ Global Infrastructure Fund II acquired employee-owned Star Leasing, beginning I Squared's build of the TEN platform.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-03-24T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.businesswire.com/news/home/20210324005278/en/I-Squared-Capital-Acquires-Star-Leasing-A-Leading-Trailer-Lessor-in-the-United-States"
+        ]
+      }
+    },
+    {
+      "id": "cmrxpm0t304d4ivhedw64bzm3",
+      "set": {
+        "date": "2022–2023",
+        "event": "The platform added Cooling Concepts, NETS and Commercial Trailer Leasing, consolidating complementary trailer-leasing and services businesses beneath one manager-level platform.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-09-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://isquaredcapital.com/news/i-squared-capital-creates-one-of-the-largest-full-service-trailer-lessors-in-the-united-states/"
+        ]
+      }
+    },
+    {
+      "id": "cmrxpm0tm04d5ivhe17lenpuu",
+      "set": {
+        "date": "Jul 15, 2024",
+        "event": "I Squared announced more than $600 million of new equity from Mubadala, QIA and other co-investors for TEN following the TIP Canada combination and July 1 rebrand.",
+        "category": "FINANCING",
+        "sortDate": "2024-07-15T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://isquaredcapital.com/news/i-squared-announces-new-shareholders-in-transportation-equipment-network-ten-the-leading-north-american-full-service-trailer-lessor/"
+        ]
+      }
+    },
+    {
+      "id": "cmrxpmgn704wcivhevn4gd91u",
+      "set": {
+        "date": "Jul 1, 2024",
+        "event": "Star Leasing and the integrated businesses adopted Transportation Equipment Network as their common North American trade identity.",
+        "category": "OTHER",
+        "sortDate": "2024-07-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://isquaredcapital.com/news/i-squared-announces-new-shareholders-in-transportation-equipment-network-ten-the-leading-north-american-full-service-trailer-lessor/"
+        ]
+      }
+    },
+    {
+      "id": "cmrxpmgns04wdivhen2941tgv",
+      "set": {
+        "date": "2024",
+        "event": "Meketa Infrastructure Fund disclosed TEN as a co-investment; its exact stake and security are not publicly disclosed.",
+        "category": "FINANCING",
+        "sortDate": "2024-12-31T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://meketacapital.com/co-investments"
+        ]
+      }
+    },
+    {
+      "id": "cmrxpmgoa04weivhew6fqrt7x",
+      "set": {
+        "date": "Mar 31, 2026",
+        "event": "ISQ Open Infrastructure Company Series II reported a 6.29% indirect common-stock interest in TEN.",
+        "category": "FINANCING",
+        "sortDate": "2026-03-31T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/2059924/000121390026057486/ea0290488-10q_isqopen.htm"
+        ]
+      }
+    }
+  ],
+  "milestoneTransfers": [],
+  "citationUpdates": [
+    {
+      "id": "cmrxpsdkb0chjivheii29pm3d",
+      "set": {
+        "isPrimary": false
+      }
+    }
+  ],
+  "citationAdditions": [
+    {
+      "id": null,
+      "label": "I Squared Capital — TEN shareholders",
+      "url": "https://isquaredcapital.com/news/i-squared-announces-new-shareholders-in-transportation-equipment-network-ten-the-leading-north-american-full-service-trailer-lessor/",
+      "sourceType": "PRESS_RELEASE",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Canonical TEN identity, July 2024 co-investors and current platform scope",
+      "isPrimary": true
+    },
+    {
+      "id": null,
+      "label": "Business Wire — I Squared acquisition of Star Leasing",
+      "url": "https://www.businesswire.com/news/home/20210324005278/en/I-Squared-Capital-Acquires-Star-Leasing-A-Leading-Trailer-Lessor-in-the-United-States",
+      "sourceType": "PRESS_RELEASE",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "March 2021 Fund II entry through Star Leasing",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "I Squared Capital — trailer platform combination",
+      "url": "https://isquaredcapital.com/news/i-squared-capital-creates-one-of-the-largest-full-service-trailer-lessors-in-the-united-states/",
+      "sourceType": "PRESS_RELEASE",
+      "purpose": "MILESTONE_EVENT",
+      "evidenceLabel": "NETS and CTL integration beneath the TEN platform",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "SEC — ISQ Open Infrastructure Company Series II 2026 Q1",
+      "url": "https://www.sec.gov/Archives/edgar/data/2059924/000121390026057486/ea0290488-10q_isqopen.htm",
+      "sourceType": "SEC_FILING",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Series II indirect 6.29% common-stock interest at March 31, 2026",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "Meketa Capital — co-investments",
+      "url": "https://meketacapital.com/co-investments",
+      "sourceType": "WEBSITE",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Meketa Infrastructure Fund co-investment in TEN",
+      "isPrimary": false
+    }
+  ]
+}
