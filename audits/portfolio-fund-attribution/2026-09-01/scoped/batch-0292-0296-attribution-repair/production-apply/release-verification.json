@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_RELEASE_VERIFICATION",
+  "verifiedAt": "2026-09-01T05:18:59.555Z",
+  "manifestSha256": "f29e1b97ff1c77b1e511b14d203e7360fce66453dd8c82f31eab092c70492ddb",
+  "approvalSha256": "91816bacb5692a739b54f87dfd8e3d7248726f72152371dc658e5483d9cb5af5",
+  "receiptSha256": "141a90348986d4140dd04516ad25379f11f0eb4558c1607888e6a2aa0c0851ce",
+  "mutationCount": 3,
+  "changed": 3,
+  "verificationScope": "BOUNDED_STATUS_SAMPLE",
+  "sampledRows": [
+    {
+      "recordId": "OFA-B55C1540DCC6",
+      "companyId": "cmrxpji5n011aivher22cetu6",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpji5n011aivher22cetu6?verification=f29e1b97ff1c77b1e511b14d203e7360fce66453dd8c82f31eab092c70492ddb",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "ISQ Global Infrastructure Fund I (Fund 1)",
+        "attributionConfidence": null,
+        "attributionRationale": "I Squared's Fund 1 portfolio page identifies FlexiVan as a Fund 1 investment, while the January and February 2020 transaction announcements establish the controlling investment and legal close. The disclosed vehicle is not a curated Fund Database record, so no fund link is invented."
+      }
+    },
+    {
+      "recordId": "OFA-ADB8E0956F3E",
+      "companyId": "cmti76fl7000ew62badppz6h8",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmti76fl7000ew62badppz6h8?verification=f29e1b97ff1c77b1e511b14d203e7360fce66453dd8c82f31eab092c70492ddb",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "SK Capital's completed 2023 acquisition announcement states that chief executive Gabriel Rio retained a significant ownership interest. The interest is management rollover ownership rather than a commingled fund, and the exact vehicle and percentage were not publicly disclosed."
+      }
+    }
+  ],
+  "passed": true
+}
