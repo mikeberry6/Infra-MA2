@@ -120,7 +120,10 @@ async function main(): Promise<void> {
     ? acceptedConfidenceValue >= 0.9
       ? "HIGH"
       : acceptedConfidenceValue >= 0.5 ? "MEDIUM" : "LOW"
-    : acceptedConfidenceValue;
+    : typeof acceptedConfidenceValue === "string"
+      ? acceptedConfidenceValue.match(/^(HIGH|MEDIUM|LOW)\b/i)?.[1]?.toUpperCase()
+        ?? acceptedConfidenceValue
+      : acceptedConfidenceValue;
   const stagedConfidence = typeof source.confidence === "string" ? source.confidence : null;
   const confidenceMatches = acceptedConfidence !== null && stagedConfidence !== null
     && (acceptedConfidence === stagedConfidence
@@ -186,6 +189,8 @@ async function main(): Promise<void> {
           stagedSummaryValue: stagedConfidence,
           basis: typeof acceptedConfidenceValue === "number"
             ? "The accepted response expressed confidence as a numeric score; the staged summary preserves its deterministic HIGH, MEDIUM, or LOW band and the research decision is unchanged."
+            : acceptedConfidenceValue !== acceptedConfidence
+              ? "The accepted response expressed an overall confidence band with a disclosure-gap qualifier; the staged summary preserves that band in its deterministic qualifier and the research decision is unchanged."
             : "The staged summary preserves the accepted overall confidence and appends a more specific evidence-gap qualifier; the research decision is unchanged.",
         },
       }),

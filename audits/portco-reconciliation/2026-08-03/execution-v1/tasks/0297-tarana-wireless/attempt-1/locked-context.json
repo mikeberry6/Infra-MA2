@@ -1,0 +1,247 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0297:tarana-wireless:7b60f5b2",
+  "taskIndex": 297,
+  "companyName": "Tarana Wireless",
+  "generatedAt": "2026-09-01T05:31:04.422Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0297-tarana-wireless/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 297,
+    "taskId": "ledger:0297:tarana-wireless:7b60f5b2",
+    "canonicalKey": "tarana-wireless|united-states",
+    "companyName": "Tarana Wireless",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 53,
+    "managers": [
+      "I Squared Capital"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "053-i-squared-capital:repo-only:007:tarana-wireless"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjiay011jivhehgsy1djf"
+    ],
+    "seedKeys": [
+      "tarana wireless|United States"
+    ],
+    "evidenceUrls": [
+      "https://isquaredcapital.com/txnm_fund/infratech/",
+      "https://www.taranawireless.com/newsroom/tarana-raises-170m-series-growth-financing-round/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: I Squared Capital OUT_OF_SCOPE: InfraTech investment in wireless broadband technology hardware.",
+    "unresolvedQuestions": [
+      "Confirm whether the manager ownership, the company itself, or only this census scope is out of scope before proposing any change."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjiay011jivhehgsy1djf",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "tarana-wireless|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjiay011jivhehgsy1djf",
+    "name": "Tarana Wireless",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Fixed wireless broadband equipment",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Tarana Wireless develops fixed-wireless broadband equipment designed to improve network economics and performance. Its customers include broadband service providers that deploy access infrastructure to reach homes and businesses in hard-to-serve or capital-constrained markets. The business follows a technology and equipment model centered on radio hardware, software, and service-provider channel relationships rather than ownership of regulated networks. Public materials identify a 2009 founding year and indicate that Tarana’s technology has been deployed by hundreds of operators across dozens of countries and most U.S. states. I Squared participated in Tarana’s March 2022 financing round through its InfraTech strategy; the resulting ownership percentage is not publicly disclosed. The investment gives I Squared exposure to broadband-enablement technology complementary to its fiber and digital-infrastructure holdings.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2009,
+    "headquarters": "California",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk479020aivhev95mri1j",
+        "managerName": "I Squared Capital",
+        "organizationName": "I Squared Capital",
+        "fundName": null,
+        "vehicleName": "ISQ Global InfraTech Fund",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpm0pu04czivhewcy6zdho",
+        "date": "2009",
+        "event": "Public materials identify Tarana’s founding year.",
+        "category": "FOUNDING",
+        "sortDate": "2009-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm0qe04d0ivhers9r86fp",
+        "date": "2022",
+        "event": "The financing announcement stated that the company expected to surpass $100 million in annual revenue.",
+        "category": "FINANCING",
+        "sortDate": "2022-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm0qy04d1ivheib3g1y09",
+        "date": "Mar 23, 2022",
+        "event": "Tarana announced a $170 million growth financing round that included I Squared Capital.",
+        "category": "FINANCING",
+        "sortDate": "2022-03-23T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxprlhg0bbeivhez9e5tqg2",
+        "label": "Taranawireless — Tarana Wireless",
+        "url": "https://www.taranawireless.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Taranawireless company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxprlih0bbgivheuoiw7t9t",
+        "label": "Financing date source — Tarana Wireless — Growth round",
+        "url": "https://www.taranawireless.com/newsroom/tarana-raises-170m-series-growth-financing-round/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Taranawireless financing or public filing",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprljk0bbiivhetow1x0c5",
+        "label": "Isquaredcapital — Tarana Wireless",
+        "url": "https://isquaredcapital.com/txnm_sector/digital/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Isquaredcapital — Tarana Wireless",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Tarana Wireless",
+    "investmentFirm": "I Squared Capital",
+    "sector": "Digital",
+    "subsector": "Fixed wireless broadband equipment",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "ISQ Global InfraTech Fund",
+    "description": "Tarana Wireless develops fixed-wireless broadband equipment designed to improve network economics and performance. Its customers include broadband service providers that deploy access infrastructure to reach homes and businesses in hard-to-serve or capital-constrained markets. The business follows a technology and equipment model centered on radio hardware, software, and service-provider channel relationships rather than ownership of regulated networks. Public materials identify a 2009 founding year and indicate that Tarana’s technology has been deployed by hundreds of operators across dozens of countries and most U.S. states. I Squared participated in Tarana’s March 2022 financing round through its InfraTech strategy; the resulting ownership percentage is not publicly disclosed. The investment gives I Squared exposure to broadband-enablement technology complementary to its fiber and digital-infrastructure holdings.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2009,
+    "investmentYear": 2022,
+    "headquarters": "California",
+    "milestones": [
+      {
+        "date": "2009",
+        "event": "Public materials identify Tarana’s founding year.",
+        "category": "Founding"
+      },
+      {
+        "date": "2022",
+        "event": "The financing announcement stated that the company expected to surpass $100 million in annual revenue.",
+        "category": "Financing"
+      },
+      {
+        "date": "Mar 23, 2022",
+        "event": "Tarana announced a $170 million growth financing round that included I Squared Capital.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Taranawireless — Tarana Wireless",
+        "url": "https://www.taranawireless.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Financing date source — Tarana Wireless — Growth round",
+        "url": "https://www.taranawireless.com/newsroom/tarana-raises-170m-series-growth-financing-round/",
+        "type": "PRESS_RELEASE",
+        "purpose": "FINANCING_FILINGS"
+      },
+      {
+        "label": "Isquaredcapital — Tarana Wireless",
+        "url": "https://isquaredcapital.com/txnm_sector/digital/",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "I Squared Capital",
+        "ownershipVehicle": "ISQ Global InfraTech Fund",
+        "investmentYear": 2022,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi9mi002aivhewgvbh2ag",
+        "name": "I Squared Capital",
+        "updatedAt": "2026-07-23T16:09:19.674Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0297:tarana-wireless:7b60f5b2",
+    "taskIndex": 297,
+    "canonicalKey": "tarana-wireless|united-states",
+    "capturedAt": "2026-09-01T05:31:04.422Z",
+    "databaseRevision": "revision:683b8d6dfce3743209ddd18ccddb4c44c4580b79955e851034d2168fed3604e6",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "5ca8363f9ac867623b2cdb34433c0ee7d427869e68410e3d377100c67bfaec0a",
+    "productionSnapshotSha256": "b2068fff36af35df24a08835f85e12553a2bcddc8bd9ceb2e3f8a621735fa979",
+    "targetCompanySnapshotSha256": "4d5d177060d9a863ccca698e0b7adce5fd13604aec975cdd732cdd892377b14b",
+    "seedEntrySha256": "80935ef863403382bad2916f0aaa9229d41fa1bc5186e3671d062f5c6fa7d619",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "8599f3301c68f049f73e2b3a4fb2cb99d283338a5721eb079ae83599b1f4ee1c",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "3a6e897cb6bf74e545c692a28085dff8e712c5fcc0be550290c59c13cf02f9a8",
+      "citationsSha256": "586266a807ee58591acf0bd73a2981912f77a9ea51ca811182b40171c2ef2e89",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "d22c45e08903dcc60c4ef1465aecfeed3a9ec9b4d01d32289fff0e7a430e74cd",
+    "stateSha256": "44555c1218f11fbde1c169a12474b4f4f90fd4eb6800c8ceb78a4933d4f42dc0",
+    "taskSnapshotSha256": "ebcf839e285674c3d9325322b3957b345c6b83d799ab760cfde0f81601336d5e"
+  },
+  "contextSha256": "ebe78d839f3b7c211da8b20abf7b5889d12c7c6aeb50d20d8bc12c9618aad106"
+}

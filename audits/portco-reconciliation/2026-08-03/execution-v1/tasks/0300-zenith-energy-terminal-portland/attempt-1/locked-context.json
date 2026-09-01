@@ -1,0 +1,252 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0300:zenith-energy-terminal-portland:377bcbbb",
+  "taskIndex": 300,
+  "companyName": "Zenith Energy Terminal Portland",
+  "generatedAt": "2026-09-01T05:31:10.036Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0300-zenith-energy-terminal-portland/attempt-1/locked-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 300,
+    "taskId": "ledger:0300:zenith-energy-terminal-portland:377bcbbb",
+    "canonicalKey": "zenith-energy-terminal-portland|united-states",
+    "companyName": "Zenith Energy Terminal Portland",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 53,
+    "managers": [
+      "I Squared Capital"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "ADD_PENDING_TRANSACTION"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "053-i-squared-capital:holding:012:zenith-energy-terminal-portland"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjidj011oivhe8l8a3t2d"
+    ],
+    "seedKeys": [
+      "zenith energy terminal portland|United States"
+    ],
+    "evidenceUrls": [
+      "https://isquaredcapital.com/cpt_news/i-squared-capital-accelerates-u-s-energy-transition-with-acquisition-of-oregons-premier-renewable-fuels-terminal/",
+      "https://www.portland.gov/omf/fossilfuel/news/2026/2/19/city-response-zenith-energy-announcement"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_PENDING_TRANSACTION requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjidj011oivhe8l8a3t2d",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "zenith-energy-terminal-portland|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjidj011oivhe8l8a3t2d",
+    "name": "Zenith Energy Terminal Portland",
+    "aliases": [],
+    "sector": "MIDSTREAM",
+    "subsector": "Liquid bulk storage terminal",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Zenith Energy Terminal in Portland is a liquid bulk storage and multimodal fuels terminal on the Willamette River. Its users include fuel suppliers, logistics counterparties, and renewable-fuels market participants that require marine, rail, truck, and pipeline-connected storage infrastructure. The asset follows an asset-heavy midstream model based on storage tanks, terminal handling systems, and logistics connectivity. I Squared announced in December 2025 that its Energy Transition Infrastructure Fund had entered into a definitive agreement to acquire 100% of the terminal and described the facility at about 1.7 million barrels of storage capacity with a planned transition to renewable-fuels service by 2027. Public sources reviewed did not clearly confirm closing of the transaction as of the review date, so the current ownership status and resulting ownership percentage remain not publicly disclosed in this row. Even so, the announced transaction positions the asset as a significant Pacific Northwest energy-transition terminal investment for I Squared.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Oregon",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk4cj020fivhewn59zvlv",
+        "managerName": "I Squared Capital",
+        "organizationName": "I Squared Capital",
+        "fundName": "ISQ Energy Transition Infrastructure Fund",
+        "vehicleName": "ISQ Energy Transition Infrastructure Fund",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpm14w04diivhe7w0dbfys",
+        "date": "2025",
+        "event": "The announcement described the facility at approximately 1.7 million barrels of storage capacity.",
+        "category": "EXPANSION",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm15g04djivhem3ybehot",
+        "date": "Dec 16, 2025",
+        "event": "I Squared announced that ETIF had entered into a definitive agreement to acquire 100% of the Zenith Energy terminal in Portland.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-12-16T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm15x04dkivheao5lp0lv",
+        "date": "Feb 19, 2026",
+        "event": "The City of Portland publicly referenced I Squared’s announced plans to acquire the terminal.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-02-19T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxprm0h0bc9ivhexgyvrm4q",
+        "label": "Announcement date source — I Squared Capital — Zenith Energy Terminal Portland",
+        "url": "https://isquaredcapital.com/cpt_news/i-squared-capital-accelerates-u-s-energy-transition-with-acquisition-of-oregons-premier-renewable-fuels-terminal/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "I Squared Capital transaction announcement",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxprm1b0bcbivheebvp4o7f",
+        "label": "Portland — Zenith Energy Terminal Portland",
+        "url": "https://www.portland.gov/omf/fossilfuel/news/2026/2/19/city-response-zenith-energy-announcement",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Portland — Zenith Energy Terminal Portland",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprm2f0bcdivhei2od88wx",
+        "label": "Oregonlive — Zenith Energy Terminal Portland",
+        "url": "https://www.oregonlive.com/environment/2025/12/zenith-portland-fuel-terminal-to-be-bought-by-infrastructure-firm-with-plans-to-convert-it-to-renewable-fuels.html",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Oregonlive — Zenith Energy Terminal Portland",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Zenith Energy Terminal Portland",
+    "investmentFirm": "I Squared Capital",
+    "sector": "Midstream",
+    "subsector": "Liquid bulk storage terminal",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "ISQ Energy Transition Infrastructure Fund",
+    "description": "Zenith Energy Terminal in Portland is a liquid bulk storage and multimodal fuels terminal on the Willamette River. Its users include fuel suppliers, logistics counterparties, and renewable-fuels market participants that require marine, rail, truck, and pipeline-connected storage infrastructure. The asset follows an asset-heavy midstream model based on storage tanks, terminal handling systems, and logistics connectivity. I Squared announced in December 2025 that its Energy Transition Infrastructure Fund had entered into a definitive agreement to acquire 100% of the terminal and described the facility at about 1.7 million barrels of storage capacity with a planned transition to renewable-fuels service by 2027. Public sources reviewed did not clearly confirm closing of the transaction as of the review date, so the current ownership status and resulting ownership percentage remain not publicly disclosed in this row. Even so, the announced transaction positions the asset as a significant Pacific Northwest energy-transition terminal investment for I Squared.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2025,
+    "headquarters": "Oregon",
+    "milestones": [
+      {
+        "date": "2025",
+        "event": "The announcement described the facility at approximately 1.7 million barrels of storage capacity.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Dec 16, 2025",
+        "event": "I Squared announced that ETIF had entered into a definitive agreement to acquire 100% of the Zenith Energy terminal in Portland.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Feb 19, 2026",
+        "event": "The City of Portland publicly referenced I Squared’s announced plans to acquire the terminal.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Announcement date source — I Squared Capital — Zenith Energy Terminal Portland",
+        "url": "https://isquaredcapital.com/cpt_news/i-squared-capital-accelerates-u-s-energy-transition-with-acquisition-of-oregons-premier-renewable-fuels-terminal/",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Portland — Zenith Energy Terminal Portland",
+        "url": "https://www.portland.gov/omf/fossilfuel/news/2026/2/19/city-response-zenith-energy-announcement",
+        "type": "PRESS_RELEASE"
+      },
+      {
+        "label": "Oregonlive — Zenith Energy Terminal Portland",
+        "url": "https://www.oregonlive.com/environment/2025/12/zenith-portland-fuel-terminal-to-be-bought-by-infrastructure-firm-with-plans-to-convert-it-to-renewable-fuels.html",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "I Squared Capital",
+        "ownershipVehicle": "ISQ Energy Transition Infrastructure Fund",
+        "investmentYear": 2025,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj2mk00dvivhegna869hx",
+        "fundName": "ISQ Energy Transition Infrastructure Fund",
+        "managerId": "cmrxpi9mi002aivhewgvbh2ag",
+        "updatedAt": "2026-07-23T16:09:57.260Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi9mi002aivhewgvbh2ag",
+        "name": "I Squared Capital",
+        "updatedAt": "2026-07-23T16:09:19.674Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0300:zenith-energy-terminal-portland:377bcbbb",
+    "taskIndex": 300,
+    "canonicalKey": "zenith-energy-terminal-portland|united-states",
+    "capturedAt": "2026-09-01T05:31:10.036Z",
+    "databaseRevision": "revision:17c8699f63cf43085e362ce63295b2c96710bbda11ed22a7b2a6baa800c4c55a",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "d73d1bb9c331a50726562289ca53337eb57468c769b2d3b99cb668bbbe02a26e",
+    "productionSnapshotSha256": "b493465a405dbf68dc20985c1cf0b81f067175397e91676abec8fb1aacbb1a6b",
+    "targetCompanySnapshotSha256": "03b59541fe25b8b12c44212d0b387fae42b7209996dafe425fed9983fafa6e0f",
+    "seedEntrySha256": "4764b7f7181e92f1d5832d7825bb4e8871e2b59b0e415248c63510d3f65195c7",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "3079a4881dd5a0f092fb623cf464e33a5a03767a012ddfcc2c09ba778a435df5",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "80bb1b9fbd97369aa59b500bed343eef3e3b9c5867c7525a27b7990477dc78d0",
+      "organizationsSha256": "3a6e897cb6bf74e545c692a28085dff8e712c5fcc0be550290c59c13cf02f9a8",
+      "citationsSha256": "c26b29348f1fcbf28eef9aaaa9825a5d439dce4a8fd08d71f309c2b59b4f5d49",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "af051c47f0322cffb5360e9a2d5bd0b40a907ec75755f377650c341796f4daed",
+    "stateSha256": "700e8c38a6c7b003ab13795e5ef12b8423382c9d8ea3b91d43aa59955e16c7b2",
+    "taskSnapshotSha256": "74d041f39935f9062638442f51d84b86cc20afc199b840d7215fe050dfd3fada"
+  },
+  "contextSha256": "a471d1d46fc6cce85b5bbfcbb08c28c5dd97fb0551889ddb8d8e562e8e32a3b7"
+}
