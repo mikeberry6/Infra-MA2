@@ -1,0 +1,196 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0339:race-communications:debd2ccc",
+  "taskIndex": 339,
+  "asOfDate": "2026-09-01",
+  "generatedAt": "2026-09-01T14:42:00.000Z",
+  "canonicalKey": "race-communications|united-states",
+  "companyName": "Race Communications",
+  "actions": [
+    "CREATE_COMPANY"
+  ],
+  "sourceHoldingIds": [
+    "066-meag:holding:009:race-communications"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Create one canonical Race Communications fiber platform. Audited Munich Re evidence establishes MEAG-managed MR Redwood as a current 7.1264% equity investor, Oak Hill remains the current majority controller, and AllianceBernstein's separately disclosed financing is debt rather than ownership.",
+  "evidence": [
+    {
+      "url": "https://www.munichre.com/content/dam/munichre/mrwebsiteslaunches/2025-annual-report/MunichRe-Annual-Report-Company-2025-en.pdf/_jcr_content/renditions/original./MunichRe-Annual-Report-Company-2025-en.pdf",
+      "purpose": "Audited current 7.1264% Hometown Purchaser holding through MR Redwood.",
+      "supports": [
+        "MEAG-managed active equity ownership",
+        "7.1264% stake",
+        "MR Redwood vehicle"
+      ]
+    },
+    {
+      "url": "https://race.com/resources/articles/post/race-communications-announces-new-capital-raise-to-accelerate-california-expansion",
+      "purpose": "Company evidence separating the 2024 equity raise from private-credit debt and confirming Oak Hill majority ownership.",
+      "supports": [
+        "Oak Hill current majority ownership",
+        "equity-versus-debt distinction",
+        "California fiber expansion"
+      ]
+    },
+    {
+      "url": "https://docs.fcc.gov/public/attachments/DA-20-1363A1.docx",
+      "purpose": "FCC evidence for the 2020 control transaction and Hometown ownership chain.",
+      "supports": [
+        "Oak Hill entry",
+        "Hometown parent chain",
+        "platform identity"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "48a4d46400902782107d50ba3ccf346432df5e7b0dc7cfe4a6e3ba0c3ea13ca5",
+  "currentCompanySnapshotSha256": null,
+  "executionLock": {
+    "taskSnapshotSha256": "7d5fc8cd000d4a6aaf20e7090b6182319e4cc7c82a0154ce0923bb4fdc69985e",
+    "taskStateSha256": "7c81d44b60704040a09313e94701ab0df99353d23fbfb901891dc055a4395a82",
+    "taskDependencySha256": "7162f023548431ed1fed51e43a93e8e1e0a46df9edc0adf314307e96f61f1312",
+    "seedEntrySha256": null,
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [],
+    "organizations": [],
+    "redirects": []
+  },
+  "beforeImage": null,
+  "beforeImageSha256": null,
+  "afterImage": {
+    "id": null,
+    "name": "Race Communications",
+    "aliases": [
+      "Race Telecommunications, LLC",
+      "Race Telecommunications",
+      "Hometown Purchaser, LLC"
+    ],
+    "sector": "DIGITAL",
+    "subsector": "Fiber-to-the-home broadband infrastructure",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Race Communications is a California fiber-to-the-home platform providing internet service at speeds of up to 10 Gbps together with voice and video services. The company serves residential, small-business, enterprise, and wholesale customers across California and reported a footprint of about 200,000 locations in 2024. Oak Hill Capital remains the majority controller through the Hometown ownership chain, while Munich Re holds a 7.1264% minority equity interest through MEAG-managed MR Redwood. AllianceBernstein's separately disclosed private-credit financing is debt and is not recorded as ownership.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://race.com/",
+    "yearFounded": null,
+    "headquarters": "South San Francisco, California, United States",
+    "lastVerifiedAt": "2026-09-01T14:30:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": null,
+        "managerName": "Oak Hill Capital",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Hometown Parent, L.P. / Hometown Purchaser, LLC",
+        "stake": "Majority; at least 75% at the 2020 close, current exact percentage not publicly disclosed",
+        "investmentYear": 2020,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "MEAG",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "MR Redwood LP / Hometown Purchaser, LLC",
+        "stake": "7.1264%",
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": null,
+        "date": "Dec 31, 2020",
+        "event": "Oak Hill Capital closed its controlling investment in Race through the Hometown ownership structure.",
+        "category": "FINANCING",
+        "sortDate": "2020-12-31T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://docs.fcc.gov/public/attachments/DA-20-1363A1.docx"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Sep 10, 2024",
+        "event": "MEAG disclosed Munich Re's minority equity investment in Race alongside Oak Hill; AllianceBernstein supplied separate private-credit financing.",
+        "category": "FINANCING",
+        "sortDate": "2024-09-10T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://race.com/resources/articles/post/race-communications-announces-new-capital-raise-to-accelerate-california-expansion"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Dec 31, 2025",
+        "event": "Munich Re's audited annual report continued to show MR Redwood's 7.1264% holding in Race's parent company.",
+        "category": "OTHER",
+        "sortDate": "2025-12-31T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.munichre.com/content/dam/munichre/mrwebsiteslaunches/2025-annual-report/MunichRe-Annual-Report-Company-2025-en.pdf/_jcr_content/renditions/original./MunichRe-Annual-Report-Company-2025-en.pdf"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": null,
+        "label": "Munich Re — Company Annual Report 2025",
+        "url": "https://www.munichre.com/content/dam/munichre/mrwebsiteslaunches/2025-annual-report/MunichRe-Annual-Report-Company-2025-en.pdf/_jcr_content/renditions/original./MunichRe-Annual-Report-Company-2025-en.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current MR Redwood equity interest and exact stake",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "Race Communications — 2024 capital raise",
+        "url": "https://race.com/resources/articles/post/race-communications-announces-new-capital-raise-to-accelerate-california-expansion",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Oak Hill majority ownership and equity-versus-debt distinction",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "FCC — Race control transaction",
+        "url": "https://docs.fcc.gov/public/attachments/DA-20-1363A1.docx",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Oak Hill entry and Hometown ownership chain",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Oak Hill Capital — current investments",
+        "url": "https://oakhill.com/investments/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current Race portfolio listing and exit-search support",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "7d8950fb3ae97bffc1c7d1afba22202d96116dd11bb095d1f44f7ee72088965f",
+  "proposalSha256": "95d2555e328031a95058ac85f2843ecebb79c1a9cf2d469ae8882ebb6888d748"
+}

@@ -1,0 +1,468 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0343:altan-redes:7bef6b1d",
+  "taskIndex": 343,
+  "asOfDate": "2026-09-01",
+  "generatedAt": "2026-09-01T14:30:00.000Z",
+  "canonicalKey": "altan-redes|mexico",
+  "companyName": "Altán Redes",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER"
+  ],
+  "sourceHoldingIds": [
+    "069-morgan-stanley-infrastructure-partners:holding:007:altan-redes"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Correct Altán's ownership from a sole-MSIP record to the post-2025 capital structure established by Mexico's telecom regulator: MSIP's Marapendi chain remains the 51.37% majority owner and CFE owns 48.63% through F/1320. Development-bank governance rights remain creditor rights rather than equity.",
+  "evidence": [
+    {
+      "url": "https://www.ift.org.mx/sites/default/files/conocenos/pleno/sesiones_pleno/acuerdo_liga/vp_270825_281_confidencial.pdf",
+      "purpose": "Current IFT resolution for the post-transaction capital percentages, acquired interests and trust rights.",
+      "supports": [
+        "MSIP 51.37% current ownership",
+        "CFE 48.63% current ownership",
+        "2025 ownership change"
+      ]
+    },
+    {
+      "url": "https://www.ift.org.mx/sites/default/files/conocenos/pleno/sesiones/acuerdoliga/vp010622354_0.pdf",
+      "purpose": "IFT restructuring evidence separating creditor governance from equity and identifying the post-concurso owner blocks.",
+      "supports": [
+        "creditor-versus-equity boundary",
+        "2022 recapitalization",
+        "former owner history"
+      ]
+    },
+    {
+      "url": "https://www.ift.org.mx/sites/default/files/conocenos/pleno/sesiones/acuerdoliga/pift060317108.pdf",
+      "purpose": "IFT evidence for the original consortium, MSIP vehicle chain and concession structure.",
+      "supports": [
+        "MSIP entry",
+        "original owners",
+        "Altán-versus-network boundary"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "259681cb267c0c24b94539a57b2a8df36cddbbd9d0099bba3a1272f703318760",
+  "currentCompanySnapshotSha256": "4ffc284d5871b9732b68a290da42d2ae3b7e04570c1b0d628e2473ce177113c5",
+  "executionLock": {
+    "taskSnapshotSha256": "1bb3772f42d6169edac04fd68a062c54e71b924ad6ae5dfcde271e9685b77803",
+    "taskStateSha256": "13ea902f581506f1cec12748c956b2d380d7b33a13348d7cf984fd8daa9d9c9c",
+    "taskDependencySha256": "60e1ccbfbbfaeeec88e4608dbc120dd11c8caf20a4d7acacc05a08b972aff942",
+    "seedEntrySha256": "cb3d07a6dc350cd27cf16ba4e53f564436307a06171a5aaf0d096fd78cacb1eb",
+    "dependencies": {
+      "ownershipPeriodsSha256": "190e80ed6f8cad13b6bcacece59abfa99a5a319cc5a0c86ae6aa9beec1dfd2e5",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "c976deeab70c9120fe1e5069cc2568302283c4726cfdd684e20394886056bb1e",
+      "organizationsSha256": "3fc6e727475ad9466037a4f9786ab7b3fcd9d576837105e71290a4e4d890a5c6",
+      "citationsSha256": "ccb55cc48a1fe4695cc6660b71c6b4035cbab29a2be2fddbd2d2b6644410c6df",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj3bb00etivhejjezcn8j",
+        "fundName": "North Haven Infrastructure Partners II (NHIP II)",
+        "managerId": "cmrxpibqa002yivhe44v34tdd",
+        "updatedAt": "2026-07-23T16:09:58.151Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpibqa002yivhe44v34tdd",
+        "name": "Morgan Stanley Infrastructure Partners",
+        "updatedAt": "2026-07-23T16:09:22.402Z"
+      },
+      {
+        "id": "cmrxpifi80045ivhe1qqdd4g8",
+        "name": "MSIP",
+        "updatedAt": "2026-07-23T16:09:27.296Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjlgs016givheuucuma16",
+    "name": "Altán Redes, S.A.P.I. de C.V.",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Wholesale mobile network infrastructure",
+    "region": "NORTH_AMERICA",
+    "country": "Mexico",
+    "countryTags": [
+      "Mexico"
+    ],
+    "description": "Altán Redes operates Mexico's shared wholesale mobile network, Red Compartida. Its customers are mobile network operators, MVNOs, enterprises, and public-sector users that buy wholesale capacity rather than retail subscribers, and the business runs an asset-heavy national wireless infrastructure platform. Public company and government sources describe the network as a 4.5G LTE wholesale system with population coverage above 94% as of mid-2024, although other later public reports cite lower figures using different measures. Altán was created to deploy and operate the Red Compartida under a long-term public-private partnership and received its concession in 2017. Morgan Stanley Infrastructure Partners publicly lists Altán as a portfolio investment from March 2017, but reviewed sources also show a later government-led financial restructuring and state participation. Because the current sponsor-level ownership structure after that restructuring is not clearly disclosed in the public sources reviewed, ownership details are recorded as not publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2016,
+    "headquarters": "Mexico",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk7qv025rivhe02jf4mjg",
+        "managerName": "Morgan Stanley Infrastructure Partners",
+        "organizationName": "MSIP",
+        "fundName": "North Haven Infrastructure Partners II (NHIP II)",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2017,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmfd904urivhebcd0n1hn",
+        "date": "2016",
+        "event": "Altán Redes, S.A.P.I. de C.V. was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2016-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmfdt04usivheioof6w1d",
+        "date": "Mar 2017",
+        "event": "MSIP / Morgan Stanley Infrastructure Partners invested in Altán Redes.",
+        "category": "FINANCING",
+        "sortDate": "2017-03-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmfee04utivheh0817tsm",
+        "date": "Jan 2017",
+        "event": "Altán executed the public-private partnership contract and obtained the wholesale concession for the network.",
+        "category": "EXPANSION",
+        "sortDate": "2017-01-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmfey04uuivhecohzwqgw",
+        "date": "Mar 2018",
+        "event": "Red Compartida launched commercial operations.",
+        "category": "EXPANSION",
+        "sortDate": "2018-03-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmffh04uvivhei0f868le",
+        "date": "2025",
+        "event": "Public reports indicated additional state participation and continuing operational expansion.",
+        "category": "EXPANSION",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsaxf0cdxivhe4c886579",
+        "label": "Investment date source — MSIP — Altán Redes, S.A.P.I. de C.V.",
+        "url": "https://www.morganstanley.com/im/en-us/capital-seeker/companies/alt-n-redes.html",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "MSIP initial investment / ownership",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpsaye0cdzivhec11lx2je",
+        "label": "Altanredes — Altán Redes, S.A.P.I. de C.V.",
+        "url": "https://www.altanredes.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Altanredes company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsazh0ce1ivhe5uspr0s4",
+        "label": "Altanredes — Altán Redes, S.A.P.I. de C.V.",
+        "url": "https://www.altanredes.com/nuestra-cobertura.php",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Altanredes — Altán Redes, S.A.P.I. de C.V.",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsb0k0ce3ivhenzqlvpns",
+        "label": "Gob — Altán Redes, S.A.P.I. de C.V.",
+        "url": "https://www.gob.mx/promtel/acciones-y-programas/red-compartida-255015",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Gob — Altán Redes, S.A.P.I. de C.V.",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "4ffc284d5871b9732b68a290da42d2ae3b7e04570c1b0d628e2473ce177113c5",
+  "afterImage": {
+    "id": "cmrxpjlgs016givheuucuma16",
+    "name": "Altán Redes, S.A.P.I. de C.V.",
+    "aliases": [
+      "Altán",
+      "Altan Redes",
+      "Red Compartida",
+      "Red de Altán",
+      "Red de Todos"
+    ],
+    "sector": "DIGITAL",
+    "subsector": "Wholesale mobile network infrastructure",
+    "region": "NORTH_AMERICA",
+    "country": "Mexico",
+    "countryTags": [
+      "Mexico"
+    ],
+    "description": "Altán Redes operates Red Compartida, Mexico's national wholesale mobile network. The platform provides 4.5G LTE wholesale capacity to mobile network operators, MVNOs, enterprises, and public-sector users and reports coverage above 94% of Mexico's population. Morgan Stanley Infrastructure Partners remains the majority owner through the Marapendi and North Haven Infrastructure Partners II chain with 51.37% of Altán's capital. Comisión Federal de Electricidad acquired the remaining 48.63% through trust F/1320 in 2025. Separate governance rights held by Mexican development banks arise from restructuring debt and are not recorded as equity ownership.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.altanredes.com/",
+    "yearFounded": 2016,
+    "headquarters": "Mexico City, Mexico",
+    "lastVerifiedAt": "2026-09-01T14:30:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk7qv025rivhe02jf4mjg",
+        "managerName": "Morgan Stanley Infrastructure Partners",
+        "organizationName": "MSIP",
+        "fundName": "North Haven Infrastructure Partners II (NHIP II)",
+        "vehicleName": "Marapendi Holding B.V. via NHIP II Holdings / International Holdings C.V.",
+        "stake": "51.37%",
+        "investmentYear": 2017,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Comisión Federal de Electricidad (CFE)",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "F/1320, with Banco Azteca as trustee",
+        "stake": "48.63%",
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "China-Mexico Fund II",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "China-Mexico Fund II / CMF II",
+        "stake": "26.34% immediately before the 2025 CFE acquisition",
+        "investmentYear": 2016,
+        "exitYear": 2025,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      },
+      {
+        "id": null,
+        "managerName": "Hansam",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Hansam investment vehicle",
+        "stake": "15.99% immediately before the 2025 CFE acquisition",
+        "investmentYear": 2016,
+        "exitYear": 2025,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      },
+      {
+        "id": null,
+        "managerName": "Telefonía Digital",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Direct or trust interest identified by IFT",
+        "stake": "4.21% immediately before the 2025 CFE acquisition",
+        "investmentYear": 2016,
+        "exitYear": 2025,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      },
+      {
+        "id": null,
+        "managerName": "Axtel",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Direct or trust interest identified by IFT",
+        "stake": "2.10% immediately before the 2025 CFE acquisition",
+        "investmentYear": 2016,
+        "exitYear": 2025,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      },
+      {
+        "id": null,
+        "managerName": "Invex Trust F/2431",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Invex F/2431",
+        "stake": "12.68% in the original 2017 ownership structure",
+        "investmentYear": 2016,
+        "exitYear": 2022,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      },
+      {
+        "id": null,
+        "managerName": "Invex Trust F/2292",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Invex F/2292 / FFLATAM interest",
+        "stake": "6.54% in the original 2017 ownership structure",
+        "investmentYear": 2016,
+        "exitYear": 2022,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      },
+      {
+        "id": null,
+        "managerName": "Isla Guadalupe Investments",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Original consortium interest",
+        "stake": "Within a combined 3.34% Isla/IFC block in 2017; individual percentage not publicly disclosed",
+        "investmentYear": 2016,
+        "exitYear": 2022,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      },
+      {
+        "id": null,
+        "managerName": "International Finance Corporation (IFC)",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Original consortium interest",
+        "stake": "Within a combined 3.34% Isla/IFC block in 2017; individual percentage not publicly disclosed",
+        "investmentYear": 2016,
+        "exitYear": 2022,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmfd904urivhebcd0n1hn",
+        "date": "2016",
+        "event": "Altán Redes, S.A.P.I. de C.V. was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2016-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmfdt04usivheioof6w1d",
+        "date": "Mar 2017",
+        "event": "Morgan Stanley Infrastructure Partners invested in Altán through North Haven Infrastructure Partners II and the Marapendi ownership chain.",
+        "category": "FINANCING",
+        "sortDate": "2017-03-01T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.ift.org.mx/sites/default/files/conocenos/pleno/sesiones/acuerdoliga/pift060317108.pdf"
+        ]
+      },
+      {
+        "id": "cmrxpmfee04utivheh0817tsm",
+        "date": "Jan 2017",
+        "event": "Altán executed the public-private partnership contract and obtained the wholesale concession for the network.",
+        "category": "EXPANSION",
+        "sortDate": "2017-01-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmfey04uuivhecohzwqgw",
+        "date": "Mar 2018",
+        "event": "Red Compartida launched commercial operations.",
+        "category": "EXPANSION",
+        "sortDate": "2018-03-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmffh04uvivhei0f868le",
+        "date": "2025",
+        "event": "CFE acquired all non-Marapendi equity blocks through F/1320, leaving Marapendi/MSIP with 51.37% and CFE with 48.63% of Altán's capital.",
+        "category": "FINANCING",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.ift.org.mx/sites/default/files/conocenos/pleno/sesiones_pleno/acuerdo_liga/vp_270825_281_confidencial.pdf"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsaxf0cdxivhe4c886579",
+        "label": "Investment date source — MSIP — Altán Redes, S.A.P.I. de C.V.",
+        "url": "https://www.morganstanley.com/im/en-us/capital-seeker/companies/alt-n-redes.html",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "MSIP initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsaye0cdzivhec11lx2je",
+        "label": "Altanredes — Altán Redes, S.A.P.I. de C.V.",
+        "url": "https://www.altanredes.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Altanredes company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsazh0ce1ivhe5uspr0s4",
+        "label": "Altanredes — Altán Redes, S.A.P.I. de C.V.",
+        "url": "https://www.altanredes.com/nuestra-cobertura.php",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Altanredes — Altán Redes, S.A.P.I. de C.V.",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsb0k0ce3ivhenzqlvpns",
+        "label": "Gob — Altán Redes, S.A.P.I. de C.V.",
+        "url": "https://www.gob.mx/promtel/acciones-y-programas/red-compartida-255015",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Gob — Altán Redes, S.A.P.I. de C.V.",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "IFT — 2025 Altán ownership resolution",
+        "url": "https://www.ift.org.mx/sites/default/files/conocenos/pleno/sesiones_pleno/acuerdo_liga/vp_270825_281_confidencial.pdf",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current 51.37% MSIP and 48.63% CFE capital structure",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "IFT — 2022 Altán recapitalization resolution",
+        "url": "https://www.ift.org.mx/sites/default/files/conocenos/pleno/sesiones/acuerdoliga/vp010622354_0.pdf",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Post-concurso ownership and creditor-rights boundary",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "IFT — 2017 Altán ownership resolution",
+        "url": "https://www.ift.org.mx/sites/default/files/conocenos/pleno/sesiones/acuerdoliga/pift060317108.pdf",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Original consortium and MSIP vehicle chain",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "d908a764407d4ca4e5e521322c82e31713cf05e0803592789dc11e24de8673b4",
+  "proposalSha256": "d9b538d1c73133d0d8c3d59c11c2b93dc6ff1fcc2a2bb37ff95b53fed9dba4bd"
+}
