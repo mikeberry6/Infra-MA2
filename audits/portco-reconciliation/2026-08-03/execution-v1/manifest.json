@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-09-01T06:39:30.000Z",
+  "updatedAt": "2026-09-01T08:06:05.000Z",
   "runStatus": "IDLE",
   "activeTaskId": null,
   "source": {
@@ -31368,20 +31368,26 @@
       "managerIndex": 55,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "1351967df410c31c6af375da6c2ddff94014f65abb1ec48a589be04cd5f09ae1",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "EXCLUDED",
+      "attempts": 1,
+      "startedAt": "2026-09-01T06:50:56.000Z",
+      "updatedAt": "2026-09-01T08:06:05.000Z",
+      "completedAt": "2026-09-01T08:06:05.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "602cbcefb899f1a9d45c466cb2de16bc6647eb54380aad00b8595fc688938d3b",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0302-corporation/attempt-1/locked-task-snapshot.json",
+          "sha256": "602cbcefb899f1a9d45c466cb2de16bc6647eb54380aad00b8595fc688938d3b"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0302-corporation/attempt-1/terminal-decision.json",
+          "sha256": "2f6031cc2679a2eb04d6ffda57e7d43a36d7dd487013677a8ab3e3efa1b9600d"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -31395,6 +31401,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "EXCLUDED",
+          "at": "2026-09-01T08:06:05.000Z",
+          "reason": "Exclude the standalone Corporation queue identity as a malformed parser artifact. The underlying sources refer to Enwave Energy Corporation's Canadian district-energy business, which already exists as canonical Enwave Energy; no separate U.S. company named Corporation exists, and this task has no independent production or seed target to merge or mutate.",
+          "taskSnapshotSha256": "602cbcefb899f1a9d45c466cb2de16bc6647eb54380aad00b8595fc688938d3b",
+          "evidenceSha256": [
+            "2f6031cc2679a2eb04d6ffda57e7d43a36d7dd487013677a8ab3e3efa1b9600d",
+            "602cbcefb899f1a9d45c466cb2de16bc6647eb54380aad00b8595fc688938d3b",
+            "69e1252fcb983ee8f3386bea2785c55bfee72d0c9f939e96cb76c4e0aa054229",
+            "a947c038d2232d9b29bacf21b9f63c6665d12d8b4a8e1cc8ca51468465cfcec3"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -31406,20 +31427,26 @@
       "managerIndex": 55,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "e537785bb398c66825e1d77fb0b6b0a90305238866e6e52548100c6ac9120e86",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "EXCLUDED",
+      "attempts": 1,
+      "startedAt": "2026-09-01T06:50:56.000Z",
+      "updatedAt": "2026-09-01T08:06:05.000Z",
+      "completedAt": "2026-09-01T08:06:05.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "be185e7b9efdcf89323ec16725fe806ab61b19126030e4d0c3cc04c6e8ced5a3",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0303-enbridge-gas-ohio/attempt-1/locked-task-snapshot.json",
+          "sha256": "be185e7b9efdcf89323ec16725fe806ab61b19126030e4d0c3cc04c6e8ced5a3"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0303-enbridge-gas-ohio/attempt-1/terminal-decision.json",
+          "sha256": "107b5ce4b6a28f8c963dce43faf6911afa768313846cb923f5dcf21c0d357407"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -31433,6 +31460,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "EXCLUDED",
+          "at": "2026-09-01T08:06:05.000Z",
+          "reason": "Direct filings show that Enbridge Inc., not IFM Investors, acquired and owns the utility. Enbridge Elephant Holdings, LLC bought the East Ohio parent package from Dominion Energy, leaving The East Ohio Gas Company wholly owned by Enbridge. No direct IFM infrastructure equity, co-investment, managed-account stake, acquisition financing, later purchase or pending ownership transaction was found. Reverse CREATE_COMPANY/ADD_OWNER.",
+          "taskSnapshotSha256": "be185e7b9efdcf89323ec16725fe806ab61b19126030e4d0c3cc04c6e8ced5a3",
+          "evidenceSha256": [
+            "107b5ce4b6a28f8c963dce43faf6911afa768313846cb923f5dcf21c0d357407",
+            "69e1252fcb983ee8f3386bea2785c55bfee72d0c9f939e96cb76c4e0aa054229",
+            "a947c038d2232d9b29bacf21b9f63c6665d12d8b4a8e1cc8ca51468465cfcec3",
+            "be185e7b9efdcf89323ec16725fe806ab61b19126030e4d0c3cc04c6e8ced5a3"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -31495,23 +31537,44 @@
       "managerIndex": 55,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "97a29b1656043a5ca9d4d0365a6a845fb493b0b27ad9eebcb92857fae7ee2f87",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-09-01T06:50:56.000Z",
+      "updatedAt": "2026-09-01T08:06:05.000Z",
+      "completedAt": "2026-09-01T08:06:05.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "a64d4be732bc6afc542bef082c0086748e759a6727cb28597dc0e71844767aab",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0305-prospect-power/attempt-1/locked-v2-task-snapshot.json",
+          "sha256": "a64d4be732bc6afc542bef082c0086748e759a6727cb28597dc0e71844767aab"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0305-prospect-power-v2/proposal.json",
+          "sha256": "e6cbdf05964a0fe4154c867f610c31e579ba84ffede42ebaf8b2706cbdccf4e5"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0305-prospect-power-v2.json",
+          "sha256": "324c16a2657bff93f73bdbc8c58c9b8bac94bf266df3cb3cb4b81bbe997dc3d3"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0302-0306-v1/production-apply/batch-apply-receipt.json#members/2/receipt",
+          "sha256": "83e2a8d7c0c7a5c13ef77eedfa92cc3af4c5107aed8a05d09899aedc0fe9c2aa"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0305-prospect-power-v2/proposal.json#afterImage",
+          "sha256": "0b9563e67ad0c05fb40109836b7deb812180ddb0c17b682eb81eac4dce8c18bd"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-09-01T08:06:05.000Z",
+        "auditEventId": "cmtidk9ou000esw2bbjpt4s9t",
+        "transactionId": "78d52524-38b2-4d55-a2fe-56146671bbbe",
+        "receiptSha256": "83e2a8d7c0c7a5c13ef77eedfa92cc3af4c5107aed8a05d09899aedc0fe9c2aa",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33484366176"
+      },
       "history": [
         {
           "sequence": 1,
@@ -31522,6 +31585,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-09-01T08:06:05.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0302-0306-v1.",
+          "taskSnapshotSha256": "a64d4be732bc6afc542bef082c0086748e759a6727cb28597dc0e71844767aab",
+          "evidenceSha256": [
+            "0b9563e67ad0c05fb40109836b7deb812180ddb0c17b682eb81eac4dce8c18bd",
+            "324c16a2657bff93f73bdbc8c58c9b8bac94bf266df3cb3cb4b81bbe997dc3d3",
+            "69e1252fcb983ee8f3386bea2785c55bfee72d0c9f939e96cb76c4e0aa054229",
+            "83e2a8d7c0c7a5c13ef77eedfa92cc3af4c5107aed8a05d09899aedc0fe9c2aa",
+            "a64d4be732bc6afc542bef082c0086748e759a6727cb28597dc0e71844767aab",
+            "a947c038d2232d9b29bacf21b9f63c6665d12d8b4a8e1cc8ca51468465cfcec3",
+            "e6cbdf05964a0fe4154c867f610c31e579ba84ffede42ebaf8b2706cbdccf4e5"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -31533,20 +31614,26 @@
       "managerIndex": 55,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "dd5e8f9cb2f57c1ef47e53c1f6e01e53f75d0081c4532234ec1451ad8c93c723",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "EXCLUDED",
+      "attempts": 1,
+      "startedAt": "2026-09-01T06:50:56.000Z",
+      "updatedAt": "2026-09-01T08:06:05.000Z",
+      "completedAt": "2026-09-01T08:06:05.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "3b0cdb29e0ca1dfee6059cbd55624c3d53465ccdab5a91794e77e0fc6eb3e863",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0306-vopak-moda-houston/attempt-1/locked-task-snapshot.json",
+          "sha256": "3b0cdb29e0ca1dfee6059cbd55624c3d53465ccdab5a91794e77e0fc6eb3e863"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0306-vopak-moda-houston/attempt-1/terminal-decision.json",
+          "sha256": "9cf0c3b40c4d9c1a8eb37348bba119dc5231bdbaa76b1b7658dfdf980c60697b"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -31560,6 +31647,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "EXCLUDED",
+          "at": "2026-09-01T08:06:05.000Z",
+          "reason": "No IFM infrastructure-equity ownership was found. Primary sources resolve a 50/50 Royal Vopak-Exolum terminal JV beneath those operating platforms; creating a standalone IFM PortCo would misattribute ownership and double-count an asset.",
+          "taskSnapshotSha256": "3b0cdb29e0ca1dfee6059cbd55624c3d53465ccdab5a91794e77e0fc6eb3e863",
+          "evidenceSha256": [
+            "3b0cdb29e0ca1dfee6059cbd55624c3d53465ccdab5a91794e77e0fc6eb3e863",
+            "69e1252fcb983ee8f3386bea2785c55bfee72d0c9f939e96cb76c4e0aa054229",
+            "9cf0c3b40c4d9c1a8eb37348bba119dc5231bdbaa76b1b7658dfdf980c60697b",
+            "a947c038d2232d9b29bacf21b9f63c6665d12d8b4a8e1cc8ca51468465cfcec3"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -39050,5 +39152,5 @@
       ]
     }
   ],
-  "manifestSha256": "87246ef41729cae0c1c0d4132f40d37edd7919b828012f7a77b4ef630c711093"
+  "manifestSha256": "bd17f4537a3eb869657209a9f8107586adf35bd21f147d920f783dfd54de9fb3"
 }
