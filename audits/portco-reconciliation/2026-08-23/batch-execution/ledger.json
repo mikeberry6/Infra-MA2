@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-01T05:01:00Z",
-  "activeBatchId": "batch-0292-0296-v1",
+  "updatedAt": "2026-09-01T05:29:00.000Z",
+  "activeBatchId": "batch-0297-0301-v1",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -4895,7 +4895,7 @@
     },
     {
       "batchId": "batch-0292-0296-v1",
-      "state": "VERIFYING",
+      "state": "COMPLETED",
       "taskIds": [
         "ledger:0292:flexivan:05de4d37",
         "ledger:0293:gridpoint:326d6d5b",
@@ -4911,8 +4911,8 @@
         296
       ],
       "createdAt": "2026-09-01T04:26:00Z",
-      "updatedAt": "2026-09-01T05:01:00Z",
-      "completedAt": null,
+      "updatedAt": "2026-09-01T05:27:04Z",
+      "completedAt": "2026-09-01T05:27:04Z",
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0292-0296-v1/batch-manifest.json",
         "sha256": "1c5dd9833e36fb00ec38cdbc48635f2959a97191d0ea1532525aee2c5b8263d1"
@@ -4972,9 +4972,55 @@
             "e8e7b86441a435ec095484e439708299254ee8ef3f336968cc68ad2566e2efa0"
           ],
           "reason": null
+        },
+        {
+          "sequence": 6,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-09-01T05:27:04Z",
+          "evidenceSha256": [
+            "1c5dd9833e36fb00ec38cdbc48635f2959a97191d0ea1532525aee2c5b8263d1",
+            "e8e7b86441a435ec095484e439708299254ee8ef3f336968cc68ad2566e2efa0"
+          ],
+          "reason": null
+        }
+      ]
+    },
+    {
+      "batchId": "batch-0297-0301-v1",
+      "state": "FORMING",
+      "taskIds": [
+        "ledger:0297:tarana-wireless:7b60f5b2",
+        "ledger:0298:transportation-equipment-network:8eb51003",
+        "ledger:0299:unnamed-ai-edge-colocation-platform:46b72976",
+        "ledger:0300:zenith-energy-terminal-portland:377bcbbb",
+        "ledger:0301:conrac:6d35f5f9"
+      ],
+      "taskIndexes": [
+        297,
+        298,
+        299,
+        300,
+        301
+      ],
+      "createdAt": "2026-09-01T05:29:00.000Z",
+      "updatedAt": "2026-09-01T05:29:00.000Z",
+      "completedAt": null,
+      "batchManifest": null,
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-09-01T05:29:00.000Z",
+          "evidenceSha256": [],
+          "reason": null
         }
       ]
     }
   ],
-  "ledgerSha256": "1965a0a55123c96e3c9d39a525d7b40b5a71ad5825dfede30f9e978854227af4"
+  "ledgerSha256": "42b3fe4f8d853a3c335b77c8528adccd5b221876fb3b8df09ea7c6a4faed8d65"
 }
