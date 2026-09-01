@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-09-01T13:03:09.000Z",
+  "updatedAt": "2026-09-01T14:04:53.000Z",
   "runStatus": "IDLE",
   "activeTaskId": null,
   "source": {
@@ -33643,20 +33643,26 @@
       "managerIndex": 65,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "5296e242883d931b25594976c60280ca1831e9096af39da57826496b6561fbda",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "EXCLUDED",
+      "attempts": 1,
+      "startedAt": "2026-09-01T13:09:14.000Z",
+      "updatedAt": "2026-09-01T14:04:53.000Z",
+      "completedAt": "2026-09-01T14:04:53.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "ab18f26005b094c520dec29e62fcd43468cccd3efd6654537e5fa83ef34ae0ba",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0334-us-distributed-solar-residential-solar-platform/attempt-1/locked-batch-v1-task-snapshot.json",
+          "sha256": "ab18f26005b094c520dec29e62fcd43468cccd3efd6654537e5fa83ef34ae0ba"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0334-us-distributed-solar-residential-solar-platform/attempt-1/terminal-decision-v1.json",
+          "sha256": "118fdfd277b28a19c6bc9825419d4553934e8c9041e1c40d21e9e06a95dc2e2f"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -33670,6 +33676,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "EXCLUDED",
+          "at": "2026-09-01T14:04:53.000Z",
+          "reason": "The census label resolves to Macquarie's US Residential Solar tile, not a named platform. MGREF2 acquired 50% of a 268 MW portfolio of operating US residential rooftop solar projects, with an October 2020 investment date. Macquarie publishes no legal company name, website, operator or seller, and calls it a portfolio of projects. It is an unnamed asset bundle. The MGETS attribution is unsupported: direct fund-level reporting assigns the holding to MGREF2, while MGETS separately identifies Calibrant Energy as a distinct company.",
+          "taskSnapshotSha256": "ab18f26005b094c520dec29e62fcd43468cccd3efd6654537e5fa83ef34ae0ba",
+          "evidenceSha256": [
+            "0def1745ac138b4ab2ef51fa5d18d7d5526e6b645b8d1b390d67cffd2b490dd3",
+            "118fdfd277b28a19c6bc9825419d4553934e8c9041e1c40d21e9e06a95dc2e2f",
+            "a1186bdbd71d02b197832fd6abe3beb27a952e09d26a3f82e70a60f032c32f6f",
+            "ab18f26005b094c520dec29e62fcd43468cccd3efd6654537e5fa83ef34ae0ba"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -33681,23 +33702,44 @@
       "managerIndex": 65,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "01db05af93f3a2d07fa49e721b517ef50136edf00e64e1c964c102175dd0a879",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-09-01T13:09:14.000Z",
+      "updatedAt": "2026-09-01T14:04:53.000Z",
+      "completedAt": "2026-09-01T14:04:53.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "0fa7efa3c9e78b8044f10b2c2b2b413ad2d8f2b248c127427d840643cb1206bf",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0335-yusen-terminals-llc/attempt-1/locked-batch-v1-task-snapshot.json",
+          "sha256": "0fa7efa3c9e78b8044f10b2c2b2b413ad2d8f2b248c127427d840643cb1206bf"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0335-yusen-terminals-llc-v4/proposal.json",
+          "sha256": "db98134b1529530d5b0d7ba1378fdd8054d5e3275a0ade04eb1b5a300854ac8a"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0335-yusen-terminals-llc-v4.json",
+          "sha256": "ded982b113372c61a1c2a6e96412f723479872d8413b8bb1a33ef71bfbe3d7ac"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0334-0338-v1/production-apply/batch-apply-receipt.json#members/1/receipt",
+          "sha256": "1a912d51c6d752a3d785f0112f316acbaf6eb9d6010c6dd9333e9b717b71ea63"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0335-yusen-terminals-llc-v4/proposal.json#afterImage",
+          "sha256": "60d1d314305ada8c471d153b40a51d0f7a736c7ab0109966d230457c805d692b"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-09-01T14:04:53.000Z",
+        "auditEventId": "cmtiqlheh000dro2bsgtf104x",
+        "transactionId": "723655cf-c2c2-448d-bea2-96bdf2dd97e4",
+        "receiptSha256": "1a912d51c6d752a3d785f0112f316acbaf6eb9d6010c6dd9333e9b717b71ea63",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33516744999"
+      },
       "history": [
         {
           "sequence": 1,
@@ -33708,6 +33750,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-09-01T14:04:53.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0334-0338-v1.",
+          "taskSnapshotSha256": "0fa7efa3c9e78b8044f10b2c2b2b413ad2d8f2b248c127427d840643cb1206bf",
+          "evidenceSha256": [
+            "0def1745ac138b4ab2ef51fa5d18d7d5526e6b645b8d1b390d67cffd2b490dd3",
+            "0fa7efa3c9e78b8044f10b2c2b2b413ad2d8f2b248c127427d840643cb1206bf",
+            "1a912d51c6d752a3d785f0112f316acbaf6eb9d6010c6dd9333e9b717b71ea63",
+            "60d1d314305ada8c471d153b40a51d0f7a736c7ab0109966d230457c805d692b",
+            "a1186bdbd71d02b197832fd6abe3beb27a952e09d26a3f82e70a60f032c32f6f",
+            "db98134b1529530d5b0d7ba1378fdd8054d5e3275a0ade04eb1b5a300854ac8a",
+            "ded982b113372c61a1c2a6e96412f723479872d8413b8bb1a33ef71bfbe3d7ac"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -33719,20 +33779,26 @@
       "managerIndex": 66,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "97615c6049dc4af82969ab2744cb0d2e624023180124f44e12c0d4f38b47a81f",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
+      "status": "DEFERRED",
+      "attempts": 1,
+      "startedAt": "2026-09-01T13:09:14.000Z",
+      "updatedAt": "2026-09-01T14:04:53.000Z",
+      "completedAt": "2026-09-01T14:04:53.000Z",
+      "exceptionReason": "Astoria Energy Partners resolves to the existing Astoria Power Partners Holding, LLC platform and Munich Re/MEAG's 20.0000% interest is current, but the latest evidence does not establish the current continuity and exact upstream allocations for APG, CalSTRS, Clal, Harbert and GPP/CalPERS. That active-ownership gap blocks a safe canonical merge and ownership correction until the cap table is directly evidenced.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "1f517885a1d673bdd3c275730e11f2148b2c20d41b14c84c8485509b0da8ed32",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0336-astoria-energy-partners/attempt-1/locked-batch-v1-task-snapshot.json",
+          "sha256": "1f517885a1d673bdd3c275730e11f2148b2c20d41b14c84c8485509b0da8ed32"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0336-astoria-energy-partners/attempt-1/terminal-decision-v1.json",
+          "sha256": "abdb08c789976d95a0f6119407521c97e5f03b482b9ee4f2a7e682e30448bb00"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -33746,6 +33812,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-01T14:04:53.000Z",
+          "reason": "Astoria Energy Partners resolves to the existing Astoria Power Partners Holding, LLC platform and Munich Re/MEAG's 20.0000% interest is current, but the latest evidence does not establish the current continuity and exact upstream allocations for APG, CalSTRS, Clal, Harbert and GPP/CalPERS. That active-ownership gap blocks a safe canonical merge and ownership correction until the cap table is directly evidenced.",
+          "taskSnapshotSha256": "1f517885a1d673bdd3c275730e11f2148b2c20d41b14c84c8485509b0da8ed32",
+          "evidenceSha256": [
+            "0def1745ac138b4ab2ef51fa5d18d7d5526e6b645b8d1b390d67cffd2b490dd3",
+            "1f517885a1d673bdd3c275730e11f2148b2c20d41b14c84c8485509b0da8ed32",
+            "a1186bdbd71d02b197832fd6abe3beb27a952e09d26a3f82e70a60f032c32f6f",
+            "abdb08c789976d95a0f6119407521c97e5f03b482b9ee4f2a7e682e30448bb00"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -33757,23 +33838,44 @@
       "managerIndex": 66,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "b59c532d2280539be9b2fbf3f76f4f2a54cb7b401e98a8e44c599e56957eca6f",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-09-01T13:09:14.000Z",
+      "updatedAt": "2026-09-01T14:04:53.000Z",
+      "completedAt": "2026-09-01T14:04:53.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "f631b54b54f61f9ed8f9ba0d118fe64b1263bd178cd67a28db160c0265209612",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0337-maverick-6/attempt-1/locked-batch-v1-task-snapshot.json",
+          "sha256": "f631b54b54f61f9ed8f9ba0d118fe64b1263bd178cd67a28db160c0265209612"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0337-maverick-6-v1/proposal.json",
+          "sha256": "0f6f3e6b7e737c55f28c95d578e0b1df051d1a7e10dd1f913142ce4fa2ffdb3e"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0337-maverick-6-v1.json",
+          "sha256": "e054797647744c23bf4e4d5d7e257444644031dfc807364ad12f5c2200d61052"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0334-0338-v1/production-apply/batch-apply-receipt.json#members/3/receipt",
+          "sha256": "c69f3e689666ebd284db6e34124e0e8f0d5c38e11ad4dcc232eddd827787361e"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/proposals/0337-maverick-6-v1/proposal.json#afterImage",
+          "sha256": "d906aa46e15fa78f23637b9472232b8460b80f68dd3a90e88bb2b7c957c760eb"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-09-01T14:04:53.000Z",
+        "auditEventId": "cmtiqllj60011ro2bqwll2ryt",
+        "transactionId": "723655cf-c2c2-448d-bea2-96bdf2dd97e4",
+        "receiptSha256": "c69f3e689666ebd284db6e34124e0e8f0d5c38e11ad4dcc232eddd827787361e",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33516744999"
+      },
       "history": [
         {
           "sequence": 1,
@@ -33784,6 +33886,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-09-01T14:04:53.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0334-0338-v1.",
+          "taskSnapshotSha256": "f631b54b54f61f9ed8f9ba0d118fe64b1263bd178cd67a28db160c0265209612",
+          "evidenceSha256": [
+            "0def1745ac138b4ab2ef51fa5d18d7d5526e6b645b8d1b390d67cffd2b490dd3",
+            "0f6f3e6b7e737c55f28c95d578e0b1df051d1a7e10dd1f913142ce4fa2ffdb3e",
+            "a1186bdbd71d02b197832fd6abe3beb27a952e09d26a3f82e70a60f032c32f6f",
+            "c69f3e689666ebd284db6e34124e0e8f0d5c38e11ad4dcc232eddd827787361e",
+            "d906aa46e15fa78f23637b9472232b8460b80f68dd3a90e88bb2b7c957c760eb",
+            "e054797647744c23bf4e4d5d7e257444644031dfc807364ad12f5c2200d61052",
+            "f631b54b54f61f9ed8f9ba0d118fe64b1263bd178cd67a28db160c0265209612"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -33795,20 +33915,26 @@
       "managerIndex": 66,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "fedc646606e7525f7d87cdbe430f521cc5c7a0e68377c41d05af9b27967fd12d",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
-      "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "status": "SUPERSEDED",
+      "attempts": 1,
+      "startedAt": "2026-09-01T13:09:14.000Z",
+      "updatedAt": "2026-09-01T14:04:53.000Z",
+      "completedAt": "2026-09-01T14:04:53.000Z",
+      "exceptionReason": "Maverick 7 is one of two project SPVs held through the same Maverick 67 holdco structure as Maverick 6. Task 337 creates the single canonical Maverick 6 & 7 portfolio with Munich Re/MEAG and EDF each at 50%; completing task 338 separately would duplicate the same manager-level platform.",
+      "supersededByTaskId": "ledger:0337:maverick-6:cf60cd63",
+      "taskSnapshotSha256": "ac1b90c07c1830422e5fda56b4d9ab5822af705e0a7e43f4937b8341ecb4ca36",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0338-maverick-7/attempt-1/locked-batch-v1-task-snapshot.json",
+          "sha256": "ac1b90c07c1830422e5fda56b4d9ab5822af705e0a7e43f4937b8341ecb4ca36"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0338-maverick-7/attempt-1/terminal-decision-v1.json",
+          "sha256": "3a3a2c34f859623fe796d5d3f458362a6a1b14078b6201d8f29c57fae3998653"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -33822,6 +33948,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "SUPERSEDED",
+          "at": "2026-09-01T14:04:53.000Z",
+          "reason": "Maverick 7 is one of two project SPVs held through the same Maverick 67 holdco structure as Maverick 6. Task 337 creates the single canonical Maverick 6 & 7 portfolio with Munich Re/MEAG and EDF each at 50%; completing task 338 separately would duplicate the same manager-level platform.",
+          "taskSnapshotSha256": "ac1b90c07c1830422e5fda56b4d9ab5822af705e0a7e43f4937b8341ecb4ca36",
+          "evidenceSha256": [
+            "0def1745ac138b4ab2ef51fa5d18d7d5526e6b645b8d1b390d67cffd2b490dd3",
+            "3a3a2c34f859623fe796d5d3f458362a6a1b14078b6201d8f29c57fae3998653",
+            "a1186bdbd71d02b197832fd6abe3beb27a952e09d26a3f82e70a60f032c32f6f",
+            "ac1b90c07c1830422e5fda56b4d9ab5822af705e0a7e43f4937b8341ecb4ca36"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -40086,5 +40227,5 @@
       ]
     }
   ],
-  "manifestSha256": "c0126efad1f88a98087be443e5185491b6da46e2b841afb0ff10bb71590b109b"
+  "manifestSha256": "cb2712fc88d6a30c7d88d5c44d755e4d2dd86dcb8334c637def1aa0642b913e2"
 }
