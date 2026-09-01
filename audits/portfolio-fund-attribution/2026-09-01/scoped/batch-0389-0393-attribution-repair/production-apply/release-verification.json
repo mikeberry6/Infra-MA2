@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_RELEASE_VERIFICATION",
+  "verifiedAt": "2026-09-01T22:55:22.263Z",
+  "manifestSha256": "0f100374fb188538932fd5b49a9cfa9e4de37bb0897b3a87502f4a01a0b33cde",
+  "approvalSha256": "cbec9698bddc5501e78b211770e2adb66dff83ff24ce9f92076a06f324ac2741",
+  "receiptSha256": "c7f5ac031d208b18e880235060e86f9dde208dd6a3744e21c951a8cce26e8bf9",
+  "mutationCount": 6,
+  "changed": 6,
+  "verificationScope": "BOUNDED_STATUS_SAMPLE",
+  "sampledRows": [
+    {
+      "recordId": "OFA-EEA729FDE6E8",
+      "companyId": "cmrxpjmj60185ivhe7judizjz",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjmj60185ivhe7judizjz?verification=0f100374fb188538932fd5b49a9cfa9e4de37bb0897b3a87502f4a01a0b33cde",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Ullico Infrastructure Fund; Ullico District Energy Blocked Holdco through Lowry Holdings",
+        "attributionConfidence": null,
+        "attributionRationale": "The New York Public Service Commission ownership diagram discloses Ullico's 25% interest and holding chain; CenTrio's July 2026 refinancing reconfirms Ullico as a current sponsor."
+      }
+    },
+    {
+      "recordId": "OFA-CF205BB60723",
+      "companyId": "cmrxpjmnj018eivhe8a4fk54r",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjmnj018eivhe8a4fk54r?verification=0f100374fb188538932fd5b49a9cfa9e4de37bb0897b3a87502f4a01a0b33cde",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Quinbrook identifies Primergy as its 100%-owned platform, but the approved evidence does not support assigning the platform to a specific fund; the record therefore preserves direct manager-program attribution without inference."
+      }
+    }
+  ],
+  "passed": true
+}
