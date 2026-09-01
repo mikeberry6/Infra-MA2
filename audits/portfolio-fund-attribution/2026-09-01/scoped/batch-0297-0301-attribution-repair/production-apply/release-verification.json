@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_RELEASE_VERIFICATION",
+  "verifiedAt": "2026-09-01T06:33:08.061Z",
+  "manifestSha256": "96457a9e9c391e925b682fd1629d8728481a1d9a5ff2e010bd13a8a694fa1964",
+  "approvalSha256": "90add38a7c0af5141ee112e78a1f995636e6156c17105255af5d3eaf6dd694b8",
+  "receiptSha256": "f54810b8a30c62a583805f025f77861ad80f6e9c511cd3f4f335e6863bc1cd89",
+  "mutationCount": 6,
+  "changed": 6,
+  "verificationScope": "BOUNDED_STATUS_SAMPLE",
+  "sampledRows": [
+    {
+      "recordId": "OFA-E8213975756E",
+      "companyId": "cmti9lwaj000hux2bcgerxx7x",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmti9lwaj000hux2bcgerxx7x?verification=96457a9e9c391e925b682fd1629d8728481a1d9a5ff2e010bd13a8a694fa1964",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": "ISQ Global Infrastructure Fund IV",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "ISQ Global Infrastructure Fund IV",
+        "attributionConfidence": null,
+        "attributionRationale": "The filed purchase agreement identifies ISQ Citadel Aggregator as the buyer and ties the transaction to I Squared's Fund IV family. The exact curated Fund IV row can be linked without inferring a different mandate."
+      }
+    },
+    {
+      "recordId": "OFA-6F5770E4D1CD",
+      "companyId": "cmrxpjlqb016uivhebyrmz01k",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjlqb016uivhebyrmz01k?verification=96457a9e9c391e925b682fd1629d8728481a1d9a5ff2e010bd13a8a694fa1964",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The July 2024 transaction announcement identifies Mubadala as a direct TEN co-investor but does not attribute the interest to a specific fund or disclose its percentage."
+      }
+    }
+  ],
+  "passed": true
+}
