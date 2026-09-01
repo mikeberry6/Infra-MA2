@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_CORRECTION_DECISION",
+  "asOfDate": "2026-09-01",
+  "triggerBatchId": "batch-0297-0301-v1",
+  "triggerBatchSha256": "d3e2562a9c1686bb6a189868188db766c574f56d6927c98fa3bfe94cd78b2416",
+  "triggerBatchReceiptSha256": "f6ad61b7ca041ac7b69aa3430555edd6d245856d91d2a10723650d6208918e3a",
+  "decision": "ALIGN_ACTIVE_OWNERSHIP_ATTRIBUTION_METADATA",
+  "rationale": "The atomic PortCo transaction correctly applied the approved active owners and vehicles for Transportation Equipment Network, Saragon and Zenith Energy Portland Terminal. The public drawer reads a separate ownership-attribution layer that retained six pre-release classifications. Align those six active ownership rows to the exact reviewed seed judgments before completing the PortCo bundle.",
+  "mutations": [
+    {
+      "companyName": "Transportation Equipment Network",
+      "ownershipPeriodIds": [
+        "cmrxpk47u020bivhe3g8vbgkl",
+        "cmrxpk82z0269ivhegqatfbde",
+        "cmti9ls3a000dux2bvchr1cww",
+        "cmti9ls6p000eux2bwdccr6zk"
+      ],
+      "outcome": "Disclosed Fund II, MIFAX and Series II classifications plus direct-program treatment for Mubadala, with no invented fund links"
+    },
+    {
+      "companyName": "Saragon",
+      "ownershipPeriodIds": [
+        "cmti9lxdu000sux2bhhr4hbh6"
+      ],
+      "outcome": "Disclosed Fund IV classification while preserving the existing exact curated-fund link"
+    },
+    {
+      "companyName": "Zenith Energy Portland Terminal",
+      "ownershipPeriodIds": [
+        "cmti9m2is001eux2bz1o40wx3"
+      ],
+      "outcome": "Disclosed Kelso Fund IX attribution without inventing a curated-fund link"
+    }
+  ],
+  "verifiedNonChanges": [
+    "Transportation Equipment Network's QIA direct-program attribution already matches the reviewed seed judgment",
+    "Zenith Energy Portland Terminal's Warburg Pincus attribution remains unresolved because direct sources do not identify the applicable Warburg fund",
+    "Company identities, aliases, redirects and publication status",
+    "Ownership organizations, vehicle text, stakes, dates and active state",
+    "Former owners and signed pending buyers",
+    "Descriptions, milestones, citations and primary sources",
+    "Fund Database records; the repair creates or updates no fund",
+    "The completed atomic PortCo transaction and its durable receipt"
+  ],
+  "identityResolved": true,
+  "activeOwnershipResolved": true,
+  "unresolvedQuestions": []
+}
