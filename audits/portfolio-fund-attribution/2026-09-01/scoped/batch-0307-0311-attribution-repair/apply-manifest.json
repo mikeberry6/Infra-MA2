@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-09-01",
+  "ledgerSha256": "95ad9a13ef7644e885e5dd0ad6d2530b5ad70cd40cdb6f9002005ca7bbb4c6cf",
+  "sourceSnapshotSha256": "66d0b37aea22ee0bf989e3f7ec0c8b83d18260b542e35a5a1c9bb8beed59ee5b",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 0,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 1,
+      "UNRESOLVED": 0
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  },
+  "expectedMutationCount": 1,
+  "mutations": [
+    {
+      "recordId": "OFA-9F2026314F62",
+      "ownershipPeriodId": "cmtif7nn2001mx12b5hwgdpks",
+      "companyName": "Terra-Gen",
+      "country": "United States",
+      "investmentFirm": "Masdar",
+      "currentVehicleName": "Masdar TG Holding LLC + Masdar TG Merger Corporation",
+      "databaseVehicleName": "Masdar TG Holding LLC + Masdar TG Merger Corporation",
+      "investmentYear": 2024,
+      "stake": "50%",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Masdar completed the acquisition of a 50% Terra-Gen interest through its disclosed acquisition chain as a direct corporate investment; no external fund attribution applies."
+      },
+      "evidenceUrls": [
+        "https://terra-gen.com/masdar-accelerates-u-s-renewables-expansion-closes-acquisition-of-50-stake-in-terra-gen/",
+        "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B90212793-0000-CC39-A8FF-DBA29A84F19B%7D"
+      ]
+    }
+  ],
+  "manifestSha256": "f6f7d8d35538cc290e9a7280e90cf975cc14b74651000465846c24d14708e120"
+}
