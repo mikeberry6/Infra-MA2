@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_RECEIPT",
+  "manifestSha256": "247079bc74e42d4441fea7b4254330203c2d097da38f2d092ee4833c16d5cd7b",
+  "approvalSha256": "8099ac6c41714cba459b6994a4c81ce4a46cf4eb67ac3b58b7e0a7bc0aa06238",
+  "environment": "production",
+  "pipelineRunId": "cmtivoios00009r2bpj65xgrn",
+  "mutationCount": 6,
+  "changed": 6,
+  "idempotent": false,
+  "beforeFingerprint": "6ad18c63060f6d7352edb04802d667d9a2ec398eefe37e76482b175f7af2eb6f",
+  "afterFingerprint": "a97cd7530fde6758bb5f527099156462c696433fb64b860447cb1df3a79b0add",
+  "rows": [
+    {
+      "recordId": "OFA-131B94987056",
+      "ownershipPeriodId": "cmtiv3g8y0004272bpabv0bxy",
+      "companyId": "cmrxpjlhd016hivheffuojgmg",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The regulatory closing record establishes Elliott-managed ownership through Tunnel Energy Investor but does not identify a separate Elliott fund, so no fund is inferred."
+      }
+    },
+    {
+      "recordId": "OFA-A2C7BDDFB2E2",
+      "ownershipPeriodId": "cmrxpk7u7025xivhegjy9uc73",
+      "companyId": "cmrxpjljl016livheqq1befhk",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "North Haven Infrastructure Partners III",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, vintage 2019 precedes investment by 5 years, North America-relevant mandate; next candidate trails by 7.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "MSIP's common-equity co-control investment is directly disclosed, but the public evidence does not identify a fund or acquisition vehicle, so the former NHIP III inference is removed."
+      }
+    },
+    {
+      "recordId": "OFA-42770CD84675",
+      "ownershipPeriodId": "cmtiv3lf4000d272by275tbrq",
+      "companyId": "cmrxpjljl016livheqq1befhk",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "GI Partners Fund IV at entry; 2025 continuation and GI Data Infrastructure vehicles",
+        "attributionConfidence": null,
+        "attributionRationale": "GI Partners' disclosures establish its continuing ownership through the named entry and continuation vehicles, which are retained as disclosed without creating an inferred curated-fund link."
+      }
+    },
+    {
+      "recordId": "OFA-74102D77C6CC",
+      "ownershipPeriodId": "cmtiv3r9g000p272bwj8yt01x",
+      "companyId": "cmrxpjlkj016nivhekkqd6jy8",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Optimum retains the disclosed controlling common-equity interest through its corporate holding chain. This is direct corporate ownership, not a fund attribution."
+      }
+    },
+    {
+      "recordId": "OFA-9B56FA1DB7DF",
+      "ownershipPeriodId": "cmrxpk7vb025zivhehw6apbvt",
+      "companyId": "cmrxpjlkj016nivhekkqd6jy8",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "North Haven Infrastructure Partners III",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, vintage 2019 is 1 years before investment, North America-relevant mandate; next candidate trails by 10.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "NHIP III Lantern Holding LLC",
+        "attributionConfidence": null,
+        "attributionRationale": "Regulatory and transaction-party evidence directly identifies NHIP III Lantern Holding LLC as the 49.99% MSIP-led owner; the legal vehicle is retained without inferring a separate curated fund link."
+      }
+    },
+    {
+      "recordId": "OFA-A58AFA453D16",
+      "ownershipPeriodId": "cmrxpk7yn0261ivheqfccpykg",
+      "companyId": "cmrxpjlli016pivhe3nj9izvg",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "North Haven Infrastructure Partners IV",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, vintage 2025 is 0 years before investment, North America-relevant mandate; next candidate trails by 10.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The official disclosures establish an MSIP platform-equity investment but do not identify a specific fund or acquisition vehicle, so the former North Haven IV inference is removed."
+      }
+    }
+  ],
+  "appliedAt": "2026-09-01T16:25:01.304Z",
+  "receiptSha256": "5198fba64b4ae5f434888b16e4ddd197f5b3a948fd7bc45aa482a1421e27ec86"
+}

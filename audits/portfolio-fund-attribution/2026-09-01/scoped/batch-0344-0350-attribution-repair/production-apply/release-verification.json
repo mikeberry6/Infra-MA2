@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_RELEASE_VERIFICATION",
+  "verifiedAt": "2026-09-01T16:25:03.381Z",
+  "manifestSha256": "247079bc74e42d4441fea7b4254330203c2d097da38f2d092ee4833c16d5cd7b",
+  "approvalSha256": "8099ac6c41714cba459b6994a4c81ce4a46cf4eb67ac3b58b7e0a7bc0aa06238",
+  "receiptSha256": "5198fba64b4ae5f434888b16e4ddd197f5b3a948fd7bc45aa482a1421e27ec86",
+  "mutationCount": 6,
+  "changed": 6,
+  "verificationScope": "BOUNDED_STATUS_SAMPLE",
+  "sampledRows": [
+    {
+      "recordId": "OFA-42770CD84675",
+      "companyId": "cmrxpjljl016livheqq1befhk",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjljl016livheqq1befhk?verification=247079bc74e42d4441fea7b4254330203c2d097da38f2d092ee4833c16d5cd7b",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "GI Partners Fund IV at entry; 2025 continuation and GI Data Infrastructure vehicles",
+        "attributionConfidence": null,
+        "attributionRationale": "GI Partners' disclosures establish its continuing ownership through the named entry and continuation vehicles, which are retained as disclosed without creating an inferred curated-fund link."
+      }
+    },
+    {
+      "recordId": "OFA-131B94987056",
+      "companyId": "cmrxpjlhd016hivheffuojgmg",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjlhd016hivheffuojgmg?verification=247079bc74e42d4441fea7b4254330203c2d097da38f2d092ee4833c16d5cd7b",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "The regulatory closing record establishes Elliott-managed ownership through Tunnel Energy Investor but does not identify a separate Elliott fund, so no fund is inferred."
+      }
+    }
+  ],
+  "passed": true
+}
