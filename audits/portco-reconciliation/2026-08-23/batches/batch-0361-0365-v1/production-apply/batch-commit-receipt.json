@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_COMMIT_RECEIPT",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0361-0365-v1",
+  "batchSha256": "f55a40673da0d7a1e6fc8d43cc85a58962be38ea10a519cbb1c3bafe6068a047",
+  "releaseSha": "5c79101f7409d9b85e242c14bf7a55b79b3c8709",
+  "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+  "transactionId": "5d99508e-1b10-4d90-baa9-0bdb282c4623",
+  "appliedAt": "2026-09-01T18:41:11.128Z",
+  "members": [
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0361:nopetro-renewables:1b512de3",
+      "taskIndex": 361,
+      "companyName": "Nopetro Renewables",
+      "outcome": "DEFERRED",
+      "decisionSha256": "d3c992912bef57b385a93950ac540c6909815ba77e185d5b638b18b889ca0116"
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0362:skywire-networks-xchange-telecom:61604de9",
+      "taskIndex": 362,
+      "companyName": "Skywire Networks / Xchange Telecom",
+      "proposalSha256": "38b2c1f23fde5a90f6ea587f4e1235b83c1daa2163da02e1cb178ad431c1fd36",
+      "approvalSha256": "cd0e6d3beb9a13ba9514eb5291fb948852a0c66bd11c810a2d7ea28c64abf033",
+      "afterImageSha256": "28ba9da15b750302015d8e528276ddb05fc216a1e27cc45ef69e8c71d1dcb245",
+      "approvedSeedEntrySha256": "dae2a4252677b7a2d5db3176cc9cccc4e2b8c3d4c5ad33ffcaa070d547f3726b",
+      "companyId": "cmtj0jm5c0000xx2b23nagtjp",
+      "auditEventId": "cmtj0jmf9000gxx2blgzwnv93"
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0363:telmax-inc:f608a383",
+      "taskIndex": 363,
+      "companyName": "telMAX Inc.",
+      "outcome": "DEFERRED",
+      "decisionSha256": "d3c72605a805da0770e5e9fd2fc802d0f6367272843baa019289fa25d728a047"
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0364:uge-international-ltd:3aed0a3e",
+      "taskIndex": 364,
+      "companyName": "UGE International Ltd.",
+      "proposalSha256": "2ffd803ac2ccc29531983cd9b92de0d8bbf17cab39b368ee5f09f0874efe2699",
+      "approvalSha256": "7b4b449dbf41b24ba291ae24a5b52fc170509e3a0947b3bb02e74eaaa399fb5a",
+      "afterImageSha256": "5882c8c4469625ef3eb3a6e2a414ca9f973c2096491816fd2c610ac8cc1251e9",
+      "approvedSeedEntrySha256": "e24aea3ef96e5b4836f4cc43f8021d60ea17ec9e3835cbede0a7c859a2a1c40a",
+      "companyId": "cmtj0jmj1000hxx2bly6aduiw",
+      "auditEventId": "cmtj0jmq70010xx2b6ych448h"
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0365:arcadian-infracom:27de01bd",
+      "taskIndex": 365,
+      "companyName": "Arcadian Infracom",
+      "outcome": "DEFERRED",
+      "decisionSha256": "71cb23e940fd9b7bbbf097e0a424c2b3dfe3258ebfc2c8d6b517b1704d8a06f2"
+    }
+  ],
+  "verification": {
+    "databaseTransactionCommitted": true,
+    "seedArtifactVerifiedBeforeCommit": true,
+    "detailApiVerificationPending": true,
+    "partialDatabaseApplication": false
+  },
+  "receiptSha256": "d3a0e9df66b41ac9865193fa90275d9d5a2cd0510dbfb74bb1b62dc363b63ec1"
+}
