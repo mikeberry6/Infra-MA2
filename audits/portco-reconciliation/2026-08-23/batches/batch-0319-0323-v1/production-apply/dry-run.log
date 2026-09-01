@@ -1,0 +1,122 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:batch:apply
+> npx tsx scripts/portco-reconciliation/batch-apply-cli.ts --batch-manifest=audits/portco-reconciliation/2026-08-23/batches/batch-0319-0323-v1/batch-manifest-v4.json --batch-sha256=9590aadea6ee68e30c519d0160e3c4df5439bc9a3b46dec3942732de5b76fafc
+
+(node:3721) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "BATCH_DRY_RUN",
+  "batchId": "batch-0319-0323-v1",
+  "batchSha256": "9590aadea6ee68e30c519d0160e3c4df5439bc9a3b46dec3942732de5b76fafc",
+  "databaseWrites": false,
+  "seedWrites": false,
+  "plans": [
+    {
+      "companyName": "38 Degrees North",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to lastVerifiedAt, ownershipPeriods, citations."
+        },
+        {
+          "kind": "ADD_OWNER",
+          "relationIds": [],
+          "detail": "Add 2 approved ownership period(s)."
+        }
+      ],
+      "changedFields": [
+        "citations",
+        "lastVerifiedAt",
+        "ownershipPeriods"
+      ],
+      "retiredCompanyIds": []
+    },
+    {
+      "companyName": "CarbonCount Holdings 1 LLC",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to description, recordStatus, lastVerifiedAt, ownershipPeriods, citations."
+        },
+        {
+          "kind": "ADD_OWNER",
+          "relationIds": [],
+          "detail": "Add 1 approved ownership period(s)."
+        }
+      ],
+      "changedFields": [
+        "citations",
+        "description",
+        "lastVerifiedAt",
+        "ownershipPeriods",
+        "recordStatus"
+      ],
+      "retiredCompanyIds": []
+    },
+    {
+      "companyName": "Coastal GasLink Pipeline",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to lastVerifiedAt, ownershipPeriods, citations."
+        },
+        {
+          "kind": "ADD_OWNER",
+          "relationIds": [],
+          "detail": "Add 1 approved ownership period(s)."
+        },
+        {
+          "kind": "ADD_PENDING_TRANSACTION",
+          "relationIds": [],
+          "detail": "Add 1 signed pending ownership transaction(s)."
+        },
+        {
+          "kind": "MERGE_COMPANIES",
+          "relationIds": [
+            "seed:ledger:0473:coastal-gaslink-pipeline-project:816af47c"
+          ],
+          "detail": "retire 1 reviewed seed-only identity record(s)"
+        }
+      ],
+      "changedFields": [
+        "citations",
+        "lastVerifiedAt",
+        "ownershipPeriods",
+        "pendingOwnershipTransactions",
+        "seedIdentities"
+      ],
+      "retiredCompanyIds": []
+    },
+    {
+      "companyName": "EDF Power Solutions North America",
+      "mutations": [
+        {
+          "kind": "CREATE_COMPANY",
+          "relationIds": [],
+          "detail": "Create the approved canonical company and all approved relations."
+        }
+      ],
+      "changedFields": [
+        "company"
+      ],
+      "retiredCompanyIds": []
+    },
+    {
+      "companyName": "Helix Digital Infrastructure",
+      "mutations": [
+        {
+          "kind": "CREATE_COMPANY",
+          "relationIds": [],
+          "detail": "Create the approved canonical company and all approved relations."
+        }
+      ],
+      "changedFields": [
+        "company"
+      ],
+      "retiredCompanyIds": []
+    }
+  ]
+}
