@@ -1,0 +1,274 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0377:intersect-power:2076089f",
+  "taskIndex": 377,
+  "asOfDate": "2026-09-01",
+  "generatedAt": "2026-09-01T20:08:00.000Z",
+  "canonicalKey": "intersect-power|united-states",
+  "companyName": "Intersect Power",
+  "actions": [
+    "CREATE_COMPANY"
+  ],
+  "sourceHoldingIds": [
+    "077-pantheon-ventures:holding:002:intersect-power"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Create one canonical Intersect Power record for the Google-owned digital-power and data-center platform that remained after the March 10, 2026 transaction close. Google acquired the Intersect team, digital-power business and included co-located projects; excluded grid-tied operating and development assets became the separate IPX Power platform. Preserve CAI, Greenbelt/Trilantic, TPG Rise Climate and Pantheon/PINT as former Intersect owners. Pantheon's post-close exposure is to IPX, not Intersect, and no later Intersect ownership transfer was identified.",
+  "evidence": [
+    {
+      "url": "https://www.tpg.com/news-and-insights/tpg-announces-completion-of-4-75-billion-sale-of-intersect-to-google-launches-ipx-power-as-independent-power-producer",
+      "purpose": "Acquisition close, current owner and IPX boundary",
+      "supports": [
+        "Google completed the acquisition on March 10, 2026",
+        "Excluded assets launched as separate IPX Power"
+      ]
+    },
+    {
+      "url": "https://abc.xyz/investor/news/news-details/2025/Alphabet-Announces-Agreement-to-Acquire-Intersect-to-Advance-U-S--Energy-Innovation-2025-DVIuVDM9wW/default.aspx",
+      "purpose": "Signed acquisition terms and platform scope",
+      "supports": [
+        "Alphabet agreed to acquire Intersect",
+        "The transaction covered Intersect's U.S. energy and data-center development platform"
+      ]
+    },
+    {
+      "url": "https://www.investegate.co.uk/announcement/rns/pantheon-infrastructure--pint/intersect-power-update/9314446",
+      "purpose": "Pantheon direct investment and divestiture boundary",
+      "supports": [
+        "PINT held a direct Intersect co-investment",
+        "PINT's retained post-sale interest related to IPX"
+      ]
+    },
+    {
+      "url": "https://www.intersect.com/solutions",
+      "purpose": "Current operating identity and services",
+      "supports": [
+        "Intersect develops co-located power and data-center infrastructure",
+        "The platform serves hyperscale and energy-intensive customers"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "7251f117f7d59c13bc9560269b1a81c7f4258c6eaa8169e3c9a8139ec403e984",
+  "currentCompanySnapshotSha256": null,
+  "executionLock": {
+    "taskSnapshotSha256": "fecb09ea62c15fc73fee9ffcff33666febe75e6bb23ae4f480170b743336d266",
+    "taskStateSha256": "9dc6828b1e345e1987a3f57add011b52bda12f2ee14585dc1f62c9dcedd13f34",
+    "taskDependencySha256": "20ffeb6bc6e662a387dcee30b48c74e712d7ce41986834580dd12983daf26a23",
+    "seedEntrySha256": null,
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "7d854961690c2293659e4faa04171df0d58625d10f2f26688f21ad31e5c7eb90",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpiec5003sivhekn2yjy5t",
+        "name": "TPG",
+        "updatedAt": "2026-07-23T16:09:25.781Z"
+      },
+      {
+        "id": "cmtikb10m00052u2bxq3xz04q",
+        "name": "Climate Adaptive Infrastructure",
+        "updatedAt": "2026-09-01T11:06:35.878Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": null,
+  "beforeImageSha256": null,
+  "afterImage": {
+    "id": null,
+    "name": "Intersect Power",
+    "aliases": [
+      "Intersect Power, LLC"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Co-located power and data-center infrastructure development",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Intersect Power is a U.S. digital-power infrastructure platform that develops co-located land, data-center shells, solar generation, battery storage and hybrid firming solutions for hyperscale cloud, AI and other energy-intensive customers. Google acquired the company on March 10, 2026 for US$4.75 billion, after making a minority investment in December 2024. The acquired company includes the Intersect team, digital-power business and specified co-located projects. Separate grid-tied operating and development assets were carved out into IPX Power and are not part of this PortCo. Former Intersect investors included Climate Adaptive Infrastructure, Greenbelt/Trilantic, TPG Rise Climate and Pantheon Infrastructure. Intersect reports a historical track record exceeding US$20 billion and 11.5 GW across 14 facilities, including legacy assets now assigned to IPX. No later sale or signed pending ownership transfer was identified through August 19, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.intersect.com/",
+    "yearFounded": 2016,
+    "headquarters": "California",
+    "lastVerifiedAt": "2026-08-19T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": null,
+        "managerName": "Alphabet Inc.",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Google acquisition affiliate; exact legal holder not publicly disclosed",
+        "stake": "Minority from 2024; 100% control after the 2026 carve-out and acquisition",
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Climate Adaptive Infrastructure",
+        "organizationName": "Climate Adaptive Infrastructure",
+        "fundName": null,
+        "vehicleName": "CAI Fund I",
+        "stake": "Not publicly disclosed",
+        "investmentYear": 2020,
+        "exitYear": 2026,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      },
+      {
+        "id": null,
+        "managerName": "Greenbelt Capital Partners",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Trilantic / Greenbelt investment vehicle",
+        "stake": "Not publicly disclosed",
+        "investmentYear": 2020,
+        "exitYear": 2026,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      },
+      {
+        "id": null,
+        "managerName": "TPG",
+        "organizationName": "TPG",
+        "fundName": null,
+        "vehicleName": "TPG Rise Climate",
+        "stake": "Lead investor; percentage not publicly disclosed",
+        "investmentYear": 2022,
+        "exitYear": 2026,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      },
+      {
+        "id": null,
+        "managerName": "Pantheon Infrastructure Plc",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Pantheon Infrastructure Plc (PINT) direct co-investment",
+        "stake": "Approximately US$40 million invested; percentage not publicly disclosed",
+        "investmentYear": 2025,
+        "exitYear": 2026,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": null,
+        "date": "2016",
+        "event": "Intersect Power was founded as a U.S. clean-energy development platform.",
+        "category": "FOUNDING",
+        "sortDate": "2016-01-01T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.intersect.com/solutions"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Jun 28, 2022",
+        "event": "TPG Rise Climate led a US$750 million equity investment alongside existing investors Climate Adaptive Infrastructure and Trilantic/Greenbelt.",
+        "category": "FINANCING",
+        "sortDate": "2022-06-28T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.tpg.com/news-and-insights/tpg-rise-climate-leads-750-million-investment-in-intersect-power"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Dec 10, 2024",
+        "event": "Intersect announced more than US$800 million of growth capital including a minority investment from Google.",
+        "category": "FINANCING",
+        "sortDate": "2024-12-10T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.intersect.com/news/intersect-power-announces-more-than-800-million-in-growth-capital-led-by-tpg-rise-climate-and-goldman-sachs-alternatives-with-participation-from-google"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Mar 10, 2026",
+        "event": "Google completed its US$4.75 billion acquisition of Intersect; excluded grid-tied assets launched separately as IPX Power.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-03-10T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.tpg.com/news-and-insights/tpg-announces-completion-of-4-75-billion-sale-of-intersect-to-google-launches-ipx-power-as-independent-power-producer"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": null,
+        "label": "Tpg — IPX Power",
+        "url": "https://www.tpg.com/news-and-insights/tpg-announces-completion-of-4-75-billion-sale-of-intersect-to-google-launches-ipx-power-as-independent-power-producer",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "March 2026 Google acquisition close and Intersect/IPX boundary",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "Alphabet — Intersect acquisition agreement",
+        "url": "https://abc.xyz/investor/news/news-details/2025/Alphabet-Announces-Agreement-to-Acquire-Intersect-to-Advance-U-S--Energy-Innovation-2025-DVIuVDM9wW/default.aspx",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Signed acquisition terms and included digital-power platform",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Pantheon Infrastructure — Intersect update",
+        "url": "https://www.investegate.co.uk/announcement/rns/pantheon-infrastructure--pint/intersect-power-update/9314446",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Direct co-investment and post-sale IPX boundary",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Intersect Power — Solutions",
+        "url": "https://www.intersect.com/solutions",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current operating model, services and customer focus",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "TPG — Intersect Power equity investment",
+        "url": "https://www.tpg.com/news-and-insights/tpg-rise-climate-leads-750-million-investment-in-intersect-power",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "June 2022 US$750 million TPG-led equity round",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Intersect Power — 2024 growth capital",
+        "url": "https://www.intersect.com/news/intersect-power-announces-more-than-800-million-in-growth-capital-led-by-tpg-rise-climate-and-goldman-sachs-alternatives-with-participation-from-google",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "December 2024 growth capital and Google minority investment",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "6a1984d592edcc6b3933d1e600a59db0cda4712e0a0bbc9188e0f014adbb2bb3",
+  "proposalSha256": "fbbce411915e1dc621137e485cefe5503fce3c0ea8780b58985b46bfd29691b3"
+}

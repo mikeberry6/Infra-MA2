@@ -1,0 +1,381 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_MANIFEST",
+  "methodologyVersion": "PORTCO_APPLY_BATCH_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0373-0378-v1",
+  "createdAt": "2026-09-01T20:02:00.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "cc08b5b53c703994bee0fafc3ccc2bf79572c155b35caf92d38ec745e90226e4"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0373:teranet-inc:fc015f26",
+      "taskIndex": 373,
+      "companyName": "Teranet Inc.",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0373-teranet-inc/attempt-1/proposal.json",
+        "sha256": "22318b603538150c3d1f19bf8ede4488061e99a8129680e09a89c44603ba55f4"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0373-teranet-inc-v1.json",
+        "sha256": "23d506a873acdb1ed53cce014eb905ae66d65bfe5a86c7010601a43227a82843"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0373-teranet-inc/attempt-1/locked-batch-v2-production-snapshot.json",
+        "sha256": "2d298ed08dc84cf69e97772712c0566dbc47679dfe5f1518615133fda790a62b"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0373-teranet-inc/attempt-1/locked-batch-v2-task-snapshot.json",
+        "sha256": "79e4c883b66101b2477e0cca4b3a9e7d34287d1ba4e5c84eb572f1e314f9b66d"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0373-teranet-inc/attempt-1/observed-batch-v1-task-snapshot.json",
+        "sha256": "2e08a03ef084d3e91c7e41a6425601e0ac7f09882b782901de4bfb9e341e8953"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0373-teranet-inc/attempt-1/application-research-decision-v1.json",
+        "sha256": "9b519b17688b10a006bb162652281d1ef488be8b2c4d394b63caaeaf7772a0af"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0373-teranet-inc/attempt-1/source-verification.json",
+        "sha256": "72e381c819ae610ba39e51aa21e4876a7b3ab94814caacb0c9000d9c1122e774"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "61249b0043564f39798257aa89c9484b15cb3a19a90e90308866551598b3dfbc",
+      "dependencySha256": "e6093a97947f2247bb0ff5192eab9146e23c3d67b63df9361a2982bc1f625187",
+      "afterImageSha256": "6e26493414947d92663e1db1b3bead224771d6daec064f69c291221debe310be",
+      "targetClaims": [
+        "canonical:teranet-inc|canada",
+        "company:cmrxpjmak017sivhejvwtnhn2",
+        "relation:cmrxpk8o00278ivhe38d04pxw",
+        "relation:cmrxpmjgq04zuivheydhobr7o",
+        "relation:cmrxpmjhb04zvivheag382njg",
+        "relation:cmrxpmjhu04zwivhemd1nqscw",
+        "relation:cmrxpmjid04zxivhe38ve1jfc",
+        "relation:cmrxpsi7c0copivheb5knoik1",
+        "relation:cmrxpsi8h0corivheloaio8c4",
+        "relation:cmrxpsi9k0cotivhef1nq58uc",
+        "relation:cmrxpsiaj0covivhe8vk7nmyy",
+        "seed:teranet inc.|canada"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://media.corporate-ir.net/media_files/irol/19/198264/Teranet%202007%20AIF.pdf",
+          "label": "Teranet — 2007 Annual Information Form",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://news.gov.mb.ca/news/index.html?item=30649",
+          "label": "Manitoba — Teranet registry agreement",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.omers.com/history",
+          "label": "Investment history source — OMERS — Teranet Inc.",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.omersinfrastructure.com/investments/teranet",
+          "label": "OMERS Infrastructure — Teranet",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.teranet.ca/about-teranet/",
+          "label": "Teranet — Teranet Inc.",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.teranet.ca/insights/teranet-invests-in-goveyance/",
+          "label": "Teranet — Teranet Inc.",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.teranet.ca/press-releases/teranet-returns-to-conveyancing-in-ontario-with-goveyance-partnership/",
+          "label": "Teranet — Teranet Inc.",
+          "sourceType": "ARTICLE"
+        }
+      ]
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0375:sidewalk-infrastructure-partners:80a3f3bf",
+      "taskIndex": 375,
+      "companyName": "Sidewalk Infrastructure Partners",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0373-0378-v1/terminal-decisions/0375-sidewalk-infrastructure-partners.json",
+        "sha256": "7fd95721b68cf87bac24105c365aa0a2ffa0897ef66ca47fc067512c9fe3c3a5"
+      }
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0376:skyway-concession-company:7c24f455",
+      "taskIndex": 376,
+      "companyName": "Skyway Concession Company",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0376-skyway-concession-company/attempt-1/proposal-v2.json",
+        "sha256": "25d6ba10a3a755530b419fb68f2ff7bc3044e063b0ae1369aae2fd121b27bcd8"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0376-skyway-concession-company-v2.json",
+        "sha256": "3a65f814ee90a13258b6f687bab1ca27a241b9991ae2208ccd546f706c300080"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0376-skyway-concession-company/attempt-1/locked-batch-v2-production-snapshot.json",
+        "sha256": "b80ac515ead02ac0b53d07282589b88fec9c551e863ea7bfbb6df25b14f41536"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0376-skyway-concession-company/attempt-1/locked-batch-v2-task-snapshot.json",
+        "sha256": "3261d04a492847502d84e4d00ed73cb9294d2647582733eee4f59be3aeeba5c6"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0376-skyway-concession-company/attempt-1/observed-batch-v1-task-snapshot.json",
+        "sha256": "6342e25b4d1a2de0f0204d69aa144198384c7b0493a2a15cd07f030ff81594ea"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0376-skyway-concession-company/attempt-1/application-research-decision-v1.json",
+        "sha256": "73b46b486a0394805d7fc7d54b40ba25588561aaf25d9b149e6541dfbecbc565"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0376-skyway-concession-company/attempt-1/source-verification.json",
+        "sha256": "65907db90e41dedc2b4ac7a0b0103cd227b88994c802766424fd2e1fec21e782"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "e39a0a885bda8e943f67f1c7a2878c96df51a854c3712fbf5caef6c0e8f2c750",
+      "dependencySha256": "395fdde10df71585452a7c9cfc941aeca210e6657e4e4b70c3b42192d54b6ee3",
+      "afterImageSha256": "db6e78570b5f3d99d5ae39b532caa867cefa37a6789765f1b47d7402b038580e",
+      "targetClaims": [
+        "canonical:skyway-concession-company|united-states",
+        "company:cmrxpjmfz0183ivhe4rnk8kic",
+        "relation:cmrxpk8y4027nivhef1shg15y",
+        "relation:cmrxpmkc6050wivhepns0cigt",
+        "relation:cmrxpmkcp050xivhessaok0mi",
+        "relation:cmrxpmkd9050yivhe6k3lcf8b",
+        "relation:cmrxpmkds050zivhetcpfipqv",
+        "relation:cmrxpmked0510ivhehgty4cmp",
+        "relation:cmrxpsjk30cqrivhec14xkjqf",
+        "relation:cmrxpsjl30cqtivhebg6080e4",
+        "relation:cmrxpsjm60cqvivhewxwtoww1",
+        "relation:cmrxpsjmq0cqwivheyl5dhogm",
+        "relation:cmrxpsjqn0cqyivhe0dyi3ypk",
+        "relation:cmrxpsjrp0cr0ivheubafsiu7",
+        "seed:skyway concession company llc|united states",
+        "seed:skyway concession company|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://www.atlasarteria.com/portfolio/chicago-skyway",
+          "label": "Atlas Arteria — Chicago Skyway",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.chicagoskyway.org/",
+          "label": "Chicagoskyway — Skyway Concession Company",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.cppinvestments.com/newsroom/cpp-investments-omers-infrastructure-announce-sale-of-their-stakes-in-skyway-concession-company-llc-to-atlas-arteria/",
+          "label": "CPP Investments and OMERS — Chicago Skyway sale",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.cppinvestments.com/newsroom/cppib-consortium/",
+          "label": "Cppinvestments — Skyway Concession Company",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.fhwa.dot.gov/ipd/project_profiles/il_chicago_skyway.aspx",
+          "label": "Close date source — OTPP — Skyway Concession Company",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.omers.com/news/omers-infrastructure-announces-sale-of-its-stake-in-skyway-concession",
+          "label": "Omers — Skyway Concession Company",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.omersinfrastructure.com/news/canada-pension-plan-investment-board-omers-and-ontario-teachers-pension-plan",
+          "label": "Announcement date source — OTPP — Skyway Concession Company",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.otpp.com/en-ca/about-us/news-and-insights/2015/canada-pension-plan-investment-board-omers-and-ontario-teachers-pension-plan-to-acquire-chicago-skyway-toll-road/",
+          "label": "Ontario Teachers' — Chicago Skyway acquisition",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.otpp.com/en-ca/investments/our-advantage/our-performance-and-track-record/major-investments/",
+          "label": "Otpp — Pacifico Sur",
+          "sourceType": "WEBSITE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0377:intersect-power:2076089f",
+      "taskIndex": 377,
+      "companyName": "Intersect Power",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0377-intersect-power/attempt-1/proposal-v2.json",
+        "sha256": "fbbce411915e1dc621137e485cefe5503fce3c0ea8780b58985b46bfd29691b3"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0377-intersect-power-v2.json",
+        "sha256": "c6c316dd47fff248862acd63b8fa008731c71a7bce30e4d5241df5a7b6f62751"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0377-intersect-power/attempt-1/locked-batch-v2-production-snapshot.json",
+        "sha256": "7251f117f7d59c13bc9560269b1a81c7f4258c6eaa8169e3c9a8139ec403e984"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0377-intersect-power/attempt-1/locked-batch-v2-task-snapshot.json",
+        "sha256": "fecb09ea62c15fc73fee9ffcff33666febe75e6bb23ae4f480170b743336d266"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0377-intersect-power/attempt-1/observed-batch-v1-task-snapshot.json",
+        "sha256": "fdcf17d8523bfa09e8e14bc2d8f1065e63b3e62bce5431a8a64f015dc0501226"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0377-intersect-power/attempt-1/application-research-decision-v1.json",
+        "sha256": "ad0786f4f226c464cf3088ec56d235897533f04ac8dd8d166fa7136fb892eb98"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0377-intersect-power/attempt-1/source-verification.json",
+        "sha256": "46e3bd29cbd1bbff0e6ec692d04e42cb87e49ddab87f8135d003e4386d827f81"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "9dc6828b1e345e1987a3f57add011b52bda12f2ee14585dc1f62c9dcedd13f34",
+      "dependencySha256": "20ffeb6bc6e662a387dcee30b48c74e712d7ce41986834580dd12983daf26a23",
+      "afterImageSha256": "6a1984d592edcc6b3933d1e600a59db0cda4712e0a0bbc9188e0f014adbb2bb3",
+      "targetClaims": [
+        "canonical:intersect-power|united-states",
+        "seed:intersect power|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://abc.xyz/investor/news/news-details/2025/Alphabet-Announces-Agreement-to-Acquire-Intersect-to-Advance-U-S--Energy-Innovation-2025-DVIuVDM9wW/default.aspx",
+          "label": "Alphabet — Intersect acquisition agreement",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.intersect.com/news/intersect-power-announces-more-than-800-million-in-growth-capital-led-by-tpg-rise-climate-and-goldman-sachs-alternatives-with-participation-from-google",
+          "label": "Intersect Power — 2024 growth capital",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.intersect.com/solutions",
+          "label": "Intersect Power — Solutions",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.investegate.co.uk/announcement/rns/pantheon-infrastructure--pint/intersect-power-update/9314446",
+          "label": "Pantheon Infrastructure — Intersect update",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.tpg.com/news-and-insights/tpg-announces-completion-of-4-75-billion-sale-of-intersect-to-google-launches-ipx-power-as-independent-power-producer",
+          "label": "Tpg — IPX Power",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.tpg.com/news-and-insights/tpg-rise-climate-leads-750-million-investment-in-intersect-power",
+          "label": "TPG — Intersect Power equity investment",
+          "sourceType": "PRESS_RELEASE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0378:budderfly:719981ef",
+      "taskIndex": 378,
+      "companyName": "Budderfly",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0378-budderfly/attempt-1/proposal-v2.json",
+        "sha256": "3053b967afef35655c05a3901a172876ddb3329bc842e33d970276ec207a4e93"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0378-budderfly-v2.json",
+        "sha256": "1528dce3b13817ac318687bfde7a60905c8abad0b0673531e59ac8cfbba633ad"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0378-budderfly/attempt-1/locked-batch-v2-production-snapshot.json",
+        "sha256": "18069726c163df9241889ace1b7cb668841e38c723104927ceb39d8a97a42b8d"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0378-budderfly/attempt-1/locked-batch-v2-task-snapshot.json",
+        "sha256": "d616b593eaab9a5b5c010886e14abab1827c6c11d1a98fdc1d632574bd932c44"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0378-budderfly/attempt-1/observed-batch-v1-task-snapshot.json",
+        "sha256": "8b90c2e673c751e63b71b1a7d96c7e4217f191eabb89ba0d92473691d184d079"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0378-budderfly/attempt-1/application-research-decision-v1.json",
+        "sha256": "b2d794d2499c85c2bcb37ac13395551262a8ff91e370b091c35632346cca05c1"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0378-budderfly/attempt-1/source-verification.json",
+        "sha256": "4c65c279f5a7b16e9651ab7ce9141c9780e6f0e56de460d90ab10a2cb1a10732"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "4b15aa3c03c9e235b58f034159db7eed0ffd0039af4ea59b407b979f765d9a6d",
+      "dependencySha256": "ad8fabea1d23851c0c7369ea4b122b23c56959fc71b8ade106224e6d1109b242",
+      "afterImageSha256": "56cf6f1db3d1feba3d0fb165a3c17661fdc18b4a458783f04f524472a9205c0d",
+      "targetClaims": [
+        "canonical:budderfly|united-states",
+        "seed:budderfly|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://www.balancepointcapital.com/news-article/balance-point-capital-announces-its-investment-in-budderfly-inc",
+          "label": "Balance Point Capital — Budderfly investment",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.budderfly.com/",
+          "label": "Budderfly",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.budderfly.com/news/budderfly-acquires-sunverge-assets",
+          "label": "Budderfly — Sunverge asset acquisition",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.budderfly.com/news/budderfly-activates-virtual-power-plant",
+          "label": "Budderfly — Virtual power plant activation",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.edisonpartners.com/blog/edison-partners-successfully-exits-energy-industry-disruptor-budderfly",
+          "label": "Edison Partners — Budderfly exit",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.partnersgroup.com/news-and-views/press-releases/investment-news/detail?news_id=cb7dc74e-032f-4f1d-8a48-bf3c85e01b9b",
+          "label": "Partners Group — Budderfly investment",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1447247/000139834426010605/fp0098460-3_ncsr.htm",
+          "label": "SEC — Partners Group Private Equity annual report",
+          "sourceType": "SEC_FILING"
+        }
+      ]
+    }
+  ],
+  "collisionAnalysis": {
+    "independent": true,
+    "claimsSha256": "fe30a18e0ec7c6eaabcc0678a8820809fc2fdac5927ac76cc0c9b4ef94bbee22",
+    "sharedSourceUrls": [],
+    "conflicts": []
+  },
+  "batchSha256": "f845c9d5e737c7fc834f621b9a51f8fa6d4703fbf1a9870b9b2b92f8c001deb2"
+}

@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0375:sidewalk-infrastructure-partners:80a3f3bf",
+  "taskIndex": 375,
+  "companyName": "Sidewalk Infrastructure Partners",
+  "asOfDate": "2026-08-19",
+  "decision": "DEFERRED",
+  "confidence": "MEDIUM_HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-01T19:40:00.000Z",
+  "result": {
+    "decision": "DEFERRED",
+    "rationale": "Retain the existing Sidewalk Infrastructure Partners record unchanged and defer its ownership correction. Primary sources support OTPP as a 2019 founding investor and StepStone as a later investor, but they do not resolve Alphabet's current equity, OTPP's current legal holder or stake, the full current cap table, or StepStone's 2026 transaction form. Applying a partial ownership after-image would imply facts that remain unresolved.",
+    "evidence": [
+      {
+        "url": "https://sidewalkinfra.com/about",
+        "purpose": "Current company origin, investor references, businesses and operating model."
+      },
+      {
+        "url": "https://www.otpp.com/en-ca/about-us/news-and-insights/2019/transforming-infrastructure-through-technology-with-a-new-partnership/",
+        "purpose": "OTPP founding investment and spinout evidence."
+      },
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/1768502/000176850219000001/xslFormDX01/primary_doc.xml",
+        "purpose": "2019 offering, five-investor count and aggregate equity amount."
+      },
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/1957892/000121390026066832/ea0293631-01_ncsr.htm",
+        "purpose": "StepStone 2026 units, investment vehicle, cost and non-control evidence."
+      }
+    ],
+    "unresolvedQuestions": [
+      "Alphabet's current direct equity and any transfer from Sidewalk Labs or employee/founder vehicles.",
+      "OTPP's current legal holder and stake.",
+      "The complete current capitalization table and StepStone's 2026 transaction form."
+    ]
+  },
+  "lineage": {
+    "supersedes": "application-research-decision-v1.json",
+    "basis": "The normalized research result itself identifies current-owner ambiguity that blocks a safe production ownership after-image."
+  }
+}

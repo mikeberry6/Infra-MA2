@@ -1,0 +1,201 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0373:teranet-inc:fc015f26",
+  "taskIndex": 373,
+  "companyName": "Teranet Inc.",
+  "asOfDate": "2026-08-19",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-01T19:37:14.000Z",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "Teranet Inc.",
+    "requestedManagers": [
+      "OMERS Infrastructure"
+    ],
+    "decision": "PROPOSED_CORRECTION",
+    "confidence": "HIGH",
+    "rationale": "ADD_OWNER is false: Borealis/OMERS Infrastructure is one manager lineage and OMERS still owns 100%. Enrich the existing period with stake, dates, vehicle, historical owners and the equity/statutory-right boundary.",
+    "identityResolution": {
+      "canonical": "teranet-inc|canada",
+      "website": "https://www.teranet.ca/",
+      "formed": 1991,
+      "legalIdentity": "Registry-platform lineage founded in 1991; current Teranet Inc. continues from a 2006 legacy-entity amalgamation.",
+      "boundary": "One PortCo: Teranet Inc. plus controlled registry subsidiaries. THLP is its holdco; Borealis Acquisition Corporation was a temporary SPV. Systems/data, products, offices, debt vehicles and acquired businesses are not PortCos.",
+      "headquarters": "Toronto, Ontario"
+    },
+    "ownershipResolution": {
+      "owners": [
+        {
+          "manager": "Government of Ontario",
+          "organization": "Ontario SuperBuild Corporation",
+          "fund": null,
+          "vehicle": "Province-held securities",
+          "stake": "50%",
+          "entryYear": 1991,
+          "exitDate": "2003-08-05",
+          "exitYear": 2003,
+          "isActive": false,
+          "transactionState": "EXITED_TO_TERAMIRA"
+        },
+        {
+          "manager": null,
+          "organization": "Teramira Holdings Inc.",
+          "fund": "Private-investor consortium",
+          "vehicle": "Teramira holdcos",
+          "stake": "50% from 1991; 100% from 2003-08-05",
+          "entryYear": 1991,
+          "exitDate": "2006-06-16",
+          "exitYear": 2006,
+          "isActive": false,
+          "transactionState": "EXITED_IN_IPO"
+        },
+        {
+          "manager": null,
+          "organization": "Teranet Holdings Limited Partnership",
+          "fund": "Teranet Income Fund",
+          "vehicle": "Teranet Operating Trust / THLP",
+          "stake": "100% direct via THLP; ultimate public interests",
+          "entryDate": "2006-06-16",
+          "entryYear": 2006,
+          "exitDate": "2008-11-11",
+          "exitYear": 2008,
+          "isActive": false,
+          "transactionState": "CONTROL_EXITED_TO_BOREALIS; residual units followed"
+        },
+        {
+          "manager": "OMERS Infrastructure (Borealis until 2017)",
+          "organization": "Teranet Holdings LP",
+          "fund": "OMERS balance sheet",
+          "vehicle": "Borealis acquisition SPV; THLP current shareholder",
+          "stake": "100%",
+          "announcementDate": "2008-09-04",
+          "entryDate": "2008-11-11",
+          "entryYear": 2008,
+          "isActive": true,
+          "transactionState": "COMPLETED; control taken, then balance compulsorily acquired"
+        }
+      ],
+      "current": "OMERS owns 100% through THLP; no co-investor found.",
+      "lineage": "Borealis became OMERS Infrastructure in 2017; one period."
+    },
+    "operatingResolution": {
+      "profile": "Canadian statutory-registry/digital public-service infrastructure underpinning title, conveyancing, secured credit and public administration.",
+      "ontario": "Exclusive electronic land-search/registration operator. Original term ran to 2017; a 2010 agreement added 50 years through 2067. Ontario owns official data and retains oversight.",
+      "manitoba": "Exclusive 30-year Land Titles/PPR licence effective 2014-03-28, running into 2044. Manitoba owns data and retains oversight.",
+      "servicesUsers": "Teraview, OnLand, eXpress, Writs, Manitoba Land Titles/PPR and related registry/data services for governments, professionals, lenders, utilities, businesses and citizens.",
+      "scale": "850+ staff; >10m transactions/year; >200m images; 99.9% availability; almost 7m titles.",
+      "materialMAndA": "Do Process 2008/sold 2020; Manitoba/Foster Moore 2014; APIC 2017; D+H/Finastra collateral business closed 2018-08-03/sold 2024; GoVeyance announced 2025-04-15."
+    },
+    "acquisitionExitCheck": {
+      "acquisition": "Borealis announced its bid 2008-09-04, took up tendered Fund/Class B LP units and obtained control 2008-11-11, then compulsorily acquired the balance.",
+      "pendingTransactions": [],
+      "later": "The 2017 sale discussion was preliminary; no signed/completed equity sale, new investor, buyback or exit found by 2026-08-19.",
+      "nonEquity": "Ontario's 2010 extension and Teranet's 2025 C$550m bond refinancing changed rights/debt, not equity; subsidiary M&A did not change parent ownership."
+    },
+    "milestones": [
+      {
+        "date": "1991",
+        "event": "50/50 Ontario-Teramira alliance formed."
+      },
+      {
+        "date": "2003-08-05",
+        "event": "Teramira bought Ontario's 50%."
+      },
+      {
+        "date": "2006-06-16",
+        "event": "Income Fund acquired Teranet and completed C$700m IPO."
+      },
+      {
+        "date": "2008-09-04/2008-11-11",
+        "event": "Borealis announced bid; control passed to OMERS Nov. 11."
+      }
+    ],
+    "evidence": [
+      {
+        "label": "Teranet About",
+        "url": "https://www.teranet.ca/about-teranet/",
+        "purpose": "Identity, history, ownership and scale.",
+        "sourceTier": "COMPANY",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "OMERS portfolio",
+        "url": "https://www.omersinfrastructure.com/investments/teranet",
+        "purpose": "Current holding and 2008 investment year.",
+        "sourceTier": "MANAGER",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "DBRS THLP",
+        "url": "https://dbrs.morningstar.com/issuers/13590/teranet-holdings-lp",
+        "purpose": "THLP/OMERS 100% ownership and Manitoba structure.",
+        "sourceTier": "RATING",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Teranet 2007 AIF",
+        "url": "https://media.corporate-ir.net/media_files/irol/19/198264/Teranet%202007%20AIF.pdf",
+        "purpose": "Historic owners, IPO structure, Ontario rights.",
+        "sourceTier": "FILING",
+        "workingStatus": "OPEN_PDF",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "OSC Borealis order",
+        "url": "https://www.osc.ca/en/securities-law/orders-rulings-decisions/teranet-income-fund-and-borealis-acquisition-corporation",
+        "purpose": "Bid, SPV, offer scope and chronology.",
+        "sourceTier": "REGULATOR",
+        "workingStatus": "INDEXED;PAGE_403",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Manitoba agreement",
+        "url": "https://news.gov.mb.ca/news/index.html?item=30649",
+        "purpose": "2014 date, 30-year licence, data/oversight.",
+        "sourceTier": "GOVERNMENT",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": [
+      "Stake unset -> 100%; 2008 only -> announcement 2008-09-04/control 2008-11-11.",
+      "Vehicle unset -> Borealis SPV, THLP shareholder, OMERS balance sheet.",
+      "Retain one OMERS period; add Ontario, Teramira and public-Fund history.",
+      "Separate equity from statutory licence/data rights, debt and subsidiaries."
+    ],
+    "excludedOrDuplicateCandidates": [
+      "Borealis/OMERS Infrastructure: one manager lineage.",
+      "THLP, Borealis Acquisition Corporation and Teranet Manitoba LP: holdco/SPV/subsidiary, not PortCos.",
+      "Ontario/Manitoba systems, licences and government data: statutory assets, not equity; Manitoba never owned Teranet.",
+      "CMS/D+H/Finastra, Do Process, Foster Moore, APIC, GoVeyance and products/offices/debt vehicles: subsidiary/investment boundary; CMS and Do Process were divested."
+    ],
+    "unresolvedQuestions": [
+      "NOT_PUBLICLY_DISCLOSED: exact 1991 formation day and full Teramira consortium cap table.",
+      "NOT_PUBLICLY_DISCLOSED: exact residual-unit acquisition date after control passed 2008-11-11; current 100% is resolved.",
+      "NOT_PUBLICLY_DISCLOSED: OMERS internal account name beyond balance-sheet ownership; no co-investor found."
+    ],
+    "recommendedListAction": "DO_NOT_ADD_OWNER; enrich the OMERS period and add verified historical owners and statutory-boundary metadata."
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0373-teranet-inc/attempt-1/research-decision.json",
+      "sha256": "8345fe2b491786f6faee9c4f9a826876a118f713aea7c8d3f95b2a7f2b70c036"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0373-teranet-inc/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "c2c1037c9fe8c549313115fc2b1d6222ecf28c8ad7f1e3066f6996dc71790b8d"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0373-teranet-inc/attempt-1/source-verification.json",
+      "sha256": "72e381c819ae610ba39e51aa21e4876a7b3ab94814caacb0c9000d9c1122e774"
+    },
+    "acceptedResponseSha256": "de1cccde12b02ab9ee535f3ae983229ae934822b5b3c3ef82c60b50023005184",
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION"
+  }
+}

@@ -1,0 +1,189 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0375:sidewalk-infrastructure-partners:80a3f3bf",
+  "taskIndex": 375,
+  "companyName": "Sidewalk Infrastructure Partners",
+  "asOfDate": "2026-08-19",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "MEDIUM_HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-01T19:37:14.000Z",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "Sidewalk Infrastructure Partners",
+    "requestedManagers": [
+      "Ontario Teachers' Pension Plan"
+    ],
+    "decision": "PROPOSED_CORRECTION",
+    "confidence": "MEDIUM_HIGH",
+    "rationale": "Retain SIP as a qualifying operating/development platform, not a pooled fund. OTPP and Alphabet/Sidewalk Labs were 2019 capital partners; StepStone entered in 2022, not 2019. OTPP and StepStone are active; Alphabet's current equity and the full cap table are UNRESOLVED.",
+    "identityResolution": {
+      "legalName": "Sidewalk Infrastructure Partners, LLC",
+      "website": "https://sidewalkinfra.com/",
+      "headquarters": "10 Jay Street, Brooklyn, NY 11201",
+      "formation": "Delaware LLC formed 2018; founded inside Alphabet in 2017; first equity sale 2019-08-17; spinout announced 2019-08-29.",
+      "boundary": "Parent holding/developer. SIP OperationsCo, LP and SIP ManagementCo, LLC are affiliates; Sidewalk Labs/Google is lineage, not an alias, rename or successor."
+    },
+    "ownershipResolution": {
+      "owners": [
+        {
+          "manager": "Ontario Teachers' Pension Plan",
+          "organization": "Ontario Teachers' Pension Plan Board",
+          "fund": "NOT_PUBLICLY_DISCLOSED",
+          "vehicle": "TI Platform Holdings, LLC (board-linked; current holder NOT_PUBLICLY_DISCLOSED)",
+          "stake": "NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2019-08-29",
+          "entryDate": "2019-08-17",
+          "entryYear": 2019,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED founding equity; active; date is round first sale, not owner-specific close"
+        },
+        {
+          "manager": "Alphabet Inc.",
+          "organization": "Alphabet Inc.",
+          "fund": "N/A",
+          "vehicle": "Alphabet Holdings LLC (board-linked)",
+          "stake": "NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2019-08-29",
+          "entryDate": "2019-08-17",
+          "entryYear": 2019,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": null,
+          "transactionState": "CLOSED founding investment; current direct equity UNRESOLVED; no exit found"
+        },
+        {
+          "manager": "StepStone Group",
+          "organization": "StepStone Group LP",
+          "fund": "StepStone Private Infrastructure Fund; StepStone Private Markets",
+          "vehicle": "STRUCTURE Sidewalk LLC; SPRIM Sidewalk LLC",
+          "stake": "3,343,621 Series C units; $65m cost/$124.5m FV at 2026-03-31; non-control",
+          "announcementDate": "2022-02-02",
+          "entryDate": "2022-01-14",
+          "entryYear": 2022,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED entry; $400m Series B reported, but Form D then showed $60m sold; final funding and 2026 acquisition form NOT_PUBLICLY_DISCLOSED"
+        }
+      ],
+      "conclusion": "The 2019 Form D reports $400m equity sold to five unnamed investors, partly for non-cash consideration. Sidewalk Labs was an anchor capital partner, but separate equity of Sidewalk Labs LLC/Employees LLC or founders is unproven. OTPP names are one lineage."
+    },
+    "operatingResolution": {
+      "classification": "INCLUDE_MANAGER_LEVEL_PLATFORM",
+      "model": "Holding company/independent developer that originates, finances, builds and operates energy/compute businesses and projects; its SEC offering was corporate equity, not pooled-fund interests.",
+      "businesses": [
+        "Renew Home",
+        "Verrus"
+      ],
+      "scale": "U.S./North America; Renew Home reports 110+ utilities, nearly 7m households and >6GW; Verrus develops grid-interactive data centers. SIP AUM, stakes and asset count are NOT_PUBLICLY_DISCLOSED.",
+      "qualification": "Qualifies because SIP creates and owns operating/development platforms rather than merely advising or raising LP capital."
+    },
+    "acquisitionExitCheck": {
+      "pendingTransactions": [],
+      "laterOwnership": "StepStone joined in 2022; its funds acquired Series C units on 2026-03-16, but transaction form is UNRESOLVED.",
+      "boundary": "SIP funds, JVs, subsidiaries, projects and portfolio companies, including Renew Home and Verrus, are underlying activity, not extra SIP identities.",
+      "conclusion": "No SIP-level sale, dissolution, rename, successor, owner exit or signed pending transaction found through 2026-08-19."
+    },
+    "milestones": [
+      "2017-18: founded inside Alphabet; Delaware LLC formed.",
+      "2019-08-17/29: $400m five-investor equity first sold; spinout launched with Alphabet, Sidewalk Labs and OTPP.",
+      "2022-01-14/02-02: StepStone entered; Form D showed $60m sold; reported Series B was $400m at $1.25bn.",
+      "2026-03-16/31: StepStone vehicles disclosed 3,343,621 Series C units at $65m cost/$124.5m FV."
+    ],
+    "evidence": [
+      {
+        "label": "SIP About",
+        "url": "https://sidewalkinfra.com/about",
+        "purpose": "Current origin, investors, businesses and model.",
+        "sourceTier": "T1",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "OTPP launch",
+        "url": "https://www.otpp.com/en-ca/about-us/news-and-insights/2019/transforming-infrastructure-through-technology-with-a-new-partnership/",
+        "purpose": "Spinout and founding capital partners.",
+        "sourceTier": "T1",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "2019 Form D",
+        "url": "https://www.sec.gov/Archives/edgar/data/1768502/000176850219000001/xslFormDX01/primary_doc.xml",
+        "purpose": "Identity, formation, $400m equity and five investors.",
+        "sourceTier": "T1",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "2022 Form D",
+        "url": "https://www.sec.gov/Archives/edgar/data/1768502/000156761922002024/0001567619-22-002024.txt",
+        "purpose": "2022 first sale and $60m funding.",
+        "sourceTier": "T1",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Bloomberg 2022",
+        "url": "https://www.bloomberg.com/news/articles/2022-02-02/alphabet-googl-sidewalk-labs-offshoot-sip-is-now-a-unicorn",
+        "purpose": "Reported $400m Series B/$1.25bn value.",
+        "sourceTier": "T2",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "StepStone STRUCTURE",
+        "url": "https://www.sec.gov/Archives/edgar/data/1957892/000121390026066832/ea0293631-01_ncsr.htm",
+        "purpose": "2026 units, vehicle, cost/FV and non-control.",
+        "sourceTier": "T1",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "StepStone SPRIM",
+        "url": "https://www.sec.gov/Archives/edgar/data/1789470/000121390026066828/ea0293635-01_ncsr.htm",
+        "purpose": "Second 2026 holding and vehicle.",
+        "sourceTier": "T1",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "before": "OTPP sole displayed owner; StepStone treated as a 2019 founder; generic Partnership platform vehicle.",
+      "after": "Retain SIP; set 2018 formation/2017 origin/2019 launch; OTPP active from 2019, StepStone active from 2022, Alphabet founding/current UNRESOLVED; use disclosed vehicles/NOT_PUBLICLY_DISCLOSED."
+    },
+    "excludedOrDuplicateCandidates": [
+      "OTPP/OTPP Board: one lineage.",
+      "Sidewalk Labs/Google/Alphabet: lineage, not an SIP duplicate; employee-vehicle equity UNRESOLVED.",
+      "SIP OperationsCo/ManagementCo: affiliates.",
+      "Renew Home/Verrus and SIP funds, JVs, projects and portfolio companies: underlying assets."
+    ],
+    "unresolvedQuestions": [
+      "2019 five-investor cap table, stakes and consideration.",
+      "Separate Sidewalk Labs/employee/founder equity and any Google transfer.",
+      "OTPP stake/current holder and Alphabet current equity.",
+      "StepStone 2026 transaction form and final 2022 funding."
+    ],
+    "recommendedListAction": "RETAIN one active U.S. manager-level energy/digital operating-development platform; record OTPP (active, 2019), StepStone (active, 2022) and Alphabet (founding, current UNRESOLVED); do not create records for funds, vehicles, affiliates, subsidiaries, JVs, projects or portfolio companies."
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0375-sidewalk-infrastructure-partners/attempt-1/research-decision.json",
+      "sha256": "8def6ba4e02d0ef85a16ebfc7ee32fbf23a9f0c37aa24b92b8db7a01223287ba"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0375-sidewalk-infrastructure-partners/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "edd9b63e5d433d78c4ad04b2fbc5f9cf1c50cf0cd32d650feab7eb88dbf1ddc8"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0375-sidewalk-infrastructure-partners/attempt-1/source-verification.json",
+      "sha256": "082d09c3c8e7cf59553867226509bf446c7e08188f5ed6a8cd71b04241dbdb04"
+    },
+    "acceptedResponseSha256": "fcd6dadfae3ee77a9149fc4db97bde70251d77e505287d9feaa2e4d28c52eec5",
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION"
+  }
+}

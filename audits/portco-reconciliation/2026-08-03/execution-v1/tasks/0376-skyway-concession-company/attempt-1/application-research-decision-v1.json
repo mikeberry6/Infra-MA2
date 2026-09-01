@@ -1,0 +1,263 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0376:skyway-concession-company:7c24f455",
+  "taskIndex": 376,
+  "companyName": "Skyway Concession Company",
+  "asOfDate": "2026-08-19",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-01T19:37:14.000Z",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "Skyway Concession Company",
+    "requestedManagers": [
+      "Ontario Teachers' Pension Plan"
+    ],
+    "decision": "PROPOSED_CORRECTION",
+    "confidence": "HIGH",
+    "rationale": "Ontario Teachers' did not exit in 2022. CPP Investments and OMERS sold 33.33% each to Atlas; its 66.67% purchase closed 2022-12-01 while Ontario Teachers' retained 33.33%. No PSP ownership was found.",
+    "identityResolution": {
+      "canonicalLegalName": "Skyway Concession Company LLC",
+      "canonicalKey": "skyway-concession-company|united-states",
+      "formation": "2004; operations began 2005-01-26",
+      "aliases": [
+        "Chicago Skyway",
+        "Chicago Skyway Toll Bridge System"
+      ],
+      "boundary": "One PortCo: SCC is concessionaire/operator. The road/City are not PortCos; CCPI, SCCH, the partnership and SPVs are vehicles.",
+      "agreement": "2004-10-27 City–SCC concession lease"
+    },
+    "ownershipResolution": {
+      "currentOwnerSet": "CCPI: Atlas Arteria 66.67%, Ontario Teachers' 33.33%; CCPI holds 100% indirect equity in SCC.",
+      "owners": [
+        {
+          "manager": "Ferrovial",
+          "organization": "Cintra",
+          "fund": "NOT_APPLICABLE",
+          "vehicle": "Cintra Skyway LLC→SCCH→SCC",
+          "stake": "55%",
+          "announcementDate": "2004-10-28",
+          "entryDate": "2005-01-26",
+          "entryYear": 2005,
+          "exitDate": "2016-02-25",
+          "exitYear": 2016,
+          "isActive": false,
+          "transactionState": "EXITED"
+        },
+        {
+          "manager": "Macquarie Group",
+          "organization": "Macquarie Infrastructure Group / Macquarie Atlas Roads",
+          "fund": "MIG/MQA",
+          "vehicle": "Chicago Skyway Partnership→SCCH→SCC",
+          "stake": "45% initially;22.5% after 2006",
+          "announcementDate": "2004-10-28",
+          "entryDate": "2005-01-26",
+          "entryYear": 2005,
+          "exitDate": "2016-02-25",
+          "exitYear": 2016,
+          "isActive": false,
+          "transactionState": "EXITED"
+        },
+        {
+          "manager": "Macquarie Group",
+          "organization": "Macquarie Infrastructure Partners",
+          "fund": "MIP A/Canada/parallel funds",
+          "vehicle": "Chicago Skyway Partnership→SCCH→SCC",
+          "stake": "22.5%",
+          "announcementDate": "NOT_PUBLICLY_DISCLOSED",
+          "entryDate": "NOT_PUBLICLY_DISCLOSED",
+          "entryYear": 2006,
+          "exitDate": "2016-02-25",
+          "exitYear": 2016,
+          "isActive": false,
+          "transactionState": "EXITED"
+        },
+        {
+          "manager": "CPP Investments",
+          "organization": "Canada Pension Plan Investment Board",
+          "fund": "CPP Fund",
+          "vehicle": "Calumet Concession Partners LLC/Inc.→SCC",
+          "stake": "33.33%",
+          "announcementDate": "2015-11-13",
+          "entryDate": "2016-02-25",
+          "entryYear": 2016,
+          "exitDate": "2022-12-01",
+          "exitYear": 2022,
+          "isActive": false,
+          "transactionState": "EXITED"
+        },
+        {
+          "manager": "OMERS Infrastructure",
+          "organization": "OMERS Administration Corporation",
+          "fund": "OMERS",
+          "vehicle": "Calumet Concession Partners LLC/Inc.→SCC",
+          "stake": "33.33%",
+          "announcementDate": "2015-11-13",
+          "entryDate": "2016-02-25",
+          "entryYear": 2016,
+          "exitDate": "2022-12-01",
+          "exitYear": 2022,
+          "isActive": false,
+          "transactionState": "EXITED"
+        },
+        {
+          "manager": "Ontario Teachers' Pension Plan",
+          "organization": "Ontario Teachers' Pension Plan Board",
+          "fund": "OTPP",
+          "vehicle": "OTPP entity→CCPI→SCC",
+          "stake": "33.33%",
+          "announcementDate": "2015-11-13",
+          "entryDate": "2016-02-25",
+          "entryYear": 2016,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CURRENT"
+        },
+        {
+          "manager": "Atlas Arteria",
+          "organization": "Atlas Arteria Limited / Atlas Arteria International Limited",
+          "fund": "NOT_APPLICABLE",
+          "vehicle": "Atlas Arteria Holdings Australia Pty Ltd→CCPI→SCC",
+          "stake": "66.67%",
+          "announcementDate": "2022-09-14",
+          "entryDate": "2022-12-01",
+          "entryYear": 2022,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CURRENT"
+        }
+      ],
+      "managerLineage": "OTPP names are one lineage; MQA's 2016 exit and Atlas's 2022 re-entry are separate periods."
+    },
+    "operatingResolution": {
+      "officialWebsite": "https://www.chicagoskyway.org/",
+      "headquarters": "8801 South Anthony Ave, Chicago, IL 60617",
+      "concession": "99 years from 2005-01-26; expiry January 2104",
+      "profile": "7.8-mile/12.5-km elevated six-lane toll road linking I-94 and I-90; one toll plaza.",
+      "services": "Operate, maintain and toll the road.",
+      "customersEndMarkets": "Motorists and freight/industrial traffic.",
+      "qualification": "Essential, long-lived, user-paid US transport infrastructure."
+    },
+    "acquisitionExitCheck": {
+      "searchedThrough": "2026-08-19",
+      "findings": [
+        "A potential 2026 sale/ROFO was unsigned and paused 2026-06-29.",
+        "OTPP's US$100m put settlement changed rights, not its 33.33% equity.",
+        "IFM's 2026-07-07 Atlas takeover close was upstream only.",
+        "No later direct sale, new investor, buyback or signed pending transfer found."
+      ],
+      "pendingTransactions": []
+    },
+    "milestones": [
+      {
+        "date": "2004-10-28/2005-01-26",
+        "event": "US$1.83bn 99-year concession awarded; SCC assumed operations."
+      },
+      {
+        "date": "2015-11-13/2016-02-25",
+        "event": "CPP, OMERS and Ontario Teachers' acquired SCC for US$2.8bn, 33.33% each."
+      },
+      {
+        "date": "2022-09-14/2022-12-01",
+        "event": "Atlas bought CPP's and OMERS' 66.67%; Ontario Teachers' retained 33.33%."
+      },
+      {
+        "date": "2026-06-29/2026-07-07",
+        "event": "Sale process paused; OTPP put extinguished; IFM event was upstream."
+      }
+    ],
+    "evidence": [
+      {
+        "label": "Atlas portfolio",
+        "url": "https://www.atlasarteria.com/portfolio/chicago-skyway",
+        "purpose": "Current stakes/structure/history",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "FHWA profile",
+        "url": "https://www.fhwa.dot.gov/ipd/project_profiles/il_chicago_skyway.aspx",
+        "purpose": "Award/lease/route",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING_STALE_OWNER",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "MQA prospectus",
+        "url": "https://d3ar6irj6sybdw.cloudfront.net/stores/_sharedfiles/Investor_Resources/Prospectus_and_Analyst_Pack_archive/mqa-prospectus.pdf?v=6",
+        "purpose": "Original stakes/chain",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "OTPP 2015",
+        "url": "https://www.otpp.com/en-ca/about-us/news-and-insights/2015/canada-pension-plan-investment-board-omers-and-ontario-teachers-pension-plan-to-acquire-chicago-skyway-toll-road/",
+        "purpose": "Signing/price/stakes",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "CPP/OMERS 2022",
+        "url": "https://www.cppinvestments.com/newsroom/cpp-investments-omers-infrastructure-announce-sale-of-their-stakes-in-skyway-concession-company-llc-to-atlas-arteria/",
+        "purpose": "Sellers/stakes",
+        "sourceTier": "T1",
+        "workingStatus": "INDEXED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Atlas 2026",
+        "url": "https://clients3.weblink.com.au/Clients/atlasArteria/headline.aspx?headlineid=21680017",
+        "purpose": "Put/sale pause",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "before": [
+        "OTPP sole active; 2022 exit/balance ambiguous"
+      ],
+      "after": [
+        "Atlas active 66.67% from 2022-12-01",
+        "OTPP active 33.33% from 2016",
+        "CPP/OMERS exited 2022-12-01",
+        "No PSP"
+      ]
+    },
+    "excludedOrDuplicateCandidates": [
+      "Chicago Skyway/Toll Bridge System: aliases",
+      "City: lessor, not equity owner",
+      "CCPI/SCCH/Chicago Skyway Partnership/SPVs: holdco vehicles",
+      "Green Bermudian: shareholder-loan vehicle, not equity owner",
+      "PSP: no ownership evidence"
+    ],
+    "unresolvedQuestions": [
+      "NOT_PUBLICLY_DISCLOSED: exact OTPP CCPI holder",
+      "NOT_PUBLICLY_DISCLOSED: exact 2006 MIP transfer close"
+    ],
+    "recommendedListAction": "Keep SCC active; keep Ontario Teachers' at 33.33%, add Atlas at 66.67%, and mark CPP/OMERS exited 2022-12-01."
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0376-skyway-concession-company/attempt-1/research-decision.json",
+      "sha256": "d5d058282d69e3763bc7770d55cd51e5b5f592631da4983dfd84cf28b36b2ccc"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0376-skyway-concession-company/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "c6f59193ed12a2a339f11b5789ef057fe5828eb7d7c959b2fc735bc221f23600"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0376-skyway-concession-company/attempt-1/source-verification.json",
+      "sha256": "65907db90e41dedc2b4ac7a0b0103cd227b88994c802766424fd2e1fec21e782"
+    },
+    "acceptedResponseSha256": "4c47c0780f3292c730a8fc194725cf281885f336993afd88c4523e539e206150",
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION"
+  }
+}

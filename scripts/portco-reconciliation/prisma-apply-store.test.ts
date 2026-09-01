@@ -101,5 +101,18 @@ describe("approved ownership organization provisioning", () => {
     expect(ownershipOrganizationTypes("FifteenFortySeven Critical Systems Realty")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Global Infrastructure Partners")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("Optimum Communications")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("Government of Ontario")).toEqual(["OTHER"]);
+    expect(ownershipOrganizationTypes("Teramira Holdings Inc.")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("Teranet Income Fund")).toEqual(["OTHER"]);
+    expect(ownershipOrganizationTypes("Atlas Arteria")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("Cintra")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("Macquarie Group")).toEqual(["FUND_MANAGER"]);
+    expect(ownershipOrganizationTypes("Macquarie Infrastructure Partners")).toEqual(["FUND_MANAGER"]);
+    expect(ownershipOrganizationTypes("Alphabet Inc.")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("Greenbelt Capital Partners")).toEqual(["FUND_MANAGER"]);
+    expect(ownershipOrganizationTypes("Pantheon Infrastructure Plc")).toEqual(["FUND_MANAGER"]);
+    expect(ownershipOrganizationTypes("Budderfly management")).toEqual(["OTHER"]);
+    expect(ownershipOrganizationTypes("Edison Partners")).toEqual(["FUND_MANAGER"]);
+    expect(ownershipOrganizationTypes("Balance Point Capital")).toEqual(["FUND_MANAGER"]);
   });
 });

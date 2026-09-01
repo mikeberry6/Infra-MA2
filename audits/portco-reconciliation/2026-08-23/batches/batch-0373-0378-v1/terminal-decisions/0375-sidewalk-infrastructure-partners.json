@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0375:sidewalk-infrastructure-partners:80a3f3bf",
+  "taskIndex": 375,
+  "companyName": "Sidewalk Infrastructure Partners",
+  "outcome": "DEFERRED",
+  "decidedAt": "2026-09-01T19:45:00.000Z",
+  "rationale": "Retain the existing Sidewalk Infrastructure Partners record unchanged and defer its ownership correction. Primary sources support OTPP as a 2019 founding investor and StepStone as a later investor, but they do not resolve Alphabet's current equity, OTPP's current legal holder or stake, the full current cap table, or StepStone's 2026 transaction form. Applying a partial ownership after-image would imply facts that remain unresolved.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0375-sidewalk-infrastructure-partners/attempt-1/locked-batch-v2-task-snapshot.json",
+    "sha256": "57a837ff25b09258110ec7e929c727f7ed23af030924807e69aa06c407f41a96"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0375-sidewalk-infrastructure-partners/attempt-1/application-research-decision-v2.json",
+    "sha256": "cc3c89bdafee2cf930ca21dd8d38a1a04a73b58e3ff52796c2955c19aff6ed2f"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0375-sidewalk-infrastructure-partners/attempt-1/source-verification.json",
+    "sha256": "082d09c3c8e7cf59553867226509bf446c7e08188f5ed6a8cd71b04241dbdb04"
+  },
+  "evidence": [
+    {
+      "url": "https://sidewalkinfra.com/about",
+      "purpose": "Current company origin, investor references, businesses and operating model."
+    },
+    {
+      "url": "https://www.otpp.com/en-ca/about-us/news-and-insights/2019/transforming-infrastructure-through-technology-with-a-new-partnership/",
+      "purpose": "OTPP founding investment and spinout evidence."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1768502/000176850219000001/xslFormDX01/primary_doc.xml",
+      "purpose": "2019 offering, five-investor count and aggregate equity amount."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1957892/000121390026066832/ea0293631-01_ncsr.htm",
+      "purpose": "StepStone 2026 units, investment vehicle, cost and non-control evidence."
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "7fd95721b68cf87bac24105c365aa0a2ffa0897ef66ca47fc067512c9fe3c3a5"
+}

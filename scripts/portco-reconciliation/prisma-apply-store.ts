@@ -380,6 +380,19 @@ const approvedOwnershipOrganizationProvisioning = {
   "EDF Renewables North America": "CORPORATE",
   "Telefonía Digital": "CORPORATE",
   "Axtel": "CORPORATE",
+  "Government of Ontario": "OTHER",
+  "Teramira Holdings Inc.": "CORPORATE",
+  "Teranet Income Fund": "OTHER",
+  "Atlas Arteria": "CORPORATE",
+  "Cintra": "CORPORATE",
+  "Macquarie Group": "FUND_MANAGER",
+  "Macquarie Infrastructure Partners": "FUND_MANAGER",
+  "Alphabet Inc.": "CORPORATE",
+  "Greenbelt Capital Partners": "FUND_MANAGER",
+  "Pantheon Infrastructure Plc": "FUND_MANAGER",
+  "Budderfly management": "OTHER",
+  "Edison Partners": "FUND_MANAGER",
+  "Balance Point Capital": "FUND_MANAGER",
 } as const;
 
 export function ownershipOrganizationTypes(

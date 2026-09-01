@@ -1,0 +1,384 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0373:teranet-inc:fc015f26",
+  "taskIndex": 373,
+  "asOfDate": "2026-09-01",
+  "generatedAt": "2026-09-01T19:55:00.000Z",
+  "canonicalKey": "teranet-inc|canada",
+  "companyName": "Teranet Inc.",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER"
+  ],
+  "sourceHoldingIds": [
+    "075-omers-infrastructure:holding:006:teranet-inc"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Retain one canonical Teranet Inc. record, correct OMERS Infrastructure's current holding to 100% from 2008 through the Borealis acquisition structure, and add the verified Ontario, Teramira and public-income-fund ownership history. Teranet and OMERS continue to identify the business as an active OMERS holding; no later sale or signed ownership transfer was identified. Statutory registry licences, operating subsidiaries and temporary acquisition vehicles remain within the same company boundary.",
+  "evidence": [
+    {
+      "url": "https://www.teranet.ca/about-teranet/",
+      "purpose": "Current identity, company history, ownership and operating scale",
+      "supports": [
+        "Teranet remains OMERS-owned",
+        "The registry platform dates to 1991"
+      ]
+    },
+    {
+      "url": "https://www.omersinfrastructure.com/investments/teranet",
+      "purpose": "Current OMERS ownership and investment year",
+      "supports": [
+        "OMERS Infrastructure lists Teranet as a current investment",
+        "OMERS records its investment in 2008"
+      ]
+    },
+    {
+      "url": "https://media.corporate-ir.net/media_files/irol/19/198264/Teranet%202007%20AIF.pdf",
+      "purpose": "Historical ownership and public-fund structure",
+      "supports": [
+        "Ontario and Teramira ownership history",
+        "2006 Teranet Income Fund structure"
+      ]
+    },
+    {
+      "url": "https://news.gov.mb.ca/news/index.html?item=30649",
+      "purpose": "Manitoba registry agreement and operating boundary",
+      "supports": [
+        "The 30-year Manitoba registry agreement took effect in 2014",
+        "Government retained ownership of registry data"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "2d298ed08dc84cf69e97772712c0566dbc47679dfe5f1518615133fda790a62b",
+  "currentCompanySnapshotSha256": "749fa50be34c3b4d17e0e2dba388b3bb2e769ca2678c067576056ac26a543053",
+  "executionLock": {
+    "taskSnapshotSha256": "79e4c883b66101b2477e0cca4b3a9e7d34287d1ba4e5c84eb572f1e314f9b66d",
+    "taskStateSha256": "61249b0043564f39798257aa89c9484b15cb3a19a90e90308866551598b3dfbc",
+    "taskDependencySha256": "e6093a97947f2247bb0ff5192eab9146e23c3d67b63df9361a2982bc1f625187",
+    "seedEntrySha256": "8d0e2e32e5c3598516c305fa6c32c83b921a7a34e939f45a3e5dc7bc9513f1b0",
+    "dependencies": {
+      "ownershipPeriodsSha256": "4a4de70c86987b8b8b789ae2f6790d0652311d5dcab85b42ec738e0923a3a8e3",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "fac4fa7335c127e73abe52490df9652aca3bb882b516d47a38d8dfc92ad1e3f0",
+      "organizationsSha256": "51daa9d25d117624d548b1248c5c75769c9b8f45a78c529b3d24f913fecc0c93",
+      "citationsSha256": "510442abf45f5bc6b1573c7aefed51f1090565af87a4922195bbce7be6b0d4c2",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj3fm00f1ivhehhc270qc",
+        "fundName": "OMERS Infrastructure",
+        "managerId": "cmrxpic6e0033ivheho9lmsp6",
+        "updatedAt": "2026-07-23T16:09:58.306Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpic6e0033ivheho9lmsp6",
+        "name": "OMERS Infrastructure",
+        "updatedAt": "2026-07-23T16:09:22.983Z"
+      },
+      {
+        "id": "cmrxpij0a0058ivhemf1et807",
+        "name": "OMERS",
+        "updatedAt": "2026-07-23T16:09:31.834Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjmak017sivhejvwtnhn2",
+    "name": "Teranet Inc.",
+    "aliases": [],
+    "sector": "SOCIAL_INFRA",
+    "subsector": "Land registry and statutory services concession",
+    "region": "NORTH_AMERICA",
+    "country": "Canada",
+    "countryTags": [
+      "Canada"
+    ],
+    "description": "Teranet Inc. provides electronic property search and registration services and related statutory registry technology solutions. Its customers or end markets include legal professionals, lenders, governments, and real estate market participants. The operating model is a concession and mission-critical service model based on long-term contractual rights and digital platform operations. Operations are concentrated in Ontario and Manitoba. Public materials indicate exclusive operation of Ontario’s electronic land registration system and Manitoba registry services according to company materials. Current ownership is wholly held by OMERS, with Teranet publicly stating that the business is overseen by OMERS Infrastructure.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 1991,
+    "headquarters": "Ontario and Manitoba",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk8o00278ivhe38d04pxw",
+        "managerName": "OMERS Infrastructure",
+        "organizationName": "OMERS",
+        "fundName": "OMERS Infrastructure",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2008,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmjgq04zuivheydhobr7o",
+        "date": "1991",
+        "event": "Teranet was founded.",
+        "category": "FOUNDING",
+        "sortDate": "1991-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmjhb04zvivheag382njg",
+        "date": "Oct 2008",
+        "event": "Borealis Infrastructure (OMERS) completed its acquisition of the outstanding units of Teranet Income Fund.",
+        "category": "ACQUISITION",
+        "sortDate": "2008-10-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmjhu04zwivhemd1nqscw",
+        "date": "2025",
+        "event": "Teranet announced a return to conveyancing in Ontario through a Goveyance partnership.",
+        "category": "EXPANSION",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmjid04zxivhe38ve1jfc",
+        "date": "2025",
+        "event": "Teranet disclosed an investment in Goveyance.",
+        "category": "FINANCING",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsi7c0copivheb5knoik1",
+        "label": "Teranet — Teranet Inc.",
+        "url": "https://www.teranet.ca/about-teranet/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Teranet company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpsi8h0corivheloaio8c4",
+        "label": "Teranet — Teranet Inc.",
+        "url": "https://www.teranet.ca/press-releases/teranet-returns-to-conveyancing-in-ontario-with-goveyance-partnership/",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Teranet transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsi9k0cotivhef1nq58uc",
+        "label": "Teranet — Teranet Inc.",
+        "url": "https://www.teranet.ca/insights/teranet-invests-in-goveyance/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Teranet — Teranet Inc.",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsiaj0covivhe8vk7nmyy",
+        "label": "Investment history source — OMERS — Teranet Inc.",
+        "url": "https://www.omers.com/history",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Investment history source — OMERS — Teranet Inc.",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "749fa50be34c3b4d17e0e2dba388b3bb2e769ca2678c067576056ac26a543053",
+  "afterImage": {
+    "id": "cmrxpjmak017sivhejvwtnhn2",
+    "name": "Teranet Inc.",
+    "aliases": [
+      "Teranet",
+      "Teranet Holdings LP",
+      "Teranet Income Fund"
+    ],
+    "sector": "SOCIAL_INFRA",
+    "subsector": "Land registry and statutory services concession",
+    "region": "NORTH_AMERICA",
+    "country": "Canada",
+    "countryTags": [
+      "Canada"
+    ],
+    "description": "Teranet Inc. is a Canadian statutory-registry and digital public-service infrastructure platform. It operates Ontario's electronic land-search and registration system and Manitoba's land titles and personal-property registries under long-term contractual arrangements, serving governments, legal professionals, lenders, utilities, businesses and citizens. Teranet reports more than 850 employees, over 10 million annual transactions and more than 200 million registry images. OMERS Infrastructure acquired control in 2008 through a Borealis acquisition vehicle and owns 100% through Teranet Holdings LP. Earlier ownership comprised the Government of Ontario and Teramira consortium, followed by Teranet Income Fund's public structure. Registry data remains government-owned and regulated; operating subsidiaries and acquired service businesses are not separate PortCos. No later sale, exit or signed pending ownership transfer was identified through August 19, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.teranet.ca/",
+    "yearFounded": 1991,
+    "headquarters": "Toronto, Ontario",
+    "lastVerifiedAt": "2026-08-19T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk8o00278ivhe38d04pxw",
+        "managerName": "OMERS Infrastructure",
+        "organizationName": "OMERS",
+        "fundName": "OMERS Infrastructure",
+        "vehicleName": "Borealis acquisition vehicle; Teranet Holdings LP",
+        "stake": "100%",
+        "investmentYear": 2008,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Government of Ontario",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Ontario SuperBuild Corporation / Province-held securities",
+        "stake": "50%",
+        "investmentYear": 1991,
+        "exitYear": 2003,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      },
+      {
+        "id": null,
+        "managerName": "Teramira Holdings Inc.",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Teramira consortium holding companies",
+        "stake": "50% from 1991; 100% from 2003",
+        "investmentYear": 1991,
+        "exitYear": 2006,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      },
+      {
+        "id": null,
+        "managerName": "Teranet Income Fund",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Teranet Operating Trust / Teranet Holdings Limited Partnership",
+        "stake": "100% direct through THLP; ultimate public interests",
+        "investmentYear": 2006,
+        "exitYear": 2008,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmjgq04zuivheydhobr7o",
+        "date": "1991",
+        "event": "The Government of Ontario and the Teramira private-investor consortium formed Teranet as a 50/50 land-registry partnership.",
+        "category": "FOUNDING",
+        "sortDate": "1991-01-01T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.teranet.ca/about-teranet/",
+          "https://media.corporate-ir.net/media_files/irol/19/198264/Teranet%202007%20AIF.pdf"
+        ]
+      },
+      {
+        "id": "cmrxpmjhb04zvivheag382njg",
+        "date": "Nov 11, 2008",
+        "event": "Borealis Infrastructure completed the acquisition of control of Teranet Income Fund for OMERS; OMERS subsequently acquired the remaining public interests.",
+        "category": "ACQUISITION",
+        "sortDate": "2008-11-11T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.omersinfrastructure.com/investments/teranet"
+        ]
+      },
+      {
+        "id": "cmrxpmjhu04zwivhemd1nqscw",
+        "date": "2025",
+        "event": "Teranet announced a return to conveyancing in Ontario through a Goveyance partnership.",
+        "category": "EXPANSION",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmjid04zxivhe38ve1jfc",
+        "date": "2025",
+        "event": "Teranet disclosed an investment in Goveyance.",
+        "category": "FINANCING",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsi7c0copivheb5knoik1",
+        "label": "Teranet — Teranet Inc.",
+        "url": "https://www.teranet.ca/about-teranet/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Teranet company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpsi8h0corivheloaio8c4",
+        "label": "Teranet — Teranet Inc.",
+        "url": "https://www.teranet.ca/press-releases/teranet-returns-to-conveyancing-in-ontario-with-goveyance-partnership/",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Teranet transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsi9k0cotivhef1nq58uc",
+        "label": "Teranet — Teranet Inc.",
+        "url": "https://www.teranet.ca/insights/teranet-invests-in-goveyance/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Teranet — Teranet Inc.",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsiaj0covivhe8vk7nmyy",
+        "label": "Investment history source — OMERS — Teranet Inc.",
+        "url": "https://www.omers.com/history",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Investment history source — OMERS — Teranet Inc.",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "OMERS Infrastructure — Teranet",
+        "url": "https://www.omersinfrastructure.com/investments/teranet",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current OMERS ownership and 2008 investment year",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Teranet — 2007 Annual Information Form",
+        "url": "https://media.corporate-ir.net/media_files/irol/19/198264/Teranet%202007%20AIF.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Ontario, Teramira and Teranet Income Fund ownership history",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Manitoba — Teranet registry agreement",
+        "url": "https://news.gov.mb.ca/news/index.html?item=30649",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "2014 Manitoba registry agreement and statutory operating boundary",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "6e26493414947d92663e1db1b3bead224771d6daec064f69c291221debe310be",
+  "proposalSha256": "22318b603538150c3d1f19bf8ede4488061e99a8129680e09a89c44603ba55f4"
+}
