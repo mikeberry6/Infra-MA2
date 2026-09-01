@@ -1,0 +1,83 @@
+
+> infra-tracker@1.0.0 portfolio:fund-attribution:apply
+> npx tsx scripts/apply-portfolio-fund-attribution.ts --manifest=audits/portfolio-fund-attribution/2026-09-01/scoped/batch-0292-0296-attribution-repair/apply-manifest.json --manifest-sha256=f29e1b97ff1c77b1e511b14d203e7360fce66453dd8c82f31eab092c70492ddb --production-snapshot=audits/portfolio-fund-attribution/2026-09-01/scoped/batch-0292-0296-attribution-repair/production-snapshot.json --approval=audits/portfolio-fund-attribution/2026-09-01/scoped/batch-0292-0296-attribution-repair/approval.json --approval-sha256=91816bacb5692a739b54f87dfd8e3d7248726f72152371dc658e5483d9cb5af5 --apply=true --write-token=APPLY_REVIEWED_PORTFOLIO_FUND_ATTRIBUTION --receipt=tmp/portfolio-fund-attribution/production/apply-receipt.json
+
+(node:2927) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_RECEIPT",
+  "manifestSha256": "f29e1b97ff1c77b1e511b14d203e7360fce66453dd8c82f31eab092c70492ddb",
+  "approvalSha256": "91816bacb5692a739b54f87dfd8e3d7248726f72152371dc658e5483d9cb5af5",
+  "environment": "production",
+  "pipelineRunId": "cmti7vxp400009b2bi6euqy88",
+  "mutationCount": 3,
+  "changed": 3,
+  "idempotent": false,
+  "beforeFingerprint": "3d213ac1e62fb68a9dddc106c7be97236b72d1a9f749f08d66da182ffebc524b",
+  "afterFingerprint": "67092a5e158810cc8271fd141ee3e4925c37700c3f98a222c5be439515de8065",
+  "rows": [
+    {
+      "recordId": "OFA-B55C1540DCC6",
+      "ownershipPeriodId": "cmrxpk42e0201ivheoxpgzo1i",
+      "companyId": "cmrxpji5n011aivher22cetu6",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "ISQ Global Infrastructure Fund II",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, vintage 2017 is 3 years before investment, North America-relevant mandate, historical vehicle retained for attribution only; next candidate trails by 0.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "ISQ Global Infrastructure Fund I (Fund 1)",
+        "attributionConfidence": null,
+        "attributionRationale": "I Squared's Fund 1 portfolio page identifies FlexiVan as a Fund 1 investment, while the January and February 2020 transaction announcements establish the controlling investment and legal close. The disclosed vehicle is not a curated Fund Database record, so no fund link is invented."
+      }
+    },
+    {
+      "recordId": "OFA-ADB8E0956F3E",
+      "ownershipPeriodId": "cmti76ghh000xw62bsnkfhxlq",
+      "companyId": "cmti76fl7000ew62badppz6h8",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "SK Capital's completed 2023 acquisition announcement states that chief executive Gabriel Rio retained a significant ownership interest. The interest is management rollover ownership rather than a commingled fund, and the exact vehicle and percentage were not publicly disclosed."
+      }
+    },
+    {
+      "recordId": "OFA-D8CE82C5CFEA",
+      "ownershipPeriodId": "cmti76jio001hw62b4bdxkrrj",
+      "companyId": "cmti76itd0015w62bd7ogupzg",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": "ISQ Energy Transition Infrastructure Fund",
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": "ISQ Energy Transition Infrastructure Fund",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "ISQ Energy Transition Infrastructure Fund",
+        "attributionConfidence": null,
+        "attributionRationale": "I Squared's completed-acquisition announcement directly attributes Oriden to the ISQ Energy Transition Infrastructure Fund. That exact fund is already curated in the Fund Database, so the active ownership can be linked without inference."
+      }
+    }
+  ],
+  "appliedAt": "2026-09-01T05:18:56.638Z",
+  "receiptSha256": "141a90348986d4140dd04516ad25379f11f0eb4558c1607888e6a2aa0c0851ce"
+}
