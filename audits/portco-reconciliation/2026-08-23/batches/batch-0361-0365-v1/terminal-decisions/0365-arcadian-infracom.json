@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0365:arcadian-infracom:27de01bd",
+  "taskIndex": 365,
+  "companyName": "Arcadian Infracom",
+  "outcome": "DEFERRED",
+  "decidedAt": "2026-09-01T18:23:00.000Z",
+  "rationale": "Arcadian is an active, missing U.S. digital-infrastructure platform, but its current direct cap table is not list-ready. TIAA disclosed a 92.5% stake through 730 Fiber in 2024; Arcadian Infracom 1 disappeared from TIAA Schedule Y in 2025 while 730 Fiber and Nuveen oversight remained, with no disclosed transaction explaining the change.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0365-arcadian-infracom/attempt-1/locked-batch-v1-task-snapshot.json",
+    "sha256": "338549a98823af2b829f0f4fbd8688a5c0ebe10916bb6b89482d946de9ea046a"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0365-arcadian-infracom/attempt-1/application-research-decision-v1.json",
+    "sha256": "6114ab646d58efca4ab3e8d5b9d48b647912e2659b8efb4b01047d6e1ea189c3"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0365-arcadian-infracom/attempt-1/source-verification.json",
+    "sha256": "f9f56d004b7109889c0ebbd90f2937a743fc45a2cf5dcdc1aa6b93b488692c50"
+  },
+  "evidence": [
+    {
+      "url": "https://www.tiaa.org/public/pdf/t/tiaa_quarterly_statement_june_2024.pdf",
+      "purpose": "TIAA→730 Fiber 100%; 730 Fiber→Arcadian Infracom 1 92.5%."
+    },
+    {
+      "url": "https://documents.nuveen.com/Documents/Nuveen/Viewer.aspx?uniqueId=5e020f65-f797-4b0c-9598-9d3ea00b2625",
+      "purpose": "730 Fiber retained; Arcadian omitted from Schedule Y but retained on Schedule BA."
+    },
+    {
+      "url": "https://pscdocs.utah.gov/telecom/21docs/21262301/320521Notice10-1-2021.pdf",
+      "purpose": "Pre/post structure, vehicle, management and board rights."
+    },
+    {
+      "url": "https://www.prweb.com/releases/arcadian-infracom-partners-with-tiaa-to-finance-long-haul-fiber-backbone-routes-895361246.html",
+      "purpose": "2021 announcement, $140 million commitment and Nuveen role."
+    },
+    {
+      "url": "https://www.nuveen.com/en-us/about-us/profiles/d/andrew-deihl",
+      "purpose": "Current Nuveen oversight and Arcadian board role."
+    },
+    {
+      "url": "https://lightriver.com/arcadian-infracom-names-lightriver-as-network-operations-center-noc-provider-for-its-expanding-long-haul-and-middle-mile-fiber-network/",
+      "purpose": "August 2026 footprint, services and construction status."
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "71cb23e940fd9b7bbbf097e0a424c2b3dfe3258ebfc2c8d6b517b1704d8a06f2"
+}

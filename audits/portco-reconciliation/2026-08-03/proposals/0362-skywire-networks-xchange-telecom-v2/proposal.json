@@ -1,0 +1,212 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0362:skywire-networks-xchange-telecom:61604de9",
+  "taskIndex": 362,
+  "asOfDate": "2026-09-01",
+  "generatedAt": "2026-09-01T18:24:00.000Z",
+  "canonicalKey": "skywire-networks-xchange-telecom|united-states",
+  "companyName": "Skywire Networks / Xchange Telecom",
+  "actions": [
+    "CREATE_COMPANY"
+  ],
+  "sourceHoldingIds": [
+    "072-nova-infrastructure:holding:004:skywire-networks-xchange-telecom"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Create one Xchange Telecom LLC digital-infrastructure company. Skywire Networks is its operating division and commercial alias, not a separate portfolio company. NOVA Infrastructure acquired 100% of founder equity through NOVA-Xchange Investco, L.P. on November 28, 2022, and current manager and regulatory evidence supports continued ownership.",
+  "evidence": [
+    {
+      "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BD0A8859F-0000-CF38-81EA-C26B4F0A1BAE%7D&DocTitle=Order+Approving+Indirect+Transfer+of+Control+with+Conditions",
+      "purpose": "Current legal identity, ownership chain, 100% founder transfer and closing date.",
+      "supports": [
+        "identity",
+        "current ownership",
+        "stake",
+        "investment date"
+      ]
+    },
+    {
+      "url": "https://www.novainfrastructure.com/nova-infrastructure-acquires-xchange-telecom-skywire-networks",
+      "purpose": "NOVA acquisition announcement, infrastructure strategy and operating scale.",
+      "supports": [
+        "infrastructure strategy",
+        "ownership",
+        "operating profile"
+      ]
+    },
+    {
+      "url": "https://skywirenetworks.com/legal/terms-of-service/general-terms-of-service",
+      "purpose": "Current evidence that Skywire is a division of Xchange Telecom LLC.",
+      "supports": [
+        "canonical boundary",
+        "alias"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "a8609eb916bdafa262fb52f660babc2c862adbf177763e12bd278b49bfe47c7b",
+  "currentCompanySnapshotSha256": null,
+  "executionLock": {
+    "taskSnapshotSha256": "8afba38ed06cf6680605b19fbc0f2475f229674c91d85c6ae9691a256142c80b",
+    "taskStateSha256": "8ac585b251d89cb4dc81b03d9b0a3caf2240e8b1c151ac0c62bd12b4ba3cf0df",
+    "taskDependencySha256": "276c7e757f588b095091059e787403e5844609832deca7a380299134253a8171",
+    "seedEntrySha256": null,
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "bf2a48cc853dca16c66acb74ab25cb37da4631785fd6f7a2520f1ee82ce46b81",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpizw500alivhelc3ewblk",
+        "name": "NOVA Infrastructure",
+        "updatedAt": "2026-07-23T16:09:53.717Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": null,
+  "beforeImageSha256": null,
+  "afterImage": {
+    "id": null,
+    "name": "Xchange Telecom LLC",
+    "aliases": [
+      "Xchange Telecom Corp.",
+      "Skywire Networks",
+      "Skywire",
+      "Skywire, Powered by Xchange"
+    ],
+    "sector": "DIGITAL",
+    "subsector": "Fiber and fixed-wireless broadband",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Xchange Telecom LLC is a Brooklyn-based facilities-based communications platform that provides internet, Ethernet, voice, mobile, SD-WAN, managed Wi-Fi and cloud connectivity through a hybrid fiber and fixed-wireless network. Skywire Networks is the company's operating division and commercial brand rather than a separate investment. NOVA Infrastructure acquired 100% of founder equity through NOVA-Xchange Investco, L.P. on November 28, 2022. NOVA continues to list the platform as a current investment, and no later sale or signed ownership transfer was identified through September 1, 2026. Individual network assets, lender vehicles and passive fund investors remain outside the company boundary.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://skywirenetworks.com/",
+    "yearFounded": 2002,
+    "headquarters": "Brooklyn, New York, United States",
+    "lastVerifiedAt": "2026-09-01T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": null,
+        "managerName": "NOVA Infrastructure",
+        "organizationName": "NOVA Infrastructure",
+        "fundName": null,
+        "vehicleName": "NOVA Infrastructure Fund I / NOVA-Xchange Investco, L.P.",
+        "stake": "100%",
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": null,
+        "date": "2002",
+        "event": "Xchange Telecom was founded and authorized as a New York communications provider.",
+        "category": "FOUNDING",
+        "sortDate": "2002-01-01T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BD0A8859F-0000-CF38-81EA-C26B4F0A1BAE%7D&DocTitle=Order+Approving+Indirect+Transfer+of+Control+with+Conditions"
+        ]
+      },
+      {
+        "id": null,
+        "date": "2012",
+        "event": "The company formed the Skywire Networks division to serve New York-area business customers.",
+        "category": "EXPANSION",
+        "sortDate": "2012-01-01T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://skywirenetworks.com/faqs"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Nov 28, 2022",
+        "event": "NOVA Infrastructure completed the acquisition of 100% of founder equity through NOVA-Xchange Investco, L.P.",
+        "category": "FINANCING",
+        "sortDate": "2022-11-28T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BD0A8859F-0000-CF38-81EA-C26B4F0A1BAE%7D&DocTitle=Order+Approving+Indirect+Transfer+of+Control+with+Conditions",
+          "https://www.novainfrastructure.com/nova-infrastructure-acquires-xchange-telecom-skywire-networks"
+        ]
+      },
+      {
+        "id": null,
+        "date": "2023",
+        "event": "Xchange Telecom and Skywire Networks combined their commercial presentation under the Skywire brand.",
+        "category": "OTHER",
+        "sortDate": "2023-01-01T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://skywirenetworks.com/faqs",
+          "https://skywirenetworks.com/legal/terms-of-service/general-terms-of-service"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": null,
+        "label": "New York PSC — Xchange control order",
+        "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BD0A8859F-0000-CF38-81EA-C26B4F0A1BAE%7D&DocTitle=Order+Approving+Indirect+Transfer+of+Control+with+Conditions",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Legal identity, ownership chain, 100% founder transfer and November 28, 2022 close",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "NOVA Infrastructure — Xchange acquisition",
+        "url": "https://www.novainfrastructure.com/nova-infrastructure-acquires-xchange-telecom-skywire-networks",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "NOVA acquisition announcement, infrastructure strategy and operating scale",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "NOVA Infrastructure — current investments",
+        "url": "https://www.novainfrastructure.com/investments-index",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current NOVA portfolio status",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Skywire Networks — company FAQ",
+        "url": "https://skywirenetworks.com/faqs",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Brand history, markets, services and operating scale",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Skywire Networks — general terms",
+        "url": "https://skywirenetworks.com/legal/terms-of-service/general-terms-of-service",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current evidence that Skywire is an Xchange Telecom LLC division",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "28ba9da15b750302015d8e528276ddb05fc216a1e27cc45ef69e8c71d1dcb245",
+  "proposalSha256": "38b2c1f23fde5a90f6ea587f4e1235b83c1daa2163da02e1cb178ad431c1fd36"
+}

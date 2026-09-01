@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0363:telmax-inc:f608a383",
+  "taskIndex": 363,
+  "companyName": "telMAX Inc.",
+  "asOfDate": "2026-09-01",
+  "decision": "DEFERRED",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-01T18:22:00.000Z",
+  "result": {
+    "decision": "DEFERRED",
+    "rationale": "Research establishes telMAX Inc. as a distinct Canadian fiber platform and supports NOVA majority control, QID participation and an approximately 15% abrdn co-investment. The exact current QID chain and whether a founder or legacy shareholder block remains current are unresolved, so the complete active owner set is not list-ready.",
+    "evidence": [
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/1793855/000110465926071361/tm262258d7_ncsrs.htm",
+        "purpose": "Current abrdn interest, investment vehicle and entry date."
+      },
+      {
+        "url": "https://quintana-id.com/wp-content/uploads/2021/news/QID%20Closing%20Press%20Release%20telMAX%202021.04.01.pdf",
+        "purpose": "Completed NOVA and QID control investment."
+      },
+      {
+        "url": "https://www.novainfrastructure.com/investments-index",
+        "purpose": "Current NOVA portfolio status and digital-infrastructure classification."
+      }
+    ]
+  },
+  "blockingFact": "The complete current direct owner set, including QID's direct chain and any remaining founder or legacy shareholder interest.",
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0363-telmax-inc/attempt-1/research-decision.json",
+      "sha256": "4c042e3cde7fbcf8cffa23b3e5a12497519c55c376c7a78828712810dd93fe04"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0363-telmax-inc/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "b6d5fd6242626302fc210f8e90b7248e11ab673daca8783200b8166a6dab97ba"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0363-telmax-inc/attempt-1/source-verification.json",
+      "sha256": "e3588ac85368c97859647ce7372ae8b2507f27595a48e53fefa960f0a1ba9bfc"
+    }
+  }
+}

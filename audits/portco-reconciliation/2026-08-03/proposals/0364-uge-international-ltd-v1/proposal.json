@@ -1,0 +1,230 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0364:uge-international-ltd:3aed0a3e",
+  "taskIndex": 364,
+  "asOfDate": "2026-09-01",
+  "generatedAt": "2026-09-01T18:24:00.000Z",
+  "canonicalKey": "uge-international-ltd|canada",
+  "companyName": "UGE International Ltd.",
+  "actions": [
+    "CREATE_COMPANY"
+  ],
+  "sourceHoldingIds": [
+    "072-nova-infrastructure:holding:006:uge-international-ltd"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Create one UGE International Inc. U.S. distributed solar and storage platform, preserving UGE International Ltd. and its tickers as predecessor aliases. NOVA Infrastructure's take-private closed on August 15, 2024 through NOVA-Swift Holdco, LP, which became the sole direct shareholder, and no later platform ownership transfer was identified.",
+  "evidence": [
+    {
+      "url": "https://ugei.com/nova-completes-purchase-of-uge-international/",
+      "purpose": "Take-private closing, approvals and NOVA ownership.",
+      "supports": [
+        "ownership",
+        "investment date",
+        "transaction state"
+      ]
+    },
+    {
+      "url": "https://www.osc.ca/en/securities-law/orders-rulings-decisions/uge-international-inc",
+      "purpose": "Successor legal identity and sole-shareholder structure.",
+      "supports": [
+        "canonical identity",
+        "ownership structure"
+      ]
+    },
+    {
+      "url": "https://www.novainfrastructure.com/investments-index",
+      "purpose": "Current NOVA portfolio status and infrastructure operating profile.",
+      "supports": [
+        "current ownership",
+        "infrastructure strategy",
+        "operating profile"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "99bdb18ece8952816ded77d2f99d161eb411c910a2acc4832d8b0464c3cfff0b",
+  "currentCompanySnapshotSha256": null,
+  "executionLock": {
+    "taskSnapshotSha256": "30e7e53920da77a4928172a8d73ba579f271c615a82dcf1c4b95821043a68200",
+    "taskStateSha256": "a45438a9e0b8e5b5e3087773ded3cae19bda329eb477990b08e4f036d1ff142b",
+    "taskDependencySha256": "276c7e757f588b095091059e787403e5844609832deca7a380299134253a8171",
+    "seedEntrySha256": null,
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "bf2a48cc853dca16c66acb74ab25cb37da4631785fd6f7a2520f1ee82ce46b81",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpizw500alivhelc3ewblk",
+        "name": "NOVA Infrastructure",
+        "updatedAt": "2026-07-23T16:09:53.717Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": null,
+  "beforeImageSha256": null,
+  "afterImage": {
+    "id": null,
+    "name": "UGE International Inc.",
+    "aliases": [
+      "UGE International Ltd.",
+      "UGE",
+      "TSXV:UGE",
+      "OTCQB:UGEIF"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Distributed and community solar and storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States",
+      "Canada"
+    ],
+    "description": "UGE International Inc. is a New York-based distributed-energy platform that develops, builds, finances, owns and operates community and commercial solar and battery-storage projects in the United States. NOVA Infrastructure completed the take-private of predecessor UGE International Ltd. on August 15, 2024 through NOVA-Swift Holdco, LP; the business subsequently continued to Delaware as UGE International Inc. NOVA continues to identify UGE as a Fund II platform, and no later sale or signed ownership transfer was found through September 1, 2026. Project SPVs, tax-equity vehicles, lenders and acquired development rights remain beneath the single platform boundary.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://ugei.com/",
+    "yearFounded": null,
+    "headquarters": "New York, New York, United States",
+    "lastVerifiedAt": "2026-09-01T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": null,
+        "managerName": "NOVA Infrastructure",
+        "organizationName": "NOVA Infrastructure",
+        "fundName": null,
+        "vehicleName": "NOVA Infrastructure Fund II / NOVA-Swift Holdco, LP",
+        "stake": "Sole direct shareholder through NOVA-Swift Holdco, LP; NOVA's exact post-close economic interest is not publicly disclosed",
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": null,
+        "date": "May 29, 2024",
+        "event": "UGE International Ltd. announced a definitive agreement to be acquired by a NOVA Infrastructure Fund II affiliate.",
+        "category": "OTHER",
+        "sortDate": "2024-05-29T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://ugei.com/uge-international-ltd-enters-into-arrangement-agreement-for-going-private-transaction-2/"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Aug 15, 2024",
+        "event": "NOVA Infrastructure completed the take-private of UGE International Ltd. through NOVA-Swift Holdco, LP.",
+        "category": "FINANCING",
+        "sortDate": "2024-08-15T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://ugei.com/nova-completes-purchase-of-uge-international/",
+          "https://www.osc.ca/en/securities-law/orders-rulings-decisions/uge-international-inc"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Aug 22, 2024",
+        "event": "The transaction survivor continued to Delaware and adopted the UGE International Inc. name.",
+        "category": "OTHER",
+        "sortDate": "2024-08-22T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.osc.ca/en/securities-law/orders-rulings-decisions/uge-international-inc"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Jan 2025",
+        "event": "UGE reported a 24 MW operating portfolio across six U.S. states.",
+        "category": "EXPANSION",
+        "sortDate": "2025-01-01T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://ugei.com/uge-portfolio-grows-16-mw/"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Jun 2025",
+        "event": "UGE acquired development rights to 122 solar projects, including approximately 60 MWdc of late-stage New York projects and 2.35 GW of early-stage projects across 14 states.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-06-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://ugei.com/uge-acquires-122-development-stage-solar-projects-across-14-states/"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": null,
+        "label": "UGE International — NOVA closing",
+        "url": "https://ugei.com/nova-completes-purchase-of-uge-international/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "August 15, 2024 take-private closing, approvals and NOVA ownership",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "Ontario Securities Commission — UGE order",
+        "url": "https://www.osc.ca/en/securities-law/orders-rulings-decisions/uge-international-inc",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Successor legal identity and sole-shareholder structure",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "NOVA Infrastructure — current investments",
+        "url": "https://www.novainfrastructure.com/investments-index",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current NOVA portfolio status and operating profile",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "UGE International — arrangement agreement",
+        "url": "https://ugei.com/uge-international-ltd-enters-into-arrangement-agreement-for-going-private-transaction-2/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Fund II attribution, transaction terms and rollover structure",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "UGE International — operating portfolio update",
+        "url": "https://ugei.com/uge-portfolio-grows-16-mw/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "24 MW operating portfolio across six states",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "UGE International — development rights acquisition",
+        "url": "https://ugei.com/uge-acquires-122-development-stage-solar-projects-across-14-states/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "122-project acquisition and disclosed development scale",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "5882c8c4469625ef3eb3a6e2a414ca9f973c2096491816fd2c610ac8cc1251e9",
+  "proposalSha256": "2ffd803ac2ccc29531983cd9b92de0d8bbf17cab39b368ee5f09f0874efe2699"
+}
