@@ -1,0 +1,340 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0346:flexential:a1d629db",
+  "taskIndex": 346,
+  "asOfDate": "2026-09-01",
+  "generatedAt": "2026-09-01T15:42:00.000Z",
+  "canonicalKey": "flexential|united-states",
+  "companyName": "Flexential",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER"
+  ],
+  "sourceHoldingIds": [
+    "069-morgan-stanley-infrastructure-partners:holding:002:flexential"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Keep one Flexential platform. Correct MSIP to a closed November 2024 common-equity co-control investment without an inferred fund, add GI Partners as the continuing co-control sponsor from 2014, and refresh the operating profile and 2025 GI recapitalization evidence.",
+  "evidence": [
+    {
+      "url": "https://www.gipartners.com/news/gi-partners-closes-continuation-vehicle-and-strategic-investment-from-gi-data-infrastructure-in-flexential",
+      "purpose": "GI Partners' closing announcement supporting its continuing ownership and August 2025 recapitalization.",
+      "supports": [
+        "GI Partners current ownership",
+        "2025 recapitalization"
+      ]
+    },
+    {
+      "url": "https://www.flexential.com/resources/press-release/flexential-accelerate-expansion-and-growth-strategic-investment-morgan",
+      "purpose": "Company announcement supporting MSIP's common-equity co-control investment alongside GI Partners.",
+      "supports": [
+        "MSIP ownership",
+        "co-control structure"
+      ]
+    },
+    {
+      "url": "https://www.morganstanley.com/im/en-us/individual-investor/companies/flexential.html",
+      "purpose": "Manager portfolio evidence supporting MSIP's November 2024 investment and continuing holding.",
+      "supports": [
+        "November 2024 entry",
+        "current ownership"
+      ]
+    },
+    {
+      "url": "https://www.flexential.com/resources/press-release/flexential-secures-800-million-fund-data-center-development",
+      "purpose": "Current company disclosure supporting the active sponsors and updated operating footprint.",
+      "supports": [
+        "current sponsors",
+        "operating scale"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "cad3ccfaf8e208f0be2427c39e205acf16063e56fb43debdf0f33fa0abb4ae8d",
+  "currentCompanySnapshotSha256": "296a686bddda700f8369e67caa4c91c8835000734823d9049b7b63e74be02645",
+  "executionLock": {
+    "taskSnapshotSha256": "5ec7e3c349d7e0ee132b932719f5d24e359df931bd062cc8969bee94e409d8ea",
+    "taskStateSha256": "bf041a2a9de77676884ccae4871a8b6f5c13e069e9643ffa560758762cc80343",
+    "taskDependencySha256": "73f6c157de15478f639d4bcbcf097228c3083bc000f009117cd7059a0db20419",
+    "seedEntrySha256": "8d05a24360ad853c912e0d1cd055a2211e1292cb63c68ad7faa1e27088a85a86",
+    "dependencies": {
+      "ownershipPeriodsSha256": "8a0aeea52cb141bb564ee2b1116ab9708e78a5f95b6c9af755f519fb8acd6a9a",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "7e3d71f6a3d51f7bcfb141c095c649e930428b5ce0ce222c371e65829254ffda",
+      "organizationsSha256": "b5c0ff774816ee23edf724024a371230616567a92c04c7d261e64f295f9e93b4",
+      "citationsSha256": "a3ad673cb41c4f0e3cff60fc1adbe1b9f4478ea2df37eb3518cdb82e948d0aa5",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmsdi41gb004y7h4sql1igk6u",
+        "fundName": "North Haven Infrastructure Partners III",
+        "managerId": "cmrxpibqa002yivhe44v34tdd",
+        "updatedAt": "2026-08-03T17:26:37.403Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpifi80045ivhe1qqdd4g8",
+        "name": "MSIP",
+        "updatedAt": "2026-07-23T16:09:27.296Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjljl016livheqq1befhk",
+    "name": "Flexential",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Colocation, cloud, and connectivity data centers",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Flexential provides colocation, cloud, connectivity, data protection, and related managed infrastructure services. Its customers are enterprises, cloud users, and increasingly AI and high-density computing workloads, and the business operates through an asset-heavy data center platform tied together by a private network backbone. Public disclosures describe 42 data centers across 19 highly connected U.S. markets on a 100Gbps private network. The platform's footprint spans major enterprise and carrier hubs, with interconnection and hybrid-cloud capabilities embedded in the operating model. Morgan Stanley Infrastructure Partners announced a strategic investment in Flexential in October 2024 and said it joined GI Partners as a co-controlling owner. The reviewed public materials do not disclose the current ownership percentages of the co-controlling investors.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "19 U.S. markets",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk7u7025xivhegjy9uc73",
+        "managerName": "Morgan Stanley Infrastructure Partners",
+        "organizationName": "MSIP",
+        "fundName": "North Haven Infrastructure Partners III",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmfvt04veivhef6zjzgsc",
+        "date": "May 2024",
+        "event": "Flexential announced the expansion of its FlexAnywhere platform and said it operated 42 data centers.",
+        "category": "OTHER",
+        "sortDate": "2024-05-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmfwe04vfivhe7ctfwaa8",
+        "date": "Oct 2024",
+        "event": "MSIP / Morgan Stanley Infrastructure Partners announced a strategic investment in Flexential alongside GI Partners.",
+        "category": "FINANCING",
+        "sortDate": "2024-10-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmfwy04vgivhe5utccud1",
+        "date": "Mar 2025",
+        "event": "Flexential announced expanded network-as-a-service capabilities with Lumen.",
+        "category": "EXPANSION",
+        "sortDate": "2025-03-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsc100cf4ivheaen30kbs",
+        "label": "Flexential — Flexential",
+        "url": "https://www.flexential.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Flexential company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpsc2c0cf6ivhe6lbmj9cs",
+        "label": "Flexential — Flexential",
+        "url": "https://www.flexential.com/resources/press-release/flexentials-growth-and-innovation-build-momentum-2024",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Flexential — Flexential",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsc3h0cf8ivhe2d0oashy",
+        "label": "Announcement date source — MSIP — Flexential",
+        "url": "https://www.morganstanley.com/im/en-us/capital-seeker/about-us/news-and-insights/press-release/flexential-to-accelerate-expansion-and-growth-MSIP.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "MSIP transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsc4e0cfaivhe3t29ql8t",
+        "label": "Flexential — Flexential",
+        "url": "https://www.flexential.com/resources/press-release/flexential-and-lumen-expand-network-service-capabilities-businesses",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Flexential operations / asset details",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "296a686bddda700f8369e67caa4c91c8835000734823d9049b7b63e74be02645",
+  "afterImage": {
+    "id": "cmrxpjljl016livheqq1befhk",
+    "name": "Flexential",
+    "aliases": [
+      "Flexential Corp.",
+      "Peak 10, Inc.",
+      "Peak 10 + ViaWest"
+    ],
+    "sector": "DIGITAL",
+    "subsector": "Colocation, cloud, and connectivity data centers",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Flexential operates a U.S. data-center and digital-infrastructure platform providing colocation, cloud, interconnection, data protection, and managed and professional services to more than 3,000 customers across over 20 industries. The platform reports more than 40 data centers in 18 U.S. markets, over 380 MW online or under development, and a 100+ Gbps private backbone. GI Partners has sponsored the business since acquiring Peak 10 in June 2014 and completed a continuation-vehicle recapitalization in August 2025. Morgan Stanley Infrastructure Partners joined GI as a common-equity co-control owner in November 2024; their exact percentages and MSIP's fund and acquisition vehicle are not publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.flexential.com/",
+    "yearFounded": null,
+    "headquarters": "Centennial, Colorado, United States",
+    "lastVerifiedAt": "2026-09-01T15:42:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk7u7025xivhegjy9uc73",
+        "managerName": "MSIP",
+        "organizationName": "MSIP",
+        "fundName": null,
+        "vehicleName": null,
+        "stake": "Common-equity co-control with GI Partners; exact percentage not publicly disclosed",
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "GI Partners",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "GI Partners Fund IV at entry; 2025 continuation and GI Data Infrastructure vehicles",
+        "stake": "Co-control with MSIP; exact percentage not publicly disclosed",
+        "investmentYear": 2014,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmfvt04veivhef6zjzgsc",
+        "date": "Jul 2026",
+        "event": "Flexential reported more than 40 data centers in 18 U.S. markets and over 380 MW online or under development.",
+        "category": "OTHER",
+        "sortDate": "2026-07-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.flexential.com/resources/press-release/flexential-secures-800-million-fund-data-center-development"
+        ]
+      },
+      {
+        "id": "cmrxpmfwe04vfivhe7ctfwaa8",
+        "date": "Nov 2024",
+        "event": "Morgan Stanley Infrastructure Partners closed a common-equity investment and became a co-controlling owner alongside GI Partners.",
+        "category": "FINANCING",
+        "sortDate": "2024-11-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.morganstanley.com/im/en-us/individual-investor/companies/flexential.html"
+        ]
+      },
+      {
+        "id": "cmrxpmfwy04vgivhe5utccud1",
+        "date": "Aug 20, 2025",
+        "event": "GI Partners closed a continuation-vehicle recapitalization and strategic GI Data Infrastructure investment in Flexential.",
+        "category": "FINANCING",
+        "sortDate": "2025-08-20T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.gipartners.com/news/gi-partners-closes-continuation-vehicle-and-strategic-investment-from-gi-data-infrastructure-in-flexential"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsc100cf4ivheaen30kbs",
+        "label": "Flexential — Flexential",
+        "url": "https://www.flexential.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Flexential company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsc2c0cf6ivhe6lbmj9cs",
+        "label": "Flexential — Flexential",
+        "url": "https://www.flexential.com/resources/press-release/flexentials-growth-and-innovation-build-momentum-2024",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Flexential — Flexential",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsc3h0cf8ivhe2d0oashy",
+        "label": "Announcement date source — MSIP — Flexential",
+        "url": "https://www.morganstanley.com/im/en-us/capital-seeker/about-us/news-and-insights/press-release/flexential-to-accelerate-expansion-and-growth-MSIP.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "MSIP transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsc4e0cfaivhe3t29ql8t",
+        "label": "Flexential — Flexential",
+        "url": "https://www.flexential.com/resources/press-release/flexential-and-lumen-expand-network-service-capabilities-businesses",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Flexential operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "GI Partners — Flexential continuation recapitalization",
+        "url": "https://www.gipartners.com/news/gi-partners-closes-continuation-vehicle-and-strategic-investment-from-gi-data-infrastructure-in-flexential",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "GI Partners continuing ownership and August 2025 recapitalization",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "Morgan Stanley — Flexential portfolio",
+        "url": "https://www.morganstanley.com/im/en-us/individual-investor/companies/flexential.html",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "MSIP November 2024 investment and current portfolio status",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Flexential — 2026 development financing",
+        "url": "https://www.flexential.com/resources/press-release/flexential-secures-800-million-fund-data-center-development",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current sponsors and updated data-center scale",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "383dfb59179fe4f038e222ea052b924d4d170b43fb3ec8077bb281168484fc7c",
+  "proposalSha256": "c1796a13bd4824ff5af43e10b28b882251c9172001b400e61246dece535009a2"
+}

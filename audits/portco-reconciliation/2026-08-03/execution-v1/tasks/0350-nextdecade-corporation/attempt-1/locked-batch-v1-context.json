@@ -1,0 +1,323 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0350:nextdecade-corporation:a6b7db27",
+  "taskIndex": 350,
+  "companyName": "NextDecade Corporation",
+  "generatedAt": "2026-09-01T15:37:43.046Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0350-nextdecade-corporation/attempt-1/locked-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 350,
+    "taskId": "ledger:0350:nextdecade-corporation:a6b7db27",
+    "canonicalKey": "nextdecade-corporation|united-states",
+    "companyName": "NextDecade Corporation",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 70,
+    "managers": [
+      "Mubadala"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "070-mubadala:repo-only:006:nextdecade-corporation"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjlpv016tivheo8lwhkzy"
+    ],
+    "seedKeys": [
+      "nextdecade corporation|United States"
+    ],
+    "evidenceUrls": [
+      "https://investors.next-decade.com/news-releases/news-release-details/nextdecade-announces-us50-million-investment-mubadala"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Mubadala OUT_OF_SCOPE: Corporate equity exposure, not direct infrastructure asset ownership.",
+    "unresolvedQuestions": [
+      "Confirm whether the manager ownership, the company itself, or only this census scope is out of scope before proposing any change."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjlpv016tivheo8lwhkzy",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "nextdecade-corporation|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjlpv016tivheo8lwhkzy",
+    "name": "NextDecade Corporation",
+    "aliases": [],
+    "sector": "MIDSTREAM",
+    "subsector": "LNG export development",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "NextDecade develops LNG export infrastructure and associated carbon capture projects centered on the Rio Grande LNG complex in South Texas. Its customer base includes global LNG buyers, project-finance lenders, and industrial or utility counterparties entering long-term sales and capacity arrangements, and the company follows an asset-heavy development model built around long-term contracted liquefaction trains. The business is concentrated in Brownsville, Texas, where it is developing a multi-train LNG export facility with associated pipeline interconnections and carbon capture plans. Public disclosures describe Phase 1 as 27 million tonnes per annum of liquefaction capacity across the first three trains, with later trains under development and financing. Global Infrastructure Partners agreed to invest in Rio Grande LNG Phase 1 in July 2023, and Mubadala has also been disclosed as an investor in NextDecade-related capital raises and project commitments. In October 2025, NextDecade announced a positive final investment decision on Train 5, further expanding the project.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2010,
+    "headquarters": "Texas",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk81x0267ivhe326uytex",
+        "managerName": "Mubadala Investment Company",
+        "organizationName": "Mubadala",
+        "fundName": "Mubadala Infrastructure",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2019,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmgk604w7ivheh5uwj2sn",
+        "date": "2010",
+        "event": "NextDecade was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2010-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmgkq04w8ivhe6lk8m078",
+        "date": "2017",
+        "event": "NextDecade listed on Nasdaq following its business combination with Harmony Merger Corp.",
+        "category": "IPO",
+        "sortDate": "2017-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmgla04w9ivhemmwi1q34",
+        "date": "Oct 24, 2019",
+        "event": "Mubadala announced an agreement to purchase US$50 million of NextDecade common stock in a private placement.",
+        "category": "FINANCING",
+        "sortDate": "2019-10-24T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmglu04waivhex7r0p8uy",
+        "date": "Jul 2023",
+        "event": "Global Infrastructure Partners announced an investment in Rio Grande LNG Phase 1 and related final investment decisions for the first three trains.",
+        "category": "FINANCING",
+        "sortDate": "2023-07-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmgm904wbivhej9inguvp",
+        "date": "Sep 2025",
+        "event": "TotalEnergies announced expanded investments in the Rio Grande LNG project and related NextDecade interests.",
+        "category": "FINANCING",
+        "sortDate": "2025-09-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsddt0ch7ivhehwa202ok",
+        "label": "Next Decade — NextDecade Corporation",
+        "url": "https://www.next-decade.com/who-we-are/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Next Decade — NextDecade Corporation",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpsdf40ch9ivhehd5bk4os",
+        "label": "Announcement date source — Mubadala — NextDecade Corporation",
+        "url": "https://investors.next-decade.com/news-releases/news-release-details/nextdecade-announces-us50-million-investment-mubadala",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Mubadala transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsdgb0chbivheltqpz3gu",
+        "label": "Investment date source — Mubadala — NextDecade Corporation",
+        "url": "https://investors.next-decade.com/news-releases/news-release-details/nextdecade-registers-shares-previously-issued-mubadala",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Mubadala initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsdh80chdivhe1csw4lwh",
+        "label": "Global Infra — NextDecade Corporation",
+        "url": "https://www.global-infra.com/media/press-releases/2023/07/12/global-infrastructure-partners-announces-investment-in-rio-grande-lng-phase-1/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Global Infra — NextDecade Corporation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsdi90chfivheml1g27bd",
+        "label": "Next Decade — NextDecade Corporation",
+        "url": "https://www.next-decade.com/press-release/nextdecade-announces-positive-final-investment-decision-and-financing-for-rio-grande-lng-train-5/",
+        "sourceType": "ARTICLE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Next Decade financing or public filing",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsdjc0chhivheugz4wlpf",
+        "label": "Next Decade — NextDecade Corporation",
+        "url": "https://www.next-decade.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Next Decade company profile",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "NextDecade Corporation",
+    "investmentFirm": "Mubadala",
+    "sector": "Midstream",
+    "subsector": "LNG export development",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "NextDecade develops LNG export infrastructure and associated carbon capture projects centered on the Rio Grande LNG complex in South Texas. Its customer base includes global LNG buyers, project-finance lenders, and industrial or utility counterparties entering long-term sales and capacity arrangements, and the company follows an asset-heavy development model built around long-term contracted liquefaction trains. The business is concentrated in Brownsville, Texas, where it is developing a multi-train LNG export facility with associated pipeline interconnections and carbon capture plans. Public disclosures describe Phase 1 as 27 million tonnes per annum of liquefaction capacity across the first three trains, with later trains under development and financing. Global Infrastructure Partners agreed to invest in Rio Grande LNG Phase 1 in July 2023, and Mubadala has also been disclosed as an investor in NextDecade-related capital raises and project commitments. In October 2025, NextDecade announced a positive final investment decision on Train 5, further expanding the project.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2010,
+    "investmentYear": 2019,
+    "headquarters": "Texas",
+    "milestones": [
+      {
+        "date": "2010",
+        "event": "NextDecade was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "2017",
+        "event": "NextDecade listed on Nasdaq following its business combination with Harmony Merger Corp.",
+        "category": "IPO"
+      },
+      {
+        "date": "Oct 24, 2019",
+        "event": "Mubadala announced an agreement to purchase US$50 million of NextDecade common stock in a private placement.",
+        "category": "Financing"
+      },
+      {
+        "date": "Jul 2023",
+        "event": "Global Infrastructure Partners announced an investment in Rio Grande LNG Phase 1 and related final investment decisions for the first three trains.",
+        "category": "Financing"
+      },
+      {
+        "date": "Sep 2025",
+        "event": "TotalEnergies announced expanded investments in the Rio Grande LNG project and related NextDecade interests.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Next Decade — NextDecade Corporation",
+        "url": "https://www.next-decade.com/who-we-are/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Announcement date source — Mubadala — NextDecade Corporation",
+        "url": "https://investors.next-decade.com/news-releases/news-release-details/nextdecade-announces-us50-million-investment-mubadala",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Investment date source — Mubadala — NextDecade Corporation",
+        "url": "https://investors.next-decade.com/news-releases/news-release-details/nextdecade-registers-shares-previously-issued-mubadala",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Global Infra — NextDecade Corporation",
+        "url": "https://www.global-infra.com/media/press-releases/2023/07/12/global-infrastructure-partners-announces-investment-in-rio-grande-lng-phase-1/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Next Decade — NextDecade Corporation",
+        "url": "https://www.next-decade.com/press-release/nextdecade-announces-positive-final-investment-decision-and-financing-for-rio-grande-lng-train-5/",
+        "type": "ARTICLE",
+        "purpose": "FINANCING_FILINGS"
+      },
+      {
+        "label": "Next Decade — NextDecade Corporation",
+        "url": "https://www.next-decade.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Mubadala",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2019,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj3di00exivhe38xmhpah",
+        "fundName": "Mubadala Infrastructure",
+        "managerId": "cmrxpibvr0030ivhenpnx8bdv",
+        "updatedAt": "2026-07-23T16:09:58.230Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpihu7004vivheoemw7s8z",
+        "name": "Mubadala",
+        "updatedAt": "2026-07-23T16:09:30.319Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0350:nextdecade-corporation:a6b7db27",
+    "taskIndex": 350,
+    "canonicalKey": "nextdecade-corporation|united-states",
+    "capturedAt": "2026-09-01T15:37:43.046Z",
+    "databaseRevision": "revision:bcf58164fc5703b708f86ee0d9a33c1411825835ffb48f633ba562bb0f480c8e",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "2f3bf0f61dcd9e7e0914dd649c4a2aede9a569ede87a7009e3dcc9cab874aa33",
+    "productionSnapshotSha256": "90d70bce6826c50ec94f5a10120bbdb220d899be204d52f2de8be31da3251a46",
+    "targetCompanySnapshotSha256": "4093aa7e9ce8b907aff31282917bee9cdd08a6836d36159aeb45567905524b3d",
+    "seedEntrySha256": "4c695ab8c8d47c03c4f604ee2505429f9332a0dabce90310e7a537b48bb778f9",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "06b58ddbd7d146a703b1a1901a8f549c3dd3f7a3372c9442fd54cd656ccea108",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "f6494c92356554899d91dc2d01437cf3688abc4d1eee0b901b27cc2b516a7c21",
+      "organizationsSha256": "4941585929c039e1d0db3ba37544b5dd4e3038aa89ecb493f87c5cae96876a44",
+      "citationsSha256": "53f9145faa3b21a5f646ecdf4df82aef81f5582607cb2aeabfe937285e1e70aa",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "5442b1970af6eb956934c2545bb3c39e1236f221fb022e917afd9fb189cfeb8f",
+    "stateSha256": "c08428637f45e3a60d2e95aa9129d272725b21e51014f9b4aaac0b55420fc354",
+    "taskSnapshotSha256": "0fb48e6bbe32e46716c77473b80e4dd1e880da3b454de9eba248a4fadf24e72a"
+  },
+  "contextSha256": "d09cd522377706bb44eb088bab54ef1e5a18a40706eb0d02a129724c43e44646"
+}

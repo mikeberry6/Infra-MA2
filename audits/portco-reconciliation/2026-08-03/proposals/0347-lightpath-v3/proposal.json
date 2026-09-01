@@ -1,0 +1,383 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0347:lightpath:c411cbd2",
+  "taskIndex": 347,
+  "asOfDate": "2026-09-01",
+  "generatedAt": "2026-09-01T15:42:00.000Z",
+  "canonicalKey": "lightpath|united-states",
+  "companyName": "Lightpath",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER"
+  ],
+  "sourceHoldingIds": [
+    "069-morgan-stanley-infrastructure-partners:holding:003:lightpath"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Use the existing Lightpath Holdings LLC production record as the single platform, canonicalize the public identity to Lightpath, add Optimum's disclosed 50.01% controlling interest, correct MSIP's 49.99% vehicle and stake, and supersede the reciprocal Lightpath Holdings task rather than creating a duplicate.",
+  "evidence": [
+    {
+      "url": "https://documents.dps.ny.gov/search/Home/ViewDoc/Find?ext=pdf&id=%7B3066D197-0000-C43B-86C9-1DFE7BEEA84D%7D",
+      "purpose": "New York regulatory ownership petition supporting the Lightpath identity, ownership chain, governance, and current 50.01%/49.99% split.",
+      "supports": [
+        "canonical identity",
+        "Optimum ownership",
+        "MSIP ownership",
+        "governance"
+      ]
+    },
+    {
+      "url": "https://investors.optimum.com/news-events/press-releases/detail/35/altice-usa-announces-closing-of-sale-of-49-99-of-lightpath",
+      "purpose": "Transaction-party closing announcement supporting the December 1, 2020 close and retained ownership split.",
+      "supports": [
+        "closing date",
+        "50.01% Optimum stake",
+        "49.99% MSIP stake"
+      ]
+    },
+    {
+      "url": "https://www.morganstanley.com/im/en-us/individual-investor/companies/lightpath.html",
+      "purpose": "Manager portfolio evidence supporting continuing MSIP ownership.",
+      "supports": [
+        "current MSIP ownership",
+        "infrastructure strategy basis"
+      ]
+    },
+    {
+      "url": "https://lightpathfiber.com/wp-content/uploads/2026/07/lightpath_channel_partners_general_product_sheet.pdf",
+      "purpose": "Company operating evidence supporting the current network footprint and service profile.",
+      "supports": [
+        "operating footprint",
+        "services",
+        "customers"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "4321a6bfa570f2c49984c519ddf32725e1af5e03c46c2f5de5e8d628001fca23",
+  "currentCompanySnapshotSha256": "8e74c4ba5793a7d8e85772d52278fa134ca8a781df83f8af879c380e1678a72f",
+  "executionLock": {
+    "taskSnapshotSha256": "d523df9b9bd6d4595e71bf2b91f7a9f474bde4cbc92e42c8a50b8cd133dd9442",
+    "taskStateSha256": "f1d799771cc602be51af2557a3154c215005a2ade1acee6c2563ef421ac1892b",
+    "taskDependencySha256": "6bcfb704e0308343f305e4b46955d9cf7944dfba4dac1cebcc4f7954acf99515",
+    "seedEntrySha256": "176be2f78d515e55c694a253c8b2ea06866b3463848f94aa4704f44e3ea73ace",
+    "dependencies": {
+      "ownershipPeriodsSha256": "7910982eda9b866b768e8b8e4f9210d139dc8be911f8992c78284e63d2918813",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "7e3d71f6a3d51f7bcfb141c095c649e930428b5ce0ce222c371e65829254ffda",
+      "organizationsSha256": "b5c0ff774816ee23edf724024a371230616567a92c04c7d261e64f295f9e93b4",
+      "citationsSha256": "ff99c331da15f02439af0a7328dbe25f93c7ce3af63511d4175424a7ebb1a65e",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmsdi41gb004y7h4sql1igk6u",
+        "fundName": "North Haven Infrastructure Partners III",
+        "managerId": "cmrxpibqa002yivhe44v34tdd",
+        "updatedAt": "2026-08-03T17:26:37.403Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpifi80045ivhe1qqdd4g8",
+        "name": "MSIP",
+        "updatedAt": "2026-07-23T16:09:27.296Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjlkj016nivhekkqd6jy8",
+    "name": "Lightpath Holdings LLC",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Enterprise and carrier fiber networks",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Lightpath owns, builds, and operates metro and regional fiber networks serving enterprise, hyperscale, data center, wireless, and carrier customers. Its operating model is asset-heavy and network-based, centered on dark fiber, wavelength, Ethernet, and transport services delivered over owned fiber routes. Public materials describe approximately 10,800 unique route miles, more than 15,000 service locations, over 170 data centers, and eight cable landing stations on the network. The company began as Altice USA's fiber enterprise business and has since expanded into new metro markets including Boston, Miami, Northern Virginia, Phoenix, and Columbus. Altice USA agreed in July 2020 to sell a 49.99% interest in the business to Morgan Stanley Infrastructure Partners and closed the transaction in December 2020, while retaining a 50.01% interest. Public disclosures reviewed through late 2024 continued to describe this 50.01% Altice and 49.99% MSIP ownership structure.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "New York; New Jersey; Connecticut; Massachusetts; Virginia; Florida; Ohio; Arizona; Pennsylvania",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk7vb025zivhehw6apbvt",
+        "managerName": "Morgan Stanley Infrastructure Partners",
+        "organizationName": "MSIP",
+        "fundName": "North Haven Infrastructure Partners III",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2020,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmg2704vjivhelgwpiu8o",
+        "date": "Dec 2020",
+        "event": "Altice USA closed the Lightpath sale to MSIP while retaining 50.01% ownership.",
+        "category": "ACQUISITION",
+        "sortDate": "2020-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmg2p04vkivhebazhh1bc",
+        "date": "Jul 2020",
+        "event": "Altice USA agreed to sell a 49.99% interest in Lightpath to Morgan Stanley Infrastructure Partners.",
+        "category": "ACQUISITION",
+        "sortDate": "2020-07-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmg3904vlivheeleea4im",
+        "date": "Jun 2021",
+        "event": "Lightpath entered the Boston market through acquisitions and new network builds.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-06-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmg3u04vmivhelcn5h31z",
+        "date": "May 2022",
+        "event": "Lightpath said its network had reached 20,000 route miles and 13,500 service locations.",
+        "category": "EXPANSION",
+        "sortDate": "2022-05-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmg4f04vnivhevb5rixdf",
+        "date": "Mar 2026",
+        "event": "Lightpath announced it had been awarded a U.S. General Services Administration schedule contract.",
+        "category": "EXPANSION",
+        "sortDate": "2026-03-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsc9b0cfjivheha3tbwht",
+        "label": "Lightpathfiber — Lightpath Holdings LLC",
+        "url": "https://lightpathfiber.com/our-network",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Lightpathfiber operations / asset details",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpsca90cflivhevfzpnjgt",
+        "label": "Acquisition agreement source — MSIP — Lightpath Holdings LLC",
+        "url": "https://www.sec.gov/Archives/edgar/data/1702780/000110465920111136/tm2032040d1_8k.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "SEC filing",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpscbf0cfnivheodctfopp",
+        "label": "Close date source — MSIP — Lightpath Holdings LLC",
+        "url": "https://www.sec.gov/Archives/edgar/data/1702780/000162828021001795/atusq42020exhibit991.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "MSIP closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsccg0cfpivheol5zatq5",
+        "label": "Lightpathfiber — Lightpath Holdings LLC",
+        "url": "https://lightpathfiber.com/news/lightpath-awarded-gsa-multiple-award-schedule-contract",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Lightpathfiber — Lightpath Holdings LLC",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "8e74c4ba5793a7d8e85772d52278fa134ca8a781df83f8af879c380e1678a72f",
+  "afterImage": {
+    "id": "cmrxpjlkj016nivhekkqd6jy8",
+    "name": "Lightpath",
+    "aliases": [
+      "Lightpath Holdings LLC",
+      "Cablevision Lightpath LLC",
+      "Cablevision Lightpath, Inc."
+    ],
+    "sector": "DIGITAL",
+    "subsector": "Enterprise and carrier fiber networks",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Lightpath owns, builds, and operates metro and regional fiber networks serving enterprise, hyperscale, data-center, wireless, carrier, government, and institutional customers. The asset-heavy platform provides Internet, Ethernet, transport, wavelengths, private networks, dark fiber, voice, and managed connectivity. As of July 2026, Lightpath reported more than 12,100 route miles, over 18,000 service locations, more than 190 on-net data centers, eight cable landing stations, and operations across 11 metro markets. Optimum Communications retains 50.01% controlling common equity, while Morgan Stanley Infrastructure Partners holds 49.99% through NHIP III Lantern Holding LLC; no later common-equity transfer was identified.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://lightpathfiber.com/",
+    "yearFounded": null,
+    "headquarters": "Bethpage, New York, United States",
+    "lastVerifiedAt": "2026-09-01T15:42:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk7vb025zivhehw6apbvt",
+        "managerName": "MSIP",
+        "organizationName": "MSIP",
+        "fundName": null,
+        "vehicleName": "NHIP III Lantern Holding LLC",
+        "stake": "49.99% non-controlling common equity",
+        "investmentYear": 2020,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Optimum Communications",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Cablevision Lightpath Holdings LLC and Lightpath Holdco 2, Inc.",
+        "stake": "50.01% controlling common equity",
+        "investmentYear": 2020,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmg2704vjivhelgwpiu8o",
+        "date": "Dec 1, 2020",
+        "event": "Altice USA closed the sale of 49.99% of Lightpath to the MSIP-led vehicle and retained 50.01% control.",
+        "category": "ACQUISITION",
+        "sortDate": "2020-12-01T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://investors.optimum.com/news-events/press-releases/detail/35/altice-usa-announces-closing-of-sale-of-49-99-of-lightpath"
+        ]
+      },
+      {
+        "id": "cmrxpmg2p04vkivhebazhh1bc",
+        "date": "Jul 2020",
+        "event": "Altice USA agreed to sell a 49.99% interest in Lightpath to Morgan Stanley Infrastructure Partners.",
+        "category": "ACQUISITION",
+        "sortDate": "2020-07-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmg3904vlivheeleea4im",
+        "date": "Jun 2021",
+        "event": "Lightpath entered the Boston market through acquisitions and new network builds.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-06-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmg3u04vmivhelcn5h31z",
+        "date": "May 2022",
+        "event": "Lightpath said its network had reached 20,000 route miles and 13,500 service locations.",
+        "category": "EXPANSION",
+        "sortDate": "2022-05-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmg4f04vnivhevb5rixdf",
+        "date": "Jul 2026",
+        "event": "Lightpath reported more than 12,100 route miles, 18,000 service locations, 190 on-net data centers, and eight cable landing stations across 11 metro markets.",
+        "category": "EXPANSION",
+        "sortDate": "2026-07-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://lightpathfiber.com/wp-content/uploads/2026/07/lightpath_channel_partners_general_product_sheet.pdf"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsc9b0cfjivheha3tbwht",
+        "label": "Lightpathfiber — Lightpath Holdings LLC",
+        "url": "https://lightpathfiber.com/our-network",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Lightpathfiber operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsca90cflivhevfzpnjgt",
+        "label": "Acquisition agreement source — MSIP — Lightpath Holdings LLC",
+        "url": "https://www.sec.gov/Archives/edgar/data/1702780/000110465920111136/tm2032040d1_8k.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "SEC filing",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpscbf0cfnivheodctfopp",
+        "label": "Close date source — MSIP — Lightpath Holdings LLC",
+        "url": "https://www.sec.gov/Archives/edgar/data/1702780/000162828021001795/atusq42020exhibit991.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "MSIP closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsccg0cfpivheol5zatq5",
+        "label": "Lightpathfiber — Lightpath Holdings LLC",
+        "url": "https://lightpathfiber.com/news/lightpath-awarded-gsa-multiple-award-schedule-contract",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Lightpathfiber — Lightpath Holdings LLC",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Optimum — Lightpath ownership closing",
+        "url": "https://investors.optimum.com/news-events/press-releases/detail/35/altice-usa-announces-closing-of-sale-of-49-99-of-lightpath",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "December 1, 2020 closing and 50.01%/49.99% ownership split",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "NYPSC — Lightpath ownership petition",
+        "url": "https://documents.dps.ny.gov/search/Home/ViewDoc/Find?ext=pdf&id=%7B3066D197-0000-C43B-86C9-1DFE7BEEA84D%7D",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current ownership chain, governance and platform identity",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "Morgan Stanley — Lightpath portfolio",
+        "url": "https://www.morganstanley.com/im/en-us/individual-investor/companies/lightpath.html",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Continuing MSIP portfolio ownership",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Lightpath — July 2026 product sheet",
+        "url": "https://lightpathfiber.com/wp-content/uploads/2026/07/lightpath_channel_partners_general_product_sheet.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current network footprint and service profile",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "4bbf882b8ae351f19745a35bc70e9ede390d5d4c9c9300f9142d6e7ce44c812f",
+  "proposalSha256": "6726555865920cb359abe02ae9a69c87c0b1014db9fa987f5be41d8da81df00a"
+}

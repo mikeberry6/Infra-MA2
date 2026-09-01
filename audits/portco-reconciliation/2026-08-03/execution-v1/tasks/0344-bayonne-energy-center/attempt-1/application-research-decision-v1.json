@@ -1,0 +1,231 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0344:bayonne-energy-center:2a01ade1",
+  "taskIndex": 344,
+  "companyName": "Bayonne Energy Center",
+  "asOfDate": "2026-08-19",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-01T15:38:30.000Z",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "Bayonne Energy Center",
+    "requestedManagers": [
+      "Morgan Stanley Infrastructure Partners (MSIP)",
+      "JERA or named buyer",
+      "Macquarie Infrastructure",
+      "ArcLight Capital Partners"
+    ],
+    "decision": "PROPOSED_CORRECTION",
+    "confidence": "HIGH",
+    "rationale": "MSIP's 100% sale closed 2026-07-23 to Jupiter Energy Investor, renamed Tunnel Energy Investor. Tunnel's parent is 32% Elliott Associates/68% Elliott International and Elliott-managed. JERA was not a party.",
+    "identityResolution": {
+      "canonicalName": "Bayonne Energy Center",
+      "legalProjectCompany": "Bayonne Energy Center, LLC",
+      "aliases": [
+        "BEC"
+      ],
+      "countedBoundary": "One thermal asset: BEC I (512 MW; COD 2012), BEC II (132 MW; COD 2018) and the 6.75-mile AC cable to Gowanus.",
+      "legalChain": "Tunnel Energy Investor > Thermal Bayonne Holdings > Thermal Bayonne Holdings II > Bayonne Energy Center Holdings > Bayonne Energy Center LLC.",
+      "capacityTreatment": "644 MW in the detailed 2018 filing versus approximately 660 MW in 2026 sources; treat as rating/rounding, not another asset."
+    },
+    "ownershipResolution": [
+      {
+        "manager": "Elliott Investment Management L.P.",
+        "organization": "Elliott",
+        "fund": "Elliott Associates L.P. 32%; Elliott International L.P. 68%",
+        "vehicle": "Tunnel Energy Investor LLC (f/k/a Jupiter), via Jupiter Energy Investments LLC",
+        "stake": "100% indirect",
+        "announcementDate": "2026-03-17",
+        "entryDate": "2026-07-23",
+        "entryYear": 2026,
+        "exitDate": null,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED"
+      },
+      {
+        "manager": "MSIP",
+        "organization": "Morgan Stanley Investment Management",
+        "fund": "NHIP II U.S. Investments L.P. plus co-investors; feeder ~60% AIV I/~40% NHIP II",
+        "vehicle": "NHIP II Bayonne Holdings LLC",
+        "stake": "100% collectively",
+        "announcementDate": "2018-07-29",
+        "entryDate": "2018-10-12",
+        "entryYear": 2018,
+        "exitDate": "2026-07-23",
+        "exitYear": 2026,
+        "isActive": false,
+        "transactionState": "EXITED"
+      },
+      {
+        "manager": "Macquarie Infrastructure Management (USA) Inc.",
+        "organization": "Macquarie Infrastructure Corporation",
+        "fund": "N/A—listed company",
+        "vehicle": "Ragfy Holdings/MIC Thermal Power Holdings LLC",
+        "stake": "100%",
+        "announcementDate": "2015-02-03",
+        "entryDate": "2015-04-01",
+        "entryYear": 2015,
+        "exitDate": "2018-10-12",
+        "exitYear": 2018,
+        "isActive": false,
+        "transactionState": "EXITED"
+      },
+      {
+        "manager": "ArcLight Capital Partners LLC",
+        "organization": "ArcLight",
+        "fund": "ArcLight Energy Partners Fund III L.P.",
+        "vehicle": "AL Bayonne/PER Development Holdings LLC",
+        "stake": "50%, then 100% after Hess exit",
+        "announcementDate": "2014-05-22",
+        "entryDate": "NOT_PUBLICLY_DISCLOSED",
+        "entryYear": null,
+        "exitDate": "2015-04-01",
+        "exitYear": 2015,
+        "isActive": false,
+        "transactionState": "EXITED"
+      },
+      {
+        "manager": "Hess Corporation",
+        "organization": "Hess",
+        "fund": "N/A",
+        "vehicle": "Hess Bayonne LLC",
+        "stake": "50%",
+        "announcementDate": "2014-05-22",
+        "entryDate": "NOT_PUBLICLY_DISCLOSED",
+        "entryYear": null,
+        "exitDate": "2014-Q3",
+        "exitYear": 2014,
+        "isActive": false,
+        "transactionState": "EXITED"
+      }
+    ],
+    "operatingResolution": {
+      "status": "Operating",
+      "facility": "10 simple-cycle aeroderivative dual-fuel turbines; natural gas with ULSD backup.",
+      "market": "Wholesale energy, capacity and ancillary services into NYISO Zone J; no captive customers. Eligible U.S. power infrastructure.",
+      "operator": "BEC LLC manages daily operations; Ethos Energy remains contracted O&M. TigerGenCo was MSIP's platform, not an owner or current sponsor.",
+      "website": "No buyer-controlled standalone site verified post-close."
+    },
+    "acquisitionExitCheck": {
+      "latestTransaction": {
+        "direction": "INCOMING_OWNERSHIP",
+        "buyer": "Tunnel Energy Investor LLC (f/k/a Jupiter), Elliott-controlled",
+        "seller": "NHIP II Bayonne Holdings LLC (MSIP)",
+        "stake": "100% of Thermal Bayonne Holdings LLC",
+        "announcementDate": "2026-03-17",
+        "closingDate": "2026-07-23",
+        "state": "CLOSED",
+        "evidenceUrls": [
+          "https://www.morganstanley.com/im/en-us/institutional-investor/insights/press-release/msip-agrees-to-sell-bayonne-energy-center.html",
+          "https://elibrary.ferc.gov/eLibrary/filelist?accession_Number=20260514-3044",
+          "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B2008B99F-0000-CD12-90AA-6AB830772000%7D"
+        ]
+      },
+      "approvals": "PSA 2026-03-13; FERC Section 203 order 2026-05-14; NYPSC ruling 2026-07-22; notice filed 2026-07-31.",
+      "laterCheck": "No later sale, retirement/deactivation, capacity change or signed pending deal found. A $675m TLB upsize was planned; completion detail was not located."
+    },
+    "milestones": [
+      {
+        "date": "2014-Q3",
+        "event": "Hess sold 50%; ArcLight became 100%. Exact day NOT_PUBLICLY_DISCLOSED."
+      },
+      {
+        "date": "2015-04-01",
+        "event": "Macquarie closed its 100% ArcLight acquisition."
+      },
+      {
+        "date": "2018-10-12",
+        "event": "MSIP/NHIP II closed its 100% Macquarie acquisition."
+      },
+      {
+        "date": "2026-07-23",
+        "event": "Elliott's buyer closed its 100% MSIP acquisition and became Tunnel Energy Investor."
+      }
+    ],
+    "evidence": [
+      {
+        "label": "NYPSC closing notice",
+        "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B2008B99F-0000-CD12-90AA-6AB830772000%7D",
+        "purpose": "Close date; buyer rename",
+        "sourceTier": "T1_REGULATOR",
+        "workingStatus": "OPENED_VERIFIED",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "NYPSC 2026 petition",
+        "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B70A8259D-0000-CC2D-ADEE-B0DFFB934636%7D",
+        "purpose": "Stake, PSA, funds and chain",
+        "sourceTier": "T1_REGULATOR",
+        "workingStatus": "OPENED_VERIFIED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "MIC 2018 10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1289790/000114420419009151/v510386_10k.htm",
+        "purpose": "2018 close",
+        "sourceTier": "T1_SEC",
+        "workingStatus": "OPENED_VERIFIED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "MIC 2015 10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1289790/000114420416083730/v427608_10k.htm",
+        "purpose": "2015 100% close",
+        "sourceTier": "T1_SEC",
+        "workingStatus": "OPENED_VERIFIED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "NYPSC 2018 petition",
+        "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B19768937-7A4E-4658-B23B-1BDB76328CE4%7D",
+        "purpose": "BEC I/II/cable boundary",
+        "sourceTier": "T1_REGULATOR",
+        "workingStatus": "OPENED_VERIFIED",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "before": "MSIP active; sale pending; JERA/buyer ambiguous; fund, vehicle and boundary incomplete.",
+      "after": "MSIP exited 2026-07-23; Elliott/Tunnel active; sale CLOSED; JERA removed; BEC I+II+cable counted once."
+    },
+    "excludedOrDuplicateCandidates": [
+      "JERA—exclude as buyer/current owner.",
+      "TigerGenCo, Ethos, Zone J Tolling, holdcos, BEC phases and cable—not separate manager-level holdings.",
+      "BEC III LLC—separate co-located 50 MW/200 MWh battery project; do not merge with this thermal record."
+    ],
+    "unresolvedQuestions": [
+      "Exact Hess-to-ArcLight close day in Q3 2014.",
+      "Buyer website and final $675m refinancing mechanics; neither affects ownership."
+    ],
+    "recommendedListAction": "Close the sale on 2026-07-23; retire MSIP; activate Elliott via Tunnel; retain one thermal asset; exclude JERA and BEC III."
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0344-bayonne-energy-center/attempt-1/research-decision.json",
+      "sha256": "59920508f71ec77270f21db36dd891e6d8f139b30495eff735f58fa292eae0d6"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0344-bayonne-energy-center/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "191bb36865a33dfdd9433f1e0acf4cfaabee1f9bc8cf7b4c0df14017e5249c95"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0344-bayonne-energy-center/attempt-1/source-verification.json",
+      "sha256": "d2935e0fe4498dcf735573b66ba9343f8d30f20d09437ba6edca3af1da7340cc"
+    },
+    "acceptedResponseSha256": "5e532ff35499cc807e3e828b7b44f9482700dd15a83d15349e12317082029945",
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+    "identityCorrection": {
+      "originalTaskId": "ledger:0344:bayonne-energy-center:293724c6",
+      "correctedTaskId": "ledger:0344:bayonne-energy-center:2a01ade1",
+      "basis": "The immutable research prompt carries the canonical queue task id; only the downstream transport metadata used a stale task suffix.",
+      "researchPrompt": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0344-bayonne-energy-center/attempt-1/research-prompt.md",
+        "sha256": "e1bc0841187d03932e08bacf2fd7319e198520a12e5d7a81ba28d1352284ee73"
+      }
+    }
+  }
+}

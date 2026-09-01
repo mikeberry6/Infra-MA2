@@ -1,0 +1,118 @@
+{
+  "generatedAt": "2026-09-01T15:42:00.000Z",
+  "actions": [
+    "CORRECT_COMPANY",
+    "RETIRE_OWNERSHIP",
+    "ADD_OWNER"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "reviewedSeedRetirementTaskIds": [],
+  "rationale": "The 100% sale of Bayonne Energy Center closed on July 23, 2026. Retire MSIP without deleting its ownership history, add Elliott's Tunnel Energy Investor chain as the current owner, remove the stale pending-sale wording, and preserve one thermal BEC I/BEC II/cable asset boundary.",
+  "evidence": [
+    {
+      "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B2008B99F-0000-CD12-90AA-6AB830772000%7D",
+      "purpose": "New York regulatory closing notice supporting the July 23, 2026 close and the buyer's Tunnel Energy Investor name.",
+      "supports": [
+        "closing date",
+        "current owner",
+        "buyer identity"
+      ]
+    },
+    {
+      "url": "https://www.morganstanley.com/im/en-us/institutional-investor/insights/press-release/msip-agrees-to-sell-bayonne-energy-center.html",
+      "purpose": "Seller announcement supporting MSIP's disposition of the full Bayonne Energy Center interest.",
+      "supports": [
+        "MSIP exit",
+        "asset boundary"
+      ]
+    },
+    {
+      "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B70A8259D-0000-CC2D-ADEE-B0DFFB934636%7D",
+      "purpose": "New York regulatory petition supporting the Elliott fund ownership chain and 100% transaction scope.",
+      "supports": [
+        "Elliott ownership chain",
+        "100% stake"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "companyFieldUpdates": {
+    "description": "Bayonne Energy Center is a gas-fired merchant generating facility in Bayonne, New Jersey, comprising BEC I, BEC II, and the dedicated cable connection into New York City's NYISO Zone J market. The approximately 660 MW dual-fuel asset sells wholesale energy, capacity, and ancillary services and provides dispatchable support to a constrained urban load pocket. MSIP acquired the facility in October 2018 and sold its full interest on July 23, 2026 to Tunnel Energy Investor, an Elliott-managed buyer formerly named Jupiter Energy Investor. BEC III, a separately proposed battery project, is not part of this thermal-generation record.",
+    "headquarters": "Bayonne, New Jersey, United States",
+    "lastVerifiedAt": "2026-09-01T15:42:00.000Z"
+  },
+  "ownershipPeriodUpdates": [
+    {
+      "id": "cmrxpk7rg025sivhe9dxk8h02",
+      "set": {
+        "organizationName": "Morgan Stanley Infrastructure Partners",
+        "vehicleName": "NHIP II Bayonne Holdings LLC",
+        "stake": "100% collectively",
+        "exitYear": 2026,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    }
+  ],
+  "ownershipPeriodRemovals": [],
+  "ownershipPeriodAdditions": [
+    {
+      "id": null,
+      "managerName": "Elliott Investment Management",
+      "organizationName": null,
+      "fundName": null,
+      "vehicleName": "Tunnel Energy Investor LLC (formerly Jupiter Energy Investor LLC)",
+      "stake": "100% indirect",
+      "investmentYear": 2026,
+      "exitYear": null,
+      "isActive": true,
+      "transactionState": "CLOSED_ACTIVE"
+    }
+  ],
+  "pendingOwnershipTransactionUpdates": [],
+  "pendingOwnershipTransactionAdditions": [],
+  "milestoneUpdates": [
+    {
+      "id": "cmrxpmfip04v0ivhe01w76uyi",
+      "set": {
+        "date": "Jul 23, 2026",
+        "event": "Elliott's Tunnel Energy Investor completed its acquisition of Bayonne Energy Center from MSIP.",
+        "category": "DIVESTITURE",
+        "sortDate": "2026-07-23T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B2008B99F-0000-CD12-90AA-6AB830772000%7D"
+        ]
+      }
+    }
+  ],
+  "milestoneTransfers": [],
+  "citationUpdates": [
+    {
+      "id": "cmrxpsb1h0ce5ivhe0436e957",
+      "set": {
+        "isPrimary": false
+      }
+    }
+  ],
+  "citationAdditions": [
+    {
+      "id": null,
+      "label": "NYPSC — Bayonne Energy Center closing notice",
+      "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B2008B99F-0000-CD12-90AA-6AB830772000%7D",
+      "sourceType": "OTHER",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "July 23, 2026 closing and Tunnel Energy Investor buyer identity",
+      "isPrimary": true
+    },
+    {
+      "id": null,
+      "label": "NYPSC — Bayonne Energy Center transfer petition",
+      "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B70A8259D-0000-CC2D-ADEE-B0DFFB934636%7D",
+      "sourceType": "OTHER",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Elliott ownership chain and 100% transfer scope",
+      "isPrimary": false
+    }
+  ]
+}

@@ -1,0 +1,218 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0348:torch-clean-energy:6be03d62",
+  "taskIndex": 348,
+  "companyName": "Torch Clean Energy",
+  "asOfDate": "2026-08-19",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-01T15:38:30.000Z",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "Torch Clean Energy",
+    "requestedManagers": [
+      "Morgan Stanley Infrastructure Partners (MSIP)"
+    ],
+    "decision": "PROPOSED_CORRECTION",
+    "confidence": "HIGH",
+    "rationale": "ADD_OWNER is a false-positive match: the census and repository describe the same platform, whose existing active MSIP period already captures the only disclosed sponsor. The official announcement was 2025-01-21, not June 2025. KeyBanc identifies platform equity; MSIP's portfolio and later evidence support closed, active ownership. Exact close, stake, control, fund, vehicle, acquisition affiliate, retained founder stake and co-investors are not public. No later platform owner change or exit was found.",
+    "identityResolution": {
+      "canonicalName": "Torch Clean Energy",
+      "canonicalKey": "torch-clean-energy|united-states",
+      "legalEntity": "NOT_PUBLICLY_DISCLOSED",
+      "origin": "Renewable division begun in 2008; separated in 2013; independent and founder-owned by 2015.",
+      "founders": [
+        "Jonathan Kilberg (publicly identified founder/co-founder)"
+      ],
+      "otherFounders": "NOT_PUBLICLY_DISCLOSED",
+      "predecessor": "Torch Renewable Energy, LLC; historical reporting names Torch Energy Advisors Incorporated as parent; legal continuity is NOT_PUBLICLY_DISCLOSED.",
+      "boundary": "One platform; exclude project SPVs, sites, sold projects and project JVs.",
+      "historicalSourceUrl": "https://coastalreview.org/2013/12/wind-farm-plan-causes-a-chill-in-carteret/"
+    },
+    "ownershipResolution": {
+      "structure": "Corporate platform equity, not project debt, tax equity, project capital or a development JV.",
+      "owners": [
+        {
+          "manager": "NOT_APPLICABLE",
+          "organization": "Torch Energy Advisors Incorporated",
+          "fund": "NOT_APPLICABLE",
+          "vehicle": "Torch Renewable Energy, LLC",
+          "stake": "NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "NOT_PUBLICLY_DISCLOSED",
+          "entryDate": "NOT_PUBLICLY_DISCLOSED",
+          "entryYear": 2008,
+          "exitDate": "NOT_PUBLICLY_DISCLOSED",
+          "exitYear": 2013,
+          "isActive": false,
+          "transactionState": "FORMER_PREDECESSOR_PARENT"
+        },
+        {
+          "manager": "Founder shareholders",
+          "organization": "Founder shareholders",
+          "fund": "NOT_APPLICABLE",
+          "vehicle": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "NOT_PUBLICLY_DISCLOSED",
+          "entryDate": "NOT_PUBLICLY_DISCLOSED",
+          "entryYear": 2015,
+          "exitDate": "NOT_PUBLICLY_DISCLOSED",
+          "exitYear": null,
+          "isActive": null,
+          "transactionState": "PRE_MSIP_OWNER; RETENTION_NOT_PUBLICLY_DISCLOSED"
+        },
+        {
+          "manager": "Morgan Stanley Infrastructure Partners (MSIP)",
+          "organization": "Morgan Stanley Infrastructure Partners",
+          "fund": "NOT_PUBLICLY_DISCLOSED",
+          "vehicle": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2025-01-21",
+          "entryDate": "NOT_PUBLICLY_DISCLOSED",
+          "entryYear": 2025,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE"
+        }
+      ],
+      "coInvestors": "NONE_PUBLICLY_DISCLOSED",
+      "retainedFounderOwnership": "NOT_PUBLICLY_DISCLOSED"
+    },
+    "operatingResolution": {
+      "website": "https://www.torchcleanenergy.com/",
+      "headquarters": "Boulder, Colorado",
+      "otherOffice": "Charlottesville, Virginia",
+      "status": "ACTIVE",
+      "profile": "U.S. integrated renewable IPP developing, owning and monetizing utility-scale solar, wind and battery storage.",
+      "footprint": "20+ projects across eight states; focus includes the Desert Southwest, Michigan and Southeast.",
+      "scale": "Current site: 1.6+ GW originated/developed/sold; January 2025 release: 1.2+ GW.",
+      "counterparties": "Utilities, lenders, tax-equity providers, offtakers, EPC firms and suppliers are not thereby owners."
+    },
+    "acquisitionExitCheck": {
+      "searchedThrough": "2026-08-19",
+      "closeBasis": "KeyBanc says Torch received equity; MSIP lists January 2025 as invested; an October 2025 release calls Torch MSIP's U.S. IPP platform. Exact legal close is NOT_PUBLICLY_DISCLOSED.",
+      "laterResult": "No public sale, recapitalization, added sponsor, ownership transfer or pending platform exit found.",
+      "pendingTransactions": [],
+      "projectBoundary": "Project sales and JVs do not change platform ownership."
+    },
+    "milestones": [
+      {
+        "date": "2008",
+        "event": "Renewable division began."
+      },
+      {
+        "date": "2013",
+        "event": "Separated from former parent."
+      },
+      {
+        "date": "2025-01-21",
+        "event": "MSIP platform investment announced; KeyBanc describes equity."
+      },
+      {
+        "date": "2025-10-15",
+        "event": "Later release confirms MSIP-backed U.S. IPP status."
+      }
+    ],
+    "evidence": [
+      {
+        "label": "MSIP transaction release",
+        "url": "https://www.morganstanley.com/press-releases/morgan-stanley-infrastructure-partners--torch-clean-energy",
+        "purpose": "Announcement date and scope.",
+        "sourceTier": "PRIMARY_MANAGER",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "MSIP portfolio page",
+        "url": "https://www.morganstanley.com/im/en-us/institutional-investor/companies/torch-clean-energy.html",
+        "purpose": "January 2025 investment.",
+        "sourceTier": "PRIMARY_MANAGER",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "KeyBanc deal page",
+        "url": "https://www.key.com/businesses-institutions/our-transactions/deals.torch-clean-energy.html",
+        "purpose": "Platform equity; founder-owned history.",
+        "sourceTier": "PRIMARY_ADVISOR",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Torch projects page",
+        "url": "https://www.torchcleanenergy.com/projects",
+        "purpose": "IPP boundary, scale and footprint.",
+        "sourceTier": "PRIMARY_COMPANY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Torch about page",
+        "url": "https://www.torchcleanenergy.com/about",
+        "purpose": "Origin, separation and offices.",
+        "sourceTier": "PRIMARY_COMPANY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Fluence later release",
+        "url": "https://ir.fluenceenergy.com/news-releases/news-release-details/fluence-and-torch-clean-energy-partner-deliver-160-mw-640-mwh/",
+        "purpose": "Later active-platform confirmation.",
+        "sourceTier": "PRIMARY_COUNTERPARTY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "owner": "ADD_OWNER -> reject duplicate; retain one active MSIP period.",
+      "date": "June 2025 -> 2025-01-21 announcement; exact close NOT_PUBLICLY_DISCLOSED.",
+      "vehicle": "n.a. -> fund/vehicle/stake NOT_PUBLICLY_DISCLOSED; do not infer North Haven.",
+      "profile": "Development-led/1.2+ GW -> integrated IPP/current 1.6+ GW and 20+ projects."
+    },
+    "excludedOrDuplicateCandidates": [
+      "Second MSIP owner: duplicate.",
+      "North Haven or another fund/vehicle: unsupported.",
+      "Project SPVs, sales and JVs: below platform boundary.",
+      "Advisors, lenders, tax equity, utilities, offtakers, EPC firms and suppliers: not owners."
+    ],
+    "unresolvedQuestions": [
+      "Exact legal parent and MSIP acquisition affiliate.",
+      "Exact close date, stake and control terms.",
+      "Transaction-specific MSIP fund or vehicle.",
+      "Complete founder roster, retained stake and undisclosed co-investors."
+    ],
+    "recommendedListAction": {
+      "action": "CORRECT_EXISTING_RECORD_NO_ADD_OWNER",
+      "company": "Retain one Torch platform record.",
+      "owner": "Retain one active MSIP period; announcement 2025-01-21, entry year 2025; exact entry date/fund/vehicle/stake NOT_PUBLICLY_DISCLOSED.",
+      "profile": "Update to integrated U.S. IPP and current scale."
+    }
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0348-torch-clean-energy/attempt-1/research-decision.json",
+      "sha256": "f44162e97337ca88677afd1beff71251df5a2465c1b3ddcf30b8419f0d0a4c33"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0348-torch-clean-energy/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "ae4c81340ad8c0f12835111f5b54edc939485ebb2d5033619dae98a39196fa60"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0348-torch-clean-energy/attempt-1/source-verification.json",
+      "sha256": "46bb9cf341708938e2d9cd79f7733df74bcd02907ea768bdba0a50ee284fc60c"
+    },
+    "acceptedResponseSha256": "a04bdca0c460c16bd952f977f5d70acad7d3eff1ab0eda6f5890abf7a76c77e3",
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+    "identityCorrection": {
+      "originalTaskId": "ledger:0348:torch-clean-energy:e83ad4f7",
+      "correctedTaskId": "ledger:0348:torch-clean-energy:6be03d62",
+      "basis": "The immutable research prompt carries the canonical queue task id; only the downstream transport metadata used a stale task suffix.",
+      "researchPrompt": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0348-torch-clean-energy/attempt-1/research-prompt.md",
+        "sha256": "95f43e6bf0bdc67f94fea8895853ca8a9a2c41f2aad48a54692d7b11f4a33b38"
+      }
+    }
+  }
+}

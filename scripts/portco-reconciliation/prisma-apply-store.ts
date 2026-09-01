@@ -285,6 +285,7 @@ const approvedOwnershipOrganizationProvisioning = {
   "Ocean Winds": "CORPORATE",
   "NextDecade Corporation": "CORPORATE",
   "OPTrust": "PENSION",
+  "Optimum Communications": "CORPORATE",
   "Pennybacker Capital": "FUND_MANAGER",
   "PUC Inc.": "CORPORATE",
   "Revera Inc.": "CORPORATE",

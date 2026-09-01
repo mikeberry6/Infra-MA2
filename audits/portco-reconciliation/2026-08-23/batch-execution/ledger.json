@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-01T15:30:43.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-09-01T16:16:00.000Z",
+  "activeBatchId": "batch-0344-0350-v1",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -5963,7 +5963,65 @@
           "reason": null
         }
       ]
+    },
+    {
+      "batchId": "batch-0344-0350-v1",
+      "state": "RELEASING",
+      "taskIds": [
+        "ledger:0344:bayonne-energy-center:2a01ade1",
+        "ledger:0346:flexential:a1d629db",
+        "ledger:0347:lightpath:c411cbd2",
+        "ledger:0348:torch-clean-energy:6be03d62",
+        "ledger:0350:nextdecade-corporation:a6b7db27"
+      ],
+      "taskIndexes": [
+        344,
+        346,
+        347,
+        348,
+        350
+      ],
+      "createdAt": "2026-09-01T15:37:00.000Z",
+      "updatedAt": "2026-09-01T16:16:00.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0344-0350-v1/batch-manifest-v4.json",
+        "sha256": "c864c879e4bb7f0b0a9bf5be49482d1b2bb7d2f653dcb1d232de8d5c621ff65b"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-09-01T15:37:00.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-09-01T16:14:00.000Z",
+          "evidenceSha256": [
+            "c864c879e4bb7f0b0a9bf5be49482d1b2bb7d2f653dcb1d232de8d5c621ff65b"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "RELEASING",
+          "at": "2026-09-01T16:16:00.000Z",
+          "evidenceSha256": [
+            "c864c879e4bb7f0b0a9bf5be49482d1b2bb7d2f653dcb1d232de8d5c621ff65b"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "d1dc8030766a4d043ea73aa2f2c0f708f51cac83202e922120edf0283432f78d"
+  "ledgerSha256": "2e1b3793f0be800d49c9c6404fca1bbd9e0c05c3ce132972e097dca22b84ef0e"
 }

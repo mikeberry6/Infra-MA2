@@ -1,0 +1,255 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0348:torch-clean-energy:6be03d62",
+  "taskIndex": 348,
+  "companyName": "Torch Clean Energy",
+  "generatedAt": "2026-09-01T15:37:40.704Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0348-torch-clean-energy/attempt-1/locked-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 348,
+    "taskId": "ledger:0348:torch-clean-energy:6be03d62",
+    "canonicalKey": "torch-clean-energy|united-states",
+    "companyName": "Torch Clean Energy",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 69,
+    "managers": [
+      "Morgan Stanley Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "069-morgan-stanley-infrastructure-partners:holding:001:torch-clean-energy"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjlli016pivhe3nj9izvg"
+    ],
+    "seedKeys": [
+      "torch clean energy|United States"
+    ],
+    "evidenceUrls": [
+      "https://torchcleanenergy.com/",
+      "https://www.morganstanley.com/im/en-us/institutional-investor/insights/private-markets/private-infrastructure.html"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_OWNER requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjlli016pivhe3nj9izvg",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "torch-clean-energy|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjlli016pivhe3nj9izvg",
+    "name": "Torch Clean Energy",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Utility-scale renewable power and storage development",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Torch Clean Energy develops utility-scale solar, wind, and battery storage projects in the United States. Its counterparties include utilities, corporate offtakers, and project buyers, and the business follows a development-led model that originates, advances, and monetizes projects before or after construction depending on transaction structure. Public materials describe more than 1.2 GW of projects originated, developed, and sold since the company's founding. The company operates nationally from offices in Boulder, Colorado and Charlottesville, Virginia, with disclosed project activity including large-scale storage in Arizona. Morgan Stanley Infrastructure Partners announced a strategic investment in Torch in June 2025. The reviewed public materials do not disclose the ownership percentage or the exact current fund structure following that investment.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Colorado; Virginia; Arizona",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk7yn0261ivheqfccpykg",
+        "managerName": "Morgan Stanley Infrastructure Partners",
+        "organizationName": "MSIP",
+        "fundName": "North Haven Infrastructure Partners IV",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmg8504vsivhea0f3o0ox",
+        "date": "Jan 2025",
+        "event": "MSIP / Morgan Stanley Infrastructure Partners announced a strategic investment in Torch Clean Energy.",
+        "category": "FINANCING",
+        "sortDate": "2025-01-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmg8q04vtivhed3um7ful",
+        "date": "Jan 2025",
+        "event": "Torch had originated, developed, and sold more than 1.2 GW of renewable power assets before partnering with MSIP.",
+        "category": "EXPANSION",
+        "sortDate": "2025-01-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpscjz0cfzivheqtq4d54v",
+        "label": "Torchcleanenergy — Torch Clean Energy",
+        "url": "https://torchcleanenergy.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Torchcleanenergy company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpscky0cg1ivhegk3f1u17",
+        "label": "Announcement date source — MSIP — Torch Clean Energy",
+        "url": "https://www.morganstanley.com/press-releases/morgan-stanley-infrastructure-partners--torch-clean-energy",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "MSIP transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpscm20cg3ivheh8zto4sz",
+        "label": "Key — Torch Clean Energy",
+        "url": "https://www.key.com/businesses-institutions/industry-expertise/energy/torch-clean-energy.html",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Key — Torch Clean Energy",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpscn90cg5ivhekc637c76",
+        "label": "Torchcleanenergy — Torch Clean Energy",
+        "url": "https://torchcleanenergy.com/winchester-battery-energy-storage-project/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Torchcleanenergy operations / asset details",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Torch Clean Energy",
+    "investmentFirm": "MSIP",
+    "sector": "Power & ET",
+    "subsector": "Utility-scale renewable power and storage development",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "Torch Clean Energy develops utility-scale solar, wind, and battery storage projects in the United States. Its counterparties include utilities, corporate offtakers, and project buyers, and the business follows a development-led model that originates, advances, and monetizes projects before or after construction depending on transaction structure. Public materials describe more than 1.2 GW of projects originated, developed, and sold since the company's founding. The company operates nationally from offices in Boulder, Colorado and Charlottesville, Virginia, with disclosed project activity including large-scale storage in Arizona. Morgan Stanley Infrastructure Partners announced a strategic investment in Torch in June 2025. The reviewed public materials do not disclose the ownership percentage or the exact current fund structure following that investment.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2025,
+    "headquarters": "Colorado; Virginia; Arizona",
+    "milestones": [
+      {
+        "date": "Jan 2025",
+        "event": "MSIP / Morgan Stanley Infrastructure Partners announced a strategic investment in Torch Clean Energy.",
+        "category": "Financing"
+      },
+      {
+        "date": "Jan 2025",
+        "event": "Torch had originated, developed, and sold more than 1.2 GW of renewable power assets before partnering with MSIP.",
+        "category": "Expansion"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Torchcleanenergy — Torch Clean Energy",
+        "url": "https://torchcleanenergy.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Announcement date source — MSIP — Torch Clean Energy",
+        "url": "https://www.morganstanley.com/press-releases/morgan-stanley-infrastructure-partners--torch-clean-energy",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Key — Torch Clean Energy",
+        "url": "https://www.key.com/businesses-institutions/industry-expertise/energy/torch-clean-energy.html",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Torchcleanenergy — Torch Clean Energy",
+        "url": "https://torchcleanenergy.com/winchester-battery-energy-storage-project/",
+        "type": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "MSIP",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2025,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj3ar00esivhenpk64tbc",
+        "fundName": "North Haven Infrastructure Partners IV",
+        "managerId": "cmrxpibqa002yivhe44v34tdd",
+        "updatedAt": "2026-07-23T16:09:58.131Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpifi80045ivhe1qqdd4g8",
+        "name": "MSIP",
+        "updatedAt": "2026-07-23T16:09:27.296Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0348:torch-clean-energy:6be03d62",
+    "taskIndex": 348,
+    "canonicalKey": "torch-clean-energy|united-states",
+    "capturedAt": "2026-09-01T15:37:40.704Z",
+    "databaseRevision": "revision:81330f88893bfdbda7dcd0515e40021050dfae8b7c92736c4cf7297d78db186d",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "7856d453b33920c092414e1ca50665b95e825ecea1246c1ced72ac5a969065a0",
+    "productionSnapshotSha256": "8b681c17013e4d9a26cf511dfa95a778a00cf8ef926d7d745c9676b419817152",
+    "targetCompanySnapshotSha256": "e7330708aa680b4ef1e0692f4e4626980aaa888270485a3b08e7b4a09598e305",
+    "seedEntrySha256": "5cbcc19ff10bb3a55f25c5922e6834e2b0822fc93e6751ab9abfad70ff555c1c",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "370528e3dd8614793d78fb84d8b4d8102f5dfa7ac6d335d396ae02ee4c447433",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "1f130162aa71000b482910775b741bcf925e14ca6860a8972bf70d63cd7f8684",
+      "organizationsSha256": "b5c0ff774816ee23edf724024a371230616567a92c04c7d261e64f295f9e93b4",
+      "citationsSha256": "0cc615f2723723365374d6c40cec2421dfb03d42d5fcc5b2e9cba3cd9c4cf24c",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "5a4a8cf68340c1441cf70a2512f1339eaa672ea56e44ec252eaea088415fe9ea",
+    "stateSha256": "ce3b8457c35b38f0093e008a08c39f97a916b08ebabf7ac06a9de33bfe73836f",
+    "taskSnapshotSha256": "58dbff8dca718356c2b4d0157dad18961c0c700527f810ab5a87b62266911890"
+  },
+  "contextSha256": "89b30816b34ac8d5a918b3c11351fa06e399bd51cfcf926e5244e0a79cdb5eb2"
+}
