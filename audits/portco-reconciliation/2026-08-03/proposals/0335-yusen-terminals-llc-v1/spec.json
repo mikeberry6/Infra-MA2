@@ -1,0 +1,262 @@
+{
+  "generatedAt": "2026-09-01T13:20:00.000Z",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER",
+    "RETIRE_OWNERSHIP"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "reviewedSeedRetirementTaskIds": [],
+  "rationale": "Correct Yusen Terminals' ownership history without treating Ocean Network Express' 2023 purchase as Macquarie's exit. ONE closed the acquisition of NYK's 51% interest on November 6, 2023 while Macquarie Infrastructure Partners III retained 49%. Transaction counsel later disclosed a separate US$550 million sale of Macquarie's 49% Bluefin interest, and YTI's current company-controlled profile identifies the business as wholly owned by ONE. The exact later buyer vehicle and closing date are not publicly disclosed, so the database records the verified realized state without inventing a date.",
+  "evidence": [
+    {
+      "url": "https://cityclerk.lacity.org/onlinedocs/2014/14-0094-S2_misc_100_8-18-23.pdf",
+      "purpose": "Legal ownership chain and 2023 transaction structure.",
+      "supports": [
+        "ONE acquired NYK's 51% interest in NYK Ports LLC, the parent of Yusen Terminals.",
+        "Macquarie's Bluefin vehicle retained the separate 49% interest after ONE's acquisition."
+      ]
+    },
+    {
+      "url": "https://www.one-line.com/en/news/one-strengthens-global-presence-terminal-acquisitions-us-west-coast-and-rotterdam",
+      "purpose": "ONE acquisition closing evidence.",
+      "supports": [
+        "ONE announced completion of the Yusen Terminals acquisition on November 6, 2023.",
+        "The completed transaction concerned NYK's 51% interest rather than Macquarie's 49% interest."
+      ]
+    },
+    {
+      "url": "https://www.gibsondunn.com/practice/transportation-and-space/",
+      "purpose": "Macquarie exit evidence.",
+      "supports": [
+        "Transaction counsel identifies Bluefin as the Macquarie vehicle that held the 49% interest.",
+        "Transaction counsel discloses a later US$550 million sale of Bluefin's 49% interest."
+      ]
+    },
+    {
+      "url": "https://www.linkedin.com/company/yusen-terminals",
+      "purpose": "Current ownership and operating-status evidence.",
+      "supports": [
+        "Yusen Terminals identifies itself as wholly owned by Ocean Network Express.",
+        "The company remains an active marine-terminal operator at the Port of Los Angeles."
+      ]
+    },
+    {
+      "url": "https://ec.europa.eu/competition/mergers/cases1/202314/M_11006_9088659_52_3.pdf",
+      "purpose": "Independent regulatory evidence for the 2023 ownership transition.",
+      "supports": [
+        "The European Commission reviewed ONE's purchase from NYK Energy Transport.",
+        "The transaction initially established ONE and Macquarie joint control."
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "afterImage": {
+    "id": "cmrxpjkid014xivhe2cjdm9ff",
+    "name": "Yusen Terminals LLC",
+    "aliases": [
+      "Yusen Terminals Inc.",
+      "YTI"
+    ],
+    "sector": "TRANSPORTATION",
+    "subsector": "Marine container terminal",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Yusen Terminals LLC operates a marine container terminal at the Port of Los Angeles on Terminal Island. Its infrastructure includes berths, cargo-handling cranes, storage yards, gate systems, on-dock rail and shore-power facilities serving container lines and North American import and export supply chains. Ocean Network Express acquired NYK's 51% interest in 2023 and subsequently became the terminal's sole owner after Macquarie Infrastructure Partners III sold its separate 49% interest for US$550 million. The exact closing date and buyer vehicle for Macquarie's later sale were not publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://yti.com/",
+    "yearFounded": 1991,
+    "headquarters": "Terminal Island, California, United States",
+    "lastVerifiedAt": "2026-09-01T13:20:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk6ln0240ivhev26gwa8k",
+        "managerName": "Macquarie Asset Management",
+        "organizationName": "Macquarie Asset Management",
+        "fundName": "Macquarie Infrastructure Partners III",
+        "vehicleName": "MIP III Bluefin A HoldCo LLC / MIP III (ECI) AIV, L.P.",
+        "stake": "49% of NYK Ports LLC",
+        "investmentYear": 2015,
+        "exitYear": null,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      },
+      {
+        "id": null,
+        "managerName": "Ocean Network Express",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Undisclosed ONE subsidiary / NYK Ports LLC",
+        "stake": "100% through NYK Ports LLC",
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Nippon Yusen Kabushiki Kaisha",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "NYK Group Americas / NYK Energy Transport (USA), Inc.",
+        "stake": "100% before 2015; 51% from 2015 to 2023",
+        "investmentYear": 1991,
+        "exitYear": 2023,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmafq04omivhebqswxy5b",
+        "date": "1991",
+        "event": "Yusen Terminals began operating at the Port of Los Angeles.",
+        "category": "FOUNDING",
+        "sortDate": "1991-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.linkedin.com/company/yusen-terminals"
+        ]
+      },
+      {
+        "id": "cmrxpmagf04onivhe4gvhdmcx",
+        "date": "2015",
+        "event": "Macquarie Infrastructure Partners III acquired a 49% interest in NYK Ports LLC, Yusen Terminals' parent, while NYK retained 51%.",
+        "category": "FINANCING",
+        "sortDate": "2015-02-01T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.marketscreener.com/quote/stock/NIPPON-YUSEN-KABUSHIKI-KA-6491189/news/Macquarie-Infrastructure-Partners-Inc-through-its-fund-Macquarie-Infrastructure-Partners-III-comple-38456438/"
+        ]
+      },
+      {
+        "id": "cmrxpmagy04ooivheyqvxopwn",
+        "date": "Dec 27, 2022",
+        "event": "Ocean Network Express announced an agreement to acquire NYK's 51% interest in Yusen Terminals.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-12-27T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.one-line.com/en/news/one-strengthens-global-presence-terminal-acquisitions-us-west-coast-and-rotterdam"
+        ]
+      },
+      {
+        "id": "cmrxpmahe04opivhe6xfhvepk",
+        "date": "Nov 6, 2023",
+        "event": "Ocean Network Express completed the acquisition of NYK's 51% interest; Macquarie retained its separate 49% interest at closing.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-11-06T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.one-line.com/en/news/one-strengthens-global-presence-terminal-acquisitions-us-west-coast-and-rotterdam",
+          "https://ec.europa.eu/competition/mergers/cases1/202314/M_11006_9088659_52_3.pdf"
+        ]
+      },
+      {
+        "id": "cmrxpmahy04oqivheh9o1p9fe",
+        "date": "Jun 27, 2024",
+        "event": "Yusen Terminals announced the deployment of commercially available battery-electric top handlers.",
+        "category": "OTHER",
+        "sortDate": "2024-06-27T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": null,
+        "date": "After Nov 6, 2023; by Aug 19, 2026",
+        "event": "Macquarie's Bluefin vehicle sold its 49% interest for US$550 million; Yusen Terminals subsequently identified itself as wholly owned by Ocean Network Express. The exact closing date was not publicly disclosed.",
+        "category": "DIVESTITURE",
+        "sortDate": "2026-08-19T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.gibsondunn.com/practice/transportation-and-space/",
+          "https://www.linkedin.com/company/yusen-terminals"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxps2wc0c1oivhe6o7646ed",
+        "label": "Yti — Yusen Terminals LLC",
+        "url": "https://yti.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Company identity and operating profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxps2xb0c1qivhe67adiusb",
+        "label": "Yti — Yusen Terminals LLC",
+        "url": "https://yti.com/about-us/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Terminal operations and service profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxps2xt0c1rivhehw1xr9y7",
+        "label": "Close date source — Macquarie Asset Management — TraPac LLC",
+        "url": "https://www.one-line.com/en/news/one-strengthens-global-presence-terminal-acquisitions-us-west-coast-and-rotterdam",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "November 6, 2023 acquisition closing",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxps2yu0c1tivhe6enm11p8",
+        "label": "Close date source — Macquarie Asset Management — Yusen Terminals LLC",
+        "url": "https://www.marketscreener.com/quote/stock/NIPPON-YUSEN-KABUSHIKI-KA-6491189/news/Macquarie-Infrastructure-Partners-Inc-through-its-fund-Macquarie-Infrastructure-Partners-III-comple-38456438/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Macquarie's 2015 investment",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxps2zx0c1vivhea1bscjwa",
+        "label": "Macquarie — Yusen Terminals LLC",
+        "url": "https://www.macquarie.com/au/en/about/news/2023/macquarie-infrastructure-partners-iii-completes-sales-of-ceres-terminals.html",
+        "sourceType": "WEBSITE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Macquarie terminal-portfolio context",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "City of Los Angeles — Yusen Terminals ownership-transfer report",
+        "url": "https://cityclerk.lacity.org/onlinedocs/2014/14-0094-S2_misc_100_8-18-23.pdf",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Legal ownership chain and 51/49 transaction structure",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "European Commission — ONE acquisition of Yusen Terminals",
+        "url": "https://ec.europa.eu/competition/mergers/cases1/202314/M_11006_9088659_52_3.pdf",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Regulatory confirmation of ONE and Macquarie joint control",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Gibson Dunn — Bluefin terminal-interest sale",
+        "url": "https://www.gibsondunn.com/practice/transportation-and-space/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "US$550 million sale of Macquarie's 49% interest",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Yusen Terminals — current company profile",
+        "url": "https://www.linkedin.com/company/yusen-terminals",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current wholly ONE ownership and active operations",
+        "isPrimary": false
+      }
+    ]
+  }
+}

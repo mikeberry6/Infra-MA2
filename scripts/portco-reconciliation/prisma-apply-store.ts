@@ -341,6 +341,7 @@ const approvedOwnershipOrganizationProvisioning = {
   "ConocoPhillips": "CORPORATE",
   "Blackstone-led consortium (including KKR, Apollo and Goldman Sachs)": "OTHER",
   "Mitsui O.S.K. Lines": "CORPORATE",
+  "Nippon Yusen Kabushiki Kaisha": "CORPORATE",
   "Jacksonville Port Authority": "OTHER",
   "Rest": "PENSION",
   "Orient Overseas (International) Limited": "CORPORATE",
@@ -350,6 +351,7 @@ const approvedOwnershipOrganizationProvisioning = {
   "TJC": "FUND_MANAGER",
   "PQ Corporation": "CORPORATE",
   "Ocean Network Express": "CORPORATE",
+  "EDF Renewables North America": "CORPORATE",
 } as const;
 
 export function ownershipOrganizationTypes(

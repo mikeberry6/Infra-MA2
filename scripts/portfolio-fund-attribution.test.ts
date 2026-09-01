@@ -26,7 +26,7 @@ describe("portfolio fund attribution ledger", () => {
 
   it("leaves reviewed owners unresolved when the current vehicle is not a disclosed fund", () => {
     const unresolved = ledger.rows.filter((row) => row.attribution === "UNRESOLVED");
-    expect(unresolved).toHaveLength(36);
+    expect(unresolved).toHaveLength(38);
     expect(unresolved).toContainEqual(expect.objectContaining({
       companyName: "Potters Industries, LLC",
       investmentFirm: "UniSuper",
@@ -44,6 +44,22 @@ describe("portfolio fund attribution ledger", () => {
     expect(unresolved).toContainEqual(expect.objectContaining({
       companyName: "TraPac, LLC",
       investmentFirm: "Ocean Network Express",
+      attributedFundName: null,
+      targetLinkedFundName: null,
+      proposedAction: "RESEARCH_REQUIRED",
+    }));
+    expect(unresolved).toContainEqual(expect.objectContaining({
+      companyName: "Yusen Terminals LLC",
+      investmentFirm: "Ocean Network Express",
+      currentVehicleName: "Undisclosed ONE subsidiary / NYK Ports LLC",
+      attributedFundName: null,
+      targetLinkedFundName: null,
+      proposedAction: "RESEARCH_REQUIRED",
+    }));
+    expect(unresolved).toContainEqual(expect.objectContaining({
+      companyName: "Maverick 6 & 7",
+      investmentFirm: "EDF Renewables North America",
+      currentVehicleName: "Retained Maverick 67 interests; internal vehicle not publicly disclosed",
       attributedFundName: null,
       targetLinkedFundName: null,
       proposedAction: "RESEARCH_REQUIRED",

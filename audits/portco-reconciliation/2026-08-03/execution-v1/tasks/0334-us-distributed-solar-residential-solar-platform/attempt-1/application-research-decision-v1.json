@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0334:us-distributed-solar-residential-solar-platform:d9e011d4",
+  "taskIndex": 334,
+  "companyName": "US Distributed Solar / Residential Solar Platform",
+  "asOfDate": "2026-08-19",
+  "decision": "EXCLUDED",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-01T13:10:00.000Z",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "US Distributed Solar / Residential Solar Platform",
+    "requestedManagers": [
+      "Macquarie Asset Management"
+    ],
+    "decision": "EXCLUDED",
+    "confidence": "HIGH",
+    "rationale": "The census label resolves to Macquarie's US Residential Solar tile, not a named platform. MGREF2 acquired 50% of a 268 MW portfolio of operating US residential rooftop solar projects, with an October 2020 investment date. Macquarie publishes no legal company name, website, operator or seller, and calls it a portfolio of projects. It is an unnamed asset bundle. The MGETS attribution is unsupported: direct fund-level reporting assigns the holding to MGREF2, while MGETS separately identifies Calibrant Energy as a distinct company.",
+    "identityResolution": {
+      "canonicalDisplayName": "US Residential Solar",
+      "aliases": [
+        "US Residential Solar Co",
+        "US Distributed Solar / Residential Solar Platform"
+      ],
+      "legalName": "UNRESOLVED",
+      "website": "NOT_PUBLICLY_DISCLOSED",
+      "identityType": "UNNAMED_ASSET_PORTFOLIO",
+      "calibrantMatch": false
+    },
+    "ownershipResolution": {
+      "currentOwners": [
+        {
+          "manager": "Macquarie Asset Management",
+          "organization": "Macquarie Asset Management-managed investors",
+          "fund": "Macquarie Green Investment Group Renewable Energy Fund 2",
+          "vehicle": "MGREF2",
+          "stake": "50%",
+          "announcementDate": "2021-02-10",
+          "entryDate": "2020-10",
+          "entryYear": 2020,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE"
+        }
+      ],
+      "otherCurrentOwnership": "UNRESOLVED; MGREF2 owns 50%, but the counterparty and its chain are not public.",
+      "seller": "NOT_PUBLICLY_DISCLOSED",
+      "vehicleCorrection": "MGREF2, not MGETS"
+    },
+    "operatingResolution": {
+      "boundary": "268 MW of operating residential rooftop solar projects across the US; underlying projects/SPVs are below the manager-level counting boundary.",
+      "productsServices": "Operating residential rooftop solar assets; operator, servicing and contract details are not public.",
+      "customersEndMarkets": "US residential",
+      "headquarters": "NOT_APPLICABLE",
+      "infrastructureBasis": "Qualifying operating renewable assets, but no separately identifiable operating company or platform.",
+      "eligibility": "EXCLUDE_UNNAMED_ASSET_BUNDLE"
+    },
+    "acquisitionExitCheck": {
+      "announcementDate": "2021-02-10",
+      "entryDate": "2020-10",
+      "legalClosingDate": "NOT_PUBLICLY_DISCLOSED",
+      "seller": "NOT_PUBLICLY_DISCLOSED",
+      "latestStatus": "Macquarie-sourced reporting retained MGREF2's 50% holding at 2025-09-30; Macquarie's portfolio overview retained the tile as of 2026-03-31.",
+      "exitSearch": "No later sale, recapitalization, transfer or signed pending exit located through 2026-08-19.",
+      "pendingTransactions": []
+    },
+    "milestones": [
+      {
+        "date": "2020-10",
+        "event": "MGREF2 investment date; fund ownership 50%.",
+        "state": "CLOSED"
+      },
+      {
+        "date": "2021-02-10",
+        "event": "Macquarie disclosed 50% of a 268 MW operating US residential rooftop solar portfolio.",
+        "state": "ANNOUNCED_POST_CLOSE"
+      },
+      {
+        "date": "2025-09-30",
+        "event": "Macquarie-sourced table still listed US Residential Solar Co at 50%.",
+        "state": "ACTIVE"
+      },
+      {
+        "date": "2026-03-31",
+        "event": "Current Macquarie portfolio dataset retained the tile; no exit found through cutoff.",
+        "state": "ACTIVE_ON_LATEST_EVIDENCE"
+      }
+    ],
+    "evidence": [
+      {
+        "label": "Macquarie MGREF2 final-close release",
+        "url": "https://www.macquarie.com/au/en/about/news/2021/macquarie-raises-1-6-billion-euros-for-renewable-energy-investment.html",
+        "purpose": "MGREF2 acquired 50% of a 268 MW operating US residential rooftop solar portfolio.",
+        "sourceTier": "TIER_1_MANAGER",
+        "workingStatus": "VERIFIED",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "Macquarie US Residential Solar tile",
+        "url": "https://www.macquarie.com/au/en/about/company/macquarie-asset-management/our-portfolio/us-residential-solar-co.html",
+        "purpose": "Exact tile; expressly a portfolio of projects, with no company website or legal identity.",
+        "sourceTier": "TIER_1_MANAGER",
+        "workingStatus": "VERIFIED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Westminster Q3 2025 investment report",
+        "url": "https://westminster.moderngov.co.uk/documents/s70507/Appendix%201%20-%20Q3%202025%20Investment%20Performance%20Report.pdf",
+        "purpose": "Macquarie-sourced table: US Residential Solar Co, 50%, Oct-20, held at 2025-09-30.",
+        "sourceTier": "TIER_2_PUBLIC_PENSION",
+        "workingStatus": "VERIFIED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Macquarie current portfolio overview",
+        "url": "https://www.macquarie.com/au/en/about/company/macquarie-asset-management/our-portfolio.html",
+        "purpose": "Portfolio dataset stated as of 2026-03-31 and retains the linked tile.",
+        "sourceTier": "TIER_1_MANAGER",
+        "workingStatus": "VERIFIED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Macquarie MGETS final-close release",
+        "url": "https://www.macquarie.com/au/en/about/news/2025/macquarie-asset-management-reaches-us3-billion-close-of-green-energy-transition-solutions-fund-and-co-investment-commitment.html",
+        "purpose": "MGETS is distinct and identifies Calibrant as its North American I&C distributed-energy company.",
+        "sourceTier": "TIER_1_MANAGER",
+        "workingStatus": "VERIFIED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Macquarie Calibrant tile",
+        "url": "https://www.macquarie.com/au/en/about/company/macquarie-asset-management/our-portfolio/calibrant-energy.html",
+        "purpose": "Calibrant is a named energy-as-a-service platform with its own website, unlike this portfolio.",
+        "sourceTier": "TIER_1_MANAGER",
+        "workingStatus": "VERIFIED",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "before": "Create an active generic MGETS US distributed/residential solar platform and add Macquarie.",
+      "after": "Exclude an unnamed MGREF2 asset portfolio; create no company, add no MGETS owner, and keep Calibrant separate."
+    },
+    "excludedOrDuplicateCandidates": [
+      {
+        "candidate": "Calibrant Energy",
+        "result": "NOT_A_DUPLICATE",
+        "reason": "Named MGETS I&C energy-as-a-service platform; different vehicle, end market and identity."
+      },
+      {
+        "candidate": "Sunrun, Sunnova, SunPower, Spruce Power or another residential operator",
+        "result": "NOT_PROVEN",
+        "reason": "No primary source connects a named operator to the 268 MW portfolio."
+      }
+    ],
+    "unresolvedQuestions": [
+      "Legal holding entity/SPV chain.",
+      "Identity and current chain of the non-MGREF2 50%.",
+      "Seller, exact legal closing date, operator, servicer and project composition."
+    ],
+    "recommendedListAction": "EXCLUDE as an unnamed MGREF2 residential-solar asset bundle; do not create the generic company, merge it into Calibrant or attribute it to MGETS."
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0334-us-distributed-solar-residential-solar-platform/attempt-1/research-decision.json",
+      "sha256": "e2ceac4799abd25a60a01c79b2c2c781762568d42edc5e8bdbbe975ae5ac39b2"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0334-us-distributed-solar-residential-solar-platform/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "61f504de091b56c70c322c2167616717fb83b295178d853d2ade0077ed727e3e"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0334-us-distributed-solar-residential-solar-platform/attempt-1/source-verification.json",
+      "sha256": "996aed7d36c37a870e98af662b61654d89ea531c7480e239562b3797b65891f3"
+    },
+    "acceptedResponseSha256": "9ae4b7ba84f949407f8d0182e22b21c04ebe1167d3b36389909d79b4cdf4737d",
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION"
+  }
+}

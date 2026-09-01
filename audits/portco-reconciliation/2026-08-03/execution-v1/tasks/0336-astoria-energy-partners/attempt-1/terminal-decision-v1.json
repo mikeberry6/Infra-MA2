@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0336:astoria-energy-partners:b7f656e5",
+  "taskIndex": 336,
+  "companyName": "Astoria Energy Partners",
+  "outcome": "DEFERRED",
+  "decidedAt": "2026-09-01T13:12:00.000Z",
+  "rationale": "Astoria Energy Partners resolves to the existing Astoria Power Partners Holding, LLC platform and Munich Re/MEAG's 20.0000% interest is current, but the latest evidence does not establish the current continuity and exact upstream allocations for APG, CalSTRS, Clal, Harbert and GPP/CalPERS. That active-ownership gap blocks a safe canonical merge and ownership correction until the cap table is directly evidenced.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0336-astoria-energy-partners/attempt-1/locked-batch-v1-task-snapshot.json",
+    "sha256": "8bc9b39c4d321432726698fd3a791d8ac0b3ad204bfbf3383b5299a8078421aa"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0336-astoria-energy-partners/attempt-1/application-research-decision-v1.json",
+    "sha256": "cf767ec8a84c15799add137d26683bba53711462df14bed3475e9a59aca38842"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0336-astoria-energy-partners/attempt-1/source-verification.json",
+    "sha256": "29cbf14dd0c6168b1718113d2d8a193702b4e674c72cc6b2e7331848c7fd72f8"
+  },
+  "evidence": [
+    {
+      "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B135E31CA-84CC-499B-A3DF-69F7E373218C%7D",
+      "purpose": "New York regulatory evidence for the APPH hierarchy, historical stakes and sellers."
+    },
+    {
+      "url": "https://www.munichre.com/content/dam/munichre/mrwebsiteslaunches/2020-half-year-financial-report/MunichRe-Half-Year-Financial-Report-2020-en.pdf",
+      "purpose": "Munich Re evidence for the 2020 close and 20% interest."
+    },
+    {
+      "url": "https://www.munichre.com/content/dam/munichre/mrwebsiteslaunches/2025-annual-report/MunichRe-Annual-Report-Company-2025-en.pdf",
+      "purpose": "Latest direct evidence for Munich Re/MEAG's continuing 20.0000% APPH interest."
+    },
+    {
+      "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B501D2B8F-0000-C03A-B351-F218769CBBC2%7D",
+      "purpose": "Latest exact disclosed APP II ownership split."
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "abdb08c789976d95a0f6119407521c97e5f03b482b9ee4f2a7e682e30448bb00"
+}

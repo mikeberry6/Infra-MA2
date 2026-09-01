@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0334:us-distributed-solar-residential-solar-platform:d9e011d4",
+  "taskIndex": 334,
+  "companyName": "US Distributed Solar / Residential Solar Platform",
+  "outcome": "EXCLUDED",
+  "decidedAt": "2026-09-01T13:12:00.000Z",
+  "rationale": "The census label resolves to Macquarie's US Residential Solar tile, not a named platform. MGREF2 acquired 50% of a 268 MW portfolio of operating US residential rooftop solar projects, with an October 2020 investment date. Macquarie publishes no legal company name, website, operator or seller, and calls it a portfolio of projects. It is an unnamed asset bundle. The MGETS attribution is unsupported: direct fund-level reporting assigns the holding to MGREF2, while MGETS separately identifies Calibrant Energy as a distinct company.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0334-us-distributed-solar-residential-solar-platform/attempt-1/locked-batch-v1-task-snapshot.json",
+    "sha256": "3b0562962d202e53900db072d16713f28bf8cd249c29819a50e157c0a313fba6"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0334-us-distributed-solar-residential-solar-platform/attempt-1/application-research-decision-v1.json",
+    "sha256": "60889ef80343d0db5e351a2e5d2472696db1f2558595c5786bea73687207b90f"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0334-us-distributed-solar-residential-solar-platform/attempt-1/source-verification.json",
+    "sha256": "996aed7d36c37a870e98af662b61654d89ea531c7480e239562b3797b65891f3"
+  },
+  "evidence": [
+    {
+      "url": "https://www.macquarie.com/au/en/about/news/2021/macquarie-raises-1-6-billion-euros-for-renewable-energy-investment.html",
+      "purpose": "MGREF2 acquired 50% of a 268 MW operating US residential rooftop solar portfolio."
+    },
+    {
+      "url": "https://www.macquarie.com/au/en/about/company/macquarie-asset-management/our-portfolio/us-residential-solar-co.html",
+      "purpose": "Exact tile; expressly a portfolio of projects, with no company website or legal identity."
+    },
+    {
+      "url": "https://westminster.moderngov.co.uk/documents/s70507/Appendix%201%20-%20Q3%202025%20Investment%20Performance%20Report.pdf",
+      "purpose": "Macquarie-sourced table: US Residential Solar Co, 50%, Oct-20, held at 2025-09-30."
+    },
+    {
+      "url": "https://www.macquarie.com/au/en/about/company/macquarie-asset-management/our-portfolio.html",
+      "purpose": "Portfolio dataset stated as of 2026-03-31 and retains the linked tile."
+    },
+    {
+      "url": "https://www.macquarie.com/au/en/about/news/2025/macquarie-asset-management-reaches-us3-billion-close-of-green-energy-transition-solutions-fund-and-co-investment-commitment.html",
+      "purpose": "MGETS is distinct and identifies Calibrant as its North American I&C distributed-energy company."
+    },
+    {
+      "url": "https://www.macquarie.com/au/en/about/company/macquarie-asset-management/our-portfolio/calibrant-energy.html",
+      "purpose": "Calibrant is a named energy-as-a-service platform with its own website, unlike this portfolio."
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "118fdfd277b28a19c6bc9825419d4553934e8c9041e1c40d21e9e06a95dc2e2f"
+}
