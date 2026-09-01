@@ -1,0 +1,118 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:batch:apply
+> npx tsx scripts/portco-reconciliation/batch-apply-cli.ts --batch-manifest=audits/portco-reconciliation/2026-08-23/batches/batch-0334-0338-v1/batch-manifest-v5.json --batch-sha256=a1186bdbd71d02b197832fd6abe3beb27a952e09d26a3f82e70a60f032c32f6f --seed-artifact=prisma/seed-data/approved-portco-after-images.json --apply --write-token=APPLY_APPROVED_PORTCO_BATCH --commit-receipt=tmp/portco-reconciliation/production/batch-commit-receipt.json --receipt=tmp/portco-reconciliation/production/batch-apply-receipt.json --public-base-url=https://infra-ma-2.vercel.app/Infra-MA2/
+
+(node:3588) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "BATCH_APPLIED",
+  "receiptPath": "/home/runner/work/Infra-MA2/Infra-MA2/tmp/portco-reconciliation/production/batch-apply-receipt.json",
+  "receipt": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_APPLY_BATCH_RECEIPT",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "batchId": "batch-0334-0338-v1",
+    "batchSha256": "a1186bdbd71d02b197832fd6abe3beb27a952e09d26a3f82e70a60f032c32f6f",
+    "releaseSha": "7558fa1c3fd43c6391bde220cfa5d3e214636966",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "transactionId": "723655cf-c2c2-448d-bea2-96bdf2dd97e4",
+    "appliedAt": "2026-09-01T14:02:46.827Z",
+    "members": [
+      {
+        "kind": "TERMINAL",
+        "taskId": "ledger:0334:us-distributed-solar-residential-solar-platform:d9e011d4",
+        "taskIndex": 334,
+        "companyName": "US Distributed Solar / Residential Solar Platform",
+        "outcome": "EXCLUDED",
+        "decisionSha256": "118fdfd277b28a19c6bc9825419d4553934e8c9041e1c40d21e9e06a95dc2e2f"
+      },
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0335:yusen-terminals-llc:b7587254",
+        "taskIndex": 335,
+        "companyName": "Yusen Terminals LLC",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0335:yusen-terminals-llc:b7587254",
+          "taskIndex": 335,
+          "companyName": "Yusen Terminals LLC",
+          "companyId": "cmrxpjkid014xivhe2cjdm9ff",
+          "proposalSha256": "db98134b1529530d5b0d7ba1378fdd8054d5e3275a0ade04eb1b5a300854ac8a",
+          "approvalSha256": "ded982b113372c61a1c2a6e96412f723479872d8413b8bb1a33ef71bfbe3d7ac",
+          "productionSnapshotSha256": "1f10ea7fba27431e4be99ed291db027c9589cb7452ce038ad9571aea0efaacfc",
+          "beforeCompanySnapshotSha256": "b637a6e9ab3d9f3b6ed21da62d6146970811e8400392440286c702b4166e454f",
+          "appliedAfterImageSha256": "60d1d314305ada8c471d153b40a51d0f7a736c7ab0109966d230457c805d692b",
+          "seedAfterImageSha256": "60d1d314305ada8c471d153b40a51d0f7a736c7ab0109966d230457c805d692b",
+          "approvedSeedEntrySha256": "f3839d22a6fed1d0f9026a680f193d5b40bcdc1ad52ec5eca73f3348cc6af1a8",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "723655cf-c2c2-448d-bea2-96bdf2dd97e4",
+          "auditEventId": "cmtiqlheh000dro2bsgtf104x",
+          "appliedAt": "2026-09-01T14:02:46.827Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "1a912d51c6d752a3d785f0112f316acbaf6eb9d6010c6dd9333e9b717b71ea63"
+        }
+      },
+      {
+        "kind": "TERMINAL",
+        "taskId": "ledger:0336:astoria-energy-partners:b7f656e5",
+        "taskIndex": 336,
+        "companyName": "Astoria Energy Partners",
+        "outcome": "DEFERRED",
+        "decisionSha256": "abdb08c789976d95a0f6119407521c97e5f03b482b9ee4f2a7e682e30448bb00"
+      },
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0337:maverick-6:cf60cd63",
+        "taskIndex": 337,
+        "companyName": "Maverick 6",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0337:maverick-6:cf60cd63",
+          "taskIndex": 337,
+          "companyName": "Maverick 6",
+          "companyId": "cmtiqlilt000ero2bboaqr577",
+          "proposalSha256": "0f6f3e6b7e737c55f28c95d578e0b1df051d1a7e10dd1f913142ce4fa2ffdb3e",
+          "approvalSha256": "e054797647744c23bf4e4d5d7e257444644031dfc807364ad12f5c2200d61052",
+          "productionSnapshotSha256": "110422ab66a57c1f1f15e98627aa0c2b72007918b52f144fff9a54ee2935844d",
+          "beforeCompanySnapshotSha256": null,
+          "appliedAfterImageSha256": "d906aa46e15fa78f23637b9472232b8460b80f68dd3a90e88bb2b7c957c760eb",
+          "seedAfterImageSha256": "d906aa46e15fa78f23637b9472232b8460b80f68dd3a90e88bb2b7c957c760eb",
+          "approvedSeedEntrySha256": "ee59f475a46c79827c67c7b9045bccf9b7a84ffb19035bdb9db3a2486a470f28",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "723655cf-c2c2-448d-bea2-96bdf2dd97e4",
+          "auditEventId": "cmtiqllj60011ro2bqwll2ryt",
+          "appliedAt": "2026-09-01T14:02:46.827Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "c69f3e689666ebd284db6e34124e0e8f0d5c38e11ad4dcc232eddd827787361e"
+        }
+      },
+      {
+        "kind": "TERMINAL",
+        "taskId": "ledger:0338:maverick-7:4af1c5e7",
+        "taskIndex": 338,
+        "companyName": "Maverick 7",
+        "outcome": "SUPERSEDED",
+        "decisionSha256": "3a3a2c34f859623fe796d5d3f458362a6a1b14078b6201d8f29c57fae3998653"
+      }
+    ],
+    "verification": {
+      "databaseTransactionCommitted": true,
+      "seedArtifactVerified": true,
+      "allDetailApisVerified": true,
+      "partialDatabaseApplication": false
+    },
+    "receiptSha256": "0def1745ac138b4ab2ef51fa5d18d7d5526e6b645b8d1b390d67cffd2b490dd3"
+  }
+}
