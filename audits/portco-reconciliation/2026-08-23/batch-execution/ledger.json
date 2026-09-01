@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-01T16:16:00.000Z",
-  "activeBatchId": "batch-0344-0350-v1",
+  "updatedAt": "2026-09-01T16:36:00.000Z",
+  "activeBatchId": null,
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -5966,7 +5966,7 @@
     },
     {
       "batchId": "batch-0344-0350-v1",
-      "state": "RELEASING",
+      "state": "COMPLETED",
       "taskIds": [
         "ledger:0344:bayonne-energy-center:2a01ade1",
         "ledger:0346:flexential:a1d629db",
@@ -5982,15 +5982,18 @@
         350
       ],
       "createdAt": "2026-09-01T15:37:00.000Z",
-      "updatedAt": "2026-09-01T16:16:00.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-09-01T16:36:00.000Z",
+      "completedAt": "2026-09-01T16:36:00.000Z",
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0344-0350-v1/batch-manifest-v4.json",
         "sha256": "c864c879e4bb7f0b0a9bf5be49482d1b2bb7d2f653dcb1d232de8d5c621ff65b"
       },
-      "releaseSha": null,
-      "receipt": null,
-      "reason": null,
+      "releaseSha": "83ca7484583272ea7c9872f73640c3a52e4373f1",
+      "receipt": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0344-0350-v1/production-apply/portco-batch-production-c864c879e4bb7f0b0a9bf5be49482d1b2bb7d2f653dcb1d232de8d5c621ff65b-83ca7484583272ea7c9872f73640c3a52e4373f1-33529764383/batch-apply-receipt.json",
+        "sha256": "ce8e732cf3b5a08a1de4d9864a17bfafccf9a2feb0dc5e4b772be196ba4c5773"
+      },
+      "reason": "Atomic PortCo after-images, reviewed seed overlay, six-row attribution repair, five detail APIs, redirects, ownership, and rendered production cards verified; no partial application.",
       "history": [
         {
           "sequence": 1,
@@ -6019,9 +6022,41 @@
             "c864c879e4bb7f0b0a9bf5be49482d1b2bb7d2f653dcb1d232de8d5c621ff65b"
           ],
           "reason": null
+        },
+        {
+          "sequence": 4,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-09-01T16:34:00.000Z",
+          "evidenceSha256": [
+            "c864c879e4bb7f0b0a9bf5be49482d1b2bb7d2f653dcb1d232de8d5c621ff65b"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 5,
+          "from": "APPLYING",
+          "to": "VERIFYING",
+          "at": "2026-09-01T16:35:00.000Z",
+          "evidenceSha256": [
+            "c864c879e4bb7f0b0a9bf5be49482d1b2bb7d2f653dcb1d232de8d5c621ff65b",
+            "ce8e732cf3b5a08a1de4d9864a17bfafccf9a2feb0dc5e4b772be196ba4c5773"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 6,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-09-01T16:36:00.000Z",
+          "evidenceSha256": [
+            "c864c879e4bb7f0b0a9bf5be49482d1b2bb7d2f653dcb1d232de8d5c621ff65b",
+            "ce8e732cf3b5a08a1de4d9864a17bfafccf9a2feb0dc5e4b772be196ba4c5773"
+          ],
+          "reason": "Atomic PortCo after-images, reviewed seed overlay, six-row attribution repair, five detail APIs, redirects, ownership, and rendered production cards verified; no partial application."
         }
       ]
     }
   ],
-  "ledgerSha256": "2e1b3793f0be800d49c9c6404fca1bbd9e0c05c3ce132972e097dca22b84ef0e"
+  "ledgerSha256": "9ea4e993968e4aa0e7a13e2b0c2b6308cf339aed7fbe348411d90c862850a43a"
 }

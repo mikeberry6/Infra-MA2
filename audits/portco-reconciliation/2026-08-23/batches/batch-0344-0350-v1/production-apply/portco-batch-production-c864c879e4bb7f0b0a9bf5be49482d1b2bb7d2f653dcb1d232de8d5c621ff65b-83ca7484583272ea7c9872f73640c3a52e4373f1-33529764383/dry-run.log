@@ -1,0 +1,150 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:batch:apply
+> npx tsx scripts/portco-reconciliation/batch-apply-cli.ts --batch-manifest=audits/portco-reconciliation/2026-08-23/batches/batch-0344-0350-v1/batch-manifest-v4.json --batch-sha256=c864c879e4bb7f0b0a9bf5be49482d1b2bb7d2f653dcb1d232de8d5c621ff65b
+
+(node:3698) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "BATCH_DRY_RUN",
+  "batchId": "batch-0344-0350-v1",
+  "batchSha256": "c864c879e4bb7f0b0a9bf5be49482d1b2bb7d2f653dcb1d232de8d5c621ff65b",
+  "databaseWrites": false,
+  "seedWrites": false,
+  "plans": [
+    {
+      "companyName": "Bayonne Energy Center",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to description, headquarters, lastVerifiedAt, milestones, citations."
+        },
+        {
+          "kind": "ADD_OWNER",
+          "relationIds": [],
+          "detail": "Add 1 approved ownership period(s)."
+        },
+        {
+          "kind": "RETIRE_OWNERSHIP",
+          "relationIds": [
+            "cmrxpk7rg025sivhe9dxk8h02"
+          ],
+          "detail": "Retire 1 ownership period(s) without deleting history."
+        }
+      ],
+      "changedFields": [
+        "citations",
+        "description",
+        "headquarters",
+        "lastVerifiedAt",
+        "milestones",
+        "ownershipPeriods"
+      ],
+      "retiredCompanyIds": []
+    },
+    {
+      "companyName": "Flexential",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to aliases, description, website, headquarters, lastVerifiedAt, ownershipPeriods, milestones, citations."
+        },
+        {
+          "kind": "ADD_OWNER",
+          "relationIds": [],
+          "detail": "Add 1 approved ownership period(s)."
+        }
+      ],
+      "changedFields": [
+        "aliases",
+        "citations",
+        "description",
+        "headquarters",
+        "lastVerifiedAt",
+        "milestones",
+        "ownershipPeriods",
+        "website"
+      ],
+      "retiredCompanyIds": []
+    },
+    {
+      "companyName": "Lightpath",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to name, aliases, description, website, headquarters, lastVerifiedAt, ownershipPeriods, milestones, citations."
+        },
+        {
+          "kind": "ADD_OWNER",
+          "relationIds": [],
+          "detail": "Add 1 approved ownership period(s)."
+        }
+      ],
+      "changedFields": [
+        "aliases",
+        "citations",
+        "description",
+        "headquarters",
+        "lastVerifiedAt",
+        "milestones",
+        "name",
+        "ownershipPeriods",
+        "website"
+      ],
+      "retiredCompanyIds": []
+    },
+    {
+      "companyName": "Torch Clean Energy",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to aliases, description, website, headquarters, lastVerifiedAt, ownershipPeriods, milestones, citations."
+        }
+      ],
+      "changedFields": [
+        "aliases",
+        "citations",
+        "description",
+        "headquarters",
+        "lastVerifiedAt",
+        "milestones",
+        "ownershipPeriods",
+        "website"
+      ],
+      "retiredCompanyIds": []
+    },
+    {
+      "companyName": "NextDecade Corporation",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to description, recordStatus, lastVerifiedAt."
+        },
+        {
+          "kind": "RETRACT_ERRONEOUS_OWNERSHIP",
+          "relationIds": [
+            "cmrxpk81x0267ivhe326uytex"
+          ],
+          "detail": "Retract 1 proven erroneous ownership period(s); revision history preserves the prior claim."
+        },
+        {
+          "kind": "REALIZE_COMPANY",
+          "relationIds": [],
+          "detail": "Mark the company realized after all active ownership has ended."
+        }
+      ],
+      "changedFields": [
+        "companyStatus",
+        "description",
+        "lastVerifiedAt",
+        "ownershipPeriods",
+        "recordStatus"
+      ],
+      "retiredCompanyIds": []
+    }
+  ]
+}
