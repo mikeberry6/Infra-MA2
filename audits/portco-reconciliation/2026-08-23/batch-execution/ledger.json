@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-01T22:43:00.000Z",
-  "activeBatchId": "batch-0389-0393-v1",
+  "updatedAt": "2026-09-01T22:58:32Z",
+  "activeBatchId": null,
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -6710,7 +6710,7 @@
     },
     {
       "batchId": "batch-0389-0393-v1",
-      "state": "VERIFYING_FAILED",
+      "state": "COMPLETED",
       "taskIds": [
         "ledger:0389:network-fiberco:3f7436bc",
         "ledger:0390:centrio:1635b638",
@@ -6726,8 +6726,8 @@
         393
       ],
       "createdAt": "2026-09-01T21:50:50.000Z",
-      "updatedAt": "2026-09-01T22:43:00.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-09-01T22:58:32Z",
+      "completedAt": "2026-09-01T22:58:32Z",
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0389-0393-v1/batch-manifest-v8.json",
         "sha256": "25596bfcdb64d165bc534849e9c48cd4af960fd4da25059de012c6c022c8883d"
@@ -6737,7 +6737,7 @@
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0389-0393-v1/production-apply/batch-apply-receipt.json",
         "sha256": "6e9f810c0aef5ec336ee300bc4e783dd99eea54aed15a5c8f1d89e826e2d1aa6"
       },
-      "reason": "Independent rendered-card verification confirmed the four PortCo after-images, project redirects, current owners, stakes, sources and receipt APIs, but six active ownership rows retained stale or default fund-attribution metadata: both Network FiberCo owners, both CenTrio owners, Primergy and GlidePath. No later bundle may start until a protected six-row attribution-only repair and renewed API/rendered-card verification pass.",
+      "reason": "Batch and its six-row attribution repair are production-applied, receipt-verified, API-verified, and rendered-verified.",
       "history": [
         {
           "sequence": 1,
@@ -6798,9 +6798,31 @@
             "6e9f810c0aef5ec336ee300bc4e783dd99eea54aed15a5c8f1d89e826e2d1aa6"
           ],
           "reason": "Independent rendered-card verification confirmed the four PortCo after-images, project redirects, current owners, stakes, sources and receipt APIs, but six active ownership rows retained stale or default fund-attribution metadata: both Network FiberCo owners, both CenTrio owners, Primergy and GlidePath. No later bundle may start until a protected six-row attribution-only repair and renewed API/rendered-card verification pass."
+        },
+        {
+          "sequence": 7,
+          "from": "VERIFYING_FAILED",
+          "to": "VERIFYING",
+          "at": "2026-09-01T22:58:31Z",
+          "evidenceSha256": [
+            "25596bfcdb64d165bc534849e9c48cd4af960fd4da25059de012c6c022c8883d",
+            "6e9f810c0aef5ec336ee300bc4e783dd99eea54aed15a5c8f1d89e826e2d1aa6"
+          ],
+          "reason": "Recovered after the protected six-row attribution repair on release 211666cbd151ecf1279cf2669a970ca0189275b4; workflow receipt c7f5ac031d208b18e880235060e86f9dde208dd6a3744e21c951a8cce26e8bf9, four independent APIs, and all four rendered drawers passed."
+        },
+        {
+          "sequence": 8,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-09-01T22:58:32Z",
+          "evidenceSha256": [
+            "25596bfcdb64d165bc534849e9c48cd4af960fd4da25059de012c6c022c8883d",
+            "6e9f810c0aef5ec336ee300bc4e783dd99eea54aed15a5c8f1d89e826e2d1aa6"
+          ],
+          "reason": "Batch and its six-row attribution repair are production-applied, receipt-verified, API-verified, and rendered-verified."
         }
       ]
     }
   ],
-  "ledgerSha256": "8fb9a22c654ade3a0259ad5cdb9bc206e35ebf7b7896738c806e27c6e5aa5a31"
+  "ledgerSha256": "7888caf2bb80da33d8f09cd904ead6d8a320125a5c43653392a2834b93b4ce3f"
 }
