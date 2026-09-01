@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_CORRECTION_DECISION",
+  "asOfDate": "2026-09-01",
+  "triggerBatchId": "batch-0344-0350-v1",
+  "triggerBatchSha256": "c864c879e4bb7f0b0a9bf5be49482d1b2bb7d2f653dcb1d232de8d5c621ff65b",
+  "triggerBatchReceiptSha256": "ce8e732cf3b5a08a1de4d9864a17bfafccf9a2feb0dc5e4b772be196ba4c5773",
+  "triggerReleaseSha": "83ca7484583272ea7c9872f73640c3a52e4373f1",
+  "seedAttributionManifestSha256": "07a1a77fc0021cfd27c505312d98e1939bbd8b689053fee0456606c88570021a",
+  "productionSnapshotSha256": "0e54c7b8736ad139b47ea8fa25a68a9bdd8fe9eefbc8b14e5525ce2f6934dbac",
+  "decision": "ALIGN_ACTIVE_OWNERSHIP_ATTRIBUTION_METADATA",
+  "rationale": "The atomic PortCo transaction correctly applied the approved company and ownership after-images. Rendered verification then showed that six active ownership periods retained pre-transaction fund-attribution metadata in the separate attribution layer. Align those six rows to the reviewed seed attribution judgments before completing the PortCo bundle.",
+  "mutations": [
+    {
+      "companyName": "Bayonne Energy Center",
+      "ownershipPeriodIds": ["cmtiv3g8y0004272bpabv0bxy"],
+      "outcome": "Classify Elliott's ownership through Tunnel Energy Investor as DIRECT_PROGRAM without creating or linking a fund"
+    },
+    {
+      "companyName": "Flexential",
+      "ownershipPeriodIds": ["cmrxpk7u7025xivhegjy9uc73", "cmtiv3lf4000d272by275tbrq"],
+      "outcome": "Remove the unsupported NHIP III inference for MSIP and retain GI Partners' disclosed entry and continuation vehicles without a curated-fund link"
+    },
+    {
+      "companyName": "Lightpath",
+      "ownershipPeriodIds": ["cmtiv3r9g000p272bwj8yt01x", "cmrxpk7vb025zivhehw6apbvt"],
+      "outcome": "Classify Optimum as direct corporate ownership and retain NHIP III Lantern Holding LLC as the disclosed MSIP legal vehicle without an inferred curated-fund link"
+    },
+    {
+      "companyName": "Torch Clean Energy",
+      "ownershipPeriodIds": ["cmrxpk7yn0261ivheqfccpykg"],
+      "outcome": "Remove the unsupported North Haven Infrastructure Partners IV inference and classify the publicly disclosed MSIP platform investment as DIRECT_PROGRAM"
+    }
+  ],
+  "verifiedNonChanges": [
+    "Company identities, aliases, redirects and publication status",
+    "Ownership organizations, vehicles, stakes, dates and active state",
+    "Former ownership periods, including Bayonne's former MSIP period",
+    "Descriptions, milestones, citations and primary sources",
+    "Fund Database records; the repair creates or updates no fund",
+    "NextDecade Corporation remains archived and Rio Grande LNG remains unchanged",
+    "The completed atomic PortCo transaction and its durable receipt"
+  ],
+  "identityResolved": true,
+  "activeOwnershipResolved": true,
+  "unresolvedQuestions": []
+}
