@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0397:purposeenergy-minster:d96ff6cd",
+  "taskIndex": 397,
+  "companyName": "PurposeEnergy Minster",
+  "asOfDate": "2026-09-01",
+  "decision": "SUPERSEDED",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-01T23:13:00.000Z",
+  "result": {
+    "decision": "SUPERSEDED",
+    "confidence": "HIGH",
+    "rationale": "PurposeEnergy Minster is a project/SPV beneath PurposeEnergy, not a separate manager-level portfolio company. Task 394's consolidated PurposeEnergy proposal dd9a2f921915afa310da94430afb5d637b144c4d26fe905ebf1001a4d8ee940f retires the Minster standalone record and preserves PurposeEnergy - Minster LLC, the Ohio facility's operating profile, its July 16, 2026 ramp-up milestone, and direct sources in the same canonical after-image. A second mutation would collide with the PurposeEnergy update.",
+    "evidence": [
+      {
+        "url": "https://www.quinbrook.com/portfolio/purposeenergy/",
+        "purpose": "Official evidence that PurposeEnergy is the portfolio company and Minster is a project beneath it"
+      },
+      {
+        "url": "https://purposeenergy.com/project/minster/",
+        "purpose": "Official Minster project identity and operating profile"
+      },
+      {
+        "url": "https://irp.cdn-website.com/7b8e4b72/files/uploaded/08-14-23%20Council%20Minutes.pdf",
+        "purpose": "Municipal evidence for PurposeEnergy - Minster LLC and the project site"
+      }
+    ]
+  },
+  "lineage": {
+    "sourceResearchDecision": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0397-purposeenergy-minster/attempt-1/research-decision.json",
+    "consolidatedProposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0394-middlebury-resource-recovery-center/attempt-1/proposal.json",
+      "proposalSha256": "dd9a2f921915afa310da94430afb5d637b144c4d26fe905ebf1001a4d8ee940f",
+      "afterImageSha256": "3706db61668d35e09d2b53f715edf47425c0be3988bdbac979b982ff3e3a38c0"
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0394:middlebury-resource-recovery-center:08b27d77",
+  "taskIndex": 394,
+  "companyName": "Middlebury Resource Recovery Center",
+  "asOfDate": "2026-09-01",
+  "decision": "PROPOSED_MERGE",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-01T23:10:00.000Z",
+  "result": {
+    "decision": "PROPOSED_MERGE",
+    "confidence": "HIGH",
+    "rationale": "PurposeEnergy is the manager-level Quinbrook portfolio company. Middlebury Resource Recovery Center, PurposeEnergy Minster, and PurposeEnergy South Burlington are project or SPV identities beneath the same platform. Consolidating all three in one PurposeEnergy after-image preserves their operating history while eliminating three project-level PortCo records and avoids colliding writes from tasks 397 and 398.",
+    "evidence": [
+      {
+        "url": "https://www.quinbrook.com/portfolio/purposeenergy/",
+        "purpose": "Official manager evidence that PurposeEnergy is the portfolio company and the three facilities are projects beneath it"
+      },
+      {
+        "url": "https://purposeenergy.com/project/purposeenergy-middlebury/",
+        "purpose": "Official Middlebury project profile and operating facts"
+      },
+      {
+        "url": "https://purposeenergy.com/project/minster/",
+        "purpose": "Official Minster project profile and operating facts"
+      },
+      {
+        "url": "https://purposeenergy.com/project/zero-gravity-brewery/",
+        "purpose": "Official South Burlington project profile and operating facts"
+      },
+      {
+        "url": "https://www.quinbrook.com/news-insights/quinbrook-moves-into-renewable-fuels/",
+        "purpose": "Official April 12, 2023 PurposeEnergy acquisition announcement and platform boundary"
+      },
+      {
+        "url": "https://www.quinbrook.com/news-insights/quinbrook-exceeds-target-for-net-zero-power-strategy-raising-usd-3-billion-in-capital-commitments/",
+        "purpose": "Official attribution of PurposeEnergy to Quinbrook's Net Zero Power Fund strategy"
+      }
+    ]
+  },
+  "lineage": {
+    "sourceDecision": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0394-middlebury-resource-recovery-center/attempt-1/research-decision.json",
+    "sourceVerification": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0394-middlebury-resource-recovery-center/attempt-1/source-verification.json",
+    "consolidatedTasks": [
+      "ledger:0397:purposeenergy-minster:d96ff6cd",
+      "ledger:0398:purposeenergy-south-burlington:5ec5aa6b"
+    ]
+  }
+}

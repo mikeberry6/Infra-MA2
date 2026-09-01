@@ -1,0 +1,433 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_MANIFEST",
+  "methodologyVersion": "PORTCO_APPLY_BATCH_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0394-0398-v1",
+  "createdAt": "2026-09-01T23:22:00.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "f15769364a56f090fb9bd8898317b779769e54776b96f9880b8b3de151751a31"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0394:middlebury-resource-recovery-center:08b27d77",
+      "taskIndex": 394,
+      "companyName": "Middlebury Resource Recovery Center",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0394-middlebury-resource-recovery-center/attempt-1/proposal-v5.json",
+        "sha256": "659ab2d3f4299f48b6bbd0c47c9f820c2f70f66113cff62b7cd1ae1e055737f7"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0394-middlebury-resource-recovery-center-v5.json",
+        "sha256": "04d30c3811b09e7c1166cfeac909c775d6dedec4906135e907247497abf1b910"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0394-middlebury-resource-recovery-center/attempt-1/locked-batch-v1-production-snapshot.json",
+        "sha256": "ba4eabcee0c11c7dc7c32bd994e1b32a2b49e1143c73a4ff0ac55a002aa17b15"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0394-middlebury-resource-recovery-center/attempt-1/locked-batch-v1-task-snapshot.json",
+        "sha256": "cd1f94dbdd8e06ff3ba056c12a9a1ff8dda333d7b4d875b2d289e60be232c0db"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0394-middlebury-resource-recovery-center/attempt-1/observed-batch-v1-task-snapshot.json",
+        "sha256": "f64f407d7ad879c1e159cd3f080bbe1c06385e787114516660b067c15dc25c81"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0394-middlebury-resource-recovery-center/attempt-1/application-research-decision-v1.json",
+        "sha256": "c60bb7265eedd09c241de43fead2380b7a23f6d26b5d82a910d64a320090987b"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0394-middlebury-resource-recovery-center/attempt-1/source-verification.json",
+        "sha256": "72d7fdeb98535929e3e5c88fc9e657907b8f5310f4f6acfb04c0af840b984566"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "a33336730868c89bec4326095c1276af139d3fca298a5a074a787a62e8562495",
+      "dependencySha256": "5d44244a4cbf52295b8806469d9600db8c4d1ae1729cc2ba7d75ae5ac0c78b2b",
+      "afterImageSha256": "c775558ac30e0f68497d7071fca69a10f9d53b6990271b887b142cc1520c3f47",
+      "targetClaims": [
+        "canonical:purposeenergy|united-states",
+        "company:cmrxpjmmo018civhe8frg363n",
+        "company:cmrxpjmoi018givhecyo0ujvv",
+        "company:cmrxpjmp1018hivheqruh0kpn",
+        "company:cmrxpjmpo018iivhexgpftme7",
+        "relation:cmrxpk935027xivhei1mcqujy",
+        "relation:cmrxpk98h0281ivhe89hg0afj",
+        "relation:cmrxpk9930282ivhe059amxbd",
+        "relation:cmrxpk99n0283ivhehv6pljbr",
+        "relation:cmrxpml7v0520ivheqkx12g2s",
+        "relation:cmrxpml8f0521ivhezbkdbsai",
+        "relation:cmrxpmljd052eivhe59vew4sw",
+        "relation:cmrxpmljy052fivhe45pfakxn",
+        "relation:cmrxpmlki052givhe0ji6e568",
+        "relation:cmrxpmll0052hivhe6wwepw05",
+        "relation:cmrxpmlli052iivheuzo8rvmj",
+        "relation:cmrxpmlpj052kivhe4l2er4n1",
+        "relation:cmrxpmlpz052livhefg9xlf45",
+        "relation:cmrxpmls4052oivhezdlk0t3h",
+        "relation:cmrxpslhg0ctpivheidw5s3lv",
+        "relation:cmrxpslio0ctrivhepfosisat",
+        "relation:cmrxpsljn0cttivheiav9alzc",
+        "seed:purposeenergy|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://irp.cdn-website.com/7b8e4b72/files/uploaded/08-14-23%20Council%20Minutes.pdf",
+          "label": "Village of Minster — 2023 project minutes",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://purposeenergy.com/",
+          "label": "Purposeenergy — PurposeEnergy",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://purposeenergy.com/news-insights/construction-kicks-off-on-renewable-energy-plant/",
+          "label": "Purposeenergy — Middlebury Resource Recovery Center",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://purposeenergy.com/project/minster/",
+          "label": "Purposeenergy — PurposeEnergy Minster",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://purposeenergy.com/project/purposeenergy-middlebury/",
+          "label": "Purposeenergy — Middlebury Resource Recovery Center",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://purposeenergy.com/project/zero-gravity-brewery/",
+          "label": "Purposeenergy — PurposeEnergy South Burlington",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://ripuc.ri.gov/sites/g/files/xkgbur841/files/2025-10/PurposeEnergy%20-%20Middlebury%20-%20Docket%20RES-24-50%20-Recommendations%20and%20Review%20-%202025-09-15.pdf",
+          "label": "Rhode Island PUC — Middlebury review",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.biocycle.net/digester-in-magic-hats-sustainability-mix/",
+          "label": "Biocycle — PurposeEnergy South Burlington",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.linkedin.com/posts/purpose-energy_renewableenergy-biogas-circulareconomy-activity-7483526778678951936-OaGU",
+          "label": "PurposeEnergy — Minster startup update",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.quinbrook.com/news-insights/quinbrook-exceeds-target-for-net-zero-power-strategy-raising-usd-3-billion-in-capital-commitments/",
+          "label": "Quinbrook Net Zero Power Fund (NZPF)",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.quinbrook.com/news-insights/quinbrook-moves-into-renewable-fuels/",
+          "label": "Announcement date source — Quinbrook — PurposeEnergy",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.quinbrook.com/portfolio/purposeenergy/",
+          "label": "Investment date source — Quinbrook — PurposeEnergy",
+          "sourceType": "WEBSITE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0395:prairie-mist-solar:44443a02",
+      "taskIndex": 395,
+      "companyName": "Prairie Mist Solar",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0395-prairie-mist-solar/attempt-1/proposal-v2.json",
+        "sha256": "d6804b53b6575a8c34e5bfaa46015249f840d694aadbfebf82eaf22696c69d97"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0395-prairie-mist-solar-v2.json",
+        "sha256": "907fe07a2b97830756d2a042aa44be0246f461348d1fe749ff1549dfd88e19e9"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0395-prairie-mist-solar/attempt-1/locked-batch-v1-production-snapshot.json",
+        "sha256": "44affda4571d26835cfe25d2ddfdfda4de0f18cfbd08450844776b48ee744656"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0395-prairie-mist-solar/attempt-1/locked-batch-v1-task-snapshot.json",
+        "sha256": "78c6d7ca0d46413e1317f297e36e95f0022be0bfdf001e327421c5694a8aa792"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0395-prairie-mist-solar/attempt-1/observed-batch-v1-task-snapshot.json",
+        "sha256": "4fd56fb2b0aa23f53042a43a4345640781f1c44dfe9dc50a536dd9fb33ab8974"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0395-prairie-mist-solar/attempt-1/application-research-decision-v1.json",
+        "sha256": "4f6ca747dac9c9565f15479d59282ce261e2e24f424a0ecb618aad75b9718510"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0395-prairie-mist-solar/attempt-1/source-verification.json",
+        "sha256": "b3d8b0ab9db1d0b3c3ac81e4cf615ff4242bb55c7133149b991b60a5fe870677"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "1e4b7692bd5e2098e566582fd2277cf2861245a41db31b69158e8ff518ef1bb2",
+      "dependencySha256": "9209cd14c6c1112f720e6e0ec1b377bf666ce62fdb0539dfd82605dd91dac1b1",
+      "afterImageSha256": "005ad0b23e1e745639b775f52d8467799b331e1e15cf5e7f71758039f0ca7d97",
+      "targetClaims": [
+        "canonical:primergy|united-states",
+        "company:cmrxpjmn3018divhea2b9e4gv",
+        "company:cmrxpjmnj018eivhe8a4fk54r",
+        "relation:cmrxpk93p027yivheadgv56pq",
+        "relation:cmrxpk96q027zivheu1eri9ch",
+        "relation:cmrxpmko5051bivhefvfcltsl",
+        "relation:cmrxpmkoq051civhe7dr0vaw6",
+        "relation:cmrxpmkpa051divhe9fdg7hxz",
+        "relation:cmrxpmkpv051eivhe3cg3i2yp",
+        "relation:cmrxpmlce0524ivhe2uulvipa",
+        "relation:cmrxpmlcu0525ivhehie8hnmf",
+        "relation:cmrxpmldv0526ivhetmltdv08",
+        "relation:cmrxpmlee0527ivhei8mk8p55",
+        "relation:cmrxpmlez0528ivhe9yi00oxj",
+        "relation:cmrxpmlfi0529ivheeuligxm0",
+        "relation:cmrxpsl960cteivhe01m5n9fp",
+        "relation:cmrxpslcu0ctgivhejae985iu",
+        "relation:cmrxpslde0cthivhej1s8txmz",
+        "relation:cmtj928r1000v2h2byihkau3a",
+        "relation:cmtj928wr000x2h2b1hdyboca",
+        "relation:cmtj9290k000y2h2b6hmernh0",
+        "relation:cmtj9294d000z2h2bdqaa30li",
+        "seed:primergy|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://www.primergypower.com/about/primergy",
+          "label": "Primergypower — Primergy",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.primergypower.com/news/primergy-announces-the-commissioning-of-ash-creek-solar-in-texas",
+          "label": "Primergypower — Ash Creek Solar",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.primergypower.com/news/primergy-secures-300m-debt-and-tax-equity-investment-for-prairie-mist-solar-project",
+          "label": "Close date source — Quinbrook — Prairie Mist Solar",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.primergypower.com/news/primergy-secures-588m-in-project-financing-and-power-purchase-agreement-with-microsoft-for-408-mw-solar-project-in-texas",
+          "label": "Investment date source — Quinbrook — Ash Creek Solar",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.primergypower.com/news/primergys-prairie-mist-solar-project-reaches-commercial-operation",
+          "label": "Primergypower — Prairie Mist Solar",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.primergypower.com/news/quinbrook-launches-primergy-solar-to-develop-solar-and-battery-storage-across-north-america",
+          "label": "Investment date source — Quinbrook — Primergy",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.primergypower.com/projects/amazon-solar-farm-arkansas---prairie-mist",
+          "label": "Primergypower — Prairie Mist Solar",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.quinbrook.com/news-insights/quinbrook-closes-600m-solarstorage-continuation-fund/",
+          "label": "Close date source — Quinbrook — Gemini Solar + Storage",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.quinbrook.com/portfolio/primergy/",
+          "label": "Quinbrook — Primergy portfolio",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.quinbrook.com/projects/ash-creek/",
+          "label": "Quinbrook — Ash Creek project",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.quinbrook.com/projects/prairie-mist/",
+          "label": "Quinbrook — Prairie Mist project",
+          "sourceType": "WEBSITE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0396:prospect-storage:78e66bf0",
+      "taskIndex": 396,
+      "companyName": "Prospect Storage",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0396-prospect-storage/attempt-1/proposal-v2.json",
+        "sha256": "1bbf63ad9fef030dc8f8df2ac2d2238342e118f4682f49175ff8f6745451094e"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0396-prospect-storage-v2.json",
+        "sha256": "6912f1ed8a601e5402da59adca635d4824d6718e2eead5874b48d505480e094b"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0396-prospect-storage/attempt-1/locked-batch-v1-production-snapshot.json",
+        "sha256": "1d819280931968d1d01d7b890073a048fa4e77d928f997ecd0bdd347de8ab9c1"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0396-prospect-storage/attempt-1/locked-batch-v1-task-snapshot.json",
+        "sha256": "17b306f86456ba863ef2c54452eabdbaa4e967477c86b595de4c5d232b36a512"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0396-prospect-storage/attempt-1/observed-batch-v1-task-snapshot.json",
+        "sha256": "6c39a88581637620852bd3700850da90e90bfbb581f79180915015f42e969235"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0396-prospect-storage/attempt-1/application-research-decision-v1.json",
+        "sha256": "89878af1f1b1eb80a3499314a3130373643c8a1eb9124fa5f11e55ecf9a46ef0"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0396-prospect-storage/attempt-1/source-verification.json",
+        "sha256": "007b7705e29e3e3fac727556cb088ca5b6c850cbbe2058a6e3e2800beb2c6d36"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "fce463a7164d8a10f4680048f2e2b4dfcf5630c0158e557def381bed6ec3e077",
+      "dependencySha256": "2c4f1085d336299aa8d1a7f065c683bbdda357cc1cf2f733b31766b6e6cad614",
+      "afterImageSha256": "2ec29d5d1849053e4cc509e5ab4d81c5dae661c6f12710a3d13461da69558a85",
+      "targetClaims": [
+        "canonical:glidepath-power-solutions|united-states",
+        "company:cmrxpjmkz0189ivheyzth0dam",
+        "company:cmrxpjmo2018fivhesphmyffh",
+        "relation:cmrxpk91m027uivherjrqsi5p",
+        "relation:cmrxpk97f0280ivhegs2tjxbv",
+        "relation:cmrxpmkri051givhevf5aapge",
+        "relation:cmrxpmkso051iivhe72q35zqg",
+        "relation:cmrxpmkte051jivhe7ado9gvr",
+        "relation:cmrxpmkzo051oivhefbg0gz9b",
+        "relation:cmrxpml06051pivheifz3w2u0",
+        "relation:cmrxpml0r051qivheqs6lb8p5",
+        "relation:cmrxpml1a051rivhe04sqwb0u",
+        "relation:cmrxpml1u051sivhelsno6c1i",
+        "relation:cmrxpml56051wivhef4ogbwk0",
+        "relation:cmrxpml5p051xivheergo2qep",
+        "relation:cmrxpml68051yivhepxp89cc8",
+        "relation:cmrxpmlht052civhe73delicn",
+        "relation:cmrxpmlia052divhebxgxcc4m",
+        "relation:cmrxpskl10cs9ivhet2i6ou65",
+        "relation:cmrxpsklv0csbivhexbnjub0f",
+        "relation:cmrxpskmt0csdivhenszb6q29",
+        "relation:cmrxpsknr0csfivhe8x9rfi3t",
+        "relation:cmrxpsko80csgivhec4412qy5",
+        "relation:cmtj92gnz00122h2b2g76cod7",
+        "relation:cmtj92gtu00142h2bgnkfmcqa",
+        "relation:cmtj92gxn00152h2b4h8b8q33",
+        "relation:cmtj92h1g00162h2bcv2u09qb",
+        "relation:cmtj92h7500182h2bnqz6kxqv",
+        "seed:glidepath power solutions|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://glidepath.net/",
+          "label": "Glidepath — GlidePath Power Solutions",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://glidepath.net/glidepath-begins-construction-on-10-mw-10mwh-battery-storage-project-in-texas/",
+          "label": "Glidepath — Prospect Storage",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://mbrweb.ferc.gov/SearchMBRAssetAppendix/AssetAppendixDetails?AssetAppendixId=7715",
+          "label": "FERC — Sequitur asset appendix",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.businesswire.com/news/home/20221107005085/en/GlidePath-Begins-Operations-at-New-50MW-Battery-Storage-Facility-Near-Houston-TX",
+          "label": "GlidePath — Byrd Ranch operations",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.ercot.com/files/docs/2025/02/12/CapacityDemandandReservesReport_December2024.xlsx",
+          "label": "ERCOT — December 2024 capacity report",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/quinbrook-acquires-223-mw-wind-power-portfolio-300584615.html",
+          "label": "PR Newswire — GlidePath Power Solutions",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.psc.state.fl.us/library/filings/2021/02800-2021/02800-2021.pdf",
+          "label": "Florida Public Service Commission — Meyersdale sale schedule",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.quinbrook.com/news-insights/glidepath-adds-50mw-to-texas-battery-storage-portfolio/",
+          "label": "Quinbrook — Byrd Ranch",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.quinbrook.com/news-insights/glidepath-partners-with-renewance-to-advance-battery-recycling-for-energy-storage-systems/",
+          "label": "Quinbrook — GlidePath Power Solutions",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.quinbrook.com/portfolio/glidepath/",
+          "label": "Investment date source — Quinbrook — GlidePath Power Solutions",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.quinbrook.com/projects/byrd-ranch/",
+          "label": "Quinbrook — Byrd Ranch",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.quinbrook.com/projects/meyersdale-battery/",
+          "label": "Investment date source — Quinbrook — Meyersdale Energy Storage",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.quinbrook.com/projects/prospect-storage/",
+          "label": "Investment date source — Quinbrook — Prospect Storage",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.veritaglobal.net/powin/document/2516137251203000000000007",
+          "label": "Verita Global — Powin court filing",
+          "sourceType": "OTHER"
+        }
+      ]
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0397:purposeenergy-minster:d96ff6cd",
+      "taskIndex": 397,
+      "companyName": "PurposeEnergy Minster",
+      "outcome": "SUPERSEDED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0394-0398-v1/decisions/0397-purposeenergy-minster.json",
+        "sha256": "8ea4010841a3c144c96ebe3bbf0b872cdac887eedc84ae1453974d269ffabe69"
+      }
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0398:purposeenergy-south-burlington:5ec5aa6b",
+      "taskIndex": 398,
+      "companyName": "PurposeEnergy South Burlington",
+      "outcome": "SUPERSEDED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0394-0398-v1/decisions/0398-purposeenergy-south-burlington.json",
+        "sha256": "fee8dfb839a83a78c2de613efd312bc6563fc092cff0111efcdb1c42b7a2d5b8"
+      }
+    }
+  ],
+  "collisionAnalysis": {
+    "independent": true,
+    "claimsSha256": "0a702eaf969358029c13ec30c54f940f9e5f9f08ccd1b34a3d97a6f8be975efa",
+    "sharedSourceUrls": [],
+    "conflicts": []
+  },
+  "batchSha256": "dc1979fc1da382e59b1e12b225b5e900f3eeda152d59edefee22d4ca9f50ef2a"
+}

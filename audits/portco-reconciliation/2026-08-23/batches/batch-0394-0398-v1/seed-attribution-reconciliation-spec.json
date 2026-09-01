@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_SEED_ATTRIBUTION_RECONCILIATION_SPEC",
+  "batchId": "batch-0394-0398-v1",
+  "batchSha256": "056e7afef2504192673e15d989f8be1975e98ae769a0f1779bbad47bcd09b5cb",
+  "reconciledAt": "2026-09-01T23:55:00.000Z",
+  "sourceManifestSha256": "1e8037e1434798236c768e678a6104363c27e256f4dd566d4a4ee15d963a3eb8",
+  "rationale": "Reconcile the batch's staged active-owner after-images exactly once. Replace PurposeEnergy's inferred Low Carbon attribution with the directly disclosed Quinbrook Net Zero Power Fund strategy, remove the three retired PurposeEnergy project records, and remove the Prairie Mist and Prospect project records after their canonical merges into Primergy and GlidePath. Primergy and GlidePath retain their already reconciled canonical attribution records.",
+  "removeRecordIds": [
+    "OFA-254CDE19DB20",
+    "OFA-18E801293076",
+    "OFA-013118473727",
+    "OFA-903F343FDAE0",
+    "OFA-5B4421B56050"
+  ],
+  "upsertRecords": [
+    {
+      "recordId": "OFA-D3FB6EC50984",
+      "companyName": "PurposeEnergy",
+      "country": "United States",
+      "investmentFirm": "Quinbrook",
+      "currentVehicleName": "Quinbrook Net Zero Power Fund strategy",
+      "investmentYear": 2023,
+      "stake": null,
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Quinbrook Net Zero Power Fund strategy",
+      "attributionConfidence": null,
+      "attributionRationale": "Quinbrook's April 2023 acquisition announcement establishes the investment, and its Net Zero Power strategy close identifies PurposeEnergy among the strategy's investments. The exact legal holding vehicle and stake were not publicly disclosed.",
+      "evidenceUrls": [
+        "https://www.quinbrook.com/news-insights/quinbrook-moves-into-renewable-fuels/",
+        "https://www.quinbrook.com/news-insights/quinbrook-exceeds-target-for-net-zero-power-strategy-raising-usd-3-billion-in-capital-commitments/"
+      ]
+    }
+  ],
+  "specSha256": "c1e62b369503dc729ed780ab14b634d775eae2a2373f8692efe29c070f9a81ac"
+}

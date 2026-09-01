@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0397:purposeenergy-minster:d96ff6cd",
+  "taskIndex": 397,
+  "companyName": "PurposeEnergy Minster",
+  "outcome": "SUPERSEDED",
+  "decidedAt": "2026-09-01T23:14:00.000Z",
+  "rationale": "PurposeEnergy Minster is a project/SPV beneath PurposeEnergy, not a separate manager-level portfolio company. Task 394's consolidated PurposeEnergy proposal dd9a2f921915afa310da94430afb5d637b144c4d26fe905ebf1001a4d8ee940f retires the Minster standalone record and preserves PurposeEnergy - Minster LLC, the Ohio facility's operating profile, its July 16, 2026 ramp-up milestone, and direct sources in the same canonical after-image. A second mutation would collide with the PurposeEnergy update.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0397-purposeenergy-minster/attempt-1/locked-batch-v1-task-snapshot.json",
+    "sha256": "a48f384b0063523ff13dc59b2a7399c10451977c56d2cd90a8e1db58285c38ff"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0397-purposeenergy-minster/attempt-1/application-terminal-research-decision-v1.json",
+    "sha256": "07466044d8fbec7851e3ca3868cbf6d1cf1f97b1f8fe2e7347a17611b35a684c"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0397-purposeenergy-minster/attempt-1/source-verification.json",
+    "sha256": "30deb7013b87966d1cb7cf484ce20c94358c88c30a830f0bb9687af611a125ad"
+  },
+  "evidence": [
+    {
+      "url": "https://www.quinbrook.com/portfolio/purposeenergy/",
+      "purpose": "Official evidence that PurposeEnergy is the portfolio company and Minster is a project beneath it"
+    },
+    {
+      "url": "https://purposeenergy.com/project/minster/",
+      "purpose": "Official Minster project identity and operating profile"
+    },
+    {
+      "url": "https://irp.cdn-website.com/7b8e4b72/files/uploaded/08-14-23%20Council%20Minutes.pdf",
+      "purpose": "Municipal evidence for PurposeEnergy - Minster LLC and the project site"
+    }
+  ],
+  "supersededByTaskId": "ledger:0394:middlebury-resource-recovery-center:08b27d77",
+  "decisionSha256": "8ea4010841a3c144c96ebe3bbf0b872cdac887eedc84ae1453974d269ffabe69"
+}

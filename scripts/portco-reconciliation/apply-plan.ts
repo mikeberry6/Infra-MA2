@@ -367,8 +367,14 @@ function assertValidRelationMerges(
     if (canonicalMilestonesAfter.has(mapping.retiredRelationId)) {
       throw new Error(`Mapped retired milestone ${mapping.retiredRelationId} is still present in the approved after-image`);
     }
-    if (!canonicalMilestonesBefore.has(mapping.canonicalRelationId)) {
-      throw new Error(`Canonical milestone ${mapping.canonicalRelationId} does not exist on the canonical before-image`);
+    const canonicalIsTransferred = retiredMilestones.has(mapping.canonicalRelationId);
+    if (!canonicalMilestonesBefore.has(mapping.canonicalRelationId) && !canonicalIsTransferred) {
+      throw new Error(`Canonical milestone ${mapping.canonicalRelationId} does not exist on the canonical or a reviewed retired before-image`);
+    }
+    if (mappings.some((candidate) =>
+      candidate.kind === "MILESTONE"
+      && candidate.retiredRelationId === mapping.canonicalRelationId)) {
+      throw new Error(`Transferred canonical milestone ${mapping.canonicalRelationId} is also mapped for retirement`);
     }
     const canonicalMilestone = canonicalMilestonesAfter.get(mapping.canonicalRelationId);
     if (!canonicalMilestone) {
