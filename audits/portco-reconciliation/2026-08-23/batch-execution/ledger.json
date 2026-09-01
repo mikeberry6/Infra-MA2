@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-01T18:17:00.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-09-01T18:34:00.000Z",
+  "activeBatchId": "batch-0361-0365-v1",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -6242,7 +6242,65 @@
           "reason": null
         }
       ]
+    },
+    {
+      "batchId": "batch-0361-0365-v1",
+      "state": "RELEASING",
+      "taskIds": [
+        "ledger:0361:nopetro-renewables:1b512de3",
+        "ledger:0362:skywire-networks-xchange-telecom:61604de9",
+        "ledger:0363:telmax-inc:f608a383",
+        "ledger:0364:uge-international-ltd:3aed0a3e",
+        "ledger:0365:arcadian-infracom:27de01bd"
+      ],
+      "taskIndexes": [
+        361,
+        362,
+        363,
+        364,
+        365
+      ],
+      "createdAt": "2026-09-01T18:21:00.000Z",
+      "updatedAt": "2026-09-01T18:34:00.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0361-0365-v1/batch-manifest-v2.json",
+        "sha256": "f55a40673da0d7a1e6fc8d43cc85a58962be38ea10a519cbb1c3bafe6068a047"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-09-01T18:21:00.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-09-01T18:33:00.000Z",
+          "evidenceSha256": [
+            "f55a40673da0d7a1e6fc8d43cc85a58962be38ea10a519cbb1c3bafe6068a047"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "RELEASING",
+          "at": "2026-09-01T18:34:00.000Z",
+          "evidenceSha256": [
+            "f55a40673da0d7a1e6fc8d43cc85a58962be38ea10a519cbb1c3bafe6068a047"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "7b1a7a7fea6ca7a317751ec7f32433a61505624bb4e3b22451a4a2f4df87d195"
+  "ledgerSha256": "2e2251414ac1fb5ae73e458d47454dac83f3e0fb56c72bf394c4251bab96417a"
 }

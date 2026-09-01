@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0361:nopetro-renewables:1b512de3",
+  "taskIndex": 361,
+  "companyName": "Nopetro Renewables",
+  "asOfDate": "2026-09-01",
+  "decision": "DEFERRED",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-01T18:22:00.000Z",
+  "result": {
+    "decision": "DEFERRED",
+    "rationale": "Research establishes Nopetro Renewables, LLC as a distinct NOVA Fund I RNG platform and establishes NOVA and Nopetro Energy Holdings as co-owners, but the current direct owner set remains unresolved because Green Group may hold direct platform equity outside its NOVA relationship. Defer creation rather than inventing or omitting a current owner.",
+    "evidence": [
+      {
+        "url": "https://www.novainfrastructure.com/investments-index",
+        "purpose": "Current NOVA portfolio status and Fund I attribution."
+      },
+      {
+        "url": "https://www.businesswire.com/news/home/20230531005454/en/NOVA-Infrastructure-and-Nopetro-Energy-Announce-New-Renewables-Platform",
+        "purpose": "Platform formation and disclosed co-owner identities."
+      }
+    ]
+  },
+  "blockingFact": "Whether Green Group holds direct platform equity outside its relationship with NOVA, and therefore the complete current direct owner set.",
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0361-nopetro-renewables/attempt-1/research-decision.json",
+      "sha256": "d4e2fcf66188728f12932454682564b56f6382e3796daf07cafb71ba0f2d8114"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0361-nopetro-renewables/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "6e089cf326aad854c4d04969b66a315f049e908b2b2583df51a36905e77fbfc2"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0361-nopetro-renewables/attempt-1/source-verification.json",
+      "sha256": "f101ff7bbe7cca58c7b33de85582075cb6960a272daefbcfaf1ee2f6df2922c0"
+    }
+  }
+}

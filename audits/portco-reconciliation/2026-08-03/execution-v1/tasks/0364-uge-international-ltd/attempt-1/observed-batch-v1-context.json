@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0364:uge-international-ltd:3aed0a3e",
+  "taskIndex": 364,
+  "companyName": "UGE International Ltd.",
+  "generatedAt": "2026-09-01T18:26:40.904Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0364-uge-international-ltd/attempt-1/observed-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 364,
+    "taskId": "ledger:0364:uge-international-ltd:3aed0a3e",
+    "canonicalKey": "uge-international-ltd|canada",
+    "companyName": "UGE International Ltd.",
+    "country": "Canada / United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 72,
+    "managers": [
+      "NOVA Infrastructure"
+    ],
+    "actionScopes": {
+      "company": [
+        "CREATE_COMPANY"
+      ],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "072-nova-infrastructure:holding:006:uge-international-ltd"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://novainfrastructure.com/investments/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "No exact normalized production or seed match exists. Census evidence supports a new canonical company with 1 manager holding record(s).",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "uge-international-ltd|canada",
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpizw500alivhelc3ewblk",
+        "name": "NOVA Infrastructure",
+        "updatedAt": "2026-07-23T16:09:53.717Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0364:uge-international-ltd:3aed0a3e",
+    "taskIndex": 364,
+    "canonicalKey": "uge-international-ltd|canada",
+    "capturedAt": "2026-09-01T18:26:40.904Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "9743e97962d6f52f9d46932395ca57062de324393b1e24f6e102fb1c37e7b034",
+    "productionSnapshotSha256": "31943979b5fdbf40bbea11de3b710a29c8736bdddae97e8ac79d21ea2c23ed27",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "bf2a48cc853dca16c66acb74ab25cb37da4631785fd6f7a2520f1ee82ce46b81",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "276c7e757f588b095091059e787403e5844609832deca7a380299134253a8171",
+    "stateSha256": "a45438a9e0b8e5b5e3087773ded3cae19bda329eb477990b08e4f036d1ff142b",
+    "taskSnapshotSha256": "45472370602e9de5a0cb33e5dcf3033edc7dfc9a29f9f1de70ac81876e477029"
+  },
+  "contextSha256": "aaa6dce5f997040f9a1ff287210c25c91c59458b96d8473535aa75d3a94326e2"
+}

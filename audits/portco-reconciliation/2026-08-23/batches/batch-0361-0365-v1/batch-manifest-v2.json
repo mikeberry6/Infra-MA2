@@ -1,0 +1,203 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_MANIFEST",
+  "methodologyVersion": "PORTCO_APPLY_BATCH_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0361-0365-v1",
+  "createdAt": "2026-09-01T18:26:00.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "d5304bc5bc9be3fb1238bcc6aa84fbcf311c42915326bcec8663d708480abb0a"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0361:nopetro-renewables:1b512de3",
+      "taskIndex": 361,
+      "companyName": "Nopetro Renewables",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0361-0365-v1/terminal-decisions/0361-nopetro-renewables.json",
+        "sha256": "d3c992912bef57b385a93950ac540c6909815ba77e185d5b638b18b889ca0116"
+      }
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0362:skywire-networks-xchange-telecom:61604de9",
+      "taskIndex": 362,
+      "companyName": "Skywire Networks / Xchange Telecom",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0362-skywire-networks-xchange-telecom-v2/proposal.json",
+        "sha256": "38b2c1f23fde5a90f6ea587f4e1235b83c1daa2163da02e1cb178ad431c1fd36"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0362-skywire-networks-xchange-telecom-v2.json",
+        "sha256": "cd0e6d3beb9a13ba9514eb5291fb948852a0c66bd11c810a2d7ea28c64abf033"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0362-skywire-networks-xchange-telecom/attempt-1/locked-batch-v2-production-snapshot.json",
+        "sha256": "a8609eb916bdafa262fb52f660babc2c862adbf177763e12bd278b49bfe47c7b"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0362-skywire-networks-xchange-telecom/attempt-1/locked-batch-v2-task-snapshot.json",
+        "sha256": "8afba38ed06cf6680605b19fbc0f2475f229674c91d85c6ae9691a256142c80b"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0362-skywire-networks-xchange-telecom/attempt-1/observed-batch-v1-task-snapshot.json",
+        "sha256": "672634742e2dc51efe90e9873811a2ea0d73e87088edfd17b756165691123e26"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0362-skywire-networks-xchange-telecom/attempt-1/application-research-decision-v1.json",
+        "sha256": "6acccec4e7a25307ac18db529ad8406b0a1d403ce3b83724fa3797b87fce4d7b"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0362-skywire-networks-xchange-telecom/attempt-1/source-verification.json",
+        "sha256": "745871eff8cb9d4290bc2b23a6b7b4c6d422a9c69a08540f7e00bae52db9e589"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "8ac585b251d89cb4dc81b03d9b0a3caf2240e8b1c151ac0c62bd12b4ba3cf0df",
+      "dependencySha256": "276c7e757f588b095091059e787403e5844609832deca7a380299134253a8171",
+      "afterImageSha256": "28ba9da15b750302015d8e528276ddb05fc216a1e27cc45ef69e8c71d1dcb245",
+      "targetClaims": [
+        "canonical:skywire-networks-xchange-telecom|united-states",
+        "seed:xchange telecom llc|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BD0A8859F-0000-CF38-81EA-C26B4F0A1BAE%7D&DocTitle=Order+Approving+Indirect+Transfer+of+Control+with+Conditions",
+          "label": "New York PSC — Xchange control order",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://skywirenetworks.com/faqs",
+          "label": "Skywire Networks — company FAQ",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://skywirenetworks.com/legal/terms-of-service/general-terms-of-service",
+          "label": "Skywire Networks — general terms",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.novainfrastructure.com/investments-index",
+          "label": "NOVA Infrastructure — current investments",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.novainfrastructure.com/nova-infrastructure-acquires-xchange-telecom-skywire-networks",
+          "label": "NOVA Infrastructure — Xchange acquisition",
+          "sourceType": "PRESS_RELEASE"
+        }
+      ]
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0363:telmax-inc:f608a383",
+      "taskIndex": 363,
+      "companyName": "telMAX Inc.",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0361-0365-v1/terminal-decisions/0363-telmax-inc.json",
+        "sha256": "d3c72605a805da0770e5e9fd2fc802d0f6367272843baa019289fa25d728a047"
+      }
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0364:uge-international-ltd:3aed0a3e",
+      "taskIndex": 364,
+      "companyName": "UGE International Ltd.",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0364-uge-international-ltd-v1/proposal.json",
+        "sha256": "2ffd803ac2ccc29531983cd9b92de0d8bbf17cab39b368ee5f09f0874efe2699"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0364-uge-international-ltd-v1.json",
+        "sha256": "7b4b449dbf41b24ba291ae24a5b52fc170509e3a0947b3bb02e74eaaa399fb5a"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0364-uge-international-ltd/attempt-1/locked-batch-v2-production-snapshot.json",
+        "sha256": "99bdb18ece8952816ded77d2f99d161eb411c910a2acc4832d8b0464c3cfff0b"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0364-uge-international-ltd/attempt-1/locked-batch-v2-task-snapshot.json",
+        "sha256": "30e7e53920da77a4928172a8d73ba579f271c615a82dcf1c4b95821043a68200"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0364-uge-international-ltd/attempt-1/observed-batch-v1-task-snapshot.json",
+        "sha256": "45472370602e9de5a0cb33e5dcf3033edc7dfc9a29f9f1de70ac81876e477029"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0364-uge-international-ltd/attempt-1/application-research-decision-v1.json",
+        "sha256": "aa156d5f2f0b35f8a165ff92fe8fc3275dc3cc73338d8a0e74f158d228e91fa0"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0364-uge-international-ltd/attempt-1/source-verification.json",
+        "sha256": "0970b9bdb2a676ba1afc7f4bd38d7c81a1cfdf5642f46c77e4bb1670ed9920c8"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "a45438a9e0b8e5b5e3087773ded3cae19bda329eb477990b08e4f036d1ff142b",
+      "dependencySha256": "276c7e757f588b095091059e787403e5844609832deca7a380299134253a8171",
+      "afterImageSha256": "5882c8c4469625ef3eb3a6e2a414ca9f973c2096491816fd2c610ac8cc1251e9",
+      "targetClaims": [
+        "canonical:uge-international-ltd|canada",
+        "seed:uge international inc.|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://ugei.com/nova-completes-purchase-of-uge-international/",
+          "label": "UGE International — NOVA closing",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://ugei.com/uge-acquires-122-development-stage-solar-projects-across-14-states/",
+          "label": "UGE International — development rights acquisition",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://ugei.com/uge-international-ltd-enters-into-arrangement-agreement-for-going-private-transaction-2/",
+          "label": "UGE International — arrangement agreement",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://ugei.com/uge-portfolio-grows-16-mw/",
+          "label": "UGE International — operating portfolio update",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.novainfrastructure.com/investments-index",
+          "label": "NOVA Infrastructure — current investments",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.osc.ca/en/securities-law/orders-rulings-decisions/uge-international-inc",
+          "label": "Ontario Securities Commission — UGE order",
+          "sourceType": "OTHER"
+        }
+      ]
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0365:arcadian-infracom:27de01bd",
+      "taskIndex": 365,
+      "companyName": "Arcadian Infracom",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0361-0365-v1/terminal-decisions/0365-arcadian-infracom.json",
+        "sha256": "71cb23e940fd9b7bbbf097e0a424c2b3dfe3258ebfc2c8d6b517b1704d8a06f2"
+      }
+    }
+  ],
+  "collisionAnalysis": {
+    "independent": true,
+    "claimsSha256": "39a941480263cc77613d533fa8b4bf18360e4a8b0342040c81926f75e47fe3fd",
+    "sharedSourceUrls": [
+      "https://www.novainfrastructure.com/investments-index"
+    ],
+    "conflicts": []
+  },
+  "batchSha256": "f55a40673da0d7a1e6fc8d43cc85a58962be38ea10a519cbb1c3bafe6068a047"
+}

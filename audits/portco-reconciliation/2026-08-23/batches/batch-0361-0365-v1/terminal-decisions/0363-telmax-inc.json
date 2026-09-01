@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0363:telmax-inc:f608a383",
+  "taskIndex": 363,
+  "companyName": "telMAX Inc.",
+  "outcome": "DEFERRED",
+  "decidedAt": "2026-09-01T18:23:00.000Z",
+  "rationale": "Research establishes telMAX Inc. as a distinct Canadian fiber platform and supports NOVA majority control, QID participation and an approximately 15% abrdn co-investment. The exact current QID chain and whether a founder or legacy shareholder block remains current are unresolved, so the complete active owner set is not list-ready.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0363-telmax-inc/attempt-1/locked-batch-v1-task-snapshot.json",
+    "sha256": "06ec12a38bb43859f3b6526417e7807d1e0e2a0c851e31d39d88c4c149c3fe96"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0363-telmax-inc/attempt-1/application-research-decision-v1.json",
+    "sha256": "31e315cfb6672e9749faee4e708ad3a152862a1d31c61071f89482d6a81b534c"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0363-telmax-inc/attempt-1/source-verification.json",
+    "sha256": "e3588ac85368c97859647ce7372ae8b2507f27595a48e53fefa960f0a1ba9bfc"
+  },
+  "evidence": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1793855/000110465926071361/tm262258d7_ncsrs.htm",
+      "purpose": "Current abrdn interest, investment vehicle and entry date."
+    },
+    {
+      "url": "https://quintana-id.com/wp-content/uploads/2021/news/QID%20Closing%20Press%20Release%20telMAX%202021.04.01.pdf",
+      "purpose": "Completed NOVA and QID control investment."
+    },
+    {
+      "url": "https://www.novainfrastructure.com/investments-index",
+      "purpose": "Current NOVA portfolio status and digital-infrastructure classification."
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "d3c72605a805da0770e5e9fd2fc802d0f6367272843baa019289fa25d728a047"
+}
