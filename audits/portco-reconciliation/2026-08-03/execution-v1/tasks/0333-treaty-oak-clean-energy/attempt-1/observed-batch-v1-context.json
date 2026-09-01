@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0333:treaty-oak-clean-energy:eaf9d5e2",
+  "taskIndex": 333,
+  "companyName": "Treaty Oak Clean Energy",
+  "generatedAt": "2026-09-01T12:33:16.871Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0333-treaty-oak-clean-energy/attempt-1/observed-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 333,
+    "taskId": "ledger:0333:treaty-oak-clean-energy:eaf9d5e2",
+    "canonicalKey": "treaty-oak-clean-energy|united-states",
+    "companyName": "Treaty Oak Clean Energy",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 65,
+    "managers": [
+      "Macquarie Asset Management"
+    ],
+    "actionScopes": {
+      "company": [
+        "CREATE_COMPANY"
+      ],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "065-macquarie-asset-management:holding:029:treaty-oak-clean-energy"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://www.macquarie.com/au/en/about/news/2023/macquarie-asset-management-announces-investment-in-treaty-oak-clean-energy.html"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "No exact normalized production or seed match exists. Census evidence supports a new canonical company with 1 manager holding record(s).",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "treaty-oak-clean-energy|united-states",
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpibdo002uivheekmgpdbp",
+        "name": "Macquarie Asset Management",
+        "updatedAt": "2026-07-23T16:09:21.948Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0333:treaty-oak-clean-energy:eaf9d5e2",
+    "taskIndex": 333,
+    "canonicalKey": "treaty-oak-clean-energy|united-states",
+    "capturedAt": "2026-09-01T12:33:16.871Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "77fe245f3f2c54bb277137e847876174dfeaa7ad2c430110cb00fc5034f11a32",
+    "productionSnapshotSha256": "4dbee61f9742757aee73a95c682e461e34e7dcd67b30385ef67ad2b9161a9080",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "d1bf22f74b7389af188f4a2b3b82e0246d17c60ead7f84f073147c4a049757f2",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "045f219d62420d0b300b15c053e0c21e1d466e37ca7746268618c265082f07a8",
+    "stateSha256": "4b52be075209bc405d768adecaafcea4918213101392321bc6d8bce445650b6f",
+    "taskSnapshotSha256": "932211587796e192b4c18d633d2939caca8effc81485e8274699c1e30086994e"
+  },
+  "contextSha256": "6736f0913733c98bc74aa9d336370120e2e47208a0fce50894507213bfaf4f0a"
+}

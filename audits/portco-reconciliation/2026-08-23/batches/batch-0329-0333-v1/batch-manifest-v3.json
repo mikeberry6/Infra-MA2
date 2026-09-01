@@ -1,0 +1,431 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_MANIFEST",
+  "methodologyVersion": "PORTCO_APPLY_BATCH_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0329-0333-v1",
+  "createdAt": "2026-09-01T12:45:00.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "33addb3263f041cfb1471189cab5257167a0e1fdee098788e84d26276580cf4a"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0329:medical-properties-partnership:c29a0cad",
+      "taskIndex": 329,
+      "companyName": "Medical Properties Partnership",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0329-medical-properties-partnership-v1/proposal.json",
+        "sha256": "80cdf1ec8b223ba334d988773b1c9dafbb7e83e80dfdd0e8c3832fbdca44c960"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0329-medical-properties-partnership-v1.json",
+        "sha256": "f3fb437290d310da575d8c13a56fd3e6c67179012c3d8212bcfdd0073db2fa35"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0329-medical-properties-partnership/attempt-1/locked-batch-v1-production-snapshot.json",
+        "sha256": "2cd2b05b80bd8c596a9b01e6d99b99ecf2d71f2668238e547624b857221f005f"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0329-medical-properties-partnership/attempt-1/locked-batch-v1-task-snapshot.json",
+        "sha256": "17a2ba58ffb539b90cd3dd5e6c72882beec278097e183d9dddcbd512f8cd84ef"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0329-medical-properties-partnership/attempt-1/observed-batch-v1-task-snapshot.json",
+        "sha256": "2c7f9fbb9ae8989ff4afbfad58824faff8c66e756361ad5baa49121ca14997d4"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0329-medical-properties-partnership/attempt-1/application-research-decision-v1.json",
+        "sha256": "3d8c2c464d6329de0abb9ddb42a21afc7f598abf82f6dd68d9f5a99fad589c9f"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0329-medical-properties-partnership/attempt-1/source-verification.json",
+        "sha256": "d5fde439c1628d074cc86032880bab424021ef6cec46a5dfed5fb49f1f32189f"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "22ab30f95df1994478ba7eb5aa03cfe6c2235d7a0674a2da809163cdcff5520d",
+      "dependencySha256": "ab8f257fa8ea841ad80543fdc57381d22f45a8e897b4f355f7a48e75efc4962c",
+      "afterImageSha256": "d2a1f24ae1581cdbd7483cac86178405ede4185e8d772294a42bad5a61c017bb",
+      "targetClaims": [
+        "canonical:medical-properties-partnership|united-states",
+        "company:cmrxpjkab014mivhe72i1zmv9",
+        "relation:cmrxpk6d1023kivhebk1u7wdq",
+        "relation:cmrxpm9f504neivheolte1gtu",
+        "relation:cmrxpm9fm04nfivhepfj9bhwn",
+        "relation:cmrxpm9gc04ngivhe1a1z6o4h",
+        "relation:cmrxpm9gq04nhivhej1jg0efv",
+        "relation:cmrxps15r0bywivhe1uth9nu9",
+        "relation:cmrxps16q0byyivheeqfoiscl",
+        "relation:cmrxps17t0bz0ivhefwx4terp",
+        "relation:cmrxps18z0bz2ivhe5kbtjsop",
+        "seed:medical properties partnership|united states",
+        "seed:silver holdco jv, llc|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://ir.medicalpropertiestrust.com/news/news-details/2021/Medical-Properties-Trust-and-Macquarie-Infrastructure-Partners-V-Enter-Partnership-for-Eight-Massachusetts-Hospitals-Valued-at-1-78-Billion-09-01-2021/default.aspx",
+          "label": "Ir — Medical Properties Partnership",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://ir.medicalpropertiestrust.com/news/news-details/2023/Medical-Properties-Trust-Files-Lawsuit-Against-Short-Seller-Viceroy-Research-and-Its-Members-Sends-Letter-to-Shareholders-03-30-2023/",
+          "label": "Ir — Medical Properties Partnership",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://masshpc.gov/news/press-release/hpc-statement-concluding-review-steward-hospital-transactions",
+          "label": "Massachusetts Health Policy Commission — Steward transaction review conclusion",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://s206.q4cdn.com/146646187/files/doc_news/Medical-Properties-Trust-Completes-Hospital-Partnership-With-Macquarie-Asset-Management-03-16-2022-2022.pdf",
+          "label": "S206 — Medical Properties Partnership",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://www.macquarie.com/au/en/about/news/2021/macquarie-infrastructure-partners-v-and-medical-properties-trust-enter-partnership-for-eight-massachusetts-hospitals-valued-at-1-78-billion-usd.html",
+          "label": "Announcement source — Macquarie Asset Management — Medical Properties Partnership",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1287865/000095017023005575/mpw-20221231.htm",
+          "label": "MPT — 2022 Form 10-K",
+          "sourceType": "SEC_FILING"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1287865/000119312525272324/R13.htm",
+          "label": "MPT — Steward bankruptcy and Silver Holdco lender transition",
+          "sourceType": "SEC_FILING"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1467760/000119312526342628/ari-20260630.htm",
+          "label": "Apollo Commercial Real Estate Finance — June 2026 Form 10-Q",
+          "sourceType": "SEC_FILING"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0330:pinsly-railroad-company:4eb86bfe",
+      "taskIndex": 330,
+      "companyName": "Pinsly Railroad Company",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0330-pinsly-railroad-company-v2/proposal.json",
+        "sha256": "5d174cf6a466311dc7ffa9d86fcc8bfce14d0be4e587dee3a4f9b464b04cf04d"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0330-pinsly-railroad-company-v2.json",
+        "sha256": "bd42828796377a2475ab04d30315cfc8fd09a14e1013778493bccc14cdb409ce"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0330-pinsly-railroad-company/attempt-1/locked-batch-v2-production-snapshot.json",
+        "sha256": "e23238dc5aa4fb9b3534daaeea8db3169d9346d654d0d5e79397dd62b8d24881"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0330-pinsly-railroad-company/attempt-1/locked-batch-v2-task-snapshot.json",
+        "sha256": "e90948214ccd6120f80ce0ef8f44fad371909f89c7aacad4af835709710efaad"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0330-pinsly-railroad-company/attempt-1/observed-batch-v1-task-snapshot.json",
+        "sha256": "cc883ae56d7b301a2a82d320c228763ff361d678436d2a5a1d14f4624b599b07"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0330-pinsly-railroad-company/attempt-1/application-research-decision-v1.json",
+        "sha256": "4cb4b6edf907368bb8bc12b4e6890d0ed9abbb40d13e650020f96669651f2f23"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0330-pinsly-railroad-company/attempt-1/source-verification.json",
+        "sha256": "c0f6ff452671fc67a3792f24b0a3eb998e7cf2409274eec4f3eb7c96d07a9438"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "dac1277da0faea5afeef349f3717093687e14a316acc0f760e57d43640358987",
+      "dependencySha256": "9abbc6857e1da685ee7aef9e244b424ff41bf23ea535fe1d0ed8e7fe4625d18d",
+      "afterImageSha256": "096a95015573b322f047f493258203aa02a16fe49039812b71d580467169f6e6",
+      "targetClaims": [
+        "canonical:pinsly-railroad-company|united-states",
+        "seed:pinsly railroad company|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://pinsly.com/gar-rebrands-as-pinsly-railroad-company/",
+          "label": "Pinsly Railroad Company — Gulf & Atlantic rebrand",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.federalregister.gov/d/2021-26697",
+          "label": "Federal Register — MIP V Rail acquisition of RailUSA",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.federalregister.gov/d/2025-18114",
+          "label": "Federal Register — Pinsly current control chain",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.macquarie.com/au/en/about/company/macquarie-asset-management/our-portfolio/pinsly-railroad-company.html",
+          "label": "Macquarie Asset Management — Pinsly Railroad Company portfolio",
+          "sourceType": "WEBSITE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0331:potters-industries-llc:e5212b53",
+      "taskIndex": 331,
+      "companyName": "Potters Industries LLC",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0331-potters-industries-llc-v2/proposal.json",
+        "sha256": "ef7c2be2768ca92e460af4c153ab0134725fc46ad1882eefb22886c91077e0d2"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0331-potters-industries-llc-v2.json",
+        "sha256": "4227779bc08d99ef60afe9aab72a6deb74194299be0e54e8d7306cb036d1b068"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0331-potters-industries-llc/attempt-1/locked-batch-v2-production-snapshot.json",
+        "sha256": "ec86da5c9921f2f8f996ce10af18180a152843a5bf3049dccf33e9ebab6faadf"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0331-potters-industries-llc/attempt-1/locked-batch-v2-task-snapshot.json",
+        "sha256": "d5105a213082009ac0ca209e623b0cd76d8e465f6565829e7815065574e43905"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0331-potters-industries-llc/attempt-1/observed-batch-v1-task-snapshot.json",
+        "sha256": "988fde0584602bf2db180f1419d6f09564f298f6a5c8d7461abf05a361f534f5"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0331-potters-industries-llc/attempt-1/application-research-decision-v1.json",
+        "sha256": "0822f5dd432467192e4216d204de98e408af20bdb369f9ce110d75d5647c8836"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0331-potters-industries-llc/attempt-1/source-verification.json",
+        "sha256": "1f7640f90016dc3a3ef16d28b11385c938fa16c7c15166ce1f1382df10e571c8"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "58c98ceb0190e437eab955fd2872ced0e9f13a5daab0eeb8c9c2e0a5f6c89a18",
+      "dependencySha256": "25c23541fc28a9f2d9a391fa9c97515bb06fa31b82ef66d31cd7bfc553fd1a60",
+      "afterImageSha256": "8058eff38c1951d10adb3df466fcbf1f0ae2b7e4bfd45f91dcd783b63cbb1e28",
+      "targetClaims": [
+        "canonical:potters-industries-llc|united-states",
+        "company:cmrxpjkc9014qivheyfmy3lle",
+        "relation:cmrxpk6f6023oivhefg59zjtd",
+        "relation:cmrxpm9rp04ntivhesi6fax0x",
+        "relation:cmrxpm9sa04nuivheun4tfgck",
+        "relation:cmrxpm9su04nvivhemq7l2gic",
+        "relation:cmrxpm9te04nwivhem3z7biz6",
+        "relation:cmrxpm9tx04nxivhe8706xk04",
+        "relation:cmrxps1pu0bzsivhe2w5jqt9m",
+        "relation:cmrxps1qw0bzuivhefjwhru1u",
+        "relation:cmrxps1rv0bzwivhetsm26ocv",
+        "relation:cmrxps1st0bzyivhegjfj6103",
+        "seed:potters industries llc|united states",
+        "seed:potters industries, llc|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://tjclp.com/our-portfolio/",
+          "label": "TJC — Potters Industries portfolio history",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.macquarie.com/au/en/about/news/2025/mam-led-consortium-agrees-to-acquire-potters-industries-from-tjc.html",
+          "label": "Announcement source — Macquarie Asset Management — Potters Industries LLC",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.pottersindustries.com/",
+          "label": "Pottersindustries — Potters Industries LLC",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.pottersindustries.com/about-us/history/",
+          "label": "Pottersindustries — Potters Industries LLC",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1859919/000114036126019204/ny20067676x6_424b3.htm",
+          "label": "Acquisition financing filing — Potters Industries",
+          "sourceType": "SEC_FILING"
+        },
+        {
+          "url": "https://www.unisuper.com.au/about-us/media-centre/2025/unisuper-commits-usd500-million-to-new-macquarie-infrastructure-adjacency-strategy",
+          "label": "UniSuper — Macquarie infrastructure-adjacency strategy and Potters co-investment",
+          "sourceType": "PRESS_RELEASE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0332:trapac-llc:57512da4",
+      "taskIndex": 332,
+      "companyName": "TraPac LLC",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0332-trapac-llc-v2/proposal.json",
+        "sha256": "4590840c323276499b33bf2b370fa70c1bd4601e2b406b6a6ef26a5ace98ab9a"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0332-trapac-llc-v2.json",
+        "sha256": "e512dbac91a8f15911e829c6d535442a53e393560aaa2b3a9e6eac24fccd7036"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0332-trapac-llc/attempt-1/locked-batch-v2-production-snapshot.json",
+        "sha256": "72a33d54b826efde01a5d0359897c1cfde9f062dc397dd3a1bbd5f69248d2d6e"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0332-trapac-llc/attempt-1/locked-batch-v2-task-snapshot.json",
+        "sha256": "b3996753952485ca5c1e27970b48942f729a73966ab7a743d82a59f96dd82c0d"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0332-trapac-llc/attempt-1/observed-batch-v1-task-snapshot.json",
+        "sha256": "c863acb5475f51cdbc9780a00c97cff490b54509fb3b6a5161b3839124f0ad5a"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0332-trapac-llc/attempt-1/application-research-decision-v1.json",
+        "sha256": "ed789622c89a8c88f617e6f60c5f9c62548f7fff7d080893066b65655b041dfb"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0332-trapac-llc/attempt-1/source-verification.json",
+        "sha256": "35e7f497925577bb35cf17fbe90047bb2a41c30d2c30697393b1924b1c48b986"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "dc338f2669d540bd0e1e9cc08fb06d53ca252716634c331a0ead5699c3278a64",
+      "dependencySha256": "d5799a21d8266ae775277bbea08ec567ce7260657620695bdcb0d76745fe7c37",
+      "afterImageSha256": "9fddd1a170c978e81e754c7c5cf48aa72b53a211b4c781716a388ff49eef704e",
+      "targetClaims": [
+        "canonical:trapac-llc|united-states",
+        "company:cmrxpjkef014uivhe5e0g04g8",
+        "relation:cmrxpk6jz023xivhe3kortq8m",
+        "relation:cmrxpma4k04o9ivhe12rpuz2c",
+        "relation:cmrxpma5904oaivhe4esgb38h",
+        "relation:cmrxpma5m04obivhem2ewx0uv",
+        "relation:cmrxpma6a04ocivhec9fn758e",
+        "relation:cmrxpma6u04odivhe4rvddxgo",
+        "relation:cmrxps2f90c0xivheok142lea",
+        "relation:cmrxps2g70c0zivhek9a00hem",
+        "relation:cmrxps2hd0c11ivhetpluciwe",
+        "relation:cmrxps2ie0c13ivhel5e07gr4",
+        "relation:cmrxps2jd0c15ivhe07mtgozc",
+        "seed:trapac llc|united states",
+        "seed:trapac, llc|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://ec.europa.eu/competition/mergers/cases1/202316/M_11056_9135914_48_3.pdf",
+          "label": "European Commission — ONE and Macquarie acquisition of TraPac",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://ir.mol.co.jp/en/ir/stock/gms/main/05/teaserItems1/018/linkList/01/link/notice24.pdf",
+          "label": "Mitsui O.S.K. Lines — TraPac transaction closing notice",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://portoflosangeles.org/commission/agenda-archive-and-videos/agendas/2023/05252023-special-agenda",
+          "label": "Port of Los Angeles — TraPac ownership-transfer consents",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.macquarie.com/au/en/about/company/macquarie-asset-management/our-portfolio/trapac.html",
+          "label": "Macquarie — TraPac LLC",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.mol.co.jp/en/pr/2014/14002.html",
+          "label": "Mitsui O.S.K. Lines — Brookfield TraPac investment",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.one-line.com/en/news/one-strengthens-global-presence-terminal-acquisitions-us-west-coast-and-rotterdam",
+          "label": "Close date source — Macquarie Asset Management — TraPac LLC",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.trapac.com/",
+          "label": "Trapac — TraPac LLC",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.trapac.com/history/",
+          "label": "Trapac — TraPac LLC",
+          "sourceType": "ARTICLE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0333:treaty-oak-clean-energy:eaf9d5e2",
+      "taskIndex": 333,
+      "companyName": "Treaty Oak Clean Energy",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/proposals/0333-treaty-oak-clean-energy-v2/proposal.json",
+        "sha256": "5e779144eadc51321c3a9808cb719e6d457549f18596435c47cc425dcbff7970"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0333-treaty-oak-clean-energy-v2.json",
+        "sha256": "b0b3c209f8f139ebf670aed709dbf3fbf812772ea35bdbc8e27d4b806c79b74b"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0333-treaty-oak-clean-energy/attempt-1/locked-batch-v2-production-snapshot.json",
+        "sha256": "e65fc2eb393ed86e06ebbd80bd7421b48738e393853a285a8f59dc6f2ed4f1cc"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0333-treaty-oak-clean-energy/attempt-1/locked-batch-v2-task-snapshot.json",
+        "sha256": "33e15e67fde00a009f9744d649a3234559f33ed391af2d361f133c4310e46c7c"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0333-treaty-oak-clean-energy/attempt-1/observed-batch-v1-task-snapshot.json",
+        "sha256": "932211587796e192b4c18d633d2939caca8effc81485e8274699c1e30086994e"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0333-treaty-oak-clean-energy/attempt-1/application-research-decision-v1.json",
+        "sha256": "9fbc72524cad851b55859df0aa5733de89cce06f5a9aaf58c608056890d9aea1"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0333-treaty-oak-clean-energy/attempt-1/source-verification.json",
+        "sha256": "c9f726d4db85b5e66d2d48ec2cd53d49b4c4c467cfa2dd15a3a60dd91dba5c69"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "4b52be075209bc405d768adecaafcea4918213101392321bc6d8bce445650b6f",
+      "dependencySha256": "045f219d62420d0b300b15c053e0c21e1d466e37ca7746268618c265082f07a8",
+      "afterImageSha256": "a1811b66980a3cde21baddfb34295262b456fcbcdb9dab5461ce2e39371799b3",
+      "targetClaims": [
+        "canonical:treaty-oak-clean-energy|united-states",
+        "seed:treaty oak clean energy, llc|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://www.greeninvestmentgroup.com/en/news/2022/macquarie-asset-managements-green-investment-group-acquires-treaty-oak-clean-energy.html",
+          "label": "Green Investment Group — Treaty Oak acquisition",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.macquarie.com/au/en/about/company/macquarie-asset-management/our-portfolio/treaty-oak-clean-energy.html",
+          "label": "Macquarie Asset Management — Treaty Oak Clean Energy portfolio",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.macquarie.com/au/en/about/news/2024/macquarie-green-energy-and-climate-opportunities-fund-acquires-portfolio-of-six-investments.html",
+          "label": "Macquarie — MGECOF portfolio acquisition",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.macquarie.com/us/en/about/news/2025/macquarie-asset-management-announces-acquisition-of-galehead-development-and-strategic-integration-with-treaty-oak-clean-energy.html",
+          "label": "Macquarie — Galehead integration with Treaty Oak",
+          "sourceType": "PRESS_RELEASE"
+        }
+      ]
+    }
+  ],
+  "collisionAnalysis": {
+    "independent": true,
+    "claimsSha256": "06599269079f1175f4a6633a0f59262a561b7466e77daab1d6702f04ce97557c",
+    "sharedSourceUrls": [],
+    "conflicts": []
+  },
+  "batchSha256": "bdad1cb0ee12a131a302e78d6e3ce61fc169d19aa85fbebd4e81febea93ac65d"
+}

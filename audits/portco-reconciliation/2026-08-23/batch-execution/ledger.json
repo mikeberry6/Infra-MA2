@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-01T12:14:41.863Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-09-01T12:52:00.000Z",
+  "activeBatchId": "batch-0329-0333-v1",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -5606,7 +5606,55 @@
           "reason": null
         }
       ]
+    },
+    {
+      "batchId": "batch-0329-0333-v1",
+      "state": "READY",
+      "taskIds": [
+        "ledger:0329:medical-properties-partnership:c29a0cad",
+        "ledger:0330:pinsly-railroad-company:4eb86bfe",
+        "ledger:0331:potters-industries-llc:e5212b53",
+        "ledger:0332:trapac-llc:57512da4",
+        "ledger:0333:treaty-oak-clean-energy:eaf9d5e2"
+      ],
+      "taskIndexes": [
+        329,
+        330,
+        331,
+        332,
+        333
+      ],
+      "createdAt": "2026-09-01T12:16:29.551Z",
+      "updatedAt": "2026-09-01T12:52:00.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0329-0333-v1/batch-manifest-v3.json",
+        "sha256": "bdad1cb0ee12a131a302e78d6e3ce61fc169d19aa85fbebd4e81febea93ac65d"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-09-01T12:16:29.551Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-09-01T12:52:00.000Z",
+          "evidenceSha256": [
+            "bdad1cb0ee12a131a302e78d6e3ce61fc169d19aa85fbebd4e81febea93ac65d"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "476c2d11e8c0daf55f64180af06e91e6591b057a390211a9fb7b142ca6536dcc"
+  "ledgerSha256": "c226854d1cbab4018f54d0bb9080e0ad0a04ce8fc61425a942694c82865dbfce"
 }

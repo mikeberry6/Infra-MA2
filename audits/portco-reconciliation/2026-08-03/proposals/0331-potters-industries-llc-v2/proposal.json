@@ -1,0 +1,410 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0331:potters-industries-llc:e5212b53",
+  "taskIndex": 331,
+  "asOfDate": "2026-09-01",
+  "generatedAt": "2026-09-01T12:33:00.000Z",
+  "canonicalKey": "potters-industries-llc|united-states",
+  "companyName": "Potters Industries LLC",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER"
+  ],
+  "sourceHoldingIds": [
+    "065-macquarie-asset-management:holding:021:potters-industries-llc"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Correct Potters to its legal operating-company name and December 2025 closed ownership state. Macquarie's infrastructure-adjacent private-equity strategy controls the company through MSOF Beacon, UniSuper publicly discloses an approximately 30% co-investment and Partners Capital is a named co-investor. TJC and PQ Corporation are retained as former owners. The business is included only on the evidenced infrastructure-adjacent mandate, not characterized as core infrastructure.",
+  "evidence": [
+    {
+      "url": "https://www.macquarie.com/au/en/about/news/2025/mam-led-consortium-agrees-to-acquire-potters-industries-from-tjc.html",
+      "purpose": "Buyer group, control transaction, operating profile and strategy basis.",
+      "supports": [
+        "Macquarie led the acquisition with UniSuper and Partners Capital.",
+        "The investment sits in an infrastructure-adjacent private-equity strategy."
+      ]
+    },
+    {
+      "url": "https://www.unisuper.com.au/about-us/media-centre/2025/unisuper-commits-usd500-million-to-new-macquarie-infrastructure-adjacency-strategy",
+      "purpose": "Co-investor stake and mandate evidence.",
+      "supports": [
+        "UniSuper committed approximately 30% of the Potters equity.",
+        "The investment is part of Macquarie's infrastructure-adjacency strategy."
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1859919/000114036126019204/ny20067676x6_424b3.htm",
+      "purpose": "December 2025 acquisition-financing close evidence.",
+      "supports": [
+        "The Potters acquisition loan funded in December 2025.",
+        "The financing evidence supports a closed rather than pending transaction state."
+      ]
+    },
+    {
+      "url": "https://tjclp.com/our-portfolio/",
+      "purpose": "Former-owner entry and exit evidence.",
+      "supports": [
+        "TJC acquired Potters in 2020.",
+        "TJC now identifies Potters as exited."
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "ec86da5c9921f2f8f996ce10af18180a152843a5bf3049dccf33e9ebab6faadf",
+  "currentCompanySnapshotSha256": "bd23d082d5244b89690206e6ebc5f56ec33b888006dfeea38292e79d5eea61af",
+  "executionLock": {
+    "taskSnapshotSha256": "d5105a213082009ac0ca209e623b0cd76d8e465f6565829e7815065574e43905",
+    "taskStateSha256": "58c98ceb0190e437eab955fd2872ced0e9f13a5daab0eeb8c9c2e0a5f6c89a18",
+    "taskDependencySha256": "25c23541fc28a9f2d9a391fa9c97515bb06fa31b82ef66d31cd7bfc553fd1a60",
+    "seedEntrySha256": "17fd843c39dc898c91648489c1d3c0452eab207a4a9ccea968497b55e828b717",
+    "dependencies": {
+      "ownershipPeriodsSha256": "9f184b06c650431a3d86bda763821dd2b44967703901e94dd26cdbcb2ced2867",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "ed549e1b186e0f56f80676904c0c7149c7f62decf5f2039b3c532b0e0526855a",
+      "organizationsSha256": "bb38fbfbe23c13bd022d564e004fb2a26f65db6f5fad04d77f47f21fc64a5f34",
+      "citationsSha256": "994e930220b18bac9c16366b973f1ec1e7af715cc007801fbcc299cb1e4b78ee",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj36z00emivhe92lfsr7g",
+        "fundName": "Macquarie Infrastructure Partners VI",
+        "managerId": "cmrxpibdo002uivheekmgpdbp",
+        "updatedAt": "2026-07-23T16:09:57.995Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpibdo002uivheekmgpdbp",
+        "name": "Macquarie Asset Management",
+        "updatedAt": "2026-07-23T16:09:21.948Z"
+      },
+      {
+        "id": "cmrxpin2x006iivhewyd2w4yo",
+        "name": "UniSuper",
+        "updatedAt": "2026-07-23T16:09:37.113Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjkc9014qivheyfmy3lle",
+    "name": "Potters Industries LLC",
+    "aliases": [],
+    "sector": "TRANSPORTATION",
+    "subsector": "Road-marking materials and engineered glass media",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Potters Industries manufactures glass beads, microspheres, and related engineered materials used in road markings, runway markings, and specialized industrial applications. Its end markets include transportation safety, infrastructure maintenance, and industrial customers that use reflective media and specialty materials in their operations. The operating model is asset-heavy and manufacturing based, supported by a network of production and logistics sites across North America and Europe. Macquarie stated in November 2025 that Potters operates 26 manufacturing and logistics sites across North America and Europe and has additional presence in South America and Asia, while company materials identify Malvern, Pennsylvania as its global headquarters. Macquarie Asset Management and co-investors including UniSuper and Partners Capital announced an agreement in November 2025 to acquire a majority stake from TJC, but the reviewed sources did not confirm a completed closing or disclose the current post-transaction ownership structure as of the review date.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Pennsylvania; North America; Europe",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk6f6023oivhefg59zjtd",
+        "managerName": "Macquarie Asset Management",
+        "organizationName": "Macquarie Asset Management",
+        "fundName": "Macquarie Infrastructure Partners VI",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpm9rp04ntivhesi6fax0x",
+        "date": "2021",
+        "event": "Potters moved to a new joint corporate and R&D headquarters in Malvern, Pennsylvania.",
+        "category": "OTHER",
+        "sortDate": "2021-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm9sa04nuivheun4tfgck",
+        "date": "2024",
+        "event": "Potters acquired Franklin Paint and UCM according to company history materials.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm9su04nvivhemq7l2gic",
+        "date": "2025",
+        "event": "Potters opened a new plant in Wilson, North Carolina.",
+        "category": "EXPANSION",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm9te04nwivhem3z7biz6",
+        "date": "Nov 11, 2025",
+        "event": "Macquarie Asset Management-led consortium agreed to acquire a majority stake in Potters from TJC.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-11-11T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm9tx04nxivhe8706xk04",
+        "date": "2026",
+        "event": "No reviewed public source confirmed completion of the announced Macquarie-led transaction.",
+        "category": "OTHER",
+        "sortDate": "2026-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxps1pu0bzsivhe2w5jqt9m",
+        "label": "Announcement source — Macquarie Asset Management — Potters Industries LLC",
+        "url": "https://www.macquarie.com/au/en/about/news/2025/mam-led-consortium-agrees-to-acquire-potters-industries-from-tjc.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Macquarie transaction or milestone detail",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxps1qw0bzuivhefjwhru1u",
+        "label": "Pottersindustries — Potters Industries LLC",
+        "url": "https://www.pottersindustries.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Pottersindustries company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxps1rv0bzwivhetsm26ocv",
+        "label": "Pottersindustries — Potters Industries LLC",
+        "url": "https://www.pottersindustries.com/contact/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Pottersindustries — Potters Industries LLC",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxps1st0bzyivhegjfj6103",
+        "label": "Pottersindustries — Potters Industries LLC",
+        "url": "https://www.pottersindustries.com/about-us/history/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Pottersindustries company profile",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "bd23d082d5244b89690206e6ebc5f56ec33b888006dfeea38292e79d5eea61af",
+  "afterImage": {
+    "id": "cmrxpjkc9014qivheyfmy3lle",
+    "name": "Potters Industries, LLC",
+    "aliases": [
+      "Potters Industries LLC",
+      "Potters Industries Inc.",
+      "Potters Bros.",
+      "Potters Bros. Inc."
+    ],
+    "sector": "TRANSPORTATION",
+    "subsector": "Infrastructure-adjacent road-marking and engineered glass materials",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Potters Industries, LLC manufactures glass beads, microspheres and engineered materials used in road and airfield markings and specialized industrial applications. The company is headquartered in Malvern, Pennsylvania and operates a broad manufacturing and logistics network across North America and Europe, with additional presence in South America and Asia. A Macquarie Asset Management-led consortium acquired control in December 2025 through the Macquarie Strategic Opportunities Fund infrastructure-adjacent private-equity strategy. UniSuper publicly discloses an approximately 30% interest and Partners Capital is a named co-investor; the remaining consortium split is not publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.pottersindustries.com/",
+    "yearFounded": 1914,
+    "headquarters": "Malvern, Pennsylvania, United States",
+    "lastVerifiedAt": "2026-09-01T12:33:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk6f6023oivhefg59zjtd",
+        "managerName": "Macquarie Asset Management",
+        "organizationName": "Macquarie Asset Management",
+        "fundName": null,
+        "vehicleName": "MSOF Beacon, LLC / Macquarie Strategic Opportunities Fund",
+        "stake": "Controlling interest; exact percentage not publicly disclosed",
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "UniSuper",
+        "organizationName": "UniSuper",
+        "fundName": null,
+        "vehicleName": "Macquarie infrastructure-adjacency co-investment vehicle not publicly disclosed",
+        "stake": "Approximately 30%",
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Partners Capital",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Co-investment vehicle not publicly disclosed",
+        "stake": "Not publicly disclosed",
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "TJC",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "The Resolute Fund IV, L.P. / Potters Buyer, LLC / TRF-Potters Blocker",
+        "stake": "Former controlling interest",
+        "investmentYear": 2020,
+        "exitYear": 2025,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      },
+      {
+        "id": null,
+        "managerName": "PQ Corporation",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Potters Industries Holding, Inc.",
+        "stake": "Two-thirds from 1977; 100% from 1981",
+        "investmentYear": 1977,
+        "exitYear": 2020,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpm9rp04ntivhesi6fax0x",
+        "date": "1914",
+        "event": "The business traces its roots to the Potters family glass enterprise.",
+        "category": "FOUNDING",
+        "sortDate": "1914-01-01T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.pottersindustries.com/about-us/history/"
+        ]
+      },
+      {
+        "id": "cmrxpm9sa04nuivheun4tfgck",
+        "date": "Dec 14, 2020",
+        "event": "TJC's Resolute Fund IV completed the acquisition of Potters from PQ Corporation.",
+        "category": "ACQUISITION",
+        "sortDate": "2020-12-14T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://tjclp.com/our-portfolio/"
+        ]
+      },
+      {
+        "id": "cmrxpm9su04nvivhemq7l2gic",
+        "date": "2021",
+        "event": "Potters moved its corporate and research headquarters to Malvern, Pennsylvania.",
+        "category": "EXPANSION",
+        "sortDate": "2021-01-01T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.pottersindustries.com/about-us/history/"
+        ]
+      },
+      {
+        "id": "cmrxpm9te04nwivhem3z7biz6",
+        "date": "Nov 11, 2025",
+        "event": "A Macquarie Asset Management-led consortium including UniSuper and Partners Capital announced an agreement to acquire a majority stake from TJC.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-11-11T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.macquarie.com/au/en/about/news/2025/mam-led-consortium-agrees-to-acquire-potters-industries-from-tjc.html"
+        ]
+      },
+      {
+        "id": "cmrxpm9tx04nxivhe8706xk04",
+        "date": "Dec 2025",
+        "event": "The Macquarie-led consortium completed the Potters acquisition; the exact closing day was not publicly disclosed.",
+        "category": "FINANCING",
+        "sortDate": "2025-12-31T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1859919/000114036126019204/ny20067676x6_424b3.htm",
+          "https://tjclp.com/our-portfolio/"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxps1pu0bzsivhe2w5jqt9m",
+        "label": "Announcement source — Macquarie Asset Management — Potters Industries LLC",
+        "url": "https://www.macquarie.com/au/en/about/news/2025/mam-led-consortium-agrees-to-acquire-potters-industries-from-tjc.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Macquarie transaction or milestone detail",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxps1qw0bzuivhefjwhru1u",
+        "label": "Pottersindustries — Potters Industries LLC",
+        "url": "https://www.pottersindustries.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Pottersindustries company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxps1st0bzyivhegjfj6103",
+        "label": "Pottersindustries — Potters Industries LLC",
+        "url": "https://www.pottersindustries.com/about-us/history/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Pottersindustries company profile",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "UniSuper — Macquarie infrastructure-adjacency strategy and Potters co-investment",
+        "url": "https://www.unisuper.com.au/about-us/media-centre/2025/unisuper-commits-usd500-million-to-new-macquarie-infrastructure-adjacency-strategy",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Approximately 30% UniSuper stake and strategy attribution",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Acquisition financing filing — Potters Industries",
+        "url": "https://www.sec.gov/Archives/edgar/data/1859919/000114036126019204/ny20067676x6_424b3.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "December 2025 acquisition-loan funding",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "TJC — Potters Industries portfolio history",
+        "url": "https://tjclp.com/our-portfolio/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "2020 entry and exited status",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "8058eff38c1951d10adb3df466fcbf1f0ae2b7e4bfd45f91dcd783b63cbb1e28",
+  "proposalSha256": "ef7c2be2768ca92e460af4c153ab0134725fc46ad1882eefb22886c91077e0d2"
+}

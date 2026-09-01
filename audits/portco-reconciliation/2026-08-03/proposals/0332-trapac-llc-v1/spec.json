@@ -1,0 +1,216 @@
+{
+  "generatedAt": "2026-09-01T12:34:00.000Z",
+  "actions": ["CORRECT_COMPANY", "ADD_OWNER"],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "reviewedSeedRetirementTaskIds": [],
+  "rationale": "Correct TraPac to its legal name and complete its ownership history. Mitsui O.S.K. Lines repurchased Brookfield's 49% interest in 2022, then Ocean Network Express closed a 51% acquisition on November 2, 2023 and Macquarie Infrastructure Partners VI closed a 49% acquisition on November 1, 2023. The two current owners exercise joint control. TraPac Jacksonville transferred separately to Ceres in 2022 and is not part of this Los Angeles/Oakland platform.",
+  "evidence": [
+    {
+      "url": "https://portoflosangeles.org/commission/agenda-archive-and-videos/agendas/2023/05252023-special-agenda",
+      "purpose": "Current ownership, legal vehicles and operating-platform boundary.",
+      "supports": ["ONE and Macquarie acquired aggregate 51% and 49% interests.", "The ownership transfers did not alter the Los Angeles operating permit or platform boundary."]
+    },
+    {
+      "url": "https://ir.mol.co.jp/en/ir/stock/gms/main/05/teaserItems1/018/linkList/01/link/notice24.pdf",
+      "purpose": "Exact 2023 acquisition closing dates.",
+      "supports": ["Macquarie's 49% acquisition closed on November 1, 2023.", "ONE's 51% acquisition closed on November 2, 2023."]
+    },
+    {
+      "url": "https://ec.europa.eu/competition/mergers/cases1/202316/M_11056_9135914_48_3.pdf",
+      "purpose": "Joint-control and 51/49 ownership evidence.",
+      "supports": ["ONE and Macquarie obtained joint control of TraPac.", "The aggregate current ownership split is 51% ONE and 49% Macquarie."]
+    },
+    {
+      "url": "https://www.mol.co.jp/en/pr/2014/14002.html",
+      "purpose": "Former Brookfield ownership evidence.",
+      "supports": ["Brookfield acquired a 49% indirect interest in 2014.", "Mitsui O.S.K. Lines retained the other 51% during that period."]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "afterImage": {
+    "id": "cmrxpjkef014uivhe5e0g04g8",
+    "name": "TraPac, LLC",
+    "aliases": ["TraPac LLC", "TraPac, Inc."],
+    "sector": "TRANSPORTATION",
+    "subsector": "Marine container terminals",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": ["United States"],
+    "description": "TraPac, LLC operates marine container terminals in Los Angeles and Oakland serving ocean carriers, truckers, rail providers and cargo owners moving containerized freight through the U.S. West Coast. The capital-intensive platform includes berth access, cranes, yard and gate systems and intermodal rail connectivity. Ocean Network Express acquired 51% on November 2, 2023 and Macquarie Infrastructure Partners VI acquired 49% on November 1, 2023; the owners exercise joint control. Mitsui O.S.K. Lines and Brookfield Asset Management are former owners. TraPac Jacksonville transferred separately to Ceres in 2022 and is excluded from this platform boundary.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.trapac.com/",
+    "yearFounded": 1985,
+    "headquarters": "Wilmington, California, United States",
+    "lastVerifiedAt": "2026-09-01T12:34:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk6jz023xivhe3kortq8m",
+        "managerName": "Macquarie Asset Management",
+        "organizationName": "Macquarie Asset Management",
+        "fundName": "Macquarie Infrastructure Partners VI",
+        "vehicleName": "Skipjack Terminal Holdings, L.P. / Skipjack (ECI) Holdings, LLC",
+        "stake": "49%",
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Ocean Network Express",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "United Pacific Ports B (UK) Ltd.",
+        "stake": "51%",
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Mitsui O.S.K. Lines",
+        "organizationName": "Mitsui O.S.K. Lines",
+        "fundName": null,
+        "vehicleName": "International Transportation, Inc. / TraPac Holdings, LLC",
+        "stake": "100% initially; 51% with Brookfield; 100% after the 2022 repurchase",
+        "investmentYear": 1985,
+        "exitYear": 2023,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      },
+      {
+        "id": null,
+        "managerName": "Brookfield Asset Management",
+        "organizationName": "Brookfield Asset Management",
+        "fundName": null,
+        "vehicleName": "BIF II TP Aggregator (Delaware), L.P.",
+        "stake": "49% indirect interest",
+        "investmentYear": 2014,
+        "exitYear": 2022,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpma4k04o9ivhe12rpuz2c",
+        "date": "1985",
+        "event": "Mitsui O.S.K. Lines established TraPac to operate a container terminal in Los Angeles.",
+        "category": "FOUNDING",
+        "sortDate": "1985-01-01T05:00:00.000Z",
+        "evidenceUrls": ["https://www.trapac.com/history/"]
+      },
+      {
+        "id": "cmrxpma5904oaivhe4esgb38h",
+        "date": "1991",
+        "event": "TraPac expanded to Oakland with the opening of its second California terminal.",
+        "category": "EXPANSION",
+        "sortDate": "1991-01-01T05:00:00.000Z",
+        "evidenceUrls": ["https://www.trapac.com/history/"]
+      },
+      {
+        "id": "cmrxpma5m04obivhem2ewx0uv",
+        "date": "2014",
+        "event": "Brookfield acquired a 49% indirect interest in TraPac from Mitsui O.S.K. Lines.",
+        "category": "ACQUISITION",
+        "sortDate": "2014-01-16T05:00:00.000Z",
+        "evidenceUrls": ["https://www.mol.co.jp/en/pr/2014/14002.html"]
+      },
+      {
+        "id": "cmrxpma6a04ocivhec9fn758e",
+        "date": "2022",
+        "event": "Mitsui O.S.K. Lines repurchased Brookfield's 49% interest before the sale to ONE and Macquarie.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-10-31T04:00:00.000Z",
+        "evidenceUrls": ["https://portoflosangeles.org/commission/agenda-archive-and-videos/agendas/2023/05252023-special-agenda"]
+      },
+      {
+        "id": "cmrxpma6u04odivhe4rvddxgo",
+        "date": "Nov 1–2, 2023",
+        "event": "Macquarie Infrastructure Partners VI closed a 49% acquisition and Ocean Network Express closed a 51% acquisition, establishing joint control of TraPac.",
+        "category": "FINANCING",
+        "sortDate": "2023-11-02T04:00:00.000Z",
+        "evidenceUrls": ["https://ir.mol.co.jp/en/ir/stock/gms/main/05/teaserItems1/018/linkList/01/link/notice24.pdf", "https://ec.europa.eu/competition/mergers/cases1/202316/M_11056_9135914_48_3.pdf"]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxps2f90c0xivheok142lea",
+        "label": "Trapac — TraPac LLC",
+        "url": "https://www.trapac.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Trapac company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxps2g70c0zivhek9a00hem",
+        "label": "Trapac — TraPac LLC",
+        "url": "https://www.trapac.com/history/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Trapac — TraPac LLC",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxps2hd0c11ivhetpluciwe",
+        "label": "Macquarie — TraPac LLC",
+        "url": "https://www.macquarie.com/au/en/about/company/macquarie-asset-management/our-portfolio/trapac.html",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Macquarie operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxps2jd0c15ivhe07mtgozc",
+        "label": "Close date source — Macquarie Asset Management — TraPac LLC",
+        "url": "https://www.one-line.com/en/news/one-strengthens-global-presence-terminal-acquisitions-us-west-coast-and-rotterdam",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Macquarie Asset Management closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Port of Los Angeles — TraPac ownership-transfer consents",
+        "url": "https://portoflosangeles.org/commission/agenda-archive-and-videos/agendas/2023/05252023-special-agenda",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Legal vehicles, 51/49 ownership and operating-platform boundary",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Mitsui O.S.K. Lines — TraPac transaction closing notice",
+        "url": "https://ir.mol.co.jp/en/ir/stock/gms/main/05/teaserItems1/018/linkList/01/link/notice24.pdf",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "November 1 and 2, 2023 closing dates",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "European Commission — ONE and Macquarie acquisition of TraPac",
+        "url": "https://ec.europa.eu/competition/mergers/cases1/202316/M_11056_9135914_48_3.pdf",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Joint control and aggregate 51/49 ownership split",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Mitsui O.S.K. Lines — Brookfield TraPac investment",
+        "url": "https://www.mol.co.jp/en/pr/2014/14002.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Brookfield's former 49% interest and MOL's retained 51%",
+        "isPrimary": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,370 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0329:medical-properties-partnership:c29a0cad",
+  "taskIndex": 329,
+  "asOfDate": "2026-09-01",
+  "generatedAt": "2026-09-01T12:20:00.000Z",
+  "canonicalKey": "medical-properties-partnership|united-states",
+  "companyName": "Medical Properties Partnership",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER",
+    "RETIRE_OWNERSHIP",
+    "REALIZE_COMPANY"
+  ],
+  "sourceHoldingIds": [
+    "065-macquarie-asset-management:holding:016:medical-properties-partnership"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Retain the original eight-hospital lessor partnership once under its legal entity Silver Holdco JV, LLC, preserve Medical Properties Partnership as an alias, record Macquarie/MIP V and Medical Properties Trust as former 50% owners, and mark the platform realized in 2024 after Steward's lease termination and the court-approved lender transition. Nonprofit operators, Massachusetts, Apollo's workout pool and property SPVs are successors or components rather than new manager-level PortCos.",
+  "evidence": [
+    {
+      "url": "https://www.macquarie.com/au/en/about/news/2021/macquarie-infrastructure-partners-v-and-medical-properties-trust-enter-partnership-for-eight-massachusetts-hospitals-valued-at-1-78-billion-usd.html",
+      "purpose": "Original platform identity, infrastructure mandate, ownership split and asset boundary.",
+      "supports": [
+        "MIP V and Medical Properties Trust formed a 50/50 partnership for eight Massachusetts hospitals.",
+        "The original platform was a long-duration hospital real-estate lessor vehicle."
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1287865/000095017023005575/mpw-20221231.htm",
+      "purpose": "Legal closing and financing evidence.",
+      "supports": [
+        "The transaction legally closed on March 14, 2022.",
+        "The original eight-property vehicle was approximately 55% financed with nonrecourse debt."
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1287865/000119312525272324/R13.htm",
+      "purpose": "Realization and former-owner evidence.",
+      "supports": [
+        "The Steward lease ended in 2024 and the collateral transitioned to Apollo-managed lenders.",
+        "Medical Properties Trust reserved its partnership equity and no active original platform remained."
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1467760/000119312526342628/ari-20260630.htm",
+      "purpose": "Latest successor-state and exit check.",
+      "supports": [
+        "Five sites had been sold, St. Elizabeth's was state-owned, and Carney and Nashoba remained in a lender workout vehicle at June 30, 2026.",
+        "No continuing Macquarie or Medical Properties Trust interest in the original partnership was identified."
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "2cd2b05b80bd8c596a9b01e6d99b99ecf2d71f2668238e547624b857221f005f",
+  "currentCompanySnapshotSha256": "b586e67747eae1cd5b9ec2b4fc3c84172514f1582bc70a132191b24b77f25ae0",
+  "executionLock": {
+    "taskSnapshotSha256": "17a2ba58ffb539b90cd3dd5e6c72882beec278097e183d9dddcbd512f8cd84ef",
+    "taskStateSha256": "22ab30f95df1994478ba7eb5aa03cfe6c2235d7a0674a2da809163cdcff5520d",
+    "taskDependencySha256": "ab8f257fa8ea841ad80543fdc57381d22f45a8e897b4f355f7a48e75efc4962c",
+    "seedEntrySha256": "42b87904550512c2e5a008be22682392d1695d8f9ea80ce56a8d62794c1f58dd",
+    "dependencies": {
+      "ownershipPeriodsSha256": "d5d0f1bd6277e5b454e498fc13510d3bf810ecec4d11ce651610defb316e5885",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "87f3898a56319333b923b20e6532388be1fe977e0068e9a63071c1a3a23dd987",
+      "organizationsSha256": "d1bf22f74b7389af188f4a2b3b82e0246d17c60ead7f84f073147c4a049757f2",
+      "citationsSha256": "c9c0940795f6609d2b49d6b1dd2e0fe48a85cf14ffd97f78ef33ee0e10944190",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj34r00eiivhe8tq16olg",
+        "fundName": "Macquarie Infrastructure Partners V",
+        "managerId": "cmrxpibdo002uivheekmgpdbp",
+        "updatedAt": "2026-07-23T16:09:57.915Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpibdo002uivheekmgpdbp",
+        "name": "Macquarie Asset Management",
+        "updatedAt": "2026-07-23T16:09:21.948Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjkab014mivhe72i1zmv9",
+    "name": "Medical Properties Partnership",
+    "aliases": [],
+    "sector": "SOCIAL_INFRA",
+    "subsector": "Acute-care hospital real estate partnership",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Medical Properties Partnership is a joint venture that owns eight Massachusetts general acute care hospitals. Its end market is healthcare infrastructure, with cash flows tied to leased hospital real estate operated by healthcare providers rather than direct clinical service delivery. The operating model is asset-heavy and contracted, centered on essential hospital properties with long-term rental income and infrastructure-like real estate characteristics. Macquarie and Medical Properties Trust stated in 2021 and 2022 that the transaction covered eight Steward-operated hospitals in Massachusetts at a portfolio value of approximately $1.78 billion. A Macquarie Infrastructure Partners V-controlled subsidiary completed the acquisition of a 50 percent interest in the portfolio in March 2022, leaving Medical Properties Trust with the remaining 50 percent stake.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2022,
+    "headquarters": "Massachusetts",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk6d1023kivhebk1u7wdq",
+        "managerName": "Macquarie Asset Management",
+        "organizationName": "Macquarie Asset Management",
+        "fundName": "Macquarie Infrastructure Partners V",
+        "vehicleName": "Macquarie Infrastructure Partners V",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpm9f504neivheolte1gtu",
+        "date": "Sep 1, 2021",
+        "event": "Macquarie Infrastructure Partners V and Medical Properties Trust announced their partnership for eight Massachusetts hospitals.",
+        "category": "FINANCING",
+        "sortDate": "2021-09-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm9fm04nfivhepfj9bhwn",
+        "date": "2022",
+        "event": "Medical Properties Partnership was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2022-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm9gc04ngivhe1a1z6o4h",
+        "date": "Mar 16, 2022",
+        "event": "Medical Properties Trust announced completion of the hospital partnership with Macquarie.",
+        "category": "FINANCING",
+        "sortDate": "2022-03-16T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm9gq04nhivhej1jg0efv",
+        "date": "Mar 30, 2023",
+        "event": "Medical Properties Trust reaffirmed the March 2022 50/50 partnership structure in shareholder communications.",
+        "category": "FINANCING",
+        "sortDate": "2023-03-30T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxps15r0bywivhe1uth9nu9",
+        "label": "Announcement source — Macquarie Asset Management — Medical Properties Partnership",
+        "url": "https://www.macquarie.com/au/en/about/news/2021/macquarie-infrastructure-partners-v-and-medical-properties-trust-enter-partnership-for-eight-massachusetts-hospitals-valued-at-1-78-billion-usd.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Macquarie transaction or milestone detail",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxps16q0byyivheeqfoiscl",
+        "label": "Ir — Medical Properties Partnership",
+        "url": "https://ir.medicalpropertiestrust.com/news/news-details/2021/Medical-Properties-Trust-and-Macquarie-Infrastructure-Partners-V-Enter-Partnership-for-Eight-Massachusetts-Hospitals-Valued-at-1-78-Billion-09-01-2021/default.aspx",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Ir — Medical Properties Partnership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxps17t0bz0ivhefwx4terp",
+        "label": "S206 — Medical Properties Partnership",
+        "url": "https://s206.q4cdn.com/146646187/files/doc_news/Medical-Properties-Trust-Completes-Hospital-Partnership-With-Macquarie-Asset-Management-03-16-2022-2022.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "S206 — Medical Properties Partnership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxps18z0bz2ivhe5kbtjsop",
+        "label": "Ir — Medical Properties Partnership",
+        "url": "https://ir.medicalpropertiestrust.com/news/news-details/2023/Medical-Properties-Trust-Files-Lawsuit-Against-Short-Seller-Viceroy-Research-and-Its-Members-Sends-Letter-to-Shareholders-03-30-2023/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Ir — Medical Properties Partnership",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "b586e67747eae1cd5b9ec2b4fc3c84172514f1582bc70a132191b24b77f25ae0",
+  "afterImage": {
+    "id": "cmrxpjkab014mivhe72i1zmv9",
+    "name": "Silver Holdco JV, LLC",
+    "aliases": [
+      "Medical Properties Partnership",
+      "Silver Holdco JV",
+      "MIP V / MPT Massachusetts hospital partnership"
+    ],
+    "sector": "SOCIAL_INFRA",
+    "subsector": "Acute-care hospital real estate partnership",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Silver Holdco JV, LLC was the 50/50 Macquarie Infrastructure Partners V and Medical Properties Trust lessor partnership for eight Steward-operated Massachusetts hospitals. The approximately US$1.7bn portfolio closed on March 14, 2022 under long-term triple-net leases. Steward's 2024 bankruptcy ended the lease economics, and Macquarie and Medical Properties Trust surrendered the collateral and cash to Apollo-managed lenders in exchange for debt releases. Five hospitals were subsequently sold, St. Elizabeth's transferred to Massachusetts, and Carney and Nashoba remained in a separate lender workout vehicle. The original Silver Holdco platform is therefore realized from 2024; successor operators, government transferees, individual property SPVs and the lender workout pool are not counted as successor PortCos.",
+    "companyStatus": "REALIZED",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2022,
+    "headquarters": "Massachusetts, United States",
+    "lastVerifiedAt": "2026-09-01T12:20:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk6d1023kivhebk1u7wdq",
+        "managerName": "Macquarie Asset Management",
+        "organizationName": "Macquarie Asset Management",
+        "fundName": "Macquarie Infrastructure Partners V",
+        "vehicleName": "Silver Holdco JV, LLC; MIP V Hopkins LLC / MIP V Hopkins RH, L.P.",
+        "stake": "50%",
+        "investmentYear": 2022,
+        "exitYear": 2024,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      },
+      {
+        "id": null,
+        "managerName": "Medical Properties Trust",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "MPT Silver Holdco, LLC; Silver Holdco JV, LLC",
+        "stake": "50%",
+        "investmentYear": 2022,
+        "exitYear": 2024,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpm9f504neivheolte1gtu",
+        "date": "Sep 1, 2021",
+        "event": "Macquarie Infrastructure Partners V and Medical Properties Trust announced a 50/50 partnership for eight Massachusetts hospital properties valued at approximately US$1.78bn.",
+        "category": "FINANCING",
+        "sortDate": "2021-09-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.macquarie.com/au/en/about/news/2021/macquarie-infrastructure-partners-v-and-medical-properties-trust-enter-partnership-for-eight-massachusetts-hospitals-valued-at-1-78-billion-usd.html"
+        ]
+      },
+      {
+        "id": "cmrxpm9fm04nfivhepfj9bhwn",
+        "date": "Mar 14, 2022",
+        "event": "Silver Holdco JV, LLC closed the acquisition of the eight-property hospital lessor portfolio.",
+        "category": "FOUNDING",
+        "sortDate": "2022-03-14T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1287865/000095017023005575/mpw-20221231.htm"
+        ]
+      },
+      {
+        "id": "cmrxpm9gc04ngivhe1a1z6o4h",
+        "date": "Mar 16, 2022",
+        "event": "Medical Properties Trust announced completion of the 50/50 Silver Holdco hospital partnership with Macquarie Infrastructure Partners V.",
+        "category": "FINANCING",
+        "sortDate": "2022-03-16T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1287865/000095017023005575/mpw-20221231.htm"
+        ]
+      },
+      {
+        "id": "cmrxpm9gq04nhivhej1jg0efv",
+        "date": "Sep 2024",
+        "event": "Bankruptcy-court orders terminated the Steward lease and transferred the original partnership collateral to Apollo-managed lenders, realizing the Macquarie and Medical Properties Trust ownership periods.",
+        "category": "DIVESTITURE",
+        "sortDate": "2024-09-18T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1287865/000119312525272324/R13.htm",
+          "https://www.sec.gov/Archives/edgar/data/1467760/000119312526342628/ari-20260630.htm"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxps15r0bywivhe1uth9nu9",
+        "label": "Announcement source — Macquarie Asset Management — Medical Properties Partnership",
+        "url": "https://www.macquarie.com/au/en/about/news/2021/macquarie-infrastructure-partners-v-and-medical-properties-trust-enter-partnership-for-eight-massachusetts-hospitals-valued-at-1-78-billion-usd.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Macquarie transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxps16q0byyivheeqfoiscl",
+        "label": "Ir — Medical Properties Partnership",
+        "url": "https://ir.medicalpropertiestrust.com/news/news-details/2021/Medical-Properties-Trust-and-Macquarie-Infrastructure-Partners-V-Enter-Partnership-for-Eight-Massachusetts-Hospitals-Valued-at-1-78-Billion-09-01-2021/default.aspx",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Ir — Medical Properties Partnership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxps17t0bz0ivhefwx4terp",
+        "label": "S206 — Medical Properties Partnership",
+        "url": "https://s206.q4cdn.com/146646187/files/doc_news/Medical-Properties-Trust-Completes-Hospital-Partnership-With-Macquarie-Asset-Management-03-16-2022-2022.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "S206 — Medical Properties Partnership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxps18z0bz2ivhe5kbtjsop",
+        "label": "Ir — Medical Properties Partnership",
+        "url": "https://ir.medicalpropertiestrust.com/news/news-details/2023/Medical-Properties-Trust-Files-Lawsuit-Against-Short-Seller-Viceroy-Research-and-Its-Members-Sends-Letter-to-Shareholders-03-30-2023/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Ir — Medical Properties Partnership",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "MPT — Steward bankruptcy and Silver Holdco lender transition",
+        "url": "https://www.sec.gov/Archives/edgar/data/1287865/000119312525272324/R13.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Lease termination, collateral surrender and 2024 realization",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "MPT — 2022 Form 10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1287865/000095017023005575/mpw-20221231.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "March 14, 2022 close and original partnership financing",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Apollo Commercial Real Estate Finance — June 2026 Form 10-Q",
+        "url": "https://www.sec.gov/Archives/edgar/data/1467760/000119312526342628/ari-20260630.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Latest disposition and successor-state evidence for the eight hospital properties",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Massachusetts Health Policy Commission — Steward transaction review conclusion",
+        "url": "https://masshpc.gov/news/press-release/hpc-statement-concluding-review-steward-hospital-transactions",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Nonprofit successor transactions and platform-boundary evidence",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "d2a1f24ae1581cdbd7483cac86178405ede4185e8d772294a42bad5a61c017bb",
+  "proposalSha256": "80cdf1ec8b223ba334d988773b1c9dafbb7e83e80dfdd0e8c3832fbdca44c960"
+}

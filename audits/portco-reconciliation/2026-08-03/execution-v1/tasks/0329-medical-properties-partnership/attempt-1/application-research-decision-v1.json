@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0329:medical-properties-partnership:c29a0cad",
+  "taskIndex": 329,
+  "companyName": "Medical Properties Partnership",
+  "asOfDate": "2026-08-19",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-01T12:39:00.000Z",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "Medical Properties Partnership",
+    "requestedManagers": [
+      "Macquarie Asset Management / Macquarie Infrastructure Partners V",
+      "Medical Properties Trust"
+    ],
+    "decision": "PROPOSED_CORRECTION",
+    "confidence": "HIGH",
+    "rationale": "Silver Holdco JV was a valid MIP V infrastructure holding: a 50/50 vehicle for eight essential Massachusetts hospital properties under a 20-year triple-net lease. Steward's bankruptcy ended the lease in 2024-Q3; Macquarie/MPT surrendered the collateral and cash to Apollo-managed lenders for debt releases, and MPT fully reserved its equity. Five sites were sold, St. Elizabeth's passed to Massachusetts, and Carney/Nashoba remained in an Apollo workout JV. No active original platform remains.",
+    "identityResolution": {
+      "canonicalLegalEntity": "Silver Holdco JV, LLC (Delaware)",
+      "alias": "Medical Properties Partnership is a descriptive alias.",
+      "chain": "Silver Holdco JV Sub, LLC; MPT Silver Holdco, LLC; Macquarie affiliates MIP V Hopkins LLC and MIP V Hopkins RH, L.P. Exact member schedule is not public.",
+      "originalSPVs": "MPT of Brighton-Steward, LLC—St. Elizabeth's; MPT of Brockton-Steward, LLC—Good Samaritan; MPT of Fall River-Steward, LLC—Saint Anne's; MPT of Methuen-Steward, LLC—Holy Family Methuen; MPT of Taunton-Steward, LLC—Morton; MPT of Ayer-Steward, LLC—Nashoba Valley; MPT of Haverhill-Steward, LLC—Holy Family Haverhill; MPT of Dorchester-Steward, LLC—Carney.",
+      "boundary": "Real-estate lessor interests only; Steward was lessee/operator. Norwood was outside the eight. Pre-JV mortgages are financing history, not PortCos."
+    },
+    "ownershipResolution": {
+      "owners": [
+        {
+          "manager": "Macquarie Asset Management",
+          "organization": "MIP V Hopkins LLC / MIP V Hopkins RH, L.P.",
+          "fund": "Macquarie Infrastructure Partners V",
+          "vehicle": "Silver Holdco JV, LLC",
+          "stake": "50%",
+          "announcementDate": "2021-09-01",
+          "entryDate": "2022-03-14",
+          "entryYear": 2022,
+          "exitDate": "2024-Q3; exact date NOT_PUBLICLY_DISCLOSED",
+          "exitYear": 2024,
+          "isActive": false,
+          "transactionState": "REALIZED; collateral surrendered"
+        },
+        {
+          "manager": "Medical Properties Trust",
+          "organization": "MPT Silver Holdco, LLC",
+          "fund": null,
+          "vehicle": "Silver Holdco JV, LLC",
+          "stake": "50%",
+          "announcementDate": "2021-09-01",
+          "entryDate": "2022-03-14",
+          "entryYear": 2022,
+          "exitDate": "2024-Q3; exact date NOT_PUBLICLY_DISCLOSED",
+          "exitYear": 2024,
+          "isActive": false,
+          "transactionState": "REALIZED; collateral surrendered; equity reserved"
+        }
+      ],
+      "successors": "St. Elizabeth's—Massachusetts title by eminent domain 2024-09-27; BMC operator. Good Samaritan—BMC from 2024-10-01. Saint Anne's/Morton—Lifespan/Brown University Health acquired land, buildings and operations 2024-10-01. Holy Family Methuen/Haverhill—LG NewCorp/Lawrence General from 2024-10-01; title detail NOT_PUBLICLY_DISCLOSED. Carney/Nashoba—closed 2024-08-31; Apollo-managed Massachusetts Healthcare JV took title 2025-Q1 and held both at 2026-06-30; ARI owned 41.2%.",
+      "currentMacquarieOrMPTInterest": "None."
+    },
+    "operatingResolution": {
+      "originalOperator": "Steward affiliates under Master Lease II dated 2022-03-14.",
+      "bankruptcyEffect": "Chapter 11 filed 2024-05-06; September 2024 orders ended the lease and original JV economics.",
+      "currentState": "Six hospitals continued under nonprofits; Carney/Nashoba closed. Operators, public transferees and Apollo's workout pool are not successor PortCos.",
+      "eligibility": "Historically eligible: MIP V owned long-duration essential-service real estate under an infrastructure mandate; no active partnership remains."
+    },
+    "acquisitionExitCheck": {
+      "announcementDate": "2021-09-01",
+      "legalCloseDate": "2022-03-14",
+      "closeAnnouncementDate": "2022-03-16",
+      "value": "About $1.78bn announced; about $1.7bn at close.",
+      "financing": "About 55% nonrecourse first mortgage secured by all eight hospitals; Apollo-managed co-lenders.",
+      "exit": "COURT-APPROVED LENDER TRANSITION/REALIZATION IN 2024-Q3; dissolution date NOT_PUBLICLY_DISCLOSED.",
+      "pendingCheck": "No signed transfer of the two-site workout interest found; ARI's liquidation proposal named no buyer.",
+      "pendingTransactions": []
+    },
+    "milestones": [
+      {
+        "date": "2021-09-01",
+        "event": "MIP V/MPT announced the 50/50 eight-hospital JV."
+      },
+      {
+        "date": "2022-03-14",
+        "event": "Legal close; completion announced 2022-03-16."
+      },
+      {
+        "date": "2024-09-18",
+        "event": "Final order approved lease termination and lender transition."
+      },
+      {
+        "date": "2026-06-30",
+        "event": "Five sites sold, St. Elizabeth's state-owned, Carney/Nashoba in Apollo workout JV."
+      }
+    ],
+    "evidence": [
+      {
+        "label": "Macquarie announcement",
+        "url": "https://www.macquarie.com/au/en/about/news/2021/macquarie-infrastructure-partners-v-and-medical-properties-trust-enter-partnership-for-eight-massachusetts-hospitals-valued-at-1-78-billion-usd.html",
+        "purpose": "MIP V mandate, 50/50 terms, assets, value, lease.",
+        "sourceTier": "MANAGER",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "MPT 2022 10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1287865/000095017023005575/mpw-20221231.htm",
+        "purpose": "Legal close and 55% financing.",
+        "sourceTier": "SEC",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "MPT entity exhibit",
+        "url": "https://www.sec.gov/Archives/edgar/data/1287865/000095017025030989/mpw-ex21_1.htm",
+        "purpose": "Silver Holdco and eight SPVs.",
+        "sourceTier": "SEC",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "MPT bankruptcy note",
+        "url": "https://www.sec.gov/Archives/edgar/data/1287865/000119312525272324/R13.htm",
+        "purpose": "Lease end, lender transition, equity reserve.",
+        "sourceTier": "SEC",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Massachusetts HPC",
+        "url": "https://masshpc.gov/news/press-release/hpc-statement-concluding-review-steward-hospital-transactions",
+        "purpose": "Nonprofit successor transactions.",
+        "sourceTier": "STATE",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "ARI 2026 Q2 10-Q",
+        "url": "https://www.sec.gov/Archives/edgar/data/1467760/000119312526342628/ari-20260630.htm",
+        "purpose": "Latest chain: five sales, state taking, two retained sites.",
+        "sourceTier": "SEC",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": true
+      }
+    ],
+    "beforeAfterChanges": [
+      "Active → Realized/Retired in 2024-Q3.",
+      "Identity → Silver Holdco JV, LLC; retain alias.",
+      "Add former 50% MPT owner, mark both inactive, and replace continuing-portfolio language with the bankruptcy split."
+    ],
+    "excludedOrDuplicateCandidates": [
+      "Steward/successor operators—operators, not JV owners.",
+      "Norwood Hospital—outside the eight.",
+      "Individual SPVs/Apollo workout pool—asset successors, not new manager-level PortCos."
+    ],
+    "unresolvedQuestions": [
+      "Executed member schedule and formal dissolution date are not public.",
+      "Current deed entities for Carney/Nashoba and parts of Holy Family are NOT_PUBLICLY_DISCLOSED; no later St. Elizabeth's conveyance by Massachusetts was found."
+    ],
+    "recommendedListAction": "Retain one historical infrastructure record under Silver Holdco JV, LLC with this alias; mark realized/retired in 2024-Q3, record both former 50% owners, and create no successor PortCos."
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0329-medical-properties-partnership/attempt-1/research-decision.json",
+      "sha256": "900f3b9559b6235d85ded116e47a191d39c7b6e57fb9cb0c793f780d23d63135"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0329-medical-properties-partnership/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "18b2f54d7efa41cee827509a55a34ae8fd9a94cc709cbc47cbe5ae8e8a1c6485"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0329-medical-properties-partnership/attempt-1/source-verification.json",
+      "sha256": "d5fde439c1628d074cc86032880bab424021ef6cec46a5dfed5fb49f1f32189f"
+    },
+    "acceptedResponseSha256": "c6a0076f1cc2adff8a6a8d586f786cf67ae88aba97a3907130d7e04919091a3a",
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION"
+  }
+}
