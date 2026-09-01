@@ -402,6 +402,9 @@ const approvedOwnershipOrganizationProvisioning = {
   "Kohlberg": "FUND_MANAGER",
   "OMERS Private Equity": "FUND_MANAGER",
   "Leonard Green": "FUND_MANAGER",
+  "AtkinsRéalis": "CORPORATE",
+  "American Electric Power": "CORPORATE",
+  "Grupo Aeroportuario del Sureste": "CORPORATE",
 } as const;
 
 export function ownershipOrganizationTypes(

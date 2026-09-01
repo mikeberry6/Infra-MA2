@@ -1,0 +1,213 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0385:aep-indiana-michigan-transmission-company:45ae9c1c",
+  "taskIndex": 385,
+  "companyName": "AEP Indiana Michigan Transmission Company",
+  "asOfDate": "2026-08-19",
+  "decision": "PROPOSED_NEW",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-01T21:15:00.000Z",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "AEP Indiana Michigan Transmission Company",
+    "requestedManagers": [
+      "PSP Investments"
+    ],
+    "decision": "PROPOSED_NEW",
+    "confidence": "HIGH",
+    "rationale": "Distinct regulated transmission opco. Midwest owns 100%; AEP owns 80.1% of Midwest and Olympus 19.9%. KKR and PSP's 50/50 Olympus partnership gives PSP 9.95% look-through. Closed 2025-06-05; no later ownership event found.",
+    "identityResolution": {
+      "canonicalLegalName": "AEP Indiana Michigan Transmission Company, Inc.",
+      "aliases": [
+        "AEP I&M TransCo",
+        "IMTCo"
+      ],
+      "canonicalKey": "aep-indiana-michigan-transmission-company|united-states",
+      "formed": "2009-10-02 in Indiana",
+      "relationship": "AEP -> AEP Transmission Holding Company, LLC -> AEP Transmission Company, LLC (80.1% of Midwest); Olympus BidCo L.P. (19.9%) -> Midwest -> 100% of IMTCo and separate OHTCo.",
+      "clarification": "The contract's 'AEP Holdco' is AEP Transmission Company, LLC, not AEP Transmission Holding Company, LLC.",
+      "boundary": "Create IMTCo once; do not merge Indiana Michigan Power, OHTCo, vehicles, projects or assets."
+    },
+    "ownershipResolution": {
+      "directLegalOwner": "Midwest Transmission Holdings, LLC, 100% since 2024-12-30",
+      "currentEconomicOwners": [
+        {
+          "manager": "American Electric Power",
+          "organization": "AEP Transmission Company, LLC",
+          "fund": null,
+          "vehicle": "Midwest Transmission Holdings, LLC",
+          "stake": "80.1% look-through",
+          "announcementDate": "2025-01-09",
+          "entryDate": "2025-06-05",
+          "entryYear": 2025,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_CONTROLLING"
+        },
+        {
+          "manager": "KKR",
+          "organization": "Kohlberg Kravis Roberts & Co. L.P.",
+          "fund": "KKR Diversified Core Infrastructure Master Fund L.P.; KKR Diversified Core Infrastructure Master Fund (A) SCSp; KKR Diversified Core Infrastructure Master Fund (B) SCSp; KKR Diversified Core Infrastructure Master Fund (SBS) L.P.",
+          "vehicle": "Olympus BidCo L.P. -> Midwest Transmission Holdings, LLC",
+          "stake": "9.95% look-through (50% of 19.9%)",
+          "announcementDate": "2025-01-09",
+          "entryDate": "2025-06-05",
+          "entryYear": 2025,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_NONCONTROLLING"
+        },
+        {
+          "manager": "PSP Investments",
+          "organization": "Public Sector Pension Investment Board",
+          "fund": "NOT_PUBLICLY_DISCLOSED; PSP Infrastructure HICI strategy",
+          "vehicle": "Olympus BidCo L.P. -> Midwest Transmission Holdings, LLC",
+          "stake": "9.95% look-through (50% of 19.9%)",
+          "announcementDate": "2025-01-09",
+          "entryDate": "2025-06-05",
+          "entryYear": 2025,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_NONCONTROLLING"
+        }
+      ],
+      "formerDirectOwners": [
+        {
+          "manager": "American Electric Power",
+          "organization": "AEP Transmission Company, LLC",
+          "fund": null,
+          "vehicle": null,
+          "stake": "100% direct stock ownership",
+          "announcementDate": null,
+          "entryDate": "NOT_PUBLICLY_DISCLOSED",
+          "entryYear": null,
+          "exitDate": "2024-12-30",
+          "exitYear": 2024,
+          "isActive": false,
+          "transactionState": "INTERNAL_REORGANIZATION"
+        }
+      ],
+      "vehicleFinding": "Olympus BidCo L.P. (GP: Olympus GPCo, LLC) is controlled by the disclosed KKR funds and PSPIB; PSP is a co-investor, not a KKR-fund LP."
+    },
+    "operatingResolution": {
+      "officialWebsite": "https://www.aeptransmission.com/",
+      "headquarters": "1 Riverside Plaza, 26th Floor, Columbus, Ohio 43215-2373",
+      "profile": "FERC-regulated transmission-only utility in Indiana and Michigan; PJM member; AEP-operated with no IMTCo employees.",
+      "customers": "PJM-allocated ratepayers and wholesale/network users, not Indiana Michigan Power retail customers.",
+      "scale": "2025: 1,142 pole-miles on designated structures plus 55 on others, 161 circuits, $2.268bn line cost, 96 substation/equipment rows and 2,822 MVA transmission-substation capacity; 2026 PTRR $552.7m plus $1.1m true-up.",
+      "regulatoryBoundary": "FERC rates and IURC/MPSC oversight do not confer equity."
+    },
+    "acquisitionExitCheck": {
+      "transaction": "$2.82bn for 19.9% of Midwest, covering IMTCo and OHTCo",
+      "announcementDate": "2025-01-09",
+      "closingDate": "2025-06-05",
+      "regulatoryStatus": "FERC authorization and CFIUS clearance were conditions; exact dates not located, but closing confirms satisfaction or waiver.",
+      "searchThrough": "2026-08-19",
+      "pendingTransactions": [],
+      "result": "No later transfer, recapitalization, new investor, exit or signed pending deal found; Q2 2026 still reported 19.9%."
+    },
+    "milestones": [
+      {
+        "date": "2009-10-02",
+        "event": "Incorporated in Indiana."
+      },
+      {
+        "date": "2024-12-30",
+        "event": "AEP contributed IMTCo and OHTCo stock to Midwest."
+      },
+      {
+        "date": "2025-01-09",
+        "event": "19.9% Midwest agreement announced; KKR and PSP disclosed a 50/50 buyer partnership."
+      },
+      {
+        "date": "2025-06-05",
+        "event": "Closed; AEP retained 80.1% and Olympus acquired 19.9%."
+      }
+    ],
+    "evidence": [
+      {
+        "label": "SEC Contribution Agreement",
+        "url": "https://www.sec.gov/Archives/edgar/data/6879/000000490425000027/ex10b202410k.htm",
+        "purpose": "Entities, reorganization, stakes, vehicle, KKR funds and PSPIB sponsor.",
+        "sourceTier": "PRIMARY_SEC_CONTRACT",
+        "workingStatus": "OPENED",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "AEP closing Form 8-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/4904/000000490425000069/aep-20250605.htm",
+        "purpose": "Exact close date, price, ownership and governance.",
+        "sourceTier": "PRIMARY_SEC_FILING",
+        "workingStatus": "OPENED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "PSP announcement",
+        "url": "https://www.investpsp.com/en/news/kkr-and-psp-investments-acquire-minority-stake-in-two-american-electric-power-transmission-companies/",
+        "purpose": "50/50 KKR-PSP partnership and HICI attribution.",
+        "sourceTier": "PRIMARY_MANAGER_RELEASE",
+        "workingStatus": "OPENED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "IMTCo 2025 FERC Form 1",
+        "url": "https://docs.aep.com/docs/investors/fercfilings/docs/2025/AEP%20IM%20Transmission%20Company%202025%20FF1_compressed.pdf",
+        "purpose": "Identity, boundary, regulation, ownership and scale.",
+        "sourceTier": "PRIMARY_REGULATORY_FILING",
+        "workingStatus": "OPENED_AND_SCREENSHOT",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "AEP Q2 2026 SEC note",
+        "url": "https://www.sec.gov/Archives/edgar/data/4904/000000490426000059/R59.htm",
+        "purpose": "Continued 19.9% noncontrolling interest through 2026-06-30.",
+        "sourceTier": "PRIMARY_SEC_FILING",
+        "workingStatus": "OPENED",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "before": "PSP shown at the full 19.9% consortium stake; no canonical company.",
+      "after": "Create IMTCo; PSP 9.95%, KKR 9.95% and AEP 80.1% from 2025-06-05; keep OHTCo separate."
+    },
+    "excludedOrDuplicateCandidates": [
+      "Indiana Michigan Power Company: separate retail utility.",
+      "AEP Ohio Transmission Company, Inc.: separate Ohio transco.",
+      "AEP Transmission entities: upstream holdings.",
+      "Midwest/Olympus: holding/acquisition vehicles."
+    ],
+    "unresolvedQuestions": [
+      "PSP's internal account, allocations among the four KKR funds and AEPTCo's exact direct-owner start date are NOT_PUBLICLY_DISCLOSED.",
+      "Exact FERC/CFIUS clearance dates were not located; ownership is resolved."
+    ],
+    "recommendedListAction": {
+      "action": "Create one canonical company and add current owners",
+      "canonicalName": "AEP Indiana Michigan Transmission Company, Inc.",
+      "pspStake": "9.95% look-through",
+      "vehicle": "Olympus BidCo L.P. -> Midwest Transmission Holdings, LLC",
+      "entryDate": "2025-06-05",
+      "keepSeparate": "AEP Ohio Transmission Company, Inc."
+    }
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0385-aep-indiana-michigan-transmission-company/attempt-1/research-decision.json",
+      "sha256": "3f3ecf0c84164b5dc0ff73205c6fb8768936d3fa5149ee4897db09f07e710639"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0385-aep-indiana-michigan-transmission-company/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "a7a41a79975ee89d0b61a20992f8921b136da040476e4ad275d62f82236b8de6"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0385-aep-indiana-michigan-transmission-company/attempt-1/source-verification.json",
+      "sha256": "43f64b4e4d5a84c7de07fd04f8c7d7cfe3f572b075c018ff1fea1943bdf65481"
+    },
+    "acceptedResponseSha256": "2c415fd4420b3fcabce4062f57221addc313e5369b1799685c78478c8d4aee99",
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION"
+  }
+}

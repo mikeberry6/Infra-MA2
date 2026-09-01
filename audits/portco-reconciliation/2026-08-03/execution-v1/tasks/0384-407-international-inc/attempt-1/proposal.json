@@ -1,0 +1,276 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0384:407-international-inc:e9ed737e",
+  "taskIndex": 384,
+  "asOfDate": "2026-09-01",
+  "generatedAt": "2026-09-01T21:20:00.000Z",
+  "canonicalKey": "407-international-inc|canada",
+  "companyName": "407 International Inc.",
+  "actions": [
+    "CREATE_COMPANY"
+  ],
+  "sourceHoldingIds": [
+    "081-psp-investments:holding:001:407-international-inc"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Create one canonical parent-company record for 407 International Inc. and retain 407 ETR as an operating-name alias. The current common-share cap table is Ferrovial/Cintra 48.29%, CPP Investments plus undisclosed institutional co-investors 44.20%, and PSP Investments 7.51%. PSP's purchase closed on June 6, 2025, AtkinsRéalis fully exited by June 11, 2025, and no later equity transfer or signed pending transaction was found through September 1, 2026.",
+  "evidence": [
+    {
+      "url": "https://assets.ctfassets.net/oqdgumaqmw49/7onoKvOA39oX8idjWUjTCJ/dc9cace9a54d11c6b2d7af148c189887/AIF_-_YE2025.pdf",
+      "purpose": "Current parent identity and common-share cap table",
+      "supports": [
+        "407 International Inc. is the canonical parent",
+        "Ferrovial/Cintra, the CPP-led block, and PSP hold 48.29%, 44.20%, and 7.51%"
+      ]
+    },
+    {
+      "url": "https://www.investpsp.com/en/news/psp-investments-and-cpp-investments-complete-407-etr-transactions/",
+      "purpose": "PSP acquisition closing",
+      "supports": [
+        "PSP completed its 7.51% acquisition on June 6, 2025"
+      ]
+    },
+    {
+      "url": "https://newsroom.ferrovial.com/en/press-releases/ferrovial-acquires-a-5-06-stake-in-the-407-etr/",
+      "purpose": "Ferrovial final tranche and AtkinsRéalis exit",
+      "supports": [
+        "Ferrovial completed the final tranche in June 2025",
+        "AtkinsRéalis fully exited"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "37fdc4ad588fbbcb6fe8ab7abac1f9f705997cdf8d4d1e9a60e939c18d6c23ef",
+  "currentCompanySnapshotSha256": null,
+  "executionLock": {
+    "taskSnapshotSha256": "0ef55e490c57ea5143df907c91f29f46e07a941708bb6c8ac49af49c48836bea",
+    "taskStateSha256": "2550c70000624014b892f3a9d0da2ca747e6931852fe2781d70be25b0a1cedfa",
+    "taskDependencySha256": "aee5381ea1a07a2fbaccc952bc02a8e3fd1d1c350bc4bf4b4d43c99ef1b0927d",
+    "seedEntrySha256": null,
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "b48307d3d29030c6ea7cd3a0c52aaa16e9942c184e9a7900dd36354dd1d4e3db",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi6gh001aivhefuh9d1bo",
+        "name": "CPP Investments",
+        "updatedAt": "2026-07-23T16:09:15.569Z"
+      },
+      {
+        "id": "cmrxpib3m002rivherwm9fg8c",
+        "name": "La Caisse de dépôt (CDPQ)",
+        "updatedAt": "2026-07-23T16:09:21.586Z"
+      },
+      {
+        "id": "cmrxpih6o004oivhejmzw2gfv",
+        "name": "PSP Investments",
+        "updatedAt": "2026-07-23T16:09:29.472Z"
+      },
+      {
+        "id": "cmsrahtng000ecp4s266jplsa",
+        "name": "Ferrovial N.V.",
+        "updatedAt": "2026-08-13T09:02:10.012Z"
+      },
+      {
+        "id": "cmtj3t16k000q062br0dg8x1m",
+        "name": "Macquarie Group",
+        "updatedAt": "2026-09-01T20:12:28.604Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": null,
+  "beforeImageSha256": null,
+  "afterImage": {
+    "id": null,
+    "name": "407 International Inc.",
+    "aliases": [
+      "407 ETR",
+      "407 Express Toll Route",
+      "Highway 407 ETR"
+    ],
+    "sector": "TRANSPORTATION",
+    "subsector": "Electronic toll-road concession",
+    "region": "NORTH_AMERICA",
+    "country": "Canada",
+    "countryTags": [
+      "Canada"
+    ],
+    "description": "407 International Inc. is the parent of the concession company that operates 407 ETR, an all-electronic toll road across the Greater Toronto Area. The 99-year concession runs to 2098 and spans approximately 108 kilometres and 1,273 lane-kilometres. The current common-share cap table is Ferrovial/Cintra 48.29%, CPP Investments together with non-controlling institutional co-investors 44.20%, and PSP Investments 7.51%. Subsidiary tolling, financing, tax and service entities are included within this single parent-company boundary. No later equity transfer or signed pending ownership transaction was identified through September 1, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.407etr.com/",
+    "yearFounded": 1999,
+    "headquarters": "Woodbridge, Ontario",
+    "lastVerifiedAt": "2026-09-01T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": null,
+        "managerName": "Ferrovial / Cintra",
+        "organizationName": "Ferrovial N.V.",
+        "fundName": null,
+        "vehicleName": "Cintra 4352238 Investments Inc.; 1568417 B.C. Ltd.",
+        "stake": "48.29%",
+        "investmentYear": 1999,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "CPP Investments",
+        "organizationName": "CPP Investments",
+        "fundName": null,
+        "vehicleName": "Ramp Canada Roads LP; 7577702 Canada Inc.; MICI Inc.",
+        "stake": "44.20% block with non-controlling institutional co-investors; look-through split not publicly disclosed",
+        "investmentYear": 2010,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "PSP Investments",
+        "organizationName": "PSP Investments",
+        "fundName": null,
+        "vehicleName": "Spectre Infra Limited Partnership",
+        "stake": "7.51%",
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "AtkinsRéalis",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "AtkinsRéalis Highway Holdings Inc. and predecessors",
+        "stake": "16.77% by 2004-2019; 6.76% thereafter; fully sold",
+        "investmentYear": 1999,
+        "exitYear": 2025,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      },
+      {
+        "id": null,
+        "managerName": "Macquarie Group",
+        "organizationName": "Macquarie Group",
+        "fundName": null,
+        "vehicleName": "Macquarie Infrastructure (Toll Route) S.A.; MICI Inc.; later Intoll Group",
+        "stake": "16.13% fully diluted from 2002; 30% from 2004",
+        "investmentYear": 2002,
+        "exitYear": 2010,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      },
+      {
+        "id": null,
+        "managerName": "CDPQ",
+        "organizationName": "La Caisse de dépôt (CDPQ)",
+        "fundName": null,
+        "vehicleName": "Capital d'Amérique CDPQ Inc.",
+        "stake": "16.13% fully diluted convertible position",
+        "investmentYear": 1999,
+        "exitYear": 2002,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": null,
+        "date": "May 5, 1999",
+        "event": "The founding consortium acquired the concession company from the Government of Ontario.",
+        "category": "ACQUISITION",
+        "sortDate": "1999-05-05T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://assets.ctfassets.net/oqdgumaqmw49/7onoKvOA39oX8idjWUjTCJ/dc9cace9a54d11c6b2d7af148c189887/AIF_-_YE2025.pdf"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Nov-Dec 2010",
+        "event": "CPP Investments entered through a 10% purchase from Cintra and the acquisition of Intoll's 30% interest.",
+        "category": "ACQUISITION",
+        "sortDate": "2010-12-14T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.cppinvestments.com/newsroom/cppib-increases-investment-407-international-inc/"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Jun 6-11, 2025",
+        "event": "PSP Investments entered at 7.51%, Ferrovial increased to 48.29%, and AtkinsRéalis fully exited.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-06-11T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.investpsp.com/en/news/psp-investments-and-cpp-investments-complete-407-etr-transactions/",
+          "https://newsroom.ferrovial.com/en/press-releases/ferrovial-acquires-a-5-06-stake-in-the-407-etr/"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": null,
+        "label": "407 International — 2025 Annual Information Form",
+        "url": "https://assets.ctfassets.net/oqdgumaqmw49/7onoKvOA39oX8idjWUjTCJ/dc9cace9a54d11c6b2d7af148c189887/AIF_-_YE2025.pdf",
+        "sourceType": "OTHER",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Parent identity, concession profile and current cap table",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "PSP Investments — 407 ETR transaction closing",
+        "url": "https://www.investpsp.com/en/news/psp-investments-and-cpp-investments-complete-407-etr-transactions/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "PSP's June 6, 2025 entry at 7.51%",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Ferrovial — 407 ETR final tranche closing",
+        "url": "https://newsroom.ferrovial.com/en/press-releases/ferrovial-acquires-a-5-06-stake-in-the-407-etr/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Ferrovial's 48.29% position and AtkinsRéalis exit",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "CPP Investments — 407 International investment history",
+        "url": "https://www.cppinvestments.com/newsroom/cppib-increases-investment-407-international-inc/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "CPP Investments ownership history",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "407 International — Second-quarter 2026 results",
+        "url": "https://newsroom.407etr.com/2026-07-22-407-International-Reports-Second-Quarter-Results",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current operating status and traffic scale",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "59b05952a6c8b7e16b5eaffcd5821ee6361c01ba91fdf3a601ee9c39f3255561",
+  "proposalSha256": "fbe1070182f7b8b3df002d49acdf83c5f19bdd854e5ea67f8d920128a32afaaf"
+}

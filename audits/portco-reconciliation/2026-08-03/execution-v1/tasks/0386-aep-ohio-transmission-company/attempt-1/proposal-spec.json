@@ -1,0 +1,168 @@
+{
+  "generatedAt": "2026-09-01T21:20:00.000Z",
+  "actions": ["CREATE_COMPANY"],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "reviewedSeedRetirementTaskIds": [],
+  "rationale": "Create AEP Ohio Transmission Company, Inc. as a distinct regulated transmission operating company. Midwest owns the company directly; AEP holds 80.1% of Midwest and the KKR/PSP-backed Olympus vehicle holds 19.9%. KKR and PSP own Olympus 50/50, making each sponsor's look-through stake 9.95%. The investment closed on June 5, 2025 and no later ownership event was found through September 1, 2026.",
+  "evidence": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/4904/000000490425000069/aep-20250605.htm",
+      "purpose": "Closing, legal chain and current ownership",
+      "supports": ["AEP retained 80.1%", "Olympus acquired 19.9%", "The transaction closed on June 5, 2025"]
+    },
+    {
+      "url": "https://www.investpsp.com/en/news/kkr-and-psp-investments-acquire-minority-stake-in-two-american-electric-power-transmission-companies/",
+      "purpose": "KKR and PSP consortium split",
+      "supports": ["KKR and PSP formed a 50/50 partnership"]
+    },
+    {
+      "url": "https://docs.aep.com/docs/investors/fercfilings/docs/2025/AEP%20Ohio%20Transmission%20Company%202025%20FF1_compressed.pdf",
+      "purpose": "Operating-company identity and regulated transmission profile",
+      "supports": ["OHTCo is a distinct Ohio transmission-only utility", "Midwest owns OHTCo directly"]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "afterImage": {
+    "id": null,
+    "name": "AEP Ohio Transmission Company, Inc.",
+    "aliases": ["AEP Ohio Transmission Company", "OHTCo"],
+    "sector": "UTILITIES",
+    "subsector": "Regulated electric transmission utility",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": ["United States"],
+    "description": "AEP Ohio Transmission Company, Inc. is a FERC-regulated transmission-only utility operating high-voltage lines and substations in Ohio within PJM. It is separate from the AEP Ohio retail utility and is operated through American Electric Power affiliates. Midwest Transmission Holdings, LLC owns the operating company directly; AEP holds 80.1% of Midwest and Olympus BidCo holds 19.9%. KKR and PSP Investments own Olympus 50/50, giving each a 9.95% look-through interest from the June 5, 2025 closing. AEP Indiana Michigan Transmission Company is a separate operating company and is not merged into this record.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.aeptransmission.com/",
+    "yearFounded": 2009,
+    "headquarters": "Columbus, Ohio",
+    "lastVerifiedAt": "2026-09-01T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": null,
+        "managerName": "American Electric Power",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "AEP Transmission Company, LLC through Midwest Transmission Holdings, LLC",
+        "stake": "80.1% look-through",
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "KKR",
+        "organizationName": "KKR",
+        "fundName": null,
+        "vehicleName": "Olympus BidCo L.P. through Midwest Transmission Holdings, LLC",
+        "stake": "9.95% look-through (50% of the 19.9% consortium interest)",
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "PSP Investments",
+        "organizationName": "PSP Investments",
+        "fundName": null,
+        "vehicleName": "Olympus BidCo L.P. through Midwest Transmission Holdings, LLC",
+        "stake": "9.95% look-through (50% of the 19.9% consortium interest)",
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "American Electric Power",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "AEP Transmission Company, LLC",
+        "stake": "100% before the minority sale",
+        "investmentYear": 2009,
+        "exitYear": 2025,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": null,
+        "date": "Oct 2, 2009",
+        "event": "AEP Ohio Transmission Company was incorporated in Ohio.",
+        "category": "FOUNDING",
+        "sortDate": "2009-10-02T00:00:00.000Z",
+        "evidenceUrls": ["https://docs.aep.com/docs/investors/fercfilings/docs/2025/AEP%20Ohio%20Transmission%20Company%202025%20FF1_compressed.pdf"]
+      },
+      {
+        "id": null,
+        "date": "Dec 30, 2024",
+        "event": "AEP placed OHTCo and IMTCo under Midwest Transmission Holdings ahead of the minority investment.",
+        "category": "OTHER",
+        "sortDate": "2024-12-30T00:00:00.000Z",
+        "evidenceUrls": ["https://www.sec.gov/Archives/edgar/data/4904/000000490425000141/ex10aaeptco20252q.htm"]
+      },
+      {
+        "id": null,
+        "date": "Jun 5, 2025",
+        "event": "KKR and PSP Investments completed their 50/50-backed acquisition of a 19.9% interest in Midwest Transmission Holdings; AEP retained 80.1%.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-06-05T00:00:00.000Z",
+        "evidenceUrls": ["https://www.sec.gov/Archives/edgar/data/4904/000000490425000069/aep-20250605.htm", "https://www.investpsp.com/en/news/kkr-and-psp-investments-acquire-minority-stake-in-two-american-electric-power-transmission-companies/"]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": null,
+        "label": "AEP — June 2025 closing Form 8-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/4904/000000490425000069/aep-20250605.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "June 5, 2025 closing and 80.1%/19.9% structure",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "Close date source — PSP / KKR — AEP Transmission Company",
+        "url": "https://www.investpsp.com/en/news/kkr-and-psp-investments-acquire-minority-stake-in-two-american-electric-power-transmission-companies/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "KKR and PSP's 50/50 consortium attribution",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "SEC — Midwest Transmission Holdings LLC agreement",
+        "url": "https://www.sec.gov/Archives/edgar/data/4904/000000490425000141/ex10aaeptco20252q.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Holding-company members and governance",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "AEP — OHTCo 2025 FERC Form 1",
+        "url": "https://docs.aep.com/docs/investors/fercfilings/docs/2025/AEP%20Ohio%20Transmission%20Company%202025%20FF1_compressed.pdf",
+        "sourceType": "OTHER",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Regulatory identity, transmission footprint and operating scale",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "SEC — AEP June 2026 ownership note",
+        "url": "https://www.sec.gov/Archives/edgar/data/50172/000000490426000059/R59.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Continued 19.9% non-controlling structure through June 2026",
+        "isPrimary": false
+      }
+    ]
+  }
+}

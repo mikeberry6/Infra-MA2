@@ -1,0 +1,280 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0388:firstlight-usa-llc:61bc946d",
+  "taskIndex": 388,
+  "asOfDate": "2026-09-01",
+  "generatedAt": "2026-09-01T21:20:00.000Z",
+  "canonicalKey": "firstlight-usa-llc|united-states",
+  "companyName": "FirstLight USA, LLC",
+  "actions": [
+    "CREATE_COMPANY"
+  ],
+  "sourceHoldingIds": [
+    "081-psp-investments:holding:007:firstlight-usa-llc"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Create one FirstLight USA, LLC record for FirstLight Power's U.S. generation platform. Energy Capital Partners created the platform in 2006, GDF SUEZ/ENGIE acquired it in 2008, and PSP Investments acquired 100% on June 1, 2016. PSP signed a sale of the U.S. portfolio to Hull Street Energy on May 19, 2026, but no legal closing was found through September 1, 2026, so PSP remains active and the buyer is recorded only as a signed pending exit counterparty.",
+  "evidence": [
+    {
+      "url": "https://www.investpsp.com/en/news/psp-investments-announces-sale-of-firstlights-us-portfolio-to-hull-street-energy/",
+      "purpose": "Current seller, U.S. platform scope and pending sale",
+      "supports": [
+        "PSP remained the seller at announcement",
+        "Hull Street signed to acquire the U.S. portfolio",
+        "Closing remained subject to conditions"
+      ]
+    },
+    {
+      "url": "https://www.investpsp.com/en/news/psp-investments-to-acquire-1-4gw-hydroelectric-assets-in-new-england/",
+      "purpose": "PSP entry and platform scope",
+      "supports": [
+        "PSP agreed to acquire the U.S. platform from ENGIE",
+        "The platform comprises U.S. hydroelectric infrastructure"
+      ]
+    },
+    {
+      "url": "https://www.ecpgp.com/equity/portfolio/firstlight-power-enterprises-inc",
+      "purpose": "Platform creation and ECP ownership history",
+      "supports": [
+        "Energy Capital Partners created FirstLight in 2006",
+        "ECP sold the platform in 2008"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "bf657bab74547385207ce05d11c5337eac1cdefd335fe4796c026ea9dff6c564",
+  "currentCompanySnapshotSha256": null,
+  "executionLock": {
+    "taskSnapshotSha256": "70ddf983753a3792cd483dd35ca0f17611354fff98f8e4f19b754a70105a5cdb",
+    "taskStateSha256": "c760f9ea8069c17b05d5fd65bdcece8a8c9cb976fe99f5ed8cf015804cf7fc7d",
+    "taskDependencySha256": "f74e24cd7d7c5f8b84821c2ea86ce17af16475b281490a984526e070ce1cf659",
+    "seedEntrySha256": null,
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "39921c6ead6ae1f769a18bacbec00a22298982e11ce435044243c40c97f6a312",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi79j001jivhe2rmjalkq",
+        "name": "Energy Capital Partners",
+        "updatedAt": "2026-07-23T16:09:16.615Z"
+      },
+      {
+        "id": "cmrxpih6o004oivhejmzw2gfv",
+        "name": "PSP Investments",
+        "updatedAt": "2026-07-23T16:09:29.472Z"
+      },
+      {
+        "id": "cmtehg176000msm2bbos0mcgi",
+        "name": "ENGIE",
+        "updatedAt": "2026-08-29T14:35:25.842Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": null,
+  "beforeImageSha256": null,
+  "afterImage": {
+    "id": null,
+    "name": "FirstLight USA, LLC",
+    "aliases": [
+      "FirstLight Power",
+      "FirstLight Power (U.S. operations)",
+      "FirstLight Power Enterprises, Inc.",
+      "FirstLight Power Resources Holdings, Inc.",
+      "PSP H2O FL USA LLC",
+      "PSP FL USA LLC",
+      "FirstLight Holding Inc."
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Hydroelectric generation, pumped storage, solar and battery storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "FirstLight USA, LLC is the U.S. generation platform operating under the FirstLight Power brand. Its portfolio includes run-of-river hydroelectric plants, the Northfield Mountain pumped-storage facility, solar generation and battery storage across Massachusetts, Connecticut and Pennsylvania. Energy Capital Partners created the platform in 2006, GDF SUEZ/ENGIE owned it from 2008 to 2016, and PSP Investments acquired 100% on June 1, 2016. PSP signed a sale of the U.S. operations to Hull Street Energy on May 19, 2026, but the transfer had not legally closed as of September 1, 2026; PSP therefore remains the active owner and Hull Street is pending only. Canadian H2O Power and Hydromega assets, individual projects, subsidiaries and issuers are outside the canonical U.S. platform boundary.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://firstlight.energy/",
+    "yearFounded": 2006,
+    "headquarters": "Burlington, Massachusetts",
+    "lastVerifiedAt": "2026-09-01T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": null,
+        "managerName": "PSP Investments",
+        "organizationName": "PSP Investments",
+        "fundName": null,
+        "vehicleName": "FirstLight Holding Inc. / PSP FL USA LLC; PSP H2O FL USA LLC at entry",
+        "stake": "100%",
+        "investmentYear": 2016,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "SIGNED_PENDING_EXIT"
+      },
+      {
+        "id": null,
+        "managerName": "Energy Capital Partners",
+        "organizationName": "Energy Capital Partners",
+        "fundName": null,
+        "vehicleName": "Energy Capital Partners I / FirstLight Power Enterprises, Inc.",
+        "stake": "100%",
+        "investmentYear": 2006,
+        "exitYear": 2008,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      },
+      {
+        "id": null,
+        "managerName": "ENGIE (formerly GDF SUEZ)",
+        "organizationName": "ENGIE",
+        "fundName": null,
+        "vehicleName": "SUEZ Bidco, LLC / FirstLight Power Enterprises, Inc.",
+        "stake": "100%",
+        "investmentYear": 2008,
+        "exitYear": 2016,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [
+      {
+        "id": null,
+        "direction": "EXIT",
+        "transactionState": "SIGNED_PENDING_EXIT",
+        "counterpartyName": "Hull Street Energy Partners III, L.P.",
+        "transactionDescription": "PSP Investments signed an agreement to sell 100% of FirstLight's U.S. generation portfolio to Hull Street Energy through HSE FirstLight, LLC. The transaction remained subject to FERC approval and other customary conditions and had not legally closed as of September 1, 2026.",
+        "announcedAt": "2026-05-19",
+        "expectedClosing": "Not publicly disclosed; pending regulatory approval as of 2026-09-01",
+        "relatedOwnershipPeriodIds": [],
+        "evidenceUrls": [
+          "https://www.investpsp.com/en/news/psp-investments-announces-sale-of-firstlights-us-portfolio-to-hull-street-energy/",
+          "https://nepool.com/wp-content/uploads/2026/08/Lit_Report_20260805.pdf"
+        ]
+      }
+    ],
+    "milestones": [
+      {
+        "id": null,
+        "date": "Nov 1, 2006",
+        "event": "Energy Capital Partners created FirstLight Power on closing the predecessor asset acquisition.",
+        "category": "FOUNDING",
+        "sortDate": "2006-11-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.ecpgp.com/equity/portfolio/firstlight-power-enterprises-inc"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Dec 29, 2008",
+        "event": "GDF SUEZ completed its acquisition of 100% of FirstLight from Energy Capital Partners.",
+        "category": "ACQUISITION",
+        "sortDate": "2008-12-29T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.engie.com/sites/default/files/assets/documents/2021-03/gdf-suez-ddr08-vus-interactif1_Part2_0.pdf"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Jun 1, 2016",
+        "event": "PSP Investments completed its acquisition of 100% of the U.S. FirstLight platform from ENGIE.",
+        "category": "ACQUISITION",
+        "sortDate": "2016-06-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.investpsp.com/en/news/psp-investments-to-acquire-1-4gw-hydroelectric-assets-in-new-england/",
+          "https://nepool.com/wp-content/uploads/2021/01/Lit_Report_20160701.pdf"
+        ]
+      },
+      {
+        "id": null,
+        "date": "May 19, 2026",
+        "event": "PSP Investments announced a signed sale of the U.S. generation portfolio to Hull Street Energy; the transaction remained pending at the verification cutoff.",
+        "category": "DIVESTITURE",
+        "sortDate": "2026-05-19T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.investpsp.com/en/news/psp-investments-announces-sale-of-firstlights-us-portfolio-to-hull-street-energy/",
+          "https://nepool.com/wp-content/uploads/2026/08/Lit_Report_20260805.pdf"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": null,
+        "label": "PSP Investments — FirstLight U.S. portfolio sale announcement",
+        "url": "https://www.investpsp.com/en/news/psp-investments-announces-sale-of-firstlights-us-portfolio-to-hull-street-energy/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "PSP ownership, U.S. platform scope and signed pending sale",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "Hull Street Energy — FirstLight U.S. generation acquisition",
+        "url": "https://hullstreetenergy.com/blog/hull-street-energy-to-acquire-firstlights-u-s-generation-fleet/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Buyer identity, asset scope and closing conditions",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "NEPOOL — EC26-110 litigation report",
+        "url": "https://nepool.com/wp-content/uploads/2026/08/Lit_Report_20260805.pdf",
+        "sourceType": "OTHER",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "FERC approval remained pending in August 2026",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "PSP Investments — 2016 FirstLight acquisition announcement",
+        "url": "https://www.investpsp.com/en/news/psp-investments-to-acquire-1-4gw-hydroelectric-assets-in-new-england/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "PSP entry, seller and U.S. platform scope",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "NEPOOL — EC16-89 litigation report",
+        "url": "https://nepool.com/wp-content/uploads/2021/01/Lit_Report_20160701.pdf",
+        "sourceType": "OTHER",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "June 1, 2016 ownership closing",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Energy Capital Partners — FirstLight Power portfolio history",
+        "url": "https://www.ecpgp.com/equity/portfolio/firstlight-power-enterprises-inc",
+        "sourceType": "WEBSITE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "2006 platform creation and 2008 exit",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "ENGIE — GDF SUEZ 2008 registration document",
+        "url": "https://www.engie.com/sites/default/files/assets/documents/2021-03/gdf-suez-ddr08-vus-interactif1_Part2_0.pdf",
+        "sourceType": "OTHER",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "December 29, 2008 acquisition closing",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "b4cf2d312789e7be3d7ff3ceb09dd322fe6bd3b3fc0443d5ba1e8da7ea2a373b",
+  "proposalSha256": "e6a92b772a470158f15a9065b6e3d9dfd105dd16109fc71b38fd9d40bed818b0"
+}

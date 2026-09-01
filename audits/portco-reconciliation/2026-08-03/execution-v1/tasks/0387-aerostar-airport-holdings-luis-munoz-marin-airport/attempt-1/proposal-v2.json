@@ -1,0 +1,241 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0387:aerostar-airport-holdings-luis-munoz-marin-airport:289dd4e3",
+  "taskIndex": 387,
+  "asOfDate": "2026-09-01",
+  "generatedAt": "2026-09-01T21:20:00.000Z",
+  "canonicalKey": "aerostar-airport-holdings-luis-munoz-marin-airport|united-states",
+  "companyName": "Aerostar Airport Holdings (Luis Muñoz Marín Airport)",
+  "actions": [
+    "CREATE_COMPANY"
+  ],
+  "sourceHoldingIds": [
+    "081-psp-investments:holding:004:aerostar-airport-holdings-luis-munoz-marin-airport"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Create one Aerostar Airport Holdings, LLC record for the private operator of Luis Muñoz Marín International Airport. The Puerto Rico Ports Authority retains the airport asset, while Aerostar holds the long-term operating lease. ASUR owns 60% and PSP Investments owns 40% through AviAlliance; the Highstar/Oaktree interests exited on May 26, 2017. No later Aerostar ownership transfer or signed pending sale was found through September 1, 2026.",
+  "evidence": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1123452/000110465921049375/tm2037704d1_20f.htm",
+      "purpose": "Formation, operating-company identity and ownership history",
+      "supports": [
+        "Aerostar is the concession operator",
+        "ASUR owns 60%",
+        "The 2017 ownership change closed"
+      ]
+    },
+    {
+      "url": "https://www.avialliance.com/avia_en/data/pub/AviA_Corporate_presentation_Q22026_EN.pdf",
+      "purpose": "Current PSP/AviAlliance interest and cap table",
+      "supports": [
+        "PSP remains AviAlliance's owner",
+        "AviAlliance's Aerostar interest is 40%"
+      ]
+    },
+    {
+      "url": "https://www.p3.pr.gov/existing-p3/luis-munoz-marin-international-airport",
+      "purpose": "Concession boundary and current operator",
+      "supports": [
+        "Aerostar is the active private operator",
+        "The airport remains a government asset"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "1ec467c9b2734b25679bfc28476bfcacf23606ef747ac0b9e21503b77517466e",
+  "currentCompanySnapshotSha256": null,
+  "executionLock": {
+    "taskSnapshotSha256": "65d65c10d53115d28b99fbef8fdbc29a479fda97553e3177345d57b7fee3bfa9",
+    "taskStateSha256": "59527a5ffe1e0ad8421f9bd11099f14d561a010ff1850d975e5deeeca7944d44",
+    "taskDependencySha256": "a8e01bb1bb89f6db650e25f5137acb2050df1d5b1e4fa2aff68e982f5a67f16b",
+    "seedEntrySha256": null,
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "5fb1069d85777d8ad775bcc8a42cb8619ebfc03c0d92b551868c59ab4b9ab6e1",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpih6o004oivhejmzw2gfv",
+        "name": "PSP Investments",
+        "updatedAt": "2026-07-23T16:09:29.472Z"
+      },
+      {
+        "id": "cmrxpj0dd00arivhegqyga3w8",
+        "name": "Oaktree Capital",
+        "updatedAt": "2026-07-23T16:09:54.337Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": null,
+  "beforeImageSha256": null,
+  "afterImage": {
+    "id": null,
+    "name": "Aerostar Airport Holdings, LLC",
+    "aliases": [
+      "Aerostar",
+      "AeroStar",
+      "Aerostar Airport Holdings Puerto Rico",
+      "Aerostar Airport Holdings (Luis Muñoz Marín Airport)"
+    ],
+    "sector": "TRANSPORTATION",
+    "subsector": "Airport concession and operations",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States",
+      "Puerto Rico"
+    ],
+    "description": "Aerostar Airport Holdings, LLC is the private concessionaire and operator of Luis Muñoz Marín International Airport in Carolina, Puerto Rico. The Puerto Rico Ports Authority retains ownership of the airport asset, while Aerostar operates, maintains, secures and modernizes the terminals, runways and commercial facilities under a long-term lease that began in 2013. Grupo Aeroportuario del Sureste (ASUR) owns 60% and PSP Investments holds 40% through AviAlliance. Highstar/Oaktree sold its aggregate 50% interest when the ASUR and AviAlliance transactions closed on May 26, 2017. The airport, lease, facilities, financing issuers and support entities are not separate PortCos.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://aeropuertosju.com/",
+    "yearFounded": 2012,
+    "headquarters": "Carolina, Puerto Rico",
+    "lastVerifiedAt": "2026-09-01T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": null,
+        "managerName": "Grupo Aeroportuario del Sureste",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Aeropuerto de Cancún, S.A. de C.V.",
+        "stake": "60% (50% at entry; additional 10% closed in 2017)",
+        "investmentYear": 2012,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "PSP Investments",
+        "organizationName": "PSP Investments",
+        "fundName": null,
+        "vehicleName": "AviAlliance Canada Inc. and related PSP-side member",
+        "stake": "40%",
+        "investmentYear": 2017,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Oaktree Capital",
+        "organizationName": "Oaktree Capital",
+        "fundName": null,
+        "vehicleName": "Highstar Capital IV, L.P.",
+        "stake": "Part of an aggregate 50%; vehicle split not publicly disclosed",
+        "investmentYear": 2012,
+        "exitYear": 2017,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      },
+      {
+        "id": null,
+        "managerName": "Oaktree Capital",
+        "organizationName": "Oaktree Capital",
+        "fundName": null,
+        "vehicleName": "Highstar Aerostar Prism/IV-A Holdings, L.P.",
+        "stake": "Part of an aggregate 50%; vehicle split not publicly disclosed",
+        "investmentYear": 2012,
+        "exitYear": 2017,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": null,
+        "date": "Mar 14, 2012",
+        "event": "ASUR's Cancún subsidiary and two Highstar/Oaktree vehicles formed Aerostar Airport Holdings.",
+        "category": "FOUNDING",
+        "sortDate": "2012-03-14T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1123452/000110465921049375/tm2037704d1_20f.htm"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Feb 27, 2013",
+        "event": "Aerostar reached financial close and took over the airport under the long-term lease after paying the disclosed US$615 million upfront fee.",
+        "category": "ACQUISITION",
+        "sortDate": "2013-02-27T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1123452/000110465918026696/a18-9707_1ex4d16.htm"
+        ]
+      },
+      {
+        "id": null,
+        "date": "May 26, 2017",
+        "event": "Highstar/Oaktree exited its aggregate 50% interest; ASUR increased to 60% and PSP/AviAlliance acquired 40%.",
+        "category": "ACQUISITION",
+        "sortDate": "2017-05-26T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1123452/000110465921049375/tm2037704d1_20f.htm",
+          "https://www.avialliance.com/avia_en/History-24.jhtml"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": null,
+        "label": "SEC — ASUR 2021 Form 20-F",
+        "url": "https://www.sec.gov/Archives/edgar/data/1123452/000110465921049375/tm2037704d1_20f.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Aerostar formation and 2013/2017 ownership closings",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "SEC — Executed SJU airport lease",
+        "url": "https://www.sec.gov/Archives/edgar/data/1123452/000110465918026696/a18-9707_1ex4d16.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Concession identity, asset boundary, fee and term",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "AviAlliance — Corporate presentation Q2 2026",
+        "url": "https://www.avialliance.com/avia_en/data/pub/AviA_Corporate_presentation_Q22026_EN.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current PSP ownership and 40% Aerostar interest",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "AviAlliance — Corporate history",
+        "url": "https://www.avialliance.com/avia_en/History-24.jhtml",
+        "sourceType": "WEBSITE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "PSP acquisition of AviAlliance and 2017 Aerostar entry",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Puerto Rico P3 Authority — Luis Muñoz Marín International Airport",
+        "url": "https://www.p3.pr.gov/existing-p3/luis-munoz-marin-international-airport",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current operator and public-asset boundary",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "377079e56b034400259e53994b531bc6f4a3ededebad091f3206d6d5342a9466",
+  "proposalSha256": "154d723ed6e701643234899c3632df528c3d7df46ada50688d02513d4c489ff2"
+}

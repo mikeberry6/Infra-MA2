@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0384:407-international-inc:e9ed737e",
+  "taskIndex": 384,
+  "companyName": "407 International Inc.",
+  "generatedAt": "2026-09-01T21:19:17.155Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0384-407-international-inc/attempt-1/observed-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 384,
+    "taskId": "ledger:0384:407-international-inc:e9ed737e",
+    "canonicalKey": "407-international-inc|canada",
+    "companyName": "407 International Inc.",
+    "country": "Canada",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 81,
+    "managers": [
+      "PSP Investments"
+    ],
+    "actionScopes": {
+      "company": [
+        "CREATE_COMPANY"
+      ],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "081-psp-investments:holding:001:407-international-inc"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://www.investpsp.com/en/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "No exact normalized production or seed match exists. Census evidence supports a new canonical company with 1 manager holding record(s).",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "407-international-inc|canada",
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi6gh001aivhefuh9d1bo",
+        "name": "CPP Investments",
+        "updatedAt": "2026-07-23T16:09:15.569Z"
+      },
+      {
+        "id": "cmrxpib3m002rivherwm9fg8c",
+        "name": "La Caisse de dépôt (CDPQ)",
+        "updatedAt": "2026-07-23T16:09:21.586Z"
+      },
+      {
+        "id": "cmrxpih6o004oivhejmzw2gfv",
+        "name": "PSP Investments",
+        "updatedAt": "2026-07-23T16:09:29.472Z"
+      },
+      {
+        "id": "cmsrahtng000ecp4s266jplsa",
+        "name": "Ferrovial N.V.",
+        "updatedAt": "2026-08-13T09:02:10.012Z"
+      },
+      {
+        "id": "cmtj3t16k000q062br0dg8x1m",
+        "name": "Macquarie Group",
+        "updatedAt": "2026-09-01T20:12:28.604Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0384:407-international-inc:e9ed737e",
+    "taskIndex": 384,
+    "canonicalKey": "407-international-inc|canada",
+    "capturedAt": "2026-09-01T21:19:17.155Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "490ff84890c61ac772af27efbc3f3f3dc3f93be6de15d83effb5986dafcaf9a8",
+    "productionSnapshotSha256": "7b18ee97b06d6cab2f57db198be056dbbf24c1ae6ff97735ec24c794bfb117ed",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "b48307d3d29030c6ea7cd3a0c52aaa16e9942c184e9a7900dd36354dd1d4e3db",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "aee5381ea1a07a2fbaccc952bc02a8e3fd1d1c350bc4bf4b4d43c99ef1b0927d",
+    "stateSha256": "2550c70000624014b892f3a9d0da2ca747e6931852fe2781d70be25b0a1cedfa",
+    "taskSnapshotSha256": "da136ddeb883ed599d6bffb28e337c8960713c658af4f21a451ab185e79f0559"
+  },
+  "contextSha256": "ffadb46f3e1fc29611d14d82080829f289dd2efb53a2746d6c08901cfae36943"
+}
