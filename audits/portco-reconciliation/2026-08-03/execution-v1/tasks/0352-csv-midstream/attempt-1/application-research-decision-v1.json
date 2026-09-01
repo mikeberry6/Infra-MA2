@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0352:csv-midstream:d544fe04",
+  "taskIndex": 352,
+  "companyName": "CSV Midstream",
+  "asOfDate": "2026-08-19",
+  "decision": "SUPERSEDED",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-01T16:55:00.000Z",
+  "result": {
+    "decision": "SUPERSEDED",
+    "rationale": "CSV Midstream is the same company as CSV Midstream Solutions Corp. Task 353 owns the surviving production identity and will apply the consolidated after-image; this duplicate task is therefore superseded by task 353.",
+    "evidence": [
+      {
+        "url": "https://www.csvmidstream.com/about-us/",
+        "purpose": "Official company identity and operating-platform boundary."
+      },
+      {
+        "url": "https://www.csvmidstream.com/news/press-releases/northleaf-capital-partners-acquires-csv-midstream-solutions-corp/",
+        "purpose": "Official evidence that the short and legal names refer to the same Northleaf-owned platform."
+      }
+    ]
+  },
+  "lineage": {
+    "sourceDecision": "research-decision.json",
+    "sourceVerification": "source-verification.json",
+    "coveredByTaskId": "ledger:0353:csv-midstream-solutions-corp:99793919"
+  }
+}

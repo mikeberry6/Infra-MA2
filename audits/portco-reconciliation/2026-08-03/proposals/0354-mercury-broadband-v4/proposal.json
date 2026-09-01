@@ -1,0 +1,187 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0354:mercury-broadband:1dda7bce",
+  "taskIndex": 354,
+  "asOfDate": "2026-09-01",
+  "generatedAt": "2026-09-01T17:00:00.000Z",
+  "canonicalKey": "mercury-broadband|united-states",
+  "companyName": "Mercury Broadband",
+  "actions": [
+    "CREATE_COMPANY"
+  ],
+  "sourceHoldingIds": [
+    "071-northleaf-capital:holding:016:mercury-broadband"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Create one canonical Mercury Fiber rural broadband platform, retain Mercury Broadband and Mercury Wireless as aliases, and record Northleaf's controlling ownership from the October 31, 2022 close without inventing an undisclosed economic percentage or fund allocation.",
+  "evidence": [
+    {
+      "url": "https://www.northleafcapital.com/news/mercury-broadband-and-northleaf-announce-strategic-partnership-facilitate-companys-rural",
+      "purpose": "Official Northleaf investment announcement and infrastructure-strategy basis.",
+      "supports": [
+        "Northleaf agreed to make a controlling investment.",
+        "Mercury is a facilities-based rural broadband platform."
+      ]
+    },
+    {
+      "url": "https://www.efis.psc.mo.gov/Document/Display/459242",
+      "purpose": "Regulatory evidence for the ownership chain and legal close.",
+      "supports": [
+        "Northleaf's transaction closed on October 31, 2022.",
+        "NCP Mercury AIV LP and Mercury TopCo, LLC are the disclosed ownership vehicles."
+      ]
+    },
+    {
+      "url": "https://mercuryfiber.com/news/mercury-fiber-strengthens-commitment-to-rural-internet-choice-and-innovation/",
+      "purpose": "Official current identity and brand transition.",
+      "supports": [
+        "Mercury Broadband rebranded as Mercury Fiber.",
+        "The platform remains a rural fiber and broadband operator."
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "074f25fc3f4de3f8591b494d08d98b41c91509faa402a16752b38ddceb48d43b",
+  "currentCompanySnapshotSha256": null,
+  "executionLock": {
+    "taskSnapshotSha256": "6a76e580e5ceb4a7a676a0c982bb996bef875f8e324e3d195fb60d8943f2d050",
+    "taskStateSha256": "ae6bf76d84aeca324acc4f9d2d5fb5b1969a0bc98b76f0a32cbe45bf3007f0b3",
+    "taskDependencySha256": "2e5a8d36777f3832ba739a6a0376e4d2e95f9f01e8dce45273f649895907531b",
+    "seedEntrySha256": null,
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "72209f69314e323ca933f0a7899ae46a5cf7532ef54c6897e49f738918d98320",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpihww004wivhek83snno3",
+        "name": "Northleaf",
+        "updatedAt": "2026-07-23T16:09:30.416Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": null,
+  "beforeImageSha256": null,
+  "afterImage": {
+    "id": null,
+    "name": "Mercury Fiber",
+    "aliases": [
+      "Mercury Broadband",
+      "Mercury Wireless"
+    ],
+    "sector": "DIGITAL",
+    "subsector": "Rural fiber and fixed-wireless broadband infrastructure",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Mercury Fiber is a facilities-based rural broadband platform that develops and operates fiber-to-the-premises and fixed-wireless networks across underserved communities in the central United States. Formerly known as Mercury Broadband and Mercury Wireless, the company provides residential and business internet service through owned last-mile and supporting network infrastructure. Northleaf completed a controlling investment on October 31, 2022 through NCP Mercury AIV LP and Mercury TopCo, LLC. Mercury's pre-closing owner retained minority rollover equity, but the parties' current exact economic percentages and Northleaf fund allocation are not publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://mercuryfiber.com/",
+    "yearFounded": 2007,
+    "headquarters": "Mission, Kansas, United States",
+    "lastVerifiedAt": "2026-09-01T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": null,
+        "managerName": "Northleaf",
+        "organizationName": "Northleaf",
+        "fundName": null,
+        "vehicleName": "NCP Mercury AIV LP / Mercury TopCo, LLC",
+        "stake": "Controlling interest; exact percentage not publicly disclosed",
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": null,
+        "date": "2007",
+        "event": "Mercury Wireless was founded as a rural broadband operator.",
+        "category": "FOUNDING",
+        "sortDate": "2007-01-01T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://mercuryfiber.com/"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Oct 31, 2022",
+        "event": "Northleaf completed its controlling investment in Mercury Broadband through NCP Mercury AIV LP and Mercury TopCo, LLC.",
+        "category": "FINANCING",
+        "sortDate": "2022-10-31T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.efis.psc.mo.gov/Document/Display/459242",
+          "https://www.northleafcapital.com/news/mercury-broadband-and-northleaf-announce-strategic-partnership-facilitate-companys-rural"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Mar 12, 2025",
+        "event": "Mercury Broadband adopted the Mercury Fiber brand as it expanded its fiber-led rural network strategy.",
+        "category": "OTHER",
+        "sortDate": "2025-03-12T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://mercuryfiber.com/news/mercury-fiber-strengthens-commitment-to-rural-internet-choice-and-innovation/"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": null,
+        "label": "Mercury Fiber — company website",
+        "url": "https://mercuryfiber.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current company identity, rural broadband services and founding history",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Northleaf — Mercury Broadband strategic partnership",
+        "url": "https://www.northleafcapital.com/news/mercury-broadband-and-northleaf-announce-strategic-partnership-facilitate-companys-rural",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Northleaf controlling investment and infrastructure-strategy basis",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "Missouri PSC — Mercury control transaction",
+        "url": "https://www.efis.psc.mo.gov/Document/Display/459242",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "October 31, 2022 close and ownership chain",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Mercury Fiber — brand transition",
+        "url": "https://mercuryfiber.com/news/mercury-fiber-strengthens-commitment-to-rural-internet-choice-and-innovation/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current Mercury Fiber identity and operating strategy",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "f52c8f12654a5d29f625fac36897ee50d80a552b40d0d26f487f6813bb1ef0ba",
+  "proposalSha256": "80fd3d198fc436e9235387b96922e4b358c6c049932b8e300138e258104cf1fd"
+}

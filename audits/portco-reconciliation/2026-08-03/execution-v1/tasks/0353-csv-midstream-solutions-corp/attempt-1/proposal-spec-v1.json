@@ -1,0 +1,207 @@
+{
+  "generatedAt": "2026-09-01T17:00:00.000Z",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER",
+    "MERGE_COMPANIES"
+  ],
+  "retiredCompanyIds": [
+    "cmrxpjltm0170ivheiq4ug9t2"
+  ],
+  "relationMerges": [
+    {
+      "kind": "OWNERSHIP_PERIOD",
+      "retiredRelationId": "cmrxpk866026fivheptlk7s65",
+      "canonicalRelationId": "cmrxpk86q026givheoq8wg0qm",
+      "rationale": "Both rows represent Northleaf's same 100% investment in CSV Midstream Solutions Corp."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxpmh4004wyivhezk1s3s9r",
+      "canonicalRelationId": "cmrxpmh9f04x3ivhe5lyw14n1",
+      "rationale": "Both milestones record the company's 2014 founding."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxpmh4h04wzivhetx6edvnu",
+      "canonicalRelationId": "cmrxpmhai04x5ivhesh174uwm",
+      "rationale": "Both milestones record Northleaf's June 2019 acquisition; the canonical event is updated to the more precise June 28 close."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxpmh5004x0ivhe4l9gdn1u",
+      "canonicalRelationId": "cmrxpmhb504x6ivhe7gsy9eso",
+      "rationale": "Both milestones record CSV's August 2019 Karr acquisition."
+    }
+  ],
+  "reviewedSeedRetirementTaskIds": [],
+  "rationale": "Keep CSV Midstream Solutions Corp. as the single canonical Canadian gas-processing platform, redirect the duplicate CSV Midstream row, retain one active 100% Northleaf ownership period from June 28, 2019, preserve Apollo as the former sponsor, and consolidate the unique operating milestones and sources.",
+  "evidence": [
+    {
+      "url": "https://www.csvmidstream.com/news/press-releases/northleaf-capital-partners-acquires-csv-midstream-solutions-corp/",
+      "purpose": "Official company evidence for Northleaf's completed 100% acquisition and legal identity.",
+      "supports": [
+        "Northleaf acquired 100% of CSV Midstream Solutions Corp.",
+        "The acquisition was completed by June 28, 2019.",
+        "CSV Midstream and CSV Midstream Solutions Corp. identify one platform."
+      ]
+    },
+    {
+      "url": "https://ir.apollo.com/news-events/press-releases/detail/310/csv-midstream-solutions-corporation-announces-strategic",
+      "purpose": "Official Apollo evidence for the predecessor investment and company identity.",
+      "supports": [
+        "Apollo-affiliated funds invested in CSV in 2014.",
+        "Apollo was the predecessor sponsor before Northleaf."
+      ]
+    },
+    {
+      "url": "https://www.csvmidstream.com/about-us/",
+      "purpose": "Current company identity, platform boundary and operating profile.",
+      "supports": [
+        "Current legal and trading identity.",
+        "Canadian gas-processing platform scope."
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "companyFieldUpdates": {
+    "aliases": [
+      "CSV Midstream"
+    ],
+    "website": "https://www.csvmidstream.com/",
+    "description": "CSV Midstream Solutions Corp. develops, owns and operates natural-gas and natural-gas-liquids processing, compression and gathering infrastructure in Alberta's Montney region. The company serves upstream producers through an asset-heavy network that includes Resthaven, Karr, Pipestone South, Simonette, Valhalla and the Albright sour-gas plant. Apollo-affiliated funds invested in the platform in 2014. Northleaf acquired 100% of CSV on June 28, 2019 and remains its disclosed infrastructure sponsor; no subsequent ownership exit or signed sale was identified through September 1, 2026.",
+    "lastVerifiedAt": "2026-09-01T00:00:00.000Z"
+  },
+  "ownershipPeriodUpdates": [
+    {
+      "id": "cmrxpk86q026givheoq8wg0qm",
+      "set": {
+        "managerName": "Northleaf",
+        "fundName": null,
+        "vehicleName": "Infrastructure funds managed by Northleaf; exact fund allocation not publicly disclosed",
+        "stake": "100%",
+        "investmentYear": 2019,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    }
+  ],
+  "ownershipPeriodRemovals": [],
+  "ownershipPeriodAdditions": [
+    {
+      "id": null,
+      "managerName": "Apollo Global Management",
+      "organizationName": "Apollo Global Management",
+      "fundName": null,
+      "vehicleName": "Apollo-affiliated funds; exact vehicle not publicly disclosed",
+      "stake": "Not publicly disclosed",
+      "investmentYear": 2014,
+      "exitYear": 2019,
+      "isActive": false,
+      "transactionState": "REALIZED"
+    }
+  ],
+  "pendingOwnershipTransactionUpdates": [],
+  "pendingOwnershipTransactionAdditions": [],
+  "milestoneUpdates": [
+    {
+      "id": "cmrxpmh9f04x3ivhe5lyw14n1",
+      "set": {
+        "evidenceUrls": [
+          "https://www.csvmidstream.com/about-us/"
+        ]
+      }
+    },
+    {
+      "id": "cmrxpmhai04x5ivhesh174uwm",
+      "set": {
+        "date": "Jun 28, 2019",
+        "event": "Northleaf completed its acquisition of 100% of CSV Midstream Solutions Corp.",
+        "category": "ACQUISITION",
+        "sortDate": "2019-06-28T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.csvmidstream.com/news/press-releases/northleaf-capital-partners-acquires-csv-midstream-solutions-corp/"
+        ]
+      }
+    },
+    {
+      "id": "cmrxpmhb504x6ivhe7gsy9eso",
+      "set": {
+        "date": "Aug 1, 2019",
+        "evidenceUrls": [
+          "https://www.globenewswire.com/en/news-release/2019/08/01/1895800/0/en/UPDATE-CSV-Midstream-Solutions-Corp-Completes-Acquisition-of-Karr-6-18-Natural-Gas-Facility-from-Paramount-Resources-Ltd.html"
+        ]
+      }
+    }
+  ],
+  "milestoneTransfers": [
+    {
+      "id": "cmrxpmh5j04x1ivhe9xdwk1fe",
+      "date": "Oct 25, 2022",
+      "event": "CSV announced final investment decision for the Albright sour-gas processing plant.",
+      "category": "FINANCING",
+      "sortDate": "2022-10-25T04:00:00.000Z",
+      "evidenceUrls": [
+        "https://www.csvmidstream.com/news/csv-midstream-solutions-corp-announces-final-investment-decision-for-albright-sour-gas-processing-plant/"
+      ]
+    },
+    {
+      "id": "cmrxpmh6204x2ivhemd6sch39",
+      "date": "Nov 10, 2025",
+      "event": "CSV brought the Albright plant into operation.",
+      "category": "OTHER",
+      "sortDate": "2025-11-10T05:00:00.000Z",
+      "evidenceUrls": [
+        "https://www.csvmidstream.com/general/csv-midstream-solutions-brings-albright-plant-online-contributing-to-the-ongoing-evolution-of-canadas-midstream-infrastructure/"
+      ]
+    }
+  ],
+  "citationUpdates": [
+    {
+      "id": "cmrxpsep70cj5ivhenhhvw54z",
+      "set": {
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Northleaf's completed acquisition of 100% of CSV Midstream Solutions Corp."
+      }
+    }
+  ],
+  "citationAdditions": [
+    {
+      "id": null,
+      "label": "GlobeNewswire — CSV Karr acquisition",
+      "url": "https://www.globenewswire.com/en/news-release/2019/08/01/1895800/0/en/UPDATE-CSV-Midstream-Solutions-Corp-Completes-Acquisition-of-Karr-6-18-Natural-Gas-Facility-from-Paramount-Resources-Ltd.html",
+      "sourceType": "ARTICLE",
+      "purpose": "MILESTONE_EVENT",
+      "evidenceLabel": "August 1, 2019 Karr facility acquisition close",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "Apollo — CSV Midstream strategic investment",
+      "url": "https://ir.apollo.com/news-events/press-releases/detail/310/csv-midstream-solutions-corporation-announces-strategic",
+      "sourceType": "PRESS_RELEASE",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Apollo-affiliated funds' 2014 predecessor investment",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "Csvmidstream — CSV Midstream",
+      "url": "https://www.csvmidstream.com/news/csv-midstream-solutions-corp-announces-final-investment-decision-for-albright-sour-gas-processing-plant/",
+      "sourceType": "ARTICLE",
+      "purpose": "MILESTONE_EVENT",
+      "evidenceLabel": "Albright final investment decision",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "Csvmidstream — CSV Midstream",
+      "url": "https://www.csvmidstream.com/general/csv-midstream-solutions-brings-albright-plant-online-contributing-to-the-ongoing-evolution-of-canadas-midstream-infrastructure/",
+      "sourceType": "ARTICLE",
+      "purpose": "MILESTONE_EVENT",
+      "evidenceLabel": "Albright operating milestone",
+      "isPrimary": false
+    }
+  ]
+}

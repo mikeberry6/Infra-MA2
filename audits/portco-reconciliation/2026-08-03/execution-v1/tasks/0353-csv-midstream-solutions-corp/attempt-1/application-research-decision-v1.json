@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0353:csv-midstream-solutions-corp:99793919",
+  "taskIndex": 353,
+  "companyName": "CSV Midstream Solutions Corp.",
+  "asOfDate": "2026-08-19",
+  "decision": "PROPOSED_MERGE",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-01T16:55:00.000Z",
+  "result": {
+    "decision": "PROPOSED_MERGE",
+    "rationale": "Keep CSV Midstream Solutions Corp. as the surviving canonical company, redirect the duplicate CSV Midstream identity, retain one active 100% Northleaf period from June 28, 2019, and preserve Apollo as the former sponsor.",
+    "evidence": [
+      {
+        "url": "https://www.csvmidstream.com/news/press-releases/northleaf-capital-partners-acquires-csv-midstream-solutions-corp/",
+        "purpose": "Official closing and 100% Northleaf ownership evidence."
+      },
+      {
+        "url": "https://ir.apollo.com/news-events/press-releases/detail/310/csv-midstream-solutions-corporation-announces-strategic",
+        "purpose": "Official predecessor-sponsor and company identity evidence."
+      },
+      {
+        "url": "https://www.csvmidstream.com/about-us/",
+        "purpose": "Current legal identity, platform boundary and operating profile."
+      }
+    ]
+  },
+  "lineage": {
+    "sourceTaskId": "ledger:0352:csv-midstream:d544fe04",
+    "sourceDecision": "../0352-csv-midstream/attempt-1/research-decision.json",
+    "sourceVerification": "../0352-csv-midstream/attempt-1/source-verification.json",
+    "acceptedResponse": "../0352-csv-midstream/attempt-1/chatgpt-accepted-response.txt"
+  }
+}

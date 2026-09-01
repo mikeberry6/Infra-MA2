@@ -1,0 +1,274 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0355:millennium-parking-garages-llc:9385654a",
+  "taskIndex": 355,
+  "companyName": "Millennium Parking Garages, LLC",
+  "generatedAt": "2026-09-01T16:56:23.436Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0355-millennium-parking-garages-llc/attempt-1/locked-batch-v3-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 355,
+    "taskId": "ledger:0355:millennium-parking-garages-llc:9385654a",
+    "canonicalKey": "millennium-parking-garages-llc|united-states",
+    "companyName": "Millennium Parking Garages, LLC",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 71,
+    "managers": [
+      "Northleaf Capital"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "071-northleaf-capital:holding:008:millennium-parking-garages-llc"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjlvr0174ivhejzd6e2vk"
+    ],
+    "seedKeys": [
+      "millennium parking garages, llc|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.millenniumgarages.com/about/",
+      "https://www.northleafcapital.com/infrastructure-investments?page=2"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted census NEEDS_REVIEW for 071-northleaf-capital:holding:008:millennium-parking-garages-llc: Ownership persists but partner transition from AMP Capital to InfraBridge and lack of updated disclosures create uncertainty on current stake. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Accepted census NEEDS_REVIEW for 071-northleaf-capital:holding:008:millennium-parking-garages-llc: Ownership persists but partner transition from AMP Capital to InfraBridge and lack of updated disclosures create uncertainty on current stake."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjlvr0174ivhejzd6e2vk",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "millennium-parking-garages-llc|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjlvr0174ivhejzd6e2vk",
+    "name": "Millennium Parking Garages, LLC",
+    "aliases": [],
+    "sector": "TRANSPORTATION",
+    "subsector": "Urban parking concession",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Millennium Parking Garages operates the underground downtown Chicago parking concession beneath Millennium, Grant, and Maggie Daley Parks. Its end users are commuters, residents, tourists, and event visitors, while revenues are derived from parking fees under a long-term concession framework. The asset follows an asset-heavy transportation model based on four underground garages, traffic management systems, and customer access infrastructure. Public sources describe 9,176 parking spaces across 3.8 million square feet, making it the largest underground parking system in the United States. Northleaf and AMP Capital acquired the concession assets in 2016 through Millennium Parking Garages, LLC, and Northleaf continues to list the investment as active.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Illinois",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk885026jivhe6e9lh3hs",
+        "managerName": "Northleaf Capital Partners",
+        "organizationName": "Northleaf",
+        "fundName": "Northleaf NEIF",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2016,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmhfo04xcivhergkqdvop",
+        "date": "2006",
+        "event": "The original 99-year lease for the Chicago Downtown Public Parking System was agreed.",
+        "category": "FINANCING",
+        "sortDate": "2006-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmhg604xdivhe105n6i5o",
+        "date": "2016",
+        "event": "FHWA identified Millennium Parking Garages, LLC as the concession purchaser.",
+        "category": "ACQUISITION",
+        "sortDate": "2016-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmhgq04xeivheiurhqy3i",
+        "date": "May 2016",
+        "event": "Northleaf and AMP Capital completed the acquisition of the Millennium Garages concession assets.",
+        "category": "ACQUISITION",
+        "sortDate": "2016-05-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsezs0cjlivhee8lm507x",
+        "label": "Millenniumgarages — Millennium Parking Garages, LLC",
+        "url": "https://www.millenniumgarages.com/about/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Millenniumgarages company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpsf0q0cjnivhefq5n4rzi",
+        "label": "Close date source — Northleaf — Millennium Parking Garages, LLC",
+        "url": "https://www.fhwa.dot.gov/ipd/project_profiles/il_millennium_parking_garages_concession.aspx",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Northleaf closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsf150cjoivhep9z5nndf",
+        "label": "Investment date source — Northleaf — ExteNet Systems",
+        "url": "https://www.northleafcapital.com/infrastructure-investments?page=2",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Northleafcapital company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsf260cjqivhevlhyz2yn",
+        "label": "Moneymanagement — Millennium Parking Garages, LLC",
+        "url": "https://www.moneymanagement.com.au/amp-and-jv-firm-snap-us370m-north-american-assets/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Moneymanagement operations / asset details",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Millennium Parking Garages, LLC",
+    "investmentFirm": "Northleaf",
+    "sector": "Transportation",
+    "subsector": "Urban parking concession",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "Millennium Parking Garages operates the underground downtown Chicago parking concession beneath Millennium, Grant, and Maggie Daley Parks. Its end users are commuters, residents, tourists, and event visitors, while revenues are derived from parking fees under a long-term concession framework. The asset follows an asset-heavy transportation model based on four underground garages, traffic management systems, and customer access infrastructure. Public sources describe 9,176 parking spaces across 3.8 million square feet, making it the largest underground parking system in the United States. Northleaf and AMP Capital acquired the concession assets in 2016 through Millennium Parking Garages, LLC, and Northleaf continues to list the investment as active.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2016,
+    "headquarters": "Illinois",
+    "milestones": [
+      {
+        "date": "2006",
+        "event": "The original 99-year lease for the Chicago Downtown Public Parking System was agreed.",
+        "category": "Financing"
+      },
+      {
+        "date": "2016",
+        "event": "FHWA identified Millennium Parking Garages, LLC as the concession purchaser.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "May 2016",
+        "event": "Northleaf and AMP Capital completed the acquisition of the Millennium Garages concession assets.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Millenniumgarages — Millennium Parking Garages, LLC",
+        "url": "https://www.millenniumgarages.com/about/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Close date source — Northleaf — Millennium Parking Garages, LLC",
+        "url": "https://www.fhwa.dot.gov/ipd/project_profiles/il_millennium_parking_garages_concession.aspx",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Northleafcapital — Millennium Parking Garages, LLC",
+        "url": "https://www.northleafcapital.com/infrastructure-investments?page=2",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Moneymanagement — Millennium Parking Garages, LLC",
+        "url": "https://www.moneymanagement.com.au/amp-and-jv-firm-snap-us370m-north-american-assets/",
+        "type": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Northleaf",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2016,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj3ek00ezivhe3cnm6515",
+        "fundName": "Northleaf NEIF",
+        "managerId": "cmrxpic3o0032ivhe1bvmxxsl",
+        "updatedAt": "2026-07-23T16:09:58.268Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpihww004wivhek83snno3",
+        "name": "Northleaf",
+        "updatedAt": "2026-07-23T16:09:30.416Z"
+      },
+      {
+        "id": "cmrxpisf60086ivhe0dkd1w0c",
+        "name": "InfraBridge (DigitalBridge)",
+        "updatedAt": "2026-07-23T16:09:44.034Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0355:millennium-parking-garages-llc:9385654a",
+    "taskIndex": 355,
+    "canonicalKey": "millennium-parking-garages-llc|united-states",
+    "capturedAt": "2026-09-01T16:56:23.436Z",
+    "databaseRevision": "revision:8b89206430319d2fd2791fc2c8d0d046d20e10db7a4bcb1420ce620a44a12ec7",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "4a66d4aaf2375d5b2fafa2b4e4dc8619f95c7a3d90f0a3c2d875952cd0f40a9a",
+    "productionSnapshotSha256": "991634f393cb7905dd9f5e9a7220ff9dd1d75895b78002556a1461b25fce259d",
+    "targetCompanySnapshotSha256": "cf9277148919de3caa666a5d5cdae1ba4116db903d73d9776bf03aea11383cb7",
+    "seedEntrySha256": "5d6d987133bc826fce014e88dd197f728a5221836a0f3a4ea521dc69ec20f7e8",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "ac48df01ac02145f91d31778c92a83ecaf7cc039a35915f330a9f713c4c47c13",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "63f45cb752efd9f952fb32ed17c1967687e58cdb8a58e506f40736c7b5f3dc26",
+      "organizationsSha256": "9045a2152da47f72dd328614e56e61e53979a228c070f750f178bfc1323b602f",
+      "citationsSha256": "d2e67227a87c191bb1cc3d50813a80db2f7462f5fa324ff6dcd6848c5bf9154a",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "4bb2eb196f9a929def0faaab92634a7238ac25615d66229a6f727eb0d765a848",
+    "stateSha256": "78486c363aba0c1244a90bf68dbdfd48a424d9cedef21cded81921ca530f9df3",
+    "taskSnapshotSha256": "ba30c9ede470f8d64fbdf9f9862e74e6e363d27e43b6ee2eb12cbaabcbe8fcdc"
+  },
+  "contextSha256": "ff3780561d368e45bba1fee36a95685d599c796ab4919cb991eb10d985530e84"
+}
