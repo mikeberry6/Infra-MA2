@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0428:new-england-power-transmission-assets:2b091d76",
+  "checkedAt": "2026-08-22T03:40:11.000Z",
+  "method": "Independent direct HTTP status, redirect, media-type and content-hash checks plus National Grid audited accounts, Stonepeak, SEC, JERA and FERC/NEPOOL inspection; identity, ownership, closing and exit search",
+  "sources": [
+    {
+      "url": "https://www.nationalgrid.com/document/584516/download",
+      "httpStatus": 403,
+      "finalUrl": "https://www.nationalgrid.com/document/584516/download",
+      "mediaType": "text/html",
+      "bytes": 5611,
+      "sha256": "0d7922cb3032bcf3708be2eefe1ee5f11e8e79a828a51c6201412b80afe5188b",
+      "healthStatus": "DIRECT_FETCH_BLOCKED_BUT_WEB_VERIFIED",
+      "verifiedMediaType": "application/pdf",
+      "verifiedClaims": [
+        "New England Power Company operates electric transmission facilities in Massachusetts, New Hampshire and Vermont",
+        "NEP is wholly owned by National Grid USA, which is wholly owned through National Grid North America by National Grid plc",
+        "At March 31, 2026 NEP reported $4.346 billion of net PP&E and $5.253 billion of total assets",
+        "Subsequent events were evaluated through June 17, 2026 with no undisclosed ownership event"
+      ]
+    },
+    {
+      "url": "https://stonepeak.com/investments",
+      "httpStatus": 200,
+      "finalUrl": "https://stonepeak.com/investments",
+      "mediaType": "text/html",
+      "bytes": 303186,
+      "sha256": "4f0a72952bb2b8608989bf7b9830cb25487feb19eedc5bf3fd053b964cfd9224",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Stonepeak New England Power is a separate Canal I-III and Bucksport generation portfolio exceeding 1,600 MW",
+        "Stonepeak reports a June 2018 investment, a 2019 Bucksport follow-on and sale to JERA Americas in May 2022"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1126294/000110465918043226/a18-16219_18k.htm",
+      "httpStatus": 403,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1126294/000110465918043226/a18-16219_18k.htm",
+      "mediaType": "text/html",
+      "bytes": 4819,
+      "sha256": "dfee70765e569056c88764823538c22da7b2ab319b36c44be11877abbd861d55",
+      "healthStatus": "DIRECT_FETCH_BLOCKED_BUT_WEB_VERIFIED",
+      "verifiedClaims": [
+        "The Canal transaction closed June 29, 2018 for $320 million subject to adjustment",
+        "Stonepeak Infrastructure Fund II supplied equity and an affiliate simultaneously acquired Canal 3"
+      ]
+    },
+    {
+      "url": "https://www.jera.co.jp/en/news/information/20220513_907",
+      "httpStatus": 200,
+      "finalUrl": "https://www.jera.co.jp/en/news/information/20220513_907",
+      "mediaType": "text/html",
+      "bytes": 61587,
+      "sha256": "e4d50c0ad17b26f387aa80ed8d16e48d7e46be3cebe23c9a58f512ca4670e12c",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "JERA signed to acquire a 100% interest in the Stonepeak thermal generation projects in Massachusetts and Maine",
+        "The announcement did not describe a National Grid transmission investment"
+      ]
+    },
+    {
+      "url": "https://nepool.com/wp-content/uploads/2023/01/Lit_Report_20230104.pdf",
+      "httpStatus": 200,
+      "finalUrl": "https://nepool.com/wp-content/uploads/2023/01/Lit_Report_20230104.pdf",
+      "mediaType": "application/pdf",
+      "bytes": 1699076,
+      "sha256": "918c3ecec0c4f049155a32be5eec06e4a125bcfb758d8576a31c6bc96b0a91c5",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "FERC authorized the sale of 100% of Canal Power Holdings LLC to a JERA Americas affiliate on November 23, 2022",
+        "The applicants reported consummation on December 1, 2022",
+        "The report identifies Canal, Canal 3 and Bucksport as the Stonepeak seller perimeter"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/71337/000007133702000006/form10k.htm",
+      "httpStatus": 403,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/71337/000007133702000006/form10k.htm",
+      "mediaType": "text/html",
+      "bytes": 4818,
+      "sha256": "0b140e9283b5df2858abdb70e0e1e6baa13d829d0dd952d1cfae87ab595765bf",
+      "healthStatus": "DIRECT_FETCH_BLOCKED_BUT_WEB_VERIFIED",
+      "verifiedClaims": [
+        "National Grid's acquisition of NEES closed March 22, 2000",
+        "NEP kept its name and remained wholly owned by National Grid USA"
+      ]
+    }
+  ],
+  "exitSearch": {
+    "searchedAt": "2026-08-22T03:40:11.000Z",
+    "scopeThrough": "2026-08-19",
+    "result": "No Stonepeak investment in New England Power Company's transmission business was found. The actual Stonepeak New England Power generation portfolio was sold in full to JERA and closed December 1, 2022; NEP remained National Grid-controlled through the latest audited evidence."
+  },
+  "allEvidenceUrlsDirectHttps": true,
+  "allCoreSourcesWorkingOrVerified": true,
+  "directFetchBlockedButWebVerifiedCount": 3,
+  "responseSourceHealthCorrections": [
+    "National Grid's download and three SEC pages blocked direct automated retrieval but were independently verified through indexed first-party web content; recorded hashes for blocked requests are hashes of the block responses.",
+    "Stonepeak's portfolio label refers to merchant generation, not New England Power Company's regulated transmission business.",
+    "The Stonepeak portfolio page's May 2022 sale wording is treated as announcement timing; FERC/NEPOOL evidence supplies the December 1, 2022 legal closing."
+  ],
+  "deadSourceCount": 0
+}

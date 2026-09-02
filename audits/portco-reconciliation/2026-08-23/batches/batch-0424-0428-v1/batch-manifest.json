@@ -1,0 +1,305 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_MANIFEST",
+  "methodologyVersion": "PORTCO_APPLY_BATCH_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0424-0428-v1",
+  "createdAt": "2026-09-02T03:59:00.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "e56f24d46a8d2acd900525df26e7bcd9ad8d0949ded695707412c855847f67f6"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0424:extenet-formerly-extenet-systems:deec194f",
+      "taskIndex": 424,
+      "companyName": "Extenet (formerly ExteNet Systems)",
+      "outcome": "SUPERSEDED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0424-extenet-formerly-extenet-systems/attempt-1/terminal-decision-v1.json",
+        "sha256": "3fa7bc24717546d651d903e2da72e1da0152461a9387bb48c2ba603e1bc88bca"
+      }
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0425:kaps:e97e627d",
+      "taskIndex": 425,
+      "companyName": "KAPS",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0425-kaps/attempt-1/proposal-v1.json",
+        "sha256": "fb27ae54f5bcb4cab3862791d467ded6fd97042e00faa6cfaa730b876c579bfe"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0425-kaps-v1.json",
+        "sha256": "6203c97ca780da7fbed296a39801cccf9ab21d4f07da1dd50f718d7e33881d6a"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0425-kaps/attempt-1/locked-batch-v1-production-snapshot.json",
+        "sha256": "8bed25f151439a255851eedd4c85a6552012c450206e7885e3272b8f095c7373"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0425-kaps/attempt-1/locked-batch-v1-task-snapshot.json",
+        "sha256": "2681ac50c9e687501c644d9f6c2a5f181273c067b2ab8865d56a00a23f8c52f3"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0425-kaps/attempt-1/observed-batch-v1-task-snapshot.json",
+        "sha256": "0e15db6d201b8a569ada077440aaf109d0f553dc923deaf0382af6e6f023476c"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0425-kaps/attempt-1/application-research-decision-v1.json",
+        "sha256": "f33b83cc3be1f99ebc3aff81f42c9667d39fbb471db39b12306ecad4deb73720"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0425-kaps/attempt-1/application-source-verification-v1.json",
+        "sha256": "33808ded615ebc3531a0bc7156fdcc8d56efd5907e06bd18db9a180b9278acd7"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "25bc4858714431b4913972e6970703a418a692baa63f8571aa5d1870e1e02d04",
+      "dependencySha256": "4bced12073ab039a51b2e60bfd060f375e012f27a0e2094eb85c8c15a3df25da",
+      "afterImageSha256": "4042612cd27677af7b2b377fccfc301920993dedb828f5ffdceebb50f3ad77aa",
+      "targetClaims": [
+        "canonical:kaps|canada",
+        "company:cmrxpjnk0019uivhefy3ycv3y",
+        "relation:cmrxpka4r029hivhet9r7jm95",
+        "relation:cmrxpmpka0579ivhe9f0st431",
+        "relation:cmrxpmpkw057aivherqff4qss",
+        "relation:cmrxpmplf057bivhe5m6bg5rx",
+        "relation:cmrxpmplv057civheviv9e4p3",
+        "relation:cmrxpssm30d4rivhemaupq6b4",
+        "relation:cmrxpssnl0d4tivheda3j8bts",
+        "relation:cmrxpssor0d4vivhe4bim9tbk",
+        "relation:cmrxpssps0d4xivhertmf2mso",
+        "seed:kaps|canada"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://stonepeak.com/news/stonepeak-to-acquire-interest-in-kaps",
+          "label": "Announcement date source — Stonepeak — KAPS",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://stonepeak.com/press-releases/stonepeak-completes-acquisition-of-interest-in-kaps",
+          "label": "Close date source — Stonepeak — KAPS",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.keyera.com/news-and-stories/news-releases/keyera-announces-2026-second-quarter-results/",
+          "label": "Keyera — 2026 second-quarter results",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.keyera.com/news-and-stories/news-releases/keyera-announces-acquisition-of-remaining-50-interest-in-kaps/",
+          "label": "Keyera",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.keyera.com/news-and-stories/news-releases/keyera-celebrates-the-completion-of-the-kaps-pipeline/",
+          "label": "Keyera — KAPS",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.keyera.com/operations/pipelines-and-processing/kaps-pipeline-system",
+          "label": "Keyera — KAPS",
+          "sourceType": "WEBSITE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0426:lineage:fade3de0",
+      "taskIndex": 426,
+      "companyName": "Lineage",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0426-lineage/attempt-1/proposal-v1.json",
+        "sha256": "7b30d12be1d6f1c86499b758e1a9742fed65dc4bae551e6bbb3184434ae95e9b"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0426-lineage-v1.json",
+        "sha256": "ae504e162cc8a03f5a47c7e6321fdddbb16241715ee44ffd865734f46982f8a9"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0426-lineage/attempt-1/locked-batch-v1-production-snapshot.json",
+        "sha256": "bc7f2c6ba71ad7c68fd30c4a1e5046d69d336471f812f001e5cf2af2c1454849"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0426-lineage/attempt-1/locked-batch-v1-task-snapshot.json",
+        "sha256": "4ebfa586805a9133c0c431c52b05836257d08e64b2825fcb1fc8a3c1d40bd004"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0426-lineage/attempt-1/observed-batch-v1-task-snapshot.json",
+        "sha256": "c692f45f72cfd2b8f390b52ac28129977588d3d1adc514c7d614132ca7943ec4"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0426-lineage/attempt-1/application-research-decision-v1.json",
+        "sha256": "8cd02f3e2809299c667d067a84e449e7dfff3a143ba9f655a9be81679b3aeb1a"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0426-lineage/attempt-1/application-source-verification-v1.json",
+        "sha256": "b3a12b2db76a2250a6012b03318a42354b87408f258ffad71a806afdd9dff744"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "88af04ae657419adcfa48072e54d7626317bd81e7c4301400588239f066a8b65",
+      "dependencySha256": "4d67b894bc1d05aed04cf869948d1156c86e727c7e13c97ea6fcd9e960f22785",
+      "afterImageSha256": "1ca9b76d096cc45078f1243154023382fd8636a2623212965fe8b53ac247edfe",
+      "targetClaims": [
+        "canonical:lineage|united-states",
+        "company:cmrxpjnki019vivhe5zf3adzb",
+        "relation:cmrxpka5b029iivhe8hnco7se",
+        "relation:cmrxpmpmt057divhefvsb1hqt",
+        "relation:cmrxpmpne057eivheot67pjnm",
+        "relation:cmrxpmpnw057fivheq63z7uk5",
+        "relation:cmrxpmpoe057givheawvjakg5",
+        "relation:cmrxpssqt0d4zivhergs4usls",
+        "relation:cmrxpsss40d51ivhe0xqcfzvo",
+        "relation:cmrxpsst80d53ivheqez4o5i9",
+        "relation:cmrxpssu80d55ivhehlphbudi",
+        "seed:lineage, inc.|united states",
+        "seed:lineage|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://stonepeak.com/portfolio-highlights/lineage-logistics",
+          "label": "Stonepeak — Lineage",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.bay-grove.com/press/2018/7/17/lineage-logistics-receives-700-million-investment-from-stonepeak-infrastructure-partners-d1-capital-partners-and-current-lineage-investors",
+          "label": "Bay Grove — 2018 Lineage investment",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.onelineage.com/",
+          "label": "Onelineage — Lineage",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.onelineage.com/about/our-story",
+          "label": "Onelineage — Lineage",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/lineage-logistics-completes-700-million-strategic-equity-capital-raise-led-by-bay-grove-with-participation-from-exiting-investor-d1-capital-partners-and-support-from-existing-investor-stonepeak-301434620.html",
+          "label": "PR Newswire — Lineage",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1868159/000186815926000021/line-20260422.htm",
+          "label": "Lineage — 2026 definitive proxy statement",
+          "sourceType": "SEC_FILING"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0427:logistec:49cd6941",
+      "taskIndex": 427,
+      "companyName": "LOGISTEC",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0427-logistec/attempt-1/proposal-v1.json",
+        "sha256": "6172c0653e17c0423a1ae17ec025c4324d20b5530241c7b09852cb34600330bf"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0427-logistec-v1.json",
+        "sha256": "95a289698403d0a7319dcba4f6f71ee8271821cbb66cf3252d0bd644c05d619f"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0427-logistec/attempt-1/locked-batch-v1-production-snapshot.json",
+        "sha256": "a70b3758588610f125d2f0372ad60866cb785da5592a890271aaf3a0622dd886"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0427-logistec/attempt-1/locked-batch-v1-task-snapshot.json",
+        "sha256": "ebdae84ff6fefcb3c4d14c4c7e5e4e1acd3cfcdab909e74b780d0a861dcbafd5"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0427-logistec/attempt-1/observed-batch-v1-task-snapshot.json",
+        "sha256": "47e6dba1f071d300ce0858cb28abb78917bea4ec8efcc8cf33b50b9971126034"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0427-logistec/attempt-1/application-research-decision-v1.json",
+        "sha256": "3e6b28c85875e94fc360d2cbb64219578d3ad9adf42f5095446a70aea55ade68"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0427-logistec/attempt-1/application-source-verification-v1.json",
+        "sha256": "3753bd27273ff729d4a8a51abd2707603fe7e002acc49d5417b9ad6c4c2390eb"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "ba186f1908285398249c61b7c8ebab97aa39a5fa2aee6c67836dae97f6797461",
+      "dependencySha256": "f5c81c8a1e6c75d4cf17e231b31830156339af60d131e192cd3c77d697d19442",
+      "afterImageSha256": "029a66f78efdc58e6105c5f5d860aeec33099259dee4813f97bea01f4c8470ba",
+      "targetClaims": [
+        "canonical:logistec|united-states-canada",
+        "company:cmrxpjnl3019wivhecldk4kq7",
+        "relation:cmrxpka5p029jivhe7n54kdzp",
+        "relation:cmrxpmprp057hivhe19sf6y2a",
+        "relation:cmrxpmpsb057iivheceyhmyia",
+        "relation:cmrxpmpst057jivhehszy5bz7",
+        "relation:cmrxpmptd057kivhebmfttxpo",
+        "relation:cmrxpssve0d57ivhe8mb51bw7",
+        "relation:cmrxpsswu0d59ivhexvq9fvhd",
+        "relation:cmrxpssxy0d5bivhetdney77x",
+        "relation:cmrxpst1i0d5divhez2t6w87n",
+        "seed:logistec|united states / canada"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://enstructure.com/enstructure-to-acquire-logistec-marine-terminal-division-creating-a-leading-network-of-marine-terminals-across-north-america/",
+          "label": "Enstructure",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://stonepeak.com/news/blue-wolf-capital-finalizes-acquisition-of-logistec-corporation-in-partnership-with-stonepeak",
+          "label": "Close date source — Stonepeak — LOGISTEC",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.fasken.com/en/knowledge/2024/01/logistec-corporation-completes-acquisition-by-blue-wolf-capital-partners",
+          "label": "Fasken — LOGISTEC",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.ftc.gov/legal-library/browse/early-termination-notices/20261756",
+          "label": "FTC — LOGISTEC / Enstructure early termination notice",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.logistec.com/",
+          "label": "Logistec — LOGISTEC",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.logistec.com/en_ca/news/blue-wolf-capital-partners-finalizes-acquisition-of-logistec-corporation-in-partnership-with-stonepeak/",
+          "label": "Close date source — Stonepeak — LOGISTEC",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.newswire.ca/news-releases/blue-wolf-capital-partners-completes-acquisition-of-logistec-corporation-814993814.html",
+          "label": "LOGISTEC — January 2024 take-private closing",
+          "sourceType": "PRESS_RELEASE"
+        }
+      ]
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0428:new-england-power-transmission-assets:2b091d76",
+      "taskIndex": 428,
+      "companyName": "New England Power transmission assets",
+      "outcome": "EXCLUDED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0428-new-england-power-transmission-assets/attempt-1/terminal-decision-v1.json",
+        "sha256": "3b7a115dc3baf7437902bb4c7d480ee2f2a8a755a3a2f002ddca3eb584d3b748"
+      }
+    }
+  ],
+  "collisionAnalysis": {
+    "independent": true,
+    "claimsSha256": "fd50c4c1d36c935e293b8615b7390c76a4736cead59ee346d7bbe32609279e36",
+    "sharedSourceUrls": [],
+    "conflicts": []
+  },
+  "batchSha256": "fbfa50f4ff203293dd5a8ac7ea1fe5e3f0d17f50b0db69f64e461307f67a4b6e"
+}

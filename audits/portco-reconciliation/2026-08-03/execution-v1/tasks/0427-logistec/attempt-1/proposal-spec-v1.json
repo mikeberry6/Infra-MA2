@@ -1,0 +1,135 @@
+{
+  "generatedAt": "2026-09-02T03:58:15.000Z",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER",
+    "ADD_PENDING_TRANSACTION"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "reviewedSeedRetirementTaskIds": [],
+  "rationale": "The January 2024 take-private closed through a Blue Wolf-controlled purchaser with Stonepeak providing preferred equity. The June 2026 sale of LOGISTEC's Marine Terminal Division to Enstructure remains signed but unclosed, so both current owners remain active and the exit stays visibly pending.",
+  "evidence": [
+    {
+      "url": "https://www.newswire.ca/news-releases/blue-wolf-capital-partners-completes-acquisition-of-logistec-corporation-814993814.html",
+      "purpose": "Direct closing evidence for Blue Wolf control and Stonepeak participation",
+      "supports": [
+        "The take-private closed on January 8, 2024",
+        "Blue Wolf controls the purchaser and Stonepeak invested through preferred equity"
+      ]
+    },
+    {
+      "url": "https://enstructure.com/enstructure-to-acquire-logistec-marine-terminal-division-creating-a-leading-network-of-marine-terminals-across-north-america/",
+      "purpose": "Direct buyer evidence for the signed Marine Terminal Division acquisition",
+      "supports": [
+        "The agreement covers LOGISTEC's marine terminal operations",
+        "The transaction was announced but not shown as legally closed by the cutoff"
+      ]
+    },
+    {
+      "url": "https://www.ftc.gov/legal-library/browse/early-termination-notices/20261756",
+      "purpose": "Regulatory evidence identifying the pending transaction parties",
+      "supports": [
+        "Regulatory clearance does not by itself establish legal closing"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "companyFieldUpdates": {
+    "aliases": [
+      "LOGISTEC Marine",
+      "LOGISTEC Marine Services ULC",
+      "LOGISTEC Marine TopCo ULC"
+    ],
+    "subsector": "Marine cargo handling, terminal operations and port services",
+    "description": "LOGISTEC operates marine cargo-handling terminals and port-services infrastructure across Canada and the United States. The Marine Terminal Division serves industrial shippers, port users and public-sector counterparties through a network of North American facilities. Blue Wolf Capital Partners has controlled the platform since the January 8, 2024 take-private, with Stonepeak participating as a preferred-equity investor. Enstructure's acquisition of the Marine Terminal Division was announced on June 15, 2026 but had not legally closed by the verification cutoff; CoreAqua and SANEXEN are outside this PortCo perimeter.",
+    "lastVerifiedAt": "2026-09-01T00:00:00.000Z"
+  },
+  "ownershipPeriodUpdates": [
+    {
+      "id": "cmrxpka5p029jivhe7n54kdzp",
+      "set": {
+        "fundName": null,
+        "vehicleName": "Preferred equity in the Blue Wolf-controlled purchaser",
+        "stake": "Preferred equity; exact amount and percentage not publicly disclosed",
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "SIGNED_PENDING_EXIT"
+      }
+    }
+  ],
+  "ownershipPeriodRemovals": [],
+  "ownershipPeriodAdditions": [
+    {
+      "id": null,
+      "managerName": "Blue Wolf Capital Partners",
+      "organizationName": null,
+      "fundName": null,
+      "vehicleName": "Blue Wolf-controlled purchaser",
+      "stake": "Majority/common control; exact percentage not publicly disclosed",
+      "investmentYear": 2024,
+      "exitYear": null,
+      "isActive": true,
+      "transactionState": "SIGNED_PENDING_EXIT"
+    }
+  ],
+  "pendingOwnershipTransactionUpdates": [],
+  "pendingOwnershipTransactionAdditions": [
+    {
+      "id": null,
+      "direction": "EXIT",
+      "transactionState": "SIGNED_PENDING_EXIT",
+      "counterpartyName": "Enstructure",
+      "transactionDescription": "Signed acquisition of LOGISTEC's Marine Terminal Division; legal closing not established as of September 1, 2026",
+      "announcedAt": "2026-06-15",
+      "expectedClosing": null,
+      "relatedOwnershipPeriodIds": [
+        "cmrxpka5p029jivhe7n54kdzp"
+      ],
+      "evidenceUrls": [
+        "https://enstructure.com/enstructure-to-acquire-logistec-marine-terminal-division-creating-a-leading-network-of-marine-terminals-across-north-america/",
+        "https://www.ftc.gov/legal-library/browse/early-termination-notices/20261756"
+      ]
+    }
+  ],
+  "milestoneUpdates": [],
+  "milestoneTransfers": [],
+  "citationUpdates": [
+    {
+      "id": "cmrxpssve0d57ivhe8mb51bw7",
+      "set": {
+        "isPrimary": false
+      }
+    }
+  ],
+  "citationAdditions": [
+    {
+      "id": null,
+      "label": "Enstructure",
+      "url": "https://enstructure.com/enstructure-to-acquire-logistec-marine-terminal-division-creating-a-leading-network-of-marine-terminals-across-north-america/",
+      "sourceType": "ARTICLE",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "June 15, 2026 signed pending exit and transaction perimeter",
+      "isPrimary": true
+    },
+    {
+      "id": null,
+      "label": "LOGISTEC — January 2024 take-private closing",
+      "url": "https://www.newswire.ca/news-releases/blue-wolf-capital-partners-completes-acquisition-of-logistec-corporation-814993814.html",
+      "sourceType": "PRESS_RELEASE",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Blue Wolf control and Stonepeak preferred-equity participation",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "FTC — LOGISTEC / Enstructure early termination notice",
+      "url": "https://www.ftc.gov/legal-library/browse/early-termination-notices/20261756",
+      "sourceType": "WEBSITE",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Regulatory parties and review status for the pending exit",
+      "isPrimary": false
+    }
+  ]
+}

@@ -1,0 +1,176 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0427:logistec:49cd6941",
+  "taskIndex": 427,
+  "companyName": "LOGISTEC",
+  "asOfDate": "2026-08-19",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-02T03:58:15.000Z",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "LOGISTEC",
+    "requestedManagers": [
+      "Stonepeak",
+      "Blue Wolf Capital Partners"
+    ],
+    "decision": "PROPOSED_CORRECTION",
+    "confidence": "HIGH",
+    "rationale": "Blue Wolf's purchaser closed the take-private on 2024-01-08; Stonepeak supplied preferred equity, not controlling common equity. LOGISTEC later separated Marine, CoreAqua and SANEXEN. Enstructure signed to buy the Marine Terminal Division on 2026-06-15, but no direct close or termination evidence existed by the cutoff despite regulatory clearances.",
+    "identityResolution": {
+      "canonicalKey": "logistec|united-states-canada",
+      "boundary": "LOGISTEC is Marine; CoreAqua and SANEXEN are separate retained platforms.",
+      "entities": "1443373 B.C. ULC, now LOGISTEC Marine Services ULC; LOGISTEC Marine TopCo ULC; separate Environmental TopCo/Intermediate ULCs; parent BW Phoenix Aggregator II, L.P.",
+      "headquarters": "Montréal, Québec, Canada",
+      "foundingYear": 1952
+    },
+    "ownershipResolution": {
+      "owners": [
+        {
+          "manager": "Blue Wolf Capital Partners",
+          "organization": "Blue Wolf-controlled BW Phoenix group",
+          "fund": "Blue Wolf-managed private-equity capital/select co-investors; exact fund allocation NOT_PUBLICLY_DISCLOSED",
+          "vehicle": "1443373 B.C. ULC/LOGISTEC Marine Services ULC; Marine TopCo/BW Phoenix vehicles",
+          "stake": "Majority/common control; percentage NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2023-10-16",
+          "entryDate": "2024-01-08",
+          "entryYear": 2024,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "ACTIVE; MARINE SALE PENDING; ROLLOVER ANNOUNCED"
+        },
+        {
+          "manager": "Stonepeak",
+          "organization": "Stonepeak Partners LP",
+          "fund": "NOT_PUBLICLY_DISCLOSED",
+          "vehicle": "Preferred equity in 1443373 B.C. ULC; later obligor NOT_PUBLICLY_DISCLOSED",
+          "stake": "Preferred equity; amount/percentage NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2023-10-16",
+          "entryDate": "2024-01-08",
+          "entryYear": 2024,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "ACTIVE; EXIT/ROLLOVER UNRESOLVED"
+        }
+      ],
+      "otherOwners": "Yellow Point Fund V (2024), MontClerc (2025) and management/select co-investors; stakes/treatment NOT_PUBLICLY_DISCLOSED.",
+      "formerOwners": "Sumanic and other public holders exited 2024-01-08 when purchaser acquired 100%; Sumanic had about 77% voting rights at signing.",
+      "governance": "Blue Wolf majority/chair; both managers had board representatives.",
+      "finding": "Stonepeak is not the sole owner; its disclosed security is preferred equity."
+    },
+    "operatingResolution": {
+      "marine": "Cargo handling, trucking, warehousing, Arctic transport and marine agency; 62 ports/84 terminals in Canada and the U.S.",
+      "retained": "CoreAqua: water-main rehabilitation/products. SANEXEN: remediation, dredging/dewatering, residuals, PFAS and APG.",
+      "qualification": "Marine qualifies. Infrastructure ownership is unproven for CoreAqua/SANEXEN; assess separately as service platforms."
+    },
+    "acquisitionExitCheck": {
+      "takePrivate": "Signed 2023-10-16; closed 2024-01-08; C$67/share, about C$1.2bn EV; purchaser acquired 100%.",
+      "pendingTransaction": {
+        "direction": "OUTBOUND_SALE",
+        "buyer": "Enstructure Holdco LLC / Enstructure Tidal Holdings",
+        "seller": "Blue Wolf-controlled LOGISTEC Marine TopCo ULC; FTC acquired party BW Phoenix Co-Invest, L.P.",
+        "stake": "All marine terminal operations, including Gulf Stream Marine and LOGISTEC Direct; Blue Wolf rollover percentage NOT_PUBLICLY_DISCLOSED",
+        "announcementDate": "2026-06-15",
+        "closingDate": null,
+        "state": "SIGNED_PENDING_EXIT; HSR early termination granted 2026-07-28 and Canadian LNI issued 2026-08-03; no direct close/termination evidence",
+        "evidenceUrls": [
+          "https://enstructure.com/enstructure-to-acquire-logistec-marine-terminal-division-creating-a-leading-network-of-marine-terminals-across-north-america/"
+        ]
+      },
+      "finding": "Clearance is not closing; pre-sale owners remain active."
+    },
+    "milestones": [
+      "2023-10-16: take-private signed; Blue Wolf purchaser/Stonepeak preferred equity.",
+      "2024-01-08: purchaser acquired 100%; public holders exited.",
+      "2024-06-11/2025: Marine, CoreAqua and SANEXEN separated.",
+      "2026-06-15 to 2026-08-03: Marine sale signed/cleared; no closing proof."
+    ],
+    "evidence": [
+      {
+        "label": "Take-private",
+        "url": "https://www.bluewolfcapital.com/news/logistec-corporation-enters-into-definitive-agreement-to-be-acquired-by-blue-wolf-capital-partners/",
+        "purpose": "Purchaser/security.",
+        "sourceTier": "PARTY",
+        "workingStatus": "OK",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Closing",
+        "url": "https://www.newswire.ca/news-releases/blue-wolf-capital-partners-completes-acquisition-of-logistec-corporation-814993814.html",
+        "purpose": "2024 close/100%.",
+        "sourceTier": "ISSUER",
+        "workingStatus": "OK",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Entity split",
+        "url": "https://free.bcpublications.ca/civix/document/id/corpreg/corpreg/crpn0620fin0524",
+        "purpose": "Entity renames.",
+        "sourceTier": "REGISTRY",
+        "workingStatus": "OK",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Marine sale",
+        "url": "https://enstructure.com/enstructure-to-acquire-logistec-marine-terminal-division-creating-a-leading-network-of-marine-terminals-across-north-america/",
+        "purpose": "Perimeter/retained units.",
+        "sourceTier": "PARTIES",
+        "workingStatus": "OK",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "U.S. review",
+        "url": "https://www.ftc.gov/legal-library/browse/early-termination-notices/20261756",
+        "purpose": "HSR parties/status.",
+        "sourceTier": "REGULATOR",
+        "workingStatus": "OK",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Canada review",
+        "url": "https://bureau-concurrence.canada.ca/fusions-acquisitions/rapport-examens-fusions-termines?Open=1&wbdisable=true",
+        "purpose": "Review/LNI.",
+        "sourceTier": "REGULATOR",
+        "workingStatus": "OK",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": [
+      "Stonepeak sole owner -> Blue Wolf majority plus Stonepeak preferred equity.",
+      "Combined LOGISTEC -> Marine plus separate CoreAqua/SANEXEN.",
+      "No disposition -> Marine sale SIGNED_PENDING_EXIT; owners unchanged pre-close."
+    ],
+    "excludedOrDuplicateCandidates": [
+      "Exclude Enstructure's legacy assets.",
+      "Keep CoreAqua/SANEXEN separate and test qualification.",
+      "Do not add Investissement Québec; no investment close found."
+    ],
+    "unresolvedQuestions": [
+      "Stonepeak fund, preferred amount, later obligor and sale treatment.",
+      "Minority/management stakes and sale treatment.",
+      "Any closing after cutoff.",
+      "CoreAqua/SANEXEN asset ownership."
+    ],
+    "recommendedListAction": "Keep/correct LOGISTEC as active Marine through 2026-08-19; add Blue Wolf majority, classify Stonepeak as preferred equity, remove retained environmental operations, and mark the Enstructure sale signed pending. Treat CoreAqua/SANEXEN separately; change owners only on documented close."
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0427-logistec/attempt-1/research-decision.json",
+      "sha256": "14b80452a5974e67fef07bd09ab7931fb640051b50e314b4d2b088df46c32bca"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0427-logistec/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "b43f71a49570b723bddf1c734bc26a7b112b780ad029ff14b28925034abf4086"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0427-logistec/attempt-1/source-verification.json",
+      "sha256": "3753bd27273ff729d4a8a51abd2707603fe7e002acc49d5417b9ad6c4c2390eb"
+    },
+    "acceptedResponseSha256": "7a7692c9476cf0c526afe9dc3b6f5ee0154570c11a06334b2f08730b4f9a80e2",
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION"
+  }
+}

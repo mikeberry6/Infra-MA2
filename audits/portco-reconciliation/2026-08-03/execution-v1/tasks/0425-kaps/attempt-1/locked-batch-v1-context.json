@@ -1,0 +1,280 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0425:kaps:e97e627d",
+  "taskIndex": 425,
+  "companyName": "KAPS",
+  "generatedAt": "2026-09-02T03:58:37.395Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0425-kaps/attempt-1/locked-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 425,
+    "taskId": "ledger:0425:kaps:e97e627d",
+    "canonicalKey": "kaps|canada",
+    "companyName": "KAPS",
+    "country": "Canada",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 90,
+    "managers": [
+      "Stonepeak"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "RETIRE_OWNERSHIP"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "090-stonepeak:repo-only:003:kaps"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjnk0019uivhefy3ycv3y"
+    ],
+    "seedKeys": [
+      "kaps|Canada"
+    ],
+    "evidenceUrls": [
+      "https://www.keyera.com/news-and-stories/news-releases/keyera-announces-acquisition-of-remaining-50-interest-in-kaps/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Stonepeak PROPOSED_RETIRE: Fully exited in 2026 following sale to Keyera.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjnk0019uivhefy3ycv3y",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "kaps|canada",
+  "targetCompanyImage": {
+    "id": "cmrxpjnk0019uivhefy3ycv3y",
+    "name": "KAPS",
+    "aliases": [],
+    "sector": "MIDSTREAM",
+    "subsector": "NGL and condensate pipeline system",
+    "region": "NORTH_AMERICA",
+    "country": "Canada",
+    "countryTags": [
+      "Canada"
+    ],
+    "description": "KAPS is a dual-pipeline system in Alberta designed to transport natural gas liquids and condensate from the Karr area to Keyera's processing and fractionation network. Its customers are upstream producers and downstream infrastructure users that require contracted liquids takeaway and connectivity into the basin's gathering and processing system. The project is an asset-heavy midstream business with revenue tied to pipeline transportation rather than commodity merchandising. Public sources describe roughly 560 kilometres of pipeline and planned throughput capacity of up to 350,000 barrels per day on the NGL line. Stonepeak agreed to acquire a 50% interest in the project in December 2022, the transaction closed in April 2023, and Keyera continues to operate the system.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Alberta",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpka4r029hivhet9r7jm95",
+        "managerName": "Stonepeak",
+        "organizationName": "Stonepeak",
+        "fundName": "Stonepeak Infrastructure Fund IV",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmpka0579ivhe9f0st431",
+        "date": "Dec 2022",
+        "event": "Stonepeak announced an agreement to acquire a 50% interest in KAPS.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmpkw057aivherqff4qss",
+        "date": "2023",
+        "event": "Keyera retained operatorship of the asset after the sale.",
+        "category": "DIVESTITURE",
+        "sortDate": "2023-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmplf057bivhe5m6bg5rx",
+        "date": "Apr 2023",
+        "event": "Stonepeak completed the acquisition.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-04-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmplv057civheviv9e4p3",
+        "date": "Oct 2023",
+        "event": "Keyera announced completion of the KAPS pipeline system.",
+        "category": "OTHER",
+        "sortDate": "2023-10-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpssm30d4rivhemaupq6b4",
+        "label": "Announcement date source — Stonepeak — KAPS",
+        "url": "https://stonepeak.com/news/stonepeak-to-acquire-interest-in-kaps",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Stonepeak transaction announcement",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpssnl0d4tivheda3j8bts",
+        "label": "Close date source — Stonepeak — KAPS",
+        "url": "https://stonepeak.com/press-releases/stonepeak-completes-acquisition-of-interest-in-kaps",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Stonepeak closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpssor0d4vivhe4bim9tbk",
+        "label": "Keyera — KAPS",
+        "url": "https://www.keyera.com/news-and-stories/news-releases/keyera-celebrates-the-completion-of-the-kaps-pipeline/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Keyera — KAPS",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpssps0d4xivhertmf2mso",
+        "label": "Keyera — KAPS",
+        "url": "https://www.keyera.com/operations/pipelines-and-processing/kaps-pipeline-system",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Keyera operations / asset details",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "KAPS",
+    "investmentFirm": "Stonepeak",
+    "sector": "Midstream",
+    "subsector": "NGL and condensate pipeline system",
+    "region": "North America",
+    "country": "Canada",
+    "ownershipVehicle": "n.a.",
+    "description": "KAPS is a dual-pipeline system in Alberta designed to transport natural gas liquids and condensate from the Karr area to Keyera's processing and fractionation network. Its customers are upstream producers and downstream infrastructure users that require contracted liquids takeaway and connectivity into the basin's gathering and processing system. The project is an asset-heavy midstream business with revenue tied to pipeline transportation rather than commodity merchandising. Public sources describe roughly 560 kilometres of pipeline and planned throughput capacity of up to 350,000 barrels per day on the NGL line. Stonepeak agreed to acquire a 50% interest in the project in December 2022, the transaction closed in April 2023, and Keyera continues to operate the system.",
+    "status": "Active",
+    "countryTags": [
+      "Canada"
+    ],
+    "investmentYear": 2023,
+    "headquarters": "Alberta",
+    "milestones": [
+      {
+        "date": "Dec 2022",
+        "event": "Stonepeak announced an agreement to acquire a 50% interest in KAPS.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "2023",
+        "event": "Keyera retained operatorship of the asset after the sale.",
+        "category": "Divestiture"
+      },
+      {
+        "date": "Apr 2023",
+        "event": "Stonepeak completed the acquisition.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Oct 2023",
+        "event": "Keyera announced completion of the KAPS pipeline system.",
+        "category": "Other"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Announcement date source — Stonepeak — KAPS",
+        "url": "https://stonepeak.com/news/stonepeak-to-acquire-interest-in-kaps",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Close date source — Stonepeak — KAPS",
+        "url": "https://stonepeak.com/press-releases/stonepeak-completes-acquisition-of-interest-in-kaps",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Keyera — KAPS",
+        "url": "https://www.keyera.com/news-and-stories/news-releases/keyera-celebrates-the-completion-of-the-kaps-pipeline/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Keyera — KAPS",
+        "url": "https://www.keyera.com/operations/pipelines-and-processing/kaps-pipeline-system",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Stonepeak",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2023,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmsdi42he00547h4sv1rpo4jg",
+        "fundName": "Stonepeak Infrastructure Fund IV",
+        "managerId": "cmrxpide6003hivhe1g17rhjr",
+        "updatedAt": "2026-08-03T17:26:38.738Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpide6003hivhe1g17rhjr",
+        "name": "Stonepeak",
+        "updatedAt": "2026-07-23T16:09:24.559Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0425:kaps:e97e627d",
+    "taskIndex": 425,
+    "canonicalKey": "kaps|canada",
+    "capturedAt": "2026-09-02T03:58:37.395Z",
+    "databaseRevision": "revision:fbdca78456b7fa12edf595f4570f3ee64e4f09b69b39726a32b4b1a5d4634ca7",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "653465277dc7503d44698972ef174fb1f2bb40d2ea37cfde9d7b33243180423a",
+    "productionSnapshotSha256": "8bed25f151439a255851eedd4c85a6552012c450206e7885e3272b8f095c7373",
+    "targetCompanySnapshotSha256": "522614ffb038901413edc16386175922a76c70dce96c5e9dd2a5878878b8314b",
+    "seedEntrySha256": "96b4ca155783a7c0dd905b8721cbda6cd00c7a64912b909364426da1bd4c68b2",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4363080e16d289d801b3322ad3eaf8599ed541a3c92c29f62089a0ee4c5af1b3",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "f96ba818a661cf5681709f2a54e67814318f23c6db6f64998db0bfb58ebd5f36",
+      "organizationsSha256": "e8297eb9e5894678d9f04b1a861726fe3c63b2433e6430ea5f214025943bcba5",
+      "citationsSha256": "64de64cc7b0e99d74c317fdba672330c69e4ad57b5d30230537d55c0f754c2c5",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "4bced12073ab039a51b2e60bfd060f375e012f27a0e2094eb85c8c15a3df25da",
+    "stateSha256": "25bc4858714431b4913972e6970703a418a692baa63f8571aa5d1870e1e02d04",
+    "taskSnapshotSha256": "2681ac50c9e687501c644d9f6c2a5f181273c067b2ab8865d56a00a23f8c52f3"
+  },
+  "contextSha256": "bf79d77b073b224c5ceddb8787ab7571726bcb577bd60e3462d5abe368860a94"
+}

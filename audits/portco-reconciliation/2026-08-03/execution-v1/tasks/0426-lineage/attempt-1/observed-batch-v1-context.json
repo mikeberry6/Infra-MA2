@@ -1,0 +1,281 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0426:lineage:fade3de0",
+  "taskIndex": 426,
+  "companyName": "Lineage",
+  "generatedAt": "2026-09-02T04:03:39.102Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0426-lineage/attempt-1/observed-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 426,
+    "taskId": "ledger:0426:lineage:fade3de0",
+    "canonicalKey": "lineage|united-states",
+    "companyName": "Lineage",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 90,
+    "managers": [
+      "Stonepeak"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "090-stonepeak:repo-only:004:lineage"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjnki019vivhe5zf3adzb"
+    ],
+    "seedKeys": [
+      "lineage|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.onelineage.com/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Stonepeak OUT_OF_SCOPE: Public-market exposure post-IPO not counted as direct infrastructure holding.",
+    "unresolvedQuestions": [
+      "Confirm whether the manager ownership, the company itself, or only this census scope is out of scope before proposing any change."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjnki019vivhe5zf3adzb",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "lineage|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjnki019vivhe5zf3adzb",
+    "name": "Lineage",
+    "aliases": [],
+    "sector": "TRANSPORTATION",
+    "subsector": "Temperature-controlled warehousing and cold-chain logistics",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Lineage operates temperature-controlled warehouses and cold-chain logistics infrastructure for food and consumer supply chains. Its customers include food producers, processors, retailers, and distributors that outsource storage, handling, and logistics for frozen and refrigerated products. The business follows an asset-heavy model built around owned and leased cold-storage facilities, transportation coordination, and value-added services. Public materials describe a global footprint of more than 485 warehouses in about 20 countries with over 3 billion cubic feet of capacity. Stonepeak first invested in the company in 2018 and remained an investor through the company's later expansion and public listing.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2008,
+    "headquarters": "United States and international",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpka5b029iivhe8hnco7se",
+        "managerName": "Stonepeak",
+        "organizationName": "Stonepeak",
+        "fundName": "Stonepeak Core Fund",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2018,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmpmt057divhefvsb1hqt",
+        "date": "2008",
+        "event": "Lineage was founded with a single warehouse.",
+        "category": "FOUNDING",
+        "sortDate": "2008-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmpne057eivheot67pjnm",
+        "date": "May 2018",
+        "event": "Stonepeak made its initial investment in Lineage.",
+        "category": "FINANCING",
+        "sortDate": "2018-05-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmpnw057fivheq63z7uk5",
+        "date": "Feb 2019",
+        "event": "Lineage completed its acquisition of Preferred Freezer Services.",
+        "category": "ACQUISITION",
+        "sortDate": "2019-02-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmpoe057givheawvjakg5",
+        "date": "2020",
+        "event": "The company completed a major equity raise supported by existing investors including Stonepeak.",
+        "category": "FINANCING",
+        "sortDate": "2020-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpssqt0d4zivhergs4usls",
+        "label": "Stonepeak — Lineage",
+        "url": "https://stonepeak.com/portfolio-highlights/lineage-logistics",
+        "sourceType": "WEBSITE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Stonepeak transaction or milestone detail",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpsss40d51ivhe0xqcfzvo",
+        "label": "Onelineage — Lineage",
+        "url": "https://www.onelineage.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Onelineage company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsst80d53ivheqez4o5i9",
+        "label": "Onelineage — Lineage",
+        "url": "https://www.onelineage.com/about/our-story",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Onelineage company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpssu80d55ivhehlphbudi",
+        "label": "PR Newswire — Lineage",
+        "url": "https://www.prnewswire.com/news-releases/lineage-logistics-completes-700-million-strategic-equity-capital-raise-led-by-bay-grove-with-participation-from-exiting-investor-d1-capital-partners-and-support-from-existing-investor-stonepeak-301434620.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "PR Newswire — Lineage",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Lineage",
+    "investmentFirm": "Stonepeak",
+    "sector": "Transportation",
+    "subsector": "Temperature-controlled warehousing and cold-chain logistics",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "Lineage operates temperature-controlled warehouses and cold-chain logistics infrastructure for food and consumer supply chains. Its customers include food producers, processors, retailers, and distributors that outsource storage, handling, and logistics for frozen and refrigerated products. The business follows an asset-heavy model built around owned and leased cold-storage facilities, transportation coordination, and value-added services. Public materials describe a global footprint of more than 485 warehouses in about 20 countries with over 3 billion cubic feet of capacity. Stonepeak first invested in the company in 2018 and remained an investor through the company's later expansion and public listing.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2008,
+    "investmentYear": 2018,
+    "headquarters": "United States and international",
+    "milestones": [
+      {
+        "date": "2008",
+        "event": "Lineage was founded with a single warehouse.",
+        "category": "Founding"
+      },
+      {
+        "date": "May 2018",
+        "event": "Stonepeak made its initial investment in Lineage.",
+        "category": "Financing"
+      },
+      {
+        "date": "Feb 2019",
+        "event": "Lineage completed its acquisition of Preferred Freezer Services.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "2020",
+        "event": "The company completed a major equity raise supported by existing investors including Stonepeak.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Stonepeak — Lineage",
+        "url": "https://stonepeak.com/portfolio-highlights/lineage-logistics",
+        "type": "WEBSITE",
+        "purpose": "MILESTONE_EVENT"
+      },
+      {
+        "label": "Onelineage — Lineage",
+        "url": "https://www.onelineage.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Onelineage — Lineage",
+        "url": "https://www.onelineage.com/about/our-story",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "PR Newswire — Lineage",
+        "url": "https://www.prnewswire.com/news-releases/lineage-logistics-completes-700-million-strategic-equity-capital-raise-led-by-bay-grove-with-participation-from-exiting-investor-d1-capital-partners-and-support-from-existing-investor-stonepeak-301434620.html",
+        "type": "PRESS_RELEASE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Stonepeak",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2018,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj3nu00fbivhebtp8thxg",
+        "fundName": "Stonepeak Core Fund",
+        "managerId": "cmrxpide6003hivhe1g17rhjr",
+        "updatedAt": "2026-07-23T16:09:58.602Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpide6003hivhe1g17rhjr",
+        "name": "Stonepeak",
+        "updatedAt": "2026-07-23T16:09:24.559Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0426:lineage:fade3de0",
+    "taskIndex": 426,
+    "canonicalKey": "lineage|united-states",
+    "capturedAt": "2026-09-02T04:03:39.102Z",
+    "databaseRevision": "revision:ed78a350f990d1da1ee59e808b6f99258ae6ca74c0b8696dcf0429386531bd64",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "e3474f389dfcb981cf8adff3076c65ddef8957eaa3926f93edd8a43635829f0e",
+    "productionSnapshotSha256": "f88abc035460f272b59140288781bea0a2b7babb16f4f90f3b7c05a9623aea1b",
+    "targetCompanySnapshotSha256": "13e4bbbb6f3e387c899a6fe7a77c375aa043d690835fed934b3081e1568a515a",
+    "seedEntrySha256": "1bdd46a9722ceffb5fdd034d3623b605c9fa020d934d0f45b18e1d4aee4f4577",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "cdbb521ab01037ccb98882eb9fdcb22ae78902d489d8f8e24ff5a8b61c660f12",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "2d210a6d2e804e470241d60da76a7c908003fe5cb1a16d50287bd5e3ed572180",
+      "organizationsSha256": "e8297eb9e5894678d9f04b1a861726fe3c63b2433e6430ea5f214025943bcba5",
+      "citationsSha256": "c42e1daa9075bfaa88c8d3cc5af02a37c702e5d966de8f7e152db6229f02d0e7",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "4d67b894bc1d05aed04cf869948d1156c86e727c7e13c97ea6fcd9e960f22785",
+    "stateSha256": "88af04ae657419adcfa48072e54d7626317bd81e7c4301400588239f066a8b65",
+    "taskSnapshotSha256": "c692f45f72cfd2b8f390b52ac28129977588d3d1adc514c7d614132ca7943ec4"
+  },
+  "contextSha256": "5a84a510b784f3a0f26b407d27faa04bb870f22bc83d25706c18920f61699634"
+}

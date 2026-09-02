@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-02T03:48:36.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-09-02T04:12:00.000Z",
+  "activeBatchId": "batch-0424-0428-v1",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -7650,7 +7650,55 @@
           "reason": "Atomic PortCo receipt, scoped attribution repair, detail APIs, seed parity, and rendered production cards verified."
         }
       ]
+    },
+    {
+      "batchId": "batch-0424-0428-v1",
+      "state": "READY",
+      "taskIds": [
+        "ledger:0424:extenet-formerly-extenet-systems:deec194f",
+        "ledger:0425:kaps:e97e627d",
+        "ledger:0426:lineage:fade3de0",
+        "ledger:0427:logistec:49cd6941",
+        "ledger:0428:new-england-power-transmission-assets:2b091d76"
+      ],
+      "taskIndexes": [
+        424,
+        425,
+        426,
+        427,
+        428
+      ],
+      "createdAt": "2026-09-02T03:55:31.000Z",
+      "updatedAt": "2026-09-02T04:12:00.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0424-0428-v1/batch-manifest.json",
+        "sha256": "fbfa50f4ff203293dd5a8ac7ea1fe5e3f0d17f50b0db69f64e461307f67a4b6e"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-09-02T03:55:31.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-09-02T04:12:00.000Z",
+          "evidenceSha256": [
+            "fbfa50f4ff203293dd5a8ac7ea1fe5e3f0d17f50b0db69f64e461307f67a4b6e"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "1c301c14b268e19ca34a3133db449c42d44050a926d24fd05549bc6f9fee481f"
+  "ledgerSha256": "90fdc65e42a9fb7f6c8c463ddd1b2f0808b175c293e76439cc21ca505a87f901"
 }

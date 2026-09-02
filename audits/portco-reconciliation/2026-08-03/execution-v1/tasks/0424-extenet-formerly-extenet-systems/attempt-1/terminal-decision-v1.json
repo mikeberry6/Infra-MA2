@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0424:extenet-formerly-extenet-systems:deec194f",
+  "taskIndex": 424,
+  "companyName": "Extenet (formerly ExteNet Systems)",
+  "outcome": "SUPERSEDED",
+  "decidedAt": "2026-09-02T03:59:00Z",
+  "rationale": "Fresh task resolution proves this is the same canonical Extenet identity already represented by task 213. Task 213 preserves the unresolved Northleaf disposition and JH-to-KH legal bridge for final deferred re-adjudication, so creating a second mutation or deferral would duplicate the same company-level issue.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0424-extenet-formerly-extenet-systems/attempt-1/locked-batch-v2-task-snapshot.json",
+    "sha256": "ccb4d48463ba6a0d484bb9bac04f8628ddd4afa1262d5176317c5e5d21968708"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0424-extenet-formerly-extenet-systems/attempt-1/application-research-decision-v2.json",
+    "sha256": "a45ce339c705b42e73d12ce49f926addefe2c1fc9fd3a2313bddf959e3da668c"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0424-extenet-formerly-extenet-systems/attempt-1/application-source-verification-v1.json",
+    "sha256": "168b98fd383fd5e969dba1f74856b303a85efd6de6d67a45792d600d6246a111"
+  },
+  "evidence": [
+    {
+      "url": "https://psc.ky.gov/telecomm_informational_letters/ExteNet%20LVS%202025-02-13.pdf",
+      "purpose": "Current regulatory cap table for the single Extenet platform"
+    },
+    {
+      "url": "https://www.digitalbridge.com/portfolio/extenet-systems",
+      "purpose": "Manager attribution to the same ExteNet/Extenet platform"
+    },
+    {
+      "url": "https://www.pilotfiber.com/news/extenet-acquisition-complete",
+      "purpose": "Confirms the 2026 transaction was a business-line acquisition rather than a platform transfer"
+    }
+  ],
+  "supersededByTaskId": "ledger:0213:extenet-formerly-extenet-systems:1d3fac1c",
+  "decisionSha256": "3fa7bc24717546d651d903e2da72e1da0152461a9387bb48c2ba603e1bc88bca"
+}
