@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RENDERED_CARD_VERIFICATION_FAILURE",
+  "batchId": "batch-0424-0428-v1",
+  "batchSha256": "fbfa50f4ff203293dd5a8ac7ea1fe5e3f0d17f50b0db69f64e461307f67a4b6e",
+  "batchReceiptSha256": "9344a958ebef0b5c661f192111c9505503b97accfd2b7d7028d515803a5a8cd1",
+  "releaseSha": "198b085fd13c53cc2bab482ef74f936d5ad6c1ee",
+  "transactionId": "502a0e05-5714-4f98-86df-11cf0f898613",
+  "verifiedAt": "2026-09-02T04:32:00.000Z",
+  "canonicalUrl": "https://infra-ma-2.vercel.app/Infra-MA2/portfolio",
+  "method": "Production browser DOM verification after searching the PortCo table, opening each changed drawer, expanding prior owners, and comparing rendered ownership-attribution labels with the approved seed manifest and canonical after-images.",
+  "passed": [
+    "KAPS rendered as an active company with Keyera Corp. at 100% from 2019 and Stonepeak as a 50% former owner ending in 2026.",
+    "Lineage, Inc. rendered with Stonepeak as a minority investor and Bay Grove as controlling sponsor, including the disclosed Fund III AIV and Aspen vehicle text.",
+    "LOGISTEC rendered with Blue Wolf Capital Partners as majority/common controller and Stonepeak as preferred-equity investor, with the signed Enstructure exit remaining pending.",
+    "Extenet (formerly ExteNet Systems) appeared exactly once, and the excluded New England Power transmission-assets identity was absent.",
+    "All three changed companies exposed their approved ownership periods, stakes, business overviews, sources, and story timelines without console errors."
+  ],
+  "failures": [
+    {
+      "companyName": "KAPS",
+      "investmentFirm": "Keyera Corp.",
+      "renderedAttribution": "Fund attribution pending",
+      "approvedAttribution": "DIRECT_PROGRAM",
+      "reason": "Keyera's 100% interest is direct corporate ownership rather than ownership through a managed infrastructure fund."
+    },
+    {
+      "companyName": "KAPS",
+      "investmentFirm": "Stonepeak",
+      "renderedAttribution": "Stonepeak Infrastructure Fund IV — Estimated — Low confidence",
+      "approvedAttribution": "UNRESOLVED",
+      "reason": "The exact Stonepeak fund for the former 50% interest was not publicly disclosed, and the inferred active-owner restoration record was removed."
+    },
+    {
+      "companyName": "Lineage, Inc.",
+      "investmentFirm": "Stonepeak",
+      "renderedAttribution": "Stonepeak Core Fund — Estimated — Low confidence",
+      "approvedAttribution": "Stonepeak Infrastructure Fund III (AIV III) LP and Aspen co-investment vehicles — DISCLOSED",
+      "reason": "Current SEC filings directly identify the Fund III AIV and Aspen investment chain, so the carried-forward Core Fund estimate is incorrect."
+    },
+    {
+      "companyName": "LOGISTEC",
+      "investmentFirm": "Stonepeak",
+      "renderedAttribution": "Stonepeak Fund V — Estimated — Low confidence",
+      "approvedAttribution": "UNRESOLVED",
+      "reason": "Stonepeak's preferred-equity participation is directly evidenced, but the exact fund is not publicly disclosed."
+    }
+  ],
+  "recoveryPackage": "audits/portfolio-fund-attribution/2026-09-02/scoped/portco-batch-0424-0428-attribution-repair/apply-manifest.json",
+  "valid": false
+}

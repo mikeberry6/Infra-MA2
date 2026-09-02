@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-09-02",
+  "ledgerSha256": "5ab00db5a5a9cace4609f2994c935af32d876d5118d7cf0eee37b41f27fbbc54",
+  "sourceSnapshotSha256": "6a0282a096af4b0ef670004d117841f30f743f01b5dc93d81f51f4a15b14b349",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 1,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 1,
+      "UNRESOLVED": 4
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  },
+  "expectedMutationCount": 6,
+  "mutations": [
+    {
+      "recordId": "OFA-BDE00326FBEA",
+      "ownershipPeriodId": "cmtjlfkeg0004zl2b0wsxi9r6",
+      "companyName": "KAPS",
+      "country": "Canada",
+      "investmentFirm": "Keyera Corp.",
+      "currentVehicleName": "Keyera Corp.",
+      "databaseVehicleName": null,
+      "investmentYear": 2019,
+      "stake": "100%",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Keyera's 100% interest is direct corporate ownership rather than ownership through a managed infrastructure fund."
+      },
+      "evidenceUrls": [
+        "https://www.keyera.com/news-and-stories/news-releases/keyera-announces-acquisition-of-remaining-50-interest-in-kaps/"
+      ]
+    },
+    {
+      "recordId": "OFA-FFBFDB6B77BD",
+      "ownershipPeriodId": "cmrxpka5p029jivhe7n54kdzp",
+      "companyName": "LOGISTEC",
+      "country": "United States / Canada",
+      "investmentFirm": "Stonepeak",
+      "currentVehicleName": "Preferred equity in the Blue Wolf-controlled purchaser",
+      "databaseVehicleName": "Preferred equity in the Blue Wolf-controlled purchaser",
+      "investmentYear": 2024,
+      "stake": "Preferred equity; exact amount and percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Stonepeak's preferred-equity participation is directly evidenced, but the exact Stonepeak fund, investment amount and percentage are not publicly disclosed."
+      },
+      "evidenceUrls": [
+        "https://stonepeak.com/news/blue-wolf-capital-finalizes-acquisition-of-logistec-corporation-in-partnership-with-stonepeak",
+        "https://www.newswire.ca/news-releases/blue-wolf-capital-partners-completes-acquisition-of-logistec-corporation-814993814.html"
+      ]
+    },
+    {
+      "recordId": "OFA-197FEDCEEF70",
+      "ownershipPeriodId": "cmtjlftmf000lzl2bzeiolbjt",
+      "companyName": "LOGISTEC",
+      "country": "United States / Canada",
+      "investmentFirm": "Blue Wolf Capital Partners",
+      "currentVehicleName": "Blue Wolf-controlled purchaser",
+      "databaseVehicleName": "Blue Wolf-controlled purchaser",
+      "investmentYear": 2024,
+      "stake": "Majority/common control; exact percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Blue Wolf's controlling common-equity position is directly evidenced, but the exact Blue Wolf fund is not publicly disclosed."
+      },
+      "evidenceUrls": [
+        "https://www.bluewolfcapital.com/news/logistec-corporation-enters-into-definitive-agreement-to-be-acquired-by-blue-wolf-capital-partners/",
+        "https://www.newswire.ca/news-releases/blue-wolf-capital-partners-completes-acquisition-of-logistec-corporation-814993814.html"
+      ]
+    },
+    {
+      "recordId": "OFA-5EC784F26594",
+      "ownershipPeriodId": "cmrxpka5b029iivhe8hnco7se",
+      "companyName": "Lineage, Inc.",
+      "country": "United States",
+      "investmentFirm": "Stonepeak",
+      "currentVehicleName": "Stonepeak Infrastructure Fund III AIV and Aspen co-investment vehicles",
+      "databaseVehicleName": "Stonepeak Infrastructure Fund III AIV and Aspen co-investment vehicles",
+      "investmentYear": 2018,
+      "stake": "Minority; exact percentage not publicly disclosed; continuing private BGLH-linked economics and rights",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Stonepeak Infrastructure Fund III (AIV III) LP and Aspen co-investment vehicles",
+        "attributionConfidence": null,
+        "attributionRationale": "The current SEC filings directly identify the Stonepeak Infrastructure Fund III AIV and Aspen co-investment vehicle chain, although those exact names are not represented in the curated fund database."
+      },
+      "evidenceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/1868159/000186815926000021/line-20260422.htm",
+        "https://www.sec.gov/Archives/edgar/data/1803027/000090514824001999/xslF345X02/form3.xml"
+      ]
+    },
+    {
+      "recordId": "OFA-C6393E5B62DE",
+      "ownershipPeriodId": "cmtjlfoy3000czl2b64v073bo",
+      "companyName": "Lineage, Inc.",
+      "country": "United States",
+      "investmentFirm": "Bay Grove",
+      "currentVehicleName": "BGLH",
+      "databaseVehicleName": "BGLH",
+      "investmentYear": 2008,
+      "stake": "Controlling sponsor; exact percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Bay Grove control and BGLH ownership are directly evidenced, but no exact Bay Grove-managed fund has been publicly identified."
+      },
+      "evidenceUrls": [
+        "https://www.bay-grove.com/press/2018/7/17/lineage-logistics-receives-700-million-investment-from-stonepeak-infrastructure-partners-d1-capital-partners-and-current-lineage-investors",
+        "https://www.sec.gov/Archives/edgar/data/1868159/000186815926000021/line-20260422.htm"
+      ]
+    },
+    {
+      "recordId": "OFA-BCF364EFD0DA",
+      "ownershipPeriodId": "cmrxpka4r029hivhet9r7jm95",
+      "companyName": "KAPS",
+      "country": "Canada",
+      "investmentFirm": "Stonepeak",
+      "currentVehicleName": "Kentucky Middle Holdings, LP / Kentucky MidCo, Ltd.",
+      "databaseVehicleName": "Kentucky Middle Holdings, LP / Kentucky MidCo, Ltd.",
+      "investmentYear": 2023,
+      "stake": "50%",
+      "expectedIsActive": false,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Stonepeak’s former 50% KAPS interest is directly evidenced, but the exact Stonepeak fund was not publicly disclosed."
+      },
+      "evidenceUrls": [
+        "https://stonepeak.com/news/stonepeak-to-acquire-interest-in-kaps",
+        "https://stonepeak.com/press-releases/stonepeak-completes-acquisition-of-interest-in-kaps"
+      ]
+    }
+  ],
+  "manifestSha256": "be8be7de283f8062352c12209a8cfcc5a4b1adad14cba7abea12226a2162d3bd"
+}

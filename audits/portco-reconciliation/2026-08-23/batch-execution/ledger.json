@@ -3,7 +3,7 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-02T04:12:00.000Z",
+  "updatedAt": "2026-09-02T04:32:02Z",
   "activeBatchId": "batch-0424-0428-v1",
   "batches": [
     {
@@ -7653,7 +7653,7 @@
     },
     {
       "batchId": "batch-0424-0428-v1",
-      "state": "READY",
+      "state": "VERIFYING_FAILED",
       "taskIds": [
         "ledger:0424:extenet-formerly-extenet-systems:deec194f",
         "ledger:0425:kaps:e97e627d",
@@ -7669,15 +7669,18 @@
         428
       ],
       "createdAt": "2026-09-02T03:55:31.000Z",
-      "updatedAt": "2026-09-02T04:12:00.000Z",
+      "updatedAt": "2026-09-02T04:32:02Z",
       "completedAt": null,
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0424-0428-v1/batch-manifest.json",
         "sha256": "fbfa50f4ff203293dd5a8ac7ea1fe5e3f0d17f50b0db69f64e461307f67a4b6e"
       },
-      "releaseSha": null,
-      "receipt": null,
-      "reason": null,
+      "releaseSha": "198b085fd13c53cc2bab482ef74f936d5ad6c1ee",
+      "receipt": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0424-0428-v1/production-apply/batch-apply-receipt.json",
+        "sha256": "9344a958ebef0b5c661f192111c9505503b97accfd2b7d7028d515803a5a8cd1"
+      },
+      "reason": "Rendered verification found stale carried-forward fund-attribution metadata for KAPS, Lineage, and LOGISTEC. Company identity, ownership, stakes, seed, API, and atomic receipt checks passed; the bundle is frozen pending a scoped attribution repair.",
       "history": [
         {
           "sequence": 1,
@@ -7696,9 +7699,51 @@
             "fbfa50f4ff203293dd5a8ac7ea1fe5e3f0d17f50b0db69f64e461307f67a4b6e"
           ],
           "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "RELEASING",
+          "at": "2026-09-02T04:19:10.000Z",
+          "evidenceSha256": [
+            "fbfa50f4ff203293dd5a8ac7ea1fe5e3f0d17f50b0db69f64e461307f67a4b6e"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 4,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-09-02T04:23:27Z",
+          "evidenceSha256": [
+            "fbfa50f4ff203293dd5a8ac7ea1fe5e3f0d17f50b0db69f64e461307f67a4b6e"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 5,
+          "from": "APPLYING",
+          "to": "VERIFYING",
+          "at": "2026-09-02T04:27:24Z",
+          "evidenceSha256": [
+            "9344a958ebef0b5c661f192111c9505503b97accfd2b7d7028d515803a5a8cd1",
+            "fbfa50f4ff203293dd5a8ac7ea1fe5e3f0d17f50b0db69f64e461307f67a4b6e"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 6,
+          "from": "VERIFYING",
+          "to": "VERIFYING_FAILED",
+          "at": "2026-09-02T04:32:02Z",
+          "evidenceSha256": [
+            "9344a958ebef0b5c661f192111c9505503b97accfd2b7d7028d515803a5a8cd1",
+            "fbfa50f4ff203293dd5a8ac7ea1fe5e3f0d17f50b0db69f64e461307f67a4b6e"
+          ],
+          "reason": "Rendered verification found stale carried-forward fund-attribution metadata for KAPS, Lineage, and LOGISTEC. Company identity, ownership, stakes, seed, API, and atomic receipt checks passed; the bundle is frozen pending a scoped attribution repair."
         }
       ]
     }
   ],
-  "ledgerSha256": "90fdc65e42a9fb7f6c8c463ddd1b2f0808b175c293e76439cc21ca505a87f901"
+  "ledgerSha256": "30b400a0a432fbbaaada3fecf8ab3ec50d481ac2f24c31d62d6158ec709b3ff4"
 }
