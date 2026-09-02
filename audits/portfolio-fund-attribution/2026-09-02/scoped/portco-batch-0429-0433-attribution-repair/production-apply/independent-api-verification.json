@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_INDEPENDENT_API_VERIFICATION",
+  "verifiedAt": "2026-09-02T06:43:15Z",
+  "releaseSha": "bf57c986e5f5c0c6fbc1d1b9616c4c4dc719f952",
+  "manifestSha256": "fddfddef496217a33fa756b5ab8918c86a7ea3b8ec39393dc878403a07c79d24",
+  "receiptSha256": "29c4eb2ff7a58352c2e0be64aeec2906ba4d70fd9007b325e64410863e92be34",
+  "method": "Independent GET requests to each canonical production detail API using the immutable attribution-manifest hash as the cache-busting verification token.",
+  "companies": [
+    {
+      "companyId": "cmrxpjnnm01a1ivhew2n8o1is",
+      "companyName": "Oryx Midstream",
+      "responseStatus": 200,
+      "owners": [
+        {
+          "ownershipPeriodId": "cmrxpka8b029oivhepz8n1yd2",
+          "investmentFirm": "Stonepeak",
+          "fundAttribution": "UNRESOLVED",
+          "attributedFundName": null
+        },
+        {
+          "ownershipPeriodId": "cmrxpk8ym027oivheaxzneh02",
+          "investmentFirm": "QIA",
+          "fundAttribution": "DIRECT_PROGRAM",
+          "attributedFundName": null
+        }
+      ]
+    },
+    {
+      "companyId": "cmtjpi2pn000dze2bbdbgmq86",
+      "companyName": "Outpost Solar",
+      "responseStatus": 200,
+      "owners": [
+        {
+          "ownershipPeriodId": "cmtjpi30p000oze2bifzs3unu",
+          "investmentFirm": "Stonepeak",
+          "fundAttribution": "UNRESOLVED",
+          "attributedFundName": null
+        },
+        {
+          "ownershipPeriodId": "cmtjpi32k000qze2bnhaiz0lj",
+          "investmentFirm": "Repsol",
+          "fundAttribution": "DIRECT_PROGRAM",
+          "attributedFundName": null
+        }
+      ]
+    },
+    {
+      "companyId": "cmrxpjnv601abivhe2ixd73xz",
+      "companyName": "JFK New Terminal One",
+      "responseStatus": 200,
+      "owners": [
+        {
+          "ownershipPeriodId": "cmtjpi4w90017ze2b6fxl93fg",
+          "investmentFirm": "The Carlyle Group",
+          "fundAttribution": "UNRESOLVED",
+          "attributedFundName": null
+        },
+        {
+          "ownershipPeriodId": "cmtjpi4v70016ze2babml4hld",
+          "investmentFirm": "JLC Infrastructure",
+          "fundAttribution": "DISCLOSED",
+          "attributedFundName": "JLC Infrastructure Fund I, L.P."
+        },
+        {
+          "ownershipPeriodId": "cmtjpi4tm0014ze2bnimst6rc",
+          "investmentFirm": "Ferrovial",
+          "fundAttribution": "DIRECT_PROGRAM",
+          "attributedFundName": null
+        },
+        {
+          "ownershipPeriodId": "cmrxpkafz029zivhe2ryo1tzy",
+          "investmentFirm": "Swiss Life",
+          "fundAttribution": "DISCLOSED",
+          "attributedFundName": "JLC Terminal One Co-Invest L.P."
+        },
+        {
+          "ownershipPeriodId": "cmrxpkafi029yivheau72hzni",
+          "investmentFirm": "Ullico",
+          "fundAttribution": "DISCLOSED",
+          "attributedFundName": "Ullico Infrastructure Fund"
+        }
+      ]
+    }
+  ],
+  "assertions": {
+    "allResponses200": true,
+    "allNineOwnershipPeriodsPresent": true,
+    "allAttributionEnumsMatchManifest": true,
+    "allDisclosedFundNamesMatchManifest": true,
+    "noUnexpectedCuratedFundLinks": true
+  },
+  "valid": true
+}

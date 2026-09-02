@@ -1,0 +1,203 @@
+
+> infra-tracker@1.0.0 portfolio:fund-attribution:apply
+> npx tsx scripts/apply-portfolio-fund-attribution.ts --manifest=audits/portfolio-fund-attribution/2026-09-02/scoped/portco-batch-0429-0433-attribution-repair/apply-manifest.json --manifest-sha256=fddfddef496217a33fa756b5ab8918c86a7ea3b8ec39393dc878403a07c79d24 --production-snapshot=audits/portfolio-fund-attribution/2026-09-02/scoped/portco-batch-0429-0433-attribution-repair/production-snapshot.json --approval=audits/portfolio-fund-attribution/2026-09-02/scoped/portco-batch-0429-0433-attribution-repair/approval.json --approval-sha256=597ddccb4322b857eae02acec86568a1708284399a37ed3e694a32eb036a01f9 --apply=true --write-token=APPLY_REVIEWED_PORTFOLIO_FUND_ATTRIBUTION --receipt=tmp/portfolio-fund-attribution/production/apply-receipt.json
+
+(node:3315) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_RECEIPT",
+  "manifestSha256": "fddfddef496217a33fa756b5ab8918c86a7ea3b8ec39393dc878403a07c79d24",
+  "approvalSha256": "597ddccb4322b857eae02acec86568a1708284399a37ed3e694a32eb036a01f9",
+  "environment": "production",
+  "pipelineRunId": "cmtjq8rtm0000k32bzk38brt8",
+  "mutationCount": 9,
+  "changed": 9,
+  "idempotent": false,
+  "beforeFingerprint": "c095e15e6aa70c1396560e894ead830d3fb18c4fa2273afe970db770b27d4f62",
+  "afterFingerprint": "33490b8d540ef12dc74db5fccea1334614c1dca2379023a80178fd5af6019959",
+  "rows": [
+    {
+      "recordId": "OFA-C110B22590FC",
+      "ownershipPeriodId": "cmrxpkafi029yivheau72hzni",
+      "companyId": "cmrxpjnv601abivhe2ixd73xz",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "UIF",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: Ullico | Fund: UIF | Ownership Interest: Not publicly disclosed. Supplemental ownership detail discloses a distinct fund/vehicle that does not match funds.ts."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Ullico Infrastructure Fund",
+        "attributionConfidence": null,
+        "attributionRationale": "Ullico directly identifies its infrastructure fund as an equity consortium member, and current sponsor reporting identifies Ullico's 19% direct interest."
+      }
+    },
+    {
+      "recordId": "OFA-FB1C1A8F68EB",
+      "ownershipPeriodId": "cmrxpkafz029zivhe2ryo1tzy",
+      "companyId": "cmrxpjnv601abivhe2ixd73xz",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Swiss Life GIO III Co-Invest / JLC Infrastructure Fund I, L.P.",
+        "attributionConfidence": null,
+        "attributionRationale": "Swiss Life reporting identifies its New Terminal One exposure as a GIO III co-investment alongside JLC Infrastructure Fund I."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "JLC Terminal One Co-Invest L.P.",
+        "attributionConfidence": null,
+        "attributionRationale": "Swiss Life reporting directly identifies the JLC Terminal One co-investment vehicle and its current 0.4% look-through interest. That interest is inside JLC Infrastructure's 30% sponsor block and is not additive to the direct cap table."
+      }
+    },
+    {
+      "recordId": "OFA-3AD6685F5159",
+      "ownershipPeriodId": "cmtjpi4tm0014ze2bnimst6rc",
+      "companyId": "cmrxpjnv601abivhe2ixd73xz",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Ferrovial's current 49% sponsor interest is direct corporate ownership through Mars NTO LLC rather than a separately managed infrastructure fund."
+      }
+    },
+    {
+      "recordId": "OFA-B70DB276E982",
+      "ownershipPeriodId": "cmtjpi4v70016ze2babml4hld",
+      "companyId": "cmrxpjnv601abivhe2ixd73xz",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "JLC Infrastructure Fund I, L.P.",
+        "attributionConfidence": null,
+        "attributionRationale": "Current sponsor reporting identifies JLC Infrastructure's 30% direct block, while Swiss Life's transaction disclosure identifies JLC Infrastructure Fund I, L.P. as the underlying JLC fund alongside which its co-investment was made."
+      }
+    },
+    {
+      "recordId": "OFA-3FD9E3B0905E",
+      "ownershipPeriodId": "cmtjpi4w90017ze2b6fxl93fg",
+      "companyId": "cmrxpjnv601abivhe2ixd73xz",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Carlyle's continuing 2% direct sponsor interest and holding chain are publicly evidenced, but the exact Carlyle-managed fund underlying CGI Phoenix Aggregator is not publicly disclosed."
+      }
+    },
+    {
+      "recordId": "OFA-6AB99974E1AE",
+      "ownershipPeriodId": "cmrxpk8ym027oivheaxzneh02",
+      "companyId": "cmrxpjnnm01a1ivhew2n8o1is",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Current ownershipVehicle already indicates the fund was not disclosed."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "QIA invested directly through its sovereign investment program rather than a separately disclosed managed infrastructure fund; the current ownership tier and exact percentage are not public."
+      }
+    },
+    {
+      "recordId": "OFA-ABB53B6C6E69",
+      "ownershipPeriodId": "cmrxpka8b029oivhepz8n1yd2",
+      "companyId": "cmrxpjnnm01a1ivhew2n8o1is",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "Stonepeak Core Fund",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, evergreen/permanent-capital vehicle, North America-relevant mandate; next candidate trails by 2.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Current Stonepeak ownership above the Oryx member is directly evidenced, but the exact Stonepeak-managed fund and current sponsor percentage are not publicly disclosed."
+      }
+    },
+    {
+      "recordId": "OFA-2F4102038067",
+      "ownershipPeriodId": "cmtjpi30p000oze2bifzs3unu",
+      "companyId": "cmtjpi2pn000dze2bbdbgmq86",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Stonepeak's 43.8% joint-control interest and February 2026 closing are directly evidenced, but no exact Stonepeak-managed fund or acquisition vehicle is publicly identified."
+      }
+    },
+    {
+      "recordId": "OFA-430AA9ABE36C",
+      "ownershipPeriodId": "cmtjpi32k000qze2bnhaiz0lj",
+      "companyId": "cmtjpi2pn000dze2bbdbgmq86",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Repsol's continuing interest is direct corporate ownership through Outpost Solar SellCo LLC rather than a managed fund. The 56.2% figure is the arithmetic remainder from Stonepeak's disclosed 43.8% interest, not a separately published stake."
+      }
+    }
+  ],
+  "appliedAt": "2026-09-02T06:40:34.866Z",
+  "receiptSha256": "29c4eb2ff7a58352c2e0be64aeec2906ba4d70fd9007b325e64410863e92be34"
+}

@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_RELEASE_VERIFICATION",
+  "verifiedAt": "2026-09-02T06:40:37.819Z",
+  "manifestSha256": "fddfddef496217a33fa756b5ab8918c86a7ea3b8ec39393dc878403a07c79d24",
+  "approvalSha256": "597ddccb4322b857eae02acec86568a1708284399a37ed3e694a32eb036a01f9",
+  "receiptSha256": "29c4eb2ff7a58352c2e0be64aeec2906ba4d70fd9007b325e64410863e92be34",
+  "mutationCount": 9,
+  "changed": 9,
+  "verificationScope": "BOUNDED_STATUS_SAMPLE",
+  "sampledRows": [
+    {
+      "recordId": "OFA-C110B22590FC",
+      "companyId": "cmrxpjnv601abivhe2ixd73xz",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjnv601abivhe2ixd73xz?verification=fddfddef496217a33fa756b5ab8918c86a7ea3b8ec39393dc878403a07c79d24",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Ullico Infrastructure Fund",
+        "attributionConfidence": null,
+        "attributionRationale": "Ullico directly identifies its infrastructure fund as an equity consortium member, and current sponsor reporting identifies Ullico's 19% direct interest."
+      }
+    },
+    {
+      "recordId": "OFA-3AD6685F5159",
+      "companyId": "cmrxpjnv601abivhe2ixd73xz",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjnv601abivhe2ixd73xz?verification=fddfddef496217a33fa756b5ab8918c86a7ea3b8ec39393dc878403a07c79d24",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Ferrovial's current 49% sponsor interest is direct corporate ownership through Mars NTO LLC rather than a separately managed infrastructure fund."
+      }
+    },
+    {
+      "recordId": "OFA-3FD9E3B0905E",
+      "companyId": "cmrxpjnv601abivhe2ixd73xz",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjnv601abivhe2ixd73xz?verification=fddfddef496217a33fa756b5ab8918c86a7ea3b8ec39393dc878403a07c79d24",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Carlyle's continuing 2% direct sponsor interest and holding chain are publicly evidenced, but the exact Carlyle-managed fund underlying CGI Phoenix Aggregator is not publicly disclosed."
+      }
+    }
+  ],
+  "passed": true
+}
