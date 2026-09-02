@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-09-02",
+  "ledgerSha256": "a9fbe61ef22253f724fcdf15703a5473e3e43c8703b5ef016652bbc53d302e64",
+  "sourceSnapshotSha256": "3afc33e6da84e655e1cb66429bd91e144b7ed9166a0a02ab8056e99ea6617f33",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 1,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 2,
+      "UNRESOLVED": 0
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  },
+  "expectedMutationCount": 3,
+  "mutations": [
+    {
+      "recordId": "OFA-7B11F2609FF6",
+      "ownershipPeriodId": "cmrxpkav302anivhe4ygdrdj6",
+      "companyName": "IPX Power",
+      "country": "United States",
+      "investmentFirm": "TPG",
+      "currentVehicleName": "TPG Rise Climate; exact fund and holding SPV not publicly disclosed",
+      "databaseVehicleName": "TPG Rise Climate; exact fund and holding SPV not publicly disclosed",
+      "investmentYear": 2026,
+      "stake": "Majority interest; exact percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "TPG's closing release discloses TPG Rise Climate as IPX's majority backer but does not identify a distinct fund or holding SPV. The source classifies the strategy as climate private equity rather than the separate TPG transition-infrastructure product, so no infrastructure-fund link is inferred."
+      },
+      "evidenceUrls": [
+        "https://www.tpg.com/news-and-insights/tpg-announces-completion-of-4-75-billion-sale-of-intersect-to-google-launches-ipx-power-as-independent-power-producer",
+        "https://www.sec.gov/Archives/edgar/data/1880661/000188066126000033/tpg-20260331.htm"
+      ]
+    },
+    {
+      "recordId": "OFA-47365CACD0BE",
+      "ownershipPeriodId": "cmtk1be1w000eww2bw2i8roih",
+      "companyName": "IPX Power",
+      "country": "United States",
+      "investmentFirm": "Climate Adaptive Infrastructure",
+      "currentVehicleName": "Climate Adaptive Infrastructure Fund LP; exact holding SPV not publicly disclosed",
+      "databaseVehicleName": "Climate Adaptive Infrastructure Fund LP; exact holding SPV not publicly disclosed",
+      "investmentYear": 2026,
+      "stake": "Minority interest; exact percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Climate Adaptive Infrastructure Fund LP",
+        "attributionConfidence": null,
+        "attributionRationale": "TPG's closing release identifies Climate Adaptive Infrastructure as a continuing IPX investor, and CAI's official fund-close release identifies Climate Adaptive Infrastructure Fund LP and its dedicated infrastructure mandate. The exact IPX holding SPV is not publicly disclosed, and no matching curated fund row exists to link."
+      },
+      "evidenceUrls": [
+        "https://www.tpg.com/news-and-insights/tpg-announces-completion-of-4-75-billion-sale-of-intersect-to-google-launches-ipx-power-as-independent-power-producer",
+        "https://www.climateadaptiveinfra.com/news-and-insights/climate-adaptive-infrastructure-raises-over-dollar1-billion/"
+      ]
+    },
+    {
+      "recordId": "OFA-96A94226554C",
+      "ownershipPeriodId": "cmtk1be4u000fww2bkkrklgs2",
+      "companyName": "IPX Power",
+      "country": "United States",
+      "investmentFirm": "Greenbelt Capital Partners",
+      "currentVehicleName": "Legacy Trilantic/Greenbelt vehicle not publicly disclosed",
+      "databaseVehicleName": "Legacy Trilantic/Greenbelt vehicle not publicly disclosed",
+      "investmentYear": 2026,
+      "stake": "Minority interest; exact percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "TPG's closing release identifies Greenbelt Capital Partners as a continuing IPX minority investor, but reviewed primary sources do not identify the specific legacy Trilantic/Greenbelt fund or holding SPV. No fund attribution is inferred."
+      },
+      "evidenceUrls": [
+        "https://www.tpg.com/news-and-insights/tpg-announces-completion-of-4-75-billion-sale-of-intersect-to-google-launches-ipx-power-as-independent-power-producer"
+      ]
+    }
+  ],
+  "manifestSha256": "d332c1d700d97e61c8e56a9d9c2f60bda253bcaa735c8f54aa7661734c6dfbc4"
+}
