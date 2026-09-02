@@ -1,0 +1,239 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0411:undine:ce0cb177",
+  "taskIndex": 411,
+  "companyName": "Undine",
+  "generatedAt": "2026-09-02T01:26:04.783Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0411-undine/attempt-1/observed-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 411,
+    "taskId": "ledger:0411:undine:ce0cb177",
+    "canonicalKey": "undine|united-states",
+    "companyName": "Undine",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 85,
+    "managers": [
+      "Ridgewood Infrastructure"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "085-ridgewood-infrastructure:holding:005:undine"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjmzy018xivheiq5ev2lk"
+    ],
+    "seedKeys": [
+      "undine|United States"
+    ],
+    "evidenceUrls": [
+      "https://ridgewoodinfrastructure.com/portfolio/undine/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_OWNER requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjmzy018xivheiq5ev2lk",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "undine|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjmzy018xivheiq5ev2lk",
+    "name": "Undine",
+    "aliases": [],
+    "sector": "UTILITIES",
+    "subsector": "Regulated water and wastewater utilities",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Undine acquires and operates regulated water and wastewater utilities in Texas. Its customers are residential and commercial users in fast-growing communities that require essential local distribution and wastewater service. The operating model is asset heavy and rate regulated, with cash flows derived from utility service rather than merchant water sales. The company states that it was founded in 2016 and has pursued a consolidation strategy focused on smaller-scale regulated utility systems. Ridgewood acquired the platform in 2017, making it one of the earlier utility investments in the firm's current portfolio. The business remains part of Ridgewood's water infrastructure strategy.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2016,
+    "headquarters": "Texas",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk9i3028jivhekdbezmnu",
+        "managerName": "Ridgewood",
+        "organizationName": "Ridgewood",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2017,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmmzt0545ivheg39x621l",
+        "date": "2016",
+        "event": "Undine was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2016-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmn0j0546ivhe0phpuw76",
+        "date": "2017",
+        "event": "Ridgewood Infrastructure acquired Undine.",
+        "category": "ACQUISITION",
+        "sortDate": "2017-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpso1p0cxmivhewl18atc0",
+        "label": "Ridgewoodinfrastructure — Undine",
+        "url": "https://ridgewoodinfrastructure.com/undine/",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Ridgewoodinfrastructure transaction or milestone detail",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpso2s0cxoivhe7yayk410",
+        "label": "Undinellc — Undine",
+        "url": "https://www.undinellc.com/about/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Undinellc company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpso5w0cxqivhee0t39ih0",
+        "label": "Undinellc — Undine",
+        "url": "https://www.undinellc.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Undinellc company profile",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Undine",
+    "investmentFirm": "Ridgewood",
+    "sector": "Utilities",
+    "subsector": "Regulated water and wastewater utilities",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "Undine acquires and operates regulated water and wastewater utilities in Texas. Its customers are residential and commercial users in fast-growing communities that require essential local distribution and wastewater service. The operating model is asset heavy and rate regulated, with cash flows derived from utility service rather than merchant water sales. The company states that it was founded in 2016 and has pursued a consolidation strategy focused on smaller-scale regulated utility systems. Ridgewood acquired the platform in 2017, making it one of the earlier utility investments in the firm's current portfolio. The business remains part of Ridgewood's water infrastructure strategy.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2016,
+    "investmentYear": 2017,
+    "headquarters": "Texas",
+    "milestones": [
+      {
+        "date": "2016",
+        "event": "Undine was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "2017",
+        "event": "Ridgewood Infrastructure acquired Undine.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Ridgewoodinfrastructure — Undine",
+        "url": "https://ridgewoodinfrastructure.com/undine/",
+        "type": "ARTICLE",
+        "purpose": "MILESTONE_EVENT"
+      },
+      {
+        "label": "Undinellc — Undine",
+        "url": "https://www.undinellc.com/about/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Undinellc — Undine",
+        "url": "https://www.undinellc.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Ridgewood",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2017,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpicyc003civheedbx5k0a",
+        "name": "Ridgewood Infrastructure",
+        "updatedAt": "2026-07-23T16:09:23.988Z"
+      },
+      {
+        "id": "cmrxpikot005rivhewkpj6ng8",
+        "name": "Ridgewood",
+        "updatedAt": "2026-07-23T16:09:34.013Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0411:undine:ce0cb177",
+    "taskIndex": 411,
+    "canonicalKey": "undine|united-states",
+    "capturedAt": "2026-09-02T01:26:04.783Z",
+    "databaseRevision": "revision:4b87b075939f9e0417db55cfa65eb3f10a907100e56d9ef14d3f900e4b07b7de",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "d7ace02d119aa716878b591610792d8d74c9ae5462ec6317f16e69b6d31c3039",
+    "productionSnapshotSha256": "44c6809f6a34c9b24da24ebe579ed7c1b274b1f8fe1b45ab7e72f71ec35c9167",
+    "targetCompanySnapshotSha256": "6cc98076324218c698815cdc41034a00ef674438217c59c573b9c6a050cca52f",
+    "seedEntrySha256": "28515184afc6d6a621ffe9cb00f098afcd05592a49b74af911edda32291ffacb",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "159f92f28a2fe1cba59528e2afccd8741417b9299303760f01ca2d7c6c8d32ec",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "444dbe44b49bb2dd5235d64436c770b3e1dedc3337f0d4021f5d125ff30696e2",
+      "citationsSha256": "c32f4778463055688d37e2c01cbbb5500a2a7c7d1f3e2d6cbad26b458a9d782d",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "60ea35b2be27a68f460917280132259994d36cad2876e66d414c78c623d0b647",
+    "stateSha256": "e343bfc53f62e05fadba350fcbacb5340c104da1f2da3fe8b68ef8f196424100",
+    "taskSnapshotSha256": "5504493ed59c4940b7ce2d5b6bc428e1af0536d1003c0ca18b4c64f58cd86035"
+  },
+  "contextSha256": "8296dd1cf85fdd26a5bcbbe16acd8d52b1ad14f231b260a86f14e93c380713fc"
+}

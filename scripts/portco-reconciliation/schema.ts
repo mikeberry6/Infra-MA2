@@ -13,6 +13,10 @@ const httpsUrl = z.string().url().refine(
   (value) => value.startsWith("https://"),
   "URL must use HTTPS",
 );
+const observedSourceUrl = z.string().url().refine(
+  (value) => value.startsWith("https://") || value.startsWith("http://"),
+  "Observed source URL must use HTTP or HTTPS",
+);
 const relativeArtifactPath = nonEmpty.refine(
   (value) =>
     !value.startsWith("/")
@@ -673,7 +677,10 @@ const managementRoleImageSchema = z.strictObject({
 export const citationImageSchema = z.strictObject({
   id: optionalText,
   label: nonEmpty,
-  url: httpsUrl,
+  // Read-only production snapshots must preserve legacy HTTP values exactly so
+  // a correction can bind and replace them. Proposal after-images remain
+  // HTTPS-only through the proposal refinement below.
+  url: observedSourceUrl,
   sourceType: nonEmpty,
   purpose: nonEmpty,
   evidenceLabel: optionalText,
@@ -954,6 +961,15 @@ export const reconciliationProposalSchema = z.strictObject({
     });
   }
   if (proposal.afterImage) {
+    for (const [index, citation] of proposal.afterImage.citations.entries()) {
+      if (!citation.url.startsWith("https://")) {
+        context.addIssue({
+          code: "custom",
+          path: ["afterImage", "citations", index, "url"],
+          message: "After-image citation URLs must use HTTPS",
+        });
+      }
+    }
     const primaryCount = proposal.afterImage.citations.filter((citation) => citation.isPrimary).length;
     if (primaryCount !== 1) {
       context.addIssue({

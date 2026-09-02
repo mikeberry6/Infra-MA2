@@ -93,6 +93,11 @@ describe("CompanyRevision history merging", () => {
 
 describe("approved ownership organization provisioning", () => {
   it("classifies the task 270–273 owners that production must provision", () => {
+    expect(ownershipOrganizationTypes("Clay Bush")).toEqual(["OTHER"]);
+    expect(ownershipOrganizationTypes("Crosstimbers Capital Group")).toEqual(["FUND_MANAGER"]);
+    expect(ownershipOrganizationTypes("Jennifer Bush")).toEqual(["OTHER"]);
+    expect(ownershipOrganizationTypes("NGP Energy Capital Management")).toEqual(["FUND_MANAGER"]);
+    expect(ownershipOrganizationTypes("North Sky Capital")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("Canadian Solar")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Hudson Clean Energy Partners")).toEqual(["FUND_MANAGER"]);
     expect(ownershipOrganizationTypes("QScale founders and management")).toEqual(["OTHER"]);

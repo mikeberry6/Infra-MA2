@@ -1,0 +1,348 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0412:valley-cold-storage-and-transportation:13456440",
+  "taskIndex": 412,
+  "asOfDate": "2026-09-01",
+  "generatedAt": "2026-09-02T01:31:35.000Z",
+  "canonicalKey": "valley-cold-storage-and-transportation|united-states",
+  "companyName": "Valley Cold Storage & Transportation",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER"
+  ],
+  "sourceHoldingIds": [
+    "085-ridgewood-infrastructure:holding:006:valley-cold-storage-and-transportation"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Keep one Valley Cold platform, normalize Ridgewood's Fund II period, and record Clay and Jennifer Bush as separately disclosed current founder owners without inferring percentages or an exact legal closing date.",
+  "evidence": [
+    {
+      "url": "https://ridgewoodinfrastructure.com/investments/",
+      "purpose": "Official current Ridgewood portfolio status.",
+      "supports": [
+        "Valley Cold remains unrealized",
+        "Ridgewood remains a current owner"
+      ]
+    },
+    {
+      "url": "https://ridgewoodinfrastructure.com/ridgewood-infrastructure-announces-acquisition-of-valley-cold/",
+      "purpose": "Official investment announcement and founder-led transaction evidence.",
+      "supports": [
+        "Ridgewood invested in Valley Cold in 2024",
+        "Clay and Jennifer Bush built the acquired platform"
+      ]
+    },
+    {
+      "url": "https://ridgewoodinfrastructure.com/wp-content/uploads/2025/03/Ridgewood_Infra_AnnualReview_March2025.pdf",
+      "purpose": "Official Q4 2024 close and recapitalization evidence.",
+      "supports": [
+        "The transaction closed in Q4 2024",
+        "The transaction was a founder-led recapitalization"
+      ]
+    },
+    {
+      "url": "https://www.valleycoldstore.com/about",
+      "purpose": "Official current founder-ownership and operating-history evidence.",
+      "supports": [
+        "Clay Bush is identified as an owner",
+        "Jennifer Bush is identified as an owner",
+        "The company was established in 2008"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "a512f865962b7ca87fe746cd27a7e80a1a1a73552b010dcff5b87abbc4d4be7b",
+  "currentCompanySnapshotSha256": "bc6944c497bd720d5b7c151b9c62caabf6c4594a49ec51a0c595e4861b13fff5",
+  "executionLock": {
+    "taskSnapshotSha256": "d5e39e63af06e5f7a6dc19a815b2ca6324a0c3d39328606a18d9394a9bd1aeeb",
+    "taskStateSha256": "9524f54c608662907069fd9ccd45d70438056aa265d7339c97cb727e1bf6e1f0",
+    "taskDependencySha256": "0fc523459349b811eeb59956361f203b1a676c82ad877d1773f92fb3c362ce75",
+    "seedEntrySha256": "81325d6526b449f03521706edbc907acb0ad13827fcdcf68879388f289f2c416",
+    "dependencies": {
+      "ownershipPeriodsSha256": "fff8e76f4c48952366325766be816d10fc6a9ab1de8a9b3f190c138c935d8eef",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "7c9248e82d7a3c0962d98883f873a94fd8a572b04c86e55cfb7f38071052e634",
+      "organizationsSha256": "444dbe44b49bb2dd5235d64436c770b3e1dedc3337f0d4021f5d125ff30696e2",
+      "citationsSha256": "46762ca169c21c220ef3a97761333eac46e1ca3fac05f6cf82e7422d20d078a2",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj3l700f7ivhe0wfstply",
+        "fundName": "Ridgewood Water & Strategic Infrastructure Fund II",
+        "managerId": "cmrxpicyc003civheedbx5k0a",
+        "updatedAt": "2026-07-23T16:09:58.507Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpicyc003civheedbx5k0a",
+        "name": "Ridgewood Infrastructure",
+        "updatedAt": "2026-07-23T16:09:23.988Z"
+      },
+      {
+        "id": "cmrxpikot005rivhewkpj6ng8",
+        "name": "Ridgewood",
+        "updatedAt": "2026-07-23T16:09:34.013Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjn0j018yivhek81ibli0",
+    "name": "Valley Cold Storage & Transportation",
+    "aliases": [],
+    "sector": "TRANSPORTATION",
+    "subsector": "Cold storage and temperature-controlled logistics",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Valley Cold Storage & Transportation provides temperature-controlled warehousing and related logistics services in southern New Mexico. Its customers include food, agriculture, food-service, and distribution businesses that need short- and long-term refrigerated storage near the U.S.-Mexico border. The business follows an asset-heavy operating model built around refrigerated warehouse infrastructure and associated transportation support rather than a brokered logistics model. Public company materials describe two strategically located facilities along the I-10 and I-25 corridors serving southern New Mexico, northern Mexico, and west Texas. Valley Cold's website identifies 2020 as the year of the current operating platform's launch, and Ridgewood Infrastructure acquired the company in 2024.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "New Mexico",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk9kr028kivher9994mn5",
+        "managerName": "Ridgewood",
+        "organizationName": "Ridgewood",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmn1d0547ivhe40hi3b5s",
+        "date": "2020",
+        "event": "Valley Cold’s website identifies the operating business in its current form.",
+        "category": "FOUNDING",
+        "sortDate": "2020-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmn1t0548ivhekxd841kr",
+        "date": "Dec 3, 2024",
+        "event": "Ridgewood Infrastructure announced its acquisition of Valley Cold.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-12-03T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpso740cxsivhe9708m232",
+        "label": "Ridgewoodinfrastructure — Valley Cold Storage & Transportation",
+        "url": "https://ridgewoodinfrastructure.com/valley-cold-storage/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Ridgewoodinfrastructure — Valley Cold Storage & Transportation",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpso840cxuivhe0l3mgm4o",
+        "label": "Investment date source — Ridgewood — Valley Cold Storage & Transportation",
+        "url": "https://ridgewoodinfrastructure.com/ridgewood-infrastructure-announces-acquisition-of-valley-cold/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Ridgewood initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpso970cxwivhel5beg4kt",
+        "label": "Valleycoldstore — Valley Cold Storage & Transportation",
+        "url": "https://www.valleycoldstore.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Valleycoldstore company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsoa90cxyivhebr0hy4a0",
+        "label": "Valleycoldstore — Valley Cold Storage & Transportation",
+        "url": "https://www.valleycoldstore.com/locations",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Valleycoldstore operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsobb0cy0ivheri1o6rnz",
+        "label": "PR Newswire — Valley Cold Storage & Transportation",
+        "url": "https://www.prnewswire.com/news-releases/ridgewood-infrastructure-announces-acquisition-of-valley-cold-302320371.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "PR Newswire transaction or milestone detail",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "bc6944c497bd720d5b7c151b9c62caabf6c4594a49ec51a0c595e4861b13fff5",
+  "afterImage": {
+    "id": "cmrxpjn0j018yivhek81ibli0",
+    "name": "Valley Cold Storage & Transportation",
+    "aliases": [
+      "Valley Cold"
+    ],
+    "sector": "TRANSPORTATION",
+    "subsector": "Cold storage and temperature-controlled logistics",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Valley Cold Storage & Transportation owns and operates temperature-controlled warehousing and logistics infrastructure serving food, agriculture and distribution customers in southern New Mexico, west Texas and northern Mexico. The business was established in 2008 and operates cold-storage facilities in Las Cruces and Santa Teresa. Ridgewood Infrastructure completed a founder-led recapitalization in Q4 2024 through its Fund II strategy. Clay Bush and Jennifer Bush continue to be identified by the company as owners; all current percentage stakes and the acquisition SPV are not publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.valleycoldstore.com/",
+    "yearFounded": 2008,
+    "headquarters": "Las Cruces, New Mexico, United States",
+    "lastVerifiedAt": "2026-09-01T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk9kr028kivher9994mn5",
+        "managerName": "Ridgewood Infrastructure",
+        "organizationName": "Ridgewood Infrastructure",
+        "fundName": "Ridgewood Water & Strategic Infrastructure Fund II",
+        "vehicleName": "Exact acquisition SPV not publicly disclosed",
+        "stake": "Recapitalization investment; exact percentage not publicly disclosed",
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Clay Bush",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Founder ownership; exact vehicle not publicly disclosed",
+        "stake": "Current owner; exact percentage not publicly disclosed",
+        "investmentYear": null,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Jennifer Bush",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Founder ownership; exact vehicle not publicly disclosed",
+        "stake": "Current owner; exact percentage not publicly disclosed",
+        "investmentYear": null,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmn1d0547ivhe40hi3b5s",
+        "date": "2008",
+        "event": "Valley Cold Storage & Transportation was established.",
+        "category": "FOUNDING",
+        "sortDate": "2008-01-01T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.valleycoldstore.com/about"
+        ]
+      },
+      {
+        "id": "cmrxpmn1t0548ivhekxd841kr",
+        "date": "Q4 2024",
+        "event": "Ridgewood Infrastructure completed a founder-led recapitalization of Valley Cold through its Fund II strategy.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-12-03T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://ridgewoodinfrastructure.com/ridgewood-infrastructure-announces-acquisition-of-valley-cold/",
+          "https://ridgewoodinfrastructure.com/wp-content/uploads/2025/03/Ridgewood_Infra_AnnualReview_March2025.pdf"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpso740cxsivhe9708m232",
+        "label": "Ridgewoodinfrastructure — Valley Cold Storage & Transportation",
+        "url": "https://ridgewoodinfrastructure.com/valley-cold-storage/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current Ridgewood ownership and unrealized portfolio status",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpso840cxuivhe0l3mgm4o",
+        "label": "Investment date source — Ridgewood — Valley Cold Storage & Transportation",
+        "url": "https://ridgewoodinfrastructure.com/ridgewood-infrastructure-announces-acquisition-of-valley-cold/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "December 3, 2024 investment announcement and founder-led transaction",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpso970cxwivhel5beg4kt",
+        "label": "Valleycoldstore — Valley Cold Storage & Transportation",
+        "url": "https://www.valleycoldstore.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Valleycoldstore company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsoa90cxyivhebr0hy4a0",
+        "label": "Valleycoldstore — Valley Cold Storage & Transportation",
+        "url": "https://www.valleycoldstore.com/locations",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Valleycoldstore operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsobb0cy0ivheri1o6rnz",
+        "label": "PR Newswire — Valley Cold Storage & Transportation",
+        "url": "https://www.prnewswire.com/news-releases/ridgewood-infrastructure-announces-acquisition-of-valley-cold-302320371.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "PR Newswire transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Valley Cold — About",
+        "url": "https://www.valleycoldstore.com/about",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Founding history, current founder owners and operating footprint",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Ridgewood Infrastructure — 2025 annual review",
+        "url": "https://ridgewoodinfrastructure.com/wp-content/uploads/2025/03/Ridgewood_Infra_AnnualReview_March2025.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Q4 2024 close and founder-led recapitalization",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "98f959496c3f363534d09e2174eca8b59862e2e9036444c83a8f1022f50ba9f9",
+  "proposalSha256": "41b64642f2e3be652b0817bddc123e03ecf0915c81b543128e064f2e83a3df4e"
+}

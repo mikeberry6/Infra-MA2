@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_SEED_ATTRIBUTION_RECONCILIATION_SPEC",
+  "batchId": "batch-0409-0413-v3",
+  "batchSha256": "df5c5302abc87a42cc5330ce4b4d40f56e9473e834c4fbb0747bc74646166aee",
+  "reconciledAt": "2026-09-02T01:45:00.000Z",
+  "sourceManifestSha256": "68a814e5e06af8dd0268e580ebb3fb8ae9cd25a8ade37fbf252ba9428b18e0dc",
+  "rationale": "Replace the three legacy single-owner Ridgewood attribution rows with one exact row per approved active owner. Preserve only directly disclosed vehicles, keep undisclosed Ridgewood funds unresolved rather than inventing Fund I or Fund II, and classify Clay and Jennifer Bush as direct founder owners for whom no managed fund applies.",
+  "removeRecordIds": [
+    "OFA-B4832E1F60DF",
+    "OFA-50B7CC6D3F0A",
+    "OFA-86527E7AD91B"
+  ],
+  "upsertRecords": [
+    {
+      "recordId": "OFA-6C8E11838DAF",
+      "companyName": "Undine",
+      "country": "United States",
+      "investmentFirm": "Ridgewood Infrastructure",
+      "currentVehicleName": "Ridgewood Water & Strategic Infrastructure Fund; exact acquisition SPV not publicly disclosed",
+      "investmentYear": 2017,
+      "stake": "Current equity owner; exact percentage not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Ridgewood Water & Strategic Infrastructure Fund",
+      "attributionConfidence": null,
+      "attributionRationale": "Ridgewood's water-and-strategic-infrastructure strategy is disclosed, but the reviewed sources do not identify a numbered fund or exact acquisition SPV, so no curated fund is linked.",
+      "evidenceUrls": [
+        "https://ridgewoodinfrastructure.com/undine/",
+        "https://interchange.puc.texas.gov/Documents/56354_3818_1517901.PDF"
+      ]
+    },
+    {
+      "recordId": "OFA-F5B89FF6606F",
+      "companyName": "Undine",
+      "country": "United States",
+      "investmentFirm": "Crosstimbers Capital Group",
+      "currentVehicleName": "XT Undine Co-Investment, LP",
+      "investmentYear": 2017,
+      "stake": "Current equity owner; exact percentage not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "XT Undine Co-Investment, LP",
+      "attributionConfidence": null,
+      "attributionRationale": "Crosstimbers and the Texas regulatory record directly identify the Undine investment and XT Undine Co-Investment, LP; no separate curated fund is inferred.",
+      "evidenceUrls": [
+        "https://www.crosstimbers.com/portfolio",
+        "https://interchange.puc.texas.gov/Documents/56354_3818_1517901.PDF"
+      ]
+    },
+    {
+      "recordId": "OFA-4F57DCE9ED67",
+      "companyName": "Valley Cold Storage & Transportation",
+      "country": "United States",
+      "investmentFirm": "Ridgewood Infrastructure",
+      "currentVehicleName": "Exact acquisition SPV not publicly disclosed",
+      "investmentYear": 2024,
+      "stake": "Recapitalization investment; exact percentage not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "UNRESOLVED",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "Ridgewood directly confirms the Q4 2024 founder-led recapitalization, but the reviewed announcement and annual review do not identify a fund or acquisition SPV.",
+      "evidenceUrls": [
+        "https://ridgewoodinfrastructure.com/ridgewood-infrastructure-announces-acquisition-of-valley-cold/",
+        "https://ridgewoodinfrastructure.com/wp-content/uploads/2025/03/Ridgewood_Infra_AnnualReview_March2025.pdf",
+        "https://ridgewoodinfrastructure.com/valley-cold-storage/"
+      ]
+    },
+    {
+      "recordId": "OFA-E23AA66E480C",
+      "companyName": "Valley Cold Storage & Transportation",
+      "country": "United States",
+      "investmentFirm": "Clay Bush",
+      "currentVehicleName": "Founder ownership; exact vehicle not publicly disclosed",
+      "investmentYear": null,
+      "stake": "Current owner; exact percentage not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "Valley Cold identifies Clay Bush as a current founder owner. This is direct individual ownership, so no managed fund applies and no vehicle is inferred.",
+      "evidenceUrls": [
+        "https://www.valleycoldstore.com/about",
+        "https://ridgewoodinfrastructure.com/ridgewood-infrastructure-announces-acquisition-of-valley-cold/"
+      ]
+    },
+    {
+      "recordId": "OFA-47FADD5D8B22",
+      "companyName": "Valley Cold Storage & Transportation",
+      "country": "United States",
+      "investmentFirm": "Jennifer Bush",
+      "currentVehicleName": "Founder ownership; exact vehicle not publicly disclosed",
+      "investmentYear": null,
+      "stake": "Current owner; exact percentage not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "Valley Cold identifies Jennifer Bush as a current founder owner. This is direct individual ownership, so no managed fund applies and no vehicle is inferred.",
+      "evidenceUrls": [
+        "https://www.valleycoldstore.com/about",
+        "https://ridgewoodinfrastructure.com/ridgewood-infrastructure-announces-acquisition-of-valley-cold/"
+      ]
+    },
+    {
+      "recordId": "OFA-A96C523B90AD",
+      "companyName": "Waste Resource Management",
+      "country": "United States",
+      "investmentFirm": "Ridgewood Infrastructure",
+      "currentVehicleName": "Exact acquisition vehicle not publicly disclosed",
+      "investmentYear": 2023,
+      "stake": "Acquired the platform; exact percentage not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "UNRESOLVED",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "Ridgewood directly confirms its late-2023 acquisition and current ownership, but the reviewed sources do not identify the acquisition fund or legal vehicle.",
+      "evidenceUrls": [
+        "https://ridgewoodinfrastructure.com/ridgewood-infrastructure-extends-its-leadership-position-in-the-u-s-water-sector-with-the-acquisition-of-waste-resources-management-wrm/",
+        "https://ridgewoodinfrastructure.com/investments/",
+        "https://northskycapital.com/north-sky-announces-successful-exit-of-investment-in-leading-liquid-waste-recycler/"
+      ]
+    }
+  ],
+  "specSha256": "20c6bac6b7acbb33c5806b5602b92cbfcbb470845b0d6f85344c4aa76f80e4a7"
+}

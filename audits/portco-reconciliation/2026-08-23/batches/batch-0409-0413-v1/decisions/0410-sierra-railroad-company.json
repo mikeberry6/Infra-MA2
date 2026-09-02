@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0410:sierra-railroad-company:b9c99f78",
+  "taskIndex": 410,
+  "companyName": "Sierra Railroad Company",
+  "outcome": "DEFERRED",
+  "decidedAt": "2026-09-02T01:36:00.000Z",
+  "rationale": "Defer the Sierra Railroad ownership correction while preserving the verified control and retained-investment evidence. Ridgewood's release proves a controlling acquisition and says Mike Hart retained a significant investment, but the complete post-close cap table, retained-holder roster and Sunburst passenger-operation perimeter are not directly disclosed. The existing Ridgewood-only owner representation therefore cannot yet be safely replaced with a complete after-image.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0410-sierra-railroad-company/attempt-1/locked-batch-v2-task-snapshot.json",
+    "sha256": "39aa1b86c4abd8ff2eac97a8884691209fcbd706f09dc97def8d2a6bdf22cd2c"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0410-sierra-railroad-company/attempt-1/application-research-decision-v1.json",
+    "sha256": "3941304d586043cd47e6ae92078a2cafb34e477c91c3f1dc73095fd7cbe959ec"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0410-sierra-railroad-company/attempt-1/application-source-verification-v1.json",
+    "sha256": "d2313cf1db15a43e1b0e2f6945431502756f777587233d7284897abff2d9be5a"
+  },
+  "evidence": [
+    {
+      "url": "https://ridgewoodinfrastructure.com/ridgewood-infrastructure-acquires-sierra-railroad-company/",
+      "purpose": "Official evidence for Ridgewood control, Mike Hart's retained investment and the announced platform perimeter."
+    },
+    {
+      "url": "https://ridgewoodinfrastructure.com/sierra-railroad/",
+      "purpose": "Official current portfolio evidence that Sierra Railroad remains unrealized."
+    },
+    {
+      "url": "https://www.sierranorthern.com/",
+      "purpose": "Official operating-company evidence for the rail network and services."
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "d8fee61adee948972e745ec34418a9955eaadc2006d62c16dab8250a45a76aa5"
+}

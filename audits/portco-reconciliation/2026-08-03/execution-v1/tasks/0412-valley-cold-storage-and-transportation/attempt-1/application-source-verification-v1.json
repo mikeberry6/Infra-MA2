@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0412:valley-cold-storage-and-transportation:13456440",
+  "checkedAt": "2026-09-02T01:30:00.000Z",
+  "method": "Independent direct HTTPS status, redirect, byte-length and content-hash checks.",
+  "sources": [
+    {
+      "url": "https://ridgewoodinfrastructure.com/investments/",
+      "httpStatus": 200,
+      "finalUrl": "https://ridgewoodinfrastructure.com/investments/",
+      "bytes": 33141,
+      "sha256": "42da545414fc80dc90d4e31c66dc1ca3bd134311be36bc6adcd7e4040b584900",
+      "healthStatus": "WORKING",
+      "verifiedClaims": ["Ridgewood currently classifies Valley Cold as unrealized."]
+    },
+    {
+      "url": "https://ridgewoodinfrastructure.com/ridgewood-infrastructure-announces-acquisition-of-valley-cold/",
+      "httpStatus": 200,
+      "finalUrl": "https://ridgewoodinfrastructure.com/ridgewood-infrastructure-announces-acquisition-of-valley-cold/",
+      "bytes": 27329,
+      "sha256": "1f2becd5de850674039e7000ccec0b18caa20ece94ded8bb5a6d57d6db1d179f",
+      "healthStatus": "WORKING",
+      "verifiedClaims": ["Ridgewood announced its Valley Cold investment on December 3, 2024 and identified the founders."]
+    },
+    {
+      "url": "https://ridgewoodinfrastructure.com/wp-content/uploads/2025/03/Ridgewood_Infra_AnnualReview_March2025.pdf",
+      "httpStatus": 200,
+      "finalUrl": "https://ridgewoodinfrastructure.com/wp-content/uploads/2025/03/Ridgewood_Infra_AnnualReview_March2025.pdf",
+      "bytes": 271805,
+      "sha256": "89bd9b6ad31f4d0ffff1c8dc0ca2cef7ef336efd7dcba5a23582a791ef928cc0",
+      "healthStatus": "WORKING",
+      "verifiedClaims": ["Ridgewood describes the Q4 2024 close as a founder-led recapitalization."]
+    },
+    {
+      "url": "https://www.valleycoldstore.com/about",
+      "httpStatus": 200,
+      "finalUrl": "https://www.valleycoldstore.com/about",
+      "bytes": 137069,
+      "sha256": "ae74b24f09083605b44570319756278e04199f56e0f47afaaca72e7fc40900c9",
+      "healthStatus": "WORKING",
+      "verifiedClaims": ["Valley Cold identifies Clay Bush and Jennifer Bush as current owners."]
+    }
+  ],
+  "allEvidenceUrlsDirectHttps": true,
+  "allSourcesWorkingOrVerified": true,
+  "deadSourceCount": 0
+}

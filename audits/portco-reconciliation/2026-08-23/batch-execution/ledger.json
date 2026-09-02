@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-02T01:16:00.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-09-02T01:37:37.000Z",
+  "activeBatchId": "batch-0409-0413-v3",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -7070,7 +7070,171 @@
           "reason": null
         }
       ]
+    },
+    {
+      "batchId": "batch-0409-0413-v1",
+      "state": "FAILED",
+      "taskIds": [
+        "ledger:0409:prospect-lake-clean-water-center:c098d1e8",
+        "ledger:0410:sierra-railroad-company:b9c99f78",
+        "ledger:0411:undine:ce0cb177",
+        "ledger:0412:valley-cold-storage-and-transportation:13456440",
+        "ledger:0413:wrm-waste-resource-management:deca62ff"
+      ],
+      "taskIndexes": [
+        409,
+        410,
+        411,
+        412,
+        413
+      ],
+      "createdAt": "2026-09-02T01:20:00.000Z",
+      "updatedAt": "2026-09-02T01:32:52.000Z",
+      "completedAt": "2026-09-02T01:32:52.000Z",
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0409-0413-v1/batch-manifest.json",
+        "sha256": "668a3fc670cabf7a36634b8afe4dc6726fb283f0979dfbca110575596840a002"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": "Production dry-run rejected shared Source label/type normalization; no database write occurred. Superseded by v2 proposals preserving exact shared metadata.",
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-09-02T01:20:00.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-09-02T01:28:47.000Z",
+          "evidenceSha256": [
+            "668a3fc670cabf7a36634b8afe4dc6726fb283f0979dfbca110575596840a002"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "FAILED",
+          "at": "2026-09-02T01:32:52.000Z",
+          "evidenceSha256": [
+            "668a3fc670cabf7a36634b8afe4dc6726fb283f0979dfbca110575596840a002"
+          ],
+          "reason": "Production dry-run rejected shared Source label/type normalization; no database write occurred. Superseded by v2 proposals preserving exact shared metadata."
+        }
+      ]
+    },
+    {
+      "batchId": "batch-0409-0413-v2",
+      "state": "FAILED",
+      "taskIds": [
+        "ledger:0409:prospect-lake-clean-water-center:c098d1e8",
+        "ledger:0410:sierra-railroad-company:b9c99f78",
+        "ledger:0411:undine:ce0cb177",
+        "ledger:0412:valley-cold-storage-and-transportation:13456440",
+        "ledger:0413:wrm-waste-resource-management:deca62ff"
+      ],
+      "taskIndexes": [
+        409,
+        410,
+        411,
+        412,
+        413
+      ],
+      "createdAt": "2026-09-02T01:32:53.000Z",
+      "updatedAt": "2026-09-02T01:37:25.000Z",
+      "completedAt": "2026-09-02T01:37:25.000Z",
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0409-0413-v2/batch-manifest.json",
+        "sha256": "ead996640c05f998f1f111b56f83742941d7466279d8a661298b39e7e8a90408"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": "Independent PDF verification found no direct Fund II attribution for Valley Cold; no database write occurred. Superseded by v3 with the unsupported fund link removed.",
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-09-02T01:32:53.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-09-02T01:33:11.000Z",
+          "evidenceSha256": [
+            "ead996640c05f998f1f111b56f83742941d7466279d8a661298b39e7e8a90408"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "FAILED",
+          "at": "2026-09-02T01:37:25.000Z",
+          "evidenceSha256": [
+            "ead996640c05f998f1f111b56f83742941d7466279d8a661298b39e7e8a90408"
+          ],
+          "reason": "Independent PDF verification found no direct Fund II attribution for Valley Cold; no database write occurred. Superseded by v3 with the unsupported fund link removed."
+        }
+      ]
+    },
+    {
+      "batchId": "batch-0409-0413-v3",
+      "state": "READY",
+      "taskIds": [
+        "ledger:0409:prospect-lake-clean-water-center:c098d1e8",
+        "ledger:0410:sierra-railroad-company:b9c99f78",
+        "ledger:0411:undine:ce0cb177",
+        "ledger:0412:valley-cold-storage-and-transportation:13456440",
+        "ledger:0413:wrm-waste-resource-management:deca62ff"
+      ],
+      "taskIndexes": [
+        409,
+        410,
+        411,
+        412,
+        413
+      ],
+      "createdAt": "2026-09-02T01:37:25.000Z",
+      "updatedAt": "2026-09-02T01:37:37.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0409-0413-v3/batch-manifest.json",
+        "sha256": "df5c5302abc87a42cc5330ce4b4d40f56e9473e834c4fbb0747bc74646166aee"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-09-02T01:37:25.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-09-02T01:37:37.000Z",
+          "evidenceSha256": [
+            "df5c5302abc87a42cc5330ce4b4d40f56e9473e834c4fbb0747bc74646166aee"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "bd6c6f0d50e179d3602082024f9355aff78d5ecff1a45ed0a635c489c35c422c"
+  "ledgerSha256": "1f1df1c17914a1046701c5f6c2a6173a36cac6f78e5e0472b900d323ed402027"
 }

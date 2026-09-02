@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0412:valley-cold-storage-and-transportation:13456440",
+  "taskIndex": 412,
+  "companyName": "Valley Cold Storage & Transportation",
+  "asOfDate": "2026-09-01",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-02T01:30:00.000Z",
+  "result": {
+    "decision": "PROPOSED_CORRECTION",
+    "rationale": "Correct the existing Valley Cold record without duplicating Ridgewood's 2024 period. Ridgewood's official materials identify a Q4 2024 founder-led recapitalization attributable to Fund II, and the current company site identifies Clay and Jennifer Bush as owners. Their exact percentages, Ridgewood's stake and the legal SPV are not publicly disclosed and will not be inferred.",
+    "evidence": [
+      {
+        "url": "https://ridgewoodinfrastructure.com/investments/",
+        "purpose": "Official current portfolio evidence that Valley Cold remains unrealized."
+      },
+      {
+        "url": "https://ridgewoodinfrastructure.com/ridgewood-infrastructure-announces-acquisition-of-valley-cold/",
+        "purpose": "Official investment announcement and founder-led transaction evidence."
+      },
+      {
+        "url": "https://ridgewoodinfrastructure.com/wp-content/uploads/2025/03/Ridgewood_Infra_AnnualReview_March2025.pdf",
+        "purpose": "Official evidence that the acquisition closed in Q4 2024 as a founder-led recapitalization."
+      },
+      {
+        "url": "https://www.valleycoldstore.com/about",
+        "purpose": "Official company evidence identifying Clay and Jennifer Bush as current owners."
+      }
+    ],
+    "unresolvedQuestions": []
+  },
+  "lineage": {
+    "sourceDecision": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0412-valley-cold-storage-and-transportation/attempt-1/research-decision.json",
+    "basis": "Validated research authorizes a bounded correction using explicit unavailable labels for noncritical stake and SPV gaps."
+  }
+}

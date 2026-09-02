@@ -234,6 +234,11 @@ export function assertOwnershipManagerCompatible(input: {
 }
 
 const approvedOwnershipOrganizationProvisioning = {
+  "Clay Bush": "OTHER",
+  "Crosstimbers Capital Group": "FUND_MANAGER",
+  "Jennifer Bush": "OTHER",
+  "NGP Energy Capital Management": "FUND_MANAGER",
+  "North Sky Capital": "FUND_MANAGER",
   "AT&T Inc.": "CORPORATE",
   "ACS / Iridium": "CORPORATE",
   "AgeCare": "CORPORATE",

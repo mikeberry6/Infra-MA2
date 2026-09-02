@@ -26,7 +26,19 @@ describe("portfolio fund attribution ledger", () => {
 
   it("leaves reviewed owners unresolved when the current vehicle is not a disclosed fund", () => {
     const unresolved = ledger.rows.filter((row) => row.attribution === "UNRESOLVED");
-    expect(unresolved).toHaveLength(61);
+    expect(unresolved).toHaveLength(63);
+    expect(unresolved).toContainEqual(expect.objectContaining({
+      companyName: "Valley Cold Storage & Transportation",
+      investmentFirm: "Clay Bush",
+      targetLinkedFundName: null,
+      proposedAction: "RESEARCH_REQUIRED",
+    }));
+    expect(unresolved).toContainEqual(expect.objectContaining({
+      companyName: "Valley Cold Storage & Transportation",
+      investmentFirm: "Jennifer Bush",
+      targetLinkedFundName: null,
+      proposedAction: "RESEARCH_REQUIRED",
+    }));
     expect(unresolved).toContainEqual(expect.objectContaining({
       companyName: "Potters Industries, LLC",
       investmentFirm: "UniSuper",

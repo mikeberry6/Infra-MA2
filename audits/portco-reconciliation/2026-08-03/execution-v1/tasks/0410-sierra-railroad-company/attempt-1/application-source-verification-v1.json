@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0410:sierra-railroad-company:b9c99f78",
+  "checkedAt": "2026-09-02T01:30:00.000Z",
+  "method": "Independent direct HTTPS status, redirect, byte-length and content-hash checks; operating-site anti-automation response retained as browser-blocked but previously verified.",
+  "sources": [
+    {
+      "url": "https://ridgewoodinfrastructure.com/ridgewood-infrastructure-acquires-sierra-railroad-company/",
+      "httpStatus": 200,
+      "finalUrl": "https://ridgewoodinfrastructure.com/ridgewood-infrastructure-acquires-sierra-railroad-company/",
+      "bytes": 28349,
+      "sha256": "f5237f4f5c6a90efc43d03b0456fdc22ead4fc8850703928340ea7c8b6050591",
+      "healthStatus": "WORKING",
+      "verifiedClaims": ["Ridgewood acquired control and Mike Hart retained a significant investment."]
+    },
+    {
+      "url": "https://ridgewoodinfrastructure.com/sierra-railroad/",
+      "httpStatus": 200,
+      "finalUrl": "https://ridgewoodinfrastructure.com/sierra-railroad/",
+      "bytes": 32779,
+      "sha256": "0e501d5d003154086ba5e1daa3fc0044dfa2fae95c12ac4a7e0a66ff5beeb9e7",
+      "healthStatus": "WORKING",
+      "verifiedClaims": ["Ridgewood currently presents Sierra Railroad as an unrealized investment."]
+    },
+    {
+      "url": "https://www.sierranorthern.com/",
+      "httpStatus": 403,
+      "finalUrl": "https://www.sierranorthern.com/",
+      "bytes": 2099,
+      "sha256": "04683eb255fc07d5fc4469e7b319a3170b96870c0e6dc842fd0c01d69554f17d",
+      "healthStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verifiedClaims": ["The operating site supports the California rail-network services and footprint."]
+    }
+  ],
+  "allEvidenceUrlsDirectHttps": true,
+  "allSourcesWorkingOrVerified": true,
+  "deadSourceCount": 0
+}

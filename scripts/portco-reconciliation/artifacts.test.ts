@@ -99,6 +99,14 @@ describe("strict, hash-bound reconciliation artifacts", () => {
       afterImageSha256: companyImageSha256(afterImage),
     });
     expect(verifyProposal(proposal)).toEqual(proposal);
+    const insecureAfterImage = structuredClone(afterImage);
+    insecureAfterImage.citations[0].url = "http://acme.example.com/owners";
+    const { proposalSha256: _insecureProposalSha256, ...insecureProposalInput } = proposal;
+    expect(() => finalizeProposal({
+      ...insecureProposalInput,
+      afterImage: insecureAfterImage,
+      afterImageSha256: companyImageSha256(insecureAfterImage),
+    })).toThrow(/after-image citation URLs must use HTTPS/i);
     expect(proposal.relationMerges).toBeUndefined();
     expect(proposal.reviewedSeedRetirements).toBeUndefined();
     const { proposalSha256: _legacyHash, ...legacyProposalInput } = proposal;
