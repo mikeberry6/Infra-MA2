@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0405:northstar-recycling:dba0ea8b",
+  "taskIndex": 405,
+  "companyName": "Northstar Recycling",
+  "outcome": "DEFERRED",
+  "decidedAt": "2026-09-02T01:12:00.000Z",
+  "rationale": "Defer creation of Northstar Recycling while preserving the verified research. Ridgemont's official sources establish its current investment, and Sonoco's filing establishes a former 2.7% interest through December 2024, but the buyer or repurchaser of that interest and the resulting current minority-owner table are not disclosed. Ridgemont's exact stake and investment vehicle are also unresolved.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0405-northstar-recycling/attempt-1/locked-batch-v1-task-snapshot.json",
+    "sha256": "9ba4ce4993dfb7eb912f5ebe1219844f74adc04d2362f6f8c19200210cbd8ff9"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0405-northstar-recycling/attempt-1/application-research-decision-v1.json",
+    "sha256": "495dea6b12bd2d6c442b300aed42d70d2a8030029907ea575768b0ea8e34ea9c"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0405-northstar-recycling/attempt-1/application-source-verification-v1.json",
+    "sha256": "344cb15b5c77c30198b6e2f15b62156e949b1708f2f1d7beb3b294850d2e9b51"
+  },
+  "evidence": [
+    {
+      "url": "https://www.ridgemontep.com/portfolio/northstar-recycling-company/",
+      "purpose": "Official current portfolio evidence for Northstar Recycling."
+    },
+    {
+      "url": "https://www.ridgemontep.com/press-releases/ridgemont-announces-growth-investment-in-northstar-recycling-company/",
+      "purpose": "Official evidence of Ridgemont's 2021 investment alongside Northstar's founders."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/91767/000009176726000008/R12.htm",
+      "purpose": "Official filing evidence for Sonoco's former 2.7% interest and December 2024 disposition."
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "ce2a2700b8bbe405bffcd446ccc4eb7f09a3f01e6d6f29c4d3d5675b04da7127"
+}

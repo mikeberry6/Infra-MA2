@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0405:northstar-recycling:dba0ea8b",
+  "taskIndex": 405,
+  "companyName": "Northstar Recycling",
+  "asOfDate": "2026-09-01",
+  "decision": "DEFERRED",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-02T01:08:00.000Z",
+  "result": {
+    "decision": "DEFERRED",
+    "rationale": "Defer creation of Northstar Recycling while preserving the verified research. Ridgemont's official sources establish its current investment, and Sonoco's filing establishes a former 2.7% interest through December 2024, but the buyer or repurchaser of that interest and the resulting current minority-owner table are not disclosed. Ridgemont's exact stake and investment vehicle are also unresolved.",
+    "evidence": [
+      {
+        "url": "https://www.ridgemontep.com/portfolio/northstar-recycling-company/",
+        "purpose": "Official current portfolio evidence for Northstar Recycling."
+      },
+      {
+        "url": "https://www.ridgemontep.com/press-releases/ridgemont-announces-growth-investment-in-northstar-recycling-company/",
+        "purpose": "Official evidence of Ridgemont's 2021 investment alongside Northstar's founders."
+      },
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/91767/000009176726000008/R12.htm",
+        "purpose": "Official filing evidence for Sonoco's former 2.7% interest and December 2024 disposition."
+      }
+    ],
+    "unresolvedQuestions": [
+      "The buyer or repurchaser of Sonoco's former 2.7% interest.",
+      "The complete current minority-owner table and retained management percentage.",
+      "Ridgemont's exact stake, vehicle and legal closing date."
+    ]
+  },
+  "lineage": {
+    "sourceDecision": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0405-northstar-recycling/attempt-1/research-decision.json",
+    "basis": "The validated research proves the platform and current investment but identifies an unresolved current ownership table."
+  }
+}

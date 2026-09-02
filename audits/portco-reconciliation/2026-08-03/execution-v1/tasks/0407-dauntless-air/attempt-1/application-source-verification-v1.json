@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0407:dauntless-air:af9f18a7",
+  "checkedAt": "2026-09-02T01:08:00.000Z",
+  "method": "Independent direct HTTPS status, redirect, byte-length and content-hash checks.",
+  "sources": [
+    {
+      "url": "https://ridgewoodinfrastructure.com/dauntless-air/",
+      "httpStatus": 200,
+      "finalUrl": "https://ridgewoodinfrastructure.com/dauntless-air/",
+      "bytes": 32724,
+      "sha256": "c5c530268b2f7f65b7d4f714d2918cfcb8cfce07b84da46319f2414be2ed4be2",
+      "healthStatus": "WORKING",
+      "verifiedClaims": ["Ridgewood presents Dauntless Air as a current portfolio investment."]
+    },
+    {
+      "url": "https://www.prnewswire.com/news-releases/ridgewood-infrastructure-acquires-dauntless-air-premier-provider-of-emergency-management-infrastructure-302795749.html",
+      "httpStatus": 200,
+      "finalUrl": "https://www.prnewswire.com/news-releases/ridgewood-infrastructure-acquires-dauntless-air-premier-provider-of-emergency-management-infrastructure-302795749.html",
+      "bytes": 29739,
+      "sha256": "d5e64010303bf2305677be30fe1a15dd21c26de16c55fafe53b97ec1a87b9eeb",
+      "healthStatus": "WORKING",
+      "verifiedClaims": ["The direct release establishes Ridgewood's June 4, 2026 acquisition closing."]
+    },
+    {
+      "url": "https://www.dauntlessair.com/our-fleet",
+      "httpStatus": 200,
+      "finalUrl": "https://www.dauntlessair.com/our-fleet",
+      "bytes": 32943,
+      "sha256": "c25e053afeb3843c7cb946f0eec1dc86b734c95ef4e9513eb0ec5753982d8b9b",
+      "healthStatus": "WORKING",
+      "verifiedClaims": ["Dauntless Air describes its aerial-firefighting operating fleet."]
+    }
+  ],
+  "allEvidenceUrlsDirectHttps": true,
+  "allSourcesWorkingOrVerified": true,
+  "deadSourceCount": 0
+}

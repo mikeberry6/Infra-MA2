@@ -10,8 +10,10 @@ import {
   assertPortCoBatchReceiptMatchesCommit,
   finalizeBatchTerminalDecision,
   finalizePortCoBatchManifest,
+  finalizePortCoTerminalBatchReceipt,
   verifyBatchTerminalDecision,
   verifyPortCoBatchManifest,
+  verifyPortCoTerminalBatchReceipt,
   type PortCoBatchCommitReceipt,
   type ResolvedBatchMember,
 } from "./batch-artifacts";
@@ -240,6 +242,52 @@ describe("PortCo batch artifacts", () => {
     const terminal = members[2];
     if (terminal.kind !== "TERMINAL") throw new Error("fixture mismatch");
     expect(() => verifyBatchTerminalDecision({ ...terminal.decision, rationale: "Changed" })).toThrow(/hash/i);
+  });
+
+  it("binds an all-terminal no-write receipt to its batch", () => {
+    const original = fixtureMembers()[2];
+    if (original.kind !== "TERMINAL") throw new Error("fixture mismatch");
+    const { decisionSha256: _decisionSha256, ...decisionInput } = original.decision;
+    const secondDecision = finalizeBatchTerminalDecision({
+      ...decisionInput,
+      taskId: "ledger:4",
+      taskIndex: 4,
+      companyName: "Second Deferred Candidate",
+      outcome: "DEFERRED",
+      rationale: "Current ownership remains unresolved after direct-source review.",
+    });
+    const allTerminal = manifest([
+      original,
+      { kind: "TERMINAL", decision: secondDecision, path: "audits/decisions/4.json" },
+    ]);
+    const receipt = finalizePortCoTerminalBatchReceipt({
+      schemaVersion: 1,
+      artifactType: "PORTCO_TERMINAL_BATCH_RECEIPT",
+      runId: allTerminal.runId,
+      batchId: allTerminal.batchId,
+      batchSha256: allTerminal.batchSha256,
+      completedAt: FIXTURE_NOW,
+      members: allTerminal.members.map((member) => {
+        if (member.kind !== "TERMINAL") throw new Error("fixture mismatch");
+        return {
+          kind: "TERMINAL" as const,
+          taskId: member.taskId,
+          taskIndex: member.taskIndex,
+          companyName: member.companyName,
+          outcome: member.outcome,
+          decisionSha256: member.decision.sha256,
+        };
+      }),
+      verification: {
+        rootArtifactsVerified: true,
+        noDatabaseWrites: true,
+        noSeedWrites: true,
+        noReleaseRequired: true,
+      },
+    });
+    expect(verifyPortCoTerminalBatchReceipt(receipt, allTerminal)).toEqual(receipt);
+    expect(() => verifyPortCoTerminalBatchReceipt({ ...receipt, completedAt: "2026-08-04T00:00:00.000Z" }, allTerminal))
+      .toThrow(/hash/i);
   });
 });
 

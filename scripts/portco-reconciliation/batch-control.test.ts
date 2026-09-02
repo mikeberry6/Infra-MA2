@@ -70,4 +70,38 @@ describe("one-active PortCo release bundle control", () => {
       at: "2026-08-03T12:05:00.000Z",
     })).toThrow(/already active/i);
   });
+
+  it("completes a verified terminal-only bundle without a release SHA", () => {
+    let ledger = activateExecutionBatch({
+      ledger: createBatchExecutionLedger("portco-2026-08-03", FIXTURE_NOW),
+      batchId: "batch-terminal",
+      taskIds: ["task-1", "task-2"],
+      taskIndexes: [1, 2],
+      at: FIXTURE_NOW,
+    });
+    ledger = transitionExecutionBatch({
+      ledger,
+      batchId: "batch-terminal",
+      to: "READY",
+      at: "2026-08-03T12:01:00.000Z",
+      batchManifest: { path: "audits/batch.json", sha256: "a".repeat(64) },
+    });
+    expect(() => transitionExecutionBatch({
+      ledger,
+      batchId: "batch-terminal",
+      to: "COMPLETED",
+      at: "2026-08-03T12:02:00.000Z",
+      receipt: { path: "audits/receipt.json", sha256: "b".repeat(64) },
+    })).toThrow(/terminal-only/i);
+    ledger = transitionExecutionBatch({
+      ledger,
+      batchId: "batch-terminal",
+      to: "COMPLETED",
+      at: "2026-08-03T12:02:00.000Z",
+      receipt: { path: "audits/receipt.json", sha256: "b".repeat(64) },
+      terminalOnly: true,
+    });
+    expect(ledger.activeBatchId).toBeNull();
+    expect(ledger.batches[0]).toMatchObject({ state: "COMPLETED", releaseSha: null });
+  });
 });

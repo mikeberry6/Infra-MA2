@@ -407,6 +407,33 @@ export const portCoBatchReceiptSchema = z.strictObject({
 
 export type PortCoBatchReceipt = z.infer<typeof portCoBatchReceiptSchema>;
 
+export const portCoTerminalBatchReceiptSchema = z.strictObject({
+  schemaVersion: z.literal(1),
+  artifactType: z.literal("PORTCO_TERMINAL_BATCH_RECEIPT"),
+  runId: nonEmpty,
+  batchId: nonEmpty,
+  batchSha256: sha256Value,
+  completedAt: isoTimestamp,
+  members: z.array(batchReceiptMemberSchema).min(2).max(5),
+  verification: z.strictObject({
+    rootArtifactsVerified: z.literal(true),
+    noDatabaseWrites: z.literal(true),
+    noSeedWrites: z.literal(true),
+    noReleaseRequired: z.literal(true),
+  }),
+  receiptSha256: sha256Value,
+}).superRefine((receipt, context) => {
+  if (receipt.members.some((member) => member.kind !== "TERMINAL")) {
+    context.addIssue({
+      code: "custom",
+      path: ["members"],
+      message: "A terminal-only batch receipt cannot contain mutations",
+    });
+  }
+});
+
+export type PortCoTerminalBatchReceipt = z.infer<typeof portCoTerminalBatchReceiptSchema>;
+
 const batchCommitReceiptMemberSchema = z.discriminatedUnion("kind", [
   z.strictObject({
     kind: z.literal("MUTATION"),
@@ -499,6 +526,46 @@ export function finalizePortCoBatchReceipt(
   const normalized = portCoBatchReceiptSchema.parse({ ...input, receiptSha256: "0".repeat(64) });
   const { receiptSha256: _receiptSha256, ...withoutHash } = normalized;
   return portCoBatchReceiptSchema.parse({ ...withoutHash, receiptSha256: sha256Canonical(withoutHash) });
+}
+
+export function finalizePortCoTerminalBatchReceipt(
+  input: Omit<PortCoTerminalBatchReceipt, "receiptSha256">,
+): PortCoTerminalBatchReceipt {
+  const normalized = portCoTerminalBatchReceiptSchema.parse({ ...input, receiptSha256: "0".repeat(64) });
+  const { receiptSha256: _receiptSha256, ...withoutHash } = normalized;
+  return portCoTerminalBatchReceiptSchema.parse({
+    ...withoutHash,
+    receiptSha256: sha256Canonical(withoutHash),
+  });
+}
+
+export function verifyPortCoTerminalBatchReceipt(
+  input: unknown,
+  manifestInput: PortCoBatchManifest,
+): PortCoTerminalBatchReceipt {
+  const manifest = verifyPortCoBatchManifest(manifestInput);
+  if (manifest.members.some((member) => member.kind !== "TERMINAL")) {
+    throw new Error("A terminal-only receipt requires an all-terminal batch manifest");
+  }
+  const receipt = portCoTerminalBatchReceiptSchema.parse(input);
+  const { receiptSha256, ...withoutHash } = receipt;
+  if (!digestsEqual(receiptSha256, sha256Canonical(withoutHash))) {
+    throw new Error("PortCo terminal batch receipt hash does not match its canonical contents");
+  }
+  if (receipt.runId !== manifest.runId || receipt.batchId !== manifest.batchId
+    || receipt.batchSha256 !== manifest.batchSha256 || receipt.members.length !== manifest.members.length) {
+    throw new Error("PortCo terminal batch receipt identity does not match the manifest");
+  }
+  for (const [index, member] of manifest.members.entries()) {
+    const observed = receipt.members[index];
+    if (member.kind !== "TERMINAL" || observed.kind !== "TERMINAL"
+      || observed.taskId !== member.taskId || observed.taskIndex !== member.taskIndex
+      || observed.companyName !== member.companyName || observed.outcome !== member.outcome
+      || observed.decisionSha256 !== member.decision.sha256) {
+      throw new Error(`PortCo terminal batch receipt member ${index + 1} does not match`);
+    }
+  }
+  return receipt;
 }
 
 export function verifyPortCoBatchReceipt(input: unknown, manifestInput: PortCoBatchManifest): PortCoBatchReceipt {

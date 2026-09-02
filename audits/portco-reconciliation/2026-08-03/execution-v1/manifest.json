@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-09-02T00:44:00.000Z",
+  "updatedAt": "2026-09-02T01:16:00.000Z",
   "runStatus": "IDLE",
   "activeTaskId": null,
   "source": {
@@ -38578,20 +38578,26 @@
       "managerIndex": 84,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "4d022c983c140df0732d58e4a78f65cf04581e9c60cca0f4cb5a27ae805673d6",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
+      "status": "DEFERRED",
+      "attempts": 1,
+      "startedAt": "2026-09-02T00:52:00.000Z",
+      "updatedAt": "2026-09-02T01:16:00.000Z",
+      "completedAt": "2026-09-02T01:16:00.000Z",
+      "exceptionReason": "Defer creation of National Power while preserving the verified research. Ridgemont's current portfolio page and 2023 recapitalization release establish a current infrastructure-services investment, but Eddie Youngblood's post-recapitalization interest, Ridgemont's exact stake and co-investors, and the complete current cap table remain unresolved. Creating an ownership record would therefore require an unsupported inference.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "49012f48c3b90dd1b1cefbce0180348dbd176a118fe8137867863eefa34c03f8",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0404-national-power/attempt-1/locked-batch-v1-task-snapshot.json",
+          "sha256": "49012f48c3b90dd1b1cefbce0180348dbd176a118fe8137867863eefa34c03f8"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0404-0408-v1/decisions/0404-national-power.json",
+          "sha256": "b9fcf22ac3ff54e546f34abcec684537071dd7101fdd23664e1160247a225f69"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -38605,6 +38611,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-02T01:16:00.000Z",
+          "reason": "Defer creation of National Power while preserving the verified research. Ridgemont's current portfolio page and 2023 recapitalization release establish a current infrastructure-services investment, but Eddie Youngblood's post-recapitalization interest, Ridgemont's exact stake and co-investors, and the complete current cap table remain unresolved. Creating an ownership record would therefore require an unsupported inference.",
+          "taskSnapshotSha256": "49012f48c3b90dd1b1cefbce0180348dbd176a118fe8137867863eefa34c03f8",
+          "evidenceSha256": [
+            "49012f48c3b90dd1b1cefbce0180348dbd176a118fe8137867863eefa34c03f8",
+            "7ad67c2b871775596df12011a1a15a1826113b1ec1509ad76bd23cbbcff27ad4",
+            "b9fcf22ac3ff54e546f34abcec684537071dd7101fdd23664e1160247a225f69",
+            "e13f8d5e5e91bf0059312965522860cf9d3d3065290a2d2747e0cc96e3e22a2f"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -38616,20 +38637,26 @@
       "managerIndex": 84,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "fea547cb9749ff4c9edfa131822ba2a4fd8b1d294599717b3a57f310c1ba0474",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
+      "status": "DEFERRED",
+      "attempts": 1,
+      "startedAt": "2026-09-02T00:52:00.000Z",
+      "updatedAt": "2026-09-02T01:16:00.000Z",
+      "completedAt": "2026-09-02T01:16:00.000Z",
+      "exceptionReason": "Defer creation of Northstar Recycling while preserving the verified research. Ridgemont's official sources establish its current investment, and Sonoco's filing establishes a former 2.7% interest through December 2024, but the buyer or repurchaser of that interest and the resulting current minority-owner table are not disclosed. Ridgemont's exact stake and investment vehicle are also unresolved.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "65217563fc698b6bf8d7b22ca3d189f93c566982769fe2cb096bd754e6f472d3",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0405-northstar-recycling/attempt-1/locked-batch-v1-task-snapshot.json",
+          "sha256": "65217563fc698b6bf8d7b22ca3d189f93c566982769fe2cb096bd754e6f472d3"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0404-0408-v1/decisions/0405-northstar-recycling.json",
+          "sha256": "ce2a2700b8bbe405bffcd446ccc4eb7f09a3f01e6d6f29c4d3d5675b04da7127"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -38643,6 +38670,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-02T01:16:00.000Z",
+          "reason": "Defer creation of Northstar Recycling while preserving the verified research. Ridgemont's official sources establish its current investment, and Sonoco's filing establishes a former 2.7% interest through December 2024, but the buyer or repurchaser of that interest and the resulting current minority-owner table are not disclosed. Ridgemont's exact stake and investment vehicle are also unresolved.",
+          "taskSnapshotSha256": "65217563fc698b6bf8d7b22ca3d189f93c566982769fe2cb096bd754e6f472d3",
+          "evidenceSha256": [
+            "65217563fc698b6bf8d7b22ca3d189f93c566982769fe2cb096bd754e6f472d3",
+            "7ad67c2b871775596df12011a1a15a1826113b1ec1509ad76bd23cbbcff27ad4",
+            "ce2a2700b8bbe405bffcd446ccc4eb7f09a3f01e6d6f29c4d3d5675b04da7127",
+            "e13f8d5e5e91bf0059312965522860cf9d3d3065290a2d2747e0cc96e3e22a2f"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -38654,20 +38696,26 @@
       "managerIndex": 84,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "33ad8833e9cc348f3c2daf1393e7f68558354aed164dbe140d0cb4b492006a9f",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
+      "status": "DEFERRED",
+      "attempts": 1,
+      "startedAt": "2026-09-02T00:52:00.000Z",
+      "updatedAt": "2026-09-02T01:16:00.000Z",
+      "completedAt": "2026-09-02T01:16:00.000Z",
+      "exceptionReason": "Defer creation of Sparus Holdings while preserving the verified research. Ridgemont's official portfolio and acquisition releases prove its March 2021 investment and the company's current platform status, but management rollover, the complete current holder table, Ridgemont's exact stake and vehicle, and any deal-specific PNC equity component remain unresolved.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "4f45144fb7110bfe3cd67c32539f54851eb174526519446692ef356e3a6c4dce",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0406-sparus-holdings/attempt-1/locked-batch-v1-task-snapshot.json",
+          "sha256": "4f45144fb7110bfe3cd67c32539f54851eb174526519446692ef356e3a6c4dce"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0404-0408-v1/decisions/0406-sparus-holdings.json",
+          "sha256": "b71770c0f673b9ddf91df195f15a82572661d5d7128e94abaea2456aa4dbb5e0"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -38681,6 +38729,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-02T01:16:00.000Z",
+          "reason": "Defer creation of Sparus Holdings while preserving the verified research. Ridgemont's official portfolio and acquisition releases prove its March 2021 investment and the company's current platform status, but management rollover, the complete current holder table, Ridgemont's exact stake and vehicle, and any deal-specific PNC equity component remain unresolved.",
+          "taskSnapshotSha256": "4f45144fb7110bfe3cd67c32539f54851eb174526519446692ef356e3a6c4dce",
+          "evidenceSha256": [
+            "4f45144fb7110bfe3cd67c32539f54851eb174526519446692ef356e3a6c4dce",
+            "7ad67c2b871775596df12011a1a15a1826113b1ec1509ad76bd23cbbcff27ad4",
+            "b71770c0f673b9ddf91df195f15a82572661d5d7128e94abaea2456aa4dbb5e0",
+            "e13f8d5e5e91bf0059312965522860cf9d3d3065290a2d2747e0cc96e3e22a2f"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -38692,20 +38755,26 @@
       "managerIndex": 85,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "c4cea7f435bbe03febf4ced7a9cb8e5c17b613a2f561d41f1533946e9033c8ac",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
+      "status": "DEFERRED",
+      "attempts": 1,
+      "startedAt": "2026-09-02T00:52:00.000Z",
+      "updatedAt": "2026-09-02T01:16:00.000Z",
+      "completedAt": "2026-09-02T01:16:00.000Z",
+      "exceptionReason": "Defer creation of Dauntless Air while preserving the verified research. Ridgewood and the acquisition announcement prove the June 4, 2026 acquisition of the U.S. emergency-management aviation platform, but management equity or seller rollover, Ridgewood's vehicle and stake, co-investors, and the post-closing holdco structure remain unresolved.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "1428b78a9c65541309cd1440a78328b1f562aa04042a5e1138079e1b064f0c87",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0407-dauntless-air/attempt-1/locked-batch-v1-task-snapshot.json",
+          "sha256": "1428b78a9c65541309cd1440a78328b1f562aa04042a5e1138079e1b064f0c87"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0404-0408-v1/decisions/0407-dauntless-air.json",
+          "sha256": "bc5ce57f7906ae723dd1e26bcde722ae6cfa325675966a21b1f06bb31da745b1"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -38719,6 +38788,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-02T01:16:00.000Z",
+          "reason": "Defer creation of Dauntless Air while preserving the verified research. Ridgewood and the acquisition announcement prove the June 4, 2026 acquisition of the U.S. emergency-management aviation platform, but management equity or seller rollover, Ridgewood's vehicle and stake, co-investors, and the post-closing holdco structure remain unresolved.",
+          "taskSnapshotSha256": "1428b78a9c65541309cd1440a78328b1f562aa04042a5e1138079e1b064f0c87",
+          "evidenceSha256": [
+            "1428b78a9c65541309cd1440a78328b1f562aa04042a5e1138079e1b064f0c87",
+            "7ad67c2b871775596df12011a1a15a1826113b1ec1509ad76bd23cbbcff27ad4",
+            "bc5ce57f7906ae723dd1e26bcde722ae6cfa325675966a21b1f06bb31da745b1",
+            "e13f8d5e5e91bf0059312965522860cf9d3d3065290a2d2747e0cc96e3e22a2f"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -38730,20 +38814,26 @@
       "managerIndex": 85,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "6c95a825c1f643f472824f896639f0ef2209ffe2ffb54cfbd25e96abeabcc82b",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
+      "status": "DEFERRED",
+      "attempts": 1,
+      "startedAt": "2026-09-02T00:52:00.000Z",
+      "updatedAt": "2026-09-02T01:16:00.000Z",
+      "completedAt": "2026-09-02T01:16:00.000Z",
+      "exceptionReason": "Defer the MN8 Energy ownership correction while preserving the verified research. Direct sources support Ridgewood's March 28, 2024 $125 million convertible-preferred investment through WSI Fund II Holdings and the signed but unclosed Greenbacker acquisition. The complete current common-owner table and stakes remain unresolved, so applying a partial ownership after-image would risk displacing valid active owners before legal closing.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "ac611d7be4161af04d94f7825797faced8145ae986ff9befea7132fb390eb884",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0408-mn8-energy/attempt-1/locked-batch-v1-task-snapshot.json",
+          "sha256": "ac611d7be4161af04d94f7825797faced8145ae986ff9befea7132fb390eb884"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0404-0408-v1/decisions/0408-mn8-energy.json",
+          "sha256": "1683ebad674b6cc82b74cd7951bd9ad47be236eb2334e8ed92e54a137055a775"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -38757,6 +38847,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-02T01:16:00.000Z",
+          "reason": "Defer the MN8 Energy ownership correction while preserving the verified research. Direct sources support Ridgewood's March 28, 2024 $125 million convertible-preferred investment through WSI Fund II Holdings and the signed but unclosed Greenbacker acquisition. The complete current common-owner table and stakes remain unresolved, so applying a partial ownership after-image would risk displacing valid active owners before legal closing.",
+          "taskSnapshotSha256": "ac611d7be4161af04d94f7825797faced8145ae986ff9befea7132fb390eb884",
+          "evidenceSha256": [
+            "1683ebad674b6cc82b74cd7951bd9ad47be236eb2334e8ed92e54a137055a775",
+            "7ad67c2b871775596df12011a1a15a1826113b1ec1509ad76bd23cbbcff27ad4",
+            "ac611d7be4161af04d94f7825797faced8145ae986ff9befea7132fb390eb884",
+            "e13f8d5e5e91bf0059312965522860cf9d3d3065290a2d2747e0cc96e3e22a2f"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -42328,5 +42433,5 @@
       ]
     }
   ],
-  "manifestSha256": "f1461328f3e3afe67a47849dce656706236f0897f0412c3ad7559d0e630f795f"
+  "manifestSha256": "ab8cff62d7311c1729f1f06954ecaf7908f1ecfdde89550dff9aa7d1cfb3aff2"
 }

@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0404:national-power:872e462e",
+  "taskIndex": 404,
+  "companyName": "National Power",
+  "asOfDate": "2026-09-01",
+  "decision": "DEFERRED",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-02T01:08:00.000Z",
+  "result": {
+    "decision": "DEFERRED",
+    "rationale": "Defer creation of National Power while preserving the verified research. Ridgemont's current portfolio page and 2023 recapitalization release establish a current infrastructure-services investment, but Eddie Youngblood's post-recapitalization interest, Ridgemont's exact stake and co-investors, and the complete current cap table remain unresolved. Creating an ownership record would therefore require an unsupported inference.",
+    "evidence": [
+      {
+        "url": "https://www.ridgemontep.com/portfolio/national-power/",
+        "purpose": "Official current portfolio evidence for National Power and its critical-power infrastructure-services business."
+      },
+      {
+        "url": "https://www.ridgemontep.com/press-releases/ridgemont-equity-partners-leads-recapitalization-to-support-national-powers-growth/",
+        "purpose": "Official evidence of Ridgemont's 2023 recapitalization alongside management."
+      },
+      {
+        "url": "https://www.ridgemontep.com/wp-content/uploads/REP-Brochure-4.8.26.pdf",
+        "purpose": "Official current Ridgemont brochure identifying National Power as a live investment."
+      }
+    ],
+    "unresolvedQuestions": [
+      "Whether Eddie Youngblood's 2019 minority interest continued or changed in the 2023 recapitalization.",
+      "Ridgemont's exact stake, co-investors and complete current cap table.",
+      "The deal-specific investment vehicle and legal closing date."
+    ]
+  },
+  "lineage": {
+    "sourceDecision": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0404-national-power/attempt-1/research-decision.json",
+    "basis": "The validated company-level research proves the platform and current investment but identifies unresolved active ownership that blocks a safe after-image."
+  }
+}

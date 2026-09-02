@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0408:mn8-energy:3c6d0235",
+  "checkedAt": "2026-09-02T01:08:00.000Z",
+  "method": "Independent direct HTTPS status, redirect, byte-length and content-hash checks; SEC anti-automation responses retained as browser-blocked but previously verified direct filing evidence.",
+  "sources": [
+    {
+      "url": "https://ridgewoodinfrastructure.com/mn8-energy/",
+      "httpStatus": 200,
+      "finalUrl": "https://ridgewoodinfrastructure.com/mn8-energy/",
+      "bytes": 32778,
+      "sha256": "6eac8bc5457a3a08710b976ae5207be24713476b18d44bb544de77147f4f8207",
+      "healthStatus": "WORKING",
+      "verifiedClaims": ["Ridgewood presents MN8 Energy as a current portfolio investment."]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/2136853/000162828026055300/exhibit1033-sx4.htm",
+      "httpStatus": 403,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/2136853/000162828026055300/exhibit1033-sx4.htm",
+      "bytes": 2163,
+      "sha256": "d0db0bd80005c1767fa52d6883f15782815dc1a0a3ee011d5b2bc5097eefdaf3",
+      "healthStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verifiedClaims": ["The Ridgewood investor-rights agreement identifies WSI Fund II Holdings and is dated March 28, 2024."]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1563922/000162828026049209/mn8grec8-kx425.htm",
+      "httpStatus": 403,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1563922/000162828026049209/mn8grec8-kx425.htm",
+      "bytes": 2165,
+      "sha256": "577a4510c2fa37ff0c9562cf58666a8c7115f3e69424caff17bac40f3d3a9ad5",
+      "healthStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verifiedClaims": ["Official transaction materials describe Greenbacker's acquisition as signed and subject to closing conditions."]
+    }
+  ],
+  "allEvidenceUrlsDirectHttps": true,
+  "allSourcesWorkingOrVerified": true,
+  "deadSourceCount": 0
+}

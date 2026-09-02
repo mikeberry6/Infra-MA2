@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0406:sparus-holdings:85d26c81",
+  "checkedAt": "2026-09-02T01:08:00.000Z",
+  "method": "Independent direct HTTPS status, redirect, byte-length and content-hash checks.",
+  "sources": [
+    {
+      "url": "https://www.ridgemontep.com/portfolio/sparus-holdings/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ridgemontep.com/portfolio/sparus-holdings/",
+      "bytes": 19552,
+      "sha256": "c48f73175ce44e5a99b3ef217893fd7f5bc8fab54f77bb8bc0627211215b456c",
+      "healthStatus": "WORKING",
+      "verifiedClaims": ["Ridgemont presents Sparus Holdings as a current portfolio company."]
+    },
+    {
+      "url": "https://www.ridgemontep.com/press-releases/ridgemont-equity-partners-acquires-sparus-holdings/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ridgemontep.com/press-releases/ridgemont-equity-partners-acquires-sparus-holdings/",
+      "bytes": 19521,
+      "sha256": "8122678192721887c9bafd840744fb02a5bc24e8e09443e61d7087b71fe8c0c5",
+      "healthStatus": "WORKING",
+      "verifiedClaims": ["Ridgemont announced the March 2021 acquisition of Sparus Holdings."]
+    }
+  ],
+  "allEvidenceUrlsDirectHttps": true,
+  "allSourcesWorkingOrVerified": true,
+  "deadSourceCount": 0
+}
