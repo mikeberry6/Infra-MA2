@@ -1,0 +1,101 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:batch:apply
+> npx tsx scripts/portco-reconciliation/batch-apply-cli.ts --batch-manifest=audits/portco-reconciliation/2026-08-23/batches/batch-0424-0428-v1/batch-manifest.json --batch-sha256=fbfa50f4ff203293dd5a8ac7ea1fe5e3f0d17f50b0db69f64e461307f67a4b6e
+
+(node:3604) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "BATCH_DRY_RUN",
+  "batchId": "batch-0424-0428-v1",
+  "batchSha256": "fbfa50f4ff203293dd5a8ac7ea1fe5e3f0d17f50b0db69f64e461307f67a4b6e",
+  "databaseWrites": false,
+  "seedWrites": false,
+  "plans": [
+    {
+      "companyName": "KAPS",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to aliases, description, lastVerifiedAt, citations."
+        },
+        {
+          "kind": "ADD_OWNER",
+          "relationIds": [],
+          "detail": "Add 1 approved ownership period(s)."
+        },
+        {
+          "kind": "RETIRE_OWNERSHIP",
+          "relationIds": [
+            "cmrxpka4r029hivhet9r7jm95"
+          ],
+          "detail": "Retire 1 ownership period(s) without deleting history."
+        }
+      ],
+      "changedFields": [
+        "aliases",
+        "citations",
+        "description",
+        "lastVerifiedAt",
+        "ownershipPeriods"
+      ],
+      "retiredCompanyIds": []
+    },
+    {
+      "companyName": "Lineage, Inc.",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to name, aliases, description, website, headquarters, lastVerifiedAt, ownershipPeriods, citations."
+        },
+        {
+          "kind": "ADD_OWNER",
+          "relationIds": [],
+          "detail": "Add 1 approved ownership period(s)."
+        }
+      ],
+      "changedFields": [
+        "aliases",
+        "citations",
+        "description",
+        "headquarters",
+        "lastVerifiedAt",
+        "name",
+        "ownershipPeriods",
+        "website"
+      ],
+      "retiredCompanyIds": []
+    },
+    {
+      "companyName": "LOGISTEC",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to aliases, subsector, description, lastVerifiedAt, ownershipPeriods, citations."
+        },
+        {
+          "kind": "ADD_OWNER",
+          "relationIds": [],
+          "detail": "Add 1 approved ownership period(s)."
+        },
+        {
+          "kind": "ADD_PENDING_TRANSACTION",
+          "relationIds": [],
+          "detail": "Add 1 signed pending ownership transaction(s)."
+        }
+      ],
+      "changedFields": [
+        "aliases",
+        "citations",
+        "description",
+        "lastVerifiedAt",
+        "ownershipPeriods",
+        "pendingOwnershipTransactions",
+        "subsector"
+      ],
+      "retiredCompanyIds": []
+    }
+  ]
+}
