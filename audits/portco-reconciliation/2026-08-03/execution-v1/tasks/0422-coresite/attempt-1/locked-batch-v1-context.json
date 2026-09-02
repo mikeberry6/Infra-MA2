@@ -1,0 +1,268 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0422:coresite:28c96afd",
+  "taskIndex": 422,
+  "companyName": "CoreSite",
+  "generatedAt": "2026-09-02T02:51:43.617Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0422-coresite/attempt-1/locked-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 422,
+    "taskId": "ledger:0422:coresite:28c96afd",
+    "canonicalKey": "coresite|united-states",
+    "companyName": "CoreSite",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 90,
+    "managers": [
+      "Stonepeak"
+    ],
+    "actionScopes": {
+      "company": [
+        "CORRECT_COMPANY"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "090-stonepeak:holding:005:coresite-american-tower-u-s-data-center-business"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjnhi019pivhepj62e5aa"
+    ],
+    "seedKeys": [
+      "coresite|United States"
+    ],
+    "evidenceUrls": [
+      "https://stonepeak.com/news/american-tower-partners-with-stonepeak-in-u-s-data-center-business",
+      "https://www.coresite.com/news/stonepeak-upsizes-invesment-in-american-towers-data-center-business"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; CORRECT_COMPANY requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjnhi019pivhepj62e5aa",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "coresite|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjnhi019pivhepj62e5aa",
+    "name": "CoreSite",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Interconnection-focused data centers",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "CoreSite develops and operates interconnection-focused data centers in major U.S. metros. Its customers include enterprises, cloud platforms, network operators, and digital service providers that contract for colocation, power, and cross-connect capacity. The business is highly asset intensive because it is built around owned and leased data center facilities with recurring revenue from long-term customer contracts. Public disclosures describe a national platform of connected campuses and interconnection ecosystems within American Tower's U.S. data center business. American Tower acquired CoreSite in 2021, and Stonepeak entered the platform in 2022 through a minority investment that was later upsized to approximately 36%.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Multi-state United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpka25029civhe0m654niq",
+        "managerName": "Stonepeak",
+        "organizationName": "Stonepeak",
+        "fundName": "Stonepeak Infrastructure Fund IV",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmp5t056rivheyvfo25id",
+        "date": "Nov 2021",
+        "event": "American Tower completed its acquisition of CoreSite before the 2022 minority investment.",
+        "category": "FINANCING",
+        "sortDate": "2021-11-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmp6e056sivhekya77peb",
+        "date": "Aug 2022",
+        "event": "Stonepeak completed its initial investment in American Tower's CoreSite data center platform.",
+        "category": "FINANCING",
+        "sortDate": "2022-08-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmp71056tivhehfruurin",
+        "date": "Oct 2022",
+        "event": "American Tower and CoreSite announced that Stonepeak had increased its investment to approximately 36%.",
+        "category": "FINANCING",
+        "sortDate": "2022-10-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsruz0d3mivhe8ctxi7hw",
+        "label": "Coresite — CoreSite",
+        "url": "https://www.coresite.com/about",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Coresite company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpsrvz0d3oivhe7xg0lxka",
+        "label": "Announcement date source — Stonepeak — CoreSite",
+        "url": "https://stonepeak.com/news/american-tower-partners-with-stonepeak-in-u-s-data-center-business",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Stonepeak transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsrx50d3qivhe5f15roh1",
+        "label": "Close date source — Stonepeak — CoreSite",
+        "url": "https://www.coresite.com/news/stonepeak-upsizes-invesment-in-american-towers-data-center-business",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Stonepeak closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsry90d3sivheqpnmgqin",
+        "label": "Americantower — CoreSite",
+        "url": "https://www.americantower.com/us/data-centers.html",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Americantower — CoreSite",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "CoreSite",
+    "investmentFirm": "Stonepeak",
+    "sector": "Digital",
+    "subsector": "Interconnection-focused data centers",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "CoreSite develops and operates interconnection-focused data centers in major U.S. metros. Its customers include enterprises, cloud platforms, network operators, and digital service providers that contract for colocation, power, and cross-connect capacity. The business is highly asset intensive because it is built around owned and leased data center facilities with recurring revenue from long-term customer contracts. Public disclosures describe a national platform of connected campuses and interconnection ecosystems within American Tower's U.S. data center business. American Tower acquired CoreSite in 2021, and Stonepeak entered the platform in 2022 through a minority investment that was later upsized to approximately 36%.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2022,
+    "headquarters": "Multi-state United States",
+    "milestones": [
+      {
+        "date": "Nov 2021",
+        "event": "American Tower completed its acquisition of CoreSite before the 2022 minority investment.",
+        "category": "Financing"
+      },
+      {
+        "date": "Aug 2022",
+        "event": "Stonepeak completed its initial investment in American Tower's CoreSite data center platform.",
+        "category": "Financing"
+      },
+      {
+        "date": "Oct 2022",
+        "event": "American Tower and CoreSite announced that Stonepeak had increased its investment to approximately 36%.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Coresite — CoreSite",
+        "url": "https://www.coresite.com/about",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Announcement date source — Stonepeak — CoreSite",
+        "url": "https://stonepeak.com/news/american-tower-partners-with-stonepeak-in-u-s-data-center-business",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Close date source — Stonepeak — CoreSite",
+        "url": "https://www.coresite.com/news/stonepeak-upsizes-invesment-in-american-towers-data-center-business",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Americantower — CoreSite",
+        "url": "https://www.americantower.com/us/data-centers.html",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Stonepeak",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2022,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmsdi42he00547h4sv1rpo4jg",
+        "fundName": "Stonepeak Infrastructure Fund IV",
+        "managerId": "cmrxpide6003hivhe1g17rhjr",
+        "updatedAt": "2026-08-03T17:26:38.738Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpide6003hivhe1g17rhjr",
+        "name": "Stonepeak",
+        "updatedAt": "2026-07-23T16:09:24.559Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0422:coresite:28c96afd",
+    "taskIndex": 422,
+    "canonicalKey": "coresite|united-states",
+    "capturedAt": "2026-09-02T02:51:43.617Z",
+    "databaseRevision": "revision:42d626f4477f03a459ffcd8a6bb8e282d4145e9b9ac6c5c6774bcceb9d16c70c",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "b009a0aac912b92f72b81beabb1dc5877ba9a4a027671a59a0e54f25bcc98e1b",
+    "productionSnapshotSha256": "ca8b3cf4a8388a8f746b2388783da3d5a3d58cfe4e6c206aab09aa3840eeb03a",
+    "targetCompanySnapshotSha256": "854d9e6bbbb4774f4e80ff84661f4ef6fbad77ec70fc44bf5b5c0b5f5af8b84d",
+    "seedEntrySha256": "8a97e5267eed2b05b8f645896d4beb5f25397601f47959542ca435bb8a966b2e",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "89117d9ccba63476d50e338a6819ca0b7abb5dc3ef7b252bdde610e12f34c5b8",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "f96ba818a661cf5681709f2a54e67814318f23c6db6f64998db0bfb58ebd5f36",
+      "organizationsSha256": "e8297eb9e5894678d9f04b1a861726fe3c63b2433e6430ea5f214025943bcba5",
+      "citationsSha256": "a5773e9562169879155f6302dfbfd9177294f932f63df594ddbb756b19d4ae7b",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "c0f604477aa9832bfc4cb97408aee20ba5db2b8441a9f381ed7a690cd9f0017a",
+    "stateSha256": "2f4c1b637cda6829fd7bdb3e55959178b1ae25ac267bfb98dcc088ff5ff9b032",
+    "taskSnapshotSha256": "44f7ebb8f471efaea28d319d1aefd9db8a029a36d894b17903a2a697f0b7442a"
+  },
+  "contextSha256": "adb1518b0c7b7209f6dbe995a641ffc3d584e36a7c38ad6a5bab2b1a57110142"
+}

@@ -1,0 +1,208 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0419:pinnacle-gas-services-llc:94e9c671",
+  "taskIndex": 419,
+  "asOfDate": "2026-09-02",
+  "generatedAt": "2026-09-02T02:59:02.000Z",
+  "canonicalKey": "pinnacle-gas-services-llc|united-states",
+  "companyName": "Pinnacle Gas Services LLC",
+  "actions": [
+    "CREATE_COMPANY",
+    "ADD_OWNER"
+  ],
+  "sourceHoldingIds": [
+    "088-sixth-street:holding:001:pinnacle-gas-services-llc"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Create one canonical Pinnacle Gas Services platform. Record Comstock's controlling 73% and Sixth Street-managed Starville's 27% noncontrolling common equity after the June 15, 2026 closing, and preserve Quantum/Cactus as the redeemed former preferred investor.",
+  "evidence": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/23194/000119312526326260/crk-20260630.htm",
+      "purpose": "Current ownership and closing evidence.",
+      "supports": [
+        "Comstock retained 73% and control",
+        "Starville acquired 27% on June 15, 2026",
+        "Cactus preferred units were redeemed"
+      ]
+    },
+    {
+      "url": "https://sixthstreet.com/investment_announce/comstock-announces-600-million-strategic-investment-by-sixth-street-in-pinnacle-gas-services/",
+      "purpose": "Manager attribution and infrastructure-equity basis.",
+      "supports": [
+        "Sixth Street closed a $600 million equity investment",
+        "Pinnacle is an East Texas midstream infrastructure platform"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/23194/000095017024016532/crk-20231231.htm",
+      "purpose": "Formation and predecessor-owner evidence.",
+      "supports": [
+        "Pinnacle was formed in 2023",
+        "Quantum/Cactus held the former preferred interest"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "2dabef8dad03d122556973a3c342dabca881bd02efc8e5d179062a8784edfb49",
+  "currentCompanySnapshotSha256": null,
+  "executionLock": {
+    "taskSnapshotSha256": "bdc697f249a48b5e01b483c56cb604f102966b64d7fddcd49a05effe4de7c95e",
+    "taskStateSha256": "93eac09c6d0ffa9a684fa5312079ec96f9083eaf92ea757724e99ecbb7ea5931",
+    "taskDependencySha256": "7162f023548431ed1fed51e43a93e8e1e0a46df9edc0adf314307e96f61f1312",
+    "seedEntrySha256": null,
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [],
+    "organizations": [],
+    "redirects": []
+  },
+  "beforeImage": null,
+  "beforeImageSha256": null,
+  "afterImage": {
+    "id": null,
+    "name": "Pinnacle Gas Services LLC",
+    "aliases": [
+      "Pinnacle",
+      "PGS",
+      "Pinnacle System"
+    ],
+    "sector": "MIDSTREAM",
+    "subsector": "Natural gas gathering, transportation and treating",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Pinnacle Gas Services LLC owns and operates an East Texas midstream platform serving the Western Haynesville, including high-pressure natural-gas gathering and transportation pipelines and treating facilities. Comstock Resources retained operating control and a 73% common interest after Sixth Street-managed Starville Evergreen Holdings closed a $600 million investment for a 27% noncontrolling common interest on June 15, 2026. The same closing redeemed the former Quantum Capital Solutions/Cactus Midstream preferred interest.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2023,
+    "headquarters": "Frisco, Texas",
+    "lastVerifiedAt": "2026-09-02T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": null,
+        "managerName": "Comstock Resources",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Comstock Gas Services LLC",
+        "stake": "73% controlling common interest from June 15, 2026",
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Sixth Street",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Starville Evergreen Holdings LLC",
+        "stake": "27% noncontrolling Class A-2 common interest",
+        "investmentYear": 2026,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Quantum Capital Solutions",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Cactus Midstream (II) LLC",
+        "stake": "Former Class B preferred interest; exact percentage not publicly disclosed",
+        "investmentYear": 2023,
+        "exitYear": 2026,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": null,
+        "date": "Oct 31, 2023",
+        "event": "Comstock formed Pinnacle with Quantum/Cactus and contributed the initial East Texas midstream system.",
+        "category": "FOUNDING",
+        "sortDate": "2023-10-31T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/23194/000095017024016532/crk-20231231.htm"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Jun 15, 2026",
+        "event": "Sixth Street-managed Starville invested $600 million for a 27% noncontrolling common interest; Comstock retained 73% and control, and the Quantum/Cactus preferred interest was redeemed.",
+        "category": "FINANCING",
+        "sortDate": "2026-06-15T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/23194/000119312526326260/crk-20260630.htm",
+          "https://sixthstreet.com/investment_announce/comstock-announces-600-million-strategic-investment-by-sixth-street-in-pinnacle-gas-services/"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Aug 2026",
+        "event": "Comstock continued to report the 73%/27% ownership split and an operating system with 246 in-service pipeline miles and two treating plants.",
+        "category": "EXPANSION",
+        "sortDate": "2026-08-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://investors.comstockresources.com/static-files/5a596a22-02f6-4b49-a9cc-93ecfe0179c0"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": null,
+        "label": "Comstock Resources — Q2 2026 Form 10-Q",
+        "url": "https://www.sec.gov/Archives/edgar/data/23194/000119312526326260/crk-20260630.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "June 2026 closing, ownership split, control and Cactus redemption",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "Sixthstreet",
+        "url": "https://sixthstreet.com/investment_announce/comstock-announces-600-million-strategic-investment-by-sixth-street-in-pinnacle-gas-services/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Sixth Street attribution and closed 27% equity investment",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Comstock Resources — 2023 Form 10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/23194/000095017024016532/crk-20231231.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Pinnacle formation, contributed assets and former preferred investor",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Comstock Resources — August 2026 presentation",
+        "url": "https://investors.comstockresources.com/static-files/5a596a22-02f6-4b49-a9cc-93ecfe0179c0",
+        "sourceType": "PRESENTATION",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Latest disclosed ownership split and operating footprint",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "ab7cfb96e2442129a9d9bd90638209d6fcbea58645f42c87e04deb769970c97b",
+  "proposalSha256": "594a351175b4b2361ef000e71dd5c833f62f74e25cd916ef78af7cc48c781bcd"
+}

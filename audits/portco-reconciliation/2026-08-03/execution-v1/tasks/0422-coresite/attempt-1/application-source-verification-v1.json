@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0422:coresite:28c96afd",
+  "checkedAt": "2026-09-02T02:59:02.000Z",
+  "method": "Independent direct HTTPS status, redirect, byte-length and content-hash checks plus current ownership and conversion search.",
+  "sources": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1053507/000105350726000133/amt-20260630.htm",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1053507/000105350726000133/amt-20260630.htm",
+      "bytes": 2592125,
+      "sha256": "2657fe95bce830e7b39e7e837d1032bbd0870431db6f85fd23203a19251a5988",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "American Tower held 71% and Stonepeak held 29% of common equity at June 30, 2026.",
+        "Stonepeak also held all outstanding mandatory convertible preferred interests."
+      ]
+    },
+    {
+      "url": "https://stonepeak.com/news/american-tower-partners-with-stonepeak-in-u-s-data-center-business",
+      "httpStatus": 200,
+      "finalUrl": "https://stonepeak.com/news/american-tower-partners-with-stonepeak-in-u-s-data-center-business",
+      "bytes": 39676,
+      "sha256": "b2345a5861d3b912d54fd9a49f2aa76ec7ac1e7ed5d4e877a93d44f7de498250",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Stonepeak invested in American Tower's full U.S. data-center business and received governance rights."
+      ]
+    },
+    {
+      "url": "https://stonepeak.com/news/stonepeak-upsizes-investment-in-american-towers-data-center-business",
+      "httpStatus": 200,
+      "finalUrl": "https://stonepeak.com/news/stonepeak-upsizes-investment-in-american-towers-data-center-business",
+      "bytes": 36873,
+      "sha256": "8aeca0b04b220c2765c76cfd1ba8b3e1b33dc25835787564dd82917882432bb4",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "The $570 million upsize closed on October 20, 2022 and brought fully converted economics to approximately 36%."
+      ]
+    },
+    {
+      "url": "https://www.coresite.com/about",
+      "httpStatus": 200,
+      "finalUrl": "https://www.coresite.com/about",
+      "bytes": 181440,
+      "sha256": "11662e95811d3c66e144393eaaf197780c46e1febb2a77722879dbf459034805",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "CoreSite remains the operating brand for the U.S. data-center platform."
+      ]
+    }
+  ],
+  "conversionSearch": "No primary-source confirmation of the expected August 2026 mandatory preferred conversion was identified through September 2, 2026; the last-reported common and preferred structure is retained explicitly.",
+  "allEvidenceUrlsDirectHttps": true,
+  "allSourcesWorkingOrVerified": true,
+  "deadSourceCount": 0
+}

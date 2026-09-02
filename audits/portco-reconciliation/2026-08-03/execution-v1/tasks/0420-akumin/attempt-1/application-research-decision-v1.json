@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0420:akumin:becd83c7",
+  "taskIndex": 420,
+  "companyName": "Akumin",
+  "asOfDate": "2026-09-02",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-02T02:59:02.000Z",
+  "result": {
+    "decision": "PROPOSED_CORRECTION",
+    "rationale": "Archive Akumin from the direct-infrastructure PortCo list and retract the current PortCo ownership row. Stonepeak's ownership is real, but Akumin principally provides outpatient imaging, oncology and outsourced clinical services rather than operating a qualifying infrastructure platform. The unresolved 2026 preferred-equity recap does not affect this scope exclusion.",
+    "evidence": [
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/1776197/000119312524025866/d31963d8k.htm",
+        "purpose": "Stonepeak's February 6, 2024 100% common control and legacy-equity cancellation."
+      },
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/1776197/000119312523259995/d380424dex101.htm",
+        "purpose": "Akumin's healthcare-services revenue and operating model."
+      },
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/1776197/000119312521202559/d195382dex992.htm",
+        "purpose": "Stonepeak Fund IV and Stonepeak Magnet hybrid-investment history."
+      }
+    ],
+    "unresolvedQuestions": []
+  },
+  "lineage": {
+    "sourceDecision": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0420-akumin/attempt-1/research-decision.json",
+    "basis": "Validated GPT-5.6 Sol Pro research, a fresh production snapshot and refreshed direct-source checks establish a non-infrastructure scope correction."
+  }
+}

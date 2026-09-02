@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0419:pinnacle-gas-services-llc:94e9c671",
+  "taskIndex": 419,
+  "companyName": "Pinnacle Gas Services LLC",
+  "asOfDate": "2026-09-02",
+  "decision": "PROPOSED_NEW",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-02T02:59:02.000Z",
+  "result": {
+    "decision": "PROPOSED_NEW",
+    "rationale": "Create one canonical East Texas midstream platform. Comstock retained 73% and control when Sixth Street-managed Starville closed a 27% noncontrolling common-equity investment on June 15, 2026; Quantum/Cactus's preferred interest was redeemed at the same closing. No subsequent transfer or pending ownership transaction was found.",
+    "evidence": [
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/23194/000119312526326260/crk-20260630.htm",
+        "purpose": "Current ownership, closing, redemption and control evidence."
+      },
+      {
+        "url": "https://sixthstreet.com/investment_announce/comstock-announces-600-million-strategic-investment-by-sixth-street-in-pinnacle-gas-services/",
+        "purpose": "Sixth Street manager attribution, infrastructure-equity characterization and June 15, 2026 closing."
+      },
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/23194/000095017024016532/crk-20231231.htm",
+        "purpose": "2023 platform formation, contributed assets and former Quantum/Cactus preferred ownership."
+      }
+    ],
+    "unresolvedQuestions": []
+  },
+  "lineage": {
+    "sourceDecision": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0419-pinnacle-gas-services-llc/attempt-1/research-decision.json",
+    "basis": "Validated GPT-5.6 Sol Pro research, a fresh production non-match and refreshed direct-source checks support a bounded creation."
+  }
+}

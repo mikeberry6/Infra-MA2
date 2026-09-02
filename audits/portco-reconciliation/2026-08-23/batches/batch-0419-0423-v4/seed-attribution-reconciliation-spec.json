@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_SEED_ATTRIBUTION_RECONCILIATION_SPEC",
+  "batchId": "batch-0419-0423-v4",
+  "batchSha256": "377b47a4de15c3e6a4d36e11a1b97da6df27144d3eff6d9261adae0d4de51bd5",
+  "reconciledAt": "2026-09-02T03:29:00.000Z",
+  "sourceManifestSha256": "49e568330a6487786d88b48371537cf32fd99c1ede1e7ca33207026b3039161b",
+  "rationale": "Remove Akumin's archived owner attribution, replace stale CoreSite and Evolve Stonepeak attribution rows, and add one exact attribution row for each new active owner. Use direct-program status for corporate ownership, disclosed status only for Evolve's SEC-named Stonepeak fund, and unresolved status where the exact managed fund is not publicly identified.",
+  "removeRecordIds": [
+    "OFA-4B93737D8F81"
+  ],
+  "upsertRecords": [
+    {
+      "recordId": "OFA-32BEA59CC899",
+      "companyName": "Pinnacle Gas Services LLC",
+      "country": "United States",
+      "investmentFirm": "Comstock Resources",
+      "currentVehicleName": "Comstock Gas Services LLC",
+      "investmentYear": 2023,
+      "stake": "73% controlling common interest from June 15, 2026",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "Comstock's 73% controlling interest is direct corporate ownership rather than a managed infrastructure fund.",
+      "evidenceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/23194/000119312526326260/crk-20260630.htm"
+      ]
+    },
+    {
+      "recordId": "OFA-E987C839A26D",
+      "companyName": "Pinnacle Gas Services LLC",
+      "country": "United States",
+      "investmentFirm": "Sixth Street",
+      "currentVehicleName": "Starville Evergreen Holdings LLC",
+      "investmentYear": 2026,
+      "stake": "27% noncontrolling Class A-2 common interest",
+      "targetLinkedFundName": null,
+      "fundAttribution": "UNRESOLVED",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "Starville and Sixth Street's 27% common interest are directly evidenced, but the exact Sixth Street-managed fund above Starville is not publicly disclosed.",
+      "evidenceUrls": [
+        "https://sixthstreet.com/investment_announce/comstock-announces-600-million-strategic-investment-by-sixth-street-in-pinnacle-gas-services/",
+        "https://www.sec.gov/Archives/edgar/data/23194/000119312526326260/crk-20260630.htm"
+      ]
+    },
+    {
+      "recordId": "OFA-142E1EFFA343",
+      "companyName": "CoreSite",
+      "country": "United States",
+      "investmentFirm": "Stonepeak",
+      "currentVehicleName": "Platform common and mandatory convertible preferred interests; exact investment vehicles not publicly disclosed",
+      "investmentYear": 2022,
+      "stake": "29% common plus all mandatory convertible preferred interests at June 30, 2026; approximately 36% on a fully converted basis",
+      "targetLinkedFundName": null,
+      "fundAttribution": "UNRESOLVED",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "Stonepeak's platform interests are directly disclosed, but the exact investment fund and legal investment entities are not publicly identified.",
+      "evidenceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/1053507/000105350726000133/amt-20260630.htm",
+        "https://stonepeak.com/news/american-tower-partners-with-stonepeak-in-u-s-data-center-business"
+      ]
+    },
+    {
+      "recordId": "OFA-9A7D33BB2CEA",
+      "companyName": "CoreSite",
+      "country": "United States",
+      "investmentFirm": "American Tower Corporation",
+      "currentVehicleName": "American Tower U.S. data-center holding companies",
+      "investmentYear": 2021,
+      "stake": "71% common at June 30, 2026; approximately 64% on a fully converted basis",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "American Tower's controlling interest is direct corporate ownership rather than a managed infrastructure fund.",
+      "evidenceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/1053507/000105350726000133/amt-20260630.htm"
+      ]
+    },
+    {
+      "recordId": "OFA-5FB889563ACB",
+      "companyName": "Evolve Transition Infrastructure LP",
+      "country": "United States",
+      "investmentFirm": "Stonepeak",
+      "currentVehicleName": "Stonepeak Catarina Holdings LLC; Stonepeak Infrastructure Fund (Orion AIV) LP",
+      "investmentYear": 2015,
+      "stake": "Preferred equity from 2015; GP control from September 7, 2020; all economic interests from February 16, 2024",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Stonepeak Infrastructure Fund (Orion AIV) LP",
+      "attributionConfidence": null,
+      "attributionRationale": "The 2015 Schedule 13D directly identifies Stonepeak Infrastructure Fund (Orion AIV) LP and Stonepeak Catarina Holdings as the investment chain.",
+      "evidenceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/1656530/000090514815000931/efc15-727_sc13d.htm"
+      ]
+    }
+  ],
+  "specSha256": "bd40a3c7aca3bc6ccd57ffd2d37f621effebfea16cbdcf9a7833c7701c077a4f"
+}

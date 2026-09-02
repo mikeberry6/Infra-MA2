@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0419:pinnacle-gas-services-llc:94e9c671",
+  "checkedAt": "2026-09-02T02:59:02.000Z",
+  "method": "Independent direct HTTPS status, redirect, byte-length and content-hash checks plus current acquisition-and-exit review.",
+  "sources": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/23194/000119312526326260/crk-20260630.htm",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/23194/000119312526326260/crk-20260630.htm",
+      "bytes": 2263750,
+      "sha256": "d8e136146fd58a8770ec5626d852698242e446c88e2f37973bd42b8f3a0dd1c0",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Starville closed a 27% noncontrolling common-equity investment on June 15, 2026.",
+        "Comstock retained 73% and control, and the Cactus preferred units were redeemed."
+      ]
+    },
+    {
+      "url": "https://sixthstreet.com/investment_announce/comstock-announces-600-million-strategic-investment-by-sixth-street-in-pinnacle-gas-services/",
+      "httpStatus": 200,
+      "finalUrl": "https://sixthstreet.com/investment_announce/comstock-announces-600-million-strategic-investment-by-sixth-street-in-pinnacle-gas-services/",
+      "bytes": 69151,
+      "sha256": "7da7917b59cdfbdcbe94dc33a1cb098c418a94d3f6a835aee64f78c3e06ef59a",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Sixth Street identifies the closed $600 million investment as a 27% equity interest in Pinnacle."
+      ]
+    }
+  ],
+  "exitSearch": "No later equity transfer, Comstock sale, Sixth Street exit or signed pending ownership transaction was identified through September 2, 2026.",
+  "allEvidenceUrlsDirectHttps": true,
+  "allSourcesWorkingOrVerified": true,
+  "deadSourceCount": 0
+}

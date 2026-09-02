@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0420:akumin:becd83c7",
+  "checkedAt": "2026-09-02T02:59:02.000Z",
+  "method": "Independent direct HTTPS status, redirect, byte-length and content-hash checks plus scope and ownership review.",
+  "sources": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1776197/000119312524025866/d31963d8k.htm",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1776197/000119312524025866/d31963d8k.htm",
+      "bytes": 80233,
+      "sha256": "c5072837b5188302846258eea8c8942fa96b72d4d07b45504b50100be4d4b0e3",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "The February 6, 2024 plan made Stonepeak the 100% common owner and cancelled legacy equity."
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1776197/000119312523259995/d380424dex101.htm",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1776197/000119312523259995/d380424dex101.htm",
+      "bytes": 4079104,
+      "sha256": "4a7507a41649fce16be3a8ed609ee97b198a99ac4f0136bfa0fb05b466af2db9",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Akumin's business is outpatient imaging, oncology and outsourced clinical services rather than direct infrastructure operation."
+      ]
+    }
+  ],
+  "scopeReview": "Akumin remains outside the direct-infrastructure equity census regardless of the exact post-exchange preferred-equity cap table.",
+  "allEvidenceUrlsDirectHttps": true,
+  "allSourcesWorkingOrVerified": true,
+  "deadSourceCount": 0
+}
