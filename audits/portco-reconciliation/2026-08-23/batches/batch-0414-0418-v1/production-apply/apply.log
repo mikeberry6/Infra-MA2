@@ -1,0 +1,190 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:batch:apply
+> npx tsx scripts/portco-reconciliation/batch-apply-cli.ts --batch-manifest=audits/portco-reconciliation/2026-08-23/batches/batch-0414-0418-v1/batch-manifest.json --batch-sha256=45ae908c6dc289791f82d100f98dfa57676cf2395db767e5791e1a34af8c1e65 --seed-artifact=prisma/seed-data/approved-portco-after-images.json --apply --write-token=APPLY_APPROVED_PORTCO_BATCH --commit-receipt=tmp/portco-reconciliation/production/batch-commit-receipt.json --receipt=tmp/portco-reconciliation/production/batch-apply-receipt.json --public-base-url=https://infra-ma-2.vercel.app/Infra-MA2/
+
+(node:3917) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "BATCH_APPLIED",
+  "receiptPath": "/home/runner/work/Infra-MA2/Infra-MA2/tmp/portco-reconciliation/production/batch-apply-receipt.json",
+  "receipt": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_APPLY_BATCH_RECEIPT",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "batchId": "batch-0414-0418-v1",
+    "batchSha256": "45ae908c6dc289791f82d100f98dfa57676cf2395db767e5791e1a34af8c1e65",
+    "releaseSha": "4528a4d6e306e1f566d7c9620af5d240222d162e",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "transactionId": "2db88456-4066-4d87-a9b9-27893a60f722",
+    "appliedAt": "2026-09-02T02:38:52.496Z",
+    "members": [
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0414:illinois-wind-portfolio-bright-stalk-harvest-ridge:1410820d",
+        "taskIndex": 414,
+        "companyName": "Illinois Wind Portfolio (Bright Stalk, Harvest Ridge)",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0414:illinois-wind-portfolio-bright-stalk-harvest-ridge:1410820d",
+          "taskIndex": 414,
+          "companyName": "Illinois Wind Portfolio (Bright Stalk, Harvest Ridge)",
+          "companyId": "cmtjhlgn200000t2bdsrjkf8u",
+          "proposalSha256": "951ac01022e7173493af87936a5de8feaa925ebd449d29e81676d3c3370f409f",
+          "approvalSha256": "53aa249ed6c79b7749d468ddd4b1a95409f116a486e3ee8e18b146703d1fc5e1",
+          "productionSnapshotSha256": "f1d18516a3c88db778acf8302e310c41c15338c6c1b3c45bb92976e2d746b0a0",
+          "beforeCompanySnapshotSha256": null,
+          "appliedAfterImageSha256": "3cb4fca8e26784cc866c8929c1d52f74538a51829b05777041033f0640b45c6d",
+          "seedAfterImageSha256": "3cb4fca8e26784cc866c8929c1d52f74538a51829b05777041033f0640b45c6d",
+          "approvedSeedEntrySha256": "669c16a58dbbde5846f0da73d870d9923abdf4ad7a50055f36864addabd870c4",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "2db88456-4066-4d87-a9b9-27893a60f722",
+          "auditEventId": "cmtjhlj6r000j0t2brw1n42jf",
+          "appliedAt": "2026-09-02T02:38:52.496Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "5d9d20bb2ca9193f853d459ccee26be04371c2b25dba5da59d5e18f418f83d8f"
+        }
+      },
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0415:texas-wind-portfolio-stella-cranell-east-raymond-west-raymond:82653dc8",
+        "taskIndex": 415,
+        "companyName": "Texas Wind Portfolio (Stella, Cranell, East Raymond, West Raymond)",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0415:texas-wind-portfolio-stella-cranell-east-raymond-west-raymond:82653dc8",
+          "taskIndex": 415,
+          "companyName": "Texas Wind Portfolio (Stella, Cranell, East Raymond, West Raymond)",
+          "companyId": "cmtjhlk8d000k0t2bf8masqei",
+          "proposalSha256": "22798e5f10700fa74a7ad252a3cd477135e03bcba25afa2427d2f5a1d50f4978",
+          "approvalSha256": "4a42eba9f02a6e7364d72b930f1f7c68ffd5a836bbc177308e16597d39227775",
+          "productionSnapshotSha256": "a39dd1ea18d3b4422631aa923f78377cc713497584f16c595610e3d5dadb11ce",
+          "beforeCompanySnapshotSha256": null,
+          "appliedAfterImageSha256": "12e96d4c789303bdb1e51456e1d208dbeb0c8c198764ddf61c877a826b64008d",
+          "seedAfterImageSha256": "12e96d4c789303bdb1e51456e1d208dbeb0c8c198764ddf61c877a826b64008d",
+          "approvedSeedEntrySha256": "8eeafb02ef9283cb3a825b57fba61b1cedb36a23f39e443a02c500c56e70e13a",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "2db88456-4066-4d87-a9b9-27893a60f722",
+          "auditEventId": "cmtjhlmiv00130t2bra8cikvm",
+          "appliedAt": "2026-09-02T02:38:52.496Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "53d40f0ef27ba14468391dbaaf2ecf75db8ec091b8b911a2abd3659f5e9ca746"
+        }
+      },
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0416:u-s-solar-portfolio-oxbow-happy:cdda9d96",
+        "taskIndex": 416,
+        "companyName": "U.S. Solar Portfolio (Oxbow + Happy)",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0416:u-s-solar-portfolio-oxbow-happy:cdda9d96",
+          "taskIndex": 416,
+          "companyName": "U.S. Solar Portfolio (Oxbow + Happy)",
+          "companyId": "cmtjhlnk800140t2bxvibgnuw",
+          "proposalSha256": "953c0294a4046b6f2bf0c9bcac4a631ed2501e525663851a0381e3ef7a70cdd5",
+          "approvalSha256": "73d578b131e64e171d33660b2dbccbf91bf1320f44603f18fcc4a41904b58f2b",
+          "productionSnapshotSha256": "e2503b77f76e6c36325d6210fe1f727be166b97b7d6723ada4a5ee761d3defcb",
+          "beforeCompanySnapshotSha256": null,
+          "appliedAfterImageSha256": "09c78f897c6d627283a83d8e44d43377520f71a6bccc5dbdf9c79c7ab00de36b",
+          "seedAfterImageSha256": "09c78f897c6d627283a83d8e44d43377520f71a6bccc5dbdf9c79c7ab00de36b",
+          "approvedSeedEntrySha256": "bc70456b6a32fe51d4eebc4a04889d023d9a72dfe500032170993ce28f6228a4",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "2db88456-4066-4d87-a9b9-27893a60f722",
+          "auditEventId": "cmtjhlq53001p0t2b4sj3if7f",
+          "appliedAt": "2026-09-02T02:38:52.496Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "3f5039f7faf3ecd5e53a4fc721154c82844d7d96944a565d983a0103a201a62c"
+        }
+      },
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0417:bp-u-s-transportation-and-delivery-midstream-jv:d68b70ef",
+        "taskIndex": 417,
+        "companyName": "BP U.S. Transportation & Delivery / Midstream JV",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0417:bp-u-s-transportation-and-delivery-midstream-jv:d68b70ef",
+          "taskIndex": 417,
+          "companyName": "BP U.S. Transportation & Delivery / Midstream JV",
+          "companyId": "cmtjhlr53001q0t2bt9rtjuxc",
+          "proposalSha256": "ba8f2ca7027704ad737d24a9cc5215510e12ed0d59f2efc1192dabaadf6a758f",
+          "approvalSha256": "b9c58d5489ca90ca2af73fae3d3bfec551d99ab914410c18668e194d0fce7480",
+          "productionSnapshotSha256": "1261d12f29f61d4f10b37a8533a3b7a9d1a2701346cbe38cc9a19aba18f79436",
+          "beforeCompanySnapshotSha256": null,
+          "appliedAfterImageSha256": "1e29953ac61382a4f8d366dffb649b3c5cb999a4da4a6618d73da4f764a588f9",
+          "seedAfterImageSha256": "1e29953ac61382a4f8d366dffb649b3c5cb999a4da4a6618d73da4f764a588f9",
+          "approvedSeedEntrySha256": "f3a5f6046c02cd08d5b06940cc2a26231dd9ea3f5e2c1b202a8b84e0f944b94c",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "2db88456-4066-4d87-a9b9-27893a60f722",
+          "auditEventId": "cmtjhlt8y00270t2btn6vqaio",
+          "appliedAt": "2026-09-02T02:38:52.496Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "9c9497a91c294b56d677e38a7c891dfb747e653f8c0b676de2493da661639f8d"
+        }
+      },
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0418:caliche-development-partners:d31b8749",
+        "taskIndex": 418,
+        "companyName": "Caliche Development Partners",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0418:caliche-development-partners:d31b8749",
+          "taskIndex": 418,
+          "companyName": "Caliche Development Partners",
+          "companyId": "cmtjhluly00280t2bbyiyibak",
+          "proposalSha256": "551f2698742438850a4b9de85cf4db3c7dfb7221d3c2c9ad6665f02a5b127350",
+          "approvalSha256": "027b87b9b02706410ce4f74aa7e98d232ba1868b9024e303034bb759e5142b34",
+          "productionSnapshotSha256": "4b1f92a1d0fbaafd070fa2a9bfc9e214c55d8e33e361b552149598c20382db05",
+          "beforeCompanySnapshotSha256": null,
+          "appliedAfterImageSha256": "58401d8c5e16a150d68280438d28617ee1e6fee9addf1075401085bea0296710",
+          "seedAfterImageSha256": "58401d8c5e16a150d68280438d28617ee1e6fee9addf1075401085bea0296710",
+          "approvedSeedEntrySha256": "ecc254626804ae344a3c3d4ebe7294cf0adea7de32c53accb38bf088e8aa1afa",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "2db88456-4066-4d87-a9b9-27893a60f722",
+          "auditEventId": "cmtjhlxws002z0t2bmvehmw6z",
+          "appliedAt": "2026-09-02T02:38:52.496Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "721975e54079a2f67026e395d6718752b8c4f6b34b5b0c4d230ac5b6f3873d0f"
+        }
+      }
+    ],
+    "verification": {
+      "databaseTransactionCommitted": true,
+      "seedArtifactVerified": true,
+      "allDetailApisVerified": true,
+      "partialDatabaseApplication": false
+    },
+    "receiptSha256": "d00e3fafd12613e8acac933459fce8cca199529d68f51d9c9f0a9a657643e6d8"
+  }
+}
