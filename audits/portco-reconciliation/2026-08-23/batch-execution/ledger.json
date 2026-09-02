@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-02T02:00:58.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-09-02T02:28:26.000Z",
+  "activeBatchId": "batch-0414-0418-v1",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -7279,7 +7279,55 @@
           "reason": "Protected atomic transaction, seed parity, detail APIs, canonical deployment, and rendered production scorecards verified."
         }
       ]
+    },
+    {
+      "batchId": "batch-0414-0418-v1",
+      "state": "READY",
+      "taskIds": [
+        "ledger:0414:illinois-wind-portfolio-bright-stalk-harvest-ridge:1410820d",
+        "ledger:0415:texas-wind-portfolio-stella-cranell-east-raymond-west-raymond:82653dc8",
+        "ledger:0416:u-s-solar-portfolio-oxbow-happy:cdda9d96",
+        "ledger:0417:bp-u-s-transportation-and-delivery-midstream-jv:d68b70ef",
+        "ledger:0418:caliche-development-partners:d31b8749"
+      ],
+      "taskIndexes": [
+        414,
+        415,
+        416,
+        417,
+        418
+      ],
+      "createdAt": "2026-09-02T02:09:45.000Z",
+      "updatedAt": "2026-09-02T02:28:26.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0414-0418-v1/batch-manifest.json",
+        "sha256": "45ae908c6dc289791f82d100f98dfa57676cf2395db767e5791e1a34af8c1e65"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-09-02T02:09:45.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-09-02T02:28:26.000Z",
+          "evidenceSha256": [
+            "45ae908c6dc289791f82d100f98dfa57676cf2395db767e5791e1a34af8c1e65"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "848c0f740085331dbbeede7165b4ab004f84362356e739be18db3e8ccf8b510f"
+  "ledgerSha256": "5458f7aca8d866ad46ffc3a9980b03d5f09d0e8be02505bded8eaabf1d4c6705"
 }

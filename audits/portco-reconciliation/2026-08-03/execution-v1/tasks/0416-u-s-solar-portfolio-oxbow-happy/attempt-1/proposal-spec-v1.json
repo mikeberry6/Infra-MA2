@@ -1,0 +1,200 @@
+{
+  "generatedAt": "2026-09-02T02:13:43.000Z",
+  "actions": [
+    "CREATE_COMPANY"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "reviewedSeedRetirementTaskIds": [],
+  "rationale": "Create one canonical Crawfish Solar Holdings 2 portfolio for Oxbow and Happy. Record JERA Nex and Schroders Greencoat at 50% each from July 30, 2025, preserve JERA's preceding 100% period through the current ownership row, and retain Lightsource bp only as the former owner and continuing service provider.",
+  "evidence": [
+    {
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100WI4Y.pdf",
+      "purpose": "Regulatory ownership and transaction-date evidence.",
+      "supports": [
+        "JERA closed its 100% acquisition on August 2, 2024",
+        "JERA reduced its interest to 50% on July 30, 2025",
+        "Oxbow and Happy sit in one legal-entity chain"
+      ]
+    },
+    {
+      "url": "https://www.mayerbrown.com/en/news/2025/07/mayer-brown-advises-jera-nex-on-sale-of-50-equity-interest-in-solar-project-portfolio-to-affiliate-of-schroders-greencoat",
+      "purpose": "Schroders acquisition vehicle evidence.",
+      "supports": [
+        "SG US Aggregator acquired 50%",
+        "SG US Aggregator is a Schroders Greencoat affiliate"
+      ]
+    },
+    {
+      "url": "https://www.jera.co.jp/en/corporate/business/projects/happy-oxbow",
+      "purpose": "Current ownership and operating evidence.",
+      "supports": [
+        "JERA Nex and Schroders Greencoat each own 50%",
+        "The combined portfolio has 395 MW of operating solar capacity"
+      ]
+    },
+    {
+      "url": "https://lightsourcebp.com/news/jera-nex-expands-presence-in-us-with-395mw-solar-farms-acquisition-from-lightsource-bp/",
+      "purpose": "Former ownership and service-continuity evidence.",
+      "supports": [
+        "Lightsource bp sold the portfolio to JERA",
+        "Lightsource bp remains asset manager and O&M provider rather than owner"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "afterImage": {
+    "id": null,
+    "name": "Crawfish Solar Holdings 2, LLC",
+    "aliases": [
+      "Oxbow and Happy Solar Portfolio",
+      "U.S. Solar Portfolio (Oxbow + Happy)",
+      "Happy and Oxbow Solar Portfolio"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Operating utility-scale solar portfolio",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Crawfish Solar Holdings 2, LLC is the parent of the 300 MW Oxbow solar farm in Louisiana and the 95 MW Happy solar farm in Arkansas. JERA Nex and Schroders Greencoat each own 50% following the July 30, 2025 sell-down to SG US Aggregator LLC. Lightsource bp sold the portfolio to JERA in 2024 and continues to provide asset-management and O&M services without a current common-equity interest.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.jera.co.jp/en/corporate/business/projects/happy-oxbow",
+    "yearFounded": null,
+    "headquarters": "Arkansas and Louisiana, United States",
+    "lastVerifiedAt": "2026-09-01T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": null,
+        "managerName": "JERA Nex",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "JERA Nex Americas LLC through Crawfish Solar Holdings 2, LLC",
+        "stake": "50%; 100% from August 2, 2024 until July 30, 2025",
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Schroders Greencoat",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "SG US Aggregator LLC; exact managed fund or client pool not publicly disclosed",
+        "stake": "50%",
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Lightsource bp",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Exact selling affiliate not publicly disclosed",
+        "stake": "Former 100% sponsor and common-equity owner",
+        "investmentYear": null,
+        "exitYear": 2024,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": null,
+        "date": "2023",
+        "event": "Happy Solar began commercial operation in Arkansas; primary sources differ between September and October.",
+        "category": "EXPANSION",
+        "sortDate": "2023-10-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.jera.co.jp/en/corporate/business/projects/happy-oxbow"
+        ]
+      },
+      {
+        "id": null,
+        "date": "May 2024",
+        "event": "Oxbow Solar began commercial operation in Louisiana.",
+        "category": "EXPANSION",
+        "sortDate": "2024-05-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.jera.co.jp/en/corporate/business/projects/happy-oxbow"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Aug 2, 2024",
+        "event": "JERA Nex completed its acquisition of 100% of the Oxbow and Happy portfolio from Lightsource bp.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-08-02T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100WI4Y.pdf",
+          "https://lightsourcebp.com/news/jera-nex-expands-presence-in-us-with-395mw-solar-farms-acquisition-from-lightsource-bp/"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Jul 30, 2025",
+        "event": "Schroders Greencoat acquired 50% through SG US Aggregator LLC, creating a 50:50 partnership with JERA Nex.",
+        "category": "FINANCING",
+        "sortDate": "2025-07-30T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100WI4Y.pdf",
+          "https://www.mayerbrown.com/en/news/2025/07/mayer-brown-advises-jera-nex-on-sale-of-50-equity-interest-in-solar-project-portfolio-to-affiliate-of-schroders-greencoat"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": null,
+        "label": "JERA — EDINET ownership filing",
+        "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100WI4Y.pdf",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Legal entity chain and exact ownership change dates",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "Mayer Brown — Schroders Greencoat acquisition",
+        "url": "https://www.mayerbrown.com/en/news/2025/07/mayer-brown-advises-jera-nex-on-sale-of-50-equity-interest-in-solar-project-portfolio-to-affiliate-of-schroders-greencoat",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Crawfish top holdco and SG US Aggregator acquisition vehicle",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "JERA — Happy and Oxbow project page",
+        "url": "https://www.jera.co.jp/en/corporate/business/projects/happy-oxbow",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current 50:50 owners and operating profile",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "JERA Nex — Schroders Greencoat partnership",
+        "url": "https://jeranex.com/schroders-greencoat-acquire-stake-in-jera-nex-solar-portfolio/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Equal partnership and continuing Lightsource services",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Lightsource bp — sale to JERA Nex",
+        "url": "https://lightsourcebp.com/news/jera-nex-expands-presence-in-us-with-395mw-solar-farms-acquisition-from-lightsource-bp/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "2024 former-owner exit and service continuity",
+        "isPrimary": false
+      }
+    ]
+  }
+}

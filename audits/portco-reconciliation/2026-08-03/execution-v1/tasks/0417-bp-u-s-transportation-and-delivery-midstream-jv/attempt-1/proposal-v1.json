@@ -1,0 +1,201 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0417:bp-u-s-transportation-and-delivery-midstream-jv:d68b70ef",
+  "taskIndex": 417,
+  "asOfDate": "2026-09-01",
+  "generatedAt": "2026-09-02T02:13:43.000Z",
+  "canonicalKey": "bp-u-s-transportation-and-delivery-midstream-jv|united-states",
+  "companyName": "BP U.S. Transportation & Delivery / Midstream JV",
+  "actions": [
+    "CREATE_COMPANY"
+  ],
+  "sourceHoldingIds": [
+    "088-sixth-street:holding:003:bp-u-s-transportation-and-delivery-midstream-jv"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Create one canonical US Energy Logistics platform. Record BP's current 51% controlling interest and Sixth Street's current 49% interest from 2021, treat the 2023 investment as an expansion of the same platform, and keep underlying pipelines, operators and affiliates subordinate.",
+  "evidence": [
+    {
+      "url": "https://sixthstreet.com/energy-renewables-infrastructure/",
+      "purpose": "Current platform identity and infrastructure-strategy evidence.",
+      "supports": [
+        "Sixth Street currently lists US Energy Logistics",
+        "The investment is a U.S. midstream logistics infrastructure platform"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/313807/000165495421004651/a6518w.htm",
+      "purpose": "Initial closing and ownership evidence.",
+      "supports": [
+        "BP sold 49% of a controlled affiliate in the first quarter of 2021",
+        "BP retained control and therefore a 51% interest"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/313807/000031380723000027/a30092023bp6kq3.htm",
+      "purpose": "Platform expansion evidence.",
+      "supports": [
+        "BP completed another 49% affiliate sale in 2023",
+        "The affiliate remained controlled by BP"
+      ]
+    },
+    {
+      "url": "https://news.bloomberglaw.com/private-equity/sixth-street-injects-400-million-more-into-bp-pipelines-venture",
+      "purpose": "Same-platform and continued-split evidence.",
+      "supports": [
+        "The 2023 investment expanded the existing BP-Sixth Street pipelines venture",
+        "The ownership split remained 51% BP and 49% Sixth Street"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "1261d12f29f61d4f10b37a8533a3b7a9d1a2701346cbe38cc9a19aba18f79436",
+  "currentCompanySnapshotSha256": null,
+  "executionLock": {
+    "taskSnapshotSha256": "ebd5d30da2744e0de6f0066aeeaa9b4470312d07fd7647b8069fb64db439e179",
+    "taskStateSha256": "7c326854b4f2136c4fd04ec09e1accc354b4bc45db2cc3bde7ee011b243c47b3",
+    "taskDependencySha256": "7162f023548431ed1fed51e43a93e8e1e0a46df9edc0adf314307e96f61f1312",
+    "seedEntrySha256": null,
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [],
+    "organizations": [],
+    "redirects": []
+  },
+  "beforeImage": null,
+  "beforeImageSha256": null,
+  "afterImage": {
+    "id": null,
+    "name": "US Energy Logistics",
+    "aliases": [
+      "BP U.S. Transportation & Delivery / Midstream JV",
+      "BP-Sixth Street U.S. Pipelines Venture"
+    ],
+    "sector": "MIDSTREAM",
+    "subsector": "U.S. refined-products and crude-oil pipeline logistics platform",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "US Energy Logistics is Sixth Street's manager-level name for its partnership with BP across core U.S. onshore midstream logistics assets. BP retains 51% and control while Sixth Street holds 49% through Lerado Investments and other undisclosed affiliates. The platform includes refined-products and crude-oil logistics interests; individual pipelines, terminals, operators and legal SPVs remain subordinate assets.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://sixthstreet.com/energy-renewables-infrastructure/",
+    "yearFounded": 2021,
+    "headquarters": "United States",
+    "lastVerifiedAt": "2026-09-01T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": null,
+        "managerName": "BP",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "BP-controlled U.S. logistics affiliates; exact member names not fully disclosed",
+        "stake": "51% and control",
+        "investmentYear": null,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Sixth Street",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Lerado Investments, LLC and additional 2023 affiliate not publicly disclosed",
+        "stake": "49%",
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": null,
+        "date": "Q1 2021",
+        "event": "Sixth Street acquired a 49% interest in a BP-controlled affiliate holding U.S. refined-products and crude-oil logistics assets; BP retained 51% and control.",
+        "category": "FINANCING",
+        "sortDate": "2021-03-31T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/313807/000165495421004651/a6518w.htm",
+          "https://sixthstreet.com/energy-renewables-infrastructure/"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Q3 2023",
+        "event": "BP and Sixth Street expanded the platform through another 49% investment while retaining the 51%/49% ownership split.",
+        "category": "EXPANSION",
+        "sortDate": "2023-09-30T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/313807/000031380723000027/a30092023bp6kq3.htm",
+          "https://news.bloomberglaw.com/private-equity/sixth-street-injects-400-million-more-into-bp-pipelines-venture"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": null,
+        "label": "Sixth Street — US Energy Logistics",
+        "url": "https://sixthstreet.com/energy-renewables-infrastructure/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current platform identity, infrastructure strategy and investment scale",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "BP — first-quarter 2021 SEC filing",
+        "url": "https://www.sec.gov/Archives/edgar/data/313807/000165495421004651/a6518w.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Initial 49% sale, closing and retained BP control",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "BP — third-quarter 2023 SEC filing",
+        "url": "https://www.sec.gov/Archives/edgar/data/313807/000031380723000027/a30092023bp6kq3.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Later 49% affiliate sale and platform expansion",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Bloomberg Law — BP pipelines venture expansion",
+        "url": "https://news.bloomberglaw.com/private-equity/sixth-street-injects-400-million-more-into-bp-pipelines-venture",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "2023 same-platform expansion and continued 51%/49% split",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Federal court order — BP Midwest and Lerado ownership chain",
+        "url": "https://law.justia.com/cases/federal/district-courts/washington/wawdce/2%3A2025cv01190/349738/72/",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Continued Lerado investment-fund ownership in the BP Midwest chain",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "1e29953ac61382a4f8d366dffb649b3c5cb999a4da4a6618d73da4f764a588f9",
+  "proposalSha256": "ba8f2ca7027704ad737d24a9cc5215510e12ed0d59f2efc1192dabaadf6a758f"
+}

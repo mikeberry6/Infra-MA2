@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0415:texas-wind-portfolio-stella-cranell-east-raymond-west-raymond:82653dc8",
+  "taskIndex": 415,
+  "companyName": "Texas Wind Portfolio (Stella, Cranell, East Raymond, West Raymond)",
+  "generatedAt": "2026-09-02T02:21:33.022Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0415-texas-wind-portfolio-stella-cranell-east-raymond-west-raymond/attempt-1/observed-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 415,
+    "taskId": "ledger:0415:texas-wind-portfolio-stella-cranell-east-raymond-west-raymond:82653dc8",
+    "canonicalKey": "texas-wind-portfolio-stella-cranell-east-raymond-west-raymond|united-states",
+    "companyName": "Texas Wind Portfolio (Stella, Cranell, East Raymond, West Raymond)",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 87,
+    "managers": [
+      "Schroders Greencoat"
+    ],
+    "actionScopes": {
+      "company": [
+        "CREATE_COMPANY"
+      ],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "087-schroders-greencoat:holding:001:texas-wind-portfolio-stella-cranell-east-raymond-west-raymond"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://www.renewableenergyworld.com/wind-power/greencoat-capital-buys-texas-wind/",
+      "https://www.rwe.com/en/press/rwe-renewables/2021-01-28-rwe-greencoat-algonquin-texas-wind/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "No exact normalized production or seed match exists. Census evidence supports a new canonical company with 1 manager holding record(s).",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "texas-wind-portfolio-stella-cranell-east-raymond-west-raymond|united-states",
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0415:texas-wind-portfolio-stella-cranell-east-raymond-west-raymond:82653dc8",
+    "taskIndex": 415,
+    "canonicalKey": "texas-wind-portfolio-stella-cranell-east-raymond-west-raymond|united-states",
+    "capturedAt": "2026-09-02T02:21:33.022Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "1e80c505afb89d6e4b9588aa0972db750248f54d1e04bdb19a3693b06421b25e",
+    "productionSnapshotSha256": "df22a65bee1114f6a7c4b2414272ecc3d8249f0ac65eaca7bb054a6a7529301a",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "7162f023548431ed1fed51e43a93e8e1e0a46df9edc0adf314307e96f61f1312",
+    "stateSha256": "ce13cfe0f8ea5032fe4390731436d8209a9ecb5704b8340ed6b4f6705cb81e38",
+    "taskSnapshotSha256": "87ecf7bdafcc01cdcc34a4b8db1dab1d6674a236bda6a7c839c3f036dfc672f5"
+  },
+  "contextSha256": "c91e2d77d2ae9921941e66840b078f2d049e47bba9f050ad2511c00198f5b0f3"
+}

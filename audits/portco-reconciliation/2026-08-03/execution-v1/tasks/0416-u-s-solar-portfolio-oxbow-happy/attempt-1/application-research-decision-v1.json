@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0416:u-s-solar-portfolio-oxbow-happy:cdda9d96",
+  "taskIndex": 416,
+  "companyName": "U.S. Solar Portfolio (Oxbow + Happy)",
+  "asOfDate": "2026-09-01",
+  "decision": "PROPOSED_NEW",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-02T02:13:43.000Z",
+  "result": {
+    "decision": "PROPOSED_NEW",
+    "rationale": "Create Crawfish Solar Holdings 2, LLC as the narrowest proved parent for the Oxbow and Happy solar portfolio. JERA acquired 100% on August 2, 2024 and sold 50% to SG US Aggregator LLC, a Schroders Greencoat affiliate, on July 30, 2025. Lightsource bp remains an operating-service provider but no longer owns the portfolio.",
+    "evidence": [
+      {
+        "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100WI4Y.pdf",
+        "purpose": "Legal entity chain, exact transaction dates and 100% to 50% JERA ownership change."
+      },
+      {
+        "url": "https://www.mayerbrown.com/en/news/2025/07/mayer-brown-advises-jera-nex-on-sale-of-50-equity-interest-in-solar-project-portfolio-to-affiliate-of-schroders-greencoat",
+        "purpose": "Top holdco, seller and Schroders Greencoat acquisition vehicle."
+      },
+      {
+        "url": "https://www.jera.co.jp/en/corporate/business/projects/happy-oxbow",
+        "purpose": "Current 50%/50% owners and combined operating profile."
+      },
+      {
+        "url": "https://lightsourcebp.com/news/jera-nex-expands-presence-in-us-with-395mw-solar-farms-acquisition-from-lightsource-bp/",
+        "purpose": "Former owner exit and continuing service-provider role."
+      }
+    ],
+    "unresolvedQuestions": []
+  },
+  "lineage": {
+    "sourceDecision": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0416-u-s-solar-portfolio-oxbow-happy/attempt-1/research-decision.json",
+    "basis": "Validated GPT-5.6 Sol Pro research and refreshed direct-source checks support a bounded creation; the undisclosed Schroders fund and Lightsource selling affiliate are noncritical disclosure gaps."
+  }
+}
