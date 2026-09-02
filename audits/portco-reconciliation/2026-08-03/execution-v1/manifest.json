@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-09-01T22:58:32.000Z",
+  "updatedAt": "2026-09-02T00:02:19.000Z",
   "runStatus": "IDLE",
   "activeTaskId": null,
   "source": {
@@ -37916,23 +37916,44 @@
       "managerIndex": 83,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "6987cad6f3b18a59bf07caedfbdbe35c9fcc51a5bc4f873e1b6988a1ddf4a593",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-09-01T23:06:30.000Z",
+      "updatedAt": "2026-09-02T00:02:19.000Z",
+      "completedAt": "2026-09-02T00:02:19.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "cd1f94dbdd8e06ff3ba056c12a9a1ff8dda333d7b4d875b2d289e60be232c0db",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0394-middlebury-resource-recovery-center/attempt-1/locked-batch-v1-task-snapshot.json",
+          "sha256": "cd1f94dbdd8e06ff3ba056c12a9a1ff8dda333d7b4d875b2d289e60be232c0db"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0394-middlebury-resource-recovery-center/attempt-1/proposal-v5.json",
+          "sha256": "659ab2d3f4299f48b6bbd0c47c9f820c2f70f66113cff62b7cd1ae1e055737f7"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0394-middlebury-resource-recovery-center-v5.json",
+          "sha256": "04d30c3811b09e7c1166cfeac909c775d6dedec4906135e907247497abf1b910"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0394-0398-v1/production-apply/batch-apply-receipt.json#members/0/receipt",
+          "sha256": "c8a0b79e74a215d0b964ec9fb6d1b934ae55ca290664e78506dbe6a5b6da4fe2"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0394-middlebury-resource-recovery-center/attempt-1/proposal-v5.json#afterImage",
+          "sha256": "c775558ac30e0f68497d7071fca69a10f9d53b6990271b887b142cc1520c3f47"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-09-02T00:02:19.000Z",
+        "auditEventId": "cmtjbgwcn000dz22bly96i07b",
+        "transactionId": "20317646-f3b6-41c4-9404-cba1d35d73a3",
+        "receiptSha256": "c8a0b79e74a215d0b964ec9fb6d1b934ae55ca290664e78506dbe6a5b6da4fe2",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33572378620"
+      },
       "history": [
         {
           "sequence": 1,
@@ -37943,6 +37964,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-09-02T00:02:19.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0394-0398-v1.",
+          "taskSnapshotSha256": "cd1f94dbdd8e06ff3ba056c12a9a1ff8dda333d7b4d875b2d289e60be232c0db",
+          "evidenceSha256": [
+            "04d30c3811b09e7c1166cfeac909c775d6dedec4906135e907247497abf1b910",
+            "056e7afef2504192673e15d989f8be1975e98ae769a0f1779bbad47bcd09b5cb",
+            "4c6aada2d44de5eb2061b1f4d1498efed1284d6356808348f1eca851963695f4",
+            "659ab2d3f4299f48b6bbd0c47c9f820c2f70f66113cff62b7cd1ae1e055737f7",
+            "c775558ac30e0f68497d7071fca69a10f9d53b6990271b887b142cc1520c3f47",
+            "c8a0b79e74a215d0b964ec9fb6d1b934ae55ca290664e78506dbe6a5b6da4fe2",
+            "cd1f94dbdd8e06ff3ba056c12a9a1ff8dda333d7b4d875b2d289e60be232c0db"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -37954,23 +37993,44 @@
       "managerIndex": 83,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "06f6b71b1cd3991118b4724f33c2dfb16ffba30f1640d9ce9f70f586d9540797",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-09-01T23:06:30.000Z",
+      "updatedAt": "2026-09-02T00:02:19.000Z",
+      "completedAt": "2026-09-02T00:02:19.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "78c6d7ca0d46413e1317f297e36e95f0022be0bfdf001e327421c5694a8aa792",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0395-prairie-mist-solar/attempt-1/locked-batch-v1-task-snapshot.json",
+          "sha256": "78c6d7ca0d46413e1317f297e36e95f0022be0bfdf001e327421c5694a8aa792"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0395-prairie-mist-solar/attempt-1/proposal-v2.json",
+          "sha256": "d6804b53b6575a8c34e5bfaa46015249f840d694aadbfebf82eaf22696c69d97"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0395-prairie-mist-solar-v2.json",
+          "sha256": "907fe07a2b97830756d2a042aa44be0246f461348d1fe749ff1549dfd88e19e9"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0394-0398-v1/production-apply/batch-apply-receipt.json#members/1/receipt",
+          "sha256": "1bd0763fdaba85e1cee598cc9f0635386e6a7a3d66e9d6a3167b5cbcc2d20a0b"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0395-prairie-mist-solar/attempt-1/proposal-v2.json#afterImage",
+          "sha256": "005ad0b23e1e745639b775f52d8467799b331e1e15cf5e7f71758039f0ca7d97"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-09-02T00:02:19.000Z",
+        "auditEventId": "cmtjbh5bg000kz22bjeydx8ob",
+        "transactionId": "20317646-f3b6-41c4-9404-cba1d35d73a3",
+        "receiptSha256": "1bd0763fdaba85e1cee598cc9f0635386e6a7a3d66e9d6a3167b5cbcc2d20a0b",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33572378620"
+      },
       "history": [
         {
           "sequence": 1,
@@ -37981,6 +38041,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-09-02T00:02:19.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0394-0398-v1.",
+          "taskSnapshotSha256": "78c6d7ca0d46413e1317f297e36e95f0022be0bfdf001e327421c5694a8aa792",
+          "evidenceSha256": [
+            "005ad0b23e1e745639b775f52d8467799b331e1e15cf5e7f71758039f0ca7d97",
+            "056e7afef2504192673e15d989f8be1975e98ae769a0f1779bbad47bcd09b5cb",
+            "1bd0763fdaba85e1cee598cc9f0635386e6a7a3d66e9d6a3167b5cbcc2d20a0b",
+            "4c6aada2d44de5eb2061b1f4d1498efed1284d6356808348f1eca851963695f4",
+            "78c6d7ca0d46413e1317f297e36e95f0022be0bfdf001e327421c5694a8aa792",
+            "907fe07a2b97830756d2a042aa44be0246f461348d1fe749ff1549dfd88e19e9",
+            "d6804b53b6575a8c34e5bfaa46015249f840d694aadbfebf82eaf22696c69d97"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -37992,23 +38070,44 @@
       "managerIndex": 83,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "6998858c03a25a808476ebc427b66f73d56872e32649ca2c91c7fb97f8f71900",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-09-01T23:06:30.000Z",
+      "updatedAt": "2026-09-02T00:02:19.000Z",
+      "completedAt": "2026-09-02T00:02:19.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "17b306f86456ba863ef2c54452eabdbaa4e967477c86b595de4c5d232b36a512",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0396-prospect-storage/attempt-1/locked-batch-v1-task-snapshot.json",
+          "sha256": "17b306f86456ba863ef2c54452eabdbaa4e967477c86b595de4c5d232b36a512"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0396-prospect-storage/attempt-1/proposal-v3.json",
+          "sha256": "544c41b17019d5f9481a7aadea6a828e700d00733ab12429505e2d891bb9acb2"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0396-prospect-storage-v3.json",
+          "sha256": "5bdb4c3fda3dc229c3ee2738dc9a78cfd65f3f8ec9d087bb31fd56394ac9d41e"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0394-0398-v1/production-apply/batch-apply-receipt.json#members/2/receipt",
+          "sha256": "95d650aac46a793ece11da7440ba1b0ef3288b0a3b0b95d8760d730580cb1f0d"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0396-prospect-storage/attempt-1/proposal-v3.json#afterImage",
+          "sha256": "2ec29d5d1849053e4cc509e5ab4d81c5dae661c6f12710a3d13461da69558a85"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-09-02T00:02:19.000Z",
+        "auditEventId": "cmtjbhevf000sz22bthj9rade",
+        "transactionId": "20317646-f3b6-41c4-9404-cba1d35d73a3",
+        "receiptSha256": "95d650aac46a793ece11da7440ba1b0ef3288b0a3b0b95d8760d730580cb1f0d",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33572378620"
+      },
       "history": [
         {
           "sequence": 1,
@@ -38019,6 +38118,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-09-02T00:02:19.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0394-0398-v1.",
+          "taskSnapshotSha256": "17b306f86456ba863ef2c54452eabdbaa4e967477c86b595de4c5d232b36a512",
+          "evidenceSha256": [
+            "056e7afef2504192673e15d989f8be1975e98ae769a0f1779bbad47bcd09b5cb",
+            "17b306f86456ba863ef2c54452eabdbaa4e967477c86b595de4c5d232b36a512",
+            "2ec29d5d1849053e4cc509e5ab4d81c5dae661c6f12710a3d13461da69558a85",
+            "4c6aada2d44de5eb2061b1f4d1498efed1284d6356808348f1eca851963695f4",
+            "544c41b17019d5f9481a7aadea6a828e700d00733ab12429505e2d891bb9acb2",
+            "5bdb4c3fda3dc229c3ee2738dc9a78cfd65f3f8ec9d087bb31fd56394ac9d41e",
+            "95d650aac46a793ece11da7440ba1b0ef3288b0a3b0b95d8760d730580cb1f0d"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -38030,20 +38147,26 @@
       "managerIndex": 83,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "07a4213e2fe6da8c343ed8ba5986e3281c4bc1038d162851c9ae68290017bbf9",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
-      "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "status": "SUPERSEDED",
+      "attempts": 1,
+      "startedAt": "2026-09-01T23:06:30.000Z",
+      "updatedAt": "2026-09-02T00:02:19.000Z",
+      "completedAt": "2026-09-02T00:02:19.000Z",
+      "exceptionReason": "PurposeEnergy Minster is a project/SPV beneath PurposeEnergy, not a separate manager-level portfolio company. Task 394's consolidated PurposeEnergy proposal dd9a2f921915afa310da94430afb5d637b144c4d26fe905ebf1001a4d8ee940f retires the Minster standalone record and preserves PurposeEnergy - Minster LLC, the Ohio facility's operating profile, its July 16, 2026 ramp-up milestone, and direct sources in the same canonical after-image. A second mutation would collide with the PurposeEnergy update.",
+      "supersededByTaskId": "ledger:0394:middlebury-resource-recovery-center:08b27d77",
+      "taskSnapshotSha256": "86030a33ed52e318189ae2591f63a8488226bdb660bb4f2961164f7c48e33e34",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0397-purposeenergy-minster/attempt-1/locked-batch-v1-task-snapshot.json",
+          "sha256": "86030a33ed52e318189ae2591f63a8488226bdb660bb4f2961164f7c48e33e34"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0394-0398-v1/decisions/0397-purposeenergy-minster.json",
+          "sha256": "8ea4010841a3c144c96ebe3bbf0b872cdac887eedc84ae1453974d269ffabe69"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -38057,6 +38180,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "SUPERSEDED",
+          "at": "2026-09-02T00:02:19.000Z",
+          "reason": "PurposeEnergy Minster is a project/SPV beneath PurposeEnergy, not a separate manager-level portfolio company. Task 394's consolidated PurposeEnergy proposal dd9a2f921915afa310da94430afb5d637b144c4d26fe905ebf1001a4d8ee940f retires the Minster standalone record and preserves PurposeEnergy - Minster LLC, the Ohio facility's operating profile, its July 16, 2026 ramp-up milestone, and direct sources in the same canonical after-image. A second mutation would collide with the PurposeEnergy update.",
+          "taskSnapshotSha256": "86030a33ed52e318189ae2591f63a8488226bdb660bb4f2961164f7c48e33e34",
+          "evidenceSha256": [
+            "056e7afef2504192673e15d989f8be1975e98ae769a0f1779bbad47bcd09b5cb",
+            "4c6aada2d44de5eb2061b1f4d1498efed1284d6356808348f1eca851963695f4",
+            "86030a33ed52e318189ae2591f63a8488226bdb660bb4f2961164f7c48e33e34",
+            "8ea4010841a3c144c96ebe3bbf0b872cdac887eedc84ae1453974d269ffabe69"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -38068,20 +38206,26 @@
       "managerIndex": 83,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "52eb4d50681c77f7d79450be898c38610e74b8961de94dc197f20f6da3b96f27",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
-      "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "status": "SUPERSEDED",
+      "attempts": 1,
+      "startedAt": "2026-09-01T23:06:30.000Z",
+      "updatedAt": "2026-09-02T00:02:19.000Z",
+      "completedAt": "2026-09-02T00:02:19.000Z",
+      "exceptionReason": "PurposeEnergy South Burlington is a project beneath PurposeEnergy, not a separate manager-level portfolio company. Task 394's consolidated PurposeEnergy proposal dd9a2f921915afa310da94430afb5d637b144c4d26fe905ebf1001a4d8ee940f retires the standalone record and preserves the South Burlington, Zero Gravity, and Magic Hat project identities, the qualified 2008-2011 development chronology, operating profile, and direct sources in the same canonical after-image. A second mutation would collide with the PurposeEnergy update.",
+      "supersededByTaskId": "ledger:0394:middlebury-resource-recovery-center:08b27d77",
+      "taskSnapshotSha256": "6110d1e2d64517fae0d2d3fa6dc25d194813c935add789befc6aef22d4eb4a6e",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0398-purposeenergy-south-burlington/attempt-1/locked-batch-v1-task-snapshot.json",
+          "sha256": "6110d1e2d64517fae0d2d3fa6dc25d194813c935add789befc6aef22d4eb4a6e"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0394-0398-v1/decisions/0398-purposeenergy-south-burlington.json",
+          "sha256": "fee8dfb839a83a78c2de613efd312bc6563fc092cff0111efcdb1c42b7a2d5b8"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -38095,6 +38239,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "SUPERSEDED",
+          "at": "2026-09-02T00:02:19.000Z",
+          "reason": "PurposeEnergy South Burlington is a project beneath PurposeEnergy, not a separate manager-level portfolio company. Task 394's consolidated PurposeEnergy proposal dd9a2f921915afa310da94430afb5d637b144c4d26fe905ebf1001a4d8ee940f retires the standalone record and preserves the South Burlington, Zero Gravity, and Magic Hat project identities, the qualified 2008-2011 development chronology, operating profile, and direct sources in the same canonical after-image. A second mutation would collide with the PurposeEnergy update.",
+          "taskSnapshotSha256": "6110d1e2d64517fae0d2d3fa6dc25d194813c935add789befc6aef22d4eb4a6e",
+          "evidenceSha256": [
+            "056e7afef2504192673e15d989f8be1975e98ae769a0f1779bbad47bcd09b5cb",
+            "4c6aada2d44de5eb2061b1f4d1498efed1284d6356808348f1eca851963695f4",
+            "6110d1e2d64517fae0d2d3fa6dc25d194813c935add789befc6aef22d4eb4a6e",
+            "fee8dfb839a83a78c2de613efd312bc6563fc092cff0111efcdb1c42b7a2d5b8"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -42046,5 +42205,5 @@
       ]
     }
   ],
-  "manifestSha256": "f15769364a56f090fb9bd8898317b779769e54776b96f9880b8b3de151751a31"
+  "manifestSha256": "5b02e9f68e91ca2793f49eb32135a82bad866346ac6f921d44e9a8f57f4060a9"
 }
