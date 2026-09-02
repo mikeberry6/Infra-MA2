@@ -163,7 +163,7 @@ export function activateExecutionBatch(input: {
 
 const transitions: Record<BatchExecutionState, readonly BatchExecutionState[]> = {
   FORMING: ["READY", "FAILED"],
-  READY: ["RELEASING", "FAILED"],
+  READY: ["RELEASING", "COMPLETED", "FAILED"],
   RELEASING: ["APPLYING", "FAILED"],
   APPLYING: ["VERIFYING", "VERIFYING_FAILED", "FAILED"],
   VERIFYING: ["COMPLETED", "VERIFYING_FAILED"],
@@ -181,6 +181,7 @@ export function transitionExecutionBatch(input: {
   releaseSha?: string;
   receipt?: { path: string; sha256: string };
   reason?: string;
+  terminalOnly?: boolean;
 }): PortCoBatchExecutionLedger {
   const ledger = verifyBatchExecutionLedger(input.ledger);
   const index = ledger.batches.findIndex((batch) => batch.batchId === input.batchId);
@@ -196,8 +197,19 @@ export function transitionExecutionBatch(input: {
   if (["RELEASING", "APPLYING", "VERIFYING", "COMPLETED", "VERIFYING_FAILED"].includes(input.to) && !batchManifest) {
     throw new Error(`${input.to} requires the immutable batch manifest`);
   }
-  if (["APPLYING", "VERIFYING", "COMPLETED", "VERIFYING_FAILED"].includes(input.to) && !releaseSha) {
-    throw new Error(`${input.to} requires the exact release SHA`);
+  const isTerminalOnlyCompletion = current.state === "READY" && input.to === "COMPLETED" && input.terminalOnly === true;
+  if (input.to === "COMPLETED" && current.state === "READY" && !input.terminalOnly) {
+    throw new Error("READY -> COMPLETED is reserved for a verified terminal-only batch");
+  }
+  if (input.terminalOnly && !isTerminalOnlyCompletion) {
+    throw new Error("terminalOnly is valid only for READY -> COMPLETED");
+  }
+  if (["APPLYING", "VERIFYING", "VERIFYING_FAILED"].includes(input.to)
+    || (input.to === "COMPLETED" && !isTerminalOnlyCompletion)) {
+    if (!releaseSha) throw new Error(`${input.to} requires the exact release SHA`);
+  }
+  if (isTerminalOnlyCompletion && releaseSha) {
+    throw new Error("A terminal-only completion must not carry a release SHA");
   }
   if (["VERIFYING", "COMPLETED"].includes(input.to) && !receipt) {
     throw new Error(`${input.to} requires a durable receipt`);

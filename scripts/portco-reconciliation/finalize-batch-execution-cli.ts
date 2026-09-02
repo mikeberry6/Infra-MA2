@@ -4,6 +4,7 @@ import { dirname, resolve } from "node:path";
 import {
   verifyPortCoBatchManifest,
   verifyPortCoBatchReceipt,
+  verifyPortCoTerminalBatchReceipt,
 } from "./batch-artifacts";
 import { resolveBatchMembers } from "./batch-resolver";
 import {
@@ -60,7 +61,10 @@ async function main(): Promise<void> {
   const receiptPath = required(values, "batch-receipt");
   const source = verifyExecutionManifest(await json(sourcePath));
   const batch = verifyPortCoBatchManifest(await json(batchPath));
-  const receipt = verifyPortCoBatchReceipt(await json(receiptPath), batch);
+  const receiptInput = await json(receiptPath);
+  const receipt = (receiptInput as { artifactType?: unknown }).artifactType === "PORTCO_TERMINAL_BATCH_RECEIPT"
+    ? verifyPortCoTerminalBatchReceipt(receiptInput, batch)
+    : verifyPortCoBatchReceipt(receiptInput, batch);
   const resolved = await resolveBatchMembers(repositoryRoot, batch);
   if (resolved.length !== receipt.members.length) throw new Error("Resolved batch and receipt member counts differ");
   const members: CompleteExecutionBatchMember[] = await Promise.all(resolved.map(async (member, index) => {

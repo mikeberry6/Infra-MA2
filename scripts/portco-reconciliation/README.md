@@ -235,6 +235,13 @@ all mutations inside one Prisma serializable transaction; a failure in any
 member rolls back the full database bundle. Terminal members never write to
 the database.
 
+An all-terminal bundle does not create an empty production release. After all
+root artifacts and decision lineage pass verification,
+`portco:reconciliation:batch:terminal-receipt` creates a hashed receipt that
+explicitly proves no seed, database, or release action was required. The source
+manifest is then finalized normally and the bundle moves directly from `READY`
+to `COMPLETED` with `--terminal-only=true`.
+
 If a bundle adds, retires, or changes an active seed owner identity, also run
 the hash-bound `portfolio:fund-attribution:reconcile-seed` control. It preserves
 reviewed fund attributions outside the bundle and proves one-to-one coverage of

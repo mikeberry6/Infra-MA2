@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0406:sparus-holdings:85d26c81",
+  "taskIndex": 406,
+  "companyName": "Sparus Holdings",
+  "asOfDate": "2026-09-01",
+  "decision": "DEFERRED",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-02T01:08:00.000Z",
+  "result": {
+    "decision": "DEFERRED",
+    "rationale": "Defer creation of Sparus Holdings while preserving the verified research. Ridgemont's official portfolio and acquisition releases prove its March 2021 investment and the company's current platform status, but management rollover, the complete current holder table, Ridgemont's exact stake and vehicle, and any deal-specific PNC equity component remain unresolved.",
+    "evidence": [
+      {
+        "url": "https://www.ridgemontep.com/portfolio/sparus-holdings/",
+        "purpose": "Official current portfolio evidence for Sparus Holdings."
+      },
+      {
+        "url": "https://www.ridgemontep.com/press-releases/ridgemont-equity-partners-acquires-sparus-holdings/",
+        "purpose": "Official evidence of Ridgemont's March 2021 acquisition."
+      }
+    ],
+    "unresolvedQuestions": [
+      "Management rollover and the complete current holder table.",
+      "Ridgemont's fund, SPV and exact stake or control rights.",
+      "Whether PNC held any deal-specific equity rather than providing financing or advice."
+    ]
+  },
+  "lineage": {
+    "sourceDecision": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0406-sparus-holdings/attempt-1/research-decision.json",
+    "basis": "The validated research proves the current platform investment but identifies unresolved active ownership and vehicle facts."
+  }
+}

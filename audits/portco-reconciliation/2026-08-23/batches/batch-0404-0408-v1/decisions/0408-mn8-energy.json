@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0408:mn8-energy:3c6d0235",
+  "taskIndex": 408,
+  "companyName": "MN8 Energy",
+  "outcome": "DEFERRED",
+  "decidedAt": "2026-09-02T01:12:00.000Z",
+  "rationale": "Defer the MN8 Energy ownership correction while preserving the verified research. Direct sources support Ridgewood's March 28, 2024 $125 million convertible-preferred investment through WSI Fund II Holdings and the signed but unclosed Greenbacker acquisition. The complete current common-owner table and stakes remain unresolved, so applying a partial ownership after-image would risk displacing valid active owners before legal closing.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0408-mn8-energy/attempt-1/locked-batch-v1-task-snapshot.json",
+    "sha256": "aa358f860cce5f91152fe5d54a4ee0ddb58d3efd4025f60527153deeb2035f45"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0408-mn8-energy/attempt-1/application-research-decision-v1.json",
+    "sha256": "eeaefa58b8f30c40dd2c5cef1e498eb7c7af76f96bdf0e4a3dedea818f582e04"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0408-mn8-energy/attempt-1/application-source-verification-v1.json",
+    "sha256": "6cd722d909187dae76b1b4bbb67e248ba7ad5564358502a4d33db6251531e976"
+  },
+  "evidence": [
+    {
+      "url": "https://ridgewoodinfrastructure.com/mn8-energy/",
+      "purpose": "Official current Ridgewood portfolio evidence for MN8 Energy."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/2136853/000162828026055300/exhibit1033-sx4.htm",
+      "purpose": "Official investor-rights agreement identifying WSI Fund II Holdings and the March 28, 2024 investment."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1563922/000162828026049209/mn8grec8-kx425.htm",
+      "purpose": "Official transaction materials showing the Greenbacker acquisition remains signed and pending closing."
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "1683ebad674b6cc82b74cd7951bd9ad47be236eb2334e8ed92e54a137055a775"
+}

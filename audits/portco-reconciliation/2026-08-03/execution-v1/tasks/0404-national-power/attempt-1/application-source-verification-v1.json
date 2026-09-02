@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0404:national-power:872e462e",
+  "checkedAt": "2026-09-02T01:08:00.000Z",
+  "method": "Independent direct HTTPS status, redirect, byte-length and content-hash checks.",
+  "sources": [
+    {
+      "url": "https://www.ridgemontep.com/portfolio/national-power/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ridgemontep.com/portfolio/national-power/",
+      "bytes": 18270,
+      "sha256": "7e20f3c66f0d622f0955cc0dd53c5cd1d7b159472222cb2f124ea99b08f49f3f",
+      "healthStatus": "WORKING",
+      "verifiedClaims": ["Ridgemont presents National Power as a current portfolio company."]
+    },
+    {
+      "url": "https://www.ridgemontep.com/press-releases/ridgemont-equity-partners-leads-recapitalization-to-support-national-powers-growth/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ridgemontep.com/press-releases/ridgemont-equity-partners-leads-recapitalization-to-support-national-powers-growth/",
+      "bytes": 18839,
+      "sha256": "a6a9e5ff7765ae1c3f76179c4aae6110a23d5680233f8635c46f1cd1e5424c02",
+      "healthStatus": "WORKING",
+      "verifiedClaims": ["Ridgemont announced its 2023 National Power recapitalization alongside management."]
+    },
+    {
+      "url": "https://www.ridgemontep.com/wp-content/uploads/REP-Brochure-4.8.26.pdf",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ridgemontep.com/wp-content/uploads/REP-Brochure-4.8.26.pdf",
+      "bytes": 3167082,
+      "sha256": "1ae69c8fdf64345fd390f58c1487a19679403b2172e49f37a6ed91a4faaf842e",
+      "healthStatus": "WORKING",
+      "verifiedClaims": ["Ridgemont's current brochure includes National Power among its investments."]
+    }
+  ],
+  "allEvidenceUrlsDirectHttps": true,
+  "allSourcesWorkingOrVerified": true,
+  "deadSourceCount": 0
+}

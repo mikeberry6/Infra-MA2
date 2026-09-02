@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0405:northstar-recycling:dba0ea8b",
+  "checkedAt": "2026-09-02T01:08:00.000Z",
+  "method": "Independent direct HTTPS status, redirect, byte-length and content-hash checks; SEC anti-automation response retained as browser-blocked but previously verified direct filing evidence.",
+  "sources": [
+    {
+      "url": "https://www.ridgemontep.com/portfolio/northstar-recycling-company/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ridgemontep.com/portfolio/northstar-recycling-company/",
+      "bytes": 18218,
+      "sha256": "c228b01bc9c4b0e7d908e8f55d886538320920bcfc9bf93c39eb566388130427",
+      "healthStatus": "WORKING",
+      "verifiedClaims": ["Ridgemont presents Northstar Recycling as a current portfolio company."]
+    },
+    {
+      "url": "https://www.ridgemontep.com/press-releases/ridgemont-announces-growth-investment-in-northstar-recycling-company/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ridgemontep.com/press-releases/ridgemont-announces-growth-investment-in-northstar-recycling-company/",
+      "bytes": 19611,
+      "sha256": "47c7fe3b7f7ac9b527373af84cf7a278a8e9eb36a5b762ac8224102256107a38",
+      "healthStatus": "WORKING",
+      "verifiedClaims": ["Ridgemont announced its 2021 investment alongside Northstar's founders."]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/91767/000009176726000008/R12.htm",
+      "httpStatus": 403,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/91767/000009176726000008/R12.htm",
+      "bytes": 2165,
+      "sha256": "44702367372fe238f428be3a42a4387589977f84aa3627e71c632691d01df7d9",
+      "healthStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verifiedClaims": ["Sonoco's filing establishes its former 2.7% Northstar interest and December 2024 disposition without naming the buyer."]
+    }
+  ],
+  "allEvidenceUrlsDirectHttps": true,
+  "allSourcesWorkingOrVerified": true,
+  "deadSourceCount": 0
+}

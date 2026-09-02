@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_MANIFEST",
+  "methodologyVersion": "PORTCO_APPLY_BATCH_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0404-0408-v1",
+  "createdAt": "2026-09-02T01:14:00.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "f1461328f3e3afe67a47849dce656706236f0897f0412c3ad7559d0e630f795f"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0404:national-power:872e462e",
+      "taskIndex": 404,
+      "companyName": "National Power",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0404-0408-v1/decisions/0404-national-power.json",
+        "sha256": "b9fcf22ac3ff54e546f34abcec684537071dd7101fdd23664e1160247a225f69"
+      }
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0405:northstar-recycling:dba0ea8b",
+      "taskIndex": 405,
+      "companyName": "Northstar Recycling",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0404-0408-v1/decisions/0405-northstar-recycling.json",
+        "sha256": "ce2a2700b8bbe405bffcd446ccc4eb7f09a3f01e6d6f29c4d3d5675b04da7127"
+      }
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0406:sparus-holdings:85d26c81",
+      "taskIndex": 406,
+      "companyName": "Sparus Holdings",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0404-0408-v1/decisions/0406-sparus-holdings.json",
+        "sha256": "b71770c0f673b9ddf91df195f15a82572661d5d7128e94abaea2456aa4dbb5e0"
+      }
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0407:dauntless-air:af9f18a7",
+      "taskIndex": 407,
+      "companyName": "Dauntless Air",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0404-0408-v1/decisions/0407-dauntless-air.json",
+        "sha256": "bc5ce57f7906ae723dd1e26bcde722ae6cfa325675966a21b1f06bb31da745b1"
+      }
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0408:mn8-energy:3c6d0235",
+      "taskIndex": 408,
+      "companyName": "MN8 Energy",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0404-0408-v1/decisions/0408-mn8-energy.json",
+        "sha256": "1683ebad674b6cc82b74cd7951bd9ad47be236eb2334e8ed92e54a137055a775"
+      }
+    }
+  ],
+  "collisionAnalysis": {
+    "independent": true,
+    "claimsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "sharedSourceUrls": [],
+    "conflicts": []
+  },
+  "batchSha256": "7ad67c2b871775596df12011a1a15a1826113b1ec1509ad76bd23cbbcff27ad4"
+}

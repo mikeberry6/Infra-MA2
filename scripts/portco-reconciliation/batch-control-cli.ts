@@ -9,6 +9,11 @@ import {
   type BatchExecutionState,
   type PortCoBatchExecutionLedger,
 } from "./batch-control";
+import {
+  verifyPortCoBatchManifest,
+  verifyPortCoTerminalBatchReceipt,
+} from "./batch-artifacts";
+import { digestsEqual } from "./hash";
 import { verifyExecutionManifest } from "./execution-control";
 
 function options(argv: string[]) {
@@ -115,6 +120,18 @@ async function main(): Promise<void> {
     const manifestSha256 = values.get("batch-manifest-sha256")?.trim();
     const receiptPath = values.get("receipt-path")?.trim();
     const receiptSha256 = values.get("receipt-sha256")?.trim();
+    const terminalOnly = values.get("terminal-only") === "true";
+    if (terminalOnly) {
+      if (!manifestPath || !manifestSha256 || !receiptPath || !receiptSha256) {
+        throw new Error("Terminal-only completion requires batch manifest and receipt references");
+      }
+      const manifest = verifyPortCoBatchManifest(await json(manifestPath));
+      const receipt = verifyPortCoTerminalBatchReceipt(await json(receiptPath), manifest);
+      if (!digestsEqual(manifest.batchSha256, manifestSha256)
+        || !digestsEqual(receipt.receiptSha256, receiptSha256)) {
+        throw new Error("Terminal-only manifest or receipt reference hash does not reproduce");
+      }
+    }
     const updated = transitionExecutionBatch({
       ledger,
       batchId: required(values, "batch-id"),
@@ -124,6 +141,7 @@ async function main(): Promise<void> {
       ...(values.get("release-sha") ? { releaseSha: values.get("release-sha") } : {}),
       ...(receiptPath && receiptSha256 ? { receipt: { path: receiptPath, sha256: receiptSha256 } } : {}),
       ...(values.get("reason") ? { reason: values.get("reason") } : {}),
+      ...(terminalOnly ? { terminalOnly: true } : {}),
     });
     await replaceLedger(ledgerPath, updated);
     console.log(JSON.stringify(updated.batches.find((batch) => batch.batchId === required(values, "batch-id")), null, 2));

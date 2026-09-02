@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0408:mn8-energy:3c6d0235",
+  "taskIndex": 408,
+  "companyName": "MN8 Energy",
+  "asOfDate": "2026-09-01",
+  "decision": "DEFERRED",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-02T01:08:00.000Z",
+  "result": {
+    "decision": "DEFERRED",
+    "rationale": "Defer the MN8 Energy ownership correction while preserving the verified research. Direct sources support Ridgewood's March 28, 2024 $125 million convertible-preferred investment through WSI Fund II Holdings and the signed but unclosed Greenbacker acquisition. The complete current common-owner table and stakes remain unresolved, so applying a partial ownership after-image would risk displacing valid active owners before legal closing.",
+    "evidence": [
+      {
+        "url": "https://ridgewoodinfrastructure.com/mn8-energy/",
+        "purpose": "Official current Ridgewood portfolio evidence for MN8 Energy."
+      },
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/2136853/000162828026055300/exhibit1033-sx4.htm",
+        "purpose": "Official investor-rights agreement identifying WSI Fund II Holdings and the March 28, 2024 investment."
+      },
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/1563922/000162828026049209/mn8grec8-kx425.htm",
+        "purpose": "Official transaction materials showing the Greenbacker acquisition remains signed and pending closing."
+      }
+    ],
+    "unresolvedQuestions": [
+      "The complete current common-owner table and percentage stakes.",
+      "The current status and stakes of Goldman Sachs RP Holdings and the Regents of the University of California.",
+      "Series A economics beyond the disclosed amount, convertibility and governance rights."
+    ]
+  },
+  "lineage": {
+    "sourceDecision": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0408-mn8-energy/attempt-1/research-decision.json",
+    "basis": "The validated research proves the Ridgewood instrument and pending transaction but identifies an unresolved active common-owner table."
+  }
+}

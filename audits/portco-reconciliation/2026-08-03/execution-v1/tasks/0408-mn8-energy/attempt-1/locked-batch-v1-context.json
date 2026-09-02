@@ -1,0 +1,247 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0408:mn8-energy:3c6d0235",
+  "taskIndex": 408,
+  "companyName": "MN8 Energy",
+  "generatedAt": "2026-09-02T00:59:58.954Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0408-mn8-energy/attempt-1/locked-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 408,
+    "taskId": "ledger:0408:mn8-energy:3c6d0235",
+    "canonicalKey": "mn8-energy|united-states",
+    "companyName": "MN8 Energy",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 85,
+    "managers": [
+      "Ridgewood Infrastructure"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "085-ridgewood-infrastructure:holding:004:mn8-energy"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjmx8018sivhekm7abt7i"
+    ],
+    "seedKeys": [
+      "mn8 energy|United States"
+    ],
+    "evidenceUrls": [
+      "https://ridgewoodinfrastructure.com/news/ridgewood-infrastructure-announces-investment-in-mn8-energy/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_OWNER requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjmx8018sivhekm7abt7i",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "mn8-energy|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjmx8018sivhekm7abt7i",
+    "name": "MN8 Energy",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Solar, battery storage, and EV charging",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "MN8 Energy owns and operates utility-scale and distributed solar assets, battery storage systems, and EV-charging infrastructure across the United States. Its customers include corporate, industrial, and mobility users that procure renewable power, charging, and related infrastructure services under long-term contractual arrangements. The operating model is asset heavy and primarily contracted, with power and infrastructure cash flows supported by long-duration customer agreements rather than merchant-only exposure. Public company materials state that the platform has more than 3 gigawatts of operating solar generation, more than 250 megawatts of battery storage, over 800 projects, and a presence in more than 25 states. Ridgewood announced a structured equity investment in the company in 2024, with the form of capital described as preferred growth equity. The investment gives Ridgewood exposure to a scaled U.S. renewable and charging platform while leaving broader ownership details undisclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk9fc028eivheuujl74el",
+        "managerName": "Ridgewood",
+        "organizationName": "Ridgewood",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmmlx053oivhevhhquj9s",
+        "date": "2024",
+        "event": "Ridgewood described the investment as growth capital for one of the larger privately owned U.S. solar platforms.",
+        "category": "FINANCING",
+        "sortDate": "2024-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmmmi053pivhed8hugpny",
+        "date": "Apr 2024",
+        "event": "Ridgewood Infrastructure announced a structured preferred equity investment in MN8 Energy.",
+        "category": "FINANCING",
+        "sortDate": "2024-04-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsnf30cwlivhecw42g3rc",
+        "label": "Ridgewoodinfrastructure — MN8 Energy",
+        "url": "https://ridgewoodinfrastructure.com/mn8-energy/",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Ridgewoodinfrastructure transaction or milestone detail",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpsng20cwnivheu42jaayu",
+        "label": "Mn8 — MN8 Energy",
+        "url": "https://mn8.com/about/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Mn8 company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsnh50cwpivhedj9erw7m",
+        "label": "Mn8 — MN8 Energy",
+        "url": "https://mn8.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Mn8 company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsni80cwrivheg3gzw5gb",
+        "label": "PR Newswire — MN8 Energy",
+        "url": "https://www.prnewswire.com/news-releases/ridgewood-infrastructure-announces-structured-equity-investment-in-mn8-energy-one-of-americas-largest-privately-owned-solar-energy-companies-302103733.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "PR Newswire — MN8 Energy",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "MN8 Energy",
+    "investmentFirm": "Ridgewood",
+    "sector": "Power & ET",
+    "subsector": "Solar, battery storage, and EV charging",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "MN8 Energy owns and operates utility-scale and distributed solar assets, battery storage systems, and EV-charging infrastructure across the United States. Its customers include corporate, industrial, and mobility users that procure renewable power, charging, and related infrastructure services under long-term contractual arrangements. The operating model is asset heavy and primarily contracted, with power and infrastructure cash flows supported by long-duration customer agreements rather than merchant-only exposure. Public company materials state that the platform has more than 3 gigawatts of operating solar generation, more than 250 megawatts of battery storage, over 800 projects, and a presence in more than 25 states. Ridgewood announced a structured equity investment in the company in 2024, with the form of capital described as preferred growth equity. The investment gives Ridgewood exposure to a scaled U.S. renewable and charging platform while leaving broader ownership details undisclosed.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2024,
+    "headquarters": "United States",
+    "milestones": [
+      {
+        "date": "2024",
+        "event": "Ridgewood described the investment as growth capital for one of the larger privately owned U.S. solar platforms.",
+        "category": "Financing"
+      },
+      {
+        "date": "Apr 2024",
+        "event": "Ridgewood Infrastructure announced a structured preferred equity investment in MN8 Energy.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Ridgewoodinfrastructure — MN8 Energy",
+        "url": "https://ridgewoodinfrastructure.com/mn8-energy/",
+        "type": "ARTICLE",
+        "purpose": "MILESTONE_EVENT"
+      },
+      {
+        "label": "Mn8 — MN8 Energy",
+        "url": "https://mn8.com/about/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Mn8 — MN8 Energy",
+        "url": "https://mn8.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "PR Newswire — MN8 Energy",
+        "url": "https://www.prnewswire.com/news-releases/ridgewood-infrastructure-announces-structured-equity-investment-in-mn8-energy-one-of-americas-largest-privately-owned-solar-energy-companies-302103733.html",
+        "type": "PRESS_RELEASE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Ridgewood",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2024,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpikot005rivhewkpj6ng8",
+        "name": "Ridgewood",
+        "updatedAt": "2026-07-23T16:09:34.013Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0408:mn8-energy:3c6d0235",
+    "taskIndex": 408,
+    "canonicalKey": "mn8-energy|united-states",
+    "capturedAt": "2026-09-02T00:59:58.954Z",
+    "databaseRevision": "revision:0b6436d6157275e90bfa446f0ca745f2b7e64934bed37c8217daa8af1262134a",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "6c95a825c1f643f472824f896639f0ef2209ffe2ffb54cfbd25e96abeabcc82b",
+    "productionSnapshotSha256": "b77898af9e637a2f5b01b0a22a3aabb0c46b64cb2273558d741d9c6ab66de522",
+    "targetCompanySnapshotSha256": "f90fb79e3a8fc45290ac2391cae8b7c826655bf92db67237cdd073f6b295169e",
+    "seedEntrySha256": "b3658ea21eee7796666996f5c07268460beac3b1590b5a5adbf3f66f645aece4",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "bd62c3fa4047b22263a9095047b9448ce28b7be64d93d7c6d36cd2c5375e093c",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "4202dc850f6a2d1332455f8d457ae75933d53f3e47ab040ba6b87296824c9179",
+      "citationsSha256": "e8f9215f92e6de46b65e868e552e4e865b8148cd6af41a07993e08362b9d1a30",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "2a5fffce8c4f3c8a41a38f13c054adf5669791ead153e74f025e01ca36a96fd5",
+    "stateSha256": "f09b8f38d307b7db5fc5a3557a9da8f6c2eb9fb004aeac946538450f72848015",
+    "taskSnapshotSha256": "ac611d7be4161af04d94f7825797faced8145ae986ff9befea7132fb390eb884"
+  },
+  "contextSha256": "849a96efe5b1f08bc7a59d49f04767a71d5d6c5f71030eefa6a18b295be666c9"
+}
