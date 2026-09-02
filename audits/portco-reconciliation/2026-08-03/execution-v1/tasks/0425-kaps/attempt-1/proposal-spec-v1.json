@@ -1,0 +1,106 @@
+{
+  "generatedAt": "2026-09-02T03:58:15.000Z",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER",
+    "RETIRE_OWNERSHIP"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "reviewedSeedRetirementTaskIds": [],
+  "rationale": "Keyera signed and closed its acquisition of Stonepeak's remaining 50% KAPS interest on June 17, 2026, becoming the system's 100% owner. KAPS remains operating, so Stonepeak's period is realized while the company remains active under Keyera.",
+  "evidence": [
+    {
+      "url": "https://www.keyera.com/news-and-stories/news-releases/keyera-announces-acquisition-of-remaining-50-interest-in-kaps/",
+      "purpose": "Direct party evidence of closing, stake, price and current ownership",
+      "supports": [
+        "Keyera acquired Stonepeak's remaining 50% interest on June 17, 2026",
+        "Keyera became the 100% owner"
+      ]
+    },
+    {
+      "url": "https://www.keyera.com/news-and-stories/news-releases/keyera-announces-2026-second-quarter-results/",
+      "purpose": "Subsequent results confirming the completed acquisition and continuing operation",
+      "supports": [
+        "The acquisition remained closed and KAPS remained operational after closing"
+      ]
+    },
+    {
+      "url": "https://stonepeak.com/press-releases/stonepeak-completes-acquisition-of-interest-in-kaps",
+      "purpose": "Direct evidence of Stonepeak's April 2023 entry and 50% interest",
+      "supports": [
+        "Stonepeak's 50% ownership period began in 2023"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "companyFieldUpdates": {
+    "aliases": [
+      "KAPS Pipeline",
+      "Key Access Pipeline System"
+    ],
+    "description": "KAPS is a dual-pipeline system in Alberta that transports natural gas liquids and condensate from the Karr area to Keyera's processing and fractionation network. The system serves upstream producers and downstream infrastructure users through contracted pipeline transportation. Public materials describe roughly 560 kilometres of pipeline and planned throughput capacity of up to 350,000 barrels per day on the NGL line. Keyera has owned 100% of KAPS since acquiring Stonepeak's remaining 50% interest on June 17, 2026; the system remains active.",
+    "lastVerifiedAt": "2026-09-01T00:00:00.000Z"
+  },
+  "ownershipPeriodUpdates": [
+    {
+      "id": "cmrxpka4r029hivhet9r7jm95",
+      "set": {
+        "fundName": null,
+        "vehicleName": "Kentucky Middle Holdings, LP / Kentucky MidCo, Ltd.",
+        "stake": "50%",
+        "investmentYear": 2023,
+        "exitYear": 2026,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    }
+  ],
+  "ownershipPeriodRemovals": [],
+  "ownershipPeriodAdditions": [
+    {
+      "id": null,
+      "managerName": "Keyera Corp.",
+      "organizationName": null,
+      "fundName": null,
+      "vehicleName": null,
+      "stake": "100%",
+      "investmentYear": 2019,
+      "exitYear": null,
+      "isActive": true,
+      "transactionState": "CLOSED_ACTIVE"
+    }
+  ],
+  "pendingOwnershipTransactionUpdates": [],
+  "pendingOwnershipTransactionAdditions": [],
+  "milestoneUpdates": [],
+  "milestoneTransfers": [],
+  "citationUpdates": [
+    {
+      "id": "cmrxpssm30d4rivhemaupq6b4",
+      "set": {
+        "isPrimary": false
+      }
+    }
+  ],
+  "citationAdditions": [
+    {
+      "id": null,
+      "label": "Keyera",
+      "url": "https://www.keyera.com/news-and-stories/news-releases/keyera-announces-acquisition-of-remaining-50-interest-in-kaps/",
+      "sourceType": "ARTICLE",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "June 17, 2026 closing and 100% Keyera ownership",
+      "isPrimary": true
+    },
+    {
+      "id": null,
+      "label": "Keyera — 2026 second-quarter results",
+      "url": "https://www.keyera.com/news-and-stories/news-releases/keyera-announces-2026-second-quarter-results/",
+      "sourceType": "PRESS_RELEASE",
+      "purpose": "OPERATIONS_ASSETS",
+      "evidenceLabel": "Post-closing ownership and continuing operation",
+      "isPrimary": false
+    }
+  ]
+}

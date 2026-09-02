@@ -1,0 +1,211 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0428:new-england-power-transmission-assets:2b091d76",
+  "taskIndex": 428,
+  "companyName": "New England Power transmission assets",
+  "asOfDate": "2026-08-19",
+  "decision": "EXCLUDED",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-02T03:58:15.000Z",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "New England Power transmission assets",
+    "requestedManagers": [
+      "Stonepeak"
+    ],
+    "decision": "EXCLUDED",
+    "confidence": "HIGH",
+    "rationale": "The proposed 2023 Stonepeak minority holding is disproved. New England Power Company (NEP) is National Grid USA's regulated transmission subsidiary; 'Stonepeak New England Power' was a separate Canal/Bucksport generation portfolio acquired in 2018-2019 and sold to JERA in 2022.",
+    "identityResolution": {
+      "result": "No Stonepeak-associated NEP transmission platform exists.",
+      "canonicalCompany": "New England Power Company",
+      "aliases": [
+        "NEP",
+        "New England Power Company d/b/a National Grid"
+      ],
+      "boundary": "Regulated transmission utility; not a Stonepeak vehicle.",
+      "conflatedCompany": "Stonepeak New England Power / Canal Power Holdings LLC",
+      "conflatedPerimeter": "Canal I-III (Massachusetts) and Bucksport (Maine), about 1.63 GW of thermal generation.",
+      "exitParties": "Seller Canal Power Holdings LLC; buyer a wholly owned JERA Americas affiliate (exact name NOT_PUBLICLY_DISCLOSED).",
+      "regulatoryDocket": "FERC EC22-71; Canal Generating LLC et al., 181 FERC ¶ 61,157"
+    },
+    "ownershipResolution": {
+      "currentOwners": [
+        {
+          "manager": "National Grid plc",
+          "organization": "National Grid USA",
+          "fund": null,
+          "vehicle": "National Grid North America Inc.",
+          "stake": "100% of NEP common equity/control",
+          "announcementDate": null,
+          "entryDate": "2000-03-22",
+          "entryYear": 2000,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "ACTIVE"
+        }
+      ],
+      "falseCandidateOrFormerOwners": [
+        {
+          "manager": "Stonepeak",
+          "organization": "Canal Power Holdings LLC",
+          "fund": "Stonepeak Infrastructure Fund II LP verified for Canal I-II; Bucksport fund NOT_PUBLICLY_DISCLOSED",
+          "vehicle": "Stonepeak Kestrel Holdings LLC / Stonepeak Kestrel Holdings II LLC",
+          "stake": "100% of separate generation holding at exit",
+          "announcementDate": "2018-03-22",
+          "entryDate": "2018-06-29",
+          "entryYear": 2018,
+          "exitDate": "2022-12-01",
+          "exitYear": 2022,
+          "isActive": false,
+          "transactionState": "REALIZED"
+        }
+      ],
+      "governance": "National Grid controls NEP; no Stonepeak rights were found.",
+      "pendingTransactions": []
+    },
+    "operatingResolution": {
+      "geography": "United States: Massachusetts, New Hampshire and Vermont",
+      "sector": "Energy infrastructure",
+      "subsector": "Regulated electric transmission",
+      "description": "NEP owns/operates wholesale transmission facilities under FERC formula rates; ISO-NE has operational control.",
+      "customers": "ISO-NE distribution utilities, generators and municipalities",
+      "scale": "2026-03-31: $4.346bn net PP&E; $5.253bn total assets",
+      "qualification": "Qualifying regulated infrastructure, but not a Stonepeak PortCo."
+    },
+    "acquisitionExitCheck": {
+      "proposedTransaction": "No Stonepeak/National Grid announcement, FERC Section 203 matter, SEC/company filing or utility approval supports a 2023 Stonepeak NEP investment.",
+      "actualTransaction": "Canal I-III closed 2018-06-29; Bucksport followed in 2019; the 100% JERA sale was signed May 2022, authorized 2022-11-23 and closed 2022-12-01.",
+      "price": "$320m for Canal I-II; Canal III, Bucksport and exit consideration NOT_PUBLICLY_DISCLOSED.",
+      "laterCheck": "No Stonepeak NEP transfer, buyback, restructuring, exit or pending deal was found through 2026-08-19; NEP reviewed subsequent events through 2026-06-17.",
+      "pendingTransactions": []
+    },
+    "milestones": [
+      {
+        "date": "2000-03-22",
+        "event": "National Grid acquired NEES; NEP remained under renamed National Grid USA."
+      },
+      {
+        "date": "2018-06-29",
+        "event": "Stonepeak closed Canal I-III; Canal I-II cost $320m, funded with Fund II equity and debt."
+      },
+      {
+        "date": "2022-05-13",
+        "event": "JERA announced its signed 100% acquisition of the 1.63 GW Canal/Bucksport portfolio."
+      },
+      {
+        "date": "2022-12-01",
+        "event": "FERC-approved EC22-71 sale of Canal Power Holdings LLC was consummated."
+      }
+    ],
+    "evidence": [
+      {
+        "label": "NEP audited FY2026 financial statements",
+        "url": "https://www.nationalgrid.com/document/584516/download",
+        "purpose": "NEP identity, ownership, scale and subsequent events.",
+        "sourceTier": "T1",
+        "workingStatus": "VERIFIED",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "Stonepeak investments page",
+        "url": "https://stonepeak.com/investments",
+        "purpose": "Stonepeak generation identity and stated exit.",
+        "sourceTier": "T1",
+        "workingStatus": "VERIFIED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "GenOn Form 8-K, 2018-06-29",
+        "url": "https://www.sec.gov/Archives/edgar/data/1126294/000110465918043226/a18-16219_18k.htm",
+        "purpose": "2018 entities, close, price and Fund II.",
+        "sourceTier": "T1",
+        "workingStatus": "VERIFIED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "JERA announcement, 2022-05-13",
+        "url": "https://www.jera.co.jp/en/news/information/20220513_907",
+        "purpose": "Signed 100% JERA acquisition and perimeter.",
+        "sourceTier": "T1",
+        "workingStatus": "VERIFIED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "NEPOOL report on FERC EC22-71",
+        "url": "https://nepool.com/wp-content/uploads/2023/01/Lit_Report_20230104.pdf",
+        "purpose": "FERC approval, seller perimeter and close.",
+        "sourceTier": "T2",
+        "workingStatus": "VERIFIED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "NEP Form 10-K, fiscal 2002",
+        "url": "https://www.sec.gov/Archives/edgar/data/71337/000007133702000006/form10k.htm",
+        "purpose": "2000 National Grid closing and NEP parent.",
+        "sourceTier": "T1",
+        "workingStatus": "VERIFIED",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "before": "Unverified 2023 Stonepeak minority investment in NEP transmission assets.",
+      "after": "NEP remains National Grid-controlled; Stonepeak's namesake holding was unrelated generation and exited in 2022.",
+      "change": "Reject the proposed addition and Stonepeak-NEP association."
+    },
+    "excludedOrDuplicateCandidates": [
+      {
+        "candidate": "Stonepeak New England Power / Canal Power Holdings LLC",
+        "disposition": "EXCLUDED_FROM_THIS_KEY",
+        "reason": "Merchant generation; sold to JERA in 2022."
+      },
+      {
+        "candidate": "New England Hydro-Transmission entities",
+        "disposition": "NOT_STONEPEAK_PORTCOS",
+        "reason": "National Grid-controlled affiliates; no Stonepeak evidence."
+      }
+    ],
+    "unresolvedQuestions": [
+      {
+        "item": "Exact JERA acquisition affiliate",
+        "status": "NOT_PUBLICLY_DISCLOSED",
+        "impact": "Noncritical."
+      },
+      {
+        "item": "Canal III/Bucksport/exit prices and Bucksport vehicle",
+        "status": "NOT_PUBLICLY_DISCLOSED",
+        "impact": "Noncritical."
+      },
+      {
+        "item": "NEP preferred-share holders/voting rights",
+        "status": "NOT_PUBLICLY_DISCLOSED",
+        "impact": "No Stonepeak evidence; National Grid controls."
+      }
+    ],
+    "recommendedListAction": {
+      "action": "DO_NOT_ADD",
+      "canonicalKey": "new-england-power-transmission-assets|united-states",
+      "reason": "False identity/perimeter conflation; no qualifying Stonepeak ownership.",
+      "separateTreatment": "Reconcile Canal Power Holdings LLC / Stonepeak New England Power separately as realized generation, not transmission."
+    }
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0428-new-england-power-transmission-assets/attempt-1/research-decision.json",
+      "sha256": "e8c24a824f5c2cf35b2de7588ea0faeeb11dd8f1c395a240d45d19cda66ace25"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0428-new-england-power-transmission-assets/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "8d57cf80560f0d096ac0b4707a7c0db08e2b68a4b942b7501e593907d8cea91c"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0428-new-england-power-transmission-assets/attempt-1/source-verification.json",
+      "sha256": "d086c3e85df21e080131e45acb0dd80a319f7936e21aa504edc68b6913eec0ed"
+    },
+    "acceptedResponseSha256": "17a4f025b50e9ee3f4e7c6828436d5beddf92216b473f1f7ca7b944ee5eb8c82",
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION"
+  }
+}

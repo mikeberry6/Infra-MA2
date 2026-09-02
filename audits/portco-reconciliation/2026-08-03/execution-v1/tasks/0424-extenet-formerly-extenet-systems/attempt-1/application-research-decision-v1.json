@@ -1,0 +1,228 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0424:extenet-formerly-extenet-systems:deec194f",
+  "taskIndex": 424,
+  "companyName": "Extenet (formerly ExteNet Systems)",
+  "asOfDate": "2026-08-19",
+  "decision": "PROPOSED_MERGE",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-02T03:58:15.000Z",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "Extenet (formerly ExteNet Systems)",
+    "requestedManagers": [
+      "Stonepeak"
+    ],
+    "decision": "PROPOSED_MERGE",
+    "confidence": "HIGH",
+    "rationale": "The current direct table is complete: Stonepeak 42%, KH Killington 32%, Other Members 26%. DigitalBridge is current below 20%; Northleaf is only a non-additive manager attribution because its vehicle/stake are not public. The unlocated JH-to-KH instrument is noncritical. No Stonepeak or whole-platform exit was found; Pilot bought only Enterprise Fiber.",
+    "identityResolution": {
+      "canonicalKey": "extenet-formerly-extenet-systems|united-states|census-1",
+      "canonicalName": "Extenet (formerly ExteNet Systems)",
+      "legalName": "ExteNet Systems, LLC",
+      "aliases": [
+        "Extenet",
+        "ExteNet Systems",
+        "ExteNet Systems, Inc."
+      ],
+      "rebrandDate": "2022-12-15",
+      "samePlatform": true,
+      "boundary": "One platform; ExteNet LVS is a subsidiary and HFN/Axiom were Enterprise Fiber assets."
+    },
+    "ownershipResolution": {
+      "currentDirectTable": [
+        {
+          "manager": "Stonepeak",
+          "organization": "Stonepeak Infrastructure Partners",
+          "fund": "2015/2020 disclosed: Stonepeak Infrastructure Fund (Odyssey AIV), L.P.; Stonepeak Communication Holdings, L.P.",
+          "vehicle": "Stonepeak Communication Holdings, LLC",
+          "stake": "42% voting/economic",
+          "entryDate": "2015-11-13",
+          "entryYear": 2015,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "manager": "Manulife/John Hancock",
+          "organization": "John Hancock Life Insurance Company (U.S.A.) / Manulife",
+          "fund": "Balance-sheet capital and managed accounts",
+          "vehicle": "KH Killington Communications, LLC current; JH Killington Communications, LLC at entry",
+          "stake": "32% current voting/economic; approximately 30% at entry",
+          "announcementDate": "2020-10-15",
+          "entryDate": "2021-03-31",
+          "entryYear": 2021,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE; JH/KH BRIDGE NOT_PUBLICLY_DISCLOSED"
+        },
+        {
+          "manager": "Other Members",
+          "vehicle": "Mount Royal member pool",
+          "stake": "26% aggregate; each below 20%",
+          "isActive": true,
+          "transactionState": "ACTIVE_AGGREGATE"
+        }
+      ],
+      "underThresholdAttributions": [
+        {
+          "manager": "DigitalBridge",
+          "vehicle": "Digital Bridge Small Cell Holdings, LLC",
+          "stake": "Below 20%; exact stake NOT_PUBLICLY_DISCLOSED; within Other Members",
+          "entryYear": 2015,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "manager": "Northleaf",
+          "fund": "NOT_PUBLICLY_DISCLOSED",
+          "vehicle": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "NOT_PUBLICLY_DISCLOSED; if direct, below 20% within Other Members",
+          "entryYear": 2015,
+          "isActive": true,
+          "transactionState": "ACTIVE_MANAGER_ATTRIBUTION; DIRECT/INDIRECT FORM NOT_PUBLICLY_DISCLOSED"
+        }
+      ],
+      "legacyDirectOwners": "2015 also named Delta-v Capital MRH LP (~9%), Vertical Towers Holdings/GSIP II (~9.9%) and management (<10%); later dispositions are NOT_PUBLICLY_DISCLOSED and retained stakes fall within Other Members.",
+      "interpretation": "42%+32%+26%=100%; DigitalBridge/Northleaf are non-additive.",
+      "disposition": "No Stonepeak transfer or platform sale found.",
+      "capTableEntity": "Mount Royal Holdings, LLC"
+    },
+    "operatingResolution": {
+      "status": "ACTIVE_OPERATING; FINANCIALLY_DISTRESSED",
+      "headquarters": "Frisco, Texas",
+      "founded": 2002,
+      "productsServices": "Owns/operates fiber-fed DAS, small-cell, Wi-Fi, private-wireless and transport networks.",
+      "customersEndMarkets": "Carriers, venues, property owners, enterprises and communities.",
+      "networkFootprint": "North American indoor/outdoor networks; authorized across most U.S. jurisdictions.",
+      "infrastructureBasis": "Qualifying physical digital infrastructure, not telecom resale."
+    },
+    "acquisitionExitCheck": {
+      "wholeCompany": "No signed/closed platform sale, bankruptcy or shutdown found. The note default and June 2026 outdoor-business marketing process reflect distress; no signed outdoor deal was found.",
+      "transactions": [
+        {
+          "direction": "divestiture",
+          "buyer": "Pilot Fiber",
+          "seller": "Extenet",
+          "stake": "Enterprise Fiber only, including HFN/Axiom assets",
+          "announcementDate": "2026-02-05",
+          "closingDate": "2026-08-15",
+          "state": "CLOSED_PARTIAL_ASSET_SALE",
+          "evidenceUrls": [
+            "https://www.pilotfiber.com/news/extenet-acquisition-complete"
+          ]
+        }
+      ]
+    },
+    "milestones": [
+      {
+        "date": "2015-11-13",
+        "event": "Stonepeak/DigitalBridge recapitalization closed; $1.4 billion release November 17."
+      },
+      {
+        "date": "2021-03-31",
+        "event": "JH Killington/Manulife approximately 30% investment closed."
+      },
+      {
+        "date": "2022-12-15",
+        "event": "ExteNet Systems rebranded as Extenet."
+      },
+      {
+        "date": "2026-08-15",
+        "event": "Pilot closed its Enterprise Fiber purchase."
+      }
+    ],
+    "evidence": [
+      {
+        "label": "KY PSC 2025",
+        "url": "https://psc.ky.gov/telecomm_informational_letters/ExteNet%20LVS%202025-02-13.pdf",
+        "purpose": "Current cap table, chain and boundary.",
+        "sourceTier": "REGULATOR",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "NY DPS 2020",
+        "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BF2D3FF54-BA8D-4D83-9AAA-18A9970F2F24%7D",
+        "purpose": "Manulife entry tables and Stonepeak funds.",
+        "sourceTier": "REGULATOR",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "NY DPS 2015",
+        "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BE2074583-6E7D-4561-9212-E8FF60FEE708%7D",
+        "purpose": "2015 close and direct stakes.",
+        "sourceTier": "REGULATOR",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Northleaf portfolio",
+        "url": "https://www.northleafcapital.com/infrastructure-investments?page=2",
+        "purpose": "Pre-cutoff index labeled ExteNet active; no vehicle/stake.",
+        "sourceTier": "MANAGER",
+        "workingStatus": "INDEXED_PRE_CUTOFF; LIVE_OMISSION",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Fitch 2026",
+        "url": "https://www.fitchratings.com/research/structured-finance/fitch-downgrades-extenet-issuer-series-2024-1-2025-1-notes-to-default-removes-negative-watch-31-07-2026",
+        "purpose": "Current principal investors and distress.",
+        "sourceTier": "RATING_AGENCY",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Pilot closing",
+        "url": "https://www.pilotfiber.com/news/extenet-acquisition-complete",
+        "purpose": "Partial sale closed August 15, 2026.",
+        "sourceTier": "BUYER",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "before": "Duplicate Extenet/ExteNet seeds; four managers shown as parallel owners; November 17 used as 2015 close; Pilot could read as a platform exit.",
+      "after": "One platform; direct 42% Stonepeak/32% KH/26% Other Members; DigitalBridge below 20%, Northleaf non-additive; legal close November 13; Pilot was partial."
+    },
+    "excludedOrDuplicateCandidates": [
+      "Extenet seed: merge.",
+      "ExteNet Systems seed: merge.",
+      "ExteNet LVS/affiliates: subsidiaries.",
+      "HFN/Axiom/Enterprise Fiber: divested business line."
+    ],
+    "unresolvedQuestions": [
+      "JH-to-KH legal instrument is NOT_PUBLICLY_DISCLOSED.",
+      "Northleaf vehicle, route, stake and any post-index disposition are NOT_PUBLICLY_DISCLOSED; no exit was found.",
+      "Remaining Other Members' identities/stakes are NOT_PUBLICLY_DISCLOSED."
+    ],
+    "recommendedListAction": {
+      "action": "MERGE_AND_CORRECT",
+      "canonicalKey": "extenet-formerly-extenet-systems|united-states|census-1",
+      "supersedeTaskIds": [
+        "ledger:0424:extenet-formerly-extenet-systems:deec194f",
+        "ledger:0213:extenet-formerly-extenet-systems:1d3fac1c",
+        "ledger:0475:extenet:5c5cf1a1",
+        "ledger:0476:extenet-systems:5d66f0cd"
+      ],
+      "instruction": "Keep one active platform; merge duplicates, correct ownership, and record Pilot as a partial divestiture."
+    }
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0424-extenet-formerly-extenet-systems/attempt-1/research-decision.json",
+      "sha256": "a63fd6f6cca66c21f78c40288f27aa3ed5b07b1956e5c4725f27937ca89bcba4"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0424-extenet-formerly-extenet-systems/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "58646afcdddec5c547db9f885d30a896332d328fbf0a6f09a64c3e65f141bcab"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0424-extenet-formerly-extenet-systems/attempt-1/source-verification.json",
+      "sha256": "168b98fd383fd5e969dba1f74856b303a85efd6de6d67a45792d600d6246a111"
+    },
+    "acceptedResponseSha256": "2fd17dc1baaef80caf2c9a1d9cf8619f23e09035d64d06148e0e25400f3ffed7",
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION"
+  }
+}

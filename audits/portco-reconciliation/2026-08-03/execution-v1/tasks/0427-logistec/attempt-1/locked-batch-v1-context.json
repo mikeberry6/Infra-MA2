@@ -1,0 +1,286 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0427:logistec:49cd6941",
+  "taskIndex": 427,
+  "companyName": "LOGISTEC",
+  "generatedAt": "2026-09-02T03:58:41.187Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0427-logistec/attempt-1/locked-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 427,
+    "taskId": "ledger:0427:logistec:49cd6941",
+    "canonicalKey": "logistec|united-states-canada",
+    "companyName": "LOGISTEC",
+    "country": "United States / Canada",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 90,
+    "managers": [
+      "Stonepeak"
+    ],
+    "actionScopes": {
+      "company": [
+        "CORRECT_COMPANY"
+      ],
+      "ownership": [
+        "ADD_PENDING_TRANSACTION"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "090-stonepeak:holding:017:logistec"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjnl3019wivhecldk4kq7"
+    ],
+    "seedKeys": [
+      "logistec|United States / Canada"
+    ],
+    "evidenceUrls": [
+      "https://stonepeak.com/news/blue-wolf-capital-finalizes-acquisition-of-logistec-corporation-in-partnership-with-stonepeak",
+      "https://www.logistec.com/enstructure-to-acquire-logistec-marine-terminal-division-creating-a-leading-network-of-marine-terminals-across-north-america/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_PENDING_TRANSACTION, CORRECT_COMPANY requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjnl3019wivhecldk4kq7",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "logistec|united-states-canada",
+  "targetCompanyImage": {
+    "id": "cmrxpjnl3019wivhecldk4kq7",
+    "name": "LOGISTEC",
+    "aliases": [],
+    "sector": "TRANSPORTATION",
+    "subsector": "Marine cargo handling and environmental services",
+    "region": "NORTH_AMERICA",
+    "country": "United States / Canada",
+    "countryTags": [
+      "United States",
+      "Canada"
+    ],
+    "description": "LOGISTEC provides marine cargo handling, port services, transportation logistics, and environmental remediation services in Canada and the United States. Its customers include port users, industrial shippers, infrastructure owners, and public-sector counterparties that require recurring essential-services support. The business combines asset-backed terminal operations with service-led environmental activities, producing a diversified infrastructure-services profile rather than a single-asset concession model. Public materials describe a broad network of marine terminals and environmental service operations across North America. Blue Wolf Capital Partners agreed to acquire the company in 2023, and Stonepeak partnered in the transaction by providing significant investment support that closed in January 2024.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Canada and United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpka5p029jivhe7n54kdzp",
+        "managerName": "Stonepeak",
+        "organizationName": "Stonepeak",
+        "fundName": "Stonepeak Fund V",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmprp057hivhe19sf6y2a",
+        "date": "Oct 2023",
+        "event": "LOGISTEC announced a definitive agreement to be acquired by Blue Wolf Capital Partners, with Stonepeak participating in the transaction.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-10-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmpsb057iivheceyhmyia",
+        "date": "2024",
+        "event": "The company became privately held following the transaction.",
+        "category": "OTHER",
+        "sortDate": "2024-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmpst057jivhehszy5bz7",
+        "date": "Jan 2024",
+        "event": "Blue Wolf completed its acquisition of LOGISTEC in partnership with Stonepeak.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-01-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmptd057kivhebmfttxpo",
+        "date": "Jan 2024",
+        "event": "Stonepeak and Blue Wolf confirmed the close and announced Sean Pierce as Chief Executive Officer.",
+        "category": "MANAGEMENT",
+        "sortDate": "2024-01-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpssve0d57ivhe8mb51bw7",
+        "label": "Logistec — LOGISTEC",
+        "url": "https://www.logistec.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Logistec company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpsswu0d59ivhexvq9fvhd",
+        "label": "Close date source — Stonepeak — LOGISTEC",
+        "url": "https://stonepeak.com/news/blue-wolf-capital-finalizes-acquisition-of-logistec-corporation-in-partnership-with-stonepeak",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Stonepeak closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpssxy0d5bivhetdney77x",
+        "label": "Close date source — Stonepeak — LOGISTEC",
+        "url": "https://www.logistec.com/en_ca/news/blue-wolf-capital-partners-finalizes-acquisition-of-logistec-corporation-in-partnership-with-stonepeak/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Stonepeak closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpst1i0d5divhez2t6w87n",
+        "label": "Fasken — LOGISTEC",
+        "url": "https://www.fasken.com/en/knowledge/2024/01/logistec-corporation-completes-acquisition-by-blue-wolf-capital-partners",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Fasken transaction or milestone detail",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "LOGISTEC",
+    "investmentFirm": "Stonepeak",
+    "sector": "Transportation",
+    "subsector": "Marine cargo handling and environmental services",
+    "region": "North America",
+    "country": "United States / Canada",
+    "ownershipVehicle": "n.a.",
+    "description": "LOGISTEC provides marine cargo handling, port services, transportation logistics, and environmental remediation services in Canada and the United States. Its customers include port users, industrial shippers, infrastructure owners, and public-sector counterparties that require recurring essential-services support. The business combines asset-backed terminal operations with service-led environmental activities, producing a diversified infrastructure-services profile rather than a single-asset concession model. Public materials describe a broad network of marine terminals and environmental service operations across North America. Blue Wolf Capital Partners agreed to acquire the company in 2023, and Stonepeak partnered in the transaction by providing significant investment support that closed in January 2024.",
+    "status": "Active",
+    "countryTags": [
+      "United States",
+      "Canada"
+    ],
+    "investmentYear": 2024,
+    "headquarters": "Canada and United States",
+    "milestones": [
+      {
+        "date": "Oct 2023",
+        "event": "LOGISTEC announced a definitive agreement to be acquired by Blue Wolf Capital Partners, with Stonepeak participating in the transaction.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "2024",
+        "event": "The company became privately held following the transaction.",
+        "category": "Other"
+      },
+      {
+        "date": "Jan 2024",
+        "event": "Blue Wolf completed its acquisition of LOGISTEC in partnership with Stonepeak.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Jan 2024",
+        "event": "Stonepeak and Blue Wolf confirmed the close and announced Sean Pierce as Chief Executive Officer.",
+        "category": "Management"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Logistec — LOGISTEC",
+        "url": "https://www.logistec.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Close date source — Stonepeak — LOGISTEC",
+        "url": "https://stonepeak.com/news/blue-wolf-capital-finalizes-acquisition-of-logistec-corporation-in-partnership-with-stonepeak",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Close date source — Stonepeak — LOGISTEC",
+        "url": "https://www.logistec.com/en_ca/news/blue-wolf-capital-partners-finalizes-acquisition-of-logistec-corporation-in-partnership-with-stonepeak/",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Fasken — LOGISTEC",
+        "url": "https://www.fasken.com/en/knowledge/2024/01/logistec-corporation-completes-acquisition-by-blue-wolf-capital-partners",
+        "type": "ARTICLE",
+        "purpose": "MILESTONE_EVENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Stonepeak",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2024,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj3od00fcivhex940ue39",
+        "fundName": "Stonepeak Fund V",
+        "managerId": "cmrxpide6003hivhe1g17rhjr",
+        "updatedAt": "2026-08-03T17:26:04.203Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpide6003hivhe1g17rhjr",
+        "name": "Stonepeak",
+        "updatedAt": "2026-07-23T16:09:24.559Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0427:logistec:49cd6941",
+    "taskIndex": 427,
+    "canonicalKey": "logistec|united-states-canada",
+    "capturedAt": "2026-09-02T03:58:41.187Z",
+    "databaseRevision": "revision:10ad33e7d62ab0184f5678ccaefaa12d76ebd6b32210b646ff3d4fe8f60e4f2f",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "3f9aec24bb050a38339fccfc7773ffc55cb13325d178916edf68ce61aa36ecc9",
+    "productionSnapshotSha256": "a70b3758588610f125d2f0372ad60866cb785da5592a890271aaf3a0622dd886",
+    "targetCompanySnapshotSha256": "06f72c1abf740850d1f4ad02db6ae01efe2eed245e281637628f6e1ceed160c0",
+    "seedEntrySha256": "b04d6a068e793f4e3a045481cfc285a0027a04c902f17d7c3e6cbd770f7202ad",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "d933945acdc9ae90f20cf3feeffb3a07a34560538a79e82de6921dc6626f4ef3",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "84071771646c734efe78257774040877a494cd73dec6f7d89c06a6bc36d7e376",
+      "organizationsSha256": "e8297eb9e5894678d9f04b1a861726fe3c63b2433e6430ea5f214025943bcba5",
+      "citationsSha256": "9f5a777417894f1c4ac3109c7a29582cbb607fdbf636d2cdbccabd965340ff5f",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "f5c81c8a1e6c75d4cf17e231b31830156339af60d131e192cd3c77d697d19442",
+    "stateSha256": "ba186f1908285398249c61b7c8ebab97aa39a5fa2aee6c67836dae97f6797461",
+    "taskSnapshotSha256": "ebdae84ff6fefcb3c4d14c4c7e5e4e1acd3cfcdab909e74b780d0a861dcbafd5"
+  },
+  "contextSha256": "a57784fb36dee19c9d71ad83bad654066252af3305f64107180c0fa685cbcf99"
+}

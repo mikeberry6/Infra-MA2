@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0428:new-england-power-transmission-assets:2b091d76",
+  "taskIndex": 428,
+  "companyName": "New England Power transmission assets",
+  "outcome": "EXCLUDED",
+  "decidedAt": "2026-09-02T03:59:00Z",
+  "rationale": "The proposed 2023 Stonepeak minority holding is disproved. New England Power Company (NEP) is National Grid USA's regulated transmission subsidiary; 'Stonepeak New England Power' was a separate Canal/Bucksport generation portfolio acquired in 2018-2019 and sold to JERA in 2022.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0428-new-england-power-transmission-assets/attempt-1/locked-batch-v1-task-snapshot.json",
+    "sha256": "3575e2ed557c3dd147e008d6b8ece8e7e54a23da7e80827a3435011e9d78235b"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0428-new-england-power-transmission-assets/attempt-1/application-research-decision-v1.json",
+    "sha256": "561ad59bf7902cc184f6e2b27c9b13437507dd361c5aed6b5f7c9840a837b022"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0428-new-england-power-transmission-assets/attempt-1/application-source-verification-v1.json",
+    "sha256": "d086c3e85df21e080131e45acb0dd80a319f7936e21aa504edc68b6913eec0ed"
+  },
+  "evidence": [
+    {
+      "url": "https://www.nationalgrid.com/document/584516/download",
+      "purpose": "NEP identity, ownership, scale and subsequent events."
+    },
+    {
+      "url": "https://stonepeak.com/investments",
+      "purpose": "Stonepeak generation identity and stated exit."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1126294/000110465918043226/a18-16219_18k.htm",
+      "purpose": "2018 entities, close, price and Fund II."
+    },
+    {
+      "url": "https://www.jera.co.jp/en/news/information/20220513_907",
+      "purpose": "Signed 100% JERA acquisition and perimeter."
+    },
+    {
+      "url": "https://nepool.com/wp-content/uploads/2023/01/Lit_Report_20230104.pdf",
+      "purpose": "FERC approval, seller perimeter and close."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/71337/000007133702000006/form10k.htm",
+      "purpose": "2000 National Grid closing and NEP parent."
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "3b7a115dc3baf7437902bb4c7d480ee2f2a8a755a3a2f002ddca3eb584d3b748"
+}

@@ -1,0 +1,231 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0425:kaps:e97e627d",
+  "taskIndex": 425,
+  "companyName": "KAPS Pipeline",
+  "asOfDate": "2026-08-19",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-02T03:58:15.000Z",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "KAPS",
+    "requestedManagers": [
+      "Stonepeak"
+    ],
+    "decision": "PROPOSED_CORRECTION",
+    "confidence": "HIGH",
+    "rationale": "Stonepeak's 50% interest closed 2023-04-26 and was sold 2026-06-17. Keyera signed/closed the C$1.215bn purchase of Kentucky MidCo, Ltd. from Stonepeak-controlled Kentucky Middle Holdings, LP that day, moving to 100%; August results reconfirm ownership. KAPS remains operating, so only Stonepeak's period ends.",
+    "identityResolution": {
+      "canonicalName": "KAPS Pipeline",
+      "expandedName": "Key Access Pipeline System",
+      "canonicalKey": "kaps|canada",
+      "boundary": "One open-access dual NGL/condensate system, including Zones 1-4. Connected Keyera processing, fractionation and storage assets are endpoints, not separate KAPS PortCos.",
+      "legalEntities": "Kentucky MidCo, Ltd. held Stonepeak's former 50%; Kentucky Middle Holdings, LP was seller. KAPS is an asset system, not a disclosed operator company; Keyera's title affiliate is NOT_PUBLICLY_DISCLOSED.",
+      "history": "2019 50/50 Keyera-SemCAMS asset JV; the partner interest passed through Energy Transfer Canada and PGI to Stonepeak."
+    },
+    "ownershipResolution": {
+      "owners": [
+        {
+          "manager": "Keyera",
+          "organization": "Keyera Corp.",
+          "fund": "NOT_APPLICABLE",
+          "vehicle": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "50%",
+          "announcementDate": "2019-05-14",
+          "entryDate": "2019-05-14",
+          "entryYear": 2019,
+          "exitDate": "2026-06-17",
+          "exitYear": 2026,
+          "isActive": false,
+          "transactionState": "SUPERSEDED_BY_100%"
+        },
+        {
+          "manager": "Keyera",
+          "organization": "Keyera Corp.",
+          "fund": "NOT_APPLICABLE",
+          "vehicle": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "100%",
+          "announcementDate": "2026-06-17",
+          "entryDate": "2026-06-17",
+          "entryYear": 2026,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "ACTIVE"
+        },
+        {
+          "manager": "Stonepeak",
+          "organization": "Stonepeak Partners LP",
+          "fund": "NOT_PUBLICLY_DISCLOSED; opportunities strategy",
+          "vehicle": "Kentucky MidCo, Ltd. via Kentucky Middle Holdings, LP",
+          "stake": "50%",
+          "announcementDate": "2022-12-12",
+          "entryDate": "2023-04-26",
+          "entryYear": 2023,
+          "exitDate": "2026-06-17",
+          "exitYear": 2026,
+          "isActive": false,
+          "transactionState": "EXIT_CLOSED"
+        }
+      ]
+    },
+    "operatingResolution": {
+      "status": "ACTIVE_OPERATING",
+      "locationRoute": "Alberta: northwest Montney/Duvernay to Edmonton/Fort Saskatchewan.",
+      "products": "NGL mix and condensate",
+      "lengthCapacity": "575 km current figure (~560 km in transaction releases); up to 350,000 bpd.",
+      "commercialModel": "Open-access, fee-based, long-term contracts; ~12-year average remaining term and 75% take-or-pay at 2026-06-17.",
+      "inService": "Completed/operating by 2023-10-04; exact first-flow day NOT_PUBLICLY_DISCLOSED.",
+      "development": "Zone 4 on schedule/budget for mid-2027 service as of 2026-08-06.",
+      "qualification": "List-ready under Keyera.",
+      "customersMarkets": "Broad producer base, including investment-grade counterparties; Fort Saskatchewan/downstream markets."
+    },
+    "acquisitionExitCheck": [
+      {
+        "direction": "ENTRY",
+        "buyer": "Stonepeak Partners LP",
+        "seller": "PGI through an unnamed subsidiary",
+        "stake": "50%",
+        "announcementDate": "2022-12-12",
+        "closingDate": "2023-04-26",
+        "state": "CLOSED; conditions satisfied",
+        "evidenceUrls": [
+          "https://stonepeak.com/news/stonepeak-to-acquire-interest-in-kaps",
+          "https://stonepeak.com/press-releases/stonepeak-completes-acquisition-of-interest-in-kaps"
+        ]
+      },
+      {
+        "direction": "EXIT",
+        "buyer": "Keyera Corp.",
+        "seller": "Kentucky Middle Holdings, LP; target Kentucky MidCo, Ltd.",
+        "stake": "50%",
+        "announcementDate": "2026-06-17",
+        "closingDate": "2026-06-17",
+        "state": "CLOSED_CONCURRENTLY; NOT_PENDING",
+        "evidenceUrls": [
+          "https://www.keyera.com/news-and-stories/news-releases/keyera-announces-acquisition-of-remaining-50-interest-in-kaps/",
+          "https://newsfile.moomoo.com/public/NN-PersistNoticeAttachment/7781/20260618/SEDAR_PLUS/CSA_SEDAR_PLUS_NOTICE_RECORD_ID_2436817.pdf"
+        ]
+      }
+    ],
+    "milestones": [
+      {
+        "date": "2022-12-12",
+        "event": "Stonepeak announced purchase of PGI's 50% interest."
+      },
+      {
+        "date": "2023-04-26",
+        "event": "Stonepeak entry closed; Keyera retained 50%."
+      },
+      {
+        "date": "2023-10-04",
+        "event": "Keyera announced recent completion/operation."
+      },
+      {
+        "date": "2026-06-17",
+        "event": "Keyera signed/closed remaining 50%; Stonepeak exited."
+      }
+    ],
+    "evidence": [
+      {
+        "label": "Keyera 2026 KAPS close",
+        "url": "https://www.keyera.com/news-and-stories/news-releases/keyera-announces-acquisition-of-remaining-50-interest-in-kaps/",
+        "purpose": "Exit close, stake, price and ownership.",
+        "sourceTier": "PARTY",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "Keyera prospectus supplement",
+        "url": "https://newsfile.moomoo.com/public/NN-PersistNoticeAttachment/7781/20260618/SEDAR_PLUS/CSA_SEDAR_PLUS_NOTICE_RECORD_ID_2436817.pdf",
+        "purpose": "Seller, target and share perimeter.",
+        "sourceTier": "FILING",
+        "workingStatus": "OPEN_PDF_MIRROR",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Keyera Q2 2026 results",
+        "url": "https://www.keyera.com/news-and-stories/news-releases/keyera-announces-2026-second-quarter-results/",
+        "purpose": "August close and Zone 4 confirmation.",
+        "sourceTier": "RESULTS",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Stonepeak 2022 announcement",
+        "url": "https://stonepeak.com/news/stonepeak-to-acquire-interest-in-kaps",
+        "purpose": "Entry announcement, stake and conditions.",
+        "sourceTier": "MANAGER",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Stonepeak 2023 closing",
+        "url": "https://stonepeak.com/press-releases/stonepeak-completes-acquisition-of-interest-in-kaps",
+        "purpose": "Entry close and 50/50 ownership.",
+        "sourceTier": "MANAGER",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Pembina 2022 sale",
+        "url": "https://www.pembina.com/media-centre/news/details/b4bfb2fc-fffb-4a70-94e8-502a51c83ff6",
+        "purpose": "PGI seller and conditions.",
+        "sourceTier": "SELLER",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Keyera 2019 approval",
+        "url": "https://www.keyera.com/news-and-stories/news-releases/keyera-approves-kaps-a-montney-condensate-ngl-pipeline-system/",
+        "purpose": "Name, JV boundary and model.",
+        "sourceTier": "OPERATOR",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Keyera 2023 completion",
+        "url": "https://www.keyera.com/news-and-stories/news-releases/keyera-celebrates-the-completion-of-the-kaps-pipeline/",
+        "purpose": "Operation, length, route and capacity.",
+        "sourceTier": "OPERATOR",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "before": "KAPS active; Stonepeak shown as sole active owner, no fund/vehicle, 2023 entry.",
+      "after": "KAPS active under Keyera 100%; Stonepeak former 50% owner from 2023-04-26 to 2026-06-17; add MidCo/Holdings; fund NOT_PUBLICLY_DISCLOSED."
+    },
+    "excludedOrDuplicateCandidates": [
+      "No duplicate proven; do not split connected Keyera facilities or pipe segments absent separate manager-held ownership."
+    ],
+    "unresolvedQuestions": [
+      "Stonepeak fund, Keyera title affiliate, unnamed PGI seller subsidiary and exact first-flow day are NOT_PUBLICLY_DISCLOSED; none affects status."
+    ],
+    "recommendedListAction": {
+      "action": "RETAIN_KAPS; RETIRE_ONLY_STONEPEAK_OWNERSHIP",
+      "effectiveDate": "2026-06-17",
+      "companyStatus": "ACTIVE",
+      "currentOwner": "Keyera Corp. 100%"
+    }
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0425-kaps/attempt-1/research-decision.json",
+      "sha256": "d01f85eb960f493b8d2faaed66b37e775d275e45036820e683ff1c3ad61d2a49"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0425-kaps/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "ee7202f6cce9514a8ed2023f75db2e4a2b38519cc0f58a04ad2a3902131a129d"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0425-kaps/attempt-1/source-verification.json",
+      "sha256": "33808ded615ebc3531a0bc7156fdcc8d56efd5907e06bd18db9a180b9278acd7"
+    },
+    "acceptedResponseSha256": "8ca00313a5633633f3df13dfec2ffc86f2fbdb9d2d999cd470f70c156f10faaf",
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION"
+  }
+}

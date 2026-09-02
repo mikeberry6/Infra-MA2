@@ -1,0 +1,331 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0426:lineage:fade3de0",
+  "taskIndex": 426,
+  "asOfDate": "2026-09-01",
+  "generatedAt": "2026-09-02T03:58:15Z",
+  "canonicalKey": "lineage|united-states",
+  "companyName": "Lineage",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER"
+  ],
+  "sourceHoldingIds": [],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Lineage is a public REIT, but current SEC evidence supports a continuing private BGLH-linked Stonepeak economic interest and contractual rights. Stonepeak was a minority investor, not the sole owner, while Bay Grove remained the controlling sponsor.",
+  "evidence": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1868159/000186815926000021/line-20260422.htm",
+      "purpose": "Current SEC evidence for BGLH ownership, Stonepeak rights and the ownership table",
+      "supports": [
+        "Stonepeak retains qualifying private BGLH-linked economics and contractual rights",
+        "Bay Grove remains the controlling sponsor"
+      ]
+    },
+    {
+      "url": "https://www.bay-grove.com/press/2018/7/17/lineage-logistics-receives-700-million-investment-from-stonepeak-infrastructure-partners-d1-capital-partners-and-current-lineage-investors",
+      "purpose": "Direct party evidence of Stonepeak's minority entry and Bay Grove control",
+      "supports": [
+        "Stonepeak invested as a significant minority investor in 2018",
+        "Bay Grove controlled Lineage"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1868159/000119312524185331/d577649d424b4.htm",
+      "purpose": "Final IPO prospectus establishing the July 2024 public listing and issuer-only share sale",
+      "supports": [
+        "Lineage became public without an automatic sale of all pre-IPO sponsor interests"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "bc7f2c6ba71ad7c68fd30c4a1e5046d69d336471f812f001e5cf2af2c1454849",
+  "currentCompanySnapshotSha256": "13e4bbbb6f3e387c899a6fe7a77c375aa043d690835fed934b3081e1568a515a",
+  "executionLock": {
+    "taskSnapshotSha256": "4ebfa586805a9133c0c431c52b05836257d08e64b2825fcb1fc8a3c1d40bd004",
+    "taskStateSha256": "88af04ae657419adcfa48072e54d7626317bd81e7c4301400588239f066a8b65",
+    "taskDependencySha256": "4d67b894bc1d05aed04cf869948d1156c86e727c7e13c97ea6fcd9e960f22785",
+    "seedEntrySha256": "1bdd46a9722ceffb5fdd034d3623b605c9fa020d934d0f45b18e1d4aee4f4577",
+    "dependencies": {
+      "ownershipPeriodsSha256": "cdbb521ab01037ccb98882eb9fdcb22ae78902d489d8f8e24ff5a8b61c660f12",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "2d210a6d2e804e470241d60da76a7c908003fe5cb1a16d50287bd5e3ed572180",
+      "organizationsSha256": "e8297eb9e5894678d9f04b1a861726fe3c63b2433e6430ea5f214025943bcba5",
+      "citationsSha256": "c42e1daa9075bfaa88c8d3cc5af02a37c702e5d966de8f7e152db6229f02d0e7",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj3nu00fbivhebtp8thxg",
+        "fundName": "Stonepeak Core Fund",
+        "managerId": "cmrxpide6003hivhe1g17rhjr",
+        "updatedAt": "2026-07-23T16:09:58.602Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpide6003hivhe1g17rhjr",
+        "name": "Stonepeak",
+        "updatedAt": "2026-07-23T16:09:24.559Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjnki019vivhe5zf3adzb",
+    "name": "Lineage",
+    "aliases": [],
+    "sector": "TRANSPORTATION",
+    "subsector": "Temperature-controlled warehousing and cold-chain logistics",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Lineage operates temperature-controlled warehouses and cold-chain logistics infrastructure for food and consumer supply chains. Its customers include food producers, processors, retailers, and distributors that outsource storage, handling, and logistics for frozen and refrigerated products. The business follows an asset-heavy model built around owned and leased cold-storage facilities, transportation coordination, and value-added services. Public materials describe a global footprint of more than 485 warehouses in about 20 countries with over 3 billion cubic feet of capacity. Stonepeak first invested in the company in 2018 and remained an investor through the company's later expansion and public listing.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2008,
+    "headquarters": "United States and international",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpka5b029iivhe8hnco7se",
+        "managerName": "Stonepeak",
+        "organizationName": "Stonepeak",
+        "fundName": "Stonepeak Core Fund",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2018,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmpmt057divhefvsb1hqt",
+        "date": "2008",
+        "event": "Lineage was founded with a single warehouse.",
+        "category": "FOUNDING",
+        "sortDate": "2008-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmpne057eivheot67pjnm",
+        "date": "May 2018",
+        "event": "Stonepeak made its initial investment in Lineage.",
+        "category": "FINANCING",
+        "sortDate": "2018-05-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmpnw057fivheq63z7uk5",
+        "date": "Feb 2019",
+        "event": "Lineage completed its acquisition of Preferred Freezer Services.",
+        "category": "ACQUISITION",
+        "sortDate": "2019-02-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmpoe057givheawvjakg5",
+        "date": "2020",
+        "event": "The company completed a major equity raise supported by existing investors including Stonepeak.",
+        "category": "FINANCING",
+        "sortDate": "2020-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpssqt0d4zivhergs4usls",
+        "label": "Stonepeak — Lineage",
+        "url": "https://stonepeak.com/portfolio-highlights/lineage-logistics",
+        "sourceType": "WEBSITE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Stonepeak transaction or milestone detail",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpsss40d51ivhe0xqcfzvo",
+        "label": "Onelineage — Lineage",
+        "url": "https://www.onelineage.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Onelineage company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsst80d53ivheqez4o5i9",
+        "label": "Onelineage — Lineage",
+        "url": "https://www.onelineage.com/about/our-story",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Onelineage company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpssu80d55ivhehlphbudi",
+        "label": "PR Newswire — Lineage",
+        "url": "https://www.prnewswire.com/news-releases/lineage-logistics-completes-700-million-strategic-equity-capital-raise-led-by-bay-grove-with-participation-from-exiting-investor-d1-capital-partners-and-support-from-existing-investor-stonepeak-301434620.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "PR Newswire — Lineage",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "13e4bbbb6f3e387c899a6fe7a77c375aa043d690835fed934b3081e1568a515a",
+  "afterImage": {
+    "id": "cmrxpjnki019vivhe5zf3adzb",
+    "name": "Lineage, Inc.",
+    "aliases": [
+      "Lineage",
+      "Lineage Logistics",
+      "Lineage OP, LP",
+      "Lineage Logistics Holdings, LLC"
+    ],
+    "sector": "TRANSPORTATION",
+    "subsector": "Temperature-controlled warehousing and cold-chain logistics",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Lineage, Inc. operates temperature-controlled warehouses and cold-chain logistics infrastructure for food producers, processors, retailers and distributors. The company is a publicly listed REIT with a global network of cold-storage facilities and related logistics services. Bay Grove has sponsored and controlled the platform since its 2008 formation. Stonepeak invested as a minority investor in 2018 and, as of the latest SEC disclosure, retains qualifying private BGLH-linked economic interests and contractual rights distinct from ordinary public-market shares.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.onelineage.com/",
+    "yearFounded": 2008,
+    "headquarters": "Novi, Michigan",
+    "lastVerifiedAt": "2026-09-01T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpka5b029iivhe8hnco7se",
+        "managerName": "Stonepeak",
+        "organizationName": "Stonepeak",
+        "fundName": null,
+        "vehicleName": "Stonepeak Infrastructure Fund III AIV and Aspen co-investment vehicles",
+        "stake": "Minority; exact percentage not publicly disclosed; continuing private BGLH-linked economics and rights",
+        "investmentYear": 2018,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Bay Grove",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "BGLH",
+        "stake": "Controlling sponsor; exact percentage not publicly disclosed",
+        "investmentYear": 2008,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmpmt057divhefvsb1hqt",
+        "date": "2008",
+        "event": "Lineage was founded with a single warehouse.",
+        "category": "FOUNDING",
+        "sortDate": "2008-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmpne057eivheot67pjnm",
+        "date": "May 2018",
+        "event": "Stonepeak made its initial investment in Lineage.",
+        "category": "FINANCING",
+        "sortDate": "2018-05-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmpnw057fivheq63z7uk5",
+        "date": "Feb 2019",
+        "event": "Lineage completed its acquisition of Preferred Freezer Services.",
+        "category": "ACQUISITION",
+        "sortDate": "2019-02-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmpoe057givheawvjakg5",
+        "date": "2020",
+        "event": "The company completed a major equity raise supported by existing investors including Stonepeak.",
+        "category": "FINANCING",
+        "sortDate": "2020-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpssqt0d4zivhergs4usls",
+        "label": "Stonepeak — Lineage",
+        "url": "https://stonepeak.com/portfolio-highlights/lineage-logistics",
+        "sourceType": "WEBSITE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Stonepeak transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsss40d51ivhe0xqcfzvo",
+        "label": "Onelineage — Lineage",
+        "url": "https://www.onelineage.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Onelineage company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsst80d53ivheqez4o5i9",
+        "label": "Onelineage — Lineage",
+        "url": "https://www.onelineage.com/about/our-story",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Onelineage company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpssu80d55ivhehlphbudi",
+        "label": "PR Newswire — Lineage",
+        "url": "https://www.prnewswire.com/news-releases/lineage-logistics-completes-700-million-strategic-equity-capital-raise-led-by-bay-grove-with-participation-from-exiting-investor-d1-capital-partners-and-support-from-existing-investor-stonepeak-301434620.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "PR Newswire — Lineage",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Lineage — 2026 definitive proxy statement",
+        "url": "https://www.sec.gov/Archives/edgar/data/1868159/000186815926000021/line-20260422.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current BGLH ownership and Stonepeak contractual rights",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "Bay Grove — 2018 Lineage investment",
+        "url": "https://www.bay-grove.com/press/2018/7/17/lineage-logistics-receives-700-million-investment-from-stonepeak-infrastructure-partners-d1-capital-partners-and-current-lineage-investors",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Stonepeak minority entry and Bay Grove control",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "1ca9b76d096cc45078f1243154023382fd8636a2623212965fe8b53ac247edfe",
+  "proposalSha256": "7b30d12be1d6f1c86499b758e1a9742fed65dc4bae551e6bbb3184434ae95e9b"
+}

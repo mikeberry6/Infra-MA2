@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0424:extenet-formerly-extenet-systems:deec194f",
+  "taskIndex": 424,
+  "companyName": "Extenet (formerly ExteNet Systems)",
+  "asOfDate": "2026-09-01",
+  "decision": "SUPERSEDED",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-02T03:58:15.000Z",
+  "result": {
+    "decision": "SUPERSEDED",
+    "rationale": "Fresh task resolution proves this is the same canonical Extenet identity already represented by task 213. Task 213 preserves the unresolved Northleaf disposition and JH-to-KH legal bridge for final deferred re-adjudication, so creating a second mutation or deferral would duplicate the same company-level issue.",
+    "evidence": [
+      {
+        "url": "https://psc.ky.gov/telecomm_informational_letters/ExteNet%20LVS%202025-02-13.pdf",
+        "purpose": "Current regulatory cap table for the single Extenet platform"
+      },
+      {
+        "url": "https://www.digitalbridge.com/portfolio/extenet-systems",
+        "purpose": "Manager attribution to the same ExteNet/Extenet platform"
+      },
+      {
+        "url": "https://www.pilotfiber.com/news/extenet-acquisition-complete",
+        "purpose": "Confirms the 2026 transaction was a business-line acquisition rather than a platform transfer"
+      }
+    ]
+  },
+  "lineage": {
+    "sourceApplicationDecision": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0424-extenet-formerly-extenet-systems/attempt-1/application-research-decision-v1.json",
+    "canonicalDeferredTask": "ledger:0213:extenet-formerly-extenet-systems:1d3fac1c",
+    "basis": "The fresh task snapshot resolved this queue row by REVIEWED_SYMMETRIC_CANDIDATE to the production company and linked task 213."
+  }
+}

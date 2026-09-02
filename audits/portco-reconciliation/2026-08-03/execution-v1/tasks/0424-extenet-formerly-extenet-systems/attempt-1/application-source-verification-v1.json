@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0424:extenet-formerly-extenet-systems:deec194f",
+  "checkedAt": "2026-08-22T02:57:47.000Z",
+  "method": "Independent direct HTTP status, redirect, media-type and content-hash checks; regulator, manager, rating-agency and buyer-page inspection; acquisition, assignment, divestiture and exit search",
+  "sources": [
+    {
+      "url": "https://psc.ky.gov/telecomm_informational_letters/ExteNet%20LVS%202025-02-13.pdf",
+      "httpStatus": 200,
+      "finalUrl": "https://psc.ky.gov/telecomm_informational_letters/ExteNet%20LVS%202025-02-13.pdf",
+      "mediaType": "application/pdf",
+      "bytes": 343610,
+      "sha256": "70a6d3e6b0996a6e5f9af5803bf3cd98efc2e5f21d2245e17b67b8e9487c8b5b",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "The current regulatory ownership chart supports 42% Stonepeak, 32% KH Killington and 26% Other Members",
+        "ExteNet LVS remains a subsidiary within the single Extenet platform"
+      ]
+    },
+    {
+      "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BF2D3FF54-BA8D-4D83-9AAA-18A9970F2F24%7D",
+      "httpStatus": 200,
+      "finalUrl": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BF2D3FF54-BA8D-4D83-9AAA-18A9970F2F24%7D",
+      "mediaType": "application/pdf",
+      "bytes": 757969,
+      "sha256": "6d83156024aef862b4ab922b7da94bc444ebcb2ab4cdfd283f44d81cefa103dc",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Manulife/John Hancock investment entry structure and Stonepeak fund/vehicle context"
+      ]
+    },
+    {
+      "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BE2074583-6E7D-4561-9212-E8FF60FEE708%7D",
+      "httpStatus": 200,
+      "finalUrl": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BE2074583-6E7D-4561-9212-E8FF60FEE708%7D",
+      "mediaType": "application/pdf",
+      "bytes": 178069,
+      "sha256": "f32b1eed8c7987cf99e9af631bdd06d626b0a875056db1b4c8105f708eb548f6",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "2015 recapitalization direct-owner table and transaction structure"
+      ]
+    },
+    {
+      "url": "https://www.northleafcapital.com/infrastructure-investments?page=2",
+      "httpStatus": 200,
+      "finalUrl": "https://www.northleafcapital.com/infrastructure-investments?page=2",
+      "mediaType": "text/html",
+      "bytes": 153471,
+      "sha256": "343792b84e7095f9f6dd3b6fdd71e98ce2d81f2e257720e29966b817ae1f1473",
+      "healthStatus": "WORKING_LIVE_OMISSION",
+      "verifiedClaims": [
+        "The live page resolves successfully but does not currently establish Northleaf's vehicle, stake, ownership route or disposition"
+      ]
+    },
+    {
+      "url": "https://www.fitchratings.com/research/structured-finance/fitch-downgrades-extenet-issuer-series-2024-1-2025-1-notes-to-default-removes-negative-watch-31-07-2026",
+      "httpStatus": 200,
+      "finalUrl": "https://www.fitchratings.com/research/structured-finance/fitch-downgrades-extenet-issuer-series-2024-1-2025-1-notes-to-default-removes-negative-watch-31-07-2026",
+      "mediaType": "text/html",
+      "bytes": 1171865,
+      "sha256": "024599421df01110860648788385c09ff2549adbe6eaee217f6cb62dec0ed29d",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Extenet's 2026 financial distress and continuing platform status rather than a completed whole-company sale"
+      ]
+    },
+    {
+      "url": "https://www.pilotfiber.com/news/extenet-acquisition-complete",
+      "httpStatus": 200,
+      "finalUrl": "https://www.pilotfiber.com/news/extenet-acquisition-complete",
+      "mediaType": "text/html",
+      "bytes": 25269,
+      "sha256": "bb2565b67257b23a85ab8a779636ea8e6f0c84f1bec9ba95fcad61be5b1c377b",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Pilot acquired only Extenet's Enterprise Fiber business effective August 15, 2026",
+        "The acquired perimeter included the former Hudson Fiber Network and Axiom assets"
+      ]
+    }
+  ],
+  "exitSearch": {
+    "searchedAt": "2026-08-22T02:57:47.000Z",
+    "scopeThrough": "2026-08-19",
+    "result": "No signed or completed whole-platform sale, Stonepeak exit, bankruptcy or shutdown was identified. The 2026 Pilot transaction was a closed partial business-line divestiture, and the outdoor-business process had no signed transaction by the cutoff."
+  },
+  "allEvidenceUrlsDirectHttps": true,
+  "allCoreSourcesWorkingOrVerified": true,
+  "directFetchBlockedButBrowserVerifiedCount": 0,
+  "responseSourceHealthCorrections": [
+    "All six accepted-response evidence URLs returned HTTP 200 at their exact URLs.",
+    "Northleaf's live page no longer supports the earlier indexed active attribution and cannot resolve its current vehicle, route, stake or exit status; that gap requires review rather than application."
+  ],
+  "deadSourceCount": 0
+}
