@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_RECEIPT",
+  "manifestSha256": "92b8f54db82616971f097bd51893208d50243711931897043913f2ddacbf35df",
+  "approvalSha256": "57cecec71d878bcb76d29f49b67fe93c439e85e736cd80b769d0a02ead35eea3",
+  "environment": "production",
+  "pipelineRunId": "cmtjbw6nq0000fs2btw1og6gq",
+  "mutationCount": 1,
+  "changed": 1,
+  "idempotent": false,
+  "beforeFingerprint": "59929b3089776842af58d30e901406cfaa9e5e459ea40d409558b227f190d8fd",
+  "afterFingerprint": "4a369f501c8b426f32224c085da646977aa4896c1c01cc807571e731f648795e",
+  "rows": [
+    {
+      "recordId": "OFA-D3FB6EC50984",
+      "ownershipPeriodId": "cmrxpk98h0281ivhe89hg0afj",
+      "companyId": "cmrxpjmoi018givhecyo0ujvv",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "Quinbrook Low Carbon Power Fund",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, vintage 2017 precedes investment by 6 years, North America-relevant mandate, historical vehicle retained for attribution only; next candidate trails by 7.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Quinbrook Net Zero Power Fund strategy",
+        "attributionConfidence": null,
+        "attributionRationale": "Quinbrook's April 2023 acquisition announcement establishes the investment, and its Net Zero Power strategy close identifies PurposeEnergy among the strategy's investments. The exact legal holding vehicle and stake were not publicly disclosed."
+      }
+    }
+  ],
+  "appliedAt": "2026-09-01T23:58:52.693Z",
+  "receiptSha256": "006e38ebc75d6739d6218adc7375cbfba362e6c1c66927aa6f480a7f4d8405c6"
+}
