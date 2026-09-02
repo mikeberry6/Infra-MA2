@@ -1,0 +1,268 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0432:stonepeak-infrastructure-logistics-platform:bb35d6ac",
+  "taskIndex": 432,
+  "companyName": "Stonepeak Infrastructure Logistics Platform",
+  "generatedAt": "2026-09-02T05:06:06.557Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0432-stonepeak-infrastructure-logistics-platform/attempt-1/locked-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 432,
+    "taskId": "ledger:0432:stonepeak-infrastructure-logistics-platform:bb35d6ac",
+    "canonicalKey": "stonepeak-infrastructure-logistics-platform|united-states",
+    "companyName": "Stonepeak Infrastructure Logistics Platform",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 90,
+    "managers": [
+      "Stonepeak"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "090-stonepeak:repo-only:005:stonepeak-infrastructure-logistics-platform"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjns701a5ivhehx63p859"
+    ],
+    "seedKeys": [
+      "stonepeak infrastructure logistics platform|United States"
+    ],
+    "evidenceUrls": [
+      "https://stonepeak.com/investments"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Stonepeak OUT_OF_SCOPE: Industrial logistics real estate strategy not classified as infrastructure under census rules.",
+    "unresolvedQuestions": [
+      "Confirm whether the manager ownership, the company itself, or only this census scope is out of scope before proposing any change."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjns701a5ivhehx63p859",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "stonepeak-infrastructure-logistics-platform|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjns701a5ivhehx63p859",
+    "name": "Stonepeak Infrastructure Logistics Platform",
+    "aliases": [],
+    "sector": "TRANSPORTATION",
+    "subsector": "Industrial logistics real estate",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Stonepeak Infrastructure Logistics Platform is a warehouse and industrial logistics portfolio focused on transport-linked distribution assets in the United States. Its customer base is logistics, e-commerce, and industrial occupancy users that lease strategically located facilities under recurring rental contracts. The platform is asset heavy and centered on real estate located near intermodal, port, highway, and air-cargo infrastructure rather than on operating a transportation service fleet. Public Stonepeak materials describe a diversified portfolio of strategically located, long-term contracted logistics assets, while later announcements highlighted acquisitions in Houston and Fort Worth. Stonepeak began building the platform in 2021, and the detailed ownership structure is not publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Texas and other United States logistics markets",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpkaac029sivheoa20px0f",
+        "managerName": "Stonepeak",
+        "organizationName": "Stonepeak",
+        "fundName": "Stonepeak Infrastructure Fund IV",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmqgt058fivhepula40fz",
+        "date": "Jun 2021",
+        "event": "Stonepeak records indicate the logistics platform's initial investment date.",
+        "category": "FINANCING",
+        "sortDate": "2021-06-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmqh6058givheprmlqjxz",
+        "date": "Dec 2024",
+        "event": "Stonepeak announced the acquisition of six Houston logistics assets totaling approximately 2.3 million square feet.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmqhs058hivheckdgc30y",
+        "date": "Aug 2025",
+        "event": "Stonepeak announced the acquisition of a logistics portfolio in Fort Worth's Alliance submarket.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-08-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsu2n0d71ivherfo2ld59",
+        "label": "Stonepeak — Evolve Transition Infrastructure LP",
+        "url": "https://stonepeak.com/investments",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Stonepeak initial investment / ownership",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpsu3r0d73ivheu6nciu5k",
+        "label": "Stonepeak — Stonepeak Infrastructure Logistics Platform",
+        "url": "https://stonepeak.com/news/stonepeak-acquires-six-building-logistics-portfolio-in-houston-texas",
+        "sourceType": "WEBSITE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Stonepeak transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsu4t0d75ivhemods3jfo",
+        "label": "Stonepeak — Stonepeak Infrastructure Logistics Platform",
+        "url": "https://stonepeak.com/news/stonepeak-acquires-logistics-portfolio-in-fort-worth-texas",
+        "sourceType": "WEBSITE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Stonepeak transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsu5w0d77ivher5np0z51",
+        "label": "Stonepeak — Stonepeak Infrastructure Logistics Platform",
+        "url": "https://stonepeak.com/investments/infrastructure/transport-logistics",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Stonepeak company profile",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Stonepeak Infrastructure Logistics Platform",
+    "investmentFirm": "Stonepeak",
+    "sector": "Transportation",
+    "subsector": "Industrial logistics real estate",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "Stonepeak Infrastructure Logistics Platform is a warehouse and industrial logistics portfolio focused on transport-linked distribution assets in the United States. Its customer base is logistics, e-commerce, and industrial occupancy users that lease strategically located facilities under recurring rental contracts. The platform is asset heavy and centered on real estate located near intermodal, port, highway, and air-cargo infrastructure rather than on operating a transportation service fleet. Public Stonepeak materials describe a diversified portfolio of strategically located, long-term contracted logistics assets, while later announcements highlighted acquisitions in Houston and Fort Worth. Stonepeak began building the platform in 2021, and the detailed ownership structure is not publicly disclosed.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2021,
+    "headquarters": "Texas and other United States logistics markets",
+    "milestones": [
+      {
+        "date": "Jun 2021",
+        "event": "Stonepeak records indicate the logistics platform's initial investment date.",
+        "category": "Financing"
+      },
+      {
+        "date": "Dec 2024",
+        "event": "Stonepeak announced the acquisition of six Houston logistics assets totaling approximately 2.3 million square feet.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Aug 2025",
+        "event": "Stonepeak announced the acquisition of a logistics portfolio in Fort Worth's Alliance submarket.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Investment date source — Stonepeak — Stonepeak Infrastructure Logistics Platform",
+        "url": "https://stonepeak.com/investments",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Stonepeak — Stonepeak Infrastructure Logistics Platform",
+        "url": "https://stonepeak.com/news/stonepeak-acquires-six-building-logistics-portfolio-in-houston-texas",
+        "type": "WEBSITE",
+        "purpose": "MILESTONE_EVENT"
+      },
+      {
+        "label": "Stonepeak — Stonepeak Infrastructure Logistics Platform",
+        "url": "https://stonepeak.com/news/stonepeak-acquires-logistics-portfolio-in-fort-worth-texas",
+        "type": "WEBSITE",
+        "purpose": "MILESTONE_EVENT"
+      },
+      {
+        "label": "Stonepeak — Stonepeak Infrastructure Logistics Platform",
+        "url": "https://stonepeak.com/investments/infrastructure/transport-logistics",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Stonepeak",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2021,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmsdi42he00547h4sv1rpo4jg",
+        "fundName": "Stonepeak Infrastructure Fund IV",
+        "managerId": "cmrxpide6003hivhe1g17rhjr",
+        "updatedAt": "2026-08-03T17:26:38.738Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpide6003hivhe1g17rhjr",
+        "name": "Stonepeak",
+        "updatedAt": "2026-07-23T16:09:24.559Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0432:stonepeak-infrastructure-logistics-platform:bb35d6ac",
+    "taskIndex": 432,
+    "canonicalKey": "stonepeak-infrastructure-logistics-platform|united-states",
+    "capturedAt": "2026-09-02T05:06:06.557Z",
+    "databaseRevision": "revision:648d99f16deba91aa42eace23d9eaff404bd8985da963d1ca4789403c3ad0bca",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "736e24f50aa1cef162150c1a1da657e53b2ae2576ecbcff4919cb8c310b7a763",
+    "productionSnapshotSha256": "fa07f6346ffcabc4ffc1b3f8ff658b3c083587c38420898b22df77a3508b8018",
+    "targetCompanySnapshotSha256": "104703df057adf52df154f36cbe8d8accf57cefd9b47c00d2628ad5164f9213b",
+    "seedEntrySha256": "07aefbf5772a55090c130edb02f89933353f34f73fb999a940651b94d7923699",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "06fd5769886a987914e6cb4a7e12e0763d05369487379d01a5ea5218cf9a7c76",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "f96ba818a661cf5681709f2a54e67814318f23c6db6f64998db0bfb58ebd5f36",
+      "organizationsSha256": "e8297eb9e5894678d9f04b1a861726fe3c63b2433e6430ea5f214025943bcba5",
+      "citationsSha256": "47644927000506f99826952ca5bd921c71208585983ec106ae83cd01a5236bf3",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "9554414d67cd33f96459c3906f6e318d79a2c10b873cb121a1b80dc7ba081b1f",
+    "stateSha256": "3cb046088440c7113c9a7129642b9362a6ce5fcad61bad4c4bbe9cd981926993",
+    "taskSnapshotSha256": "9f61f5b26991bd326d887b5a4b13fb33fe879d8ad964fa8708d0389b4a743007"
+  },
+  "contextSha256": "b02bfaaad2bd7f1db00a436a3b0ea3f5b310dc3f5f243e77d83c23a71dfb6fe0"
+}

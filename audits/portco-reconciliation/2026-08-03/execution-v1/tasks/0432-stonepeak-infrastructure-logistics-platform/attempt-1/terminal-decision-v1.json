@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0432:stonepeak-infrastructure-logistics-platform:bb35d6ac",
+  "taskIndex": 432,
+  "companyName": "Stonepeak Infrastructure Logistics Platform",
+  "outcome": "EXCLUDED",
+  "decidedAt": "2026-09-02T05:08:00.000Z",
+  "rationale": "Stonepeak's own materials classify the assets as supply-chain real estate with infrastructure-like characteristics, managed by its Real Estate team. The disclosed activity consists of warehouse acquisitions, leasing and asset management; no distinct company operating terminals, intermodal systems, cargo handling, freight or other infrastructure services was identified. The display label is therefore an out-of-scope manager/property-program label, not a direct infrastructure PortCo.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0432-stonepeak-infrastructure-logistics-platform/attempt-1/locked-batch-v1-task-snapshot.json",
+    "sha256": "1e432555f8b19e8f6af2295facbaa29a1544f98dc5e0a1574052750df1d0a6fb"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0432-stonepeak-infrastructure-logistics-platform/attempt-1/application-research-decision-v1.json",
+    "sha256": "e264e9a5901aca7ef39274d93b5783ec29743eff5f87eb3fd219fc6c7efad551"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0432-stonepeak-infrastructure-logistics-platform/attempt-1/source-verification.json",
+    "sha256": "0628015b0699bc50ea92ffc038fbe02911038b48cbf5bb416920cc8b4d8ddbff"
+  },
+  "evidence": [
+    {
+      "url": "https://stonepeak.com/investments/real-estate",
+      "purpose": "Stonepeak classifies Supply Chain as a real-estate strategy with infrastructure-like characteristics."
+    },
+    {
+      "url": "https://stonepeak.com/investments",
+      "purpose": "The manager uses Infrastructure Logistics Platform as a portfolio display label without identifying an operating company."
+    },
+    {
+      "url": "https://stonepeak.com/investments/infrastructure/transport-logistics",
+      "purpose": "Stonepeak's infrastructure transport-and-logistics strategy is framed around operating businesses and essential services."
+    },
+    {
+      "url": "https://stonepeak.com/news/stonepeak-acquires-2-3-million-square-foot-logistics-portfolio-in-houston-texas",
+      "purpose": "The disclosed program activity is warehouse-property acquisition and leasing by Stonepeak's Real Estate team."
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "1087883af7cdf48035c0fdfd6f4b5b2d180b7b300e1d9877d03d2e4c6d04dd67"
+}

@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0431:outpost-solar:b3b3fc4c",
+  "taskIndex": 431,
+  "companyName": "Outpost Solar",
+  "asOfDate": "2026-09-02",
+  "decision": "PROPOSED_NEW",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-02T05:11:00.000Z",
+  "result": {
+    "decision": "PROPOSED_NEW",
+    "rationale": "Repsol's first-half 2026 report directly establishes that Stonepeak's 43.8% acquisition closed in February 2026 after the conditions were satisfied. European Commission evidence identifies Outpost Solar SellCo LLC as the jointly controlled target that owns and operates the 629 MW Webb County project. Outpost is therefore an active standalone infrastructure asset and joint venture, not a broad solar-development platform.",
+    "evidence": [
+      {
+        "url": "https://www.repsol.com/content/dam/repsol-corporate/en_gb/accionistas-e-inversores/resultados/2026/2t/interim-consolidated-management-report-first-half-2026.pdf",
+        "purpose": "Closing month, satisfied conditions, Stonepeak stake and consideration."
+      },
+      {
+        "url": "https://stonepeak.com/news/repsol-advances-its-renewable-energy-strategy-in-the-us-with-a-new-deal-with-stonepeak",
+        "purpose": "Signed terms, infrastructure strategy, capacity, commercial operation and PPA."
+      },
+      {
+        "url": "https://ec.europa.eu/competition/mergers/cases1/202604/M_12192_10864806_83_3.pdf",
+        "purpose": "Transaction parties, target identity, share purchase, joint control and regulatory approval."
+      },
+      {
+        "url": "https://comptroller.texas.gov/economy/development/prop-tax/ch313/agreement-docs-details.php?id=1673",
+        "purpose": "Underlying project entity and Webb County location."
+      }
+    ]
+  },
+  "lineage": {
+    "researchDecision": "research-decision.json",
+    "acceptedResponse": "chatgpt-accepted-response.txt",
+    "sourceVerification": "source-verification.json"
+  }
+}

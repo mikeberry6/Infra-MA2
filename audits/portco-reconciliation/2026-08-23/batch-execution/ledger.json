@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-02T04:44:24.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-09-02T06:07:05Z",
+  "activeBatchId": "batch-0429-0433-v2",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -7765,7 +7765,113 @@
           "reason": "Atomic PortCo receipt, scoped attribution repair, detail APIs, seed parity, identity boundaries, and rendered production cards verified."
         }
       ]
+    },
+    {
+      "batchId": "batch-0429-0433-v1",
+      "state": "FAILED",
+      "taskIds": [
+        "ledger:0429:oryx-midstream:eee190fa",
+        "ledger:0430:oryx-midstream-services:8b062bed",
+        "ledger:0431:outpost-solar:b3b3fc4c",
+        "ledger:0432:stonepeak-infrastructure-logistics-platform:bb35d6ac",
+        "ledger:0433:jfk-new-terminal-one:759db377"
+      ],
+      "taskIndexes": [
+        429,
+        430,
+        431,
+        432,
+        433
+      ],
+      "createdAt": "2026-09-02T04:54:57.000Z",
+      "updatedAt": "2026-09-02T06:05:06Z",
+      "completedAt": "2026-09-02T06:05:06Z",
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0429-0433-v1/batch-manifest.json",
+        "sha256": "12141d8d675631462f192c3f4dbab6fa2fd275ca2bfc9d0326ff6bbb299105c6"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": "Required CI seed validation rejected two unsupported Outpost milestone labels before merge; no production deployment or database write occurred. Superseded by corrected batch-0429-0433-v2.",
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-09-02T04:54:57.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-09-02T05:57:50Z",
+          "evidenceSha256": [
+            "12141d8d675631462f192c3f4dbab6fa2fd275ca2bfc9d0326ff6bbb299105c6"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "FAILED",
+          "at": "2026-09-02T06:05:06Z",
+          "evidenceSha256": [
+            "12141d8d675631462f192c3f4dbab6fa2fd275ca2bfc9d0326ff6bbb299105c6"
+          ],
+          "reason": "Required CI seed validation rejected two unsupported Outpost milestone labels before merge; no production deployment or database write occurred. Superseded by corrected batch-0429-0433-v2."
+        }
+      ]
+    },
+    {
+      "batchId": "batch-0429-0433-v2",
+      "state": "READY",
+      "taskIds": [
+        "ledger:0429:oryx-midstream:eee190fa",
+        "ledger:0430:oryx-midstream-services:8b062bed",
+        "ledger:0431:outpost-solar:b3b3fc4c",
+        "ledger:0432:stonepeak-infrastructure-logistics-platform:bb35d6ac",
+        "ledger:0433:jfk-new-terminal-one:759db377"
+      ],
+      "taskIndexes": [
+        429,
+        430,
+        431,
+        432,
+        433
+      ],
+      "createdAt": "2026-09-02T06:05:07Z",
+      "updatedAt": "2026-09-02T06:07:05Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0429-0433-v2/batch-manifest.json",
+        "sha256": "f772a09d26eb926eee99787e3cf2e4e6c23fedc10af0df09df790be14fdbaf06"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-09-02T06:05:07Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-09-02T06:07:05Z",
+          "evidenceSha256": [
+            "f772a09d26eb926eee99787e3cf2e4e6c23fedc10af0df09df790be14fdbaf06"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "1734da4c8c1cab407f9c5dd71e4aa2c675453110640754544dc91a5987efbf49"
+  "ledgerSha256": "0485cd6efd69aa993a14cd921461149a790df288a25bd226270679adc2a3d8a8"
 }

@@ -76,6 +76,10 @@ const ownershipPeriodAdditionSchema = ownershipPeriodImageSchema.refine(
   (period) => period.id === null,
   { message: "New ownership periods must use id: null", path: ["id"] },
 );
+const ownershipPeriodTransferSchema = ownershipPeriodImageSchema.refine(
+  (period) => period.id !== null,
+  { message: "Transferred ownership periods must retain their persisted id", path: ["id"] },
+);
 const pendingOwnershipTransactionUpdateSchema = z.strictObject({
   id: z.string().trim().min(1),
   set: z.strictObject({
@@ -148,6 +152,7 @@ const proposalSpecSchema = z.strictObject({
   ownershipPeriodUpdates: z.array(ownershipPeriodUpdateSchema).default([]),
   ownershipPeriodRemovals: z.array(z.string().trim().min(1)).default([]),
   ownershipPeriodAdditions: z.array(ownershipPeriodAdditionSchema).default([]),
+  ownershipPeriodTransfers: z.array(ownershipPeriodTransferSchema).default([]),
   pendingOwnershipTransactionUpdates: z.array(pendingOwnershipTransactionUpdateSchema).default([]),
   pendingOwnershipTransactionAdditions: z.array(pendingOwnershipTransactionAdditionSchema).default([]),
   milestoneUpdates: z.array(milestoneUpdateSchema).default([]),
@@ -168,6 +173,20 @@ const proposalSpecSchema = z.strictObject({
       code: "custom",
       path: ["milestoneTransfers"],
       message: "Persisted milestone transfers are valid only for MERGE_COMPANIES proposals",
+    });
+  }
+  if (spec.ownershipPeriodTransfers.length > 0 && !spec.actions.includes("MERGE_COMPANIES")) {
+    context.addIssue({
+      code: "custom",
+      path: ["ownershipPeriodTransfers"],
+      message: "Persisted ownership-period transfers are valid only for MERGE_COMPANIES proposals",
+    });
+  }
+  if (new Set(spec.ownershipPeriodTransfers.map((period) => period.id)).size !== spec.ownershipPeriodTransfers.length) {
+    context.addIssue({
+      code: "custom",
+      path: ["ownershipPeriodTransfers"],
+      message: "Transferred ownership-period ids must be unique",
     });
   }
   if (new Set(spec.milestoneTransfers.map((milestone) => milestone.id)).size !== spec.milestoneTransfers.length) {
@@ -201,6 +220,7 @@ const proposalSpecSchema = z.strictObject({
       || spec.ownershipPeriodUpdates.length > 0
       || spec.ownershipPeriodRemovals.length > 0
       || spec.ownershipPeriodAdditions.length > 0
+      || spec.ownershipPeriodTransfers.length > 0
       || spec.pendingOwnershipTransactionUpdates.length > 0
       || spec.pendingOwnershipTransactionAdditions.length > 0
       || spec.milestoneUpdates.length > 0
@@ -217,6 +237,7 @@ const proposalSpecSchema = z.strictObject({
     && spec.ownershipPeriodUpdates.length === 0
     && spec.ownershipPeriodRemovals.length === 0
     && spec.ownershipPeriodAdditions.length === 0
+    && spec.ownershipPeriodTransfers.length === 0
     && spec.pendingOwnershipTransactionUpdates.length === 0
     && spec.pendingOwnershipTransactionAdditions.length === 0
     && spec.milestoneUpdates.length === 0
@@ -452,6 +473,11 @@ export function applySpec(context: TaskSnapshotContext, specInput: unknown) {
         throw new Error(`Ownership removal references unknown period ${id}`);
       }
     }
+    for (const period of spec.ownershipPeriodTransfers) {
+      if (beforeImage.ownershipPeriods.some((existing) => existing.id === period.id)) {
+        throw new Error(`Ownership-period transfer duplicates canonical ownership period ${period.id}`);
+      }
+    }
     for (const id of pendingTransactionUpdates.keys()) {
       if (!beforeImage.pendingOwnershipTransactions.some((transaction) => transaction.id === id)) {
         throw new Error(`Pending transaction update references unknown transaction ${id}`);
@@ -481,7 +507,7 @@ export function applySpec(context: TaskSnapshotContext, specInput: unknown) {
           ...period,
           ...(period.id ? ownershipUpdates.get(period.id) : undefined),
         }))
-        .concat(spec.ownershipPeriodAdditions),
+        .concat(spec.ownershipPeriodAdditions, spec.ownershipPeriodTransfers),
       pendingOwnershipTransactions: beforeImage.pendingOwnershipTransactions.map((transaction) => ({
         ...transaction,
         ...(transaction.id ? pendingTransactionUpdates.get(transaction.id) : undefined),

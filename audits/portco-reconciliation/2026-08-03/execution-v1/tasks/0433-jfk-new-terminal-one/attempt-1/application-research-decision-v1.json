@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0433:jfk-new-terminal-one:759db377",
+  "taskIndex": 433,
+  "companyName": "JFK New Terminal One",
+  "asOfDate": "2026-09-02",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-02T05:16:00.000Z",
+  "result": {
+    "decision": "PROPOSED_CORRECTION",
+    "rationale": "JLC Terminal One is Swiss Life's co-investment vehicle for JFK New Terminal One, not a separate asset. Swiss Life's disclosed 0.4% look-through interest entered in November 2022 and sits inside JLC's 30%; it is not additive to the 100% sponsor cap table. Current direct sponsor ownership is Ferrovial 49%, JLC 30%, Ullico 19% and Carlyle 2%, with no later equity change found through the cutoff.",
+    "evidence": [
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/1468522/000162828026032618/ferrovial-factbook2026_s.htm",
+        "purpose": "Current direct sponsor owners, stakes and asset terms."
+      },
+      {
+        "url": "https://ch.swisslife-am.com/content/dam/slam/documents_publications/investment_foundation/en/r/e_ast_qb_01_2026_igchf.pdf",
+        "purpose": "Swiss Life's 0.4% look-through interest and November 2022 entry."
+      },
+      {
+        "url": "https://ch.swisslife-am.com/content/dam/slam/documents_publications/investment_foundation/en/f/efactsheets_30092025.pdf",
+        "purpose": "Exact JLC Terminal One Co-Invest L.P. vehicle identity."
+      },
+      {
+        "url": "https://www.carlyle.com/media-room/news-release-archive/carlyle-together-with-the-consortium-building-new-terminal-one-at-jfk-airport",
+        "purpose": "Financial close, lease and consortium evidence."
+      }
+    ]
+  },
+  "lineage": {
+    "acceptedResponse": "chatgpt-accepted-response.txt",
+    "conversationUrl": "https://chatgpt.com/c/6a946bec-0120-83e9-8763-9576e331887e",
+    "sourceVerification": "source-verification.json"
+  }
+}

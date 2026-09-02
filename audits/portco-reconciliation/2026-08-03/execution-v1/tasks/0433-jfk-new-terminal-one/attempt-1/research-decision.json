@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0433:jfk-new-terminal-one:759db377",
+  "sequence": 433,
+  "asOfDate": "2026-09-02",
+  "companyName": "JFK New Terminal One",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "stagingDisposition": "STAGED_VALIDATED",
+  "applicationBlocked": false,
+  "rationale": "JLC Terminal One is Swiss Life's co-investment vehicle for JFK New Terminal One, not a separate asset. Swiss Life's disclosed 0.4% look-through interest sits inside JLC's 30% and is not additive to the 100% sponsor cap table. Current direct sponsor ownership is Ferrovial 49%, JLC 30%, Ullico 19% and Carlyle 2%.",
+  "recommendedChanges": [
+    "Keep one canonical JFK New Terminal One / JFK NTO LLC asset record.",
+    "Record Ferrovial 49%, JLC Infrastructure 30%, Ullico 19% and Carlyle 2% as the current direct sponsor cap table.",
+    "Record Swiss Life Asset Managers' 0.4% current look-through interest via JLC Terminal One Co-Invest L.P. inside JLC's 30% block and mark it non-additive.",
+    "Do not create a separate JLC Terminal One PortCo and do not count Munich Airport, contractors, lenders or operators as equity owners."
+  ],
+  "unresolvedQuestions": [
+    "Swiss Life's exact November 2022 legal-close day is not publicly disclosed.",
+    "Top JLC and Ullico SPV names and JLC's remaining economic allocation are not publicly disclosed."
+  ],
+  "unresolvedItemsAreNoncriticalDisclosureGaps": true,
+  "proposalGenerationAllowed": true,
+  "sourceVerificationPassed": true,
+  "linkedFollowUpRequired": false,
+  "linkedFollowUpSubjects": [],
+  "acceptedResponseSha256": "e2dbf37a6ec827367c69eff02caa3f0962a06c126bd2474172a8805380ac22bd"
+}

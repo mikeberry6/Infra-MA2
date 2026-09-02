@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0430:oryx-midstream-services:8b062bed",
+  "checkedAt": "2026-09-02T05:23:00.000Z",
+  "method": "Reciprocal duplicate adjudication using the task 429 focused GPT-5.6 Sol Pro research and independent direct-page verification",
+  "sources": [
+    {
+      "url": "https://www.oryxmidstream.com/who-we-are/our-partners",
+      "httpStatus": 200,
+      "finalUrl": "https://www.oryxmidstream.com/who-we-are/our-partners",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 17587,
+      "sha256": "8404c165deb39f97329a30ff055d36b7cfb0bd4351a573b3f40a9bbbea5f1640",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Oryx Midstream is the current platform identity",
+        "Stonepeak and QIA are current partner groups"
+      ]
+    },
+    {
+      "url": "https://www.oryxmidstream.com/news/leading-us-midstream-crude-system-oryx-announces-550-million-investment-qia",
+      "httpStatus": 200,
+      "finalUrl": "https://www.oryxmidstream.com/news/leading-us-midstream-crude-system-oryx-announces-550-million-investment-qia",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 19106,
+      "sha256": "7a9a28618c237c1dfb9c3ecc0442387c0a1cdc6943ab868e244d8756e512c229",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "The release bridges Oryx Midstream Services to the Oryx Midstream platform",
+        "QIA's 2019 entry applied to the same platform"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1581990/000110465921123181/tm2129267d1_8k.htm",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1581990/000110465921123181/tm2129267d1_8k.htm",
+      "mediaType": "text/html",
+      "bytes": 45894,
+      "sha256": "bb0374ff79ef9c1955d160360275caedbd6e99144aa5a55a4422d7be60a5c9e1",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "The Oryx member retained 35% of the single underlying POPB joint venture",
+        "Legacy Oryx Permian assets were consolidated into POPB"
+      ]
+    }
+  ],
+  "exitSearch": {
+    "searchedAt": "2026-09-02T05:23:00.000Z",
+    "scopeThrough": "2026-09-02",
+    "result": "The duplicate-company disposition is an identity consolidation, not an owner exit. No separate Oryx Midstream Services PortCo boundary or subsequent standalone owner was found."
+  },
+  "allEvidenceUrlsDirectHttps": true,
+  "allCoreSourcesWorkingOrVerified": true,
+  "directFetchBlockedButWebVerifiedCount": 0,
+  "responseSourceHealthCorrections": [],
+  "deadSourceCount": 0
+}

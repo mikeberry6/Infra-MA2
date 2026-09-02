@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0430:oryx-midstream-services:8b062bed",
+  "taskIndex": 430,
+  "companyName": "Oryx Midstream Services",
+  "outcome": "SUPERSEDED",
+  "decidedAt": "2026-09-02T06:00:00.000Z",
+  "rationale": "Oryx Midstream Services is a duplicate legal and display identity for the canonical Oryx Midstream platform. Task 429's hash-bound proposal 164cda50123514849d26c05605c76a2126f7fae6bdaf1e36c64cc6ec80cd3544 retires the duplicate company, redirects it to Oryx Midstream, transfers or consolidates its durable history and records Stonepeak and QIA as current owner groups at undisclosed stakes.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0430-oryx-midstream-services/attempt-1/locked-batch-v1-task-snapshot.json",
+    "sha256": "3f82d3b0346d29dc55961a94426ad9e9ce2acaf3f8bfe3c72065fbe68ba4af05"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0430-oryx-midstream-services/attempt-1/application-research-decision-v1.json",
+    "sha256": "a50c187811b2681fe8e3492df2dcbbb8f808382dc9dd875cc3fd79aab32c6ebe"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0430-oryx-midstream-services/attempt-1/application-source-verification-v1.json",
+    "sha256": "f8e6faa986859a90acc9a0f292f9f6d5635a69b8a4967b0d305cbeac7aac2fab"
+  },
+  "evidence": [
+    {
+      "url": "https://www.oryxmidstream.com/who-we-are/our-partners",
+      "purpose": "Current Oryx platform and partner identity."
+    },
+    {
+      "url": "https://www.oryxmidstream.com/news/leading-us-midstream-crude-system-oryx-announces-550-million-investment-qia",
+      "purpose": "Identity bridge between Oryx Midstream Services and the Oryx platform."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1581990/000110465921123181/tm2129267d1_8k.htm",
+      "purpose": "Current legal-chain and POPB asset-boundary evidence."
+    }
+  ],
+  "supersededByTaskId": "ledger:0429:oryx-midstream:eee190fa",
+  "decisionSha256": "bf70a573951387841e9c457c3276f1b4d20ae3c258800f75ea325858e69bc1cc"
+}

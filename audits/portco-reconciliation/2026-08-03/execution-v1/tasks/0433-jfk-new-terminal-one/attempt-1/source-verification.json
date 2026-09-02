@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0433:jfk-new-terminal-one:759db377",
+  "checkedAt": "2026-09-02T05:16:30.000Z",
+  "method": "Independent direct HTTP status, redirect, media-type, byte-count and SHA-256 checks plus the signed-in research chat's direct-page review of Swiss Life, Ferrovial/SEC and Carlyle sources; sponsor-cap-table, look-through vehicle, closing and exit search",
+  "sources": [
+    {
+      "url": "https://www.swisslife-am.com/en/home/media/news/corporate/company-news/2022/0729_jfk_t1.html",
+      "httpStatus": 403,
+      "finalUrl": "https://www.swisslife-am.com/en/home/media/news/corporate/company-news/2022/0729_jfk_t1.html",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 4577,
+      "sha256": "8f6ad5627b0577edc58f39b38e4eb587fed1c407323a98d66111e469817c2c93",
+      "healthStatus": "DIRECT_FETCH_BLOCKED_BUT_WEB_VERIFIED",
+      "verifiedClaims": [
+        "Swiss Life announced the JFK co-investment commitment on July 29, 2022",
+        "The manager described the investment through a JLC Terminal One co-investment structure"
+      ]
+    },
+    {
+      "url": "https://ch.swisslife-am.com/content/dam/slam/documents_publications/investment_foundation/en/r/e_ast_qb_01_2026_igchf.pdf",
+      "httpStatus": 200,
+      "finalUrl": "https://ch.swisslife-am.com/content/dam/slam/documents_publications/investment_foundation/en/r/e_ast_qb_01_2026_igchf.pdf",
+      "mediaType": "application/pdf",
+      "bytes": 6236871,
+      "sha256": "4da8e6351186456483913445372d2836dffd9f5fff05c19512c75d24e6b3e820",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Swiss Life reports a 0.4% look-through interest",
+        "The investment entered in November 2022"
+      ]
+    },
+    {
+      "url": "https://ch.swisslife-am.com/content/dam/slam/documents_publications/investment_foundation/en/f/efactsheets_30092025.pdf",
+      "httpStatus": 200,
+      "finalUrl": "https://ch.swisslife-am.com/content/dam/slam/documents_publications/investment_foundation/en/f/efactsheets_30092025.pdf",
+      "mediaType": "application/pdf",
+      "bytes": 9716869,
+      "sha256": "642c3344f7bd43eadba6834a6100decc1e37a9d4f8349f7b921b36784d372814",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "The exact Swiss Life vehicle is JLC Terminal One Co-Invest L.P."
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1468522/000162828026032618/ferrovial-factbook2026_s.htm",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1468522/000162828026032618/ferrovial-factbook2026_s.htm",
+      "mediaType": "text/html",
+      "bytes": 203946,
+      "sha256": "0d5bb086027b70609fc7eba5cdc27057447636da65a282077bf587dc818e1285",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "The current direct sponsor cap table is Ferrovial 49%, JLC Infrastructure 30%, Ullico 19% and Carlyle 2%",
+        "The terminal project remains active under its long-term concession"
+      ]
+    },
+    {
+      "url": "https://www.carlyle.com/media-room/news-release-archive/carlyle-together-with-the-consortium-building-new-terminal-one-at-jfk-airport",
+      "httpStatus": 403,
+      "finalUrl": "https://www.carlyle.com/media-room/news-release-archive/carlyle-together-with-the-consortium-building-new-terminal-one-at-jfk-airport",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 5796,
+      "sha256": "34663c8c68da4e69b58916c70e52e76937e1f80d510ea715550e3ee87bb95a99",
+      "healthStatus": "DIRECT_FETCH_BLOCKED_BUT_WEB_VERIFIED",
+      "verifiedClaims": [
+        "The consortium reached financial close on the revised lease and sponsor financing in June 2022",
+        "The asset boundary is one terminal concession and project company"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1468522/000162828026050224/q22026-ferrovialresultsp.htm",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1468522/000162828026050224/q22026-ferrovialresultsp.htm",
+      "mediaType": "text/html",
+      "bytes": 28700,
+      "sha256": "9d257c96c7d2f2c17886038b883fabe9bcb1aae9a493bff4eaa4067a719b34f5",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Phase A remained under construction in 2026",
+        "No later sponsor-equity transfer was disclosed"
+      ]
+    }
+  ],
+  "exitSearch": {
+    "searchedAt": "2026-09-02T05:16:30.000Z",
+    "scopeThrough": "2026-09-02",
+    "result": "No completed or signed-pending sponsor transfer, dilution or exit after Swiss Life's November 2022 entry was found. Current first-party evidence continues to show the 49%/30%/19%/2% direct sponsor cap table; Swiss Life's 0.4% remains a nested look-through holding inside JLC's 30%."
+  },
+  "allEvidenceUrlsDirectHttps": true,
+  "allCoreSourcesWorkingOrVerified": true,
+  "directFetchBlockedButWebVerifiedCount": 2,
+  "responseSourceHealthCorrections": [
+    "Swiss Life's announcement and Carlyle's financial-close page block direct automated retrieval but were reopened in the signed-in web research and remain live.",
+    "Swiss Life's 0.4% is nested within JLC's 30% sponsor block and must not be added to the direct sponsor cap table.",
+    "The exact November 2022 legal-close day is not publicly disclosed and is intentionally represented only at month/year precision."
+  ],
+  "deadSourceCount": 0
+}

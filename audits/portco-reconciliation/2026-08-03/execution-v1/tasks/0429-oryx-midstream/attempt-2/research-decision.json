@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_RESEARCH_DECISION",
+  "taskId": "ledger:0429:oryx-midstream:eee190fa",
+  "sequence": 429,
+  "asOfDate": "2026-09-02",
+  "companyName": "Oryx Midstream",
+  "decision": "PROPOSED_MERGE",
+  "confidence": "HIGH",
+  "stagingDisposition": "STAGED_VALIDATED",
+  "applicationBlocked": false,
+  "rationale": "Oryx Midstream and Oryx Midstream Services are duplicate labels for one Stonepeak/QIA investment. Current affirmative evidence now resolves both Stonepeak and QIA as owner groups above OMSPB, while exact sponsor percentages remain not publicly disclosed. The canonical asset boundary is the Oryx-side 35% interest in the Plains-operated POPB joint venture.",
+  "recommendedChanges": [
+    "Merge Oryx Midstream Services into the canonical Oryx Midstream record.",
+    "Record Stonepeak and Qatar Investment Authority as current owner groups at not-publicly-disclosed stakes.",
+    "Keep Plains Oryx Permian Basin LLC beneath Oryx as the underlying 65% Plains / 35% Oryx joint venture.",
+    "Supersede ledger:0430:oryx-midstream-services:8b062bed only after the canonical merge is applied and verified."
+  ],
+  "unresolvedQuestions": [
+    "Which QIA affiliate holds the Oryx interest and what is QIA's exact percentage above OMSPB?",
+    "Which Stonepeak affiliate or fund holds the Oryx interest and what is Stonepeak's exact percentage above OMSPB?"
+  ],
+  "unresolvedItemsAreNoncriticalDisclosureGaps": true,
+  "proposalGenerationAllowed": true,
+  "sourceVerificationPassed": true,
+  "linkedFollowUpRequired": true,
+  "linkedFollowUpSubjects": [
+    "ledger:0430:oryx-midstream-services:8b062bed"
+  ],
+  "acceptedResponseSha256": "9d98085343638521fe1ed15b963cc88532e1793acff7e57c79cf7ca30945f6de"
+}
