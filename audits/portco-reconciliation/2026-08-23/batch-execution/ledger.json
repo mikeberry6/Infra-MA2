@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-02T01:37:37.000Z",
-  "activeBatchId": "batch-0409-0413-v3",
+  "updatedAt": "2026-09-02T02:00:58.000Z",
+  "activeBatchId": null,
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -7189,7 +7189,7 @@
     },
     {
       "batchId": "batch-0409-0413-v3",
-      "state": "READY",
+      "state": "COMPLETED",
       "taskIds": [
         "ledger:0409:prospect-lake-clean-water-center:c098d1e8",
         "ledger:0410:sierra-railroad-company:b9c99f78",
@@ -7205,15 +7205,18 @@
         413
       ],
       "createdAt": "2026-09-02T01:37:25.000Z",
-      "updatedAt": "2026-09-02T01:37:37.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-09-02T02:00:58.000Z",
+      "completedAt": "2026-09-02T02:00:58.000Z",
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0409-0413-v3/batch-manifest.json",
         "sha256": "df5c5302abc87a42cc5330ce4b4d40f56e9473e834c4fbb0747bc74646166aee"
       },
-      "releaseSha": null,
-      "receipt": null,
-      "reason": null,
+      "releaseSha": "9dd6fe4570b75acc02aedc5ea93eea24cfcb89ee",
+      "receipt": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0409-0413-v3/production-apply/batch-apply-receipt.json",
+        "sha256": "359de2670c0e95a5e52a6734264531ab53342af9638aed833b991e6e0abdbfc6"
+      },
+      "reason": "Protected atomic transaction, seed parity, detail APIs, canonical deployment, and rendered production scorecards verified.",
       "history": [
         {
           "sequence": 1,
@@ -7232,9 +7235,51 @@
             "df5c5302abc87a42cc5330ce4b4d40f56e9473e834c4fbb0747bc74646166aee"
           ],
           "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "RELEASING",
+          "at": "2026-09-02T01:51:49.000Z",
+          "evidenceSha256": [
+            "df5c5302abc87a42cc5330ce4b4d40f56e9473e834c4fbb0747bc74646166aee"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 4,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-09-02T01:53:09.000Z",
+          "evidenceSha256": [
+            "df5c5302abc87a42cc5330ce4b4d40f56e9473e834c4fbb0747bc74646166aee"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 5,
+          "from": "APPLYING",
+          "to": "VERIFYING",
+          "at": "2026-09-02T01:59:39.000Z",
+          "evidenceSha256": [
+            "359de2670c0e95a5e52a6734264531ab53342af9638aed833b991e6e0abdbfc6",
+            "df5c5302abc87a42cc5330ce4b4d40f56e9473e834c4fbb0747bc74646166aee"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 6,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-09-02T02:00:58.000Z",
+          "evidenceSha256": [
+            "359de2670c0e95a5e52a6734264531ab53342af9638aed833b991e6e0abdbfc6",
+            "df5c5302abc87a42cc5330ce4b4d40f56e9473e834c4fbb0747bc74646166aee"
+          ],
+          "reason": "Protected atomic transaction, seed parity, detail APIs, canonical deployment, and rendered production scorecards verified."
         }
       ]
     }
   ],
-  "ledgerSha256": "1f1df1c17914a1046701c5f6c2a6173a36cac6f78e5e0472b900d323ed402027"
+  "ledgerSha256": "848c0f740085331dbbeede7165b4ab004f84362356e739be18db3e8ccf8b510f"
 }
