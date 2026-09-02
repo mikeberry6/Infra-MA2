@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-09-02",
+  "ledgerSha256": "ebc6e2eee7319b792eb4deee6b572bb65bc53586fe67753cc722e72bfb57be24",
+  "sourceSnapshotSha256": "8e299162b8f676be0a53751035f638774f67458a1d71f37344f767bac98f7482",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 0,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 0,
+      "UNRESOLVED": 1
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  },
+  "expectedMutationCount": 1,
+  "mutations": [
+    {
+      "recordId": "OFA-05F8DA09C68B",
+      "ownershipPeriodId": "cmrxpkals02aaivhea54xfxxy",
+      "companyName": "American Natural",
+      "country": "United States",
+      "investmentFirm": "Tiger",
+      "currentVehicleName": "Cleopatra Resources LLC; exact Tiger fund and acquisition vehicle not publicly disclosed",
+      "databaseVehicleName": "Cleopatra Resources LLC; exact Tiger fund and acquisition vehicle not publicly disclosed",
+      "investmentYear": 2015,
+      "stake": "Current Tiger-backed interest; exact security, percentage and co-investors not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "DISCLOSED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Tiger’s May 2015 investment and continuing involvement are directly evidenced, but the exact Tiger-managed fund, acquisition vehicle, security, current ownership percentage and co-investors are not publicly disclosed."
+      },
+      "evidenceUrls": [
+        "https://www.tigerinfrastructure.com/documents/FG/tigerNew/news/379342_Tiger_Infrastructure_Invests_in_American_Natural.pdf",
+        "https://www.tigerinfrastructure.com/team",
+        "https://oic.com/investments/american-natural-supply",
+        "https://jobbersworld.com/2023/12/18/giant-oil-inc-closes-acquisition-of-american-natural-retail-pa-llc/"
+      ]
+    }
+  ],
+  "manifestSha256": "e3d5ae450ade505206ee409ee99031b7928bb7129f891bdc36f890bbb8fc5043"
+}
