@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RENDERED_CARD_VERIFICATION",
+  "batchId": "batch-0424-0428-v1",
+  "batchSha256": "fbfa50f4ff203293dd5a8ac7ea1fe5e3f0d17f50b0db69f64e461307f67a4b6e",
+  "batchReceiptSha256": "9344a958ebef0b5c661f192111c9505503b97accfd2b7d7028d515803a5a8cd1",
+  "releaseSha": "198b085fd13c53cc2bab482ef74f936d5ad6c1ee",
+  "transactionId": "502a0e05-5714-4f98-86df-11cf0f898613",
+  "attributionRepairReleaseSha": "16a8506e047024d67eeb6a746c75146f9ec746c8",
+  "attributionRepairReceiptSha256": "a38630f06b29d003b06ba09da172ad6bf0af0dac4796b56692b63d1ce9a0eff9",
+  "verifiedAt": "2026-09-02T04:43:00.000Z",
+  "canonicalUrl": "https://infra-ma-2.vercel.app/Infra-MA2/portfolio",
+  "method": "Production browser DOM verification after cache revalidation, including table search, drawer opening, prior-owner expansion, ownership-attribution label checks, excluded/superseded identity checks, and direct canonical detail API checks in the protected workflows.",
+  "companies": [
+    {
+      "companyId": "cmrxpjnk0019uivhefy3ycv3y",
+      "companyName": "KAPS",
+      "tableCardFound": true,
+      "drawerRendered": true,
+      "currentOwners": [
+        "Keyera Corp."
+      ],
+      "formerOwners": [
+        "Stonepeak"
+      ],
+      "ownershipPeriodsVisible": true,
+      "ownershipVehiclesVisible": true,
+      "ownershipAttributionsCorrect": true,
+      "businessOverviewVisible": true,
+      "sourcesVisible": true,
+      "milestonesVisible": true,
+      "sourceCount": 6,
+      "milestoneCount": 4,
+      "apiMatchesRenderedIdentity": true
+    },
+    {
+      "companyId": "cmrxpjnki019vivhe5zf3adzb",
+      "companyName": "Lineage, Inc.",
+      "tableCardFound": true,
+      "drawerRendered": true,
+      "currentOwners": [
+        "Stonepeak",
+        "Bay Grove"
+      ],
+      "formerOwners": [],
+      "ownershipPeriodsVisible": true,
+      "ownershipVehiclesVisible": true,
+      "ownershipAttributionsCorrect": true,
+      "businessOverviewVisible": true,
+      "sourcesVisible": true,
+      "milestonesVisible": true,
+      "sourceCount": 6,
+      "milestoneCount": 4,
+      "apiMatchesRenderedIdentity": true
+    },
+    {
+      "companyId": "cmrxpjnl3019wivhecldk4kq7",
+      "companyName": "LOGISTEC",
+      "tableCardFound": true,
+      "drawerRendered": true,
+      "currentOwners": [
+        "Blue Wolf Capital Partners",
+        "Stonepeak"
+      ],
+      "formerOwners": [],
+      "ownershipPeriodsVisible": true,
+      "ownershipVehiclesVisible": true,
+      "ownershipAttributionsCorrect": true,
+      "pendingExitVisible": true,
+      "businessOverviewVisible": true,
+      "sourcesVisible": true,
+      "milestonesVisible": true,
+      "sourceCount": 7,
+      "milestoneCount": 4,
+      "apiMatchesRenderedIdentity": true
+    }
+  ],
+  "identityChecks": [
+    {
+      "taskIndex": 424,
+      "companyName": "Extenet (formerly ExteNet Systems)",
+      "expected": "One existing canonical row; no duplicate from the superseded task",
+      "observed": "Exactly one row"
+    },
+    {
+      "taskIndex": 428,
+      "companyName": "New England Power transmission assets",
+      "expected": "Excluded false identity absent from the published table",
+      "observed": "No matching PortCo"
+    }
+  ],
+  "assertions": {
+    "allExpectedPublishedCompaniesVisibleInTable": true,
+    "allExpectedDrawersOpened": true,
+    "allDrawerHeadingsMatchCanonicalCompanies": true,
+    "allExpectedCurrentOwnersVisible": true,
+    "allExpectedFormerOwnersVisible": true,
+    "allOwnershipVehiclesVisible": true,
+    "allOwnershipAttributionsMatchApprovedSeed": true,
+    "incorrectInferredFundLabelsAbsent": true,
+    "supersededIdentityNotDuplicated": true,
+    "excludedIdentityAbsent": true,
+    "allBusinessOverviewsVisible": true,
+    "allSourcesVisible": true,
+    "allMilestonesVisible": true,
+    "consoleErrorsObserved": false
+  },
+  "valid": true
+}

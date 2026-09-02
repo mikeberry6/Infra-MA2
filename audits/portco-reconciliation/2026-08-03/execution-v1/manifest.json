@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-09-02T03:48:35.000Z",
+  "updatedAt": "2026-09-02T04:44:11.000Z",
   "runStatus": "IDLE",
   "activeTaskId": null,
   "source": {
@@ -39974,20 +39974,26 @@
       "managerIndex": 90,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "0d206ea70189eb920d5b35dfaac3cae3448b8393eecb29ed0a7a89e996a3232d",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
-      "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "status": "SUPERSEDED",
+      "attempts": 1,
+      "startedAt": "2026-09-02T03:55:31.000Z",
+      "updatedAt": "2026-09-02T04:44:11.000Z",
+      "completedAt": "2026-09-02T04:44:11.000Z",
+      "exceptionReason": "Fresh task resolution proves this is the same canonical Extenet identity already represented by task 213. Task 213 preserves the unresolved Northleaf disposition and JH-to-KH legal bridge for final deferred re-adjudication, so creating a second mutation or deferral would duplicate the same company-level issue.",
+      "supersededByTaskId": "ledger:0213:extenet-formerly-extenet-systems:1d3fac1c",
+      "taskSnapshotSha256": "d4749b6771abb765642d70d1d5e4b545f272f4812c813c5a15d196aa746893fb",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0424-extenet-formerly-extenet-systems/attempt-1/locked-batch-v2-task-snapshot.json",
+          "sha256": "d4749b6771abb765642d70d1d5e4b545f272f4812c813c5a15d196aa746893fb"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0424-extenet-formerly-extenet-systems/attempt-1/terminal-decision-v1.json",
+          "sha256": "3fa7bc24717546d651d903e2da72e1da0152461a9387bb48c2ba603e1bc88bca"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -40001,6 +40007,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "SUPERSEDED",
+          "at": "2026-09-02T04:44:11.000Z",
+          "reason": "Fresh task resolution proves this is the same canonical Extenet identity already represented by task 213. Task 213 preserves the unresolved Northleaf disposition and JH-to-KH legal bridge for final deferred re-adjudication, so creating a second mutation or deferral would duplicate the same company-level issue.",
+          "taskSnapshotSha256": "d4749b6771abb765642d70d1d5e4b545f272f4812c813c5a15d196aa746893fb",
+          "evidenceSha256": [
+            "3fa7bc24717546d651d903e2da72e1da0152461a9387bb48c2ba603e1bc88bca",
+            "9344a958ebef0b5c661f192111c9505503b97accfd2b7d7028d515803a5a8cd1",
+            "d4749b6771abb765642d70d1d5e4b545f272f4812c813c5a15d196aa746893fb",
+            "fbfa50f4ff203293dd5a8ac7ea1fe5e3f0d17f50b0db69f64e461307f67a4b6e"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -40012,23 +40033,44 @@
       "managerIndex": 90,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "653465277dc7503d44698972ef174fb1f2bb40d2ea37cfde9d7b33243180423a",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-09-02T03:55:31.000Z",
+      "updatedAt": "2026-09-02T04:44:11.000Z",
+      "completedAt": "2026-09-02T04:44:11.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "2681ac50c9e687501c644d9f6c2a5f181273c067b2ab8865d56a00a23f8c52f3",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0425-kaps/attempt-1/locked-batch-v1-task-snapshot.json",
+          "sha256": "2681ac50c9e687501c644d9f6c2a5f181273c067b2ab8865d56a00a23f8c52f3"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0425-kaps/attempt-1/proposal-v1.json",
+          "sha256": "fb27ae54f5bcb4cab3862791d467ded6fd97042e00faa6cfaa730b876c579bfe"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0425-kaps-v1.json",
+          "sha256": "6203c97ca780da7fbed296a39801cccf9ab21d4f07da1dd50f718d7e33881d6a"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0424-0428-v1/production-apply/batch-apply-receipt.json#members/1/receipt",
+          "sha256": "7eac948959e395572412567cb30046c78361a18ce17cee4f083874d77cd93444"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0425-kaps/attempt-1/proposal-v1.json#afterImage",
+          "sha256": "4042612cd27677af7b2b377fccfc301920993dedb828f5ffdceebb50f3ad77aa"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-09-02T04:44:11.000Z",
+        "auditEventId": "cmtjlfm3h0006zl2b23tqga18",
+        "transactionId": "502a0e05-5714-4f98-86df-11cf0f898613",
+        "receiptSha256": "7eac948959e395572412567cb30046c78361a18ce17cee4f083874d77cd93444",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33590624346"
+      },
       "history": [
         {
           "sequence": 1,
@@ -40039,6 +40081,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-09-02T04:44:11.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0424-0428-v1.",
+          "taskSnapshotSha256": "2681ac50c9e687501c644d9f6c2a5f181273c067b2ab8865d56a00a23f8c52f3",
+          "evidenceSha256": [
+            "2681ac50c9e687501c644d9f6c2a5f181273c067b2ab8865d56a00a23f8c52f3",
+            "4042612cd27677af7b2b377fccfc301920993dedb828f5ffdceebb50f3ad77aa",
+            "6203c97ca780da7fbed296a39801cccf9ab21d4f07da1dd50f718d7e33881d6a",
+            "7eac948959e395572412567cb30046c78361a18ce17cee4f083874d77cd93444",
+            "9344a958ebef0b5c661f192111c9505503b97accfd2b7d7028d515803a5a8cd1",
+            "fb27ae54f5bcb4cab3862791d467ded6fd97042e00faa6cfaa730b876c579bfe",
+            "fbfa50f4ff203293dd5a8ac7ea1fe5e3f0d17f50b0db69f64e461307f67a4b6e"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -40050,23 +40110,44 @@
       "managerIndex": 90,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "e3474f389dfcb981cf8adff3076c65ddef8957eaa3926f93edd8a43635829f0e",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-09-02T03:55:31.000Z",
+      "updatedAt": "2026-09-02T04:44:11.000Z",
+      "completedAt": "2026-09-02T04:44:11.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "4ebfa586805a9133c0c431c52b05836257d08e64b2825fcb1fc8a3c1d40bd004",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0426-lineage/attempt-1/locked-batch-v1-task-snapshot.json",
+          "sha256": "4ebfa586805a9133c0c431c52b05836257d08e64b2825fcb1fc8a3c1d40bd004"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0426-lineage/attempt-1/proposal-v1.json",
+          "sha256": "7b30d12be1d6f1c86499b758e1a9742fed65dc4bae551e6bbb3184434ae95e9b"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0426-lineage-v1.json",
+          "sha256": "ae504e162cc8a03f5a47c7e6321fdddbb16241715ee44ffd865734f46982f8a9"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0424-0428-v1/production-apply/batch-apply-receipt.json#members/2/receipt",
+          "sha256": "3ce81d86cccb259964dbe2c188afae12254b1d986ed349ed51b02e74e92aec5d"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0426-lineage/attempt-1/proposal-v1.json#afterImage",
+          "sha256": "1ca9b76d096cc45078f1243154023382fd8636a2623212965fe8b53ac247edfe"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-09-02T04:44:11.000Z",
+        "auditEventId": "cmtjlfqmb000ezl2b131uioma",
+        "transactionId": "502a0e05-5714-4f98-86df-11cf0f898613",
+        "receiptSha256": "3ce81d86cccb259964dbe2c188afae12254b1d986ed349ed51b02e74e92aec5d",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33590624346"
+      },
       "history": [
         {
           "sequence": 1,
@@ -40077,6 +40158,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-09-02T04:44:11.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0424-0428-v1.",
+          "taskSnapshotSha256": "4ebfa586805a9133c0c431c52b05836257d08e64b2825fcb1fc8a3c1d40bd004",
+          "evidenceSha256": [
+            "1ca9b76d096cc45078f1243154023382fd8636a2623212965fe8b53ac247edfe",
+            "3ce81d86cccb259964dbe2c188afae12254b1d986ed349ed51b02e74e92aec5d",
+            "4ebfa586805a9133c0c431c52b05836257d08e64b2825fcb1fc8a3c1d40bd004",
+            "7b30d12be1d6f1c86499b758e1a9742fed65dc4bae551e6bbb3184434ae95e9b",
+            "9344a958ebef0b5c661f192111c9505503b97accfd2b7d7028d515803a5a8cd1",
+            "ae504e162cc8a03f5a47c7e6321fdddbb16241715ee44ffd865734f46982f8a9",
+            "fbfa50f4ff203293dd5a8ac7ea1fe5e3f0d17f50b0db69f64e461307f67a4b6e"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -40088,23 +40187,44 @@
       "managerIndex": 90,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "3f9aec24bb050a38339fccfc7773ffc55cb13325d178916edf68ce61aa36ecc9",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-09-02T03:55:31.000Z",
+      "updatedAt": "2026-09-02T04:44:11.000Z",
+      "completedAt": "2026-09-02T04:44:11.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "ebdae84ff6fefcb3c4d14c4c7e5e4e1acd3cfcdab909e74b780d0a861dcbafd5",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0427-logistec/attempt-1/locked-batch-v1-task-snapshot.json",
+          "sha256": "ebdae84ff6fefcb3c4d14c4c7e5e4e1acd3cfcdab909e74b780d0a861dcbafd5"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0427-logistec/attempt-1/proposal-v1.json",
+          "sha256": "6172c0653e17c0423a1ae17ec025c4324d20b5530241c7b09852cb34600330bf"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0427-logistec-v1.json",
+          "sha256": "95a289698403d0a7319dcba4f6f71ee8271821cbb66cf3252d0bd644c05d619f"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0424-0428-v1/production-apply/batch-apply-receipt.json#members/3/receipt",
+          "sha256": "c152b170830db324f558ea4159ba6cee0b001920d613b26a712d579bb3d9c89b"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0427-logistec/attempt-1/proposal-v1.json#afterImage",
+          "sha256": "029a66f78efdc58e6105c5f5d860aeec33099259dee4813f97bea01f4c8470ba"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-09-02T04:44:11.000Z",
+        "auditEventId": "cmtjlfvpw000ozl2bkcnruns1",
+        "transactionId": "502a0e05-5714-4f98-86df-11cf0f898613",
+        "receiptSha256": "c152b170830db324f558ea4159ba6cee0b001920d613b26a712d579bb3d9c89b",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33590624346"
+      },
       "history": [
         {
           "sequence": 1,
@@ -40115,6 +40235,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-09-02T04:44:11.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0424-0428-v1.",
+          "taskSnapshotSha256": "ebdae84ff6fefcb3c4d14c4c7e5e4e1acd3cfcdab909e74b780d0a861dcbafd5",
+          "evidenceSha256": [
+            "029a66f78efdc58e6105c5f5d860aeec33099259dee4813f97bea01f4c8470ba",
+            "6172c0653e17c0423a1ae17ec025c4324d20b5530241c7b09852cb34600330bf",
+            "9344a958ebef0b5c661f192111c9505503b97accfd2b7d7028d515803a5a8cd1",
+            "95a289698403d0a7319dcba4f6f71ee8271821cbb66cf3252d0bd644c05d619f",
+            "c152b170830db324f558ea4159ba6cee0b001920d613b26a712d579bb3d9c89b",
+            "ebdae84ff6fefcb3c4d14c4c7e5e4e1acd3cfcdab909e74b780d0a861dcbafd5",
+            "fbfa50f4ff203293dd5a8ac7ea1fe5e3f0d17f50b0db69f64e461307f67a4b6e"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -40126,20 +40264,26 @@
       "managerIndex": 90,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "da3bfaef987f1e03005f5a07239aa4ab2b874c7430e0ca0c2c5491944bf2a3dd",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "EXCLUDED",
+      "attempts": 1,
+      "startedAt": "2026-09-02T03:55:31.000Z",
+      "updatedAt": "2026-09-02T04:44:11.000Z",
+      "completedAt": "2026-09-02T04:44:11.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "89dc3380488481a3ecde51ecf80d4161bcf892600937e04619981cb4cfe8e51b",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0428-new-england-power-transmission-assets/attempt-1/locked-batch-v1-task-snapshot.json",
+          "sha256": "89dc3380488481a3ecde51ecf80d4161bcf892600937e04619981cb4cfe8e51b"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0428-new-england-power-transmission-assets/attempt-1/terminal-decision-v1.json",
+          "sha256": "3b7a115dc3baf7437902bb4c7d480ee2f2a8a755a3a2f002ddca3eb584d3b748"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -40153,6 +40297,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "EXCLUDED",
+          "at": "2026-09-02T04:44:11.000Z",
+          "reason": "The proposed 2023 Stonepeak minority holding is disproved. New England Power Company (NEP) is National Grid USA's regulated transmission subsidiary; 'Stonepeak New England Power' was a separate Canal/Bucksport generation portfolio acquired in 2018-2019 and sold to JERA in 2022.",
+          "taskSnapshotSha256": "89dc3380488481a3ecde51ecf80d4161bcf892600937e04619981cb4cfe8e51b",
+          "evidenceSha256": [
+            "3b7a115dc3baf7437902bb4c7d480ee2f2a8a755a3a2f002ddca3eb584d3b748",
+            "89dc3380488481a3ecde51ecf80d4161bcf892600937e04619981cb4cfe8e51b",
+            "9344a958ebef0b5c661f192111c9505503b97accfd2b7d7028d515803a5a8cd1",
+            "fbfa50f4ff203293dd5a8ac7ea1fe5e3f0d17f50b0db69f64e461307f67a4b6e"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -42964,5 +43123,5 @@
       ]
     }
   ],
-  "manifestSha256": "e56f24d46a8d2acd900525df26e7bcd9ad8d0949ded695707412c855847f67f6"
+  "manifestSha256": "1c9178891c72731e69391c1030cb5007da6f0d4b06b31ee2b029387dc6ea74f8"
 }
