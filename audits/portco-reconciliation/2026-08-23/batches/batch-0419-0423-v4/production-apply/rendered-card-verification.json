@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RENDERED_CARD_VERIFICATION",
+  "batchId": "batch-0419-0423-v4",
+  "batchSha256": "377b47a4de15c3e6a4d36e11a1b97da6df27144d3eff6d9261adae0d4de51bd5",
+  "batchReceiptSha256": "39ef997b3b8a54953d7beb9b026bc43f668c015a75075a69d135266a897df273",
+  "releaseSha": "d7c257627b8c5f80eb592a36d5815f84f31f0532",
+  "transactionId": "8a37d3a6-9d0a-457d-836a-22995ffd3376",
+  "attributionRepairReleaseSha": "e9d12ff0d1bb566ae6480521f08a35e183ff9986",
+  "attributionRepairReceiptSha256": "950e8a61a2a3c93342a6f4f3e5678aabceb8128e498e7b94ba488e0a619c6c91",
+  "verifiedAt": "2026-09-02T03:48:33.000Z",
+  "canonicalUrl": "https://infra-ma-2.vercel.app/Infra-MA2/portfolio",
+  "method": "Production browser DOM verification after cache revalidation, including table search, drawer opening, prior-owner expansion, ownership-attribution label checks, and direct canonical detail API checks.",
+  "companies": [
+    {
+      "companyId": "cmtjjg9fb00000z2bv8ic32mm",
+      "companyName": "Pinnacle Gas Services LLC",
+      "tableCardFound": true,
+      "drawerRendered": true,
+      "currentOwners": [
+        "Comstock Resources",
+        "Sixth Street"
+      ],
+      "formerOwners": [
+        "Quantum Capital Solutions"
+      ],
+      "ownershipPeriodsVisible": true,
+      "ownershipVehiclesVisible": true,
+      "ownershipAttributionsCorrect": true,
+      "businessOverviewVisible": true,
+      "sourcesVisible": true,
+      "milestonesVisible": true,
+      "sourceCount": 4,
+      "milestoneCount": 3,
+      "apiMatchesRenderedIdentity": true
+    },
+    {
+      "companyId": "cmrxpjnf3019kivhenngd3wrq",
+      "companyName": "Akumin",
+      "tableCardFound": false,
+      "drawerRendered": false,
+      "expectedPublished": false,
+      "archiveVerified": true,
+      "apiMatchesRenderedIdentity": true
+    },
+    {
+      "companyId": "cmrxpjnhi019pivhepj62e5aa",
+      "companyName": "CoreSite",
+      "tableCardFound": true,
+      "drawerRendered": true,
+      "currentOwners": [
+        "Stonepeak",
+        "American Tower Corporation"
+      ],
+      "formerOwners": [
+        "The Carlyle Group",
+        "Public market"
+      ],
+      "ownershipPeriodsVisible": true,
+      "ownershipVehiclesVisible": true,
+      "ownershipAttributionsCorrect": true,
+      "businessOverviewVisible": true,
+      "sourcesVisible": true,
+      "milestonesVisible": true,
+      "sourceCount": 6,
+      "milestoneCount": 3,
+      "apiMatchesRenderedIdentity": true
+    },
+    {
+      "companyId": "cmrxpjnio019rivhexvojn1z4",
+      "companyName": "Evolve Transition Infrastructure LP",
+      "tableCardFound": true,
+      "drawerRendered": true,
+      "currentOwners": [
+        "Stonepeak"
+      ],
+      "formerOwners": [
+        "Constellation/Exelon",
+        "Sanchez sponsor group",
+        "Public market"
+      ],
+      "ownershipPeriodsVisible": true,
+      "ownershipVehiclesVisible": true,
+      "ownershipAttributionsCorrect": true,
+      "businessOverviewVisible": true,
+      "sourcesVisible": true,
+      "milestonesVisible": true,
+      "sourceCount": 5,
+      "milestoneCount": 4,
+      "apiMatchesRenderedIdentity": true
+    }
+  ],
+  "assertions": {
+    "allExpectedPublishedCompaniesVisibleInTable": true,
+    "archivedCompanyAbsentFromTable": true,
+    "allExpectedDrawersOpened": true,
+    "allDrawerHeadingsMatchCanonicalCompanies": true,
+    "allExpectedCurrentOwnersVisible": true,
+    "allExpectedFormerOwnersVisible": true,
+    "allOwnershipVehiclesVisible": true,
+    "allOwnershipAttributionsMatchApprovedSeed": true,
+    "incorrectInferredFundLabelsAbsent": true,
+    "allBusinessOverviewsVisible": true,
+    "allSourcesVisible": true,
+    "allMilestonesVisible": true,
+    "consoleErrorsObserved": false
+  },
+  "valid": true
+}

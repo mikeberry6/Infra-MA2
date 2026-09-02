@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_RELEASE_VERIFICATION",
+  "verifiedAt": "2026-09-02T03:46:58.444Z",
+  "manifestSha256": "d5be13d2439deed41bdde731ad66e34c04d1ef4e1476737236b0b9659995cbfd",
+  "approvalSha256": "1e140f225bf690ef66f005287a47e389b9887e8ee6a71aa3f153a16a2d84d195",
+  "receiptSha256": "950e8a61a2a3c93342a6f4f3e5678aabceb8128e498e7b94ba488e0a619c6c91",
+  "mutationCount": 5,
+  "changed": 5,
+  "verificationScope": "BOUNDED_STATUS_SAMPLE",
+  "sampledRows": [
+    {
+      "recordId": "OFA-5FB889563ACB",
+      "companyId": "cmrxpjnio019rivhexvojn1z4",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjnio019rivhexvojn1z4?verification=d5be13d2439deed41bdde731ad66e34c04d1ef4e1476737236b0b9659995cbfd",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Stonepeak Infrastructure Fund (Orion AIV) LP",
+        "attributionConfidence": null,
+        "attributionRationale": "The 2015 Schedule 13D directly identifies Stonepeak Infrastructure Fund (Orion AIV) LP and Stonepeak Catarina Holdings as the investment chain."
+      }
+    },
+    {
+      "recordId": "OFA-9A7D33BB2CEA",
+      "companyId": "cmrxpjnhi019pivhepj62e5aa",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjnhi019pivhepj62e5aa?verification=d5be13d2439deed41bdde731ad66e34c04d1ef4e1476737236b0b9659995cbfd",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "American Tower's controlling interest is direct corporate ownership rather than a managed infrastructure fund."
+      }
+    },
+    {
+      "recordId": "OFA-142E1EFFA343",
+      "companyId": "cmrxpjnhi019pivhepj62e5aa",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjnhi019pivhepj62e5aa?verification=d5be13d2439deed41bdde731ad66e34c04d1ef4e1476737236b0b9659995cbfd",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Stonepeak's platform interests are directly disclosed, but the exact investment fund and legal investment entities are not publicly identified."
+      }
+    }
+  ],
+  "passed": true
+}
