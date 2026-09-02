@@ -3,7 +3,7 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-02T03:27:00.000Z",
+  "updatedAt": "2026-09-02T03:35:49.000Z",
   "activeBatchId": "batch-0419-0423-v4",
   "batches": [
     {
@@ -7549,7 +7549,7 @@
     },
     {
       "batchId": "batch-0419-0423-v4",
-      "state": "READY",
+      "state": "VERIFYING_FAILED",
       "taskIds": [
         "ledger:0419:pinnacle-gas-services-llc:94e9c671",
         "ledger:0420:akumin:becd83c7",
@@ -7565,15 +7565,18 @@
         423
       ],
       "createdAt": "2026-09-02T03:23:01.000Z",
-      "updatedAt": "2026-09-02T03:27:00.000Z",
+      "updatedAt": "2026-09-02T03:35:49.000Z",
       "completedAt": null,
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0419-0423-v4/batch-manifest.json",
         "sha256": "377b47a4de15c3e6a4d36e11a1b97da6df27144d3eff6d9261adae0d4de51bd5"
       },
-      "releaseSha": null,
-      "receipt": null,
-      "reason": null,
+      "releaseSha": "d7c257627b8c5f80eb592a36d5815f84f31f0532",
+      "receipt": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0419-0423-v4/production-apply/batch-apply-receipt.json",
+        "sha256": "39ef997b3b8a54953d7beb9b026bc43f668c015a75075a69d135266a897df273"
+      },
+      "reason": "Rendered production verification found stale carried-forward fund attribution metadata on CoreSite and Evolve. Company, ownership, stake, seed, API identity, and atomic receipt checks passed; the bundle is frozen pending a scoped ownership-attribution correction.",
       "history": [
         {
           "sequence": 1,
@@ -7592,9 +7595,40 @@
             "377b47a4de15c3e6a4d36e11a1b97da6df27144d3eff6d9261adae0d4de51bd5"
           ],
           "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "RELEASING",
+          "at": "2026-09-02T03:27:10.000Z",
+          "evidenceSha256": [
+            "377b47a4de15c3e6a4d36e11a1b97da6df27144d3eff6d9261adae0d4de51bd5"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 4,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-09-02T03:27:22.000Z",
+          "evidenceSha256": [
+            "377b47a4de15c3e6a4d36e11a1b97da6df27144d3eff6d9261adae0d4de51bd5"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 5,
+          "from": "APPLYING",
+          "to": "VERIFYING_FAILED",
+          "at": "2026-09-02T03:35:49.000Z",
+          "evidenceSha256": [
+            "377b47a4de15c3e6a4d36e11a1b97da6df27144d3eff6d9261adae0d4de51bd5",
+            "39ef997b3b8a54953d7beb9b026bc43f668c015a75075a69d135266a897df273"
+          ],
+          "reason": "Rendered production verification found stale carried-forward fund attribution metadata on CoreSite and Evolve. Company, ownership, stake, seed, API identity, and atomic receipt checks passed; the bundle is frozen pending a scoped ownership-attribution correction."
         }
       ]
     }
   ],
-  "ledgerSha256": "9279c057a91755d34f0a636f85cfc8ede147ef038089d6a078185497d6e5c3af"
+  "ledgerSha256": "75f4b8b2377f504e42c480f8a9ed70bb7619e5362da110817bf16d6da9f054f6"
 }

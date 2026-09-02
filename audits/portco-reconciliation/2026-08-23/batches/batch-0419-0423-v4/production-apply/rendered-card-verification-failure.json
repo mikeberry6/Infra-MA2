@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RENDERED_CARD_VERIFICATION_FAILURE",
+  "batchId": "batch-0419-0423-v4",
+  "batchSha256": "377b47a4de15c3e6a4d36e11a1b97da6df27144d3eff6d9261adae0d4de51bd5",
+  "batchReceiptSha256": "39ef997b3b8a54953d7beb9b026bc43f668c015a75075a69d135266a897df273",
+  "releaseSha": "d7c257627b8c5f80eb592a36d5815f84f31f0532",
+  "transactionId": "8a37d3a6-9d0a-457d-836a-22995ffd3376",
+  "verifiedAt": "2026-09-02T03:35:49.000Z",
+  "canonicalUrl": "https://infra-ma-2.vercel.app/Infra-MA2/portfolio",
+  "method": "Production browser DOM verification after searching the PortCo table and opening each changed drawer, expanding prior owners, and comparing ownership-attribution labels with the approved seed manifest.",
+  "passed": [
+    "Pinnacle Gas Services LLC was visible with Sixth Street and Comstock Resources as current owners and Quantum Capital Solutions as a prior owner.",
+    "Akumin was absent from the published PortCo table.",
+    "CoreSite was visible with Stonepeak and American Tower Corporation as current owners and The Carlyle Group and Public market as prior owners.",
+    "Evolve Transition Infrastructure LP was visible with Stonepeak as current owner and Sanchez sponsor group, Public market, and Constellation/Exelon as prior owners.",
+    "All rendered companies exposed their approved ownership vehicles, stakes, business overviews, sources, and story timelines."
+  ],
+  "failures": [
+    {
+      "companyName": "CoreSite",
+      "investmentFirm": "Stonepeak",
+      "renderedAttribution": "Stonepeak Infrastructure Fund IV — Estimated — Medium confidence",
+      "approvedAttribution": "UNRESOLVED",
+      "reason": "The exact Stonepeak investment fund and legal investment entities are not publicly disclosed."
+    },
+    {
+      "companyName": "CoreSite",
+      "investmentFirm": "American Tower Corporation",
+      "renderedAttribution": "UNRESOLVED",
+      "approvedAttribution": "DIRECT_PROGRAM",
+      "reason": "American Tower owns the controlling interest directly rather than through a managed infrastructure fund."
+    },
+    {
+      "companyName": "Evolve Transition Infrastructure LP",
+      "investmentFirm": "Stonepeak",
+      "renderedAttribution": "Stonepeak Core Fund — Estimated — Low confidence",
+      "approvedAttribution": "Stonepeak Infrastructure Fund (Orion AIV) LP — DISCLOSED",
+      "reason": "The 2015 Schedule 13D directly names Stonepeak Infrastructure Fund (Orion AIV) LP and Stonepeak Catarina Holdings."
+    },
+    {
+      "companyName": "Pinnacle Gas Services LLC",
+      "investmentFirm": "Comstock Resources",
+      "renderedAttribution": "UNRESOLVED",
+      "approvedAttribution": "DIRECT_PROGRAM",
+      "reason": "Comstock's controlling interest is direct corporate ownership."
+    }
+  ],
+  "recoveryPackage": "audits/portfolio-fund-attribution/2026-09-01/scoped/portco-batch-0419-0423-attribution-repair/apply-manifest.json",
+  "valid": false
+}
