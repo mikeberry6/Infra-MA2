@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_CORRECTION_DECISION",
+  "asOfDate": "2026-09-02",
+  "triggerBatchId": "batch-0429-0433-v2",
+  "triggerBatchSha256": "f772a09d26eb926eee99787e3cf2e4e6c23fedc10af0df09df790be14fdbaf06",
+  "triggerBatchReceiptSha256": "930984a9f704ca269558215544de25438cc9ecaf9dc7cfa3a92f82e5b930d46b",
+  "triggerReleaseSha": "4bc5962c79e237b76481add0dc6c95a9fa459e2e",
+  "seedAttributionManifestSha256": "d552b7e6e3796002cce41ee027768ea042f21d40c4d77a46c54077feeebe7db6",
+  "productionSnapshotSha256": "b650f206b10adf422b923cd92e0c3d2ba4a1918f0de5eb05159411d57ce265b5",
+  "decision": "ALIGN_ACTIVE_OWNERSHIP_ATTRIBUTION_METADATA",
+  "rationale": "The atomic PortCo transaction correctly applied the approved canonical companies, ownership periods, supersession and exclusion outcomes. Independent rendered verification found that the separate ownership-attribution layer retained nine stale or incomplete classifications, labels or rationale fields. Align those nine exact active ownership rows to the reviewed seed judgments before completing the PortCo bundle.",
+  "mutations": [
+    {
+      "companyName": "Oryx Midstream",
+      "ownershipPeriodIds": [
+        "cmrxpk8ym027oivheaxzneh02",
+        "cmrxpka8b029oivhepz8n1yd2"
+      ],
+      "outcome": "Preserve QIA as direct-program ownership and remove the unsupported Stonepeak Core Fund inference."
+    },
+    {
+      "companyName": "Outpost Solar",
+      "ownershipPeriodIds": [
+        "cmtjpi30p000oze2bifzs3unu",
+        "cmtjpi32k000qze2bnhaiz0lj"
+      ],
+      "outcome": "Retain Stonepeak as unresolved at the exact fund level and classify Repsol as direct corporate ownership."
+    },
+    {
+      "companyName": "JFK New Terminal One",
+      "ownershipPeriodIds": [
+        "cmrxpkafi029yivheau72hzni",
+        "cmrxpkafz029zivhe2ryo1tzy",
+        "cmtjpi4tm0014ze2bnimst6rc",
+        "cmtjpi4v70016ze2babml4hld",
+        "cmtjpi4w90017ze2b6fxl93fg"
+      ],
+      "outcome": "Apply the reviewed Ullico, Swiss Life and JLC disclosed vehicle names, classify Ferrovial as direct corporate ownership, and retain Carlyle as unresolved at the exact fund level."
+    }
+  ],
+  "verifiedNonChanges": [
+    "Company identities, aliases, redirects and publication status",
+    "Ownership organizations, vehicles, stakes, dates and active state",
+    "Former ownership periods and project-to-platform boundaries",
+    "Descriptions, milestones, citations and primary sources",
+    "Fund Database records; the repair creates or updates no fund",
+    "The completed atomic PortCo transaction and its durable receipts"
+  ],
+  "identityResolved": true,
+  "activeOwnershipResolved": true,
+  "unresolvedQuestions": []
+}

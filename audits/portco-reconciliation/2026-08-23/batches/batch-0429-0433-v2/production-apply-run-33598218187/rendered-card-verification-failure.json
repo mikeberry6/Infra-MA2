@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RENDERED_CARD_VERIFICATION_FAILURE",
+  "batchId": "batch-0429-0433-v2",
+  "batchSha256": "f772a09d26eb926eee99787e3cf2e4e6c23fedc10af0df09df790be14fdbaf06",
+  "batchReceiptSha256": "930984a9f704ca269558215544de25438cc9ecaf9dc7cfa3a92f82e5b930d46b",
+  "releaseSha": "4bc5962c79e237b76481add0dc6c95a9fa459e2e",
+  "transactionId": "81f4244f-a5d7-46d4-ab35-659f5f4655bc",
+  "verifiedAt": "2026-09-02T06:27:59Z",
+  "canonicalUrl": "https://infra-ma-2.vercel.app/Infra-MA2/portfolio",
+  "method": "Production browser DOM verification after searching the PortCo table, opening each changed drawer, and comparing rendered ownership-attribution labels with the approved seed manifest and canonical after-images.",
+  "passed": [
+    "Oryx Midstream rendered as one active canonical company with separate Stonepeak and QIA ownership periods, correct investment timing, business overview, sources and milestones.",
+    "Outpost Solar rendered as one active company with Stonepeak at 43.8% and Repsol at 56.2%, including the approved ownership evidence and transaction history.",
+    "JFK New Terminal One rendered with Ferrovial at 49%, JLC Infrastructure at 30%, Ullico at 19%, The Carlyle Group at 2% and Swiss Life at a non-additive 0.4% look-through interest.",
+    "Oryx Midstream Services was superseded into the canonical Oryx identity and Stonepeak Infrastructure Logistics Platform was excluded without creating duplicate published companies.",
+    "Database after-images, seed entries and detail APIs already passed the protected atomic batch receipt checks."
+  ],
+  "failures": [
+    {
+      "companyName": "Oryx Midstream",
+      "investmentFirm": "Stonepeak",
+      "renderedAttribution": "Stonepeak Core Fund — Estimated — Low confidence",
+      "approvedAttribution": "UNRESOLVED",
+      "reason": "Current Stonepeak ownership is directly evidenced, but the exact Stonepeak-managed fund is not publicly disclosed."
+    },
+    {
+      "companyName": "Outpost Solar",
+      "investmentFirm": "Stonepeak",
+      "renderedAttribution": "Fund attribution pending",
+      "approvedAttribution": "UNRESOLVED",
+      "reason": "Stonepeak's 43.8% interest is directly evidenced, but no exact Stonepeak-managed fund or acquisition vehicle is public."
+    },
+    {
+      "companyName": "Outpost Solar",
+      "investmentFirm": "Repsol",
+      "renderedAttribution": "Fund attribution pending",
+      "approvedAttribution": "DIRECT_PROGRAM",
+      "reason": "Repsol's continuing interest is direct corporate ownership rather than ownership through a managed infrastructure fund."
+    },
+    {
+      "companyName": "JFK New Terminal One",
+      "investmentFirm": "The Carlyle Group",
+      "renderedAttribution": "Fund attribution pending",
+      "approvedAttribution": "UNRESOLVED",
+      "reason": "Carlyle's continuing 2% interest is evidenced, but the exact managed fund underlying CGI Phoenix Aggregator is not publicly disclosed."
+    },
+    {
+      "companyName": "JFK New Terminal One",
+      "investmentFirm": "JLC Infrastructure",
+      "renderedAttribution": "Fund attribution pending",
+      "approvedAttribution": "JLC Infrastructure Fund I, L.P. — DISCLOSED",
+      "reason": "The approved evidence directly identifies JLC Infrastructure Fund I, L.P. as the underlying JLC fund."
+    },
+    {
+      "companyName": "JFK New Terminal One",
+      "investmentFirm": "Ferrovial",
+      "renderedAttribution": "Fund attribution pending",
+      "approvedAttribution": "DIRECT_PROGRAM",
+      "reason": "Ferrovial's 49% interest is direct corporate ownership through Mars NTO LLC."
+    },
+    {
+      "companyName": "JFK New Terminal One",
+      "investmentFirm": "Swiss Life",
+      "renderedAttribution": "Swiss Life GIO III Co-Invest / JLC Infrastructure Fund I, L.P. — Disclosed",
+      "approvedAttribution": "JLC Terminal One Co-Invest L.P. — DISCLOSED",
+      "reason": "Current Swiss Life reporting identifies JLC Terminal One Co-Invest L.P. as the exact non-additive look-through vehicle."
+    },
+    {
+      "companyName": "JFK New Terminal One",
+      "investmentFirm": "Ullico",
+      "renderedAttribution": "UIF — Disclosed",
+      "approvedAttribution": "Ullico Infrastructure Fund — DISCLOSED",
+      "reason": "Ullico directly identifies its infrastructure fund by the full approved name."
+    }
+  ],
+  "recoveryPackage": "audits/portfolio-fund-attribution/2026-09-02/scoped/portco-batch-0429-0433-attribution-repair/apply-manifest.json",
+  "valid": false
+}

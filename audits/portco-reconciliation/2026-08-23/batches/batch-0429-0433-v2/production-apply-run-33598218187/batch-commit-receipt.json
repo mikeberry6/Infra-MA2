@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_COMMIT_RECEIPT",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0429-0433-v2",
+  "batchSha256": "f772a09d26eb926eee99787e3cf2e4e6c23fedc10af0df09df790be14fdbaf06",
+  "releaseSha": "4bc5962c79e237b76481add0dc6c95a9fa459e2e",
+  "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+  "transactionId": "81f4244f-a5d7-46d4-ab35-659f5f4655bc",
+  "appliedAt": "2026-09-02T06:19:52.655Z",
+  "members": [
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0429:oryx-midstream:eee190fa",
+      "taskIndex": 429,
+      "companyName": "Oryx Midstream",
+      "proposalSha256": "26ed74755dbe0beafde5b0ffdafe778fddb2da08618e47eb529a87fb1714769a",
+      "approvalSha256": "42f62eb0a6f189a2b47cce7819faa226ed61c520f360c3bd9963b31ec8ec133f",
+      "afterImageSha256": "cb65250404d6396d94c813e02a9e3eb4d06aa36b64cf229dc1b99bb013d8fc79",
+      "approvedSeedEntrySha256": "5d6a016aefd13eb1011995e42087077ce45a66242ec232691579d6db7079b680",
+      "companyId": "cmrxpjnnm01a1ivhew2n8o1is",
+      "auditEventId": "cmtjpi29f000cze2bx9xdi2h8"
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0430:oryx-midstream-services:8b062bed",
+      "taskIndex": 430,
+      "companyName": "Oryx Midstream Services",
+      "outcome": "SUPERSEDED",
+      "decisionSha256": "0da35e673c36a1df46ad48f60d0ba09dbdd6513cf261898c501989c071ba49ab"
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0431:outpost-solar:b3b3fc4c",
+      "taskIndex": 431,
+      "companyName": "Outpost Solar",
+      "proposalSha256": "1210529d8a98892c36b2064ed9ed835fde02231b4448634400dc1c3fc222a9c4",
+      "approvalSha256": "b46cb6d42e1cfe9b2194ff5cbd3215ad252b48e447e905e3574dbb947ecc8f9e",
+      "afterImageSha256": "d39c27675dab79527f2e509e2333abb17661aa5645304891e6651cb26617ccae",
+      "approvedSeedEntrySha256": "bb833ee309adf605ad5e05af71c5fda504bdfebbc0ea06765d223cfdcf8f733d",
+      "companyId": "cmtjpi2pn000dze2bbdbgmq86",
+      "auditEventId": "cmtjpi3qb000wze2b3vgz8a2z"
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0432:stonepeak-infrastructure-logistics-platform:bb35d6ac",
+      "taskIndex": 432,
+      "companyName": "Stonepeak Infrastructure Logistics Platform",
+      "outcome": "EXCLUDED",
+      "decisionSha256": "1087883af7cdf48035c0fdfd6f4b5b2d180b7b300e1d9877d03d2e4c6d04dd67"
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0433:jfk-new-terminal-one:759db377",
+      "taskIndex": 433,
+      "companyName": "JFK New Terminal One",
+      "proposalSha256": "c92349c43421cd6e26080ef5c737e8a0fc722736f05b209ddad951f84b8e28d2",
+      "approvalSha256": "04c0fc1cd571038b1a630446369ff6ad95b1d95ee070d13714601925b3cd5c5a",
+      "afterImageSha256": "004e703f0edac9307adbad52e20caab042b94b2fef935e996d7cfef1a3a6add5",
+      "approvedSeedEntrySha256": "dc8333a562317050ae7c689818cf11ff2e62191c3b3ef5ed7e49f3140c718f4a",
+      "companyId": "cmrxpjnv601abivhe2ixd73xz",
+      "auditEventId": "cmtjpi5k70019ze2b0kdx4w5l"
+    }
+  ],
+  "verification": {
+    "databaseTransactionCommitted": true,
+    "seedArtifactVerifiedBeforeCommit": true,
+    "detailApiVerificationPending": true,
+    "partialDatabaseApplication": false
+  },
+  "receiptSha256": "e0e6602ba9f8a0e1a5d88aa05b702693ca91d38a690066319ad200f52a0d9057"
+}
