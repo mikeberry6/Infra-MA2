@@ -1,0 +1,292 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0442:strategic-venue-partners:f4cd44da",
+  "taskIndex": 442,
+  "companyName": "Strategic Venue Partners",
+  "generatedAt": "2026-09-02T10:18:02.355Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0442-strategic-venue-partners/attempt-1/observed-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 442,
+    "taskId": "ledger:0442:strategic-venue-partners:f4cd44da",
+    "canonicalKey": "strategic-venue-partners|united-states",
+    "companyName": "Strategic Venue Partners",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 93,
+    "managers": [
+      "Tiger Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "093-tiger-infrastructure-partners:holding:002:strategic-venue-partners"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjo7i01avivhen4qx33ol"
+    ],
+    "seedKeys": [
+      "strategic venue partners|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.businesswire.com/news/home/20220301005336/en/",
+      "https://www.strategicvenue.com",
+      "https://www.tigerinfrastructure.com/portfolio/strategic-venue-partners"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_OWNER requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjo7i01avivhen4qx33ol",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "strategic-venue-partners|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjo7i01avivhen4qx33ol",
+    "name": "Strategic Venue Partners",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "In-building wireless infrastructure",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Strategic Venue Partners designs, finances, owns, and operates in-building wireless infrastructure for venues and property owners. Its customers are real estate owners, venues, wireless carriers, and enterprise users that need distributed antenna systems, Wi-Fi, fiber, and public-safety communications infrastructure without self-funding the installation. The operating model is asset-heavy and contract-based, with the company funding and owning systems under long-term venue agreements. Public materials describe the platform as established in 2018, while Tiger Infrastructure identifies 2019 as its initial Tiger Infrastructure Partners Fund II investment year. In December 2024, Brookfield Asset Management acquired a minority equity interest from existing investors as part of a recapitalization.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2018,
+    "headquarters": "United States (multi-state)",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpkasw02ajivhegp2lqj8g",
+        "managerName": "Tiger Infrastructure Partners",
+        "organizationName": "Tiger",
+        "fundName": "Tiger Infrastructure Partners Fund II",
+        "vehicleName": "Tiger Infrastructure Partners Fund II",
+        "stake": null,
+        "investmentYear": 2019,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmsgg05avivhe2z17xugo",
+        "date": "2018",
+        "event": "Strategic Venue Partners launched as a wireless infrastructure platform.",
+        "category": "FOUNDING",
+        "sortDate": "2018-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmsgt05awivhe9ffrxncw",
+        "date": "2019",
+        "event": "Tiger Infrastructure Partners Fund II made its initial investment in Strategic Venue Partners.",
+        "category": "FINANCING",
+        "sortDate": "2019-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmshc05axivhes4hq6di2",
+        "date": "Feb 2019",
+        "event": "Strategic Venue Partners announced the formation of a new holding company for its wireless infrastructure assets with equity backing from Tiger Infrastructure.",
+        "category": "OTHER",
+        "sortDate": "2019-02-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmshw05ayivhe9z9vx2oo",
+        "date": "Dec 2024",
+        "event": "Strategic Venue Partners announced financial transactions that included Tiger's minority investment from Brookfield.",
+        "category": "FINANCING",
+        "sortDate": "2024-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsy4m0ddbivheow37alo9",
+        "label": "Strategicvenue — Strategic Venue Partners",
+        "url": "https://www.strategicvenue.com/strategic-venue-partners-launches-innovative-wireless-infrastructure-firm/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Strategicvenue — Strategic Venue Partners",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpsy5n0dddivhe5269gr6t",
+        "label": "Investment date source — Tiger — Strategic Venue Partners",
+        "url": "https://www.tigerinfrastructure.com/portfolio/Strategic-Venue",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Tiger initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsy6u0ddfivhey1v01g6b",
+        "label": "PR Newswire — Strategic Venue Partners",
+        "url": "https://www.prnewswire.com/news-releases/strategic-venue-partners-announces-formation-of-new-holding-company-to-serve-as-platform-for-its-wireless-infrastructure-assets--appointment-of-darlene-braunschweig-as-senior-vice-president-of-business-development-300779389.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "PR Newswire operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsy9z0ddhivhedkt3htdn",
+        "label": "Strategicvenue — Strategic Venue Partners",
+        "url": "https://www.strategicvenue.com/strategic-venue-partners-announces-financial-transactions/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Strategicvenue — Strategic Venue Partners",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Strategic Venue Partners",
+    "investmentFirm": "Tiger",
+    "sector": "Digital",
+    "subsector": "In-building wireless infrastructure",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Tiger Infrastructure Partners Fund II",
+    "description": "Strategic Venue Partners designs, finances, owns, and operates in-building wireless infrastructure for venues and property owners. Its customers are real estate owners, venues, wireless carriers, and enterprise users that need distributed antenna systems, Wi-Fi, fiber, and public-safety communications infrastructure without self-funding the installation. The operating model is asset-heavy and contract-based, with the company funding and owning systems under long-term venue agreements. Public materials describe the platform as established in 2018, while Tiger Infrastructure identifies 2019 as its initial Tiger Infrastructure Partners Fund II investment year. In December 2024, Brookfield Asset Management acquired a minority equity interest from existing investors as part of a recapitalization.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2018,
+    "investmentYear": 2019,
+    "headquarters": "United States (multi-state)",
+    "milestones": [
+      {
+        "date": "2018",
+        "event": "Strategic Venue Partners launched as a wireless infrastructure platform.",
+        "category": "Founding"
+      },
+      {
+        "date": "2019",
+        "event": "Tiger Infrastructure Partners Fund II made its initial investment in Strategic Venue Partners.",
+        "category": "Financing"
+      },
+      {
+        "date": "Feb 2019",
+        "event": "Strategic Venue Partners announced the formation of a new holding company for its wireless infrastructure assets with equity backing from Tiger Infrastructure.",
+        "category": "Other"
+      },
+      {
+        "date": "Dec 2024",
+        "event": "Strategic Venue Partners announced financial transactions that included Tiger's minority investment from Brookfield.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Strategicvenue — Strategic Venue Partners",
+        "url": "https://www.strategicvenue.com/strategic-venue-partners-launches-innovative-wireless-infrastructure-firm/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Investment date source — Tiger — Strategic Venue Partners",
+        "url": "https://www.tigerinfrastructure.com/portfolio/Strategic-Venue",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "PR Newswire — Strategic Venue Partners",
+        "url": "https://www.prnewswire.com/news-releases/strategic-venue-partners-announces-formation-of-new-holding-company-to-serve-as-platform-for-its-wireless-infrastructure-assets--appointment-of-darlene-braunschweig-as-senior-vice-president-of-business-development-300779389.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Strategicvenue — Strategic Venue Partners",
+        "url": "https://www.strategicvenue.com/strategic-venue-partners-announces-financial-transactions/",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Tiger",
+        "ownershipVehicle": "Tiger Infrastructure Partners Fund II",
+        "investmentYear": 2019,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj3t300fkivhe80fgu879",
+        "fundName": "Tiger Infrastructure Partners Fund II",
+        "managerId": "cmrxpie6w003qivhezkd8ost3",
+        "updatedAt": "2026-07-23T16:09:58.791Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpie6w003qivhezkd8ost3",
+        "name": "Tiger Infrastructure Partners",
+        "updatedAt": "2026-07-23T16:09:25.592Z"
+      },
+      {
+        "id": "cmrxpifpw0047ivhexsim174k",
+        "name": "Brookfield Asset Management",
+        "updatedAt": "2026-07-23T16:09:27.572Z"
+      },
+      {
+        "id": "cmrxpigns004iivhep4tpvy3z",
+        "name": "Tiger",
+        "updatedAt": "2026-07-23T16:09:28.792Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0442:strategic-venue-partners:f4cd44da",
+    "taskIndex": 442,
+    "canonicalKey": "strategic-venue-partners|united-states",
+    "capturedAt": "2026-09-02T10:18:02.355Z",
+    "databaseRevision": "revision:efdddf020ebeb17b7f6464e3ab7a65a18bd5e8b7243f721e1ae3040789448d04",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "298648caf1fd9adc136eebb2fd5a8708626c7a41fa067732fb716a5ef5cc59de",
+    "productionSnapshotSha256": "974685152c902b90554ef776f1c07cbdfab8dc9fb9fbdbfb175421158248fbb7",
+    "targetCompanySnapshotSha256": "6381aaa7ab1a73756115a8db5d102791bf41b34c5c777ad34de314f04139583b",
+    "seedEntrySha256": "ead9c1bc089c96069835b98150ed100f8be40fcd3032c7399ed2d3877f3fbf82",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "6fa77cb101d899daccfb244bd0cab9b3ead0c60e23c6258f1ae8c8015bd74c83",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "7d9784838d0e4e817dfd147d361cbe5114a281d4f59783dc68a47c3d99a4de5d",
+      "organizationsSha256": "465a168c776310eeb77c82e67c528007177a02c3744c3d2b939629c3ad498c7e",
+      "citationsSha256": "a9e85196bc24451a871f36900fd66d8f3f98782c87483e7b0224cdef89394364",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "39140898f47aff36753d180e2bc88b5f2135d8c46a12ddaf2e326e710209d10a",
+    "stateSha256": "267d9c5b3d0f8b7b86d884390622dde30f4dba8de177f6edc221d5d2e52227d2",
+    "taskSnapshotSha256": "243337aae8814debf6a033804b7f1223c3d11e5d198cfa29dc88fef473c45c56"
+  },
+  "contextSha256": "7347de0415f41c98c1822b75d518a031e99fe7ee525cff29845e512476a8b1cd"
+}

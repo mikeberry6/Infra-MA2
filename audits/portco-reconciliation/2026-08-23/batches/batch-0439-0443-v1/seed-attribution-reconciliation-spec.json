@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_SEED_ATTRIBUTION_RECONCILIATION_SPEC",
+  "batchId": "batch-0439-0443-v1",
+  "batchSha256": "62e5d7b0ac53d1ff13625f75f0e5a4cb0dd02a59c29dcb081f0efa6a493239e8",
+  "reconciledAt": "2026-09-02T10:29:00.000Z",
+  "sourceManifestSha256": "bb78f25a5881259a61b521242a4b0fc19844f23cf6cb8cbe058c1b7c136e7e30",
+  "rationale": "Replace the five Tiger owner records with the exact approved current vehicles and stakes, add the disclosed Barings/Alaska Future Fund and Brookfield BISS co-owner records, and remove TPG because the approved Summit correction classifies TPG Rise Climate as out-of-scope climate private equity rather than a qualifying infrastructure owner. The reconciled manifest covers every active owner in the staged evaluated seed exactly once.",
+  "removeRecordIds": [
+    "OFA-8232FAE34790"
+  ],
+  "upsertRecords": [
+    {
+      "recordId": "OFA-66EA13E0CBDA",
+      "companyName": "Crosslake Fibre",
+      "country": "Canada / United States",
+      "investmentFirm": "Tiger",
+      "currentVehicleName": "Tiger Infrastructure Partners Fund II Crosslake AIV LP and Tiger Infrastructure Partners Fund II (Europe) Crosslake AIV LP via Connect Investments LP",
+      "investmentYear": 2017,
+      "stake": "Current percentage not publicly disclosed; Fund II AIVs held 93.26% indirectly as of August 10, 2018",
+      "targetLinkedFundName": "Tiger Infrastructure Partners Fund II",
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Tiger Infrastructure Partners Fund II",
+      "attributionConfidence": null,
+      "attributionRationale": "The FCC control grant identifies the two Fund II AIVs and their historical indirect interest, while Tiger and Crosslake continue to identify the investment as current.",
+      "evidenceUrls": [
+        "https://docs.fcc.gov/public/attachments/DA-18-1026A1_Rcd.pdf",
+        "https://www.tigerinfrastructure.com/documents/FG/tigerNew/news/584279_Crosslake_Press_Release_-_Final.pdf",
+        "https://www.tigerinfrastructure.com/portfolio/Crosslake"
+      ]
+    },
+    {
+      "recordId": "OFA-B20B1F698F47",
+      "companyName": "Danskammer Energy",
+      "country": "United States",
+      "investmentFirm": "Tiger",
+      "currentVehicleName": "Tiger Infrastructure Partners Fund II Danskammer AIV LP and affiliated Tiger vehicles",
+      "investmentYear": 2017,
+      "stake": "81.79% of HoldCo shares and voting control at the June 2026 bankruptcy filing; fund-level economics not publicly disclosed",
+      "targetLinkedFundName": "Tiger Infrastructure Partners Fund II",
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Tiger Infrastructure Partners Fund II",
+      "attributionConfidence": null,
+      "attributionRationale": "The regulatory acquisition record establishes the Fund II vehicle and the June 2026 bankruptcy schedules establish Tiger's current voting control and disclosed HoldCo share interest.",
+      "evidenceUrls": [
+        "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B1D627558-A086-49BB-AC2C-DC1F2B540C23%7D",
+        "https://document.epiq11.com/document/getdocumentbycode?docId=4600729&projectCode=DKK&source=DM",
+        "https://www.tigerinfrastructure.com/portfolio/Danskammer-Energy"
+      ]
+    },
+    {
+      "recordId": "OFA-C367B2E89F9D",
+      "companyName": "NorthLink Aviation",
+      "country": "United States",
+      "investmentFirm": "Tiger",
+      "currentVehicleName": "Tiger Infrastructure Partners Fund III; exact holding SPV not publicly disclosed",
+      "investmentYear": 2021,
+      "stake": "Controlling interest; exact percentage not publicly disclosed",
+      "targetLinkedFundName": "Tiger Infrastructure Partners Fund III",
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Tiger Infrastructure Partners Fund III",
+      "attributionConfidence": null,
+      "attributionRationale": "Tiger's portfolio materials and Fund III disclosure establish the current controlling Fund III investment; the exact holding SPV and percentage are not publicly disclosed.",
+      "evidenceUrls": [
+        "https://www.tigerinfrastructure.com/portfolio/NorthLink-Aviation",
+        "https://www.northlinkaviation.com/documents/FG/northlinkaviation/news/615095_Tiger_NorthLink_Press_Release_vFinal.pdf",
+        "https://www.prnewswire.com/news-releases/tiger-infrastructure-partners-fund-iii-closes-at-1-25-billion-hard-cap-reflecting-investor-demand-for-its-innovative-growth-capital-strategy-301531549.html"
+      ]
+    },
+    {
+      "recordId": "OFA-528614B82D78",
+      "companyName": "NorthLink Aviation",
+      "country": "United States",
+      "investmentFirm": "Barings",
+      "currentVehicleName": "Alaska Future Fund / Alaska Investment Program",
+      "investmentYear": 2021,
+      "stake": "Disclosed owner and co-investor; exact percentage not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "NorthLink's project presentation identifies Alaska Future Fund as an owner alongside Tiger. Public materials describe the investment program but do not identify a separately curated closed-end infrastructure fund or exact percentage.",
+      "evidenceUrls": [
+        "https://www.northlinkaviation.com/documents/FG/northlinkaviation/project/618552_NorthLink_NEPA_Open_House_Presentation_Final.pdf",
+        "https://www.northlinkaviation.com/documents/FG/northlinkaviation/news/615095_Tiger_NorthLink_Press_Release_vFinal.pdf"
+      ]
+    },
+    {
+      "recordId": "OFA-58A5B3CBDDD1",
+      "companyName": "Strategic Venue Partners",
+      "country": "United States",
+      "investmentFirm": "Tiger",
+      "currentVehicleName": "Tiger Infrastructure Partners Fund II; exact holding SPV not publicly disclosed",
+      "investmentYear": 2019,
+      "stake": "Controlling interest; exact percentage not publicly disclosed",
+      "targetLinkedFundName": "Tiger Infrastructure Partners Fund II",
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Tiger Infrastructure Partners Fund II",
+      "attributionConfidence": null,
+      "attributionRationale": "Tiger's Fund II operating-partner material and current company refinancing release establish the Fund II investment and Tiger's continuing controlling stake.",
+      "evidenceUrls": [
+        "https://www.tigerinfrastructure.com/documents/FG/tigerNew/news/624136_Tiger_Infrastructure_Operating_Partner_Roundtable_i3_April_2022.pdf",
+        "https://www.tigerinfrastructure.com/portfolio/Strategic-Venue",
+        "https://www.strategicvenue.com/strategic-venue-partners-announces-inaugural-issuance-of-investment-grade-notes-andrefinancing-of-revolving-credit-facility-to-support-further-growth/"
+      ]
+    },
+    {
+      "recordId": "OFA-CF689BD75F1B",
+      "companyName": "Strategic Venue Partners",
+      "country": "United States",
+      "investmentFirm": "Brookfield Asset Management",
+      "currentVehicleName": "Brookfield Infrastructure Structured Solutions Fund (BISS); exact holding SPV not publicly disclosed",
+      "investmentYear": 2024,
+      "stake": "Minority equity interest; exact percentage and security not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Brookfield Infrastructure Structured Solutions Fund",
+      "attributionConfidence": null,
+      "attributionRationale": "Brookfield identifies Strategic Venue Partners as a BISS investment, and the current company release identifies Brookfield as a minority equity investor. The exact holding SPV, percentage and security are not publicly disclosed.",
+      "evidenceUrls": [
+        "https://bam.brookfield.com/generation/pdf/document-file.pdf?path=%2Fpress-releases%2Fbrookfield-closes-infrastructure-structured-solutions-fund",
+        "https://www.strategicvenue.com/strategic-venue-partners-announces-financial-transactions/",
+        "https://www.strategicvenue.com/strategic-venue-partners-announces-inaugural-issuance-of-investment-grade-notes-andrefinancing-of-revolving-credit-facility-to-support-further-growth/"
+      ]
+    },
+    {
+      "recordId": "OFA-23B775B764B6",
+      "companyName": "Summit Carbon Solutions",
+      "country": "United States",
+      "investmentFirm": "Tiger",
+      "currentVehicleName": "Tiger Infrastructure Partners Fund III",
+      "investmentYear": 2021,
+      "stake": "$100 million investment commitment; current percentage not publicly disclosed",
+      "targetLinkedFundName": "Tiger Infrastructure Partners Fund III",
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Tiger Infrastructure Partners Fund III",
+      "attributionConfidence": null,
+      "attributionRationale": "Tiger's Fund III materials and current portfolio listing establish the continuing Fund III investment; public disclosure identifies a $100 million commitment but not a current ownership percentage.",
+      "evidenceUrls": [
+        "https://www.tigerinfrastructure.com/documents/FG/tigerNew/news/611388_SCS_Press_Release___Tiger___2021_04_20.pdf",
+        "https://www.tigerinfrastructure.com/portfolio/Summit-Carbon-Solutions",
+        "https://www.prnewswire.com/news-releases/tiger-infrastructure-partners-fund-iii-closes-at-1-25-billion-hard-cap-reflecting-investor-demand-for-its-innovative-growth-capital-strategy-301531549.html"
+      ]
+    }
+  ],
+  "specSha256": "cadf60f9f7748ddab95b679599456c0705a8d76c6998b79d3686de42fe8ad682"
+}

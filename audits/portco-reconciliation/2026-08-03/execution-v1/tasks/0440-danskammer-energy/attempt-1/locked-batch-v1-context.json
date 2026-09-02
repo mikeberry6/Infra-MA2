@@ -1,0 +1,240 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0440:danskammer-energy:5987da36",
+  "taskIndex": 440,
+  "companyName": "Danskammer Energy",
+  "generatedAt": "2026-09-02T10:00:07.992Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0440-danskammer-energy/attempt-1/locked-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 440,
+    "taskId": "ledger:0440:danskammer-energy:5987da36",
+    "canonicalKey": "danskammer-energy|united-states",
+    "companyName": "Danskammer Energy",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 93,
+    "managers": [
+      "Tiger Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "093-tiger-infrastructure-partners:holding:006:danskammer-energy"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjo1u01aoivhe85mr5shs"
+    ],
+    "seedKeys": [
+      "danskammer energy|United States"
+    ],
+    "evidenceUrls": [
+      "https://danskammerenergy.com",
+      "https://www.tigerinfrastructure.com/portfolio/danskammer"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_OWNER requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjo1u01aoivhe85mr5shs",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "danskammer-energy|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjo1u01aoivhe85mr5shs",
+    "name": "Danskammer Energy",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Gas-fired power generation",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Danskammer Energy owns the 500 MW gas-fired generating facility near Newburgh, New York. The plant serves wholesale power-market demand in New York and has also been advanced as the site for a repowering effort. Its operating model is asset-heavy and based on owned generation infrastructure. Tiger acquired the business through Fund II in 2017, and public portfolio materials continue to describe the company as part of the firm's active holdings. The asset remains one of Tiger's power investments in the northeastern United States.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "New York",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpkamv02acivhe1zl26vzb",
+        "managerName": "Tiger Infrastructure Partners",
+        "organizationName": "Tiger",
+        "fundName": "Tiger Infrastructure Partners Fund II",
+        "vehicleName": "Tiger Infrastructure Partners Fund II",
+        "stake": null,
+        "investmentYear": 2017,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpms1505adivhe2kmtzkhf",
+        "date": "Sep 2017",
+        "event": "Tiger announced an agreement to acquire Danskammer Energy.",
+        "category": "ACQUISITION",
+        "sortDate": "2017-09-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpms1s05aeivheonxbnbt4",
+        "date": "Dec 2017",
+        "event": "Tiger completed the acquisition of Danskammer Energy through Fund II.",
+        "category": "ACQUISITION",
+        "sortDate": "2017-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsx7n0dbwivhe9x3ncdkw",
+        "label": "Tigerinfrastructure — Danskammer Energy",
+        "url": "https://www.tigerinfrastructure.com/portfolio/Danskammer-Energy",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Tigerinfrastructure operations / asset details",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpsx8p0dbyivheon0ygeag",
+        "label": "Tigerinfrastructure — Danskammer Energy",
+        "url": "https://www.tigerinfrastructure.com/documents/FG/tigerNew/news/582611_Danskammer_Press_Release_-_2017_09_14.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Tigerinfrastructure — Danskammer Energy",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsx9t0dc0ivheil4m0h0c",
+        "label": "Close date source — Tiger — Danskammer Energy",
+        "url": "https://www.tigerinfrastructure.com/documents/FG/tigerNew/news/585120_153_-_Danskammer_Press_Release_at_Closing_12-27-17_Final.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Tiger closing confirmation",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Danskammer Energy",
+    "investmentFirm": "Tiger",
+    "sector": "Power & ET",
+    "subsector": "Gas-fired power generation",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Tiger Infrastructure Partners Fund II",
+    "description": "Danskammer Energy owns the 500 MW gas-fired generating facility near Newburgh, New York. The plant serves wholesale power-market demand in New York and has also been advanced as the site for a repowering effort. Its operating model is asset-heavy and based on owned generation infrastructure. Tiger acquired the business through Fund II in 2017, and public portfolio materials continue to describe the company as part of the firm's active holdings. The asset remains one of Tiger's power investments in the northeastern United States.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2017,
+    "headquarters": "New York",
+    "milestones": [
+      {
+        "date": "Sep 2017",
+        "event": "Tiger announced an agreement to acquire Danskammer Energy.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Dec 2017",
+        "event": "Tiger completed the acquisition of Danskammer Energy through Fund II.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Tigerinfrastructure — Danskammer Energy",
+        "url": "https://www.tigerinfrastructure.com/portfolio/Danskammer-Energy",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Tigerinfrastructure — Danskammer Energy",
+        "url": "https://www.tigerinfrastructure.com/documents/FG/tigerNew/news/582611_Danskammer_Press_Release_-_2017_09_14.pdf",
+        "type": "PRESENTATION"
+      },
+      {
+        "label": "Close date source — Tiger — Danskammer Energy",
+        "url": "https://www.tigerinfrastructure.com/documents/FG/tigerNew/news/585120_153_-_Danskammer_Press_Release_at_Closing_12-27-17_Final.pdf",
+        "type": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Tiger",
+        "ownershipVehicle": "Tiger Infrastructure Partners Fund II",
+        "investmentYear": 2017,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj3t300fkivhe80fgu879",
+        "fundName": "Tiger Infrastructure Partners Fund II",
+        "managerId": "cmrxpie6w003qivhezkd8ost3",
+        "updatedAt": "2026-07-23T16:09:58.791Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpigns004iivhep4tpvy3z",
+        "name": "Tiger",
+        "updatedAt": "2026-07-23T16:09:28.792Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0440:danskammer-energy:5987da36",
+    "taskIndex": 440,
+    "canonicalKey": "danskammer-energy|united-states",
+    "capturedAt": "2026-09-02T10:00:07.992Z",
+    "databaseRevision": "revision:456a3b120feb5981ffd0c9fae8a5314591901da3b0e8a0a0661bcf267d784fed",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "64e0e5a394a2fe8696f944f02b44eff724870c091169be381c50c79c60bb2ad2",
+    "productionSnapshotSha256": "f35195f130da5f390f4d8519b504a8da72737c743801e81c019a170befeabb0d",
+    "targetCompanySnapshotSha256": "b1fdc064a3b2f794d57d0a92e17b8ab05d7bb9440c75cd74419ebb61e6671804",
+    "seedEntrySha256": "c07dd0623a85966e32f6666cd19ecaceed36c434c64126c19e9186f8dcd64d41",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "3b05063179fe9aa35c62ab789bb0e937b57d6cfa3b4c3f1e17ea2b6889a637f2",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "7d9784838d0e4e817dfd147d361cbe5114a281d4f59783dc68a47c3d99a4de5d",
+      "organizationsSha256": "1aad91aa5ce30252a16ce4de3355d05d777f1fc4e40996a87b8c4d8f862cb533",
+      "citationsSha256": "3adcefd38b4038d38037de9266ebd22553fd6c760a07cf93e117fb189a4875b0",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "f4136ca3825068e5033169ae3e6d366c1981b8617746f6de0164852541b2ab38",
+    "stateSha256": "5996a8815126b07687f2d0f0362951aa0cf484132185048c02ecb6a4d75cc69c",
+    "taskSnapshotSha256": "6a6730081b4ee49b51171f735c038e468498566be4fe074bff701372642452de"
+  },
+  "contextSha256": "5cb9892665caacf98c68eec818c67efe399046861bd8e5487292ca4efefa234d"
+}

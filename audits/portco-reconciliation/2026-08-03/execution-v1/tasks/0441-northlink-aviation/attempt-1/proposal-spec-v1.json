@@ -1,0 +1,122 @@
+{
+  "generatedAt": "2026-09-02T10:02:00.000Z",
+  "actions": ["CORRECT_COMPANY", "ADD_OWNER"],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "reviewedSeedRetirementTaskIds": [],
+  "rationale": "Retain NorthLink Aviation as one development-stage airport-cargo infrastructure company, preserve Tiger Infrastructure Partners Fund III as controlling sponsor, and add the Barings-managed Alaska Future Fund co-investment disclosed in project materials. The airport remains the lessor rather than an equity owner, construction is phased and delayed, and no later sponsor transfer or signed exit was identified.",
+  "evidence": [
+    {
+      "url": "https://www.tigerinfrastructure.com/portfolio/NorthLink-Aviation",
+      "purpose": "Current Tiger portfolio status, 2021 entry and project boundary.",
+      "supports": ["Tiger remains the controlling infrastructure sponsor", "55-year lease and 120-acre campus"]
+    },
+    {
+      "url": "https://www.northlinkaviation.com/documents/FG/northlinkaviation/project/618552_NorthLink_NEPA_Open_House_Presentation_Final.pdf",
+      "purpose": "Project-company ownership and co-investor evidence.",
+      "supports": ["Tiger control", "Alaska Future Fund owner/co-investor"]
+    },
+    {
+      "url": "https://www.faa.gov/sites/faa.gov/files/ROD-FONSI-NorthLink-08-15-2023.pdf",
+      "purpose": "Federal evidence for the lease, predecessor identity and project design.",
+      "supports": ["IC Alaska Airport LLC predecessor", "Lease and development scope"]
+    },
+    {
+      "url": "https://dot.alaska.gov/aias/assets/2025-AIAS-Annual-Report.pdf",
+      "purpose": "Latest state-reported development status.",
+      "supports": ["Phased construction", "Six aircraft stands planned by 2027"]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "companyFieldUpdates": {
+    "aliases": ["NorthLink Aviation LLC", "IC Alaska Airport LLC"],
+    "description": "NorthLink Aviation LLC is developing a dedicated air-cargo campus on 120 acres at Ted Stevens Anchorage International Airport under a 55-year state lease. The planned infrastructure includes an approximately 90,000-square-foot warehouse and office complex, an 80-acre aircraft apron, hydrant fueling and ground-service facilities, with an ultimate design of 15 aircraft stands. Tiger Infrastructure Partners Fund III acquired control on November 3, 2021, and the Barings-managed Alaska Future Fund was subsequently disclosed as an owner and co-investor; neither investor's exact percentage is publicly disclosed. The airport is the lessor, not an equity owner. FAA approval and groundbreaking occurred in 2023, but construction remained phased and delayed, with six stands planned by 2027 and no evidence of terminal operations by August 19, 2026. No later financing-driven control transfer, sale or signed pending exit was identified.",
+    "website": "https://www.northlinkaviation.com/",
+    "headquarters": "Anchorage, Alaska",
+    "lastVerifiedAt": "2026-09-02T00:00:00.000Z"
+  },
+  "ownershipPeriodUpdates": [
+    {
+      "id": "cmrxpkapj02ahivhedpng0ebe",
+      "set": {
+        "vehicleName": "Tiger Infrastructure Partners Fund III; exact holding SPV not publicly disclosed",
+        "stake": "Controlling interest; exact percentage not publicly disclosed"
+      }
+    }
+  ],
+  "ownershipPeriodRemovals": [],
+  "ownershipPeriodAdditions": [
+    {
+      "id": null,
+      "managerName": "Barings",
+      "organizationName": "Barings",
+      "fundName": null,
+      "vehicleName": "Alaska Future Fund / Alaska Investment Program",
+      "stake": "Disclosed owner and co-investor; exact percentage not publicly disclosed",
+      "investmentYear": 2021,
+      "exitYear": null,
+      "isActive": true,
+      "transactionState": "CLOSED_ACTIVE"
+    }
+  ],
+  "ownershipPeriodTransfers": [],
+  "pendingOwnershipTransactionUpdates": [],
+  "pendingOwnershipTransactionAdditions": [],
+  "milestoneUpdates": [
+    {
+      "id": "cmrxpmscx05aqivhej5r6lwnc",
+      "set": {
+        "date": "Nov 3, 2021",
+        "event": "NorthLink executed its 55-year airport lease as Tiger acquired control of the project company.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-11-03T04:00:00.000Z",
+        "evidenceUrls": ["https://www.northlinkaviation.com/documents/FG/northlinkaviation/news/615095_Tiger_NorthLink_Press_Release_vFinal.pdf"]
+      }
+    },
+    {
+      "id": "cmrxpmsdc05arivheror32i70",
+      "set": {
+        "date": "Nov 30, 2021",
+        "event": "The Alaska Future Fund investment was announced and later identified in project materials as an owner and co-investor.",
+        "sortDate": "2021-11-30T05:00:00.000Z",
+        "evidenceUrls": ["https://www.northlinkaviation.com/documents/FG/northlinkaviation/project/618552_NorthLink_NEPA_Open_House_Presentation_Final.pdf"]
+      }
+    }
+  ],
+  "milestoneTransfers": [],
+  "citationUpdates": [
+    {
+      "id": "cmrxpsxxd0dcyivhe28giw7m7",
+      "set": {"purpose": "OWNERSHIP_INVESTMENT", "evidenceLabel": "Current Tiger portfolio status, controlling investment and project scope"}
+    }
+  ],
+  "citationAdditions": [
+    {
+      "id": null,
+      "label": "NorthLink Aviation — NEPA open-house presentation",
+      "url": "https://www.northlinkaviation.com/documents/FG/northlinkaviation/project/618552_NorthLink_NEPA_Open_House_Presentation_Final.pdf",
+      "sourceType": "PRESENTATION",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Tiger control and Alaska Future Fund owner/co-investor disclosure",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "FAA — NorthLink Aviation decision",
+      "url": "https://www.faa.gov/sites/faa.gov/files/ROD-FONSI-NorthLink-08-15-2023.pdf",
+      "sourceType": "OTHER",
+      "purpose": "OPERATIONS_ASSETS",
+      "evidenceLabel": "Lease, predecessor identity, federal approval and project design",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "Alaska International Airport System — 2025 annual report",
+      "url": "https://dot.alaska.gov/aias/assets/2025-AIAS-Annual-Report.pdf",
+      "sourceType": "OTHER",
+      "purpose": "OPERATIONS_ASSETS",
+      "evidenceLabel": "Phased-construction status and six-stand 2027 plan",
+      "isPrimary": false
+    }
+  ]
+}
