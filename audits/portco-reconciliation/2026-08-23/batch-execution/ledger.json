@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-02T03:35:49.000Z",
-  "activeBatchId": "batch-0419-0423-v4",
+  "updatedAt": "2026-09-02T03:48:36.000Z",
+  "activeBatchId": null,
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -7549,7 +7549,7 @@
     },
     {
       "batchId": "batch-0419-0423-v4",
-      "state": "VERIFYING_FAILED",
+      "state": "COMPLETED",
       "taskIds": [
         "ledger:0419:pinnacle-gas-services-llc:94e9c671",
         "ledger:0420:akumin:becd83c7",
@@ -7565,8 +7565,8 @@
         423
       ],
       "createdAt": "2026-09-02T03:23:01.000Z",
-      "updatedAt": "2026-09-02T03:35:49.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-09-02T03:48:36.000Z",
+      "completedAt": "2026-09-02T03:48:36.000Z",
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0419-0423-v4/batch-manifest.json",
         "sha256": "377b47a4de15c3e6a4d36e11a1b97da6df27144d3eff6d9261adae0d4de51bd5"
@@ -7576,7 +7576,7 @@
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0419-0423-v4/production-apply/batch-apply-receipt.json",
         "sha256": "39ef997b3b8a54953d7beb9b026bc43f668c015a75075a69d135266a897df273"
       },
-      "reason": "Rendered production verification found stale carried-forward fund attribution metadata on CoreSite and Evolve. Company, ownership, stake, seed, API identity, and atomic receipt checks passed; the bundle is frozen pending a scoped ownership-attribution correction.",
+      "reason": "Atomic PortCo receipt, scoped attribution repair, detail APIs, seed parity, and rendered production cards verified.",
       "history": [
         {
           "sequence": 1,
@@ -7626,9 +7626,31 @@
             "39ef997b3b8a54953d7beb9b026bc43f668c015a75075a69d135266a897df273"
           ],
           "reason": "Rendered production verification found stale carried-forward fund attribution metadata on CoreSite and Evolve. Company, ownership, stake, seed, API identity, and atomic receipt checks passed; the bundle is frozen pending a scoped ownership-attribution correction."
+        },
+        {
+          "sequence": 6,
+          "from": "VERIFYING_FAILED",
+          "to": "VERIFYING",
+          "at": "2026-09-02T03:48:34.000Z",
+          "evidenceSha256": [
+            "377b47a4de15c3e6a4d36e11a1b97da6df27144d3eff6d9261adae0d4de51bd5",
+            "39ef997b3b8a54953d7beb9b026bc43f668c015a75075a69d135266a897df273"
+          ],
+          "reason": "Recovered through scoped attribution receipt 950e8a61a2a3c93342a6f4f3e5678aabceb8128e498e7b94ba488e0a619c6c91; production API and rendered ownership attribution labels now match the approved seed manifest."
+        },
+        {
+          "sequence": 7,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-09-02T03:48:36.000Z",
+          "evidenceSha256": [
+            "377b47a4de15c3e6a4d36e11a1b97da6df27144d3eff6d9261adae0d4de51bd5",
+            "39ef997b3b8a54953d7beb9b026bc43f668c015a75075a69d135266a897df273"
+          ],
+          "reason": "Atomic PortCo receipt, scoped attribution repair, detail APIs, seed parity, and rendered production cards verified."
         }
       ]
     }
   ],
-  "ledgerSha256": "75f4b8b2377f504e42c480f8a9ed70bb7619e5362da110817bf16d6da9f054f6"
+  "ledgerSha256": "1c301c14b268e19ca34a3133db449c42d44050a926d24fd05549bc6f9fee481f"
 }

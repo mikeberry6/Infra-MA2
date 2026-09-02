@@ -1,0 +1,123 @@
+
+> infra-tracker@1.0.0 portfolio:fund-attribution:apply
+> npx tsx scripts/apply-portfolio-fund-attribution.ts --manifest=audits/portfolio-fund-attribution/2026-09-01/scoped/portco-batch-0419-0423-attribution-repair/apply-manifest.json --manifest-sha256=d5be13d2439deed41bdde731ad66e34c04d1ef4e1476737236b0b9659995cbfd --production-snapshot=audits/portfolio-fund-attribution/2026-09-01/scoped/portco-batch-0419-0423-attribution-repair/production-snapshot.json --approval=audits/portfolio-fund-attribution/2026-09-01/scoped/portco-batch-0419-0423-attribution-repair/approval.json --approval-sha256=1e140f225bf690ef66f005287a47e389b9887e8ee6a71aa3f153a16a2d84d195 --apply=true --write-token=APPLY_REVIEWED_PORTFOLIO_FUND_ATTRIBUTION --receipt=tmp/portfolio-fund-attribution/production/apply-receipt.json
+
+(node:3400) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_RECEIPT",
+  "manifestSha256": "d5be13d2439deed41bdde731ad66e34c04d1ef4e1476737236b0b9659995cbfd",
+  "approvalSha256": "1e140f225bf690ef66f005287a47e389b9887e8ee6a71aa3f153a16a2d84d195",
+  "environment": "production",
+  "pipelineRunId": "cmtjk1fto0000mg2bq0wkseyh",
+  "mutationCount": 5,
+  "changed": 5,
+  "idempotent": false,
+  "beforeFingerprint": "28f19ab754d985e3a25cc7343e093c4c24fb141250b2494b60d0efd18bb0e467",
+  "afterFingerprint": "8f47a5c8136da811d5548c7b24d516943acc679dc006ceb135ed3cf55ccf1315",
+  "rows": [
+    {
+      "recordId": "OFA-142E1EFFA343",
+      "ownershipPeriodId": "cmrxpka25029civhe0m654niq",
+      "companyId": "cmrxpjnhi019pivhepj62e5aa",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "Stonepeak Infrastructure Fund IV",
+        "attributionConfidence": "MEDIUM",
+        "attributionRationale": "Estimated from manager match 1.00, vintage 2020 is 2 years before investment, North America-relevant mandate; next candidate trails by 15.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Stonepeak's platform interests are directly disclosed, but the exact investment fund and legal investment entities are not publicly identified."
+      }
+    },
+    {
+      "recordId": "OFA-9A7D33BB2CEA",
+      "ownershipPeriodId": "cmtjjgkiu000t0z2b5y0tadcd",
+      "companyId": "cmrxpjnhi019pivhepj62e5aa",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "American Tower's controlling interest is direct corporate ownership rather than a managed infrastructure fund."
+      }
+    },
+    {
+      "recordId": "OFA-5FB889563ACB",
+      "ownershipPeriodId": "cmrxpka38029eivhemu75quzd",
+      "companyId": "cmrxpjnio019rivhexvojn1z4",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "Stonepeak Core Fund",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, evergreen/permanent-capital vehicle, North America-relevant mandate; next candidate trails by 45.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Stonepeak Infrastructure Fund (Orion AIV) LP",
+        "attributionConfidence": null,
+        "attributionRationale": "The 2015 Schedule 13D directly identifies Stonepeak Infrastructure Fund (Orion AIV) LP and Stonepeak Catarina Holdings as the investment chain."
+      }
+    },
+    {
+      "recordId": "OFA-32BEA59CC899",
+      "ownershipPeriodId": "cmtjjgava00090z2ba7n1fk3h",
+      "companyId": "cmtjjg9fb00000z2bv8ic32mm",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Comstock's 73% controlling interest is direct corporate ownership rather than a managed infrastructure fund."
+      }
+    },
+    {
+      "recordId": "OFA-E987C839A26D",
+      "ownershipPeriodId": "cmtjjgazd000a0z2bljbfefei",
+      "companyId": "cmtjjg9fb00000z2bv8ic32mm",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Starville and Sixth Street's 27% common interest are directly evidenced, but the exact Sixth Street-managed fund above Starville is not publicly disclosed."
+      }
+    }
+  ],
+  "appliedAt": "2026-09-02T03:46:55.103Z",
+  "receiptSha256": "950e8a61a2a3c93342a6f4f3e5678aabceb8128e498e7b94ba488e0a619c6c91"
+}
