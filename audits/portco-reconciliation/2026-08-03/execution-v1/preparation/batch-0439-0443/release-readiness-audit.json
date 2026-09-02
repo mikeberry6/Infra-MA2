@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RELEASE_BUNDLE_READINESS_AUDIT",
+  "authoritative": false,
+  "auditedAt": "2026-09-02T07:58:00.000Z",
+  "plannedTaskRange": [439, 443],
+  "preparationSummaryByteSha256": "70f90db8194f793b1fc89542513cd88e17ff23fda6e6316c7fad1895988261b3",
+  "result": "PREPARED_RESEARCH_INTACT_FRESH_CONTEXT_REQUIRED",
+  "predecessorGate": {
+    "requiredTaskRange": [434, 438],
+    "satisfied": false,
+    "reason": "The predecessor bundle must be production-verified and source-finalized before this bundle can activate."
+  },
+  "checks": {
+    "deterministicTaskOrder": true,
+    "applicationDecisionByteHashesMatchPreparation": true,
+    "researchLineageByteHashesMatch": true,
+    "exactlyOneRecommendedPrimaryCitationPerTask": true,
+    "primarySourcesWorkingOrBrowserVerified": true,
+    "freshDependencySnapshotsCaptured": false,
+    "authoritativeCollisionAnalysisComplete": false
+  },
+  "tasks": [
+    {
+      "taskIndex": 439,
+      "taskId": "ledger:0439:crosslake-fibre:cb475638",
+      "plannedOutcome": "CORRECT_COMPANY",
+      "applicationDecisionByteSha256": "79a4af3b218d1db4a916256eca3ebc32cf826d861d0eb74aad1ea4fdf542f8b7",
+      "primaryUrl": "https://docs.fcc.gov/public/attachments/DA-18-1026A1_Rcd.pdf",
+      "primaryUrlHttpStatus": 200,
+      "primaryUrlHealth": "WORKING"
+    },
+    {
+      "taskIndex": 440,
+      "taskId": "ledger:0440:danskammer-energy:5987da36",
+      "plannedOutcome": "CORRECT_COMPANY",
+      "applicationDecisionByteSha256": "c2329c004077b9bcb33147114692a34c194b121283991980fc16e514d50d3e71",
+      "primaryUrl": "https://document.epiq11.com/document/getdocumentsbydocket/?docketId=1230403&docketNumber=12&projectCode=DKK&source=DM",
+      "primaryUrlHttpStatus": 200,
+      "primaryUrlHealth": "WORKING"
+    },
+    {
+      "taskIndex": 441,
+      "taskId": "ledger:0441:northlink-aviation:bbe08376",
+      "plannedOutcome": "CORRECT_COMPANY",
+      "applicationDecisionByteSha256": "dc0567c14a43396fb8d424ef51602df4997955c5eece1f70df251344656f9bb0",
+      "primaryUrl": "https://www.tigerinfrastructure.com/portfolio/NorthLink-Aviation",
+      "primaryUrlHttpStatus": 200,
+      "primaryUrlHealth": "WORKING"
+    },
+    {
+      "taskIndex": 442,
+      "taskId": "ledger:0442:strategic-venue-partners:f4cd44da",
+      "plannedOutcome": "CORRECT_COMPANY",
+      "applicationDecisionByteSha256": "39946b24ada63edf1f3fb25a6ec5fb27b6f929667b4fa41082218b2c10cefe0e",
+      "primaryUrl": "https://www.strategicvenue.com/strategic-venue-partners-announces-inaugural-issuance-of-investment-grade-notes-andrefinancing-of-revolving-credit-facility-to-support-further-growth/",
+      "primaryUrlHttpStatus": 200,
+      "primaryUrlHealth": "WORKING"
+    },
+    {
+      "taskIndex": 443,
+      "taskId": "ledger:0443:summit-carbon-solutions:6d14c660",
+      "plannedOutcome": "CORRECT_COMPANY",
+      "applicationDecisionByteSha256": "023bc39b22f72508ffd1e4a53c3c3f74db92ac0ea9743b92cdc78a4f99a77ae2",
+      "primaryUrl": "https://www.sec.gov/Archives/edgar/data/1869302/000186930222000002/xslFormDX01/primary_doc.xml",
+      "primaryUrlHttpStatus": 403,
+      "primaryUrlHealth": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "sourceVerificationSha256": "f57105238e204b86f76b684dc304578104dee73d0d8609ed08940950e4037602"
+    }
+  ],
+  "requiredAtActivation": [
+    "Wait for tasks 434 through 438 to be production-verified and source-finalized.",
+    "Capture one fresh production snapshot and all five task, seed and dependency snapshots.",
+    "Generate exact proposals and choose one primary citation per company from the locked context.",
+    "Regenerate one-to-one active-owner seed attribution records.",
+    "Complete authoritative target, source, dependency, shared-metadata, collision, stale-hash and atomicity checks before automatic authorization."
+  ]
+}

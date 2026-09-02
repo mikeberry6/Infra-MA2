@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_PENDING_BUNDLE_PREPARATION_COVERAGE_AUDIT",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "auditedAt": "2026-09-02T07:54:00.000Z",
+  "authoritative": false,
+  "sourceManifestSha256": "f31de2e9ea534931b27900f0de719f11eb0764bba9c17a08157168b000ad0027",
+  "sourcePendingTaskCount": 44,
+  "orderedPendingTaskIdsSha256": "8f134e8c7c4d4ad9c3288824e852783c88061a627d892a37eea724bb602e4c9c",
+  "taskOrderHashEncoding": "UTF-8 task IDs joined with LF characters, with no trailing LF.",
+  "preparedBundleCount": 9,
+  "preparedTaskCount": 44,
+  "exactOnceCoverage": true,
+  "deterministicOrderMatch": true,
+  "firstPreparedTask": {
+    "taskIndex": 434,
+    "taskId": "ledger:0434:atlantica-sustainable-infrastructure-plc:4a99610b"
+  },
+  "lastPreparedTask": {
+    "taskIndex": 496,
+    "taskId": "ledger:0496:u-s-medical-outpatient-facilities-portfolio-montecito-jv:be578f31"
+  },
+  "bundlePreparationDirectories": [
+    "batch-0434-0438",
+    "batch-0439-0443",
+    "batch-0444-0448",
+    "batch-0449-0453",
+    "batch-0454-0458",
+    "batch-0459-0463",
+    "batch-0464-0471",
+    "batch-0472-0491",
+    "batch-0492-0496"
+  ],
+  "plannedOutcomeCounts": {
+    "EXCLUDED": 9,
+    "CORRECT_COMPANY": 9,
+    "DEFERRED": 5,
+    "MERGE_AND_SUPERSEDE": 1,
+    "CREATE_COMPANY": 3,
+    "SUPERSEDED": 9,
+    "VERIFIED_NO_CHANGE": 1,
+    "MERGE_AND_CORRECT": 3,
+    "MERGE_AND_REDIRECT": 2,
+    "SUPERSEDED_INTO_DEFERRED_ADJUDICATION": 2
+  },
+  "guardrails": [
+    "These summaries are non-authoritative preparation and do not change the source manifest or batch ledger.",
+    "Every bundle must be regenerated from fresh production, seed, task and dependency snapshots when it becomes eligible.",
+    "The exact active bundle may contain up to five next-PENDING tasks; already-terminal source indices are never reopened merely to make numeric ranges contiguous.",
+    "No prepared outcome is authorized until current evidence, citations, target identities, hashes and collision checks pass.",
+    "A later reciprocal task may be superseded only after its canonical target reaches the required verified terminal status."
+  ]
+}

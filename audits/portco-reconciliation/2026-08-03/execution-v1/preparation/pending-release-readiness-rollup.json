@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_PENDING_RELEASE_READINESS_ROLLUP",
+  "authoritative": false,
+  "auditedAt": "2026-09-02T09:17:00.000Z",
+  "sourceManifestSha256": "f31de2e9ea534931b27900f0de719f11eb0764bba9c17a08157168b000ad0027",
+  "requiredCanonicalDeploymentSha": "a6fa4d2d5927cc11a7903d0e309f62a3f7a2b677",
+  "deploymentGateSatisfied": true,
+  "pendingTaskCount": 44,
+  "preparedBundleCount": 9,
+  "readinessAuditCount": 9,
+  "researchBackedTaskCount": 33,
+  "reciprocalOrTargetBoundTaskCount": 11,
+  "knownSourceRebindingTaskIndices": [450, 452, 454, 461, 462],
+  "result": "ACTIVE_BUNDLE_READY_FOR_PROTECTED_RELEASE_REMAINDER_PREPARED",
+  "bundles": [
+    {
+      "directory": "batch-0434-0438",
+      "taskIndices": [434, 435, 436, 437, 438],
+      "preparationSummaryByteSha256": "eb3d32483445eebdf090f8c338da003bb528d661f78d6add2644f4e956473f52",
+      "readinessAuditByteSha256": "39ca95408a6bb02dbeeeed8ca659a55f252a4e2d49f01d57ea9fb5a018ae36b9",
+      "readinessResult": "READY_FOR_PROTECTED_RELEASE"
+    },
+    {
+      "directory": "batch-0439-0443",
+      "taskIndices": [439, 440, 441, 442, 443],
+      "preparationSummaryByteSha256": "70f90db8194f793b1fc89542513cd88e17ff23fda6e6316c7fad1895988261b3",
+      "readinessAuditByteSha256": "abda987c89bade45d12e4168e44414ffe8656b1aa7e60a61ca87b6d40a8ad725",
+      "readinessResult": "PREPARED_RESEARCH_INTACT_FRESH_CONTEXT_REQUIRED"
+    },
+    {
+      "directory": "batch-0444-0448",
+      "taskIndices": [444, 445, 446, 447, 448],
+      "preparationSummaryByteSha256": "9ce33ca5b1d223ed2c5c032a5521e92480acce8ba3e975e9231e2e22633a8d7b",
+      "readinessAuditByteSha256": "8f64fbe3b596b61534bdcf1b86d708067a0c81810d01dc9731ebe3bd2993a379",
+      "readinessResult": "PREPARED_RESEARCH_INTACT_FRESH_CONTEXT_REQUIRED"
+    },
+    {
+      "directory": "batch-0449-0453",
+      "taskIndices": [449, 450, 451, 452, 453],
+      "preparationSummaryByteSha256": "7a4a32ecaf47907efd8d0887bbabef2bd36d93628168f879973386568cd725b5",
+      "readinessAuditByteSha256": "1e34cb7fe803c10d135a2186d86ed0d31dd915355b234854e30a57350b38cc31",
+      "readinessResult": "PREPARED_RESEARCH_INTACT_SOURCE_REBIND_REQUIRED"
+    },
+    {
+      "directory": "batch-0454-0458",
+      "taskIndices": [454, 455, 456, 457, 458],
+      "preparationSummaryByteSha256": "11207e86c415446fefa6369e9e9d20b6ac03df046ea48e0110c007d396bccf16",
+      "readinessAuditByteSha256": "8bb3184ac68a10a039b5597dac73901f6645464746247db5004715e76fe0e8fe",
+      "readinessResult": "PREPARED_RESEARCH_INTACT_SOURCE_REBIND_REQUIRED"
+    },
+    {
+      "directory": "batch-0459-0463",
+      "taskIndices": [459, 460, 461, 462, 463],
+      "preparationSummaryByteSha256": "6070db6bca7abe3168fbbaf011f1a0fa6d300aa56302412a1a4f25b866166fb9",
+      "readinessAuditByteSha256": "d2de76135661c709ec8c622d3be69c1a34b9f457d71f2a25192613b863ca194f",
+      "readinessResult": "PREPARED_RESEARCH_INTACT_SOURCE_REBIND_REQUIRED"
+    },
+    {
+      "directory": "batch-0464-0471",
+      "taskIndices": [464, 465, 466, 470, 471],
+      "preparationSummaryByteSha256": "c8e7ea63495a1582ca32d049b50be7f86231e622fca8199662c9514062ca2c35",
+      "readinessAuditByteSha256": "ce0eb8cfa5968f3348d85570ae7758cb8d570966a2a0e53240e7377d8e57fe59",
+      "readinessResult": "PREPARED_RESEARCH_INTACT_FRESH_CONTEXT_REQUIRED"
+    },
+    {
+      "directory": "batch-0472-0491",
+      "taskIndices": [472, 475, 476, 490, 491],
+      "preparationSummaryByteSha256": "3c367dd97679f15ee51766f6b2b29ad696fdbce2df6ab6b763f8ef61c8fde9fc",
+      "readinessAuditByteSha256": "4dbf2476de0875a44c7a4306484a30aef25aec72670e094cf0c92c58fc7ac0ce",
+      "readinessResult": "TARGETS_INTACT_QSP_PREDECESSOR_REQUIRED"
+    },
+    {
+      "directory": "batch-0492-0496",
+      "taskIndices": [492, 493, 495, 496],
+      "preparationSummaryByteSha256": "95a6e074518eb5c7565c14c43ad60b36e5cb6362c7ef0d9ae04937b5c5534e43",
+      "readinessAuditByteSha256": "5a2436cd0af87e5ee149b3a55d890e49bd1a8ff06dca06a6859573e7e7b1ee1f",
+      "readinessResult": "PREPARED_RESEARCH_INTACT_FRESH_CONTEXT_REQUIRED"
+    }
+  ],
+  "activationRules": [
+    "Never activate a bundle until the preceding bundle is fully verified and source-finalized.",
+    "Regenerate every proposal and terminal decision from fresh production, seed, task and dependency snapshots.",
+    "Apply every recorded source rebind before proposal authorization and reopen each direct source.",
+    "Never finalize a reciprocal supersession until its canonical target has reached the required verified terminal status.",
+    "Only one release bundle may be active, forming, releasing, applying, verifying or recovering at a time."
+  ]
+}

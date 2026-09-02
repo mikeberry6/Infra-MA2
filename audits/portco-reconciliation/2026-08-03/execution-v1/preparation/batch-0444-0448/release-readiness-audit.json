@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RELEASE_BUNDLE_READINESS_AUDIT",
+  "authoritative": false,
+  "auditedAt": "2026-09-02T08:01:00.000Z",
+  "plannedTaskRange": [444, 448],
+  "preparationSummaryByteSha256": "9ce33ca5b1d223ed2c5c032a5521e92480acce8ba3e975e9231e2e22633a8d7b",
+  "result": "PREPARED_RESEARCH_INTACT_FRESH_CONTEXT_REQUIRED",
+  "predecessorGate": {
+    "requiredTaskRange": [439, 443],
+    "satisfied": false,
+    "reason": "The predecessor bundle must be production-verified and source-finalized before this bundle can activate."
+  },
+  "checks": {
+    "deterministicTaskOrder": true,
+    "applicationDecisionByteHashesMatchPreparation": true,
+    "researchLineageByteHashesMatch": true,
+    "exactlyOneRecommendedPrimaryCitationPerTask": true,
+    "primarySourcesWorkingOrBrowserVerified": true,
+    "preparationCollisionAnalysisPasses": true,
+    "freshDependencySnapshotsCaptured": false,
+    "authoritativeCollisionAnalysisComplete": false
+  },
+  "tasks": [
+    {
+      "taskIndex": 444,
+      "taskId": "ledger:0444:unison-energy:423efadc",
+      "plannedOutcome": "CORRECT_COMPANY",
+      "applicationDecisionByteSha256": "905bbe8cfce694e11afd435c8c81d076effa22c61f2fca30d46392ed4e2a8ac7",
+      "primaryUrl": "https://www.tigerinfrastructure.com/portfolio/Unison-Energy",
+      "primaryUrlHttpStatus": 200,
+      "primaryUrlHealth": "WORKING"
+    },
+    {
+      "taskIndex": 445,
+      "taskId": "ledger:0445:digital-realty-northern-virginia-hyperscale-data-center-jv:1419ed2f",
+      "plannedOutcome": "EXCLUDED",
+      "applicationDecisionByteSha256": "82c148f833dabf2b8b1d15366627a1841b0019c111f291d1911cf6507c8a6ae2",
+      "primaryUrl": "https://www.tpg.com/news-and-insights/digital-realty-and-tpg-announce-joint-venture-hyperscale-data",
+      "primaryUrlHttpStatus": 200,
+      "primaryUrlHealth": "WORKING"
+    },
+    {
+      "taskIndex": 446,
+      "taskId": "ledger:0446:ipx-power:dd940951",
+      "plannedOutcome": "CORRECT_COMPANY",
+      "applicationDecisionByteSha256": "1cca3dbae1166465c29a7e0e4c210f8386b4c3c80e1cdc3fadbbe71c9bfe644e",
+      "primaryUrl": "https://www.tpg.com/news-and-insights/tpg-announces-completion-of-4-75-billion-sale-of-intersect-to-google-launches-ipx-power-as-independent-power-producer",
+      "primaryUrlHttpStatus": 200,
+      "primaryUrlHealth": "WORKING"
+    },
+    {
+      "taskIndex": 447,
+      "taskId": "ledger:0447:monarch-bioenergy:92b9cb49",
+      "plannedOutcome": "EXCLUDED",
+      "applicationDecisionByteSha256": "e49dd909062391ca0b337f8cdaf4d375bc813613e67beafcbd5d37ac080cf3ec",
+      "primaryUrl": "https://www.sec.gov/Archives/edgar/data/91388/000009138826000014/smf-20251228.htm",
+      "primaryUrlHttpStatus": 403,
+      "primaryUrlHealth": "COMMAND_LINE_BLOCKED_BROWSER_VERIFIED",
+      "sourceVerificationSha256": "3aa86fcbf0e3043b9af6bfa2b84fe797d039f98d39c69846ddcbb38491b62d38"
+    },
+    {
+      "taskIndex": 448,
+      "taskId": "ledger:0448:olympus-terminals:280295ff",
+      "plannedOutcome": "EXCLUDED",
+      "applicationDecisionByteSha256": "302d08b4c0de4e88d64ca76a719b4360ffe525b3c5ea423e68a3aada1002d871",
+      "primaryUrl": "https://shareholders.tpg.com/static-files/8ab43bae-d54c-4ca4-8cbb-7f1b7a898765",
+      "primaryUrlHttpStatus": 403,
+      "primaryUrlHealth": "WEB_INDEXED_AND_VERIFIED",
+      "sourceVerificationSha256": "fe3b0b996421e01be687abf31d70eddf6c757c37b2723d5ba67b6a04f6149de5"
+    }
+  ],
+  "requiredAtActivation": [
+    "Wait for tasks 439 through 443 to be production-verified and source-finalized.",
+    "Capture one fresh production snapshot and all five task, seed and dependency snapshots.",
+    "Generate two exact mutation proposals and three terminal exclusion decisions.",
+    "Regenerate one-to-one active-owner seed attribution records for every changed owner.",
+    "Complete authoritative target, primary-citation, dependency, collision, stale-hash and atomicity checks before automatic authorization."
+  ]
+}

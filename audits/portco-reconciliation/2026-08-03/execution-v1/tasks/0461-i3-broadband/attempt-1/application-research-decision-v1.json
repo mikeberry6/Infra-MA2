@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0461:i3-broadband:2d53909b",
+  "taskIndex": 461,
+  "companyName": "i3 Broadband",
+  "asOfDate": "2026-08-19",
+  "decision": "VERIFIED_NO_CHANGE",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-02T07:18:00.000Z",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "i3 Broadband",
+    "requestedManagers": [
+      "Wren House Infrastructure",
+      "T-Mobile"
+    ],
+    "decision": "VERIFIED_NO_CHANGE",
+    "confidence": "high",
+    "rationale": "Primary sources support Wren House remaining the current legal owner through the review date. T-Mobile announced a 50/50 joint venture transaction for i3 Broadband, but the available research through 2026-08-19 did not establish legal closing; therefore T-Mobile is recorded only as a pending incoming owner and the operating platform remains unchanged.",
+    "identityResolution": {
+      "canonicalName": "i3 Broadband",
+      "canonicalKey": "i3-broadband|united-states",
+      "summary": "i3 Broadband is the operating fiber platform. Acquired businesses, networks and regulated subsidiaries (including Big River operations) remain beneath the platform rather than being listed separately."
+    },
+    "ownershipResolution": {
+      "currentOwners": [
+        {
+          "manager": "Wren House Infrastructure",
+          "organization": "i3 Broadband",
+          "fund": "NOT_PUBLICLY_DISCLOSED",
+          "vehicle": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "NOT_PUBLICLY_DISCLOSED",
+          "entryDate": "NOT_PUBLICLY_DISCLOSED",
+          "entryYear": "2020",
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "ACTIVE"
+        }
+      ],
+      "pendingTransactions": [
+        {
+          "direction": "INCOMING",
+          "buyer": "T-Mobile (50% joint venture interest)",
+          "seller": "Wren House Infrastructure",
+          "stake": "50% JV interest",
+          "announcementDate": "2026-04",
+          "closingDate": "NOT_PUBLICLY_DISCLOSED",
+          "state": "SIGNED_PENDING_INCOMING",
+          "evidenceUrls": [
+            "https://www.t-mobile.com/news/network/t-mobile-fiber-i3-broadband"
+          ]
+        }
+      ]
+    },
+    "operatingResolution": {
+      "summary": "Keep all owned fiber networks, markets, regulated operating companies and acquired broadband assets beneath the i3 Broadband platform; do not elevate networks or subsidiaries into separate parent companies."
+    },
+    "acquisitionExitCheck": {
+      "summary": "Confirmed prior Wren House entry in 2020. Confirmed 2023 expansion through the Big River transaction. No completed Wren House exit or completed T-Mobile ownership transfer was established through 2026-08-19."
+    },
+    "milestones": [
+      {
+        "date": "2020",
+        "event": "Wren House acquired control of i3 Broadband."
+      },
+      {
+        "date": "2023",
+        "event": "i3 Broadband completed acquisition of Big River following regulatory process."
+      },
+      {
+        "date": "2026-04",
+        "event": "T-Mobile announced planned 50/50 fiber joint venture involving i3 Broadband."
+      },
+      {
+        "date": "2026-08-19",
+        "event": "No legal closing located before review cutoff; Wren House remains current legal owner."
+      }
+    ],
+    "evidence": [
+      {
+        "label": "T-Mobile transaction announcement",
+        "url": "https://www.t-mobile.com/news/network/t-mobile-fiber-i3-broadband",
+        "purpose": "Announced 50/50 joint venture and pending transaction",
+        "sourceTier": "PRIMARY",
+        "workingStatus": "ACTIVE",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "Wren House portfolio",
+        "url": "https://wrenhouseinfra.com/portfolio/i3-broadband/",
+        "purpose": "Current portfolio ownership evidence",
+        "sourceTier": "PRIMARY",
+        "workingStatus": "ACTIVE",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "FCC Big River transfer notice",
+        "url": "https://docs.fcc.gov/public/attachments/DA-23-207A1.docx",
+        "purpose": "Documents i3 Broadband ownership chain and Wren House control during Big River acquisition",
+        "sourceTier": "PRIMARY",
+        "workingStatus": "ACTIVE",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "before": "Existing record showed Wren House-backed i3 Broadband with pending T-Mobile transaction.",
+      "after": "No ownership change. Wren House remains active legal owner; T-Mobile retained only as SIGNED_PENDING_INCOMING for a 50% joint-venture interest pending legal closing."
+    },
+    "excludedOrDuplicateCandidates": [],
+    "unresolvedQuestions": [
+      "Public sources reviewed through 2026-08-19 did not establish legal closing of the announced 2026 joint venture.",
+      "Public evidence does not disclose the specific Wren House fund, vehicle or economic stake to record."
+    ],
+    "recommendedListAction": "VERIFIED_NO_CHANGE"
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0461-i3-broadband/attempt-1/research-decision.json",
+      "sha256": "dfa68f8972ce90ad58b46879abb0a854729df3c0d6114c6d42cf652261b9cf79"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0461-i3-broadband/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "d8fdf6180b280faf829df54575671f6e077c5107a620f5962dd9a7511b3b94a9"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0461-i3-broadband/attempt-1/source-verification.json",
+      "sha256": "5c2140c2531a965f73c983e0d37ba6d772f85ffc20fbbdc3146166b32d88135e"
+    },
+    "acceptedResponseSha256": null,
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+    "confidenceNormalization": {
+      "acceptedValue": "high",
+      "stagedSummaryValue": "HIGH",
+      "basis": "The accepted response expressed an overall confidence band with a disclosure-gap qualifier; the staged summary preserves that band in its deterministic qualifier and the research decision is unchanged."
+    }
+  }
+}

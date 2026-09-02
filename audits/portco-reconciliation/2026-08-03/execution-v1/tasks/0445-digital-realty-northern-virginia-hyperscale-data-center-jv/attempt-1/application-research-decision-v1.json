@@ -1,0 +1,183 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0445:digital-realty-northern-virginia-hyperscale-data-center-jv:1419ed2f",
+  "taskIndex": 445,
+  "companyName": "Digital Realty Northern Virginia Hyperscale Data Center JV",
+  "asOfDate": "2026-08-19",
+  "decision": "EXCLUDED",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-02T07:18:00.000Z",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "Digital Realty Northern Virginia Hyperscale Data Center JV",
+    "requestedManagers": [
+      "TPG",
+      "TPG Real Estate"
+    ],
+    "decision": "EXCLUDED",
+    "confidence": "HIGH",
+    "rationale": "TPG's 80% interest is through TPG Real Estate Partners (TREP), an opportunistic real-estate fund series rather than an infrastructure mandate. Under the fixed strategy rule the asset type does not override the vehicle mandate. Digital Realty retained 20% and operations; no qualifying infrastructure-fund owner was found. TPG and TPG Real Estate duplicate one interest.",
+    "identityResolution": {
+      "canonicalKey": "digital-realty-northern-virginia-hyperscale-data-center-jv|united-states",
+      "canonicalName": "Digital Realty–TPG Northern Virginia Hyperscale Data Center JV",
+      "filingName": "Nova DC Holdings",
+      "legalEntity": "Nova DC Holdings is the disclosed JV holding name; exact member/borrower chain NOT_PUBLICLY_DISCLOSED.",
+      "boundary": "One three-building JV/portfolio, not three PortCos or the broader Digital Realty platform.",
+      "assets": [
+        "ACC5",
+        "ACC6",
+        "ACC7"
+      ]
+    },
+    "ownershipResolution": {
+      "owners": [
+        {
+          "manager": "TPG / TPG Real Estate",
+          "organization": "TPG Inc. / TPG Real Estate",
+          "fund": "TPG Real Estate Partners (TREP) fund series",
+          "vehicle": "Exact numbered fund/feeder NOT_PUBLICLY_DISCLOSED",
+          "stake": "80%",
+          "announcementDate": "2023-07-27",
+          "entryDate": "2023-07-25",
+          "entryYear": 2023,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "manager": "Digital Realty",
+          "organization": "Digital Realty Trust, Inc.",
+          "fund": null,
+          "vehicle": "Retained Nova DC Holdings interest; exact member entity NOT_PUBLICLY_DISCLOSED",
+          "stake": "20%",
+          "announcementDate": "2023-07-27",
+          "entryDate": "2023-07-25",
+          "entryYear": 2023,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE"
+        }
+      ],
+      "mandate": "REAL_ESTATE: TREP is TPG's dedicated opportunistic real-estate platform; no infrastructure mandate established.",
+      "duplicateFinding": "TPG and TPG Real Estate are the same 80% TREP interest.",
+      "qualifyingInfrastructureOwner": "NONE"
+    },
+    "operatingResolution": {
+      "status": "ACTIVE_STABILIZED",
+      "profile": "Three stabilized Ashburn hyperscale buildings totaling about 104 MW.",
+      "tenants": "Names NOT_PUBLICLY_DISCLOSED; transaction materials described investment-grade hyperscale tenants.",
+      "operations": "Digital Realty retained day-to-day management/accounting; major decisions require both members' consent."
+    },
+    "acquisitionExitCheck": {
+      "type": "Closed secondary recapitalization of stabilized assets.",
+      "announcementDate": "2023-07-27",
+      "closingDate": "2023-07-25",
+      "value": "$1.5bn portfolio valuation.",
+      "financing": "DC Commercial Mortgage Trust 2023-DC securitized a $990m mortgage; ratings finalized 2023-08-30.",
+      "laterCheck": "No supported refinancing, expansion, transfer, sale or exit through 2026-08-19. Digital Realty still reported its 20% Nova DC Holdings interest at 2026-06-30.",
+      "pendingTransactions": []
+    },
+    "milestones": [
+      {
+        "date": "2023-07-25",
+        "event": "JV closed: TREP 80%, Digital Realty 20%, three-building portfolio."
+      },
+      {
+        "date": "2023-07-27",
+        "event": "Transaction announced with approximately 104 MW and Digital Realty continuing operations."
+      },
+      {
+        "date": "2023-08-30",
+        "event": "DBRS finalized ratings for the $990m DC 2023-DC mortgage."
+      },
+      {
+        "date": "2026-06-30",
+        "event": "Digital Realty continued reporting its 20% Nova DC Holdings interest; no contrary event found."
+      }
+    ],
+    "evidence": [
+      {
+        "label": "TPG/Digital Realty JV announcement",
+        "url": "https://www.tpg.com/news-and-insights/digital-realty-and-tpg-announce-joint-venture-hyperscale-data",
+        "purpose": "Stakes,value,capacity,mandate,operations.",
+        "sourceTier": "MANAGER_DIRECT",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "TPG TREP strategy",
+        "url": "https://www.tpg.com/platforms/real-estate/tpg-real-estate-partners",
+        "purpose": "TREP real-estate strategy.",
+        "sourceTier": "MANAGER_DIRECT",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Digital Realty SEC JV note",
+        "url": "https://www.sec.gov/Archives/edgar/data/1297996/000110465926015365/R15.htm",
+        "purpose": "Ownership,governance,Nova DC Holdings.",
+        "sourceTier": "ISSUER_SEC",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Digital Realty Q2 2026 SEC table",
+        "url": "https://www.sec.gov/Archives/edgar/data/1297996/000110465926089296/R31.htm",
+        "purpose": "20% ownership at 2026-06-30.",
+        "sourceTier": "ISSUER_SEC",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Morningstar DBRS DC 2023-DC",
+        "url": "https://dbrs.morningstar.com/research/420088/dbrs-morningstar-finalizes-ratings-on-dc-commercial-mortgage-trust-2023-dc",
+        "purpose": "Portfolio perimeter and financing.",
+        "sourceTier": "RATING_AGENCY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "scope": "Infrastructure PortCo -> EXCLUDED TREP real-estate investment; preserve history.",
+      "owners": "Duplicate TPG labels -> one 80% TREP row plus Digital Realty 20%.",
+      "identity": "Use Nova DC Holdings; ACC5/ACC6/ACC7 remain child assets.",
+      "dates": "Close 2023-07-25; announcement 2023-07-27.",
+      "boundary": "Single three-building JV only."
+    },
+    "excludedOrDuplicateCandidates": [
+      "TPG and TPG Real Estate—DUPLICATE_SAME_80_PERCENT_TREP_INTEREST",
+      "ACC5/ACC6/ACC7—CHILD_ASSETS_NOT_SEPARATE_PORTCOS",
+      "Qualifying infrastructure-fund owner—NONE"
+    ],
+    "unresolvedQuestions": [
+      "Exact numbered TREP fund/feeder NOT_PUBLICLY_DISCLOSED.",
+      "Exact member/borrower chain beneath Nova DC Holdings NOT_PUBLICLY_DISCLOSED.",
+      "Tenant identities NOT_PUBLICLY_DISCLOSED."
+    ],
+    "recommendedListAction": {
+      "action": "EXCLUDE_AND_DEDUPLICATE",
+      "canonicalKey": "digital-realty-northern-virginia-hyperscale-data-center-jv|united-states",
+      "treatment": "Retire from the direct infrastructure-equity census; preserve the 2023 real-estate JV history, consolidate TPG labels into one 80% TREP owner, retain Digital Realty's 20% co-owner/operator role, and keep ACC5/ACC6/ACC7 beneath Nova DC Holdings."
+    }
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0445-digital-realty-northern-virginia-hyperscale-data-center-jv/attempt-1/research-decision.json",
+      "sha256": "1ffcd0ca10d76e6cb84267370e52ee2984584f7dd1ff4b78274f9ba88f14d57c"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0445-digital-realty-northern-virginia-hyperscale-data-center-jv/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "e09125337536af36c15decbc38813b35b1c4ee3779cc4a2b79d186cceccf66af"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0445-digital-realty-northern-virginia-hyperscale-data-center-jv/attempt-1/source-verification.json",
+      "sha256": "391f30175b81a8dc20cd7ddb63057d176d1135192a73d82a3e4b40c98fed98bf"
+    },
+    "acceptedResponseSha256": "e09125337536af36c15decbc38813b35b1c4ee3779cc4a2b79d186cceccf66af",
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION"
+  }
+}

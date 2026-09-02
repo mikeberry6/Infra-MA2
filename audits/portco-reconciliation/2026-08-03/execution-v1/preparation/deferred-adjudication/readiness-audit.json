@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_DEFERRED_ADJUDICATION_READINESS_AUDIT",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "auditedAt": "2026-09-02T08:02:00.000Z",
+  "authoritative": false,
+  "sourceManifestSha256": "f31de2e9ea534931b27900f0de719f11eb0764bba9c17a08157168b000ad0027",
+  "sourceDeferredTaskCount": 40,
+  "orderedDeferredTaskIdsSha256": "c1affad01ea338de931ff0cbbc00aea276d0944c693962fe3e360bff5d36e9f9",
+  "taskOrderHashEncoding": "UTF-8 task IDs joined with LF characters, with no trailing LF.",
+  "orderingRule": "Ascending source-manifest sequence after zero PENDING tasks and no active bundle.",
+  "readinessCounts": {
+    "tasksWithPriorResearch": 34,
+    "tasksWithPriorGpt56SolPro5Of5Attestation": 34,
+    "tasksRequiringFirstAttestedAdjudicationChat": 6
+  },
+  "tasksRequiringFirstAttestedAdjudicationChat": [
+    {
+      "taskIndex": 42,
+      "taskId": "ledger:0042:sifi-networks-america-limited:8125d44e",
+      "companyName": "SiFi Networks America Limited"
+    },
+    {
+      "taskIndex": 55,
+      "taskId": "ledger:0055:modern-aviation:22969eb9",
+      "companyName": "Modern Aviation"
+    },
+    {
+      "taskIndex": 67,
+      "taskId": "ledger:0067:clean-computational-infrastructure:93bcf245",
+      "companyName": "Clean Computational Infrastructure"
+    },
+    {
+      "taskIndex": 74,
+      "taskId": "ledger:0074:liberty:69ac2ee0",
+      "companyName": "Liberty"
+    },
+    {
+      "taskIndex": 76,
+      "taskId": "ledger:0076:lodi-holdings-ii:062318ec",
+      "companyName": "Lodi Holdings II"
+    },
+    {
+      "taskIndex": 345,
+      "taskId": "ledger:0345:chicago-parking-meters:1a7d998e",
+      "companyName": "Chicago Parking Meters"
+    }
+  ],
+  "permittedCombinedAdjudications": [
+    {
+      "canonicalSubject": "Extenet (formerly ExteNet Systems)",
+      "primaryTaskId": "ledger:0213:extenet-formerly-extenet-systems:1d3fac1c",
+      "reciprocalTaskIds": [
+        "ledger:0475:extenet:5c5cf1a1",
+        "ledger:0476:extenet-systems:5d66f0cd"
+      ],
+      "condition": "The reciprocal tasks must first be terminally superseded into task 213 during pending-queue completion."
+    },
+    {
+      "canonicalSubject": "Rowan Digital Infrastructure platform",
+      "primaryTaskId": "ledger:0399:rowan-bauxite:930cec59",
+      "reciprocalTaskIds": [
+        "ledger:0400:rowan-cinco:18f76471",
+        "ledger:0401:rowan-temple:fb4df5a1"
+      ],
+      "condition": "Fresh source review must confirm all three tasks remain project/campus labels beneath the same Rowan platform and share the same unresolved post-recapitalization ownership question."
+    }
+  ],
+  "companySpecificPolicy": [
+    {
+      "taskId": "ledger:0345:chicago-parking-meters:1a7d998e",
+      "policy": "Research and preserve the underlying legal ownership and pending-transaction evidence, while keeping the user-approved CPM display exception separate: MSIP, Allianz and ADIA remain the three displayed owners and Stonepeak is not displayed as an owner."
+    }
+  ],
+  "guardrails": [
+    "Do not start deferred adjudication until the pending queue is zero and no bundle is active.",
+    "Each primary deferred task receives one fresh signed-in ChatGPT conversation visibly attesting ChatGPT Pro, GPT-5.6 Sol, Pro mode and 5 of 5 effort.",
+    "Prior research is context to reopen and challenge, not a substitute for fresh direct-source review.",
+    "Research only the recorded material identity or active-ownership blocker; do not repeat full scorecard enrichment.",
+    "Combine tasks only where this audit identifies one canonical company and fresh evidence confirms the same boundary.",
+    "A genuinely unavailable fact must remain an exact, source-backed exception rather than an inferred mutation."
+  ]
+}

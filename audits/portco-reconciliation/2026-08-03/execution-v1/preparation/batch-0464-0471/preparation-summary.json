@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RELEASE_BUNDLE_PREPARATION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "preparedAt": "2026-09-02T07:50:00.000Z",
+  "authoritative": false,
+  "bundleMemberRule": "The next five PENDING tasks after task 463; already-terminal source tasks 467 through 469 are not reopened.",
+  "dependsOn": [
+    "The preceding pending-task bundle 459 through 463 must be fully production-verified and source-finalized.",
+    "No release bundle may be active, forming, releasing, applying, verifying or recovering."
+  ],
+  "plannedMembers": [
+    {
+      "taskIndex": 464,
+      "taskId": "ledger:0464:donjon-marine-co-llc:1f2eb8b6",
+      "companyName": "Donjon Marine Co., LLC",
+      "plannedOutcome": "CORRECT_COMPANY",
+      "reason": "Retain the Donjon canonical key but broaden the manager-level identity to Tallvine's North America marine-infrastructure platform, with Donjon and Lind preserved as separately branded operators and undisclosed ownership economics left explicit.",
+      "applicationResearchDecisionByteSha256": "82904bdc745e245c9ba67a59c8de0259f70ad0f282c39141b7decb01e1f55885"
+    },
+    {
+      "taskIndex": 465,
+      "taskId": "ledger:0465:havasu-air-center:895ad5ae",
+      "companyName": "Havasu Air Center",
+      "plannedOutcome": "MERGE_AND_REDIRECT",
+      "reason": "Merge the 2025 FBO and airport-leasehold add-on into the Tallvine-backed Velocity FBO Network as Velocity Lake Havasu, preserving the local entity, leases, legacy alias and milestone lineage beneath the platform.",
+      "candidateTarget": {
+        "companyIdFromLatestNonAuthoritativeSnapshot": "cmrxpjnya01ahivheyr6w92jk",
+        "companyName": "Velocity FBO Network",
+        "bindingStatus": "REQUIRES_FRESH_TASK_SNAPSHOT"
+      },
+      "applicationResearchDecisionByteSha256": "0e41cfeb86345576ce12c9997cbd1d9584b43764bbc3cfffaf0ef64cb4f07773"
+    },
+    {
+      "taskIndex": 466,
+      "taskId": "ledger:0466:alpha-generation-alphagen:c81d7304",
+      "companyName": "Alpha Generation (AlphaGen)",
+      "plannedOutcome": "SUPERSEDED",
+      "reason": "Task 64 already completed the reviewed AlphaGen-to-Alpha Generation, LLC canonical merge; this combined reciprocal label requires no second company research or database mutation.",
+      "targetTaskId": "ledger:0064:alphagen:b9424b11",
+      "targetRequiredStatus": "COMPLETED"
+    },
+    {
+      "taskIndex": 470,
+      "taskId": "ledger:0470:boldyn-networks:3ce154eb",
+      "companyName": "Boldyn Networks",
+      "plannedOutcome": "MERGE_AND_CORRECT",
+      "reason": "Retain one consolidated Boldyn Networks parent for the former BAI Northern Hemisphere businesses, preserve CPP Investments and AIMCo parent ownership plus Manulife's minority U.S.-asset interest, and keep debt financing outside ownership.",
+      "applicationResearchDecisionByteSha256": "89bca3f0a315b0b5410fcbe682f5bfc872fbe78afce8ec94d338367544f8a921"
+    },
+    {
+      "taskIndex": 471,
+      "taskId": "ledger:0471:boldyn-networks-us:9c03f01f",
+      "companyName": "Boldyn Networks (US)",
+      "plannedOutcome": "SUPERSEDED",
+      "reason": "The U.S. label is a geographic operating perimeter beneath the consolidated Boldyn Networks decision and may be superseded only after task 470 is production-verified.",
+      "targetTaskId": "ledger:0470:boldyn-networks:3ce154eb",
+      "targetRequiredStatus": "COMPLETED"
+    }
+  ],
+  "collisionAnalysis": {
+    "result": "REQUIRES_FRESH_CONTEXT",
+    "reason": "The Havasu merge shares the Velocity FBO Network target changed by the preceding BTR task, so its fresh dependency snapshot must include and verify that completed after-image. Boldyn requires reciprocal-label and owner-period collision checks."
+  },
+  "sourceCompatibility": {
+    "result": "PASS_FOR_PREPARATION",
+    "reason": "All three research-backed decisions have UI-attested GPT-5.6 Sol Pro 5-of-5 packets and independent source validation; tasks 466 and 471 are target-bound reciprocal labels."
+  },
+  "requiredBeforeRelease": [
+    "Recapture one fresh production snapshot and all five task/dependency snapshots after the predecessor bundle completes.",
+    "Bind Havasu to the post-BTR Velocity FBO Network after-image and fail if that target or its relations changed unexpectedly.",
+    "Verify task 64 remains COMPLETED and task 470 completes inside this bundle before generating the two supersessions.",
+    "Generate the Donjon correction, Havasu merge, Boldyn merge/correction and two terminal supersessions.",
+    "Reconcile changed active-owner seed attribution records and prove one-to-one evaluated-seed coverage.",
+    "Run source, primary-citation, dependency, redirect, relation, collision and stale-hash checks before automatic authorization.",
+    "Use the protected release and atomic apply workflow for every mutating member."
+  ]
+}

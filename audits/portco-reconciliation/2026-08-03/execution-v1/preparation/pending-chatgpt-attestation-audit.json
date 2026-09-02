@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_PENDING_CHATGPT_ATTESTATION_AUDIT",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "auditedAt": "2026-09-02T07:28:00.000Z",
+  "authoritative": false,
+  "sourceManifestSha256": "f31de2e9ea534931b27900f0de719f11eb0764bba9c17a08157168b000ad0027",
+  "pendingTaskCount": 44,
+  "researchBackedPendingTaskCount": 33,
+  "identityOnlyPendingTaskCount": 11,
+  "requirements": {
+    "accountTier": "ChatGPT Pro",
+    "model": "GPT-5.6 Sol",
+    "effort": "Pro",
+    "power": "5 of 5",
+    "uiVerified": true,
+    "responseValidation": true
+  },
+  "results": {
+    "attestationsChecked": 33,
+    "attestationsPassing": 33,
+    "attestationsFailing": 0,
+    "tasksUsingOnePermittedRepair": 16,
+    "tasksUsingMoreThanOneRepair": 0
+  },
+  "finalOutcomeCounts": {
+    "VALID_AFTER_REPAIR": 2,
+    "VALID": 13,
+    "VALID_INITIAL_CONTRACT_PACKET": 5,
+    "VALID_CONTRACT_PACKET": 6,
+    "VALID_CONTRACT_PACKET_WITH_TRANSIENT_POST_RESPONSE_LIMIT": 1,
+    "VALID_CONTRACT_PACKET_WITH_MATERIAL_SOURCE_OVERRIDES": 1,
+    "VALID_CONTRACT_PACKET_WITH_SOURCE_QUALIFIER": 1,
+    "VALID_CONTRACT_PACKET_WITH_SOURCE_URL_OVERRIDES": 1,
+    "VALID_CONTRACT_PACKET_WITH_MATERIAL_EVIDENCE_CORRECTIONS": 1,
+    "VALID_INITIAL_CONTRACT_PACKET_ACCEPTED_AFTER_REPAIR_SERVER_ERROR": 1,
+    "VALID_REPAIRED_CONTRACT_PACKET": 1
+  },
+  "scopeNote": "The 11 identity-only pending tasks have no independent company chat because each is a reciprocal or duplicate label whose evidence is carried by its hash-bound canonical target. Their target mappings are recorded in pending-research-normalization-summary.json.",
+  "guardrails": [
+    "This audit validates preserved research attestations and response-validation artifacts only; it does not authorize a proposal or mutate manifest state.",
+    "Every proposal still requires fresh target/dependency snapshots, source checks, one primary citation and stale-hash validation.",
+    "No ChatGPT research may be repeated merely because the corresponding production release is waiting on Vercel."
+  ]
+}

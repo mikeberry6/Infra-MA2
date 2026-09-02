@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RELEASE_BUNDLE_PREPARATION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "preparedAt": "2026-09-02T09:16:00.000Z",
+  "authoritative": false,
+  "activeBatchId": "batch-0434-0438-v1",
+  "batchSha256": "dd0ca285ddf3caf001087d3bc1d084577867d2fea8d25f71c4f967b19bc3c56a",
+  "plannedMembers": [
+    {
+      "taskIndex": 434,
+      "taskId": "ledger:0434:atlantica-sustainable-infrastructure-plc:4a99610b",
+      "companyName": "Atlantica Sustainable Infrastructure plc",
+      "plannedOutcome": "CORRECT_COMPANY",
+      "releaseTreatment": "Archive the existing published company because the global platform is not primarily based in or dedicated to North America.",
+      "proposalSha256": "dd89d9002f51a416a5e81e8c0e3c26b2963bae8b140f4247d1d93d970eec9618",
+      "approvalSha256": "a132ba9271ad53b9fd956187e705856fcd93bbf0ed809cb0a33e71c77da4814c"
+    },
+    {
+      "taskIndex": 435,
+      "taskId": "ledger:0435:eavor-technologies-inc:3796294f",
+      "companyName": "Eavor Technologies Inc.",
+      "plannedOutcome": "CORRECT_COMPANY",
+      "releaseTreatment": "Archive the existing published company because it is a geothermal technology and licensing business rather than a direct qualifying infrastructure platform.",
+      "proposalSha256": "bef1185f6a567ba1daf1fb2470a0559f26c96c901fa5cea5668583f62e794830",
+      "approvalSha256": "78e03cc6f17596b7f51be4cd5411150e9c3376680e2b383d6258f4ac02b18ca5"
+    },
+    {
+      "taskIndex": 436,
+      "taskId": "ledger:0436:neoen-s-a:ec19a5c4",
+      "companyName": "Neoen S.A.",
+      "plannedOutcome": "CORRECT_COMPANY",
+      "releaseTreatment": "Archive the existing published company because the global renewable-power platform is not primarily North American.",
+      "proposalSha256": "76860efcebf5f66b847fcca1c32517f4b91cfe44baf91b0a1f5913a66611a476",
+      "approvalSha256": "713411732c8f80ad5a3cefdedebbcc3db392d99cedb4bbe4391364205d4bd930"
+    },
+    {
+      "taskIndex": 437,
+      "taskId": "ledger:0437:psa-international-pte-ltd:b5676593",
+      "companyName": "PSA International Pte Ltd",
+      "plannedOutcome": "CORRECT_COMPANY",
+      "releaseTreatment": "Archive the existing published company because the Singapore-based global ports group is not primarily North American.",
+      "proposalSha256": "fe19caa765b964433e068bd8186b2a9d1a11ddf7ff2a313376c50f2dff1ea043",
+      "approvalSha256": "37808835c521bc476b1e4cddf6498a5f3f3380f48fd0a1309c20ea199510546e"
+    },
+    {
+      "taskIndex": 438,
+      "taskId": "ledger:0438:american-natural:a714a5a7",
+      "companyName": "American Natural",
+      "plannedOutcome": "CORRECT_COMPANY",
+      "releaseTreatment": "Retain and correct the fuel-infrastructure platform, exclude sold retail assets and remove the unsupported Tiger Fund I attribution.",
+      "proposalSha256": "54a84d529e9f6ad83a29a84baf17c9c6d9afb56a48044946876f3a73bb3a2b8c",
+      "approvalSha256": "0715cbacf355fe00474ad86e57b134301454a005b9d5d19575c024094753e3af"
+    }
+  ],
+  "collisionAnalysis": {
+    "result": "PASS",
+    "reason": "The five target company identities are distinct. Shared source labels are preserved, one global-source collision was detected and repaired before release, and the final production dry run is collision-free."
+  },
+  "seedAttributionTreatment": {
+    "result": "PASS",
+    "reconciliationSha256": "bcc0f34d6d3a8f406139ba414277d2999657ed97347dae04c7214911bb86cecd",
+    "reason": "Six archived or stale owner-attribution records are removed and one unresolved American Natural owner record is inserted; evaluated active-owner coverage is exact."
+  },
+  "releaseBoundary": "Protected PR, exact-SHA canonical Vercel deployment, then one serializable five-member database transaction and full receipt/API/rendered verification."
+}

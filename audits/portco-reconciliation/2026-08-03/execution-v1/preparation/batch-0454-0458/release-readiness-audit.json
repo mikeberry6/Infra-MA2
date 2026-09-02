@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RELEASE_BUNDLE_READINESS_AUDIT",
+  "authoritative": false,
+  "auditedAt": "2026-09-02T08:09:00.000Z",
+  "plannedTaskRange": [454, 458],
+  "preparationSummaryByteSha256": "11207e86c415446fefa6369e9e9d20b6ac03df046ea48e0110c007d396bccf16",
+  "result": "PREPARED_RESEARCH_INTACT_SOURCE_REBIND_REQUIRED",
+  "predecessorGate": {
+    "requiredTaskRange": [449, 453],
+    "satisfied": false,
+    "reason": "The predecessor bundle must be production-verified and source-finalized before this bundle can activate."
+  },
+  "checks": {
+    "deterministicTaskOrder": true,
+    "applicationDecisionByteHashesMatchPreparation": true,
+    "researchLineageByteHashesMatch": true,
+    "exactlyOneResearchRecommendedPrimaryPerTask": true,
+    "allResearchRecommendedPrimaryUrlsCurrentlyUsable": false,
+    "sourceRepairsIdentified": true,
+    "preparationCollisionAnalysisPasses": true,
+    "freshProductionAbsenceChecksComplete": false,
+    "freshDependencySnapshotsCaptured": false,
+    "authoritativeCollisionAnalysisComplete": false
+  },
+  "tasks": [
+    {
+      "taskIndex": 454,
+      "taskId": "ledger:0454:beyond-data-centers:aa1b4081",
+      "plannedOutcome": "DEFERRED",
+      "applicationDecisionByteSha256": "4b7c7909a8ec74f662d2ec189bbe5f46c32609bd3ff56d0dbb498a0146273302",
+      "researchPrimaryUrl": "https://www.beyonddatacenters.com/",
+      "researchPrimaryUrlHealth": "INVALID_TLS_HOSTNAME",
+      "replacementPrimaryUrl": "https://beyond-datacenters.com/",
+      "replacementPrimaryUrlHttpStatus": 206,
+      "replacementPrimaryUrlHealth": "WORKING",
+      "sourceVerificationSha256": "1340351d0dd0960a177b271524a4a6d7c2d83e02cd766b2e62dbcecea9346687",
+      "missingFact": "A primary transaction or company disclosure identifying the legal entity and Wafra's current direct or indirect equity ownership."
+    },
+    {
+      "taskIndex": 455,
+      "taskId": "ledger:0455:contract-leasing-corporation:083d749b",
+      "plannedOutcome": "CREATE_COMPANY",
+      "applicationDecisionByteSha256": "aca1c69e78fe0f0aa7f438a11cf3e43bf29aaea3af00665db5b20316c19d6ee1",
+      "primaryUrl": "https://www.contractleasing.net/contract-leasing-corporation-announces-acquisition-by-wafra/",
+      "primaryUrlHttpStatus": 200,
+      "primaryUrlHealth": "WORKING",
+      "productionAbsenceCheck": "REQUIRES_FRESH_SNAPSHOT"
+    },
+    {
+      "taskIndex": 456,
+      "taskId": "ledger:0456:crescent-louisiana-midstream:599b6824",
+      "plannedOutcome": "DEFERRED",
+      "applicationDecisionByteSha256": "d8535fbc8d4ab6e8a6a86c0e361020af95d961c8b90b939e58a78f2cbb69c79b",
+      "primaryUrl": "https://www.spglobal.com/ratings/en/regulatory/article/-/view/type/HTML/id/3512918",
+      "primaryUrlHttpStatus": 403,
+      "primaryUrlHealth": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "sourceVerificationSha256": "ffc140740141ee106a36bd153aa62eae532b758a9d24487443763a5198339ea5",
+      "missingFact": "Direct transaction or ownership documentation proving Wafra's current equity interest and the correct manager-level boundary."
+    },
+    {
+      "taskIndex": 457,
+      "taskId": "ledger:0457:intermountain-infrastructure-group:66d1e5b0",
+      "plannedOutcome": "CREATE_COMPANY",
+      "researchDecision": "PROPOSED_CORRECTION",
+      "applicationDecisionByteSha256": "8e53d2bfef04161abef99afeb813fe77ca8193d3871d5de46b58d13d95e47262",
+      "primaryUrl": "https://docs.fcc.gov/public/attachments/DOC-392404A1.pdf",
+      "primaryUrlHttpStatus": 200,
+      "primaryUrlHealth": "WORKING",
+      "outcomeNormalization": "CREATE only if fresh production, evaluated-seed, redirect and alias snapshots prove the canonical company remains absent."
+    },
+    {
+      "taskIndex": 458,
+      "taskId": "ledger:0458:mission-clean-energy:ec7ef24e",
+      "plannedOutcome": "CREATE_COMPANY",
+      "applicationDecisionByteSha256": "82414451116d93f1236778d6f3688162dc7b8b46d32a9e5d53e4df60a61e82fb",
+      "primaryUrl": "https://missioncleanenergy.com/investors/",
+      "primaryUrlHttpStatus": 200,
+      "primaryUrlHealth": "WORKING",
+      "productionAbsenceCheck": "REQUIRES_FRESH_SNAPSHOT"
+    }
+  ],
+  "requiredAtActivation": [
+    "Wait for tasks 449 through 453 to be production-verified and source-finalized.",
+    "Capture one fresh production snapshot and all five task, seed and dependency snapshots.",
+    "Replace Beyond Data Centers' invalid TLS-host citation with the working official domain.",
+    "Prove all three create candidates remain absent across production, evaluated seed, redirects and aliases; otherwise regenerate the affected action.",
+    "Generate three complete company after-images and two terminal deferral decisions.",
+    "Complete authoritative source, target, primary-citation, seed-attribution, dependency, collision, stale-hash and atomicity checks before automatic authorization."
+  ]
+}

@@ -1,0 +1,192 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0462:qsp-northern-virginia-data-center-jv:3a29bbb8",
+  "taskIndex": 462,
+  "companyName": "QSP (Northern Virginia Data Center JV)",
+  "asOfDate": "2026-08-19",
+  "decision": "PROPOSED_MERGE",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-02T07:18:00.000Z",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "QSP (Northern Virginia Data Center JV)",
+    "requestedManagers": [
+      "Wren House Infrastructure",
+      "QTS/Blackstone as applicable"
+    ],
+    "decision": "PROPOSED_MERGE",
+    "confidence": "HIGH",
+    "rationale": "The requested Northern Virginia label and the existing canonical QSP refer to the same manager-level investment. Wren House's portfolio materials identify QSP as the 2024 three-facility Northern Virginia data-center joint venture. BlackRock is the evidenced co-investor. QTS retained an operating/minority role and remains Blackstone-backed upstream, but Blackstone should not be conflated with the direct JV co-investor. Task 491 is therefore covered by this decision.",
+    "identityResolution": {
+      "canonicalName": "QSP",
+      "requestedLabel": "QSP (Northern Virginia Data Center JV)",
+      "legalJVOrHoldcoName": "NOT_PUBLICLY_DISCLOSED",
+      "sameAsExistingQSP": true,
+      "coversLaterTask491QSP": true,
+      "recordBoundary": "One manager-level investment only; do not separately count holdcos, financing entities or individual campuses."
+    },
+    "ownershipResolution": {
+      "owners": [
+        {
+          "manager": "Wren House Infrastructure",
+          "organization": "Wren House Infrastructure Management Limited",
+          "fund": "NOT_PUBLICLY_DISCLOSED",
+          "vehicle": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "40%",
+          "announcementDate": "2024-11-13",
+          "entryDate": "2024-11-13",
+          "entryYear": 2024,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "manager": "BlackRock",
+          "organization": "BlackRock",
+          "fund": "NOT_PUBLICLY_DISCLOSED",
+          "vehicle": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2024-11-13",
+          "entryDate": "2024-11-13",
+          "entryYear": 2024,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE"
+        },
+        {
+          "manager": "QTS/Blackstone",
+          "organization": "QTS Realty Trust, LLC",
+          "fund": "NOT_PUBLICLY_DISCLOSED",
+          "vehicle": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "NOT_PUBLICLY_DISCLOSED retained minority/operator",
+          "announcementDate": "2024-11-13",
+          "entryDate": "2024-11-13",
+          "entryYear": 2024,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "RETAINED_MINORITY_OPERATOR_ACTIVE"
+        }
+      ],
+      "governance": "NOT_PUBLICLY_DISCLOSED"
+    },
+    "operatingResolution": {
+      "status": "ACTIVE",
+      "operator": "QTS Realty Trust, LLC",
+      "assetBoundary": "Single portfolio of three completed Northern Virginia data centers; do not separately list campuses or SPVs.",
+      "ownedCapacity": "Approximately 100 MW; financing evidence reports 99.6 MW across the three-facility portfolio.",
+      "plannedCapacity": "Exclude broader QTS development pipeline unless directly attributed to QSP."
+    },
+    "acquisitionExitCheck": {
+      "formationClosing": "Completed and announced 2024-11-13.",
+      "financing": "Portfolio financing aligns with the same three-facility 99.6 MW portfolio and is not a separate equity investment.",
+      "laterSearch": "No evidenced transfer, recapitalization, exit or signed pending equity transaction through 2026-08-19.",
+      "pendingTransactions": []
+    },
+    "milestones": [
+      {
+        "date": "2021-08-31",
+        "event": "Blackstone acquisition of QTS completed."
+      },
+      {
+        "date": "2024-10-18",
+        "event": "Financing materials describe the three-facility 99.6 MW Northern Virginia portfolio."
+      },
+      {
+        "date": "2024-11-13",
+        "event": "Wren House announced completion of the QSP joint venture."
+      },
+      {
+        "date": "2026-08-19",
+        "event": "Current searches found no subsequent ownership change; QSP remains active."
+      }
+    ],
+    "evidence": [
+      {
+        "label": "Wren House QSP portfolio",
+        "url": "https://wrenhouseinfra.com/portfolio/qsp/",
+        "purpose": "Primary identity, active portfolio, 40% stake, three-facility boundary and current status.",
+        "sourceTier": "TIER_1_MANAGER",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "Wren House transaction announcement",
+        "url": "https://wrenhouseinfra.com/",
+        "purpose": "Completion announcement, operator role and portfolio description.",
+        "sourceTier": "TIER_1_TRANSACTION_PARTY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "CBRE North America Data Center Trends H2 2024",
+        "url": "https://www.cbre.com/insights/reports/north-america-data-center-trends-h2-2024",
+        "purpose": "Identifies BlackRock as co-investor and the same transaction.",
+        "sourceTier": "TIER_2_MARKET_RESEARCH",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Paul Weiss transaction experience",
+        "url": "https://www.paulweiss.com/professionals/partners-and-counsel/kelann-stirling",
+        "purpose": "Corroborates BlackRock participation in the JV.",
+        "sourceTier": "TIER_2_TRANSACTION_COUNSEL",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "KBRA BX 2024-VLT5",
+        "url": "https://www.kbra.com/publications/FbCtxWJc/kbra-assigns-preliminary-ratings-to-bx-2024-vlt5?format=web",
+        "purpose": "Supports the 99.6 MW three-facility portfolio boundary.",
+        "sourceTier": "TIER_1_RATING_AGENCY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Blackstone QTS acquisition",
+        "url": "https://www.blackstone.com/news/press/blackstone-funds-complete-acquisition-of-qts-realty-trust/",
+        "purpose": "Separates Blackstone's upstream ownership of QTS from the direct JV co-investor.",
+        "sourceTier": "TIER_1_UPSTREAM_OWNER",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "before": "Requested Northern Virginia JV label and canonical QSP potentially treated separately.",
+      "after": "Use one canonical QSP record covering this request and later task 491; distinguish BlackRock as co-investor and QTS/Blackstone as retained operator/upstream sponsor."
+    },
+    "excludedOrDuplicateCandidates": [
+      "Task 491 QSP (covered by this decision)",
+      "JV holdcos",
+      "Financing entities",
+      "Individual campuses and SPVs"
+    ],
+    "unresolvedQuestions": [
+      "Legal JV/holdco name",
+      "Governance",
+      "Fund and vehicle",
+      "Undisclosed ownership percentages other than Wren House's disclosed 40%"
+    ],
+    "recommendedListAction": "Merge the requested Northern Virginia label into canonical QSP; retain a single active manager-level record and keep all campuses, holdcos and financing entities beneath it."
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0462-qsp-northern-virginia-data-center-jv/attempt-1/research-decision.json",
+      "sha256": "21f8c4daabb90399b8c3dbdf3690ac49bd4ce53d44a5223cdfa7d368060cf54f"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0462-qsp-northern-virginia-data-center-jv/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "173273e94e6cb56d3c27f4d418bea0e15e61b9870deaa3e7f30b3dfa766eedfd"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0462-qsp-northern-virginia-data-center-jv/attempt-1/source-verification.json",
+      "sha256": "487fbf7f011c4dbfde23c806365afcfd77f76a27a451b4c13d98ac03585452bc"
+    },
+    "acceptedResponseSha256": null,
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION"
+  }
+}

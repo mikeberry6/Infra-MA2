@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RELEASE_BUNDLE_PREPARATION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "preparedAt": "2026-09-02T07:08:00.000Z",
+  "authoritative": false,
+  "dependsOn": [
+    "The preceding source-task bundle 434 through 438 must be fully production-verified and source-finalized.",
+    "No release bundle may be active, forming, releasing, applying, verifying or recovering."
+  ],
+  "plannedMembers": [
+    {
+      "taskIndex": 439,
+      "taskId": "ledger:0439:crosslake-fibre:cb475638",
+      "companyName": "Crosslake Fibre",
+      "plannedOutcome": "CORRECT_COMPANY",
+      "reason": "Retain Tiger as an active owner, correct the historical 93.26% Fund II AIV interest without presenting it as a current percentage, and replace the unsupported greater-than-40-owned-PoP claim with the evidenced 25-plus backbone-PoP scope.",
+      "applicationResearchDecisionByteSha256": "79a4af3b218d1db4a916256eca3ebc32cf826d861d0eb74aad1ea4fdf542f8b7"
+    },
+    {
+      "taskIndex": 440,
+      "taskId": "ledger:0440:danskammer-energy:5987da36",
+      "companyName": "Danskammer Energy",
+      "plannedOutcome": "CORRECT_COMPANY",
+      "reason": "Correct Tiger from sole owner to control sponsor, represent the 532 MW plant and Agate relationship accurately, and record the Chapter 11, pending sale/retirement and abandoned repowering facts without inventing a buyer.",
+      "applicationResearchDecisionByteSha256": "c2329c004077b9bcb33147114692a34c194b121283991980fc16e514d50d3e71"
+    },
+    {
+      "taskIndex": 441,
+      "taskId": "ledger:0441:northlink-aviation:bbe08376",
+      "companyName": "NorthLink Aviation",
+      "plannedOutcome": "CORRECT_COMPANY",
+      "reason": "Retain the development-stage airport logistics project, preserve Tiger Fund III as the controlling sponsor, add Alaska Future Fund as a disclosed co-owner, and distinguish the airport lease from project equity and operating status.",
+      "applicationResearchDecisionByteSha256": "dc0567c14a43396fb8d424ef51602df4997955c5eece1f70df251344656f9bb0"
+    },
+    {
+      "taskIndex": 442,
+      "taskId": "ledger:0442:strategic-venue-partners:f4cd44da",
+      "companyName": "Strategic Venue Partners",
+      "plannedOutcome": "CORRECT_COMPANY",
+      "reason": "Retain Tiger Fund II as controlling owner, add Brookfield Infrastructure Structured Solutions as a minority investor from December 2024, correct the founding and Tiger-entry years, and remove an unrelated 2022 source claim.",
+      "applicationResearchDecisionByteSha256": "39946b24ada63edf1f3fb25a6ec5fb27b6f929667b4fa41082218b2c10cefe0e"
+    },
+    {
+      "taskIndex": 443,
+      "taskId": "ledger:0443:summit-carbon-solutions:6d14c660",
+      "companyName": "Summit Carbon Solutions",
+      "plannedOutcome": "CORRECT_COMPANY",
+      "reason": "Retain the development-stage platform under Tiger Fund III, remove TPG from qualifying infrastructure ownership because its investment came from TPG Rise Climate, and update the rerouted, unbuilt project boundary without inferring current investor stakes.",
+      "applicationResearchDecisionByteSha256": "023bc39b22f72508ffd1e4a53c3c3f74db92ac0ea9743b92cdc78a4f99a77ae2"
+    }
+  ],
+  "collisionAnalysis": {
+    "result": "REQUIRES_FRESH_CONTEXT",
+    "reason": "All five planned members are mutations. Their target, ownership, fund, organization, citation, redirect and seed dependencies must be captured together before collision analysis is authoritative."
+  },
+  "sourceCompatibility": {
+    "result": "PASS_FOR_PREPARATION",
+    "reason": "Every research response and direct-source verification artifact validates, but exact primary-citation selection and shared-source compatibility remain proposal-time checks."
+  },
+  "requiredBeforeRelease": [
+    "Recapture one fresh production snapshot and five task/dependency snapshots after the predecessor bundle completes.",
+    "Generate narrow proposal specs from the normalized decisions using NOT_PUBLICLY_DISCLOSED treatment for noncritical unresolved facts.",
+    "Reject or defer any proposal if fresh evidence leaves canonical identity or active ownership materially unresolved.",
+    "Regenerate active-owner seed attribution records and prove one-to-one evaluated-seed coverage.",
+    "Run source, primary-citation, dependency, collision, stale-hash and atomicity checks before automatic authorization.",
+    "Use the protected PR, exact-SHA Vercel deployment, serializable database transaction, receipt, API and rendered-card verification workflow."
+  ]
+}

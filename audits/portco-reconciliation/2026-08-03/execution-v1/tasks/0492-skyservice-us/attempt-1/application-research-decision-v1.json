@@ -1,0 +1,212 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0492:skyservice-us:444ae080",
+  "taskIndex": 492,
+  "companyName": "Skyservice US",
+  "asOfDate": "2026-08-19",
+  "decision": "PROPOSED_MERGE",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-02T07:18:00.000Z",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "Skyservice US",
+    "requestedManagers": [
+      "Instar Asset Management",
+      "InstarAGF"
+    ],
+    "decision": "PROPOSED_MERGE",
+    "confidence": "HIGH",
+    "rationale": "Both tasks describe the same U.S. platform: Leading Edge Jet Center became Skyservice US. Merge the duplicate but retain one U.S. PortCo. Instar still identifies Skyservice Business Aviation and Skyservice US separately; the 2021 rebrand does not prove a U.S.-equity transfer to the Canadian company.",
+    "identityResolution": {
+      "taskIds": [
+        "ledger:0492:skyservice-us:444ae080",
+        "ledger:0493:skyservice-us-formerly-leading-edge-jet-center:49066c79"
+      ],
+      "canonicalKey": "skyservice-us|united-states",
+      "duplicateKey": "skyservice-us-formerly-leading-edge-jet-center|united-states",
+      "sameBusiness": true,
+      "boundary": "One Instar-sponsored U.S. platform: Skyservice US, formerly Leading Edge Jet Center; Leading Edge Jet Midco LLC is evidenced in the U.S. legal group.",
+      "parentMapping": "Keep separate from Canadian Skyservice, with related-brand/operating mapping only; no legal transfer into Skyservice Investments Inc. was found."
+    },
+    "ownershipResolution": {
+      "owners": [
+        {
+          "manager": "Instar Asset Management / InstarAGF",
+          "organization": "Skyservice US / Leading Edge Jet Center",
+          "fund": "InstarAGF Essential Infrastructure Fund II",
+          "vehicle": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "NOT_PUBLICLY_DISCLOSED",
+          "entryDate": "2019-08",
+          "entryYear": 2019,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_AND_HELD"
+        },
+        {
+          "manager": "Instar Asset Management / InstarAGF",
+          "organization": "Skyservice Investments Inc. / Skyservice Business Aviation",
+          "fund": "InstarAGF Essential Infrastructure Fund",
+          "vehicle": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "Majority at entry; current percentage NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2017-09-18",
+          "entryDate": "2017-09-18",
+          "entryYear": 2017,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_AND_HELD"
+        }
+      ],
+      "pending": [],
+      "note": "Canadian-parent majority evidence does not establish the U.S. stake."
+    },
+    "operatingResolution": {
+      "status": "ACTIVE",
+      "history": "Predecessor founded 2005; standalone company established August 2019.",
+      "integration": "Instar says the companies integrated in 2019; LEJC facilities, services and teams rebranded as Skyservice on 2021-11-09.",
+      "treatment": "Keep Kenmore, Exec Air Montana/Montana Medical Transport, sites, leases, hangars and later developments beneath Skyservice US."
+    },
+    "acquisitionExitCheck": {
+      "result": "No later sale, recapitalization, sponsor exit, transfer or signed pending deal found through 2026-08-19; Instar still treats Skyservice US as active.",
+      "pending": []
+    },
+    "milestones": [
+      {
+        "date": "2017-09-18",
+        "event": "Canadian investment: InstarAGF Essential Infrastructure Fund bought a majority of Skyservice Investments Inc.; not evidence of the U.S. stake."
+      },
+      {
+        "date": "2019-08",
+        "event": "LEJC became standalone; transaction reporting says Fund II acquired it."
+      },
+      {
+        "date": "2020-09-29/2020-12-30",
+        "event": "Kenmore and Exec Air Montana/Montana Medical Transport acquired as add-ons."
+      },
+      {
+        "date": "2021-11-09",
+        "event": "Four LEJC sites rebranded as Skyservice; no ownership transfer disclosed."
+      }
+    ],
+    "evidence": [
+      {
+        "label": "Instar Q3 2025 fact sheet",
+        "url": "https://instarinvest.com/assets/files/strategy/Instar-Fact-Sheet-Q3-2025.pdf",
+        "purpose": "LEJC=Skyservice US; 2017/2019 dates; 2019 integration.",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "Instar team page",
+        "url": "https://instarinvest.com/kingston-fyffe-white/",
+        "purpose": "Lists Skyservice Business Aviation and Skyservice US separately.",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "2017 InstarAGF release",
+        "url": "https://www.globenewswire.com/news-release/2017/09/18/1124082/0/en/instaragf-essential-infrastructure-fund-partners-with-skyservice.html",
+        "purpose": "Canadian-parent fund, majority stake and date.",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "2019 Fund II report",
+        "url": "https://www.infrastructureinvestor.com/instaragf-announces-fund-iis-second-investment-final-close-nears/",
+        "purpose": "Reports Fund II bought LEJC in August 2019.",
+        "sourceTier": "T2",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Kenmore release",
+        "url": "https://www.globenewswire.com/news-release/2020/09/29/2100789/0/en/Leading-Edge-Jet-Center-Expands-its-Business-Aviation-Footprint.html",
+        "purpose": "Kenmore add-on; 2005/August 2019 history.",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Exec Air Montana release",
+        "url": "https://www.globenewswire.com/news-release/2020/12/30/2151751/0/en/leading-edge-jet-center-enters-the-mountain-west-region.html",
+        "purpose": "Correct Helena target/date and included entity.",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Skyservice rebrand",
+        "url": "https://www.skyservice.com/news/skyservice-business-aviation-expands-to-the-united-states/",
+        "purpose": "Four-site LEJC rebrand on 2021-11-09.",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Napa County record",
+        "url": "https://napa.legistar.com/LegislationDetail.aspx?From=RSS&FullText=1&GUID=63B77815-9C59-47EF-B86A-833B5F635248&ID=7700175",
+        "purpose": "U.S. parent-level holdco/financing evidence.",
+        "sourceTier": "T1",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "before": [
+        "Two U.S. records",
+        "Unclear Canadian/U.S. boundary",
+        "Helena Aviation Services/January 2021 claim"
+      ],
+      "after": [
+        "One U.S. PortCo; LEJC is former name",
+        "Separate from Canadian record; brand mapping only",
+        "Kenmore 2020-09-29; Exec Air Montana 2020-12-30; U.S. stake undisclosed"
+      ]
+    },
+    "excludedOrDuplicateCandidates": [
+      {
+        "candidate": "Skyservice US (formerly LEJC)",
+        "action": "MERGE",
+        "reason": "Duplicate."
+      },
+      {
+        "candidate": "Skyservice Business Aviation Inc.",
+        "action": "KEEP_SEPARATE_RELATED",
+        "reason": "Separate Canadian investment; branding does not prove legal parentage."
+      },
+      {
+        "candidate": "Kenmore, Exec Air Montana/Montana Medical Transport, sites, leases, hangars, greenfields",
+        "action": "KEEP_BENEATH_US_PLATFORM",
+        "reason": "Add-ons/assets."
+      }
+    ],
+    "unresolvedQuestions": [
+      "Exact U.S. stake, co-investor cap table and acquisition vehicle.",
+      "Any undisclosed internal reorganization placing the U.S. holdco under a Canadian entity."
+    ],
+    "recommendedListAction": "Merge task 0493 into 0492 and redirect its key to skyservice-us|united-states. Retain one active Instar U.S. PortCo, record LEJC as former name, cross-reference Canadian Skyservice as related/common-sponsored, and keep all locations and add-ons beneath the U.S. platform."
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0492-skyservice-us/attempt-1/research-decision.json",
+      "sha256": "4ca244210083a778cd5b1b3290baca70041c804c54ecb366770d997ebd8e9597"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0492-skyservice-us/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "4db6b89af8208ded7e4bc1ad196e24410d3f56fa2dd5843ef554919078f8ba47"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0492-skyservice-us/attempt-1/source-verification.json",
+      "sha256": "c85d68d6d641a86b9877035c6e60114675564b683fc6ee0d17a1ab0bb306407f"
+    },
+    "acceptedResponseSha256": null,
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION"
+  }
+}
