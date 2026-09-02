@@ -1,0 +1,268 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0420:akumin:becd83c7",
+  "taskIndex": 420,
+  "companyName": "Akumin",
+  "generatedAt": "2026-09-02T02:51:40.178Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0420-akumin/attempt-1/locked-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 420,
+    "taskId": "ledger:0420:akumin:becd83c7",
+    "canonicalKey": "akumin|united-states",
+    "companyName": "Akumin",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 90,
+    "managers": [
+      "Stonepeak"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "090-stonepeak:repo-only:001:akumin"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjnf3019kivhenngd3wrq"
+    ],
+    "seedKeys": [
+      "akumin|United States"
+    ],
+    "evidenceUrls": [
+      "https://akumin.com/newsroom/press-releases/akumin-inc-completes-deleveraging-transaction-becomes-a-private-company-wholly-owned-by-stonepeak/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Stonepeak OUT_OF_SCOPE: Credit-originated healthcare services platform not core infrastructure equity.",
+    "unresolvedQuestions": [
+      "Confirm whether the manager ownership, the company itself, or only this census scope is out of scope before proposing any change."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjnf3019kivhenngd3wrq",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "akumin|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjnf3019kivhenngd3wrq",
+    "name": "Akumin",
+    "aliases": [],
+    "sector": "SOCIAL_INFRA",
+    "subsector": "Outpatient imaging and radiation oncology services",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Akumin provides outpatient diagnostic imaging, radiation oncology, and related clinical support services across the United States. Its customers include hospitals, health systems, physician groups, and patients that outsource or partner for imaging center operations, mobile imaging, and oncology services. The business combines owned and managed clinical sites with mobile and relocatable assets, giving it a mixed operating model with both asset-heavy and service-based characteristics. Public materials describe a national network of more than 180 centers and one of the largest mobile imaging fleets in the country, with partnerships spanning hundreds of healthcare organizations. Stonepeak agreed to acquire Akumin in 2023 and completed a deleveraging transaction that made the company a wholly owned private business in February 2024.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Multi-state United States",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk9zd0297ivhekdpx454w",
+        "managerName": "Stonepeak",
+        "organizationName": "Stonepeak",
+        "fundName": "Stonepeak Fund V",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmor10568ivheue396ggr",
+        "date": "2021",
+        "event": "Akumin completed its acquisition of Alliance HealthCare Services.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmorl0569ivhef4tibh4b",
+        "date": "Oct 2023",
+        "event": "Akumin announced a deleveraging transaction and agreement to become privately held under Stonepeak ownership.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-10-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmos6056aivhe3b980m2h",
+        "date": "Feb 2024",
+        "event": "Akumin completed the transaction and became wholly owned by Stonepeak.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-02-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsr500d2jivheq1lai5g3",
+        "label": "Akumin — Akumin",
+        "url": "https://akumin.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Akumin company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpsr630d2livhe8u9e0c25",
+        "label": "Akumin — Akumin",
+        "url": "https://akumin.com/about-us/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Akumin company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsr760d2nivheqra89h6g",
+        "label": "Close date source — Stonepeak — Akumin",
+        "url": "https://akumin.com/newsroom/press-releases/akumin-inc-completes-deleveraging-transaction-becomes-a-private-company-wholly-owned-by-stonepeak/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Stonepeak closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsr870d2pivhehpdgd5o8",
+        "label": "SEC — Akumin",
+        "url": "https://www.sec.gov/Archives/edgar/data/1823527/000119312523127544/d448120d20f.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "SEC filing",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Akumin",
+    "investmentFirm": "Stonepeak",
+    "sector": "Social Infra",
+    "subsector": "Outpatient imaging and radiation oncology services",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "Akumin provides outpatient diagnostic imaging, radiation oncology, and related clinical support services across the United States. Its customers include hospitals, health systems, physician groups, and patients that outsource or partner for imaging center operations, mobile imaging, and oncology services. The business combines owned and managed clinical sites with mobile and relocatable assets, giving it a mixed operating model with both asset-heavy and service-based characteristics. Public materials describe a national network of more than 180 centers and one of the largest mobile imaging fleets in the country, with partnerships spanning hundreds of healthcare organizations. Stonepeak agreed to acquire Akumin in 2023 and completed a deleveraging transaction that made the company a wholly owned private business in February 2024.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2024,
+    "headquarters": "Multi-state United States",
+    "milestones": [
+      {
+        "date": "2021",
+        "event": "Akumin completed its acquisition of Alliance HealthCare Services.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Oct 2023",
+        "event": "Akumin announced a deleveraging transaction and agreement to become privately held under Stonepeak ownership.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Feb 2024",
+        "event": "Akumin completed the transaction and became wholly owned by Stonepeak.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Akumin — Akumin",
+        "url": "https://akumin.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Akumin — Akumin",
+        "url": "https://akumin.com/about-us/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Close date source — Stonepeak — Akumin",
+        "url": "https://akumin.com/newsroom/press-releases/akumin-inc-completes-deleveraging-transaction-becomes-a-private-company-wholly-owned-by-stonepeak/",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "SEC — Akumin",
+        "url": "https://www.sec.gov/Archives/edgar/data/1823527/000119312523127544/d448120d20f.htm",
+        "type": "SEC_FILING",
+        "purpose": "FINANCING_FILINGS"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Stonepeak",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2024,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj3od00fcivhex940ue39",
+        "fundName": "Stonepeak Fund V",
+        "managerId": "cmrxpide6003hivhe1g17rhjr",
+        "updatedAt": "2026-08-03T17:26:04.203Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpide6003hivhe1g17rhjr",
+        "name": "Stonepeak",
+        "updatedAt": "2026-07-23T16:09:24.559Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0420:akumin:becd83c7",
+    "taskIndex": 420,
+    "canonicalKey": "akumin|united-states",
+    "capturedAt": "2026-09-02T02:51:40.178Z",
+    "databaseRevision": "revision:1ef7dd1e8dcf53187822d1b0cafcad8cb481fa8b1bbef0e8b9c622a10e4ff48c",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "53d3a30742263014ca661baf53ece9702f0ea75820b926c098656425433470dc",
+    "productionSnapshotSha256": "e684d4c85bbc5ff4824d7e6bba85ab488acb77224a887a08a24c0e02df36abad",
+    "targetCompanySnapshotSha256": "4b12b7c0683f0a46e2c8e781002171555ea7431893d358eee3dc91f991eea2d1",
+    "seedEntrySha256": "39a99be7791c2ff47434bb104697ee1556de4a924d049dc01a82830c0282ff63",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "79d0905616dd6e89a1875ab53129ae4f234fc372277ec952ea97461ae4939d4c",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "84071771646c734efe78257774040877a494cd73dec6f7d89c06a6bc36d7e376",
+      "organizationsSha256": "e8297eb9e5894678d9f04b1a861726fe3c63b2433e6430ea5f214025943bcba5",
+      "citationsSha256": "a3cef2e26d5895d68822f3c6d626c1cf146df36352cc7481c7315d604bd214d8",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "21b84a64339730c67d3019ccd4b627264fdcd1ad89acf48c5ab524050b4afb9a",
+    "stateSha256": "32bd1da9e8b10eadf3d938983da96c0c9afdea7874d6613ec6678aa9d5e557f3",
+    "taskSnapshotSha256": "2aa30be4fc60ae2652265e6b80c2714687465ebdbe49eeb3b5597949291db5e4"
+  },
+  "contextSha256": "f289e99da0dcae34377816613d8f59afa265da0e5bb738e7d8b8a076663d1dbb"
+}

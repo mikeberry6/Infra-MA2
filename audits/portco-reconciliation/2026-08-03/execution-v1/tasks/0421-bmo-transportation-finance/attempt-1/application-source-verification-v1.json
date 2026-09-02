@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0421:bmo-transportation-finance:551a3f7b",
+  "checkedAt": "2026-09-02T02:59:02.000Z",
+  "method": "Independent direct HTTPS status, redirect, byte-length and content-hash checks plus current closing search.",
+  "sources": [
+    {
+      "url": "https://newsroom.bmo.com/2026-05-11-BMO-Announces-Strategic-Sale-of-Transportation-and-Vendor-Finance-Businesses",
+      "httpStatus": 200,
+      "finalUrl": "https://newsroom.bmo.com/2026-05-11-BMO-Announces-Strategic-Sale-of-Transportation-and-Vendor-Finance-Businesses",
+      "bytes": 908329,
+      "sha256": "7ede6cc0df8cfe2d1a2fd4b01576a332f9db2aa9590750ff24e3316c6ed993d0",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "The perimeter is BMO's transportation and vendor equipment-finance businesses and related loans and leases.",
+        "The transaction was announced as signed with closing expected in fiscal Q4 2026."
+      ]
+    },
+    {
+      "url": "https://stonepeak.com/news/stonepeak-to-acquire-bmo-transportation-and-vendor-finance",
+      "httpStatus": 200,
+      "finalUrl": "https://stonepeak.com/news/stonepeak-to-acquire-bmo-transportation-and-vendor-finance",
+      "bytes": 37725,
+      "sha256": "e2db9d6ad1d7bd0ea06a8746de431d853c8c45988d4b421a46e31719f9c35f75",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Stonepeak describes the target as an asset-leasing and commercial-equipment-finance business."
+      ]
+    }
+  ],
+  "closingSearch": "No primary-source closing confirmation or successor operating-platform identity was identified through September 2, 2026.",
+  "allEvidenceUrlsDirectHttps": true,
+  "allSourcesWorkingOrVerified": true,
+  "deadSourceCount": 0
+}

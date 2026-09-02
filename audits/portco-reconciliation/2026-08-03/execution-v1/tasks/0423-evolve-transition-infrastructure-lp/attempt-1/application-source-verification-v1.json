@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0423:evolve-transition-infrastructure-lp:984248b3",
+  "checkedAt": "2026-09-02T02:59:02.000Z",
+  "method": "Independent direct HTTPS status, redirect, byte-length and content-hash checks plus current ownership and exit review.",
+  "sources": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1656530/000090514815000931/efc15-727_sc13d.htm",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1656530/000090514815000931/efc15-727_sc13d.htm",
+      "bytes": 301537,
+      "sha256": "cd26ed931bd6890829b82b7b989466e484e3ec8fa37eed12fd8b3744048be0a3",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Stonepeak's $350 million private preferred investment closed on October 14, 2015."
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1362705/000110465924002758/tm242453d1_ex99-a3.htm",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1362705/000110465924002758/tm242453d1_ex99-a3.htm",
+      "bytes": 463761,
+      "sha256": "460eb8c2e2a6663ea9879c6b633939539cd8d6b80d7ed9b5057c9290c3a7a389",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Stonepeak acquired GP control in 2020 and completed the limited-call take-private process in 2024."
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1362705/000136270524000034/evolve-20240216.htm",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1362705/000136270524000034/evolve-20240216.htm",
+      "bytes": 25206,
+      "sha256": "59d354aa72ee8b7eeebc81d3cc01b6734723783425c2788d629d8e32fe9a3294",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "The limited call closed February 16, 2024 and eliminated unaffiliated economic interests."
+      ]
+    },
+    {
+      "url": "https://stonepeak.com/investments",
+      "httpStatus": 200,
+      "finalUrl": "https://stonepeak.com/investments",
+      "bytes": 303186,
+      "sha256": "4f0a72952bb2b8608989bf7b9830cb25487feb19eedc5bf3fd053b964cfd9224",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Stonepeak continues to list Evolve as a current investment."
+      ]
+    }
+  ],
+  "exitSearch": "No later Stonepeak sale, liquidation, change of control or signed pending ownership transaction was identified through September 2, 2026.",
+  "allEvidenceUrlsDirectHttps": true,
+  "allSourcesWorkingOrVerified": true,
+  "deadSourceCount": 0
+}

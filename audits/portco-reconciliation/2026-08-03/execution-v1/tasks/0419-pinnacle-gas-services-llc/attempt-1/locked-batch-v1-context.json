@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0419:pinnacle-gas-services-llc:94e9c671",
+  "taskIndex": 419,
+  "companyName": "Pinnacle Gas Services LLC",
+  "generatedAt": "2026-09-02T02:51:38.556Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0419-pinnacle-gas-services-llc/attempt-1/locked-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 419,
+    "taskId": "ledger:0419:pinnacle-gas-services-llc:94e9c671",
+    "canonicalKey": "pinnacle-gas-services-llc|united-states",
+    "companyName": "Pinnacle Gas Services LLC",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 88,
+    "managers": [
+      "Sixth Street"
+    ],
+    "actionScopes": {
+      "company": [
+        "CREATE_COMPANY"
+      ],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "088-sixth-street:holding:001:pinnacle-gas-services-llc"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://sixthstreet.com/investment_announce/comstock-announces-600-million-strategic-investment-by-sixth-street-in-pinnacle-gas-services/",
+      "https://www.sec.gov/Archives/edgar/data/23194/000119312526272060/crk-20260615.htm"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "No exact normalized production or seed match exists. Census evidence supports a new canonical company with 1 manager holding record(s).",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "pinnacle-gas-services-llc|united-states",
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0419:pinnacle-gas-services-llc:94e9c671",
+    "taskIndex": 419,
+    "canonicalKey": "pinnacle-gas-services-llc|united-states",
+    "capturedAt": "2026-09-02T02:51:38.556Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "52c3724028127784269324c4193843429cca4b8c458d39377eb5ef0bbfd06f02",
+    "productionSnapshotSha256": "2dabef8dad03d122556973a3c342dabca881bd02efc8e5d179062a8784edfb49",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "7162f023548431ed1fed51e43a93e8e1e0a46df9edc0adf314307e96f61f1312",
+    "stateSha256": "93eac09c6d0ffa9a684fa5312079ec96f9083eaf92ea757724e99ecbb7ea5931",
+    "taskSnapshotSha256": "bdc697f249a48b5e01b483c56cb604f102966b64d7fddcd49a05effe4de7c95e"
+  },
+  "contextSha256": "64c6ef13686920bc9a70d38d516b3d532f152b480169f65461f8b0acf834878e"
+}

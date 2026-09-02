@@ -1,0 +1,185 @@
+{
+  "generatedAt": "2026-09-02T02:59:02.000Z",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "reviewedSeedRetirementTaskIds": [],
+  "rationale": "Correct the existing CoreSite record to include American Tower's controlling ownership, Stonepeak's last-reported common and preferred interests, and predecessor ownership. Preserve the fully converted 64%/36% ratio as expected economics rather than asserting an unconfirmed conversion completion.",
+  "evidence": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1053507/000105350726000133/amt-20260630.htm",
+      "purpose": "Current ownership and security evidence.",
+      "supports": [
+        "American Tower held 71% of common equity",
+        "Stonepeak held 29% of common equity plus all mandatory convertible preferred interests",
+        "CoreSite comprises American Tower's U.S. data-center segment"
+      ]
+    },
+    {
+      "url": "https://stonepeak.com/news/american-tower-partners-with-stonepeak-in-u-s-data-center-business",
+      "purpose": "Initial Stonepeak investment and platform-boundary evidence.",
+      "supports": [
+        "Stonepeak invested in the U.S. data-center platform in 2022",
+        "American Tower retained control"
+      ]
+    },
+    {
+      "url": "https://stonepeak.com/news/stonepeak-upsizes-investment-in-american-towers-data-center-business",
+      "purpose": "Upsize closing and fully converted economics.",
+      "supports": [
+        "The upsize closed on October 20, 2022",
+        "Stonepeak's total investment reached $3.07 billion and approximately 36% fully converted"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "companyFieldUpdates": {
+    "aliases": [
+      "CoreSite, An American Tower Company",
+      "CoreSite Realty Corporation",
+      "CRG West"
+    ],
+    "website": "https://www.coresite.com/",
+    "yearFounded": 2001,
+    "headquarters": "Denver, Colorado",
+    "description": "CoreSite operates American Tower's U.S. data-center platform, providing colocation, interconnection, cloud connectivity and hybrid-IT services across major U.S. markets. At June 30, 2026, American Tower held 71% and Stonepeak held 29% of the platform's common equity; Stonepeak also held all outstanding mandatory convertible preferred interests. On a fully converted basis, the parties disclosed expected economics of approximately 64% American Tower and 36% Stonepeak, but a completed conversion has not been publicly confirmed.",
+    "lastVerifiedAt": "2026-09-02T00:00:00.000Z"
+  },
+  "ownershipPeriodUpdates": [
+    {
+      "id": "cmrxpka25029civhe0m654niq",
+      "set": {
+        "managerName": "Stonepeak",
+        "organizationName": "Stonepeak",
+        "fundName": null,
+        "vehicleName": "Platform common and mandatory convertible preferred interests; exact investment vehicles not publicly disclosed",
+        "stake": "29% common plus all mandatory convertible preferred interests at June 30, 2026; approximately 36% on a fully converted basis",
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    }
+  ],
+  "ownershipPeriodRemovals": [],
+  "ownershipPeriodAdditions": [
+    {
+      "id": null,
+      "managerName": "American Tower Corporation",
+      "organizationName": null,
+      "fundName": null,
+      "vehicleName": "American Tower U.S. data-center holding companies",
+      "stake": "71% common at June 30, 2026; approximately 64% on a fully converted basis",
+      "investmentYear": 2021,
+      "exitYear": null,
+      "isActive": true,
+      "transactionState": "CLOSED_ACTIVE"
+    },
+    {
+      "id": null,
+      "managerName": "The Carlyle Group",
+      "organizationName": null,
+      "fundName": null,
+      "vehicleName": "Carlyle-affiliated predecessor interests; exact funds not publicly disclosed",
+      "stake": "Former founder and sponsor interests; exact historical percentage not publicly disclosed",
+      "investmentYear": 2000,
+      "exitYear": 2021,
+      "isActive": false,
+      "transactionState": "REALIZED"
+    },
+    {
+      "id": null,
+      "managerName": "Public market",
+      "organizationName": null,
+      "fundName": null,
+      "vehicleName": "NYSE:COR common shares",
+      "stake": "Former public float acquired for $170 per share",
+      "investmentYear": 2010,
+      "exitYear": 2021,
+      "isActive": false,
+      "transactionState": "REALIZED"
+    }
+  ],
+  "pendingOwnershipTransactionUpdates": [],
+  "pendingOwnershipTransactionAdditions": [],
+  "milestoneUpdates": [
+    {
+      "id": "cmrxpmp5t056rivheyvfo25id",
+      "set": {
+        "date": "Dec 28, 2021",
+        "event": "American Tower completed its approximately $10.1 billion acquisition of CoreSite and took the platform private.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-12-28T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1490892/000110465921153950/tm2136323d5_posam.htm"
+        ]
+      }
+    },
+    {
+      "id": "cmrxpmp6e056sivhekya77peb",
+      "set": {
+        "date": "Aug 2022",
+        "event": "Stonepeak completed its initial $2.5 billion minority investment in American Tower's U.S. data-center platform.",
+        "category": "FINANCING",
+        "sortDate": "2022-08-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://stonepeak.com/news/american-tower-partners-with-stonepeak-in-u-s-data-center-business"
+        ]
+      }
+    },
+    {
+      "id": "cmrxpmp71056tivhehfruurin",
+      "set": {
+        "date": "Oct 20, 2022",
+        "event": "Stonepeak closed a $570 million upsize, bringing its total investment to $3.07 billion and expected fully converted economics to approximately 36%.",
+        "category": "FINANCING",
+        "sortDate": "2022-10-20T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://stonepeak.com/news/stonepeak-upsizes-investment-in-american-towers-data-center-business"
+        ]
+      }
+    }
+  ],
+  "milestoneTransfers": [],
+  "citationUpdates": [
+    {
+      "id": "cmrxpsruz0d3mivhe8ctxi7hw",
+      "set": {
+        "isPrimary": false
+      }
+    },
+    {
+      "id": "cmrxpsrx50d3qivhe5f15roh1",
+      "set": {
+        "label": "Stonepeak — CoreSite investment upsize",
+        "url": "https://stonepeak.com/news/stonepeak-upsizes-investment-in-american-towers-data-center-business",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "October 2022 upsize closing and fully converted economics"
+      }
+    }
+  ],
+  "citationAdditions": [
+    {
+      "id": null,
+      "label": "American Tower — Q2 2026 Form 10-Q",
+      "url": "https://www.sec.gov/Archives/edgar/data/1053507/000105350726000133/amt-20260630.htm",
+      "sourceType": "SEC_FILING",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Latest common split, preferred interests and platform scale",
+      "isPrimary": true
+    },
+    {
+      "id": null,
+      "label": "CoreSite — December 2021 merger filing",
+      "url": "https://www.sec.gov/Archives/edgar/data/1490892/000110465921153950/tm2136323d5_posam.htm",
+      "sourceType": "SEC_FILING",
+      "purpose": "MILESTONE_EVENT",
+      "evidenceLabel": "American Tower take-private closing and successor legal chain",
+      "isPrimary": false
+    }
+  ]
+}

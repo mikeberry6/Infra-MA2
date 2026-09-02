@@ -1,0 +1,357 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0423:evolve-transition-infrastructure-lp:984248b3",
+  "taskIndex": 423,
+  "asOfDate": "2026-09-02",
+  "generatedAt": "2026-09-02T02:59:02.000Z",
+  "canonicalKey": "evolve-transition-infrastructure-lp|united-states",
+  "companyName": "Evolve Transition Infrastructure LP",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER"
+  ],
+  "sourceHoldingIds": [],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Correct Evolve's predecessor identity, Stonepeak ownership chronology and current asset perimeter. Preserve the 2015 preferred investment, the 2020 transfer of GP control and the 2024 elimination of the public float without treating sold or dissolved projects as current assets.",
+  "evidence": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1656530/000090514815000931/efc15-727_sc13d.htm",
+      "purpose": "Initial Stonepeak investment evidence.",
+      "supports": [
+        "Stonepeak's $350 million preferred investment closed October 14, 2015",
+        "The investment was private equity rather than debt-only exposure"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1362705/000110465924002758/tm242453d1_ex99-a3.htm",
+      "purpose": "Control and take-private history.",
+      "supports": [
+        "Stonepeak acquired GP control on September 7, 2020",
+        "The 2024 limited call eliminated the unaffiliated public float"
+      ]
+    },
+    {
+      "url": "https://stonepeak.com/investments",
+      "purpose": "Current ownership and operating-platform evidence.",
+      "supports": [
+        "Stonepeak continues to list Evolve as a current investment",
+        "Evolve remains an operating U.S. midstream platform"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "a15b87e0b549a043c3cebb99c236cd22ac9413501d6f7cb7bc811b15163ae7c0",
+  "currentCompanySnapshotSha256": "0ebf7cfd4f351920611710a9ab80f2f227d86325370a54ee260580a308d10a83",
+  "executionLock": {
+    "taskSnapshotSha256": "5f14ef518ea223a9e9762911192fb93449acd62867067f0fae7c70605315fbc7",
+    "taskStateSha256": "7767f97626f4d8f02b274f91c2b1cb9ba5a0bd37d93b32e6a4fd17f018ab5922",
+    "taskDependencySha256": "9f19f7994b4b2c45add7d8e8e5a1af9e4fe95f110f75a9d665d5dbef97e729dd",
+    "seedEntrySha256": "a94463c5007427becfad630797ec0f38e3d25dd00166b0fbb8d5d58bd4618b01",
+    "dependencies": {
+      "ownershipPeriodsSha256": "ce0e01738bdc9d817e95c3325e3465064b92ab3eeee9582372db36fd4b148834",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "2d210a6d2e804e470241d60da76a7c908003fe5cb1a16d50287bd5e3ed572180",
+      "organizationsSha256": "e8297eb9e5894678d9f04b1a861726fe3c63b2433e6430ea5f214025943bcba5",
+      "citationsSha256": "b0f92a78ccf6322aa0fe49cba498bb62a4e26b668522915903f7fce90aa7546e",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj3nu00fbivhebtp8thxg",
+        "fundName": "Stonepeak Core Fund",
+        "managerId": "cmrxpide6003hivhe1g17rhjr",
+        "updatedAt": "2026-07-23T16:09:58.602Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpide6003hivhe1g17rhjr",
+        "name": "Stonepeak",
+        "updatedAt": "2026-07-23T16:09:24.559Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjnio019rivhexvojn1z4",
+    "name": "Evolve Transition Infrastructure LP",
+    "aliases": [],
+    "sector": "MIDSTREAM",
+    "subsector": "Energy transition infrastructure and lower-carbon fuels assets",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Evolve Transition Infrastructure LP is a Houston-based partnership focused on infrastructure that supports the lower-carbon energy transition. Its assets and development activities span natural gas gathering and processing, pipelines, and renewable fuels-related infrastructure, serving industrial and energy counterparties rather than retail customers. The platform combines owned midstream assets with development-stage projects, resulting in a mix of contracted infrastructure exposure and project execution risk. Stonepeak's investment materials describe South Texas natural gas infrastructure and renewable fuels partnerships as part of the company's operating footprint. Stonepeak has backed the platform since at least 2021, but the current ownership percentage is not publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2005,
+    "headquarters": "Texas",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpka38029eivhemu75quzd",
+        "managerName": "Stonepeak",
+        "organizationName": "Stonepeak",
+        "fundName": "Stonepeak Core Fund",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2015,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmpd6056yivhebiedpcnf",
+        "date": "2005",
+        "event": "Evolve Transition Infrastructure LP was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2005-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmpdq056zivheziyuh5wh",
+        "date": "2015",
+        "event": "Stonepeak invested in the gathering system acquisition from Sanchez Energy for $346 million.",
+        "category": "FINANCING",
+        "sortDate": "2015-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmpea0570ivhe6233sgpe",
+        "date": "Aug 2021",
+        "event": "Evolve and Stonepeak announced the Levo joint venture to pursue electric fleet infrastructure.",
+        "category": "OTHER",
+        "sortDate": "2021-08-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmpep0571ivheb90sphj9",
+        "date": "Nov 2021",
+        "event": "Evolve and HOBO Renewable Diesel announced an agreement to develop renewable fuels projects.",
+        "category": "OTHER",
+        "sortDate": "2021-11-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpss3k0d42ivheqc5r7yp9",
+        "label": "Stonepeak — Evolve Transition Infrastructure LP",
+        "url": "https://stonepeak.com/category/news/portfolio/page/2",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Stonepeak operations / asset details",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpss4m0d44ivhe3bhd92qo",
+        "label": "Stonepeak — Evolve Transition Infrastructure LP",
+        "url": "https://stonepeak.com/investments",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Stonepeak company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpss8d0d46ivhe7l3isoez",
+        "label": "Evolveinfra — Evolve Transition Infrastructure LP",
+        "url": "https://evolveinfra.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Evolveinfra company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpss9f0d48ivheb6aog9ie",
+        "label": "SEC — Evolve Transition Infrastructure LP",
+        "url": "https://www.sec.gov/Archives/edgar/data/1796514/000121390024009922/ea192804-s3_evolvetransition.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "SEC filing",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "0ebf7cfd4f351920611710a9ab80f2f227d86325370a54ee260580a308d10a83",
+  "afterImage": {
+    "id": "cmrxpjnio019rivhexvojn1z4",
+    "name": "Evolve Transition Infrastructure LP",
+    "aliases": [
+      "Constellation Energy Partners",
+      "Sanchez Production Partners",
+      "Sanchez Midstream Partners",
+      "CEP",
+      "SPP",
+      "SNMP"
+    ],
+    "sector": "MIDSTREAM",
+    "subsector": "Natural gas gathering, processing and transportation",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Evolve Transition Infrastructure LP is a private, Stonepeak-controlled U.S. midstream platform whose current disclosed operating perimeter comprises the Catarina gathering system and the Seco pipeline in South Texas. Stonepeak entered through a $350 million private preferred-equity investment in 2015, acquired general-partner control on September 7, 2020 and obtained all remaining economic interests when the unaffiliated public float was cashed out on February 16, 2024. Carnero, HOBO and Levo are former, terminated or dissolved investments and are not current Evolve assets.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2005,
+    "headquarters": "Houston, Texas",
+    "lastVerifiedAt": "2026-09-02T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpka38029eivhemu75quzd",
+        "managerName": "Stonepeak",
+        "organizationName": "Stonepeak",
+        "fundName": null,
+        "vehicleName": "Stonepeak Catarina Holdings LLC; Stonepeak Infrastructure Fund (Orion AIV) LP",
+        "stake": "Preferred equity from 2015; GP control from September 7, 2020; all economic interests from February 16, 2024",
+        "investmentYear": 2015,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Constellation/Exelon",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Constellation Energy Partners Management and Holdings entities",
+        "stake": "Former sponsor and control owner; exact historical percentage varied",
+        "investmentYear": 2005,
+        "exitYear": 2014,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      },
+      {
+        "id": null,
+        "managerName": "Sanchez sponsor group",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Sanchez Energy Partners I LP and SP Holdings LLC",
+        "stake": "Former sponsor and GP control owner; exact historical percentage varied",
+        "investmentYear": 2013,
+        "exitYear": 2020,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      },
+      {
+        "id": null,
+        "managerName": "Public market",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "CEP, SPP, SNMP and Evolve common units",
+        "stake": "Former unaffiliated public float; 18.4% immediately before the limited call",
+        "investmentYear": 2006,
+        "exitYear": 2024,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmpd6056yivhebiedpcnf",
+        "date": "2005",
+        "event": "Constellation formed the partnership that later became Evolve Transition Infrastructure LP.",
+        "category": "FOUNDING",
+        "sortDate": "2005-01-01T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1362705/000136270515000010/spp-20141231x10k.htm"
+        ]
+      },
+      {
+        "id": "cmrxpmpdq056zivheziyuh5wh",
+        "date": "Oct 14, 2015",
+        "event": "Stonepeak closed a $350 million private preferred-equity investment; the separate Catarina asset purchase was approximately $345.8 million.",
+        "category": "FINANCING",
+        "sortDate": "2015-10-14T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1656530/000090514815000931/efc15-727_sc13d.htm"
+        ]
+      },
+      {
+        "id": "cmrxpmpea0570ivhe6233sgpe",
+        "date": "Sep 7, 2020",
+        "event": "Stonepeak acquired Evolve's general partner, incentive distribution rights and sponsor common interests, obtaining control of the partnership.",
+        "category": "ACQUISITION",
+        "sortDate": "2020-09-07T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1362705/000110465924002758/tm242453d1_ex99-a3.htm"
+        ]
+      },
+      {
+        "id": "cmrxpmpep0571ivheb90sphj9",
+        "date": "Feb 16, 2024",
+        "event": "Stonepeak completed the limited call, cashed out the unaffiliated public float and obtained all remaining economic interests; public trading ended.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-02-16T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1362705/000136270524000034/evolve-20240216.htm"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpss3k0d42ivheqc5r7yp9",
+        "label": "Stonepeak — Evolve Transition Infrastructure LP",
+        "url": "https://stonepeak.com/investments",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current Stonepeak ownership and operating-platform description",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpss4m0d44ivhe3bhd92qo",
+        "label": "Stonepeak — 2015 Evolve ownership filing",
+        "url": "https://www.sec.gov/Archives/edgar/data/1656530/000090514815000931/efc15-727_sc13d.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "2015 private preferred investment, vehicle and closing",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpss8d0d46ivhe7l3isoez",
+        "label": "Evolve — 2024 Schedule 13E-3",
+        "url": "https://www.sec.gov/Archives/edgar/data/1362705/000110465924002758/tm242453d1_ex99-a3.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Complete control, security and take-private history",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpss9f0d48ivheb6aog9ie",
+        "label": "Evolve — February 2024 closing filing",
+        "url": "https://www.sec.gov/Archives/edgar/data/1362705/000136270524000034/evolve-20240216.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Limited-call closing and elimination of the public float",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Evolve — 2014 predecessor Form 10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1362705/000136270515000010/spp-20141231x10k.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Constellation-to-Sanchez predecessor and sponsor history",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "9dd35c25dbda6b0cdd6171ed36a237c13f680f183029fabe1b587dbae0abea8f",
+  "proposalSha256": "ae122ec8c9690921bbe2414c2b36d63c983cb07b0f91c878217370ac901777fa"
+}

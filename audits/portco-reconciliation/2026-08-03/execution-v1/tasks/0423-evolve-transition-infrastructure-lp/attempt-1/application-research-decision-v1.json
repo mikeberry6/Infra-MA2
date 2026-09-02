@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0423:evolve-transition-infrastructure-lp:984248b3",
+  "taskIndex": 423,
+  "companyName": "Evolve Transition Infrastructure LP",
+  "asOfDate": "2026-09-02",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-02T02:59:02.000Z",
+  "result": {
+    "decision": "PROPOSED_CORRECTION",
+    "rationale": "Retain one Evolve record but correct its predecessor aliases, operating perimeter and ownership chronology. Stonepeak entered through private preferred equity in 2015, acquired general-partner control on September 7, 2020 and eliminated the unaffiliated public float on February 16, 2024. Catarina and Seco remain the disclosed platform; Carnero, HOBO and Levo are not current assets.",
+    "evidence": [
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/1656530/000090514815000931/efc15-727_sc13d.htm",
+        "purpose": "Stonepeak's 2015 private preferred investment, vehicle, amount and closing."
+      },
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/1362705/000110465924002758/tm242453d1_ex99-a3.htm",
+        "purpose": "Ownership, control, predecessor and take-private history."
+      },
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/1362705/000136270524000034/evolve-20240216.htm",
+        "purpose": "February 16, 2024 limited-call closing and elimination of unaffiliated economic interests."
+      },
+      {
+        "url": "https://stonepeak.com/investments",
+        "purpose": "Current Stonepeak portfolio status and operating asset description."
+      }
+    ],
+    "unresolvedQuestions": []
+  },
+  "lineage": {
+    "sourceDecision": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0423-evolve-transition-infrastructure-lp/attempt-1/research-decision.json",
+    "basis": "Validated GPT-5.6 Sol Pro research, a fresh exact production match and refreshed direct-source checks support a bounded correction."
+  }
+}

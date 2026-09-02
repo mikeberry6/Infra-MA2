@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0421:bmo-transportation-finance:551a3f7b",
+  "taskIndex": 421,
+  "companyName": "BMO Transportation Finance",
+  "outcome": "EXCLUDED",
+  "decidedAt": "2026-09-02T03:05:00.000Z",
+  "rationale": "Exclude BMO Transportation Finance. The signed Stonepeak transaction still concerns transportation and vendor equipment-finance businesses and approximately C$14.5 billion of loans and leases, not an operating transportation-infrastructure platform. No closing was found, so BMO remains the legal owner and no active Stonepeak PortCo should be created.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0421-bmo-transportation-finance/attempt-1/locked-batch-v1-task-snapshot.json",
+    "sha256": "d371756bc86da7314114ba6e69418b17238bd263c09b3c6cf2b33774b579898b"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0421-bmo-transportation-finance/attempt-1/application-research-decision-v1.json",
+    "sha256": "4a86aeff62c2edfdb5fc46ca5c8b6e3e9724fae0b394b25735e4e82c88a06aaf"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0421-bmo-transportation-finance/attempt-1/application-source-verification-v1.json",
+    "sha256": "12a589d76deed27ff411ab3f9cbedb24f19fac38925521c45327f7aeb8c10daa"
+  },
+  "evidence": [
+    {
+      "url": "https://newsroom.bmo.com/2026-05-11-BMO-Announces-Strategic-Sale-of-Transportation-and-Vendor-Finance-Businesses",
+      "purpose": "Combined business perimeter, financing model, signed status and expected closing."
+    },
+    {
+      "url": "https://stonepeak.com/news/stonepeak-to-acquire-bmo-transportation-and-vendor-finance",
+      "purpose": "Stonepeak transaction attribution and equipment-finance characterization."
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "c5dd4ba8063ca1a28f2081287d8ad8ecb01419073e28ed9c57903a2d32f7ef58"
+}

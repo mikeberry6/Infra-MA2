@@ -1,0 +1,101 @@
+{
+  "generatedAt": "2026-09-02T02:59:02.000Z",
+  "actions": [
+    "CORRECT_COMPANY",
+    "RETRACT_ERRONEOUS_OWNERSHIP",
+    "REALIZE_COMPANY"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "reviewedSeedRetirementTaskIds": [],
+  "rationale": "Archive Akumin from the direct-infrastructure PortCo list and retract its Stonepeak PortCo ownership row. The ownership itself is real, but the operating business is principally healthcare services and therefore fails the census infrastructure-scope test.",
+  "evidence": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1776197/000119312524025866/d31963d8k.htm",
+      "purpose": "Ownership and privatization evidence.",
+      "supports": [
+        "Stonepeak became the 100% common owner on February 6, 2024",
+        "Legacy public equity was cancelled"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1776197/000119312523259995/d380424dex101.htm",
+      "purpose": "Operating-model and scope evidence.",
+      "supports": [
+        "Akumin earns revenue from imaging, oncology and outsourced clinical services",
+        "Akumin is not a qualifying direct infrastructure platform"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "companyFieldUpdates": {
+    "description": "Akumin provides outpatient diagnostic imaging, radiation oncology and outsourced clinical services to patients, physician groups, hospitals and health systems. Stonepeak became its 100% common owner on February 6, 2024, but the company is outside the direct-infrastructure PortCo census because its principal business is healthcare service delivery rather than ownership and operation of a qualifying infrastructure platform.",
+    "companyStatus": "REALIZED",
+    "recordStatus": "ARCHIVED",
+    "lastVerifiedAt": "2026-09-02T00:00:00.000Z"
+  },
+  "ownershipPeriodUpdates": [],
+  "ownershipPeriodRemovals": [
+    "cmrxpk9zd0297ivhekdpx454w"
+  ],
+  "ownershipPeriodAdditions": [],
+  "pendingOwnershipTransactionUpdates": [],
+  "pendingOwnershipTransactionAdditions": [],
+  "milestoneUpdates": [
+    {
+      "id": "cmrxpmor10568ivheue396ggr",
+      "set": {
+        "date": "Sep 1, 2021",
+        "event": "Akumin completed its acquisition of Alliance HealthCare Services with financing from Stonepeak Magnet Holdings and Stonepeak Infrastructure Fund IV.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-09-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1776197/000119312521202559/d195382dex992.htm"
+        ]
+      }
+    },
+    {
+      "id": "cmrxpmos6056aivhe3b980m2h",
+      "set": {
+        "date": "Feb 6, 2024",
+        "event": "Akumin completed its restructuring, cancelled legacy equity and became wholly owned by Stonepeak at the common-equity level.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-02-06T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1776197/000119312524025866/d31963d8k.htm"
+        ]
+      }
+    }
+  ],
+  "milestoneTransfers": [],
+  "citationUpdates": [
+    {
+      "id": "cmrxpsr500d2jivheq1lai5g3",
+      "set": {
+        "isPrimary": false
+      }
+    },
+    {
+      "id": "cmrxpsr760d2nivheqra89h6g",
+      "set": {
+        "label": "Akumin — February 2024 restructuring closing",
+        "url": "https://www.sec.gov/Archives/edgar/data/1776197/000119312524025866/d31963d8k.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Stonepeak common ownership and legacy-equity cancellation",
+        "isPrimary": true
+      }
+    }
+  ],
+  "citationAdditions": [
+    {
+      "id": null,
+      "label": "Akumin — 2021 Stonepeak investment",
+      "url": "https://www.sec.gov/Archives/edgar/data/1776197/000119312521202559/d195382dex992.htm",
+      "sourceType": "SEC_FILING",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Stonepeak Magnet, Fund IV and Alliance financing history",
+      "isPrimary": false
+    }
+  ]
+}

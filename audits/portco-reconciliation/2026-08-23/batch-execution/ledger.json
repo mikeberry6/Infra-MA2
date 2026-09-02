@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-02T02:42:40.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-09-02T03:27:00.000Z",
+  "activeBatchId": "batch-0419-0423-v4",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -7372,7 +7372,229 @@
           "reason": "Protected atomic transaction, seed parity, detail APIs, canonical deployment, and rendered production scorecards verified."
         }
       ]
+    },
+    {
+      "batchId": "batch-0419-0423-v1",
+      "state": "FAILED",
+      "taskIds": [
+        "ledger:0419:pinnacle-gas-services-llc:94e9c671",
+        "ledger:0420:akumin:becd83c7",
+        "ledger:0421:bmo-transportation-finance:551a3f7b",
+        "ledger:0422:coresite:28c96afd",
+        "ledger:0423:evolve-transition-infrastructure-lp:984248b3"
+      ],
+      "taskIndexes": [
+        419,
+        420,
+        421,
+        422,
+        423
+      ],
+      "createdAt": "2026-09-02T02:50:05.000Z",
+      "updatedAt": "2026-09-02T03:12:00.000Z",
+      "completedAt": "2026-09-02T03:12:00.000Z",
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0419-0423-v1/batch-manifest.json",
+        "sha256": "c7db30306225e27681599d57c3f3fbd01a370815b4a6a0aaeafc58e820ef560f"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": "Dry-run rejected shared Source metadata for the Sixth Street Pinnacle URL and Stonepeak investments URL; no seed or database writes occurred. Re-forming the same tasks with production-compatible source labels and types.",
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-09-02T02:50:05.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-09-02T03:09:00.000Z",
+          "evidenceSha256": [
+            "c7db30306225e27681599d57c3f3fbd01a370815b4a6a0aaeafc58e820ef560f"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "FAILED",
+          "at": "2026-09-02T03:12:00.000Z",
+          "evidenceSha256": [
+            "c7db30306225e27681599d57c3f3fbd01a370815b4a6a0aaeafc58e820ef560f"
+          ],
+          "reason": "Dry-run rejected shared Source metadata for the Sixth Street Pinnacle URL and Stonepeak investments URL; no seed or database writes occurred. Re-forming the same tasks with production-compatible source labels and types."
+        }
+      ]
+    },
+    {
+      "batchId": "batch-0419-0423-v2",
+      "state": "FAILED",
+      "taskIds": [
+        "ledger:0419:pinnacle-gas-services-llc:94e9c671",
+        "ledger:0420:akumin:becd83c7",
+        "ledger:0421:bmo-transportation-finance:551a3f7b",
+        "ledger:0422:coresite:28c96afd",
+        "ledger:0423:evolve-transition-infrastructure-lp:984248b3"
+      ],
+      "taskIndexes": [
+        419,
+        420,
+        421,
+        422,
+        423
+      ],
+      "createdAt": "2026-09-02T03:12:01.000Z",
+      "updatedAt": "2026-09-02T03:18:00.000Z",
+      "completedAt": "2026-09-02T03:18:00.000Z",
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0419-0423-v2/batch-manifest.json",
+        "sha256": "a69d90a744572d582254ed22667f69848959935aadff87f185aea41bd00a62d4"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": "Dry-run rejected redundant ADD_OWNER on a CREATE_COMPANY plan; no seed or database writes occurred. Re-forming with normalized create actions.",
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-09-02T03:12:01.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-09-02T03:16:00.000Z",
+          "evidenceSha256": [
+            "a69d90a744572d582254ed22667f69848959935aadff87f185aea41bd00a62d4"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "FAILED",
+          "at": "2026-09-02T03:18:00.000Z",
+          "evidenceSha256": [
+            "a69d90a744572d582254ed22667f69848959935aadff87f185aea41bd00a62d4"
+          ],
+          "reason": "Dry-run rejected redundant ADD_OWNER on a CREATE_COMPANY plan; no seed or database writes occurred. Re-forming with normalized create actions."
+        }
+      ]
+    },
+    {
+      "batchId": "batch-0419-0423-v3",
+      "state": "FAILED",
+      "taskIds": [
+        "ledger:0419:pinnacle-gas-services-llc:94e9c671",
+        "ledger:0420:akumin:becd83c7",
+        "ledger:0421:bmo-transportation-finance:551a3f7b",
+        "ledger:0422:coresite:28c96afd",
+        "ledger:0423:evolve-transition-infrastructure-lp:984248b3"
+      ],
+      "taskIndexes": [
+        419,
+        420,
+        421,
+        422,
+        423
+      ],
+      "createdAt": "2026-09-02T03:18:01.000Z",
+      "updatedAt": "2026-09-02T03:23:00.000Z",
+      "completedAt": "2026-09-02T03:23:00.000Z",
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0419-0423-v3/batch-manifest.json",
+        "sha256": "805bb8579b54bdd8fb150deb05a910b739207e417963dd7de2fec416838613ca"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": "Dry-run identified milestone evidence URLs not yet represented as company citations; no seed or database writes occurred. Re-forming with complete evidence links.",
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-09-02T03:18:01.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-09-02T03:21:00.000Z",
+          "evidenceSha256": [
+            "805bb8579b54bdd8fb150deb05a910b739207e417963dd7de2fec416838613ca"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "FAILED",
+          "at": "2026-09-02T03:23:00.000Z",
+          "evidenceSha256": [
+            "805bb8579b54bdd8fb150deb05a910b739207e417963dd7de2fec416838613ca"
+          ],
+          "reason": "Dry-run identified milestone evidence URLs not yet represented as company citations; no seed or database writes occurred. Re-forming with complete evidence links."
+        }
+      ]
+    },
+    {
+      "batchId": "batch-0419-0423-v4",
+      "state": "READY",
+      "taskIds": [
+        "ledger:0419:pinnacle-gas-services-llc:94e9c671",
+        "ledger:0420:akumin:becd83c7",
+        "ledger:0421:bmo-transportation-finance:551a3f7b",
+        "ledger:0422:coresite:28c96afd",
+        "ledger:0423:evolve-transition-infrastructure-lp:984248b3"
+      ],
+      "taskIndexes": [
+        419,
+        420,
+        421,
+        422,
+        423
+      ],
+      "createdAt": "2026-09-02T03:23:01.000Z",
+      "updatedAt": "2026-09-02T03:27:00.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0419-0423-v4/batch-manifest.json",
+        "sha256": "377b47a4de15c3e6a4d36e11a1b97da6df27144d3eff6d9261adae0d4de51bd5"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-09-02T03:23:01.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-09-02T03:27:00.000Z",
+          "evidenceSha256": [
+            "377b47a4de15c3e6a4d36e11a1b97da6df27144d3eff6d9261adae0d4de51bd5"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "9adf9138db1508d59b2089c7507ff4d044efa614cc7a274c77dcd1c0eb022926"
+  "ledgerSha256": "9279c057a91755d34f0a636f85cfc8ede147ef038089d6a078185497d6e5c3af"
 }

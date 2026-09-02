@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0421:bmo-transportation-finance:551a3f7b",
+  "taskIndex": 421,
+  "companyName": "BMO Transportation Finance",
+  "asOfDate": "2026-09-02",
+  "decision": "EXCLUDED",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-02T02:59:02.000Z",
+  "result": {
+    "decision": "EXCLUDED",
+    "rationale": "Exclude BMO Transportation Finance. The signed Stonepeak transaction still concerns transportation and vendor equipment-finance businesses and approximately C$14.5 billion of loans and leases, not an operating transportation-infrastructure platform. No closing was found, so BMO remains the legal owner and no active Stonepeak PortCo should be created.",
+    "evidence": [
+      {
+        "url": "https://newsroom.bmo.com/2026-05-11-BMO-Announces-Strategic-Sale-of-Transportation-and-Vendor-Finance-Businesses",
+        "purpose": "Combined business perimeter, financing model, signed status and expected closing."
+      },
+      {
+        "url": "https://stonepeak.com/news/stonepeak-to-acquire-bmo-transportation-and-vendor-finance",
+        "purpose": "Stonepeak transaction attribution and equipment-finance characterization."
+      }
+    ],
+    "unresolvedQuestions": []
+  },
+  "lineage": {
+    "sourceDecision": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0421-bmo-transportation-finance/attempt-1/research-decision.json",
+    "basis": "Validated GPT-5.6 Sol Pro research, a fresh production non-match and refreshed direct-source checks support a terminal scope exclusion."
+  }
+}

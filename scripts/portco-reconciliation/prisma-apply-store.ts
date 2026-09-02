@@ -418,6 +418,14 @@ const approvedOwnershipOrganizationProvisioning = {
   "Lightsource bp": "CORPORATE",
   "BP": "CORPORATE",
   "Caliche Management": "CORPORATE",
+  "Comstock Resources": "CORPORATE",
+  "Sixth Street": "FUND_MANAGER",
+  "Quantum Capital Solutions": "FUND_MANAGER",
+  "American Tower Corporation": "CORPORATE",
+  "The Carlyle Group": "FUND_MANAGER",
+  "Public market": "OTHER",
+  "Constellation/Exelon": "CORPORATE",
+  "Sanchez sponsor group": "OTHER",
   "Energy Spectrum Capital": "FUND_MANAGER",
 } as const;
 

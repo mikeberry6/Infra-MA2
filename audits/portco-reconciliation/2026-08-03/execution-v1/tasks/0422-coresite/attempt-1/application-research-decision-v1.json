@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0422:coresite:28c96afd",
+  "taskIndex": 422,
+  "companyName": "CoreSite",
+  "asOfDate": "2026-09-02",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-02T02:59:02.000Z",
+  "result": {
+    "decision": "PROPOSED_CORRECTION",
+    "rationale": "Correct the existing CoreSite record rather than creating a duplicate. American Tower remains the controlling owner and Stonepeak remains an active minority investor. The latest filed structure is 71%/29% common ownership, with Stonepeak also holding all mandatory convertible preferred interests; the approximately 64%/36% fully converted ratio is disclosed as an expectation, not treated as a completed conversion absent confirmation.",
+    "evidence": [
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/1053507/000105350726000133/amt-20260630.htm",
+        "purpose": "Latest filed common ownership, preferred interests, platform boundary and scale."
+      },
+      {
+        "url": "https://stonepeak.com/news/american-tower-partners-with-stonepeak-in-u-s-data-center-business",
+        "purpose": "Stonepeak initial investment, governance and U.S. data-center platform perimeter."
+      },
+      {
+        "url": "https://stonepeak.com/news/stonepeak-upsizes-investment-in-american-towers-data-center-business",
+        "purpose": "October 20, 2022 upsize closing and fully converted economics."
+      },
+      {
+        "url": "https://www.coresite.com/about",
+        "purpose": "Current operating brand, headquarters, services and national platform profile."
+      }
+    ],
+    "unresolvedQuestions": []
+  },
+  "lineage": {
+    "sourceDecision": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0422-coresite/attempt-1/research-decision.json",
+    "basis": "Validated GPT-5.6 Sol Pro research, a fresh exact production match and refreshed direct-source checks support a correction with a clearly labeled last-reported security split."
+  }
+}
