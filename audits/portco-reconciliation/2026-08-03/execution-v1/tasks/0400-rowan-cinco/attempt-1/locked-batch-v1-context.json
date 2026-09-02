@@ -1,0 +1,317 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0400:rowan-cinco:18f76471",
+  "taskIndex": 400,
+  "companyName": "Rowan Cinco",
+  "generatedAt": "2026-09-02T00:16:59.843Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0400-rowan-cinco/attempt-1/locked-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 400,
+    "taskId": "ledger:0400:rowan-cinco:18f76471",
+    "canonicalKey": "rowan-cinco|united-states",
+    "companyName": "Rowan Cinco",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 83,
+    "managers": [
+      "Quinbrook Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "083-quinbrook-infrastructure-partners:repo-only:012:rowan-cinco"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjmqo018kivhef2na5x5p"
+    ],
+    "seedKeys": [
+      "rowan cinco|United States"
+    ],
+    "evidenceUrls": [
+      "https://rowan.digital/news/cinco-data-center/",
+      "https://www.quinbrook.com/portfolio/rowan-digital-infrastructure/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Quinbrook Infrastructure Partners MATCHED_ELSEWHERE: Data center campus within Rowan Digital Infrastructure’s development portfolio; not a separate platform.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjmqo018kivhef2na5x5p",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "rowan-cinco|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjmqo018kivhef2na5x5p",
+    "name": "Rowan Cinco",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Hyperscale data center campus",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Rowan Cinco is a hyperscale data center campus in Medina County outside San Antonio, Texas. The project is being developed for large enterprise and hyperscale customers through an asset-heavy, build-to-suit operating model that combines powered land, campus infrastructure, and long-term customer deployments. Public disclosures describe Cinco as a 300 MW project representing at least $900 million of direct investment in the local community. Its footprint is concentrated in South Texas within Rowan's national development portfolio. Rowan was founded in 2020 and is Quinbrook-backed. Quinbrook project materials list Cinco as acquired in 2022; construction began in 2025 and a $550 million construction financing closed in 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Texas",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk9ar0285ivheb20upd1z",
+        "managerName": "Quinbrook",
+        "organizationName": "Quinbrook",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmlwg052uivheuweqlhct",
+        "date": "Nov 2020",
+        "event": "Rowan Digital Infrastructure was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2020-11-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmlx2052vivhe1o5qmevx",
+        "date": "2022",
+        "event": "Quinbrook project materials list Cinco as acquired in 2022.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmlxm052wivhe28x7r4du",
+        "date": "Aug 7, 2025",
+        "event": "Quinbrook-backed Rowan announced the start of construction on the 300 MW Cinco campus. (Development)",
+        "category": "EXPANSION",
+        "sortDate": "2025-08-07T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmly7052xivhenh94hyvk",
+        "date": "Feb 2026",
+        "event": "Rowan closed $551 million of project financing for Rowan Cinco LLC.",
+        "category": "FINANCING",
+        "sortDate": "2026-02-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmlyo052yivhejjnutui6",
+        "date": "Feb 11, 2026",
+        "event": "Rowan closed approximately $550 million of construction financing for Cinco.",
+        "category": "FINANCING",
+        "sortDate": "2026-02-11T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsm6t0cupivhed9dk09mx",
+        "label": "Investment date source — Quinbrook — Rowan Cinco",
+        "url": "https://www.quinbrook.com/projects/cinco/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Quinbrook initial investment / ownership",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpsm7z0curivheusy98xre",
+        "label": "Rowan — Rowan Cinco",
+        "url": "https://rowan.digital/news/cinco-data-center/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Rowan — Rowan Cinco",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsm960cutivheybi3xmiw",
+        "label": "Davispolk — Rowan Cinco",
+        "url": "https://www.davispolk.com/experience/rowan-551-million-project-financing-medina-county-texas-data-center",
+        "sourceType": "ARTICLE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Davispolk financing or public filing",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsmac0cuvivheav4pqdb3",
+        "label": "Quinbrook — Rowan Cinco",
+        "url": "https://www.quinbrook.com/news-insights/rowan/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Quinbrook — Rowan Cinco",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsmbk0cuxivhedbpmpjyi",
+        "label": "Rowan — Rowan Cinco",
+        "url": "https://rowan.digital/news/press-release/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Rowan — Rowan Cinco",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsmc00cuyivhex3b9eqpi",
+        "label": "Quinbrook — Rowan Bauxite",
+        "url": "https://www.quinbrook.com/portfolio/rowan-digital-infrastructure/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Quinbrook operations / asset details",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Rowan Cinco",
+    "investmentFirm": "Quinbrook",
+    "sector": "Digital",
+    "subsector": "Hyperscale data center campus",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "Rowan Cinco is a hyperscale data center campus in Medina County outside San Antonio, Texas. The project is being developed for large enterprise and hyperscale customers through an asset-heavy, build-to-suit operating model that combines powered land, campus infrastructure, and long-term customer deployments. Public disclosures describe Cinco as a 300 MW project representing at least $900 million of direct investment in the local community. Its footprint is concentrated in South Texas within Rowan's national development portfolio. Rowan was founded in 2020 and is Quinbrook-backed. Quinbrook project materials list Cinco as acquired in 2022; construction began in 2025 and a $550 million construction financing closed in 2026.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2022,
+    "headquarters": "Texas",
+    "milestones": [
+      {
+        "date": "Nov 2020",
+        "event": "Rowan Digital Infrastructure was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "2022",
+        "event": "Quinbrook project materials list Cinco as acquired in 2022.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Aug 7, 2025",
+        "event": "Quinbrook-backed Rowan announced the start of construction on the 300 MW Cinco campus. (Development)",
+        "category": "Expansion"
+      },
+      {
+        "date": "Feb 2026",
+        "event": "Rowan closed $551 million of project financing for Rowan Cinco LLC.",
+        "category": "Financing"
+      },
+      {
+        "date": "Feb 11, 2026",
+        "event": "Rowan closed approximately $550 million of construction financing for Cinco.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Investment date source — Quinbrook — Rowan Cinco",
+        "url": "https://www.quinbrook.com/projects/cinco/",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Rowan — Rowan Cinco",
+        "url": "https://rowan.digital/news/cinco-data-center/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Davispolk — Rowan Cinco",
+        "url": "https://www.davispolk.com/experience/rowan-551-million-project-financing-medina-county-texas-data-center",
+        "type": "ARTICLE",
+        "purpose": "FINANCING_FILINGS"
+      },
+      {
+        "label": "Quinbrook — Rowan Cinco",
+        "url": "https://www.quinbrook.com/news-insights/rowan/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Rowan — Rowan Cinco",
+        "url": "https://rowan.digital/news/press-release/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Quinbrook — Rowan Cinco",
+        "url": "https://www.quinbrook.com/portfolio/rowan-digital-infrastructure/",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Quinbrook",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2022,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpigao004eivhedx8km4yh",
+        "name": "Quinbrook",
+        "updatedAt": "2026-07-23T16:09:28.320Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0400:rowan-cinco:18f76471",
+    "taskIndex": 400,
+    "canonicalKey": "rowan-cinco|united-states",
+    "capturedAt": "2026-09-02T00:16:59.843Z",
+    "databaseRevision": "revision:caef7daa8bdb95e5f0d1b8cc0251db4c15fa13f3f0eef558ea9bc5b19071d8a5",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "f558d0996548273cdb37e1bd65c92d3ec8346c633dfd35e4319111437c322a8e",
+    "productionSnapshotSha256": "d4d01e5d7713f3ab910e4522fbe2b01b3201f41c03c69de58d86663ffc00e405",
+    "targetCompanySnapshotSha256": "8aff7e9a134823195d909da53e3be1eafe32ec13e4884354784e9259d02d5fdf",
+    "seedEntrySha256": "00553189fbb694dcaf4d7a1d587caa21f64ef7a9c7641a9cd2c7b3d4880c328f",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "cb3d323848285f8d0081d174f7dd4da9f63300343528f57587a87f9271f90373",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "52c944c13a5e74630cefca11499339fafbdd9f1705bdf046c1d4d1c3542bd283",
+      "citationsSha256": "f3482ba3ba167a0c69048ca8251500bc10df0ef449d7d06c61c71ab26d31e405",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "608dd40e4035d50c002d3b53e33ed32dde5c245b57c7e0156ff3312b137549bd",
+    "stateSha256": "867df184f9366a434beece5081f38138b67583659bf624485a3a82354f896b17",
+    "taskSnapshotSha256": "2c3912d55c5748e7ddbdb3c629e053d23e4010b64d096385052b3cc83376ee3d"
+  },
+  "contextSha256": "0d08e31bad3fcf603417ff6395df19c01d8773e23491813d426ff244502605b3"
+}

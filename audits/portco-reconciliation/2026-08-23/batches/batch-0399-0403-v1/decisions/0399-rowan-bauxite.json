@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0399:rowan-bauxite:930cec59",
+  "taskIndex": 399,
+  "companyName": "Rowan Bauxite",
+  "outcome": "DEFERRED",
+  "decidedAt": "2026-09-02T00:23:00.000Z",
+  "rationale": "Preserve Rowan Bauxite unchanged and defer the project-to-platform merge. Primary sources establish that Bauxite I-III is a Rowan Digital Infrastructure campus, but Rowan's current platform ownership after the April 9, 2026 Blackstone recapitalization remains unresolved. UPP's continuing ownership, the recapitalization sellers, and the Quinbrook, UPP and Blackstone stakes are not publicly disclosed, so a canonical Rowan after-image cannot yet satisfy the active-ownership rule.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0399-rowan-bauxite/attempt-1/locked-batch-v1-task-snapshot.json",
+    "sha256": "9d8951a83c3d7a06df37f53aeea9fa4ceffd2fde0ca7485cdc6b605dca23e0b7"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0399-rowan-bauxite/attempt-1/application-research-decision-v1.json",
+    "sha256": "2fd6afbc27a43a9c28ff2dbc44f4671686dbf1e42c8b68ada3955fabd34b667e"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0399-rowan-bauxite/attempt-1/application-source-verification-v1.json",
+    "sha256": "aec755431bde6597f15f92539417e91cfe2e3253c63c4cd38cc56c72d6699f06"
+  },
+  "evidence": [
+    {
+      "url": "https://rowan.digital/portfolio/bauxite-i-ii-iii/",
+      "purpose": "Official Rowan evidence that Bauxite I-III is a Maryland campus beneath the Rowan platform."
+    },
+    {
+      "url": "https://www.quinbrook.com/news-insights/rowan-digital-infrastructure-announces-strategic-recapitalization/",
+      "purpose": "Official April 9, 2026 recapitalization announcement identifying Blackstone's strategic investment without a complete post-transaction cap table."
+    },
+    {
+      "url": "https://www.quinbrook.com/news-insights/upp-invests-in-data-center-developer-rowan-digital-infrastructure/",
+      "purpose": "Official evidence of UPP's earlier Rowan platform investment."
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "854f8a3c0449f4d871c6778e6efc35bf924d885100a8a24a1a71cedbdac85451"
+}

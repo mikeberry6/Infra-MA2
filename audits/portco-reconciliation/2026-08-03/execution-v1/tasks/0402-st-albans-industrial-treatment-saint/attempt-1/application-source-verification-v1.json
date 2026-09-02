@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0402:st-albans-industrial-treatment-saint:0567aff2",
+  "checkedAt": "2026-09-02T00:19:20.000Z",
+  "method": "Independent direct HTTPS status, redirect, byte-length and content-hash checks; government PDF verified as a direct source.",
+  "sources": [
+    {
+      "url": "https://purposeenergy.com/news-insights/purposeenergy-celebrates-grand-opening-of-st-albans-renewable-energy-facility-in-partnership-with-ben-jerrys-ice-cream/",
+      "httpStatus": 200,
+      "finalUrl": "https://purposeenergy.com/news-insights/purposeenergy-celebrates-grand-opening-of-st-albans-renewable-energy-facility-in-partnership-with-ben-jerrys-ice-cream/",
+      "bytes": 80078,
+      "sha256": "289a80dbf8272d539efff1b0c101620c72c8f496ad5ba9114b9335975bb659ea",
+      "healthStatus": "WORKING",
+      "verifiedClaims": ["PurposeEnergy held the St. Albans facility's grand opening on May 29, 2025 and describes the facility as operational."]
+    },
+    {
+      "url": "https://purposeenergy.com/project/saint-albans-resource-recovery-center/",
+      "httpStatus": 200,
+      "finalUrl": "https://purposeenergy.com/project/saint-albans-resource-recovery-center/",
+      "bytes": 88686,
+      "sha256": "a9c593bf563b5919e00b3bdba6eae0204c7cf9bf0be3a1966b6dd7b597a73961",
+      "healthStatus": "WORKING",
+      "verifiedClaims": ["PurposeEnergy presents St. Albans Resource Recovery Center as one of its projects."]
+    },
+    {
+      "url": "https://www.quinbrook.com/portfolio/purposeenergy/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.quinbrook.com/portfolio/purposeenergy/",
+      "bytes": 53416,
+      "sha256": "c0c985d9fca8b58f7448ea6bb57771402729ac3cbcb5c28742304e24145b0662",
+      "healthStatus": "WORKING",
+      "verifiedClaims": ["Quinbrook presents PurposeEnergy as the portfolio company and St. Albans as a project beneath it."]
+    },
+    {
+      "url": "https://anrweb.vt.gov/PubDocs/DEC/WSMD/Wastewater/Permits/3-1573/FactSheet.3-1573.202302.pdf",
+      "httpStatus": 200,
+      "finalUrl": "https://anrweb.vt.gov/PubDocs/DEC/WSMD/Wastewater/Permits/3-1573/FactSheet.3-1573.202302.pdf",
+      "bytes": 207156,
+      "sha256": "3602a75680cf12a672403c2dd1375de6582928681303bfe9abf8091ee639aaff",
+      "healthStatus": "WORKING",
+      "verifiedClaims": ["Vermont identifies PurposeEnergy - St. Albans, LLC as the facility permittee."]
+    }
+  ],
+  "allEvidenceUrlsDirectHttps": true,
+  "allSourcesWorkingOrVerified": true,
+  "deadSourceCount": 0
+}

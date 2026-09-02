@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0401:rowan-temple:fb4df5a1",
+  "checkedAt": "2026-09-02T00:19:20.000Z",
+  "method": "Independent direct HTTPS status, redirect, byte-length and content-hash checks.",
+  "sources": [
+    {
+      "url": "https://rowan.digital/portfolio/temple/",
+      "httpStatus": 200,
+      "finalUrl": "https://rowan.digital/portfolio/temple/",
+      "bytes": 121455,
+      "sha256": "79546b08b8fdae016195f57bbceb3dc7d4d08dfbad91a0411932f42ad9a9a719",
+      "healthStatus": "WORKING",
+      "verifiedClaims": ["Temple is presented as a Rowan data-center campus."]
+    },
+    {
+      "url": "https://www.quinbrook.com/our-portfolio/rowan-digital-infrastructure/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.quinbrook.com/our-portfolio/rowan-digital-infrastructure/",
+      "bytes": 78268,
+      "sha256": "191be4ca7f334a37065c13e541717611c770e1b35fff4640e65bead8cdc3d2e4",
+      "healthStatus": "WORKING",
+      "verifiedClaims": ["Quinbrook presents Rowan Digital Infrastructure as the portfolio platform."]
+    },
+    {
+      "url": "https://www.quinbrook.com/news-insights/rowan-digital-infrastructure-announces-strategic-recapitalization/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.quinbrook.com/news-insights/rowan-digital-infrastructure-announces-strategic-recapitalization/",
+      "bytes": 58119,
+      "sha256": "68e2f591bfc357d945f67fee1142809336751b4903194ce10dcc3f3c689d2fce",
+      "healthStatus": "WORKING",
+      "verifiedClaims": ["The 2026 recapitalization release does not disclose the complete current cap table."]
+    },
+    {
+      "url": "https://www.quinbrook.com/news-insights/upp-invests-in-data-center-developer-rowan-digital-infrastructure/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.quinbrook.com/news-insights/upp-invests-in-data-center-developer-rowan-digital-infrastructure/",
+      "bytes": 58080,
+      "sha256": "d69690920d2065e110389e20510451fc281b4fc5d98d85b9fb2deef4ce752a56",
+      "healthStatus": "WORKING",
+      "verifiedClaims": ["UPP previously invested in the Rowan platform."]
+    }
+  ],
+  "allEvidenceUrlsDirectHttps": true,
+  "allSourcesWorkingOrVerified": true,
+  "deadSourceCount": 0
+}

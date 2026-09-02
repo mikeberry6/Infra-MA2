@@ -1,0 +1,524 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0402:st-albans-industrial-treatment-saint:0567aff2",
+  "taskIndex": 402,
+  "companyName": "St. Albans Industrial Treatment (SAINT)",
+  "generatedAt": "2026-09-02T00:27:34.400Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0402-st-albans-industrial-treatment-saint/attempt-1/observed-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 402,
+    "taskId": "ledger:0402:st-albans-industrial-treatment-saint:0567aff2",
+    "canonicalKey": "st-albans-industrial-treatment-saint|united-states",
+    "companyName": "St. Albans Industrial Treatment (SAINT)",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 83,
+    "managers": [
+      "Quinbrook Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "083-quinbrook-infrastructure-partners:repo-only:010:st-albans-industrial-treatment-saint"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjms4018nivhe4b9fmlk9"
+    ],
+    "seedKeys": [
+      "st. albans industrial treatment (saint)|United States"
+    ],
+    "evidenceUrls": [
+      "https://purposeenergy.com/news-insights/purposeenergy-to-build-new-18m-biogas-plant-in-vermont-for-ben-jerrys-2/",
+      "https://www.quinbrook.com/portfolio/purposeenergy/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Quinbrook Infrastructure Partners MATCHED_ELSEWHERE: Renewable energy facility under PurposeEnergy; captured within the parent platform.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "REVIEWED_MERGE_CANONICAL_TARGET",
+    "targetCompanyId": "cmrxpjmoi018givhecyo0ujvv",
+    "linkedQueueTaskId": null,
+    "immutableRetiredCompanyId": "cmrxpjms4018nivhe4b9fmlk9"
+  },
+  "resolvedCanonicalKey": "purposeenergy|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjmoi018givhecyo0ujvv",
+    "name": "PurposeEnergy",
+    "aliases": [
+      "Purpose Energy, Inc.",
+      "Middlebury Resource Recovery Center",
+      "Middlebury Resource Recovery Center, LLC",
+      "MRRC LLC",
+      "PurposeEnergy-Middlebury",
+      "PurposeEnergy Minster",
+      "PurposeEnergy - Minster LLC",
+      "PurposeEnergy South Burlington",
+      "South Burlington anaerobic digester",
+      "Zero Gravity Brewery digester",
+      "Magic Hat Brewery digester"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Organics-to-energy and renewable fuels",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "PurposeEnergy develops, owns and operates organics-to-energy infrastructure that converts food and beverage residuals and wastewater into biogas, renewable electricity, renewable natural gas, clean water and related by-products. Quinbrook announced its acquisition of the platform on April 12, 2023 through its Net Zero Power Fund strategy; a separate legal closing date, exact stake and holding vehicle were not publicly disclosed. PurposeEnergy's project portfolio includes Middlebury Resource Recovery Center in Vermont, which reached commercial operation on October 21, 2024; the Minster, Ohio industrial-biogas facility, which began taking waste on July 16, 2026 and remained in ramp-up; and the operating South Burlington, Vermont brewery-waste digester historically associated with Magic Hat and now Zero Gravity. These facility and SPV names are project identities beneath PurposeEnergy and are not separate manager-level portfolio companies. No later PurposeEnergy equity transfer or signed pending sale was identified through September 1, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://purposeenergy.com/",
+    "yearFounded": 2007,
+    "headquarters": "New Hampshire; Vermont; Ohio",
+    "lastVerifiedAt": "2026-09-01T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk98h0281ivhe89hg0afj",
+        "managerName": "Quinbrook",
+        "organizationName": "Quinbrook",
+        "fundName": null,
+        "vehicleName": "Quinbrook Net Zero Power Fund strategy",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpml7a051zivheoz4t327g",
+        "date": "Dec 16, 2022",
+        "event": "PurposeEnergy broke ground on the Middlebury Resource Recovery Center in Vermont.",
+        "category": "EXPANSION",
+        "sortDate": "2022-12-16T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://purposeenergy.com/news-insights/construction-kicks-off-on-renewable-energy-plant/"
+        ]
+      },
+      {
+        "id": "cmrxpmljd052eivhe59vew4sw",
+        "date": "2007",
+        "event": "Public sources identify PurposeEnergy's founding year as 2007.",
+        "category": "FOUNDING",
+        "sortDate": "2007-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmljy052fivhe45pfakxn",
+        "date": "2023",
+        "event": "Quinbrook said the acquisition marked its move into renewable fuels infrastructure.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmlki052givhe0ji6e568",
+        "date": "Apr 12, 2023",
+        "event": "Quinbrook announced its acquisition of PurposeEnergy through its renewable-fuels strategy; a separate legal closing date was not publicly disclosed.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-04-12T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.quinbrook.com/news-insights/quinbrook-moves-into-renewable-fuels/"
+        ]
+      },
+      {
+        "id": "cmrxpmll0052hivhe6wwepw05",
+        "date": "Oct 21, 2024",
+        "event": "PurposeEnergy's 1.014 MW Middlebury facility reached commercial operation in Vermont.",
+        "category": "EXPANSION",
+        "sortDate": "2024-10-21T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://ripuc.ri.gov/sites/g/files/xkgbur841/files/2025-10/PurposeEnergy%20-%20Middlebury%20-%20Docket%20RES-24-50%20-Recommendations%20and%20Review%20-%202025-09-15.pdf"
+        ]
+      },
+      {
+        "id": "cmrxpmlli052iivheuzo8rvmj",
+        "date": "May 2025",
+        "event": "PurposeEnergy opened its St. Albans, Vermont facility.",
+        "category": "EXPANSION",
+        "sortDate": "2025-05-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmlml052jivhennn3js9j",
+        "date": "Jul 16, 2026",
+        "event": "PurposeEnergy reported that its Minster, Ohio facility had begun taking waste and would ramp over the following months; full commercial operation was not yet confirmed.",
+        "category": "EXPANSION",
+        "sortDate": "2026-07-16T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.linkedin.com/posts/purpose-energy_renewableenergy-biogas-circulareconomy-activity-7483526778678951936-OaGU"
+        ]
+      },
+      {
+        "id": "cmrxpmlr1052mivhelkbddxns",
+        "date": "Mar 2008",
+        "event": "Magic Hat and Purpose Energy executed the development agreement for the South Burlington brewery digester project.",
+        "category": "EXPANSION",
+        "sortDate": "2008-03-01T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.biocycle.net/digester-in-magic-hats-sustainability-mix/"
+        ]
+      },
+      {
+        "id": "cmrxpmlrl052nivhe6vjhx0ds",
+        "date": "2009-2011",
+        "event": "PurposeEnergy reports the South Burlington digester was commissioned in 2009; historical reporting places construction completion in July 2010 and restart in June 2011, so no false exact operating date is asserted.",
+        "category": "EXPANSION",
+        "sortDate": "2011-06-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://purposeenergy.com/project/zero-gravity-brewery/",
+          "https://www.biocycle.net/digester-in-magic-hats-sustainability-mix/"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpslhg0ctpivheidw5s3lv",
+        "label": "Purposeenergy — PurposeEnergy",
+        "url": "https://purposeenergy.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "PurposeEnergy platform profile and operating identity",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpslio0ctrivhepfosisat",
+        "label": "Announcement date source — Quinbrook — PurposeEnergy",
+        "url": "https://www.quinbrook.com/news-insights/quinbrook-moves-into-renewable-fuels/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "April 12, 2023 acquisition announcement and renewable-fuels strategy",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsljn0cttivheiav9alzc",
+        "label": "Investment date source — Quinbrook — PurposeEnergy",
+        "url": "https://www.quinbrook.com/portfolio/purposeenergy/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "PurposeEnergy portfolio-company status and project boundary",
+        "isPrimary": false
+      },
+      {
+        "id": "cmtjbgr2o0000z22bjk4r3406",
+        "label": "Purposeenergy — Middlebury Resource Recovery Center",
+        "url": "https://purposeenergy.com/news-insights/construction-kicks-off-on-renewable-energy-plant/",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "December 2022 Middlebury construction start",
+        "isPrimary": false
+      },
+      {
+        "id": "cmtjbgr8d0002z22bd0rea460",
+        "label": "PurposeEnergy — Minster startup update",
+        "url": "https://www.linkedin.com/posts/purpose-energy_renewableenergy-biogas-circulareconomy-activity-7483526778678951936-OaGU",
+        "sourceType": "OTHER",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "July 2026 Minster waste-intake start and ramp-up status",
+        "isPrimary": false
+      },
+      {
+        "id": "cmtjbgrc40003z22b2ies9y6i",
+        "label": "Purposeenergy — Middlebury Resource Recovery Center",
+        "url": "https://purposeenergy.com/project/purposeenergy-middlebury/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Middlebury facility identity, outputs and operating profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmtjbgrhr0005z22bmnppmnd6",
+        "label": "Rhode Island PUC — Middlebury review",
+        "url": "https://ripuc.ri.gov/sites/g/files/xkgbur841/files/2025-10/PurposeEnergy%20-%20Middlebury%20-%20Docket%20RES-24-50%20-Recommendations%20and%20Review%20-%202025-09-15.pdf",
+        "sourceType": "OTHER",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Middlebury legal owner/operator, 1.014 MW scale and October 21, 2024 commercial operation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmtjbgrlg0006z22bwzqt99zu",
+        "label": "Purposeenergy — PurposeEnergy Minster",
+        "url": "https://purposeenergy.com/project/minster/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Minster project identity, Danone relationship and disclosed operating scale",
+        "isPrimary": false
+      },
+      {
+        "id": "cmtjbgrr00008z22bh8se76xt",
+        "label": "Village of Minster — 2023 project minutes",
+        "url": "https://irp.cdn-website.com/7b8e4b72/files/uploaded/08-14-23%20Council%20Minutes.pdf",
+        "sourceType": "OTHER",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "PurposeEnergy - Minster LLC project site and infrastructure",
+        "isPrimary": false
+      },
+      {
+        "id": "cmtjbgrup0009z22b07wux3mv",
+        "label": "Purposeenergy — PurposeEnergy South Burlington",
+        "url": "https://purposeenergy.com/project/zero-gravity-brewery/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "South Burlington project identity, current host and disclosed operating metrics",
+        "isPrimary": false
+      },
+      {
+        "id": "cmtjbgryf000az22bzondoeg8",
+        "label": "Biocycle — PurposeEnergy South Burlington",
+        "url": "https://www.biocycle.net/digester-in-magic-hats-sustainability-mix/",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "PurposeEnergy ownership/operator role and qualified 2008-2011 development chronology",
+        "isPrimary": false
+      },
+      {
+        "id": "cmtjbgs25000bz22bu9hmj3ol",
+        "label": "Quinbrook Net Zero Power Fund (NZPF)",
+        "url": "https://www.quinbrook.com/news-insights/quinbrook-exceeds-target-for-net-zero-power-strategy-raising-usd-3-billion-in-capital-commitments/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "PurposeEnergy attribution to Quinbrook's Net Zero Power Fund strategy",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "PurposeEnergy",
+    "investmentFirm": "Quinbrook",
+    "sector": "Power & ET",
+    "subsector": "Organics-to-energy and renewable fuels",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Quinbrook Net Zero Power Fund strategy",
+    "description": "PurposeEnergy develops, owns and operates organics-to-energy infrastructure that converts food and beverage residuals and wastewater into biogas, renewable electricity, renewable natural gas, clean water and related by-products. Quinbrook announced its acquisition of the platform on April 12, 2023 through its Net Zero Power Fund strategy; a separate legal closing date, exact stake and holding vehicle were not publicly disclosed. PurposeEnergy's project portfolio includes Middlebury Resource Recovery Center in Vermont, which reached commercial operation on October 21, 2024; the Minster, Ohio industrial-biogas facility, which began taking waste on July 16, 2026 and remained in ramp-up; and the operating South Burlington, Vermont brewery-waste digester historically associated with Magic Hat and now Zero Gravity. These facility and SPV names are project identities beneath PurposeEnergy and are not separate manager-level portfolio companies. No later PurposeEnergy equity transfer or signed pending sale was identified through September 1, 2026.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "website": "https://purposeenergy.com/",
+    "yearFounded": 2007,
+    "investmentYear": 2023,
+    "headquarters": "New Hampshire; Vermont; Ohio",
+    "milestones": [
+      {
+        "date": "2007",
+        "event": "Public sources identify PurposeEnergy's founding year as 2007.",
+        "category": "Founding"
+      },
+      {
+        "date": "2023",
+        "event": "Quinbrook said the acquisition marked its move into renewable fuels infrastructure.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Apr 12, 2023",
+        "event": "Quinbrook announced its acquisition of PurposeEnergy through its renewable-fuels strategy; a separate legal closing date was not publicly disclosed.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Oct 21, 2024",
+        "event": "PurposeEnergy's 1.014 MW Middlebury facility reached commercial operation in Vermont.",
+        "category": "Expansion"
+      },
+      {
+        "date": "May 2025",
+        "event": "PurposeEnergy opened its St. Albans, Vermont facility.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Dec 16, 2022",
+        "event": "PurposeEnergy broke ground on the Middlebury Resource Recovery Center in Vermont.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Jul 16, 2026",
+        "event": "PurposeEnergy reported that its Minster, Ohio facility had begun taking waste and would ramp over the following months; full commercial operation was not yet confirmed.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Mar 2008",
+        "event": "Magic Hat and Purpose Energy executed the development agreement for the South Burlington brewery digester project.",
+        "category": "Expansion"
+      },
+      {
+        "date": "2009-2011",
+        "event": "PurposeEnergy reports the South Burlington digester was commissioned in 2009; historical reporting places construction completion in July 2010 and restart in June 2011, so no false exact operating date is asserted.",
+        "category": "Expansion"
+      }
+    ],
+    "management": [],
+    "sources": [
+      {
+        "label": "Purposeenergy — PurposeEnergy",
+        "url": "https://purposeenergy.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "PurposeEnergy platform profile and operating identity"
+      },
+      {
+        "label": "Announcement date source — Quinbrook — PurposeEnergy",
+        "url": "https://www.quinbrook.com/news-insights/quinbrook-moves-into-renewable-fuels/",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "April 12, 2023 acquisition announcement and renewable-fuels strategy"
+      },
+      {
+        "label": "Investment date source — Quinbrook — PurposeEnergy",
+        "url": "https://www.quinbrook.com/portfolio/purposeenergy/",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "PurposeEnergy portfolio-company status and project boundary"
+      },
+      {
+        "label": "Purposeenergy — Middlebury Resource Recovery Center",
+        "url": "https://purposeenergy.com/news-insights/construction-kicks-off-on-renewable-energy-plant/",
+        "type": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "December 2022 Middlebury construction start"
+      },
+      {
+        "label": "PurposeEnergy — Minster startup update",
+        "url": "https://www.linkedin.com/posts/purpose-energy_renewableenergy-biogas-circulareconomy-activity-7483526778678951936-OaGU",
+        "type": "OTHER",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "July 2026 Minster waste-intake start and ramp-up status"
+      },
+      {
+        "label": "Purposeenergy — Middlebury Resource Recovery Center",
+        "url": "https://purposeenergy.com/project/purposeenergy-middlebury/",
+        "type": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Middlebury facility identity, outputs and operating profile"
+      },
+      {
+        "label": "Rhode Island PUC — Middlebury review",
+        "url": "https://ripuc.ri.gov/sites/g/files/xkgbur841/files/2025-10/PurposeEnergy%20-%20Middlebury%20-%20Docket%20RES-24-50%20-Recommendations%20and%20Review%20-%202025-09-15.pdf",
+        "type": "OTHER",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Middlebury legal owner/operator, 1.014 MW scale and October 21, 2024 commercial operation"
+      },
+      {
+        "label": "Purposeenergy — PurposeEnergy Minster",
+        "url": "https://purposeenergy.com/project/minster/",
+        "type": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Minster project identity, Danone relationship and disclosed operating scale"
+      },
+      {
+        "label": "Village of Minster — 2023 project minutes",
+        "url": "https://irp.cdn-website.com/7b8e4b72/files/uploaded/08-14-23%20Council%20Minutes.pdf",
+        "type": "OTHER",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "PurposeEnergy - Minster LLC project site and infrastructure"
+      },
+      {
+        "label": "Purposeenergy — PurposeEnergy South Burlington",
+        "url": "https://purposeenergy.com/project/zero-gravity-brewery/",
+        "type": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "South Burlington project identity, current host and disclosed operating metrics"
+      },
+      {
+        "label": "Biocycle — PurposeEnergy South Burlington",
+        "url": "https://www.biocycle.net/digester-in-magic-hats-sustainability-mix/",
+        "type": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "PurposeEnergy ownership/operator role and qualified 2008-2011 development chronology"
+      },
+      {
+        "label": "Quinbrook Net Zero Power Fund (NZPF)",
+        "url": "https://www.quinbrook.com/news-insights/quinbrook-exceeds-target-for-net-zero-power-strategy-raising-usd-3-billion-in-capital-commitments/",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "PurposeEnergy attribution to Quinbrook's Net Zero Power Fund strategy"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Quinbrook",
+        "ownershipVehicle": "Quinbrook Net Zero Power Fund strategy",
+        "vehicleName": "Quinbrook Net Zero Power Fund strategy",
+        "investmentYear": 2023,
+        "status": "Active",
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpigao004eivhedx8km4yh",
+        "name": "Quinbrook",
+        "updatedAt": "2026-07-23T16:09:28.320Z"
+      }
+    ],
+    "redirects": [
+      {
+        "retiredId": "cmrxpjmmo018civhe8frg363n",
+        "companyId": "cmrxpjmoi018givhecyo0ujvv",
+        "reason": "CANONICAL_MERGE",
+        "createdAt": "2026-09-01T23:46:57.387Z"
+      },
+      {
+        "retiredId": "cmrxpjmp1018hivheqruh0kpn",
+        "companyId": "cmrxpjmoi018givhecyo0ujvv",
+        "reason": "CANONICAL_MERGE",
+        "createdAt": "2026-09-01T23:46:57.523Z"
+      },
+      {
+        "retiredId": "cmrxpjmpo018iivhexgpftme7",
+        "companyId": "cmrxpjmoi018givhecyo0ujvv",
+        "reason": "CANONICAL_MERGE",
+        "createdAt": "2026-09-01T23:46:57.656Z"
+      }
+    ]
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0402:st-albans-industrial-treatment-saint:0567aff2",
+    "taskIndex": 402,
+    "canonicalKey": "st-albans-industrial-treatment-saint|united-states",
+    "capturedAt": "2026-09-02T00:27:34.400Z",
+    "databaseRevision": "revision:8bc8a0b70efa6464111731967df42968e39aa2a8ce0a45b69fb74f01e4a968ee",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "2ceae0fe40568588c11f8adaecc87f25d5cd402117aaf50d1800fabdccd49212",
+    "productionSnapshotSha256": "fcdce6602ca230d7b1105ad7958a57d1e9896ee9670712c33b0839207c974fea",
+    "targetCompanySnapshotSha256": "93ab9f2d9709bf079c1f293e8000ad7d3c4874516ffb92073a751cca35168fc9",
+    "seedEntrySha256": "c78451cd3502c6ed2915d6d6dc98dc9efb2c10363a607bcd394c56d419246508",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "5aab9abcd4b5f682ead4c97ef0184ac01fb3cb5b34e3179b8ec3c6bf838058b1",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "52c944c13a5e74630cefca11499339fafbdd9f1705bdf046c1d4d1c3542bd283",
+      "citationsSha256": "ef736efbe037213b88b74b8c4f6030fbd944704081a8860137bebbfe2e6c4718",
+      "redirectsSha256": "a752398f65058b712f35f1ec25d4cfabfcc46492ebc1d3e7516e5613f379dcb6"
+    },
+    "dependencySha256": "eefeaf8d449df600574423a19456c97daed08462a3465844efdf7fe76df55335",
+    "stateSha256": "188896d8731baef625cb076ab731b5f397231d684882d891f0d12d5d6472cbab",
+    "taskSnapshotSha256": "9111213a03f9dc168b5b51831171a6be7282d4621a87bd421507aa520ca9c95a"
+  },
+  "contextSha256": "f901b2418327ddbd5d07501d8c70c6b032e1f319310cc115b0c46956ee479685"
+}

@@ -1,0 +1,148 @@
+{
+  "generatedAt": "2026-09-02T00:19:20.000Z",
+  "actions": [
+    "CORRECT_COMPANY",
+    "MERGE_COMPANIES"
+  ],
+  "retiredCompanyIds": [
+    "cmrxpjms4018nivhe4b9fmlk9"
+  ],
+  "relationMerges": [
+    {
+      "kind": "OWNERSHIP_PERIOD",
+      "retiredRelationId": "cmrxpk9cv0289ivhexutrlkq9",
+      "canonicalRelationId": "cmrxpk98h0281ivhe89hg0afj",
+      "rationale": "SAINT's owner row is a project-level duplicate of Quinbrook's continuing PurposeEnergy platform ownership."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxpmm8h0539ivheqtunec2p",
+      "canonicalRelationId": "cmrxpmlki052givhe0ji6e568",
+      "rationale": "The SAINT acquisition row duplicates the canonical April 12, 2023 PurposeEnergy platform-acquisition milestone."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxpmm9m053bivhe5k6sbmcv",
+      "canonicalRelationId": "cmrxpmlli052iivheuzo8rvmj",
+      "rationale": "The exact-date SAINT grand-opening row is preserved by the updated canonical PurposeEnergy St. Albans milestone."
+    }
+  ],
+  "reviewedSeedRetirementTaskIds": [],
+  "rationale": "Merge St. Albans Industrial Treatment (SAINT) into PurposeEnergy. Official Quinbrook and PurposeEnergy sources identify PurposeEnergy as the manager-level portfolio platform and St. Albans as a project beneath it. Vermont records identify PurposeEnergy - St. Albans, LLC as permittee. The facility identities, construction and operating milestones, and direct sources are retained on PurposeEnergy while the duplicate project-level company and ownership row are retired.",
+  "evidence": [
+    {
+      "url": "https://www.quinbrook.com/portfolio/purposeenergy/",
+      "purpose": "Canonical portfolio-company and project boundary",
+      "supports": [
+        "PurposeEnergy is the manager-level portfolio company",
+        "St. Albans is a project beneath PurposeEnergy"
+      ]
+    },
+    {
+      "url": "https://purposeenergy.com/project/saint-albans-resource-recovery-center/",
+      "purpose": "St. Albans project identity and operating profile",
+      "supports": [
+        "PurposeEnergy presents St. Albans Resource Recovery Center as its project"
+      ]
+    },
+    {
+      "url": "https://purposeenergy.com/news-insights/purposeenergy-celebrates-grand-opening-of-st-albans-renewable-energy-facility-in-partnership-with-ben-jerrys-ice-cream/",
+      "purpose": "St. Albans operating chronology",
+      "supports": [
+        "The facility held its grand opening on May 29, 2025"
+      ]
+    },
+    {
+      "url": "https://anrweb.vt.gov/PubDocs/DEC/WSMD/Wastewater/Permits/3-1573/FactSheet.3-1573.202302.pdf",
+      "purpose": "Project legal identity and permittee",
+      "supports": [
+        "PurposeEnergy - St. Albans, LLC is the Vermont permittee"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "companyFieldUpdates": {
+    "aliases": [
+      "Purpose Energy, Inc.",
+      "Middlebury Resource Recovery Center",
+      "Middlebury Resource Recovery Center, LLC",
+      "MRRC LLC",
+      "PurposeEnergy-Middlebury",
+      "PurposeEnergy Minster",
+      "PurposeEnergy - Minster LLC",
+      "PurposeEnergy South Burlington",
+      "South Burlington anaerobic digester",
+      "Zero Gravity Brewery digester",
+      "Magic Hat Brewery digester",
+      "St. Albans Industrial Treatment (SAINT)",
+      "SAINT",
+      "PurposeEnergy-St. Albans",
+      "PurposeEnergy - St. Albans, LLC",
+      "St. Albans Resource Recovery Center"
+    ],
+    "description": "PurposeEnergy develops, owns and operates organics-to-energy infrastructure that converts food and beverage residuals and wastewater into biogas, renewable electricity, renewable natural gas, clean water and related by-products. Quinbrook announced its acquisition of the platform on April 12, 2023 through its Net Zero Power Fund strategy; a separate legal closing date, exact stake and holding vehicle were not publicly disclosed. PurposeEnergy's project portfolio includes Middlebury Resource Recovery Center in Vermont, which reached commercial operation on October 21, 2024; the Minster, Ohio industrial-biogas facility, which began taking waste on July 16, 2026 and remained in ramp-up; the operating South Burlington, Vermont brewery-waste digester historically associated with Magic Hat and now Zero Gravity; and the St. Albans, Vermont resource-recovery center, which began exporting electricity in December 2024 and held its grand opening on May 29, 2025. These facility and SPV names are project identities beneath PurposeEnergy and are not separate manager-level portfolio companies. No later PurposeEnergy equity transfer or signed pending sale was identified through September 1, 2026.",
+    "headquarters": "New Hampshire; Vermont; Ohio",
+    "lastVerifiedAt": "2026-09-01T00:00:00.000Z"
+  },
+  "ownershipPeriodUpdates": [],
+  "ownershipPeriodRemovals": [],
+  "ownershipPeriodAdditions": [],
+  "pendingOwnershipTransactionUpdates": [],
+  "pendingOwnershipTransactionAdditions": [],
+  "milestoneUpdates": [
+    {
+      "id": "cmrxpmlli052iivheuzo8rvmj",
+      "set": {
+        "date": "May 29, 2025",
+        "event": "PurposeEnergy held the grand opening for its St. Albans, Vermont resource-recovery facility after commercial operations began in December 2024.",
+        "category": "EXPANSION",
+        "sortDate": "2025-05-29T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://purposeenergy.com/news-insights/purposeenergy-celebrates-grand-opening-of-st-albans-renewable-energy-facility-in-partnership-with-ben-jerrys-ice-cream/"
+        ]
+      }
+    }
+  ],
+  "milestoneTransfers": [
+    {
+      "id": "cmrxpmm92053aivhe5wlyzu76",
+      "date": "May 23, 2023",
+      "event": "PurposeEnergy announced construction of an approximately US$18 million St. Albans, Vermont biogas facility serving Ben & Jerry's.",
+      "category": "EXPANSION",
+      "sortDate": "2023-05-23T04:00:00.000Z",
+      "evidenceUrls": [
+        "https://purposeenergy.com/project/saint-albans-resource-recovery-center/"
+      ]
+    }
+  ],
+  "citationUpdates": [],
+  "citationAdditions": [
+    {
+      "id": null,
+      "label": "PurposeEnergy — St. Albans Resource Recovery Center",
+      "url": "https://purposeenergy.com/project/saint-albans-resource-recovery-center/",
+      "sourceType": "WEBSITE",
+      "purpose": "OPERATIONS_ASSETS",
+      "evidenceLabel": "St. Albans project identity, development and operating profile",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "PurposeEnergy — St. Albans grand opening",
+      "url": "https://purposeenergy.com/news-insights/purposeenergy-celebrates-grand-opening-of-st-albans-renewable-energy-facility-in-partnership-with-ben-jerrys-ice-cream/",
+      "sourceType": "PRESS_RELEASE",
+      "purpose": "MILESTONE_EVENT",
+      "evidenceLabel": "May 29, 2025 grand opening and December 2024 commercial-operation start",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "Vermont DEC — St. Albans permit fact sheet",
+      "url": "https://anrweb.vt.gov/PubDocs/DEC/WSMD/Wastewater/Permits/3-1573/FactSheet.3-1573.202302.pdf",
+      "sourceType": "OTHER",
+      "purpose": "OPERATIONS_ASSETS",
+      "evidenceLabel": "PurposeEnergy - St. Albans, LLC permittee and facility details",
+      "isPrimary": false
+    }
+  ]
+}

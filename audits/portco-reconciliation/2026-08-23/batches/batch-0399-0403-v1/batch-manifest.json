@@ -1,0 +1,215 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_MANIFEST",
+  "methodologyVersion": "PORTCO_APPLY_BATCH_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0399-0403-v1",
+  "createdAt": "2026-09-02T00:25:00.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "5b02e9f68e91ca2793f49eb32135a82bad866346ac6f921d44e9a8f57f4060a9"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0399:rowan-bauxite:930cec59",
+      "taskIndex": 399,
+      "companyName": "Rowan Bauxite",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0399-0403-v1/decisions/0399-rowan-bauxite.json",
+        "sha256": "854f8a3c0449f4d871c6778e6efc35bf924d885100a8a24a1a71cedbdac85451"
+      }
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0400:rowan-cinco:18f76471",
+      "taskIndex": 400,
+      "companyName": "Rowan Cinco",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0399-0403-v1/decisions/0400-rowan-cinco.json",
+        "sha256": "40634ed22232daf97a55c522e8e219a0e6ffd7330f7b452c39bf8ce1dd811810"
+      }
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0401:rowan-temple:fb4df5a1",
+      "taskIndex": 401,
+      "companyName": "Rowan Temple",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0399-0403-v1/decisions/0401-rowan-temple.json",
+        "sha256": "0eda5633c60aaa57fcd8fb849dbe8f873c257a2c25e9410dca0225f4988e16c8"
+      }
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0402:st-albans-industrial-treatment-saint:0567aff2",
+      "taskIndex": 402,
+      "companyName": "St. Albans Industrial Treatment (SAINT)",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0402-st-albans-industrial-treatment-saint/attempt-1/proposal-v1.json",
+        "sha256": "7efa7751c8931eb369c72d3b4f3c456f5868eeb42eb8dce438808a83a54892b0"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0402-st-albans-industrial-treatment-saint-v1.json",
+        "sha256": "080f927f813858e6fa751f1a643188563199cd7bd4d2b6c45ce391a11b2d2450"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0402-st-albans-industrial-treatment-saint/attempt-1/locked-batch-v1-production-snapshot.json",
+        "sha256": "fa544153d7be2fbeb394e9fd035d7fa8261ce8ee93a2e1e5e7aed4115370329e"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0402-st-albans-industrial-treatment-saint/attempt-1/locked-batch-v1-task-snapshot.json",
+        "sha256": "9f259535d156b4877dcc0e044f619641cec4863a5cc9c251d84c1b8896d6eb58"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0402-st-albans-industrial-treatment-saint/attempt-1/observed-batch-v1-task-snapshot.json",
+        "sha256": "9111213a03f9dc168b5b51831171a6be7282d4621a87bd421507aa520ca9c95a"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0402-st-albans-industrial-treatment-saint/attempt-1/application-research-decision-v1.json",
+        "sha256": "210d483faafeca856d90a323d06d1e54ca64520b180c441cd298e05c9295fc19"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0402-st-albans-industrial-treatment-saint/attempt-1/application-source-verification-v1.json",
+        "sha256": "21c91cd07f580d01dff13f7e141f62b514b514d35f9618a9323d0dda37ff3779"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "188896d8731baef625cb076ab731b5f397231d684882d891f0d12d5d6472cbab",
+      "dependencySha256": "eefeaf8d449df600574423a19456c97daed08462a3465844efdf7fe76df55335",
+      "afterImageSha256": "97d7a7081fe4fe8883856c53069cb8d486a797ab83e876bc18943cecc98ad1a0",
+      "targetClaims": [
+        "canonical:purposeenergy|united-states",
+        "company:cmrxpjmoi018givhecyo0ujvv",
+        "company:cmrxpjms4018nivhe4b9fmlk9",
+        "relation:cmrxpk98h0281ivhe89hg0afj",
+        "relation:cmrxpk9cv0289ivhexutrlkq9",
+        "relation:cmrxpml7a051zivheoz4t327g",
+        "relation:cmrxpmljd052eivhe59vew4sw",
+        "relation:cmrxpmljy052fivhe45pfakxn",
+        "relation:cmrxpmlki052givhe0ji6e568",
+        "relation:cmrxpmll0052hivhe6wwepw05",
+        "relation:cmrxpmlli052iivheuzo8rvmj",
+        "relation:cmrxpmlml052jivhennn3js9j",
+        "relation:cmrxpmlr1052mivhelkbddxns",
+        "relation:cmrxpmlrl052nivhe6vjhx0ds",
+        "relation:cmrxpmm8h0539ivheqtunec2p",
+        "relation:cmrxpmm9m053bivhe5k6sbmcv",
+        "relation:cmrxpslhg0ctpivheidw5s3lv",
+        "relation:cmrxpslio0ctrivhepfosisat",
+        "relation:cmrxpsljn0cttivheiav9alzc",
+        "relation:cmtjbgr2o0000z22bjk4r3406",
+        "relation:cmtjbgr8d0002z22bd0rea460",
+        "relation:cmtjbgrc40003z22b2ies9y6i",
+        "relation:cmtjbgrhr0005z22bmnppmnd6",
+        "relation:cmtjbgrlg0006z22bwzqt99zu",
+        "relation:cmtjbgrr00008z22bh8se76xt",
+        "relation:cmtjbgrup0009z22b07wux3mv",
+        "relation:cmtjbgryf000az22bzondoeg8",
+        "relation:cmtjbgs25000bz22bu9hmj3ol",
+        "seed:purposeenergy|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://anrweb.vt.gov/PubDocs/DEC/WSMD/Wastewater/Permits/3-1573/FactSheet.3-1573.202302.pdf",
+          "label": "Vermont DEC — St. Albans permit fact sheet",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://irp.cdn-website.com/7b8e4b72/files/uploaded/08-14-23%20Council%20Minutes.pdf",
+          "label": "Village of Minster — 2023 project minutes",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://purposeenergy.com/",
+          "label": "Purposeenergy — PurposeEnergy",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://purposeenergy.com/news-insights/construction-kicks-off-on-renewable-energy-plant/",
+          "label": "Purposeenergy — Middlebury Resource Recovery Center",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://purposeenergy.com/news-insights/purposeenergy-celebrates-grand-opening-of-st-albans-renewable-energy-facility-in-partnership-with-ben-jerrys-ice-cream/",
+          "label": "PurposeEnergy — St. Albans grand opening",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://purposeenergy.com/project/minster/",
+          "label": "Purposeenergy — PurposeEnergy Minster",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://purposeenergy.com/project/purposeenergy-middlebury/",
+          "label": "Purposeenergy — Middlebury Resource Recovery Center",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://purposeenergy.com/project/saint-albans-resource-recovery-center/",
+          "label": "PurposeEnergy — St. Albans Resource Recovery Center",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://purposeenergy.com/project/zero-gravity-brewery/",
+          "label": "Purposeenergy — PurposeEnergy South Burlington",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://ripuc.ri.gov/sites/g/files/xkgbur841/files/2025-10/PurposeEnergy%20-%20Middlebury%20-%20Docket%20RES-24-50%20-Recommendations%20and%20Review%20-%202025-09-15.pdf",
+          "label": "Rhode Island PUC — Middlebury review",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.biocycle.net/digester-in-magic-hats-sustainability-mix/",
+          "label": "Biocycle — PurposeEnergy South Burlington",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.linkedin.com/posts/purpose-energy_renewableenergy-biogas-circulareconomy-activity-7483526778678951936-OaGU",
+          "label": "PurposeEnergy — Minster startup update",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.quinbrook.com/news-insights/quinbrook-exceeds-target-for-net-zero-power-strategy-raising-usd-3-billion-in-capital-commitments/",
+          "label": "Quinbrook Net Zero Power Fund (NZPF)",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.quinbrook.com/news-insights/quinbrook-moves-into-renewable-fuels/",
+          "label": "Announcement date source — Quinbrook — PurposeEnergy",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.quinbrook.com/portfolio/purposeenergy/",
+          "label": "Investment date source — Quinbrook — PurposeEnergy",
+          "sourceType": "WEBSITE"
+        }
+      ]
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0403:valley-of-fire:3a0ca3e8",
+      "taskIndex": 403,
+      "companyName": "Valley of Fire",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0399-0403-v1/decisions/0403-valley-of-fire.json",
+        "sha256": "12d21b98b3fbbab6d6efc0d5cb16ecd46d4e904b9fb05cdf21c22b618ad1f87d"
+      }
+    }
+  ],
+  "collisionAnalysis": {
+    "independent": true,
+    "claimsSha256": "ce6f6c8c030b27eedab0654352ac1394bb8837e2e2c27b90c88dd35cb0ead1d5",
+    "sharedSourceUrls": [],
+    "conflicts": []
+  },
+  "batchSha256": "504b275f54e2a71d7aa4b688ebee267b93592e5b7976df47a1e6b63ea1eb3f2b"
+}

@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0401:rowan-temple:fb4df5a1",
+  "taskIndex": 401,
+  "companyName": "Rowan Temple",
+  "asOfDate": "2026-09-01",
+  "decision": "DEFERRED",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-02T00:19:20.000Z",
+  "result": {
+    "decision": "DEFERRED",
+    "rationale": "Preserve Rowan Temple unchanged and defer the project-to-platform merge. Direct sources establish Temple as a Rowan Digital Infrastructure campus, but Rowan's current platform ownership after the April 9, 2026 Blackstone recapitalization remains unresolved. UPP's continuing ownership and the exact Quinbrook, UPP and Blackstone interests are not publicly disclosed.",
+    "evidence": [
+      {
+        "url": "https://rowan.digital/portfolio/temple/",
+        "purpose": "Official Rowan evidence that Temple is a campus beneath the Rowan platform."
+      },
+      {
+        "url": "https://www.quinbrook.com/our-portfolio/rowan-digital-infrastructure/",
+        "purpose": "Official manager portfolio page establishing Rowan Digital Infrastructure as the platform company."
+      },
+      {
+        "url": "https://www.quinbrook.com/news-insights/rowan-digital-infrastructure-announces-strategic-recapitalization/",
+        "purpose": "Official April 9, 2026 recapitalization announcement without a complete post-transaction cap table."
+      },
+      {
+        "url": "https://www.quinbrook.com/news-insights/upp-invests-in-data-center-developer-rowan-digital-infrastructure/",
+        "purpose": "Official evidence of UPP's earlier Rowan platform investment."
+      }
+    ],
+    "unresolvedQuestions": [
+      "UPP's ownership status after the April 9, 2026 Blackstone recapitalization.",
+      "The exact Rowan and Temple ownership percentages, governance rights and holding vehicles.",
+      "The exact Blackstone interest and recapitalization sellers."
+    ]
+  },
+  "lineage": {
+    "sourceDecision": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0401-rowan-temple/attempt-1/research-decision.json",
+    "basis": "The original validated research establishes the project boundary but identifies unresolved current platform ownership that blocks a safe consolidated after-image."
+  }
+}

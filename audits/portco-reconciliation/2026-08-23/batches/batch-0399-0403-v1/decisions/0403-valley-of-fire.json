@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0403:valley-of-fire:3a0ca3e8",
+  "taskIndex": 403,
+  "companyName": "Valley of Fire",
+  "outcome": "DEFERRED",
+  "decidedAt": "2026-09-02T00:23:00.000Z",
+  "rationale": "Preserve Valley of Fire unchanged and defer its ownership correction. Primary manager and company sources support Valley of Fire Solar, LLC as a distinct solar-and-storage holdco and identify the 2024 continuation vehicle, but the complete current cap table is not public. A March 2026 filing discloses an individual security holder without the security class or percentage, so a complete current ownership after-image cannot be stated safely.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0403-valley-of-fire/attempt-1/locked-batch-v1-task-snapshot.json",
+    "sha256": "c9cafc14ef0184a093c59e79ff10bbac5323224cb1999355c85ade687f739979"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0403-valley-of-fire/attempt-1/application-research-decision-v1.json",
+    "sha256": "74dab2c1c6a13e6ccd2138ad3ab6ead788e77b9bdbb48cece792cde60e2691ae"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0403-valley-of-fire/attempt-1/application-source-verification-v1.json",
+    "sha256": "75498285fc20826ebb248ca3ebf2ee63f2156f3f2195b64d4010610f3b3e5d33"
+  },
+  "evidence": [
+    {
+      "url": "https://www.quinbrook.com/news-insights/quinbrook-closes-600m-solarstorage-continuation-fund/",
+      "purpose": "Official 2024 continuation-vehicle and Valley of Fire transaction evidence."
+    },
+    {
+      "url": "https://www.quinbrook.com/projects/valley-of-fire-solar/",
+      "purpose": "Official current Valley of Fire platform and project profile."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1820721/000119312526116240/d85164d8k.htm",
+      "purpose": "March 2026 filing evidence of an additional security holder without class or ownership percentage."
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "12d21b98b3fbbab6d6efc0d5cb16ecd46d4e904b9fb05cdf21c22b618ad1f87d"
+}

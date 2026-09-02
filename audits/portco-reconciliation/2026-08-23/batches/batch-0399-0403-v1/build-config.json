@@ -1,0 +1,42 @@
+{
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0399-0403-v1",
+  "createdAt": "2026-09-02T00:25:00.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "5b02e9f68e91ca2793f49eb32135a82bad866346ac6f921d44e9a8f57f4060a9"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "TERMINAL",
+      "decisionPath": "audits/portco-reconciliation/2026-08-23/batches/batch-0399-0403-v1/decisions/0399-rowan-bauxite.json"
+    },
+    {
+      "kind": "TERMINAL",
+      "decisionPath": "audits/portco-reconciliation/2026-08-23/batches/batch-0399-0403-v1/decisions/0400-rowan-cinco.json"
+    },
+    {
+      "kind": "TERMINAL",
+      "decisionPath": "audits/portco-reconciliation/2026-08-23/batches/batch-0399-0403-v1/decisions/0401-rowan-temple.json"
+    },
+    {
+      "kind": "MUTATION",
+      "proposalPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0402-st-albans-industrial-treatment-saint/attempt-1/proposal-v1.json",
+      "authorizationPath": "audits/portco-reconciliation/2026-08-03/approvals/0402-st-albans-industrial-treatment-saint-v1.json",
+      "productionSnapshotPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0402-st-albans-industrial-treatment-saint/attempt-1/locked-batch-v1-production-snapshot.json",
+      "taskSnapshotPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0402-st-albans-industrial-treatment-saint/attempt-1/locked-batch-v1-task-snapshot.json",
+      "observedTaskSnapshotPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0402-st-albans-industrial-treatment-saint/attempt-1/observed-batch-v1-task-snapshot.json",
+      "researchDecisionPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0402-st-albans-industrial-treatment-saint/attempt-1/application-research-decision-v1.json",
+      "sourceVerificationPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0402-st-albans-industrial-treatment-saint/attempt-1/application-source-verification-v1.json",
+      "supersededTaskIds": []
+    },
+    {
+      "kind": "TERMINAL",
+      "decisionPath": "audits/portco-reconciliation/2026-08-23/batches/batch-0399-0403-v1/decisions/0403-valley-of-fire.json"
+    }
+  ]
+}
