@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RELEASE_BUNDLE_PREPARATION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "preparedAt": "2026-09-02T07:42:00.000Z",
+  "authoritative": false,
+  "dependsOn": [
+    "The preceding source-task bundle 449 through 453 must be fully production-verified and source-finalized.",
+    "No release bundle may be active, forming, releasing, applying, verifying or recovering."
+  ],
+  "plannedMembers": [
+    {
+      "taskIndex": 454,
+      "taskId": "ledger:0454:beyond-data-centers:aa1b4081",
+      "companyName": "Beyond Data Centers",
+      "plannedOutcome": "DEFERRED",
+      "reason": "The platform brand exists, but the legal entity, current Wafra ownership, investment vehicle and owned-versus-service operating boundary remain unsupported by direct evidence.",
+      "missingFact": "A primary transaction or company disclosure identifying the legal entity and Wafra's current direct or indirect equity ownership.",
+      "applicationResearchDecisionByteSha256": "4b7c7909a8ec74f662d2ec189bbe5f46c32609bd3ff56d0dbb498a0146273302"
+    },
+    {
+      "taskIndex": 455,
+      "taskId": "ledger:0455:contract-leasing-corporation:083d749b",
+      "companyName": "Contract Leasing Corporation",
+      "plannedOutcome": "CREATE_COMPANY",
+      "reason": "Create one active Wafra infrastructure portfolio-company record for the trailer and chassis leasing platform acquired in 2022; keep branches, depots, units and services beneath CLC and leave undisclosed ownership fields explicit.",
+      "applicationResearchDecisionByteSha256": "aca1c69e78fe0f0aa7f438a11cf3e43bf29aaea3af00665db5b20316c19d6ee1"
+    },
+    {
+      "taskIndex": 456,
+      "taskId": "ledger:0456:crescent-louisiana-midstream:599b6824",
+      "companyName": "Crescent Louisiana Midstream",
+      "plannedOutcome": "DEFERRED",
+      "reason": "The legal operating entity and a current Wafra governance connection are evidenced, but no primary source establishes Wafra's direct equity interest, vehicle, stake, entry transaction or closing date.",
+      "missingFact": "Direct transaction or ownership documentation proving Wafra's current equity interest and the correct manager-level boundary.",
+      "applicationResearchDecisionByteSha256": "d8535fbc8d4ab6e8a6a86c0e361020af95d961c8b90b939e58a78f2cbb69c79b"
+    },
+    {
+      "taskIndex": 457,
+      "taskId": "ledger:0457:intermountain-infrastructure-group:66d1e5b0",
+      "companyName": "Intermountain Infrastructure Group",
+      "plannedOutcome": "CREATE_COMPANY",
+      "reason": "Create one U.S.-canonical fiber owner/operator record for Intermountain Infrastructure Group, with Canada secondary and Wafra plus successor manager Future Standard represented without inferring current stakes.",
+      "applicationResearchDecisionByteSha256": "8e53d2bfef04161abef99afeb813fe77ca8193d3871d5de46b58d13d95e47262"
+    },
+    {
+      "taskIndex": 458,
+      "taskId": "ledger:0458:mission-clean-energy:ec7ef24e",
+      "companyName": "Mission Clean Energy",
+      "plannedOutcome": "CREATE_COMPANY",
+      "reason": "Create one active Wafra-controlled U.S. solar and battery-storage development platform, retain all project SPVs beneath Mission and distinguish separately evidenced minority capital without inventing ownership percentages.",
+      "applicationResearchDecisionByteSha256": "82414451116d93f1236778d6f3688162dc7b8b46d32a9e5d53e4df60a61e82fb"
+    }
+  ],
+  "collisionAnalysis": {
+    "result": "PASS_FOR_PREPARATION",
+    "reason": "The three creates have distinct canonical keys and the two deferred members do not target production or seed records. Fresh name, alias, organization, fund and shared-source checks remain mandatory."
+  },
+  "sourceCompatibility": {
+    "result": "PASS_FOR_PREPARATION",
+    "reason": "Every normalized decision is backed by a UI-attested GPT-5.6 Sol Pro 5-of-5 research packet and independently validated direct-source artifact."
+  },
+  "requiredBeforeRelease": [
+    "Recapture one fresh production snapshot and all five task/dependency snapshots after the predecessor bundle completes.",
+    "Prove each proposed create remains absent across production, evaluated seed, redirects and aliases.",
+    "Generate three evidence-complete company after-images and two terminal deferral decisions.",
+    "Reconcile all new active-owner seed attribution records and prove one-to-one evaluated-seed coverage.",
+    "Run source, primary-citation, dependency, collision and stale-hash checks before automatic authorization.",
+    "Use the protected release and atomic serializable apply workflow for all three creates."
+  ]
+}

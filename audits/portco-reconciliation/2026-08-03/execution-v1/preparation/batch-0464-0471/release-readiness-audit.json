@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RELEASE_BUNDLE_READINESS_AUDIT",
+  "authoritative": false,
+  "auditedAt": "2026-09-02T08:16:00.000Z",
+  "plannedTaskIndices": [464, 465, 466, 470, 471],
+  "preparationSummaryByteSha256": "c8e7ea63495a1582ca32d049b50be7f86231e622fca8199662c9514062ca2c35",
+  "result": "PREPARED_RESEARCH_INTACT_FRESH_CONTEXT_REQUIRED",
+  "predecessorGate": {
+    "requiredTaskIndices": [459, 460, 461, 462, 463],
+    "satisfied": false,
+    "reason": "The predecessor bundle must be production-verified and source-finalized before this bundle can activate."
+  },
+  "checks": {
+    "deterministicPendingTaskOrder": true,
+    "alreadyTerminalIndicesSkipped": true,
+    "researchBackedDecisionByteHashesMatchPreparation": true,
+    "researchLineageByteHashesMatch": true,
+    "exactlyOneResearchRecommendedPrimaryPerResearchBackedTask": true,
+    "primarySourcesWorkingOrBrowserVerified": true,
+    "alphaGenCanonicalTargetCompleted": true,
+    "boldynUsReciprocalStillPending": true,
+    "freshDependencySnapshotsCaptured": false,
+    "authoritativeMergeTargetBindingsComplete": false,
+    "authoritativeCollisionAnalysisComplete": false
+  },
+  "skippedAlreadyTerminalTasks": [
+    {
+      "taskIndex": 467,
+      "status": "SUPERSEDED"
+    },
+    {
+      "taskIndex": 468,
+      "status": "SUPERSEDED"
+    },
+    {
+      "taskIndex": 469,
+      "status": "SUPERSEDED"
+    }
+  ],
+  "tasks": [
+    {
+      "taskIndex": 464,
+      "taskId": "ledger:0464:donjon-marine-co-llc:1f2eb8b6",
+      "plannedOutcome": "CORRECT_COMPANY",
+      "applicationDecisionByteSha256": "82904bdc745e245c9ba67a59c8de0259f70ad0f282c39141b7decb01e1f55885",
+      "primaryUrl": "https://www.businesswire.com/news/home/20250922868774/en/Tallvine-Partners-Launches-North-America-Marine-Infrastructure-Platform-with-Acquisition-of-Donjon-Marine-Co.-LLC",
+      "primaryUrlHttpStatus": 403,
+      "primaryUrlHealth": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "sourceVerificationSha256": "3afecae36ad9274d4884e275849ff8d9a8bb6c9c2f6d426f93ad4f0acce2c504"
+    },
+    {
+      "taskIndex": 465,
+      "taskId": "ledger:0465:havasu-air-center:895ad5ae",
+      "plannedOutcome": "MERGE_AND_REDIRECT",
+      "applicationDecisionByteSha256": "0e41cfeb86345576ce12c9997cbd1d9584b43764bbc3cfffaf0ef64cb4f07773",
+      "primaryUrl": "https://lakehavasucity.legistar.com/MeetingDetail.aspx?GUID=01EF0562-7E17-479F-95F9-C2808C0A33E5&ID=1330691&Search=",
+      "primaryUrlHttpStatus": 200,
+      "primaryUrlHealth": "WORKING",
+      "targetBinding": "POST_BTR_VELOCITY_FBO_NETWORK_REQUIRES_FRESH_TASK_SNAPSHOT"
+    },
+    {
+      "taskIndex": 466,
+      "taskId": "ledger:0466:alpha-generation-alphagen:c81d7304",
+      "plannedOutcome": "SUPERSEDED",
+      "researchPacket": "NOT_REQUIRED_RECIPROCAL_IDENTITY",
+      "targetTaskId": "ledger:0064:alphagen:b9424b11",
+      "observedTargetStatus": "COMPLETED",
+      "requiredTargetStatus": "COMPLETED"
+    },
+    {
+      "taskIndex": 470,
+      "taskId": "ledger:0470:boldyn-networks:3ce154eb",
+      "plannedOutcome": "MERGE_AND_CORRECT",
+      "applicationDecisionByteSha256": "89bca3f0a315b0b5410fcbe682f5bfc872fbe78afce8ec94d338367544f8a921",
+      "primaryUrl": "https://www.aimco.ca/insights/boldyn-networks-investment",
+      "primaryUrlHttpStatus": 200,
+      "primaryUrlHealth": "WORKING"
+    },
+    {
+      "taskIndex": 471,
+      "taskId": "ledger:0471:boldyn-networks-us:9c03f01f",
+      "plannedOutcome": "SUPERSEDED",
+      "researchPacket": "NOT_REQUIRED_RECIPROCAL_IDENTITY",
+      "targetTaskId": "ledger:0470:boldyn-networks:3ce154eb",
+      "observedTargetStatus": "PENDING",
+      "requiredTargetStatus": "COMPLETED_IN_SAME_BUNDLE",
+      "rule": "Do not finalize this supersession unless task 470 is production-applied and verified."
+    }
+  ],
+  "requiredAtActivation": [
+    "Wait for tasks 459 through 463 to be production-verified and source-finalized.",
+    "Capture one fresh production snapshot and all five task, seed and dependency snapshots.",
+    "Bind Havasu to the post-BTR Velocity FBO Network after-image and fail on unexpected target or relation changes.",
+    "Reconfirm canonical task 64 remains completed before superseding task 466.",
+    "Complete and verify Boldyn task 470 before finalizing task 471's supersession.",
+    "Generate the Donjon correction, Havasu merge, Boldyn merge/correction and two terminal supersessions.",
+    "Complete authoritative source, redirect, relation, target, seed-attribution, dependency, collision, stale-hash and atomicity checks before automatic authorization."
+  ]
+}

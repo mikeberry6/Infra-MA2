@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RELEASE_BUNDLE_PREPARATION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "preparedAt": "2026-09-02T07:42:00.000Z",
+  "authoritative": false,
+  "dependsOn": [
+    "The preceding source-task bundle 454 through 458 must be fully production-verified and source-finalized.",
+    "No release bundle may be active, forming, releasing, applying, verifying or recovering."
+  ],
+  "plannedMembers": [
+    {
+      "taskIndex": 459,
+      "taskId": "ledger:0459:signal-rail-holdings:50c69045",
+      "companyName": "Signal Rail Holdings",
+      "plannedOutcome": "EXCLUDED",
+      "reason": "Signal Rail is an investment and asset-leasing joint venture whose railcars are originated and serviced by Trinity Industries Leasing Company, not a manager-level operating company.",
+      "applicationResearchDecisionByteSha256": "69349c65fbbd1ef4826cfdd27601a2988b95dbbffb0a5a7232d1467e7a7c8778"
+    },
+    {
+      "taskIndex": 460,
+      "taskId": "ledger:0460:dcli:22d0fc27",
+      "companyName": "DCLI",
+      "plannedOutcome": "SUPERSEDED",
+      "reason": "The completed Direct ChassisLink, Inc. (DCLI) task is the reviewed canonical company identity; this shorthand reciprocal label requires no second company chat or database mutation.",
+      "targetTaskId": "ledger:0262:direct-chassislink-inc-dcli:d3d4542b",
+      "targetRequiredStatus": "COMPLETED"
+    },
+    {
+      "taskIndex": 461,
+      "taskId": "ledger:0461:i3-broadband:2d53909b",
+      "companyName": "i3 Broadband",
+      "plannedOutcome": "VERIFIED_NO_CHANGE",
+      "reason": "Wren House remains the evidenced current legal owner and the announced T-Mobile 50/50 joint venture had not been shown to close by the research cutoff, so no active-owner change is authorized.",
+      "applicationResearchDecisionByteSha256": "c08e5a107a85bd6aca2079bb11778b8b2e7a2edd1c38bc9df77153f037ab4962"
+    },
+    {
+      "taskIndex": 462,
+      "taskId": "ledger:0462:qsp-northern-virginia-data-center-jv:3a29bbb8",
+      "companyName": "QSP (Northern Virginia Data Center JV)",
+      "plannedOutcome": "MERGE_AND_CORRECT",
+      "reason": "Bind the requested Northern Virginia label to the single existing QSP platform, preserve Wren House's disclosed 40% interest, add BlackRock as the evidenced co-investor, distinguish QTS's operating/minority role and keep task 491 beneath this canonical decision.",
+      "applicationResearchDecisionByteSha256": "6a6bbd8c20a9fa374ee5d4a08e40473e52c2c8d8facdd1d3ff941930d8491963"
+    },
+    {
+      "taskIndex": 463,
+      "taskId": "ledger:0463:btr-jet-center:402b91d4",
+      "companyName": "BTR Jet Center",
+      "plannedOutcome": "MERGE_AND_REDIRECT",
+      "reason": "Merge BTR into the Tallvine-owned Velocity FBO Network as the Velocity Baton Rouge operating location, preserving its closing lineage and milestones without treating the add-on as a separate manager-level platform.",
+      "applicationResearchDecisionByteSha256": "eeddf1e8673644ed159ba376637e889d3c5f1735eb671213bf16b24e8c582795"
+    }
+  ],
+  "collisionAnalysis": {
+    "result": "REQUIRES_FRESH_CONTEXT",
+    "reason": "QSP and BTR require exact reviewed target bindings and relation/redirect collision checks. DCLI's supersession target is already completed, while the other members are terminal."
+  },
+  "sourceCompatibility": {
+    "result": "PASS_FOR_PREPARATION",
+    "reason": "All four research-backed decisions have UI-attested GPT-5.6 Sol Pro 5-of-5 packets and independent source validation; DCLI is covered by the completed canonical target's durable evidence chain."
+  },
+  "requiredBeforeRelease": [
+    "Recapture one fresh production snapshot and all five task/dependency snapshots after the predecessor bundle completes.",
+    "Verify task 262 remains COMPLETED before generating DCLI's supersession.",
+    "Bind QSP and Velocity FBO Network to exactly one production and evaluated-seed target each; fail on ambiguity.",
+    "Generate the two merge/correction proposals and three terminal decisions, including task 491 as a later target-bound supersession only after QSP verifies.",
+    "Reconcile any changed active-owner seed attribution records and prove one-to-one evaluated-seed coverage.",
+    "Run source, primary-citation, dependency, redirect, relation, collision and stale-hash checks before automatic authorization.",
+    "Use the protected release and atomic apply workflow if either merge changes production or seed state."
+  ]
+}

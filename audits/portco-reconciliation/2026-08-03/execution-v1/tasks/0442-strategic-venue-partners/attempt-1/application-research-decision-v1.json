@@ -1,0 +1,195 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0442:strategic-venue-partners:f4cd44da",
+  "taskIndex": 442,
+  "companyName": "Strategic Venue Partners",
+  "asOfDate": "2026-08-19",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-02T07:08:00.000Z",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "Strategic Venue Partners",
+    "requestedManagers": [
+      "Tiger Infrastructure Partners",
+      "Brookfield Asset Management"
+    ],
+    "decision": "PROPOSED_CORRECTION",
+    "confidence": "HIGH",
+    "rationale": "SVP is qualifying U.S. digital infrastructure. Tiger records 2019 entry and assigns SVP to Fund II; the cited 2022 BusinessWire page is unrelated. Brookfield/partners completed a minority investment on 2024-12-11, later identified as BISS, and SVP confirmed Tiger still controls it. Percentages, SPVs and recap terms are NOT_PUBLICLY_DISCLOSED.",
+    "identityResolution": {
+      "name": "Strategic Venue Partners",
+      "canonicalKey": "strategic-venue-partners|united-states",
+      "founded": 2017,
+      "hq": "Greenwich, Connecticut",
+      "legal": "SVP, Inc. launched in 2017; Holdings LLC formed 2019-01-16 to consolidate assets; current releases use SVP, LLC. One platform; exact parent chain NOT_PUBLICLY_DISCLOSED.",
+      "founders": "Launch named Rich Grimes and Chad Aaron; Justin Marron joined as CEO in August 2017 and was later called a founder.",
+      "website": "https://www.strategicvenue.com/"
+    },
+    "ownershipResolution": {
+      "owners": [
+        {
+          "manager": "Tiger Infrastructure Partners",
+          "organization": "Tiger Infrastructure Partners LP/affiliates",
+          "fund": "Tiger Infrastructure Partners Fund II",
+          "vehicle": "Exact holding SPV NOT_PUBLICLY_DISCLOSED",
+          "stake": "Controlling; exact percentage NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2019-01-16",
+          "entryDate": null,
+          "entryYear": 2019,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "ACTIVE_CONTROL_OWNER"
+        },
+        {
+          "manager": "Brookfield Asset Management",
+          "organization": "Brookfield and undisclosed institutional partners",
+          "fund": "Brookfield Infrastructure Structured Solutions Fund (BISS)",
+          "vehicle": "BISS/co-investment vehicles; exact SPV NOT_PUBLICLY_DISCLOSED",
+          "stake": "Minority equity; exact percentage/security NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2024-12-11",
+          "entryDate": "2024-12-11",
+          "entryYear": 2024,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_ACTIVE"
+        }
+      ],
+      "capTable": "Tiger controlling; Brookfield/BISS minority. Other percentages NOT_PUBLICLY_DISCLOSED.",
+      "recap": "First-party sources call it growth capital but omit sellers, primary/secondary split, consideration and security.",
+      "governance": "Tiger remains sponsor/control; Brookfield rights or board seat are NOT_PUBLICLY_DISCLOSED.",
+      "pendingTransactions": []
+    },
+    "operatingResolution": {
+      "qualification": "IN_SCOPE_DIRECT_INFRASTRUCTURE_EQUITY",
+      "model": "SVP designs, finances, installs, owns, operates and upgrades neutral-host systems under long-term contracts; services support the owned assets.",
+      "assets": "DAS, public safety, CBRS/private LTE, Wi-Fi, fiber, RTLS and IPTV.",
+      "venues": "Healthcare, hospitality, education, entertainment, retail, real estate and data centers.",
+      "contracts": "Venue owners and carriers; recurring utility-style contracts, no upfront venue capex and lifecycle upgrades.",
+      "footprintScale": "U.S./North America; Tiger reported 13 customers/55 venues on 2024-10-04; no later total disclosed.",
+      "boundary": "Keep all venue systems and asset SPVs beneath SVP."
+    },
+    "acquisitionExitCheck": {
+      "searchedThrough": "2026-08-19",
+      "result": "The 2024 minority investment closed and was not a Tiger exit. The 2025 $120 million debt refinancing confirmed Tiger control/Brookfield minority. No later owner transfer, sale, recap, exit or pending deal found; venue deployments are organic.",
+      "pendingTransactions": []
+    },
+    "milestones": [
+      {
+        "date": "2017",
+        "event": "SVP launched with Grimes, Aaron and Tiger financing; Marron joined as CEO."
+      },
+      {
+        "date": "2019-01-16",
+        "event": "Holdings LLC formed; Tiger records 2019 entry and Fund II is confirmed."
+      },
+      {
+        "date": "2024-12-11",
+        "event": "Brookfield/partners completed a minority investment; Tiger remained sponsor."
+      },
+      {
+        "date": "2025-03-10",
+        "event": "$120 million debt refinancing confirmed Tiger control/Brookfield minority."
+      }
+    ],
+    "evidence": [
+      {
+        "label": "Current owners",
+        "url": "https://www.strategicvenue.com/strategic-venue-partners-announces-inaugural-issuance-of-investment-grade-notes-andrefinancing-of-revolving-credit-facility-to-support-further-growth/",
+        "purpose": "Tiger control, Brookfield minority, U.S. IBW assets.",
+        "sourceTier": "1P_COMPANY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "Tiger portfolio",
+        "url": "https://www.tigerinfrastructure.com/portfolio/Strategic-Venue",
+        "purpose": "2019 entry and owned long-term-contract model.",
+        "sourceTier": "1P_MANAGER",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Fund II",
+        "url": "https://www.tigerinfrastructure.com/documents/FG/tigerNew/news/624136_Tiger_Infrastructure_Operating_Partner_Roundtable_i3_April_2022.pdf",
+        "purpose": "Fund II attribution and ownership model.",
+        "sourceTier": "1P_MANAGER",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Launch",
+        "url": "https://www.strategicvenue.com/strategic-venue-partners-launches-innovative-wireless-infrastructure-firm/",
+        "purpose": "Founders, Tiger financing and infrastructure model.",
+        "sourceTier": "1P_COMPANY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "2019 topco",
+        "url": "https://www.strategicvenue.com/svp-announces-formation-of-new-holding-company/",
+        "purpose": "Holdings LLC date and Tiger equity.",
+        "sourceTier": "1P_COMPANY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "2024 recap",
+        "url": "https://www.strategicvenue.com/strategic-venue-partners-announces-financial-transactions/",
+        "purpose": "Closed Brookfield minority investment; Tiger retained.",
+        "sourceTier": "1P_COMPANY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "BISS",
+        "url": "https://bam.brookfield.com/generation/pdf/document-file.pdf?path=%2Fpress-releases%2Fbrookfield-closes-infrastructure-structured-solutions-fund",
+        "purpose": "SVP identified as a BISS investment.",
+        "sourceTier": "1P_MANAGER",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Scale",
+        "url": "https://www.linkedin.com/posts/tigerinfrastructurepartners_tiger-infrastructure-partners-portfolio-company-activity-7248041335805341697-tOWu",
+        "purpose": "13 customers across 55 venues.",
+        "sourceTier": "1P_MANAGER",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "before": "Founded 2018; Tiger sole owner; 2022 entry; Brookfield narrative.",
+      "after": "Founded 2017; Tiger Fund II entered 2019 and controls; Brookfield/BISS minority from 2024-12-11; topco formed 2019-01-16.",
+      "sourceCorrection": "https://www.businesswire.com/news/home/20220301005336/en/ is an unrelated Pragmatic Institute release; remove the 2022 claim."
+    },
+    "excludedOrDuplicateCandidates": [],
+    "unresolvedQuestions": [
+      "Fully diluted percentages and management rollover.",
+      "Exact Tiger/Brookfield SPVs, security and governance.",
+      "2024 seller, consideration and primary/secondary split.",
+      "Tiger exact close date; 2017 shows financing, Tiger records 2019 entry."
+    ],
+    "recommendedListAction": "Retain one active U.S. SVP; keep Tiger Fund II controlling; add Brookfield/BISS minority from 2024-12-11; correct founding to 2017 and Tiger entry to 2019; delete 2022 claim; keep venues/SPVs beneath SVP."
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0442-strategic-venue-partners/attempt-1/research-decision.json",
+      "sha256": "07e54b436ab9b3102b227720342199010deaa5dafefb1fb277653f2bad0c6c21"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0442-strategic-venue-partners/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "026fb24c2d66ad5b1f1555be49cbb988c3e7ce469f862be739a9f4f5d46dc6b9"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0442-strategic-venue-partners/attempt-1/source-verification.json",
+      "sha256": "33d78195bbeccc708c7da4f6ad7ec306645499ff080da87d05b9a266e934a015"
+    },
+    "acceptedResponseSha256": "026fb24c2d66ad5b1f1555be49cbb988c3e7ce469f862be739a9f4f5d46dc6b9",
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION"
+  }
+}

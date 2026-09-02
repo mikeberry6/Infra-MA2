@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RELEASE_BUNDLE_PREPARATION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "preparedAt": "2026-09-02T07:34:00.000Z",
+  "authoritative": false,
+  "dependsOn": [
+    "The preceding source-task bundle 444 through 448 must be fully production-verified and source-finalized.",
+    "No release bundle may be active, forming, releasing, applying, verifying or recovering."
+  ],
+  "plannedMembers": [
+    {
+      "taskIndex": 449,
+      "taskId": "ledger:0449:pike-corporation:5a43238f",
+      "companyName": "Pike Corporation",
+      "plannedOutcome": "EXCLUDED",
+      "reason": "Pike is an engineering, construction, maintenance and storm-response service provider held through private-equity strategies, with no direct evidence tying the company to TPG Transition Infrastructure or qualifying asset ownership.",
+      "applicationResearchDecisionByteSha256": "9a88dc7d6b574b5b50f7361e5755135edea50c616e3c9dc934a2c12333edc8ac"
+    },
+    {
+      "taskIndex": 450,
+      "taskId": "ledger:0450:ubs-ercot-battery-storage-portfolio:d9b23a03",
+      "companyName": "UBS ERCOT Battery Storage Portfolio",
+      "plannedOutcome": "DEFERRED",
+      "reason": "The November 2021 five-project acquisition is evidenced, but the original project/SPV boundary and continuing one-to-one ownership cannot be distinguished from later UBS-managed ERCOT portfolios.",
+      "missingFact": "The exact five original project entities and whether they remain a single UBS-owned platform as of the research cutoff.",
+      "applicationResearchDecisionByteSha256": "8b09bc37284bf828c803f375ecb6f11e7503c9cea57dce107540c8643b5ee4f6"
+    },
+    {
+      "taskIndex": 451,
+      "taskId": "ledger:0451:cartier-u-s-district-energy-platform:46304894",
+      "companyName": "Cartier (U.S. District Energy Platform)",
+      "plannedOutcome": "MERGE_AND_SUPERSEDE",
+      "reason": "The requested label is the same platform as existing published Cartier Energy Holding; the active bundle must bind that exact production target, preserve one canonical company and add only evidence-supported aliases or corrections.",
+      "candidateTarget": {
+        "companyIdFromLatestNonAuthoritativeSnapshot": "cmrxpjorr01btivheaha4nor0",
+        "companyName": "Cartier Energy Holding",
+        "bindingStatus": "REQUIRES_FRESH_TASK_SNAPSHOT"
+      },
+      "applicationResearchDecisionByteSha256": "d641ebc1f077f18ff350d06d1b546dde916c7dd44e02ca58b24b271496c6558f"
+    },
+    {
+      "taskIndex": 452,
+      "taskId": "ledger:0452:terawatt-infrastructure:facb72c6",
+      "companyName": "TeraWatt Infrastructure",
+      "plannedOutcome": "DEFERRED",
+      "reason": "Vision Ridge's September 2022 investment is evidenced, but the repository alias must be verified and current ownership continuity for historical co-investors cannot be established without guessing.",
+      "missingFact": "Verified manager-alias binding plus current direct ownership continuity for Keyframe and Cyrus.",
+      "applicationResearchDecisionByteSha256": "09a6c2b7e83e02e50bcb22b3b16d53107d898e2a44e9c6e6dbb5b58b14fb77e4"
+    },
+    {
+      "taskIndex": 453,
+      "taskId": "ledger:0453:american-inland-marine-holdings:47cd7d1a",
+      "companyName": "American Inland Marine Holdings",
+      "plannedOutcome": "DEFERRED",
+      "reason": "No legally identifiable operating-company boundary or direct current Wafra equity ownership was established from the available primary evidence.",
+      "missingFact": "The exact legal operating entity and evidence that a Wafra fund or managed account currently owns direct equity.",
+      "applicationResearchDecisionByteSha256": "6e2aee98d0e5940fe599a88a2f613264d7324dbf5c55977ccedc946f1408a05e"
+    }
+  ],
+  "collisionAnalysis": {
+    "result": "REQUIRES_FRESH_CONTEXT",
+    "reason": "The Cartier identity merge requires a fresh reviewed target binding to the published Cartier Energy Holding record. The other four members are terminal outcomes."
+  },
+  "sourceCompatibility": {
+    "result": "PASS_FOR_PREPARATION",
+    "reason": "Every normalized decision is backed by a UI-attested GPT-5.6 Sol Pro 5-of-5 research packet and independently validated direct-source artifact."
+  },
+  "requiredBeforeRelease": [
+    "Recapture one fresh production snapshot and all five task/dependency snapshots after the predecessor bundle completes.",
+    "Bind Cartier to exactly one existing production and evaluated-seed identity; reject the merge if target resolution is ambiguous.",
+    "Generate one merge/correction proposal and four terminal decisions from the normalized artifacts.",
+    "If Cartier changes an active owner or alias identity, reconcile the seed attribution manifest and prove one-to-one evaluated-seed coverage.",
+    "Run source, primary-citation, dependency, collision and stale-hash checks before automatic authorization.",
+    "Use an all-terminal receipt only if fresh context proves Cartier requires no database or seed mutation; otherwise use the protected release and atomic apply workflow."
+  ]
+}

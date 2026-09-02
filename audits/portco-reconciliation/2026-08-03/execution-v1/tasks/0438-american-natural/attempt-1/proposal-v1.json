@@ -1,0 +1,345 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0438:american-natural:a714a5a7",
+  "taskIndex": 438,
+  "asOfDate": "2026-09-02",
+  "generatedAt": "2026-09-02T08:52:00.000Z",
+  "canonicalKey": "american-natural|united-states",
+  "companyName": "American Natural",
+  "actions": [
+    "CORRECT_COMPANY"
+  ],
+  "sourceHoldingIds": [
+    "093-tiger-infrastructure-partners:holding:007:american-natural"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Retain one active American Natural record, but correct its perimeter to the American Natural Supply fuel-terminal, storage and distribution-logistics business retained by Cleopatra Resources LLC after the December 2023 sale of substantially all retail assets to Giant Oil. Tiger Infrastructure Partners' May 2015 investment and current involvement are evidenced, but the exact fund, acquisition vehicle, security, ownership percentage and current co-investors are not publicly disclosed; remove the unsupported Fund I attribution rather than infer those facts.",
+  "evidence": [
+    {
+      "url": "https://www.tigerinfrastructure.com/documents/FG/tigerNew/news/379342_Tiger_Infrastructure_Invests_in_American_Natural.pdf",
+      "purpose": "Primary investment closing and infrastructure-strategy evidence.",
+      "supports": [
+        "Tiger closed its investment in Cleopatra Resources LLC on May 28, 2015",
+        "The announcement does not identify Tiger Infrastructure Partners Fund I, an acquisition vehicle or an ownership percentage"
+      ]
+    },
+    {
+      "url": "https://www.prnewswire.com/news-releases/american-natural-closes-series-of-strategic-transactions-to-facilitate-growth-plan-300568637.html",
+      "purpose": "2017 operating expansion and financing evidence.",
+      "supports": [
+        "American Natural Supply acquired key Satterlee assets on December 7, 2017",
+        "Tiger led the related equity financing and Orion Energy Partners provided debt financing"
+      ]
+    },
+    {
+      "url": "https://jobbersworld.com/2023/12/18/giant-oil-inc-closes-acquisition-of-american-natural-retail-pa-llc/",
+      "purpose": "Closed partial divestiture and retained-platform boundary evidence.",
+      "supports": [
+        "Giant Oil closed its acquisition of substantially all American Natural Retail PA assets on December 18, 2023",
+        "The sold retail locations are excluded from the retained Tiger-backed platform perimeter"
+      ]
+    },
+    {
+      "url": "https://oic.com/investments/american-natural-supply",
+      "purpose": "Current retained-business scope and unrealized-status evidence.",
+      "supports": [
+        "American Natural Supply operates fuel supply, storage, terminal and delivery infrastructure",
+        "The capital provider continues to list the investment as unrealized"
+      ]
+    },
+    {
+      "url": "https://www.tigerinfrastructure.com/team",
+      "purpose": "Current Tiger involvement evidence.",
+      "supports": [
+        "Tiger's current team materials identify continuing American Natural board representation"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "791442a413db8153a3d762a168018537680218ad115c05f1dad1573c57a7898a",
+  "currentCompanySnapshotSha256": "fb7b2589b07107e5781d8860060b3f38adb3fa33c6bc3e94d7a9877e98f20a5b",
+  "executionLock": {
+    "taskSnapshotSha256": "e364f37cfa3b61f09edd96b68284036c9395f82a817c527a5f94dd0419ae2181",
+    "taskStateSha256": "8a5acd036432f4082aee0fe4eb42f83d172c64da0c254179f885b87444697d05",
+    "taskDependencySha256": "e67d0f2bc7e48cba2911b92e25a975556b6df94e3b0415cf3e4ede6fac2be168",
+    "seedEntrySha256": "cfc387da8786183e7a1383b19e0f54e3ca5011bf0ee3bd5b576db47aea3749a2",
+    "dependencies": {
+      "ownershipPeriodsSha256": "0f8a277f1e8ae211d75a2193588dab8135ecac5105a09b5219cb34a7ef990eb1",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "3345215aa7c1c1c461a0d9b4c965f669114e24e1a2b1cca50765d7a305f2f1e7",
+      "organizationsSha256": "7bff0b5698459304083333bfb81e644c2d270f5a139a751bc96ea2912455d791",
+      "citationsSha256": "0b674ae69f2ff2f759de19d167db74c0a2c0b7f1610d70ca653ab9d78af29bfb",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj3sa00fjivheldm2priq",
+        "fundName": "Tiger Infrastructure Partners Fund I",
+        "managerId": "cmrxpie6w003qivhezkd8ost3",
+        "updatedAt": "2026-07-23T16:09:58.762Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpie6w003qivhezkd8ost3",
+        "name": "Tiger Infrastructure Partners",
+        "updatedAt": "2026-07-23T16:09:25.592Z"
+      },
+      {
+        "id": "cmrxpigns004iivhep4tpvy3z",
+        "name": "Tiger",
+        "updatedAt": "2026-07-23T16:09:28.792Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjo0v01amivhemkos1xko",
+    "name": "American Natural",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Multi-fuel retail and wholesale fuel distribution",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "American Natural owns and operates multi-fuel retail fueling stations and wholesale fuel distribution operations in western Pennsylvania and eastern Ohio. Its customer base includes commercial fleets, retail motorists, and wholesale fuel users seeking conventional and alternative-fuel supply. The operating model is asset-heavy and based on station, logistics, and fuel-distribution infrastructure. Public materials describe the company as Pittsburgh-based and focused on natural gas, other alternative fuels, and conventional fuel supply. Tiger Infrastructure Partners Fund I closed its initial investment in American Natural's parent platform in 2015 and is the current sponsor identified in public portfolio materials.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2011,
+    "headquarters": "Pennsylvania; Ohio",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpkals02aaivhea54xfxxy",
+        "managerName": "Tiger Infrastructure Partners",
+        "organizationName": "Tiger",
+        "fundName": "Tiger Infrastructure Partners Fund I",
+        "vehicleName": "Tiger Infrastructure Partners Fund I",
+        "stake": null,
+        "investmentYear": 2015,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmrx405a7ivhexx8fy6up",
+        "date": "2011",
+        "event": "Public sources identify American Natural's founding year as 2011.",
+        "category": "FOUNDING",
+        "sortDate": "2011-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmrxn05a8ivhetzvo3dt5",
+        "date": "May 28, 2015",
+        "event": "Tiger Infrastructure Partners Fund I closed its investment in American Natural's parent platform.",
+        "category": "FINANCING",
+        "sortDate": "2015-05-28T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmry805a9ivhedqwzixi4",
+        "date": "Dec 2017",
+        "event": "American Natural announced a series of strategic transactions to support its growth plan.",
+        "category": "OTHER",
+        "sortDate": "2017-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpswvi0dbeivheoytprsqr",
+        "label": "Americannatural — American Natural",
+        "url": "https://www.americannatural.com/about-us",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Americannatural company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpswwt0dbgivhe838nrdsw",
+        "label": "Investment date source — Tiger — American Natural",
+        "url": "https://www.tigerinfrastructure.com/portfolio/American-Natural",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Tiger initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpswxw0dbiivhebb722fxu",
+        "label": "Close date source — Tiger — American Natural",
+        "url": "https://www.tigerinfrastructure.com/documents/FG/tigerNew/news/379342_Tiger_Infrastructure_Invests_in_American_Natural.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Tiger closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpswyu0dbkivhe8nyeno7r",
+        "label": "PR Newswire — American Natural",
+        "url": "https://www.prnewswire.com/news-releases/american-natural-closes-series-of-strategic-transactions-to-facilitate-growth-plan-300568637.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "PR Newswire — American Natural",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "fb7b2589b07107e5781d8860060b3f38adb3fa33c6bc3e94d7a9877e98f20a5b",
+  "afterImage": {
+    "id": "cmrxpjo0v01amivhemkos1xko",
+    "name": "American Natural",
+    "aliases": [
+      "American Natural Supply",
+      "Cleopatra Resources LLC"
+    ],
+    "sector": "MIDSTREAM",
+    "subsector": "Fuel terminals, storage and distribution logistics",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "American Natural is the Tiger-backed fuel-infrastructure platform held through Cleopatra Resources LLC and now centered on American Natural Supply. The retained business provides commercial fuel supply, storage, terminal, delivery and logistics services to commercial, industrial and Marcellus/Utica customers. Tiger closed its investment in May 2015, but the exact fund, vehicle, security and ownership percentage are not publicly disclosed. American Natural Supply acquired key Satterlee assets in 2017, and Cleopatra sold substantially all American Natural Retail PA assets to Giant Oil in December 2023; those divested retail locations are outside the retained platform perimeter.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2011,
+    "headquarters": "Pittsburgh, Pennsylvania",
+    "lastVerifiedAt": "2026-09-02T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpkals02aaivhea54xfxxy",
+        "managerName": "Tiger",
+        "organizationName": "Tiger",
+        "fundName": null,
+        "vehicleName": "Cleopatra Resources LLC; exact Tiger fund and acquisition vehicle not publicly disclosed",
+        "stake": "Current Tiger-backed interest; exact security, percentage and co-investors not publicly disclosed",
+        "investmentYear": 2015,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmrx405a7ivhexx8fy6up",
+        "date": "2011",
+        "event": "Public sources identify American Natural's founding year as 2011.",
+        "category": "FOUNDING",
+        "sortDate": "2011-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmrxn05a8ivhetzvo3dt5",
+        "date": "May 28, 2015",
+        "event": "Tiger Infrastructure Partners closed its investment in Cleopatra Resources LLC; the exact fund, acquisition vehicle and ownership terms were not publicly disclosed.",
+        "category": "FINANCING",
+        "sortDate": "2015-05-28T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.tigerinfrastructure.com/documents/FG/tigerNew/news/379342_Tiger_Infrastructure_Invests_in_American_Natural.pdf"
+        ]
+      },
+      {
+        "id": "cmrxpmry805a9ivhedqwzixi4",
+        "date": "Dec 7, 2017",
+        "event": "American Natural Supply acquired key Satterlee assets with Tiger-led equity financing and debt financing from Orion Energy Partners.",
+        "category": "ACQUISITION",
+        "sortDate": "2017-12-07T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.prnewswire.com/news-releases/american-natural-closes-series-of-strategic-transactions-to-facilitate-growth-plan-300568637.html"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpswvi0dbeivheoytprsqr",
+        "label": "Americannatural — American Natural",
+        "url": "https://www.americannatural.com/about-us",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Americannatural company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpswwt0dbgivhe838nrdsw",
+        "label": "Tiger Infrastructure Partners — American Natural",
+        "url": "https://www.tigerinfrastructure.com/portfolio/American-Natural",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current Tiger portfolio listing and 2015 investment vintage; operating description treated as stale",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpswxw0dbiivhebb722fxu",
+        "label": "Tiger Infrastructure Partners — American Natural investment closing",
+        "url": "https://www.tigerinfrastructure.com/documents/FG/tigerNew/news/379342_Tiger_Infrastructure_Invests_in_American_Natural.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "May 28, 2015 investment closing, Cleopatra parent identity and infrastructure thesis; terms undisclosed",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpswyu0dbkivhe8nyeno7r",
+        "label": "American Natural — 2017 strategic transactions",
+        "url": "https://www.prnewswire.com/news-releases/american-natural-closes-series-of-strategic-transactions-to-facilitate-growth-plan-300568637.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Satterlee asset acquisition, Tiger-led equity and Orion financing",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Giant Oil — American Natural Retail PA acquisition closing",
+        "url": "https://jobbersworld.com/2023/12/18/giant-oil-inc-closes-acquisition-of-american-natural-retail-pa-llc/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "December 18, 2023 closing of substantially all retail-asset divestiture",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "OIC — American Natural Supply",
+        "url": "https://oic.com/investments/american-natural-supply",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Retained fuel supply, storage, terminal and logistics scope and unrealized status",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Tiger Infrastructure Partners — Team",
+        "url": "https://www.tigerinfrastructure.com/team",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current Tiger board representation at American Natural",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "SEC — Cleopatra Resources 2022 Form D",
+        "url": "https://www.sec.gov/Archives/edgar/data/1543304/000154330422000003/xslFormDX01/primary_doc.xml",
+        "sourceType": "SEC_FILING",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Cleopatra Resources governance and 2022 equity sale to one undisclosed investor",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "193888c34d882e594ec419b46eb2da2c576871027f616d9ec2748d06398fe2ed",
+  "proposalSha256": "9a845a14c1ee924c8e73d433c7a2b60b274e4cfc16c51f94a06d60ea9d729b55"
+}

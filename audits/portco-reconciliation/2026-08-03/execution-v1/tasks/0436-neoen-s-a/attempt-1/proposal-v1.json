@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0436:neoen-s-a:ec19a5c4",
+  "taskIndex": 436,
+  "asOfDate": "2026-09-02",
+  "generatedAt": "2026-09-02T08:52:00.000Z",
+  "canonicalKey": "neoen-s-a|canada-mexico",
+  "companyName": "Neoen S.A.",
+  "actions": [
+    "CORRECT_COMPANY"
+  ],
+  "sourceHoldingIds": [],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Archive Neoen S.A. from the North American manager-level PortCo list while preserving its company, ownership and audit history. Neoen is a global French-origin renewable-power platform, and its Canada and Mexico operations are a minority subset of the company rather than a North America-dedicated operating perimeter.",
+  "evidence": [
+    {
+      "url": "https://neoen.com/app/uploads/2025/07/Project-Volt-II-Disclosure-Supplement-1.pdf",
+      "purpose": "Current ownership, global company scope, geographic mix and later-event evidence.",
+      "supports": [
+        "Neoen is a global renewable-power platform rather than a North America-dedicated manager-level company",
+        "Canada and Mexico are minority components of the broader platform"
+      ]
+    },
+    {
+      "url": "https://bep.brookfield.com/brookfield-enters-exclusive-negotiations-impala-and-other-shareholders-acquire-majority-stake-neoen",
+      "purpose": "Take-private buyer and ownership context.",
+      "supports": [
+        "Brookfield led the acquisition of the global Neoen platform"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "e08f45c5dff583f5a9d9795d1c1a4a82fd0d4342677eae2d98e32e9441bdce98",
+  "currentCompanySnapshotSha256": "7a7797bdbfdc7df57b0a78f8c487509c1033b3109c66620b9d8686bcdf21b827",
+  "executionLock": {
+    "taskSnapshotSha256": "a9c5626c915f50dd656c07e86769fa7c809f36cfb771f10107a127d39ab120ce",
+    "taskStateSha256": "83667007084c40f79d263bbf796440f51ba434968841c7fb963be0b4b804c9ea",
+    "taskDependencySha256": "7cb8b8d41a793152e2bb53edbcfc731be8455bf902a23c99fbe8eb98f2a4ec00",
+    "seedEntrySha256": "610f1066fcb136cdab296b80e456b39a5277195e37a216a7d9403209c4e793b9",
+    "dependencies": {
+      "ownershipPeriodsSha256": "5a5734b0c3937e197206ec8b2817b14b08c8727bedf695882dd89b703e3f2719",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "19d8e83556d9cb28825cd8d5bfb836c7cd60f66fc9c7786d58a532a6f7bedc93",
+      "organizationsSha256": "a364f893cbe1686221c0da447411e1a389f4040c9940e30726f80d3b540f25f1",
+      "citationsSha256": "e2d72c0d19b1d6e0585f20b6b116925f2e4df50401c5cf57e000856deea7fac0",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj3rr00fiivhe7rk36cyb",
+        "fundName": "Temasek Infrastructure",
+        "managerId": "cmrxpie45003pivheuuvi7wo6",
+        "updatedAt": "2026-07-23T16:09:58.744Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi5qu0012ivhe6qnjjtse",
+        "name": "Brookfield",
+        "updatedAt": "2026-07-23T16:09:14.646Z"
+      },
+      {
+        "id": "cmrxpie45003pivheuuvi7wo6",
+        "name": "Temasek",
+        "updatedAt": "2026-07-23T16:09:25.493Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjnzb01ajivhe4mgrxi9y",
+    "name": "Neoen S.A.",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Renewable power generation and battery storage",
+    "region": "NORTH_AMERICA",
+    "country": "Canada / Mexico",
+    "countryTags": [
+      "Canada",
+      "Mexico"
+    ],
+    "description": "Neoen develops, owns, and operates renewable energy and storage assets, with activities spanning utility-scale solar, wind, and battery storage. Its revenue base is largely contracted through long-term power purchase agreements and regulated or contracted capacity arrangements, giving the platform an infrastructure-style operating profile. In North America the company has active operations and development in Canada and Mexico, including battery storage and solar projects, while its broader footprint extends across Europe, Australia, and Latin America. Neoen states that it was founded in 2008, and Brookfield’s 2025 offer materials described a portfolio with more than 8 GW in operation or under construction worldwide. Brookfield acquired control through a 2025 public offer, while Temasek disclosed that it partnered in the investment and held a minority interest in the acquisition structure.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2008,
+    "headquarters": "Canada, Mexico, and international operations across Europe, Australia, and Latin America",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpkak402a7ivheez3x25iv",
+        "managerName": "Temasek",
+        "organizationName": "Temasek",
+        "fundName": "Temasek Infrastructure",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmrlw059tivhe7yop1qnf",
+        "date": "2008",
+        "event": "Neoen was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2008-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmrmh059uivheblspt9ie",
+        "date": "Dec 2019",
+        "event": "Neoen announced financing for the El Llano 375 MWp solar project in Aguascalientes, Mexico.",
+        "category": "FINANCING",
+        "sortDate": "2019-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmrmy059vivhe5vsvuupw",
+        "date": "May 2024",
+        "event": "Brookfield and Neoen announced a proposed acquisition of Neoen.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-05-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmrnh059wivhesbt2vnnw",
+        "date": "2025",
+        "event": "Temasek stated that it had partnered with Brookfield on the Neoen investment.",
+        "category": "FINANCING",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmro3059xivhet7aq8crj",
+        "date": "Mar 19, 2025",
+        "event": "Brookfield Renewable Holdings and its concert parties, including Aranda Investments controlled by Temasek, announced successful completion of the tender offer for Neoen.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-03-19T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpswbk0dahivheb7mxg7fu",
+        "label": "Neoen — Neoen S.A.",
+        "url": "https://neoen.com/en/about-us-3/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Neoen company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpswcj0dajivhejjk1clxu",
+        "label": "Canada — Neoen S.A.",
+        "url": "https://canada.neoen.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Canada company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpswdg0dalivhef7paqogq",
+        "label": "Close date source — Temasek — Neoen S.A.",
+        "url": "https://neoen.com/app/uploads/2025/03/Brookfield-x-Neoen-Offer-Results-20250319.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Temasek closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsweg0danivhenidc7ano",
+        "label": "Temasek — Neoen S.A.",
+        "url": "https://www.temasek.com.sg/en/news-and-resources/news-room/speeches/2025/temasek-review-2025-media-briefing",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Temasek — Neoen S.A.",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "7a7797bdbfdc7df57b0a78f8c487509c1033b3109c66620b9d8686bcdf21b827",
+  "afterImage": {
+    "id": "cmrxpjnzb01ajivhe4mgrxi9y",
+    "name": "Neoen S.A.",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Renewable power generation and battery storage",
+    "region": "NORTH_AMERICA",
+    "country": "Canada / Mexico",
+    "countryTags": [
+      "Canada",
+      "Mexico"
+    ],
+    "description": "Neoen develops, owns, and operates renewable energy and storage assets, with activities spanning utility-scale solar, wind, and battery storage. Its revenue base is largely contracted through long-term power purchase agreements and regulated or contracted capacity arrangements, giving the platform an infrastructure-style operating profile. In North America the company has active operations and development in Canada and Mexico, including battery storage and solar projects, while its broader footprint extends across Europe, Australia, and Latin America. Neoen states that it was founded in 2008, and Brookfield’s 2025 offer materials described a portfolio with more than 8 GW in operation or under construction worldwide. Brookfield acquired control through a 2025 public offer, while Temasek disclosed that it partnered in the investment and held a minority interest in the acquisition structure.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "ARCHIVED",
+    "website": null,
+    "yearFounded": 2008,
+    "headquarters": "Canada, Mexico, and international operations across Europe, Australia, and Latin America",
+    "lastVerifiedAt": "2026-09-02T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpkak402a7ivheez3x25iv",
+        "managerName": "Temasek",
+        "organizationName": "Temasek",
+        "fundName": "Temasek Infrastructure",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmrlw059tivhe7yop1qnf",
+        "date": "2008",
+        "event": "Neoen was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2008-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmrmh059uivheblspt9ie",
+        "date": "Dec 2019",
+        "event": "Neoen announced financing for the El Llano 375 MWp solar project in Aguascalientes, Mexico.",
+        "category": "FINANCING",
+        "sortDate": "2019-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmrmy059vivhe5vsvuupw",
+        "date": "May 2024",
+        "event": "Brookfield and Neoen announced a proposed acquisition of Neoen.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-05-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmrnh059wivhesbt2vnnw",
+        "date": "2025",
+        "event": "Temasek stated that it had partnered with Brookfield on the Neoen investment.",
+        "category": "FINANCING",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmro3059xivhet7aq8crj",
+        "date": "Mar 19, 2025",
+        "event": "Brookfield Renewable Holdings and its concert parties, including Aranda Investments controlled by Temasek, announced successful completion of the tender offer for Neoen.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-03-19T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpswbk0dahivheb7mxg7fu",
+        "label": "Neoen — Neoen S.A.",
+        "url": "https://neoen.com/en/about-us-3/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Neoen company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpswcj0dajivhejjk1clxu",
+        "label": "Canada — Neoen S.A.",
+        "url": "https://canada.neoen.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Canada company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpswdg0dalivhef7paqogq",
+        "label": "Close date source — Temasek — Neoen S.A.",
+        "url": "https://neoen.com/app/uploads/2025/03/Brookfield-x-Neoen-Offer-Results-20250319.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Temasek closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsweg0danivhenidc7ano",
+        "label": "Temasek — Neoen S.A.",
+        "url": "https://www.temasek.com.sg/en/news-and-resources/news-room/speeches/2025/temasek-review-2025-media-briefing",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Temasek — Neoen S.A.",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "4e0c2cbb9a3c9344c433d7d09572cccb94a020a1efd6e0adb208339374ff0b68",
+  "proposalSha256": "76860efcebf5f66b847fcca1c32517f4b91cfe44baf91b0a1f5913a66611a476"
+}

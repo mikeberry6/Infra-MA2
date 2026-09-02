@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RELEASE_BUNDLE_READINESS_AUDIT",
+  "authoritative": false,
+  "auditedAt": "2026-09-02T08:05:00.000Z",
+  "plannedTaskRange": [449, 453],
+  "preparationSummaryByteSha256": "7a4a32ecaf47907efd8d0887bbabef2bd36d93628168f879973386568cd725b5",
+  "result": "PREPARED_RESEARCH_INTACT_SOURCE_REBIND_REQUIRED",
+  "predecessorGate": {
+    "requiredTaskRange": [444, 448],
+    "satisfied": false,
+    "reason": "The predecessor bundle must be production-verified and source-finalized before this bundle can activate."
+  },
+  "checks": {
+    "deterministicTaskOrder": true,
+    "applicationDecisionByteHashesMatchPreparation": true,
+    "researchLineageByteHashesMatch": true,
+    "exactlyOneResearchRecommendedPrimaryPerTask": true,
+    "allResearchRecommendedPrimaryUrlsCurrentlyUsable": false,
+    "sourceRepairsIdentified": true,
+    "freshDependencySnapshotsCaptured": false,
+    "authoritativeCartierTargetBindingComplete": false,
+    "authoritativeCollisionAnalysisComplete": false
+  },
+  "tasks": [
+    {
+      "taskIndex": 449,
+      "taskId": "ledger:0449:pike-corporation:5a43238f",
+      "plannedOutcome": "EXCLUDED",
+      "applicationDecisionByteSha256": "9a88dc7d6b574b5b50f7361e5755135edea50c616e3c9dc934a2c12333edc8ac",
+      "primaryUrl": "https://www.tpg.com/news-and-insights/pike-corporation-to-accelerate-growth-through-partnership-with-tpg-la-caisse-and-management",
+      "primaryUrlHttpStatus": 200,
+      "primaryUrlHealth": "WORKING"
+    },
+    {
+      "taskIndex": 450,
+      "taskId": "ledger:0450:ubs-ercot-battery-storage-portfolio:d9b23a03",
+      "plannedOutcome": "DEFERRED",
+      "applicationDecisionByteSha256": "8b09bc37284bf828c803f375ecb6f11e7503c9cea57dce107540c8643b5ee4f6",
+      "researchPrimaryUrl": "https://www.ubs.com/global/en/media/display-page-ndp/en-20211109-ubs-am-energy-storage.html",
+      "researchPrimaryUrlHttpStatus": 404,
+      "researchPrimaryUrlHealth": "DEAD",
+      "liveOfficialSupportingUrl": "https://www.ubs.com/au/en/assetmanagement/insights/asset-class-perspectives/real-estate/articles/craft-behind-energy-storage.html",
+      "liveOfficialSupportingUrlHttpStatus": 200,
+      "liveOfficialSupportingUrlHealth": "WORKING",
+      "sourceVerificationSha256": "22236f11ce9a3a251d39899130e6202d0598e16e689e61a8757114130bd49074",
+      "missingFact": "The exact five original project entities and whether they remain a single UBS-owned platform. The live UBS article instead describes six projects totaling 930 MW, so it does not cure the boundary ambiguity."
+    },
+    {
+      "taskIndex": 451,
+      "taskId": "ledger:0451:cartier-u-s-district-energy-platform:46304894",
+      "plannedOutcome": "MERGE_AND_SUPERSEDE",
+      "applicationDecisionByteSha256": "d641ebc1f077f18ff350d06d1b546dde916c7dd44e02ca58b24b271496c6558f",
+      "primaryUrl": "https://www.prnewswire.com/news-releases/adam-schiff-is-appointed-ceo-of-cartier-energy-holding-a-vauban-infrastructure-partners-investment-funds-owned-company-301593623.html",
+      "primaryUrlHttpStatus": 206,
+      "primaryUrlHealth": "WORKING",
+      "targetBinding": "REQUIRES_FRESH_TASK_SNAPSHOT"
+    },
+    {
+      "taskIndex": 452,
+      "taskId": "ledger:0452:terawatt-infrastructure:facb72c6",
+      "plannedOutcome": "DEFERRED",
+      "applicationDecisionByteSha256": "09a6c2b7e83e02e50bcb22b3b16d53107d898e2a44e9c6e6dbb5b58b14fb77e4",
+      "researchPrimaryUrl": "https://www.businesswire.com/news/home/20220510005388/en/TeraWatt-Infrastructure-Raises-1-Billion",
+      "researchPrimaryUrlHealth": "INVALID_WRONG_DESTINATION",
+      "replacementPrimaryUrl": "https://www.terawattinfrastructure.com/blog/terawatt-raises-over-1-billion-to-scale-commercial-ev-charging-centers-across-america",
+      "replacementPrimaryUrlHttpStatus": 200,
+      "replacementPrimaryUrlHealth": "WORKING",
+      "sourceVerificationSha256": "b5dfebb9c64da00191083195b96f0aeea5c146aa6e977b5110bac845b83dd546",
+      "missingFact": "Verified manager-alias binding plus current direct ownership continuity for Keyframe and Cyrus."
+    },
+    {
+      "taskIndex": 453,
+      "taskId": "ledger:0453:american-inland-marine-holdings:47cd7d1a",
+      "plannedOutcome": "DEFERRED",
+      "applicationDecisionByteSha256": "6e2aee98d0e5940fe599a88a2f613264d7324dbf5c55977ccedc946f1408a05e",
+      "primaryUrl": "https://www.wafra.com/",
+      "primaryUrlHttpStatus": 403,
+      "primaryUrlHealth": "BROWSER_BLOCKED_BUT_VERIFIED_INSUFFICIENT_FOR_OWNERSHIP",
+      "sourceVerificationSha256": "97895d35e5ec7a357a3064f5301f5f4d0ae0b54b3f3f24f0cc27911aa1e335b6",
+      "missingFact": "The exact legal operating entity and evidence that a Wafra fund or managed account currently owns direct equity."
+    }
+  ],
+  "requiredAtActivation": [
+    "Wait for tasks 444 through 448 to be production-verified and source-finalized.",
+    "Capture one fresh production snapshot and all five task, seed and dependency snapshots.",
+    "Bind Cartier to exactly one current production and evaluated-seed identity.",
+    "Replace TeraWatt's invalid citation with the live company source and do not present UBS's live portfolio article as proof of the unresolved original five-project boundary.",
+    "Generate one merge/correction proposal and four terminal decisions from the locked context.",
+    "Complete authoritative source, target, dependency, collision, stale-hash and atomicity checks before automatic authorization."
+  ]
+}

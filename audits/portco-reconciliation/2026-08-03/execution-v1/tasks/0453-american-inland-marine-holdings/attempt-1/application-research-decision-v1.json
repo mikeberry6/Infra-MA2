@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0453:american-inland-marine-holdings:47cd7d1a",
+  "taskIndex": 453,
+  "companyName": "American Inland Marine Holdings",
+  "asOfDate": "2026-08-19",
+  "decision": "DEFERRED",
+  "confidence": "LOW",
+  "researchOnly": true,
+  "generatedAt": "2026-09-02T07:18:00.000Z",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "American Inland Marine Holdings",
+    "requestedManagers": [
+      "Wafra"
+    ],
+    "decision": "DEFERRED",
+    "confidence": "low",
+    "rationale": "Available research did not resolve a legally identifiable operating company with direct current Wafra ownership. Public Wafra materials referenced the platform only indirectly and did not establish the ownership vehicle, operating-company boundary or current in-scope infrastructure ownership. To avoid creating an unsupported portfolio entry, the company should remain unresolved.",
+    "identityResolution": "The name 'American Inland Marine Holdings' could not be conclusively tied to a verified legal operating company, holding company or surviving platform using the reviewed materials alone.",
+    "ownershipResolution": {
+      "manager": "Wafra",
+      "organization": "",
+      "fund": "",
+      "vehicle": "",
+      "stake": "",
+      "announcementDate": "",
+      "entryDate": "",
+      "entryYear": "",
+      "exitDate": "",
+      "exitYear": "",
+      "isActive": "",
+      "transactionState": "unresolved"
+    },
+    "operatingResolution": "Unable to confirm whether the referenced entity is an operating marine transportation business, a holding shell, a financing/leasing vehicle or a manager-level platform. Fleet, subsidiaries, headquarters, customers and asset footprint therefore remain unverified.",
+    "acquisitionExitCheck": {
+      "pending": {
+        "direction": "",
+        "buyer": "",
+        "seller": "",
+        "stake": "",
+        "announcementDate": "",
+        "closingDate": "",
+        "state": "none",
+        "evidenceUrls": []
+      },
+      "summary": "No verified acquisition, exit, restructuring or signed pending transaction through 2026-08-19 could be confirmed from the completed research without resolving entity identity."
+    },
+    "milestones": [
+      {
+        "date": "",
+        "event": "Referenced in Wafra materials without sufficient transaction detail"
+      },
+      {
+        "date": "",
+        "event": "Identity and ownership remained unresolved after transaction-focused review"
+      }
+    ],
+    "evidence": [
+      {
+        "label": "Wafra corporate website",
+        "url": "https://www.wafra.com/",
+        "purpose": "Manager reference only; no conclusive ownership proof for the requested company",
+        "sourceTier": "primary",
+        "workingStatus": "reviewed",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "Edward Tsai profile",
+        "url": "https://www.wafra.com/our-people/edward-tsai/",
+        "purpose": "Personnel biography mentioning investment activity but not establishing current ownership of the requested entity",
+        "sourceTier": "primary",
+        "workingStatus": "reviewed",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": "Treat the census entry as unverified. Do not add a new portfolio company until legal identity and current ownership are independently established.",
+    "excludedOrDuplicateCandidates": [],
+    "unresolvedQuestions": [
+      "What is the exact legal entity corresponding to 'American Inland Marine Holdings'?",
+      "Which Wafra fund or managed account, if any, owns the investment?",
+      "Is the exposure an operating company, holding company or financing/leasing structure?",
+      "Does Wafra currently retain an active equity interest?"
+    ],
+    "recommendedListAction": "Retain as unresolved and require additional primary transaction evidence before inclusion."
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0453-american-inland-marine-holdings/attempt-1/research-decision.json",
+      "sha256": "c421b50f733e7f4996021ae36dce32f478f73741f9d3043022f14f1d3ec855d4"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0453-american-inland-marine-holdings/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "655bbd01aaa9c516ecf2c78e2e6fcd94ba6ae58c422f65430db07becd51ac601"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0453-american-inland-marine-holdings/attempt-1/source-verification.json",
+      "sha256": "97895d35e5ec7a357a3064f5301f5f4d0ae0b54b3f3f24f0cc27911aa1e335b6"
+    },
+    "acceptedResponseSha256": null,
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+    "confidenceNormalization": {
+      "acceptedValue": "low",
+      "stagedSummaryValue": "LOW",
+      "basis": "The accepted response expressed an overall confidence band with a disclosure-gap qualifier; the staged summary preserves that band in its deterministic qualifier and the research decision is unchanged."
+    }
+  }
+}

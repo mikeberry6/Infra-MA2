@@ -1,0 +1,274 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0438:american-natural:a714a5a7",
+  "taskIndex": 438,
+  "companyName": "American Natural",
+  "generatedAt": "2026-09-02T08:56:05.781Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0438-american-natural/attempt-1/observed-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 438,
+    "taskId": "ledger:0438:american-natural:a714a5a7",
+    "canonicalKey": "american-natural|united-states",
+    "companyName": "American Natural",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 93,
+    "managers": [
+      "Tiger Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "093-tiger-infrastructure-partners:holding:007:american-natural"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjo0v01amivhemkos1xko"
+    ],
+    "seedKeys": [
+      "american natural|United States"
+    ],
+    "evidenceUrls": [
+      "https://americannatural.com",
+      "https://www.tigerinfrastructure.com/portfolio/american-natural"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_OWNER requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjo0v01amivhemkos1xko",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "american-natural|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjo0v01amivhemkos1xko",
+    "name": "American Natural",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Multi-fuel retail and wholesale fuel distribution",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "American Natural owns and operates multi-fuel retail fueling stations and wholesale fuel distribution operations in western Pennsylvania and eastern Ohio. Its customer base includes commercial fleets, retail motorists, and wholesale fuel users seeking conventional and alternative-fuel supply. The operating model is asset-heavy and based on station, logistics, and fuel-distribution infrastructure. Public materials describe the company as Pittsburgh-based and focused on natural gas, other alternative fuels, and conventional fuel supply. Tiger Infrastructure Partners Fund I closed its initial investment in American Natural's parent platform in 2015 and is the current sponsor identified in public portfolio materials.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2011,
+    "headquarters": "Pennsylvania; Ohio",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpkals02aaivhea54xfxxy",
+        "managerName": "Tiger Infrastructure Partners",
+        "organizationName": "Tiger",
+        "fundName": "Tiger Infrastructure Partners Fund I",
+        "vehicleName": "Tiger Infrastructure Partners Fund I",
+        "stake": null,
+        "investmentYear": 2015,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmrx405a7ivhexx8fy6up",
+        "date": "2011",
+        "event": "Public sources identify American Natural's founding year as 2011.",
+        "category": "FOUNDING",
+        "sortDate": "2011-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmrxn05a8ivhetzvo3dt5",
+        "date": "May 28, 2015",
+        "event": "Tiger Infrastructure Partners Fund I closed its investment in American Natural's parent platform.",
+        "category": "FINANCING",
+        "sortDate": "2015-05-28T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmry805a9ivhedqwzixi4",
+        "date": "Dec 2017",
+        "event": "American Natural announced a series of strategic transactions to support its growth plan.",
+        "category": "OTHER",
+        "sortDate": "2017-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpswvi0dbeivheoytprsqr",
+        "label": "Americannatural — American Natural",
+        "url": "https://www.americannatural.com/about-us",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Americannatural company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpswwt0dbgivhe838nrdsw",
+        "label": "Investment date source — Tiger — American Natural",
+        "url": "https://www.tigerinfrastructure.com/portfolio/American-Natural",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Tiger initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpswxw0dbiivhebb722fxu",
+        "label": "Close date source — Tiger — American Natural",
+        "url": "https://www.tigerinfrastructure.com/documents/FG/tigerNew/news/379342_Tiger_Infrastructure_Invests_in_American_Natural.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Tiger closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpswyu0dbkivhe8nyeno7r",
+        "label": "PR Newswire — American Natural",
+        "url": "https://www.prnewswire.com/news-releases/american-natural-closes-series-of-strategic-transactions-to-facilitate-growth-plan-300568637.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "PR Newswire — American Natural",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "American Natural",
+    "investmentFirm": "Tiger",
+    "sector": "Power & ET",
+    "subsector": "Multi-fuel retail and wholesale fuel distribution",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Tiger Infrastructure Partners Fund I",
+    "description": "American Natural owns and operates multi-fuel retail fueling stations and wholesale fuel distribution operations in western Pennsylvania and eastern Ohio. Its customer base includes commercial fleets, retail motorists, and wholesale fuel users seeking conventional and alternative-fuel supply. The operating model is asset-heavy and based on station, logistics, and fuel-distribution infrastructure. Public materials describe the company as Pittsburgh-based and focused on natural gas, other alternative fuels, and conventional fuel supply. Tiger Infrastructure Partners Fund I closed its initial investment in American Natural's parent platform in 2015 and is the current sponsor identified in public portfolio materials.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2011,
+    "investmentYear": 2015,
+    "headquarters": "Pennsylvania; Ohio",
+    "milestones": [
+      {
+        "date": "2011",
+        "event": "Public sources identify American Natural's founding year as 2011.",
+        "category": "Founding"
+      },
+      {
+        "date": "May 28, 2015",
+        "event": "Tiger Infrastructure Partners Fund I closed its investment in American Natural's parent platform.",
+        "category": "Financing"
+      },
+      {
+        "date": "Dec 2017",
+        "event": "American Natural announced a series of strategic transactions to support its growth plan.",
+        "category": "Other"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Americannatural — American Natural",
+        "url": "https://www.americannatural.com/about-us",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Investment date source — Tiger — American Natural",
+        "url": "https://www.tigerinfrastructure.com/portfolio/American-Natural",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Close date source — Tiger — American Natural",
+        "url": "https://www.tigerinfrastructure.com/documents/FG/tigerNew/news/379342_Tiger_Infrastructure_Invests_in_American_Natural.pdf",
+        "type": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "PR Newswire — American Natural",
+        "url": "https://www.prnewswire.com/news-releases/american-natural-closes-series-of-strategic-transactions-to-facilitate-growth-plan-300568637.html",
+        "type": "PRESS_RELEASE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Tiger",
+        "ownershipVehicle": "Tiger Infrastructure Partners Fund I",
+        "investmentYear": 2015,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj3sa00fjivheldm2priq",
+        "fundName": "Tiger Infrastructure Partners Fund I",
+        "managerId": "cmrxpie6w003qivhezkd8ost3",
+        "updatedAt": "2026-07-23T16:09:58.762Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpie6w003qivhezkd8ost3",
+        "name": "Tiger Infrastructure Partners",
+        "updatedAt": "2026-07-23T16:09:25.592Z"
+      },
+      {
+        "id": "cmrxpigns004iivhep4tpvy3z",
+        "name": "Tiger",
+        "updatedAt": "2026-07-23T16:09:28.792Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0438:american-natural:a714a5a7",
+    "taskIndex": 438,
+    "canonicalKey": "american-natural|united-states",
+    "capturedAt": "2026-09-02T08:56:05.781Z",
+    "databaseRevision": "revision:50318159e072aa5eab7d4a3b07a929c6305967992ad4a1928b6b1d689f7b9545",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "01e85cd000f5107118e5ea2d5a72ec8b638ed613b5b304c39c262fd691d5b18c",
+    "productionSnapshotSha256": "6689cb661bd3b5bb9692a28798a9847144ad03b65dcb031a95054b96eba6d728",
+    "targetCompanySnapshotSha256": "fb7b2589b07107e5781d8860060b3f38adb3fa33c6bc3e94d7a9877e98f20a5b",
+    "seedEntrySha256": "cfc387da8786183e7a1383b19e0f54e3ca5011bf0ee3bd5b576db47aea3749a2",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "0f8a277f1e8ae211d75a2193588dab8135ecac5105a09b5219cb34a7ef990eb1",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "3345215aa7c1c1c461a0d9b4c965f669114e24e1a2b1cca50765d7a305f2f1e7",
+      "organizationsSha256": "7bff0b5698459304083333bfb81e644c2d270f5a139a751bc96ea2912455d791",
+      "citationsSha256": "0b674ae69f2ff2f759de19d167db74c0a2c0b7f1610d70ca653ab9d78af29bfb",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "e67d0f2bc7e48cba2911b92e25a975556b6df94e3b0415cf3e4ede6fac2be168",
+    "stateSha256": "8a5acd036432f4082aee0fe4eb42f83d172c64da0c254179f885b87444697d05",
+    "taskSnapshotSha256": "55d91a1a383b473ade279eee5a0ddb9552f846bd8f47feb4bf9679223f72621f"
+  },
+  "contextSha256": "9b70c41674258b6c057e506b55ded281f1eda56491947e7acd1abb40dd05f3c7"
+}

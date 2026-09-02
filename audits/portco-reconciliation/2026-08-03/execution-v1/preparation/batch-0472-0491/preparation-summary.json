@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RELEASE_BUNDLE_PREPARATION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "preparedAt": "2026-09-02T07:50:00.000Z",
+  "authoritative": false,
+  "bundleMemberRule": "The next five PENDING tasks after task 471; already-terminal source tasks 473 through 489 are not reopened.",
+  "dependsOn": [
+    "The preceding pending-task bundle 464, 465, 466, 470 and 471 must be fully production-verified and source-finalized.",
+    "Task 462's QSP correction must be COMPLETED before task 491 can be superseded.",
+    "No release bundle may be active, forming, releasing, applying, verifying or recovering."
+  ],
+  "plannedMembers": [
+    {
+      "taskIndex": 472,
+      "taskId": "ledger:0472:cleco-corporation:2901703f",
+      "companyName": "Cleco Corporation",
+      "plannedOutcome": "SUPERSEDED",
+      "reason": "The completed Cleco Corporate Holdings LLC task is the reviewed canonical parent identity.",
+      "targetTaskId": "ledger:0122:cleco-corporate-holdings-llc:43ffb062",
+      "targetRequiredStatus": "COMPLETED"
+    },
+    {
+      "taskIndex": 475,
+      "taskId": "ledger:0475:extenet:5c5cf1a1",
+      "companyName": "Extenet",
+      "plannedOutcome": "SUPERSEDED_INTO_DEFERRED_ADJUDICATION",
+      "reason": "This reciprocal label concerns the same ExteNet identity as task 213 and remains attached to that canonical deferred adjudication rather than creating a second unresolved company.",
+      "targetTaskId": "ledger:0213:extenet-formerly-extenet-systems:1d3fac1c",
+      "targetRequiredStatus": "DEFERRED"
+    },
+    {
+      "taskIndex": 476,
+      "taskId": "ledger:0476:extenet-systems:5d66f0cd",
+      "companyName": "ExteNet Systems",
+      "plannedOutcome": "SUPERSEDED_INTO_DEFERRED_ADJUDICATION",
+      "reason": "This former-name reciprocal label concerns the same ExteNet identity as task 213 and remains attached to that canonical deferred adjudication.",
+      "targetTaskId": "ledger:0213:extenet-formerly-extenet-systems:1d3fac1c",
+      "targetRequiredStatus": "DEFERRED"
+    },
+    {
+      "taskIndex": 490,
+      "taskId": "ledger:0490:puget-energy-puget-sound-energy:e962de5d",
+      "companyName": "Puget Energy / Puget Sound Energy",
+      "plannedOutcome": "SUPERSEDED",
+      "reason": "The completed Puget Energy task already consolidated Puget Sound Energy beneath the canonical parent identity.",
+      "targetTaskId": "ledger:0128:puget-energy:f96cd6be",
+      "targetRequiredStatus": "COMPLETED"
+    },
+    {
+      "taskIndex": 491,
+      "taskId": "ledger:0491:qsp:5404ff01",
+      "companyName": "QSP",
+      "plannedOutcome": "SUPERSEDED",
+      "reason": "The shorthand label is covered by task 462's Northern Virginia QSP decision and may be superseded only after that canonical correction is production-verified.",
+      "targetTaskId": "ledger:0462:qsp-northern-virginia-data-center-jv:3a29bbb8",
+      "targetRequiredStatus": "COMPLETED"
+    }
+  ],
+  "collisionAnalysis": {
+    "result": "PASS_FOR_PREPARATION",
+    "reason": "All five members are target-bound terminal supersessions. No production, seed, ownership, citation or redirect mutation is planned, but every target status and identity hash must be freshly verified."
+  },
+  "sourceCompatibility": {
+    "result": "PASS_FOR_PREPARATION",
+    "reason": "Each reciprocal label inherits the durable, hash-bound evidence chain of its exact canonical target; no second company chat is warranted."
+  },
+  "requiredBeforeRelease": [
+    "Recapture the five task/dependency snapshots after the predecessor bundle completes.",
+    "Verify every target task has the required terminal status and its canonical production/seed identity remains unchanged.",
+    "Generate five hash-bound terminal supersession decisions and an all-terminal batch receipt.",
+    "Do not create a PR, Vercel deployment or database transaction unless fresh context reveals an actual mutation requirement.",
+    "Finalize the source manifest only after the terminal receipt validates."
+  ]
+}

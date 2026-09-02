@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_SEED_ATTRIBUTION_RECONCILIATION_SPEC",
+  "batchId": "batch-0434-0438-v1",
+  "batchSha256": "b2e479cb1eeeea8dd7c67e2837543acaf5747fa0b57fbd856965769d8a627b65",
+  "reconciledAt": "2026-09-02T09:05:00.000Z",
+  "sourceManifestSha256": "d552b7e6e3796002cce41ee027768ea042f21d40c4d77a46c54077feeebe7db6",
+  "rationale": "Archive four out-of-scope published companies by removing their six active-owner attribution records, and replace American Natural’s unsupported Tiger Fund I attribution with the freshly evidenced unresolved Cleopatra Resources vehicle record. The staged evaluated seed then has one attribution record for every active owner exactly once.",
+  "removeRecordIds": [
+    "OFA-7FCB908910D6",
+    "OFA-DE8753C34060",
+    "OFA-867DC26AA4F5",
+    "OFA-ADD230794D26",
+    "OFA-51BBEC5DC8EA",
+    "OFA-567F145523E4"
+  ],
+  "upsertRecords": [
+    {
+      "recordId": "OFA-05F8DA09C68B",
+      "companyName": "American Natural",
+      "country": "United States",
+      "investmentFirm": "Tiger",
+      "currentVehicleName": "Cleopatra Resources LLC; exact Tiger fund and acquisition vehicle not publicly disclosed",
+      "investmentYear": 2015,
+      "stake": "Current Tiger-backed interest; exact security, percentage and co-investors not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "UNRESOLVED",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "Tiger’s May 2015 investment and continuing involvement are directly evidenced, but the exact Tiger-managed fund, acquisition vehicle, security, current ownership percentage and co-investors are not publicly disclosed.",
+      "evidenceUrls": [
+        "https://www.tigerinfrastructure.com/documents/FG/tigerNew/news/379342_Tiger_Infrastructure_Invests_in_American_Natural.pdf",
+        "https://www.tigerinfrastructure.com/team",
+        "https://oic.com/investments/american-natural-supply",
+        "https://jobbersworld.com/2023/12/18/giant-oil-inc-closes-acquisition-of-american-natural-retail-pa-llc/"
+      ]
+    }
+  ],
+  "specSha256": "a40411d356976af1805129b7f7a17db5b30736953eeb073a76218f81172e2310"
+}

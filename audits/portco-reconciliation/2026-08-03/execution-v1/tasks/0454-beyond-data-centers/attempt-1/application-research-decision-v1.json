@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0454:beyond-data-centers:aa1b4081",
+  "taskIndex": 454,
+  "companyName": "Beyond Data Centers",
+  "asOfDate": "2026-08-19",
+  "decision": "DEFERRED",
+  "confidence": "LOW",
+  "researchOnly": true,
+  "generatedAt": "2026-09-02T07:18:00.000Z",
+  "result": {
+    "asOfDate": "2026-08-19",
+    "requestedCompany": "Beyond Data Centers",
+    "requestedManagers": [
+      "Wafra"
+    ],
+    "decision": "DEFERRED",
+    "confidence": "low",
+    "rationale": "The available research did not establish with sufficient direct evidence the legal entity boundary, current Wafra ownership, investment vehicle, or qualifying infrastructure ownership required to add a new portfolio company. Evidence supports that Beyond Data Centers exists as a branded platform, but material ownership and transaction facts remain unresolved.",
+    "identityResolution": {
+      "canonicalEntity": "Beyond Data Centers",
+      "legalEntity": "UNRESOLVED",
+      "headquarters": "UNRESOLVED",
+      "country": "United States"
+    },
+    "ownershipResolution": {
+      "owner": {
+        "manager": "Wafra",
+        "organization": "UNRESOLVED",
+        "fund": "UNRESOLVED",
+        "vehicle": "UNRESOLVED",
+        "stake": "NOT_PUBLICLY_DISCLOSED",
+        "announcementDate": "UNRESOLVED",
+        "entryDate": "UNRESOLVED",
+        "entryYear": "UNRESOLVED",
+        "exitDate": "",
+        "exitYear": "",
+        "isActive": "UNRESOLVED",
+        "transactionState": "UNRESOLVED"
+      }
+    },
+    "operatingResolution": {
+      "qualification": "UNRESOLVED",
+      "businessModel": "Appears to be a data-center platform; evidence insufficient to confirm whether it owns/operates assets, develops campuses, or primarily provides services.",
+      "uSFootprint": "UNRESOLVED",
+      "sites": "UNRESOLVED",
+      "customers": "NOT_PUBLICLY_DISCLOSED"
+    },
+    "acquisitionExitCheck": {
+      "pendingTransaction": {
+        "direction": "",
+        "buyer": "",
+        "seller": "",
+        "stake": "",
+        "announcementDate": "",
+        "closingDate": "",
+        "state": "NONE_IDENTIFIED",
+        "evidenceUrls": []
+      },
+      "summary": "No verified acquisition, exit, financing, transfer or signed pending ownership transaction was established through the research."
+    },
+    "milestones": [],
+    "evidence": [
+      {
+        "label": "Beyond Data Centers website",
+        "url": "https://www.beyonddatacenters.com/",
+        "purpose": "Company identity and operating description",
+        "sourceTier": "Company",
+        "workingStatus": "Reviewed",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "Wafra personnel page - Michael Coleman",
+        "url": "https://www.wafra.com/our-people/michael-coleman-2/",
+        "purpose": "Potential investment team linkage",
+        "sourceTier": "Manager",
+        "workingStatus": "Reviewed",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "before": "Census proposed a new Wafra-owned company based primarily on company and personnel pages.",
+      "after": "Ownership, legal entity, investment vehicle and qualifying infrastructure mandate remain unverified; do not add as a confirmed portfolio company."
+    },
+    "excludedOrDuplicateCandidates": [],
+    "unresolvedQuestions": [
+      "What is the legal entity behind the Beyond Data Centers brand?",
+      "Does Wafra currently hold a direct or indirect equity ownership interest?",
+      "If owned by Wafra, through which fund or vehicle?",
+      "Does the platform own/operate data centers, develop campuses, or provide services only?"
+    ],
+    "recommendedListAction": "Retain as DEFERRED until direct ownership and legal entity are confirmed from primary transaction or company disclosures."
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0454-beyond-data-centers/attempt-1/research-decision.json",
+      "sha256": "fd8550c660fcfbe4aaf1b331941a4feeeeacda0923b06e280b2012df769f4ec4"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0454-beyond-data-centers/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "6307a012bbf724cbded3caabe05b1e3cf3a7ff35bcb73fb292b6ad6383a52937"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0454-beyond-data-centers/attempt-1/source-verification.json",
+      "sha256": "1340351d0dd0960a177b271524a4a6d7c2d83e02cd766b2e62dbcecea9346687"
+    },
+    "acceptedResponseSha256": null,
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+    "confidenceNormalization": {
+      "acceptedValue": "low",
+      "stagedSummaryValue": "LOW",
+      "basis": "The accepted response expressed an overall confidence band with a disclosure-gap qualifier; the staged summary preserves that band in its deterministic qualifier and the research decision is unchanged."
+    }
+  }
+}

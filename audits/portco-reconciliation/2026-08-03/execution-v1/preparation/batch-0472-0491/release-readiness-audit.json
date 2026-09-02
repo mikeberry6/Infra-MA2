@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RELEASE_BUNDLE_READINESS_AUDIT",
+  "authoritative": false,
+  "auditedAt": "2026-09-02T08:19:00.000Z",
+  "plannedTaskIndices": [472, 475, 476, 490, 491],
+  "preparationSummaryByteSha256": "3c367dd97679f15ee51766f6b2b29ad696fdbce2df6ab6b763f8ef61c8fde9fc",
+  "result": "TARGETS_INTACT_QSP_PREDECESSOR_REQUIRED",
+  "predecessorGate": {
+    "requiredTaskIndices": [464, 465, 466, 470, 471],
+    "satisfied": false,
+    "reason": "The predecessor pending-task bundle must be production-verified and source-finalized before this bundle can activate."
+  },
+  "checks": {
+    "deterministicPendingTaskOrder": true,
+    "alreadyTerminalIndicesSkipped": true,
+    "allMembersAreReciprocalIdentityTasks": true,
+    "independentResearchPacketsRequired": false,
+    "clecoCanonicalTargetCompleted": true,
+    "extenetCanonicalTargetDeferred": true,
+    "pugetCanonicalTargetCompleted": true,
+    "qspCanonicalTargetCompleted": false,
+    "freshDependencySnapshotsCaptured": false,
+    "allTerminalBatchEligible": false
+  },
+  "skippedAlreadyTerminalTaskIndices": [473, 474, 477, 478, 479, 480, 481, 482, 483, 484, 485, 486, 487, 488, 489],
+  "skippedAlreadyTerminalStatus": "SUPERSEDED",
+  "tasks": [
+    {
+      "taskIndex": 472,
+      "taskId": "ledger:0472:cleco-corporation:2901703f",
+      "plannedOutcome": "SUPERSEDED",
+      "targetTaskId": "ledger:0122:cleco-corporate-holdings-llc:43ffb062",
+      "observedTargetStatus": "COMPLETED",
+      "requiredTargetStatus": "COMPLETED"
+    },
+    {
+      "taskIndex": 475,
+      "taskId": "ledger:0475:extenet:5c5cf1a1",
+      "plannedOutcome": "SUPERSEDED_INTO_DEFERRED_ADJUDICATION",
+      "targetTaskId": "ledger:0213:extenet-formerly-extenet-systems:1d3fac1c",
+      "observedTargetStatus": "DEFERRED",
+      "requiredTargetStatus": "DEFERRED"
+    },
+    {
+      "taskIndex": 476,
+      "taskId": "ledger:0476:extenet-systems:5d66f0cd",
+      "plannedOutcome": "SUPERSEDED_INTO_DEFERRED_ADJUDICATION",
+      "targetTaskId": "ledger:0213:extenet-formerly-extenet-systems:1d3fac1c",
+      "observedTargetStatus": "DEFERRED",
+      "requiredTargetStatus": "DEFERRED"
+    },
+    {
+      "taskIndex": 490,
+      "taskId": "ledger:0490:puget-energy-puget-sound-energy:e962de5d",
+      "plannedOutcome": "SUPERSEDED",
+      "targetTaskId": "ledger:0128:puget-energy:f96cd6be",
+      "observedTargetStatus": "COMPLETED",
+      "requiredTargetStatus": "COMPLETED"
+    },
+    {
+      "taskIndex": 491,
+      "taskId": "ledger:0491:qsp:5404ff01",
+      "plannedOutcome": "SUPERSEDED",
+      "targetTaskId": "ledger:0462:qsp-northern-virginia-data-center-jv:3a29bbb8",
+      "observedTargetStatus": "PENDING",
+      "requiredTargetStatus": "COMPLETED",
+      "rule": "Do not include task 491 in a terminal receipt until task 462 is production-applied and verified."
+    }
+  ],
+  "requiredAtActivation": [
+    "Wait for tasks 464, 465, 466, 470 and 471 to be production-verified and source-finalized.",
+    "Capture fresh task and dependency snapshots for all five members.",
+    "Verify Cleco and Puget targets remain completed and ExteNet remains the canonical deferred identity.",
+    "Verify QSP task 462 is completed and its canonical production/seed identity is unchanged before superseding task 491.",
+    "Generate five hash-bound terminal supersession decisions and an all-terminal receipt.",
+    "Do not create a PR, Vercel deployment or database transaction unless fresh context reveals an actual mutation requirement."
+  ]
+}

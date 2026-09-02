@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RELEASE_BUNDLE_PREPARATION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "preparedAt": "2026-09-02T07:50:00.000Z",
+  "authoritative": false,
+  "bundleMemberRule": "The final four PENDING source tasks after task 491; already-terminal task 494 is not reopened.",
+  "dependsOn": [
+    "The preceding all-terminal bundle 472, 475, 476, 490 and 491 must be source-finalized.",
+    "No release bundle may be active, forming, releasing, applying, verifying or recovering."
+  ],
+  "plannedMembers": [
+    {
+      "taskIndex": 492,
+      "taskId": "ledger:0492:skyservice-us:444ae080",
+      "companyName": "Skyservice US",
+      "plannedOutcome": "MERGE_AND_CORRECT",
+      "reason": "Retain one active Instar-backed U.S. platform, record Leading Edge Jet Center as its former name, preserve the distinct Canadian Skyservice relationship and keep all locations and add-ons beneath the U.S. PortCo.",
+      "applicationResearchDecisionByteSha256": "438a75db991eb2311eb322f101ff76d9d289a3c0eeecf21d4a629246f008cfd6"
+    },
+    {
+      "taskIndex": 493,
+      "taskId": "ledger:0493:skyservice-us-formerly-leading-edge-jet-center:49066c79",
+      "companyName": "Skyservice US (formerly Leading Edge Jet Center)",
+      "plannedOutcome": "SUPERSEDED",
+      "reason": "The former-name label is covered by task 492 and may be superseded only after the canonical Skyservice US correction is production-verified.",
+      "targetTaskId": "ledger:0492:skyservice-us:444ae080",
+      "targetRequiredStatus": "COMPLETED"
+    },
+    {
+      "taskIndex": 495,
+      "taskId": "ledger:0495:u-s-medical-outpatient-facilities-portfolio-medcraft-jv:f5a7946c",
+      "companyName": "U.S. Medical Outpatient Facilities Portfolio (MedCraft JV)",
+      "plannedOutcome": "SUPERSEDED",
+      "reason": "The completed MedCraft Medical Outpatient Portfolio task is the reviewed canonical manager-level identity.",
+      "targetTaskId": "ledger:0250:medcraft-medical-outpatient-portfolio:bb470706",
+      "targetRequiredStatus": "COMPLETED"
+    },
+    {
+      "taskIndex": 496,
+      "taskId": "ledger:0496:u-s-medical-outpatient-facilities-portfolio-montecito-jv:be578f31",
+      "companyName": "U.S. Medical Outpatient Facilities Portfolio (Montecito JV)",
+      "plannedOutcome": "SUPERSEDED",
+      "reason": "The completed Montecito Medical Outpatient Portfolio task is the reviewed canonical manager-level identity.",
+      "targetTaskId": "ledger:0251:montecito-medical-outpatient-portfolio:18c48dc3",
+      "targetRequiredStatus": "COMPLETED"
+    }
+  ],
+  "collisionAnalysis": {
+    "result": "REQUIRES_FRESH_CONTEXT",
+    "reason": "Skyservice US requires an exact reviewed target binding and reciprocal-label collision check. The two medical-portfolio members are already target-bound terminal supersessions."
+  },
+  "sourceCompatibility": {
+    "result": "PASS_FOR_PREPARATION",
+    "reason": "Task 492 has a UI-attested GPT-5.6 Sol Pro 5-of-5 research packet and independent source validation; the other three members inherit exact completed-target evidence chains."
+  },
+  "requiredBeforeRelease": [
+    "Recapture all four task/dependency snapshots after the predecessor bundle completes.",
+    "Bind Skyservice US to exactly one production and evaluated-seed identity and fail on ambiguity.",
+    "Generate the Skyservice merge/correction and three terminal supersessions, with task 493 dependent on task 492's verified after-image.",
+    "Reconcile any changed active-owner seed attribution and prove one-to-one evaluated-seed coverage.",
+    "Run source, primary-citation, dependency, alias, redirect, collision and stale-hash checks before automatic authorization.",
+    "Use the protected release and atomic apply workflow only if task 492 mutates production or seed state; otherwise use an all-terminal receipt.",
+    "After source finalization, confirm zero PENDING tasks and begin deferred-task re-adjudication in original order."
+  ]
+}

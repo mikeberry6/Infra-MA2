@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RELEASE_BUNDLE_PREPARATION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "preparedAt": "2026-09-02T07:30:00.000Z",
+  "authoritative": false,
+  "dependsOn": [
+    "The preceding source-task bundle 439 through 443 must be fully production-verified and source-finalized.",
+    "No release bundle may be active, forming, releasing, applying, verifying or recovering."
+  ],
+  "plannedMembers": [
+    {
+      "taskIndex": 444,
+      "taskId": "ledger:0444:unison-energy:423efadc",
+      "companyName": "Unison Energy",
+      "plannedOutcome": "CORRECT_COMPANY",
+      "reason": "Retain the active platform, replace the unsupported sole-owner presentation with Tiger control through Fund III AIV U LP, preserve the exited AIF/AIM and Hunt owners, and describe the mixed ownership model without inferring percentages.",
+      "applicationResearchDecisionByteSha256": "905bbe8cfce694e11afd435c8c81d076effa22c61f2fca30d46392ed4e2a8ac7"
+    },
+    {
+      "taskIndex": 445,
+      "taskId": "ledger:0445:digital-realty-northern-virginia-hyperscale-data-center-jv:1419ed2f",
+      "companyName": "Digital Realty Northern Virginia Hyperscale Data Center JV",
+      "plannedOutcome": "EXCLUDED",
+      "reason": "TPG's 80% interest is held through the opportunistic TPG Real Estate Partners strategy rather than a qualifying infrastructure mandate; the TPG and TPG Real Estate labels represent one interest.",
+      "applicationResearchDecisionByteSha256": "82c148f833dabf2b8b1d15366627a1841b0019c111f291d1911cf6507c8a6ae2"
+    },
+    {
+      "taskIndex": 446,
+      "taskId": "ledger:0446:ipx-power:dd940951",
+      "companyName": "IPX Power",
+      "plannedOutcome": "CORRECT_COMPANY",
+      "reason": "Retain the grid-tied solar and storage platform through qualifying CAI infrastructure ownership, correct the Intersect carve-out identity and closing, and preserve TPG Rise Climate and Greenbelt only as factual nonqualifying ownership periods.",
+      "applicationResearchDecisionByteSha256": "1cca3dbae1166465c29a7e0e4c210f8386b4c3c80e1cdc3fadbbe71c9bfe644e"
+    },
+    {
+      "taskIndex": 447,
+      "taskId": "ledger:0447:monarch-bioenergy:92b9cb49",
+      "companyName": "Monarch Bioenergy",
+      "plannedOutcome": "EXCLUDED",
+      "reason": "The operating RNG platform has no proven qualifying infrastructure-manager owner: TPG invested through Rise Climate private equity, while RAE and Smithfield are strategic owners.",
+      "applicationResearchDecisionByteSha256": "e49dd909062391ca0b337f8cdaf4d375bc813613e67beafcbd5d37ac080cf3ec"
+    },
+    {
+      "taskIndex": 448,
+      "taskId": "ledger:0448:olympus-terminals:280295ff",
+      "companyName": "Olympus Terminals",
+      "plannedOutcome": "EXCLUDED",
+      "reason": "Current control is through TPG Rise Climate private equity rather than Transition Infrastructure, and Intrepid's qualifying historical infrastructure interest has exited.",
+      "applicationResearchDecisionByteSha256": "302d08b4c0de4e88d64ca76a719b4360ffe525b3c5ea423e68a3aada1002d871"
+    }
+  ],
+  "collisionAnalysis": {
+    "result": "PASS_FOR_PREPARATION",
+    "reason": "The two planned mutations target distinct companies and the three terminal exclusions do not share a target, seed identity, redirect or active ownership dependency with them."
+  },
+  "sourceCompatibility": {
+    "result": "PASS_FOR_PREPARATION",
+    "reason": "Each normalized decision is backed by a UI-attested GPT-5.6 Sol Pro 5-of-5 research packet and independently validated direct-source artifact. Exact primary-citation selection remains a proposal-time check."
+  },
+  "requiredBeforeRelease": [
+    "Recapture one fresh production snapshot and all five task/dependency snapshots after the predecessor bundle completes.",
+    "Generate the two mutation proposals and three terminal decisions from the normalized research artifacts.",
+    "Reconcile every changed active-owner seed attribution and prove one-to-one evaluated-seed coverage.",
+    "Run source, primary-citation, dependency, collision, stale-hash and atomicity checks before automatic authorization.",
+    "Use the protected PR, exact-SHA Vercel deployment, serializable database transaction, receipt, API and rendered-card verification workflow."
+  ]
+}

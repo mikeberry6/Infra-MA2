@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RELEASE_BUNDLE_READINESS_AUDIT",
+  "authoritative": false,
+  "auditedAt": "2026-09-02T09:16:00.000Z",
+  "plannedBatchId": "batch-0434-0438-v1",
+  "batchSha256": "dd0ca285ddf3caf001087d3bc1d084577867d2fea8d25f71c4f967b19bc3c56a",
+  "result": "READY_FOR_PROTECTED_RELEASE",
+  "deploymentGate": {
+    "requiredCanonicalCommitSha": "a6fa4d2d5927cc11a7903d0e309f62a3f7a2b677",
+    "observedCanonicalCommitSha": "a6fa4d2d5927cc11a7903d0e309f62a3f7a2b677",
+    "observedVercelStatus": "READY",
+    "satisfied": true
+  },
+  "checks": {
+    "deterministicTaskOrder": true,
+    "oneActiveBundle": true,
+    "freshProductionAndDependencySnapshots": true,
+    "freshSourceReopening": true,
+    "exactlyOnePrimaryCitationPerProposal": true,
+    "automaticAuthorizationsValid": true,
+    "sharedSourceMetadataCompatible": true,
+    "productionDryRunPasses": true,
+    "approvedSeedProjectionPasses": true,
+    "seedAttributionOneToOneCoveragePasses": true,
+    "databaseWritesPerformed": false
+  },
+  "tasks": [
+    {"taskIndex": 434, "taskId": "ledger:0434:atlantica-sustainable-infrastructure-plc:4a99610b", "plannedOutcome": "CORRECT_COMPANY", "sourceVerificationByteSha256": "9c0c152f4b9f2ce65766c8044bae2c2d83f2b4a78ccf1f014faa9259d5a2744c"},
+    {"taskIndex": 435, "taskId": "ledger:0435:eavor-technologies-inc:3796294f", "plannedOutcome": "CORRECT_COMPANY", "sourceVerificationByteSha256": "fea0c12e745ba754fb24cb0cc590d0ce920091327c623ab51382ba48796853dc"},
+    {"taskIndex": 436, "taskId": "ledger:0436:neoen-s-a:ec19a5c4", "plannedOutcome": "CORRECT_COMPANY", "sourceVerificationByteSha256": "dcf85579c33eafe44c31409970ab78e29afe3f26644d934ff74deae4bcdaf912"},
+    {"taskIndex": 437, "taskId": "ledger:0437:psa-international-pte-ltd:b5676593", "plannedOutcome": "CORRECT_COMPANY", "sourceVerificationByteSha256": "f44dfbda91b27d43e708494673ef7de3710df71e1b817bf971001cb21936b7ed"},
+    {"taskIndex": 438, "taskId": "ledger:0438:american-natural:a714a5a7", "plannedOutcome": "CORRECT_COMPANY", "sourceVerificationByteSha256": "e936c839acba7ff5ee527f57ee07d0c843dda19d60be151cb1105bd98bafaf09"}
+  ],
+  "productionInputVerificationSha256": "a99b5c9c1abc9f156494562f4893fc34f42970b0956c68619ef9031e87769a19",
+  "seedArtifactSha256": "0722c2892be1d350e560ae787d41def01755a6166d09787e82e5a46da1fbb338",
+  "seedAttributionManifestSha256": "bb78f25a5881259a61b521242a4b0fc19844f23cf6cb8cbe058c1b7c136e7e30",
+  "nextAction": "Commit the exact seed overlay and audit artifacts through one protected PR."
+}

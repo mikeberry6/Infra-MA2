@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RELEASE_BUNDLE_READINESS_AUDIT",
+  "authoritative": false,
+  "auditedAt": "2026-09-02T08:21:00.000Z",
+  "plannedTaskIndices": [492, 493, 495, 496],
+  "preparationSummaryByteSha256": "95a6e074518eb5c7565c14c43ad60b36e5cb6362c7ef0d9ae04937b5c5534e43",
+  "result": "PREPARED_RESEARCH_INTACT_FRESH_CONTEXT_REQUIRED",
+  "predecessorGate": {
+    "requiredTaskIndices": [472, 475, 476, 490, 491],
+    "satisfied": false,
+    "reason": "The predecessor all-terminal bundle must be source-finalized before this bundle can activate."
+  },
+  "checks": {
+    "deterministicPendingTaskOrder": true,
+    "alreadyTerminalIndexSkipped": true,
+    "skyserviceDecisionByteHashMatchesPreparation": true,
+    "skyserviceResearchLineageByteHashesMatch": true,
+    "skyserviceHasExactlyOneRecommendedPrimary": true,
+    "skyservicePrimarySourceWorking": true,
+    "medCraftCanonicalTargetCompleted": true,
+    "montecitoCanonicalTargetCompleted": true,
+    "skyserviceReciprocalStillPending": true,
+    "freshDependencySnapshotsCaptured": false,
+    "authoritativeSkyserviceTargetBindingComplete": false,
+    "authoritativeCollisionAnalysisComplete": false
+  },
+  "skippedAlreadyTerminalTask": {
+    "taskIndex": 494,
+    "status": "SUPERSEDED"
+  },
+  "tasks": [
+    {
+      "taskIndex": 492,
+      "taskId": "ledger:0492:skyservice-us:444ae080",
+      "plannedOutcome": "MERGE_AND_CORRECT",
+      "applicationDecisionByteSha256": "438a75db991eb2311eb322f101ff76d9d289a3c0eeecf21d4a629246f008cfd6",
+      "primaryUrl": "https://instarinvest.com/assets/files/strategy/Instar-Fact-Sheet-Q3-2025.pdf",
+      "primaryUrlHttpStatus": 206,
+      "primaryUrlHealth": "WORKING",
+      "targetBinding": "SKYSERVICE_US_REQUIRES_FRESH_PRODUCTION_AND_SEED_SNAPSHOT"
+    },
+    {
+      "taskIndex": 493,
+      "taskId": "ledger:0493:skyservice-us-formerly-leading-edge-jet-center:49066c79",
+      "plannedOutcome": "SUPERSEDED",
+      "researchPacket": "NOT_REQUIRED_RECIPROCAL_IDENTITY",
+      "targetTaskId": "ledger:0492:skyservice-us:444ae080",
+      "observedTargetStatus": "PENDING",
+      "requiredTargetStatus": "COMPLETED_IN_SAME_BUNDLE",
+      "rule": "Do not finalize this supersession unless task 492 is production-applied and verified."
+    },
+    {
+      "taskIndex": 495,
+      "taskId": "ledger:0495:u-s-medical-outpatient-facilities-portfolio-medcraft-jv:f5a7946c",
+      "plannedOutcome": "SUPERSEDED",
+      "researchPacket": "NOT_REQUIRED_RECIPROCAL_IDENTITY",
+      "targetTaskId": "ledger:0250:medcraft-medical-outpatient-portfolio:bb470706",
+      "observedTargetStatus": "COMPLETED",
+      "requiredTargetStatus": "COMPLETED"
+    },
+    {
+      "taskIndex": 496,
+      "taskId": "ledger:0496:u-s-medical-outpatient-facilities-portfolio-montecito-jv:be578f31",
+      "plannedOutcome": "SUPERSEDED",
+      "researchPacket": "NOT_REQUIRED_RECIPROCAL_IDENTITY",
+      "targetTaskId": "ledger:0251:montecito-medical-outpatient-portfolio:18c48dc3",
+      "observedTargetStatus": "COMPLETED",
+      "requiredTargetStatus": "COMPLETED"
+    }
+  ],
+  "requiredAtActivation": [
+    "Wait for tasks 472, 475, 476, 490 and 491 to be source-finalized.",
+    "Capture fresh task and dependency snapshots for all four members.",
+    "Bind Skyservice US to exactly one production and evaluated-seed identity; fail on ambiguity.",
+    "Generate the Skyservice merge/correction and verify its after-image before finalizing task 493's supersession.",
+    "Reconfirm MedCraft and Montecito targets remain completed and their canonical identities are unchanged.",
+    "Complete authoritative source, alias, redirect, target, seed-attribution, dependency, collision, stale-hash and atomicity checks before automatic authorization.",
+    "After source finalization, prove zero PENDING tasks and begin deferred-task re-adjudication in original order."
+  ]
+}

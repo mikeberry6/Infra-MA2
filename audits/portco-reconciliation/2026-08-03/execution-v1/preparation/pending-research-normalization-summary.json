@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_PENDING_RESEARCH_NORMALIZATION_SUMMARY",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "preparedAt": "2026-09-02T07:20:00.000Z",
+  "authoritative": false,
+  "sourceManifestSha256": "f31de2e9ea534931b27900f0de719f11eb0764bba9c17a08157168b000ad0027",
+  "pendingTaskCount": 44,
+  "normalizedResearchTaskCount": 33,
+  "normalizedDecisionCounts": {
+    "EXCLUDED": 9,
+    "PROPOSED_CORRECTION": 10,
+    "DEFERRED": 5,
+    "PROPOSED_MERGE": 6,
+    "PROPOSED_NEW": 2,
+    "VERIFIED_NO_CHANGE": 1
+  },
+  "taskDirectoryWithoutNormalizedDecisionCount": 0,
+  "identityOnlyPendingTasks": [
+    {
+      "taskIndex": 460,
+      "taskId": "ledger:0460:dcli:22d0fc27",
+      "companyName": "DCLI",
+      "plannedTreatment": "SUPERSEDE_AFTER_TARGET_VERIFICATION",
+      "targetTaskId": "ledger:0262:direct-chassislink-inc-dcli:d3d4542b",
+      "basis": "The completed Direct ChassisLink, Inc. (DCLI) task is the canonical company-level identity."
+    },
+    {
+      "taskIndex": 466,
+      "taskId": "ledger:0466:alpha-generation-alphagen:c81d7304",
+      "companyName": "Alpha Generation (AlphaGen)",
+      "plannedTreatment": "SUPERSEDE_AFTER_TARGET_VERIFICATION",
+      "targetTaskId": "ledger:0064:alphagen:b9424b11",
+      "basis": "Task 64 completed the reviewed AlphaGen-to-Alpha Generation, LLC merge and preserved the canonical platform."
+    },
+    {
+      "taskIndex": 471,
+      "taskId": "ledger:0471:boldyn-networks-us:9c03f01f",
+      "companyName": "Boldyn Networks (US)",
+      "plannedTreatment": "SUPERSEDE_AFTER_TARGET_VERIFICATION",
+      "targetTaskId": "ledger:0470:boldyn-networks:3ce154eb",
+      "basis": "The U.S. label is a geographic operating perimeter beneath the consolidated Boldyn Networks task."
+    },
+    {
+      "taskIndex": 472,
+      "taskId": "ledger:0472:cleco-corporation:2901703f",
+      "companyName": "Cleco Corporation",
+      "plannedTreatment": "SUPERSEDE_AFTER_TARGET_VERIFICATION",
+      "targetTaskId": "ledger:0122:cleco-corporate-holdings-llc:43ffb062",
+      "basis": "The completed Cleco Corporate Holdings LLC task is the reviewed canonical company identity."
+    },
+    {
+      "taskIndex": 475,
+      "taskId": "ledger:0475:extenet:5c5cf1a1",
+      "companyName": "Extenet",
+      "plannedTreatment": "SUPERSEDE_INTO_DEFERRED_ADJUDICATION",
+      "targetTaskId": "ledger:0213:extenet-formerly-extenet-systems:1d3fac1c",
+      "basis": "This reciprocal label concerns the same ExteNet identity; task 213 remains the canonical deferred adjudication."
+    },
+    {
+      "taskIndex": 476,
+      "taskId": "ledger:0476:extenet-systems:5d66f0cd",
+      "companyName": "ExteNet Systems",
+      "plannedTreatment": "SUPERSEDE_INTO_DEFERRED_ADJUDICATION",
+      "targetTaskId": "ledger:0213:extenet-formerly-extenet-systems:1d3fac1c",
+      "basis": "This former-name label concerns the same ExteNet identity; task 213 remains the canonical deferred adjudication."
+    },
+    {
+      "taskIndex": 490,
+      "taskId": "ledger:0490:puget-energy-puget-sound-energy:e962de5d",
+      "companyName": "Puget Energy / Puget Sound Energy",
+      "plannedTreatment": "SUPERSEDE_AFTER_TARGET_VERIFICATION",
+      "targetTaskId": "ledger:0128:puget-energy:f96cd6be",
+      "basis": "The completed Puget Energy task already consolidated Puget Sound Energy beneath the canonical parent."
+    },
+    {
+      "taskIndex": 491,
+      "taskId": "ledger:0491:qsp:5404ff01",
+      "companyName": "QSP",
+      "plannedTreatment": "SUPERSEDE_AFTER_TARGET_VERIFICATION",
+      "targetTaskId": "ledger:0462:qsp-northern-virginia-data-center-jv:3a29bbb8",
+      "basis": "The shorthand label concerns the same Northern Virginia data-center joint venture and may be superseded only after task 462 is production-verified."
+    },
+    {
+      "taskIndex": 493,
+      "taskId": "ledger:0493:skyservice-us-formerly-leading-edge-jet-center:49066c79",
+      "companyName": "Skyservice US (formerly Leading Edge Jet Center)",
+      "plannedTreatment": "SUPERSEDE_AFTER_TARGET_VERIFICATION",
+      "targetTaskId": "ledger:0492:skyservice-us:444ae080",
+      "basis": "The former-name label concerns the same Skyservice US platform and may be superseded only after task 492 is production-verified."
+    },
+    {
+      "taskIndex": 495,
+      "taskId": "ledger:0495:u-s-medical-outpatient-facilities-portfolio-medcraft-jv:f5a7946c",
+      "companyName": "U.S. Medical Outpatient Facilities Portfolio (MedCraft JV)",
+      "plannedTreatment": "SUPERSEDE_AFTER_TARGET_VERIFICATION",
+      "targetTaskId": "ledger:0250:medcraft-medical-outpatient-portfolio:bb470706",
+      "basis": "The completed MedCraft Medical Outpatient Portfolio task is the reviewed canonical company-level identity."
+    },
+    {
+      "taskIndex": 496,
+      "taskId": "ledger:0496:u-s-medical-outpatient-facilities-portfolio-montecito-jv:be578f31",
+      "companyName": "U.S. Medical Outpatient Facilities Portfolio (Montecito JV)",
+      "plannedTreatment": "SUPERSEDE_AFTER_TARGET_VERIFICATION",
+      "targetTaskId": "ledger:0251:montecito-medical-outpatient-portfolio:18c48dc3",
+      "basis": "The completed Montecito Medical Outpatient Portfolio task is the reviewed canonical company-level identity."
+    }
+  ],
+  "guardrails": [
+    "This preparation artifact does not mutate the source manifest or batch ledger.",
+    "Every supersession must be regenerated and hash-bound inside the eligible active bundle.",
+    "A later reciprocal task may be superseded only after its canonical target is production-verified, except that ExteNet's reciprocal labels remain attached to the same final deferred adjudication.",
+    "Fresh task/dependency snapshots and collision checks remain mandatory before release."
+  ]
+}

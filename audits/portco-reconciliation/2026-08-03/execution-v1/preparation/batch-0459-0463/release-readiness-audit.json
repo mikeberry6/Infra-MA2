@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RELEASE_BUNDLE_READINESS_AUDIT",
+  "authoritative": false,
+  "auditedAt": "2026-09-02T08:13:00.000Z",
+  "plannedTaskRange": [459, 463],
+  "preparationSummaryByteSha256": "6070db6bca7abe3168fbbaf011f1a0fa6d300aa56302412a1a4f25b866166fb9",
+  "result": "PREPARED_RESEARCH_INTACT_SOURCE_REBIND_REQUIRED",
+  "predecessorGate": {
+    "requiredTaskRange": [454, 458],
+    "satisfied": false,
+    "reason": "The predecessor bundle must be production-verified and source-finalized before this bundle can activate."
+  },
+  "checks": {
+    "deterministicTaskOrder": true,
+    "researchBackedDecisionByteHashesMatchPreparation": true,
+    "researchLineageByteHashesMatch": true,
+    "exactlyOneResearchRecommendedPrimaryPerResearchBackedTask": true,
+    "dcliCanonicalTargetCompleted": true,
+    "qspReciprocalTaskStillPending": true,
+    "allResearchRecommendedPrimaryUrlsCurrentlyUsable": false,
+    "sourceRepairsIdentified": true,
+    "freshDependencySnapshotsCaptured": false,
+    "authoritativeMergeTargetBindingsComplete": false,
+    "authoritativeCollisionAnalysisComplete": false
+  },
+  "tasks": [
+    {
+      "taskIndex": 459,
+      "taskId": "ledger:0459:signal-rail-holdings:50c69045",
+      "plannedOutcome": "EXCLUDED",
+      "applicationDecisionByteSha256": "69349c65fbbd1ef4826cfdd27601a2988b95dbbffb0a5a7232d1467e7a7c8778",
+      "primaryUrl": "https://www.sec.gov/Archives/edgar/data/99780/000009978026000119/trn-20260630.htm",
+      "primaryUrlHttpStatus": 403,
+      "primaryUrlHealth": "COMMAND_LINE_BLOCKED_STORED_DIRECT_HASH_VERIFIED",
+      "sourceVerificationSha256": "26858fd7e9da2fc44fe4c1400fe44f561650227fc79cab25ee17b38e36530113"
+    },
+    {
+      "taskIndex": 460,
+      "taskId": "ledger:0460:dcli:22d0fc27",
+      "plannedOutcome": "SUPERSEDED",
+      "researchPacket": "NOT_REQUIRED_RECIPROCAL_IDENTITY",
+      "targetTaskId": "ledger:0262:direct-chassislink-inc-dcli:d3d4542b",
+      "observedTargetStatus": "COMPLETED",
+      "requiredTargetStatus": "COMPLETED"
+    },
+    {
+      "taskIndex": 461,
+      "taskId": "ledger:0461:i3-broadband:2d53909b",
+      "plannedOutcome": "VERIFIED_NO_CHANGE",
+      "applicationDecisionByteSha256": "c08e5a107a85bd6aca2079bb11778b8b2e7a2edd1c38bc9df77153f037ab4962",
+      "researchPrimaryUrl": "https://www.t-mobile.com/news/network/t-mobile-fiber-i3-broadband",
+      "researchPrimaryUrlHttpStatus": 404,
+      "researchPrimaryUrlHealth": "DEAD_REPLACE",
+      "replacementPrimaryUrl": "https://www.t-mobile.com/news/business/t-mobile-add-two-strategic-fiber-joint-ventures-gonetspeed-greenlight-i3",
+      "replacementPrimaryUrlHttpStatus": 200,
+      "replacementPrimaryUrlHealth": "WORKING",
+      "sourceVerificationSha256": "5c2140c2531a965f73c983e0d37ba6d772f85ffc20fbbdc3146166b32d88135e"
+    },
+    {
+      "taskIndex": 462,
+      "taskId": "ledger:0462:qsp-northern-virginia-data-center-jv:3a29bbb8",
+      "plannedOutcome": "MERGE_AND_CORRECT",
+      "applicationDecisionByteSha256": "6a6bbd8c20a9fa374ee5d4a08e40473e52c2c8d8facdd1d3ff941930d8491963",
+      "researchPrimaryUrl": "https://wrenhouseinfra.com/portfolio/qsp/",
+      "researchPrimaryUrlHttpStatus": 404,
+      "researchPrimaryUrlHealth": "DEAD_REPLACE",
+      "replacementPrimaryUrl": "https://www.whinfra.com/our-portfolio/qsp/",
+      "replacementPrimaryUrlHttpStatus": 200,
+      "replacementPrimaryUrlHealth": "WORKING",
+      "transactionUrl": "https://www.whinfra.com/qts-realty-trust-and-wren-house-successfully-complete-joint-venture-for-three-northern-virginia-data-centers-2/",
+      "transactionUrlHttpStatus": 200,
+      "sourceVerificationSha256": "487fbf7f011c4dbfde23c806365afcfd77f76a27a451b4c13d98ac03585452bc",
+      "laterReciprocalTaskId": "ledger:0491:qsp:5404ff01",
+      "laterReciprocalObservedStatus": "PENDING",
+      "laterReciprocalRule": "Do not supersede until task 462 is production-applied and verified."
+    },
+    {
+      "taskIndex": 463,
+      "taskId": "ledger:0463:btr-jet-center:402b91d4",
+      "plannedOutcome": "MERGE_AND_REDIRECT",
+      "applicationDecisionByteSha256": "eeddf1e8673644ed159ba376637e889d3c5f1735eb671213bf16b24e8c582795",
+      "primaryUrl": "https://www.businesswire.com/news/home/20260213283848/en/Tallvine-Backed-Velocity-FBO-Network-Expands-with-Acquisition-of-BTR-Jet-Center",
+      "primaryUrlHttpStatus": 403,
+      "primaryUrlHealth": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "sourceVerificationSha256": "e7fe494081c12190af21986b82d36edf001b9444c18febcc56c9d00c6c489ca2",
+      "targetBinding": "VELOCITY_FBO_NETWORK_REQUIRES_FRESH_TASK_SNAPSHOT"
+    }
+  ],
+  "requiredAtActivation": [
+    "Wait for tasks 454 through 458 to be production-verified and source-finalized.",
+    "Capture one fresh production snapshot and all five task, seed and dependency snapshots.",
+    "Reconfirm canonical task 262 remains completed before superseding DCLI.",
+    "Replace the dead i3 and QSP primary URLs with the working direct official pages.",
+    "Bind QSP and Velocity FBO Network to exactly one production and evaluated-seed target each; fail on ambiguity.",
+    "Do not supersede task 491 until QSP is production-applied and verified.",
+    "Complete authoritative source, redirect, relation, target, seed-attribution, dependency, collision, stale-hash and atomicity checks before automatic authorization."
+  ]
+}
