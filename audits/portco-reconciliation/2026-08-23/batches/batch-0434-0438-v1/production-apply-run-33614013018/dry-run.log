@@ -1,0 +1,97 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:batch:apply
+> npx tsx scripts/portco-reconciliation/batch-apply-cli.ts --batch-manifest=audits/portco-reconciliation/2026-08-23/batches/batch-0434-0438-v1/batch-manifest.json --batch-sha256=dd0ca285ddf3caf001087d3bc1d084577867d2fea8d25f71c4f967b19bc3c56a
+
+(node:3640) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "BATCH_DRY_RUN",
+  "batchId": "batch-0434-0438-v1",
+  "batchSha256": "dd0ca285ddf3caf001087d3bc1d084577867d2fea8d25f71c4f967b19bc3c56a",
+  "databaseWrites": false,
+  "seedWrites": false,
+  "plans": [
+    {
+      "companyName": "Atlantica Sustainable Infrastructure plc",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to recordStatus, lastVerifiedAt."
+        }
+      ],
+      "changedFields": [
+        "lastVerifiedAt",
+        "recordStatus"
+      ],
+      "retiredCompanyIds": []
+    },
+    {
+      "companyName": "Eavor Technologies Inc.",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to recordStatus, lastVerifiedAt."
+        }
+      ],
+      "changedFields": [
+        "lastVerifiedAt",
+        "recordStatus"
+      ],
+      "retiredCompanyIds": []
+    },
+    {
+      "companyName": "Neoen S.A.",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to recordStatus, lastVerifiedAt."
+        }
+      ],
+      "changedFields": [
+        "lastVerifiedAt",
+        "recordStatus"
+      ],
+      "retiredCompanyIds": []
+    },
+    {
+      "companyName": "PSA International Pte Ltd",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to recordStatus, lastVerifiedAt."
+        }
+      ],
+      "changedFields": [
+        "lastVerifiedAt",
+        "recordStatus"
+      ],
+      "retiredCompanyIds": []
+    },
+    {
+      "companyName": "American Natural",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to aliases, sector, subsector, description, headquarters, lastVerifiedAt, ownershipPeriods, milestones, citations."
+        }
+      ],
+      "changedFields": [
+        "aliases",
+        "citations",
+        "description",
+        "headquarters",
+        "lastVerifiedAt",
+        "milestones",
+        "ownershipPeriods",
+        "sector",
+        "subsector"
+      ],
+      "retiredCompanyIds": []
+    }
+  ]
+}

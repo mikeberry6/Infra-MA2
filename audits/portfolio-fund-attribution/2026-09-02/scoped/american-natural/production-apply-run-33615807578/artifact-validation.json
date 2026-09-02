@@ -1,0 +1,32 @@
+
+> infra-tracker@1.0.0 portfolio:fund-attribution:apply
+> npx tsx scripts/apply-portfolio-fund-attribution.ts --manifest=audits/portfolio-fund-attribution/2026-09-02/scoped/american-natural/apply-manifest.json --manifest-sha256=e3d5ae450ade505206ee409ee99031b7928bb7129f891bdc36f890bbb8fc5043 --production-snapshot=audits/portfolio-fund-attribution/2026-09-02/scoped/american-natural/production-snapshot.json --approval=audits/portfolio-fund-attribution/2026-09-02/scoped/american-natural/approval.json --approval-sha256=2978f343a1caca219bcfc46b327c7a549395647db28904cb15b8d3492147da72 --validate-only=true
+
+{
+  "mode": "VALIDATE_ONLY",
+  "databaseWrites": false,
+  "manifestSha256": "e3d5ae450ade505206ee409ee99031b7928bb7129f891bdc36f890bbb8fc5043",
+  "approvalSha256": "2978f343a1caca219bcfc46b327c7a549395647db28904cb15b8d3492147da72",
+  "mutationCount": 1,
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 0,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 0,
+      "UNRESOLVED": 1
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  }
+}
