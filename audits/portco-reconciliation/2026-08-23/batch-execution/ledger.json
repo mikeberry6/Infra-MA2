@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-02T10:57:16.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-09-02T11:40:00.000Z",
+  "activeBatchId": "batch-0444-0448-v1",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -8146,7 +8146,55 @@
           "reason": "Rendered-card verification passed for all five companies; artifact sha256 ab1a4cb23bc804af2dc15faa3ce44adc89cc542cde046811688352a89b463f75."
         }
       ]
+    },
+    {
+      "batchId": "batch-0444-0448-v1",
+      "state": "READY",
+      "taskIds": [
+        "ledger:0444:unison-energy:423efadc",
+        "ledger:0445:digital-realty-northern-virginia-hyperscale-data-center-jv:1419ed2f",
+        "ledger:0446:ipx-power:dd940951",
+        "ledger:0447:monarch-bioenergy:92b9cb49",
+        "ledger:0448:olympus-terminals:280295ff"
+      ],
+      "taskIndexes": [
+        444,
+        445,
+        446,
+        447,
+        448
+      ],
+      "createdAt": "2026-09-02T11:09:00.000Z",
+      "updatedAt": "2026-09-02T11:40:00.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0444-0448-v1/batch-manifest-v3.json",
+        "sha256": "01db02028d430e0776b4eb81221d7e118585386b76e479dd809fdd64dd133b17"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-09-02T11:09:00.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-09-02T11:40:00.000Z",
+          "evidenceSha256": [
+            "01db02028d430e0776b4eb81221d7e118585386b76e479dd809fdd64dd133b17"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "be8371db826e1c9046781a72bf382d749ae57fbb5e560207f86a993342e02ecb"
+  "ledgerSha256": "ce1845ce887ee41e431517e10ea98865e3c1bc376f86a9a21ee021fc825ed5fc"
 }

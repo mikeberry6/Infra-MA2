@@ -1,0 +1,281 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0448:olympus-terminals:280295ff",
+  "taskIndex": 448,
+  "companyName": "Olympus Terminals",
+  "generatedAt": "2026-09-02T11:15:17.719Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0448-olympus-terminals/attempt-2/locked-batch-v2-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 448,
+    "taskId": "ledger:0448:olympus-terminals:280295ff",
+    "canonicalKey": "olympus-terminals|united-states",
+    "companyName": "Olympus Terminals",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 94,
+    "managers": [
+      "TPG"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "094-tpg:repo-only:004:olympus-terminals"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjoaj01b1ivhewj2e7axm"
+    ],
+    "seedKeys": [
+      "olympus terminals|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.tpg.com/news-and-insights/tpg-rise-climate-to-acquire-olympus-terminals-leading-renewable-fuels-logistics-provider"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: TPG OUT_OF_SCOPE: Rise Climate private equity investment without infrastructure strategy linkage.",
+    "unresolvedQuestions": [
+      "Confirm whether the manager ownership, the company itself, or only this census scope is out of scope before proposing any change."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjoaj01b1ivhewj2e7axm",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "olympus-terminals|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjoaj01b1ivhewj2e7axm",
+    "name": "Olympus Terminals",
+    "aliases": [],
+    "sector": "MIDSTREAM",
+    "subsector": "Renewable fuels and refined-product terminals",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Olympus Terminals owns and operates storage terminals and related pipeline infrastructure for renewable fuels, refined products, crude oil, and chemical products. Its customers are fuel marketers, refiners, traders, and other shippers that need marine-access storage and regional product movements in Southern California. The company follows an asset-heavy midstream logistics model built around tank storage, dock access, and an interconnected pipeline network. Public disclosures describe two terminals in Carson and Long Beach, including a marine terminal at the Port of Long Beach. TPG Rise Climate announced an agreement to acquire the company from Davidson Kempner and Intrepid Investment Management in May 2024, but public materials reviewed do not disclose the current post-signing ownership structure.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 1984,
+    "headquarters": "California",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpkaw802apivhez8tw8cpx",
+        "managerName": "TPG",
+        "organizationName": "TPG",
+        "fundName": "TPG Peppertree Fund X",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmt0905biivhe5b8ry96d",
+        "date": "1984",
+        "event": "Olympus Terminals traces its operating history to 1984.",
+        "category": "FOUNDING",
+        "sortDate": "1984-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmt0q05bjivheojul3nd8",
+        "date": "Dec 2021",
+        "event": "An investor group acquired Chemoil Terminals.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmt1a05bkivhenb8989fx",
+        "date": "Dec 2021",
+        "event": "Following the acquisition, Chemoil Terminals was renamed Olympus Terminals.",
+        "category": "MANAGEMENT",
+        "sortDate": "2021-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmt1w05blivhe6uhhsqh9",
+        "date": "May 2024",
+        "event": "TPG Rise Climate signed a definitive agreement to acquire Olympus Terminals.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-05-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsz4q0deqivhemry2xv30",
+        "label": "Olympusterminals — Olympus Terminals",
+        "url": "https://olympusterminals.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Olympusterminals company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpsz5t0desivhebnyy9ktr",
+        "label": "Announcement date source — TPG — Olympus Terminals",
+        "url": "https://www.tpg.com/news-and-insights/tpg-rise-climate-to-acquire-olympus-terminals-leading-renewable-fuels-logistics-provider",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "TPG transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsz6u0deuivherzjyzhgb",
+        "label": "PR Newswire — Olympus Terminals",
+        "url": "https://www.prnewswire.com/news-releases/investor-group-announces-acquisition-of-chemoil-terminals-301448040.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "PR Newswire transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsz7t0dewivhen8m59whn",
+        "label": "Kirkland — Olympus Terminals",
+        "url": "https://www.kirkland.com/news/press-release/2024/05/kirkland-advises-tpg-rise-climate-on-acquiring-olympus-terminals",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Kirkland — Olympus Terminals",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Olympus Terminals",
+    "investmentFirm": "TPG",
+    "sector": "Midstream",
+    "subsector": "Renewable fuels and refined-product terminals",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "Olympus Terminals owns and operates storage terminals and related pipeline infrastructure for renewable fuels, refined products, crude oil, and chemical products. Its customers are fuel marketers, refiners, traders, and other shippers that need marine-access storage and regional product movements in Southern California. The company follows an asset-heavy midstream logistics model built around tank storage, dock access, and an interconnected pipeline network. Public disclosures describe two terminals in Carson and Long Beach, including a marine terminal at the Port of Long Beach. TPG Rise Climate announced an agreement to acquire the company from Davidson Kempner and Intrepid Investment Management in May 2024, but public materials reviewed do not disclose the current post-signing ownership structure.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 1984,
+    "investmentYear": 2024,
+    "headquarters": "California",
+    "milestones": [
+      {
+        "date": "1984",
+        "event": "Olympus Terminals traces its operating history to 1984.",
+        "category": "Founding"
+      },
+      {
+        "date": "Dec 2021",
+        "event": "An investor group acquired Chemoil Terminals.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Dec 2021",
+        "event": "Following the acquisition, Chemoil Terminals was renamed Olympus Terminals.",
+        "category": "Management"
+      },
+      {
+        "date": "May 2024",
+        "event": "TPG Rise Climate signed a definitive agreement to acquire Olympus Terminals.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Olympusterminals — Olympus Terminals",
+        "url": "https://olympusterminals.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Announcement date source — TPG — Olympus Terminals",
+        "url": "https://www.tpg.com/news-and-insights/tpg-rise-climate-to-acquire-olympus-terminals-leading-renewable-fuels-logistics-provider",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "PR Newswire — Olympus Terminals",
+        "url": "https://www.prnewswire.com/news-releases/investor-group-announces-acquisition-of-chemoil-terminals-301448040.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT"
+      },
+      {
+        "label": "Kirkland — Olympus Terminals",
+        "url": "https://www.kirkland.com/news/press-release/2024/05/kirkland-advises-tpg-rise-climate-on-acquiring-olympus-terminals",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "TPG",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2024,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj3wu00fnivheczhkg90v",
+        "fundName": "TPG Peppertree Fund X",
+        "managerId": "cmrxpiec5003sivhekn2yjy5t",
+        "updatedAt": "2026-07-23T16:09:58.926Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpiec5003sivhekn2yjy5t",
+        "name": "TPG",
+        "updatedAt": "2026-07-23T16:09:25.781Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0448:olympus-terminals:280295ff",
+    "taskIndex": 448,
+    "canonicalKey": "olympus-terminals|united-states",
+    "capturedAt": "2026-09-02T11:15:17.719Z",
+    "databaseRevision": "revision:4132a43ec44dc02168f5fee74b38d666157e9d0ac56a52a3f478e3ca312932c0",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "068ac04a6920534addaaa50f4620c393dd119b443ba7fcd5b61df3efe813e7de",
+    "productionSnapshotSha256": "c84fb1bb0e7f434510acd1e0bfadbd80a7569bd3bd7a236a57f8573521e0bcc8",
+    "targetCompanySnapshotSha256": "552b8b8125d91603be6c038807f2fc92e90b5de13a1f99bbc69e934adfdb480d",
+    "seedEntrySha256": "e17a8bc2b2eef8765293ea05ca06b327c47ba22a8e959b5ac31cc0132154ed34",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "42fb4e818c11b3c6ee570022efcbb75afff23dbbb47b573ddc94f23a4787aace",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "51f7041279a7806315e6c6ba7d913e1b89399d8c91755f8d76616112ba6c46e0",
+      "organizationsSha256": "5db9ab28fc44a0761fd5fe2f88fa5628505b50b10b55b4ae3897a1eed9382ecf",
+      "citationsSha256": "7f199ea8c26abf9c02c339005a6883d7919a799b6fa972c2d0675e717786519d",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "4dcb13728f8cc722221848a7003926e5f53a7b8aec4e498d8fbc8273605dfe22",
+    "stateSha256": "35441fae4de3e2181492d53a0ab8e531e2c8c75e91744d6ae07efcc155cf8963",
+    "taskSnapshotSha256": "cfe44b1b238f105a7cc4dab1a7f4677734ff8458afefe974773b555df04d1c02"
+  },
+  "contextSha256": "e801e996c71f32ab7fd4302f62140cd3eba6916bc97a9982610e3eb3adb85b90"
+}

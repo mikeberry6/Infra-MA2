@@ -1,0 +1,359 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0446:ipx-power:dd940951",
+  "taskIndex": 446,
+  "asOfDate": "2026-09-02",
+  "generatedAt": "2026-09-02T11:32:00.000Z",
+  "canonicalKey": "ipx-power|united-states",
+  "companyName": "IPX Power",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER"
+  ],
+  "sourceHoldingIds": [],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Retain IPX Power as the U.S. grid-tied solar-and-storage platform carved out when Google closed its acquisition of Intersect on March 10, 2026. Correct the existing TPG owner from the unsupported Peppertree Fund X attribution to TPG Rise Climate, preserve TPG's disclosed majority position, and add Climate Adaptive Infrastructure and Greenbelt Capital Partners as disclosed minority owners. Climate Adaptive Infrastructure provides the qualifying infrastructure-fund basis; TPG Rise Climate is a climate-private-equity strategy and Greenbelt's specific holding vehicle is not publicly disclosed. Exact percentages, securities and holding SPVs are not publicly disclosed, and no later sale or signed ownership transfer was identified.",
+  "evidence": [
+    {
+      "url": "https://www.tpg.com/news-and-insights/tpg-announces-completion-of-4-75-billion-sale-of-intersect-to-google-launches-ipx-power-as-independent-power-producer",
+      "purpose": "Closing, platform boundary, current owners and operating scale.",
+      "supports": [
+        "IPX launched on March 10, 2026",
+        "TPG holds a majority and CAI and Greenbelt remain investors",
+        "IPX received Intersect's grid-tied California and Texas portfolio"
+      ]
+    },
+    {
+      "url": "https://www.climateadaptiveinfra.com/news-and-insights/climate-adaptive-infrastructure-raises-over-dollar1-billion/",
+      "purpose": "Climate Adaptive Infrastructure fund and infrastructure-mandate evidence.",
+      "supports": [
+        "Climate Adaptive Infrastructure Fund LP is a dedicated infrastructure vehicle",
+        "CAI was an Intersect investor before the IPX carve-out"
+      ]
+    },
+    {
+      "url": "https://ipxpower.com/",
+      "purpose": "Current operating portfolio, capacity and geographic boundary.",
+      "supports": [
+        "IPX owns and operates utility-scale solar and storage assets",
+        "The disclosed portfolio is approximately 4.4 GW of solar and 8.8 GWh of storage in California and Texas"
+      ]
+    },
+    {
+      "url": "https://ipxpower.com/ipx-power-secures-800-million-corporate-credit-facility-to-support-expansion-of-its-clean-energy-platform/",
+      "purpose": "Near-cutoff legal-name and current-backer confirmation.",
+      "supports": [
+        "The legal company is IPX Power, LLC",
+        "TPG Rise Climate, CAI and Greenbelt remained the named backers in August 2026"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "151a20e5ca64d1c481f7d79e6c36ba5e9d714c57f60b0027c813b73da661530d",
+  "currentCompanySnapshotSha256": "7e31ebf7897636033e575b070c05f86752c83fa45e6484de8ca2be380a7bea53",
+  "executionLock": {
+    "taskSnapshotSha256": "0f263ffb5dfe82d27ed0603dd3d219643414f5b85a2d8253cc17e592f4196019",
+    "taskStateSha256": "7b94aee210d3d7329bf7752ccc83c570b62478998afd8f2eae7036e2258dd133",
+    "taskDependencySha256": "a70486f3dc9d41ad571aaa6169a524a1dd183928ea950086140eaac034ab3ad1",
+    "seedEntrySha256": "416818045a82fa077e132dcd08cf5498b89447aa06f2d88a6e8b0a26aa3babb9",
+    "dependencies": {
+      "ownershipPeriodsSha256": "d2c9602036208e34c275ecdbe95daf3a7659239e7dc435b44b32dea7691e72ef",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "51f7041279a7806315e6c6ba7d913e1b89399d8c91755f8d76616112ba6c46e0",
+      "organizationsSha256": "5db9ab28fc44a0761fd5fe2f88fa5628505b50b10b55b4ae3897a1eed9382ecf",
+      "citationsSha256": "7c32a4f51fafde74e03cf5116f9473ffc2cb3743642ca8a896e7e35a8bd77c2e",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj3wu00fnivheczhkg90v",
+        "fundName": "TPG Peppertree Fund X",
+        "managerId": "cmrxpiec5003sivhekn2yjy5t",
+        "updatedAt": "2026-07-23T16:09:58.926Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpiec5003sivhekn2yjy5t",
+        "name": "TPG",
+        "updatedAt": "2026-07-23T16:09:25.781Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjo9e01azivhe6df3tcp2",
+    "name": "IPX Power",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Utility-scale solar and battery storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "IPX Power is an independent power producer focused on developing, owning, and operating large-scale solar and battery storage assets. Its customers include utilities, community choice aggregators, large corporate buyers, and energy service providers. The company follows an asset-heavy generation model centered on grid-tied utility-scale projects rather than equipment manufacturing or pure development fees. Public disclosures describe a pipeline of 4.4 GW of solar photovoltaic capacity and 8.8 GWh of battery storage, with activity concentrated in California and Texas. The company was launched in 2026 from Intersect's grid-tied business following Google's acquisition of Intersect, with majority backing from TPG Rise Climate and additional support from Climate Adaptive Infrastructure and Greenbelt Capital Partners.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2026,
+    "headquarters": "California and Texas",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpkav302anivhe4ygdrdj6",
+        "managerName": "TPG",
+        "organizationName": "TPG",
+        "fundName": "TPG Peppertree Fund X",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2026,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmsrz05b9ivhefn9gbsat",
+        "date": "Dec 2025",
+        "event": "Alphabet announced an agreement to acquire Intersect Power.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmssl05baivhetjzz0ka8",
+        "date": "Mar 2026",
+        "event": "TPG announced the completion of the sale of Intersect Power to Google.",
+        "category": "DIVESTITURE",
+        "sortDate": "2026-03-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmst505bbivhelxbjmso2",
+        "date": "Mar 2026",
+        "event": "IPX Power launched as an independent power producer holding Intersect's grid-tied portfolio.",
+        "category": "FOUNDING",
+        "sortDate": "2026-03-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmstp05bcivhe3eyfa95g",
+        "date": "Mar 2026",
+        "event": "IPX launched with 4.4 GW of solar generation and 8.8 GWh of battery storage capacity.",
+        "category": "EXPANSION",
+        "sortDate": "2026-03-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsyu00deaivhej2wuqcme",
+        "label": "Ipxpower — IPX Power",
+        "url": "https://ipxpower.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Ipxpower company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpsyv40decivhed8giz851",
+        "label": "Ipxpower — IPX Power",
+        "url": "https://ipxpower.com/about/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Ipxpower company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsyw60deeivhera9yg77y",
+        "label": "Tpg — IPX Power",
+        "url": "https://www.tpg.com/news-and-insights/tpg-announces-completion-of-4-75-billion-sale-of-intersect-to-google-launches-ipx-power-as-independent-power-producer",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Tpg transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsyx60degivhe3e12e9zp",
+        "label": "PR Newswire — IPX Power",
+        "url": "https://www.prnewswire.com/news-releases/ipx-power-launches-as-independent-power-producer-following-sale-of-intersect-to-google-302711797.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "PR Newswire transaction or milestone detail",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "7e31ebf7897636033e575b070c05f86752c83fa45e6484de8ca2be380a7bea53",
+  "afterImage": {
+    "id": "cmrxpjo9e01azivhe6df3tcp2",
+    "name": "IPX Power",
+    "aliases": [
+      "IPX Power, LLC",
+      "IPX Power USA, LLC"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Utility-scale solar and battery storage",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "IPX Power, LLC is an independent power producer that develops, owns and operates grid-tied utility-scale solar generation and battery-storage assets in California and Texas. It was launched on March 10, 2026 when Google closed its acquisition of Intersect Power: IPX retained Intersect's grid-tied portfolio and pipeline, while Google acquired the separate digital-power and data-center business. At launch, IPX reported approximately 4.4 GW of solar photovoltaic capacity and 8.8 GWh of battery storage across operating and construction-stage assets, plus a multi-gigawatt pipeline. TPG Rise Climate holds a disclosed majority position, with Climate Adaptive Infrastructure and Greenbelt Capital Partners as minority investors; exact percentages and holding SPVs are not publicly disclosed. Climate Adaptive Infrastructure's dedicated infrastructure vehicle provides the qualifying census basis, while TPG Rise Climate and Greenbelt are preserved as factual co-owners without being treated as separate qualifying infrastructure-manager holdings. No later sale or signed ownership transfer was identified through August 19, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://ipxpower.com/",
+    "yearFounded": 2026,
+    "headquarters": "San Francisco, California",
+    "lastVerifiedAt": "2026-09-02T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpkav302anivhe4ygdrdj6",
+        "managerName": "TPG",
+        "organizationName": "TPG",
+        "fundName": null,
+        "vehicleName": "TPG Rise Climate; exact fund and holding SPV not publicly disclosed",
+        "stake": "Majority interest; exact percentage not publicly disclosed",
+        "investmentYear": 2026,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Climate Adaptive Infrastructure",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Climate Adaptive Infrastructure Fund LP; exact holding SPV not publicly disclosed",
+        "stake": "Minority interest; exact percentage not publicly disclosed",
+        "investmentYear": 2026,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Greenbelt Capital Partners",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Legacy Trilantic/Greenbelt vehicle not publicly disclosed",
+        "stake": "Minority interest; exact percentage not publicly disclosed",
+        "investmentYear": 2026,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmsrz05b9ivhefn9gbsat",
+        "date": "Dec 22, 2025",
+        "event": "Alphabet agreed to acquire Intersect's digital-power business while the independently backed grid-tied assets were designated for separation into IPX Power.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-12-22T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.tpg.com/news-and-insights/tpg-announces-completion-of-4-75-billion-sale-of-intersect-to-google-launches-ipx-power-as-independent-power-producer"
+        ]
+      },
+      {
+        "id": "cmrxpmssl05baivhetjzz0ka8",
+        "date": "Mar 10, 2026",
+        "event": "Google closed its acquisition of Intersect's digital-power business, completing the separation of the grid-tied portfolio into IPX Power.",
+        "category": "DIVESTITURE",
+        "sortDate": "2026-03-10T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.tpg.com/news-and-insights/tpg-announces-completion-of-4-75-billion-sale-of-intersect-to-google-launches-ipx-power-as-independent-power-producer"
+        ]
+      },
+      {
+        "id": "cmrxpmst505bbivhelxbjmso2",
+        "date": "Mar 10, 2026",
+        "event": "IPX Power launched as an independent power producer with TPG Rise Climate as majority owner and Climate Adaptive Infrastructure and Greenbelt Capital Partners as minority investors.",
+        "category": "FOUNDING",
+        "sortDate": "2026-03-10T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.tpg.com/news-and-insights/tpg-announces-completion-of-4-75-billion-sale-of-intersect-to-google-launches-ipx-power-as-independent-power-producer"
+        ]
+      },
+      {
+        "id": "cmrxpmstp05bcivhe3eyfa95g",
+        "date": "Mar 10, 2026",
+        "event": "IPX launched with approximately 4.4 GW of solar generation and 8.8 GWh of battery storage across California and Texas.",
+        "category": "EXPANSION",
+        "sortDate": "2026-03-10T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.tpg.com/news-and-insights/tpg-announces-completion-of-4-75-billion-sale-of-intersect-to-google-launches-ipx-power-as-independent-power-producer"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsyu00deaivhej2wuqcme",
+        "label": "Ipxpower — IPX Power",
+        "url": "https://ipxpower.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current IPX operating portfolio, capacity and geography",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsyv40decivhed8giz851",
+        "label": "Ipxpower — IPX Power",
+        "url": "https://ipxpower.com/about/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Ipxpower company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsyw60deeivhera9yg77y",
+        "label": "Tpg — IPX Power",
+        "url": "https://www.tpg.com/news-and-insights/tpg-announces-completion-of-4-75-billion-sale-of-intersect-to-google-launches-ipx-power-as-independent-power-producer",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "March 10, 2026 close, IPX carve-out boundary and three current owners",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpsyx60degivhe3e12e9zp",
+        "label": "PR Newswire — IPX Power",
+        "url": "https://www.prnewswire.com/news-releases/ipx-power-launches-as-independent-power-producer-following-sale-of-intersect-to-google-302711797.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "PR Newswire transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Climate Adaptive Infrastructure — inaugural fund close",
+        "url": "https://www.climateadaptiveinfra.com/news-and-insights/climate-adaptive-infrastructure-raises-over-dollar1-billion/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Climate Adaptive Infrastructure Fund LP and dedicated infrastructure mandate",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "IPX Power — US$800 million corporate credit facility",
+        "url": "https://ipxpower.com/ipx-power-secures-800-million-corporate-credit-facility-to-support-expansion-of-its-clean-energy-platform/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Legal company name and August 2026 confirmation of current backers",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "5bdc04c92e726c0dac0e86244412e2684ef117e2f864081a8883c73d7fae4ab2",
+  "proposalSha256": "d523d49a4083dae1c2dd4dee383bbefc6e94abb50190814d337513028170348b"
+}

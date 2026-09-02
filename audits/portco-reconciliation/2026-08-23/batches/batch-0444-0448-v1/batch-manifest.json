@@ -1,0 +1,224 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_MANIFEST",
+  "methodologyVersion": "PORTCO_APPLY_BATCH_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0444-0448-v1",
+  "createdAt": "2026-09-02T11:38:00.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "a2f6354f559394185f27f3589cce5f0e1331fe7da42d9ffe2eeaed24e68cc2cf"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0444:unison-energy:423efadc",
+      "taskIndex": 444,
+      "companyName": "Unison Energy",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0444-unison-energy/attempt-1/proposal-v1.json",
+        "sha256": "c46d14f367d35cf938f581bc57a94fc9f34047fa9ec55d2a1070a2f4e316b272"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0444-unison-energy/attempt-1/approval-v1.json",
+        "sha256": "ecea3e783b181c2c3db2e11747b7cc6a223f46905456e028de0302dfb3eeee63"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0444-unison-energy/attempt-1/locked-batch-v2-production-snapshot.json",
+        "sha256": "e2716af15ab841485345148eb4b86a8df9d2d38ffa7b07ee11a6ac5bf89ecbf5"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0444-unison-energy/attempt-1/locked-batch-v2-task-snapshot.json",
+        "sha256": "e82b0e7e39fe2e33b1f5abceec5bfac499ee30fabb075b440bf3d76fe74e68bd"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0444-unison-energy/attempt-1/observed-batch-v1-task-snapshot.json",
+        "sha256": "2496ad01382769d1a4974eb86539be6dd15466f3c6b9ff5a09cbf3602dbf1767"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0444-unison-energy/attempt-1/application-research-decision-v1.json",
+        "sha256": "905bbe8cfce694e11afd435c8c81d076effa22c61f2fca30d46392ed4e2a8ac7"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0444-unison-energy/attempt-1/release-source-verification-v1.json",
+        "sha256": "efe553d6fe6abadd139c35a87a4c9320c661ab8e2e4790ec283af661eb20aa96"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "bcb89f57b81dc7949b227c5a91d237326ea0fc767ed77956bdc967f7a7714946",
+      "dependencySha256": "86a8ed9f9acbd8100b753bb570288b89a0be2cfc30f8071fe2368dd5a84b2c14",
+      "afterImageSha256": "7ed8eb5203fd20d192ef546b44e26a85f1e6bc2333afa785fbfc89ab2f4bc2b8",
+      "targetClaims": [
+        "canonical:unison-energy|united-states",
+        "company:cmrxpjo8401awivheqfej0vd7",
+        "relation:cmrxpkatf02akivheklpqesk6",
+        "relation:cmrxpmsl805azivhe1gkdbz8o",
+        "relation:cmrxpmslp05b0ivhe2lenqdyr",
+        "relation:cmrxpsyb70ddjivhe132apjmz",
+        "relation:cmrxpsyc40ddlivhejufy5peu",
+        "relation:cmrxpsyd70ddnivhefo6acdjs",
+        "relation:cmrxpsye60ddpivhe3jcuhgn6",
+        "seed:unison energy|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://unisonenergy.com/",
+          "label": "Unisonenergy — Unison Energy",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://unisonenergy.com/faqs/",
+          "label": "Unisonenergy — Unison Energy",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.federalregister.gov/documents/2024/07/18/2024-15845/combined-notice-of-filings-1",
+          "label": "Federal Register — Unison post-closing filing",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.govinfo.gov/content/pkg/FR-2024-05-15/pdf/2024-10576.pdf",
+          "label": "Federal Register — Unison pre-closing ownership filing",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/tiger-infrastructure-partners-fund-iii-closes-growth-capital-investment-with-the-acquisition-of-unison-energy-a-fully-integrated-energy-as-a-service-microgrid-platform-302173823.html",
+          "label": "Close date source — Tiger — Unison Energy",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.tigerinfrastructure.com/portfolio/Unison-Energy",
+          "label": "Tigerinfrastructure — Unison Energy",
+          "sourceType": "WEBSITE"
+        }
+      ]
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0445:digital-realty-northern-virginia-hyperscale-data-center-jv:1419ed2f",
+      "taskIndex": 445,
+      "companyName": "Digital Realty Northern Virginia Hyperscale Data Center JV",
+      "outcome": "EXCLUDED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0445-digital-realty-northern-virginia-hyperscale-data-center-jv/attempt-1/terminal-decision-v1.json",
+        "sha256": "f274dbd65f7559d85af4cb70bd7af371639cd74d05c751b847fc211e2a3209cb"
+      }
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0446:ipx-power:dd940951",
+      "taskIndex": 446,
+      "companyName": "IPX Power",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0446-ipx-power/attempt-1/proposal-v1.json",
+        "sha256": "d523d49a4083dae1c2dd4dee383bbefc6e94abb50190814d337513028170348b"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0446-ipx-power/attempt-1/approval-v1.json",
+        "sha256": "8645fdde43ab2bbd32239b43cacdb8537767b3ddbc265c3bb3d100e2a8669cfa"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0446-ipx-power/attempt-1/locked-batch-v2-production-snapshot.json",
+        "sha256": "151a20e5ca64d1c481f7d79e6c36ba5e9d714c57f60b0027c813b73da661530d"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0446-ipx-power/attempt-1/locked-batch-v2-task-snapshot.json",
+        "sha256": "0f263ffb5dfe82d27ed0603dd3d219643414f5b85a2d8253cc17e592f4196019"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0446-ipx-power/attempt-1/observed-batch-v1-task-snapshot.json",
+        "sha256": "c4988b4b7ff3de01ca92ee8fda9dbcc1786582f4b323321fc5cfba3db02ae345"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0446-ipx-power/attempt-1/application-research-decision-v1.json",
+        "sha256": "1cca3dbae1166465c29a7e0e4c210f8386b4c3c80e1cdc3fadbbe71c9bfe644e"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0446-ipx-power/attempt-1/release-source-verification-v1.json",
+        "sha256": "7118518f0c00007a63fb139619d067a95bc8f764948b6f2ac318786187c57cc2"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "7b94aee210d3d7329bf7752ccc83c570b62478998afd8f2eae7036e2258dd133",
+      "dependencySha256": "a70486f3dc9d41ad571aaa6169a524a1dd183928ea950086140eaac034ab3ad1",
+      "afterImageSha256": "5bdc04c92e726c0dac0e86244412e2684ef117e2f864081a8883c73d7fae4ab2",
+      "targetClaims": [
+        "canonical:ipx-power|united-states",
+        "company:cmrxpjo9e01azivhe6df3tcp2",
+        "relation:cmrxpkav302anivhe4ygdrdj6",
+        "relation:cmrxpmsrz05b9ivhefn9gbsat",
+        "relation:cmrxpmssl05baivhetjzz0ka8",
+        "relation:cmrxpmst505bbivhelxbjmso2",
+        "relation:cmrxpmstp05bcivhe3eyfa95g",
+        "relation:cmrxpsyu00deaivhej2wuqcme",
+        "relation:cmrxpsyv40decivhed8giz851",
+        "relation:cmrxpsyw60deeivhera9yg77y",
+        "relation:cmrxpsyx60degivhe3e12e9zp",
+        "seed:ipx power|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://ipxpower.com/",
+          "label": "Ipxpower — IPX Power",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://ipxpower.com/about/",
+          "label": "Ipxpower — IPX Power",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://ipxpower.com/ipx-power-secures-800-million-corporate-credit-facility-to-support-expansion-of-its-clean-energy-platform/",
+          "label": "IPX Power — US$800 million corporate credit facility",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.climateadaptiveinfra.com/news-and-insights/climate-adaptive-infrastructure-raises-over-dollar1-billion/",
+          "label": "Climate Adaptive Infrastructure — inaugural fund close",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/ipx-power-launches-as-independent-power-producer-following-sale-of-intersect-to-google-302711797.html",
+          "label": "PR Newswire — IPX Power",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.tpg.com/news-and-insights/tpg-announces-completion-of-4-75-billion-sale-of-intersect-to-google-launches-ipx-power-as-independent-power-producer",
+          "label": "Tpg — IPX Power",
+          "sourceType": "PRESS_RELEASE"
+        }
+      ]
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0447:monarch-bioenergy:92b9cb49",
+      "taskIndex": 447,
+      "companyName": "Monarch Bioenergy",
+      "outcome": "EXCLUDED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0447-monarch-bioenergy/attempt-1/terminal-decision-v1.json",
+        "sha256": "042d7cca64866809254a707b350c3d8e4914e8fbaf51391f2c7b8deddf4e501e"
+      }
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0448:olympus-terminals:280295ff",
+      "taskIndex": 448,
+      "companyName": "Olympus Terminals",
+      "outcome": "EXCLUDED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0448-olympus-terminals/attempt-2/terminal-decision-v1.json",
+        "sha256": "d209c7d8dffb1dfb154b7dd26936eaad4a3f5aa8701fe866375893072a5d067b"
+      }
+    }
+  ],
+  "collisionAnalysis": {
+    "independent": true,
+    "claimsSha256": "baa40d185e3c56f82cef39f9c0d06b82f0025cca73b97004899820068f0bdef1",
+    "sharedSourceUrls": [],
+    "conflicts": []
+  },
+  "batchSha256": "faf96989b820387dc66ba8da396638a8465e4d64c0902db3c82aab8ed82c2b15"
+}

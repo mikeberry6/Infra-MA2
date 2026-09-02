@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RELEASE_SOURCE_REVALIDATION",
+  "taskId": "ledger:0447:monarch-bioenergy:92b9cb49",
+  "checkedAt": "2026-09-02T11:16:45.000Z",
+  "originalVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0447-monarch-bioenergy/attempt-1/source-verification.json",
+    "byteSha256": "3aa86fcbf0e3043b9af6bfa2b84fe797d039f98d39c69846ddcbb38491b62d38"
+  },
+  "primarySource": {
+    "url": "https://www.sec.gov/Archives/edgar/data/91388/000009138826000014/smf-20251228.htm",
+    "httpStatus": 403,
+    "finalUrl": "https://www.sec.gov/Archives/edgar/data/91388/000009138826000014/smf-20251228.htm",
+    "mediaType": "text/html",
+    "bytes": 4819,
+    "sha256": "c88ace49329597a26fb6544c2a95a82755965064451308ab0caba504a5691202"
+  },
+  "browserVerification": {
+    "result": "PASS",
+    "method": "DIRECT_WEB_OPEN",
+    "claim": "The Smithfield filing states that TPG Rise Climate is one of the other two equal Monarch partners, delivered a sale notice on January 16, 2025, and that no sale had yet occurred."
+  },
+  "result": "PASS_BROWSER_VERIFIED"
+}

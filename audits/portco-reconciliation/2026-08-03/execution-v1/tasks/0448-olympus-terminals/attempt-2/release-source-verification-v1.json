@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RELEASE_SOURCE_REVALIDATION",
+  "taskId": "ledger:0448:olympus-terminals:280295ff",
+  "checkedAt": "2026-09-02T11:16:45.000Z",
+  "originalVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0448-olympus-terminals/attempt-2/source-verification.json",
+    "byteSha256": "fe3b0b996421e01be687abf31d70eddf6c757c37b2723d5ba67b6a04f6149de5"
+  },
+  "primarySource": {
+    "url": "https://shareholders.tpg.com/static-files/8ab43bae-d54c-4ca4-8cbb-7f1b7a898765",
+    "httpStatus": 403,
+    "finalUrl": "https://shareholders.tpg.com/static-files/8ab43bae-d54c-4ca4-8cbb-7f1b7a898765",
+    "mediaType": "text/html",
+    "bytes": 447,
+    "sha256": "5ef97581b417b8e55abd496f8e0ef90f81bf469e0cba5287df9e5db5919db9d1"
+  },
+  "browserVerification": {
+    "result": "PASS",
+    "method": "DIRECT_WEB_OPEN",
+    "claim": "TPG's Q2 2024 transcript identifies Rise Climate as climate private equity, treats Transition Infrastructure as a separate not-yet-closed strategy, and states that Rise Climate agreed to acquire Olympus Terminals."
+  },
+  "result": "PASS_BROWSER_VERIFIED"
+}

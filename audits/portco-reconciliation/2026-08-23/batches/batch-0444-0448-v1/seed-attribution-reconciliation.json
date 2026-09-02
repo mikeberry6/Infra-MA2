@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_SEED_ATTRIBUTION_RECONCILIATION",
+  "batchId": "batch-0444-0448-v1",
+  "batchSha256": "01db02028d430e0776b4eb81221d7e118585386b76e479dd809fdd64dd133b17",
+  "reconciledAt": "2026-09-02T11:52:00.000Z",
+  "sourceManifestSha256": "1eb7aeee05f6226c87a990aded3c6e713c95841b911ad629db9550a77f823fed",
+  "specSha256": "0bf4181970376f9a29a50bbd66b319e6eed1241996e61359a8819486fdc43203",
+  "changesSha256": "05ce2624118a767bd7cdeea68318d3b53ce3643761fb3ffa85bf5a6448335aca",
+  "removedRecords": [],
+  "replacedRecords": [
+    {
+      "recordId": "OFA-D08241D64928",
+      "companyName": "Unison Energy",
+      "country": "United States",
+      "investmentFirm": "Tiger",
+      "currentVehicleName": "Tiger Infrastructure Partners Fund III",
+      "investmentYear": 2024,
+      "stake": null,
+      "targetLinkedFundName": "Tiger Infrastructure Partners Fund III",
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Tiger Infrastructure Partners Fund III",
+      "attributionConfidence": null,
+      "attributionRationale": "Matched supplemental ownership detail: Firm: Tiger Infrastructure Partners | Fund: Not publicly disclosed. | Ownership Interest: Not publicly disclosed. Seed milestones or source evidence explicitly name the current fund vehicle.",
+      "evidenceUrls": [
+        "https://www.prnewswire.com/news-releases/tiger-infrastructure-partners-fund-iii-closes-growth-capital-investment-with-the-acquisition-of-unison-energy-a-fully-integrated-energy-as-a-service-microgrid-platform-302173823.html",
+        "https://unisonenergy.com/",
+        "https://www.tigerinfrastructure.com/portfolio/Unison-Energy",
+        "https://unisonenergy.com/faqs/"
+      ]
+    },
+    {
+      "recordId": "OFA-7B11F2609FF6",
+      "companyName": "IPX Power",
+      "country": "United States",
+      "investmentFirm": "TPG",
+      "currentVehicleName": "n.a.",
+      "investmentYear": 2026,
+      "stake": null,
+      "targetLinkedFundName": "TPG Peppertree Fund X",
+      "fundAttribution": "INFERRED",
+      "attributedFundName": "TPG Peppertree Fund X",
+      "attributionConfidence": "LOW",
+      "attributionRationale": "Estimated from manager match 1.00, vintage 2023 is 3 years before investment, North America-relevant mandate; next candidate trails by 3.0 points. Public disclosure does not identify a distinct fund.",
+      "evidenceUrls": [
+        "https://www.prnewswire.com/news-releases/ipx-power-launches-as-independent-power-producer-following-sale-of-intersect-to-google-302711797.html",
+        "https://www.tpg.com/news-and-insights/tpg-announces-completion-of-4-75-billion-sale-of-intersect-to-google-launches-ipx-power-as-independent-power-producer",
+        "https://ipxpower.com/",
+        "https://ipxpower.com/about/"
+      ]
+    }
+  ],
+  "upsertRecords": [
+    {
+      "recordId": "OFA-D08241D64928",
+      "companyName": "Unison Energy",
+      "country": "United States",
+      "investmentFirm": "Tiger",
+      "currentVehicleName": "Tiger Infrastructure Partners Fund III AIV U LP",
+      "investmentYear": 2024,
+      "stake": "Controlling interest; exact percentage not publicly disclosed",
+      "targetLinkedFundName": "Tiger Infrastructure Partners Fund III",
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Tiger Infrastructure Partners Fund III",
+      "attributionConfidence": null,
+      "attributionRationale": "Tiger's current portfolio page and closing release establish the Fund III investment, while the Federal Register post-closing filing identifies Tiger Infrastructure Partners Fund III AIV U LP as the exact disclosed vehicle.",
+      "evidenceUrls": [
+        "https://www.tigerinfrastructure.com/portfolio/Unison-Energy",
+        "https://www.prnewswire.com/news-releases/tiger-infrastructure-partners-fund-iii-closes-growth-capital-investment-with-the-acquisition-of-unison-energy-a-fully-integrated-energy-as-a-service-microgrid-platform-302173823.html",
+        "https://www.federalregister.gov/documents/2024/07/18/2024-15845/combined-notice-of-filings-1"
+      ]
+    },
+    {
+      "recordId": "OFA-7B11F2609FF6",
+      "companyName": "IPX Power",
+      "country": "United States",
+      "investmentFirm": "TPG",
+      "currentVehicleName": "TPG Rise Climate; exact fund and holding SPV not publicly disclosed",
+      "investmentYear": 2026,
+      "stake": "Majority interest; exact percentage not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "TPG's closing release discloses TPG Rise Climate as IPX's majority backer but does not identify a distinct fund or holding SPV. The source classifies the strategy as climate private equity rather than the separate TPG transition-infrastructure product, so no infrastructure-fund link is inferred.",
+      "evidenceUrls": [
+        "https://www.tpg.com/news-and-insights/tpg-announces-completion-of-4-75-billion-sale-of-intersect-to-google-launches-ipx-power-as-independent-power-producer",
+        "https://www.sec.gov/Archives/edgar/data/1880661/000188066126000033/tpg-20260331.htm"
+      ]
+    },
+    {
+      "recordId": "OFA-47365CACD0BE",
+      "companyName": "IPX Power",
+      "country": "United States",
+      "investmentFirm": "Climate Adaptive Infrastructure",
+      "currentVehicleName": "Climate Adaptive Infrastructure Fund LP; exact holding SPV not publicly disclosed",
+      "investmentYear": 2026,
+      "stake": "Minority interest; exact percentage not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Climate Adaptive Infrastructure Fund LP",
+      "attributionConfidence": null,
+      "attributionRationale": "TPG's closing release identifies Climate Adaptive Infrastructure as a continuing IPX investor, and CAI's official fund-close release identifies Climate Adaptive Infrastructure Fund LP and its dedicated infrastructure mandate. The exact IPX holding SPV is not publicly disclosed, and no matching curated fund row exists to link.",
+      "evidenceUrls": [
+        "https://www.tpg.com/news-and-insights/tpg-announces-completion-of-4-75-billion-sale-of-intersect-to-google-launches-ipx-power-as-independent-power-producer",
+        "https://www.climateadaptiveinfra.com/news-and-insights/climate-adaptive-infrastructure-raises-over-dollar1-billion/"
+      ]
+    },
+    {
+      "recordId": "OFA-96A94226554C",
+      "companyName": "IPX Power",
+      "country": "United States",
+      "investmentFirm": "Greenbelt Capital Partners",
+      "currentVehicleName": "Legacy Trilantic/Greenbelt vehicle not publicly disclosed",
+      "investmentYear": 2026,
+      "stake": "Minority interest; exact percentage not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "TPG's closing release identifies Greenbelt Capital Partners as a continuing IPX minority investor, but reviewed primary sources do not identify the specific legacy Trilantic/Greenbelt fund or holding SPV. No fund attribution is inferred.",
+      "evidenceUrls": [
+        "https://www.tpg.com/news-and-insights/tpg-announces-completion-of-4-75-billion-sale-of-intersect-to-google-launches-ipx-power-as-independent-power-producer"
+      ]
+    }
+  ],
+  "resultingRecordCount": 1398,
+  "resultingManifestSha256": "37b2e93a34a0379f6b74fec8b652b90e95a6c266987cab379abd6e85339bdf1c",
+  "reconciliationSha256": "d2a8ddfe0143ee7dd359ddab330ad1904a7d54e589866e4bb9ba350df6536778"
+}

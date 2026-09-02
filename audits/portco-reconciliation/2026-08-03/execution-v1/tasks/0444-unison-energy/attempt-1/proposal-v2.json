@@ -1,0 +1,334 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0444:unison-energy:423efadc",
+  "taskIndex": 444,
+  "asOfDate": "2026-09-02",
+  "generatedAt": "2026-09-02T11:32:00.000Z",
+  "canonicalKey": "unison-energy|united-states",
+  "companyName": "Unison Energy",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER"
+  ],
+  "sourceHoldingIds": [
+    "093-tiger-infrastructure-partners:holding:005:unison-energy"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Retain Unison Energy as one active North American distributed-energy infrastructure platform; identify the legal company name, website, founding year and Greenwich headquarters; refine the operating boundary to distinguish Unison-owned energy-as-a-service assets from customer-owned EPC/O&M work; record Tiger Infrastructure Partners Fund III's controlling acquisition through Fund III AIV U LP on June 17, 2024; and preserve American Infrastructure Funds/AIM Universal and Hunt Companies as former owners that exited in that transaction. Exact equity percentages, consideration and any founder rollover are not publicly disclosed, and no later sale or signed ownership transfer was identified.",
+  "evidence": [
+    {
+      "url": "https://www.tigerinfrastructure.com/portfolio/Unison-Energy",
+      "purpose": "Current Tiger portfolio status, 2024 entry and energy-as-a-service operating model.",
+      "supports": [
+        "Tiger remains the controlling infrastructure sponsor",
+        "Unison is an active North American energy-as-a-service platform"
+      ]
+    },
+    {
+      "url": "https://www.prnewswire.com/news-releases/tiger-infrastructure-partners-fund-iii-closes-growth-capital-investment-with-the-acquisition-of-unison-energy-a-fully-integrated-energy-as-a-service-microgrid-platform-302173823.html",
+      "purpose": "Closing date, Fund III attribution, sellers, company history and entry scale.",
+      "supports": [
+        "The acquisition closed on June 17, 2024",
+        "Tiger acquired Unison from AIF/AIM Universal and Hunt",
+        "Unison was founded in 2013"
+      ]
+    },
+    {
+      "url": "https://www.govinfo.gov/content/pkg/FR-2024-05-15/pdf/2024-10576.pdf",
+      "purpose": "Federal pre-closing ownership evidence.",
+      "supports": [
+        "AIM Universal Holdings and Hunt were pre-closing owners of Unison"
+      ]
+    },
+    {
+      "url": "https://www.federalregister.gov/documents/2024/07/18/2024-15845/combined-notice-of-filings-1",
+      "purpose": "Federal post-closing vehicle evidence.",
+      "supports": [
+        "Tiger Infrastructure Partners Fund III AIV U LP was the post-closing vehicle"
+      ]
+    },
+    {
+      "url": "https://unisonenergy.com/faqs/",
+      "purpose": "Operating-model boundary evidence.",
+      "supports": [
+        "Unison uses owned EaaS structures and also provides customer-owned EPC, O&M and hybrid arrangements"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "e2716af15ab841485345148eb4b86a8df9d2d38ffa7b07ee11a6ac5bf89ecbf5",
+  "currentCompanySnapshotSha256": "05d0df1fd81e5d796a1738072503de6c58f30bf3445aaa54f1b57435c0fbee37",
+  "executionLock": {
+    "taskSnapshotSha256": "e82b0e7e39fe2e33b1f5abceec5bfac499ee30fabb075b440bf3d76fe74e68bd",
+    "taskStateSha256": "bcb89f57b81dc7949b227c5a91d237326ea0fc767ed77956bdc967f7a7714946",
+    "taskDependencySha256": "86a8ed9f9acbd8100b753bb570288b89a0be2cfc30f8071fe2368dd5a84b2c14",
+    "seedEntrySha256": "d7ba362d54fc663e1788aae69cf1c1d1ce9c22d484ce8a0594394da852e4f537",
+    "dependencies": {
+      "ownershipPeriodsSha256": "5963842097a53f2b51e8f1be73570da4147e7ad6506a5f4a59f0a771101f0b9d",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "da248fe1239ed13de9bbb49eb5dea25053eb45b6f358441dfd308e806bfa5713",
+      "organizationsSha256": "7bff0b5698459304083333bfb81e644c2d270f5a139a751bc96ea2912455d791",
+      "citationsSha256": "1560483cf10530076c35587d1204f7063cc036a2ea5e9f0b00062666b70b80fb",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj3tl00flivhe3h1v2bq0",
+        "fundName": "Tiger Infrastructure Partners Fund III",
+        "managerId": "cmrxpie6w003qivhezkd8ost3",
+        "updatedAt": "2026-07-23T16:09:58.809Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpie6w003qivhezkd8ost3",
+        "name": "Tiger Infrastructure Partners",
+        "updatedAt": "2026-07-23T16:09:25.592Z"
+      },
+      {
+        "id": "cmrxpigns004iivhep4tpvy3z",
+        "name": "Tiger",
+        "updatedAt": "2026-07-23T16:09:28.792Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjo8401awivheqfej0vd7",
+    "name": "Unison Energy",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Microgrids and energy-as-a-service",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Unison Energy designs, builds, owns, operates, and maintains behind-the-meter microgrids for commercial and industrial customers. Its customer base includes data centers, healthcare facilities, campuses, industrial sites, and other users that require resilient onsite energy infrastructure. The operating model is asset-heavy and contract-based, with Unison providing energy-as-a-service rather than selling equipment only. Company materials describe the platform as fully integrated across development, construction, ownership, and operations. Tiger completed its acquisition-backed growth investment in 2024 and is the current sponsor identified in public materials.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Connecticut",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpkatf02akivheklpqesk6",
+        "managerName": "Tiger Infrastructure Partners",
+        "organizationName": "Tiger",
+        "fundName": "Tiger Infrastructure Partners Fund III",
+        "vehicleName": "Tiger Infrastructure Partners Fund III",
+        "stake": null,
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmsl805azivhe1gkdbz8o",
+        "date": "2024",
+        "event": "Tiger described Unison as a fully integrated energy-as-a-service microgrid platform.",
+        "category": "OTHER",
+        "sortDate": "2024-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmslp05b0ivhe2lenqdyr",
+        "date": "Jun 2024",
+        "event": "Tiger Infrastructure Partners Fund III closed its growth capital investment and acquisition of Unison Energy.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-06-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsyb70ddjivhe132apjmz",
+        "label": "Unisonenergy — Unison Energy",
+        "url": "https://unisonenergy.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Unisonenergy company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpsyc40ddlivhejufy5peu",
+        "label": "Unisonenergy — Unison Energy",
+        "url": "https://unisonenergy.com/faqs/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Unisonenergy — Unison Energy",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsyd70ddnivhefo6acdjs",
+        "label": "Tigerinfrastructure — Unison Energy",
+        "url": "https://www.tigerinfrastructure.com/portfolio/Unison-Energy",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Tigerinfrastructure operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsye60ddpivhe3jcuhgn6",
+        "label": "Close date source — Tiger — Unison Energy",
+        "url": "https://www.prnewswire.com/news-releases/tiger-infrastructure-partners-fund-iii-closes-growth-capital-investment-with-the-acquisition-of-unison-energy-a-fully-integrated-energy-as-a-service-microgrid-platform-302173823.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Tiger closing confirmation",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "05d0df1fd81e5d796a1738072503de6c58f30bf3445aaa54f1b57435c0fbee37",
+  "afterImage": {
+    "id": "cmrxpjo8401awivheqfej0vd7",
+    "name": "Unison Energy",
+    "aliases": [
+      "Unison Energy, LLC"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Microgrids and energy-as-a-service",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Unison Energy, LLC develops, finances, builds, owns, operates and maintains behind-the-meter microgrids and distributed-energy systems for commercial and industrial customers across North America. Its primary model uses long-term energy-service agreements and project SPVs, while the company also supports customer-owned EPC, operations-and-maintenance and hybrid structures; not every system is therefore owned by Unison. The platform serves healthcare, data-center, industrial, hospitality, logistics and other resilience-sensitive facilities using combined heat and power, controls, solar, batteries and thermal systems. At Tiger's June 2024 entry, public materials described approximately 30 operating or signed-ESA projects and about 26 MW installed; a current aggregate scale is not publicly disclosed. Tiger Infrastructure Partners Fund III acquired control through Fund III AIV U LP on June 17, 2024 from American Infrastructure Funds/AIM Universal and Hunt Companies. Exact percentages and consideration were not disclosed, and no later sale or signed ownership transfer was identified through August 19, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://unisonenergy.com/",
+    "yearFounded": 2013,
+    "headquarters": "Greenwich, Connecticut",
+    "lastVerifiedAt": "2026-09-02T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpkatf02akivheklpqesk6",
+        "managerName": "Tiger Infrastructure Partners",
+        "organizationName": "Tiger",
+        "fundName": "Tiger Infrastructure Partners Fund III",
+        "vehicleName": "Tiger Infrastructure Partners Fund III AIV U LP",
+        "stake": "Controlling interest; exact percentage not publicly disclosed",
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "American Infrastructure Funds",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "AIM Universal Holdings, LLC",
+        "stake": "Former controlling interest; exact percentage not publicly disclosed",
+        "investmentYear": 2018,
+        "exitYear": 2024,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      },
+      {
+        "id": null,
+        "managerName": "Hunt Companies",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Holding vehicle not publicly disclosed",
+        "stake": "Former minority interest; exact percentage not publicly disclosed",
+        "investmentYear": 2018,
+        "exitYear": 2024,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmsl805azivhe1gkdbz8o",
+        "date": "2013",
+        "event": "Andy Cooper and Tim Lukes founded Unison Energy to develop and operate distributed-energy and microgrid systems.",
+        "category": "FOUNDING",
+        "sortDate": "2013-01-01T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.prnewswire.com/news-releases/tiger-infrastructure-partners-fund-iii-closes-growth-capital-investment-with-the-acquisition-of-unison-energy-a-fully-integrated-energy-as-a-service-microgrid-platform-302173823.html"
+        ]
+      },
+      {
+        "id": "cmrxpmslp05b0ivhe2lenqdyr",
+        "date": "Jun 17, 2024",
+        "event": "Tiger Infrastructure Partners Fund III closed its controlling acquisition and growth investment in Unison Energy from AIF/AIM Universal and Hunt Companies.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-06-17T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.prnewswire.com/news-releases/tiger-infrastructure-partners-fund-iii-closes-growth-capital-investment-with-the-acquisition-of-unison-energy-a-fully-integrated-energy-as-a-service-microgrid-platform-302173823.html"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsyb70ddjivhe132apjmz",
+        "label": "Unisonenergy — Unison Energy",
+        "url": "https://unisonenergy.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Company identity, website and operating profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsyc40ddlivhejufy5peu",
+        "label": "Unisonenergy — Unison Energy",
+        "url": "https://unisonenergy.com/faqs/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Unisonenergy — Unison Energy",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsyd70ddnivhefo6acdjs",
+        "label": "Tigerinfrastructure — Unison Energy",
+        "url": "https://www.tigerinfrastructure.com/portfolio/Unison-Energy",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current Tiger ownership, 2024 entry and energy-as-a-service strategy",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpsye60ddpivhe3jcuhgn6",
+        "label": "Close date source — Tiger — Unison Energy",
+        "url": "https://www.prnewswire.com/news-releases/tiger-infrastructure-partners-fund-iii-closes-growth-capital-investment-with-the-acquisition-of-unison-energy-a-fully-integrated-energy-as-a-service-microgrid-platform-302173823.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "June 17, 2024 closing, Fund III attribution and seller history",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Federal Register — Unison pre-closing ownership filing",
+        "url": "https://www.govinfo.gov/content/pkg/FR-2024-05-15/pdf/2024-10576.pdf",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "AIM Universal Holdings and Hunt pre-closing ownership",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Federal Register — Unison post-closing filing",
+        "url": "https://www.federalregister.gov/documents/2024/07/18/2024-15845/combined-notice-of-filings-1",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Tiger Infrastructure Partners Fund III AIV U LP post-closing vehicle",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "7ed8eb5203fd20d192ef546b44e26a85f1e6bc2333afa785fbfc89ab2f4bc2b8",
+  "proposalSha256": "53f4dc00ee2ddd46b93e45a2e8fc16a938956155f68f3eebc0baa5a0b8e5ce23"
+}
