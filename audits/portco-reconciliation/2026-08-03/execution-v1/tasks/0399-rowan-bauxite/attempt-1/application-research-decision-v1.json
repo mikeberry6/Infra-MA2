@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0399:rowan-bauxite:930cec59",
+  "taskIndex": 399,
+  "companyName": "Rowan Bauxite",
+  "asOfDate": "2026-09-01",
+  "decision": "DEFERRED",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-02T00:19:20.000Z",
+  "result": {
+    "decision": "DEFERRED",
+    "rationale": "Preserve Rowan Bauxite unchanged and defer the project-to-platform merge. Primary sources establish that Bauxite I-III is a Rowan Digital Infrastructure campus, but Rowan's current platform ownership after the April 9, 2026 Blackstone recapitalization remains unresolved. UPP's continuing ownership, the recapitalization sellers, and the Quinbrook, UPP and Blackstone stakes are not publicly disclosed, so a canonical Rowan after-image cannot yet satisfy the active-ownership rule.",
+    "evidence": [
+      {
+        "url": "https://rowan.digital/portfolio/bauxite-i-ii-iii/",
+        "purpose": "Official Rowan evidence that Bauxite I-III is a Maryland campus beneath the Rowan platform."
+      },
+      {
+        "url": "https://www.quinbrook.com/news-insights/rowan-digital-infrastructure-announces-strategic-recapitalization/",
+        "purpose": "Official April 9, 2026 recapitalization announcement identifying Blackstone's strategic investment without a complete post-transaction cap table."
+      },
+      {
+        "url": "https://www.quinbrook.com/news-insights/upp-invests-in-data-center-developer-rowan-digital-infrastructure/",
+        "purpose": "Official evidence of UPP's earlier Rowan platform investment."
+      }
+    ],
+    "unresolvedQuestions": [
+      "UPP's ownership status after the April 9, 2026 Blackstone recapitalization.",
+      "The exact Quinbrook, UPP and Blackstone stakes, sellers and governance rights.",
+      "The exact Rowan Frederick SPV chain and parcel acquisition dates."
+    ]
+  },
+  "lineage": {
+    "sourceDecision": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0399-rowan-bauxite/attempt-1/research-decision.json",
+    "basis": "The original validated research establishes the project boundary but identifies unresolved current platform ownership that blocks a safe consolidated after-image."
+  }
+}

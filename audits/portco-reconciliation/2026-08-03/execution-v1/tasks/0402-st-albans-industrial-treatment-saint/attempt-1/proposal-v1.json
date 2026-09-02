@@ -1,0 +1,653 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0402:st-albans-industrial-treatment-saint:0567aff2",
+  "taskIndex": 402,
+  "asOfDate": "2026-09-01",
+  "generatedAt": "2026-09-02T00:19:20.000Z",
+  "canonicalKey": "purposeenergy|united-states",
+  "companyName": "St. Albans Industrial Treatment (SAINT)",
+  "actions": [
+    "CORRECT_COMPANY",
+    "MERGE_COMPANIES"
+  ],
+  "sourceHoldingIds": [],
+  "retiredCompanyIds": [
+    "cmrxpjms4018nivhe4b9fmlk9"
+  ],
+  "relationMerges": [
+    {
+      "kind": "OWNERSHIP_PERIOD",
+      "retiredRelationId": "cmrxpk9cv0289ivhexutrlkq9",
+      "canonicalRelationId": "cmrxpk98h0281ivhe89hg0afj",
+      "rationale": "SAINT's owner row is a project-level duplicate of Quinbrook's continuing PurposeEnergy platform ownership."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxpmm8h0539ivheqtunec2p",
+      "canonicalRelationId": "cmrxpmlki052givhe0ji6e568",
+      "rationale": "The SAINT acquisition row duplicates the canonical April 12, 2023 PurposeEnergy platform-acquisition milestone."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxpmm9m053bivhe5k6sbmcv",
+      "canonicalRelationId": "cmrxpmlli052iivheuzo8rvmj",
+      "rationale": "The exact-date SAINT grand-opening row is preserved by the updated canonical PurposeEnergy St. Albans milestone."
+    }
+  ],
+  "rationale": "Merge St. Albans Industrial Treatment (SAINT) into PurposeEnergy. Official Quinbrook and PurposeEnergy sources identify PurposeEnergy as the manager-level portfolio platform and St. Albans as a project beneath it. Vermont records identify PurposeEnergy - St. Albans, LLC as permittee. The facility identities, construction and operating milestones, and direct sources are retained on PurposeEnergy while the duplicate project-level company and ownership row are retired.",
+  "evidence": [
+    {
+      "url": "https://www.quinbrook.com/portfolio/purposeenergy/",
+      "purpose": "Canonical portfolio-company and project boundary",
+      "supports": [
+        "PurposeEnergy is the manager-level portfolio company",
+        "St. Albans is a project beneath PurposeEnergy"
+      ]
+    },
+    {
+      "url": "https://purposeenergy.com/project/saint-albans-resource-recovery-center/",
+      "purpose": "St. Albans project identity and operating profile",
+      "supports": [
+        "PurposeEnergy presents St. Albans Resource Recovery Center as its project"
+      ]
+    },
+    {
+      "url": "https://purposeenergy.com/news-insights/purposeenergy-celebrates-grand-opening-of-st-albans-renewable-energy-facility-in-partnership-with-ben-jerrys-ice-cream/",
+      "purpose": "St. Albans operating chronology",
+      "supports": [
+        "The facility held its grand opening on May 29, 2025"
+      ]
+    },
+    {
+      "url": "https://anrweb.vt.gov/PubDocs/DEC/WSMD/Wastewater/Permits/3-1573/FactSheet.3-1573.202302.pdf",
+      "purpose": "Project legal identity and permittee",
+      "supports": [
+        "PurposeEnergy - St. Albans, LLC is the Vermont permittee"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "fa544153d7be2fbeb394e9fd035d7fa8261ce8ee93a2e1e5e7aed4115370329e",
+  "currentCompanySnapshotSha256": "93ab9f2d9709bf079c1f293e8000ad7d3c4874516ffb92073a751cca35168fc9",
+  "executionLock": {
+    "taskSnapshotSha256": "9f259535d156b4877dcc0e044f619641cec4863a5cc9c251d84c1b8896d6eb58",
+    "taskStateSha256": "188896d8731baef625cb076ab731b5f397231d684882d891f0d12d5d6472cbab",
+    "taskDependencySha256": "eefeaf8d449df600574423a19456c97daed08462a3465844efdf7fe76df55335",
+    "seedEntrySha256": "c78451cd3502c6ed2915d6d6dc98dc9efb2c10363a607bcd394c56d419246508",
+    "dependencies": {
+      "ownershipPeriodsSha256": "5aab9abcd4b5f682ead4c97ef0184ac01fb3cb5b34e3179b8ec3c6bf838058b1",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "52c944c13a5e74630cefca11499339fafbdd9f1705bdf046c1d4d1c3542bd283",
+      "citationsSha256": "ef736efbe037213b88b74b8c4f6030fbd944704081a8860137bebbfe2e6c4718",
+      "redirectsSha256": "a752398f65058b712f35f1ec25d4cfabfcc46492ebc1d3e7516e5613f379dcb6"
+    },
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpigao004eivhedx8km4yh",
+        "name": "Quinbrook",
+        "updatedAt": "2026-07-23T16:09:28.320Z"
+      }
+    ],
+    "redirects": [
+      {
+        "retiredId": "cmrxpjmmo018civhe8frg363n",
+        "companyId": "cmrxpjmoi018givhecyo0ujvv",
+        "reason": "CANONICAL_MERGE",
+        "createdAt": "2026-09-01T23:46:57.387Z"
+      },
+      {
+        "retiredId": "cmrxpjmp1018hivheqruh0kpn",
+        "companyId": "cmrxpjmoi018givhecyo0ujvv",
+        "reason": "CANONICAL_MERGE",
+        "createdAt": "2026-09-01T23:46:57.523Z"
+      },
+      {
+        "retiredId": "cmrxpjmpo018iivhexgpftme7",
+        "companyId": "cmrxpjmoi018givhecyo0ujvv",
+        "reason": "CANONICAL_MERGE",
+        "createdAt": "2026-09-01T23:46:57.656Z"
+      }
+    ]
+  },
+  "beforeImage": {
+    "id": "cmrxpjmoi018givhecyo0ujvv",
+    "name": "PurposeEnergy",
+    "aliases": [
+      "Purpose Energy, Inc.",
+      "Middlebury Resource Recovery Center",
+      "Middlebury Resource Recovery Center, LLC",
+      "MRRC LLC",
+      "PurposeEnergy-Middlebury",
+      "PurposeEnergy Minster",
+      "PurposeEnergy - Minster LLC",
+      "PurposeEnergy South Burlington",
+      "South Burlington anaerobic digester",
+      "Zero Gravity Brewery digester",
+      "Magic Hat Brewery digester"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Organics-to-energy and renewable fuels",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "PurposeEnergy develops, owns and operates organics-to-energy infrastructure that converts food and beverage residuals and wastewater into biogas, renewable electricity, renewable natural gas, clean water and related by-products. Quinbrook announced its acquisition of the platform on April 12, 2023 through its Net Zero Power Fund strategy; a separate legal closing date, exact stake and holding vehicle were not publicly disclosed. PurposeEnergy's project portfolio includes Middlebury Resource Recovery Center in Vermont, which reached commercial operation on October 21, 2024; the Minster, Ohio industrial-biogas facility, which began taking waste on July 16, 2026 and remained in ramp-up; and the operating South Burlington, Vermont brewery-waste digester historically associated with Magic Hat and now Zero Gravity. These facility and SPV names are project identities beneath PurposeEnergy and are not separate manager-level portfolio companies. No later PurposeEnergy equity transfer or signed pending sale was identified through September 1, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://purposeenergy.com/",
+    "yearFounded": 2007,
+    "headquarters": "New Hampshire; Vermont; Ohio",
+    "lastVerifiedAt": "2026-09-01T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk98h0281ivhe89hg0afj",
+        "managerName": "Quinbrook",
+        "organizationName": "Quinbrook",
+        "fundName": null,
+        "vehicleName": "Quinbrook Net Zero Power Fund strategy",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpml7a051zivheoz4t327g",
+        "date": "Dec 16, 2022",
+        "event": "PurposeEnergy broke ground on the Middlebury Resource Recovery Center in Vermont.",
+        "category": "EXPANSION",
+        "sortDate": "2022-12-16T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://purposeenergy.com/news-insights/construction-kicks-off-on-renewable-energy-plant/"
+        ]
+      },
+      {
+        "id": "cmrxpmljd052eivhe59vew4sw",
+        "date": "2007",
+        "event": "Public sources identify PurposeEnergy's founding year as 2007.",
+        "category": "FOUNDING",
+        "sortDate": "2007-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmljy052fivhe45pfakxn",
+        "date": "2023",
+        "event": "Quinbrook said the acquisition marked its move into renewable fuels infrastructure.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmlki052givhe0ji6e568",
+        "date": "Apr 12, 2023",
+        "event": "Quinbrook announced its acquisition of PurposeEnergy through its renewable-fuels strategy; a separate legal closing date was not publicly disclosed.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-04-12T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.quinbrook.com/news-insights/quinbrook-moves-into-renewable-fuels/"
+        ]
+      },
+      {
+        "id": "cmrxpmll0052hivhe6wwepw05",
+        "date": "Oct 21, 2024",
+        "event": "PurposeEnergy's 1.014 MW Middlebury facility reached commercial operation in Vermont.",
+        "category": "EXPANSION",
+        "sortDate": "2024-10-21T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://ripuc.ri.gov/sites/g/files/xkgbur841/files/2025-10/PurposeEnergy%20-%20Middlebury%20-%20Docket%20RES-24-50%20-Recommendations%20and%20Review%20-%202025-09-15.pdf"
+        ]
+      },
+      {
+        "id": "cmrxpmlli052iivheuzo8rvmj",
+        "date": "May 2025",
+        "event": "PurposeEnergy opened its St. Albans, Vermont facility.",
+        "category": "EXPANSION",
+        "sortDate": "2025-05-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmlml052jivhennn3js9j",
+        "date": "Jul 16, 2026",
+        "event": "PurposeEnergy reported that its Minster, Ohio facility had begun taking waste and would ramp over the following months; full commercial operation was not yet confirmed.",
+        "category": "EXPANSION",
+        "sortDate": "2026-07-16T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.linkedin.com/posts/purpose-energy_renewableenergy-biogas-circulareconomy-activity-7483526778678951936-OaGU"
+        ]
+      },
+      {
+        "id": "cmrxpmlr1052mivhelkbddxns",
+        "date": "Mar 2008",
+        "event": "Magic Hat and Purpose Energy executed the development agreement for the South Burlington brewery digester project.",
+        "category": "EXPANSION",
+        "sortDate": "2008-03-01T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.biocycle.net/digester-in-magic-hats-sustainability-mix/"
+        ]
+      },
+      {
+        "id": "cmrxpmlrl052nivhe6vjhx0ds",
+        "date": "2009-2011",
+        "event": "PurposeEnergy reports the South Burlington digester was commissioned in 2009; historical reporting places construction completion in July 2010 and restart in June 2011, so no false exact operating date is asserted.",
+        "category": "EXPANSION",
+        "sortDate": "2011-06-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://purposeenergy.com/project/zero-gravity-brewery/",
+          "https://www.biocycle.net/digester-in-magic-hats-sustainability-mix/"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpslhg0ctpivheidw5s3lv",
+        "label": "Purposeenergy — PurposeEnergy",
+        "url": "https://purposeenergy.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "PurposeEnergy platform profile and operating identity",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpslio0ctrivhepfosisat",
+        "label": "Announcement date source — Quinbrook — PurposeEnergy",
+        "url": "https://www.quinbrook.com/news-insights/quinbrook-moves-into-renewable-fuels/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "April 12, 2023 acquisition announcement and renewable-fuels strategy",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsljn0cttivheiav9alzc",
+        "label": "Investment date source — Quinbrook — PurposeEnergy",
+        "url": "https://www.quinbrook.com/portfolio/purposeenergy/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "PurposeEnergy portfolio-company status and project boundary",
+        "isPrimary": false
+      },
+      {
+        "id": "cmtjbgr2o0000z22bjk4r3406",
+        "label": "Purposeenergy — Middlebury Resource Recovery Center",
+        "url": "https://purposeenergy.com/news-insights/construction-kicks-off-on-renewable-energy-plant/",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "December 2022 Middlebury construction start",
+        "isPrimary": false
+      },
+      {
+        "id": "cmtjbgr8d0002z22bd0rea460",
+        "label": "PurposeEnergy — Minster startup update",
+        "url": "https://www.linkedin.com/posts/purpose-energy_renewableenergy-biogas-circulareconomy-activity-7483526778678951936-OaGU",
+        "sourceType": "OTHER",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "July 2026 Minster waste-intake start and ramp-up status",
+        "isPrimary": false
+      },
+      {
+        "id": "cmtjbgrc40003z22b2ies9y6i",
+        "label": "Purposeenergy — Middlebury Resource Recovery Center",
+        "url": "https://purposeenergy.com/project/purposeenergy-middlebury/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Middlebury facility identity, outputs and operating profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmtjbgrhr0005z22bmnppmnd6",
+        "label": "Rhode Island PUC — Middlebury review",
+        "url": "https://ripuc.ri.gov/sites/g/files/xkgbur841/files/2025-10/PurposeEnergy%20-%20Middlebury%20-%20Docket%20RES-24-50%20-Recommendations%20and%20Review%20-%202025-09-15.pdf",
+        "sourceType": "OTHER",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Middlebury legal owner/operator, 1.014 MW scale and October 21, 2024 commercial operation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmtjbgrlg0006z22bwzqt99zu",
+        "label": "Purposeenergy — PurposeEnergy Minster",
+        "url": "https://purposeenergy.com/project/minster/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Minster project identity, Danone relationship and disclosed operating scale",
+        "isPrimary": false
+      },
+      {
+        "id": "cmtjbgrr00008z22bh8se76xt",
+        "label": "Village of Minster — 2023 project minutes",
+        "url": "https://irp.cdn-website.com/7b8e4b72/files/uploaded/08-14-23%20Council%20Minutes.pdf",
+        "sourceType": "OTHER",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "PurposeEnergy - Minster LLC project site and infrastructure",
+        "isPrimary": false
+      },
+      {
+        "id": "cmtjbgrup0009z22b07wux3mv",
+        "label": "Purposeenergy — PurposeEnergy South Burlington",
+        "url": "https://purposeenergy.com/project/zero-gravity-brewery/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "South Burlington project identity, current host and disclosed operating metrics",
+        "isPrimary": false
+      },
+      {
+        "id": "cmtjbgryf000az22bzondoeg8",
+        "label": "Biocycle — PurposeEnergy South Burlington",
+        "url": "https://www.biocycle.net/digester-in-magic-hats-sustainability-mix/",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "PurposeEnergy ownership/operator role and qualified 2008-2011 development chronology",
+        "isPrimary": false
+      },
+      {
+        "id": "cmtjbgs25000bz22bu9hmj3ol",
+        "label": "Quinbrook Net Zero Power Fund (NZPF)",
+        "url": "https://www.quinbrook.com/news-insights/quinbrook-exceeds-target-for-net-zero-power-strategy-raising-usd-3-billion-in-capital-commitments/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "PurposeEnergy attribution to Quinbrook's Net Zero Power Fund strategy",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "93ab9f2d9709bf079c1f293e8000ad7d3c4874516ffb92073a751cca35168fc9",
+  "afterImage": {
+    "id": "cmrxpjmoi018givhecyo0ujvv",
+    "name": "PurposeEnergy",
+    "aliases": [
+      "Purpose Energy, Inc.",
+      "Middlebury Resource Recovery Center",
+      "Middlebury Resource Recovery Center, LLC",
+      "MRRC LLC",
+      "PurposeEnergy-Middlebury",
+      "PurposeEnergy Minster",
+      "PurposeEnergy - Minster LLC",
+      "PurposeEnergy South Burlington",
+      "South Burlington anaerobic digester",
+      "Zero Gravity Brewery digester",
+      "Magic Hat Brewery digester",
+      "St. Albans Industrial Treatment (SAINT)",
+      "SAINT",
+      "PurposeEnergy-St. Albans",
+      "PurposeEnergy - St. Albans, LLC",
+      "St. Albans Resource Recovery Center"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Organics-to-energy and renewable fuels",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "PurposeEnergy develops, owns and operates organics-to-energy infrastructure that converts food and beverage residuals and wastewater into biogas, renewable electricity, renewable natural gas, clean water and related by-products. Quinbrook announced its acquisition of the platform on April 12, 2023 through its Net Zero Power Fund strategy; a separate legal closing date, exact stake and holding vehicle were not publicly disclosed. PurposeEnergy's project portfolio includes Middlebury Resource Recovery Center in Vermont, which reached commercial operation on October 21, 2024; the Minster, Ohio industrial-biogas facility, which began taking waste on July 16, 2026 and remained in ramp-up; the operating South Burlington, Vermont brewery-waste digester historically associated with Magic Hat and now Zero Gravity; and the St. Albans, Vermont resource-recovery center, which began exporting electricity in December 2024 and held its grand opening on May 29, 2025. These facility and SPV names are project identities beneath PurposeEnergy and are not separate manager-level portfolio companies. No later PurposeEnergy equity transfer or signed pending sale was identified through September 1, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://purposeenergy.com/",
+    "yearFounded": 2007,
+    "headquarters": "New Hampshire; Vermont; Ohio",
+    "lastVerifiedAt": "2026-09-01T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk98h0281ivhe89hg0afj",
+        "managerName": "Quinbrook",
+        "organizationName": "Quinbrook",
+        "fundName": null,
+        "vehicleName": "Quinbrook Net Zero Power Fund strategy",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpml7a051zivheoz4t327g",
+        "date": "Dec 16, 2022",
+        "event": "PurposeEnergy broke ground on the Middlebury Resource Recovery Center in Vermont.",
+        "category": "EXPANSION",
+        "sortDate": "2022-12-16T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://purposeenergy.com/news-insights/construction-kicks-off-on-renewable-energy-plant/"
+        ]
+      },
+      {
+        "id": "cmrxpmljd052eivhe59vew4sw",
+        "date": "2007",
+        "event": "Public sources identify PurposeEnergy's founding year as 2007.",
+        "category": "FOUNDING",
+        "sortDate": "2007-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmljy052fivhe45pfakxn",
+        "date": "2023",
+        "event": "Quinbrook said the acquisition marked its move into renewable fuels infrastructure.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmlki052givhe0ji6e568",
+        "date": "Apr 12, 2023",
+        "event": "Quinbrook announced its acquisition of PurposeEnergy through its renewable-fuels strategy; a separate legal closing date was not publicly disclosed.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-04-12T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.quinbrook.com/news-insights/quinbrook-moves-into-renewable-fuels/"
+        ]
+      },
+      {
+        "id": "cmrxpmll0052hivhe6wwepw05",
+        "date": "Oct 21, 2024",
+        "event": "PurposeEnergy's 1.014 MW Middlebury facility reached commercial operation in Vermont.",
+        "category": "EXPANSION",
+        "sortDate": "2024-10-21T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://ripuc.ri.gov/sites/g/files/xkgbur841/files/2025-10/PurposeEnergy%20-%20Middlebury%20-%20Docket%20RES-24-50%20-Recommendations%20and%20Review%20-%202025-09-15.pdf"
+        ]
+      },
+      {
+        "id": "cmrxpmlli052iivheuzo8rvmj",
+        "date": "May 29, 2025",
+        "event": "PurposeEnergy held the grand opening for its St. Albans, Vermont resource-recovery facility after commercial operations began in December 2024.",
+        "category": "EXPANSION",
+        "sortDate": "2025-05-29T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://purposeenergy.com/news-insights/purposeenergy-celebrates-grand-opening-of-st-albans-renewable-energy-facility-in-partnership-with-ben-jerrys-ice-cream/"
+        ]
+      },
+      {
+        "id": "cmrxpmlml052jivhennn3js9j",
+        "date": "Jul 16, 2026",
+        "event": "PurposeEnergy reported that its Minster, Ohio facility had begun taking waste and would ramp over the following months; full commercial operation was not yet confirmed.",
+        "category": "EXPANSION",
+        "sortDate": "2026-07-16T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.linkedin.com/posts/purpose-energy_renewableenergy-biogas-circulareconomy-activity-7483526778678951936-OaGU"
+        ]
+      },
+      {
+        "id": "cmrxpmlr1052mivhelkbddxns",
+        "date": "Mar 2008",
+        "event": "Magic Hat and Purpose Energy executed the development agreement for the South Burlington brewery digester project.",
+        "category": "EXPANSION",
+        "sortDate": "2008-03-01T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.biocycle.net/digester-in-magic-hats-sustainability-mix/"
+        ]
+      },
+      {
+        "id": "cmrxpmlrl052nivhe6vjhx0ds",
+        "date": "2009-2011",
+        "event": "PurposeEnergy reports the South Burlington digester was commissioned in 2009; historical reporting places construction completion in July 2010 and restart in June 2011, so no false exact operating date is asserted.",
+        "category": "EXPANSION",
+        "sortDate": "2011-06-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://purposeenergy.com/project/zero-gravity-brewery/",
+          "https://www.biocycle.net/digester-in-magic-hats-sustainability-mix/"
+        ]
+      },
+      {
+        "id": "cmrxpmm92053aivhe5wlyzu76",
+        "date": "May 23, 2023",
+        "event": "PurposeEnergy announced construction of an approximately US$18 million St. Albans, Vermont biogas facility serving Ben & Jerry's.",
+        "category": "EXPANSION",
+        "sortDate": "2023-05-23T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://purposeenergy.com/project/saint-albans-resource-recovery-center/"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpslhg0ctpivheidw5s3lv",
+        "label": "Purposeenergy — PurposeEnergy",
+        "url": "https://purposeenergy.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "PurposeEnergy platform profile and operating identity",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpslio0ctrivhepfosisat",
+        "label": "Announcement date source — Quinbrook — PurposeEnergy",
+        "url": "https://www.quinbrook.com/news-insights/quinbrook-moves-into-renewable-fuels/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "April 12, 2023 acquisition announcement and renewable-fuels strategy",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsljn0cttivheiav9alzc",
+        "label": "Investment date source — Quinbrook — PurposeEnergy",
+        "url": "https://www.quinbrook.com/portfolio/purposeenergy/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "PurposeEnergy portfolio-company status and project boundary",
+        "isPrimary": false
+      },
+      {
+        "id": "cmtjbgr2o0000z22bjk4r3406",
+        "label": "Purposeenergy — Middlebury Resource Recovery Center",
+        "url": "https://purposeenergy.com/news-insights/construction-kicks-off-on-renewable-energy-plant/",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "December 2022 Middlebury construction start",
+        "isPrimary": false
+      },
+      {
+        "id": "cmtjbgr8d0002z22bd0rea460",
+        "label": "PurposeEnergy — Minster startup update",
+        "url": "https://www.linkedin.com/posts/purpose-energy_renewableenergy-biogas-circulareconomy-activity-7483526778678951936-OaGU",
+        "sourceType": "OTHER",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "July 2026 Minster waste-intake start and ramp-up status",
+        "isPrimary": false
+      },
+      {
+        "id": "cmtjbgrc40003z22b2ies9y6i",
+        "label": "Purposeenergy — Middlebury Resource Recovery Center",
+        "url": "https://purposeenergy.com/project/purposeenergy-middlebury/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Middlebury facility identity, outputs and operating profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmtjbgrhr0005z22bmnppmnd6",
+        "label": "Rhode Island PUC — Middlebury review",
+        "url": "https://ripuc.ri.gov/sites/g/files/xkgbur841/files/2025-10/PurposeEnergy%20-%20Middlebury%20-%20Docket%20RES-24-50%20-Recommendations%20and%20Review%20-%202025-09-15.pdf",
+        "sourceType": "OTHER",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Middlebury legal owner/operator, 1.014 MW scale and October 21, 2024 commercial operation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmtjbgrlg0006z22bwzqt99zu",
+        "label": "Purposeenergy — PurposeEnergy Minster",
+        "url": "https://purposeenergy.com/project/minster/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Minster project identity, Danone relationship and disclosed operating scale",
+        "isPrimary": false
+      },
+      {
+        "id": "cmtjbgrr00008z22bh8se76xt",
+        "label": "Village of Minster — 2023 project minutes",
+        "url": "https://irp.cdn-website.com/7b8e4b72/files/uploaded/08-14-23%20Council%20Minutes.pdf",
+        "sourceType": "OTHER",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "PurposeEnergy - Minster LLC project site and infrastructure",
+        "isPrimary": false
+      },
+      {
+        "id": "cmtjbgrup0009z22b07wux3mv",
+        "label": "Purposeenergy — PurposeEnergy South Burlington",
+        "url": "https://purposeenergy.com/project/zero-gravity-brewery/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "South Burlington project identity, current host and disclosed operating metrics",
+        "isPrimary": false
+      },
+      {
+        "id": "cmtjbgryf000az22bzondoeg8",
+        "label": "Biocycle — PurposeEnergy South Burlington",
+        "url": "https://www.biocycle.net/digester-in-magic-hats-sustainability-mix/",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "PurposeEnergy ownership/operator role and qualified 2008-2011 development chronology",
+        "isPrimary": false
+      },
+      {
+        "id": "cmtjbgs25000bz22bu9hmj3ol",
+        "label": "Quinbrook Net Zero Power Fund (NZPF)",
+        "url": "https://www.quinbrook.com/news-insights/quinbrook-exceeds-target-for-net-zero-power-strategy-raising-usd-3-billion-in-capital-commitments/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "PurposeEnergy attribution to Quinbrook's Net Zero Power Fund strategy",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "PurposeEnergy — St. Albans Resource Recovery Center",
+        "url": "https://purposeenergy.com/project/saint-albans-resource-recovery-center/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "St. Albans project identity, development and operating profile",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "PurposeEnergy — St. Albans grand opening",
+        "url": "https://purposeenergy.com/news-insights/purposeenergy-celebrates-grand-opening-of-st-albans-renewable-energy-facility-in-partnership-with-ben-jerrys-ice-cream/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "May 29, 2025 grand opening and December 2024 commercial-operation start",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Vermont DEC — St. Albans permit fact sheet",
+        "url": "https://anrweb.vt.gov/PubDocs/DEC/WSMD/Wastewater/Permits/3-1573/FactSheet.3-1573.202302.pdf",
+        "sourceType": "OTHER",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "PurposeEnergy - St. Albans, LLC permittee and facility details",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "97d7a7081fe4fe8883856c53069cb8d486a797ab83e876bc18943cecc98ad1a0",
+  "proposalSha256": "7efa7751c8931eb369c72d3b4f3c456f5868eeb42eb8dce438808a83a54892b0"
+}

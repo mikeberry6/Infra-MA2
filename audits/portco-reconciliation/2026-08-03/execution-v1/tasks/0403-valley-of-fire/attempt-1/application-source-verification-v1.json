@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0403:valley-of-fire:3a0ca3e8",
+  "checkedAt": "2026-09-02T00:19:20.000Z",
+  "method": "Independent direct HTTPS status, redirect, byte-length and content-hash checks; the SEC page is browser-blocked but retained from the previously verified filing artifact.",
+  "sources": [
+    {
+      "url": "https://www.quinbrook.com/news-insights/quinbrook-closes-600m-solarstorage-continuation-fund/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.quinbrook.com/news-insights/quinbrook-closes-600m-solarstorage-continuation-fund/",
+      "bytes": 57027,
+      "sha256": "c28ac5e3b7a730be8964f523d6032f42d180f5bcf921176e65fd06a3fe91cb0f",
+      "healthStatus": "WORKING",
+      "verifiedClaims": ["Quinbrook closed a US$600 million continuation vehicle around Valley of Fire in 2024."]
+    },
+    {
+      "url": "https://www.quinbrook.com/projects/valley-of-fire-solar/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.quinbrook.com/projects/valley-of-fire-solar/",
+      "bytes": 47726,
+      "sha256": "936c55e11949694f59ab8b1246c4c39200a3b98f3087c3716e4d3ae39cade22f",
+      "healthStatus": "WORKING",
+      "verifiedClaims": ["Quinbrook presents Valley of Fire as a multi-project solar and storage platform."]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1820721/000119312526116240/d85164d8k.htm",
+      "httpStatus": 403,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1820721/000119312526116240/d85164d8k.htm",
+      "bytes": 4818,
+      "sha256": "d2bd4acc4d5fc6a3fad4dcca1f6756f160e143b9be821c21cdef418293a42c7d",
+      "healthStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verifiedClaims": ["The previously verified March 2026 filing identifies an individual security holder without disclosing class or percentage."]
+    }
+  ],
+  "allEvidenceUrlsDirectHttps": true,
+  "allSourcesWorkingOrVerified": true,
+  "deadSourceCount": 0
+}

@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0403:valley-of-fire:3a0ca3e8",
+  "taskIndex": 403,
+  "companyName": "Valley of Fire",
+  "asOfDate": "2026-09-01",
+  "decision": "DEFERRED",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-02T00:19:20.000Z",
+  "result": {
+    "decision": "DEFERRED",
+    "rationale": "Preserve Valley of Fire unchanged and defer its ownership correction. Primary manager and company sources support Valley of Fire Solar, LLC as a distinct solar-and-storage holdco and identify the 2024 continuation vehicle, but the complete current cap table is not public. A March 2026 filing discloses an individual security holder without the security class or percentage, so a complete current ownership after-image cannot be stated safely.",
+    "evidence": [
+      {
+        "url": "https://www.quinbrook.com/news-insights/quinbrook-closes-600m-solarstorage-continuation-fund/",
+        "purpose": "Official 2024 continuation-vehicle and Valley of Fire transaction evidence."
+      },
+      {
+        "url": "https://www.quinbrook.com/projects/valley-of-fire-solar/",
+        "purpose": "Official current Valley of Fire platform and project profile."
+      },
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/1820721/000119312526116240/d85164d8k.htm",
+        "purpose": "March 2026 filing evidence of an additional security holder without class or ownership percentage."
+      }
+    ],
+    "unresolvedQuestions": [
+      "The complete current Valley of Fire Solar, LLC cap table and intermediate holding-company chain.",
+      "The disclosed individual's security class and ownership percentage.",
+      "The complete current project/SPV list and exact continuation-vehicle sponsor interest."
+    ]
+  },
+  "lineage": {
+    "sourceDecision": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0403-valley-of-fire/attempt-1/research-decision.json",
+    "basis": "The original validated research supports keeping the platform distinct but identifies unresolved active ownership that blocks a safe correction."
+  }
+}
