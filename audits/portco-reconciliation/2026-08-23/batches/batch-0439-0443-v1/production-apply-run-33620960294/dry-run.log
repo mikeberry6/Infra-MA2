@@ -1,0 +1,133 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:batch:apply
+> npx tsx scripts/portco-reconciliation/batch-apply-cli.ts --batch-manifest=audits/portco-reconciliation/2026-08-23/batches/batch-0439-0443-v1/batch-manifest-v4.json --batch-sha256=62e5d7b0ac53d1ff13625f75f0e5a4cb0dd02a59c29dcb081f0efa6a493239e8
+
+(node:3477) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "BATCH_DRY_RUN",
+  "batchId": "batch-0439-0443-v1",
+  "batchSha256": "62e5d7b0ac53d1ff13625f75f0e5a4cb0dd02a59c29dcb081f0efa6a493239e8",
+  "databaseWrites": false,
+  "seedWrites": false,
+  "plans": [
+    {
+      "companyName": "Crosslake Fibre",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to description, website, headquarters, lastVerifiedAt, ownershipPeriods, milestones, citations."
+        }
+      ],
+      "changedFields": [
+        "citations",
+        "description",
+        "headquarters",
+        "lastVerifiedAt",
+        "milestones",
+        "ownershipPeriods",
+        "website"
+      ],
+      "retiredCompanyIds": []
+    },
+    {
+      "companyName": "Danskammer Energy",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to description, headquarters, lastVerifiedAt, ownershipPeriods, milestones, citations."
+        }
+      ],
+      "changedFields": [
+        "citations",
+        "description",
+        "headquarters",
+        "lastVerifiedAt",
+        "milestones",
+        "ownershipPeriods"
+      ],
+      "retiredCompanyIds": []
+    },
+    {
+      "companyName": "NorthLink Aviation",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to aliases, description, website, headquarters, lastVerifiedAt, ownershipPeriods, milestones, citations."
+        },
+        {
+          "kind": "ADD_OWNER",
+          "relationIds": [],
+          "detail": "Add 1 approved ownership period(s)."
+        }
+      ],
+      "changedFields": [
+        "aliases",
+        "citations",
+        "description",
+        "headquarters",
+        "lastVerifiedAt",
+        "milestones",
+        "ownershipPeriods",
+        "website"
+      ],
+      "retiredCompanyIds": []
+    },
+    {
+      "companyName": "Strategic Venue Partners",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to description, website, yearFounded, headquarters, lastVerifiedAt, ownershipPeriods, milestones, citations."
+        },
+        {
+          "kind": "ADD_OWNER",
+          "relationIds": [],
+          "detail": "Add 1 approved ownership period(s)."
+        }
+      ],
+      "changedFields": [
+        "citations",
+        "description",
+        "headquarters",
+        "lastVerifiedAt",
+        "milestones",
+        "ownershipPeriods",
+        "website",
+        "yearFounded"
+      ],
+      "retiredCompanyIds": []
+    },
+    {
+      "companyName": "Summit Carbon Solutions",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to description, website, headquarters, lastVerifiedAt, ownershipPeriods, milestones, citations."
+        },
+        {
+          "kind": "RETRACT_ERRONEOUS_OWNERSHIP",
+          "relationIds": [
+            "cmrxpkax202arivhesv0gri6w"
+          ],
+          "detail": "Retract 1 proven erroneous ownership period(s); revision history preserves the prior claim."
+        }
+      ],
+      "changedFields": [
+        "citations",
+        "description",
+        "headquarters",
+        "lastVerifiedAt",
+        "milestones",
+        "ownershipPeriods",
+        "website"
+      ],
+      "retiredCompanyIds": []
+    }
+  ]
+}

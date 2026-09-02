@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-02T10:27:00.000Z",
-  "activeBatchId": "batch-0439-0443-v1",
+  "updatedAt": "2026-09-02T10:57:16.000Z",
+  "activeBatchId": null,
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -8056,7 +8056,7 @@
     },
     {
       "batchId": "batch-0439-0443-v1",
-      "state": "READY",
+      "state": "COMPLETED",
       "taskIds": [
         "ledger:0439:crosslake-fibre:cb475638",
         "ledger:0440:danskammer-energy:5987da36",
@@ -8072,15 +8072,18 @@
         443
       ],
       "createdAt": "2026-09-02T09:58:15.000Z",
-      "updatedAt": "2026-09-02T10:27:00.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-09-02T10:57:16.000Z",
+      "completedAt": "2026-09-02T10:57:16.000Z",
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0439-0443-v1/batch-manifest-v4.json",
         "sha256": "62e5d7b0ac53d1ff13625f75f0e5a4cb0dd02a59c29dcb081f0efa6a493239e8"
       },
-      "releaseSha": null,
-      "receipt": null,
-      "reason": null,
+      "releaseSha": "95db5dfa1be3f478752911eec1fb57e47bf0e9e3",
+      "receipt": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0439-0443-v1/production-apply-run-33620960294/batch-apply-receipt.json",
+        "sha256": "7e0bac990807df368213d14490244ae90a59fb8064896472ee339096a75e7025"
+      },
+      "reason": "Rendered-card verification passed for all five companies; artifact sha256 ab1a4cb23bc804af2dc15faa3ce44adc89cc542cde046811688352a89b463f75.",
       "history": [
         {
           "sequence": 1,
@@ -8099,9 +8102,51 @@
             "62e5d7b0ac53d1ff13625f75f0e5a4cb0dd02a59c29dcb081f0efa6a493239e8"
           ],
           "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "RELEASING",
+          "at": "2026-09-02T10:42:00.000Z",
+          "evidenceSha256": [
+            "62e5d7b0ac53d1ff13625f75f0e5a4cb0dd02a59c29dcb081f0efa6a493239e8"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 4,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-09-02T10:44:00.000Z",
+          "evidenceSha256": [
+            "62e5d7b0ac53d1ff13625f75f0e5a4cb0dd02a59c29dcb081f0efa6a493239e8"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 5,
+          "from": "APPLYING",
+          "to": "VERIFYING",
+          "at": "2026-09-02T10:50:12.504Z",
+          "evidenceSha256": [
+            "62e5d7b0ac53d1ff13625f75f0e5a4cb0dd02a59c29dcb081f0efa6a493239e8",
+            "7e0bac990807df368213d14490244ae90a59fb8064896472ee339096a75e7025"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 6,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-09-02T10:57:16.000Z",
+          "evidenceSha256": [
+            "62e5d7b0ac53d1ff13625f75f0e5a4cb0dd02a59c29dcb081f0efa6a493239e8",
+            "7e0bac990807df368213d14490244ae90a59fb8064896472ee339096a75e7025"
+          ],
+          "reason": "Rendered-card verification passed for all five companies; artifact sha256 ab1a4cb23bc804af2dc15faa3ce44adc89cc542cde046811688352a89b463f75."
         }
       ]
     }
   ],
-  "ledgerSha256": "6f84d979976826787b2d0a89a0791326d548fc1e893d47d526ea53bd5ff36de5"
+  "ledgerSha256": "be8371db826e1c9046781a72bf382d749ae57fbb5e560207f86a993342e02ecb"
 }
