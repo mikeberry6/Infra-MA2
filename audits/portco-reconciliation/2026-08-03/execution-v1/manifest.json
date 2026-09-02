@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-09-02T00:02:19.000Z",
+  "updatedAt": "2026-09-02T00:44:00.000Z",
   "runStatus": "IDLE",
   "activeTaskId": null,
   "source": {
@@ -38265,20 +38265,26 @@
       "managerIndex": 83,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "ac93b0a619d79bdf44585ff853b85c2f12b31d1633ef432d15d7a5b22de3e0c1",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
+      "status": "DEFERRED",
+      "attempts": 1,
+      "startedAt": "2026-09-02T00:15:30.000Z",
+      "updatedAt": "2026-09-02T00:44:00.000Z",
+      "completedAt": "2026-09-02T00:44:00.000Z",
+      "exceptionReason": "Preserve Rowan Bauxite unchanged and defer the project-to-platform merge. Primary sources establish that Bauxite I-III is a Rowan Digital Infrastructure campus, but Rowan's current platform ownership after the April 9, 2026 Blackstone recapitalization remains unresolved. UPP's continuing ownership, the recapitalization sellers, and the Quinbrook, UPP and Blackstone stakes are not publicly disclosed, so a canonical Rowan after-image cannot yet satisfy the active-ownership rule.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "d98d709d8e7dbd0566840042e9fddae6f9233e39e492391bd2f5a6ac70ad29ab",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0399-rowan-bauxite/attempt-1/locked-batch-v1-task-snapshot.json",
+          "sha256": "d98d709d8e7dbd0566840042e9fddae6f9233e39e492391bd2f5a6ac70ad29ab"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0399-0403-v1/decisions/0399-rowan-bauxite.json",
+          "sha256": "854f8a3c0449f4d871c6778e6efc35bf924d885100a8a24a1a71cedbdac85451"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -38292,6 +38298,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-02T00:44:00.000Z",
+          "reason": "Preserve Rowan Bauxite unchanged and defer the project-to-platform merge. Primary sources establish that Bauxite I-III is a Rowan Digital Infrastructure campus, but Rowan's current platform ownership after the April 9, 2026 Blackstone recapitalization remains unresolved. UPP's continuing ownership, the recapitalization sellers, and the Quinbrook, UPP and Blackstone stakes are not publicly disclosed, so a canonical Rowan after-image cannot yet satisfy the active-ownership rule.",
+          "taskSnapshotSha256": "d98d709d8e7dbd0566840042e9fddae6f9233e39e492391bd2f5a6ac70ad29ab",
+          "evidenceSha256": [
+            "5000110a4ac28649630ddeef238d59ee5811210bfafe8bb5b1488ce0794611ea",
+            "504b275f54e2a71d7aa4b688ebee267b93592e5b7976df47a1e6b63ea1eb3f2b",
+            "854f8a3c0449f4d871c6778e6efc35bf924d885100a8a24a1a71cedbdac85451",
+            "d98d709d8e7dbd0566840042e9fddae6f9233e39e492391bd2f5a6ac70ad29ab"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -38303,20 +38324,26 @@
       "managerIndex": 83,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "f558d0996548273cdb37e1bd65c92d3ec8346c633dfd35e4319111437c322a8e",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
+      "status": "DEFERRED",
+      "attempts": 1,
+      "startedAt": "2026-09-02T00:15:30.000Z",
+      "updatedAt": "2026-09-02T00:44:00.000Z",
+      "completedAt": "2026-09-02T00:44:00.000Z",
+      "exceptionReason": "Preserve Rowan Cinco unchanged and defer the project-to-platform merge. Direct sources establish Cinco as a Rowan Digital Infrastructure campus and Rowan Cinco LLC as the asset-level entity, but Rowan's current platform ownership after the April 9, 2026 Blackstone recapitalization remains unresolved. UPP's continuing ownership and the complete post-recapitalization cap table are not publicly disclosed.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "2c3912d55c5748e7ddbdb3c629e053d23e4010b64d096385052b3cc83376ee3d",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0400-rowan-cinco/attempt-1/locked-batch-v1-task-snapshot.json",
+          "sha256": "2c3912d55c5748e7ddbdb3c629e053d23e4010b64d096385052b3cc83376ee3d"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0399-0403-v1/decisions/0400-rowan-cinco.json",
+          "sha256": "40634ed22232daf97a55c522e8e219a0e6ffd7330f7b452c39bf8ce1dd811810"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -38330,6 +38357,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-02T00:44:00.000Z",
+          "reason": "Preserve Rowan Cinco unchanged and defer the project-to-platform merge. Direct sources establish Cinco as a Rowan Digital Infrastructure campus and Rowan Cinco LLC as the asset-level entity, but Rowan's current platform ownership after the April 9, 2026 Blackstone recapitalization remains unresolved. UPP's continuing ownership and the complete post-recapitalization cap table are not publicly disclosed.",
+          "taskSnapshotSha256": "2c3912d55c5748e7ddbdb3c629e053d23e4010b64d096385052b3cc83376ee3d",
+          "evidenceSha256": [
+            "2c3912d55c5748e7ddbdb3c629e053d23e4010b64d096385052b3cc83376ee3d",
+            "40634ed22232daf97a55c522e8e219a0e6ffd7330f7b452c39bf8ce1dd811810",
+            "5000110a4ac28649630ddeef238d59ee5811210bfafe8bb5b1488ce0794611ea",
+            "504b275f54e2a71d7aa4b688ebee267b93592e5b7976df47a1e6b63ea1eb3f2b"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -38341,20 +38383,26 @@
       "managerIndex": 83,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "101b48be7b81710e91a7ffca7bda19d008de3a9f21f0b798c4d0dc9123ae3dcd",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
+      "status": "DEFERRED",
+      "attempts": 1,
+      "startedAt": "2026-09-02T00:15:30.000Z",
+      "updatedAt": "2026-09-02T00:44:00.000Z",
+      "completedAt": "2026-09-02T00:44:00.000Z",
+      "exceptionReason": "Preserve Rowan Temple unchanged and defer the project-to-platform merge. Direct sources establish Temple as a Rowan Digital Infrastructure campus, but Rowan's current platform ownership after the April 9, 2026 Blackstone recapitalization remains unresolved. UPP's continuing ownership and the exact Quinbrook, UPP and Blackstone interests are not publicly disclosed.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "f8f088206fa30d156aeb8ad732af8e70a6ca303e18be04ea1f90cff31a39b6ff",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0401-rowan-temple/attempt-1/locked-batch-v1-task-snapshot.json",
+          "sha256": "f8f088206fa30d156aeb8ad732af8e70a6ca303e18be04ea1f90cff31a39b6ff"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0399-0403-v1/decisions/0401-rowan-temple.json",
+          "sha256": "0eda5633c60aaa57fcd8fb849dbe8f873c257a2c25e9410dca0225f4988e16c8"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -38368,6 +38416,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-02T00:44:00.000Z",
+          "reason": "Preserve Rowan Temple unchanged and defer the project-to-platform merge. Direct sources establish Temple as a Rowan Digital Infrastructure campus, but Rowan's current platform ownership after the April 9, 2026 Blackstone recapitalization remains unresolved. UPP's continuing ownership and the exact Quinbrook, UPP and Blackstone interests are not publicly disclosed.",
+          "taskSnapshotSha256": "f8f088206fa30d156aeb8ad732af8e70a6ca303e18be04ea1f90cff31a39b6ff",
+          "evidenceSha256": [
+            "0eda5633c60aaa57fcd8fb849dbe8f873c257a2c25e9410dca0225f4988e16c8",
+            "5000110a4ac28649630ddeef238d59ee5811210bfafe8bb5b1488ce0794611ea",
+            "504b275f54e2a71d7aa4b688ebee267b93592e5b7976df47a1e6b63ea1eb3f2b",
+            "f8f088206fa30d156aeb8ad732af8e70a6ca303e18be04ea1f90cff31a39b6ff"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -38379,23 +38442,44 @@
       "managerIndex": 83,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "2ceae0fe40568588c11f8adaecc87f25d5cd402117aaf50d1800fabdccd49212",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-09-02T00:15:30.000Z",
+      "updatedAt": "2026-09-02T00:44:00.000Z",
+      "completedAt": "2026-09-02T00:44:00.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "9f259535d156b4877dcc0e044f619641cec4863a5cc9c251d84c1b8896d6eb58",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0402-st-albans-industrial-treatment-saint/attempt-1/locked-batch-v1-task-snapshot.json",
+          "sha256": "9f259535d156b4877dcc0e044f619641cec4863a5cc9c251d84c1b8896d6eb58"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0402-st-albans-industrial-treatment-saint/attempt-1/proposal-v1.json",
+          "sha256": "7efa7751c8931eb369c72d3b4f3c456f5868eeb42eb8dce438808a83a54892b0"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0402-st-albans-industrial-treatment-saint-v1.json",
+          "sha256": "080f927f813858e6fa751f1a643188563199cd7bd4d2b6c45ce391a11b2d2450"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0399-0403-v1/production-apply/batch-apply-receipt.json#members/3/receipt",
+          "sha256": "c38660d4c4a58ee2a3960e2d7293d4f2fdfdd59c37c76dc5cf4fd039d021a556"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0402-st-albans-industrial-treatment-saint/attempt-1/proposal-v1.json#afterImage",
+          "sha256": "97d7a7081fe4fe8883856c53069cb8d486a797ab83e876bc18943cecc98ad1a0"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-09-02T00:44:00.000Z",
+        "auditEventId": "cmtjdg54s0007xc2bqhu09jpy",
+        "transactionId": "9ff36af1-a2bf-4697-8cc4-33cc60f2357b",
+        "receiptSha256": "c38660d4c4a58ee2a3960e2d7293d4f2fdfdd59c37c76dc5cf4fd039d021a556",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33576264087"
+      },
       "history": [
         {
           "sequence": 1,
@@ -38406,6 +38490,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-09-02T00:44:00.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0399-0403-v1.",
+          "taskSnapshotSha256": "9f259535d156b4877dcc0e044f619641cec4863a5cc9c251d84c1b8896d6eb58",
+          "evidenceSha256": [
+            "080f927f813858e6fa751f1a643188563199cd7bd4d2b6c45ce391a11b2d2450",
+            "5000110a4ac28649630ddeef238d59ee5811210bfafe8bb5b1488ce0794611ea",
+            "504b275f54e2a71d7aa4b688ebee267b93592e5b7976df47a1e6b63ea1eb3f2b",
+            "7efa7751c8931eb369c72d3b4f3c456f5868eeb42eb8dce438808a83a54892b0",
+            "97d7a7081fe4fe8883856c53069cb8d486a797ab83e876bc18943cecc98ad1a0",
+            "9f259535d156b4877dcc0e044f619641cec4863a5cc9c251d84c1b8896d6eb58",
+            "c38660d4c4a58ee2a3960e2d7293d4f2fdfdd59c37c76dc5cf4fd039d021a556"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -38417,20 +38519,26 @@
       "managerIndex": 83,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "c7424aa17c90b23d2d343ccde7878a91ec0e4abb39a37773c11a94ba31d13577",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
+      "status": "DEFERRED",
+      "attempts": 1,
+      "startedAt": "2026-09-02T00:15:30.000Z",
+      "updatedAt": "2026-09-02T00:44:00.000Z",
+      "completedAt": "2026-09-02T00:44:00.000Z",
+      "exceptionReason": "Preserve Valley of Fire unchanged and defer its ownership correction. Primary manager and company sources support Valley of Fire Solar, LLC as a distinct solar-and-storage holdco and identify the 2024 continuation vehicle, but the complete current cap table is not public. A March 2026 filing discloses an individual security holder without the security class or percentage, so a complete current ownership after-image cannot be stated safely.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "c587eecf37d50d507f96685ee4073a56777af5deeca823480148df4b5ae71709",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0403-valley-of-fire/attempt-1/locked-batch-v1-task-snapshot.json",
+          "sha256": "c587eecf37d50d507f96685ee4073a56777af5deeca823480148df4b5ae71709"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0399-0403-v1/decisions/0403-valley-of-fire.json",
+          "sha256": "12d21b98b3fbbab6d6efc0d5cb16ecd46d4e904b9fb05cdf21c22b618ad1f87d"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -38444,6 +38552,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-02T00:44:00.000Z",
+          "reason": "Preserve Valley of Fire unchanged and defer its ownership correction. Primary manager and company sources support Valley of Fire Solar, LLC as a distinct solar-and-storage holdco and identify the 2024 continuation vehicle, but the complete current cap table is not public. A March 2026 filing discloses an individual security holder without the security class or percentage, so a complete current ownership after-image cannot be stated safely.",
+          "taskSnapshotSha256": "c587eecf37d50d507f96685ee4073a56777af5deeca823480148df4b5ae71709",
+          "evidenceSha256": [
+            "12d21b98b3fbbab6d6efc0d5cb16ecd46d4e904b9fb05cdf21c22b618ad1f87d",
+            "5000110a4ac28649630ddeef238d59ee5811210bfafe8bb5b1488ce0794611ea",
+            "504b275f54e2a71d7aa4b688ebee267b93592e5b7976df47a1e6b63ea1eb3f2b",
+            "c587eecf37d50d507f96685ee4073a56777af5deeca823480148df4b5ae71709"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -42205,5 +42328,5 @@
       ]
     }
   ],
-  "manifestSha256": "5b02e9f68e91ca2793f49eb32135a82bad866346ac6f921d44e9a8f57f4060a9"
+  "manifestSha256": "f1461328f3e3afe67a47849dce656706236f0897f0412c3ad7559d0e630f795f"
 }

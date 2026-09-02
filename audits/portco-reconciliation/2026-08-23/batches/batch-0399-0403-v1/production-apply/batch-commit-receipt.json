@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_COMMIT_RECEIPT",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0399-0403-v1",
+  "batchSha256": "504b275f54e2a71d7aa4b688ebee267b93592e5b7976df47a1e6b63ea1eb3f2b",
+  "releaseSha": "bdbdfff7415790e14ccadd64a825f862bf15d36d",
+  "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+  "transactionId": "9ff36af1-a2bf-4697-8cc4-33cc60f2357b",
+  "appliedAt": "2026-09-02T00:42:23.391Z",
+  "members": [
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0399:rowan-bauxite:930cec59",
+      "taskIndex": 399,
+      "companyName": "Rowan Bauxite",
+      "outcome": "DEFERRED",
+      "decisionSha256": "854f8a3c0449f4d871c6778e6efc35bf924d885100a8a24a1a71cedbdac85451"
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0400:rowan-cinco:18f76471",
+      "taskIndex": 400,
+      "companyName": "Rowan Cinco",
+      "outcome": "DEFERRED",
+      "decisionSha256": "40634ed22232daf97a55c522e8e219a0e6ffd7330f7b452c39bf8ce1dd811810"
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0401:rowan-temple:fb4df5a1",
+      "taskIndex": 401,
+      "companyName": "Rowan Temple",
+      "outcome": "DEFERRED",
+      "decisionSha256": "0eda5633c60aaa57fcd8fb849dbe8f873c257a2c25e9410dca0225f4988e16c8"
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0402:st-albans-industrial-treatment-saint:0567aff2",
+      "taskIndex": 402,
+      "companyName": "St. Albans Industrial Treatment (SAINT)",
+      "proposalSha256": "7efa7751c8931eb369c72d3b4f3c456f5868eeb42eb8dce438808a83a54892b0",
+      "approvalSha256": "080f927f813858e6fa751f1a643188563199cd7bd4d2b6c45ce391a11b2d2450",
+      "afterImageSha256": "97d7a7081fe4fe8883856c53069cb8d486a797ab83e876bc18943cecc98ad1a0",
+      "approvedSeedEntrySha256": "2dd34b450d0777c35c924f76eadf65de11505bf1b2c2c4c2cc2c93a82c3c3e13",
+      "companyId": "cmrxpjmoi018givhecyo0ujvv",
+      "auditEventId": "cmtjdg54s0007xc2bqhu09jpy"
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0403:valley-of-fire:3a0ca3e8",
+      "taskIndex": 403,
+      "companyName": "Valley of Fire",
+      "outcome": "DEFERRED",
+      "decisionSha256": "12d21b98b3fbbab6d6efc0d5cb16ecd46d4e904b9fb05cdf21c22b618ad1f87d"
+    }
+  ],
+  "verification": {
+    "databaseTransactionCommitted": true,
+    "seedArtifactVerifiedBeforeCommit": true,
+    "detailApiVerificationPending": true,
+    "partialDatabaseApplication": false
+  },
+  "receiptSha256": "6e41f2a7d7d110477754007d9a48215266dc1c84d68388a6e672c2df8ebe7f63"
+}
