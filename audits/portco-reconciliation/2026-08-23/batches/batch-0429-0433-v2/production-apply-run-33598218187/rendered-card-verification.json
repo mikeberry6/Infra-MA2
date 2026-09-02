@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RENDERED_CARD_VERIFICATION",
+  "batchId": "batch-0429-0433-v2",
+  "batchSha256": "f772a09d26eb926eee99787e3cf2e4e6c23fedc10af0df09df790be14fdbaf06",
+  "batchReceiptSha256": "930984a9f704ca269558215544de25438cc9ecaf9dc7cfa3a92f82e5b930d46b",
+  "releaseSha": "4bc5962c79e237b76481add0dc6c95a9fa459e2e",
+  "transactionId": "81f4244f-a5d7-46d4-ab35-659f5f4655bc",
+  "attributionRepairReleaseSha": "bf57c986e5f5c0c6fbc1d1b9616c4c4dc719f952",
+  "attributionRepairReceiptSha256": "29c4eb2ff7a58352c2e0be64aeec2906ba4d70fd9007b325e64410863e92be34",
+  "verifiedAt": "2026-09-02T06:43:15Z",
+  "canonicalUrl": "https://infra-ma-2.vercel.app/Infra-MA2/portfolio",
+  "method": "Production in-app browser DOM verification after the protected attribution transaction and cache revalidation, including table search, drawer opening, ownership-attribution labels, stakes, canonical identity boundaries, business overviews, sources and timelines.",
+  "companies": [
+    {
+      "companyId": "cmrxpjnnm01a1ivhew2n8o1is",
+      "companyName": "Oryx Midstream",
+      "tableCardFound": true,
+      "drawerRendered": true,
+      "currentOwners": [
+        "Stonepeak",
+        "QIA"
+      ],
+      "ownershipAttributionsObserved": [
+        "Stonepeak — Fund attribution pending",
+        "QIA — Direct / program investment"
+      ],
+      "businessOverviewVisible": true,
+      "sourcesVisible": true,
+      "milestonesVisible": true,
+      "apiMatchesRenderedIdentity": true
+    },
+    {
+      "companyId": "cmtjpi2pn000dze2bbdbgmq86",
+      "companyName": "Outpost Solar",
+      "tableCardFound": true,
+      "drawerRendered": true,
+      "currentOwners": [
+        "Stonepeak",
+        "Repsol"
+      ],
+      "stakesObserved": [
+        "43.8% joint-control interest",
+        "56.2% arithmetic remainder, not separately disclosed"
+      ],
+      "ownershipAttributionsObserved": [
+        "Stonepeak — Fund attribution pending",
+        "Repsol — Direct / program investment"
+      ],
+      "businessOverviewVisible": true,
+      "sourcesVisible": true,
+      "milestonesVisible": true,
+      "apiMatchesRenderedIdentity": true
+    },
+    {
+      "companyId": "cmrxpjnv601abivhe2ixd73xz",
+      "companyName": "JFK New Terminal One",
+      "tableCardFound": true,
+      "drawerRendered": true,
+      "currentOwners": [
+        "The Carlyle Group",
+        "JLC Infrastructure",
+        "Ferrovial",
+        "Swiss Life",
+        "Ullico"
+      ],
+      "stakesObserved": [
+        "2% direct sponsor interest after partial sale",
+        "30% direct sponsor interest",
+        "49% direct sponsor interest",
+        "0.4% look-through interest within JLC Infrastructure's 30% sponsor block; not additive",
+        "19% direct sponsor interest"
+      ],
+      "ownershipAttributionsObserved": [
+        "The Carlyle Group — Fund attribution pending",
+        "JLC Infrastructure — JLC Infrastructure Fund I, L.P.",
+        "Ferrovial — Direct / program investment",
+        "Swiss Life — JLC Terminal One Co-Invest L.P.",
+        "Ullico — Ullico Infrastructure Fund"
+      ],
+      "businessOverviewVisible": true,
+      "sourcesVisible": true,
+      "milestonesVisible": true,
+      "apiMatchesRenderedIdentity": true
+    }
+  ],
+  "identityChecks": [
+    {
+      "taskIndex": 430,
+      "companyName": "Oryx Midstream Services",
+      "expected": "Superseded into Oryx Midstream without a second published company",
+      "observed": "One canonical Oryx Midstream row"
+    },
+    {
+      "taskIndex": 432,
+      "companyName": "Stonepeak Infrastructure Logistics Platform",
+      "expected": "Excluded umbrella identity absent from the published table",
+      "observed": "No published PortCo created"
+    }
+  ],
+  "assertions": {
+    "allExpectedPublishedCompaniesVisibleInTable": true,
+    "allExpectedDrawersOpened": true,
+    "allDrawerHeadingsMatchCanonicalCompanies": true,
+    "allExpectedCurrentOwnersVisible": true,
+    "allOwnershipAttributionsMatchApprovedSeed": true,
+    "incorrectInferredFundLabelsAbsent": true,
+    "supersededIdentityNotDuplicated": true,
+    "excludedIdentityAbsent": true,
+    "allBusinessOverviewsVisible": true,
+    "allSourcesVisible": true,
+    "allMilestonesVisible": true,
+    "consoleErrorsObserved": false
+  },
+  "valid": true
+}
