@@ -1,0 +1,248 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0413:wrm-waste-resource-management:deca62ff",
+  "taskIndex": 413,
+  "companyName": "WRM (Waste Resource Management)",
+  "generatedAt": "2026-09-02T01:25:11.543Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0413-wrm-waste-resource-management/attempt-1/locked-batch-v5-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 413,
+    "taskId": "ledger:0413:wrm-waste-resource-management:deca62ff",
+    "canonicalKey": "wrm-waste-resource-management|united-states",
+    "companyName": "WRM (Waste Resource Management)",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 85,
+    "managers": [
+      "Ridgewood Infrastructure"
+    ],
+    "actionScopes": {
+      "company": [
+        "CREATE_COMPANY"
+      ],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "085-ridgewood-infrastructure:holding:003:wrm-waste-resource-management"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://ridgewoodinfrastructure.com/news/ridgewood-infrastructure-acquires-wrm/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "No exact normalized production or seed match exists. Census evidence supports a new canonical company with 1 manager holding record(s).",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "REVIEWED_POST_QUEUE_PARENTHETICAL_ALIAS_IDENTITY",
+    "targetCompanyId": "cmrxpjn16018zivhe8i1og54q",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "waste-resource-management|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjn16018zivhe8i1og54q",
+    "name": "Waste Resource Management",
+    "aliases": [],
+    "sector": "UTILITIES",
+    "subsector": "Industrial wastewater and liquid-waste treatment",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Waste Resource Management provides collection, treatment, recycling, and disposal services for liquid waste and industrial wastewater streams. Its customer base includes commercial and industrial generators that require compliant processing of wastewater, sludges, and related liquid residuals. The operating model is asset heavy, with treatment facilities, transportation capabilities, and processing permits forming the core infrastructure base. Ridgewood stated at acquisition that the platform operated 13 treatment facilities in high-growth markets across Florida, Nevada, Texas, and Colorado. Ridgewood acquired the company in late 2023 as part of its water and environmental infrastructure strategy. The investment added a treatment and recycling platform to Ridgewood's existing water-sector portfolio.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Florida, Nevada, Texas, and Colorado",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk9lf028livhe59iv90gl",
+        "managerName": "Ridgewood",
+        "organizationName": "Ridgewood",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmn2u0549ivheaqa42gsc",
+        "date": "2023",
+        "event": "Ridgewood said WRM operated 13 treatment facilities at the time of acquisition.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmn3e054aivhemt33sr8t",
+        "date": "Dec 2023",
+        "event": "Ridgewood Infrastructure announced the acquisition of Waste Resource Management.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmn40054bivhe8tlbvy8i",
+        "date": "2026",
+        "event": "Ridgewood listed WRM as a realized portfolio investment.",
+        "category": "FINANCING",
+        "sortDate": "2026-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsocf0cy2ivhelwx9ltzm",
+        "label": "Ridgewoodinfrastructure — Waste Resource Management",
+        "url": "https://ridgewoodinfrastructure.com/waste-resource-management/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Ridgewoodinfrastructure — Waste Resource Management",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpsodj0cy4ivhehu8c6c01",
+        "label": "Ridgewoodinfrastructure — Waste Resource Management",
+        "url": "https://ridgewoodinfrastructure.com/ridgewood-infrastructure-extends-its-leadership-position-in-the-u-s-water-sector-with-the-acquisition-of-waste-resources-management-wrm/",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Ridgewoodinfrastructure transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsoeh0cy6ivhewrwte2du",
+        "label": "Wrmco — Waste Resource Management",
+        "url": "https://wrmco.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Wrmco company profile",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Waste Resource Management",
+    "investmentFirm": "Ridgewood",
+    "sector": "Utilities",
+    "subsector": "Industrial wastewater and liquid-waste treatment",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "Waste Resource Management provides collection, treatment, recycling, and disposal services for liquid waste and industrial wastewater streams. Its customer base includes commercial and industrial generators that require compliant processing of wastewater, sludges, and related liquid residuals. The operating model is asset heavy, with treatment facilities, transportation capabilities, and processing permits forming the core infrastructure base. Ridgewood stated at acquisition that the platform operated 13 treatment facilities in high-growth markets across Florida, Nevada, Texas, and Colorado. Ridgewood acquired the company in late 2023 as part of its water and environmental infrastructure strategy. The investment added a treatment and recycling platform to Ridgewood's existing water-sector portfolio.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2023,
+    "headquarters": "Florida, Nevada, Texas, and Colorado",
+    "milestones": [
+      {
+        "date": "2023",
+        "event": "Ridgewood said WRM operated 13 treatment facilities at the time of acquisition.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Dec 2023",
+        "event": "Ridgewood Infrastructure announced the acquisition of Waste Resource Management.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "2026",
+        "event": "Ridgewood listed WRM as a realized portfolio investment.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Ridgewoodinfrastructure — Waste Resource Management",
+        "url": "https://ridgewoodinfrastructure.com/waste-resource-management/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Ridgewoodinfrastructure — Waste Resource Management",
+        "url": "https://ridgewoodinfrastructure.com/ridgewood-infrastructure-extends-its-leadership-position-in-the-u-s-water-sector-with-the-acquisition-of-waste-resources-management-wrm/",
+        "type": "ARTICLE",
+        "purpose": "MILESTONE_EVENT"
+      },
+      {
+        "label": "Wrmco — Waste Resource Management",
+        "url": "https://wrmco.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Ridgewood",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2023,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpicyc003civheedbx5k0a",
+        "name": "Ridgewood Infrastructure",
+        "updatedAt": "2026-07-23T16:09:23.988Z"
+      },
+      {
+        "id": "cmrxpikot005rivhewkpj6ng8",
+        "name": "Ridgewood",
+        "updatedAt": "2026-07-23T16:09:34.013Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0413:wrm-waste-resource-management:deca62ff",
+    "taskIndex": 413,
+    "canonicalKey": "wrm-waste-resource-management|united-states",
+    "capturedAt": "2026-09-02T01:25:11.543Z",
+    "databaseRevision": "revision:a2e6804d75de645e3e14ae5ea2d88ccb36718b2913e334b6422860395efed42b",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "edd18c4aa8c6daf4ae1f83c8573e5edac6fafbe0e1b1a330bae43dcd3c2dbe77",
+    "productionSnapshotSha256": "a4a0c20175f3e4af272d254ada646cc21d82607dfb9ba4d4b1fceb08042dbb03",
+    "targetCompanySnapshotSha256": "1a42eaa438aac2b5981380c06d9f61648fb437e6abc4cfd5e8942cdbc5a424c0",
+    "seedEntrySha256": "e9d76f0092fce87b2497a837b5b3b0ab8246bcb8023ee209ab8b8f52dd5de7d9",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "7a9abcd028e1147b195f40a203348ddded2e72086025efbf6a5a56e72376253e",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "444dbe44b49bb2dd5235d64436c770b3e1dedc3337f0d4021f5d125ff30696e2",
+      "citationsSha256": "3353094448d3a1ce344fdbd30c199ef60dd80a3b86cc101c1d6e4ce604d55bf7",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "7fef718ca8f6dc92753c5fba9abd9160a66fa9f13c8fe489686c94f6b04fd377",
+    "stateSha256": "9029eea2d5fc1eea168ab55102469fd9ab77e0331c201ef74d75814bb9e24b3b",
+    "taskSnapshotSha256": "cc5853ccc5379ac0554cd1d824e77e950638be9a0477e9dfbd72cb2af7300d2f"
+  },
+  "contextSha256": "a8754ea9da7073bb7c4ad9a9e1cc1697676da8e372cf648152c0b7209351dfcd"
+}

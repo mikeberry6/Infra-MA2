@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0410:sierra-railroad-company:b9c99f78",
+  "taskIndex": 410,
+  "companyName": "Sierra Railroad Company",
+  "asOfDate": "2026-09-01",
+  "decision": "DEFERRED",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-02T01:30:00.000Z",
+  "result": {
+    "decision": "DEFERRED",
+    "rationale": "Defer the Sierra Railroad ownership correction while preserving the verified control and retained-investment evidence. Ridgewood's release proves a controlling acquisition and says Mike Hart retained a significant investment, but the complete post-close cap table, retained-holder roster and Sunburst passenger-operation perimeter are not directly disclosed. The existing Ridgewood-only owner representation therefore cannot yet be safely replaced with a complete after-image.",
+    "evidence": [
+      {
+        "url": "https://ridgewoodinfrastructure.com/ridgewood-infrastructure-acquires-sierra-railroad-company/",
+        "purpose": "Official evidence for Ridgewood control, Mike Hart's retained investment and the announced platform perimeter."
+      },
+      {
+        "url": "https://ridgewoodinfrastructure.com/sierra-railroad/",
+        "purpose": "Official current portfolio evidence that Sierra Railroad remains unrealized."
+      },
+      {
+        "url": "https://www.sierranorthern.com/",
+        "purpose": "Official operating-company evidence for the rail network and services."
+      }
+    ],
+    "unresolvedQuestions": [
+      "The complete retained-holder roster and exact post-close cap table.",
+      "The exact Ridgewood fund and surviving holdco.",
+      "The Sunburst and passenger-operation carveout and exact CVAT close."
+    ]
+  },
+  "lineage": {
+    "sourceDecision": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0410-sierra-railroad-company/attempt-1/research-decision.json",
+    "basis": "Validated research proves Ridgewood control and a retained investor but not the complete active ownership table."
+  }
+}

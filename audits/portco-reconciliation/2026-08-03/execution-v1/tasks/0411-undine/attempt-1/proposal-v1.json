@@ -1,0 +1,285 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0411:undine:ce0cb177",
+  "taskIndex": 411,
+  "asOfDate": "2026-09-01",
+  "generatedAt": "2026-09-02T01:34:00.000Z",
+  "canonicalKey": "undine|united-states",
+  "companyName": "Undine",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER"
+  ],
+  "sourceHoldingIds": [
+    "085-ridgewood-infrastructure:holding:005:undine"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Keep one canonical Undine platform, normalize the existing Ridgewood ownership period, and add Crosstimbers Capital Group as a separately evidenced current equity owner from 2017 without inferring percentages, control rights or a signed sale.",
+  "evidence": [
+    {
+      "url": "https://ridgewoodinfrastructure.com/undine/",
+      "purpose": "Official current Ridgewood ownership and infrastructure-platform evidence.",
+      "supports": [
+        "Ridgewood remains a current owner",
+        "Undine is an active regulated water and wastewater platform"
+      ]
+    },
+    {
+      "url": "https://www.crosstimbers.com/portfolio",
+      "purpose": "Official current Crosstimbers ownership and June 2017 entry evidence.",
+      "supports": [
+        "Crosstimbers remains a current owner",
+        "Crosstimbers dates its investment to June 2017"
+      ]
+    },
+    {
+      "url": "https://interchange.puc.texas.gov/Documents/56354_3818_1517901.PDF",
+      "purpose": "Regulatory confirmation of the equity funders.",
+      "supports": [
+        "Ridgewood provides equity funding",
+        "Crosstimbers provides equity funding",
+        "Texas Capital Bank is debt only"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "d6ff6376a968952b83216808d4b9035c991db36fe9572dbb490f892c88020699",
+  "currentCompanySnapshotSha256": "6cc98076324218c698815cdc41034a00ef674438217c59c573b9c6a050cca52f",
+  "executionLock": {
+    "taskSnapshotSha256": "1d54d9ffbaad2284e148ff97d6bb59b1c8382727945e6e58982ac8a55e6b1e86",
+    "taskStateSha256": "e343bfc53f62e05fadba350fcbacb5340c104da1f2da3fe8b68ef8f196424100",
+    "taskDependencySha256": "60ea35b2be27a68f460917280132259994d36cad2876e66d414c78c623d0b647",
+    "seedEntrySha256": "28515184afc6d6a621ffe9cb00f098afcd05592a49b74af911edda32291ffacb",
+    "dependencies": {
+      "ownershipPeriodsSha256": "159f92f28a2fe1cba59528e2afccd8741417b9299303760f01ca2d7c6c8d32ec",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "444dbe44b49bb2dd5235d64436c770b3e1dedc3337f0d4021f5d125ff30696e2",
+      "citationsSha256": "c32f4778463055688d37e2c01cbbb5500a2a7c7d1f3e2d6cbad26b458a9d782d",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpicyc003civheedbx5k0a",
+        "name": "Ridgewood Infrastructure",
+        "updatedAt": "2026-07-23T16:09:23.988Z"
+      },
+      {
+        "id": "cmrxpikot005rivhewkpj6ng8",
+        "name": "Ridgewood",
+        "updatedAt": "2026-07-23T16:09:34.013Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjmzy018xivheiq5ev2lk",
+    "name": "Undine",
+    "aliases": [],
+    "sector": "UTILITIES",
+    "subsector": "Regulated water and wastewater utilities",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Undine acquires and operates regulated water and wastewater utilities in Texas. Its customers are residential and commercial users in fast-growing communities that require essential local distribution and wastewater service. The operating model is asset heavy and rate regulated, with cash flows derived from utility service rather than merchant water sales. The company states that it was founded in 2016 and has pursued a consolidation strategy focused on smaller-scale regulated utility systems. Ridgewood acquired the platform in 2017, making it one of the earlier utility investments in the firm's current portfolio. The business remains part of Ridgewood's water infrastructure strategy.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2016,
+    "headquarters": "Texas",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk9i3028jivhekdbezmnu",
+        "managerName": "Ridgewood",
+        "organizationName": "Ridgewood",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2017,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmmzt0545ivheg39x621l",
+        "date": "2016",
+        "event": "Undine was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2016-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmn0j0546ivhe0phpuw76",
+        "date": "2017",
+        "event": "Ridgewood Infrastructure acquired Undine.",
+        "category": "ACQUISITION",
+        "sortDate": "2017-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpso1p0cxmivhewl18atc0",
+        "label": "Ridgewoodinfrastructure — Undine",
+        "url": "https://ridgewoodinfrastructure.com/undine/",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Ridgewoodinfrastructure transaction or milestone detail",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpso2s0cxoivhe7yayk410",
+        "label": "Undinellc — Undine",
+        "url": "https://www.undinellc.com/about/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Undinellc company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpso5w0cxqivhee0t39ih0",
+        "label": "Undinellc — Undine",
+        "url": "https://www.undinellc.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Undinellc company profile",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "6cc98076324218c698815cdc41034a00ef674438217c59c573b9c6a050cca52f",
+  "afterImage": {
+    "id": "cmrxpjmzy018xivheiq5ev2lk",
+    "name": "Undine",
+    "aliases": [
+      "Undine LLC"
+    ],
+    "sector": "UTILITIES",
+    "subsector": "Regulated water and wastewater utilities",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Undine is a Houston-based regulated water and wastewater utility platform that acquires and operates systems across Texas. Ridgewood Infrastructure and Crosstimbers Capital Group have both provided equity funding since 2017 and continue to list Undine as an unrealized investment. Public sources do not disclose their exact percentages, control rights or acquisition SPVs. A reported 2025 sale process was not found to have produced a signed or closed transaction through September 1, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.undinellc.com/",
+    "yearFounded": 2016,
+    "headquarters": "Houston, Texas, United States",
+    "lastVerifiedAt": "2026-09-01T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk9i3028jivhekdbezmnu",
+        "managerName": "Ridgewood Infrastructure",
+        "organizationName": "Ridgewood Infrastructure",
+        "fundName": null,
+        "vehicleName": "Ridgewood Water & Strategic Infrastructure Fund; exact acquisition SPV not publicly disclosed",
+        "stake": "Current equity owner; exact percentage not publicly disclosed",
+        "investmentYear": 2017,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Crosstimbers Capital Group",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "XT Undine Co-Investment, LP",
+        "stake": "Current equity owner; exact percentage not publicly disclosed",
+        "investmentYear": 2017,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmmzt0545ivheg39x621l",
+        "date": "2016",
+        "event": "Undine was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2016-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.undinellc.com/about/"
+        ]
+      },
+      {
+        "id": "cmrxpmn0j0546ivhe0phpuw76",
+        "date": "Jun 2017",
+        "event": "Ridgewood Infrastructure and Crosstimbers Capital Group invested in Undine's regulated water and wastewater platform.",
+        "category": "ACQUISITION",
+        "sortDate": "2017-06-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://ridgewoodinfrastructure.com/undine/",
+          "https://www.crosstimbers.com/portfolio"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpso1p0cxmivhewl18atc0",
+        "label": "Ridgewood Infrastructure — Undine",
+        "url": "https://ridgewoodinfrastructure.com/undine/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current Ridgewood ownership and regulated-utility strategy",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpso2s0cxoivhe7yayk410",
+        "label": "Undinellc — Undine",
+        "url": "https://www.undinellc.com/about/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Company identity, operating history and Texas utility platform",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpso5w0cxqivhee0t39ih0",
+        "label": "Undinellc — Undine",
+        "url": "https://www.undinellc.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Undinellc company profile",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Crosstimbers — portfolio",
+        "url": "https://www.crosstimbers.com/portfolio",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current Crosstimbers ownership and June 2017 investment date",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Texas PUC — Undine equity funding response",
+        "url": "https://interchange.puc.texas.gov/Documents/56354_3818_1517901.PDF",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Regulatory confirmation of Ridgewood and Crosstimbers equity funding",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "84c64e785feeef942c0c010cc05bc7a847360331b87176c14372db5dee9b1f33",
+  "proposalSha256": "3ac4c30ff6c88772879e18b560fd244d6d76734633519e3e68cb421aea0b99f3"
+}

@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0413:wrm-waste-resource-management:deca62ff",
+  "taskIndex": 413,
+  "companyName": "WRM (Waste Resource Management)",
+  "generatedAt": "2026-09-02T01:25:00.543Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0413-wrm-waste-resource-management/attempt-1/locked-batch-v4-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 413,
+    "taskId": "ledger:0413:wrm-waste-resource-management:deca62ff",
+    "canonicalKey": "wrm-waste-resource-management|united-states",
+    "companyName": "WRM (Waste Resource Management)",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 85,
+    "managers": [
+      "Ridgewood Infrastructure"
+    ],
+    "actionScopes": {
+      "company": [
+        "CREATE_COMPANY"
+      ],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "085-ridgewood-infrastructure:holding:003:wrm-waste-resource-management"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://ridgewoodinfrastructure.com/news/ridgewood-infrastructure-acquires-wrm/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "No exact normalized production or seed match exists. Census evidence supports a new canonical company with 1 manager holding record(s).",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "wrm-waste-resource-management|united-states",
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpicyc003civheedbx5k0a",
+        "name": "Ridgewood Infrastructure",
+        "updatedAt": "2026-07-23T16:09:23.988Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0413:wrm-waste-resource-management:deca62ff",
+    "taskIndex": 413,
+    "canonicalKey": "wrm-waste-resource-management|united-states",
+    "capturedAt": "2026-09-02T01:25:00.543Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "edd18c4aa8c6daf4ae1f83c8573e5edac6fafbe0e1b1a330bae43dcd3c2dbe77",
+    "productionSnapshotSha256": "2b0c95649a6d040bea2895eedd2c33affb6ee4b7c0c5472fede3f6c36791984e",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "970349c0eb2efc1fc15411e1c9aec1e47564f61964efc693925e98137aa66f88",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "284f3f784385e78691aad1ae42b2c70951d34fc915b2ceb1a45b231e189f77ac",
+    "stateSha256": "9df4ddf762c7f70fcf304541f20181b80c71cd7581c466c5b89846567049467b",
+    "taskSnapshotSha256": "275d85132c261406a82510929fbefb6603946ed31105f966930374f041f5d642"
+  },
+  "contextSha256": "91ac24afef56a228b95bee7f7571cfb926805a32d79626e8284008d8b226d6d0"
+}

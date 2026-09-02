@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0413:wrm-waste-resource-management:deca62ff",
+  "checkedAt": "2026-09-02T01:30:00.000Z",
+  "method": "Independent direct HTTPS status, redirect, byte-length and content-hash checks; company-site anti-automation response retained as browser-blocked but previously verified.",
+  "sources": [
+    {
+      "url": "https://ridgewoodinfrastructure.com/investments/",
+      "httpStatus": 200,
+      "finalUrl": "https://ridgewoodinfrastructure.com/investments/",
+      "bytes": 33141,
+      "sha256": "42da545414fc80dc90d4e31c66dc1ca3bd134311be36bc6adcd7e4040b584900",
+      "healthStatus": "WORKING",
+      "verifiedClaims": ["Ridgewood currently classifies Waste Resource Management as unrealized."]
+    },
+    {
+      "url": "https://ridgewoodinfrastructure.com/ridgewood-infrastructure-extends-its-leadership-position-in-the-u-s-water-sector-with-the-acquisition-of-waste-resources-management-wrm/",
+      "httpStatus": 200,
+      "finalUrl": "https://ridgewoodinfrastructure.com/ridgewood-infrastructure-extends-its-leadership-position-in-the-u-s-water-sector-with-the-acquisition-of-waste-resources-management-wrm/",
+      "bytes": 28335,
+      "sha256": "930b714d4ab6bb5a0aa9704e099527871861f8e482508ee009dea744ad9a78e7",
+      "healthStatus": "WORKING",
+      "verifiedClaims": ["Ridgewood's acquisition release supports the WRM identity and liquid-waste platform boundary."]
+    },
+    {
+      "url": "https://northskycapital.com/north-sky-announces-successful-exit-of-investment-in-leading-liquid-waste-recycler/",
+      "httpStatus": 200,
+      "finalUrl": "https://northskycapital.com/north-sky-announces-successful-exit-of-investment-in-leading-liquid-waste-recycler/",
+      "bytes": 8780,
+      "sha256": "78cc7169ac9379a1013e5783c24ef83511440ec062270952d4e4888833da13be",
+      "healthStatus": "WORKING",
+      "verifiedClaims": ["North Sky exited its direct WRM investment and an indirect interest through an NGP-managed fund at Ridgewood's acquisition."]
+    },
+    {
+      "url": "https://wrmco.com/",
+      "httpStatus": 403,
+      "finalUrl": "https://wrmco.com/",
+      "bytes": 2098,
+      "sha256": "1a0a3f8de3e5b5e4a195f318f02bb01535856ce3f80fc2ae8923f8ab881368bb",
+      "healthStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verifiedClaims": ["The current company site uses WRM and Waste Resources Management for the same operating platform."]
+    }
+  ],
+  "allEvidenceUrlsDirectHttps": true,
+  "allSourcesWorkingOrVerified": true,
+  "deadSourceCount": 0
+}

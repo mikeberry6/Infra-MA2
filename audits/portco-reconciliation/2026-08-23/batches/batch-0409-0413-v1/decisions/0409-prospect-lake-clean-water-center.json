@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0409:prospect-lake-clean-water-center:c098d1e8",
+  "taskIndex": 409,
+  "companyName": "Prospect Lake Clean Water Center",
+  "outcome": "DEFERRED",
+  "decidedAt": "2026-09-02T01:36:00.000Z",
+  "rationale": "Defer the Prospect Lake correction while preserving the verified project-company identity and Ridgewood-IDE co-ownership evidence. The July 31, 2026 Prospect Lake Water, L.P. amendment has not been inspected for an ownership or general-partner change, and exact current stakes remain undisclosed. Applying an ownership after-image before resolving that filing would risk recording a stale cap table.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0409-prospect-lake-clean-water-center/attempt-1/locked-batch-v1-task-snapshot.json",
+    "sha256": "0cde4c9ab30c103cd0014044035a527feaf97e2d342bc2886fe91a3e252157b1"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0409-prospect-lake-clean-water-center/attempt-1/application-research-decision-v1.json",
+    "sha256": "c6a006b56691cdc1f04675e3fa7b2c45e35d287fae2f1d2e08ca79f76c92cac2"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0409-prospect-lake-clean-water-center/attempt-1/application-source-verification-v1.json",
+    "sha256": "7f3a738d508dac00776b9ad5d0318f9a1f9622db9680361a484643bffdee9ef5"
+  },
+  "evidence": [
+    {
+      "url": "https://fortlauderdale.legistar.com/View.ashx?GUID=6738A01F-C55C-42E3-8573-1308AD6890D7&ID=11613272&M=F",
+      "purpose": "Official City evidence for the Ridgewood-IDE project company, capital structure and platform boundary."
+    },
+    {
+      "url": "https://ridgewoodinfrastructure.com/wp-content/uploads/2026/04/Ridgewood_i3_04.26_SL.pdf",
+      "purpose": "Official Ridgewood evidence identifying IDE Technologies as an equity owner."
+    },
+    {
+      "url": "https://search.sunbiz.org/Inquiry/corporationsearch/SearchResultDetail?aggregateId=forlp-b23000000156-4aba5a63-d25e-4a64-9b7e-b00704c74ffc&directionType=ForwardList&inquirytype=EntityName&listNameOrder=PROSPECTJANITORIALSERVICES+P930000695060&searchNameOrder=PROSPECTLAKEWATER+B230000001560&searchTerm=PROSPECTIVE+RISK+MANAGEMENT+LLC",
+      "purpose": "Florida entity record showing the active limited partnership and the uninspected July 31, 2026 amendment."
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "0b421e4deac9cbef0f5caa71f6ee5129f3f9db4f7bddb293025d7175392738ee"
+}

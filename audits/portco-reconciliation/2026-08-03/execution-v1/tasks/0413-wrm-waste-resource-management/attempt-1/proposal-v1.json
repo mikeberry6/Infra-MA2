@@ -1,0 +1,325 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0413:wrm-waste-resource-management:deca62ff",
+  "taskIndex": 413,
+  "asOfDate": "2026-09-01",
+  "generatedAt": "2026-09-02T01:34:00.000Z",
+  "canonicalKey": "waste-resource-management|united-states",
+  "companyName": "WRM (Waste Resource Management)",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER"
+  ],
+  "sourceHoldingIds": [
+    "085-ridgewood-infrastructure:holding:003:wrm-waste-resource-management"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Consolidate the WRM census identity into the existing Waste Resource Management record, keep Ridgewood active, correct the false realized milestone, and preserve NGP Energy Technology Partners and North Sky Capital as former investors without inferring stakes or entry dates.",
+  "evidence": [
+    {
+      "url": "https://ridgewoodinfrastructure.com/investments/",
+      "purpose": "Official current Ridgewood portfolio status.",
+      "supports": [
+        "Waste Resource Management remains unrealized",
+        "Ridgewood remains the current owner"
+      ]
+    },
+    {
+      "url": "https://ridgewoodinfrastructure.com/ridgewood-infrastructure-extends-its-leadership-position-in-the-u-s-water-sector-with-the-acquisition-of-waste-resources-management-wrm/",
+      "purpose": "Official acquisition and platform-identity evidence.",
+      "supports": [
+        "Ridgewood acquired the WRM platform in late 2023",
+        "WRM is a liquid-waste treatment and recycling platform"
+      ]
+    },
+    {
+      "url": "https://northskycapital.com/north-sky-announces-successful-exit-of-investment-in-leading-liquid-waste-recycler/",
+      "purpose": "Official predecessor-owner exit evidence.",
+      "supports": [
+        "North Sky exited its direct WRM investment",
+        "North Sky also held an indirect interest through an NGP-managed fund",
+        "The former interests ended when Ridgewood acquired WRM"
+      ]
+    },
+    {
+      "url": "https://wrmco.com/",
+      "purpose": "Official current company identity and platform boundary.",
+      "supports": [
+        "WRM and Waste Resources Management identify one platform",
+        "Operating subsidiaries and facilities remain beneath the platform"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "a4a0c20175f3e4af272d254ada646cc21d82607dfb9ba4d4b1fceb08042dbb03",
+  "currentCompanySnapshotSha256": "1a42eaa438aac2b5981380c06d9f61648fb437e6abc4cfd5e8942cdbc5a424c0",
+  "executionLock": {
+    "taskSnapshotSha256": "cc5853ccc5379ac0554cd1d824e77e950638be9a0477e9dfbd72cb2af7300d2f",
+    "taskStateSha256": "9029eea2d5fc1eea168ab55102469fd9ab77e0331c201ef74d75814bb9e24b3b",
+    "taskDependencySha256": "7fef718ca8f6dc92753c5fba9abd9160a66fa9f13c8fe489686c94f6b04fd377",
+    "seedEntrySha256": "e9d76f0092fce87b2497a837b5b3b0ab8246bcb8023ee209ab8b8f52dd5de7d9",
+    "dependencies": {
+      "ownershipPeriodsSha256": "7a9abcd028e1147b195f40a203348ddded2e72086025efbf6a5a56e72376253e",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "444dbe44b49bb2dd5235d64436c770b3e1dedc3337f0d4021f5d125ff30696e2",
+      "citationsSha256": "3353094448d3a1ce344fdbd30c199ef60dd80a3b86cc101c1d6e4ce604d55bf7",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpicyc003civheedbx5k0a",
+        "name": "Ridgewood Infrastructure",
+        "updatedAt": "2026-07-23T16:09:23.988Z"
+      },
+      {
+        "id": "cmrxpikot005rivhewkpj6ng8",
+        "name": "Ridgewood",
+        "updatedAt": "2026-07-23T16:09:34.013Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjn16018zivhe8i1og54q",
+    "name": "Waste Resource Management",
+    "aliases": [],
+    "sector": "UTILITIES",
+    "subsector": "Industrial wastewater and liquid-waste treatment",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Waste Resource Management provides collection, treatment, recycling, and disposal services for liquid waste and industrial wastewater streams. Its customer base includes commercial and industrial generators that require compliant processing of wastewater, sludges, and related liquid residuals. The operating model is asset heavy, with treatment facilities, transportation capabilities, and processing permits forming the core infrastructure base. Ridgewood stated at acquisition that the platform operated 13 treatment facilities in high-growth markets across Florida, Nevada, Texas, and Colorado. Ridgewood acquired the company in late 2023 as part of its water and environmental infrastructure strategy. The investment added a treatment and recycling platform to Ridgewood's existing water-sector portfolio.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Florida, Nevada, Texas, and Colorado",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk9lf028livhe59iv90gl",
+        "managerName": "Ridgewood",
+        "organizationName": "Ridgewood",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmn2u0549ivheaqa42gsc",
+        "date": "2023",
+        "event": "Ridgewood said WRM operated 13 treatment facilities at the time of acquisition.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmn3e054aivhemt33sr8t",
+        "date": "Dec 2023",
+        "event": "Ridgewood Infrastructure announced the acquisition of Waste Resource Management.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmn40054bivhe8tlbvy8i",
+        "date": "2026",
+        "event": "Ridgewood listed WRM as a realized portfolio investment.",
+        "category": "FINANCING",
+        "sortDate": "2026-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsocf0cy2ivhelwx9ltzm",
+        "label": "Ridgewoodinfrastructure — Waste Resource Management",
+        "url": "https://ridgewoodinfrastructure.com/waste-resource-management/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Ridgewoodinfrastructure — Waste Resource Management",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpsodj0cy4ivhehu8c6c01",
+        "label": "Ridgewoodinfrastructure — Waste Resource Management",
+        "url": "https://ridgewoodinfrastructure.com/ridgewood-infrastructure-extends-its-leadership-position-in-the-u-s-water-sector-with-the-acquisition-of-waste-resources-management-wrm/",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Ridgewoodinfrastructure transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsoeh0cy6ivhewrwte2du",
+        "label": "Wrmco — Waste Resource Management",
+        "url": "https://wrmco.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Wrmco company profile",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "1a42eaa438aac2b5981380c06d9f61648fb437e6abc4cfd5e8942cdbc5a424c0",
+  "afterImage": {
+    "id": "cmrxpjn16018zivhe8i1og54q",
+    "name": "Waste Resource Management",
+    "aliases": [
+      "WRM",
+      "WRM Companies",
+      "Waste Resources Management"
+    ],
+    "sector": "UTILITIES",
+    "subsector": "Industrial wastewater and liquid-waste treatment",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Waste Resource Management, also known as WRM, owns and operates liquid-waste collection, treatment, recycling and disposal infrastructure across multiple U.S. markets. Ridgewood Infrastructure acquired the platform in late 2023 and continues to classify it as an unrealized investment. NGP Energy Technology Partners and North Sky Capital were predecessor investors that exited when Ridgewood acquired the company. Exact current and former percentage stakes, entry dates and acquisition vehicles are not publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://wrmco.com/",
+    "yearFounded": null,
+    "headquarters": "Florida, Nevada, Texas, and Colorado",
+    "lastVerifiedAt": "2026-09-01T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk9lf028livhe59iv90gl",
+        "managerName": "Ridgewood Infrastructure",
+        "organizationName": "Ridgewood Infrastructure",
+        "fundName": null,
+        "vehicleName": "Exact acquisition vehicle not publicly disclosed",
+        "stake": "Acquired the platform; exact percentage not publicly disclosed",
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "NGP Energy Capital Management",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "NGP Energy Technology Partners-managed fund; exact vehicle not publicly disclosed",
+        "stake": "Former owner; exact percentage not publicly disclosed",
+        "investmentYear": null,
+        "exitYear": 2023,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      },
+      {
+        "id": null,
+        "managerName": "North Sky Capital",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Direct and indirect WRM investments; exact vehicles not publicly disclosed",
+        "stake": "Former investor; exact percentage not publicly disclosed",
+        "investmentYear": null,
+        "exitYear": 2023,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmn2u0549ivheaqa42gsc",
+        "date": "2023",
+        "event": "WRM operated 13 treatment facilities across Florida, Nevada, Texas and Colorado at the time of Ridgewood's acquisition.",
+        "category": "OTHER",
+        "sortDate": "2023-01-01T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://ridgewoodinfrastructure.com/ridgewood-infrastructure-extends-its-leadership-position-in-the-u-s-water-sector-with-the-acquisition-of-waste-resources-management-wrm/"
+        ]
+      },
+      {
+        "id": "cmrxpmn3e054aivhemt33sr8t",
+        "date": "Dec 2023",
+        "event": "Ridgewood Infrastructure acquired Waste Resource Management; NGP Energy Technology Partners and North Sky Capital exited their predecessor investments.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-12-28T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://ridgewoodinfrastructure.com/ridgewood-infrastructure-extends-its-leadership-position-in-the-u-s-water-sector-with-the-acquisition-of-waste-resources-management-wrm/",
+          "https://northskycapital.com/north-sky-announces-successful-exit-of-investment-in-leading-liquid-waste-recycler/"
+        ]
+      },
+      {
+        "id": "cmrxpmn40054bivhe8tlbvy8i",
+        "date": "2026",
+        "event": "Ridgewood continued to list Waste Resource Management as an unrealized current portfolio investment.",
+        "category": "OTHER",
+        "sortDate": "2026-09-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://ridgewoodinfrastructure.com/investments/"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsocf0cy2ivhelwx9ltzm",
+        "label": "Ridgewood Infrastructure — Waste Resource Management",
+        "url": "https://ridgewoodinfrastructure.com/waste-resource-management/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current Ridgewood ownership and unrealized status",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpsodj0cy4ivhehu8c6c01",
+        "label": "Ridgewood Infrastructure — WRM acquisition",
+        "url": "https://ridgewoodinfrastructure.com/ridgewood-infrastructure-extends-its-leadership-position-in-the-u-s-water-sector-with-the-acquisition-of-waste-resources-management-wrm/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Late-2023 Ridgewood acquisition and platform scope",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsoeh0cy6ivhewrwte2du",
+        "label": "WRM — company website",
+        "url": "https://wrmco.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current company identity and operating platform boundary",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Ridgewood Infrastructure — investments",
+        "url": "https://ridgewoodinfrastructure.com/investments/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current unrealized portfolio status",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "North Sky Capital — WRM exit",
+        "url": "https://northskycapital.com/north-sky-announces-successful-exit-of-investment-in-leading-liquid-waste-recycler/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "North Sky and NGP predecessor-investor exit at Ridgewood acquisition",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "634aea4ade1816cad3dba3dae299126ea856806c3f9b7ca2af553017f4d001ac",
+  "proposalSha256": "42a8943b0f7e78beb67316accc9188fd1dcae057abec15141d1d08ef7abb3d64"
+}

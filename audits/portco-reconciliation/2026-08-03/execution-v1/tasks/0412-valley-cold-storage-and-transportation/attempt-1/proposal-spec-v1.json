@@ -1,0 +1,142 @@
+{
+  "generatedAt": "2026-09-02T01:34:00.000Z",
+  "actions": ["CORRECT_COMPANY", "ADD_OWNER"],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "reviewedSeedRetirementTaskIds": [],
+  "rationale": "Keep one Valley Cold platform, normalize Ridgewood's ownership period without inferring an undisclosed fund or acquisition SPV, and record Clay and Jennifer Bush as separately disclosed current founder owners without inferring percentages or an exact legal closing date.",
+  "evidence": [
+    {
+      "url": "https://ridgewoodinfrastructure.com/investments/",
+      "purpose": "Official current Ridgewood portfolio status.",
+      "supports": ["Valley Cold remains unrealized", "Ridgewood remains a current owner"]
+    },
+    {
+      "url": "https://ridgewoodinfrastructure.com/ridgewood-infrastructure-announces-acquisition-of-valley-cold/",
+      "purpose": "Official investment announcement and founder-led transaction evidence.",
+      "supports": ["Ridgewood invested in Valley Cold in 2024", "Clay and Jennifer Bush built the acquired platform"]
+    },
+    {
+      "url": "https://ridgewoodinfrastructure.com/wp-content/uploads/2025/03/Ridgewood_Infra_AnnualReview_March2025.pdf",
+      "purpose": "Official Q4 2024 close and recapitalization evidence.",
+      "supports": ["The transaction closed in Q4 2024", "The transaction was a founder-led recapitalization"]
+    },
+    {
+      "url": "https://www.valleycoldstore.com/about",
+      "purpose": "Official current founder-ownership and operating-history evidence.",
+      "supports": ["Clay Bush is identified as an owner", "Jennifer Bush is identified as an owner", "The company was established in 2008"]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "companyFieldUpdates": {
+    "aliases": ["Valley Cold"],
+    "website": "https://www.valleycoldstore.com/",
+    "yearFounded": 2008,
+    "headquarters": "Las Cruces, New Mexico, United States",
+    "description": "Valley Cold Storage & Transportation owns and operates temperature-controlled warehousing and logistics infrastructure serving food, agriculture and distribution customers in southern New Mexico, west Texas and northern Mexico. The business was established in 2008 and operates cold-storage facilities in Las Cruces and Santa Teresa. Ridgewood Infrastructure completed a founder-led recapitalization in Q4 2024. Clay Bush and Jennifer Bush continue to be identified by the company as owners; all current percentage stakes, the Ridgewood fund and the acquisition SPV are not publicly disclosed.",
+    "lastVerifiedAt": "2026-09-01T00:00:00.000Z"
+  },
+  "ownershipPeriodUpdates": [
+    {
+      "id": "cmrxpk9kr028kivher9994mn5",
+      "set": {
+        "managerName": "Ridgewood Infrastructure",
+        "organizationName": "Ridgewood Infrastructure",
+        "fundName": null,
+        "vehicleName": "Exact acquisition SPV not publicly disclosed",
+        "stake": "Recapitalization investment; exact percentage not publicly disclosed",
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    }
+  ],
+  "ownershipPeriodRemovals": [],
+  "ownershipPeriodAdditions": [
+    {
+      "id": null,
+      "managerName": "Clay Bush",
+      "organizationName": null,
+      "fundName": null,
+      "vehicleName": "Founder ownership; exact vehicle not publicly disclosed",
+      "stake": "Current owner; exact percentage not publicly disclosed",
+      "investmentYear": null,
+      "exitYear": null,
+      "isActive": true,
+      "transactionState": "CLOSED_ACTIVE"
+    },
+    {
+      "id": null,
+      "managerName": "Jennifer Bush",
+      "organizationName": null,
+      "fundName": null,
+      "vehicleName": "Founder ownership; exact vehicle not publicly disclosed",
+      "stake": "Current owner; exact percentage not publicly disclosed",
+      "investmentYear": null,
+      "exitYear": null,
+      "isActive": true,
+      "transactionState": "CLOSED_ACTIVE"
+    }
+  ],
+  "pendingOwnershipTransactionUpdates": [],
+  "pendingOwnershipTransactionAdditions": [],
+  "milestoneUpdates": [
+    {
+      "id": "cmrxpmn1d0547ivhe40hi3b5s",
+      "set": {
+        "date": "2008",
+        "event": "Valley Cold Storage & Transportation was established.",
+        "category": "FOUNDING",
+        "sortDate": "2008-01-01T05:00:00.000Z",
+        "evidenceUrls": ["https://www.valleycoldstore.com/about"]
+      }
+    },
+    {
+      "id": "cmrxpmn1t0548ivhekxd841kr",
+      "set": {
+        "date": "Q4 2024",
+        "event": "Ridgewood Infrastructure completed a founder-led recapitalization of Valley Cold.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-12-03T05:00:00.000Z",
+        "evidenceUrls": ["https://ridgewoodinfrastructure.com/ridgewood-infrastructure-announces-acquisition-of-valley-cold/", "https://ridgewoodinfrastructure.com/wp-content/uploads/2025/03/Ridgewood_Infra_AnnualReview_March2025.pdf"]
+      }
+    }
+  ],
+  "milestoneTransfers": [],
+  "citationUpdates": [
+    {
+      "id": "cmrxpso740cxsivhe9708m232",
+      "set": {
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current Ridgewood ownership and unrealized portfolio status"
+      }
+    },
+    {
+      "id": "cmrxpso840cxuivhe0l3mgm4o",
+      "set": {
+        "evidenceLabel": "December 3, 2024 investment announcement and founder-led transaction"
+      }
+    }
+  ],
+  "citationAdditions": [
+    {
+      "id": null,
+      "label": "Valley Cold — About",
+      "url": "https://www.valleycoldstore.com/about",
+      "sourceType": "WEBSITE",
+      "purpose": "COMPANY_PROFILE",
+      "evidenceLabel": "Founding history, current founder owners and operating footprint",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "Ridgewood Infrastructure — 2025 annual review",
+      "url": "https://ridgewoodinfrastructure.com/wp-content/uploads/2025/03/Ridgewood_Infra_AnnualReview_March2025.pdf",
+      "sourceType": "PRESENTATION",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Q4 2024 close and founder-led recapitalization",
+      "isPrimary": false
+    }
+  ]
+}

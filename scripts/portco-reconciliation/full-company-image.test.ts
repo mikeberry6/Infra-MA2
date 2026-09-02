@@ -97,6 +97,14 @@ describe("legacy full production company image", () => {
     expect(companyImageSha256(image)).toMatch(/^[a-f0-9]{64}$/);
   });
 
+  it("preserves a legacy HTTP citation so a correction can replace it", () => {
+    const legacy = legacySnapshot();
+    const citation = (legacy.citations as Array<Record<string, unknown>>)[0];
+    (citation.source as Record<string, unknown>).url = "http://acme.example.com/legacy";
+    const image = legacyFullCompanySnapshotToImage(legacy);
+    expect(image.citations[0].url).toBe("http://acme.example.com/legacy");
+  });
+
   it("rejects non-empty redirects and unattributable ownership", () => {
     const redirected = legacySnapshot();
     redirected.redirects = [{ retiredId: "old_1", reason: "CANONICAL_MERGE", createdAt: NOW }];

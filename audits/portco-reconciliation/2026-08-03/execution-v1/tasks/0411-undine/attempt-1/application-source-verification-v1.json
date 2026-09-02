@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0411:undine:ce0cb177",
+  "checkedAt": "2026-09-02T01:30:00.000Z",
+  "method": "Independent direct HTTPS status, redirect, byte-length and content-hash checks.",
+  "sources": [
+    {
+      "url": "https://ridgewoodinfrastructure.com/undine/",
+      "httpStatus": 200,
+      "finalUrl": "https://ridgewoodinfrastructure.com/undine/",
+      "bytes": 33947,
+      "sha256": "b550a4cf038d1a98c55488945841eede05a81027959f62f1c4eb5684c029194b",
+      "healthStatus": "WORKING",
+      "verifiedClaims": ["Ridgewood currently lists Undine as an unrealized regulated water and wastewater utility platform."]
+    },
+    {
+      "url": "https://www.crosstimbers.com/portfolio",
+      "httpStatus": 200,
+      "finalUrl": "https://www.crosstimbers.com/portfolio",
+      "bytes": 8182,
+      "sha256": "aee97c5178f6545bd5cdd4e9c52f0561fbbee66aaf0ae53c139a6ae3e1f3ff85",
+      "healthStatus": "WORKING",
+      "verifiedClaims": ["Crosstimbers lists Undine as a current unrealized investment dated June 2017."]
+    },
+    {
+      "url": "https://interchange.puc.texas.gov/Documents/56354_3818_1517901.PDF",
+      "httpStatus": 200,
+      "finalUrl": "https://interchange.puc.texas.gov/Documents/56354_3818_1517901.PDF",
+      "bytes": 180529,
+      "sha256": "4cfa194438a1e63ad4ebf91cfd505802427f7527121486cefa25b4b4eeec09a2",
+      "healthStatus": "WORKING",
+      "verifiedClaims": ["Undine's regulatory response identifies Ridgewood and Crosstimbers as equity funders and Texas Capital Bank as debt only."]
+    }
+  ],
+  "allEvidenceUrlsDirectHttps": true,
+  "allSourcesWorkingOrVerified": true,
+  "deadSourceCount": 0
+}

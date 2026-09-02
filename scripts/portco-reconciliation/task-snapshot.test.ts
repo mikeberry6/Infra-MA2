@@ -483,6 +483,27 @@ describe("task snapshot target resolution", () => {
     });
   });
 
+  it("pins a leading acronym with a parenthetical legal-name expansion", () => {
+    const active = entry({
+      taskId: "task-wrm",
+      canonicalKey: "wrm-waste-resource-management|united-states",
+      companyName: "WRM (Waste Resource Management)",
+      country: "United States",
+      decisionStatus: "READY_FOR_PROPOSAL",
+      sourceHoldingIds: ["holding-wrm"],
+    });
+
+    expect(resolveTaskSnapshotTarget({
+      queueEntry: active,
+      queueEntries: [active],
+      reviewedTargetCompanyId: "company-wrm",
+    })).toEqual({
+      method: "REVIEWED_POST_QUEUE_PARENTHETICAL_ALIAS_IDENTITY",
+      targetCompanyId: "company-wrm",
+      linkedQueueTaskId: null,
+    });
+  });
+
   it("pins a reviewed manager short name to one existing renewable descriptor identity", () => {
     const active = entry({
       taskId: "task-sequitur",

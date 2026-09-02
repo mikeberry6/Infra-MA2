@@ -1,0 +1,262 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0412:valley-cold-storage-and-transportation:13456440",
+  "taskIndex": 412,
+  "companyName": "Valley Cold Storage & Transportation",
+  "generatedAt": "2026-09-02T01:13:01.934Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0412-valley-cold-storage-and-transportation/attempt-1/locked-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 412,
+    "taskId": "ledger:0412:valley-cold-storage-and-transportation:13456440",
+    "canonicalKey": "valley-cold-storage-and-transportation|united-states",
+    "companyName": "Valley Cold Storage & Transportation",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 85,
+    "managers": [
+      "Ridgewood Infrastructure"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "085-ridgewood-infrastructure:holding:006:valley-cold-storage-and-transportation"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjn0j018yivhek81ibli0"
+    ],
+    "seedKeys": [
+      "valley cold storage & transportation|United States"
+    ],
+    "evidenceUrls": [
+      "https://ridgewoodinfrastructure.com/news/ridgewood-infrastructure-acquires-valley-cold-storage/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_OWNER requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjn0j018yivhek81ibli0",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "valley-cold-storage-and-transportation|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjn0j018yivhek81ibli0",
+    "name": "Valley Cold Storage & Transportation",
+    "aliases": [],
+    "sector": "TRANSPORTATION",
+    "subsector": "Cold storage and temperature-controlled logistics",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Valley Cold Storage & Transportation provides temperature-controlled warehousing and related logistics services in southern New Mexico. Its customers include food, agriculture, food-service, and distribution businesses that need short- and long-term refrigerated storage near the U.S.-Mexico border. The business follows an asset-heavy operating model built around refrigerated warehouse infrastructure and associated transportation support rather than a brokered logistics model. Public company materials describe two strategically located facilities along the I-10 and I-25 corridors serving southern New Mexico, northern Mexico, and west Texas. Valley Cold's website identifies 2020 as the year of the current operating platform's launch, and Ridgewood Infrastructure acquired the company in 2024.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "New Mexico",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk9kr028kivher9994mn5",
+        "managerName": "Ridgewood",
+        "organizationName": "Ridgewood",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmn1d0547ivhe40hi3b5s",
+        "date": "2020",
+        "event": "Valley Cold’s website identifies the operating business in its current form.",
+        "category": "FOUNDING",
+        "sortDate": "2020-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmn1t0548ivhekxd841kr",
+        "date": "Dec 3, 2024",
+        "event": "Ridgewood Infrastructure announced its acquisition of Valley Cold.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-12-03T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpso740cxsivhe9708m232",
+        "label": "Ridgewoodinfrastructure — Valley Cold Storage & Transportation",
+        "url": "https://ridgewoodinfrastructure.com/valley-cold-storage/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Ridgewoodinfrastructure — Valley Cold Storage & Transportation",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpso840cxuivhe0l3mgm4o",
+        "label": "Investment date source — Ridgewood — Valley Cold Storage & Transportation",
+        "url": "https://ridgewoodinfrastructure.com/ridgewood-infrastructure-announces-acquisition-of-valley-cold/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Ridgewood initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpso970cxwivhel5beg4kt",
+        "label": "Valleycoldstore — Valley Cold Storage & Transportation",
+        "url": "https://www.valleycoldstore.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Valleycoldstore company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsoa90cxyivhebr0hy4a0",
+        "label": "Valleycoldstore — Valley Cold Storage & Transportation",
+        "url": "https://www.valleycoldstore.com/locations",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Valleycoldstore operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsobb0cy0ivheri1o6rnz",
+        "label": "PR Newswire — Valley Cold Storage & Transportation",
+        "url": "https://www.prnewswire.com/news-releases/ridgewood-infrastructure-announces-acquisition-of-valley-cold-302320371.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "PR Newswire transaction or milestone detail",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Valley Cold Storage & Transportation",
+    "investmentFirm": "Ridgewood",
+    "sector": "Transportation",
+    "subsector": "Cold storage and temperature-controlled logistics",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "Valley Cold Storage & Transportation provides temperature-controlled warehousing and related logistics services in southern New Mexico. Its customers include food, agriculture, food-service, and distribution businesses that need short- and long-term refrigerated storage near the U.S.-Mexico border. The business follows an asset-heavy operating model built around refrigerated warehouse infrastructure and associated transportation support rather than a brokered logistics model. Public company materials describe two strategically located facilities along the I-10 and I-25 corridors serving southern New Mexico, northern Mexico, and west Texas. Valley Cold's website identifies 2020 as the year of the current operating platform's launch, and Ridgewood Infrastructure acquired the company in 2024.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2024,
+    "headquarters": "New Mexico",
+    "milestones": [
+      {
+        "date": "2020",
+        "event": "Valley Cold’s website identifies the operating business in its current form.",
+        "category": "Founding"
+      },
+      {
+        "date": "Dec 3, 2024",
+        "event": "Ridgewood Infrastructure announced its acquisition of Valley Cold.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Ridgewoodinfrastructure — Valley Cold Storage & Transportation",
+        "url": "https://ridgewoodinfrastructure.com/valley-cold-storage/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Investment date source — Ridgewood — Valley Cold Storage & Transportation",
+        "url": "https://ridgewoodinfrastructure.com/ridgewood-infrastructure-announces-acquisition-of-valley-cold/",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Valleycoldstore — Valley Cold Storage & Transportation",
+        "url": "https://www.valleycoldstore.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Valleycoldstore — Valley Cold Storage & Transportation",
+        "url": "https://www.valleycoldstore.com/locations",
+        "type": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "PR Newswire — Valley Cold Storage & Transportation",
+        "url": "https://www.prnewswire.com/news-releases/ridgewood-infrastructure-announces-acquisition-of-valley-cold-302320371.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Ridgewood",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2024,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpikot005rivhewkpj6ng8",
+        "name": "Ridgewood",
+        "updatedAt": "2026-07-23T16:09:34.013Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0412:valley-cold-storage-and-transportation:13456440",
+    "taskIndex": 412,
+    "canonicalKey": "valley-cold-storage-and-transportation|united-states",
+    "capturedAt": "2026-09-02T01:13:01.934Z",
+    "databaseRevision": "revision:f2f2f0b086abaa41452749dbea0805d25e299a1dbe2fee58028ae61e78e5bc94",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "afa21f63319dbe76039d76e8a6d789a9846dd06245fc41937c85dfe2dc139ce6",
+    "productionSnapshotSha256": "300756b55635002f508c69f78815f1651b0d063b0880dbb243ba2e22ec3ad0e1",
+    "targetCompanySnapshotSha256": "bc6944c497bd720d5b7c151b9c62caabf6c4594a49ec51a0c595e4861b13fff5",
+    "seedEntrySha256": "81325d6526b449f03521706edbc907acb0ad13827fcdcf68879388f289f2c416",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "fff8e76f4c48952366325766be816d10fc6a9ab1de8a9b3f190c138c935d8eef",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "4202dc850f6a2d1332455f8d457ae75933d53f3e47ab040ba6b87296824c9179",
+      "citationsSha256": "46762ca169c21c220ef3a97761333eac46e1ca3fac05f6cf82e7422d20d078a2",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "8bde7f1abf5f91fae99d23f55e221e455b67b8cd4bf0b9e5a4e4e47d77839e43",
+    "stateSha256": "7b6b5ae23fb31218f06184b1713e043741224736059137345ff3a39cb6e1dbd5",
+    "taskSnapshotSha256": "01be91f66eb691c5aeae697751d70cb909218a69425be36e169e00b0fdcd9652"
+  },
+  "contextSha256": "5a38fda9891f7f51046f63aaf83d3d1b0c5a113cd65c8035941882e7b75a44c8"
+}

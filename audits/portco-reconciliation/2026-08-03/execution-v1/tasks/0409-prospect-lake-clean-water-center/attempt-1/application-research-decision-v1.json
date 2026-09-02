@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0409:prospect-lake-clean-water-center:c098d1e8",
+  "taskIndex": 409,
+  "companyName": "Prospect Lake Clean Water Center",
+  "asOfDate": "2026-09-01",
+  "decision": "DEFERRED",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-02T01:30:00.000Z",
+  "result": {
+    "decision": "DEFERRED",
+    "rationale": "Defer the Prospect Lake correction while preserving the verified project-company identity and Ridgewood-IDE co-ownership evidence. The July 31, 2026 Prospect Lake Water, L.P. amendment has not been inspected for an ownership or general-partner change, and exact current stakes remain undisclosed. Applying an ownership after-image before resolving that filing would risk recording a stale cap table.",
+    "evidence": [
+      {
+        "url": "https://fortlauderdale.legistar.com/View.ashx?GUID=6738A01F-C55C-42E3-8573-1308AD6890D7&ID=11613272&M=F",
+        "purpose": "Official City evidence for the Ridgewood-IDE project company, capital structure and platform boundary."
+      },
+      {
+        "url": "https://ridgewoodinfrastructure.com/wp-content/uploads/2026/04/Ridgewood_i3_04.26_SL.pdf",
+        "purpose": "Official Ridgewood evidence identifying IDE Technologies as an equity owner."
+      },
+      {
+        "url": "https://search.sunbiz.org/Inquiry/corporationsearch/SearchResultDetail?aggregateId=forlp-b23000000156-4aba5a63-d25e-4a64-9b7e-b00704c74ffc&directionType=ForwardList&inquirytype=EntityName&listNameOrder=PROSPECTJANITORIALSERVICES+P930000695060&searchNameOrder=PROSPECTLAKEWATER+B230000001560&searchTerm=PROSPECTIVE+RISK+MANAGEMENT+LLC",
+        "purpose": "Florida entity record showing the active limited partnership and the uninspected July 31, 2026 amendment."
+      }
+    ],
+    "unresolvedQuestions": [
+      "Whether the July 31, 2026 LP amendment changed ownership or the general-partner structure.",
+      "The exact current Ridgewood and IDE percentage stakes.",
+      "Final commissioning and commercial-operation acceptance."
+    ]
+  },
+  "lineage": {
+    "sourceDecision": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0409-prospect-lake-clean-water-center/attempt-1/research-decision.json",
+    "basis": "Validated research resolves the project boundary but identifies an uninspected post-research entity filing that blocks a current ownership after-image."
+  }
+}

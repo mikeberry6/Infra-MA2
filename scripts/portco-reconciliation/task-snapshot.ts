@@ -482,7 +482,16 @@ function dbaAlias(value: string): string | null {
 
 function parentheticalAcronymBase(value: string): string | null {
   const match = value.match(/^(.*?)\s*\(\s*([A-Z][A-Z0-9&.-]{1,15})\s*\)\s*$/);
-  return match?.[1]?.trim() || null;
+  if (match?.[1]?.trim()) return match[1].trim();
+  const expansion = value.match(/^([A-Z][A-Z0-9&.-]{1,15})\s*\(\s*([^)]+?)\s*\)\s*$/);
+  if (!expansion?.[1] || !expansion[2]) return null;
+  const acronym = expansion[1].replace(/[^A-Z0-9]/g, "");
+  const expansionInitials = expansion[2]
+    .split(/[^A-Za-z0-9]+/)
+    .filter((token) => token && !["and", "of", "the"].includes(token.toLocaleLowerCase("en-US")))
+    .map((token) => token[0].toLocaleUpperCase("en-US"))
+    .join("");
+  return acronym === expansionInitials ? expansion[2].trim() : null;
 }
 
 const LEGAL_SUFFIXES = new Set([

@@ -1,0 +1,288 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_MANIFEST",
+  "methodologyVersion": "PORTCO_APPLY_BATCH_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0409-0413-v3",
+  "createdAt": "2026-09-02T01:40:00.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "ab8cff62d7311c1729f1f06954ecaf7908f1ecfdde89550dff9aa7d1cfb3aff2"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0409:prospect-lake-clean-water-center:c098d1e8",
+      "taskIndex": 409,
+      "companyName": "Prospect Lake Clean Water Center",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0409-0413-v1/decisions/0409-prospect-lake-clean-water-center.json",
+        "sha256": "0b421e4deac9cbef0f5caa71f6ee5129f3f9db4f7bddb293025d7175392738ee"
+      }
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0410:sierra-railroad-company:b9c99f78",
+      "taskIndex": 410,
+      "companyName": "Sierra Railroad Company",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0409-0413-v1/decisions/0410-sierra-railroad-company.json",
+        "sha256": "d8fee61adee948972e745ec34418a9955eaadc2006d62c16dab8250a45a76aa5"
+      }
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0411:undine:ce0cb177",
+      "taskIndex": 411,
+      "companyName": "Undine",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0411-undine/attempt-1/proposal-v2.json",
+        "sha256": "edfb02da92528df22f95eaf682fe7fe9c52b655cfe1d5e02a574d0d185ada488"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0411-undine-v2.json",
+        "sha256": "bd65b3e01ad565180a30df395bac454a38e50b90068a1f80bdd42641dcbd1bef"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0411-undine/attempt-1/locked-batch-v2-production-snapshot.json",
+        "sha256": "d6ff6376a968952b83216808d4b9035c991db36fe9572dbb490f892c88020699"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0411-undine/attempt-1/locked-batch-v2-task-snapshot.json",
+        "sha256": "1d54d9ffbaad2284e148ff97d6bb59b1c8382727945e6e58982ac8a55e6b1e86"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0411-undine/attempt-1/observed-batch-v1-task-snapshot.json",
+        "sha256": "5504493ed59c4940b7ce2d5b6bc428e1af0536d1003c0ca18b4c64f58cd86035"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0411-undine/attempt-1/application-research-decision-v1.json",
+        "sha256": "84aa0d927b90d45d243171afc804cfb5076469beac52afa75757dfdc784b7728"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0411-undine/attempt-1/application-source-verification-v1.json",
+        "sha256": "ee0ba045e0d5569d69e4856c3c92c3e4b01e55f1c77698de1c08008c42ac3d5d"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "e343bfc53f62e05fadba350fcbacb5340c104da1f2da3fe8b68ef8f196424100",
+      "dependencySha256": "60ea35b2be27a68f460917280132259994d36cad2876e66d414c78c623d0b647",
+      "afterImageSha256": "5614b2242e611bc134d3b0ddfececa1c3f2ee8ff533c57a87dd2120b5ca7c7d2",
+      "targetClaims": [
+        "canonical:undine|united-states",
+        "company:cmrxpjmzy018xivheiq5ev2lk",
+        "relation:cmrxpk9i3028jivhekdbezmnu",
+        "relation:cmrxpmmzt0545ivheg39x621l",
+        "relation:cmrxpmn0j0546ivhe0phpuw76",
+        "relation:cmrxpso1p0cxmivhewl18atc0",
+        "relation:cmrxpso2s0cxoivhe7yayk410",
+        "relation:cmrxpso5w0cxqivhee0t39ih0",
+        "seed:undine|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://interchange.puc.texas.gov/Documents/56354_3818_1517901.PDF",
+          "label": "Texas PUC — Undine equity funding response",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://ridgewoodinfrastructure.com/undine/",
+          "label": "Ridgewoodinfrastructure — Undine",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.crosstimbers.com/portfolio",
+          "label": "Crosstimbers — portfolio",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.undinellc.com/",
+          "label": "Undinellc — Undine",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.undinellc.com/about/",
+          "label": "Undinellc — Undine",
+          "sourceType": "WEBSITE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0412:valley-cold-storage-and-transportation:13456440",
+      "taskIndex": 412,
+      "companyName": "Valley Cold Storage & Transportation",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0412-valley-cold-storage-and-transportation/attempt-1/proposal-v3.json",
+        "sha256": "59e37e92b64ac0ea1fd0fd04f085b49c2d32a5c664be2848df9d92377c40c218"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0412-valley-cold-storage-and-transportation-v3.json",
+        "sha256": "05b773e51cc6e41c758a5ff3ef83ee7daca28049ac390a949cdbf9b62aefbf28"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0412-valley-cold-storage-and-transportation/attempt-1/locked-batch-v2-production-snapshot.json",
+        "sha256": "a512f865962b7ca87fe746cd27a7e80a1a1a73552b010dcff5b87abbc4d4be7b"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0412-valley-cold-storage-and-transportation/attempt-1/locked-batch-v2-task-snapshot.json",
+        "sha256": "d5e39e63af06e5f7a6dc19a815b2ca6324a0c3d39328606a18d9394a9bd1aeeb"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0412-valley-cold-storage-and-transportation/attempt-1/observed-batch-v1-task-snapshot.json",
+        "sha256": "e1e6e3a9036515ebec0772a3d01b9a198ff8eefbc3e9012d7c5d98005c75b4f5"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0412-valley-cold-storage-and-transportation/attempt-1/application-research-decision-v1.json",
+        "sha256": "b53b0ba7fa83a8b6b3911fd56286d4a346f693103b75587ec0229ebdc238f9f2"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0412-valley-cold-storage-and-transportation/attempt-1/application-source-verification-v1.json",
+        "sha256": "dda9e0d3a77589712a9b5f50e11e95b07a83dfe73238541f33a246fb3f69f9fa"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "9524f54c608662907069fd9ccd45d70438056aa265d7339c97cb727e1bf6e1f0",
+      "dependencySha256": "0fc523459349b811eeb59956361f203b1a676c82ad877d1773f92fb3c362ce75",
+      "afterImageSha256": "c26536fa2e7a226450d14c56b89a1e197751a00ba5822bffd601471befffe984",
+      "targetClaims": [
+        "canonical:valley-cold-storage-and-transportation|united-states",
+        "company:cmrxpjn0j018yivhek81ibli0",
+        "relation:cmrxpk9kr028kivher9994mn5",
+        "relation:cmrxpmn1d0547ivhe40hi3b5s",
+        "relation:cmrxpmn1t0548ivhekxd841kr",
+        "relation:cmrxpso740cxsivhe9708m232",
+        "relation:cmrxpso840cxuivhe0l3mgm4o",
+        "relation:cmrxpso970cxwivhel5beg4kt",
+        "relation:cmrxpsoa90cxyivhebr0hy4a0",
+        "relation:cmrxpsobb0cy0ivheri1o6rnz",
+        "seed:valley cold storage & transportation|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://ridgewoodinfrastructure.com/ridgewood-infrastructure-announces-acquisition-of-valley-cold/",
+          "label": "Investment date source — Ridgewood — Valley Cold Storage & Transportation",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://ridgewoodinfrastructure.com/valley-cold-storage/",
+          "label": "Ridgewoodinfrastructure — Valley Cold Storage & Transportation",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://ridgewoodinfrastructure.com/wp-content/uploads/2025/03/Ridgewood_Infra_AnnualReview_March2025.pdf",
+          "label": "Ridgewood Infrastructure — 2025 annual review",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/ridgewood-infrastructure-announces-acquisition-of-valley-cold-302320371.html",
+          "label": "PR Newswire — Valley Cold Storage & Transportation",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.valleycoldstore.com/",
+          "label": "Valleycoldstore — Valley Cold Storage & Transportation",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.valleycoldstore.com/about",
+          "label": "Valley Cold — About",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.valleycoldstore.com/locations",
+          "label": "Valleycoldstore — Valley Cold Storage & Transportation",
+          "sourceType": "ARTICLE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0413:wrm-waste-resource-management:deca62ff",
+      "taskIndex": 413,
+      "companyName": "WRM (Waste Resource Management)",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0413-wrm-waste-resource-management/attempt-1/proposal-v2.json",
+        "sha256": "956a5b6fda9e0441242d3e6dbafe1546e0ed526c6438644c6da7069050f5f05c"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0413-wrm-waste-resource-management-v2.json",
+        "sha256": "b4f513a04d6f04c065fe4e0bf4b0cbb6bcf06492385b2447dba5f7e9915f562a"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0413-wrm-waste-resource-management/attempt-1/locked-batch-v5-production-snapshot.json",
+        "sha256": "a4a0c20175f3e4af272d254ada646cc21d82607dfb9ba4d4b1fceb08042dbb03"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0413-wrm-waste-resource-management/attempt-1/locked-batch-v5-task-snapshot.json",
+        "sha256": "cc5853ccc5379ac0554cd1d824e77e950638be9a0477e9dfbd72cb2af7300d2f"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0413-wrm-waste-resource-management/attempt-1/observed-batch-v1-task-snapshot.json",
+        "sha256": "e08786a577a565719c278e3bad5fb9104994aaca4db71867cfe29283931292be"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0413-wrm-waste-resource-management/attempt-1/application-research-decision-v1.json",
+        "sha256": "f80205545de57e4cb84be1a47f18b85fcd191af20551237246b20b8ec0913839"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0413-wrm-waste-resource-management/attempt-1/application-source-verification-v1.json",
+        "sha256": "5fa65d7243c406b2ce790974274636fea4d625381bec40ac2a6e4112af39762e"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "9029eea2d5fc1eea168ab55102469fd9ab77e0331c201ef74d75814bb9e24b3b",
+      "dependencySha256": "7fef718ca8f6dc92753c5fba9abd9160a66fa9f13c8fe489686c94f6b04fd377",
+      "afterImageSha256": "c3bb37f51f07d3314db90e0a00e9d65645f78fe365d2f9ad0e9d88fa95488b28",
+      "targetClaims": [
+        "canonical:waste-resource-management|united-states",
+        "company:cmrxpjn16018zivhe8i1og54q",
+        "relation:cmrxpk9lf028livhe59iv90gl",
+        "relation:cmrxpmn2u0549ivheaqa42gsc",
+        "relation:cmrxpmn3e054aivhemt33sr8t",
+        "relation:cmrxpmn40054bivhe8tlbvy8i",
+        "relation:cmrxpsocf0cy2ivhelwx9ltzm",
+        "relation:cmrxpsodj0cy4ivhehu8c6c01",
+        "relation:cmrxpsoeh0cy6ivhewrwte2du",
+        "seed:waste resource management|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://northskycapital.com/north-sky-announces-successful-exit-of-investment-in-leading-liquid-waste-recycler/",
+          "label": "North Sky Capital — WRM exit",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://ridgewoodinfrastructure.com/investments/",
+          "label": "Ridgewood Infrastructure — investments",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://ridgewoodinfrastructure.com/ridgewood-infrastructure-extends-its-leadership-position-in-the-u-s-water-sector-with-the-acquisition-of-waste-resources-management-wrm/",
+          "label": "Ridgewoodinfrastructure — Waste Resource Management",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://ridgewoodinfrastructure.com/waste-resource-management/",
+          "label": "Ridgewoodinfrastructure — Waste Resource Management",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://wrmco.com/",
+          "label": "Wrmco — Waste Resource Management",
+          "sourceType": "WEBSITE"
+        }
+      ]
+    }
+  ],
+  "collisionAnalysis": {
+    "independent": true,
+    "claimsSha256": "cce0d17162fe9aaa8f40888fa65eb73e113e263942d68cc12c4b4d030dc867c6",
+    "sharedSourceUrls": [],
+    "conflicts": []
+  },
+  "batchSha256": "df5c5302abc87a42cc5330ce4b4d40f56e9473e834c4fbb0747bc74646166aee"
+}

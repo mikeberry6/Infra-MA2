@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0409:prospect-lake-clean-water-center:c098d1e8",
+  "checkedAt": "2026-09-02T01:30:00.000Z",
+  "method": "Independent direct HTTPS status, redirect, byte-length and content-hash checks; Florida anti-automation response retained as browser-blocked but previously verified entity evidence.",
+  "sources": [
+    {
+      "url": "https://fortlauderdale.legistar.com/View.ashx?GUID=6738A01F-C55C-42E3-8573-1308AD6890D7&ID=11613272&M=F",
+      "httpStatus": 200,
+      "finalUrl": "https://fortlauderdale.legistar.com/View.ashx?GUID=6738A01F-C55C-42E3-8573-1308AD6890D7&ID=11613272&M=F",
+      "bytes": 344475,
+      "sha256": "8f4b1f4d3728e9db5fbbe966f06e4ffb91ab2b3860657dce66e5ad3e4804bd04",
+      "healthStatus": "WORKING",
+      "verifiedClaims": ["City materials identify the Ridgewood-IDE project company and its 50-MGD water-P3 boundary."]
+    },
+    {
+      "url": "https://ridgewoodinfrastructure.com/wp-content/uploads/2026/04/Ridgewood_i3_04.26_SL.pdf",
+      "httpStatus": 200,
+      "finalUrl": "https://ridgewoodinfrastructure.com/wp-content/uploads/2026/04/Ridgewood_i3_04.26_SL.pdf",
+      "bytes": 1082444,
+      "sha256": "16931d47247c83747589696d5fca78fb95349932d5adb45467a5d167e077eed9",
+      "healthStatus": "WORKING",
+      "verifiedClaims": ["Ridgewood identifies IDE Technologies as an equity owner in the project."]
+    },
+    {
+      "url": "https://search.sunbiz.org/Inquiry/corporationsearch/SearchResultDetail?aggregateId=forlp-b23000000156-4aba5a63-d25e-4a64-9b7e-b00704c74ffc&directionType=ForwardList&inquirytype=EntityName&listNameOrder=PROSPECTJANITORIALSERVICES+P930000695060&searchNameOrder=PROSPECTLAKEWATER+B230000001560&searchTerm=PROSPECTIVE+RISK+MANAGEMENT+LLC",
+      "httpStatus": 403,
+      "finalUrl": "https://search.sunbiz.org/Inquiry/corporationsearch/SearchResultDetail?aggregateId=forlp-b23000000156-4aba5a63-d25e-4a64-9b7e-b00704c74ffc&directionType=ForwardList&inquirytype=EntityName&listNameOrder=PROSPECTJANITORIALSERVICES+P930000695060&searchNameOrder=PROSPECTLAKEWATER+B230000001560&searchTerm=PROSPECTIVE+RISK+MANAGEMENT+LLC",
+      "bytes": 3700,
+      "sha256": "00fcf427a066b6a8596d3cc2913f136cfe7fb79aeed2a69d7db4c91d71e4785e",
+      "healthStatus": "BROWSER_BLOCKED_BUT_VERIFIED",
+      "verifiedClaims": ["Florida records show the active partnership and a July 31, 2026 amendment whose ownership effect remains uninspected."]
+    }
+  ],
+  "allEvidenceUrlsDirectHttps": true,
+  "allSourcesWorkingOrVerified": true,
+  "deadSourceCount": 0
+}

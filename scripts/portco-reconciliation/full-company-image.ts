@@ -8,6 +8,10 @@ const httpsUrl = z.string().url().refine(
   (value) => value.startsWith("https://"),
   "URL must use HTTPS",
 );
+const observedSourceUrl = z.string().url().refine(
+  (value) => value.startsWith("https://") || value.startsWith("http://"),
+  "Observed source URL must use HTTP or HTTPS",
+);
 
 const legacyOwnershipSchema = z.strictObject({
   id: nonEmpty,
@@ -67,7 +71,7 @@ const legacyFullCompanySnapshotSchema = z.strictObject({
     source: z.strictObject({
       id: nonEmpty,
       label: nonEmpty,
-      url: httpsUrl,
+      url: observedSourceUrl,
       type: nonEmpty,
     }),
   })),

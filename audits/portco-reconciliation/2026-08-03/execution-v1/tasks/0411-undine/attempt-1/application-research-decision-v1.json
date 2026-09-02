@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0411:undine:ce0cb177",
+  "taskIndex": 411,
+  "companyName": "Undine",
+  "asOfDate": "2026-09-01",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-02T01:30:00.000Z",
+  "result": {
+    "decision": "PROPOSED_CORRECTION",
+    "rationale": "Correct the existing Undine record without adding a duplicate Ridgewood period. Direct current portfolio evidence and Undine's Texas PUC response establish Ridgewood Infrastructure and Crosstimbers Capital Group as current equity funders from 2017. Exact stakes, control rights and SPVs remain undisclosed and will be labeled as such; the reported 2025 sale process is not represented as signed or closed.",
+    "evidence": [
+      {
+        "url": "https://ridgewoodinfrastructure.com/undine/",
+        "purpose": "Official current Ridgewood portfolio evidence for Undine."
+      },
+      {
+        "url": "https://www.crosstimbers.com/portfolio",
+        "purpose": "Official current Crosstimbers portfolio evidence and June 2017 entry."
+      },
+      {
+        "url": "https://interchange.puc.texas.gov/Documents/56354_3818_1517901.PDF",
+        "purpose": "Official regulatory evidence that Ridgewood and Crosstimbers provide equity funding."
+      }
+    ],
+    "unresolvedQuestions": []
+  },
+  "lineage": {
+    "sourceDecision": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0411-undine/attempt-1/research-decision.json",
+    "basis": "Validated research authorizes a bounded correction using explicit unavailable labels for noncritical disclosure gaps."
+  }
+}
