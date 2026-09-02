@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0416:u-s-solar-portfolio-oxbow-happy:cdda9d96",
+  "checkedAt": "2026-09-02T02:13:43.000Z",
+  "method": "Independent direct HTTPS status, redirect, byte-length and content-hash checks.",
+  "sources": [
+    {
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100WI4Y.pdf",
+      "httpStatus": 200,
+      "finalUrl": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100WI4Y.pdf",
+      "bytes": 17261,
+      "sha256": "cb927b7efcd0758b38467a6053bb3e656dfd9b5c90bc6bd95c4ef471b3bb0df0",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "JERA acquired Crawfish Solar Holdings 2 and its downstream entities on August 2, 2024 and reduced its interest from 100% to 50% on July 30, 2025."
+      ]
+    },
+    {
+      "url": "https://www.mayerbrown.com/en/news/2025/07/mayer-brown-advises-jera-nex-on-sale-of-50-equity-interest-in-solar-project-portfolio-to-affiliate-of-schroders-greencoat",
+      "httpStatus": 200,
+      "finalUrl": "https://www.mayerbrown.com/en/news/2025/07/mayer-brown-advises-jera-nex-on-sale-of-50-equity-interest-in-solar-project-portfolio-to-affiliate-of-schroders-greencoat",
+      "bytes": 242735,
+      "sha256": "46772a03c43be3763fa8093db3abadd2920c3139b2f292b418696baeaa4b1abe",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "JERA Nex sold 50% of Crawfish Solar Holdings 2 to SG US Aggregator, a Schroders Greencoat affiliate."
+      ]
+    },
+    {
+      "url": "https://www.jera.co.jp/en/corporate/business/projects/happy-oxbow",
+      "httpStatus": 200,
+      "finalUrl": "https://www.jera.co.jp/en/corporate/business/projects/happy-oxbow",
+      "bytes": 62455,
+      "sha256": "d7700cb139fcb19cebd0c702e2b4b32291938a246578a9532896c8b2f82d7d8d",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "JERA's current project page lists JERA Nex and Schroders Greencoat at 50% each in the 395 MW Oxbow and Happy portfolio."
+      ]
+    },
+    {
+      "url": "https://jeranex.com/schroders-greencoat-acquire-stake-in-jera-nex-solar-portfolio/",
+      "httpStatus": 200,
+      "finalUrl": "https://jeranex.com/schroders-greencoat-acquire-stake-in-jera-nex-solar-portfolio/",
+      "bytes": 127014,
+      "sha256": "595367c7db8dd3c487bc1bb26b6840dbf074abea14e468f5904f56603f357bbf",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "JERA Nex announced Schroders Greencoat's 50% ownership and distinguished that ownership from Lightsource bp's continuing services."
+      ]
+    },
+    {
+      "url": "https://lightsourcebp.com/news/jera-nex-expands-presence-in-us-with-395mw-solar-farms-acquisition-from-lightsource-bp/",
+      "httpStatus": 200,
+      "finalUrl": "https://lightsourcebp.com/news/jera-nex-expands-presence-in-us-with-395mw-solar-farms-acquisition-from-lightsource-bp/",
+      "bytes": 86649,
+      "sha256": "f5aa805e9b83c14023082f97e5a4594e4af6f018168adf3e97a2c657bcb89a99",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Lightsource bp announced JERA's acquisition of the 395 MW portfolio and retained only asset-management and O&M services."
+      ]
+    }
+  ],
+  "allEvidenceUrlsDirectHttps": true,
+  "allSourcesWorkingOrVerified": true,
+  "deadSourceCount": 0
+}

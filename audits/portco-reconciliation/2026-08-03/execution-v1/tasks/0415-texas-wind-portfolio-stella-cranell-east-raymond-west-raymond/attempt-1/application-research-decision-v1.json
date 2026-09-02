@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0415:texas-wind-portfolio-stella-cranell-east-raymond-west-raymond:82653dc8",
+  "taskIndex": 415,
+  "companyName": "Texas Wind Portfolio (Stella, Cranell, East Raymond, West Raymond)",
+  "asOfDate": "2026-09-01",
+  "decision": "PROPOSED_NEW",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-02T02:13:43.000Z",
+  "result": {
+    "decision": "PROPOSED_NEW",
+    "rationale": "Create Vela Wind Holdco, LLC as the one proved parent for the four operating Texas wind farms. Current evidence supports LS Power/Clearlight at 51%, RWE at 25% and Schroders Greencoat at 24%, with Algonquin's former 51% period ending when LS Power closed its acquisition on January 8, 2025.",
+    "evidence": [
+      {
+        "url": "https://www.rwe.com/en/rwe-financial-statements-2025/",
+        "purpose": "Audited current 25% RWE interest in Vela Wind Holdco."
+      },
+      {
+        "url": "https://www.rwe.com/-/media/RWE/documents/05-investor-relations/finanzkalendar-und-veroeffentlichungen/2021-GJ/2022-03-15-rwe-annual-report-2021.pdf?sc_lang=en",
+        "purpose": "Original 51%/25%/24% ownership structure, closings and common holdco boundary."
+      },
+      {
+        "url": "https://www.lspower.com/news/ls-power-completes-acquisition-of-algonquin-power-utilities-corp-s-large-scale-renewable-energy-business/",
+        "purpose": "January 8, 2025 LS Power closing and Clearlight management platform."
+      },
+      {
+        "url": "https://interchange.puc.texas.gov/Documents/54891_1_1288597.PDF",
+        "purpose": "Regulatory ownership chain above Vela and its project companies."
+      }
+    ],
+    "unresolvedQuestions": []
+  },
+  "lineage": {
+    "sourceDecision": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0415-texas-wind-portfolio-stella-cranell-east-raymond-west-raymond/attempt-1/research-decision.json",
+    "basis": "Validated GPT-5.6 Sol Pro research and refreshed direct-source checks support the creation; unavailable intermediate member and governance details are noncritical disclosure gaps."
+  }
+}

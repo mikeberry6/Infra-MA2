@@ -1,0 +1,370 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_MANIFEST",
+  "methodologyVersion": "PORTCO_APPLY_BATCH_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0414-0418-v1",
+  "createdAt": "2026-09-02T02:22:30.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "e5b834dfd7544175976b1dd2363f94e2f192c2019347c96387873d6b64788e6a"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0414:illinois-wind-portfolio-bright-stalk-harvest-ridge:1410820d",
+      "taskIndex": 414,
+      "companyName": "Illinois Wind Portfolio (Bright Stalk, Harvest Ridge)",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0414-illinois-wind-portfolio-bright-stalk-harvest-ridge/attempt-1/proposal-v1.json",
+        "sha256": "951ac01022e7173493af87936a5de8feaa925ebd449d29e81676d3c3370f409f"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0414-illinois-wind-portfolio-bright-stalk-harvest-ridge-v1.json",
+        "sha256": "53aa249ed6c79b7749d468ddd4b1a95409f116a486e3ee8e18b146703d1fc5e1"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0414-illinois-wind-portfolio-bright-stalk-harvest-ridge/attempt-1/locked-batch-v1-production-snapshot.json",
+        "sha256": "f1d18516a3c88db778acf8302e310c41c15338c6c1b3c45bb92976e2d746b0a0"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0414-illinois-wind-portfolio-bright-stalk-harvest-ridge/attempt-1/locked-batch-v1-task-snapshot.json",
+        "sha256": "effa58a3f083eec6169e1cb86f735567113a34e9ad07856a62227050cbd1769a"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0414-illinois-wind-portfolio-bright-stalk-harvest-ridge/attempt-1/observed-batch-v1-task-snapshot.json",
+        "sha256": "fc03f3b7bd8974dc380543ba96976a997f04ae825e1d3463fac635c72dd1a8bf"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0414-illinois-wind-portfolio-bright-stalk-harvest-ridge/attempt-1/application-research-decision-v1.json",
+        "sha256": "caab321af203d98c52eb6717df1e627540af2057147f58e8349988227ae2c929"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0414-illinois-wind-portfolio-bright-stalk-harvest-ridge/attempt-1/application-source-verification-v1.json",
+        "sha256": "cf96bb58f6d3ec5dd130acf701a57d53f4aec136c85f01891821a0cfd514dc6a"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "16aa274d630fe8357339939fa00cedf2e63c45ad97559d0885cab502b3df9d20",
+      "dependencySha256": "7162f023548431ed1fed51e43a93e8e1e0a46df9edc0adf314307e96f61f1312",
+      "afterImageSha256": "3cb4fca8e26784cc866c8929c1d52f74538a51829b05777041033f0640b45c6d",
+      "targetClaims": [
+        "canonical:illinois-wind-portfolio-bright-stalk-harvest-ridge|united-states",
+        "seed:illinois wind portfolio (bright stalk & harvest ridge)|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://cleangridalliance.org/our-impact/projects",
+          "label": "Clean Grid Alliance — project directory",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://edp.com/en/investors/investor-information/market-notifications/edp-announces-upsize-80-stake-405-mw-asset",
+          "label": "EDP — Illinois portfolio 80% upsize closing",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://edp.com/en/north-america/na/media/edp-renewables-starts-operation-new-200-mw-wind-farm-us",
+          "label": "EDP Renewables — Harvest Ridge operations",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.edpr-investors.com/en/media/news/edpr-completes-asset-rotation-deal-405-mw-wind-portfolio-us-ev-100-07bn",
+          "label": "EDPR — initial Illinois portfolio closing",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.govinfo.gov/content/pkg/FR-2021-05-14/html/2021-10214.htm",
+          "label": "Federal Register — Bright Stalk and Harvest Ridge filing",
+          "sourceType": "OTHER"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0415:texas-wind-portfolio-stella-cranell-east-raymond-west-raymond:82653dc8",
+      "taskIndex": 415,
+      "companyName": "Texas Wind Portfolio (Stella, Cranell, East Raymond, West Raymond)",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0415-texas-wind-portfolio-stella-cranell-east-raymond-west-raymond/attempt-1/proposal-v1.json",
+        "sha256": "22798e5f10700fa74a7ad252a3cd477135e03bcba25afa2427d2f5a1d50f4978"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0415-texas-wind-portfolio-stella-cranell-east-raymond-west-raymond-v1.json",
+        "sha256": "4a42eba9f02a6e7364d72b930f1f7c68ffd5a836bbc177308e16597d39227775"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0415-texas-wind-portfolio-stella-cranell-east-raymond-west-raymond/attempt-1/locked-batch-v1-production-snapshot.json",
+        "sha256": "a39dd1ea18d3b4422631aa923f78377cc713497584f16c595610e3d5dadb11ce"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0415-texas-wind-portfolio-stella-cranell-east-raymond-west-raymond/attempt-1/locked-batch-v1-task-snapshot.json",
+        "sha256": "ab0754f48453c2a80925cd9ff70f22c8bf87c9e68b52df265e21c12d83c19e7a"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0415-texas-wind-portfolio-stella-cranell-east-raymond-west-raymond/attempt-1/observed-batch-v1-task-snapshot.json",
+        "sha256": "87ecf7bdafcc01cdcc34a4b8db1dab1d6674a236bda6a7c839c3f036dfc672f5"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0415-texas-wind-portfolio-stella-cranell-east-raymond-west-raymond/attempt-1/application-research-decision-v1.json",
+        "sha256": "2127ac77196f8e7a4c94028fde00ef9d18a77cbb712ed82bd9a54ec0949dd1e8"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0415-texas-wind-portfolio-stella-cranell-east-raymond-west-raymond/attempt-1/application-source-verification-v1.json",
+        "sha256": "f0241b108eba9099ba34f4961862230e62fcb7e2ac0a70256627d51d3544a92b"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "ce13cfe0f8ea5032fe4390731436d8209a9ecb5704b8340ed6b4f6705cb81e38",
+      "dependencySha256": "7162f023548431ed1fed51e43a93e8e1e0a46df9edc0adf314307e96f61f1312",
+      "afterImageSha256": "12e96d4c789303bdb1e51456e1d208dbeb0c8c198764ddf61c877a826b64008d",
+      "targetClaims": [
+        "canonical:texas-wind-portfolio-stella-cranell-east-raymond-west-raymond|united-states",
+        "seed:vela wind holdco, llc|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://interchange.puc.texas.gov/Documents/54891_1_1288597.PDF",
+          "label": "Texas PUCT — Vela ownership filing",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.lspower.com/news/ls-power-completes-acquisition-of-algonquin-power-utilities-corp-s-large-scale-renewable-energy-business/",
+          "label": "LS Power — Algonquin renewables acquisition close",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.rwe.com/-/media/RWE/documents/05-investor-relations/finanzkalendar-und-veroeffentlichungen/2021-GJ/2022-03-15-rwe-annual-report-2021.pdf?sc_lang=en",
+          "label": "RWE — 2021 annual report",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.rwe.com/en/rwe-financial-statements-2025/",
+          "label": "RWE — 2025 financial statements",
+          "sourceType": "OTHER"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0416:u-s-solar-portfolio-oxbow-happy:cdda9d96",
+      "taskIndex": 416,
+      "companyName": "U.S. Solar Portfolio (Oxbow + Happy)",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0416-u-s-solar-portfolio-oxbow-happy/attempt-1/proposal-v1.json",
+        "sha256": "953c0294a4046b6f2bf0c9bcac4a631ed2501e525663851a0381e3ef7a70cdd5"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0416-u-s-solar-portfolio-oxbow-happy-v1.json",
+        "sha256": "73d578b131e64e171d33660b2dbccbf91bf1320f44603f18fcc4a41904b58f2b"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0416-u-s-solar-portfolio-oxbow-happy/attempt-1/locked-batch-v1-production-snapshot.json",
+        "sha256": "e2503b77f76e6c36325d6210fe1f727be166b97b7d6723ada4a5ee761d3defcb"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0416-u-s-solar-portfolio-oxbow-happy/attempt-1/locked-batch-v1-task-snapshot.json",
+        "sha256": "8c3f19eb1d72439d31c78c1d66b426b276a5b81870d7633c5464d77d2227db4d"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0416-u-s-solar-portfolio-oxbow-happy/attempt-1/observed-batch-v1-task-snapshot.json",
+        "sha256": "0919be25d2f2eebe2922eaeb3e60e0ad9861b9f2af06beedba09f77f38c9f483"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0416-u-s-solar-portfolio-oxbow-happy/attempt-1/application-research-decision-v1.json",
+        "sha256": "a43ce67bb7258559ff4efcc9535e5c59d41ebeb0d20f95d358bfc081dc32f7f1"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0416-u-s-solar-portfolio-oxbow-happy/attempt-1/application-source-verification-v1.json",
+        "sha256": "43a10996bbb8bcb5bc4b242e54b65cecd5e5459708f1c3426518a35e874d55c5"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "0596d15dabec489a8beed4d4ad55402d3116a6834214e7aeaaf3feeba6590bf4",
+      "dependencySha256": "7162f023548431ed1fed51e43a93e8e1e0a46df9edc0adf314307e96f61f1312",
+      "afterImageSha256": "09c78f897c6d627283a83d8e44d43377520f71a6bccc5dbdf9c79c7ab00de36b",
+      "targetClaims": [
+        "canonical:u-s-solar-portfolio-oxbow-happy|united-states",
+        "seed:crawfish solar holdings 2, llc|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100WI4Y.pdf",
+          "label": "JERA — EDINET ownership filing",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://jeranex.com/schroders-greencoat-acquire-stake-in-jera-nex-solar-portfolio/",
+          "label": "JERA Nex — Schroders Greencoat partnership",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://lightsourcebp.com/news/jera-nex-expands-presence-in-us-with-395mw-solar-farms-acquisition-from-lightsource-bp/",
+          "label": "Lightsource bp — sale to JERA Nex",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.jera.co.jp/en/corporate/business/projects/happy-oxbow",
+          "label": "JERA — Happy and Oxbow project page",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.mayerbrown.com/en/news/2025/07/mayer-brown-advises-jera-nex-on-sale-of-50-equity-interest-in-solar-project-portfolio-to-affiliate-of-schroders-greencoat",
+          "label": "Mayer Brown — Schroders Greencoat acquisition",
+          "sourceType": "ARTICLE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0417:bp-u-s-transportation-and-delivery-midstream-jv:d68b70ef",
+      "taskIndex": 417,
+      "companyName": "BP U.S. Transportation & Delivery / Midstream JV",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0417-bp-u-s-transportation-and-delivery-midstream-jv/attempt-1/proposal-v1.json",
+        "sha256": "ba8f2ca7027704ad737d24a9cc5215510e12ed0d59f2efc1192dabaadf6a758f"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0417-bp-u-s-transportation-and-delivery-midstream-jv-v1.json",
+        "sha256": "b9c58d5489ca90ca2af73fae3d3bfec551d99ab914410c18668e194d0fce7480"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0417-bp-u-s-transportation-and-delivery-midstream-jv/attempt-1/locked-batch-v1-production-snapshot.json",
+        "sha256": "1261d12f29f61d4f10b37a8533a3b7a9d1a2701346cbe38cc9a19aba18f79436"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0417-bp-u-s-transportation-and-delivery-midstream-jv/attempt-1/locked-batch-v1-task-snapshot.json",
+        "sha256": "ebd5d30da2744e0de6f0066aeeaa9b4470312d07fd7647b8069fb64db439e179"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0417-bp-u-s-transportation-and-delivery-midstream-jv/attempt-1/observed-batch-v1-task-snapshot.json",
+        "sha256": "6e810d5c7c832c838b22b8ccee507ee61346fc671bbc8454a65a2d96296d8707"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0417-bp-u-s-transportation-and-delivery-midstream-jv/attempt-1/application-research-decision-v1.json",
+        "sha256": "6f76cc9729025e876ec11bb42222584f59b2751610f76186a41e8b4a9c4c99ed"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0417-bp-u-s-transportation-and-delivery-midstream-jv/attempt-1/application-source-verification-v1.json",
+        "sha256": "b46f0694c2866da614d289d37f063b704b0d249103e7a3c0857fe4d0a3844da2"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "7c326854b4f2136c4fd04ec09e1accc354b4bc45db2cc3bde7ee011b243c47b3",
+      "dependencySha256": "7162f023548431ed1fed51e43a93e8e1e0a46df9edc0adf314307e96f61f1312",
+      "afterImageSha256": "1e29953ac61382a4f8d366dffb649b3c5cb999a4da4a6618d73da4f764a588f9",
+      "targetClaims": [
+        "canonical:bp-u-s-transportation-and-delivery-midstream-jv|united-states",
+        "seed:us energy logistics|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://law.justia.com/cases/federal/district-courts/washington/wawdce/2%3A2025cv01190/349738/72/",
+          "label": "Federal court order — BP Midwest and Lerado ownership chain",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://news.bloomberglaw.com/private-equity/sixth-street-injects-400-million-more-into-bp-pipelines-venture",
+          "label": "Bloomberg Law — BP pipelines venture expansion",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://sixthstreet.com/energy-renewables-infrastructure/",
+          "label": "Sixth Street — US Energy Logistics",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/313807/000031380723000027/a30092023bp6kq3.htm",
+          "label": "BP — third-quarter 2023 SEC filing",
+          "sourceType": "SEC_FILING"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/313807/000165495421004651/a6518w.htm",
+          "label": "BP — first-quarter 2021 SEC filing",
+          "sourceType": "SEC_FILING"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0418:caliche-development-partners:d31b8749",
+      "taskIndex": 418,
+      "companyName": "Caliche Development Partners",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0418-caliche-development-partners/attempt-1/proposal-v1.json",
+        "sha256": "551f2698742438850a4b9de85cf4db3c7dfb7221d3c2c9ad6665f02a5b127350"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/approvals/0418-caliche-development-partners-v1.json",
+        "sha256": "027b87b9b02706410ce4f74aa7e98d232ba1868b9024e303034bb759e5142b34"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0418-caliche-development-partners/attempt-1/locked-batch-v1-production-snapshot.json",
+        "sha256": "4b1f92a1d0fbaafd070fa2a9bfc9e214c55d8e33e361b552149598c20382db05"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0418-caliche-development-partners/attempt-1/locked-batch-v1-task-snapshot.json",
+        "sha256": "3433ebb0ce8dd8806b42b390094e318eef965ab392700d4232739b19fcc968c8"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0418-caliche-development-partners/attempt-1/observed-batch-v1-task-snapshot.json",
+        "sha256": "1cca8bb3c43596ddbc9169a8fb6c2a4644b6dbb36787a376b47f3118915d8142"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0418-caliche-development-partners/attempt-1/application-research-decision-v1.json",
+        "sha256": "553bbe6ad04598e294f6d85fab60fa5ca94b53a3829fc92d0f797642813ab0d9"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0418-caliche-development-partners/attempt-1/application-source-verification-v1.json",
+        "sha256": "09bc598747800ea954c3e2c34b64647ac04ff1e92fee841afd6d6e6bc68dd40e"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "75deb5c60cae9c29e3d187859541dab6ce105f0c2db0fea88c6bfd63e922fcdf",
+      "dependencySha256": "7162f023548431ed1fed51e43a93e8e1e0a46df9edc0adf314307e96f61f1312",
+      "afterImageSha256": "58401d8c5e16a150d68280438d28617ee1e6fee9addf1075401085bea0296710",
+      "targetClaims": [
+        "canonical:caliche-development-partners|united-states",
+        "seed:caliche development partners|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://calichestorage.com/caliche-announces-fid-for-first-phase-of-spindletop-expansion-060426.html",
+          "label": "Caliche — Spindletop expansion FID",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://calichestorage.com/caliche-development-partners-announce-acquisitions-following-capital-commitment.html",
+          "label": "Caliche — 2022 acquisitions",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://calichestorage.com/sixth-street-acquires-caliche-development-second-underground-storage-asset.html",
+          "label": "Caliche — CVGS acquisition close",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://docs.cpuc.ca.gov/PublishedDocs/Published/G000/M552/K464/552464740.PDF",
+          "label": "California PUC — Caliche ownership filing",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://sixthstreet.com/investment_announce/caliche-to-continue-expansion-backed-by-sixth-street/",
+          "label": "Sixth Street — Caliche majority investment",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.willkie.com/news/2020/12/caliche-development-partners-capital-partnership",
+          "label": "Willkie — Caliche capital partnership",
+          "sourceType": "ARTICLE"
+        }
+      ]
+    }
+  ],
+  "collisionAnalysis": {
+    "independent": true,
+    "claimsSha256": "0b9c4faf4b0db0c37006b24d5a203d5b22f58d01f5900c90a5ab9a7aaa8b6f7e",
+    "sharedSourceUrls": [],
+    "conflicts": []
+  },
+  "batchSha256": "45ae908c6dc289791f82d100f98dfa57676cf2395db767e5791e1a34af8c1e65"
+}

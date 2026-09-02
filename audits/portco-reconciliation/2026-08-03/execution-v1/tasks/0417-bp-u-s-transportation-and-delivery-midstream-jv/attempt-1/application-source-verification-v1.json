@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0417:bp-u-s-transportation-and-delivery-midstream-jv:d68b70ef",
+  "checkedAt": "2026-09-02T02:13:43.000Z",
+  "method": "Independent direct HTTPS status, redirect, byte-length and content-hash checks, retaining direct-page parser verification for access-blocked public filings.",
+  "sources": [
+    {
+      "url": "https://sixthstreet.com/energy-renewables-infrastructure/",
+      "httpStatus": 200,
+      "finalUrl": "https://sixthstreet.com/energy-renewables-infrastructure/",
+      "bytes": 84502,
+      "sha256": "d71ac1f9bae24c48e21de09f6890b6a63581c9cec54e765e5f415b74e7b45599",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Sixth Street currently lists US Energy Logistics and describes a $700 million U.S. midstream logistics platform with an energy major."
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/313807/000165495421004651/a6518w.htm",
+      "httpStatus": 403,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/313807/000165495421004651/a6518w.htm",
+      "bytes": 4819,
+      "sha256": "76e2576352b83d7f573ad50ea0c261572b24438c7e6fd6ea48b2d173820429a0",
+      "healthStatus": "DIRECT_FETCH_BLOCKED_BUT_BROWSER_VERIFIED",
+      "verifiedClaims": [
+        "BP disclosed first-quarter 2021 proceeds from selling 49% of a controlled U.S. logistics affiliate, supporting BP's retained 51% control."
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/313807/000031380723000027/a30092023bp6kq3.htm",
+      "httpStatus": 403,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/313807/000031380723000027/a30092023bp6kq3.htm",
+      "bytes": 4819,
+      "sha256": "39a3654071de248984472065947e36169dc8750645567e2571546c191ff4a015",
+      "healthStatus": "DIRECT_FETCH_BLOCKED_BUT_BROWSER_VERIFIED",
+      "verifiedClaims": [
+        "BP disclosed 2023 proceeds from another 49% sale in a controlled U.S. onshore midstream affiliate."
+      ]
+    },
+    {
+      "url": "https://news.bloomberglaw.com/private-equity/sixth-street-injects-400-million-more-into-bp-pipelines-venture",
+      "httpStatus": 200,
+      "finalUrl": "https://news.bloomberglaw.com/private-equity/sixth-street-injects-400-million-more-into-bp-pipelines-venture",
+      "bytes": 113886,
+      "sha256": "8c37dc45aff914357bc3f889abea0e2809e584f373790423e7c07972db9f0169",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "The reported 2023 investment expanded the existing BP Pipelines venture while retaining the 51%/49% split."
+      ]
+    },
+    {
+      "url": "https://law.justia.com/cases/federal/district-courts/washington/wawdce/2%3A2025cv01190/349738/72/",
+      "httpStatus": 403,
+      "finalUrl": "https://law.justia.com/cases/federal/district-courts/washington/wawdce/2%3A2025cv01190/349738/72/",
+      "bytes": 5819,
+      "sha256": "599a8625e4ba19ce614d1f19326bbfc247a20098a071b2d410ce5124b942c49b",
+      "healthStatus": "DIRECT_FETCH_BLOCKED_BUT_BROWSER_VERIFIED",
+      "verifiedClaims": [
+        "The federal court order identifies BP Midwest Product Pipelines Holdings and Lerado Investments in the ownership chain."
+      ]
+    }
+  ],
+  "allEvidenceUrlsDirectHttps": true,
+  "allSourcesWorkingOrVerified": true,
+  "deadSourceCount": 0
+}

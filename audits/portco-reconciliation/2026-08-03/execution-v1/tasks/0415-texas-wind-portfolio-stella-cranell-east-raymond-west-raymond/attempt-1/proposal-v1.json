@@ -1,0 +1,224 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0415:texas-wind-portfolio-stella-cranell-east-raymond-west-raymond:82653dc8",
+  "taskIndex": 415,
+  "asOfDate": "2026-09-01",
+  "generatedAt": "2026-09-02T02:13:43.000Z",
+  "canonicalKey": "texas-wind-portfolio-stella-cranell-east-raymond-west-raymond|united-states",
+  "companyName": "Texas Wind Portfolio (Stella, Cranell, East Raymond, West Raymond)",
+  "actions": [
+    "CREATE_COMPANY"
+  ],
+  "sourceHoldingIds": [
+    "087-schroders-greencoat:holding:001:texas-wind-portfolio-stella-cranell-east-raymond-west-raymond"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Create Vela Wind Holdco, LLC as one canonical four-project Texas wind portfolio. Record the current 51% LS Power/Clearlight, 25% RWE and 24% Schroders Greencoat interests and preserve Algonquin's former 51% ownership period through the January 2025 closing.",
+  "evidence": [
+    {
+      "url": "https://www.rwe.com/en/rwe-financial-statements-2025/",
+      "purpose": "Current ownership evidence.",
+      "supports": [
+        "RWE retained a current 25% interest in Vela through 2025"
+      ]
+    },
+    {
+      "url": "https://www.rwe.com/-/media/RWE/documents/05-investor-relations/finanzkalendar-und-veroeffentlichungen/2021-GJ/2022-03-15-rwe-annual-report-2021.pdf?sc_lang=en",
+      "purpose": "Original ownership and portfolio-boundary evidence.",
+      "supports": [
+        "The ownership split was 51% Algonquin, 25% RWE and 24% Greencoat",
+        "Vela is the common holdco for the four projects"
+      ]
+    },
+    {
+      "url": "https://www.lspower.com/news/ls-power-completes-acquisition-of-algonquin-power-utilities-corp-s-large-scale-renewable-energy-business/",
+      "purpose": "Current 51% successor ownership evidence.",
+      "supports": [
+        "LS Power closed the Algonquin renewable-energy acquisition on January 8, 2025",
+        "Clearlight manages the acquired operating portfolio"
+      ]
+    },
+    {
+      "url": "https://interchange.puc.texas.gov/Documents/54891_1_1288597.PDF",
+      "purpose": "Regulatory ownership-chain evidence.",
+      "supports": [
+        "Greencoat Vela holds the 24% Schroders Greencoat interest",
+        "The four wind farms sit below Vela"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "a39dd1ea18d3b4422631aa923f78377cc713497584f16c595610e3d5dadb11ce",
+  "currentCompanySnapshotSha256": null,
+  "executionLock": {
+    "taskSnapshotSha256": "ab0754f48453c2a80925cd9ff70f22c8bf87c9e68b52df265e21c12d83c19e7a",
+    "taskStateSha256": "ce13cfe0f8ea5032fe4390731436d8209a9ecb5704b8340ed6b4f6705cb81e38",
+    "taskDependencySha256": "7162f023548431ed1fed51e43a93e8e1e0a46df9edc0adf314307e96f61f1312",
+    "seedEntrySha256": null,
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [],
+    "organizations": [],
+    "redirects": []
+  },
+  "beforeImage": null,
+  "beforeImageSha256": null,
+  "afterImage": {
+    "id": null,
+    "name": "Vela Wind Holdco, LLC",
+    "aliases": [
+      "Texas Coastal Wind Facilities",
+      "Texas Wind Portfolio",
+      "Texas Wind Portfolio (Stella, Cranell, East Raymond, West Raymond)"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Operating onshore wind portfolio",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Vela Wind Holdco, LLC is the common parent of the 861 MW Stella, Cranell, East Raymond and West Raymond operating wind farms in Texas. LS Power's Clearlight platform owns the former Algonquin 51% interest, RWE retains 25% and remains operator, and Schroders Greencoat owns 24% through Greencoat Vela LLC. The four project companies remain subordinate assets rather than separate portfolio companies.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Texas, United States",
+    "lastVerifiedAt": "2026-09-01T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": null,
+        "managerName": "LS Power",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Clearlight Energy Holdings, L.P. through the acquired Altius Renewables perimeter",
+        "stake": "51%",
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "RWE",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "RWE affiliate through Vela; intermediate holder not publicly disclosed",
+        "stake": "25%",
+        "investmentYear": 2020,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Schroders Greencoat",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Greencoat Vela LLC; managed mandates not publicly disclosed by exact legal name",
+        "stake": "24%",
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Algonquin / Liberty",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Algonquin Power Fund (America) Inc. through Vela",
+        "stake": "51%",
+        "investmentYear": 2021,
+        "exitYear": 2025,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": null,
+        "date": "Jan 2021",
+        "event": "Algonquin, RWE and Greencoat completed the first three project transfers, establishing the 51%/25%/24% ownership structure.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-01-31T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.rwe.com/-/media/RWE/documents/05-investor-relations/finanzkalendar-und-veroeffentlichungen/2021-GJ/2022-03-15-rwe-annual-report-2021.pdf?sc_lang=en"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Aug 12, 2021",
+        "event": "The parties completed the West Raymond transfer into the same Vela ownership perimeter.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-08-12T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.rwe.com/-/media/RWE/documents/05-investor-relations/finanzkalendar-und-veroeffentlichungen/2021-GJ/2022-03-15-rwe-annual-report-2021.pdf?sc_lang=en"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Jan 8, 2025",
+        "event": "LS Power completed its acquisition of Algonquin's renewable-energy business, transferring Algonquin's 51% Vela interest into the Clearlight-managed portfolio.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-01-08T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.lspower.com/news/ls-power-completes-acquisition-of-algonquin-power-utilities-corp-s-large-scale-renewable-energy-business/"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": null,
+        "label": "RWE — 2025 financial statements",
+        "url": "https://www.rwe.com/en/rwe-financial-statements-2025/",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current 25% RWE interest in Vela Wind Holdco",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "RWE — 2021 annual report",
+        "url": "https://www.rwe.com/-/media/RWE/documents/05-investor-relations/finanzkalendar-und-veroeffentlichungen/2021-GJ/2022-03-15-rwe-annual-report-2021.pdf?sc_lang=en",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Original ownership structure, closings and Vela boundary",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "LS Power — Algonquin renewables acquisition close",
+        "url": "https://www.lspower.com/news/ls-power-completes-acquisition-of-algonquin-power-utilities-corp-s-large-scale-renewable-energy-business/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "January 2025 closing and Clearlight management platform",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Texas PUCT — Vela ownership filing",
+        "url": "https://interchange.puc.texas.gov/Documents/54891_1_1288597.PDF",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Regulatory ownership chain and project perimeter",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "12e96d4c789303bdb1e51456e1d208dbeb0c8c198764ddf61c877a826b64008d",
+  "proposalSha256": "22798e5f10700fa74a7ad252a3cd477135e03bcba25afa2427d2f5a1d50f4978"
+}

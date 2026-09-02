@@ -1,0 +1,213 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0414:illinois-wind-portfolio-bright-stalk-harvest-ridge:1410820d",
+  "taskIndex": 414,
+  "asOfDate": "2026-09-01",
+  "generatedAt": "2026-09-02T02:13:43.000Z",
+  "canonicalKey": "illinois-wind-portfolio-bright-stalk-harvest-ridge|united-states",
+  "companyName": "Illinois Wind Portfolio (Bright Stalk, Harvest Ridge)",
+  "actions": [
+    "CREATE_COMPANY"
+  ],
+  "sourceHoldingIds": [
+    "087-schroders-greencoat:holding:002:illinois-wind-portfolio-bright-stalk-harvest-ridge"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Create one canonical Illinois operating wind portfolio and keep Bright Stalk and Harvest Ridge as subordinate projects. Record the directly evidenced current 80% Schroders Greencoat-managed and 20% EDPR ownership split without inventing managed-fund or holdco names.",
+  "evidence": [
+    {
+      "url": "https://edp.com/en/investors/investor-information/market-notifications/edp-announces-upsize-80-stake-405-mw-asset",
+      "purpose": "Final ownership and closing evidence.",
+      "supports": [
+        "Greencoat-managed investors own 80%",
+        "EDPR retained 20%",
+        "The final upsize closed on September 8, 2021"
+      ]
+    },
+    {
+      "url": "https://www.edpr-investors.com/en/media/news/edpr-completes-asset-rotation-deal-405-mw-wind-portfolio-us-ev-100-07bn",
+      "purpose": "Initial closing and portfolio boundary evidence.",
+      "supports": [
+        "The portfolio contains Bright Stalk and Harvest Ridge",
+        "The initial 68% sale closed on July 1, 2021"
+      ]
+    },
+    {
+      "url": "https://cleangridalliance.org/our-impact/projects",
+      "purpose": "Current ownership-directory and operating evidence.",
+      "supports": [
+        "Both projects remain operating",
+        "Both projects continue to list Greencoat and EDPR owners"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "f1d18516a3c88db778acf8302e310c41c15338c6c1b3c45bb92976e2d746b0a0",
+  "currentCompanySnapshotSha256": null,
+  "executionLock": {
+    "taskSnapshotSha256": "effa58a3f083eec6169e1cb86f735567113a34e9ad07856a62227050cbd1769a",
+    "taskStateSha256": "16aa274d630fe8357339939fa00cedf2e63c45ad97559d0885cab502b3df9d20",
+    "taskDependencySha256": "7162f023548431ed1fed51e43a93e8e1e0a46df9edc0adf314307e96f61f1312",
+    "seedEntrySha256": null,
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [],
+    "organizations": [],
+    "redirects": []
+  },
+  "beforeImage": null,
+  "beforeImageSha256": null,
+  "afterImage": {
+    "id": null,
+    "name": "Illinois Wind Portfolio (Bright Stalk & Harvest Ridge)",
+    "aliases": [
+      "Illinois Wind Portfolio (Bright Stalk, Harvest Ridge)",
+      "Bright Stalk and Harvest Ridge Wind Portfolio",
+      "405 MW Illinois Wind Portfolio"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Operating onshore wind portfolio",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "The Illinois Wind Portfolio comprises the 205 MW Bright Stalk wind farm in McLean County and the 200 MW Harvest Ridge wind farm in Douglas County. Schroders Greencoat-managed investors own 80% and EDP Renewables retains 20% following two closings in 2021. EDPR continues to manage the operating assets; the exact Greencoat funds, acquisition holdco and EDPR upstream holder are not publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Illinois, United States",
+    "lastVerifiedAt": "2026-09-01T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": null,
+        "managerName": "Schroders Greencoat",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Greencoat-managed investors; exact funds and acquisition vehicle not publicly disclosed",
+        "stake": "80%",
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "EDP Renewables",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "EDPR affiliate; exact upstream holder not publicly disclosed",
+        "stake": "20% retained interest",
+        "investmentYear": null,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": null,
+        "date": "Dec 2019",
+        "event": "Bright Stalk began commercial operation in PJM.",
+        "category": "EXPANSION",
+        "sortDate": "2019-12-01T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.edpr-investors.com/en/media/news/edpr-completes-asset-rotation-deal-405-mw-wind-portfolio-us-ev-100-07bn"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Jul 2020",
+        "event": "Harvest Ridge began commercial operation in Illinois.",
+        "category": "EXPANSION",
+        "sortDate": "2020-07-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://edp.com/en/north-america/na/media/edp-renewables-starts-operation-new-200-mw-wind-farm-us"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Jul 1, 2021",
+        "event": "Greencoat-managed investors completed the initial acquisition of a 68% interest in the two-project portfolio.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-07-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.edpr-investors.com/en/media/news/edpr-completes-asset-rotation-deal-405-mw-wind-portfolio-us-ev-100-07bn"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Sep 8, 2021",
+        "event": "Greencoat-managed investors acquired an additional 12%, increasing their interest to 80% while EDPR retained 20%.",
+        "category": "FINANCING",
+        "sortDate": "2021-09-08T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://edp.com/en/investors/investor-information/market-notifications/edp-announces-upsize-80-stake-405-mw-asset"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": null,
+        "label": "EDP — Illinois portfolio 80% upsize closing",
+        "url": "https://edp.com/en/investors/investor-information/market-notifications/edp-announces-upsize-80-stake-405-mw-asset",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "September 2021 final 80%/20% ownership split",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "EDPR — initial Illinois portfolio closing",
+        "url": "https://www.edpr-investors.com/en/media/news/edpr-completes-asset-rotation-deal-405-mw-wind-portfolio-us-ev-100-07bn",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "July 2021 initial close and shared project perimeter",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Federal Register — Bright Stalk and Harvest Ridge filing",
+        "url": "https://www.govinfo.gov/content/pkg/FR-2021-05-14/html/2021-10214.htm",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Single FERC transaction docket for both project companies",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Clean Grid Alliance — project directory",
+        "url": "https://cleangridalliance.org/our-impact/projects",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current owner directory and operating capacities",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "EDP Renewables — Harvest Ridge operations",
+        "url": "https://edp.com/en/north-america/na/media/edp-renewables-starts-operation-new-200-mw-wind-farm-us",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Harvest Ridge commercial operation and offtake",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "3cb4fca8e26784cc866c8929c1d52f74538a51829b05777041033f0640b45c6d",
+  "proposalSha256": "951ac01022e7173493af87936a5de8feaa925ebd449d29e81676d3c3370f409f"
+}

@@ -26,7 +26,55 @@ describe("portfolio fund attribution ledger", () => {
 
   it("leaves reviewed owners unresolved when the current vehicle is not a disclosed fund", () => {
     const unresolved = ledger.rows.filter((row) => row.attribution === "UNRESOLVED");
-    expect(unresolved).toHaveLength(63);
+    expect(unresolved).toHaveLength(71);
+    expect(unresolved).toContainEqual(expect.objectContaining({
+      companyName: "Illinois Wind Portfolio (Bright Stalk & Harvest Ridge)",
+      investmentFirm: "Schroders Greencoat",
+      targetLinkedFundName: null,
+      proposedAction: "RESEARCH_REQUIRED",
+    }));
+    expect(unresolved).toContainEqual(expect.objectContaining({
+      companyName: "Illinois Wind Portfolio (Bright Stalk & Harvest Ridge)",
+      investmentFirm: "EDP Renewables",
+      targetLinkedFundName: null,
+      proposedAction: "RESEARCH_REQUIRED",
+    }));
+    expect(unresolved).toContainEqual(expect.objectContaining({
+      companyName: "Vela Wind Holdco, LLC",
+      investmentFirm: "RWE",
+      targetLinkedFundName: null,
+      proposedAction: "RESEARCH_REQUIRED",
+    }));
+    expect(unresolved).toContainEqual(expect.objectContaining({
+      companyName: "Vela Wind Holdco, LLC",
+      investmentFirm: "Schroders Greencoat",
+      targetLinkedFundName: null,
+      proposedAction: "RESEARCH_REQUIRED",
+    }));
+    expect(unresolved).toContainEqual(expect.objectContaining({
+      companyName: "Crawfish Solar Holdings 2, LLC",
+      investmentFirm: "Schroders Greencoat",
+      targetLinkedFundName: null,
+      proposedAction: "RESEARCH_REQUIRED",
+    }));
+    expect(unresolved).toContainEqual(expect.objectContaining({
+      companyName: "US Energy Logistics",
+      investmentFirm: "BP",
+      targetLinkedFundName: null,
+      proposedAction: "RESEARCH_REQUIRED",
+    }));
+    expect(unresolved).toContainEqual(expect.objectContaining({
+      companyName: "US Energy Logistics",
+      investmentFirm: "Sixth Street",
+      targetLinkedFundName: null,
+      proposedAction: "RESEARCH_REQUIRED",
+    }));
+    expect(unresolved).toContainEqual(expect.objectContaining({
+      companyName: "Caliche Development Partners",
+      investmentFirm: "Caliche Management",
+      targetLinkedFundName: null,
+      proposedAction: "RESEARCH_REQUIRED",
+    }));
     expect(unresolved).toContainEqual(expect.objectContaining({
       companyName: "Valley Cold Storage & Transportation",
       investmentFirm: "Clay Bush",

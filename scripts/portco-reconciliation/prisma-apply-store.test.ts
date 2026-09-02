@@ -131,5 +131,13 @@ describe("approved ownership organization provisioning", () => {
     expect(ownershipOrganizationTypes("AtkinsRéalis")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("American Electric Power")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Grupo Aeroportuario del Sureste")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("EDP Renewables")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("LS Power")).toEqual(["FUND_MANAGER"]);
+    expect(ownershipOrganizationTypes("Algonquin / Liberty")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("JERA Nex")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("Lightsource bp")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("BP")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("Caliche Management")).toEqual(["CORPORATE"]);
+    expect(ownershipOrganizationTypes("Energy Spectrum Capital")).toEqual(["FUND_MANAGER"]);
   });
 });

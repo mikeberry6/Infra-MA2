@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0416:u-s-solar-portfolio-oxbow-happy:cdda9d96",
+  "taskIndex": 416,
+  "companyName": "U.S. Solar Portfolio (Oxbow + Happy)",
+  "generatedAt": "2026-09-02T02:11:21.252Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0416-u-s-solar-portfolio-oxbow-happy/attempt-1/locked-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 416,
+    "taskId": "ledger:0416:u-s-solar-portfolio-oxbow-happy:cdda9d96",
+    "canonicalKey": "u-s-solar-portfolio-oxbow-happy|united-states",
+    "companyName": "U.S. Solar Portfolio (Oxbow + Happy)",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 87,
+    "managers": [
+      "Schroders Greencoat"
+    ],
+    "actionScopes": {
+      "company": [
+        "CREATE_COMPANY"
+      ],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "087-schroders-greencoat:holding:003:u-s-solar-portfolio-oxbow-happy"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://www.jeranex.com/news/schroders-greencoat-solar-portfolio",
+      "https://www.schroders.com/en/media-relations/newsroom/all_news_releases/schroders-greencoat-acquires-50-stake-in-395mw-us-solar-portfolio-from-jera-nex/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "No exact normalized production or seed match exists. Census evidence supports a new canonical company with 1 manager holding record(s).",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "u-s-solar-portfolio-oxbow-happy|united-states",
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0416:u-s-solar-portfolio-oxbow-happy:cdda9d96",
+    "taskIndex": 416,
+    "canonicalKey": "u-s-solar-portfolio-oxbow-happy|united-states",
+    "capturedAt": "2026-09-02T02:11:21.252Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "3c8ded15ed988b02f11caa144f9831b6e821c445bd04da471b8792592bc2b4a7",
+    "productionSnapshotSha256": "e2503b77f76e6c36325d6210fe1f727be166b97b7d6723ada4a5ee761d3defcb",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "7162f023548431ed1fed51e43a93e8e1e0a46df9edc0adf314307e96f61f1312",
+    "stateSha256": "0596d15dabec489a8beed4d4ad55402d3116a6834214e7aeaaf3feeba6590bf4",
+    "taskSnapshotSha256": "8c3f19eb1d72439d31c78c1d66b426b276a5b81870d7633c5464d77d2227db4d"
+  },
+  "contextSha256": "a7f609487459d3e405e8cf77cd893e97cda82013fa3f374e9db857bb34984bf6"
+}

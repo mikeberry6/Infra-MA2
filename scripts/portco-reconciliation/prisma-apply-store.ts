@@ -411,6 +411,14 @@ const approvedOwnershipOrganizationProvisioning = {
   "AtkinsRéalis": "CORPORATE",
   "American Electric Power": "CORPORATE",
   "Grupo Aeroportuario del Sureste": "CORPORATE",
+  "EDP Renewables": "CORPORATE",
+  "LS Power": "FUND_MANAGER",
+  "Algonquin / Liberty": "CORPORATE",
+  "JERA Nex": "CORPORATE",
+  "Lightsource bp": "CORPORATE",
+  "BP": "CORPORATE",
+  "Caliche Management": "CORPORATE",
+  "Energy Spectrum Capital": "FUND_MANAGER",
 } as const;
 
 export function ownershipOrganizationTypes(
