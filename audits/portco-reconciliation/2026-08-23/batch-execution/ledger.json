@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-02T02:28:26.000Z",
-  "activeBatchId": "batch-0414-0418-v1",
+  "updatedAt": "2026-09-02T02:42:40.000Z",
+  "activeBatchId": null,
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -7282,7 +7282,7 @@
     },
     {
       "batchId": "batch-0414-0418-v1",
-      "state": "READY",
+      "state": "COMPLETED",
       "taskIds": [
         "ledger:0414:illinois-wind-portfolio-bright-stalk-harvest-ridge:1410820d",
         "ledger:0415:texas-wind-portfolio-stella-cranell-east-raymond-west-raymond:82653dc8",
@@ -7298,15 +7298,18 @@
         418
       ],
       "createdAt": "2026-09-02T02:09:45.000Z",
-      "updatedAt": "2026-09-02T02:28:26.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-09-02T02:42:40.000Z",
+      "completedAt": "2026-09-02T02:42:40.000Z",
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0414-0418-v1/batch-manifest.json",
         "sha256": "45ae908c6dc289791f82d100f98dfa57676cf2395db767e5791e1a34af8c1e65"
       },
-      "releaseSha": null,
-      "receipt": null,
-      "reason": null,
+      "releaseSha": "4528a4d6e306e1f566d7c9620af5d240222d162e",
+      "receipt": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0414-0418-v1/production-apply/batch-apply-receipt.json",
+        "sha256": "d00e3fafd12613e8acac933459fce8cca199529d68f51d9c9f0a9a657643e6d8"
+      },
+      "reason": "Protected atomic transaction, seed parity, detail APIs, canonical deployment, and rendered production scorecards verified.",
       "history": [
         {
           "sequence": 1,
@@ -7325,9 +7328,51 @@
             "45ae908c6dc289791f82d100f98dfa57676cf2395db767e5791e1a34af8c1e65"
           ],
           "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "RELEASING",
+          "at": "2026-09-02T02:36:50.000Z",
+          "evidenceSha256": [
+            "45ae908c6dc289791f82d100f98dfa57676cf2395db767e5791e1a34af8c1e65"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 4,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-09-02T02:38:51.000Z",
+          "evidenceSha256": [
+            "45ae908c6dc289791f82d100f98dfa57676cf2395db767e5791e1a34af8c1e65"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 5,
+          "from": "APPLYING",
+          "to": "VERIFYING",
+          "at": "2026-09-02T02:38:57.192Z",
+          "evidenceSha256": [
+            "45ae908c6dc289791f82d100f98dfa57676cf2395db767e5791e1a34af8c1e65",
+            "d00e3fafd12613e8acac933459fce8cca199529d68f51d9c9f0a9a657643e6d8"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 6,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-09-02T02:42:40.000Z",
+          "evidenceSha256": [
+            "45ae908c6dc289791f82d100f98dfa57676cf2395db767e5791e1a34af8c1e65",
+            "d00e3fafd12613e8acac933459fce8cca199529d68f51d9c9f0a9a657643e6d8"
+          ],
+          "reason": "Protected atomic transaction, seed parity, detail APIs, canonical deployment, and rendered production scorecards verified."
         }
       ]
     }
   ],
-  "ledgerSha256": "5458f7aca8d866ad46ffc3a9980b03d5f09d0e8be02505bded8eaabf1d4c6705"
+  "ledgerSha256": "9adf9138db1508d59b2089c7507ff4d044efa614cc7a274c77dcd1c0eb022926"
 }
