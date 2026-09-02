@@ -248,6 +248,50 @@ function supersededProposalFixture(
 }
 
 describe("proposal patch ownership additions", () => {
+  it("transfers persisted ownership history into a canonical merge target", () => {
+    const context = contextFixture();
+    const transferred = {
+      id: "owner_retired_company",
+      managerName: "QIA",
+      organizationName: "QIA",
+      fundName: null,
+      vehicleName: null,
+      stake: "Significant minority interest",
+      investmentYear: 2019,
+      exitYear: null,
+      isActive: true,
+      transactionState: "CLOSED_ACTIVE" as const,
+    };
+    const applied = applySpec(context, {
+      ...baseSpec(),
+      actions: ["MERGE_COMPANIES"],
+      retiredCompanyIds: ["company_retired"],
+      ownershipPeriodAdditions: [],
+      ownershipPeriodTransfers: [transferred],
+    });
+
+    expect(applied.afterImage?.ownershipPeriods).toContainEqual(transferred);
+  });
+
+  it("rejects persisted ownership transfers outside a company merge", () => {
+    expect(() => applySpec(contextFixture(), {
+      ...baseSpec(),
+      ownershipPeriodAdditions: [],
+      ownershipPeriodTransfers: [{
+        id: "owner_retired_company",
+        managerName: "QIA",
+        organizationName: "QIA",
+        fundName: null,
+        vehicleName: null,
+        stake: "Significant minority interest",
+        investmentYear: 2019,
+        exitYear: null,
+        isActive: true,
+        transactionState: "CLOSED_ACTIVE",
+      }],
+    })).toThrow(/valid only for MERGE_COMPANIES/i);
+  });
+
   it("transfers persisted milestone history into a canonical merge target", () => {
     const context = contextFixture();
     const transferred = {

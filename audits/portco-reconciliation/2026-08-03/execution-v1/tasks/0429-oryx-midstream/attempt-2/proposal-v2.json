@@ -1,0 +1,417 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0429:oryx-midstream:eee190fa",
+  "taskIndex": 429,
+  "asOfDate": "2026-09-02",
+  "generatedAt": "2026-09-02T05:42:00.000Z",
+  "canonicalKey": "oryx-midstream|united-states",
+  "companyName": "Oryx Midstream",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER",
+    "MERGE_COMPANIES"
+  ],
+  "sourceHoldingIds": [
+    "090-stonepeak:holding:011:oryx-midstream"
+  ],
+  "retiredCompanyIds": [
+    "cmrxpjmio0184ivheuuox3f9o"
+  ],
+  "relationMerges": [
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxpmki50512ivheuz7rfkop",
+      "canonicalRelationId": "cmrxpmq66057zivhe7tero8yx",
+      "rationale": "Both milestones record Stonepeak's 2019 acquisition of the same Oryx platform; the canonical event is updated to the May 22 funding date."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxpmkip0513ivheig04lpbk",
+      "canonicalRelationId": "cmrxpmq5r057yivhe9gihln2p",
+      "rationale": "Both milestones record QIA's August 2019 entry into the same Oryx platform."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxpmkja0514ivhe4s7cmsgk",
+      "canonicalRelationId": "cmrxpmq740581ivhe5vddw804",
+      "rationale": "Both milestones record the October 2021 closing of the Plains/Oryx POPB joint venture."
+    }
+  ],
+  "rationale": "Keep Oryx Midstream as the single canonical platform and redirect the duplicate Oryx Midstream Services record. Current affirmative company and SEC evidence establishes Stonepeak and Qatar Investment Authority as continuing owner groups above OMSPB at undisclosed stakes. The operating asset boundary is OMSPB's 35% interest in the Plains-operated POPB joint venture; Plains' 65% operator interest remains beneath the Oryx PortCo boundary rather than becoming another Oryx owner.",
+  "evidence": [
+    {
+      "url": "https://www.oryxmidstream.com/who-we-are/our-partners",
+      "purpose": "Primary current owner-group evidence.",
+      "supports": [
+        "Oryx's live partner page identifies Stonepeak and QIA as its current backers",
+        "The current decision is based on affirmative company evidence rather than absence of an exit"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1274173/000110465926036161/tm269831d4_defa14a.htm",
+      "purpose": "Current QIA-affiliate evidence.",
+      "supports": [
+        "A March 2026 SEC filing calls Oryx Midstream Services LLC an affiliate of Qatar Investment Authority in connection with a January 2025 refinancing"
+      ]
+    },
+    {
+      "url": "https://stonepeak.com/investments",
+      "purpose": "Current Stonepeak attribution and POPB governance evidence.",
+      "supports": [
+        "Stonepeak continues to list Oryx as an investment",
+        "Stonepeak describes Oryx's continuing governance role in POPB"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1581990/000110465921123181/tm2129267d1_8k.htm",
+      "purpose": "POPB legal closing and asset-boundary evidence.",
+      "supports": [
+        "The 2021 transaction placed all legacy Oryx Permian assets into POPB",
+        "POPB is owned 65% by Plains and 35% through the Oryx member"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1581990/000158199026000017/pagp-20260331.htm",
+      "purpose": "Current underlying-joint-venture evidence.",
+      "supports": [
+        "Plains reported the continuing 35% POPB noncontrolling interest at March 31, 2026"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "feb6ba9d25b472fe87db998a2b726c5e8916607752540d995cb0a2b4d7cc3b7d",
+  "currentCompanySnapshotSha256": "04075b289e9dad791953adf1a63feb463057eda793334ad1cf4e8a43aea3eb1a",
+  "executionLock": {
+    "taskSnapshotSha256": "19ebc3e3d0d4555fd8cf096bd0d6583a19fda3c5af06d9938a0f8b2b4919fe2e",
+    "taskStateSha256": "2896a10b3f6672d41618c92e155a6d3d8c1759e75bbce1c16303fcdc31e1cc7b",
+    "taskDependencySha256": "1f6b9b1d777d8b65e117c8d3ef070d4eaf7e625be9f6efd9c20f1b38cf72275f",
+    "seedEntrySha256": "6980d2a837663c2522c61a512c288fac27bfb6cbb68574753c439575182c45df",
+    "dependencies": {
+      "ownershipPeriodsSha256": "e4b335db01483ed9782a0c010c500e9eb433c567bf1a8c871cac36aef721ba2f",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "2d210a6d2e804e470241d60da76a7c908003fe5cb1a16d50287bd5e3ed572180",
+      "organizationsSha256": "ecd19031763dfbd0ab3c57502816fa40a64ca719ade2adc42677db23c458bfcc",
+      "citationsSha256": "81c1cbdd79eac6d95d8bfa0fada5a41acebfae0a3984f738d7f5853771f04410",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj3nu00fbivhebtp8thxg",
+        "fundName": "Stonepeak Core Fund",
+        "managerId": "cmrxpide6003hivhe1g17rhjr",
+        "updatedAt": "2026-07-23T16:09:58.602Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpide6003hivhe1g17rhjr",
+        "name": "Stonepeak",
+        "updatedAt": "2026-07-23T16:09:24.559Z"
+      },
+      {
+        "id": "cmrxpikel005oivhel8ttoayw",
+        "name": "QIA",
+        "updatedAt": "2026-07-23T16:09:33.645Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjnnm01a1ivhew2n8o1is",
+    "name": "Oryx Midstream",
+    "aliases": [],
+    "sector": "MIDSTREAM",
+    "subsector": "Crude oil gathering and transportation",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Oryx Midstream owns and operates crude oil gathering, transportation, and related infrastructure in the Permian Basin. Its customers are upstream producers and downstream counterparties that contract for takeaway capacity and field connectivity rather than spot commodity services. The platform is asset-heavy and basin-focused, with revenue tied to gathering and transportation volumes on long-lived infrastructure. Stonepeak acquired Oryx in 2019, and in 2021 the business combined certain Permian assets with Plains All American to form the Plains Oryx Permian Basin joint venture. The detailed current ownership structure of the broader platform is not publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Permian Basin",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpka8b029oivhepz8n1yd2",
+        "managerName": "Stonepeak",
+        "organizationName": "Stonepeak",
+        "fundName": "Stonepeak Core Fund",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2019,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmq5r057yivhe9gihln2p",
+        "date": "2019",
+        "event": "Qatar Investment Authority invested in the platform later in the year.",
+        "category": "FINANCING",
+        "sortDate": "2019-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmq66057zivhe7tero8yx",
+        "date": "Apr 2019",
+        "event": "Stonepeak announced a binding agreement to acquire Oryx Midstream.",
+        "category": "ACQUISITION",
+        "sortDate": "2019-04-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmq6q0580ivhehz3022i0",
+        "date": "Jul 2021",
+        "event": "Stonepeak and Plains announced a joint venture of Permian Basin midstream assets.",
+        "category": "OTHER",
+        "sortDate": "2021-07-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmq740581ivhe5vddw804",
+        "date": "Oct 2021",
+        "event": "Stonepeak and Plains completed the joint venture transaction.",
+        "category": "OTHER",
+        "sortDate": "2021-10-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpstl60d69ivheu7bgu6r4",
+        "label": "Announcement date source — Stonepeak — Oryx Midstream",
+        "url": "https://www.oryxmidstream.com/news/stonepeak-infrastructure-partners-acquire-oryx-midstream",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Stonepeak transaction announcement",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpstm80d6bivheomno6260",
+        "label": "Stonepeak — Oryx Midstream",
+        "url": "https://stonepeak.com/news/stonepeak-and-plains-complete-joint-venture-of-permian-basin-midstream-assets",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Stonepeak operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpstn90d6divheetg3a8j8",
+        "label": "Oryxmidstream — Oryx Midstream",
+        "url": "https://www.oryxmidstream.com/about/history",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Oryxmidstream company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpstns0d6eivheykjpcmvs",
+        "label": "Stonepeak — Evolve Transition Infrastructure LP",
+        "url": "https://stonepeak.com/investments",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Stonepeak company profile",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "04075b289e9dad791953adf1a63feb463057eda793334ad1cf4e8a43aea3eb1a",
+  "afterImage": {
+    "id": "cmrxpjnnm01a1ivhew2n8o1is",
+    "name": "Oryx Midstream",
+    "aliases": [
+      "Oryx Midstream Services",
+      "Oryx Midstream Services II LLC",
+      "Oryx Midstream Holdings LLC"
+    ],
+    "sector": "MIDSTREAM",
+    "subsector": "Crude oil gathering and transportation",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Oryx Midstream is a Permian Basin crude-oil gathering, transportation and storage platform founded in 2013. Stonepeak acquired the business in 2019, and Qatar Investment Authority subsequently acquired a significant minority interest. In October 2021, Oryx contributed all of its Permian assets to Plains Oryx Permian Basin LLC; Plains operates and owns 65% of that joint venture, while Oryx Midstream Services Permian Basin LLC retains 35%. Current affirmative company and SEC evidence identifies both Stonepeak and QIA as continuing owner groups above the Oryx member, but their exact percentages and current holding vehicles are not publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://www.oryxmidstream.com/",
+    "yearFounded": 2013,
+    "headquarters": "Midland, Texas",
+    "lastVerifiedAt": "2026-09-02T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpka8b029oivhepz8n1yd2",
+        "managerName": "Stonepeak",
+        "organizationName": "Stonepeak",
+        "fundName": null,
+        "vehicleName": "Middle Cadence Holdings LLC / Oryx Midstream Services Permian Basin LLC; current fund allocation not publicly disclosed",
+        "stake": "Current owner group above OMSPB; exact percentage not publicly disclosed",
+        "investmentYear": 2019,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "QIA",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": null,
+        "stake": "Current direct or indirect owner group above OMSPB; exact percentage and tier not publicly disclosed",
+        "investmentYear": 2019,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmq5r057yivhe9gihln2p",
+        "date": "Aug 7, 2019",
+        "event": "Qatar Investment Authority acquired a significant minority stake in Oryx and committed to invest alongside Stonepeak; the exact current sponsor split is not publicly disclosed.",
+        "category": "ACQUISITION",
+        "sortDate": "2019-08-07T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.oryxmidstream.com/news/leading-us-midstream-crude-system-oryx-announces-550-million-investment-qia"
+        ]
+      },
+      {
+        "id": "cmrxpmq66057zivhe7tero8yx",
+        "date": "May 22, 2019",
+        "event": "Stonepeak funded its acquisition of Oryx Midstream following the April 2019 announcement.",
+        "category": "ACQUISITION",
+        "sortDate": "2019-05-22T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1581990/000158199021000031/oryxmidstreamholdings30j.htm",
+          "https://www.oryxmidstream.com/news/stonepeak-infrastructure-partners-acquire-oryx-midstream"
+        ]
+      },
+      {
+        "id": "cmrxpmq6q0580ivhehz3022i0",
+        "date": "Jul 2021",
+        "event": "Stonepeak and Plains announced a joint venture of Permian Basin midstream assets.",
+        "category": "OTHER",
+        "sortDate": "2021-07-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmq740581ivhe5vddw804",
+        "date": "Oct 5, 2021",
+        "event": "The Plains/Oryx POPB joint venture closed with Plains owning 65% and operating the venture and the Oryx member retaining 35% after contributing all legacy Oryx Permian assets.",
+        "category": "OTHER",
+        "sortDate": "2021-10-05T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1581990/000110465921123181/tm2129267d1_8k.htm"
+        ]
+      },
+      {
+        "id": "cmrxpmkfd0511ivheh7btu80w",
+        "date": "2013",
+        "event": "Oryx Midstream Services was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2013-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.oryxmidstream.com/about/history"
+        ]
+      },
+      {
+        "id": "cmrxpmkju0515ivheoxagclq2",
+        "date": "2023",
+        "event": "Oryx announced additional system expansion activity in the Permian Basin.",
+        "category": "OTHER",
+        "sortDate": "2023-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpstl60d69ivheu7bgu6r4",
+        "label": "Announcement date source — Stonepeak — Oryx Midstream",
+        "url": "https://www.oryxmidstream.com/news/stonepeak-infrastructure-partners-acquire-oryx-midstream",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Stonepeak transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpstm80d6bivheomno6260",
+        "label": "Stonepeak — Oryx Midstream",
+        "url": "https://stonepeak.com/news/stonepeak-and-plains-complete-joint-venture-of-permian-basin-midstream-assets",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Stonepeak operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpstn90d6divheetg3a8j8",
+        "label": "Oryxmidstream — Oryx Midstream",
+        "url": "https://www.oryxmidstream.com/about/history",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Oryxmidstream company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpstns0d6eivheykjpcmvs",
+        "label": "Stonepeak — Evolve Transition Infrastructure LP",
+        "url": "https://stonepeak.com/investments",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Stonepeak company profile",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Oryx Midstream — Our Partners",
+        "url": "https://www.oryxmidstream.com/who-we-are/our-partners",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current Stonepeak and QIA partner attribution",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "SEC — Janus Henderson proxy supplement",
+        "url": "https://www.sec.gov/Archives/edgar/data/1274173/000110465926036161/tm269831d4_defa14a.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "March 2026 identification of Oryx Midstream Services LLC as a QIA affiliate",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Plains — POPB closing Form 8-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1581990/000110465921123181/tm2129267d1_8k.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "October 2021 legal closing, all-assets boundary and 65%/35% POPB structure",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Plains — Q1 2026 Form 10-Q",
+        "url": "https://www.sec.gov/Archives/edgar/data/1581990/000158199026000017/pagp-20260331.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Continuing 35% Oryx-side POPB interest in 2026",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "e0288801582fc29cb0aa17b9768ceb83210ad3d7cc3525dbfb5f92c4bdfe4612",
+  "proposalSha256": "531c21ebda5dd9f6692dbd2f18f205c9ee2e395345e6df210a75288726486d39"
+}

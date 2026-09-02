@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0429:oryx-midstream:eee190fa",
+  "checkedAt": "2026-09-02T05:20:00.000Z",
+  "method": "Independent direct HTTP status, redirect, media-type, byte-count and SHA-256 checks plus first-party Oryx, Stonepeak and SEC inspection; duplicate identity, affirmative current QIA attribution, POPB boundary and explicit exit search",
+  "sources": [
+    {
+      "url": "https://www.oryxmidstream.com/who-we-are/our-partners",
+      "httpStatus": 200,
+      "finalUrl": "https://www.oryxmidstream.com/who-we-are/our-partners",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 17587,
+      "sha256": "8404c165deb39f97329a30ff055d36b7cfb0bd4351a573b3f40a9bbbea5f1640",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Oryx's live partner page says Oryx Midstream is backed by Stonepeak and QIA",
+        "The page affirmatively presents QIA as a current Oryx partner"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1274173/000110465926036161/tm269831d4_defa14a.htm",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1274173/000110465926036161/tm269831d4_defa14a.htm",
+      "mediaType": "text/html",
+      "bytes": 459097,
+      "sha256": "aa592ca37f41c2b937419f567d8d825907bcc5874e41c3653d6504e1bb74202d",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "The March 2026 filing calls Oryx Midstream Services LLC an affiliate of Qatar Investment Authority",
+        "The reference relates to Oryx's January 2025 refinancing"
+      ]
+    },
+    {
+      "url": "https://stonepeak.com/investments",
+      "httpStatus": 200,
+      "finalUrl": "https://stonepeak.com/investments",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 303186,
+      "sha256": "4f0a72952bb2b8608989bf7b9830cb25487feb19eedc5bf3fd053b964cfd9224",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Stonepeak continues to list Oryx as an investment",
+        "Stonepeak describes Oryx's continuing governance role in POPB"
+      ]
+    },
+    {
+      "url": "https://www.oryxmidstream.com/news/leading-us-midstream-crude-system-oryx-announces-550-million-investment-qia",
+      "httpStatus": 200,
+      "finalUrl": "https://www.oryxmidstream.com/news/leading-us-midstream-crude-system-oryx-announces-550-million-investment-qia",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 19106,
+      "sha256": "7a9a28618c237c1dfb9c3ecc0442387c0a1cdc6943ab868e244d8756e512c229",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "QIA acquired a significant minority stake in August 2019",
+        "The release bridges Oryx Midstream Services and the Oryx Midstream platform identity"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1581990/000110465921123181/tm2129267d1_8k.htm",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1581990/000110465921123181/tm2129267d1_8k.htm",
+      "mediaType": "text/html",
+      "bytes": 45894,
+      "sha256": "bb0374ff79ef9c1955d160360275caedbd6e99144aa5a55a4422d7be60a5c9e1",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "The POPB transaction closed with Plains at 65% and OMSPB at 35%",
+        "All legacy Oryx Permian assets entered the underlying POPB joint venture"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1581990/000158199026000017/pagp-20260331.htm",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1581990/000158199026000017/pagp-20260331.htm",
+      "mediaType": "text/html",
+      "bytes": 1786329,
+      "sha256": "bf0877a3da97191ef94fa2a39d2e7e549f9d23a33e35328755e04a77b42f78c3",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Plains reported the continuing 35% POPB noncontrolling interest at March 31, 2026"
+      ]
+    }
+  ],
+  "exitSearch": {
+    "searchedAt": "2026-09-02T05:20:00.000Z",
+    "scopeThrough": "2026-09-02",
+    "result": "Explicit searches covered QIA exit, sale, transfer, buyout, dilution, refinancing, restructuring and change of control. No later direct disposition was found; current Oryx and March 2026 SEC evidence affirmatively support QIA as a continuing owner group, while Stonepeak's current portfolio page supports Stonepeak."
+  },
+  "allEvidenceUrlsDirectHttps": true,
+  "allCoreSourcesWorkingOrVerified": true,
+  "directFetchBlockedButWebVerifiedCount": 0,
+  "responseSourceHealthCorrections": [
+    "QIA's exact affiliate, tier and percentage above OMSPB remain not publicly disclosed and are not inferred.",
+    "The continuing 35% POPB interest belongs to the Oryx member and does not disclose the Stonepeak/QIA split above OMSPB.",
+    "Oryx Midstream Services is treated as a duplicate legal/display identity beneath the canonical Oryx Midstream record, not a second PortCo."
+  ],
+  "deadSourceCount": 0
+}

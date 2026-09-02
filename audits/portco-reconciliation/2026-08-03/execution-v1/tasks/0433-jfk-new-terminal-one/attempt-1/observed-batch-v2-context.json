@@ -1,0 +1,359 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0433:jfk-new-terminal-one:759db377",
+  "taskIndex": 433,
+  "companyName": "JFK New Terminal One",
+  "generatedAt": "2026-09-02T05:49:48.122Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0433-jfk-new-terminal-one/attempt-1/observed-batch-v2-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 433,
+    "taskId": "ledger:0433:jfk-new-terminal-one:759db377",
+    "canonicalKey": "jfk-new-terminal-one|united-states",
+    "companyName": "JFK New Terminal One",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 91,
+    "managers": [
+      "Swiss Life Asset Managers"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "091-swiss-life-asset-managers:holding:001:jfk-new-terminal-one"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjnv601abivhe2ixd73xz"
+    ],
+    "seedKeys": [
+      "jfk new terminal one|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.anewjfk.com/",
+      "https://www.swisslife-am.com/dam/jcr:6b2e5e90-8e33-4bb4-b9d3-0e7a68c4c41d/20250116_Swiss%20Life%20AM_IAM%20Infrastructure%20Equity_Q4%202025.pdf"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_OWNER requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjnv601abivhe2ixd73xz",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "jfk-new-terminal-one|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjnv601abivhe2ixd73xz",
+    "name": "JFK New Terminal One",
+    "aliases": [],
+    "sector": "TRANSPORTATION",
+    "subsector": "Airport terminal public-private partnership",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "JFK New Terminal One is the public-private partnership developing and operating a new international terminal at John F. Kennedy International Airport in Queens, New York. Its customers are airlines and air passengers using one of the largest international gateway airports in the United States. The project follows an asset-heavy concession and terminal operating model supported by long-term aviation traffic and airline use rather than an asset-light services model. Public materials describe a 2.4 million-square-foot terminal and a total project cost of approximately $9.5 billion, making it one of the largest airport terminal redevelopments in North America. Swiss Life Asset Managers committed a minority equity stake in July 2022 alongside the existing consortium, and the project has since advanced through groundbreaking and multiple green bond financings.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "New York",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpkafi029yivheau72hzni",
+        "managerName": "Ullico",
+        "organizationName": "Ullico",
+        "fundName": null,
+        "vehicleName": "UIF",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpkafz029zivhe2ryo1tzy",
+        "managerName": "Swiss Life",
+        "organizationName": "Swiss Life",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmr000590ivhe8cilntsk",
+        "date": "Jun 2022",
+        "event": "Ullico closed its investment as an equity sponsor in the New Terminal One development consortium.",
+        "category": "FINANCING",
+        "sortDate": "2022-06-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmr0k0591ivhecaimnbho",
+        "date": "Sep 2022",
+        "event": "The New Terminal One project officially broke ground.",
+        "category": "EXPANSION",
+        "sortDate": "2022-09-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmr120592ivhehvwgjzqo",
+        "date": "Jul 2022",
+        "event": "Swiss Life Asset Managers committed a minority equity stake in the project.",
+        "category": "FINANCING",
+        "sortDate": "2022-07-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmr1n0593ivheh53d8ji9",
+        "date": "Jul 2025",
+        "event": "The project completed a $1.367 billion Series 2025 green bond issuance.",
+        "category": "FINANCING",
+        "sortDate": "2025-07-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmr260594ivhe7mff2bfo",
+        "date": "Jul 2025",
+        "event": "The project completed a $1.367 billion green bond issuance to fund remaining Phase A costs.",
+        "category": "FINANCING",
+        "sortDate": "2025-07-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsv250d8iivhemjw8jxng",
+        "label": "Governor — JFK New Terminal One",
+        "url": "https://www.governor.ny.gov/news/governor-hochul-announces-groundbreaking-95-billion-new-terminal-one-major-step-forward-port",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Governor — JFK New Terminal One",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpsv370d8kivhexhbx1926",
+        "label": "Info — JFK New Terminal One",
+        "url": "https://info.assuredguaranty.com/press-room/all-press-releases/news-details/2025/Assured-Guaranty-Insures-600-Million-in-Third-Transaction-for-JFK-International-Airports-New-Terminal-One-Project/default.aspx",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Info operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsv450d8mivhex4uymijx",
+        "label": "Close date source — Ullico — JFK New Terminal One",
+        "url": "https://www.ullico.com/ullico-reaches-financial-close-as-part-of-consortium-developing-new-terminal-one-at-jfk-airport/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Ullico closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsv540d8oivhen75dwur2",
+        "label": "Investment date source — Swiss Life — JFK New Terminal One",
+        "url": "https://www.swisslife-am.com/en/home/media/news/corporate/company-news/2022/0729_jfk_t1.html",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Swiss Life initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsv620d8qivhekiz33ksk",
+        "label": "Panynj — JFK New Terminal One",
+        "url": "https://www.panynj.gov/port-authority/en/press-room/press-release-archives/2022-press-releases/governor-hochul-announces-construction-of-a--9-5-billion-new-ter0.html",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Panynj — JFK New Terminal One",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsv740d8sivhebaciw3hp",
+        "label": "Portauthoritybuilds — JFK New Terminal One",
+        "url": "https://www.portauthoritybuilds.com/redevelopment/us/en/jfk/planned-projects/terminal-1/news/the-new-terminal-one-at-jfk-successfully-concludes--1-37-billion.html",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Portauthoritybuilds operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsv8d0d8uivhesk32w2nq",
+        "label": "Ferrovial — JFK New Terminal One",
+        "url": "https://www.ferrovial.com/en/business/projects/new-terminal-one-jfk-international-airport/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Ferrovial operations / asset details",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "JFK New Terminal One",
+    "investmentFirm": "Swiss Life",
+    "sector": "Transportation",
+    "subsector": "Airport terminal public-private partnership",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "JFK New Terminal One is the public-private partnership developing and operating a new international terminal at John F. Kennedy International Airport in Queens, New York. Its customers are airlines and air passengers using one of the largest international gateway airports in the United States. The project follows an asset-heavy concession and terminal operating model supported by long-term aviation traffic and airline use rather than an asset-light services model. Public materials describe a 2.4 million-square-foot terminal and a total project cost of approximately $9.5 billion, making it one of the largest airport terminal redevelopments in North America. Swiss Life Asset Managers committed a minority equity stake in July 2022 alongside the existing consortium, and the project has since advanced through groundbreaking and multiple green bond financings.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2022,
+    "headquarters": "New York",
+    "milestones": [
+      {
+        "date": "Jun 2022",
+        "event": "Ullico closed its investment as an equity sponsor in the New Terminal One development consortium.",
+        "category": "Financing"
+      },
+      {
+        "date": "Sep 2022",
+        "event": "The New Terminal One project officially broke ground.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Jul 2022",
+        "event": "Swiss Life Asset Managers committed a minority equity stake in the project.",
+        "category": "Financing"
+      },
+      {
+        "date": "Jul 2025",
+        "event": "The project completed a $1.367 billion Series 2025 green bond issuance.",
+        "category": "Financing"
+      },
+      {
+        "date": "Jul 2025",
+        "event": "The project completed a $1.367 billion green bond issuance to fund remaining Phase A costs.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Governor — JFK New Terminal One",
+        "url": "https://www.governor.ny.gov/news/governor-hochul-announces-groundbreaking-95-billion-new-terminal-one-major-step-forward-port",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Info — JFK New Terminal One",
+        "url": "https://info.assuredguaranty.com/press-room/all-press-releases/news-details/2025/Assured-Guaranty-Insures-600-Million-in-Third-Transaction-for-JFK-International-Airports-New-Terminal-One-Project/default.aspx",
+        "type": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Close date source — Ullico — JFK New Terminal One",
+        "url": "https://www.ullico.com/ullico-reaches-financial-close-as-part-of-consortium-developing-new-terminal-one-at-jfk-airport/",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Investment date source — Swiss Life — JFK New Terminal One",
+        "url": "https://www.swisslife-am.com/en/home/media/news/corporate/company-news/2022/0729_jfk_t1.html",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Panynj — JFK New Terminal One",
+        "url": "https://www.panynj.gov/port-authority/en/press-room/press-release-archives/2022-press-releases/governor-hochul-announces-construction-of-a--9-5-billion-new-ter0.html",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Portauthoritybuilds — JFK New Terminal One",
+        "url": "https://www.portauthoritybuilds.com/redevelopment/us/en/jfk/planned-projects/terminal-1/news/the-new-terminal-one-at-jfk-successfully-concludes--1-37-billion.html",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Ferrovial — JFK New Terminal One",
+        "url": "https://www.ferrovial.com/en/business/projects/new-terminal-one-jfk-international-airport/",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Ullico",
+        "ownershipVehicle": "UIF",
+        "investmentYear": 2022,
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "Swiss Life",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2022,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpieop003wivhet5qq95ev",
+        "name": "Ullico",
+        "updatedAt": "2026-07-23T16:09:26.233Z"
+      },
+      {
+        "id": "cmrxpigqi004jivheokoqn6ry",
+        "name": "Swiss Life",
+        "updatedAt": "2026-07-23T16:09:28.890Z"
+      },
+      {
+        "id": "cmtjjgkml000u0z2bjnrcsyld",
+        "name": "The Carlyle Group",
+        "updatedAt": "2026-09-02T03:30:41.133Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0433:jfk-new-terminal-one:759db377",
+    "taskIndex": 433,
+    "canonicalKey": "jfk-new-terminal-one|united-states",
+    "capturedAt": "2026-09-02T05:49:48.122Z",
+    "databaseRevision": "revision:22b2bfa90e8c6a0126abfc3b9df59c55d0fc7255a66c46539bc19f35fa0dcfe3",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "98ffce033d3d4cbad43df78ccd60ddec8ff5721b3c095edd9f6e15fe3602917a",
+    "productionSnapshotSha256": "bc553f745cd462295ebc93bb02c53848583e3e28105259be3f2db2e192afbfed",
+    "targetCompanySnapshotSha256": "186648e1cb92f4e316af7ca27d0454c8c8e58f49999f843b34249fcc3be2686f",
+    "seedEntrySha256": "a123fb7269e9c4698bbd483d95dd72ba7a664e97d7acf4c007b038dfcd1a6a51",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "f6cd277eec6cbb04297f302136ba4ec0f3f13893643f5d61bf963356470c45c4",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "04d4d832c5bf78a5e62ed56fb3e1eafaafd101ea55b2ffbb5e304838187c2dec",
+      "citationsSha256": "4d21dbc3d952a20c44f32520dd0550a1a664c3de15c9a75f973b515cb8b13566",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "0d9754311ab2b6ad64c095c7f4d1b0670ef2d7bf5392ea33c2b6072b82189459",
+    "stateSha256": "a6fd4d0399dee7632118b4e4ee3689a0d2ae02aadb78b3df8e30d17e1dd617a9",
+    "taskSnapshotSha256": "b2ee898a28ed74efe83c2000d52d03f7df0129f2065a9a99f860425368f37e1a"
+  },
+  "contextSha256": "de8c8b0fdafaff0dfe48a624ac973c77a2067dc7cff205eb08945805e5da1080"
+}

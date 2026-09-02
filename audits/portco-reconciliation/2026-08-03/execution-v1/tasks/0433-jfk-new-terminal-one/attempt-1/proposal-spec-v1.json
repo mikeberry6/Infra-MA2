@@ -1,0 +1,202 @@
+{
+  "generatedAt": "2026-09-02T05:15:00.000Z",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "reviewedSeedRetirementTaskIds": [],
+  "rationale": "Keep one canonical JFK New Terminal One asset and correct its ownership hierarchy. Current direct sponsor ownership is Ferrovial 49%, JLC Infrastructure 30%, Ullico 19% and Carlyle 2%. Swiss Life Asset Managers' disclosed 0.4% look-through interest is held via JLC Terminal One Co-Invest L.P. inside JLC's 30% block and is not additive to the 100% sponsor cap table.",
+  "evidence": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1468522/000162828026032618/ferrovial-factbook2026_s.htm",
+      "purpose": "Primary current sponsor ownership and asset evidence.",
+      "supports": [
+        "The current sponsor cap table is Ferrovial 49%, JLC 30%, Ullico 19% and Carlyle 2%",
+        "The terminal concession and project remain active"
+      ]
+    },
+    {
+      "url": "https://ch.swisslife-am.com/content/dam/slam/documents_publications/investment_foundation/en/r/e_ast_qb_01_2026_igchf.pdf",
+      "purpose": "Swiss Life current look-through ownership and entry timing.",
+      "supports": [
+        "Swiss Life reports a 0.4% look-through interest",
+        "The investment entered in November 2022"
+      ]
+    },
+    {
+      "url": "https://ch.swisslife-am.com/content/dam/slam/documents_publications/investment_foundation/en/f/efactsheets_30092025.pdf",
+      "purpose": "Exact Swiss Life co-investment vehicle.",
+      "supports": [
+        "The investment is held through JLC Terminal One Co-Invest L.P."
+      ]
+    },
+    {
+      "url": "https://www.carlyle.com/media-room/news-release-archive/carlyle-together-with-the-consortium-building-new-terminal-one-at-jfk-airport",
+      "purpose": "Financial close, concession and consortium evidence.",
+      "supports": [
+        "The revised lease and sponsor financing closed in June 2022",
+        "The project is one terminal concession rather than separate vehicle-level PortCos"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "companyFieldUpdates": {
+    "aliases": [
+      "JFK NTO LLC",
+      "The New Terminal One at John F. Kennedy International Airport",
+      "JLC Terminal One"
+    ],
+    "description": "JFK New Terminal One is the public-private partnership developing and operating a new international terminal at John F. Kennedy International Airport in Queens, New York under a long-term lease through 2060. The approximately $9.5 billion, 2.6 million-square-foot project is designed for 23 gates and roughly 23 million annual passengers. Its current direct sponsor cap table is Ferrovial 49%, JLC Infrastructure 30%, Ullico 19% and Carlyle 2%; Swiss Life Asset Managers separately reports a 0.4% look-through interest through a co-investment vehicle inside JLC's 30% block.",
+    "website": "https://www.anewjfk.com/",
+    "headquarters": "Queens, New York",
+    "lastVerifiedAt": "2026-09-02T00:00:00.000Z"
+  },
+  "ownershipPeriodUpdates": [
+    {
+      "id": "cmrxpkafi029yivheau72hzni",
+      "set": {
+        "managerName": "Ullico",
+        "organizationName": "Ullico",
+        "fundName": null,
+        "vehicleName": "Ullico Infrastructure Fund",
+        "stake": "19% direct sponsor interest",
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    },
+    {
+      "id": "cmrxpkafz029zivhe2ryo1tzy",
+      "set": {
+        "managerName": "Swiss Life",
+        "organizationName": "Swiss Life",
+        "fundName": null,
+        "vehicleName": "JLC Terminal One Co-Invest L.P.",
+        "stake": "0.4% look-through interest within JLC Infrastructure's 30% sponsor block; not additive",
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    }
+  ],
+  "ownershipPeriodRemovals": [],
+  "ownershipPeriodAdditions": [
+    {
+      "id": null,
+      "managerName": "Ferrovial",
+      "organizationName": null,
+      "fundName": null,
+      "vehicleName": "Mars NTO LLC",
+      "stake": "49% direct sponsor interest",
+      "investmentYear": 2022,
+      "exitYear": null,
+      "isActive": true,
+      "transactionState": "CLOSED_ACTIVE"
+    },
+    {
+      "id": null,
+      "managerName": "JLC Infrastructure",
+      "organizationName": null,
+      "fundName": null,
+      "vehicleName": null,
+      "stake": "30% direct sponsor interest",
+      "investmentYear": 2022,
+      "exitYear": null,
+      "isActive": true,
+      "transactionState": "CLOSED_ACTIVE"
+    },
+    {
+      "id": null,
+      "managerName": "The Carlyle Group",
+      "organizationName": "The Carlyle Group",
+      "fundName": null,
+      "vehicleName": "CGI Phoenix Aggregator, L.P. / Mars NTO LLC",
+      "stake": "2% direct sponsor interest after partial sale",
+      "investmentYear": 2022,
+      "exitYear": null,
+      "isActive": true,
+      "transactionState": "CLOSED_ACTIVE"
+    }
+  ],
+  "pendingOwnershipTransactionUpdates": [],
+  "pendingOwnershipTransactionAdditions": [],
+  "milestoneUpdates": [
+    {
+      "id": "cmrxpmr000590ivhe8cilntsk",
+      "set": {
+        "date": "Jun 10, 2022",
+        "event": "The consortium reached financial close on the revised lease and financing with a 49% Ferrovial, 30% JLC, 19% Ullico and 2% Carlyle sponsor structure.",
+        "category": "FINANCING",
+        "sortDate": "2022-06-10T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.carlyle.com/media-room/news-release-archive/carlyle-together-with-the-consortium-building-new-terminal-one-at-jfk-airport",
+          "https://www.sec.gov/Archives/edgar/data/1468522/000162828026032618/ferrovial-factbook2026_s.htm"
+        ]
+      }
+    },
+    {
+      "id": "cmrxpmr120592ivhehvwgjzqo",
+      "set": {
+        "date": "Jul–Nov 2022",
+        "event": "Swiss Life Asset Managers announced its JLC Terminal One co-investment in July and recorded entry in November 2022; its 0.4% look-through interest sits within JLC's 30% sponsor block.",
+        "category": "FINANCING",
+        "sortDate": "2022-11-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.swisslife-am.com/en/home/media/news/corporate/company-news/2022/0729_jfk_t1.html",
+          "https://ch.swisslife-am.com/content/dam/slam/documents_publications/investment_foundation/en/r/e_ast_qb_01_2026_igchf.pdf"
+        ]
+      }
+    }
+  ],
+  "milestoneTransfers": [],
+  "citationUpdates": [
+    {
+      "id": "cmrxpsv250d8iivhemjw8jxng",
+      "set": {
+        "isPrimary": false
+      }
+    }
+  ],
+  "citationAdditions": [
+    {
+      "id": null,
+      "label": "Ferrovial — 2026 Factbook",
+      "url": "https://www.sec.gov/Archives/edgar/data/1468522/000162828026032618/ferrovial-factbook2026_s.htm",
+      "sourceType": "SEC_FILING",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Current 49%/30%/19%/2% direct sponsor cap table and asset terms",
+      "isPrimary": true
+    },
+    {
+      "id": null,
+      "label": "Swiss Life Investment Foundation — Q1 2026 report",
+      "url": "https://ch.swisslife-am.com/content/dam/slam/documents_publications/investment_foundation/en/r/e_ast_qb_01_2026_igchf.pdf",
+      "sourceType": "PRESENTATION",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Current 0.4% look-through interest and November 2022 entry",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "Swiss Life Investment Foundation — co-investment factsheet",
+      "url": "https://ch.swisslife-am.com/content/dam/slam/documents_publications/investment_foundation/en/f/efactsheets_30092025.pdf",
+      "sourceType": "PRESENTATION",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "JLC Terminal One Co-Invest L.P. vehicle identity",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "Carlyle — CAG Holdings / The New Terminal One at JFK",
+      "url": "https://www.carlyle.com/media-room/news-release-archive/carlyle-together-with-the-consortium-building-new-terminal-one-at-jfk-airport",
+      "sourceType": "ARTICLE",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "June 2022 financial close, consortium and concession evidence",
+      "isPrimary": false
+    }
+  ]
+}

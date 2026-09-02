@@ -1,0 +1,210 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0431:outpost-solar:b3b3fc4c",
+  "taskIndex": 431,
+  "asOfDate": "2026-09-02",
+  "generatedAt": "2026-09-02T05:10:00.000Z",
+  "canonicalKey": "outpost-solar|united-states",
+  "companyName": "Outpost Solar",
+  "actions": [
+    "CREATE_COMPANY"
+  ],
+  "sourceHoldingIds": [
+    "090-stonepeak:holding:024:outpost-solar"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Create one canonical Outpost Solar record for the 629 MW operating Webb County project. Repsol's first-half 2026 report directly confirms that Stonepeak's 43.8% acquisition closed in February 2026; retain Repsol as the continuing joint-control owner and identify its 56.2% only as the arithmetic remainder, not a separately disclosed stake.",
+  "evidence": [
+    {
+      "url": "https://www.repsol.com/content/dam/repsol-corporate/en_gb/accionistas-e-inversores/resultados/2026/2t/interim-consolidated-management-report-first-half-2026.pdf",
+      "purpose": "Primary closing and ownership evidence.",
+      "supports": [
+        "Stonepeak's 43.8% acquisition closed in February 2026 after conditions were satisfied",
+        "The completed transfer consideration was approximately $253 million"
+      ]
+    },
+    {
+      "url": "https://stonepeak.com/news/repsol-advances-its-renewable-energy-strategy-in-the-us-with-a-new-deal-with-stonepeak",
+      "purpose": "Manager strategy, signed transaction and asset operating evidence.",
+      "supports": [
+        "Stonepeak signed to acquire 43.8% on December 11, 2025",
+        "Outpost is a 629 MW Webb County solar facility operating under a long-term PPA"
+      ]
+    },
+    {
+      "url": "https://ec.europa.eu/competition/mergers/cases1/202604/M_12192_10864806_83_3.pdf",
+      "purpose": "Regulatory identity and joint-control evidence.",
+      "supports": [
+        "Outpost Solar SellCo LLC was the transaction target",
+        "The share purchase created Stonepeak/Repsol joint control"
+      ]
+    },
+    {
+      "url": "https://comptroller.texas.gov/economy/development/prop-tax/ch313/agreement-docs-details.php?id=1673",
+      "purpose": "State record for the underlying project entity and Texas location.",
+      "supports": [
+        "Hecate Energy Outpost Solar LLC is the underlying Webb County project entity"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "66f73d3172abf617dc1240fbd8d9eb98de92e88ffd203d9042d9b855c6493eec",
+  "currentCompanySnapshotSha256": null,
+  "executionLock": {
+    "taskSnapshotSha256": "79110a3c1306cd124cfac3bf3333a511a8ebfb0a2c195727e5d73a98af54f682",
+    "taskStateSha256": "a1460d4310fed48d3781023dae7ef86d16632295d583b6eae868317795d5f209",
+    "taskDependencySha256": "7162f023548431ed1fed51e43a93e8e1e0a46df9edc0adf314307e96f61f1312",
+    "seedEntrySha256": null,
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [],
+    "organizations": [],
+    "redirects": []
+  },
+  "beforeImage": null,
+  "beforeImageSha256": null,
+  "afterImage": {
+    "id": null,
+    "name": "Outpost Solar",
+    "aliases": [
+      "Outpost Solar SellCo LLC",
+      "Hecate Energy Outpost Solar LLC"
+    ],
+    "sector": "POWER_ET",
+    "subsector": "Utility-scale solar generation",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Outpost Solar is a 629 MW utility-scale photovoltaic generation project in Webb County, Texas that began commercial operations in August 2025 and sells electricity under a long-term power purchase agreement. Stonepeak acquired a 43.8% interest from Repsol in February 2026 for approximately $253 million, creating joint control with Repsol through Outpost Solar SellCo LLC.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Webb County, Texas",
+    "lastVerifiedAt": "2026-09-02T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": null,
+        "managerName": "Stonepeak",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": null,
+        "stake": "43.8% joint-control interest",
+        "investmentYear": 2026,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Repsol",
+        "organizationName": null,
+        "fundName": null,
+        "vehicleName": "Outpost Solar SellCo LLC",
+        "stake": "Continuing joint-control interest; 56.2% arithmetic remainder, not separately disclosed",
+        "investmentYear": null,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": null,
+        "date": "Aug 2025",
+        "event": "The 629 MW Outpost Solar project began commercial operations under a long-term power purchase agreement.",
+        "category": "OPERATIONS",
+        "sortDate": "2025-08-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://stonepeak.com/news/repsol-advances-its-renewable-energy-strategy-in-the-us-with-a-new-deal-with-stonepeak"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Dec 11, 2025",
+        "event": "Stonepeak signed to acquire a 43.8% interest in Outpost Solar from Repsol for $252.5 million.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-12-11T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://stonepeak.com/news/repsol-advances-its-renewable-energy-strategy-in-the-us-with-a-new-deal-with-stonepeak"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Jan 2026",
+        "event": "Competition authorities in China and the European Union cleared the Stonepeak transaction.",
+        "category": "REGULATORY",
+        "sortDate": "2026-01-15T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://ec.europa.eu/competition/mergers/cases1/202604/M_12192_10864806_83_3.pdf",
+          "https://scjgj.beijing.gov.cn/ztzl/gpjzyqjc/jyzjzajgs/wtjpzjyzjzajgs/202601/t20260121_4452079.html"
+        ]
+      },
+      {
+        "id": null,
+        "date": "Feb 2026",
+        "event": "Stonepeak completed its acquisition of a 43.8% joint-control interest after the transaction conditions were satisfied.",
+        "category": "FINANCING",
+        "sortDate": "2026-02-01T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.repsol.com/content/dam/repsol-corporate/en_gb/accionistas-e-inversores/resultados/2026/2t/interim-consolidated-management-report-first-half-2026.pdf"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": null,
+        "label": "Repsol — First-half 2026 interim management report",
+        "url": "https://www.repsol.com/content/dam/repsol-corporate/en_gb/accionistas-e-inversores/resultados/2026/2t/interim-consolidated-management-report-first-half-2026.pdf",
+        "sourceType": "COMPANY_REPORT",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "February 2026 legal closing, Stonepeak's 43.8% interest and consideration",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "Stonepeak — Outpost Solar investment announcement",
+        "url": "https://stonepeak.com/news/repsol-advances-its-renewable-energy-strategy-in-the-us-with-a-new-deal-with-stonepeak",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Signed transaction, infrastructure-strategy basis, capacity, location, commercial operation and PPA",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "European Commission — M.12192 merger decision",
+        "url": "https://ec.europa.eu/competition/mergers/cases1/202604/M_12192_10864806_83_3.pdf",
+        "sourceType": "REGULATORY_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Transaction target, joint-control structure and approval",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Texas Comptroller — Outpost Solar project record",
+        "url": "https://comptroller.texas.gov/economy/development/prop-tax/ch313/agreement-docs-details.php?id=1673",
+        "sourceType": "REGULATORY_FILING",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Underlying project entity and Webb County location",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "eacb5e81f8c5ae110b50d283a8440859a106a645fc33aefc25ad0945fbe4761d",
+  "proposalSha256": "4cd02f90239c870bbadfc2ef6c168e07bd5716561c1c40584e236520ff5e8435"
+}

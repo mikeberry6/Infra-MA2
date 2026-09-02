@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0429:oryx-midstream:eee190fa",
+  "taskIndex": 429,
+  "companyName": "Oryx Midstream",
+  "asOfDate": "2026-09-02",
+  "decision": "PROPOSED_MERGE",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-02T05:20:00.000Z",
+  "result": {
+    "decision": "PROPOSED_MERGE",
+    "rationale": "Oryx Midstream and Oryx Midstream Services are duplicate labels for one investment. Current affirmative company and SEC evidence resolves both Stonepeak and Qatar Investment Authority as owner groups above OMSPB at undisclosed stakes; POPB remains the underlying Plains-operated 65%/35% joint venture.",
+    "evidence": [
+      {
+        "url": "https://www.oryxmidstream.com/who-we-are/our-partners",
+        "purpose": "Current Oryx page names Stonepeak and QIA as partners."
+      },
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/1274173/000110465926036161/tm269831d4_defa14a.htm",
+        "purpose": "March 2026 filing calls Oryx Midstream Services LLC a QIA affiliate in the January 2025 refinancing."
+      },
+      {
+        "url": "https://stonepeak.com/investments",
+        "purpose": "Current Stonepeak portfolio attribution and continuing Oryx POPB governance role."
+      },
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/1581990/000110465921123181/tm2129267d1_8k.htm",
+        "purpose": "POPB legal closing, all-assets boundary and 65% Plains / 35% Oryx structure."
+      }
+    ]
+  },
+  "lineage": {
+    "researchDecision": "research-decision.json",
+    "acceptedResponse": "chatgpt-accepted-response.txt",
+    "conversationUrl": "https://chatgpt.com/c/6a97ad22-7844-83ea-b3f3-3ee9128cd651",
+    "sourceVerification": "source-verification.json"
+  }
+}
