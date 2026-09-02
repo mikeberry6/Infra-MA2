@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-02T09:48:10Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-09-02T10:27:00.000Z",
+  "activeBatchId": "batch-0439-0443-v1",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -8053,7 +8053,55 @@
           "reason": "All five database/seed/API checks passed; rendered production verified the four removals and the corrected American Natural card after scoped attribution recovery PR 876."
         }
       ]
+    },
+    {
+      "batchId": "batch-0439-0443-v1",
+      "state": "READY",
+      "taskIds": [
+        "ledger:0439:crosslake-fibre:cb475638",
+        "ledger:0440:danskammer-energy:5987da36",
+        "ledger:0441:northlink-aviation:bbe08376",
+        "ledger:0442:strategic-venue-partners:f4cd44da",
+        "ledger:0443:summit-carbon-solutions:6d14c660"
+      ],
+      "taskIndexes": [
+        439,
+        440,
+        441,
+        442,
+        443
+      ],
+      "createdAt": "2026-09-02T09:58:15.000Z",
+      "updatedAt": "2026-09-02T10:27:00.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0439-0443-v1/batch-manifest-v4.json",
+        "sha256": "62e5d7b0ac53d1ff13625f75f0e5a4cb0dd02a59c29dcb081f0efa6a493239e8"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-09-02T09:58:15.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-09-02T10:27:00.000Z",
+          "evidenceSha256": [
+            "62e5d7b0ac53d1ff13625f75f0e5a4cb0dd02a59c29dcb081f0efa6a493239e8"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "7dc42121d1f7f99b8afdde633ed525522e15beabfd84ec911ac8ceff82bcba79"
+  "ledgerSha256": "6f84d979976826787b2d0a89a0791326d548fc1e893d47d526ea53bd5ff36de5"
 }

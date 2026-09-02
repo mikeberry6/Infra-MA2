@@ -1,0 +1,260 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0441:northlink-aviation:bbe08376",
+  "taskIndex": 441,
+  "companyName": "NorthLink Aviation",
+  "generatedAt": "2026-09-02T10:03:28.229Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0441-northlink-aviation/attempt-1/locked-batch-v2-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 441,
+    "taskId": "ledger:0441:northlink-aviation:bbe08376",
+    "canonicalKey": "northlink-aviation|united-states",
+    "companyName": "NorthLink Aviation",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 93,
+    "managers": [
+      "Tiger Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "093-tiger-infrastructure-partners:holding:008:northlink-aviation"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjo6e01ativheqw8diw1y"
+    ],
+    "seedKeys": [
+      "northlink aviation|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.northlinkaviation.com",
+      "https://www.tigerinfrastructure.com/portfolio/northlink-aviation"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "The exact normalized company identity is established; ADD_OWNER requires individual review.",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjo6e01ativheqw8diw1y",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "northlink-aviation|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjo6e01ativheqw8diw1y",
+    "name": "NorthLink Aviation",
+    "aliases": [],
+    "sector": "TRANSPORTATION",
+    "subsector": "Airport cargo infrastructure",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "NorthLink Aviation is developing cargo airport infrastructure at Ted Stevens Anchorage International Airport in Alaska. The project is intended for air cargo carriers and logistics users that require dedicated terminal, warehouse, and apron capacity in Anchorage. Its operating model is asset-heavy and concession-based, anchored by a long-term airport lease and phased infrastructure development. Public disclosures describe a 120-acre South Park Campus under a 55-year lease and an initial phase including a 100,000-square-foot multi-tenant air cargo terminal. Tiger Infrastructure Partners Fund III announced a controlling investment in 2021 and remains the sponsor identified in public materials.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Alaska",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpkapj02ahivhedpng0ebe",
+        "managerName": "Tiger Infrastructure Partners",
+        "organizationName": "Tiger",
+        "fundName": "Tiger Infrastructure Partners Fund III",
+        "vehicleName": "Tiger Infrastructure Partners Fund III",
+        "stake": null,
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmscx05aqivhej5r6lwnc",
+        "date": "2021",
+        "event": "Tiger said the project was based on a 55-year lease for the South Park Campus at Ted Stevens Anchorage International Airport.",
+        "category": "FINANCING",
+        "sortDate": "2021-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmsdc05arivheror32i70",
+        "date": "Nov 2021",
+        "event": "Tiger Infrastructure Partners Fund III announced its investment in NorthLink Aviation.",
+        "category": "FINANCING",
+        "sortDate": "2021-11-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsxxd0dcyivhe28giw7m7",
+        "label": "Tigerinfrastructure — NorthLink Aviation",
+        "url": "https://www.tigerinfrastructure.com/portfolio/NorthLink-Aviation",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Tigerinfrastructure operations / asset details",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpsxyq0dd0ivhe4l6ofzl8",
+        "label": "Announcement date source — Tiger — NorthLink Aviation",
+        "url": "https://www.prnewswire.com/news-releases/tiger-infrastructure-partners-announces-investment-in-northlink-aviation-to-fund-construction-of-air-cargo-terminal-at-the-ted-stevens-anchorage-international-airport-301417223.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Tiger transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsxz60dd1ivhejvdlburi",
+        "label": "Fund vehicle source — Tiger Infrastructure Partners Fund III — 11:11 Systems",
+        "url": "https://www.prnewswire.com/news-releases/tiger-infrastructure-partners-fund-iii-closes-at-1-25-billion-hard-cap-reflecting-investor-demand-for-its-innovative-growth-capital-strategy-301531549.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Fund vehicle source — Tiger Infrastructure Partners Fund III — NorthLink Aviation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsy070dd3ivhe63ceu1hh",
+        "label": "Northlinkaviation — NorthLink Aviation",
+        "url": "https://www.northlinkaviation.com/documents/FG/northlinkaviation/news/615095_Tiger_NorthLink_Press_Release_vFinal.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Northlinkaviation — NorthLink Aviation",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "NorthLink Aviation",
+    "investmentFirm": "Tiger",
+    "sector": "Transportation",
+    "subsector": "Airport cargo infrastructure",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Tiger Infrastructure Partners Fund III",
+    "description": "NorthLink Aviation is developing cargo airport infrastructure at Ted Stevens Anchorage International Airport in Alaska. The project is intended for air cargo carriers and logistics users that require dedicated terminal, warehouse, and apron capacity in Anchorage. Its operating model is asset-heavy and concession-based, anchored by a long-term airport lease and phased infrastructure development. Public disclosures describe a 120-acre South Park Campus under a 55-year lease and an initial phase including a 100,000-square-foot multi-tenant air cargo terminal. Tiger Infrastructure Partners Fund III announced a controlling investment in 2021 and remains the sponsor identified in public materials.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2021,
+    "headquarters": "Alaska",
+    "milestones": [
+      {
+        "date": "2021",
+        "event": "Tiger said the project was based on a 55-year lease for the South Park Campus at Ted Stevens Anchorage International Airport.",
+        "category": "Financing"
+      },
+      {
+        "date": "Nov 2021",
+        "event": "Tiger Infrastructure Partners Fund III announced its investment in NorthLink Aviation.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Tigerinfrastructure — NorthLink Aviation",
+        "url": "https://www.tigerinfrastructure.com/portfolio/NorthLink-Aviation",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Announcement date source — Tiger — NorthLink Aviation",
+        "url": "https://www.prnewswire.com/news-releases/tiger-infrastructure-partners-announces-investment-in-northlink-aviation-to-fund-construction-of-air-cargo-terminal-at-the-ted-stevens-anchorage-international-airport-301417223.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Fund vehicle source — Tiger Infrastructure Partners Fund III — NorthLink Aviation",
+        "url": "https://www.prnewswire.com/news-releases/tiger-infrastructure-partners-fund-iii-closes-at-1-25-billion-hard-cap-reflecting-investor-demand-for-its-innovative-growth-capital-strategy-301531549.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Northlinkaviation — NorthLink Aviation",
+        "url": "https://www.northlinkaviation.com/documents/FG/northlinkaviation/news/615095_Tiger_NorthLink_Press_Release_vFinal.pdf",
+        "type": "PRESENTATION"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Tiger",
+        "ownershipVehicle": "Tiger Infrastructure Partners Fund III",
+        "investmentYear": 2021,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj3tl00flivhe3h1v2bq0",
+        "fundName": "Tiger Infrastructure Partners Fund III",
+        "managerId": "cmrxpie6w003qivhezkd8ost3",
+        "updatedAt": "2026-07-23T16:09:58.809Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpigns004iivhep4tpvy3z",
+        "name": "Tiger",
+        "updatedAt": "2026-07-23T16:09:28.792Z"
+      },
+      {
+        "id": "cmtj59bu5001v2a2b5s0eh1hp",
+        "name": "Barings",
+        "updatedAt": "2026-09-01T20:53:08.525Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0441:northlink-aviation:bbe08376",
+    "taskIndex": 441,
+    "canonicalKey": "northlink-aviation|united-states",
+    "capturedAt": "2026-09-02T10:03:28.229Z",
+    "databaseRevision": "revision:279fb664e6bffefcbee5f2450f1d0041b8b90c04d20b5959268117917d9a365c",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "fa33ceb478a92a988ff108b66c630d7ba1271c85ac6a9eaec4b4dfc7ee46c18d",
+    "productionSnapshotSha256": "708ea24a97eab17d4d5eb049e04b15e930c4f98c5d4087e170cd81b191567696",
+    "targetCompanySnapshotSha256": "7add962d612adaf8e16e01ced34f64dcbfd4302ccaf8b3b3377d55faaab3f877",
+    "seedEntrySha256": "551f12e557d07ad43109ad428567b1389d596630adaab7ca47a6a3bab269d2d6",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "0ff00e925b4de519b87ef0c2b5e78000defec3ac68097999e00be498cdd4e46e",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "da248fe1239ed13de9bbb49eb5dea25053eb45b6f358441dfd308e806bfa5713",
+      "organizationsSha256": "7805b664dccf2fceb0c6a9394b50de4ce472f582e6f0ce0a8bb9030750bcd52c",
+      "citationsSha256": "c18c16b1c783a975ec59a6f8e9edb18f00deaca98a0829caaa13dd16bfe7cd18",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "9569cae91a2e6ae6d338b5fd071fb9c7cdf334d4340eec08b33742ded7abfdfd",
+    "stateSha256": "1445afc39b5edbdf52a4e05421029d2a794facd591128cbcd0ea76b16e3a7410",
+    "taskSnapshotSha256": "71ae7344cc8ef727e6c4d426707c490f1b4eed9bb5738788c051cdb181961963"
+  },
+  "contextSha256": "f769ba54ddbf2d666f772edefba9956170b5a87fa54e03e5f9cd3b99ebf7b86c"
+}

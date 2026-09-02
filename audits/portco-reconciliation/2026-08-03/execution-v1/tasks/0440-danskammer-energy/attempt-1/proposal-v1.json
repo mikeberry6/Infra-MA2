@@ -1,0 +1,301 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0440:danskammer-energy:5987da36",
+  "taskIndex": 440,
+  "asOfDate": "2026-09-02",
+  "generatedAt": "2026-09-02T10:02:00.000Z",
+  "canonicalKey": "danskammer-energy|united-states",
+  "companyName": "Danskammer Energy",
+  "actions": [
+    "CORRECT_COMPANY"
+  ],
+  "sourceHoldingIds": [
+    "093-tiger-infrastructure-partners:holding:006:danskammer-energy"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Retain Danskammer Energy as the Tiger Infrastructure Partners Fund II-controlled operating company while correcting the sponsor stake, plant scale and current restructuring boundary. The 532 MW plant remains in service under NYISO reliability arrangements during Chapter 11; no completed sale, permanent retirement, Tiger exit or signed buyer transaction was identified.",
+  "evidence": [
+    {
+      "url": "https://document.epiq11.com/document/getdocumentbycode?docId=4600729&projectCode=DKK&source=DM",
+      "purpose": "Court evidence for current ownership control and the Chapter 11 status.",
+      "supports": [
+        "Danskammer Investments voting control",
+        "Tiger-led ownership remained in place at the filing"
+      ]
+    },
+    {
+      "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B1D627558-A086-49BB-AC2C-DC1F2B540C23%7D",
+      "purpose": "Regulatory evidence for the 2017 acquisition structure and Fund II vehicle.",
+      "supports": [
+        "December 27, 2017 closing",
+        "Fund II Danskammer AIV and affiliated vehicles"
+      ]
+    },
+    {
+      "url": "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+      "purpose": "Current generating-unit capacity and fuel evidence.",
+      "supports": [
+        "532 MW nameplate capacity",
+        "Four natural-gas steam units"
+      ]
+    },
+    {
+      "url": "https://www.nyiso.com/documents/20142/16004172/2026-Q2-STAR-Report-vFinal.pdf/6c152ed8-9e77-e47d-3367-f6815bc1c0cd?t=1784056702794",
+      "purpose": "Retirement deferral and reliability-service status.",
+      "supports": [
+        "August 1, 2026 interim service-provider operation",
+        "Retirement had not occurred"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "3099899610e55720b44d34b4d41c0224630799c111094a46387d1700c16d35c0",
+  "currentCompanySnapshotSha256": "b1fdc064a3b2f794d57d0a92e17b8ab05d7bb9440c75cd74419ebb61e6671804",
+  "executionLock": {
+    "taskSnapshotSha256": "f893ecdab0a6e47c2f8dc4ccb1e2f7ca6c4f5e42c5407708f892844f07cafa67",
+    "taskStateSha256": "af90caf2770ea0e4837c71e803a789e5e9a4fbed50217daa98f4b39db743be06",
+    "taskDependencySha256": "8a3ab319324948b106fb490be68b70b2338fccda1006d607559e832a7f9b1a86",
+    "seedEntrySha256": "c07dd0623a85966e32f6666cd19ecaceed36c434c64126c19e9186f8dcd64d41",
+    "dependencies": {
+      "ownershipPeriodsSha256": "3b05063179fe9aa35c62ab789bb0e937b57d6cfa3b4c3f1e17ea2b6889a637f2",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "7d9784838d0e4e817dfd147d361cbe5114a281d4f59783dc68a47c3d99a4de5d",
+      "organizationsSha256": "7bff0b5698459304083333bfb81e644c2d270f5a139a751bc96ea2912455d791",
+      "citationsSha256": "3adcefd38b4038d38037de9266ebd22553fd6c760a07cf93e117fb189a4875b0",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj3t300fkivhe80fgu879",
+        "fundName": "Tiger Infrastructure Partners Fund II",
+        "managerId": "cmrxpie6w003qivhezkd8ost3",
+        "updatedAt": "2026-07-23T16:09:58.791Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpie6w003qivhezkd8ost3",
+        "name": "Tiger Infrastructure Partners",
+        "updatedAt": "2026-07-23T16:09:25.592Z"
+      },
+      {
+        "id": "cmrxpigns004iivhep4tpvy3z",
+        "name": "Tiger",
+        "updatedAt": "2026-07-23T16:09:28.792Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjo1u01aoivhe85mr5shs",
+    "name": "Danskammer Energy",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Gas-fired power generation",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Danskammer Energy owns the 500 MW gas-fired generating facility near Newburgh, New York. The plant serves wholesale power-market demand in New York and has also been advanced as the site for a repowering effort. Its operating model is asset-heavy and based on owned generation infrastructure. Tiger acquired the business through Fund II in 2017, and public portfolio materials continue to describe the company as part of the firm's active holdings. The asset remains one of Tiger's power investments in the northeastern United States.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "New York",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpkamv02acivhe1zl26vzb",
+        "managerName": "Tiger Infrastructure Partners",
+        "organizationName": "Tiger",
+        "fundName": "Tiger Infrastructure Partners Fund II",
+        "vehicleName": "Tiger Infrastructure Partners Fund II",
+        "stake": null,
+        "investmentYear": 2017,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpms1505adivhe2kmtzkhf",
+        "date": "Sep 2017",
+        "event": "Tiger announced an agreement to acquire Danskammer Energy.",
+        "category": "ACQUISITION",
+        "sortDate": "2017-09-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpms1s05aeivheonxbnbt4",
+        "date": "Dec 2017",
+        "event": "Tiger completed the acquisition of Danskammer Energy through Fund II.",
+        "category": "ACQUISITION",
+        "sortDate": "2017-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsx7n0dbwivhe9x3ncdkw",
+        "label": "Tigerinfrastructure — Danskammer Energy",
+        "url": "https://www.tigerinfrastructure.com/portfolio/Danskammer-Energy",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Tigerinfrastructure operations / asset details",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpsx8p0dbyivheon0ygeag",
+        "label": "Tigerinfrastructure — Danskammer Energy",
+        "url": "https://www.tigerinfrastructure.com/documents/FG/tigerNew/news/582611_Danskammer_Press_Release_-_2017_09_14.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Tigerinfrastructure — Danskammer Energy",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsx9t0dc0ivheil4m0h0c",
+        "label": "Close date source — Tiger — Danskammer Energy",
+        "url": "https://www.tigerinfrastructure.com/documents/FG/tigerNew/news/585120_153_-_Danskammer_Press_Release_at_Closing_12-27-17_Final.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Tiger closing confirmation",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "b1fdc064a3b2f794d57d0a92e17b8ab05d7bb9440c75cd74419ebb61e6671804",
+  "afterImage": {
+    "id": "cmrxpjo1u01aoivhe85mr5shs",
+    "name": "Danskammer Energy",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Gas-fired power generation",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Danskammer Energy, LLC owns and operates a 532 MW, four-unit natural-gas-fired generating station in Newburgh, New York that supplies energy, capacity and ancillary services to NYISO. Tiger Infrastructure Partners Fund II led the acquisition that closed on December 27, 2017 and retained voting control through Danskammer Investments LLC; the bankruptcy schedules attribute 81.79% of HoldCo shares to that vehicle, while the economics among Tiger affiliates are not publicly disclosed. The company entered Chapter 11 on June 10, 2026 and continued operating as a debtor-in-possession and NYISO interim service provider while pursuing a Section 363 sale. No buyer, completed sale, permanent retirement or Tiger exit was public by August 19, 2026. The separate proposed Energy Center repowering was denied, its applications were withdrawn in 2024, and it was not built.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Newburgh, New York",
+    "lastVerifiedAt": "2026-09-02T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpkamv02acivhe1zl26vzb",
+        "managerName": "Tiger Infrastructure Partners",
+        "organizationName": "Tiger",
+        "fundName": "Tiger Infrastructure Partners Fund II",
+        "vehicleName": "Tiger Infrastructure Partners Fund II Danskammer AIV LP and affiliated Tiger vehicles",
+        "stake": "81.79% of HoldCo shares and voting control at the June 2026 bankruptcy filing; fund-level economics not publicly disclosed",
+        "investmentYear": 2017,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpms1505adivhe2kmtzkhf",
+        "date": "Sep 14, 2017",
+        "event": "Tiger Infrastructure Partners announced its agreement to acquire Danskammer Energy alongside Agate Power.",
+        "category": "ACQUISITION",
+        "sortDate": "2017-09-14T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.tigerinfrastructure.com/documents/FG/tigerNew/news/582611_Danskammer_Press_Release_-_2017_09_14.pdf"
+        ]
+      },
+      {
+        "id": "cmrxpms1s05aeivheonxbnbt4",
+        "date": "Dec 27, 2017",
+        "event": "The Tiger Fund II-led acquisition of Danskammer Energy closed.",
+        "category": "ACQUISITION",
+        "sortDate": "2017-12-27T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.tigerinfrastructure.com/documents/FG/tigerNew/news/585120_153_-_Danskammer_Press_Release_at_Closing_12-27-17_Final.pdf"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsx7n0dbwivhe9x3ncdkw",
+        "label": "Tigerinfrastructure — Danskammer Energy",
+        "url": "https://www.tigerinfrastructure.com/portfolio/Danskammer-Energy",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current Tiger portfolio status and 2017 investment",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpsx8p0dbyivheon0ygeag",
+        "label": "Tigerinfrastructure — Danskammer Energy",
+        "url": "https://www.tigerinfrastructure.com/documents/FG/tigerNew/news/582611_Danskammer_Press_Release_-_2017_09_14.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Tigerinfrastructure — Danskammer Energy",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsx9t0dc0ivheil4m0h0c",
+        "label": "Close date source — Tiger — Danskammer Energy",
+        "url": "https://www.tigerinfrastructure.com/documents/FG/tigerNew/news/585120_153_-_Danskammer_Press_Release_at_Closing_12-27-17_Final.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Tiger closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Danskammer Energy — Bankruptcy schedules",
+        "url": "https://document.epiq11.com/document/getdocumentbycode?docId=4600729&projectCode=DKK&source=DM",
+        "sourceType": "OTHER",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Current majority holder and voting-control schedule",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "New York PSC — Danskammer acquisition order",
+        "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B1D627558-A086-49BB-AC2C-DC1F2B540C23%7D",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "2017 acquisition structure, Fund II vehicle and minority interests",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "NYISO — 2026 Gold Book",
+        "url": "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+        "sourceType": "OTHER",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Generating-unit capacity and fuel configuration",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "NYISO — 2026 Q2 STAR report",
+        "url": "https://www.nyiso.com/documents/20142/16004172/2026-Q2-STAR-Report-vFinal.pdf/6c152ed8-9e77-e47d-3367-f6815bc1c0cd?t=1784056702794",
+        "sourceType": "OTHER",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Retirement deferral and interim service-provider status",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "a5e990929fc1703f1209a2b990221c2c5752555b793ddd120b04ede3f026c193",
+  "proposalSha256": "af13c046ecd66bb20cf136296c766457a2cdaa344cc79bce284eb0f688f5db81"
+}

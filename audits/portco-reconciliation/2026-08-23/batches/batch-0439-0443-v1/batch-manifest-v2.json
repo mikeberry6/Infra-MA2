@@ -1,0 +1,508 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_MANIFEST",
+  "methodologyVersion": "PORTCO_APPLY_BATCH_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0439-0443-v1",
+  "createdAt": "2026-09-02T10:17:00.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "782f6e7a327060e88929e89b3826fcc512785cf3ad3540fcd4fbadb32b273d31"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0439:crosslake-fibre:cb475638",
+      "taskIndex": 439,
+      "companyName": "Crosslake Fibre",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0439-crosslake-fibre/attempt-1/proposal-v1.json",
+        "sha256": "42408d74852caf90c8bf4262d1809a098f4062cea62c9068a774fd08f57014ff"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0439-crosslake-fibre/attempt-1/approval-v1.json",
+        "sha256": "5b1acc110616dd27e794c0f2a0d2c9a6905fb83974127be116b8b05322137b83"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0439-crosslake-fibre/attempt-1/locked-batch-v2-production-snapshot.json",
+        "sha256": "98e1f91d9d909aa4f8f148f2cf2143fab96c3756132afc213ea3471c0255780d"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0439-crosslake-fibre/attempt-1/locked-batch-v2-task-snapshot.json",
+        "sha256": "53cbec53d83640164727bc1c4d37287705d8071a5b67c4065abf5d4cdb07229f"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0439-crosslake-fibre/attempt-1/observed-batch-v1-task-snapshot.json",
+        "sha256": "43a2f4b34774b9f51dde454a6cc6218b0628675041cd5e4bf5086b5796fa8840"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0439-crosslake-fibre/attempt-1/application-research-decision-v1.json",
+        "sha256": "79a4af3b218d1db4a916256eca3ebc32cf826d861d0eb74aad1ea4fdf542f8b7"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0439-crosslake-fibre/attempt-1/release-source-verification-v1.json",
+        "sha256": "b5bc0bab75f44af9837b8dcdc312f89662ce342dc7eec18992200f599ba8a30c"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "a15ef830c04e912c2d78919a4bdddd5d1321f2a81bdfc1240687f79e38b0646e",
+      "dependencySha256": "53078138602aa9f9d496892d8be3fa8da069ed09dc6c79164f8b51355574a6d9",
+      "afterImageSha256": "bc9cafea0a05a1ccb2281a76f878eeb02bc569f4ab423adab024d4ffb2064233",
+      "targetClaims": [
+        "canonical:crosslake-fibre|canada-united-states",
+        "company:cmrxpjo1b01anivhetlgdsr8j",
+        "relation:cmrxpkamd02abivhesy9hobss",
+        "relation:cmrxpmrz605aaivheii4gv7af",
+        "relation:cmrxpmrzl05abivhe86yfeepj",
+        "relation:cmrxpms0505acivhe85apqjzh",
+        "relation:cmrxpsx2a0dbmivheel7lgc27",
+        "relation:cmrxpsx3n0dboivhevyfnscuj",
+        "relation:cmrxpsx4o0dbqivheg1vjzclk",
+        "relation:cmrxpsx5o0dbsivhe99i24v31",
+        "relation:cmrxpsx6p0dbuivhe92ms540u",
+        "seed:crosslake fibre|canada / united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://crosslakefibre.ca/",
+          "label": "Crosslakefibre — Crosslake Fibre",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://crosslakefibre.ca/company/",
+          "label": "Crosslakefibre — Crosslake Fibre",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://crosslakefibre.ca/network-map/",
+          "label": "Crosslake Fibre — Network map",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://crosslakefibre.ca/pops/",
+          "label": "Crosslake Fibre — Points of presence",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://docs.fcc.gov/public/attachments/DA-18-1026A1_Rcd.pdf",
+          "label": "FCC — Crosslake Fibre control grant",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.fcc.report/IBFS/Public-Notices/1350410",
+          "label": "Fund vehicle source — Tiger Infrastructure Partners Fund II — Crosslake Fibre",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/crosslake-fibres-crosschannel-submarine-cable-goes-live-301438336.html",
+          "label": "Crosslake Fibre — CrossChannel ready for service",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.tigerinfrastructure.com/documents/FG/tigerNew/news/584279_Crosslake_Press_Release_-_Final.pdf",
+          "label": "Announcement date source — Tiger — Crosslake Fibre",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://www.tigerinfrastructure.com/portfolio/Crosslake",
+          "label": "Tigerinfrastructure — Crosslake Fibre",
+          "sourceType": "WEBSITE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0440:danskammer-energy:5987da36",
+      "taskIndex": 440,
+      "companyName": "Danskammer Energy",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0440-danskammer-energy/attempt-1/proposal-v1.json",
+        "sha256": "af13c046ecd66bb20cf136296c766457a2cdaa344cc79bce284eb0f688f5db81"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0440-danskammer-energy/attempt-1/approval-v1.json",
+        "sha256": "c2c164a93d0f909cead297199c3f037275b00348ff6a8d3e0af15f974ef823f0"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0440-danskammer-energy/attempt-1/locked-batch-v2-production-snapshot.json",
+        "sha256": "3099899610e55720b44d34b4d41c0224630799c111094a46387d1700c16d35c0"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0440-danskammer-energy/attempt-1/locked-batch-v2-task-snapshot.json",
+        "sha256": "f893ecdab0a6e47c2f8dc4ccb1e2f7ca6c4f5e42c5407708f892844f07cafa67"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0440-danskammer-energy/attempt-1/observed-batch-v1-task-snapshot.json",
+        "sha256": "96b4a62cd299d5adbbd38e9c095375ed92c0c1e91a798d690abe2acd83a053d3"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0440-danskammer-energy/attempt-1/application-research-decision-v1.json",
+        "sha256": "c2329c004077b9bcb33147114692a34c194b121283991980fc16e514d50d3e71"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0440-danskammer-energy/attempt-1/release-source-verification-v1.json",
+        "sha256": "41c586173171689db78ccf120117ccea4340a6ebf406d8f18f878fc32bd3fe3e"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "af90caf2770ea0e4837c71e803a789e5e9a4fbed50217daa98f4b39db743be06",
+      "dependencySha256": "8a3ab319324948b106fb490be68b70b2338fccda1006d607559e832a7f9b1a86",
+      "afterImageSha256": "a5e990929fc1703f1209a2b990221c2c5752555b793ddd120b04ede3f026c193",
+      "targetClaims": [
+        "canonical:danskammer-energy|united-states",
+        "company:cmrxpjo1u01aoivhe85mr5shs",
+        "relation:cmrxpkamv02acivhe1zl26vzb",
+        "relation:cmrxpms1505adivhe2kmtzkhf",
+        "relation:cmrxpms1s05aeivheonxbnbt4",
+        "relation:cmrxpsx7n0dbwivhe9x3ncdkw",
+        "relation:cmrxpsx8p0dbyivheon0ygeag",
+        "relation:cmrxpsx9t0dc0ivheil4m0h0c",
+        "seed:danskammer energy|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://document.epiq11.com/document/getdocumentbycode?docId=4600729&projectCode=DKK&source=DM",
+          "label": "Danskammer Energy — Bankruptcy schedules",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B1D627558-A086-49BB-AC2C-DC1F2B540C23%7D",
+          "label": "New York PSC — Danskammer acquisition order",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.nyiso.com/documents/20142/16004172/2026-Q2-STAR-Report-vFinal.pdf/6c152ed8-9e77-e47d-3367-f6815bc1c0cd?t=1784056702794",
+          "label": "NYISO — 2026 Q2 STAR report",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+          "label": "NYISO — 2026 Gold Book",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.tigerinfrastructure.com/documents/FG/tigerNew/news/582611_Danskammer_Press_Release_-_2017_09_14.pdf",
+          "label": "Tigerinfrastructure — Danskammer Energy",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://www.tigerinfrastructure.com/documents/FG/tigerNew/news/585120_153_-_Danskammer_Press_Release_at_Closing_12-27-17_Final.pdf",
+          "label": "Close date source — Tiger — Danskammer Energy",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://www.tigerinfrastructure.com/portfolio/Danskammer-Energy",
+          "label": "Tigerinfrastructure — Danskammer Energy",
+          "sourceType": "WEBSITE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0441:northlink-aviation:bbe08376",
+      "taskIndex": 441,
+      "companyName": "NorthLink Aviation",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0441-northlink-aviation/attempt-1/proposal-v1.json",
+        "sha256": "3d0d114a34af7820f9329fb0e0d16b7401c16140165118b199da2069f2aabd36"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0441-northlink-aviation/attempt-1/approval-v1.json",
+        "sha256": "c9f90fbfe78b4a46262d0a580c2b4127c4ea03e4c495778956f7de9a693f012e"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0441-northlink-aviation/attempt-1/locked-batch-v3-production-snapshot.json",
+        "sha256": "3e8bc1e8d964f052b63fe68af5cc347b67c50686628f66bcca9e6587ca61fe1e"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0441-northlink-aviation/attempt-1/locked-batch-v3-task-snapshot.json",
+        "sha256": "2fa68fed3f7ef489f4e4a6b4a8d8dd09da2b9e3225dd8d177952cce9ff837c85"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0441-northlink-aviation/attempt-1/observed-batch-v1-task-snapshot.json",
+        "sha256": "49bdf069847566efbf6bf5f826dd270eb9cf4dc975c831fe3239c1e0b62d2931"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0441-northlink-aviation/attempt-1/application-research-decision-v1.json",
+        "sha256": "dc0567c14a43396fb8d424ef51602df4997955c5eece1f70df251344656f9bb0"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0441-northlink-aviation/attempt-1/release-source-verification-v1.json",
+        "sha256": "26b4991c2637f362e8fe313525bd9b28d5c09e2c27ad280ee3406e9487e07459"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "c12e957561904dd0cb50cca300bb141bc9513b638cadec4c202bce177a0cd7ca",
+      "dependencySha256": "953aa6f3d731e86d7e1e9561264a252f28fa021321768f8556d80aa14daff1fb",
+      "afterImageSha256": "e3e6d2d34b3da4b070be9e173a5f0c8d3f3e841590cdb91519ce869092ef2509",
+      "targetClaims": [
+        "canonical:northlink-aviation|united-states",
+        "company:cmrxpjo6e01ativheqw8diw1y",
+        "relation:cmrxpkapj02ahivhedpng0ebe",
+        "relation:cmrxpmscx05aqivhej5r6lwnc",
+        "relation:cmrxpmsdc05arivheror32i70",
+        "relation:cmrxpsxxd0dcyivhe28giw7m7",
+        "relation:cmrxpsxyq0dd0ivhe4l6ofzl8",
+        "relation:cmrxpsxz60dd1ivhejvdlburi",
+        "relation:cmrxpsy070dd3ivhe63ceu1hh",
+        "seed:northlink aviation|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://dot.alaska.gov/aias/assets/2025-AIAS-Annual-Report.pdf",
+          "label": "Alaska International Airport System — 2025 annual report",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.faa.gov/sites/faa.gov/files/ROD-FONSI-NorthLink-08-15-2023.pdf",
+          "label": "FAA — NorthLink Aviation decision",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.northlinkaviation.com/documents/FG/northlinkaviation/news/615095_Tiger_NorthLink_Press_Release_vFinal.pdf",
+          "label": "Northlinkaviation — NorthLink Aviation",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://www.northlinkaviation.com/documents/FG/northlinkaviation/project/618552_NorthLink_NEPA_Open_House_Presentation_Final.pdf",
+          "label": "NorthLink Aviation — NEPA open-house presentation",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/tiger-infrastructure-partners-announces-investment-in-northlink-aviation-to-fund-construction-of-air-cargo-terminal-at-the-ted-stevens-anchorage-international-airport-301417223.html",
+          "label": "Announcement date source — Tiger — NorthLink Aviation",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/tiger-infrastructure-partners-fund-iii-closes-at-1-25-billion-hard-cap-reflecting-investor-demand-for-its-innovative-growth-capital-strategy-301531549.html",
+          "label": "Fund vehicle source — Tiger Infrastructure Partners Fund III — 11:11 Systems",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.tigerinfrastructure.com/portfolio/NorthLink-Aviation",
+          "label": "Tigerinfrastructure — NorthLink Aviation",
+          "sourceType": "WEBSITE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0442:strategic-venue-partners:f4cd44da",
+      "taskIndex": 442,
+      "companyName": "Strategic Venue Partners",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0442-strategic-venue-partners/attempt-1/proposal-v1.json",
+        "sha256": "50505368c6b08471732f32758f9ec7438cbbfc15e178a143af924b1108f26857"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0442-strategic-venue-partners/attempt-1/approval-v1.json",
+        "sha256": "952c4b08a2527195b165300be898ffe667a9b81e2c03188aba77e601b300bc35"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0442-strategic-venue-partners/attempt-1/locked-batch-v3-production-snapshot.json",
+        "sha256": "750e328ebe2c93d50783b650c5a42683c3ec9704cda85d2b96702a81e0b0c20a"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0442-strategic-venue-partners/attempt-1/locked-batch-v3-task-snapshot.json",
+        "sha256": "37954239591dc1fbb189f9161fd3be5c5a9326b9d7b562be89e411a03281f856"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0442-strategic-venue-partners/attempt-1/observed-batch-v1-task-snapshot.json",
+        "sha256": "243337aae8814debf6a033804b7f1223c3d11e5d198cfa29dc88fef473c45c56"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0442-strategic-venue-partners/attempt-1/application-research-decision-v1.json",
+        "sha256": "39946b24ada63edf1f3fb25a6ec5fb27b6f929667b4fa41082218b2c10cefe0e"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0442-strategic-venue-partners/attempt-1/release-source-verification-v1.json",
+        "sha256": "57ac046e996cbfb7b7ee15c6d8227713de4dfb79dcc0d39056ce732205ecfc50"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "267d9c5b3d0f8b7b86d884390622dde30f4dba8de177f6edc221d5d2e52227d2",
+      "dependencySha256": "39140898f47aff36753d180e2bc88b5f2135d8c46a12ddaf2e326e710209d10a",
+      "afterImageSha256": "a837d3f21cc7063361399218b064a4c4cd9c6baa539171b32ebc0c021b5f2fa8",
+      "targetClaims": [
+        "canonical:strategic-venue-partners|united-states",
+        "company:cmrxpjo7i01avivhen4qx33ol",
+        "relation:cmrxpkasw02ajivhegp2lqj8g",
+        "relation:cmrxpmsgg05avivhe2z17xugo",
+        "relation:cmrxpmsgt05awivhe9ffrxncw",
+        "relation:cmrxpmshc05axivhes4hq6di2",
+        "relation:cmrxpmshw05ayivhe9z9vx2oo",
+        "relation:cmrxpsy4m0ddbivheow37alo9",
+        "relation:cmrxpsy5n0dddivhe5269gr6t",
+        "relation:cmrxpsy6u0ddfivhey1v01g6b",
+        "relation:cmrxpsy9z0ddhivhedkt3htdn",
+        "seed:strategic venue partners|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://bam.brookfield.com/generation/pdf/document-file.pdf?path=%2Fpress-releases%2Fbrookfield-closes-infrastructure-structured-solutions-fund",
+          "label": "Brookfield Asset Management — Infrastructure Structured Solutions Fund",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/strategic-venue-partners-announces-formation-of-new-holding-company-to-serve-as-platform-for-its-wireless-infrastructure-assets--appointment-of-darlene-braunschweig-as-senior-vice-president-of-business-development-300779389.html",
+          "label": "PR Newswire — Strategic Venue Partners",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.strategicvenue.com/strategic-venue-partners-announces-financial-transactions/",
+          "label": "Strategicvenue — Strategic Venue Partners",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.strategicvenue.com/strategic-venue-partners-announces-inaugural-issuance-of-investment-grade-notes-andrefinancing-of-revolving-credit-facility-to-support-further-growth/",
+          "label": "Strategic Venue Partners — 2025 refinancing",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.strategicvenue.com/strategic-venue-partners-launches-innovative-wireless-infrastructure-firm/",
+          "label": "Strategicvenue — Strategic Venue Partners",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.tigerinfrastructure.com/documents/FG/tigerNew/news/624136_Tiger_Infrastructure_Operating_Partner_Roundtable_i3_April_2022.pdf",
+          "label": "Tiger Infrastructure Partners — Fund II operating-partner roundtable",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://www.tigerinfrastructure.com/portfolio/Strategic-Venue",
+          "label": "Investment date source — Tiger — Strategic Venue Partners",
+          "sourceType": "WEBSITE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0443:summit-carbon-solutions:6d14c660",
+      "taskIndex": 443,
+      "companyName": "Summit Carbon Solutions",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0443-summit-carbon-solutions/attempt-1/proposal-v1.json",
+        "sha256": "74cde2a963da1d963c1d4c81f8ebe0b53e46ac5649844175ac11859d86f11ed1"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0443-summit-carbon-solutions/attempt-1/approval-v1.json",
+        "sha256": "ace6cfcf5f998428fbca222ea2a5b251c6cfc9eb388fe729bd5da4bf203ea87a"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0443-summit-carbon-solutions/attempt-1/locked-batch-v2-production-snapshot.json",
+        "sha256": "31c39f859d1d3f097f8ed7ee8ec45f6b93d0e258d2db1d697ee2e03076556d4d"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0443-summit-carbon-solutions/attempt-1/locked-batch-v2-task-snapshot.json",
+        "sha256": "5523f2ad40fab20a04a7fb2d6d90fd1d5931efa80634eeb1179c7ec31eecf2ba"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0443-summit-carbon-solutions/attempt-1/observed-batch-v1-task-snapshot.json",
+        "sha256": "04af4c887bc0b6aa76d84197a56a7a0101e2389c02ecefe8d27f960403c34f84"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0443-summit-carbon-solutions/attempt-1/application-research-decision-v1.json",
+        "sha256": "023bc39b22f72508ffd1e4a53c3c3f74db92ac0ea9743b92cdc78a4f99a77ae2"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0443-summit-carbon-solutions/attempt-1/release-source-verification-v1.json",
+        "sha256": "599bf8c91ce145fe5b77d3a054f10d55ed4a2ee67ba6ea8a6efa7f9e76ab210c"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "856e8662af3b4edce8a481a2b441939260628cb89fc30ef38caa1427656aaa5a",
+      "dependencySha256": "f564a4a37b1a5c267b1fbc25e64ddaa5d1de14f1667e6ebc04b3b3b59febeafa",
+      "afterImageSha256": "078f3edda34122b1a0aa5d4a05d752741cba67ea4b90b2b37431caa9b72e079b",
+      "targetClaims": [
+        "canonical:summit-carbon-solutions|united-states",
+        "company:cmrxpjobk01b3ivhet0tyh274",
+        "relation:cmrxpkax202arivhesv0gri6w",
+        "relation:cmrxpkaxj02asivhe2the1gpw",
+        "relation:cmrxpmt6905brivhekygov9iw",
+        "relation:cmrxpmt6t05bsivhed6n8eo53",
+        "relation:cmrxpmt7k05btivhezd6jbx68",
+        "relation:cmrxpmt8505buivhe2pd24pd1",
+        "relation:cmrxpmt8p05bvivhe3lzc4f8m",
+        "relation:cmrxpszdg0df6ivhea0zo80f1",
+        "relation:cmrxpszej0df8ivhejk7l6155",
+        "relation:cmrxpszho0dfaivhe25kvzqs3",
+        "relation:cmrxpszj80dfcivhercykq0gm",
+        "relation:cmrxpszk80dfeivhecrbe08k5",
+        "relation:cmrxpszkp0dffivhek01bwb51",
+        "relation:cmrxpszlv0dfhivhe9g1sn65f",
+        "relation:cmrxpszmu0dfjivhe5iktfvaz",
+        "seed:summit carbon solutions|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://iuc.iowa.gov/hazardous-liquid-pipeline-requests",
+          "label": "Iowa Utilities Commission — Hazardous liquid pipeline requests",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/summit-carbon-solutions-announces-investment-from-tiger-infrastructure-partners-301517587.html",
+          "label": "Follow-on investment source — Tiger — Summit Carbon Solutions",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/summit-carbon-solutions-announces-successful-completion-of-1-billion-equity-raise-following-300-million-investment-from-tpg-rise-climate-301545158.html",
+          "label": "Investment date source — TPG — Summit Carbon Solutions",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/tiger-infrastructure-partners-fund-iii-closes-at-1-25-billion-hard-cap-reflecting-investor-demand-for-its-innovative-growth-capital-strategy-301531549.html",
+          "label": "Fund vehicle source — Tiger Infrastructure Partners Fund III — 11:11 Systems",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1869302/000186930222000002/xslFormDX01/primary_doc.xml",
+          "label": "SEC — Summit Carbon Solutions Form D/A",
+          "sourceType": "SEC_FILING"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1880661/000188066126000033/tpg-20260331.htm",
+          "label": "TPG — 2026 first-quarter Form 10-Q",
+          "sourceType": "SEC_FILING"
+        },
+        {
+          "url": "https://www.summitag.com/summit-carbon-solutions-announces-successful-completion-of-1-billion-equity-raise-following-300-million-investment-from-tpg-rise-climate/",
+          "label": "Summitag — Summit Carbon Solutions",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.summitag.com/summit-carbon-solutions/",
+          "label": "Summitag — Summit Carbon Solutions",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.summitcarbonsolutions.com/",
+          "label": "Summitcarbonsolutions — Summit Carbon Solutions",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.summitcarbonsolutions.com/newsroom/may-13-update",
+          "label": "Summit Carbon Solutions — May 2026 project update",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.tigerinfrastructure.com/documents/FG/tigerNew/news/611388_SCS_Press_Release___Tiger___2021_04_20.pdf",
+          "label": "Announcement date source — Tiger — Summit Carbon Solutions",
+          "sourceType": "PRESENTATION"
+        },
+        {
+          "url": "https://www.tigerinfrastructure.com/portfolio/Summit-Carbon-Solutions",
+          "label": "Tigerinfrastructure — Summit Carbon Solutions",
+          "sourceType": "WEBSITE"
+        }
+      ]
+    }
+  ],
+  "collisionAnalysis": {
+    "independent": true,
+    "claimsSha256": "186f1e29d6dcf59658f759f6f07b33a6d9300b601089f86a01c25b1f1969ab72",
+    "sharedSourceUrls": [
+      "https://www.prnewswire.com/news-releases/tiger-infrastructure-partners-fund-iii-closes-at-1-25-billion-hard-cap-reflecting-investor-demand-for-its-innovative-growth-capital-strategy-301531549.html"
+    ],
+    "conflicts": []
+  },
+  "batchSha256": "f23b112222179dd3505605dbd003fae60d5a341bf9c1e24ea123f19dfa9bd70d"
+}

@@ -1,0 +1,355 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0439:crosslake-fibre:cb475638",
+  "taskIndex": 439,
+  "asOfDate": "2026-09-02",
+  "generatedAt": "2026-09-02T10:20:00.000Z",
+  "canonicalKey": "crosslake-fibre|canada-united-states",
+  "companyName": "Crosslake Fibre",
+  "actions": [
+    "CORRECT_COMPANY"
+  ],
+  "sourceHoldingIds": [
+    "093-tiger-infrastructure-partners:holding:003:crosslake-fibre"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Retain Crosslake Fibre as an active Tiger Infrastructure Partners Fund II digital-infrastructure holding while correcting the ownership vehicle, historical-versus-current stake treatment, operating footprint and dated scale claims. Tiger and Crosslake continue to identify the investment as current, and the acquisition-and-exit search found no later sale or signed transfer.",
+  "evidence": [
+    {
+      "url": "https://docs.fcc.gov/public/attachments/DA-18-1026A1_Rcd.pdf",
+      "purpose": "Regulatory evidence for the Fund II AIV chain and 93.26% historical indirect interest.",
+      "supports": [
+        "Tiger Infrastructure Partners Fund II ownership vehicle",
+        "93.26% indirect interest as of August 10, 2018"
+      ]
+    },
+    {
+      "url": "https://www.tigerinfrastructure.com/portfolio/Crosslake",
+      "purpose": "Current Tiger portfolio status and 2017 investment vintage.",
+      "supports": [
+        "Tiger remains associated with Crosslake",
+        "2017 entry year"
+      ]
+    },
+    {
+      "url": "https://crosslakefibre.ca/network-map/",
+      "purpose": "Current route and operating-system boundary.",
+      "supports": [
+        "Lake Ontario and CrossChannel operating footprint",
+        "Maple Leaf remains a subordinate route development"
+      ]
+    },
+    {
+      "url": "https://crosslakefibre.ca/pops/",
+      "purpose": "Current backbone-PoP and extranet distinction.",
+      "supports": [
+        "25-plus backbone PoPs",
+        "Extranet sites are not presented as owned PoPs"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "98e1f91d9d909aa4f8f148f2cf2143fab96c3756132afc213ea3471c0255780d",
+  "currentCompanySnapshotSha256": "19f874fbd8d27a51b122de93b0707fe442a8d7e7031fb87e3b5102414be2916e",
+  "executionLock": {
+    "taskSnapshotSha256": "53cbec53d83640164727bc1c4d37287705d8071a5b67c4065abf5d4cdb07229f",
+    "taskStateSha256": "a15ef830c04e912c2d78919a4bdddd5d1321f2a81bdfc1240687f79e38b0646e",
+    "taskDependencySha256": "53078138602aa9f9d496892d8be3fa8da069ed09dc6c79164f8b51355574a6d9",
+    "seedEntrySha256": "75b27e5c75d6c95dcf34f8059eca95ba95e29165cda892d096a5a178c7c7f8fa",
+    "dependencies": {
+      "ownershipPeriodsSha256": "e305ba54f7e96eb1d2cc31a075ba34196c9b68b88df1869fc39ea72c9bbcb292",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "7d9784838d0e4e817dfd147d361cbe5114a281d4f59783dc68a47c3d99a4de5d",
+      "organizationsSha256": "7bff0b5698459304083333bfb81e644c2d270f5a139a751bc96ea2912455d791",
+      "citationsSha256": "0ec847d79447dd6a8c16ffb7641f157f98a8857869595af9daf573992c5b60f7",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj3t300fkivhe80fgu879",
+        "fundName": "Tiger Infrastructure Partners Fund II",
+        "managerId": "cmrxpie6w003qivhezkd8ost3",
+        "updatedAt": "2026-07-23T16:09:58.791Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpie6w003qivhezkd8ost3",
+        "name": "Tiger Infrastructure Partners",
+        "updatedAt": "2026-07-23T16:09:25.592Z"
+      },
+      {
+        "id": "cmrxpigns004iivhep4tpvy3z",
+        "name": "Tiger",
+        "updatedAt": "2026-07-23T16:09:28.792Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjo1b01anivhetlgdsr8j",
+    "name": "Crosslake Fibre",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Subsea and terrestrial fiber networks",
+    "region": "NORTH_AMERICA",
+    "country": "Canada / United States",
+    "countryTags": [
+      "United States",
+      "Canada"
+    ],
+    "description": "Crosslake Fibre develops and operates subsea and terrestrial fiber networks in North America. Its customers are enterprise, carrier, cloud, and content-network users that require high-capacity connectivity between major metropolitan markets. The operating model is asset-heavy and based on owned long-haul fiber infrastructure and interconnection points. Company materials describe a network with more than 40 points of presence and an initial flagship route linking Toronto, Buffalo, and New York City. Tiger Infrastructure Partners Fund II invested in Crosslake in 2017 and remains the sponsor identified in public portfolio materials.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2016,
+    "headquarters": "Ontario; New York",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpkamd02abivhesy9hobss",
+        "managerName": "Tiger Infrastructure Partners",
+        "organizationName": "Tiger",
+        "fundName": "Tiger Infrastructure Partners Fund II",
+        "vehicleName": "Tiger Infrastructure Partners Fund II",
+        "stake": null,
+        "investmentYear": 2017,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmrz605aaivheii4gv7af",
+        "date": "2016",
+        "event": "Crosslake Fibre was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2016-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmrzl05abivhe86yfeepj",
+        "date": "Dec 2017",
+        "event": "Tiger Infrastructure Partners Fund II invested in Crosslake Fibre.",
+        "category": "FINANCING",
+        "sortDate": "2017-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpms0505acivhe85apqjzh",
+        "date": "2019",
+        "event": "Crosslake launched service on its Toronto-Buffalo-New York route.",
+        "category": "EXPANSION",
+        "sortDate": "2019-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsx2a0dbmivheel7lgc27",
+        "label": "Crosslakefibre — Crosslake Fibre",
+        "url": "https://crosslakefibre.ca/company/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Crosslakefibre — Crosslake Fibre",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpsx3n0dboivhevyfnscuj",
+        "label": "Crosslakefibre — Crosslake Fibre",
+        "url": "https://crosslakefibre.ca/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Crosslakefibre company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsx4o0dbqivheg1vjzclk",
+        "label": "Tigerinfrastructure — Crosslake Fibre",
+        "url": "https://www.tigerinfrastructure.com/portfolio/Crosslake",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Tigerinfrastructure operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsx5o0dbsivhe99i24v31",
+        "label": "Announcement date source — Tiger — Crosslake Fibre",
+        "url": "https://www.tigerinfrastructure.com/documents/FG/tigerNew/news/584279_Crosslake_Press_Release_-_Final.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Tiger transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsx6p0dbuivhe92ms540u",
+        "label": "Fund vehicle source — Tiger Infrastructure Partners Fund II — Crosslake Fibre",
+        "url": "https://www.fcc.report/IBFS/Public-Notices/1350410",
+        "sourceType": "ARTICLE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Fcc financing or public filing",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "19f874fbd8d27a51b122de93b0707fe442a8d7e7031fb87e3b5102414be2916e",
+  "afterImage": {
+    "id": "cmrxpjo1b01anivhetlgdsr8j",
+    "name": "Crosslake Fibre",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Subsea and terrestrial fiber networks",
+    "region": "NORTH_AMERICA",
+    "country": "Canada / United States",
+    "countryTags": [
+      "United States",
+      "Canada"
+    ],
+    "description": "Crosslake Fibre owns and operates long-haul subsea and terrestrial fiber systems serving carriers, hyperscalers, financial institutions and enterprises across North America and Europe. Its two named live systems span approximately 681 km: the Lake Ontario route linking Toronto, Buffalo and New York, and the CrossChannel route linking Slough and Paris. The company reports more than 25 backbone points of presence plus separate extranet reach; extranet sites are not treated as owned PoPs. Tiger Infrastructure Partners Fund II invested in December 2017 and remains the current sponsor identified by both Tiger and Crosslake. Two Fund II AIVs held a 93.26% indirect interest as of August 10, 2018, while the current ownership percentage is not publicly disclosed. No later sale or signed sponsor transfer was identified through August 19, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://crosslakefibre.ca/",
+    "yearFounded": 2016,
+    "headquarters": "Toronto, Ontario, Canada",
+    "lastVerifiedAt": "2026-09-02T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpkamd02abivhesy9hobss",
+        "managerName": "Tiger Infrastructure Partners",
+        "organizationName": "Tiger",
+        "fundName": "Tiger Infrastructure Partners Fund II",
+        "vehicleName": "Tiger Infrastructure Partners Fund II Crosslake AIV LP and Tiger Infrastructure Partners Fund II (Europe) Crosslake AIV LP via Connect Investments LP",
+        "stake": "Current percentage not publicly disclosed; Fund II AIVs held 93.26% indirectly as of August 10, 2018",
+        "investmentYear": 2017,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmrz605aaivheii4gv7af",
+        "date": "2016",
+        "event": "Crosslake Fibre was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2016-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmrzl05abivhe86yfeepj",
+        "date": "Dec 7, 2017",
+        "event": "Tiger Infrastructure Partners announced its completed Fund II investment in Crosslake Fibre.",
+        "category": "FINANCING",
+        "sortDate": "2017-12-07T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.tigerinfrastructure.com/documents/FG/tigerNew/news/584279_Crosslake_Press_Release_-_Final.pdf"
+        ]
+      },
+      {
+        "id": "cmrxpms0505acivhe85apqjzh",
+        "date": "Oct 22, 2019",
+        "event": "Crosslake placed its Lake Ontario fiber system into commercial service.",
+        "category": "EXPANSION",
+        "sortDate": "2019-10-22T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://crosslakefibre.ca/company/"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsx2a0dbmivheel7lgc27",
+        "label": "Crosslakefibre — Crosslake Fibre",
+        "url": "https://crosslakefibre.ca/company/",
+        "sourceType": "ARTICLE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Company history, ownership backing and operating timeline",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsx3n0dboivhevyfnscuj",
+        "label": "Crosslakefibre — Crosslake Fibre",
+        "url": "https://crosslakefibre.ca/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Crosslakefibre company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsx4o0dbqivheg1vjzclk",
+        "label": "Tigerinfrastructure — Crosslake Fibre",
+        "url": "https://www.tigerinfrastructure.com/portfolio/Crosslake",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current Tiger portfolio status and 2017 entry",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsx5o0dbsivhe99i24v31",
+        "label": "Announcement date source — Tiger — Crosslake Fibre",
+        "url": "https://www.tigerinfrastructure.com/documents/FG/tigerNew/news/584279_Crosslake_Press_Release_-_Final.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Tiger transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsx6p0dbuivhe92ms540u",
+        "label": "Fund vehicle source — Tiger Infrastructure Partners Fund II — Crosslake Fibre",
+        "url": "https://www.fcc.report/IBFS/Public-Notices/1350410",
+        "sourceType": "ARTICLE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Fcc financing or public filing",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "FCC — Crosslake Fibre control grant",
+        "url": "https://docs.fcc.gov/public/attachments/DA-18-1026A1_Rcd.pdf",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Fund II AIV chain and 93.26% historical indirect interest",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "Crosslake Fibre — Network map",
+        "url": "https://crosslakefibre.ca/network-map/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Operating route scope and Maple Leaf project boundary",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Crosslake Fibre — Points of presence",
+        "url": "https://crosslakefibre.ca/pops/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Backbone-PoP count and separate extranet reach",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Crosslake Fibre — CrossChannel ready for service",
+        "url": "https://www.prnewswire.com/news-releases/crosslake-fibres-crosschannel-submarine-cable-goes-live-301438336.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "December 7, 2021 CrossChannel ready-for-service date and route scale",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "923cd9bd1e53b1cbfbf63f02b19ab31d2b2a8b926e8b22d914ad2cc1caf6592d",
+  "proposalSha256": "447a1650607ca0276e9ab4e1cff11861b81e4c2b91865f908ee3316149fb9626"
+}
