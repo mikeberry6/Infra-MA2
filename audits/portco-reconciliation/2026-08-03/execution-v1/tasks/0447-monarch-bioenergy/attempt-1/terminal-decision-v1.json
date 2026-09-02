@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0447:monarch-bioenergy:92b9cb49",
+  "taskIndex": 447,
+  "companyName": "Monarch Bioenergy",
+  "outcome": "EXCLUDED",
+  "decidedAt": "2026-09-02T11:17:30.000Z",
+  "rationale": "Monarch is operating RNG infrastructure, but no qualifying infrastructure manager is proven. TPG's stake belongs to Rise Climate private equity; Transition Infrastructure was formed later. RAE/Smithfield are strategic owners, and TPG's unresolved exit process does not change scope.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0447-monarch-bioenergy/attempt-1/locked-batch-v2-task-snapshot.json",
+    "sha256": "239167842922a599af7e991e82e68e1ac343dd10661334ccfea005cf2ec66112"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0447-monarch-bioenergy/attempt-1/application-research-decision-v1.json",
+    "sha256": "e49dd909062391ca0b337f8cdaf4d375bc813613e67beafcbd5d37ac080cf3ec"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0447-monarch-bioenergy/attempt-1/release-source-verification-v1.json",
+    "sha256": "052d5078954cbc2c137c26676df462fa91a001ed145028790936e862c5c6ecda"
+  },
+  "evidence": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/91388/000009138826000014/smf-20251228.htm",
+      "purpose": "Cap table, control and TPG sale notice."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/91388/000009138825000017/smf-20241229.htm",
+      "purpose": "2022 issuance, dilution, farms and asset ownership."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/91388/000009138826000051/smf-20260628.htm",
+      "purpose": "Latest operating/exit-status evidence."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1880661/000188066126000033/tpg-20260331.htm",
+      "purpose": "Rise Climate PE versus separate infrastructure product."
+    },
+    {
+      "url": "https://monarchbio.com/press-releases-articles-whitepapers/tpg-rise-climate-accelerates-renewable-energy-development-with-investment-in-monarch-bioenergy-joint-venture",
+      "purpose": "Announcement, equal partners and roles."
+    },
+    {
+      "url": "https://monarchbio.com/projects",
+      "purpose": "Nine projects and capacities."
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "042d7cca64866809254a707b350c3d8e4914e8fbaf51391f2c7b8deddf4e501e"
+}

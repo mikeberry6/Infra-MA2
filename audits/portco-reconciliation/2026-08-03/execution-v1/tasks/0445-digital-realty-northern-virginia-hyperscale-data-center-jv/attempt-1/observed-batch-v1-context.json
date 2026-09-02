@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0445:digital-realty-northern-virginia-hyperscale-data-center-jv:1419ed2f",
+  "taskIndex": 445,
+  "companyName": "Digital Realty Northern Virginia Hyperscale Data Center JV",
+  "generatedAt": "2026-09-02T11:28:22.188Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0445-digital-realty-northern-virginia-hyperscale-data-center-jv/attempt-1/observed-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 445,
+    "taskId": "ledger:0445:digital-realty-northern-virginia-hyperscale-data-center-jv:1419ed2f",
+    "canonicalKey": "digital-realty-northern-virginia-hyperscale-data-center-jv|united-states",
+    "companyName": "Digital Realty Northern Virginia Hyperscale Data Center JV",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 94,
+    "managers": [
+      "TPG"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "094-tpg:repo-only:001:digital-realty-northern-virginia-hyperscale-data-center-jv"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjoby01b4ivhep7fiqmrf"
+    ],
+    "seedKeys": [
+      "digital realty northern virginia hyperscale data center jv|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.digitalrealty.com/about/newsroom/press-releases/123162/digital-realty-and-tpg-announce-joint-venture-of-hyperscale-data-centers-in-northern-virginia"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: TPG OUT_OF_SCOPE: Real estate strategy (TREP) rather than infrastructure platform.",
+    "unresolvedQuestions": [
+      "Confirm whether the manager ownership, the company itself, or only this census scope is out of scope before proposing any change."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjoby01b4ivhep7fiqmrf",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "digital-realty-northern-virginia-hyperscale-data-center-jv|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjoby01b4ivhep7fiqmrf",
+    "name": "Digital Realty Northern Virginia Hyperscale Data Center JV",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Hyperscale data centers",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "This joint venture owns three stabilized hyperscale data center buildings in Northern Virginia. Its customers are investment-grade hyperscale users that require large-scale leased capacity in one of the deepest data center markets in the United States. The operating model is asset-heavy and leased, with Digital Realty continuing to manage day-to-day operations while the venture earns contracted data center cash flows. Digital Realty stated at signing that the portfolio represented about 104 MW of IT capacity. The venture was formed in July 2023 when TPG Real Estate agreed to acquire an 80% interest and Digital Realty retained a 20% interest.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2023,
+    "headquarters": "Virginia",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpkay302ativhe1g8qhklr",
+        "managerName": "TPG",
+        "organizationName": "TPG",
+        "fundName": null,
+        "vehicleName": "TPG Real Estate Partners (TREP)",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpkayo02auivhego4jurho",
+        "managerName": "TPG Real Estate",
+        "organizationName": "TPG Real Estate",
+        "fundName": null,
+        "vehicleName": "TPG Real Estate Partners (TREP)",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmt9s05bwivhedu9r0d4f",
+        "date": "Jul 2023",
+        "event": "Digital Realty retained a 20% stake and operating responsibility.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-07-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmta605bxivhewvulomwa",
+        "date": "Jul 2023",
+        "event": "TPG Real Estate agreed to acquire an 80% interest in the portfolio.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-07-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmtal05byivhebvrfzkda",
+        "date": "Jul 2023",
+        "event": "Digital Realty and TPG announced the Northern Virginia hyperscale joint venture.",
+        "category": "OTHER",
+        "sortDate": "2023-07-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmtb405bzivhe3ij37yi3",
+        "date": "Jul 25, 2023",
+        "event": "Digital Realty formed the Northern Virginia hyperscale data center joint venture and TPG Real Estate acquired an 80% interest in the three-data-center portfolio.",
+        "category": "ACQUISITION",
+        "sortDate": "2023-07-25T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpszo00dflivheshadfdol",
+        "label": "Digitalrealty — Digital Realty Northern Virginia Hyperscale Data Center JV",
+        "url": "https://www.digitalrealty.com/about/newsroom/press-releases/123162/digital-realty-and-tpg-announce-joint-venture-of-hyperscale-data-centers-in-northern-virginia",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Digitalrealty — Digital Realty Northern Virginia Hyperscale Data Center JV",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpszp00dfnivhefdmlirwn",
+        "label": "PR Newswire — Digital Realty Northern Virginia Hyperscale Data Center JV",
+        "url": "https://www.prnewswire.com/news-releases/digital-realty-and-tpg-announce-joint-venture-of-hyperscale-data-centers-in-northern-virginia-301887667.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "PR Newswire — Digital Realty Northern Virginia Hyperscale Data Center JV",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpszpx0dfpivhesn2twxiw",
+        "label": "Close date source — TPG Real Estate — Digital Realty Northern Virginia Hyperscale Data Center JV",
+        "url": "https://investor.digitalrealty.com/static-files/82ddcb19-b0af-471b-a9ec-15929b5094d8",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "TPG Real Estate closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpszqu0dfrivhed2iv4e62",
+        "label": "Investor — Digital Realty Northern Virginia Hyperscale Data Center JV",
+        "url": "https://investor.digitalrealty.com/static-files/077aec19-697f-4523-9c2f-38fdfdaf23b2",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Investor — Digital Realty Northern Virginia Hyperscale Data Center JV",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpszry0dftivhe03p0fh2j",
+        "label": "Digitalrealty — Digital Realty Northern Virginia Hyperscale Data Center JV",
+        "url": "https://www.digitalrealty.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Digitalrealty company profile",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Digital Realty Northern Virginia Hyperscale Data Center JV",
+    "investmentFirm": "TPG Real Estate",
+    "sector": "Digital",
+    "subsector": "Hyperscale data centers",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "TPG Real Estate Partners (TREP)",
+    "description": "This joint venture owns three stabilized hyperscale data center buildings in Northern Virginia. Its customers are investment-grade hyperscale users that require large-scale leased capacity in one of the deepest data center markets in the United States. The operating model is asset-heavy and leased, with Digital Realty continuing to manage day-to-day operations while the venture earns contracted data center cash flows. Digital Realty stated at signing that the portfolio represented about 104 MW of IT capacity. The venture was formed in July 2023 when TPG Real Estate agreed to acquire an 80% interest and Digital Realty retained a 20% interest.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2023,
+    "investmentYear": 2023,
+    "headquarters": "Virginia",
+    "milestones": [
+      {
+        "date": "Jul 2023",
+        "event": "Digital Realty retained a 20% stake and operating responsibility.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Jul 2023",
+        "event": "TPG Real Estate agreed to acquire an 80% interest in the portfolio.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Jul 2023",
+        "event": "Digital Realty and TPG announced the Northern Virginia hyperscale joint venture.",
+        "category": "Other"
+      },
+      {
+        "date": "Jul 25, 2023",
+        "event": "Digital Realty formed the Northern Virginia hyperscale data center joint venture and TPG Real Estate acquired an 80% interest in the three-data-center portfolio.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Digitalrealty — Digital Realty Northern Virginia Hyperscale Data Center JV",
+        "url": "https://www.digitalrealty.com/about/newsroom/press-releases/123162/digital-realty-and-tpg-announce-joint-venture-of-hyperscale-data-centers-in-northern-virginia",
+        "type": "PRESS_RELEASE"
+      },
+      {
+        "label": "PR Newswire — Digital Realty Northern Virginia Hyperscale Data Center JV",
+        "url": "https://www.prnewswire.com/news-releases/digital-realty-and-tpg-announce-joint-venture-of-hyperscale-data-centers-in-northern-virginia-301887667.html",
+        "type": "PRESS_RELEASE"
+      },
+      {
+        "label": "Close date source — TPG Real Estate — Digital Realty Northern Virginia Hyperscale Data Center JV",
+        "url": "https://investor.digitalrealty.com/static-files/82ddcb19-b0af-471b-a9ec-15929b5094d8",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Investor — Digital Realty Northern Virginia Hyperscale Data Center JV",
+        "url": "https://investor.digitalrealty.com/static-files/077aec19-697f-4523-9c2f-38fdfdaf23b2",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Digitalrealty — Digital Realty Northern Virginia Hyperscale Data Center JV",
+        "url": "https://www.digitalrealty.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "TPG",
+        "ownershipVehicle": "TPG Real Estate Partners (TREP)",
+        "investmentYear": 2023,
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "TPG Real Estate",
+        "ownershipVehicle": "TPG Real Estate Partners (TREP)",
+        "investmentYear": 2023,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpiec5003sivhekn2yjy5t",
+        "name": "TPG",
+        "updatedAt": "2026-07-23T16:09:25.781Z"
+      },
+      {
+        "id": "cmrxpikyu005uivhecg8xa8vk",
+        "name": "TPG Real Estate",
+        "updatedAt": "2026-07-23T16:09:34.374Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0445:digital-realty-northern-virginia-hyperscale-data-center-jv:1419ed2f",
+    "taskIndex": 445,
+    "canonicalKey": "digital-realty-northern-virginia-hyperscale-data-center-jv|united-states",
+    "capturedAt": "2026-09-02T11:28:22.188Z",
+    "databaseRevision": "revision:7ecefbed3a407ae206cf5585d5ae8c005073d718a5567a9738c274de44a19a9a",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "d2531a177eb0a805325eaa64bdafcc26d18cc3f18ecc59a354467236497a3a5b",
+    "productionSnapshotSha256": "a9cd62991e8d27f384f29b52dbc16152c074ee9e7b84a39f57d747d36494b55c",
+    "targetCompanySnapshotSha256": "658a2ba5215e6d9767f54763c2a4cc5f645c43f7fb7ab395958570593466f18b",
+    "seedEntrySha256": "d4a297a91e8853588490f34189009e2e0e9c404c9891ffd79090d0aed39cd8ec",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "49ea73006cba76773735d1b230824a8a9efcc02ca7466f0c83f06f95a63aad58",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "ad023f2dc37e5105a15435938bda75c217ad112ace0757d3e5623967cfe1b96b",
+      "citationsSha256": "584cc8091bddaccd181b92764a6296218bd5740c2572c2577b9eac77df9349f3",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "9cee976618dca44a929a0e67b1552eb1f8e915212556eb66979237f450cc44cf",
+    "stateSha256": "820b38efab3ffb47f8d0d6dfd6b2acaa6ad3081735a2364ab1ca2ea4be277f03",
+    "taskSnapshotSha256": "2d3808d0e63d475c88341f0a38de287fd64bc1e699e6c06e7f3ba4c325832726"
+  },
+  "contextSha256": "0b79c490748cced61349c7936522400a930916335c79b87628cbcf3b81faae75"
+}

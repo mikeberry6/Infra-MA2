@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0445:digital-realty-northern-virginia-hyperscale-data-center-jv:1419ed2f",
+  "taskIndex": 445,
+  "companyName": "Digital Realty Northern Virginia Hyperscale Data Center JV",
+  "outcome": "EXCLUDED",
+  "decidedAt": "2026-09-02T11:17:30.000Z",
+  "rationale": "TPG's 80% interest is through TPG Real Estate Partners (TREP), an opportunistic real-estate fund series rather than an infrastructure mandate. Under the fixed strategy rule the asset type does not override the vehicle mandate. Digital Realty retained 20% and operations; no qualifying infrastructure-fund owner was found. TPG and TPG Real Estate duplicate one interest.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0445-digital-realty-northern-virginia-hyperscale-data-center-jv/attempt-1/locked-batch-v2-task-snapshot.json",
+    "sha256": "3e0338f2fb208d5fe83f9bead2a91764acaeb02cde6ebf6a4c94bf01b85ba567"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0445-digital-realty-northern-virginia-hyperscale-data-center-jv/attempt-1/application-research-decision-v1.json",
+    "sha256": "82c148f833dabf2b8b1d15366627a1841b0019c111f291d1911cf6507c8a6ae2"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0445-digital-realty-northern-virginia-hyperscale-data-center-jv/attempt-1/release-source-verification-v1.json",
+    "sha256": "3eb3feb0ff329406c678d6220792aa09b385a90d62c9037214e4a7d39c5420c9"
+  },
+  "evidence": [
+    {
+      "url": "https://www.tpg.com/news-and-insights/digital-realty-and-tpg-announce-joint-venture-hyperscale-data",
+      "purpose": "Stakes,value,capacity,mandate,operations."
+    },
+    {
+      "url": "https://www.tpg.com/platforms/real-estate/tpg-real-estate-partners",
+      "purpose": "TREP real-estate strategy."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1297996/000110465926015365/R15.htm",
+      "purpose": "Ownership,governance,Nova DC Holdings."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1297996/000110465926089296/R31.htm",
+      "purpose": "20% ownership at 2026-06-30."
+    },
+    {
+      "url": "https://dbrs.morningstar.com/research/420088/dbrs-morningstar-finalizes-ratings-on-dc-commercial-mortgage-trust-2023-dc",
+      "purpose": "Portfolio perimeter and financing."
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "f274dbd65f7559d85af4cb70bd7af371639cd74d05c751b847fc211e2a3209cb"
+}

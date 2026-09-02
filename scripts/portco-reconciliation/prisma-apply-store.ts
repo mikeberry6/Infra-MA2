@@ -234,6 +234,7 @@ export function assertOwnershipManagerCompatible(input: {
 }
 
 const approvedOwnershipOrganizationProvisioning = {
+  "American Infrastructure Funds": "FUND_MANAGER",
   "Clay Bush": "OTHER",
   "Crosstimbers Capital Group": "FUND_MANAGER",
   "Jennifer Bush": "OTHER",
@@ -290,6 +291,7 @@ const approvedOwnershipOrganizationProvisioning = {
   "Hansam": "OTHER",
   "HASI": "CORPORATE",
   "Harvestone Group": "CORPORATE",
+  "Hunt Companies": "CORPORATE",
   "Kinder Morgan, Inc.": "CORPORATE",
   "MAP Energy, LLC": "FUND_MANAGER",
   "MedCraft Healthcare Real Estate": "FUND_MANAGER",
