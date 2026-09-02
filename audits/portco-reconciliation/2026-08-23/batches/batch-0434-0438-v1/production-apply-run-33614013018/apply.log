@@ -1,0 +1,190 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:batch:apply
+> npx tsx scripts/portco-reconciliation/batch-apply-cli.ts --batch-manifest=audits/portco-reconciliation/2026-08-23/batches/batch-0434-0438-v1/batch-manifest.json --batch-sha256=dd0ca285ddf3caf001087d3bc1d084577867d2fea8d25f71c4f967b19bc3c56a --seed-artifact=prisma/seed-data/approved-portco-after-images.json --apply --write-token=APPLY_APPROVED_PORTCO_BATCH --commit-receipt=tmp/portco-reconciliation/production/batch-commit-receipt.json --receipt=tmp/portco-reconciliation/production/batch-apply-receipt.json --public-base-url=https://infra-ma-2.vercel.app/Infra-MA2/
+
+(node:3916) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "BATCH_APPLIED",
+  "receiptPath": "/home/runner/work/Infra-MA2/Infra-MA2/tmp/portco-reconciliation/production/batch-apply-receipt.json",
+  "receipt": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_APPLY_BATCH_RECEIPT",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "batchId": "batch-0434-0438-v1",
+    "batchSha256": "dd0ca285ddf3caf001087d3bc1d084577867d2fea8d25f71c4f967b19bc3c56a",
+    "releaseSha": "db27457d7a849bcbfc9f5332f6659be070e80038",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "transactionId": "e400c8ae-458f-4eb7-81cd-da1262c63c4f",
+    "appliedAt": "2026-09-02T09:30:50.630Z",
+    "members": [
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0434:atlantica-sustainable-infrastructure-plc:4a99610b",
+        "taskIndex": 434,
+        "companyName": "Atlantica Sustainable Infrastructure plc",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0434:atlantica-sustainable-infrastructure-plc:4a99610b",
+          "taskIndex": 434,
+          "companyName": "Atlantica Sustainable Infrastructure plc",
+          "companyId": "cmrxpjdfj00u5ivhe6hc732tx",
+          "proposalSha256": "dd89d9002f51a416a5e81e8c0e3c26b2963bae8b140f4247d1d93d970eec9618",
+          "approvalSha256": "a132ba9271ad53b9fd956187e705856fcd93bbf0ed809cb0a33e71c77da4814c",
+          "productionSnapshotSha256": "91ddf5f82eeaa8000f2fbbba71e7c040cc4480fe00bb2b62cc551dd58518f487",
+          "beforeCompanySnapshotSha256": "2aa37d31e25c5beea7dd1736b532b646f0467eab0ea1c5ff07a1385644642353",
+          "appliedAfterImageSha256": "f4547e7baf869459aa21d688d21399730ba4c7b368d5de04770fb9ffee50f6ec",
+          "seedAfterImageSha256": "f4547e7baf869459aa21d688d21399730ba4c7b368d5de04770fb9ffee50f6ec",
+          "approvedSeedEntrySha256": "c8974acbf8b400f2da2bd2abd91eca8571b2f407e910507f667439f5831e1c4c",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "e400c8ae-458f-4eb7-81cd-da1262c63c4f",
+          "auditEventId": "cmtjwb8nh00010s2b2r0gh5bu",
+          "appliedAt": "2026-09-02T09:30:50.630Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "b23d848a188cf45bdbf4912bc8dfda073d8a9d9473436788df1b6ba37455e740"
+        }
+      },
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0435:eavor-technologies-inc:3796294f",
+        "taskIndex": 435,
+        "companyName": "Eavor Technologies Inc.",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0435:eavor-technologies-inc:3796294f",
+          "taskIndex": 435,
+          "companyName": "Eavor Technologies Inc.",
+          "companyId": "cmrxpjnyp01aiivheqsfqsw95",
+          "proposalSha256": "bef1185f6a567ba1daf1fb2470a0559f26c96c901fa5cea5668583f62e794830",
+          "approvalSha256": "78e03cc6f17596b7f51be4cd5411150e9c3376680e2b383d6258f4ac02b18ca5",
+          "productionSnapshotSha256": "ce73c1bdf75d88bde7d10f3e5452a51c86a424fb1d75d17d2fea21ea21d07edc",
+          "beforeCompanySnapshotSha256": "eeb13335b3c1f5ec8433118041985ae26ea308455738dffbb807e6639ee0f33c",
+          "appliedAfterImageSha256": "841a7ea5937c873b30cf2ae371a2a1a0a364a2476ce9a34574c421076663375b",
+          "seedAfterImageSha256": "841a7ea5937c873b30cf2ae371a2a1a0a364a2476ce9a34574c421076663375b",
+          "approvedSeedEntrySha256": "12021f2f945446dfc46b975a21f49483c629a935d72657174c70f664102201ad",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "e400c8ae-458f-4eb7-81cd-da1262c63c4f",
+          "auditEventId": "cmtjwbcwq00030s2bl0bd2hl2",
+          "appliedAt": "2026-09-02T09:30:50.630Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "7a85da3761ebab438910fba41e48d6cecf2807a9de3c2cd989cec5d78e1eb0ab"
+        }
+      },
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0436:neoen-s-a:ec19a5c4",
+        "taskIndex": 436,
+        "companyName": "Neoen S.A.",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0436:neoen-s-a:ec19a5c4",
+          "taskIndex": 436,
+          "companyName": "Neoen S.A.",
+          "companyId": "cmrxpjnzb01ajivhe4mgrxi9y",
+          "proposalSha256": "76860efcebf5f66b847fcca1c32517f4b91cfe44baf91b0a1f5913a66611a476",
+          "approvalSha256": "713411732c8f80ad5a3cefdedebbcc3db392d99cedb4bbe4391364205d4bd930",
+          "productionSnapshotSha256": "e08f45c5dff583f5a9d9795d1c1a4a82fd0d4342677eae2d98e32e9441bdce98",
+          "beforeCompanySnapshotSha256": "7a7797bdbfdc7df57b0a78f8c487509c1033b3109c66620b9d8686bcdf21b827",
+          "appliedAfterImageSha256": "4e0c2cbb9a3c9344c433d7d09572cccb94a020a1efd6e0adb208339374ff0b68",
+          "seedAfterImageSha256": "4e0c2cbb9a3c9344c433d7d09572cccb94a020a1efd6e0adb208339374ff0b68",
+          "approvedSeedEntrySha256": "94f0ad337080731e77aba4811de4d42eb7db8e7633b3434f1b93966f49961e4d",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "e400c8ae-458f-4eb7-81cd-da1262c63c4f",
+          "auditEventId": "cmtjwbh2b00050s2bujv4sifj",
+          "appliedAt": "2026-09-02T09:30:50.630Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "d6bce341673dad0c42e3e3f1c3a5bc26cce0b8f29ac602549bc29695cc6fb1d2"
+        }
+      },
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0437:psa-international-pte-ltd:b5676593",
+        "taskIndex": 437,
+        "companyName": "PSA International Pte Ltd",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0437:psa-international-pte-ltd:b5676593",
+          "taskIndex": 437,
+          "companyName": "PSA International Pte Ltd",
+          "companyId": "cmrxpjnzu01akivhekrj9euxu",
+          "proposalSha256": "fe19caa765b964433e068bd8186b2a9d1a11ddf7ff2a313376c50f2dff1ea043",
+          "approvalSha256": "37808835c521bc476b1e4cddf6498a5f3f3380f48fd0a1309c20ea199510546e",
+          "productionSnapshotSha256": "fb13bcc5123bba08bfb0595773bc9988f6b375b101685f479a488c731b580622",
+          "beforeCompanySnapshotSha256": "2324365e35c510d296d30f1651448933c7cdef7e58db3fbb3e728bbd7aeee313",
+          "appliedAfterImageSha256": "6d975c81d0d21dccbbb7b2e3b2fe91bd2c2c6ce3bcd54a35370d869f86db23d8",
+          "seedAfterImageSha256": "6d975c81d0d21dccbbb7b2e3b2fe91bd2c2c6ce3bcd54a35370d869f86db23d8",
+          "approvedSeedEntrySha256": "13932ba11a3d4fccbc21641bb40c4011714f021056a00e0270d8e22723bfc339",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "e400c8ae-458f-4eb7-81cd-da1262c63c4f",
+          "auditEventId": "cmtjwbli100070s2b5p3vt64k",
+          "appliedAt": "2026-09-02T09:30:50.630Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "dae2f9d30fe0903506ed4aaf4f6e2c20f80c21c0cdc37e47a60b9853abfca17d"
+        }
+      },
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0438:american-natural:a714a5a7",
+        "taskIndex": 438,
+        "companyName": "American Natural",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0438:american-natural:a714a5a7",
+          "taskIndex": 438,
+          "companyName": "American Natural",
+          "companyId": "cmrxpjo0v01amivhemkos1xko",
+          "proposalSha256": "54a84d529e9f6ad83a29a84baf17c9c6d9afb56a48044946876f3a73bb3a2b8c",
+          "approvalSha256": "0715cbacf355fe00474ad86e57b134301454a005b9d5d19575c024094753e3af",
+          "productionSnapshotSha256": "791442a413db8153a3d762a168018537680218ad115c05f1dad1573c57a7898a",
+          "beforeCompanySnapshotSha256": "fb7b2589b07107e5781d8860060b3f38adb3fa33c6bc3e94d7a9877e98f20a5b",
+          "appliedAfterImageSha256": "dd35045f6590a11fd8d46c09b3f59deae03f087781d06556af61fcae996082ed",
+          "seedAfterImageSha256": "dd35045f6590a11fd8d46c09b3f59deae03f087781d06556af61fcae996082ed",
+          "approvedSeedEntrySha256": "e725fbf74bd45d1a62f7bc2e0b9af68b7523edffa2b032a6ab5a9a65e45a9a06",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "e400c8ae-458f-4eb7-81cd-da1262c63c4f",
+          "auditEventId": "cmtjwbqim000h0s2bgj7qs8oh",
+          "appliedAt": "2026-09-02T09:30:50.630Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "374e666fbb75a2c2fe1b280eee7f46f64889054973ab62f766b637e2abf61f44"
+        }
+      }
+    ],
+    "verification": {
+      "databaseTransactionCommitted": true,
+      "seedArtifactVerified": true,
+      "allDetailApisVerified": true,
+      "partialDatabaseApplication": false
+    },
+    "receiptSha256": "11484be3b4a651a4fe9ec2930221a6f25f2b863626197a0dd967e0b9deb1b7d4"
+  }
+}
