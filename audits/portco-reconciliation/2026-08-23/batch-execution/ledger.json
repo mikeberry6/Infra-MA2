@@ -3,7 +3,7 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-02T06:07:05Z",
+  "updatedAt": "2026-09-02T06:28:01Z",
   "activeBatchId": "batch-0429-0433-v2",
   "batches": [
     {
@@ -7826,7 +7826,7 @@
     },
     {
       "batchId": "batch-0429-0433-v2",
-      "state": "READY",
+      "state": "VERIFYING_FAILED",
       "taskIds": [
         "ledger:0429:oryx-midstream:eee190fa",
         "ledger:0430:oryx-midstream-services:8b062bed",
@@ -7842,15 +7842,18 @@
         433
       ],
       "createdAt": "2026-09-02T06:05:07Z",
-      "updatedAt": "2026-09-02T06:07:05Z",
+      "updatedAt": "2026-09-02T06:28:01Z",
       "completedAt": null,
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0429-0433-v2/batch-manifest.json",
         "sha256": "f772a09d26eb926eee99787e3cf2e4e6c23fedc10af0df09df790be14fdbaf06"
       },
-      "releaseSha": null,
-      "receipt": null,
-      "reason": null,
+      "releaseSha": "4bc5962c79e237b76481add0dc6c95a9fa459e2e",
+      "receipt": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0429-0433-v2/production-apply-run-33598218187/batch-apply-receipt.json",
+        "sha256": "930984a9f704ca269558215544de25438cc9ecaf9dc7cfa3a92f82e5b930d46b"
+      },
+      "reason": "Rendered verification found stale or missing fund-attribution metadata for Oryx Midstream, Outpost Solar and JFK New Terminal One. Company identity, ownership, stakes, seed, API and atomic receipt checks passed; the bundle is frozen pending a scoped attribution repair.",
       "history": [
         {
           "sequence": 1,
@@ -7869,9 +7872,51 @@
             "f772a09d26eb926eee99787e3cf2e4e6c23fedc10af0df09df790be14fdbaf06"
           ],
           "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "RELEASING",
+          "at": "2026-09-02T06:15:27Z",
+          "evidenceSha256": [
+            "f772a09d26eb926eee99787e3cf2e4e6c23fedc10af0df09df790be14fdbaf06"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 4,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-09-02T06:17:45Z",
+          "evidenceSha256": [
+            "f772a09d26eb926eee99787e3cf2e4e6c23fedc10af0df09df790be14fdbaf06"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 5,
+          "from": "APPLYING",
+          "to": "VERIFYING",
+          "at": "2026-09-02T06:28:00Z",
+          "evidenceSha256": [
+            "930984a9f704ca269558215544de25438cc9ecaf9dc7cfa3a92f82e5b930d46b",
+            "f772a09d26eb926eee99787e3cf2e4e6c23fedc10af0df09df790be14fdbaf06"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 6,
+          "from": "VERIFYING",
+          "to": "VERIFYING_FAILED",
+          "at": "2026-09-02T06:28:01Z",
+          "evidenceSha256": [
+            "930984a9f704ca269558215544de25438cc9ecaf9dc7cfa3a92f82e5b930d46b",
+            "f772a09d26eb926eee99787e3cf2e4e6c23fedc10af0df09df790be14fdbaf06"
+          ],
+          "reason": "Rendered verification found stale or missing fund-attribution metadata for Oryx Midstream, Outpost Solar and JFK New Terminal One. Company identity, ownership, stakes, seed, API and atomic receipt checks passed; the bundle is frozen pending a scoped attribution repair."
         }
       ]
     }
   ],
-  "ledgerSha256": "0485cd6efd69aa993a14cd921461149a790df288a25bd226270679adc2a3d8a8"
+  "ledgerSha256": "95b7d32f6fb9fcd7dc156d3e1ded4bfb947f551c8243fd0ae6f28b846d7c8ff5"
 }

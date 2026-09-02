@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_RECEIPT",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0429-0433-v2",
+  "batchSha256": "f772a09d26eb926eee99787e3cf2e4e6c23fedc10af0df09df790be14fdbaf06",
+  "releaseSha": "4bc5962c79e237b76481add0dc6c95a9fa459e2e",
+  "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+  "transactionId": "81f4244f-a5d7-46d4-ab35-659f5f4655bc",
+  "appliedAt": "2026-09-02T06:19:52.655Z",
+  "members": [
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0429:oryx-midstream:eee190fa",
+      "taskIndex": 429,
+      "companyName": "Oryx Midstream",
+      "receipt": {
+        "schemaVersion": 1,
+        "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+        "runId": "portco-reconciliation-2026-08-03-v2",
+        "taskId": "ledger:0429:oryx-midstream:eee190fa",
+        "taskIndex": 429,
+        "companyName": "Oryx Midstream",
+        "companyId": "cmrxpjnnm01a1ivhew2n8o1is",
+        "proposalSha256": "26ed74755dbe0beafde5b0ffdafe778fddb2da08618e47eb529a87fb1714769a",
+        "approvalSha256": "42f62eb0a6f189a2b47cce7819faa226ed61c520f360c3bd9963b31ec8ec133f",
+        "productionSnapshotSha256": "feb6ba9d25b472fe87db998a2b726c5e8916607752540d995cb0a2b4d7cc3b7d",
+        "beforeCompanySnapshotSha256": "04075b289e9dad791953adf1a63feb463057eda793334ad1cf4e8a43aea3eb1a",
+        "appliedAfterImageSha256": "cb65250404d6396d94c813e02a9e3eb4d06aa36b64cf229dc1b99bb013d8fc79",
+        "seedAfterImageSha256": "cb65250404d6396d94c813e02a9e3eb4d06aa36b64cf229dc1b99bb013d8fc79",
+        "approvedSeedEntrySha256": "5d6a016aefd13eb1011995e42087077ce45a66242ec232691579d6db7079b680",
+        "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+        "transactionId": "81f4244f-a5d7-46d4-ab35-659f5f4655bc",
+        "auditEventId": "cmtjpi29f000cze2bx9xdi2h8",
+        "appliedAt": "2026-09-02T06:19:52.655Z",
+        "verification": {
+          "databaseMatchesAfterImage": true,
+          "seedMatchesAfterImage": true,
+          "detailApiVerified": true
+        },
+        "receiptSha256": "35801349dee65cb8633a2cf7cb1f9d6e9c745e5383774e2b8fccd29eb5bd2298"
+      }
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0430:oryx-midstream-services:8b062bed",
+      "taskIndex": 430,
+      "companyName": "Oryx Midstream Services",
+      "outcome": "SUPERSEDED",
+      "decisionSha256": "0da35e673c36a1df46ad48f60d0ba09dbdd6513cf261898c501989c071ba49ab"
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0431:outpost-solar:b3b3fc4c",
+      "taskIndex": 431,
+      "companyName": "Outpost Solar",
+      "receipt": {
+        "schemaVersion": 1,
+        "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+        "runId": "portco-reconciliation-2026-08-03-v2",
+        "taskId": "ledger:0431:outpost-solar:b3b3fc4c",
+        "taskIndex": 431,
+        "companyName": "Outpost Solar",
+        "companyId": "cmtjpi2pn000dze2bbdbgmq86",
+        "proposalSha256": "1210529d8a98892c36b2064ed9ed835fde02231b4448634400dc1c3fc222a9c4",
+        "approvalSha256": "b46cb6d42e1cfe9b2194ff5cbd3215ad252b48e447e905e3574dbb947ecc8f9e",
+        "productionSnapshotSha256": "159a94f11b49ec20256b5a0e163c312ac0f293cf228fb22c25cd3c64c7750ebb",
+        "beforeCompanySnapshotSha256": null,
+        "appliedAfterImageSha256": "d39c27675dab79527f2e509e2333abb17661aa5645304891e6651cb26617ccae",
+        "seedAfterImageSha256": "d39c27675dab79527f2e509e2333abb17661aa5645304891e6651cb26617ccae",
+        "approvedSeedEntrySha256": "bb833ee309adf605ad5e05af71c5fda504bdfebbc0ea06765d223cfdcf8f733d",
+        "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+        "transactionId": "81f4244f-a5d7-46d4-ab35-659f5f4655bc",
+        "auditEventId": "cmtjpi3qb000wze2b3vgz8a2z",
+        "appliedAt": "2026-09-02T06:19:52.655Z",
+        "verification": {
+          "databaseMatchesAfterImage": true,
+          "seedMatchesAfterImage": true,
+          "detailApiVerified": true
+        },
+        "receiptSha256": "805a549f1ec87e29d6912c2dc14d2959f11e5f059e27cdede47db906583ba9b6"
+      }
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0432:stonepeak-infrastructure-logistics-platform:bb35d6ac",
+      "taskIndex": 432,
+      "companyName": "Stonepeak Infrastructure Logistics Platform",
+      "outcome": "EXCLUDED",
+      "decisionSha256": "1087883af7cdf48035c0fdfd6f4b5b2d180b7b300e1d9877d03d2e4c6d04dd67"
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0433:jfk-new-terminal-one:759db377",
+      "taskIndex": 433,
+      "companyName": "JFK New Terminal One",
+      "receipt": {
+        "schemaVersion": 1,
+        "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+        "runId": "portco-reconciliation-2026-08-03-v2",
+        "taskId": "ledger:0433:jfk-new-terminal-one:759db377",
+        "taskIndex": 433,
+        "companyName": "JFK New Terminal One",
+        "companyId": "cmrxpjnv601abivhe2ixd73xz",
+        "proposalSha256": "c92349c43421cd6e26080ef5c737e8a0fc722736f05b209ddad951f84b8e28d2",
+        "approvalSha256": "04c0fc1cd571038b1a630446369ff6ad95b1d95ee070d13714601925b3cd5c5a",
+        "productionSnapshotSha256": "51086092f4dc9bbbdd6dd9277bfccad3c4b94af2022de8a8c0633189d98acfab",
+        "beforeCompanySnapshotSha256": "186648e1cb92f4e316af7ca27d0454c8c8e58f49999f843b34249fcc3be2686f",
+        "appliedAfterImageSha256": "004e703f0edac9307adbad52e20caab042b94b2fef935e996d7cfef1a3a6add5",
+        "seedAfterImageSha256": "004e703f0edac9307adbad52e20caab042b94b2fef935e996d7cfef1a3a6add5",
+        "approvedSeedEntrySha256": "dc8333a562317050ae7c689818cf11ff2e62191c3b3ef5ed7e49f3140c718f4a",
+        "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+        "transactionId": "81f4244f-a5d7-46d4-ab35-659f5f4655bc",
+        "auditEventId": "cmtjpi5k70019ze2b0kdx4w5l",
+        "appliedAt": "2026-09-02T06:19:52.655Z",
+        "verification": {
+          "databaseMatchesAfterImage": true,
+          "seedMatchesAfterImage": true,
+          "detailApiVerified": true
+        },
+        "receiptSha256": "d7218bcc7be9c49fb6a819e22bd2863efd600a9476c15fea91a67baae5de5724"
+      }
+    }
+  ],
+  "verification": {
+    "databaseTransactionCommitted": true,
+    "seedArtifactVerified": true,
+    "allDetailApisVerified": true,
+    "partialDatabaseApplication": false
+  },
+  "receiptSha256": "930984a9f704ca269558215544de25438cc9ecaf9dc7cfa3a92f82e5b930d46b"
+}
