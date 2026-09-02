@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-09-02T01:16:00.000Z",
+  "updatedAt": "2026-09-02T02:00:58.000Z",
   "runStatus": "IDLE",
   "activeTaskId": null,
   "source": {
@@ -38873,20 +38873,26 @@
       "managerIndex": 85,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "2853c8d0e28d3a0ad3e5f4407da78551d6095f70f3fb7f65faf52b3aea3adf66",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
+      "status": "DEFERRED",
+      "attempts": 1,
+      "startedAt": "2026-09-02T01:53:09.000Z",
+      "updatedAt": "2026-09-02T02:00:58.000Z",
+      "completedAt": "2026-09-02T02:00:58.000Z",
+      "exceptionReason": "Defer the Prospect Lake correction while preserving the verified project-company identity and Ridgewood-IDE co-ownership evidence. The July 31, 2026 Prospect Lake Water, L.P. amendment has not been inspected for an ownership or general-partner change, and exact current stakes remain undisclosed. Applying an ownership after-image before resolving that filing would risk recording a stale cap table.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "a7aadbc7cc83c2f7b86b0d0d3ee3aaaf6520c2b5a92dd2ed8672cd6fbe97ea17",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0409-prospect-lake-clean-water-center/attempt-1/locked-batch-v1-task-snapshot.json",
+          "sha256": "a7aadbc7cc83c2f7b86b0d0d3ee3aaaf6520c2b5a92dd2ed8672cd6fbe97ea17"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0409-0413-v1/decisions/0409-prospect-lake-clean-water-center.json",
+          "sha256": "0b421e4deac9cbef0f5caa71f6ee5129f3f9db4f7bddb293025d7175392738ee"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -38900,6 +38906,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-02T02:00:58.000Z",
+          "reason": "Defer the Prospect Lake correction while preserving the verified project-company identity and Ridgewood-IDE co-ownership evidence. The July 31, 2026 Prospect Lake Water, L.P. amendment has not been inspected for an ownership or general-partner change, and exact current stakes remain undisclosed. Applying an ownership after-image before resolving that filing would risk recording a stale cap table.",
+          "taskSnapshotSha256": "a7aadbc7cc83c2f7b86b0d0d3ee3aaaf6520c2b5a92dd2ed8672cd6fbe97ea17",
+          "evidenceSha256": [
+            "0b421e4deac9cbef0f5caa71f6ee5129f3f9db4f7bddb293025d7175392738ee",
+            "359de2670c0e95a5e52a6734264531ab53342af9638aed833b991e6e0abdbfc6",
+            "a7aadbc7cc83c2f7b86b0d0d3ee3aaaf6520c2b5a92dd2ed8672cd6fbe97ea17",
+            "df5c5302abc87a42cc5330ce4b4d40f56e9473e834c4fbb0747bc74646166aee"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -38911,20 +38932,26 @@
       "managerIndex": 85,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "27decf45365605386b8e32520d0babb7caceb58e15f4dab5f1e0c482b06f3e3a",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
+      "status": "DEFERRED",
+      "attempts": 1,
+      "startedAt": "2026-09-02T01:53:09.000Z",
+      "updatedAt": "2026-09-02T02:00:58.000Z",
+      "completedAt": "2026-09-02T02:00:58.000Z",
+      "exceptionReason": "Defer the Sierra Railroad ownership correction while preserving the verified control and retained-investment evidence. Ridgewood's release proves a controlling acquisition and says Mike Hart retained a significant investment, but the complete post-close cap table, retained-holder roster and Sunburst passenger-operation perimeter are not directly disclosed. The existing Ridgewood-only owner representation therefore cannot yet be safely replaced with a complete after-image.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "5c23838bd8608d4564571b62587fe8b0c4f5f11e512004664879ca652db288c8",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0410-sierra-railroad-company/attempt-1/locked-batch-v2-task-snapshot.json",
+          "sha256": "5c23838bd8608d4564571b62587fe8b0c4f5f11e512004664879ca652db288c8"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0409-0413-v1/decisions/0410-sierra-railroad-company.json",
+          "sha256": "d8fee61adee948972e745ec34418a9955eaadc2006d62c16dab8250a45a76aa5"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -38938,6 +38965,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-02T02:00:58.000Z",
+          "reason": "Defer the Sierra Railroad ownership correction while preserving the verified control and retained-investment evidence. Ridgewood's release proves a controlling acquisition and says Mike Hart retained a significant investment, but the complete post-close cap table, retained-holder roster and Sunburst passenger-operation perimeter are not directly disclosed. The existing Ridgewood-only owner representation therefore cannot yet be safely replaced with a complete after-image.",
+          "taskSnapshotSha256": "5c23838bd8608d4564571b62587fe8b0c4f5f11e512004664879ca652db288c8",
+          "evidenceSha256": [
+            "359de2670c0e95a5e52a6734264531ab53342af9638aed833b991e6e0abdbfc6",
+            "5c23838bd8608d4564571b62587fe8b0c4f5f11e512004664879ca652db288c8",
+            "d8fee61adee948972e745ec34418a9955eaadc2006d62c16dab8250a45a76aa5",
+            "df5c5302abc87a42cc5330ce4b4d40f56e9473e834c4fbb0747bc74646166aee"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -38949,23 +38991,44 @@
       "managerIndex": 85,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "d7ace02d119aa716878b591610792d8d74c9ae5462ec6317f16e69b6d31c3039",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-09-02T01:53:09.000Z",
+      "updatedAt": "2026-09-02T02:00:58.000Z",
+      "completedAt": "2026-09-02T02:00:58.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "1d54d9ffbaad2284e148ff97d6bb59b1c8382727945e6e58982ac8a55e6b1e86",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0411-undine/attempt-1/locked-batch-v2-task-snapshot.json",
+          "sha256": "1d54d9ffbaad2284e148ff97d6bb59b1c8382727945e6e58982ac8a55e6b1e86"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0411-undine/attempt-1/proposal-v2.json",
+          "sha256": "edfb02da92528df22f95eaf682fe7fe9c52b655cfe1d5e02a574d0d185ada488"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0411-undine-v2.json",
+          "sha256": "bd65b3e01ad565180a30df395bac454a38e50b90068a1f80bdd42641dcbd1bef"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0409-0413-v3/production-apply/batch-apply-receipt.json#members/2/receipt",
+          "sha256": "a8c2604f0df164981d172445bbf0297d448b14aead0e5202daa8c8131bee15f9"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0411-undine/attempt-1/proposal-v2.json#afterImage",
+          "sha256": "5614b2242e611bc134d3b0ddfececa1c3f2ee8ff533c57a87dd2120b5ca7c7d2"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-09-02T02:00:58.000Z",
+        "auditEventId": "cmtjg0rhi0007se2bhd67008k",
+        "transactionId": "bed46328-bf9e-4270-ad95-1e214544cf70",
+        "receiptSha256": "a8c2604f0df164981d172445bbf0297d448b14aead0e5202daa8c8131bee15f9",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33581029476"
+      },
       "history": [
         {
           "sequence": 1,
@@ -38976,6 +39039,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-09-02T02:00:58.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0409-0413-v3.",
+          "taskSnapshotSha256": "1d54d9ffbaad2284e148ff97d6bb59b1c8382727945e6e58982ac8a55e6b1e86",
+          "evidenceSha256": [
+            "1d54d9ffbaad2284e148ff97d6bb59b1c8382727945e6e58982ac8a55e6b1e86",
+            "359de2670c0e95a5e52a6734264531ab53342af9638aed833b991e6e0abdbfc6",
+            "5614b2242e611bc134d3b0ddfececa1c3f2ee8ff533c57a87dd2120b5ca7c7d2",
+            "a8c2604f0df164981d172445bbf0297d448b14aead0e5202daa8c8131bee15f9",
+            "bd65b3e01ad565180a30df395bac454a38e50b90068a1f80bdd42641dcbd1bef",
+            "df5c5302abc87a42cc5330ce4b4d40f56e9473e834c4fbb0747bc74646166aee",
+            "edfb02da92528df22f95eaf682fe7fe9c52b655cfe1d5e02a574d0d185ada488"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -38987,23 +39068,44 @@
       "managerIndex": 85,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "afa21f63319dbe76039d76e8a6d789a9846dd06245fc41937c85dfe2dc139ce6",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-09-02T01:53:09.000Z",
+      "updatedAt": "2026-09-02T02:00:58.000Z",
+      "completedAt": "2026-09-02T02:00:58.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "d5e39e63af06e5f7a6dc19a815b2ca6324a0c3d39328606a18d9394a9bd1aeeb",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0412-valley-cold-storage-and-transportation/attempt-1/locked-batch-v2-task-snapshot.json",
+          "sha256": "d5e39e63af06e5f7a6dc19a815b2ca6324a0c3d39328606a18d9394a9bd1aeeb"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0412-valley-cold-storage-and-transportation/attempt-1/proposal-v3.json",
+          "sha256": "59e37e92b64ac0ea1fd0fd04f085b49c2d32a5c664be2848df9d92377c40c218"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0412-valley-cold-storage-and-transportation-v3.json",
+          "sha256": "05b773e51cc6e41c758a5ff3ef83ee7daca28049ac390a949cdbf9b62aefbf28"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0409-0413-v3/production-apply/batch-apply-receipt.json#members/3/receipt",
+          "sha256": "9752627f39c93e1f57b33a015220b76ffeea6cd3e34eeac7ba15f08b2af8a0e0"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0412-valley-cold-storage-and-transportation/attempt-1/proposal-v3.json#afterImage",
+          "sha256": "c26536fa2e7a226450d14c56b89a1e197751a00ba5822bffd601471befffe984"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-09-02T02:00:58.000Z",
+        "auditEventId": "cmtjg0vmh000hse2b1j5ntnsu",
+        "transactionId": "bed46328-bf9e-4270-ad95-1e214544cf70",
+        "receiptSha256": "9752627f39c93e1f57b33a015220b76ffeea6cd3e34eeac7ba15f08b2af8a0e0",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33581029476"
+      },
       "history": [
         {
           "sequence": 1,
@@ -39014,6 +39116,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-09-02T02:00:58.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0409-0413-v3.",
+          "taskSnapshotSha256": "d5e39e63af06e5f7a6dc19a815b2ca6324a0c3d39328606a18d9394a9bd1aeeb",
+          "evidenceSha256": [
+            "05b773e51cc6e41c758a5ff3ef83ee7daca28049ac390a949cdbf9b62aefbf28",
+            "359de2670c0e95a5e52a6734264531ab53342af9638aed833b991e6e0abdbfc6",
+            "59e37e92b64ac0ea1fd0fd04f085b49c2d32a5c664be2848df9d92377c40c218",
+            "9752627f39c93e1f57b33a015220b76ffeea6cd3e34eeac7ba15f08b2af8a0e0",
+            "c26536fa2e7a226450d14c56b89a1e197751a00ba5822bffd601471befffe984",
+            "d5e39e63af06e5f7a6dc19a815b2ca6324a0c3d39328606a18d9394a9bd1aeeb",
+            "df5c5302abc87a42cc5330ce4b4d40f56e9473e834c4fbb0747bc74646166aee"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -39025,23 +39145,44 @@
       "managerIndex": 85,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "edd18c4aa8c6daf4ae1f83c8573e5edac6fafbe0e1b1a330bae43dcd3c2dbe77",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-09-02T01:53:09.000Z",
+      "updatedAt": "2026-09-02T02:00:58.000Z",
+      "completedAt": "2026-09-02T02:00:58.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "cc5853ccc5379ac0554cd1d824e77e950638be9a0477e9dfbd72cb2af7300d2f",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0413-wrm-waste-resource-management/attempt-1/locked-batch-v5-task-snapshot.json",
+          "sha256": "cc5853ccc5379ac0554cd1d824e77e950638be9a0477e9dfbd72cb2af7300d2f"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0413-wrm-waste-resource-management/attempt-1/proposal-v2.json",
+          "sha256": "956a5b6fda9e0441242d3e6dbafe1546e0ed526c6438644c6da7069050f5f05c"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/approvals/0413-wrm-waste-resource-management-v2.json",
+          "sha256": "b4f513a04d6f04c065fe4e0bf4b0cbb6bcf06492385b2447dba5f7e9915f562a"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0409-0413-v3/production-apply/batch-apply-receipt.json#members/4/receipt",
+          "sha256": "f2255265786611d25d2c1d13afbcb19181e567f3a2a70dd1d7db581f29261a4c"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0413-wrm-waste-resource-management/attempt-1/proposal-v2.json#afterImage",
+          "sha256": "c3bb37f51f07d3314db90e0a00e9d65645f78fe365d2f9ad0e9d88fa95488b28"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-09-02T02:00:58.000Z",
+        "auditEventId": "cmtjg0zv2000rse2b0gj908sh",
+        "transactionId": "bed46328-bf9e-4270-ad95-1e214544cf70",
+        "receiptSha256": "f2255265786611d25d2c1d13afbcb19181e567f3a2a70dd1d7db581f29261a4c",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33581029476"
+      },
       "history": [
         {
           "sequence": 1,
@@ -39052,6 +39193,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-09-02T02:00:58.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0409-0413-v3.",
+          "taskSnapshotSha256": "cc5853ccc5379ac0554cd1d824e77e950638be9a0477e9dfbd72cb2af7300d2f",
+          "evidenceSha256": [
+            "359de2670c0e95a5e52a6734264531ab53342af9638aed833b991e6e0abdbfc6",
+            "956a5b6fda9e0441242d3e6dbafe1546e0ed526c6438644c6da7069050f5f05c",
+            "b4f513a04d6f04c065fe4e0bf4b0cbb6bcf06492385b2447dba5f7e9915f562a",
+            "c3bb37f51f07d3314db90e0a00e9d65645f78fe365d2f9ad0e9d88fa95488b28",
+            "cc5853ccc5379ac0554cd1d824e77e950638be9a0477e9dfbd72cb2af7300d2f",
+            "df5c5302abc87a42cc5330ce4b4d40f56e9473e834c4fbb0747bc74646166aee",
+            "f2255265786611d25d2c1d13afbcb19181e567f3a2a70dd1d7db581f29261a4c"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -42433,5 +42592,5 @@
       ]
     }
   ],
-  "manifestSha256": "ab8cff62d7311c1729f1f06954ecaf7908f1ecfdde89550dff9aa7d1cfb3aff2"
+  "manifestSha256": "e5b834dfd7544175976b1dd2363f94e2f192c2019347c96387873d6b64788e6a"
 }

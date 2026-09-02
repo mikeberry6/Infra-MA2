@@ -1,0 +1,142 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:batch:apply
+> npx tsx scripts/portco-reconciliation/batch-apply-cli.ts --batch-manifest=audits/portco-reconciliation/2026-08-23/batches/batch-0409-0413-v3/batch-manifest.json --batch-sha256=df5c5302abc87a42cc5330ce4b4d40f56e9473e834c4fbb0747bc74646166aee --seed-artifact=prisma/seed-data/approved-portco-after-images.json --apply --write-token=APPLY_APPROVED_PORTCO_BATCH --commit-receipt=tmp/portco-reconciliation/production/batch-commit-receipt.json --receipt=tmp/portco-reconciliation/production/batch-apply-receipt.json --public-base-url=https://infra-ma-2.vercel.app/Infra-MA2/
+
+(node:3614) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "BATCH_APPLIED",
+  "receiptPath": "/home/runner/work/Infra-MA2/Infra-MA2/tmp/portco-reconciliation/production/batch-apply-receipt.json",
+  "receipt": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_APPLY_BATCH_RECEIPT",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "batchId": "batch-0409-0413-v3",
+    "batchSha256": "df5c5302abc87a42cc5330ce4b4d40f56e9473e834c4fbb0747bc74646166aee",
+    "releaseSha": "9dd6fe4570b75acc02aedc5ea93eea24cfcb89ee",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "transactionId": "bed46328-bf9e-4270-ad95-1e214544cf70",
+    "appliedAt": "2026-09-02T01:54:35.645Z",
+    "members": [
+      {
+        "kind": "TERMINAL",
+        "taskId": "ledger:0409:prospect-lake-clean-water-center:c098d1e8",
+        "taskIndex": 409,
+        "companyName": "Prospect Lake Clean Water Center",
+        "outcome": "DEFERRED",
+        "decisionSha256": "0b421e4deac9cbef0f5caa71f6ee5129f3f9db4f7bddb293025d7175392738ee"
+      },
+      {
+        "kind": "TERMINAL",
+        "taskId": "ledger:0410:sierra-railroad-company:b9c99f78",
+        "taskIndex": 410,
+        "companyName": "Sierra Railroad Company",
+        "outcome": "DEFERRED",
+        "decisionSha256": "d8fee61adee948972e745ec34418a9955eaadc2006d62c16dab8250a45a76aa5"
+      },
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0411:undine:ce0cb177",
+        "taskIndex": 411,
+        "companyName": "Undine",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0411:undine:ce0cb177",
+          "taskIndex": 411,
+          "companyName": "Undine",
+          "companyId": "cmrxpjmzy018xivheiq5ev2lk",
+          "proposalSha256": "edfb02da92528df22f95eaf682fe7fe9c52b655cfe1d5e02a574d0d185ada488",
+          "approvalSha256": "bd65b3e01ad565180a30df395bac454a38e50b90068a1f80bdd42641dcbd1bef",
+          "productionSnapshotSha256": "d6ff6376a968952b83216808d4b9035c991db36fe9572dbb490f892c88020699",
+          "beforeCompanySnapshotSha256": "6cc98076324218c698815cdc41034a00ef674438217c59c573b9c6a050cca52f",
+          "appliedAfterImageSha256": "5614b2242e611bc134d3b0ddfececa1c3f2ee8ff533c57a87dd2120b5ca7c7d2",
+          "seedAfterImageSha256": "5614b2242e611bc134d3b0ddfececa1c3f2ee8ff533c57a87dd2120b5ca7c7d2",
+          "approvedSeedEntrySha256": "6b5bc676694a102724520c065d1d71ccb763a0562796aa64bed6a5d5def60454",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "bed46328-bf9e-4270-ad95-1e214544cf70",
+          "auditEventId": "cmtjg0rhi0007se2bhd67008k",
+          "appliedAt": "2026-09-02T01:54:35.645Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "a8c2604f0df164981d172445bbf0297d448b14aead0e5202daa8c8131bee15f9"
+        }
+      },
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0412:valley-cold-storage-and-transportation:13456440",
+        "taskIndex": 412,
+        "companyName": "Valley Cold Storage & Transportation",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0412:valley-cold-storage-and-transportation:13456440",
+          "taskIndex": 412,
+          "companyName": "Valley Cold Storage & Transportation",
+          "companyId": "cmrxpjn0j018yivhek81ibli0",
+          "proposalSha256": "59e37e92b64ac0ea1fd0fd04f085b49c2d32a5c664be2848df9d92377c40c218",
+          "approvalSha256": "05b773e51cc6e41c758a5ff3ef83ee7daca28049ac390a949cdbf9b62aefbf28",
+          "productionSnapshotSha256": "a512f865962b7ca87fe746cd27a7e80a1a1a73552b010dcff5b87abbc4d4be7b",
+          "beforeCompanySnapshotSha256": "bc6944c497bd720d5b7c151b9c62caabf6c4594a49ec51a0c595e4861b13fff5",
+          "appliedAfterImageSha256": "c26536fa2e7a226450d14c56b89a1e197751a00ba5822bffd601471befffe984",
+          "seedAfterImageSha256": "c26536fa2e7a226450d14c56b89a1e197751a00ba5822bffd601471befffe984",
+          "approvedSeedEntrySha256": "15df254b54d6898d82cafcaecebbfd550a8065b030bb4dfe52f1065805f707f1",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "bed46328-bf9e-4270-ad95-1e214544cf70",
+          "auditEventId": "cmtjg0vmh000hse2b1j5ntnsu",
+          "appliedAt": "2026-09-02T01:54:35.645Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "9752627f39c93e1f57b33a015220b76ffeea6cd3e34eeac7ba15f08b2af8a0e0"
+        }
+      },
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0413:wrm-waste-resource-management:deca62ff",
+        "taskIndex": 413,
+        "companyName": "WRM (Waste Resource Management)",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0413:wrm-waste-resource-management:deca62ff",
+          "taskIndex": 413,
+          "companyName": "WRM (Waste Resource Management)",
+          "companyId": "cmrxpjn16018zivhe8i1og54q",
+          "proposalSha256": "956a5b6fda9e0441242d3e6dbafe1546e0ed526c6438644c6da7069050f5f05c",
+          "approvalSha256": "b4f513a04d6f04c065fe4e0bf4b0cbb6bcf06492385b2447dba5f7e9915f562a",
+          "productionSnapshotSha256": "a4a0c20175f3e4af272d254ada646cc21d82607dfb9ba4d4b1fceb08042dbb03",
+          "beforeCompanySnapshotSha256": "1a42eaa438aac2b5981380c06d9f61648fb437e6abc4cfd5e8942cdbc5a424c0",
+          "appliedAfterImageSha256": "c3bb37f51f07d3314db90e0a00e9d65645f78fe365d2f9ad0e9d88fa95488b28",
+          "seedAfterImageSha256": "c3bb37f51f07d3314db90e0a00e9d65645f78fe365d2f9ad0e9d88fa95488b28",
+          "approvedSeedEntrySha256": "3af54f07bcb3b76f91e6e0fcf9bb720b142544ccf4be040d967fc778e65e64e0",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "bed46328-bf9e-4270-ad95-1e214544cf70",
+          "auditEventId": "cmtjg0zv2000rse2b0gj908sh",
+          "appliedAt": "2026-09-02T01:54:35.645Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "f2255265786611d25d2c1d13afbcb19181e567f3a2a70dd1d7db581f29261a4c"
+        }
+      }
+    ],
+    "verification": {
+      "databaseTransactionCommitted": true,
+      "seedArtifactVerified": true,
+      "allDetailApisVerified": true,
+      "partialDatabaseApplication": false
+    },
+    "receiptSha256": "359de2670c0e95a5e52a6734264531ab53342af9638aed833b991e6e0abdbfc6"
+  }
+}

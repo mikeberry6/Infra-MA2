@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RENDERED_CARD_VERIFICATION",
+  "batchId": "batch-0409-0413-v3",
+  "batchSha256": "df5c5302abc87a42cc5330ce4b4d40f56e9473e834c4fbb0747bc74646166aee",
+  "batchReceiptSha256": "359de2670c0e95a5e52a6734264531ab53342af9638aed833b991e6e0abdbfc6",
+  "releaseSha": "9dd6fe4570b75acc02aedc5ea93eea24cfcb89ee",
+  "transactionId": "bed46328-bf9e-4270-ad95-1e214544cf70",
+  "verifiedAt": "2026-09-02T01:59:39.000Z",
+  "canonicalUrl": "https://infra-ma-2.vercel.app/Infra-MA2/portfolio",
+  "method": "Production browser DOM verification after searching the PortCo table and opening each updated drawer, plus direct canonical detail API checks.",
+  "companies": [
+    {
+      "companyId": "cmrxpjmzy018xivheiq5ev2lk",
+      "companyName": "Undine",
+      "tableCardFound": true,
+      "drawerRendered": true,
+      "currentOwners": [
+        "Crosstimbers Capital Group",
+        "Ridgewood Infrastructure"
+      ],
+      "formerOwners": [],
+      "ownershipPeriodsVisible": true,
+      "ownershipVehiclesVisible": true,
+      "businessOverviewVisible": true,
+      "sourcesVisible": true,
+      "milestonesVisible": true,
+      "sourceCount": 5,
+      "milestoneCount": 2,
+      "apiMatchesRenderedIdentity": true
+    },
+    {
+      "companyId": "cmrxpjn0j018yivhek81ibli0",
+      "companyName": "Valley Cold Storage & Transportation",
+      "tableCardFound": true,
+      "drawerRendered": true,
+      "currentOwners": [
+        "Ridgewood Infrastructure",
+        "Jennifer Bush",
+        "Clay Bush"
+      ],
+      "formerOwners": [],
+      "ownershipPeriodsVisible": true,
+      "ownershipVehiclesVisible": true,
+      "businessOverviewVisible": true,
+      "sourcesVisible": true,
+      "milestonesVisible": true,
+      "unsupportedFundIiAttributionAbsentFromApprovedOwnershipVehicle": true,
+      "sourceCount": 7,
+      "milestoneCount": 2,
+      "apiMatchesRenderedIdentity": true
+    },
+    {
+      "companyId": "cmrxpjn16018zivhe8i1og54q",
+      "companyName": "Waste Resource Management",
+      "tableCardFound": true,
+      "drawerRendered": true,
+      "currentOwners": [
+        "Ridgewood Infrastructure"
+      ],
+      "formerOwners": [
+        "North Sky Capital",
+        "NGP Energy Capital Management"
+      ],
+      "ownershipPeriodsVisible": true,
+      "ownershipVehiclesVisible": true,
+      "businessOverviewVisible": true,
+      "sourcesVisible": true,
+      "milestonesVisible": true,
+      "currentAndFormerOwnershipStatesRenderedCorrectly": true,
+      "sourceCount": 5,
+      "milestoneCount": 3,
+      "apiMatchesRenderedIdentity": true
+    }
+  ],
+  "assertions": {
+    "allCanonicalCompaniesVisibleInTable": true,
+    "allDrawersOpened": true,
+    "allDrawerHeadingsMatchCanonicalCompanies": true,
+    "allExpectedCurrentOwnersVisible": true,
+    "allExpectedFormerOwnersVisible": true,
+    "allBusinessOverviewsVisible": true,
+    "allSourcesVisible": true,
+    "allMilestonesVisible": true,
+    "consoleErrorsObserved": false
+  },
+  "valid": true
+}
