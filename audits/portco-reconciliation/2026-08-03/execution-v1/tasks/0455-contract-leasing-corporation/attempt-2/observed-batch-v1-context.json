@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0455:contract-leasing-corporation:083d749b",
+  "taskIndex": 455,
+  "companyName": "Contract Leasing Corporation",
+  "generatedAt": "2026-09-03T13:43:34.511Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0455-contract-leasing-corporation/attempt-2/observed-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 455,
+    "taskId": "ledger:0455:contract-leasing-corporation:083d749b",
+    "canonicalKey": "contract-leasing-corporation|united-states",
+    "companyName": "Contract Leasing Corporation",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 98,
+    "managers": [
+      "Wafra"
+    ],
+    "actionScopes": {
+      "company": [
+        "CREATE_COMPANY"
+      ],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "098-wafra:holding:001:contract-leasing-corporation"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://www.contractleasing.net/contract-leasing-corporation-announces-acquisition-by-wafra/",
+      "https://www.wafra.com/our-people/edward-tsai/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "No exact normalized production or seed match exists. Census evidence supports a new canonical company with 1 manager holding record(s).",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "contract-leasing-corporation|united-states",
+  "targetCompanyImage": null,
+  "seedEntry": null,
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpj00u00anivhes8q1cv1p",
+        "name": "Wafra",
+        "updatedAt": "2026-07-23T16:09:53.886Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0455:contract-leasing-corporation:083d749b",
+    "taskIndex": 455,
+    "canonicalKey": "contract-leasing-corporation|united-states",
+    "capturedAt": "2026-09-03T13:43:34.511Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "67ef8ba2823a438e9ffee1d5b2292b9a1b808819369099b2f0aae273947e6250",
+    "productionSnapshotSha256": "970850cc11dff45f825be1a3e594879cde318379087d43f83c176b082b13a88d",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": null,
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "c84455c3b71cde39a7350f46ddf67665ec9b0202f4d906f74c0d088121e2117b",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "47c551e6ebf8a528bffa7dc6b331ef8b3c73ba97314224056f0ab7ad3f1819e8",
+    "stateSha256": "95873dd0d7c45b6515c75839de780f6f30189c5d862277cf96067d365bcf68a7",
+    "taskSnapshotSha256": "635d1ecadb35789beb9f9c9c1d2af60e1db9c17eb90e6ae59756cfaccedd0337"
+  },
+  "contextSha256": "e17d5822b5b7baeabaf88808248a4c25c2c598caa73bfd19f52172a7e42a93d7"
+}

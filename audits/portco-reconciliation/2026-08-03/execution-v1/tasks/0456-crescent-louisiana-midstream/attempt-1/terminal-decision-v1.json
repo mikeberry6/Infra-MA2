@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0456:crescent-louisiana-midstream:599b6824",
+  "taskIndex": 456,
+  "companyName": "Crescent Louisiana Midstream",
+  "outcome": "DEFERRED",
+  "decidedAt": "2026-09-03T13:36:25.000Z",
+  "rationale": "Research confirmed Crescent Louisiana Midstream (CLM) is a legal operating entity within the broader Crescent Midstream structure and confirmed a current Wafra governance connection, but did not produce direct evidence establishing Wafra's current ownership vehicle, fund, stake, entry transaction or closing date. Public evidence therefore does not support adding CLM as a resolved Wafra manager-level portfolio company.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0456-crescent-louisiana-midstream/attempt-1/locked-batch-v1-task-snapshot.json",
+    "sha256": "b704f8ad834b03386ec5500a8a96ab572a698250c2bff0448eba1f583e1d2f4e"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0456-crescent-louisiana-midstream/attempt-1/application-research-decision-v1.json",
+    "sha256": "10904f07e0a017a4bca3967e341e3b2b67bdc73c31b899da24bf758a6e397d10"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0456-crescent-louisiana-midstream/attempt-1/release-source-verification-v1.json",
+    "sha256": "53d47e5c6a8524bd8dfb836ec633b3e829b46447b434a89f2a8c338cb51ed429"
+  },
+  "evidence": [
+    {
+      "url": "https://www.spglobal.com/ratings/en/regulatory/article/-/view/type/HTML/id/3512918",
+      "purpose": "Current platform structure and financing boundary"
+    },
+    {
+      "url": "https://www.crescentmidstream.com/",
+      "purpose": "Current operating platform and assets"
+    },
+    {
+      "url": "https://www.crescentmidstream.com/about/board-of-directors/",
+      "purpose": "Current governance including Wafra representative"
+    },
+    {
+      "url": "https://www.wafra.com/our-people/michael-coleman-2/",
+      "purpose": "Confirms Wafra executive identity referenced by board materials"
+    },
+    {
+      "url": "https://coraweb.sos.la.gov/CommercialSearch/CommercialSearch.aspx",
+      "purpose": "Legal entity verification"
+    },
+    {
+      "url": "https://www.sec.gov/edgar/browse/?CIK=1347652&owner=exclude",
+      "purpose": "Historical ownership/boundary review"
+    },
+    {
+      "url": "https://www.ferc.gov/sites/default/files/2026-01/November%20MIR%202025.pdf",
+      "purpose": "Pipeline transaction/regulatory review"
+    },
+    {
+      "url": "https://www.carlyle.com/",
+      "purpose": "Historical platform formation and sponsor review"
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "7288c648eae46f274fc3f56a51924b687da01b9a125b86c70c7766c83c157e29"
+}

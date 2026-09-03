@@ -1,0 +1,264 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_MANIFEST",
+  "methodologyVersion": "PORTCO_APPLY_BATCH_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0454-0458-v1",
+  "createdAt": "2026-09-03T13:44:42.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "8257f90799ac8f3d709b87f33bbd7aabd022cb2bc288fbf44fa8aa7d8d1eb2fc"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0454:beyond-data-centers:aa1b4081",
+      "taskIndex": 454,
+      "companyName": "Beyond Data Centers",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0454-beyond-data-centers/attempt-1/terminal-decision-v1.json",
+        "sha256": "6655cfaf1c0f73a68bc28e9828908487be0ac66b75606a2373e00f3c2a87acec"
+      }
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0455:contract-leasing-corporation:083d749b",
+      "taskIndex": 455,
+      "companyName": "Contract Leasing Corporation",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0455-contract-leasing-corporation/attempt-2/proposal-v1.json",
+        "sha256": "c4498e99a76b7320e40af5c7a00e779b9ca28ae93ef5b454dc3978067c289f52"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0455-contract-leasing-corporation/attempt-2/approval-v1.json",
+        "sha256": "72a166eecb862d0e80a6775d53b23ca26c157e6e32b671403e531312923dd0e5"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0455-contract-leasing-corporation/attempt-2/locked-batch-v2-production-snapshot.json",
+        "sha256": "4f01b1d414f3fcbe374c060bdc1b6f7d5fa42f170d100872641de623251ea682"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0455-contract-leasing-corporation/attempt-2/locked-batch-v2-task-snapshot.json",
+        "sha256": "02def642757b807fd16f58f1cc1ab6e89ac2f31a6bf52d4fb4cb3822f589ac31"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0455-contract-leasing-corporation/attempt-2/observed-batch-v1-task-snapshot.json",
+        "sha256": "635d1ecadb35789beb9f9c9c1d2af60e1db9c17eb90e6ae59756cfaccedd0337"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0455-contract-leasing-corporation/attempt-2/application-research-decision-v1.json",
+        "sha256": "aca1c69e78fe0f0aa7f438a11cf3e43bf29aaea3af00665db5b20316c19d6ee1"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0455-contract-leasing-corporation/attempt-2/release-source-verification-v1.json",
+        "sha256": "bbc9c0d8542d13a39f262e519b44b48675373510a3765bbda9529c560b3672c4"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "95873dd0d7c45b6515c75839de780f6f30189c5d862277cf96067d365bcf68a7",
+      "dependencySha256": "47c551e6ebf8a528bffa7dc6b331ef8b3c73ba97314224056f0ab7ad3f1819e8",
+      "afterImageSha256": "95676ed86c3c5c1a986eaf0a84ba612c932e1485f01d8624b14a158257c54115",
+      "targetClaims": [
+        "canonical:contract-leasing-corporation|united-states",
+        "seed:contract leasing corporation|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://www.contractleasing.net/about/letter-from-the-president/",
+          "label": "CLC — Letter from the President",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.contractleasing.net/contract-leasing-corporation-announces-acquisition-by-wafra/",
+          "label": "CLC — Wafra acquisition",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.contractleasing.net/contract-leasing-corporation-announces-joe-hite-as-svp-of-business-development/",
+          "label": "CLC — January 2024 fleet update",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.wafra.com/our-people/edward-tsai/",
+          "label": "Wafra — Edward Tsai",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.wafra.com/our-strategies/real-assets/",
+          "label": "Wafra — Real Assets & Infrastructure",
+          "sourceType": "WEBSITE"
+        }
+      ]
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0456:crescent-louisiana-midstream:599b6824",
+      "taskIndex": 456,
+      "companyName": "Crescent Louisiana Midstream",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0456-crescent-louisiana-midstream/attempt-1/terminal-decision-v1.json",
+        "sha256": "7288c648eae46f274fc3f56a51924b687da01b9a125b86c70c7766c83c157e29"
+      }
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0457:intermountain-infrastructure-group:66d1e5b0",
+      "taskIndex": 457,
+      "companyName": "Intermountain Infrastructure Group",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0457-intermountain-infrastructure-group/attempt-1/proposal-v2.json",
+        "sha256": "91fa974c1b289d6d5fa50e2c121cdc4894b56c32100b4cc62f0b5dbb4083252f"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0457-intermountain-infrastructure-group/attempt-1/approval-v2.json",
+        "sha256": "8c42909c38a6a4033b5fe4f911560db3fc9634e47786ee8e72d04e84ba21abad"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0457-intermountain-infrastructure-group/attempt-1/locked-batch-v2-production-snapshot.json",
+        "sha256": "a7434e171dcecc30c65d7335577637490c9ae0ea92873f7cac9630acc00daf6a"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0457-intermountain-infrastructure-group/attempt-1/locked-batch-v2-task-snapshot.json",
+        "sha256": "ebe6ea8a4ad6c3979c9dc7a51bf33fae51dc6d1becf3fa1f49127bb6a0ad43d5"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0457-intermountain-infrastructure-group/attempt-1/observed-batch-v1-task-snapshot.json",
+        "sha256": "8437cb5a9fb2d3a7eb9682f8191d58e30126ecbb01d5b66a4fb7a4e27cd6fd99"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0457-intermountain-infrastructure-group/attempt-1/application-research-decision-v1.json",
+        "sha256": "8e53d2bfef04161abef99afeb813fe77ca8193d3871d5de46b58d13d95e47262"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0457-intermountain-infrastructure-group/attempt-1/release-source-verification-v1.json",
+        "sha256": "285ec2c92bd8acfebd8d3fb9e570d32bd89f87578e2120e93f05cabfc9ea1c06"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "c6074651e5405416cec5274427dc71ee6ff7f909aac8e0c8e5a620378a7f21a1",
+      "dependencySha256": "47c551e6ebf8a528bffa7dc6b331ef8b3c73ba97314224056f0ab7ad3f1819e8",
+      "afterImageSha256": "a7c18ea455778740506c2103d329648e2664da1bd0f9ea646fedb5e901cff5a2",
+      "targetClaims": [
+        "canonical:intermountain-infrastructure-group|canada",
+        "seed:intermountain infrastructure group, llc|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://docs.fcc.gov/public/attachments/DOC-392404A1.pdf",
+          "label": "FCC — IIG ownership notice",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://edocs.puc.state.or.us/efdocs/HAH/cp1644hah326386032.pdf",
+          "label": "Oregon PUC — IIG closing notice",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://intermountainig.com/northern-tier-fiber-route-70-precent-complete/",
+          "label": "IIG — Northern Tier update",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.futurestandard.com/news-center/future-standard-to-launch-digital-infrastructure-platform-through-acquisition-from-post-road-group",
+          "label": "Future Standard — Post Road digital infrastructure acquisition",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.fws.gov/sites/default/files/documents/2025-07/eel_rightsofway_utility_cd_2025_20250715_0.pdf",
+          "label": "USFWS — IIG right-of-way determination",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.wafra.com/wafra-and-post-road-form-partnership-with-intermountain-infrastructure-group/",
+          "label": "Wafra — IIG partnership",
+          "sourceType": "PRESS_RELEASE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0458:mission-clean-energy:ec7ef24e",
+      "taskIndex": 458,
+      "companyName": "Mission Clean Energy",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0458-mission-clean-energy/attempt-1/proposal-v2.json",
+        "sha256": "62db9b252c88b4eea8d390d00f0a416fb3b3c2619344ac468dfd2f616b350775"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0458-mission-clean-energy/attempt-1/approval-v2.json",
+        "sha256": "0aa4fc444a8d4968d03a57ff2de53f86fc4861ddf3b0b3b1faf7ff341d17a083"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0458-mission-clean-energy/attempt-1/locked-batch-v3-production-snapshot.json",
+        "sha256": "3880179457aae9406b8156241d1b52923ffd9645c524facefcb452949a50f272"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0458-mission-clean-energy/attempt-1/locked-batch-v3-task-snapshot.json",
+        "sha256": "718952125ea11668771d2ffe0623b1b44cf9d9cc6a4778d95283f0ed2323ceaa"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0458-mission-clean-energy/attempt-1/observed-batch-v2-task-snapshot.json",
+        "sha256": "8d87b53e5e491bf427a433d6a88eaf47f313107ffbf3ee4bd280d198f2b032a8"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0458-mission-clean-energy/attempt-1/application-research-decision-v1.json",
+        "sha256": "82414451116d93f1236778d6f3688162dc7b8b46d32a9e5d53e4df60a61e82fb"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0458-mission-clean-energy/attempt-1/release-source-verification-v1.json",
+        "sha256": "46a346a7212da505b5d0c2fcf5565c6f2c8eac320ceb9d17c2dcf9fd317f9d0b"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "4529f508f95c0f1b1e521ac61e9aa688bd2500d25573e9a4ceb7800aa4291770",
+      "dependencySha256": "befda739750a03f8bfb283a2c0648aee5ca54ce9e458568f84d442e6479b23df",
+      "afterImageSha256": "f9868447708e7cde9d9ca826e263e8ba9a8fb1c2ddb897842c7061d579b68f80",
+      "targetClaims": [
+        "canonical:mission-clean-energy|united-states",
+        "seed:mission clean energy llc|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://missioncleanenergy.com/about/",
+          "label": "Mission Clean Energy — About",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://missioncleanenergy.com/investors/",
+          "label": "Mission Clean Energy — Investors",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://missioncleanenergy.com/mission-clean-energy-receives-strategic-investment-from-orsted/",
+          "label": "Mission Clean Energy — Orsted investment",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://missioncleanenergy.com/orsted-partners-with-mission-clean-energy-to-develop-1-gw-of-storage-projects-across-the-midwest/",
+          "label": "Mission Clean Energy — Midwest storage partnership",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.rplusenergies.com/rplus-energies-acquires-900-mw-of-solar-and-storage-projects-in-ada-county-idaho",
+          "label": "rPlus Energies — Bluebird project acquisition",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.wafra.com/wafra-acquires-controlling-interest-in-mission-clean-energy/",
+          "label": "Wafra — Mission controlling investment",
+          "sourceType": "PRESS_RELEASE"
+        }
+      ]
+    }
+  ],
+  "collisionAnalysis": {
+    "independent": true,
+    "claimsSha256": "8344bd6ab95e034641a6a77521b0d690eb3231050ac6152072e24b2ebe48a152",
+    "sharedSourceUrls": [],
+    "conflicts": []
+  },
+  "batchSha256": "8c9650fbda1689709c0c89142cc0fbcb261acad872cc4f745844f4c5f2a7f733"
+}
