@@ -3,7 +3,7 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-03T15:20:00.000Z",
+  "updatedAt": "2026-09-03T16:49:00.000Z",
   "activeBatchId": "batch-0459-0463-v1",
   "batches": [
     {
@@ -8450,7 +8450,7 @@
     },
     {
       "batchId": "batch-0459-0463-v1",
-      "state": "RELEASING",
+      "state": "VERIFYING_FAILED",
       "taskIds": [
         "ledger:0459:signal-rail-holdings:50c69045",
         "ledger:0460:dcli:22d0fc27",
@@ -8466,15 +8466,18 @@
         463
       ],
       "createdAt": "2026-09-03T14:30:15.000Z",
-      "updatedAt": "2026-09-03T15:20:00.000Z",
+      "updatedAt": "2026-09-03T16:49:00.000Z",
       "completedAt": null,
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0459-0463-v1/batch-manifest-v6.json",
         "sha256": "e681cf3474e349ea5cdb2c33de59d7a3d301ab2c2fc1334738798892940070c7"
       },
-      "releaseSha": null,
-      "receipt": null,
-      "reason": null,
+      "releaseSha": "67c79690964dbf5bfef45719e54dd8cecf76e538",
+      "receipt": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0459-0463-v1/production-apply-run-33771260539/batch-apply-receipt.json",
+        "sha256": "4d2190cdfde14fe8a272fd61ac372ba6bcc873327a19f752a756ca8764f1331f"
+      },
+      "reason": "Atomic PortCo transaction 36fe930c-0cf3-411f-b5a8-4baf58ab1aa3 and receipt verification passed, but canonical rendered verification found ownership period cmrxpkaiz02a5ivhet6uxm49k still shows stale INFERRED / Estimated · Low confidence Tallvine attribution for Velocity FBO Network instead of the approved DISCLOSED Tallvine Middle Market Infrastructure Fund I attribution. Freeze the bundle until a scoped attribution-only repair is deployed, applied once, and rendered-verified.",
       "history": [
         {
           "sequence": 1,
@@ -8503,9 +8506,30 @@
             "e681cf3474e349ea5cdb2c33de59d7a3d301ab2c2fc1334738798892940070c7"
           ],
           "reason": null
+        },
+        {
+          "sequence": 4,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-09-03T16:48:30.000Z",
+          "evidenceSha256": [
+            "e681cf3474e349ea5cdb2c33de59d7a3d301ab2c2fc1334738798892940070c7"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 5,
+          "from": "APPLYING",
+          "to": "VERIFYING_FAILED",
+          "at": "2026-09-03T16:49:00.000Z",
+          "evidenceSha256": [
+            "4d2190cdfde14fe8a272fd61ac372ba6bcc873327a19f752a756ca8764f1331f",
+            "e681cf3474e349ea5cdb2c33de59d7a3d301ab2c2fc1334738798892940070c7"
+          ],
+          "reason": "Atomic PortCo transaction 36fe930c-0cf3-411f-b5a8-4baf58ab1aa3 and receipt verification passed, but canonical rendered verification found ownership period cmrxpkaiz02a5ivhet6uxm49k still shows stale INFERRED / Estimated · Low confidence Tallvine attribution for Velocity FBO Network instead of the approved DISCLOSED Tallvine Middle Market Infrastructure Fund I attribution. Freeze the bundle until a scoped attribution-only repair is deployed, applied once, and rendered-verified."
         }
       ]
     }
   ],
-  "ledgerSha256": "e66171d4596075f11ca88e9113b04336dde399ac1cf97bda06835bc9f1b62f62"
+  "ledgerSha256": "dc55f623c8a14170c78a5492ea8102c30753d96308ea8b594b625752d1825222"
 }

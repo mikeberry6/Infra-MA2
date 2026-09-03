@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-09-03",
+  "ledgerSha256": "50cab6dee3e72a935199ab20acf909590fa2b6b000c1d74c68c43f24ee8cd0c6",
+  "sourceSnapshotSha256": "9dd99ddbf96e86ba9a94b0f594623ab8dd39e146a314bc2f488432d9be589dca",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 1,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 0,
+      "UNRESOLVED": 0
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  },
+  "expectedMutationCount": 1,
+  "mutations": [
+    {
+      "recordId": "OFA-9F4805108208",
+      "ownershipPeriodId": "cmrxpkaiz02a5ivhet6uxm49k",
+      "companyName": "Velocity FBO Network",
+      "country": "United States",
+      "investmentFirm": "Tallvine",
+      "currentVehicleName": "Tallvine Middle Market Infrastructure Fund I; exact platform holding vehicle not publicly disclosed",
+      "databaseVehicleName": "Tallvine Middle Market Infrastructure Fund I; exact platform holding vehicle not publicly disclosed",
+      "investmentYear": 2025,
+      "stake": null,
+      "expectedIsActive": true,
+      "targetLinkedFundName": "Tallvine Middle Market Infrastructure Fund I",
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": "Tallvine Middle Market Infrastructure Fund I"
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Tallvine Middle Market Infrastructure Fund I",
+        "attributionConfidence": null,
+        "attributionRationale": "Tallvine's official platform-launch disclosure identifies Fund I as the investor behind the Velocity platform while leaving the exact platform holding vehicle undisclosed."
+      },
+      "evidenceUrls": [
+        "https://via.ritzau.dk/pressemeddelelse/14244238/tallvine-launches-north-america-fixed-based-operator-platform-with-odyssey-aviations-us-assets-as-inaugural-acquisition?lang=en&publisherId=90456",
+        "https://www.businesswire.com/news/home/20260213283848/en/Tallvine-Backed-Velocity-FBO-Network-Expands-with-Acquisition-of-BTR-Jet-Center"
+      ]
+    }
+  ],
+  "manifestSha256": "07397eadbccfbd677af23a355a7e8f97b6a480ed4063e361f08fafb6b1fae8a3"
+}
