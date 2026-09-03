@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RELEASE_SOURCE_REVALIDATION",
+  "taskId": "ledger:0453:american-inland-marine-holdings:47cd7d1a",
+  "checkedAt": "2026-09-03T12:58:54.000Z",
+  "originalVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0453-american-inland-marine-holdings/attempt-1/source-verification.json",
+    "byteSha256": "97895d35e5ec7a357a3064f5301f5f4d0ae0b54b3f3f24f0cc27911aa1e335b6"
+  },
+  "primarySource": {
+    "url": "https://www.wafra.com/",
+    "httpStatus": 403,
+    "finalUrl": "https://www.wafra.com/",
+    "mediaType": "text/html"
+  },
+  "browserVerification": {
+    "result": "PASS",
+    "method": "DIRECT_WEB_OPEN_AFTER_HTTP_403",
+    "claim": "The live Wafra site confirms Wafra's manager identity but does not identify American Inland Marine Holdings, establish a legal-company boundary, or prove a current Wafra ownership interest."
+  },
+  "result": "PASS_BROWSER_VERIFIED_WITH_UNRESOLVED_IDENTITY_AND_OWNERSHIP"
+}

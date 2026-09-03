@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RELEASE_SOURCE_REVALIDATION",
+  "taskId": "ledger:0451:cartier-u-s-district-energy-platform:46304894",
+  "checkedAt": "2026-09-03T12:58:54.000Z",
+  "originalVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0451-cartier-u-s-district-energy-platform/attempt-1/source-verification.json",
+    "byteSha256": "b8aee680db6abfbbc293b158d66e789c46a73c83c03aa720d3ec06d08a757b4f"
+  },
+  "primarySource": {
+    "url": "https://www.prnewswire.com/news-releases/adam-schiff-is-appointed-ceo-of-cartier-energy-holding-a-vauban-infrastructure-partners-investment-funds-owned-company-301593623.html",
+    "httpStatus": 200,
+    "finalUrl": "https://www.prnewswire.com/news-releases/adam-schiff-is-appointed-ceo-of-cartier-energy-holding-a-vauban-infrastructure-partners-investment-funds-owned-company-301593623.html",
+    "mediaType": "text/html",
+    "bytes": 28262,
+    "sha256": "f6ba70784668c9010f9188d1552c0c9e1fd1bc995ec6675bd4e6671471ce6819"
+  },
+  "browserVerification": {
+    "result": "PASS",
+    "method": "DIRECT_HTTP_FETCH_AND_CONTENT_INSPECTION",
+    "claim": "The release explicitly links the Cartier brand to Cartier Energy Holding, LLC and describes it as owned by Vauban Infrastructure Partners investment funds, supporting correction of the existing production record rather than creation of a second company."
+  },
+  "result": "PASS"
+}
