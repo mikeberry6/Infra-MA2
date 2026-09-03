@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0495:u-s-medical-outpatient-facilities-portfolio-medcraft-jv:f5a7946c",
+  "taskIndex": 495,
+  "companyName": "U.S. Medical Outpatient Facilities Portfolio (MedCraft JV)",
+  "generatedAt": "2026-09-03T18:12:42.739Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0495-u-s-medical-outpatient-facilities-portfolio-medcraft-jv/attempt-1/locked-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 495,
+    "taskId": "ledger:0495:u-s-medical-outpatient-facilities-portfolio-medcraft-jv:f5a7946c",
+    "canonicalKey": "u-s-medical-outpatient-facilities-portfolio-medcraft-jv|united-states",
+    "companyName": "U.S. Medical Outpatient Facilities Portfolio (MedCraft JV)",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": null,
+    "managers": [],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [
+      "u.s. medical outpatient facilities portfolio (medcraft jv)|United States"
+    ],
+    "evidenceUrls": [],
+    "candidateCanonicalKeys": [],
+    "rationale": "Heuristic identity overlap with u-s-medical-outpatient-facilities-portfolio-montecito-jv|united-states; no automatic merge was made. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Heuristic identity overlap with u-s-medical-outpatient-facilities-portfolio-montecito-jv|united-states; no automatic merge was made."
+    ]
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "u-s-medical-outpatient-facilities-portfolio-medcraft-jv|united-states",
+  "targetCompanyImage": null,
+  "seedEntry": {
+    "name": "U.S. Medical Outpatient Facilities Portfolio (MedCraft JV)",
+    "investmentFirm": "Fengate Asset Management",
+    "sector": "Social Infra",
+    "subsector": "Medical outpatient facilities",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Fengate Infrastructure Fund IV",
+    "description": "U.S. Medical Outpatient Facilities Portfolio (MedCraft JV) is a portfolio of medical outpatient buildings in the United States. Its end users are patients and healthcare providers, with occupancy tied to a major nonprofit health system under a sale-leaseback structure rather than broad multi-tenant speculative leasing. The model is asset-heavy and healthcare-oriented, with value supported by essential outpatient real estate and a large health-system tenant. Fengate disclosed in 2025 that the portfolio comprises 24 facilities with more than 900,000 square feet of medical space across two states. The reviewed materials did not disclose the specific states, property-level revenue, or current ownership percentages within the joint venture. Fengate acquired the portfolio in 2025 alongside MedCraft as part of its healthcare infrastructure strategy.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2025,
+    "headquarters": "Two U.S. states (not publicly disclosed.)",
+    "milestones": [
+      {
+        "date": "2025",
+        "event": "Fengate stated that the portfolio added more than 900,000 square feet of medical space across two states.",
+        "category": "Expansion"
+      },
+      {
+        "date": "2025",
+        "event": "The acquisition was completed alongside MedCraft under a sale-leaseback structure.",
+        "category": "Divestiture"
+      },
+      {
+        "date": "Sep 11, 2025",
+        "event": "Fengate announced the acquisition of 24 medical outpatient facilities from a large U.S. nonprofit health system.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Announcement date source — Fengate Asset Management — U.S. Medical Outpatient Facilities Portfolio (MedCraft JV)",
+        "url": "https://fengate.com/news/fengate-expands-healthcare-infrastructure-portfolio-with-acquisition-of-24-u-s-outpatient-facilities",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "GlobeNewsWire — U.S. Medical Outpatient Facilities Portfolio (MedCraft JV)",
+        "url": "https://www.globenewswire.com/news-release/2025/09/11/3148713/0/en/Fengate-expands-healthcare-infrastructure-portfolio-with-acquisition-of-24-U-S-outpatient-facilities.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT"
+      },
+      {
+        "label": "Medcraft — U.S. Medical Outpatient Facilities Portfolio (MedCraft JV)",
+        "url": "https://www.medcraft.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Fengate Asset Management",
+        "ownershipVehicle": "Fengate Infrastructure Fund IV",
+        "investmentYear": 2025,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [
+    {
+      "sourceQueueTaskId": "ledger:0496:u-s-medical-outpatient-facilities-portfolio-montecito-jv:be578f31",
+      "sourceQueueEntrySha256": "67e6ce046b2ad0c854d6bd7bb98f1ce3a96440dd419e5c08a5b05f3182515e62",
+      "name": "U.S. Medical Outpatient Facilities Portfolio (Montecito JV)",
+      "country": "United States",
+      "rawSeedEntrySha256": "1596b612f9bde0cc6f2e931012038db5968238d01b6ba1f272e4c1400e7171a4",
+      "evaluatedSeedEntrySha256": "1596b612f9bde0cc6f2e931012038db5968238d01b6ba1f272e4c1400e7171a4"
+    }
+  ],
+  "dependencies": {
+    "funds": [],
+    "organizations": [],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0495:u-s-medical-outpatient-facilities-portfolio-medcraft-jv:f5a7946c",
+    "taskIndex": 495,
+    "canonicalKey": "u-s-medical-outpatient-facilities-portfolio-medcraft-jv|united-states",
+    "capturedAt": "2026-09-03T18:12:42.739Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "e70b03cc0bbf63d57fa246e54cc8abd62b9780230f846bad51c967018aea49ad",
+    "productionSnapshotSha256": "cc67ebedf9361c301feb67682ee0eeb51ef3ed09e554b869fa2541c97ea4d4ec",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": "ce44603f04fcae093fcba7e0cc077eb109cd0182ceef6ffd192fd9b6243e437e",
+    "seedRetirementCandidates": [
+      {
+        "sourceQueueTaskId": "ledger:0496:u-s-medical-outpatient-facilities-portfolio-montecito-jv:be578f31",
+        "sourceQueueEntrySha256": "67e6ce046b2ad0c854d6bd7bb98f1ce3a96440dd419e5c08a5b05f3182515e62",
+        "name": "U.S. Medical Outpatient Facilities Portfolio (Montecito JV)",
+        "country": "United States",
+        "rawSeedEntrySha256": "1596b612f9bde0cc6f2e931012038db5968238d01b6ba1f272e4c1400e7171a4",
+        "evaluatedSeedEntrySha256": "1596b612f9bde0cc6f2e931012038db5968238d01b6ba1f272e4c1400e7171a4"
+      }
+    ],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "7162f023548431ed1fed51e43a93e8e1e0a46df9edc0adf314307e96f61f1312",
+    "stateSha256": "32495aba0ed864ac7854562e78579e182753902e51bfdf20c26955489477aff4",
+    "taskSnapshotSha256": "f983b60e42110bf42a5a8055921f1b4fc84d17d9606bcf3b2ad3dc6bf372f95c"
+  },
+  "contextSha256": "734df1f8b0cc89f52399344e8d4b41a408aa8277a73c3a8e2463f89e9fdf5038"
+}

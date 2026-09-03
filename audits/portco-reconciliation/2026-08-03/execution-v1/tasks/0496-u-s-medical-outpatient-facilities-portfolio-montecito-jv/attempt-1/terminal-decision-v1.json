@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0496:u-s-medical-outpatient-facilities-portfolio-montecito-jv:be578f31",
+  "taskIndex": 496,
+  "companyName": "U.S. Medical Outpatient Facilities Portfolio (Montecito JV)",
+  "outcome": "SUPERSEDED",
+  "decidedAt": "2026-09-03T18:37:00.000Z",
+  "rationale": "This source label is the exact reviewed alias of the same 16-facility Fengate-Montecito medical outpatient portfolio already reconciled in completed task 251. The canonical after-image and complete seed overlay retain the source label as an alias, and the fresh production snapshot confirms the canonical company remains published with the expected relationship counts. Creating or correcting a second record would duplicate that canonical portfolio identity.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0496-u-s-medical-outpatient-facilities-portfolio-montecito-jv/attempt-1/locked-batch-v1-task-snapshot.json",
+    "sha256": "db8e044804ed9d126fc2ed8f94b1141a2c3936aa405448bc356b2dcc44cad015"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0496-u-s-medical-outpatient-facilities-portfolio-montecito-jv/attempt-1/dependent-research-decision-v1.json",
+    "sha256": "6aab56eb3a1512c6639bbaffdc1f0ad2c10eb228f40a1604e06ad450a57daa20"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0496-u-s-medical-outpatient-facilities-portfolio-montecito-jv/attempt-1/dependent-source-verification-v1.json",
+    "sha256": "381211ea243fecadea95b2ff1777e44abaf7177f54983d8d1b3360115b541686"
+  },
+  "evidence": [
+    {
+      "url": "https://fengate.com/news/fengate-acquires-16-medical-outpatient-facilities-in-the-united-states",
+      "purpose": "Direct manager evidence that the 16-facility U.S. outpatient portfolio was acquired by Fengate alongside Montecito Medical and is the portfolio already reconciled in task 251."
+    }
+  ],
+  "supersededByTaskId": "ledger:0251:montecito-medical-outpatient-portfolio:18c48dc3",
+  "decisionSha256": "8ef84a0e0e3af2838dd25292354c315e6872982e69a1a522a69ac0a3da21077d"
+}

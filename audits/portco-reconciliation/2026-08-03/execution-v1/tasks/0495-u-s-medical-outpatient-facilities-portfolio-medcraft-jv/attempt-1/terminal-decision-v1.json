@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0495:u-s-medical-outpatient-facilities-portfolio-medcraft-jv:f5a7946c",
+  "taskIndex": 495,
+  "companyName": "U.S. Medical Outpatient Facilities Portfolio (MedCraft JV)",
+  "outcome": "SUPERSEDED",
+  "decidedAt": "2026-09-03T18:37:00.000Z",
+  "rationale": "This source label is the exact reviewed alias of the same 24-facility Fengate-MedCraft Cleveland Clinic outpatient portfolio already reconciled in completed task 250. The canonical after-image and complete seed overlay retain the source label as an alias, and the fresh production snapshot confirms the canonical company remains published with the expected relationship counts. Creating or correcting a second record would duplicate that canonical portfolio identity.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0495-u-s-medical-outpatient-facilities-portfolio-medcraft-jv/attempt-1/locked-batch-v1-task-snapshot.json",
+    "sha256": "8cbb23525034c1bfe2f33c1bba9e3cbdde128b79c9a8686d44a79284998dc3e9"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0495-u-s-medical-outpatient-facilities-portfolio-medcraft-jv/attempt-1/dependent-research-decision-v1.json",
+    "sha256": "d3e21f1d83f32fd3355ecfc0b3cf974a6a1414e9eade3eea9a13b953cdc679d9"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0495-u-s-medical-outpatient-facilities-portfolio-medcraft-jv/attempt-1/dependent-source-verification-v1.json",
+    "sha256": "ddc1724c83373acb89aeba4b27a56ffe3831324e15e744ae9e9dcb9f600d1104"
+  },
+  "evidence": [
+    {
+      "url": "https://fengate.com/news/fengate-expands-healthcare-infrastructure-portfolio-with-acquisition-of-24-u-s-outpatient-facilities",
+      "purpose": "Direct manager evidence that the 24-facility U.S. outpatient portfolio is the first acquisition by the Fengate-MedCraft joint venture already reconciled in task 250."
+    }
+  ],
+  "supersededByTaskId": "ledger:0250:medcraft-medical-outpatient-portfolio:bb470706",
+  "decisionSha256": "08e727380765282f0ab2fdb92144fa6ea737f70ee5d25d2046e05d727b6527bd"
+}
