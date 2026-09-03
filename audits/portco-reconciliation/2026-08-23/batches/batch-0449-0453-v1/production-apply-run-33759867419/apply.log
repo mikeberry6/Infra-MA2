@@ -1,0 +1,94 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:batch:apply
+> npx tsx scripts/portco-reconciliation/batch-apply-cli.ts --batch-manifest=audits/portco-reconciliation/2026-08-23/batches/batch-0449-0453-v1/batch-manifest.json --batch-sha256=acefac5800cf61c308375232fe05824217828402f49b84df1d41d4aeeeb3fea8 --seed-artifact=prisma/seed-data/approved-portco-after-images.json --apply --write-token=APPLY_APPROVED_PORTCO_BATCH --commit-receipt=tmp/portco-reconciliation/production/batch-commit-receipt.json --receipt=tmp/portco-reconciliation/production/batch-apply-receipt.json --public-base-url=https://infra-ma-2.vercel.app/Infra-MA2/
+
+(node:3705) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "BATCH_APPLIED",
+  "receiptPath": "/home/runner/work/Infra-MA2/Infra-MA2/tmp/portco-reconciliation/production/batch-apply-receipt.json",
+  "receipt": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_APPLY_BATCH_RECEIPT",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "batchId": "batch-0449-0453-v1",
+    "batchSha256": "acefac5800cf61c308375232fe05824217828402f49b84df1d41d4aeeeb3fea8",
+    "releaseSha": "bccc564f32dfbbe130af7a4317ff17a5fceaf144",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "transactionId": "308174a8-9fae-4637-bbd9-098e661bd263",
+    "appliedAt": "2026-09-03T13:16:47.029Z",
+    "members": [
+      {
+        "kind": "TERMINAL",
+        "taskId": "ledger:0449:pike-corporation:5a43238f",
+        "taskIndex": 449,
+        "companyName": "Pike Corporation",
+        "outcome": "EXCLUDED",
+        "decisionSha256": "13d11bc2f0e13a1c58c5c163f664fa460192bacc8539a90e3806c066282a9d8f"
+      },
+      {
+        "kind": "TERMINAL",
+        "taskId": "ledger:0450:ubs-ercot-battery-storage-portfolio:d9b23a03",
+        "taskIndex": 450,
+        "companyName": "UBS ERCOT Battery Storage Portfolio",
+        "outcome": "DEFERRED",
+        "decisionSha256": "36c3d19f6df899de00093fb5196cf59c82046ff842d0171b1824d757393101ea"
+      },
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0451:cartier-u-s-district-energy-platform:46304894",
+        "taskIndex": 451,
+        "companyName": "Cartier (U.S. District Energy Platform)",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0451:cartier-u-s-district-energy-platform:46304894",
+          "taskIndex": 451,
+          "companyName": "Cartier (U.S. District Energy Platform)",
+          "companyId": "cmrxpjorr01btivheaha4nor0",
+          "proposalSha256": "37cc5d3dba05b4eed3aaf6071952a75ee249cf05879781128e1fa554c02f886a",
+          "approvalSha256": "0596e178ecfc6b8b062619365b11e745fcd391a7c5062618e7f7b4de68d66182",
+          "productionSnapshotSha256": "e835572671f4f0f73d81968672508da2f87318bd0306c94888b3c84c68b7d85c",
+          "beforeCompanySnapshotSha256": "ad843db96a2c1175976e0067cee8341b12ef685d4b6484f60b11739e43d9bad4",
+          "appliedAfterImageSha256": "e30d2ca10045d219003ca4494f9d634be0ec727fe875dbaf3f67f751cee19809",
+          "seedAfterImageSha256": "e30d2ca10045d219003ca4494f9d634be0ec727fe875dbaf3f67f751cee19809",
+          "approvedSeedEntrySha256": "12e4ccebc4ac7d6b16d4bcf530b5950671a49f4ef35f83ceabbad6c93fa6ae98",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "308174a8-9fae-4637-bbd9-098e661bd263",
+          "auditEventId": "cmtlju5e20001ux2brccvru1a",
+          "appliedAt": "2026-09-03T13:16:47.029Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "ae2041bf0ec0196c356d71703983f5f84c8f878c56a4857c06ee90fce7f4c95b"
+        }
+      },
+      {
+        "kind": "TERMINAL",
+        "taskId": "ledger:0452:terawatt-infrastructure:facb72c6",
+        "taskIndex": 452,
+        "companyName": "TeraWatt Infrastructure",
+        "outcome": "DEFERRED",
+        "decisionSha256": "c22c949a99758d6e7de60a7002deb53552cdb09fc9f87ccd0e47f41fbea60cac"
+      },
+      {
+        "kind": "TERMINAL",
+        "taskId": "ledger:0453:american-inland-marine-holdings:47cd7d1a",
+        "taskIndex": 453,
+        "companyName": "American Inland Marine Holdings",
+        "outcome": "DEFERRED",
+        "decisionSha256": "b5f983159115695bfb215c30e179adb90952857138f7dcac1ab0b898c45a3285"
+      }
+    ],
+    "verification": {
+      "databaseTransactionCommitted": true,
+      "seedArtifactVerified": true,
+      "allDetailApisVerified": true,
+      "partialDatabaseApplication": false
+    },
+    "receiptSha256": "b5d6a8194007b1f45f00966fa24ae8cac6cd20696f711d288240577bf34081ef"
+  }
+}
