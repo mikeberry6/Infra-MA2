@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-03T16:49:00.000Z",
-  "activeBatchId": "batch-0459-0463-v1",
+  "updatedAt": "2026-09-03T16:56:30.000Z",
+  "activeBatchId": null,
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -8450,7 +8450,7 @@
     },
     {
       "batchId": "batch-0459-0463-v1",
-      "state": "VERIFYING_FAILED",
+      "state": "COMPLETED",
       "taskIds": [
         "ledger:0459:signal-rail-holdings:50c69045",
         "ledger:0460:dcli:22d0fc27",
@@ -8466,8 +8466,8 @@
         463
       ],
       "createdAt": "2026-09-03T14:30:15.000Z",
-      "updatedAt": "2026-09-03T16:49:00.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-09-03T16:56:30.000Z",
+      "completedAt": "2026-09-03T16:56:30.000Z",
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0459-0463-v1/batch-manifest-v6.json",
         "sha256": "e681cf3474e349ea5cdb2c33de59d7a3d301ab2c2fc1334738798892940070c7"
@@ -8477,7 +8477,7 @@
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0459-0463-v1/production-apply-run-33771260539/batch-apply-receipt.json",
         "sha256": "4d2190cdfde14fe8a272fd61ac372ba6bcc873327a19f752a756ca8764f1331f"
       },
-      "reason": "Atomic PortCo transaction 36fe930c-0cf3-411f-b5a8-4baf58ab1aa3 and receipt verification passed, but canonical rendered verification found ownership period cmrxpkaiz02a5ivhet6uxm49k still shows stale INFERRED / Estimated · Low confidence Tallvine attribution for Velocity FBO Network instead of the approved DISCLOSED Tallvine Middle Market Infrastructure Fund I attribution. Freeze the bundle until a scoped attribution-only repair is deployed, applied once, and rendered-verified.",
+      "reason": "Original atomic PortCo transaction and immutable receipt passed; scoped Velocity attribution repair changed exactly one row and was receipt-verified; canonical production serves repair SHA 1a40426366936c5f98447635ec277a63fd746209; QSP and Velocity drawers, APIs, BTR redirect, seed parity, sources, ownership, milestones, and no-partial-application checks all pass. Tasks 459-463 and dependent Task 491 are durably finalized without repeating either production transaction.",
       "history": [
         {
           "sequence": 1,
@@ -8527,9 +8527,31 @@
             "e681cf3474e349ea5cdb2c33de59d7a3d301ab2c2fc1334738798892940070c7"
           ],
           "reason": "Atomic PortCo transaction 36fe930c-0cf3-411f-b5a8-4baf58ab1aa3 and receipt verification passed, but canonical rendered verification found ownership period cmrxpkaiz02a5ivhet6uxm49k still shows stale INFERRED / Estimated · Low confidence Tallvine attribution for Velocity FBO Network instead of the approved DISCLOSED Tallvine Middle Market Infrastructure Fund I attribution. Freeze the bundle until a scoped attribution-only repair is deployed, applied once, and rendered-verified."
+        },
+        {
+          "sequence": 6,
+          "from": "VERIFYING_FAILED",
+          "to": "VERIFYING",
+          "at": "2026-09-03T16:55:30.000Z",
+          "evidenceSha256": [
+            "4d2190cdfde14fe8a272fd61ac372ba6bcc873327a19f752a756ca8764f1331f",
+            "e681cf3474e349ea5cdb2c33de59d7a3d301ab2c2fc1334738798892940070c7"
+          ],
+          "reason": "Scoped attribution repair PR #890 deployed as 1a40426366936c5f98447635ec277a63fd746209, production transaction cmtloimb80000fj2bhx7cxvcg changed exactly one Velocity attribution row, immutable receipt 11961605dd481e4972506d99b34d61fe7624c56eac4c6166c664c25619ffeb4c verified, and canonical API/rendered checks now pass. The original PortCo transaction was not repeated."
+        },
+        {
+          "sequence": 7,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-09-03T16:56:30.000Z",
+          "evidenceSha256": [
+            "4d2190cdfde14fe8a272fd61ac372ba6bcc873327a19f752a756ca8764f1331f",
+            "e681cf3474e349ea5cdb2c33de59d7a3d301ab2c2fc1334738798892940070c7"
+          ],
+          "reason": "Original atomic PortCo transaction and immutable receipt passed; scoped Velocity attribution repair changed exactly one row and was receipt-verified; canonical production serves repair SHA 1a40426366936c5f98447635ec277a63fd746209; QSP and Velocity drawers, APIs, BTR redirect, seed parity, sources, ownership, milestones, and no-partial-application checks all pass. Tasks 459-463 and dependent Task 491 are durably finalized without repeating either production transaction."
         }
       ]
     }
   ],
-  "ledgerSha256": "dc55f623c8a14170c78a5492ea8102c30753d96308ea8b594b625752d1825222"
+  "ledgerSha256": "40632690a5e5c0498441135c71868ac81f4027b5f820a838611f93d06868c89b"
 }

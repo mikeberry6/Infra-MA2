@@ -1,0 +1,43 @@
+
+> infra-tracker@1.0.0 portfolio:fund-attribution:apply
+> npx tsx scripts/apply-portfolio-fund-attribution.ts --manifest=audits/portfolio-fund-attribution/2026-09-03/scoped/portco-batch-0459-0463-velocity-attribution-repair/apply-manifest.json --manifest-sha256=07397eadbccfbd677af23a355a7e8f97b6a480ed4063e361f08fafb6b1fae8a3 --production-snapshot=audits/portfolio-fund-attribution/2026-09-03/scoped/portco-batch-0459-0463-velocity-attribution-repair/production-snapshot.json --approval=audits/portfolio-fund-attribution/2026-09-03/scoped/portco-batch-0459-0463-velocity-attribution-repair/approval.json --approval-sha256=cf3f89cafc63e2cb0226e0e26c3b20ed8290f719224f7243726965b85d28ab63 --apply=true --write-token=APPLY_REVIEWED_PORTFOLIO_FUND_ATTRIBUTION --receipt=tmp/portfolio-fund-attribution/production/apply-receipt.json
+
+(node:3151) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_RECEIPT",
+  "manifestSha256": "07397eadbccfbd677af23a355a7e8f97b6a480ed4063e361f08fafb6b1fae8a3",
+  "approvalSha256": "cf3f89cafc63e2cb0226e0e26c3b20ed8290f719224f7243726965b85d28ab63",
+  "environment": "production",
+  "pipelineRunId": "cmtloimb80000fj2bhx7cxvcg",
+  "mutationCount": 1,
+  "changed": 1,
+  "idempotent": false,
+  "beforeFingerprint": "c35163ce8d68de2ae8b20f20012edb8a6276cc7678e1f018c22e270be1730bd6",
+  "afterFingerprint": "c200b78083164b223f23f5a2d897e1c5877d6c4aaec78ae944c5899efef91e2b",
+  "rows": [
+    {
+      "recordId": "OFA-9F4805108208",
+      "ownershipPeriodId": "cmrxpkaiz02a5ivhet6uxm49k",
+      "companyId": "cmrxpjnya01ahivheyr6w92jk",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": "Tallvine Middle Market Infrastructure Fund I",
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "Tallvine Middle Market Infrastructure Fund I",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, North America-relevant mandate; no second manager-matched fund candidate. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": "Tallvine Middle Market Infrastructure Fund I",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Tallvine Middle Market Infrastructure Fund I",
+        "attributionConfidence": null,
+        "attributionRationale": "Tallvine's official platform-launch disclosure identifies Fund I as the investor behind the Velocity platform while leaving the exact platform holding vehicle undisclosed."
+      }
+    }
+  ],
+  "appliedAt": "2026-09-03T15:27:47.131Z",
+  "receiptSha256": "11961605dd481e4972506d99b34d61fe7624c56eac4c6166c664c25619ffeb4c"
+}
