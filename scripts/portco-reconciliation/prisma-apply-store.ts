@@ -435,6 +435,7 @@ const approvedOwnershipOrganizationProvisioning = {
   "Constellation/Exelon": "CORPORATE",
   "Sanchez sponsor group": "OTHER",
   "Energy Spectrum Capital": "FUND_MANAGER",
+  "Thoroughbred LLC": "CORPORATE",
 } as const;
 
 export function ownershipOrganizationTypes(

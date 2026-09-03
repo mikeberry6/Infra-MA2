@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0471:boldyn-networks-us:9c03f01f",
+  "taskIndex": 471,
+  "companyName": "Boldyn Networks (US)",
+  "outcome": "SUPERSEDED",
+  "decidedAt": "2026-09-03T17:45:00.000Z",
+  "rationale": "Boldyn Networks (US) is the U.S. regional perimeter of the same Boldyn Networks group addressed by task 470, not a separately held manager-level company. Task 470's hash-bound after-image preserves the U.S. aliases, operators, Manulife's U.S.-asset ownership scope and the existing production redirect while explicitly retiring this duplicate seed identity. This supersession becomes final only after the task 470 mutation is atomically applied and production-verified.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0471-boldyn-networks-us/attempt-1/locked-batch-v2-task-snapshot.json",
+    "sha256": "8d932ad46985798ff0492628fc9f271f7d9678c837c3461058c442145fe70a24"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0471-boldyn-networks-us/attempt-1/dependent-research-decision-v3.json",
+    "sha256": "f9b20999ac7483fb26852d22586ecadb97167721b1f4589c60b887110dc6ab68"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0471-boldyn-networks-us/attempt-1/dependent-source-verification-v1.json",
+    "sha256": "8f611c047deb0e6786d19676308314f3bfcdf0886f2ccdef0165d9ea7cc4ac4d"
+  },
+  "evidence": [
+    {
+      "url": "https://www.aimco.ca/insights/boldyn-networks-investment",
+      "purpose": "Direct investor evidence for the common Boldyn parent ownership and Manulife's narrower U.S.-asset scope."
+    },
+    {
+      "url": "https://www.boldyn.com/news/bai-communications-transforms-into-boldyn-networks-powerhouse-brand-outlines-growth-ambitions",
+      "purpose": "Direct company evidence that the Northern Hemisphere businesses became one Boldyn group."
+    },
+    {
+      "url": "https://www.boldyn.com/us/about-us",
+      "purpose": "Current company evidence placing the U.S. business and its operators within the global Boldyn platform."
+    }
+  ],
+  "supersededByTaskId": "ledger:0470:boldyn-networks:3ce154eb",
+  "decisionSha256": "b6320a027997d975b5db2b3c736d20d87618c937094d5bd288612017d80c1b25"
+}

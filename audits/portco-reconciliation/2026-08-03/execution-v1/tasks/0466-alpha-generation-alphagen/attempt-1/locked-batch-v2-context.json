@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0466:alpha-generation-alphagen:c81d7304",
+  "taskIndex": 466,
+  "companyName": "Alpha Generation (AlphaGen)",
+  "generatedAt": "2026-09-03T15:44:37.305Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0466-alpha-generation-alphagen/attempt-1/locked-batch-v2-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 466,
+    "taskId": "ledger:0466:alpha-generation-alphagen:c81d7304",
+    "canonicalKey": "alpha-generation-alphagen|united-states",
+    "companyName": "Alpha Generation (AlphaGen)",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": null,
+    "managers": [],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [
+      "alpha generation (alphagen)|United States"
+    ],
+    "evidenceUrls": [],
+    "candidateCanonicalKeys": [],
+    "rationale": "Heuristic identity overlap with alpha-generation-llc|united-states; no automatic merge was made. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Heuristic identity overlap with alpha-generation-llc|united-states; no automatic merge was made."
+    ]
+  },
+  "targetResolution": {
+    "method": "NO_EXISTING_TARGET",
+    "targetCompanyId": null,
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "alpha-generation-alphagen|united-states",
+  "targetCompanyImage": null,
+  "seedEntry": {
+    "name": "Alpha Generation (AlphaGen)",
+    "investmentFirm": "ArcLight Capital Partners",
+    "sector": "Power & ET",
+    "subsector": "Power Asset Management",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "ArcLight Energy Partners Fund VII",
+    "description": "Alpha Generation is ArcLight's management platform for a large portfolio of power generation assets in the United States. The platform serves wholesale power markets through strategic management and oversight of existing thermal generation assets rather than through greenfield development alone. ArcLight stated in 2024 that AlphaGen was formed to oversee about 14 GW of power infrastructure across four U.S. competitive power markets and a portfolio generating nearly $2 billion of annual revenue. Its role is therefore operational and portfolio-oriented, covering commercial, strategic, and asset-management functions across multiple generation subsidiaries. ArcLight announced the creation of AlphaGen in January 2024 as part of the management structure for ArcLight Energy Partners Fund VII, while public sources do not disclose the internal ownership split within the platform.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2024,
+    "investmentYear": 2024,
+    "headquarters": "United States",
+    "milestones": [
+      {
+        "date": "2024",
+        "event": "ArcLight stated that AlphaGen would oversee approximately 14 GW of power infrastructure across four U.S. markets.",
+        "category": "Expansion"
+      },
+      {
+        "date": "2024",
+        "event": "Public disclosures also described the managed portfolio as generating nearly $2 billion of annual revenue.",
+        "category": "Expansion"
+      },
+      {
+        "date": "2024",
+        "event": "Alpha Generation (AlphaGen) was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "Jan 10, 2024",
+        "event": "ArcLight announced the formation of Alpha Generation as an ArcLight-owned platform to oversee its power infrastructure portfolio.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Alphagen — Alpha Generation (AlphaGen)",
+        "url": "https://www.alphagen.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Announcement date source — ArcLight Capital Partners — Alpha Generation (AlphaGen)",
+        "url": "https://www.prnewswire.com/news-releases/arclight-creates-alphagen-to-manage-one-of-the-largest-power-infrastructure-portfolios-in-the-united-states-302031341.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Arclight — Alpha Generation (AlphaGen)",
+        "url": "https://arclight.com/portfolio-services/",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "ArcLight Capital Partners",
+        "ownershipVehicle": "ArcLight Energy Partners Fund VII",
+        "investmentYear": 2024,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0466:alpha-generation-alphagen:c81d7304",
+    "taskIndex": 466,
+    "canonicalKey": "alpha-generation-alphagen|united-states",
+    "capturedAt": "2026-09-03T15:44:37.305Z",
+    "databaseRevision": "company-state:ABSENT",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "39815f461e852b73b345e0d90c052e96f480b763ee1a9675f88b48b13cecb575",
+    "productionSnapshotSha256": "531ed4a33409547cf8adbee8fb34dc204cadad7a6646c713d4995ce0d4fc1261",
+    "targetCompanySnapshotSha256": null,
+    "seedEntrySha256": "61dcdd43c1d799d77860e63d1d71fa337003945f15867bd7665f0dfc41e74a97",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "citationsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "7162f023548431ed1fed51e43a93e8e1e0a46df9edc0adf314307e96f61f1312",
+    "stateSha256": "b6c5f11dd8c34c4a0387bb653961521736a425c65e849f76fbd7bf99f8376bae",
+    "taskSnapshotSha256": "1971b83550bc02cbeee52bc30f472b41c991b828eaffa65daced234cc50b081e"
+  },
+  "contextSha256": "4dadd52d855017d4cab811b24c8fd77707ac346ce57be99e275b725d438e6f79"
+}

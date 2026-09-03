@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_DEPENDENT_RESEARCH_DECISION",
+  "taskId": "ledger:0471:boldyn-networks-us:9c03f01f",
+  "taskIndex": 471,
+  "companyName": "Boldyn Networks (US)",
+  "decision": "SUPERSEDED",
+  "generatedAt": "2026-09-03T17:44:00.000Z",
+  "result": {
+    "decision": "SUPERSEDED",
+    "rationale": "Boldyn Networks (US) is the U.S. regional perimeter of the same Boldyn Networks group addressed by task 470, not a separately held manager-level company. Task 470's hash-bound after-image preserves the U.S. aliases, operators, Manulife's U.S.-asset ownership scope and the existing production redirect while explicitly retiring this duplicate seed identity. This supersession becomes final only after the task 470 mutation is atomically applied and production-verified.",
+    "evidence": [
+      {
+        "url": "https://www.aimco.ca/insights/boldyn-networks-investment",
+        "purpose": "Direct investor evidence for the common Boldyn parent ownership and Manulife's narrower U.S.-asset scope."
+      },
+      {
+        "url": "https://www.boldyn.com/news/bai-communications-transforms-into-boldyn-networks-powerhouse-brand-outlines-growth-ambitions",
+        "purpose": "Direct company evidence that the Northern Hemisphere businesses became one Boldyn group."
+      },
+      {
+        "url": "https://www.boldyn.com/us/about-us",
+        "purpose": "Current company evidence placing the U.S. business and its operators within the global Boldyn platform."
+      }
+    ]
+  },
+  "lineage": {
+    "canonicalTaskId": "ledger:0470:boldyn-networks:3ce154eb",
+    "canonicalTaskRequiredStatusAtFinalization": "COMPLETED",
+    "canonicalTaskObservedStatus": "PENDING_IN_SAME_ACTIVE_BUNDLE",
+    "canonicalProposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0470-boldyn-networks/attempt-2/proposal-v3.json",
+      "byteSha256": "937a70d62b5712aceae331500a46b1bd31e80865e6cd41b6c64c3eae670ff23c",
+      "proposalSha256": "90a8d4b8e20fbc46401629352a020e9c14dfe30e97834186d2358d17a1f401e7",
+      "afterImageSha256": "7910575d7ba61b7667f9eb982d91073baff2ecdd18aa199b81d38f6f73e9cbc5"
+    },
+    "canonicalSourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0470-boldyn-networks/attempt-2/source-verification.json",
+      "byteSha256": "3ea270c6e272b8dee68572dc7cb479071fdc2111599d87845fc3cd5b8c72ea16"
+    }
+  }
+}

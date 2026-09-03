@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0466:alpha-generation-alphagen:c81d7304",
+  "taskIndex": 466,
+  "companyName": "Alpha Generation (AlphaGen)",
+  "outcome": "SUPERSEDED",
+  "decidedAt": "2026-09-03T17:10:00.000Z",
+  "rationale": "Alpha Generation (AlphaGen) is the same legal and operating identity already resolved by completed canonical task 64 for AlphaGen. Task 64 merged the duplicate production identities into Alpha Generation, LLC, preserved AlphaGen and Alpha Generation (AlphaGen) as aliases, reconciled the ArcLight, ADIA and CPP Investments ownership chain, and has an immutable production apply receipt. This heuristic-overlap seed label must therefore not create a second company or repeat the completed transaction.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0466-alpha-generation-alphagen/attempt-1/locked-batch-v2-task-snapshot.json",
+    "sha256": "bdfeee3d90e6225bef2ada4d7fd00157508f862329de403d63d101cf499bce18"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0466-alpha-generation-alphagen/attempt-1/reciprocal-research-decision-v1.json",
+    "sha256": "cf08970e28f67ba2335e3eeb84c33de1fe4422c8b86d64b19f8cfdfaf2ea7124"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0466-alpha-generation-alphagen/attempt-1/reciprocal-source-verification-v1.json",
+    "sha256": "b7bc97f4fb16a92d50f565acd43016735e2de6c476b5be39922932bd78bdbcc2"
+  },
+  "evidence": [
+    {
+      "url": "https://www.alphagen.com/terms-of-use/",
+      "purpose": "Official legal-identity evidence establishing Alpha Generation, LLC and AlphaGen as one company."
+    },
+    {
+      "url": "https://www.alphagen.com/about-us/",
+      "purpose": "Official current company profile supporting the single AlphaGen operating platform."
+    },
+    {
+      "url": "https://www.cppinvestments.com/newsroom/arclight-announces-us1-0-billion-investment-by-cpp-investments-in-alphagen/",
+      "purpose": "Direct investor evidence supporting the already-reconciled AlphaGen ownership record."
+    }
+  ],
+  "supersededByTaskId": "ledger:0064:alphagen:b9424b11",
+  "decisionSha256": "08dfb1737d5288b9cfbb77c24623d9d0bf578df2bf26303fd711991155cdd31c"
+}

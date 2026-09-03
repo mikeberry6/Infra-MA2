@@ -139,5 +139,6 @@ describe("approved ownership organization provisioning", () => {
     expect(ownershipOrganizationTypes("BP")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Caliche Management")).toEqual(["CORPORATE"]);
     expect(ownershipOrganizationTypes("Energy Spectrum Capital")).toEqual(["FUND_MANAGER"]);
+    expect(ownershipOrganizationTypes("Thoroughbred LLC")).toEqual(["CORPORATE"]);
   });
 });
