@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECIPROCAL_RESEARCH_DECISION",
+  "taskId": "ledger:0466:alpha-generation-alphagen:c81d7304",
+  "taskIndex": 466,
+  "companyName": "Alpha Generation (AlphaGen)",
+  "decision": "SUPERSEDED",
+  "generatedAt": "2026-09-03T17:08:00.000Z",
+  "result": {
+    "decision": "SUPERSEDED",
+    "rationale": "Alpha Generation (AlphaGen) is the same legal and operating identity already resolved by completed canonical task 64 for AlphaGen. Task 64 merged the duplicate production identities into Alpha Generation, LLC, preserved AlphaGen and Alpha Generation (AlphaGen) as aliases, reconciled the ArcLight, ADIA and CPP Investments ownership chain, and has an immutable production apply receipt. This heuristic-overlap seed label must therefore not create a second company or repeat the completed transaction.",
+    "evidence": [
+      {
+        "url": "https://www.alphagen.com/terms-of-use/",
+        "purpose": "Official legal-identity evidence establishing Alpha Generation, LLC and AlphaGen as one company."
+      },
+      {
+        "url": "https://www.alphagen.com/about-us/",
+        "purpose": "Official current company profile supporting the single AlphaGen operating platform."
+      },
+      {
+        "url": "https://www.cppinvestments.com/newsroom/arclight-announces-us1-0-billion-investment-by-cpp-investments-in-alphagen/",
+        "purpose": "Direct investor evidence supporting the already-reconciled AlphaGen ownership record."
+      }
+    ]
+  },
+  "lineage": {
+    "canonicalTaskId": "ledger:0064:alphagen:b9424b11",
+    "canonicalTaskRequiredStatus": "COMPLETED",
+    "canonicalTaskObservedStatus": "COMPLETED",
+    "canonicalResearchDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0064-alphagen/research-decision.json",
+      "byteSha256": "43cbe5701963f52fff3f5f951b2cdb344cf9e1cbcfc0bdf2c8dc911d56b620a9"
+    },
+    "canonicalProposal": {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0064-alphagen-v2/proposal.json",
+      "byteSha256": "1eb4ee0f90090215669daadd15b5876918f634e36abdf819ff6afbc200ec6bce"
+    },
+    "canonicalReceipt": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0064-alphagen/attempt-1/production-apply/apply-receipt.json",
+      "byteSha256": "55d50cabe1a0b91de7c7148f5f56deea4567c32b3d8468b98d3577247683ddfa",
+      "receiptSha256": "18632a11c03a26264493e8244886af5b1c6ba9ab991402da362f6f025af5a6a7",
+      "transactionId": "fa4c8962-72d0-488a-9311-249a9c00c4a4"
+    }
+  }
+}

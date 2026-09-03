@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-03T16:56:30.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-09-03T17:52:00.000Z",
+  "activeBatchId": "batch-0464-0471-v1",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -8551,7 +8551,65 @@
           "reason": "Original atomic PortCo transaction and immutable receipt passed; scoped Velocity attribution repair changed exactly one row and was receipt-verified; canonical production serves repair SHA 1a40426366936c5f98447635ec277a63fd746209; QSP and Velocity drawers, APIs, BTR redirect, seed parity, sources, ownership, milestones, and no-partial-application checks all pass. Tasks 459-463 and dependent Task 491 are durably finalized without repeating either production transaction."
         }
       ]
+    },
+    {
+      "batchId": "batch-0464-0471-v1",
+      "state": "RELEASING",
+      "taskIds": [
+        "ledger:0464:donjon-marine-co-llc:1f2eb8b6",
+        "ledger:0465:havasu-air-center:895ad5ae",
+        "ledger:0466:alpha-generation-alphagen:c81d7304",
+        "ledger:0470:boldyn-networks:3ce154eb",
+        "ledger:0471:boldyn-networks-us:9c03f01f"
+      ],
+      "taskIndexes": [
+        464,
+        465,
+        466,
+        470,
+        471
+      ],
+      "createdAt": "2026-09-03T17:00:00.000Z",
+      "updatedAt": "2026-09-03T17:52:00.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0464-0471-v1/batch-manifest-v5.json",
+        "sha256": "8a1fdefec1b25e6355969bcfc29052204953eb195d8aeeefa2f6c659a415b97d"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-09-03T17:00:00.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-09-03T17:48:00.000Z",
+          "evidenceSha256": [
+            "8a1fdefec1b25e6355969bcfc29052204953eb195d8aeeefa2f6c659a415b97d"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "RELEASING",
+          "at": "2026-09-03T17:52:00.000Z",
+          "evidenceSha256": [
+            "8a1fdefec1b25e6355969bcfc29052204953eb195d8aeeefa2f6c659a415b97d"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "40632690a5e5c0498441135c71868ac81f4027b5f820a838611f93d06868c89b"
+  "ledgerSha256": "4c3fe84271640b1fdd298ae335e86b8111cb59331882922fa9a27a70b73916de"
 }

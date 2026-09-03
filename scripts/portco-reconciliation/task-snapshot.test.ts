@@ -1316,6 +1316,43 @@ describe("task snapshot seed-retirement candidates", () => {
     });
   });
 
+  it("captures a reciprocal seed-only child within a slash-delimited parent country scope", () => {
+    const active = entry({
+      taskIndex: 470,
+      taskId: "task-470",
+      canonicalKey: "boldyn-networks|united-states-canada",
+      companyName: "Boldyn Networks",
+      country: "United States / Canada",
+      productionCompanyIds: ["company-boldyn"],
+      seedKeys: ["boldyn networks|United States / Canada"],
+      rationale: "Heuristic identity overlap with boldyn-networks-us|united-states; no automatic merge was made. Exact identity approval is required before any merge or correction.",
+    });
+    const duplicate = entry({
+      taskIndex: 471,
+      taskId: "task-471",
+      canonicalKey: "boldyn-networks-us|united-states",
+      companyName: "Boldyn Networks (US)",
+      country: "United States",
+      seedKeys: ["boldyn networks (us)|United States"],
+      rationale: "Heuristic identity overlap with boldyn-networks|united-states-canada; no automatic merge was made. Exact identity approval is required before any merge or correction.",
+    });
+    const company = seedCompany("Boldyn Networks (US)", "United States");
+
+    const candidates = resolveSeedRetirementCandidates({
+      queueEntry: active,
+      queueEntries: [active, duplicate],
+      rawSeedCompanies: [company],
+      evaluatedSeedCompanies: [structuredClone(company)],
+    });
+
+    expect(candidates).toHaveLength(1);
+    expect(candidates[0]).toMatchObject({
+      sourceQueueTaskId: "task-471",
+      name: "Boldyn Networks (US)",
+      country: "United States",
+    });
+  });
+
   it("fails closed when a reciprocal seed identity is ambiguous or missing", () => {
     const active = entry({
       taskId: "task-41",

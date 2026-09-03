@@ -475,6 +475,27 @@ function normalizedIdentity(value: string): string {
   return value.trim().toLocaleLowerCase("en-US");
 }
 
+function compatibleCountryScope(left: string, right: string): boolean {
+  if (normalizedIdentity(left) === normalizedIdentity(right)) return true;
+
+  const parts = (value: string) => value
+    .split("/")
+    .map((part) => normalizedIdentity(part))
+    .filter(Boolean);
+  const leftParts = parts(left);
+  const rightParts = parts(right);
+
+  return (
+    leftParts.length > 1
+    && rightParts.length === 1
+    && leftParts.includes(rightParts[0])
+  ) || (
+    rightParts.length > 1
+    && leftParts.length === 1
+    && rightParts.includes(leftParts[0])
+  );
+}
+
 function dbaAlias(value: string): string | null {
   const match = value.match(/\(\s*d\s*\/\s*b\s*\/\s*a\s+([^)]+?)\s*\)/i);
   return match?.[1]?.trim() || null;
@@ -832,7 +853,7 @@ export function resolveSeedRetirementCandidates(input: {
       || right.queueKind !== "CANONICAL_COMPANY"
       || left.decisionStatus !== "NEEDS_REVIEW"
       || right.decisionStatus !== "NEEDS_REVIEW"
-      || normalizedIdentity(left.country) !== normalizedIdentity(right.country)
+      || !compatibleCountryScope(left.country, right.country)
     ) return false;
     const expected = (canonicalKey: string) => normalizedIdentity(
       `Heuristic identity overlap with ${canonicalKey}; no automatic merge was made. Exact identity approval is required before any merge or correction.`,

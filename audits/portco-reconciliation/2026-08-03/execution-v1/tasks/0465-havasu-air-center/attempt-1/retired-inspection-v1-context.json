@@ -1,0 +1,282 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0465:havasu-air-center:895ad5ae",
+  "taskIndex": 465,
+  "companyName": "Havasu Air Center",
+  "generatedAt": "2026-09-03T15:46:04.625Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0465-havasu-air-center/attempt-1/retired-inspection-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 465,
+    "taskId": "ledger:0465:havasu-air-center:895ad5ae",
+    "canonicalKey": "havasu-air-center|united-states",
+    "companyName": "Havasu Air Center",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 100,
+    "managers": [
+      "Tallvine"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "100-tallvine:repo-only:001:havasu-air-center"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjnxd01afivhehcfvdqbd"
+    ],
+    "seedKeys": [
+      "havasu air center|United States"
+    ],
+    "evidenceUrls": [
+      "https://velocityfbo.com/locations/",
+      "https://www.businesswire.com/news/home/20251001812038/en/Tallvine-Backed-Velocity-FBO-Network-Expands-with-Acquisition-of-Havasu-Air-Centers-Fixed-Base-Operator-Assets"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Tallvine MATCHED_ELSEWHERE: Add-on acquisition under Velocity FBO Network platform and already represented within the counted platform holding.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjnxd01afivhehcfvdqbd",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "havasu-air-center|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjnxd01afivhehcfvdqbd",
+    "name": "Havasu Air Center",
+    "aliases": [],
+    "sector": "TRANSPORTATION",
+    "subsector": "Fixed-base operator airport services",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Havasu Air Center is a fixed-base operator business at Lake Havasu City Airport providing fueling, aircraft handling, and related services. Its customers or end markets include business aviation and general aviation users in the Arizona market. The operating model is an airport services model based on FBO operations rather than airline or airport ownership. Operations are concentrated in Lake Havasu City, Arizona. Public materials indicate the fourth location added to Velocity FBO Network according to public acquisition materials. Current ownership dates to Velocity FBO Network’s October 2025 acquisition of the FBO assets under Tallvine-backed ownership.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Arizona",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpkahz02a3ivheibqj76wv",
+        "managerName": "Tallvine",
+        "organizationName": "Tallvine",
+        "fundName": "Tallvine Middle Market Infrastructure Fund I",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmrae059fivheady6urju",
+        "date": "2025",
+        "event": "The seller retained separate aircraft management activities outside the transferred FBO assets.",
+        "category": "OTHER",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmray059givhevw5o1sb2",
+        "date": "2025",
+        "event": "Havasu Air Center began operating within the Tallvine-backed FBO network.",
+        "category": "EXPANSION",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmrdt059hivhefk68d0f2",
+        "date": "Oct 2025",
+        "event": "Tallvine-backed Velocity FBO Network acquired Havasu Air Center’s fixed-base operator assets.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-10-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmre9059iivhee9ou30nd",
+        "date": "Oct 2025",
+        "event": "Public reports identified the site as Velocity’s fourth operating location.",
+        "category": "OTHER",
+        "sortDate": "2025-10-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsvo80d9hivhe6hcayo8l",
+        "label": "Investment date source — Tallvine — Havasu Air Center",
+        "url": "https://www.businesswire.com/news/home/20251001812038/en/Tallvine-Backed-Velocity-FBO-Network-Expands-with-Acquisition-of-Havasu-Air-Centers-Fixed-Base-Operator-Assets",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Tallvine initial investment / ownership",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpsvp70d9jivhex6upgkiz",
+        "label": "Businessairnews — Havasu Air Center",
+        "url": "https://www.businessairnews.com/mag_story.html?ident=35368",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Businessairnews — Havasu Air Center",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsvqa0d9livhezp1rldf1",
+        "label": "Havasuaircenter — Havasu Air Center",
+        "url": "https://havasuaircenter.com/home/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Havasuaircenter — Havasu Air Center",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsvrd0d9nivheru3auxpg",
+        "label": "Ainonline — Havasu Air Center",
+        "url": "https://www.ainonline.com/aviation-news/business-aviation/2025-10-02/fledgling-velocity-fbo-network-adds-arizona-location",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Ainonline operations / asset details",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Havasu Air Center",
+    "investmentFirm": "Tallvine",
+    "sector": "Transportation",
+    "subsector": "Fixed-base operator airport services",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "Havasu Air Center is a fixed-base operator business at Lake Havasu City Airport providing fueling, aircraft handling, and related services. Its customers or end markets include business aviation and general aviation users in the Arizona market. The operating model is an airport services model based on FBO operations rather than airline or airport ownership. Operations are concentrated in Lake Havasu City, Arizona. Public materials indicate the fourth location added to Velocity FBO Network according to public acquisition materials. Current ownership dates to Velocity FBO Network’s October 2025 acquisition of the FBO assets under Tallvine-backed ownership.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2025,
+    "headquarters": "Arizona",
+    "milestones": [
+      {
+        "date": "2025",
+        "event": "The seller retained separate aircraft management activities outside the transferred FBO assets.",
+        "category": "Other"
+      },
+      {
+        "date": "2025",
+        "event": "Havasu Air Center began operating within the Tallvine-backed FBO network.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Oct 2025",
+        "event": "Tallvine-backed Velocity FBO Network acquired Havasu Air Center’s fixed-base operator assets.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Oct 2025",
+        "event": "Public reports identified the site as Velocity’s fourth operating location.",
+        "category": "Other"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Investment date source — Tallvine — Havasu Air Center",
+        "url": "https://www.businesswire.com/news/home/20251001812038/en/Tallvine-Backed-Velocity-FBO-Network-Expands-with-Acquisition-of-Havasu-Air-Centers-Fixed-Base-Operator-Assets",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Businessairnews — Havasu Air Center",
+        "url": "https://www.businessairnews.com/mag_story.html?ident=35368",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Havasuaircenter — Havasu Air Center",
+        "url": "https://havasuaircenter.com/home/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Ainonline — Havasu Air Center",
+        "url": "https://www.ainonline.com/aviation-news/business-aviation/2025-10-02/fledgling-velocity-fbo-network-adds-arizona-location",
+        "type": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Tallvine",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2025,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj3r500fhivhenx117u1s",
+        "fundName": "Tallvine Middle Market Infrastructure Fund I",
+        "managerId": "cmrxpidtt003mivhe3d7c82al",
+        "updatedAt": "2026-08-03T17:26:10.862Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpidtt003mivhe3d7c82al",
+        "name": "Tallvine",
+        "updatedAt": "2026-07-23T16:09:25.121Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0465:havasu-air-center:895ad5ae",
+    "taskIndex": 465,
+    "canonicalKey": "havasu-air-center|united-states",
+    "capturedAt": "2026-09-03T15:46:04.625Z",
+    "databaseRevision": "revision:10bc30aa43fbb0f75a07debe6a4210936339211d7f6d90a1726d0f2eb2d0d56d",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "5986ad626eb2d56249be45f90d1d17c41e4cd018bc74e50aa23a6f0b78cab40a",
+    "productionSnapshotSha256": "56b987c26de7818571eb5adbbd49313155e33e1f9c4f8f982409c35e9f1f5646",
+    "targetCompanySnapshotSha256": "b92e4730d78cc4ec26f6c00af77efedd497758b3684d568d735bafee089adefc",
+    "seedEntrySha256": "06fc3fec7f47bc169a7493c55feb7d13850085414fc20d1096c58f64b8bc470b",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "5073ad0b88c5d06631b0bd9f33adb363cd4b0cc4ea17c13bb1fb106f46c1aaf0",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "0e19d8eb32e670542c10f14406428c9f754acf4f75367310514d46dc4cb610d7",
+      "organizationsSha256": "857de82bbe909b5421a0ccda9a741b41b27458ea16587d25d33ff5c2b8f0e1dc",
+      "citationsSha256": "c6b62cb9d98b81399616f13b90ba01d84e12b7b6ae49713beccb607d365a343e",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "6fffcd235af5d351fa95d3884ecee6fe75ff186dc6505c30aebbbd772ff9ae2c",
+    "stateSha256": "12015def687897e29ca259f0546cc473156a2baa2630acea0d1e33e72c4b291a",
+    "taskSnapshotSha256": "ada50926131a2d02f6782662b6daaae50d1dc7254aba24feee2bb052807d2cc6"
+  },
+  "contextSha256": "3932f2eec26ddc029c1a8e6f2e27cd9bf9ffe0a4d5d6b18138a4ff1bb622d281"
+}

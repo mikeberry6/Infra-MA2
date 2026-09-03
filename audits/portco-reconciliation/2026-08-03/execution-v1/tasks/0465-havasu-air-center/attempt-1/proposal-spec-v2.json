@@ -1,0 +1,170 @@
+{
+  "generatedAt": "2026-09-03T17:21:00.000Z",
+  "actions": [
+    "MERGE_COMPANIES",
+    "CORRECT_COMPANY"
+  ],
+  "retiredCompanyIds": [
+    "cmrxpjnxd01afivhehcfvdqbd"
+  ],
+  "relationMerges": [
+    {
+      "kind": "OWNERSHIP_PERIOD",
+      "retiredRelationId": "cmrxpkahz02a3ivheibqj76wv",
+      "canonicalRelationId": "cmrxpkaiz02a5ivhet6uxm49k",
+      "rationale": "Havasu is an acquired Velocity location under the same Tallvine ownership period, not a separately held platform."
+    },
+    {
+      "kind": "MILESTONE",
+      "retiredRelationId": "cmrxpmrdt059hivhefk68d0f2",
+      "canonicalRelationId": "cmrxpmrht059nivhei7b621j4",
+      "rationale": "Both records describe the same October 1, 2025 Havasu FBO asset acquisition."
+    }
+  ],
+  "reviewedSeedRetirementTaskIds": [],
+  "rationale": "Merge Havasu Air Center into Velocity FBO Network because the acquired FBO assets and airport leaseholds became Velocity Lake Havasu rather than a separately held manager-level company. Preserve the Havasu legacy identity, local vehicle, transferred lease scope, seller-retained-business boundary and acquisition history on the canonical Velocity record, while retaining the existing Tallvine ownership period and its previously verified fund attribution.",
+  "evidence": [
+    {
+      "url": "https://lakehavasucity.legistar.com/MeetingDetail.aspx?GUID=01EF0562-7E17-479F-95F9-C2808C0A33E5&ID=1330691&Search=",
+      "purpose": "Primary government evidence for the asset and leasehold transfer.",
+      "supports": [
+        "Havasu Air Center, LLC was the transferor",
+        "Velocity Havasu Holdings, LLC was the assignee",
+        "The transfer covered Sites 3, 4 and 6 FBO leases and the Sites 1 and 2 fueling sublease"
+      ]
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20251001812038/en/Tallvine-Backed-Velocity-FBO-Network-Expands-with-Acquisition-of-Havasu-Air-Centers-Fixed-Base-Operator-Assets",
+      "purpose": "Direct closing, platform and retained-business evidence.",
+      "supports": [
+        "Velocity completed the FBO asset acquisition on October 1, 2025",
+        "Lake Havasu became Velocity's fourth location",
+        "Aircraft management and Northstar Aviation Services remained with the seller"
+      ]
+    },
+    {
+      "url": "https://velocityfbo.com/locations/lake-havasu-khii/",
+      "purpose": "Current operating-brand and location evidence.",
+      "supports": [
+        "The KHII location operates as Velocity Lake Havasu"
+      ]
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20260810856121/en/Tallvine-Backed-Velocity-FBO-Network-Expands-with-Acquisition-of-SkyPlace-FBO",
+      "purpose": "Latest pre-cutoff platform continuity evidence.",
+      "supports": [
+        "Velocity remained Tallvine-backed",
+        "Lake Havasu remained within the network"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "companyFieldUpdates": {
+    "aliases": [
+      "BTR Jet Center",
+      "Baton Rouge Jet Center, LLC",
+      "Havasu Air Center",
+      "Havasu Air Center, LLC",
+      "Velocity Baton Rouge",
+      "Velocity Baton Rouge (KBTR)",
+      "Velocity BTR Holdings, LLC",
+      "Velocity Havasu Holdings, LLC",
+      "Velocity Lake Havasu",
+      "Velocity Lake Havasu (KHII)"
+    ],
+    "description": "Velocity FBO Network is Tallvine's U.S. fixed-base-operator platform, assembled from Odyssey Aviation's U.S. assets and expanded through add-on acquisitions. The network provides aircraft fueling, hangar, ground-handling and related business-aviation services across multiple U.S. airports. Velocity completed the acquisition of Havasu Air Center's KHII FBO assets and associated airport leaseholds on October 1, 2025 through Velocity Havasu Holdings, LLC; the location now operates as Velocity Lake Havasu, while aircraft management and Northstar Aviation Services remained outside the acquired perimeter. In February 2026, Velocity also acquired BTR Jet Center after Baton Rouge approved assignment of the operating and hangar leases to Velocity BTR Holdings, LLC; that location operates as Velocity Baton Rouge (KBTR), while BTR Air Charter remains outside the platform perimeter.",
+    "lastVerifiedAt": "2026-09-03T00:00:00.000Z"
+  },
+  "ownershipPeriodUpdates": [],
+  "ownershipPeriodRemovals": [],
+  "ownershipPeriodAdditions": [],
+  "ownershipPeriodTransfers": [],
+  "pendingOwnershipTransactionUpdates": [],
+  "pendingOwnershipTransactionAdditions": [],
+  "milestoneUpdates": [
+    {
+      "id": "cmrxpmrht059nivhei7b621j4",
+      "set": {
+        "date": "Sep 9-Oct 1, 2025",
+        "event": "Lake Havasu City approved transfer of the FBO leases and fueling sublease to Velocity Havasu Holdings, LLC on September 9, and Velocity completed the Havasu FBO asset acquisition on October 1.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-10-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://lakehavasucity.legistar.com/MeetingDetail.aspx?GUID=01EF0562-7E17-479F-95F9-C2808C0A33E5&ID=1330691&Search=",
+          "https://www.businesswire.com/news/home/20251001812038/en/Tallvine-Backed-Velocity-FBO-Network-Expands-with-Acquisition-of-Havasu-Air-Centers-Fixed-Base-Operator-Assets"
+        ]
+      }
+    }
+  ],
+  "milestoneTransfers": [
+    {
+      "id": "cmrxpmrae059fivheady6urju",
+      "date": "Oct 1, 2025",
+      "event": "The Havasu sellers retained aircraft-management activities and Northstar Aviation Services maintenance operations outside the transferred FBO assets.",
+      "category": "OTHER",
+      "sortDate": "2025-10-01T04:00:00.000Z",
+      "evidenceUrls": [
+        "https://www.businesswire.com/news/home/20251001812038/en/Tallvine-Backed-Velocity-FBO-Network-Expands-with-Acquisition-of-Havasu-Air-Centers-Fixed-Base-Operator-Assets"
+      ]
+    },
+    {
+      "id": "cmrxpmray059givhevw5o1sb2",
+      "date": "Oct 1, 2025",
+      "event": "Havasu Air Center's KHII FBO assets began operating within the Tallvine-backed network as Velocity Lake Havasu.",
+      "category": "EXPANSION",
+      "sortDate": "2025-10-01T04:00:00.000Z",
+      "evidenceUrls": [
+        "https://velocityfbo.com/locations/lake-havasu-khii/"
+      ]
+    },
+    {
+      "id": "cmrxpmre9059iivhee9ou30nd",
+      "date": "Oct 1, 2025",
+      "event": "Velocity identified Lake Havasu as its fourth operating location after the FBO asset acquisition.",
+      "category": "OTHER",
+      "sortDate": "2025-10-01T04:00:00.000Z",
+      "evidenceUrls": [
+        "https://www.businesswire.com/news/home/20251001812038/en/Tallvine-Backed-Velocity-FBO-Network-Expands-with-Acquisition-of-Havasu-Air-Centers-Fixed-Base-Operator-Assets"
+      ]
+    }
+  ],
+  "citationUpdates": [],
+  "citationAdditions": [
+    {
+      "id": null,
+      "label": "Lake Havasu City — Havasu FBO lease transfers",
+      "url": "https://lakehavasucity.legistar.com/MeetingDetail.aspx?GUID=01EF0562-7E17-479F-95F9-C2808C0A33E5&ID=1330691&Search=",
+      "sourceType": "OTHER",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Official transferor, assignee and FBO lease/sublease scope",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "Investment date source — Tallvine — Havasu Air Center",
+      "url": "https://www.businesswire.com/news/home/20251001812038/en/Tallvine-Backed-Velocity-FBO-Network-Expands-with-Acquisition-of-Havasu-Air-Centers-Fixed-Base-Operator-Assets",
+      "sourceType": "PRESS_RELEASE",
+      "purpose": "MILESTONE_EVENT",
+      "evidenceLabel": "October 1, 2025 closing, fourth-location status and retained-business boundary",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "Velocity — Lake Havasu (KHII)",
+      "url": "https://velocityfbo.com/locations/lake-havasu-khii/",
+      "sourceType": "WEBSITE",
+      "purpose": "OPERATIONS_ASSETS",
+      "evidenceLabel": "Current Velocity Lake Havasu brand and KHII operations",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "Velocity — August 2026 network expansion",
+      "url": "https://www.businesswire.com/news/home/20260810856121/en/Tallvine-Backed-Velocity-FBO-Network-Expands-with-Acquisition-of-SkyPlace-FBO",
+      "sourceType": "PRESS_RELEASE",
+      "purpose": "SUPPORTING_CONTEXT",
+      "evidenceLabel": "Current Tallvine backing and Lake Havasu network continuity",
+      "isPrimary": false
+    }
+  ]
+}

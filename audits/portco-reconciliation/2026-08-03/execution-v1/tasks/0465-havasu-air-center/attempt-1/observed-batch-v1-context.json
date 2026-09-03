@@ -1,0 +1,470 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0465:havasu-air-center:895ad5ae",
+  "taskIndex": 465,
+  "companyName": "Havasu Air Center",
+  "generatedAt": "2026-09-03T16:02:50.991Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0465-havasu-air-center/attempt-1/observed-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 465,
+    "taskId": "ledger:0465:havasu-air-center:895ad5ae",
+    "canonicalKey": "havasu-air-center|united-states",
+    "companyName": "Havasu Air Center",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 100,
+    "managers": [
+      "Tallvine"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "100-tallvine:repo-only:001:havasu-air-center"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjnxd01afivhehcfvdqbd"
+    ],
+    "seedKeys": [
+      "havasu air center|United States"
+    ],
+    "evidenceUrls": [
+      "https://velocityfbo.com/locations/",
+      "https://www.businesswire.com/news/home/20251001812038/en/Tallvine-Backed-Velocity-FBO-Network-Expands-with-Acquisition-of-Havasu-Air-Centers-Fixed-Base-Operator-Assets"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Tallvine MATCHED_ELSEWHERE: Add-on acquisition under Velocity FBO Network platform and already represented within the counted platform holding.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "REVIEWED_MERGE_CANONICAL_TARGET",
+    "targetCompanyId": "cmrxpjnya01ahivheyr6w92jk",
+    "linkedQueueTaskId": null,
+    "immutableRetiredCompanyId": "cmrxpjnxd01afivhehcfvdqbd"
+  },
+  "resolvedCanonicalKey": "velocity-fbo-network|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjnya01ahivheyr6w92jk",
+    "name": "Velocity FBO Network",
+    "aliases": [
+      "BTR Jet Center",
+      "Baton Rouge Jet Center, LLC",
+      "Velocity Baton Rouge",
+      "Velocity Baton Rouge (KBTR)",
+      "Velocity BTR Holdings, LLC"
+    ],
+    "sector": "TRANSPORTATION",
+    "subsector": "Fixed-base operator airport services",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Velocity FBO Network is Tallvine's U.S. fixed-base-operator platform, assembled from Odyssey Aviation's U.S. assets and expanded through add-on acquisitions. The network provides aircraft fueling, hangar, ground-handling and related business-aviation services across multiple U.S. airports. In February 2026, Velocity acquired BTR Jet Center after Baton Rouge approved assignment of the operating and hangar leases to Velocity BTR Holdings, LLC; the location now operates as Velocity Baton Rouge (KBTR). BTR Air Charter remains outside the platform perimeter because no evidence established that it was acquired.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://velocityfbo.com/",
+    "yearFounded": 2025,
+    "headquarters": "United States",
+    "lastVerifiedAt": "2026-08-19T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpkaiz02a5ivhet6uxm49k",
+        "managerName": "Tallvine",
+        "organizationName": "Tallvine",
+        "fundName": "Tallvine Middle Market Infrastructure Fund I",
+        "vehicleName": "Tallvine Middle Market Infrastructure Fund I; exact platform holding vehicle not publicly disclosed",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmr610599ivhew2pb2zlg",
+        "date": "2021",
+        "event": "The legacy BTR Jet Center east-ramp facility opened at Baton Rouge Metropolitan Airport.",
+        "category": "EXPANSION",
+        "sortDate": "2021-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://btrjet.com/"
+        ]
+      },
+      {
+        "id": "cmrxpmr6l059aivheydqnd267",
+        "date": "Feb 13, 2026",
+        "event": "BTR Jet Center began operating within the Tallvine-backed Velocity network as Velocity Baton Rouge (KBTR).",
+        "category": "EXPANSION",
+        "sortDate": "2026-02-13T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://velocityfbo.com/locations/baton-rouge-kbtr/",
+          "https://www.businesswire.com/news/home/20260213283848/en/Tallvine-Backed-Velocity-FBO-Network-Expands-with-Acquisition-of-BTR-Jet-Center"
+        ]
+      },
+      {
+        "id": "cmrxpmr76059bivhe5ix8uzam",
+        "date": "Feb 11-13, 2026",
+        "event": "Baton Rouge approved assignment of the BTR operating and hangar leases to Velocity BTR Holdings, LLC on February 11, and Velocity announced the completed BTR Jet Center acquisition on February 13.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-02-13T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.brla.gov/AgendaCenter/ViewFile/Minutes/_02112026-2316",
+          "https://www.businesswire.com/news/home/20260213283848/en/Tallvine-Backed-Velocity-FBO-Network-Expands-with-Acquisition-of-BTR-Jet-Center"
+        ]
+      },
+      {
+        "id": "cmrxpmr7p059civhen3zkqwgf",
+        "date": "Feb 13, 2026",
+        "event": "Velocity identified Baton Rouge as its fifth operating location following the BTR Jet Center acquisition.",
+        "category": "OTHER",
+        "sortDate": "2026-02-13T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.businesswire.com/news/home/20260213283848/en/Tallvine-Backed-Velocity-FBO-Network-Expands-with-Acquisition-of-BTR-Jet-Center"
+        ]
+      },
+      {
+        "id": "cmrxpmrgy059livheutgziz8s",
+        "date": "2025",
+        "event": "Tallvine began executing add-on acquisitions to expand the platform.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmrhd059mivhezgli32kb",
+        "date": "Jan 30, 2025",
+        "event": "Tallvine completed the inaugural Odyssey Aviation U.S. acquisition and launched its North American FBO platform.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-01-30T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://via.ritzau.dk/pressemeddelelse/14244238/tallvine-launches-north-america-fixed-based-operator-platform-with-odyssey-aviations-us-assets-as-inaugural-acquisition?lang=en&publisherId=90456"
+        ]
+      },
+      {
+        "id": "cmrxpmrht059nivhei7b621j4",
+        "date": "Oct 1, 2025",
+        "event": "Velocity added the Lake Havasu FBO location.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-10-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmrif059oivheabi7lrfa",
+        "date": "Jun 12, 2025",
+        "event": "Odyssey Aviation North America rebranded as Velocity FBO Network under Tallvine ownership.",
+        "category": "MANAGEMENT",
+        "sortDate": "2025-06-12T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.businesswire.com/news/home/20250612894793/en/Tallvine-Backed-Odyssey-Aviation-North-America-Unveils-Rebrand-to-Velocity-FBO-Network"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsvy00d9vivhepeudcmae",
+        "label": "Investment date source — Tallvine — Velocity FBO Network",
+        "url": "https://via.ritzau.dk/pressemeddelelse/14244238/tallvine-launches-north-america-fixed-based-operator-platform-with-odyssey-aviations-us-assets-as-inaugural-acquisition?lang=en&publisherId=90456",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Primary Tallvine platform launch and initial ownership evidence",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpsvz20d9xivhe4dea8lw5",
+        "label": "Business Wire — Velocity FBO Network",
+        "url": "https://www.businesswire.com/news/home/20250612894793/en/Tallvine-Backed-Odyssey-Aviation-North-America-Unveils-Rebrand-to-Velocity-FBO-Network",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Business Wire transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsw000d9zivhe7m6nnjjv",
+        "label": "Ainonline — Velocity FBO Network",
+        "url": "https://www.ainonline.com/aviation-news/business-aviation/2025-06-13/odyssey-aviaition-north-america-achieves-launch-velocity",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Ainonline transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsw110da1ivhettz4bfh7",
+        "label": "Velocityfbo — Velocity FBO Network",
+        "url": "https://velocityfbo.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Velocityfbo company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsw220da3ivheqbn9le7x",
+        "label": "Velocityfbo — Velocity FBO Network",
+        "url": "https://velocityfbo.com/locations/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Velocityfbo operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsw310da5ivhe419w04eb",
+        "label": "Velocityfbo — Velocity FBO Network",
+        "url": "https://velocityfbo.com/contact/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Velocityfbo — Velocity FBO Network",
+        "isPrimary": false
+      },
+      {
+        "id": "cmtlo0ncr0009wu2b57mar3jn",
+        "label": "Btrjet — BTR Jet Center",
+        "url": "https://btrjet.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Legacy BTR identity and Baton Rouge facility history",
+        "isPrimary": false
+      },
+      {
+        "id": "cmtlo0ngo000awu2b9r88tq14",
+        "label": "Business Wire",
+        "url": "https://www.businesswire.com/news/home/20260213283848/en/Tallvine-Backed-Velocity-FBO-Network-Expands-with-Acquisition-of-BTR-Jet-Center",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "February 13, 2026 completed BTR acquisition and platform integration",
+        "isPrimary": false
+      },
+      {
+        "id": "cmtlo0nmi000cwu2brvjgcycl",
+        "label": "Baton Rouge — February 11, 2026 council minutes",
+        "url": "https://www.brla.gov/AgendaCenter/ViewFile/Minutes/_02112026-2316",
+        "sourceType": "OTHER",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Official operating and hangar lease assignments to Velocity BTR Holdings, LLC",
+        "isPrimary": false
+      },
+      {
+        "id": "cmtlo0nsc000ewu2buzxwbzk9",
+        "label": "Velocity — Baton Rouge (KBTR)",
+        "url": "https://velocityfbo.com/locations/baton-rouge-kbtr/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current Velocity Baton Rouge brand, KBTR location and services",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Velocity FBO Network",
+    "investmentFirm": "Tallvine",
+    "sector": "Transportation",
+    "subsector": "Fixed-base operator airport services",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Tallvine Middle Market Infrastructure Fund I",
+    "description": "Velocity FBO Network is Tallvine's U.S. fixed-base-operator platform, assembled from Odyssey Aviation's U.S. assets and expanded through add-on acquisitions. The network provides aircraft fueling, hangar, ground-handling and related business-aviation services across multiple U.S. airports. In February 2026, Velocity acquired BTR Jet Center after Baton Rouge approved assignment of the operating and hangar leases to Velocity BTR Holdings, LLC; the location now operates as Velocity Baton Rouge (KBTR). BTR Air Charter remains outside the platform perimeter because no evidence established that it was acquired.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "website": "https://velocityfbo.com/",
+    "yearFounded": 2025,
+    "investmentYear": 2025,
+    "headquarters": "United States",
+    "milestones": [
+      {
+        "date": "2025",
+        "event": "Tallvine began executing add-on acquisitions to expand the platform.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Jan 30, 2025",
+        "event": "Tallvine completed the inaugural Odyssey Aviation U.S. acquisition and launched its North American FBO platform.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Oct 1, 2025",
+        "event": "Velocity added the Lake Havasu FBO location.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Jun 12, 2025",
+        "event": "Odyssey Aviation North America rebranded as Velocity FBO Network under Tallvine ownership.",
+        "category": "Management"
+      },
+      {
+        "date": "2021",
+        "event": "The legacy BTR Jet Center east-ramp facility opened at Baton Rouge Metropolitan Airport.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Feb 13, 2026",
+        "event": "BTR Jet Center began operating within the Tallvine-backed Velocity network as Velocity Baton Rouge (KBTR).",
+        "category": "Expansion"
+      },
+      {
+        "date": "Feb 11-13, 2026",
+        "event": "Baton Rouge approved assignment of the BTR operating and hangar leases to Velocity BTR Holdings, LLC on February 11, and Velocity announced the completed BTR Jet Center acquisition on February 13.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Feb 13, 2026",
+        "event": "Velocity identified Baton Rouge as its fifth operating location following the BTR Jet Center acquisition.",
+        "category": "Other"
+      }
+    ],
+    "management": [],
+    "sources": [
+      {
+        "label": "Investment date source — Tallvine — Velocity FBO Network",
+        "url": "https://via.ritzau.dk/pressemeddelelse/14244238/tallvine-launches-north-america-fixed-based-operator-platform-with-odyssey-aviations-us-assets-as-inaugural-acquisition?lang=en&publisherId=90456",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Primary Tallvine platform launch and initial ownership evidence"
+      },
+      {
+        "label": "Business Wire — Velocity FBO Network",
+        "url": "https://www.businesswire.com/news/home/20250612894793/en/Tallvine-Backed-Odyssey-Aviation-North-America-Unveils-Rebrand-to-Velocity-FBO-Network",
+        "type": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Business Wire transaction or milestone detail"
+      },
+      {
+        "label": "Ainonline — Velocity FBO Network",
+        "url": "https://www.ainonline.com/aviation-news/business-aviation/2025-06-13/odyssey-aviaition-north-america-achieves-launch-velocity",
+        "type": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Ainonline transaction or milestone detail"
+      },
+      {
+        "label": "Velocityfbo — Velocity FBO Network",
+        "url": "https://velocityfbo.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Velocityfbo company profile"
+      },
+      {
+        "label": "Velocityfbo — Velocity FBO Network",
+        "url": "https://velocityfbo.com/locations/",
+        "type": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Velocityfbo operations / asset details"
+      },
+      {
+        "label": "Velocityfbo — Velocity FBO Network",
+        "url": "https://velocityfbo.com/contact/",
+        "type": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Velocityfbo — Velocity FBO Network"
+      },
+      {
+        "label": "Btrjet — BTR Jet Center",
+        "url": "https://btrjet.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Legacy BTR identity and Baton Rouge facility history"
+      },
+      {
+        "label": "Business Wire",
+        "url": "https://www.businesswire.com/news/home/20260213283848/en/Tallvine-Backed-Velocity-FBO-Network-Expands-with-Acquisition-of-BTR-Jet-Center",
+        "type": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "February 13, 2026 completed BTR acquisition and platform integration"
+      },
+      {
+        "label": "Baton Rouge — February 11, 2026 council minutes",
+        "url": "https://www.brla.gov/AgendaCenter/ViewFile/Minutes/_02112026-2316",
+        "type": "OTHER",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Official operating and hangar lease assignments to Velocity BTR Holdings, LLC"
+      },
+      {
+        "label": "Velocity — Baton Rouge (KBTR)",
+        "url": "https://velocityfbo.com/locations/baton-rouge-kbtr/",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current Velocity Baton Rouge brand, KBTR location and services"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Tallvine",
+        "ownershipVehicle": "Tallvine Middle Market Infrastructure Fund I",
+        "fundName": "Tallvine Middle Market Infrastructure Fund I",
+        "vehicleName": "Tallvine Middle Market Infrastructure Fund I; exact platform holding vehicle not publicly disclosed",
+        "investmentYear": 2025,
+        "status": "Active",
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj3r500fhivhenx117u1s",
+        "fundName": "Tallvine Middle Market Infrastructure Fund I",
+        "managerId": "cmrxpidtt003mivhe3d7c82al",
+        "updatedAt": "2026-08-03T17:26:10.862Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpidtt003mivhe3d7c82al",
+        "name": "Tallvine",
+        "updatedAt": "2026-07-23T16:09:25.121Z"
+      }
+    ],
+    "redirects": [
+      {
+        "retiredId": "cmrxpjnwb01adivhea7g6ojct",
+        "companyId": "cmrxpjnya01ahivheyr6w92jk",
+        "reason": "CANONICAL_MERGE",
+        "createdAt": "2026-09-03T15:13:52.810Z"
+      }
+    ]
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0465:havasu-air-center:895ad5ae",
+    "taskIndex": 465,
+    "canonicalKey": "havasu-air-center|united-states",
+    "capturedAt": "2026-09-03T16:02:50.991Z",
+    "databaseRevision": "revision:f26d666174370e121c3300e285c4336261b2799c7adef9881cb40327df70c426",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "5986ad626eb2d56249be45f90d1d17c41e4cd018bc74e50aa23a6f0b78cab40a",
+    "productionSnapshotSha256": "aba21c49fcf6cd874834e09ea94957baeff350157bf17571973ad5eaddc0ac7d",
+    "targetCompanySnapshotSha256": "a2eb9e4b45e0fed7f6477251e859c7a8a8b93dbb91262adcadfbeeaa6010d115",
+    "seedEntrySha256": "9012a9f5b9174abad792af8761f564a9cb4f254f336b7ed6dab0a3becd893a26",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "44f814ffe27cf32ee32053a79f9d255ef3f8a3f95cbfeef052310599f0bb1b2e",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "0e19d8eb32e670542c10f14406428c9f754acf4f75367310514d46dc4cb610d7",
+      "organizationsSha256": "857de82bbe909b5421a0ccda9a741b41b27458ea16587d25d33ff5c2b8f0e1dc",
+      "citationsSha256": "dc90618d8db2e157b2b02ad69fcfb721b62add6a4d03baa5a745a36195bfa516",
+      "redirectsSha256": "09ffb8053816a48fbfba19f61b24b8dc838f5c58a81a62ae87dc6fde2aa4f23c"
+    },
+    "dependencySha256": "ae9e851b2fae7a4bdccf11e7875279ee351f02f2a26b8347f179f734e40fa11f",
+    "stateSha256": "b1580481bc88db0dfe55aab0e97b1f14672ed7464b8589d1f9678bf3ec426131",
+    "taskSnapshotSha256": "1558eecc9df579bb3b660b86a299d5196c555fcde2e4a42125a20da49200cb5c"
+  },
+  "contextSha256": "3921b3250285b04591783d82bd322badaf46f259f393dd3991e3c424ea21791f"
+}
