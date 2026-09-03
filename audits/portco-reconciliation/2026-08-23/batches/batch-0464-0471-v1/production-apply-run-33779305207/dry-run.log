@@ -1,0 +1,104 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:batch:apply
+> npx tsx scripts/portco-reconciliation/batch-apply-cli.ts --batch-manifest=audits/portco-reconciliation/2026-08-23/batches/batch-0464-0471-v1/batch-manifest-v5.json --batch-sha256=8a1fdefec1b25e6355969bcfc29052204953eb195d8aeeefa2f6c659a415b97d
+
+(node:3348) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "BATCH_DRY_RUN",
+  "batchId": "batch-0464-0471-v1",
+  "batchSha256": "8a1fdefec1b25e6355969bcfc29052204953eb195d8aeeefa2f6c659a415b97d",
+  "databaseWrites": false,
+  "seedWrites": false,
+  "plans": [
+    {
+      "companyName": "Tallvine North America Marine Infrastructure Platform",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to name, aliases, subsector, description, website, headquarters, lastVerifiedAt, ownershipPeriods, milestones, citations."
+        },
+        {
+          "kind": "ADD_OWNER",
+          "relationIds": [],
+          "detail": "Add 1 approved ownership period(s)."
+        }
+      ],
+      "changedFields": [
+        "aliases",
+        "citations",
+        "description",
+        "headquarters",
+        "lastVerifiedAt",
+        "milestones",
+        "name",
+        "ownershipPeriods",
+        "subsector",
+        "website"
+      ],
+      "retiredCompanyIds": []
+    },
+    {
+      "companyName": "Velocity FBO Network",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to aliases, description, lastVerifiedAt, milestones, citations."
+        },
+        {
+          "kind": "MERGE_COMPANIES",
+          "relationIds": [
+            "cmrxpjnxd01afivhehcfvdqbd"
+          ],
+          "detail": "merge 1 production duplicate(s)"
+        }
+      ],
+      "changedFields": [
+        "aliases",
+        "citations",
+        "description",
+        "lastVerifiedAt",
+        "milestones",
+        "redirects"
+      ],
+      "retiredCompanyIds": [
+        "cmrxpjnxd01afivhehcfvdqbd"
+      ]
+    },
+    {
+      "companyName": "Boldyn Networks",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to aliases, description, website, lastVerifiedAt, ownershipPeriods, milestones, citations."
+        },
+        {
+          "kind": "ADD_OWNER",
+          "relationIds": [],
+          "detail": "Add 1 approved ownership period(s)."
+        },
+        {
+          "kind": "MERGE_COMPANIES",
+          "relationIds": [
+            "seed:ledger:0471:boldyn-networks-us:9c03f01f"
+          ],
+          "detail": "retire 1 reviewed seed-only identity record(s)"
+        }
+      ],
+      "changedFields": [
+        "aliases",
+        "citations",
+        "description",
+        "lastVerifiedAt",
+        "milestones",
+        "ownershipPeriods",
+        "seedIdentities",
+        "website"
+      ],
+      "retiredCompanyIds": []
+    }
+  ]
+}

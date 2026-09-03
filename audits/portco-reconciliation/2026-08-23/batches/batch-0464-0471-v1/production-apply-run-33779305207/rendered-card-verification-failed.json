@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RENDERED_CARD_VERIFICATION",
+  "batchId": "batch-0464-0471-v1",
+  "batchSha256": "8a1fdefec1b25e6355969bcfc29052204953eb195d8aeeefa2f6c659a415b97d",
+  "releaseSha": "3bf318a3523a2a60c8f036f5a3d022e4fad03937",
+  "verifiedAt": "2026-09-03T17:55:00.000Z",
+  "canonicalUrl": "https://infra-ma-2.vercel.app/Infra-MA2/portfolio",
+  "productionDeployment": {
+    "deploymentId": "dpl_Grk8LWhs9dxT7sBRVaPWufZ3xXiP",
+    "deploymentUrl": "https://infra-ma-2-h01kw3zs6-mberry.vercel.app",
+    "canonicalAlias": "https://infra-ma-2.vercel.app",
+    "gitCommitSha": "3bf318a3523a2a60c8f036f5a3d022e4fad03937",
+    "ready": true
+  },
+  "receipt": {
+    "transactionId": "d010e236-3357-4d15-a05d-ded7f6531908",
+    "receiptSha256": "96a6cf4889da879dda9c0d98a7f6d550e8d3bc6fff8976e95d1cecd8b9811cf1",
+    "verificationSha256": "a3b7131295e5773362c32668251f41d65d6c3c4267a68f9b43bc9aa2739d1f70",
+    "valid": true,
+    "originalTransactionMustNotBeRepeated": true
+  },
+  "renderedChecks": [
+    {
+      "companyId": "cmrxpjnws01aeivhed4cak399",
+      "companyName": "Tallvine North America Marine Infrastructure Platform",
+      "drawerTextSha256": "8f37f7e96a5f1704dd48fd738b66bf62d3e88504dca6107affd024d3d67c54da",
+      "rowCount": 1,
+      "ownerCount": 2,
+      "sourceCount": 7,
+      "milestoneCount": 3,
+      "passed": false,
+      "failure": "Tallvine retained stale INFERRED attribution metadata and Thoroughbred LLC retained stale UNRESOLVED attribution metadata."
+    },
+    {
+      "companyId": "cmrxpjnya01ahivheyr6w92jk",
+      "companyName": "Velocity FBO Network",
+      "drawerTextSha256": "6b8d2f56b7f7595de1d31ce1b586024c456d080f6addddc12039cff0512178cb",
+      "rowCount": 1,
+      "ownerCount": 1,
+      "sourceCount": 14,
+      "milestoneCount": 11,
+      "passed": true
+    },
+    {
+      "companyId": "cmrxpj4cg00gbivhe0f3aiyud",
+      "companyName": "Boldyn Networks",
+      "drawerTextSha256": "ce39f62202ccea2f1a6fd567fc5ae332a9adcbda3bb79f11561c9ce3a0204ddd",
+      "rowCount": 1,
+      "ownerCount": 3,
+      "sourceCount": 6,
+      "milestoneCount": 12,
+      "passed": false,
+      "failure": "CPP Investments retained stale UNRESOLVED attribution metadata and AIMCo retained stale INFERRED attribution metadata."
+    }
+  ],
+  "apiVerification": [
+    {
+      "companyId": "cmrxpjnws01aeivhed4cak399",
+      "responseSha256": "6512ce9be92f0bb31fb2552be88f87bb2d836ad3a51993996ea08f8d0bd8939c",
+      "passed": true
+    },
+    {
+      "companyId": "cmrxpjnya01ahivheyr6w92jk",
+      "responseSha256": "50f4e0ddb681e1d9e9e9321323403e45762fe0609ccf0ae076c81da80c1da03a",
+      "passed": true
+    },
+    {
+      "companyId": "cmrxpj4cg00gbivhe0f3aiyud",
+      "responseSha256": "af8f79dd0d427a154e4e5b66b97cf70338302568ae8094f705a21bd39dbafefb",
+      "passed": true
+    },
+    {
+      "retiredCompanyId": "cmrxpjnxd01afivhehcfvdqbd",
+      "resolvedCompanyId": "cmrxpjnya01ahivheyr6w92jk",
+      "responseSha256": "50f4e0ddb681e1d9e9e9321323403e45762fe0609ccf0ae076c81da80c1da03a",
+      "passed": true
+    }
+  ],
+  "repairScope": {
+    "manifestPath": "audits/portfolio-fund-attribution/2026-09-03/scoped/portco-batch-0464-0471-tallvine-boldyn-attribution-repair/apply-manifest.json",
+    "manifestSha256": "10bff86b7ad763e6cefcd97bf85d21ac2779d0e761c924a925c08dc448dda2c3",
+    "expectedMutationCount": 5,
+    "ownershipPeriodIds": [
+      "cmrxpjph601cwivhebgbjrmu7",
+      "cmrxpk6mq0242ivhehnmpbwxw",
+      "cmtlqxciv000osi4x95czveaj",
+      "cmrxpkahg02a2ivheh9xpi96y",
+      "cmtlqx0s20006si4xjczrdlgf"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "fundLinkChanges": 0,
+    "ownershipIdentityChanges": 0,
+    "inferredWrites": 0
+  },
+  "assertions": {
+    "exactReleaseShaServed": true,
+    "immutableReceiptVerified": true,
+    "apiVerificationPassed": true,
+    "redirectVerificationPassed": true,
+    "noPartialApplication": true,
+    "consoleErrorsObserved": false,
+    "renderedVerificationPassed": false
+  },
+  "valid": false,
+  "result": "FAIL",
+  "reason": "The original atomic PortCo transaction is complete and must never be repeated. Freeze the one-active-bundle boundary and repair only the five stale attribution metadata rows before re-running rendered verification."
+}

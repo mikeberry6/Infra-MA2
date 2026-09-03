@@ -27,6 +27,15 @@ type SnapshotRecord = AttributionProductionSnapshot["records"][number] & {
   stake: string | null;
 };
 
+const investmentFirmAliases = new Map<string, string>([
+  ["manulife investment management", "manulife"],
+]);
+
+function canonicalInvestmentFirm(value: string): string {
+  const normalized = value.trim().toLowerCase();
+  return investmentFirmAliases.get(normalized) ?? normalized;
+}
+
 function ownerKey(input: {
   companyName: string;
   investmentFirm: string;
@@ -36,7 +45,7 @@ function ownerKey(input: {
 }): string {
   return JSON.stringify([
     input.companyName,
-    input.investmentFirm,
+    canonicalInvestmentFirm(input.investmentFirm),
     input.currentVehicleName,
     input.investmentYear,
     input.stake,

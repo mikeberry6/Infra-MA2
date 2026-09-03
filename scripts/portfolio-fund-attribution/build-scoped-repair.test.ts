@@ -147,4 +147,23 @@ describe("scoped attribution repair", () => {
       }),
     }));
   });
+
+  it("matches the reviewed Manulife seed label to the production manager name", () => {
+    const current = snapshot();
+    const reviewed = seed();
+    current.records[0].investmentFirm = "Manulife Investment Management";
+    reviewed.records[0].investmentFirm = "Manulife";
+
+    const result = buildScopedAttributionRepair({
+      asOfDate: "2026-09-01",
+      productionSnapshot: current,
+      seedManifest: reviewed,
+      companyNames: ["Example"],
+    });
+
+    expect(result.mutations[0]).toMatchObject({
+      ownershipPeriodId: "owner-1",
+      investmentFirm: "Manulife Investment Management",
+    });
+  });
 });

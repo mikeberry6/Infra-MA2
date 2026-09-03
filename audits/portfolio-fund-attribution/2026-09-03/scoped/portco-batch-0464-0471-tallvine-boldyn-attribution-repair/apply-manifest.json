@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-09-03",
+  "ledgerSha256": "4a691da90c3da7ba93871b658b3532a8df6b3a8931f98acb5b4b7337c247809b",
+  "sourceSnapshotSha256": "d4a0507acda32566a5104820d3a6544725c4fe4870d9325361533470c007b7d6",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 1,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 3,
+      "UNRESOLVED": 1
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  },
+  "expectedMutationCount": 5,
+  "mutations": [
+    {
+      "recordId": "OFA-BCD9535A9297",
+      "ownershipPeriodId": "cmrxpjph601cwivhebgbjrmu7",
+      "companyName": "Boldyn Networks",
+      "country": "United States / Canada",
+      "investmentFirm": "AIMCo",
+      "currentVehicleName": "AIMCo",
+      "databaseVehicleName": null,
+      "investmentYear": null,
+      "stake": "10% parent equity; last disclosed March 6, 2024",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "AIMCo directly discloses its 10% Boldyn parent interest without naming a separately managed fund or legal investment vehicle."
+      },
+      "evidenceUrls": [
+        "https://www.aimco.ca/insights/boldyn-networks-investment"
+      ]
+    },
+    {
+      "recordId": "OFA-BD1922EF6B42",
+      "ownershipPeriodId": "cmrxpk6mq0242ivhehnmpbwxw",
+      "companyName": "Boldyn Networks",
+      "country": "United States / Canada",
+      "investmentFirm": "Manulife Investment Management",
+      "currentVehicleName": "Manulife Infrastructure Fund II",
+      "databaseVehicleName": null,
+      "investmentYear": 2021,
+      "stake": "Minority interest in certain U.S. digital-infrastructure assets; exact percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": "Manulife Infrastructure Fund II",
+      "expected": {
+        "fundAttribution": "DISCLOSED",
+        "currentLinkedFundName": "Manulife Infrastructure Fund II"
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Manulife Infrastructure Fund II",
+        "attributionConfidence": null,
+        "attributionRationale": "Manulife Infrastructure Fund II remains the disclosed fund for Manulife's minority interest in specified U.S. assets; the canonical Boldyn row preserves that narrower ownership perimeter."
+      },
+      "evidenceUrls": [
+        "https://www.manulifeim.com/institutional/global/en/strategies/private-markets/infrastructure/infrastructure-team",
+        "https://www.aimco.ca/insights/boldyn-networks-investment"
+      ]
+    },
+    {
+      "recordId": "OFA-DB1BBAAE59C5",
+      "ownershipPeriodId": "cmtlqxciv000osi4x95czveaj",
+      "companyName": "Boldyn Networks",
+      "country": "United States / Canada",
+      "investmentFirm": "CPP Investments",
+      "currentVehicleName": "CPP Investments",
+      "databaseVehicleName": null,
+      "investmentYear": 2009,
+      "stake": "86% parent equity; last disclosed March 6, 2024",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "AIMCo's direct investment disclosure identifies CPP Investments as Boldyn's 86% parent shareholder and does not identify a separate managed fund or legal investment vehicle."
+      },
+      "evidenceUrls": [
+        "https://www.aimco.ca/insights/boldyn-networks-investment"
+      ]
+    },
+    {
+      "recordId": "OFA-F8BFB35A8A27",
+      "ownershipPeriodId": "cmrxpkahg02a2ivheh9xpi96y",
+      "companyName": "Tallvine North America Marine Infrastructure Platform",
+      "country": "United States",
+      "investmentFirm": "Tallvine",
+      "currentVehicleName": "Tallvine",
+      "databaseVehicleName": null,
+      "investmentYear": 2025,
+      "stake": "Lead sponsor; exact percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Tallvine is directly disclosed as the lead sponsor of the marine platform, but the applicable fund and legal holding vehicle are not publicly disclosed."
+      },
+      "evidenceUrls": [
+        "https://www.businesswire.com/news/home/20250922868774/en/Tallvine-Partners-Launches-North-America-Marine-Infrastructure-Platform-with-Acquisition-of-Donjon-Marine-Co.-LLC",
+        "https://www.businesswire.com/news/home/20260520867232/en/Tallvine-Partners-Expands-North-America-Marine-Infrastructure-Platform-with-Acquisition-of-Lind-Marine-LLC"
+      ]
+    },
+    {
+      "recordId": "OFA-BDEBD87ED66C",
+      "ownershipPeriodId": "cmtlqx0s20006si4xjczrdlgf",
+      "companyName": "Tallvine North America Marine Infrastructure Platform",
+      "country": "United States",
+      "investmentFirm": "Thoroughbred LLC",
+      "currentVehicleName": "Thoroughbred LLC",
+      "databaseVehicleName": null,
+      "investmentYear": 2025,
+      "stake": "Industrial partner and Donjon co-buyer; exact percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "UNRESOLVED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Transaction evidence identifies Thoroughbred LLC directly as Tallvine's industrial partner and a Donjon buyer; no separate managed fund or holding vehicle is disclosed."
+      },
+      "evidenceUrls": [
+        "https://www.businesswire.com/news/home/20250922868774/en/Tallvine-Partners-Launches-North-America-Marine-Infrastructure-Platform-with-Acquisition-of-Donjon-Marine-Co.-LLC",
+        "https://www.klgates.com/lawyers/Whitney-J-Smith/experience"
+      ]
+    }
+  ],
+  "manifestSha256": "10bff86b7ad763e6cefcd97bf85d21ac2779d0e761c924a925c08dc448dda2c3"
+}
