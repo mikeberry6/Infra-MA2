@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECIPROCAL_SOURCE_VERIFICATION",
+  "taskId": "ledger:0460:dcli:22d0fc27",
+  "taskIndex": 460,
+  "companyName": "DCLI",
+  "verifiedAt": "2026-09-03T14:35:00.000Z",
+  "canonicalTask": {
+    "taskId": "ledger:0262:direct-chassislink-inc-dcli:d3d4542b",
+    "sequence": 262,
+    "subject": "Direct ChassisLink, Inc. (DCLI)",
+    "status": "COMPLETED",
+    "companySnapshotSha256": "e08441148d0e0d962a616d0ce2975dcd10d136e9447b7fd15f3c984968a5d212",
+    "applyReceiptSha256": "c78403b7334738b21905b4224563e934f1b119dc1ced74e68a6086af1528ece3"
+  },
+  "sources": [
+    {
+      "url": "https://dcli.com/about-us/",
+      "status": "PREVIOUSLY_DIRECT_VERIFIED",
+      "contentSha256": "481f2e2900a47b754597beef8851dc59dfd5cbe8a9ea848d154a4b730a7cb532",
+      "note": "Canonical task 262's preserved direct-source verification establishes the DCLI and Direct ChassisLink, Inc. identity."
+    },
+    {
+      "url": "https://dcli.com/investor-information/",
+      "status": "PREVIOUSLY_DIRECT_VERIFIED",
+      "contentSha256": "07b1c342a0b1c2096c47b674f62dad7b71a4427a9758c0ae1a048f72d4e0987c",
+      "note": "Canonical task 262's preserved direct-source verification supports the same current operating platform."
+    }
+  ],
+  "conclusion": "Task 460 is a reciprocal shorthand identity for the already completed canonical task 262. Supersession preserves one company, one seed identity, and the original immutable receipt without a second production mutation."
+}

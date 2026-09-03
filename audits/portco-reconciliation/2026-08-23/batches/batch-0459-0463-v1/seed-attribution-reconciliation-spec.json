@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_SEED_ATTRIBUTION_RECONCILIATION_SPEC",
+  "batchId": "batch-0459-0463-v1",
+  "batchSha256": "e681cf3474e349ea5cdb2c33de59d7a3d301ab2c2fc1334738798892940070c7",
+  "reconciledAt": "2026-09-03T15:18:00Z",
+  "sourceManifestSha256": "392244e08a641506652e265b04d9b3df5aa608418a7c31258fe242c8ef72593d",
+  "rationale": "Remove the merged BTR Jet Center attribution row, replace the surviving Velocity FBO Network row with its disclosed Tallvine fund and exact unresolved platform vehicle, and reconcile QSP to its three current ownership roles without inferring percentages or legal vehicles. Wren House remains a direct sovereign-program investor, BlackRock's named Global Infrastructure Fund is disclosed but not linked because it has no curated fund row, and Blackstone remains unresolved at the exact fund level because QTS is the disclosed retained minority owner and operator.",
+  "removeRecordIds": [
+    "OFA-6C1B6F69546B"
+  ],
+  "upsertRecords": [
+    {
+      "recordId": "OFA-9F4805108208",
+      "companyName": "Velocity FBO Network",
+      "country": "United States",
+      "investmentFirm": "Tallvine",
+      "currentVehicleName": "Tallvine Middle Market Infrastructure Fund I; exact platform holding vehicle not publicly disclosed",
+      "investmentYear": 2025,
+      "stake": null,
+      "targetLinkedFundName": "Tallvine Middle Market Infrastructure Fund I",
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Tallvine Middle Market Infrastructure Fund I",
+      "attributionConfidence": null,
+      "attributionRationale": "Tallvine's official platform-launch disclosure identifies Fund I as the investor behind the Velocity platform while leaving the exact platform holding vehicle undisclosed.",
+      "evidenceUrls": [
+        "https://via.ritzau.dk/pressemeddelelse/14244238/tallvine-launches-north-america-fixed-based-operator-platform-with-odyssey-aviations-us-assets-as-inaugural-acquisition?lang=en&publisherId=90456",
+        "https://www.businesswire.com/news/home/20260213283848/en/Tallvine-Backed-Velocity-FBO-Network-Expands-with-Acquisition-of-BTR-Jet-Center"
+      ]
+    },
+    {
+      "recordId": "OFA-80F41FBDB7AB",
+      "companyName": "QSP",
+      "country": "United States",
+      "investmentFirm": "Wren House",
+      "currentVehicleName": "Not publicly disclosed",
+      "investmentYear": 2024,
+      "stake": "Direct investor in the majority consortium; exact percentage not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "Wren House directly discloses its investment in QSP but does not identify a separately managed fund, legal investment vehicle, or exact ownership percentage.",
+      "evidenceUrls": [
+        "https://www.whinfra.com/our-portfolio/qsp/",
+        "https://www.whinfra.com/qts-realty-trust-and-wren-house-successfully-complete-joint-venture-for-three-northern-virginia-data-centers-2/"
+      ]
+    },
+    {
+      "recordId": "OFA-E81CE250FBCA",
+      "companyName": "QSP",
+      "country": "United States",
+      "investmentFirm": "BlackRock",
+      "currentVehicleName": "BlackRock Global Infrastructure Fund; exact legal investing vehicle not publicly disclosed",
+      "investmentYear": 2024,
+      "stake": "Direct investor in the majority consortium; exact percentage not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "BlackRock Global Infrastructure Fund",
+      "attributionConfidence": null,
+      "attributionRationale": "Transaction counsel identifies BlackRock Global Infrastructure Fund as a direct QSP investor. The disclosed program has no matching curated fund row, and the exact legal investing vehicle and percentage remain unavailable.",
+      "evidenceUrls": [
+        "https://www.paulweiss.com/professionals/partners-and-counsel/kelann-stirling",
+        "https://www.whinfra.com/qts-realty-trust-and-wren-house-successfully-complete-joint-venture-for-three-northern-virginia-data-centers-2/"
+      ]
+    },
+    {
+      "recordId": "OFA-FF069710866E",
+      "companyName": "QSP",
+      "country": "United States",
+      "investmentFirm": "Blackstone",
+      "currentVehicleName": "QTS Realty Trust retained minority/operator interest; exact legal vehicle not publicly disclosed",
+      "investmentYear": 2024,
+      "stake": "Retained minority ownership and operating role; exact percentage not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "UNRESOLVED",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "The closing disclosure identifies QTS as QSP's retained minority owner and operator, and Blackstone is QTS's upstream owner. The exact Blackstone fund or legal vehicle holding that indirect interest is not publicly disclosed.",
+      "evidenceUrls": [
+        "https://www.whinfra.com/qts-realty-trust-and-wren-house-successfully-complete-joint-venture-for-three-northern-virginia-data-centers-2/",
+        "https://www.blackstone.com/news/press/blackstone-funds-complete-acquisition-of-qts-realty-trust/"
+      ]
+    }
+  ],
+  "specSha256": "7d6734621f82c8b07a4660a5a30868f4c295162d9d3bcfdbcd54da887f49a859"
+}

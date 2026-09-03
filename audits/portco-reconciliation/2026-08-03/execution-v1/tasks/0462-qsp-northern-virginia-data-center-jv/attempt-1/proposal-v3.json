@@ -1,0 +1,346 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0462:qsp-northern-virginia-data-center-jv:3a29bbb8",
+  "taskIndex": 462,
+  "asOfDate": "2026-09-03",
+  "generatedAt": "2026-09-03T14:48:00.000Z",
+  "canonicalKey": "qsp-northern-virginia-data-center-jv|united-states",
+  "companyName": "QSP (Northern Virginia Data Center JV)",
+  "actions": [
+    "CORRECT_COMPANY",
+    "ADD_OWNER"
+  ],
+  "sourceHoldingIds": [
+    "099-wren-house-infrastructure:holding:001:qsp-northern-virginia-data-center-jv"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Consolidate the requested Northern Virginia data-center joint-venture label into the existing canonical QSP record and correct its disclosed current-owner set. Wren House and BlackRock are direct investors, while QTS retained a minority ownership and operating role under upstream owner Blackstone. The three stabilized Northern Virginia facilities total approximately 100 MW; exact direct ownership percentages and legal investing vehicles are not publicly disclosed. Task 491 remains pending until this correction is applied and production-verified.",
+  "evidence": [
+    {
+      "url": "https://www.whinfra.com/our-portfolio/qsp/",
+      "purpose": "Primary current identity, investment-year, asset-boundary and Wren House participation evidence.",
+      "supports": [
+        "QSP is one 2024 Wren House investment comprising three Northern Virginia data centers",
+        "The facilities are fully constructed, fully leased and operated by QTS"
+      ]
+    },
+    {
+      "url": "https://www.whinfra.com/qts-realty-trust-and-wren-house-successfully-complete-joint-venture-for-three-northern-virginia-data-centers-2/",
+      "purpose": "Official transaction-completion and retained QTS ownership evidence.",
+      "supports": [
+        "The joint venture completed on November 13, 2024",
+        "Wren House and another fund acquired a majority stake while QTS retained ownership and the operating role",
+        "The three facilities provide approximately 100 MW of critical IT capacity"
+      ]
+    },
+    {
+      "url": "https://www.paulweiss.com/professionals/partners-and-counsel/kelann-stirling",
+      "purpose": "Transaction-counsel corroboration of BlackRock's direct investment.",
+      "supports": [
+        "BlackRock Global Infrastructure Fund invested directly in the Wren House and QTS joint venture",
+        "The investment concerns the same three Northern Virginia data centers"
+      ]
+    },
+    {
+      "url": "https://www.kbra.com/publications/tRLdQDbt/kbra-affirms-all-ratings-for-bx-2024-vlt5?format=web",
+      "purpose": "Current institutional collateral and capacity corroboration.",
+      "supports": [
+        "The portfolio continues to comprise three facilities totaling 99.6 MW",
+        "Sponsor affiliates include QTS, Blackstone and BlackRock"
+      ]
+    },
+    {
+      "url": "https://www.blackstone.com/news/press/blackstone-funds-complete-acquisition-of-qts-realty-trust/",
+      "purpose": "Official evidence that Blackstone is QTS's upstream owner.",
+      "supports": [
+        "Blackstone affiliates completed the acquisition of QTS in 2021",
+        "Blackstone is represented only as QTS's upstream owner, not as a substitute for BlackRock's direct joint-venture participation"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "3417528812744d219adf2d6471d799ee065652ca606a9f169d1f7ed012281c75",
+  "currentCompanySnapshotSha256": "e3a40c238ebc018282e79c829cfea45d337710788147a6f4be2b7a6dd374884b",
+  "executionLock": {
+    "taskSnapshotSha256": "ef47e4651865a50bce41606e40b2cf6bb601d53ad0400b5ac2d317caadf74cae",
+    "taskStateSha256": "4c11af4831a2690f2e72d5bf74fa9d040588d2cc39ab6dc74e8835df0368ba4f",
+    "taskDependencySha256": "87f76254001b522b439b657420826d9e1fa6488eb6fd3970a066dbb16a574e88",
+    "seedEntrySha256": "77292c5d5f09caf93fb0ebb4828e1ca5b2a79c9563a1322a946ee14c7f39fc8c",
+    "dependencies": {
+      "ownershipPeriodsSha256": "30ec71ec5cb3944ad5f143eccd733fe2a81d6c5688e272ffe759c66703a14396",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "2392f27421e525921e1e25f35012d26393e9c0fe1679fc350ed4754d6e11c2d2",
+      "citationsSha256": "689f3f44706a4ae07a1e765e67dea519c0747ee094b13c9f824636d68a1363ca",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi56u000wivhev4hy469z",
+        "name": "BlackRock",
+        "updatedAt": "2026-07-23T16:09:13.926Z"
+      },
+      {
+        "id": "cmrxpi5em000yivhekda3otkf",
+        "name": "Blackstone",
+        "updatedAt": "2026-07-23T16:09:14.206Z"
+      },
+      {
+        "id": "cmrxpijz1005jivhekerlz6i2",
+        "name": "Wren House",
+        "updatedAt": "2026-07-23T16:09:33.085Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpjp1e01c7ivheew361buw",
+    "name": "QSP",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Hyperscale data centers",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "QSP is a joint venture that owns three fully constructed hyperscale data centers in Northern Virginia. Its customer base consists of investment-grade hyperscale and enterprise tenants requiring large-scale colocation and critical IT capacity in the largest U.S. data center market. The operating model is asset heavy and contracted, with the portfolio fully leased and operated by QTS rather than dependent on speculative lease-up. Public materials state that the portfolio provides approximately 100 megawatts of critical IT capacity across the three facilities. Wren House completed its investment in the joint venture in 2024 as part of a recapitalization in which QTS retained an ownership stake and operating role. Current public materials also note the presence of another investor in the joint venture, but that investor's identity and ownership split are not fully disclosed on the cited sources.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2024,
+    "headquarters": "Virginia",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpkbni02byivhec07m80rm",
+        "managerName": "Wren House",
+        "organizationName": "Wren House",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmwje05g6ivhea2xf1b9p",
+        "date": "2024",
+        "event": "Wren House recorded an investment in QSP on its portfolio timeline.",
+        "category": "FINANCING",
+        "sortDate": "2024-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmwjv05g7ivheyhj0bacu",
+        "date": "2024",
+        "event": "The recapitalization delivered approximately 100 MW of critical IT capacity in fully constructed assets.",
+        "category": "FINANCING",
+        "sortDate": "2024-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmwmt05g8ivhe53dsipa8",
+        "date": "Nov 2024",
+        "event": "Wren House announced completion of the joint venture for three Northern Virginia data centers.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-11-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpt4k40dn5ivhef1p12ono",
+        "label": "Whinfra — QSP",
+        "url": "https://www.whinfra.com/our-portfolio/qsp/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Whinfra operations / asset details",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpt4l60dn7ivheuqmz0y4y",
+        "label": "Close date source — Wren House — QSP",
+        "url": "https://www.whinfra.com/qts-realty-trust-and-wren-house-successfully-complete-joint-venture-for-three-northern-virginia-data-centers-2/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Wren House closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpt4m80dn9ivhe4ii1wng8",
+        "label": "Qtsdatacenters — QSP",
+        "url": "https://www.qtsdatacenters.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Qtsdatacenters company profile",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "e3a40c238ebc018282e79c829cfea45d337710788147a6f4be2b7a6dd374884b",
+  "afterImage": {
+    "id": "cmrxpjp1e01c7ivheew361buw",
+    "name": "QSP",
+    "aliases": [
+      "QSP (Northern Virginia Data Center JV)"
+    ],
+    "sector": "DIGITAL",
+    "subsector": "Hyperscale data centers",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "QSP is a joint venture that owns three fully constructed and fully leased hyperscale data centers in Northern Virginia. The portfolio provides approximately 100 MW of critical IT capacity and is operated by QTS. Wren House and BlackRock completed their majority investment in November 2024, while QTS retained a minority ownership interest and the operating role under upstream owner Blackstone. Exact direct ownership percentages, the joint venture's full legal name and the legal investing vehicles are not publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2024,
+    "headquarters": "Northern Virginia",
+    "lastVerifiedAt": "2026-08-19T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpkbni02byivhec07m80rm",
+        "managerName": "Wren House",
+        "organizationName": "Wren House",
+        "fundName": null,
+        "vehicleName": "Not publicly disclosed",
+        "stake": "Direct investor in the majority consortium; exact percentage not publicly disclosed",
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "BlackRock",
+        "organizationName": "BlackRock",
+        "fundName": null,
+        "vehicleName": "BlackRock Global Infrastructure Fund; exact legal investing vehicle not publicly disclosed",
+        "stake": "Direct investor in the majority consortium; exact percentage not publicly disclosed",
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": null,
+        "managerName": "Blackstone",
+        "organizationName": "Blackstone",
+        "fundName": null,
+        "vehicleName": "QTS Realty Trust retained minority/operator interest; exact legal vehicle not publicly disclosed",
+        "stake": "Retained minority ownership and operating role; exact percentage not publicly disclosed",
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmwje05g6ivhea2xf1b9p",
+        "date": "2024",
+        "event": "Wren House and BlackRock invested directly in QSP; exact percentages and legal investing vehicles were not publicly disclosed.",
+        "category": "FINANCING",
+        "sortDate": "2024-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.whinfra.com/our-portfolio/qsp/",
+          "https://www.paulweiss.com/professionals/partners-and-counsel/kelann-stirling"
+        ]
+      },
+      {
+        "id": "cmrxpmwjv05g7ivheyhj0bacu",
+        "date": "Nov 13, 2024",
+        "event": "The recapitalization encompassed three fully constructed Northern Virginia facilities with approximately 100 MW of critical IT capacity.",
+        "category": "FINANCING",
+        "sortDate": "2024-11-13T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.whinfra.com/qts-realty-trust-and-wren-house-successfully-complete-joint-venture-for-three-northern-virginia-data-centers-2/"
+        ]
+      },
+      {
+        "id": "cmrxpmwmt05g8ivhe53dsipa8",
+        "date": "Nov 13, 2024",
+        "event": "Wren House and BlackRock completed their majority investment in QSP, while QTS retained a minority ownership interest and continued to operate the facilities.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-11-13T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.whinfra.com/qts-realty-trust-and-wren-house-successfully-complete-joint-venture-for-three-northern-virginia-data-centers-2/",
+          "https://www.paulweiss.com/professionals/partners-and-counsel/kelann-stirling"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpt4k40dn5ivhef1p12ono",
+        "label": "Whinfra — QSP",
+        "url": "https://www.whinfra.com/our-portfolio/qsp/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Primary current QSP identity, asset boundary and Wren House participation",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpt4l60dn7ivheuqmz0y4y",
+        "label": "Close date source — Wren House — QSP",
+        "url": "https://www.whinfra.com/qts-realty-trust-and-wren-house-successfully-complete-joint-venture-for-three-northern-virginia-data-centers-2/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "November 13, 2024 completion, approximately 100 MW scale and retained QTS ownership/operator role",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpt4m80dn9ivhe4ii1wng8",
+        "label": "Qtsdatacenters — QSP",
+        "url": "https://www.qtsdatacenters.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Qtsdatacenters company profile",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Paul Weiss — QSP transaction experience",
+        "url": "https://www.paulweiss.com/professionals/partners-and-counsel/kelann-stirling",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "BlackRock Global Infrastructure Fund direct investment in the QSP joint venture",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "KBRA — BX 2024-VLT5 surveillance",
+        "url": "https://www.kbra.com/publications/tRLdQDbt/kbra-affirms-all-ratings-for-bx-2024-vlt5?format=web",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Current three-property collateral boundary, 99.6 MW capacity and sponsor-affiliate context",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Close date source — Blackstone — QTS Data Centers",
+        "url": "https://www.blackstone.com/news/press/blackstone-funds-complete-acquisition-of-qts-realty-trust/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Blackstone acquisition completion and upstream ownership of QTS",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "4676aed70b44066eb1aac7ffcaf4aafd3617e7dc7ac003232b629e888fe5d08e",
+  "proposalSha256": "0fcd4d13fc2be33f080526b323ded56ca43f214abff1ad93c85fe91cd5d35ad9"
+}
