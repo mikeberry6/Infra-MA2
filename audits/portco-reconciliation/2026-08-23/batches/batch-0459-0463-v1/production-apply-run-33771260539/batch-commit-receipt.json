@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_COMMIT_RECEIPT",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0459-0463-v1",
+  "batchSha256": "e681cf3474e349ea5cdb2c33de59d7a3d301ab2c2fc1334738798892940070c7",
+  "releaseSha": "67c79690964dbf5bfef45719e54dd8cecf76e538",
+  "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+  "transactionId": "36fe930c-0cf3-411f-b5a8-4baf58ab1aa3",
+  "appliedAt": "2026-09-03T15:13:54.651Z",
+  "members": [
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0459:signal-rail-holdings:50c69045",
+      "taskIndex": 459,
+      "companyName": "Signal Rail Holdings",
+      "outcome": "EXCLUDED",
+      "decisionSha256": "c151287a04089c9e825e33b1387fd5fdec291732607ceb32e339ead4f3a7286c"
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0460:dcli:22d0fc27",
+      "taskIndex": 460,
+      "companyName": "DCLI",
+      "outcome": "SUPERSEDED",
+      "decisionSha256": "64178439258b505aedc338fa3fa80d9b528ca030ded43c12214c5bb69df16776"
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0461:i3-broadband:2d53909b",
+      "taskIndex": 461,
+      "companyName": "i3 Broadband",
+      "outcome": "VERIFIED_NO_CHANGE",
+      "decisionSha256": "a22def3647eed2eccd977a821414a2d2f7c850b1c906b4bd1d9c7bb1967de2e7"
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0462:qsp-northern-virginia-data-center-jv:3a29bbb8",
+      "taskIndex": 462,
+      "companyName": "QSP (Northern Virginia Data Center JV)",
+      "proposalSha256": "0fcd4d13fc2be33f080526b323ded56ca43f214abff1ad93c85fe91cd5d35ad9",
+      "approvalSha256": "87c08627917ffae392c7059abe4b8c7bc553513fb451328c0b29e3b4235273c2",
+      "afterImageSha256": "4676aed70b44066eb1aac7ffcaf4aafd3617e7dc7ac003232b629e888fe5d08e",
+      "approvedSeedEntrySha256": "c9ab73886a16ab033f0371a03afcb3a952bcbce7ff27272d1103f5482c71ae1a",
+      "companyId": "cmrxpjp1e01c7ivheew361buw",
+      "auditEventId": "cmtlo0j5n0008wu2botwzmopd"
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0463:btr-jet-center:402b91d4",
+      "taskIndex": 463,
+      "companyName": "BTR Jet Center",
+      "proposalSha256": "74854a3ca08c4cc721cf368c0b0a811e3c1e8be5a113fdbd5c27b63599074715",
+      "approvalSha256": "834bb41182687e3ce25b61b8289045ae7fd8554f495eb3f610c40e2f7e4845d0",
+      "afterImageSha256": "3bef8757e46d0197e2792eea2c7094d5a4ac615b9b5bd3fb18c990bb5cdd14b9",
+      "approvedSeedEntrySha256": "dcc7f23afd6040f32bfdb201ba525ac47a4bc93e5d45a059c66d654280f2acd6",
+      "companyId": "cmrxpjnya01ahivheyr6w92jk",
+      "auditEventId": "cmtlo0rwh000gwu2bkq9becdg"
+    }
+  ],
+  "verification": {
+    "databaseTransactionCommitted": true,
+    "seedArtifactVerifiedBeforeCommit": true,
+    "detailApiVerificationPending": true,
+    "partialDatabaseApplication": false
+  },
+  "receiptSha256": "afc6a1cd6aa208b4666448e83f88535372ef2f768cefe1285b599bb9847da646"
+}

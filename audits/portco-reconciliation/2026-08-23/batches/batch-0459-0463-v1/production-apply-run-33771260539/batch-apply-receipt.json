@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_RECEIPT",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0459-0463-v1",
+  "batchSha256": "e681cf3474e349ea5cdb2c33de59d7a3d301ab2c2fc1334738798892940070c7",
+  "releaseSha": "67c79690964dbf5bfef45719e54dd8cecf76e538",
+  "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+  "transactionId": "36fe930c-0cf3-411f-b5a8-4baf58ab1aa3",
+  "appliedAt": "2026-09-03T15:13:54.651Z",
+  "members": [
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0459:signal-rail-holdings:50c69045",
+      "taskIndex": 459,
+      "companyName": "Signal Rail Holdings",
+      "outcome": "EXCLUDED",
+      "decisionSha256": "c151287a04089c9e825e33b1387fd5fdec291732607ceb32e339ead4f3a7286c"
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0460:dcli:22d0fc27",
+      "taskIndex": 460,
+      "companyName": "DCLI",
+      "outcome": "SUPERSEDED",
+      "decisionSha256": "64178439258b505aedc338fa3fa80d9b528ca030ded43c12214c5bb69df16776"
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0461:i3-broadband:2d53909b",
+      "taskIndex": 461,
+      "companyName": "i3 Broadband",
+      "outcome": "VERIFIED_NO_CHANGE",
+      "decisionSha256": "a22def3647eed2eccd977a821414a2d2f7c850b1c906b4bd1d9c7bb1967de2e7"
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0462:qsp-northern-virginia-data-center-jv:3a29bbb8",
+      "taskIndex": 462,
+      "companyName": "QSP (Northern Virginia Data Center JV)",
+      "receipt": {
+        "schemaVersion": 1,
+        "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+        "runId": "portco-reconciliation-2026-08-03-v2",
+        "taskId": "ledger:0462:qsp-northern-virginia-data-center-jv:3a29bbb8",
+        "taskIndex": 462,
+        "companyName": "QSP (Northern Virginia Data Center JV)",
+        "companyId": "cmrxpjp1e01c7ivheew361buw",
+        "proposalSha256": "0fcd4d13fc2be33f080526b323ded56ca43f214abff1ad93c85fe91cd5d35ad9",
+        "approvalSha256": "87c08627917ffae392c7059abe4b8c7bc553513fb451328c0b29e3b4235273c2",
+        "productionSnapshotSha256": "3417528812744d219adf2d6471d799ee065652ca606a9f169d1f7ed012281c75",
+        "beforeCompanySnapshotSha256": "e3a40c238ebc018282e79c829cfea45d337710788147a6f4be2b7a6dd374884b",
+        "appliedAfterImageSha256": "4676aed70b44066eb1aac7ffcaf4aafd3617e7dc7ac003232b629e888fe5d08e",
+        "seedAfterImageSha256": "4676aed70b44066eb1aac7ffcaf4aafd3617e7dc7ac003232b629e888fe5d08e",
+        "approvedSeedEntrySha256": "c9ab73886a16ab033f0371a03afcb3a952bcbce7ff27272d1103f5482c71ae1a",
+        "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+        "transactionId": "36fe930c-0cf3-411f-b5a8-4baf58ab1aa3",
+        "auditEventId": "cmtlo0j5n0008wu2botwzmopd",
+        "appliedAt": "2026-09-03T15:13:54.651Z",
+        "verification": {
+          "databaseMatchesAfterImage": true,
+          "seedMatchesAfterImage": true,
+          "detailApiVerified": true
+        },
+        "receiptSha256": "c5e95d36bbc8074109c464ebd138e142df11dd5fb89aa4b32c60924a44afd996"
+      }
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0463:btr-jet-center:402b91d4",
+      "taskIndex": 463,
+      "companyName": "BTR Jet Center",
+      "receipt": {
+        "schemaVersion": 1,
+        "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+        "runId": "portco-reconciliation-2026-08-03-v2",
+        "taskId": "ledger:0463:btr-jet-center:402b91d4",
+        "taskIndex": 463,
+        "companyName": "BTR Jet Center",
+        "companyId": "cmrxpjnya01ahivheyr6w92jk",
+        "proposalSha256": "74854a3ca08c4cc721cf368c0b0a811e3c1e8be5a113fdbd5c27b63599074715",
+        "approvalSha256": "834bb41182687e3ce25b61b8289045ae7fd8554f495eb3f610c40e2f7e4845d0",
+        "productionSnapshotSha256": "56e3fc776e147c26982179f765b25a5ae9f4ac6fb4ccc9e72279e606b3fb7788",
+        "beforeCompanySnapshotSha256": "eb293ad55b2c24d489b26149537da2fbcc18f993fdc2dd601ae836ba896cdd3f",
+        "appliedAfterImageSha256": "3bef8757e46d0197e2792eea2c7094d5a4ac615b9b5bd3fb18c990bb5cdd14b9",
+        "seedAfterImageSha256": "3bef8757e46d0197e2792eea2c7094d5a4ac615b9b5bd3fb18c990bb5cdd14b9",
+        "approvedSeedEntrySha256": "dcc7f23afd6040f32bfdb201ba525ac47a4bc93e5d45a059c66d654280f2acd6",
+        "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+        "transactionId": "36fe930c-0cf3-411f-b5a8-4baf58ab1aa3",
+        "auditEventId": "cmtlo0rwh000gwu2bkq9becdg",
+        "appliedAt": "2026-09-03T15:13:54.651Z",
+        "verification": {
+          "databaseMatchesAfterImage": true,
+          "seedMatchesAfterImage": true,
+          "detailApiVerified": true
+        },
+        "receiptSha256": "07d0f395eeca948a9bb490cbffcc352da48cb3b1c5892b0c3918663099a29470"
+      }
+    }
+  ],
+  "verification": {
+    "databaseTransactionCommitted": true,
+    "seedArtifactVerified": true,
+    "allDetailApisVerified": true,
+    "partialDatabaseApplication": false
+  },
+  "receiptSha256": "4d2190cdfde14fe8a272fd61ac372ba6bcc873327a19f752a756ca8764f1331f"
+}
