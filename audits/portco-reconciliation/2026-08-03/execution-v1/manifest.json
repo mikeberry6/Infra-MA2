@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-09-03T18:00:00.000Z",
+  "updatedAt": "2026-09-03T18:30:00.000Z",
   "runStatus": "IDLE",
   "activeTaskId": null,
   "source": {
@@ -43268,20 +43268,26 @@
       "managerIndex": null,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "d8b038626f8cdac479a37f2f4a5d984927b720eddf92d1ea2a3b80fee5938480",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
-      "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "status": "SUPERSEDED",
+      "attempts": 1,
+      "startedAt": "2026-09-03T17:11:51.000Z",
+      "updatedAt": "2026-09-03T18:30:00.000Z",
+      "completedAt": "2026-09-03T18:30:00.000Z",
+      "exceptionReason": "Cleco Corporation is the predecessor name of the same Louisiana utility parent already reconciled as Cleco Corporate Holdings LLC in completed task 122. The current production record preserves Cleco Corporation as an alias and the reviewed ownership, pending-sale and subsidiary boundaries, so a second company would duplicate the canonical parent identity.",
+      "supersededByTaskId": "ledger:0122:cleco-corporate-holdings-llc:43ffb062",
+      "taskSnapshotSha256": "54cdedbae08ce215ab4ded4ed9b5e6ae728fbf7f80bfe4fce66b752a3b05c3d4",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0472-cleco-corporation/attempt-1/locked-batch-v1-task-snapshot.json",
+          "sha256": "54cdedbae08ce215ab4ded4ed9b5e6ae728fbf7f80bfe4fce66b752a3b05c3d4"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0472-cleco-corporation/attempt-1/terminal-decision-v1.json",
+          "sha256": "65c6d2b86af55dbef469df3409037c2815c4f89a66462d97abb7485557991334"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -43295,6 +43301,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "SUPERSEDED",
+          "at": "2026-09-03T18:30:00.000Z",
+          "reason": "Cleco Corporation is the predecessor name of the same Louisiana utility parent already reconciled as Cleco Corporate Holdings LLC in completed task 122. The current production record preserves Cleco Corporation as an alias and the reviewed ownership, pending-sale and subsidiary boundaries, so a second company would duplicate the canonical parent identity.",
+          "taskSnapshotSha256": "54cdedbae08ce215ab4ded4ed9b5e6ae728fbf7f80bfe4fce66b752a3b05c3d4",
+          "evidenceSha256": [
+            "49afca09e76ffb917d71c246f842dea38f914726906964b83fecdfd4dd375ac4",
+            "54cdedbae08ce215ab4ded4ed9b5e6ae728fbf7f80bfe4fce66b752a3b05c3d4",
+            "65c6d2b86af55dbef469df3409037c2815c4f89a66462d97abb7485557991334",
+            "cdab9f0dba86223bc09f2931aa874cd4b1f6d3d1d3af6b500c17eb8f3643bdcd"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -43408,20 +43429,26 @@
       "managerIndex": null,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "98f656154eaee35b89f81e84a1416048c38796e4f00d0fa14989c3185cea9c70",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
-      "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "status": "SUPERSEDED",
+      "attempts": 1,
+      "startedAt": "2026-09-03T17:11:51.000Z",
+      "updatedAt": "2026-09-03T18:30:00.000Z",
+      "completedAt": "2026-09-03T18:30:00.000Z",
+      "exceptionReason": "Extenet is the current brand of ExteNet Systems and therefore the same canonical company as deferred task 213. Task 213 remains the sole adjudication unit because its unresolved Northleaf disposition and JH-to-KH ownership-vehicle bridge affect the company regardless of which reciprocal label is used. Superseding this label removes a duplicate research unit without resolving or mutating the deferred ownership facts.",
+      "supersededByTaskId": "ledger:0213:extenet-formerly-extenet-systems:1d3fac1c",
+      "taskSnapshotSha256": "382f3eec7e486b40e0bb66c71921502cfa22ef720223406e013f450856ec8d0e",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0475-extenet/attempt-1/locked-batch-v1-task-snapshot.json",
+          "sha256": "382f3eec7e486b40e0bb66c71921502cfa22ef720223406e013f450856ec8d0e"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0475-extenet/attempt-1/terminal-decision-v1.json",
+          "sha256": "29142adb9c929514354f746fdf1da0ba496149b060fdc1929f576c81ddfc5959"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -43435,6 +43462,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "SUPERSEDED",
+          "at": "2026-09-03T18:30:00.000Z",
+          "reason": "Extenet is the current brand of ExteNet Systems and therefore the same canonical company as deferred task 213. Task 213 remains the sole adjudication unit because its unresolved Northleaf disposition and JH-to-KH ownership-vehicle bridge affect the company regardless of which reciprocal label is used. Superseding this label removes a duplicate research unit without resolving or mutating the deferred ownership facts.",
+          "taskSnapshotSha256": "382f3eec7e486b40e0bb66c71921502cfa22ef720223406e013f450856ec8d0e",
+          "evidenceSha256": [
+            "29142adb9c929514354f746fdf1da0ba496149b060fdc1929f576c81ddfc5959",
+            "382f3eec7e486b40e0bb66c71921502cfa22ef720223406e013f450856ec8d0e",
+            "49afca09e76ffb917d71c246f842dea38f914726906964b83fecdfd4dd375ac4",
+            "cdab9f0dba86223bc09f2931aa874cd4b1f6d3d1d3af6b500c17eb8f3643bdcd"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -43446,20 +43488,26 @@
       "managerIndex": null,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "edd49436b3227b6d648f109214cac44460be741b300197ef9840dcfd32e8192a",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
-      "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "status": "SUPERSEDED",
+      "attempts": 1,
+      "startedAt": "2026-09-03T17:11:51.000Z",
+      "updatedAt": "2026-09-03T18:30:00.000Z",
+      "completedAt": "2026-09-03T18:30:00.000Z",
+      "exceptionReason": "ExteNet Systems is the former name of Extenet and therefore the same canonical company as deferred task 213. Task 213 remains the sole adjudication unit because its unresolved Northleaf disposition and JH-to-KH ownership-vehicle bridge apply across both names. Superseding this former-name label removes a duplicate research unit while preserving every exact deferred exception.",
+      "supersededByTaskId": "ledger:0213:extenet-formerly-extenet-systems:1d3fac1c",
+      "taskSnapshotSha256": "592168e138a291e547080022ab77741594ff347fe83178058c60c624ead4a039",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0476-extenet-systems/attempt-1/locked-batch-v1-task-snapshot.json",
+          "sha256": "592168e138a291e547080022ab77741594ff347fe83178058c60c624ead4a039"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0476-extenet-systems/attempt-1/terminal-decision-v1.json",
+          "sha256": "ec7746200a15879e5706f501f0ec1825e9c0d47eece68c39830d5c025209b79c"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -43473,6 +43521,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "SUPERSEDED",
+          "at": "2026-09-03T18:30:00.000Z",
+          "reason": "ExteNet Systems is the former name of Extenet and therefore the same canonical company as deferred task 213. Task 213 remains the sole adjudication unit because its unresolved Northleaf disposition and JH-to-KH ownership-vehicle bridge apply across both names. Superseding this former-name label removes a duplicate research unit while preserving every exact deferred exception.",
+          "taskSnapshotSha256": "592168e138a291e547080022ab77741594ff347fe83178058c60c624ead4a039",
+          "evidenceSha256": [
+            "49afca09e76ffb917d71c246f842dea38f914726906964b83fecdfd4dd375ac4",
+            "592168e138a291e547080022ab77741594ff347fe83178058c60c624ead4a039",
+            "cdab9f0dba86223bc09f2931aa874cd4b1f6d3d1d3af6b500c17eb8f3643bdcd",
+            "ec7746200a15879e5706f501f0ec1825e9c0d47eece68c39830d5c025209b79c"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -44123,20 +44186,26 @@
       "managerIndex": null,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "5eadf4a099c2a9070eb8d563283c71a0a42089b66c0b2f254a8b245b064216a0",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
-      "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "status": "SUPERSEDED",
+      "attempts": 1,
+      "startedAt": "2026-09-03T17:11:51.000Z",
+      "updatedAt": "2026-09-03T18:30:00.000Z",
+      "completedAt": "2026-09-03T18:30:00.000Z",
+      "exceptionReason": "Puget Sound Energy is the regulated operating subsidiary of the same sponsor-held parent already reconciled as Puget Energy, Inc. in completed task 128. The current production record preserves Puget Sound Energy, PSE and the composite label as aliases while keeping ownership at the canonical parent, so a separate company would duplicate the reviewed identity and ownership perimeter.",
+      "supersededByTaskId": "ledger:0128:puget-energy:f96cd6be",
+      "taskSnapshotSha256": "a4659b5e63bb3aaa85151fc928cf9effcf73f3661eef6bb40eeb52d839da86e6",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0490-puget-energy-puget-sound-energy/attempt-1/locked-batch-v1-task-snapshot.json",
+          "sha256": "a4659b5e63bb3aaa85151fc928cf9effcf73f3661eef6bb40eeb52d839da86e6"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0490-puget-energy-puget-sound-energy/attempt-1/terminal-decision-v1.json",
+          "sha256": "cefeed8d8c413e67bf31aa99af14d8689b93af93dad020527ec0202e6515bf9e"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -44150,6 +44219,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "SUPERSEDED",
+          "at": "2026-09-03T18:30:00.000Z",
+          "reason": "Puget Sound Energy is the regulated operating subsidiary of the same sponsor-held parent already reconciled as Puget Energy, Inc. in completed task 128. The current production record preserves Puget Sound Energy, PSE and the composite label as aliases while keeping ownership at the canonical parent, so a separate company would duplicate the reviewed identity and ownership perimeter.",
+          "taskSnapshotSha256": "a4659b5e63bb3aaa85151fc928cf9effcf73f3661eef6bb40eeb52d839da86e6",
+          "evidenceSha256": [
+            "49afca09e76ffb917d71c246f842dea38f914726906964b83fecdfd4dd375ac4",
+            "a4659b5e63bb3aaa85151fc928cf9effcf73f3661eef6bb40eeb52d839da86e6",
+            "cdab9f0dba86223bc09f2931aa874cd4b1f6d3d1d3af6b500c17eb8f3643bdcd",
+            "cefeed8d8c413e67bf31aa99af14d8689b93af93dad020527ec0202e6515bf9e"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -44212,23 +44296,44 @@
       "managerIndex": null,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "ca07a6fa25627798601ea8a7b087035072a0e2323397a776485c06e55c887e47",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-09-03T17:11:51.000Z",
+      "updatedAt": "2026-09-03T18:30:00.000Z",
+      "completedAt": "2026-09-03T18:30:00.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "77a1bc610d3a14ea80252b8030ea06699fa449ab5b2e6c0b4f0a58227839dc66",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0492-skyservice-us/attempt-1/locked-batch-v1-task-snapshot.json",
+          "sha256": "77a1bc610d3a14ea80252b8030ea06699fa449ab5b2e6c0b4f0a58227839dc66"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0492-skyservice-us/attempt-1/proposal-v3.json",
+          "sha256": "b6806bde9adc6dcac518a5b2d579b344cab1f76a472ff1398f9217d4b1766665"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0492-skyservice-us/attempt-1/approval-v3.json",
+          "sha256": "44116678e169de520943429bde1a643a877a79d77c6c8c84f8bce735d402fb3e"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0472-0492-v1/production-apply-run-33785995490/batch-apply-receipt.json#members/4/receipt",
+          "sha256": "dccf021ba65bc1531313c5549c62f2a33ac94f06ef8b8a4226811c0b5d17cea5"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0492-skyservice-us/attempt-1/proposal-v3.json#afterImage",
+          "sha256": "ac9e239da7ae44646a31c2e22f53bcac030f3ab786a97798983f204a543f90af"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-09-03T18:30:00.000Z",
+        "auditEventId": "cmtltc1y10007p24xk22vdbzn",
+        "transactionId": "ea9797b7-cf88-4c56-974c-27f8a1021973",
+        "receiptSha256": "dccf021ba65bc1531313c5549c62f2a33ac94f06ef8b8a4226811c0b5d17cea5",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33785995490"
+      },
       "history": [
         {
           "sequence": 1,
@@ -44239,6 +44344,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-09-03T18:30:00.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0472-0492-v1.",
+          "taskSnapshotSha256": "77a1bc610d3a14ea80252b8030ea06699fa449ab5b2e6c0b4f0a58227839dc66",
+          "evidenceSha256": [
+            "44116678e169de520943429bde1a643a877a79d77c6c8c84f8bce735d402fb3e",
+            "49afca09e76ffb917d71c246f842dea38f914726906964b83fecdfd4dd375ac4",
+            "77a1bc610d3a14ea80252b8030ea06699fa449ab5b2e6c0b4f0a58227839dc66",
+            "ac9e239da7ae44646a31c2e22f53bcac030f3ab786a97798983f204a543f90af",
+            "b6806bde9adc6dcac518a5b2d579b344cab1f76a472ff1398f9217d4b1766665",
+            "cdab9f0dba86223bc09f2931aa874cd4b1f6d3d1d3af6b500c17eb8f3643bdcd",
+            "dccf021ba65bc1531313c5549c62f2a33ac94f06ef8b8a4226811c0b5d17cea5"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -44250,13 +44373,13 @@
       "managerIndex": null,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "3774994b93e8658a448d2516eae71e731ccdbccf6cd021076b4b04595fd827f7",
-      "status": "PENDING",
+      "status": "SUPERSEDED",
       "attempts": 0,
       "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
-      "supersededByTaskId": null,
+      "updatedAt": "2026-09-03T18:30:00.000Z",
+      "completedAt": "2026-09-03T18:30:00.000Z",
+      "exceptionReason": "Superseded by ledger:0492:skyservice-us:444ae080; its verified batch after-image covers the same canonical identity and ownership judgment.",
+      "supersededByTaskId": "ledger:0492:skyservice-us:444ae080",
       "taskSnapshotSha256": null,
       "artifacts": {
         "taskSnapshot": null,
@@ -44277,6 +44400,19 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "SUPERSEDED",
+          "at": "2026-09-03T18:30:00.000Z",
+          "reason": "Superseded by ledger:0492:skyservice-us:444ae080; its verified batch after-image covers the same canonical identity and ownership judgment.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "49afca09e76ffb917d71c246f842dea38f914726906964b83fecdfd4dd375ac4",
+            "cdab9f0dba86223bc09f2931aa874cd4b1f6d3d1d3af6b500c17eb8f3643bdcd"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -44408,5 +44544,5 @@
       ]
     }
   ],
-  "manifestSha256": "e2362e7bce3f4fccb4974eb18a719d5b62d00e181f3a4cb44b088105710b442b"
+  "manifestSha256": "101b9bc16c63dcea1a6f67be664e33380838442fa1d4fbb6be449787dded360d"
 }

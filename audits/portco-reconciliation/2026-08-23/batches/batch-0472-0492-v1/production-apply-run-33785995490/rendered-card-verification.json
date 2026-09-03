@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_RENDERED_CARD_VERIFICATION",
+  "verifiedAt": "2026-09-03T18:28:00.000Z",
+  "batchId": "batch-0472-0492-v1",
+  "batchSha256": "49afca09e76ffb917d71c246f842dea38f914726906964b83fecdfd4dd375ac4",
+  "batchReceiptSha256": "cdab9f0dba86223bc09f2931aa874cd4b1f6d3d1d3af6b500c17eb8f3643bdcd",
+  "batchTransactionId": "ea9797b7-cf88-4c56-974c-27f8a1021973",
+  "batchApplyReleaseSha": "e1edafdddb702b1711f51019ddd0e76829ead415",
+  "attributionRepair": {
+    "releaseSha": "45b9452f27ae63528ede00d0b1c3841da5b56c57",
+    "pullRequestNumber": 896,
+    "workflowRunId": "33787458367",
+    "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33787458367",
+    "manifestSha256": "b321cfd3e83f731d1ce2a300ea5d7a53189d9dc61a3d394b51dfa6608b7bf120",
+    "approvalSha256": "c810291b92edb938f58c8416f4b276d2192996d6c4003afc305eadbcbc1cb1a9",
+    "receiptSha256": "58813cc99fb09d33ffe39d9dd22a37de9bb9ed0d8bbe595c2be7c352379cb6c1",
+    "receiptFileSha256": "3db3838072289dd6cf6b5f478316d9f34250707be0401194e58e100e3b974fb2",
+    "pipelineRunId": "cmtltuezx0000f22buhod9av2",
+    "mutationCount": 1,
+    "changed": 1,
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "fundLinkChanges": 0,
+    "ownershipIdentityChanges": 0,
+    "inferredWrites": 0,
+    "allReceiptRowsVerified": true,
+    "seedParityVerified": true
+  },
+  "canonicalProductionUrl": "https://infra-ma-2.vercel.app/Infra-MA2/portfolio",
+  "productionDeployment": {
+    "id": "dpl_7xXg6J44Km3YkicgR4bzBsgy86Ko",
+    "immutableUrl": "infra-ma-2-qpus7jup7-mberry.vercel.app",
+    "githubCommitSha": "45b9452f27ae63528ede00d0b1c3841da5b56c57",
+    "githubRepositoryId": "1143556044",
+    "readyState": "READY",
+    "target": "production",
+    "canonicalAliasBound": true
+  },
+  "renderedChecks": {
+    "browser": "Playwright Chromium",
+    "publicPortCoCount": 1128,
+    "skyserviceUs": {
+      "companyId": "cmrxpjjen0137ivheavgfck2x",
+      "filteredCompanyRows": 1,
+      "canonicalNameVisible": true,
+      "drawerVisible": true,
+      "ownerCount": 1,
+      "instarVisible": true,
+      "fundAttributionPendingVisible": true,
+      "instarAgfEssentialInfrastructureFundIAbsent": true,
+      "estimatedAttributionAbsent": true,
+      "mediumConfidenceAbsent": true,
+      "sourceCount": 5,
+      "milestoneCount": 5,
+      "drawerTextSha256": "e2e02dec2c6f63d0771a66c8e837a4279a390329a098a00b52810c9de33f820c"
+    },
+    "retiredSkyserviceUsRoute": {
+      "retiredCompanyId": "cmrxpjje30136ivheq0equtbk",
+      "resolvedCompanyId": "cmrxpjjen0137ivheavgfck2x",
+      "resolvedCompanyName": "Skyservice US",
+      "redirectVerified": true
+    },
+    "browserConsoleIssueCount": 0
+  },
+  "apiChecks": [
+    {
+      "companyName": "Skyservice US",
+      "companyId": "cmrxpjjen0137ivheavgfck2x",
+      "httpStatus": 200,
+      "responseContentLengthBytes": 4411,
+      "responseContentSha256": "c713e0b34069212585bbb16fb988f2586d76ce37c47a35070bc6b677102e2a21",
+      "currentOwnerCount": 1,
+      "repairRowsVerified": 1
+    },
+    {
+      "companyName": "Skyservice US retired route",
+      "retiredCompanyId": "cmrxpjje30136ivheq0equtbk",
+      "resolvedCompanyId": "cmrxpjjen0137ivheavgfck2x",
+      "httpStatus": 200,
+      "responseContentLengthBytes": 4411,
+      "responseContentSha256": "c713e0b34069212585bbb16fb988f2586d76ce37c47a35070bc6b677102e2a21",
+      "redirectVerified": true
+    }
+  ],
+  "partialApplication": false,
+  "apiVerificationPassed": true,
+  "seedParityPassed": true,
+  "renderedVerificationPassed": true,
+  "boundaryConclusion": "Canonical production serves the protected attribution-repair SHA. Skyservice US renders Instar with Fund attribution pending and no stale InstarAGF Essential Infrastructure Fund I, Estimated, or Medium confidence metadata; its retired duplicate route resolves to the canonical company. The one repaired receipt row matches the seed attribution manifest, and the original PortCo transaction was not repeated.",
+  "result": "PASS"
+}

@@ -1,0 +1,43 @@
+
+> infra-tracker@1.0.0 portfolio:fund-attribution:apply
+> npx tsx scripts/apply-portfolio-fund-attribution.ts --manifest=audits/portfolio-fund-attribution/2026-09-03/scoped/portco-batch-0472-0492-skyservice-attribution-repair/apply-manifest.json --manifest-sha256=b321cfd3e83f731d1ce2a300ea5d7a53189d9dc61a3d394b51dfa6608b7bf120 --production-snapshot=audits/portfolio-fund-attribution/2026-09-03/scoped/portco-batch-0472-0492-skyservice-attribution-repair/production-snapshot.json --approval=audits/portfolio-fund-attribution/2026-09-03/scoped/portco-batch-0472-0492-skyservice-attribution-repair/approval.json --approval-sha256=c810291b92edb938f58c8416f4b276d2192996d6c4003afc305eadbcbc1cb1a9 --apply=true --write-token=APPLY_REVIEWED_PORTFOLIO_FUND_ATTRIBUTION --receipt=tmp/portfolio-fund-attribution/production/apply-receipt.json
+
+(node:3134) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_RECEIPT",
+  "manifestSha256": "b321cfd3e83f731d1ce2a300ea5d7a53189d9dc61a3d394b51dfa6608b7bf120",
+  "approvalSha256": "c810291b92edb938f58c8416f4b276d2192996d6c4003afc305eadbcbc1cb1a9",
+  "environment": "production",
+  "pipelineRunId": "cmtltuezx0000f22buhod9av2",
+  "mutationCount": 1,
+  "changed": 1,
+  "idempotent": false,
+  "beforeFingerprint": "746671f5eeb2a0e430710bd9b448fab9a41c364037a88f044b85f06ef9136aa0",
+  "afterFingerprint": "66a1ec57126afa66bf933448b5c2b1f223c9191febbce4d281e749c9d30d6b74",
+  "rows": [
+    {
+      "recordId": "OFA-6875270B1431",
+      "ownershipPeriodId": "cmrxpk5cv0221ivhe7gj76tym",
+      "companyId": "cmrxpjjen0137ivheavgfck2x",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "InstarAGF Essential Infrastructure Fund I",
+        "attributionConfidence": "MEDIUM",
+        "attributionRationale": "Estimated from manager match 1.00, vintage 2017 is 2 years before investment, North America-relevant mandate, historical vehicle retained for attribution only; next candidate trails by 17.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Instar's current fact sheet and portfolio evidence establish sponsorship of the U.S. platform, but the applicable fund and legal holding vehicle are not publicly disclosed."
+      }
+    }
+  ],
+  "appliedAt": "2026-09-03T17:56:55.727Z",
+  "receiptSha256": "58813cc99fb09d33ffe39d9dd22a37de9bb9ed0d8bbe595c2be7c352379cb6c1"
+}
