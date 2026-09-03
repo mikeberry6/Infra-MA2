@@ -3,7 +3,7 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-03T17:52:00.000Z",
+  "updatedAt": "2026-09-03T17:55:00.000Z",
   "activeBatchId": "batch-0464-0471-v1",
   "batches": [
     {
@@ -8554,7 +8554,7 @@
     },
     {
       "batchId": "batch-0464-0471-v1",
-      "state": "RELEASING",
+      "state": "VERIFYING_FAILED",
       "taskIds": [
         "ledger:0464:donjon-marine-co-llc:1f2eb8b6",
         "ledger:0465:havasu-air-center:895ad5ae",
@@ -8570,15 +8570,18 @@
         471
       ],
       "createdAt": "2026-09-03T17:00:00.000Z",
-      "updatedAt": "2026-09-03T17:52:00.000Z",
+      "updatedAt": "2026-09-03T17:55:00.000Z",
       "completedAt": null,
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0464-0471-v1/batch-manifest-v5.json",
         "sha256": "8a1fdefec1b25e6355969bcfc29052204953eb195d8aeeefa2f6c659a415b97d"
       },
-      "releaseSha": null,
-      "receipt": null,
-      "reason": null,
+      "releaseSha": "3bf318a3523a2a60c8f036f5a3d022e4fad03937",
+      "receipt": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0464-0471-v1/production-apply-run-33779305207/batch-apply-receipt.json",
+        "sha256": "96a6cf4889da879dda9c0d98a7f6d550e8d3bc6fff8976e95d1cecd8b9811cf1"
+      },
+      "reason": "Original atomic PortCo transaction d010e236-3357-4d15-a05d-ded7f6531908 and immutable receipt verified, and Velocity plus the Havasu redirect render correctly. Canonical Tallvine and Boldyn cards retain four stale attribution-only values: Tallvine UNRESOLVED renders INFERRED, Thoroughbred DIRECT_PROGRAM renders UNRESOLVED, CPP Investments DIRECT_PROGRAM renders UNRESOLVED, and AIMCo DIRECT_PROGRAM renders INFERRED. Freeze the one-active-bundle boundary for a scoped attribution repair; never repeat the original transaction.",
       "history": [
         {
           "sequence": 1,
@@ -8607,9 +8610,41 @@
             "8a1fdefec1b25e6355969bcfc29052204953eb195d8aeeefa2f6c659a415b97d"
           ],
           "reason": null
+        },
+        {
+          "sequence": 4,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-09-03T17:53:00.000Z",
+          "evidenceSha256": [
+            "8a1fdefec1b25e6355969bcfc29052204953eb195d8aeeefa2f6c659a415b97d"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 5,
+          "from": "APPLYING",
+          "to": "VERIFYING",
+          "at": "2026-09-03T17:54:00.000Z",
+          "evidenceSha256": [
+            "8a1fdefec1b25e6355969bcfc29052204953eb195d8aeeefa2f6c659a415b97d",
+            "96a6cf4889da879dda9c0d98a7f6d550e8d3bc6fff8976e95d1cecd8b9811cf1"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 6,
+          "from": "VERIFYING",
+          "to": "VERIFYING_FAILED",
+          "at": "2026-09-03T17:55:00.000Z",
+          "evidenceSha256": [
+            "8a1fdefec1b25e6355969bcfc29052204953eb195d8aeeefa2f6c659a415b97d",
+            "96a6cf4889da879dda9c0d98a7f6d550e8d3bc6fff8976e95d1cecd8b9811cf1"
+          ],
+          "reason": "Original atomic PortCo transaction d010e236-3357-4d15-a05d-ded7f6531908 and immutable receipt verified, and Velocity plus the Havasu redirect render correctly. Canonical Tallvine and Boldyn cards retain four stale attribution-only values: Tallvine UNRESOLVED renders INFERRED, Thoroughbred DIRECT_PROGRAM renders UNRESOLVED, CPP Investments DIRECT_PROGRAM renders UNRESOLVED, and AIMCo DIRECT_PROGRAM renders INFERRED. Freeze the one-active-bundle boundary for a scoped attribution repair; never repeat the original transaction."
         }
       ]
     }
   ],
-  "ledgerSha256": "4c3fe84271640b1fdd298ae335e86b8111cb59331882922fa9a27a70b73916de"
+  "ledgerSha256": "43013c5bcdcefebf8bcc6d7f55444ec508018f8ef590c2a17d2b77b0b34e4aeb"
 }

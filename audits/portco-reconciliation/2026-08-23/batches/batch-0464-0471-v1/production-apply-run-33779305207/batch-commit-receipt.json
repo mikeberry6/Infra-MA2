@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_COMMIT_RECEIPT",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0464-0471-v1",
+  "batchSha256": "8a1fdefec1b25e6355969bcfc29052204953eb195d8aeeefa2f6c659a415b97d",
+  "releaseSha": "3bf318a3523a2a60c8f036f5a3d022e4fad03937",
+  "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+  "transactionId": "d010e236-3357-4d15-a05d-ded7f6531908",
+  "appliedAt": "2026-09-03T16:35:17.351Z",
+  "members": [
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0464:donjon-marine-co-llc:1f2eb8b6",
+      "taskIndex": 464,
+      "companyName": "Donjon Marine Co., LLC",
+      "proposalSha256": "9a31e35396b436a058388ca97208abcbbc4049ab8864fcdaed49ce4b535eaf95",
+      "approvalSha256": "3c005c38b13f4c6764e5513957540a0cd0f99595de6c399062495a0692f9cdf8",
+      "afterImageSha256": "3f3b2c15695112cd645b5c76b4ecf16ad0529fb3fc49356f20efbef5872f58bf",
+      "approvedSeedEntrySha256": "c136c3767ab81d4918a4eb55e1a8bf947766283e50197d134ccab42786b4b24b",
+      "companyId": "cmrxpjnws01aeivhed4cak399",
+      "auditEventId": "cmtlqx2gu0009si4xnlfb3wf0"
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0465:havasu-air-center:895ad5ae",
+      "taskIndex": 465,
+      "companyName": "Havasu Air Center",
+      "proposalSha256": "3a675cf2b7be71bbc1c6b5d65e7b3adb95270351baca85211bf27a0513973e4f",
+      "approvalSha256": "29d15de4da065c220b232bcc6cdb42e161c4e9f6079cbbaf7777e80cd20a79e2",
+      "afterImageSha256": "15d2b59e1a402b5aba15630a936897c686a30de7bb87cc81cea428a7dc9e917e",
+      "approvedSeedEntrySha256": "019677c5939f3e99abba31510b554fe2b701d76d0ac29a3daea6aa5c878dacc1",
+      "companyId": "cmrxpjnya01ahivheyr6w92jk",
+      "auditEventId": "cmtlqxacd000isi4xe2jbt7vh"
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0466:alpha-generation-alphagen:c81d7304",
+      "taskIndex": 466,
+      "companyName": "Alpha Generation (AlphaGen)",
+      "outcome": "SUPERSEDED",
+      "decisionSha256": "08dfb1737d5288b9cfbb77c24623d9d0bf578df2bf26303fd711991155cdd31c"
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0470:boldyn-networks:3ce154eb",
+      "taskIndex": 470,
+      "companyName": "Boldyn Networks",
+      "proposalSha256": "90a8d4b8e20fbc46401629352a020e9c14dfe30e97834186d2358d17a1f401e7",
+      "approvalSha256": "5852c6f12ba29c21a96f109f585dc93ae80c7a9e0e2703f648cbdf1005573ed8",
+      "afterImageSha256": "7910575d7ba61b7667f9eb982d91073baff2ecdd18aa199b81d38f6f73e9cbc5",
+      "approvedSeedEntrySha256": "d61648a8fa89567a4b246e67ab7def8bb95831f592f02970c4900cc7b8f1f86a",
+      "companyId": "cmrxpj4cg00gbivhe0f3aiyud",
+      "auditEventId": "cmtlqxfge000ssi4xib84mznr"
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0471:boldyn-networks-us:9c03f01f",
+      "taskIndex": 471,
+      "companyName": "Boldyn Networks (US)",
+      "outcome": "SUPERSEDED",
+      "decisionSha256": "b6320a027997d975b5db2b3c736d20d87618c937094d5bd288612017d80c1b25"
+    }
+  ],
+  "verification": {
+    "databaseTransactionCommitted": true,
+    "seedArtifactVerifiedBeforeCommit": true,
+    "detailApiVerificationPending": true,
+    "partialDatabaseApplication": false
+  },
+  "receiptSha256": "77c7b1a86cfe318eeafe06530fc7c9748192b5028bf2da7125f85e338b7b99e5"
+}
