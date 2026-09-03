@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-09-03T12:30:30.000Z",
+  "updatedAt": "2026-09-03T13:20:00.000Z",
   "runStatus": "IDLE",
   "activeTaskId": null,
   "source": {
@@ -41773,20 +41773,26 @@
       "managerIndex": 94,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "e2353ca9f3014a2f41218bda5b22583313e3ba828baa1fe3706e854d2d7ad0fb",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "EXCLUDED",
+      "attempts": 1,
+      "startedAt": "2026-09-03T12:42:00.000Z",
+      "updatedAt": "2026-09-03T13:20:00.000Z",
+      "completedAt": "2026-09-03T13:20:00.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "b0cfd00fb0b8e3dafa8ce7405f30fc04e68c72edee47731c4b39872a2aca39ad",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0449-pike-corporation/attempt-1/locked-batch-v1-task-snapshot.json",
+          "sha256": "b0cfd00fb0b8e3dafa8ce7405f30fc04e68c72edee47731c4b39872a2aca39ad"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0449-pike-corporation/attempt-1/terminal-decision-v1.json",
+          "sha256": "13d11bc2f0e13a1c58c5c163f664fa460192bacc8539a90e3806c066282a9d8f"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -41800,6 +41806,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "EXCLUDED",
+          "at": "2026-09-03T13:20:00.000Z",
+          "reason": "The 2025 buyout closed and remains active, but Pike provides engineering, construction, maintenance and storm-response services for third-party infrastructure owners. TPG discussed Pike within Private Equity, La Caisse reports it under Private Equity, and no Pike-specific evidence ties it to Transition Infrastructure or proves qualifying utility/network ownership.",
+          "taskSnapshotSha256": "b0cfd00fb0b8e3dafa8ce7405f30fc04e68c72edee47731c4b39872a2aca39ad",
+          "evidenceSha256": [
+            "13d11bc2f0e13a1c58c5c163f664fa460192bacc8539a90e3806c066282a9d8f",
+            "acefac5800cf61c308375232fe05824217828402f49b84df1d41d4aeeeb3fea8",
+            "b0cfd00fb0b8e3dafa8ce7405f30fc04e68c72edee47731c4b39872a2aca39ad",
+            "b5d6a8194007b1f45f00966fa24ae8cac6cd20696f711d288240577bf34081ef"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -41811,20 +41832,26 @@
       "managerIndex": 95,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "71e1b351d0e16223e3d16f8810acd16a7184b4ced2e5a00ddf2b4a04ac6280ad",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
+      "status": "DEFERRED",
+      "attempts": 1,
+      "startedAt": "2026-09-03T12:42:00.000Z",
+      "updatedAt": "2026-09-03T13:20:00.000Z",
+      "completedAt": "2026-09-03T13:20:00.000Z",
+      "exceptionReason": "Research confirmed a November 2021 UBS Asset Management acquisition of a five-project ERCOT battery portfolio through its infrastructure/real-assets business, but the exact continuing manager-level legal boundary and current legal ownership of each original project could not be established from the completed evidence. Later public disclosures reference UBS-managed ERCOT portfolios of different sizes (including later 400 MW and ~730 MW portfolios), preventing a reliable one-to-one mapping of the original five assets.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "edbb33803907198a36f0b8153f299b5950cc038a23c5c295964e7f6afa424d2d",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0450-ubs-ercot-battery-storage-portfolio/attempt-1/locked-batch-v1-task-snapshot.json",
+          "sha256": "edbb33803907198a36f0b8153f299b5950cc038a23c5c295964e7f6afa424d2d"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0450-ubs-ercot-battery-storage-portfolio/attempt-1/terminal-decision-v1.json",
+          "sha256": "36c3d19f6df899de00093fb5196cf59c82046ff842d0171b1824d757393101ea"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -41838,6 +41865,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-03T13:20:00.000Z",
+          "reason": "Research confirmed a November 2021 UBS Asset Management acquisition of a five-project ERCOT battery portfolio through its infrastructure/real-assets business, but the exact continuing manager-level legal boundary and current legal ownership of each original project could not be established from the completed evidence. Later public disclosures reference UBS-managed ERCOT portfolios of different sizes (including later 400 MW and ~730 MW portfolios), preventing a reliable one-to-one mapping of the original five assets.",
+          "taskSnapshotSha256": "edbb33803907198a36f0b8153f299b5950cc038a23c5c295964e7f6afa424d2d",
+          "evidenceSha256": [
+            "36c3d19f6df899de00093fb5196cf59c82046ff842d0171b1824d757393101ea",
+            "acefac5800cf61c308375232fe05824217828402f49b84df1d41d4aeeeb3fea8",
+            "b5d6a8194007b1f45f00966fa24ae8cac6cd20696f711d288240577bf34081ef",
+            "edbb33803907198a36f0b8153f299b5950cc038a23c5c295964e7f6afa424d2d"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -41849,23 +41891,44 @@
       "managerIndex": 96,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "596223874539b20fb1698a9b6a0ba1e2fb23c9f7cceec1bcaf7c022f2205bb46",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-09-03T12:42:00.000Z",
+      "updatedAt": "2026-09-03T13:20:00.000Z",
+      "completedAt": "2026-09-03T13:20:00.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "7b1c50952455c5524b22cc7e432a6b471fecefcb34c4eb8929c21bee848d6571",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0451-cartier-u-s-district-energy-platform/attempt-1/locked-batch-v2-task-snapshot.json",
+          "sha256": "7b1c50952455c5524b22cc7e432a6b471fecefcb34c4eb8929c21bee848d6571"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0451-cartier-u-s-district-energy-platform/attempt-1/proposal-v1.json",
+          "sha256": "37cc5d3dba05b4eed3aaf6071952a75ee249cf05879781128e1fa554c02f886a"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0451-cartier-u-s-district-energy-platform/attempt-1/approval-v1.json",
+          "sha256": "0596e178ecfc6b8b062619365b11e745fcd391a7c5062618e7f7b4de68d66182"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0449-0453-v1/production-apply-run-33759867419/batch-apply-receipt.json#members/2/receipt",
+          "sha256": "ae2041bf0ec0196c356d71703983f5f84c8f878c56a4857c06ee90fce7f4c95b"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0451-cartier-u-s-district-energy-platform/attempt-1/proposal-v1.json#afterImage",
+          "sha256": "e30d2ca10045d219003ca4494f9d634be0ec727fe875dbaf3f67f751cee19809"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-09-03T13:20:00.000Z",
+        "auditEventId": "cmtlju5e20001ux2brccvru1a",
+        "transactionId": "308174a8-9fae-4637-bbd9-098e661bd263",
+        "receiptSha256": "ae2041bf0ec0196c356d71703983f5f84c8f878c56a4857c06ee90fce7f4c95b",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33759867419"
+      },
       "history": [
         {
           "sequence": 1,
@@ -41876,6 +41939,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-09-03T13:20:00.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0449-0453-v1.",
+          "taskSnapshotSha256": "7b1c50952455c5524b22cc7e432a6b471fecefcb34c4eb8929c21bee848d6571",
+          "evidenceSha256": [
+            "0596e178ecfc6b8b062619365b11e745fcd391a7c5062618e7f7b4de68d66182",
+            "37cc5d3dba05b4eed3aaf6071952a75ee249cf05879781128e1fa554c02f886a",
+            "7b1c50952455c5524b22cc7e432a6b471fecefcb34c4eb8929c21bee848d6571",
+            "acefac5800cf61c308375232fe05824217828402f49b84df1d41d4aeeeb3fea8",
+            "ae2041bf0ec0196c356d71703983f5f84c8f878c56a4857c06ee90fce7f4c95b",
+            "b5d6a8194007b1f45f00966fa24ae8cac6cd20696f711d288240577bf34081ef",
+            "e30d2ca10045d219003ca4494f9d634be0ec727fe875dbaf3f67f751cee19809"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -41887,20 +41968,26 @@
       "managerIndex": 97,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "0d92e5b1319a46925d2e8ff786e34d7a797bed3bed3345c678311de5c2548ee4",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
+      "status": "DEFERRED",
+      "attempts": 1,
+      "startedAt": "2026-09-03T12:42:00.000Z",
+      "updatedAt": "2026-09-03T13:20:00.000Z",
+      "completedAt": "2026-09-03T13:20:00.000Z",
+      "exceptionReason": "Research supports that Vision Ridge participated through a direct company-level financing announced in September 2022 alongside Keyframe and Cyrus. The release described over US$1bn of committed capital, while the SEC Form D separately reported US$61.048601m of issuer equity sold beginning 2022-08-12. June 2026 financing was debt only. Vision Ridge appears to correspond to an existing Vision Ridge Capital Partners alias, but current ownership continuity for every historical co-investor cannot be proven from direct current disclosures without guessing.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "84508fed86740af19b386884b6115c911ff36116084dc1b36656d43b693f89f6",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0452-terawatt-infrastructure/attempt-1/locked-batch-v1-task-snapshot.json",
+          "sha256": "84508fed86740af19b386884b6115c911ff36116084dc1b36656d43b693f89f6"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0452-terawatt-infrastructure/attempt-1/terminal-decision-v1.json",
+          "sha256": "c22c949a99758d6e7de60a7002deb53552cdb09fc9f87ccd0e47f41fbea60cac"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -41914,6 +42001,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-03T13:20:00.000Z",
+          "reason": "Research supports that Vision Ridge participated through a direct company-level financing announced in September 2022 alongside Keyframe and Cyrus. The release described over US$1bn of committed capital, while the SEC Form D separately reported US$61.048601m of issuer equity sold beginning 2022-08-12. June 2026 financing was debt only. Vision Ridge appears to correspond to an existing Vision Ridge Capital Partners alias, but current ownership continuity for every historical co-investor cannot be proven from direct current disclosures without guessing.",
+          "taskSnapshotSha256": "84508fed86740af19b386884b6115c911ff36116084dc1b36656d43b693f89f6",
+          "evidenceSha256": [
+            "84508fed86740af19b386884b6115c911ff36116084dc1b36656d43b693f89f6",
+            "acefac5800cf61c308375232fe05824217828402f49b84df1d41d4aeeeb3fea8",
+            "b5d6a8194007b1f45f00966fa24ae8cac6cd20696f711d288240577bf34081ef",
+            "c22c949a99758d6e7de60a7002deb53552cdb09fc9f87ccd0e47f41fbea60cac"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -41925,20 +42027,26 @@
       "managerIndex": 98,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "ac2ebede4f9e7faa358ac8ebe8a8758bd3b1cdca561224f2d35601f9abbbed56",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
+      "status": "DEFERRED",
+      "attempts": 1,
+      "startedAt": "2026-09-03T12:42:00.000Z",
+      "updatedAt": "2026-09-03T13:20:00.000Z",
+      "completedAt": "2026-09-03T13:20:00.000Z",
+      "exceptionReason": "Available research did not resolve a legally identifiable operating company with direct current Wafra ownership. Public Wafra materials referenced the platform only indirectly and did not establish the ownership vehicle, operating-company boundary or current in-scope infrastructure ownership. To avoid creating an unsupported portfolio entry, the company should remain unresolved.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "2c98d3e4324520204c2363beab0667f9e7bdf6fbdcabcfa9710791dcaa358c9a",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0453-american-inland-marine-holdings/attempt-1/locked-batch-v1-task-snapshot.json",
+          "sha256": "2c98d3e4324520204c2363beab0667f9e7bdf6fbdcabcfa9710791dcaa358c9a"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0453-american-inland-marine-holdings/attempt-1/terminal-decision-v1.json",
+          "sha256": "b5f983159115695bfb215c30e179adb90952857138f7dcac1ab0b898c45a3285"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -41952,6 +42060,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-03T13:20:00.000Z",
+          "reason": "Available research did not resolve a legally identifiable operating company with direct current Wafra ownership. Public Wafra materials referenced the platform only indirectly and did not establish the ownership vehicle, operating-company boundary or current in-scope infrastructure ownership. To avoid creating an unsupported portfolio entry, the company should remain unresolved.",
+          "taskSnapshotSha256": "2c98d3e4324520204c2363beab0667f9e7bdf6fbdcabcfa9710791dcaa358c9a",
+          "evidenceSha256": [
+            "2c98d3e4324520204c2363beab0667f9e7bdf6fbdcabcfa9710791dcaa358c9a",
+            "acefac5800cf61c308375232fe05824217828402f49b84df1d41d4aeeeb3fea8",
+            "b5d6a8194007b1f45f00966fa24ae8cac6cd20696f711d288240577bf34081ef",
+            "b5f983159115695bfb215c30e179adb90952857138f7dcac1ab0b898c45a3285"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -43813,5 +43936,5 @@
       ]
     }
   ],
-  "manifestSha256": "de5872f4f68203005f1bef6013d8572c1ec4b2371ac0e865dadf2374623c5d2d"
+  "manifestSha256": "8257f90799ac8f3d709b87f33bbd7aabd022cb2bc288fbf44fa8aa7d8d1eb2fc"
 }

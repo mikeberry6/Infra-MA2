@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-03T13:06:00.000Z",
-  "activeBatchId": "batch-0449-0453-v1",
+  "updatedAt": "2026-09-03T13:20:00.000Z",
+  "activeBatchId": null,
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -8264,7 +8264,7 @@
     },
     {
       "batchId": "batch-0449-0453-v1",
-      "state": "RELEASING",
+      "state": "COMPLETED",
       "taskIds": [
         "ledger:0449:pike-corporation:5a43238f",
         "ledger:0450:ubs-ercot-battery-storage-portfolio:d9b23a03",
@@ -8280,15 +8280,18 @@
         453
       ],
       "createdAt": "2026-09-03T12:42:00.000Z",
-      "updatedAt": "2026-09-03T13:06:00.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-09-03T13:20:00.000Z",
+      "completedAt": "2026-09-03T13:20:00.000Z",
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0449-0453-v1/batch-manifest.json",
         "sha256": "acefac5800cf61c308375232fe05824217828402f49b84df1d41d4aeeeb3fea8"
       },
-      "releaseSha": null,
-      "receipt": null,
-      "reason": null,
+      "releaseSha": "bccc564f32dfbbe130af7a4317ff17a5fceaf144",
+      "receipt": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0449-0453-v1/production-apply-run-33759867419/batch-apply-receipt.json",
+        "sha256": "b5d6a8194007b1f45f00966fa24ae8cac6cd20696f711d288240577bf34081ef"
+      },
+      "reason": "Canonical production served exact release SHA bccc564f32dfbbe130af7a4317ff17a5fceaf144; atomic transaction 308174a8-9fae-4637-bbd9-098e661bd263, immutable receipt, exact Cartier after-image, seed parity, API, source, ownership and rendered-card checks all passed with no partial application.",
       "history": [
         {
           "sequence": 1,
@@ -8317,9 +8320,41 @@
             "acefac5800cf61c308375232fe05824217828402f49b84df1d41d4aeeeb3fea8"
           ],
           "reason": null
+        },
+        {
+          "sequence": 4,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-09-03T13:13:40.000Z",
+          "evidenceSha256": [
+            "acefac5800cf61c308375232fe05824217828402f49b84df1d41d4aeeeb3fea8"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 5,
+          "from": "APPLYING",
+          "to": "VERIFYING",
+          "at": "2026-09-03T13:17:00.000Z",
+          "evidenceSha256": [
+            "acefac5800cf61c308375232fe05824217828402f49b84df1d41d4aeeeb3fea8",
+            "b5d6a8194007b1f45f00966fa24ae8cac6cd20696f711d288240577bf34081ef"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 6,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-09-03T13:20:00.000Z",
+          "evidenceSha256": [
+            "acefac5800cf61c308375232fe05824217828402f49b84df1d41d4aeeeb3fea8",
+            "b5d6a8194007b1f45f00966fa24ae8cac6cd20696f711d288240577bf34081ef"
+          ],
+          "reason": "Canonical production served exact release SHA bccc564f32dfbbe130af7a4317ff17a5fceaf144; atomic transaction 308174a8-9fae-4637-bbd9-098e661bd263, immutable receipt, exact Cartier after-image, seed parity, API, source, ownership and rendered-card checks all passed with no partial application."
         }
       ]
     }
   ],
-  "ledgerSha256": "fa77e19625c3a6cab97d7abccee6c97992addde2e6034bac53fb6c066097cb8f"
+  "ledgerSha256": "ea6792607bd57ee69769cb24f1069720e26e6d8e00beb88631005577ea46a61c"
 }

@@ -1,0 +1,265 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0451:cartier-u-s-district-energy-platform:46304894",
+  "taskIndex": 451,
+  "companyName": "Cartier (U.S. District Energy Platform)",
+  "generatedAt": "2026-09-03T13:20:04.412Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0451-cartier-u-s-district-energy-platform/attempt-1/verified-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 451,
+    "taskId": "ledger:0451:cartier-u-s-district-energy-platform:46304894",
+    "canonicalKey": "cartier-u-s-district-energy-platform|united-states",
+    "companyName": "Cartier (U.S. District Energy Platform)",
+    "country": "United States",
+    "decisionStatus": "READY_FOR_PROPOSAL",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 96,
+    "managers": [
+      "Vauban Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [
+        "CREATE_COMPANY"
+      ],
+      "ownership": [
+        "ADD_OWNER"
+      ],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "096-vauban-infrastructure-partners:holding:001:cartier-u-s-district-energy-platform"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://www.vauban-ip.com/en/investment/cartier/",
+      "https://www.vauban-ip.com/en/investments/",
+      "https://www.vauban-ip.com/en/news/vauban-infrastructure-partners-acquires-us-district-energy-platform/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "No exact normalized production or seed match exists. Census evidence supports a new canonical company with 1 manager holding record(s).",
+    "unresolvedQuestions": []
+  },
+  "targetResolution": {
+    "method": "REVIEWED_POST_QUEUE_EMBEDDED_PORTFOLIO_IDENTITY",
+    "targetCompanyId": "cmrxpjorr01btivheaha4nor0",
+    "linkedQueueTaskId": null,
+    "reviewedEvidenceUrls": [
+      "https://www.prnewswire.com/news-releases/adam-schiff-is-appointed-ceo-of-cartier-energy-holding-a-vauban-infrastructure-partners-investment-funds-owned-company-301593623.html"
+    ]
+  },
+  "resolvedCanonicalKey": "cartier-u-s-district-energy-platform|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjorr01btivheaha4nor0",
+    "name": "Cartier Energy Holding",
+    "aliases": [
+      "Cartier",
+      "Cartier Energy",
+      "Cartier (U.S. District Energy Platform)"
+    ],
+    "sector": "UTILITIES",
+    "subsector": "District energy",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Cartier Energy is a U.S. district energy platform that owns and operates systems providing steam, chilled water, hot water, and electricity. Its customers include universities, hospitals, municipalities, and commercial and industrial users that rely on essential thermal and energy infrastructure. The business is asset-heavy and infrastructure based, with revenues supported by utility-style service arrangements tied to on-site and campus energy systems. Public materials describe a portfolio of eight district energy systems located across New Jersey, Michigan, Delaware, Massachusetts, and Connecticut. Vauban Infrastructure Partners identifies Cartier as its first North American investment, and public disclosures indicate the platform is owned through Vauban-managed investment funds. The reviewed public materials do not disclose the exact ownership percentages of those funds within the current structure.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "New Jersey; Michigan; Delaware; Massachusetts; Connecticut",
+    "lastVerifiedAt": "2026-09-03T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpkbdz02bjivhe0ic95uuw",
+        "managerName": "Vauban",
+        "organizationName": "Vauban",
+        "fundName": null,
+        "vehicleName": "Cartier Energy Fund SCS; Cartier Energy Fund II SCS",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmvc505enivhev6pxrehe",
+        "date": "2022",
+        "event": "Vauban completed the acquisition of the Cartier district energy platform from prior owners.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmvf305eoivhehll0ks7r",
+        "date": "2022",
+        "event": "Vauban identified Cartier as its first investment in North America.",
+        "category": "FINANCING",
+        "sortDate": "2022-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmvfq05epivhe214hyesy",
+        "date": "Jul 2022",
+        "event": "Vauban announced the appointment of Adam Schiff as CEO of Cartier Energy Holding.",
+        "category": "MANAGEMENT",
+        "sortDate": "2022-07-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpt2d70djpivheayzk3xq8",
+        "label": "Vauban Ip — Cartier Energy Holding",
+        "url": "https://vauban-ip.com/en/assets",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Vauban Ip transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpt2ea0djrivhe98jnhv7a",
+        "label": "Investment history source — Vauban — Cartier Energy Holding",
+        "url": "https://www.prnewswire.com/news-releases/adam-schiff-is-appointed-ceo-of-cartier-energy-holding-a-vauban-infrastructure-partners-investment-funds-owned-company-301593623.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Cartier brand, Cartier Energy Holding, LLC identity and Vauban ownership",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpt2fa0djtivheobfzk9eh",
+        "label": "Districtenergy — Cartier Energy Holding",
+        "url": "https://www.districtenergy.org/membership-services/member-directory/findacompany/companyprofile?UserKey=fa8e75c4-2b14-4d66-b9d6-51ea1557e476",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Districtenergy — Cartier Energy Holding",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpt2gb0djvivheut8uzqrm",
+        "label": "Vauban Ip — Cartier Energy Holding",
+        "url": "https://vauban-ip.com/_assets/showcase-container/82e28051-cce9-45fd-8819-c321c9e053cf_Vauban-IP-Sustainability-report-2022-web.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Vauban Ip — Cartier Energy Holding",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Cartier Energy Holding",
+    "investmentFirm": "Vauban",
+    "sector": "Utilities",
+    "subsector": "District energy",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Cartier Energy Fund SCS; Cartier Energy Fund II SCS",
+    "description": "Cartier Energy is a U.S. district energy platform that owns and operates systems providing steam, chilled water, hot water, and electricity. Its customers include universities, hospitals, municipalities, and commercial and industrial users that rely on essential thermal and energy infrastructure. The business is asset-heavy and infrastructure based, with revenues supported by utility-style service arrangements tied to on-site and campus energy systems. Public materials describe a portfolio of eight district energy systems located across New Jersey, Michigan, Delaware, Massachusetts, and Connecticut. Vauban Infrastructure Partners identifies Cartier as its first North American investment, and public disclosures indicate the platform is owned through Vauban-managed investment funds. The reviewed public materials do not disclose the exact ownership percentages of those funds within the current structure.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2022,
+    "headquarters": "New Jersey; Michigan; Delaware; Massachusetts; Connecticut",
+    "milestones": [
+      {
+        "date": "2022",
+        "event": "Vauban completed the acquisition of the Cartier district energy platform from prior owners.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "2022",
+        "event": "Vauban identified Cartier as its first investment in North America.",
+        "category": "Financing"
+      },
+      {
+        "date": "Jul 2022",
+        "event": "Vauban announced the appointment of Adam Schiff as CEO of Cartier Energy Holding.",
+        "category": "Management"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Vauban Ip — Cartier Energy Holding",
+        "url": "https://vauban-ip.com/en/assets",
+        "type": "ARTICLE",
+        "purpose": "MILESTONE_EVENT"
+      },
+      {
+        "label": "Investment history source — Vauban — Cartier Energy Holding",
+        "url": "https://www.prnewswire.com/news-releases/adam-schiff-is-appointed-ceo-of-cartier-energy-holding-a-vauban-infrastructure-partners-investment-funds-owned-company-301593623.html",
+        "type": "PRESS_RELEASE"
+      },
+      {
+        "label": "Districtenergy — Cartier Energy Holding",
+        "url": "https://www.districtenergy.org/membership-services/member-directory/findacompany/companyprofile?UserKey=fa8e75c4-2b14-4d66-b9d6-51ea1557e476",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Vauban Ip — Cartier Energy Holding",
+        "url": "https://vauban-ip.com/_assets/showcase-container/82e28051-cce9-45fd-8819-c321c9e053cf_Vauban-IP-Sustainability-report-2022-web.pdf",
+        "type": "PRESENTATION"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Vauban",
+        "ownershipVehicle": "Cartier Energy Fund SCS; Cartier Energy Fund II SCS",
+        "investmentYear": 2022,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpil1m005vivhets7t0j3n",
+        "name": "Vauban",
+        "updatedAt": "2026-07-23T16:09:34.474Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0451:cartier-u-s-district-energy-platform:46304894",
+    "taskIndex": 451,
+    "canonicalKey": "cartier-u-s-district-energy-platform|united-states",
+    "capturedAt": "2026-09-03T13:20:04.412Z",
+    "databaseRevision": "revision:2f9c1563280277e1fe31cab77cd2327fca07e074dfb7db7f99463a63b81a5293",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "596223874539b20fb1698a9b6a0ba1e2fb23c9f7cceec1bcaf7c022f2205bb46",
+    "productionSnapshotSha256": "ecedf466372f315b882457be3085e0072efef8a774ad59cfecc65667e87fdf4c",
+    "targetCompanySnapshotSha256": "e30d2ca10045d219003ca4494f9d634be0ec727fe875dbaf3f67f751cee19809",
+    "seedEntrySha256": "4586f781fb93971708e635633050a169767bde1e5cefbd049c36c99d2d96ed69",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "2d4da536c6a586b6d364e442a9c9163e729efa9d5433b54cbee956456c21564c",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "5f2ebc95668078118eb3a7cabb1a91cb8e3083711552027800fcb3f0e9aa5210",
+      "citationsSha256": "87c8cba7a13b96e56da7528fb25e590826a8233f221eb2d068c7a583e9794cb7",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "167d0892cf4a77b5fa8dbc8692630b9c5fa39e2b0f3bbc0226fd9fb0108a9e7a",
+    "stateSha256": "657ec26b6f29eb58c6d1ffbbc7a36bdd176c11cc7222694819fc217234f0376c",
+    "taskSnapshotSha256": "73266f3d8b4bc781c07a7230afc7cc2ffbc23deeebd743af975f684c00093b57"
+  },
+  "contextSha256": "bbc11e9b305486bdfead36aa1727d4d16185e27d4f174be774749db6a4fc111a"
+}
