@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-03T17:55:00.000Z",
-  "activeBatchId": "batch-0464-0471-v1",
+  "updatedAt": "2026-09-03T18:01:00.000Z",
+  "activeBatchId": null,
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -8554,7 +8554,7 @@
     },
     {
       "batchId": "batch-0464-0471-v1",
-      "state": "VERIFYING_FAILED",
+      "state": "COMPLETED",
       "taskIds": [
         "ledger:0464:donjon-marine-co-llc:1f2eb8b6",
         "ledger:0465:havasu-air-center:895ad5ae",
@@ -8570,8 +8570,8 @@
         471
       ],
       "createdAt": "2026-09-03T17:00:00.000Z",
-      "updatedAt": "2026-09-03T17:55:00.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-09-03T18:01:00.000Z",
+      "completedAt": "2026-09-03T18:01:00.000Z",
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0464-0471-v1/batch-manifest-v5.json",
         "sha256": "8a1fdefec1b25e6355969bcfc29052204953eb195d8aeeefa2f6c659a415b97d"
@@ -8581,7 +8581,7 @@
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0464-0471-v1/production-apply-run-33779305207/batch-apply-receipt.json",
         "sha256": "96a6cf4889da879dda9c0d98a7f6d550e8d3bc6fff8976e95d1cecd8b9811cf1"
       },
-      "reason": "Original atomic PortCo transaction d010e236-3357-4d15-a05d-ded7f6531908 and immutable receipt verified, and Velocity plus the Havasu redirect render correctly. Canonical Tallvine and Boldyn cards retain four stale attribution-only values: Tallvine UNRESOLVED renders INFERRED, Thoroughbred DIRECT_PROGRAM renders UNRESOLVED, CPP Investments DIRECT_PROGRAM renders UNRESOLVED, and AIMCo DIRECT_PROGRAM renders INFERRED. Freeze the one-active-bundle boundary for a scoped attribution repair; never repeat the original transaction.",
+      "reason": "Original batch transaction and immutable receipt verified; five-row attribution repair receipt reproduced; seed parity, canonical APIs, Havasu redirect, and Tallvine, Velocity, and Boldyn rendered scorecards passed with no partial application. Source tasks 464, 465, 466, 470, and 471 finalized durably.",
       "history": [
         {
           "sequence": 1,
@@ -8642,9 +8642,31 @@
             "96a6cf4889da879dda9c0d98a7f6d550e8d3bc6fff8976e95d1cecd8b9811cf1"
           ],
           "reason": "Original atomic PortCo transaction d010e236-3357-4d15-a05d-ded7f6531908 and immutable receipt verified, and Velocity plus the Havasu redirect render correctly. Canonical Tallvine and Boldyn cards retain four stale attribution-only values: Tallvine UNRESOLVED renders INFERRED, Thoroughbred DIRECT_PROGRAM renders UNRESOLVED, CPP Investments DIRECT_PROGRAM renders UNRESOLVED, and AIMCo DIRECT_PROGRAM renders INFERRED. Freeze the one-active-bundle boundary for a scoped attribution repair; never repeat the original transaction."
+        },
+        {
+          "sequence": 7,
+          "from": "VERIFYING_FAILED",
+          "to": "VERIFYING",
+          "at": "2026-09-03T17:58:00.000Z",
+          "evidenceSha256": [
+            "8a1fdefec1b25e6355969bcfc29052204953eb195d8aeeefa2f6c659a415b97d",
+            "96a6cf4889da879dda9c0d98a7f6d550e8d3bc6fff8976e95d1cecd8b9811cf1"
+          ],
+          "reason": "Recovered from rendered verification failure after protected attribution repair PR 893 and workflow run 33781625982. The five-row repair receipt 94a089fa698df2e6cd7a82a981002cb8b96a98779d2e1c6a33d0914ebf4af57f reproduced, matched seed attribution metadata, and canonical APIs plus Tallvine, Velocity, Boldyn, and Havasu rendered checks passed."
+        },
+        {
+          "sequence": 8,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-09-03T18:01:00.000Z",
+          "evidenceSha256": [
+            "8a1fdefec1b25e6355969bcfc29052204953eb195d8aeeefa2f6c659a415b97d",
+            "96a6cf4889da879dda9c0d98a7f6d550e8d3bc6fff8976e95d1cecd8b9811cf1"
+          ],
+          "reason": "Original batch transaction and immutable receipt verified; five-row attribution repair receipt reproduced; seed parity, canonical APIs, Havasu redirect, and Tallvine, Velocity, and Boldyn rendered scorecards passed with no partial application. Source tasks 464, 465, 466, 470, and 471 finalized durably."
         }
       ]
     }
   ],
-  "ledgerSha256": "43013c5bcdcefebf8bcc6d7f55444ec508018f8ef590c2a17d2b77b0b34e4aeb"
+  "ledgerSha256": "3e33f7406e3611a6875e7547cabe57063387938a588aecc8b1a3cddfbca84015"
 }
