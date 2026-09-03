@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_DEFERRED_READJUDICATION_RESEARCH_DECISION",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-deferred-readjudication-2026-09-03",
+  "generatedAt": "2026-09-03T20:49:37.000Z",
+  "asOfDate": "2026-09-03",
+  "taskId": "ledger:0067:clean-computational-infrastructure:93bcf245",
+  "taskIndex": 67,
+  "companyName": "Clean Computational Infrastructure",
+  "linkedTaskIdsCovered": [],
+  "decision": "DEFERRED",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "summary": "Keep the source task deferred and do not create or merge a production company. ArcLight's current page verifies a distinct Current/Transformative investment label, but no fresh direct evidence identifies the legal entity, company geography, operating boundary, assets, services, customers, ownership fund or vehicle, stake, or entry date required for a country-qualified PortCo record.",
+  "resolvedFormerBlockers": [
+    "ArcLight's current manager page directly verifies Clean Computational Infrastructure as a distinct Current/Transformative investment label.",
+    "The current page separately lists Digital Generation, and a direct 2025 announcement identifies Takanock, LLC as its own operating company; neither source proves a same-company relationship with Clean Computational Infrastructure.",
+    "The direct DigitalBridge announcement and Q2 2026 Form 10-Q establish that the announced ArcLight acquisition is a conditional manager-level transaction rather than evidence of a Clean Computational Infrastructure transfer.",
+    "The direct Fund VII Form D identifies the fund as a Delaware limited partnership but does not mention Clean Computational Infrastructure, while the prior 2022 ArcLight ESG URL now returns 404."
+  ],
+  "identityResolution": {
+    "canonicalDisplayName": "Clean Computational Infrastructure",
+    "legalIdentity": "UNRESOLVED",
+    "productionCompanyId": null,
+    "productionAction": "DO_NOT_CREATE_OR_MERGE",
+    "mergeTarget": null,
+    "boundary": "A distinct ArcLight manager label is proven, but the evidence does not establish whether it is an operating platform, asset portfolio, confidential holding label, SPV or ownership vehicle. No legal entity, website, headquarters, country, dedicated asset or same-company relation is public."
+  },
+  "ownershipResolution": {
+    "resolvedCurrentManager": {
+      "manager": "ArcLight Capital Partners, LLC",
+      "fund": "UNRESOLVED",
+      "vehicle": "UNRESOLVED",
+      "stake": "NOT_PUBLICLY_DISCLOSED",
+      "entryDate": "UNRESOLVED",
+      "status": "CURRENT_ON_ARCLIGHT_SITE"
+    },
+    "blockingOwnershipGap": "No direct source binds Clean Computational Infrastructure to a specific ArcLight fund or vehicle or discloses a stake or entry date. The Form D proves only that Fund VII exists and may not be used as a company-level ownership link.",
+    "geographyTreatment": "ArcLight's Boston address and fund-level North American scope are not company geography. The proposed United States key remains unsupported."
+  },
+  "transactionResolution": {
+    "state": "NO_COMPANY_LEVEL_TRANSACTION_IDENTIFIED",
+    "pendingParentOwnershipTransaction": {
+      "buyer": "DigitalBridge Group, Inc.",
+      "target": "ArcLight Capital Partners, LLC",
+      "announcementDate": "2026-05-27",
+      "closingDate": "UNRESOLVED",
+      "status": "SIGNED_PENDING_NOT_CLOSED_AS_OF_2026-09-03",
+      "effectOnTask": "Manager-level only; no Clean Computational Infrastructure-specific ownership transfer is established."
+    }
+  },
+  "freshException": {
+    "status": "EXACT_FACT_UNAVAILABLE",
+    "missingFact": "The legal entity and company-level country or country-specific operating assets behind the Clean Computational Infrastructure label, plus the operating boundary, ownership fund and vehicle, stake, and entry date needed for a supported production record.",
+    "searchedEvidence": [
+      "ArcLight's current investments page and the complete 2025 ArcLight ESG report",
+      "The now-unavailable 2022 ArcLight ESG URL and direct Fund VII SEC Form D records",
+      "Direct manager, company, registry, permitting, interconnection and exact-phrase searches for a legal entity, address, dedicated assets, services, customers and country",
+      "DigitalBridge's signed ArcLight acquisition announcement, Q2 2026 Form 10-Q and September 2026 SoftBank transaction update",
+      "Separate ArcLight-linked Digital Generation and Takanock disclosures for duplicate, predecessor, successor or rebrand evidence"
+    ],
+    "requiredToResolve": "A direct ArcLight, company, registry, permit, interconnection, customer or counterparty record that names the legal entity and establishes its company-level country or dedicated country-specific assets, followed by direct evidence for the ownership fund or vehicle, stake and entry date."
+  },
+  "primaryCitation": {
+    "label": "ArcLight Investments",
+    "url": "https://arclight.com/investments/",
+    "purpose": "Direct manager evidence for the distinct Current/Transformative label and the absence of a linked company profile",
+    "contentSha256": "2a687007c4b5a1ba1891b2440d021b889c3b0ded621069293cba5bbfaef89c4d"
+  },
+  "applicationRequirements": [
+    "Keep this member terminal-only as DEFERRED; do not generate a database or seed after-image.",
+    "Do not create the proposed clean-computational-infrastructure|united-states key without direct company-level geography evidence.",
+    "Do not infer Fund VII ownership from the fund's existence, ArcLight's former ESG materials, a North American mandate or ArcLight's manager address.",
+    "Do not merge the label with Digital Generation, Takanock or another ArcLight investment without direct same-company evidence.",
+    "Preserve the pending DigitalBridge-ArcLight transaction as manager-level context only and do not convert it into a company ownership period."
+  ],
+  "applicationBlocked": true,
+  "databaseMutationCandidate": false,
+  "seedMutationCandidate": false,
+  "terminalOutcomeCandidate": "DEFERRED",
+  "dealDatabaseMutation": false,
+  "lineage": {
+    "conversationUrl": "https://chatgpt.com/c/6a99d35b-4de4-83e9-8de4-e67a834b8734",
+    "prompt": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0067-clean-computational-infrastructure/attempt-2/chatgpt-research-prompt.md",
+      "sha256": "28fc443eeee017c424bd89d2677ff43bf36c9c1cc38f5a18600ebddbbfc78753"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0067-clean-computational-infrastructure/attempt-2/chatgpt-accepted-response.txt",
+      "sha256": "701d09eece75a173cc328ec279a361f51940b9a65d51923f2847f5457f5bb64d"
+    },
+    "attestation": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0067-clean-computational-infrastructure/attempt-2/chatgpt-attestation.json",
+      "sha256": "0113a3c47517f8bbf8eefb447ff0359e1f00c31b81ff3d196279ac5f2bc8def5"
+    },
+    "responseValidation": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0067-clean-computational-infrastructure/attempt-2/chatgpt-response-validation.json",
+      "sha256": "76a9ca6eb6db3b928d06ec3d1c399ee9b29f05722265134f381ee93f1ebe3098"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0067-clean-computational-infrastructure/attempt-2/source-verification.json",
+      "sha256": "cae9a2797fe62fcc1c46da25c4f70b25ad87ee44da4dcb94ccb99aa3beaf320d"
+    }
+  }
+}

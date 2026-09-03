@@ -5,8 +5,8 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-09-03T18:39:00.000Z",
-  "runStatus": "COMPLETE_WITH_EXCEPTIONS",
+  "updatedAt": "2026-09-03T23:25:16.000Z",
+  "runStatus": "IDLE",
   "activeTaskId": null,
   "source": {
     "manifest": {
@@ -6563,29 +6563,81 @@
       "managerIndex": 9,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "855ee7da044164e646fa3fb775f03e22c8d1560b9657e07418aa5d2b3cd8281f",
-      "status": "DEFERRED",
+      "status": "PENDING",
       "attempts": 1,
-      "startedAt": "2026-08-08T10:20:36.000Z",
-      "updatedAt": "2026-08-08T10:30:46.000Z",
-      "completedAt": "2026-08-08T10:30:46.000Z",
-      "exceptionReason": "Canonical operating-platform identity is unresolved after the completed June 5 UK asset sale and the court-approved but not yet verified-closed U.S. ArcLink asset sale; database and seed mutation are deferred to avoid misidentifying the in-administration shell or premature successor.",
+      "startedAt": null,
+      "updatedAt": "2026-09-03T23:24:42.000Z",
+      "completedAt": null,
+      "exceptionReason": null,
       "supersededByTaskId": null,
       "taskSnapshotSha256": null,
       "artifacts": {
-        "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0042-sifi-networks-america-limited/attempt-1/task-snapshot.json",
-          "sha256": "203d58d6a88467949021afbf834709da9d34e7c3a106affb76f056b1987dccf5"
-        },
+        "taskSnapshot": null,
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0042-sifi-networks-america-limited/research-decision.json",
-          "sha256": "e7730f7fe29a6595babcd990e18baedde2cd89adeb4489b6d929087740294fe2"
-        },
+        "decision": null,
         "companySnapshot": null
       },
       "recovery": null,
+      "reAdjudications": [
+        {
+          "sequence": 1,
+          "reopenedAt": "2026-09-03T23:24:42.000Z",
+          "reason": "Fresh final deferred re-adjudication evidence completed for protected bundle assembly.",
+          "priorCompletedAt": "2026-08-08T10:30:46.000Z",
+          "priorExceptionReason": "Canonical operating-platform identity is unresolved after the completed June 5 UK asset sale and the court-approved but not yet verified-closed U.S. ArcLink asset sale; database and seed mutation are deferred to avoid misidentifying the in-administration shell or premature successor.",
+          "priorArtifacts": {
+            "taskSnapshot": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0042-sifi-networks-america-limited/attempt-1/task-snapshot.json",
+              "sha256": "203d58d6a88467949021afbf834709da9d34e7c3a106affb76f056b1987dccf5"
+            },
+            "proposal": null,
+            "approval": null,
+            "applyReceipt": null,
+            "decision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0042-sifi-networks-america-limited/research-decision.json",
+              "sha256": "e7730f7fe29a6595babcd990e18baedde2cd89adeb4489b6d929087740294fe2"
+            },
+            "companySnapshot": null
+          },
+          "priorManifestSha256": "aae355d8feba8263f1638712d487b3f8e841be3af4e3ce11a9e874dcd4c286bc",
+          "batchLedger": {
+            "location": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+            "sha256": "72218c78c1f6ae669b425e2e08221a0023f1cf7bdf57df8ee063b888546b01a2"
+          },
+          "evidence": {
+            "researchDecision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0042-sifi-networks-america-limited/attempt-2/research-decision.json",
+              "sha256": "db17c8b02611a1764bdef63e8c9bc2037c70e803a1e79a8818d5792b206694fd"
+            },
+            "chatgptAttestation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0042-sifi-networks-america-limited/attempt-2/chatgpt-attestation.json",
+              "sha256": "24ef44f11b094d4def45d156d9c2883d13fe45222cf9ae2decd7ddd4f97a7f92"
+            },
+            "prompt": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0042-sifi-networks-america-limited/attempt-2/chatgpt-research-prompt.md",
+              "sha256": "711db507cb87c32f7786f007d6ad076b25ea39cf42962df9e773ac8d0144550c"
+            },
+            "acceptedResponse": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0042-sifi-networks-america-limited/attempt-2/chatgpt-accepted-response.txt",
+              "sha256": "67029c87fda502cbe405be866a24ccc88f0c94bbc2a7332583b88415d3801601"
+            },
+            "transcript": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0042-sifi-networks-america-limited/attempt-2/chatgpt-transcript.txt",
+              "sha256": "0560a57d50af58e50a15784ee26d039148601f6ce597cc7cb617afc66d74d832"
+            },
+            "sourceVerification": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0042-sifi-networks-america-limited/attempt-2/source-verification.json",
+              "sha256": "65abde696704dd4d01b5647ccc79dc03f1c8a52318231922acf117257be7845b"
+            },
+            "responseValidation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0042-sifi-networks-america-limited/attempt-2/chatgpt-response-validation.json",
+              "sha256": "a28bb4155d376b48b9f10cbad3a6a0a1c4d826fee3177c95f9b81f247ed00f1a"
+            }
+          }
+        }
+      ],
       "history": [
         {
           "sequence": 1,
@@ -6619,6 +6671,25 @@
             "e7730f7fe29a6595babcd990e18baedde2cd89adeb4489b6d929087740294fe2"
           ],
           "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "DEFERRED",
+          "to": "PENDING",
+          "at": "2026-09-03T23:24:42.000Z",
+          "reason": "Fresh final deferred re-adjudication evidence completed for protected bundle assembly.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "0560a57d50af58e50a15784ee26d039148601f6ce597cc7cb617afc66d74d832",
+            "24ef44f11b094d4def45d156d9c2883d13fe45222cf9ae2decd7ddd4f97a7f92",
+            "65abde696704dd4d01b5647ccc79dc03f1c8a52318231922acf117257be7845b",
+            "67029c87fda502cbe405be866a24ccc88f0c94bbc2a7332583b88415d3801601",
+            "711db507cb87c32f7786f007d6ad076b25ea39cf42962df9e773ac8d0144550c",
+            "72218c78c1f6ae669b425e2e08221a0023f1cf7bdf57df8ee063b888546b01a2",
+            "a28bb4155d376b48b9f10cbad3a6a0a1c4d826fee3177c95f9b81f247ed00f1a",
+            "db17c8b02611a1764bdef63e8c9bc2037c70e803a1e79a8818d5792b206694fd"
+          ],
+          "kind": "DEFERRED_READJUDICATION"
         }
       ]
     },
@@ -7971,29 +8042,81 @@
       "managerIndex": 10,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "ac7c57caf36cd8885809155da9f1211dc2904eab74d384ae42c9fe65b91491c5",
-      "status": "DEFERRED",
+      "status": "PENDING",
       "attempts": 1,
-      "startedAt": "2026-08-12T19:23:33.000Z",
-      "updatedAt": "2026-08-12T19:44:22.000Z",
-      "completedAt": "2026-08-12T19:44:22.000Z",
-      "exceptionReason": "Swiss Life Asset Managers' post-March-2024 ownership is unresolved: available sources do not establish whether its 2019 minority stake was sold, rolled, or retained, and the snapshot CLI cannot bind newly proposed ownership dependencies; mutation is deferred to avoid inventing an active or realized owner state.",
+      "startedAt": null,
+      "updatedAt": "2026-09-03T23:24:55.000Z",
+      "completedAt": null,
+      "exceptionReason": null,
       "supersededByTaskId": null,
       "taskSnapshotSha256": null,
       "artifacts": {
-        "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0055-modern-aviation/attempt-1/task-snapshot.json",
-          "sha256": "0e59ed28319be420273f2076b423d3aa80789eeb261bd76dac48a5d9f7ec4415"
-        },
+        "taskSnapshot": null,
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0055-modern-aviation/research-decision.json",
-          "sha256": "6251faff0a443882a5ef4e4f31601cbd34c0ef87db869c0e1292001f8c4ed7bd"
-        },
+        "decision": null,
         "companySnapshot": null
       },
       "recovery": null,
+      "reAdjudications": [
+        {
+          "sequence": 1,
+          "reopenedAt": "2026-09-03T23:24:55.000Z",
+          "reason": "Fresh final deferred re-adjudication evidence completed for protected bundle assembly.",
+          "priorCompletedAt": "2026-08-12T19:44:22.000Z",
+          "priorExceptionReason": "Swiss Life Asset Managers' post-March-2024 ownership is unresolved: available sources do not establish whether its 2019 minority stake was sold, rolled, or retained, and the snapshot CLI cannot bind newly proposed ownership dependencies; mutation is deferred to avoid inventing an active or realized owner state.",
+          "priorArtifacts": {
+            "taskSnapshot": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0055-modern-aviation/attempt-1/task-snapshot.json",
+              "sha256": "0e59ed28319be420273f2076b423d3aa80789eeb261bd76dac48a5d9f7ec4415"
+            },
+            "proposal": null,
+            "approval": null,
+            "applyReceipt": null,
+            "decision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0055-modern-aviation/research-decision.json",
+              "sha256": "6251faff0a443882a5ef4e4f31601cbd34c0ef87db869c0e1292001f8c4ed7bd"
+            },
+            "companySnapshot": null
+          },
+          "priorManifestSha256": "fbc4cd00736a534b80c059d65aeede56db45d681aebe89b6232476e31bdfe4d9",
+          "batchLedger": {
+            "location": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+            "sha256": "72218c78c1f6ae669b425e2e08221a0023f1cf7bdf57df8ee063b888546b01a2"
+          },
+          "evidence": {
+            "researchDecision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0055-modern-aviation/attempt-2/research-decision.json",
+              "sha256": "0d587d5ed2845f35294108181697e340dbd8d9ba00e5cabcaf804df40aeffe34"
+            },
+            "chatgptAttestation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0055-modern-aviation/attempt-2/chatgpt-attestation.json",
+              "sha256": "fbd9a24d667a43dfe9f7f12f54d59c87a4041552d9f49163b4205a46a4614d08"
+            },
+            "prompt": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0055-modern-aviation/attempt-2/chatgpt-research-prompt.md",
+              "sha256": "daf7ea2e8efdecf1d12c8b957532ffd8e3075319c271dada13613a47d24a1a28"
+            },
+            "acceptedResponse": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0055-modern-aviation/attempt-2/chatgpt-accepted-response.txt",
+              "sha256": "37fef970e773c87af487b25a17bc74864fbdd4e3cfd3a0158919658681c648ff"
+            },
+            "transcript": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0055-modern-aviation/attempt-2/chatgpt-transcript.txt",
+              "sha256": "45df817fc0a4ad85eba88dbe3802fd9fa00a42829df8c99d37294736c76ddb78"
+            },
+            "sourceVerification": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0055-modern-aviation/attempt-2/source-verification.json",
+              "sha256": "f373b95d6c3f3b030f957356214cbcf7ef0ed9785b2b87a76416a9312c8f7705"
+            },
+            "responseValidation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0055-modern-aviation/attempt-2/chatgpt-response-validation.json",
+              "sha256": "264f7fd75892240ae5e01f23b1f4a90ed8f2ece15717512a9428e57af7817662"
+            }
+          }
+        }
+      ],
       "history": [
         {
           "sequence": 1,
@@ -8027,6 +8150,25 @@
             "6251faff0a443882a5ef4e4f31601cbd34c0ef87db869c0e1292001f8c4ed7bd"
           ],
           "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "DEFERRED",
+          "to": "PENDING",
+          "at": "2026-09-03T23:24:55.000Z",
+          "reason": "Fresh final deferred re-adjudication evidence completed for protected bundle assembly.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "0d587d5ed2845f35294108181697e340dbd8d9ba00e5cabcaf804df40aeffe34",
+            "264f7fd75892240ae5e01f23b1f4a90ed8f2ece15717512a9428e57af7817662",
+            "37fef970e773c87af487b25a17bc74864fbdd4e3cfd3a0158919658681c648ff",
+            "45df817fc0a4ad85eba88dbe3802fd9fa00a42829df8c99d37294736c76ddb78",
+            "72218c78c1f6ae669b425e2e08221a0023f1cf7bdf57df8ee063b888546b01a2",
+            "daf7ea2e8efdecf1d12c8b957532ffd8e3075319c271dada13613a47d24a1a28",
+            "f373b95d6c3f3b030f957356214cbcf7ef0ed9785b2b87a76416a9312c8f7705",
+            "fbd9a24d667a43dfe9f7f12f54d59c87a4041552d9f49163b4205a46a4614d08"
+          ],
+          "kind": "DEFERRED_READJUDICATION"
         }
       ]
     },
@@ -9793,29 +9935,81 @@
       "managerIndex": 12,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "0e031d19f80266962d27a9aa1453a4a5aea371fceb1ecce8162e84c5c1710b61",
-      "status": "DEFERRED",
+      "status": "PENDING",
       "attempts": 1,
-      "startedAt": "2026-08-13T03:47:14.000Z",
-      "updatedAt": "2026-08-13T03:54:09.000Z",
-      "completedAt": "2026-08-13T03:54:09.000Z",
-      "exceptionReason": "Company-level North American geography and operating boundary are not publicly disclosed; mutation is deferred to avoid inferring a mandatory country or inventing operating facts despite confirmed current ArcLight Fund VII ownership.",
+      "startedAt": null,
+      "updatedAt": "2026-09-03T23:25:07.000Z",
+      "completedAt": null,
+      "exceptionReason": null,
       "supersededByTaskId": null,
       "taskSnapshotSha256": null,
       "artifacts": {
-        "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0067-clean-computational-infrastructure/attempt-1/task-snapshot.json",
-          "sha256": "786c4f22596688376b345c85639ec54a5d2f8b16d885871fbc168b00cb9e07d5"
-        },
+        "taskSnapshot": null,
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0067-clean-computational-infrastructure/research-decision.json",
-          "sha256": "30a3247e346a7eadafca1d14baa311bad231ecb5000ebb8f6a9c057934cd8f03"
-        },
+        "decision": null,
         "companySnapshot": null
       },
       "recovery": null,
+      "reAdjudications": [
+        {
+          "sequence": 1,
+          "reopenedAt": "2026-09-03T23:25:07.000Z",
+          "reason": "Fresh final deferred re-adjudication evidence completed for protected bundle assembly.",
+          "priorCompletedAt": "2026-08-13T03:54:09.000Z",
+          "priorExceptionReason": "Company-level North American geography and operating boundary are not publicly disclosed; mutation is deferred to avoid inferring a mandatory country or inventing operating facts despite confirmed current ArcLight Fund VII ownership.",
+          "priorArtifacts": {
+            "taskSnapshot": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0067-clean-computational-infrastructure/attempt-1/task-snapshot.json",
+              "sha256": "786c4f22596688376b345c85639ec54a5d2f8b16d885871fbc168b00cb9e07d5"
+            },
+            "proposal": null,
+            "approval": null,
+            "applyReceipt": null,
+            "decision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0067-clean-computational-infrastructure/research-decision.json",
+              "sha256": "30a3247e346a7eadafca1d14baa311bad231ecb5000ebb8f6a9c057934cd8f03"
+            },
+            "companySnapshot": null
+          },
+          "priorManifestSha256": "a8d0d4ce3fbc4515137ea7539ac453dd65ff4d984bae3fa41eb436515d5b0a86",
+          "batchLedger": {
+            "location": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+            "sha256": "72218c78c1f6ae669b425e2e08221a0023f1cf7bdf57df8ee063b888546b01a2"
+          },
+          "evidence": {
+            "researchDecision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0067-clean-computational-infrastructure/attempt-2/research-decision.json",
+              "sha256": "ae42426e421f81057a1eddc773f379530e355c64bb2c15f84930cdcfd490af77"
+            },
+            "chatgptAttestation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0067-clean-computational-infrastructure/attempt-2/chatgpt-attestation.json",
+              "sha256": "0113a3c47517f8bbf8eefb447ff0359e1f00c31b81ff3d196279ac5f2bc8def5"
+            },
+            "prompt": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0067-clean-computational-infrastructure/attempt-2/chatgpt-research-prompt.md",
+              "sha256": "28fc443eeee017c424bd89d2677ff43bf36c9c1cc38f5a18600ebddbbfc78753"
+            },
+            "acceptedResponse": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0067-clean-computational-infrastructure/attempt-2/chatgpt-accepted-response.txt",
+              "sha256": "701d09eece75a173cc328ec279a361f51940b9a65d51923f2847f5457f5bb64d"
+            },
+            "transcript": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0067-clean-computational-infrastructure/attempt-2/chatgpt-transcript.txt",
+              "sha256": "701185752f5933083d02993292b22193a8900e49e9cbe82ff7e97d7f0dca61a5"
+            },
+            "sourceVerification": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0067-clean-computational-infrastructure/attempt-2/source-verification.json",
+              "sha256": "cae9a2797fe62fcc1c46da25c4f70b25ad87ee44da4dcb94ccb99aa3beaf320d"
+            },
+            "responseValidation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0067-clean-computational-infrastructure/attempt-2/chatgpt-response-validation.json",
+              "sha256": "76a9ca6eb6db3b928d06ec3d1c399ee9b29f05722265134f381ee93f1ebe3098"
+            }
+          }
+        }
+      ],
       "history": [
         {
           "sequence": 1,
@@ -9849,6 +10043,25 @@
             "786c4f22596688376b345c85639ec54a5d2f8b16d885871fbc168b00cb9e07d5"
           ],
           "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "DEFERRED",
+          "to": "PENDING",
+          "at": "2026-09-03T23:25:07.000Z",
+          "reason": "Fresh final deferred re-adjudication evidence completed for protected bundle assembly.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "0113a3c47517f8bbf8eefb447ff0359e1f00c31b81ff3d196279ac5f2bc8def5",
+            "28fc443eeee017c424bd89d2677ff43bf36c9c1cc38f5a18600ebddbbfc78753",
+            "701185752f5933083d02993292b22193a8900e49e9cbe82ff7e97d7f0dca61a5",
+            "701d09eece75a173cc328ec279a361f51940b9a65d51923f2847f5457f5bb64d",
+            "72218c78c1f6ae669b425e2e08221a0023f1cf7bdf57df8ee063b888546b01a2",
+            "76a9ca6eb6db3b928d06ec3d1c399ee9b29f05722265134f381ee93f1ebe3098",
+            "ae42426e421f81057a1eddc773f379530e355c64bb2c15f84930cdcfd490af77",
+            "cae9a2797fe62fcc1c46da25c4f70b25ad87ee44da4dcb94ccb99aa3beaf320d"
+          ],
+          "kind": "DEFERRED_READJUDICATION"
         }
       ]
     },
@@ -11018,29 +11231,81 @@
       "managerIndex": 12,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "32ba7a29fc932f84e9b0117f15a55ccac0741c5b2fc91253f9d2dc1b313bdb5c",
-      "status": "DEFERRED",
+      "status": "PENDING",
       "attempts": 1,
-      "startedAt": "2026-08-13T09:16:44.000Z",
-      "updatedAt": "2026-08-13T09:29:53.000Z",
-      "completedAt": "2026-08-13T09:29:53.000Z",
-      "exceptionReason": "ArcLight manager- and Fund VII-level ownership is supported, but the underlying legal or platform identity and company-level North American geography remain unresolved; mutation is deferred to avoid a false canonical record.",
+      "startedAt": null,
+      "updatedAt": "2026-09-03T23:25:14.000Z",
+      "completedAt": null,
+      "exceptionReason": null,
       "supersededByTaskId": null,
       "taskSnapshotSha256": null,
       "artifacts": {
-        "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0074-liberty/attempt-1/task-snapshot.json",
-          "sha256": "9950d97a3f3649292683753dac55232f67309cc0bb04e521cc47d89198232055"
-        },
+        "taskSnapshot": null,
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0074-liberty/research-decision.json",
-          "sha256": "c0c13e87d67b8a49a33a177f4905ea4ebea9e7461e1ed943076062ba2d36dbc6"
-        },
+        "decision": null,
         "companySnapshot": null
       },
       "recovery": null,
+      "reAdjudications": [
+        {
+          "sequence": 1,
+          "reopenedAt": "2026-09-03T23:25:14.000Z",
+          "reason": "Fresh final deferred re-adjudication evidence completed for protected bundle assembly.",
+          "priorCompletedAt": "2026-08-13T09:29:53.000Z",
+          "priorExceptionReason": "ArcLight manager- and Fund VII-level ownership is supported, but the underlying legal or platform identity and company-level North American geography remain unresolved; mutation is deferred to avoid a false canonical record.",
+          "priorArtifacts": {
+            "taskSnapshot": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0074-liberty/attempt-1/task-snapshot.json",
+              "sha256": "9950d97a3f3649292683753dac55232f67309cc0bb04e521cc47d89198232055"
+            },
+            "proposal": null,
+            "approval": null,
+            "applyReceipt": null,
+            "decision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0074-liberty/research-decision.json",
+              "sha256": "c0c13e87d67b8a49a33a177f4905ea4ebea9e7461e1ed943076062ba2d36dbc6"
+            },
+            "companySnapshot": null
+          },
+          "priorManifestSha256": "6626c1c20b00d7aaf4b77cb33e73a156c2804db339f7862a28b95e8c810e678b",
+          "batchLedger": {
+            "location": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+            "sha256": "72218c78c1f6ae669b425e2e08221a0023f1cf7bdf57df8ee063b888546b01a2"
+          },
+          "evidence": {
+            "researchDecision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0074-liberty/attempt-2/research-decision.json",
+              "sha256": "d3d77e22f9da5c0e96670f6ff653ed195bdb25128dcc3b9d6201c6d122b10d2d"
+            },
+            "chatgptAttestation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0074-liberty/attempt-2/chatgpt-attestation.json",
+              "sha256": "9fe582fcc3e8017d767595d5c8e615554a20adfb6b8d825eed7bd06dfc8a96f9"
+            },
+            "prompt": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0074-liberty/attempt-2/chatgpt-research-prompt.md",
+              "sha256": "4700413999decf95d9a42c8a7b65be1a5ce94c480a2ec61ca75c7bc6229697bb"
+            },
+            "acceptedResponse": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0074-liberty/attempt-2/chatgpt-accepted-response.txt",
+              "sha256": "58614dacdf97086b7a2ea245164ee675af2491d8bec6f0827ca1d6aba7575268"
+            },
+            "transcript": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0074-liberty/attempt-2/chatgpt-transcript.txt",
+              "sha256": "df30f39d518a2358a22553c594e0cad54b48abe59822c98d4182413f2052640f"
+            },
+            "sourceVerification": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0074-liberty/attempt-2/source-verification.json",
+              "sha256": "28ccc338babd9a282488bc8b91c2e766d00a04b9c278aff4918fad032fe04380"
+            },
+            "responseValidation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0074-liberty/attempt-2/chatgpt-response-validation.json",
+              "sha256": "dbd5f5edbbf36d9a696e691296842d5ceda5775598e57843324ffa67a9ddead2"
+            }
+          }
+        }
+      ],
       "history": [
         {
           "sequence": 1,
@@ -11074,6 +11339,25 @@
             "c0c13e87d67b8a49a33a177f4905ea4ebea9e7461e1ed943076062ba2d36dbc6"
           ],
           "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "DEFERRED",
+          "to": "PENDING",
+          "at": "2026-09-03T23:25:14.000Z",
+          "reason": "Fresh final deferred re-adjudication evidence completed for protected bundle assembly.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "28ccc338babd9a282488bc8b91c2e766d00a04b9c278aff4918fad032fe04380",
+            "4700413999decf95d9a42c8a7b65be1a5ce94c480a2ec61ca75c7bc6229697bb",
+            "58614dacdf97086b7a2ea245164ee675af2491d8bec6f0827ca1d6aba7575268",
+            "72218c78c1f6ae669b425e2e08221a0023f1cf7bdf57df8ee063b888546b01a2",
+            "9fe582fcc3e8017d767595d5c8e615554a20adfb6b8d825eed7bd06dfc8a96f9",
+            "d3d77e22f9da5c0e96670f6ff653ed195bdb25128dcc3b9d6201c6d122b10d2d",
+            "dbd5f5edbbf36d9a696e691296842d5ceda5775598e57843324ffa67a9ddead2",
+            "df30f39d518a2358a22553c594e0cad54b48abe59822c98d4182413f2052640f"
+          ],
+          "kind": "DEFERRED_READJUDICATION"
         }
       ]
     },
@@ -11152,29 +11436,81 @@
       "managerIndex": 12,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "9fe83eb0e2831f82a96719eba34d2ba450311557e0a8b4d3e599177fde08d95e",
-      "status": "DEFERRED",
+      "status": "PENDING",
       "attempts": 1,
-      "startedAt": "2026-08-13T09:58:56.000Z",
-      "updatedAt": "2026-08-13T10:06:30.000Z",
-      "completedAt": "2026-08-13T10:06:30.000Z",
-      "exceptionReason": "ArcLight sources conflict: the live table labels Lodi Holdings II Current / Power, while ArcLight ESG and regulatory records tie the name to the realized Fund I/II Lodi Gas Storage investment. The exact current legal entity and operating boundary remain unresolved, so no active company creation is warranted.",
+      "startedAt": null,
+      "updatedAt": "2026-09-03T23:25:16.000Z",
+      "completedAt": null,
+      "exceptionReason": null,
       "supersededByTaskId": null,
       "taskSnapshotSha256": null,
       "artifacts": {
-        "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0076-lodi-holdings-ii/attempt-1/task-snapshot.json",
-          "sha256": "90838ce328b5f0d671ec9b917e95b2a7dd0ec80095d664f0b23e914e63015684"
-        },
+        "taskSnapshot": null,
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0076-lodi-holdings-ii/research-decision.json",
-          "sha256": "560709e0cd53beaf86a978ca0fd8167900076935729915acbfa24771779acfe2"
-        },
+        "decision": null,
         "companySnapshot": null
       },
       "recovery": null,
+      "reAdjudications": [
+        {
+          "sequence": 1,
+          "reopenedAt": "2026-09-03T23:25:16.000Z",
+          "reason": "Fresh final deferred re-adjudication evidence completed for protected bundle assembly.",
+          "priorCompletedAt": "2026-08-13T10:06:30.000Z",
+          "priorExceptionReason": "ArcLight sources conflict: the live table labels Lodi Holdings II Current / Power, while ArcLight ESG and regulatory records tie the name to the realized Fund I/II Lodi Gas Storage investment. The exact current legal entity and operating boundary remain unresolved, so no active company creation is warranted.",
+          "priorArtifacts": {
+            "taskSnapshot": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0076-lodi-holdings-ii/attempt-1/task-snapshot.json",
+              "sha256": "90838ce328b5f0d671ec9b917e95b2a7dd0ec80095d664f0b23e914e63015684"
+            },
+            "proposal": null,
+            "approval": null,
+            "applyReceipt": null,
+            "decision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0076-lodi-holdings-ii/research-decision.json",
+              "sha256": "560709e0cd53beaf86a978ca0fd8167900076935729915acbfa24771779acfe2"
+            },
+            "companySnapshot": null
+          },
+          "priorManifestSha256": "93643cb820c57539d422e1a51cc011cf043d6813fdf924248c414f369fdeb37c",
+          "batchLedger": {
+            "location": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+            "sha256": "72218c78c1f6ae669b425e2e08221a0023f1cf7bdf57df8ee063b888546b01a2"
+          },
+          "evidence": {
+            "researchDecision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0076-lodi-holdings-ii/attempt-2/research-decision.json",
+              "sha256": "4c94b6056f104acb05169c44d47747ddd887ed2589841b46b42f23bb9c32fcf5"
+            },
+            "chatgptAttestation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0076-lodi-holdings-ii/attempt-2/chatgpt-attestation.json",
+              "sha256": "1349ab52493cdc67f1c0466263bb2ad7eddbff85eb74554c6542aa1c0de043d1"
+            },
+            "prompt": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0076-lodi-holdings-ii/attempt-2/chatgpt-research-prompt.md",
+              "sha256": "ad600738135c88350a5ee26787134612a3ec6d5ca33cbcc760e19b83c822bc90"
+            },
+            "acceptedResponse": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0076-lodi-holdings-ii/attempt-2/chatgpt-accepted-response.txt",
+              "sha256": "08e363ea397f33570a1592b4891e6818170e6d89787a65e2438407e302e23560"
+            },
+            "transcript": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0076-lodi-holdings-ii/attempt-2/chatgpt-transcript.txt",
+              "sha256": "3c80d5a0813e7bb4b2648da20d531747aed98f83a5662628a8142a5f616ac3cb"
+            },
+            "sourceVerification": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0076-lodi-holdings-ii/attempt-2/source-verification.json",
+              "sha256": "ff478c7875723c63b2f19ce8a6f6b3510e39f8cbc9442f7deb60c53328f9d763"
+            },
+            "responseValidation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0076-lodi-holdings-ii/attempt-2/chatgpt-response-validation.json",
+              "sha256": "1edaf841c51daef2c4b9f6a7e71289cc5dc3c11e45bbe09fd0e40c593532989b"
+            }
+          }
+        }
+      ],
       "history": [
         {
           "sequence": 1,
@@ -11208,6 +11544,25 @@
             "90838ce328b5f0d671ec9b917e95b2a7dd0ec80095d664f0b23e914e63015684"
           ],
           "kind": "TRANSITION"
+        },
+        {
+          "sequence": 4,
+          "from": "DEFERRED",
+          "to": "PENDING",
+          "at": "2026-09-03T23:25:16.000Z",
+          "reason": "Fresh final deferred re-adjudication evidence completed for protected bundle assembly.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "08e363ea397f33570a1592b4891e6818170e6d89787a65e2438407e302e23560",
+            "1349ab52493cdc67f1c0466263bb2ad7eddbff85eb74554c6542aa1c0de043d1",
+            "1edaf841c51daef2c4b9f6a7e71289cc5dc3c11e45bbe09fd0e40c593532989b",
+            "3c80d5a0813e7bb4b2648da20d531747aed98f83a5662628a8142a5f616ac3cb",
+            "4c94b6056f104acb05169c44d47747ddd887ed2589841b46b42f23bb9c32fcf5",
+            "72218c78c1f6ae669b425e2e08221a0023f1cf7bdf57df8ee063b888546b01a2",
+            "ad600738135c88350a5ee26787134612a3ec6d5ca33cbcc760e19b83c822bc90",
+            "ff478c7875723c63b2f19ce8a6f6b3510e39f8cbc9442f7deb60c53328f9d763"
+          ],
+          "kind": "DEFERRED_READJUDICATION"
         }
       ]
     },
@@ -44586,5 +44941,5 @@
       ]
     }
   ],
-  "manifestSha256": "aae355d8feba8263f1638712d487b3f8e841be3af4e3ce11a9e874dcd4c286bc"
+  "manifestSha256": "fcb978a52e4ac7a610b675596eb8027b7db8ecf8f08d5696c5d965b0b8c650c7"
 }

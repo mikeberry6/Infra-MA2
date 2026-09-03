@@ -1,0 +1,467 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0042:sifi-networks-america-limited:8125d44e",
+  "taskIndex": 42,
+  "asOfDate": "2026-09-03",
+  "generatedAt": "2026-09-03T23:27:00.000Z",
+  "canonicalKey": "sifi-networks-america-limited|united-states",
+  "companyName": "SiFi Networks America Limited",
+  "actions": [
+    "CORRECT_COMPANY"
+  ],
+  "sourceHoldingIds": [
+    "009-apg-infrastructure:holding:014:sifi-networks-america-limited",
+    "080-patrizia:holding:001:sifi-networks-america-limited"
+  ],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "rationale": "Correct the existing record in place from the in-administration legal-parent label to the continuing SiFi Networks platform under ArcLink. The direct filed plan proves that ArcLink Fiber LLC acquired substantially all operating assets, contracts and goodwill on August 7, 2026. Preserve APG Asset Management and Patrizia as active sponsor-complex manager attributions with undisclosed stakes, preserve Ubuntu as realized, and do not carry the historical APG 16.7% disclosure forward as a current post-restructuring percentage.",
+  "evidence": [
+    {
+      "url": "https://cases.stretto.com/public/X901/14710/PLEADINGS/1471008132680000000337.pdf",
+      "purpose": "Direct filed proof of buyer identity, sale perimeter, August 6 sale order, August 7 closing, liquidation treatment and sponsor-affiliate definitions.",
+      "supports": [
+        "ArcLink Fiber LLC acquired all or substantially all debtor operating assets, contracts and goodwill",
+        "The sale order was entered on August 6, 2026 and the transaction closed on August 7, 2026",
+        "PATRIZIA Infrastructure Ltd., APG Asset Management N.V., SCIF entities and ArcLink Fiber (US) Limited are named within the buyer-affiliate chain",
+        "Investor-owned City LLC project companies remain outside the debtor asset-transfer perimeter"
+      ]
+    },
+    {
+      "url": "https://find-and-update.company-information.service.gov.uk/company/08556605/persons-with-significant-control",
+      "purpose": "Direct registry evidence for ArcLink Fiber (US) Limited's control of the legacy UK SiFi parent.",
+      "supports": [
+        "ArcLink Fiber (US) Limited became the sole active person with significant control notified April 17, 2026"
+      ]
+    },
+    {
+      "url": "https://find-and-update.company-information.service.gov.uk/company/17135290/persons-with-significant-control",
+      "purpose": "Direct registry evidence connecting ArcLink Fiber (US) Limited to the Smart City Infrastructure Fund vehicle.",
+      "supports": [
+        "SCIF Investor Vehicle LLP became the sole active person with significant control notified April 2, 2026"
+      ]
+    },
+    {
+      "url": "https://find-and-update.company-information.service.gov.uk/company/OC424572/officers",
+      "purpose": "Direct registry evidence for current PATRIZIA and APG-linked roles in SCIF Investor Vehicle LLP.",
+      "supports": [
+        "PATRIZIA Infrastructure Limited remains a designated member",
+        "APG Infrastructure Pool-linked depositaries and Stichting Pensioenfonds ABP remain current officers"
+      ]
+    },
+    {
+      "url": "https://sifinetworks.com/corporate/privacy-and-cookie-policy-sifi-networks/",
+      "purpose": "Direct company-site evidence for continuing SiFi Networks and FiberCity branding under ArcLink Fiber (US) Limited.",
+      "supports": [
+        "ArcLink Fiber (US) Limited controls sifinetworks.com",
+        "The operating site continues to use SiFi Networks and FiberCity branding"
+      ]
+    },
+    {
+      "url": "https://apg.nl/en/publication/apg-investment-connects-1-million-american-households-to-fiber-optics/",
+      "purpose": "Direct manager evidence that the disclosed 16.7% APG interest is a historical 2021 fact rather than a current post-restructuring percentage.",
+      "supports": [
+        "APG announced a 16.7% SiFi interest in 2021",
+        "The source does not establish a current post-restructuring percentage"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "a0447d2d8c1b89c4eee8bf54579c6a1cd41d6ff854b625eb1651d10ffddf5425",
+  "currentCompanySnapshotSha256": "6beaeb95d54cda1ed2a371c4898cd33ba768d5d0cabe27ce6bb33a849d19ee13",
+  "executionLock": {
+    "taskSnapshotSha256": "7297312cc55f3bc2b83841dae83a783256cccfe41c659ec438e0cd86e90a1ce5",
+    "taskStateSha256": "5e51cd66094b9c8eccf10940c32777714c75eaf4ce3469e4a0481ab1cc778807",
+    "taskDependencySha256": "d9724894529dc3606a6a1d11a3a551eb1b110c32e6f99f559ee2d1e174176976",
+    "seedEntrySha256": "78cefd3e54f806e78546938b614c3ba5604408057547811501c263a9975bbe70",
+    "dependencies": {
+      "ownershipPeriodsSha256": "353c79e36373691ae6c7cfb63751dcba22e73720ea198c37907cad8fff3462d7",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "415e481fc0cba53ed26fbdc37b437edc618b977a8c314228ca0441f908499e68",
+      "organizationsSha256": "2aef26ee592ff7d2240e7adec30d33efa28e654d48ba8c15b0e78073c4d2d93c",
+      "citationsSha256": "8871e350442d651aac5fd341546d7cdc974b04e02f1eff652e73850a62ec497d",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "funds": [
+      {
+        "id": "cmrxpj0vu00b7ivhe7qsmhmwb",
+        "fundName": "APG Direct Infrastructure Pool",
+        "managerId": "cmrxpi3kl000eivhezm8dydzo",
+        "updatedAt": "2026-07-23T16:09:55.002Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpi3kl000eivhezm8dydzo",
+        "name": "APG Asset Management",
+        "updatedAt": "2026-07-23T16:09:11.829Z"
+      },
+      {
+        "id": "cmrxpigde004fivhekriu9v4g",
+        "name": "Patrizia",
+        "updatedAt": "2026-07-23T16:09:28.418Z"
+      },
+      {
+        "id": "cmrxpigl2004hivhemirq751k",
+        "name": "Ubuntu Business Holdings",
+        "updatedAt": "2026-07-23T16:09:28.694Z"
+      }
+    ],
+    "redirects": []
+  },
+  "beforeImage": {
+    "id": "cmrxpj5j400huivhevp2081d8",
+    "name": "SiFi Networks America Limited",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Open-access fiber-to-the-home networks",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "SiFi Networks funds, builds, and operates citywide open-access fiber networks under its FiberCity brand. Its customers are municipalities, wholesale internet service providers, businesses, and households connected through citywide fiber infrastructure. The business follows an asset-heavy digital infrastructure model in which it finances and deploys open-access networks and leases access to service providers rather than operating as a retail ISP. Public materials describe SiFi as a privately funded fiber platform with multiple city deployments and a national pipeline supported by institutional capital. The platform has expanded through project-level and joint-venture financings including the Future Fiber structure used to finance U.S. FTTH deployments. APG announced a 16.7% stake in SiFi in 2021 and a related investment program to support further network rollout, while the balance of the current ownership structure is not publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "California; Michigan; Florida; Wisconsin; multi-city U.S. operations",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjqgq01ekivhezc1sbe8t",
+        "managerName": "APG Asset Management",
+        "organizationName": "APG Asset Management",
+        "fundName": "APG Direct Infrastructure Pool",
+        "vehicleName": "Smart City Infrastructure Fund (APG JV)",
+        "stake": null,
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjqh801elivheipaj5h91",
+        "managerName": "Patrizia",
+        "organizationName": "Patrizia",
+        "fundName": null,
+        "vehicleName": "Smart City Infrastructure Fund",
+        "stake": null,
+        "investmentYear": 2026,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjqhu01emivhe7pcgstde",
+        "managerName": "Ubuntu Business Holdings",
+        "organizationName": "Ubuntu Business Holdings",
+        "fundName": null,
+        "vehicleName": "Prior SiFi Networks America ownership",
+        "stake": null,
+        "investmentYear": 2018,
+        "exitYear": 2026,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkhve02jpivhemx3ip7y6",
+        "date": "2018",
+        "event": "Ubuntu Business Holdings invested in SiFi Networks America Limited through Prior SiFi Networks America ownership.",
+        "category": "FINANCING",
+        "sortDate": "2018-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkhw002jqivhe841w6sfi",
+        "date": "Apr 2019",
+        "event": "The Smart City Infrastructure Fund and Whitehelm Capital backed SiFi's Fullerton FiberCity deployment.",
+        "category": "OTHER",
+        "sortDate": "2019-04-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkhwj02jrivhes6muow6b",
+        "date": "May 2020",
+        "event": "SiFi announced Smart City Infrastructure Fund support for FiberCity growth.",
+        "category": "OTHER",
+        "sortDate": "2020-05-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkhx102jsivhedfwf0332",
+        "date": "Sep 7, 2021",
+        "event": "APG signed an agreement to acquire a 16.7% direct stake in SiFi Networks America and establish a U.S. fiber joint venture.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-09-07T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkhxl02jtivhe4zxq5uy5",
+        "date": "Jun 2023",
+        "event": "Future Fiber, APG, and SiFi raised $350 million of seven-year financing for U.S. FTTH deployment.",
+        "category": "FINANCING",
+        "sortDate": "2023-06-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkhy602juivheqr44zuiu",
+        "date": "Apr 22, 2026",
+        "event": "Patrizia / APG Asset Management announced an acquisition of SiFi Networks America LLC from Ubuntu Business Holdings.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-04-22T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpostp077vivhemwtp30mx",
+        "label": "Sifinetworks — SiFi Networks America Limited",
+        "url": "https://sifinetworks.com/corporate/about-us-page-sifi-networks/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Sifinetworks company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxposuw077xivheb21y7teg",
+        "label": "Investment date source — APG Infrastructure — SiFi Networks America Limited",
+        "url": "https://sifinetworks.com/corporate/apgs-stake-in-sifi-networks-bring-10gig-citywide-fiber-networks/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "APG Infrastructure initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxposvz077zivhehmmbd66x",
+        "label": "APG — SiFi Networks America Limited",
+        "url": "https://apg.nl/en/publication/apg-investment-connects-1-million-american-households-to-fiber-optics/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "APG — SiFi Networks America Limited",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxposx00781ivhe5750qt9x",
+        "label": "Sifinetworks — SiFi Networks America Limited",
+        "url": "https://sifinetworks.com/corporate/future-fiber-apg-and-sifi-networks-open-access-fiber-to-the-home-ftth-network-raises-us350-million-7-year-financing-to-deliver-future-proof-ftth-connectivity-and-smart/",
+        "sourceType": "ARTICLE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Sifinetworks financing or public filing",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpot030783ivhe4c1fi8w6",
+        "label": "Smartcityinfrafund — SiFi Networks America Limited",
+        "url": "https://www.smartcityinfrafund.com/whitehelm-capital-finalises-deal-with-sifi-networks-to-fund-fibercity/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Smartcityinfrafund — SiFi Networks America Limited",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpot0k0784ivhe85tzrtjr",
+        "label": "County Times",
+        "url": "https://www.countytimes.co.uk/news/26050380.mike-harris-firm-sifi-networks-america-sold-new-owners/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "County Times - INF-2026-182 - SiFi Networks America LLC",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "6beaeb95d54cda1ed2a371c4898cd33ba768d5d0cabe27ce6bb33a849d19ee13",
+  "afterImage": {
+    "id": "cmrxpj5j400huivhevp2081d8",
+    "name": "SiFi Networks (ArcLink Fiber)",
+    "aliases": [
+      "SiFi Networks America Limited",
+      "SiFi Networks America, LLC",
+      "SiFi Networks",
+      "FiberCity",
+      "ArcLink Fiber LLC",
+      "ArcLink Fiber (US) Limited"
+    ],
+    "sector": "DIGITAL",
+    "subsector": "Open-access fiber-to-the-home networks",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "SiFi Networks (ArcLink Fiber) is the continuing U.S. open-access fiber platform using the SiFi Networks and FiberCity brands. On August 7, 2026, ArcLink Fiber LLC acquired substantially all operating assets, contracts and goodwill of SiFi Networks America, LLC after bankruptcy-court approval, while excluded assets and the investor-owned City LLC project companies remained outside the acquired package. ArcLink Fiber (US) Limited controls sifinetworks.com and sits within the Smart City Infrastructure Fund structure. APG Asset Management and PATRIZIA remain supported manager affiliations through the current SCIF and buyer-affiliate chain, but their post-restructuring economic percentages and ArcLink Fiber LLC's exact membership are not publicly disclosed. APG's announced 16.7% SiFi interest is retained only as a historical 2021 fact and is not treated as a current stake.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": "https://sifinetworks.com/",
+    "yearFounded": null,
+    "headquarters": "California; Michigan; Florida; Wisconsin; multi-city U.S. operations",
+    "lastVerifiedAt": "2026-09-03T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjqgq01ekivhezc1sbe8t",
+        "managerName": "APG Asset Management",
+        "organizationName": "APG Asset Management",
+        "fundName": "APG Direct Infrastructure Pool",
+        "vehicleName": "Smart City Infrastructure Fund (APG JV)",
+        "stake": null,
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjqh801elivheipaj5h91",
+        "managerName": "Patrizia",
+        "organizationName": "Patrizia",
+        "fundName": null,
+        "vehicleName": "Smart City Infrastructure Fund",
+        "stake": null,
+        "investmentYear": 2026,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "id": "cmrxpjqhu01emivhe7pcgstde",
+        "managerName": "Ubuntu Business Holdings",
+        "organizationName": "Ubuntu Business Holdings",
+        "fundName": null,
+        "vehicleName": "Prior SiFi Networks America ownership",
+        "stake": null,
+        "investmentYear": 2018,
+        "exitYear": 2026,
+        "isActive": false,
+        "transactionState": "REALIZED"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpkhve02jpivhemx3ip7y6",
+        "date": "2018",
+        "event": "Ubuntu Business Holdings invested in SiFi Networks America Limited through Prior SiFi Networks America ownership.",
+        "category": "FINANCING",
+        "sortDate": "2018-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkhw002jqivhe841w6sfi",
+        "date": "Apr 2019",
+        "event": "The Smart City Infrastructure Fund and Whitehelm Capital backed SiFi's Fullerton FiberCity deployment.",
+        "category": "OTHER",
+        "sortDate": "2019-04-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkhwj02jrivhes6muow6b",
+        "date": "May 2020",
+        "event": "SiFi announced Smart City Infrastructure Fund support for FiberCity growth.",
+        "category": "OTHER",
+        "sortDate": "2020-05-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkhx102jsivhedfwf0332",
+        "date": "Sep 7, 2021",
+        "event": "APG signed an agreement to acquire a 16.7% direct stake in SiFi Networks America and establish a U.S. fiber joint venture.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-09-07T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkhxl02jtivhe4zxq5uy5",
+        "date": "Jun 2023",
+        "event": "Future Fiber, APG, and SiFi raised $350 million of seven-year financing for U.S. FTTH deployment.",
+        "category": "FINANCING",
+        "sortDate": "2023-06-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpkhy602juivheqr44zuiu",
+        "date": "Aug 7, 2026",
+        "event": "ArcLink Fiber LLC acquired substantially all operating assets, contracts and goodwill of SiFi Networks America, LLC after the bankruptcy court entered the sale order on August 6; excluded assets and the investor-owned City LLC project companies remained outside the acquired package.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-08-07T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://cases.stretto.com/public/X901/14710/PLEADINGS/1471008132680000000337.pdf"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpostp077vivhemwtp30mx",
+        "label": "Sifinetworks — SiFi Networks America Limited",
+        "url": "https://sifinetworks.com/corporate/about-us-page-sifi-networks/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Sifinetworks company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxposuw077xivheb21y7teg",
+        "label": "Investment date source — APG Infrastructure — SiFi Networks America Limited",
+        "url": "https://sifinetworks.com/corporate/apgs-stake-in-sifi-networks-bring-10gig-citywide-fiber-networks/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "APG Infrastructure initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxposvz077zivhehmmbd66x",
+        "label": "APG — SiFi Networks America Limited",
+        "url": "https://apg.nl/en/publication/apg-investment-connects-1-million-american-households-to-fiber-optics/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "APG — SiFi Networks America Limited",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxposx00781ivhe5750qt9x",
+        "label": "Sifinetworks — SiFi Networks America Limited",
+        "url": "https://sifinetworks.com/corporate/future-fiber-apg-and-sifi-networks-open-access-fiber-to-the-home-ftth-network-raises-us350-million-7-year-financing-to-deliver-future-proof-ftth-connectivity-and-smart/",
+        "sourceType": "ARTICLE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Sifinetworks financing or public filing",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpot030783ivhe4c1fi8w6",
+        "label": "Smartcityinfrafund — SiFi Networks America Limited",
+        "url": "https://www.smartcityinfrafund.com/whitehelm-capital-finalises-deal-with-sifi-networks-to-fund-fibercity/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Smartcityinfrafund — SiFi Networks America Limited",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpot0k0784ivhe85tzrtjr",
+        "label": "County Times",
+        "url": "https://www.countytimes.co.uk/news/26050380.mike-harris-firm-sifi-networks-america-sold-new-owners/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "County Times - INF-2026-182 - SiFi Networks America LLC",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Stretto — SiFi Networks America docket 197",
+        "url": "https://cases.stretto.com/public/X901/14710/PLEADINGS/1471008132680000000337.pdf",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Direct filed proof of ArcLink buyer identity, sale perimeter and August 7, 2026 closing",
+        "isPrimary": true
+      }
+    ]
+  },
+  "afterImageSha256": "a0a609024b14c55e3a0a4c454577b41ff60729bfe02bce08891d9d1510d25468",
+  "proposalSha256": "d53d8af6d5051591468f9c5711cb785a8cb48fbd5549d92ae0623c62e5caa0bf"
+}

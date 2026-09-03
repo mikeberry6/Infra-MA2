@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_SEED_ATTRIBUTION_RECONCILIATION_SPEC",
+  "batchId": "batch-deferred-0042-0076-v1",
+  "batchSha256": "f88ab0c497384b1201f4f227e9aa6e57513d7882fb550fd0089b6c7c2a880698",
+  "reconciledAt": "2026-09-03T23:40:00.000Z",
+  "sourceManifestSha256": "20df53930904f01c2bb7e0a7e0b86b746a116a02e54687604e7a991e0bb9c64c",
+  "rationale": "Rebind SiFi Networks' two active-owner attribution records to the approved ArcLink Fiber continuing-platform identity and the normalized APG Asset Management manager name. This changes no fund attribution, fund link, ownership vehicle, investment year, stake, or active-owner count.",
+  "removeRecordIds": [],
+  "upsertRecords": [
+    {
+      "recordId": "OFA-6332C5C53126",
+      "companyName": "SiFi Networks (ArcLink Fiber)",
+      "country": "United States",
+      "investmentFirm": "APG Asset Management",
+      "currentVehicleName": "Smart City Infrastructure Fund (APG JV)",
+      "investmentYear": 2021,
+      "stake": null,
+      "targetLinkedFundName": "APG Direct Infrastructure Pool",
+      "fundAttribution": "INFERRED",
+      "attributedFundName": "APG Direct Infrastructure Pool",
+      "attributionConfidence": "MEDIUM",
+      "attributionRationale": "Estimated from manager match 1.00, vehicle-name overlap 0.25, evergreen/permanent-capital vehicle, North America-relevant mandate; no second manager-matched fund candidate. Public disclosure does not identify a distinct fund.",
+      "evidenceUrls": [
+        "https://cases.stretto.com/public/X901/14710/PLEADINGS/1471008132680000000337.pdf",
+        "https://sifinetworks.com/corporate/apgs-stake-in-sifi-networks-bring-10gig-citywide-fiber-networks/",
+        "https://sifinetworks.com/corporate/future-fiber-apg-and-sifi-networks-open-access-fiber-to-the-home-ftth-network-raises-us350-million-7-year-financing-to-deliver-future-proof-ftth-connectivity-and-smart/",
+        "https://sifinetworks.com/corporate/about-us-page-sifi-networks/",
+        "https://apg.nl/en/publication/apg-investment-connects-1-million-american-households-to-fiber-optics/",
+        "https://www.smartcityinfrafund.com/whitehelm-capital-finalises-deal-with-sifi-networks-to-fund-fibercity/"
+      ]
+    },
+    {
+      "recordId": "OFA-7A94362EF249",
+      "companyName": "SiFi Networks (ArcLink Fiber)",
+      "country": "United States",
+      "investmentFirm": "Patrizia",
+      "currentVehicleName": "Smart City Infrastructure Fund",
+      "investmentYear": 2026,
+      "stake": null,
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Smart City Infrastructure Fund",
+      "attributionConfidence": null,
+      "attributionRationale": "Vehicle appears to be a named fund or listed vehicle but does not match funds.ts.",
+      "evidenceUrls": [
+        "https://cases.stretto.com/public/X901/14710/PLEADINGS/1471008132680000000337.pdf",
+        "https://sifinetworks.com/corporate/apgs-stake-in-sifi-networks-bring-10gig-citywide-fiber-networks/",
+        "https://sifinetworks.com/corporate/future-fiber-apg-and-sifi-networks-open-access-fiber-to-the-home-ftth-network-raises-us350-million-7-year-financing-to-deliver-future-proof-ftth-connectivity-and-smart/",
+        "https://sifinetworks.com/corporate/about-us-page-sifi-networks/"
+      ]
+    }
+  ],
+  "specSha256": "d95658609d30f07aa9ff01ca0829e48f5aa58275472951f9280d8118f4ba9535"
+}

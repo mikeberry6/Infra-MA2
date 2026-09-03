@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0076:lodi-holdings-ii:062318ec",
+  "taskIndex": 76,
+  "companyName": "Lodi Holdings II",
+  "outcome": "DEFERRED",
+  "decidedAt": "2026-09-03T23:29:00.000Z",
+  "rationale": "Direct records prove the Fund II vehicle and 2008 exit, but no post-2008 source maps ArcLight's Current/Power label to an entity or assets. The live table has data defects, yet no correction proves this row stale; creation, merger or exclusion would be inferential.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0076-lodi-holdings-ii/attempt-2/locked-deferred-v1-task-snapshot.json",
+    "sha256": "f227078f8acd2b4863688c5299519fd91c195ed0d6b7944f0be689efe86a7916"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0076-lodi-holdings-ii/attempt-2/application-research-decision.json",
+    "sha256": "e10ab182d5930597b07bcfd8d9083ec5db62219f87cb1e91f5d89556e6f6d782"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0076-lodi-holdings-ii/attempt-2/source-verification.json",
+    "sha256": "ff478c7875723c63b2f19ce8a6f6b3510e39f8cbc9442f7deb60c53328f9d763"
+  },
+  "evidence": [
+    {
+      "url": "https://arclight.com/investments/",
+      "purpose": "Conflicting Current/Power row plus visible metadata defects."
+    },
+    {
+      "url": "https://arclight.com/wp-content/uploads/2025/10/2025-ArcLight-ESG-Report.pdf",
+      "purpose": "Test reported Funds I/II Strategic Gas treatment."
+    },
+    {
+      "url": "https://docs.cpuc.ca.gov/published/Final_decision/51710.htm",
+      "purpose": "Fund II vehicle acquired 50%; Fund I vehicle held 50%."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/805022/000110465908022585/a08-10038_1ex99d2.htm",
+      "purpose": "Identities, entry dates, business and Buckeye closing."
+    },
+    {
+      "url": "https://docs.cpuc.ca.gov/PublishedDocs/Efile/G000/M594/K365/594365127.PDF",
+      "purpose": "Current Brookfield/Rockpoint chain and pending transfer."
+    },
+    {
+      "url": "https://ir.digitalbridge.com/static-files/8fd4a470-1214-4655-8950-fcc57d690697",
+      "purpose": "ArcLight manager acquisition remained conditional and unclosed."
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "73f838ace409a3c8684090a37a1526d058e4f5abb8055dd63b17b7bbf7352626"
+}

@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "runId": "portco-deferred-readjudication-2026-09-03",
+  "taskId": "ledger:0074:liberty:69ac2ee0",
+  "taskIndex": 74,
+  "companyName": "Liberty",
+  "verifiedAt": "2026-09-03T22:20:05Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "label": "ArcLight Investments",
+      "url": "https://arclight.com/investments/",
+      "finalUrl": "https://arclight.com/investments/",
+      "status": "OPEN_AND_TEXT_VERIFIED",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 154597,
+      "contentSha256": "2a687007c4b5a1ba1891b2440d021b889c3b0ded621069293cba5bbfaef89c4d",
+      "isApplicationPrimary": true,
+      "note": "ArcLight's current manager page lists Liberty as a separate Strategic Gas investment with Current status. The row supplies no link, legal entity, country, headquarters, operating boundary, asset, service, customer, investment date, fund, vehicle, stake or co-owner. Liberty Bell Power, Natural Gas Pipeline Company of America, Gulf Coast Express, Saber Midstream, Third Coast CV and Third Coast Midstream are separately listed, so none can be merged into the Liberty row without direct same-company evidence."
+    },
+    {
+      "label": "Fund VII Form D amendment",
+      "url": "https://www.sec.gov/Archives/edgar/data/1740500/000174050020000002/xslFormDX01/primary_doc.xml",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1740500/000174050020000002/primary_doc.xml",
+      "status": "OPEN_EQUIVALENT_CANONICAL_XML_AND_INDEX_VERIFIED",
+      "httpStatus": 200,
+      "mediaType": "text/xml",
+      "bytes": 14185,
+      "contentSha256": "360a3ebd5e29b907287abe839f00c04508ebe1dc1501925c2fc96b99f59cc4cb",
+      "xslWrapperBytes": 48145,
+      "xslWrapperSha256": "1ced2417f637080d6a81ba998d4adfd25b84efc70f78766f92a11b1c1ba6b282",
+      "note": "The cited XSL URL and the canonical XML for the same accession were reopened. The filing identifies ArcLight Energy Partners Fund VII, L.P. as a Delaware limited partnership and does not mention Liberty. Fund existence is not proof that Fund VII owns or contains the Liberty label."
+    },
+    {
+      "label": "DigitalBridge-ArcLight announcement",
+      "url": "https://ir.digitalbridge.com/news-releases/news-release-details/digitalbridge-and-arclight-announce-strategic-combination-form/",
+      "finalUrl": "https://ir.digitalbridge.com/news-releases/news-release-details/digitalbridge-and-arclight-announce-strategic-combination-form/",
+      "status": "OPEN_AND_DECODED_RESPONSE_VERIFIED",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 49550,
+      "contentSha256": "fd913ef21b9230998fc2e491aee3d6932eeea9c3ba5abd5a356cb63e384775be",
+      "note": "The current decoded response body was recovered from the browser's HTTP cache after the direct page was visibly reopened. The May 27, 2026 release establishes a signed acquisition of ArcLight conditioned on the SoftBank acquisition and other closing conditions. It does not name Liberty or establish a transfer of that holding."
+    },
+    {
+      "label": "DigitalBridge Q2 2026 Form 10-Q",
+      "url": "https://ir.digitalbridge.com/static-files/8fd4a470-1214-4655-8950-fcc57d690697",
+      "finalUrl": "https://ir.digitalbridge.com/static-files/8fd4a470-1214-4655-8950-fcc57d690697",
+      "status": "OPEN_AND_FULL_TEXT_VERIFIED",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 773174,
+      "contentSha256": "5d62f9a3ca940d2a69dc1c48ec552bd35b8deb0008bd29943a19be13194796fe",
+      "extractedTextBytes": 203992,
+      "extractedTextSha256": "da1be11d628fffd4231bceea13f2ba83f44468099d710b4c6597d37cf18435d7",
+      "pageCount": 62,
+      "note": "The browser-loaded PDF response was recovered byte-for-byte from the browser's HTTP cache, then freshly text-extracted and searched. The filing states that the ArcLight acquisition remained conditioned on the SoftBank merger, regulatory approvals and fund consents, includes outside dates in 2027, and says there can be no assurance it will be consummated. It does not mention Liberty."
+    },
+    {
+      "label": "Kinder Morgan Natural Gas Operations",
+      "url": "https://www.kindermorgan.com/Operations/Natural-Gas/Index",
+      "finalUrl": "https://www.kindermorgan.com/Operations/Natural-Gas/Index",
+      "status": "OPEN_AND_TEXT_VERIFIED",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 235586,
+      "contentSha256": "d7d72e95f5bf5ebdce4fc9feade9d0d7151556562367e08d5bc6102a94700ea1",
+      "note": "The direct operator page states that Liberty NGL Pipeline is an 87-mile Texas NGL pipeline owned through Kinder Morgan's 50/50 joint venture with Energy Transfer Partners. That separately identified pipeline is not evidence for the ArcLight Liberty identity."
+    }
+  ],
+  "checks": {
+    "allReturnedEvidenceUrlsChecked": true,
+    "allReturnedPendingAndDuplicateUrlsChecked": true,
+    "allUrlsHttps": true,
+    "libertyCurrentStrategicGasLabelVerified": true,
+    "legalEntityVerified": false,
+    "companyWebsiteVerified": false,
+    "companyCountryOrHeadquartersVerified": false,
+    "operatingBoundaryAssetsServicesOrCustomersVerified": false,
+    "fundOrVehicleOwnershipVerified": false,
+    "stakeCoOwnersOrEntryDateVerified": false,
+    "fundVIIExistenceVerifiedWithoutCompanyLink": true,
+    "digitalBridgeArcLightTransactionSigned": true,
+    "digitalBridgeArcLightTransactionClosed": false,
+    "libertySpecificTransferFound": false,
+    "libertySpecificExitRebrandOrSuccessorFound": false,
+    "libertyNglPipelineDuplicateRelationshipFound": false,
+    "otherLibertyDuplicateRelationshipFound": false,
+    "exactlyOneApplicationPrimary": true
+  },
+  "modelHealthOverrides": [
+    "ArcLight's Boston address and Fund VII's North American mandate cannot establish the country, headquarters or assets of an unidentified portfolio label.",
+    "The current ArcLight page proves only a distinct Current/Strategic Gas manager label. It does not prove that the label is an operating company rather than a confidential holding, platform label, asset portfolio, SPV or ownership vehicle.",
+    "The Fund VII filing proves the fund exists but contains no Liberty reference, so the prior Fund VII attribution is not fresh application-grade evidence.",
+    "DigitalBridge's announced acquisition concerns ArcLight at the manager level and remained conditional in the latest direct evidence. It cannot be converted into a Liberty ownership transfer.",
+    "Liberty NGL Pipeline and other similarly named companies or assets may not be merged into the ArcLight Liberty label without direct same-company evidence."
+  ],
+  "conclusion": "The fresh direct evidence supports only a distinct ArcLight Current/Strategic Gas label named Liberty. It does not identify a legal entity, company site, country, headquarters, operating boundary, assets, services, customers, ownership fund or vehicle, stake, co-owner structure, or entry date. The proposed United States key remains unsupported, Fund VII cannot be freshly bound to the label, the ArcLight manager acquisition remains a pending manager-level transaction, and no duplicate, exit, rebrand or successor relationship was proved. Keep the task deferred as an exact identity, geography and ownership-chain exception and do not create or merge a production company."
+}

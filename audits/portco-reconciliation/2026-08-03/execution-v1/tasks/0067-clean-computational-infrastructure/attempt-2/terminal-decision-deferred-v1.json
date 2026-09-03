@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0067:clean-computational-infrastructure:93bcf245",
+  "taskIndex": 67,
+  "companyName": "Clean Computational Infrastructure",
+  "outcome": "DEFERRED",
+  "decidedAt": "2026-09-03T23:29:00.000Z",
+  "rationale": "ArcLight confirms a distinct Current/Transformative investment label, but no direct source identifies its legal entity, website, headquarters, country, assets, subsidiaries, services, customers, owner vehicle, stake or entry date. The proposed United States key and any operating-company description remain unsupported.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0067-clean-computational-infrastructure/attempt-2/locked-deferred-v1-task-snapshot.json",
+    "sha256": "c4345ea135775318bc72ce95ffa35e131d5e76d038c4b3704ddcc584c962f315"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0067-clean-computational-infrastructure/attempt-2/application-research-decision.json",
+    "sha256": "94fe27f135f39b0ff487ad40f3ae951f1248982e49215c458f3a12cd573051d9"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0067-clean-computational-infrastructure/attempt-2/source-verification.json",
+    "sha256": "cae9a2797fe62fcc1c46da25c4f70b25ad87ee44da4dcb94ccb99aa3beaf320d"
+  },
+  "evidence": [
+    {
+      "url": "https://arclight.com/investments/",
+      "purpose": "Confirms CCI as a distinct Current/Transformative row; no profile, entity, country or operating facts are supplied."
+    },
+    {
+      "url": "https://arclight.com/wp-content/uploads/2025/10/2025-ArcLight-ESG-Report.pdf",
+      "purpose": "Direct report reopened, but full text exceeded the web parser limit; no CCI fact was taken from it."
+    },
+    {
+      "url": "https://arclight.com/wp-content/uploads/2022/08/2022-ArcLight-ESG-Report.pdf",
+      "purpose": "Now 404; the reported 2022 appearance and Fund VII mapping could not be revalidated."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1740500/000174050020000002/xslFormDX01/primary_doc.xml",
+      "purpose": "Confirms Fund VII as a Delaware LP, but does not mention CCI."
+    },
+    {
+      "url": "https://ir.digitalbridge.com/news-releases/news-release-details/digitalbridge-and-arclight-announce-strategic-combination-form/",
+      "purpose": "Establishes the signed manager acquisition and conditions; it neither identifies CCI nor transfers its equity."
+    },
+    {
+      "url": "https://ir.digitalbridge.com/static-files/8fd4a470-1214-4655-8950-fcc57d690697",
+      "purpose": "Confirms the ArcLight transaction remained conditional and pending."
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "283f793ac6fec2b961b7ffc3484dcd9463b338b2ebfaf4402bf3076b563bf120"
+}

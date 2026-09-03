@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_DEFERRED_READJUDICATION_RESEARCH_DECISION",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-deferred-readjudication-2026-09-03",
+  "generatedAt": "2026-09-03T20:04:00.000Z",
+  "asOfDate": "2026-09-03",
+  "taskId": "ledger:0055:modern-aviation:22969eb9",
+  "taskIndex": 55,
+  "companyName": "Modern Aviation",
+  "linkedTaskIdsCovered": [],
+  "decision": "DEFERRED",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "summary": "Keep one canonical Modern Aviation platform. Correct the supportable Apollo and Tiger ownership chain and the March 2024 closing treatment, but preserve a freshly evidenced exact exception for Swiss Life Asset Managers because no direct source identifies whether its 2019 interest was sold, rolled, retained, distributed, or otherwise disposed of at the Apollo-led closing.",
+  "resolvedFormerBlockers": [
+    "The direct CCPC determination establishes AP Novus Holding, L.P. and TIP MA Investments LP investing into Novus Holdings Parent, L.P., which indirectly holds all Modern Aviation equity under Apollo/Tiger joint control.",
+    "Tiger's manager-authored 2024 release and public retrospective establish that Fund II and its co-investors fully exited in March 2024 and that Tiger's third flagship fund and co-investors reinvested alongside Apollo.",
+    "Direct SEC filings establish Apollo Infrastructure Company and an AIOF III Novus co-invest vehicle, so a sole Apollo Infrastructure Opportunities Fund III attribution is too narrow.",
+    "The Swiss Life manager-authored 2019 article establishes the historical 33% entry, and Tiger's 2026 Form ADV establishes continued non-zero gross assets in the named Swiss Life vehicle and feeders without supplying a holdings schedule."
+  ],
+  "identityResolution": {
+    "canonicalDisplayName": "Modern Aviation",
+    "legalIdentity": "Modern Aviation FBO Holdings, LLC",
+    "productionCompanyId": "cmrxpj5t700icivhefd9cqzhu",
+    "productionAction": "KEEP_CANONICAL_RECORD",
+    "mergeTarget": null,
+    "boundary": "One manager-level fixed-base-operator platform. Airport concessions, acquired FBOs, operating entities, AP Novus, TIP MA and Novus Holdings Parent are downstream assets, operating subsidiaries, or ownership vehicles and are not duplicate PortCos."
+  },
+  "ownershipResolution": {
+    "resolvedCurrentManagers": [
+      {
+        "manager": "Apollo Global Management",
+        "fund": "Apollo-managed infrastructure funds; Apollo Infrastructure Company and an AIOF III Novus co-invest are directly disclosed, but the complete fund roster is not public",
+        "vehicle": "AP Novus Holding, L.P. -> Novus Holdings Parent, L.P.",
+        "stake": "MAJORITY; JOINT CONTROL WITH TIGER",
+        "entryDate": "2024-03",
+        "status": "ACTIVE"
+      },
+      {
+        "manager": "Tiger Infrastructure Partners",
+        "fund": "Tiger Infrastructure Partners Fund III and co-investors",
+        "vehicle": "TIP MA Investments LP -> Novus Holdings Parent, L.P.",
+        "stake": "MINORITY; JOINT CONTROL WITH APOLLO",
+        "entryDate": "2024-03",
+        "status": "ACTIVE"
+      }
+    ],
+    "resolvedHistoricalManager": {
+      "manager": "Tiger Infrastructure Partners",
+      "fund": "Tiger Infrastructure Partners Fund II and co-investors",
+      "entryYear": 2018,
+      "exitDate": "2024-03",
+      "status": "REALIZED"
+    },
+    "unresolvedManager": {
+      "manager": "Swiss Life Asset Managers",
+      "fund": "Swiss Life Funds (LUX) Global Infrastructure Opportunities Growth",
+      "vehicle": "Swiss Life Modern Aviation Investment LP",
+      "historicalStake": "33% at 2019 entry",
+      "currentStake": "UNRESOLVED",
+      "currentStatus": "UNRESOLVED"
+    },
+    "blockingOwnershipGap": "No direct post-close source states whether Swiss Life received cash, rolled units, retained equity, received mixed consideration, distributed proceeds, or otherwise disposed of its Modern Aviation interest at the March 2024 closing.",
+    "formAdvTreatment": "The 2026-04-30 Form ADV reports $8,472,707 of gross assets for Swiss Life Modern Aviation Investment LP and $7,327,259 for a feeder, but it provides no named holdings schedule or asset composition. Those figures cannot prove continuing Modern Aviation equity or a realized exit."
+  },
+  "transactionResolution": {
+    "state": "CLOSED",
+    "buyerControl": "Apollo and Tiger joint control through AP Novus Holding, L.P. and TIP MA Investments LP",
+    "seller": "Modern Aviation LP",
+    "announcementDate": "2023-11-02",
+    "regulatoryClearanceDate": "2023-12-05",
+    "closingDate": "2024-03",
+    "pendingParentOwnershipTransaction": null
+  },
+  "freshException": {
+    "status": "EXACT_FACT_UNAVAILABLE",
+    "missingFact": "Swiss Life Asset Managers' exact post-March-2024 Modern Aviation ownership state and, if retained, its current vehicle and stake; or, if realized, its disposition date and consideration treatment.",
+    "searchedEvidence": [
+      "Direct CCPC ownership determination and disclosed acquisition vehicles",
+      "Apollo transaction release and Apollo Infrastructure Company SEC filings",
+      "Tiger Fund II exit and Fund III reinvestment releases and retrospective",
+      "Swiss Life's manager-authored 2019 entry disclosure",
+      "Tiger Infrastructure Partners' 2026-04-30 Form ADV master and feeder fund schedules",
+      "Current company, court, regulator, SEC and manager searches for closing cap tables, UPA schedules, funds-flow, audited holdings, distributions, escrow, wind-down and realization evidence"
+    ],
+    "requiredToResolve": "A direct post-close cap table, UPA or funds-flow schedule, audited named-holdings or distribution schedule, or an explicit Modern Aviation, Swiss Life, Apollo, Tiger, regulator or court statement identifying Swiss Life's treatment."
+  },
+  "primaryCitation": {
+    "label": "CCPC determination M/23/061 - Tiger / Apollo / Modern Aviation",
+    "url": "https://assets.ccpc.ie/data/docs/default-source/merger-attachments/m-2023/tiger-apollo-modern-aviation/m-23-061-determination.pdf",
+    "purpose": "Direct regulator evidence for the legal Apollo/Tiger ownership chain and joint-control structure",
+    "contentSha256": "c3e62e92a0818601b7d0d5cd9e29fcb55a59a74aea146736c6772d68e1c19ef8"
+  },
+  "applicationRequirements": [
+    "Recapture a fresh production company snapshot and fresh source-task and dependency snapshots against the current protected-main baseline before generating any after-image.",
+    "Any proposal may correct only the resolved Apollo/Tiger vehicle, fund-scope and March 2024 closing facts while preserving Modern Aviation as the single canonical company.",
+    "Do not assign Swiss Life an active or realized state, current stake, exit date, consideration type, or residual-asset classification without new direct named post-close evidence.",
+    "Use exactly one proposal primary citation bound to the direct CCPC determination PDF; other direct sources remain supporting evidence.",
+    "If the protected batch workflow cannot represent a partial factual correction while retaining the exact Swiss Life exception, keep this member terminal-only and do not mutate the record."
+  ],
+  "applicationBlocked": false,
+  "databaseMutationCandidate": true,
+  "seedMutationCandidate": true,
+  "terminalOutcomeCandidate": "DEFERRED",
+  "dealDatabaseMutation": false,
+  "lineage": {
+    "conversationUrl": "https://chatgpt.com/c/6a99c7cc-2718-83e9-b74b-ffcd8780d7c1",
+    "prompt": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0055-modern-aviation/attempt-2/chatgpt-research-prompt.md",
+      "sha256": "daf7ea2e8efdecf1d12c8b957532ffd8e3075319c271dada13613a47d24a1a28"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0055-modern-aviation/attempt-2/chatgpt-accepted-response.txt",
+      "sha256": "37fef970e773c87af487b25a17bc74864fbdd4e3cfd3a0158919658681c648ff"
+    },
+    "attestation": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0055-modern-aviation/attempt-2/chatgpt-attestation.json",
+      "sha256": "fbd9a24d667a43dfe9f7f12f54d59c87a4041552d9f49163b4205a46a4614d08"
+    },
+    "responseValidation": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0055-modern-aviation/attempt-2/chatgpt-response-validation.json",
+      "sha256": "264f7fd75892240ae5e01f23b1f4a90ed8f2ece15717512a9428e57af7817662"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0055-modern-aviation/attempt-2/source-verification.json",
+      "sha256": "f373b95d6c3f3b030f957356214cbcf7ef0ed9785b2b87a76416a9312c8f7705"
+    }
+  }
+}

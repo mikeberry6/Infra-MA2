@@ -40,6 +40,17 @@ retried to `ACTIVE` or explicitly moved to `DEFERRED`; they never permit a later
 company to start. All active/research/release/apply states count as in flight,
 and both the library and file-locking CLI enforce concurrency of exactly one.
 
+After the original queue reaches zero pending tasks, a final deferred-company
+review uses the dedicated `reopen-deferred` command. Generic state transitions
+still treat `DEFERRED` as terminal. The narrow reopen path permits only the
+earliest deferred task without a prior re-adjudication, requires exact current
+execution-manifest and idle batch-ledger hashes, and binds the full fresh
+ChatGPT attestation, prompt, response, transcript, source verification, validation, and
+research-decision byte hashes into durable history. It clears volatile attempt
+artifacts while preserving the prior deferral and its artifact references in a
+re-adjudication record. Reopened tasks become the only `PENDING` candidates and
+can then enter the normal protected two-to-five-member batch path.
+
 Initialize a derived run and inspect its next task:
 
 ```sh

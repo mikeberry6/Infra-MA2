@@ -1,0 +1,194 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0074:liberty:69ac2ee0",
+  "taskIndex": 74,
+  "companyName": "Liberty",
+  "asOfDate": "2026-09-03",
+  "decision": "DEFERRED",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-03T23:22:00.000Z",
+  "result": {
+    "asOfDate": "2026-09-03",
+    "requestedCompany": {
+      "label": "Liberty",
+      "taskId": "ledger:0074:liberty:69ac2ee0",
+      "canonicalKey": "liberty|united-states",
+      "currentProductionCompanyId": null
+    },
+    "requestedManagers": [
+      "ArcLight Capital"
+    ],
+    "decision": "DEFERRED",
+    "confidence": 0.97,
+    "rationale": "ArcLight verifies a separate Current / Strategic Gas label, but no direct source maps it to a legal entity, company country, operations, or Liberty-specific ownership chain. A U.S. record, merge, or exclusion is therefore unsafe.",
+    "identityResolution": {
+      "legalEntity": "UNRESOLVED",
+      "website": "NOT_PUBLICLY_DISCLOSED",
+      "headquarters": "UNRESOLVED",
+      "companyCountry": "UNRESOLVED",
+      "entityType": "UNRESOLVED",
+      "classification": "Manager-authenticated investment label; operating platform, asset portfolio, confidential label, holdco/SPV, or rebrand is UNRESOLVED.",
+      "distinctness": "ArcLight lists Liberty separately from Liberty Bell Power, Gulf Coast Express, NGPL, Saber Midstream, Third Coast CV, and Third Coast Midstream; that distinguishes labels, not legal entities."
+    },
+    "ownershipResolution": {
+      "owner": {
+        "manager": "ArcLight Capital",
+        "organization": "ArcLight Capital Partners, LLC",
+        "fund": "UNRESOLVED",
+        "vehicle": "NOT_PUBLICLY_DISCLOSED",
+        "stake": "NOT_PUBLICLY_DISCLOSED",
+        "announcementDate": "NOT_PUBLICLY_DISCLOSED",
+        "entryDate": "UNRESOLVED",
+        "entryYear": "UNRESOLVED",
+        "exitDate": null,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CURRENT_LABEL; HOLDING_CHAIN_UNRESOLVED"
+      },
+      "coOwners": "UNRESOLVED",
+      "fundVIIAssessment": "Fund VII exists, but no accessible direct source connected Liberty to it; prior attribution remains UNRESOLVED."
+    },
+    "operatingResolution": {
+      "sector": "Strategic Gas",
+      "operatingBoundary": "UNRESOLVED",
+      "assets": "UNRESOLVED",
+      "subsidiaries": "NOT_PUBLICLY_DISCLOSED",
+      "services": "NOT_PUBLICLY_DISCLOSED",
+      "customers": "NOT_PUBLICLY_DISCLOSED",
+      "geography": "UNRESOLVED; no Liberty-specific source establishes the United States, Canada, or Mexico."
+    },
+    "acquisitionExitCheck": {
+      "libertySpecific": "No direct evidence located of sale, exit, merger, rename, reorganization, successor, or transfer; ArcLight still marks Liberty Current.",
+      "pendingTransaction": {
+        "direction": "INBOUND_MANAGER_ACQUISITION",
+        "buyer": "DigitalBridge Group, Inc.",
+        "seller": "ArcLight Capital Holdings, LLC company owners",
+        "stake": "NO_LIBERTY-SPECIFIC_STAKE_DISCLOSED",
+        "announcementDate": "2026-05-27",
+        "closingDate": null,
+        "state": "SIGNED_PENDING_AS_OF_2026-09-03; MANAGER_LEVEL_ONLY",
+        "evidenceUrls": [
+          "https://ir.digitalbridge.com/news-releases/news-release-details/digitalbridge-and-arclight-announce-strategic-combination-form/",
+          "https://ir.digitalbridge.com/static-files/8fd4a470-1214-4655-8950-fcc57d690697"
+        ]
+      }
+    },
+    "milestones": [
+      {
+        "date": "2026-05-23",
+        "event": "DigitalBridge-ArcLight manager merger agreement signed; no Liberty-specific transfer identified."
+      },
+      {
+        "date": "2026-08-04",
+        "event": "DigitalBridge 10-Q still described the acquisition as conditional and pending."
+      },
+      {
+        "date": "2026-09-03",
+        "event": "ArcLight still listed Liberty as Current / Strategic Gas without identity or geography."
+      }
+    ],
+    "evidence": [
+      {
+        "label": "ArcLight Investments",
+        "url": "https://arclight.com/investments/",
+        "purpose": "Verify Liberty label, sector, status, and separate ArcLight listings.",
+        "sourceTier": "MANAGER_DIRECT",
+        "workingStatus": "WORKING_CURRENT",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "SEC Form D/A - Fund VII",
+        "url": "https://www.sec.gov/Archives/edgar/data/1740500/000174050020000002/xslFormDX01/primary_doc.xml",
+        "purpose": "Verify Fund VII exists; filing does not identify Liberty.",
+        "sourceTier": "SEC_DIRECT",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "DigitalBridge-ArcLight Announcement",
+        "url": "https://ir.digitalbridge.com/news-releases/news-release-details/digitalbridge-and-arclight-announce-strategic-combination-form/",
+        "purpose": "Verify manager acquisition announcement and conditions.",
+        "sourceTier": "BUYER_DIRECT",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "DigitalBridge 2026-08-04 Form 10-Q",
+        "url": "https://ir.digitalbridge.com/static-files/8fd4a470-1214-4655-8950-fcc57d690697",
+        "purpose": "Verify acquisition remained conditional and pending.",
+        "sourceTier": "SEC_ISSUER_DIRECT",
+        "workingStatus": "WORKING_PDF_REVIEWED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Kinder Morgan Natural Gas Operations",
+        "url": "https://www.kindermorgan.com/Operations/Natural-Gas/Index",
+        "purpose": "Exclude Liberty NGL Pipeline as a Kinder Morgan/Energy Transfer JV.",
+        "sourceTier": "OPERATOR_DIRECT",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "before": "No production record; liberty|united-states was deferred for missing identity, geography, operations, and ownership.",
+      "after": "Do not create or merge. Keep a research-only ArcLight label; Fund VII remains unverified for Liberty and DigitalBridge remains a pending manager-level transaction."
+    },
+    "excludedOrDuplicateCandidates": [
+      {
+        "candidates": "Liberty Bell Power; NGPL; Gulf Coast Express; Saber Midstream; Third Coast CV; Third Coast Midstream",
+        "assessment": "NOT_A_SAFE_MERGE: separate ArcLight rows; no rebrand/successor bridge."
+      },
+      {
+        "candidates": "Liberty NGL Pipeline",
+        "assessment": "EXCLUDED_AS_IDENTITY_SOURCE: Kinder Morgan/Energy Transfer 50/50 JV."
+      },
+      {
+        "candidates": "Liberty Energy; Liberty Tire Recycling; Liberty Gas Storage/LA Storage; MarkWest Liberty",
+        "assessment": "DO_NOT_MERGE: separate businesses/assets; no ArcLight-Liberty bridge."
+      },
+      {
+        "candidates": "Liberty Renewables; Liberty Midstream Solutions",
+        "assessment": "DO_NOT_MERGE: no direct identity or ownership bridge."
+      }
+    ],
+    "unresolvedQuestions": [
+      "Exact legal entity, website, headquarters, company country, and entity type?",
+      "Assets, subsidiaries, services, customers, and operating geography?",
+      "ArcLight fund, vehicle, stake, co-owners, entry date, and any successor or exit?"
+    ],
+    "recommendedListAction": {
+      "action": "KEEP_DEFERRED",
+      "createRecord": false,
+      "merge": false,
+      "canonicalKeyStatus": "UNSAFE_UNTIL_COUNTRY_VERIFIED",
+      "exactMissingFact": "A Liberty-specific direct source linking ArcLight's label to a legal entity, company country, operating boundary, and current holding chain.",
+      "evidenceSearch": [
+        "ArcLight fund schedule/LP report or manager confirmation naming the entity and vehicle.",
+        "Registry, regulator, permit, tariff, counterparty, or ownership filing linking that entity to country, assets, stake, co-owners, and dates."
+      ]
+    }
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0074-liberty/attempt-2/research-decision.json",
+      "sha256": "d3d77e22f9da5c0e96670f6ff653ed195bdb25128dcc3b9d6201c6d122b10d2d"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0074-liberty/attempt-2/chatgpt-accepted-response.txt",
+      "sha256": "58614dacdf97086b7a2ea245164ee675af2491d8bec6f0827ca1d6aba7575268"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0074-liberty/attempt-2/source-verification.json",
+      "sha256": "28ccc338babd9a282488bc8b91c2e766d00a04b9c278aff4918fad032fe04380"
+    },
+    "acceptedResponseSha256": null,
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+    "confidenceNormalization": {
+      "acceptedValue": 0.97,
+      "stagedSummaryValue": "HIGH",
+      "basis": "The accepted response expressed confidence as a numeric score; the staged summary preserves its deterministic HIGH, MEDIUM, or LOW band and the research decision is unchanged."
+    }
+  }
+}
