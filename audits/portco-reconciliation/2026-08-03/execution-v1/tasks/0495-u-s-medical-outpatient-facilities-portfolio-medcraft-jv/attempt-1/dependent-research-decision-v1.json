@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_DEPENDENT_RESEARCH_DECISION",
+  "taskId": "ledger:0495:u-s-medical-outpatient-facilities-portfolio-medcraft-jv:f5a7946c",
+  "taskIndex": 495,
+  "companyName": "U.S. Medical Outpatient Facilities Portfolio (MedCraft JV)",
+  "decision": "SUPERSEDED",
+  "generatedAt": "2026-09-03T18:36:00.000Z",
+  "result": {
+    "decision": "SUPERSEDED",
+    "rationale": "This source label is the exact reviewed alias of the same 24-facility Fengate-MedCraft Cleveland Clinic outpatient portfolio already reconciled in completed task 250. The canonical after-image and complete seed overlay retain the source label as an alias, and the fresh production snapshot confirms the canonical company remains published with the expected relationship counts. Creating or correcting a second record would duplicate that canonical portfolio identity.",
+    "evidence": [
+      {
+        "url": "https://fengate.com/news/fengate-expands-healthcare-infrastructure-portfolio-with-acquisition-of-24-u-s-outpatient-facilities",
+        "purpose": "Direct manager evidence that the 24-facility U.S. outpatient portfolio is the first acquisition by the Fengate-MedCraft joint venture already reconciled in task 250."
+      }
+    ]
+  },
+  "lineage": {
+    "canonicalTaskId": "ledger:0250:medcraft-medical-outpatient-portfolio:bb470706",
+    "canonicalTaskObservedStatus": "COMPLETED",
+    "canonicalCompanyId": "cmrxpjfs500xmivheiqodqkfz",
+    "canonicalCompanySnapshotSha256": "885cebada990c4998ce5fd9c4be61c5d70975553ae2ef1eda932bd62b8beed6b"
+  }
+}

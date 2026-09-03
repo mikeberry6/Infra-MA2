@@ -3,7 +3,7 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-03T18:31:00.000Z",
+  "updatedAt": "2026-09-03T18:39:00.000Z",
   "activeBatchId": null,
   "batches": [
     {
@@ -8781,7 +8781,63 @@
           "reason": "Original atomic PortCo transaction and immutable receipt verified; one-row Skyservice attribution repair receipt reproduced; seed parity, canonical API, retired-route redirect, and rendered scorecard checks passed with no partial application. Source tasks 472, 475, 476, 490, and 492 plus dependent Task 493 finalized durably without repeating either production transaction."
         }
       ]
+    },
+    {
+      "batchId": "batch-0495-0496-v1",
+      "state": "COMPLETED",
+      "taskIds": [
+        "ledger:0495:u-s-medical-outpatient-facilities-portfolio-medcraft-jv:f5a7946c",
+        "ledger:0496:u-s-medical-outpatient-facilities-portfolio-montecito-jv:be578f31"
+      ],
+      "taskIndexes": [
+        495,
+        496
+      ],
+      "createdAt": "2026-09-03T18:34:00.000Z",
+      "updatedAt": "2026-09-03T18:39:00.000Z",
+      "completedAt": "2026-09-03T18:39:00.000Z",
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0495-0496-v1/batch-manifest.json",
+        "sha256": "5520dbfba28cf3b57ecacf043f11cf0399d5b175b6eeac66937c0c04c52b6301"
+      },
+      "releaseSha": null,
+      "receipt": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0495-0496-v1/terminal-completion/batch-terminal-receipt.json",
+        "sha256": "1da4a1bd87ca4a38ec1490de61b9d624e41f74be7d36051da9009465ba15869c"
+      },
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-09-03T18:34:00.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-09-03T18:38:30.000Z",
+          "evidenceSha256": [
+            "5520dbfba28cf3b57ecacf043f11cf0399d5b175b6eeac66937c0c04c52b6301"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "COMPLETED",
+          "at": "2026-09-03T18:39:00.000Z",
+          "evidenceSha256": [
+            "1da4a1bd87ca4a38ec1490de61b9d624e41f74be7d36051da9009465ba15869c",
+            "5520dbfba28cf3b57ecacf043f11cf0399d5b175b6eeac66937c0c04c52b6301"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "18b88365213f31b8bbdca34731e51cdd3177d55d84e63d7392e09d7cfbf56d5a"
+  "ledgerSha256": "72218c78c1f6ae669b425e2e08221a0023f1cf7bdf57df8ee063b888546b01a2"
 }

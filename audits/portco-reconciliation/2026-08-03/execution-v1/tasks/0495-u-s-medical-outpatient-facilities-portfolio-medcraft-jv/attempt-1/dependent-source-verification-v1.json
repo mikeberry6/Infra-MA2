@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_DEPENDENT_SOURCE_VERIFICATION",
+  "taskId": "ledger:0495:u-s-medical-outpatient-facilities-portfolio-medcraft-jv:f5a7946c",
+  "taskIndex": 495,
+  "companyName": "U.S. Medical Outpatient Facilities Portfolio (MedCraft JV)",
+  "verifiedAt": "2026-09-03T18:36:00.000Z",
+  "canonicalTask": {
+    "taskId": "ledger:0250:medcraft-medical-outpatient-portfolio:bb470706",
+    "sequence": 250,
+    "status": "COMPLETED",
+    "canonicalCompanyId": "cmrxpjfs500xmivheiqodqkfz",
+    "currentCompanySnapshotSha256": "885cebada990c4998ce5fd9c4be61c5d70975553ae2ef1eda932bd62b8beed6b"
+  },
+  "sources": [
+    {
+      "url": "https://fengate.com/news/fengate-expands-healthcare-infrastructure-portfolio-with-acquisition-of-24-u-s-outpatient-facilities",
+      "status": "WORKING_CURRENT",
+      "httpStatus": 200,
+      "bytes": 58616,
+      "contentSha256": "8db0c955849160c3c2daa54ff7ef29e4bf49af2fb991a38465b6fff3143ecacb",
+      "note": "Fresh direct retrieval of Fengate's announcement; it identifies the 24-facility portfolio as the first Fengate-MedCraft joint-venture acquisition."
+    }
+  ],
+  "checks": {
+    "canonicalTaskCompleted": true,
+    "canonicalProductionIdentityPresent": true,
+    "duplicateMutationRequired": false,
+    "sourceCollision": false
+  },
+  "conclusion": "Task 495 is an alternate source label for the completed task-250 company and is safe to supersede without a database or seed mutation."
+}

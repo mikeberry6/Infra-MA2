@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_DEPENDENT_RESEARCH_DECISION",
+  "taskId": "ledger:0496:u-s-medical-outpatient-facilities-portfolio-montecito-jv:be578f31",
+  "taskIndex": 496,
+  "companyName": "U.S. Medical Outpatient Facilities Portfolio (Montecito JV)",
+  "decision": "SUPERSEDED",
+  "generatedAt": "2026-09-03T18:36:00.000Z",
+  "result": {
+    "decision": "SUPERSEDED",
+    "rationale": "This source label is the exact reviewed alias of the same 16-facility Fengate-Montecito medical outpatient portfolio already reconciled in completed task 251. The canonical after-image and complete seed overlay retain the source label as an alias, and the fresh production snapshot confirms the canonical company remains published with the expected relationship counts. Creating or correcting a second record would duplicate that canonical portfolio identity.",
+    "evidence": [
+      {
+        "url": "https://fengate.com/news/fengate-acquires-16-medical-outpatient-facilities-in-the-united-states",
+        "purpose": "Direct manager evidence that the 16-facility U.S. outpatient portfolio was acquired by Fengate alongside Montecito Medical and is the portfolio already reconciled in task 251."
+      }
+    ]
+  },
+  "lineage": {
+    "canonicalTaskId": "ledger:0251:montecito-medical-outpatient-portfolio:18c48dc3",
+    "canonicalTaskObservedStatus": "COMPLETED",
+    "canonicalCompanyId": "cmrxpjfsr00xnivhemb529yxo",
+    "canonicalCompanySnapshotSha256": "10f01946feca33cbb7f2e33f7f3765e406860a90ba9861bb0ac06e5116ec0998"
+  }
+}
