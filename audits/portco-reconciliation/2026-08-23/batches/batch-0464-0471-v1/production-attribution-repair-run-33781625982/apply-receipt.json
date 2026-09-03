@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_RECEIPT",
+  "manifestSha256": "10bff86b7ad763e6cefcd97bf85d21ac2779d0e761c924a925c08dc448dda2c3",
+  "approvalSha256": "09092188ae00ca91332f2d525a8bd711b9a82a4577731a6a66b7e9a0058dfdcf",
+  "environment": "production",
+  "pipelineRunId": "cmtlrqe1s0000ta4xxnezu0ph",
+  "mutationCount": 5,
+  "changed": 5,
+  "idempotent": false,
+  "beforeFingerprint": "22cfe4b52b3f9cacd67a0f70ec6fe5bb9a7aaaa5567d24dde2d86b131e4cb3dc",
+  "afterFingerprint": "b7f0fa42328dd31e8bc355850bcb9cbbaf19519e1c9d68962458dcfe8b2a0ce6",
+  "rows": [
+    {
+      "recordId": "OFA-BCD9535A9297",
+      "ownershipPeriodId": "cmrxpjph601cwivhebgbjrmu7",
+      "companyId": "cmrxpj4cg00gbivhe0f3aiyud",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "AIMCo Direct Infrastructure Investment",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, evergreen/permanent-capital vehicle, North America-relevant mandate; no second manager-matched fund candidate. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "AIMCo directly discloses its 10% Boldyn parent interest without naming a separately managed fund or legal investment vehicle."
+      }
+    },
+    {
+      "recordId": "OFA-BD1922EF6B42",
+      "ownershipPeriodId": "cmrxpk6mq0242ivhehnmpbwxw",
+      "companyId": "cmrxpj4cg00gbivhe0f3aiyud",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": "Manulife Infrastructure Fund II",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Manulife Infrastructure Fund II",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: Manulife Investment Management | Fund: Not publicly disclosed. | Ownership Interest: Not publicly disclosed. Seed milestones or source evidence explicitly name the current fund vehicle."
+      },
+      "after": {
+        "linkedFundName": "Manulife Infrastructure Fund II",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Manulife Infrastructure Fund II",
+        "attributionConfidence": null,
+        "attributionRationale": "Manulife Infrastructure Fund II remains the disclosed fund for Manulife's minority interest in specified U.S. assets; the canonical Boldyn row preserves that narrower ownership perimeter."
+      }
+    },
+    {
+      "recordId": "OFA-DB1BBAAE59C5",
+      "ownershipPeriodId": "cmtlqxciv000osi4x95czveaj",
+      "companyId": "cmrxpj4cg00gbivhe0f3aiyud",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "AIMCo's direct investment disclosure identifies CPP Investments as Boldyn's 86% parent shareholder and does not identify a separate managed fund or legal investment vehicle."
+      }
+    },
+    {
+      "recordId": "OFA-F8BFB35A8A27",
+      "ownershipPeriodId": "cmrxpkahg02a2ivheh9xpi96y",
+      "companyId": "cmrxpjnws01aeivhed4cak399",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "Tallvine Middle Market Infrastructure Fund I",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, North America-relevant mandate; no second manager-matched fund candidate. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Tallvine is directly disclosed as the lead sponsor of the marine platform, but the applicable fund and legal holding vehicle are not publicly disclosed."
+      }
+    },
+    {
+      "recordId": "OFA-BDEBD87ED66C",
+      "ownershipPeriodId": "cmtlqx0s20006si4xjczrdlgf",
+      "companyId": "cmrxpjnws01aeivhed4cak399",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Transaction evidence identifies Thoroughbred LLC directly as Tallvine's industrial partner and a Donjon buyer; no separate managed fund or holding vehicle is disclosed."
+      }
+    }
+  ],
+  "appliedAt": "2026-09-03T16:57:48.723Z",
+  "receiptSha256": "94a089fa698df2e6cd7a82a981002cb8b96a98779d2e1c6a33d0914ebf4af57f"
+}

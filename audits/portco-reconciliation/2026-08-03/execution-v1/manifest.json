@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-09-03T16:56:00.000Z",
+  "updatedAt": "2026-09-03T18:00:00.000Z",
   "runStatus": "IDLE",
   "activeTaskId": null,
   "source": {
@@ -42766,23 +42766,44 @@
       "managerIndex": 100,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "f0eff687fa9bf2bad193f10b2d6175b7e2fd6de38fd412f738cb98a8b1839b67",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-09-03T17:00:00.000Z",
+      "updatedAt": "2026-09-03T18:00:00.000Z",
+      "completedAt": "2026-09-03T18:00:00.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "b31fe0a1c3eeb341b0b41f26e78a94ec0ce115d4207da2048b3173b3106f5d72",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0464-donjon-marine-co-llc/attempt-1/locked-batch-v1-task-snapshot.json",
+          "sha256": "b31fe0a1c3eeb341b0b41f26e78a94ec0ce115d4207da2048b3173b3106f5d72"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0464-donjon-marine-co-llc/attempt-1/proposal-v5.json",
+          "sha256": "9a31e35396b436a058388ca97208abcbbc4049ab8864fcdaed49ce4b535eaf95"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0464-donjon-marine-co-llc/attempt-1/approval-v5.json",
+          "sha256": "3c005c38b13f4c6764e5513957540a0cd0f99595de6c399062495a0692f9cdf8"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0464-0471-v1/production-apply-run-33779305207/batch-apply-receipt.json#members/0/receipt",
+          "sha256": "733505e8452206d559920fc2d4c2a4299e2a83e64f0cc127c1cdb86f9831ac24"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0464-donjon-marine-co-llc/attempt-1/proposal-v5.json#afterImage",
+          "sha256": "3f3b2c15695112cd645b5c76b4ecf16ad0529fb3fc49356f20efbef5872f58bf"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-09-03T18:00:00.000Z",
+        "auditEventId": "cmtlqx2gu0009si4xnlfb3wf0",
+        "transactionId": "d010e236-3357-4d15-a05d-ded7f6531908",
+        "receiptSha256": "733505e8452206d559920fc2d4c2a4299e2a83e64f0cc127c1cdb86f9831ac24",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33779305207"
+      },
       "history": [
         {
           "sequence": 1,
@@ -42793,6 +42814,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-09-03T18:00:00.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0464-0471-v1.",
+          "taskSnapshotSha256": "b31fe0a1c3eeb341b0b41f26e78a94ec0ce115d4207da2048b3173b3106f5d72",
+          "evidenceSha256": [
+            "3c005c38b13f4c6764e5513957540a0cd0f99595de6c399062495a0692f9cdf8",
+            "3f3b2c15695112cd645b5c76b4ecf16ad0529fb3fc49356f20efbef5872f58bf",
+            "733505e8452206d559920fc2d4c2a4299e2a83e64f0cc127c1cdb86f9831ac24",
+            "8a1fdefec1b25e6355969bcfc29052204953eb195d8aeeefa2f6c659a415b97d",
+            "96a6cf4889da879dda9c0d98a7f6d550e8d3bc6fff8976e95d1cecd8b9811cf1",
+            "9a31e35396b436a058388ca97208abcbbc4049ab8864fcdaed49ce4b535eaf95",
+            "b31fe0a1c3eeb341b0b41f26e78a94ec0ce115d4207da2048b3173b3106f5d72"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -42804,23 +42843,44 @@
       "managerIndex": 100,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "5986ad626eb2d56249be45f90d1d17c41e4cd018bc74e50aa23a6f0b78cab40a",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-09-03T17:00:00.000Z",
+      "updatedAt": "2026-09-03T18:00:00.000Z",
+      "completedAt": "2026-09-03T18:00:00.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "2bd4350c616823b00cb5d15089ff55eb8fee8eb6e63aae243b79804be0b7a2ba",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0465-havasu-air-center/attempt-1/locked-batch-v1-task-snapshot.json",
+          "sha256": "2bd4350c616823b00cb5d15089ff55eb8fee8eb6e63aae243b79804be0b7a2ba"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0465-havasu-air-center/attempt-1/proposal-v2.json",
+          "sha256": "3a675cf2b7be71bbc1c6b5d65e7b3adb95270351baca85211bf27a0513973e4f"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0465-havasu-air-center/attempt-1/approval-v2.json",
+          "sha256": "29d15de4da065c220b232bcc6cdb42e161c4e9f6079cbbaf7777e80cd20a79e2"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0464-0471-v1/production-apply-run-33779305207/batch-apply-receipt.json#members/1/receipt",
+          "sha256": "c472c33756fea526930b538cb29ee52c08c7cc15e89825dfd8ad7b3d1490f44e"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0465-havasu-air-center/attempt-1/proposal-v2.json#afterImage",
+          "sha256": "15d2b59e1a402b5aba15630a936897c686a30de7bb87cc81cea428a7dc9e917e"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-09-03T18:00:00.000Z",
+        "auditEventId": "cmtlqxacd000isi4xe2jbt7vh",
+        "transactionId": "d010e236-3357-4d15-a05d-ded7f6531908",
+        "receiptSha256": "c472c33756fea526930b538cb29ee52c08c7cc15e89825dfd8ad7b3d1490f44e",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33779305207"
+      },
       "history": [
         {
           "sequence": 1,
@@ -42831,6 +42891,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-09-03T18:00:00.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0464-0471-v1.",
+          "taskSnapshotSha256": "2bd4350c616823b00cb5d15089ff55eb8fee8eb6e63aae243b79804be0b7a2ba",
+          "evidenceSha256": [
+            "15d2b59e1a402b5aba15630a936897c686a30de7bb87cc81cea428a7dc9e917e",
+            "29d15de4da065c220b232bcc6cdb42e161c4e9f6079cbbaf7777e80cd20a79e2",
+            "2bd4350c616823b00cb5d15089ff55eb8fee8eb6e63aae243b79804be0b7a2ba",
+            "3a675cf2b7be71bbc1c6b5d65e7b3adb95270351baca85211bf27a0513973e4f",
+            "8a1fdefec1b25e6355969bcfc29052204953eb195d8aeeefa2f6c659a415b97d",
+            "96a6cf4889da879dda9c0d98a7f6d550e8d3bc6fff8976e95d1cecd8b9811cf1",
+            "c472c33756fea526930b538cb29ee52c08c7cc15e89825dfd8ad7b3d1490f44e"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -42842,20 +42920,26 @@
       "managerIndex": null,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "39815f461e852b73b345e0d90c052e96f480b763ee1a9675f88b48b13cecb575",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
-      "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "status": "SUPERSEDED",
+      "attempts": 1,
+      "startedAt": "2026-09-03T17:00:00.000Z",
+      "updatedAt": "2026-09-03T18:00:00.000Z",
+      "completedAt": "2026-09-03T18:00:00.000Z",
+      "exceptionReason": "Alpha Generation (AlphaGen) is the same legal and operating identity already resolved by completed canonical task 64 for AlphaGen. Task 64 merged the duplicate production identities into Alpha Generation, LLC, preserved AlphaGen and Alpha Generation (AlphaGen) as aliases, reconciled the ArcLight, ADIA and CPP Investments ownership chain, and has an immutable production apply receipt. This heuristic-overlap seed label must therefore not create a second company or repeat the completed transaction.",
+      "supersededByTaskId": "ledger:0064:alphagen:b9424b11",
+      "taskSnapshotSha256": "1971b83550bc02cbeee52bc30f472b41c991b828eaffa65daced234cc50b081e",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0466-alpha-generation-alphagen/attempt-1/locked-batch-v2-task-snapshot.json",
+          "sha256": "1971b83550bc02cbeee52bc30f472b41c991b828eaffa65daced234cc50b081e"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0466-alpha-generation-alphagen/attempt-1/terminal-decision-v1.json",
+          "sha256": "08dfb1737d5288b9cfbb77c24623d9d0bf578df2bf26303fd711991155cdd31c"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -42869,6 +42953,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "SUPERSEDED",
+          "at": "2026-09-03T18:00:00.000Z",
+          "reason": "Alpha Generation (AlphaGen) is the same legal and operating identity already resolved by completed canonical task 64 for AlphaGen. Task 64 merged the duplicate production identities into Alpha Generation, LLC, preserved AlphaGen and Alpha Generation (AlphaGen) as aliases, reconciled the ArcLight, ADIA and CPP Investments ownership chain, and has an immutable production apply receipt. This heuristic-overlap seed label must therefore not create a second company or repeat the completed transaction.",
+          "taskSnapshotSha256": "1971b83550bc02cbeee52bc30f472b41c991b828eaffa65daced234cc50b081e",
+          "evidenceSha256": [
+            "08dfb1737d5288b9cfbb77c24623d9d0bf578df2bf26303fd711991155cdd31c",
+            "1971b83550bc02cbeee52bc30f472b41c991b828eaffa65daced234cc50b081e",
+            "8a1fdefec1b25e6355969bcfc29052204953eb195d8aeeefa2f6c659a415b97d",
+            "96a6cf4889da879dda9c0d98a7f6d550e8d3bc6fff8976e95d1cecd8b9811cf1"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -43033,23 +43132,44 @@
       "managerIndex": null,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "935a056bf6c62252743b994b12f31d149d68dfdf1f5317b9ffddc19e9ba8f278",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-09-03T17:00:00.000Z",
+      "updatedAt": "2026-09-03T18:00:00.000Z",
+      "completedAt": "2026-09-03T18:00:00.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "ae1662b1f9b55ab6c65ef8516ca237cbc7c7ba33a8bdbf0905fadb14a4dc66f4",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0470-boldyn-networks/attempt-2/locked-batch-v3-task-snapshot.json",
+          "sha256": "ae1662b1f9b55ab6c65ef8516ca237cbc7c7ba33a8bdbf0905fadb14a4dc66f4"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0470-boldyn-networks/attempt-2/proposal-v3.json",
+          "sha256": "90a8d4b8e20fbc46401629352a020e9c14dfe30e97834186d2358d17a1f401e7"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0470-boldyn-networks/attempt-2/approval-v3.json",
+          "sha256": "5852c6f12ba29c21a96f109f585dc93ae80c7a9e0e2703f648cbdf1005573ed8"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0464-0471-v1/production-apply-run-33779305207/batch-apply-receipt.json#members/3/receipt",
+          "sha256": "3b8bf5e7af384d16dda5f66859c0025f065c4ad6125e632128d5622c0f6cdac8"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0470-boldyn-networks/attempt-2/proposal-v3.json#afterImage",
+          "sha256": "7910575d7ba61b7667f9eb982d91073baff2ecdd18aa199b81d38f6f73e9cbc5"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-09-03T18:00:00.000Z",
+        "auditEventId": "cmtlqxfge000ssi4xib84mznr",
+        "transactionId": "d010e236-3357-4d15-a05d-ded7f6531908",
+        "receiptSha256": "3b8bf5e7af384d16dda5f66859c0025f065c4ad6125e632128d5622c0f6cdac8",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33779305207"
+      },
       "history": [
         {
           "sequence": 1,
@@ -43060,6 +43180,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-09-03T18:00:00.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0464-0471-v1.",
+          "taskSnapshotSha256": "ae1662b1f9b55ab6c65ef8516ca237cbc7c7ba33a8bdbf0905fadb14a4dc66f4",
+          "evidenceSha256": [
+            "3b8bf5e7af384d16dda5f66859c0025f065c4ad6125e632128d5622c0f6cdac8",
+            "5852c6f12ba29c21a96f109f585dc93ae80c7a9e0e2703f648cbdf1005573ed8",
+            "7910575d7ba61b7667f9eb982d91073baff2ecdd18aa199b81d38f6f73e9cbc5",
+            "8a1fdefec1b25e6355969bcfc29052204953eb195d8aeeefa2f6c659a415b97d",
+            "90a8d4b8e20fbc46401629352a020e9c14dfe30e97834186d2358d17a1f401e7",
+            "96a6cf4889da879dda9c0d98a7f6d550e8d3bc6fff8976e95d1cecd8b9811cf1",
+            "ae1662b1f9b55ab6c65ef8516ca237cbc7c7ba33a8bdbf0905fadb14a4dc66f4"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -43071,20 +43209,26 @@
       "managerIndex": null,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "1307b08931d38e04d9eac8ddd6db36a934b3437adbb887befdb3e2135f7b0230",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
-      "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "status": "SUPERSEDED",
+      "attempts": 1,
+      "startedAt": "2026-09-03T17:00:00.000Z",
+      "updatedAt": "2026-09-03T18:00:00.000Z",
+      "completedAt": "2026-09-03T18:00:00.000Z",
+      "exceptionReason": "Boldyn Networks (US) is the U.S. regional perimeter of the same Boldyn Networks group addressed by task 470, not a separately held manager-level company. Task 470's hash-bound after-image preserves the U.S. aliases, operators, Manulife's U.S.-asset ownership scope and the existing production redirect while explicitly retiring this duplicate seed identity. This supersession becomes final only after the task 470 mutation is atomically applied and production-verified.",
+      "supersededByTaskId": "ledger:0470:boldyn-networks:3ce154eb",
+      "taskSnapshotSha256": "a98af4b0c4a08500b0125e93441c9787c9669b0abc0d7214cede17648625ade0",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0471-boldyn-networks-us/attempt-1/locked-batch-v2-task-snapshot.json",
+          "sha256": "a98af4b0c4a08500b0125e93441c9787c9669b0abc0d7214cede17648625ade0"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0471-boldyn-networks-us/attempt-1/terminal-decision-v3.json",
+          "sha256": "b6320a027997d975b5db2b3c736d20d87618c937094d5bd288612017d80c1b25"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -43098,6 +43242,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "SUPERSEDED",
+          "at": "2026-09-03T18:00:00.000Z",
+          "reason": "Boldyn Networks (US) is the U.S. regional perimeter of the same Boldyn Networks group addressed by task 470, not a separately held manager-level company. Task 470's hash-bound after-image preserves the U.S. aliases, operators, Manulife's U.S.-asset ownership scope and the existing production redirect while explicitly retiring this duplicate seed identity. This supersession becomes final only after the task 470 mutation is atomically applied and production-verified.",
+          "taskSnapshotSha256": "a98af4b0c4a08500b0125e93441c9787c9669b0abc0d7214cede17648625ade0",
+          "evidenceSha256": [
+            "8a1fdefec1b25e6355969bcfc29052204953eb195d8aeeefa2f6c659a415b97d",
+            "96a6cf4889da879dda9c0d98a7f6d550e8d3bc6fff8976e95d1cecd8b9811cf1",
+            "a98af4b0c4a08500b0125e93441c9787c9669b0abc0d7214cede17648625ade0",
+            "b6320a027997d975b5db2b3c736d20d87618c937094d5bd288612017d80c1b25"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -44249,5 +44408,5 @@
       ]
     }
   ],
-  "manifestSha256": "804d150531250fe3c2a40a24b61075d9b800d62c3e02e2874e648c718b7f54ad"
+  "manifestSha256": "e2362e7bce3f4fccb4974eb18a719d5b62d00e181f3a4cb44b088105710b442b"
 }

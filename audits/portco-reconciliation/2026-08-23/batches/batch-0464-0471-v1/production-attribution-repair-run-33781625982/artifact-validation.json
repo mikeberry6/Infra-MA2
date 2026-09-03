@@ -1,0 +1,32 @@
+
+> infra-tracker@1.0.0 portfolio:fund-attribution:apply
+> npx tsx scripts/apply-portfolio-fund-attribution.ts --manifest=audits/portfolio-fund-attribution/2026-09-03/scoped/portco-batch-0464-0471-tallvine-boldyn-attribution-repair/apply-manifest.json --manifest-sha256=10bff86b7ad763e6cefcd97bf85d21ac2779d0e761c924a925c08dc448dda2c3 --production-snapshot=audits/portfolio-fund-attribution/2026-09-03/scoped/portco-batch-0464-0471-tallvine-boldyn-attribution-repair/production-snapshot.json --approval=audits/portfolio-fund-attribution/2026-09-03/scoped/portco-batch-0464-0471-tallvine-boldyn-attribution-repair/approval.json --approval-sha256=09092188ae00ca91332f2d525a8bd711b9a82a4577731a6a66b7e9a0058dfdcf --validate-only=true
+
+{
+  "mode": "VALIDATE_ONLY",
+  "databaseWrites": false,
+  "manifestSha256": "10bff86b7ad763e6cefcd97bf85d21ac2779d0e761c924a925c08dc448dda2c3",
+  "approvalSha256": "09092188ae00ca91332f2d525a8bd711b9a82a4577731a6a66b7e9a0058dfdcf",
+  "mutationCount": 5,
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 1,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 3,
+      "UNRESOLVED": 1
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  }
+}
