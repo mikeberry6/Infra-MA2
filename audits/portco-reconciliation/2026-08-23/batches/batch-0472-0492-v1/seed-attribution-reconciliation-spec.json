@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_SEED_ATTRIBUTION_RECONCILIATION_SPEC",
+  "batchId": "batch-0472-0492-v1",
+  "batchSha256": "49afca09e76ffb917d71c246f842dea38f914726906964b83fecdfd4dd375ac4",
+  "reconciledAt": "2026-09-03T18:05:00.000Z",
+  "sourceManifestSha256": "5a54955901d30ca4187ca0a20ada98f3a1a96b1a8ce5bcc077b4fa7d806bfd46",
+  "rationale": "Consolidate the retired Skyservice US former-name seed row into the canonical Skyservice US identity and remove the unsupported inferred InstarAGF Essential Infrastructure Fund I attribution. Current evidence establishes Instar sponsorship but does not publicly identify the specific fund or legal holding vehicle for the U.S. platform, so the canonical active-owner row is preserved as unresolved without inventing a fund.",
+  "removeRecordIds": [
+    "OFA-5C5EA5A3580D"
+  ],
+  "upsertRecords": [
+    {
+      "recordId": "OFA-6875270B1431",
+      "companyName": "Skyservice US",
+      "country": "United States",
+      "investmentFirm": "Instar",
+      "currentVehicleName": "Instar",
+      "investmentYear": 2019,
+      "stake": "Instar portfolio company; exact percentage not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "UNRESOLVED",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "Instar's current fact sheet and portfolio evidence establish sponsorship of the U.S. platform, but the applicable fund and legal holding vehicle are not publicly disclosed.",
+      "evidenceUrls": [
+        "https://instarinvest.com/assets/files/strategy/Instar-Fact-Sheet-Q3-2025.pdf",
+        "https://instarinvest.com/kingston-fyffe-white/",
+        "https://napa.legistar.com/LegislationDetail.aspx?From=RSS&FullText=1&GUID=63B77815-9C59-47EF-B86A-833B5F635248&ID=7700175"
+      ]
+    }
+  ],
+  "specSha256": "8cad9254c9ee8d091bc0d20d9f24e94bdb5551dba3bc8cfb7360f981717fdcee"
+}

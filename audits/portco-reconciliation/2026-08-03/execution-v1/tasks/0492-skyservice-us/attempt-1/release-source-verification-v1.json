@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RELEASE_SOURCE_VERIFICATION",
+  "taskId": "ledger:0492:skyservice-us:444ae080",
+  "taskIndex": 492,
+  "companyName": "Skyservice US",
+  "verifiedAt": "2026-09-03T17:14:00.000Z",
+  "sources": [
+    {
+      "label": "Instar Q3 2025 fact sheet",
+      "url": "https://instarinvest.com/assets/files/strategy/Instar-Fact-Sheet-Q3-2025.pdf",
+      "httpStatus": 200,
+      "status": "WORKING_CURRENT",
+      "bytes": 904054,
+      "contentSha256": "94d382224276f57640bfe791ae415acbea0a0ddfc5b6777644b3973bb65ff9a5",
+      "isRecommendedPrimary": true,
+      "note": "Fresh direct PDF retrieval. Instar identifies Skyservice US as the former Leading Edge Jet Center, dates the U.S. portfolio relationship to 2019 and distinguishes it from the 2017 Canadian Skyservice investment."
+    },
+    {
+      "label": "Instar team page",
+      "url": "https://instarinvest.com/kingston-fyffe-white/",
+      "httpStatus": 200,
+      "status": "WORKING_CURRENT",
+      "bytes": 15901,
+      "contentSha256": "b2c8dbf11b7f45f9ccc2e87236e0874bf21198b1e0982423a89999625f8defe2",
+      "isRecommendedPrimary": false,
+      "note": "Fresh direct manager-page retrieval continues to name Skyservice Business Aviation and Skyservice US separately."
+    },
+    {
+      "label": "Kenmore acquisition release",
+      "url": "https://www.globenewswire.com/news-release/2020/09/29/2100789/0/en/Leading-Edge-Jet-Center-Expands-its-Business-Aviation-Footprint.html",
+      "httpStatus": 200,
+      "status": "WORKING_CURRENT",
+      "bytes": 53075,
+      "contentSha256": "fdad53034ced1fd7ccc8bab184f7371b045e523153c4cb3997dd8c57ba447899",
+      "isRecommendedPrimary": false,
+      "note": "Fresh direct transaction-release retrieval confirms the Kenmore acquisition, the 2005 founding lineage and the August 2019 standalone-company date."
+    },
+    {
+      "label": "Exec Air Montana acquisition release",
+      "url": "https://www.globenewswire.com/news-release/2020/12/30/2151751/0/en/leading-edge-jet-center-enters-the-mountain-west-region.html",
+      "httpStatus": 200,
+      "status": "WORKING_CURRENT",
+      "bytes": 52115,
+      "contentSha256": "7d6f40eb42b085d5b6e3ec21249867e57269308f252eb8690df52efd80e97cde",
+      "isRecommendedPrimary": false,
+      "note": "Fresh direct transaction-release retrieval confirms the December 30, 2020 acquisition of Exec Air Montana, including Montana Medical Transport."
+    },
+    {
+      "label": "Napa County borrower record",
+      "url": "https://napa.legistar.com/LegislationDetail.aspx?From=RSS&FullText=1&GUID=63B77815-9C59-47EF-B86A-833B5F635248&ID=7700175",
+      "httpStatus": 200,
+      "status": "WORKING_CURRENT",
+      "bytes": 134651,
+      "contentSha256": "95677a97a84d5b38a935ab286e5cce7c76e248e2a80392ecedb62c0fc5e8d85a",
+      "isRecommendedPrimary": false,
+      "note": "Fresh direct official-record retrieval names Leading Edge Jet Midco LLC in the U.S. legal group and supports retaining a distinct U.S. company perimeter."
+    }
+  ],
+  "checks": {
+    "allUrlsHttps": true,
+    "allSourcesFreshlyRetrieved": true,
+    "deadUrlCount": 0,
+    "recommendedPrimaryCount": 1,
+    "identityResolved": true,
+    "ownershipManagerResolved": true,
+    "undisclosedStakePreservedWithoutInference": true,
+    "canadianBoundaryResolved": true,
+    "productionRedirectAlreadyPresent": true,
+    "duplicateSeedRetirementRequired": true,
+    "sourceConflict": false
+  },
+  "conclusion": "One active Instar-sponsored U.S. platform should remain as Skyservice US, with Leading Edge Jet Center preserved as its former name. The existing production redirect must not be replayed; the duplicate seed identity should be retired and the canonical after-image corrected."
+}

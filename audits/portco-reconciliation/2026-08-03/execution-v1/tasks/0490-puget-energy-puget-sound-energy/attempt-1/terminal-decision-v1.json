@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0490:puget-energy-puget-sound-energy:e962de5d",
+  "taskIndex": 490,
+  "companyName": "Puget Energy / Puget Sound Energy",
+  "outcome": "SUPERSEDED",
+  "decidedAt": "2026-09-03T17:15:00.000Z",
+  "rationale": "Puget Sound Energy is the regulated operating subsidiary of the same sponsor-held parent already reconciled as Puget Energy, Inc. in completed task 128. The current production record preserves Puget Sound Energy, PSE and the composite label as aliases while keeping ownership at the canonical parent, so a separate company would duplicate the reviewed identity and ownership perimeter.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0490-puget-energy-puget-sound-energy/attempt-1/locked-batch-v1-task-snapshot.json",
+    "sha256": "5bc71fed71387f45f75a53c10769a969a9ce2a99fe785a5d368daad957b3420f"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0490-puget-energy-puget-sound-energy/attempt-1/dependent-research-decision-v1.json",
+    "sha256": "252f50fa3a80321f2b5bc6abded45b32a587be0d098eb8c2312e451422a798a3"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0490-puget-energy-puget-sound-energy/attempt-1/dependent-source-verification-v1.json",
+    "sha256": "8591e517689a4b2b41308d0396da787b9e56afd78e21baf1de7d1a034a1c1d0c"
+  },
+  "evidence": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/81100/000119312526084011/d109936dex991.htm",
+      "purpose": "Current SEC evidence for the Puget parent/subsidiary chain, ownership and operating boundary."
+    }
+  ],
+  "supersededByTaskId": "ledger:0128:puget-energy:f96cd6be",
+  "decisionSha256": "cefeed8d8c413e67bf31aa99af14d8689b93af93dad020527ec0202e6515bf9e"
+}

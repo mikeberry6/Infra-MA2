@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_DEPENDENT_SOURCE_VERIFICATION",
+  "taskId": "ledger:0472:cleco-corporation:2901703f",
+  "taskIndex": 472,
+  "companyName": "Cleco Corporation",
+  "verifiedAt": "2026-09-03T17:14:00.000Z",
+  "canonicalTask": {
+    "taskId": "ledger:0122:cleco-corporate-holdings-llc:43ffb062",
+    "sequence": 122,
+    "status": "COMPLETED",
+    "canonicalCompanyId": "cmrxpjkkg0151ivhenxskmy7x",
+    "currentCompanySnapshotSha256": "c71c74dec0ca2f7dd267db5164a2f549b80abaaf0915b055d1766cdfc8704280"
+  },
+  "sources": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1089819/000108981926000010/cnl-20260331.htm",
+      "status": "WORKING_CURRENT",
+      "httpStatus": 200,
+      "bytes": 2707906,
+      "contentSha256": "e0eda4dcf7202fe311d9d5ace2ff8b8928c86a7cf61bf582a55e5143ed4d2255",
+      "note": "Fresh direct retrieval of Cleco's 2026 first-quarter filing; the filing supports the predecessor-name and parent/subsidiary boundary already applied by task 122."
+    }
+  ],
+  "checks": {
+    "canonicalTaskCompleted": true,
+    "canonicalProductionIdentityPresent": true,
+    "duplicateMutationRequired": false,
+    "sourceCollision": false
+  },
+  "conclusion": "Task 472 is a predecessor-label duplicate of the completed Cleco Corporate Holdings LLC identity and is safe to supersede without a database or seed mutation."
+}

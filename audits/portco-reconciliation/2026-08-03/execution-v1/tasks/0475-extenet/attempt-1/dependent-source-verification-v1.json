@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_DEPENDENT_SOURCE_VERIFICATION",
+  "taskId": "ledger:0475:extenet:5c5cf1a1",
+  "taskIndex": 475,
+  "companyName": "Extenet",
+  "verifiedAt": "2026-09-03T17:14:00.000Z",
+  "canonicalTask": {
+    "taskId": "ledger:0213:extenet-formerly-extenet-systems:1d3fac1c",
+    "sequence": 213,
+    "status": "DEFERRED"
+  },
+  "sources": [
+    {
+      "url": "https://extenet.com/extenet-systems-is-now-extenet/",
+      "status": "WORKING_CURRENT",
+      "httpStatus": 200,
+      "bytes": 97263,
+      "contentSha256": "b57f7c1f4468ed8d8fb002a407281636d747d7fe09bbe0718d30014e47cdd207",
+      "note": "Fresh direct company-page retrieval confirms the ExteNet Systems-to-Extenet rebrand."
+    },
+    {
+      "url": "https://psc.ky.gov/telecomm_informational_letters/ExteNet%20LVS%202025-02-13.pdf",
+      "status": "WORKING_CURRENT",
+      "httpStatus": 200,
+      "bytes": 343610,
+      "contentSha256": "70a6d3e6b0996a6e5f9af5803bf3cd98efc2e5f21d2245e17b67b8e9487c8b5b",
+      "note": "Fresh direct regulatory PDF retrieval preserves the current cap-table evidence used by deferred task 213."
+    }
+  ],
+  "checks": {
+    "sameCompanyIdentityVerified": true,
+    "canonicalDeferredTaskPreserved": true,
+    "unresolvedOwnershipFactsPreserved": true,
+    "duplicateMutationRequired": false,
+    "sourceCollision": false
+  },
+  "conclusion": "Task 475 is a reciprocal current-name label for the same deferred Extenet adjudication and is safe to supersede into task 213 without a data mutation."
+}

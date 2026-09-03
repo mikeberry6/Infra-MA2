@@ -1,0 +1,318 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0492:skyservice-us:444ae080",
+  "taskIndex": 492,
+  "companyName": "Skyservice US",
+  "generatedAt": "2026-09-03T17:14:29.444Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0492-skyservice-us/attempt-1/locked-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 492,
+    "taskId": "ledger:0492:skyservice-us:444ae080",
+    "canonicalKey": "skyservice-us|united-states",
+    "companyName": "Skyservice US",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": null,
+    "managers": [],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjjen0137ivheavgfck2x"
+    ],
+    "seedKeys": [
+      "skyservice us|United States"
+    ],
+    "evidenceUrls": [],
+    "candidateCanonicalKeys": [],
+    "rationale": "Heuristic identity overlap with skyservice-us-formerly-leading-edge-jet-center|united-states; no automatic merge was made. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Heuristic identity overlap with skyservice-us-formerly-leading-edge-jet-center|united-states; no automatic merge was made."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjjen0137ivheavgfck2x",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "skyservice-us|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjjen0137ivheavgfck2x",
+    "name": "Skyservice US",
+    "aliases": [],
+    "sector": "TRANSPORTATION",
+    "subsector": "U.S. fixed-base operations and aircraft services",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Skyservice US represents the U.S. fixed-base operation and aircraft services footprint that originated in Leading Edge Jet Center and now operates under the Skyservice brand. The business serves business aviation customers with fueling, hangar, maintenance, aircraft-on-ground support, and related airport services in the Pacific Northwest and Montana. Its operating model is asset-heavy because it relies on leased or controlled airport facilities, hangars, line-service operations, and maintenance capabilities at each location. Public disclosures state that Leading Edge Jet Center was founded in 2005 and that four U.S. locations were rebranded under the Skyservice banner in 2021. Instar's broader Canadian Skyservice investment dates to 2017, while Instar's fact sheet identifies Skyservice US, formerly Leading Edge Jet Center, as a 2019 portfolio company.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2005,
+    "headquarters": "Washington, Oregon, and Montana",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk5cv0221ivhe7gj76tym",
+        "managerName": "Instar",
+        "organizationName": "Instar",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": "Instar portfolio company; exact % not publicly disclosed",
+        "investmentYear": 2019,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpm5g004irivhe7f4ns1jq",
+        "date": "Nov 2021",
+        "event": "Skyservice rebranded four U.S. FBO locations under the Skyservice name.",
+        "category": "OTHER",
+        "sortDate": "2021-11-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm5ji04isivhetus04pgd",
+        "date": "2005",
+        "event": "Leading Edge Jet Center was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2005-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm5k204itivhe3p5ez2r3",
+        "date": "2019",
+        "event": "Instar identified Skyservice US, formerly Leading Edge Jet Center, as a 2019 portfolio company investment.",
+        "category": "FINANCING",
+        "sortDate": "2019-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm5l304ivivhe3akr76uq",
+        "date": "Sep 2020",
+        "event": "Leading Edge Jet Center announced the acquisition of Kenmore Aero Services' FBO business in Seattle.",
+        "category": "ACQUISITION",
+        "sortDate": "2020-09-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm5lm04iwivhedre8tblk",
+        "date": "Jan 2021",
+        "event": "Leading Edge Jet Center acquired Helena Aviation Services in Montana.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-01-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxprthz0bneivhe9jaqhrnj",
+        "label": "Ainonline — Skyservice US",
+        "url": "https://www.ainonline.com/aviation-news/business-aviation/2021-11-10/canadas-skyservice-expands-us",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Ainonline — Skyservice US",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprtj10bngivheo5n55y57",
+        "label": "Investment date source — Instar — Skyservice US",
+        "url": "https://instarinvest.com/assets/files/strategy/Instar-Fact-Sheet-Q3-2025.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Instar portfolio company; Skyservice US exact ownership percentage not disclosed",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprtkg0bniivhe5caen77v",
+        "label": "LinkedIn — Skyservice US",
+        "url": "https://www.linkedin.com/company/skyservice-usa",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "LinkedIn — Skyservice US",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprtll0bnkivheey40twgq",
+        "label": "Corporatejetinvestor — Skyservice US (formerly Leading Edge Jet Center)",
+        "url": "https://www.corporatejetinvestor.com/news/skyservice-business-aviation-expands-to-the-united-states/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Corporatejetinvestor — Skyservice US (formerly Leading Edge Jet Center)",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxprtmu0bnmivhepoi2q4jw",
+        "label": "GlobeNewsWire — Skyservice US (formerly Leading Edge Jet Center)",
+        "url": "https://www.globenewswire.com/news-release/2020/09/29/2100789/0/en/Leading-Edge-Jet-Center-Expands-its-Business-Aviation-Footprint.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "GlobeNewsWire — Skyservice US (formerly Leading Edge Jet Center)",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprtnb0bnnivheh3nwjqmu",
+        "label": "Ainonline — Skyservice US",
+        "url": "https://www.ainonline.com/aviation-news/business-aviation/2021-11-10/canadas-skyservice-expands-us",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Ainonline — Skyservice US (formerly Leading Edge Jet Center)",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprtnw0bnoivhex5qgsdkw",
+        "label": "Investment date source — Instar — Skyservice US",
+        "url": "https://instarinvest.com/assets/files/strategy/Instar-Fact-Sheet-Q3-2025.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Instar portfolio company formerly known as LEJC; exact ownership percentage not disclosed",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Skyservice US",
+    "investmentFirm": "Instar",
+    "sector": "Transportation",
+    "subsector": "Fixed-base operations and business aviation services",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "Skyservice US provides fixed-base operations, aircraft fueling, maintenance, hangar, and related business aviation services in the Pacific Northwest. Its customers are business aviation operators, aircraft owners, charter users, and other aviation clients requiring ground services and support infrastructure. The operating model is asset-heavy because the business relies on airport leases, hangars, fueling systems, maintenance capabilities, and service facilities across its network. Instar portfolio materials identify Skyservice and Skyservice US as a North American business aviation services platform, while other public materials note that the U.S. operations originated in Leading Edge Jet Center. Leading Edge Jet Center was founded in 2005, Instar added the U.S. platform to its portfolio before integration with Skyservice in 2019, and the detailed current ownership percentages are not publicly disclosed.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2005,
+    "investmentYear": 2019,
+    "headquarters": "Washington, Oregon, and Montana",
+    "milestones": [
+      {
+        "date": "2005",
+        "event": "Leading Edge Jet Center, the predecessor U.S. business, was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "2019",
+        "event": "Instar disclosed that Skyservice integrated with Skyservice US, formerly Leading Edge Jet Center, an Instar portfolio company.",
+        "category": "Financing"
+      },
+      {
+        "date": "Nov 2021",
+        "event": "Skyservice rebranded four U.S. FBO locations under the Skyservice name.",
+        "category": "Other"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Ainonline — Skyservice US",
+        "url": "https://www.ainonline.com/aviation-news/business-aviation/2021-11-10/canadas-skyservice-expands-us",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Investment date source — Instar — Skyservice US",
+        "url": "https://instarinvest.com/assets/files/strategy/Instar-Fact-Sheet-Q3-2025.pdf",
+        "type": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Instar portfolio company; Skyservice US exact ownership percentage not disclosed"
+      },
+      {
+        "label": "LinkedIn — Skyservice US",
+        "url": "https://www.linkedin.com/company/skyservice-usa",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Instar",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2019,
+        "stake": "Instar portfolio company; exact % not publicly disclosed",
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [
+    {
+      "sourceQueueTaskId": "ledger:0493:skyservice-us-formerly-leading-edge-jet-center:49066c79",
+      "sourceQueueEntrySha256": "3774994b93e8658a448d2516eae71e731ccdbccf6cd021076b4b04595fd827f7",
+      "name": "Skyservice US (formerly Leading Edge Jet Center)",
+      "country": "United States",
+      "rawSeedEntrySha256": "cbbf4a057e2878f20e90ce3f70d182887b36754d4b575f98d96a92730c5f7431",
+      "evaluatedSeedEntrySha256": "cbbf4a057e2878f20e90ce3f70d182887b36754d4b575f98d96a92730c5f7431"
+    }
+  ],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpijqu005givhe2besm283",
+        "name": "Instar",
+        "updatedAt": "2026-07-23T16:09:32.790Z"
+      }
+    ],
+    "redirects": [
+      {
+        "retiredId": "cmrxpjje30136ivheq0equtbk",
+        "companyId": "cmrxpjjen0137ivheavgfck2x",
+        "reason": "CANONICAL_MERGE",
+        "createdAt": "2026-07-29T04:08:45.655Z"
+      }
+    ]
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0492:skyservice-us:444ae080",
+    "taskIndex": 492,
+    "canonicalKey": "skyservice-us|united-states",
+    "capturedAt": "2026-09-03T17:14:29.444Z",
+    "databaseRevision": "revision:bbdebad56591795b6db7d7665dfbb18968567a3d801f05f8ce8b7c2e9123d699",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "ca07a6fa25627798601ea8a7b087035072a0e2323397a776485c06e55c887e47",
+    "productionSnapshotSha256": "647a4ca9e3f2356af7fca488e49f8181ebe304d9530601639b2241a5cfde7044",
+    "targetCompanySnapshotSha256": "959e58c4e423287c29956f5919cc5cb5b4c029dee8d30715aa00677896cc7527",
+    "seedEntrySha256": "1d73ba4c8cc4a8ec09c6935ff81cf0f8f9ffa05ef6f86bd95c673f90fb414189",
+    "seedRetirementCandidates": [
+      {
+        "sourceQueueTaskId": "ledger:0493:skyservice-us-formerly-leading-edge-jet-center:49066c79",
+        "sourceQueueEntrySha256": "3774994b93e8658a448d2516eae71e731ccdbccf6cd021076b4b04595fd827f7",
+        "name": "Skyservice US (formerly Leading Edge Jet Center)",
+        "country": "United States",
+        "rawSeedEntrySha256": "cbbf4a057e2878f20e90ce3f70d182887b36754d4b575f98d96a92730c5f7431",
+        "evaluatedSeedEntrySha256": "cbbf4a057e2878f20e90ce3f70d182887b36754d4b575f98d96a92730c5f7431"
+      }
+    ],
+    "dependencies": {
+      "ownershipPeriodsSha256": "5138864e78d09ade23d6a244edce02dbfe697c82bdd0804a5effaf7c9ba73b0a",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "36c188f4eec31401df1ed26f413c2efdf55b3ffb433c31f3186135547b45df9b",
+      "citationsSha256": "c3c1648f9e7351c987e1a537a7e9b7db3c1e2cf9f82454b5b942f5977a5a5b83",
+      "redirectsSha256": "0f2b0649dc2636105285859324686a20fde35610c37546cfdb58199abd597f4c"
+    },
+    "dependencySha256": "6f8b5478e97a42253552cf5027bb12456cc933f75a649a779fe82a9e28f4f9c1",
+    "stateSha256": "0a8755108060572a17141fa69a4d1078a86d21286e9419527ddf15bfe8bdddab",
+    "taskSnapshotSha256": "77a1bc610d3a14ea80252b8030ea06699fa449ab5b2e6c0b4f0a58227839dc66"
+  },
+  "contextSha256": "45f7a4c10204983ce788c3fa4d547deadacb040dd9d00d049b37fd792a170f47"
+}
