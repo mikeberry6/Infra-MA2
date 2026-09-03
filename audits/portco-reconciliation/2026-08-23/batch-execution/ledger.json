@@ -3,7 +3,7 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-03T15:16:00.000Z",
+  "updatedAt": "2026-09-03T15:20:00.000Z",
   "activeBatchId": "batch-0459-0463-v1",
   "batches": [
     {
@@ -8450,7 +8450,7 @@
     },
     {
       "batchId": "batch-0459-0463-v1",
-      "state": "READY",
+      "state": "RELEASING",
       "taskIds": [
         "ledger:0459:signal-rail-holdings:50c69045",
         "ledger:0460:dcli:22d0fc27",
@@ -8466,7 +8466,7 @@
         463
       ],
       "createdAt": "2026-09-03T14:30:15.000Z",
-      "updatedAt": "2026-09-03T15:16:00.000Z",
+      "updatedAt": "2026-09-03T15:20:00.000Z",
       "completedAt": null,
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0459-0463-v1/batch-manifest-v6.json",
@@ -8493,9 +8493,19 @@
             "e681cf3474e349ea5cdb2c33de59d7a3d301ab2c2fc1334738798892940070c7"
           ],
           "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "RELEASING",
+          "at": "2026-09-03T15:20:00.000Z",
+          "evidenceSha256": [
+            "e681cf3474e349ea5cdb2c33de59d7a3d301ab2c2fc1334738798892940070c7"
+          ],
+          "reason": null
         }
       ]
     }
   ],
-  "ledgerSha256": "f7dcc692cf3ece2237a2abc283ac2c68a4459afa93de844c831b62037d01e31b"
+  "ledgerSha256": "e66171d4596075f11ca88e9113b04336dde399ac1cf97bda06835bc9f1b62f62"
 }
