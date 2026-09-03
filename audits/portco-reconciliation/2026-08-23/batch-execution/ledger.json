@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-03T18:22:00.000Z",
-  "activeBatchId": "batch-0472-0492-v1",
+  "updatedAt": "2026-09-03T18:31:00.000Z",
+  "activeBatchId": null,
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -8669,7 +8669,7 @@
     },
     {
       "batchId": "batch-0472-0492-v1",
-      "state": "VERIFYING_FAILED",
+      "state": "COMPLETED",
       "taskIds": [
         "ledger:0472:cleco-corporation:2901703f",
         "ledger:0475:extenet:5c5cf1a1",
@@ -8685,8 +8685,8 @@
         492
       ],
       "createdAt": "2026-09-03T17:11:51.000Z",
-      "updatedAt": "2026-09-03T18:22:00.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-09-03T18:31:00.000Z",
+      "completedAt": "2026-09-03T18:31:00.000Z",
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0472-0492-v1/batch-manifest-v4.json",
         "sha256": "49afca09e76ffb917d71c246f842dea38f914726906964b83fecdfd4dd375ac4"
@@ -8696,7 +8696,7 @@
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0472-0492-v1/production-apply-run-33785995490/batch-apply-receipt.json",
         "sha256": "cdab9f0dba86223bc09f2931aa874cd4b1f6d3d1d3af6b500c17eb8f3643bdcd"
       },
-      "reason": "Original atomic PortCo transaction ea9797b7-cf88-4c56-974c-27f8a1021973 and immutable receipt verified; Skyservice US API and seed after-image pass, but rendered ownership retains stale INFERRED InstarAGF Essential Infrastructure Fund I metadata. Freeze the one-active-bundle boundary for a scoped attribution-only repair; never repeat the original transaction.",
+      "reason": "Original atomic PortCo transaction and immutable receipt verified; one-row Skyservice attribution repair receipt reproduced; seed parity, canonical API, retired-route redirect, and rendered scorecard checks passed with no partial application. Source tasks 472, 475, 476, 490, and 492 plus dependent Task 493 finalized durably without repeating either production transaction.",
       "history": [
         {
           "sequence": 1,
@@ -8757,9 +8757,31 @@
             "cdab9f0dba86223bc09f2931aa874cd4b1f6d3d1d3af6b500c17eb8f3643bdcd"
           ],
           "reason": "Original atomic PortCo transaction ea9797b7-cf88-4c56-974c-27f8a1021973 and immutable receipt verified; Skyservice US API and seed after-image pass, but rendered ownership retains stale INFERRED InstarAGF Essential Infrastructure Fund I metadata. Freeze the one-active-bundle boundary for a scoped attribution-only repair; never repeat the original transaction."
+        },
+        {
+          "sequence": 7,
+          "from": "VERIFYING_FAILED",
+          "to": "VERIFYING",
+          "at": "2026-09-03T18:29:00.000Z",
+          "evidenceSha256": [
+            "49afca09e76ffb917d71c246f842dea38f914726906964b83fecdfd4dd375ac4",
+            "cdab9f0dba86223bc09f2931aa874cd4b1f6d3d1d3af6b500c17eb8f3643bdcd"
+          ],
+          "reason": "Recovered from rendered verification failure after protected attribution repair PR #896 and workflow run 33787458367. The one-row receipt 58813cc99fb09d33ffe39d9dd22a37de9bb9ed0d8bbe595c2be7c352379cb6c1 reproduced, matched seed attribution metadata, and canonical API, redirect, and Skyservice US rendered checks passed. The original PortCo transaction was not repeated."
+        },
+        {
+          "sequence": 8,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-09-03T18:31:00.000Z",
+          "evidenceSha256": [
+            "49afca09e76ffb917d71c246f842dea38f914726906964b83fecdfd4dd375ac4",
+            "cdab9f0dba86223bc09f2931aa874cd4b1f6d3d1d3af6b500c17eb8f3643bdcd"
+          ],
+          "reason": "Original atomic PortCo transaction and immutable receipt verified; one-row Skyservice attribution repair receipt reproduced; seed parity, canonical API, retired-route redirect, and rendered scorecard checks passed with no partial application. Source tasks 472, 475, 476, 490, and 492 plus dependent Task 493 finalized durably without repeating either production transaction."
         }
       ]
     }
   ],
-  "ledgerSha256": "4f55cd7ad644a76fcde807d4b61c59951852748cd354278de6c45b3940064b91"
+  "ledgerSha256": "18b88365213f31b8bbdca34731e51cdd3177d55d84e63d7392e09d7cfbf56d5a"
 }
