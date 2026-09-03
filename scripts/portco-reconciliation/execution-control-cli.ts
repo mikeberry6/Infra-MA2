@@ -1,4 +1,5 @@
 #!/usr/bin/env npx tsx
+import { createHash } from "node:crypto";
 import { mkdir, open, readFile, rename, rm, writeFile } from "node:fs/promises";
 import { dirname, isAbsolute, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -21,6 +22,7 @@ import {
   recordAutomatedExecutionApproval,
   recordExecutionDecision,
   recoverCompletedExecutionTask,
+  reopenDeferredExecutionTask,
   transitionExecutionTask,
   verifyExecutionManifest,
   verifyExecutionApprovalPolicy,
@@ -45,7 +47,7 @@ import {
 } from "./task-snapshot";
 import { verifyBatchExecutionLedger } from "./batch-control";
 
-type Command = "init" | "status" | "next" | "snapshot" | "install-policy" | "auto-approve" | "decide" | "transition" | "recover";
+type Command = "init" | "status" | "next" | "snapshot" | "install-policy" | "auto-approve" | "decide" | "transition" | "recover" | "reopen-deferred";
 
 interface ParsedArguments {
   command: Command;
@@ -138,12 +140,31 @@ const COMMAND_OPTIONS: Record<Command, { values: readonly string[]; flags: reado
     ],
     flags: [],
   },
+  "reopen-deferred": {
+    values: [
+      "manifest",
+      "task-id",
+      "batch-ledger",
+      "expected-manifest-sha256",
+      "expected-batch-ledger-sha256",
+      "at",
+      "reason",
+      "research-decision",
+      "chatgpt-attestation",
+      "prompt",
+      "accepted-response",
+      "transcript",
+      "source-verification",
+      "response-validation",
+    ],
+    flags: [],
+  },
 };
 
 function parseArguments(argv: readonly string[]): ParsedArguments {
   const command = argv[0] as Command | undefined;
   if (!command || !(command in COMMAND_OPTIONS)) {
-    throw new Error("First argument must be one of: init, status, next, snapshot, install-policy, auto-approve, decide, transition, recover");
+    throw new Error("First argument must be one of: init, status, next, snapshot, install-policy, auto-approve, decide, transition, recover, reopen-deferred");
   }
   const allowed = COMMAND_OPTIONS[command];
   const values = new Map<string, string>();
@@ -196,6 +217,138 @@ function repositoryLocation(path: string): string {
 
 function genericReference(path: string, value: unknown, location = repositoryLocation(path)): ExecutionArtifactReference {
   return { location, sha256: sha256Canonical(value) };
+}
+
+async function exactFileReference(path: string): Promise<ExecutionArtifactReference> {
+  const bytes = await readFile(resolve(path));
+  return {
+    location: repositoryLocation(path),
+    sha256: createHash("sha256").update(bytes).digest("hex"),
+  };
+}
+
+function objectRecord(value: unknown, label: string): Record<string, unknown> {
+  if (!value || typeof value !== "object" || Array.isArray(value)) {
+    throw new Error(`${label} must be a JSON object`);
+  }
+  return value as Record<string, unknown>;
+}
+
+function assertReadjudicationIdentity(
+  value: unknown,
+  label: string,
+  taskId: string,
+  taskIndex: number,
+): Record<string, unknown> {
+  const record = objectRecord(value, label);
+  if (record.taskId !== taskId || record.taskIndex !== taskIndex) {
+    throw new Error(`${label} does not match the deferred execution task`);
+  }
+  return record;
+}
+
+async function loadDeferredReadjudicationEvidence(
+  values: Map<string, string>,
+  taskId: string,
+  taskIndex: number,
+) {
+  const paths = {
+    researchDecision: required(values, "research-decision"),
+    chatgptAttestation: required(values, "chatgpt-attestation"),
+    prompt: required(values, "prompt"),
+    acceptedResponse: required(values, "accepted-response"),
+    transcript: required(values, "transcript"),
+    sourceVerification: required(values, "source-verification"),
+    responseValidation: required(values, "response-validation"),
+  };
+  const [researchDecisionRaw, attestationRaw, sourceVerificationRaw, responseValidationRaw] = await Promise.all([
+    readJson(paths.researchDecision),
+    readJson(paths.chatgptAttestation),
+    readJson(paths.sourceVerification),
+    readJson(paths.responseValidation),
+  ]);
+  const researchDecision = assertReadjudicationIdentity(
+    researchDecisionRaw,
+    "Research decision",
+    taskId,
+    taskIndex,
+  );
+  const attestation = assertReadjudicationIdentity(
+    attestationRaw,
+    "ChatGPT attestation",
+    taskId,
+    taskIndex,
+  );
+  const sourceVerification = assertReadjudicationIdentity(
+    sourceVerificationRaw,
+    "Source verification",
+    taskId,
+    taskIndex,
+  );
+  const responseValidation = assertReadjudicationIdentity(
+    responseValidationRaw,
+    "Response validation",
+    taskId,
+    taskIndex,
+  );
+  if (attestation.accountTier !== "ChatGPT Pro"
+    || attestation.model !== "GPT-5.6 Sol"
+    || attestation.effort !== "Pro"
+    || attestation.power !== "5 of 5"
+    || attestation.uiVerified !== true
+    || objectRecord(attestation.uiEvidence, "ChatGPT UI evidence").capturedBeforeSubmission !== true) {
+    throw new Error(
+      "ChatGPT attestation does not prove Pro, GPT-5.6 Sol, Pro effort, and 5-of-5 power before submission",
+    );
+  }
+  const validationResult = objectRecord(responseValidation.finalResponse, "Response validation result");
+  if (responseValidation.valid !== true
+    || validationResult.result !== "PASS"
+    || validationResult.primaryEvidenceCount !== 1) {
+    throw new Error(
+      "Deferred re-adjudication response validation did not pass with exactly one primary source",
+    );
+  }
+  const sourceChecks = objectRecord(sourceVerification.checks, "Source-verification checks");
+  if (sourceChecks.allReturnedEvidenceUrlsChecked !== true
+    || sourceChecks.exactlyOneApplicationPrimary !== true) {
+    throw new Error(
+      "Deferred re-adjudication sources were not fully checked with exactly one application primary",
+    );
+  }
+  if (researchDecision.researchOnly !== true || researchDecision.dealDatabaseMutation !== false) {
+    throw new Error(
+      "Deferred re-adjudication research must remain research-only and outside the Deal Database",
+    );
+  }
+
+  const evidence = {
+    researchDecision: await exactFileReference(paths.researchDecision),
+    chatgptAttestation: await exactFileReference(paths.chatgptAttestation),
+    prompt: await exactFileReference(paths.prompt),
+    acceptedResponse: await exactFileReference(paths.acceptedResponse),
+    transcript: await exactFileReference(paths.transcript),
+    sourceVerification: await exactFileReference(paths.sourceVerification),
+    responseValidation: await exactFileReference(paths.responseValidation),
+  };
+  const attestationHashes = objectRecord(attestation.contentHashes, "ChatGPT attestation content hashes");
+  if (attestationHashes.promptSha256 !== evidence.prompt.sha256
+    || attestationHashes.acceptedResponseSha256 !== evidence.acceptedResponse.sha256
+    || attestationHashes.transcriptSha256 !== evidence.transcript.sha256
+    || validationResult.responseSha256 !== evidence.acceptedResponse.sha256) {
+    throw new Error("ChatGPT prompt, response, transcript, or validation byte hash does not reproduce");
+  }
+  const lineage = objectRecord(researchDecision.lineage, "Research-decision lineage");
+  const lineageHash = (key: string): unknown =>
+    objectRecord(lineage[key], `Research-decision ${key} lineage`).sha256;
+  if (lineageHash("prompt") !== evidence.prompt.sha256
+    || lineageHash("acceptedResponse") !== evidence.acceptedResponse.sha256
+    || lineageHash("attestation") !== evidence.chatgptAttestation.sha256
+    || lineageHash("responseValidation") !== evidence.responseValidation.sha256
+    || lineageHash("sourceVerification") !== evidence.sourceVerification.sha256) {
+    throw new Error("Research-decision evidence lineage does not reproduce the supplied files");
+  }
+  return evidence;
 }
 
 async function readManifest(path: string): Promise<ExecutionManifest> {
@@ -632,6 +785,37 @@ async function recover(values: Map<string, string>): Promise<void> {
   console.log(json(result).trimEnd());
 }
 
+async function reopenDeferred(values: Map<string, string>): Promise<void> {
+  const manifestPath = required(values, "manifest");
+  const batchLedgerPath = required(values, "batch-ledger");
+  const ledger = verifyBatchExecutionLedger(await readJson(batchLedgerPath));
+  const result = await withManifestLock(manifestPath, async (manifest) => {
+    if (ledger.runId !== manifest.runId) throw new Error("Batch ledger belongs to another execution run");
+    const taskId = required(values, "task-id");
+    const task = manifest.tasks.find((candidate) => candidate.taskId === taskId);
+    if (!task) throw new Error(`Unknown execution task ${taskId}`);
+    const evidence = await loadDeferredReadjudicationEvidence(values, taskId, task.sequence);
+    const updated = reopenDeferredExecutionTask(manifest, {
+      taskId,
+      reopenedAt: required(values, "at"),
+      reason: required(values, "reason"),
+      expectedManifestSha256: required(values, "expected-manifest-sha256"),
+      batchLedger: {
+        location: repositoryLocation(batchLedgerPath),
+        sha256: ledger.ledgerSha256,
+      },
+      expectedBatchLedgerSha256: required(values, "expected-batch-ledger-sha256"),
+      activeBatchId: ledger.activeBatchId,
+      evidence,
+    });
+    return {
+      manifest: updated,
+      result: updated.tasks.find((candidate) => candidate.taskId === taskId)!,
+    };
+  });
+  console.log(json(result).trimEnd());
+}
+
 export async function executeExecutionControlCli(argv: readonly string[]): Promise<void> {
   const parsed = parseArguments(argv);
   if (parsed.command === "init") return init(parsed.values);
@@ -642,6 +826,7 @@ export async function executeExecutionControlCli(argv: readonly string[]): Promi
   if (parsed.command === "auto-approve") return autoApprove(parsed.values);
   if (parsed.command === "decide") return decide(parsed.values);
   if (parsed.command === "transition") return transition(parsed.values);
+  if (parsed.command === "reopen-deferred") return reopenDeferred(parsed.values);
   return recover(parsed.values);
 }
 

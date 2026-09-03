@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "runId": "portco-deferred-readjudication-2026-09-03",
+  "taskId": "ledger:0042:sifi-networks-america-limited:8125d44e",
+  "taskIndex": 42,
+  "companyName": "SiFi Networks America Limited",
+  "verifiedAt": "2026-09-03T19:01:12.307Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "label": "Stretto court docket index filtered to docket 197",
+      "url": "https://cases.stretto.com/SiFiNetworks/court-docket/?docketNo=197",
+      "finalUrl": "https://cases.stretto.com/SiFiNetworks/court-docket/?docketNo=197",
+      "status": "BROWSER_AND_HTTP_VERIFIED",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 101251,
+      "contentSha256": "52119bdb42a2e6448be5a2ab507908d6114debed6aca1f39c5c6b9bc2e08dc2d",
+      "note": "The browser-rendered docket row identifies docket 197, filed 2026-08-13, and links the filed First Amended Combined Disclosure Statement and Chapter 11 Plan of Liquidation."
+    },
+    {
+      "label": "Stretto docket 197 filed PDF",
+      "url": "https://cases.stretto.com/public/X901/14710/PLEADINGS/1471008132680000000337.pdf",
+      "finalUrl": "https://cases.stretto.com/public/X901/14710/PLEADINGS/1471008132680000000337.pdf",
+      "status": "OPEN_AND_TEXT_VERIFIED",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 1081829,
+      "contentSha256": "5e3347c52604ff9b7b8efab39ce211fc5946a0876e0e0c6ac88794531688841b",
+      "extractedTextBytes": 190875,
+      "extractedTextSha256": "3938c079ab75fda6347520864b80e13c95fc2d33829d71e59d9b14158cee3929",
+      "pageCount": 68,
+      "isApplicationPrimary": true,
+      "note": "Direct filed evidence states that ArcLink Fiber LLC is the Delaware buyer, that the sale covered all or substantially all debtor assets under the July 9 asset purchase agreement, that the court entered the sale order on 2026-08-06, and that the sale closed on 2026-08-07. It defines PATRIZIA Infrastructure Ltd., APG Asset Management N.V., SCIF entities, ArcLink Fiber (US) Ltd. and others as Buyer Affiliates, while separately explaining that investor-owned City LLCs are non-recourse project companies."
+    },
+    {
+      "label": "Bondoro docket 197 rendering",
+      "url": "https://app.bondoro.com/preview/cases/Sifi_Networks_America_LLC/rsa-terms",
+      "finalUrl": "https://app.bondoro.com/preview/cases/Sifi_Networks_America_LLC/rsa-terms",
+      "status": "SHELL_ONLY_NOT_RELIED_ON",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 1677,
+      "contentSha256": "161f1b8e08ab1e1b7c24a967247183edaa1638e91187681b86bc955ea0d9f545",
+      "note": "The static response is only the client shell. No application decision relies on this secondary rendering because the direct filed PDF is available."
+    },
+    {
+      "label": "Companies House 08556605 overview",
+      "url": "https://find-and-update.company-information.service.gov.uk/company/08556605",
+      "finalUrl": "https://find-and-update.company-information.service.gov.uk/company/08556605",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html;charset=UTF-8",
+      "bytes": 37580,
+      "contentSha256": "592a63a6f855d62eb03e62a37a2a85650ee2a148c972818e000a1503ce81149b",
+      "note": "Direct registry evidence identifies SiFi Networks America Limited and its in-administration status."
+    },
+    {
+      "label": "Companies House 08556605 persons with significant control",
+      "url": "https://find-and-update.company-information.service.gov.uk/company/08556605/persons-with-significant-control",
+      "finalUrl": "https://find-and-update.company-information.service.gov.uk/company/08556605/persons-with-significant-control",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html;charset=UTF-8",
+      "bytes": 45133,
+      "contentSha256": "c7e57d53a58e93179ed8e669ffa1b0e214abfb6587d9d212d43b77f2f5235b06",
+      "note": "ArcLink Fiber (US) Limited has been the sole active PSC notified 2026-04-17, with more than 50% but less than 75% of shares and votes plus director appointment/removal rights."
+    },
+    {
+      "label": "Companies House 17135290 persons with significant control",
+      "url": "https://find-and-update.company-information.service.gov.uk/company/17135290/persons-with-significant-control",
+      "finalUrl": "https://find-and-update.company-information.service.gov.uk/company/17135290/persons-with-significant-control",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html;charset=UTF-8",
+      "bytes": 38028,
+      "contentSha256": "25df87e88a6e72816168da47b1529b902709aeebd76002a8cbf794745363fa0e",
+      "note": "SCIF Investor Vehicle LLP has been the sole active PSC notified 2026-04-02, with more than 25% but not more than 50% of shares and votes."
+    },
+    {
+      "label": "Companies House SCIF Investor Vehicle LLP officers",
+      "url": "https://find-and-update.company-information.service.gov.uk/company/OC424572/officers",
+      "finalUrl": "https://find-and-update.company-information.service.gov.uk/company/OC424572/officers",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html;charset=UTF-8",
+      "bytes": 54319,
+      "contentSha256": "c4385a921a6bcb615a1ed6d5fefa8e4bee25022d09e570ba672453d130358be6",
+      "note": "The six current officers include PATRIZIA Infrastructure Limited and PATRIZIA Pty Ltd as designated members, PATRIZIA SCIF Carried Interest Partner SCSp, APG Infrastructure Pool 2017 II and APG Infrastructure Pool 2020-2021 depositaries, and Stichting Pensioenfonds ABP."
+    },
+    {
+      "label": "SiFi Networks privacy notice",
+      "url": "https://sifinetworks.com/corporate/privacy-and-cookie-policy-sifi-networks/",
+      "finalUrl": "https://sifinetworks.com/corporate/privacy-and-cookie-policy-sifi-networks/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 76069,
+      "contentSha256": "f3c398a46e150652d7725dc3d91559b6dec3ab4bde88edf7d1159c8bced060b8",
+      "note": "The notice, last updated 2026-06-17, states that ArcLink Fiber (US) Limited controls sifinetworks.com while the site continues to use SiFi Networks and FiberCity branding."
+    },
+    {
+      "label": "APG SiFi investment announcement",
+      "url": "https://apg.nl/en/publication/apg-investment-connects-1-million-american-households-to-fiber-optics/",
+      "finalUrl": "https://apg.nl/en/publication/apg-investment-connects-1-million-american-households-to-fiber-optics/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 172220,
+      "contentSha256": "15430b38cc79bfa072133098bbd12863cde86f16704bcbde11be7d158e38bdc2",
+      "note": "The 2021 manager release states APG's historical 16.7% SiFi interest and separately describes APG's Smart City Infrastructure Fund investment. It does not prove a current post-restructuring percentage."
+    }
+  ],
+  "checks": {
+    "allReturnedEvidenceUrlsChecked": true,
+    "allUrlsHttps": true,
+    "directClosingEvidenceOpened": true,
+    "directClosingEvidenceHasStableByteHash": true,
+    "identityChainOpened": true,
+    "managerVehicleLinksOpened": true,
+    "continuingBrandEvidenceOpened": true,
+    "exactlyOneApplicationPrimary": true,
+    "currentArcLinkFiberLlcCapTablePubliclyDisclosed": false,
+    "exactCurrentManagerPercentagesPubliclyDisclosed": false
+  },
+  "modelHealthOverrides": [
+    "The direct Stretto PDF, not the docket index, is the application primary binding.",
+    "The Bondoro URL is a client shell and is not relied on.",
+    "The filed definition of Buyer Affiliates includes current and former affiliates; it supports sponsor-complex linkage but cannot alone establish current manager percentages.",
+    "The historical APG 16.7% must not be carried forward as a current post-restructuring stake."
+  ],
+  "conclusion": "The former closing uncertainty is resolved: the U.S. asset sale to ArcLink Fiber LLC closed on 2026-08-07. The legacy UK parent, Delaware debtor, ArcLink buyer, ArcLink UK entity, and investor-owned City LLC boundary are distinguishable. Current APG and PATRIZIA sponsor-complex linkage is supported through SCIF and the court filing, but exact post-restructuring economic stakes remain NOT_PUBLICLY_DISCLOSED."
+}

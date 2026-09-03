@@ -1,0 +1,221 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0055:modern-aviation:22969eb9",
+  "taskIndex": 55,
+  "companyName": "Modern Aviation",
+  "asOfDate": "2026-09-03",
+  "decision": "DEFERRED",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-03T23:22:00.000Z",
+  "result": {
+    "asOfDate": "2026-09-03",
+    "requestedCompany": "Modern Aviation",
+    "requestedManagers": [
+      "Apollo Global Management",
+      "Tiger Infrastructure Partners",
+      "Swiss Life Asset Managers"
+    ],
+    "decision": "DEFERRED",
+    "confidence": 0.96,
+    "rationale": "Apollo/Tiger's March 2024 transition is proven. Swiss Life's 2019 33% entry and non-zero 2026 vehicle assets are documented, but no post-close source identifies sale, rollover, retention or disposal. Form ADV vehicle assets do not prove Modern/Novus equity.",
+    "identityResolution": {
+      "canonicalKey": "modern-aviation|united-states",
+      "productionCompanyId": "cmrxpj5t700icivhefd9cqzhu",
+      "identity": "Modern Aviation / Modern Aviation FBO Holdings, LLC",
+      "status": "CONTINUING_PLATFORM",
+      "mergeRequired": false
+    },
+    "ownershipResolution": {
+      "status": "PARTIAL",
+      "owners": [
+        {
+          "manager": "Apollo Global Management",
+          "organization": "Apollo-managed infrastructure funds",
+          "fund": "Apollo Infrastructure Company and AIOF III Novus co-invest disclosed; full roster NOT_PUBLICLY_DISCLOSED",
+          "vehicle": "AP Novus Holding, L.P. -> Novus Holdings Parent, L.P.",
+          "stake": "MAJORITY; JOINT CONTROL WITH TIGER",
+          "announcementDate": "2023-11-02",
+          "entryDate": "2024-03",
+          "entryYear": 2024,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED"
+        },
+        {
+          "manager": "Tiger Infrastructure Partners",
+          "organization": "Tiger Infrastructure Partners",
+          "fund": "Tiger Infrastructure Partners Fund II and co-investors",
+          "vehicle": "Legacy Modern Aviation LP structure",
+          "stake": "FULL INVESTMENT EXITED",
+          "announcementDate": "2023-11-02",
+          "entryDate": "2018",
+          "entryYear": 2018,
+          "exitDate": "2024-03",
+          "exitYear": 2024,
+          "isActive": false,
+          "transactionState": "REALIZED"
+        },
+        {
+          "manager": "Tiger Infrastructure Partners",
+          "organization": "Tiger-managed capital",
+          "fund": "Tiger Infrastructure Partners Fund III and co-investors",
+          "vehicle": "TIP MA Investments LP -> Novus Holdings Parent, L.P.",
+          "stake": "MINORITY; JOINT CONTROL WITH APOLLO",
+          "announcementDate": "2023-11-02",
+          "entryDate": "2024-03",
+          "entryYear": 2024,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED"
+        },
+        {
+          "manager": "Swiss Life Asset Managers",
+          "organization": "Swiss Life Asset Managers",
+          "fund": "Swiss Life Funds (LUX) Global Infrastructure Opportunities Growth",
+          "vehicle": "Swiss Life Modern Aviation Investment LP; asset UNRESOLVED",
+          "stake": "33% AT 2019 ENTRY; CURRENT STAKE UNRESOLVED",
+          "announcementDate": "2019-05-15",
+          "entryDate": "2019",
+          "entryYear": 2019,
+          "exitDate": "UNRESOLVED",
+          "exitYear": null,
+          "isActive": null,
+          "transactionState": "UNRESOLVED"
+        }
+      ],
+      "conclusion": "Apollo and Tiger Fund III are active; Tiger Fund II is realized; Swiss Life is UNRESOLVED."
+    },
+    "operatingResolution": {
+      "status": "ACTIVE",
+      "scope": "Modern is the FBO platform; concessions and operating entities are downstream."
+    },
+    "acquisitionExitCheck": {
+      "status": "NONE_PENDING_IDENTIFIED",
+      "pendingTransactions": [],
+      "scope": "Parent ownership only through 2026-09-03."
+    },
+    "milestones": [
+      {
+        "date": "2019-05-15",
+        "event": "Swiss Life GIO Growth disclosed a 33% stake.",
+        "state": "CLOSED"
+      },
+      {
+        "date": "2023-11-02",
+        "event": "Apollo-majority recap signed; Tiger/management to reinvest.",
+        "state": "SIGNED"
+      },
+      {
+        "date": "2023-12-05",
+        "event": "CCPC cleared AP Novus and TIP MA investments into Novus Parent.",
+        "state": "CLEARED"
+      },
+      {
+        "date": "2024-03",
+        "event": "Apollo deal closed; Tiger Fund II exited and Fund III reinvested.",
+        "state": "CLOSED"
+      }
+    ],
+    "evidence": [
+      {
+        "label": "CCPC M/23/061",
+        "url": "https://assets.ccpc.ie/data/docs/default-source/merger-attachments/m-2023/tiger-apollo-modern-aviation/m-23-061-determination.pdf",
+        "purpose": "UPA parties, vehicles and Apollo/Tiger joint control.",
+        "sourceTier": "REGULATOR",
+        "workingStatus": "OPENED",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "Tiger 2024 release",
+        "url": "https://www.prnewswire.com/news-releases/tiger-infrastructure-partners-named-to-inc-magazines-list-of-founder-friendly-investors-supporting-entrepreneurs-in-driving-growth-302290013.html",
+        "purpose": "Fund II exited; Fund III reinvested.",
+        "sourceTier": "MANAGER",
+        "workingStatus": "OPENED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Tiger Modern retrospective",
+        "url": "https://www.linkedin.com/posts/tigerinfrastructurepartners_building-blocks-of-a-successful-growth-story-activity-7318306649113325571-xAAZ",
+        "purpose": "March 2024 exit; mentions Swiss Life only at that time.",
+        "sourceTier": "MANAGER",
+        "workingStatus": "OPENED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Apollo Infrastructure Company Q1 2024 10-Q",
+        "url": "https://www.sec.gov/Archives/edgar/data/1971381/000119312524139353/d798713d10q.htm",
+        "purpose": "Novus Parent investment at 2024-03-31.",
+        "sourceTier": "SEC",
+        "workingStatus": "OPENED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "AIOF III Novus Co-Invest Form D",
+        "url": "https://www.sec.gov/Archives/edgar/data/1999270/0000950142-23-002984-index.htm",
+        "purpose": "One AIOF III Novus co-invest vehicle.",
+        "sourceTier": "SEC",
+        "workingStatus": "OPENED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Swiss Life 2019 article",
+        "url": "https://investrends.ch/services/advertorials/weshalb-swiss-life-asset-managers-in-aviation-investiert/22208/",
+        "purpose": "GIO Growth's 33% 2019 entry.",
+        "sourceTier": "MANAGER_AUTHORED",
+        "workingStatus": "OPENED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Tiger current Form ADV",
+        "url": "https://reports.adviserinfo.sec.gov/reports/ADV/161551/PDF/161551.pdf",
+        "purpose": "Non-zero 2026 Swiss Life vehicle/feeders; no holdings schedule.",
+        "sourceTier": "REGULATORY_FILING",
+        "workingStatus": "REOPENED; parser unsupported; values cross-checked",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": [
+      "Sole AIOF III/2023 entry -> Apollo-managed funds via AP Novus/Novus Parent, closing 2024-03; AIC and an AIOF III co-invest are disclosed.",
+      "Unsplit Tiger -> Fund II/co-investors realized; Fund III/co-investors active via TIP MA.",
+      "Swiss Life active/realized -> retain 2019 33% entry; current stake/disposition UNRESOLVED."
+    ],
+    "excludedOrDuplicateCandidates": [
+      "Concessions, acquired FBOs and operating entities are downstream.",
+      "AP Novus, TIP MA and Novus Parent are vehicles, not PortCos.",
+      "Lenders, advisers, airports and management are not owners; vehicle GAV alone is not equity proof."
+    ],
+    "unresolvedQuestions": [
+      "At the March 2024 close, did Swiss Life receive cash, roll units, retain equity, receive mixed consideration or fully dispose?",
+      "Does 2026 vehicle GAV represent Modern/Novus equity or residual assets? Search the closing cap table, UPA schedules/funds-flow, or named audited holdings/distribution schedules."
+    ],
+    "recommendedListAction": {
+      "status": "KEEP_DEFERRED",
+      "action": "Apply Apollo/Tiger corrections, keep Modern canonical and leave Swiss Life UNRESOLVED pending named post-close evidence."
+    }
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0055-modern-aviation/attempt-2/research-decision.json",
+      "sha256": "0d587d5ed2845f35294108181697e340dbd8d9ba00e5cabcaf804df40aeffe34"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0055-modern-aviation/attempt-2/chatgpt-accepted-response.txt",
+      "sha256": "37fef970e773c87af487b25a17bc74864fbdd4e3cfd3a0158919658681c648ff"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0055-modern-aviation/attempt-2/source-verification.json",
+      "sha256": "f373b95d6c3f3b030f957356214cbcf7ef0ed9785b2b87a76416a9312c8f7705"
+    },
+    "acceptedResponseSha256": null,
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+    "confidenceNormalization": {
+      "acceptedValue": 0.96,
+      "stagedSummaryValue": "HIGH",
+      "basis": "The accepted response expressed confidence as a numeric score; the staged summary preserves its deterministic HIGH, MEDIUM, or LOW band and the research decision is unchanged."
+    }
+  }
+}

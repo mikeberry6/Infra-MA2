@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_DEFERRED_READJUDICATION_RESEARCH_DECISION",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-deferred-readjudication-2026-09-03",
+  "generatedAt": "2026-09-03T23:17:58.000Z",
+  "asOfDate": "2026-09-03",
+  "taskId": "ledger:0076:lodi-holdings-ii:062318ec",
+  "taskIndex": 76,
+  "companyName": "Lodi Holdings II",
+  "linkedTaskIdsCovered": [],
+  "decision": "DEFERRED",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "summary": "Keep the source task deferred and do not create, merge or exclude a production company. Direct SEC and CPUC records resolve the historical Funds I/II Lodi Gas Storage ownership and complete January 18, 2008 exit, but no post-2008 direct source maps ArcLight's separate Current/Power label to a current legal entity, country, assets, ownership fund or vehicle.",
+  "resolvedFormerBlockers": [
+    "CPUC Decision 05-12-007 directly verifies that ArcLight Fund II's WHP Acquisition II acquired 50% of Lodi Holdings while ArcLight Fund I's WHP Acquisition held the other 50%.",
+    "The direct filed audited SEC exhibit verifies the WHP entities, the March 31, 2003 and December 15, 2005 entry dates, the Lodi Gas Storage operating business and Buckeye's acquisition of all member interests on January 18, 2008.",
+    "ArcLight's 2025 ESG report groups Lodi Holdings and Lodi Holdings II under Funds I/II and Strategic Gas, consistent with the verified historical chain.",
+    "Current CPUC filings verify a separate Brookfield/Rockpoint successor ownership chain and pending control transfer that is unrelated to ArcLight.",
+    "The DigitalBridge Q2 2026 Form 10-Q verifies that the announced ArcLight manager acquisition remained conditional and contains no Lodi-specific transfer."
+  ],
+  "identityResolution": {
+    "canonicalDisplayName": "Lodi Holdings II",
+    "historicalLegalIdentity": "WHP Acquisition II, L.L.C., the ArcLight Fund II vehicle that held 50% of Lodi Holdings, L.L.C. and indirectly 50% of Lodi Gas Storage, L.L.C.",
+    "currentLabelLegalIdentity": "UNRESOLVED",
+    "productionCompanyId": null,
+    "productionAction": "DO_NOT_CREATE_MERGE_OR_EXCLUDE",
+    "mergeTarget": null,
+    "boundary": "The historical Fund II vehicle and operating chain are proven, but no direct post-2008 source establishes what legal entity, asset or investment ArcLight currently means by its separate Lodi Holdings II / Power / Current row. The live label cannot be assumed to be the realized vehicle, the Brookfield/Rockpoint successor, BGH Holdings, Lodi Energy Center, Kirby Hills II or a Lodi solar project."
+  },
+  "ownershipResolution": {
+    "historicalOwners": [
+      {
+        "manager": "ArcLight Capital Partners, L.L.C.",
+        "organization": "Lodi Holdings, L.L.C.",
+        "fund": "ArcLight Energy Partners Fund I, L.P.",
+        "vehicle": "WHP Acquisition, L.L.C.",
+        "stake": "50%; indirect 50% of Lodi Gas Storage, L.L.C.",
+        "entryDate": "2003-03-31",
+        "exitDate": "2008-01-18",
+        "status": "REALIZED"
+      },
+      {
+        "manager": "ArcLight Capital Partners, L.L.C.",
+        "organization": "Lodi Holdings, L.L.C.",
+        "fund": "ArcLight Energy Partners Fund II, L.P.",
+        "vehicle": "WHP Acquisition II, L.L.C.",
+        "stake": "50%; indirect 50% of Lodi Gas Storage, L.L.C.",
+        "entryDate": "2005-12-15",
+        "exitDate": "2008-01-18",
+        "status": "REALIZED"
+      }
+    ],
+    "historicalExit": "Buckeye acquired all Lodi Gas Storage member interests on January 18, 2008, completing the ArcLight Funds I/II and WHP-vehicle exit.",
+    "currentArcLightOwnership": "UNRESOLVED",
+    "blockingOwnershipGap": "No direct post-2008 source proves an ArcLight reacquisition or binds the Current/Power label to a current ArcLight fund, vehicle, stake, co-owner structure or entry date.",
+    "geographyTreatment": "The verified historical Lodi Gas Storage business operated in Northern California, but that historical geography cannot establish the geography of the unexplained current ArcLight label."
+  },
+  "transactionResolution": {
+    "historicalCompanyExit": {
+      "buyer": "Buckeye Partners, L.P. affiliates",
+      "target": "All member interests in Lodi Gas Storage, L.L.C.",
+      "closingDate": "2008-01-18",
+      "status": "CLOSED",
+      "effectOnTask": "Completed the verified ArcLight Funds I/II ownership exit."
+    },
+    "pendingParentOwnershipTransaction": {
+      "buyer": "DigitalBridge Group, Inc.",
+      "target": "ArcLight Capital Partners, LLC",
+      "announcementDate": "2026-05-27",
+      "closingDate": "UNRESOLVED",
+      "status": "SIGNED_PENDING_NOT_CLOSED_AS_OF_2026-09-03",
+      "effectOnTask": "Manager-level only; no Lodi-specific ownership transfer is established."
+    },
+    "pendingSuccessorControlTransaction": {
+      "buyer": "Rockpoint Gas Storage Inc.",
+      "seller": "Brookfield Infrastructure Fund II affiliates",
+      "target": "Indirect control of the current Lodi Gas Storage successor business",
+      "announcementDate": "2026-01-12",
+      "closingDate": "UNRESOLVED",
+      "status": "PENDING_CPUC_DECISION_AS_OF_2026-09-03",
+      "effectOnTask": "Separate successor-chain context; not evidence of current ArcLight ownership."
+    }
+  },
+  "freshException": {
+    "status": "EXACT_FACT_UNAVAILABLE",
+    "missingFact": "The post-2008 legal entity, country and operating assets, if any, behind ArcLight's Lodi Holdings II / Power / Current label, together with the current ownership fund or vehicle, stake, co-owner structure, entry date and any reacquisition, rename, reorganization or repurposing that would connect it to the realized historical vehicle.",
+    "searchedEvidence": [
+      "ArcLight's live investments table and current exact-label, legal-name, fund, vehicle, asset and transaction searches",
+      "ArcLight's 2025 ESG report and its Funds I/II Strategic Gas mapping",
+      "Direct CPUC Decision 05-12-007 and the direct filed Lodi Gas Storage SEC exhibit for the historical ownership and exit chain",
+      "Current CPUC Application 26-01-004 and its September 2, 2026 submitted-for-decision filing for the Brookfield/Rockpoint successor chain",
+      "DigitalBridge's Q2 2026 Form 10-Q for the conditional manager-level ArcLight acquisition",
+      "Direct searches for BGH Holdings, Lodi Energy Center, Kirby Hills II, Lodi solar projects, reacquisition, rename, reorganization, successor and current fund-schedule evidence"
+    ],
+    "requiredToResolve": "A direct ArcLight correction, current fund schedule, company, registry, regulator, counterparty or transaction record that maps the exact current label to a legal entity and country-qualified operating business and proves its post-2008 ArcLight ownership chain."
+  },
+  "primaryCitation": {
+    "label": "Lodi Gas Storage audited SEC exhibit",
+    "url": "https://www.sec.gov/Archives/edgar/data/805022/000110465908022585/a08-10038_1ex99d2.htm",
+    "purpose": "Direct filed evidence for the historical legal identities, entry dates, operating business and complete January 18, 2008 exit",
+    "contentSha256": "1403e00255b6c1a679ab178ce6cd6f797a7943069b162c13d74112fab459b80b"
+  },
+  "applicationRequirements": [
+    "Keep this member terminal-only as DEFERRED; do not generate a database or seed after-image.",
+    "Do not create a current Lodi Holdings II company from the unexplained ArcLight Current/Power row.",
+    "Do not merge the label into Lodi Gas Storage, the Brookfield/Rockpoint successor chain, BGH Holdings, Lodi Energy Center, Kirby Hills II or Lodi solar projects without direct same-company and current-ownership evidence.",
+    "Do not convert the historical Funds I/II ownership into a current ownership period; it ended on January 18, 2008.",
+    "Preserve the DigitalBridge-ArcLight transaction as conditional manager-level context and the Rockpoint transaction as a separate successor-chain pending transaction."
+  ],
+  "applicationBlocked": true,
+  "databaseMutationCandidate": false,
+  "seedMutationCandidate": false,
+  "terminalOutcomeCandidate": "DEFERRED",
+  "dealDatabaseMutation": false,
+  "lineage": {
+    "conversationUrl": "https://chatgpt.com/c/6a99f3e1-d544-83e9-b3c3-e9358de385ce",
+    "prompt": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0076-lodi-holdings-ii/attempt-2/chatgpt-research-prompt.md",
+      "sha256": "ad600738135c88350a5ee26787134612a3ec6d5ca33cbcc760e19b83c822bc90"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0076-lodi-holdings-ii/attempt-2/chatgpt-accepted-response.txt",
+      "sha256": "08e363ea397f33570a1592b4891e6818170e6d89787a65e2438407e302e23560"
+    },
+    "attestation": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0076-lodi-holdings-ii/attempt-2/chatgpt-attestation.json",
+      "sha256": "1349ab52493cdc67f1c0466263bb2ad7eddbff85eb74554c6542aa1c0de043d1"
+    },
+    "responseValidation": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0076-lodi-holdings-ii/attempt-2/chatgpt-response-validation.json",
+      "sha256": "1edaf841c51daef2c4b9f6a7e71289cc5dc3c11e45bbe09fd0e40c593532989b"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0076-lodi-holdings-ii/attempt-2/source-verification.json",
+      "sha256": "ff478c7875723c63b2f19ce8a6f6b3510e39f8cbc9442f7deb60c53328f9d763"
+    }
+  }
+}

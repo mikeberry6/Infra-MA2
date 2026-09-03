@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0055:modern-aviation:22969eb9",
+  "taskIndex": 55,
+  "companyName": "Modern Aviation",
+  "outcome": "DEFERRED",
+  "decidedAt": "2026-09-03T23:29:00.000Z",
+  "rationale": "Apollo/Tiger's March 2024 transition is proven. Swiss Life's 2019 33% entry and non-zero 2026 vehicle assets are documented, but no post-close source identifies sale, rollover, retention or disposal. Form ADV vehicle assets do not prove Modern/Novus equity.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0055-modern-aviation/attempt-2/locked-deferred-v1-task-snapshot.json",
+    "sha256": "de0e060badab6271cc403a0c139017ae737a71bab1214e019ccfb2876935fcfe"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0055-modern-aviation/attempt-2/application-research-decision.json",
+    "sha256": "8ff61f355e2cc7b59fe14b4608e01a16e50e10a527aa6433e8bb227142f0fd1c"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0055-modern-aviation/attempt-2/source-verification.json",
+    "sha256": "f373b95d6c3f3b030f957356214cbcf7ef0ed9785b2b87a76416a9312c8f7705"
+  },
+  "evidence": [
+    {
+      "url": "https://assets.ccpc.ie/data/docs/default-source/merger-attachments/m-2023/tiger-apollo-modern-aviation/m-23-061-determination.pdf",
+      "purpose": "UPA parties, vehicles and Apollo/Tiger joint control."
+    },
+    {
+      "url": "https://www.prnewswire.com/news-releases/tiger-infrastructure-partners-named-to-inc-magazines-list-of-founder-friendly-investors-supporting-entrepreneurs-in-driving-growth-302290013.html",
+      "purpose": "Fund II exited; Fund III reinvested."
+    },
+    {
+      "url": "https://www.linkedin.com/posts/tigerinfrastructurepartners_building-blocks-of-a-successful-growth-story-activity-7318306649113325571-xAAZ",
+      "purpose": "March 2024 exit; mentions Swiss Life only at that time."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1971381/000119312524139353/d798713d10q.htm",
+      "purpose": "Novus Parent investment at 2024-03-31."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1999270/0000950142-23-002984-index.htm",
+      "purpose": "One AIOF III Novus co-invest vehicle."
+    },
+    {
+      "url": "https://investrends.ch/services/advertorials/weshalb-swiss-life-asset-managers-in-aviation-investiert/22208/",
+      "purpose": "GIO Growth's 33% 2019 entry."
+    },
+    {
+      "url": "https://reports.adviserinfo.sec.gov/reports/ADV/161551/PDF/161551.pdf",
+      "purpose": "Non-zero 2026 Swiss Life vehicle/feeders; no holdings schedule."
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "95d737a61055fcf79e1c075171d0c49f28e5b03982aa7fd2116fa348916d6761"
+}

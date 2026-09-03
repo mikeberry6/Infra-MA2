@@ -12,6 +12,7 @@ import {
   recordAutomatedExecutionApproval,
   recordExecutionDecision,
   recoverCompletedExecutionTask,
+  reopenDeferredExecutionTask,
   transitionExecutionTask,
   verifyExecutionManifest,
   verifyExecutionTaskSnapshot,
@@ -465,6 +466,85 @@ describe("Phase 1 execution control", () => {
       status: "DEFERRED",
       exceptionReason: "Defer pending a separate legal-identity review.",
     });
+  });
+
+  it("reopens only the next deferred task with exact research and idle-ledger lineage", () => {
+    const active = activateNextExecutionTask(recovered(), "2026-08-03T16:32:00.000Z");
+    const deferred = transitionExecutionTask(
+      active,
+      active.activeTaskId!,
+      "DEFERRED",
+      "2026-08-03T16:33:00.000Z",
+      {
+        reason: "Identity remained unresolved in the first adjudication.",
+        artifacts: {
+          decision: { location: "tmp/first-decision.json", sha256: "1".repeat(64) },
+        },
+      },
+    );
+    const reference = (name: string, digest: string) => ({
+      location: `tmp/${name}`,
+      sha256: digest.repeat(64),
+    });
+    const input = {
+      taskId: active.activeTaskId!,
+      reopenedAt: "2026-09-03T18:30:00.000Z",
+      reason: "Fresh direct evidence resolves the recorded identity gap.",
+      expectedManifestSha256: deferred.manifestSha256,
+      batchLedger: reference("batch-ledger.json", "2"),
+      expectedBatchLedgerSha256: "2".repeat(64),
+      activeBatchId: null,
+      evidence: {
+        researchDecision: reference("research-decision.json", "3"),
+        chatgptAttestation: reference("chatgpt-attestation.json", "4"),
+        prompt: reference("prompt.md", "5"),
+        acceptedResponse: reference("accepted-response.txt", "6"),
+        transcript: reference("transcript.txt", "7"),
+        sourceVerification: reference("source-verification.json", "8"),
+        responseValidation: reference("response-validation.json", "9"),
+      },
+    } as const;
+    const reopened = reopenDeferredExecutionTask(deferred, input);
+    expect(reopened.tasks[1]).toMatchObject({
+      status: "PENDING",
+      startedAt: null,
+      completedAt: null,
+      exceptionReason: null,
+      taskSnapshotSha256: null,
+      artifacts: {
+        taskSnapshot: null,
+        proposal: null,
+        approval: null,
+        applyReceipt: null,
+        decision: null,
+        companySnapshot: null,
+      },
+      reAdjudications: [{
+        sequence: 1,
+        priorExceptionReason: "Identity remained unresolved in the first adjudication.",
+        priorArtifacts: {
+          decision: { location: "tmp/first-decision.json", sha256: "1".repeat(64) },
+        },
+      }],
+    });
+    expect(reopened.tasks[1].history.at(-1)).toMatchObject({
+      from: "DEFERRED",
+      to: "PENDING",
+      kind: "DEFERRED_READJUDICATION",
+    });
+    expect(reopened.runStatus).toBe("IDLE");
+    expect(() => reopenDeferredExecutionTask(deferred, {
+      ...input,
+      expectedManifestSha256: "9".repeat(64),
+    })).toThrow(/manifest hash is stale/i);
+    expect(() => reopenDeferredExecutionTask(deferred, {
+      ...input,
+      taskId: deferred.tasks.find((task) => task.status === "DEFERRED" && task.sequence > 2)!.taskId,
+    })).toThrow(/source order/i);
+    expect(() => reopenDeferredExecutionTask(deferred, {
+      ...input,
+      activeBatchId: "batch-active",
+    })).toThrow(/batch.*active/i);
   });
 
   it("installs the user-authorized automatic policy and advances a fresh proposal without a gate", () => {

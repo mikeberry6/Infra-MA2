@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_DEFERRED_READJUDICATION_RESEARCH_DECISION",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-deferred-readjudication-2026-09-03",
+  "generatedAt": "2026-09-03T22:20:05.000Z",
+  "asOfDate": "2026-09-03",
+  "taskId": "ledger:0074:liberty:69ac2ee0",
+  "taskIndex": 74,
+  "companyName": "Liberty",
+  "linkedTaskIdsCovered": [],
+  "decision": "DEFERRED",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "summary": "Keep the source task deferred and do not create or merge a production company. ArcLight's current page verifies a distinct Current/Strategic Gas investment label, but no fresh direct evidence identifies the legal entity, company geography, operating boundary, assets, services, customers, ownership fund or vehicle, stake, co-owner structure, or entry date required for a country-qualified PortCo record.",
+  "resolvedFormerBlockers": [
+    "ArcLight's current manager page directly verifies Liberty as a distinct Current/Strategic Gas investment label.",
+    "The current page separately lists Liberty Bell Power, Natural Gas Pipeline Company of America, Gulf Coast Express, Saber Midstream, Third Coast CV and Third Coast Midstream; no direct source proves that one of those rows is the Liberty label's legal identity.",
+    "Kinder Morgan's direct operations page identifies Liberty NGL Pipeline as a separate Kinder Morgan/Energy Transfer 50/50 joint venture, excluding it as an identity bridge.",
+    "The direct DigitalBridge announcement and Q2 2026 Form 10-Q establish that the announced ArcLight acquisition is a conditional manager-level transaction rather than evidence of a Liberty transfer.",
+    "The direct Fund VII Form D identifies the fund as a Delaware limited partnership but does not mention Liberty."
+  ],
+  "identityResolution": {
+    "canonicalDisplayName": "Liberty",
+    "legalIdentity": "UNRESOLVED",
+    "productionCompanyId": null,
+    "productionAction": "DO_NOT_CREATE_OR_MERGE",
+    "mergeTarget": null,
+    "boundary": "A distinct ArcLight manager label is proven, but the evidence does not establish whether it is an operating platform, asset portfolio, confidential holding label, SPV or ownership vehicle. No legal entity, website, headquarters, country, dedicated asset or same-company relation is public."
+  },
+  "ownershipResolution": {
+    "resolvedCurrentManager": {
+      "manager": "ArcLight Capital Partners, LLC",
+      "fund": "UNRESOLVED",
+      "vehicle": "NOT_PUBLICLY_DISCLOSED",
+      "stake": "NOT_PUBLICLY_DISCLOSED",
+      "entryDate": "UNRESOLVED",
+      "status": "CURRENT_ON_ARCLIGHT_SITE"
+    },
+    "blockingOwnershipGap": "No direct source binds Liberty to a specific ArcLight fund or vehicle or discloses a stake, co-owner structure or entry date. The Form D proves only that Fund VII exists and may not be used as a company-level ownership link.",
+    "geographyTreatment": "ArcLight's Boston address and fund-level North American scope are not company geography. The proposed United States key remains unsupported."
+  },
+  "transactionResolution": {
+    "state": "NO_COMPANY_LEVEL_TRANSACTION_IDENTIFIED",
+    "pendingParentOwnershipTransaction": {
+      "buyer": "DigitalBridge Group, Inc.",
+      "target": "ArcLight Capital Partners, LLC",
+      "announcementDate": "2026-05-27",
+      "closingDate": "UNRESOLVED",
+      "status": "SIGNED_PENDING_NOT_CLOSED_AS_OF_2026-09-03",
+      "effectOnTask": "Manager-level only; no Liberty-specific ownership transfer is established."
+    }
+  },
+  "freshException": {
+    "status": "EXACT_FACT_UNAVAILABLE",
+    "missingFact": "The legal entity and company-level country or country-specific operating assets behind ArcLight's Liberty label, plus the operating boundary, ownership fund and vehicle, stake, co-owner structure, and entry date needed for a supported production record.",
+    "searchedEvidence": [
+      "ArcLight's current investments page and direct current exact-label, legal-name, asset, service, customer, subsidiary, fund, vehicle and transaction searches",
+      "Direct Fund VII SEC Form D records",
+      "Direct company, registry, permitting, tariff, pipeline, storage, regulator and counterparty searches for a legal entity, address, dedicated assets, services, customers and country",
+      "DigitalBridge's signed ArcLight acquisition announcement and Q2 2026 Form 10-Q",
+      "Kinder Morgan's direct Natural Gas Operations page and separately named ArcLight investments for duplicate, predecessor, successor or rebrand evidence"
+    ],
+    "requiredToResolve": "A direct ArcLight, company, registry, permit, tariff, regulator, customer or counterparty record that names the legal entity and establishes its company-level country or dedicated country-specific assets, followed by direct evidence for the ownership fund or vehicle, stake, co-owner structure and entry date."
+  },
+  "primaryCitation": {
+    "label": "ArcLight Investments",
+    "url": "https://arclight.com/investments/",
+    "purpose": "Direct manager evidence for the distinct Current/Strategic Gas label and the absence of a linked company profile",
+    "contentSha256": "2a687007c4b5a1ba1891b2440d021b889c3b0ded621069293cba5bbfaef89c4d"
+  },
+  "applicationRequirements": [
+    "Keep this member terminal-only as DEFERRED; do not generate a database or seed after-image.",
+    "Do not create the proposed liberty|united-states key without direct company-level geography evidence.",
+    "Do not infer Fund VII ownership from the fund's existence, a North American mandate or ArcLight's manager address.",
+    "Do not merge the label with Liberty NGL Pipeline, Liberty Bell Power, another ArcLight investment or a similarly named company without direct same-company evidence.",
+    "Preserve the pending DigitalBridge-ArcLight transaction as manager-level context only and do not convert it into a company ownership period."
+  ],
+  "applicationBlocked": true,
+  "databaseMutationCandidate": false,
+  "seedMutationCandidate": false,
+  "terminalOutcomeCandidate": "DEFERRED",
+  "dealDatabaseMutation": false,
+  "lineage": {
+    "conversationUrl": "https://chatgpt.com/c/6a99e1e0-acc4-83e9-ac9a-ca04609506b3",
+    "prompt": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0074-liberty/attempt-2/chatgpt-research-prompt.md",
+      "sha256": "4700413999decf95d9a42c8a7b65be1a5ce94c480a2ec61ca75c7bc6229697bb"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0074-liberty/attempt-2/chatgpt-accepted-response.txt",
+      "sha256": "58614dacdf97086b7a2ea245164ee675af2491d8bec6f0827ca1d6aba7575268"
+    },
+    "attestation": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0074-liberty/attempt-2/chatgpt-attestation.json",
+      "sha256": "9fe582fcc3e8017d767595d5c8e615554a20adfb6b8d825eed7bd06dfc8a96f9"
+    },
+    "responseValidation": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0074-liberty/attempt-2/chatgpt-response-validation.json",
+      "sha256": "dbd5f5edbbf36d9a696e691296842d5ceda5775598e57843324ffa67a9ddead2"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0074-liberty/attempt-2/source-verification.json",
+      "sha256": "28ccc338babd9a282488bc8b91c2e766d00a04b9c278aff4918fad032fe04380"
+    }
+  }
+}

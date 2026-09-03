@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_DEFERRED_READJUDICATION_RESEARCH_DECISION",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-deferred-readjudication-2026-09-03",
+  "generatedAt": "2026-09-03T19:03:00.000Z",
+  "asOfDate": "2026-09-03",
+  "taskId": "ledger:0042:sifi-networks-america-limited:8125d44e",
+  "taskIndex": 42,
+  "companyName": "SiFi Networks America Limited",
+  "linkedTaskIdsCovered": [],
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "MEDIUM",
+  "researchOnly": true,
+  "summary": "Correct the existing production record in place from the in-administration legal-parent label to the continuing SiFi Networks platform under ArcLink, record the closed 2026-08-07 U.S. asset transfer to ArcLink Fiber LLC, and retain APG Infrastructure and PATRIZIA as active sponsor-complex manager attributions without carrying forward a current percentage that is not publicly disclosed.",
+  "resolvedFormerBlockers": [
+    "The direct filed docket 197 states that the U.S. sale closed on 2026-08-07 after the 2026-08-06 sale order.",
+    "The direct filed plan distinguishes the Delaware buyer ArcLink Fiber LLC from the liquidating debtor and from the investor-owned City LLC project companies.",
+    "Companies House and the 2026-06-17 SiFi privacy notice establish the ArcLink Fiber (US) Limited, SCIF Investor Vehicle LLP, legacy-parent, and continuing-brand relationships."
+  ],
+  "identityResolution": {
+    "canonicalDisplayName": "SiFi Networks (ArcLink Fiber)",
+    "publicBrand": "SiFi Networks",
+    "legacyUkParent": "SiFi Networks America Limited (08556605), in administration",
+    "legacyUsDebtor": "SiFi Networks America, LLC, liquidating Chapter 11 seller",
+    "currentUsAssetBuyer": "ArcLink Fiber LLC",
+    "linkedUkEntity": "ArcLink Fiber (US) Limited (17135290)",
+    "productionCompanyId": "cmrxpj5j400huivhevp2081d8",
+    "productionAction": "CORRECT_IN_PLACE",
+    "mergeTarget": null,
+    "boundary": "One manager-level SiFi/ArcLink platform. The legacy parent and debtor are predecessor/legal entities; ArcLink Fiber LLC is the current asset buyer; ArcLink Fiber (US) Limited is the linked UK entity and website controller; City LLCs remain project companies below the platform."
+  },
+  "ownershipResolution": {
+    "currentManagers": [
+      {
+        "manager": "APG Infrastructure",
+        "support": "SCIF's current Companies House membership includes APG Infrastructure Pool depositaries and ABP; the filed plan names APG Asset Management N.V. among Buyer Affiliates; APG's 2021 direct investment is historical evidence only.",
+        "stake": "NOT_PUBLICLY_DISCLOSED",
+        "currentPercentageSource": null
+      },
+      {
+        "manager": "PATRIZIA",
+        "support": "PATRIZIA Infrastructure Limited remains a designated member of SCIF; the filed plan names PATRIZIA Infrastructure Ltd. among Buyer Affiliates.",
+        "stake": "NOT_PUBLICLY_DISCLOSED",
+        "currentPercentageSource": null
+      }
+    ],
+    "historicalPercentageTreatment": "APG's announced 16.7% interest is a 2021 historical fact and must not be displayed as the current post-restructuring stake.",
+    "blockingOwnershipGap": null,
+    "nonblockingDisclosureGaps": [
+      "ArcLink Fiber LLC's exact members and percentages are not publicly disclosed.",
+      "The exact post-restructuring manager economic percentages above ArcLink and SCIF are not publicly disclosed.",
+      "Any designated buyer beneath ArcLink Fiber LLC is not publicly disclosed."
+    ]
+  },
+  "transactionResolution": {
+    "state": "CLOSED",
+    "buyer": "ArcLink Fiber LLC",
+    "seller": "SiFi Networks America, LLC",
+    "saleOrderDate": "2026-08-06",
+    "closingDate": "2026-08-07",
+    "scope": "All or substantially all debtor assets under the July 9, 2026 asset purchase agreement, subject to excluded assets and the separate investor-owned City LLC project-company boundary.",
+    "managerExit": "NO_MANAGER_EXIT_EVIDENCED"
+  },
+  "primaryCitation": {
+    "label": "Stretto - SiFi Networks America docket 197",
+    "url": "https://cases.stretto.com/public/X901/14710/PLEADINGS/1471008132680000000337.pdf",
+    "purpose": "Direct filed proof of buyer identity, sale perimeter, sale order, 2026-08-07 closing, liquidation, and sponsor-affiliate definitions",
+    "contentSha256": "5e3347c52604ff9b7b8efab39ce211fc5946a0876e0e0c6ac88794531688841b"
+  },
+  "applicationRequirements": [
+    "Recapture a fresh production company snapshot and fresh source-task and dependency snapshots against the current protected-main baseline before proposal generation.",
+    "Regenerate the complete after-image; do not edit the Deal Database or create a second company.",
+    "Use exactly one proposal primary citation bound to the filed docket 197 PDF.",
+    "Preserve current manager stakes as undisclosed and remove any implication that APG's 16.7% historical interest is the current post-restructuring percentage.",
+    "Add the 2026-08-07 closing milestone and current ArcLink/SiFi identity and source evidence only through the protected batch workflow."
+  ],
+  "applicationBlocked": false,
+  "databaseMutationCandidate": true,
+  "seedMutationCandidate": true,
+  "dealDatabaseMutation": false,
+  "lineage": {
+    "conversationUrl": "https://chatgpt.com/c/6a99bc7d-9de4-83e9-8b48-4af6a1fdbc83",
+    "prompt": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0042-sifi-networks-america-limited/attempt-2/chatgpt-research-prompt.md",
+      "sha256": "711db507cb87c32f7786f007d6ad076b25ea39cf42962df9e773ac8d0144550c"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0042-sifi-networks-america-limited/attempt-2/chatgpt-accepted-response.txt",
+      "sha256": "67029c87fda502cbe405be866a24ccc88f0c94bbc2a7332583b88415d3801601"
+    },
+    "attestation": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0042-sifi-networks-america-limited/attempt-2/chatgpt-attestation.json",
+      "sha256": "24ef44f11b094d4def45d156d9c2883d13fe45222cf9ae2decd7ddd4f97a7f92"
+    },
+    "responseValidation": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0042-sifi-networks-america-limited/attempt-2/chatgpt-response-validation.json",
+      "sha256": "a28bb4155d376b48b9f10cbad3a6a0a1c4d826fee3177c95f9b81f247ed00f1a"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0042-sifi-networks-america-limited/attempt-2/source-verification.json",
+      "sha256": "65abde696704dd4d01b5647ccc79dc03f1c8a52318231922acf117257be7845b"
+    }
+  }
+}

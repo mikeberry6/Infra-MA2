@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0074:liberty:69ac2ee0",
+  "taskIndex": 74,
+  "companyName": "Liberty",
+  "outcome": "DEFERRED",
+  "decidedAt": "2026-09-03T23:29:00.000Z",
+  "rationale": "ArcLight verifies a separate Current / Strategic Gas label, but no direct source maps it to a legal entity, company country, operations, or Liberty-specific ownership chain. A U.S. record, merge, or exclusion is therefore unsafe.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0074-liberty/attempt-2/locked-deferred-v1-task-snapshot.json",
+    "sha256": "fdcc0810a82f1557f980993cb0148f2e342ca1f5cc66b77617699d5f8d47b788"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0074-liberty/attempt-2/application-research-decision.json",
+    "sha256": "1cd0d46d4c9ae6d3ec455ca362d046dfed1464cafbcc1d8de3b400c9404678de"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0074-liberty/attempt-2/source-verification.json",
+    "sha256": "28ccc338babd9a282488bc8b91c2e766d00a04b9c278aff4918fad032fe04380"
+  },
+  "evidence": [
+    {
+      "url": "https://arclight.com/investments/",
+      "purpose": "Verify Liberty label, sector, status, and separate ArcLight listings."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1740500/000174050020000002/xslFormDX01/primary_doc.xml",
+      "purpose": "Verify Fund VII exists; filing does not identify Liberty."
+    },
+    {
+      "url": "https://ir.digitalbridge.com/news-releases/news-release-details/digitalbridge-and-arclight-announce-strategic-combination-form/",
+      "purpose": "Verify manager acquisition announcement and conditions."
+    },
+    {
+      "url": "https://ir.digitalbridge.com/static-files/8fd4a470-1214-4655-8950-fcc57d690697",
+      "purpose": "Verify acquisition remained conditional and pending."
+    },
+    {
+      "url": "https://www.kindermorgan.com/Operations/Natural-Gas/Index",
+      "purpose": "Exclude Liberty NGL Pipeline as a Kinder Morgan/Energy Transfer JV."
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "3c9057edab7f1afb6e3008c0223d40efd73df372d188813816cf15ef1d0b0fa3"
+}

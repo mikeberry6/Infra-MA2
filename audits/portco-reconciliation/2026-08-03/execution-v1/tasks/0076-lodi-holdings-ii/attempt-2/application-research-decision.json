@@ -1,0 +1,198 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0076:lodi-holdings-ii:062318ec",
+  "taskIndex": 76,
+  "companyName": "Lodi Holdings II",
+  "asOfDate": "2026-09-03",
+  "decision": "DEFERRED",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-03T23:22:00.000Z",
+  "result": {
+    "asOfDate": "2026-09-03",
+    "requestedCompany": "Lodi Holdings II",
+    "requestedManagers": [
+      "ArcLight Capital"
+    ],
+    "decision": "DEFERRED",
+    "confidence": 0.97,
+    "rationale": "Direct records prove the Fund II vehicle and 2008 exit, but no post-2008 source maps ArcLight's Current/Power label to an entity or assets. The live table has data defects, yet no correction proves this row stale; creation, merger or exclusion would be inferential.",
+    "identityResolution": {
+      "status": "UNRESOLVED_CURRENT_LABEL",
+      "historicalChain": "ArcLight Fund II -> WHP Acquisition II, L.L.C. -> 50% of Lodi Holdings, L.L.C. -> Lodi Gas Storage, L.L.C.",
+      "exactLabelMapping": "Probable historical shorthand, but not directly proven.",
+      "currentLegalEntity": "UNRESOLVED",
+      "currentCountry": "UNRESOLVED",
+      "currentHeadquarters": "UNRESOLVED",
+      "currentWebsite": "NOT_PUBLICLY_DISCLOSED",
+      "conflict": "Reported ESG Funds I/II Strategic Gas treatment fits the verified history; the live Current/Power row remains unexplained."
+    },
+    "ownershipResolution": {
+      "historicalOwners": [
+        {
+          "manager": "ArcLight Capital Partners, L.L.C.",
+          "organization": "Lodi Holdings, L.L.C.",
+          "fund": "ArcLight Energy Partners Fund I, L.P.",
+          "vehicle": "WHP Acquisition, L.L.C.",
+          "stake": "50%; indirect 50% of Lodi Gas Storage",
+          "announcementDate": "NOT_PUBLICLY_DISCLOSED",
+          "entryDate": "2003-03-31",
+          "entryYear": 2003,
+          "exitDate": "2008-01-18",
+          "exitYear": 2008,
+          "isActive": false,
+          "transactionState": "REALIZED"
+        },
+        {
+          "manager": "ArcLight Capital Partners, L.L.C.",
+          "organization": "Lodi Holdings, L.L.C.",
+          "fund": "ArcLight Energy Partners Fund II, L.P.",
+          "vehicle": "WHP Acquisition II, L.L.C.",
+          "stake": "50%; indirect 50% of Lodi Gas Storage",
+          "announcementDate": "NOT_PUBLICLY_DISCLOSED",
+          "entryDate": "2005-12-15",
+          "entryYear": 2005,
+          "exitDate": "2008-01-18",
+          "exitYear": 2008,
+          "isActive": false,
+          "transactionState": "REALIZED"
+        }
+      ],
+      "coOwners": "Fund I and Fund II vehicles each held 50% under ArcLight management.",
+      "currentArcLightOwnership": "UNRESOLVED",
+      "otherArcLightExposure": "Funds III/IV separately had indirect buyer-side exposure through BGH Holdings; no source maps it to this label, and BGH is separately listed Realized."
+    },
+    "operatingResolution": {
+      "currentLabel": "legalEntity=UNRESOLVED; country=UNRESOLVED; headquarters=UNRESOLVED; website=NOT_PUBLICLY_DISCLOSED; assets=UNRESOLVED; subsidiaries=UNRESOLVED; services=UNRESOLVED; customers=UNRESOLVED",
+      "historicalBusiness": "Lodi Gas Storage, L.L.C.; Northern California; Lodi/Kirby Hills facilities and Lodi Development/Kirby Hills II; firm/interruptible storage and related hub services; electric-generation and gas-marketing customers.",
+      "currentSuccessor": "Lodi survives in Rockpoint. A January 2026 CPUC filing shows BIF II CalGas with 100% direct interests and Rockpoint Gas Storage Inc. with 40% indirect; a further control transfer is pending and is unrelated to ArcLight."
+    },
+    "acquisitionExitCheck": {
+      "historicalExit": "Buckeye acquired all Lodi Gas Storage member interests on 2008-01-18; Funds I/II and the WHP vehicles exited.",
+      "post2008ArcLightReacquisition": "NO_DIRECT_EVIDENCE_LOCATED",
+      "renameReorganizationOrRepurpose": "UNRESOLVED",
+      "pendingTransactions": [
+        {
+          "direction": "MANAGER_ACQUISITION",
+          "buyer": "DigitalBridge Group, Inc.",
+          "seller": "ArcLight Capital Holdings, LLC and its owners",
+          "stake": "Control of ArcLight Capital Partners, LLC",
+          "announcementDate": "2026-05-27",
+          "closingDate": "UNRESOLVED",
+          "state": "PENDING_AS_OF_2026-09-03; conditional; no Lodi-specific transfer",
+          "evidenceUrls": [
+            "https://ir.digitalbridge.com/static-files/8fd4a470-1214-4655-8950-fcc57d690697"
+          ]
+        },
+        {
+          "direction": "SUCCESSOR_CONTROL_TRANSFER_NOT_ARCLIGHT",
+          "buyer": "Rockpoint Gas Storage Inc.",
+          "seller": "Brookfield Infrastructure Fund II affiliates",
+          "stake": "From 40% indirect toward majority and potentially 100%",
+          "announcementDate": "2026-01-12",
+          "closingDate": "UNRESOLVED",
+          "state": "PENDING_CPUC_DECISION; submitted 2026-09-02",
+          "evidenceUrls": [
+            "https://docs.cpuc.ca.gov/PublishedDocs/Efile/G000/M594/K365/594365127.PDF",
+            "https://docs.cpuc.ca.gov/PublishedDocs/Efile/G000/M616/K587/616587500.PDF"
+          ]
+        }
+      ]
+    },
+    "milestones": [
+      "2003-03-31: Fund I/WHP Acquisition completed 50%.",
+      "2005-12-15: Fund II/WHP Acquisition II completed the other 50%.",
+      "2008-01-18: Buckeye acquired all Lodi Gas Storage interests."
+    ],
+    "evidence": [
+      {
+        "label": "ArcLight investments table",
+        "url": "https://arclight.com/investments/",
+        "purpose": "Conflicting Current/Power row plus visible metadata defects.",
+        "sourceTier": "MANAGER",
+        "workingStatus": "LIVE_REOPENED_2026-09-03",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "ArcLight 2025 ESG report",
+        "url": "https://arclight.com/wp-content/uploads/2025/10/2025-ArcLight-ESG-Report.pdf",
+        "purpose": "Test reported Funds I/II Strategic Gas treatment.",
+        "sourceTier": "MANAGER_REPORT",
+        "workingStatus": "LIVE_ENDPOINT;10.7MB_FETCH_LIMIT;ROW_NOT_RERENDERED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "CPUC D.05-12-007",
+        "url": "https://docs.cpuc.ca.gov/published/Final_decision/51710.htm",
+        "purpose": "Fund II vehicle acquired 50%; Fund I vehicle held 50%.",
+        "sourceTier": "REGULATOR",
+        "workingStatus": "LIVE_REOPENED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Lodi Gas Storage audited SEC exhibit",
+        "url": "https://www.sec.gov/Archives/edgar/data/805022/000110465908022585/a08-10038_1ex99d2.htm",
+        "purpose": "Identities, entry dates, business and Buckeye closing.",
+        "sourceTier": "SEC_FILING",
+        "workingStatus": "LIVE_REOPENED",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "CPUC A.26-01-004",
+        "url": "https://docs.cpuc.ca.gov/PublishedDocs/Efile/G000/M594/K365/594365127.PDF",
+        "purpose": "Current Brookfield/Rockpoint chain and pending transfer.",
+        "sourceTier": "REGULATOR_FILING",
+        "workingStatus": "LIVE_RENDERED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "DigitalBridge Q2 2026 Form 10-Q",
+        "url": "https://ir.digitalbridge.com/static-files/8fd4a470-1214-4655-8950-fcc57d690697",
+        "purpose": "ArcLight manager acquisition remained conditional and unclosed.",
+        "sourceTier": "ISSUER_SEC_FILING",
+        "workingStatus": "LIVE_RENDERED",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "before": "Uncreated; historical gas-storage versus active power conflict.",
+      "after": "Historical identity/exit verified; exact current label remains unmapped and uncreated."
+    },
+    "excludedOrDuplicateCandidates": [
+      "WHP Acquisition II: historical Fund II SPV, not proven current company.",
+      "Lodi Holdings/Lodi Gas Storage: verified historical/successor chain, but unsafe merge while the separate live row is unexplained.",
+      "BGH Holdings, Lodi Energy Center, Kirby Hills II and Lodi solar projects: separate investment, plant or project; no bridge."
+    ],
+    "unresolvedQuestions": [
+      "What post-2008 legal entity, country and assets, if any, does ArcLight mean by Lodi Holdings II / Power / Current?",
+      "Will ArcLight correct the row or map it by current fund schedule to the realized WHP Acquisition II history or a distinct current investment?"
+    ],
+    "recommendedListAction": {
+      "action": "KEEP_DEFERRED_UNCREATED",
+      "historicalTreatment": "Use WHP Acquisition II/Lodi Holdings/Lodi Gas Storage only as realized Fund II history.",
+      "releaseCondition": "Direct ArcLight correction or post-2008 legal/fund/asset evidence mapping the exact label to a country-qualified company."
+    }
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0076-lodi-holdings-ii/attempt-2/research-decision.json",
+      "sha256": "4c94b6056f104acb05169c44d47747ddd887ed2589841b46b42f23bb9c32fcf5"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0076-lodi-holdings-ii/attempt-2/chatgpt-accepted-response.txt",
+      "sha256": "08e363ea397f33570a1592b4891e6818170e6d89787a65e2438407e302e23560"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0076-lodi-holdings-ii/attempt-2/source-verification.json",
+      "sha256": "ff478c7875723c63b2f19ce8a6f6b3510e39f8cbc9442f7deb60c53328f9d763"
+    },
+    "acceptedResponseSha256": null,
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+    "confidenceNormalization": {
+      "acceptedValue": 0.97,
+      "stagedSummaryValue": "HIGH",
+      "basis": "The accepted response expressed confidence as a numeric score; the staged summary preserves its deterministic HIGH, MEDIUM, or LOW band and the research decision is unchanged."
+    }
+  }
+}

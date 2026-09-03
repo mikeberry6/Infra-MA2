@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-03T18:39:00.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-09-03T23:33:00.000Z",
+  "activeBatchId": "batch-deferred-0042-0076-v1",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -8837,7 +8837,55 @@
           "reason": null
         }
       ]
+    },
+    {
+      "batchId": "batch-deferred-0042-0076-v1",
+      "state": "READY",
+      "taskIds": [
+        "ledger:0042:sifi-networks-america-limited:8125d44e",
+        "ledger:0055:modern-aviation:22969eb9",
+        "ledger:0067:clean-computational-infrastructure:93bcf245",
+        "ledger:0074:liberty:69ac2ee0",
+        "ledger:0076:lodi-holdings-ii:062318ec"
+      ],
+      "taskIndexes": [
+        42,
+        55,
+        67,
+        74,
+        76
+      ],
+      "createdAt": "2026-09-03T23:25:30.000Z",
+      "updatedAt": "2026-09-03T23:33:00.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-deferred-0042-0076-v1/batch-manifest.json",
+        "sha256": "f88ab0c497384b1201f4f227e9aa6e57513d7882fb550fd0089b6c7c2a880698"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-09-03T23:25:30.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-09-03T23:33:00.000Z",
+          "evidenceSha256": [
+            "f88ab0c497384b1201f4f227e9aa6e57513d7882fb550fd0089b6c7c2a880698"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "72218c78c1f6ae669b425e2e08221a0023f1cf7bdf57df8ee063b888546b01a2"
+  "ledgerSha256": "07905d197ca0873a55528830b5b24f49af551224ba9e8f5ffa1a5fdd5d93be4f"
 }

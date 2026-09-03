@@ -32,6 +32,25 @@ function eligiblePilotSourceFixture() {
   // deterministic next-task assertion.
   const resetSequences = new Set([121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 304, 477]);
   const tasks = completed.tasks.map((task) => {
+    const firstReadjudication = task.reAdjudications?.[0];
+    if (firstReadjudication) {
+      const reopenIndex = task.history.findIndex((event) => event.kind === "DEFERRED_READJUDICATION");
+      const history = task.history.slice(0, reopenIndex);
+      const startedAt = [...history].reverse().find((event) => event.to === "ACTIVE")?.at ?? null;
+      const { reAdjudications: _readjudications, ...withoutReadjudications } = task;
+      return {
+        ...withoutReadjudications,
+        status: "DEFERRED" as const,
+        startedAt,
+        updatedAt: firstReadjudication.priorCompletedAt,
+        completedAt: firstReadjudication.priorCompletedAt,
+        exceptionReason: firstReadjudication.priorExceptionReason,
+        supersededByTaskId: null,
+        taskSnapshotSha256: firstReadjudication.priorArtifacts.taskSnapshot?.sha256 ?? null,
+        artifacts: firstReadjudication.priorArtifacts,
+        history,
+      };
+    }
     if (!resetSequences.has(task.sequence)) return task;
     const history = task.history.slice(0, -1);
     const status = task.sequence === 121 ? "ACTIVE" as const : "PENDING" as const;

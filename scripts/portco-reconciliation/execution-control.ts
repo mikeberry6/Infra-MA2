@@ -356,7 +356,7 @@ const executionTransitionEventSchema = z.strictObject({
   reason: optionalText,
   taskSnapshotSha256: sha256Value.nullable(),
   evidenceSha256: z.array(sha256Value),
-  kind: z.enum(["INITIAL", "TRANSITION", "RECOVERY", "BATCH"]),
+  kind: z.enum(["INITIAL", "TRANSITION", "RECOVERY", "BATCH", "DEFERRED_READJUDICATION"]),
 });
 
 const executionTaskArtifactsSchema = z.strictObject({
@@ -374,6 +374,28 @@ const recoveryMetadataSchema = z.strictObject({
   transactionId: nonEmpty,
   receiptSha256: sha256Value,
   workflowRunUrl: z.string().url().nullable(),
+});
+
+const deferredReadjudicationEvidenceSchema = z.strictObject({
+  researchDecision: artifactReferenceSchema,
+  chatgptAttestation: artifactReferenceSchema,
+  prompt: artifactReferenceSchema,
+  acceptedResponse: artifactReferenceSchema,
+  transcript: artifactReferenceSchema,
+  sourceVerification: artifactReferenceSchema,
+  responseValidation: artifactReferenceSchema,
+});
+
+const deferredReadjudicationSchema = z.strictObject({
+  sequence: z.number().int().positive(),
+  reopenedAt: isoTimestamp,
+  reason: nonEmpty,
+  priorCompletedAt: isoTimestamp,
+  priorExceptionReason: nonEmpty,
+  priorArtifacts: executionTaskArtifactsSchema,
+  priorManifestSha256: sha256Value,
+  batchLedger: artifactReferenceSchema,
+  evidence: deferredReadjudicationEvidenceSchema,
 });
 
 const executionTaskSchema = z.strictObject({
@@ -394,6 +416,9 @@ const executionTaskSchema = z.strictObject({
   taskSnapshotSha256: sha256Value.nullable(),
   artifacts: executionTaskArtifactsSchema,
   recovery: recoveryMetadataSchema.nullable(),
+  // Optional so every historical execution-manifest hash remains stable. The
+  // field appears only after a deliberately reopened deferred task.
+  reAdjudications: z.array(deferredReadjudicationSchema).min(1).optional(),
   history: z.array(executionTransitionEventSchema).min(1),
 });
 
@@ -459,6 +484,28 @@ const executionManifestSchema = z.strictObject({
     }
     if ((task.status === "SUPERSEDED") !== (task.supersededByTaskId !== null)) {
       context.addIssue({ code: "custom", path: ["tasks", taskIndex, "supersededByTaskId"], message: "Only superseded tasks identify a replacement task" });
+    }
+    const reAdjudications = task.reAdjudications ?? [];
+    const reopenEvents = task.history.filter((event) => event.kind === "DEFERRED_READJUDICATION");
+    if (reAdjudications.length !== reopenEvents.length) {
+      context.addIssue({
+        code: "custom",
+        path: ["tasks", taskIndex, "reAdjudications"],
+        message: "Deferred re-adjudication records must match their durable history events",
+      });
+    }
+    for (const [readjudicationIndex, readjudication] of reAdjudications.entries()) {
+      const event = reopenEvents[readjudicationIndex];
+      if (readjudication.sequence !== readjudicationIndex + 1
+        || event?.from !== "DEFERRED"
+        || event.to !== "PENDING"
+        || event.at !== readjudication.reopenedAt) {
+        context.addIssue({
+          code: "custom",
+          path: ["tasks", taskIndex, "reAdjudications", readjudicationIndex],
+          message: "Deferred re-adjudication sequence or transition lineage is invalid",
+        });
+      }
     }
   }
 });
@@ -666,6 +713,112 @@ export interface ExecutionTransitionOptions {
   observedTaskSnapshot?: ExecutionTaskSnapshot;
   expectedTaskSnapshotSha256?: string | null;
   artifacts?: Partial<ExecutionTask["artifacts"]>;
+}
+
+export interface ReopenDeferredExecutionTaskInput {
+  taskId: string;
+  reopenedAt: string;
+  reason: string;
+  expectedManifestSha256: string;
+  batchLedger: ExecutionArtifactReference;
+  expectedBatchLedgerSha256: string;
+  activeBatchId: string | null;
+  evidence: z.infer<typeof deferredReadjudicationEvidenceSchema>;
+}
+
+/**
+ * Reopens the next historically deferred task for one final, evidence-bound
+ * adjudication. Generic transitions intentionally keep DEFERRED terminal; this
+ * narrow operation is the only path back to PENDING and requires an idle batch
+ * ledger, exact manifest/ledger hashes, and the complete fresh research chain.
+ */
+export function reopenDeferredExecutionTask(
+  input: ExecutionManifest,
+  options: ReopenDeferredExecutionTaskInput,
+): ExecutionManifest {
+  const manifest = verifyExecutionManifest(input);
+  assertCanonicalTimestamp(options.reopenedAt);
+  if (!digestsEqual(manifest.manifestSha256, options.expectedManifestSha256)) {
+    throw new Error("Expected execution manifest hash is stale");
+  }
+  const batchLedger = artifactReferenceSchema.parse(options.batchLedger);
+  if (!digestsEqual(batchLedger.sha256, options.expectedBatchLedgerSha256)) {
+    throw new Error("Expected batch ledger hash is stale");
+  }
+  if (options.activeBatchId !== null) {
+    throw new Error(`Cannot reopen a deferred task while batch ${options.activeBatchId} is active`);
+  }
+  if (manifest.activeTaskId !== null || manifest.tasks.some((task) => isInFlight(task.status))) {
+    throw new Error("Cannot reopen a deferred task while an execution task is in flight");
+  }
+  const reason = options.reason.trim();
+  if (!reason) throw new Error("Deferred re-adjudication requires a non-empty reason");
+  const evidence = deferredReadjudicationEvidenceSchema.parse(options.evidence);
+  const nextDeferred = [...manifest.tasks]
+    .filter((task) => task.status === "DEFERRED" && (task.reAdjudications?.length ?? 0) === 0)
+    .sort((left, right) => left.sequence - right.sequence)[0];
+  if (!nextDeferred) throw new Error("Execution manifest has no deferred task awaiting re-adjudication");
+  if (nextDeferred.taskId !== options.taskId) {
+    throw new Error(`Deferred tasks must be reopened in source order; next is ${nextDeferred.taskId}`);
+  }
+  if (!nextDeferred.completedAt || !nextDeferred.exceptionReason) {
+    throw new Error("Deferred task is missing its prior completion or exception lineage");
+  }
+
+  const evidenceSha256 = [
+    batchLedger.sha256,
+    ...Object.values(evidence).map((reference) => reference.sha256),
+  ].sort();
+  const reAdjudication = deferredReadjudicationSchema.parse({
+    sequence: (nextDeferred.reAdjudications?.length ?? 0) + 1,
+    reopenedAt: options.reopenedAt,
+    reason,
+    priorCompletedAt: nextDeferred.completedAt,
+    priorExceptionReason: nextDeferred.exceptionReason,
+    priorArtifacts: nextDeferred.artifacts,
+    priorManifestSha256: manifest.manifestSha256,
+    batchLedger,
+    evidence,
+  });
+  const clearedArtifacts: ExecutionTask["artifacts"] = {
+    taskSnapshot: null,
+    proposal: null,
+    approval: null,
+    applyReceipt: null,
+    decision: null,
+    companySnapshot: null,
+  };
+  const reopenedTask = executionTaskSchema.parse({
+    ...nextDeferred,
+    status: "PENDING",
+    startedAt: null,
+    updatedAt: options.reopenedAt,
+    completedAt: null,
+    exceptionReason: null,
+    supersededByTaskId: null,
+    taskSnapshotSha256: null,
+    artifacts: clearedArtifacts,
+    recovery: null,
+    reAdjudications: [...(nextDeferred.reAdjudications ?? []), reAdjudication],
+    history: [...nextDeferred.history, {
+      sequence: nextDeferred.history.length + 1,
+      from: "DEFERRED",
+      to: "PENDING",
+      at: options.reopenedAt,
+      reason,
+      taskSnapshotSha256: null,
+      evidenceSha256,
+      kind: "DEFERRED_READJUDICATION",
+    }],
+  });
+  const tasks = manifest.tasks.map((task) => task.taskId === reopenedTask.taskId ? reopenedTask : task);
+  const { manifestSha256: _manifestSha256, ...withoutHash } = manifest;
+  return finalizeExecutionManifestValue({
+    ...withoutHash,
+    ...derivedRunState(tasks),
+    updatedAt: options.reopenedAt,
+    tasks,
+  });
 }
 
 export interface RecordExecutionDecisionInput {
