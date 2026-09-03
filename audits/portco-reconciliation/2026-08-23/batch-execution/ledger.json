@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-03T14:05:00.000Z",
-  "activeBatchId": "batch-0454-0458-v1",
+  "updatedAt": "2026-09-03T14:18:30.000Z",
+  "activeBatchId": null,
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -8357,7 +8357,7 @@
     },
     {
       "batchId": "batch-0454-0458-v1",
-      "state": "RELEASING",
+      "state": "COMPLETED",
       "taskIds": [
         "ledger:0454:beyond-data-centers:aa1b4081",
         "ledger:0455:contract-leasing-corporation:083d749b",
@@ -8373,15 +8373,18 @@
         458
       ],
       "createdAt": "2026-09-03T13:31:14.000Z",
-      "updatedAt": "2026-09-03T14:05:00.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-09-03T14:18:30.000Z",
+      "completedAt": "2026-09-03T14:18:30.000Z",
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0454-0458-v1/batch-manifest.json",
         "sha256": "8c9650fbda1689709c0c89142cc0fbcb261acad872cc4f745844f4c5f2a7f733"
       },
-      "releaseSha": null,
-      "receipt": null,
-      "reason": null,
+      "releaseSha": "3c993be2e68ce0511836aee29028e1663c218454",
+      "receipt": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0454-0458-v1/production-apply-run-33765418253/batch-apply-receipt.json",
+        "sha256": "75feedd0180de6ce6d9675d9c23e47002ed8bc898b72edd7d157ba0c881b688c"
+      },
+      "reason": "Canonical production served exact protected release SHA 3c993be2e68ce0511836aee29028e1663c218454; atomic transaction ef2fbb4b-f1d1-4c72-8457-e742318fa551, immutable receipt, three exact database after-images, seed parity, APIs, ownership, sources, and stable rendered-card checks all passed with no partial application.",
       "history": [
         {
           "sequence": 1,
@@ -8410,9 +8413,41 @@
             "8c9650fbda1689709c0c89142cc0fbcb261acad872cc4f745844f4c5f2a7f733"
           ],
           "reason": null
+        },
+        {
+          "sequence": 4,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-09-03T14:13:40.000Z",
+          "evidenceSha256": [
+            "8c9650fbda1689709c0c89142cc0fbcb261acad872cc4f745844f4c5f2a7f733"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 5,
+          "from": "APPLYING",
+          "to": "VERIFYING",
+          "at": "2026-09-03T14:14:20.000Z",
+          "evidenceSha256": [
+            "75feedd0180de6ce6d9675d9c23e47002ed8bc898b72edd7d157ba0c881b688c",
+            "8c9650fbda1689709c0c89142cc0fbcb261acad872cc4f745844f4c5f2a7f733"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 6,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-09-03T14:18:30.000Z",
+          "evidenceSha256": [
+            "75feedd0180de6ce6d9675d9c23e47002ed8bc898b72edd7d157ba0c881b688c",
+            "8c9650fbda1689709c0c89142cc0fbcb261acad872cc4f745844f4c5f2a7f733"
+          ],
+          "reason": "Canonical production served exact protected release SHA 3c993be2e68ce0511836aee29028e1663c218454; atomic transaction ef2fbb4b-f1d1-4c72-8457-e742318fa551, immutable receipt, three exact database after-images, seed parity, APIs, ownership, sources, and stable rendered-card checks all passed with no partial application."
         }
       ]
     }
   ],
-  "ledgerSha256": "08d0c6bc95f9302f53d9859aa147f72a54a5ec61270c35a153888a31d539b97a"
+  "ledgerSha256": "5df19e4b6461641c31023ae16f46d293ba2b340a974ca6560ea2349d1005abb0"
 }
