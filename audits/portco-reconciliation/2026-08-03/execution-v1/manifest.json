@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-09-02T10:57:16.000Z",
+  "updatedAt": "2026-09-03T12:30:30.000Z",
   "runStatus": "IDLE",
   "activeTaskId": null,
   "source": {
@@ -41442,23 +41442,44 @@
       "managerIndex": 93,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "ff0dc262c5d6a742b0bc524cf6fcbd4f63999d5f79d2e3704dc09bfe98bb626d",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-09-02T11:09:00.000Z",
+      "updatedAt": "2026-09-03T12:30:30.000Z",
+      "completedAt": "2026-09-03T12:30:30.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "e82b0e7e39fe2e33b1f5abceec5bfac499ee30fabb075b440bf3d76fe74e68bd",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0444-unison-energy/attempt-1/locked-batch-v2-task-snapshot.json",
+          "sha256": "e82b0e7e39fe2e33b1f5abceec5bfac499ee30fabb075b440bf3d76fe74e68bd"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0444-unison-energy/attempt-1/proposal-v2.json",
+          "sha256": "53f4dc00ee2ddd46b93e45a2e8fc16a938956155f68f3eebc0baa5a0b8e5ce23"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0444-unison-energy/attempt-1/approval-v2.json",
+          "sha256": "cf0ae69d514ff5a1b3e2f5805ac10f5cbc88fef67753f9ffbbe6d52e5dad5457"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0444-0448-v1/production-apply-run-33626528499/batch-apply-receipt.json#members/0/receipt",
+          "sha256": "3c802f2116f94c8374a61709f5399bd4bc93137a01e452c86388faa3693f622c"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0444-unison-energy/attempt-1/proposal-v2.json#afterImage",
+          "sha256": "7ed8eb5203fd20d192ef546b44e26a85f1e6bc2333afa785fbfc89ab2f4bc2b8"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-09-03T12:30:30.000Z",
+        "auditEventId": "cmtk1bbtz0009ww2bity1zvsp",
+        "transactionId": "c780d2fa-46a3-4fe7-9b97-0b8a0b7b24cf",
+        "receiptSha256": "3c802f2116f94c8374a61709f5399bd4bc93137a01e452c86388faa3693f622c",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33626528499"
+      },
       "history": [
         {
           "sequence": 1,
@@ -41469,6 +41490,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-09-03T12:30:30.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0444-0448-v1.",
+          "taskSnapshotSha256": "e82b0e7e39fe2e33b1f5abceec5bfac499ee30fabb075b440bf3d76fe74e68bd",
+          "evidenceSha256": [
+            "01db02028d430e0776b4eb81221d7e118585386b76e479dd809fdd64dd133b17",
+            "3c802f2116f94c8374a61709f5399bd4bc93137a01e452c86388faa3693f622c",
+            "53f4dc00ee2ddd46b93e45a2e8fc16a938956155f68f3eebc0baa5a0b8e5ce23",
+            "7ed8eb5203fd20d192ef546b44e26a85f1e6bc2333afa785fbfc89ab2f4bc2b8",
+            "8c20498cc6a50223a1ac2b3d806adf641b66976e4ce2afb016604bed0be27ff1",
+            "cf0ae69d514ff5a1b3e2f5805ac10f5cbc88fef67753f9ffbbe6d52e5dad5457",
+            "e82b0e7e39fe2e33b1f5abceec5bfac499ee30fabb075b440bf3d76fe74e68bd"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -41480,20 +41519,26 @@
       "managerIndex": 94,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "d2531a177eb0a805325eaa64bdafcc26d18cc3f18ecc59a354467236497a3a5b",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "EXCLUDED",
+      "attempts": 1,
+      "startedAt": "2026-09-02T11:09:00.000Z",
+      "updatedAt": "2026-09-03T12:30:30.000Z",
+      "completedAt": "2026-09-03T12:30:30.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "d4ed0bf24cbef24a3da3ce6ee39448bf8a3d474e9f3b959a4827a5d1ec14efe8",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0445-digital-realty-northern-virginia-hyperscale-data-center-jv/attempt-1/locked-batch-v2-task-snapshot.json",
+          "sha256": "d4ed0bf24cbef24a3da3ce6ee39448bf8a3d474e9f3b959a4827a5d1ec14efe8"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0445-digital-realty-northern-virginia-hyperscale-data-center-jv/attempt-1/terminal-decision-v1.json",
+          "sha256": "f274dbd65f7559d85af4cb70bd7af371639cd74d05c751b847fc211e2a3209cb"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -41507,6 +41552,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "EXCLUDED",
+          "at": "2026-09-03T12:30:30.000Z",
+          "reason": "TPG's 80% interest is through TPG Real Estate Partners (TREP), an opportunistic real-estate fund series rather than an infrastructure mandate. Under the fixed strategy rule the asset type does not override the vehicle mandate. Digital Realty retained 20% and operations; no qualifying infrastructure-fund owner was found. TPG and TPG Real Estate duplicate one interest.",
+          "taskSnapshotSha256": "d4ed0bf24cbef24a3da3ce6ee39448bf8a3d474e9f3b959a4827a5d1ec14efe8",
+          "evidenceSha256": [
+            "01db02028d430e0776b4eb81221d7e118585386b76e479dd809fdd64dd133b17",
+            "8c20498cc6a50223a1ac2b3d806adf641b66976e4ce2afb016604bed0be27ff1",
+            "d4ed0bf24cbef24a3da3ce6ee39448bf8a3d474e9f3b959a4827a5d1ec14efe8",
+            "f274dbd65f7559d85af4cb70bd7af371639cd74d05c751b847fc211e2a3209cb"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -41518,23 +41578,44 @@
       "managerIndex": 94,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "86d85eeb23936e14a8483fd806272274c42018aa8415374156c3863abc335ea7",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 1,
+      "startedAt": "2026-09-02T11:09:00.000Z",
+      "updatedAt": "2026-09-03T12:30:30.000Z",
+      "completedAt": "2026-09-03T12:30:30.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "0f263ffb5dfe82d27ed0603dd3d219643414f5b85a2d8253cc17e592f4196019",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0446-ipx-power/attempt-1/locked-batch-v2-task-snapshot.json",
+          "sha256": "0f263ffb5dfe82d27ed0603dd3d219643414f5b85a2d8253cc17e592f4196019"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0446-ipx-power/attempt-1/proposal-v2.json",
+          "sha256": "bdadb2e183b884bf7d841f7a9440812760421741f14a0a31e9aac29fec81e481"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0446-ipx-power/attempt-1/approval-v2.json",
+          "sha256": "12bec51648cd988a10ecf374744402c68d8a550a38c965701f095330183b8889"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0444-0448-v1/production-apply-run-33626528499/batch-apply-receipt.json#members/2/receipt",
+          "sha256": "0795777f20ee880f333382e7fccc63f25a3340ac460b823d935f3882d6151260"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0446-ipx-power/attempt-1/proposal-v2.json#afterImage",
+          "sha256": "6127456d88cf2f6059309c038358aa4806f0ebff0874812ab4a8cbd0ab7a15db"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-09-03T12:30:30.000Z",
+        "auditEventId": "cmtk1bfxe000hww2bmtbzb9kd",
+        "transactionId": "c780d2fa-46a3-4fe7-9b97-0b8a0b7b24cf",
+        "receiptSha256": "0795777f20ee880f333382e7fccc63f25a3340ac460b823d935f3882d6151260",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33626528499"
+      },
       "history": [
         {
           "sequence": 1,
@@ -41545,6 +41626,24 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-09-03T12:30:30.000Z",
+          "reason": "Completed in verified atomic release bundle batch-0444-0448-v1.",
+          "taskSnapshotSha256": "0f263ffb5dfe82d27ed0603dd3d219643414f5b85a2d8253cc17e592f4196019",
+          "evidenceSha256": [
+            "01db02028d430e0776b4eb81221d7e118585386b76e479dd809fdd64dd133b17",
+            "0795777f20ee880f333382e7fccc63f25a3340ac460b823d935f3882d6151260",
+            "0f263ffb5dfe82d27ed0603dd3d219643414f5b85a2d8253cc17e592f4196019",
+            "12bec51648cd988a10ecf374744402c68d8a550a38c965701f095330183b8889",
+            "6127456d88cf2f6059309c038358aa4806f0ebff0874812ab4a8cbd0ab7a15db",
+            "8c20498cc6a50223a1ac2b3d806adf641b66976e4ce2afb016604bed0be27ff1",
+            "bdadb2e183b884bf7d841f7a9440812760421741f14a0a31e9aac29fec81e481"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -41556,20 +41655,26 @@
       "managerIndex": 94,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "ba1fae61a4ff9ca477acc4b78262c050c5fc2d68014e4c61e8bc7109e5061e19",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "EXCLUDED",
+      "attempts": 1,
+      "startedAt": "2026-09-02T11:09:00.000Z",
+      "updatedAt": "2026-09-03T12:30:30.000Z",
+      "completedAt": "2026-09-03T12:30:30.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "f69eb5776bf6d172135045138bdd60e59205c7bf8b5933ceda887b004309ff8d",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0447-monarch-bioenergy/attempt-1/locked-batch-v2-task-snapshot.json",
+          "sha256": "f69eb5776bf6d172135045138bdd60e59205c7bf8b5933ceda887b004309ff8d"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0447-monarch-bioenergy/attempt-1/terminal-decision-v1.json",
+          "sha256": "042d7cca64866809254a707b350c3d8e4914e8fbaf51391f2c7b8deddf4e501e"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -41583,6 +41688,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "EXCLUDED",
+          "at": "2026-09-03T12:30:30.000Z",
+          "reason": "Monarch is operating RNG infrastructure, but no qualifying infrastructure manager is proven. TPG's stake belongs to Rise Climate private equity; Transition Infrastructure was formed later. RAE/Smithfield are strategic owners, and TPG's unresolved exit process does not change scope.",
+          "taskSnapshotSha256": "f69eb5776bf6d172135045138bdd60e59205c7bf8b5933ceda887b004309ff8d",
+          "evidenceSha256": [
+            "01db02028d430e0776b4eb81221d7e118585386b76e479dd809fdd64dd133b17",
+            "042d7cca64866809254a707b350c3d8e4914e8fbaf51391f2c7b8deddf4e501e",
+            "8c20498cc6a50223a1ac2b3d806adf641b66976e4ce2afb016604bed0be27ff1",
+            "f69eb5776bf6d172135045138bdd60e59205c7bf8b5933ceda887b004309ff8d"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -41594,20 +41714,26 @@
       "managerIndex": 94,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "068ac04a6920534addaaa50f4620c393dd119b443ba7fcd5b61df3efe813e7de",
-      "status": "PENDING",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": null,
+      "status": "EXCLUDED",
+      "attempts": 1,
+      "startedAt": "2026-09-02T11:09:00.000Z",
+      "updatedAt": "2026-09-03T12:30:30.000Z",
+      "completedAt": "2026-09-03T12:30:30.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "cfe44b1b238f105a7cc4dab1a7f4677734ff8458afefe974773b555df04d1c02",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0448-olympus-terminals/attempt-2/locked-batch-v2-task-snapshot.json",
+          "sha256": "cfe44b1b238f105a7cc4dab1a7f4677734ff8458afefe974773b555df04d1c02"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0448-olympus-terminals/attempt-2/terminal-decision-v1.json",
+          "sha256": "d209c7d8dffb1dfb154b7dd26936eaad4a3f5aa8701fe866375893072a5d067b"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -41621,6 +41747,21 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "PENDING",
+          "to": "EXCLUDED",
+          "at": "2026-09-03T12:30:30.000Z",
+          "reason": "TPG controlled Olympus by 2024 year-end through Rise Climate private equity/Impact, not Transition Infrastructure. Intrepid's qualifying historical infrastructure interest exited; no qualifying current owner was found.",
+          "taskSnapshotSha256": "cfe44b1b238f105a7cc4dab1a7f4677734ff8458afefe974773b555df04d1c02",
+          "evidenceSha256": [
+            "01db02028d430e0776b4eb81221d7e118585386b76e479dd809fdd64dd133b17",
+            "8c20498cc6a50223a1ac2b3d806adf641b66976e4ce2afb016604bed0be27ff1",
+            "cfe44b1b238f105a7cc4dab1a7f4677734ff8458afefe974773b555df04d1c02",
+            "d209c7d8dffb1dfb154b7dd26936eaad4a3f5aa8701fe866375893072a5d067b"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -43672,5 +43813,5 @@
       ]
     }
   ],
-  "manifestSha256": "a2f6354f559394185f27f3589cce5f0e1331fe7da42d9ffe2eeaed24e68cc2cf"
+  "manifestSha256": "de5872f4f68203005f1bef6013d8572c1ec4b2371ac0e865dadf2374623c5d2d"
 }

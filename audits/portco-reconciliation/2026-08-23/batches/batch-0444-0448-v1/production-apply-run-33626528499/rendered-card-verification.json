@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_RENDERED_CARD_VERIFICATION",
+  "verifiedAt": "2026-09-03T12:28:49.000Z",
+  "batchId": "batch-0444-0448-v1",
+  "batchSha256": "01db02028d430e0776b4eb81221d7e118585386b76e479dd809fdd64dd133b17",
+  "batchReceiptSha256": "8c20498cc6a50223a1ac2b3d806adf641b66976e4ce2afb016604bed0be27ff1",
+  "batchTransactionId": "c780d2fa-46a3-4fe7-9b97-0b8a0b7b24cf",
+  "batchApplyReleaseSha": "800c957214368b1df2678f0c6d7aed7fb503247d",
+  "attributionRepair": {
+    "releaseSha": "ad59db1f82f586eae07955013671c00eeef5db63",
+    "pullRequestNumber": 881,
+    "workflowRunId": "33754959672",
+    "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33754959672",
+    "manifestSha256": "d332c1d700d97e61c8e56a9d9c2f60bda253bcaa735c8f54aa7661734c6dfbc4",
+    "approvalSha256": "580ae8c37b84aa88206044d3720b1af59c54caa7ad095d5c56b1ef91cdbd9660",
+    "receiptSha256": "dab826f3fcedcd1cb4d1fa9084c54afabb89158c3ae1f031b2bbd97b2af7a53b",
+    "pipelineRunId": "cmtlhzxs70000g32bb9wvefw2",
+    "mutationCount": 3,
+    "changed": 3,
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "fundLinkChanges": 0,
+    "ownershipIdentityChanges": 0,
+    "allReceiptRowsVerified": true
+  },
+  "canonicalProductionUrl": "https://infra-ma-2.vercel.app/Infra-MA2/portfolio",
+  "productionDeployment": {
+    "id": "dpl_5FzF2KoQev8MHS7tWn1PD4iZWujF",
+    "immutableUrl": "infra-ma-2-3oa26pmkd-mberry.vercel.app",
+    "githubCommitSha": "ad59db1f82f586eae07955013671c00eeef5db63",
+    "githubRepositoryId": "1143556044",
+    "readyState": "READY",
+    "target": "production",
+    "canonicalAliasBound": true
+  },
+  "renderedChecks": {
+    "browser": "Codex In-app Browser",
+    "publicPortCoCount": 1127,
+    "unisonEnergy": {
+      "filteredCompanyRows": 1,
+      "canonicalNameVisible": true,
+      "drawerVisible": true,
+      "currentOwnerVisible": "Tiger Infrastructure Partners",
+      "currentFundVisible": "Tiger Infrastructure Partners Fund III",
+      "currentVehicleVisible": "Tiger Infrastructure Partners Fund III AIV U LP",
+      "currentStakeVisible": "Controlling interest; exact percentage not publicly disclosed",
+      "ownershipPeriodVisible": "2024-Present",
+      "formerOwnersVisible": [
+        "Hunt Companies",
+        "American Infrastructure Funds"
+      ],
+      "sourceCount": 6,
+      "milestoneCount": 2,
+      "domSnapshotSha256": "eb9f7f48002e692edc8a7f2a1f9b7c6ffa89e5d2c3f264a8d663cef8b68e03e8"
+    },
+    "ipxPower": {
+      "filteredCompanyRows": 1,
+      "canonicalNameVisible": true,
+      "drawerVisible": true,
+      "currentOwnersVisible": [
+        "TPG",
+        "Climate Adaptive Infrastructure",
+        "Greenbelt Capital Partners"
+      ],
+      "vehiclesVisible": [
+        "TPG Rise Climate; exact fund and holding SPV not publicly disclosed",
+        "Climate Adaptive Infrastructure Fund LP; exact holding SPV not publicly disclosed",
+        "Legacy Trilantic/Greenbelt vehicle not publicly disclosed"
+      ],
+      "stakesVisible": [
+        "Majority interest; exact percentage not publicly disclosed",
+        "Minority interest; exact percentage not publicly disclosed"
+      ],
+      "tpgFundAttribution": "DIRECT_PROGRAM",
+      "caiFundAttribution": "DISCLOSED",
+      "greenbeltFundAttribution": "DIRECT_PROGRAM",
+      "staleTpgPeppertreeFundXAbsent": true,
+      "estimatedLowConfidenceAbsent": true,
+      "fundAttributionPendingAbsent": true,
+      "sourceCount": 6,
+      "milestoneCount": 4,
+      "domSnapshotSha256": "48a4883d72412fe9a860da1e579d35a8310599b9e968cf83b32a5c85f56bc02c"
+    },
+    "browserConsoleIssueCount": 0
+  },
+  "apiChecks": [
+    {
+      "companyName": "Unison Energy",
+      "companyId": "cmrxpjo8401awivheqfej0vd7",
+      "httpStatus": 200,
+      "responseContentLengthBytes": 4874,
+      "responseContentSha256": "003b830c0c685f63fe91da6bf734425336a0458dd978fcb6da7a495ba573931b",
+      "currentOwnerCount": 1,
+      "formerOwnerCount": 2
+    },
+    {
+      "companyName": "IPX Power",
+      "companyId": "cmrxpjo9e01azivhe6df3tcp2",
+      "httpStatus": 200,
+      "responseContentLengthBytes": 6061,
+      "responseContentSha256": "55978ded08926037a509d24e5f960e0097ded43f89c9547b5e6aa480c59d690a",
+      "currentOwnerCount": 3,
+      "formerOwnerCount": 0,
+      "repairRowsVerified": 3
+    }
+  ],
+  "partialApplication": false,
+  "apiVerificationPassed": true,
+  "renderedVerificationPassed": true,
+  "boundaryConclusion": "The canonical production deployment serves the protected repair SHA. Unison Energy retains its verified Tiger Fund III ownership and two historical owners. IPX Power renders TPG Rise Climate, Climate Adaptive Infrastructure and Greenbelt with the correct vehicles and stakes, while the stale TPG Peppertree Fund X and Estimated / Low confidence labels are absent. The original PortCo transaction was not repeated.",
+  "result": "PASS"
+}
