@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0459:signal-rail-holdings:50c69045",
+  "taskIndex": 459,
+  "companyName": "Signal Rail Holdings",
+  "outcome": "EXCLUDED",
+  "decidedAt": "2026-09-03T14:36:00.000Z",
+  "rationale": "Signal Rail is a railcar investment/asset-leasing JV, not a manager-level operator. It owns leased portfolios through SPVs using equity, term debt and ABS; TILC originates and services every car. Trinity reports it as a nonconsolidated equity-method VIE.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0459-signal-rail-holdings/attempt-2/locked-batch-v1-task-snapshot.json",
+    "sha256": "6efde37270e90f327b95057f29b20a1c06c6874b0c58095759b1c4aeda28dcf1"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0459-signal-rail-holdings/attempt-2/application-research-decision-v1.json",
+    "sha256": "69349c65fbbd1ef4826cfdd27601a2988b95dbbffb0a5a7232d1467e7a7c8778"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0459-signal-rail-holdings/attempt-2/source-verification.json",
+    "sha256": "26858fd7e9da2fc44fe4c1400fe44f561650227fc79cab25ee17b38e36530113"
+  },
+  "evidence": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/99780/000009978026000119/trn-20260630.htm",
+      "purpose": "Current stakes, servicing and VIE boundary."
+    },
+    {
+      "url": "https://www.wafra.com/trinity-and-wafra-announce-joint-venture-in-new-railcar-investment-vehicle-signal-rail/",
+      "purpose": "Close, target, initial fleet/ABS and roles."
+    },
+    {
+      "url": "https://s21.q4cdn.com/496026207/files/doc_financials/2022/q4/3b5ea739-2279-4808-8d4b-5886059321e9.pdf",
+      "purpose": "2022 purchase, funding and fleet."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/99780/000009978025000015/trn-20241231.htm",
+      "purpose": "2024 purchase and cumulative fleet."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/99780/000009978026000014/trn-20251231.htm",
+      "purpose": "2025 purchase, ABS refi and distribution."
+    },
+    {
+      "url": "https://www.wafra.com/our-people/edward-tsai/",
+      "purpose": "Infrastructure mandate and board role."
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "c151287a04089c9e825e33b1387fd5fdec291732607ceb32e339ead4f3a7286c"
+}

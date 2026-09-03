@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-03T14:18:30.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-09-03T15:16:00.000Z",
+  "activeBatchId": "batch-0459-0463-v1",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -8447,7 +8447,55 @@
           "reason": "Canonical production served exact protected release SHA 3c993be2e68ce0511836aee29028e1663c218454; atomic transaction ef2fbb4b-f1d1-4c72-8457-e742318fa551, immutable receipt, three exact database after-images, seed parity, APIs, ownership, sources, and stable rendered-card checks all passed with no partial application."
         }
       ]
+    },
+    {
+      "batchId": "batch-0459-0463-v1",
+      "state": "READY",
+      "taskIds": [
+        "ledger:0459:signal-rail-holdings:50c69045",
+        "ledger:0460:dcli:22d0fc27",
+        "ledger:0461:i3-broadband:2d53909b",
+        "ledger:0462:qsp-northern-virginia-data-center-jv:3a29bbb8",
+        "ledger:0463:btr-jet-center:402b91d4"
+      ],
+      "taskIndexes": [
+        459,
+        460,
+        461,
+        462,
+        463
+      ],
+      "createdAt": "2026-09-03T14:30:15.000Z",
+      "updatedAt": "2026-09-03T15:16:00.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0459-0463-v1/batch-manifest-v6.json",
+        "sha256": "e681cf3474e349ea5cdb2c33de59d7a3d301ab2c2fc1334738798892940070c7"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-09-03T14:30:15.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-09-03T15:16:00.000Z",
+          "evidenceSha256": [
+            "e681cf3474e349ea5cdb2c33de59d7a3d301ab2c2fc1334738798892940070c7"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "5df19e4b6461641c31023ae16f46d293ba2b340a974ca6560ea2349d1005abb0"
+  "ledgerSha256": "f7dcc692cf3ece2237a2abc283ac2c68a4459afa93de844c831b62037d01e31b"
 }

@@ -1,0 +1,213 @@
+{
+  "generatedAt": "2026-09-03T14:49:00.000Z",
+  "actions": [
+    "CORRECT_COMPANY",
+    "MERGE_COMPANIES"
+  ],
+  "retiredCompanyIds": [
+    "cmrxpjnwb01adivhea7g6ojct"
+  ],
+  "relationMerges": [
+    {
+      "kind": "OWNERSHIP_PERIOD",
+      "retiredRelationId": "cmrxpkagy02a1ivhehgmanohg",
+      "canonicalRelationId": "cmrxpkaiz02a5ivhet6uxm49k",
+      "rationale": "The BTR row describes the same Tallvine ownership through the same disclosed fund as the canonical Velocity platform. Preserve the canonical 2025 platform-level ownership period and merge the 2026 add-on-level duplicate into it."
+    }
+  ],
+  "reviewedSeedRetirementTaskIds": [],
+  "rationale": "Merge the separately modeled BTR Jet Center child record into Velocity FBO Network, the sole Tallvine-owned manager-level platform. Velocity completed the add-on in February 2026, the Baton Rouge airport assigned the operating and hangar leases to Velocity BTR Holdings, LLC, and the location now operates as Velocity Baton Rouge (KBTR). Preserve the child's operating and transaction history as platform milestones and aliases, create the durable production redirect, and exclude BTR Air Charter because no acquisition evidence was found.",
+  "evidence": [
+    {
+      "url": "https://www.businesswire.com/news/home/20260213283848/en/Tallvine-Backed-Velocity-FBO-Network-Expands-with-Acquisition-of-BTR-Jet-Center",
+      "purpose": "Primary completed-acquisition and platform-integration evidence.",
+      "supports": [
+        "Velocity completed the BTR Jet Center acquisition by February 13, 2026",
+        "BTR became Velocity's Baton Rouge operating location"
+      ]
+    },
+    {
+      "url": "https://www.brla.gov/AgendaCenter/ViewFile/Minutes/_02112026-2316",
+      "purpose": "Official lease-assignment and local-entity evidence.",
+      "supports": [
+        "Baton Rouge approved the operating and hangar lease assignments on February 11, 2026",
+        "Velocity BTR Holdings, LLC is the local legal assignee"
+      ]
+    },
+    {
+      "url": "https://velocityfbo.com/locations/baton-rouge-kbtr/",
+      "purpose": "Current operating-brand and location evidence.",
+      "supports": [
+        "The former BTR site operates as Velocity Baton Rouge at KBTR",
+        "The location is part of the Velocity FBO Network"
+      ]
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20260810856121/en/Tallvine-Backed-Velocity-FBO-Network-Expands-with-Acquisition-of-SkyPlace-FBO",
+      "purpose": "Current integration and no-exit evidence through the research cutoff.",
+      "supports": [
+        "Velocity continued to list Baton Rouge in its Tallvine-backed network in August 2026"
+      ]
+    },
+    {
+      "url": "https://btrjet.com/",
+      "purpose": "Legacy identity and scope-boundary evidence.",
+      "supports": [
+        "BTR Jet Center was the legacy Baton Rouge FBO identity",
+        "BTR Air Charter was described separately and is not included without acquisition evidence"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "companyFieldUpdates": {
+    "aliases": [
+      "BTR Jet Center",
+      "Baton Rouge Jet Center, LLC",
+      "Velocity Baton Rouge",
+      "Velocity Baton Rouge (KBTR)",
+      "Velocity BTR Holdings, LLC"
+    ],
+    "description": "Velocity FBO Network is Tallvine's U.S. fixed-base-operator platform, assembled from Odyssey Aviation's U.S. assets and expanded through add-on acquisitions. The network provides aircraft fueling, hangar, ground-handling and related business-aviation services across multiple U.S. airports. In February 2026, Velocity acquired BTR Jet Center after Baton Rouge approved assignment of the operating and hangar leases to Velocity BTR Holdings, LLC; the location now operates as Velocity Baton Rouge (KBTR). BTR Air Charter remains outside the platform perimeter because no evidence established that it was acquired.",
+    "website": "https://velocityfbo.com/",
+    "headquarters": "United States",
+    "lastVerifiedAt": "2026-08-19T00:00:00.000Z"
+  },
+  "ownershipPeriodUpdates": [
+    {
+      "id": "cmrxpkaiz02a5ivhet6uxm49k",
+      "set": {
+        "managerName": "Tallvine",
+        "organizationName": "Tallvine",
+        "fundName": "Tallvine Middle Market Infrastructure Fund I",
+        "vehicleName": "Tallvine Middle Market Infrastructure Fund I; exact platform holding vehicle not publicly disclosed",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    }
+  ],
+  "ownershipPeriodRemovals": [],
+  "ownershipPeriodAdditions": [],
+  "ownershipPeriodTransfers": [],
+  "pendingOwnershipTransactionUpdates": [],
+  "pendingOwnershipTransactionAdditions": [],
+  "milestoneUpdates": [
+    {
+      "id": "cmrxpmrhd059mivhezgli32kb",
+      "set": {
+        "date": "Jan 30, 2025",
+        "event": "Tallvine completed the inaugural Odyssey Aviation U.S. acquisition and launched its North American FBO platform.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-01-30T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://via.ritzau.dk/pressemeddelelse/14244238/tallvine-launches-north-america-fixed-based-operator-platform-with-odyssey-aviations-us-assets-as-inaugural-acquisition?lang=en&publisherId=90456"
+        ]
+      }
+    },
+    {
+      "id": "cmrxpmrif059oivheabi7lrfa",
+      "set": {
+        "date": "Jun 12, 2025",
+        "event": "Odyssey Aviation North America rebranded as Velocity FBO Network under Tallvine ownership.",
+        "category": "MANAGEMENT",
+        "sortDate": "2025-06-12T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.businesswire.com/news/home/20250612894793/en/Tallvine-Backed-Odyssey-Aviation-North-America-Unveils-Rebrand-to-Velocity-FBO-Network"
+        ]
+      }
+    }
+  ],
+  "milestoneTransfers": [
+    {
+      "id": "cmrxpmr610599ivhew2pb2zlg",
+      "date": "2021",
+      "event": "The legacy BTR Jet Center east-ramp facility opened at Baton Rouge Metropolitan Airport.",
+      "category": "EXPANSION",
+      "sortDate": "2021-01-01T00:00:00.000Z",
+      "evidenceUrls": [
+        "https://btrjet.com/"
+      ]
+    },
+    {
+      "id": "cmrxpmr6l059aivheydqnd267",
+      "date": "Feb 13, 2026",
+      "event": "BTR Jet Center began operating within the Tallvine-backed Velocity network as Velocity Baton Rouge (KBTR).",
+      "category": "EXPANSION",
+      "sortDate": "2026-02-13T05:00:00.000Z",
+      "evidenceUrls": [
+        "https://www.businesswire.com/news/home/20260213283848/en/Tallvine-Backed-Velocity-FBO-Network-Expands-with-Acquisition-of-BTR-Jet-Center",
+        "https://velocityfbo.com/locations/baton-rouge-kbtr/"
+      ]
+    },
+    {
+      "id": "cmrxpmr76059bivhe5ix8uzam",
+      "date": "Feb 11-13, 2026",
+      "event": "Baton Rouge approved assignment of the BTR operating and hangar leases to Velocity BTR Holdings, LLC on February 11, and Velocity announced the completed BTR Jet Center acquisition on February 13.",
+      "category": "ACQUISITION",
+      "sortDate": "2026-02-13T05:00:00.000Z",
+      "evidenceUrls": [
+        "https://www.brla.gov/AgendaCenter/ViewFile/Minutes/_02112026-2316",
+        "https://www.businesswire.com/news/home/20260213283848/en/Tallvine-Backed-Velocity-FBO-Network-Expands-with-Acquisition-of-BTR-Jet-Center"
+      ]
+    },
+    {
+      "id": "cmrxpmr7p059civhen3zkqwgf",
+      "date": "Feb 13, 2026",
+      "event": "Velocity identified Baton Rouge as its fifth operating location following the BTR Jet Center acquisition.",
+      "category": "OTHER",
+      "sortDate": "2026-02-13T05:00:00.000Z",
+      "evidenceUrls": [
+        "https://www.businesswire.com/news/home/20260213283848/en/Tallvine-Backed-Velocity-FBO-Network-Expands-with-Acquisition-of-BTR-Jet-Center"
+      ]
+    }
+  ],
+  "citationUpdates": [
+    {
+      "id": "cmrxpsvy00d9vivhepeudcmae",
+      "set": {
+        "evidenceLabel": "Primary Tallvine platform launch and initial ownership evidence",
+        "isPrimary": true
+      }
+    }
+  ],
+  "citationAdditions": [
+    {
+      "id": null,
+      "label": "Btrjet — BTR Jet Center",
+      "url": "https://btrjet.com/",
+      "sourceType": "WEBSITE",
+      "purpose": "COMPANY_PROFILE",
+      "evidenceLabel": "Legacy BTR identity and Baton Rouge facility history",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "Business Wire",
+      "url": "https://www.businesswire.com/news/home/20260213283848/en/Tallvine-Backed-Velocity-FBO-Network-Expands-with-Acquisition-of-BTR-Jet-Center",
+      "sourceType": "PRESS_RELEASE",
+      "purpose": "MILESTONE_EVENT",
+      "evidenceLabel": "February 13, 2026 completed BTR acquisition and platform integration",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "Baton Rouge — February 11, 2026 council minutes",
+      "url": "https://www.brla.gov/AgendaCenter/ViewFile/Minutes/_02112026-2316",
+      "sourceType": "OTHER",
+      "purpose": "MILESTONE_EVENT",
+      "evidenceLabel": "Official operating and hangar lease assignments to Velocity BTR Holdings, LLC",
+      "isPrimary": false
+    },
+    {
+      "id": null,
+      "label": "Velocity — Baton Rouge (KBTR)",
+      "url": "https://velocityfbo.com/locations/baton-rouge-kbtr/",
+      "sourceType": "WEBSITE",
+      "purpose": "OPERATIONS_ASSETS",
+      "evidenceLabel": "Current Velocity Baton Rouge brand, KBTR location and services",
+      "isPrimary": false
+    }
+  ]
+}

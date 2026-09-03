@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_RESEARCH_DECISION",
+  "taskId": "ledger:0461:i3-broadband:2d53909b",
+  "taskIndex": 461,
+  "companyName": "i3 Broadband",
+  "decision": "NO_CHANGE",
+  "generatedAt": "2026-09-03T14:35:00.000Z",
+  "result": {
+    "decision": "NO_CHANGE",
+    "rationale": "Primary sources support Wren House remaining the current legal owner through the review date. T-Mobile announced a 50/50 joint venture transaction for i3 Broadband, but the direct official announcement targeted a second-half 2026 closing and no legal closing was established by the research cutoff; no active-owner change is authorized.",
+    "evidence": [
+      {
+        "url": "https://www.t-mobile.com/news/business/t-mobile-add-two-strategic-fiber-joint-ventures-gonetspeed-greenlight-i3",
+        "purpose": "Working official announcement for T-Mobile's signed pending 50/50 i3 joint venture and targeted closing."
+      },
+      {
+        "url": "https://wrenhouseinfra.com/our-investment-philosophy/digital/",
+        "purpose": "Working current manager page listing i3 as a Wren House portfolio highlight."
+      },
+      {
+        "url": "https://docs.fcc.gov/public/attachments/DA-23-207A1.pdf",
+        "purpose": "Official FCC notice supporting the i3 ownership chain and platform boundary."
+      }
+    ]
+  },
+  "lineage": {
+    "applicationResearchDecision": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0461-i3-broadband/attempt-1/application-research-decision-v1.json",
+    "sourceVerification": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0461-i3-broadband/attempt-1/source-verification.json",
+    "normalizationNote": "VERIFIED_NO_CHANGE is normalized to the terminal preparer's NO_CHANGE outcome, and the two dead model-cited URLs are replaced with the working official URLs already recorded by source verification."
+  }
+}

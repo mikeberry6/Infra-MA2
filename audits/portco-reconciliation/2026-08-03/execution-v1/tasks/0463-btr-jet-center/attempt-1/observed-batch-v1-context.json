@@ -1,0 +1,315 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0463:btr-jet-center:402b91d4",
+  "taskIndex": 463,
+  "companyName": "BTR Jet Center",
+  "generatedAt": "2026-09-03T14:46:27.185Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0463-btr-jet-center/attempt-1/observed-batch-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 463,
+    "taskId": "ledger:0463:btr-jet-center:402b91d4",
+    "canonicalKey": "btr-jet-center|united-states",
+    "companyName": "BTR Jet Center",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 100,
+    "managers": [
+      "Tallvine"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "100-tallvine:repo-only:002:btr-jet-center"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjnwb01adivhea7g6ojct"
+    ],
+    "seedKeys": [
+      "btr jet center|United States"
+    ],
+    "evidenceUrls": [
+      "https://velocityfbo.com/locations/",
+      "https://www.businesswire.com/news/home/20260213283848/en/Tallvine-Backed-Velocity-FBO-Network-Expands-with-Acquisition-of-BTR-Jet-Center"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Tallvine MATCHED_ELSEWHERE: Add-on acquisition under Velocity FBO Network platform and already represented within the counted platform holding.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "REVIEWED_MERGE_CANONICAL_TARGET",
+    "targetCompanyId": "cmrxpjnya01ahivheyr6w92jk",
+    "linkedQueueTaskId": null,
+    "immutableRetiredCompanyId": "cmrxpjnwb01adivhea7g6ojct"
+  },
+  "resolvedCanonicalKey": "velocity-fbo-network|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjnya01ahivheyr6w92jk",
+    "name": "Velocity FBO Network",
+    "aliases": [],
+    "sector": "TRANSPORTATION",
+    "subsector": "Fixed-base operator airport services",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Velocity FBO Network operates fixed-base operator locations that provide fueling, hangar, ground handling, and related services for business aviation customers. Its customers or end markets include business aircraft operators, charter providers, and general aviation users. The operating model is an asset-backed airport services model centered on leased or owned FBO facilities and recurring operating revenue. Operations are concentrated in Michigan, Florida, and Georgia, with expansion into additional U.S. airports. Public materials indicate an initial platform assembled from Odyssey Aviation’s U.S. assets and subsequent add-on acquisitions. Current ownership dates to Tallvine Partners’ 2025 launch of the North America FBO platform using Odyssey Aviation’s U.S. assets, followed by the rebrand to Velocity FBO Network in June 2025.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2025,
+    "headquarters": "Michigan, Florida, and Georgia",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpkaiz02a5ivhet6uxm49k",
+        "managerName": "Tallvine",
+        "organizationName": "Tallvine",
+        "fundName": "Tallvine Middle Market Infrastructure Fund I",
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmrgy059livheutgziz8s",
+        "date": "2025",
+        "event": "Tallvine began executing add-on acquisitions to expand the platform.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmrhd059mivhezgli32kb",
+        "date": "Jan 30, 2025",
+        "event": "Tallvine launched its U.S. FBO platform using Odyssey Aviation North America assets.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-01-30T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmrht059nivhei7b621j4",
+        "date": "Oct 1, 2025",
+        "event": "Velocity added the Lake Havasu FBO location.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-10-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmrif059oivheabi7lrfa",
+        "date": "Jun 12, 2025",
+        "event": "The platform rebranded as Velocity FBO Network. (Rebranding)",
+        "category": "MANAGEMENT",
+        "sortDate": "2025-06-12T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsvy00d9vivhepeudcmae",
+        "label": "Investment date source — Tallvine — Velocity FBO Network",
+        "url": "https://via.ritzau.dk/pressemeddelelse/14244238/tallvine-launches-north-america-fixed-based-operator-platform-with-odyssey-aviations-us-assets-as-inaugural-acquisition?lang=en&publisherId=90456",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Tallvine initial investment / ownership",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpsvz20d9xivhe4dea8lw5",
+        "label": "Business Wire — Velocity FBO Network",
+        "url": "https://www.businesswire.com/news/home/20250612894793/en/Tallvine-Backed-Odyssey-Aviation-North-America-Unveils-Rebrand-to-Velocity-FBO-Network",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Business Wire transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsw000d9zivhe7m6nnjjv",
+        "label": "Ainonline — Velocity FBO Network",
+        "url": "https://www.ainonline.com/aviation-news/business-aviation/2025-06-13/odyssey-aviaition-north-america-achieves-launch-velocity",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Ainonline transaction or milestone detail",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsw110da1ivhettz4bfh7",
+        "label": "Velocityfbo — Velocity FBO Network",
+        "url": "https://velocityfbo.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Velocityfbo company profile",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsw220da3ivheqbn9le7x",
+        "label": "Velocityfbo — Velocity FBO Network",
+        "url": "https://velocityfbo.com/locations/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Velocityfbo operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsw310da5ivhe419w04eb",
+        "label": "Velocityfbo — Velocity FBO Network",
+        "url": "https://velocityfbo.com/contact/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Velocityfbo — Velocity FBO Network",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Velocity FBO Network",
+    "investmentFirm": "Tallvine",
+    "sector": "Transportation",
+    "subsector": "Fixed-base operator airport services",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "Velocity FBO Network operates fixed-base operator locations that provide fueling, hangar, ground handling, and related services for business aviation customers. Its customers or end markets include business aircraft operators, charter providers, and general aviation users. The operating model is an asset-backed airport services model centered on leased or owned FBO facilities and recurring operating revenue. Operations are concentrated in Michigan, Florida, and Georgia, with expansion into additional U.S. airports. Public materials indicate an initial platform assembled from Odyssey Aviation’s U.S. assets and subsequent add-on acquisitions. Current ownership dates to Tallvine Partners’ 2025 launch of the North America FBO platform using Odyssey Aviation’s U.S. assets, followed by the rebrand to Velocity FBO Network in June 2025.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2025,
+    "investmentYear": 2025,
+    "headquarters": "Michigan, Florida, and Georgia",
+    "milestones": [
+      {
+        "date": "2025",
+        "event": "Tallvine began executing add-on acquisitions to expand the platform.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Jan 30, 2025",
+        "event": "Tallvine launched its U.S. FBO platform using Odyssey Aviation North America assets.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Oct 1, 2025",
+        "event": "Velocity added the Lake Havasu FBO location.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Jun 12, 2025",
+        "event": "The platform rebranded as Velocity FBO Network. (Rebranding)",
+        "category": "Management"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Investment date source — Tallvine — Velocity FBO Network",
+        "url": "https://via.ritzau.dk/pressemeddelelse/14244238/tallvine-launches-north-america-fixed-based-operator-platform-with-odyssey-aviations-us-assets-as-inaugural-acquisition?lang=en&publisherId=90456",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Business Wire — Velocity FBO Network",
+        "url": "https://www.businesswire.com/news/home/20250612894793/en/Tallvine-Backed-Odyssey-Aviation-North-America-Unveils-Rebrand-to-Velocity-FBO-Network",
+        "type": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT"
+      },
+      {
+        "label": "Ainonline — Velocity FBO Network",
+        "url": "https://www.ainonline.com/aviation-news/business-aviation/2025-06-13/odyssey-aviaition-north-america-achieves-launch-velocity",
+        "type": "ARTICLE",
+        "purpose": "MILESTONE_EVENT"
+      },
+      {
+        "label": "Velocityfbo — Velocity FBO Network",
+        "url": "https://velocityfbo.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Velocityfbo — Velocity FBO Network",
+        "url": "https://velocityfbo.com/locations/",
+        "type": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Velocityfbo — Velocity FBO Network",
+        "url": "https://velocityfbo.com/contact/",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Tallvine",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2025,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [
+      {
+        "id": "cmrxpj3r500fhivhenx117u1s",
+        "fundName": "Tallvine Middle Market Infrastructure Fund I",
+        "managerId": "cmrxpidtt003mivhe3d7c82al",
+        "updatedAt": "2026-08-03T17:26:10.862Z"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmrxpidtt003mivhe3d7c82al",
+        "name": "Tallvine",
+        "updatedAt": "2026-07-23T16:09:25.121Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0463:btr-jet-center:402b91d4",
+    "taskIndex": 463,
+    "canonicalKey": "btr-jet-center|united-states",
+    "capturedAt": "2026-09-03T14:46:27.185Z",
+    "databaseRevision": "revision:aede3c7ae8f0a420a4848d6d61745ddff26687458513433b64ea4a61412c889f",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "90434ee07e93385b5ac7c156e12ad83d40ab4e26418c8b4f9f57c026b64ca2fa",
+    "productionSnapshotSha256": "fc05659bfcead5c7f794a66fb9aab694d221ad1266a879c0f9d86556461a5d6b",
+    "targetCompanySnapshotSha256": "eb293ad55b2c24d489b26149537da2fbcc18f993fdc2dd601ae836ba896cdd3f",
+    "seedEntrySha256": "c4f79a71ee4a33b8b2bfae6a90fe6dfd9af26ad163d3167962bbf645c9be46d4",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "77fdcdb032e1ec70ef61bb0b81a17bc5041cc3310a10e378e862db0700563649",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "0e19d8eb32e670542c10f14406428c9f754acf4f75367310514d46dc4cb610d7",
+      "organizationsSha256": "857de82bbe909b5421a0ccda9a741b41b27458ea16587d25d33ff5c2b8f0e1dc",
+      "citationsSha256": "d57d0f4f323a87e911aaf8ece3f365caed2e8d56bdc64b95ebdcf065cfeb834a",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "f5ab256efa1e5b7ba36b1496b88d567f009bc628b539574230fcfb9e4b7a04db",
+    "stateSha256": "3c752df3b0208e6a7e3fa4b535c065083653500bd44962d1aa7f009af9cb2f9f",
+    "taskSnapshotSha256": "703f6376c420781114f6dc0e3b9499189eca913514697e337649610b72f0ec62"
+  },
+  "contextSha256": "132ada61da5d73caa74bd4e31ce0c20a747ed7734a756e30fdf9d67c2f412e29"
+}

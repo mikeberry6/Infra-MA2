@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0461:i3-broadband:2d53909b",
+  "taskIndex": 461,
+  "companyName": "i3 Broadband",
+  "outcome": "VERIFIED_NO_CHANGE",
+  "decidedAt": "2026-09-03T14:36:00.000Z",
+  "rationale": "Primary sources support Wren House remaining the current legal owner through the review date. T-Mobile announced a 50/50 joint venture transaction for i3 Broadband, but the direct official announcement targeted a second-half 2026 closing and no legal closing was established by the research cutoff; no active-owner change is authorized.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0461-i3-broadband/attempt-1/locked-batch-v1-task-snapshot.json",
+    "sha256": "12bfaf3f7b74602e3faf6cfa526290904b2a379f6dc2e39c1d342f8430c15ec8"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0461-i3-broadband/attempt-1/terminal-research-decision-v1.json",
+    "sha256": "199b85fcb2df84b321f0d6ca4bb258ac8fe0f78f2bcca2c7f84ca1f32c4458d2"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0461-i3-broadband/attempt-1/source-verification.json",
+    "sha256": "5c2140c2531a965f73c983e0d37ba6d772f85ffc20fbbdc3146166b32d88135e"
+  },
+  "evidence": [
+    {
+      "url": "https://www.t-mobile.com/news/business/t-mobile-add-two-strategic-fiber-joint-ventures-gonetspeed-greenlight-i3",
+      "purpose": "Working official announcement for T-Mobile's signed pending 50/50 i3 joint venture and targeted closing."
+    },
+    {
+      "url": "https://wrenhouseinfra.com/our-investment-philosophy/digital/",
+      "purpose": "Working current manager page listing i3 as a Wren House portfolio highlight."
+    },
+    {
+      "url": "https://docs.fcc.gov/public/attachments/DA-23-207A1.pdf",
+      "purpose": "Official FCC notice supporting the i3 ownership chain and platform boundary."
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "a22def3647eed2eccd977a821414a2d2f7c850b1c906b4bd1d9c7bb1967de2e7"
+}

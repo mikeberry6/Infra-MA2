@@ -1,0 +1,256 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0462:qsp-northern-virginia-data-center-jv:3a29bbb8",
+  "taskIndex": 462,
+  "companyName": "QSP (Northern Virginia Data Center JV)",
+  "generatedAt": "2026-09-03T14:43:06.574Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0462-qsp-northern-virginia-data-center-jv/attempt-1/locked-batch-v3-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 462,
+    "taskId": "ledger:0462:qsp-northern-virginia-data-center-jv:3a29bbb8",
+    "canonicalKey": "qsp-northern-virginia-data-center-jv|united-states",
+    "companyName": "QSP (Northern Virginia Data Center JV)",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 99,
+    "managers": [
+      "Wren House Infrastructure"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "099-wren-house-infrastructure:holding:001:qsp-northern-virginia-data-center-jv"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [],
+    "seedKeys": [],
+    "evidenceUrls": [
+      "https://wrenhouseinfra.com/portfolio/qsp/",
+      "https://www.qtsdatacenters.com/"
+    ],
+    "candidateCanonicalKeys": [
+      "qsp|united-states"
+    ],
+    "rationale": "Only heuristic repository candidate(s) exist: qsp|united-states; no automatic merge was made. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Only heuristic repository candidate(s) exist: qsp|united-states; no automatic merge was made."
+    ]
+  },
+  "targetResolution": {
+    "method": "REVIEWED_SYMMETRIC_CANDIDATE",
+    "targetCompanyId": "cmrxpjp1e01c7ivheew361buw",
+    "linkedQueueTaskId": "ledger:0491:qsp:5404ff01"
+  },
+  "resolvedCanonicalKey": "qsp-northern-virginia-data-center-jv|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjp1e01c7ivheew361buw",
+    "name": "QSP",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Hyperscale data centers",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "QSP is a joint venture that owns three fully constructed hyperscale data centers in Northern Virginia. Its customer base consists of investment-grade hyperscale and enterprise tenants requiring large-scale colocation and critical IT capacity in the largest U.S. data center market. The operating model is asset heavy and contracted, with the portfolio fully leased and operated by QTS rather than dependent on speculative lease-up. Public materials state that the portfolio provides approximately 100 megawatts of critical IT capacity across the three facilities. Wren House completed its investment in the joint venture in 2024 as part of a recapitalization in which QTS retained an ownership stake and operating role. Current public materials also note the presence of another investor in the joint venture, but that investor's identity and ownership split are not fully disclosed on the cited sources.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2024,
+    "headquarters": "Virginia",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpkbni02byivhec07m80rm",
+        "managerName": "Wren House",
+        "organizationName": "Wren House",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmwje05g6ivhea2xf1b9p",
+        "date": "2024",
+        "event": "Wren House recorded an investment in QSP on its portfolio timeline.",
+        "category": "FINANCING",
+        "sortDate": "2024-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmwjv05g7ivheyhj0bacu",
+        "date": "2024",
+        "event": "The recapitalization delivered approximately 100 MW of critical IT capacity in fully constructed assets.",
+        "category": "FINANCING",
+        "sortDate": "2024-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmwmt05g8ivhe53dsipa8",
+        "date": "Nov 2024",
+        "event": "Wren House announced completion of the joint venture for three Northern Virginia data centers.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-11-01T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpt4k40dn5ivhef1p12ono",
+        "label": "Whinfra — QSP",
+        "url": "https://www.whinfra.com/our-portfolio/qsp/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Whinfra operations / asset details",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpt4l60dn7ivheuqmz0y4y",
+        "label": "Close date source — Wren House — QSP",
+        "url": "https://www.whinfra.com/qts-realty-trust-and-wren-house-successfully-complete-joint-venture-for-three-northern-virginia-data-centers-2/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Wren House closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpt4m80dn9ivhe4ii1wng8",
+        "label": "Qtsdatacenters — QSP",
+        "url": "https://www.qtsdatacenters.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Qtsdatacenters company profile",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "QSP",
+    "investmentFirm": "Wren House",
+    "sector": "Digital",
+    "subsector": "Hyperscale data centers",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "QSP is a joint venture that owns three fully constructed hyperscale data centers in Northern Virginia. Its customer base consists of investment-grade hyperscale and enterprise tenants requiring large-scale colocation and critical IT capacity in the largest U.S. data center market. The operating model is asset heavy and contracted, with the portfolio fully leased and operated by QTS rather than dependent on speculative lease-up. Public materials state that the portfolio provides approximately 100 megawatts of critical IT capacity across the three facilities. Wren House completed its investment in the joint venture in 2024 as part of a recapitalization in which QTS retained an ownership stake and operating role. Current public materials also note the presence of another investor in the joint venture, but that investor's identity and ownership split are not fully disclosed on the cited sources.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2024,
+    "investmentYear": 2024,
+    "headquarters": "Virginia",
+    "milestones": [
+      {
+        "date": "2024",
+        "event": "Wren House recorded an investment in QSP on its portfolio timeline.",
+        "category": "Financing"
+      },
+      {
+        "date": "2024",
+        "event": "The recapitalization delivered approximately 100 MW of critical IT capacity in fully constructed assets.",
+        "category": "Financing"
+      },
+      {
+        "date": "Nov 2024",
+        "event": "Wren House announced completion of the joint venture for three Northern Virginia data centers.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Whinfra — QSP",
+        "url": "https://www.whinfra.com/our-portfolio/qsp/",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Close date source — Wren House — QSP",
+        "url": "https://www.whinfra.com/qts-realty-trust-and-wren-house-successfully-complete-joint-venture-for-three-northern-virginia-data-centers-2/",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Qtsdatacenters — QSP",
+        "url": "https://www.qtsdatacenters.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Wren House",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2024,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi56u000wivhev4hy469z",
+        "name": "BlackRock",
+        "updatedAt": "2026-07-23T16:09:13.926Z"
+      },
+      {
+        "id": "cmrxpi5em000yivhekda3otkf",
+        "name": "Blackstone",
+        "updatedAt": "2026-07-23T16:09:14.206Z"
+      },
+      {
+        "id": "cmrxpijz1005jivhekerlz6i2",
+        "name": "Wren House",
+        "updatedAt": "2026-07-23T16:09:33.085Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0462:qsp-northern-virginia-data-center-jv:3a29bbb8",
+    "taskIndex": 462,
+    "canonicalKey": "qsp-northern-virginia-data-center-jv|united-states",
+    "capturedAt": "2026-09-03T14:43:06.574Z",
+    "databaseRevision": "revision:5b51193b0da3f060fdb1ffb16c468bbc9e92c6c3a71b41b3eab8a3d2d64d3a48",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "38e29fa74b34f3c29362ced9dd316d57d980b7b487d0caa59b2d47d4ce513f26",
+    "productionSnapshotSha256": "3417528812744d219adf2d6471d799ee065652ca606a9f169d1f7ed012281c75",
+    "targetCompanySnapshotSha256": "e3a40c238ebc018282e79c829cfea45d337710788147a6f4be2b7a6dd374884b",
+    "seedEntrySha256": "77292c5d5f09caf93fb0ebb4828e1ca5b2a79c9563a1322a946ee14c7f39fc8c",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "30ec71ec5cb3944ad5f143eccd733fe2a81d6c5688e272ffe759c66703a14396",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "2392f27421e525921e1e25f35012d26393e9c0fe1679fc350ed4754d6e11c2d2",
+      "citationsSha256": "689f3f44706a4ae07a1e765e67dea519c0747ee094b13c9f824636d68a1363ca",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "87f76254001b522b439b657420826d9e1fa6488eb6fd3970a066dbb16a574e88",
+    "stateSha256": "4c11af4831a2690f2e72d5bf74fa9d040588d2cc39ab6dc74e8835df0368ba4f",
+    "taskSnapshotSha256": "ef47e4651865a50bce41606e40b2cf6bb601d53ad0400b5ac2d317caadf74cae"
+  },
+  "contextSha256": "502ffbf660c81669ed35e161795c2fd4bb766c58c0930d8deacb8c62fb55809d"
+}

@@ -1,0 +1,250 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_MANIFEST",
+  "methodologyVersion": "PORTCO_APPLY_BATCH_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0459-0463-v1",
+  "createdAt": "2026-09-03T14:55:00.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "da1062345ad9e8d3d86fda903b3339ee39e1bb8e483f3fa513ae496e55c0405b"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0459:signal-rail-holdings:50c69045",
+      "taskIndex": 459,
+      "companyName": "Signal Rail Holdings",
+      "outcome": "EXCLUDED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0459-signal-rail-holdings/attempt-2/terminal-decision-v1.json",
+        "sha256": "c151287a04089c9e825e33b1387fd5fdec291732607ceb32e339ead4f3a7286c"
+      }
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0460:dcli:22d0fc27",
+      "taskIndex": 460,
+      "companyName": "DCLI",
+      "outcome": "SUPERSEDED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0460-dcli/attempt-1/terminal-decision-v1.json",
+        "sha256": "64178439258b505aedc338fa3fa80d9b528ca030ded43c12214c5bb69df16776"
+      }
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0461:i3-broadband:2d53909b",
+      "taskIndex": 461,
+      "companyName": "i3 Broadband",
+      "outcome": "VERIFIED_NO_CHANGE",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0461-i3-broadband/attempt-1/terminal-decision-v1.json",
+        "sha256": "a22def3647eed2eccd977a821414a2d2f7c850b1c906b4bd1d9c7bb1967de2e7"
+      }
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0462:qsp-northern-virginia-data-center-jv:3a29bbb8",
+      "taskIndex": 462,
+      "companyName": "QSP (Northern Virginia Data Center JV)",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0462-qsp-northern-virginia-data-center-jv/attempt-1/proposal-v3.json",
+        "sha256": "0fcd4d13fc2be33f080526b323ded56ca43f214abff1ad93c85fe91cd5d35ad9"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0462-qsp-northern-virginia-data-center-jv/attempt-1/approval-v3.json",
+        "sha256": "87c08627917ffae392c7059abe4b8c7bc553513fb451328c0b29e3b4235273c2"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0462-qsp-northern-virginia-data-center-jv/attempt-1/locked-batch-v3-production-snapshot.json",
+        "sha256": "3417528812744d219adf2d6471d799ee065652ca606a9f169d1f7ed012281c75"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0462-qsp-northern-virginia-data-center-jv/attempt-1/locked-batch-v3-task-snapshot.json",
+        "sha256": "ef47e4651865a50bce41606e40b2cf6bb601d53ad0400b5ac2d317caadf74cae"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0462-qsp-northern-virginia-data-center-jv/attempt-1/observed-batch-v1-task-snapshot.json",
+        "sha256": "8a5231389606fbdec6bf4263d7730744a2b21235ff01c01b4c2b2cdc4d46a037"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0462-qsp-northern-virginia-data-center-jv/attempt-1/application-research-decision-v1.json",
+        "sha256": "6a6bbd8c20a9fa374ee5d4a08e40473e52c2c8d8facdd1d3ff941930d8491963"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0462-qsp-northern-virginia-data-center-jv/attempt-1/source-verification.json",
+        "sha256": "487fbf7f011c4dbfde23c806365afcfd77f76a27a451b4c13d98ac03585452bc"
+      },
+      "supersededTaskIds": [
+        "ledger:0491:qsp:5404ff01"
+      ],
+      "taskStateSha256": "4c11af4831a2690f2e72d5bf74fa9d040588d2cc39ab6dc74e8835df0368ba4f",
+      "dependencySha256": "87f76254001b522b439b657420826d9e1fa6488eb6fd3970a066dbb16a574e88",
+      "afterImageSha256": "4676aed70b44066eb1aac7ffcaf4aafd3617e7dc7ac003232b629e888fe5d08e",
+      "targetClaims": [
+        "canonical:qsp-northern-virginia-data-center-jv|united-states",
+        "company:cmrxpjp1e01c7ivheew361buw",
+        "relation:cmrxpkbni02byivhec07m80rm",
+        "relation:cmrxpmwje05g6ivhea2xf1b9p",
+        "relation:cmrxpmwjv05g7ivheyhj0bacu",
+        "relation:cmrxpmwmt05g8ivhe53dsipa8",
+        "relation:cmrxpt4k40dn5ivhef1p12ono",
+        "relation:cmrxpt4l60dn7ivheuqmz0y4y",
+        "relation:cmrxpt4m80dn9ivhe4ii1wng8",
+        "seed:qsp|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://www.blackstone.com/news/press/blackstone-funds-complete-acquisition-of-qts-realty-trust/",
+          "label": "Close date source — Blackstone — QTS Data Centers",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.kbra.com/publications/tRLdQDbt/kbra-affirms-all-ratings-for-bx-2024-vlt5?format=web",
+          "label": "KBRA — BX 2024-VLT5 surveillance",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.paulweiss.com/professionals/partners-and-counsel/kelann-stirling",
+          "label": "Paul Weiss — QSP transaction experience",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.qtsdatacenters.com/",
+          "label": "Qtsdatacenters — QSP",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.whinfra.com/our-portfolio/qsp/",
+          "label": "Whinfra — QSP",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.whinfra.com/qts-realty-trust-and-wren-house-successfully-complete-joint-venture-for-three-northern-virginia-data-centers-2/",
+          "label": "Close date source — Wren House — QSP",
+          "sourceType": "ARTICLE"
+        }
+      ]
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0463:btr-jet-center:402b91d4",
+      "taskIndex": 463,
+      "companyName": "BTR Jet Center",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0463-btr-jet-center/attempt-1/proposal-v4.json",
+        "sha256": "74854a3ca08c4cc721cf368c0b0a811e3c1e8be5a113fdbd5c27b63599074715"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0463-btr-jet-center/attempt-1/approval-v4.json",
+        "sha256": "834bb41182687e3ce25b61b8289045ae7fd8554f495eb3f610c40e2f7e4845d0"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0463-btr-jet-center/attempt-1/locked-batch-v2-production-snapshot.json",
+        "sha256": "56e3fc776e147c26982179f765b25a5ae9f4ac6fb4ccc9e72279e606b3fb7788"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0463-btr-jet-center/attempt-1/locked-batch-v2-task-snapshot.json",
+        "sha256": "ee98b1bce6bdd5b70782c3a0bf8f9d7b1bc7ef072b83b749df14a0dc99c7fb75"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0463-btr-jet-center/attempt-1/observed-batch-v1-task-snapshot.json",
+        "sha256": "703f6376c420781114f6dc0e3b9499189eca913514697e337649610b72f0ec62"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0463-btr-jet-center/attempt-1/application-research-decision-v1.json",
+        "sha256": "eeddf1e8673644ed159ba376637e889d3c5f1735eb671213bf16b24e8c582795"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0463-btr-jet-center/attempt-1/source-verification.json",
+        "sha256": "e7fe494081c12190af21986b82d36edf001b9444c18febcc56c9d00c6c489ca2"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "3c752df3b0208e6a7e3fa4b535c065083653500bd44962d1aa7f009af9cb2f9f",
+      "dependencySha256": "f5ab256efa1e5b7ba36b1496b88d567f009bc628b539574230fcfb9e4b7a04db",
+      "afterImageSha256": "3bef8757e46d0197e2792eea2c7094d5a4ac615b9b5bd3fb18c990bb5cdd14b9",
+      "targetClaims": [
+        "canonical:velocity-fbo-network|united-states",
+        "company:cmrxpjnwb01adivhea7g6ojct",
+        "company:cmrxpjnya01ahivheyr6w92jk",
+        "relation:cmrxpkagy02a1ivhehgmanohg",
+        "relation:cmrxpkaiz02a5ivhet6uxm49k",
+        "relation:cmrxpmrgy059livheutgziz8s",
+        "relation:cmrxpmrhd059mivhezgli32kb",
+        "relation:cmrxpmrht059nivhei7b621j4",
+        "relation:cmrxpmrif059oivheabi7lrfa",
+        "relation:cmrxpsvy00d9vivhepeudcmae",
+        "relation:cmrxpsvz20d9xivhe4dea8lw5",
+        "relation:cmrxpsw000d9zivhe7m6nnjjv",
+        "relation:cmrxpsw110da1ivhettz4bfh7",
+        "relation:cmrxpsw220da3ivheqbn9le7x",
+        "relation:cmrxpsw310da5ivhe419w04eb",
+        "seed:velocity fbo network|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://btrjet.com/",
+          "label": "Btrjet — BTR Jet Center",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://velocityfbo.com/",
+          "label": "Velocityfbo — Velocity FBO Network",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://velocityfbo.com/contact/",
+          "label": "Velocityfbo — Velocity FBO Network",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://velocityfbo.com/locations/",
+          "label": "Velocityfbo — Velocity FBO Network",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://velocityfbo.com/locations/baton-rouge-kbtr/",
+          "label": "Velocity — Baton Rouge (KBTR)",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://via.ritzau.dk/pressemeddelelse/14244238/tallvine-launches-north-america-fixed-based-operator-platform-with-odyssey-aviations-us-assets-as-inaugural-acquisition?lang=en&publisherId=90456",
+          "label": "Investment date source — Tallvine — Velocity FBO Network",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.ainonline.com/aviation-news/business-aviation/2025-06-13/odyssey-aviaition-north-america-achieves-launch-velocity",
+          "label": "Ainonline — Velocity FBO Network",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.brla.gov/AgendaCenter/ViewFile/Minutes/_02112026-2316",
+          "label": "Baton Rouge — February 11, 2026 council minutes",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://www.businesswire.com/news/home/20250612894793/en/Tallvine-Backed-Odyssey-Aviation-North-America-Unveils-Rebrand-to-Velocity-FBO-Network",
+          "label": "Business Wire — Velocity FBO Network",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.businesswire.com/news/home/20260213283848/en/Tallvine-Backed-Velocity-FBO-Network-Expands-with-Acquisition-of-BTR-Jet-Center",
+          "label": "Business Wire",
+          "sourceType": "PRESS_RELEASE"
+        }
+      ]
+    }
+  ],
+  "collisionAnalysis": {
+    "independent": true,
+    "claimsSha256": "9b48ae0e97e5cbbc53fa583a23b7a67be3874c5578b63f4aa93623ecf1c94404",
+    "sharedSourceUrls": [],
+    "conflicts": []
+  },
+  "batchSha256": "e681cf3474e349ea5cdb2c33de59d7a3d301ab2c2fc1334738798892940070c7"
+}
