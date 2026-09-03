@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0452:terawatt-infrastructure:facb72c6",
+  "taskIndex": 452,
+  "companyName": "TeraWatt Infrastructure",
+  "outcome": "DEFERRED",
+  "decidedAt": "2026-09-03T13:01:32.000Z",
+  "rationale": "Research supports that Vision Ridge participated through a direct company-level financing announced in September 2022 alongside Keyframe and Cyrus. The release described over US$1bn of committed capital, while the SEC Form D separately reported US$61.048601m of issuer equity sold beginning 2022-08-12. June 2026 financing was debt only. Vision Ridge appears to correspond to an existing Vision Ridge Capital Partners alias, but current ownership continuity for every historical co-investor cannot be proven from direct current disclosures without guessing.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0452-terawatt-infrastructure/attempt-1/locked-batch-v1-task-snapshot.json",
+    "sha256": "5b2a84cceb51960231632c57e8df6ce3151caba24df580947031847d49d3af71"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0452-terawatt-infrastructure/attempt-1/application-research-decision-v1.json",
+    "sha256": "3dd2bbfabb6d7b58bab0d092a957808856f803220efa9bf3052abbbf21e053ea"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0452-terawatt-infrastructure/attempt-1/release-source-verification-v1.json",
+    "sha256": "8ce3fadb86ec5092b06ab385abca8d924dec70baf4bc4778807d4352da0e511d"
+  },
+  "evidence": [
+    {
+      "url": "https://www.terawattinfrastructure.com/blog/terawatt-raises-over-1-billion-to-scale-commercial-ev-charging-centers-across-america",
+      "purpose": "Primary ownership/funding disclosure"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1944328/000194432822000001/xslFormDX08/primary_doc.xml",
+      "purpose": "Issuer equity amount and first-sale date"
+    },
+    {
+      "url": "https://vision-ridge.com/investments/",
+      "purpose": "Current portfolio inclusion"
+    },
+    {
+      "url": "https://www.keyframecapital.com/post/news-keyframe-portfolio-company-terawatt-infrastructure-emerges-from-stealth-mode",
+      "purpose": "Formation and early backing"
+    },
+    {
+      "url": "https://www.terawattinfrastructure.com/blog/terawatt-2026-roadmap-scaling-the-autonomous-electric-mobility-infrastructure",
+      "purpose": "Current operations"
+    },
+    {
+      "url": "https://www.prnewswire.com/news-releases/terawatt-infrastructure-secures-300m-in-secured-debt-financing-to-expand-its-full-stack-autonomous-vehicle-infrastructure-platform-302808743.html",
+      "purpose": "Confirms debt, not equity"
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "c22c949a99758d6e7de60a7002deb53552cdb09fc9f87ccd0e47f41fbea60cac"
+}

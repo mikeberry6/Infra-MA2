@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RELEASE_SOURCE_REVALIDATION",
+  "taskId": "ledger:0452:terawatt-infrastructure:facb72c6",
+  "checkedAt": "2026-09-03T12:58:54.000Z",
+  "originalVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0452-terawatt-infrastructure/attempt-1/source-verification.json",
+    "byteSha256": "b5dfebb9c64da00191083195b96f0aeea5c146aa6e977b5110bac845b83dd546"
+  },
+  "primarySource": {
+    "url": "https://www.terawattinfrastructure.com/blog/terawatt-raises-over-1-billion-to-scale-commercial-ev-charging-centers-across-america",
+    "httpStatus": 200,
+    "finalUrl": "https://www.terawattinfrastructure.com/blog/terawatt-raises-over-1-billion-to-scale-commercial-ev-charging-centers-across-america",
+    "mediaType": "text/html",
+    "bytes": 11032,
+    "sha256": "025ffd89f01fe6eafff9fd33e3d2713e0442a734652d5b223120c50db30856ab"
+  },
+  "browserVerification": {
+    "result": "PASS",
+    "method": "DIRECT_HTTP_FETCH_AND DIRECT_WEB_OPEN",
+    "claim": "TeraWatt's own announcement says Vision Ridge invested alongside existing investors Keyframe and Cyrus, both of which increased commitments, and characterizes more than US$1 billion as institutional capital and committed capital. It does not resolve current ownership continuity for every historical co-investor."
+  },
+  "bindingDecision": {
+    "replacedUrl": "https://www.businesswire.com/news/home/20220510005388/en/TeraWatt-Infrastructure-Raises-1-Billion",
+    "replacementUrl": "https://www.terawattinfrastructure.com/blog/terawatt-raises-over-1-billion-to-scale-commercial-ev-charging-centers-across-america",
+    "effect": "The invalid Business Wire destination is removed from the application binding and replaced by a direct company source; unresolved current ownership continuity preserves the DEFERRED outcome."
+  },
+  "result": "PASS_WITH_UNRESOLVED_OWNERSHIP_CONTINUITY"
+}

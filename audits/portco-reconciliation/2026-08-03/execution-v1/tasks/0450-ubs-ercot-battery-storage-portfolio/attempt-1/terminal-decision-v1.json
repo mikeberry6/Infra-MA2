@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0450:ubs-ercot-battery-storage-portfolio:d9b23a03",
+  "taskIndex": 450,
+  "companyName": "UBS ERCOT Battery Storage Portfolio",
+  "outcome": "DEFERRED",
+  "decidedAt": "2026-09-03T13:01:31.000Z",
+  "rationale": "Research confirmed a November 2021 UBS Asset Management acquisition of a five-project ERCOT battery portfolio through its infrastructure/real-assets business, but the exact continuing manager-level legal boundary and current legal ownership of each original project could not be established from the completed evidence. Later public disclosures reference UBS-managed ERCOT portfolios of different sizes (including later 400 MW and ~730 MW portfolios), preventing a reliable one-to-one mapping of the original five assets.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0450-ubs-ercot-battery-storage-portfolio/attempt-1/locked-batch-v1-task-snapshot.json",
+    "sha256": "20a2f507f9190689c7cf96b62479b238b435fa71535ee4e98ae41ef855a9424e"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0450-ubs-ercot-battery-storage-portfolio/attempt-1/application-research-decision-v1.json",
+    "sha256": "19a8379af0a868f7b5f25a4ed6ae370cc110c5ccdc11271428f51c2a0cbe47fe"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0450-ubs-ercot-battery-storage-portfolio/attempt-1/release-source-verification-v1.json",
+    "sha256": "6351e87cc6158ceb2fc26ef2501b1b32838805456777bec3296ecac5c4948d2a"
+  },
+  "evidence": [
+    {
+      "url": "https://www.ubs.com/au/en/assetmanagement/insights/asset-class-perspectives/real-estate/articles/craft-behind-energy-storage.html",
+      "purpose": "Direct UBS evidence of the 2021 ERCOT acquisition and the later six-project, 930 MW portfolio boundary"
+    },
+    {
+      "url": "https://www.power-technology.com/news/ubs-asset-management-energy-storage-texas/",
+      "purpose": "Transaction summary"
+    },
+    {
+      "url": "https://www.prnewswire.com/news-releases/smt-energy-sells-400-megawatts-of-battery-energy-storage-facilities-to-ubs-asset-management-302055312.html",
+      "purpose": "Later portfolio activity"
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20240502931363/en/Habitat-Energy-to-optimize-UBS-Asset-Managements-730MW-ERCOT-battery-storage-portfolio",
+      "purpose": "Current operating evidence"
+    },
+    {
+      "url": "https://bmenergystorage.com/press-release/ubs-asset-management-acquires-700mw-energy-storage-projects-from-black-mountain-energy-storage/",
+      "purpose": "Related later acquisition"
+    },
+    {
+      "url": "https://newsroom.firstcitizens.com/2024-09-04-First-Citizens-Bank-Serves-as-Co-Lead-Arranger-on-315-7-Million-in-Financing-for-Four-Texas-Battery-Energy-Storage-Projects",
+      "purpose": "Later financing context"
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "36c3d19f6df899de00093fb5196cf59c82046ff842d0171b1824d757393101ea"
+}

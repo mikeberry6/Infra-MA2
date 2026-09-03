@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RELEASE_SOURCE_REVALIDATION",
+  "taskId": "ledger:0450:ubs-ercot-battery-storage-portfolio:d9b23a03",
+  "checkedAt": "2026-09-03T12:58:54.000Z",
+  "originalVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0450-ubs-ercot-battery-storage-portfolio/attempt-1/source-verification.json",
+    "byteSha256": "22236f11ce9a3a251d39899130e6202d0598e16e689e61a8757114130bd49074"
+  },
+  "primarySource": {
+    "url": "https://www.ubs.com/au/en/assetmanagement/insights/asset-class-perspectives/real-estate/articles/craft-behind-energy-storage.html",
+    "httpStatus": 403,
+    "finalUrl": "https://www.ubs.com/au/en/assetmanagement/insights/asset-class-perspectives/real-estate/articles/craft-behind-energy-storage.html",
+    "mediaType": "text/html"
+  },
+  "browserVerification": {
+    "result": "PASS",
+    "method": "DIRECT_WEB_OPEN_AFTER_HTTP_403",
+    "claim": "The live UBS page states that UBS acquired six ERCOT projects totaling 930 MW in 2021 and identifies the first four operating projects as Lamesa, Nevada, Alvin and Crosby totaling 730 MW. It does not prove the queued five-project boundary or uninterrupted current ownership of those exact five assets."
+  },
+  "bindingDecision": {
+    "replacedUrl": "https://www.ubs.com/global/en/media/display-page-ndp/en-20211109-ubs-am-energy-storage.html",
+    "replacementUrl": "https://www.ubs.com/au/en/assetmanagement/insights/asset-class-perspectives/real-estate/articles/craft-behind-energy-storage.html",
+    "effect": "The direct UBS source is now bound as the sole recommended primary citation, but the five-versus-six project conflict preserves the DEFERRED outcome."
+  },
+  "result": "PASS_BROWSER_VERIFIED_WITH_UNRESOLVED_IDENTITY_BOUNDARY"
+}

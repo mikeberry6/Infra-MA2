@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0449:pike-corporation:5a43238f",
+  "taskIndex": 449,
+  "companyName": "Pike Corporation",
+  "outcome": "EXCLUDED",
+  "decidedAt": "2026-09-03T13:01:30.000Z",
+  "rationale": "The 2025 buyout closed and remains active, but Pike provides engineering, construction, maintenance and storm-response services for third-party infrastructure owners. TPG discussed Pike within Private Equity, La Caisse reports it under Private Equity, and no Pike-specific evidence ties it to Transition Infrastructure or proves qualifying utility/network ownership.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0449-pike-corporation/attempt-1/locked-batch-v1-task-snapshot.json",
+    "sha256": "cc312508a1603b84e5a4db5d69ca0bb3808870f2c1e0b3609cafcaf221f83bf8"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0449-pike-corporation/attempt-1/application-research-decision-v1.json",
+    "sha256": "9a88dc7d6b574b5b50f7361e5755135edea50c616e3c9dc934a2c12333edc8ac"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0449-pike-corporation/attempt-1/release-source-verification-v1.json",
+    "sha256": "8008b8a14850f01eb27098dd8f98b244a4cfa918f590fbd4e8ec7da85d075a71"
+  },
+  "evidence": [
+    {
+      "url": "https://www.tpg.com/news-and-insights/pike-corporation-to-accelerate-growth-through-partnership-with-tpg-la-caisse-and-management",
+      "purpose": "Owners, stakes, announcement and business"
+    },
+    {
+      "url": "https://shareholders.tpg.com/static-files/f52ae0ce-34e2-428b-83c8-5d450796ea45",
+      "purpose": "Close and Private Equity placement"
+    },
+    {
+      "url": "https://www.lindsaygoldbergllc.com/news/lindsay-goldberg-completes-sale-of-its-interest-in-pike-corporation-following-highly-successful-25-year-relationship-with-the-pike-family",
+      "purpose": "Close date and seller exit"
+    },
+    {
+      "url": "https://www.lacaisse.com/en/performance/annual-reports/2025",
+      "purpose": "Private Equity classification and stake"
+    },
+    {
+      "url": "https://www.lacaisse.com/sites/default/files/medias/pdf/en/ra/2025_lacaisse_add_information.pdf",
+      "purpose": "Pilot Parent vehicle"
+    },
+    {
+      "url": "https://www.pike.com/companies/",
+      "purpose": "Service model and group boundary"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1319229/000110465921141709/tm2133423d1_ex10-1.htm",
+      "purpose": "TransMontaigne identity chain"
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "13d11bc2f0e13a1c58c5c163f664fa460192bacc8539a90e3806c066282a9d8f"
+}

@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0453:american-inland-marine-holdings:47cd7d1a",
+  "taskIndex": 453,
+  "companyName": "American Inland Marine Holdings",
+  "outcome": "DEFERRED",
+  "decidedAt": "2026-09-03T13:01:33.000Z",
+  "rationale": "Available research did not resolve a legally identifiable operating company with direct current Wafra ownership. Public Wafra materials referenced the platform only indirectly and did not establish the ownership vehicle, operating-company boundary or current in-scope infrastructure ownership. To avoid creating an unsupported portfolio entry, the company should remain unresolved.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0453-american-inland-marine-holdings/attempt-1/locked-batch-v1-task-snapshot.json",
+    "sha256": "b275d09b937001ac6d8a6fb826a5ca04470c7445f069eca25013e97ba0603ab5"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0453-american-inland-marine-holdings/attempt-1/application-research-decision-v1.json",
+    "sha256": "6e2aee98d0e5940fe599a88a2f613264d7324dbf5c55977ccedc946f1408a05e"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0453-american-inland-marine-holdings/attempt-1/release-source-verification-v1.json",
+    "sha256": "bf936285ad948cc68e57d13f532a0ef05bd8a619a66fb1764f01570ec7ab1c6f"
+  },
+  "evidence": [
+    {
+      "url": "https://www.wafra.com/",
+      "purpose": "Manager reference only; no conclusive ownership proof for the requested company"
+    },
+    {
+      "url": "https://www.wafra.com/our-people/edward-tsai/",
+      "purpose": "Personnel biography mentioning investment activity but not establishing current ownership of the requested entity"
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "b5f983159115695bfb215c30e179adb90952857138f7dcac1ab0b898c45a3285"
+}
