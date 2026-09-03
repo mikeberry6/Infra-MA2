@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_SEED_ATTRIBUTION_RECONCILIATION",
+  "batchId": "batch-0454-0458-v1",
+  "batchSha256": "8c9650fbda1689709c0c89142cc0fbcb261acad872cc4f745844f4c5f2a7f733",
+  "reconciledAt": "2026-09-03T13:52:04Z",
+  "sourceManifestSha256": "37b2e93a34a0379f6b74fec8b652b90e95a6c266987cab379abd6e85339bdf1c",
+  "specSha256": "d784bd5fc70982bd9c0a2db872ca2915d36b094f2024394cc849610f9c383d2c",
+  "changesSha256": "74db0593fbcf7f5e84243906f3ed4184518c308e30bb82d7e247bb4aa6524fc4",
+  "removedRecords": [],
+  "replacedRecords": [],
+  "upsertRecords": [
+    {
+      "recordId": "OFA-5354D981314C",
+      "companyName": "Contract Leasing Corporation",
+      "country": "United States",
+      "investmentFirm": "Wafra",
+      "currentVehicleName": "Funds advised by Wafra; exact vehicle not publicly disclosed",
+      "investmentYear": 2022,
+      "stake": "Acquisition interest; exact percentage not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "UNRESOLVED",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "CLC and Wafra directly disclose the 2022 acquisition and continuing ownership relationship, but the exact Wafra-managed fund and legal investment vehicle are not publicly identified.",
+      "evidenceUrls": [
+        "https://www.contractleasing.net/contract-leasing-corporation-announces-acquisition-by-wafra/",
+        "https://www.wafra.com/our-strategies/real-assets/"
+      ]
+    },
+    {
+      "recordId": "OFA-C436BF5E0D62",
+      "companyName": "Intermountain Infrastructure Group, LLC",
+      "country": "United States",
+      "investmentFirm": "Wafra",
+      "currentVehicleName": "Wafra Real Assets & Infrastructure II LP / WRA II-Pioneer (S) LLC",
+      "investmentYear": 2024,
+      "stake": "Majority owner by June 2026; 19.8%-21.4% at January 2024 closing; current exact percentage not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Wafra Real Assets & Infrastructure II LP",
+      "attributionConfidence": null,
+      "attributionRationale": "The FCC ownership notice directly identifies Wafra Real Assets & Infrastructure II LP and WRA II-Pioneer (S) LLC in the IIG ownership chain. The disclosed fund does not have a matching curated fund row, so no fund link is created.",
+      "evidenceUrls": [
+        "https://docs.fcc.gov/public/attachments/DOC-392404A1.pdf",
+        "https://www.wafra.com/wafra-and-post-road-form-partnership-with-intermountain-infrastructure-group/"
+      ]
+    },
+    {
+      "recordId": "OFA-1691970A2FDD",
+      "companyName": "Mission Clean Energy LLC",
+      "country": "United States",
+      "investmentFirm": "Wafra",
+      "currentVehicleName": "Affiliate of funds managed by Wafra; exact vehicle not publicly disclosed",
+      "investmentYear": 2022,
+      "stake": "Controlling interest; exact percentage not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "UNRESOLVED",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "Mission and Wafra directly disclose Wafra's controlling investment and continuing principal-investor relationship, but the exact Wafra-managed fund and legal holding vehicle are not publicly identified.",
+      "evidenceUrls": [
+        "https://missioncleanenergy.com/investors/",
+        "https://www.wafra.com/wafra-acquires-controlling-interest-in-mission-clean-energy/"
+      ]
+    },
+    {
+      "recordId": "OFA-7BB3047EF243",
+      "companyName": "Mission Clean Energy LLC",
+      "country": "United States",
+      "investmentFirm": "Ørsted",
+      "currentVehicleName": "Investment vehicle not publicly disclosed",
+      "investmentYear": 2024,
+      "stake": "Minority strategic investment; exact percentage not publicly disclosed",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DIRECT_PROGRAM",
+      "attributedFundName": null,
+      "attributionConfidence": null,
+      "attributionRationale": "Mission directly discloses Orsted's strategic minority investment as corporate participation rather than an investment by a separately managed infrastructure fund.",
+      "evidenceUrls": [
+        "https://missioncleanenergy.com/mission-clean-energy-receives-strategic-investment-from-orsted/",
+        "https://missioncleanenergy.com/investors/"
+      ]
+    }
+  ],
+  "resultingRecordCount": 1402,
+  "resultingManifestSha256": "392244e08a641506652e265b04d9b3df5aa608418a7c31258fe242c8ef72593d",
+  "reconciliationSha256": "33e90feea3903e2b6841f51e675b2b3fa95159ea4f818c863333fbedaf6ced89"
+}

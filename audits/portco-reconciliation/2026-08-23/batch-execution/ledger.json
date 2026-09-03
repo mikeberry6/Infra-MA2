@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-03T13:20:00.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-09-03T13:54:00.000Z",
+  "activeBatchId": "batch-0454-0458-v1",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -8354,7 +8354,55 @@
           "reason": "Canonical production served exact release SHA bccc564f32dfbbe130af7a4317ff17a5fceaf144; atomic transaction 308174a8-9fae-4637-bbd9-098e661bd263, immutable receipt, exact Cartier after-image, seed parity, API, source, ownership and rendered-card checks all passed with no partial application."
         }
       ]
+    },
+    {
+      "batchId": "batch-0454-0458-v1",
+      "state": "READY",
+      "taskIds": [
+        "ledger:0454:beyond-data-centers:aa1b4081",
+        "ledger:0455:contract-leasing-corporation:083d749b",
+        "ledger:0456:crescent-louisiana-midstream:599b6824",
+        "ledger:0457:intermountain-infrastructure-group:66d1e5b0",
+        "ledger:0458:mission-clean-energy:ec7ef24e"
+      ],
+      "taskIndexes": [
+        454,
+        455,
+        456,
+        457,
+        458
+      ],
+      "createdAt": "2026-09-03T13:31:14.000Z",
+      "updatedAt": "2026-09-03T13:54:00.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0454-0458-v1/batch-manifest.json",
+        "sha256": "8c9650fbda1689709c0c89142cc0fbcb261acad872cc4f745844f4c5f2a7f733"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-09-03T13:31:14.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-09-03T13:54:00.000Z",
+          "evidenceSha256": [
+            "8c9650fbda1689709c0c89142cc0fbcb261acad872cc4f745844f4c5f2a7f733"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "ea6792607bd57ee69769cb24f1069720e26e6d8e00beb88631005577ea46a61c"
+  "ledgerSha256": "32d7dacd02ee6c137ed03a3de2de25864bd5d6ec08ae4f176e4ff0e6d8327f43"
 }

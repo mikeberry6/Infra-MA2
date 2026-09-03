@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RELEASE_SOURCE_REVALIDATION",
+  "taskId": "ledger:0454:beyond-data-centers:aa1b4081",
+  "checkedAt": "2026-09-03T13:34:33.000Z",
+  "originalVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0454-beyond-data-centers/attempt-1/source-verification.json",
+    "byteSha256": "1340351d0dd0960a177b271524a4a6d7c2d83e02cd766b2e62dbcecea9346687"
+  },
+  "primarySource": {
+    "url": "https://beyond-datacenters.com/",
+    "httpStatus": 403,
+    "finalUrl": "https://beyond-datacenters.com/",
+    "mediaType": "text/html; charset=UTF-8",
+    "bytes": 5491,
+    "sha256": "7258b66cdd8ddf923b2c7ed59a1b2335990ce5ea949608a7bbba880cdefba819"
+  },
+  "browserVerification": {
+    "result": "PASS_FROM_FRESH_PREPARATION_CAPTURE",
+    "method": "DIRECT_BROWSER_CAPTURE_RETAINED_AFTER_AUTOMATED_HTTP_403",
+    "claim": "The official company domain identifies Beyond Data Centers and its build-to-suit data-center platform, but it does not establish Wafra equity ownership, an investment vehicle, stake, or closing."
+  },
+  "bindingDecision": {
+    "replacedUrl": "https://www.beyonddatacenters.com/",
+    "replacementUrl": "https://beyond-datacenters.com/",
+    "effect": "The invalid TLS hostname is removed from the application binding. The corrected official domain remains browser-accessible, while the unresolved ownership facts preserve the DEFERRED outcome."
+  },
+  "result": "PASS_WITH_UNRESOLVED_OWNERSHIP"
+}

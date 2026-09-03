@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RELEASE_SOURCE_REVALIDATION",
+  "taskId": "ledger:0456:crescent-louisiana-midstream:599b6824",
+  "checkedAt": "2026-09-03T13:34:33.000Z",
+  "originalVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0456-crescent-louisiana-midstream/attempt-1/source-verification.json",
+    "byteSha256": "ffc140740141ee106a36bd153aa62eae532b758a9d24487443763a5198339ea5"
+  },
+  "primarySource": {
+    "url": "https://www.spglobal.com/ratings/en/regulatory/article/-/view/type/HTML/id/3512918",
+    "httpStatus": 403,
+    "finalUrl": "https://www.spglobal.com/ratings/en/regulatory/article/-/view/type/HTML/id/3512918",
+    "mediaType": "text/html",
+    "bytes": 2013,
+    "sha256": "69a98b75832c7ad4f6fb4cfeaeb2aa775f64a03068e2eb025effa6e6c86dd63e"
+  },
+  "browserVerification": {
+    "result": "PASS_FROM_VALIDATED_DIRECT_SOURCE_CAPTURE",
+    "method": "INDEXED_DIRECT_PAGE_RETAINED_AFTER_AUTOMATED_HTTP_403",
+    "claim": "The direct S&P source supports the Crescent manager-level platform boundary and current Carlyle/founder ownership, not Wafra ownership. Wafra's company-specific governance link does not prove an equity interest, vehicle, stake, entry, or closing."
+  },
+  "bindingDecision": {
+    "effect": "The corrected application decision removes the false Crescent-board attribution and reverses the recorded Kinetica-to-CLM asset-sale direction. The unresolved ownership evidence preserves the DEFERRED outcome."
+  },
+  "result": "PASS_WITH_UNRESOLVED_WAFRA_EQUITY"
+}

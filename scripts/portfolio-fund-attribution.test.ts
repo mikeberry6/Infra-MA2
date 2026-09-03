@@ -26,7 +26,7 @@ describe("portfolio fund attribution ledger", () => {
 
   it("leaves reviewed owners unresolved when the current vehicle is not a disclosed fund", () => {
     const unresolved = ledger.rows.filter((row) => row.attribution === "UNRESOLVED");
-    expect(unresolved).toHaveLength(78);
+    expect(unresolved).toHaveLength(80);
     expect(unresolved).toContainEqual(expect.objectContaining({
       companyName: "Illinois Wind Portfolio (Bright Stalk & Harvest Ridge)",
       investmentFirm: "Schroders Greencoat",
