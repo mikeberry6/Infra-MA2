@@ -1,0 +1,44 @@
+{
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-0472-0492-v1",
+  "createdAt": "2026-09-03T18:17:00.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "e2362e7bce3f4fccb4974eb18a719d5b62d00e181f3a4cb44b088105710b442b"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "TERMINAL",
+      "decisionPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0472-cleco-corporation/attempt-1/terminal-decision-v1.json"
+    },
+    {
+      "kind": "TERMINAL",
+      "decisionPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0475-extenet/attempt-1/terminal-decision-v1.json"
+    },
+    {
+      "kind": "TERMINAL",
+      "decisionPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0476-extenet-systems/attempt-1/terminal-decision-v1.json"
+    },
+    {
+      "kind": "TERMINAL",
+      "decisionPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0490-puget-energy-puget-sound-energy/attempt-1/terminal-decision-v1.json"
+    },
+    {
+      "kind": "MUTATION",
+      "proposalPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0492-skyservice-us/attempt-1/proposal-v3.json",
+      "authorizationPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0492-skyservice-us/attempt-1/approval-v3.json",
+      "productionSnapshotPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0492-skyservice-us/attempt-1/locked-batch-v1-production-snapshot.json",
+      "taskSnapshotPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0492-skyservice-us/attempt-1/locked-batch-v1-task-snapshot.json",
+      "observedTaskSnapshotPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0492-skyservice-us/attempt-1/observed-batch-v1-task-snapshot.json",
+      "researchDecisionPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0492-skyservice-us/attempt-1/application-research-decision-v1.json",
+      "sourceVerificationPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0492-skyservice-us/attempt-1/release-source-verification-v1.json",
+      "supersededTaskIds": [
+        "ledger:0493:skyservice-us-formerly-leading-edge-jet-center:49066c79"
+      ]
+    }
+  ]
+}

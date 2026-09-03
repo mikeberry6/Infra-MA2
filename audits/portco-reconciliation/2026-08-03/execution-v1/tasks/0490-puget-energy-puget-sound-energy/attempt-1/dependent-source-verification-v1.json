@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_DEPENDENT_SOURCE_VERIFICATION",
+  "taskId": "ledger:0490:puget-energy-puget-sound-energy:e962de5d",
+  "taskIndex": 490,
+  "companyName": "Puget Energy / Puget Sound Energy",
+  "verifiedAt": "2026-09-03T17:14:00.000Z",
+  "canonicalTask": {
+    "taskId": "ledger:0128:puget-energy:f96cd6be",
+    "sequence": 128,
+    "status": "COMPLETED",
+    "canonicalCompanyId": "cmrxpj4fp00ghivhebe9bfh5k",
+    "currentCompanySnapshotSha256": "91677f21127fb9f3c75178114105172a8ea052f6c74e50411bb3129ae3cc81d4"
+  },
+  "sources": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/81100/000119312526084011/d109936dex991.htm",
+      "status": "WORKING_CURRENT",
+      "httpStatus": 200,
+      "bytes": 44427,
+      "contentSha256": "56ccbbf9b9922fbc3cc48368abc2366173c8657d2b8267d7566fade811aa1d4b",
+      "note": "Fresh direct retrieval of the spring 2026 SEC exhibit supports the current Puget ownership and parent/subsidiary boundary."
+    }
+  ],
+  "checks": {
+    "canonicalTaskCompleted": true,
+    "canonicalProductionIdentityPresent": true,
+    "duplicateMutationRequired": false,
+    "sourceCollision": false
+  },
+  "conclusion": "Task 490 is a composite parent/subsidiary label already covered by the completed Puget Energy identity and is safe to supersede without a database or seed mutation."
+}

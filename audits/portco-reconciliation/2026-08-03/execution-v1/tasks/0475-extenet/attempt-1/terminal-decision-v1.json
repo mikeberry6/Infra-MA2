@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0475:extenet:5c5cf1a1",
+  "taskIndex": 475,
+  "companyName": "Extenet",
+  "outcome": "SUPERSEDED",
+  "decidedAt": "2026-09-03T17:15:00.000Z",
+  "rationale": "Extenet is the current brand of ExteNet Systems and therefore the same canonical company as deferred task 213. Task 213 remains the sole adjudication unit because its unresolved Northleaf disposition and JH-to-KH ownership-vehicle bridge affect the company regardless of which reciprocal label is used. Superseding this label removes a duplicate research unit without resolving or mutating the deferred ownership facts.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0475-extenet/attempt-1/locked-batch-v1-task-snapshot.json",
+    "sha256": "b6a3b9a8723680e059d7e556440257d9722380ae8b161f68bcc6d4ca9a8175b5"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0475-extenet/attempt-1/dependent-research-decision-v1.json",
+    "sha256": "aa5afaec17d99e16c2dddc242e5722c921c82ad5125c0de6149ad18841f7e6c1"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0475-extenet/attempt-1/dependent-source-verification-v1.json",
+    "sha256": "939a12d853af2233e6d82b35f6dc8e5e7fb2c447d15e4a0b920db6ec54b1d55a"
+  },
+  "evidence": [
+    {
+      "url": "https://extenet.com/extenet-systems-is-now-extenet/",
+      "purpose": "Direct company evidence that ExteNet Systems rebranded as Extenet rather than becoming a separate business."
+    },
+    {
+      "url": "https://psc.ky.gov/telecomm_informational_letters/ExteNet%20LVS%202025-02-13.pdf",
+      "purpose": "Current regulatory ownership evidence retained by the canonical deferred adjudication."
+    }
+  ],
+  "supersededByTaskId": "ledger:0213:extenet-formerly-extenet-systems:1d3fac1c",
+  "decisionSha256": "29142adb9c929514354f746fdf1da0ba496149b060fdc1929f576c81ddfc5959"
+}

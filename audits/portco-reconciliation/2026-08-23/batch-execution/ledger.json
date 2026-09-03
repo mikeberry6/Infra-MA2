@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-03T18:01:00.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-09-03T18:19:00.000Z",
+  "activeBatchId": "batch-0472-0492-v1",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -8666,7 +8666,65 @@
           "reason": "Original batch transaction and immutable receipt verified; five-row attribution repair receipt reproduced; seed parity, canonical APIs, Havasu redirect, and Tallvine, Velocity, and Boldyn rendered scorecards passed with no partial application. Source tasks 464, 465, 466, 470, and 471 finalized durably."
         }
       ]
+    },
+    {
+      "batchId": "batch-0472-0492-v1",
+      "state": "RELEASING",
+      "taskIds": [
+        "ledger:0472:cleco-corporation:2901703f",
+        "ledger:0475:extenet:5c5cf1a1",
+        "ledger:0476:extenet-systems:5d66f0cd",
+        "ledger:0490:puget-energy-puget-sound-energy:e962de5d",
+        "ledger:0492:skyservice-us:444ae080"
+      ],
+      "taskIndexes": [
+        472,
+        475,
+        476,
+        490,
+        492
+      ],
+      "createdAt": "2026-09-03T17:11:51.000Z",
+      "updatedAt": "2026-09-03T18:19:00.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0472-0492-v1/batch-manifest-v4.json",
+        "sha256": "49afca09e76ffb917d71c246f842dea38f914726906964b83fecdfd4dd375ac4"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-09-03T17:11:51.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-09-03T18:18:00.000Z",
+          "evidenceSha256": [
+            "49afca09e76ffb917d71c246f842dea38f914726906964b83fecdfd4dd375ac4"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "RELEASING",
+          "at": "2026-09-03T18:19:00.000Z",
+          "evidenceSha256": [
+            "49afca09e76ffb917d71c246f842dea38f914726906964b83fecdfd4dd375ac4"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "3e33f7406e3611a6875e7547cabe57063387938a588aecc8b1a3cddfbca84015"
+  "ledgerSha256": "28e78502c9ffbd7891460b61617d5b950e762048f0071196427fac5deb8a6f34"
 }

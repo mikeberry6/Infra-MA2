@@ -1,0 +1,390 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHANGE_PROPOSAL",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0492:skyservice-us:444ae080",
+  "taskIndex": 492,
+  "asOfDate": "2026-09-03",
+  "generatedAt": "2026-09-03T18:15:00.000Z",
+  "canonicalKey": "skyservice-us|united-states",
+  "companyName": "Skyservice US",
+  "actions": [
+    "MERGE_COMPANIES",
+    "CORRECT_COMPANY"
+  ],
+  "sourceHoldingIds": [],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "reviewedSeedRetirements": [
+    {
+      "sourceQueueTaskId": "ledger:0493:skyservice-us-formerly-leading-edge-jet-center:49066c79",
+      "sourceQueueEntrySha256": "3774994b93e8658a448d2516eae71e731ccdbccf6cd021076b4b04595fd827f7",
+      "name": "Skyservice US (formerly Leading Edge Jet Center)",
+      "country": "United States",
+      "rawSeedEntrySha256": "cbbf4a057e2878f20e90ce3f70d182887b36754d4b575f98d96a92730c5f7431",
+      "evaluatedSeedEntrySha256": "cbbf4a057e2878f20e90ce3f70d182887b36754d4b575f98d96a92730c5f7431"
+    }
+  ],
+  "rationale": "Consolidate the duplicate Skyservice US (formerly Leading Edge Jet Center) seed identity into the existing Skyservice US record without replaying the existing production redirect. Preserve Leading Edge Jet Center as the former name, keep the U.S. company distinct from the separately sponsored Canadian Skyservice investment, retain Instar as the current U.S. owner with its undisclosed stake and vehicle represented without inference, and correct the U.S. milestone and citation record.",
+  "evidence": [
+    {
+      "url": "https://instarinvest.com/assets/files/strategy/Instar-Fact-Sheet-Q3-2025.pdf",
+      "purpose": "Primary manager evidence for the former-name identity, 2019 U.S. portfolio relationship and separate Canadian/U.S. investment dates.",
+      "supports": [
+        "Skyservice US was formerly known as Leading Edge Jet Center",
+        "Instar dates the U.S. portfolio relationship to 2019",
+        "The Canadian Skyservice relationship dates to 2017 and is not copied as a second U.S. owner"
+      ]
+    },
+    {
+      "url": "https://instarinvest.com/kingston-fyffe-white/",
+      "purpose": "Current manager evidence for the continuing separate company perimeter.",
+      "supports": [
+        "Instar continues to name Skyservice Business Aviation and Skyservice US separately"
+      ]
+    },
+    {
+      "url": "https://www.globenewswire.com/news-release/2020/09/29/2100789/0/en/Leading-Edge-Jet-Center-Expands-its-Business-Aviation-Footprint.html",
+      "purpose": "Direct transaction evidence for company history and the Kenmore add-on.",
+      "supports": [
+        "Leading Edge Jet Center was founded in 2005",
+        "The company was established as a standalone business in August 2019",
+        "The Kenmore Aero Services FBO acquisition was announced September 29, 2020"
+      ]
+    },
+    {
+      "url": "https://www.globenewswire.com/news-release/2020/12/30/2151751/0/en/leading-edge-jet-center-enters-the-mountain-west-region.html",
+      "purpose": "Direct transaction evidence correcting the Montana acquisition milestone.",
+      "supports": [
+        "Leading Edge Jet Center acquired Exec Air Montana on December 30, 2020",
+        "Montana Medical Transport was included in the acquired perimeter"
+      ]
+    },
+    {
+      "url": "https://napa.legistar.com/LegislationDetail.aspx?From=RSS&FullText=1&GUID=63B77815-9C59-47EF-B86A-833B5F635248&ID=7700175",
+      "purpose": "Official evidence for the continuing U.S. legal-company perimeter.",
+      "supports": [
+        "Leading Edge Jet Midco LLC is identified within the U.S. borrower group"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "ledgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+  "productionSnapshotSha256": "647a4ca9e3f2356af7fca488e49f8181ebe304d9530601639b2241a5cfde7044",
+  "currentCompanySnapshotSha256": "959e58c4e423287c29956f5919cc5cb5b4c029dee8d30715aa00677896cc7527",
+  "executionLock": {
+    "taskSnapshotSha256": "77a1bc610d3a14ea80252b8030ea06699fa449ab5b2e6c0b4f0a58227839dc66",
+    "taskStateSha256": "0a8755108060572a17141fa69a4d1078a86d21286e9419527ddf15bfe8bdddab",
+    "taskDependencySha256": "6f8b5478e97a42253552cf5027bb12456cc933f75a649a779fe82a9e28f4f9c1",
+    "seedEntrySha256": "1d73ba4c8cc4a8ec09c6935ff81cf0f8f9ffa05ef6f86bd95c673f90fb414189",
+    "dependencies": {
+      "ownershipPeriodsSha256": "5138864e78d09ade23d6a244edce02dbfe697c82bdd0804a5effaf7c9ba73b0a",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "36c188f4eec31401df1ed26f413c2efdf55b3ffb433c31f3186135547b45df9b",
+      "citationsSha256": "c3c1648f9e7351c987e1a537a7e9b7db3c1e2cf9f82454b5b942f5977a5a5b83",
+      "redirectsSha256": "0f2b0649dc2636105285859324686a20fde35610c37546cfdb58199abd597f4c"
+    },
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpijqu005givhe2besm283",
+        "name": "Instar",
+        "updatedAt": "2026-07-23T16:09:32.790Z"
+      }
+    ],
+    "redirects": [
+      {
+        "retiredId": "cmrxpjje30136ivheq0equtbk",
+        "companyId": "cmrxpjjen0137ivheavgfck2x",
+        "reason": "CANONICAL_MERGE",
+        "createdAt": "2026-07-29T04:08:45.655Z"
+      }
+    ]
+  },
+  "beforeImage": {
+    "id": "cmrxpjjen0137ivheavgfck2x",
+    "name": "Skyservice US",
+    "aliases": [],
+    "sector": "TRANSPORTATION",
+    "subsector": "U.S. fixed-base operations and aircraft services",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Skyservice US represents the U.S. fixed-base operation and aircraft services footprint that originated in Leading Edge Jet Center and now operates under the Skyservice brand. The business serves business aviation customers with fueling, hangar, maintenance, aircraft-on-ground support, and related airport services in the Pacific Northwest and Montana. Its operating model is asset-heavy because it relies on leased or controlled airport facilities, hangars, line-service operations, and maintenance capabilities at each location. Public disclosures state that Leading Edge Jet Center was founded in 2005 and that four U.S. locations were rebranded under the Skyservice banner in 2021. Instar's broader Canadian Skyservice investment dates to 2017, while Instar's fact sheet identifies Skyservice US, formerly Leading Edge Jet Center, as a 2019 portfolio company.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2005,
+    "headquarters": "Washington, Oregon, and Montana",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk5cv0221ivhe7gj76tym",
+        "managerName": "Instar",
+        "organizationName": "Instar",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": "Instar portfolio company; exact % not publicly disclosed",
+        "investmentYear": 2019,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpm5g004irivhe7f4ns1jq",
+        "date": "Nov 2021",
+        "event": "Skyservice rebranded four U.S. FBO locations under the Skyservice name.",
+        "category": "OTHER",
+        "sortDate": "2021-11-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm5ji04isivhetus04pgd",
+        "date": "2005",
+        "event": "Leading Edge Jet Center was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2005-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm5k204itivhe3p5ez2r3",
+        "date": "2019",
+        "event": "Instar identified Skyservice US, formerly Leading Edge Jet Center, as a 2019 portfolio company investment.",
+        "category": "FINANCING",
+        "sortDate": "2019-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm5l304ivivhe3akr76uq",
+        "date": "Sep 2020",
+        "event": "Leading Edge Jet Center announced the acquisition of Kenmore Aero Services' FBO business in Seattle.",
+        "category": "ACQUISITION",
+        "sortDate": "2020-09-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpm5lm04iwivhedre8tblk",
+        "date": "Jan 2021",
+        "event": "Leading Edge Jet Center acquired Helena Aviation Services in Montana.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-01-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxprthz0bneivhe9jaqhrnj",
+        "label": "Ainonline — Skyservice US",
+        "url": "https://www.ainonline.com/aviation-news/business-aviation/2021-11-10/canadas-skyservice-expands-us",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Ainonline — Skyservice US",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprtj10bngivheo5n55y57",
+        "label": "Investment date source — Instar — Skyservice US",
+        "url": "https://instarinvest.com/assets/files/strategy/Instar-Fact-Sheet-Q3-2025.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Instar portfolio company; Skyservice US exact ownership percentage not disclosed",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprtkg0bniivhe5caen77v",
+        "label": "LinkedIn — Skyservice US",
+        "url": "https://www.linkedin.com/company/skyservice-usa",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "LinkedIn — Skyservice US",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprtll0bnkivheey40twgq",
+        "label": "Corporatejetinvestor — Skyservice US (formerly Leading Edge Jet Center)",
+        "url": "https://www.corporatejetinvestor.com/news/skyservice-business-aviation-expands-to-the-united-states/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Corporatejetinvestor — Skyservice US (formerly Leading Edge Jet Center)",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxprtmu0bnmivhepoi2q4jw",
+        "label": "GlobeNewsWire — Skyservice US (formerly Leading Edge Jet Center)",
+        "url": "https://www.globenewswire.com/news-release/2020/09/29/2100789/0/en/Leading-Edge-Jet-Center-Expands-its-Business-Aviation-Footprint.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "GlobeNewsWire — Skyservice US (formerly Leading Edge Jet Center)",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprtnb0bnnivheh3nwjqmu",
+        "label": "Ainonline — Skyservice US",
+        "url": "https://www.ainonline.com/aviation-news/business-aviation/2021-11-10/canadas-skyservice-expands-us",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Ainonline — Skyservice US (formerly Leading Edge Jet Center)",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprtnw0bnoivhex5qgsdkw",
+        "label": "Investment date source — Instar — Skyservice US",
+        "url": "https://instarinvest.com/assets/files/strategy/Instar-Fact-Sheet-Q3-2025.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Instar portfolio company formerly known as LEJC; exact ownership percentage not disclosed",
+        "isPrimary": false
+      }
+    ]
+  },
+  "beforeImageSha256": "959e58c4e423287c29956f5919cc5cb5b4c029dee8d30715aa00677896cc7527",
+  "afterImage": {
+    "id": "cmrxpjjen0137ivheavgfck2x",
+    "name": "Skyservice US",
+    "aliases": [
+      "Leading Edge Jet Center",
+      "LEJC",
+      "Skyservice US (formerly Leading Edge Jet Center)"
+    ],
+    "sector": "TRANSPORTATION",
+    "subsector": "U.S. fixed-base operations and aircraft services",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Skyservice US is Instar's U.S. fixed-base-operation and aircraft-services platform, formerly known as Leading Edge Jet Center. The business provides aircraft fueling, hangar, maintenance, aircraft-on-ground support and related business-aviation services from airport facilities in the United States. Leading Edge Jet Center was founded in 2005 and established as a standalone company in August 2019; Instar's current portfolio materials date the U.S. relationship to 2019 and continue to distinguish Skyservice US from the separately sponsored Canadian Skyservice investment. The U.S. platform acquired Kenmore Aero Services' FBO business in September 2020 and Exec Air Montana, including Montana Medical Transport, in December 2020 before four Leading Edge locations adopted the Skyservice brand in November 2021. Instar remains the disclosed sponsor, while the exact U.S. stake, acquisition vehicle and any co-investor allocation have not been publicly disclosed. No later sponsor exit or signed ownership transfer was identified through September 3, 2026.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2005,
+    "headquarters": "United States",
+    "lastVerifiedAt": "2026-09-03T00:00:00.000Z",
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk5cv0221ivhe7gj76tym",
+        "managerName": "Instar",
+        "organizationName": "Instar",
+        "fundName": null,
+        "vehicleName": null,
+        "stake": "Instar portfolio company; exact percentage not publicly disclosed",
+        "investmentYear": 2019,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpm5ji04isivhetus04pgd",
+        "date": "2005",
+        "event": "Leading Edge Jet Center, the predecessor U.S. business, was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2005-01-01T00:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.globenewswire.com/news-release/2020/09/29/2100789/0/en/Leading-Edge-Jet-Center-Expands-its-Business-Aviation-Footprint.html"
+        ]
+      },
+      {
+        "id": "cmrxpm5k204itivhe3p5ez2r3",
+        "date": "Aug 2019",
+        "event": "Leading Edge Jet Center was established as a standalone company, and Instar dates the Skyservice US portfolio relationship to 2019.",
+        "category": "FINANCING",
+        "sortDate": "2019-08-01T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://instarinvest.com/assets/files/strategy/Instar-Fact-Sheet-Q3-2025.pdf",
+          "https://www.globenewswire.com/news-release/2020/09/29/2100789/0/en/Leading-Edge-Jet-Center-Expands-its-Business-Aviation-Footprint.html"
+        ]
+      },
+      {
+        "id": "cmrxpm5l304ivivhe3akr76uq",
+        "date": "Sep 29, 2020",
+        "event": "Leading Edge Jet Center announced the acquisition of Kenmore Aero Services' FBO business in Seattle.",
+        "category": "ACQUISITION",
+        "sortDate": "2020-09-29T04:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.globenewswire.com/news-release/2020/09/29/2100789/0/en/Leading-Edge-Jet-Center-Expands-its-Business-Aviation-Footprint.html"
+        ]
+      },
+      {
+        "id": "cmrxpm5lm04iwivhedre8tblk",
+        "date": "Dec 30, 2020",
+        "event": "Leading Edge Jet Center acquired Exec Air Montana, including Montana Medical Transport, expanding into the Mountain West.",
+        "category": "ACQUISITION",
+        "sortDate": "2020-12-30T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://www.globenewswire.com/news-release/2020/12/30/2151751/0/en/leading-edge-jet-center-enters-the-mountain-west-region.html"
+        ]
+      },
+      {
+        "id": "cmrxpm5g004irivhe7f4ns1jq",
+        "date": "Nov 9, 2021",
+        "event": "Four Leading Edge Jet Center locations adopted the Skyservice brand while remaining within the U.S. platform perimeter.",
+        "category": "MANAGEMENT",
+        "sortDate": "2021-11-09T05:00:00.000Z",
+        "evidenceUrls": [
+          "https://instarinvest.com/assets/files/strategy/Instar-Fact-Sheet-Q3-2025.pdf"
+        ]
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxprtj10bngivheo5n55y57",
+        "label": "Investment date source — Instar — Skyservice US",
+        "url": "https://instarinvest.com/assets/files/strategy/Instar-Fact-Sheet-Q3-2025.pdf",
+        "sourceType": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Primary former-name identity, separate Canadian/U.S. investment dates and current Instar portfolio evidence",
+        "isPrimary": true
+      },
+      {
+        "id": null,
+        "label": "Instar — Skyservice portfolio responsibility",
+        "url": "https://instarinvest.com/kingston-fyffe-white/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current separate Skyservice Business Aviation and Skyservice US responsibility",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprtmu0bnmivhepoi2q4jw",
+        "label": "GlobeNewsWire — Skyservice US (formerly Leading Edge Jet Center)",
+        "url": "https://www.globenewswire.com/news-release/2020/09/29/2100789/0/en/Leading-Edge-Jet-Center-Expands-its-Business-Aviation-Footprint.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Founding lineage, August 2019 standalone date and September 2020 Kenmore acquisition",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Leading Edge Jet Center — Exec Air Montana acquisition",
+        "url": "https://www.globenewswire.com/news-release/2020/12/30/2151751/0/en/leading-edge-jet-center-enters-the-mountain-west-region.html",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "December 2020 Exec Air Montana and Montana Medical Transport acquisition",
+        "isPrimary": false
+      },
+      {
+        "id": null,
+        "label": "Napa County — U.S. borrower group",
+        "url": "https://napa.legistar.com/LegislationDetail.aspx?From=RSS&FullText=1&GUID=63B77815-9C59-47EF-B86A-833B5F635248&ID=7700175",
+        "sourceType": "OTHER",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Official U.S. legal-group and Leading Edge Jet Midco borrower evidence",
+        "isPrimary": false
+      }
+    ]
+  },
+  "afterImageSha256": "ac9e239da7ae44646a31c2e22f53bcac030f3ab786a97798983f204a543f90af",
+  "proposalSha256": "b6806bde9adc6dcac518a5b2d579b344cab1f76a472ff1398f9217d4b1766665"
+}

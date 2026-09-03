@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0472:cleco-corporation:2901703f",
+  "taskIndex": 472,
+  "companyName": "Cleco Corporation",
+  "outcome": "SUPERSEDED",
+  "decidedAt": "2026-09-03T17:15:00.000Z",
+  "rationale": "Cleco Corporation is the predecessor name of the same Louisiana utility parent already reconciled as Cleco Corporate Holdings LLC in completed task 122. The current production record preserves Cleco Corporation as an alias and the reviewed ownership, pending-sale and subsidiary boundaries, so a second company would duplicate the canonical parent identity.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0472-cleco-corporation/attempt-1/locked-batch-v1-task-snapshot.json",
+    "sha256": "ac6eff04bff818e3dbdc9083f5fad9ceb1301559e32b20841fb3d4b73dd9e15a"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0472-cleco-corporation/attempt-1/dependent-research-decision-v1.json",
+    "sha256": "3960fb61505132515805bbc84b379bf68e0e9aa5336ff015095d711447530444"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0472-cleco-corporation/attempt-1/dependent-source-verification-v1.json",
+    "sha256": "463d3a2f705cf720be2c210aaee69a958922e50a80fb3981270fb6a4fa4cfc65"
+  },
+  "evidence": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1089819/000108981926000010/cnl-20260331.htm",
+      "purpose": "Current SEC evidence for the Cleco corporate hierarchy, predecessor identity and canonical parent boundary."
+    }
+  ],
+  "supersededByTaskId": "ledger:0122:cleco-corporate-holdings-llc:43ffb062",
+  "decisionSha256": "65c6d2b86af55dbef469df3409037c2815c4f89a66462d97abb7485557991334"
+}
