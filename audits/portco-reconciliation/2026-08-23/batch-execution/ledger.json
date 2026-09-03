@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-02T11:40:00.000Z",
-  "activeBatchId": "batch-0444-0448-v1",
+  "updatedAt": "2026-09-03T12:30:30.000Z",
+  "activeBatchId": null,
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -8149,7 +8149,7 @@
     },
     {
       "batchId": "batch-0444-0448-v1",
-      "state": "READY",
+      "state": "COMPLETED",
       "taskIds": [
         "ledger:0444:unison-energy:423efadc",
         "ledger:0445:digital-realty-northern-virginia-hyperscale-data-center-jv:1419ed2f",
@@ -8165,15 +8165,18 @@
         448
       ],
       "createdAt": "2026-09-02T11:09:00.000Z",
-      "updatedAt": "2026-09-02T11:40:00.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-09-03T12:30:30.000Z",
+      "completedAt": "2026-09-03T12:30:30.000Z",
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0444-0448-v1/batch-manifest-v3.json",
         "sha256": "01db02028d430e0776b4eb81221d7e118585386b76e479dd809fdd64dd133b17"
       },
-      "releaseSha": null,
-      "receipt": null,
-      "reason": null,
+      "releaseSha": "800c957214368b1df2678f0c6d7aed7fb503247d",
+      "receipt": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0444-0448-v1/production-apply-run-33626528499/batch-apply-receipt.json",
+        "sha256": "8c20498cc6a50223a1ac2b3d806adf641b66976e4ce2afb016604bed0be27ff1"
+      },
+      "reason": "Original atomic PortCo receipt remains valid with no repeat transaction. Protected IPX attribution repair, exact-SHA canonical deployment, immutable repair receipt, all-row API verification, seed attribution manifest, cache revalidation, and refreshed Unison/IPX rendered cards all pass; no partial application.",
       "history": [
         {
           "sequence": 1,
@@ -8192,9 +8195,73 @@
             "01db02028d430e0776b4eb81221d7e118585386b76e479dd809fdd64dd133b17"
           ],
           "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "RELEASING",
+          "at": "2026-09-02T11:49:00.000Z",
+          "evidenceSha256": [
+            "01db02028d430e0776b4eb81221d7e118585386b76e479dd809fdd64dd133b17"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 4,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-09-02T11:50:35.000Z",
+          "evidenceSha256": [
+            "01db02028d430e0776b4eb81221d7e118585386b76e479dd809fdd64dd133b17"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 5,
+          "from": "APPLYING",
+          "to": "VERIFYING",
+          "at": "2026-09-02T11:50:39.000Z",
+          "evidenceSha256": [
+            "01db02028d430e0776b4eb81221d7e118585386b76e479dd809fdd64dd133b17",
+            "8c20498cc6a50223a1ac2b3d806adf641b66976e4ce2afb016604bed0be27ff1"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 6,
+          "from": "VERIFYING",
+          "to": "VERIFYING_FAILED",
+          "at": "2026-09-02T11:53:00.000Z",
+          "evidenceSha256": [
+            "01db02028d430e0776b4eb81221d7e118585386b76e479dd809fdd64dd133b17",
+            "8c20498cc6a50223a1ac2b3d806adf641b66976e4ce2afb016604bed0be27ff1"
+          ],
+          "reason": "Rendered IPX Power ownership still exposes stale TPG Peppertree Fund X INFERRED attribution metadata after the approved fund link was removed; protected attribution repair and rendered re-verification required before completion."
+        },
+        {
+          "sequence": 7,
+          "from": "VERIFYING_FAILED",
+          "to": "VERIFYING",
+          "at": "2026-09-03T12:29:30.000Z",
+          "evidenceSha256": [
+            "01db02028d430e0776b4eb81221d7e118585386b76e479dd809fdd64dd133b17",
+            "8c20498cc6a50223a1ac2b3d806adf641b66976e4ce2afb016604bed0be27ff1"
+          ],
+          "reason": "Protected attribution repair receipt dab826f3fcedcd1cb4d1fa9084c54afabb89158c3ae1f031b2bbd97b2af7a53b verified all three IPX attribution-only rows; canonical production serves exact repair SHA ad59db1f82f586eae07955013671c00eeef5db63 and refreshed Unison/IPX API and rendered-card checks pass. Original transaction was not repeated."
+        },
+        {
+          "sequence": 8,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-09-03T12:30:30.000Z",
+          "evidenceSha256": [
+            "01db02028d430e0776b4eb81221d7e118585386b76e479dd809fdd64dd133b17",
+            "8c20498cc6a50223a1ac2b3d806adf641b66976e4ce2afb016604bed0be27ff1"
+          ],
+          "reason": "Original atomic PortCo receipt remains valid with no repeat transaction. Protected IPX attribution repair, exact-SHA canonical deployment, immutable repair receipt, all-row API verification, seed attribution manifest, cache revalidation, and refreshed Unison/IPX rendered cards all pass; no partial application."
         }
       ]
     }
   ],
-  "ledgerSha256": "ce1845ce887ee41e431517e10ea98865e3c1bc376f86a9a21ee021fc825ed5fc"
+  "ledgerSha256": "a6e5b809a3263a006fd1d19abd12057c3dfaf2f369b712b5291bee14d6a4992b"
 }

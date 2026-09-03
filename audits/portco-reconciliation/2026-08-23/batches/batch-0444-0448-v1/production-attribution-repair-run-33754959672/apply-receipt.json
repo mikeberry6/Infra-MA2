@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_RECEIPT",
+  "manifestSha256": "d332c1d700d97e61c8e56a9d9c2f60bda253bcaa735c8f54aa7661734c6dfbc4",
+  "approvalSha256": "580ae8c37b84aa88206044d3720b1af59c54caa7ad095d5c56b1ef91cdbd9660",
+  "environment": "production",
+  "pipelineRunId": "cmtlhzxs70000g32bb9wvefw2",
+  "mutationCount": 3,
+  "changed": 3,
+  "idempotent": false,
+  "beforeFingerprint": "473c23963ae0e23867e6eee297d2319d5044a356d102f60c18d5caf357f8f703",
+  "afterFingerprint": "3d3f48a7d99d3239b4a0eed4f74a11c7796898d8c4f6e63dcc7bbe1fe456051d",
+  "rows": [
+    {
+      "recordId": "OFA-7B11F2609FF6",
+      "ownershipPeriodId": "cmrxpkav302anivhe4ygdrdj6",
+      "companyId": "cmrxpjo9e01azivhe6df3tcp2",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "TPG Peppertree Fund X",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, vintage 2023 is 3 years before investment, North America-relevant mandate; next candidate trails by 3.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "TPG's closing release discloses TPG Rise Climate as IPX's majority backer but does not identify a distinct fund or holding SPV. The source classifies the strategy as climate private equity rather than the separate TPG transition-infrastructure product, so no infrastructure-fund link is inferred."
+      }
+    },
+    {
+      "recordId": "OFA-47365CACD0BE",
+      "ownershipPeriodId": "cmtk1be1w000eww2bw2i8roih",
+      "companyId": "cmrxpjo9e01azivhe6df3tcp2",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Climate Adaptive Infrastructure Fund LP",
+        "attributionConfidence": null,
+        "attributionRationale": "TPG's closing release identifies Climate Adaptive Infrastructure as a continuing IPX investor, and CAI's official fund-close release identifies Climate Adaptive Infrastructure Fund LP and its dedicated infrastructure mandate. The exact IPX holding SPV is not publicly disclosed, and no matching curated fund row exists to link."
+      }
+    },
+    {
+      "recordId": "OFA-96A94226554C",
+      "ownershipPeriodId": "cmtk1be4u000fww2bkkrklgs2",
+      "companyId": "cmrxpjo9e01azivhe6df3tcp2",
+      "stateBeforeApply": "PENDING",
+      "before": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "after": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "TPG's closing release identifies Greenbelt Capital Partners as a continuing IPX minority investor, but reviewed primary sources do not identify the specific legacy Trilantic/Greenbelt fund or holding SPV. No fund attribution is inferred."
+      }
+    }
+  ],
+  "appliedAt": "2026-09-03T12:25:18.134Z",
+  "receiptSha256": "dab826f3fcedcd1cb4d1fa9084c54afabb89158c3ae1f031b2bbd97b2af7a53b"
+}

@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_RELEASE_VERIFICATION",
+  "verifiedAt": "2026-09-03T12:25:20.332Z",
+  "manifestSha256": "d332c1d700d97e61c8e56a9d9c2f60bda253bcaa735c8f54aa7661734c6dfbc4",
+  "approvalSha256": "580ae8c37b84aa88206044d3720b1af59c54caa7ad095d5c56b1ef91cdbd9660",
+  "receiptSha256": "dab826f3fcedcd1cb4d1fa9084c54afabb89158c3ae1f031b2bbd97b2af7a53b",
+  "mutationCount": 3,
+  "changed": 3,
+  "verificationScope": "BOUNDED_STATUS_SAMPLE",
+  "sampledRows": [
+    {
+      "recordId": "OFA-47365CACD0BE",
+      "companyId": "cmrxpjo9e01azivhe6df3tcp2",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjo9e01azivhe6df3tcp2?verification=d332c1d700d97e61c8e56a9d9c2f60bda253bcaa735c8f54aa7661734c6dfbc4",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Climate Adaptive Infrastructure Fund LP",
+        "attributionConfidence": null,
+        "attributionRationale": "TPG's closing release identifies Climate Adaptive Infrastructure as a continuing IPX investor, and CAI's official fund-close release identifies Climate Adaptive Infrastructure Fund LP and its dedicated infrastructure mandate. The exact IPX holding SPV is not publicly disclosed, and no matching curated fund row exists to link."
+      }
+    },
+    {
+      "recordId": "OFA-7B11F2609FF6",
+      "companyId": "cmrxpjo9e01azivhe6df3tcp2",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjo9e01azivhe6df3tcp2?verification=d332c1d700d97e61c8e56a9d9c2f60bda253bcaa735c8f54aa7661734c6dfbc4",
+      "publicState": "PUBLISHED",
+      "responseStatus": 200,
+      "observed": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "TPG's closing release discloses TPG Rise Climate as IPX's majority backer but does not identify a distinct fund or holding SPV. The source classifies the strategy as climate private equity rather than the separate TPG transition-infrastructure product, so no infrastructure-fund link is inferred."
+      }
+    }
+  ],
+  "passed": true
+}
