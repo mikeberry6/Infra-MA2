@@ -3,7 +3,7 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-03T18:19:00.000Z",
+  "updatedAt": "2026-09-03T18:22:00.000Z",
   "activeBatchId": "batch-0472-0492-v1",
   "batches": [
     {
@@ -8669,7 +8669,7 @@
     },
     {
       "batchId": "batch-0472-0492-v1",
-      "state": "RELEASING",
+      "state": "VERIFYING_FAILED",
       "taskIds": [
         "ledger:0472:cleco-corporation:2901703f",
         "ledger:0475:extenet:5c5cf1a1",
@@ -8685,15 +8685,18 @@
         492
       ],
       "createdAt": "2026-09-03T17:11:51.000Z",
-      "updatedAt": "2026-09-03T18:19:00.000Z",
+      "updatedAt": "2026-09-03T18:22:00.000Z",
       "completedAt": null,
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0472-0492-v1/batch-manifest-v4.json",
         "sha256": "49afca09e76ffb917d71c246f842dea38f914726906964b83fecdfd4dd375ac4"
       },
-      "releaseSha": null,
-      "receipt": null,
-      "reason": null,
+      "releaseSha": "e1edafdddb702b1711f51019ddd0e76829ead415",
+      "receipt": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0472-0492-v1/production-apply-run-33785995490/batch-apply-receipt.json",
+        "sha256": "cdab9f0dba86223bc09f2931aa874cd4b1f6d3d1d3af6b500c17eb8f3643bdcd"
+      },
+      "reason": "Original atomic PortCo transaction ea9797b7-cf88-4c56-974c-27f8a1021973 and immutable receipt verified; Skyservice US API and seed after-image pass, but rendered ownership retains stale INFERRED InstarAGF Essential Infrastructure Fund I metadata. Freeze the one-active-bundle boundary for a scoped attribution-only repair; never repeat the original transaction.",
       "history": [
         {
           "sequence": 1,
@@ -8722,9 +8725,41 @@
             "49afca09e76ffb917d71c246f842dea38f914726906964b83fecdfd4dd375ac4"
           ],
           "reason": null
+        },
+        {
+          "sequence": 4,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-09-03T18:20:00.000Z",
+          "evidenceSha256": [
+            "49afca09e76ffb917d71c246f842dea38f914726906964b83fecdfd4dd375ac4"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 5,
+          "from": "APPLYING",
+          "to": "VERIFYING",
+          "at": "2026-09-03T18:21:00.000Z",
+          "evidenceSha256": [
+            "49afca09e76ffb917d71c246f842dea38f914726906964b83fecdfd4dd375ac4",
+            "cdab9f0dba86223bc09f2931aa874cd4b1f6d3d1d3af6b500c17eb8f3643bdcd"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 6,
+          "from": "VERIFYING",
+          "to": "VERIFYING_FAILED",
+          "at": "2026-09-03T18:22:00.000Z",
+          "evidenceSha256": [
+            "49afca09e76ffb917d71c246f842dea38f914726906964b83fecdfd4dd375ac4",
+            "cdab9f0dba86223bc09f2931aa874cd4b1f6d3d1d3af6b500c17eb8f3643bdcd"
+          ],
+          "reason": "Original atomic PortCo transaction ea9797b7-cf88-4c56-974c-27f8a1021973 and immutable receipt verified; Skyservice US API and seed after-image pass, but rendered ownership retains stale INFERRED InstarAGF Essential Infrastructure Fund I metadata. Freeze the one-active-bundle boundary for a scoped attribution-only repair; never repeat the original transaction."
         }
       ]
     }
   ],
-  "ledgerSha256": "28e78502c9ffbd7891460b61617d5b950e762048f0071196427fac5deb8a6f34"
+  "ledgerSha256": "4f55cd7ad644a76fcde807d4b61c59951852748cd354278de6c45b3940064b91"
 }

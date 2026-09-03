@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RENDERED_CARD_VERIFICATION",
+  "batchId": "batch-0472-0492-v1",
+  "batchSha256": "49afca09e76ffb917d71c246f842dea38f914726906964b83fecdfd4dd375ac4",
+  "releaseSha": "e1edafdddb702b1711f51019ddd0e76829ead415",
+  "verifiedAt": "2026-09-03T18:22:00.000Z",
+  "canonicalUrl": "https://infra-ma-2.vercel.app/Infra-MA2/portfolio",
+  "productionDeployment": {
+    "deploymentId": "dpl_HsJW23M1JKzW8g31YaT4VN6tUXAQ",
+    "deploymentUrl": "https://infra-ma-2-e28bs1cv4-mberry.vercel.app",
+    "canonicalAlias": "https://infra-ma-2.vercel.app",
+    "gitCommitSha": "e1edafdddb702b1711f51019ddd0e76829ead415",
+    "ready": true
+  },
+  "receipt": {
+    "transactionId": "ea9797b7-cf88-4c56-974c-27f8a1021973",
+    "receiptSha256": "cdab9f0dba86223bc09f2931aa874cd4b1f6d3d1d3af6b500c17eb8f3643bdcd",
+    "valid": true,
+    "originalTransactionMustNotBeRepeated": true
+  },
+  "renderedChecks": [
+    {
+      "companyId": "cmrxpjjen0137ivheavgfck2x",
+      "companyName": "Skyservice US",
+      "rowCount": 1,
+      "ownerCount": 1,
+      "sourceCount": 5,
+      "milestoneCount": 5,
+      "passed": false,
+      "failure": "Ownership period cmrxpk5cv0221ivhe7gj76tym retained stale INFERRED InstarAGF Essential Infrastructure Fund I attribution with Medium confidence after the approved PortCo correction cleared the vehicle."
+    }
+  ],
+  "apiVerification": [
+    {
+      "companyId": "cmrxpjjen0137ivheavgfck2x",
+      "responseSha256": "a726e5c7401eb6eda884da43ae2ebf1d28a0dccadd44be23f4bfd3932fdac8d9",
+      "passed": true,
+      "correctedCompanyIdentity": true,
+      "correctedAliases": true,
+      "sourceCount": 5,
+      "milestoneCount": 5
+    }
+  ],
+  "repairScope": {
+    "productionSnapshotPath": "audits/portfolio-fund-attribution/2026-09-03/scoped/portco-batch-0472-0492-skyservice-attribution-repair/production-snapshot.json",
+    "productionSnapshotSha256": "17eb304fabe86cafb33ddca683c06dd9b940a39ed50a09a64e3866d1800aa03a",
+    "manifestPath": "audits/portfolio-fund-attribution/2026-09-03/scoped/portco-batch-0472-0492-skyservice-attribution-repair/apply-manifest.json",
+    "manifestSha256": "b321cfd3e83f731d1ce2a300ea5d7a53189d9dc61a3d394b51dfa6608b7bf120",
+    "approvalPath": "audits/portfolio-fund-attribution/2026-09-03/scoped/portco-batch-0472-0492-skyservice-attribution-repair/approval.json",
+    "approvalSha256": "c810291b92edb938f58c8416f4b276d2192996d6c4003afc305eadbcbc1cb1a9",
+    "expectedMutationCount": 1,
+    "ownershipPeriodIds": [
+      "cmrxpk5cv0221ivhe7gj76tym"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "fundLinkChanges": 0,
+    "ownershipIdentityChanges": 0,
+    "inferredWrites": 0
+  },
+  "assertions": {
+    "exactReleaseShaServed": true,
+    "immutableReceiptVerified": true,
+    "apiVerificationPassed": true,
+    "redirectVerificationPassed": true,
+    "noPartialApplication": true,
+    "renderedVerificationPassed": false
+  },
+  "valid": false,
+  "result": "FAIL",
+  "reason": "The original atomic PortCo transaction is complete and must never be repeated. Freeze the one-active-bundle boundary and repair only the stale Skyservice US attribution metadata before re-running rendered verification."
+}

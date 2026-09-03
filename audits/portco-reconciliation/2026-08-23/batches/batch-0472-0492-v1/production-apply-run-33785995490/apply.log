@@ -1,0 +1,94 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:batch:apply
+> npx tsx scripts/portco-reconciliation/batch-apply-cli.ts --batch-manifest=audits/portco-reconciliation/2026-08-23/batches/batch-0472-0492-v1/batch-manifest-v4.json --batch-sha256=49afca09e76ffb917d71c246f842dea38f914726906964b83fecdfd4dd375ac4 --seed-artifact=prisma/seed-data/approved-portco-after-images.json --apply --write-token=APPLY_APPROVED_PORTCO_BATCH --commit-receipt=tmp/portco-reconciliation/production/batch-commit-receipt.json --receipt=tmp/portco-reconciliation/production/batch-apply-receipt.json --public-base-url=https://infra-ma-2.vercel.app/Infra-MA2/
+
+(node:3494) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "BATCH_APPLIED",
+  "receiptPath": "/home/runner/work/Infra-MA2/Infra-MA2/tmp/portco-reconciliation/production/batch-apply-receipt.json",
+  "receipt": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_APPLY_BATCH_RECEIPT",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "batchId": "batch-0472-0492-v1",
+    "batchSha256": "49afca09e76ffb917d71c246f842dea38f914726906964b83fecdfd4dd375ac4",
+    "releaseSha": "e1edafdddb702b1711f51019ddd0e76829ead415",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "transactionId": "ea9797b7-cf88-4c56-974c-27f8a1021973",
+    "appliedAt": "2026-09-03T17:42:38.900Z",
+    "members": [
+      {
+        "kind": "TERMINAL",
+        "taskId": "ledger:0472:cleco-corporation:2901703f",
+        "taskIndex": 472,
+        "companyName": "Cleco Corporation",
+        "outcome": "SUPERSEDED",
+        "decisionSha256": "65c6d2b86af55dbef469df3409037c2815c4f89a66462d97abb7485557991334"
+      },
+      {
+        "kind": "TERMINAL",
+        "taskId": "ledger:0475:extenet:5c5cf1a1",
+        "taskIndex": 475,
+        "companyName": "Extenet",
+        "outcome": "SUPERSEDED",
+        "decisionSha256": "29142adb9c929514354f746fdf1da0ba496149b060fdc1929f576c81ddfc5959"
+      },
+      {
+        "kind": "TERMINAL",
+        "taskId": "ledger:0476:extenet-systems:5d66f0cd",
+        "taskIndex": 476,
+        "companyName": "ExteNet Systems",
+        "outcome": "SUPERSEDED",
+        "decisionSha256": "ec7746200a15879e5706f501f0ec1825e9c0d47eece68c39830d5c025209b79c"
+      },
+      {
+        "kind": "TERMINAL",
+        "taskId": "ledger:0490:puget-energy-puget-sound-energy:e962de5d",
+        "taskIndex": 490,
+        "companyName": "Puget Energy / Puget Sound Energy",
+        "outcome": "SUPERSEDED",
+        "decisionSha256": "cefeed8d8c413e67bf31aa99af14d8689b93af93dad020527ec0202e6515bf9e"
+      },
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0492:skyservice-us:444ae080",
+        "taskIndex": 492,
+        "companyName": "Skyservice US",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0492:skyservice-us:444ae080",
+          "taskIndex": 492,
+          "companyName": "Skyservice US",
+          "companyId": "cmrxpjjen0137ivheavgfck2x",
+          "proposalSha256": "b6806bde9adc6dcac518a5b2d579b344cab1f76a472ff1398f9217d4b1766665",
+          "approvalSha256": "44116678e169de520943429bde1a643a877a79d77c6c8c84f8bce735d402fb3e",
+          "productionSnapshotSha256": "647a4ca9e3f2356af7fca488e49f8181ebe304d9530601639b2241a5cfde7044",
+          "beforeCompanySnapshotSha256": "959e58c4e423287c29956f5919cc5cb5b4c029dee8d30715aa00677896cc7527",
+          "appliedAfterImageSha256": "ac9e239da7ae44646a31c2e22f53bcac030f3ab786a97798983f204a543f90af",
+          "seedAfterImageSha256": "ac9e239da7ae44646a31c2e22f53bcac030f3ab786a97798983f204a543f90af",
+          "approvedSeedEntrySha256": "a309809568a23454f80f43218dacfa4be9ee838f9bc9636ce5a48ad9abab6523",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "ea9797b7-cf88-4c56-974c-27f8a1021973",
+          "auditEventId": "cmtltc1y10007p24xk22vdbzn",
+          "appliedAt": "2026-09-03T17:42:38.900Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "dccf021ba65bc1531313c5549c62f2a33ac94f06ef8b8a4226811c0b5d17cea5"
+        }
+      }
+    ],
+    "verification": {
+      "databaseTransactionCommitted": true,
+      "seedArtifactVerified": true,
+      "allDetailApisVerified": true,
+      "partialDatabaseApplication": false
+    },
+    "receiptSha256": "cdab9f0dba86223bc09f2931aa874cd4b1f6d3d1d3af6b500c17eb8f3643bdcd"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-09-03",
+  "ledgerSha256": "82c36b05b6f3c2d8de297c66cd6b6e86855edf5ded7a7512714a3fd1d3e3f83c",
+  "sourceSnapshotSha256": "17eb304fabe86cafb33ddca683c06dd9b940a39ed50a09a64e3866d1800aa03a",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 0,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 0,
+      "UNRESOLVED": 1
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  },
+  "expectedMutationCount": 1,
+  "mutations": [
+    {
+      "recordId": "OFA-6875270B1431",
+      "ownershipPeriodId": "cmrxpk5cv0221ivhe7gj76tym",
+      "companyName": "Skyservice US",
+      "country": "United States",
+      "investmentFirm": "Instar",
+      "currentVehicleName": "Instar",
+      "databaseVehicleName": null,
+      "investmentYear": 2019,
+      "stake": "Instar portfolio company; exact percentage not publicly disclosed",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "INFERRED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Instar's current fact sheet and portfolio evidence establish sponsorship of the U.S. platform, but the applicable fund and legal holding vehicle are not publicly disclosed."
+      },
+      "evidenceUrls": [
+        "https://instarinvest.com/assets/files/strategy/Instar-Fact-Sheet-Q3-2025.pdf",
+        "https://instarinvest.com/kingston-fyffe-white/",
+        "https://napa.legistar.com/LegislationDetail.aspx?From=RSS&FullText=1&GUID=63B77815-9C59-47EF-B86A-833B5F635248&ID=7700175"
+      ]
+    }
+  ],
+  "manifestSha256": "b321cfd3e83f731d1ce2a300ea5d7a53189d9dc61a3d394b51dfa6608b7bf120"
+}
