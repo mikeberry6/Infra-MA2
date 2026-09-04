@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-09-04T07:22:30.000Z",
+  "updatedAt": "2026-09-04T15:15:00.000Z",
   "runStatus": "COMPLETE_WITH_EXCEPTIONS",
   "activeTaskId": null,
   "source": {
@@ -27691,28 +27691,86 @@
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "1ccefb77654bb3eea58212e6e07ff9f334ff18a3314501b15649cf2ae1f0d107",
       "status": "DEFERRED",
-      "attempts": 1,
-      "startedAt": "2026-08-29T12:09:37.000Z",
-      "updatedAt": "2026-08-29T13:55:45.000Z",
-      "completedAt": "2026-08-29T13:55:45.000Z",
-      "exceptionReason": "The canonical ProjectCo identity is resolved and direct evidence supports JLIF's historical 100% interest through 2017 plus Jura's acquisition of JLIF in 2018. No direct evidence identifies whether AHA was included in Jura's 2019 sell-down or proves all current AHA/AHA Holdings shareholders, percentages and effective dates. Royal London's 2025 acquisition of Dalmore Capital and Resolis is a manager and servicing-business acquisition, not a publishable ProjectCo cap table. Current ownership must therefore be deferred rather than inferred; CVC DIF is excluded absent direct evidence.",
+      "attempts": 2,
+      "startedAt": "2026-09-04T15:06:00.000Z",
+      "updatedAt": "2026-09-04T15:15:00.000Z",
+      "completedAt": "2026-09-04T15:15:00.000Z",
+      "exceptionReason": "Direct evidence resolves the ProjectCo and historical JLIF/Jura chain but does not identify whether AHA was included in Jura's 2019 sell-down or establish the cutoff-current shareholder, fund, vehicle, stake, and effective-date chain. CVC DIF remains unsupported, and substituting Equitix, Dalmore, or Royal London would require inference.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": "248efe64e8d7ab202f0c1a8ed547f38ae7a4f16f3b8ecd13d64c604471148d2b",
+      "taskSnapshotSha256": "be2392fe677318f8940ae3012c19eb3bb995ab9d5bb32acc84ba821c267fab2f",
       "artifacts": {
         "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0236-abbotsford-regional-hospital-and-cancer-centre/attempt-1/locked-task-snapshot.json",
-          "sha256": "248efe64e8d7ab202f0c1a8ed547f38ae7a4f16f3b8ecd13d64c604471148d2b"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0236-abbotsford-regional-hospital-and-cancer-centre/attempt-2/locked-deferred-v1-task-snapshot.json",
+          "sha256": "be2392fe677318f8940ae3012c19eb3bb995ab9d5bb32acc84ba821c267fab2f"
         },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
         "decision": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0236-abbotsford-regional-hospital-and-cancer-centre/attempt-1/terminal-decision.json",
-          "sha256": "4f5c7ca5bc110f6f7c3129e723ad622587b37dab751a177c2afe09d0e32ff769"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0236-abbotsford-regional-hospital-and-cancer-centre/attempt-2/terminal-decision-deferred-v1.json",
+          "sha256": "8b947cf4f35e6dff8d5362ab5b357eaea95093ee9008afb100e27e0202453736"
         },
         "companySnapshot": null
       },
       "recovery": null,
+      "reAdjudications": [
+        {
+          "sequence": 1,
+          "reopenedAt": "2026-09-04T14:58:30.000Z",
+          "reason": "Fresh deferred re-adjudication completed; reopen in original source order for the next protected five-task release bundle.",
+          "priorCompletedAt": "2026-08-29T13:55:45.000Z",
+          "priorExceptionReason": "The canonical ProjectCo identity is resolved and direct evidence supports JLIF's historical 100% interest through 2017 plus Jura's acquisition of JLIF in 2018. No direct evidence identifies whether AHA was included in Jura's 2019 sell-down or proves all current AHA/AHA Holdings shareholders, percentages and effective dates. Royal London's 2025 acquisition of Dalmore Capital and Resolis is a manager and servicing-business acquisition, not a publishable ProjectCo cap table. Current ownership must therefore be deferred rather than inferred; CVC DIF is excluded absent direct evidence.",
+          "priorArtifacts": {
+            "taskSnapshot": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0236-abbotsford-regional-hospital-and-cancer-centre/attempt-1/locked-task-snapshot.json",
+              "sha256": "248efe64e8d7ab202f0c1a8ed547f38ae7a4f16f3b8ecd13d64c604471148d2b"
+            },
+            "proposal": null,
+            "approval": null,
+            "applyReceipt": null,
+            "decision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0236-abbotsford-regional-hospital-and-cancer-centre/attempt-1/terminal-decision.json",
+              "sha256": "4f5c7ca5bc110f6f7c3129e723ad622587b37dab751a177c2afe09d0e32ff769"
+            },
+            "companySnapshot": null
+          },
+          "priorManifestSha256": "29f4bdcdf7dc615e1617333fdaebb722812e60ef9463676d276d1af3c78002d9",
+          "batchLedger": {
+            "location": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+            "sha256": "28fb98ed8d077bbf730a9cdaa0876d2efe100ce61662b65585802fcdc7d95bb9"
+          },
+          "evidence": {
+            "researchDecision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0236-abbotsford-regional-hospital-and-cancer-centre/attempt-2/research-decision.json",
+              "sha256": "25c169262f4fb3885bf9af2a0c5fde92e413ab176a4a97870e6881369cf61123"
+            },
+            "chatgptAttestation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0236-abbotsford-regional-hospital-and-cancer-centre/attempt-2/chatgpt-attestation.json",
+              "sha256": "7af971eb5051334f8e243b6be9c39289b63c530b261236e3eeec1e7aeb2e4221"
+            },
+            "prompt": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0236-abbotsford-regional-hospital-and-cancer-centre/attempt-2/chatgpt-research-prompt.md",
+              "sha256": "57aa47f0b45cec229eda10cfefc0283a33022e72b8110f1b29d9ad43b1babbba"
+            },
+            "acceptedResponse": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0236-abbotsford-regional-hospital-and-cancer-centre/attempt-2/chatgpt-accepted-response.txt",
+              "sha256": "bc3c3c027d15a1bce8315f82374911daeefd5d10f35cef9f62db5766a780ed7f"
+            },
+            "transcript": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0236-abbotsford-regional-hospital-and-cancer-centre/attempt-2/chatgpt-transcript.txt",
+              "sha256": "4b3ec975117dafb265aeac743e8574635e1976fad68106d2d21b0290ad00eb91"
+            },
+            "sourceVerification": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0236-abbotsford-regional-hospital-and-cancer-centre/attempt-2/source-verification.json",
+              "sha256": "7a0a6e90ac25dfb1d0ee91a66b2e503d13b6dbb92cb955d3b98efb27012243b7"
+            },
+            "responseValidation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0236-abbotsford-regional-hospital-and-cancer-centre/attempt-2/chatgpt-response-validation.json",
+              "sha256": "d00d7595243f940d36727e10571e73da9f53eaa53c1134861c494cb876cb4bcb"
+            }
+          }
+        }
+      ],
       "history": [
         {
           "sequence": 1,
@@ -27736,6 +27794,40 @@
             "248efe64e8d7ab202f0c1a8ed547f38ae7a4f16f3b8ecd13d64c604471148d2b",
             "4f5c7ca5bc110f6f7c3129e723ad622587b37dab751a177c2afe09d0e32ff769",
             "a1fa32fc2233da578d6a16b61debb0d35912fc379bc7e2e3e2e4a5974cb1b30d"
+          ],
+          "kind": "BATCH"
+        },
+        {
+          "sequence": 3,
+          "from": "DEFERRED",
+          "to": "PENDING",
+          "at": "2026-09-04T14:58:30.000Z",
+          "reason": "Fresh deferred re-adjudication completed; reopen in original source order for the next protected five-task release bundle.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "25c169262f4fb3885bf9af2a0c5fde92e413ab176a4a97870e6881369cf61123",
+            "28fb98ed8d077bbf730a9cdaa0876d2efe100ce61662b65585802fcdc7d95bb9",
+            "4b3ec975117dafb265aeac743e8574635e1976fad68106d2d21b0290ad00eb91",
+            "57aa47f0b45cec229eda10cfefc0283a33022e72b8110f1b29d9ad43b1babbba",
+            "7a0a6e90ac25dfb1d0ee91a66b2e503d13b6dbb92cb955d3b98efb27012243b7",
+            "7af971eb5051334f8e243b6be9c39289b63c530b261236e3eeec1e7aeb2e4221",
+            "bc3c3c027d15a1bce8315f82374911daeefd5d10f35cef9f62db5766a780ed7f",
+            "d00d7595243f940d36727e10571e73da9f53eaa53c1134861c494cb876cb4bcb"
+          ],
+          "kind": "DEFERRED_READJUDICATION"
+        },
+        {
+          "sequence": 4,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-04T15:15:00.000Z",
+          "reason": "Direct evidence resolves the ProjectCo and historical JLIF/Jura chain but does not identify whether AHA was included in Jura's 2019 sell-down or establish the cutoff-current shareholder, fund, vehicle, stake, and effective-date chain. CVC DIF remains unsupported, and substituting Equitix, Dalmore, or Royal London would require inference.",
+          "taskSnapshotSha256": "be2392fe677318f8940ae3012c19eb3bb995ab9d5bb32acc84ba821c267fab2f",
+          "evidenceSha256": [
+            "23a9ba7049fc801c2f4c7896d12ad63e6b60aa8b04365202491971738d7c9cea",
+            "5d0eb297d454f8b3181434a58ce4fd830d58b0425adb855fded3f897ef6dcddf",
+            "8b947cf4f35e6dff8d5362ab5b357eaea95093ee9008afb100e27e0202453736",
+            "be2392fe677318f8940ae3012c19eb3bb995ab9d5bb32acc84ba821c267fab2f"
           ],
           "kind": "BATCH"
         }
@@ -27809,28 +27901,86 @@
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "3ff5ebe198e2943b13c37a40aca94f11902a3cb04866d664e49f2fc0aab5f1c5",
       "status": "DEFERRED",
-      "attempts": 1,
-      "startedAt": "2026-08-29T12:09:37.000Z",
-      "updatedAt": "2026-08-29T13:55:45.000Z",
-      "completedAt": "2026-08-29T13:55:45.000Z",
-      "exceptionReason": "Reliable direct evidence resolves only 90% of current ProjectCo equity: Innisfree 55%, John Laing Health Montreal Limited 25%, and AtkinsRéalis 10%. The direct legal holder of the remaining 10% and that ownership period's effective date remain unproven, so a complete current ownership record cannot be published without speculation. The contemplated BBGI transaction was cancelled and creates no ownership period. KKR-managed funds are ultimate owners of John Laing rather than direct ProjectCo shareholders, and no direct current ProjectCo evidence supports Equitix or John Laing Investments Limited.",
+      "attempts": 2,
+      "startedAt": "2026-09-04T15:06:00.000Z",
+      "updatedAt": "2026-09-04T15:15:00.000Z",
+      "completedAt": "2026-09-04T15:15:00.000Z",
+      "exceptionReason": "Direct evidence resolves 90% of the current ProjectCo cap table and confirms cancellation of BBGI's proposed acquisition, but it does not identify the holder, manager, fund, vehicle, or effective date for the residual 10% from Dalkia's original interest. Publishing a complete current ownership record would require inference.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": "177f615e7a542ae0d0a1b8bfb550dc5a6453119bfbbcda67fcee2bfc3acaaed7",
+      "taskSnapshotSha256": "6ba3be4bfc98ad5183fee2bd4ffc686b906a5e4708eb77a96908fbdda41a8e27",
       "artifacts": {
         "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0238-centre-hospitalier-de-l-universite-de-montreal-chum/attempt-1/locked-task-snapshot.json",
-          "sha256": "177f615e7a542ae0d0a1b8bfb550dc5a6453119bfbbcda67fcee2bfc3acaaed7"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0238-centre-hospitalier-de-l-universite-de-montreal-chum/attempt-2/locked-deferred-v1-task-snapshot.json",
+          "sha256": "6ba3be4bfc98ad5183fee2bd4ffc686b906a5e4708eb77a96908fbdda41a8e27"
         },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
         "decision": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0238-centre-hospitalier-de-l-universite-de-montreal-chum/attempt-1/terminal-decision.json",
-          "sha256": "502a987c5a981936c04a499d8faba8834c49b103a13d5a4b694d18a4ed108747"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0238-centre-hospitalier-de-l-universite-de-montreal-chum/attempt-2/terminal-decision-deferred-v1.json",
+          "sha256": "ce17830bb201bc21365c99ab2874f1b87d00061fbd2d7ee213e92d9c1901db64"
         },
         "companySnapshot": null
       },
       "recovery": null,
+      "reAdjudications": [
+        {
+          "sequence": 1,
+          "reopenedAt": "2026-09-04T14:58:40.000Z",
+          "reason": "Fresh deferred re-adjudication completed; reopen in original source order for the next protected five-task release bundle.",
+          "priorCompletedAt": "2026-08-29T13:55:45.000Z",
+          "priorExceptionReason": "Reliable direct evidence resolves only 90% of current ProjectCo equity: Innisfree 55%, John Laing Health Montreal Limited 25%, and AtkinsRéalis 10%. The direct legal holder of the remaining 10% and that ownership period's effective date remain unproven, so a complete current ownership record cannot be published without speculation. The contemplated BBGI transaction was cancelled and creates no ownership period. KKR-managed funds are ultimate owners of John Laing rather than direct ProjectCo shareholders, and no direct current ProjectCo evidence supports Equitix or John Laing Investments Limited.",
+          "priorArtifacts": {
+            "taskSnapshot": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0238-centre-hospitalier-de-l-universite-de-montreal-chum/attempt-1/locked-task-snapshot.json",
+              "sha256": "177f615e7a542ae0d0a1b8bfb550dc5a6453119bfbbcda67fcee2bfc3acaaed7"
+            },
+            "proposal": null,
+            "approval": null,
+            "applyReceipt": null,
+            "decision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0238-centre-hospitalier-de-l-universite-de-montreal-chum/attempt-1/terminal-decision.json",
+              "sha256": "502a987c5a981936c04a499d8faba8834c49b103a13d5a4b694d18a4ed108747"
+            },
+            "companySnapshot": null
+          },
+          "priorManifestSha256": "de4b5217a0ef9db12fc8f0b32430679b1a530a3fe755f648d0c8f671e3d36670",
+          "batchLedger": {
+            "location": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+            "sha256": "28fb98ed8d077bbf730a9cdaa0876d2efe100ce61662b65585802fcdc7d95bb9"
+          },
+          "evidence": {
+            "researchDecision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0238-centre-hospitalier-de-l-universite-de-montreal-chum/attempt-2/research-decision.json",
+              "sha256": "e055c04b7ece7e4aa14f5927029082a5fdcdf87b6757477443450bff46e4e69a"
+            },
+            "chatgptAttestation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0238-centre-hospitalier-de-l-universite-de-montreal-chum/attempt-2/chatgpt-attestation.json",
+              "sha256": "e6728dfc38d08b196b7823af7acddfe6b46d1056a569857d2d4b1d2f35ddcf02"
+            },
+            "prompt": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0238-centre-hospitalier-de-l-universite-de-montreal-chum/attempt-2/chatgpt-research-prompt.md",
+              "sha256": "861af2987339b0f3ff6199047313075c1ff992d8d2b01cba43f0ab38febe434e"
+            },
+            "acceptedResponse": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0238-centre-hospitalier-de-l-universite-de-montreal-chum/attempt-2/chatgpt-accepted-response.txt",
+              "sha256": "adb91f7e7aee6fb665452438f39df1007f9d64ccaabe6d14a521baab0b12b697"
+            },
+            "transcript": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0238-centre-hospitalier-de-l-universite-de-montreal-chum/attempt-2/chatgpt-transcript.txt",
+              "sha256": "9611a552d446560b8f5e6b1aca0052fd942354f26402dfa774ee666fa6968550"
+            },
+            "sourceVerification": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0238-centre-hospitalier-de-l-universite-de-montreal-chum/attempt-2/source-verification.json",
+              "sha256": "dd9911e53548d1cd3805fbb9589e714c41a76791035d194e47b4bb916aa4ebbf"
+            },
+            "responseValidation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0238-centre-hospitalier-de-l-universite-de-montreal-chum/attempt-2/chatgpt-response-validation.json",
+              "sha256": "01b234581d8ee76b9c4849c9ffa08a6c35e8f93bd171746f9c92596e40ffd0df"
+            }
+          }
+        }
+      ],
       "history": [
         {
           "sequence": 1,
@@ -27856,6 +28006,40 @@
             "a1fa32fc2233da578d6a16b61debb0d35912fc379bc7e2e3e2e4a5974cb1b30d"
           ],
           "kind": "BATCH"
+        },
+        {
+          "sequence": 3,
+          "from": "DEFERRED",
+          "to": "PENDING",
+          "at": "2026-09-04T14:58:40.000Z",
+          "reason": "Fresh deferred re-adjudication completed; reopen in original source order for the next protected five-task release bundle.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "01b234581d8ee76b9c4849c9ffa08a6c35e8f93bd171746f9c92596e40ffd0df",
+            "28fb98ed8d077bbf730a9cdaa0876d2efe100ce61662b65585802fcdc7d95bb9",
+            "861af2987339b0f3ff6199047313075c1ff992d8d2b01cba43f0ab38febe434e",
+            "9611a552d446560b8f5e6b1aca0052fd942354f26402dfa774ee666fa6968550",
+            "adb91f7e7aee6fb665452438f39df1007f9d64ccaabe6d14a521baab0b12b697",
+            "dd9911e53548d1cd3805fbb9589e714c41a76791035d194e47b4bb916aa4ebbf",
+            "e055c04b7ece7e4aa14f5927029082a5fdcdf87b6757477443450bff46e4e69a",
+            "e6728dfc38d08b196b7823af7acddfe6b46d1056a569857d2d4b1d2f35ddcf02"
+          ],
+          "kind": "DEFERRED_READJUDICATION"
+        },
+        {
+          "sequence": 4,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-04T15:15:00.000Z",
+          "reason": "Direct evidence resolves 90% of the current ProjectCo cap table and confirms cancellation of BBGI's proposed acquisition, but it does not identify the holder, manager, fund, vehicle, or effective date for the residual 10% from Dalkia's original interest. Publishing a complete current ownership record would require inference.",
+          "taskSnapshotSha256": "6ba3be4bfc98ad5183fee2bd4ffc686b906a5e4708eb77a96908fbdda41a8e27",
+          "evidenceSha256": [
+            "23a9ba7049fc801c2f4c7896d12ad63e6b60aa8b04365202491971738d7c9cea",
+            "5d0eb297d454f8b3181434a58ce4fd830d58b0425adb855fded3f897ef6dcddf",
+            "6ba3be4bfc98ad5183fee2bd4ffc686b906a5e4708eb77a96908fbdda41a8e27",
+            "ce17830bb201bc21365c99ab2874f1b87d00061fbd2d7ee213e92d9c1901db64"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -27868,28 +28052,86 @@
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "d5f5ef47de2da9a7fa2013a3c2be084ad9f4ffa5343c86c01baad98fdc5e4f45",
       "status": "DEFERRED",
-      "attempts": 1,
-      "startedAt": "2026-08-29T14:02:45.000Z",
-      "updatedAt": "2026-08-29T15:05:22.000Z",
-      "completedAt": "2026-08-29T15:05:22.000Z",
-      "exceptionReason": "The display identity and AHV Access Health Vancouver Ltd. ProjectCo boundary are resolved, and the 2018 Jura acquisition is historical fact. Direct evidence does not establish the current ProjectCo shareholder register or current Equitix-, Dalmore- or Royal London-managed percentages. A production ownership correction would therefore require inference and is deferred.",
+      "attempts": 2,
+      "startedAt": "2026-09-04T15:06:00.000Z",
+      "updatedAt": "2026-09-04T15:15:00.000Z",
+      "completedAt": "2026-09-04T15:15:00.000Z",
+      "exceptionReason": "Direct evidence resolves the ProjectCo, historical JLIF/Jura chain, continuing public contract, and latest Royal London acquisition notice, but it does not establish whether AHV was included in Jura's 2019 sell-down or identify the cutoff-current owner, fund, vehicle, stake, and effective-date chain. Any current sponsor attribution would require inference.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": "ac196e2286a92b71ea914da87b74ed169e3dfd6753eee693c0a081a8ed3f02ce",
+      "taskSnapshotSha256": "b0e54c7f9be4fdaee2fa704eeb10d48c1bb43f16b6016a99ed20984d3da46996",
       "artifacts": {
         "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0239-gordon-and-leslie-diamond-health-care-centre/attempt-1/locked-task-snapshot.json",
-          "sha256": "ac196e2286a92b71ea914da87b74ed169e3dfd6753eee693c0a081a8ed3f02ce"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0239-gordon-and-leslie-diamond-health-care-centre/attempt-2/locked-deferred-v1-task-snapshot.json",
+          "sha256": "b0e54c7f9be4fdaee2fa704eeb10d48c1bb43f16b6016a99ed20984d3da46996"
         },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
         "decision": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0239-gordon-and-leslie-diamond-health-care-centre/attempt-1/terminal-decision.json",
-          "sha256": "7f1abc77788c9c70ec0df73ef2f81833d008be3404cd83931d33f2e118777c38"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0239-gordon-and-leslie-diamond-health-care-centre/attempt-2/terminal-decision-deferred-v1.json",
+          "sha256": "59ffbccd05ea2720db5fd70f79d3cb57816fd71ecc1006aa81922c5da9018c72"
         },
         "companySnapshot": null
       },
       "recovery": null,
+      "reAdjudications": [
+        {
+          "sequence": 1,
+          "reopenedAt": "2026-09-04T14:58:50.000Z",
+          "reason": "Fresh deferred re-adjudication completed; reopen in original source order for the next protected five-task release bundle.",
+          "priorCompletedAt": "2026-08-29T15:05:22.000Z",
+          "priorExceptionReason": "The display identity and AHV Access Health Vancouver Ltd. ProjectCo boundary are resolved, and the 2018 Jura acquisition is historical fact. Direct evidence does not establish the current ProjectCo shareholder register or current Equitix-, Dalmore- or Royal London-managed percentages. A production ownership correction would therefore require inference and is deferred.",
+          "priorArtifacts": {
+            "taskSnapshot": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0239-gordon-and-leslie-diamond-health-care-centre/attempt-1/locked-task-snapshot.json",
+              "sha256": "ac196e2286a92b71ea914da87b74ed169e3dfd6753eee693c0a081a8ed3f02ce"
+            },
+            "proposal": null,
+            "approval": null,
+            "applyReceipt": null,
+            "decision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0239-gordon-and-leslie-diamond-health-care-centre/attempt-1/terminal-decision.json",
+              "sha256": "7f1abc77788c9c70ec0df73ef2f81833d008be3404cd83931d33f2e118777c38"
+            },
+            "companySnapshot": null
+          },
+          "priorManifestSha256": "2fc3a43c609f96fb9182c8f8fb23dba80746a86a980849204814a7dee52d5b3c",
+          "batchLedger": {
+            "location": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+            "sha256": "28fb98ed8d077bbf730a9cdaa0876d2efe100ce61662b65585802fcdc7d95bb9"
+          },
+          "evidence": {
+            "researchDecision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0239-gordon-and-leslie-diamond-health-care-centre/attempt-2/research-decision.json",
+              "sha256": "7f8dfed6b11f7db91ecb8f41b1c4ace5656df7b65c3cf96536e49cabccac2e9d"
+            },
+            "chatgptAttestation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0239-gordon-and-leslie-diamond-health-care-centre/attempt-2/chatgpt-attestation.json",
+              "sha256": "b0953e1978a22f4a33a4bd5d2a52aba0e25d36d05d1421f33d09b8ea433e8799"
+            },
+            "prompt": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0239-gordon-and-leslie-diamond-health-care-centre/attempt-2/chatgpt-research-prompt.md",
+              "sha256": "25bde0ab5f2a49d8c414ad8d317f4951d411fa22fce03491a5852cb468dcbe04"
+            },
+            "acceptedResponse": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0239-gordon-and-leslie-diamond-health-care-centre/attempt-2/chatgpt-accepted-response.txt",
+              "sha256": "88d6c74f1806d232e7a83f9de3e67b5f45785f973b66f58568e429ecfbc49dee"
+            },
+            "transcript": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0239-gordon-and-leslie-diamond-health-care-centre/attempt-2/chatgpt-transcript.txt",
+              "sha256": "89be94d2b252f2cb937543b749c66a159946ced91872a8598b6cf858bdd2f14b"
+            },
+            "sourceVerification": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0239-gordon-and-leslie-diamond-health-care-centre/attempt-2/source-verification.json",
+              "sha256": "b4983bbb1d14bd388d18255d35bf428fe743a4b35ab6eb28a22db7dd54618b08"
+            },
+            "responseValidation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0239-gordon-and-leslie-diamond-health-care-centre/attempt-2/chatgpt-response-validation.json",
+              "sha256": "864e357d0c2b769b5d3e6e676e385597ac8ba7b4f6bbe3d662e148630dc1b6c2"
+            }
+          }
+        }
+      ],
       "history": [
         {
           "sequence": 1,
@@ -27913,6 +28155,40 @@
             "7f1abc77788c9c70ec0df73ef2f81833d008be3404cd83931d33f2e118777c38",
             "ac196e2286a92b71ea914da87b74ed169e3dfd6753eee693c0a081a8ed3f02ce",
             "d158dd38db18cdc9d19a6c3ae7d365aa5497d91671f11ba4f86e181ba2d71f14"
+          ],
+          "kind": "BATCH"
+        },
+        {
+          "sequence": 3,
+          "from": "DEFERRED",
+          "to": "PENDING",
+          "at": "2026-09-04T14:58:50.000Z",
+          "reason": "Fresh deferred re-adjudication completed; reopen in original source order for the next protected five-task release bundle.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "25bde0ab5f2a49d8c414ad8d317f4951d411fa22fce03491a5852cb468dcbe04",
+            "28fb98ed8d077bbf730a9cdaa0876d2efe100ce61662b65585802fcdc7d95bb9",
+            "7f8dfed6b11f7db91ecb8f41b1c4ace5656df7b65c3cf96536e49cabccac2e9d",
+            "864e357d0c2b769b5d3e6e676e385597ac8ba7b4f6bbe3d662e148630dc1b6c2",
+            "88d6c74f1806d232e7a83f9de3e67b5f45785f973b66f58568e429ecfbc49dee",
+            "89be94d2b252f2cb937543b749c66a159946ced91872a8598b6cf858bdd2f14b",
+            "b0953e1978a22f4a33a4bd5d2a52aba0e25d36d05d1421f33d09b8ea433e8799",
+            "b4983bbb1d14bd388d18255d35bf428fe743a4b35ab6eb28a22db7dd54618b08"
+          ],
+          "kind": "DEFERRED_READJUDICATION"
+        },
+        {
+          "sequence": 4,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-04T15:15:00.000Z",
+          "reason": "Direct evidence resolves the ProjectCo, historical JLIF/Jura chain, continuing public contract, and latest Royal London acquisition notice, but it does not establish whether AHV was included in Jura's 2019 sell-down or identify the cutoff-current owner, fund, vehicle, stake, and effective-date chain. Any current sponsor attribution would require inference.",
+          "taskSnapshotSha256": "b0e54c7f9be4fdaee2fa704eeb10d48c1bb43f16b6016a99ed20984d3da46996",
+          "evidenceSha256": [
+            "23a9ba7049fc801c2f4c7896d12ad63e6b60aa8b04365202491971738d7c9cea",
+            "59ffbccd05ea2720db5fd70f79d3cb57816fd71ecc1006aa81922c5da9018c72",
+            "5d0eb297d454f8b3181434a58ce4fd830d58b0425adb855fded3f897ef6dcddf",
+            "b0e54c7f9be4fdaee2fa704eeb10d48c1bb43f16b6016a99ed20984d3da46996"
           ],
           "kind": "BATCH"
         }
@@ -28081,28 +28357,86 @@
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "a71aa4658c7a8b8f6bf1274202037d2f791f8cfbf0a8ec6fffb9de7cd315ba03",
       "status": "DEFERRED",
-      "attempts": 1,
-      "startedAt": "2026-08-29T14:02:45.000Z",
-      "updatedAt": "2026-08-29T15:05:22.000Z",
-      "completedAt": "2026-08-29T15:05:22.000Z",
-      "exceptionReason": "Mobilinx Hurontario General Partnership is the ProjectCo and 2019 is the correct initial investment year. Webuild directly reports 53.85% at June 30, 2026, but public evidence does not establish the legal date or mechanism removing JLIL's former 35%, the current Hitachi Rail, Amico and Transdev percentages, or whether the contemplated Equitix/Pantheon JLIL investment legally closed. A current ownership mutation is therefore deferred.",
+      "attempts": 2,
+      "startedAt": "2026-09-04T15:06:00.000Z",
+      "updatedAt": "2026-09-04T15:15:00.000Z",
+      "completedAt": "2026-09-04T15:15:00.000Z",
+      "exceptionReason": "Direct evidence verifies the ProjectCo and Webuild's 53.85% interest at June 30, 2026, but does not identify the owners and vehicles comprising the remaining 46.15%, John Laing's project-level disposition, the mechanism of Webuild's increase, or the current Hitachi, Amico, and Transdev stakes. A complete current cap table cannot be published without inference.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": "500c502124cf56c35411733d58aa3905b95308850dcb75a072be99a888360140",
+      "taskSnapshotSha256": "72a470db1187e0d724ed3448eb37a98541f6e0c584570e48ae3a64b4b8562386",
       "artifacts": {
         "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0242-mobilinx/attempt-1/locked-task-snapshot.json",
-          "sha256": "500c502124cf56c35411733d58aa3905b95308850dcb75a072be99a888360140"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0242-mobilinx/attempt-2/locked-deferred-v1-task-snapshot.json",
+          "sha256": "72a470db1187e0d724ed3448eb37a98541f6e0c584570e48ae3a64b4b8562386"
         },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
         "decision": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0242-mobilinx/attempt-1/terminal-decision.json",
-          "sha256": "aec9a175438f1e0e81dae2bf12359250033e239d1a18413faea42a88cbd95fcd"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0242-mobilinx/attempt-2/terminal-decision-deferred-v1.json",
+          "sha256": "68c4cd3a6484d860e90874d5e31d342903c287b4408ab66fde7cd9ba4b16cb71"
         },
         "companySnapshot": null
       },
       "recovery": null,
+      "reAdjudications": [
+        {
+          "sequence": 1,
+          "reopenedAt": "2026-09-04T14:59:00.000Z",
+          "reason": "Fresh deferred re-adjudication completed; reopen in original source order for the next protected five-task release bundle.",
+          "priorCompletedAt": "2026-08-29T15:05:22.000Z",
+          "priorExceptionReason": "Mobilinx Hurontario General Partnership is the ProjectCo and 2019 is the correct initial investment year. Webuild directly reports 53.85% at June 30, 2026, but public evidence does not establish the legal date or mechanism removing JLIL's former 35%, the current Hitachi Rail, Amico and Transdev percentages, or whether the contemplated Equitix/Pantheon JLIL investment legally closed. A current ownership mutation is therefore deferred.",
+          "priorArtifacts": {
+            "taskSnapshot": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0242-mobilinx/attempt-1/locked-task-snapshot.json",
+              "sha256": "500c502124cf56c35411733d58aa3905b95308850dcb75a072be99a888360140"
+            },
+            "proposal": null,
+            "approval": null,
+            "applyReceipt": null,
+            "decision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0242-mobilinx/attempt-1/terminal-decision.json",
+              "sha256": "aec9a175438f1e0e81dae2bf12359250033e239d1a18413faea42a88cbd95fcd"
+            },
+            "companySnapshot": null
+          },
+          "priorManifestSha256": "b28d9e93b3fe58beb76c503f69e4690f87334fbe9f20db9ae09aab8b50d4161d",
+          "batchLedger": {
+            "location": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+            "sha256": "28fb98ed8d077bbf730a9cdaa0876d2efe100ce61662b65585802fcdc7d95bb9"
+          },
+          "evidence": {
+            "researchDecision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0242-mobilinx/attempt-2/research-decision.json",
+              "sha256": "21e79e8d51032bc50e817ba9caec4be99cdc372b29cef060f27ec9b52cb203b3"
+            },
+            "chatgptAttestation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0242-mobilinx/attempt-2/chatgpt-attestation.json",
+              "sha256": "8a35f85b5a6d7a6e15f17fd2f816fe3b30b6f47c4b8669b16e33b69510c3f21e"
+            },
+            "prompt": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0242-mobilinx/attempt-2/chatgpt-research-prompt.md",
+              "sha256": "9da771793bb3d8d8cf6de4f66f3a45edcd528bcb3a1e84832f78ff6453cf7e82"
+            },
+            "acceptedResponse": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0242-mobilinx/attempt-2/chatgpt-accepted-response.txt",
+              "sha256": "e9f6fd0069e4865571e7a93293b15fe9c31c911b214bf98e4d03e8106a3007c9"
+            },
+            "transcript": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0242-mobilinx/attempt-2/chatgpt-transcript.txt",
+              "sha256": "eacc5caeb5cc990c16a6bc292d98bc5f648ddb1211f9847a92f7d452d4952567"
+            },
+            "sourceVerification": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0242-mobilinx/attempt-2/source-verification.json",
+              "sha256": "9884472301138e4323ab3c0286459d609273e76fce080510238fefa1205a305c"
+            },
+            "responseValidation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0242-mobilinx/attempt-2/chatgpt-response-validation.json",
+              "sha256": "4da6be6c11baedb3e4a498212b8811e3e2efd5626b4bbbb4cf7c5dfe92644832"
+            }
+          }
+        }
+      ],
       "history": [
         {
           "sequence": 1,
@@ -28126,6 +28460,40 @@
             "500c502124cf56c35411733d58aa3905b95308850dcb75a072be99a888360140",
             "aec9a175438f1e0e81dae2bf12359250033e239d1a18413faea42a88cbd95fcd",
             "d158dd38db18cdc9d19a6c3ae7d365aa5497d91671f11ba4f86e181ba2d71f14"
+          ],
+          "kind": "BATCH"
+        },
+        {
+          "sequence": 3,
+          "from": "DEFERRED",
+          "to": "PENDING",
+          "at": "2026-09-04T14:59:00.000Z",
+          "reason": "Fresh deferred re-adjudication completed; reopen in original source order for the next protected five-task release bundle.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "21e79e8d51032bc50e817ba9caec4be99cdc372b29cef060f27ec9b52cb203b3",
+            "28fb98ed8d077bbf730a9cdaa0876d2efe100ce61662b65585802fcdc7d95bb9",
+            "4da6be6c11baedb3e4a498212b8811e3e2efd5626b4bbbb4cf7c5dfe92644832",
+            "8a35f85b5a6d7a6e15f17fd2f816fe3b30b6f47c4b8669b16e33b69510c3f21e",
+            "9884472301138e4323ab3c0286459d609273e76fce080510238fefa1205a305c",
+            "9da771793bb3d8d8cf6de4f66f3a45edcd528bcb3a1e84832f78ff6453cf7e82",
+            "e9f6fd0069e4865571e7a93293b15fe9c31c911b214bf98e4d03e8106a3007c9",
+            "eacc5caeb5cc990c16a6bc292d98bc5f648ddb1211f9847a92f7d452d4952567"
+          ],
+          "kind": "DEFERRED_READJUDICATION"
+        },
+        {
+          "sequence": 4,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-04T15:15:00.000Z",
+          "reason": "Direct evidence verifies the ProjectCo and Webuild's 53.85% interest at June 30, 2026, but does not identify the owners and vehicles comprising the remaining 46.15%, John Laing's project-level disposition, the mechanism of Webuild's increase, or the current Hitachi, Amico, and Transdev stakes. A complete current cap table cannot be published without inference.",
+          "taskSnapshotSha256": "72a470db1187e0d724ed3448eb37a98541f6e0c584570e48ae3a64b4b8562386",
+          "evidenceSha256": [
+            "23a9ba7049fc801c2f4c7896d12ad63e6b60aa8b04365202491971738d7c9cea",
+            "5d0eb297d454f8b3181434a58ce4fd830d58b0425adb855fded3f897ef6dcddf",
+            "68c4cd3a6484d860e90874d5e31d342903c287b4408ab66fde7cd9ba4b16cb71",
+            "72a470db1187e0d724ed3448eb37a98541f6e0c584570e48ae3a64b4b8562386"
           ],
           "kind": "BATCH"
         }
@@ -28448,28 +28816,86 @@
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "40f6a7abf1f918577505fc3c4b768e01161ad7ac3e1e558fa50468f5649c4742",
       "status": "DEFERRED",
-      "attempts": 1,
-      "startedAt": "2026-08-29T15:12:37.000Z",
-      "updatedAt": "2026-08-29T16:08:36.000Z",
-      "completedAt": "2026-08-29T16:08:36.000Z",
-      "exceptionReason": "The 2021 BioNorth acquisition and Fengate/Veolia exit are established, as are Arrow's 40% and Nak'azdli's 40% interests. Direct evidence does not identify the legal holder of the remaining 20% or directly map that interest to a Nexus PMG affiliate. Because a complete current owner roster would require inference, the production correction is deferred pending the missing cap-table evidence.",
+      "attempts": 2,
+      "startedAt": "2026-09-04T15:06:00.000Z",
+      "updatedAt": "2026-09-04T15:15:00.000Z",
+      "completedAt": "2026-09-04T15:15:00.000Z",
+      "exceptionReason": "Direct evidence verifies BioNorth's 2021 acquisition, the current named parties, and separate 40% disclosures for Nak'azdli and Arrow at different partnership levels, but it does not bridge those levels, allocate the residual 20%, or directly map a Nexus PMG holder and stake. The stale Fengate attribution cannot be replaced without an inferred cap table.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": "2f11a36c9a75dabae0ac0f8f2cd0158af0218ab9c8b9092d60dee530cfbfddde",
+      "taskSnapshotSha256": "82364a1af6200597e0e93d7e6bf1ab51830f4a6e7ccc460c22dd41623d771748",
       "artifacts": {
         "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0247-fort-st-james-green-energy-project/attempt-1/locked-task-snapshot.json",
-          "sha256": "2f11a36c9a75dabae0ac0f8f2cd0158af0218ab9c8b9092d60dee530cfbfddde"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0247-fort-st-james-green-energy-project/attempt-2/locked-deferred-v1-task-snapshot.json",
+          "sha256": "82364a1af6200597e0e93d7e6bf1ab51830f4a6e7ccc460c22dd41623d771748"
         },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
         "decision": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0247-fort-st-james-green-energy-project/attempt-1/terminal-decision.json",
-          "sha256": "ed366f6e31d037f60bb6a8ef50d68cf44dcde50ede2768972185677eb6651fb5"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0247-fort-st-james-green-energy-project/attempt-2/terminal-decision-deferred-v1.json",
+          "sha256": "7b52010e2d9bedc914239de7f3c396df04393046e79d85cf50084e9d1a4afd1b"
         },
         "companySnapshot": null
       },
       "recovery": null,
+      "reAdjudications": [
+        {
+          "sequence": 1,
+          "reopenedAt": "2026-09-04T14:59:10.000Z",
+          "reason": "Fresh deferred re-adjudication completed; reopen in original source order for the next protected five-task release bundle.",
+          "priorCompletedAt": "2026-08-29T16:08:36.000Z",
+          "priorExceptionReason": "The 2021 BioNorth acquisition and Fengate/Veolia exit are established, as are Arrow's 40% and Nak'azdli's 40% interests. Direct evidence does not identify the legal holder of the remaining 20% or directly map that interest to a Nexus PMG affiliate. Because a complete current owner roster would require inference, the production correction is deferred pending the missing cap-table evidence.",
+          "priorArtifacts": {
+            "taskSnapshot": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0247-fort-st-james-green-energy-project/attempt-1/locked-task-snapshot.json",
+              "sha256": "2f11a36c9a75dabae0ac0f8f2cd0158af0218ab9c8b9092d60dee530cfbfddde"
+            },
+            "proposal": null,
+            "approval": null,
+            "applyReceipt": null,
+            "decision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0247-fort-st-james-green-energy-project/attempt-1/terminal-decision.json",
+              "sha256": "ed366f6e31d037f60bb6a8ef50d68cf44dcde50ede2768972185677eb6651fb5"
+            },
+            "companySnapshot": null
+          },
+          "priorManifestSha256": "7728b00fe77a8babcb666e05d70f3858ab81a37dfaea9f8b85b62db1af4bc127",
+          "batchLedger": {
+            "location": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+            "sha256": "28fb98ed8d077bbf730a9cdaa0876d2efe100ce61662b65585802fcdc7d95bb9"
+          },
+          "evidence": {
+            "researchDecision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0247-fort-st-james-green-energy-project/attempt-2/research-decision.json",
+              "sha256": "767eaf436097ed66677602713f6293dc5c12fdc9ea33c2b8e7f2392393eafb4d"
+            },
+            "chatgptAttestation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0247-fort-st-james-green-energy-project/attempt-2/chatgpt-attestation.json",
+              "sha256": "8f3e9fbf1103a14c9ec65dd15405e995ef7158561a409f4041dd1a3e177089b1"
+            },
+            "prompt": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0247-fort-st-james-green-energy-project/attempt-2/chatgpt-research-prompt.md",
+              "sha256": "3f8dfb9bf146e27304c26a30f4c7e2d54212c1df5a25be3f54184198378ba97d"
+            },
+            "acceptedResponse": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0247-fort-st-james-green-energy-project/attempt-2/chatgpt-accepted-response.txt",
+              "sha256": "f75df5ceafa72e931a59de9ee34bd011753865a4b38bf601352bdaa07d428ed0"
+            },
+            "transcript": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0247-fort-st-james-green-energy-project/attempt-2/chatgpt-transcript.txt",
+              "sha256": "0b4de6db432cbc07efa75400576dda8d7c6dff26953cef2f13e3eba0c4999521"
+            },
+            "sourceVerification": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0247-fort-st-james-green-energy-project/attempt-2/source-verification.json",
+              "sha256": "7611148ee87b00ee441ec93f6285deca218b6295bbbdfeca6ac1511fcfaa3288"
+            },
+            "responseValidation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0247-fort-st-james-green-energy-project/attempt-2/chatgpt-response-validation.json",
+              "sha256": "71683f2c10fa629df0fb72cb9c6592ec390f8ed00ad2e5229dc8130303831634"
+            }
+          }
+        }
+      ],
       "history": [
         {
           "sequence": 1,
@@ -28493,6 +28919,40 @@
             "cde4f37a1276ad80cce120b0f02f4772ad7d483e5add101ba1089679629b5467",
             "ed366f6e31d037f60bb6a8ef50d68cf44dcde50ede2768972185677eb6651fb5",
             "fcff3e836d88a6278655a0c77152bb1a5b5ef7379621d6b065fd4cb8527bb101"
+          ],
+          "kind": "BATCH"
+        },
+        {
+          "sequence": 3,
+          "from": "DEFERRED",
+          "to": "PENDING",
+          "at": "2026-09-04T14:59:10.000Z",
+          "reason": "Fresh deferred re-adjudication completed; reopen in original source order for the next protected five-task release bundle.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "0b4de6db432cbc07efa75400576dda8d7c6dff26953cef2f13e3eba0c4999521",
+            "28fb98ed8d077bbf730a9cdaa0876d2efe100ce61662b65585802fcdc7d95bb9",
+            "3f8dfb9bf146e27304c26a30f4c7e2d54212c1df5a25be3f54184198378ba97d",
+            "71683f2c10fa629df0fb72cb9c6592ec390f8ed00ad2e5229dc8130303831634",
+            "7611148ee87b00ee441ec93f6285deca218b6295bbbdfeca6ac1511fcfaa3288",
+            "767eaf436097ed66677602713f6293dc5c12fdc9ea33c2b8e7f2392393eafb4d",
+            "8f3e9fbf1103a14c9ec65dd15405e995ef7158561a409f4041dd1a3e177089b1",
+            "f75df5ceafa72e931a59de9ee34bd011753865a4b38bf601352bdaa07d428ed0"
+          ],
+          "kind": "DEFERRED_READJUDICATION"
+        },
+        {
+          "sequence": 4,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-04T15:15:00.000Z",
+          "reason": "Direct evidence verifies BioNorth's 2021 acquisition, the current named parties, and separate 40% disclosures for Nak'azdli and Arrow at different partnership levels, but it does not bridge those levels, allocate the residual 20%, or directly map a Nexus PMG holder and stake. The stale Fengate attribution cannot be replaced without an inferred cap table.",
+          "taskSnapshotSha256": "82364a1af6200597e0e93d7e6bf1ab51830f4a6e7ccc460c22dd41623d771748",
+          "evidenceSha256": [
+            "23a9ba7049fc801c2f4c7896d12ad63e6b60aa8b04365202491971738d7c9cea",
+            "5d0eb297d454f8b3181434a58ce4fd830d58b0425adb855fded3f897ef6dcddf",
+            "7b52010e2d9bedc914239de7f3c396df04393046e79d85cf50084e9d1a4afd1b",
+            "82364a1af6200597e0e93d7e6bf1ab51830f4a6e7ccc460c22dd41623d771748"
           ],
           "kind": "BATCH"
         }
@@ -45542,5 +46002,5 @@
       ]
     }
   ],
-  "manifestSha256": "29f4bdcdf7dc615e1617333fdaebb722812e60ef9463676d276d1af3c78002d9"
+  "manifestSha256": "03f7a82c1769b0f4f1c307acc0c533428f2ff07e0f69c35d17651780b42ffe2b"
 }

@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_ATTESTATION",
+  "runId": "portco-deferred-readjudication-2026-09-04",
+  "taskId": "ledger:0236:abbotsford-regional-hospital-and-cancer-centre:d6878789",
+  "taskIndex": 236,
+  "companyName": "Abbotsford Regional Hospital and Cancer Centre",
+  "conversationUrl": "https://chatgpt.com/c/6a9a7658-fd08-83ea-beaf-63a7d49ebe82",
+  "accountTier": "ChatGPT Pro",
+  "model": "GPT-5.6 Sol",
+  "effort": "Pro",
+  "power": "5 of 5",
+  "uiVerified": true,
+  "uiEvidence": {
+    "accountLabel": "mike berry Pro",
+    "modeMenuModelLabel": "GPT-5.6 Sol",
+    "modeMenuEffortLabel": "Pro",
+    "modeMenuPowerLabel": "Pro, 5 of 5",
+    "capturedBeforeSubmission": true
+  },
+  "initialSubmittedAt": "2026-09-04T07:42:16.515Z",
+  "initialCompletedObservedAt": "2026-09-04T08:43:51Z",
+  "initialReportedGenerationDuration": "PT43M38S",
+  "repairSubmittedAt": "2026-09-04T08:45:00Z",
+  "finalCompletedObservedAt": "2026-09-04T09:14:21Z",
+  "repairReportedGenerationDuration": "PT1M23S",
+  "repairCount": 1,
+  "finalOutcome": "VALID_CORRECTED_CONTRACT_PACKET",
+  "contentHashes": {
+    "promptSha256": "57aa47f0b45cec229eda10cfefc0283a33022e72b8110f1b29d9ad43b1babbba",
+    "initialResponseSha256": "c66e07d41f634ec8fd84accef60dae8ae3d19b5f59db933a4e373c37a8fbc985",
+    "repairPromptSha256": "47ab6395f69b3073a48b8e637ec08d533d1d698eb8ddd1839a8000ba72fbc6bc",
+    "acceptedResponseSha256": "bc3c3c027d15a1bce8315f82374911daeefd5d10f35cef9f62db5766a780ed7f",
+    "transcriptSha256": "4b3ec975117dafb265aeac743e8574635e1976fad68106d2d21b0290ad00eb91"
+  },
+  "captureMethod": "signed-in ChatGPT web application via browser DOM textContent",
+  "captureNote": "The immutable initial prompt was submitted once under visibly attested GPT-5.6 Sol / Pro / 5-of-5 controls. The UI reported a 43m38s initial generation. Browser innerText exposed presentation line breaks within rendered evidence text, so one format-only prompt was submitted in the same conversation; the UI reported a 1m23s repair generation. The accepted-response file preserves the final assistant message's authored BEGIN_JSON through END_REVIEW DOM textContent exactly, with one terminal LF added by the repository file format. The transcript preserves the initial prompt, both assistant responses and the single repair prompt."
+}

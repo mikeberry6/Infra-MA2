@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "runId": "portco-deferred-readjudication-2026-09-04",
+  "taskId": "ledger:0247:fort-st-james-green-energy-project:dbc63243",
+  "taskIndex": 247,
+  "validatedAt": "2026-09-04T14:54:18Z",
+  "conversationUrl": "https://chatgpt.com/c/6a9ad041-3c08-83ea-9d1e-833fa1576923",
+  "requiredTopLevelKeys": [
+    "asOfDate",
+    "requestedCompany",
+    "requestedManagers",
+    "decision",
+    "confidence",
+    "rationale",
+    "identityResolution",
+    "ownershipResolution",
+    "operatingResolution",
+    "acquisitionExitCheck",
+    "milestones",
+    "evidence",
+    "beforeAfterChanges",
+    "excludedOrDuplicateCandidates",
+    "unresolvedQuestions",
+    "recommendedListAction"
+  ],
+  "finalResponse": {
+    "artifact": "chatgpt-accepted-response.txt",
+    "characterCountExcludingRepositoryTerminalLf": 7389,
+    "fencedJsonPresent": false,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "requiredTopLevelKeysExact": true,
+    "decision": "DEFERRED",
+    "confidence": "HIGH",
+    "canonicalAsset": "Fort St. James Green Energy Project / BioNorth Energy",
+    "evidenceCount": 8,
+    "currentOwnerOrSponsorRows": 5,
+    "historicalOwnerRows": 2,
+    "pendingOwnershipTransactionCount": 0,
+    "primaryEvidenceCount": 1,
+    "ownerKeysExact": true,
+    "pendingTransactionKeysExact": true,
+    "evidenceKeysExact": true,
+    "withinCharacterLimit": true,
+    "withinEvidenceLimit": true,
+    "withinMilestoneLimit": true,
+    "freshExactExceptionRecorded": true,
+    "responseSha256": "f75df5ceafa72e931a59de9ee34bd011753865a4b38bf601352bdaa07d428ed0",
+    "result": "PASS"
+  },
+  "independentSourceOverrides": [
+    {
+      "modelStatement": "Arrow Northern Services Inc. is presented as the vehicle for Arrow's 40% and the row is marked active, while its stake field says the cutoff-current stake is unresolved.",
+      "verifiedFinding": "Arrow's image-only FY2024 report directly states that BioNorth Energy Limited Partnership is a 40% Arrow joint venture. BioNorth's FY2026 report separately names Arrow Northern Services Inc. as one of four Holdings-LP parties. No direct source binds the 40% to Arrow Northern Services Inc., bridges the two LP levels or proves the 40% at the 2026 cutoff.",
+      "effectOnDecision": "The member remains terminal-only DEFERRED. Do not publish Arrow Northern Services Inc. as a 40% cutoff-current holder."
+    },
+    {
+      "modelStatement": "Nak'azdli Development Corporation is presented as a current Holdings-LP party with a 40% stake measured at 2024-03-31.",
+      "verifiedFinding": "The FY2024 audited statements directly support the 40% historical measurement at Holdings LP, and BioNorth's FY2026 report independently names Nak'azdli Development Corporation as a current Holdings-LP party. The current report does not restate a percentage or disclose the complete unit schedule.",
+      "effectOnDecision": "No cutoff-current 40% percentage may be published without a current partner schedule; the exact exception remains."
+    },
+    {
+      "modelStatement": "Nexus PMG appears in the current ownership array with isActive true and a current-sponsor role, but with unresolved holder and stake.",
+      "verifiedFinding": "The acquisition release names Nexus PMG as a buyer-side joint-venture partner, but no direct current legal record maps it to a Holdings-LP party, Canadian vehicle or percentage. Sponsor participation is not a legal holder schedule.",
+      "effectOnDecision": "Nexus must remain unresolved and must not be published as a 20% owner by subtraction or transaction-party naming."
+    },
+    {
+      "modelStatement": "Fengate and Dalkia are assigned a 2021-12-02 exit date at acquisition close.",
+      "verifiedFinding": "The 2013 release directly names Fengate and Dalkia as developers and equity investors, and the 2021 release directly proves BioNorth Energy Limited Partnership completed the acquisition. The returned source set does not identify exact seller entities, sale percentages or a closing cap table.",
+      "effectOnDecision": "Treat the old sponsors as historical context and the production attribution as unsupported, but do not publish exact sale mechanics or stakes from the returned evidence."
+    },
+    {
+      "modelStatement": "The response's final review contains browser-generated citation-label text after the substantive decision sentence.",
+      "verifiedFinding": "The exact DOM textContent includes 'Bionorth Energy+3Bionorth Energy+3Nak'azdli Whut'en+3' immediately before END_REVIEW. The JSON payload itself is clean and valid, and the substantive review remains intact.",
+      "effectOnDecision": "The exact response is preserved for lineage. The citation widgets are not application data and must not be copied into a proposal or exception statement."
+    }
+  ],
+  "valid": true,
+  "errors": [],
+  "warnings": [
+    "The response's source workingStatus strings are model-observed labels and are superseded by the independently captured source statuses and hashes.",
+    "The two 40% disclosures occur at different partnership levels and dates; they cannot be combined into a cutoff-current cap table without a direct structural bridge.",
+    "BioNorth's FY2026 four-party roster contains no percentages and does not map 1323394 B.C. Unlimited Liability Company or BioNorth Services Ltd. to Nexus PMG.",
+    "The Arrow source has an image-only text layer and was visually verified from its rendered page 3.",
+    "The corporate-registry notices prove incorporation or name-change facts only, not controllers, directors, parents or beneficial ownership.",
+    "Historical Fengate and Dalkia roles do not identify a fund or permit exact sale mechanics to be inferred."
+  ],
+  "repairsUsed": 0,
+  "independentSourceVerification": "source-verification.json"
+}

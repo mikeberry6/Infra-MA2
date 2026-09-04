@@ -1,0 +1,261 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0239:gordon-and-leslie-diamond-health-care-centre:aed7b7a6",
+  "taskIndex": 239,
+  "companyName": "Gordon and Leslie Diamond Health Care Centre",
+  "generatedAt": "2026-09-04T15:08:55.979Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0239-gordon-and-leslie-diamond-health-care-centre/attempt-2/locked-deferred-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 239,
+    "taskId": "ledger:0239:gordon-and-leslie-diamond-health-care-centre:aed7b7a6",
+    "canonicalKey": "gordon-and-leslie-diamond-health-care-centre|canada",
+    "companyName": "Gordon and Leslie Diamond Health Care Centre",
+    "country": "Canada",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 44,
+    "managers": [
+      "Equitix"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "044-equitix:holding:010:gordon-and-leslie-diamond-health-care-centre"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjey600wgivhek7moqanu"
+    ],
+    "seedKeys": [
+      "gordon and leslie diamond health care centre|Canada"
+    ],
+    "evidenceUrls": [
+      "https://www.infrastructurebc.com/project/gordon-and-leslie-diamond-health-care-centre-aacc/",
+      "https://www.marketscreener.com/quote/stock/JOHN-LAING-INFRASTRUCTURE-6919133/news/John-Laing-Infrastructure-Fund-Ld-Scheme-of-Arrangement-becomes-Effective-27339064/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted census NEEDS_REVIEW for 044-equitix:holding:010:gordon-and-leslie-diamond-health-care-centre: Asset attributed via Jura acquisition; no direct recent confirmation of Equitix ownership post-transfer identified. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Accepted census NEEDS_REVIEW for 044-equitix:holding:010:gordon-and-leslie-diamond-health-care-centre: Asset attributed via Jura acquisition; no direct recent confirmation of Equitix ownership post-transfer identified."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjey600wgivhek7moqanu",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "gordon-and-leslie-diamond-health-care-centre|canada",
+  "targetCompanyImage": {
+    "id": "cmrxpjey600wgivhek7moqanu",
+    "name": "Gordon and Leslie Diamond Health Care Centre",
+    "aliases": [],
+    "sector": "SOCIAL_INFRA",
+    "subsector": "Availability-based outpatient healthcare PPP",
+    "region": "NORTH_AMERICA",
+    "country": "Canada",
+    "countryTags": [
+      "Canada"
+    ],
+    "description": "The Gordon and Leslie Diamond Health Care Centre is an outpatient healthcare PPP facility in Vancouver. It serves patients in the public healthcare system through ambulatory and specialty care services rather than private-pay demand. The project is asset-heavy and availability-based, with long-term public-sector infrastructure characteristics. Public sources describe the facility as approximately 33,900 square metres and cite annual patient volumes of roughly 600,000. Current project-level revenue and equity percentages were not publicly disclosed in the reviewed materials. The asset is associated with Jura Acquisition, the vehicle backed by funds managed by Equitix and Dalmore following the 2018 John Laing Infrastructure Fund take-private.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "British Columbia",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk0lc01upivhegp7o0wsf",
+        "managerName": "Equitix",
+        "organizationName": "Equitix",
+        "fundName": null,
+        "vehicleName": "Jura Acquisition",
+        "stake": null,
+        "investmentYear": 2018,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplnf203xkivhep22rx53h",
+        "date": "2004",
+        "event": "Financial close was achieved for the outpatient centre project.",
+        "category": "FINANCING",
+        "sortDate": "2004-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplnfn03xlivhem1hgjsey",
+        "date": "Oct 2006",
+        "event": "The Gordon and Leslie Diamond Health Care Centre reached completion.",
+        "category": "OTHER",
+        "sortDate": "2006-10-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplng603xmivhe1w3dhklv",
+        "date": "Sep 28, 2018",
+        "event": "Equitix and Dalmore-backed Jura Acquisition acquired the asset as part of the JLIF take-private becoming effective.",
+        "category": "ACQUISITION",
+        "sortDate": "2018-09-28T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqxlp0abdivhe2jk541bo",
+        "label": "Infrastructurebc — Gordon and Leslie Diamond Health Care Centre",
+        "url": "https://www.infrastructurebc.com/project/gordon-and-leslie-diamond-health-care-centre-aacc/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Infrastructurebc operations / asset details",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqxmt0abfivheyuhztq81",
+        "label": "Mednet — Gordon and Leslie Diamond Health Care Centre",
+        "url": "https://mednet.med.ubc.ca/facilities/vancouver-coastal/gordon-leslie-diamond-health-care-centre-dhcc/",
+        "sourceType": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Mednet operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqxna0abgivheyrfut5r3",
+        "label": "Close date source — Equitix — Abbotsford Regional Hospital and Cancer Centre",
+        "url": "https://www.marketscreener.com/quote/stock/JOHN-LAING-INFRASTRUCTURE-6919133/news/John-Laing-Infrastructure-Fund-Ld-Scheme-of-Arrangement-becomes-Effective-27339064/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Equitix closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqxoa0abiivheg297e7ic",
+        "label": "Quoteddata — Gordon and Leslie Diamond Health Care Centre",
+        "url": "https://quoteddata.com/company/john-laing-infrastructure-jlif/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Quoteddata — Gordon and Leslie Diamond Health Care Centre",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Gordon and Leslie Diamond Health Care Centre",
+    "investmentFirm": "Equitix",
+    "sector": "Social Infra",
+    "subsector": "Availability-based outpatient healthcare PPP",
+    "region": "North America",
+    "country": "Canada",
+    "ownershipVehicle": "Jura Acquisition",
+    "description": "The Gordon and Leslie Diamond Health Care Centre is an outpatient healthcare PPP facility in Vancouver. It serves patients in the public healthcare system through ambulatory and specialty care services rather than private-pay demand. The project is asset-heavy and availability-based, with long-term public-sector infrastructure characteristics. Public sources describe the facility as approximately 33,900 square metres and cite annual patient volumes of roughly 600,000. Current project-level revenue and equity percentages were not publicly disclosed in the reviewed materials. The asset is associated with Jura Acquisition, the vehicle backed by funds managed by Equitix and Dalmore following the 2018 John Laing Infrastructure Fund take-private.",
+    "status": "Active",
+    "countryTags": [
+      "Canada"
+    ],
+    "investmentYear": 2018,
+    "headquarters": "British Columbia",
+    "milestones": [
+      {
+        "date": "2004",
+        "event": "Financial close was achieved for the outpatient centre project.",
+        "category": "Financing"
+      },
+      {
+        "date": "Oct 2006",
+        "event": "The Gordon and Leslie Diamond Health Care Centre reached completion.",
+        "category": "Other"
+      },
+      {
+        "date": "Sep 28, 2018",
+        "event": "Equitix and Dalmore-backed Jura Acquisition acquired the asset as part of the JLIF take-private becoming effective.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Infrastructurebc — Gordon and Leslie Diamond Health Care Centre",
+        "url": "https://www.infrastructurebc.com/project/gordon-and-leslie-diamond-health-care-centre-aacc/",
+        "type": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Mednet — Gordon and Leslie Diamond Health Care Centre",
+        "url": "https://mednet.med.ubc.ca/facilities/vancouver-coastal/gordon-leslie-diamond-health-care-centre-dhcc/",
+        "type": "ARTICLE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Close date source — Equitix — Gordon and Leslie Diamond Health Care Centre",
+        "url": "https://www.marketscreener.com/quote/stock/JOHN-LAING-INFRASTRUCTURE-6919133/news/John-Laing-Infrastructure-Fund-Ld-Scheme-of-Arrangement-becomes-Effective-27339064/",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Quoteddata — Gordon and Leslie Diamond Health Care Centre",
+        "url": "https://quoteddata.com/company/john-laing-infrastructure-jlif/",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Equitix",
+        "ownershipVehicle": "Jura Acquisition",
+        "investmentYear": 2018,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpiimy0054ivhe8zpfvx69",
+        "name": "Equitix",
+        "updatedAt": "2026-07-23T16:09:31.354Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0239:gordon-and-leslie-diamond-health-care-centre:aed7b7a6",
+    "taskIndex": 239,
+    "canonicalKey": "gordon-and-leslie-diamond-health-care-centre|canada",
+    "capturedAt": "2026-09-04T15:08:55.979Z",
+    "databaseRevision": "revision:5ea2a444b95d5e4f5f097d114c3c2766d3d54eafb9d4402aa80a9cb517c6ad8d",
+    "databaseTargetFingerprint": "2a1bc8fd92634136a3b174f79ce1a63e280b46d22d49fbf3accbfb1943bd1b34",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "d5f5ef47de2da9a7fa2013a3c2be084ad9f4ffa5343c86c01baad98fdc5e4f45",
+    "productionSnapshotSha256": "0309ecf4da8a2315c67a8b195c0af27d8c22d35274eda1d72f69fa7a7441ec06",
+    "targetCompanySnapshotSha256": "22c2780ca8acb8bcc2129aa9cd65ed44eef0764ec2b4776b06077900f6a8b263",
+    "seedEntrySha256": "93546f215503878d6e6b1abd1cab42b1726967fa0d0e59e249b9d898408ca0c0",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "aa954c710963440ce9e0b26aece39798991b10bc01587d45362b9e8edadac712",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "0fba6ee1c7181bf4b1926ce140b74370b945cf49d8110a5fc29893b7fa73cc5e",
+      "citationsSha256": "72f2ebb473a89d9c1a277f1f0a9346f49accf4ebc7fe1e26a97ebcea81102487",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "92d82206232d9b9147ff6d370425ba4a10e19c7d33f621f882628d07313363cb",
+    "stateSha256": "ef5e1ea41fce161543d16f04c5d3b0591d2253c291b54f302c372955220ab3ce",
+    "taskSnapshotSha256": "b0e54c7f9be4fdaee2fa704eeb10d48c1bb43f16b6016a99ed20984d3da46996"
+  },
+  "contextSha256": "06ea5a60a2a2c1572550cc44a3ec694c655201ee8e0065cfbf134fe0bfa70bf3"
+}

@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "runId": "portco-deferred-readjudication-2026-09-04",
+  "taskId": "ledger:0238:centre-hospitalier-de-l-universite-de-montreal-chum:c4574e88",
+  "taskIndex": 238,
+  "companyName": "Centre Hospitalier de l'Université de Montréal (CHUM)",
+  "verifiedAt": "2026-09-04T10:56:28Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "label": "Québec registry mirror",
+      "url": "https://b2bhint.com/en/company/ca-qc/collectif-sante-montreal-sec--3367183004",
+      "finalUrl": "https://b2bhint.com/en/company/ca-qc/collectif-sante-montreal-sec--3367183004",
+      "status": "OPEN_AND_TEXT_VERIFIED_VIA_BROWSER_DOM",
+      "httpStatus": null,
+      "mediaType": "text/plain; browser DOM capture",
+      "bytes": 6518,
+      "contentSha256": "51069e427d9e5c639ed9a907ecfd325af2f287c4b0889218b7ce4a915d64482f",
+      "note": "The page was freshly reopened in the browser after a raw unauthenticated fetch returned a 403 challenge. Its rendered text identifies Collectif Santé Montréal S.E.C., company number 3367183004, registered status from 2011-03-06, Québec jurisdiction, limited-partnership form, Health Montréal Collective Limited Partnership as an alternate name, and the 2026 annual declaration filed 2026-03-16. It explicitly says no shareholder or beneficial-ownership data is on file. This mirror is identity context only, not ownership evidence."
+    },
+    {
+      "label": "CHUM Annex 3",
+      "url": "https://www.chumontreal.qc.ca/sites/default/files/inline-files/ANNEXE_3.pdf",
+      "finalUrl": "https://www.chumontreal.qc.ca/sites/default/files/inline-files/ANNEXE_3.pdf",
+      "status": "OPEN_AND_VISUALLY_VERIFIED",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 169204,
+      "contentSha256": "ec0bc48d37ded6235ada520ac6c4a4b23a5e015c0d45bf2ea7f4be810673eb39",
+      "note": "All four scanned pages were freshly rendered and inspected. The direct contract annex identifies Société en Commandite Santé Montréal Collectif / Health Montréal Collective Limited Partnership, registration number 3367183004, and the original 1,000-unit structure: Innisfree 300 units, OHL 250, Explore 250 and Dalkia 200. This is historical financial-close evidence, not a current register."
+    },
+    {
+      "label": "Innisfree health portfolio",
+      "url": "https://www.innisfree.co.uk/portfolio/health/",
+      "finalUrl": "https://www.innisfree.co.uk/portfolio/health/",
+      "status": "OPEN_AND_TEXT_VERIFIED",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 35813,
+      "contentSha256": "ebdb9daf7a0fcf74bcb5cf0ad10330f0c295a91bf4e8cb5ed7c24d8ef40e08be",
+      "note": "Innisfree's current health-portfolio table says the listed projects are owned across Innisfree-managed funds and reports CHUM in Canada as operating, with June 2011 financial close, 2021 construction completion, £1,578 million project capex and 55% Innisfree Funds equity. It does not disclose the cutoff-current split among direct Innisfree ProjectCo holding entities or name a fund."
+    },
+    {
+      "label": "Investment Canada notice index",
+      "url": "https://ised-isde.canada.ca/site/loi-investissement-canada/fr/recherche/indexe-decisions-avis-investissement/i?page=5&wbdisable=false",
+      "finalUrl": "https://ised-isde.canada.ca/site/loi-investissement-canada/fr/recherche/indexe-decisions-avis-investissement/i?page=5&wbdisable=false",
+      "status": "OPEN_AND_TEXT_VERIFIED",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 244510,
+      "contentSha256": "f5a15a892b711c826baf19b66edd023af35da84ac897af9d9e95857429d19b77",
+      "note": "The direct federal notice index records a 2018-02 acquisition notice with Innisfree Canada ISF 2 Limited as investor and Explore Health Montreal Inc., Explore Health Montreal (Holding) Inc., Explore Health Montreal (Partner) Inc. and Health Montreal Collective LP as the Canadian business. It does not state the acquired percentage or exact effective day."
+    },
+    {
+      "label": "AtkinsRéalis 2025 audited statements",
+      "url": "https://www.atkinsrealis.com/~/media/Files/A/atkinsrealis/investor-briefcase/en/2025/e_financial_statement_annuel_2025-en.pdf",
+      "finalUrl": "https://www.atkinsrealis.com/~/media/Files/A/atkinsrealis/investor-briefcase/en/2025/e_financial_statement_annuel_2025-en.pdf",
+      "status": "OPEN_AND_TEXT_VERIFIED",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 968836,
+      "contentSha256": "70c7d0b4b238382730762802de02833a88667dc7abe7485f939fbcb7b2c6b3b9",
+      "isApplicationPrimary": true,
+      "note": "The direct audited filing says AtkinsRéalis acquired a 10% ownership interest in HMC L.P. through a business combination completed 2024-03-04 and still includes the investment at 2025-12-31. It supports only 10% of the original Dalkia/Veolia-side 20%, thereby exposing rather than resolving the residual 10% gap."
+    },
+    {
+      "label": "OHLA completion notice",
+      "url": "https://www.ohla-group.com/en/inside-information-on-corporate-transactions-mergers-acquisitions-and-others/",
+      "finalUrl": "https://www.ohla-group.com/en/inside-information-on-corporate-transactions-mergers-acquisitions-and-others/",
+      "status": "OPEN_AND_TEXT_VERIFIED",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 195245,
+      "contentSha256": "515db238b05009a1d44250322bc61aeeaa4380f39ce2d3c6a0b8aebca588757f",
+      "note": "OHLA's direct inside-information notice dated 2024-11-28 says it completed the sale of 25% of the ProjectCo share capital and its subordinated loan to John Laing Health Montreal Limited for CAD 66,022,755. It supports a closed exit by OHLA and a closed 25% John Laing entry."
+    },
+    {
+      "label": "John Laing CHUM portfolio",
+      "url": "https://www.laing.com/portfolio/centre-hospitalier-de-luniversite-de-montreal-chum-canada/",
+      "finalUrl": "https://www.laing.com/portfolio/centre-hospitalier-de-luniversite-de-montreal-chum-canada/",
+      "status": "OPEN_AND_TEXT_VERIFIED",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 165569,
+      "contentSha256": "ae719d47859029eeeefcf2bb2c29e1e14402e3dac736a9be949a03012cbae3ad",
+      "note": "John Laing's current portfolio page reports a 25% ownership interest, says it completed the 25% CHUM PPP equity acquisition in 2024 and describes the long-term concession. It does not identify an infrastructure fund or support Equitix, John Laing Investments Limited or direct KKR ProjectCo ownership."
+    },
+    {
+      "label": "DBRS ownership update",
+      "url": "https://dbrs.morningstar.com/research/444069/morningstar-dbrs-upgrades-health-montreal-collective-limited-partnershipcollectif-sante-montreal-sec-to-bbb-high-changes-trends-to-stable-from-negative",
+      "finalUrl": "https://dbrs.morningstar.com/research/444069/morningstar-dbrs-upgrades-health-montreal-collective-limited-partnershipcollectif-sante-montreal-sec-to-bbb-high-changes-trends-to-stable-from-negative",
+      "status": "OPEN_AND_TEXT_VERIFIED_VIA_BROWSER_DOM",
+      "httpStatus": 200,
+      "mediaType": "text/plain; browser DOM capture",
+      "bytes": 16177,
+      "contentSha256": "09b576c0ec74b9863d753226de206367ef6667b95862343fa2707175517ca5fa",
+      "note": "The rendered current article identifies the ProjectCo, says AtkinsRéalis entered in March 2024 through affiliate 15586925 Canada Inc. by purchasing all shares from Veolia Energy International SA and Veolia Energie Canada Inc., and says John Laing entered in November 2024 through John Laing Health Montréal Inc. and John Laing Health Montréal Holdings Inc. by buying OHL's shares. It names affiliates of Innisfree, John Laing and AtkinsRéalis as the current owner groups but gives no percentages or residual-holder allocation."
+    },
+    {
+      "label": "BBGI cancellation notice",
+      "url": "https://www.investegate.co.uk/announcement/rns/bbgi-global-infrastructure-s-a-npv-di---bbgi/update-on-acquisition/7387668",
+      "finalUrl": "https://www.investegate.co.uk/announcement/rns/bbgi-global-infrastructure-s-a-npv-di---bbgi/update-on-acquisition/7387668",
+      "status": "OPEN_AND_TEXT_VERIFIED",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 56072,
+      "contentSha256": "67b8770def6da74b3cdd5cd7aa61c316b47416132407267ea91b99db1d30de55",
+      "note": "The accessible RNS copy says BBGI's conditional agreement to acquire a 25% CHUM interest would not be completed because conditions were not fulfilled and that BBGI and OHL formally ended the purchase process. It creates no ownership period."
+    }
+  ],
+  "checks": {
+    "allReturnedEvidenceUrlsChecked": true,
+    "allUrlsHttps": true,
+    "canonicalProjectCoIdentityVerified": true,
+    "originalFinancialCloseCapTableVerified": true,
+    "currentInnisfreeAggregateStakeVerified": true,
+    "johnLaingTwentyFivePercentEntryVerified": true,
+    "atkinsRealisTenPercentEntryVerified": true,
+    "atkinsRealisAffiliateVerified": true,
+    "bbgiCancellationVerified": true,
+    "currentOwnerGroupsNamed": true,
+    "currentOwnershipReconcilesToOneHundredPercent": false,
+    "residualTenPercentHolderFound": false,
+    "directEquitixProjectCoEvidenceFound": false,
+    "directJohnLaingInvestmentsLimitedProjectCoEvidenceFound": false,
+    "directKkrProjectCoEvidenceFound": false,
+    "signedPendingOwnershipTransactionFound": false,
+    "exactlyOneApplicationPrimary": true
+  },
+  "modelHealthOverrides": [
+    "The raw registry-mirror fetch returned a 403 challenge, but the page was independently reopened in the browser and its identity and filing facts were verified from rendered text. It supplies no ownership data.",
+    "The scanned CHUM Annex 3 was rendered page by page and visually verified. It proves the original 30% Innisfree, 25% OHL, 25% Explore and 20% Dalkia unit structure only; it is not a current register.",
+    "The current Innisfree page reports 55% aggregate Innisfree Funds equity but does not identify the direct holding-entity split or fund allocation.",
+    "The Investment Canada notice proves the February 2018 Innisfree Canada ISF 2 Limited acquisition involving the Explore group and HMC L.P. but omits the exact percentage and effective day.",
+    "The audited AtkinsRéalis filing proves a 10% interest acquired 2024-03-04. Morningstar DBRS separately names 15586925 Canada Inc. as the AtkinsRéalis affiliate, correcting the model's initial claim that the exact affiliate was undisclosed.",
+    "OHLA and John Laing directly support the closed 25% sale and continuing 25% ownership. Those sources do not support Equitix, John Laing Investments Limited or KKR as direct ProjectCo owners.",
+    "The current owner groups and 90% of percentages are supported, but no returned source or fresh direct search identifies who holds the other 10% from Dalkia's original 20% or its effective ownership date. A 100% cap table cannot be published without inference."
+  ],
+  "conclusion": "Fresh direct evidence verifies the ProjectCo identity, original cap table, Innisfree's current 55% aggregate equity, John Laing's current 25%, AtkinsRéalis' current 10% through 15586925 Canada Inc., and the cancellation of BBGI's proposal. It still does not identify the direct holder, manager, fund, vehicle or effective date for the residual 10% from Dalkia's original 20%. Keep the task deferred with that exact current-cap-table exception and do not publish unsupported Equitix, John Laing Investments Limited or direct KKR ownership."
+}

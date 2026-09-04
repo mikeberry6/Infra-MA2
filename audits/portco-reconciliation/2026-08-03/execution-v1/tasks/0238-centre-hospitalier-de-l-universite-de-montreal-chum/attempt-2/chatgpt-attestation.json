@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_ATTESTATION",
+  "runId": "portco-deferred-readjudication-2026-09-04",
+  "taskId": "ledger:0238:centre-hospitalier-de-l-universite-de-montreal-chum:c4574e88",
+  "taskIndex": 238,
+  "companyName": "Centre Hospitalier de l'Université de Montréal (CHUM)",
+  "conversationUrl": "https://chatgpt.com/c/6a9a8f55-0f5c-83e9-a9eb-6792864d6c90",
+  "accountTier": "ChatGPT Pro",
+  "model": "GPT-5.6 Sol",
+  "effort": "Pro",
+  "power": "5 of 5",
+  "uiVerified": true,
+  "uiEvidence": {
+    "accountLabel": "mike berry Pro",
+    "modeMenuModelLabel": "GPT-5.6 Sol",
+    "modeMenuEffortLabel": "Pro",
+    "modeMenuPowerLabel": "Pro, 5 of 5",
+    "capturedBeforeSubmission": true
+  },
+  "initialSubmittedAt": "2026-09-04T09:29:00.621Z",
+  "initialCompletedObservedAt": "2026-09-04T10:45:36.404Z",
+  "initialReportedGenerationDuration": "PT74M11S",
+  "repairSubmittedAt": "2026-09-04T10:53:13.260Z",
+  "repairCompletedObservedAt": "2026-09-04T11:00:42Z",
+  "repairReportedGenerationDuration": null,
+  "repairCount": 1,
+  "finalOutcome": "VALID_INITIAL_CONTRACT_PACKET_WITH_INDEPENDENT_SOURCE_OVERRIDE_REPAIR_REJECTED_CHARACTER_LIMIT",
+  "contentHashes": {
+    "promptSha256": "861af2987339b0f3ff6199047313075c1ff992d8d2b01cba43f0ab38febe434e",
+    "acceptedResponseSha256": "adb91f7e7aee6fb665452438f39df1007f9d64ccaabe6d14a521baab0b12b697",
+    "repairPromptSha256": "a5ebdd139070ce97266875bff32ec29777a0d77c2a8a5f177c958593bc6abd55",
+    "repairResponseSha256": "3cca05d13ce68288bc5ae9a6459cea9498ad23433ada3c9ab2027c9e77fddbc1",
+    "transcriptSha256": "9611a552d446560b8f5e6b1aca0052fd942354f26402dfa774ee666fa6968550"
+  },
+  "captureMethod": "signed-in ChatGPT web application via browser DOM textContent",
+  "captureNote": "The immutable initial prompt was submitted once under visibly attested GPT-5.6 Sol / Pro / 5-of-5 controls, and the UI reported a 74m11s generation. The initial response met the exact output contract but incorrectly called the AtkinsRéalis affiliate unresolved. Freshly reopening its cited Morningstar DBRS source exposed 15586925 Canada Inc.; one source-consistency repair was submitted in the same conversation. The repair corrected that fact but exceeded the 7,500-character contract, so it was preserved as a rejected repair rather than silently accepted. The contract-valid initial response remains the accepted-response artifact, and the independent source-verification and research-decision artifacts authoritatively record the corrected affiliate and the unchanged residual-10% deferral. The transcript preserves the exact prompt, initial response, repair prompt and repair response."
+}

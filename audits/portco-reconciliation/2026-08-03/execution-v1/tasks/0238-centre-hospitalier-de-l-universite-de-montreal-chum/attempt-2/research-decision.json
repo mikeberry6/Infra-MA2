@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_DEFERRED_READJUDICATION_RESEARCH_DECISION",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-deferred-readjudication-2026-09-04",
+  "generatedAt": "2026-09-04T11:00:42.000Z",
+  "asOfDate": "2026-09-04",
+  "taskId": "ledger:0238:centre-hospitalier-de-l-universite-de-montreal-chum:c4574e88",
+  "taskIndex": 238,
+  "companyName": "Centre Hospitalier de l'Université de Montréal (CHUM)",
+  "linkedTaskIdsCovered": [],
+  "decision": "DEFERRED",
+  "confidence": "HIGH_DECISION_AND_IDENTITY_LOW_COMPLETE_OWNERSHIP",
+  "researchOnly": true,
+  "summary": "Keep the existing CHUM hospital PPP record deferred and do not publish a replacement cap table. Fresh direct evidence verifies Collectif Santé Montréal S.E.C. / Health Montréal Collective Limited Partnership as the ProjectCo, the original 2011 cap table, Innisfree's current 55% aggregate equity across managed funds, John Laing's current 25%, and AtkinsRéalis' current 10% through 15586925 Canada Inc. It also confirms that BBGI's proposed 25% acquisition was cancelled. No direct source identifies the holder, manager, fund, vehicle or effective date for the residual 10% from Dalkia's original 20%, so ownership cannot reconcile to 100%. Equitix, John Laing Investments Limited and direct KKR ProjectCo attribution remain unsupported.",
+  "resolvedFormerBlockers": [
+    "The direct CHUM contract annex identifies the Québec limited-partnership ProjectCo and verifies its original 1,000-unit structure: Innisfree 300 units, OHL 250, Explore 250 and Dalkia 200.",
+    "The current Innisfree health-portfolio table reports that Innisfree-managed funds hold 55% of CHUM equity.",
+    "The direct federal notice index records a February 2018 acquisition by Innisfree Canada ISF 2 Limited involving the Explore Health Montreal group and Health Montreal Collective LP.",
+    "OHLA's direct completion notice and John Laing's current portfolio page verify the 25% sale to John Laing Health Montreal Limited on 2024-11-28 and the continuing 25% John Laing interest.",
+    "AtkinsRéalis' audited 2025 financial statements verify a 10% HMC L.P. interest acquired on 2024-03-04, and Morningstar DBRS identifies 15586925 Canada Inc. as the entering AtkinsRéalis affiliate.",
+    "The accessible BBGI RNS copy confirms that the contemplated 25% acquisition did not complete and the purchase process formally ended."
+  ],
+  "identityResolution": {
+    "canonicalDisplayName": "Centre Hospitalier de l'Université de Montréal (CHUM)",
+    "legalIdentity": "Collectif Santé Montréal S.E.C. / Health Montréal Collective Limited Partnership (Québec number 3367183004)",
+    "productionCompanyId": "cmrxpjex200weivheo3agp7l3",
+    "productionAction": "KEEP_EXISTING_RECORD_WITH_EXACT_EXCEPTION",
+    "mergeTarget": null,
+    "boundary": "The canonical private investment asset is the availability-based hospital PPP ProjectCo. The public CHUM hospital, contractors, service providers, lenders and public authorities are counterparties or operators rather than evidenced equity owners or duplicate PortCos."
+  },
+  "ownershipResolution": {
+    "confirmedCurrentOwners": [
+      {
+        "manager": "Innisfree",
+        "organization": "Innisfree-managed CHUM holdings",
+        "fund": "NOT_PUBLICLY_DISCLOSED",
+        "vehicle": "Legacy Innisfree/Explore vehicles; February 2018 buyer Innisfree Canada ISF 2 Limited",
+        "stake": "55% aggregate Innisfree Funds equity",
+        "effectiveDate": "2011 financial close plus February 2018 Explore-group acquisition; exact 2018 day undisclosed",
+        "status": "CURRENT_AGGREGATE_DIRECT_HOLDER_SPLIT_UNDISCLOSED"
+      },
+      {
+        "manager": "John Laing",
+        "organization": "John Laing Health Montreal Limited / disclosed Montréal affiliates",
+        "fund": "NOT_PUBLICLY_DISCLOSED",
+        "vehicle": "John Laing Health Montreal Limited",
+        "stake": "25%",
+        "effectiveDate": "2024-11-28",
+        "status": "CURRENT_CLOSED"
+      },
+      {
+        "manager": "AtkinsRéalis",
+        "organization": "AtkinsRéalis Group Inc.",
+        "fund": "CORPORATE_BALANCE_SHEET",
+        "vehicle": "15586925 Canada Inc.",
+        "stake": "10%",
+        "effectiveDate": "2024-03-04",
+        "status": "CURRENT_CLOSED"
+      }
+    ],
+    "confirmedStake": "90%",
+    "residualStake": "10%",
+    "blockingOwnershipGap": "No direct source identifies the cutoff-current holder, manager, fund, vehicle or effective date for the other 10% from Dalkia's original 20%.",
+    "unsupportedCandidateTreatment": "Do not publish Equitix, John Laing Investments Limited, BBGI or KKR as direct ProjectCo owners. OHLA is a former 25% owner that exited on 2024-11-28."
+  },
+  "transactionResolution": {
+    "state": "NO_SIGNED_PENDING_OWNERSHIP_TRANSACTION_IDENTIFIED",
+    "cancelledTransaction": {
+      "buyer": "BBGI Global Infrastructure S.A.",
+      "seller": "OHL/OHLA",
+      "stake": "25%",
+      "announcementDate": "2021-10-20",
+      "state": "CANCELLED_2022-10-21_NO_OWNERSHIP_PERIOD"
+    },
+    "latestVerifiedContext": "The John Laing and AtkinsRéalis entries closed in 2024. No later disclosed ProjectCo equity transfer, recapitalization, exit, concession change or signed pending transaction was found; negative search is not continuity proof for the residual 10%."
+  },
+  "freshException": {
+    "status": "EXACT_FACT_UNAVAILABLE",
+    "missingFact": "The cutoff-current direct and indirect holder, manager, fund, vehicle and effective ownership date for the residual 10% from Dalkia's original 20%, needed to reconcile the ProjectCo cap table to 100%.",
+    "searchedEvidence": [
+      "The direct CHUM partnership annex and original unit schedule",
+      "The current Innisfree health-portfolio table and February 2018 Investment Canada notice",
+      "AtkinsRéalis' audited 2025 financial statements and the Morningstar DBRS ownership-change article",
+      "OHLA's direct 2024 completion notice and John Laing's current CHUM portfolio page",
+      "The BBGI cancellation RNS and searches for later transfers, recapitalizations, refinancings, exits, write-offs, concession changes and pending transactions",
+      "Current ProjectCo, Québec registry, manager, audited filing, rating-agency, lender and transaction-party sources for a partner register or complete ownership schedule"
+    ],
+    "requiredToResolve": "A direct current partner register, Québec corporate extract with ownership, audited named-investment schedule, financing ownership schedule, transfer record, transaction exhibit or explicit ProjectCo/partner disclosure that identifies the residual holder and its effective date and reconciles all ownership to 100%."
+  },
+  "primaryCitation": {
+    "label": "AtkinsRéalis 2025 audited statements",
+    "url": "https://www.atkinsrealis.com/~/media/Files/A/atkinsrealis/investor-briefcase/en/2025/e_financial_statement_annuel_2025-en.pdf",
+    "purpose": "Direct audited evidence for the 10% HMC L.P. interest acquired 2024-03-04, which confirms only half of Dalkia's original 20% and exposes the unresolved residual 10%",
+    "contentSha256": "70c7d0b4b238382730762802de02833a88667dc7abe7485f939fbcb7b2c6b3b9"
+  },
+  "applicationRequirements": [
+    "Keep this member terminal-only as DEFERRED; do not generate a database or seed after-image until the current ProjectCo ownership reconciles to 100%.",
+    "Do not retain or substitute Equitix, John Laing Investments Limited, BBGI or KKR as direct ProjectCo owners from platform-level, historical, proposed or cancelled transactions.",
+    "Do not infer the residual 10% holder from the original Dalkia entities, Veolia's sale of only 10%, current owner-group naming, manager continuity, portfolio silence or absence of another announced transfer.",
+    "Preserve the supported Innisfree 55%, John Laing 25% and AtkinsRéalis 10% through 15586925 Canada Inc. as research evidence only until a complete current cap table can be published safely.",
+    "Use exactly one application primary citation bound to the AtkinsRéalis audited filing if a future resolved proposal is generated."
+  ],
+  "applicationBlocked": true,
+  "databaseMutationCandidate": false,
+  "seedMutationCandidate": false,
+  "terminalOutcomeCandidate": "DEFERRED",
+  "dealDatabaseMutation": false,
+  "lineage": {
+    "conversationUrl": "https://chatgpt.com/c/6a9a8f55-0f5c-83e9-a9eb-6792864d6c90",
+    "prompt": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0238-centre-hospitalier-de-l-universite-de-montreal-chum/attempt-2/chatgpt-research-prompt.md",
+      "sha256": "861af2987339b0f3ff6199047313075c1ff992d8d2b01cba43f0ab38febe434e"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0238-centre-hospitalier-de-l-universite-de-montreal-chum/attempt-2/chatgpt-accepted-response.txt",
+      "sha256": "adb91f7e7aee6fb665452438f39df1007f9d64ccaabe6d14a521baab0b12b697"
+    },
+    "repairPrompt": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0238-centre-hospitalier-de-l-universite-de-montreal-chum/attempt-2/chatgpt-repair-prompt.txt",
+      "sha256": "a5ebdd139070ce97266875bff32ec29777a0d77c2a8a5f177c958593bc6abd55"
+    },
+    "rejectedRepairResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0238-centre-hospitalier-de-l-universite-de-montreal-chum/attempt-2/chatgpt-repair-response.txt",
+      "sha256": "3cca05d13ce68288bc5ae9a6459cea9498ad23433ada3c9ab2027c9e77fddbc1",
+      "reason": "EXCEEDED_7500_CHARACTER_LIMIT"
+    },
+    "transcript": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0238-centre-hospitalier-de-l-universite-de-montreal-chum/attempt-2/chatgpt-transcript.txt",
+      "sha256": "9611a552d446560b8f5e6b1aca0052fd942354f26402dfa774ee666fa6968550"
+    },
+    "attestation": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0238-centre-hospitalier-de-l-universite-de-montreal-chum/attempt-2/chatgpt-attestation.json",
+      "sha256": "e6728dfc38d08b196b7823af7acddfe6b46d1056a569857d2d4b1d2f35ddcf02"
+    },
+    "responseValidation": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0238-centre-hospitalier-de-l-universite-de-montreal-chum/attempt-2/chatgpt-response-validation.json",
+      "sha256": "01b234581d8ee76b9c4849c9ffa08a6c35e8f93bd171746f9c92596e40ffd0df"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0238-centre-hospitalier-de-l-universite-de-montreal-chum/attempt-2/source-verification.json",
+      "sha256": "dd9911e53548d1cd3805fbb9589e714c41a76791035d194e47b4bb916aa4ebbf"
+    }
+  }
+}

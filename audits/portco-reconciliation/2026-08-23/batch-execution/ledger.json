@@ -3,7 +3,7 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-04T07:22:45Z",
+  "updatedAt": "2026-09-04T15:15:10.000Z",
   "activeBatchId": null,
   "batches": [
     {
@@ -9034,7 +9034,69 @@
           "reason": "Final receipt, database after-image, seed parity, exact protected release, attribution repair, canonical API, and rendered scorecard checks all passed; source tasks 111, 178, 187, 213, and 220 were finalized durably."
         }
       ]
+    },
+    {
+      "batchId": "batch-deferred-0236-0247-v1",
+      "state": "COMPLETED",
+      "taskIds": [
+        "ledger:0236:abbotsford-regional-hospital-and-cancer-centre:d6878789",
+        "ledger:0238:centre-hospitalier-de-l-universite-de-montreal-chum:c4574e88",
+        "ledger:0239:gordon-and-leslie-diamond-health-care-centre:aed7b7a6",
+        "ledger:0242:mobilinx:7d20cccb",
+        "ledger:0247:fort-st-james-green-energy-project:dbc63243"
+      ],
+      "taskIndexes": [
+        236,
+        238,
+        239,
+        242,
+        247
+      ],
+      "createdAt": "2026-09-04T15:06:00.000Z",
+      "updatedAt": "2026-09-04T15:15:10.000Z",
+      "completedAt": "2026-09-04T15:15:10.000Z",
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-deferred-0236-0247-v1/batch-manifest.json",
+        "sha256": "23a9ba7049fc801c2f4c7896d12ad63e6b60aa8b04365202491971738d7c9cea"
+      },
+      "releaseSha": null,
+      "receipt": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-deferred-0236-0247-v1/terminal-batch-receipt.json",
+        "sha256": "5d0eb297d454f8b3181434a58ce4fd830d58b0425adb855fded3f897ef6dcddf"
+      },
+      "reason": "All five members were freshly re-adjudicated to exact evidenced deferrals; no database, seed, or release action was required.",
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-09-04T15:06:00.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-09-04T15:14:00.000Z",
+          "evidenceSha256": [
+            "23a9ba7049fc801c2f4c7896d12ad63e6b60aa8b04365202491971738d7c9cea"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "COMPLETED",
+          "at": "2026-09-04T15:15:10.000Z",
+          "evidenceSha256": [
+            "23a9ba7049fc801c2f4c7896d12ad63e6b60aa8b04365202491971738d7c9cea",
+            "5d0eb297d454f8b3181434a58ce4fd830d58b0425adb855fded3f897ef6dcddf"
+          ],
+          "reason": "All five members were freshly re-adjudicated to exact evidenced deferrals; no database, seed, or release action was required."
+        }
+      ]
     }
   ],
-  "ledgerSha256": "28fb98ed8d077bbf730a9cdaa0876d2efe100ce61662b65585802fcdc7d95bb9"
+  "ledgerSha256": "d3cf7429a751cbad8a53b2a45352ca264f166ac6167aa520b5a1ac7e584b65f0"
 }
