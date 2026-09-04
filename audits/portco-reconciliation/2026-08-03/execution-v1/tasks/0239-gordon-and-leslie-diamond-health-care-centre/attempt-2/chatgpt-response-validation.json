@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "runId": "portco-deferred-readjudication-2026-09-04",
+  "taskId": "ledger:0239:gordon-and-leslie-diamond-health-care-centre:aed7b7a6",
+  "taskIndex": 239,
+  "validatedAt": "2026-09-04T12:20:24Z",
+  "conversationUrl": "https://chatgpt.com/c/6a9aa6c0-08d0-83e9-b313-3e5803ecdd11",
+  "requiredTopLevelKeys": [
+    "asOfDate",
+    "requestedCompany",
+    "requestedManagers",
+    "decision",
+    "confidence",
+    "rationale",
+    "identityResolution",
+    "ownershipResolution",
+    "operatingResolution",
+    "acquisitionExitCheck",
+    "milestones",
+    "evidence",
+    "beforeAfterChanges",
+    "excludedOrDuplicateCandidates",
+    "unresolvedQuestions",
+    "recommendedListAction"
+  ],
+  "finalResponse": {
+    "artifact": "chatgpt-accepted-response.txt",
+    "characterCountExcludingRepositoryTerminalLf": 7289,
+    "fencedJsonPresent": false,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "decision": "DEFERRED",
+    "confidence": 0.97,
+    "canonicalProjectCo": "AHV Access Health Vancouver Ltd.",
+    "evidenceCount": 8,
+    "currentOwnerCount": 0,
+    "pendingOwnershipTransactionCount": 0,
+    "primaryEvidenceCount": 1,
+    "ownerKeysExact": true,
+    "pendingTransactionKeysExact": true,
+    "evidenceKeysExact": true,
+    "withinCharacterLimit": true,
+    "withinEvidenceLimit": true,
+    "withinMilestoneLimit": true,
+    "freshExactExceptionRecorded": true,
+    "responseSha256": "88d6c74f1806d232e7a83f9de3e67b5f45785f973b66f58568e429ecfbc49dee",
+    "result": "PASS"
+  },
+  "independentSourceOverrides": [
+    {
+      "modelStatement": "The KED Jura sell-down and ISED Case 00037453 sources were labelled INDEX_ONLY or unavailable.",
+      "verifiedFinding": "Both direct URLs returned HTTP 200 during independent verification and their current response bytes were hashed.",
+      "effectOnDecision": "No change. KED supplies no AHV asset schedule, and the ISED notice supplies no ProjectCo shareholder, fund, vehicle or stake."
+    },
+    {
+      "modelStatement": "JLIF reported AHV ownership/voting at 2017-12-31.",
+      "verifiedFinding": "The direct 2017 report labels the project Vancouver General Hospital and reports a 100.0% equity and subordinated-loan-stock holding. It is historical investment reporting, not a current corporate register or voting schedule.",
+      "effectOnDecision": "No change. It remains valid historical 100% project exposure but cannot establish the cutoff-current AHV shareholder chain."
+    },
+    {
+      "modelStatement": "The VCH financial statements were available only as INDEX_ONLY;403.",
+      "verifiedFinding": "The direct URL was blocked to a raw command-line fetch by CloudFront, but the signed-in browser loaded and downloaded the 39-page audited PDF. Its current bytes were hashed, and the AHV counterparty and August 2036 maintenance term were independently verified from extracted text.",
+      "effectOnDecision": "No change. This proves current PPP counterparty continuity, not equity ownership."
+    }
+  ],
+  "valid": true,
+  "errors": [],
+  "warnings": [
+    "The response's source workingStatus strings are model-observed health labels and are superseded by the independently captured source statuses and hashes.",
+    "The 2017 JLIF 100% figure is bounded to historical project equity and subordinated-loan-stock reporting rather than treated as a legal share-register or voting extract.",
+    "ISED Case 00037453 is a direct current government notice and the single application primary, but it does not itself prove the AHV shareholder chain or percentage."
+  ],
+  "repairsUsed": 0,
+  "independentSourceVerification": "source-verification.json"
+}

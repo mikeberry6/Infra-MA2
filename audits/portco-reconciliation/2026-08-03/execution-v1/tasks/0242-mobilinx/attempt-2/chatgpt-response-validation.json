@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "runId": "portco-deferred-readjudication-2026-09-04",
+  "taskId": "ledger:0242:mobilinx:7d20cccb",
+  "taskIndex": 242,
+  "validatedAt": "2026-09-04T13:56:55Z",
+  "conversationUrl": "https://chatgpt.com/c/6a9aba53-4984-83ea-a018-03ddc3d502e2",
+  "requiredTopLevelKeys": [
+    "asOfDate",
+    "requestedCompany",
+    "requestedManagers",
+    "decision",
+    "confidence",
+    "rationale",
+    "identityResolution",
+    "ownershipResolution",
+    "operatingResolution",
+    "acquisitionExitCheck",
+    "milestones",
+    "evidence",
+    "beforeAfterChanges",
+    "excludedOrDuplicateCandidates",
+    "unresolvedQuestions",
+    "recommendedListAction"
+  ],
+  "finalResponse": {
+    "artifact": "chatgpt-accepted-response.txt",
+    "characterCountExcludingRepositoryTerminalLf": 7349,
+    "fencedJsonPresent": false,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "decision": "DEFERRED",
+    "confidence": "HIGH",
+    "canonicalProjectCo": "Mobilinx Hurontario General Partnership",
+    "evidenceCount": 8,
+    "currentOwnerCount": 2,
+    "pendingOwnershipTransactionCount": 0,
+    "primaryEvidenceCount": 1,
+    "ownerKeysExact": true,
+    "pendingTransactionKeysExact": true,
+    "evidenceKeysExact": true,
+    "withinCharacterLimit": true,
+    "withinEvidenceLimit": true,
+    "withinMilestoneLimit": true,
+    "freshExactExceptionRecorded": true,
+    "responseSha256": "e9f6fd0069e4865571e7a93293b15fe9c31c911b214bf98e4d03e8106a3007c9",
+    "result": "PASS"
+  },
+  "independentSourceOverrides": [
+    {
+      "modelStatement": "The S&P page was marked DIRECT and reopened without noting its raw-fetch behavior.",
+      "verifiedFinding": "The direct page returned a 403 challenge to a raw request but loaded completely in the browser. Rendered text directly states the 2025-02-10 100% owner schedule.",
+      "effectOnDecision": "No change. The historical complete cap table is verified, but it predates Webuild's 2026 increase."
+    },
+    {
+      "modelStatement": "The Debevoise notice was marked DIRECT and reopened and described as a proposed Equitix-managed investment with no close proof.",
+      "verifiedFinding": "The raw request returned a 403 challenge, while the rendered direct page loaded and retained proposed and following-completion wording. It names no Pantheon fund or vehicle and no Mobilinx-specific asset schedule.",
+      "effectOnDecision": "No change. It remains upstream prospective evidence rather than Mobilinx-level closing proof."
+    },
+    {
+      "modelStatement": "The Metrolinx update was marked DIRECT and reopened and used for the 2026 contract-reset context.",
+      "verifiedFinding": "The current 16-page PDF loaded in the browser and its bytes were hashed, but it has an image-only text layer under independent extraction.",
+      "effectOnDecision": "No change. It supplies no cap table, and no ownership conclusion depends on the contract-reset wording."
+    },
+    {
+      "modelStatement": "Equitix Ether Bidco was notified on 2021-10-06 and ceased on 2026-03-27 at JLIL level.",
+      "verifiedFinding": "The current Companies House page confirms those dates and shows Aqueduct Newco 2 Limited as JLIL's one active person with significant control.",
+      "effectOnDecision": "No change. This is upstream JLIL-level control evidence and does not identify a Mobilinx partner or stake."
+    }
+  ],
+  "valid": true,
+  "errors": [],
+  "warnings": [
+    "The response's source workingStatus strings are model-observed labels and are superseded by the independently captured source statuses and hashes.",
+    "The two Webuild entities are the only cutoff-current Mobilinx owners and vehicles directly verified; the remaining 46.15% must not be allocated by inference.",
+    "The GLEIF record verifies the ProjectCo's legal identity and active status but not its partners or ownership percentages.",
+    "Upstream John Laing, KKR, JLIL, Equitix and Pantheon evidence cannot be treated as a Mobilinx-level transfer or current owner schedule."
+  ],
+  "repairsUsed": 0,
+  "independentSourceVerification": "source-verification.json"
+}

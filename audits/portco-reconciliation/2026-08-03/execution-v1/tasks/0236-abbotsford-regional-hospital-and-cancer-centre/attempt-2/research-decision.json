@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_DEFERRED_READJUDICATION_RESEARCH_DECISION",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-deferred-readjudication-2026-09-04",
+  "generatedAt": "2026-09-04T09:14:21.000Z",
+  "asOfDate": "2026-09-04",
+  "taskId": "ledger:0236:abbotsford-regional-hospital-and-cancer-centre:d6878789",
+  "taskIndex": 236,
+  "companyName": "Abbotsford Regional Hospital and Cancer Centre",
+  "linkedTaskIdsCovered": [],
+  "decision": "DEFERRED",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "summary": "Keep the existing hospital PPP record deferred and do not publish a replacement current owner. Fresh direct evidence verifies AHA Access Health Abbotsford Ltd. as the ProjectCo, AHA Holdings Ltd. as the immediate historical holdco, JLIF's historical 100% interest, the 2018 Jura take-private, an unscheduled 2019 sell-down involving 36 of 67 Jura assets, and a 2025 Royal London/AHA Investment Canada Act notification. No direct source identifies whether AHA was in the sell-down or supplies the cutoff-current shareholder, fund, vehicle, stake and effective-date chain. CVC DIF remains unsupported, but substituting Equitix, Dalmore or Royal London as a current ProjectCo owner would be inference.",
+  "resolvedFormerBlockers": [
+    "The direct British Columbia registry notice maps incorporation number 0700113 from AHV Finance Ltd. to AHA Access Health Abbotsford Ltd., and the 2017 JLIF results identify AHA Access Health Abbotsford Limited and AHA Holdings Abbotsford Limited in the historical 100%-owned chain.",
+    "The second direct British Columbia registry notice maps incorporation number 0894388 to AHA Holdings Ltd. following the 2010 amalgamation.",
+    "The accessible issuer-release copy confirms that Jura Acquisition Limited's acquisition of JLIF became effective on 2018-09-28 and that the consortium was jointly led by Dalmore-managed and Equitix-managed funds.",
+    "The 2019 article directly reports a sale of interests in 36 of Jura's 67 assets and an increase in Canadian exposure, but it contains no asset schedule and therefore cannot resolve AHA's inclusion or resulting owners.",
+    "The current ISED case page directly names Royal London Asset Management Holdings Limited as investor and AHA Access Health Abbotsford Ltd. as investee in a 2025 Notification - acquisition, while Royal London's direct release identifies the acquired businesses as Dalmore Capital and Resolis."
+  ],
+  "identityResolution": {
+    "canonicalDisplayName": "Abbotsford Regional Hospital and Cancer Centre",
+    "legalIdentity": "AHA Access Health Abbotsford Ltd. (British Columbia incorporation number 0700113)",
+    "immediateHistoricalHoldco": "AHA Holdings Ltd. (British Columbia incorporation number 0894388; JLIF reporting name AHA Holdings Abbotsford Limited)",
+    "productionCompanyId": "cmrxpjeux00waivhepxan0122",
+    "productionAction": "KEEP_EXISTING_RECORD_WITH_EXACT_EXCEPTION",
+    "mergeTarget": null,
+    "boundary": "The canonical private investment asset is the hospital PPP ProjectCo. Fraser Health, BC Cancer, the Province and facilities or service contractors are public-side operators, authorities or counterparties rather than evidenced equity owners or duplicate PortCos."
+  },
+  "ownershipResolution": {
+    "historicalOwner": {
+      "manager": "John Laing Capital Management Limited",
+      "fund": "John Laing Infrastructure Fund Limited",
+      "vehicle": "AHA Holdings Abbotsford Limited",
+      "stake": "100% AHA equity and subordinated loan stock at 2017-12-31",
+      "status": "HISTORICAL"
+    },
+    "historicalParentTransaction": {
+      "buyer": "Jura Acquisition Limited",
+      "sponsorManagers": "Dalmore Capital Limited and Equitix Investment Management Limited",
+      "stake": "100% of JLIF shares collectively; sponsor split and AHA-level allocation undisclosed",
+      "closingDate": "2018-09-28",
+      "status": "PARENT_LEVEL_HISTORICAL"
+    },
+    "cutoffCurrentOwners": [],
+    "blockingOwnershipGap": "No direct source identifies whether AHA was among the 36 Jura assets sold in 2019 or provides the cutoff-current direct and indirect ProjectCo shareholders, funds, vehicles, percentages and effective dates.",
+    "cvcDifTreatment": "No direct source supports CVC DIF as an AHA equity owner. The unsupported production attribution cannot be replaced with another current manager without a disclosed current ownership chain.",
+    "royalLondonTreatment": "The ISED notice proves a notified acquisition event naming Royal London and AHA, and Royal London's release proves the Dalmore/Resolis manager transaction. Neither source supplies an AHA cap table or supports publishing Royal London as a direct or indirect AHA equity owner."
+  },
+  "transactionResolution": {
+    "state": "NO_PENDING_AHA_OWNERSHIP_TRANSACTION_IDENTIFIED",
+    "pendingParentOwnershipTransaction": null,
+    "latestVerifiedContext": "Royal London's 2025 acquisition of Dalmore Capital and Resolis is complete at the manager and servicing-business level; its effect on AHA's equity chain is undisclosed."
+  },
+  "freshException": {
+    "status": "EXACT_FACT_UNAVAILABLE",
+    "missingFact": "The cutoff-current AHA Access Health Abbotsford Ltd. and AHA Holdings Ltd. direct and indirect shareholder chain, including whether AHA was included in Jura's 2019 sell-down and every current owner, manager, fund, vehicle, percentage and effective date.",
+    "searchedEvidence": [
+      "The current ISED Case 00037453 page and Investment Canada Act section 28 context",
+      "Royal London's direct 2025 Dalmore Capital and Resolis completion release",
+      "JLIF's direct 2017 results and subsidiary schedule",
+      "The 2018 Jura/JLIF scheme-effective issuer release",
+      "British Columbia corporate-registry notices for ProjectCo and holdco names and incorporation numbers",
+      "The 2019 Jura sell-down article and searches for asset schedules, purchaser schedules, audited accounts, financing documents, transaction exhibits and Canadian AHA-specific transfers",
+      "Current direct manager, government, registry, PPP, lender and counterparty searches for AHA shareholders, funds, stakes, transfers, refinancings, recapitalizations, distributions, write-offs, concession changes and pending transactions"
+    ],
+    "requiredToResolve": "A direct current corporate extract, share register, audited named-investment schedule, Jura purchaser or asset schedule, financing ownership schedule, transaction exhibit, regulator filing or explicit counterparty disclosure that identifies AHA's shareholder chain and effective ownership dates."
+  },
+  "primaryCitation": {
+    "label": "ISED Case 00037453",
+    "url": "https://ised-isde.canada.ca/site/investment-canada-act/en/node/239984",
+    "purpose": "Direct current federal record identifying the latest verified acquisition notification that names Royal London as investor and AHA Access Health Abbotsford Ltd. as investee while exposing the unresolved equity-chain gap",
+    "contentSha256": "fdd18b96deb0c1e38c6c3433277d878fb8bf70b8b5ec53297d5b90358a33d1fd"
+  },
+  "applicationRequirements": [
+    "Keep this member terminal-only as DEFERRED; do not generate a database or seed after-image until the current AHA shareholder chain is directly evidenced.",
+    "Do not publish CVC DIF as an AHA owner and do not substitute Equitix, Dalmore or Royal London as a current ProjectCo owner from manager continuity, the 2018 parent acquisition or the 2025 manager transaction.",
+    "Do not infer AHA's inclusion or exclusion from the 2019 sell-down from the aggregate asset count, increase in Canadian exposure, portfolio omission or silence.",
+    "Retain the historical JLIF and Jura facts as research evidence only unless a later resolved proposal can represent them without implying a cutoff-current owner.",
+    "Use exactly one application primary citation bound to the live ISED case page if a future resolved proposal is generated."
+  ],
+  "applicationBlocked": true,
+  "databaseMutationCandidate": false,
+  "seedMutationCandidate": false,
+  "terminalOutcomeCandidate": "DEFERRED",
+  "dealDatabaseMutation": false,
+  "lineage": {
+    "conversationUrl": "https://chatgpt.com/c/6a9a7658-fd08-83ea-beaf-63a7d49ebe82",
+    "prompt": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0236-abbotsford-regional-hospital-and-cancer-centre/attempt-2/chatgpt-research-prompt.md",
+      "sha256": "57aa47f0b45cec229eda10cfefc0283a33022e72b8110f1b29d9ad43b1babbba"
+    },
+    "initialResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0236-abbotsford-regional-hospital-and-cancer-centre/attempt-2/chatgpt-initial-response.txt",
+      "sha256": "c66e07d41f634ec8fd84accef60dae8ae3d19b5f59db933a4e373c37a8fbc985"
+    },
+    "repairPrompt": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0236-abbotsford-regional-hospital-and-cancer-centre/attempt-2/chatgpt-repair-prompt.txt",
+      "sha256": "47ab6395f69b3073a48b8e637ec08d533d1d698eb8ddd1839a8000ba72fbc6bc"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0236-abbotsford-regional-hospital-and-cancer-centre/attempt-2/chatgpt-accepted-response.txt",
+      "sha256": "bc3c3c027d15a1bce8315f82374911daeefd5d10f35cef9f62db5766a780ed7f"
+    },
+    "attestation": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0236-abbotsford-regional-hospital-and-cancer-centre/attempt-2/chatgpt-attestation.json",
+      "sha256": "7af971eb5051334f8e243b6be9c39289b63c530b261236e3eeec1e7aeb2e4221"
+    },
+    "responseValidation": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0236-abbotsford-regional-hospital-and-cancer-centre/attempt-2/chatgpt-response-validation.json",
+      "sha256": "d00d7595243f940d36727e10571e73da9f53eaa53c1134861c494cb876cb4bcb"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0236-abbotsford-regional-hospital-and-cancer-centre/attempt-2/source-verification.json",
+      "sha256": "7a0a6e90ac25dfb1d0ee91a66b2e503d13b6dbb92cb955d3b98efb27012243b7"
+    }
+  }
+}

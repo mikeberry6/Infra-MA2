@@ -1,0 +1,260 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0238:centre-hospitalier-de-l-universite-de-montreal-chum:c4574e88",
+  "taskIndex": 238,
+  "companyName": "Centre Hospitalier de l'Université de Montréal (CHUM)",
+  "generatedAt": "2026-09-04T15:08:52.725Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0238-centre-hospitalier-de-l-universite-de-montreal-chum/attempt-2/locked-deferred-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 238,
+    "taskId": "ledger:0238:centre-hospitalier-de-l-universite-de-montreal-chum:c4574e88",
+    "canonicalKey": "centre-hospitalier-de-l-universite-de-montreal-chum|canada",
+    "companyName": "Centre Hospitalier de l'Université de Montréal (CHUM)",
+    "country": "Canada",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 44,
+    "managers": [
+      "Equitix"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "044-equitix:repo-only:001:centre-hospitalier-de-l-universite-de-montreal-chum"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjex200weivheo3agp7l3"
+    ],
+    "seedKeys": [
+      "centre hospitalier de l'université de montréal (chum)|Canada"
+    ],
+    "evidenceUrls": [
+      "https://www.laing.com/insights/john-laing-acquires-stake-in-centre-hospitalier-de-luniversite-de-montreal-ppp-project/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Equitix OUT_OF_SCOPE: Post-2021 John Laing acquisition not attributable to Equitix-linked JLIL portfolio.",
+    "unresolvedQuestions": [
+      "Confirm whether the manager ownership, the company itself, or only this census scope is out of scope before proposing any change."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjex200weivheo3agp7l3",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "centre-hospitalier-de-l-universite-de-montreal-chum|canada",
+  "targetCompanyImage": {
+    "id": "cmrxpjex200weivheo3agp7l3",
+    "name": "Centre Hospitalier de l'Université de Montréal (CHUM)",
+    "aliases": [],
+    "sector": "SOCIAL_INFRA",
+    "subsector": "Availability-based hospital PPP",
+    "region": "NORTH_AMERICA",
+    "country": "Canada",
+    "countryTags": [
+      "Canada"
+    ],
+    "description": "CHUM is a major academic hospital PPP asset in Montréal serving Québec's public healthcare system. Its users are patients, clinicians, and research-linked healthcare programs rather than commercial end markets. The project is asset-heavy and availability-based, consistent with large hospital PPP concession structures. Public sources describe the facility as having 772 beds, 39 operating rooms, and 415 examination rooms. The reviewed materials did not disclose project-level revenue or the economic split within the John Laing Investments Limited holding structure. John Laing agreed in June 2024 and completed on November 28, 2024 the acquisition of a 25% stake in the project, and the investment is associated in the master workbook with John Laing Investments Limited, which is backed by Equitix and KKR.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Québec",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk0k701univhe8h36tbng",
+        "managerName": "Equitix",
+        "organizationName": "Equitix",
+        "fundName": null,
+        "vehicleName": "John Laing Investments Limited",
+        "stake": null,
+        "investmentYear": 2024,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpln7y03xdivhedi5nangt",
+        "date": "2011",
+        "event": "Construction commenced on the CHUM hospital redevelopment under the PPP structure.",
+        "category": "EXPANSION",
+        "sortDate": "2011-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpln8i03xeivhenvan6phj",
+        "date": "2017",
+        "event": "The new CHUM hospital entered service in Montréal.",
+        "category": "EXPANSION",
+        "sortDate": "2017-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpln9403xfivhe2o88c55l",
+        "date": "Nov 28, 2024",
+        "event": "John Laing (under the Equitix/KKR JV) completed its acquisition of a 25% stake in the CHUM PPP project from OHLA.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-11-28T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqxah0aawivhe2qpq1ic8",
+        "label": "Laing — Centre Hospitalier de l'Université de Montréal (CHUM)",
+        "url": "https://www.laing.com/portfolio/centre-hospitalier-de-luniversite-de-montreal-chum-canada/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Laing operations / asset details",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqxbh0aayivheg6282l39",
+        "label": "Announcement date source — Equitix — Centre Hospitalier de l'Université de Montréal (CHUM)",
+        "url": "https://www.laing.com/insights/john-laing-acquires-stake-in-centre-hospitalier-de-luniversite-de-montreal-ppp-project/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Equitix transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqxcg0ab0ivhe04fv91eb",
+        "label": "Close date source — Equitix — Centre Hospitalier de l'Université de Montréal (CHUM)",
+        "url": "https://mcmillan.ca/deals-cases/mcmillan-advises-john-laing-group-on-strategic-acquisition-in-chum-p3-project/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Equitix closing confirmation",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqxcx0ab1ivheeh6t4e29",
+        "label": "Ownership structure source — Equitix — John Laing Investments Limited",
+        "url": "https://www.debevoise.com/news/2021/05/debevoise-advises-pantheon-in-its-role-in",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Ownership structure source — Equitix — John Laing Investments Limited",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Centre Hospitalier de l'Université de Montréal (CHUM)",
+    "investmentFirm": "Equitix",
+    "sector": "Social Infra",
+    "subsector": "Availability-based hospital PPP",
+    "region": "North America",
+    "country": "Canada",
+    "ownershipVehicle": "John Laing Investments Limited",
+    "description": "CHUM is a major academic hospital PPP asset in Montréal serving Québec's public healthcare system. Its users are patients, clinicians, and research-linked healthcare programs rather than commercial end markets. The project is asset-heavy and availability-based, consistent with large hospital PPP concession structures. Public sources describe the facility as having 772 beds, 39 operating rooms, and 415 examination rooms. The reviewed materials did not disclose project-level revenue or the economic split within the John Laing Investments Limited holding structure. John Laing agreed in June 2024 and completed on November 28, 2024 the acquisition of a 25% stake in the project, and the investment is associated in the master workbook with John Laing Investments Limited, which is backed by Equitix and KKR.",
+    "status": "Active",
+    "countryTags": [
+      "Canada"
+    ],
+    "investmentYear": 2024,
+    "headquarters": "Québec",
+    "milestones": [
+      {
+        "date": "2011",
+        "event": "Construction commenced on the CHUM hospital redevelopment under the PPP structure.",
+        "category": "Expansion"
+      },
+      {
+        "date": "2017",
+        "event": "The new CHUM hospital entered service in Montréal.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Nov 28, 2024",
+        "event": "John Laing (under the Equitix/KKR JV) completed its acquisition of a 25% stake in the CHUM PPP project from OHLA.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Laing — Centre Hospitalier de l'Université de Montréal (CHUM)",
+        "url": "https://www.laing.com/portfolio/centre-hospitalier-de-luniversite-de-montreal-chum-canada/",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Announcement date source — Equitix — Centre Hospitalier de l'Université de Montréal (CHUM)",
+        "url": "https://www.laing.com/insights/john-laing-acquires-stake-in-centre-hospitalier-de-luniversite-de-montreal-ppp-project/",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Close date source — Equitix — Centre Hospitalier de l'Université de Montréal (CHUM)",
+        "url": "https://mcmillan.ca/deals-cases/mcmillan-advises-john-laing-group-on-strategic-acquisition-in-chum-p3-project/",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Ownership structure source — Equitix — John Laing Investments Limited",
+        "url": "https://www.debevoise.com/news/2021/05/debevoise-advises-pantheon-in-its-role-in",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Equitix",
+        "ownershipVehicle": "John Laing Investments Limited",
+        "investmentYear": 2024,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpiimy0054ivhe8zpfvx69",
+        "name": "Equitix",
+        "updatedAt": "2026-07-23T16:09:31.354Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0238:centre-hospitalier-de-l-universite-de-montreal-chum:c4574e88",
+    "taskIndex": 238,
+    "canonicalKey": "centre-hospitalier-de-l-universite-de-montreal-chum|canada",
+    "capturedAt": "2026-09-04T15:08:52.725Z",
+    "databaseRevision": "revision:b46b783b15ce4ff2083c4b210ac33119fe93f50b187918fefa9de16c0f55fbdd",
+    "databaseTargetFingerprint": "2a1bc8fd92634136a3b174f79ce1a63e280b46d22d49fbf3accbfb1943bd1b34",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "3ff5ebe198e2943b13c37a40aca94f11902a3cb04866d664e49f2fc0aab5f1c5",
+    "productionSnapshotSha256": "39aec46e7ad108f7f15d90637bac29cc9a72e3f6b6a5abcbc42695cc5a104b2b",
+    "targetCompanySnapshotSha256": "441bea1ac3c7eb15f5ee0c8fed20c7cbbc4f2d15e8d0995cdf87a6e3df695ff9",
+    "seedEntrySha256": "ce21b2df39d5e80d65aa0678e11b48eb96fdb3150175733b7c39bdb95366a6b3",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "700576308ec761e8b37a168036519738733992a1e9681959bb2645996b9bd702",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "0fba6ee1c7181bf4b1926ce140b74370b945cf49d8110a5fc29893b7fa73cc5e",
+      "citationsSha256": "af28c8580c599ed9e291c218dde57a9a5671c9f9980b5ae07bda5d5791275ab7",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "596b2e7473a8558c2f470aafeeae0b5f2f00b8743a20a5a06505e9b720f91025",
+    "stateSha256": "1b50cd508f7a2f7a7e588c80cf12d5357d06d25a9222f69350f69651af403197",
+    "taskSnapshotSha256": "6ba3be4bfc98ad5183fee2bd4ffc686b906a5e4708eb77a96908fbdda41a8e27"
+  },
+  "contextSha256": "199b9440a5389e024ecb86a2f41b476d9af517de8ad2c37de60f3e4da07602c0"
+}

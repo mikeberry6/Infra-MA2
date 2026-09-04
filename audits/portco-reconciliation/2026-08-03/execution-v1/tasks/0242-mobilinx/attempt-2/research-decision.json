@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_DEFERRED_READJUDICATION_RESEARCH_DECISION",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-deferred-readjudication-2026-09-04",
+  "generatedAt": "2026-09-04T13:56:55.000Z",
+  "asOfDate": "2026-09-04",
+  "taskId": "ledger:0242:mobilinx:7d20cccb",
+  "taskIndex": 242,
+  "companyName": "Mobilinx",
+  "linkedTaskIdsCovered": [],
+  "decision": "DEFERRED",
+  "confidence": "HIGH_DECISION_IDENTITY_AND_WEBUILD_STAKE_LOW_COMPLETE_CURRENT_OWNERSHIP",
+  "researchOnly": true,
+  "summary": "Keep the existing Mobilinx record deferred and do not publish a complete current cap table. Fresh direct evidence verifies Mobilinx Hurontario General Partnership as the active Ontario ProjectCo, the original 2019 consortium, the 2025-02-10 100% owner schedule, Webuild's 35% at 2025-06-30, and its 53.85% at 2026-06-30 through Webuild Mobilinx Hurontario GP Inc. and Astaldi Mobilinx Hurontario GP Inc. No direct Mobilinx-specific source identifies the owners and vehicles comprising the remaining 46.15%, John Laing's project-level disposition, the mechanism of Webuild's increase, or current Hitachi, Amico and Transdev stakes. KKR and JLIL control events remain upstream, and the 2026 contract reset is not equity evidence.",
+  "resolvedFormerBlockers": [
+    "The direct GLEIF record verifies MOBILINX HURONTARIO GENERAL PARTNERSHIP, LEI 549300GRK8IQRBU5BE60, as an active Ontario entity.",
+    "Infrastructure Ontario's direct award page verifies the ProjectCo identity, 2019 award and separation of applicant, construction and O&M roles.",
+    "The rendered direct S&P 2025 rating page supplies the last located complete 100% ProjectCo schedule: John Laing 35%, Webuild 21%, Astaldi 14%, Hitachi Rail 20%, Amico 5% and Transdev 5%.",
+    "Webuild's direct 2025 interim report verifies its 35% ProjectCo stake at 2025-06-30, split 21% and 14% through named Webuild and Astaldi GP vehicles.",
+    "Webuild's direct 2026 interim report verifies its aggregate 53.85% ProjectCo stake at 2026-06-30, split 32.31% and 21.54% through the same named GP vehicles.",
+    "The FCA issuer notice verifies KKR's John Laing take-private became effective on 2021-09-22, while the current Companies House page verifies JLIL-level PSC history through 2026-03-27.",
+    "The rendered Debevoise notice verifies Pantheon's proposed bespoke Equitix-managed investment and prospective 50% JLIL shareholding language, without naming a Pantheon fund or proving Mobilinx inclusion."
+  ],
+  "identityResolution": {
+    "canonicalDisplayName": "Mobilinx",
+    "legalIdentity": "Mobilinx Hurontario General Partnership (LEI 549300GRK8IQRBU5BE60)",
+    "productionCompanyId": "cmrxpjf0y00wlivhe0e7k8wcy",
+    "productionAction": "KEEP_EXISTING_RECORD_WITH_EXACT_EXCEPTION",
+    "mergeTarget": null,
+    "boundary": "The canonical private investment asset is the Ontario general partnership ProjectCo. Metrolinx and Infrastructure Ontario are public authorities; Mobilinx Transit, Mobilinx Hurontario Services Ltd., the design-build joint venture, constructors, operators, maintainers, lenders and advisers are separate operational, contracting or financing parties rather than evidenced ProjectCo equity owners."
+  },
+  "ownershipResolution": {
+    "original2019CapTable": [
+      {
+        "owner": "John Laing Investment Ltd.",
+        "stake": "35%"
+      },
+      {
+        "owner": "Salini-Impregilo S.p.A. / Webuild S.p.A.",
+        "stake": "21%"
+      },
+      {
+        "owner": "Astaldi Canada Enterprise Inc.",
+        "stake": "14%"
+      },
+      {
+        "owner": "Hitachi Rail STS S.p.A.",
+        "stake": "20%"
+      },
+      {
+        "owner": "Amico Project Holdings Ltd.",
+        "stake": "5%"
+      },
+      {
+        "owner": "Transdev North America Inc.",
+        "stake": "5%"
+      }
+    ],
+    "lastCompleteSchedule": {
+      "recordDate": "2025-02-10",
+      "stakeTotal": "100%",
+      "status": "HISTORICAL_COMPLETE_SCHEDULE"
+    },
+    "cutoffCurrentConfirmedOwners": [
+      {
+        "manager": "Webuild",
+        "organization": "Webuild Canada Holding Inc.",
+        "vehicle": "Webuild Mobilinx Hurontario GP Inc.",
+        "stake": "32.31%",
+        "recordDate": "2026-06-30"
+      },
+      {
+        "manager": "Webuild",
+        "organization": "Astaldi Canada Enterprises Inc.",
+        "vehicle": "Astaldi Mobilinx Hurontario GP Inc.",
+        "stake": "21.54%",
+        "recordDate": "2026-06-30"
+      }
+    ],
+    "confirmedCurrentStakeTotal": "53.85%",
+    "blockingOwnershipGap": "A direct post-2025-06-30 Mobilinx partner schedule or executed amendment that identifies every owner and vehicle within the remaining 46.15%, reconciles the cap table to 100%, and supplies John Laing's project-level disposition plus the legal mechanism and effective date of Webuild's increase.",
+    "johnLaingKkrTreatment": "KKR's 2021 acquisition of John Laing is a closed upstream corporate transaction. It does not prove John Laing's current Mobilinx stake or exit, buyer, mechanism or date.",
+    "equitixPantheonJlilTreatment": "Companies House proves Equitix Ether Bidco's JLIL-level PSC period ended on 2026-03-27, and the 2021 Debevoise notice describes a prospective Pantheon/Equitix transaction. Neither source names a Mobilinx asset transfer or allocates the ProjectCo stake.",
+    "residualTreatment": "Do not derive Hitachi, Amico, Transdev, John Laing, KKR, Equitix, Pantheon, JLIL or another party's current stake by subtracting Webuild's 53.85% or applying historical ratios."
+  },
+  "transactionResolution": {
+    "state": "NO_SIGNED_PENDING_MOBILINX_OWNERSHIP_TRANSACTION_IDENTIFIED",
+    "pendingProjectCoOwnershipTransaction": null,
+    "latestVerifiedContext": "Webuild's aggregate ProjectCo interest increased from 35% at 2025-06-30 to 53.85% at 2026-06-30, but no direct executed transfer, partnership amendment, control consent, buyer, seller or effective date was located. The 2026 project-agreement reset is operational/contractual context rather than ownership evidence."
+  },
+  "freshException": {
+    "status": "EXACT_FACT_UNAVAILABLE",
+    "missingFact": "The cutoff-current 100% Mobilinx Hurontario General Partnership partner and beneficial-owner chain: every owner, manager, fund, vehicle and stake within the remaining 46.15%; John Laing's current stake or exit buyer, mechanism and date; and the executed project-level basis for Webuild's increase from 35% to 53.85%.",
+    "searchedEvidence": [
+      "Webuild's FY2025 and FY2026 interim financial reports and their named investment schedules",
+      "The rendered direct S&P 2025 rating action and complete historical owner schedule",
+      "Infrastructure Ontario's direct contract-award page and role roster",
+      "The FCA John Laing scheme-effective notice",
+      "The current Companies House JLIL persons-with-significant-control page",
+      "The rendered direct Debevoise Pantheon/Equitix proposed-transaction notice",
+      "Metrolinx's current 2026 rapid-transit update and contract-reset context",
+      "The direct GLEIF active legal-entity record",
+      "Current partnership, sponsor, audited-schedule, refinancing, transfer, control-consent, contractor, operator, rating-agency and public-authority searches for Mobilinx ownership, dispositions and pending transactions"
+    ],
+    "requiredToResolve": "A direct current partnership register or partner schedule, executed partnership amendment or share-transfer instrument, Infrastructure Ontario or Metrolinx control consent, audited named-investment schedule, financing ownership schedule, regulator filing, rating update or explicit consortium-member disclosure that identifies the post-change 100% cap table and effective ownership dates."
+  },
+  "primaryCitation": {
+    "label": "Webuild 2026 Interim Financial Report",
+    "url": "https://media.webuildgroup.com/sites/default/files/2026-08/Interim_Financial_Report_2026.pdf",
+    "purpose": "Direct cutoff-current sponsor report verifying Webuild's 53.85% aggregate Mobilinx ProjectCo interest and its 32.31% and 21.54% named GP-vehicle split while exposing the unresolved 46.15% residual",
+    "contentSha256": "e5acaef46da8e7fd058e2e87c461436cadcf4af218be73e9b93940b74ebe57ca"
+  },
+  "applicationRequirements": [
+    "Keep this member terminal-only as DEFERRED; do not generate a database or seed after-image until the cutoff-current ProjectCo cap table is reconciled to 100% from direct evidence.",
+    "Do not publish the residual 46.15% as belonging to John Laing, KKR, Equitix, Pantheon, JLIL, Hitachi, Amico, Transdev or another party without a direct post-change schedule.",
+    "Do not infer a Mobilinx transfer from the KKR John Laing acquisition, JLIL persons-with-significant-control history, the prospective Pantheon/Equitix notice, the 2026 contract reset, historical consortium ratios or portfolio silence.",
+    "Retain the original cap table, 2025 complete schedule and 2025-to-2026 Webuild increase as research evidence only unless a later resolved proposal can preserve the unresolved residual without implying a complete current ownership chain.",
+    "Use exactly one application primary citation bound to Webuild's 2026 interim report if a future resolved proposal is generated."
+  ],
+  "applicationBlocked": true,
+  "databaseMutationCandidate": false,
+  "seedMutationCandidate": false,
+  "terminalOutcomeCandidate": "DEFERRED",
+  "dealDatabaseMutation": false,
+  "lineage": {
+    "conversationUrl": "https://chatgpt.com/c/6a9aba53-4984-83ea-a018-03ddc3d502e2",
+    "prompt": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0242-mobilinx/attempt-2/chatgpt-research-prompt.md",
+      "sha256": "9da771793bb3d8d8cf6de4f66f3a45edcd528bcb3a1e84832f78ff6453cf7e82"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0242-mobilinx/attempt-2/chatgpt-accepted-response.txt",
+      "sha256": "e9f6fd0069e4865571e7a93293b15fe9c31c911b214bf98e4d03e8106a3007c9"
+    },
+    "transcript": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0242-mobilinx/attempt-2/chatgpt-transcript.txt",
+      "sha256": "eacc5caeb5cc990c16a6bc292d98bc5f648ddb1211f9847a92f7d452d4952567"
+    },
+    "attestation": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0242-mobilinx/attempt-2/chatgpt-attestation.json",
+      "sha256": "8a35f85b5a6d7a6e15f17fd2f816fe3b30b6f47c4b8669b16e33b69510c3f21e"
+    },
+    "responseValidation": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0242-mobilinx/attempt-2/chatgpt-response-validation.json",
+      "sha256": "4da6be6c11baedb3e4a498212b8811e3e2efd5626b4bbbb4cf7c5dfe92644832"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0242-mobilinx/attempt-2/source-verification.json",
+      "sha256": "9884472301138e4323ab3c0286459d609273e76fce080510238fefa1205a305c"
+    }
+  }
+}
