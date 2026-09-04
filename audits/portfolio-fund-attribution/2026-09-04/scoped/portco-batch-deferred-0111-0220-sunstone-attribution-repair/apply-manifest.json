@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTFOLIO_FUND_ATTRIBUTION_APPLY_MANIFEST",
+  "asOfDate": "2026-09-04",
+  "ledgerSha256": "484981f5c28ca4d985ccf36ee6f00b56887eacd027cba6956fe81fe0ece05d9e",
+  "sourceSnapshotSha256": "f25b59d12e5e75c41d067befdd8ebdf3371dc39f128f2475506780362ac972b5",
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 1,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 0,
+      "UNRESOLVED": 0
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  },
+  "expectedMutationCount": 1,
+  "mutations": [
+    {
+      "recordId": "OFA-B661F58702C4",
+      "ownershipPeriodId": "cmrxpjxoj01q7ivhe3it5wh70",
+      "companyName": "Sunstone Power",
+      "country": "Mexico",
+      "investmentFirm": "Copenhagen Infrastructure Partners",
+      "currentVehicleName": "Copenhagen Infrastructure New Markets Fund I K/S",
+      "databaseVehicleName": "Copenhagen Infrastructure New Markets Fund I K/S",
+      "investmentYear": null,
+      "stake": "100%",
+      "expectedIsActive": true,
+      "targetLinkedFundName": null,
+      "expected": {
+        "fundAttribution": "DISCLOSED",
+        "currentLinkedFundName": null
+      },
+      "set": {
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Copenhagen Infrastructure New Markets Fund I",
+        "attributionConfidence": null,
+        "attributionRationale": "Sunstone Power's official current About Us page states that the platform is fully owned by Copenhagen Infrastructure Partners through Copenhagen Infrastructure New Markets Fund I; no platform entry date is disclosed."
+      },
+      "evidenceUrls": [
+        "https://www.sunstone-power.com/en/about-us/"
+      ]
+    }
+  ],
+  "manifestSha256": "15d6ef5df945b26d6afa037ad8ddfea375e8f7b1f181f6c587b6cf44c479951b"
+}
