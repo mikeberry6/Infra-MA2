@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-04T15:15:10.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-09-04T21:05:00.000Z",
+  "activeBatchId": "batch-deferred-0248-0263-v1",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -9096,7 +9096,55 @@
           "reason": "All five members were freshly re-adjudicated to exact evidenced deferrals; no database, seed, or release action was required."
         }
       ]
+    },
+    {
+      "batchId": "batch-deferred-0248-0263-v1",
+      "state": "READY",
+      "taskIds": [
+        "ledger:0248:grand-falls-windsor-long-term-care-home:ebbcb53e",
+        "ledger:0253:byd-ev-fleet-asset-spvs:e914a6d4",
+        "ledger:0256:envirapac-monticello:efac2570",
+        "ledger:0257:pine-gate-renewables:2f4fe856",
+        "ledger:0263:divert-inc:e7a24939"
+      ],
+      "taskIndexes": [
+        248,
+        253,
+        256,
+        257,
+        263
+      ],
+      "createdAt": "2026-09-04T20:42:05.000Z",
+      "updatedAt": "2026-09-04T21:05:00.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-deferred-0248-0263-v1/batch-manifest-v2.json",
+        "sha256": "176ba57b766302d0c5f0c8445d64d09c6209d81ea7e03762e957dcc637b953d6"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-09-04T20:42:05.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-09-04T21:05:00.000Z",
+          "evidenceSha256": [
+            "176ba57b766302d0c5f0c8445d64d09c6209d81ea7e03762e957dcc637b953d6"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "d3cf7429a751cbad8a53b2a45352ca264f166ac6167aa520b5a1ac7e584b65f0"
+  "ledgerSha256": "dbbdb3074741bc75909fdc76e7396b7e70e9afb2658676a50a1962d9d66fc972"
 }

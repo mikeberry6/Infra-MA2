@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_DEFERRED_READJUDICATION_RESEARCH_DECISION",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-deferred-readjudication-2026-09-04",
+  "generatedAt": "2026-09-04T20:37:00.000Z",
+  "asOfDate": "2026-09-04",
+  "taskId": "ledger:0263:divert-inc:e7a24939",
+  "taskIndex": 263,
+  "companyName": "Divert, Inc.",
+  "linkedTaskIdsCovered": [],
+  "modelDecision": "DEFERRED",
+  "decision": "DEFERRED",
+  "confidence": "HIGH_EXACT_EXCEPTION_HIGH_PLATFORM_AND_NAMED_OWNER_FACTS_LOW_GIC_AND_OPG_CONTINUITY",
+  "researchOnly": true,
+  "summary": "Keep the production and seed record unchanged. Fresh direct evidence verifies one active Divert platform, Ara's current Ara Fund II private-equity position, Enbridge's 10% cost investment, and later Wittington and Mitsubishi equity transactions. It also verifies that GIC and Ontario Power Generation participated in the 2021 US$100 million growth-equity transaction. No direct evidence identifies the GIC legal affiliate or strategy, security, percentage or rights, or states whether GIC retained, sold, rolled, redeemed, distributed, or otherwise disposed of its position. No direct evidence identifies the exact OPG pension vehicle or its cutoff-current position. Removing the unsupported GIC Infrastructure attribution while preserving a possible GIC position cannot be represented safely without those records, so the task remains deferred with an exact exception.",
+  "resolvedFormerBlockers": [
+    "Divert's direct 2022 release verifies Ara's 2021 acquisition and the US$100 million growth-equity participation of GIC and Ontario Power Generation.",
+    "Ara's live portfolio page verifies Divert as Active, Private Equity, Ara Fund II, with a June 2021 investment date.",
+    "The rendered GIC report places an anonymous anaerobic-digester food-waste company among Private Equity examples, but provides no Divert identity crosswalk and therefore cannot classify Divert or identify a holder.",
+    "The independently reopened live SEC accession verifies Ara Divert HoldCo, Inc., 2021 formation, and an unnamed 2023 offering but does not name the investor. The exact accession URL returned by the model was blocked and is not used.",
+    "Enbridge's rendered 2025 annual report verifies its 10% Divert cost investment.",
+    "Divert's 2026 releases and transaction counsel verify Wittington-led preferred equity and Mitsubishi-led Series C equity while preserving separate offtake and project-capital boundaries.",
+    "Later-source silence about GIC or OPG is not a disposition record and does not prove continuity or exit."
+  ],
+  "identityResolution": {
+    "productionCompanyId": "cmrxpjg9f00yeivhenhq6ifso",
+    "currentProductionName": "Divert, Inc.",
+    "legalParent": "Ara Divert HoldCo, Inc.",
+    "operatingCompany": "Divert, Inc.",
+    "formerName": "Feed Resource Recovery, Inc.",
+    "canonicalKey": "divert-inc|united-states",
+    "status": "SINGLE_PLATFORM_IDENTITY_VERIFIED",
+    "productionAction": "KEEP_EXISTING_RECORD_UNCHANGED",
+    "boundary": "Treat Divert, Inc. and Ara Divert HoldCo, Inc. as the operating-company and parent boundary of one U.S. platform; facilities, project financing, RNG offtake, founders, and legacy investors are not separate PortCo owner records without direct current ownership evidence."
+  },
+  "ownershipResolution": {
+    "status": "NAMED_CURRENT_POSITIONS_PARTLY_RESOLVED_GIC_AND_OPG_CONTINUITY_UNRESOLVED",
+    "ara": "Current active Ara Fund II Private Equity position supported; stake not publicly disclosed.",
+    "gic": "Historical 2021 growth-equity participation supported; legal holder, strategy or mandate, security, stake, rights, continuity and disposition unresolved.",
+    "ontarioPowerGeneration": "Historical 2021 growth-equity participation and a 2026 board role supported; exact pension legal vehicle, stake, continuity and disposition unresolved.",
+    "enbridge": "Current 10% cost investment supported by the 2025 annual report.",
+    "wittington": "Current strategic preferred-equity investment led by Wittington Asset Management Limited supported; percentage not publicly disclosed.",
+    "mitsubishi": "Current Series C equity investment led by Mitsubishi Corporation supported; percentage not publicly disclosed and preferred RNG offtake is treated separately.",
+    "gicInfrastructureAttribution": "UNSUPPORTED_DO_NOT_INFER_OR_RECLASSIFY",
+    "capTable": "UNRESOLVED_POST_SERIES_C"
+  },
+  "transactionResolution": {
+    "state": "NO_DIRECTLY_DISCLOSED_GIC_OR_OPG_DISPOSITION_IDENTIFIED",
+    "pendingTransaction": null,
+    "finding": "No direct record states that GIC or Ontario Power Generation sold, rolled, retained, redeemed, distributed, or otherwise disposed of its equity. The January and April 2026 financings do not disclose a complete before-and-after cap table."
+  },
+  "freshException": {
+    "status": "EXACT_FACT_UNAVAILABLE",
+    "missingFact": "The GIC legal subscriber and cutoff-current holding affiliate, investment strategy or mandate, security, percentage, governance and transfer rights, and any 2021-2026 retention, sale, rollover, redemption, distribution or other disposition; the exact Ontario Power Generation pension legal vehicle and its cutoff-current stake or disposition; and the complete post-Series-C Ara Divert HoldCo cap table and stock ledger.",
+    "searchedEvidence": [
+      "Divert's direct 2022 announcement of the 2021 Ara, GIC and Ontario Power Generation transaction",
+      "Ara's current Divert portfolio entry",
+      "Rendered GIC 2021/22 annual-report Private Equity section",
+      "Exact returned SEC accession and independently reopened live official accession",
+      "Rendered Enbridge 2025 annual-report Divert disclosure",
+      "Divert's January 2026 Wittington funding announcement",
+      "Transaction-counsel description of the Wittington preferred-equity investment",
+      "Divert's April 2026 Mitsubishi Series C announcement",
+      "Fresh GIC affiliate, strategy, security, stake, rights, cap-table, stock-ledger, rollover, retention, exit, redemption, distribution and disposition searches in the ChatGPT conversation"
+    ],
+    "requiredToResolve": "An executed 2021 subscription or rollover schedule naming the GIC and OPG legal subscribers; a current named-investment schedule; a post-Series-C Ara Divert HoldCo capitalization table or stock ledger; or executed transfer, redemption, distribution, sale, rollover or other disposition documents that identify holder, strategy, security, percentage, rights and effective dates."
+  },
+  "primaryCitation": {
+    "label": "Divert 2022 transaction release",
+    "url": "https://divertinc.com/divert-inc-announces-significant-business-momentum/",
+    "purpose": "Direct company evidence that GIC and Ontario Power Generation joined Ara in the 2021 US$100 million growth-equity transaction, without inferring the missing legal holder, strategy, stake, rights, continuity or disposition",
+    "contentSha256": "a82fdcf4a349684739915e5a602fb39701bfb906c1ea722422c16d256b135df3"
+  },
+  "applicationRequirements": [
+    "Use a terminal-only DEFERRED outcome with the exact GIC, OPG and post-Series-C cap-table exception.",
+    "Do not rename, replace, duplicate, merge, redirect, or change the status of the production or seed company, and do not add, retire, amend, or infer an ownership period in this application.",
+    "Do not label the Divert position as GIC Infrastructure, but do not remove or retire a possible GIC or OPG position without direct legal-holder and disposition evidence.",
+    "Preserve separate boundaries for Enbridge project capital, Mitsubishi RNG offtake, Nuveen credit, facilities, founders, and legacy holdings unless a future direct source establishes corporate equity and current ownership.",
+    "Use exactly one application primary citation bound to Divert's direct 2022 transaction release."
+  ],
+  "applicationBlocked": false,
+  "databaseMutationCandidate": false,
+  "seedMutationCandidate": false,
+  "terminalOutcomeCandidate": "DEFERRED",
+  "dealDatabaseMutation": false,
+  "lineage": {
+    "conversationUrl": "https://chatgpt.com/c/6a9b19fb-46cc-83ea-a45d-0a2640d19f38",
+    "prompt": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0263-divert-inc/attempt-2/chatgpt-research-prompt.md",
+      "sha256": "0d468071af46f24ca472aae11b35c81defa2e9ad8f7031a617bdecd5c8372b18"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0263-divert-inc/attempt-2/chatgpt-accepted-response.txt",
+      "sha256": "0307f3141f4a453733e33ecb03098749934ec39a4bdef093ed43232808bcab65"
+    },
+    "transcript": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0263-divert-inc/attempt-2/chatgpt-transcript.txt",
+      "sha256": "35616f2099b81e17d746be1b7eb491bec572cd5c9b569e7eab851e3d5aeb7d7c"
+    },
+    "attestation": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0263-divert-inc/attempt-2/chatgpt-attestation.json",
+      "sha256": "9b12deeca7d6ea98a0c446fa5c7a7d5e0dba4fe2908806f0217a86e1f7fab16a"
+    },
+    "responseValidation": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0263-divert-inc/attempt-2/chatgpt-response-validation.json",
+      "sha256": "b197f67e03bfb7cebde6c662dd524eb06f5e9ba13df003bb3b4384ab3e6448a9"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0263-divert-inc/attempt-2/source-verification.json",
+      "sha256": "8d8a53cca37a3c1cf40ce1845ff18b82eb6a66b3852a96c434b9a670aae1971f"
+    }
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_MANIFEST",
+  "methodologyVersion": "PORTCO_APPLY_BATCH_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-deferred-0248-0263-v1",
+  "createdAt": "2026-09-04T21:02:00.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "8d9dde27ec326eedfaec8c232a36bc9fbe673dc6e0b391f35e47478d3e599d66"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0248:grand-falls-windsor-long-term-care-home:ebbcb53e",
+      "taskIndex": 248,
+      "companyName": "Grand Falls-Windsor Long-Term Care Home",
+      "outcome": "EXCLUDED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0248-grand-falls-windsor-long-term-care-home/attempt-2/terminal-decision-excluded-v1.json",
+        "sha256": "04a44f1f6f9ac2fda00c614795e36ffafce412fd24c5dad135f11f4509473e01"
+      }
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0253:byd-ev-fleet-asset-spvs:e914a6d4",
+      "taskIndex": 253,
+      "companyName": "BYD EV Fleet Asset SPVs",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0253-byd-ev-fleet-asset-spvs/attempt-2/terminal-decision-deferred-v1.json",
+        "sha256": "d89f1ff8df3d53ce3d3470974734667ea08621f9ddf122dcf79827e723699b60"
+      }
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0256:envirapac-monticello:efac2570",
+      "taskIndex": 256,
+      "companyName": "EnviraPAC Monticello",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0256-envirapac-monticello/attempt-2/terminal-decision-deferred-v1.json",
+        "sha256": "b0bb965d68d69e7ce9f877c96f5994baee6c95ddf7f9492bf8d82cbdea248380"
+      }
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0257:pine-gate-renewables:2f4fe856",
+      "taskIndex": 257,
+      "companyName": "Pine Gate Renewables",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0257-pine-gate-renewables/attempt-2/proposal-deferred-v1.json",
+        "sha256": "39a86ef9f1cd0bbcb0c7d48156761f3537be27b7b060d5630645bc5b769a425e"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0257-pine-gate-renewables/attempt-2/approval-deferred-v1.json",
+        "sha256": "cb3528f4fc05c2f388bcb35ba71fa7b91c95ea33831c557c49eb9849c405cf42"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0257-pine-gate-renewables/attempt-2/locked-deferred-v1-production-snapshot.json",
+        "sha256": "05b6e37d8ee4e8b722884088c7083e5ae448a35d077ea36bef0324c5bc5503da"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0257-pine-gate-renewables/attempt-2/locked-deferred-v1-task-snapshot.json",
+        "sha256": "3f3e22db39f76c11779ae2e2d1fc8e1f65a9f38802009dd9fed529714e75ff5d"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0257-pine-gate-renewables/attempt-2/observed-deferred-v3-task-snapshot.json",
+        "sha256": "5bdd4d36a6557b48da3b93cecc2b618500e0a5557f7efbb42f01c222ee296466"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0257-pine-gate-renewables/attempt-2/application-research-decision.json",
+        "sha256": "67b12bc7e4c350772795154ba48a249b1cab48a5546deab9b2695c3d5dd9a07c"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0257-pine-gate-renewables/attempt-2/source-verification.json",
+        "sha256": "bb116666e8c69b142a10bddd7027c51f68d0ee510d284441b1fe02009b3c80fb"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "9c0445c858506666a38eb1cb367199ebf0239f3e0f8f63a190c125b989b46861",
+      "dependencySha256": "4e1603a752c6fade937fa5fd387c0cef102859429e9e3abc4fc34a8289370b14",
+      "afterImageSha256": "919c70b23f265c83afc52988befb545357a71c6cab69cf3d5a76f80bd540f39e",
+      "targetClaims": [
+        "canonical:pine-gate-renewables|united-states",
+        "company:cmrxpjg4f00y5ivhep8jj6phn",
+        "relation:cmrxpk1oz01wgivhehzt20uwm",
+        "relation:cmrxplryn042zivheb5pa857e",
+        "relation:cmrxplrza0430ivheqj2amwg7",
+        "relation:cmrxplrzs0431ivheegprsz86",
+        "relation:cmrxpr6720aobivheqhf5qyml",
+        "relation:cmrxpr6820aodivhewogyv08p",
+        "relation:cmrxpr68y0aofivhera73kz92",
+        "relation:cmrxpr69y0aohivhe2zqy0ibg",
+        "seed:pine gate renewables|united states"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://casedocs.omniagentsolutions.com/cmsvol2/pub_47561/4ba5f3a2-4407-4c74-b707-cf7c8f2b2c34_2030.pdf",
+          "label": "Omni Agent Solutions — Pine Gate docket 2030",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://casedocs.omniagentsolutions.com/cmsvol2/pub_47561/e80a2e6d-9aaf-4970-9d92-be1333349936_1460.pdf",
+          "label": "Omni Agent Solutions — Pine Gate docket 1460",
+          "sourceType": "OTHER"
+        },
+        {
+          "url": "https://pinegaterenewables.com/about-pine-gate/",
+          "label": "Pinegaterenewables — Pine Gate Renewables",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://pinegaterenewables.com/pine-gate-renewables-announces-a-650-million-total-investment-from-generate-capital-healthcare-of-ontario-pension-plan-and-hesta/",
+          "label": "Pinegaterenewables — Pine Gate Renewables",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.businesswire.com/news/home/20220623005332/en/Generate-Capital-Provides-Pine-Gate-Renewables-with-%24500-Million-in-Strategic-Growth-Capital-and-Asset-Financing-to-Expand-Utility-Scale-Solar",
+          "label": "Investment date source — Generate Capital — Pine Gate Renewables",
+          "sourceType": "PRESS_RELEASE"
+        },
+        {
+          "url": "https://www.kirkland.com/news/press-release/2024/04/kirkland-advises-generate-capital-in-investment-in-pine-gate-renewables",
+          "label": "Kirkland — Pine Gate Renewables",
+          "sourceType": "ARTICLE"
+        }
+      ]
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0263:divert-inc:e7a24939",
+      "taskIndex": 263,
+      "companyName": "Divert, Inc.",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0263-divert-inc/attempt-2/terminal-decision-deferred-v1.json",
+        "sha256": "99c14682c8550e4b7fedccae639e4200a30191a8a1e5e7897eb464978982711e"
+      }
+    }
+  ],
+  "collisionAnalysis": {
+    "independent": true,
+    "claimsSha256": "d58f615d2633f59ff3666afa95e0a01ee6a0264b278cf9fe0da7eae6f9817aa4",
+    "sharedSourceUrls": [],
+    "conflicts": []
+  },
+  "batchSha256": "176ba57b766302d0c5f0c8445d64d09c6209d81ea7e03762e957dcc637b953d6"
+}

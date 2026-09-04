@@ -1,0 +1,168 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0257:pine-gate-renewables:2f4fe856",
+  "taskIndex": 257,
+  "companyName": "Pine Gate Renewables",
+  "asOfDate": "2026-09-04",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-04T19:13:13.000Z",
+  "result": {
+    "asOfDate": "2026-09-04",
+    "requestedCompany": "Pine Gate Renewables",
+    "requestedManagers": [
+      "Generate Capital",
+      "Healthcare of Ontario Pension Plan",
+      "HESTA"
+    ],
+    "decision": "PROPOSED_CORRECTION",
+    "confidence": 0.95,
+    "rationale": "Fresh court-filed evidence resolves the legacy-platform status: five section 363 sales split Pine Gate, the plan became effective on 2026-04-22, and all existing equity was cancelled. Correct the existing record to Realized and close directly evidenced prepetition ownership periods. Do not source-task-supersede the record because there is no replacement task, and do not infer HESTA's direct ownership or successor cap tables.",
+    "identityResolution": {
+      "canonicalKey": "pine-gate-renewables|united-states",
+      "productionCompanyId": "cmrxpjg4f00y5ivhep8jj6phn",
+      "canonicalIdentity": "Pine Gate Renewables",
+      "productionAction": "CORRECT_EXISTING_RECORD_IN_PLACE",
+      "targetStatus": "Realized",
+      "realizationDate": "2026-04-22",
+      "replacementTaskId": null,
+      "sourceTaskSupersession": false,
+      "boundary": "Retain Pine Gate as the historical integrated platform. MorningSky is a distinct development successor, ACT is a distinct operations successor, and Nofar, Oregon Solar/Amazon, and Brookfield acquired separate project packages."
+    },
+    "ownershipResolution": {
+      "status": "PREPETITION_EQUITY_CANCELLED",
+      "currentOwners": [],
+      "formerOwners": [
+        {
+          "manager": "Generate Capital",
+          "organization": "Generate Capital, PBC",
+          "fund": "NOT_PUBLICLY_DISCLOSED",
+          "vehicle": "GC PGR HoldCo Member, LLC and GC PGR HoldCo, LLC",
+          "stake": "Preferred equity; class and percentage NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2022-06-23",
+          "entryDate": "NOT_PUBLICLY_DISCLOSED",
+          "entryYear": 2022,
+          "exitDate": "2026-04-22",
+          "exitYear": 2026,
+          "isActive": false,
+          "transactionState": "CANCELLED_ON_PLAN_EFFECTIVE_DATE"
+        },
+        {
+          "manager": "Healthcare of Ontario Pension Plan",
+          "organization": "Healthcare of Ontario Pension Plan Trust Fund",
+          "fund": "NOT_APPLICABLE",
+          "vehicle": "Healthcare of Ontario Pension Plan Trust Fund",
+          "stake": "Preferred equity; class and percentage NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2024-04-29",
+          "entryDate": "NOT_PUBLICLY_DISCLOSED",
+          "entryYear": 2024,
+          "exitDate": "2026-04-22",
+          "exitYear": 2026,
+          "isActive": false,
+          "transactionState": "CANCELLED_ON_PLAN_EFFECTIVE_DATE"
+        }
+      ],
+      "hestaTreatment": "Historical 2024 financing participation is verified, but legal vehicle, instrument, direct-versus-managed status, stake, and disposition are not. Do not add HESTA as a direct owner and do not treat its absence from docket 19 as proof of no economic exposure.",
+      "planAdministratorTreatment": "Do not add the custodial Single Unit, Plan Administrator, or GUC Trust as a current operating-platform owner."
+    },
+    "operatingResolution": {
+      "integratedPlatformContinues": false,
+      "developmentSuccessor": "MorningSky Power LLC, formerly FR Acquisition Holdings LLC",
+      "operationsSuccessor": "ACT Power Services through ACT Energy Holdco, LLC",
+      "separateProjectPurchasers": [
+        "Nofar USA Energy Investments and Management LLC",
+        "Oregon Solar 1, LLC",
+        "BII BID Solar II Aggregator, LP"
+      ],
+      "successorOwnershipException": "MorningSky's complete direct owner and stake and ACT's complete investor-group members and stakes are NOT_PUBLICLY_DISCLOSED."
+    },
+    "acquisitionExitCheck": {
+      "state": "CLOSED_SPLIT_SALES_AND_PLAN_EFFECTIVE",
+      "planEffectiveDate": "2026-04-22",
+      "pendingTransactions": [],
+      "saleClosings": [
+        "2026-01-30 — Fundamental / FR Acquisition Holdings LLC",
+        "2026-01-30 — Thigpen designee / ACT Energy Holdco, LLC",
+        "2026-02-26 — Nofar USA Energy Investments and Management LLC",
+        "2026-02-27 — Oregon Solar 1, LLC",
+        "2026-04-17 — BII BID Solar II Aggregator, LP"
+      ]
+    },
+    "milestones": [
+      {
+        "date": "2025-11-06",
+        "event": "Pine Gate began Chapter 11 proceedings and a split-sale process."
+      },
+      {
+        "date": "2026-01-30",
+        "event": "The Fundamental development and ACT operations sale packages closed."
+      },
+      {
+        "date": "2026-02-26 to 2026-04-17",
+        "event": "The Nofar, Oregon Solar/Amazon, and Brookfield project-package sales closed."
+      },
+      {
+        "date": "2026-04-22",
+        "event": "The liquidation plan became effective and all existing equity was cancelled."
+      }
+    ],
+    "evidence": [
+      {
+        "label": "Pine Gate Renewables Chapter 11 docket 2030",
+        "url": "https://casedocs.omniagentsolutions.com/cmsvol2/pub_47561/4ba5f3a2-4407-4c74-b707-cf7c8f2b2c34_2030.pdf",
+        "purpose": "Direct court-filed evidence for the plan effective date and five sale purchasers, orders, and closing dates",
+        "sourceTier": "COURT",
+        "workingStatus": "VERIFIED_AND_HASHED",
+        "isRecommendedPrimary": true
+      }
+    ],
+    "beforeAfterChanges": {
+      "before": "Active integrated Pine Gate platform with Generate shown as an active owner; HOOPP/HESTA and bankruptcy-sale treatment unresolved.",
+      "after": "Historical Pine Gate record marked Realized on 2026-04-22; directly evidenced infrastructure-owner periods closed; HESTA kept outside direct ownership; distinct sale successors and project buyers kept outside this record pending separate collision-free proposals."
+    },
+    "excludedOrDuplicateCandidates": [
+      "HESTA as a proven direct Pine Gate owner without its legal vehicle and instrument.",
+      "Plan Administrator, GUC Trust, or the custodial Single Unit as operating-platform owners.",
+      "MorningSky as a rename of Pine Gate rather than a distinct development successor.",
+      "ACT Power Services as the same company as source Task 157 Advanced Cooling Technologies.",
+      "Nofar, Oregon Solar/Amazon, Brookfield, or their project packages as the integrated Pine Gate platform."
+    ],
+    "unresolvedQuestions": [
+      "Generate and HOOPP equity classes, percentages, contribution dates, and subscription economics.",
+      "HESTA's legal vehicle, instrument, direct-versus-managed status, percentage, and disposition.",
+      "MorningSky's complete direct owner and stake and ACT's complete strategic-group members and stakes.",
+      "The final entity-level asset and retained-liability schedules across the five sale orders."
+    ],
+    "recommendedListAction": {
+      "action": "CORRECT_EXISTING_RECORD_IN_PLACE",
+      "record": "cmrxpjg4f00y5ivhep8jj6phn",
+      "status": "Realized",
+      "realizationDate": "2026-04-22",
+      "closePrepetitionOwnershipPeriods": true,
+      "addHestaDirectOwner": false,
+      "createSuccessorRecordsInThisTask": false,
+      "sourceTaskOutcomeAfterProtectedApplication": "COMPLETED"
+    }
+  },
+  "lineage": {
+    "researchDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0257-pine-gate-renewables/attempt-2/research-decision.json",
+      "sha256": "083eed52a07e777c37fa3eebb42bf00d215ef02d014cb85d40bc2dd41fa3f2c4"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0257-pine-gate-renewables/attempt-2/chatgpt-accepted-response.txt",
+      "sha256": "2989d2d146ff3aa2a20e0d4715967539f9d57fe2a3964f4fbe6a72626bbeb7ff"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0257-pine-gate-renewables/attempt-2/source-verification.json",
+      "sha256": "bb116666e8c69b142a10bddd7027c51f68d0ee510d284441b1fe02009b3c80fb"
+    },
+    "modelDecisionNormalization": {
+      "acceptedResponseDecision": "SUPERSEDED",
+      "applicationDecision": "PROPOSED_CORRECTION",
+      "basis": "The execution manifest has no replacement source task for Pine Gate Renewables. Source-task SUPERSEDED is fail-closed unless a real replacement task ID exists, while the evidence supports a protected correction of the existing company record."
+    }
+  }
+}

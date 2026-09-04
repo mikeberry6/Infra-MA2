@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "taskId": "ledger:0253:byd-ev-fleet-asset-spvs:e914a6d4",
+  "taskIndex": 253,
+  "companyName": "BYD EV Fleet Asset SPVs",
+  "validatedAt": "2026-09-04T16:59:56.000Z",
+  "acceptedResponseSha256": "c711971edae8395cd59f27ec1acb569b1a9060c8ec597b63b2a7f830f4c7503a",
+  "valid": true,
+  "finalResponse": {
+    "characterCountExcludingRepositoryTerminalLf": 7531,
+    "fencedJsonPresent": false,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "requiredTopLevelKeysExact": true,
+    "decision": "DEFERRED",
+    "confidence": 0.93,
+    "evidenceCount": 8,
+    "currentOwnerOrSponsorRows": 4,
+    "pendingOwnershipTransactionCount": 0,
+    "primaryEvidenceCount": 1,
+    "ownerKeysExact": true,
+    "pendingTransactionKeysExact": true,
+    "evidenceKeysExact": true,
+    "withinCharacterLimit": true,
+    "withinEvidenceLimit": true,
+    "withinMilestoneLimit": true,
+    "responseSha256": "c711971edae8395cd59f27ec1acb569b1a9060c8ec597b63b2a7f830f4c7503a",
+    "result": "PASS"
+  },
+  "contract": {
+    "beginJsonPresent": true,
+    "endJsonPresent": true,
+    "beginReviewPresent": true,
+    "endReviewPresent": true,
+    "jsonParses": true,
+    "mandatoryTopLevelKeysExact": true,
+    "ownerKeysExact": true,
+    "pendingTransactionKeysExact": true,
+    "evidenceKeysExact": true,
+    "evidenceRowCount": 8,
+    "milestoneCount": 4,
+    "recommendedPrimaryCount": 1,
+    "contentCharactersExcludingMarkers": 7462,
+    "decisionAllowed": true,
+    "decision": "DEFERRED"
+  },
+  "captureNormalization": {
+    "performed": true,
+    "reason": "The browser rendered URLs as inline links inside the minified JSON. Accessibility DOM text nodes were joined to restore the literal JSON strings. Copy response was not authoritative because it inserted Markdown link syntax and escaped task-ID colons.",
+    "semanticChanges": false,
+    "repairTurnUsed": false
+  },
+  "independentEvidenceAdjustments": [
+    "The recommended California SOS search URL currently returns only a 212-byte bot-protection shell to an independent direct fetch; it does not independently expose the referenced entity detail.",
+    "The BizProfile and B2BHint registry-extract pages returned HTTP 403 to independent direct fetches and are not application-grade evidence.",
+    "The Generate, BYD, Metro, Duke, and Blue Bird sources reopened successfully, but they establish historical roles or distinct-platform boundaries rather than a current GTL cap table or current GTL asset book.",
+    "The application decision therefore retains DEFERRED and selects the direct Generate page as the sole primary citation for the historical program context, without treating it as current ownership proof."
+  ],
+  "result": "PASS_WITH_TRANSPARENT_DOM_RECONSTRUCTION_AND_PRIMARY_REBINDING"
+}

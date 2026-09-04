@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_DEFERRED_READJUDICATION_RESEARCH_DECISION",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-deferred-readjudication-2026-09-04",
+  "generatedAt": "2026-09-04T16:59:56.000Z",
+  "asOfDate": "2026-09-04",
+  "taskId": "ledger:0253:byd-ev-fleet-asset-spvs:e914a6d4",
+  "taskIndex": 253,
+  "companyName": "BYD EV Fleet Asset SPVs",
+  "linkedTaskIdsCovered": [],
+  "modelDecision": "DEFERRED",
+  "decision": "DEFERRED",
+  "confidence": "HIGH_EXACT_EXCEPTION_MEDIUM_HISTORICAL_IDENTITY_LOW_CURRENT_OWNERSHIP_AND_ASSET_BOOK",
+  "researchOnly": true,
+  "summary": "Keep the production and seed record unchanged. Fresh research supports Green Transportation Leasing, LLC as the historical legal platform for the 2018 Generate/BYD electric-bus leasing program, but it does not establish a current member schedule, either party's current equity status or percentage, Generate's fund or account, or a current qualifying lease and vehicle-title book. Active registration, a manager-of-record label, historical joint-venture language, current BYD financing offerings, and absence of a public exit cannot resolve those facts. The existing rename and ownership correction therefore remain unsafe.",
+  "resolvedFormerBlockers": [
+    "Generate's direct page and the contemporary Metro report corroborate the historical Generate/BYD program and US$200 million commitment or allocation.",
+    "The rendered Duke case-study pages 25-26 describe Green Transportation Leasing as the historical Generate/BYD leasing platform and distinguish lease structures from customer asset ownership.",
+    "Blue Bird's direct 2024 release proves that Clean Bus Solutions LLC is a separate 50/50 Blue Bird/Generate venture and not a proven GTL successor.",
+    "BYD's current finance page offers leasing and EV-as-a-service products but does not identify GTL, its current owners, title entities, or a current GTL asset book.",
+    "No reviewed source proves a later sale, dissolution, transfer, recapitalization, exit, or pending transaction, but negative search does not prove continuity."
+  ],
+  "identityResolution": {
+    "historicalLegalName": "Green Transportation Leasing, LLC",
+    "productionCompanyId": "cmrxpjfxa00xwivheazgpv3e4",
+    "currentProductionName": "BYD EV Fleet Asset SPVs",
+    "proposedCanonicalKey": "green-transportation-leasing|united-states",
+    "status": "HISTORICAL_IDENTITY_SUPPORTED_CURRENT_RENAME_BLOCKED",
+    "productionAction": "KEEP_EXISTING_RECORD_UNCHANGED",
+    "boundary": "GTL is the historical leasing platform. Generate GTL Member is a separate affiliate whose name or manager role does not establish equity. Customers, buses, title or deal SPVs, BYD or RIDE manufacturing, and Clean Bus Solutions are outside the GTL company boundary absent direct consolidation evidence."
+  },
+  "ownershipResolution": {
+    "status": "UNRESOLVED_CURRENT_CAP_TABLE",
+    "generateHistoricalRole": "Financier and historical joint-venture party",
+    "bydHistoricalRole": "Historical joint-venture, equipment-supply, marketing, and maintenance party",
+    "generateCurrentEquity": "UNRESOLVED",
+    "bydCurrentEquity": "UNRESOLVED",
+    "currentMembers": "UNRESOLVED",
+    "currentPercentages": "UNRESOLVED",
+    "generateFundOrAccount": "NOT_PUBLICLY_DISCLOSED",
+    "generateGtlMemberTreatment": "DO_NOT_TREAT_MANAGER_AFFILIATE_AS_EQUITY_WITHOUT_A_CURRENT MEMBER RECORD"
+  },
+  "operatingResolution": {
+    "status": "UNRESOLVED_CURRENT_QUALIFYING_ASSET_BOOK",
+    "historicalProgram": "Direct and contemporary sources support the 2018 electric-bus leasing program and US$200 million commitment or allocation.",
+    "currentGap": "No direct current source supplies a named GTL customer, live lease, funded balance, current fleet, VIN or title schedule, borrowing base, asset register, disposition schedule, or audited rollforward.",
+    "nonproof": "Legal registration and current generic BYD financing products do not establish that GTL currently originates or holds assets."
+  },
+  "transactionResolution": {
+    "state": "NO_DIRECTLY_DISCLOSED_LATER_TRANSACTION_IDENTIFIED",
+    "pendingTransaction": null,
+    "finding": "No directly evidenced post-2018 sale, transfer, dissolution, cancellation, restructuring, recapitalization, refinancing, asset disposition, lease termination, wind-down, Generate exit, BYD exit, or signed pending transaction was located. Non-disclosure is not proof of continuity."
+  },
+  "freshException": {
+    "status": "EXACT_FACT_UNAVAILABLE",
+    "missingFact": "The cutoff-current GTL ownership and operating schedule: all direct and indirect members and beneficial owners, exact stakes and effective dates, whether Generate and BYD retained, transferred, redeemed, withdrew, or otherwise disposed of equity, the exact Generate fund or account, and the current qualifying lease, customer, asset, VIN, title, balance, and disposition schedules.",
+    "searchedEvidence": [
+      "Official California SOS business-search endpoint",
+      "Current secondary GTL and Generate GTL Member registry extracts",
+      "Generate direct technology-company page",
+      "BYD direct company release and current finance page",
+      "Contemporary Metro launch report",
+      "Rendered Duke financing case-study pages 25-26",
+      "Blue Bird direct Clean Bus Solutions release",
+      "Current ownership, membership, UCC, litigation, financing, customer, lease, asset, title, exit, disposition, dissolution, and transaction searches in the fresh ChatGPT conversation"
+    ],
+    "requiredToResolve": "A certified current LLC operating agreement, amendment, member ledger, beneficial-owner schedule, executed transfer or withdrawal instrument, audited named-investment or ownership schedule, financing ownership chart, or current GTL lease and asset-title rollforward that directly identifies the current owners, percentages, fund or account, and live qualifying asset book."
+  },
+  "primaryCitation": {
+    "label": "Generate Capital technology companies page",
+    "url": "https://generatecapital.com/technology-companies/",
+    "purpose": "Direct manager evidence for the historical Generate/BYD leasing program, commitment, and party roles, without treating it as current ownership proof",
+    "contentSha256": "09583eefe92fb09c74396a892542b5e7c762fc2c7a48fc6012eeb15e59d0c0f5"
+  },
+  "applicationRequirements": [
+    "Use a terminal-only DEFERRED outcome with this exact current ownership and asset-book exception.",
+    "Do not rename the production or seed company, add an alias or redirect, alter company status, retire or add an ownership period, infer a stake, fund or vehicle, or create a database or seed mutation.",
+    "Do not treat the California active-registration or manager field, Generate GTL Member's name, historical joint-venture sources, BYD's current finance page, or negative transaction search as current equity or asset-book proof.",
+    "Keep Clean Bus Solutions, BYD/RIDE manufacturing, customer fleets, and unnamed title or deal SPVs outside the GTL record.",
+    "Use exactly one application primary citation bound to the direct Generate page."
+  ],
+  "applicationBlocked": false,
+  "databaseMutationCandidate": false,
+  "seedMutationCandidate": false,
+  "terminalOutcomeCandidate": "DEFERRED",
+  "dealDatabaseMutation": false,
+  "lineage": {
+    "conversationUrl": "https://chatgpt.com/c/6a9aee0a-e7f0-83ea-b647-cd4a86f1b5e1",
+    "prompt": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0253-byd-ev-fleet-asset-spvs/attempt-2/chatgpt-research-prompt.md",
+      "sha256": "4322de04005f78c2fbf6edc1bf59460433e1f60806f3d112ec55cdd9b282c791"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0253-byd-ev-fleet-asset-spvs/attempt-2/chatgpt-accepted-response.txt",
+      "sha256": "c711971edae8395cd59f27ec1acb569b1a9060c8ec597b63b2a7f830f4c7503a"
+    },
+    "transcript": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0253-byd-ev-fleet-asset-spvs/attempt-2/chatgpt-transcript.txt",
+      "sha256": "d5e7b061e5046e70caa91db16744ab31a50cf0d3a6276c1c0a66a2382942e5c1"
+    },
+    "attestation": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0253-byd-ev-fleet-asset-spvs/attempt-2/chatgpt-attestation.json",
+      "sha256": "9b4e0091dfe8e430018cd3c9a7180a3c716910e1d1fd0d6507bfe59d0ad65c0c"
+    },
+    "responseValidation": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0253-byd-ev-fleet-asset-spvs/attempt-2/chatgpt-response-validation.json",
+      "sha256": "da60d612042173ca5f97a4037d2e4052afcadba9ad9c98f0ec1cdc5f933757d7"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0253-byd-ev-fleet-asset-spvs/attempt-2/source-verification.json",
+      "sha256": "439bb15251fe9d835d200a31d30311cfc6065b57ddb3c22d7ddba50ebf5a7acf"
+    }
+  }
+}

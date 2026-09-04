@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_DEFERRED_READJUDICATION_RESEARCH_DECISION",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-deferred-readjudication-2026-09-04",
+  "generatedAt": "2026-09-04T18:02:15.000Z",
+  "asOfDate": "2026-09-04",
+  "taskId": "ledger:0256:envirapac-monticello:efac2570",
+  "taskIndex": 256,
+  "companyName": "EnviraPAC Monticello",
+  "linkedTaskIdsCovered": [],
+  "modelDecision": "DEFERRED",
+  "decision": "DEFERRED",
+  "confidence": "HIGH_EXACT_EXCEPTION_HIGH_IDENTITY_LOW_CURRENT_OWNERSHIP_TITLE_AND_OPERATIONS",
+  "researchOnly": true,
+  "summary": "Keep the production and seed record unchanged. Fresh evidence verifies EnviraPAC Monticello, LLC as the Monticello permittee and regulator-described facility owner/operator, and Generate's direct archive confirms a historical investment in an unnamed enviraPAC-owned and operated bankruptcy-remote project SPV. No direct record names and crosswalks that SPV to the LLC; identifies the current members, beneficial owners, stakes, Generate instrument, fund or account, or current status; supplies the land or equipment-title chain; or proves a post-layoff production restart. Permit, contact, organizer, owner/operator, and negative-exit evidence cannot safely resolve those facts.",
+  "resolvedFormerBlockers": [
+    "The rendered ADEQ NPDES packet identifies EnviraPAC Monticello, LLC, Arkansas filing number 811050136, and Wyoming entity 2014-000657333.",
+    "Generate's direct archive explicitly describes its historical investment in a bankruptcy-remote project SPV owned and operated by enviraPAC for the first two Monticello production lines.",
+    "The live ADEQ facility and permit pages verify the facility identity and active regulatory status but leave the facility Owner field blank and do not disclose equity or title.",
+    "The rendered air-permit and consent-order pages support the production process and a regulator finding that EnviraPAC Monticello, LLC owns and operates the facility, without proving fee title or LLC membership.",
+    "The currently accessible local-news social post supports a reported temporary 32-worker shutdown, but no direct restart or output record was located.",
+    "No directly evidenced sale, transfer, redemption, refinancing, foreclosure, insolvency, disposition, Generate exit, or signed pending transaction was identified; negative search does not prove continuity."
+  ],
+  "identityResolution": {
+    "productionCompanyId": "cmrxpjg1p00y0ivhej6kafhmq",
+    "currentProductionName": "EnviraPAC Monticello",
+    "verifiedFacilityCompany": "EnviraPAC Monticello, LLC",
+    "wyomingEntityId": "2014-000657333",
+    "arkansasFilingNumber": "811050136",
+    "status": "FACILITY_COMPANY_VERIFIED_PROJECTCO_CROSSWALK_UNRESOLVED",
+    "productionAction": "KEEP_EXISTING_RECORD_UNCHANGED",
+    "boundary": "EnviraPAC Monticello, LLC is the verified permittee/operator and regulator-described facility owner. The separate or identical bankruptcy-remote ProjectCo, its members, any parent, and the land/equipment title holders remain unproven."
+  },
+  "ownershipResolution": {
+    "status": "UNRESOLVED_CURRENT_PROJECT_AND_EQUITY_CHAIN",
+    "enviraPacRole": "Historical owner/operator of Generate's unnamed ProjectCo and current regulator-described facility owner/operator",
+    "generateHistoricalRole": "Historical US$25 million investor in the unnamed bankruptcy-remote ProjectCo",
+    "projectCoIdentity": "UNRESOLVED",
+    "currentMembersAndBeneficialOwners": "UNRESOLVED",
+    "stakesAndEffectiveDates": "UNRESOLVED",
+    "generateInstrument": "UNRESOLVED",
+    "generateCurrentStatus": "UNRESOLVED",
+    "generateFundOrManagedAccount": "NOT_PUBLICLY_DISCLOSED",
+    "titleChain": "UNRESOLVED",
+    "contactAndOrganizerTreatment": "DO_NOT_TREAT CONTACT, GENERAL_MANAGER, ORGANIZER, OR REGULATORY OWNER_OPERATOR WORDING AS LLC EQUITY OR FEE_TITLE PROOF"
+  },
+  "operatingResolution": {
+    "status": "ACTIVE_REGULATORY_RECORD_CURRENT_PRODUCTION_UNRESOLVED",
+    "permittee": "EnviraPAC Monticello, LLC",
+    "activePermit": "2361-AR-4",
+    "verifiedScope": "Bio-based powdered and granular activated carbon production using wood feedstock, drying, carbonization, milling, storage, and packaging",
+    "currentGap": "The local report describes a temporary 32-worker shutdown, and no direct 2026 restart, output, shipment, inspection, customer, or production record was found.",
+    "nonproof": "An active permit, named contacts, and historical production description do not prove current output or current equity ownership."
+  },
+  "transactionResolution": {
+    "state": "NO_DIRECTLY_DISCLOSED_LATER_TRANSACTION_IDENTIFIED",
+    "pendingTransaction": null,
+    "finding": "No directly evidenced sale, transfer, redemption, refinancing, recapitalization, foreclosure, insolvency, asset disposition, write-off, Generate exit, or signed pending transaction was located. Non-disclosure is not proof of continuity."
+  },
+  "freshException": {
+    "status": "EXACT_FACT_UNAVAILABLE",
+    "missingFact": "The cutoff-current ProjectCo, equity, financing, and title chain: the legal identity of Generate's bankruptcy-remote SPV and its crosswalk to EnviraPAC Monticello, LLC; all direct and indirect members and beneficial owners, stakes and effective dates; Generate's exact investing affiliate, instrument, fund or account, current status and any exit; the land, equipment, deed, lease, mortgage, UCC and fixture-title chain; and direct evidence of post-layoff production restart.",
+    "searchedEvidence": [
+      "Generate's current accessible EnviraPAC investment archive",
+      "Live ADEQ facility and permit pages",
+      "Rendered ADEQ NPDES and air-permit packets",
+      "Rendered copy of ADEQ consent administrative order LIS 24-009",
+      "Arkansas and Wyoming legal-identity records embedded in the permit packet",
+      "Currently accessible local report of the temporary shutdown",
+      "Fresh ProjectCo, member, beneficial-owner, UCC, title, investment-instrument, fund, transfer, exit, insolvency, restart, output, and pending-transaction searches in the ChatGPT conversation"
+    ],
+    "requiredToResolve": "A certified operating agreement or member ledger; executed subscription, contribution, credit, lease, security, pledge, transfer, redemption, payoff, release, or exit document; a current audited named-investment or ownership schedule; Drew County deed, mortgage, lease, title report, UCC or fixture schedule; and a signed restart, inspection, output, shipment, or customer record that directly identifies the ProjectCo, current owners, instrument, title chain, and operating status."
+  },
+  "primaryCitation": {
+    "label": "2022 ADEQ NPDES NOI/SWPPP packet",
+    "url": "https://adeq.state.ar.us/downloads/WebDatabases/PermitsOnline/NPDES/PermitInformation/ARR001986_NOI%2C%20SWPPP_20220125.pdf",
+    "purpose": "Official filed evidence for the verified facility-company identity and legal registrations, without treating contacts or permit roles as ownership proof",
+    "contentSha256": "1c7e66153890aa76418ccdc02db2d58553be6fe9d45c99e5a1b4b2abd03634d3"
+  },
+  "applicationRequirements": [
+    "Use a terminal-only DEFERRED outcome with this exact ProjectCo, ownership, instrument, title, and operations exception.",
+    "Do not rename or replace the production or seed company, add an alias or redirect, alter company status, retire or add an ownership period, infer a stake, fund or vehicle, or create a database or seed mutation.",
+    "Do not treat permittee/operator status, regulator owner/operator wording, Generate-domain contacts, an organizer, the historical Generate archive, active permit status, or negative transaction search as current equity, fee title, or continuity proof.",
+    "Keep unnamed ProjectCo, parent, financing, equipment, and title entities outside the record until a direct crosswalk establishes their relationship.",
+    "Use exactly one application primary citation bound to the official ADEQ NPDES packet."
+  ],
+  "applicationBlocked": false,
+  "databaseMutationCandidate": false,
+  "seedMutationCandidate": false,
+  "terminalOutcomeCandidate": "DEFERRED",
+  "dealDatabaseMutation": false,
+  "lineage": {
+    "conversationUrl": "https://chatgpt.com/c/6a9afae6-0dc8-83ea-b5ff-c5b2c6463091",
+    "prompt": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0256-envirapac-monticello/attempt-2/chatgpt-research-prompt.md",
+      "sha256": "069635b8a6ff1b9f98d5d1ce96499008a8e657aea466ace00bb2f77bdcc3a2b2"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0256-envirapac-monticello/attempt-2/chatgpt-accepted-response.txt",
+      "sha256": "d7b6feef4ac3ca3f5e56c40958a108c43df708be27762acaead63463913a7ee7"
+    },
+    "transcript": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0256-envirapac-monticello/attempt-2/chatgpt-transcript.txt",
+      "sha256": "488f34a09c34066452b853ae02cd400e5161a968c411c9fa6cccceee05ed0ded"
+    },
+    "attestation": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0256-envirapac-monticello/attempt-2/chatgpt-attestation.json",
+      "sha256": "6f568b5027490fa7b7873821bd11462928e18fa090ebb671cb6d15e7031abcd8"
+    },
+    "responseValidation": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0256-envirapac-monticello/attempt-2/chatgpt-response-validation.json",
+      "sha256": "df9d3a497f0dd963a6e8b920e9219737942d587f552086a740dc03001fdd2473"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0256-envirapac-monticello/attempt-2/source-verification.json",
+      "sha256": "3d6b9956afe30420b50d3071fbe8c24fbd705e00c734bf0003ac10646c1e6bfb"
+    }
+  }
+}

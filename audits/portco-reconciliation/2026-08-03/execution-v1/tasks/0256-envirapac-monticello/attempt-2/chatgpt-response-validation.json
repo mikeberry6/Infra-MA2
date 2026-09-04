@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "taskId": "ledger:0256:envirapac-monticello:efac2570",
+  "taskIndex": 256,
+  "companyName": "EnviraPAC Monticello",
+  "validatedAt": "2026-09-04T18:02:15.000Z",
+  "acceptedResponseSha256": "d7b6feef4ac3ca3f5e56c40958a108c43df708be27762acaead63463913a7ee7",
+  "valid": true,
+  "finalResponse": {
+    "characterCountExcludingRepositoryTerminalLf": 7369,
+    "fencedJsonPresent": false,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "requiredTopLevelKeysExact": true,
+    "decision": "DEFERRED",
+    "confidence": "HIGH_IDENTITY; LOW_OWNERSHIP_TITLE_OPERATIONS",
+    "evidenceCount": 7,
+    "currentOwnerOrSponsorRows": 5,
+    "pendingOwnershipTransactionCount": 0,
+    "primaryEvidenceCount": 1,
+    "ownerKeysExact": true,
+    "pendingTransactionKeysExact": true,
+    "evidenceKeysExact": true,
+    "withinCharacterLimit": true,
+    "withinEvidenceLimit": true,
+    "withinMilestoneLimit": true,
+    "responseSha256": "d7b6feef4ac3ca3f5e56c40958a108c43df708be27762acaead63463913a7ee7",
+    "result": "PASS"
+  },
+  "contract": {
+    "beginJsonPresent": true,
+    "endJsonPresent": true,
+    "beginReviewPresent": true,
+    "endReviewPresent": true,
+    "jsonParses": true,
+    "mandatoryTopLevelKeysExact": true,
+    "ownerKeysExact": true,
+    "pendingTransactionKeysExact": true,
+    "evidenceKeysExact": true,
+    "evidenceRowCount": 7,
+    "milestoneCount": 4,
+    "recommendedPrimaryCount": 1,
+    "contentCharactersExcludingMarkers": 7322,
+    "decisionAllowed": true,
+    "decision": "DEFERRED"
+  },
+  "captureNormalization": {
+    "performed": true,
+    "reason": "The browser rendered URLs as inline links inside the minified JSON. Accessibility DOM text nodes were joined to restore the literal JSON strings. The Copy response clipboard was not authoritative because it still held the preceding Task 253 response.",
+    "semanticChanges": false,
+    "repairTurnUsed": false
+  },
+  "independentEvidenceAdjustments": [
+    "The live ADEQ facility page visibly leaves its Owner field blank; named mailing, invoice, permit, or general-manager contacts are not LLC members, beneficial owners, or title holders.",
+    "The Generate archive supports a historical investment in an unnamed bankruptcy-remote SPV owned and operated by enviraPAC, but it does not name the SPV, crosswalk it to EnviraPAC Monticello, LLC, identify the investment instrument, or establish current ownership.",
+    "The rendered ADEQ permit and consent-order pages support facility identity, active permit status, process scope, and regulator owner/operator wording, but they do not supply the LLC member ledger, land/equipment title chain, or Generate fund and stake.",
+    "The currently accessible local-news social post reports a temporary 32-worker shutdown, but no direct restart, production-output, or current shipment record was found."
+  ],
+  "result": "PASS_WITH_TRANSPARENT_DOM_RECONSTRUCTION_AND_EXACT_EXCEPTION"
+}
