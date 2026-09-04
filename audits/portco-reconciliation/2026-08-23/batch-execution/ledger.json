@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-04T21:18:00Z",
-  "activeBatchId": "batch-deferred-0248-0263-v1",
+  "updatedAt": "2026-09-04T21:37:50Z",
+  "activeBatchId": null,
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -9099,7 +9099,7 @@
     },
     {
       "batchId": "batch-deferred-0248-0263-v1",
-      "state": "VERIFYING_FAILED",
+      "state": "COMPLETED",
       "taskIds": [
         "ledger:0248:grand-falls-windsor-long-term-care-home:ebbcb53e",
         "ledger:0253:byd-ev-fleet-asset-spvs:e914a6d4",
@@ -9115,15 +9115,18 @@
         263
       ],
       "createdAt": "2026-09-04T20:42:05.000Z",
-      "updatedAt": "2026-09-04T21:18:00Z",
-      "completedAt": null,
+      "updatedAt": "2026-09-04T21:37:50Z",
+      "completedAt": "2026-09-04T21:37:50Z",
       "batchManifest": {
-        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-deferred-0248-0263-v1/batch-manifest-v2.json",
-        "sha256": "176ba57b766302d0c5f0c8445d64d09c6209d81ea7e03762e957dcc637b953d6"
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-deferred-0248-0263-v1/batch-manifest-v3.json",
+        "sha256": "4773c72bdab3b55e14871e59ab065fd6fe2e35637b22efe5cec7742b4042d51e"
       },
-      "releaseSha": "005f724de877e21c91f5187bc1bac44b8be928bd",
-      "receipt": null,
-      "reason": "production-batch-dry-run-refused-database-target-fingerprint-before-write-run-33920275535",
+      "releaseSha": "f10a85ff6329dc94777cbf3fd37ce0b1ef7c06f3",
+      "receipt": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-deferred-0248-0263-v1/production-apply-run-33921498147/batch-apply-receipt.json",
+        "sha256": "05c95ddaa3fc353ff035b107578cf52370bf195491f50a3a1695f30c7219b1f7"
+      },
+      "reason": "Immutable receipt, database after-image, seed parity, exact protected release, canonical API, and rendered Pine Gate scorecard checks passed; four exact terminal outcomes were preserved without database writes.",
       "history": [
         {
           "sequence": 1,
@@ -9172,9 +9175,31 @@
             "176ba57b766302d0c5f0c8445d64d09c6209d81ea7e03762e957dcc637b953d6"
           ],
           "reason": "production-batch-dry-run-refused-database-target-fingerprint-before-write-run-33920275535"
+        },
+        {
+          "sequence": 6,
+          "from": "VERIFYING_FAILED",
+          "to": "VERIFYING",
+          "at": "2026-09-04T21:34:00Z",
+          "evidenceSha256": [
+            "05c95ddaa3fc353ff035b107578cf52370bf195491f50a3a1695f30c7219b1f7",
+            "4773c72bdab3b55e14871e59ab065fd6fe2e35637b22efe5cec7742b4042d51e"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 7,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-09-04T21:37:50Z",
+          "evidenceSha256": [
+            "05c95ddaa3fc353ff035b107578cf52370bf195491f50a3a1695f30c7219b1f7",
+            "4773c72bdab3b55e14871e59ab065fd6fe2e35637b22efe5cec7742b4042d51e"
+          ],
+          "reason": "Immutable receipt, database after-image, seed parity, exact protected release, canonical API, and rendered Pine Gate scorecard checks passed; four exact terminal outcomes were preserved without database writes."
         }
       ]
     }
   ],
-  "ledgerSha256": "8c9064d69a195e5d4b14855814f74767df0c3f03669c17824d66a45447bfccf7"
+  "ledgerSha256": "9fbaf5c0f67ec1a27b63c2595e235ee9058af0f10ece2553718845e2166c9e62"
 }

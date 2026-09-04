@@ -5,8 +5,8 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-09-04T20:42:04.000Z",
-  "runStatus": "IDLE",
+  "updatedAt": "2026-09-04T21:37:50.000Z",
+  "runStatus": "COMPLETE_WITH_EXCEPTIONS",
   "activeTaskId": null,
   "source": {
     "manifest": {
@@ -28966,20 +28966,26 @@
       "managerIndex": 45,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "2b63296e5bddb0e51155092d5f63d70cac42188f1bda2b827b1ee465af7e204a",
-      "status": "PENDING",
-      "attempts": 1,
-      "startedAt": null,
-      "updatedAt": "2026-09-04T20:42:00.000Z",
-      "completedAt": null,
+      "status": "EXCLUDED",
+      "attempts": 2,
+      "startedAt": "2026-09-04T20:42:05.000Z",
+      "updatedAt": "2026-09-04T21:37:50.000Z",
+      "completedAt": "2026-09-04T21:37:50.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "414bd675cf6e06ee4b66764c9c6b41314210229dccc9e8f8bc11645a0dbac6bb",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0248-grand-falls-windsor-long-term-care-home/attempt-2/locked-deferred-v2-task-snapshot.json",
+          "sha256": "414bd675cf6e06ee4b66764c9c6b41314210229dccc9e8f8bc11645a0dbac6bb"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0248-grand-falls-windsor-long-term-care-home/attempt-2/terminal-decision-excluded-v1.json",
+          "sha256": "04a44f1f6f9ac2fda00c614795e36ffafce412fd24c5dad135f11f4509473e01"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -29085,6 +29091,21 @@
             "ecfb73ba5071bd181b09a86fdc2e45e7d6f510cef87b9c3cedd26e9ea4388edc"
           ],
           "kind": "DEFERRED_READJUDICATION"
+        },
+        {
+          "sequence": 4,
+          "from": "PENDING",
+          "to": "EXCLUDED",
+          "at": "2026-09-04T21:37:50.000Z",
+          "reason": "Fresh direct evidence establishes one ProjectCo and one Project Agreement for both homes. Grand Falls-Windsor is an underlying facility already represented by canonical production company cmrxpjfba00x0ivhemjealbde, not a separate manager-level PortCo. Because no separate replacement source task exists, terminal EXCLUDED is the valid execution outcome; production and seed ownership stay unchanged while the exact current cap-table exception is preserved.",
+          "taskSnapshotSha256": "414bd675cf6e06ee4b66764c9c6b41314210229dccc9e8f8bc11645a0dbac6bb",
+          "evidenceSha256": [
+            "04a44f1f6f9ac2fda00c614795e36ffafce412fd24c5dad135f11f4509473e01",
+            "05c95ddaa3fc353ff035b107578cf52370bf195491f50a3a1695f30c7219b1f7",
+            "414bd675cf6e06ee4b66764c9c6b41314210229dccc9e8f8bc11645a0dbac6bb",
+            "4773c72bdab3b55e14871e59ab065fd6fe2e35637b22efe5cec7742b4042d51e"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -29404,20 +29425,26 @@
       "managerIndex": 46,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "075ff46a73d819c80f2c9123041ffb28f01565fc09a2382a57e933ef465ea266",
-      "status": "PENDING",
-      "attempts": 1,
-      "startedAt": null,
-      "updatedAt": "2026-09-04T20:42:01.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
+      "status": "DEFERRED",
+      "attempts": 2,
+      "startedAt": "2026-09-04T20:42:05.000Z",
+      "updatedAt": "2026-09-04T21:37:50.000Z",
+      "completedAt": "2026-09-04T21:37:50.000Z",
+      "exceptionReason": "Fresh direct evidence supports the historical Generate/BYD leasing program and Green Transportation Leasing identity, but no current direct source establishes GTL's member ledger, Generate or BYD equity status, percentages, fund or account, or a current qualifying lease and vehicle-title book. Active registration, manager wording, historical joint-venture descriptions, current generic BYD financing offerings, and absence of a public exit are not sufficient to rename or alter the production record. Preserve production and seed unchanged with the exact ownership and asset-book exception.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "e55a303ac498191b209f4589e0bbb885f685c595d3f6bc7d735091c6329674b7",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0253-byd-ev-fleet-asset-spvs/attempt-2/locked-deferred-v1-task-snapshot.json",
+          "sha256": "e55a303ac498191b209f4589e0bbb885f685c595d3f6bc7d735091c6329674b7"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0253-byd-ev-fleet-asset-spvs/attempt-2/terminal-decision-deferred-v1.json",
+          "sha256": "d89f1ff8df3d53ce3d3470974734667ea08621f9ddf122dcf79827e723699b60"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -29523,6 +29550,21 @@
             "da60d612042173ca5f97a4037d2e4052afcadba9ad9c98f0ec1cdc5f933757d7"
           ],
           "kind": "DEFERRED_READJUDICATION"
+        },
+        {
+          "sequence": 4,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-04T21:37:50.000Z",
+          "reason": "Fresh direct evidence supports the historical Generate/BYD leasing program and Green Transportation Leasing identity, but no current direct source establishes GTL's member ledger, Generate or BYD equity status, percentages, fund or account, or a current qualifying lease and vehicle-title book. Active registration, manager wording, historical joint-venture descriptions, current generic BYD financing offerings, and absence of a public exit are not sufficient to rename or alter the production record. Preserve production and seed unchanged with the exact ownership and asset-book exception.",
+          "taskSnapshotSha256": "e55a303ac498191b209f4589e0bbb885f685c595d3f6bc7d735091c6329674b7",
+          "evidenceSha256": [
+            "05c95ddaa3fc353ff035b107578cf52370bf195491f50a3a1695f30c7219b1f7",
+            "4773c72bdab3b55e14871e59ab065fd6fe2e35637b22efe5cec7742b4042d51e",
+            "d89f1ff8df3d53ce3d3470974734667ea08621f9ddf122dcf79827e723699b60",
+            "e55a303ac498191b209f4589e0bbb885f685c595d3f6bc7d735091c6329674b7"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -29688,20 +29730,26 @@
       "managerIndex": 46,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "58e4fd898161698cd45a2224df91dba168988a70f72a35991e8afc70ece82ff5",
-      "status": "PENDING",
-      "attempts": 1,
-      "startedAt": null,
-      "updatedAt": "2026-09-04T20:42:02.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
+      "status": "DEFERRED",
+      "attempts": 2,
+      "startedAt": "2026-09-04T20:42:05.000Z",
+      "updatedAt": "2026-09-04T21:37:50.000Z",
+      "completedAt": "2026-09-04T21:37:50.000Z",
+      "exceptionReason": "Fresh direct evidence verifies EnviraPAC Monticello, LLC as the facility permittee and regulator-described owner/operator and verifies Generate's historical investment in an unnamed enviraPAC-owned and operated bankruptcy-remote ProjectCo. It does not name and crosswalk the ProjectCo, identify current members or stakes, disclose Generate's instrument, fund, account, current status or exit, supply the land or equipment-title chain, or prove a post-layoff production restart. Preserve production and seed unchanged with that exact exception.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "7a100721ef3b4062649455521fc20814682fb35b0e0d32c75f0affabae7483c8",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0256-envirapac-monticello/attempt-2/locked-deferred-v1-task-snapshot.json",
+          "sha256": "7a100721ef3b4062649455521fc20814682fb35b0e0d32c75f0affabae7483c8"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0256-envirapac-monticello/attempt-2/terminal-decision-deferred-v1.json",
+          "sha256": "b0bb965d68d69e7ce9f877c96f5994baee6c95ddf7f9492bf8d82cbdea248380"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -29807,6 +29855,21 @@
             "df9d3a497f0dd963a6e8b920e9219737942d587f552086a740dc03001fdd2473"
           ],
           "kind": "DEFERRED_READJUDICATION"
+        },
+        {
+          "sequence": 4,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-04T21:37:50.000Z",
+          "reason": "Fresh direct evidence verifies EnviraPAC Monticello, LLC as the facility permittee and regulator-described owner/operator and verifies Generate's historical investment in an unnamed enviraPAC-owned and operated bankruptcy-remote ProjectCo. It does not name and crosswalk the ProjectCo, identify current members or stakes, disclose Generate's instrument, fund, account, current status or exit, supply the land or equipment-title chain, or prove a post-layoff production restart. Preserve production and seed unchanged with that exact exception.",
+          "taskSnapshotSha256": "7a100721ef3b4062649455521fc20814682fb35b0e0d32c75f0affabae7483c8",
+          "evidenceSha256": [
+            "05c95ddaa3fc353ff035b107578cf52370bf195491f50a3a1695f30c7219b1f7",
+            "4773c72bdab3b55e14871e59ab065fd6fe2e35637b22efe5cec7742b4042d51e",
+            "7a100721ef3b4062649455521fc20814682fb35b0e0d32c75f0affabae7483c8",
+            "b0bb965d68d69e7ce9f877c96f5994baee6c95ddf7f9492bf8d82cbdea248380"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -29818,23 +29881,44 @@
       "managerIndex": 46,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "af1e2d30c0d2bc2985e2f8e0bd4cdaa449eae564e908441d69233a472dfc1366",
-      "status": "PENDING",
-      "attempts": 1,
-      "startedAt": null,
-      "updatedAt": "2026-09-04T20:42:03.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 2,
+      "startedAt": "2026-09-04T20:42:05.000Z",
+      "updatedAt": "2026-09-04T21:37:50.000Z",
+      "completedAt": "2026-09-04T21:37:50.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "52239c3a595231a0d45ad94cb1f9fdc4102f26961d07df72ed195f76e0f7dec5",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0257-pine-gate-renewables/attempt-2/observed-deferred-v4-task-snapshot.json",
+          "sha256": "52239c3a595231a0d45ad94cb1f9fdc4102f26961d07df72ed195f76e0f7dec5"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0257-pine-gate-renewables/attempt-2/proposal-deferred-v2.json",
+          "sha256": "a94f9f6699241835b7d64df7535a35839e361e98ce0d5b0a1064ce4fca88153b"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0257-pine-gate-renewables/attempt-2/approval-deferred-v2.json",
+          "sha256": "06269d89b6103ff4afe28f561b48f3db9afea5a1c60a5c557d8fc06e6e9c2c9f"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-deferred-0248-0263-v1/production-apply-run-33921498147/batch-apply-receipt.json#members/3/receipt",
+          "sha256": "ef94b81271aaea347c394f3f6ce04611b2327a88af896f37e0a9594f949ade3e"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0257-pine-gate-renewables/attempt-2/proposal-deferred-v2.json#afterImage",
+          "sha256": "919c70b23f265c83afc52988befb545357a71c6cab69cf3d5a76f80bd540f39e"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-09-04T21:37:50.000Z",
+        "auditEventId": "cmtngzwkq0006vt4xyqu46ahw",
+        "transactionId": "68238898-49b5-4d4d-a54d-b0939bafade1",
+        "receiptSha256": "ef94b81271aaea347c394f3f6ce04611b2327a88af896f37e0a9594f949ade3e",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33921498147"
+      },
       "reAdjudications": [
         {
           "sequence": 1,
@@ -29937,6 +30021,24 @@
             "d3cf7429a751cbad8a53b2a45352ca264f166ac6167aa520b5a1ac7e584b65f0"
           ],
           "kind": "DEFERRED_READJUDICATION"
+        },
+        {
+          "sequence": 4,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-09-04T21:37:50.000Z",
+          "reason": "Completed in verified atomic release bundle batch-deferred-0248-0263-v1.",
+          "taskSnapshotSha256": "52239c3a595231a0d45ad94cb1f9fdc4102f26961d07df72ed195f76e0f7dec5",
+          "evidenceSha256": [
+            "05c95ddaa3fc353ff035b107578cf52370bf195491f50a3a1695f30c7219b1f7",
+            "06269d89b6103ff4afe28f561b48f3db9afea5a1c60a5c557d8fc06e6e9c2c9f",
+            "4773c72bdab3b55e14871e59ab065fd6fe2e35637b22efe5cec7742b4042d51e",
+            "52239c3a595231a0d45ad94cb1f9fdc4102f26961d07df72ed195f76e0f7dec5",
+            "919c70b23f265c83afc52988befb545357a71c6cab69cf3d5a76f80bd540f39e",
+            "a94f9f6699241835b7d64df7535a35839e361e98ce0d5b0a1064ce4fca88153b",
+            "ef94b81271aaea347c394f3f6ce04611b2327a88af896f37e0a9594f949ade3e"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -30315,20 +30417,26 @@
       "managerIndex": 47,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "4be111aa6c8792eae03e118e6d10ff03ef9cc60cfe7c301173f11a635360a2bc",
-      "status": "PENDING",
-      "attempts": 1,
-      "startedAt": null,
-      "updatedAt": "2026-09-04T20:42:04.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
+      "status": "DEFERRED",
+      "attempts": 2,
+      "startedAt": "2026-09-04T20:42:05.000Z",
+      "updatedAt": "2026-09-04T21:37:50.000Z",
+      "completedAt": "2026-09-04T21:37:50.000Z",
+      "exceptionReason": "Fresh direct evidence verifies one active Divert platform, Ara's current Ara Fund II position, Enbridge's 10% cost investment, later Wittington and Mitsubishi equity, and GIC and Ontario Power Generation participation in the 2021 growth-equity transaction. It does not identify GIC's legal holder or strategy, security, percentage, rights, continuity or disposition; identify the exact OPG pension vehicle or current position; or provide the post-Series-C cap table and stock ledger needed to remove the unsupported GIC Infrastructure attribution without also retiring a possible GIC position. Preserve production and seed unchanged with that exact exception.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "bc3585f46bace6f472b898e2b313d5310819fe7479f90e0b16bbcf722e82875e",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0263-divert-inc/attempt-2/locked-deferred-v1-task-snapshot.json",
+          "sha256": "bc3585f46bace6f472b898e2b313d5310819fe7479f90e0b16bbcf722e82875e"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0263-divert-inc/attempt-2/terminal-decision-deferred-v1.json",
+          "sha256": "99c14682c8550e4b7fedccae639e4200a30191a8a1e5e7897eb464978982711e"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -30434,6 +30542,21 @@
             "d3cf7429a751cbad8a53b2a45352ca264f166ac6167aa520b5a1ac7e584b65f0"
           ],
           "kind": "DEFERRED_READJUDICATION"
+        },
+        {
+          "sequence": 4,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-04T21:37:50.000Z",
+          "reason": "Fresh direct evidence verifies one active Divert platform, Ara's current Ara Fund II position, Enbridge's 10% cost investment, later Wittington and Mitsubishi equity, and GIC and Ontario Power Generation participation in the 2021 growth-equity transaction. It does not identify GIC's legal holder or strategy, security, percentage, rights, continuity or disposition; identify the exact OPG pension vehicle or current position; or provide the post-Series-C cap table and stock ledger needed to remove the unsupported GIC Infrastructure attribution without also retiring a possible GIC position. Preserve production and seed unchanged with that exact exception.",
+          "taskSnapshotSha256": "bc3585f46bace6f472b898e2b313d5310819fe7479f90e0b16bbcf722e82875e",
+          "evidenceSha256": [
+            "05c95ddaa3fc353ff035b107578cf52370bf195491f50a3a1695f30c7219b1f7",
+            "4773c72bdab3b55e14871e59ab065fd6fe2e35637b22efe5cec7742b4042d51e",
+            "99c14682c8550e4b7fedccae639e4200a30191a8a1e5e7897eb464978982711e",
+            "bc3585f46bace6f472b898e2b313d5310819fe7479f90e0b16bbcf722e82875e"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -46357,5 +46480,5 @@
       ]
     }
   ],
-  "manifestSha256": "8d9dde27ec326eedfaec8c232a36bc9fbe673dc6e0b391f35e47478d3e599d66"
+  "manifestSha256": "14e0b36aebd3c3cc13423a325b4b389de328c65014b980f0e9f79beacb91f1b0"
 }

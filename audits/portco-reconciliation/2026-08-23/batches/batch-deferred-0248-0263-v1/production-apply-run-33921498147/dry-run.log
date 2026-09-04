@@ -1,0 +1,46 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:batch:apply
+> npx tsx scripts/portco-reconciliation/batch-apply-cli.ts --batch-manifest=audits/portco-reconciliation/2026-08-23/batches/batch-deferred-0248-0263-v1/batch-manifest-v3.json --batch-sha256=4773c72bdab3b55e14871e59ab065fd6fe2e35637b22efe5cec7742b4042d51e
+
+(node:3447) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "BATCH_DRY_RUN",
+  "batchId": "batch-deferred-0248-0263-v1",
+  "batchSha256": "4773c72bdab3b55e14871e59ab065fd6fe2e35637b22efe5cec7742b4042d51e",
+  "databaseWrites": false,
+  "seedWrites": false,
+  "plans": [
+    {
+      "companyName": "Pine Gate Renewables",
+      "mutations": [
+        {
+          "kind": "CORRECT_COMPANY",
+          "relationIds": [],
+          "detail": "Apply approved changes to description, lastVerifiedAt, milestones, citations."
+        },
+        {
+          "kind": "RETIRE_OWNERSHIP",
+          "relationIds": [
+            "cmrxpk1oz01wgivhehzt20uwm"
+          ],
+          "detail": "Retire 1 ownership period(s) without deleting history."
+        },
+        {
+          "kind": "REALIZE_COMPANY",
+          "relationIds": [],
+          "detail": "Mark the company realized after all active ownership has ended."
+        }
+      ],
+      "changedFields": [
+        "citations",
+        "companyStatus",
+        "description",
+        "lastVerifiedAt",
+        "milestones",
+        "ownershipPeriods"
+      ],
+      "retiredCompanyIds": []
+    }
+  ]
+}
