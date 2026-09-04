@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-04T06:54:20Z",
-  "activeBatchId": "batch-deferred-0111-0220-v1",
+  "updatedAt": "2026-09-04T07:22:45Z",
+  "activeBatchId": null,
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -8933,7 +8933,7 @@
     },
     {
       "batchId": "batch-deferred-0111-0220-v1",
-      "state": "VERIFYING_FAILED",
+      "state": "COMPLETED",
       "taskIds": [
         "ledger:0111:generate-capital:f6794437",
         "ledger:0178:kelso-valley-wind-solar-and-water:285d524a",
@@ -8949,8 +8949,8 @@
         220
       ],
       "createdAt": "2026-09-04T06:17:30.000Z",
-      "updatedAt": "2026-09-04T06:54:20Z",
-      "completedAt": null,
+      "updatedAt": "2026-09-04T07:22:45Z",
+      "completedAt": "2026-09-04T07:22:45Z",
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-deferred-0111-0220-v1/batch-manifest-v2.json",
         "sha256": "a73a2e23a94c8a7bc93a8bf8eab22dd1228eea0d1a60b38e6af72793a62a95f6"
@@ -8960,7 +8960,7 @@
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-deferred-0111-0220-v1/production-apply-run-33845734616/batch-apply-receipt.json",
         "sha256": "f68a13368f816e0cc5ac1a5079281e886e7d483ec15cb9ee3869e3f0f3cddf43"
       },
-      "reason": "Post-commit rendered verification failed: canonical Sunstone Power displays CI Growth Markets Fund II as the platform ownership fund even though the approved evidence and seed attribution bind Copenhagen Infrastructure New Markets Fund I; the successful PortCo transaction b344f9c2-025e-445a-ac86-dc9cab9fbbbe must not be repeated.",
+      "reason": "Final receipt, database after-image, seed parity, exact protected release, attribution repair, canonical API, and rendered scorecard checks all passed; source tasks 111, 178, 187, 213, and 220 were finalized durably.",
       "history": [
         {
           "sequence": 1,
@@ -9010,9 +9010,31 @@
             "f68a13368f816e0cc5ac1a5079281e886e7d483ec15cb9ee3869e3f0f3cddf43"
           ],
           "reason": "Post-commit rendered verification failed: canonical Sunstone Power displays CI Growth Markets Fund II as the platform ownership fund even though the approved evidence and seed attribution bind Copenhagen Infrastructure New Markets Fund I; the successful PortCo transaction b344f9c2-025e-445a-ac86-dc9cab9fbbbe must not be repeated."
+        },
+        {
+          "sequence": 6,
+          "from": "VERIFYING_FAILED",
+          "to": "VERIFYING",
+          "at": "2026-09-04T07:22:00Z",
+          "evidenceSha256": [
+            "a73a2e23a94c8a7bc93a8bf8eab22dd1228eea0d1a60b38e6af72793a62a95f6",
+            "f68a13368f816e0cc5ac1a5079281e886e7d483ec15cb9ee3869e3f0f3cddf43"
+          ],
+          "reason": "Recovered after bounded Sunstone attribution repair receipt 064ccaf22bfe637e0621e49579ebc9eafb5bd41d428f0e6b97c5ab1315443239; canonical API and fresh rendered drawer now show Copenhagen Infrastructure New Markets Fund I, preserve the 100% vehicle, omit the stale platform attribution, and retain project-layer context."
+        },
+        {
+          "sequence": 7,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-09-04T07:22:45Z",
+          "evidenceSha256": [
+            "a73a2e23a94c8a7bc93a8bf8eab22dd1228eea0d1a60b38e6af72793a62a95f6",
+            "f68a13368f816e0cc5ac1a5079281e886e7d483ec15cb9ee3869e3f0f3cddf43"
+          ],
+          "reason": "Final receipt, database after-image, seed parity, exact protected release, attribution repair, canonical API, and rendered scorecard checks all passed; source tasks 111, 178, 187, 213, and 220 were finalized durably."
         }
       ]
     }
   ],
-  "ledgerSha256": "55d73566a193135ccc600f15c7c78d55f55555e71ae70b8ae903fb7792aa2f13"
+  "ledgerSha256": "28fb98ed8d077bbf730a9cdaa0876d2efe100ce61662b65585802fcdc7d95bb9"
 }

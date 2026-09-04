@@ -1,0 +1,32 @@
+
+> infra-tracker@1.0.0 portfolio:fund-attribution:apply
+> npx tsx scripts/apply-portfolio-fund-attribution.ts --manifest=audits/portfolio-fund-attribution/2026-09-04/scoped/portco-batch-deferred-0111-0220-sunstone-attribution-repair/apply-manifest.json --manifest-sha256=15d6ef5df945b26d6afa037ad8ddfea375e8f7b1f181f6c587b6cf44c479951b --production-snapshot=audits/portfolio-fund-attribution/2026-09-04/scoped/portco-batch-deferred-0111-0220-sunstone-attribution-repair/production-snapshot.json --approval=audits/portfolio-fund-attribution/2026-09-04/scoped/portco-batch-deferred-0111-0220-sunstone-attribution-repair/approval.json --approval-sha256=f540a860623ae45179f028addf8b1c5fc311f267f5d5e8a5a3fe6f3fc13d2bbd --validate-only=true
+
+{
+  "mode": "VALIDATE_ONLY",
+  "databaseWrites": false,
+  "manifestSha256": "15d6ef5df945b26d6afa037ad8ddfea375e8f7b1f181f6c587b6cf44c479951b",
+  "approvalSha256": "f540a860623ae45179f028addf8b1c5fc311f267f5d5e8a5a3fe6f3fc13d2bbd",
+  "mutationCount": 1,
+  "policy": {
+    "sourceScope": "PRODUCTION_SNAPSHOT",
+    "mutationScope": "OwnershipPeriod attribution metadata and existing-fund link only",
+    "allowedAttributions": [
+      "DISCLOSED",
+      "INFERRED",
+      "DIRECT_PROGRAM",
+      "UNRESOLVED"
+    ],
+    "fundCreates": 0,
+    "fundUpdates": 0,
+    "ownershipIdentityChanges": 0,
+    "attributionCounts": {
+      "DISCLOSED": 1,
+      "INFERRED": 0,
+      "DIRECT_PROGRAM": 0,
+      "UNRESOLVED": 0
+    },
+    "inferredWrites": 0,
+    "fundLinkChanges": 0
+  }
+}
