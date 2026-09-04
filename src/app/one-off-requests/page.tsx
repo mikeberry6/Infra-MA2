@@ -9,6 +9,14 @@ export const metadata: Metadata = {
 
 const ONE_OFF_REQUESTS = [
   {
+    title: "Slide format",
+    description:
+      "Editable Rio Tinto slide format with initials-only text, accompanied by the complete source copy on the webpage.",
+    href: "/one-off-requests/slide-format",
+    format: "PowerPoint + text",
+    date: "Sep 2026",
+  },
+  {
     title: "Weekly process update — agenda and process calendar",
     description:
       "Editable two-slide PowerPoint with an agenda, milestone calendars, process windows, workstream shading, key dates, and holiday markers.",
@@ -253,7 +261,7 @@ export default function OneOffRequestsPage() {
           },
           {
             label: "Latest",
-            value: "Aug 2026",
+            value: "Sep 2026",
             detail: "Most recent one-off",
             color: "#B4A87D",
           },
