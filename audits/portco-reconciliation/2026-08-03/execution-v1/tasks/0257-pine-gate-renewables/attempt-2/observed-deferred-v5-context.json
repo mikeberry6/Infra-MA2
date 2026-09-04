@@ -1,0 +1,261 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0257:pine-gate-renewables:2f4fe856",
+  "taskIndex": 257,
+  "companyName": "Pine Gate Renewables",
+  "generatedAt": "2026-09-04T21:21:04.355Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0257-pine-gate-renewables/attempt-2/observed-deferred-v5-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 257,
+    "taskId": "ledger:0257:pine-gate-renewables:2f4fe856",
+    "canonicalKey": "pine-gate-renewables|united-states",
+    "companyName": "Pine Gate Renewables",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 46,
+    "managers": [
+      "Generate Capital"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "046-generate-capital:holding:006:pine-gate-renewables"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjg4f00y5ivhep8jj6phn"
+    ],
+    "seedKeys": [
+      "pine gate renewables|United States"
+    ],
+    "evidenceUrls": [
+      "https://pinegaterenewables.com/pine-gate-renewables-announces-a-650-million-total-investment-from-generate-capital-healthcare-of-ontario-pension-plan-and-hesta/",
+      "https://www.businesswire.com/news/home/20220623005332/en/Generate-Capital-Provides-Pine-Gate-Renewables-with-%24500-Million-in-Strategic-Growth-Capital-and-Asset-Financing-to-Expand-Utility-Scale-Solar"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted census NEEDS_REVIEW for 046-generate-capital:holding:006:pine-gate-renewables: Repository identity matches, but current ownership continuity following later platform restructuring is not directly confirmed by primary ownership disclosures. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Accepted census NEEDS_REVIEW for 046-generate-capital:holding:006:pine-gate-renewables: Repository identity matches, but current ownership continuity following later platform restructuring is not directly confirmed by primary ownership disclosures."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjg4f00y5ivhep8jj6phn",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "pine-gate-renewables|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjg4f00y5ivhep8jj6phn",
+    "name": "Pine Gate Renewables",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Utility-scale solar and storage development",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Pine Gate Renewables is a developer and owner-operator of utility-scale solar and storage projects in the United States. Its customers are utilities, corporate offtakers, and grid markets that require large-scale renewable generation and storage capacity. The model combines project development and long-term asset ownership, making it both capital-intensive and reliant on recurring infrastructure deployment. Company materials state that Pine Gate was founded in 2016 and operates across the United States, while Generate announced a US$500 million strategic growth and asset-financing commitment in 2022. The reviewed materials did not disclose Generate's ownership percentage in the platform. Generate remained an investor in 2024 when Pine Gate announced the final closing of a US$650 million investment that also included HOOPP and HESTA.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2016,
+    "headquarters": "North Carolina; multi-state U.S.",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk1oz01wgivhehzt20uwm",
+        "managerName": "Generate Capital",
+        "organizationName": "Generate Capital",
+        "fundName": null,
+        "vehicleName": "Corporate Equity",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplryn042zivheb5pa857e",
+        "date": "2016",
+        "event": "Pine Gate Renewables was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2016-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplrza0430ivheqj2amwg7",
+        "date": "Jun 23, 2022",
+        "event": "Generate announced a US$500 million strategic growth capital and asset-financing commitment to Pine Gate.",
+        "category": "FINANCING",
+        "sortDate": "2022-06-23T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplrzs0431ivheegprsz86",
+        "date": "Apr 29, 2024",
+        "event": "Pine Gate announced a later US$650 million investment round with Generate, HOOPP, and HESTA, extending Generate's existing partnership.",
+        "category": "FINANCING",
+        "sortDate": "2024-04-29T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpr6720aobivheqhf5qyml",
+        "label": "Pinegaterenewables — Pine Gate Renewables",
+        "url": "https://pinegaterenewables.com/about-pine-gate/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Pinegaterenewables company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpr6820aodivhewogyv08p",
+        "label": "Investment date source — Generate Capital — Pine Gate Renewables",
+        "url": "https://www.businesswire.com/news/home/20220623005332/en/Generate-Capital-Provides-Pine-Gate-Renewables-with-%24500-Million-in-Strategic-Growth-Capital-and-Asset-Financing-to-Expand-Utility-Scale-Solar",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Generate Capital initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr68y0aofivhera73kz92",
+        "label": "Pinegaterenewables — Pine Gate Renewables",
+        "url": "https://pinegaterenewables.com/pine-gate-renewables-announces-a-650-million-total-investment-from-generate-capital-healthcare-of-ontario-pension-plan-and-hesta/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Pinegaterenewables — Pine Gate Renewables",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpr69y0aohivhe2zqy0ibg",
+        "label": "Kirkland — Pine Gate Renewables",
+        "url": "https://www.kirkland.com/news/press-release/2024/04/kirkland-advises-generate-capital-in-investment-in-pine-gate-renewables",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Kirkland — Pine Gate Renewables",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Pine Gate Renewables",
+    "investmentFirm": "Generate Capital",
+    "sector": "Power & ET",
+    "subsector": "Utility-scale solar and storage development",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Corporate Equity",
+    "description": "Pine Gate Renewables is a developer and owner-operator of utility-scale solar and storage projects in the United States. Its customers are utilities, corporate offtakers, and grid markets that require large-scale renewable generation and storage capacity. The model combines project development and long-term asset ownership, making it both capital-intensive and reliant on recurring infrastructure deployment. Company materials state that Pine Gate was founded in 2016 and operates across the United States, while Generate announced a US$500 million strategic growth and asset-financing commitment in 2022. The reviewed materials did not disclose Generate's ownership percentage in the platform. Generate remained an investor in 2024 when Pine Gate announced the final closing of a US$650 million investment that also included HOOPP and HESTA.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2016,
+    "investmentYear": 2022,
+    "headquarters": "North Carolina; multi-state U.S.",
+    "milestones": [
+      {
+        "date": "2016",
+        "event": "Pine Gate Renewables was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "Jun 23, 2022",
+        "event": "Generate announced a US$500 million strategic growth capital and asset-financing commitment to Pine Gate.",
+        "category": "Financing"
+      },
+      {
+        "date": "Apr 29, 2024",
+        "event": "Pine Gate announced a later US$650 million investment round with Generate, HOOPP, and HESTA, extending Generate's existing partnership.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Pinegaterenewables — Pine Gate Renewables",
+        "url": "https://pinegaterenewables.com/about-pine-gate/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Investment date source — Generate Capital — Pine Gate Renewables",
+        "url": "https://www.businesswire.com/news/home/20220623005332/en/Generate-Capital-Provides-Pine-Gate-Renewables-with-%24500-Million-in-Strategic-Growth-Capital-and-Asset-Financing-to-Expand-Utility-Scale-Solar",
+        "type": "PRESS_RELEASE",
+        "purpose": "FINANCING_FILINGS"
+      },
+      {
+        "label": "Pinegaterenewables — Pine Gate Renewables",
+        "url": "https://pinegaterenewables.com/pine-gate-renewables-announces-a-650-million-total-investment-from-generate-capital-healthcare-of-ontario-pension-plan-and-hesta/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Kirkland — Pine Gate Renewables",
+        "url": "https://www.kirkland.com/news/press-release/2024/04/kirkland-advises-generate-capital-in-investment-in-pine-gate-renewables",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Generate Capital",
+        "ownershipVehicle": "Corporate Equity",
+        "investmentYear": 2022,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi8ti0021ivhe78elelvr",
+        "name": "Generate Capital",
+        "updatedAt": "2026-07-23T16:09:18.630Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0257:pine-gate-renewables:2f4fe856",
+    "taskIndex": 257,
+    "canonicalKey": "pine-gate-renewables|united-states",
+    "capturedAt": "2026-09-04T21:21:04.355Z",
+    "databaseRevision": "revision:84c9dbb376f56f73ee67095e84c9992dbf4a4cd2c31202bc1ab908ad6193325e",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "af1e2d30c0d2bc2985e2f8e0bd4cdaa449eae564e908441d69233a472dfc1366",
+    "productionSnapshotSha256": "3ce614e7c98df507801bf9999b24577829f8a117296b9089c8dec84a05e7ab32",
+    "targetCompanySnapshotSha256": "9bd836392bb73e98ca1ffc041139ac682f80d87ec087de855d2c51638df82e22",
+    "seedEntrySha256": "1e4a2d87394f4cefe1c54e7af781206252748c39e812b861377e1d8850eba176",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "59b1dbb435d782250c87fc9356b58974f0e9403aa3402ba5ad83adf53ff2b8c3",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "f54db27c51c5aa5ddcb1c154cba3320ce6f3755f26526ea2b3b6b6e5bbe8af09",
+      "citationsSha256": "3ff6d249421d901f861239a8d176a256fe7662d6061e0297854b96d9116893bc",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "4e1603a752c6fade937fa5fd387c0cef102859429e9e3abc4fc34a8289370b14",
+    "stateSha256": "5833cf6abb05ba074810bfd224c2549aba121d6e6056c9fc6b9bca8efca67cb2",
+    "taskSnapshotSha256": "a8ac115df9e6d069b9aff726cd98fe61f86d1e87a7bfcab8decd78608e0028bf"
+  },
+  "contextSha256": "6739f244f060ea920604537714ad6be126ed1713e3e439390328603971109647"
+}

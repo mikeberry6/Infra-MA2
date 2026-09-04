@@ -3,7 +3,7 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-04T21:05:00.000Z",
+  "updatedAt": "2026-09-04T21:18:00Z",
   "activeBatchId": "batch-deferred-0248-0263-v1",
   "batches": [
     {
@@ -9099,7 +9099,7 @@
     },
     {
       "batchId": "batch-deferred-0248-0263-v1",
-      "state": "READY",
+      "state": "VERIFYING_FAILED",
       "taskIds": [
         "ledger:0248:grand-falls-windsor-long-term-care-home:ebbcb53e",
         "ledger:0253:byd-ev-fleet-asset-spvs:e914a6d4",
@@ -9115,15 +9115,15 @@
         263
       ],
       "createdAt": "2026-09-04T20:42:05.000Z",
-      "updatedAt": "2026-09-04T21:05:00.000Z",
+      "updatedAt": "2026-09-04T21:18:00Z",
       "completedAt": null,
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-deferred-0248-0263-v1/batch-manifest-v2.json",
         "sha256": "176ba57b766302d0c5f0c8445d64d09c6209d81ea7e03762e957dcc637b953d6"
       },
-      "releaseSha": null,
+      "releaseSha": "005f724de877e21c91f5187bc1bac44b8be928bd",
       "receipt": null,
-      "reason": null,
+      "reason": "production-batch-dry-run-refused-database-target-fingerprint-before-write-run-33920275535",
       "history": [
         {
           "sequence": 1,
@@ -9142,9 +9142,39 @@
             "176ba57b766302d0c5f0c8445d64d09c6209d81ea7e03762e957dcc637b953d6"
           ],
           "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "RELEASING",
+          "at": "2026-09-04T21:15:08Z",
+          "evidenceSha256": [
+            "176ba57b766302d0c5f0c8445d64d09c6209d81ea7e03762e957dcc637b953d6"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 4,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-09-04T21:16:00Z",
+          "evidenceSha256": [
+            "176ba57b766302d0c5f0c8445d64d09c6209d81ea7e03762e957dcc637b953d6"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 5,
+          "from": "APPLYING",
+          "to": "VERIFYING_FAILED",
+          "at": "2026-09-04T21:18:00Z",
+          "evidenceSha256": [
+            "176ba57b766302d0c5f0c8445d64d09c6209d81ea7e03762e957dcc637b953d6"
+          ],
+          "reason": "production-batch-dry-run-refused-database-target-fingerprint-before-write-run-33920275535"
         }
       ]
     }
   ],
-  "ledgerSha256": "dbbdb3074741bc75909fdc76e7396b7e70e9afb2658676a50a1962d9d66fc972"
+  "ledgerSha256": "8c9064d69a195e5d4b14855814f74767df0c3f03669c17824d66a45447bfccf7"
 }
