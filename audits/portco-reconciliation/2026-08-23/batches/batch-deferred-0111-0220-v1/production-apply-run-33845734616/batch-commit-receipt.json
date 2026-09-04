@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_COMMIT_RECEIPT",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-deferred-0111-0220-v1",
+  "batchSha256": "a73a2e23a94c8a7bc93a8bf8eab22dd1228eea0d1a60b38e6af72793a62a95f6",
+  "releaseSha": "3e116eb1dcd59b2699a8369abe10269f3593956e",
+  "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+  "transactionId": "b344f9c2-025e-445a-ac86-dc9cab9fbbbe",
+  "appliedAt": "2026-09-04T06:52:08.906Z",
+  "members": [
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0111:generate-capital:f6794437",
+      "taskIndex": 111,
+      "companyName": "Generate Capital",
+      "outcome": "DEFERRED",
+      "decisionSha256": "79c1052943c0b0fc8aa3d5db975425c5efba9000af07c6511a0e022abba5e53d"
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0178:kelso-valley-wind-solar-and-water:285d524a",
+      "taskIndex": 178,
+      "companyName": "Kelso Valley Wind, Solar & Water",
+      "outcome": "DEFERRED",
+      "decisionSha256": "317762e0458f10a5b4ce968de32b0dfc9fdf1a1238e6f92f5773d753d4c20bb5"
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0187:sunstone-power:15729451",
+      "taskIndex": 187,
+      "companyName": "Sunstone Power",
+      "proposalSha256": "735bf0e0af5e856465f755bd963ae91c1267f4102cff12174ff48f1ec8b4ff7f",
+      "approvalSha256": "fa9513207d9fed1ff6801733784f9fd1bced80bcc9309bf7903a5537e0eaf3d0",
+      "afterImageSha256": "f16384964a793c9dd4f4e0f3a976a546c32a02bb546384d7afc760364433fb63",
+      "approvedSeedEntrySha256": "1351d2619661e8defe931107f895a35ac0a646685968c9487649f70d3c28347c",
+      "companyId": "cmrxpjc9z00sdivhe09v62cth",
+      "auditEventId": "cmtmljcxh0005zc2b8ekugra5"
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0213:extenet-formerly-extenet-systems:1d3fac1c",
+      "taskIndex": 213,
+      "companyName": "Extenet (formerly ExteNet Systems)",
+      "outcome": "DEFERRED",
+      "decisionSha256": "9d2ee05085dbcdeab654e7f313d80b8479d194a5cb604eb5e167e86cfa5ffb21"
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0220:bleutec-industries:3c6b9662",
+      "taskIndex": 220,
+      "companyName": "Bleutec Industries",
+      "outcome": "DEFERRED",
+      "decisionSha256": "45ba0a9039d5f2de60942911cca72991e1fea81b9e1b471a16ef613182896a45"
+    }
+  ],
+  "verification": {
+    "databaseTransactionCommitted": true,
+    "seedArtifactVerifiedBeforeCommit": true,
+    "detailApiVerificationPending": true,
+    "partialDatabaseApplication": false
+  },
+  "receiptSha256": "a37f43e2854b2ab0a5d27b6d446507576c805d06f4aab52f4ee1012333fe3ab9"
+}

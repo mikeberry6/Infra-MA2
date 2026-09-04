@@ -1,0 +1,94 @@
+
+> infra-tracker@1.0.0 portco:reconciliation:batch:apply
+> npx tsx scripts/portco-reconciliation/batch-apply-cli.ts --batch-manifest=audits/portco-reconciliation/2026-08-23/batches/batch-deferred-0111-0220-v1/batch-manifest-v2.json --batch-sha256=a73a2e23a94c8a7bc93a8bf8eab22dd1228eea0d1a60b38e6af72793a62a95f6 --seed-artifact=prisma/seed-data/approved-portco-after-images.json --apply --write-token=APPLY_APPROVED_PORTCO_BATCH --commit-receipt=tmp/portco-reconciliation/production/batch-commit-receipt.json --receipt=tmp/portco-reconciliation/production/batch-apply-receipt.json --public-base-url=https://infra-ma-2.vercel.app/Infra-MA2/
+
+(node:3864) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{
+  "mode": "BATCH_APPLIED",
+  "receiptPath": "/home/runner/work/Infra-MA2/Infra-MA2/tmp/portco-reconciliation/production/batch-apply-receipt.json",
+  "receipt": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_APPLY_BATCH_RECEIPT",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "batchId": "batch-deferred-0111-0220-v1",
+    "batchSha256": "a73a2e23a94c8a7bc93a8bf8eab22dd1228eea0d1a60b38e6af72793a62a95f6",
+    "releaseSha": "3e116eb1dcd59b2699a8369abe10269f3593956e",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "transactionId": "b344f9c2-025e-445a-ac86-dc9cab9fbbbe",
+    "appliedAt": "2026-09-04T06:52:08.906Z",
+    "members": [
+      {
+        "kind": "TERMINAL",
+        "taskId": "ledger:0111:generate-capital:f6794437",
+        "taskIndex": 111,
+        "companyName": "Generate Capital",
+        "outcome": "DEFERRED",
+        "decisionSha256": "79c1052943c0b0fc8aa3d5db975425c5efba9000af07c6511a0e022abba5e53d"
+      },
+      {
+        "kind": "TERMINAL",
+        "taskId": "ledger:0178:kelso-valley-wind-solar-and-water:285d524a",
+        "taskIndex": 178,
+        "companyName": "Kelso Valley Wind, Solar & Water",
+        "outcome": "DEFERRED",
+        "decisionSha256": "317762e0458f10a5b4ce968de32b0dfc9fdf1a1238e6f92f5773d753d4c20bb5"
+      },
+      {
+        "kind": "MUTATION",
+        "taskId": "ledger:0187:sunstone-power:15729451",
+        "taskIndex": 187,
+        "companyName": "Sunstone Power",
+        "receipt": {
+          "schemaVersion": 1,
+          "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+          "runId": "portco-reconciliation-2026-08-03-v2",
+          "taskId": "ledger:0187:sunstone-power:15729451",
+          "taskIndex": 187,
+          "companyName": "Sunstone Power",
+          "companyId": "cmrxpjc9z00sdivhe09v62cth",
+          "proposalSha256": "735bf0e0af5e856465f755bd963ae91c1267f4102cff12174ff48f1ec8b4ff7f",
+          "approvalSha256": "fa9513207d9fed1ff6801733784f9fd1bced80bcc9309bf7903a5537e0eaf3d0",
+          "productionSnapshotSha256": "991aceaae8fffa1589ed1390ea21d3e9468a1954ca0b4850435d070f0e4cd3c3",
+          "beforeCompanySnapshotSha256": "f7417923fa6c0e04a1dc4dd8e8ef636e1d92299c746f7576fa1b148f427d4638",
+          "appliedAfterImageSha256": "f16384964a793c9dd4f4e0f3a976a546c32a02bb546384d7afc760364433fb63",
+          "seedAfterImageSha256": "f16384964a793c9dd4f4e0f3a976a546c32a02bb546384d7afc760364433fb63",
+          "approvedSeedEntrySha256": "1351d2619661e8defe931107f895a35ac0a646685968c9487649f70d3c28347c",
+          "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+          "transactionId": "b344f9c2-025e-445a-ac86-dc9cab9fbbbe",
+          "auditEventId": "cmtmljcxh0005zc2b8ekugra5",
+          "appliedAt": "2026-09-04T06:52:08.906Z",
+          "verification": {
+            "databaseMatchesAfterImage": true,
+            "seedMatchesAfterImage": true,
+            "detailApiVerified": true
+          },
+          "receiptSha256": "78afccebe4c926c5b2d513d2428705cd6286637abcb7b32438cc333120503cb4"
+        }
+      },
+      {
+        "kind": "TERMINAL",
+        "taskId": "ledger:0213:extenet-formerly-extenet-systems:1d3fac1c",
+        "taskIndex": 213,
+        "companyName": "Extenet (formerly ExteNet Systems)",
+        "outcome": "DEFERRED",
+        "decisionSha256": "9d2ee05085dbcdeab654e7f313d80b8479d194a5cb604eb5e167e86cfa5ffb21"
+      },
+      {
+        "kind": "TERMINAL",
+        "taskId": "ledger:0220:bleutec-industries:3c6b9662",
+        "taskIndex": 220,
+        "companyName": "Bleutec Industries",
+        "outcome": "DEFERRED",
+        "decisionSha256": "45ba0a9039d5f2de60942911cca72991e1fea81b9e1b471a16ef613182896a45"
+      }
+    ],
+    "verification": {
+      "databaseTransactionCommitted": true,
+      "seedArtifactVerified": true,
+      "allDetailApisVerified": true,
+      "partialDatabaseApplication": false
+    },
+    "receiptSha256": "f68a13368f816e0cc5ac1a5079281e886e7d483ec15cb9ee3869e3f0f3cddf43"
+  }
+}
