@@ -5,8 +5,8 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-09-04T06:17:00.000Z",
-  "runStatus": "IDLE",
+  "updatedAt": "2026-09-04T07:22:30.000Z",
+  "runStatus": "COMPLETE_WITH_EXCEPTIONS",
   "activeTaskId": null,
   "source": {
     "manifest": {
@@ -17382,20 +17382,26 @@
       "managerIndex": 18,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "eb2097f49a5ba40bc6f783360c0710ab2ae5c9163c6bf78f408888c6ce82b5bf",
-      "status": "PENDING",
-      "attempts": 3,
-      "startedAt": null,
-      "updatedAt": "2026-09-04T06:15:00.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
+      "status": "DEFERRED",
+      "attempts": 4,
+      "startedAt": "2026-09-04T06:17:30.000Z",
+      "updatedAt": "2026-09-04T07:22:30.000Z",
+      "completedAt": "2026-09-04T07:22:30.000Z",
+      "exceptionReason": "QIC is directly current at 23.5%, and AustralianSuper is directly verified at 23% through June 30, 2025. No direct cutoff-current or exit evidence resolves Harbert Management Corporation or CBRE Caledon's July 2021 interests, their treatment in the January 2024 financing, or AustralianSuper's cutoff-current state, so the ownership timeline cannot be changed without inference.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "46d767464129c746aa889b74b3b7e37cbc3c15aa5e200fa7a3b03895abdb0f62",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0111-generate-capital/attempt-2/locked-deferred-v1-task-snapshot.json",
+          "sha256": "46d767464129c746aa889b74b3b7e37cbc3c15aa5e200fa7a3b03895abdb0f62"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0111-generate-capital/attempt-4/terminal-decision-deferred-v1.json",
+          "sha256": "79c1052943c0b0fc8aa3d5db975425c5efba9000af07c6511a0e022abba5e53d"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -17555,6 +17561,21 @@
             "cfe1a561f7ea6123195b933379f8e86f61314dc6dc9c6ed0791e3e655661aebc"
           ],
           "kind": "DEFERRED_READJUDICATION"
+        },
+        {
+          "sequence": 9,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-04T07:22:30.000Z",
+          "reason": "QIC is directly current at 23.5%, and AustralianSuper is directly verified at 23% through June 30, 2025. No direct cutoff-current or exit evidence resolves Harbert Management Corporation or CBRE Caledon's July 2021 interests, their treatment in the January 2024 financing, or AustralianSuper's cutoff-current state, so the ownership timeline cannot be changed without inference.",
+          "taskSnapshotSha256": "46d767464129c746aa889b74b3b7e37cbc3c15aa5e200fa7a3b03895abdb0f62",
+          "evidenceSha256": [
+            "46d767464129c746aa889b74b3b7e37cbc3c15aa5e200fa7a3b03895abdb0f62",
+            "79c1052943c0b0fc8aa3d5db975425c5efba9000af07c6511a0e022abba5e53d",
+            "a73a2e23a94c8a7bc93a8bf8eab22dd1228eea0d1a60b38e6af72793a62a95f6",
+            "f68a13368f816e0cc5ac1a5079281e886e7d483ec15cb9ee3869e3f0f3cddf43"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -23088,20 +23109,26 @@
       "managerIndex": 30,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "6ebdafbe86533f551c875ed1f30783165dc89866253d16349b23d8cae576a9f1",
-      "status": "PENDING",
-      "attempts": 1,
-      "startedAt": null,
-      "updatedAt": "2026-09-04T06:15:30.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
+      "status": "DEFERRED",
+      "attempts": 2,
+      "startedAt": "2026-09-04T06:17:30.000Z",
+      "updatedAt": "2026-09-04T07:22:30.000Z",
+      "completedAt": "2026-09-04T07:22:30.000Z",
+      "exceptionReason": "Direct evidence resolves the record to ReNu Resources LLC and the Onyx Ranch land, water and renewables-development investment and proves several component dispositions. It does not establish the property and reservations conveyed by the November 2022 quitclaim, ReNu's cutoff legal and member state, CIM's or Renewable Resources Group's cutoff ownership or final exit, the Weldon Solar outcome, or the absence of residual rights.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "d6bc77a7999c66cc7ee8b660a9b2cd18115023a49a8e676b031d1ac6fdf7379a",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0178-kelso-valley-wind-solar-and-water/attempt-2/locked-deferred-v1-task-snapshot.json",
+          "sha256": "d6bc77a7999c66cc7ee8b660a9b2cd18115023a49a8e676b031d1ac6fdf7379a"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0178-kelso-valley-wind-solar-and-water/attempt-2/terminal-decision-deferred-v1.json",
+          "sha256": "317762e0458f10a5b4ce968de32b0dfc9fdf1a1238e6f92f5773d753d4c20bb5"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -23207,6 +23234,21 @@
             "f060a534435bf092db1e47bd4458f6cad09f51019627124eeaf2c8cc7b42e08f"
           ],
           "kind": "DEFERRED_READJUDICATION"
+        },
+        {
+          "sequence": 4,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-04T07:22:30.000Z",
+          "reason": "Direct evidence resolves the record to ReNu Resources LLC and the Onyx Ranch land, water and renewables-development investment and proves several component dispositions. It does not establish the property and reservations conveyed by the November 2022 quitclaim, ReNu's cutoff legal and member state, CIM's or Renewable Resources Group's cutoff ownership or final exit, the Weldon Solar outcome, or the absence of residual rights.",
+          "taskSnapshotSha256": "d6bc77a7999c66cc7ee8b660a9b2cd18115023a49a8e676b031d1ac6fdf7379a",
+          "evidenceSha256": [
+            "317762e0458f10a5b4ce968de32b0dfc9fdf1a1238e6f92f5773d753d4c20bb5",
+            "a73a2e23a94c8a7bc93a8bf8eab22dd1228eea0d1a60b38e6af72793a62a95f6",
+            "d6bc77a7999c66cc7ee8b660a9b2cd18115023a49a8e676b031d1ac6fdf7379a",
+            "f68a13368f816e0cc5ac1a5079281e886e7d483ec15cb9ee3869e3f0f3cddf43"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -23816,23 +23858,44 @@
       "managerIndex": 31,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "02c2a1aa534044f19ff19bbea0959dfe1c5de65ed93544e0202bf7f8c6dfa4f9",
-      "status": "PENDING",
-      "attempts": 1,
-      "startedAt": null,
-      "updatedAt": "2026-09-04T06:16:00.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 2,
+      "startedAt": "2026-09-04T06:17:30.000Z",
+      "updatedAt": "2026-09-04T07:22:30.000Z",
+      "completedAt": "2026-09-04T07:22:30.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "64e40a87d6769fb8280c831f721578f1f2dfb8cb9678c18fc090a0e6490e9c96",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0187-sunstone-power/attempt-2/locked-deferred-v1-task-snapshot.json",
+          "sha256": "64e40a87d6769fb8280c831f721578f1f2dfb8cb9678c18fc090a0e6490e9c96"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0187-sunstone-power/attempt-2/proposal-deferred-v2.json",
+          "sha256": "735bf0e0af5e856465f755bd963ae91c1267f4102cff12174ff48f1ec8b4ff7f"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0187-sunstone-power/attempt-2/approval-deferred-v2.json",
+          "sha256": "fa9513207d9fed1ff6801733784f9fd1bced80bcc9309bf7903a5537e0eaf3d0"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-deferred-0111-0220-v1/production-apply-run-33845734616/batch-apply-receipt.json#members/2/receipt",
+          "sha256": "78afccebe4c926c5b2d513d2428705cd6286637abcb7b32438cc333120503cb4"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0187-sunstone-power/attempt-2/proposal-deferred-v2.json#afterImage",
+          "sha256": "f16384964a793c9dd4f4e0f3a976a546c32a02bb546384d7afc760364433fb63"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-09-04T07:22:30.000Z",
+        "auditEventId": "cmtmljcxh0005zc2b8ekugra5",
+        "transactionId": "b344f9c2-025e-445a-ac86-dc9cab9fbbbe",
+        "receiptSha256": "78afccebe4c926c5b2d513d2428705cd6286637abcb7b32438cc333120503cb4",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33845734616"
+      },
       "reAdjudications": [
         {
           "sequence": 1,
@@ -23935,6 +23998,24 @@
             "c9f4ef9cc1fd2a006ff958d8c8b3c25c1d862db86e8996ae7809b94905b0e1ca"
           ],
           "kind": "DEFERRED_READJUDICATION"
+        },
+        {
+          "sequence": 4,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-09-04T07:22:30.000Z",
+          "reason": "Completed in verified atomic release bundle batch-deferred-0111-0220-v1.",
+          "taskSnapshotSha256": "64e40a87d6769fb8280c831f721578f1f2dfb8cb9678c18fc090a0e6490e9c96",
+          "evidenceSha256": [
+            "64e40a87d6769fb8280c831f721578f1f2dfb8cb9678c18fc090a0e6490e9c96",
+            "735bf0e0af5e856465f755bd963ae91c1267f4102cff12174ff48f1ec8b4ff7f",
+            "78afccebe4c926c5b2d513d2428705cd6286637abcb7b32438cc333120503cb4",
+            "a73a2e23a94c8a7bc93a8bf8eab22dd1228eea0d1a60b38e6af72793a62a95f6",
+            "f16384964a793c9dd4f4e0f3a976a546c32a02bb546384d7afc760364433fb63",
+            "f68a13368f816e0cc5ac1a5079281e886e7d483ec15cb9ee3869e3f0f3cddf43",
+            "fa9513207d9fed1ff6801733784f9fd1bced80bcc9309bf7903a5537e0eaf3d0"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -25690,20 +25771,26 @@
       "managerIndex": 36,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "768b5d3cfeb382a90c7e1864b1b0295c4ed687793e89c105390f88c9cbe746c8",
-      "status": "PENDING",
-      "attempts": 1,
-      "startedAt": null,
-      "updatedAt": "2026-09-04T06:16:30.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
+      "status": "DEFERRED",
+      "attempts": 2,
+      "startedAt": "2026-09-04T06:17:30.000Z",
+      "updatedAt": "2026-09-04T07:22:30.000Z",
+      "completedAt": "2026-09-04T07:22:30.000Z",
+      "exceptionReason": "Direct evidence resolves one continuing Extenet platform, active operations and the February 13, 2025 42% Stonepeak / 32% KH Killington / 26% Other Members cap table. It does not establish the September 4, 2026 owner set, stakes and vehicles, bridge JH Killington to KH Killington, or resolve Northleaf's, DigitalBridge's and Manulife's cutoff positions or the outcome of the reported outdoor DAS and small-cell sale process.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "e641d08cf1889026af816971a582fbe8d7b6f0ff5c337ff49730c32ca1bef46d",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0213-extenet-formerly-extenet-systems/attempt-2/locked-deferred-v1-task-snapshot.json",
+          "sha256": "e641d08cf1889026af816971a582fbe8d7b6f0ff5c337ff49730c32ca1bef46d"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0213-extenet-formerly-extenet-systems/attempt-2/terminal-decision-deferred-v1.json",
+          "sha256": "9d2ee05085dbcdeab654e7f313d80b8479d194a5cb604eb5e167e86cfa5ffb21"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -25809,6 +25896,21 @@
             "fad81b9c2c2ed0e92c6bf3aff8ef299fd4c708347db87b6b1a9765055926a61d"
           ],
           "kind": "DEFERRED_READJUDICATION"
+        },
+        {
+          "sequence": 4,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-04T07:22:30.000Z",
+          "reason": "Direct evidence resolves one continuing Extenet platform, active operations and the February 13, 2025 42% Stonepeak / 32% KH Killington / 26% Other Members cap table. It does not establish the September 4, 2026 owner set, stakes and vehicles, bridge JH Killington to KH Killington, or resolve Northleaf's, DigitalBridge's and Manulife's cutoff positions or the outcome of the reported outdoor DAS and small-cell sale process.",
+          "taskSnapshotSha256": "e641d08cf1889026af816971a582fbe8d7b6f0ff5c337ff49730c32ca1bef46d",
+          "evidenceSha256": [
+            "9d2ee05085dbcdeab654e7f313d80b8479d194a5cb604eb5e167e86cfa5ffb21",
+            "a73a2e23a94c8a7bc93a8bf8eab22dd1228eea0d1a60b38e6af72793a62a95f6",
+            "e641d08cf1889026af816971a582fbe8d7b6f0ff5c337ff49730c32ca1bef46d",
+            "f68a13368f816e0cc5ac1a5079281e886e7d483ec15cb9ee3869e3f0f3cddf43"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -26282,20 +26384,26 @@
       "managerIndex": 40,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "8ffd601509c05040ff44da279f9412bdfa73252073b927847fd7f27aa37fed72",
-      "status": "PENDING",
-      "attempts": 1,
-      "startedAt": null,
-      "updatedAt": "2026-09-04T06:17:00.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
+      "status": "DEFERRED",
+      "attempts": 2,
+      "startedAt": "2026-09-04T06:17:30.000Z",
+      "updatedAt": "2026-09-04T07:22:30.000Z",
+      "completedAt": "2026-09-04T07:22:30.000Z",
+      "exceptionReason": "The direct ATRS board packet resolves the historical fund as EnCap Energy Transition Fund II and reports a December 2022 commitment date, $68.7 million commitment and $5.5 million invested capital. Direct sources still do not establish the legal relationship and current status of the three Bleutec entity names, EnCap's cutoff ownership, vehicle, stake or control, continuing management co-investment, the Title XI application's disposition, a delivered vessel fleet or current operations.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "04b1a12f1ab05fb52c5bb0e6928e6c4199e1024e8f73e65255cc6d39820a3bf9",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0220-bleutec-industries/attempt-2/locked-deferred-v1-task-snapshot.json",
+          "sha256": "04b1a12f1ab05fb52c5bb0e6928e6c4199e1024e8f73e65255cc6d39820a3bf9"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0220-bleutec-industries/attempt-2/terminal-decision-deferred-v1.json",
+          "sha256": "45ba0a9039d5f2de60942911cca72991e1fea81b9e1b471a16ef613182896a45"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -26401,6 +26509,21 @@
             "f3aa396468504e2b24095527657ddb8885acd00f517bc1e22cf50fea20fe2be1"
           ],
           "kind": "DEFERRED_READJUDICATION"
+        },
+        {
+          "sequence": 4,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-04T07:22:30.000Z",
+          "reason": "The direct ATRS board packet resolves the historical fund as EnCap Energy Transition Fund II and reports a December 2022 commitment date, $68.7 million commitment and $5.5 million invested capital. Direct sources still do not establish the legal relationship and current status of the three Bleutec entity names, EnCap's cutoff ownership, vehicle, stake or control, continuing management co-investment, the Title XI application's disposition, a delivered vessel fleet or current operations.",
+          "taskSnapshotSha256": "04b1a12f1ab05fb52c5bb0e6928e6c4199e1024e8f73e65255cc6d39820a3bf9",
+          "evidenceSha256": [
+            "04b1a12f1ab05fb52c5bb0e6928e6c4199e1024e8f73e65255cc6d39820a3bf9",
+            "45ba0a9039d5f2de60942911cca72991e1fea81b9e1b471a16ef613182896a45",
+            "a73a2e23a94c8a7bc93a8bf8eab22dd1228eea0d1a60b38e6af72793a62a95f6",
+            "f68a13368f816e0cc5ac1a5079281e886e7d483ec15cb9ee3869e3f0f3cddf43"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -45419,5 +45542,5 @@
       ]
     }
   ],
-  "manifestSha256": "d5974045d9496b24afb93e816f2ef1bcad924e1891a710f83ec4bfa6427f2266"
+  "manifestSha256": "29f4bdcdf7dc615e1617333fdaebb722812e60ef9463676d276d1af3c78002d9"
 }
