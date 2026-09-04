@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0187:sunstone-power:15729451",
+  "taskIndex": 187,
+  "companyName": "Sunstone Power",
+  "asOfDate": "2026-09-04",
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-04T06:25:00.000Z",
+  "result": {
+    "asOfDate": "2026-09-04",
+    "requestedCompany": "Sunstone Power",
+    "requestedManagers": ["Copenhagen Infrastructure Partners"],
+    "decision": "PROPOSED_CORRECTION",
+    "confidence": 0.99,
+    "rationale": "The live official company page states that Sunstone Power is fully owned by Copenhagen Infrastructure Partners through Copenhagen Infrastructure New Markets Fund I. Correct the existing record in place to 100% current ownership through Copenhagen Infrastructure New Markets Fund I K/S, clear the unsupported platform entry year, and keep Growth Markets Fund II only at the La Esperanza project layer.",
+    "identityResolution": {
+      "canonicalKey": "sunstone-power|mexico",
+      "productionCompanyId": "cmrxpjc9z00sdivhe09v62cth",
+      "canonicalIdentity": "SUNSTONE POWER S DE RL DE CV",
+      "formationDate": "2022-11-02",
+      "status": "ACTIVE",
+      "mergeRequired": false
+    },
+    "ownershipResolution": {
+      "status": "RESOLVED",
+      "manager": "Copenhagen Infrastructure Partners",
+      "fund": "Copenhagen Infrastructure New Markets Fund I",
+      "vehicle": "Copenhagen Infrastructure New Markets Fund I K/S",
+      "stake": "100%",
+      "entryDate": "NOT_PUBLICLY_DISCLOSED"
+    },
+    "evidence": [
+      {
+        "label": "Sunstone Power About Us",
+        "url": "https://www.sunstone-power.com/en/about-us/",
+        "purpose": "Direct current proof that Sunstone Power is fully owned by Copenhagen Infrastructure Partners through Copenhagen Infrastructure New Markets Fund I.",
+        "sourceTier": "T1",
+        "workingStatus": "OK",
+        "isRecommendedPrimary": true
+      }
+    ],
+    "unresolvedQuestions": [],
+    "recommendedListAction": {
+      "action": "CORRECT_EXISTING_RECORD_IN_PLACE",
+      "record": "cmrxpjc9z00sdivhe09v62cth",
+      "manager": "Copenhagen Infrastructure Partners",
+      "vehicle": "Copenhagen Infrastructure New Markets Fund I K/S",
+      "stake": "100%",
+      "investmentYear": null
+    }
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0187-sunstone-power/attempt-2/research-decision.json",
+      "sha256": "49a6341ea327c78679fa811c93f632e08c3491fc699d4dd96f117e83533b92d6"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0187-sunstone-power/attempt-2/chatgpt-accepted-response.txt",
+      "sha256": "8745065a0019737dd2534ca3b33bea4f8bf7c6a423bc1804a320991fb905ebe6"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0187-sunstone-power/attempt-2/source-verification.json",
+      "sha256": "08ed0ca1a29619dc8c5a1172e6e385b0f88f18e7475638456a89cd22bcf5af4d"
+    }
+  }
+}

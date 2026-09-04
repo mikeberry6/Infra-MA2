@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0111:generate-capital:f6794437",
+  "taskIndex": 111,
+  "companyName": "Generate Capital",
+  "asOfDate": "2026-09-04",
+  "decision": "DEFERRED",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-04T06:24:00.000Z",
+  "result": {
+    "asOfDate": "2026-09-04",
+    "requestedCompany": "Generate Capital",
+    "requestedManagers": ["QIC", "AustralianSuper", "Harbert Management Corporation", "CBRE Caledon"],
+    "decision": "DEFERRED",
+    "confidence": 0.97,
+    "rationale": "QIC is directly current at 23.5%, and AustralianSuper is directly verified at 23% through June 30, 2025. No direct cutoff-current or exit evidence resolves Harbert Management Corporation or CBRE Caledon's July 2021 interests, their treatment in the January 2024 financing, or AustralianSuper's cutoff-current state, so the ownership timeline cannot be changed without inference.",
+    "identityResolution": {
+      "canonicalKey": "generate-capital|united-states",
+      "productionCompanyId": "cmrxpjha100zwivhes4yyec81",
+      "status": "CONTINUING_PLATFORM",
+      "mergeRequired": false
+    },
+    "ownershipResolution": {
+      "status": "PARTIAL",
+      "cutoffOwnerSet": "UNRESOLVED",
+      "exactException": "Harbert, CBRE Caledon and AustralianSuper cutoff ownership or exit treatment is not directly disclosed."
+    },
+    "evidence": [
+      {
+        "label": "QIC live Generate portfolio",
+        "url": "https://www.qic.com/Investment-Capabilities/Infrastructure/Global-Portfolio/Generate",
+        "purpose": "Direct current evidence for QIC's 23.5% Generate ownership and 2019 acquisition year.",
+        "sourceTier": "T1",
+        "workingStatus": "OK",
+        "isRecommendedPrimary": true
+      }
+    ],
+    "unresolvedQuestions": [
+      "Harbert Management Corporation's cutoff ownership or exit state.",
+      "CBRE Caledon's cutoff ownership or exit state.",
+      "AustralianSuper's cutoff-current ownership state."
+    ],
+    "recommendedListAction": {
+      "action": "DEFER_WITH_EXACT_EXCEPTION",
+      "record": "cmrxpjha100zwivhes4yyec81"
+    }
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0111-generate-capital/attempt-4/research-decision.json",
+      "sha256": "7acd3404b992a2fa831c58e23f228b984c70609977226691fb58f87860e638ed"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0111-generate-capital/attempt-4/chatgpt-accepted-response.txt",
+      "sha256": "8292e7689d5c63ade473b290ce5dfb1a909f152c7fefcf4d0fa3e0a895c158e3"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0111-generate-capital/attempt-4/source-verification.json",
+      "sha256": "0ea9c81f5cf0fb2bc29cee51ecf2077f430fadf2b82ee358d4ec9b565f39bc57"
+    }
+  }
+}

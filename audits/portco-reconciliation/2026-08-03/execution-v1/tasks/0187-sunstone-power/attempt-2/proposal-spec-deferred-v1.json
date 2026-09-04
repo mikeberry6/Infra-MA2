@@ -1,0 +1,102 @@
+{
+  "generatedAt": "2026-09-04T06:26:30.000Z",
+  "actions": ["CORRECT_COMPANY"],
+  "retiredCompanyIds": [],
+  "relationMerges": [],
+  "reviewedSeedRetirementTaskIds": [],
+  "rationale": "Correct the existing Sunstone Power record in place. The official company page states that the platform is fully owned by Copenhagen Infrastructure Partners through Copenhagen Infrastructure New Markets Fund I. Replace the unsupported Growth Markets Fund II platform attribution and 2023 investment year with the verified 100% New Markets Fund I ownership, while leaving platform entry timing unresolved and keeping project-layer entities nested.",
+  "evidence": [
+    {
+      "url": "https://www.sunstone-power.com/en/about-us/",
+      "purpose": "Direct current platform-ownership statement from Sunstone Power.",
+      "supports": [
+        "Sunstone Power is fully owned by Copenhagen Infrastructure Partners",
+        "The ownership is through Copenhagen Infrastructure New Markets Fund I"
+      ]
+    },
+    {
+      "url": "https://lei.bloomberg.com/leis/view/98450051BAD17154DC07",
+      "purpose": "Direct live LEI identity and formation evidence.",
+      "supports": [
+        "SUNSTONE POWER S DE RL DE CV is active",
+        "The legal entity was formed on November 2, 2022"
+      ]
+    },
+    {
+      "url": "https://www.globenewswire.com/news-release/2026/08/06/3339981/0/en/copenhagen-infrastructure-partners-reaches-financial-close-and-starts-construction-on-its-first-project-in-mexico.html",
+      "purpose": "Manager-authored evidence confining Growth Markets Fund II to La Esperanza's project layer.",
+      "supports": [
+        "CI Growth Markets Fund II is associated with La Esperanza Solar rather than the Sunstone platform ownership record",
+        "Profuturo's co-investment remained expected in the announcement"
+      ]
+    }
+  ],
+  "unresolvedQuestions": [],
+  "companyFieldUpdates": {
+    "description": "Sunstone Power is a Mexican utility-scale renewable-development platform focused on large solar, wind and battery-storage projects. Its active legal entity, SUNSTONE POWER S DE RL DE CV, was formed on November 2, 2022. The company states that it is fully owned by Copenhagen Infrastructure Partners through Copenhagen Infrastructure New Markets Fund I. The intermediate Mexican shareholder chain and CIP's platform entry date are not publicly disclosed. CI Growth Markets Fund II is documented at the La Esperanza Solar project layer rather than as the platform owner, and Sunstone Power 2 and La Alegría remain nested affiliate and project records.",
+    "website": "https://www.sunstone-power.com/",
+    "yearFounded": 2022,
+    "headquarters": "Mexico City",
+    "lastVerifiedAt": "2026-09-04T00:00:00.000Z"
+  },
+  "ownershipPeriodUpdates": [
+    {
+      "id": "cmrxpjxoj01q7ivhe3it5wh70",
+      "set": {
+        "managerName": "Copenhagen Infrastructure Partners",
+        "organizationName": "Copenhagen Infrastructure Partners",
+        "fundName": null,
+        "vehicleName": "Copenhagen Infrastructure New Markets Fund I K/S",
+        "stake": "100%",
+        "investmentYear": null,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    }
+  ],
+  "ownershipPeriodRemovals": [],
+  "ownershipPeriodAdditions": [],
+  "ownershipPeriodTransfers": [],
+  "pendingOwnershipTransactionUpdates": [],
+  "pendingOwnershipTransactionAdditions": [],
+  "milestoneUpdates": [
+    {
+      "id": "cmrxplbrx03jqivhestz1egq8",
+      "set": {
+        "date": "Nov 2, 2022",
+        "event": "SUNSTONE POWER S DE RL DE CV was formed in Mexico; CIP's platform ownership-entry date remains undisclosed.",
+        "category": "OTHER",
+        "sortDate": "2022-11-02T00:00:00.000Z",
+        "evidenceUrls": ["https://lei.bloomberg.com/leis/view/98450051BAD17154DC07"]
+      }
+    }
+  ],
+  "milestoneTransfers": [],
+  "citationUpdates": [
+    {
+      "id": "cmrxpqbh109etivhe35g207tt",
+      "set": {"isPrimary": false}
+    }
+  ],
+  "citationAdditions": [
+    {
+      "id": null,
+      "label": "Sunstone Power — About Us",
+      "url": "https://www.sunstone-power.com/en/about-us/",
+      "sourceType": "WEBSITE",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Direct current proof of full CIP ownership through Copenhagen Infrastructure New Markets Fund I",
+      "isPrimary": true
+    },
+    {
+      "id": null,
+      "label": "Bloomberg LEI — Sunstone Power",
+      "url": "https://lei.bloomberg.com/leis/view/98450051BAD17154DC07",
+      "sourceType": "WEBSITE",
+      "purpose": "COMPANY_PROFILE",
+      "evidenceLabel": "Direct legal-entity identity, active status and November 2, 2022 formation date",
+      "isPrimary": false
+    }
+  ]
+}

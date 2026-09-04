@@ -1,0 +1,232 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0178:kelso-valley-wind-solar-and-water:285d524a",
+  "taskIndex": 178,
+  "companyName": "Kelso Valley Wind, Solar & Water",
+  "generatedAt": "2026-09-04T06:21:24.630Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0178-kelso-valley-wind-solar-and-water/attempt-2/locked-deferred-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 178,
+    "taskId": "ledger:0178:kelso-valley-wind-solar-and-water:285d524a",
+    "canonicalKey": "kelso-valley-wind-solar-and-water|united-states",
+    "companyName": "Kelso Valley Wind, Solar & Water",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 30,
+    "managers": [
+      "CIM Group"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "030-cim-group:holding:009:kelso-valley-wind-solar-and-water"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjbsz00rmivhec7hd9k0b"
+    ],
+    "seedKeys": [
+      "kelso valley wind, solar & water|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.sec.gov/Archives/edgar/data/1767074/000176707421000009/cimintervalfund486bposjan2.htm"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted census NEEDS_REVIEW for 030-cim-group:holding:009:kelso-valley-wind-solar-and-water: Repository match exists but current platform attribution relative to Permanent Power remains unresolved. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Accepted census NEEDS_REVIEW for 030-cim-group:holding:009:kelso-valley-wind-solar-and-water: Repository match exists but current platform attribution relative to Permanent Power remains unresolved"
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjbsz00rmivhec7hd9k0b",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "kelso-valley-wind-solar-and-water|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjbsz00rmivhec7hd9k0b",
+    "name": "Kelso Valley Wind, Solar & Water",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Renewable generation and water infrastructure",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Kelso Valley Wind, Solar & Water is a CIM-sponsored California platform that combines renewable-energy development with land and water infrastructure. Public disclosures indicate the platform is intended to serve utility and community-choice offtake markets through solar generation while also managing supporting land and water assets. Its model is asset-heavy because the strategy depends on control of large land positions, renewable-energy projects, and related irrigation and water-conveyance infrastructure. Public reporting has stated that CIM acquired roughly 68,000 acres in Kern County in 2008 and later contracted initial generation with California public-power and community-choice counterparties. Public sources reviewed do not disclose the current ownership percentages beyond CIM's sponsorship of the platform.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "California",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjx7o01pgivheytxspq7m",
+        "managerName": "CIM Group",
+        "organizationName": "CIM Group",
+        "fundName": null,
+        "vehicleName": "CIM Infrastructure Platform",
+        "stake": null,
+        "investmentYear": 2008,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpl9rf03hdivheoxlngfm8",
+        "date": "2008",
+        "event": "Public reporting states that CIM acquired approximately 68,000 acres in Kern County that became the Kelso Valley platform.",
+        "category": "ACQUISITION",
+        "sortDate": "2008-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpl9ry03heivheavqm290x",
+        "date": "2008",
+        "event": "CIM improved irrigation and water-conveyance systems on the property as part of the platform build-out.",
+        "category": "OTHER",
+        "sortDate": "2008-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpq7pa0996ivheouokyvzm",
+        "label": "SEC — Kelso Valley Wind, Solar & Water",
+        "url": "https://www.sec.gov/Archives/edgar/data/1767074/000176707421000009/cimintervalfund486bposjan2.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "SEC filing",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpq7qg0998ivhe5l9s83nn",
+        "label": "Investment date source — CIM Group — Kelso Valley Wind, Solar & Water",
+        "url": "https://labusinessjournal.com/infrastructure/first-phase-cim-groups-massive-solar-park-central/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CIM Group initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpq7ro099aivhe2en6vmje",
+        "label": "Cimgroup — Kelso Valley Wind, Solar & Water",
+        "url": "https://www.cimgroup.com/our-platforms/infrastructure",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Cimgroup — Kelso Valley Wind, Solar & Water",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Kelso Valley Wind, Solar & Water",
+    "investmentFirm": "CIM Group",
+    "sector": "Power & ET",
+    "subsector": "Renewable generation and water infrastructure",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "CIM Infrastructure Platform",
+    "description": "Kelso Valley Wind, Solar & Water is a CIM-sponsored California platform that combines renewable-energy development with land and water infrastructure. Public disclosures indicate the platform is intended to serve utility and community-choice offtake markets through solar generation while also managing supporting land and water assets. Its model is asset-heavy because the strategy depends on control of large land positions, renewable-energy projects, and related irrigation and water-conveyance infrastructure. Public reporting has stated that CIM acquired roughly 68,000 acres in Kern County in 2008 and later contracted initial generation with California public-power and community-choice counterparties. Public sources reviewed do not disclose the current ownership percentages beyond CIM's sponsorship of the platform.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2008,
+    "headquarters": "California",
+    "milestones": [
+      {
+        "date": "2008",
+        "event": "Public reporting states that CIM acquired approximately 68,000 acres in Kern County that became the Kelso Valley platform.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "2008",
+        "event": "CIM improved irrigation and water-conveyance systems on the property as part of the platform build-out.",
+        "category": "Other"
+      }
+    ],
+    "sources": [
+      {
+        "label": "SEC — Kelso Valley Wind, Solar & Water",
+        "url": "https://www.sec.gov/Archives/edgar/data/1767074/000176707421000009/cimintervalfund486bposjan2.htm",
+        "type": "SEC_FILING",
+        "purpose": "FINANCING_FILINGS"
+      },
+      {
+        "label": "Investment date source — CIM Group — Kelso Valley Wind, Solar & Water",
+        "url": "https://labusinessjournal.com/infrastructure/first-phase-cim-groups-massive-solar-park-central/",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Cimgroup — Kelso Valley Wind, Solar & Water",
+        "url": "https://www.cimgroup.com/our-platforms/infrastructure",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "CIM Group",
+        "ownershipVehicle": "CIM Infrastructure Platform",
+        "investmentYear": 2008,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi63o0016ivhechqv2snf",
+        "name": "CIM Group",
+        "updatedAt": "2026-07-23T16:09:15.109Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0178:kelso-valley-wind-solar-and-water:285d524a",
+    "taskIndex": 178,
+    "canonicalKey": "kelso-valley-wind-solar-and-water|united-states",
+    "capturedAt": "2026-09-04T06:21:24.630Z",
+    "databaseRevision": "revision:a1d6ec36ae240f205b610b222ff4fe262550e3a6ffee8b76a81c5e93b353689e",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "6ebdafbe86533f551c875ed1f30783165dc89866253d16349b23d8cae576a9f1",
+    "productionSnapshotSha256": "1aa795f66779dff5651133e511dc75048d356baedc0a36bff1e6b03b6713778a",
+    "targetCompanySnapshotSha256": "263760c754ffb17dd2c5559fc27eb1c6081547631086fe6a5acfdcbcb4962d21",
+    "seedEntrySha256": "aaa9a43da2c5787c4f5d779e80b63c28a96515c9c564ec07554c88595c068af8",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "653b1fb562705d801e1d6e5ee94dfbd13c603adea9c441f9395c2aa59a67830f",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "d6a02d402704eee7e41721198a8893941ac51e7899a35d87b09706a7cbfc5646",
+      "citationsSha256": "159816accb10362cc5c7d469684d9ea8ffd1e149739e9ed063b1334672e6100d",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "a5e4f2d32ccf5128edc591101ffb642a87d2557911ee273f1dd800e10dfa54b2",
+    "stateSha256": "5c257de8c29e055861e44ce1885420e2f49226206daf0b2fe5544e52abfcf3fd",
+    "taskSnapshotSha256": "d6bc77a7999c66cc7ee8b660a9b2cd18115023a49a8e676b031d1ac6fdf7379a"
+  },
+  "contextSha256": "2e0c90bf230638214a65b5232324435724d6dad6ef56dfb93983308555723aa7"
+}

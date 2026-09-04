@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_DEFERRED_READJUDICATION_RESEARCH_DECISION",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-deferred-readjudication-2026-09-04",
+  "generatedAt": "2026-09-04T04:03:00.000Z",
+  "asOfDate": "2026-09-04",
+  "taskId": "ledger:0187:sunstone-power:15729451",
+  "taskIndex": 187,
+  "companyName": "Sunstone Power",
+  "linkedTaskIdsCovered": [],
+  "decision": "PROPOSED_CORRECTION",
+  "confidence": "HIGH on ownership and identity; MEDIUM on project chains; platform entry timing unresolved",
+  "researchOnly": true,
+  "summary": "Correct the existing Sunstone Power production record in place to current 100% Copenhagen Infrastructure Partners ownership through Copenhagen Infrastructure New Markets Fund I K/S. The live official company page directly states that Sunstone is fully owned by CIP through CI NMF I. Leave the platform announcement, acquisition and entry dates unresolved; remove CI Growth Markets Fund II and the unsupported 2023 date from platform ownership; retain GMF II only at La Esperanza's project layer; and keep Sunstone Power 2 and La Alegría nested.",
+  "resolvedFormerBlockers": [
+    "The live official Sunstone About Us HTML directly states that Sunstone Power is fully owned by Copenhagen Infrastructure Partners through Copenhagen Infrastructure New Markets Fund I.",
+    "A directly reopened XBRL filing index verifies the legal fund vehicle name Copenhagen Infrastructure New Markets Fund I K/S.",
+    "Direct LEI records verify SUNSTONE POWER S DE RL DE CV, its 2022-11-02 formation, active status, RFC SNS2211025C8 and Mexico City address, and separately identify same-address SUNSTONE POWER 2 S DE RL DE CV.",
+    "The direct CIP release confines CI Growth Markets Fund II equity to the La Esperanza project owner and describes Profuturo only as an expected co-investor.",
+    "Direct CFE and La Alegría records establish project relationships without proving a second manager-level platform."
+  ],
+  "identityResolution": {
+    "canonicalDisplayName": "Sunstone Power",
+    "legalName": "SUNSTONE POWER S DE RL DE CV",
+    "legalForm": "Sociedad de responsabilidad limitada de capital variable",
+    "rfc": "SNS2211025C8",
+    "lei": "98450051BAD17154DC07",
+    "formationDate": "2022-11-02",
+    "legalStatus": "ACTIVE",
+    "address": "Paseo de la Reforma 403, despacho 806, Cuauhtémoc, Ciudad de México 06500, Mexico",
+    "productionCompanyId": "cmrxpjc9z00sdivhe09v62cth",
+    "productionAction": "CORRECT_IN_PLACE",
+    "mergeTarget": null,
+    "boundary": "One Mexican utility-scale renewable-development platform. SUNSTONE POWER 2 S DE RL DE CV and La Alegría remain an affiliate/project layer rather than a separate manager-level PortCo absent direct contrary evidence. La Esperanza is a project layer below the platform."
+  },
+  "ownershipResolution": {
+    "currentManagers": [
+      {
+        "manager": "Copenhagen Infrastructure Partners",
+        "organization": "Copenhagen Infrastructure Partners P/S",
+        "fund": "Copenhagen Infrastructure New Markets Fund I",
+        "vehicle": "Copenhagen Infrastructure New Markets Fund I K/S",
+        "stake": "100%",
+        "announcementDate": "UNRESOLVED",
+        "entryDate": "UNRESOLVED",
+        "entryYear": "UNRESOLVED",
+        "exitDate": null,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CURRENT 100% PLATFORM OWNERSHIP; ENTRY UNRESOLVED"
+      }
+    ],
+    "registeredMexicanMembers": "NOT_PUBLICLY_DISCLOSED",
+    "blockingOwnershipGap": null,
+    "nonblockingDisclosureGaps": [
+      "The intermediate Mexican shareholder or holding-company chain is not publicly disclosed.",
+      "No direct source establishes the Sunstone platform announcement, acquisition, subscription, commitment, legal closing or entry date.",
+      "No direct source supports carrying the repository's 2023 date as an investment or ownership-entry year."
+    ]
+  },
+  "transactionResolution": {
+    "platformEntry": "UNRESOLVED",
+    "platformExit": null,
+    "laterParentDisposition": null,
+    "pendingParentOwnershipTransaction": null,
+    "projectLayerFacts": [
+      {
+        "project": "La Esperanza Solar",
+        "fund": "CI Growth Markets Fund II",
+        "state": "FINANCIAL_CLOSE_AND_CONSTRUCTION_VERIFIED_2026-08-06",
+        "stake": "NOT_PUBLICLY_DISCLOSED",
+        "boundary": "Project-owner equity only; not Sunstone platform ownership."
+      },
+      {
+        "project": "La Esperanza Solar",
+        "counterparty": "Profuturo",
+        "state": "EXPECTED_COINVESTMENT; CLOSING_UNRESOLVED",
+        "stake": "NOT_PUBLICLY_DISCLOSED",
+        "boundary": "Expected project co-investment only; do not record as completed ownership."
+      },
+      {
+        "project": "La Alegría Solar",
+        "entity": "SUNSTONE POWER 2 S DE RL DE CV",
+        "state": "PROJECT_PROMOTER_AND_ENVIRONMENTAL_APPROVAL_VERIFIED",
+        "ownership": "UNRESOLVED",
+        "boundary": "Nested affiliate/project; not a separate manager-level PortCo."
+      }
+    ]
+  },
+  "dateResolution": {
+    "legalFormationDate": "2022-11-02",
+    "platformOwnershipEntryDate": "UNRESOLVED",
+    "platformOwnershipEntryYear": "UNRESOLVED",
+    "repository2023Treatment": "REMOVE_FROM_PLATFORM_INVESTMENT_DATE",
+    "reason": "A legal formation date and possible operating-launch year are not evidence of CIP or fund entry."
+  },
+  "primaryCitation": {
+    "label": "Sunstone Power About Us",
+    "url": "https://www.sunstone-power.com/en/about-us/",
+    "purpose": "Direct current proof that Sunstone Power is fully owned by Copenhagen Infrastructure Partners through Copenhagen Infrastructure New Markets Fund I",
+    "contentSha256": "d7abd7a5854d09f1d22388b8a59bfbf7517e39c74b6a7b22b614d4afd87df11b",
+    "contentHashBasis": "UTF-8 normalized ownership and company-scope text independently extracted from the freshly reopened live company HTML",
+    "httpResponseSha256": "1bcc10a2a296b5f7ea28026075e9ea1b452b2377ac9e3d73669c2c94700c48a1"
+  },
+  "applicationRequirements": [
+    "Recapture a fresh production company snapshot and fresh source-task and dependency snapshots against the current protected-main baseline before proposal generation.",
+    "Regenerate the complete after-image and correct the existing company in place; do not create a duplicate or modify the Deal Database.",
+    "Use exactly one proposal primary citation bound to the independently verified official Sunstone About Us ownership statement.",
+    "Set current platform ownership to 100% Copenhagen Infrastructure Partners through Copenhagen Infrastructure New Markets Fund I K/S.",
+    "Leave platform announcement, acquisition, entry date and entry year unresolved; do not reuse the unsupported 2023 investment year.",
+    "Remove CI Growth Markets Fund II from platform ownership and retain it only at La Esperanza's project layer.",
+    "Do not record Profuturo as a completed owner unless a fresh direct closing source becomes available.",
+    "Keep SUNSTONE POWER 2 S DE RL DE CV, La Alegría and La Esperanza nested under the Sunstone platform."
+  ],
+  "applicationBlocked": false,
+  "databaseMutationCandidate": true,
+  "seedMutationCandidate": true,
+  "terminalOutcomeCandidate": "COMPLETED",
+  "dealDatabaseMutation": false,
+  "lineage": {
+    "conversationUrl": "https://chatgpt.com/c/6a9a2f91-3738-83ea-bd2a-84af05e232c3",
+    "prompt": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0187-sunstone-power/attempt-2/chatgpt-research-prompt.md",
+      "sha256": "16424e2fde62e65ea64bb3a21844f8654e54435ee34f11597560541c5aeb0e98"
+    },
+    "initialResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0187-sunstone-power/attempt-2/chatgpt-initial-response.txt",
+      "sha256": "8b8c11962cc3635de756b6ac65dcf4433d74345a33e88b8e9272d02c9aee2934",
+      "disposition": "REJECTED_AFTER_INDEPENDENT_SOURCE_REOPEN"
+    },
+    "repairPrompt": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0187-sunstone-power/attempt-2/chatgpt-repair-prompt.txt",
+      "sha256": "1f802e877f819a787898392013b315edea99ecfd0b434ffd89b66fe057d032a8"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0187-sunstone-power/attempt-2/chatgpt-accepted-response.txt",
+      "sha256": "8745065a0019737dd2534ca3b33bea4f8bf7c6a423bc1804a320991fb905ebe6"
+    },
+    "attestation": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0187-sunstone-power/attempt-2/chatgpt-attestation.json",
+      "sha256": "71e645f5a75f07c3a0321cbaa06e956229934d4134e0910e266dd8e75790e548"
+    },
+    "responseValidation": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0187-sunstone-power/attempt-2/chatgpt-response-validation.json",
+      "sha256": "5efbfe17da85821c45841f797cc0f68ea8de115ef3c9e12c07bd00bd124d5fcb"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0187-sunstone-power/attempt-2/source-verification.json",
+      "sha256": "08ed0ca1a29619dc8c5a1172e6e385b0f88f18e7475638456a89cd22bcf5af4d"
+    }
+  }
+}

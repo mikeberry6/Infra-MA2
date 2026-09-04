@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0213:extenet-formerly-extenet-systems:1d3fac1c",
+  "taskIndex": 213,
+  "companyName": "Extenet (formerly ExteNet Systems)",
+  "asOfDate": "2026-09-04",
+  "decision": "DEFERRED",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-04T06:25:30.000Z",
+  "result": {
+    "asOfDate": "2026-09-04",
+    "requestedCompany": "Extenet (formerly ExteNet Systems)",
+    "requestedManagers": ["Stonepeak", "Manulife", "Northleaf Capital Partners", "DigitalBridge"],
+    "decision": "DEFERRED",
+    "confidence": 0.97,
+    "rationale": "Direct evidence resolves one continuing Extenet platform, active operations and the February 13, 2025 42% Stonepeak / 32% KH Killington / 26% Other Members cap table. It does not establish the September 4, 2026 owner set, stakes and vehicles, bridge JH Killington to KH Killington, or resolve Northleaf's, DigitalBridge's and Manulife's cutoff positions or the outcome of the reported outdoor DAS and small-cell sale process.",
+    "identityResolution": {
+      "canonicalKey": "extenet-formerly-extenet-systems|united-states",
+      "productionCompanyId": "cmrxpjdak00twivheazjbfqum",
+      "status": "CONTINUING_PLATFORM",
+      "mergeRequired": false
+    },
+    "ownershipResolution": {
+      "status": "UNRESOLVED_AT_CUTOFF",
+      "latestExactCapTableDate": "2025-02-13",
+      "exactException": "The cutoff owner set and the relationship among historic and latest holding vehicles are not directly disclosed."
+    },
+    "evidence": [
+      {
+        "label": "Kentucky PSC ExteNet LVS ownership chart dated 2025-02-13",
+        "url": "https://psc.ky.gov/telecomm_informational_letters/ExteNet%20LVS%202025-02-13.pdf",
+        "purpose": "Direct latest exact dated cap table and complete holding chain.",
+        "sourceTier": "T1",
+        "workingStatus": "OK",
+        "isRecommendedPrimary": true
+      }
+    ],
+    "unresolvedQuestions": [
+      "September 4, 2026 owner set, stakes and vehicles.",
+      "Whether JH Killington and KH Killington are the same or successor vehicles.",
+      "Northleaf, DigitalBridge and Manulife cutoff positions."
+    ],
+    "recommendedListAction": {
+      "action": "DEFER_WITH_EXACT_EXCEPTION",
+      "record": "cmrxpjdak00twivheazjbfqum"
+    }
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0213-extenet-formerly-extenet-systems/attempt-2/research-decision.json",
+      "sha256": "c1741c01d873e7d2d5bde36e52c8aee02a2711b021162113219c0ce62841a989"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0213-extenet-formerly-extenet-systems/attempt-2/chatgpt-accepted-response.txt",
+      "sha256": "fad81b9c2c2ed0e92c6bf3aff8ef299fd4c708347db87b6b1a9765055926a61d"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0213-extenet-formerly-extenet-systems/attempt-2/source-verification.json",
+      "sha256": "1c0b2cbc7ce14dab21d23014088b57ba3237d8606b81fd55bb58f329bf024784"
+    }
+  }
+}

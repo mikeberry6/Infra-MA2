@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0220:bleutec-industries:3c6b9662",
+  "taskIndex": 220,
+  "companyName": "Bleutec Industries",
+  "asOfDate": "2026-09-04",
+  "decision": "DEFERRED",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-04T06:26:00.000Z",
+  "result": {
+    "asOfDate": "2026-09-04",
+    "requestedCompany": "Bleutec Industries",
+    "requestedManagers": ["EnCap Investments"],
+    "decision": "DEFERRED",
+    "confidence": 0.98,
+    "rationale": "The direct ATRS board packet resolves the historical fund as EnCap Energy Transition Fund II and reports a December 2022 commitment date, $68.7 million commitment and $5.5 million invested capital. Direct sources still do not establish the legal relationship and current status of the three Bleutec entity names, EnCap's cutoff ownership, vehicle, stake or control, continuing management co-investment, the Title XI application's disposition, a delivered vessel fleet or current operations.",
+    "identityResolution": {
+      "canonicalKey": "bleutec-industries|united-states",
+      "productionCompanyId": "cmrxpje9300veivhewkxji64b",
+      "status": "LEGAL_ENTITY_CHAIN_UNRESOLVED",
+      "mergeRequired": false
+    },
+    "ownershipResolution": {
+      "status": "HISTORICAL_FUND_RESOLVED_CUTOFF_OWNERSHIP_UNRESOLVED",
+      "historicalFund": "EnCap Energy Transition Fund II",
+      "commitmentDate": "2022-12",
+      "fundCommitmentUsdMm": 68.7,
+      "investedCapitalUsdMm": 5.5,
+      "exactException": "The exact vehicle, stake, legal close, control and cutoff ownership or exit state are not directly disclosed."
+    },
+    "evidence": [
+      {
+        "label": "Arkansas Teacher Retirement System EnCap Energy Transition Fund II board packet",
+        "url": "https://www.artrs.gov/board/documents/CY2023/2023-09-25/BOT_Packet.pdf",
+        "purpose": "Direct historical proof of Fund II attribution, December 2022 commitment date, $68.7 million commitment and $5.5 million invested capital.",
+        "sourceTier": "T1",
+        "workingStatus": "OK",
+        "isRecommendedPrimary": true
+      }
+    ],
+    "unresolvedQuestions": [
+      "Canonical legal parent and entity chain.",
+      "EnCap vehicle, stake, control and September 4, 2026 ownership or exit state.",
+      "Title XI disposition, vessel deliveries and current operations."
+    ],
+    "recommendedListAction": {
+      "action": "DEFER_WITH_EXACT_EXCEPTION",
+      "record": "cmrxpje9300veivhewkxji64b"
+    }
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0220-bleutec-industries/attempt-2/research-decision.json",
+      "sha256": "f3aa396468504e2b24095527657ddb8885acd00f517bc1e22cf50fea20fe2be1"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0220-bleutec-industries/attempt-2/chatgpt-accepted-response.txt",
+      "sha256": "375129c1d8d23a16532fc21bacc7049a84c084e381e93d1954fe7996df8c9aee"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0220-bleutec-industries/attempt-2/source-verification.json",
+      "sha256": "623588edcf5908d724e57732340f6486a786235b0d24255912c5e6d3385a45a3"
+    }
+  }
+}

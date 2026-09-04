@@ -5,8 +5,8 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-09-04T00:03:26.000Z",
-  "runStatus": "COMPLETE_WITH_EXCEPTIONS",
+  "updatedAt": "2026-09-04T06:17:00.000Z",
+  "runStatus": "IDLE",
   "activeTaskId": null,
   "source": {
     "manifest": {
@@ -17382,29 +17382,81 @@
       "managerIndex": 18,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "eb2097f49a5ba40bc6f783360c0710ab2ae5c9163c6bf78f408888c6ce82b5bf",
-      "status": "DEFERRED",
+      "status": "PENDING",
       "attempts": 3,
-      "startedAt": "2026-08-18T10:26:00.000Z",
-      "updatedAt": "2026-08-18T11:11:08.000Z",
-      "completedAt": "2026-08-18T11:11:08.000Z",
-      "exceptionReason": "AustralianSuper and QIC have direct current evidence; Harbert and CBRE have direct 2021 entry evidence but neither direct current ownership evidence nor a proven exit. No mutation was made.",
+      "startedAt": null,
+      "updatedAt": "2026-09-04T06:15:00.000Z",
+      "completedAt": null,
+      "exceptionReason": null,
       "supersededByTaskId": null,
       "taskSnapshotSha256": null,
       "artifacts": {
-        "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0111-generate-capital/attempt-3/locked-task-snapshot.json",
-          "sha256": "3ce1bb45c541dcaac586fe265a43efcd5a0f2b1504f4153965a5da08d065fd2e"
-        },
+        "taskSnapshot": null,
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0111-generate-capital/attempt-3/research-decision.json",
-          "sha256": "b5b090abfee21591b1a02e426968f634a029910a9e73c3b91fec6b8968a043d0"
-        },
+        "decision": null,
         "companySnapshot": null
       },
       "recovery": null,
+      "reAdjudications": [
+        {
+          "sequence": 1,
+          "reopenedAt": "2026-09-04T06:15:00.000Z",
+          "reason": "Fresh deferred re-adjudication completed; reopen in original source order for the next protected five-task release bundle.",
+          "priorCompletedAt": "2026-08-18T11:11:08.000Z",
+          "priorExceptionReason": "AustralianSuper and QIC have direct current evidence; Harbert and CBRE have direct 2021 entry evidence but neither direct current ownership evidence nor a proven exit. No mutation was made.",
+          "priorArtifacts": {
+            "taskSnapshot": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0111-generate-capital/attempt-3/locked-task-snapshot.json",
+              "sha256": "3ce1bb45c541dcaac586fe265a43efcd5a0f2b1504f4153965a5da08d065fd2e"
+            },
+            "proposal": null,
+            "approval": null,
+            "applyReceipt": null,
+            "decision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0111-generate-capital/attempt-3/research-decision.json",
+              "sha256": "b5b090abfee21591b1a02e426968f634a029910a9e73c3b91fec6b8968a043d0"
+            },
+            "companySnapshot": null
+          },
+          "priorManifestSha256": "a73afdea011f3e58eae6615a429498c6f50e5bceb4f99eebc23174c571c88bd2",
+          "batchLedger": {
+            "location": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+            "sha256": "7b71daf7c710171cb6a6d940e3848a995825ac9388d0c4ba9905cacdc868e25c"
+          },
+          "evidence": {
+            "researchDecision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0111-generate-capital/attempt-4/research-decision.json",
+              "sha256": "7acd3404b992a2fa831c58e23f228b984c70609977226691fb58f87860e638ed"
+            },
+            "chatgptAttestation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0111-generate-capital/attempt-4/chatgpt-attestation.json",
+              "sha256": "8b881d75d5540a7a4302478b10a40725c5099cc3cd0e4b39c62312c54eb6b569"
+            },
+            "prompt": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0111-generate-capital/attempt-4/chatgpt-research-prompt.md",
+              "sha256": "2cabb2f4b899ec81ef63d86ab4069a305dcb0dfac036a79091f47640141ac15f"
+            },
+            "acceptedResponse": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0111-generate-capital/attempt-4/chatgpt-accepted-response.txt",
+              "sha256": "8292e7689d5c63ade473b290ce5dfb1a909f152c7fefcf4d0fa3e0a895c158e3"
+            },
+            "transcript": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0111-generate-capital/attempt-4/chatgpt-transcript.txt",
+              "sha256": "cfe1a561f7ea6123195b933379f8e86f61314dc6dc9c6ed0791e3e655661aebc"
+            },
+            "sourceVerification": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0111-generate-capital/attempt-4/source-verification.json",
+              "sha256": "0ea9c81f5cf0fb2bc29cee51ecf2077f430fadf2b82ee358d4ec9b565f39bc57"
+            },
+            "responseValidation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0111-generate-capital/attempt-4/chatgpt-response-validation.json",
+              "sha256": "5636f1aa28e1d2df5573440ef078993d27c070a451e044d6d47fa325cf3b513c"
+            }
+          }
+        }
+      ],
       "history": [
         {
           "sequence": 1,
@@ -17484,6 +17536,25 @@
             "b5b090abfee21591b1a02e426968f634a029910a9e73c3b91fec6b8968a043d0"
           ],
           "kind": "TRANSITION"
+        },
+        {
+          "sequence": 8,
+          "from": "DEFERRED",
+          "to": "PENDING",
+          "at": "2026-09-04T06:15:00.000Z",
+          "reason": "Fresh deferred re-adjudication completed; reopen in original source order for the next protected five-task release bundle.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "0ea9c81f5cf0fb2bc29cee51ecf2077f430fadf2b82ee358d4ec9b565f39bc57",
+            "2cabb2f4b899ec81ef63d86ab4069a305dcb0dfac036a79091f47640141ac15f",
+            "5636f1aa28e1d2df5573440ef078993d27c070a451e044d6d47fa325cf3b513c",
+            "7acd3404b992a2fa831c58e23f228b984c70609977226691fb58f87860e638ed",
+            "7b71daf7c710171cb6a6d940e3848a995825ac9388d0c4ba9905cacdc868e25c",
+            "8292e7689d5c63ade473b290ce5dfb1a909f152c7fefcf4d0fa3e0a895c158e3",
+            "8b881d75d5540a7a4302478b10a40725c5099cc3cd0e4b39c62312c54eb6b569",
+            "cfe1a561f7ea6123195b933379f8e86f61314dc6dc9c6ed0791e3e655661aebc"
+          ],
+          "kind": "DEFERRED_READJUDICATION"
         }
       ]
     },
@@ -23017,29 +23088,81 @@
       "managerIndex": 30,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "6ebdafbe86533f551c875ed1f30783165dc89866253d16349b23d8cae576a9f1",
-      "status": "DEFERRED",
+      "status": "PENDING",
       "attempts": 1,
-      "startedAt": "2026-08-23T22:09:01.000Z",
-      "updatedAt": "2026-08-23T22:55:01.000Z",
-      "completedAt": "2026-08-23T22:55:01.000Z",
-      "exceptionReason": "Primary evidence resolves Kelso Valley as CIM's label for ReNu Resources LLC and the Onyx Ranch land, water and renewables-development investment, distinct from Permanent Power. Assets were sold in 2008, 2013 and 2014, but CIM still reported oversight in 2021 and no later direct source establishes ReNu's current legal existence, residual assets or rights, the current CIM/Renewable Resources Group ownership split, or a final exit. Because active ownership remains materially unresolved, no production mutation is inferred.",
+      "startedAt": null,
+      "updatedAt": "2026-09-04T06:15:30.000Z",
+      "completedAt": null,
+      "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": "cc67698dcfba90df15c63c7747b7295c8ee184cd6b5fe709892067d97e1270d9",
+      "taskSnapshotSha256": null,
       "artifacts": {
-        "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0178-kelso-valley-wind-solar-and-water/attempt-1/locked-task-snapshot.json",
-          "sha256": "cc67698dcfba90df15c63c7747b7295c8ee184cd6b5fe709892067d97e1270d9"
-        },
+        "taskSnapshot": null,
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0178-kelso-valley-wind-solar-and-water/attempt-1/terminal-decision.json",
-          "sha256": "439a6ef72704f88f879c6e42fe61695e19064e39e3ac668a527593907c7c7e0c"
-        },
+        "decision": null,
         "companySnapshot": null
       },
       "recovery": null,
+      "reAdjudications": [
+        {
+          "sequence": 1,
+          "reopenedAt": "2026-09-04T06:15:30.000Z",
+          "reason": "Fresh deferred re-adjudication completed; reopen in original source order for the next protected five-task release bundle.",
+          "priorCompletedAt": "2026-08-23T22:55:01.000Z",
+          "priorExceptionReason": "Primary evidence resolves Kelso Valley as CIM's label for ReNu Resources LLC and the Onyx Ranch land, water and renewables-development investment, distinct from Permanent Power. Assets were sold in 2008, 2013 and 2014, but CIM still reported oversight in 2021 and no later direct source establishes ReNu's current legal existence, residual assets or rights, the current CIM/Renewable Resources Group ownership split, or a final exit. Because active ownership remains materially unresolved, no production mutation is inferred.",
+          "priorArtifacts": {
+            "taskSnapshot": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0178-kelso-valley-wind-solar-and-water/attempt-1/locked-task-snapshot.json",
+              "sha256": "cc67698dcfba90df15c63c7747b7295c8ee184cd6b5fe709892067d97e1270d9"
+            },
+            "proposal": null,
+            "approval": null,
+            "applyReceipt": null,
+            "decision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0178-kelso-valley-wind-solar-and-water/attempt-1/terminal-decision.json",
+              "sha256": "439a6ef72704f88f879c6e42fe61695e19064e39e3ac668a527593907c7c7e0c"
+            },
+            "companySnapshot": null
+          },
+          "priorManifestSha256": "bb9e21de7d1785c943a483c8ca89219e4cd2dc3dc7c72657c5b1a00036103d6f",
+          "batchLedger": {
+            "location": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+            "sha256": "7b71daf7c710171cb6a6d940e3848a995825ac9388d0c4ba9905cacdc868e25c"
+          },
+          "evidence": {
+            "researchDecision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0178-kelso-valley-wind-solar-and-water/attempt-2/research-decision.json",
+              "sha256": "a047474eb040de1b96f09b6ff400d9f1b639be9dd0afa911c7bda240af27caf2"
+            },
+            "chatgptAttestation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0178-kelso-valley-wind-solar-and-water/attempt-2/chatgpt-attestation.json",
+              "sha256": "cf0c3ec79a1f25ac43b57e061f0bf30342ae795c7882eaba66eb2505dcb8f43d"
+            },
+            "prompt": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0178-kelso-valley-wind-solar-and-water/attempt-2/chatgpt-research-prompt.md",
+              "sha256": "1ff843f2cdc6182edb24c754aeddb8ac29a60419037906d6530230020146d6ae"
+            },
+            "acceptedResponse": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0178-kelso-valley-wind-solar-and-water/attempt-2/chatgpt-accepted-response.txt",
+              "sha256": "38bcffe003605c2c96ece2d612d475ad8c821330ee993f5addf02a572f6c8451"
+            },
+            "transcript": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0178-kelso-valley-wind-solar-and-water/attempt-2/chatgpt-transcript.txt",
+              "sha256": "f060a534435bf092db1e47bd4458f6cad09f51019627124eeaf2c8cc7b42e08f"
+            },
+            "sourceVerification": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0178-kelso-valley-wind-solar-and-water/attempt-2/source-verification.json",
+              "sha256": "cb1414a1fa9cdc76bce3f2bd58d81dbd9ff2914ac0b3dcef4b3b1c68df2c33f6"
+            },
+            "responseValidation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0178-kelso-valley-wind-solar-and-water/attempt-2/chatgpt-response-validation.json",
+              "sha256": "0fac77e0b238a75f25f8ca8d01fcaefc9a04eb9ba6be380178cdd580b0409969"
+            }
+          }
+        }
+      ],
       "history": [
         {
           "sequence": 1,
@@ -23065,6 +23188,25 @@
             "cc67698dcfba90df15c63c7747b7295c8ee184cd6b5fe709892067d97e1270d9"
           ],
           "kind": "BATCH"
+        },
+        {
+          "sequence": 3,
+          "from": "DEFERRED",
+          "to": "PENDING",
+          "at": "2026-09-04T06:15:30.000Z",
+          "reason": "Fresh deferred re-adjudication completed; reopen in original source order for the next protected five-task release bundle.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "0fac77e0b238a75f25f8ca8d01fcaefc9a04eb9ba6be380178cdd580b0409969",
+            "1ff843f2cdc6182edb24c754aeddb8ac29a60419037906d6530230020146d6ae",
+            "38bcffe003605c2c96ece2d612d475ad8c821330ee993f5addf02a572f6c8451",
+            "7b71daf7c710171cb6a6d940e3848a995825ac9388d0c4ba9905cacdc868e25c",
+            "a047474eb040de1b96f09b6ff400d9f1b639be9dd0afa911c7bda240af27caf2",
+            "cb1414a1fa9cdc76bce3f2bd58d81dbd9ff2914ac0b3dcef4b3b1c68df2c33f6",
+            "cf0c3ec79a1f25ac43b57e061f0bf30342ae795c7882eaba66eb2505dcb8f43d",
+            "f060a534435bf092db1e47bd4458f6cad09f51019627124eeaf2c8cc7b42e08f"
+          ],
+          "kind": "DEFERRED_READJUDICATION"
         }
       ]
     },
@@ -23674,29 +23816,81 @@
       "managerIndex": 31,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "02c2a1aa534044f19ff19bbea0959dfe1c5de65ed93544e0202bf7f8c6dfa4f9",
-      "status": "DEFERRED",
+      "status": "PENDING",
       "attempts": 1,
-      "startedAt": "2026-08-24T00:10:00.000Z",
-      "updatedAt": "2026-08-24T01:08:30.000Z",
-      "completedAt": "2026-08-24T01:08:30.000Z",
-      "exceptionReason": "Sunstone is a verified Mexican renewable-development platform. CIP/CFE directly verify CIP sponsorship and CI Growth Markets Fund II equity at La Esperanza, but no source identifies CIP/GMF II as a Sunstone shareholder or supports the repository's 2023 platform-entry date, stake or equity commitment. Retain Sunstone; defer direct manager ownership.",
+      "startedAt": null,
+      "updatedAt": "2026-09-04T06:16:00.000Z",
+      "completedAt": null,
+      "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": "f3ce3e8163d849a573259c3821540aaccbbc95f726101d14ac8cb65da24b5866",
+      "taskSnapshotSha256": null,
       "artifacts": {
-        "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0187-sunstone-power/attempt-1/locked-task-snapshot.json",
-          "sha256": "f3ce3e8163d849a573259c3821540aaccbbc95f726101d14ac8cb65da24b5866"
-        },
+        "taskSnapshot": null,
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0187-sunstone-power/attempt-1/terminal-decision.json",
-          "sha256": "a26e1596e3366267c159a706326c193f6e11d7b62c42dc94cd91a3b71149e5bd"
-        },
+        "decision": null,
         "companySnapshot": null
       },
       "recovery": null,
+      "reAdjudications": [
+        {
+          "sequence": 1,
+          "reopenedAt": "2026-09-04T06:16:00.000Z",
+          "reason": "Fresh deferred re-adjudication completed; reopen in original source order for the next protected five-task release bundle.",
+          "priorCompletedAt": "2026-08-24T01:08:30.000Z",
+          "priorExceptionReason": "Sunstone is a verified Mexican renewable-development platform. CIP/CFE directly verify CIP sponsorship and CI Growth Markets Fund II equity at La Esperanza, but no source identifies CIP/GMF II as a Sunstone shareholder or supports the repository's 2023 platform-entry date, stake or equity commitment. Retain Sunstone; defer direct manager ownership.",
+          "priorArtifacts": {
+            "taskSnapshot": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0187-sunstone-power/attempt-1/locked-task-snapshot.json",
+              "sha256": "f3ce3e8163d849a573259c3821540aaccbbc95f726101d14ac8cb65da24b5866"
+            },
+            "proposal": null,
+            "approval": null,
+            "applyReceipt": null,
+            "decision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0187-sunstone-power/attempt-1/terminal-decision.json",
+              "sha256": "a26e1596e3366267c159a706326c193f6e11d7b62c42dc94cd91a3b71149e5bd"
+            },
+            "companySnapshot": null
+          },
+          "priorManifestSha256": "35fd8018808ca93316caf915ea6e61446e9fff20f84894710588572fc3f73058",
+          "batchLedger": {
+            "location": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+            "sha256": "7b71daf7c710171cb6a6d940e3848a995825ac9388d0c4ba9905cacdc868e25c"
+          },
+          "evidence": {
+            "researchDecision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0187-sunstone-power/attempt-2/research-decision.json",
+              "sha256": "49a6341ea327c78679fa811c93f632e08c3491fc699d4dd96f117e83533b92d6"
+            },
+            "chatgptAttestation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0187-sunstone-power/attempt-2/chatgpt-attestation.json",
+              "sha256": "71e645f5a75f07c3a0321cbaa06e956229934d4134e0910e266dd8e75790e548"
+            },
+            "prompt": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0187-sunstone-power/attempt-2/chatgpt-research-prompt.md",
+              "sha256": "16424e2fde62e65ea64bb3a21844f8654e54435ee34f11597560541c5aeb0e98"
+            },
+            "acceptedResponse": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0187-sunstone-power/attempt-2/chatgpt-accepted-response.txt",
+              "sha256": "8745065a0019737dd2534ca3b33bea4f8bf7c6a423bc1804a320991fb905ebe6"
+            },
+            "transcript": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0187-sunstone-power/attempt-2/chatgpt-transcript.txt",
+              "sha256": "c9f4ef9cc1fd2a006ff958d8c8b3c25c1d862db86e8996ae7809b94905b0e1ca"
+            },
+            "sourceVerification": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0187-sunstone-power/attempt-2/source-verification.json",
+              "sha256": "08ed0ca1a29619dc8c5a1172e6e385b0f88f18e7475638456a89cd22bcf5af4d"
+            },
+            "responseValidation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0187-sunstone-power/attempt-2/chatgpt-response-validation.json",
+              "sha256": "5efbfe17da85821c45841f797cc0f68ea8de115ef3c9e12c07bd00bd124d5fcb"
+            }
+          }
+        }
+      ],
       "history": [
         {
           "sequence": 1,
@@ -23722,6 +23916,25 @@
             "f3ce3e8163d849a573259c3821540aaccbbc95f726101d14ac8cb65da24b5866"
           ],
           "kind": "BATCH"
+        },
+        {
+          "sequence": 3,
+          "from": "DEFERRED",
+          "to": "PENDING",
+          "at": "2026-09-04T06:16:00.000Z",
+          "reason": "Fresh deferred re-adjudication completed; reopen in original source order for the next protected five-task release bundle.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "08ed0ca1a29619dc8c5a1172e6e385b0f88f18e7475638456a89cd22bcf5af4d",
+            "16424e2fde62e65ea64bb3a21844f8654e54435ee34f11597560541c5aeb0e98",
+            "49a6341ea327c78679fa811c93f632e08c3491fc699d4dd96f117e83533b92d6",
+            "5efbfe17da85821c45841f797cc0f68ea8de115ef3c9e12c07bd00bd124d5fcb",
+            "71e645f5a75f07c3a0321cbaa06e956229934d4134e0910e266dd8e75790e548",
+            "7b71daf7c710171cb6a6d940e3848a995825ac9388d0c4ba9905cacdc868e25c",
+            "8745065a0019737dd2534ca3b33bea4f8bf7c6a423bc1804a320991fb905ebe6",
+            "c9f4ef9cc1fd2a006ff958d8c8b3c25c1d862db86e8996ae7809b94905b0e1ca"
+          ],
+          "kind": "DEFERRED_READJUDICATION"
         }
       ]
     },
@@ -25477,29 +25690,81 @@
       "managerIndex": 36,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "768b5d3cfeb382a90c7e1864b1b0295c4ed687793e89c105390f88c9cbe746c8",
-      "status": "DEFERRED",
+      "status": "PENDING",
       "attempts": 1,
-      "startedAt": "2026-08-29T06:25:35.000Z",
-      "updatedAt": "2026-08-29T07:07:44.000Z",
-      "completedAt": "2026-08-29T07:07:44.000Z",
-      "exceptionReason": "The 2025 filing verifies Stonepeak 42%, KH Killington 32% and Other Members 26%, but not Northleaf. Northleaf's indexed page calls its November 2015 ExteNet investment active while the live page omits it; regulatory owner tables omit Northleaf, and no direct exit, transfer or current-holder record was found. Northleaf may be current below 20%, former or indirect, so ownership is blocking. JH is only the 2020-2021 transaction vehicle and KH only the 2024-2025 chart label; no legal succession is assumed.",
+      "startedAt": null,
+      "updatedAt": "2026-09-04T06:16:30.000Z",
+      "completedAt": null,
+      "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": "2758e5c3a1150cc695fd4d194dd0bd697e6d5b5128c49a731784f2564ac4e963",
+      "taskSnapshotSha256": null,
       "artifacts": {
-        "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0213-extenet-formerly-extenet-systems/attempt-1/locked-task-snapshot.json",
-          "sha256": "2758e5c3a1150cc695fd4d194dd0bd697e6d5b5128c49a731784f2564ac4e963"
-        },
+        "taskSnapshot": null,
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0213-extenet-formerly-extenet-systems/attempt-1/terminal-decision.json",
-          "sha256": "382e6ed9c8b54719db3ea09d45aa6aec8fac7494c1aa68192fb63c3bb7e8c31f"
-        },
+        "decision": null,
         "companySnapshot": null
       },
       "recovery": null,
+      "reAdjudications": [
+        {
+          "sequence": 1,
+          "reopenedAt": "2026-09-04T06:16:30.000Z",
+          "reason": "Fresh deferred re-adjudication completed; reopen in original source order for the next protected five-task release bundle.",
+          "priorCompletedAt": "2026-08-29T07:07:44.000Z",
+          "priorExceptionReason": "The 2025 filing verifies Stonepeak 42%, KH Killington 32% and Other Members 26%, but not Northleaf. Northleaf's indexed page calls its November 2015 ExteNet investment active while the live page omits it; regulatory owner tables omit Northleaf, and no direct exit, transfer or current-holder record was found. Northleaf may be current below 20%, former or indirect, so ownership is blocking. JH is only the 2020-2021 transaction vehicle and KH only the 2024-2025 chart label; no legal succession is assumed.",
+          "priorArtifacts": {
+            "taskSnapshot": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0213-extenet-formerly-extenet-systems/attempt-1/locked-task-snapshot.json",
+              "sha256": "2758e5c3a1150cc695fd4d194dd0bd697e6d5b5128c49a731784f2564ac4e963"
+            },
+            "proposal": null,
+            "approval": null,
+            "applyReceipt": null,
+            "decision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0213-extenet-formerly-extenet-systems/attempt-1/terminal-decision.json",
+              "sha256": "382e6ed9c8b54719db3ea09d45aa6aec8fac7494c1aa68192fb63c3bb7e8c31f"
+            },
+            "companySnapshot": null
+          },
+          "priorManifestSha256": "133d8a812d88bcf9f7f9674aac3f3b01da05ba2a42b15430b61c7d93c82ed84c",
+          "batchLedger": {
+            "location": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+            "sha256": "7b71daf7c710171cb6a6d940e3848a995825ac9388d0c4ba9905cacdc868e25c"
+          },
+          "evidence": {
+            "researchDecision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0213-extenet-formerly-extenet-systems/attempt-2/research-decision.json",
+              "sha256": "c1741c01d873e7d2d5bde36e52c8aee02a2711b021162113219c0ce62841a989"
+            },
+            "chatgptAttestation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0213-extenet-formerly-extenet-systems/attempt-2/chatgpt-attestation.json",
+              "sha256": "9820e7d41a99cc41a57e6635a06fc18da3d743bad1257832035ec20a4c95f1d6"
+            },
+            "prompt": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0213-extenet-formerly-extenet-systems/attempt-2/chatgpt-research-prompt.md",
+              "sha256": "ab187427bb007720e37f6c6160ec50e8ebf211183a95216b0ff7b9fee7f1b0e1"
+            },
+            "acceptedResponse": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0213-extenet-formerly-extenet-systems/attempt-2/chatgpt-accepted-response.txt",
+              "sha256": "fad81b9c2c2ed0e92c6bf3aff8ef299fd4c708347db87b6b1a9765055926a61d"
+            },
+            "transcript": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0213-extenet-formerly-extenet-systems/attempt-2/chatgpt-transcript.txt",
+              "sha256": "a5cb53a4397bb861fabe35a9a35175b797e807d0f362d2689abdfcc182b2c726"
+            },
+            "sourceVerification": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0213-extenet-formerly-extenet-systems/attempt-2/source-verification.json",
+              "sha256": "1c0b2cbc7ce14dab21d23014088b57ba3237d8606b81fd55bb58f329bf024784"
+            },
+            "responseValidation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0213-extenet-formerly-extenet-systems/attempt-2/chatgpt-response-validation.json",
+              "sha256": "482cc37a7babe9a6f228711bd76ebbe122a106cd867c721454e986746e4b7b3f"
+            }
+          }
+        }
+      ],
       "history": [
         {
           "sequence": 1,
@@ -25525,6 +25790,25 @@
             "b92c30918cfc5fde5cd1e648e523c01d49942ce4ac32586d4a8a11ebffd8f1a9"
           ],
           "kind": "BATCH"
+        },
+        {
+          "sequence": 3,
+          "from": "DEFERRED",
+          "to": "PENDING",
+          "at": "2026-09-04T06:16:30.000Z",
+          "reason": "Fresh deferred re-adjudication completed; reopen in original source order for the next protected five-task release bundle.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "1c0b2cbc7ce14dab21d23014088b57ba3237d8606b81fd55bb58f329bf024784",
+            "482cc37a7babe9a6f228711bd76ebbe122a106cd867c721454e986746e4b7b3f",
+            "7b71daf7c710171cb6a6d940e3848a995825ac9388d0c4ba9905cacdc868e25c",
+            "9820e7d41a99cc41a57e6635a06fc18da3d743bad1257832035ec20a4c95f1d6",
+            "a5cb53a4397bb861fabe35a9a35175b797e807d0f362d2689abdfcc182b2c726",
+            "ab187427bb007720e37f6c6160ec50e8ebf211183a95216b0ff7b9fee7f1b0e1",
+            "c1741c01d873e7d2d5bde36e52c8aee02a2711b021162113219c0ce62841a989",
+            "fad81b9c2c2ed0e92c6bf3aff8ef299fd4c708347db87b6b1a9765055926a61d"
+          ],
+          "kind": "DEFERRED_READJUDICATION"
         }
       ]
     },
@@ -25998,29 +26282,81 @@
       "managerIndex": 40,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "8ffd601509c05040ff44da279f9412bdfa73252073b927847fd7f27aa37fed72",
-      "status": "DEFERRED",
+      "status": "PENDING",
       "attempts": 1,
-      "startedAt": "2026-08-29T08:10:05.000Z",
-      "updatedAt": "2026-08-29T09:11:13.000Z",
-      "completedAt": "2026-08-29T09:11:13.000Z",
-      "exceptionReason": "Bleutec's 2022 EnCap commitment was funded by February 2023, but direct sources do not resolve current ownership, a supported exit, the canonical legal parent or current operations. Portfolio omission, a compromised domain and a lack of later vessel activity are dormancy signals rather than disposition evidence, so the record cannot safely remain verified active or be marked realized.",
+      "startedAt": null,
+      "updatedAt": "2026-09-04T06:17:00.000Z",
+      "completedAt": null,
+      "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": "a2a07fc902e021bb976101ce1177f88833430f23391bdb6f59ab52090dd95ce1",
+      "taskSnapshotSha256": null,
       "artifacts": {
-        "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0220-bleutec-industries/attempt-1/locked-task-snapshot.json",
-          "sha256": "a2a07fc902e021bb976101ce1177f88833430f23391bdb6f59ab52090dd95ce1"
-        },
+        "taskSnapshot": null,
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0220-bleutec-industries/attempt-1/terminal-decision.json",
-          "sha256": "49978cb2a7207c4bec02afa356866b28940bca61a34c41668e36dbfae35ea8a0"
-        },
+        "decision": null,
         "companySnapshot": null
       },
       "recovery": null,
+      "reAdjudications": [
+        {
+          "sequence": 1,
+          "reopenedAt": "2026-09-04T06:17:00.000Z",
+          "reason": "Fresh deferred re-adjudication completed; reopen in original source order for the next protected five-task release bundle.",
+          "priorCompletedAt": "2026-08-29T09:11:13.000Z",
+          "priorExceptionReason": "Bleutec's 2022 EnCap commitment was funded by February 2023, but direct sources do not resolve current ownership, a supported exit, the canonical legal parent or current operations. Portfolio omission, a compromised domain and a lack of later vessel activity are dormancy signals rather than disposition evidence, so the record cannot safely remain verified active or be marked realized.",
+          "priorArtifacts": {
+            "taskSnapshot": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0220-bleutec-industries/attempt-1/locked-task-snapshot.json",
+              "sha256": "a2a07fc902e021bb976101ce1177f88833430f23391bdb6f59ab52090dd95ce1"
+            },
+            "proposal": null,
+            "approval": null,
+            "applyReceipt": null,
+            "decision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0220-bleutec-industries/attempt-1/terminal-decision.json",
+              "sha256": "49978cb2a7207c4bec02afa356866b28940bca61a34c41668e36dbfae35ea8a0"
+            },
+            "companySnapshot": null
+          },
+          "priorManifestSha256": "0b43a27f8f7601e9fd5a81e56285111e7410dda2d34baec20891df76aec53f1d",
+          "batchLedger": {
+            "location": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+            "sha256": "7b71daf7c710171cb6a6d940e3848a995825ac9388d0c4ba9905cacdc868e25c"
+          },
+          "evidence": {
+            "researchDecision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0220-bleutec-industries/attempt-2/research-decision.json",
+              "sha256": "f3aa396468504e2b24095527657ddb8885acd00f517bc1e22cf50fea20fe2be1"
+            },
+            "chatgptAttestation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0220-bleutec-industries/attempt-2/chatgpt-attestation.json",
+              "sha256": "49cdf446968cf85ed89aab5069671340427fc9bd6240b7cce3b280d370b9ad4f"
+            },
+            "prompt": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0220-bleutec-industries/attempt-2/chatgpt-research-prompt.md",
+              "sha256": "0ed410755c57e0d689c77c04153d3ee5c3466ba260518b07e6df75012b32b97d"
+            },
+            "acceptedResponse": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0220-bleutec-industries/attempt-2/chatgpt-accepted-response.txt",
+              "sha256": "375129c1d8d23a16532fc21bacc7049a84c084e381e93d1954fe7996df8c9aee"
+            },
+            "transcript": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0220-bleutec-industries/attempt-2/chatgpt-transcript.txt",
+              "sha256": "64d68c7082034e246e427defd93f526e095c99e4d34963cdcb71732163528f5b"
+            },
+            "sourceVerification": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0220-bleutec-industries/attempt-2/source-verification.json",
+              "sha256": "623588edcf5908d724e57732340f6486a786235b0d24255912c5e6d3385a45a3"
+            },
+            "responseValidation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0220-bleutec-industries/attempt-2/chatgpt-response-validation.json",
+              "sha256": "e60d2b01fae67ca2d4cb865b7bcdcf3ef69c64a18195051b9e7e36c8866fd3a1"
+            }
+          }
+        }
+      ],
       "history": [
         {
           "sequence": 1,
@@ -26046,6 +26382,25 @@
             "a2a07fc902e021bb976101ce1177f88833430f23391bdb6f59ab52090dd95ce1"
           ],
           "kind": "BATCH"
+        },
+        {
+          "sequence": 3,
+          "from": "DEFERRED",
+          "to": "PENDING",
+          "at": "2026-09-04T06:17:00.000Z",
+          "reason": "Fresh deferred re-adjudication completed; reopen in original source order for the next protected five-task release bundle.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "0ed410755c57e0d689c77c04153d3ee5c3466ba260518b07e6df75012b32b97d",
+            "375129c1d8d23a16532fc21bacc7049a84c084e381e93d1954fe7996df8c9aee",
+            "49cdf446968cf85ed89aab5069671340427fc9bd6240b7cce3b280d370b9ad4f",
+            "623588edcf5908d724e57732340f6486a786235b0d24255912c5e6d3385a45a3",
+            "64d68c7082034e246e427defd93f526e095c99e4d34963cdcb71732163528f5b",
+            "7b71daf7c710171cb6a6d940e3848a995825ac9388d0c4ba9905cacdc868e25c",
+            "e60d2b01fae67ca2d4cb865b7bcdcf3ef69c64a18195051b9e7e36c8866fd3a1",
+            "f3aa396468504e2b24095527657ddb8885acd00f517bc1e22cf50fea20fe2be1"
+          ],
+          "kind": "DEFERRED_READJUDICATION"
         }
       ]
     },
@@ -45064,5 +45419,5 @@
       ]
     }
   ],
-  "manifestSha256": "a73afdea011f3e58eae6615a429498c6f50e5bceb4f99eebc23174c571c88bd2"
+  "manifestSha256": "d5974045d9496b24afb93e816f2ef1bcad924e1891a710f83ec4bfa6427f2266"
 }

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0111:generate-capital:f6794437",
+  "taskIndex": 111,
+  "companyName": "Generate Capital",
+  "outcome": "DEFERRED",
+  "decidedAt": "2026-09-04T06:28:30.000Z",
+  "rationale": "QIC is directly current at 23.5%, and AustralianSuper is directly verified at 23% through June 30, 2025. No direct cutoff-current or exit evidence resolves Harbert Management Corporation or CBRE Caledon's July 2021 interests, their treatment in the January 2024 financing, or AustralianSuper's cutoff-current state, so the ownership timeline cannot be changed without inference.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0111-generate-capital/attempt-2/locked-deferred-v1-task-snapshot.json",
+    "sha256": "d924505fe60441ae6ef7cce493bd4971e942547cb1df4e1d5000b0277e9dc149"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0111-generate-capital/attempt-4/application-research-decision.json",
+    "sha256": "f2bf9efdd08000019ffa13c759d5fc0019f2065ffb730e04e1295c5ebfe9a056"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0111-generate-capital/attempt-4/source-verification.json",
+    "sha256": "0ea9c81f5cf0fb2bc29cee51ecf2077f430fadf2b82ee358d4ec9b565f39bc57"
+  },
+  "evidence": [
+    {
+      "url": "https://www.qic.com/Investment-Capabilities/Infrastructure/Global-Portfolio/Generate",
+      "purpose": "Direct current evidence for QIC's 23.5% Generate ownership and 2019 acquisition year."
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "79c1052943c0b0fc8aa3d5db975425c5efba9000af07c6511a0e022abba5e53d"
+}

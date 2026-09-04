@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-04T00:03:26.000Z",
-  "activeBatchId": null,
+  "updatedAt": "2026-09-04T06:36:00.000Z",
+  "activeBatchId": "batch-deferred-0111-0220-v1",
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -8930,7 +8930,55 @@
           "reason": "Receipt, API, seed parity, and rendered-card verification passed; four exact deferral exceptions were preserved without database writes."
         }
       ]
+    },
+    {
+      "batchId": "batch-deferred-0111-0220-v1",
+      "state": "READY",
+      "taskIds": [
+        "ledger:0111:generate-capital:f6794437",
+        "ledger:0178:kelso-valley-wind-solar-and-water:285d524a",
+        "ledger:0187:sunstone-power:15729451",
+        "ledger:0213:extenet-formerly-extenet-systems:1d3fac1c",
+        "ledger:0220:bleutec-industries:3c6b9662"
+      ],
+      "taskIndexes": [
+        111,
+        178,
+        187,
+        213,
+        220
+      ],
+      "createdAt": "2026-09-04T06:17:30.000Z",
+      "updatedAt": "2026-09-04T06:36:00.000Z",
+      "completedAt": null,
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-deferred-0111-0220-v1/batch-manifest-v2.json",
+        "sha256": "a73a2e23a94c8a7bc93a8bf8eab22dd1228eea0d1a60b38e6af72793a62a95f6"
+      },
+      "releaseSha": null,
+      "receipt": null,
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-09-04T06:17:30.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-09-04T06:36:00.000Z",
+          "evidenceSha256": [
+            "a73a2e23a94c8a7bc93a8bf8eab22dd1228eea0d1a60b38e6af72793a62a95f6"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "7b71daf7c710171cb6a6d940e3848a995825ac9388d0c4ba9905cacdc868e25c"
+  "ledgerSha256": "ec0adf4cf9f85ac54c38d77ce32cd0ca5e13fa9c4786d9eae4ab7184ac4c256d"
 }

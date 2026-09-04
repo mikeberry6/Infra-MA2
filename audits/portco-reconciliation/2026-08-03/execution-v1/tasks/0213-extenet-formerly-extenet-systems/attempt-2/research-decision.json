@@ -1,0 +1,183 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_DEFERRED_READJUDICATION_RESEARCH_DECISION",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-deferred-readjudication-2026-09-04",
+  "generatedAt": "2026-09-04T05:10:00.000Z",
+  "asOfDate": "2026-09-04",
+  "taskId": "ledger:0213:extenet-formerly-extenet-systems:1d3fac1c",
+  "taskIndex": 213,
+  "companyName": "Extenet (formerly ExteNet Systems)",
+  "linkedTaskIdsCovered": [],
+  "decision": "DEFERRED",
+  "confidence": "HIGH on identity, legal continuity, active operation, the February 2025 chart and Pilot business-line perimeter; LOW on cutoff owner identities, stakes and vehicles",
+  "researchOnly": true,
+  "summary": "Keep the existing Extenet production record deferred without a database or seed mutation. Direct evidence resolves ExteNet Systems, Inc., ExteNet Systems, LLC and Extenet as one continuing platform; verifies its active operating scope and Lisle headquarters; proves the February 13, 2025 42% Stonepeak / 32% KH Killington / 26% Other Members cap table; confirms that the ESL/ELVS transfer was abandoned; and confines Pilot's August 2026 closing to the Enterprise Fiber business. It does not establish the September 4, 2026 owner set, stakes and vehicles, bridge JH Killington to KH Killington, or resolve Northleaf's, DigitalBridge's and Manulife's cutoff positions or the outcome of the reported outdoor DAS and small-cell sale process.",
+  "resolvedFormerBlockers": [
+    "A direct filed conversion notice proves that ExteNet Systems, Inc. became ExteNet Systems, LLC effective 2021-12-30 without a merger, asset transfer or service interruption; Extenet is the operating rebrand of the same platform.",
+    "The live company page directly verifies an active communications-infrastructure platform headquartered in Lisle, Illinois.",
+    "The direct February 13, 2025 Kentucky PSC chart proves the Mount Royal holding chain and the exact dated member table of 42% Stonepeak Communication Holdings LLC, 32% KH Killington Communications, LLC and 26% Other Members, with no individual Other Member at 20% or more.",
+    "The direct 2020 New York PSC petition proves that JH Killington Communications, LLC was owned and controlled by John Hancock Life Insurance Company (U.S.A.), a Manulife subsidiary, and the direct consummation notice proves that transaction closed 2021-03-31.",
+    "The direct New York PSC rescission proves that the ExteNet Systems LLC / ExteNet LVS asset transfer was not and will not be completed.",
+    "The direct Pilot closing release proves an Enterprise Fiber business-line sale effective 2026-08-15, including former Hudson Fiber Network and Axiom Fiber Network assets, rather than a platform-equity sale.",
+    "The reported June 2026 outdoor DAS and small-cell process is distinguishable from a completed platform transaction; no signed or closed outcome was found."
+  ],
+  "identityResolution": {
+    "canonicalDisplayName": "Extenet",
+    "legalName": "ExteNet Systems, LLC",
+    "aliases": [
+      "ExteNet Systems, Inc.",
+      "ExteNet Systems",
+      "Extenet"
+    ],
+    "conversionEffectiveAt": "2021-12-30T09:00:00",
+    "legalContinuity": "SAME_ENTITY_CORPORATE_FORM_CHANGE",
+    "operatingStatus": "ACTIVE_OPERATING",
+    "headquarters": "3030 Warrenville Road, Suite 340, Lisle, Illinois 60532",
+    "officialWebsite": "https://extenet.com/",
+    "productionCompanyId": "cmrxpjdak00twivheazjbfqum",
+    "productionAction": "KEEP_EXISTING_RECORD_WITHOUT_MUTATION",
+    "mergeTarget": null,
+    "boundary": "ExteNet Systems, LLC is the manager-level platform. ExteNet LVS is a wholly owned affiliate in the dated direct chain. Enterprise Fiber, Hudson Fiber Network and Axiom Fiber Network are divested business-line assets, not successor PortCos. Extenet Issuer entities are financing SPVs."
+  },
+  "ownershipResolution": {
+    "latestExactDirectTable": {
+      "asOfDate": "2025-02-13",
+      "capTableEntity": "Mount Royal Holdings LLC",
+      "holdingChain": "Mount Royal Holdings LLC > Odyssey Intermediate Holdings Inc. > Odyssey Borrower LLC > Odyssey Acquisition LLC > ExteNet Systems, LLC",
+      "members": [
+        {
+          "holder": "Stonepeak Communication Holdings LLC",
+          "stake": "42%"
+        },
+        {
+          "holder": "KH Killington Communications, LLC",
+          "stake": "32%"
+        },
+        {
+          "holder": "Other Members",
+          "stake": "26% aggregate; no individual member at 20% or more"
+        }
+      ]
+    },
+    "historicalManagerFacts": [
+      {
+        "manager": "Stonepeak",
+        "vehicle": "Stonepeak Communication Holdings LLC",
+        "historicalEntryYear": 2015,
+        "latestExactStake": "42% at 2025-02-13",
+        "cutoffStatus": "UNRESOLVED"
+      },
+      {
+        "manager": "Manulife Investment Management / John Hancock",
+        "vehicle": "JH Killington Communications, LLC at 2020-2021 entry; KH Killington Communications, LLC in 2025 chart",
+        "historicalEntryDate": "2021-03-31",
+        "latestExactStake": "KH 32% at 2025-02-13; JH-to-KH legal bridge unresolved",
+        "cutoffStatus": "UNRESOLVED"
+      },
+      {
+        "manager": "DigitalBridge",
+        "vehicle": "Digital Bridge Small Cell Holdings, LLC in 2020; cutoff vehicle unresolved",
+        "historicalEntryYear": 2015,
+        "latestExactStake": "Approximately 19% projected after 2021; cutoff unresolved",
+        "cutoffStatus": "UNRESOLVED"
+      },
+      {
+        "manager": "Northleaf Capital",
+        "vehicle": "NOT_PUBLICLY_DISCLOSED",
+        "historicalEntryYear": 2015,
+        "latestExactStake": "UNRESOLVED",
+        "cutoffStatus": "UNRESOLVED"
+      }
+    ],
+    "cutoffFinding": "No direct source establishes the complete September 4, 2026 manager-level owner set, exact stakes and legal vehicles. The 2025 Other Members bucket cannot be decomposed by inference, and no transfer, realization, distribution, write-off or legal succession record was found for Northleaf or JH-to-KH."
+  },
+  "transactionResolution": {
+    "closedBusinessLineSale": {
+      "buyer": "Pilot Fiber / Pilot Fiber NY",
+      "seller": "Extenet Systems / ExteNet Telecom Solutions",
+      "perimeter": "Enterprise Fiber business, including former Hudson Fiber Network and Axiom Fiber Network assets",
+      "effectiveClosingDate": "2026-08-15",
+      "platformEquityEffect": "NONE_PROVED"
+    },
+    "abandonedAffiliateTransfer": {
+      "parties": "ExteNet Systems, LLC and ExteNet LVS, Inc.",
+      "rescissionEffectiveDate": "2026-04-20",
+      "state": "NOT_COMPLETED"
+    },
+    "reportedOutdoorSaleProcess": {
+      "announcementDate": "2026-06-24",
+      "perimeter": "Outdoor DAS and small-cell business",
+      "state": "PENDING_OR_OUTCOME_UNRESOLVED",
+      "closingDate": null,
+      "platformEquityEffect": "UNRESOLVED"
+    },
+    "laterParentDisposition": null,
+    "wholeCompanySaleOrEquityTransfer": "NOT_VERIFIED"
+  },
+  "freshException": {
+    "status": "EXACT_FACT_UNAVAILABLE",
+    "missingFact": "The complete September 4, 2026 direct and indirect owner set for Extenet; each manager's exact cutoff stake, fund and vehicle; the legal relationship, if any, between JH Killington Communications, LLC and KH Killington Communications, LLC; Northleaf's current direct or indirect holding, transfer, distribution, write-off or exit; DigitalBridge's and Manulife's cutoff positions; the identities within the 26% Other Members aggregate; and the signed, closed or abandoned outcome and any equity effect of the reported outdoor DAS and small-cell sale process.",
+    "searchedEvidence": [
+      "Fresh direct retrieval and extraction of the February 13, 2025 Kentucky PSC holding-company chart",
+      "Fresh direct retrieval and extraction of the 2020 JH Killington petition and 2021 closing notice",
+      "Fresh direct retrieval and extraction of the 2016 Kentucky owner table and the 2021 LLC conversion filing",
+      "Fresh direct retrieval and extraction of the April 20, 2026 ESL/ELVS rescission",
+      "Fresh direct Northleaf and DigitalBridge portfolio-page reopening and Extenet searches",
+      "Fresh direct Extenet company-page and Pilot closing-page reopening",
+      "Fresh Fitch URL reopening by raw HTTP and browser, which exposed only a generic shell and did not independently reveal the article body",
+      "Fresh direct browser reopening of the June 24, 2026 Fierce Network sale-process report and searches for a later signed deal, closing, foreclosure, bankruptcy, dissolution or equity transfer",
+      "JH Killington, KH Killington, Stonepeak Communication Holdings, Northleaf, DigitalBridge and Manulife formation, assignment, name-change, merger, member, fund, transfer, disposition and realization searches"
+    ],
+    "requiredToResolve": "A later direct regulatory cap table or ownership-chain filing, a legal JH-to-KH name-change or succession instrument, direct manager or fund holdings/disposition records, member or transaction documents identifying the Other Members, and a direct seller, buyer, lender, court or regulatory closing/termination record for the outdoor sale process."
+  },
+  "primaryCitation": {
+    "label": "Kentucky PSC ExteNet LVS ownership chart dated 2025-02-13",
+    "url": "https://psc.ky.gov/telecomm_informational_letters/ExteNet%20LVS%202025-02-13.pdf",
+    "purpose": "Direct latest exact dated cap table and complete holding chain, while preserving that the cutoff-current owner set remains unresolved",
+    "contentSha256": "350c4b2573418653c706901f2312fcbfe14203d2a10e5161b4601b68649b52fe",
+    "contentHashBasis": "UTF-8 normalized cap-table and holding-chain text independently extracted from the freshly downloaded PDF",
+    "httpResponseSha256": "70a6d3e6b0996a6e5f9af5803bf3cd98efc2e5f21d2245e17b67b8e9487c8b5b"
+  },
+  "applicationRequirements": [
+    "Keep this member terminal-only as DEFERRED; do not generate a database or seed after-image.",
+    "Do not carry the February 13, 2025 table forward as a September 4, 2026 cap table.",
+    "Do not equate JH Killington Communications, LLC with KH Killington Communications, LLC without a direct legal or transactional bridge.",
+    "Do not infer Northleaf, DigitalBridge or Manulife ownership or exit from original investment, dated tables, live portfolio omission, a generic redirect or the 26% Other Members aggregate.",
+    "Record Pilot only as an Enterprise Fiber business-line sale and preserve the outdoor DAS and small-cell process as unresolved until a direct signed, closed or terminated outcome is available.",
+    "Do not infer a platform-equity transfer from credit defaults or liquidity stress.",
+    "Preserve exactly one application-primary citation bound to the independently extracted 2025 Kentucky PSC chart."
+  ],
+  "applicationBlocked": true,
+  "databaseMutationCandidate": false,
+  "seedMutationCandidate": false,
+  "terminalOutcomeCandidate": "DEFERRED",
+  "dealDatabaseMutation": false,
+  "lineage": {
+    "conversationUrl": "https://chatgpt.com/c/6a9a43f1-5948-83ea-9586-4671eee0c61d",
+    "prompt": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0213-extenet-formerly-extenet-systems/attempt-2/chatgpt-research-prompt.md",
+      "sha256": "ab187427bb007720e37f6c6160ec50e8ebf211183a95216b0ff7b9fee7f1b0e1"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0213-extenet-formerly-extenet-systems/attempt-2/chatgpt-accepted-response.txt",
+      "sha256": "fad81b9c2c2ed0e92c6bf3aff8ef299fd4c708347db87b6b1a9765055926a61d"
+    },
+    "transcript": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0213-extenet-formerly-extenet-systems/attempt-2/chatgpt-transcript.txt",
+      "sha256": "a5cb53a4397bb861fabe35a9a35175b797e807d0f362d2689abdfcc182b2c726"
+    },
+    "attestation": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0213-extenet-formerly-extenet-systems/attempt-2/chatgpt-attestation.json",
+      "sha256": "9820e7d41a99cc41a57e6635a06fc18da3d743bad1257832035ec20a4c95f1d6"
+    },
+    "responseValidation": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0213-extenet-formerly-extenet-systems/attempt-2/chatgpt-response-validation.json",
+      "sha256": "482cc37a7babe9a6f228711bd76ebbe122a106cd867c721454e986746e4b7b3f"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0213-extenet-formerly-extenet-systems/attempt-2/source-verification.json",
+      "sha256": "1c0b2cbc7ce14dab21d23014088b57ba3237d8606b81fd55bb58f329bf024784"
+    }
+  }
+}
