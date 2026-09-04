@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_RECEIPT",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-deferred-0248-0263-v1",
+  "batchSha256": "4773c72bdab3b55e14871e59ab065fd6fe2e35637b22efe5cec7742b4042d51e",
+  "releaseSha": "f10a85ff6329dc94777cbf3fd37ce0b1ef7c06f3",
+  "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+  "transactionId": "68238898-49b5-4d4d-a54d-b0939bafade1",
+  "appliedAt": "2026-09-04T21:32:48.964Z",
+  "members": [
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0248:grand-falls-windsor-long-term-care-home:ebbcb53e",
+      "taskIndex": 248,
+      "companyName": "Grand Falls-Windsor Long-Term Care Home",
+      "outcome": "EXCLUDED",
+      "decisionSha256": "04a44f1f6f9ac2fda00c614795e36ffafce412fd24c5dad135f11f4509473e01"
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0253:byd-ev-fleet-asset-spvs:e914a6d4",
+      "taskIndex": 253,
+      "companyName": "BYD EV Fleet Asset SPVs",
+      "outcome": "DEFERRED",
+      "decisionSha256": "d89f1ff8df3d53ce3d3470974734667ea08621f9ddf122dcf79827e723699b60"
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0256:envirapac-monticello:efac2570",
+      "taskIndex": 256,
+      "companyName": "EnviraPAC Monticello",
+      "outcome": "DEFERRED",
+      "decisionSha256": "b0bb965d68d69e7ce9f877c96f5994baee6c95ddf7f9492bf8d82cbdea248380"
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0257:pine-gate-renewables:2f4fe856",
+      "taskIndex": 257,
+      "companyName": "Pine Gate Renewables",
+      "receipt": {
+        "schemaVersion": 1,
+        "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+        "runId": "portco-reconciliation-2026-08-03-v2",
+        "taskId": "ledger:0257:pine-gate-renewables:2f4fe856",
+        "taskIndex": 257,
+        "companyName": "Pine Gate Renewables",
+        "companyId": "cmrxpjg4f00y5ivhep8jj6phn",
+        "proposalSha256": "a94f9f6699241835b7d64df7535a35839e361e98ce0d5b0a1064ce4fca88153b",
+        "approvalSha256": "06269d89b6103ff4afe28f561b48f3db9afea5a1c60a5c557d8fc06e6e9c2c9f",
+        "productionSnapshotSha256": "74eddcaf01c2a86293c8ed7d6932ee829ed5e60e540c0ad01948cb79728eddba",
+        "beforeCompanySnapshotSha256": "9bd836392bb73e98ca1ffc041139ac682f80d87ec087de855d2c51638df82e22",
+        "appliedAfterImageSha256": "919c70b23f265c83afc52988befb545357a71c6cab69cf3d5a76f80bd540f39e",
+        "seedAfterImageSha256": "919c70b23f265c83afc52988befb545357a71c6cab69cf3d5a76f80bd540f39e",
+        "approvedSeedEntrySha256": "8662e15f0ec4a03c0418f55b7ba517b0815240a4d9da535a88c8e371a2d25ad5",
+        "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+        "transactionId": "68238898-49b5-4d4d-a54d-b0939bafade1",
+        "auditEventId": "cmtngzwkq0006vt4xyqu46ahw",
+        "appliedAt": "2026-09-04T21:32:48.964Z",
+        "verification": {
+          "databaseMatchesAfterImage": true,
+          "seedMatchesAfterImage": true,
+          "detailApiVerified": true
+        },
+        "receiptSha256": "ef94b81271aaea347c394f3f6ce04611b2327a88af896f37e0a9594f949ade3e"
+      }
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0263:divert-inc:e7a24939",
+      "taskIndex": 263,
+      "companyName": "Divert, Inc.",
+      "outcome": "DEFERRED",
+      "decisionSha256": "99c14682c8550e4b7fedccae639e4200a30191a8a1e5e7897eb464978982711e"
+    }
+  ],
+  "verification": {
+    "databaseTransactionCommitted": true,
+    "seedArtifactVerified": true,
+    "allDetailApisVerified": true,
+    "partialDatabaseApplication": false
+  },
+  "receiptSha256": "05c95ddaa3fc353ff035b107578cf52370bf195491f50a3a1695f30c7219b1f7"
+}
