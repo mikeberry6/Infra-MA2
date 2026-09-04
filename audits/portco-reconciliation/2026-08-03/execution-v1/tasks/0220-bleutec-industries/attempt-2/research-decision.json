@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_DEFERRED_READJUDICATION_RESEARCH_DECISION",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-deferred-readjudication-2026-09-04",
+  "generatedAt": "2026-09-04T06:14:00.000Z",
+  "asOfDate": "2026-09-04",
+  "taskId": "ledger:0220:bleutec-industries:3c6b9662",
+  "taskIndex": 220,
+  "companyName": "Bleutec Industries",
+  "linkedTaskIdsCovered": [],
+  "decision": "DEFERRED",
+  "confidence": "HIGH on EnCap Energy Transition Fund II historical attribution and September 2023 capital reporting; LOW on cutoff ownership, legal entity chain, entity status and current operations",
+  "researchOnly": true,
+  "summary": "Keep the existing Bleutec Industries production record deferred without a database or seed mutation. The fresh direct ATRS board packet resolves the exact historical fund as EnCap Energy Transition Fund II and reports a December 2022 commitment date, $68.7 million commitment and $5.5 million invested capital. Direct sources still do not establish the legal relationship and current status of the three Bleutec entity names, EnCap's cutoff ownership, vehicle, stake or control, continuing management co-investment, the Title XI application's disposition, a delivered vessel fleet or current operations.",
+  "resolvedFormerBlockers": [
+    "The direct September 25, 2023 Arkansas Teacher Retirement System board packet identifies EnCap Energy Transition Fund II, L.P. and lists Bleutec Industries among Fund II's five committed portfolio companies.",
+    "The same direct public-fiduciary packet reports Bleutec's commitment date as December 2022, Fund II commitment as $68.7 million and invested capital as $5.5 million as of the September 2023 report.",
+    "The packet describes Bleutec's business as developing and operating offshore wind turbine and pile installation vessels, but also says all five Fund II portfolio companies were still in early startup and primarily funded overhead; this is historical business-plan evidence, not proof of delivered vessels or cutoff operations.",
+    "The direct EnCap release confirms a 2022-11-30 equity commitment, management investing alongside, Houston and a 2019 founding, while the direct 2023 Bleutec deck confirms full capitalization with EnCap and planned circa-2026 deployment.",
+    "The direct NETSCo page establishes an ABS design Approval in Principle rather than construction or delivery, and the direct MARAD approvals page does not supply a final Bleutec Title XI disposition."
+  ],
+  "identityResolution": {
+    "canonicalDisplayName": "Bleutec Industries",
+    "legalName": "UNRESOLVED",
+    "entityCandidates": [
+      "Bleutec Industries LLC",
+      "Bleutec Industries Holding Ltd. Co",
+      "Bleutec Industries Offshore Wind Services LLC"
+    ],
+    "entityChain": "UNRESOLVED",
+    "founded": 2019,
+    "historicalHeadquarters": "Houston, Texas",
+    "cutoffHeadquarters": "UNRESOLVED",
+    "officialWebsite": "UNRESOLVED; former domain redirects to unrelated content",
+    "legalStatus": "UNRESOLVED",
+    "operatingStatus": "UNRESOLVED",
+    "productionCompanyId": "cmrxpje9300veivhewkxji64b",
+    "productionAction": "KEEP_EXISTING_RECORD_WITHOUT_MUTATION",
+    "mergeTarget": null,
+    "boundary": "BMIS, PIV, WTIVL and SOV are designs or planned vessel types rather than separate manager-level companies. PPHB, NETSCo, Penthus, Wärtsilä and ABS are advisers or technical counterparties absent direct ownership evidence."
+  },
+  "ownershipResolution": {
+    "historicalManagerFacts": [
+      {
+        "manager": "EnCap Investments",
+        "organization": "Bleutec Industries",
+        "fund": "EnCap Energy Transition Fund II",
+        "vehicle": "NOT_PUBLICLY_DISCLOSED",
+        "stake": "NOT_PUBLICLY_DISCLOSED",
+        "announcementDate": "2022-11-30",
+        "entryDate": "NOT_PUBLICLY_DISCLOSED; Fund II reports commitment month 2022-12",
+        "entryYear": 2022,
+        "exitDate": "UNRESOLVED",
+        "exitYear": "UNRESOLVED",
+        "isActive": "UNRESOLVED",
+        "transactionState": "HISTORICAL FUND II COMMITMENT VERIFIED; LEGAL CLOSE, STAKE, CONTROL AND CUTOFF OWNERSHIP UNRESOLVED"
+      }
+    ],
+    "historicalCapitalRecord": {
+      "reportDate": "2023-09-25",
+      "commitmentDate": "2022-12",
+      "fundCommitmentUsdMm": 68.7,
+      "investedCapitalUsdMm": 5.5,
+      "scope": "Historical Fund II reporting only; not cutoff ownership or total company capitalization"
+    },
+    "managementCoinvestment": "Announced 2022-11-30; amount, vehicle and cutoff status unresolved",
+    "cutoffFinding": "No direct source establishes whether EnCap Energy Transition Fund II, management or another party owned Bleutec at the September 4, 2026 cutoff, or whether any holding was sold, transferred, distributed, written off, liquidated, dissolved or otherwise exited."
+  },
+  "transactionAndOperatingResolution": {
+    "titleXiApplication": "A March 2023 four-vessel application is reported, but the direct article body was not independently readable and no direct approval, withdrawal, lapse, rejection, financing or later disposition record was found.",
+    "designApproval": "The direct NETSCo page verifies ABS design Approval in Principle only.",
+    "vesselProgram": "No direct builder selection, shipyard contract, keel laying, construction, delivery, charter, commercial deployment, cancellation or IP disposition was found through the cutoff.",
+    "currentOperations": "UNRESOLVED",
+    "laterCapitalOrControlTransaction": null,
+    "laterExitDisposition": null,
+    "pendingParentOwnershipTransaction": null
+  },
+  "freshException": {
+    "status": "EXACT_FACT_UNAVAILABLE",
+    "missingFact": "The canonical legal parent and the legal relationship among Bleutec Industries LLC, Bleutec Industries Holding Ltd. Co and Bleutec Industries Offshore Wind Services LLC; each entity's cutoff legal status; EnCap Energy Transition Fund II's exact legal investment vehicle, stake, control, legal close and September 4, 2026 ownership or exit state; management's cutoff co-investment state; the final Title XI application disposition; and any delivered vessels or cutoff-current operating activity.",
+    "searchedEvidence": [
+      "Fresh direct retrieval, extraction and visual inspection of the September 25, 2023 Arkansas Teacher Retirement System board packet and EnCap Energy Transition Fund II investment summary",
+      "Fresh direct reopening of EnCap's Bleutec commitment release, Energy Transition overview and displayed current/realized portfolio",
+      "Fresh direct retrieval, extraction and visual inspection of the 2023 Bleutec presentation",
+      "Fresh direct reopening of the PPHB equity-raise page and NETSCo design-AiP page",
+      "Fresh browser reopening of the MARAD previously approved applications page and searches for Bleutec Title XI approval, withdrawal, lapse, rejection or financing",
+      "Fresh direct MarineLog reopening, which returned origin error 526 in the browser and 403 by raw HTTP, so the article body was not relied upon",
+      "Fresh searches for the three Bleutec legal names, EnCap fund and vehicle, managers, members, stakes, holdings, sales, transfers, write-offs, dissolutions, bankruptcies, receiverships, vessel contracts, deliveries, charters, cancellations and IP dispositions",
+      "Fresh reopening of the former Bleutec domain, whose unrelated redirect was treated only as a dormancy signal"
+    ],
+    "requiredToResolve": "A certified entity or registry record and parent/subsidiary chain; a later direct fund holding, disposition, audited report, ownership schedule, transaction document or manager disclosure; and direct MARAD, lender, shipyard, owner, charterer, court or registry evidence resolving the vessel program, Title XI application and cutoff operating status."
+  },
+  "primaryCitation": {
+    "label": "Arkansas Teacher Retirement System EnCap Energy Transition Fund II board packet",
+    "url": "https://www.artrs.gov/board/documents/CY2023/2023-09-25/BOT_Packet.pdf",
+    "purpose": "Direct historical proof of Fund II attribution, December 2022 commitment date, $68.7 million commitment and $5.5 million invested capital, while preserving that the 2023 report does not establish cutoff ownership",
+    "contentSha256": "406818b672e1ab48b10e678d63e893c86b929218ffeece71cd84964b3b8a92f3",
+    "contentHashBasis": "UTF-8 normalized Fund II and Bleutec pipeline text independently extracted from the freshly downloaded PDF",
+    "httpResponseSha256": "52689cad465c61997596dfcd61113afb2d9ddb9c920db6c225025eb2188fda65"
+  },
+  "applicationRequirements": [
+    "Keep this member terminal-only as DEFERRED; do not generate a database or seed after-image.",
+    "Preserve the exact historical EnCap Energy Transition Fund II attribution and December 2022 / $68.7 million / $5.5 million reporting in the adjudication lineage.",
+    "Do not carry the September 2023 Fund II report forward as evidence of September 2026 ownership, legal close, stake, control or operating status.",
+    "Do not infer exact Bleutec control from Fund II's general strategy of typically having majority board control.",
+    "Do not infer a realization, dissolution or exit from EnCap portfolio omission, the former-domain redirect, management movement or the absence of later public vessel announcements.",
+    "Do not treat a design AiP, financing application or forecast as a shipbuilding contract, construction, delivery or commercial operation.",
+    "Preserve exactly one application-primary citation bound to the independently extracted ATRS board packet."
+  ],
+  "applicationBlocked": true,
+  "databaseMutationCandidate": false,
+  "seedMutationCandidate": false,
+  "terminalOutcomeCandidate": "DEFERRED",
+  "dealDatabaseMutation": false,
+  "lineage": {
+    "conversationUrl": "https://chatgpt.com/c/6a9a52a0-a348-83e9-b41a-672d34b30ff3",
+    "prompt": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0220-bleutec-industries/attempt-2/chatgpt-research-prompt.md",
+      "sha256": "0ed410755c57e0d689c77c04153d3ee5c3466ba260518b07e6df75012b32b97d"
+    },
+    "initialResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0220-bleutec-industries/attempt-2/chatgpt-initial-response.txt",
+      "sha256": "fbb0e5ed54b4406d18bd9fd1866a0ea7f99a2223138c41e8c1ccf8ffb711ce50",
+      "disposition": "REJECTED_AFTER_INDEPENDENT_SOURCE_REOPEN"
+    },
+    "repairPrompt": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0220-bleutec-industries/attempt-2/chatgpt-repair-prompt.txt",
+      "sha256": "1b4b0c6d95fa8134dc0cacbf5c312ba0084c323fe668525bbd248f1a86f7ffac"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0220-bleutec-industries/attempt-2/chatgpt-accepted-response.txt",
+      "sha256": "375129c1d8d23a16532fc21bacc7049a84c084e381e93d1954fe7996df8c9aee"
+    },
+    "transcript": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0220-bleutec-industries/attempt-2/chatgpt-transcript.txt",
+      "sha256": "64d68c7082034e246e427defd93f526e095c99e4d34963cdcb71732163528f5b"
+    },
+    "attestation": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0220-bleutec-industries/attempt-2/chatgpt-attestation.json",
+      "sha256": "49cdf446968cf85ed89aab5069671340427fc9bd6240b7cce3b280d370b9ad4f"
+    },
+    "responseValidation": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0220-bleutec-industries/attempt-2/chatgpt-response-validation.json",
+      "sha256": "e60d2b01fae67ca2d4cb865b7bcdcf3ef69c64a18195051b9e7e36c8866fd3a1"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0220-bleutec-industries/attempt-2/source-verification.json",
+      "sha256": "623588edcf5908d724e57732340f6486a786235b0d24255912c5e6d3385a45a3"
+    }
+  }
+}

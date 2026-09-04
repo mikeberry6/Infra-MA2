@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_SEED_ATTRIBUTION_RECONCILIATION",
+  "batchId": "batch-deferred-0111-0220-v1",
+  "batchSha256": "a73a2e23a94c8a7bc93a8bf8eab22dd1228eea0d1a60b38e6af72793a62a95f6",
+  "reconciledAt": "2026-09-04T06:35:00.000Z",
+  "sourceManifestSha256": "c706ef7f024aa158664602728d5c0d34a7a9dbb3309f0fff4986b91892e20f72",
+  "specSha256": "62d888d6fc78d31f56a63fe83eaf89e9487e58ba2fb1bbadf2e47bccc8c8e751",
+  "changesSha256": "ba928b42dbacc374176f8c2b9070d9b8dde374612a27e7d9d8617655f4006ea4",
+  "removedRecords": [],
+  "replacedRecords": [
+    {
+      "recordId": "OFA-B661F58702C4",
+      "companyName": "Sunstone Power",
+      "country": "Mexico",
+      "investmentFirm": "Copenhagen Infrastructure Partners",
+      "currentVehicleName": "CI Growth Markets Fund II",
+      "investmentYear": 2023,
+      "stake": null,
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "CI Growth Markets Fund II",
+      "attributionConfidence": null,
+      "attributionRationale": "Matched supplemental ownership detail: Firm: Copenhagen Infrastructure Partners | Fund: CI Growth Markets Fund II | Ownership Interest: Not publicly disclosed. Supplemental ownership detail discloses a distinct fund/vehicle that does not match funds.ts.",
+      "evidenceUrls": [
+        "https://mx.linkedin.com/company/sunstone-power",
+        "https://mexicobusiness.news/energy/news/20-generation-projects-advance-mexico",
+        "https://www.bnamericas.com/en/news/us2bn-solar-projects-in-mexico-reach-power-purchase-deal-with-cfe",
+        "https://strategicenergy.eu/the-companies-behind-mexicos-award-of-3-3-gw-of-renewables-and-1-2-gw-of-battery-storage/"
+      ]
+    }
+  ],
+  "upsertRecords": [
+    {
+      "recordId": "OFA-B661F58702C4",
+      "companyName": "Sunstone Power",
+      "country": "Mexico",
+      "investmentFirm": "Copenhagen Infrastructure Partners",
+      "currentVehicleName": "Copenhagen Infrastructure New Markets Fund I K/S",
+      "investmentYear": null,
+      "stake": "100%",
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Copenhagen Infrastructure New Markets Fund I",
+      "attributionConfidence": null,
+      "attributionRationale": "Sunstone Power's official current About Us page states that the platform is fully owned by Copenhagen Infrastructure Partners through Copenhagen Infrastructure New Markets Fund I; no platform entry date is disclosed.",
+      "evidenceUrls": [
+        "https://www.sunstone-power.com/en/about-us/"
+      ]
+    }
+  ],
+  "resultingRecordCount": 1403,
+  "resultingManifestSha256": "831656cd483e6f01805ce9a1474f800d5b342f2fca3afe65dad2c05c07d2c45e",
+  "reconciliationSha256": "f69139066840b5dc391ef25aa09379400a5b16c14402e13dccbb9116e8b4c144"
+}

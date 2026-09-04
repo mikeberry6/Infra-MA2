@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_ATTESTATION",
+  "runId": "portco-deferred-readjudication-2026-09-04",
+  "taskId": "ledger:0187:sunstone-power:15729451",
+  "taskIndex": 187,
+  "companyName": "Sunstone Power",
+  "conversationUrl": "https://chatgpt.com/c/6a9a2f91-3738-83ea-bd2a-84af05e232c3",
+  "accountTier": "ChatGPT Pro",
+  "model": "GPT-5.6 Sol",
+  "effort": "Pro",
+  "power": "5 of 5",
+  "uiVerified": true,
+  "uiEvidence": {
+    "accountLabel": "mike berry Pro",
+    "modeMenuModelLabel": "GPT-5.6 Sol",
+    "modeMenuEffortLabel": "Pro",
+    "modeMenuPowerLabel": "Pro, 5 of 5",
+    "capturedBeforeSubmission": true
+  },
+  "initialSubmittedAt": "2026-09-04T02:40:24Z",
+  "initialCompletedObservedAt": "2026-09-04T03:29:00Z",
+  "initialReportedGenerationDuration": "PT28M51S",
+  "repairSubmittedAt": "2026-09-04T03:30:00Z",
+  "finalCompletedObservedAt": "2026-09-04T03:56:20Z",
+  "repairReportedGenerationDuration": "PT12M58S",
+  "repairCount": 1,
+  "finalOutcome": "VALID_CORRECTED_CONTRACT_PACKET",
+  "contentHashes": {
+    "promptSha256": "16424e2fde62e65ea64bb3a21844f8654e54435ee34f11597560541c5aeb0e98",
+    "initialResponseSha256": "8b8c11962cc3635de756b6ac65dcf4433d74345a33e88b8e9272d02c9aee2934",
+    "repairPromptSha256": "1f802e877f819a787898392013b315edea99ecfd0b434ffd89b66fe057d032a8",
+    "acceptedResponseSha256": "8745065a0019737dd2534ca3b33bea4f8bf7c6a423bc1804a320991fb905ebe6",
+    "transcriptSha256": "c9f4ef9cc1fd2a006ff958d8c8b3c25c1d862db86e8996ae7809b94905b0e1ca"
+  },
+  "captureMethod": "signed-in ChatGPT web application via browser DOM textContent",
+  "captureNote": "The immutable prompt was submitted once. Independent source reopening rejected the initial answer after finding the official company's direct current ownership statement. One corrective prompt was submitted in the same conversation. The accepted-response file preserves the second assistant message's authored BEGIN_JSON through END_REVIEW text with the rendered citation chip omitted and one terminal LF added by the repository file format."
+}

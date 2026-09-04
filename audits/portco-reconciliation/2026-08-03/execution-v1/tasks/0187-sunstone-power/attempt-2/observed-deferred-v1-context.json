@@ -1,0 +1,262 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0187:sunstone-power:15729451",
+  "taskIndex": 187,
+  "companyName": "Sunstone Power",
+  "generatedAt": "2026-09-04T06:27:23.252Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0187-sunstone-power/attempt-2/observed-deferred-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 187,
+    "taskId": "ledger:0187:sunstone-power:15729451",
+    "canonicalKey": "sunstone-power|mexico",
+    "companyName": "Sunstone Power",
+    "country": "Mexico",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 31,
+    "managers": [
+      "Copenhagen Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "031-copenhagen-infrastructure-partners:holding:020:sunstone-power"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpjc9z00sdivhe09v62cth"
+    ],
+    "seedKeys": [
+      "sunstone power|Mexico"
+    ],
+    "evidenceUrls": [
+      "https://mexicobusiness.news/energy/news/20-generation-projects-advance-mexico",
+      "https://strategicenergy.eu/the-companies-behind-mexicos-award-of-3-3-gw-of-renewables-and-1-2-gw-of-battery-storage/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted census NEEDS_REVIEW for 031-copenhagen-infrastructure-partners:holding:020:sunstone-power: Ownership attribution to CIP is based on indirect media reporting rather than direct disclosures; verification remains incomplete. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Accepted census NEEDS_REVIEW for 031-copenhagen-infrastructure-partners:holding:020:sunstone-power: Ownership attribution to CIP is based on indirect media reporting rather than direct disclosures; verification remains incomplete."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjc9z00sdivhe09v62cth",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "sunstone-power|mexico",
+  "targetCompanyImage": {
+    "id": "cmrxpjc9z00sdivhe09v62cth",
+    "name": "Sunstone Power",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Solar PV and battery storage development",
+    "region": "NORTH_AMERICA",
+    "country": "Mexico",
+    "countryTags": [
+      "Mexico"
+    ],
+    "description": "Sunstone Power is a renewable development platform in Mexico focused on utility-scale solar and battery storage projects. Its end markets are grid offtakers and power purchasers that require new renewable generation and storage capacity rather than end-user retail services. The operating model is asset-heavy and development led, with project value dependent on permitting, interconnection, construction, and long-term contracted power sales. Recent sector reporting in Mexico identified Sunstone as the largest awarded private developer in a new permitting round, tied to projects in Campeche totaling more than 1 GW of solar capacity plus battery storage. The platform is backed by Copenhagen Infrastructure Partners through its Growth Markets strategy, and the current ownership percentages are not publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2023,
+    "headquarters": "Campeche",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjxoj01q7ivhe3it5wh70",
+        "managerName": "Copenhagen Infrastructure Partners",
+        "organizationName": "Copenhagen Infrastructure Partners",
+        "fundName": null,
+        "vehicleName": "CI Growth Markets Fund II",
+        "stake": null,
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplbrx03jqivhestz1egq8",
+        "date": "2023",
+        "event": "Copenhagen Infrastructure Partners-backed Sunstone Power was founded in Mexico as a privately funded renewable-development company.",
+        "category": "FINANCING",
+        "sortDate": "2023-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplbsi03jrivhe0gqtftk9",
+        "date": "2025",
+        "event": "Sunstone Power was identified as a key CIP-backed renewable developer in Mexico.",
+        "category": "OTHER",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplbsx03jsivhejcjzsl1a",
+        "date": "2026",
+        "event": "Reporting linked Sunstone's projects to a potential power purchase arrangement with CFE.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqbh109etivhe35g207tt",
+        "label": "Mx — Sunstone Power",
+        "url": "https://mx.linkedin.com/company/sunstone-power",
+        "sourceType": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Mx transaction or milestone detail",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqbhy09evivhehcjuvdpp",
+        "label": "Strategicenergy — Sunstone Power",
+        "url": "https://strategicenergy.eu/the-companies-behind-mexicos-award-of-3-3-gw-of-renewables-and-1-2-gw-of-battery-storage/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Strategicenergy — Sunstone Power",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqbiz09exivhebfsvq3zk",
+        "label": "Mexicobusiness — Sunstone Power",
+        "url": "https://mexicobusiness.news/energy/news/20-generation-projects-advance-mexico",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Mexicobusiness operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqbm309ezivheyifo8lru",
+        "label": "Bnamericas — Sunstone Power",
+        "url": "https://www.bnamericas.com/en/news/us2bn-solar-projects-in-mexico-reach-power-purchase-deal-with-cfe",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Bnamericas operations / asset details",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Sunstone Power",
+    "investmentFirm": "Copenhagen Infrastructure Partners",
+    "sector": "Power & ET",
+    "subsector": "Solar PV and battery storage development",
+    "region": "North America",
+    "country": "Mexico",
+    "ownershipVehicle": "CI Growth Markets Fund II",
+    "description": "Sunstone Power is a renewable development platform in Mexico focused on utility-scale solar and battery storage projects. Its end markets are grid offtakers and power purchasers that require new renewable generation and storage capacity rather than end-user retail services. The operating model is asset-heavy and development led, with project value dependent on permitting, interconnection, construction, and long-term contracted power sales. Recent sector reporting in Mexico identified Sunstone as the largest awarded private developer in a new permitting round, tied to projects in Campeche totaling more than 1 GW of solar capacity plus battery storage. The platform is backed by Copenhagen Infrastructure Partners through its Growth Markets strategy, and the current ownership percentages are not publicly disclosed.",
+    "status": "Active",
+    "countryTags": [
+      "Mexico"
+    ],
+    "yearFounded": 2023,
+    "investmentYear": 2023,
+    "headquarters": "Campeche",
+    "milestones": [
+      {
+        "date": "2023",
+        "event": "Copenhagen Infrastructure Partners-backed Sunstone Power was founded in Mexico as a privately funded renewable-development company.",
+        "category": "Financing"
+      },
+      {
+        "date": "2025",
+        "event": "Sunstone Power was identified as a key CIP-backed renewable developer in Mexico.",
+        "category": "Other"
+      },
+      {
+        "date": "2026",
+        "event": "Reporting linked Sunstone's projects to a potential power purchase arrangement with CFE.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Mx — Sunstone Power",
+        "url": "https://mx.linkedin.com/company/sunstone-power",
+        "type": "ARTICLE",
+        "purpose": "MILESTONE_EVENT"
+      },
+      {
+        "label": "Strategicenergy — Sunstone Power",
+        "url": "https://strategicenergy.eu/the-companies-behind-mexicos-award-of-3-3-gw-of-renewables-and-1-2-gw-of-battery-storage/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Mexicobusiness — Sunstone Power",
+        "url": "https://mexicobusiness.news/energy/news/20-generation-projects-advance-mexico",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Bnamericas — Sunstone Power",
+        "url": "https://www.bnamericas.com/en/news/us2bn-solar-projects-in-mexico-reach-power-purchase-deal-with-cfe",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Copenhagen Infrastructure Partners",
+        "ownershipVehicle": "CI Growth Markets Fund II",
+        "investmentYear": 2023,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi66e0017ivheel3xod17",
+        "name": "Copenhagen Infrastructure Partners",
+        "updatedAt": "2026-07-23T16:09:15.206Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0187:sunstone-power:15729451",
+    "taskIndex": 187,
+    "canonicalKey": "sunstone-power|mexico",
+    "capturedAt": "2026-09-04T06:27:23.252Z",
+    "databaseRevision": "revision:2dadda2310008d50ca04ca6731bac1b892cd42a7dd811ba3469a3ef58fff99ad",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "02c2a1aa534044f19ff19bbea0959dfe1c5de65ed93544e0202bf7f8c6dfa4f9",
+    "productionSnapshotSha256": "a7d206f51d9547bd31caec8c832fb055e71b6d61c64250c5fd3377a9bc7477dc",
+    "targetCompanySnapshotSha256": "f7417923fa6c0e04a1dc4dd8e8ef636e1d92299c746f7576fa1b148f427d4638",
+    "seedEntrySha256": "877ef7965030cb57054f3fa60dce082cb3557bd5a380f108309362a8287f0365",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "1ec43e9b268900fcd39d6be4f0898d467f60e3cb1be965528f3d299def7d7035",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "e44800072983a0697af1aa770f11a5e263004ae330e81d75e3592716938e4c8d",
+      "citationsSha256": "cd3b1e896ada2f0fe1a532b67e479e0d793bf3a152c1c5c1afa8d25b33f94d36",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "9ac32a228317bf62820b4dd4f5f023ca98ae0a8c387228ab08ea3666a1d0db04",
+    "stateSha256": "cbfd89ef145b41adb3d101f1b74c38c88a73d411ea6236d8c25e7bfdde853973",
+    "taskSnapshotSha256": "b96413e1d815377f3a240c6c7680dbd134f645717343a68a584226c94d8188e9"
+  },
+  "contextSha256": "a5ea7754737fcab6d3622415501e99f1afa2d0df05d22772c93b7b65ea13d97e"
+}

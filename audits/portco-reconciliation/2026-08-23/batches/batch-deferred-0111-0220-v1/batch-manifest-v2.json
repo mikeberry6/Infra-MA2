@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_MANIFEST",
+  "methodologyVersion": "PORTCO_APPLY_BATCH_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-deferred-0111-0220-v1",
+  "createdAt": "2026-09-04T06:31:00.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "d5974045d9496b24afb93e816f2ef1bcad924e1891a710f83ec4bfa6427f2266"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0111:generate-capital:f6794437",
+      "taskIndex": 111,
+      "companyName": "Generate Capital",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0111-generate-capital/attempt-4/terminal-decision-deferred-v1.json",
+        "sha256": "79c1052943c0b0fc8aa3d5db975425c5efba9000af07c6511a0e022abba5e53d"
+      }
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0178:kelso-valley-wind-solar-and-water:285d524a",
+      "taskIndex": 178,
+      "companyName": "Kelso Valley Wind, Solar & Water",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0178-kelso-valley-wind-solar-and-water/attempt-2/terminal-decision-deferred-v1.json",
+        "sha256": "317762e0458f10a5b4ce968de32b0dfc9fdf1a1238e6f92f5773d753d4c20bb5"
+      }
+    },
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0187:sunstone-power:15729451",
+      "taskIndex": 187,
+      "companyName": "Sunstone Power",
+      "proposal": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0187-sunstone-power/attempt-2/proposal-deferred-v2.json",
+        "sha256": "735bf0e0af5e856465f755bd963ae91c1267f4102cff12174ff48f1ec8b4ff7f"
+      },
+      "authorization": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0187-sunstone-power/attempt-2/approval-deferred-v2.json",
+        "sha256": "fa9513207d9fed1ff6801733784f9fd1bced80bcc9309bf7903a5537e0eaf3d0"
+      },
+      "productionSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0187-sunstone-power/attempt-2/locked-deferred-v1-production-snapshot.json",
+        "sha256": "991aceaae8fffa1589ed1390ea21d3e9468a1954ca0b4850435d070f0e4cd3c3"
+      },
+      "taskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0187-sunstone-power/attempt-2/locked-deferred-v1-task-snapshot.json",
+        "sha256": "64e40a87d6769fb8280c831f721578f1f2dfb8cb9678c18fc090a0e6490e9c96"
+      },
+      "observedTaskSnapshot": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0187-sunstone-power/attempt-2/observed-deferred-v1-task-snapshot.json",
+        "sha256": "b96413e1d815377f3a240c6c7680dbd134f645717343a68a584226c94d8188e9"
+      },
+      "researchDecision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0187-sunstone-power/attempt-2/application-research-decision.json",
+        "sha256": "ae201773b109bbc77c3c30e5e20113d7537d882fa9252d73fb782261e33bf358"
+      },
+      "sourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0187-sunstone-power/attempt-2/source-verification.json",
+        "sha256": "08ed0ca1a29619dc8c5a1172e6e385b0f88f18e7475638456a89cd22bcf5af4d"
+      },
+      "supersededTaskIds": [],
+      "taskStateSha256": "cbfd89ef145b41adb3d101f1b74c38c88a73d411ea6236d8c25e7bfdde853973",
+      "dependencySha256": "9ac32a228317bf62820b4dd4f5f023ca98ae0a8c387228ab08ea3666a1d0db04",
+      "afterImageSha256": "f16384964a793c9dd4f4e0f3a976a546c32a02bb546384d7afc760364433fb63",
+      "targetClaims": [
+        "canonical:sunstone-power|mexico",
+        "company:cmrxpjc9z00sdivhe09v62cth",
+        "relation:cmrxpjxoj01q7ivhe3it5wh70",
+        "relation:cmrxplbrx03jqivhestz1egq8",
+        "relation:cmrxplbsi03jrivhe0gqtftk9",
+        "relation:cmrxplbsx03jsivhejcjzsl1a",
+        "relation:cmrxpqbh109etivhe35g207tt",
+        "relation:cmrxpqbhy09evivhehcjuvdpp",
+        "relation:cmrxpqbiz09exivhebfsvq3zk",
+        "relation:cmrxpqbm309ezivheyifo8lru",
+        "seed:sunstone power|mexico"
+      ],
+      "sourceMetadata": [
+        {
+          "url": "https://lei.bloomberg.com/leis/view/98450051BAD17154DC07",
+          "label": "Bloomberg LEI — Sunstone Power",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://mexicobusiness.news/energy/news/20-generation-projects-advance-mexico",
+          "label": "Mexicobusiness — Sunstone Power",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://mx.linkedin.com/company/sunstone-power",
+          "label": "Mx — Sunstone Power",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://strategicenergy.eu/the-companies-behind-mexicos-award-of-3-3-gw-of-renewables-and-1-2-gw-of-battery-storage/",
+          "label": "Strategicenergy — Sunstone Power",
+          "sourceType": "ARTICLE"
+        },
+        {
+          "url": "https://www.bnamericas.com/en/news/us2bn-solar-projects-in-mexico-reach-power-purchase-deal-with-cfe",
+          "label": "Bnamericas — Sunstone Power",
+          "sourceType": "WEBSITE"
+        },
+        {
+          "url": "https://www.sunstone-power.com/en/about-us/",
+          "label": "Sunstone Power — About Us",
+          "sourceType": "WEBSITE"
+        }
+      ]
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0213:extenet-formerly-extenet-systems:1d3fac1c",
+      "taskIndex": 213,
+      "companyName": "Extenet (formerly ExteNet Systems)",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0213-extenet-formerly-extenet-systems/attempt-2/terminal-decision-deferred-v1.json",
+        "sha256": "9d2ee05085dbcdeab654e7f313d80b8479d194a5cb604eb5e167e86cfa5ffb21"
+      }
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0220:bleutec-industries:3c6b9662",
+      "taskIndex": 220,
+      "companyName": "Bleutec Industries",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0220-bleutec-industries/attempt-2/terminal-decision-deferred-v1.json",
+        "sha256": "45ba0a9039d5f2de60942911cca72991e1fea81b9e1b471a16ef613182896a45"
+      }
+    }
+  ],
+  "collisionAnalysis": {
+    "independent": true,
+    "claimsSha256": "7716360baeb890ef32a5a10f82013d74b553e5507a737d51b5d01db22fc25a9d",
+    "sharedSourceUrls": [],
+    "conflicts": []
+  },
+  "batchSha256": "a73a2e23a94c8a7bc93a8bf8eab22dd1228eea0d1a60b38e6af72793a62a95f6"
+}

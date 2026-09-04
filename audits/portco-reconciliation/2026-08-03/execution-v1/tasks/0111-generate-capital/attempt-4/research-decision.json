@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_DEFERRED_READJUDICATION_RESEARCH_DECISION",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-deferred-readjudication-2026-09-04",
+  "generatedAt": "2026-09-04T01:30:00.000Z",
+  "asOfDate": "2026-09-04",
+  "effectiveSearchCutoff": "2026-09-03 ET; the requested UTC date had begun but the requested calendar date had not yet begun in America/New_York",
+  "taskId": "ledger:0111:generate-capital:f6794437",
+  "taskIndex": 111,
+  "companyName": "Generate Capital",
+  "linkedTaskIdsCovered": [],
+  "decision": "DEFERRED",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "summary": "Keep the existing Generate Capital company deferred and do not mutate its owner timeline. QIC is directly current at 23.5%, and AustralianSuper is directly verified at 23% through June 30, 2025, but Harbert Management Corporation and CBRE Caledon's July 2021 interests have no direct cutoff-current or exit evidence and their treatment in the January 2024 financing remains undisclosed. AustralianSuper's own cutoff-current state is also not directly established.",
+  "resolvedFormerBlockers": [
+    "The live QIC portfolio page directly verifies a current 23.5% Generate position acquired in 2019.",
+    "AustralianSuper's audited June 30, 2025 report directly verifies a 23% Generate Capital equity holding at that reporting date.",
+    "The July 2021 issuer release identifies AustralianSuper and QIC as existing investors and Harbert Management Corporation and CBRE Caledon as new investors in the closed $2 billion raise.",
+    "CBRE Investment Management's official history establishes that the CBRE Caledon brand merged into CBRE Investment Management in 2021, but does not establish ownership continuity for the investment.",
+    "The January 2024 issuer release directly verifies a closed $1.5 billion financing in which QIC and AustralianSuper participated, while remaining silent on Harbert and CBRE.",
+    "The Generate Form D/A verifies aggregate offering facts but contains no investor identities or old-holder treatment."
+  ],
+  "identityResolution": {
+    "canonicalDisplayName": "Generate Capital",
+    "legalIdentity": "Generate Capital, PBC, formerly Generate Capital, Inc.",
+    "productionCompanyId": "cmrxpjha100zwivhes4yyec81",
+    "productionAction": "KEEP_EXISTING_RECORD_WITHOUT_MUTATION",
+    "mergeTarget": null,
+    "boundary": "One continuing United States sustainable-infrastructure platform at generatecapital.com. Asset-level sales, financings, projects, subsidiaries and portfolio companies are not parent-platform exits or duplicate PortCos."
+  },
+  "ownershipResolution": {
+    "resolvedCurrentManager": {
+      "manager": "QIC",
+      "fund": "NOT_PUBLICLY_DISCLOSED",
+      "vehicle": "NOT_PUBLICLY_DISCLOSED",
+      "stake": "23.5%",
+      "entryYear": 2019,
+      "status": "ACTIVE_CURRENT"
+    },
+    "datedButCutoffUnresolvedManager": {
+      "manager": "AustralianSuper",
+      "fund": "AustralianSuper",
+      "vehicle": "NOT_PUBLICLY_DISCLOSED",
+      "stake": "23% at 2025-06-30",
+      "entryDate": "2019-12",
+      "latestIndependentlyVerifiedDate": "2025-06-30",
+      "cutoffStatus": "UNRESOLVED"
+    },
+    "unresolvedEntrants": [
+      {
+        "manager": "Harbert Management Corp",
+        "entryDate": "2021-07-19",
+        "entryStatus": "CLOSED_ENTRY_VERIFIED",
+        "currentStatus": "UNRESOLVED",
+        "blockingGap": "No direct source identifies the current holder or whether the 2021 interest was sold, rolled, retained, transferred, distributed, written off or diluted in the 2024 financing."
+      },
+      {
+        "manager": "CBRE Investment Management",
+        "entryLabel": "CBRE Caledon",
+        "entryDate": "2021-07-19",
+        "entryStatus": "CLOSED_ENTRY_VERIFIED",
+        "currentStatus": "UNRESOLVED",
+        "blockingGap": "The adviser-brand succession is proven, but no direct source identifies the current holder or whether the 2021 interest was sold, rolled, retained, transferred, distributed, written off or diluted in the 2024 financing."
+      }
+    ],
+    "january2024Treatment": "The issuer identified QIC and AustralianSuper as participants in the closed financing. Neither the issuer release nor the Form D/A discloses Harbert or CBRE treatment, and neither silence nor a negative exit search may be converted into ownership continuity or a realized exit."
+  },
+  "transactionResolution": {
+    "knownFinancing": {
+      "target": "Generate Capital, PBC",
+      "announcementDate": "2024-01-30",
+      "status": "CLOSED",
+      "capitalCommitments": "$1.5 billion",
+      "namedExistingParticipants": [
+        "QIC",
+        "AustralianSuper"
+      ],
+      "harbertTreatment": "UNRESOLVED",
+      "cbreCaledonTreatment": "UNRESOLVED"
+    },
+    "laterParentDisposition": null,
+    "pendingParentOwnershipTransaction": null
+  },
+  "freshException": {
+    "status": "EXACT_FACT_UNAVAILABLE",
+    "missingFact": "The current holder and disposition of each July 2021 Harbert Management Corporation and CBRE Caledon Generate Capital interest, including whether each interest was sold, rolled, retained, transferred, distributed, written off or diluted in the January 2024 financing; and AustralianSuper's ownership status after the latest directly verified June 30, 2025 report.",
+    "searchedEvidence": [
+      "Generate Capital's current site, 2021 and 2024 issuer releases, and parent-platform sale, secondary, recapitalization, merger, bankruptcy, dissolution and pending-transaction searches",
+      "QIC's live Generate portfolio page and current infrastructure portfolio searches",
+      "AustralianSuper's audited 2025 financial report, current holdings publishing page and returned December 2025 CSV endpoint",
+      "Harbert's 2021 Generate release, Generate-named co-investment vehicle Form D filings, portfolio, fund-report, distribution, transfer, write-off and exit searches",
+      "CBRE Investment Management's official history, current portfolio and transaction searches for the former CBRE Caledon position",
+      "Generate Capital's Form D/A offering filing and related direct SEC searches"
+    ],
+    "requiredToResolve": "A direct current cap table, named holdings or fund schedule, audited distribution or realization report, secondary-transfer or sale disclosure, closing schedule, or explicit Generate, Harbert, CBRE Investment Management, AustralianSuper, regulator or counterparty statement identifying the relevant holder and transaction treatment."
+  },
+  "primaryCitation": {
+    "label": "QIC live Generate portfolio",
+    "url": "https://www.qic.com/Investment-Capabilities/Infrastructure/Global-Portfolio/Generate",
+    "purpose": "Direct current evidence for QIC's 23.5% Generate ownership and 2019 acquisition year",
+    "contentSha256": "21307ea5cc867feb57545015a06c03876855a3260bb3211ad66768671ad6faad",
+    "contentHashBasis": "UTF-8 normalized current evidence text preserved in source-verification.json"
+  },
+  "applicationRequirements": [
+    "Keep this member terminal-only as DEFERRED; do not generate a database or seed after-image.",
+    "Do not mark Harbert or CBRE Investment Management active or realized without direct holder or disposition evidence.",
+    "Do not turn CBRE Caledon adviser-brand succession into investment ownership continuity.",
+    "Do not infer AustralianSuper's cutoff-current state or current stake from its June 2025 audited holding, the inaccessible returned CSV row, the January 2024 issuer release or a negative exit search.",
+    "Do not treat asset-level Generate transactions as parent-platform ownership events.",
+    "Preserve exactly one application-primary citation bound to the live QIC portfolio source."
+  ],
+  "applicationBlocked": true,
+  "databaseMutationCandidate": false,
+  "seedMutationCandidate": false,
+  "terminalOutcomeCandidate": "DEFERRED",
+  "dealDatabaseMutation": false,
+  "lineage": {
+    "conversationUrl": "https://chatgpt.com/c/6a9a0f67-23d8-83ea-bcf3-01a2083d4642",
+    "prompt": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0111-generate-capital/attempt-4/chatgpt-research-prompt.md",
+      "sha256": "2cabb2f4b899ec81ef63d86ab4069a305dcb0dfac036a79091f47640141ac15f"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0111-generate-capital/attempt-4/chatgpt-accepted-response.txt",
+      "sha256": "8292e7689d5c63ade473b290ce5dfb1a909f152c7fefcf4d0fa3e0a895c158e3"
+    },
+    "attestation": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0111-generate-capital/attempt-4/chatgpt-attestation.json",
+      "sha256": "8b881d75d5540a7a4302478b10a40725c5099cc3cd0e4b39c62312c54eb6b569"
+    },
+    "responseValidation": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0111-generate-capital/attempt-4/chatgpt-response-validation.json",
+      "sha256": "5636f1aa28e1d2df5573440ef078993d27c070a451e044d6d47fa325cf3b513c"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0111-generate-capital/attempt-4/source-verification.json",
+      "sha256": "0ea9c81f5cf0fb2bc29cee51ecf2077f430fadf2b82ee358d4ec9b565f39bc57"
+    }
+  }
+}

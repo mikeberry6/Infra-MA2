@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0178:kelso-valley-wind-solar-and-water:285d524a",
+  "taskIndex": 178,
+  "companyName": "Kelso Valley Wind, Solar & Water",
+  "asOfDate": "2026-09-04",
+  "decision": "DEFERRED",
+  "confidence": "HIGH",
+  "researchOnly": true,
+  "generatedAt": "2026-09-04T06:24:30.000Z",
+  "result": {
+    "asOfDate": "2026-09-04",
+    "requestedCompany": "Kelso Valley Wind, Solar & Water",
+    "requestedManagers": ["CIM Group", "Renewable Resources Group"],
+    "decision": "DEFERRED",
+    "confidence": 0.96,
+    "rationale": "Direct evidence resolves the record to ReNu Resources LLC and the Onyx Ranch land, water and renewables-development investment and proves several component dispositions. It does not establish the property and reservations conveyed by the November 2022 quitclaim, ReNu's cutoff legal and member state, CIM's or Renewable Resources Group's cutoff ownership or final exit, the Weldon Solar outcome, or the absence of residual rights.",
+    "identityResolution": {
+      "canonicalKey": "kelso-valley-wind-solar-and-water|united-states",
+      "productionCompanyId": "cmrxpjbsz00rmivhec7hd9k0b",
+      "status": "RENU_RESOURCES_ONYX_RANCH_PLATFORM",
+      "mergeRequired": false
+    },
+    "ownershipResolution": {
+      "status": "UNRESOLVED_AT_CUTOFF",
+      "exactException": "The quitclaim perimeter, current ReNu members, manager ownership and residual rights are not directly disclosed."
+    },
+    "evidence": [
+      {
+        "label": "Kern County Recorder instrument 222168355",
+        "url": "https://recorderonline.co.kern.ca.us/cgi-bin/osearchd01.mbr/report?Birth=&Death=&F_Day=07&F_Month=11&F_Year=2022&Fbn=&Last_Batno=905032&Last_Batsq=3&Last_Cert=222168766&Last_Date=20221109&Maps=&Marriage=&Official=&START_ROW_NUM=351&Search_Type=0006P&USERKEY=&V_Date=",
+        "purpose": "Direct index-level evidence of ReNu's November 8, 2022 quitclaim to Trust for Public Land.",
+        "sourceTier": "T1",
+        "workingStatus": "OK",
+        "isRecommendedPrimary": true
+      }
+    ],
+    "unresolvedQuestions": [
+      "Exact property and reservations conveyed in November 2022.",
+      "ReNu Resources LLC's cutoff legal and member state.",
+      "CIM and Renewable Resources Group cutoff ownership or final exit."
+    ],
+    "recommendedListAction": {
+      "action": "DEFER_WITH_EXACT_EXCEPTION",
+      "record": "cmrxpjbsz00rmivhec7hd9k0b"
+    }
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0178-kelso-valley-wind-solar-and-water/attempt-2/research-decision.json",
+      "sha256": "a047474eb040de1b96f09b6ff400d9f1b639be9dd0afa911c7bda240af27caf2"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0178-kelso-valley-wind-solar-and-water/attempt-2/chatgpt-accepted-response.txt",
+      "sha256": "38bcffe003605c2c96ece2d612d475ad8c821330ee993f5addf02a572f6c8451"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0178-kelso-valley-wind-solar-and-water/attempt-2/source-verification.json",
+      "sha256": "cb1414a1fa9cdc76bce3f2bd58d81dbd9ff2914ac0b3dcef4b3b1c68df2c33f6"
+    }
+  }
+}

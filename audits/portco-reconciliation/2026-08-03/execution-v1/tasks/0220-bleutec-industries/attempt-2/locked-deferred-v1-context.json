@@ -1,0 +1,274 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0220:bleutec-industries:3c6b9662",
+  "taskIndex": 220,
+  "companyName": "Bleutec Industries",
+  "generatedAt": "2026-09-04T06:21:31.207Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0220-bleutec-industries/attempt-2/locked-deferred-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 220,
+    "taskId": "ledger:0220:bleutec-industries:3c6b9662",
+    "canonicalKey": "bleutec-industries|united-states",
+    "companyName": "Bleutec Industries",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 40,
+    "managers": [
+      "EnCap Investments"
+    ],
+    "actionScopes": {
+      "company": [],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [
+      "040-encap-investments:holding:004:bleutec-industries"
+    ],
+    "sourceRepoOnlyIds": [],
+    "productionCompanyIds": [
+      "cmrxpje9300veivhewkxji64b"
+    ],
+    "seedKeys": [
+      "bleutec industries|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.encapinvestments.com/news/bleutec-industries-announces-equity-commitment-encap-investments",
+      "https://www.pphb.com/bleutec"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted census NEEDS_REVIEW for 040-encap-investments:holding:004:bleutec-industries: The 2022 EnCap investment and continuing company activity are supported, but Bleutec is absent from EnCap's current aggregate portfolio page and no explicit exit was located. Exact identity approval is required before any merge or correction.",
+    "unresolvedQuestions": [
+      "Accepted census NEEDS_REVIEW for 040-encap-investments:holding:004:bleutec-industries: The 2022 EnCap investment and continuing company activity are supported, but Bleutec is absent from EnCap's current aggregate portfolio page and no explicit exit was located."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpje9300veivhewkxji64b",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "bleutec-industries|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpje9300veivhewkxji64b",
+    "name": "Bleutec Industries",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Offshore wind installation vessels and marine services",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Bleutec Industries develops vessel-based installation and marine service solutions for the U.S. offshore wind sector. Its target customers are offshore wind developers and contractors that require Jones Act-compliant transportation and installation capability for foundations and turbines. The model is asset-heavy because it is based on building, owning, and operating specialized marine equipment, including the company's Binary Marine Installation Solution platform. Public sources identify Houston as the company's base and frame its addressable market as the U.S. offshore wind installation sector. Bleutec has disclosed its BMIS concept can install turbines of up to 22 MW, but broader revenue and fleet scale metrics were not publicly disclosed in the reviewed materials. EnCap announced a capital commitment in 2022 to support the platform, and exact ownership percentages were not publicly disclosed.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": 2018,
+    "headquarters": "Texas",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpjzyg01tnivhewmmw6c5p",
+        "managerName": "EnCap Investments",
+        "organizationName": "EnCap Investments",
+        "fundName": null,
+        "vehicleName": "EnCap Energy Transition",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxplkq603ugivhevl0w96a7",
+        "date": "May 2018",
+        "event": "Bleutec Industries was founded, according to Offshore magazine.",
+        "category": "FOUNDING",
+        "sortDate": "2018-05-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplkqm03uhivhejmme74fl",
+        "date": "Dec 2022",
+        "event": "Bleutec signed an MOU with Wärtsilä related to its BMIS vessel concept.",
+        "category": "OTHER",
+        "sortDate": "2022-12-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplkr303uiivheffpet75h",
+        "date": "Nov 30, 2022",
+        "event": "Bleutec announced a significant equity commitment from EnCap Investments.",
+        "category": "FINANCING",
+        "sortDate": "2022-11-30T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxplkrm03ujivhei9cbw5w6",
+        "date": "Mar 2023",
+        "event": "Bleutec announced ABS Approval in Principle for the designs of its Jones Act-compliant BMIS platform.",
+        "category": "OTHER",
+        "sortDate": "2023-03-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpqrvs0a2rivhea8zyl1y6",
+        "label": "Investment date source — EnCap Investments — Bleutec Industries",
+        "url": "https://www.encapinvestments.com/news/bleutec-industries-announces-equity-commitment-encap-investments",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "EnCap Investments initial investment / ownership",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpqrwr0a2tivheh8w7aeps",
+        "label": "Pphb — Bleutec Industries",
+        "url": "https://www.pphb.com/bleutec",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Pphb — Bleutec Industries",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqrxw0a2vivhe7ipyza77",
+        "label": "Netsco — Bleutec Industries",
+        "url": "https://netsco.us/2023/03/netsco-is-proud-to-support-bleutec-industries-in-offshore-wind-projects/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Netsco operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpqrz10a2xivhe86lv6hp4",
+        "label": "Offshore Mag — Bleutec Industries",
+        "url": "https://www.offshore-mag.com/renewable-energy/article/14280250/exec-qa-bleutec-ceo-addresses-offshore-wind-turbine-installation-challenges",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Offshore Mag — Bleutec Industries",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Bleutec Industries",
+    "investmentFirm": "EnCap Investments",
+    "sector": "Power & ET",
+    "subsector": "Offshore wind installation vessels and marine services",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "EnCap Energy Transition",
+    "description": "Bleutec Industries develops vessel-based installation and marine service solutions for the U.S. offshore wind sector. Its target customers are offshore wind developers and contractors that require Jones Act-compliant transportation and installation capability for foundations and turbines. The model is asset-heavy because it is based on building, owning, and operating specialized marine equipment, including the company's Binary Marine Installation Solution platform. Public sources identify Houston as the company's base and frame its addressable market as the U.S. offshore wind installation sector. Bleutec has disclosed its BMIS concept can install turbines of up to 22 MW, but broader revenue and fleet scale metrics were not publicly disclosed in the reviewed materials. EnCap announced a capital commitment in 2022 to support the platform, and exact ownership percentages were not publicly disclosed.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2018,
+    "investmentYear": 2022,
+    "headquarters": "Texas",
+    "milestones": [
+      {
+        "date": "May 2018",
+        "event": "Bleutec Industries was founded, according to Offshore magazine.",
+        "category": "Founding"
+      },
+      {
+        "date": "Dec 2022",
+        "event": "Bleutec signed an MOU with Wärtsilä related to its BMIS vessel concept.",
+        "category": "Other"
+      },
+      {
+        "date": "Nov 30, 2022",
+        "event": "Bleutec announced a significant equity commitment from EnCap Investments.",
+        "category": "Financing"
+      },
+      {
+        "date": "Mar 2023",
+        "event": "Bleutec announced ABS Approval in Principle for the designs of its Jones Act-compliant BMIS platform.",
+        "category": "Other"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Investment date source — EnCap Investments — Bleutec Industries",
+        "url": "https://www.encapinvestments.com/news/bleutec-industries-announces-equity-commitment-encap-investments",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Pphb — Bleutec Industries",
+        "url": "https://www.pphb.com/bleutec",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Netsco — Bleutec Industries",
+        "url": "https://netsco.us/2023/03/netsco-is-proud-to-support-bleutec-industries-in-offshore-wind-projects/",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Offshore Mag — Bleutec Industries",
+        "url": "https://www.offshore-mag.com/renewable-energy/article/14280250/exec-qa-bleutec-ceo-addresses-offshore-wind-turbine-installation-challenges",
+        "type": "ARTICLE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "EnCap Investments",
+        "ownershipVehicle": "EnCap Energy Transition",
+        "investmentYear": 2022,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpifcq0043ivhe5112opir",
+        "name": "EnCap Investments",
+        "updatedAt": "2026-07-23T16:09:27.098Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0220:bleutec-industries:3c6b9662",
+    "taskIndex": 220,
+    "canonicalKey": "bleutec-industries|united-states",
+    "capturedAt": "2026-09-04T06:21:31.207Z",
+    "databaseRevision": "revision:8c67c4eb99292601b341fa724562c78e5765266d77df55128372e314a2914fd8",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "8ffd601509c05040ff44da279f9412bdfa73252073b927847fd7f27aa37fed72",
+    "productionSnapshotSha256": "8815d4ca43725b51d6eea14f73edae4e398c084251e14381ca78ff4c5d15e187",
+    "targetCompanySnapshotSha256": "90a7a8c51a6fcfe1e454e71fe110be89074120eaa1b3eb8edf3b6f0923037f00",
+    "seedEntrySha256": "375733d53aa4d2059c2128b381a8d5b4633101d475f8818cf1e4fd43bf5df396",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "0e7292a48e4570f271ff423c7b0d183ea8c15ca02e1b8e27a8efa9c5c14d037e",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "63417b868abfd26b4dcc54fb8f8307f0b1294775ecabb6e01c0311fcbbcc337c",
+      "citationsSha256": "16f3a7a54960d51c786dd232b4534cdfca667e627e93c2c1b963fe3f7f916a0b",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "bbb4441193ba67ecd6350f78a2a127f121947f3fe11a5b0bbf30255216f9ead7",
+    "stateSha256": "a0c282774dce98f6e223b2802070787e413e3b25b4ee8dbf33b8a6b5091a82ed",
+    "taskSnapshotSha256": "04b1a12f1ab05fb52c5bb0e6928e6c4199e1024e8f73e65255cc6d39820a3bf9"
+  },
+  "contextSha256": "6bb30d105e4ef18d706c0c696beb257df51d0aefbe56bd4450beb1e99006376a"
+}
