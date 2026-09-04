@@ -3,8 +3,8 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-03T23:33:00.000Z",
-  "activeBatchId": "batch-deferred-0042-0076-v1",
+  "updatedAt": "2026-09-04T00:03:26.000Z",
+  "activeBatchId": null,
   "batches": [
     {
       "batchId": "batch-0121-0125-v1",
@@ -8840,7 +8840,7 @@
     },
     {
       "batchId": "batch-deferred-0042-0076-v1",
-      "state": "READY",
+      "state": "COMPLETED",
       "taskIds": [
         "ledger:0042:sifi-networks-america-limited:8125d44e",
         "ledger:0055:modern-aviation:22969eb9",
@@ -8856,15 +8856,18 @@
         76
       ],
       "createdAt": "2026-09-03T23:25:30.000Z",
-      "updatedAt": "2026-09-03T23:33:00.000Z",
-      "completedAt": null,
+      "updatedAt": "2026-09-04T00:03:26.000Z",
+      "completedAt": "2026-09-04T00:03:26.000Z",
       "batchManifest": {
         "path": "audits/portco-reconciliation/2026-08-23/batches/batch-deferred-0042-0076-v1/batch-manifest.json",
         "sha256": "f88ab0c497384b1201f4f227e9aa6e57513d7882fb550fd0089b6c7c2a880698"
       },
-      "releaseSha": null,
-      "receipt": null,
-      "reason": null,
+      "releaseSha": "cd3f3d68e7da4b92bec590c16fbbad1bbfb3eb60",
+      "receipt": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-deferred-0042-0076-v1/production-apply-run-33819446023/batch-apply-receipt.json",
+        "sha256": "cb7105c87eb56c4ffb0e39496169ad817d0caf921831c3b8aae3a843d8c61c28"
+      },
+      "reason": "Receipt, API, seed parity, and rendered-card verification passed; four exact deferral exceptions were preserved without database writes.",
       "history": [
         {
           "sequence": 1,
@@ -8883,9 +8886,51 @@
             "f88ab0c497384b1201f4f227e9aa6e57513d7882fb550fd0089b6c7c2a880698"
           ],
           "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "RELEASING",
+          "at": "2026-09-03T23:52:27.000Z",
+          "evidenceSha256": [
+            "f88ab0c497384b1201f4f227e9aa6e57513d7882fb550fd0089b6c7c2a880698"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 4,
+          "from": "RELEASING",
+          "to": "APPLYING",
+          "at": "2026-09-03T23:58:39.000Z",
+          "evidenceSha256": [
+            "f88ab0c497384b1201f4f227e9aa6e57513d7882fb550fd0089b6c7c2a880698"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 5,
+          "from": "APPLYING",
+          "to": "VERIFYING",
+          "at": "2026-09-03T23:58:48.416Z",
+          "evidenceSha256": [
+            "cb7105c87eb56c4ffb0e39496169ad817d0caf921831c3b8aae3a843d8c61c28",
+            "f88ab0c497384b1201f4f227e9aa6e57513d7882fb550fd0089b6c7c2a880698"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 6,
+          "from": "VERIFYING",
+          "to": "COMPLETED",
+          "at": "2026-09-04T00:03:26.000Z",
+          "evidenceSha256": [
+            "cb7105c87eb56c4ffb0e39496169ad817d0caf921831c3b8aae3a843d8c61c28",
+            "f88ab0c497384b1201f4f227e9aa6e57513d7882fb550fd0089b6c7c2a880698"
+          ],
+          "reason": "Receipt, API, seed parity, and rendered-card verification passed; four exact deferral exceptions were preserved without database writes."
         }
       ]
     }
   ],
-  "ledgerSha256": "07905d197ca0873a55528830b5b24f49af551224ba9e8f5ffa1a5fdd5d93be4f"
+  "ledgerSha256": "7b71daf7c710171cb6a6d940e3848a995825ac9388d0c4ba9905cacdc868e25c"
 }
