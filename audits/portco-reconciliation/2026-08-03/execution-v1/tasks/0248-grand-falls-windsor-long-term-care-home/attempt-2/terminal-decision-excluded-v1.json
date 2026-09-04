@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0248:grand-falls-windsor-long-term-care-home:ebbcb53e",
+  "taskIndex": 248,
+  "companyName": "Grand Falls-Windsor Long-Term Care Home",
+  "outcome": "EXCLUDED",
+  "decidedAt": "2026-09-04T20:44:00.000Z",
+  "rationale": "Fresh direct evidence establishes one ProjectCo and one Project Agreement for both homes. Grand Falls-Windsor is an underlying facility already represented by canonical production company cmrxpjfba00x0ivhemjealbde, not a separate manager-level PortCo. Because no separate replacement source task exists, terminal EXCLUDED is the valid execution outcome; production and seed ownership stay unchanged while the exact current cap-table exception is preserved.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0248-grand-falls-windsor-long-term-care-home/attempt-2/locked-deferred-v2-task-snapshot.json",
+    "sha256": "24bdddc1bed1268d9d90e17916b7057480a4769f3a27e7551850d84c50e25a88"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0248-grand-falls-windsor-long-term-care-home/attempt-2/application-research-decision.json",
+    "sha256": "af7d3fdb577f321e5f90c8fb3ebabb567ee049b0c666d575eb1a748ca8b6ebab"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0248-grand-falls-windsor-long-term-care-home/attempt-2/source-verification.json",
+    "sha256": "405f5aa583ee6ff6e7240711635342c524395db26c77d8d4500de725415e4b8d"
+  },
+  "evidence": [
+    {
+      "url": "https://www.gov.nl.ca/ti/files/GNL-Central-LTC-Final-VFM-Assessment.pdf",
+      "purpose": "Direct post-close government evidence defining the single ProjectCo and two-facility agreement while distinguishing equity, debt, and design-build roles."
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "04a44f1f6f9ac2fda00c614795e36ffafce412fd24c5dad135f11f4509473e01"
+}

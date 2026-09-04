@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "runId": "portco-deferred-readjudication-2026-09-04",
+  "taskId": "ledger:0248:grand-falls-windsor-long-term-care-home:ebbcb53e",
+  "taskIndex": 248,
+  "validatedAt": "2026-09-04T16:02:38Z",
+  "conversationUrl": "https://chatgpt.com/c/6a9ae288-393c-83e9-9c7d-1b21f2fdf3a9",
+  "requiredTopLevelKeys": [
+    "asOfDate",
+    "requestedCompany",
+    "requestedManagers",
+    "decision",
+    "confidence",
+    "rationale",
+    "identityResolution",
+    "ownershipResolution",
+    "operatingResolution",
+    "acquisitionExitCheck",
+    "milestones",
+    "evidence",
+    "beforeAfterChanges",
+    "excludedOrDuplicateCandidates",
+    "unresolvedQuestions",
+    "recommendedListAction"
+  ],
+  "finalResponse": {
+    "artifact": "chatgpt-accepted-response.txt",
+    "characterCountExcludingRepositoryTerminalLf": 7284,
+    "fencedJsonPresent": false,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "requiredTopLevelKeysExact": true,
+    "decision": "SUPERSEDED",
+    "confidence": "HIGH_IDENTITY; LOW_CURRENT_CAP_TABLE",
+    "canonicalAsset": "Gander and Grand Falls-Windsor Care Homes Project",
+    "evidenceCount": 7,
+    "currentOwnerOrSponsorRows": 1,
+    "pendingOwnershipTransactionCount": 0,
+    "primaryEvidenceCount": 1,
+    "ownerKeysExact": true,
+    "pendingTransactionKeysExact": true,
+    "evidenceKeysExact": true,
+    "withinCharacterLimit": true,
+    "withinEvidenceLimit": true,
+    "withinMilestoneLimit": true,
+    "safeCanonicalSupersessionWithoutOwnershipChange": true,
+    "freshExactCanonicalOwnershipExceptionRecorded": true,
+    "responseSha256": "8d8fd35f45d8dfc916e7336de9950dd62c9544e41b017d745b2fcb1dc411c9c3",
+    "result": "PASS"
+  },
+  "independentSourceOverrides": [
+    {
+      "modelStatement": "The current government project page and shortlist document label Fengate and SEC Pomerleau as equity providers.",
+      "verifiedFinding": "Both direct government sources contain that label, but the shortlist is expressly procurement-stage and neither source identifies an executed subscription, ProjectCo legal holder, stake, effective date or transfer. The final post-close assessment identifies Fengate-managed project risk capital and Pomerleau Inc. as design-builder without naming SEC Pomerleau in the ProjectCo ownership structure.",
+      "effectOnDecision": "Do not add SEC Pomerleau or Pomerleau Inc. as a current owner. The source task may be superseded into the existing project record without modifying its ownership."
+    },
+    {
+      "modelStatement": "Fengate Central Health GP Inc. is an active Newfoundland and Labrador company number 84100, but its general-partner relationship to Fengate Central Health, LP is unresolved.",
+      "verifiedFinding": "The returned B2BHint page was HTTP 403 on independent reopen. A direct official CADO search independently verified Fengate Central Health GP Inc., company number 84100, status Active, Manitoba incorporation on 2019-05-02 and Newfoundland and Labrador extra-provincial registration on 2019-06-05. CADO still provides no direct link from that corporation to the LP and no shareholder or partner schedule.",
+      "effectOnDecision": "The company identity is corroborated by the official registry, but no GP relationship, ProjectCo ownership or percentage may be published. The blocked aggregator is not application evidence."
+    },
+    {
+      "modelStatement": "Fengate-managed funds are the last verified risk-capital source at financial close and current status remains unresolved.",
+      "verifiedFinding": "The final government assessment directly says funds managed by Fengate Capital Management Ltd. provide project risk capital but does not name a fund, vehicle, LP, beneficial owner or stake. No direct post-close ownership schedule or transaction record was located in the returned evidence set.",
+      "effectOnDecision": "Preserve the canonical ownership exception and do not convert close-date manager language into cutoff-current fund, vehicle or percentage claims."
+    },
+    {
+      "modelStatement": "The current ProjectCo cap table has zero disclosed percentage coverage and a 100-point residual gap.",
+      "verifiedFinding": "No returned direct source supplies any ProjectCo percentage. This is a description of evidentiary coverage, not a statement that the ProjectCo has no owners or that any party owns the residual.",
+      "effectOnDecision": "Retain the exact unresolved cap-table exception; do not infer owners or stakes from the residual."
+    },
+    {
+      "modelStatement": "The copied response contains ordinary JSON URLs and a browser-generated citation label after the substantive review sentence.",
+      "verifiedFinding": "The browser accessibility DOM exposed literal URL text nodes and the citation label. The copy-response control rewrote inline links as markdown inside JSON, so it was rejected as an authoritative capture. The accepted-response artifact concatenates the literal rendered DOM text nodes and preserves the visible citation label.",
+      "effectOnDecision": "The exact rendered response remains parseable and no repair conversation was required. Browser citation UI is preserved for lineage and is not application data."
+    }
+  ],
+  "valid": true,
+  "errors": [],
+  "warnings": [
+    "The response's workingStatus strings are model-observed labels and are superseded by independently captured source statuses and hashes.",
+    "The B2BHint evidence URL returned HTTP 403 and is not relied on; the same company identity facts were independently verified through the official CADO search and detail pages.",
+    "The CADO company-name match does not prove that Fengate Central Health GP Inc. is the general partner of Fengate Central Health, LP.",
+    "Procurement-stage equity-provider labels do not prove close-date subscription, retained ownership or cutoff-current equity.",
+    "No direct current partnership register, LP schedule, shareholder list, beneficial-owner record or change-of-control instrument reconciles the ProjectCo cap table.",
+    "The final assessment's PDF text extracted successfully, but selected rendered pages showed missing-glyph boxes outside the legible structure diagram; the text layer and diagram were both checked."
+  ],
+  "repairsUsed": 0,
+  "independentSourceVerification": "source-verification.json"
+}

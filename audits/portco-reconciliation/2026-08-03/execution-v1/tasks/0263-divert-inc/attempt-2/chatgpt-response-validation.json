@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "taskId": "ledger:0263:divert-inc:e7a24939",
+  "taskIndex": 263,
+  "companyName": "Divert, Inc.",
+  "validatedAt": "2026-09-04T20:37:00.000Z",
+  "acceptedResponseSha256": "0307f3141f4a453733e33ecb03098749934ec39a4bdef093ed43232808bcab65",
+  "valid": true,
+  "finalResponse": {
+    "characterCountExcludingRepositoryTerminalLf": 7329,
+    "fencedJsonPresent": false,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "requiredTopLevelKeysExact": true,
+    "decision": "DEFERRED",
+    "confidence": "HIGH",
+    "evidenceCount": 8,
+    "currentOwnerOrSponsorRows": 6,
+    "pendingOwnershipTransactionCount": 0,
+    "primaryEvidenceCount": 1,
+    "ownerKeysExact": true,
+    "pendingTransactionKeysExact": true,
+    "evidenceKeysExact": true,
+    "withinCharacterLimit": true,
+    "withinEvidenceLimit": true,
+    "withinMilestoneLimit": true,
+    "responseSha256": "0307f3141f4a453733e33ecb03098749934ec39a4bdef093ed43232808bcab65",
+    "result": "PASS"
+  },
+  "contract": {
+    "beginJsonPresent": true,
+    "endJsonPresent": true,
+    "beginReviewPresent": true,
+    "endReviewPresent": true,
+    "jsonParses": true,
+    "mandatoryTopLevelKeysExact": true,
+    "ownerKeysExact": true,
+    "pendingTransactionKeysExact": true,
+    "evidenceKeysExact": true,
+    "evidenceRowCount": 8,
+    "milestoneCount": 4,
+    "recommendedPrimaryCount": 1,
+    "decisionAllowed": true,
+    "decision": "DEFERRED"
+  },
+  "captureNormalization": {
+    "performed": true,
+    "reason": "The browser rendered URLs as inline links inside the minified JSON. Accessibility DOM text nodes were joined to restore the literal JSON strings, and the visible citation-group label was preserved after BEGIN_REVIEW.",
+    "semanticChanges": false,
+    "repairTurnUsed": false
+  },
+  "independentEvidenceAdjustments": [
+    "Divert's direct 2022 release proves that GIC and Ontario Power Generation joined Ara in the 2021 US$100 million growth-equity transaction, but it does not name either subscriber affiliate, classify GIC's strategy, disclose either stake, or establish cutoff-current ownership.",
+    "GIC's rendered 2021/22 annual-report page describes an anonymous Private Equity investment in a company using anaerobic digesters for food-waste solutions. The report does not name Divert, a GIC affiliate, a security, a stake, or current status, so the example cannot be used as a Divert crosswalk.",
+    "The exact SEC accession URL returned by the model is blocked and appears to differ by one digit from the live official accession. The independently reopened live accession confirms Ara Divert HoldCo, Inc., 2021 formation, and an unnamed 2023 offering but is supplemental only and does not resolve the deferred GIC or OPG facts.",
+    "Enbridge's rendered 2025 annual-report page supports Enbridge's own 10% Divert cost investment; it does not identify GIC's strategy or resolve GIC or OPG continuity.",
+    "The later Divert releases directly support Wittington- and Mitsubishi-led equity transactions. Their omission of GIC and OPG is not evidence of a sale, rollover, retention, redemption, or other disposition.",
+    "Transaction counsel supports Wittington Asset Management Limited as sole lead investor in a preferred-equity investment, but the lawyer biography is not a post-Series-C ownership schedule."
+  ],
+  "result": "PASS_WITH_TRANSPARENT_DOM_RECONSTRUCTION_AND_EXACT_EXCEPTION"
+}

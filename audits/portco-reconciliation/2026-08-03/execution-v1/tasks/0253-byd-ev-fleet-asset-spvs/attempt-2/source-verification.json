@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "taskId": "ledger:0253:byd-ev-fleet-asset-spvs:e914a6d4",
+  "taskIndex": 253,
+  "companyName": "BYD EV Fleet Asset SPVs",
+  "verifiedAt": "2026-09-04T16:59:56.000Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "url": "https://bizfileonline.sos.ca.gov/search/business",
+      "finalUrl": "https://bizfileonline.sos.ca.gov/search/business",
+      "status": "BOT_PROTECTION_SHELL",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 212,
+      "contentSha256": "d02032286070b4dd9d8fbd985a7bdca8af8edf52b89ff177db3bfcb2c8a9c43d",
+      "browserVerified": false,
+      "note": "The official search endpoint reopened but returned only an Incapsula shell. It did not independently expose the company detail, member schedule, manager authority, or equity percentages and cannot serve as application evidence in this packet."
+    },
+    {
+      "url": "https://www.bizprofile.net/ca/san-francisco/green-transportation-leasing-llc",
+      "finalUrl": "https://www.bizprofile.net/ca/san-francisco/green-transportation-leasing-llc",
+      "status": "BLOCKED_SECONDARY_REGISTRY_EXTRACT",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 5534,
+      "contentSha256": "f16c788f9e96317346e64874ae9233c9913a775ac7b5a0787bb01bf55720f381",
+      "browserVerified": false,
+      "note": "Cloudflare blocked the independent fetch. The model's reported extract cannot substitute for a current official member ledger or ownership filing."
+    },
+    {
+      "url": "https://generatecapital.com/technology-companies/",
+      "finalUrl": "https://generatecapital.com/technology-companies/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 55545,
+      "contentSha256": "09583eefe92fb09c74396a892542b5e7c762fc2c7a48fc6012eeb15e59d0c0f5",
+      "browserVerified": true,
+      "note": "Generate's direct page describes the historical Generate/BYD program, US$200 million commitment, and financing, supply, marketing, and maintenance roles. It misspells the name as Green Transportation Leading and discloses no current GTL member schedule, percentages, fund, asset register, or current lease book."
+    },
+    {
+      "url": "https://en.byd.com/news/press-release-byd-produces-300th-bus-in-lancaster-avta-nears-1-million-emission-free-miles/",
+      "finalUrl": "https://en.byd.com/news/press-release-byd-produces-300th-bus-in-lancaster-avta-nears-1-million-emission-free-miles/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 211946,
+      "contentSha256": "4263f66cb559a2ff4207167ea9c45502bae0f88f9e8e8ac722cfac24a5878540",
+      "browserVerified": true,
+      "note": "BYD's direct historical release describes Generate as a leasing partner but does not identify GTL's current members, percentages, or current titled assets."
+    },
+    {
+      "url": "https://www.metro-magazine.com/news/byd-partners-to-launch-first-ever-electric-bus-leasing-program",
+      "finalUrl": "https://www.metro-magazine.com/news/byd-partners-to-launch-first-ever-electric-bus-leasing-program",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 249587,
+      "contentSha256": "261da97e40503e824a42705d4d3100d11b4c5e02afa7168c471295251c09d4f5",
+      "browserVerified": true,
+      "note": "The contemporary report verifies the July 10, 2018 joint-venture announcement and US$200 million allocation. It is not current ownership or current asset-book evidence."
+    },
+    {
+      "url": "https://dukespace.lib.duke.edu/server/api/core/bitstreams/104f48b1-d523-4076-8874-c91cf6f1f4fe/content",
+      "finalUrl": "https://dukespace.lib.duke.edu/server/api/core/bitstreams/104f48b1-d523-4076-8874-c91cf6f1f4fe/content",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "application/pdf;charset=UTF-8",
+      "bytes": 1147272,
+      "contentSha256": "9e9c397edab36821104161a22f643a2d57fb6826667c40702ff110acd9fb9fc0",
+      "pageCount": 46,
+      "verifiedPages": [25, 26],
+      "note": "Pages 25-26 were rendered and visually inspected. The 2019 case study reports GTL as a jointly owned Generate/BYD California LLC and describes two lease structures. It is historical academic/interview evidence, not proof of the 2026 cap table or current asset book."
+    },
+    {
+      "url": "https://b2bhint.com/en/company/us-ca/generate-gtl-member-llc--201819710348",
+      "finalUrl": "https://b2bhint.com/en/company/us-ca/generate-gtl-member-llc--201819710348",
+      "status": "BLOCKED_SECONDARY_REGISTRY_EXTRACT",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 5510,
+      "contentSha256": "682197748da347bbde719a3881ed426158f67023efd2b420282b02384a78ef7f",
+      "browserVerified": false,
+      "note": "Cloudflare blocked the independent fetch. Even the reported separate-affiliate registration would not prove that Generate GTL Member, LLC currently owns GTL equity."
+    },
+    {
+      "url": "https://www.blue-bird.com/blue-bird-and-generate-capital-appoint-general-manager-for-clean-bus-solutions-joint-venture/",
+      "finalUrl": "https://www.blue-bird.com/blue-bird-and-generate-capital-appoint-general-manager-for-clean-bus-solutions-joint-venture/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 191421,
+      "contentSha256": "01faeadfbc770fc69dd10bd855e3d6fa9979dc0bc7e4af99d703a3afbd773899",
+      "browserVerified": true,
+      "note": "Blue Bird directly identifies Clean Bus Solutions LLC as a separate 50/50 Blue Bird/Generate joint venture. It is not a proven GTL successor or evidence of GTL ownership."
+    }
+  ],
+  "supplementalSources": [
+    {
+      "url": "https://en.byd.com/finance/",
+      "finalUrl": "https://en.byd.com/finance/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 263480,
+      "contentSha256": "98f3b7ea540a5925a28c71df77beb11cb3f614532e4d1bf122e55d9adb2e12d0",
+      "browserVerified": true,
+      "note": "BYD's current finance page advertises leasing and EV-as-a-service options but does not name GTL, Generate, a current title holder, members, equity, or a current GTL asset book."
+    }
+  ],
+  "checks": {
+    "allReturnedEvidenceUrlsChecked": true,
+    "exactlyOneApplicationPrimary": true,
+    "allReturnedUrlsChecked": true,
+    "allEvidenceRowsChecked": true,
+    "allUrlsHttps": true,
+    "returnedOpenCount": 5,
+    "returnedBlockedOrShellCount": 3,
+    "pdfPageLevelVisualVerificationCompleted": true,
+    "historicalGtlIdentitySupported": true,
+    "historicalGenerateBydProgramSupported": true,
+    "currentOfficialCapTableVerified": false,
+    "currentGenerateEquityVerified": false,
+    "currentBydEquityVerified": false,
+    "currentFundOrManagedAccountVerified": false,
+    "currentQualifyingAssetBookVerified": false,
+    "laterSaleExitOrPendingTransactionVerified": false,
+    "modelRecommendedPrimaryApplicationUsable": false,
+    "applicationPrimaryReboundToWorkingDirectSource": true,
+    "applicationBlocked": true
+  },
+  "exactException": "No direct current source discloses GTL's member ledger or percentages, whether Generate or BYD retained or disposed of equity, Generate's fund or account, or a current GTL lease and vehicle-title schedule. Active registration, manager terminology, historical joint-venture language, and current BYD financing offerings do not resolve those facts.",
+  "conclusion": "DEFERRED. Preserve the production and seed record unchanged and do not infer a rename, current owner, stake, fund, asset book, exit, or successor relationship."
+}

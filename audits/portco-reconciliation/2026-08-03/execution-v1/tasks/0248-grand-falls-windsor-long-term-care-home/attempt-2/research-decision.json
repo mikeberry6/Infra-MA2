@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_DEFERRED_READJUDICATION_RESEARCH_DECISION",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-deferred-readjudication-2026-09-04",
+  "generatedAt": "2026-09-04T16:02:38.000Z",
+  "asOfDate": "2026-09-04",
+  "taskId": "ledger:0248:grand-falls-windsor-long-term-care-home:ebbcb53e",
+  "taskIndex": 248,
+  "companyName": "Grand Falls-Windsor Long-Term Care Home",
+  "linkedTaskIdsCovered": [],
+  "modelDecision": "SUPERSEDED",
+  "decision": "EXCLUDED",
+  "confidence": "HIGH_IDENTITY_AND_TERMINAL_DISPOSITION_LOW_COMPLETE_CURRENT_OWNERSHIP",
+  "researchOnly": true,
+  "summary": "Exclude the standalone Grand Falls-Windsor source task as a non-distinct underlying facility already represented by the existing canonical Gander and Grand Falls-Windsor Care Homes Project record. Fresh direct evidence verifies that one Project Agreement and one ProjectCo, Fengate Central Health, LP, cover both 60-bed homes. This resolves the source-task identity without a database or seed mutation. The model recommended SUPERSEDED, but the execution contract permits that status only when another source task is the replacement; no such task exists in the 496-task manifest, while the canonical production company predates and exists outside this source-task queue. EXCLUDED therefore preserves the substantive finding without inventing a replacement task ID. The current ProjectCo cap table remains unresolved and must remain an exact exception on the canonical record: no direct source names all limited partners, beneficial owners, percentages or the exact Fengate fund/vehicle, and procurement-stage labels do not prove whether SEC Pomerleau subscribed, retained or transferred equity.",
+  "resolvedFormerBlockers": [
+    "The final government value-for-money assessment directly identifies one Project Agreement and one ProjectCo, Fengate Central Health, LP, for both the Gander and Grand Falls-Windsor care homes.",
+    "The final assessment directly identifies funds managed by Fengate Capital Management Ltd. as project risk-capital provider, Pomerleau Inc. as design-builder and TD Securities as debt underwriter, preventing those roles from being collapsed.",
+    "The current government project page and procurement-stage shortlist directly verify the two-home bundle and explain the source of the conflicting SEC Pomerleau equity-provider label.",
+    "Fengate's direct financial-close release and Pomerleau's direct project page independently corroborate that the two facilities form one project and separate the sponsor/developer and constructor roles.",
+    "The direct official CADO search and detail pages verify that Fengate Central Health GP Inc., company number 84100, is active and was registered in Newfoundland and Labrador on 2019-06-05, while supplying no legal link to the ProjectCo LP.",
+    "The source queue contains no separate canonical Gander-project task to use as a replacement, while production company cmrxpjfba00x0ivhealbde already represents the consolidated project."
+  ],
+  "identityResolution": {
+    "canonicalDisplayName": "Gander and Grand Falls-Windsor Care Homes Project",
+    "canonicalKey": "gander-and-grand-falls-windsor-care-homes-project|canada",
+    "productionCompanyId": "cmrxpjfba00x0ivhealbde",
+    "sourceTaskAction": "EXCLUDE_NON_DISTINCT_UNDERLYING_FACILITY",
+    "productionAction": "KEEP_EXISTING_CANONICAL_RECORD_UNCHANGED",
+    "mergeTarget": "cmrxpjfba00x0ivhemjealbde",
+    "boundary": "Fengate Central Health, LP is the ProjectCo under one DBFM Project Agreement covering both 60-bed facilities. Grand Falls-Windsor Long-Term Care Home is an underlying facility and operating location, not a separate manager-level PortCo. NL Healthcare Partners is a consortium label; government and the health authority are public counterparties and asset owners; Pomerleau Inc. is design-builder; service providers and debt parties are not ProjectCo equity absent direct evidence."
+  },
+  "ownershipResolution": {
+    "status": "UNRESOLVED_CURRENT_CAP_TABLE_PRESERVED_AS_CANONICAL_EXCEPTION",
+    "lastVerifiedDirectFact": "At financial close, project risk capital was provided by funds managed by Fengate Capital Management Ltd.",
+    "fengateFund": "NOT_PUBLICLY_DISCLOSED",
+    "fengateVehicle": "NOT_PUBLICLY_DISCLOSED",
+    "projectCoLimitedPartners": "UNRESOLVED",
+    "projectCoBeneficialOwners": "UNRESOLVED",
+    "projectCoPercentages": "UNRESOLVED",
+    "projectCoGeneralPartner": "UNRESOLVED; the matching active company name Fengate Central Health GP Inc. is not itself a legal LP-to-GP link",
+    "secPomerleauTreatment": "DO_NOT_ADD_AS_OWNER; direct sources establish a procurement-stage equity-provider label but no executed subscription, close-date holder, retained interest, current stake or transfer",
+    "pomerleauIncTreatment": "DESIGN_BUILDER_ONLY_UNLESS_FUTURE_DIRECT_EQUITY_EVIDENCE_EMERGES"
+  },
+  "transactionResolution": {
+    "state": "NO_DIRECTLY_DISCLOSED_POST_CLOSE_OWNERSHIP_TRANSACTION_IDENTIFIED",
+    "pendingProjectCoOwnershipTransaction": null,
+    "verifiedClose": "The single bundled project reached financial close under the Project Agreement on 2019-06-14.",
+    "postClosingFinding": "No direct source in the returned and independently reopened evidence set establishes a later sale, dilution, restructuring, refinancing, recapitalization, distribution, write-off, concession amendment, ownership transfer, manager transaction or signed pending ProjectCo equity transaction. Non-disclosure is not proof that no private change occurred."
+  },
+  "freshException": {
+    "status": "EXACT_FACT_UNAVAILABLE_ON_CANONICAL_RECORD",
+    "missingFact": "The cutoff-current 100% legal and beneficial ownership chain for Fengate Central Health, LP: ProjectCo jurisdiction and registration number; its legally bound general partner; every limited partner and beneficial owner; every manager, fund and investment vehicle; all exact stakes and effective dates; whether SEC Pomerleau ever subscribed at financial close, retained an interest afterward, transferred it or only appeared as a procurement-stage equity provider; and any post-close change-of-control or transfer.",
+    "searchedEvidence": [
+      "Government of Newfoundland and Labrador final value-for-money assessment",
+      "Government current Central Long-Term Care project page",
+      "Government shortlisted-team composition PDF",
+      "Fengate financial-close release",
+      "Pomerleau project page",
+      "Official CADO registry scope, direct company-name search and company-detail result for Fengate Central Health GP Inc.",
+      "Current partnership, shareholder, beneficial-owner, fund, financing, rating, change-of-control, transfer, concession and transaction searches reflected in the fresh ChatGPT research conversation"
+    ],
+    "requiredToResolve": "A certified current partnership register or executed LP agreement or amendment, direct ProjectCo or GP filing, audited named-investment or fund schedule, lender or rating ownership schedule, public-authority change-of-control consent, transaction instrument, or direct sponsor disclosure that identifies the complete ProjectCo ownership chain and SEC Pomerleau's equity history without inference."
+  },
+  "primaryCitation": {
+    "label": "Government of Newfoundland and Labrador Final Value-for-Money Assessment",
+    "url": "https://www.gov.nl.ca/ti/files/GNL-Central-LTC-Final-VFM-Assessment.pdf",
+    "purpose": "Direct post-close government evidence establishing the single ProjectCo and two-facility agreement while distinguishing equity, debt and design-build roles",
+    "contentSha256": "1ddb157b3efcdf90a056825968f5340280a9a8cfa14e26fd116e8da722fca39d"
+  },
+  "applicationRequirements": [
+    "Use a terminal-only EXCLUDED member for Task 248 because the facility is not a distinct manager-level PortCo and no replacement source task exists in the execution manifest.",
+    "Do not create a second company, database redirect, alias mutation, ownership period, fund link, citation row or seed after-image for this source task.",
+    "Keep production company cmrxpjfba00x0ivhealbde unchanged; the terminal source disposition does not authorize correcting its ownership until the exact current cap table is directly resolved.",
+    "Do not use SUPERSEDED without a real, different replacement task ID; the production company ID is not a task ID.",
+    "Do not add SEC Pomerleau or Pomerleau Inc. as an owner or infer any stake, fund, vehicle or current ownership from procurement labels, manager continuity, construction roles, company-name similarity, residual math or absence of an announced exit.",
+    "Use exactly one application primary citation bound to the final government value-for-money assessment."
+  ],
+  "applicationBlocked": false,
+  "databaseMutationCandidate": false,
+  "seedMutationCandidate": false,
+  "terminalOutcomeCandidate": "EXCLUDED",
+  "dealDatabaseMutation": false,
+  "lineage": {
+    "conversationUrl": "https://chatgpt.com/c/6a9ae288-393c-83e9-9c7d-1b21f2fdf3a9",
+    "prompt": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0248-grand-falls-windsor-long-term-care-home/attempt-2/chatgpt-research-prompt.md",
+      "sha256": "9aba3219ba08728b1904d6ce7311a2b9c90a10ed1d7fc87360ee9f32e7a2a0f6"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0248-grand-falls-windsor-long-term-care-home/attempt-2/chatgpt-accepted-response.txt",
+      "sha256": "8d8fd35f45d8dfc916e7336de9950dd62c9544e41b017d745b2fcb1dc411c9c3"
+    },
+    "transcript": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0248-grand-falls-windsor-long-term-care-home/attempt-2/chatgpt-transcript.txt",
+      "sha256": "bc0167e60fcb29b59a1e9019b1c2d8e46ffbf5edcd6a36041e0247845ef51fb9"
+    },
+    "attestation": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0248-grand-falls-windsor-long-term-care-home/attempt-2/chatgpt-attestation.json",
+      "sha256": "728bb48eb4ed51ccb2f81c26a8b36cf9d6d0bbe891a807bc8c7f9b97512dc394"
+    },
+    "responseValidation": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0248-grand-falls-windsor-long-term-care-home/attempt-2/chatgpt-response-validation.json",
+      "sha256": "ecfb73ba5071bd181b09a86fdc2e45e7d6f510cef87b9c3cedd26e9ea4388edc"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0248-grand-falls-windsor-long-term-care-home/attempt-2/source-verification.json",
+      "sha256": "405f5aa583ee6ff6e7240711635342c524395db26c77d8d4500de725415e4b8d"
+    }
+  }
+}

@@ -5,8 +5,8 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-09-04T15:15:00.000Z",
-  "runStatus": "COMPLETE_WITH_EXCEPTIONS",
+  "updatedAt": "2026-09-04T20:42:04.000Z",
+  "runStatus": "IDLE",
   "activeTaskId": null,
   "source": {
     "manifest": {
@@ -28966,29 +28966,81 @@
       "managerIndex": 45,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "2b63296e5bddb0e51155092d5f63d70cac42188f1bda2b827b1ee465af7e204a",
-      "status": "DEFERRED",
+      "status": "PENDING",
       "attempts": 1,
-      "startedAt": "2026-08-29T15:12:37.000Z",
-      "updatedAt": "2026-08-29T16:08:36.000Z",
-      "completedAt": "2026-08-29T16:08:36.000Z",
-      "exceptionReason": "The facility is conclusively part of the single Gander and Grand Falls-Windsor Care Homes Project and should not remain a separate manager-level PortCo. However, the exact limited partners and percentages in Fengate Central Health, LP are not publicly disclosed, and official materials conflict on whether SEC Pomerleau retained equity after financial close. The merge is deferred until the canonical bundle's current ownership can be represented without inference.",
+      "startedAt": null,
+      "updatedAt": "2026-09-04T20:42:00.000Z",
+      "completedAt": null,
+      "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": "75f8e1fd0656c94f6e0e08fbf682991aa72cf19ccae1f62b78d2c7673198373a",
+      "taskSnapshotSha256": null,
       "artifacts": {
-        "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0248-grand-falls-windsor-long-term-care-home/attempt-1/locked-task-snapshot.json",
-          "sha256": "75f8e1fd0656c94f6e0e08fbf682991aa72cf19ccae1f62b78d2c7673198373a"
-        },
+        "taskSnapshot": null,
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0248-grand-falls-windsor-long-term-care-home/attempt-1/terminal-decision.json",
-          "sha256": "62d97d0922a232b9d9aaa930b2e2af56facee9f15ec38a7d32bf0be9fb45a00e"
-        },
+        "decision": null,
         "companySnapshot": null
       },
       "recovery": null,
+      "reAdjudications": [
+        {
+          "sequence": 1,
+          "reopenedAt": "2026-09-04T20:42:00.000Z",
+          "reason": "Fresh signed-in ChatGPT Pro / GPT-5.6 Sol / Pro / 5-of-5 re-adjudication completed with direct-source verification and an exact terminal or mutation-ready outcome.",
+          "priorCompletedAt": "2026-08-29T16:08:36.000Z",
+          "priorExceptionReason": "The facility is conclusively part of the single Gander and Grand Falls-Windsor Care Homes Project and should not remain a separate manager-level PortCo. However, the exact limited partners and percentages in Fengate Central Health, LP are not publicly disclosed, and official materials conflict on whether SEC Pomerleau retained equity after financial close. The merge is deferred until the canonical bundle's current ownership can be represented without inference.",
+          "priorArtifacts": {
+            "taskSnapshot": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0248-grand-falls-windsor-long-term-care-home/attempt-1/locked-task-snapshot.json",
+              "sha256": "75f8e1fd0656c94f6e0e08fbf682991aa72cf19ccae1f62b78d2c7673198373a"
+            },
+            "proposal": null,
+            "approval": null,
+            "applyReceipt": null,
+            "decision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0248-grand-falls-windsor-long-term-care-home/attempt-1/terminal-decision.json",
+              "sha256": "62d97d0922a232b9d9aaa930b2e2af56facee9f15ec38a7d32bf0be9fb45a00e"
+            },
+            "companySnapshot": null
+          },
+          "priorManifestSha256": "03f7a82c1769b0f4f1c307acc0c533428f2ff07e0f69c35d17651780b42ffe2b",
+          "batchLedger": {
+            "location": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+            "sha256": "d3cf7429a751cbad8a53b2a45352ca264f166ac6167aa520b5a1ac7e584b65f0"
+          },
+          "evidence": {
+            "researchDecision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0248-grand-falls-windsor-long-term-care-home/attempt-2/research-decision.json",
+              "sha256": "b5566ce07b7a0f675781c94cf7ba21c38546ad8985a613791ccfa262f08c1307"
+            },
+            "chatgptAttestation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0248-grand-falls-windsor-long-term-care-home/attempt-2/chatgpt-attestation.json",
+              "sha256": "728bb48eb4ed51ccb2f81c26a8b36cf9d6d0bbe891a807bc8c7f9b97512dc394"
+            },
+            "prompt": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0248-grand-falls-windsor-long-term-care-home/attempt-2/chatgpt-research-prompt.md",
+              "sha256": "9aba3219ba08728b1904d6ce7311a2b9c90a10ed1d7fc87360ee9f32e7a2a0f6"
+            },
+            "acceptedResponse": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0248-grand-falls-windsor-long-term-care-home/attempt-2/chatgpt-accepted-response.txt",
+              "sha256": "8d8fd35f45d8dfc916e7336de9950dd62c9544e41b017d745b2fcb1dc411c9c3"
+            },
+            "transcript": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0248-grand-falls-windsor-long-term-care-home/attempt-2/chatgpt-transcript.txt",
+              "sha256": "bc0167e60fcb29b59a1e9019b1c2d8e46ffbf5edcd6a36041e0247845ef51fb9"
+            },
+            "sourceVerification": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0248-grand-falls-windsor-long-term-care-home/attempt-2/source-verification.json",
+              "sha256": "405f5aa583ee6ff6e7240711635342c524395db26c77d8d4500de725415e4b8d"
+            },
+            "responseValidation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0248-grand-falls-windsor-long-term-care-home/attempt-2/chatgpt-response-validation.json",
+              "sha256": "ecfb73ba5071bd181b09a86fdc2e45e7d6f510cef87b9c3cedd26e9ea4388edc"
+            }
+          }
+        }
+      ],
       "history": [
         {
           "sequence": 1,
@@ -29014,6 +29066,25 @@
             "fcff3e836d88a6278655a0c77152bb1a5b5ef7379621d6b065fd4cb8527bb101"
           ],
           "kind": "BATCH"
+        },
+        {
+          "sequence": 3,
+          "from": "DEFERRED",
+          "to": "PENDING",
+          "at": "2026-09-04T20:42:00.000Z",
+          "reason": "Fresh signed-in ChatGPT Pro / GPT-5.6 Sol / Pro / 5-of-5 re-adjudication completed with direct-source verification and an exact terminal or mutation-ready outcome.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "405f5aa583ee6ff6e7240711635342c524395db26c77d8d4500de725415e4b8d",
+            "728bb48eb4ed51ccb2f81c26a8b36cf9d6d0bbe891a807bc8c7f9b97512dc394",
+            "8d8fd35f45d8dfc916e7336de9950dd62c9544e41b017d745b2fcb1dc411c9c3",
+            "9aba3219ba08728b1904d6ce7311a2b9c90a10ed1d7fc87360ee9f32e7a2a0f6",
+            "b5566ce07b7a0f675781c94cf7ba21c38546ad8985a613791ccfa262f08c1307",
+            "bc0167e60fcb29b59a1e9019b1c2d8e46ffbf5edcd6a36041e0247845ef51fb9",
+            "d3cf7429a751cbad8a53b2a45352ca264f166ac6167aa520b5a1ac7e584b65f0",
+            "ecfb73ba5071bd181b09a86fdc2e45e7d6f510cef87b9c3cedd26e9ea4388edc"
+          ],
+          "kind": "DEFERRED_READJUDICATION"
         }
       ]
     },
@@ -29333,29 +29404,81 @@
       "managerIndex": 46,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "075ff46a73d819c80f2c9123041ffb28f01565fc09a2382a57e933ef465ea266",
-      "status": "DEFERRED",
+      "status": "PENDING",
       "attempts": 1,
-      "startedAt": "2026-08-29T16:16:00.000Z",
-      "updatedAt": "2026-08-29T17:12:45.000Z",
-      "completedAt": "2026-08-29T17:12:45.000Z",
-      "exceptionReason": "The generic asset-SPV record resolves to Green Transportation Leasing, LLC, historically jointly owned by Generate and BYD. A 2026 registry extract shows an active legal entity and a Generate-linked manager, so immediate retirement is not supported. Application is deferred because direct evidence does not establish the current member schedule, current equity stakes, BYD's current status, or whether the platform still holds an in-scope leasing asset book rather than only an active shell.",
+      "startedAt": null,
+      "updatedAt": "2026-09-04T20:42:01.000Z",
+      "completedAt": null,
+      "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": "dd10151862fcda9330925ba9b0bf9947550076a07fd40407f84b954e72cb2d58",
+      "taskSnapshotSha256": null,
       "artifacts": {
-        "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0253-byd-ev-fleet-asset-spvs/attempt-1/locked-task-snapshot.json",
-          "sha256": "dd10151862fcda9330925ba9b0bf9947550076a07fd40407f84b954e72cb2d58"
-        },
+        "taskSnapshot": null,
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0253-byd-ev-fleet-asset-spvs/attempt-1/terminal-decision.json",
-          "sha256": "09c477afaa471b0565ce8682136cdf5ba754dc1554268c1b49d4091d7783001a"
-        },
+        "decision": null,
         "companySnapshot": null
       },
       "recovery": null,
+      "reAdjudications": [
+        {
+          "sequence": 1,
+          "reopenedAt": "2026-09-04T20:42:01.000Z",
+          "reason": "Fresh signed-in ChatGPT Pro / GPT-5.6 Sol / Pro / 5-of-5 re-adjudication completed with direct-source verification and an exact terminal or mutation-ready outcome.",
+          "priorCompletedAt": "2026-08-29T17:12:45.000Z",
+          "priorExceptionReason": "The generic asset-SPV record resolves to Green Transportation Leasing, LLC, historically jointly owned by Generate and BYD. A 2026 registry extract shows an active legal entity and a Generate-linked manager, so immediate retirement is not supported. Application is deferred because direct evidence does not establish the current member schedule, current equity stakes, BYD's current status, or whether the platform still holds an in-scope leasing asset book rather than only an active shell.",
+          "priorArtifacts": {
+            "taskSnapshot": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0253-byd-ev-fleet-asset-spvs/attempt-1/locked-task-snapshot.json",
+              "sha256": "dd10151862fcda9330925ba9b0bf9947550076a07fd40407f84b954e72cb2d58"
+            },
+            "proposal": null,
+            "approval": null,
+            "applyReceipt": null,
+            "decision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0253-byd-ev-fleet-asset-spvs/attempt-1/terminal-decision.json",
+              "sha256": "09c477afaa471b0565ce8682136cdf5ba754dc1554268c1b49d4091d7783001a"
+            },
+            "companySnapshot": null
+          },
+          "priorManifestSha256": "08a08e74a88effaf0dd96efdb80f38f9a28ca122db0e58af67d32fd77f4d8c70",
+          "batchLedger": {
+            "location": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+            "sha256": "d3cf7429a751cbad8a53b2a45352ca264f166ac6167aa520b5a1ac7e584b65f0"
+          },
+          "evidence": {
+            "researchDecision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0253-byd-ev-fleet-asset-spvs/attempt-2/research-decision.json",
+              "sha256": "324b38aa597fd7a42ef75f860c56d4dbf6cc8c2a303327d88803c1766385cee8"
+            },
+            "chatgptAttestation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0253-byd-ev-fleet-asset-spvs/attempt-2/chatgpt-attestation.json",
+              "sha256": "9b4e0091dfe8e430018cd3c9a7180a3c716910e1d1fd0d6507bfe59d0ad65c0c"
+            },
+            "prompt": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0253-byd-ev-fleet-asset-spvs/attempt-2/chatgpt-research-prompt.md",
+              "sha256": "4322de04005f78c2fbf6edc1bf59460433e1f60806f3d112ec55cdd9b282c791"
+            },
+            "acceptedResponse": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0253-byd-ev-fleet-asset-spvs/attempt-2/chatgpt-accepted-response.txt",
+              "sha256": "c711971edae8395cd59f27ec1acb569b1a9060c8ec597b63b2a7f830f4c7503a"
+            },
+            "transcript": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0253-byd-ev-fleet-asset-spvs/attempt-2/chatgpt-transcript.txt",
+              "sha256": "d5e7b061e5046e70caa91db16744ab31a50cf0d3a6276c1c0a66a2382942e5c1"
+            },
+            "sourceVerification": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0253-byd-ev-fleet-asset-spvs/attempt-2/source-verification.json",
+              "sha256": "439bb15251fe9d835d200a31d30311cfc6065b57ddb3c22d7ddba50ebf5a7acf"
+            },
+            "responseValidation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0253-byd-ev-fleet-asset-spvs/attempt-2/chatgpt-response-validation.json",
+              "sha256": "da60d612042173ca5f97a4037d2e4052afcadba9ad9c98f0ec1cdc5f933757d7"
+            }
+          }
+        }
+      ],
       "history": [
         {
           "sequence": 1,
@@ -29381,6 +29504,25 @@
             "f2688d921be742fe4b6878016dc5b13c4bc7c469634e8f8e1170e7a7aabe4fdf"
           ],
           "kind": "BATCH"
+        },
+        {
+          "sequence": 3,
+          "from": "DEFERRED",
+          "to": "PENDING",
+          "at": "2026-09-04T20:42:01.000Z",
+          "reason": "Fresh signed-in ChatGPT Pro / GPT-5.6 Sol / Pro / 5-of-5 re-adjudication completed with direct-source verification and an exact terminal or mutation-ready outcome.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "324b38aa597fd7a42ef75f860c56d4dbf6cc8c2a303327d88803c1766385cee8",
+            "4322de04005f78c2fbf6edc1bf59460433e1f60806f3d112ec55cdd9b282c791",
+            "439bb15251fe9d835d200a31d30311cfc6065b57ddb3c22d7ddba50ebf5a7acf",
+            "9b4e0091dfe8e430018cd3c9a7180a3c716910e1d1fd0d6507bfe59d0ad65c0c",
+            "c711971edae8395cd59f27ec1acb569b1a9060c8ec597b63b2a7f830f4c7503a",
+            "d3cf7429a751cbad8a53b2a45352ca264f166ac6167aa520b5a1ac7e584b65f0",
+            "d5e7b061e5046e70caa91db16744ab31a50cf0d3a6276c1c0a66a2382942e5c1",
+            "da60d612042173ca5f97a4037d2e4052afcadba9ad9c98f0ec1cdc5f933757d7"
+          ],
+          "kind": "DEFERRED_READJUDICATION"
         }
       ]
     },
@@ -29546,29 +29688,81 @@
       "managerIndex": 46,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "58e4fd898161698cd45a2224df91dba168988a70f72a35991e8afc70ece82ff5",
-      "status": "DEFERRED",
+      "status": "PENDING",
       "attempts": 1,
-      "startedAt": "2026-08-29T17:20:23.000Z",
-      "updatedAt": "2026-08-29T18:24:42.000Z",
-      "completedAt": "2026-08-29T18:24:42.000Z",
-      "exceptionReason": "EnviraPAC Monticello, LLC is the verified operating facility owner/operator, but Generate disclosed a $25 million investment in an unnamed bankruptcy-remote project SPV rather than corporate equity in EnviraPAC. The SPV identity, present title chain, Generate's current ownership state and any exit date remain unresolved, so the active corporate ownership record cannot be safely changed.",
+      "startedAt": null,
+      "updatedAt": "2026-09-04T20:42:02.000Z",
+      "completedAt": null,
+      "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": "621bc1577c7a94467580c44b4fbd5621260591e1fda4da801b53aa545d414dea",
+      "taskSnapshotSha256": null,
       "artifacts": {
-        "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0256-envirapac-monticello/attempt-1/locked-task-snapshot.json",
-          "sha256": "621bc1577c7a94467580c44b4fbd5621260591e1fda4da801b53aa545d414dea"
-        },
+        "taskSnapshot": null,
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0256-envirapac-monticello/attempt-1/terminal-decision.json",
-          "sha256": "7c17f7713c6b840d52e4f70ce59828c4b112903905f843159514a8dda6be73c5"
-        },
+        "decision": null,
         "companySnapshot": null
       },
       "recovery": null,
+      "reAdjudications": [
+        {
+          "sequence": 1,
+          "reopenedAt": "2026-09-04T20:42:02.000Z",
+          "reason": "Fresh signed-in ChatGPT Pro / GPT-5.6 Sol / Pro / 5-of-5 re-adjudication completed with direct-source verification and an exact terminal or mutation-ready outcome.",
+          "priorCompletedAt": "2026-08-29T18:24:42.000Z",
+          "priorExceptionReason": "EnviraPAC Monticello, LLC is the verified operating facility owner/operator, but Generate disclosed a $25 million investment in an unnamed bankruptcy-remote project SPV rather than corporate equity in EnviraPAC. The SPV identity, present title chain, Generate's current ownership state and any exit date remain unresolved, so the active corporate ownership record cannot be safely changed.",
+          "priorArtifacts": {
+            "taskSnapshot": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0256-envirapac-monticello/attempt-1/locked-task-snapshot.json",
+              "sha256": "621bc1577c7a94467580c44b4fbd5621260591e1fda4da801b53aa545d414dea"
+            },
+            "proposal": null,
+            "approval": null,
+            "applyReceipt": null,
+            "decision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0256-envirapac-monticello/attempt-1/terminal-decision.json",
+              "sha256": "7c17f7713c6b840d52e4f70ce59828c4b112903905f843159514a8dda6be73c5"
+            },
+            "companySnapshot": null
+          },
+          "priorManifestSha256": "943fc965fc3f86b9d2ca35b7613d3521632f29a511bfa4f627957e1e5c0620cc",
+          "batchLedger": {
+            "location": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+            "sha256": "d3cf7429a751cbad8a53b2a45352ca264f166ac6167aa520b5a1ac7e584b65f0"
+          },
+          "evidence": {
+            "researchDecision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0256-envirapac-monticello/attempt-2/research-decision.json",
+              "sha256": "1718b0cac45b09bf31aa0e650ac769c4a1625181a7f86535aefbed4e27fe0406"
+            },
+            "chatgptAttestation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0256-envirapac-monticello/attempt-2/chatgpt-attestation.json",
+              "sha256": "6f568b5027490fa7b7873821bd11462928e18fa090ebb671cb6d15e7031abcd8"
+            },
+            "prompt": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0256-envirapac-monticello/attempt-2/chatgpt-research-prompt.md",
+              "sha256": "069635b8a6ff1b9f98d5d1ce96499008a8e657aea466ace00bb2f77bdcc3a2b2"
+            },
+            "acceptedResponse": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0256-envirapac-monticello/attempt-2/chatgpt-accepted-response.txt",
+              "sha256": "d7b6feef4ac3ca3f5e56c40958a108c43df708be27762acaead63463913a7ee7"
+            },
+            "transcript": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0256-envirapac-monticello/attempt-2/chatgpt-transcript.txt",
+              "sha256": "488f34a09c34066452b853ae02cd400e5161a968c411c9fa6cccceee05ed0ded"
+            },
+            "sourceVerification": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0256-envirapac-monticello/attempt-2/source-verification.json",
+              "sha256": "3d6b9956afe30420b50d3071fbe8c24fbd705e00c734bf0003ac10646c1e6bfb"
+            },
+            "responseValidation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0256-envirapac-monticello/attempt-2/chatgpt-response-validation.json",
+              "sha256": "df9d3a497f0dd963a6e8b920e9219737942d587f552086a740dc03001fdd2473"
+            }
+          }
+        }
+      ],
       "history": [
         {
           "sequence": 1,
@@ -29594,6 +29788,25 @@
             "9d8eb449035183b44d76d4de5833795badca2a9a1e7ec51828b8619886968a8e"
           ],
           "kind": "BATCH"
+        },
+        {
+          "sequence": 3,
+          "from": "DEFERRED",
+          "to": "PENDING",
+          "at": "2026-09-04T20:42:02.000Z",
+          "reason": "Fresh signed-in ChatGPT Pro / GPT-5.6 Sol / Pro / 5-of-5 re-adjudication completed with direct-source verification and an exact terminal or mutation-ready outcome.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "069635b8a6ff1b9f98d5d1ce96499008a8e657aea466ace00bb2f77bdcc3a2b2",
+            "1718b0cac45b09bf31aa0e650ac769c4a1625181a7f86535aefbed4e27fe0406",
+            "3d6b9956afe30420b50d3071fbe8c24fbd705e00c734bf0003ac10646c1e6bfb",
+            "488f34a09c34066452b853ae02cd400e5161a968c411c9fa6cccceee05ed0ded",
+            "6f568b5027490fa7b7873821bd11462928e18fa090ebb671cb6d15e7031abcd8",
+            "d3cf7429a751cbad8a53b2a45352ca264f166ac6167aa520b5a1ac7e584b65f0",
+            "d7b6feef4ac3ca3f5e56c40958a108c43df708be27762acaead63463913a7ee7",
+            "df9d3a497f0dd963a6e8b920e9219737942d587f552086a740dc03001fdd2473"
+          ],
+          "kind": "DEFERRED_READJUDICATION"
         }
       ]
     },
@@ -29605,29 +29818,81 @@
       "managerIndex": 46,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "af1e2d30c0d2bc2985e2f8e0bd4cdaa449eae564e908441d69233a472dfc1366",
-      "status": "DEFERRED",
+      "status": "PENDING",
       "attempts": 1,
-      "startedAt": "2026-08-29T17:20:23.000Z",
-      "updatedAt": "2026-08-29T18:24:42.000Z",
-      "completedAt": "2026-08-29T18:24:42.000Z",
-      "exceptionReason": "Pine Gate's current repository ownership is stale after its November 2025 Chapter 11 process and reported April 2026 plan effectiveness. The prepetition Generate, HOOPP and HESTA periods should end, but the direct sale orders, purchaser identities and surviving canonical platform boundary are not sufficiently resolved to publish a complete current owner roster or realized status without inference.",
+      "startedAt": null,
+      "updatedAt": "2026-09-04T20:42:03.000Z",
+      "completedAt": null,
+      "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": "d32b0563becc6cfbee3bc21cfa14e0000a91abe6a35829b15fd2b248e56a6b9a",
+      "taskSnapshotSha256": null,
       "artifacts": {
-        "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0257-pine-gate-renewables/attempt-1/locked-task-snapshot.json",
-          "sha256": "d32b0563becc6cfbee3bc21cfa14e0000a91abe6a35829b15fd2b248e56a6b9a"
-        },
+        "taskSnapshot": null,
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0257-pine-gate-renewables/attempt-1/terminal-decision.json",
-          "sha256": "0ecdf23cf9bd9491c5f8965b052b63fb809f916090b3bdebac46a996c3ddc5e0"
-        },
+        "decision": null,
         "companySnapshot": null
       },
       "recovery": null,
+      "reAdjudications": [
+        {
+          "sequence": 1,
+          "reopenedAt": "2026-09-04T20:42:03.000Z",
+          "reason": "Fresh signed-in ChatGPT Pro / GPT-5.6 Sol / Pro / 5-of-5 re-adjudication completed with direct-source verification and an exact terminal or mutation-ready outcome.",
+          "priorCompletedAt": "2026-08-29T18:24:42.000Z",
+          "priorExceptionReason": "Pine Gate's current repository ownership is stale after its November 2025 Chapter 11 process and reported April 2026 plan effectiveness. The prepetition Generate, HOOPP and HESTA periods should end, but the direct sale orders, purchaser identities and surviving canonical platform boundary are not sufficiently resolved to publish a complete current owner roster or realized status without inference.",
+          "priorArtifacts": {
+            "taskSnapshot": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0257-pine-gate-renewables/attempt-1/locked-task-snapshot.json",
+              "sha256": "d32b0563becc6cfbee3bc21cfa14e0000a91abe6a35829b15fd2b248e56a6b9a"
+            },
+            "proposal": null,
+            "approval": null,
+            "applyReceipt": null,
+            "decision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0257-pine-gate-renewables/attempt-1/terminal-decision.json",
+              "sha256": "0ecdf23cf9bd9491c5f8965b052b63fb809f916090b3bdebac46a996c3ddc5e0"
+            },
+            "companySnapshot": null
+          },
+          "priorManifestSha256": "f77716631cb77ed76fa0a7e09f3058700d28e36e88da841f640d05ed9cb8c06a",
+          "batchLedger": {
+            "location": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+            "sha256": "d3cf7429a751cbad8a53b2a45352ca264f166ac6167aa520b5a1ac7e584b65f0"
+          },
+          "evidence": {
+            "researchDecision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0257-pine-gate-renewables/attempt-2/research-decision.json",
+              "sha256": "083eed52a07e777c37fa3eebb42bf00d215ef02d014cb85d40bc2dd41fa3f2c4"
+            },
+            "chatgptAttestation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0257-pine-gate-renewables/attempt-2/chatgpt-attestation.json",
+              "sha256": "7cb64bfc1a2e0f5828014613b98cceaac67142ecd41635498660508d725ecaf5"
+            },
+            "prompt": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0257-pine-gate-renewables/attempt-2/chatgpt-research-prompt.md",
+              "sha256": "62bec165309c8d498383fcb11551d6f3a7677740ae35087bc3dc04511e3fa869"
+            },
+            "acceptedResponse": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0257-pine-gate-renewables/attempt-2/chatgpt-accepted-response.txt",
+              "sha256": "2989d2d146ff3aa2a20e0d4715967539f9d57fe2a3964f4fbe6a72626bbeb7ff"
+            },
+            "transcript": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0257-pine-gate-renewables/attempt-2/chatgpt-transcript.txt",
+              "sha256": "56056197eb89c5555d6872652c048b2e87d1e86637edf433dba6b220a5cbe7af"
+            },
+            "sourceVerification": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0257-pine-gate-renewables/attempt-2/source-verification.json",
+              "sha256": "bb116666e8c69b142a10bddd7027c51f68d0ee510d284441b1fe02009b3c80fb"
+            },
+            "responseValidation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0257-pine-gate-renewables/attempt-2/chatgpt-response-validation.json",
+              "sha256": "2314fd20c8a9198d175a782775dbd9edacb1a4e42bde348a29fe0a210fac8a07"
+            }
+          }
+        }
+      ],
       "history": [
         {
           "sequence": 1,
@@ -29653,6 +29918,25 @@
             "d32b0563becc6cfbee3bc21cfa14e0000a91abe6a35829b15fd2b248e56a6b9a"
           ],
           "kind": "BATCH"
+        },
+        {
+          "sequence": 3,
+          "from": "DEFERRED",
+          "to": "PENDING",
+          "at": "2026-09-04T20:42:03.000Z",
+          "reason": "Fresh signed-in ChatGPT Pro / GPT-5.6 Sol / Pro / 5-of-5 re-adjudication completed with direct-source verification and an exact terminal or mutation-ready outcome.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "083eed52a07e777c37fa3eebb42bf00d215ef02d014cb85d40bc2dd41fa3f2c4",
+            "2314fd20c8a9198d175a782775dbd9edacb1a4e42bde348a29fe0a210fac8a07",
+            "2989d2d146ff3aa2a20e0d4715967539f9d57fe2a3964f4fbe6a72626bbeb7ff",
+            "56056197eb89c5555d6872652c048b2e87d1e86637edf433dba6b220a5cbe7af",
+            "62bec165309c8d498383fcb11551d6f3a7677740ae35087bc3dc04511e3fa869",
+            "7cb64bfc1a2e0f5828014613b98cceaac67142ecd41635498660508d725ecaf5",
+            "bb116666e8c69b142a10bddd7027c51f68d0ee510d284441b1fe02009b3c80fb",
+            "d3cf7429a751cbad8a53b2a45352ca264f166ac6167aa520b5a1ac7e584b65f0"
+          ],
+          "kind": "DEFERRED_READJUDICATION"
         }
       ]
     },
@@ -30031,29 +30315,81 @@
       "managerIndex": 47,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "4be111aa6c8792eae03e118e6d10ff03ef9cc60cfe7c301173f11a635360a2bc",
-      "status": "DEFERRED",
+      "status": "PENDING",
       "attempts": 1,
-      "startedAt": "2026-08-29T18:55:37.000Z",
-      "updatedAt": "2026-08-29T19:29:00.000Z",
-      "completedAt": "2026-08-29T19:29:00.000Z",
-      "exceptionReason": "Divert remains a verified active platform and Ara's continuing ownership is supported, but GIC's 2021 direct investment cannot be safely reconciled because no primary source establishes whether GIC remains a shareholder or identifies the sponsoring GIC strategy or legal affiliate. Applying only the supported owners would silently retire a potentially current position, while retaining the repository's GIC Infrastructure label would preserve an unsupported attribution. Defer the entire list correction until that active-ownership question is resolved.",
+      "startedAt": null,
+      "updatedAt": "2026-09-04T20:42:04.000Z",
+      "completedAt": null,
+      "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": "232e97fa8abf007fc51d7602c0ebcb3ea2c9961d90414f5cd126411ce46dbdc4",
+      "taskSnapshotSha256": null,
       "artifacts": {
-        "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0263-divert-inc/attempt-1/locked-task-snapshot.json",
-          "sha256": "232e97fa8abf007fc51d7602c0ebcb3ea2c9961d90414f5cd126411ce46dbdc4"
-        },
+        "taskSnapshot": null,
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0263-divert-inc/attempt-1/terminal-decision.json",
-          "sha256": "1004180fce4052cc37e8a4ec860e3dd162463bd4c74a85b775e466f82b87a16e"
-        },
+        "decision": null,
         "companySnapshot": null
       },
       "recovery": null,
+      "reAdjudications": [
+        {
+          "sequence": 1,
+          "reopenedAt": "2026-09-04T20:42:04.000Z",
+          "reason": "Fresh signed-in ChatGPT Pro / GPT-5.6 Sol / Pro / 5-of-5 re-adjudication completed with direct-source verification and an exact terminal or mutation-ready outcome.",
+          "priorCompletedAt": "2026-08-29T19:29:00.000Z",
+          "priorExceptionReason": "Divert remains a verified active platform and Ara's continuing ownership is supported, but GIC's 2021 direct investment cannot be safely reconciled because no primary source establishes whether GIC remains a shareholder or identifies the sponsoring GIC strategy or legal affiliate. Applying only the supported owners would silently retire a potentially current position, while retaining the repository's GIC Infrastructure label would preserve an unsupported attribution. Defer the entire list correction until that active-ownership question is resolved.",
+          "priorArtifacts": {
+            "taskSnapshot": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0263-divert-inc/attempt-1/locked-task-snapshot.json",
+              "sha256": "232e97fa8abf007fc51d7602c0ebcb3ea2c9961d90414f5cd126411ce46dbdc4"
+            },
+            "proposal": null,
+            "approval": null,
+            "applyReceipt": null,
+            "decision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0263-divert-inc/attempt-1/terminal-decision.json",
+              "sha256": "1004180fce4052cc37e8a4ec860e3dd162463bd4c74a85b775e466f82b87a16e"
+            },
+            "companySnapshot": null
+          },
+          "priorManifestSha256": "2e9e10fbd026592469a07bf6d62fbe7d7233a892b972f8ae5711fd31d611fd3e",
+          "batchLedger": {
+            "location": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+            "sha256": "d3cf7429a751cbad8a53b2a45352ca264f166ac6167aa520b5a1ac7e584b65f0"
+          },
+          "evidence": {
+            "researchDecision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0263-divert-inc/attempt-2/research-decision.json",
+              "sha256": "4f395b8c47d981c9183fabfb5d3e748ae4b90d4a741a0422ea93c0d6525db83b"
+            },
+            "chatgptAttestation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0263-divert-inc/attempt-2/chatgpt-attestation.json",
+              "sha256": "9b12deeca7d6ea98a0c446fa5c7a7d5e0dba4fe2908806f0217a86e1f7fab16a"
+            },
+            "prompt": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0263-divert-inc/attempt-2/chatgpt-research-prompt.md",
+              "sha256": "0d468071af46f24ca472aae11b35c81defa2e9ad8f7031a617bdecd5c8372b18"
+            },
+            "acceptedResponse": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0263-divert-inc/attempt-2/chatgpt-accepted-response.txt",
+              "sha256": "0307f3141f4a453733e33ecb03098749934ec39a4bdef093ed43232808bcab65"
+            },
+            "transcript": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0263-divert-inc/attempt-2/chatgpt-transcript.txt",
+              "sha256": "35616f2099b81e17d746be1b7eb491bec572cd5c9b569e7eab851e3d5aeb7d7c"
+            },
+            "sourceVerification": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0263-divert-inc/attempt-2/source-verification.json",
+              "sha256": "8d8a53cca37a3c1cf40ce1845ff18b82eb6a66b3852a96c434b9a670aae1971f"
+            },
+            "responseValidation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0263-divert-inc/attempt-2/chatgpt-response-validation.json",
+              "sha256": "b197f67e03bfb7cebde6c662dd524eb06f5e9ba13df003bb3b4384ab3e6448a9"
+            }
+          }
+        }
+      ],
       "history": [
         {
           "sequence": 1,
@@ -30079,6 +30415,25 @@
             "e7009ead2e4c6d46c161899b9989fc43dc64483bbcb779e56bb9398012cfbfac"
           ],
           "kind": "BATCH"
+        },
+        {
+          "sequence": 3,
+          "from": "DEFERRED",
+          "to": "PENDING",
+          "at": "2026-09-04T20:42:04.000Z",
+          "reason": "Fresh signed-in ChatGPT Pro / GPT-5.6 Sol / Pro / 5-of-5 re-adjudication completed with direct-source verification and an exact terminal or mutation-ready outcome.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "0307f3141f4a453733e33ecb03098749934ec39a4bdef093ed43232808bcab65",
+            "0d468071af46f24ca472aae11b35c81defa2e9ad8f7031a617bdecd5c8372b18",
+            "35616f2099b81e17d746be1b7eb491bec572cd5c9b569e7eab851e3d5aeb7d7c",
+            "4f395b8c47d981c9183fabfb5d3e748ae4b90d4a741a0422ea93c0d6525db83b",
+            "8d8a53cca37a3c1cf40ce1845ff18b82eb6a66b3852a96c434b9a670aae1971f",
+            "9b12deeca7d6ea98a0c446fa5c7a7d5e0dba4fe2908806f0217a86e1f7fab16a",
+            "b197f67e03bfb7cebde6c662dd524eb06f5e9ba13df003bb3b4384ab3e6448a9",
+            "d3cf7429a751cbad8a53b2a45352ca264f166ac6167aa520b5a1ac7e584b65f0"
+          ],
+          "kind": "DEFERRED_READJUDICATION"
         }
       ]
     },
@@ -46002,5 +46357,5 @@
       ]
     }
   ],
-  "manifestSha256": "03f7a82c1769b0f4f1c307acc0c533428f2ff07e0f69c35d17651780b42ffe2b"
+  "manifestSha256": "8d9dde27ec326eedfaec8c232a36bc9fbe673dc6e0b391f35e47478d3e599d66"
 }
