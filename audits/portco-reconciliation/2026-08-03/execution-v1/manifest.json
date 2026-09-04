@@ -5,8 +5,8 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-09-03T23:25:16.000Z",
-  "runStatus": "IDLE",
+  "updatedAt": "2026-09-04T00:03:26.000Z",
+  "runStatus": "COMPLETE_WITH_EXCEPTIONS",
   "activeTaskId": null,
   "source": {
     "manifest": {
@@ -6563,23 +6563,44 @@
       "managerIndex": 9,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "855ee7da044164e646fa3fb775f03e22c8d1560b9657e07418aa5d2b3cd8281f",
-      "status": "PENDING",
-      "attempts": 1,
-      "startedAt": null,
-      "updatedAt": "2026-09-03T23:24:42.000Z",
-      "completedAt": null,
+      "status": "COMPLETED",
+      "attempts": 2,
+      "startedAt": "2026-09-03T23:25:30.000Z",
+      "updatedAt": "2026-09-04T00:03:26.000Z",
+      "completedAt": "2026-09-04T00:03:26.000Z",
       "exceptionReason": null,
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "7297312cc55f3bc2b83841dae83a783256cccfe41c659ec438e0cd86e90a1ce5",
       "artifacts": {
-        "taskSnapshot": null,
-        "proposal": null,
-        "approval": null,
-        "applyReceipt": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0042-sifi-networks-america-limited/attempt-2/locked-deferred-v1-task-snapshot.json",
+          "sha256": "7297312cc55f3bc2b83841dae83a783256cccfe41c659ec438e0cd86e90a1ce5"
+        },
+        "proposal": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0042-sifi-networks-america-limited/attempt-2/proposal-deferred-v1.json",
+          "sha256": "d53d8af6d5051591468f9c5711cb785a8cb48fbd5549d92ae0623c62e5caa0bf"
+        },
+        "approval": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0042-sifi-networks-america-limited/attempt-2/approval-deferred-v1.json",
+          "sha256": "e71a101b3d9416c135d21784210675ee4673f4727ab18fa32f21588794096a20"
+        },
+        "applyReceipt": {
+          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-deferred-0042-0076-v1/production-apply-run-33819446023/batch-apply-receipt.json#members/0/receipt",
+          "sha256": "b744c2871936911c56d52d0e0b63f6482202b4bbf02b95fb956f380e7547f17c"
+        },
         "decision": null,
-        "companySnapshot": null
+        "companySnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0042-sifi-networks-america-limited/attempt-2/proposal-deferred-v1.json#afterImage",
+          "sha256": "a0a609024b14c55e3a0a4c454577b41ff60729bfe02bce08891d9d1510d25468"
+        }
       },
-      "recovery": null,
+      "recovery": {
+        "recoveredAt": "2026-09-04T00:03:26.000Z",
+        "auditEventId": "cmtm6rqp10003w94xkyzd4z21",
+        "transactionId": "600f3780-42ea-48b8-9d6b-5a725541edf3",
+        "receiptSha256": "b744c2871936911c56d52d0e0b63f6482202b4bbf02b95fb956f380e7547f17c",
+        "workflowRunUrl": "https://github.com/mikeberry6/Infra-MA2/actions/runs/33819446023"
+      },
       "reAdjudications": [
         {
           "sequence": 1,
@@ -6690,6 +6711,24 @@
             "db17c8b02611a1764bdef63e8c9bc2037c70e803a1e79a8818d5792b206694fd"
           ],
           "kind": "DEFERRED_READJUDICATION"
+        },
+        {
+          "sequence": 5,
+          "from": "PENDING",
+          "to": "COMPLETED",
+          "at": "2026-09-04T00:03:26.000Z",
+          "reason": "Completed in verified atomic release bundle batch-deferred-0042-0076-v1.",
+          "taskSnapshotSha256": "7297312cc55f3bc2b83841dae83a783256cccfe41c659ec438e0cd86e90a1ce5",
+          "evidenceSha256": [
+            "7297312cc55f3bc2b83841dae83a783256cccfe41c659ec438e0cd86e90a1ce5",
+            "a0a609024b14c55e3a0a4c454577b41ff60729bfe02bce08891d9d1510d25468",
+            "b744c2871936911c56d52d0e0b63f6482202b4bbf02b95fb956f380e7547f17c",
+            "cb7105c87eb56c4ffb0e39496169ad817d0caf921831c3b8aae3a843d8c61c28",
+            "d53d8af6d5051591468f9c5711cb785a8cb48fbd5549d92ae0623c62e5caa0bf",
+            "e71a101b3d9416c135d21784210675ee4673f4727ab18fa32f21588794096a20",
+            "f88ab0c497384b1201f4f227e9aa6e57513d7882fb550fd0089b6c7c2a880698"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -8042,20 +8081,26 @@
       "managerIndex": 10,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "ac7c57caf36cd8885809155da9f1211dc2904eab74d384ae42c9fe65b91491c5",
-      "status": "PENDING",
-      "attempts": 1,
-      "startedAt": null,
-      "updatedAt": "2026-09-03T23:24:55.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
+      "status": "DEFERRED",
+      "attempts": 2,
+      "startedAt": "2026-09-03T23:25:30.000Z",
+      "updatedAt": "2026-09-04T00:03:26.000Z",
+      "completedAt": "2026-09-04T00:03:26.000Z",
+      "exceptionReason": "Apollo/Tiger's March 2024 transition is proven. Swiss Life's 2019 33% entry and non-zero 2026 vehicle assets are documented, but no post-close source identifies sale, rollover, retention or disposal. Form ADV vehicle assets do not prove Modern/Novus equity.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "518f0467dde58f52ef4dec00c5a0f4cfaa32432158edf1888ef53753477f002a",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0055-modern-aviation/attempt-2/locked-deferred-v1-task-snapshot.json",
+          "sha256": "518f0467dde58f52ef4dec00c5a0f4cfaa32432158edf1888ef53753477f002a"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0055-modern-aviation/attempt-2/terminal-decision-deferred-v1.json",
+          "sha256": "95d737a61055fcf79e1c075171d0c49f28e5b03982aa7fd2116fa348916d6761"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -8169,6 +8214,21 @@
             "fbd9a24d667a43dfe9f7f12f54d59c87a4041552d9f49163b4205a46a4614d08"
           ],
           "kind": "DEFERRED_READJUDICATION"
+        },
+        {
+          "sequence": 5,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-04T00:03:26.000Z",
+          "reason": "Apollo/Tiger's March 2024 transition is proven. Swiss Life's 2019 33% entry and non-zero 2026 vehicle assets are documented, but no post-close source identifies sale, rollover, retention or disposal. Form ADV vehicle assets do not prove Modern/Novus equity.",
+          "taskSnapshotSha256": "518f0467dde58f52ef4dec00c5a0f4cfaa32432158edf1888ef53753477f002a",
+          "evidenceSha256": [
+            "518f0467dde58f52ef4dec00c5a0f4cfaa32432158edf1888ef53753477f002a",
+            "95d737a61055fcf79e1c075171d0c49f28e5b03982aa7fd2116fa348916d6761",
+            "cb7105c87eb56c4ffb0e39496169ad817d0caf921831c3b8aae3a843d8c61c28",
+            "f88ab0c497384b1201f4f227e9aa6e57513d7882fb550fd0089b6c7c2a880698"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -9935,20 +9995,26 @@
       "managerIndex": 12,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "0e031d19f80266962d27a9aa1453a4a5aea371fceb1ecce8162e84c5c1710b61",
-      "status": "PENDING",
-      "attempts": 1,
-      "startedAt": null,
-      "updatedAt": "2026-09-03T23:25:07.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
+      "status": "DEFERRED",
+      "attempts": 2,
+      "startedAt": "2026-09-03T23:25:30.000Z",
+      "updatedAt": "2026-09-04T00:03:26.000Z",
+      "completedAt": "2026-09-04T00:03:26.000Z",
+      "exceptionReason": "ArcLight confirms a distinct Current/Transformative investment label, but no direct source identifies its legal entity, website, headquarters, country, assets, subsidiaries, services, customers, owner vehicle, stake or entry date. The proposed United States key and any operating-company description remain unsupported.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "b9c6a85699a7aef4f7236d3e19e96cbacf221b91d9fd2e19ed2503d71f254493",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0067-clean-computational-infrastructure/attempt-2/locked-deferred-v1-task-snapshot.json",
+          "sha256": "b9c6a85699a7aef4f7236d3e19e96cbacf221b91d9fd2e19ed2503d71f254493"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0067-clean-computational-infrastructure/attempt-2/terminal-decision-deferred-v1.json",
+          "sha256": "283f793ac6fec2b961b7ffc3484dcd9463b338b2ebfaf4402bf3076b563bf120"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -10062,6 +10128,21 @@
             "cae9a2797fe62fcc1c46da25c4f70b25ad87ee44da4dcb94ccb99aa3beaf320d"
           ],
           "kind": "DEFERRED_READJUDICATION"
+        },
+        {
+          "sequence": 5,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-04T00:03:26.000Z",
+          "reason": "ArcLight confirms a distinct Current/Transformative investment label, but no direct source identifies its legal entity, website, headquarters, country, assets, subsidiaries, services, customers, owner vehicle, stake or entry date. The proposed United States key and any operating-company description remain unsupported.",
+          "taskSnapshotSha256": "b9c6a85699a7aef4f7236d3e19e96cbacf221b91d9fd2e19ed2503d71f254493",
+          "evidenceSha256": [
+            "283f793ac6fec2b961b7ffc3484dcd9463b338b2ebfaf4402bf3076b563bf120",
+            "b9c6a85699a7aef4f7236d3e19e96cbacf221b91d9fd2e19ed2503d71f254493",
+            "cb7105c87eb56c4ffb0e39496169ad817d0caf921831c3b8aae3a843d8c61c28",
+            "f88ab0c497384b1201f4f227e9aa6e57513d7882fb550fd0089b6c7c2a880698"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -11231,20 +11312,26 @@
       "managerIndex": 12,
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "32ba7a29fc932f84e9b0117f15a55ccac0741c5b2fc91253f9d2dc1b313bdb5c",
-      "status": "PENDING",
-      "attempts": 1,
-      "startedAt": null,
-      "updatedAt": "2026-09-03T23:25:14.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
+      "status": "DEFERRED",
+      "attempts": 2,
+      "startedAt": "2026-09-03T23:25:30.000Z",
+      "updatedAt": "2026-09-04T00:03:26.000Z",
+      "completedAt": "2026-09-04T00:03:26.000Z",
+      "exceptionReason": "ArcLight verifies a separate Current / Strategic Gas label, but no direct source maps it to a legal entity, company country, operations, or Liberty-specific ownership chain. A U.S. record, merge, or exclusion is therefore unsafe.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "c8c64732f104a1142fced13da7ea59386d2efdb55e339fce93a6be68c7a27a99",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0074-liberty/attempt-2/locked-deferred-v1-task-snapshot.json",
+          "sha256": "c8c64732f104a1142fced13da7ea59386d2efdb55e339fce93a6be68c7a27a99"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0074-liberty/attempt-2/terminal-decision-deferred-v1.json",
+          "sha256": "3c9057edab7f1afb6e3008c0223d40efd73df372d188813816cf15ef1d0b0fa3"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -11358,6 +11445,21 @@
             "df30f39d518a2358a22553c594e0cad54b48abe59822c98d4182413f2052640f"
           ],
           "kind": "DEFERRED_READJUDICATION"
+        },
+        {
+          "sequence": 5,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-04T00:03:26.000Z",
+          "reason": "ArcLight verifies a separate Current / Strategic Gas label, but no direct source maps it to a legal entity, company country, operations, or Liberty-specific ownership chain. A U.S. record, merge, or exclusion is therefore unsafe.",
+          "taskSnapshotSha256": "c8c64732f104a1142fced13da7ea59386d2efdb55e339fce93a6be68c7a27a99",
+          "evidenceSha256": [
+            "3c9057edab7f1afb6e3008c0223d40efd73df372d188813816cf15ef1d0b0fa3",
+            "c8c64732f104a1142fced13da7ea59386d2efdb55e339fce93a6be68c7a27a99",
+            "cb7105c87eb56c4ffb0e39496169ad817d0caf921831c3b8aae3a843d8c61c28",
+            "f88ab0c497384b1201f4f227e9aa6e57513d7882fb550fd0089b6c7c2a880698"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -11436,20 +11538,26 @@
       "managerIndex": 12,
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "9fe83eb0e2831f82a96719eba34d2ba450311557e0a8b4d3e599177fde08d95e",
-      "status": "PENDING",
-      "attempts": 1,
-      "startedAt": null,
-      "updatedAt": "2026-09-03T23:25:16.000Z",
-      "completedAt": null,
-      "exceptionReason": null,
+      "status": "DEFERRED",
+      "attempts": 2,
+      "startedAt": "2026-09-03T23:25:30.000Z",
+      "updatedAt": "2026-09-04T00:03:26.000Z",
+      "completedAt": "2026-09-04T00:03:26.000Z",
+      "exceptionReason": "Direct records prove the Fund II vehicle and 2008 exit, but no post-2008 source maps ArcLight's Current/Power label to an entity or assets. The live table has data defects, yet no correction proves this row stale; creation, merger or exclusion would be inferential.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "1fb97f7ded93e01ada81514c8282534a450e43fa18c8ba6b304f25df85fc4223",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0076-lodi-holdings-ii/attempt-2/locked-deferred-v1-task-snapshot.json",
+          "sha256": "1fb97f7ded93e01ada81514c8282534a450e43fa18c8ba6b304f25df85fc4223"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0076-lodi-holdings-ii/attempt-2/terminal-decision-deferred-v1.json",
+          "sha256": "73f838ace409a3c8684090a37a1526d058e4f5abb8055dd63b17b7bbf7352626"
+        },
         "companySnapshot": null
       },
       "recovery": null,
@@ -11563,6 +11671,21 @@
             "ff478c7875723c63b2f19ce8a6f6b3510e39f8cbc9442f7deb60c53328f9d763"
           ],
           "kind": "DEFERRED_READJUDICATION"
+        },
+        {
+          "sequence": 5,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-04T00:03:26.000Z",
+          "reason": "Direct records prove the Fund II vehicle and 2008 exit, but no post-2008 source maps ArcLight's Current/Power label to an entity or assets. The live table has data defects, yet no correction proves this row stale; creation, merger or exclusion would be inferential.",
+          "taskSnapshotSha256": "1fb97f7ded93e01ada81514c8282534a450e43fa18c8ba6b304f25df85fc4223",
+          "evidenceSha256": [
+            "1fb97f7ded93e01ada81514c8282534a450e43fa18c8ba6b304f25df85fc4223",
+            "73f838ace409a3c8684090a37a1526d058e4f5abb8055dd63b17b7bbf7352626",
+            "cb7105c87eb56c4ffb0e39496169ad817d0caf921831c3b8aae3a843d8c61c28",
+            "f88ab0c497384b1201f4f227e9aa6e57513d7882fb550fd0089b6c7c2a880698"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -44941,5 +45064,5 @@
       ]
     }
   ],
-  "manifestSha256": "fcb978a52e4ac7a610b675596eb8027b7db8ecf8f08d5696c5d965b0b8c650c7"
+  "manifestSha256": "a73afdea011f3e58eae6615a429498c6f50e5bceb4f99eebc23174c571c88bd2"
 }

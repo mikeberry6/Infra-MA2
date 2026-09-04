@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_RECEIPT",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-deferred-0042-0076-v1",
+  "batchSha256": "f88ab0c497384b1201f4f227e9aa6e57513d7882fb550fd0089b6c7c2a880698",
+  "releaseSha": "cd3f3d68e7da4b92bec590c16fbbad1bbfb3eb60",
+  "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+  "transactionId": "600f3780-42ea-48b8-9d6b-5a725541edf3",
+  "appliedAt": "2026-09-03T23:58:45.798Z",
+  "members": [
+    {
+      "kind": "MUTATION",
+      "taskId": "ledger:0042:sifi-networks-america-limited:8125d44e",
+      "taskIndex": 42,
+      "companyName": "SiFi Networks America Limited",
+      "receipt": {
+        "schemaVersion": 1,
+        "artifactType": "PORTCO_CHANGE_APPLY_RECEIPT",
+        "runId": "portco-reconciliation-2026-08-03-v2",
+        "taskId": "ledger:0042:sifi-networks-america-limited:8125d44e",
+        "taskIndex": 42,
+        "companyName": "SiFi Networks America Limited",
+        "companyId": "cmrxpj5j400huivhevp2081d8",
+        "proposalSha256": "d53d8af6d5051591468f9c5711cb785a8cb48fbd5549d92ae0623c62e5caa0bf",
+        "approvalSha256": "e71a101b3d9416c135d21784210675ee4673f4727ab18fa32f21588794096a20",
+        "productionSnapshotSha256": "a0447d2d8c1b89c4eee8bf54579c6a1cd41d6ff854b625eb1651d10ffddf5425",
+        "beforeCompanySnapshotSha256": "6beaeb95d54cda1ed2a371c4898cd33ba768d5d0cabe27ce6bb33a849d19ee13",
+        "appliedAfterImageSha256": "a0a609024b14c55e3a0a4c454577b41ff60729bfe02bce08891d9d1510d25468",
+        "seedAfterImageSha256": "a0a609024b14c55e3a0a4c454577b41ff60729bfe02bce08891d9d1510d25468",
+        "approvedSeedEntrySha256": "f73346148becd1213d4643eae75ab7b65b64788cbb9a0411aff8b8764b6e94bd",
+        "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+        "transactionId": "600f3780-42ea-48b8-9d6b-5a725541edf3",
+        "auditEventId": "cmtm6rqp10003w94xkyzd4z21",
+        "appliedAt": "2026-09-03T23:58:45.798Z",
+        "verification": {
+          "databaseMatchesAfterImage": true,
+          "seedMatchesAfterImage": true,
+          "detailApiVerified": true
+        },
+        "receiptSha256": "b744c2871936911c56d52d0e0b63f6482202b4bbf02b95fb956f380e7547f17c"
+      }
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0055:modern-aviation:22969eb9",
+      "taskIndex": 55,
+      "companyName": "Modern Aviation",
+      "outcome": "DEFERRED",
+      "decisionSha256": "95d737a61055fcf79e1c075171d0c49f28e5b03982aa7fd2116fa348916d6761"
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0067:clean-computational-infrastructure:93bcf245",
+      "taskIndex": 67,
+      "companyName": "Clean Computational Infrastructure",
+      "outcome": "DEFERRED",
+      "decisionSha256": "283f793ac6fec2b961b7ffc3484dcd9463b338b2ebfaf4402bf3076b563bf120"
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0074:liberty:69ac2ee0",
+      "taskIndex": 74,
+      "companyName": "Liberty",
+      "outcome": "DEFERRED",
+      "decisionSha256": "3c9057edab7f1afb6e3008c0223d40efd73df372d188813816cf15ef1d0b0fa3"
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0076:lodi-holdings-ii:062318ec",
+      "taskIndex": 76,
+      "companyName": "Lodi Holdings II",
+      "outcome": "DEFERRED",
+      "decisionSha256": "73f838ace409a3c8684090a37a1526d058e4f5abb8055dd63b17b7bbf7352626"
+    }
+  ],
+  "verification": {
+    "databaseTransactionCommitted": true,
+    "seedArtifactVerified": true,
+    "allDetailApisVerified": true,
+    "partialDatabaseApplication": false
+  },
+  "receiptSha256": "cb7105c87eb56c4ffb0e39496169ad817d0caf921831c3b8aae3a843d8c61c28"
+}
