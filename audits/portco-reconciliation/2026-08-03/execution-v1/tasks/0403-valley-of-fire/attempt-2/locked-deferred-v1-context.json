@@ -1,0 +1,289 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0403:valley-of-fire:3a0ca3e8",
+  "taskIndex": 403,
+  "companyName": "Valley of Fire",
+  "generatedAt": "2026-09-05T15:33:21.042Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0403-valley-of-fire/attempt-2/locked-deferred-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 403,
+    "taskId": "ledger:0403:valley-of-fire:3a0ca3e8",
+    "canonicalKey": "valley-of-fire|united-states",
+    "companyName": "Valley of Fire",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 83,
+    "managers": [
+      "Quinbrook Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "083-quinbrook-infrastructure-partners:repo-only:003:valley-of-fire"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjmsl018oivhetmivlyav"
+    ],
+    "seedKeys": [
+      "valley of fire|United States"
+    ],
+    "evidenceUrls": [
+      "https://www.quinbrook.com/news-insights/quinbrook-closes-600m-solarstorage-continuation-fund/",
+      "https://www.quinbrook.com/projects/valley-of-fire-solar/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Quinbrook Infrastructure Partners MATCHED_ELSEWHERE: Portfolio of solar and storage projects managed under Primergy; continuation fund ownership does not constitute a separate standalone operating platform apart from Gemini.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjmsl018oivhetmivlyav",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "valley-of-fire|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjmsl018oivhetmivlyav",
+    "name": "Valley of Fire",
+    "aliases": [],
+    "sector": "POWER_ET",
+    "subsector": "Solar and battery storage development portfolio",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Valley of Fire is Quinbrook's utility-scale solar and storage development portfolio across Nevada, Colorado, and Arizona. The portfolio is aimed at utilities and large power-market customers seeking renewable generation and storage capacity in western U.S. markets. Its operating model is asset-heavy and development-led, with projects progressing through siting, financing, construction, and long-term ownership. Quinbrook project materials list Valley of Fire Solar as acquired in 2017 and describe the current portfolio as a multi-project solar and battery-storage development portfolio. Quinbrook transferred the remaining Valley of Fire development portfolio into its continuation fund in April 2024.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Nevada; Colorado; Arizona",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk9df028aivhel43o22t1",
+        "managerName": "Quinbrook",
+        "organizationName": "Quinbrook",
+        "fundName": null,
+        "vehicleName": "Quinbrook Valley of Fire Fund",
+        "stake": null,
+        "investmentYear": 2017,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmmao053civhe5hsuweul",
+        "date": "2017",
+        "event": "Quinbrook project materials list Valley of Fire Solar as acquired in 2017.",
+        "category": "ACQUISITION",
+        "sortDate": "2017-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmmbb053divhevwfu8d27",
+        "date": "Oct 2022",
+        "event": "Quinbrook and Primergy announced APG's investment in the Gemini project within the Valley of Fire portfolio.",
+        "category": "FINANCING",
+        "sortDate": "2022-10-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmmbu053eivhel70s38l5",
+        "date": "Apr 2024",
+        "event": "A continuation fund transaction transferred the remaining Valley of Fire development portfolio from the prior fund structure.",
+        "category": "FINANCING",
+        "sortDate": "2024-04-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmmcd053fivhexkyx59uy",
+        "date": "Jul 2024",
+        "event": "Gemini, the portfolio's flagship project, reached commercial operation.",
+        "category": "EXPANSION",
+        "sortDate": "2024-07-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmmcx053givhezg7045fq",
+        "date": "Mar 2026",
+        "event": "Primergy announced $225 million of financing for the Valley of Fire portfolio and described the pipeline as more than 2.65 GW of solar and up to 1.5 GW of storage.",
+        "category": "FINANCING",
+        "sortDate": "2026-03-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpsmts0cvrivhe9y67os0i",
+        "label": "Primergypower — Valley of Fire",
+        "url": "https://www.primergypower.com/news/primergy-announces-225-million-in-corporate-and-project-financing-for-its-valley-of-fire-portfolio",
+        "sourceType": "WEBSITE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Primergypower financing or public filing",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpsmut0cvtivhe9j6z4ley",
+        "label": "Investment date source — Quinbrook — Valley of Fire",
+        "url": "https://www.quinbrook.com/projects/valley-of-fire-solar/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Quinbrook initial investment / ownership",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsmv90cvuivheazann5sn",
+        "label": "Close date source — Quinbrook — Gemini Solar + Storage",
+        "url": "https://www.quinbrook.com/news-insights/quinbrook-closes-600m-solarstorage-continuation-fund/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Quinbrook — Valley of Fire",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsmy70cvvivhexlma96w5",
+        "label": "Business Wire — Gemini Solar + Storage",
+        "url": "https://www.businesswire.com/news/home/20240718110673/en/Historic-Gemini-Solar-Energy-Storage-Project-Reaches-Commercial-Operations-in-Nevada",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Business Wire operations / asset details",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Valley of Fire",
+    "investmentFirm": "Quinbrook",
+    "sector": "Power & ET",
+    "subsector": "Solar and battery storage development portfolio",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Quinbrook Valley of Fire Fund",
+    "description": "Valley of Fire is Quinbrook's utility-scale solar and storage development portfolio across Nevada, Colorado, and Arizona. The portfolio is aimed at utilities and large power-market customers seeking renewable generation and storage capacity in western U.S. markets. Its operating model is asset-heavy and development-led, with projects progressing through siting, financing, construction, and long-term ownership. Quinbrook project materials list Valley of Fire Solar as acquired in 2017 and describe the current portfolio as a multi-project solar and battery-storage development portfolio. Quinbrook transferred the remaining Valley of Fire development portfolio into its continuation fund in April 2024.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2017,
+    "headquarters": "Nevada; Colorado; Arizona",
+    "milestones": [
+      {
+        "date": "2017",
+        "event": "Quinbrook project materials list Valley of Fire Solar as acquired in 2017.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Oct 2022",
+        "event": "Quinbrook and Primergy announced APG's investment in the Gemini project within the Valley of Fire portfolio.",
+        "category": "Financing"
+      },
+      {
+        "date": "Apr 2024",
+        "event": "A continuation fund transaction transferred the remaining Valley of Fire development portfolio from the prior fund structure.",
+        "category": "Financing"
+      },
+      {
+        "date": "Jul 2024",
+        "event": "Gemini, the portfolio's flagship project, reached commercial operation.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Mar 2026",
+        "event": "Primergy announced $225 million of financing for the Valley of Fire portfolio and described the pipeline as more than 2.65 GW of solar and up to 1.5 GW of storage.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Primergypower — Valley of Fire",
+        "url": "https://www.primergypower.com/news/primergy-announces-225-million-in-corporate-and-project-financing-for-its-valley-of-fire-portfolio",
+        "type": "WEBSITE",
+        "purpose": "FINANCING_FILINGS"
+      },
+      {
+        "label": "Investment date source — Quinbrook — Valley of Fire",
+        "url": "https://www.quinbrook.com/projects/valley-of-fire-solar/",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Quinbrook — Valley of Fire",
+        "url": "https://www.quinbrook.com/news-insights/quinbrook-closes-600m-solarstorage-continuation-fund/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Business Wire — Valley of Fire",
+        "url": "https://www.businesswire.com/news/home/20240718110673/en/Historic-Gemini-Solar-Energy-Storage-Project-Reaches-Commercial-Operations-in-Nevada",
+        "type": "PRESS_RELEASE",
+        "purpose": "OPERATIONS_ASSETS"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Quinbrook",
+        "ownershipVehicle": "Quinbrook Valley of Fire Fund",
+        "investmentYear": 2017,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpigao004eivhedx8km4yh",
+        "name": "Quinbrook",
+        "updatedAt": "2026-07-23T16:09:28.320Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0403:valley-of-fire:3a0ca3e8",
+    "taskIndex": 403,
+    "canonicalKey": "valley-of-fire|united-states",
+    "capturedAt": "2026-09-05T15:33:21.042Z",
+    "databaseRevision": "revision:9a510af5c49dc1604b4025ffbe2838796106c72c550aa700ff7b6326ffaefedd",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "c7424aa17c90b23d2d343ccde7878a91ec0e4abb39a37773c11a94ba31d13577",
+    "productionSnapshotSha256": "33d65cc942f37ba9b2b064e21e39a2b13ce5831c46ae2d905d3d20b2f312f19f",
+    "targetCompanySnapshotSha256": "449f8c3976d14f631bfe35023ff12b67635b51818de971c2714a07f4159c1b26",
+    "seedEntrySha256": "de5b6021b6d0bc5b51256cb10dda4eeaf6790efc5a4bc9d88db21f15b25ddc88",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "39c61d03e932caa9e6e6d5d046534e7d5f6dd9c41d12bbcab0b09e5b1e9db024",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "52c944c13a5e74630cefca11499339fafbdd9f1705bdf046c1d4d1c3542bd283",
+      "citationsSha256": "de10f8760a1fe29f3ad9c2c5ddb2e45c66a65457a86be073e72685f8b69ac770",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "5020d692431446b987a98adb7818721de34b8b10a9208456151fd51ef1d5c4d2",
+    "stateSha256": "526f2852dcb98a855338a357023e7368c633a25354d6e49861548199b8e96392",
+    "taskSnapshotSha256": "36891c8323b096b1e54cc35d9f6ee5912794f4ca3e03c465ea8a554cbc8c720f"
+  },
+  "contextSha256": "f23edc8c4015704d3bfe326141a7328631167230c4ed7bb8d336e89b5c6a9366"
+}

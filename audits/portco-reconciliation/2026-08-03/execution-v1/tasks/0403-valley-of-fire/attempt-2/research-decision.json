@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_DEFERRED_READJUDICATION_RESEARCH_DECISION",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-deferred-readjudication-2026-09-05",
+  "generatedAt": "2026-09-05T13:19:28.000Z",
+  "asOfDate": "2026-09-05",
+  "taskId": "ledger:0403:valley-of-fire:3a0ca3e8",
+  "taskIndex": 403,
+  "companyName": "Valley of Fire",
+  "linkedTaskIdsCovered": [],
+  "modelDecision": "DEFERRED",
+  "decision": "DEFERRED",
+  "confidence": "HIGH_IDENTITY_LOW_COMPLETE_CUTOFF_CURRENT_OWNERSHIP",
+  "researchOnly": true,
+  "acceptedResponseSha256": "0189e102324479ad32d2cab2ffe63366e76f7089b1d7407d1b827822f39357a7",
+  "summary": "Keep the task as a fresh exact deferral. Current direct Quinbrook, SEC, APG, Nevada and FERC evidence supports Valley of Fire Solar, LLC as a distinct Valley of Fire project-portfolio holdco, separate from Primergy's operator platform, the Gemini project and the continuation funds, and therefore supports retaining production target cmrxpjmsl018oivhetmivlyav. The April 2024 release proves only the continuation transaction's asset perimeter; the March 2026 SEC filing proves that Emily Cohen owns securities in Valley of Fire Solar, LLC but omits class, units, percentage, acquisition date and capacity. Those facts do not bridge the historic May 2023 parent evidence to a complete cutoff-current direct-owner set. Do not infer a cap table and do not apply an ownership correction.",
+  "resolvedFormerBlockers": [
+    "The current direct Quinbrook project page identifies Valley of Fire Solar as a distinct North American construction-stage solar-and-storage portfolio, rather than a duplicate of Primergy or Gemini.",
+    "The current direct FERC eLibrary page renders accession 20230516-5174 and its public Gemini Primergy application attachment, supporting the historic project-chain filing boundary. The attachment body was not recaptured in this pass, so exact historic upper-tier percentages remain non-controlling research lineage.",
+    "The direct April 2024 Quinbrook release establishes that the continuation fund acquired 51 percent of Gemini and 100 percent of the remaining Valley of Fire development portfolio from LCPF and certain other equity holders, while it establishes an asset perimeter rather than a Valley of Fire Solar, LLC cap table.",
+    "The direct March 2026 SEC filing independently establishes that Emily Cohen was a Valley of Fire Solar, LLC executive officer and owned securities in that entity on the filing date, while leaving every material security and ownership term undisclosed.",
+    "The direct APG release confirms a 49 percent Gemini project interest for ABP and therefore keeps APG or ABP out of the Valley of Fire Solar, LLC holdco owner table absent separate evidence.",
+    "The direct continuation-fund Form D identifies the fund, general partner and manager layer without establishing company-level direct ownership.",
+    "The current Quinbrook page's changed project counts and capacity descriptions are operating-perimeter descriptions and do not prove an equity transaction."
+  ],
+  "identityResolution": {
+    "requestedLabel": "Valley of Fire",
+    "sourceProductionCompanyId": "cmrxpjmsl018oivhetmivlyav",
+    "mergeTargetProductionCompanyId": null,
+    "canonicalKey": "valley-of-fire|united-states",
+    "status": "DISTINCT_PROJECT_PORTFOLIO_HOLDCO_IDENTITY_SUPPORTED_COMPLETE_ACTIVE_OWNERSHIP_UNAVAILABLE",
+    "boundary": "Treat Valley of Fire Solar, LLC as the distinct project-portfolio holdco and Valley of Fire as its commercial portfolio label. Keep Primergy Solar separate as the operator platform; keep Gemini, Solar Partners XI, Lidana, Noble Solar / Purple Sage and other project SPVs at the project layer; keep continuation funds and their limited partners at the fund layer; and keep developers, lenders, tax providers, off-takers, EPC and O&M counterparties outside equity absent direct evidence.",
+    "productionAction": "NO_COMPANY_OR_OWNERSHIP_MUTATION_TERMINAL_ONLY"
+  },
+  "ownershipResolution": {
+    "status": "UNRESOLVED_COMPLETE_CUTOFF_DIRECT_HOLDER_SECURITY_STAKE_VOTE_GOVERNANCE_AND_CONTROL_SET",
+    "verifiedRelationships": {
+      "historicalParent": "The current FERC filing list verifies the May 2023 filing and public attachment identity. The accepted research response reports Valley of Fire Holdings, LLC as the 100 percent historic direct parent and describes its two upper-tier LCPF vehicles, but the attachment body was not independently captured during this pass; those exact percentages are not used to authorize application.",
+      "continuation": "The Valley of Fire Fund closed with $600 million of capital commitments and acquired 51 percent of Gemini plus 100 percent of the remaining Valley of Fire development portfolio from LCPF and certain other equity holders. The release does not disclose the legal Valley of Fire Solar, LLC buyer or holder, seller allocation, issuer security, units, rollover or complete post-close chain.",
+      "emilyCohen": "A direct March 2026 SEC filing confirms that Emily Cohen owns securities of Valley of Fire Solar, LLC and serves as its executive officer. Her security class, units, percentage, acquisition date, capacity, votes and governance are not disclosed, and the filing does not certify whether other direct holders exist.",
+      "apgAbp": "APG acquired a 49 percent Gemini project interest for ABP. No direct evidence identifies APG or ABP as a holder of Valley of Fire Solar, LLC.",
+      "fundLayer": "The SEC Form D identifies Valley of Fire Continuation Fund LP, Valley of Fire CF (GP) Limited and Quinbrook Infrastructure Partners (Jersey) Limited as the fund, GP and manager layer. Blackstone, Ares, Partners Group and other limited partners or commitment providers are not direct company owners without separate evidence."
+    },
+    "rejectedInferences": [
+      "Do not project Gemini's 51/49 split onto Valley of Fire Solar, LLC.",
+      "Do not treat a continuation fund's acquisition of an asset perimeter as proof of the company member ledger or direct holder security allocation.",
+      "Do not infer Emily Cohen's class, percentage, acquisition date, capacity, control or exclusivity from the SEC related-party disclosure.",
+      "Do not infer current ownership from a 2023 filing, historic parent chain, portfolio-page continuity or transaction-party silence.",
+      "Do not treat fund limited partners, general partners, managers, commitment providers, lenders, tax investors, developers, off-takers, contractors or operators as direct Valley of Fire Solar, LLC equity holders.",
+      "Do not allocate residual ownership or create a partial current owner after-image while the complete active-owner rule is unsatisfied."
+    ]
+  },
+  "operatingResolution": {
+    "status": "DISTINCT_US_SOLAR_AND_STORAGE_PROJECT_PORTFOLIO_HOLDCO_VERIFIED_EQUITY_NOT_INFERRED",
+    "commercialName": "Valley of Fire / Valley of Fire Solar",
+    "disclosedOperatingBoundary": "The April 2024 close described seven projects including Gemini, more than 2.65 GW of solar and potential 1.5 GW of storage. The current Quinbrook page describes eight projects excluding Gemini, more than 2.2 GW of solar and potential 2.5 GW of storage. These varying dates, counting rules and pipeline descriptions do not establish a company-level ownership event, and the current eight-SPV roster is not published.",
+    "vehicleTreatment": "Primergy management, Arevia development, project-company interests, debt, tax credit or tax equity, power sales, leases, EPC, O&M and other financing or operating relationships are not Valley of Fire Solar, LLC direct-equity evidence."
+  },
+  "transactionResolution": {
+    "state": "APRIL_2024_CONTINUATION_ASSET_TRANSFER_CLOSED_COMPLETE_COMPANY_CAP_TABLE_UNRESOLVED",
+    "finding": "Quinbrook announced the continuation fund close on 2024-04-04. The public release discloses $600 million of capital commitments and the asset perimeter but does not disclose a purchase price, exact legal close date distinct from announcement, company-level issuer or securities, complete buyers and sellers, transfer allocation, rollover, intermediate chain or post-close cap table.",
+    "pendingTransactions": [],
+    "laterCheck": "No later public Valley of Fire Solar, LLC company-equity or control transaction or signed pending deal was found through 2026-09-05. The 2024 $225 million tax-credit and revolver facilities and the 2026 Gemini refinancing are non-equity."
+  },
+  "terminalOutcomeCandidate": "DEFERRED",
+  "databaseMutationCandidate": false,
+  "seedMutationCandidate": false,
+  "dealDatabaseMutation": false,
+  "applicationBlocked": false,
+  "applicationRequirements": [
+    "Use a terminal-only DEFERRED outcome and retain cmrxpjmsl018oivhetmivlyav without changing company identity or ownership while the complete cutoff-current direct-owner after-image remains unavailable.",
+    "Preserve the verified Valley of Fire holdco, Primergy operator, Gemini project, APG or ABP project co-owner, continuation fund and non-owner boundaries as research lineage.",
+    "Do not infer the company cap table from the 2023 parent filing, the 2024 continuation asset perimeter, the 2026 Cohen security-holder disclosure, Gemini's project split or fund investor commitments.",
+    "Do not add a partial owner period or exact stake, vote, governance, control, fund attribution, seller allocation or rollover without direct holder and security evidence.",
+    "Use exactly one application primary citation bound to the fresh current FERC eLibrary page bytes and rendered filing list, with the attachment-body limitation explicit; retain the other six sources as supporting current research lineage."
+  ],
+  "freshException": {
+    "status": "EXACT_FACT_UNAVAILABLE",
+    "missingFact": "The complete 2026-09-05 registered direct-owner and security-holder set of Valley of Fire Solar, LLC; all holder classes, units, stakes, votes, governance and control; the current intermediate parent chain; the legal buyer, seller allocation, issuer security, units, rollover and post-close chain for the April 2024 continuation transaction; Emily Cohen's security class, percentage, acquisition date and capacity; any other direct holders or former holders and their entry or exit; the exact current Gemini APG vehicle; the complete current eight-project SPV roster; and any later cutoff transfer.",
+    "searchedEvidence": [
+      "Current FERC eLibrary accession page and rendered public attachment list for 20230516-5174",
+      "Direct Quinbrook April 2024 continuation close and current Valley of Fire project pages",
+      "Direct March 2026 Array SEC Form 8-K",
+      "Direct SEC Form D for Valley of Fire Continuation Fund LP",
+      "Direct APG Gemini transaction page",
+      "Direct Nevada Purple Sage filing",
+      "Fresh company-register, member-register, LLC-agreement, securities-schedule, purchase, subscription, transfer, closing-cap-table, rollover, financing, recapitalization, sale, exit and pending-transaction searches in the signed-in ChatGPT conversation"
+    ],
+    "requiredToResolve": "A current Valley of Fire Solar, LLC member or securities register, operative LLC agreement and capitalization table; a current organization chart; the April 2024 purchase agreement, transfer ledger, closing allocation and funds-flow schedules; continuation-vehicle holder and rollover schedules; Emily Cohen's grant, subscription or transfer record; complete current project-SPV schedule; and any later executed transfer or capitalization document."
+  },
+  "primaryCitation": {
+    "label": "FERC 20230516-5174",
+    "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20230516-5174",
+    "purpose": "Current direct regulator record for the historic Solar Partners XI / Gemini filing boundary and its public attachment; used only with the explicit attachment-body and cutoff-current ownership limitations",
+    "contentSha256": "e5a81c809e7bed5b7890b5c29ef2c96c904f9245e3cc81b203f1195e16a85123"
+  },
+  "lineage": {
+    "conversationUrl": "https://chatgpt.com/c/6a9c0a96-b634-83ea-9fb1-cca44fc44f4f",
+    "prompt": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0403-valley-of-fire/attempt-2/chatgpt-research-prompt.md",
+      "sha256": "7823081eb4a0b90623e4496685c016f4a5f37527ae4baf4cc1ddc907df7d0f94"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0403-valley-of-fire/attempt-2/chatgpt-accepted-response.txt",
+      "sha256": "0189e102324479ad32d2cab2ffe63366e76f7089b1d7407d1b827822f39357a7"
+    },
+    "transcript": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0403-valley-of-fire/attempt-2/chatgpt-transcript.txt",
+      "sha256": "c763e4b8c23b31751dfc760a8c775632d77ef0bca044efe1011cc4cdff93be3f"
+    },
+    "attestation": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0403-valley-of-fire/attempt-2/chatgpt-attestation.json",
+      "sha256": "68e37e271e24ea26fd5ac286431e0d5337e59ff5273234430f5560936d69673a"
+    },
+    "responseValidation": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0403-valley-of-fire/attempt-2/chatgpt-response-validation.json",
+      "sha256": "4fe860e1d2d9c85943b671a14b9be4d0a8aad42a517d1f8d82e6bffd6601cbef"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0403-valley-of-fire/attempt-2/source-verification.json",
+      "sha256": "a5dc5f70f1f1f1dd689936b018cb2b7236dfe72624b306e56319241f8a32a50a"
+    }
+  }
+}

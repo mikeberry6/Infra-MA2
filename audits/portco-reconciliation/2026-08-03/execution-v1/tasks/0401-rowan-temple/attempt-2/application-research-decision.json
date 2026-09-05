@@ -1,0 +1,222 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0401:rowan-temple:fb4df5a1",
+  "taskIndex": 401,
+  "companyName": "Rowan Temple",
+  "asOfDate": "2026-09-05",
+  "decision": "DEFERRED",
+  "confidence": "HIGH_PROJECT_PLATFORM_IDENTITY_MEDIUM_DISCLOSED_RELATIONSHIPS_LOW_COMPLETE_CUTOFF_CAP_TABLE",
+  "researchOnly": true,
+  "generatedAt": "2026-09-05T12:20:00.000Z",
+  "result": {
+    "asOfDate": "2026-09-05",
+    "requestedCompany": "Rowan Temple",
+    "requestedManagers": [
+      "Quinbrook Infrastructure Partners",
+      "University Pension Plan Ontario",
+      "Blackstone",
+      "Birch Infrastructure"
+    ],
+    "decision": "DEFERRED",
+    "confidence": "HIGH",
+    "rationale": "Temple is a Rowan asset, but the recap issuer and cutoff owner set remain material gaps: the member filing is from 2023, the 2026 release omits sellers/cap table/UPP treatment, and Temple's member chain is undisclosed. No merge passes the active-ownership rule.",
+    "identityResolution": {
+      "canonicalKey": "rowan-temple|united-states",
+      "sourceRecord": "cmrxpjmrm018mivhenapgu698",
+      "platformRecord": "cmrxpjmr2018livhe1yqhqyh5",
+      "finding": "Project Temple is Rowan Digital Infrastructure's subordinate Phase 1 campus, not a manager-level company; the platform record is the eventual target.",
+      "hierarchy": "Temple=Phase 1/Kayak; Lasso/1B is building 3. Stampede/Phase 2 and Ranger/Phase 3 are separate; Temple Green/Rowan Moriah LLC is older.",
+      "projectEntities": "Rowan Temple LLC is tax-listed owner/operator; Rowan Temple Building 2 LLC, Rowan Temple Mezzco LLC and Rowan Temple 2 LLC roles are UNRESOLVED.",
+      "platformEntities": "GLEIF shows separate active Rowan Green Data LLC (2020) and Rowan Digital Infrastructure LLC (2025); relationship/recap issuer UNRESOLVED.",
+      "entitySource": "https://api.gleif.org/api/v1/lei-records?filter%5Blei%5D=254900KDY2HTT9OAPE46,254900N9YE04H8AWO810",
+      "safeToMerge": false
+    },
+    "ownershipResolution": {
+      "companyLevelInvestee": "Rowan platform; 2026 issuer/security UNRESOLVED.",
+      "historicalDirectMembers": "The 2023 PIR names QIP Rowan Series A LLC, PEP Development Services LLC and Rowan Management Co LLC; stakes, upstream owners and cutoff status are UNRESOLVED.",
+      "owners": [
+        {
+          "manager": "Quinbrook Infrastructure Partners",
+          "organization": "Quinbrook Infrastructure Partners LLC",
+          "fund": "UNRESOLVED",
+          "vehicle": "QIP Rowan Series A LLC (2023); cutoff holder UNRESOLVED",
+          "stake": "UNRESOLVED",
+          "announcementDate": "2020-12-17",
+          "entryDate": null,
+          "entryYear": 2020,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "ACTIVE; entry close/votes/control UNRESOLVED"
+        },
+        {
+          "manager": "Birch Infrastructure",
+          "organization": "Birch Infrastructure PBLLC",
+          "fund": "NOT_APPLICABLE",
+          "vehicle": "Direct, then Rowan Management Co LLC from 2021-12-16",
+          "stake": "UNRESOLVED",
+          "announcementDate": "2020-12-17",
+          "entryDate": null,
+          "entryYear": 2020,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": false,
+          "transactionState": "FORMER_BY_2023; 2022-11-18 EPA date pleaded; close unresolved; rescission pending"
+        },
+        {
+          "manager": "University Pension Plan Ontario",
+          "organization": "University Pension Plan Ontario",
+          "fund": "NOT_PUBLICLY_DISCLOSED",
+          "vehicle": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "UNRESOLVED",
+          "announcementDate": "2024-08-13",
+          "entryDate": null,
+          "entryYear": 2024,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": null,
+          "transactionState": "CLOSED_BY_ANNOUNCEMENT; CUTOFF_STATUS_UNRESOLVED"
+        },
+        {
+          "manager": "Blackstone",
+          "organization": "Blackstone Inc.",
+          "fund": "Affiliated funds; exact funds UNRESOLVED",
+          "vehicle": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "SIGNIFICANT_MINORITY; exact percentage UNRESOLVED",
+          "announcementDate": "2026-04-09",
+          "entryDate": null,
+          "entryYear": 2026,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED_BY_ANNOUNCEMENT; security/governance UNRESOLVED"
+        }
+      ],
+      "templeProjectEquity": "No co-owner/JV is disclosed, but tax/Rowan statements do not prove Temple LLC's members; project equity is UNRESOLVED.",
+      "blackstone49Percent": "UNVERIFIED; secondary-only.",
+      "completeCurrentOwnerSet": false
+    },
+    "operatingResolution": "Temple, Texas; Project Temple is three buildings/about 700 acres/300 MW, under construction/development by 2026-01-05 with 2027 target. It is distinct from the six-building/1.6 GW program and Moriah; no cutoff proof of energization/commissioning/operation. May 2026 $3bn financing is debt, not equity.",
+    "acquisitionExitCheck": {
+      "postRecapSignedOrClosedEquityEvent": false,
+      "pendingTransactions": [],
+      "birch": "AAA rescission/restoration claim is contingent, not current equity or a signed transaction.",
+      "excluded": "Debt, land, permits, incentives, occupants, utilities."
+    },
+    "milestones": [
+      {
+        "date": "2020-12-17",
+        "event": "Quinbrook-Birch JV announced.",
+        "state": "TERMS_UNDISCLOSED"
+      },
+      {
+        "date": "2022-11-18",
+        "event": "RMC EPA date pleaded; wholly Quinbrook-owned by 2023-01-11.",
+        "state": "CLOSE_CONTESTED"
+      },
+      {
+        "date": "2024-08-13",
+        "event": "UPP announced completed co-investment.",
+        "state": "TERMS_UNDISCLOSED"
+      },
+      {
+        "date": "2026-04-09",
+        "event": "Blackstone acquisition announced complete.",
+        "state": "CAP_TABLE_UNDISCLOSED"
+      }
+    ],
+    "evidence": [
+      {
+        "label": "Rowan Temple",
+        "url": "https://rowan.digital/portfolio/temple/",
+        "purpose": "300 MW/700-acre child campus/status.",
+        "sourceTier": "PRIMARY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Texas data-center list",
+        "url": "https://comptroller.texas.gov/taxes/data-centers/data-center-lists.php",
+        "purpose": "Temple LLC roles/Moriah; not member proof.",
+        "sourceTier": "GOVERNMENT",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Quinbrook 2023",
+        "url": "https://www.quinbrook.com/news-insights/quinbrook-expands-rowan-green-data-center-platform/",
+        "purpose": "Birch JV; wholly Quinbrook-owned by 2023.",
+        "sourceTier": "PRIMARY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "2023 PIR",
+        "url": "https://comptroller.texas.gov/data-search/franchise-tax/32080230546",
+        "purpose": "Three members; stale/no stakes.",
+        "sourceTier": "GOVERNMENT",
+        "workingStatus": "STALE_2023",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "UPP",
+        "url": "https://myupp.ca/upp-invests-in-data-centre-developer-rowan-digital-infrastructure/",
+        "purpose": "Completed co-investment; terms undisclosed.",
+        "sourceTier": "PRIMARY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "2026 recap",
+        "url": "https://www.quinbrook.com/news-insights/rowan-digital-infrastructure-announces-strategic-recapitalization/",
+        "purpose": "Closed Blackstone minority; cap table omitted.",
+        "sourceTier": "PRIMARY",
+        "workingStatus": "WORKING",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "Birch petition",
+        "url": "https://www.docketalarm.com/cases/New_York_State_New_York_County_Supreme_Court/654061---2026/In_the_matter_of_the_Application_of_Birch_Infrastructure_PBLLC_v._Quinbrook_Infrastructure_Partners_LLC/1/",
+        "purpose": "Pleaded EPA/rescission; unadjudicated.",
+        "sourceTier": "COURT_PLEADING",
+        "workingStatus": "UNADJUDICATED",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": "Temple-child identity verified; no production change applied because owner-complete after-image fails.",
+    "excludedOrDuplicateCandidates": [
+      "Moriah/Temple Green is older; Polmer/Rhodium are occupants.",
+      "Rest/NZPF is indirect; reported 49% is unconfirmed.",
+      "Lenders, utilities, contractors, land/tax parties are non-equity."
+    ],
+    "unresolvedQuestions": [
+      "Temple LLC ledger/agreement and Building 2/Mezzco/Temple 2 roles.",
+      "Green Data-Digital Infrastructure legal bridge and recap issuer/security.",
+      "Executed 2022 EPA/ledger and final AAA award.",
+      "2026 purchase/subscription agreement, seller/funds-flow schedules, amended LLC agreement, pre/post cap tables, and UPP confirmation/audited named-investment schedule."
+    ],
+    "recommendedListAction": "Keep both records unchanged as DEFERRED; merge only after issuer and platform/Temple active owners are certified, then reassess SUPERSEDED."
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0401-rowan-temple/attempt-2/research-decision.json",
+      "sha256": "6f2c462b7f22c5a85dd3a036699b8d0972e55f9c066d776514588112ce4875f9"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0401-rowan-temple/attempt-2/chatgpt-accepted-response.txt",
+      "sha256": "fe71da1178752ec08eeb07a69a977778c8d5b3d86c2a63e4e579668a5d5e6da2"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0401-rowan-temple/attempt-2/source-verification.json",
+      "sha256": "13deec4b8244b9067c3c2f2cd128e14de74fcb5cd50c265d1c73fed9bf777c4f"
+    },
+    "acceptedResponseSha256": "fe71da1178752ec08eeb07a69a977778c8d5b3d86c2a63e4e579668a5d5e6da2",
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+    "confidenceNormalization": {
+      "acceptedValue": "HIGH",
+      "stagedSummaryValue": "HIGH_PROJECT_PLATFORM_IDENTITY_MEDIUM_DISCLOSED_RELATIONSHIPS_LOW_COMPLETE_CUTOFF_CAP_TABLE",
+      "basis": "The staged summary preserves the accepted overall confidence and appends a more specific evidence-gap qualifier; the research decision is unchanged."
+    }
+  }
+}

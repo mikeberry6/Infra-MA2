@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "runId": "portco-deferred-readjudication-2026-09-05",
+  "taskId": "ledger:0404:national-power:872e462e",
+  "taskIndex": 404,
+  "companyName": "National Power",
+  "checkedAt": "2026-09-05T14:23:00.000Z",
+  "method": "Independent current direct HTTP/PDF byte capture with redirects, status, media type, byte count and SHA-256; signed-in browser rendering for the client-side Arizona record; current web rendering for Tecum pages whose origin returned a 403 bot challenge; visual inspection of the USPTO PDF and claim-level review of the direct pages",
+  "sources": [
+    {
+      "url": "https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/trademark/6715/0355",
+      "httpStatus": 200,
+      "finalUrl": "https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/trademark/6715/0355",
+      "mediaType": "application/pdf",
+      "bytes": 2575779,
+      "sha256": "a97eba2d1454fe72d2c45e887a7c17681b3d109b580ec23209071e0ea6eb0824",
+      "healthStatus": "WORKING",
+      "pdfVerification": {
+        "pageCount": 5,
+        "renderedPagesInspected": [1],
+        "verifiedClaims": [
+          "The trademark assignment cover sheet identifies the conveyance as an entity conversion from National Power Corp. to National Power, LLC with a 2019-06-27 execution date",
+          "The receiving-party address is 4541 Preslyn Drive, Raleigh, North Carolina 27616"
+        ],
+        "limitation": "The later-page NP Holdco member language reported by the accepted response was not separately relied upon to authorize an application decision."
+      }
+    },
+    {
+      "url": "https://www.tecum.com/tecum-capital-announces-investment-in-national-power-corp-to-drive-future-growth/",
+      "httpStatus": 403,
+      "finalUrl": "https://www.tecum.com/tecum-capital-announces-investment-in-national-power-corp-to-drive-future-growth/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 2102,
+      "sha256": "d335d6964bfd4743702d1d08a2dac61e4935bda86daf6997cc0fc63dcef02645",
+      "healthStatus": "BROWSER_VERIFIED_HTTP_BLOCKED",
+      "verifiedClaims": [
+        "The current rendered direct URL identifies the July 10, 2019 transaction and says Valley Ridge led it, Tecum and C3 provided subordinated debt and equity, and Eddie Youngblood retained a minority stake",
+        "The page says National Power Corp. became National Power, LLC and confirms Raleigh headquarters and 1985 founding"
+      ],
+      "limitation": "The captured direct HTTP bytes are the origin's current bot-challenge response; claim verification used the currently rendered direct URL."
+    },
+    {
+      "url": "https://www.tecum.com/portfolio/national-power/",
+      "httpStatus": 403,
+      "finalUrl": "https://www.tecum.com/portfolio/national-power/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 2103,
+      "sha256": "1a5dbe2f9c018466d8405b3d79a6aaef20982b7734b01df0e39f99a2eadef719",
+      "healthStatus": "BROWSER_VERIFIED_HTTP_BLOCKED",
+      "verifiedClaims": [
+        "The current rendered direct URL classifies National Power as Exited, identifies Junior Capital Fund II and gives 2019-06-28 as the investment date"
+      ],
+      "limitation": "The captured direct HTTP bytes are the origin's current bot-challenge response; claim verification used the currently rendered direct URL."
+    },
+    {
+      "url": "https://www.c3cap.com/portfolio/?_sfm_status=exited",
+      "httpStatus": 200,
+      "finalUrl": "https://www.c3cap.com/portfolio/?_sfm_status=exited",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 9713,
+      "sha256": "a23ac652a7dce9b3a9b7bfcee0fdfc1b7e75488c1c2d3c2fca63cd33b611aa8c",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "The current C3 portfolio page has the Exited filter selected and includes National Power as a 2019 portfolio company"
+      ],
+      "limitation": "The page does not disclose a legal exit date, residual interest or complete post-transaction ownership."
+    },
+    {
+      "url": "https://www.ridgemontep.com/press-releases/ridgemont-equity-partners-leads-recapitalization-to-support-national-powers-growth/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ridgemontep.com/press-releases/ridgemont-equity-partners-leads-recapitalization-to-support-national-powers-growth/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 18846,
+      "sha256": "933936989b188b2152c26305a3b1106100b2e1436acdfb70ee075652d2cf81a3",
+      "healthStatus": "WORKING",
+      "applicationPrimary": true,
+      "verifiedClaims": [
+        "Ridgemont announced the National Power, LLC recapitalization on 2023-10-25 and identified the business as a current infrastructure-services investment",
+        "The release identifies Churchill and Oaktree as financing providers, not equity owners",
+        "The release does not disclose sellers, legal close, buyer vehicle, stake, securities, control, co-investors or founder or management disposition"
+      ]
+    },
+    {
+      "url": "https://azroc.my.site.com/AZRoc/s/contractor-search?licenseId=a0ocs00000HQTZFAA5",
+      "httpStatus": 200,
+      "finalUrl": "https://azroc.my.site.com/AZRoc/s/contractor-search?licenseId=a0ocs00000HQTZFAA5",
+      "mediaType": "text/html;charset=UTF-8",
+      "bytes": 29633,
+      "sha256": "416bd61caa150f0e5e012e7af512cfb78b0ac322659e011663f35e4627933b0f",
+      "healthStatus": "WORKING_CLIENT_RENDERED",
+      "renderedRecordObservedAt": "2026-09-05T14:21:19-04:00",
+      "verifiedClaims": [
+        "The current Arizona record identifies active license ROC 362660 for National Power, LLC of Raleigh, North Carolina",
+        "The personnel and parent section lists NatPow Holdings, LLC; National Power REP HoldCo, LLC; National Power Midco, LLC; and Ridgemont Equity Partners IV, L.P. as parent entities",
+        "The record does not state their order, direct membership, securities, stakes, votes, governance or the complete owner set"
+      ]
+    }
+  ],
+  "checks": {
+    "allReturnedEvidenceUrlsChecked": true,
+    "allReturnedUrlsChecked": true,
+    "allEvidenceRowsChecked": true,
+    "allUrlsHttps": true,
+    "returnedOpenCount": 6,
+    "returnedBlockedCount": 2,
+    "nationalPowerIdentityVerified": true,
+    "ridgemontParentPerimeterVerified": true,
+    "completeCutoffDirectOwnerSetVerified": false,
+    "laterPendingOwnershipTransactionFound": false,
+    "exactlyOneApplicationPrimary": true,
+    "modelRecommendedPrimaryApplicationUsableForTerminalDeferral": true,
+    "ownershipMutationBlocked": true,
+    "terminalDeferralSupported": true
+  },
+  "allEvidenceUrlsDirectHttps": true,
+  "allSourcesWorkingOrVerified": true,
+  "directByteCaptureCount": 6,
+  "deadSourceCount": 0,
+  "browserVerifiedHttpBlockedCount": 2,
+  "recommendedApplicationPrimaryUrl": "https://www.ridgemontep.com/press-releases/ridgemont-equity-partners-leads-recapitalization-to-support-national-powers-growth/",
+  "recommendedApplicationPrimarySha256": "933936989b188b2152c26305a3b1106100b2e1436acdfb70ee075652d2cf81a3"
+}

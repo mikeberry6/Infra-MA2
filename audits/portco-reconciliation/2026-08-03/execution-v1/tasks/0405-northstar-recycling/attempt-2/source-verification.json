@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "runId": "portco-deferred-readjudication-2026-09-05",
+  "taskId": "ledger:0405:northstar-recycling:dba0ea8b",
+  "taskIndex": 405,
+  "companyName": "Northstar Recycling",
+  "checkedAt": "2026-09-05T15:25:00.000Z",
+  "method": "Independent current direct HTTP/PDF byte capture with redirects, status, media type, byte count and SHA-256; signed-in browser rendering for the interactive Massachusetts and Florida records and SEC filing; browser rendering for the Casella page whose origin timed out under curl; claim-level review of the current Ridgemont HTML and Sonoco filing",
+  "sources": [
+    {
+      "url": "https://corp.sec.state.ma.us/CorpWeb/CorpSearch/CorpSearch.aspx",
+      "httpStatus": 200,
+      "finalUrl": "https://corp.sec.state.ma.us/CorpWeb/CorpSearch/CorpSearch.aspx",
+      "mediaType": "text/html",
+      "bytes": 212,
+      "sha256": "d02032286070b4dd9d8fbd985a7bdca8af8edf52b89ff177db3bfcb2c8a9c43d",
+      "healthStatus": "WORKING_INTERACTIVE_BROWSER_VERIFIED",
+      "renderedRecordObservedAt": "2026-09-05T15:20:00-04:00",
+      "verifiedClaims": [
+        "A current interactive exact-name search returns Northstar Recycling Company, Inc. with identification 800712196 and old identification 001051850 and Northstar Recycling Company, LLC with identification 001534199, both at 94 Maple Street, East Longmeadow, Massachusetts",
+        "The current LLC summary directly states that Northstar Recycling Company, LLC converted from Northstar Recycling Company, Inc. on 2021-09-24 and lists the same East Longmeadow records address"
+      ],
+      "limitation": "The direct unauthenticated HTTP capture is the registry's short bootstrap response; claim verification used the current interactive browser result and entity summary."
+    },
+    {
+      "url": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?aggregateId=forl-m22000000359-e392b11e-58a1-48c8-a847-f7f9159facf3&directionType=ForwardList&inquirytype=EntityName&listNameOrder=NORTHSTARREALTYSECURITIES+M120000057000&searchNameOrder=NORTHSTARRECYCLING+M220000003590&searchTerm=NORTHSTAR+REALTY,+INC.",
+      "httpStatus": 403,
+      "finalUrl": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?aggregateId=forl-m22000000359-e392b11e-58a1-48c8-a847-f7f9159facf3&directionType=ForwardList&inquirytype=EntityName&listNameOrder=NORTHSTARREALTYSECURITIES+M120000057000&searchNameOrder=NORTHSTARRECYCLING+M220000003590&searchTerm=NORTHSTAR+REALTY,+INC.",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 3747,
+      "sha256": "1f96ae0a7d6819072f2151f7ddd85733008ee407a7fcd7ea014a5e63747b6f87",
+      "healthStatus": "BROWSER_VERIFIED_HTTP_BLOCKED",
+      "renderedRecordObservedAt": "2026-09-05T15:19:00-04:00",
+      "verifiedClaims": [
+        "The current Florida record identifies active foreign LLC Northstar Recycling Company, LLC, document M22000000359, FEI 80-0712196, Massachusetts jurisdiction and 94 Maple Street, East Longmeadow address",
+        "The 2026 report currently names Northstar Recycling, LLC as one Member and Jeff Wakely and Robert Duchesneau as Managers"
+      ],
+      "limitation": "The record is an authorization-person filing rather than a certified complete member or capitalization ledger. It does not prove exclusivity, stake, security, votes, governance or the upstream ownership of Northstar Recycling, LLC."
+    },
+    {
+      "url": "https://www.ridgemontep.com/press-releases/ridgemont-announces-growth-investment-in-northstar-recycling-company/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ridgemontep.com/press-releases/ridgemont-announces-growth-investment-in-northstar-recycling-company/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 19620,
+      "sha256": "27c8e14a08b5d6761f906695638aef8e892e4bd4c175d46dc1bff5caa9672b44",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Ridgemont announced a growth investment in Northstar Recycling Company, LLC on 2021-10-05 alongside founders Seth and Noah Goodman",
+        "The current release says the founders remained CEO and President but does not disclose Ridgemont's fund, vehicle, stake, securities, votes or control, legal close, transaction mix or founder rollover percentages"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/91767/000009176726000008/R12.htm",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/91767/000009176726000008/R12.htm",
+      "mediaType": "text/html",
+      "bytes": 11023,
+      "sha256": "5558c0c304978271d219613eebc490a5dd2e830f6fa402f787a8f183e88b4bf3",
+      "healthStatus": "WORKING",
+      "applicationPrimary": true,
+      "verifiedClaims": [
+        "Sonoco's filing says the S3 sale to Northstar closed on 2023-01-26 and Sonoco received a 2.7 percent Northstar equity interest valued at $5.0 million",
+        "The filing says Sonoco sold that full interest on 2024-12-23 for $8.63 million",
+        "The filing does not identify the direct holder entity, security, units, votes, governance, buyer or repurchaser, sale form or resulting cap table"
+      ]
+    },
+    {
+      "url": "https://www.ridgemontep.com/wp-content/uploads/Ridgemont-Sustainability-Report-2025.pdf",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ridgemontep.com/wp-content/uploads/Ridgemont-Sustainability-Report-2025.pdf",
+      "mediaType": "application/pdf",
+      "bytes": 3131850,
+      "sha256": "53c8de4d6b17b5b44c5a74ca04861ab29bf7f4617e71d5160f815326ca0974da",
+      "healthStatus": "WORKING",
+      "pdfVerification": {
+        "pageCount": 21,
+        "browserLoaded": true,
+        "verifiedClaims": [
+          "The current Ridgemont report is available as a 21-page direct PDF and was reopened as supporting evidence for the December 2024 recapitalization and operating-scale discussion"
+        ],
+        "limitation": "The report does not replace a company member register, capitalization table, LLC agreement, transfer ledger or named current-owner schedule and is not the application primary."
+      }
+    },
+    {
+      "url": "https://www.ridgemontep.com/portfolio/northstar-recycling-company/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ridgemontep.com/portfolio/northstar-recycling-company/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 18222,
+      "sha256": "731ec42aa920446f67eab63c965bf58e4cac0d633ba37b04885bd4b5a6eaf9dd",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Ridgemont's current portfolio page labels Northstar Current, identifies 2021 as the investment year and describes the company as an asset-light managed waste and recycling provider",
+        "The portfolio label is not evidence of the exact holder, fund, vehicle, stake, security, votes, governance or complete current cap table"
+      ]
+    },
+    {
+      "url": "https://www.ridgemontep.com/press-releases/northstar-recycling-acquires-waste-technology-services/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ridgemontep.com/press-releases/northstar-recycling-acquires-waste-technology-services/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 19428,
+      "sha256": "edd1364891a2535e29f9ef0cfaaf61d1d35aa8b07a160a2cdf1fe342731798dc",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Ridgemont's 2025 release says Northstar completed three acquisitions since its 2021 recapitalization led by Ridgemont and Northstar management",
+        "The current release identifies WTS as an add-on and does not disclose the complete Northstar owner set, Ridgemont vehicle or stake, founder or management percentages or the buyer of Sonoco's former interest"
+      ]
+    },
+    {
+      "url": "https://northstarrecycling.com/",
+      "httpStatus": 200,
+      "finalUrl": "https://northstarrecycling.com/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 43928,
+      "sha256": "becdc39e06403fb66d5f1d46e6deb72e0b7ac3267d4676d4d121a57cfa1a5372",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Northstar's current direct site verifies the active managed waste and recycling operating platform and official commercial identity",
+        "The site does not publish a complete current legal ownership table"
+      ]
+    },
+    {
+      "url": "https://ir.casella.com/news-releases/news-release-details/casella-waste-systems-acquires-northstar-pulp-and-paper",
+      "httpStatus": null,
+      "finalUrl": "https://ir.casella.com/news-releases/news-release-details/casella-waste-systems-acquires-northstar-pulp-and-paper",
+      "mediaType": null,
+      "bytes": null,
+      "sha256": null,
+      "healthStatus": "BROWSER_VERIFIED_HTTP_TIMEOUT",
+      "renderedRecordObservedAt": "2026-09-05T15:21:00-04:00",
+      "verifiedClaims": [
+        "The current direct Casella release states that it acquired the assets of Northstar Pulp & Paper Co., Inc., Northstar Disposal Corp. and certain real estate on 2022-03-01",
+        "It identifies that separate Northstar business as Springfield, Massachusetts-based and associated with David Goodman, preserving the boundary from Seth and Noah Goodman's East Longmeadow Northstar Recycling Company"
+      ],
+      "limitation": "The origin timed out under direct curl with zero response bytes; claim verification used the current browser-rendered direct page. This supporting boundary source is not an accepted evidence row or application citation."
+    }
+  ],
+  "checks": {
+    "allReturnedEvidenceUrlsChecked": true,
+    "allReturnedUrlsChecked": true,
+    "allEvidenceRowsChecked": true,
+    "allUrlsHttps": true,
+    "returnedOpenCount": 7,
+    "returnedBlockedCount": 1,
+    "northstarIdentityConversionVerified": true,
+    "northstarPulpAndPaperBoundaryVerified": true,
+    "ridgemontCurrentSponsorStatusVerified": true,
+    "sonocoHistoricStakeAndExitVerified": true,
+    "sonocoBuyerOrRepurchaserVerified": false,
+    "completeCutoffDirectOwnerSetVerified": false,
+    "laterPendingOwnershipTransactionFound": false,
+    "exactlyOneApplicationPrimary": true,
+    "modelRecommendedPrimaryApplicationUsableForTerminalDeferral": true,
+    "ownershipMutationBlocked": true,
+    "terminalDeferralSupported": true
+  },
+  "allEvidenceUrlsDirectHttps": true,
+  "allReturnedEvidenceSourcesWorkingOrBrowserVerified": true,
+  "directByteCaptureCount": 8,
+  "deadSourceCount": 0,
+  "browserVerifiedHttpBlockedCount": 1,
+  "browserVerifiedInteractiveCount": 1,
+  "supportingBrowserVerifiedHttpTimeoutCount": 1,
+  "recommendedApplicationPrimaryUrl": "https://www.sec.gov/Archives/edgar/data/91767/000009176726000008/R12.htm",
+  "recommendedApplicationPrimarySha256": "5558c0c304978271d219613eebc490a5dd2e830f6fa402f787a8f183e88b4bf3"
+}

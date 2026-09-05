@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0403:valley-of-fire:3a0ca3e8",
+  "taskIndex": 403,
+  "companyName": "Valley of Fire",
+  "outcome": "DEFERRED",
+  "decidedAt": "2026-09-05T15:43:00.000Z",
+  "rationale": "The 2023 owner, 2024 transfer and 2026 Cohen disclosures cannot be bridged into a complete current cap table without inference.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0403-valley-of-fire/attempt-2/locked-deferred-v1-task-snapshot.json",
+    "sha256": "c35a205312b76a82627b77201acccf6edbfb3215b5079e39dffc21441012007c"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0403-valley-of-fire/attempt-2/application-research-decision.json",
+    "sha256": "58d3c2ab7780a9008ca10237a2b63bf7ec010b2c5f24e482645d0479571d3b9f"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0403-valley-of-fire/attempt-2/source-verification.json",
+    "sha256": "a5dc5f70f1f1f1dd689936b018cb2b7236dfe72624b306e56319241f8a32a50a"
+  },
+  "evidence": [
+    {
+      "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20230516-5174",
+      "purpose": "2023 parent/project chain"
+    },
+    {
+      "url": "https://www.quinbrook.com/news-insights/quinbrook-closes-600m-solarstorage-continuation-fund/",
+      "purpose": "Deal perimeter/limits"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1820721/000119312526116240/d85164d8k.htm",
+      "purpose": "Cohen securities"
+    },
+    {
+      "url": "https://www.quinbrook.com/projects/valley-of-fire-solar/",
+      "purpose": "Identity/current counts"
+    },
+    {
+      "url": "https://www.energy.nv.gov/siteassets/content/programs/reta/01_RETA_Application_FULL_rev2021_PurpleSage_20240905_Redacted_FE.pdf",
+      "purpose": "Noble/Primergy boundary"
+    },
+    {
+      "url": "https://apg.nl/en/publication/apg-acquires-49-equity-stake-on-behalf-of-abp-in-large-us-solar-project/",
+      "purpose": "Gemini-only 49%"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/2004943/000200494324000001/primary_doc.xml",
+      "purpose": "Legal fund layer"
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "e9679317113b4014867d39c5bb9a906435ab01e359cb7d8142ce5d56852d8b2f"
+}
