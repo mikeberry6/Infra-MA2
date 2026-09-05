@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_ATTESTATION",
+  "runId": "portco-deferred-readjudication-2026-09-05",
+  "taskId": "ledger:0336:astoria-energy-partners:b7f656e5",
+  "taskIndex": 336,
+  "companyName": "Astoria Energy Partners",
+  "conversationUrl": "https://chatgpt.com/c/6a9b93a3-a470-83ea-942c-ba51e1aae542",
+  "initialInternalConversationUrl": "https://chatgpt.com/",
+  "accountTier": "ChatGPT Pro",
+  "model": "GPT-5.6 Sol",
+  "effort": "Pro",
+  "power": "5 of 5",
+  "uiVerified": true,
+  "uiEvidence": {
+    "accountLabel": "mike berry Pro",
+    "modeMenuModelLabel": "GPT-5.6 Sol",
+    "composerModelLabel": "5.6 Pro",
+    "modeMenuEffortLabel": "Pro",
+    "modeMenuPowerLabel": "Pro, 5 of 5",
+    "capturedBeforeSubmission": true
+  },
+  "initialSubmittedAt": null,
+  "initialSubmissionObservedWindowUtc": {
+    "afterPriorTaskCompletedAt": "2026-09-05T03:50:43.809Z",
+    "beforeAutomationCheckpointAt": "2026-09-05T04:21:13.903Z"
+  },
+  "initialCompletedObservedAt": "2026-09-05T04:24:51.000Z",
+  "initialReportedGenerationDuration": "PT15M32S",
+  "repairSubmittedAt": null,
+  "repairCompletedObservedAt": null,
+  "repairReportedGenerationDuration": null,
+  "repairCount": 0,
+  "finalOutcome": "VALID_INITIAL_CONTRACT_PACKET",
+  "contentHashes": {
+    "promptSha256": "e78dd581efd8619df1f31edc7da3887da35811d06cb04b6e25da7249ecfd0064",
+    "acceptedResponseSha256": "8dfb8f06c7ae516f97d628da2018322d934c8bb6fb22582118e3310a4ad45c72",
+    "transcriptSha256": "ea410c54b6cde0cdf135cb3d1df5d1b73e07b7fa336e0b901d75b0d397357737"
+  },
+  "captureMethod": "signed-in ChatGPT web application via browser DOM textContent",
+  "captureNote": "The prompt was submitted exactly once after the signed-in ChatGPT UI visibly showed the Pro account, GPT-5.6 Sol, Pro effort, and Pro 5-of-5 power. The UI reported a 15m32s generation. The exact submission timestamp was not exposed by the rendered DOM, so the attestation records a bounded observation window instead of inventing a timestamp. The accepted response preserves the assistant message DOM textContent exactly with one terminal LF."
+}

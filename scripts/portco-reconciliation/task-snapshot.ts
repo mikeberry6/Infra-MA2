@@ -225,6 +225,11 @@ export type TaskSnapshotTargetResolution =
     linkedQueueTaskId: null;
   }
   | {
+    method: "REVIEWED_POST_QUEUE_LEGAL_SUFFIX_IDENTITY";
+    targetCompanyId: string;
+    linkedQueueTaskId: null;
+  }
+  | {
     method: "REVIEWED_POST_QUEUE_EMBEDDED_PORTFOLIO_IDENTITY";
     targetCompanyId: string;
     linkedQueueTaskId: null;
@@ -381,6 +386,17 @@ export function resolveTaskSnapshotTarget(input: {
     && candidate.candidateCanonicalKeys.includes(queueCanonicalKey),
   );
   const reviewedDbaAlias = dbaAlias(input.queueEntry.companyName);
+  const reviewedLegalSuffixCandidateKey = legalSuffixCandidateCanonicalKey(input.queueEntry);
+  if (
+    symmetricLinks.length === 0
+    && reviewedLegalSuffixCandidateKey
+  ) {
+    return {
+      method: "REVIEWED_POST_QUEUE_LEGAL_SUFFIX_IDENTITY",
+      targetCompanyId: reviewedTargetCompanyId,
+      linkedQueueTaskId: null,
+    };
+  }
   if (
     symmetricLinks.length === 0
     && reviewedDbaAlias
@@ -540,6 +556,45 @@ function normalizedCompanyBaseTokens(value: string): string[] {
   return tokens;
 }
 
+function canonicalKeyParts(value: string): { name: string; country: string } | null {
+  const separator = value.lastIndexOf("|");
+  if (separator <= 0 || separator === value.length - 1) return null;
+  return {
+    name: value.slice(0, separator),
+    country: value.slice(separator + 1),
+  };
+}
+
+function isLegalSuffixCanonicalAlias(leftKey: string, rightKey: string): boolean {
+  const left = canonicalKeyParts(leftKey);
+  const right = canonicalKeyParts(rightKey);
+  if (!left || !right || normalizedIdentity(left.country) !== normalizedIdentity(right.country)) return false;
+  const leftTokens = canonicalIdentityPart(left.name).split("-").filter(Boolean);
+  const rightTokens = canonicalIdentityPart(right.name).split("-").filter(Boolean);
+  if (leftTokens.join("-") === rightTokens.join("-")) return false;
+  const leftHasLegalSuffix = LEGAL_SUFFIXES.has(leftTokens[leftTokens.length - 1] ?? "");
+  const rightHasLegalSuffix = LEGAL_SUFFIXES.has(rightTokens[rightTokens.length - 1] ?? "");
+  return leftHasLegalSuffix !== rightHasLegalSuffix
+    && normalizedCompanyBaseName(left.name) === normalizedCompanyBaseName(right.name);
+}
+
+function legalSuffixCandidateCanonicalKey(
+  queueEntry: ProposalQueueIndexArtifact["entries"][number],
+): string | null {
+  if (
+    queueEntry.queueKind !== "CANONICAL_COMPANY"
+    || queueEntry.decisionStatus !== "DEFERRED"
+    || queueEntry.sourceHoldingIds.length === 0
+    || queueEntry.sourceRepoOnlyIds.length !== 0
+    || queueEntry.productionCompanyIds.length !== 0
+    || queueEntry.seedKeys.length !== 0
+    || queueEntry.canonicalKey === null
+    || queueEntry.candidateCanonicalKeys.length !== 1
+    || !isLegalSuffixCanonicalAlias(queueEntry.canonicalKey, queueEntry.candidateCanonicalKeys[0])
+  ) return null;
+  return queueEntry.candidateCanonicalKeys[0];
+}
+
 const REVIEWED_MANAGER_SHORT_NAME_DESCRIPTORS = new Set(["renewable", "renewables"]);
 
 function isReviewedManagerShortNameAlias(shortName: string, fullName: string): boolean {
@@ -587,6 +642,7 @@ export function resolvedTaskCanonicalKey(input: {
     input.targetResolution.method === "REVIEWED_POST_QUEUE_DBA_IDENTITY"
     || input.targetResolution.method === "REVIEWED_POST_QUEUE_PARENTHETICAL_ALIAS_IDENTITY"
     || input.targetResolution.method === "REVIEWED_POST_QUEUE_MANAGER_SHORT_NAME_ALIAS_IDENTITY"
+    || input.targetResolution.method === "REVIEWED_POST_QUEUE_LEGAL_SUFFIX_IDENTITY"
   ) {
     if (!input.targetCompanyImage) {
       throw new Error("Reviewed alias target cannot resolve a canonical identity without a company");
@@ -648,6 +704,7 @@ export function assertReviewedPostQueueExactIdentity(input: {
     && input.targetResolution.method !== "REVIEWED_POST_QUEUE_DBA_IDENTITY"
     && input.targetResolution.method !== "REVIEWED_POST_QUEUE_PARENTHETICAL_ALIAS_IDENTITY"
     && input.targetResolution.method !== "REVIEWED_POST_QUEUE_MANAGER_SHORT_NAME_ALIAS_IDENTITY"
+    && input.targetResolution.method !== "REVIEWED_POST_QUEUE_LEGAL_SUFFIX_IDENTITY"
     && input.targetResolution.method !== "REVIEWED_POST_QUEUE_EMBEDDED_PORTFOLIO_IDENTITY"
   ) return;
   if (!input.targetCompanyImage) {
@@ -658,6 +715,8 @@ export function assertReviewedPostQueueExactIdentity(input: {
     === "REVIEWED_POST_QUEUE_PARENTHETICAL_ALIAS_IDENTITY";
   const isManagerShortNameAlias = input.targetResolution.method
     === "REVIEWED_POST_QUEUE_MANAGER_SHORT_NAME_ALIAS_IDENTITY";
+  const isLegalSuffixAlias = input.targetResolution.method
+    === "REVIEWED_POST_QUEUE_LEGAL_SUFFIX_IDENTITY";
   const isEmbeddedPortfolioIdentity = input.targetResolution.method
     === "REVIEWED_POST_QUEUE_EMBEDDED_PORTFOLIO_IDENTITY";
   const reviewedDbaAlias = isDba ? dbaAlias(input.queueEntry.companyName) : null;
@@ -720,6 +779,11 @@ export function assertReviewedPostQueueExactIdentity(input: {
       return isReviewedManagerShortNameAlias(input.queueEntry.companyName, company.name)
         && normalizedIdentity(company.country) === normalizedIdentity(input.queueEntry.country);
     }
+    if (isLegalSuffixAlias) {
+      const candidateKey = legalSuffixCandidateCanonicalKey(input.queueEntry);
+      const targetKey = `${canonicalIdentityPart(company.name)}|${canonicalIdentityPart(company.country)}`;
+      return candidateKey === targetKey;
+    }
     return matchesImmutableTaskIdentity(input.queueEntry, company);
   };
   if (isEmbeddedPortfolioIdentity) {
@@ -762,6 +826,8 @@ export function assertReviewedPostQueueExactIdentity(input: {
           ? "Reviewed post-queue target does not exactly match the immutable parenthetical-alias base and country"
           : isManagerShortNameAlias
             ? "Reviewed post-queue target does not match the immutable manager short-name alias and country"
+          : isLegalSuffixAlias
+            ? "Reviewed post-queue target does not exactly match the immutable legal-suffix candidate and country"
           : "Reviewed post-queue target does not exactly match the immutable task identity",
     );
   }
@@ -813,6 +879,7 @@ export function resolvedTaskSeedKeys(input: {
     && input.targetResolution.method !== "REVIEWED_POST_QUEUE_DBA_IDENTITY"
     && input.targetResolution.method !== "REVIEWED_POST_QUEUE_PARENTHETICAL_ALIAS_IDENTITY"
     && input.targetResolution.method !== "REVIEWED_POST_QUEUE_MANAGER_SHORT_NAME_ALIAS_IDENTITY"
+    && input.targetResolution.method !== "REVIEWED_POST_QUEUE_LEGAL_SUFFIX_IDENTITY"
     && input.targetResolution.method !== "REVIEWED_POST_QUEUE_EMBEDDED_PORTFOLIO_IDENTITY"
   ) return [];
   if (!input.targetCompanyImage) {
@@ -1081,6 +1148,7 @@ export async function buildTaskSnapshotContext(input: {
       || targetResolution.method === "REVIEWED_POST_QUEUE_DBA_IDENTITY"
       || targetResolution.method === "REVIEWED_POST_QUEUE_PARENTHETICAL_ALIAS_IDENTITY"
       || targetResolution.method === "REVIEWED_POST_QUEUE_MANAGER_SHORT_NAME_ALIAS_IDENTITY"
+      || targetResolution.method === "REVIEWED_POST_QUEUE_LEGAL_SUFFIX_IDENTITY"
       || targetResolution.method === "REVIEWED_POST_QUEUE_EMBEDDED_PORTFOLIO_IDENTITY",
   });
   const resolvedCanonicalKey = resolvedTaskCanonicalKey({

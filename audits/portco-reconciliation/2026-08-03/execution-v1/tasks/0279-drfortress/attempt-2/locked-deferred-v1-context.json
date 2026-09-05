@@ -1,0 +1,261 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0279:drfortress:c7515be2",
+  "taskIndex": 279,
+  "companyName": "DRFortress",
+  "generatedAt": "2026-09-05T05:04:25.962Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0279-drfortress/attempt-2/locked-deferred-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 279,
+    "taskId": "ledger:0279:drfortress:c7515be2",
+    "canonicalKey": "drfortress|united-states",
+    "companyName": "DRFortress",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 51,
+    "managers": [
+      "Harrison Street"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "051-harrison-street:repo-only:004:drfortress"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjhkp010givheoim63k6q"
+    ],
+    "seedKeys": [
+      "drfortress|United States"
+    ],
+    "evidenceUrls": [
+      "https://harrisonst.com/1547-and-harrison-street-acquire-drfortress-hawaiis-leading-carrier-neutral-data-center/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Harrison Street MATCHED_ELSEWHERE: Rolled into 1547 Critical Systems Realty platform consolidation.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjhkp010givheoim63k6q",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "drfortress|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjhkp010givheoim63k6q",
+    "name": "DRFortress",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Carrier-neutral colocation and interconnection data center",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "DRFortress operates a carrier-neutral colocation and interconnection data center in Honolulu, Hawaii. Its customers include enterprises, carriers, cloud users, submarine-cable operators, and public-sector users that require secure hosting and Pacific connectivity. The business follows an asset-heavy digital-infrastructure model based on owned data center capacity, power, cooling, and network interconnection services. Public acquisition materials describe DRFortress as Hawaii’s largest carrier-neutral data center and note that its colocation capacity nearly doubled under the prior owner. Harrison Street and 1547 acquired DRFortress from GI Partners in April 2025 through Harrison Street Digital Fund; the ownership split is not publicly disclosed. The facility serves as a strategic interconnection point for Hawaii and broader Pacific traffic flows.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Hawaii",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk3jg01z7ivhebyxic8y2",
+        "managerName": "Harrison Street",
+        "organizationName": "Harrison Street",
+        "fundName": null,
+        "vehicleName": "Harrison Street Digital Fund",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxply0x049zivhei2bxtjy3",
+        "date": "2020",
+        "event": "Public transaction materials state that DRFortress nearly doubled its colocation capacity under GI ownership.",
+        "category": "EXPANSION",
+        "sortDate": "2020-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxply1h04a0ivhekt2sh8iz",
+        "date": "Jan 2020",
+        "event": "GI Partners announced its acquisition of a majority interest in DRFortress in partnership with the founders.",
+        "category": "ACQUISITION",
+        "sortDate": "2020-01-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxply2104a1ivhegt120p1v",
+        "date": "2025",
+        "event": "The founders were disclosed as continuing to lead day-to-day operations after the acquisition.",
+        "category": "MANAGEMENT",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxply2f04a2ivhebvf2by4z",
+        "date": "Apr 3, 2025",
+        "event": "Harrison Street and 1547 announced the acquisition of DRFortress from GI Partners.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-04-03T04:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxprgzg0b4kivhe8olcedjz",
+        "label": "Drfortress — DRFortress",
+        "url": "https://www.drfortress.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Drfortress company profile",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxprh0h0b4mivhen0bi8f42",
+        "label": "Announcement date source — Harrison Street — DRFortress",
+        "url": "https://harrisonst.com/1547-and-harrison-street-acquire-drfortress-hawaiis-leading-carrier-neutral-data-center/",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Harrison Street transaction announcement",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxprh120b4nivhekpk0d3pc",
+        "label": "1547Realty — Chicago CBD Data Center (CHIL2)",
+        "url": "https://www.1547realty.com/",
+        "sourceType": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "1547Realty company profile",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "DRFortress",
+    "investmentFirm": "Harrison Street",
+    "sector": "Digital",
+    "subsector": "Carrier-neutral colocation and interconnection data center",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Harrison Street Digital Fund",
+    "description": "DRFortress operates a carrier-neutral colocation and interconnection data center in Honolulu, Hawaii. Its customers include enterprises, carriers, cloud users, submarine-cable operators, and public-sector users that require secure hosting and Pacific connectivity. The business follows an asset-heavy digital-infrastructure model based on owned data center capacity, power, cooling, and network interconnection services. Public acquisition materials describe DRFortress as Hawaii’s largest carrier-neutral data center and note that its colocation capacity nearly doubled under the prior owner. Harrison Street and 1547 acquired DRFortress from GI Partners in April 2025 through Harrison Street Digital Fund; the ownership split is not publicly disclosed. The facility serves as a strategic interconnection point for Hawaii and broader Pacific traffic flows.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2025,
+    "headquarters": "Hawaii",
+    "milestones": [
+      {
+        "date": "2020",
+        "event": "Public transaction materials state that DRFortress nearly doubled its colocation capacity under GI ownership.",
+        "category": "Expansion"
+      },
+      {
+        "date": "Jan 2020",
+        "event": "GI Partners announced its acquisition of a majority interest in DRFortress in partnership with the founders.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "2025",
+        "event": "The founders were disclosed as continuing to lead day-to-day operations after the acquisition.",
+        "category": "Management"
+      },
+      {
+        "date": "Apr 3, 2025",
+        "event": "Harrison Street and 1547 announced the acquisition of DRFortress from GI Partners.",
+        "category": "Acquisition"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Drfortress — DRFortress",
+        "url": "https://www.drfortress.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Announcement date source — Harrison Street — DRFortress",
+        "url": "https://harrisonst.com/1547-and-harrison-street-acquire-drfortress-hawaiis-leading-carrier-neutral-data-center/",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "1547Realty — DRFortress",
+        "url": "https://www.1547realty.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Harrison Street",
+        "ownershipVehicle": "Harrison Street Digital Fund",
+        "investmentYear": 2025,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpi9hc0029ivhep5jy7vm9",
+        "name": "Harrison Street",
+        "updatedAt": "2026-07-23T16:09:19.488Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0279:drfortress:c7515be2",
+    "taskIndex": 279,
+    "canonicalKey": "drfortress|united-states",
+    "capturedAt": "2026-09-05T05:04:25.962Z",
+    "databaseRevision": "revision:9e88672ae30528082d46f7aff11bcf0bd3cb7d2768d2bb632364bc3483bb946a",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "023f2ef49d28dcf279e5efac82878110d6f28b18665c47340fe521ff149be0cc",
+    "productionSnapshotSha256": "76ec0d700bd0f695591580dc7b9489651e4a76028ad96f684f21b9e2fcfbc671",
+    "targetCompanySnapshotSha256": "0699e0bebd9da181a63edae8ce688bbafbc799144589a9b1af300b35c04f7f1e",
+    "seedEntrySha256": "ce76b8eda5e2e9827ae032977d50f7411272d44588421c34a740dab7f8595ed7",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "7d0c2871fb00b10a6fc273468ce68aea0d381552b47509036c02ba3438b8f911",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "aca578e15ae37e0a87c895a82541686bf8a6bc3d738a98873fb7c4419f86066a",
+      "citationsSha256": "a812557b97bd154234342287b0cc3c9b02fccbfe40b19e876b0b4b038b298ec4",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "a1efed9eb584617fe8685e39084eed8ed31ef68fb79bee136e604147679e0825",
+    "stateSha256": "d742b84a2be9e46c5005c6aa7a840bcb0e0df453d29ffec7e0b7b798cecc73ce",
+    "taskSnapshotSha256": "f22b97c3efd24ec186bfd8dac76be8e8388cedc0797281221c044fc8a9e1b4b9"
+  },
+  "contextSha256": "678e96470d8e3f4e186f147e6de662043f4e69c165372aff6aa905ea6a16753c"
+}

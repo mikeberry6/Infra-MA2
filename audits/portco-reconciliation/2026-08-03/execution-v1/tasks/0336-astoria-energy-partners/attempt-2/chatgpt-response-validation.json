@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "runId": "portco-deferred-readjudication-2026-09-05",
+  "taskId": "ledger:0336:astoria-energy-partners:b7f656e5",
+  "taskIndex": 336,
+  "companyName": "Astoria Energy Partners",
+  "validatedAt": "2026-09-05T04:24:51.000Z",
+  "conversationUrl": "https://chatgpt.com/c/6a9b93a3-a470-83ea-942c-ba51e1aae542",
+  "acceptedResponseSha256": "8dfb8f06c7ae516f97d628da2018322d934c8bb6fb22582118e3310a4ad45c72",
+  "valid": true,
+  "finalResponse": {
+    "characterCountExcludingRepositoryTerminalLf": 7325,
+    "fencedJsonPresent": false,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "requiredTopLevelKeysExact": true,
+    "decision": "DEFERRED",
+    "confidence": {
+      "economicIdentity": "HIGH",
+      "cutoffOwnership": "UNRESOLVED"
+    },
+    "evidenceCount": 8,
+    "currentOwnerOrSponsorRows": 6,
+    "pendingOwnershipTransactionCount": 0,
+    "primaryEvidenceCount": 1,
+    "ownerKeysExact": true,
+    "pendingTransactionKeysExact": true,
+    "evidenceKeysExact": true,
+    "withinCharacterLimit": true,
+    "withinEvidenceLimit": true,
+    "withinMilestoneLimit": true,
+    "freshExactExceptionRecorded": true,
+    "responseSha256": "8dfb8f06c7ae516f97d628da2018322d934c8bb6fb22582118e3310a4ad45c72",
+    "result": "PASS"
+  },
+  "contract": {
+    "beginJsonPresent": true,
+    "endJsonPresent": true,
+    "beginReviewPresent": true,
+    "endReviewPresent": true,
+    "jsonParses": true,
+    "mandatoryTopLevelKeysExact": true,
+    "ownerKeysExact": true,
+    "pendingTransactionKeysExact": true,
+    "evidenceKeysExact": true,
+    "evidenceRowCount": 8,
+    "milestoneCount": 3,
+    "recommendedPrimaryCount": 1,
+    "contentCharactersExcludingMarkers": 7280,
+    "decisionAllowed": true,
+    "decision": "DEFERRED"
+  },
+  "captureNormalization": {
+    "performed": false,
+    "reason": "The assistant message DOM textContent retained literal URL strings and parsed as the required minified JSON. Incidental rendered citation labels in narrative strings were preserved exactly and do not alter the evidence rows or decision contract.",
+    "semanticChanges": false,
+    "repairTurnUsed": false
+  },
+  "independentEvidenceAdjustments": [
+    "The direct NYPSC petition and order establish the APPH hierarchy, 2020 reviewed ownership chain, direct sellers, purchaser members, pension beneficiaries and project-level ownership boundaries, but the petition expressly allowed closing adjustments and is not a cutoff-current member ledger.",
+    "Munich Re's direct half-year report identifies 2020-06-18 as the MR Gotham completion date, correcting the prior 2019 or later-release-date ambiguity.",
+    "Munich Re's direct 2025 annual report reports MR Gotham LP at 20.0000% of Astoria Power Partners Holding at 2025-12-31, but that year-end related-company table does not establish every other member or the complete 2026-09-04 cap table.",
+    "CalSTRS' direct holdings page identifies Golden Inferno in its disclosed holdings as of 2025-06-30 but supplies no Gotham percentage, APPH look-through, closing adjustment, later transfer or cutoff-current ownership statement.",
+    "ENGIE's direct closing release states that APPH acquired 100% of APP I and approximately 55% of APP II and names APG, MEAG, Clal and other institutional investors, while preserving the two-plant platform boundary and distinguishing owners from NYPA, sellers and project operators.",
+    "The direct 2026 NYPSC debt order and the rendered S&P refinancing article establish financing and operating facts only; they do not prove equity continuity, member allocations or ownership changes.",
+    "The model-recommended NYPSC petition is usable as the sole application primary for a terminal DEFERRED exception, but no merge, company, owner, fund, vehicle, stake or status mutation is authorized while final closing allocations and cutoff-current ownership remain unavailable."
+  ],
+  "result": "PASS_WITH_EXACT_DOM_TEXT_CAPTURE_AND_FRESH_EXACT_CAP_TABLE_EXCEPTION"
+}

@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_ATTESTATION",
+  "runId": "portco-deferred-readjudication-2026-09-05",
+  "taskId": "ledger:0301:conrac:6d35f5f9",
+  "taskIndex": 301,
+  "companyName": "ConRAC",
+  "conversationUrl": "https://chatgpt.com/c/6a9b8d6f-0cb8-83ea-ba89-145608b20dc0",
+  "initialInternalConversationUrl": "https://chatgpt.com/",
+  "accountTier": "ChatGPT Pro",
+  "model": "GPT-5.6 Sol",
+  "effort": "Pro",
+  "power": "5 of 5",
+  "uiVerified": true,
+  "uiEvidence": {
+    "accountLabel": "mike berry Pro",
+    "modeMenuModelLabel": "GPT-5.6 Sol",
+    "composerModelLabel": "5.6 Pro",
+    "modeMenuEffortLabel": "Pro",
+    "modeMenuPowerLabel": "Pro, 5 of 5",
+    "capturedBeforeSubmission": true
+  },
+  "initialSubmittedAt": null,
+  "initialSubmissionObservedWindowUtc": {
+    "afterPromptWrittenAt": "2026-09-05T03:30:53.000Z",
+    "beforeAutomationCheckpointAt": "2026-09-05T03:33:52.000Z"
+  },
+  "initialCompletedObservedAt": "2026-09-05T03:50:43.809Z",
+  "initialReportedGenerationDuration": "PT9M59S",
+  "repairSubmittedAt": null,
+  "repairCompletedObservedAt": null,
+  "repairReportedGenerationDuration": null,
+  "repairCount": 0,
+  "finalOutcome": "VALID_INITIAL_CONTRACT_PACKET",
+  "contentHashes": {
+    "promptSha256": "707ddf0b053d109bd8d65151be42e33eaebb5970018f345723c1e8390258d771",
+    "acceptedResponseSha256": "07ffbc9354dd9fba8e25ee5409209535a842429fff3e7e34e5b32f9888c59d9c",
+    "transcriptSha256": "61d59d5126c74e3273ff0c8ac73f56e8918dbc03add7e54af1c00c98e655a67a"
+  },
+  "captureMethod": "signed-in ChatGPT web application via browser DOM textContent",
+  "captureNote": "The prompt was submitted exactly once after the signed-in ChatGPT UI visibly showed the Pro account, GPT-5.6 Sol, Pro effort, and Pro 5-of-5 power. The UI reported a 9m59s generation. The exact submission timestamp was not exposed by the rendered DOM, so the attestation records the bounded observation window instead of inventing a timestamp. The accepted response preserves the assistant message DOM textContent exactly with one terminal LF."
+}

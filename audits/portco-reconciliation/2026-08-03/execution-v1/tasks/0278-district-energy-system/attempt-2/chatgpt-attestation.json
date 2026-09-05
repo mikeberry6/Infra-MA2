@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_ATTESTATION",
+  "runId": "portco-deferred-readjudication-2026-09-05",
+  "taskId": "ledger:0278:district-energy-system:55ee7b00",
+  "taskIndex": 278,
+  "companyName": "District Energy System",
+  "conversationUrl": "https://chatgpt.com/c/6a9b758c-3310-83e9-b95e-a23b63b087b1",
+  "initialInternalConversationUrl": "https://chatgpt.com/c/WEB:3bfe1ac8-9c2e-4db9-aa3c-798276c6dc73",
+  "accountTier": "ChatGPT Pro",
+  "model": "GPT-5.6 Sol",
+  "effort": "Pro",
+  "power": "5 of 5",
+  "uiVerified": true,
+  "uiEvidence": {
+    "accountLabel": "mike berry Pro",
+    "modeMenuModelLabel": "GPT-5.6 Sol",
+    "composerModelLabel": "5.6 Pro",
+    "modeMenuEffortLabel": "Pro",
+    "modeMenuPowerLabel": "Pro, 5 of 5",
+    "capturedBeforeSubmission": true
+  },
+  "initialSubmittedAt": "2026-09-05T01:51:08.000Z",
+  "initialCompletedObservedAt": "2026-09-05T02:20:13.375Z",
+  "initialReportedGenerationDuration": "PT22M36S",
+  "repairSubmittedAt": null,
+  "repairCompletedObservedAt": null,
+  "repairReportedGenerationDuration": null,
+  "repairCount": 0,
+  "finalOutcome": "VALID_INITIAL_CONTRACT_PACKET",
+  "contentHashes": {
+    "promptSha256": "77bc68e387334243b6b7a4f48f2bb45c69fbe39f66b5b9b0a06a0b4cddacd8ae",
+    "acceptedResponseSha256": "65407f506badeaf72a4d8e94aa10a622d23b5fc5ce1a8dd31cad83e74429774b",
+    "transcriptSha256": "3f93b9018eae12a64fa5736047a3489460f92bfe435f29d242f411403e171862"
+  },
+  "captureMethod": "signed-in ChatGPT web application via browser DOM textContent",
+  "captureNote": "The prompt was submitted exactly once after the signed-in ChatGPT UI visibly showed the Pro account, GPT-5.6 Sol, Pro effort, and Pro 5-of-5 power. A transient Too many requests dialog appeared while the generation remained active; it was dismissed without resubmitting. The UI later reported a 22m36s generation. The accepted response preserves the assistant message DOM textContent exactly with one terminal LF. Copy response was rejected because Markdown citation expansion corrupted JSON URL fields; the DOM textContent retained the literal URLs and valid JSON without semantic repair."
+}

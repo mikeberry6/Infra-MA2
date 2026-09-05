@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "runId": "portco-deferred-readjudication-2026-09-05",
+  "taskId": "ledger:0301:conrac:6d35f5f9",
+  "taskIndex": 301,
+  "companyName": "ConRAC",
+  "validatedAt": "2026-09-05T03:50:43.809Z",
+  "conversationUrl": "https://chatgpt.com/c/6a9b8d6f-0cb8-83ea-ba89-145608b20dc0",
+  "acceptedResponseSha256": "07ffbc9354dd9fba8e25ee5409209535a842429fff3e7e34e5b32f9888c59d9c",
+  "valid": true,
+  "finalResponse": {
+    "characterCountExcludingRepositoryTerminalLf": 7163,
+    "fencedJsonPresent": false,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "requiredTopLevelKeysExact": true,
+    "decision": "DEFERRED",
+    "confidence": {
+      "decision": "HIGH",
+      "exactInvesteeAndCurrentOwnership": "LOW"
+    },
+    "evidenceCount": 8,
+    "currentOwnerOrSponsorRows": 1,
+    "pendingOwnershipTransactionCount": 0,
+    "primaryEvidenceCount": 1,
+    "ownerKeysExact": true,
+    "pendingTransactionKeysExact": true,
+    "evidenceKeysExact": true,
+    "withinCharacterLimit": true,
+    "withinEvidenceLimit": true,
+    "withinMilestoneLimit": true,
+    "freshExactExceptionRecorded": true,
+    "responseSha256": "07ffbc9354dd9fba8e25ee5409209535a842429fff3e7e34e5b32f9888c59d9c",
+    "result": "PASS"
+  },
+  "contract": {
+    "beginJsonPresent": true,
+    "endJsonPresent": true,
+    "beginReviewPresent": true,
+    "endReviewPresent": true,
+    "jsonParses": true,
+    "mandatoryTopLevelKeysExact": true,
+    "ownerKeysExact": true,
+    "pendingTransactionKeysExact": true,
+    "evidenceKeysExact": true,
+    "evidenceRowCount": 8,
+    "milestoneCount": 4,
+    "recommendedPrimaryCount": 1,
+    "contentCharactersExcludingMarkers": 7118,
+    "decisionAllowed": true,
+    "decision": "DEFERRED"
+  },
+  "captureNormalization": {
+    "performed": false,
+    "reason": "The assistant message DOM textContent retained literal URL strings and parsed as the required minified JSON. Incidental rendered citation and attachment labels in narrative fields were preserved exactly and do not alter the evidence rows or decision contract.",
+    "semanticChanges": false,
+    "repairTurnUsed": false
+  },
+  "independentEvidenceAdjustments": [
+    "The direct 2020 Conrac Solutions page says the five-year agreement covered equity financing for future private delivery and refinancing of ConRAC facilities across the United States and Canada. It does not identify a corporate-equity sale, common legal holdco, iCON fund, vehicle, percentages or full project roster.",
+    "The Conrac Solutions AVP project page identifies August 2022 financing by iCON and Conrac Solutions' project-delivery, asset-management, operations and finance roles, but those roles and the financing date do not establish the registered members or cutoff ownership of AVP QTA LLC.",
+    "The airport's direct 2023 opening release identifies iCON Infrastructure LLP as the equity provider, Conrac Solutions units as developer, arranger and operator, and a 25-year airport lease. It remains historical project evidence rather than a current member ledger.",
+    "A&O Shearman's direct lawyer-experience page describes a separate sale of a 50% interest in Conrac Solutions and Related joint venture arrangements, followed by sale of the Conrac Solutions business to Meridiam. It also separately describes EWR equity arrangements; none of those statements proves an iCON corporate or EWR interest.",
+    "Meridiam's direct asset page and Conrac Solutions' current Reno project page conflict on June 2023 versus May 2023 for the Conrac Solutions acquisition reference and do not disclose legal transaction parties, acquired stake, excluded subsidiaries or treatment of any iCON project interest.",
+    "The direct Reno project page states that Meridiam provided the entire equity for the distinct Reno project and that its financial close occurred in May 2024, so Reno cannot be assigned to iCON without contrary direct evidence.",
+    "US InfraVest's direct portfolio page labels both Conrac Solutions and EWR ConRAC as exited and identifies USIV, Fengate and Related as EWR equity investors. It supports keeping the corporate platform and EWR project separate from the unresolved iCON ConRAC label.",
+    "The model-recommended airport release is usable as the sole application primary for a terminal DEFERRED exception, but no company, merge, owner, fund or vehicle mutation is authorized without direct current ownership schedules."
+  ],
+  "result": "PASS_WITH_EXACT_DOM_TEXT_CAPTURE_AND_FRESH_EXACT_INVESTEE_EXCEPTION"
+}

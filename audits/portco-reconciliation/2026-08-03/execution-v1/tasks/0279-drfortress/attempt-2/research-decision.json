@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_DEFERRED_READJUDICATION_RESEARCH_DECISION",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-deferred-readjudication-2026-09-05",
+  "generatedAt": "2026-09-05T03:20:43.601Z",
+  "asOfDate": "2026-09-04",
+  "taskId": "ledger:0279:drfortress:c7515be2",
+  "taskIndex": 279,
+  "companyName": "DRFortress",
+  "linkedTaskIdsCovered": [],
+  "linkedTaskIdsReferenced": [
+    "ledger:0273:1547-critical-systems-realty:8e267688"
+  ],
+  "modelDecision": "DEFERRED",
+  "decision": "DEFERRED",
+  "confidence": "HIGH_IDENTITY_AND_TRANSACTION_CHAIN_LOW_COMPLETE_CUTOFF_CAP_TABLE",
+  "researchOnly": true,
+  "summary": "Keep existing production company cmrxpjhkp010givheoim63k6q as a separate DRFortress operating company and retain the source task as an exact fresh deferral. The direct FCC record resolves the legal and operating boundary, 2020 acquisition entity and full named GI chain, historical indirect Singapore interests, 2025 license assignment, and subsequent acquisition by DR Fortress Acquisition, LLC. Direct 1547, Bank Street and GI Partners sources verify the Harrison Street and 1547 sponsor pair, an April 2025 completed acquisition from GI, GI's former majority position and historical fund attribution. No direct evidence supplies the current members and percentages of DR Fortress Acquisition, LLC, Harrison Street fund or managed account, 1547 ownership vehicle, founder or management disposition, exact 2025 legal closing day, or complete legacy-holder disposition. Those material active-cap-table facts cannot be inferred.",
+  "resolvedFormerBlockers": [
+    "The FCC order and consent decree directly identifies DR Fortress, LLC as the distinct Delaware operating company, gives its organization date and Honolulu address, and separates the operating company from HSC USA's cable-station ownership and GI DI Fortress SpinCo LLC's licensee role.",
+    "The FCC decree directly identifies GI DI Fortress Acquisition, LLC, GI DI Fortress Intermediate LLC, GI DI Fortress Parent LLC and GI DI Fortress Holdings LP and states that the 2020 control transaction closed on 2020-01-15.",
+    "The FCC decree reports two unnamed Government of Singapore-controlled investment vehicles at 16.17% indirect equity and deemed voting interest each following the 2020 transaction, while leaving the vehicle names and later disposition unavailable.",
+    "The FCC decree states that DR Fortress Acquisition, LLC acquired DRFortress shortly after the 2025-03-31 license assignment, establishing the current direct acquisition entity without revealing its upstream ownership schedule.",
+    "The direct 1547 release and Bank Street adviser page verify that 1547 and Harrison Street acquired DRFortress from GI Partners in a transaction completed in April 2025 and preserve DRFortress as a separate operating-company boundary.",
+    "GI Partners' direct 2020 release and fund-closing release verify the former majority investment in partnership with management and bind that investment to the GI Data Infrastructure Fund."
+  ],
+  "identityResolution": {
+    "requestedLabel": "DRFortress",
+    "canonicalCompanyName": "DRFortress",
+    "legalEntity": "DR Fortress, LLC",
+    "jurisdiction": "Delaware",
+    "organizationDate": "2006-09-21",
+    "headquarters": "Honolulu, Hawaii",
+    "productionCompanyId": "cmrxpjhkp010givheoim63k6q",
+    "productionAction": "KEEP_EXISTING_SEPARATE_COMPANY",
+    "status": "IDENTITY_AND_BOUNDARY_RESOLVED_ACTIVE_CAP_TABLE_INCOMPLETE",
+    "boundary": "DR Fortress, LLC remains the standalone carrier-neutral colocation and interconnection operating company. Keep it separate from 1547 Critical Systems Realty and completed source task 273, from the HSC USA-owned cable landing station, from GI DI Fortress SpinCo LLC as licensee and contract counterparty, and from the separate Kapolei HAII1 facility. No merger, dissolution or supersession of the operating-company identity is evidenced."
+  },
+  "ownershipResolution": {
+    "status": "UNRESOLVED_COMPLETE_CUTOFF_CURRENT_CAP_TABLE",
+    "currentDirectAcquisitionEntity": "DR Fortress Acquisition, LLC",
+    "currentSponsorPair": [
+      "Harrison Street",
+      "FifteenFortySeven Critical Systems Realty / 1547 Critical Systems Realty"
+    ],
+    "currentPercentages": "UNRESOLVED",
+    "harrisonStreetFundOrAccount": "UNRESOLVED",
+    "fifteenFortySevenVehicle": "UNRESOLVED",
+    "founderOrManagementCurrentEquity": "UNRESOLVED",
+    "formerGiChain": {
+      "directOwner": "GI DI Fortress Acquisition, LLC",
+      "intermediateOwner": "GI DI Fortress Intermediate LLC",
+      "parent": "GI DI Fortress Parent LLC",
+      "fundHoldingEntity": "GI DI Fortress Holdings LP",
+      "manager": "GI Partners",
+      "fund": "GI Data Infrastructure Fund",
+      "stake": "Majority; exact percentage unresolved",
+      "entryDate": "2020-01-15",
+      "exitDate": "April 2025; exact day unresolved"
+    },
+    "legacyMinorities": "Two unnamed Government of Singapore-controlled investment vehicles each held 16.17% indirect equity and deemed voting interest through the GI chain after the 2020 transaction. Their names and 2025 disposition are unresolved."
+  },
+  "operatingResolution": {
+    "status": "ACTIVE_STANDALONE_COMPANY",
+    "company": "DR Fortress, LLC",
+    "business": "Carrier-neutral colocation and interconnection services from the Honolulu campus",
+    "management": "Co-founders Fred Rodi and Rosa White remain in operating leadership roles",
+    "roleRule": "Management continuity, joint branding, operating control, cable-landing services, licensee status, financing, portfolio presentation and absence of a public exit are not treated as proof of equity."
+  },
+  "transactionResolution": {
+    "state": "2025_ACQUISITION_CLOSED_CURRENT_UPSTREAM_CAP_TABLE_UNRESOLVED",
+    "pendingTransaction": null,
+    "finding": "DR Fortress Acquisition, LLC acquired DRFortress shortly after the 2025-03-31 license assignment; 1547, Harrison Street and Bank Street describe the sponsor transaction as completed in April 2025. No direct later sale, transfer, recapitalization, ownership-linked refinancing, merger, dissolution, operator change, write-off or signed pending exit was located. Negative search does not establish ownership continuity or percentages."
+  },
+  "freshException": {
+    "status": "EXACT_FACT_UNAVAILABLE",
+    "missingFact": "The cutoff-current members and full upstream beneficial-owner chart for DR Fortress Acquisition, LLC, including Harrison Street's fund or managed account and percentage, 1547's ownership vehicle and percentage, any founder or management rollover or retained equity, the exact legal 2025 closing day, and the names and full disposition of every legacy minority holder.",
+    "searchedEvidence": [
+      "FCC DA 26-110 and its admitted factual ownership and license history",
+      "1547's direct 2025 acquisition release and current DRFortress presentation",
+      "Bank Street's direct completed-transaction page",
+      "GI Partners' direct 2020 investment and Data Infrastructure Fund closing releases",
+      "DRFortress company and leadership materials",
+      "Current operating agreement, member, acquisition, rollover, funds-flow, closing, fund-holding, financing, recapitalization, transfer, sale, merger, dissolution, operator-change and pending-transaction searches in the fresh ChatGPT conversation"
+    ],
+    "requiredToResolve": "A cutoff-dated certified operating agreement or member ledger for DR Fortress Acquisition, LLC with the full upstream beneficial-owner chart; the executed 2025 purchase agreement, rollover schedule, funds-flow or closing certificate; an audited Harrison Street or 1547 named-investment holding schedule that identifies the vehicle and ownership; or a direct later ownership transaction document."
+  },
+  "primaryCitation": {
+    "label": "FCC DA 26-110 order and consent decree",
+    "url": "https://docs.fcc.gov/public/attachments/DA-26-110A1.pdf",
+    "purpose": "Direct filed evidence for the legal operating-company boundary, 2020 ownership chain and date, historical indirect interests, 2025 license assignment, DR Fortress Acquisition, LLC acquisition, and the precise limits of the public current-cap-table record",
+    "contentSha256": "54e16918255611172d9668f6675ff955fd6f030b95604b56aa28d4d8c639ac82"
+  },
+  "applicationRequirements": [
+    "Use a terminal-only DEFERRED outcome and preserve existing company cmrxpjhkp010givheoim63k6q as a separate DRFortress operating company without changing its active ownership records.",
+    "Do not merge DRFortress into completed task 273 or the manager-level 1547 Critical Systems Realty record; do not conflate it with HSC USA, GI DI Fortress SpinCo LLC or Kapolei HAII1.",
+    "Do not assign Harrison Street Digital Fund or any other Harrison Street fund or managed account, a 1547 vehicle, buyer percentages, founder equity, management rollover, legacy-holder names or an exact 2025 legal closing day without the required direct documents.",
+    "Preserve the verified former GI Data Infrastructure Fund lineage and legal entity chain as research evidence, but do not infer complete former or current percentages beyond the facts stated in the FCC record.",
+    "Use exactly one application primary citation bound to the fresh FCC PDF bytes and retain all other verified sources as supporting research lineage."
+  ],
+  "applicationBlocked": false,
+  "databaseMutationCandidate": false,
+  "seedMutationCandidate": false,
+  "terminalOutcomeCandidate": "DEFERRED",
+  "dealDatabaseMutation": false,
+  "lineage": {
+    "conversationUrl": "https://chatgpt.com/c/6a9b7f27-8a78-83ea-80aa-1e14b98b638f",
+    "prompt": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0279-drfortress/attempt-2/chatgpt-research-prompt.md",
+      "sha256": "baaadff925c421a3022a0c2b0fa39cbdde4163fb7feff70d50fe6c9ffe03be3d"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0279-drfortress/attempt-2/chatgpt-accepted-response.txt",
+      "sha256": "2367bcae0decf35c4f448e7db0fe64a36d3ff3977be05fb4b41529a4214ea01b"
+    },
+    "transcript": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0279-drfortress/attempt-2/chatgpt-transcript.txt",
+      "sha256": "5a0e2d1a79484d283a6650a8b1efad3b629b8cfb40887965820de7e5d2c37290"
+    },
+    "attestation": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0279-drfortress/attempt-2/chatgpt-attestation.json",
+      "sha256": "5232fd8b571540925f1f027e8deef3590f3dcab898323ac72e3b91c0e8d36c26"
+    },
+    "responseValidation": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0279-drfortress/attempt-2/chatgpt-response-validation.json",
+      "sha256": "2cb50bdd68e6746057dfb1f047051bebb776de7b1a0970758b9f6d4ac30f8980"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0279-drfortress/attempt-2/source-verification.json",
+      "sha256": "09c78984f1085eb9acba143bb38e1e2d576818e69bb133c034a43e98b95aa719"
+    }
+  }
+}

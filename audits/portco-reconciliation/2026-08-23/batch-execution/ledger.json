@@ -3,7 +3,7 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-04T21:37:50Z",
+  "updatedAt": "2026-09-05T05:10:01.000Z",
   "activeBatchId": null,
   "batches": [
     {
@@ -9199,7 +9199,69 @@
           "reason": "Immutable receipt, database after-image, seed parity, exact protected release, canonical API, and rendered Pine Gate scorecard checks passed; four exact terminal outcomes were preserved without database writes."
         }
       ]
+    },
+    {
+      "batchId": "batch-deferred-0278-0345-v1",
+      "state": "COMPLETED",
+      "taskIds": [
+        "ledger:0278:district-energy-system:55ee7b00",
+        "ledger:0279:drfortress:c7515be2",
+        "ledger:0301:conrac:6d35f5f9",
+        "ledger:0336:astoria-energy-partners:b7f656e5",
+        "ledger:0345:chicago-parking-meters:1a7d998e"
+      ],
+      "taskIndexes": [
+        278,
+        279,
+        301,
+        336,
+        345
+      ],
+      "createdAt": "2026-09-05T05:02:00.000Z",
+      "updatedAt": "2026-09-05T05:10:01.000Z",
+      "completedAt": "2026-09-05T05:10:01.000Z",
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-deferred-0278-0345-v1/batch-manifest.json",
+        "sha256": "e9eba837495034cad9fca7d18d213426f046186a09187188d55592ae79a7dc3d"
+      },
+      "releaseSha": null,
+      "receipt": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-deferred-0278-0345-v1/terminal-receipt.json",
+        "sha256": "82fad07db6249724893d934b83d4994851e7fd08087d1a86a00bfc56993f5ca9"
+      },
+      "reason": null,
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-09-05T05:02:00.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-09-05T05:09:00.000Z",
+          "evidenceSha256": [
+            "e9eba837495034cad9fca7d18d213426f046186a09187188d55592ae79a7dc3d"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "COMPLETED",
+          "at": "2026-09-05T05:10:01.000Z",
+          "evidenceSha256": [
+            "82fad07db6249724893d934b83d4994851e7fd08087d1a86a00bfc56993f5ca9",
+            "e9eba837495034cad9fca7d18d213426f046186a09187188d55592ae79a7dc3d"
+          ],
+          "reason": null
+        }
+      ]
     }
   ],
-  "ledgerSha256": "9fbaf5c0f67ec1a27b63c2595e235ee9058af0f10ece2553718845e2166c9e62"
+  "ledgerSha256": "341f869597a84bd774a591433a74201acc56299bf6119ee500e8c594997424b1"
 }

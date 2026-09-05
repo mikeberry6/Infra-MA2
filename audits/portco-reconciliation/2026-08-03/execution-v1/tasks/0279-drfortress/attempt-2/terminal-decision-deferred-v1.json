@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0279:drfortress:c7515be2",
+  "taskIndex": 279,
+  "companyName": "DRFortress",
+  "outcome": "DEFERRED",
+  "decidedAt": "2026-09-05T05:06:01.000Z",
+  "rationale": "Direct evidence resolves DRFortress as a standalone operating company, verifies the historical GI chain and an April 2025 acquisition by Harrison Street and 1547 from GI, but it does not supply the current members and percentages of DR Fortress Acquisition, LLC, the Harrison Street fund or account, the 1547 vehicle, founder or management disposition, the exact legal closing day, or complete legacy-holder disposition. Preserve the existing company and ownership data unchanged because a complete active cap-table correction would require inference.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0279-drfortress/attempt-2/locked-deferred-v1-task-snapshot.json",
+    "sha256": "0ca7abcaaf984008adab49f510042bc89c63f0c7579eaa2ad99a62bbe9f6ee8d"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0279-drfortress/attempt-2/application-research-decision.json",
+    "sha256": "fe981bfe8d0e8a91eaa75a78d2fd63e247dafe9a4a0763c63d665768f13cb269"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0279-drfortress/attempt-2/source-verification.json",
+    "sha256": "09c78984f1085eb9acba143bb38e1e2d576818e69bb133c034a43e98b95aa719"
+  },
+  "evidence": [
+    {
+      "url": "https://docs.fcc.gov/public/attachments/DA-26-110A1.pdf",
+      "purpose": "Direct filed evidence for the legal operating-company boundary, historical ownership chain, 2025 license assignment and acquisition entity, and the precise limits of the public current-cap-table record."
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "b0605b0ac2b3f4e6822e6e945bb5ffa7741e0e7f8fc84f61fab0775508eaaeae"
+}

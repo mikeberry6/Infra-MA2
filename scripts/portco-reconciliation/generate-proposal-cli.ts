@@ -346,6 +346,7 @@ function verifyContext(input: unknown): TaskSnapshotContext {
     && context.targetResolution.method !== "REVIEWED_POST_QUEUE_DBA_IDENTITY"
     && context.targetResolution.method !== "REVIEWED_POST_QUEUE_PARENTHETICAL_ALIAS_IDENTITY"
     && context.targetResolution.method !== "REVIEWED_POST_QUEUE_MANAGER_SHORT_NAME_ALIAS_IDENTITY"
+    && context.targetResolution.method !== "REVIEWED_POST_QUEUE_LEGAL_SUFFIX_IDENTITY"
   ) {
     throw new Error("Task context resolved canonical key does not match its immutable queue identity");
   }
@@ -356,6 +357,7 @@ function verifyContext(input: unknown): TaskSnapshotContext {
       || context.targetResolution.method === "REVIEWED_POST_QUEUE_DBA_IDENTITY"
       || context.targetResolution.method === "REVIEWED_POST_QUEUE_PARENTHETICAL_ALIAS_IDENTITY"
       || context.targetResolution.method === "REVIEWED_POST_QUEUE_MANAGER_SHORT_NAME_ALIAS_IDENTITY"
+      || context.targetResolution.method === "REVIEWED_POST_QUEUE_LEGAL_SUFFIX_IDENTITY"
     )
     && !context.resolvedCanonicalKey
   ) {
@@ -430,6 +432,7 @@ export function proposalCanonicalKey(context: Pick<
     && context.targetResolution.method !== "REVIEWED_POST_QUEUE_DBA_IDENTITY"
     && context.targetResolution.method !== "REVIEWED_POST_QUEUE_PARENTHETICAL_ALIAS_IDENTITY"
     && context.targetResolution.method !== "REVIEWED_POST_QUEUE_MANAGER_SHORT_NAME_ALIAS_IDENTITY"
+    && context.targetResolution.method !== "REVIEWED_POST_QUEUE_LEGAL_SUFFIX_IDENTITY"
   ) {
     throw new Error("Proposal canonical identity differs from the immutable queue identity");
   }

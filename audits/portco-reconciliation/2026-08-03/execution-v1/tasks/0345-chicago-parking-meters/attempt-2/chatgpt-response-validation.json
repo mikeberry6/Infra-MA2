@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "runId": "portco-deferred-readjudication-2026-09-05",
+  "taskId": "ledger:0345:chicago-parking-meters:1a7d998e",
+  "taskIndex": 345,
+  "companyName": "Chicago Parking Meters",
+  "validatedAt": "2026-09-05T04:53:09.000Z",
+  "conversationUrl": "https://chatgpt.com/c/6a9b9b59-5c84-83e9-935c-fb13d26a8b10",
+  "acceptedResponseSha256": "3d598ea2da19b220b9794e063b2935da5eb75f6543916229e4f67a7b10494b37",
+  "valid": true,
+  "finalResponse": {
+    "characterCountExcludingRepositoryTerminalLf": 7264,
+    "fencedJsonPresent": false,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "requiredTopLevelKeysExact": true,
+    "decision": "DEFERRED",
+    "confidence": {
+      "identity": "HIGH",
+      "ownershipAndMapping": "UNRESOLVED"
+    },
+    "evidenceCount": 6,
+    "currentOwnerOrSponsorRows": 3,
+    "pendingOwnershipTransactionCount": 1,
+    "primaryEvidenceCount": 1,
+    "ownerKeysExact": true,
+    "pendingTransactionKeysExact": true,
+    "evidenceKeysExact": true,
+    "withinCharacterLimit": true,
+    "withinEvidenceLimit": true,
+    "withinMilestoneLimit": true,
+    "freshExactExceptionRecorded": true,
+    "responseSha256": "3d598ea2da19b220b9794e063b2935da5eb75f6543916229e4f67a7b10494b37",
+    "result": "PASS"
+  },
+  "contract": {
+    "beginJsonPresent": true,
+    "endJsonPresent": true,
+    "beginReviewPresent": true,
+    "endReviewPresent": true,
+    "jsonParses": true,
+    "mandatoryTopLevelKeysExact": true,
+    "ownerKeysExact": true,
+    "pendingTransactionKeysExact": true,
+    "evidenceKeysExact": true,
+    "evidenceRowCount": 6,
+    "milestoneCount": 4,
+    "recommendedPrimaryCount": 1,
+    "contentCharactersExcludingMarkers": 7219,
+    "decisionAllowed": true,
+    "decision": "DEFERRED"
+  },
+  "captureNormalization": {
+    "performed": false,
+    "reason": "The assistant message DOM textContent retained literal URL strings and parsed as the required minified JSON. Incidental rendered citation labels inside narrative strings were preserved exactly and do not alter the evidence rows or decision contract.",
+    "semanticChanges": false,
+    "repairTurnUsed": false
+  },
+  "independentEvidenceAdjustments": [
+    "The direct concessionaire About page establishes Chicago Parking Meters, LLC, Chicago Parking Meters and CPM as references to the same concessionaire and identifies ParkChicago as its operating brand. The supplied live production snapshot independently binds that identity to company cmrxpj47q00g7ivhe2d22x3iq; the older repository after-image ID is historical lineage and not a second company.",
+    "The direct City transfer proposal names five Morgan Stanley-side direct holders with a stated 50.1% aggregate direct interest and Deeside Investments as the remaining direct holder, identifies Allianz and ADIA as Deeside's indirect owners, and describes a contemplated Stonepeak acquisition of 100% of CPM's direct and indirect ownership. It is a proposal and accepted-bid record, not an executed purchase agreement, City consent, closing certificate or cutoff-current member register.",
+    "The direct City Clerk matter shell rendered with blank record, status, final-action and action fields and no documents; the corresponding current public API request returned an empty 404 response. Those absences cannot prove approval, rejection, termination or closing.",
+    "The direct 40th Ward page published 2026-08-12 stated only that City Council was likely to vote in September. It is evidence that final action had not yet been reported there, not evidence of a later vote or legal result.",
+    "The direct Morgan Stanley release and the rendered Illinois appellate-court mirror establish the original 2008 winning bidder and 2009 concession closing and distinguish LAZ's operator role from equity ownership. They do not establish every holder's entry date or cutoff-current stake.",
+    "The model-recommended City proposal is usable as the sole application primary for a terminal DEFERRED exception. No owner, stake, vehicle, status, signed-pending-exit or Stonepeak-current-owner mutation is authorized while the executed transfer, final City action and legal closing remain unavailable."
+  ],
+  "result": "PASS_WITH_EXACT_DOM_TEXT_CAPTURE_AND_FRESH_EXACT_TRANSACTION_AND_OWNERSHIP_EXCEPTION"
+}
