@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "runId": "portco-deferred-readjudication-2026-09-05",
+  "taskId": "ledger:0409:prospect-lake-clean-water-center:c098d1e8",
+  "taskIndex": 409,
+  "companyName": "Prospect Lake Clean Water Center",
+  "checkedAt": "2026-09-05T19:54:56.000Z",
+  "method": "Independent current direct HTTP byte capture with redirects, status, media type, byte count and SHA-256; current in-app browser rendering of Florida entity records and the five-page July 31, 2026 amendment; claim-level review of the executed City agreement, Florida records, SEC Form D/A and City commissioning memorandum",
+  "sources": [
+    {
+      "url": "https://legistar.granicus.com/FortLauderdale/attachments/b311f46b-1c5c-4ed2-b585-f991fe574fd0.pdf",
+      "httpStatus": 200,
+      "finalUrl": "https://legistar.granicus.com/FortLauderdale/attachments/b311f46b-1c5c-4ed2-b585-f991fe574fd0.pdf",
+      "mediaType": "application/pdf",
+      "bytes": 34203213,
+      "sha256": "e526402bd0b05b6191bd074c206eaa07d7d6ba0380597a227b3c91928b02dba8",
+      "healthStatus": "WORKING",
+      "applicationPrimary": true,
+      "verifiedClaims": [
+        "The executed Comprehensive Agreement identifies Prospect Lake Water, L.P. as the project company for the Prospect Lake Clean Water Center and the City as owner of the site and plant",
+        "The agreement names Prospect Lake Holdings, L.P. and IDE PLCWC, Inc. as Equity Providers with 75-percent and 25-percent contractual Percentage Interests and pro-rata contribution obligations",
+        "The contract percentages do not state a complete cutoff-current limited-partner and security-holder register, units, votes, transfers or later amendments and cannot safely be promoted to a complete current ownership after-image",
+        "The agreement supplies the project, property, construction, delivery, COD and 30-year availability and O&M boundary while distinguishing the City, project company, equity providers and operator roles"
+      ]
+    },
+    {
+      "url": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?aggregateId=forlp-b23000000156-4aba5a63-d25e-4a64-9b7e-b00704c74ffc&directionType=Initial&inquirytype=EntityName&searchNameOrder=PROSPECTLAKEWATER+B230000001560",
+      "httpStatus": 403,
+      "finalUrl": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?aggregateId=forlp-b23000000156-4aba5a63-d25e-4a64-9b7e-b00704c74ffc&directionType=Initial&inquirytype=EntityName&searchNameOrder=PROSPECTLAKEWATER+B230000001560",
+      "mediaType": "text/html",
+      "bytes": 6552,
+      "sha256": "3fd0e6dc18c1f9562fbace212ff3c049787b16a528fbfe476edb7939118381c2",
+      "healthStatus": "BROWSER_VERIFIED_HTTP_CHALLENGE",
+      "renderedRecordObservedAt": "2026-09-05T19:54:56.000Z",
+      "verifiedClaims": [
+        "The current rendered Florida detail record identifies active Foreign Limited Partnership PROSPECT LAKE WATER, L.P., document B23000000156, Delaware formation jurisdiction and Florida filing date 2023-05-11",
+        "The record identifies Prospect Lake Holdings, L.P. as current general partner and displays 2024, 2025 and 2026 annual reports",
+        "The record identifies LP AMENDMENT as the last event, filed 2026-07-31, and provides the five-page document link",
+        "The record does not identify limited partners, security holders, units, stakes, votes, transfers or amendment terms"
+      ],
+      "limitation": "Command-line access returned a Sunbiz challenge response whose current bytes were preserved and hashed; the underlying current record was independently reopened and read in the in-app browser."
+    },
+    {
+      "url": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?aggregateId=forlp-b23000000153-c6f7e847-32f1-405b-9f82-40367adc8b45&directionType=Initial&inquirytype=EntityName&searchNameOrder=PROSPECTLAKEHOLDINGS+B230000001530",
+      "httpStatus": 403,
+      "finalUrl": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?aggregateId=forlp-b23000000153-c6f7e847-32f1-405b-9f82-40367adc8b45&directionType=Initial&inquirytype=EntityName&searchNameOrder=PROSPECTLAKEHOLDINGS+B230000001530",
+      "mediaType": "text/html",
+      "bytes": 6561,
+      "sha256": "bff238b5d0e33603b5637576b8076bfdb4128c02e6ebcfabcbc996080ca17164",
+      "healthStatus": "BROWSER_VERIFIED_HTTP_CHALLENGE",
+      "renderedRecordObservedAt": "2026-09-05T19:54:56.000Z",
+      "verifiedClaims": [
+        "The current rendered Florida detail record identifies active Foreign Limited Partnership PROSPECT LAKE HOLDINGS, L.P., document B23000000153, Delaware formation jurisdiction and Florida filing date 2023-05-10",
+        "The record identifies Ridgewood Water & Strategic Infrastructure Fund II, L.P. as current general partner and displays 2024, 2025 and 2026 annual reports",
+        "The record does not identify PLH limited partners, economic interests, votes, transfers or complete ownership"
+      ],
+      "limitation": "Command-line access returned a Sunbiz challenge response whose current bytes were preserved and hashed; the underlying current record was independently reopened and read in the in-app browser."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1925602/000192560224000002/xslFormDX01/primary_doc.xml",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1925602/000192560224000002/xslFormDX01/primary_doc.xml",
+      "mediaType": "text/html",
+      "bytes": 39426,
+      "sha256": "c1d0c098363e214af44e8f5c7ee367061b611b48ed537b400bbec0997613d5d8",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "The filed Form D/A identifies Ridgewood Water & Strategic Infrastructure Fund II, L.P., its general partner Ridgewood Infrastructure Fund II GP, LLC and Ridgewood Infrastructure, LLC as investment manager",
+        "The filing supports the Fund II manager chain but is not a Prospect Lake Water or Prospect Lake Holdings ownership register, capitalization schedule or transfer ledger"
+      ]
+    },
+    {
+      "url": "https://legistar.granicus.com/FortLauderdale/attachments/fb215738-b65d-4373-a7c8-33990cc760f5.docx",
+      "httpStatus": 200,
+      "finalUrl": "https://legistar.granicus.com/FortLauderdale/attachments/fb215738-b65d-4373-a7c8-33990cc760f5.docx",
+      "mediaType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 44106,
+      "sha256": "726c1717fbedfe2e98c771d561a3698afb5dcc3ea61db09a8a3181121eef46ae",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "The current City memorandum dated 2026-09-02 continued to evaluate contract, regulatory, commissioning and operating conditions and did not evidence accepted COD by the 2026-09-05 cutoff",
+        "The record does not supply an accepted performance-test certificate, FDEP clearance, City COD acknowledgment, Final Acceptance or commencement of the 30-year operating term"
+      ]
+    },
+    {
+      "url": "https://search.sunbiz.org/Inquiry/CorporationSearch/ConvertTiffToPDF?documentNumber=B23000000156&storagePath=COR%5C2026%5C0805%5C73826476.Tif",
+      "httpStatus": 403,
+      "finalUrl": "https://search.sunbiz.org/Inquiry/CorporationSearch/ConvertTiffToPDF?documentNumber=B23000000156&storagePath=COR%5C2026%5C0805%5C73826476.Tif",
+      "mediaType": "text/html",
+      "bytes": 6145,
+      "sha256": "eed037f8561117bf57899baf8a4311eeb4297a1ac58522a5873efef403b9f427",
+      "healthStatus": "BROWSER_RENDERED_SCAN_UNCERTIFIED",
+      "renderedRecordObservedAt": "2026-09-05T19:54:56.000Z",
+      "verifiedClaims": [
+        "The current browser rendered the amendment link as a five-page PDF corresponding to the Florida record's July 31, 2026 LP AMENDMENT event",
+        "The scan provided no accessible text layer and its substantive amendment terms, partner changes, governance changes and ownership effects were not certified visually",
+        "The unchanged public index does not prove that the amendment had no ownership effect"
+      ],
+      "limitation": "Command-line access returned a Sunbiz challenge response whose current bytes were preserved and hashed. The five-page PDF rendered in the in-app browser, but its scan content was not certified at sufficient fidelity, so the amendment remains an exact unresolved fact."
+    }
+  ],
+  "checks": {
+    "allReturnedEvidenceUrlsChecked": true,
+    "allReturnedUrlsChecked": true,
+    "allEvidenceRowsChecked": true,
+    "allUrlsHttps": true,
+    "returnedOpenCount": 6,
+    "returnedBlockedCount": 3,
+    "prospectLakeWaterProjectCompanyIdentityVerified": true,
+    "prospectLakeHoldingsCurrentGeneralPartnerVerified": true,
+    "ridgewoodFundIiGeneralPartnerChainVerified": true,
+    "executedAgreementPercentageInterestsVerified": true,
+    "percentageInterestsProveCutoffCurrentEquity": false,
+    "july2026AmendmentExistenceVerified": true,
+    "july2026AmendmentSubstanceVerified": false,
+    "completeCutoffCurrentDirectOwnerSetVerified": false,
+    "idePlcwcDirectLimitedPartnerStatusVerified": false,
+    "acceptedCodByCutoffVerified": false,
+    "laterPendingOwnershipTransactionFound": false,
+    "exactlyOneApplicationPrimary": true,
+    "modelRecommendedPrimaryApplicationUsableForTerminalDeferral": true,
+    "ownershipMutationBlocked": true,
+    "operatingStatusMutationBlocked": true,
+    "terminalDeferralSupported": true
+  },
+  "allEvidenceUrlsDirectHttps": true,
+  "allReturnedEvidenceSourcesWorkingOrBrowserVerified": true,
+  "directByteCaptureCount": 6,
+  "deadSourceCount": 0,
+  "recommendedApplicationPrimaryUrl": "https://legistar.granicus.com/FortLauderdale/attachments/b311f46b-1c5c-4ed2-b585-f991fe574fd0.pdf",
+  "recommendedApplicationPrimarySha256": "e526402bd0b05b6191bd074c206eaa07d7d6ba0380597a227b3c91928b02dba8"
+}

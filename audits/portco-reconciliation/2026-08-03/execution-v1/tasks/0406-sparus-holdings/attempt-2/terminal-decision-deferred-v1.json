@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0406:sparus-holdings:85d26c81",
+  "taskIndex": 406,
+  "companyName": "Sparus Holdings",
+  "outcome": "DEFERRED",
+  "decidedAt": "2026-09-05T20:36:53.117Z",
+  "rationale": "Identity and the March 2021 sponsor transaction are proved, but the current direct-owner after-image is incomplete: Ridgemont's holder/fund/vehicle/stake/control, Source retention, and management rollover remain UNRESOLVED.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0406-sparus-holdings/attempt-2/locked-deferred-v1-task-snapshot.json",
+    "sha256": "2b174eb826c442ad5888c01957613d6fc0ef36132ca8a57143d206bdb3de6513"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0406-sparus-holdings/attempt-2/application-research-decision-v2.json",
+    "sha256": "09a31c144ca2509688e164dcddce18df9ef4a5a321033d4a8f7575d2552464c8"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0406-sparus-holdings/attempt-2/source-verification.json",
+    "sha256": "b9bacd17ae0c8da04c546e0cfaf5369098cd930be5cd9f1558dcaf2f520c7626"
+  },
+  "evidence": [
+    {
+      "url": "https://www.ridgemontep.com/press-releases/ridgemont-equity-partners-acquires-sparus-holdings/",
+      "purpose": "2021 close"
+    },
+    {
+      "url": "https://www.harriswilliams.com/transactions/sparus",
+      "purpose": "Issuer/seller"
+    },
+    {
+      "url": "https://www.ridgemontep.com/portfolio/sparus-holdings/",
+      "purpose": "Current status"
+    },
+    {
+      "url": "https://ecorp.sos.ga.gov/BusinessSearch/BusinessInformation?businessId=391164&businessType=",
+      "purpose": "Conversion"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1379785/000137978526000030/bbdc-20260630.htm",
+      "purpose": "Continuity/debt"
+    },
+    {
+      "url": "https://sparus.com/companies/",
+      "purpose": "Boundary"
+    },
+    {
+      "url": "https://www.pnc.com/content/dam/erieview/documents/pnc-erieview-capital-invests-in-sparus.pdf",
+      "purpose": "Subordinated debt"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1571329/000119312513378647/d505298d497.htm",
+      "purpose": "Former holders"
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "328257eacf7ab35604b2f886cc6eebaab1a60cbf7f1204d47f6f49afaa5a0b23"
+}

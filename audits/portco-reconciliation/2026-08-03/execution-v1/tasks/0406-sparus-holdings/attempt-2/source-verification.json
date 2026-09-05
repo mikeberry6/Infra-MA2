@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "runId": "portco-deferred-readjudication-2026-09-05",
+  "taskId": "ledger:0406:sparus-holdings:85d26c81",
+  "taskIndex": 406,
+  "companyName": "Sparus Holdings",
+  "checkedAt": "2026-09-05T16:25:56.000Z",
+  "method": "Independent current direct HTTP/PDF byte capture with redirects, status, media type, byte count and SHA-256; signed-in browser rendering and an exact-control-number search for the interactive Georgia record; local text extraction from the current PNC PDF bytes; claim-level review of the current Ridgemont, Harris Williams, Sparus and SEC HTML",
+  "sources": [
+    {
+      "url": "https://www.ridgemontep.com/press-releases/ridgemont-equity-partners-acquires-sparus-holdings/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ridgemontep.com/press-releases/ridgemont-equity-partners-acquires-sparus-holdings/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 19526,
+      "sha256": "5d382424cfc02cf3a0ccd0581641fe470ef2b598ad3ca0ce903788b9c237647d",
+      "healthStatus": "WORKING",
+      "applicationPrimary": true,
+      "verifiedClaims": [
+        "Ridgemont's current direct release, dated 2021-08-03, says Ridgemont invested in Sparus Holdings and the transaction closed in March 2021",
+        "The release identifies Sparus and subsidiaries Southern Cross and The Spear Group as utility and industrial field or professional-services businesses and identifies OneVision as a post-acquisition add-on",
+        "The release says PNC Erieview Capital provided financing, Citizens provided senior debt and agency and advisory services and NewSpring Mezzanine Capital provided financing; it does not identify any of them as a Sparus equity holder",
+        "The release refers to partnership with management but omits the legal direct holder, Ridgemont fund or acquisition vehicle, securities, stake, votes, governance, control, Source Capital disposition and management rollover terms"
+      ]
+    },
+    {
+      "url": "https://www.harriswilliams.com/transactions/sparus",
+      "httpStatus": 200,
+      "finalUrl": "https://www.harriswilliams.com/transactions/sparus",
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 11435,
+      "sha256": "99e64e8143013e779200e4a1484f456891f7da6427530872a477bfabf13fcdac",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Harris Williams' current transaction page says it advised Sparus Holdings, Inc., a Source Capital portfolio company, on its sale to Ridgemont Equity Partners",
+        "The page supports the issuer and seller-side sponsor boundary but does not prove a complete Source Capital exit, management retention, the transaction mix, securities, stakes or post-close capitalization"
+      ]
+    },
+    {
+      "url": "https://www.ridgemontep.com/portfolio/sparus-holdings/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ridgemontep.com/portfolio/sparus-holdings/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 19557,
+      "sha256": "5ebe8a4ec0ec294420036b2101fd7993cbf25f5fcc8ef54b112e2af88bf0e854",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Ridgemont's current portfolio page labels Sparus Holdings Current, identifies Peachtree Corners, Georgia as headquarters and 2021 as Ridgemont's investment year",
+        "The current sponsor label is not a certified complete company-level member or security-holder table and omits the exact legal holder, fund, vehicle, stake, security, votes, governance and control"
+      ]
+    },
+    {
+      "url": "https://ecorp.sos.ga.gov/BusinessSearch/BusinessInformation?businessId=391164&businessType=",
+      "httpStatus": 403,
+      "finalUrl": "https://ecorp.sos.ga.gov/BusinessSearch/BusinessInformation?businessId=391164&businessType=",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 3286,
+      "sha256": "e680768738519a3621ae2d15e5cba764e8de1ccace575e26d680f2832cb21844",
+      "healthStatus": "BROWSER_VERIFIED_HTTP_BLOCKED",
+      "renderedRecordObservedAt": "2026-09-05T16:24:00-04:00",
+      "verifiedClaims": [
+        "A current interactive exact-control-number search for 0567282 returns Sparus Holdings, Inc. as a Georgia domestic profit corporation with Converted status",
+        "The current entity detail states formation or registration on 2005-10-07, a 3175 Corners North Court, Peachtree Corners address and 2021 as its last annual registration year"
+      ],
+      "limitation": "The rendered record does not identify the successor LLC, conversion date, direct members, security holders or capitalization. The direct unauthenticated origin blocks access with HTTP 403, so the current claim check used the interactive browser record."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1379785/000137978526000030/bbdc-20260630.htm",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1379785/000137978526000030/bbdc-20260630.htm",
+      "mediaType": "text/html",
+      "bytes": 513614,
+      "sha256": "9a44b7e6ca8f17c361f8c301fe5447169ac383914ffb73ae3b121a9ee7ad652e",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "The current Barings BDC filing identifies Sparus Holdings, LLC f/k/a Sparus Holdings, Inc. and first-lien senior secured term-loan and revolver instruments",
+        "The filing supports Inc.-to-LLC identity continuity and lender classification but does not establish any equity ownership by Barings or a complete Sparus cap table"
+      ]
+    },
+    {
+      "url": "https://sparus.com/companies/",
+      "httpStatus": 200,
+      "finalUrl": "https://sparus.com/companies/",
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 12670,
+      "sha256": "9f90041edbbb95cabdec3c27ce438351dc742be5e27e6035ad4a3f9e48e4085b",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Sparus' current direct companies page identifies Allegiant, North American Field Services, Southern Cross, Sparus Technical Services, Sparus Utility Services, Spear and TruCheck as businesses or brands beneath the Sparus platform",
+        "The current page gives Sparus headquarters as 192 Technology Parkway, Suite 500, Peachtree Corners, Georgia 30092 and describes the field, technical and professional utility-services operating profile",
+        "The page does not publish a complete legal ownership table"
+      ]
+    },
+    {
+      "url": "https://www.pnc.com/content/dam/erieview/documents/pnc-erieview-capital-invests-in-sparus.pdf",
+      "httpStatus": 200,
+      "finalUrl": "https://www.pnc.com/content/dam/erieview/documents/pnc-erieview-capital-invests-in-sparus.pdf",
+      "mediaType": "application/pdf",
+      "bytes": 66284,
+      "sha256": "b19fcfe064bdbd69e40daa8830f93a36090ddb3c103040e51eef62e240802226",
+      "healthStatus": "WORKING",
+      "pdfVerification": {
+        "pageCount": 1,
+        "browserLoaded": true,
+        "verifiedClaims": [
+          "The current direct PNC Erieview PDF says PNC Erieview recently completed an investment in connection with Ridgemont's acquisition of Sparus in partnership with management and explicitly says it provided subordinated debt to support the transaction",
+          "The document's generic description says PNC Erieview may provide debt or equity co-investment, but the Sparus transaction paragraph names only subordinated debt and does not state that PNC received Sparus equity"
+        ]
+      }
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1571329/000119312513378647/d505298d497.htm",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1571329/000119312513378647/d505298d497.htm",
+      "mediaType": "text/html",
+      "bytes": 337585,
+      "sha256": "4efe87913da75b52be461de59423fb3a874078ac927c352e7c68ad3b61f3ec6c",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "The filed CapitalSouth schedules directly identify historic Sparus Holdings, Inc. Energy Services positions including debt and a 1,745.27-share common-stock warrant in CapitalSouth Partners SBIC Fund III, L.P.",
+        "The filing supports historic security-holder lineage but is not a current owner register and does not by itself prove the response's precise Q4 2015 disposition timing or current direct-owner set"
+      ]
+    }
+  ],
+  "checks": {
+    "allReturnedEvidenceUrlsChecked": true,
+    "allReturnedUrlsChecked": true,
+    "allEvidenceRowsChecked": true,
+    "allUrlsHttps": true,
+    "returnedOpenCount": 8,
+    "returnedBlockedCount": 1,
+    "sparusIncToLlcContinuityVerified": true,
+    "ridgemontMarch2021CloseVerified": true,
+    "sourceCapitalSellerSideSponsorVerified": true,
+    "ridgemontCurrentSponsorStatusVerified": true,
+    "operatingCompanyBoundaryVerified": true,
+    "pncEquityOwnershipVerified": false,
+    "completeCutoffDirectOwnerSetVerified": false,
+    "sourceCapitalCompleteExitVerified": false,
+    "managementRolloverTermsVerified": false,
+    "laterPendingOwnershipTransactionFound": false,
+    "exactlyOneApplicationPrimary": true,
+    "modelRecommendedPrimaryApplicationUsableForTerminalDeferral": true,
+    "ownershipMutationBlocked": true,
+    "terminalDeferralSupported": true
+  },
+  "allEvidenceUrlsDirectHttps": true,
+  "allReturnedEvidenceSourcesWorkingOrBrowserVerified": true,
+  "directByteCaptureCount": 8,
+  "deadSourceCount": 0,
+  "browserVerifiedHttpBlockedCount": 1,
+  "recommendedApplicationPrimaryUrl": "https://www.ridgemontep.com/press-releases/ridgemont-equity-partners-acquires-sparus-holdings/",
+  "recommendedApplicationPrimarySha256": "5d382424cfc02cf3a0ccd0581641fe470ef2b598ad3ca0ce903788b9c237647d"
+}

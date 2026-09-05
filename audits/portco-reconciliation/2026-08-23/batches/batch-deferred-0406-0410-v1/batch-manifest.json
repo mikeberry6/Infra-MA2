@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_MANIFEST",
+  "methodologyVersion": "PORTCO_APPLY_BATCH_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-deferred-0406-0410-v1",
+  "createdAt": "2026-09-05T20:38:00.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "2819a5bfe9947733f1655e1e0dcbc76058edf7165c0914c534ca033b8a4a8242"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0406:sparus-holdings:85d26c81",
+      "taskIndex": 406,
+      "companyName": "Sparus Holdings",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0406-sparus-holdings/attempt-2/terminal-decision-deferred-v1.json",
+        "sha256": "328257eacf7ab35604b2f886cc6eebaab1a60cbf7f1204d47f6f49afaa5a0b23"
+      }
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0407:dauntless-air:af9f18a7",
+      "taskIndex": 407,
+      "companyName": "Dauntless Air",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0407-dauntless-air/attempt-2/terminal-decision-deferred-v1.json",
+        "sha256": "cbb3027aa5d5c21d15bb190149df6d8f81db19829c6001308be446e456639149"
+      }
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0408:mn8-energy:3c6d0235",
+      "taskIndex": 408,
+      "companyName": "MN8 Energy",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0408-mn8-energy/attempt-2/terminal-decision-deferred-v1.json",
+        "sha256": "b0d4268ecfb2102a98db7762f444472504d8a5bf06450ecc3582318634f40a67"
+      }
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0409:prospect-lake-clean-water-center:c098d1e8",
+      "taskIndex": 409,
+      "companyName": "Prospect Lake Clean Water Center",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0409-prospect-lake-clean-water-center/attempt-2/terminal-decision-deferred-v1.json",
+        "sha256": "19d4fb43af031ae9ff8116981b649fd3ed7c288d8247c413614453253e92c2c1"
+      }
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0410:sierra-railroad-company:b9c99f78",
+      "taskIndex": 410,
+      "companyName": "Sierra Railroad Company",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0410-sierra-railroad-company/attempt-2/terminal-decision-deferred-v1.json",
+        "sha256": "10a534f810152789d9e622edadd1767f782abbca64cf75098d083692b3073323"
+      }
+    }
+  ],
+  "collisionAnalysis": {
+    "independent": true,
+    "claimsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "sharedSourceUrls": [],
+    "conflicts": []
+  },
+  "batchSha256": "00919fac76949f388767f5d9c855972df98eed8ce50fa5e05929e9ef4d1045cc"
+}

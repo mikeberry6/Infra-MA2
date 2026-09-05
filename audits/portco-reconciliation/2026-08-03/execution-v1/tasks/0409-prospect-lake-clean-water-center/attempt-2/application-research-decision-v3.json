@@ -1,0 +1,197 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0409:prospect-lake-clean-water-center:c098d1e8",
+  "taskIndex": 409,
+  "companyName": "Prospect Lake Clean Water Center",
+  "asOfDate": "2026-09-05",
+  "decision": "DEFERRED",
+  "confidence": "HIGH_TERMINAL_DECISION_LOW_COMPLETE_CUTOFF_CURRENT_OWNERSHIP_AND_COD",
+  "researchOnly": true,
+  "generatedAt": "2026-09-05T20:19:18.000Z",
+  "result": {
+    "asOfDate": "2026-09-05",
+    "requestedCompany": "Prospect Lake Clean Water Center",
+    "requestedManagers": [
+      "Ridgewood Infrastructure"
+    ],
+    "decision": "DEFERRED",
+    "confidence": "HIGH",
+    "rationale": "Identity, historic contractual interests and the current general-partner chain are verified; the July 2026 filing has been visually read and concerns the existing GP detail/address. The complete cutoff-current direct-holder register and exact equity interests remain unavailable, so no ownership mutation is supported.",
+    "identityResolution": {
+      "canonicalKey": "prospect-lake-clean-water-center|united-states",
+      "match": "EXACT",
+      "project": "Prospect Lake Clean Water Center; 50-MGD nanofiltration/ion-exchange plant; 5900 Hawkins Road, Fort Lauderdale",
+      "projectCompany": "Prospect Lake Water, L.P. (PLW), DE LP; Florida B23000000156",
+      "formation": "DE certificate 2023-01-23; LP agreement 2023-01-24; FL filing 2023-05-11",
+      "continuity": "The 2020 proposal/2022 interim agreement preceded this SPE. RI Flamingo Holdings and IDE Americas were proposers, not proven owners or renamed PLW entities.",
+      "boundary": "Count PLW once: Center=facility; PLH=GP/equity-provider vehicle; IDE PLCWC=equity provider; PLCWC O&M=operator."
+    },
+    "ownershipResolution": {
+      "currentDirectOwnerSet": "UNRESOLVED",
+      "basis": "The 2023-02-14 agreement names PLH/IDE PLCWC as Equity Providers, defines 75%/25% Percentage Interests and requires pro-rata contributions. It does not name IDE as an LP or give units, votes or full capitalization; 75%/25% is not certified as cutoff equity.",
+      "owners": [
+        {
+          "manager": "Ridgewood Infrastructure",
+          "organization": "Ridgewood Infrastructure, LLC",
+          "fund": "Ridgewood Water & Strategic Infrastructure Fund II, L.P.",
+          "vehicle": "Prospect Lake Holdings, L.P.",
+          "stake": "75% contract Percentage Interest (2023); cutoff equity UNRESOLVED",
+          "announcementDate": "2023-02-21",
+          "entryDate": "2023-02-14",
+          "entryYear": 2023,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": null,
+          "transactionState": "GP_CHAIN_CURRENT;EQUITY_UNRESOLVED"
+        },
+        {
+          "manager": "IDE Technologies",
+          "organization": "IDE Technologies Ltd. attribution; legal chain unresolved",
+          "fund": null,
+          "vehicle": "IDE PLCWC, Inc.",
+          "stake": "25% contract Percentage Interest (2023); direct-LP/cutoff equity UNRESOLVED",
+          "announcementDate": "2023-02-21",
+          "entryDate": "2023-02-14",
+          "entryYear": 2023,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": null,
+          "transactionState": "2023_EQUITY_PROVIDER;DIRECT_OWNER/CURRENT_STATUS_UNRESOLVED"
+        }
+      ],
+      "generalPartnerChain": "Current governance: PLW -> GP PLH -> GP Fund II -> GP Ridgewood Infrastructure Fund II GP, LLC -> manager Ridgewood Infrastructure, LLC. PLH LPs, Fund II's economic PLH interest, GP-LLC members and exact votes are undisclosed.",
+      "formerOwners": []
+    },
+    "operatingResolution": {
+      "status": "ADVANCED_COMMISSIONING_PRE_COD",
+      "profile": "City owns site/plant; PLW has use, delivery and 30-year availability/O&M duties.",
+      "cutoff": "Late-July testing and an August 3 notice targeted COD on 2026-09-08. On September 2 the City still evaluated contract, regulatory, commissioning and operating conditions. No accepted test certificate, FDEP clearance, COD acknowledgment, Final Acceptance or operating-term start was found.",
+      "nonEquityRoles": "City, Kiewit, PLCWC O&M/IDE operations/technology, labor, lenders, subordinate financing, suppliers and Fiveash."
+    },
+    "acquisitionExitCheck": {
+      "result": "No later public equity issue, transfer, recap, GP replacement, merger, exit, new investor, control change or pending deal was found; silence/'Unrealized' does not prove continuity.",
+      "pendingTransactions": []
+    },
+    "milestones": [
+      {
+        "date": "2023-01-23",
+        "event": "PLW certificate; LP agreement January 24."
+      },
+      {
+        "date": "2023-02-14",
+        "event": "Agreement close: PLH/IDE 75%/25% contract interests; announced February 21."
+      },
+      {
+        "date": "2026-07-31",
+        "event": "Latest FL LP amendment; prior one 2024-09-05; none later."
+      },
+      {
+        "date": "2026-09-02",
+        "event": "City still reviewing COD conditions; September 8 target."
+      }
+    ],
+    "evidence": [
+      {
+        "label": "Executed Comprehensive Agreement",
+        "url": "https://legistar.granicus.com/FortLauderdale/attachments/b311f46b-1c5c-4ed2-b585-f991fe574fd0.pdf",
+        "purpose": "Identity, interests, control, property, COD, term",
+        "sourceTier": "PRIMARY",
+        "workingStatus": "READ",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "Florida PLW record",
+        "url": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?aggregateId=forlp-b23000000156-4aba5a63-d25e-4a64-9b7e-b00704c74ffc&directionType=Initial&inquirytype=EntityName&searchNameOrder=PROSPECTLAKEWATER+B230000001560",
+        "purpose": "Status, GP, reports, amendment links",
+        "sourceTier": "PRIMARY",
+        "workingStatus": "DETAIL/REPORTS_READ",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Florida PLH record",
+        "url": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?aggregateId=forlp-b23000000153-c6f7e847-32f1-405b-9f82-40367adc8b45&directionType=Initial&inquirytype=EntityName&searchNameOrder=PROSPECTLAKEHOLDINGS+B230000001530",
+        "purpose": "PLH status/Fund II GP",
+        "sourceTier": "PRIMARY",
+        "workingStatus": "READ",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Fund II Form D/A",
+        "url": "https://www.sec.gov/Archives/edgar/data/1925602/000192560224000002/xslFormDX01/primary_doc.xml",
+        "purpose": "Fund II GP/Ridgewood manager",
+        "sourceTier": "PRIMARY",
+        "workingStatus": "READ",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "City September 2 memo",
+        "url": "https://legistar.granicus.com/FortLauderdale/attachments/fb215738-b65d-4373-a7c8-33990cc760f5.docx",
+        "purpose": "Cutoff commissioning/COD status",
+        "sourceTier": "PRIMARY",
+        "workingStatus": "READ",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "filings": "The current PLW index displays the May 11, 2023 foreign-LP filing; April 29, 2024, January 15, 2025 and February 1, 2026 annual reports; and the July 31, 2026 LP amendment. A September 5, 2024 amendment asserted by the model is not independently corroborated and is not adopted.",
+      "indexedChange": "The amendment itself names Prospect Lake Holdings, L.P., selects Change (not Add/Remove), and supplies the business address c/o RI - Mark Janay. It does not disclose limited partners or equity interests.",
+      "julyAmendment": "All five pages of the July 31, 2026 Florida foreign-LP amendment were independently visually inspected. Pages 1-3 are filing and cover sheets. Page 4 names the same Prospect Lake Holdings, L.P. general partner, checks Change (not Add or Remove), and provides its business address at 527 Madison Avenue, 18th Floor, c/o RI - Mark Janay, New York, NY 10022. Page 5 is signed by Mark Janay; the name-change, jurisdiction-change, correction and LLLP-election fields are blank. The disclosed filing is a general-partner detail/address change, not a disclosed limited-partner or cap-table amendment. This does not establish that no separate private equity changes occurred.",
+      "after": "No safe owner or operating-label change."
+    },
+    "excludedOrDuplicateCandidates": [
+      "Prospect Lake Water Holdco/Intermediate Holdco: separate LPs sharing PLH as GP; PLW ownership unproven.",
+      "PLH/IDE PLCWC are chain vehicles, not separate projects.",
+      "PLCWC O&M; IDE Americas -> IDE Water Assets -> IDE Technologies Group -> Alfa Water 1/2/3 is an operator-only chain.",
+      "RI Flamingo/IDE Americas were proposers; City/Kiewit/financiers/suppliers/Fiveash and unrelated Prospect Lakes are non-equity/collisions."
+    ],
+    "unresolvedQuestions": [
+      "Obtain PLW's amended LP agreement, partner register, cap/unit/vote schedules and contribution/transfer records.",
+      "Obtain PLH's register, Fund II/GP-LLC member ledger and IDE PLCWC stock ledger/cap table/chart.",
+      "Obtain accepted test/substantial-completion records, FDEP clearance, City COD acknowledgment and Final Acceptance."
+    ],
+    "recommendedListAction": "Keep one exact DEFERRED record. Do not add/duplicate owners, assign 75%/25% as cutoff equity, create holdco/operator projects or mark operating until a complete after-image exists."
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0409-prospect-lake-clean-water-center/attempt-2/research-decision-v2.json",
+      "sha256": "859d257f88dd31fb13f522d604cf3c24a7102142a0170b9c09224b1104be26ab"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0409-prospect-lake-clean-water-center/attempt-2/chatgpt-accepted-response.txt",
+      "sha256": "c97198d82a2022d7b14adb764527b114c914d3a0ae53831aadeb49522b90aa13"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0409-prospect-lake-clean-water-center/attempt-2/source-verification-v2.json",
+      "sha256": "1aa9fc805fc07941838dce551d2e9af0c235b799ffa65d17fb59bfaf7b64876a"
+    },
+    "acceptedResponseSha256": "c97198d82a2022d7b14adb764527b114c914d3a0ae53831aadeb49522b90aa13",
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+    "confidenceNormalization": {
+      "acceptedValue": "HIGH",
+      "stagedSummaryValue": "HIGH_TERMINAL_DECISION_LOW_COMPLETE_CUTOFF_CURRENT_OWNERSHIP_AND_COD",
+      "basis": "The staged summary preserves the accepted overall confidence and appends a more specific evidence-gap qualifier; the research decision is unchanged."
+    },
+    "independentReviewAdjustment": {
+      "priorNormalizedArtifact": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0409-prospect-lake-clean-water-center/attempt-2/application-research-decision-v2.json",
+        "sha256": "bb4ccd5a51615630d373208a1d65af24f3c639ef9fa30de1509fd370de0ebb2e"
+      },
+      "reviewedSourceVerification": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0409-prospect-lake-clean-water-center/attempt-2/source-verification-v2.json",
+        "sha256": "1aa9fc805fc07941838dce551d2e9af0c235b799ffa65d17fb59bfaf7b64876a"
+      },
+      "acceptedResponsePreserved": true,
+      "decisionChanged": false,
+      "changedFields": [
+        "result.rationale",
+        "result.beforeAfterChanges.filings",
+        "result.beforeAfterChanges.indexedChange",
+        "result.beforeAfterChanges.julyAmendment",
+        "result.unresolvedQuestions"
+      ],
+      "basis": "Independent visual review resolves the available July amendment; the current index does not substantiate the claimed September 2024 amendment. The remaining current-ownership exception supports the unchanged terminal DEFERRED outcome."
+    }
+  }
+}
+

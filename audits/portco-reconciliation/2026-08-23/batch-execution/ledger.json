@@ -3,7 +3,7 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-05T15:50:00.000Z",
+  "updatedAt": "2026-09-05T20:37:56Z",
   "activeBatchId": null,
   "batches": [
     {
@@ -9385,7 +9385,69 @@
           "reason": "Five fresh exact deferred re-adjudications completed; immutable terminal receipt verifies zero database and seed writes."
         }
       ]
+    },
+    {
+      "batchId": "batch-deferred-0406-0410-v1",
+      "state": "COMPLETED",
+      "taskIds": [
+        "ledger:0406:sparus-holdings:85d26c81",
+        "ledger:0407:dauntless-air:af9f18a7",
+        "ledger:0408:mn8-energy:3c6d0235",
+        "ledger:0409:prospect-lake-clean-water-center:c098d1e8",
+        "ledger:0410:sierra-railroad-company:b9c99f78"
+      ],
+      "taskIndexes": [
+        406,
+        407,
+        408,
+        409,
+        410
+      ],
+      "createdAt": "2026-09-05T20:37:00.000Z",
+      "updatedAt": "2026-09-05T20:37:56Z",
+      "completedAt": "2026-09-05T20:37:56Z",
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-deferred-0406-0410-v1/batch-manifest-v2.json",
+        "sha256": "a56fc75d9b05453f92a80edefe9146a34e8d19641e1929f43bac91aebcf3dbf1"
+      },
+      "releaseSha": null,
+      "receipt": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-deferred-0406-0410-v1/terminal-receipt.json",
+        "sha256": "117ad173a7960b78dae2efac51d61f454c5b40d3dadd680e904818bcdc24f78d"
+      },
+      "reason": "Verified all-terminal receipt; v2 binds the canonical execution-manifest digest instead of file-byte digest; original failed preflight created no receipt or writes",
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-09-05T20:37:00.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-09-05T20:39:00.000Z",
+          "evidenceSha256": [
+            "00919fac76949f388767f5d9c855972df98eed8ce50fa5e05929e9ef4d1045cc"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "COMPLETED",
+          "at": "2026-09-05T20:37:56Z",
+          "evidenceSha256": [
+            "117ad173a7960b78dae2efac51d61f454c5b40d3dadd680e904818bcdc24f78d",
+            "a56fc75d9b05453f92a80edefe9146a34e8d19641e1929f43bac91aebcf3dbf1"
+          ],
+          "reason": "Verified all-terminal receipt; v2 binds the canonical execution-manifest digest instead of file-byte digest; original failed preflight created no receipt or writes"
+        }
+      ]
     }
   ],
-  "ledgerSha256": "438296aa050ada7f40049cc8578337debb1a6fd19cefeece8d3ba0fc4e5f2dae"
+  "ledgerSha256": "9bca32318782054bd1bbc49a63c3a539e79f8a93cab778565291ff388ffa106a"
 }
