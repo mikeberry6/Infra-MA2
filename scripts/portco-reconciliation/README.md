@@ -105,6 +105,13 @@ country, and be the sole production match. Every path requires an explicit
 candidate link, or choose among ambiguous matches. The selected ID and
 resolution method are recorded in the hash-bound task context.
 
+A deferred canonical-company task may also bind one reviewed existing target
+when its sole immutable one-way candidate differs only by one terminal legal
+suffix, has the same country, and the queue task has holdings but no repo-only,
+production, or seed binding. The candidate canonical identity must exactly
+match the reviewed production target and remain unique; broader one-way
+candidate overrides stay prohibited.
+
 Review tasks also capture every reciprocally linked seed-only queue candidate
 that has no production company and exactly one seed key. Each candidate binds
 its source queue task/hash plus both the raw `baseCompanies` entry hash and the

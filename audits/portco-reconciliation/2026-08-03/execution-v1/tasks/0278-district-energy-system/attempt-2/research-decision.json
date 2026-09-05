@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_DEFERRED_READJUDICATION_RESEARCH_DECISION",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-deferred-readjudication-2026-09-05",
+  "generatedAt": "2026-09-05T02:26:08.000Z",
+  "asOfDate": "2026-09-04",
+  "taskId": "ledger:0278:district-energy-system:55ee7b00",
+  "taskIndex": 278,
+  "companyName": "District Energy System",
+  "linkedTaskIdsCovered": [],
+  "modelDecision": "DEFERRED",
+  "decision": "DEFERRED",
+  "confidence": "HIGH_ASSET_AND_SPV_IDENTITY_HIGH_2020_FUND_LEVEL_TRANSFER_LOW_CUTOFF_CURRENT_BENEFICIAL_OWNERSHIP",
+  "researchOnly": true,
+  "summary": "Keep the source task deferred and do not create a production or seed company. Fresh direct evidence resolves the generic District Energy System label to the Fort Detrick Energy Production Facility and Keenan Fort Detrick Energy, LLC boundary; verifies historical First Reserve lineage and BlackRock GEPIF's 2020 sale of an interest; and establishes that Harrison Street publicly stated in December 2021 that it then owned the system. No direct source identifies the 2020 legal buyer and seller entities, Harrison Street acquisition sleeve or vehicle, transferred percentage, retained interests, effective closing date, cutoff-current KFDE member chain, or later exit. The 2021 ownership statement and absence of a public later transaction cannot establish current ownership through 2026-09-04.",
+  "resolvedFormerBlockers": [
+    "Simpson Thacher directly identifies the Fort Detrick Energy Production Facility, U.S. Army Garrison location, GEPIF sale of an interest, facility services, and contract term through March 2049.",
+    "PowerSurety directly identifies Keenan Fort Detrick Energy, LLC as the single-purpose project entity and separates the Army host, developer, contractor, energy-services structure, and historical owner roles.",
+    "The IPE report identifies Harrison Street Social Infrastructure Fund as the fund-level buyer of BlackRock GEPIF's interest for an undisclosed sum, while remaining non-executed trade evidence.",
+    "Harrison Street's direct 2021 release states that it then owned the Fort Detrick district-energy system, providing the latest located asset-specific ownership statement.",
+    "BlackRock's direct 2017 release, the K&L Gates experience record, and First Reserve's current portfolio page corroborate the fund-franchise lineage, earlier seller names, and First Reserve's realized treatment without supplying asset-level transfer mechanics."
+  ],
+  "identityResolution": {
+    "requestedLabel": "District Energy System",
+    "canonicalAssetName": "Fort Detrick Energy Production Facility",
+    "legalEntity": "Keenan Fort Detrick Energy, LLC",
+    "knownAlias": "Keenan Ft Detrick Energy LLC",
+    "location": "U.S. Army Garrison Fort Detrick and National Interagency Biodefense Campus, Frederick, Maryland",
+    "productionCompanyId": null,
+    "productionAction": "DO_NOT_CREATE_OR_MERGE",
+    "status": "IDENTITY_RESOLVED_OWNERSHIP_INCOMPLETE",
+    "boundary": "Treat KFDE and the Fort Detrick central utility plant and NIBC microgrid as one project-company boundary. Harrison Street, BlackRock, First Reserve, Keenan Development, Fort Detrick Cogen Partners, Energy Systems Group, Chevron, the U.S. Army, lenders, bondholders, operators, contractors, customers, and host agencies remain distinct roles unless an ownership document proves equity."
+  },
+  "ownershipResolution": {
+    "status": "UNRESOLVED_CUTOFF_CURRENT_MEMBER_AND_BENEFICIAL_OWNER_CHAIN",
+    "latestDirectAssetSpecificStatement": {
+      "manager": "Harrison Street",
+      "statementDate": "2021-12-21",
+      "statement": "Harrison Street stated that it then currently owned the Fort Detrick district-energy system.",
+      "cutoffContinuity": "UNRESOLVED"
+    },
+    "historicalFundLevelTransfer": {
+      "buyerManager": "Harrison Street",
+      "buyerFund": "Social Infrastructure Fund; exact sleeve unresolved",
+      "buyerVehicle": "UNRESOLVED",
+      "sellerManager": "BlackRock Real Assets",
+      "sellerFund": "Global Energy & Power Infrastructure Fund; exact fund number unresolved",
+      "sellerVehicle": "UNRESOLVED",
+      "stake": "UNRESOLVED",
+      "retainedInterests": "UNRESOLVED",
+      "announcementDate": "2020-05-26",
+      "legalClosingDate": "UNRESOLVED"
+    },
+    "firstReserveTreatment": "Former sponsor corroborated by project and manager sources; exact First Reserve fund, vehicle, stake, entry date, asset-level transfer into BlackRock-managed ownership, and exit mechanics remain unresolved."
+  },
+  "operatingResolution": {
+    "status": "PROJECT_BOUNDARY_RESOLVED_CURRENT_OPERATOR_NOT_USED_AS_OWNERSHIP",
+    "assetSpv": "Keenan Fort Detrick Energy, LLC",
+    "hostAndCustomer": "U.S. Army Garrison Fort Detrick and NIBC federal facilities",
+    "services": "Steam, chilled water, electricity-conditioning services, emergency backup power, and microgrid services",
+    "historicalDeveloper": "Keenan Development Associates",
+    "historicalContractorOrOperator": "Energy Systems Group and Chevron-related project roles appear historically; cutoff operating responsibility remains unresolved",
+    "roleRule": "No operator, contractor, developer, lender, bondholder, host, customer, or fund adviser is treated as an equity owner without a direct ownership record."
+  },
+  "transactionResolution": {
+    "state": "2020_FUND_LEVEL_SALE_REPORTED_LEGAL_MECHANICS_AND_CUTOFF_CONTINUITY_UNRESOLVED",
+    "pendingTransaction": null,
+    "finding": "No direct later sale, transfer, continuation-fund transaction, recapitalization, ownership-linked refinancing, merger, dissolution, assignment, operator change, write-off, or signed pending exit was located. Negative search does not prove Harrison Street continuity."
+  },
+  "freshException": {
+    "status": "EXACT_FACT_UNAVAILABLE",
+    "missingFact": "The cutoff-current KFDE direct-member ledger and full upstream beneficial-owner schedule, plus the executed 2020 transfer documents that identify the exact legal buyer and seller entities, Harrison Street fund sleeve or acquisition vehicle, transferred stake, retained interests, effective date, and legal closing date.",
+    "searchedEvidence": [
+      "Harrison Street's direct 2021 asset-specific ownership statement and current manager materials",
+      "Simpson Thacher's direct 2020 transaction notice and the contemporary IPE fund-level acquisition report",
+      "PowerSurety's direct project and KFDE identity record",
+      "BlackRock's direct First Reserve infrastructure-franchise closing release",
+      "K&L Gates' direct prior seller representation record and First Reserve's current realized portfolio list",
+      "Current asset, member, beneficial-owner, assignment, consent, transfer, fund schedule, continuation, sale, exit, recapitalization, refinancing, dissolution, operator-change, and pending-transaction searches in the fresh ChatGPT conversation"
+    ],
+    "requiredToResolve": "A cutoff-dated certified KFDE operating agreement or member ledger with the full upstream beneficial-owner chain, the executed 2020 purchase or assignment agreement and Army or contract consent with closing evidence, a current audited Harrison Street SIF named-investment schedule that identifies the holding vehicle and ownership status, or a direct later transaction document that proves a disposition."
+  },
+  "primaryCitation": {
+    "label": "Harrison Street 2021 asset-specific ownership statement",
+    "url": "https://www.businesswire.com/news/home/20211221005238/en/Harrison-Street-Acquires-Partnership-for-Military-Family-Housing-at-Six-U.S.-Air-Force-Bases",
+    "purpose": "Latest located direct manager statement that Harrison Street then owned the Fort Detrick district-energy system, used only to support the historical ownership lineage and precise cutoff-current exception",
+    "contentSha256": "7f7833878ed90c3f6a4450acac7668e347a33ef6241e013b78923a3e885d5a1d"
+  },
+  "applicationRequirements": [
+    "Use a terminal-only DEFERRED outcome and preserve the Fort Detrick/KFDE identity mapping as research lineage without creating or merging a production or seed company.",
+    "Do not add Harrison Street, BlackRock, First Reserve, Keenan Development, Fort Detrick Cogen Partners, Energy Systems Group, Chevron, the Army, a lender, or any other party as a current or former owner without a complete direct ownership record appropriate to the period.",
+    "Do not infer a Harrison Street fund sleeve, acquisition vehicle, percentage, retained interest, exact legal closing date, or cutoff-current ownership from the 2020 fund-level reports, the 2021 ownership statement, a long-dated contract, manager portfolio silence, or absence of a public exit.",
+    "Do not conflate Fort Detrick/KFDE with Cincinnati District Energy, CoolCo, Ameresco's separate Fort Detrick solar and battery project, Grady Health, Central Connecticut State, Appalachian State, or any other district-energy system.",
+    "Use exactly one application primary citation bound to the fresh rendered Harrison Street 2021 statement and retain all other verified sources as supporting research lineage."
+  ],
+  "applicationBlocked": false,
+  "databaseMutationCandidate": false,
+  "seedMutationCandidate": false,
+  "terminalOutcomeCandidate": "DEFERRED",
+  "dealDatabaseMutation": false,
+  "lineage": {
+    "conversationUrl": "https://chatgpt.com/c/6a9b758c-3310-83e9-b95e-a23b63b087b1",
+    "prompt": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0278-district-energy-system/attempt-2/chatgpt-research-prompt.md",
+      "sha256": "77bc68e387334243b6b7a4f48f2bb45c69fbe39f66b5b9b0a06a0b4cddacd8ae"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0278-district-energy-system/attempt-2/chatgpt-accepted-response.txt",
+      "sha256": "65407f506badeaf72a4d8e94aa10a622d23b5fc5ce1a8dd31cad83e74429774b"
+    },
+    "transcript": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0278-district-energy-system/attempt-2/chatgpt-transcript.txt",
+      "sha256": "3f93b9018eae12a64fa5736047a3489460f92bfe435f29d242f411403e171862"
+    },
+    "attestation": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0278-district-energy-system/attempt-2/chatgpt-attestation.json",
+      "sha256": "e62457211951c04ad82413485d45bae4ed7fa9acbd2d21bf7e4bfb640b770bd6"
+    },
+    "responseValidation": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0278-district-energy-system/attempt-2/chatgpt-response-validation.json",
+      "sha256": "0aea9ffbd07b3aeace42bad50187b5f20eca5c8fc2da18c22f21d8b2338256ea"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0278-district-energy-system/attempt-2/source-verification.json",
+      "sha256": "463408aee6d8f468e309963f1bcb716ae9ec401184a860b2651ff861046da81a"
+    }
+  }
+}

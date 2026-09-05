@@ -524,6 +524,54 @@ describe("task snapshot target resolution", () => {
     });
   });
 
+  it("pins a deferred one-way legal-suffix candidate to its exact existing company", () => {
+    const active = entry({
+      taskId: "task-chicago-parking-meters",
+      canonicalKey: "chicago-parking-meters|united-states",
+      companyName: "Chicago Parking Meters",
+      country: "United States",
+      decisionStatus: "DEFERRED",
+      sourceHoldingIds: ["holding-chicago-parking-meters"],
+      candidateCanonicalKeys: ["chicago-parking-meters-llc|united-states"],
+    });
+
+    expect(resolveTaskSnapshotTarget({
+      queueEntry: active,
+      queueEntries: [active],
+      reviewedTargetCompanyId: "company-chicago-parking-meters",
+    })).toEqual({
+      method: "REVIEWED_POST_QUEUE_LEGAL_SUFFIX_IDENTITY",
+      targetCompanyId: "company-chicago-parking-meters",
+      linkedQueueTaskId: null,
+    });
+  });
+
+  it.each([
+    { decisionStatus: "NEEDS_REVIEW" as const },
+    { sourceHoldingIds: [] },
+    { sourceRepoOnlyIds: ["repo-only-chicago-parking-meters"] },
+    { candidateCanonicalKeys: [] },
+    { candidateCanonicalKeys: ["chicago-parking-system-llc|united-states"] },
+    { candidateCanonicalKeys: ["chicago-parking-meters-llc|canada"] },
+    { seedKeys: ["chicago parking meters llc|United States"] },
+  ])("rejects a legal-suffix target when the immutable deferred shape is not exact: %o", (override) => {
+    const active = entry({
+      taskId: "task-chicago-parking-meters",
+      canonicalKey: "chicago-parking-meters|united-states",
+      companyName: "Chicago Parking Meters",
+      country: "United States",
+      decisionStatus: "DEFERRED",
+      sourceHoldingIds: ["holding-chicago-parking-meters"],
+      candidateCanonicalKeys: ["chicago-parking-meters-llc|united-states"],
+      ...override,
+    });
+    expect(() => resolveTaskSnapshotTarget({
+      queueEntry: active,
+      queueEntries: [active],
+      reviewedTargetCompanyId: "company-chicago-parking-meters",
+    })).toThrow("not supported by one symmetric immutable queue candidate");
+  });
+
   it.each([
     { decisionStatus: "READY_FOR_PROPOSAL" as const },
     { sourceHoldingIds: [] },
@@ -953,6 +1001,81 @@ describe("post-queue manager short-name alias identity binding", () => {
       targetResolution,
       targetCompanyImage: company,
     })).toBe("sequitur-renewables-llc|united-states");
+  });
+});
+
+describe("post-queue legal-suffix identity binding", () => {
+  const queueEntry = entry({
+    taskId: "task-chicago-parking-meters",
+    canonicalKey: "chicago-parking-meters|united-states",
+    companyName: "Chicago Parking Meters",
+    country: "United States",
+    decisionStatus: "DEFERRED",
+    sourceHoldingIds: ["holding-chicago-parking-meters"],
+    candidateCanonicalKeys: ["chicago-parking-meters-llc|united-states"],
+  });
+  const targetResolution = {
+    method: "REVIEWED_POST_QUEUE_LEGAL_SUFFIX_IDENTITY" as const,
+    targetCompanyId: "company-chicago-parking-meters",
+    linkedQueueTaskId: null,
+  };
+  const company = {
+    id: "company-chicago-parking-meters",
+    name: "Chicago Parking Meters LLC",
+    country: "United States",
+  } as CompanyImage;
+  const productionCompanies = [{
+    id: "company-chicago-parking-meters",
+    name: "Chicago Parking Meters LLC",
+    country: "United States",
+  }];
+
+  it("requires the reviewed target to exactly match the sole legal-suffix candidate", () => {
+    expect(() => assertReviewedPostQueueExactIdentity({
+      queueEntry,
+      targetResolution,
+      targetCompanyImage: company,
+      productionCompanies,
+    })).not.toThrow();
+    expect(() => assertReviewedPostQueueExactIdentity({
+      queueEntry,
+      targetResolution,
+      targetCompanyImage: { ...company, name: "Chicago Parking Meters Inc." },
+      productionCompanies,
+    })).toThrow("does not exactly match the immutable legal-suffix candidate and country");
+    expect(() => assertReviewedPostQueueExactIdentity({
+      queueEntry,
+      targetResolution,
+      targetCompanyImage: { ...company, country: "Canada" },
+      productionCompanies,
+    })).toThrow("does not exactly match the immutable legal-suffix candidate and country");
+  });
+
+  it("requires exactly one matching production identity pinned to the reviewed id", () => {
+    expect(() => assertReviewedPostQueueExactIdentity({
+      queueEntry,
+      targetResolution,
+      targetCompanyImage: company,
+      productionCompanies: [...productionCompanies, {
+        id: "company-chicago-parking-meters-duplicate",
+        name: "Chicago Parking Meters LLC",
+        country: "United States",
+      }],
+    })).toThrow("resolved to 2 production records instead of exactly one");
+  });
+
+  it("binds the reviewed target's evaluated seed identity and canonical key", () => {
+    expect(resolvedTaskSeedKeys({
+      queueEntry,
+      queueEntries: [queueEntry],
+      targetResolution,
+      targetCompanyImage: company,
+    })).toEqual(["chicago parking meters llc|United States"]);
+    expect(resolvedTaskCanonicalKey({
+      queueEntry,
+      targetResolution,
+      targetCompanyImage: company,
+    })).toBe("chicago-parking-meters-llc|united-states");
   });
 });
 

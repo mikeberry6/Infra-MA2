@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_MANIFEST",
+  "methodologyVersion": "PORTCO_APPLY_BATCH_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-deferred-0278-0345-v1",
+  "createdAt": "2026-09-05T05:08:00.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "2136272f7c61cb0b4b10b57ec0746d0c3fb7319ecf36b10980a2ac9d725c9ae2"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0278:district-energy-system:55ee7b00",
+      "taskIndex": 278,
+      "companyName": "District Energy System",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0278-district-energy-system/attempt-2/terminal-decision-deferred-v1.json",
+        "sha256": "8a85063b76125e9211bebb614507ca73b13d81d9151677ed01f912c7a628c7e3"
+      }
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0279:drfortress:c7515be2",
+      "taskIndex": 279,
+      "companyName": "DRFortress",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0279-drfortress/attempt-2/terminal-decision-deferred-v1.json",
+        "sha256": "b0605b0ac2b3f4e6822e6e945bb5ffa7741e0e7f8fc84f61fab0775508eaaeae"
+      }
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0301:conrac:6d35f5f9",
+      "taskIndex": 301,
+      "companyName": "ConRAC",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0301-conrac/attempt-2/terminal-decision-deferred-v1.json",
+        "sha256": "40042ed256eb7f772b654ac7266f923d8ffb2c8fd77e7773d9231f371c4e0d0e"
+      }
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0336:astoria-energy-partners:b7f656e5",
+      "taskIndex": 336,
+      "companyName": "Astoria Energy Partners",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0336-astoria-energy-partners/attempt-2/terminal-decision-deferred-v1.json",
+        "sha256": "c89cdb17cb511f94200e64683d62eec82843b060c2abad7b6f458de2a5165964"
+      }
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0345:chicago-parking-meters:1a7d998e",
+      "taskIndex": 345,
+      "companyName": "Chicago Parking Meters",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0345-chicago-parking-meters/attempt-2/terminal-decision-deferred-v1.json",
+        "sha256": "c7851206d5922964d4aa8b9ac526f98040eb6672be7edc57eaa817d894791381"
+      }
+    }
+  ],
+  "collisionAnalysis": {
+    "independent": true,
+    "claimsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "sharedSourceUrls": [],
+    "conflicts": []
+  },
+  "batchSha256": "e9eba837495034cad9fca7d18d213426f046186a09187188d55592ae79a7dc3d"
+}

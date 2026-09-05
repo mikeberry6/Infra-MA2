@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-09-04T21:37:50.000Z",
+  "updatedAt": "2026-09-05T05:10:00.000Z",
   "runStatus": "COMPLETE_WITH_EXCEPTIONS",
   "activeTaskId": null,
   "source": {
@@ -31549,28 +31549,86 @@
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "552d62998883c13bd0e68055d90f1616588973bc310c1e2b81a0741d430b8c5e",
       "status": "DEFERRED",
-      "attempts": 1,
-      "startedAt": "2026-08-30T04:52:01.000Z",
-      "updatedAt": "2026-08-30T05:31:40.000Z",
-      "completedAt": "2026-08-30T05:31:40.000Z",
-      "exceptionReason": "The generic holding is resolved to the Fort Detrick Energy Production Facility at the Keenan Ft Detrick Energy LLC asset/SPV boundary, and Harrison Street's Social Infrastructure Fund is the last verified buyer. Application is deferred because the exact 2020 closing, Harrison acquisition vehicle and stake, retained minority interests, and current beneficial cap table remain unresolved; creating or correcting an active ownership record would require unsupported inference.",
+      "attempts": 2,
+      "startedAt": "2026-09-05T05:02:00.000Z",
+      "updatedAt": "2026-09-05T05:10:00.000Z",
+      "completedAt": "2026-09-05T05:10:00.000Z",
+      "exceptionReason": "Direct evidence resolves the generic label to the Fort Detrick Energy Production Facility and Keenan Fort Detrick Energy, LLC boundary and preserves the historical First Reserve, BlackRock GEPIF, and Harrison Street lineage, but it does not identify the exact 2020 legal buyer and seller entities, Harrison Street sleeve or vehicle, transferred stake, retained interests, legal closing date, or cutoff-current member and beneficial-owner chain. Creating or correcting an active company or ownership record would require inference.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": "d08ecccd6f66709f9cfbc89369f648f624b8a3c5291bbe3289740f89a63fa9d2",
+      "taskSnapshotSha256": "b0d01998ebc70cce78bae71865a4831df7389354e062588d70740324b2cd1d7e",
       "artifacts": {
         "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0278-district-energy-system/attempt-1/locked-task-snapshot.json",
-          "sha256": "d08ecccd6f66709f9cfbc89369f648f624b8a3c5291bbe3289740f89a63fa9d2"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0278-district-energy-system/attempt-2/locked-deferred-v1-task-snapshot.json",
+          "sha256": "b0d01998ebc70cce78bae71865a4831df7389354e062588d70740324b2cd1d7e"
         },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
         "decision": {
-          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0274-0278-v1/decisions/0278-district-energy-system.json",
-          "sha256": "410fa9b4449c4cbfda2a74dbcf7a3ae12f94d46fdc8d1fa45914c8e025e6b827"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0278-district-energy-system/attempt-2/terminal-decision-deferred-v1.json",
+          "sha256": "8a85063b76125e9211bebb614507ca73b13d81d9151677ed01f912c7a628c7e3"
         },
         "companySnapshot": null
       },
       "recovery": null,
+      "reAdjudications": [
+        {
+          "sequence": 1,
+          "reopenedAt": "2026-09-05T05:00:00.000Z",
+          "reason": "Fresh signed-in GPT-5.6 Sol Pro 5-of-5 research completed with exact source verification and a durable terminal decision.",
+          "priorCompletedAt": "2026-08-30T05:31:40.000Z",
+          "priorExceptionReason": "The generic holding is resolved to the Fort Detrick Energy Production Facility at the Keenan Ft Detrick Energy LLC asset/SPV boundary, and Harrison Street's Social Infrastructure Fund is the last verified buyer. Application is deferred because the exact 2020 closing, Harrison acquisition vehicle and stake, retained minority interests, and current beneficial cap table remain unresolved; creating or correcting an active ownership record would require unsupported inference.",
+          "priorArtifacts": {
+            "taskSnapshot": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0278-district-energy-system/attempt-1/locked-task-snapshot.json",
+              "sha256": "d08ecccd6f66709f9cfbc89369f648f624b8a3c5291bbe3289740f89a63fa9d2"
+            },
+            "proposal": null,
+            "approval": null,
+            "applyReceipt": null,
+            "decision": {
+              "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0274-0278-v1/decisions/0278-district-energy-system.json",
+              "sha256": "410fa9b4449c4cbfda2a74dbcf7a3ae12f94d46fdc8d1fa45914c8e025e6b827"
+            },
+            "companySnapshot": null
+          },
+          "priorManifestSha256": "14e0b36aebd3c3cc13423a325b4b389de328c65014b980f0e9f79beacb91f1b0",
+          "batchLedger": {
+            "location": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+            "sha256": "9fbaf5c0f67ec1a27b63c2595e235ee9058af0f10ece2553718845e2166c9e62"
+          },
+          "evidence": {
+            "researchDecision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0278-district-energy-system/attempt-2/research-decision.json",
+              "sha256": "74a446b71e8b5da607942417dbc9b441c1b6987f359c4037d1d9f8881a416521"
+            },
+            "chatgptAttestation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0278-district-energy-system/attempt-2/chatgpt-attestation.json",
+              "sha256": "e62457211951c04ad82413485d45bae4ed7fa9acbd2d21bf7e4bfb640b770bd6"
+            },
+            "prompt": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0278-district-energy-system/attempt-2/chatgpt-research-prompt.md",
+              "sha256": "77bc68e387334243b6b7a4f48f2bb45c69fbe39f66b5b9b0a06a0b4cddacd8ae"
+            },
+            "acceptedResponse": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0278-district-energy-system/attempt-2/chatgpt-accepted-response.txt",
+              "sha256": "65407f506badeaf72a4d8e94aa10a622d23b5fc5ce1a8dd31cad83e74429774b"
+            },
+            "transcript": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0278-district-energy-system/attempt-2/chatgpt-transcript.txt",
+              "sha256": "3f93b9018eae12a64fa5736047a3489460f92bfe435f29d242f411403e171862"
+            },
+            "sourceVerification": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0278-district-energy-system/attempt-2/source-verification.json",
+              "sha256": "463408aee6d8f468e309963f1bcb716ae9ec401184a860b2651ff861046da81a"
+            },
+            "responseValidation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0278-district-energy-system/attempt-2/chatgpt-response-validation.json",
+              "sha256": "0aea9ffbd07b3aeace42bad50187b5f20eca5c8fc2da18c22f21d8b2338256ea"
+            }
+          }
+        }
+      ],
       "history": [
         {
           "sequence": 1,
@@ -31596,6 +31654,40 @@
             "f1f9285a9422e4deae4567728e15f60563d5173cc750d232b10b3b9296a6af1f"
           ],
           "kind": "BATCH"
+        },
+        {
+          "sequence": 3,
+          "from": "DEFERRED",
+          "to": "PENDING",
+          "at": "2026-09-05T05:00:00.000Z",
+          "reason": "Fresh signed-in GPT-5.6 Sol Pro 5-of-5 research completed with exact source verification and a durable terminal decision.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "0aea9ffbd07b3aeace42bad50187b5f20eca5c8fc2da18c22f21d8b2338256ea",
+            "3f93b9018eae12a64fa5736047a3489460f92bfe435f29d242f411403e171862",
+            "463408aee6d8f468e309963f1bcb716ae9ec401184a860b2651ff861046da81a",
+            "65407f506badeaf72a4d8e94aa10a622d23b5fc5ce1a8dd31cad83e74429774b",
+            "74a446b71e8b5da607942417dbc9b441c1b6987f359c4037d1d9f8881a416521",
+            "77bc68e387334243b6b7a4f48f2bb45c69fbe39f66b5b9b0a06a0b4cddacd8ae",
+            "9fbaf5c0f67ec1a27b63c2595e235ee9058af0f10ece2553718845e2166c9e62",
+            "e62457211951c04ad82413485d45bae4ed7fa9acbd2d21bf7e4bfb640b770bd6"
+          ],
+          "kind": "DEFERRED_READJUDICATION"
+        },
+        {
+          "sequence": 4,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-05T05:10:00.000Z",
+          "reason": "Direct evidence resolves the generic label to the Fort Detrick Energy Production Facility and Keenan Fort Detrick Energy, LLC boundary and preserves the historical First Reserve, BlackRock GEPIF, and Harrison Street lineage, but it does not identify the exact 2020 legal buyer and seller entities, Harrison Street sleeve or vehicle, transferred stake, retained interests, legal closing date, or cutoff-current member and beneficial-owner chain. Creating or correcting an active company or ownership record would require inference.",
+          "taskSnapshotSha256": "b0d01998ebc70cce78bae71865a4831df7389354e062588d70740324b2cd1d7e",
+          "evidenceSha256": [
+            "82fad07db6249724893d934b83d4994851e7fd08087d1a86a00bfc56993f5ca9",
+            "8a85063b76125e9211bebb614507ca73b13d81d9151677ed01f912c7a628c7e3",
+            "b0d01998ebc70cce78bae71865a4831df7389354e062588d70740324b2cd1d7e",
+            "e9eba837495034cad9fca7d18d213426f046186a09187188d55592ae79a7dc3d"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -31608,28 +31700,86 @@
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "023f2ef49d28dcf279e5efac82878110d6f28b18665c47340fe521ff149be0cc",
       "status": "DEFERRED",
-      "attempts": 1,
-      "startedAt": "2026-08-30T05:44:19.000Z",
-      "updatedAt": "2026-08-30T06:20:15.000Z",
-      "completedAt": "2026-08-30T06:20:15.000Z",
-      "exceptionReason": "DRFortress is conclusively a standalone operating company rather than a facility to merge into the Harrison Street–1547 platform. Harrison Street and 1547 acquired it from GI Partners in April 2025, and GI's former majority investment is attributable to the GI Data Infrastructure Fund. Application is deferred because the public record does not establish whether the founders retained equity after the 2025 sale, the current buyer percentages or vehicles, or a Harrison Street fund; correcting the complete active cap table would therefore require unsupported inference.",
+      "attempts": 2,
+      "startedAt": "2026-09-05T05:02:00.000Z",
+      "updatedAt": "2026-09-05T05:10:00.000Z",
+      "completedAt": "2026-09-05T05:10:00.000Z",
+      "exceptionReason": "Direct evidence resolves DRFortress as a standalone operating company, verifies the historical GI chain and an April 2025 acquisition by Harrison Street and 1547 from GI, but it does not supply the current members and percentages of DR Fortress Acquisition, LLC, the Harrison Street fund or account, the 1547 vehicle, founder or management disposition, the exact legal closing day, or complete legacy-holder disposition. Preserve the existing company and ownership data unchanged because a complete active cap-table correction would require inference.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": "18a2aed0b7ad6423775f1cdbc5b7a2e3416b3bd8f691c661c072fb272ba8524d",
+      "taskSnapshotSha256": "f22b97c3efd24ec186bfd8dac76be8e8388cedc0797281221c044fc8a9e1b4b9",
       "artifacts": {
         "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0279-drfortress/attempt-1/locked-task-snapshot.json",
-          "sha256": "18a2aed0b7ad6423775f1cdbc5b7a2e3416b3bd8f691c661c072fb272ba8524d"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0279-drfortress/attempt-2/locked-deferred-v1-task-snapshot.json",
+          "sha256": "f22b97c3efd24ec186bfd8dac76be8e8388cedc0797281221c044fc8a9e1b4b9"
         },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
         "decision": {
-          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0279-0280-v1/decisions/0279-drfortress.json",
-          "sha256": "335c8428386adf1ad6057d7a1b8f718f1c205f61c6502b2b81c8d9cedce0df0f"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0279-drfortress/attempt-2/terminal-decision-deferred-v1.json",
+          "sha256": "b0605b0ac2b3f4e6822e6e945bb5ffa7741e0e7f8fc84f61fab0775508eaaeae"
         },
         "companySnapshot": null
       },
       "recovery": null,
+      "reAdjudications": [
+        {
+          "sequence": 1,
+          "reopenedAt": "2026-09-05T05:00:01.000Z",
+          "reason": "Fresh signed-in GPT-5.6 Sol Pro 5-of-5 research completed with exact source verification and a durable terminal decision.",
+          "priorCompletedAt": "2026-08-30T06:20:15.000Z",
+          "priorExceptionReason": "DRFortress is conclusively a standalone operating company rather than a facility to merge into the Harrison Street–1547 platform. Harrison Street and 1547 acquired it from GI Partners in April 2025, and GI's former majority investment is attributable to the GI Data Infrastructure Fund. Application is deferred because the public record does not establish whether the founders retained equity after the 2025 sale, the current buyer percentages or vehicles, or a Harrison Street fund; correcting the complete active cap table would therefore require unsupported inference.",
+          "priorArtifacts": {
+            "taskSnapshot": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0279-drfortress/attempt-1/locked-task-snapshot.json",
+              "sha256": "18a2aed0b7ad6423775f1cdbc5b7a2e3416b3bd8f691c661c072fb272ba8524d"
+            },
+            "proposal": null,
+            "approval": null,
+            "applyReceipt": null,
+            "decision": {
+              "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0279-0280-v1/decisions/0279-drfortress.json",
+              "sha256": "335c8428386adf1ad6057d7a1b8f718f1c205f61c6502b2b81c8d9cedce0df0f"
+            },
+            "companySnapshot": null
+          },
+          "priorManifestSha256": "5eb3f749c91968407c237bb149364f7f3bdf1abc4dfce34fbadeb28abc0b0468",
+          "batchLedger": {
+            "location": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+            "sha256": "9fbaf5c0f67ec1a27b63c2595e235ee9058af0f10ece2553718845e2166c9e62"
+          },
+          "evidence": {
+            "researchDecision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0279-drfortress/attempt-2/research-decision.json",
+              "sha256": "7ce5a2b3a08a0d02c8251d5877583284ab05c3f68da559f5463b48e50f38211d"
+            },
+            "chatgptAttestation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0279-drfortress/attempt-2/chatgpt-attestation.json",
+              "sha256": "5232fd8b571540925f1f027e8deef3590f3dcab898323ac72e3b91c0e8d36c26"
+            },
+            "prompt": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0279-drfortress/attempt-2/chatgpt-research-prompt.md",
+              "sha256": "baaadff925c421a3022a0c2b0fa39cbdde4163fb7feff70d50fe6c9ffe03be3d"
+            },
+            "acceptedResponse": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0279-drfortress/attempt-2/chatgpt-accepted-response.txt",
+              "sha256": "2367bcae0decf35c4f448e7db0fe64a36d3ff3977be05fb4b41529a4214ea01b"
+            },
+            "transcript": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0279-drfortress/attempt-2/chatgpt-transcript.txt",
+              "sha256": "5a0e2d1a79484d283a6650a8b1efad3b629b8cfb40887965820de7e5d2c37290"
+            },
+            "sourceVerification": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0279-drfortress/attempt-2/source-verification.json",
+              "sha256": "09c78984f1085eb9acba143bb38e1e2d576818e69bb133c034a43e98b95aa719"
+            },
+            "responseValidation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0279-drfortress/attempt-2/chatgpt-response-validation.json",
+              "sha256": "2cb50bdd68e6746057dfb1f047051bebb776de7b1a0970758b9f6d4ac30f8980"
+            }
+          }
+        }
+      ],
       "history": [
         {
           "sequence": 1,
@@ -31653,6 +31803,40 @@
             "335c8428386adf1ad6057d7a1b8f718f1c205f61c6502b2b81c8d9cedce0df0f",
             "8bcefd8c26cc9e339a6beb4d823549aa1729f0038ef64af1f106baad4b1c1068",
             "aa0103f8a57bdbf222e3ff6de5eb2beaf2e9bee5c5a2e659de258df2ed820485"
+          ],
+          "kind": "BATCH"
+        },
+        {
+          "sequence": 3,
+          "from": "DEFERRED",
+          "to": "PENDING",
+          "at": "2026-09-05T05:00:01.000Z",
+          "reason": "Fresh signed-in GPT-5.6 Sol Pro 5-of-5 research completed with exact source verification and a durable terminal decision.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "09c78984f1085eb9acba143bb38e1e2d576818e69bb133c034a43e98b95aa719",
+            "2367bcae0decf35c4f448e7db0fe64a36d3ff3977be05fb4b41529a4214ea01b",
+            "2cb50bdd68e6746057dfb1f047051bebb776de7b1a0970758b9f6d4ac30f8980",
+            "5232fd8b571540925f1f027e8deef3590f3dcab898323ac72e3b91c0e8d36c26",
+            "5a0e2d1a79484d283a6650a8b1efad3b629b8cfb40887965820de7e5d2c37290",
+            "7ce5a2b3a08a0d02c8251d5877583284ab05c3f68da559f5463b48e50f38211d",
+            "9fbaf5c0f67ec1a27b63c2595e235ee9058af0f10ece2553718845e2166c9e62",
+            "baaadff925c421a3022a0c2b0fa39cbdde4163fb7feff70d50fe6c9ffe03be3d"
+          ],
+          "kind": "DEFERRED_READJUDICATION"
+        },
+        {
+          "sequence": 4,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-05T05:10:00.000Z",
+          "reason": "Direct evidence resolves DRFortress as a standalone operating company, verifies the historical GI chain and an April 2025 acquisition by Harrison Street and 1547 from GI, but it does not supply the current members and percentages of DR Fortress Acquisition, LLC, the Harrison Street fund or account, the 1547 vehicle, founder or management disposition, the exact legal closing day, or complete legacy-holder disposition. Preserve the existing company and ownership data unchanged because a complete active cap-table correction would require inference.",
+          "taskSnapshotSha256": "f22b97c3efd24ec186bfd8dac76be8e8388cedc0797281221c044fc8a9e1b4b9",
+          "evidenceSha256": [
+            "82fad07db6249724893d934b83d4994851e7fd08087d1a86a00bfc56993f5ca9",
+            "b0605b0ac2b3f4e6822e6e945bb5ffa7741e0e7f8fc84f61fab0775508eaaeae",
+            "e9eba837495034cad9fca7d18d213426f046186a09187188d55592ae79a7dc3d",
+            "f22b97c3efd24ec186bfd8dac76be8e8388cedc0797281221c044fc8a9e1b4b9"
           ],
           "kind": "BATCH"
         }
@@ -33204,28 +33388,86 @@
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "d96e5c37977d8280fbdd68a333f8d65ec863ff64a71be39f82e2c7a2e0f05dbc",
       "status": "DEFERRED",
-      "attempts": 1,
-      "startedAt": "2026-09-01T05:29:00.000Z",
-      "updatedAt": "2026-09-01T06:39:30.000Z",
-      "completedAt": "2026-09-01T06:39:30.000Z",
-      "exceptionReason": "ConRAC is iCON's portfolio label, not a disclosed company. The 2020 agreement covered project equity for future facilities/refinancings; AVP QTA LLC is the only verified iCON SPV. Conrac Solutions Parent, LLC is a separate Meridiam-owned developer/operator. iCON's vehicle, fund, stake, roster and current/realised status are UNRESOLVED, blocking action.",
+      "attempts": 2,
+      "startedAt": "2026-09-05T05:02:00.000Z",
+      "updatedAt": "2026-09-05T05:10:00.000Z",
+      "completedAt": "2026-09-05T05:10:00.000Z",
+      "exceptionReason": "Direct evidence establishes ConRAC as an iCON project-equity program label rather than one disclosed company and verifies AVP QTA LLC as the only specifically evidenced iCON-backed project, while Conrac Solutions is a separate Meridiam-owned developer and operator. No direct source identifies AVP QTA LLC's legal members, iCON fund or vehicle, stake, co-owners, retained interests, current status, full project roster, partnership renewal or termination, or treatment of iCON project interests in the Meridiam transaction. An omnibus company or ownership record cannot be created without inference.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": "399d76de877db0bee5a82eb0c3644810e2eea49d6cb22c4b16c6a02ab10fd746",
+      "taskSnapshotSha256": "70be3ac9f9ad6353f73576cb909a91d8f8f3132c76fa36b44ee2f4c5bd302072",
       "artifacts": {
         "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0301-conrac/attempt-1/locked-task-snapshot.json",
-          "sha256": "399d76de877db0bee5a82eb0c3644810e2eea49d6cb22c4b16c6a02ab10fd746"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0301-conrac/attempt-2/locked-deferred-v1-task-snapshot.json",
+          "sha256": "70be3ac9f9ad6353f73576cb909a91d8f8f3132c76fa36b44ee2f4c5bd302072"
         },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
         "decision": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0301-conrac/attempt-1/terminal-decision.json",
-          "sha256": "a0dc0e9fbe5e1ea92c2b962aaf66c2d38cd61eee1d3ee838330e616dd95cc5bd"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0301-conrac/attempt-2/terminal-decision-deferred-v1.json",
+          "sha256": "40042ed256eb7f772b654ac7266f923d8ffb2c8fd77e7773d9231f371c4e0d0e"
         },
         "companySnapshot": null
       },
       "recovery": null,
+      "reAdjudications": [
+        {
+          "sequence": 1,
+          "reopenedAt": "2026-09-05T05:00:02.000Z",
+          "reason": "Fresh signed-in GPT-5.6 Sol Pro 5-of-5 research completed with exact source verification and a durable terminal decision.",
+          "priorCompletedAt": "2026-09-01T06:39:30.000Z",
+          "priorExceptionReason": "ConRAC is iCON's portfolio label, not a disclosed company. The 2020 agreement covered project equity for future facilities/refinancings; AVP QTA LLC is the only verified iCON SPV. Conrac Solutions Parent, LLC is a separate Meridiam-owned developer/operator. iCON's vehicle, fund, stake, roster and current/realised status are UNRESOLVED, blocking action.",
+          "priorArtifacts": {
+            "taskSnapshot": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0301-conrac/attempt-1/locked-task-snapshot.json",
+              "sha256": "399d76de877db0bee5a82eb0c3644810e2eea49d6cb22c4b16c6a02ab10fd746"
+            },
+            "proposal": null,
+            "approval": null,
+            "applyReceipt": null,
+            "decision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0301-conrac/attempt-1/terminal-decision.json",
+              "sha256": "a0dc0e9fbe5e1ea92c2b962aaf66c2d38cd61eee1d3ee838330e616dd95cc5bd"
+            },
+            "companySnapshot": null
+          },
+          "priorManifestSha256": "d4d8f7c5d591e8cb7b918af0427076398917aafc666b629ca6384db3efda6822",
+          "batchLedger": {
+            "location": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+            "sha256": "9fbaf5c0f67ec1a27b63c2595e235ee9058af0f10ece2553718845e2166c9e62"
+          },
+          "evidence": {
+            "researchDecision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0301-conrac/attempt-2/research-decision.json",
+              "sha256": "2750a6455328e048753b1d133e3aba7f875e016917336422bda5e68000b72a83"
+            },
+            "chatgptAttestation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0301-conrac/attempt-2/chatgpt-attestation.json",
+              "sha256": "73a7ec18793abe06c1cfda6d48599b32463aa5f49cdf280f3d00274a628b414c"
+            },
+            "prompt": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0301-conrac/attempt-2/chatgpt-research-prompt.md",
+              "sha256": "707ddf0b053d109bd8d65151be42e33eaebb5970018f345723c1e8390258d771"
+            },
+            "acceptedResponse": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0301-conrac/attempt-2/chatgpt-accepted-response.txt",
+              "sha256": "07ffbc9354dd9fba8e25ee5409209535a842429fff3e7e34e5b32f9888c59d9c"
+            },
+            "transcript": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0301-conrac/attempt-2/chatgpt-transcript.txt",
+              "sha256": "61d59d5126c74e3273ff0c8ac73f56e8918dbc03add7e54af1c00c98e655a67a"
+            },
+            "sourceVerification": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0301-conrac/attempt-2/source-verification.json",
+              "sha256": "4e72c640018f2544a3c70b5138ceef0c5afb86ef627c547b50765e83ac24b022"
+            },
+            "responseValidation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0301-conrac/attempt-2/chatgpt-response-validation.json",
+              "sha256": "20c7ede349f36e33bbbd7765204e3f5e665f94799989cc1281a0880cc2470205"
+            }
+          }
+        }
+      ],
       "history": [
         {
           "sequence": 1,
@@ -33249,6 +33491,40 @@
             "a0dc0e9fbe5e1ea92c2b962aaf66c2d38cd61eee1d3ee838330e616dd95cc5bd",
             "d3e2562a9c1686bb6a189868188db766c574f56d6927c98fa3bfe94cd78b2416",
             "f6ad61b7ca041ac7b69aa3430555edd6d245856d91d2a10723650d6208918e3a"
+          ],
+          "kind": "BATCH"
+        },
+        {
+          "sequence": 3,
+          "from": "DEFERRED",
+          "to": "PENDING",
+          "at": "2026-09-05T05:00:02.000Z",
+          "reason": "Fresh signed-in GPT-5.6 Sol Pro 5-of-5 research completed with exact source verification and a durable terminal decision.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "07ffbc9354dd9fba8e25ee5409209535a842429fff3e7e34e5b32f9888c59d9c",
+            "20c7ede349f36e33bbbd7765204e3f5e665f94799989cc1281a0880cc2470205",
+            "2750a6455328e048753b1d133e3aba7f875e016917336422bda5e68000b72a83",
+            "4e72c640018f2544a3c70b5138ceef0c5afb86ef627c547b50765e83ac24b022",
+            "61d59d5126c74e3273ff0c8ac73f56e8918dbc03add7e54af1c00c98e655a67a",
+            "707ddf0b053d109bd8d65151be42e33eaebb5970018f345723c1e8390258d771",
+            "73a7ec18793abe06c1cfda6d48599b32463aa5f49cdf280f3d00274a628b414c",
+            "9fbaf5c0f67ec1a27b63c2595e235ee9058af0f10ece2553718845e2166c9e62"
+          ],
+          "kind": "DEFERRED_READJUDICATION"
+        },
+        {
+          "sequence": 4,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-05T05:10:00.000Z",
+          "reason": "Direct evidence establishes ConRAC as an iCON project-equity program label rather than one disclosed company and verifies AVP QTA LLC as the only specifically evidenced iCON-backed project, while Conrac Solutions is a separate Meridiam-owned developer and operator. No direct source identifies AVP QTA LLC's legal members, iCON fund or vehicle, stake, co-owners, retained interests, current status, full project roster, partnership renewal or termination, or treatment of iCON project interests in the Meridiam transaction. An omnibus company or ownership record cannot be created without inference.",
+          "taskSnapshotSha256": "70be3ac9f9ad6353f73576cb909a91d8f8f3132c76fa36b44ee2f4c5bd302072",
+          "evidenceSha256": [
+            "40042ed256eb7f772b654ac7266f923d8ffb2c8fd77e7773d9231f371c4e0d0e",
+            "70be3ac9f9ad6353f73576cb909a91d8f8f3132c76fa36b44ee2f4c5bd302072",
+            "82fad07db6249724893d934b83d4994851e7fd08087d1a86a00bfc56993f5ca9",
+            "e9eba837495034cad9fca7d18d213426f046186a09187188d55592ae79a7dc3d"
           ],
           "kind": "BATCH"
         }
@@ -35674,28 +35950,86 @@
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "97615c6049dc4af82969ab2744cb0d2e624023180124f44e12c0d4f38b47a81f",
       "status": "DEFERRED",
-      "attempts": 1,
-      "startedAt": "2026-09-01T13:09:14.000Z",
-      "updatedAt": "2026-09-01T14:04:53.000Z",
-      "completedAt": "2026-09-01T14:04:53.000Z",
-      "exceptionReason": "Astoria Energy Partners resolves to the existing Astoria Power Partners Holding, LLC platform and Munich Re/MEAG's 20.0000% interest is current, but the latest evidence does not establish the current continuity and exact upstream allocations for APG, CalSTRS, Clal, Harbert and GPP/CalPERS. That active-ownership gap blocks a safe canonical merge and ownership correction until the cap table is directly evidenced.",
+      "attempts": 2,
+      "startedAt": "2026-09-05T05:02:00.000Z",
+      "updatedAt": "2026-09-05T05:10:00.000Z",
+      "completedAt": "2026-09-05T05:10:00.000Z",
+      "exceptionReason": "Direct regulatory, investor and seller records support Astoria Power Partners Holding, LLC as the probable one-platform survivor, verify the 2020 transaction boundary and Munich Re facts, and report MR Gotham LP at 20.0000% of APPH at 2025 year-end. They do not prove final post-closing allocations, cutoff-current continuity and exact interests for every consortium member, or reciprocal legal identity between the requested Astoria Energy Partners label and APPH. A company merge or ownership correction would require inference.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": "1f517885a1d673bdd3c275730e11f2148b2c20d41b14c84c8485509b0da8ed32",
+      "taskSnapshotSha256": "08316ac32516e194ae810c07c044eb4c81ce638340dc4faa99c8bc235ee9c90b",
       "artifacts": {
         "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0336-astoria-energy-partners/attempt-1/locked-batch-v1-task-snapshot.json",
-          "sha256": "1f517885a1d673bdd3c275730e11f2148b2c20d41b14c84c8485509b0da8ed32"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0336-astoria-energy-partners/attempt-2/locked-deferred-v1-task-snapshot.json",
+          "sha256": "08316ac32516e194ae810c07c044eb4c81ce638340dc4faa99c8bc235ee9c90b"
         },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
         "decision": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0336-astoria-energy-partners/attempt-1/terminal-decision-v1.json",
-          "sha256": "abdb08c789976d95a0f6119407521c97e5f03b482b9ee4f2a7e682e30448bb00"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0336-astoria-energy-partners/attempt-2/terminal-decision-deferred-v1.json",
+          "sha256": "c89cdb17cb511f94200e64683d62eec82843b060c2abad7b6f458de2a5165964"
         },
         "companySnapshot": null
       },
       "recovery": null,
+      "reAdjudications": [
+        {
+          "sequence": 1,
+          "reopenedAt": "2026-09-05T05:00:03.000Z",
+          "reason": "Fresh signed-in GPT-5.6 Sol Pro 5-of-5 research completed with exact source verification and a durable terminal decision.",
+          "priorCompletedAt": "2026-09-01T14:04:53.000Z",
+          "priorExceptionReason": "Astoria Energy Partners resolves to the existing Astoria Power Partners Holding, LLC platform and Munich Re/MEAG's 20.0000% interest is current, but the latest evidence does not establish the current continuity and exact upstream allocations for APG, CalSTRS, Clal, Harbert and GPP/CalPERS. That active-ownership gap blocks a safe canonical merge and ownership correction until the cap table is directly evidenced.",
+          "priorArtifacts": {
+            "taskSnapshot": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0336-astoria-energy-partners/attempt-1/locked-batch-v1-task-snapshot.json",
+              "sha256": "1f517885a1d673bdd3c275730e11f2148b2c20d41b14c84c8485509b0da8ed32"
+            },
+            "proposal": null,
+            "approval": null,
+            "applyReceipt": null,
+            "decision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0336-astoria-energy-partners/attempt-1/terminal-decision-v1.json",
+              "sha256": "abdb08c789976d95a0f6119407521c97e5f03b482b9ee4f2a7e682e30448bb00"
+            },
+            "companySnapshot": null
+          },
+          "priorManifestSha256": "ae256392121a80776c6752a74fc764e2771a1ba7d7bf1ec6abb215ee1377918a",
+          "batchLedger": {
+            "location": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+            "sha256": "9fbaf5c0f67ec1a27b63c2595e235ee9058af0f10ece2553718845e2166c9e62"
+          },
+          "evidence": {
+            "researchDecision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0336-astoria-energy-partners/attempt-2/research-decision.json",
+              "sha256": "3b775478f21f90627eece30cbca0dbd94a6b5f8d695f6ca4bbf2678aeb418ec4"
+            },
+            "chatgptAttestation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0336-astoria-energy-partners/attempt-2/chatgpt-attestation.json",
+              "sha256": "98fa9f2aad78738a518194cc847597f33de4232d06cc4e8ba03ee4db6fe8c2ba"
+            },
+            "prompt": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0336-astoria-energy-partners/attempt-2/chatgpt-research-prompt.md",
+              "sha256": "e78dd581efd8619df1f31edc7da3887da35811d06cb04b6e25da7249ecfd0064"
+            },
+            "acceptedResponse": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0336-astoria-energy-partners/attempt-2/chatgpt-accepted-response.txt",
+              "sha256": "8dfb8f06c7ae516f97d628da2018322d934c8bb6fb22582118e3310a4ad45c72"
+            },
+            "transcript": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0336-astoria-energy-partners/attempt-2/chatgpt-transcript.txt",
+              "sha256": "ea410c54b6cde0cdf135cb3d1df5d1b73e07b7fa336e0b901d75b0d397357737"
+            },
+            "sourceVerification": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0336-astoria-energy-partners/attempt-2/source-verification.json",
+              "sha256": "b7064ed6cd9d2990056786dd8ebed079a4c65800bcde221a47c86fdbcf2fe274"
+            },
+            "responseValidation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0336-astoria-energy-partners/attempt-2/chatgpt-response-validation.json",
+              "sha256": "161d050cb7dd3adca987a0df0e7a4292b1dfebc84465f54dd9fd1f172613b594"
+            }
+          }
+        }
+      ],
       "history": [
         {
           "sequence": 1,
@@ -35719,6 +36053,40 @@
             "1f517885a1d673bdd3c275730e11f2148b2c20d41b14c84c8485509b0da8ed32",
             "a1186bdbd71d02b197832fd6abe3beb27a952e09d26a3f82e70a60f032c32f6f",
             "abdb08c789976d95a0f6119407521c97e5f03b482b9ee4f2a7e682e30448bb00"
+          ],
+          "kind": "BATCH"
+        },
+        {
+          "sequence": 3,
+          "from": "DEFERRED",
+          "to": "PENDING",
+          "at": "2026-09-05T05:00:03.000Z",
+          "reason": "Fresh signed-in GPT-5.6 Sol Pro 5-of-5 research completed with exact source verification and a durable terminal decision.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "161d050cb7dd3adca987a0df0e7a4292b1dfebc84465f54dd9fd1f172613b594",
+            "3b775478f21f90627eece30cbca0dbd94a6b5f8d695f6ca4bbf2678aeb418ec4",
+            "8dfb8f06c7ae516f97d628da2018322d934c8bb6fb22582118e3310a4ad45c72",
+            "98fa9f2aad78738a518194cc847597f33de4232d06cc4e8ba03ee4db6fe8c2ba",
+            "9fbaf5c0f67ec1a27b63c2595e235ee9058af0f10ece2553718845e2166c9e62",
+            "b7064ed6cd9d2990056786dd8ebed079a4c65800bcde221a47c86fdbcf2fe274",
+            "e78dd581efd8619df1f31edc7da3887da35811d06cb04b6e25da7249ecfd0064",
+            "ea410c54b6cde0cdf135cb3d1df5d1b73e07b7fa336e0b901d75b0d397357737"
+          ],
+          "kind": "DEFERRED_READJUDICATION"
+        },
+        {
+          "sequence": 4,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-05T05:10:00.000Z",
+          "reason": "Direct regulatory, investor and seller records support Astoria Power Partners Holding, LLC as the probable one-platform survivor, verify the 2020 transaction boundary and Munich Re facts, and report MR Gotham LP at 20.0000% of APPH at 2025 year-end. They do not prove final post-closing allocations, cutoff-current continuity and exact interests for every consortium member, or reciprocal legal identity between the requested Astoria Energy Partners label and APPH. A company merge or ownership correction would require inference.",
+          "taskSnapshotSha256": "08316ac32516e194ae810c07c044eb4c81ce638340dc4faa99c8bc235ee9c90b",
+          "evidenceSha256": [
+            "08316ac32516e194ae810c07c044eb4c81ce638340dc4faa99c8bc235ee9c90b",
+            "82fad07db6249724893d934b83d4994851e7fd08087d1a86a00bfc56993f5ca9",
+            "c89cdb17cb511f94200e64683d62eec82843b060c2abad7b6f458de2a5165964",
+            "e9eba837495034cad9fca7d18d213426f046186a09187188d55592ae79a7dc3d"
           ],
           "kind": "BATCH"
         }
@@ -36313,22 +36681,80 @@
       "sourceDecisionStatus": "DEFERRED",
       "sourceQueueEntrySha256": "71143892563b0ca0149a48296fcff942038aa346eef0b0eb9034e9ee07140d55",
       "status": "DEFERRED",
-      "attempts": 0,
-      "startedAt": null,
-      "updatedAt": "2026-08-03T16:26:27.000Z",
-      "completedAt": "2026-08-03T16:26:27.000Z",
-      "exceptionReason": "Immutable proposal queue designated this task as deferred.",
+      "attempts": 1,
+      "startedAt": "2026-09-05T05:02:00.000Z",
+      "updatedAt": "2026-09-05T05:10:00.000Z",
+      "completedAt": "2026-09-05T05:10:00.000Z",
+      "exceptionReason": "Direct evidence resolves Chicago Parking Meters, Chicago Parking Meters, LLC and CPM to the existing production concessionaire and ParkChicago to its brand. The filed 2026 proposal identifies a contemplated Stonepeak acquisition and a proposal-date holder snapshot, but no direct cutoff source establishes an executed purchase agreement, final City action, executed consent, legal closing, current complete member register, retained or rolled interests, or Stonepeak as current owner. Preserve the approved MSIP, Allianz and ADIA display without treating it as new legal ownership evidence and make no database, seed or display change.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": null,
+      "taskSnapshotSha256": "3aafc672033c2663ade397986eeda5c0a67aadaa257090a528c7fc5d5f3ea7ad",
       "artifacts": {
-        "taskSnapshot": null,
+        "taskSnapshot": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0345-chicago-parking-meters/attempt-2/locked-deferred-v2-task-snapshot.json",
+          "sha256": "3aafc672033c2663ade397986eeda5c0a67aadaa257090a528c7fc5d5f3ea7ad"
+        },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
-        "decision": null,
+        "decision": {
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0345-chicago-parking-meters/attempt-2/terminal-decision-deferred-v1.json",
+          "sha256": "c7851206d5922964d4aa8b9ac526f98040eb6672be7edc57eaa817d894791381"
+        },
         "companySnapshot": null
       },
       "recovery": null,
+      "reAdjudications": [
+        {
+          "sequence": 1,
+          "reopenedAt": "2026-09-05T05:00:04.000Z",
+          "reason": "Fresh signed-in GPT-5.6 Sol Pro 5-of-5 research completed with exact source verification and a durable terminal decision.",
+          "priorCompletedAt": "2026-08-03T16:26:27.000Z",
+          "priorExceptionReason": "Immutable proposal queue designated this task as deferred.",
+          "priorArtifacts": {
+            "taskSnapshot": null,
+            "proposal": null,
+            "approval": null,
+            "applyReceipt": null,
+            "decision": null,
+            "companySnapshot": null
+          },
+          "priorManifestSha256": "f588c19af9169c3cc267737579de181e5f49eeb45a9173e49de1d56f74d42a1d",
+          "batchLedger": {
+            "location": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+            "sha256": "9fbaf5c0f67ec1a27b63c2595e235ee9058af0f10ece2553718845e2166c9e62"
+          },
+          "evidence": {
+            "researchDecision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0345-chicago-parking-meters/attempt-2/research-decision.json",
+              "sha256": "d1d4875e5b3dae8becc701033a097ab00b9f30069490c567af703f98c5f555c8"
+            },
+            "chatgptAttestation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0345-chicago-parking-meters/attempt-2/chatgpt-attestation.json",
+              "sha256": "4c16cfbe370781767464236fa41ea2de1b619d245b10e68c224cbad53e57ea6e"
+            },
+            "prompt": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0345-chicago-parking-meters/attempt-2/chatgpt-research-prompt.md",
+              "sha256": "87a3dcddac6ab0a407b1ef85962954c935285cdfe6060925f1f4571ba0db00a8"
+            },
+            "acceptedResponse": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0345-chicago-parking-meters/attempt-2/chatgpt-accepted-response.txt",
+              "sha256": "3d598ea2da19b220b9794e063b2935da5eb75f6543916229e4f67a7b10494b37"
+            },
+            "transcript": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0345-chicago-parking-meters/attempt-2/chatgpt-transcript.txt",
+              "sha256": "cb94583e1d2b633a5e10d3bb4a967746c5ff46af8b550ea1e3de4b9fa009bd15"
+            },
+            "sourceVerification": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0345-chicago-parking-meters/attempt-2/source-verification.json",
+              "sha256": "7dd93ee51b99678e33f340dfad9c33f97ccb5ea42397e838dfed39475005e9a2"
+            },
+            "responseValidation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0345-chicago-parking-meters/attempt-2/chatgpt-response-validation.json",
+              "sha256": "90c19abe4dcd306ba38d6df4cbb9bbd1010cd44284612fd104d7390f759450c9"
+            }
+          }
+        }
+      ],
       "history": [
         {
           "sequence": 1,
@@ -36339,6 +36765,40 @@
           "taskSnapshotSha256": null,
           "evidenceSha256": [],
           "kind": "INITIAL"
+        },
+        {
+          "sequence": 2,
+          "from": "DEFERRED",
+          "to": "PENDING",
+          "at": "2026-09-05T05:00:04.000Z",
+          "reason": "Fresh signed-in GPT-5.6 Sol Pro 5-of-5 research completed with exact source verification and a durable terminal decision.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "3d598ea2da19b220b9794e063b2935da5eb75f6543916229e4f67a7b10494b37",
+            "4c16cfbe370781767464236fa41ea2de1b619d245b10e68c224cbad53e57ea6e",
+            "7dd93ee51b99678e33f340dfad9c33f97ccb5ea42397e838dfed39475005e9a2",
+            "87a3dcddac6ab0a407b1ef85962954c935285cdfe6060925f1f4571ba0db00a8",
+            "90c19abe4dcd306ba38d6df4cbb9bbd1010cd44284612fd104d7390f759450c9",
+            "9fbaf5c0f67ec1a27b63c2595e235ee9058af0f10ece2553718845e2166c9e62",
+            "cb94583e1d2b633a5e10d3bb4a967746c5ff46af8b550ea1e3de4b9fa009bd15",
+            "d1d4875e5b3dae8becc701033a097ab00b9f30069490c567af703f98c5f555c8"
+          ],
+          "kind": "DEFERRED_READJUDICATION"
+        },
+        {
+          "sequence": 3,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-05T05:10:00.000Z",
+          "reason": "Direct evidence resolves Chicago Parking Meters, Chicago Parking Meters, LLC and CPM to the existing production concessionaire and ParkChicago to its brand. The filed 2026 proposal identifies a contemplated Stonepeak acquisition and a proposal-date holder snapshot, but no direct cutoff source establishes an executed purchase agreement, final City action, executed consent, legal closing, current complete member register, retained or rolled interests, or Stonepeak as current owner. Preserve the approved MSIP, Allianz and ADIA display without treating it as new legal ownership evidence and make no database, seed or display change.",
+          "taskSnapshotSha256": "3aafc672033c2663ade397986eeda5c0a67aadaa257090a528c7fc5d5f3ea7ad",
+          "evidenceSha256": [
+            "3aafc672033c2663ade397986eeda5c0a67aadaa257090a528c7fc5d5f3ea7ad",
+            "82fad07db6249724893d934b83d4994851e7fd08087d1a86a00bfc56993f5ca9",
+            "c7851206d5922964d4aa8b9ac526f98040eb6672be7edc57eaa817d894791381",
+            "e9eba837495034cad9fca7d18d213426f046186a09187188d55592ae79a7dc3d"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -46480,5 +46940,5 @@
       ]
     }
   ],
-  "manifestSha256": "14e0b36aebd3c3cc13423a325b4b389de328c65014b980f0e9f79beacb91f1b0"
+  "manifestSha256": "e146ea15552a06f12a546fb40fd543bc73d4f96cf482858c35fce22249daef37"
 }

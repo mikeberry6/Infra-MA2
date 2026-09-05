@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0278:district-energy-system:55ee7b00",
+  "taskIndex": 278,
+  "companyName": "District Energy System",
+  "outcome": "DEFERRED",
+  "decidedAt": "2026-09-05T05:06:00.000Z",
+  "rationale": "Direct evidence resolves the generic label to the Fort Detrick Energy Production Facility and Keenan Fort Detrick Energy, LLC boundary and preserves the historical First Reserve, BlackRock GEPIF, and Harrison Street lineage, but it does not identify the exact 2020 legal buyer and seller entities, Harrison Street sleeve or vehicle, transferred stake, retained interests, legal closing date, or cutoff-current member and beneficial-owner chain. Creating or correcting an active company or ownership record would require inference.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0278-district-energy-system/attempt-2/locked-deferred-v1-task-snapshot.json",
+    "sha256": "7617c3d9b62839aa68f20fabaf4d22f186dff68eccd4c1d7c6dbd62a147e7e1a"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0278-district-energy-system/attempt-2/application-research-decision.json",
+    "sha256": "7030e4033cbca968fc8fe40a2baa44ea0d2b9bbdf3879f3516fb7ce43f8eb5b6"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0278-district-energy-system/attempt-2/source-verification.json",
+    "sha256": "463408aee6d8f468e309963f1bcb716ae9ec401184a860b2651ff861046da81a"
+  },
+  "evidence": [
+    {
+      "url": "https://www.businesswire.com/news/home/20211221005238/en/Harrison-Street-Acquires-Partnership-for-Military-Family-Housing-at-Six-U.S.-Air-Force-Bases",
+      "purpose": "Latest located direct manager statement that Harrison Street then owned the Fort Detrick district-energy system, used only to support the historical lineage and the precise cutoff-current exception."
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "8a85063b76125e9211bebb614507ca73b13d81d9151677ed01f912c7a628c7e3"
+}

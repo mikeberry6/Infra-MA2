@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_DEFERRED_READJUDICATION_RESEARCH_DECISION",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-deferred-readjudication-2026-09-05",
+  "generatedAt": "2026-09-05T04:24:51.000Z",
+  "asOfDate": "2026-09-04",
+  "taskId": "ledger:0336:astoria-energy-partners:b7f656e5",
+  "taskIndex": 336,
+  "companyName": "Astoria Energy Partners",
+  "linkedTaskIdsCovered": [],
+  "modelDecision": "DEFERRED",
+  "decision": "DEFERRED",
+  "confidence": "HIGH_HISTORICAL_PLATFORM_AND_MR_FACTS_LOW_FINAL_ALLOCATIONS_AND_CUTOFF_CURRENT_OWNERSHIP",
+  "researchOnly": true,
+  "summary": "Keep the source task as a fresh exact deferral. Direct regulatory, investor and seller records support Astoria Power Partners Holding, LLC as the probable one-platform survivor for the APP I and APP II interests, correct Munich Re/MEAG's entry date to 2020-06-18, and report MR Gotham LP at 20.0000% of APPH at 2025-12-31. The same records do not prove the final post-closing APG and CalSTRS allocations, cutoff-current continuity and exact interests for APG, CalSTRS, Clal, Harbert, GPP/CalPERS and other institutional investors, or reciprocal legal identity between the requested Astoria Energy Partners label and APPH. Financing and plant-operation evidence cannot fill that ownership gap.",
+  "resolvedFormerBlockers": [
+    "The direct NYPSC transaction record and ENGIE closing release establish a single APPH platform above 100% of APP I and approximately 55% of APP II, preserving the two-plant platform boundary without separately counting plant or project SPVs.",
+    "Munich Re's direct half-year report verifies 2020-06-18 as the MR Gotham transaction completion date, correcting the prior 2019 or July 2020 ambiguity.",
+    "Munich Re's direct 2025 annual report reports MR Gotham LP at 20.0000% of APPH at 2025-12-31.",
+    "The filed 2020 materials identify historical purchaser-member and look-through structures for Gotham, MR Gotham and Clal and distinguish the GPP/CalPERS project-II interests from APPH-level ownership.",
+    "CalSTRS' direct holdings page preserves Golden Inferno as a disclosed June 2025 holding, while confirming that no percentage or APPH look-through may be inferred from the listing.",
+    "The direct ENGIE, NYPSC and S&P materials preserve seller, power-purchaser, operating and financing roles without converting those roles into current equity."
+  ],
+  "identityResolution": {
+    "requestedLabel": "Astoria Energy Partners",
+    "canonicalKey": "astoria-energy-partners|united-states",
+    "probableSurvivor": "Astoria Power Partners Holding, LLC",
+    "productionCompanyId": null,
+    "productionAction": "DO_NOT_CREATE_OR_MERGE",
+    "status": "ECONOMIC_PLATFORM_RESOLVED_RECIPROCAL_LEGAL_ALIAS_UNRESOLVED",
+    "boundary": "Count the manager-level APPH platform once. Astoria Project Partners LLC, Astoria Project Partners II LLC, Astoria Energy LLC, Astoria Energy II LLC, individual plants, turbines, operators, NYPA contract rights, lenders and acquisition SPVs remain subordinate or separate boundaries rather than additional PortCos."
+  },
+  "ownershipResolution": {
+    "status": "UNRESOLVED_FINAL_CLOSING_ALLOCATIONS_AND_CUTOFF_CURRENT_COMPLETE_CAP_TABLE",
+    "verified": {
+      "apphHistoricalOwnershipAt2020Review": "Gotham Power Investors LLC 74.50%; MR Gotham LP 20.00%; Clal Astoria Blocker LP 5.50%",
+      "mrGothamEntryDate": "2020-06-18",
+      "mrGothamReportedStakeAt2025YearEnd": "20.0000% of APPH",
+      "historicalGothamStructure": "Pomarina Investments Holdings B.V. through Pomarina LLC, Golden Inferno LLC, and Harbert GPI MM, LLC were identified in the filed 2020 structure; the proposed economic weights were subject to closing adjustment.",
+      "gppBoundary": "GPP New York, LLC and GPP Astoria II, LLC were project-II interests rather than APPH-level interests in the reviewed 2020 structure."
+    },
+    "unresolved": {
+      "finalGothamWeights": "The executed closing Schedule A and funds-flow or final-purchase-price true-up were not found.",
+      "cutoffCurrentMembers": "A 2026-09-04 APPH or Gotham member ledger, amendments and transfer records were not found.",
+      "lookThroughAllocations": "Current audited Pomarina, Golden Inferno, Clal, MR Gotham and GPP schedules and the GPP beneficiary split were not found.",
+      "continuityAndLifecycle": "No direct later sale, transfer, exit, reallocation, dissolution, retirement, write-off or signed pending equity transaction was verified for every interest."
+    }
+  },
+  "operatingResolution": {
+    "status": "PLANT_AND_CONTRACT_ROLES_VERIFIED_EQUITY_NOT_INFERRED",
+    "appI": "Astoria Project Partners LLC wholly owns Astoria Energy LLC; the plant sells output on a merchant basis.",
+    "appII": "Astoria Project Partners II LLC wholly owns Astoria Energy II LLC; the plant sells output to NYPA under a long-term power purchase agreement.",
+    "roleRule": "Power purchaser, seller, project operator, lender, rating agency, debt authorization and refinancing roles are not treated as equity ownership or proof of ownership continuity."
+  },
+  "transactionResolution": {
+    "state": "HISTORICAL_2020_PLATFORM_ACQUISITION_VERIFIED_LATER_EQUITY_LIFECYCLE_UNRESOLVED",
+    "pendingTransaction": null,
+    "finding": "APPH acquired 100% of APP I and approximately 55% of APP II in the 2020 transaction. A 2025 Astoria Energy LLC refinancing and 2026 debt authorization were found, but neither establishes an equity transfer or cutoff-current cap table. No signed pending ownership transaction was verified."
+  },
+  "freshException": {
+    "status": "EXACT_FACT_UNAVAILABLE",
+    "missingFact": "The final closing allocations within Gotham; every APPH and Gotham member, vehicle, percentage, control and retained interest as of 2026-09-04; continuity or disposition of APG, CalSTRS, Clal, Harbert and GPP/CalPERS interests; and direct reciprocal legal proof that Astoria Energy Partners LLC or Astoria Project Partners Holdings LLC is the same investee as APPH.",
+    "searchedEvidence": [
+      "NYPSC 2020 acquisition petition, commission order and 2026 debt order",
+      "Munich Re 2020 half-year and 2025 annual reports",
+      "CalSTRS direct limited-partnership holdings disclosure",
+      "ENGIE direct 2020 closing release",
+      "S&P direct 2025 refinancing research rendered in the signed-in browser",
+      "Current legal-entity, member-ledger, ownership, pension, consortium, acquisition, co-investment, refinancing, recapitalization, sale, transfer, exit, retirement, dissolution, operator-change and pending-transaction searches in the fresh ChatGPT conversation"
+    ],
+    "requiredToResolve": "The executed Gotham LLC operating agreement and final Schedule A, January 2020 purchase-agreement funds-flow or final-price true-up, cutoff-dated APPH and Gotham member ledgers and amendments, audited named-investment and look-through holding schedules for Pomarina, Golden Inferno, Clal, MR Gotham and GPP, later assignment or sale consents, and legal formation or name-change records establishing any reciprocal Astoria Energy Partners alias."
+  },
+  "primaryCitation": {
+    "label": "NYPSC petition 20-E-0083",
+    "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B135E31CA-84CC-499B-A3DF-69F7E373218C%7D",
+    "purpose": "Direct filed evidence for the APPH hierarchy, 2020 transaction parties, historical allocations, project boundaries and the express closing-adjustment limitation",
+    "contentSha256": "5d20d6caffddca40cabc896773800ad39a067cb2e1f45d09d4b28b5852ef4675"
+  },
+  "applicationRequirements": [
+    "Use a terminal-only DEFERRED outcome and do not create or merge a company for the Astoria Energy Partners label.",
+    "Do not change APPH, Gotham or project ownership, funds, vehicles, stakes, control, dates or status from historical proposed allocations, year-end snapshots, manager reports, financing, operation or absence of a public exit.",
+    "Do not create separate PortCos for APP I, APP II, the two plant LLCs, NYPA contract rights, operating parties, lenders, acquisition SPVs or alias labels.",
+    "Preserve the verified platform, transaction, Munich Re, CalSTRS and project-boundary facts as research lineage only.",
+    "Use exactly one application primary citation bound to the fresh NYPSC petition bytes and retain every other verified source as supporting research lineage."
+  ],
+  "applicationBlocked": false,
+  "databaseMutationCandidate": false,
+  "seedMutationCandidate": false,
+  "terminalOutcomeCandidate": "DEFERRED",
+  "dealDatabaseMutation": false,
+  "lineage": {
+    "conversationUrl": "https://chatgpt.com/c/6a9b93a3-a470-83ea-942c-ba51e1aae542",
+    "prompt": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0336-astoria-energy-partners/attempt-2/chatgpt-research-prompt.md",
+      "sha256": "e78dd581efd8619df1f31edc7da3887da35811d06cb04b6e25da7249ecfd0064"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0336-astoria-energy-partners/attempt-2/chatgpt-accepted-response.txt",
+      "sha256": "8dfb8f06c7ae516f97d628da2018322d934c8bb6fb22582118e3310a4ad45c72"
+    },
+    "transcript": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0336-astoria-energy-partners/attempt-2/chatgpt-transcript.txt",
+      "sha256": "ea410c54b6cde0cdf135cb3d1df5d1b73e07b7fa336e0b901d75b0d397357737"
+    },
+    "attestation": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0336-astoria-energy-partners/attempt-2/chatgpt-attestation.json",
+      "sha256": "98fa9f2aad78738a518194cc847597f33de4232d06cc4e8ba03ee4db6fe8c2ba"
+    },
+    "responseValidation": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0336-astoria-energy-partners/attempt-2/chatgpt-response-validation.json",
+      "sha256": "161d050cb7dd3adca987a0df0e7a4292b1dfebc84465f54dd9fd1f172613b594"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0336-astoria-energy-partners/attempt-2/source-verification.json",
+      "sha256": "b7064ed6cd9d2990056786dd8ebed079a4c65800bcde221a47c86fdbcf2fe274"
+    }
+  }
+}
