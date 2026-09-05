@@ -25,6 +25,21 @@ const calendarDate = z.string().regex(/^\d{4}-\d{2}-\d{2}$/);
 const isoTimestamp = z.string().datetime({ offset: true });
 const sha256Value = z.string().regex(/^[a-f0-9]{64}$/);
 
+export function isAcceptedDeferredResearchProfile(
+  attestation: Record<string, unknown>,
+  uiEvidence: Record<string, unknown>,
+): boolean {
+  const legacyProProfile = attestation.effort === "Pro"
+    && attestation.power === "5 of 5"
+    && uiEvidence.modeMenuEffortLabel === "Pro"
+    && uiEvidence.modeMenuPowerLabel === "Pro, 5 of 5";
+  const currentMaximumProfile = attestation.effort === "Ultra"
+    && attestation.power === "6 of 6"
+    && uiEvidence.modeMenuEffortLabel === "Ultra"
+    && uiEvidence.modeMenuPowerLabel === "Ultra, 6 of 6";
+  return legacyProProfile || currentMaximumProfile;
+}
+
 export const executionTaskStatuses = [
   "PENDING",
   "ACTIVE",

@@ -1,0 +1,238 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0399:rowan-bauxite:930cec59",
+  "taskIndex": 399,
+  "companyName": "Rowan Bauxite",
+  "asOfDate": "2026-09-05",
+  "decision": "DEFERRED",
+  "confidence": "HIGH_PROJECT_PLATFORM_IDENTITY_MEDIUM_DISCLOSED_RELATIONSHIPS_LOW_COMPLETE_CUTOFF_CAP_TABLE",
+  "researchOnly": true,
+  "generatedAt": "2026-09-05T10:26:00.000Z",
+  "result": {
+    "asOfDate": "2026-09-05",
+    "requestedCompany": "Rowan Bauxite",
+    "requestedManagers": [
+      "Quinbrook Infrastructure Partners",
+      "University Pension Plan Ontario",
+      "Blackstone",
+      "Birch Infrastructure"
+    ],
+    "decision": "DEFERRED",
+    "confidence": "HIGH_IDENTITY_MEDIUM_OWNERSHIP",
+    "rationale": "Issuer/owner gaps block resolved merge.",
+    "identityResolution": {
+      "sourceId": "cmrxpjmq8018jivheeb9h6fx9",
+      "targetId": "cmrxpjmr2018livhe1yqhqyh5",
+      "canonicalKey": "rowan-bauxite|united-states",
+      "result": "SUPPORTED_NOT_APPLIED",
+      "hierarchy": "Rowan > Bauxite, Quantum Frederick > I/Rowan Frederick LLC; II/Rowan Frederick II LLC; III/Rowan Frederick III LLC.",
+      "entities": "Two active Delaware LLCs: Rowan Green Data LLC,4160260,formed 2020-11-16; Rowan Digital Infrastructure LLC,10259908,formed 2025-07-14. Site: second; relation/recap issuer/topco unproved.",
+      "history": "2020 launch as Rowan Green Data; now Rowan Digital Infrastructure."
+    },
+    "ownershipResolution": {
+      "capTableComplete": false,
+      "issuer": "UNRESOLVED: Rowan Green Data LLC, Rowan Digital Infrastructure LLC or undisclosed parent",
+      "owners": [
+        {
+          "manager": "Quinbrook Infrastructure Partners",
+          "organization": "UNRESOLVED_DIRECT_HOLDER",
+          "fund": "Net Zero Power Fund and associated co-investment vehicle(s)",
+          "vehicle": "UNRESOLVED",
+          "stake": "UNRESOLVED",
+          "announcementDate": "2020-12-17",
+          "entryDate": null,
+          "entryYear": 2020,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "ACTIVE_POST_RECAP; backing/chair proved; holder,security,stake,votes,governance,control unresolved"
+        },
+        {
+          "manager": "Birch Infrastructure",
+          "organization": "Birch Infrastructure PBLLC",
+          "fund": "NOT_PUBLICLY_DISCLOSED",
+          "vehicle": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2020-12-17",
+          "entryDate": null,
+          "entryYear": 2020,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": false,
+          "transactionState": "FORMER_BY_2023-01-11; transfer details unresolved"
+        },
+        {
+          "manager": "University Pension Plan Ontario",
+          "organization": "University Pension Plan Ontario",
+          "fund": "University Pension Plan Ontario",
+          "vehicle": "UNRESOLVED",
+          "stake": "NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2024-08-13",
+          "entryDate": null,
+          "entryYear": 2024,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": null,
+          "transactionState": "COMPLETED_PRE_RECAP; rollover,sale,dilution,transfer,retention unresolved; silence inconclusive"
+        },
+        {
+          "manager": "Blackstone",
+          "organization": "Blackstone Inc.",
+          "fund": "Funds affiliated with Blackstone",
+          "vehicle": "UNRESOLVED",
+          "stake": "SIGNIFICANT_MINORITY; 49% UNVERIFIED_SECONDARY; denominator unknown",
+          "announcementDate": "2026-04-09",
+          "entryDate": null,
+          "entryYear": 2026,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "COMPLETED_BY_2026-04-09; close,security,holder,governance unresolved"
+        }
+      ]
+    },
+    "operatingResolution": {
+      "headquarters": "1400 16th Street, Suite 330, Denver, CO; Seattle office",
+      "scope": "US power-first hyperscale data-center developer/operator; 20+ sites; ~6 GW.",
+      "boundary": "Bauxite I-III are Rowan projects at Quantum Frederick; exclusions below.",
+      "projectEquity": "No disclosed third-party Bauxite project-equity co-owner.",
+      "website": "https://rowan.digital/"
+    },
+    "acquisitionExitCheck": {
+      "laterSearch": "Through 2026-09-05: debt,branding,policy,operations only; no later equity raise,secondary sale,merger,sponsor exit,control change or signed pending deal.",
+      "pendingTransactions": []
+    },
+    "milestones": [
+      {
+        "date": "2020-12-17",
+        "event": "Quinbrook/Birch US data-center JV announced; Rowan Green Data LLC formed 2020-11-16.",
+        "status": "VERIFIED"
+      },
+      {
+        "date": "2023-01-11",
+        "event": "Quinbrook said Rowan wholly owned; Birch former; mechanics omitted.",
+        "status": "VERIFIED"
+      },
+      {
+        "date": "2024-08-13",
+        "event": "UPP completed Rowan co-investment; terms omitted.",
+        "status": "VERIFIED"
+      },
+      {
+        "date": "2026-04-09",
+        "event": "Blackstone significant minority completed; Quinbrook remained; UPP/cap table omitted.",
+        "status": "VERIFIED"
+      }
+    ],
+    "evidence": [
+      {
+        "label": "Rowan projects",
+        "url": "https://rowan.digital/portfolio/bauxite-i-ii-iii/",
+        "purpose": "Project identity",
+        "sourceTier": "PRIMARY_COMPANY",
+        "workingStatus": "IDENTITY",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "MDE",
+        "url": "https://mde.maryland.gov/datacenters/Pages/FrederickDataCenter.aspx",
+        "purpose": "Site boundary",
+        "sourceTier": "PRIMARY_GOVERNMENT",
+        "workingStatus": "BOUNDARY",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Birch JV",
+        "url": "https://www.birch.coop/quinbrook-joint-venture-to-power-renewable-data-centers-in-the-us",
+        "purpose": "2020 JV; terms omitted",
+        "sourceTier": "PRIMARY_TRANSACTION_PARTY",
+        "workingStatus": "FORMATION",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Quinbrook 2023",
+        "url": "https://www.quinbrook.com/news-insights/quinbrook-expands-rowan-green-data-center-platform/",
+        "purpose": "JV origin; 2023 ownership",
+        "sourceTier": "PRIMARY_MANAGER",
+        "workingStatus": "FORMER",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "UPP 2024",
+        "url": "https://myupp.ca/upp-invests-in-data-centre-developer-rowan-digital-infrastructure/",
+        "purpose": "Completed entry; terms omitted",
+        "sourceTier": "PRIMARY_INVESTOR",
+        "workingStatus": "ENTRY",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "2026 recap",
+        "url": "https://www.quinbrook.com/news-insights/rowan-digital-infrastructure-announces-strategic-recapitalization/",
+        "purpose": "Recap; no 49%/UPP",
+        "sourceTier": "PRIMARY_TRANSACTION_PARTY",
+        "workingStatus": "CUTOFF",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "Rest 2026",
+        "url": "https://rest.com.au/why-rest/about-rest/news/decarbonisation-and-digitalisation-creating-value",
+        "purpose": "Post-recap fund exposure",
+        "sourceTier": "PRIMARY_INVESTOR",
+        "workingStatus": "RETENTION",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Delaware",
+        "url": "https://icis.corp.delaware.gov/ecorp/entitysearch/namesearch.aspx",
+        "purpose": "Two active LLCs",
+        "sourceTier": "PRIMARY_GOVERNMENT",
+        "workingStatus": "ENTITY_GAP",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "before": "Source standalone; target Rowan platform.",
+      "after": "Unchanged; source may be SUPERSEDED after owner,issuer,cap-table certification."
+    },
+    "excludedOrDuplicateCandidates": [
+      "Bauxite I-III/Rowan Frederick LLC/II LLC/III LLC: subordinate projects/SPVs, not manager-level.",
+      "Quantum Frederick/Quantum Maryland/Catellus: campus/site manager, not proven owners.",
+      "Customers,lenders,utilities,contractors,financing vehicles: non-equity.",
+      "Rest/other Quinbrook fund investors: look-through, not holder proof."
+    ],
+    "unresolvedQuestions": [
+      "Organization chart, member register/cap table, LLC agreements and merger/conversion/assignment records linking both active LLCs and Rowan Management Co., LLC.",
+      "April 2026 purchase/subscription agreement, closing certificate/allocation: Blackstone funds/vehicle,security,denominator,sellers,primary/secondary mix,units,votes,governance,exact close.",
+      "UPP transfer ledger,rollover/election papers,2026 named-investment schedule or audited post-close note: retention,sale,dilution,transfer.",
+      "2020 JV agreement and Birch assignment/redemption/purchase documents: initial stakes,votes,exit date,transferee,consideration,mechanics."
+    ],
+    "recommendedListAction": {
+      "action": "HOLD_DEFERRED",
+      "sourceRecord": "cmrxpjmq8018jivheeb9h6fx9",
+      "targetRecord": "cmrxpjmr2018livhe1yqhqyh5",
+      "reason": "Identity supports supersession; issuer/active-owner after-image uncertified."
+    }
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0399-rowan-bauxite/attempt-2/research-decision.json",
+      "sha256": "e9da9b9710c5944e1cfa2da3c09c1428a6ad99d014383144f5c3bc3b67fb6313"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0399-rowan-bauxite/attempt-2/chatgpt-accepted-response.txt",
+      "sha256": "5fc84c18dbd15865d6b0e9aaff3ab4d755afbcb2c185c92f4ee65e5632efc4ef"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0399-rowan-bauxite/attempt-2/source-verification.json",
+      "sha256": "241afbf8e5f00b243dbbc17c903c4d482d24548c120a0a5f4ab058c4a135b379"
+    },
+    "acceptedResponseSha256": null,
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+    "confidenceNormalization": {
+      "acceptedValue": "HIGH_IDENTITY_MEDIUM_OWNERSHIP",
+      "stagedSummaryValue": "HIGH_PROJECT_PLATFORM_IDENTITY_MEDIUM_DISCLOSED_RELATIONSHIPS_LOW_COMPLETE_CUTOFF_CAP_TABLE",
+      "basis": "The accepted response expressed an overall confidence band with a disclosure-gap qualifier; the staged summary preserves that band in its deterministic qualifier and the research decision is unchanged."
+    }
+  }
+}

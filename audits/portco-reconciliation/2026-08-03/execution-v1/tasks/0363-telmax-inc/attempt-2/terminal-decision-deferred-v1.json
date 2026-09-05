@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0363:telmax-inc:f608a383",
+  "taskIndex": 363,
+  "companyName": "telMAX Inc.",
+  "outcome": "DEFERRED",
+  "decidedAt": "2026-09-05T10:27:00.000Z",
+  "rationale": "The 2020 control deal, NOVA entry majority, Fund I attribution, active NOVA HoldCo and ASGI ~15% indirect interest are proven. All cutoff shareholders, the vehicle chain and QID/legacy stakes are not.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0363-telmax-inc/attempt-2/locked-deferred-v1-task-snapshot.json",
+    "sha256": "5f1b9f3cc71196a742a2368a05fe872c6354d1d5200876574ff8de09025c6622"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0363-telmax-inc/attempt-2/application-research-decision.json",
+    "sha256": "51b9e6358e4e4844a7b0b16074db2b5f238b04b2d0e6633e596e868e76afb95d"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0363-telmax-inc/attempt-2/source-verification.json",
+    "sha256": "21df1536c230b297d86c10c29ce089c9f5c7eb18b719e9e71196fbab03da8937"
+  },
+  "evidence": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1793855/000141036826088528/NPORT_DRCY_60061693_0626.htm",
+      "purpose": "Latest HoldCo value/~15% indirect interest"
+    },
+    {
+      "url": "https://reports.adviserinfo.sec.gov/reports/ADV/304510/PDF/304510.pdf",
+      "purpose": "HoldCo GP/jurisdiction/five owners"
+    },
+    {
+      "url": "https://www.appmybizaccount.gov.on.ca/onbis/master/entry.pub?applicationCode=onbis-master&businessService=registerItemSearch",
+      "purpose": "Legal identity/date/status/local entities"
+    },
+    {
+      "url": "https://quintana-id.com/wp-content/uploads/2021/news/QID%20Closing%20Press%20Release%20telMAX%202021.04.01.pdf",
+      "purpose": "Completion/combined control"
+    },
+    {
+      "url": "https://www.novainfrastructure.com/nova-infrastructure-announces-investment-in-telmax",
+      "purpose": "NOVA entry majority"
+    },
+    {
+      "url": "https://www.jonesday.com/en/practices/experience/2024/04/nova-infrastructure-management-llc-and-affiliated-funds-obtain-new-25-million-subscription-facility",
+      "purpose": "Fund I/AIV names; no equity link"
+    },
+    {
+      "url": "https://quintana-id.com/about-us/",
+      "purpose": "Robertson-owned; not a fund"
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "407bf938393aed339c4ce45b0ee69d834637163833e0b4e967c9dda0cb6b41d4"
+}

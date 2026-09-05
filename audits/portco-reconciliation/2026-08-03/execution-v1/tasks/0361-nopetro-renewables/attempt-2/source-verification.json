@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "runId": "portco-deferred-readjudication-2026-09-05",
+  "taskId": "ledger:0361:nopetro-renewables:1b512de3",
+  "taskIndex": 361,
+  "companyName": "Nopetro Renewables",
+  "verifiedAt": "2026-09-05T06:07:47.000Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "label": "Delaware search",
+      "url": "https://icis.corp.delaware.gov/ecorp/entitysearch/namesearch.aspx",
+      "finalUrl": "https://icis.corp.delaware.gov/ecorp/entitysearch/NameSearch.aspx",
+      "status": "OPEN_RENDERED_DOM_SEARCH_RESULT",
+      "httpStatus": 200,
+      "mediaType": "text/html; rendered browser DOM innerText",
+      "bytes": 2016,
+      "contentSha256": "50634d6f132f95938f0f81670a3bf7869ed06ee995d3774888ea3735cecda2ce",
+      "captureType": "CODEX_IN_APP_BROWSER_RENDERED_DOM_AFTER_FILE_NUMBER_SEARCH",
+      "browserVerified": true,
+      "commandLineResponse": {
+        "httpStatus": 200,
+        "bytes": 48022,
+        "contentSha256": "6a9355538412c4303cb3cf1cdaab0f40847787af5fce716fc5f4e65d1ce21127"
+      },
+      "isApplicationPrimary": false,
+      "note": "The direct current one-record search result verifies file number 7195367 and legal name NOPETRO RENEWABLES, LLC. The detail postback reset to the search form in the independent browser and did not provide a stable formation-date record, so the 2022-12-19 date is not independently promoted into an application fact. The registry result does not disclose members, managers, vehicles, stakes or lifecycle."
+    },
+    {
+      "label": "Formation release",
+      "url": "https://www.businesswire.com/news/home/20230531005454/en/NOVA-Infrastructure-and-Nopetro-Energy-Announce-New-Renewables-Platform",
+      "finalUrl": "https://www.businesswire.com/news/home/20230531005454/en/NOVA-Infrastructure-and-Nopetro-Energy-Announce-New-Renewables-Platform",
+      "status": "OPEN_RENDERED_DOM_AFTER_COMMAND_LINE_HTTP2_ERROR",
+      "httpStatus": 200,
+      "mediaType": "text/html; rendered browser DOM innerText",
+      "bytes": 6052,
+      "contentSha256": "05fc7482c35c59e49a9701b96e873b85da2c9833644df520772148c5544bbddc",
+      "captureType": "CODEX_IN_APP_BROWSER_RENDERED_DOM",
+      "browserVerified": true,
+      "commandLineResponse": {
+        "httpStatus": 0,
+        "bytes": 0,
+        "error": "HTTP/2 stream closed with INTERNAL_ERROR before response bytes were returned"
+      },
+      "isApplicationPrimary": true,
+      "note": "The direct transaction-party release states that NOVA partnered with Nopetro Energy to create the Nopetro Renewables RNG and biofuels platform, distinguishes NOVA's separate equity investment in Nopetro Energy, and identifies Nopetro as NOVA's seventh Fund I platform investment. It does not identify the platform's legal members, direct vehicles, percentages, closing date, contributed interests, sellers, rollover or control terms."
+    },
+    {
+      "label": "NOVA portfolio",
+      "url": "https://www.novainfrastructure.com/investments-index",
+      "finalUrl": "https://www.novainfrastructure.com/investments-index",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html;charset=utf-8",
+      "bytes": 243825,
+      "contentSha256": "9195ff3be5ca559d38fad48f9ec26f7a3b896710dcb4d6ba24da7965284b7ac6",
+      "browserVerified": true,
+      "renderedDomResponse": {
+        "mediaType": "text/html; rendered browser DOM innerText",
+        "bytes": 9072,
+        "contentSha256": "467af5444f7bfd2ac8599e9e1258ac1c9e1db64e51f160182b63c493670e4046"
+      },
+      "isApplicationPrimary": false,
+      "note": "NOVA's current investments page lists Nopetro Renewables as Current, headquartered in Miami and formed by NOVA and Nopetro Energy Holdings in 2023, and distinguishes the renewables platform from NEH's compressed-natural-gas fueling operations. Portfolio-page continuity and that manager-level boundary do not prove direct legal title, a complete owner set, an exact vehicle, a percentage or cutoff ownership continuity."
+    },
+    {
+      "label": "Green team",
+      "url": "https://www.gghcorp.com/our-team/",
+      "finalUrl": "https://www.gghcorp.com/our-team/",
+      "status": "OPEN_RENDERED_DOM_AFTER_COMMAND_LINE_403",
+      "httpStatus": 200,
+      "mediaType": "text/html; rendered browser DOM innerText after expanding David Green biography",
+      "bytes": 3540,
+      "contentSha256": "85799355ed4efecde68b1bffa1de2ae4de2fb6769ec4d60886d416d1e4c8f29b",
+      "captureType": "CODEX_IN_APP_BROWSER_RENDERED_DOM",
+      "browserVerified": true,
+      "commandLineResponse": {
+        "httpStatus": 403,
+        "bytes": 5491,
+        "contentSha256": "d0a3b027f1233fc140d541ca955ea71b7aee0ed332867ad2ec64bdbf4fdca686"
+      },
+      "isApplicationPrimary": false,
+      "note": "The expanded direct biography states that Green Group, as part of its relationship with NOVA Infrastructure as a limited partner, invested in Nopetro in 2023 and that David Green joined Nopetro's board. It does not identify the legal investee, direct versus indirect ownership, fund, acquisition vehicle, units, percentage, entry date, current retention or whether the interest is Nopetro Renewables platform equity."
+    },
+    {
+      "label": "DOE application",
+      "url": "https://www.energy.gov/sites/default/files/2026-02/Nopetro%20LNG%20LLC%20Application%20to%20Amend%20LNG%20Export%20Authorization.pdf",
+      "finalUrl": "https://www.energy.gov/sites/default/files/2026-02/Nopetro%20LNG%20LLC%20Application%20to%20Amend%20LNG%20Export%20Authorization.pdf",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 141523,
+      "contentSha256": "7388c0c54e86d5668035f916149954d661e079e9fb04970d26c29fee30fd8e8f",
+      "browserVerified": false,
+      "isApplicationPrimary": false,
+      "note": "The direct February 2026 federal filing provides a current ownership schedule for Nopetro Energy Holdings, LLC, including NOVA Infrastructure Fund I, NOVA-Nopetro Splitter and NOVA-Nopetro Holdco minority interests. It does not provide the separate Nopetro Renewables platform cap table and cannot establish platform members, a complete owner set or any 55/45 platform split."
+    },
+    {
+      "label": "SBA OHA SIZ-6297",
+      "url": "https://stanhinton.com/OHA_Decisions/SIZ-6297.pdf",
+      "finalUrl": "https://stanhinton.com/OHA_Decisions/SIZ-6297.pdf",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 105634,
+      "contentSha256": "b0307d9c95f8a3c96f9180d296b5d96910cdbbd1dfb5597fe3c8a2c258b5f12f",
+      "browserVerified": true,
+      "isApplicationPrimary": false,
+      "note": "The rendered seven-page SBA OHA decision mirror and current PDF bytes state that Nopetro Renewables and Nopetro Energy Holdings are separate legal entities and remand the analysis because NEH governing documents did not establish NOVA's relationship with NR. The decision does not disclose cutoff-current platform members, direct vehicles, stakes or a complete ownership schedule."
+    }
+  ],
+  "checks": {
+    "allReturnedEvidenceUrlsChecked": true,
+    "allReturnedUrlsChecked": true,
+    "allEvidenceRowsChecked": true,
+    "allUrlsHttps": true,
+    "returnedOpenCount": 6,
+    "exactLegalNameAndFileNumberVerified": true,
+    "formationDateIndependentlyVerified": false,
+    "managerLevelPlatformBoundaryVerified": true,
+    "platformAndNehSeparateInvestmentsVerified": true,
+    "novaFundIRelationshipVerified": true,
+    "novaDirectPlatformTitleVerified": false,
+    "nehDirectPlatformTitleVerified": false,
+    "greenDirectPlatformEquityVerified": false,
+    "greenLimitedPartnerAndNopetroInvestmentRelationshipVerified": true,
+    "platformAndNehSeparateLegalEntitiesVerified": true,
+    "cutoffCurrentCompleteMemberLedgerVerified": false,
+    "allCurrentDirectOwnerVehiclesVerified": false,
+    "allCurrentDirectOwnerStakesVerified": false,
+    "nova55PercentVerified": false,
+    "neh45PercentVerified": false,
+    "laterOwnershipLifecycleChangeVerified": false,
+    "exactlyOneApplicationPrimary": true,
+    "modelRecommendedPrimaryApplicationUsableForTerminalDeferral": true,
+    "companyCreationOrOwnershipMutationBlocked": true,
+    "terminalDeferralSupported": true
+  },
+  "exactException": "Nopetro Renewables, LLC is verified as the separate NOVA and Nopetro Energy Holdings RNG platform, but no direct cutoff source provides its original or amended operating agreement, member ledger or unit register, subscription or contribution agreement, closing certificate, audited named-investment schedule, NOVA fund and parallel-vehicle holding register, Green co-investment record, complete current and former direct owner set, direct acquisition vehicles, exact stakes, control terms, contributed interests, sellers, rollover or current retention and exit dates. The direct formation release, current manager page, Green biography, NEH-only federal cap table and SBA decision cannot prove a 55% NOVA stake, a residual 45% NEH stake, or Green Group direct platform equity.",
+  "conclusion": "DEFERRED. Preserve the resolved Nopetro Renewables legal and manager-level platform identity and the Fund I relationship as research lineage, but make no company, owner, fund, vehicle, stake, status, database or seed mutation until platform-specific records prove the complete current direct ownership chain and lifecycle."
+}

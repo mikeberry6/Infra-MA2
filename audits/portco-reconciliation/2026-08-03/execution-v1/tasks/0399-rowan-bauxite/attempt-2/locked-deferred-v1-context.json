@@ -1,0 +1,319 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_TASK_CONTEXT",
+  "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0399:rowan-bauxite:930cec59",
+  "taskIndex": 399,
+  "companyName": "Rowan Bauxite",
+  "generatedAt": "2026-09-05T10:21:22.358Z",
+  "productionSnapshotLocation": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0399-rowan-bauxite/attempt-2/locked-deferred-v1-production-snapshot.json",
+  "sourceQueueEntry": {
+    "taskIndex": 399,
+    "taskId": "ledger:0399:rowan-bauxite:930cec59",
+    "canonicalKey": "rowan-bauxite|united-states",
+    "companyName": "Rowan Bauxite",
+    "country": "United States",
+    "decisionStatus": "NEEDS_REVIEW",
+    "queueKind": "CANONICAL_COMPANY",
+    "earliestManagerIndex": 83,
+    "managers": [
+      "Quinbrook Infrastructure Partners"
+    ],
+    "actionScopes": {
+      "company": [
+        "MERGE_COMPANIES"
+      ],
+      "ownership": [],
+      "verification": []
+    },
+    "sourceHoldingIds": [],
+    "sourceRepoOnlyIds": [
+      "083-quinbrook-infrastructure-partners:repo-only:011:rowan-bauxite"
+    ],
+    "productionCompanyIds": [
+      "cmrxpjmq8018jivheeb9h6fx9"
+    ],
+    "seedKeys": [
+      "rowan bauxite|United States"
+    ],
+    "evidenceUrls": [
+      "https://rowan.digital/portfolio/frederick/",
+      "https://www.quinbrook.com/portfolio/rowan-digital-infrastructure/"
+    ],
+    "candidateCanonicalKeys": [],
+    "rationale": "Accepted manager repo-only judgment(s) require one consolidated company proposal: Quinbrook Infrastructure Partners MATCHED_ELSEWHERE: Hyperscale data center campus developed under Rowan Digital Infrastructure; subordinate project.",
+    "unresolvedQuestions": [
+      "Identify and approve the canonical keep record and consolidation boundary; no merge is inferred from this source judgment."
+    ]
+  },
+  "targetResolution": {
+    "method": "IMMUTABLE_QUEUE_TARGET",
+    "targetCompanyId": "cmrxpjmq8018jivheeb9h6fx9",
+    "linkedQueueTaskId": null
+  },
+  "resolvedCanonicalKey": "rowan-bauxite|united-states",
+  "targetCompanyImage": {
+    "id": "cmrxpjmq8018jivheeb9h6fx9",
+    "name": "Rowan Bauxite",
+    "aliases": [],
+    "sector": "DIGITAL",
+    "subsector": "Hyperscale data center campus",
+    "region": "NORTH_AMERICA",
+    "country": "United States",
+    "countryTags": [
+      "United States"
+    ],
+    "description": "Rowan Bauxite is a hyperscale data center campus in Frederick County, Maryland. The project is being developed for large cloud and technology customers through an asset-heavy, build-to-suit model that integrates land, power, water, and digital infrastructure. Public materials describe three Bauxite projects at the Quantum Loophole campus with more than 600 MW of aggregate capacity, with Bauxite I delivering an initial 200+ MW. Operations are concentrated in Maryland within Rowan's broader U.S. data center platform. Rowan was founded in 2020 and is backed by Quinbrook, and the Bauxite campus advanced materially after site approval in 2024 and large construction financings for its first phases in 2024 and 2025.",
+    "companyStatus": "ACTIVE",
+    "recordStatus": "PUBLISHED",
+    "website": null,
+    "yearFounded": null,
+    "headquarters": "Maryland",
+    "lastVerifiedAt": null,
+    "ownershipPeriods": [
+      {
+        "id": "cmrxpk9a90284ivhexnyadhtj",
+        "managerName": "Quinbrook",
+        "organizationName": "Quinbrook",
+        "fundName": null,
+        "vehicleName": "n.a.",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ],
+    "pendingOwnershipTransactions": [],
+    "milestones": [
+      {
+        "id": "cmrxpmlt5052pivhedsyz3lyv",
+        "date": "Nov 2020",
+        "event": "Rowan Digital Infrastructure was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2020-11-01T04:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmltq052qivheo8azxwf8",
+        "date": "2022",
+        "event": "Quinbrook project materials list Bauxite as acquired in 2022.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmlub052rivheblzmi782",
+        "date": "2025",
+        "event": "Rowan secured $1.24 billion of financing for Bauxite II.",
+        "category": "FINANCING",
+        "sortDate": "2025-01-01T00:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmluu052sivhevbdl1d8h",
+        "date": "Jan 2025",
+        "event": "Quinbrook's Rowan Digital Infrastructure closed $975 million of construction financing for Bauxite I.",
+        "category": "FINANCING",
+        "sortDate": "2025-01-01T05:00:00.000Z",
+        "evidenceUrls": []
+      },
+      {
+        "id": "cmrxpmlve052tivhe6v3tjqjt",
+        "date": "Feb 2025",
+        "event": "Rowan secured an additional $1.24 billion of financing for the second phase of the campus.",
+        "category": "FINANCING",
+        "sortDate": "2025-02-01T05:00:00.000Z",
+        "evidenceUrls": []
+      }
+    ],
+    "managementRoles": [],
+    "citations": [
+      {
+        "id": "cmrxpslxm0cudivhefi942y4s",
+        "label": "Close date source — Quinbrook — Rowan Bauxite",
+        "url": "https://rowan.digital/news/secures-975-million-financing-for-hyperscale-campus-in-maryland/",
+        "sourceType": "ARTICLE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Quinbrook closing confirmation",
+        "isPrimary": true
+      },
+      {
+        "id": "cmrxpslyp0cufivhe1mysfpw3",
+        "label": "Rowan — Rowan Bauxite",
+        "url": "https://rowan.digital/news/secures-1-24-billion-financing-for-hyperscale-campus-in-maryland/",
+        "sourceType": "ARTICLE",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "Rowan financing or public filing",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpslzn0cuhivheu3jibjll",
+        "label": "Data Center Dynamics — Rowan Bauxite",
+        "url": "https://www.datacenterdynamics.com/en/news/rowan-secures-12bn-for-maryland-data-center-campus-build-out/",
+        "sourceType": "ARTICLE",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Data Center Dynamics — Rowan Bauxite",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsm0l0cujivheozv09qu1",
+        "label": "Rowan — Rowan Bauxite",
+        "url": "https://rowan.digital/portfolio/frederick/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Rowan operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsm1r0culivhembh5cd5k",
+        "label": "Quinbrook — Rowan Bauxite",
+        "url": "https://www.quinbrook.com/portfolio/rowan-digital-infrastructure/",
+        "sourceType": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Quinbrook operations / asset details",
+        "isPrimary": false
+      },
+      {
+        "id": "cmrxpsm540cunivhedigan44v",
+        "label": "Investment date source — Quinbrook — Rowan Bauxite",
+        "url": "https://www.quinbrook.com/projects/bauxite/",
+        "sourceType": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Quinbrook initial investment / ownership",
+        "isPrimary": false
+      }
+    ]
+  },
+  "seedEntry": {
+    "name": "Rowan Bauxite",
+    "investmentFirm": "Quinbrook",
+    "sector": "Digital",
+    "subsector": "Hyperscale data center campus",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "Rowan Bauxite is a hyperscale data center campus in Frederick County, Maryland. The project is being developed for large cloud and technology customers through an asset-heavy, build-to-suit model that integrates land, power, water, and digital infrastructure. Public materials describe three Bauxite projects at the Quantum Loophole campus with more than 600 MW of aggregate capacity, with Bauxite I delivering an initial 200+ MW. Operations are concentrated in Maryland within Rowan's broader U.S. data center platform. Rowan was founded in 2020 and is backed by Quinbrook, and the Bauxite campus advanced materially after site approval in 2024 and large construction financings for its first phases in 2024 and 2025.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "investmentYear": 2022,
+    "headquarters": "Maryland",
+    "milestones": [
+      {
+        "date": "Nov 2020",
+        "event": "Rowan Digital Infrastructure was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "2022",
+        "event": "Quinbrook project materials list Bauxite as acquired in 2022.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "2025",
+        "event": "Rowan secured $1.24 billion of financing for Bauxite II.",
+        "category": "Financing"
+      },
+      {
+        "date": "Jan 2025",
+        "event": "Quinbrook's Rowan Digital Infrastructure closed $975 million of construction financing for Bauxite I.",
+        "category": "Financing"
+      },
+      {
+        "date": "Feb 2025",
+        "event": "Rowan secured an additional $1.24 billion of financing for the second phase of the campus.",
+        "category": "Financing"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Close date source — Quinbrook — Rowan Bauxite",
+        "url": "https://rowan.digital/news/secures-975-million-financing-for-hyperscale-campus-in-maryland/",
+        "type": "ARTICLE",
+        "purpose": "FINANCING_FILINGS"
+      },
+      {
+        "label": "Rowan — Rowan Bauxite",
+        "url": "https://rowan.digital/news/secures-1-24-billion-financing-for-hyperscale-campus-in-maryland/",
+        "type": "ARTICLE",
+        "purpose": "FINANCING_FILINGS"
+      },
+      {
+        "label": "Data Center Dynamics — Rowan Bauxite",
+        "url": "https://www.datacenterdynamics.com/en/news/rowan-secures-12bn-for-maryland-data-center-campus-build-out/",
+        "type": "ARTICLE"
+      },
+      {
+        "label": "Rowan — Rowan Bauxite",
+        "url": "https://rowan.digital/portfolio/frederick/",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Quinbrook — Rowan Bauxite",
+        "url": "https://www.quinbrook.com/portfolio/rowan-digital-infrastructure/",
+        "type": "WEBSITE",
+        "purpose": "OPERATIONS_ASSETS"
+      },
+      {
+        "label": "Investment date source — Quinbrook — Rowan Bauxite",
+        "url": "https://www.quinbrook.com/projects/bauxite/",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Quinbrook",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2022,
+        "status": "Active"
+      }
+    ]
+  },
+  "seedRetirementCandidates": [],
+  "dependencies": {
+    "funds": [],
+    "organizations": [
+      {
+        "id": "cmrxpigao004eivhedx8km4yh",
+        "name": "Quinbrook",
+        "updatedAt": "2026-07-23T16:09:28.320Z"
+      }
+    ],
+    "redirects": []
+  },
+  "taskSnapshot": {
+    "schemaVersion": 1,
+    "artifactType": "PORTCO_RECONCILIATION_TASK_SNAPSHOT",
+    "methodologyVersion": "PORTCO_TASK_SNAPSHOT_V1",
+    "runId": "portco-reconciliation-2026-08-03-v2",
+    "taskId": "ledger:0399:rowan-bauxite:930cec59",
+    "taskIndex": 399,
+    "canonicalKey": "rowan-bauxite|united-states",
+    "capturedAt": "2026-09-05T10:21:22.358Z",
+    "databaseRevision": "revision:cd1ee27e20dcb18016254e5b9bfeed6fa343bd91b8392e04aff6b1e160924d86",
+    "databaseTargetFingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929",
+    "sourceLedgerSha256": "0767881ae2a954d124bebf19458cc1972c059ed5778e8961cddf4369cf2ec602",
+    "sourceQueueEntrySha256": "ac93b0a619d79bdf44585ff853b85c2f12b31d1633ef432d15d7a5b22de3e0c1",
+    "productionSnapshotSha256": "94cfcacd384da07cd61d4b75f1d7325c71ea4e72e95a8e2812f7a8597821b486",
+    "targetCompanySnapshotSha256": "bdd8f997078511d49e4a411b441affd76871cdfcaf04087e3175dc767123bd39",
+    "seedEntrySha256": "50c40d49db47c7e3986bb2b2b4761d2c9b577e6269f97fc56bdfee9c4394dfb7",
+    "seedRetirementCandidates": [],
+    "dependencies": {
+      "ownershipPeriodsSha256": "c51def405e457526f57df91ba8960ea34022342ae7a8fbee435bee3dc99b1a2d",
+      "pendingTransactionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fundsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "organizationsSha256": "52c944c13a5e74630cefca11499339fafbdd9f1705bdf046c1d4d1c3542bd283",
+      "citationsSha256": "58e96187096f8f64a1206d4d668fa93693250d0f5bf4892e17babc448b6f6c71",
+      "redirectsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dependencySha256": "b2d31934581190c45ba29f8e259bc7045228b524cf9d30ec3be62df787d5c1c3",
+    "stateSha256": "c4d2142d1e80239788e45a5a6f21953fdb41c85dbb24f75977d394aa6e9de1bd",
+    "taskSnapshotSha256": "65d9641484bf24232e6b4f52390e7a0f5640feedda0b98d9b032aba347650c20"
+  },
+  "contextSha256": "9a8fc0b1d2523c22d1c35dda0fcc36a4d5b33b23b09f38aec73c420829b17bf4"
+}

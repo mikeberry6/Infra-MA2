@@ -1,0 +1,173 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "runId": "portco-deferred-readjudication-2026-09-05",
+  "taskId": "ledger:0399:rowan-bauxite:930cec59",
+  "taskIndex": 399,
+  "companyName": "Rowan Bauxite",
+  "verifiedAt": "2026-09-05T10:11:44.000Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "label": "Rowan projects",
+      "url": "https://rowan.digital/portfolio/bauxite-i-ii-iii/",
+      "finalUrl": "https://rowan.digital/portfolio/bauxite-i-ii-iii/",
+      "status": "OPEN_IN_BROWSER_AFTER_COMMAND_LINE_403",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 5491,
+      "contentSha256": "a3d5963d733cdc7ba5459b8f2949b81e444bd883204290de79c4a6d5ffcea179",
+      "captureType": "CURRENT_DIRECT_HTTP_CHALLENGE_BYTES_PLUS_RENDERED_BROWSER_TEXT",
+      "browserVerified": true,
+      "browserRendered": {
+        "bytes": 1716,
+        "contentSha256": "afc17ddee314c68b1e3f539efefb0aabcfb93bb53d96858bd6c0d0f2cfd9c308"
+      },
+      "isApplicationPrimary": false,
+      "note": "The live direct page identifies Bauxite 1, 2 and 3 as Rowan's flagship Maryland hyperscale campus projects, gives the site scale and capacity, and identifies Rowan Digital Infrastructure LLC in the footer."
+    },
+    {
+      "label": "MDE",
+      "url": "https://mde.maryland.gov/datacenters/Pages/FrederickDataCenter.aspx",
+      "finalUrl": "https://mde.maryland.gov/datacenters/Pages/FrederickDataCenter.aspx",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 79445,
+      "contentSha256": "ba67e3782b1b6123751c0983e9842cff73d16ba195015f7e9d595da9519735ec",
+      "captureType": "CURRENT_DIRECT_GOVERNMENT_PAGE_BYTES",
+      "browserVerified": false,
+      "isApplicationPrimary": false,
+      "note": "The current Maryland government page separately identifies Bauxite I, II and III within the Frederick data-center site boundary. It establishes project geography and regulatory boundary, not company equity."
+    },
+    {
+      "label": "Birch JV",
+      "url": "https://www.birch.coop/quinbrook-joint-venture-to-power-renewable-data-centers-in-the-us",
+      "finalUrl": "https://www.birch.coop/quinbrook-joint-venture-to-power-renewable-data-centers-in-the-us",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html;charset=utf-8",
+      "bytes": 101805,
+      "contentSha256": "2f199701745492ce6e31d728def31681014e19dfaff8da656e62be2a471c8e3e",
+      "captureType": "CURRENT_DIRECT_TRANSACTION_PARTY_PAGE_BYTES",
+      "browserVerified": false,
+      "isApplicationPrimary": false,
+      "note": "The direct Birch page proves the 2020 joint-venture formation parties. It does not disclose the exact issuer, stakes, votes or later transfer mechanics."
+    },
+    {
+      "label": "Quinbrook 2023",
+      "url": "https://www.quinbrook.com/news-insights/quinbrook-expands-rowan-green-data-center-platform/",
+      "finalUrl": "https://www.quinbrook.com/news-insights/quinbrook-expands-rowan-green-data-center-platform/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 59609,
+      "contentSha256": "11b2925d22cd7c9865b8ba8a089e8e99ced8ea8ec8697059b6332efa4cdb2e33",
+      "captureType": "CURRENT_DIRECT_MANAGER_PAGE_BYTES",
+      "browserVerified": false,
+      "isApplicationPrimary": false,
+      "note": "The direct Quinbrook page states that Rowan began as the Quinbrook-Birch venture and was wholly owned by Quinbrook by January 2023, supporting Birch's former status while leaving transfer details unresolved."
+    },
+    {
+      "label": "UPP 2024",
+      "url": "https://myupp.ca/upp-invests-in-data-centre-developer-rowan-digital-infrastructure/",
+      "finalUrl": "https://myupp.ca/upp-invests-in-data-centre-developer-rowan-digital-infrastructure/",
+      "status": "OPEN_IN_BROWSER_AFTER_COMMAND_LINE_403",
+      "httpStatus": 403,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 4544,
+      "contentSha256": "5e2766795edbcd72291db6729037428439fd6f88d71f50a5c4a76d8785f49a3a",
+      "captureType": "CURRENT_DIRECT_HTTP_CHALLENGE_BYTES_PLUS_RENDERED_BROWSER_TEXT",
+      "browserVerified": true,
+      "browserRendered": {
+        "bytes": 6414,
+        "contentSha256": "e1d8c5b4109ec09bd53fcc07c9b4acbfa23365fe12c785c5cafbf83e27ac2267"
+      },
+      "isApplicationPrimary": false,
+      "note": "The live direct UPP page says UPP completed a Rowan co-investment announced 2024-08-13 and that financial terms were not disclosed. It does not prove UPP's post-April-2026 status."
+    },
+    {
+      "label": "2026 recap",
+      "url": "https://www.quinbrook.com/news-insights/rowan-digital-infrastructure-announces-strategic-recapitalization/",
+      "finalUrl": "https://www.quinbrook.com/news-insights/rowan-digital-infrastructure-announces-strategic-recapitalization/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=UTF-8",
+      "bytes": 58119,
+      "contentSha256": "8a056015a75eac01118a7308e7239ab679a4a68741f4849d9a8f4f21c4b22ffe",
+      "captureType": "CURRENT_DIRECT_TRANSACTION_PARTY_PAGE_BYTES",
+      "browserVerified": false,
+      "isApplicationPrimary": true,
+      "note": "The direct transaction-party release confirms that Blackstone-affiliated funds completed an unspecified significant minority investment by 2026-04-09 and that Quinbrook remained a backer. It does not disclose 49 percent, the exact issuer or holder, sellers, UPP treatment, votes, governance or control."
+    },
+    {
+      "label": "Rest 2026",
+      "url": "https://rest.com.au/why-rest/about-rest/news/decarbonisation-and-digitalisation-creating-value",
+      "finalUrl": "https://rest.com.au/why-rest/about-rest/news/decarbonisation-and-digitalisation-creating-value",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 80332,
+      "contentSha256": "e1e5e28a77435f6f8b62c5dd310783e59f48b1b2444ac11cc91d56831e84e98a",
+      "captureType": "CURRENT_DIRECT_INVESTOR_PAGE_BYTES",
+      "browserVerified": false,
+      "isApplicationPrimary": false,
+      "note": "The direct Rest page confirms post-recapitalization Rowan exposure through Quinbrook's Net Zero Power Fund and an associated co-investment vehicle. It does not identify Rowan's registered direct holder or resolve UPP."
+    },
+    {
+      "label": "Delaware",
+      "url": "https://icis.corp.delaware.gov/ecorp/entitysearch/namesearch.aspx",
+      "finalUrl": "https://icis.corp.delaware.gov/ecorp/entitysearch/namesearch.aspx",
+      "status": "OPEN_AND_BROWSER_QUERIED",
+      "httpStatus": 200,
+      "mediaType": "text/html; charset=utf-8",
+      "bytes": 48022,
+      "contentSha256": "98f99cb035eb5ad7a38c80214b1914d0fba92f92e9bc29a307214e417d2f8511",
+      "captureType": "CURRENT_DIRECT_GOVERNMENT_SEARCH_PAGE_BYTES_PLUS_RENDERED_QUERY_RESULTS",
+      "browserVerified": true,
+      "browserQueries": [
+        {
+          "fileNumber": "4160260",
+          "entityName": "ROWAN GREEN DATA LLC",
+          "renderedBytes": 2013,
+          "renderedSha256": "603d5b6ea77ca7a0acf017e33494487ec2b935edaaf0951892aaf9ca93eb7698"
+        },
+        {
+          "fileNumber": "10259908",
+          "entityName": "ROWAN DIGITAL INFRASTRUCTURE LLC",
+          "renderedBytes": 2026,
+          "renderedSha256": "40713096b59f1878baaa1cdec1704d00e300143e3dfc44a31834889e54179729"
+        }
+      ],
+      "isApplicationPrimary": false,
+      "note": "The live Delaware registry returned the two distinct LLC names and file numbers in separate searches. The public search result does not expose a parent, merger, conversion, assignment, ownership ledger or recapitalization issuer."
+    }
+  ],
+  "checks": {
+    "allReturnedEvidenceUrlsChecked": true,
+    "allReturnedUrlsChecked": true,
+    "allEvidenceRowsChecked": true,
+    "allUrlsHttps": true,
+    "returnedOpenCount": 8,
+    "projectToPlatformHierarchyVerified": true,
+    "bauxiteSubordinateProjectBoundaryVerified": true,
+    "twoDistinctDelawareLlcNamesAndFileNumbersVerified": true,
+    "completeLegalParentAndRecapIssuerVerified": false,
+    "birchFormationAndFormerByJanuary2023Verified": true,
+    "uppCompletedPreRecapInvestmentVerified": true,
+    "uppPostRecapDispositionVerified": false,
+    "blackstoneSignificantMinorityCompletedVerified": true,
+    "blackstoneExactPercentageAndVehicleVerified": false,
+    "quinbrookContinuingBackingVerified": true,
+    "quinbrookExactRetainedStakeVotesControlVerified": false,
+    "completeCutoffDirectOwnerSetVerified": false,
+    "laterPendingOwnershipTransactionFound": false,
+    "exactlyOneApplicationPrimary": true,
+    "modelRecommendedPrimaryApplicationUsableForTerminalDeferral": true,
+    "supersessionBlocked": true,
+    "ownershipMutationBlocked": true,
+    "terminalDeferralSupported": true
+  },
+  "exactException": "Bauxite I, II and III are subordinate Rowan Digital Infrastructure projects and SPVs, so the standalone Rowan Bauxite record is identity-supported as a future supersession candidate into production target cmrxpjmr2018livhe1yqhqyh5. Current direct evidence does not identify the exact April 2026 recapitalization issuer or ultimate parent among the two active Delaware Rowan LLCs and any undisclosed topco, the complete registered direct-owner ledger, UPP's rollover, sale, dilution, transfer or retention, Blackstone's exact percentage, denominator, acquisition vehicle, sellers or governance, or Quinbrook's exact retained stake, votes and control. The project-to-platform merge would therefore leave an uncertified canonical active-ownership after-image.",
+  "conclusion": "DEFERRED. Preserve the verified project-to-platform identity and current direct-source ownership findings as research lineage. Do not merge the standalone project record and do not change company, owner, vehicle, fund, stake, status, database or seed data until a certified organization chart, member or securities register and recapitalization closing documents resolve the exact issuer and complete cutoff ownership."
+}

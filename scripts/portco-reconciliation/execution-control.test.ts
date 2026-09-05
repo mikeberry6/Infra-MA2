@@ -8,6 +8,7 @@ import {
   finalizeExecutionApprovalPolicy,
   finalizeExecutionTaskSnapshot,
   installExecutionApprovalPolicy,
+  isAcceptedDeferredResearchProfile,
   nextExecutionTask,
   recordAutomatedExecutionApproval,
   recordExecutionDecision,
@@ -545,6 +546,21 @@ describe("Phase 1 execution control", () => {
       ...input,
       activeBatchId: "batch-active",
     })).toThrow(/batch.*active/i);
+  });
+
+  it("accepts the historical and current maximum ChatGPT research profiles only when UI labels match", () => {
+    expect(isAcceptedDeferredResearchProfile(
+      { effort: "Pro", power: "5 of 5" },
+      { modeMenuEffortLabel: "Pro", modeMenuPowerLabel: "Pro, 5 of 5" },
+    )).toBe(true);
+    expect(isAcceptedDeferredResearchProfile(
+      { effort: "Ultra", power: "6 of 6" },
+      { modeMenuEffortLabel: "Ultra", modeMenuPowerLabel: "Ultra, 6 of 6" },
+    )).toBe(true);
+    expect(isAcceptedDeferredResearchProfile(
+      { effort: "Ultra", power: "6 of 6" },
+      { modeMenuEffortLabel: "Pro", modeMenuPowerLabel: "Pro, 5 of 5" },
+    )).toBe(false);
   });
 
   it("installs the user-authorized automatic policy and advances a fresh proposal without a gate", () => {

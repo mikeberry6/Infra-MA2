@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-09-05T05:10:00.000Z",
+  "updatedAt": "2026-09-05T10:33:00.000Z",
   "runStatus": "COMPLETE_WITH_EXCEPTIONS",
   "activeTaskId": null,
   "source": {
@@ -37901,28 +37901,86 @@
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "79a639a718f10b98f45b26cf05bc73015ed272720f96a16fbe05164feba671b5",
       "status": "DEFERRED",
-      "attempts": 1,
-      "startedAt": "2026-09-01T18:21:00.000Z",
-      "updatedAt": "2026-09-01T18:44:06.000Z",
-      "completedAt": "2026-09-01T18:44:06.000Z",
-      "exceptionReason": "Research establishes Nopetro Renewables, LLC as a distinct NOVA Fund I RNG platform and establishes NOVA and Nopetro Energy Holdings as co-owners, but the current direct owner set remains unresolved because Green Group may hold direct platform equity outside its NOVA relationship. Defer creation rather than inventing or omitting a current owner.",
+      "attempts": 2,
+      "startedAt": "2026-09-05T10:20:54.000Z",
+      "updatedAt": "2026-09-05T10:33:00.000Z",
+      "completedAt": "2026-09-05T10:33:00.000Z",
+      "exceptionReason": "The Delaware RNG JV platform is verified, but no direct public record gives its complete current members, vehicles or stakes. NOVA's reported 55% relies on a secondary account of a nonpublic letter; no 45% NEH residual is permissible. Green's disclosures prove an ambiguous Nopetro investment, NOVA LP link and governance role, not direct platform equity.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": "f25f0f0901281d5bdbc798aaae7af1e58e1b0e79a4862dcf32fd1a9eaf757301",
+      "taskSnapshotSha256": "30f7ed193581b38d970f552948c7b9640c87a3c7de51e30b62aaf7583ee95d5f",
       "artifacts": {
         "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0361-nopetro-renewables/attempt-1/locked-batch-v1-task-snapshot.json",
-          "sha256": "f25f0f0901281d5bdbc798aaae7af1e58e1b0e79a4862dcf32fd1a9eaf757301"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0361-nopetro-renewables/attempt-2/locked-deferred-v1-task-snapshot.json",
+          "sha256": "30f7ed193581b38d970f552948c7b9640c87a3c7de51e30b62aaf7583ee95d5f"
         },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
         "decision": {
-          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0361-0365-v1/terminal-decisions/0361-nopetro-renewables.json",
-          "sha256": "d3c992912bef57b385a93950ac540c6909815ba77e185d5b638b18b889ca0116"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0361-nopetro-renewables/attempt-2/terminal-decision-deferred-v1.json",
+          "sha256": "46b30aaae300efa5ca1453b6b5f6f15f56c7697551d3972062aaeb136f70e6b3"
         },
         "companySnapshot": null
       },
       "recovery": null,
+      "reAdjudications": [
+        {
+          "sequence": 1,
+          "reopenedAt": "2026-09-05T10:18:53.000Z",
+          "reason": "Fresh exact deferred re-adjudication completed; reopen for the first protected terminal bundle.",
+          "priorCompletedAt": "2026-09-01T18:44:06.000Z",
+          "priorExceptionReason": "Research establishes Nopetro Renewables, LLC as a distinct NOVA Fund I RNG platform and establishes NOVA and Nopetro Energy Holdings as co-owners, but the current direct owner set remains unresolved because Green Group may hold direct platform equity outside its NOVA relationship. Defer creation rather than inventing or omitting a current owner.",
+          "priorArtifacts": {
+            "taskSnapshot": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0361-nopetro-renewables/attempt-1/locked-batch-v1-task-snapshot.json",
+              "sha256": "f25f0f0901281d5bdbc798aaae7af1e58e1b0e79a4862dcf32fd1a9eaf757301"
+            },
+            "proposal": null,
+            "approval": null,
+            "applyReceipt": null,
+            "decision": {
+              "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0361-0365-v1/terminal-decisions/0361-nopetro-renewables.json",
+              "sha256": "d3c992912bef57b385a93950ac540c6909815ba77e185d5b638b18b889ca0116"
+            },
+            "companySnapshot": null
+          },
+          "priorManifestSha256": "e146ea15552a06f12a546fb40fd543bc73d4f96cf482858c35fce22249daef37",
+          "batchLedger": {
+            "location": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+            "sha256": "341f869597a84bd774a591433a74201acc56299bf6119ee500e8c594997424b1"
+          },
+          "evidence": {
+            "researchDecision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0361-nopetro-renewables/attempt-2/research-decision.json",
+              "sha256": "a0d8b853a92852dfbf1b74985564bb2ca31fc3a367514cef41cb2d92a115c221"
+            },
+            "chatgptAttestation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0361-nopetro-renewables/attempt-2/chatgpt-attestation.json",
+              "sha256": "66f855f3dda717e6753fb843a73add7e89b7d109abf7b519db829ad067a55894"
+            },
+            "prompt": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0361-nopetro-renewables/attempt-2/chatgpt-research-prompt.md",
+              "sha256": "58ca12fe8a2138ab33850af1e07a8ed6709d4146986d38a8f746791df475faf9"
+            },
+            "acceptedResponse": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0361-nopetro-renewables/attempt-2/chatgpt-accepted-response.txt",
+              "sha256": "bec5d95b210f1d560126c9f4e47c44120b8b7ea063d8c7328cfe2f9ed85d438a"
+            },
+            "transcript": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0361-nopetro-renewables/attempt-2/chatgpt-transcript.txt",
+              "sha256": "ab21fef98abe6050c89f556a99824194246421613c616e87b9f66f716714ee5b"
+            },
+            "sourceVerification": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0361-nopetro-renewables/attempt-2/source-verification.json",
+              "sha256": "48e0443e28db78e0cd113933f1129b40ec0aa41b5d3b99d1db6dc1e01aca0981"
+            },
+            "responseValidation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0361-nopetro-renewables/attempt-2/chatgpt-response-validation.json",
+              "sha256": "7bb7c718b7f203d0fa5e015ff0deb414d449539425add6746668774fb370ea2a"
+            }
+          }
+        }
+      ],
       "history": [
         {
           "sequence": 1,
@@ -37946,6 +38004,40 @@
             "d3c992912bef57b385a93950ac540c6909815ba77e185d5b638b18b889ca0116",
             "f25f0f0901281d5bdbc798aaae7af1e58e1b0e79a4862dcf32fd1a9eaf757301",
             "f55a40673da0d7a1e6fc8d43cc85a58962be38ea10a519cbb1c3bafe6068a047"
+          ],
+          "kind": "BATCH"
+        },
+        {
+          "sequence": 3,
+          "from": "DEFERRED",
+          "to": "PENDING",
+          "at": "2026-09-05T10:18:53.000Z",
+          "reason": "Fresh exact deferred re-adjudication completed; reopen for the first protected terminal bundle.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "341f869597a84bd774a591433a74201acc56299bf6119ee500e8c594997424b1",
+            "48e0443e28db78e0cd113933f1129b40ec0aa41b5d3b99d1db6dc1e01aca0981",
+            "58ca12fe8a2138ab33850af1e07a8ed6709d4146986d38a8f746791df475faf9",
+            "66f855f3dda717e6753fb843a73add7e89b7d109abf7b519db829ad067a55894",
+            "7bb7c718b7f203d0fa5e015ff0deb414d449539425add6746668774fb370ea2a",
+            "a0d8b853a92852dfbf1b74985564bb2ca31fc3a367514cef41cb2d92a115c221",
+            "ab21fef98abe6050c89f556a99824194246421613c616e87b9f66f716714ee5b",
+            "bec5d95b210f1d560126c9f4e47c44120b8b7ea063d8c7328cfe2f9ed85d438a"
+          ],
+          "kind": "DEFERRED_READJUDICATION"
+        },
+        {
+          "sequence": 4,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-05T10:33:00.000Z",
+          "reason": "The Delaware RNG JV platform is verified, but no direct public record gives its complete current members, vehicles or stakes. NOVA's reported 55% relies on a secondary account of a nonpublic letter; no 45% NEH residual is permissible. Green's disclosures prove an ambiguous Nopetro investment, NOVA LP link and governance role, not direct platform equity.",
+          "taskSnapshotSha256": "30f7ed193581b38d970f552948c7b9640c87a3c7de51e30b62aaf7583ee95d5f",
+          "evidenceSha256": [
+            "30f7ed193581b38d970f552948c7b9640c87a3c7de51e30b62aaf7583ee95d5f",
+            "46b30aaae300efa5ca1453b6b5f6f15f56c7697551d3972062aaeb136f70e6b3",
+            "56d35f27f7b29cb444b7cd175ae5edac0b15d62630570a940f757c1d8d44d9b8",
+            "7afb5327a160cac63946e8ea5242e2f3c572479d0c52ff581ff640565f85e2bd"
           ],
           "kind": "BATCH"
         }
@@ -38037,28 +38129,86 @@
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "0f99fc22846e96031c1c89138b131d4687e34ea21cd2af9f9ff0e61ed4cb12ce",
       "status": "DEFERRED",
-      "attempts": 1,
-      "startedAt": "2026-09-01T18:21:00.000Z",
-      "updatedAt": "2026-09-01T18:44:06.000Z",
-      "completedAt": "2026-09-01T18:44:06.000Z",
-      "exceptionReason": "Research establishes telMAX Inc. as a distinct Canadian fiber platform and supports NOVA majority control, QID participation and an approximately 15% abrdn co-investment. The exact current QID chain and whether a founder or legacy shareholder block remains current are unresolved, so the complete active owner set is not list-ready.",
+      "attempts": 2,
+      "startedAt": "2026-09-05T10:20:54.000Z",
+      "updatedAt": "2026-09-05T10:33:00.000Z",
+      "completedAt": "2026-09-05T10:33:00.000Z",
+      "exceptionReason": "The 2020 control deal, NOVA entry majority, Fund I attribution, active NOVA HoldCo and ASGI ~15% indirect interest are proven. All cutoff shareholders, the vehicle chain and QID/legacy stakes are not.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": "899f395701e94f5b575235fc6997ac7e6202d0637a1f190b233110fed35da83e",
+      "taskSnapshotSha256": "5f1710bce541fc3860872816b010a9f2333437c9ca2f01b593614dd98ebe9c15",
       "artifacts": {
         "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0363-telmax-inc/attempt-1/locked-batch-v1-task-snapshot.json",
-          "sha256": "899f395701e94f5b575235fc6997ac7e6202d0637a1f190b233110fed35da83e"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0363-telmax-inc/attempt-2/locked-deferred-v1-task-snapshot.json",
+          "sha256": "5f1710bce541fc3860872816b010a9f2333437c9ca2f01b593614dd98ebe9c15"
         },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
         "decision": {
-          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0361-0365-v1/terminal-decisions/0363-telmax-inc.json",
-          "sha256": "d3c72605a805da0770e5e9fd2fc802d0f6367272843baa019289fa25d728a047"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0363-telmax-inc/attempt-2/terminal-decision-deferred-v1.json",
+          "sha256": "407bf938393aed339c4ce45b0ee69d834637163833e0b4e967c9dda0cb6b41d4"
         },
         "companySnapshot": null
       },
       "recovery": null,
+      "reAdjudications": [
+        {
+          "sequence": 1,
+          "reopenedAt": "2026-09-05T10:19:13.000Z",
+          "reason": "Fresh exact deferred re-adjudication completed; reopen for the first protected terminal bundle.",
+          "priorCompletedAt": "2026-09-01T18:44:06.000Z",
+          "priorExceptionReason": "Research establishes telMAX Inc. as a distinct Canadian fiber platform and supports NOVA majority control, QID participation and an approximately 15% abrdn co-investment. The exact current QID chain and whether a founder or legacy shareholder block remains current are unresolved, so the complete active owner set is not list-ready.",
+          "priorArtifacts": {
+            "taskSnapshot": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0363-telmax-inc/attempt-1/locked-batch-v1-task-snapshot.json",
+              "sha256": "899f395701e94f5b575235fc6997ac7e6202d0637a1f190b233110fed35da83e"
+            },
+            "proposal": null,
+            "approval": null,
+            "applyReceipt": null,
+            "decision": {
+              "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0361-0365-v1/terminal-decisions/0363-telmax-inc.json",
+              "sha256": "d3c72605a805da0770e5e9fd2fc802d0f6367272843baa019289fa25d728a047"
+            },
+            "companySnapshot": null
+          },
+          "priorManifestSha256": "6f2419d296d40a827340b32249594e674671cfccf2a1be0ad42425fee1da761c",
+          "batchLedger": {
+            "location": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+            "sha256": "341f869597a84bd774a591433a74201acc56299bf6119ee500e8c594997424b1"
+          },
+          "evidence": {
+            "researchDecision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0363-telmax-inc/attempt-2/research-decision.json",
+              "sha256": "4f634afed9954413aa4dd0913e92a03f0345411c34be9d0a308dfed765c12229"
+            },
+            "chatgptAttestation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0363-telmax-inc/attempt-2/chatgpt-attestation.json",
+              "sha256": "b840e4921a380047683e02e4f93033c6e17f5c1ee3384ac3ae3ac0dd063bf1b0"
+            },
+            "prompt": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0363-telmax-inc/attempt-2/chatgpt-research-prompt.md",
+              "sha256": "4e60fadc64b405674e4378e308ba1d0733ad9faf599ab65207c9847929e92c14"
+            },
+            "acceptedResponse": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0363-telmax-inc/attempt-2/chatgpt-accepted-response.txt",
+              "sha256": "d5a816d0fa4de966f11a51e2ce4b4efaf72bc4902c7a56b1a6b3d3f07459ac0a"
+            },
+            "transcript": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0363-telmax-inc/attempt-2/chatgpt-transcript.txt",
+              "sha256": "20e2b3c29605d403a4da75557a97c52d195b07b8694d1eaea2284a34243586ae"
+            },
+            "sourceVerification": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0363-telmax-inc/attempt-2/source-verification.json",
+              "sha256": "21df1536c230b297d86c10c29ce089c9f5c7eb18b719e9e71196fbab03da8937"
+            },
+            "responseValidation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0363-telmax-inc/attempt-2/chatgpt-response-validation.json",
+              "sha256": "d6c3e92a75780450794ea7a9e0d49e1cae49a296625089c730d1a3cd8494bb5b"
+            }
+          }
+        }
+      ],
       "history": [
         {
           "sequence": 1,
@@ -38082,6 +38232,40 @@
             "899f395701e94f5b575235fc6997ac7e6202d0637a1f190b233110fed35da83e",
             "d3c72605a805da0770e5e9fd2fc802d0f6367272843baa019289fa25d728a047",
             "f55a40673da0d7a1e6fc8d43cc85a58962be38ea10a519cbb1c3bafe6068a047"
+          ],
+          "kind": "BATCH"
+        },
+        {
+          "sequence": 3,
+          "from": "DEFERRED",
+          "to": "PENDING",
+          "at": "2026-09-05T10:19:13.000Z",
+          "reason": "Fresh exact deferred re-adjudication completed; reopen for the first protected terminal bundle.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "20e2b3c29605d403a4da75557a97c52d195b07b8694d1eaea2284a34243586ae",
+            "21df1536c230b297d86c10c29ce089c9f5c7eb18b719e9e71196fbab03da8937",
+            "341f869597a84bd774a591433a74201acc56299bf6119ee500e8c594997424b1",
+            "4e60fadc64b405674e4378e308ba1d0733ad9faf599ab65207c9847929e92c14",
+            "4f634afed9954413aa4dd0913e92a03f0345411c34be9d0a308dfed765c12229",
+            "b840e4921a380047683e02e4f93033c6e17f5c1ee3384ac3ae3ac0dd063bf1b0",
+            "d5a816d0fa4de966f11a51e2ce4b4efaf72bc4902c7a56b1a6b3d3f07459ac0a",
+            "d6c3e92a75780450794ea7a9e0d49e1cae49a296625089c730d1a3cd8494bb5b"
+          ],
+          "kind": "DEFERRED_READJUDICATION"
+        },
+        {
+          "sequence": 4,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-05T10:33:00.000Z",
+          "reason": "The 2020 control deal, NOVA entry majority, Fund I attribution, active NOVA HoldCo and ASGI ~15% indirect interest are proven. All cutoff shareholders, the vehicle chain and QID/legacy stakes are not.",
+          "taskSnapshotSha256": "5f1710bce541fc3860872816b010a9f2333437c9ca2f01b593614dd98ebe9c15",
+          "evidenceSha256": [
+            "407bf938393aed339c4ce45b0ee69d834637163833e0b4e967c9dda0cb6b41d4",
+            "56d35f27f7b29cb444b7cd175ae5edac0b15d62630570a940f757c1d8d44d9b8",
+            "5f1710bce541fc3860872816b010a9f2333437c9ca2f01b593614dd98ebe9c15",
+            "7afb5327a160cac63946e8ea5242e2f3c572479d0c52ff581ff640565f85e2bd"
           ],
           "kind": "BATCH"
         }
@@ -38173,28 +38357,86 @@
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "3c58d5d4e9724d224bfcbe5f59c5cef4e548ec96d2bfea6705c5cb146934975d",
       "status": "DEFERRED",
-      "attempts": 1,
-      "startedAt": "2026-09-01T18:21:00.000Z",
-      "updatedAt": "2026-09-01T18:44:06.000Z",
-      "completedAt": "2026-09-01T18:44:06.000Z",
-      "exceptionReason": "Arcadian is an active, missing U.S. digital-infrastructure platform, but its current direct cap table is not list-ready. TIAA disclosed a 92.5% stake through 730 Fiber in 2024; Arcadian Infracom 1 disappeared from TIAA Schedule Y in 2025 while 730 Fiber and Nuveen oversight remained, with no disclosed transaction explaining the change.",
+      "attempts": 2,
+      "startedAt": "2026-09-05T10:20:54.000Z",
+      "updatedAt": "2026-09-05T10:33:00.000Z",
+      "completedAt": "2026-09-05T10:33:00.000Z",
+      "exceptionReason": "Last stake proof is 2024-12-31: TIAA 100% -> 730 Fiber 92.500% -> Arcadian Infracom 1, LLC (AI1). AI1 is absent from Schedule Y from 2025-03-31 through 2026-06-30, yet 730 Fiber remains TIAA-owned with Arcadian-labelled Schedule BA activity. Nothing explains the change or proves continuity, exit or reorganization.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": "46a80932deb4af0ca44c901b6f943a84f1cc649952515c624e1aa4932405d055",
+      "taskSnapshotSha256": "a34ac2523cf44afc7e8d94caeada4feb126b83542a628b0eec19f318581363f5",
       "artifacts": {
         "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0365-arcadian-infracom/attempt-1/locked-batch-v1-task-snapshot.json",
-          "sha256": "46a80932deb4af0ca44c901b6f943a84f1cc649952515c624e1aa4932405d055"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0365-arcadian-infracom/attempt-2/locked-deferred-v1-task-snapshot.json",
+          "sha256": "a34ac2523cf44afc7e8d94caeada4feb126b83542a628b0eec19f318581363f5"
         },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
         "decision": {
-          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0361-0365-v1/terminal-decisions/0365-arcadian-infracom.json",
-          "sha256": "71cb23e940fd9b7bbbf097e0a424c2b3dfe3258ebfc2c8d6b517b1704d8a06f2"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0365-arcadian-infracom/attempt-2/terminal-decision-deferred-v1.json",
+          "sha256": "39706e39f68951cac7acc6d5a95dc133704389d0028bb87549d3217f04543b62"
         },
         "companySnapshot": null
       },
       "recovery": null,
+      "reAdjudications": [
+        {
+          "sequence": 1,
+          "reopenedAt": "2026-09-05T10:19:15.000Z",
+          "reason": "Fresh exact deferred re-adjudication completed; reopen for the first protected terminal bundle.",
+          "priorCompletedAt": "2026-09-01T18:44:06.000Z",
+          "priorExceptionReason": "Arcadian is an active, missing U.S. digital-infrastructure platform, but its current direct cap table is not list-ready. TIAA disclosed a 92.5% stake through 730 Fiber in 2024; Arcadian Infracom 1 disappeared from TIAA Schedule Y in 2025 while 730 Fiber and Nuveen oversight remained, with no disclosed transaction explaining the change.",
+          "priorArtifacts": {
+            "taskSnapshot": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0365-arcadian-infracom/attempt-1/locked-batch-v1-task-snapshot.json",
+              "sha256": "46a80932deb4af0ca44c901b6f943a84f1cc649952515c624e1aa4932405d055"
+            },
+            "proposal": null,
+            "approval": null,
+            "applyReceipt": null,
+            "decision": {
+              "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0361-0365-v1/terminal-decisions/0365-arcadian-infracom.json",
+              "sha256": "71cb23e940fd9b7bbbf097e0a424c2b3dfe3258ebfc2c8d6b517b1704d8a06f2"
+            },
+            "companySnapshot": null
+          },
+          "priorManifestSha256": "aab362974a0088dab270835b0b5279b511ab4fc74a6f22427eb177011c2127b9",
+          "batchLedger": {
+            "location": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+            "sha256": "341f869597a84bd774a591433a74201acc56299bf6119ee500e8c594997424b1"
+          },
+          "evidence": {
+            "researchDecision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0365-arcadian-infracom/attempt-2/research-decision.json",
+              "sha256": "da7aaaee9b53b327651c425150558db07d4e56e0655ddb422bafdf6d46bcafcc"
+            },
+            "chatgptAttestation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0365-arcadian-infracom/attempt-2/chatgpt-attestation.json",
+              "sha256": "43b0153b85b85caaed4160aa31df0098d1ce3b7d6d81778d66850da6ebe4770b"
+            },
+            "prompt": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0365-arcadian-infracom/attempt-2/chatgpt-research-prompt.md",
+              "sha256": "b54b820f20d061bf7e9590390134d5efcce8832fa302178144051c5ab9ba27b0"
+            },
+            "acceptedResponse": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0365-arcadian-infracom/attempt-2/chatgpt-accepted-response.txt",
+              "sha256": "69dad778e2fde3b380d0ecfa2c4cbbcf2e7bf1150a3f5bf24b32f30fdb6e2e68"
+            },
+            "transcript": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0365-arcadian-infracom/attempt-2/chatgpt-transcript.txt",
+              "sha256": "de5583c81ceab1361b723cc4248b6b5dd16fb7a6b153dcf480f88ec5c917d3e8"
+            },
+            "sourceVerification": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0365-arcadian-infracom/attempt-2/source-verification.json",
+              "sha256": "134b9a230c2e977251f050ea8c40a6f2f12ed4bda37c3ecf96ec97766008530a"
+            },
+            "responseValidation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0365-arcadian-infracom/attempt-2/chatgpt-response-validation.json",
+              "sha256": "e98178e1f5b4568f94bc2e6ec153a3b833917aadd837c2255a4fd7d1bfa6592f"
+            }
+          }
+        }
+      ],
       "history": [
         {
           "sequence": 1,
@@ -38218,6 +38460,40 @@
             "5b707745f3f32c74bbd664582feb594d5808ec50b875e1b197e06bf85ebd0450",
             "71cb23e940fd9b7bbbf097e0a424c2b3dfe3258ebfc2c8d6b517b1704d8a06f2",
             "f55a40673da0d7a1e6fc8d43cc85a58962be38ea10a519cbb1c3bafe6068a047"
+          ],
+          "kind": "BATCH"
+        },
+        {
+          "sequence": 3,
+          "from": "DEFERRED",
+          "to": "PENDING",
+          "at": "2026-09-05T10:19:15.000Z",
+          "reason": "Fresh exact deferred re-adjudication completed; reopen for the first protected terminal bundle.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "134b9a230c2e977251f050ea8c40a6f2f12ed4bda37c3ecf96ec97766008530a",
+            "341f869597a84bd774a591433a74201acc56299bf6119ee500e8c594997424b1",
+            "43b0153b85b85caaed4160aa31df0098d1ce3b7d6d81778d66850da6ebe4770b",
+            "69dad778e2fde3b380d0ecfa2c4cbbcf2e7bf1150a3f5bf24b32f30fdb6e2e68",
+            "b54b820f20d061bf7e9590390134d5efcce8832fa302178144051c5ab9ba27b0",
+            "da7aaaee9b53b327651c425150558db07d4e56e0655ddb422bafdf6d46bcafcc",
+            "de5583c81ceab1361b723cc4248b6b5dd16fb7a6b153dcf480f88ec5c917d3e8",
+            "e98178e1f5b4568f94bc2e6ec153a3b833917aadd837c2255a4fd7d1bfa6592f"
+          ],
+          "kind": "DEFERRED_READJUDICATION"
+        },
+        {
+          "sequence": 4,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-05T10:33:00.000Z",
+          "reason": "Last stake proof is 2024-12-31: TIAA 100% -> 730 Fiber 92.500% -> Arcadian Infracom 1, LLC (AI1). AI1 is absent from Schedule Y from 2025-03-31 through 2026-06-30, yet 730 Fiber remains TIAA-owned with Arcadian-labelled Schedule BA activity. Nothing explains the change or proves continuity, exit or reorganization.",
+          "taskSnapshotSha256": "a34ac2523cf44afc7e8d94caeada4feb126b83542a628b0eec19f318581363f5",
+          "evidenceSha256": [
+            "39706e39f68951cac7acc6d5a95dc133704389d0028bb87549d3217f04543b62",
+            "56d35f27f7b29cb444b7cd175ae5edac0b15d62630570a940f757c1d8d44d9b8",
+            "7afb5327a160cac63946e8ea5242e2f3c572479d0c52ff581ff640565f85e2bd",
+            "a34ac2523cf44afc7e8d94caeada4feb126b83542a628b0eec19f318581363f5"
           ],
           "kind": "BATCH"
         }
@@ -38844,28 +39120,86 @@
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "1e648730b6ef6a83d79f29a30f92b59d494013c7abc642b78481dcced9e0f4e4",
       "status": "DEFERRED",
-      "attempts": 1,
-      "startedAt": "2026-09-01T19:34:57.000Z",
-      "updatedAt": "2026-09-01T20:20:03.000Z",
-      "completedAt": "2026-09-01T20:20:03.000Z",
-      "exceptionReason": "Retain the existing Sidewalk Infrastructure Partners record unchanged and defer its ownership correction. Primary sources support OTPP as a 2019 founding investor and StepStone as a later investor, but they do not resolve Alphabet's current equity, OTPP's current legal holder or stake, the full current cap table, or StepStone's 2026 transaction form. Applying a partial ownership after-image would imply facts that remain unresolved.",
+      "attempts": 2,
+      "startedAt": "2026-09-05T10:20:54.000Z",
+      "updatedAt": "2026-09-05T10:33:00.000Z",
+      "completedAt": "2026-09-05T10:33:00.000Z",
+      "exceptionReason": "FERC refutes sole-OTPP: four ≥10%-voting vehicles and two direct 2026 Series C positions; passive interests/anonymous Form D buyers leave cutoff ownership incomplete.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": "d59f41ca9da5b7963b3ec2fb292bd5e8576eba2d77084c61405ae0c6938d3731",
+      "taskSnapshotSha256": "211373e8cb36c1790ae33f8321576f2581bbfec5543809ee15a4522a1066b6e2",
       "artifacts": {
         "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0375-sidewalk-infrastructure-partners/attempt-1/locked-batch-v2-task-snapshot.json",
-          "sha256": "d59f41ca9da5b7963b3ec2fb292bd5e8576eba2d77084c61405ae0c6938d3731"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0375-sidewalk-infrastructure-partners/attempt-2/locked-deferred-v1-task-snapshot.json",
+          "sha256": "211373e8cb36c1790ae33f8321576f2581bbfec5543809ee15a4522a1066b6e2"
         },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
         "decision": {
-          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0373-0378-v1/terminal-decisions/0375-sidewalk-infrastructure-partners.json",
-          "sha256": "7fd95721b68cf87bac24105c365aa0a2ffa0897ef66ca47fc067512c9fe3c3a5"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0375-sidewalk-infrastructure-partners/attempt-2/terminal-decision-deferred-v1.json",
+          "sha256": "15dc19795dbb1cce7ee41f6b3797cbfc2f7aa780d75141f49b89aeeb091f26fc"
         },
         "companySnapshot": null
       },
       "recovery": null,
+      "reAdjudications": [
+        {
+          "sequence": 1,
+          "reopenedAt": "2026-09-05T10:19:16.000Z",
+          "reason": "Fresh exact deferred re-adjudication completed; reopen for the first protected terminal bundle.",
+          "priorCompletedAt": "2026-09-01T20:20:03.000Z",
+          "priorExceptionReason": "Retain the existing Sidewalk Infrastructure Partners record unchanged and defer its ownership correction. Primary sources support OTPP as a 2019 founding investor and StepStone as a later investor, but they do not resolve Alphabet's current equity, OTPP's current legal holder or stake, the full current cap table, or StepStone's 2026 transaction form. Applying a partial ownership after-image would imply facts that remain unresolved.",
+          "priorArtifacts": {
+            "taskSnapshot": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0375-sidewalk-infrastructure-partners/attempt-1/locked-batch-v2-task-snapshot.json",
+              "sha256": "d59f41ca9da5b7963b3ec2fb292bd5e8576eba2d77084c61405ae0c6938d3731"
+            },
+            "proposal": null,
+            "approval": null,
+            "applyReceipt": null,
+            "decision": {
+              "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0373-0378-v1/terminal-decisions/0375-sidewalk-infrastructure-partners.json",
+              "sha256": "7fd95721b68cf87bac24105c365aa0a2ffa0897ef66ca47fc067512c9fe3c3a5"
+            },
+            "companySnapshot": null
+          },
+          "priorManifestSha256": "cf8742a6ef1f129ff96b447b7c4c15c85e16b96593accd640cc83714a1980abd",
+          "batchLedger": {
+            "location": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+            "sha256": "341f869597a84bd774a591433a74201acc56299bf6119ee500e8c594997424b1"
+          },
+          "evidence": {
+            "researchDecision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0375-sidewalk-infrastructure-partners/attempt-2/research-decision.json",
+              "sha256": "5bf2cf4e21b687c8a3ea8374df195c7fd729eb705d37805345bd82cffdd531c6"
+            },
+            "chatgptAttestation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0375-sidewalk-infrastructure-partners/attempt-2/chatgpt-attestation.json",
+              "sha256": "c385f57e1d40b8209dcf29904ba0d144fee2a82eb4febf379672af85f1704665"
+            },
+            "prompt": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0375-sidewalk-infrastructure-partners/attempt-2/chatgpt-research-prompt.md",
+              "sha256": "fa103fd6754b5923b042fb38ea753295986a79aa41166c7e81306c9409e147c0"
+            },
+            "acceptedResponse": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0375-sidewalk-infrastructure-partners/attempt-2/chatgpt-accepted-response.txt",
+              "sha256": "3e025967badbef0f596074a379af4ad6e8cb8fae611d2b45be19366a59364434"
+            },
+            "transcript": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0375-sidewalk-infrastructure-partners/attempt-2/chatgpt-transcript.txt",
+              "sha256": "e55c6953c4538493aef946de860cbe6cd8fbd159180762e86ceb8b2250e77826"
+            },
+            "sourceVerification": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0375-sidewalk-infrastructure-partners/attempt-2/source-verification.json",
+              "sha256": "7e84662231ee872b2a53c9e80dec4aace7ab576fbfae631d591dc3bd4d0bfae7"
+            },
+            "responseValidation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0375-sidewalk-infrastructure-partners/attempt-2/chatgpt-response-validation.json",
+              "sha256": "c1b0dae65c4583e9b3de8fb10c077fc7eee05f2f358219291d1968c824351f96"
+            }
+          }
+        }
+      ],
       "history": [
         {
           "sequence": 1,
@@ -38889,6 +39223,40 @@
             "7fd95721b68cf87bac24105c365aa0a2ffa0897ef66ca47fc067512c9fe3c3a5",
             "d59f41ca9da5b7963b3ec2fb292bd5e8576eba2d77084c61405ae0c6938d3731",
             "f845c9d5e737c7fc834f621b9a51f8fa6d4703fbf1a9870b9b2b92f8c001deb2"
+          ],
+          "kind": "BATCH"
+        },
+        {
+          "sequence": 3,
+          "from": "DEFERRED",
+          "to": "PENDING",
+          "at": "2026-09-05T10:19:16.000Z",
+          "reason": "Fresh exact deferred re-adjudication completed; reopen for the first protected terminal bundle.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "341f869597a84bd774a591433a74201acc56299bf6119ee500e8c594997424b1",
+            "3e025967badbef0f596074a379af4ad6e8cb8fae611d2b45be19366a59364434",
+            "5bf2cf4e21b687c8a3ea8374df195c7fd729eb705d37805345bd82cffdd531c6",
+            "7e84662231ee872b2a53c9e80dec4aace7ab576fbfae631d591dc3bd4d0bfae7",
+            "c1b0dae65c4583e9b3de8fb10c077fc7eee05f2f358219291d1968c824351f96",
+            "c385f57e1d40b8209dcf29904ba0d144fee2a82eb4febf379672af85f1704665",
+            "e55c6953c4538493aef946de860cbe6cd8fbd159180762e86ceb8b2250e77826",
+            "fa103fd6754b5923b042fb38ea753295986a79aa41166c7e81306c9409e147c0"
+          ],
+          "kind": "DEFERRED_READJUDICATION"
+        },
+        {
+          "sequence": 4,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-05T10:33:00.000Z",
+          "reason": "FERC refutes sole-OTPP: four ≥10%-voting vehicles and two direct 2026 Series C positions; passive interests/anonymous Form D buyers leave cutoff ownership incomplete.",
+          "taskSnapshotSha256": "211373e8cb36c1790ae33f8321576f2581bbfec5543809ee15a4522a1066b6e2",
+          "evidenceSha256": [
+            "15dc19795dbb1cce7ee41f6b3797cbfc2f7aa780d75141f49b89aeeb091f26fc",
+            "211373e8cb36c1790ae33f8321576f2581bbfec5543809ee15a4522a1066b6e2",
+            "56d35f27f7b29cb444b7cd175ae5edac0b15d62630570a940f757c1d8d44d9b8",
+            "7afb5327a160cac63946e8ea5242e2f3c572479d0c52ff581ff640565f85e2bd"
           ],
           "kind": "BATCH"
         }
@@ -40620,28 +40988,86 @@
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "ac93b0a619d79bdf44585ff853b85c2f12b31d1633ef432d15d7a5b22de3e0c1",
       "status": "DEFERRED",
-      "attempts": 1,
-      "startedAt": "2026-09-02T00:15:30.000Z",
-      "updatedAt": "2026-09-02T00:44:00.000Z",
-      "completedAt": "2026-09-02T00:44:00.000Z",
-      "exceptionReason": "Preserve Rowan Bauxite unchanged and defer the project-to-platform merge. Primary sources establish that Bauxite I-III is a Rowan Digital Infrastructure campus, but Rowan's current platform ownership after the April 9, 2026 Blackstone recapitalization remains unresolved. UPP's continuing ownership, the recapitalization sellers, and the Quinbrook, UPP and Blackstone stakes are not publicly disclosed, so a canonical Rowan after-image cannot yet satisfy the active-ownership rule.",
+      "attempts": 2,
+      "startedAt": "2026-09-05T10:20:54.000Z",
+      "updatedAt": "2026-09-05T10:33:00.000Z",
+      "completedAt": "2026-09-05T10:33:00.000Z",
+      "exceptionReason": "Issuer/owner gaps block resolved merge.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": "d98d709d8e7dbd0566840042e9fddae6f9233e39e492391bd2f5a6ac70ad29ab",
+      "taskSnapshotSha256": "65d9641484bf24232e6b4f52390e7a0f5640feedda0b98d9b032aba347650c20",
       "artifacts": {
         "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0399-rowan-bauxite/attempt-1/locked-batch-v1-task-snapshot.json",
-          "sha256": "d98d709d8e7dbd0566840042e9fddae6f9233e39e492391bd2f5a6ac70ad29ab"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0399-rowan-bauxite/attempt-2/locked-deferred-v1-task-snapshot.json",
+          "sha256": "65d9641484bf24232e6b4f52390e7a0f5640feedda0b98d9b032aba347650c20"
         },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
         "decision": {
-          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0399-0403-v1/decisions/0399-rowan-bauxite.json",
-          "sha256": "854f8a3c0449f4d871c6778e6efc35bf924d885100a8a24a1a71cedbdac85451"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0399-rowan-bauxite/attempt-2/terminal-decision-deferred-v1.json",
+          "sha256": "ad5ce1dc03c2770c0ce925efe910d4214c331fb916ade89fb75451b594aa1f23"
         },
         "companySnapshot": null
       },
       "recovery": null,
+      "reAdjudications": [
+        {
+          "sequence": 1,
+          "reopenedAt": "2026-09-05T10:19:18.000Z",
+          "reason": "Fresh exact deferred re-adjudication completed; reopen for the first protected terminal bundle.",
+          "priorCompletedAt": "2026-09-02T00:44:00.000Z",
+          "priorExceptionReason": "Preserve Rowan Bauxite unchanged and defer the project-to-platform merge. Primary sources establish that Bauxite I-III is a Rowan Digital Infrastructure campus, but Rowan's current platform ownership after the April 9, 2026 Blackstone recapitalization remains unresolved. UPP's continuing ownership, the recapitalization sellers, and the Quinbrook, UPP and Blackstone stakes are not publicly disclosed, so a canonical Rowan after-image cannot yet satisfy the active-ownership rule.",
+          "priorArtifacts": {
+            "taskSnapshot": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0399-rowan-bauxite/attempt-1/locked-batch-v1-task-snapshot.json",
+              "sha256": "d98d709d8e7dbd0566840042e9fddae6f9233e39e492391bd2f5a6ac70ad29ab"
+            },
+            "proposal": null,
+            "approval": null,
+            "applyReceipt": null,
+            "decision": {
+              "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0399-0403-v1/decisions/0399-rowan-bauxite.json",
+              "sha256": "854f8a3c0449f4d871c6778e6efc35bf924d885100a8a24a1a71cedbdac85451"
+            },
+            "companySnapshot": null
+          },
+          "priorManifestSha256": "e9b85a20be891238fbbc927195a5f9b23389487025791b2ed83a704857b4fd23",
+          "batchLedger": {
+            "location": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+            "sha256": "341f869597a84bd774a591433a74201acc56299bf6119ee500e8c594997424b1"
+          },
+          "evidence": {
+            "researchDecision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0399-rowan-bauxite/attempt-2/research-decision.json",
+              "sha256": "e9da9b9710c5944e1cfa2da3c09c1428a6ad99d014383144f5c3bc3b67fb6313"
+            },
+            "chatgptAttestation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0399-rowan-bauxite/attempt-2/chatgpt-attestation.json",
+              "sha256": "517648bc3134a5b910c292dd19bd183946eb91d0c743b81153fc00cc699bccbf"
+            },
+            "prompt": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0399-rowan-bauxite/attempt-2/chatgpt-research-prompt.md",
+              "sha256": "55c78cb6a81e013e6b7bd79f816ebbbb264bf4664bcdd9e7026971c29513e8dc"
+            },
+            "acceptedResponse": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0399-rowan-bauxite/attempt-2/chatgpt-accepted-response.txt",
+              "sha256": "5fc84c18dbd15865d6b0e9aaff3ab4d755afbcb2c185c92f4ee65e5632efc4ef"
+            },
+            "transcript": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0399-rowan-bauxite/attempt-2/chatgpt-transcript.txt",
+              "sha256": "4bec4847c59d751fa5b290e52e52a1d7cbf332242ca94bb87ea6f91aa2469f15"
+            },
+            "sourceVerification": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0399-rowan-bauxite/attempt-2/source-verification.json",
+              "sha256": "241afbf8e5f00b243dbbc17c903c4d482d24548c120a0a5f4ab058c4a135b379"
+            },
+            "responseValidation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0399-rowan-bauxite/attempt-2/chatgpt-response-validation.json",
+              "sha256": "73fe092432380d508931c88a64653437ab48e3b71d2bcd9927530d4c3721ea1d"
+            }
+          }
+        }
+      ],
       "history": [
         {
           "sequence": 1,
@@ -40665,6 +41091,40 @@
             "504b275f54e2a71d7aa4b688ebee267b93592e5b7976df47a1e6b63ea1eb3f2b",
             "854f8a3c0449f4d871c6778e6efc35bf924d885100a8a24a1a71cedbdac85451",
             "d98d709d8e7dbd0566840042e9fddae6f9233e39e492391bd2f5a6ac70ad29ab"
+          ],
+          "kind": "BATCH"
+        },
+        {
+          "sequence": 3,
+          "from": "DEFERRED",
+          "to": "PENDING",
+          "at": "2026-09-05T10:19:18.000Z",
+          "reason": "Fresh exact deferred re-adjudication completed; reopen for the first protected terminal bundle.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "241afbf8e5f00b243dbbc17c903c4d482d24548c120a0a5f4ab058c4a135b379",
+            "341f869597a84bd774a591433a74201acc56299bf6119ee500e8c594997424b1",
+            "4bec4847c59d751fa5b290e52e52a1d7cbf332242ca94bb87ea6f91aa2469f15",
+            "517648bc3134a5b910c292dd19bd183946eb91d0c743b81153fc00cc699bccbf",
+            "55c78cb6a81e013e6b7bd79f816ebbbb264bf4664bcdd9e7026971c29513e8dc",
+            "5fc84c18dbd15865d6b0e9aaff3ab4d755afbcb2c185c92f4ee65e5632efc4ef",
+            "73fe092432380d508931c88a64653437ab48e3b71d2bcd9927530d4c3721ea1d",
+            "e9da9b9710c5944e1cfa2da3c09c1428a6ad99d014383144f5c3bc3b67fb6313"
+          ],
+          "kind": "DEFERRED_READJUDICATION"
+        },
+        {
+          "sequence": 4,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-05T10:33:00.000Z",
+          "reason": "Issuer/owner gaps block resolved merge.",
+          "taskSnapshotSha256": "65d9641484bf24232e6b4f52390e7a0f5640feedda0b98d9b032aba347650c20",
+          "evidenceSha256": [
+            "56d35f27f7b29cb444b7cd175ae5edac0b15d62630570a940f757c1d8d44d9b8",
+            "65d9641484bf24232e6b4f52390e7a0f5640feedda0b98d9b032aba347650c20",
+            "7afb5327a160cac63946e8ea5242e2f3c572479d0c52ff581ff640565f85e2bd",
+            "ad5ce1dc03c2770c0ce925efe910d4214c331fb916ade89fb75451b594aa1f23"
           ],
           "kind": "BATCH"
         }
@@ -46940,5 +47400,5 @@
       ]
     }
   ],
-  "manifestSha256": "e146ea15552a06f12a546fb40fd543bc73d4f96cf482858c35fce22249daef37"
+  "manifestSha256": "afe72d28c93a73878433b2f86e4eea22a8331f40d31035f98d43f5342c9a3cdd"
 }

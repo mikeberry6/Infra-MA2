@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0361:nopetro-renewables:1b512de3",
+  "taskIndex": 361,
+  "companyName": "Nopetro Renewables",
+  "outcome": "DEFERRED",
+  "decidedAt": "2026-09-05T10:27:00.000Z",
+  "rationale": "The Delaware RNG JV platform is verified, but no direct public record gives its complete current members, vehicles or stakes. NOVA's reported 55% relies on a secondary account of a nonpublic letter; no 45% NEH residual is permissible. Green's disclosures prove an ambiguous Nopetro investment, NOVA LP link and governance role, not direct platform equity.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0361-nopetro-renewables/attempt-2/locked-deferred-v1-task-snapshot.json",
+    "sha256": "051778867e63e8487ba578598a6f92bf98d05b8fac2aa70b30ba5ac8c96c1545"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0361-nopetro-renewables/attempt-2/application-research-decision.json",
+    "sha256": "8589bb8e2873230ce04df1a26e946317b0c298deca985a8e8aa6df612dfa33f8"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0361-nopetro-renewables/attempt-2/source-verification.json",
+    "sha256": "48e0443e28db78e0cd113933f1129b40ec0aa41b5d3b99d1db6dc1e01aca0981"
+  },
+  "evidence": [
+    {
+      "url": "https://icis.corp.delaware.gov/ecorp/entitysearch/namesearch.aspx",
+      "purpose": "Identity/file 7195367/formation"
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20230531005454/en/NOVA-Infrastructure-and-Nopetro-Energy-Announce-New-Renewables-Platform",
+      "purpose": "JV/separate NEH investment/Fund I"
+    },
+    {
+      "url": "https://www.novainfrastructure.com/investments-index",
+      "purpose": "Current status/HQ/scope/boundary"
+    },
+    {
+      "url": "https://www.gghcorp.com/our-team/",
+      "purpose": "LP/investment/board link"
+    },
+    {
+      "url": "https://www.energy.gov/sites/default/files/2026-02/Nopetro%20LNG%20LLC%20Application%20to%20Amend%20LNG%20Export%20Authorization.pdf",
+      "purpose": "Separate NEH cap table"
+    },
+    {
+      "url": "https://stanhinton.com/OHA_Decisions/SIZ-6297.pdf",
+      "purpose": "Entity distinction/ownership gap"
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "46b30aaae300efa5ca1453b6b5f6f15f56c7697551d3972062aaeb136f70e6b3"
+}

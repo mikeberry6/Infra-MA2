@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_ATTESTATION",
+  "runId": "portco-deferred-readjudication-2026-09-05",
+  "taskId": "ledger:0363:telmax-inc:f608a383",
+  "taskIndex": 363,
+  "companyName": "telMAX Inc.",
+  "conversationUrl": "https://chatgpt.com/c/6a9bb3e0-5d24-83ea-b0a8-80b2938e4e9c",
+  "initialInternalConversationUrl": "https://chatgpt.com/c/WEB:75476c5f-3d9c-4168-856c-661e57d90983",
+  "accountTier": "ChatGPT Pro",
+  "surface": "Work",
+  "model": "GPT-5.6 Sol",
+  "effort": "Ultra",
+  "power": "6 of 6",
+  "uiVerified": true,
+  "uiEvidence": {
+    "accountLabel": "mike berry Pro",
+    "surfaceLabel": "Work",
+    "modeMenuModelLabel": "GPT-5.6 Sol",
+    "composerModelLabel": "GPT-5.6 Sol Ultra",
+    "modeMenuEffortLabel": "Ultra",
+    "modeMenuPowerLabel": "Ultra, 6 of 6",
+    "capturedBeforeSubmission": true
+  },
+  "initialSubmittedAt": "2026-09-05T06:17:09.283Z",
+  "initialSubmissionObservedWindowUtc": null,
+  "initialCompletedObservedAt": "2026-09-05T06:59:44.564Z",
+  "initialReportedGenerationDuration": "PT19M50S",
+  "repairSubmittedAt": null,
+  "repairCompletedObservedAt": null,
+  "repairReportedGenerationDuration": null,
+  "repairCount": 0,
+  "finalOutcome": "VALID_INITIAL_CONTRACT_PACKET",
+  "contentHashes": {
+    "promptSha256": "4e60fadc64b405674e4378e308ba1d0733ad9faf599ab65207c9847929e92c14",
+    "acceptedResponseSha256": "d5a816d0fa4de966f11a51e2ce4b4efaf72bc4902c7a56b1a6b3d3f07459ac0a",
+    "transcriptSha256": "20e2b3c29605d403a4da75557a97c52d195b07b8694d1eaea2284a34243586ae"
+  },
+  "captureMethod": "signed-in ChatGPT web application via browser DOM textContent",
+  "captureNote": "The prompt was submitted exactly once after the signed-in ChatGPT UI visibly showed the Pro account, Work surface, GPT-5.6 Sol, and the current maximum Ultra 6-of-6 effort. The live UI no longer exposed the former Pro 5-of-5 label, so the attestation preserves the stronger current setting and its exact visible label rather than fabricating retired wording. The UI reported a 19m50s generation. The assistant message DOM textContent is preserved exactly with one terminal LF."
+}
