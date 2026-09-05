@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0365:arcadian-infracom:27de01bd",
+  "taskIndex": 365,
+  "companyName": "Arcadian Infracom",
+  "outcome": "DEFERRED",
+  "decidedAt": "2026-09-05T10:27:00.000Z",
+  "rationale": "Last stake proof is 2024-12-31: TIAA 100% -> 730 Fiber 92.500% -> Arcadian Infracom 1, LLC (AI1). AI1 is absent from Schedule Y from 2025-03-31 through 2026-06-30, yet 730 Fiber remains TIAA-owned with Arcadian-labelled Schedule BA activity. Nothing explains the change or proves continuity, exit or reorganization.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0365-arcadian-infracom/attempt-2/locked-deferred-v1-task-snapshot.json",
+    "sha256": "46a4dd8546485c84a42bd6994af8f3ab6d9b27a73b53e31e68936e26a282717b"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0365-arcadian-infracom/attempt-2/application-research-decision.json",
+    "sha256": "74db23afec650c2e477d9bbddcfa76c8cbd2dad2b84f199d609e08139f4f35f5"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0365-arcadian-infracom/attempt-2/source-verification.json",
+    "sha256": "134b9a230c2e977251f050ea8c40a6f2f12ed4bda37c3ecf96ec97766008530a"
+  },
+  "evidence": [
+    {
+      "url": "https://www.tiaa.org/public/pdf/t/tiaa-quarterly-statement-june-2026.pdf",
+      "purpose": "Latest Y/BA test"
+    },
+    {
+      "url": "https://www.tiaa.org/public/pdf/t/tiaa-annual-statement-investment-schedules-2025.pdf",
+      "purpose": "YE holding/activity"
+    },
+    {
+      "url": "https://www.tiaa.org/public/pdf/t/tiaa-annual-statement-2024.pdf",
+      "purpose": "Last stake proof"
+    },
+    {
+      "url": "https://pscdocs.utah.gov/telecom/21docs/21262301/320521Notice10-1-2021.pdf",
+      "purpose": "Investee/buyer/governance"
+    },
+    {
+      "url": "https://www.prweb.com/releases/arcadian-infracom-partners-with-tiaa-to-finance-long-haul-fiber-backbone-routes-895361246.html",
+      "purpose": "Date/capital/Nuveen"
+    },
+    {
+      "url": "https://www.nuveen.com/en-us/about-us/andrew-deihl",
+      "purpose": "Manager/board continuity"
+    },
+    {
+      "url": "https://arcadianinfra.com/about/",
+      "purpose": "Identity/scope/HQ"
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "39706e39f68951cac7acc6d5a95dc133704389d0028bb87549d3217f04543b62"
+}

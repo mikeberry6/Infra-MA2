@@ -1,0 +1,199 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0361:nopetro-renewables:1b512de3",
+  "taskIndex": 361,
+  "companyName": "Nopetro Renewables",
+  "asOfDate": "2026-09-05",
+  "decision": "DEFERRED",
+  "confidence": "HIGH_IDENTITY_AND_PLATFORM_BOUNDARY_LOW_COMPLETE_DIRECT_OWNERSHIP",
+  "researchOnly": true,
+  "generatedAt": "2026-09-05T10:26:00.000Z",
+  "result": {
+    "asOfDate": "2026-09-05",
+    "requestedCompany": "Nopetro Renewables",
+    "requestedManagers": [
+      "NOVA Infrastructure",
+      "Nopetro Energy",
+      "Green Group"
+    ],
+    "decision": "DEFERRED",
+    "confidence": "High identity/boundary; low owner completeness",
+    "rationale": "The Delaware RNG JV platform is verified, but no direct public record gives its complete current members, vehicles or stakes. NOVA's reported 55% relies on a secondary account of a nonpublic letter; no 45% NEH residual is permissible. Green's disclosures prove an ambiguous Nopetro investment, NOVA LP link and governance role, not direct platform equity.",
+    "identityResolution": {
+      "canonicalKey": "nopetro-renewables|united-states",
+      "legalName": "Nopetro Renewables, LLC",
+      "jurisdiction": "Delaware",
+      "fileNumber": "7195367",
+      "formationDate": "2022-12-19",
+      "floridaStatus": "Foreign LLC M25000006610; qualified 2025-05-06; active",
+      "officialWebsite": "https://nopetroenergy.com/",
+      "headquarters": "Miami commercially; current legal principal address is NOVA's New York office",
+      "boundary": "Operating/development platform formed commercially in 2023 by NOVA and Nopetro Energy Holdings, LLC. Nopetro Energy is a shared brand, not a proven separate legal entity. NEH's CNG/fueling business and NOVA's separate NEH investment are excluded."
+    },
+    "ownershipResolution": {
+      "currentDirectOwnerSet": "UNRESOLVED",
+      "ownerCandidates": [
+        {
+          "manager": "NOVA Infrastructure",
+          "organization": "NOVA Infrastructure Management, LLC",
+          "fund": "NOVA Infrastructure Fund I, L.P.",
+          "vehicle": "UNRESOLVED",
+          "stake": "UNRESOLVED; 55% secondary-only",
+          "announcementDate": "2023-05-31",
+          "entryDate": "UNRESOLVED",
+          "entryYear": 2023,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": null,
+          "transactionState": "Fund/current portfolio link verified; direct title unresolved"
+        },
+        {
+          "manager": "Nopetro Energy",
+          "organization": "Nopetro Energy Holdings, LLC",
+          "fund": null,
+          "vehicle": "UNRESOLVED",
+          "stake": "UNRESOLVED; no inferred 45%",
+          "announcementDate": "2023-05-31",
+          "entryDate": "UNRESOLVED",
+          "entryYear": 2023,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": null,
+          "transactionState": "Formation-party link verified; direct title unresolved"
+        },
+        {
+          "manager": "Green Group",
+          "organization": "Green Group Holdings, LLC",
+          "fund": "NOT_PUBLICLY_DISCLOSED",
+          "vehicle": "UNRESOLVED",
+          "stake": "UNRESOLVED",
+          "announcementDate": "NOT_PUBLICLY_DISCLOSED",
+          "entryDate": "NOT_PUBLICLY_DISCLOSED",
+          "entryYear": 2023,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": null,
+          "transactionState": "NOVA LP/Nopetro investment/board link verified; investee/directness unresolved"
+        }
+      ],
+      "formerDirectOwners": "UNRESOLVED; none publicly identified",
+      "terms": "Control, rollover, consideration, sellers and contributions are NOT_PUBLICLY_DISCLOSED.",
+      "NEHWarning": "DOE's NEH cap table is not the platform cap table; SBA OHA held NEH records insufficient to establish platform ownership/control."
+    },
+    "operatingResolution": {
+      "classification": "List once as manager-level platform; facilities/SPVs are components absent contrary evidence.",
+      "scope": "North American landfill-gas-to-RNG development/operations.",
+      "components": [
+        "Indian River/Vero Beach: Nopetro Eco District, LLC is the 2021 project company, operating by 2025/26; commercial platform attribution is verified but its equity chain is not.",
+        "Manatee County: Nopetro Renewables Manatee, LLC is a development SPV; Florida names the platform as a member, not necessarily sole owner; operation is expected in 2027."
+      ],
+      "nonEquity": "Debt/grants, county rights/offtake, credits, and Johnson Controls/Mead & Hunt roles are not equity."
+    },
+    "acquisitionExitCheck": {
+      "formation": "Announced 2023-05-31 as a new NOVA/Nopetro JV; confirmed created by 2023-06-15. Exact close, members/vehicles/stakes, control and contributions are not public.",
+      "cutoffCheck": "NOVA says Current/Fund I and Florida says active, neither proving cap-table continuity. No direct source through cutoff disclosed recapitalization, new equity, sale, merger, restructuring, dissolution, bankruptcy or signed pending transaction.",
+      "pendingTransactions": []
+    },
+    "milestones": [
+      {
+        "date": "2022-12-19",
+        "event": "Delaware LLC formed."
+      },
+      {
+        "date": "2023-05-31",
+        "event": "NOVA announced JV platform and separate NEH investment."
+      },
+      {
+        "date": "2024-07-22",
+        "event": "SBA OHA required platform-specific ownership evidence."
+      }
+    ],
+    "evidence": [
+      {
+        "label": "Delaware search",
+        "url": "https://icis.corp.delaware.gov/ecorp/entitysearch/namesearch.aspx",
+        "purpose": "Identity/file 7195367/formation",
+        "sourceTier": "State registry",
+        "workingStatus": "Working",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Formation release",
+        "url": "https://www.businesswire.com/news/home/20230531005454/en/NOVA-Infrastructure-and-Nopetro-Energy-Announce-New-Renewables-Platform",
+        "purpose": "JV/separate NEH investment/Fund I",
+        "sourceTier": "Official party release",
+        "workingStatus": "Working",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "NOVA portfolio",
+        "url": "https://www.novainfrastructure.com/investments-index",
+        "purpose": "Current status/HQ/scope/boundary",
+        "sourceTier": "Manager page",
+        "workingStatus": "Working",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Green team",
+        "url": "https://www.gghcorp.com/our-team/",
+        "purpose": "LP/investment/board link",
+        "sourceTier": "Organization page",
+        "workingStatus": "Working",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "DOE application",
+        "url": "https://www.energy.gov/sites/default/files/2026-02/Nopetro%20LNG%20LLC%20Application%20to%20Amend%20LNG%20Export%20Authorization.pdf",
+        "purpose": "Separate NEH cap table",
+        "sourceTier": "Federal filing",
+        "workingStatus": "Working",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "SBA OHA SIZ-6297",
+        "url": "https://stanhinton.com/OHA_Decisions/SIZ-6297.pdf",
+        "purpose": "Entity distinction/ownership gap",
+        "sourceTier": "Federal decision mirror",
+        "workingStatus": "Working",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "before": "Missing platform; active NOVA holding; possible 55%/45%; Green role unclear.",
+      "after": "Distinct current Fund I platform verified; owners/stakes unresolved; 55%/45% rejected; Green direct equity unproven."
+    },
+    "excludedOrDuplicateCandidates": [
+      "NEH/Nopetro Energy fueling: separate company and parallel investment.",
+      "Eco District LLC/Holdco: Vero project/structuring entities; platform chain unproven. Manatee LLC is a project component.",
+      "ManagementCo LLC/Partner LLC: related names, roles unproven. No repository artifacts beyond task metadata were exposed; production/source/seed collisions were not independently checkable."
+    ],
+    "unresolvedQuestions": [
+      "Obtain the original/amended operating agreement and member ledger/unit register or audited named-investment schedule for current/former members, vehicles, stakes and control.",
+      "Obtain the 2023 subscription/purchase/contribution agreement and closing certificate for date, parties, assets, consideration, sellers and rollover.",
+      "Obtain Green co-invest/board records, NOVA fund/parallel registers and the cited June 2023 investor letter to resolve directness and 55%."
+    ],
+    "recommendedListAction": "Create a fresh exact DEFERRED exception under the canonical key; preserve the platform identity but apply no ownership until platform-specific records prove the complete current direct owner set, vehicles and stakes."
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0361-nopetro-renewables/attempt-2/research-decision.json",
+      "sha256": "a0d8b853a92852dfbf1b74985564bb2ca31fc3a367514cef41cb2d92a115c221"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0361-nopetro-renewables/attempt-2/chatgpt-accepted-response.txt",
+      "sha256": "bec5d95b210f1d560126c9f4e47c44120b8b7ea063d8c7328cfe2f9ed85d438a"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0361-nopetro-renewables/attempt-2/source-verification.json",
+      "sha256": "48e0443e28db78e0cd113933f1129b40ec0aa41b5d3b99d1db6dc1e01aca0981"
+    },
+    "acceptedResponseSha256": null,
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+    "confidenceNormalization": {
+      "acceptedValue": "High identity/boundary; low owner completeness",
+      "stagedSummaryValue": "HIGH_IDENTITY_AND_PLATFORM_BOUNDARY_LOW_COMPLETE_DIRECT_OWNERSHIP",
+      "basis": "The accepted response expressed an overall confidence band with a disclosure-gap qualifier; the staged summary preserves that band in its deterministic qualifier and the research decision is unchanged."
+    }
+  }
+}

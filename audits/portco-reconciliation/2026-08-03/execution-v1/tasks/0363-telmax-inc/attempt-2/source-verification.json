@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "runId": "portco-deferred-readjudication-2026-09-05",
+  "taskId": "ledger:0363:telmax-inc:f608a383",
+  "taskIndex": 363,
+  "companyName": "telMAX Inc.",
+  "verifiedAt": "2026-09-05T07:07:46.000Z",
+  "researchOnly": true,
+  "sources": [
+    {
+      "label": "ASGI June 2026 N-PORT",
+      "url": "https://www.sec.gov/Archives/edgar/data/1793855/000141036826088528/NPORT_DRCY_60061693_0626.htm",
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1793855/000141036826088528/NPORT_DRCY_60061693_0626.htm",
+      "status": "OPEN_RENDERED_DOM_AFTER_COMMAND_LINE_403",
+      "httpStatus": 200,
+      "mediaType": "text/html; rendered browser DOM innerText",
+      "bytes": 18309,
+      "contentSha256": "78d2bd85e8e03e916cf2be777f850014693b9391ef0643bc0bb857df9323758c",
+      "captureType": "CODEX_IN_APP_BROWSER_RENDERED_DOM",
+      "browserVerified": true,
+      "commandLineResponse": {
+        "httpStatus": 403,
+        "bytes": 4818,
+        "contentSha256": "894d82993796926578ef24b904caffc59e66f7921b75cb9bbd48f80e437f44d9"
+      },
+      "isApplicationPrimary": true,
+      "note": "The current direct SEC filing reports NOVA-telMAX HoldCo LLC at $8,497,709 as of 2026-06-30, states that the HoldCo invests 100% of its capital in Telmax, Inc., and reports ASGI fund ownership of approximately 15%. It proves current indirect ASGI exposure through the HoldCo, not a separate direct telMAX stake or a complete cap table."
+    },
+    {
+      "label": "NOVA 2026 ADV",
+      "url": "https://reports.adviserinfo.sec.gov/reports/ADV/304510/PDF/304510.pdf",
+      "finalUrl": "https://reports.adviserinfo.sec.gov/reports/ADV/304510/PDF/304510.pdf",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 3338244,
+      "contentSha256": "3841726d931ef118bd987aaca073747b16cfce02fb23b4433b9d532687e1adc3",
+      "captureType": "CURRENT_DIRECT_PDF_BYTES_PLUS_PYPDF_TEXT_EXTRACTION",
+      "browserVerified": false,
+      "isApplicationPrimary": false,
+      "note": "The March 30, 2026 direct regulatory filing identifies NOVA-TELMAX HOLDCO, LLC as Delaware private fund 805-2087165683, names NOVA Infrastructure GP I, L.P. as general partner, reports $8,446,278 gross asset value, five beneficial owners and 2% ownership by the adviser and related persons. It does not name the five owners or provide TELMAX INC.'s direct shareholder ledger."
+    },
+    {
+      "label": "Ontario registry",
+      "url": "https://www.appmybizaccount.gov.on.ca/onbis/master/entry.pub?applicationCode=onbis-master&businessService=registerItemSearch",
+      "finalUrl": "https://www.appmybizaccount.gov.on.ca/onbis/master/entry.pub?applicationCode=onbis-master&businessService=registerItemSearch",
+      "status": "OPEN_RENDERED_DOM_SEARCH_RESULT",
+      "httpStatus": 200,
+      "mediaType": "text/html; rendered browser DOM innerText",
+      "bytes": 1137,
+      "contentSha256": "f2dad1a3b14857393150b73186d7ce4f64ac2631d197954e92de3d46660d1fea",
+      "captureType": "CODEX_IN_APP_BROWSER_RENDERED_DOM_AFTER_CORPORATION_NUMBER_SEARCH",
+      "browserVerified": true,
+      "commandLineResponse": {
+        "httpStatus": 200,
+        "bytes": 20463,
+        "contentSha256": "553ccaf2e4ec41cdc9606ddf6bb34366ee8283674fbd6ef84100a74884702009"
+      },
+      "isApplicationPrimary": false,
+      "note": "The current direct registry result verifies TELMAX INC., Ontario corporation number 1947764, Toronto locality, Active status and 2016-01-05 incorporation. It does not provide shareholders or prove that similarly named local entities are owners or subsidiaries."
+    },
+    {
+      "label": "QID/NOVA closing release",
+      "url": "https://quintana-id.com/wp-content/uploads/2021/news/QID%20Closing%20Press%20Release%20telMAX%202021.04.01.pdf",
+      "finalUrl": "https://quintana-id.com/wp-content/uploads/2021/news/QID%20Closing%20Press%20Release%20telMAX%202021.04.01.pdf",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 96591,
+      "contentSha256": "4b28bb542067dc8bd31da6f1e91b369b0e9aef3a175aab6ca355e780b4bdea67",
+      "captureType": "CURRENT_DIRECT_PDF_BYTES_PLUS_PYPDF_TEXT_EXTRACTION",
+      "browserVerified": true,
+      "isApplicationPrimary": false,
+      "note": "The direct dated release states that funds managed by QID and NOVA completed an investment in telMAX and acquired a controlling stake by 2020-12-18. It does not name the funds, legal acquisition vehicles, exact close, every seller, issuance versus transfer mix, percentages, retained holders or current stakes."
+    },
+    {
+      "label": "NOVA release",
+      "url": "https://www.novainfrastructure.com/nova-infrastructure-announces-investment-in-telmax",
+      "finalUrl": "https://www.novainfrastructure.com/nova-infrastructure-announces-investment-in-telmax",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html;charset=utf-8",
+      "bytes": 79232,
+      "contentSha256": "df2dae9a85a442688949e97beba5df53c7f800154b0e54f4ec5c26ef117d1498",
+      "browserVerified": true,
+      "renderedDomResponse": {
+        "mediaType": "text/html; rendered browser DOM innerText",
+        "bytes": 3468,
+        "contentSha256": "173d5ab12b9f78d076257fcdf0d5f7bb835c09d85ad29518110341d79ef99d98"
+      },
+      "isApplicationPrimary": false,
+      "note": "NOVA's direct January 5, 2021 release states that NOVA and QID completed the investment and that NOVA acquired a majority interest. It does not disclose NOVA's exact percentage, vehicle, sellers, rollover or cutoff-current control and stake."
+    },
+    {
+      "label": "Jones Day facility",
+      "url": "https://www.jonesday.com/en/practices/experience/2024/04/nova-infrastructure-management-llc-and-affiliated-funds-obtain-new-25-million-subscription-facility",
+      "finalUrl": "https://www.jonesday.com/en/practices/experience/2024/04/nova-infrastructure-management-llc-and-affiliated-funds-obtain-new-25-million-subscription-facility",
+      "status": "OPEN_RENDERED_DOM_AFTER_COMMAND_LINE_403",
+      "httpStatus": 200,
+      "mediaType": "text/html; rendered browser DOM innerText",
+      "bytes": 2647,
+      "contentSha256": "ee200df558c2250d12ad588e8e3a2a1a8753bffdcc40673cccdcbc1c86afd7bd",
+      "captureType": "CODEX_IN_APP_BROWSER_RENDERED_DOM",
+      "browserVerified": true,
+      "commandLineResponse": {
+        "httpStatus": 403,
+        "bytes": 4546,
+        "contentSha256": "46c259f067a42efdb57aa782c0c6bdb2ffeccf64e990e1f70778a6dfdf0c0179"
+      },
+      "isApplicationPrimary": false,
+      "note": "The April 2024 transaction-adviser description names NOVA Infrastructure Fund I, related Cayman and Luxembourg borrowers and NOVA-TELMAX AIV LP as NOVA-managed subscription-facility borrowers. It provides no telMAX equity link, cap table, stake or complete fund-to-company chain."
+    },
+    {
+      "label": "QID About",
+      "url": "https://quintana-id.com/about-us/",
+      "finalUrl": "https://quintana-id.com/about-us/",
+      "status": "OPEN",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 40891,
+      "contentSha256": "8d8acd91f8192d3d3b618115b6081aa572cb5aa739e6dbb9d18a2b6572b59790",
+      "browserVerified": true,
+      "renderedDomResponse": {
+        "mediaType": "text/html; rendered browser DOM innerText",
+        "bytes": 3045,
+        "contentSha256": "e2cce716bd0f1165b28fdca8d22dc745a0920dde432c4ff2189d739b7e0db49d"
+      },
+      "isApplicationPrimary": false,
+      "note": "QID's current direct page identifies QID as an investment holding and operating company owned by William K. Robertson. It does not identify a QID fund, telMAX acquisition vehicle, stake or cutoff retention."
+    }
+  ],
+  "checks": {
+    "allReturnedEvidenceUrlsChecked": true,
+    "allReturnedUrlsChecked": true,
+    "allEvidenceRowsChecked": true,
+    "allUrlsHttps": true,
+    "returnedOpenCount": 7,
+    "legalIdentityAndOntarioStatusVerified": true,
+    "singleManagerLevelPlatformBoundaryVerified": true,
+    "historicalNovaQidControlInvestmentVerified": true,
+    "historicalNovaMajorityVerified": true,
+    "currentNovaHoldcoAndGpVerified": true,
+    "currentAbdnIndirectHoldcoInterestVerified": true,
+    "abdnDirectTelmaxStakeVerified": false,
+    "novaCutoffDirectTelmaxStakeAndControlVerified": false,
+    "qidCutoffVehicleStakeAndRetentionVerified": false,
+    "founderAndLegacyCutoffHoldingsVerified": false,
+    "cutoffCurrentCompleteShareholderLedgerVerified": false,
+    "allCurrentDirectOwnerVehiclesVerified": false,
+    "allCurrentDirectOwnerClassesVotesAndStakesVerified": false,
+    "laterOwnershipLifecycleChangeVerified": false,
+    "exactlyOneApplicationPrimary": true,
+    "modelRecommendedPrimaryApplicationUsableForTerminalDeferral": true,
+    "companyCreationOrOwnershipMutationBlocked": true,
+    "terminalDeferralSupported": true
+  },
+  "exactException": "TELMAX INC. is verified as one active Ontario facilities-based fibre platform. Direct evidence proves a completed 2020 control investment managed by NOVA and QID, NOVA's entry majority, a current NOVA-TELMAX HOLDCO, LLC fund and GP, and ASGI's approximately 15% indirect interest through that HoldCo. No direct cutoff source provides TELMAX INC.'s complete shareholder register, certified cap table, securities ledger, classes, votes, complete current and former direct owner set, all acquisition and holding vehicles, exact NOVA and QID stakes, QID and legacy-holder retention or transfers, the full fund-AIV-HoldCo-local-entity chain, 2020 sellers, issuance versus transfer mix, rollover, exact close or any later ownership lifecycle. ASGI's indirect HoldCo percentage cannot be treated as a direct additive company stake.",
+  "conclusion": "DEFERRED. Preserve the resolved legal identity, one-platform boundary, historical NOVA/QID control entry, current HoldCo and indirect ASGI relationship as research lineage, but make no company, owner, fund, vehicle, stake, status, database or seed mutation until company-level cap-table and vehicle-ledger records prove the complete cutoff-current direct ownership chain and lifecycle."
+}

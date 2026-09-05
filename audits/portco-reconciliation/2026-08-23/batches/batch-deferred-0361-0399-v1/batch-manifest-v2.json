@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_MANIFEST",
+  "methodologyVersion": "PORTCO_APPLY_BATCH_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-deferred-0361-0399-v1",
+  "createdAt": "2026-09-05T10:31:00.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "dfecb157757bf464591853654eee0625e2132d3f6bb30dc707672715d5e4b990"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0361:nopetro-renewables:1b512de3",
+      "taskIndex": 361,
+      "companyName": "Nopetro Renewables",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0361-nopetro-renewables/attempt-2/terminal-decision-deferred-v1.json",
+        "sha256": "46b30aaae300efa5ca1453b6b5f6f15f56c7697551d3972062aaeb136f70e6b3"
+      }
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0363:telmax-inc:f608a383",
+      "taskIndex": 363,
+      "companyName": "telMAX Inc.",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0363-telmax-inc/attempt-2/terminal-decision-deferred-v1.json",
+        "sha256": "407bf938393aed339c4ce45b0ee69d834637163833e0b4e967c9dda0cb6b41d4"
+      }
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0365:arcadian-infracom:27de01bd",
+      "taskIndex": 365,
+      "companyName": "Arcadian Infracom",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0365-arcadian-infracom/attempt-2/terminal-decision-deferred-v1.json",
+        "sha256": "39706e39f68951cac7acc6d5a95dc133704389d0028bb87549d3217f04543b62"
+      }
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0375:sidewalk-infrastructure-partners:80a3f3bf",
+      "taskIndex": 375,
+      "companyName": "Sidewalk Infrastructure Partners",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0375-sidewalk-infrastructure-partners/attempt-2/terminal-decision-deferred-v1.json",
+        "sha256": "15dc19795dbb1cce7ee41f6b3797cbfc2f7aa780d75141f49b89aeeb091f26fc"
+      }
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0399:rowan-bauxite:930cec59",
+      "taskIndex": 399,
+      "companyName": "Rowan Bauxite",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0399-rowan-bauxite/attempt-2/terminal-decision-deferred-v1.json",
+        "sha256": "ad5ce1dc03c2770c0ce925efe910d4214c331fb916ade89fb75451b594aa1f23"
+      }
+    }
+  ],
+  "collisionAnalysis": {
+    "independent": true,
+    "claimsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "sharedSourceUrls": [],
+    "conflicts": []
+  },
+  "batchSha256": "7afb5327a160cac63946e8ea5242e2f3c572479d0c52ff581ff640565f85e2bd"
+}

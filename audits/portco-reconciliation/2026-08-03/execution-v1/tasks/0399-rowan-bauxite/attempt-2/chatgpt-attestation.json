@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_ATTESTATION",
+  "runId": "portco-deferred-readjudication-2026-09-05",
+  "taskId": "ledger:0399:rowan-bauxite:930cec59",
+  "taskIndex": 399,
+  "companyName": "Rowan Bauxite",
+  "conversationUrl": "https://chatgpt.com/c/6a9bddae-d768-83ea-8cc0-1bed34b25be3",
+  "accountTier": "ChatGPT Pro",
+  "surface": "Work",
+  "model": "GPT-5.6 Sol",
+  "effort": "Ultra",
+  "power": "6 of 6",
+  "uiVerified": true,
+  "uiEvidence": {
+    "accountLabel": "mike berry Pro",
+    "surfaceLabel": "Work",
+    "modeMenuModelLabel": "GPT-5.6 Sol",
+    "composerModelLabel": "GPT-5.6 Sol Ultra",
+    "modeMenuEffortLabel": "Ultra",
+    "modeMenuPowerLabel": "Ultra, 6 of 6",
+    "capturedBeforeSubmission": true
+  },
+  "initialSubmittedAt": "2026-09-05T09:15:56.115Z",
+  "initialCompletedObservedAt": null,
+  "initialReportedGenerationDuration": "PT9M55S",
+  "repairSubmittedAt": null,
+  "repairCompletedObservedAt": "2026-09-05T10:01:15.313Z",
+  "repairReportedGenerationDuration": "PT8M54S",
+  "repairCount": 1,
+  "initialOutcome": "REPAIR_REQUIRED_FOR_CHARACTER_LIMIT_ONLY",
+  "finalOutcome": "VALIDATED_STRUCTURED_RESPONSE_AFTER_ONE_MECHANICAL_REPAIR",
+  "contentHashes": {
+    "promptSha256": "55c78cb6a81e013e6b7bd79f816ebbbb264bf4664bcdd9e7026971c29513e8dc",
+    "initialResponseSha256": "e3583a0a3ee26240f36179a53316f266dfd242d40f7c35acecd9eea1c86a6e04",
+    "repairPromptSha256": "bdfdd9101280c32dd70793bbfc1b2d4da0ba2b3f93e214fa4a1c3e397891ce10",
+    "acceptedResponseSha256": "5fc84c18dbd15865d6b0e9aaff3ab4d755afbcb2c185c92f4ee65e5632efc4ef",
+    "transcriptSha256": "4bec4847c59d751fa5b290e52e52a1d7cbf332242ca94bb87ea6f91aa2469f15"
+  },
+  "captureMethod": "signed-in ChatGPT web application via browser DOM textContent",
+  "captureNote": "The initial prompt was submitted exactly once after the signed-in UI visibly showed the Pro account, Work surface, GPT-5.6 Sol and the current maximum Ultra 6-of-6 effort. The live UI no longer exposed the former Pro 5-of-5 label, so this attestation preserves the stronger current setting and exact visible labels. The UI reported 9m55s for the initial generation and 8m54s for the sole same-conversation repair. The repair shortened redundant prose only to satisfy the response-size contract; it preserved the DEFERRED decision, all distinct facts, four exact-schema owner rows, eight evidence rows in the same order, exactly one primary, four milestones, unresolved facts and review meaning. Both assistant DOM responses are preserved exactly with one terminal LF."
+}

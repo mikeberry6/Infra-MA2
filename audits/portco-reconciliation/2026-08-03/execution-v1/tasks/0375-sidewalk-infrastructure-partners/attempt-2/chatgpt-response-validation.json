@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "runId": "portco-deferred-readjudication-2026-09-05",
+  "taskId": "ledger:0375:sidewalk-infrastructure-partners:80a3f3bf",
+  "taskIndex": 375,
+  "companyName": "Sidewalk Infrastructure Partners",
+  "validatedAt": "2026-09-05T09:08:04.000Z",
+  "conversationUrl": "https://chatgpt.com/c/6a9bca62-7680-83e9-bdaf-e4942a631cf3",
+  "acceptedResponseSha256": "3e025967badbef0f596074a379af4ad6e8cb8fae611d2b45be19366a59364434",
+  "valid": true,
+  "initialResponse": {
+    "responseSha256": "9366f41acd8e8ace5321160849c1c3c5a92a12606bbe55c0ab3decc38234bbc1",
+    "jsonParsed": true,
+    "result": "REPAIR_REQUIRED",
+    "defect": "Every ownershipResolution.owners row omitted the required announcementDate, entryYear, exitDate and exitYear keys."
+  },
+  "firstRepairResponse": {
+    "responseSha256": "aa4a710594ac52a28cb3e4529aab8c9dbcf7a0d983ae9749b1d15ac5acb960fb",
+    "jsonParsed": true,
+    "ownerKeysExact": true,
+    "characterCountExcludingRepositoryTerminalLf": 7748,
+    "result": "REPAIR_REQUIRED",
+    "defect": "The owner schema was corrected without a semantic change, but the full response exceeded the 7,500-character contract."
+  },
+  "finalResponse": {
+    "characterCountExcludingRepositoryTerminalLf": 7382,
+    "fencedJsonPresent": false,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "requiredTopLevelKeysExact": true,
+    "decision": "DEFERRED",
+    "confidence": "HIGH facts/LOW cap table",
+    "evidenceCount": 4,
+    "currentOwnerOrSponsorRows": 6,
+    "pendingOwnershipTransactionCount": 0,
+    "primaryEvidenceCount": 1,
+    "ownerKeysExact": true,
+    "pendingTransactionKeysExact": true,
+    "evidenceKeysExact": true,
+    "withinCharacterLimit": true,
+    "withinEvidenceLimit": true,
+    "withinMilestoneLimit": true,
+    "freshExactExceptionRecorded": true,
+    "responseSha256": "3e025967badbef0f596074a379af4ad6e8cb8fae611d2b45be19366a59364434",
+    "result": "PASS"
+  },
+  "contract": {
+    "beginJsonPresent": true,
+    "endJsonPresent": true,
+    "beginReviewPresent": true,
+    "endReviewPresent": true,
+    "jsonParses": true,
+    "mandatoryTopLevelKeysExact": true,
+    "ownerKeysExact": true,
+    "pendingTransactionKeysExact": true,
+    "evidenceKeysExact": true,
+    "evidenceRowCount": 4,
+    "milestoneCount": 4,
+    "recommendedPrimaryCount": 1,
+    "contentCharactersExcludingMarkers": 7337,
+    "decisionAllowed": true,
+    "decision": "DEFERRED"
+  },
+  "captureNormalization": {
+    "performed": true,
+    "reason": "Two same-conversation mechanical repair turns were required: the first supplied the four omitted owner keys and the second shortened redundant prose to satisfy the size limit.",
+    "semanticChanges": false,
+    "repairTurnsUsed": true,
+    "repairCount": 2
+  },
+  "independentEvidenceAdjustments": [
+    "The returned 2019 SEC Form D, July 2025 FERC filing and both June 2026 StepStone schedules were independently reopened and hashed from current direct bytes.",
+    "The July 2025 FERC PDF was downloaded from the returned exact file-list URL through FERC's ordinary public download control and hashed as exact PDF bytes. It directly states that StepStone ATS became a direct owner of at least ten percent of SIP voting interests and that OTPPB remained an ultimate upstream affiliate.",
+    "The June 2026 StepStone Private Infrastructure Fund schedule directly reports 4,115,226 SIP Series C preferred units acquired 2026-03-16 at $80 million cost and $116.6 million fair value under non-controlled/non-affiliated direct equity.",
+    "The June 2026 StepStone Private Markets schedule directly reports 2,572,016 SIP Series C preferred units acquired 2026-03-16 at $50 million cost and $72.9 million fair value under non-controlled/non-affiliated direct equity.",
+    "The direct sources contradict the production record's sole-OTPP presentation but do not disclose SIP's complete cutoff member set, exact ownership percentages, classes, votes or later transfers. No partial owner after-image is authorized."
+  ],
+  "result": "PASS_AFTER_TWO_NON_SEMANTIC_REPAIRS_WITH_FRESH_EXACT_INCOMPLETE_SIP_CAP_TABLE_EXCEPTION"
+}

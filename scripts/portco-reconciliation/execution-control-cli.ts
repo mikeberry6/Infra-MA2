@@ -18,6 +18,7 @@ import {
   createExecutionManifest,
   executionStatus,
   installExecutionApprovalPolicy,
+  isAcceptedDeferredResearchProfile,
   nextExecutionTask,
   recordAutomatedExecutionApproval,
   recordExecutionDecision,
@@ -291,14 +292,14 @@ async function loadDeferredReadjudicationEvidence(
     taskId,
     taskIndex,
   );
+  const uiEvidence = objectRecord(attestation.uiEvidence, "ChatGPT UI evidence");
   if (attestation.accountTier !== "ChatGPT Pro"
     || attestation.model !== "GPT-5.6 Sol"
-    || attestation.effort !== "Pro"
-    || attestation.power !== "5 of 5"
+    || !isAcceptedDeferredResearchProfile(attestation, uiEvidence)
     || attestation.uiVerified !== true
-    || objectRecord(attestation.uiEvidence, "ChatGPT UI evidence").capturedBeforeSubmission !== true) {
+    || uiEvidence.capturedBeforeSubmission !== true) {
     throw new Error(
-      "ChatGPT attestation does not prove Pro, GPT-5.6 Sol, Pro effort, and 5-of-5 power before submission",
+      "ChatGPT attestation does not prove Pro, GPT-5.6 Sol, and a supported maximum-effort profile before submission",
     );
   }
   const validationResult = objectRecord(responseValidation.finalResponse, "Response validation result");

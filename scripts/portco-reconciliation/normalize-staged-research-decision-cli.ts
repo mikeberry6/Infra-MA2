@@ -136,7 +136,7 @@ async function main(): Promise<void> {
       ? "HIGH"
       : acceptedConfidenceValue >= 0.5 ? "MEDIUM" : "LOW"
     : typeof acceptedConfidenceValue === "string"
-      ? acceptedConfidenceValue.match(/^(HIGH|MEDIUM|LOW)\b/i)?.[1]?.toUpperCase()
+      ? acceptedConfidenceValue.match(/^(HIGH|MEDIUM|LOW)(?:\b|_)/i)?.[1]?.toUpperCase()
         ?? acceptedConfidenceValue
       : acceptedConfidenceValue;
   const stagedConfidence = typeof source.confidence === "string" ? source.confidence : null;

@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_ATTESTATION",
+  "runId": "portco-deferred-readjudication-2026-09-05",
+  "taskId": "ledger:0361:nopetro-renewables:1b512de3",
+  "taskIndex": 361,
+  "companyName": "Nopetro Renewables",
+  "conversationUrl": "https://chatgpt.com/c/6a9ba830-08a4-83ea-b241-4977d4adb8f4",
+  "initialInternalConversationUrl": "https://chatgpt.com/c/WEB:fed7887c-5531-44e0-98c8-8950972f347b",
+  "accountTier": "ChatGPT Pro",
+  "surface": "Work",
+  "model": "GPT-5.6 Sol",
+  "effort": "Ultra",
+  "power": "6 of 6",
+  "uiVerified": true,
+  "uiEvidence": {
+    "accountLabel": "mike berry Pro",
+    "surfaceLabel": "Work",
+    "modeMenuModelLabel": "GPT-5.6 Sol",
+    "composerModelLabel": "GPT-5.6 Sol Ultra",
+    "modeMenuEffortLabel": "Ultra",
+    "modeMenuPowerLabel": "Ultra, 6 of 6",
+    "capturedBeforeSubmission": true
+  },
+  "initialSubmittedAt": null,
+  "initialSubmissionObservedWindowUtc": {
+    "afterModelConfiguredAt": "2026-09-05T05:26:00.000Z",
+    "beforeAutomationCheckpointAt": "2026-09-05T05:29:14.175Z"
+  },
+  "initialCompletedObservedAt": "2026-09-05T05:59:14.330Z",
+  "initialReportedGenerationDuration": "PT14M21S",
+  "repairSubmittedAt": null,
+  "repairCompletedObservedAt": null,
+  "repairReportedGenerationDuration": null,
+  "repairCount": 0,
+  "finalOutcome": "VALID_INITIAL_CONTRACT_PACKET",
+  "contentHashes": {
+    "promptSha256": "58ca12fe8a2138ab33850af1e07a8ed6709d4146986d38a8f746791df475faf9",
+    "acceptedResponseSha256": "bec5d95b210f1d560126c9f4e47c44120b8b7ea063d8c7328cfe2f9ed85d438a",
+    "transcriptSha256": "ab21fef98abe6050c89f556a99824194246421613c616e87b9f66f716714ee5b"
+  },
+  "captureMethod": "signed-in ChatGPT web application via browser DOM textContent",
+  "captureNote": "The prompt was submitted exactly once after the signed-in ChatGPT UI visibly showed the Pro account, Work surface, GPT-5.6 Sol, and the current maximum Ultra 6-of-6 effort. The live UI no longer exposed the former Pro 5-of-5 label, so the attestation preserves the stronger current setting and its exact visible label rather than fabricating the retired wording. The UI reported a 14m21s generation. The assistant message DOM textContent is preserved exactly with one terminal LF."
+}

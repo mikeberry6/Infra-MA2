@@ -1,0 +1,175 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0365:arcadian-infracom:27de01bd",
+  "taskIndex": 365,
+  "companyName": "Arcadian Infracom",
+  "asOfDate": "2026-09-05",
+  "decision": "DEFERRED",
+  "confidence": "HIGH_IDENTITY_PLATFORM_BOUNDARY_AND_HISTORICAL_2024_CHAIN_LOW_CUTOFF_CURRENT_AI1_CAP_TABLE",
+  "researchOnly": true,
+  "generatedAt": "2026-09-05T10:26:00.000Z",
+  "result": {
+    "asOfDate": "2026-09-05",
+    "requestedCompany": "Arcadian Infracom",
+    "requestedManagers": [
+      "Nuveen Infrastructure",
+      "TIAA",
+      "Tillman Global Holdings"
+    ],
+    "decision": "DEFERRED",
+    "confidence": "HIGH on identity/deferral; LOW on current AI1 cap table",
+    "rationale": "Last stake proof is 2024-12-31: TIAA 100% -> 730 Fiber 92.500% -> Arcadian Infracom 1, LLC (AI1). AI1 is absent from Schedule Y from 2025-03-31 through 2026-06-30, yet 730 Fiber remains TIAA-owned with Arcadian-labelled Schedule BA activity. Nothing explains the change or proves continuity, exit or reorganization.",
+    "identityResolution": {
+      "commercial": "Arcadian Infracom is the brand; Arcadian Infracom, Inc. is the Delaware parent/contracting company, founded 2018 (exact incorporation date undisclosed). Site https://arcadianinfra.com/; HQ 101 South Hanley Rd, Suite 550, Clayton, MO 63105.",
+      "entities": "AI1, the exact investee, is Delaware LLC file 7217452, formed 2018-12-31; the Inc. owned 100% pre-deal. 730 Fiber is TIAA's Delaware vehicle (formation date undisclosed). AI2 is a parent-owned route/carrier SPV (formation date unresolved); AI3/AI4 are Delaware route/carrier SPVs formed 2020-12-15/2023-03-16 and parent-managed. Reviewed evidence uses unnumbered 'Arcadian Infracom, LLC' as a BA vendor/GP label or agency shorthand; distinct identity unresolved.",
+      "relationships": "TIAA capital runs through 730 Fiber. Nuveen, TIAA's manager, originated, underwrote and manages it; Andrew Deihl lists an AI1 advisory-board role. Do not double count Nuveen. No Tillman link is proven."
+    },
+    "ownershipResolution": {
+      "currentStatus": "UNRESOLVED: current AI1 members, classes, stakes, votes and control are not public.",
+      "owners": [
+        {
+          "manager": "Nuveen Infrastructure",
+          "organization": "Teachers Insurance and Annuity Association of America",
+          "fund": "TIAA General Account",
+          "vehicle": "730 Fiber, LLC",
+          "stake": "92.500% of AI1 at 2024-12-31; current stake UNRESOLVED",
+          "announcementDate": "2021-10-04",
+          "entryDate": "NOT_PUBLICLY_DISCLOSED; completed by 2021-12-31",
+          "entryYear": 2021,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": null,
+          "transactionState": "730 Fiber remains TIAA-owned/invested; current direct AI1 holding unproven"
+        },
+        {
+          "manager": "Arcadian Infracom, Inc.",
+          "organization": "Arcadian Infracom, Inc.",
+          "fund": null,
+          "vehicle": "Arcadian Infracom, Inc.",
+          "stake": "100% pre-deal; later/current stake NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": null,
+          "entryDate": null,
+          "entryYear": null,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": null,
+          "transactionState": "Former sole owner; 2021 sole manager; current retention UNRESOLVED"
+        }
+      ],
+      "control": "2021: Inc. retained day-to-day control as sole manager; board 2 Inc./2 investor/1 jointly selected. Current control unresolved.",
+      "residual": "Do not infer 7.5%. Dan Davis, Derek Garnier and unnamed early investors are not proven AI1 holders; Garnier's departure proves no transfer."
+    },
+    "operatingResolution": "ACTIVE qualifying U.S. long-haul/middle-mile fibre platform: six major Western projects/3,500 planned route miles. Treat one Arcadian platform, with AI1 the exact TIAA investee. Do not extend AI1 economics to Inc./AI2-AI4 or elevate routes, assets, IRUs, joint builds, lenders, grants, customers, contractors, municipalities or vendors.",
+    "acquisitionExitCheck": {
+      "transaction": "Growth-equity deal announced 2021-10-04: TIAA committed up to $140m; Utah shows 730 Fiber taking direct AI1 equity under MIPA/A&R LLC documents. Closed by 2021-12-31; exact date, funded amount, price, seller/subscription split, classes and votes are undisclosed.",
+      "post2024": "First Y omission 2025-03-31. Latest BA/Y proves TIAA/730 continuity, not AI1 ownership. No disclosed recap, issuance, transfer, merger, rename, reorganization, sale, exit or pending equity deal. Impairments, distributions, debt/project funding, grants and partnerships are not equity.",
+      "pendingTransactions": []
+    },
+    "milestones": [
+      "2018-12-31: AI1 formed; parent founded 2018.",
+      "2021-10-04: deal announced; close by 2021-12-31, exact date undisclosed.",
+      "2024-12-31: last 100%/92.500% Y chain.",
+      "2025-03-31 to 2026-06-30: AI1 omitted; 730/Arcadian-labelled BA activity continues."
+    ],
+    "evidence": [
+      {
+        "label": "TIAA Q2 2026",
+        "url": "https://www.tiaa.org/public/pdf/t/tiaa-quarterly-statement-june-2026.pdf",
+        "purpose": "Latest Y/BA test",
+        "sourceTier": "statutory",
+        "workingStatus": "OPENED",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "TIAA 2025 investments",
+        "url": "https://www.tiaa.org/public/pdf/t/tiaa-annual-statement-investment-schedules-2025.pdf",
+        "purpose": "YE holding/activity",
+        "sourceTier": "statutory",
+        "workingStatus": "OPENED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "TIAA 2024 annual",
+        "url": "https://www.tiaa.org/public/pdf/t/tiaa-annual-statement-2024.pdf",
+        "purpose": "Last stake proof",
+        "sourceTier": "statutory",
+        "workingStatus": "OPENED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Utah PSC notice",
+        "url": "https://pscdocs.utah.gov/telecom/21docs/21262301/320521Notice10-1-2021.pdf",
+        "purpose": "Investee/buyer/governance",
+        "sourceTier": "regulator",
+        "workingStatus": "OPENED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Arcadian/TIAA release",
+        "url": "https://www.prweb.com/releases/arcadian-infracom-partners-with-tiaa-to-finance-long-haul-fiber-backbone-routes-895361246.html",
+        "purpose": "Date/capital/Nuveen",
+        "sourceTier": "party",
+        "workingStatus": "OPENED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Nuveen Deihl profile",
+        "url": "https://www.nuveen.com/en-us/about-us/andrew-deihl",
+        "purpose": "Manager/board continuity",
+        "sourceTier": "manager",
+        "workingStatus": "OPENED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Arcadian About",
+        "url": "https://arcadianinfra.com/about/",
+        "purpose": "Identity/scope/HQ",
+        "sourceTier": "company",
+        "workingStatus": "OPENED",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": [
+      "92.5% proof extended from 2024-09-30 to 2024-12-31.",
+      "TIAA/730 accounting continuity proved through 2026-06-30, not current AI1 ownership.",
+      "No Tillman link or later equity event proved.",
+      "No public same-name collision. Prior record had no production IDs/seed keys; no repository extract was available to recheck."
+    ],
+    "excludedOrDuplicateCandidates": [
+      "Nuveen: manager, not owner.",
+      "730 Fiber: vehicle, not platform.",
+      "AI2-AI4: route/carrier SPVs; unnumbered LLC not proven distinct.",
+      "Tillman/all tested affiliates: no affirmative equity/control/incubation/contribution/governance evidence.",
+      "Routes/assets/counterparties/funders: not owners."
+    ],
+    "unresolvedQuestions": [
+      "Current AI1 owners/classes/stakes/votes/control: certified cutoff member/securities register, cap table and LLC/shareholders agreement.",
+      "Y removal: TIAA change/control workpaper or Form B amendment and any transfer/merger/reorganization/control document.",
+      "2021 close/structure/funding: executed MIPA/subscription and A&R LLC member schedule, closing certificate and funds-flow/capitalization schedules.",
+      "Residual/founder/seed/Tillman chain: parent/AI1 shareholder and note registers, conversion notices, transfer ledger and audited named-investment schedule."
+    ],
+    "recommendedListAction": "Fresh exact DEFERRED exception: one Arcadian platform, AI1 exact investee; no current percentage, residual holder, exit, Tillman owner or sibling-SPV ownership."
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0365-arcadian-infracom/attempt-2/research-decision.json",
+      "sha256": "da7aaaee9b53b327651c425150558db07d4e56e0655ddb422bafdf6d46bcafcc"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0365-arcadian-infracom/attempt-2/chatgpt-accepted-response.txt",
+      "sha256": "69dad778e2fde3b380d0ecfa2c4cbbcf2e7bf1150a3f5bf24b32f30fdb6e2e68"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0365-arcadian-infracom/attempt-2/source-verification.json",
+      "sha256": "134b9a230c2e977251f050ea8c40a6f2f12ed4bda37c3ecf96ec97766008530a"
+    },
+    "acceptedResponseSha256": null,
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+    "confidenceNormalization": {
+      "acceptedValue": "HIGH on identity/deferral; LOW on current AI1 cap table",
+      "stagedSummaryValue": "HIGH_IDENTITY_PLATFORM_BOUNDARY_AND_HISTORICAL_2024_CHAIN_LOW_CUTOFF_CURRENT_AI1_CAP_TABLE",
+      "basis": "The accepted response expressed an overall confidence band with a disclosure-gap qualifier; the staged summary preserves that band in its deterministic qualifier and the research decision is unchanged."
+    }
+  }
+}

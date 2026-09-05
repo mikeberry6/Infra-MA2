@@ -51,6 +51,11 @@ artifacts while preserving the prior deferral and its artifact references in a
 re-adjudication record. Reopened tasks become the only `PENDING` candidates and
 can then enter the normal protected two-to-five-member batch path.
 
+The signed-in ChatGPT attestation accepts the historical `Pro` / `5 of 5`
+maximum-effort pair and the current `Ultra` / `6 of 6` replacement only when the
+matching UI labels were captured before submission. Mixed or lower-effort
+profiles fail closed.
+
 Initialize a derived run and inspect its next task:
 
 ```sh

@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_DEFERRED_READJUDICATION_RESEARCH_DECISION",
+  "methodologyVersion": "PORTCO_RECONCILIATION_V1",
+  "runId": "portco-deferred-readjudication-2026-09-05",
+  "generatedAt": "2026-09-05T07:07:46.000Z",
+  "asOfDate": "2026-09-05",
+  "taskId": "ledger:0363:telmax-inc:f608a383",
+  "taskIndex": 363,
+  "companyName": "telMAX Inc.",
+  "linkedTaskIdsCovered": [],
+  "modelDecision": "DEFERRED",
+  "decision": "DEFERRED",
+  "confidence": "HIGH_IDENTITY_PLATFORM_BOUNDARY_AND_INDIRECT_ABRDN_INTEREST_LOW_COMPLETE_DIRECT_OWNERSHIP",
+  "researchOnly": true,
+  "summary": "Keep the source task as a fresh exact deferral. Current Ontario registry, filed regulatory, transaction-party, manager and organization evidence resolves TELMAX INC. as one active Ontario facilities-based fibre platform, proves a completed 2020 control investment managed by NOVA and QID, NOVA's entry majority, a current NOVA-TELMAX HOLDCO, LLC structure and ASGI's approximately 15% indirect interest through that HoldCo. The same evidence does not provide TELMAX INC.'s complete cutoff-current or former direct shareholder set, classes, votes, acquisition and holding vehicles, exact NOVA and QID stakes, founder and legacy-holder interests, transfers or lifecycle. Do not double-count ASGI, invent a QID fund, carry NOVA's entry majority forward to the cutoff or allocate a residual. Make no database or seed change.",
+  "resolvedFormerBlockers": [
+    "The current Ontario registry result directly verifies TELMAX INC., Ontario corporation number 1947764, as active and incorporated on 2016-01-05.",
+    "The direct QID/NOVA closing PDF states that funds managed by QID and NOVA completed an investment in telMAX and acquired a controlling stake by 2020-12-18.",
+    "NOVA's direct January 5, 2021 release states that NOVA acquired a majority interest at entry.",
+    "NOVA's March 30, 2026 Form ADV directly identifies NOVA-TELMAX HOLDCO, LLC as Delaware private fund 805-2087165683, names NOVA Infrastructure GP I, L.P. as general partner and reports five beneficial owners without naming them.",
+    "The June 30, 2026 ASGI N-PORT page directly reports a current NOVA-telMAX HoldCo LLC position and states that the HoldCo invests 100% of its capital in Telmax, Inc.; ASGI's fund percentage ownership is approximately 15%.",
+    "QID's current direct page identifies QID as an investment holding and operating company owned by William K. Robertson, not a named infrastructure fund."
+  ],
+  "identityResolution": {
+    "requestedLabel": "telMAX Inc.",
+    "legalName": "TELMAX INC.",
+    "knownAliases": [
+      "telMAX Inc.",
+      "Telmax, Inc.",
+      "telMAX"
+    ],
+    "canonicalKey": "telmax-inc|canada",
+    "jurisdiction": "Ontario, Canada",
+    "registryCorporationNumber": "1947764",
+    "incorporationDate": "2016-01-05",
+    "registryStatus": "Active",
+    "productionCompanyId": null,
+    "productionAction": "NO_COMPANY_OR_OWNERSHIP_MUTATION_TERMINAL_ONLY",
+    "status": "IDENTITY_AND_PLATFORM_BOUNDARY_RESOLVED_COMPLETE_DIRECT_OWNERSHIP_UNAVAILABLE",
+    "boundary": "Count the manager-level telMAX operating platform once if a future complete ownership proposal is authorized. Treat NOVA-TELMAX HOLDCO, LLC, NOVA-TELMAX AIV LP and any similarly named local HoldCo, GP or LP as vehicles or unproven related entities, not additional platform companies. Keep lenders, municipalities, build partners, grant parties and vendors separate."
+  },
+  "ownershipResolution": {
+    "status": "UNRESOLVED_COMPLETE_CURRENT_AND_FORMER_DIRECT_SHAREHOLDER_CHAIN",
+    "verifiedRelationships": {
+      "nova": "Funds managed by NOVA and QID completed a control investment and NOVA acquired a majority at entry. A current NOVA-managed HoldCo and GP exist, but no direct TELMAX INC. cap table proves NOVA's cutoff direct vehicle, percentage, class, votes or control.",
+      "qid": "QID participated through managed capital in the completed control investment and is a Robertson-owned investment holding and operating company. No direct source names a QID fund or acquisition vehicle, exact stake, current retention, transfer or exit.",
+      "abrdnAsgi": "ASGI's June 30, 2026 N-PORT position is approximately 15% of NOVA-telMAX HoldCo LLC, whose capital is invested in Telmax, Inc. This is indirect HoldCo exposure and is not a separate direct additive company stake.",
+      "foundersAndLegacyHolders": "No independently reopened returned source provides a cutoff-current certified stake, vehicle, class or voting position for a founder or legacy holder, and no residual is allocated."
+    },
+    "rejectedInferences": [
+      "Do not carry NOVA's entry majority to the 2026-09-05 cutoff as a current exact stake or control conclusion.",
+      "Do not treat QID as a fund or invent a QID acquisition vehicle, stake, retention or exit.",
+      "Do not count ASGI's approximately 15% HoldCo interest as direct telMAX ownership or add it to an assumed NOVA percentage.",
+      "Do not infer the unidentified HoldCo beneficial owners from manager, GP, fund or AIV names.",
+      "Do not allocate residual ownership to founders, management, employees, QID, NOVA or any legacy holder.",
+      "Do not infer equity from NOVA-TELMAX AIV LP's participation in a subscription facility or from similarly named Ontario entities.",
+      "Do not infer current ownership continuity or absence of a later ownership event from silence."
+    ]
+  },
+  "operatingResolution": {
+    "status": "ONE_MANAGER_LEVEL_FACILITIES_BASED_FIBRE_PLATFORM_VERIFIED_EQUITY_NOT_INFERRED",
+    "classification": "Facilities-based owner and operator of a pure-fibre fibre-to-the-home network",
+    "jurisdictionAndLocality": "Ontario, Canada; registry locality Toronto",
+    "markets": [
+      "Stouffville",
+      "Brooklin",
+      "Newmarket",
+      "Richmond Hill",
+      "Aurora",
+      "Barrie",
+      "Markham"
+    ],
+    "vehicleTreatment": "HoldCos, AIVs, GP/LP entities and network builds are not separate portfolio platforms unless independently proven to be distinct managed investments."
+  },
+  "transactionResolution": {
+    "state": "CONTROL_ENTRY_VERIFIED_EXACT_CLOSE_AND_CUTOFF_OWNERSHIP_UNRESOLVED",
+    "finding": "Direct transaction-party releases establish that NOVA- and QID-managed capital completed a control investment by 2020-12-18 and that NOVA held a majority at entry. They do not disclose the exact legal close, buyers and sellers, purchase versus issuance mix, consideration, classes, votes, acquisition vehicles, rollover or retained holders. No direct cutoff source disclosed a later recapitalization, ownership sale, merger, restructuring, exit or signed pending equity transaction, and silence is not treated as proof that none occurred.",
+    "nonEquityBoundary": "The C$110 million 2025 Power Sustainable Infrastructure Credit senior-secured financing is debt and must not be treated as equity or a portfolio ownership change."
+  },
+  "freshException": {
+    "status": "EXACT_FACT_UNAVAILABLE",
+    "missingFact": "TELMAX INC.'s complete original and cutoff-current direct shareholder set, every former direct shareholder, share classes, votes, acquisition and holding vehicles, exact NOVA and QID stakes and control, founder and legacy-holder stakes, the complete fund-AIV-HoldCo-local-entity chain, ASGI entry mechanics, 2020 buyers and sellers, issuance versus transfer mix, rollover, exact legal close and any later transfer, recapitalization, exit or pending ownership transaction.",
+    "searchedEvidence": [
+      "Current Ontario registry corporation-number search",
+      "Direct QID/NOVA closing PDF and current NOVA transaction release",
+      "Direct March 30, 2026 NOVA Form ADV and its NOVA-TELMAX HOLDCO, LLC Schedule D record",
+      "Direct June 30, 2026 ASGI N-PORT filing",
+      "Current QID About page and April 2024 Jones Day subscription-facility description",
+      "Current shareholder-register, certified cap-table, securities-ledger, share-class, shareholder-agreement, subscription, purchase, closing, rollover, AIV, HoldCo, fund, transfer, recapitalization, sale, exit and pending-transaction searches in the fresh ChatGPT conversation"
+    ],
+    "requiredToResolve": "TELMAX INC.'s certified shareholder register, securities ledger and cutoff cap table; the executed 2020 share purchase, subscription and shareholders agreements and closing cap table; NOVA fund, AIV and HoldCo member and partner ledgers; QID and founder or legacy-holder transfer records; ASGI subscription, assignment and capital-call records; and later recapitalization, sale, merger, exit or pending-transaction records, if any."
+  },
+  "primaryCitation": {
+    "label": "ASGI June 2026 N-PORT",
+    "url": "https://www.sec.gov/Archives/edgar/data/1793855/000141036826088528/NPORT_DRCY_60061693_0626.htm",
+    "purpose": "Current direct filed evidence for the NOVA-telMAX HoldCo position, the HoldCo's all-capital-in-Telmax description and ASGI's approximately 15% indirect interest, and for the limits of the public cutoff ownership record",
+    "contentSha256": "78d2bd85e8e03e916cf2be777f850014693b9391ef0643bc0bb857df9323758c"
+  },
+  "applicationRequirements": [
+    "Use a terminal-only DEFERRED outcome and do not create a company or ownership period for telMAX while the complete cutoff-current direct owner set, classes, votes, vehicles, stakes and lifecycle remain unavailable.",
+    "Preserve the active Ontario legal identity, manager-level one-platform boundary, historical NOVA/QID control entry, current NOVA HoldCo and indirect ASGI relationship as research lineage without inferring that the company is list-ready for production.",
+    "Do not carry NOVA's entry majority to cutoff, invent a QID fund or vehicle, infer a residual or allocate stakes to founders, management, employees or legacy holders.",
+    "Do not double-count ASGI's approximately 15% indirect HoldCo interest as direct telMAX ownership.",
+    "Do not treat NOVA-TELMAX AIV LP's subscription-facility borrower status or similarly named local entities as proof of telMAX equity.",
+    "Use exactly one application primary citation bound to the fresh rendered ASGI N-PORT source bytes and retain every other verified source as supporting research lineage."
+  ],
+  "applicationBlocked": false,
+  "databaseMutationCandidate": false,
+  "seedMutationCandidate": false,
+  "terminalOutcomeCandidate": "DEFERRED",
+  "dealDatabaseMutation": false,
+  "lineage": {
+    "conversationUrl": "https://chatgpt.com/c/6a9bb3e0-5d24-83ea-b0a8-80b2938e4e9c",
+    "prompt": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0363-telmax-inc/attempt-2/chatgpt-research-prompt.md",
+      "sha256": "4e60fadc64b405674e4378e308ba1d0733ad9faf599ab65207c9847929e92c14"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0363-telmax-inc/attempt-2/chatgpt-accepted-response.txt",
+      "sha256": "d5a816d0fa4de966f11a51e2ce4b4efaf72bc4902c7a56b1a6b3d3f07459ac0a"
+    },
+    "transcript": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0363-telmax-inc/attempt-2/chatgpt-transcript.txt",
+      "sha256": "20e2b3c29605d403a4da75557a97c52d195b07b8694d1eaea2284a34243586ae"
+    },
+    "attestation": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0363-telmax-inc/attempt-2/chatgpt-attestation.json",
+      "sha256": "b840e4921a380047683e02e4f93033c6e17f5c1ee3384ac3ae3ac0dd063bf1b0"
+    },
+    "responseValidation": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0363-telmax-inc/attempt-2/chatgpt-response-validation.json",
+      "sha256": "d6c3e92a75780450794ea7a9e0d49e1cae49a296625089c730d1a3cd8494bb5b"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0363-telmax-inc/attempt-2/source-verification.json",
+      "sha256": "21df1536c230b297d86c10c29ce089c9f5c7eb18b719e9e71196fbab03da8937"
+    }
+  }
+}
