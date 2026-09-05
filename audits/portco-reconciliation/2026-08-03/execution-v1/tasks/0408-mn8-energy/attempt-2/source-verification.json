@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "runId": "portco-deferred-readjudication-2026-09-05",
+  "taskId": "ledger:0408:mn8-energy:3c6d0235",
+  "taskIndex": 408,
+  "companyName": "MN8 Energy",
+  "checkedAt": "2026-09-05T17:58:54.000Z",
+  "method": "Independent current direct SEC HTTP byte capture with redirects, status, media type, byte count and SHA-256; claim-level review of the current filed S-4, Ridgewood observer agreement, merger agreement and Greenbacker Form 10-Q",
+  "sources": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/2136853/000162828026055300/cik0001563922-20260810.htm",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/2136853/000162828026055300/cik0001563922-20260810.htm",
+      "mediaType": "text/html",
+      "bytes": 15353913,
+      "sha256": "c26ec7cc710beb210335a508d7e68c3987dad8da6ec035909af315bc8fbf7c5b",
+      "healthStatus": "WORKING",
+      "applicationPrimary": true,
+      "verifiedClaims": [
+        "The filed S-4 identifies MN8 Energy LLC as a Delaware limited liability company formed on 2017-09-19 and formerly known as Goldman Sachs Renewable Power LLC",
+        "The filing describes the March 2024 Holdings reorganization and Series A preferred issuance, identifies WSI Fund II Holdings, LP and Mercuria Clean Energy Investments BV as preferred holders and reports approximately 1,370 separate common holders at merger signing",
+        "The filing identifies Goldman Sachs Asset Management, the Regents of the University of California, WSI and Mercuria as consent parties and supplies future-closing unit allocations, but it does not publish a complete cutoff-current named member and transfer register for all common holders",
+        "The filing states that WSI is controlled through Ridgewood Water & Strategic Infrastructure Fund II and its parallel fund and that Mercuria Clean Energy Investments BV is indirectly wholly owned by Mercuria Energy Group Limited",
+        "The filing reports approximately 870 projects in 29 states, approximately 3.9 GW of operating and under-construction solar, approximately 440 MW of operating and under-construction battery storage and more than 200 enterprise customers as of 2026-03-31",
+        "The filing describes the signed Greenbacker merger, future cash, unit or mixed elections, proration, conversion or exchange of existing MN8 interests and conditions; it does not prove that the merger closed by the cutoff"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/2136853/000162828026055300/exhibit1034-sx4.htm",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/2136853/000162828026055300/exhibit1034-sx4.htm",
+      "mediaType": "text/html",
+      "bytes": 43332,
+      "sha256": "8742d41ee28b651c5be7795da7596fb4f876a7ce2a22383f63fa5de33923b90a",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "The filed observer agreement is effective 2024-03-28 and identifies WSI Fund II Holdings, LP f/k/a MN8 Fund II Holdings, L.P. as the Ridgewood investor member",
+        "The agreement recites that WSI's purchased preferred units represented less than 10% of MN8 Energy equity on an as-converted basis at entry and provides a non-voting observer right subject to a 25% retention condition",
+        "The agreement does not provide a cutoff-current percentage or establish company control"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1563922/000175392626001215/g085812_ex2-1.htm",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1563922/000175392626001215/g085812_ex2-1.htm",
+      "mediaType": "text/html",
+      "bytes": 2192564,
+      "sha256": "ba958dd405fcf45c0e8af88796cb7d560dc6765a1f85d4d037146a06b1b7c449",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "The filed merger agreement is dated 2026-07-21 and identifies Greenbacker Renewable Energy Company LLC, MN8 Energy Holdings LLC, MN8 Energy LLC, Monarch Merger Sub, LLC and Shareholder Representative Services LLC as parties",
+        "The agreement provides for Monarch Merger Sub to merge into Greenbacker, with Greenbacker surviving, and for holders to receive cash, MN8 units or mixed consideration subject to elections and proration",
+        "The agreement states future closing conditions and does not itself establish legal completion, final holder elections, final proration, funds flow or a post-close MN8 register"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1563922/000156392226000020/cik0001563922-20260630.htm",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/Archives/edgar/data/1563922/000156392226000020/cik0001563922-20260630.htm",
+      "mediaType": "text/html",
+      "bytes": 2788958,
+      "sha256": "a0b8763daf6053ee43f44c88effe2ff0b5954f12201a2d0b2a79fb8d91d72058",
+      "healthStatus": "WORKING",
+      "verifiedClaims": [
+        "Greenbacker's filed Q2 2026 Form 10-Q says it entered into a proposed merger with MN8 and affiliated entities on 2026-07-21",
+        "The filing says the transaction was expected to close in the fourth quarter of 2026 subject to shareholder, member and other closing conditions",
+        "The filing is pending-status evidence and does not establish legal close, final consideration elections, incoming MN8 holders or post-close stakes"
+      ]
+    }
+  ],
+  "checks": {
+    "allReturnedEvidenceUrlsChecked": true,
+    "allPendingTransactionEvidenceUrlsChecked": true,
+    "allReturnedUrlsChecked": true,
+    "allEvidenceRowsChecked": true,
+    "allUrlsHttps": true,
+    "returnedOpenCount": 4,
+    "returnedBlockedCount": 0,
+    "mn8GoldmanSachsRenewablePowerIdentityContinuityVerified": true,
+    "march2024PreferredIssuanceVerified": true,
+    "ridgewoodPreferredInvestorAndFundChainVerified": true,
+    "mercuriaPreferredInvestorVerified": true,
+    "ridgewoodBelowTenPercentAtEntryVerified": true,
+    "greenbackerSignedAcquisitionDirectionVerified": true,
+    "greenbackerLegalCloseVerified": false,
+    "completeCutoffCurrentCommonHolderSetVerified": false,
+    "completeFormerHolderAndTransferHistoryVerified": false,
+    "exactCutoffPreferredStakesAndVotesVerified": false,
+    "laterPendingOwnershipTransactionFound": true,
+    "exactlyOneApplicationPrimary": true,
+    "modelRecommendedPrimaryApplicationUsableForTerminalDeferral": true,
+    "ownershipMutationBlocked": true,
+    "terminalDeferralSupported": true
+  },
+  "allEvidenceUrlsDirectHttps": true,
+  "allReturnedEvidenceSourcesWorkingOrBrowserVerified": true,
+  "directByteCaptureCount": 4,
+  "deadSourceCount": 0,
+  "recommendedApplicationPrimaryUrl": "https://www.sec.gov/Archives/edgar/data/2136853/000162828026055300/cik0001563922-20260810.htm",
+  "recommendedApplicationPrimarySha256": "c26ec7cc710beb210335a508d7e68c3987dad8da6ec035909af315bc8fbf7c5b"
+}

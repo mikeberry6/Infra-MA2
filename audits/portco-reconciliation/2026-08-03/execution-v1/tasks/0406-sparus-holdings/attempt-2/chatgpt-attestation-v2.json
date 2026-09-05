@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_ATTESTATION",
+  "runId": "portco-deferred-readjudication-2026-09-05",
+  "taskId": "ledger:0406:sparus-holdings:85d26c81",
+  "taskIndex": 406,
+  "companyName": "Sparus Holdings",
+  "conversationUrl": "https://chatgpt.com/c/6a9c398d-2a54-83ea-8d61-98dd0cfa6687",
+  "accountTier": "ChatGPT Pro",
+  "surface": "Work",
+  "model": "GPT-5.6 Sol",
+  "effort": "Ultra",
+  "power": "6 of 6",
+  "uiVerified": true,
+  "uiEvidence": {
+    "accountLabel": "mike berry Pro",
+    "surfaceLabel": "Work",
+    "modeMenuModelLabel": "GPT-5.6 Sol",
+    "composerModelLabel": "GPT-5.6 Sol Ultra",
+    "modeMenuEffortLabel": "Ultra",
+    "modeMenuPowerLabel": "Ultra, 6 of 6",
+    "capturedBeforeSubmission": true
+  },
+  "initialSubmittedAt": "2026-09-05T15:48:00.000Z",
+  "initialCompletedObservedAt": "2026-09-05T16:20:16.711Z",
+  "initialReportedGenerationDuration": "PT30M35S",
+  "repairSubmittedAt": null,
+  "repairCompletedObservedAt": null,
+  "repairReportedGenerationDuration": null,
+  "repairCount": 0,
+  "initialOutcome": "VALIDATED_STRUCTURED_RESPONSE",
+  "finalOutcome": "VALIDATED_STRUCTURED_RESPONSE_WITHOUT_REPAIR",
+  "contentHashes": {
+    "promptSha256": "d36c5a483056e6c45c6f3e1d9641c08de60cc950f713d2828ce9e26dde24f4d5",
+    "initialResponseSha256": "ddea7a61915ce14fd7e3c5fe5ce1eb3a349d9a2e6feabb15697e8ee3720213ba",
+    "repairPromptSha256": null,
+    "acceptedResponseSha256": "ddea7a61915ce14fd7e3c5fe5ce1eb3a349d9a2e6feabb15697e8ee3720213ba",
+    "transcriptSha256": "61b26613ce6ea08518fb51d1ba22e730cd5275140390f5ff7463d1ff14849ab9"
+  },
+  "captureMethod": "signed-in ChatGPT web application via browser DOM textContent",
+  "captureNote": "The prompt was submitted exactly once after the signed-in UI visibly showed the Pro account, Work surface, GPT-5.6 Sol and the current maximum Ultra 6-of-6 effort. The live UI no longer exposed the former Pro 5-of-5 label, so this attestation preserves the stronger current setting and exact visible labels. The UI reported 30m35s for the generation. The raw assistant-message DOM textContent was captured verbatim, parsed as strict JSON between the requested markers and preserved with one terminal LF.",
+  "transcriptMaterialization": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0406-sparus-holdings/attempt-2/chatgpt-transcript-materialized-v2.txt",
+    "sourceTranscriptPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0406-sparus-holdings/attempt-2/chatgpt-transcript.txt",
+    "sourceTranscriptSha256": "8ae26873c049c05ed4c23472a9da7049196ab40274a0ad797d917cf253f896d5",
+    "method": "Verbatim preserved prompt and accepted response expanded into one artifact; intermediate progress/tool text not claimed.",
+    "generatedAt": "2026-09-05T20:16:00.000Z"
+  }
+}
+

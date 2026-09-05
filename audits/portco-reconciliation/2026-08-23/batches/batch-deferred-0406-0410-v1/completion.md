@@ -1,0 +1,15 @@
+# Deferred batch 406–410 completion
+
+All five tasks received fresh signed-in GPT-5.6 Sol maximum-effort research, independently reopened sources and precise retained exceptions. The bundle is terminal-only: zero production, ownership, identity, redirect, seed, Deal Database or public-interface writes. The immutable receipt is `117ad173a7960b78dae2efac51d61f454c5b40d3dadd680e904818bcdc24f78d` for batch manifest v2 `a56fc75d9b05453f92a80edefe9146a34e8d19641e1929f43bac91aebcf3dbf1`.
+
+The v1 manifest incorrectly bound a file-byte hash where the root verifier requires the execution manifest's embedded canonical digest. Receipt creation failed closed before producing any receipt or write. V2 corrects only that root binding and supersedes v1; member decisions and evidence are unchanged. Only v2 has a receipt. The ledger retains both digest references in sequence history.
+
+Timestamp qualification: the operator supplied 20:39:00Z to the READY transition before the observed 20:37:56Z receipt/completion. This is an input timestamp error, not a later or repeated execution. History sequence (FORMING, READY, COMPLETED), artifact references and the immutable receipt establish the actual operation order. The original supplied timestamp is retained rather than silently rewritten. Source finalization occurred at 2026-09-05T20:39:05.000Z; an initial finalizer invocation rejected a non-canonical timestamp string without changing the manifest.
+
+Checks: all five full prompt/final-response, attestation, validation, direct-source and research chains passed the fail-closed deferred-reopen path; all five read-only fresh production/task/dependency snapshots captured against protected main 02e9950716aa70599e5963982200d29e1c4e8129 and the pinned production database. Member/hash/collision/root checks passed for v2. Four relevant regression files, 25 tests, passed. Production/seed mutation verification and rendered-card change checks are not applicable to a no-write terminal bundle; existing identities and ownership are preserved, not claimed repaired.
+
+Task409's July2026 amendment was independently read: it changes GP details/address, not a disclosed ownership schedule. The earlier claimed September2024 amendment was not corroborated in the current index. Task410's registry landing rendered an error with disabled search; certified conversion remains unavailable. Secondary Sierra reconstruction remains secondary, and the RRIF contract control covenant is not a current direct-holder register.
+
+Whitespace audit: staged diff checking reports original HTML whitespace and extra terminal blank lines in already hash-bound v2 evidence. Those evidence bytes are intentionally preserved; they are not source-code formatting changes. The editable manifest, ledger, build configs and completion note have no whitespace errors. No claim is made that an unfiltered raw-evidence diff check is clean.
+
+No next bundle may be formed until this completion audit is merged and canonical Git-integrated production serves the exact merge SHA. Then the remaining original deferrals are 450,452,453,454,456, in source order.

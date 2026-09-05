@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0410:sierra-railroad-company:b9c99f78",
+  "taskIndex": 410,
+  "companyName": "Sierra Railroad Company",
+  "outcome": "DEFERRED",
+  "decidedAt": "2026-09-05T20:36:54.488Z",
+  "rationale": "Control and Hart retention are proved; direct holders, fund/vehicle, exact stakes/votes and seller/rollover set are not. The owner after-image is unsafe.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0410-sierra-railroad-company/attempt-2/locked-deferred-v1-task-snapshot.json",
+    "sha256": "f86a6beabfa08f7869c39f31c2b5d56cdb569bfd296a129de56df6d7c277be6d"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0410-sierra-railroad-company/attempt-2/application-research-decision.json",
+    "sha256": "dc1f9f9a02e6ad884431c6dee0781b1862f425a6bf1e87930e279d7b18431c6e"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0410-sierra-railroad-company/attempt-2/source-verification.json",
+    "sha256": "75c478c0f0002eeab2e6a1fe5fd0fa957d54edff23e86587c5c939fa608c4ea1"
+  },
+  "evidence": [
+    {
+      "url": "https://ridgewoodinfrastructure.com/ridgewood-infrastructure-acquires-sierra-railroad-company/",
+      "purpose": "Control, Hart, subsidiaries/CVAT"
+    },
+    {
+      "url": "https://icis.corp.delaware.gov/ecorp/entitysearch/namesearch.aspx",
+      "purpose": "LLC 10537393 form/date"
+    },
+    {
+      "url": "https://savenoyoheadlands.org/mrmdom/meyer/meyer_appeal/APPELLANTS_MOT_JUD_NOT_DEC_PAUL_BEARD_A168497_%20A168959.pdf",
+      "purpose": "2024 Hart-control baseline"
+    },
+    {
+      "url": "https://northborne.com/news/sierra-railroad-company-has-been-acquired-by-ridgewood-infrastructure/",
+      "purpose": "Sale/passenger inclusion"
+    },
+    {
+      "url": "https://www.mendolocal.news/private-equity-acquires-skunk-train-owner/",
+      "purpose": "Merger/close/conversion"
+    },
+    {
+      "url": "https://www.mendolocal.news/who-owns-the-mill-site-in-fort-bragg/",
+      "purpose": "Holdco/Mendocino boundary"
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "10a534f810152789d9e622edadd1767f782abbca64cf75098d083692b3073323"
+}

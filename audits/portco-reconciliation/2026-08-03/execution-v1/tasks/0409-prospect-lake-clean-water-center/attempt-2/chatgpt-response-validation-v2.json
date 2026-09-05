@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_RESPONSE_VALIDATION",
+  "runId": "portco-deferred-readjudication-2026-09-05",
+  "taskId": "ledger:0409:prospect-lake-clean-water-center:c098d1e8",
+  "taskIndex": 409,
+  "companyName": "Prospect Lake Clean Water Center",
+  "validatedAt": "2026-09-05T20:16:00.000Z",
+  "conversationUrl": "https://chatgpt.com/c/6a9c5a07-3688-83e9-b7f8-c1b9c116b147",
+  "acceptedResponseSha256": "c97198d82a2022d7b14adb764527b114c914d3a0ae53831aadeb49522b90aa13",
+  "valid": true,
+  "finalResponse": {
+    "characterCountExcludingRepositoryTerminalLf": 7450,
+    "fencedJsonPresent": false,
+    "jsonParsed": true,
+    "markdownReviewPresent": true,
+    "requiredTopLevelKeysPresent": true,
+    "requiredTopLevelKeysExact": true,
+    "decision": "DEFERRED",
+    "confidence": "HIGH",
+    "evidenceCount": 5,
+    "currentOrFormerOwnerRows": 2,
+    "pendingOwnershipTransactionCount": 0,
+    "primaryEvidenceCount": 1,
+    "ownerKeysExact": true,
+    "pendingTransactionKeysExact": true,
+    "evidenceKeysExact": true,
+    "withinCharacterLimit": true,
+    "withinEvidenceLimit": true,
+    "withinMilestoneLimit": true,
+    "freshExactExceptionRecorded": true,
+    "responseSha256": "c97198d82a2022d7b14adb764527b114c914d3a0ae53831aadeb49522b90aa13",
+    "result": "PASS"
+  },
+  "contract": {
+    "beginJsonPresent": true,
+    "endJsonPresent": true,
+    "beginReviewPresent": true,
+    "endReviewPresent": true,
+    "jsonParses": true,
+    "mandatoryTopLevelKeysExact": true,
+    "ownerKeysExact": true,
+    "pendingTransactionKeysExact": true,
+    "evidenceKeysExact": true,
+    "evidenceRowCount": 5,
+    "milestoneCount": 4,
+    "recommendedPrimaryCount": 1,
+    "contentCharactersExcludingMarkers": 7405,
+    "decisionAllowed": true,
+    "decision": "DEFERRED"
+  },
+  "captureNormalization": {
+    "performed": false,
+    "reason": "The raw assistant-message DOM textContent was strict valid JSON and complied with the requested marker, character, evidence and milestone contract.",
+    "semanticChanges": false,
+    "repairTurnsUsed": false,
+    "repairCount": 0
+  },
+  "independentEvidenceAdjustments": [
+    "All five evidence URLs and the separately returned July 31, 2026 amendment URL were independently reopened from their current direct locations. Current response bytes, status, media type, byte count and SHA-256 were captured where command-line access returned content; current rendered Florida records and the five-page amendment PDF were also independently observed in the in-app browser because command-line requests returned Sunbiz challenge pages.",
+    "The executed Comprehensive Agreement identifies Prospect Lake Water, L.P. as the project company, Prospect Lake Holdings, L.P. and IDE PLCWC, Inc. as Equity Providers with 75-percent and 25-percent contractual Percentage Interests, respectively, and the City as owner of the site and plant. Those contract percentages govern equity-provider obligations but do not by themselves establish a complete cutoff-current LP and security-holder register.",
+    "The current rendered Florida record for Prospect Lake Water, L.P. identifies it as an active Delaware foreign limited partnership, Prospect Lake Holdings, L.P. as general partner, the 2026 annual report filed February 1, 2026 and the latest LP amendment filed July 31, 2026. The public detail page does not list limited partners or disclose the amendment's substantive terms.",
+    "The current rendered Florida record for Prospect Lake Holdings, L.P. identifies it as an active Delaware foreign limited partnership and Ridgewood Water & Strategic Infrastructure Fund II, L.P. as its general partner. It does not list PLH limited partners, economic interests, member rights or the Fund II and GP-LLC member ledgers.",
+    "The current SEC Form D/A identifies Ridgewood Water & Strategic Infrastructure Fund II, L.P., its general partner and Ridgewood Infrastructure, LLC as investment manager. It is not a Prospect Lake company-level ownership schedule.",
+    "The current City September 2, 2026 memorandum remained conditional on contract, regulatory, commissioning and operating requirements and did not evidence accepted testing, FDEP clearance, COD acknowledgment, Final Acceptance or commencement of the 30-year operating term by the September 5 cutoff.",
+    "The fresh direct record does not provide the amended LP agreement, partner register, cap table, unit or vote schedules, contribution and transfer records, PLH register, GP-LLC member ledger, IDE PLCWC stock ledger, accepted test record, FDEP clearance, City COD acknowledgment or Final Acceptance. The terminal DEFERRED decision remains required.",
+    "All five pages of the July 31, 2026 Florida foreign-LP amendment were independently visually inspected. Pages 1-3 are filing and cover sheets. Page 4 names the same Prospect Lake Holdings, L.P. general partner, checks Change (not Add or Remove), and provides its business address at 527 Madison Avenue, 18th Floor, c/o RI - Mark Janay, New York, NY 10022. Page 5 is signed by Mark Janay; the name-change, jurisdiction-change, correction and LLLP-election fields are blank. The disclosed filing is a general-partner detail/address change, not a disclosed limited-partner or cap-table amendment. This does not establish that no separate private equity changes occurred.",
+    "The current PLW document index lists the July 31, 2026 amendment, 2024/2025/2026 annual reports and the original registration. It does not display the accepted response's claimed September 5, 2024 amendment. That alleged amendment is not adopted as a verified event or required exception. The event-history link returned a nonfunctioning-page message.",
+    "The remaining ownership exception is the unprovided current partner/security register and associated equity terms, not inability to read the July filing. The pre-COD record remains date-qualified and is not by itself a reason to infer any owner."
+  ],
+  "result": "PASS_WITH_INDEPENDENTLY_NARROWED_CURRENT_OWNERSHIP_EXCEPTION",
+  "supersedes": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0409-prospect-lake-clean-water-center/attempt-2/chatgpt-response-validation.json",
+    "sha256": "9de0e24b4c79c1d98ec1e09539c98e69d9f27367dc471dd46e400f95287346f8"
+  }
+}
+

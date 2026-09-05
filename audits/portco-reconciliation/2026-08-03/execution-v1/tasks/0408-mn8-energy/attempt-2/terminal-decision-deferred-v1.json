@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0408:mn8-energy:3c6d0235",
+  "taskIndex": 408,
+  "companyName": "MN8 Energy",
+  "outcome": "DEFERRED",
+  "decidedAt": "2026-09-05T20:36:53.771Z",
+  "rationale": "Core identity, preferred issuance and pending-deal facts are proved, but no cutoff common register, exact stakes or transfer history is public. A correction would be incomplete.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0408-mn8-energy/attempt-2/locked-deferred-v1-task-snapshot.json",
+    "sha256": "ffebd624fc6f8bd0770b83fe53dd03672dcdc86d876468630370f1c57f2aa323"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0408-mn8-energy/attempt-2/application-research-decision-v2.json",
+    "sha256": "a1391f337425884320cc630b1cafb9d6c54047c4fda56159a6757917a1eadf8e"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0408-mn8-energy/attempt-2/source-verification.json",
+    "sha256": "1eb8adcb54ef1e00076f3962e25051ec02db5526b32f40895541eb2a9e32fc5e"
+  },
+  "evidence": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/2136853/000162828026055300/cik0001563922-20260810.htm",
+      "purpose": "Identity, ownership, terms, operations, merger"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/2136853/000162828026055300/exhibit1034-sx4.htm",
+      "purpose": "Below-10% recital; observer limits"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1563922/000175392626001215/g085812_ex2-1.htm",
+      "purpose": "Parties, consideration, rollover, conditions"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1563922/000156392226000020/cik0001563922-20260630.htm",
+      "purpose": "Cutoff pending status"
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "b0d4268ecfb2102a98db7762f444472504d8a5bf06450ecc3582318634f40a67"
+}

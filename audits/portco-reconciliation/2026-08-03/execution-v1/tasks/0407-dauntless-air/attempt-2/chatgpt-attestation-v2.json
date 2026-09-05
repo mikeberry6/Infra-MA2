@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_ATTESTATION",
+  "runId": "portco-deferred-readjudication-2026-09-05",
+  "taskId": "ledger:0407:dauntless-air:af9f18a7",
+  "taskIndex": 407,
+  "companyName": "Dauntless Air",
+  "conversationUrl": "https://chatgpt.com/c/6a9c4431-7504-83ea-8a7e-5d4089f7b867",
+  "accountTier": "ChatGPT Pro",
+  "surface": "Work",
+  "model": "GPT-5.6 Sol",
+  "effort": "Ultra",
+  "power": "6 of 6",
+  "uiVerified": true,
+  "uiEvidence": {
+    "accountLabel": "mike berry Pro",
+    "surfaceLabel": "Work",
+    "modeMenuModelLabel": "GPT-5.6 Sol",
+    "composerModelLabel": "GPT-5.6 Sol Ultra",
+    "modeMenuEffortLabel": "Ultra",
+    "modeMenuPowerLabel": "Ultra, 6 of 6",
+    "capturedBeforeSubmission": true
+  },
+  "initialSubmittedAt": "2026-09-05T16:32:56.209Z",
+  "initialCompletedObservedAt": "2026-09-05T17:20:47.001Z",
+  "initialReportedGenerationDuration": "PT19M5S",
+  "repairSubmittedAt": null,
+  "repairCompletedObservedAt": null,
+  "repairReportedGenerationDuration": null,
+  "repairCount": 0,
+  "initialOutcome": "VALIDATED_STRUCTURED_RESPONSE",
+  "finalOutcome": "VALIDATED_STRUCTURED_RESPONSE_WITHOUT_REPAIR",
+  "contentHashes": {
+    "promptSha256": "12870d6c09759b566ce3c772b3029dfab7d808dc2f8924227342d984a6ba72b3",
+    "initialResponseSha256": "2dc59ac0ee3d0c79fa954366bd024aff211ad3796594fa2dcc790c40872139ec",
+    "repairPromptSha256": null,
+    "acceptedResponseSha256": "2dc59ac0ee3d0c79fa954366bd024aff211ad3796594fa2dcc790c40872139ec",
+    "transcriptSha256": "2b13f6acae356811797561fa9e3111222bedc9d22e6341c2e8ff7df6f8449757"
+  },
+  "captureMethod": "signed-in ChatGPT web application via browser DOM textContent",
+  "captureNote": "The prompt was submitted exactly once after the signed-in UI visibly showed the Pro account, Work surface, GPT-5.6 Sol and the current maximum Ultra 6-of-6 effort. The live UI no longer exposed the former Pro 5-of-5 label, so this attestation preserves the stronger current setting and exact visible labels. The UI reported 19m5s for the generation. The raw assistant-message DOM textContent was captured verbatim, parsed as strict JSON between the requested markers and preserved with one terminal LF.",
+  "transcriptMaterialization": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0407-dauntless-air/attempt-2/chatgpt-transcript-materialized-v2.txt",
+    "sourceTranscriptPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0407-dauntless-air/attempt-2/chatgpt-transcript.txt",
+    "sourceTranscriptSha256": "e86c3a4bde4467c7a573f45739bd536a46fbfa55ba18665b3d42f9d94db0a767",
+    "method": "Verbatim preserved prompt and accepted response expanded into one artifact; intermediate progress/tool text not claimed.",
+    "generatedAt": "2026-09-05T20:16:00.000Z"
+  }
+}
+

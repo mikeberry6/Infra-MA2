@@ -1,0 +1,212 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0406:sparus-holdings:85d26c81",
+  "taskIndex": 406,
+  "companyName": "Sparus Holdings",
+  "asOfDate": "2026-09-05",
+  "decision": "DEFERRED",
+  "confidence": "HIGH_DECISION_IDENTITY_LOW_COMPLETE_CUTOFF_CURRENT_OWNERSHIP",
+  "researchOnly": true,
+  "generatedAt": "2026-09-05T16:30:00.000Z",
+  "result": {
+    "asOfDate": "2026-09-05",
+    "requestedCompany": "Sparus Holdings",
+    "requestedManagers": [
+      "Ridgemont Equity Partners"
+    ],
+    "decision": "DEFERRED",
+    "confidence": "HIGH",
+    "rationale": "Identity and the March 2021 sponsor transaction are proved, but the current direct-owner after-image is incomplete: Ridgemont's holder/fund/vehicle/stake/control, Source retention, and management rollover remain UNRESOLVED.",
+    "identityResolution": {
+      "canonicalKey": "sparus-holdings|united-states",
+      "legalIdentity": "Same investee: Sparus Holdings, LLC f/k/a Sparus Holdings, Inc.; Georgia 0567282 is Converted. Formation/conversion dates are NOT_PUBLICLY_DISCLOSED.",
+      "brandWebsite": "Sparus|https://sparus.com/",
+      "headquarters": "192 Technology Parkway, Suite 500, Peachtree Corners, GA 30092",
+      "platformBoundary": "Count once. Allegiant, NAFS, OneVision, Southern Cross, Sparus Technical/Utility Services, Spear, TruCheck and ULS are downstream companies/brands, not owners.",
+      "collisionCheck": "No public U.S. namesake found; repository seed/production collision UNRESOLVED without its index."
+    },
+    "ownershipResolution": {
+      "issuerAt2021Close": "Sparus Holdings, Inc. (later LLC)",
+      "currentDirectOwnerAfterImage": "UNRESOLVED",
+      "currentDirectOwnerSetComplete": false,
+      "transactionCharacter": "Source-backed sale to Ridgemont closed March 2021. Close day, securities and primary/secondary/recap mix are NOT_PUBLICLY_DISCLOSED; management partnership language does not prove rollover.",
+      "votesGovernanceControl": "NOT_PUBLICLY_DISCLOSED",
+      "ownerFindings": [
+        {
+          "manager": "Ridgemont Equity Partners",
+          "organization": "UNRESOLVED",
+          "fund": "UNRESOLVED",
+          "vehicle": "UNRESOLVED",
+          "stake": "NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2021-08-03",
+          "entryDate": "2021-03",
+          "entryYear": 2021,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "Current sponsor; direct holder/security/control not proved"
+        },
+        {
+          "manager": "Source Capital, LLC",
+          "organization": "UNRESOLVED",
+          "fund": "UNRESOLVED",
+          "vehicle": "UNRESOLVED",
+          "stake": "NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2021-08-11",
+          "entryDate": "2009-03",
+          "entryYear": 2009,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": null,
+          "transactionState": "Prior sponsor/seller; full exit or retention not proved"
+        },
+        {
+          "manager": "Capitala Investment Advisors, LLC",
+          "organization": "CapitalSouth Partners Fund II Limited Partnership",
+          "fund": "CapitalSouth Partners Fund II Limited Partnership",
+          "vehicle": null,
+          "stake": "2,851.77 Series B preferred plus warrant for 1,745.27 common shares",
+          "announcementDate": null,
+          "entryDate": null,
+          "entryYear": null,
+          "exitDate": "2015-Q4",
+          "exitYear": 2015,
+          "isActive": false,
+          "transactionState": "Former direct preferred/warrant holder; non-control; disposition details NOT_PUBLICLY_DISCLOSED"
+        },
+        {
+          "manager": "Capitala Investment Advisors, LLC",
+          "organization": "CapitalSouth Partners SBIC Fund III, L.P.",
+          "fund": "CapitalSouth Partners SBIC Fund III, L.P.",
+          "vehicle": null,
+          "stake": "Warrant for 1,745.27 common shares; exercise not proved",
+          "announcementDate": null,
+          "entryDate": null,
+          "entryYear": null,
+          "exitDate": "2015-Q4",
+          "exitYear": 2015,
+          "isActive": false,
+          "transactionState": "Former warrant holder, not proved issued-equity owner; disposition details NOT_PUBLICLY_DISCLOSED"
+        }
+      ]
+    },
+    "operatingResolution": "Utility infrastructure: locating/damage prevention, metering, leak survey, inspection, testing, maintenance, storm response and construction/program management across North America.",
+    "acquisitionExitCheck": {
+      "laterEvents": "OneVision followed the 2021 buyout; ULS was announced 2022-11-29; Allegiant/TruCheck 2023-02-07. All are add-ons. No later equity raise/sale/recap/transfer/merger/control change or signed pending deal found.",
+      "financing": "PNC disclosed subordinated debt; Citizens senior debt/agent/adviser; NewSpring borrowings; Barings first-lien loans; Oaktree financing with instrument undisclosed. No owner inferred.",
+      "capitalaExit": "Preferred/warrants left schedules in Q4 2015; Capitala's 2016 exit was debt repayment.",
+      "pendingTransactions": []
+    },
+    "milestones": [
+      "2012-12-31: Fund II preferred/warrant and Fund III warrant proved.",
+      "2015-Q4: Those securities leave Capitala schedules in reorganization.",
+      "2021-03: Source-backed sale/Ridgemont buyout closed.",
+      "2026-09-05: Ridgemont marks Sparus Current; no later ownership deal found."
+    ],
+    "evidence": [
+      {
+        "label": "Ridgemont close",
+        "url": "https://www.ridgemontep.com/press-releases/ridgemont-equity-partners-acquires-sparus-holdings/",
+        "purpose": "2021 close",
+        "sourceTier": "T1",
+        "workingStatus": "OK",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "Harris sale",
+        "url": "https://www.harriswilliams.com/transactions/sparus",
+        "purpose": "Issuer/seller",
+        "sourceTier": "T1",
+        "workingStatus": "OK",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Ridgemont portfolio",
+        "url": "https://www.ridgemontep.com/portfolio/sparus-holdings/",
+        "purpose": "Current status",
+        "sourceTier": "T1",
+        "workingStatus": "OK",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Georgia entity",
+        "url": "https://ecorp.sos.ga.gov/BusinessSearch/BusinessInformation?businessId=391164&businessType=",
+        "purpose": "Conversion",
+        "sourceTier": "T1",
+        "workingStatus": "INDEXED",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Barings 2026Q2",
+        "url": "https://www.sec.gov/Archives/edgar/data/1379785/000137978526000030/bbdc-20260630.htm",
+        "purpose": "Continuity/debt",
+        "sourceTier": "T1",
+        "workingStatus": "OK",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Sparus companies",
+        "url": "https://sparus.com/companies/",
+        "purpose": "Boundary",
+        "sourceTier": "T1",
+        "workingStatus": "OK",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "PNC notice",
+        "url": "https://www.pnc.com/content/dam/erieview/documents/pnc-erieview-capital-invests-in-sparus.pdf",
+        "purpose": "Subordinated debt",
+        "sourceTier": "T1",
+        "workingStatus": "OK",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "CapitalSouth SEC",
+        "url": "https://www.sec.gov/Archives/edgar/data/1571329/000119312513378647/d505298d497.htm",
+        "purpose": "Former holders",
+        "sourceTier": "T1",
+        "workingStatus": "OK",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "before": "Unverified platform/deal/PNC hypotheses.",
+      "after": "Inc-to-LLC continuity, 2021 close, current Ridgemont sponsorship, PNC debt and two former CapitalSouth security holders proved; current holder table remains missing."
+    },
+    "excludedOrDuplicateCandidates": [
+      "Named Sparus operations: downstream only.",
+      "PNC: subordinated debt; no equity/warrant disclosed.",
+      "Citizens/NewSpring/Barings: debt/adviser; Oaktree: financing only.",
+      "Transaction advisers: not owners."
+    ],
+    "unresolvedQuestions": [
+      "Post-close LLC agreement, member register, cap schedule and transfer ledger for all current holders and rights.",
+      "2021 purchase/subscription/rollover and funds-flow schedules for Source exit, management/founder rollover, close day and deal mix.",
+      "Ridgemont fund/vehicle chain; REP III boilerplate/litigation association is insufficient.",
+      "Georgia formation/conversion, 2015 cancellation and repository-collision records; holder of the additional historical preferred tranche."
+    ],
+    "recommendedListAction": "Keep ledger:0406:sparus-holdings:85d26c81 as a fresh exact DEFERRED exception; no current-owner record until a complete after-image is evidenced."
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0406-sparus-holdings/attempt-2/research-decision.json",
+      "sha256": "65c3e5a7adfd82eeff74df010e615c789698b9fd0c001fb1471e2343c08be398"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0406-sparus-holdings/attempt-2/chatgpt-accepted-response.txt",
+      "sha256": "ddea7a61915ce14fd7e3c5fe5ce1eb3a349d9a2e6feabb15697e8ee3720213ba"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0406-sparus-holdings/attempt-2/source-verification.json",
+      "sha256": "b9bacd17ae0c8da04c546e0cfaf5369098cd930be5cd9f1558dcaf2f520c7626"
+    },
+    "acceptedResponseSha256": "ddea7a61915ce14fd7e3c5fe5ce1eb3a349d9a2e6feabb15697e8ee3720213ba",
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+    "confidenceNormalization": {
+      "acceptedValue": "HIGH",
+      "stagedSummaryValue": "HIGH_DECISION_IDENTITY_LOW_COMPLETE_CUTOFF_CURRENT_OWNERSHIP",
+      "basis": "The staged summary preserves the accepted overall confidence and appends a more specific evidence-gap qualifier; the research decision is unchanged."
+    }
+  }
+}

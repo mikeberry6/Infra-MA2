@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0409:prospect-lake-clean-water-center:c098d1e8",
+  "taskIndex": 409,
+  "companyName": "Prospect Lake Clean Water Center",
+  "outcome": "DEFERRED",
+  "decidedAt": "2026-09-05T20:36:54.121Z",
+  "rationale": "Identity, historic contractual interests and the current general-partner chain are verified; the July 2026 filing has been visually read and concerns the existing GP detail/address. The complete cutoff-current direct-holder register and exact equity interests remain unavailable, so no ownership mutation is supported.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0409-prospect-lake-clean-water-center/attempt-2/locked-deferred-v1-task-snapshot.json",
+    "sha256": "8f867272fb862043514aa4257a0711df7f646c08c8e9ab5004dcae11da9cd45e"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0409-prospect-lake-clean-water-center/attempt-2/application-research-decision-v3.json",
+    "sha256": "875f4b51396d6b57f7ff9daaf694d3b5ad36c7c81fd59e555352a76c2a472174"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0409-prospect-lake-clean-water-center/attempt-2/source-verification-v2.json",
+    "sha256": "1aa9fc805fc07941838dce551d2e9af0c235b799ffa65d17fb59bfaf7b64876a"
+  },
+  "evidence": [
+    {
+      "url": "https://legistar.granicus.com/FortLauderdale/attachments/b311f46b-1c5c-4ed2-b585-f991fe574fd0.pdf",
+      "purpose": "Identity, interests, control, property, COD, term"
+    },
+    {
+      "url": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?aggregateId=forlp-b23000000156-4aba5a63-d25e-4a64-9b7e-b00704c74ffc&directionType=Initial&inquirytype=EntityName&searchNameOrder=PROSPECTLAKEWATER+B230000001560",
+      "purpose": "Status, GP, reports, amendment links"
+    },
+    {
+      "url": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?aggregateId=forlp-b23000000153-c6f7e847-32f1-405b-9f82-40367adc8b45&directionType=Initial&inquirytype=EntityName&searchNameOrder=PROSPECTLAKEHOLDINGS+B230000001530",
+      "purpose": "PLH status/Fund II GP"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1925602/000192560224000002/xslFormDX01/primary_doc.xml",
+      "purpose": "Fund II GP/Ridgewood manager"
+    },
+    {
+      "url": "https://legistar.granicus.com/FortLauderdale/attachments/fb215738-b65d-4373-a7c8-33990cc760f5.docx",
+      "purpose": "Cutoff commissioning/COD status"
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "19d4fb43af031ae9ff8116981b649fd3ed7c288d8247c413614453253e92c2c1"
+}

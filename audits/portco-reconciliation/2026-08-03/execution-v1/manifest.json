@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-09-05T15:49:00.000Z",
+  "updatedAt": "2026-09-05T20:39:05.000Z",
   "runStatus": "COMPLETE_WITH_EXCEPTIONS",
   "activeTaskId": null,
   "source": {
@@ -41971,28 +41971,86 @@
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "33ad8833e9cc348f3c2daf1393e7f68558354aed164dbe140d0cb4b492006a9f",
       "status": "DEFERRED",
-      "attempts": 1,
-      "startedAt": "2026-09-02T00:52:00.000Z",
-      "updatedAt": "2026-09-02T01:16:00.000Z",
-      "completedAt": "2026-09-02T01:16:00.000Z",
-      "exceptionReason": "Defer creation of Sparus Holdings while preserving the verified research. Ridgemont's official portfolio and acquisition releases prove its March 2021 investment and the company's current platform status, but management rollover, the complete current holder table, Ridgemont's exact stake and vehicle, and any deal-specific PNC equity component remain unresolved.",
+      "attempts": 2,
+      "startedAt": "2026-09-05T20:37:00.000Z",
+      "updatedAt": "2026-09-05T20:39:05.000Z",
+      "completedAt": "2026-09-05T20:39:05.000Z",
+      "exceptionReason": "Identity and the March 2021 sponsor transaction are proved, but the current direct-owner after-image is incomplete: Ridgemont's holder/fund/vehicle/stake/control, Source retention, and management rollover remain UNRESOLVED.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": "4f45144fb7110bfe3cd67c32539f54851eb174526519446692ef356e3a6c4dce",
+      "taskSnapshotSha256": "965b1dfa37fde67f6dbac0cbf7bfac4741078b8dae8202c86f256f9e2605217b",
       "artifacts": {
         "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0406-sparus-holdings/attempt-1/locked-batch-v1-task-snapshot.json",
-          "sha256": "4f45144fb7110bfe3cd67c32539f54851eb174526519446692ef356e3a6c4dce"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0406-sparus-holdings/attempt-2/locked-deferred-v1-task-snapshot.json",
+          "sha256": "965b1dfa37fde67f6dbac0cbf7bfac4741078b8dae8202c86f256f9e2605217b"
         },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
         "decision": {
-          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0404-0408-v1/decisions/0406-sparus-holdings.json",
-          "sha256": "b71770c0f673b9ddf91df195f15a82572661d5d7128e94abaea2456aa4dbb5e0"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0406-sparus-holdings/attempt-2/terminal-decision-deferred-v1.json",
+          "sha256": "328257eacf7ab35604b2f886cc6eebaab1a60cbf7f1204d47f6f49afaa5a0b23"
         },
         "companySnapshot": null
       },
       "recovery": null,
+      "reAdjudications": [
+        {
+          "sequence": 1,
+          "reopenedAt": "2026-09-05T20:35:38.463Z",
+          "reason": "Fresh signed-in maximum-effort re-adjudication and independently verified exact exception; batch 0406-0410 assembled",
+          "priorCompletedAt": "2026-09-02T01:16:00.000Z",
+          "priorExceptionReason": "Defer creation of Sparus Holdings while preserving the verified research. Ridgemont's official portfolio and acquisition releases prove its March 2021 investment and the company's current platform status, but management rollover, the complete current holder table, Ridgemont's exact stake and vehicle, and any deal-specific PNC equity component remain unresolved.",
+          "priorArtifacts": {
+            "taskSnapshot": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0406-sparus-holdings/attempt-1/locked-batch-v1-task-snapshot.json",
+              "sha256": "4f45144fb7110bfe3cd67c32539f54851eb174526519446692ef356e3a6c4dce"
+            },
+            "proposal": null,
+            "approval": null,
+            "applyReceipt": null,
+            "decision": {
+              "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0404-0408-v1/decisions/0406-sparus-holdings.json",
+              "sha256": "b71770c0f673b9ddf91df195f15a82572661d5d7128e94abaea2456aa4dbb5e0"
+            },
+            "companySnapshot": null
+          },
+          "priorManifestSha256": "78d737dff66d32d127d99913a92012144d01eee97e9e9f8fb102dd02fd5f95db",
+          "batchLedger": {
+            "location": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+            "sha256": "438296aa050ada7f40049cc8578337debb1a6fd19cefeece8d3ba0fc4e5f2dae"
+          },
+          "evidence": {
+            "researchDecision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0406-sparus-holdings/attempt-2/research-decision-v2.json",
+              "sha256": "a8f964e7ef35a358ea42b0245ac7ea477a612570e26644783d20125ed997c94b"
+            },
+            "chatgptAttestation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0406-sparus-holdings/attempt-2/chatgpt-attestation-v2.json",
+              "sha256": "8c965d247280457cd613c09107f8e9fb3210483afa74767ab3e466b5ec7d7bea"
+            },
+            "prompt": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0406-sparus-holdings/attempt-2/chatgpt-research-prompt.md",
+              "sha256": "d36c5a483056e6c45c6f3e1d9641c08de60cc950f713d2828ce9e26dde24f4d5"
+            },
+            "acceptedResponse": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0406-sparus-holdings/attempt-2/chatgpt-accepted-response.txt",
+              "sha256": "ddea7a61915ce14fd7e3c5fe5ce1eb3a349d9a2e6feabb15697e8ee3720213ba"
+            },
+            "transcript": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0406-sparus-holdings/attempt-2/chatgpt-transcript-materialized-v2.txt",
+              "sha256": "61b26613ce6ea08518fb51d1ba22e730cd5275140390f5ff7463d1ff14849ab9"
+            },
+            "sourceVerification": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0406-sparus-holdings/attempt-2/source-verification.json",
+              "sha256": "b9bacd17ae0c8da04c546e0cfaf5369098cd930be5cd9f1558dcaf2f520c7626"
+            },
+            "responseValidation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0406-sparus-holdings/attempt-2/chatgpt-response-validation.json",
+              "sha256": "ad1f315607dad0e3b01caa37c3573a58f0d3443219fbd9b59651085bf2c2d684"
+            }
+          }
+        }
+      ],
       "history": [
         {
           "sequence": 1,
@@ -42018,6 +42076,40 @@
             "e13f8d5e5e91bf0059312965522860cf9d3d3065290a2d2747e0cc96e3e22a2f"
           ],
           "kind": "BATCH"
+        },
+        {
+          "sequence": 3,
+          "from": "DEFERRED",
+          "to": "PENDING",
+          "at": "2026-09-05T20:35:38.463Z",
+          "reason": "Fresh signed-in maximum-effort re-adjudication and independently verified exact exception; batch 0406-0410 assembled",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "438296aa050ada7f40049cc8578337debb1a6fd19cefeece8d3ba0fc4e5f2dae",
+            "61b26613ce6ea08518fb51d1ba22e730cd5275140390f5ff7463d1ff14849ab9",
+            "8c965d247280457cd613c09107f8e9fb3210483afa74767ab3e466b5ec7d7bea",
+            "a8f964e7ef35a358ea42b0245ac7ea477a612570e26644783d20125ed997c94b",
+            "ad1f315607dad0e3b01caa37c3573a58f0d3443219fbd9b59651085bf2c2d684",
+            "b9bacd17ae0c8da04c546e0cfaf5369098cd930be5cd9f1558dcaf2f520c7626",
+            "d36c5a483056e6c45c6f3e1d9641c08de60cc950f713d2828ce9e26dde24f4d5",
+            "ddea7a61915ce14fd7e3c5fe5ce1eb3a349d9a2e6feabb15697e8ee3720213ba"
+          ],
+          "kind": "DEFERRED_READJUDICATION"
+        },
+        {
+          "sequence": 4,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-05T20:39:05.000Z",
+          "reason": "Identity and the March 2021 sponsor transaction are proved, but the current direct-owner after-image is incomplete: Ridgemont's holder/fund/vehicle/stake/control, Source retention, and management rollover remain UNRESOLVED.",
+          "taskSnapshotSha256": "965b1dfa37fde67f6dbac0cbf7bfac4741078b8dae8202c86f256f9e2605217b",
+          "evidenceSha256": [
+            "117ad173a7960b78dae2efac51d61f454c5b40d3dadd680e904818bcdc24f78d",
+            "328257eacf7ab35604b2f886cc6eebaab1a60cbf7f1204d47f6f49afaa5a0b23",
+            "965b1dfa37fde67f6dbac0cbf7bfac4741078b8dae8202c86f256f9e2605217b",
+            "a56fc75d9b05453f92a80edefe9146a34e8d19641e1929f43bac91aebcf3dbf1"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -42030,28 +42122,86 @@
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "c4cea7f435bbe03febf4ced7a9cb8e5c17b613a2f561d41f1533946e9033c8ac",
       "status": "DEFERRED",
-      "attempts": 1,
-      "startedAt": "2026-09-02T00:52:00.000Z",
-      "updatedAt": "2026-09-02T01:16:00.000Z",
-      "completedAt": "2026-09-02T01:16:00.000Z",
-      "exceptionReason": "Defer creation of Dauntless Air while preserving the verified research. Ridgewood and the acquisition announcement prove the June 4, 2026 acquisition of the U.S. emergency-management aviation platform, but management equity or seller rollover, Ridgewood's vehicle and stake, co-investors, and the post-closing holdco structure remain unresolved.",
+      "attempts": 2,
+      "startedAt": "2026-09-05T20:37:00.000Z",
+      "updatedAt": "2026-09-05T20:39:05.000Z",
+      "completedAt": "2026-09-05T20:39:05.000Z",
+      "exceptionReason": "Close/identity are proven; issuer, fund/vehicle, full holders/sellers, securities, stakes, control, co-investors and rollovers are not. Any current owner image would be inference.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": "1428b78a9c65541309cd1440a78328b1f562aa04042a5e1138079e1b064f0c87",
+      "taskSnapshotSha256": "4114079745cdcc366b51b84653b37318591fd8b9caaca69de76db5310cabc6f5",
       "artifacts": {
         "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0407-dauntless-air/attempt-1/locked-batch-v1-task-snapshot.json",
-          "sha256": "1428b78a9c65541309cd1440a78328b1f562aa04042a5e1138079e1b064f0c87"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0407-dauntless-air/attempt-2/locked-deferred-v1-task-snapshot.json",
+          "sha256": "4114079745cdcc366b51b84653b37318591fd8b9caaca69de76db5310cabc6f5"
         },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
         "decision": {
-          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0404-0408-v1/decisions/0407-dauntless-air.json",
-          "sha256": "bc5ce57f7906ae723dd1e26bcde722ae6cfa325675966a21b1f06bb31da745b1"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0407-dauntless-air/attempt-2/terminal-decision-deferred-v1.json",
+          "sha256": "cbb3027aa5d5c21d15bb190149df6d8f81db19829c6001308be446e456639149"
         },
         "companySnapshot": null
       },
       "recovery": null,
+      "reAdjudications": [
+        {
+          "sequence": 1,
+          "reopenedAt": "2026-09-05T20:35:38.911Z",
+          "reason": "Fresh signed-in maximum-effort re-adjudication and independently verified exact exception; batch 0406-0410 assembled",
+          "priorCompletedAt": "2026-09-02T01:16:00.000Z",
+          "priorExceptionReason": "Defer creation of Dauntless Air while preserving the verified research. Ridgewood and the acquisition announcement prove the June 4, 2026 acquisition of the U.S. emergency-management aviation platform, but management equity or seller rollover, Ridgewood's vehicle and stake, co-investors, and the post-closing holdco structure remain unresolved.",
+          "priorArtifacts": {
+            "taskSnapshot": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0407-dauntless-air/attempt-1/locked-batch-v1-task-snapshot.json",
+              "sha256": "1428b78a9c65541309cd1440a78328b1f562aa04042a5e1138079e1b064f0c87"
+            },
+            "proposal": null,
+            "approval": null,
+            "applyReceipt": null,
+            "decision": {
+              "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0404-0408-v1/decisions/0407-dauntless-air.json",
+              "sha256": "bc5ce57f7906ae723dd1e26bcde722ae6cfa325675966a21b1f06bb31da745b1"
+            },
+            "companySnapshot": null
+          },
+          "priorManifestSha256": "10de025f106896b96729fdcabd1b3855be044e55234f2717c955bb15d4148500",
+          "batchLedger": {
+            "location": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+            "sha256": "438296aa050ada7f40049cc8578337debb1a6fd19cefeece8d3ba0fc4e5f2dae"
+          },
+          "evidence": {
+            "researchDecision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0407-dauntless-air/attempt-2/research-decision-v2.json",
+              "sha256": "df8ddeae70bca36ae04510854e003315515e81e13901b0751f4275c8ddd8b871"
+            },
+            "chatgptAttestation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0407-dauntless-air/attempt-2/chatgpt-attestation-v2.json",
+              "sha256": "eee623b1857dba9c0caafb1172d67eee070d8258352a5b5f878379307e17cfd8"
+            },
+            "prompt": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0407-dauntless-air/attempt-2/chatgpt-research-prompt.md",
+              "sha256": "12870d6c09759b566ce3c772b3029dfab7d808dc2f8924227342d984a6ba72b3"
+            },
+            "acceptedResponse": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0407-dauntless-air/attempt-2/chatgpt-accepted-response.txt",
+              "sha256": "2dc59ac0ee3d0c79fa954366bd024aff211ad3796594fa2dcc790c40872139ec"
+            },
+            "transcript": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0407-dauntless-air/attempt-2/chatgpt-transcript-materialized-v2.txt",
+              "sha256": "2b13f6acae356811797561fa9e3111222bedc9d22e6341c2e8ff7df6f8449757"
+            },
+            "sourceVerification": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0407-dauntless-air/attempt-2/source-verification.json",
+              "sha256": "0431b8ea3b5f86d5d7baf103ad373214f00709f373755b8571178350d9158265"
+            },
+            "responseValidation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0407-dauntless-air/attempt-2/chatgpt-response-validation.json",
+              "sha256": "42b954e5020db6c61ca2b54d4272b56f73a541fe9fddbaf57a000e1b49e02dea"
+            }
+          }
+        }
+      ],
       "history": [
         {
           "sequence": 1,
@@ -42077,6 +42227,40 @@
             "e13f8d5e5e91bf0059312965522860cf9d3d3065290a2d2747e0cc96e3e22a2f"
           ],
           "kind": "BATCH"
+        },
+        {
+          "sequence": 3,
+          "from": "DEFERRED",
+          "to": "PENDING",
+          "at": "2026-09-05T20:35:38.911Z",
+          "reason": "Fresh signed-in maximum-effort re-adjudication and independently verified exact exception; batch 0406-0410 assembled",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "0431b8ea3b5f86d5d7baf103ad373214f00709f373755b8571178350d9158265",
+            "12870d6c09759b566ce3c772b3029dfab7d808dc2f8924227342d984a6ba72b3",
+            "2b13f6acae356811797561fa9e3111222bedc9d22e6341c2e8ff7df6f8449757",
+            "2dc59ac0ee3d0c79fa954366bd024aff211ad3796594fa2dcc790c40872139ec",
+            "42b954e5020db6c61ca2b54d4272b56f73a541fe9fddbaf57a000e1b49e02dea",
+            "438296aa050ada7f40049cc8578337debb1a6fd19cefeece8d3ba0fc4e5f2dae",
+            "df8ddeae70bca36ae04510854e003315515e81e13901b0751f4275c8ddd8b871",
+            "eee623b1857dba9c0caafb1172d67eee070d8258352a5b5f878379307e17cfd8"
+          ],
+          "kind": "DEFERRED_READJUDICATION"
+        },
+        {
+          "sequence": 4,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-05T20:39:05.000Z",
+          "reason": "Close/identity are proven; issuer, fund/vehicle, full holders/sellers, securities, stakes, control, co-investors and rollovers are not. Any current owner image would be inference.",
+          "taskSnapshotSha256": "4114079745cdcc366b51b84653b37318591fd8b9caaca69de76db5310cabc6f5",
+          "evidenceSha256": [
+            "117ad173a7960b78dae2efac51d61f454c5b40d3dadd680e904818bcdc24f78d",
+            "4114079745cdcc366b51b84653b37318591fd8b9caaca69de76db5310cabc6f5",
+            "a56fc75d9b05453f92a80edefe9146a34e8d19641e1929f43bac91aebcf3dbf1",
+            "cbb3027aa5d5c21d15bb190149df6d8f81db19829c6001308be446e456639149"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -42089,28 +42273,86 @@
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "6c95a825c1f643f472824f896639f0ef2209ffe2ffb54cfbd25e96abeabcc82b",
       "status": "DEFERRED",
-      "attempts": 1,
-      "startedAt": "2026-09-02T00:52:00.000Z",
-      "updatedAt": "2026-09-02T01:16:00.000Z",
-      "completedAt": "2026-09-02T01:16:00.000Z",
-      "exceptionReason": "Defer the MN8 Energy ownership correction while preserving the verified research. Direct sources support Ridgewood's March 28, 2024 $125 million convertible-preferred investment through WSI Fund II Holdings and the signed but unclosed Greenbacker acquisition. The complete current common-owner table and stakes remain unresolved, so applying a partial ownership after-image would risk displacing valid active owners before legal closing.",
+      "attempts": 2,
+      "startedAt": "2026-09-05T20:37:00.000Z",
+      "updatedAt": "2026-09-05T20:39:05.000Z",
+      "completedAt": "2026-09-05T20:39:05.000Z",
+      "exceptionReason": "Core identity, preferred issuance and pending-deal facts are proved, but no cutoff common register, exact stakes or transfer history is public. A correction would be incomplete.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": "ac611d7be4161af04d94f7825797faced8145ae986ff9befea7132fb390eb884",
+      "taskSnapshotSha256": "fff988d3858ea00fdde769f6135aa283e14f168e3eea75d1bcc3d98e1d93dfc9",
       "artifacts": {
         "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0408-mn8-energy/attempt-1/locked-batch-v1-task-snapshot.json",
-          "sha256": "ac611d7be4161af04d94f7825797faced8145ae986ff9befea7132fb390eb884"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0408-mn8-energy/attempt-2/locked-deferred-v1-task-snapshot.json",
+          "sha256": "fff988d3858ea00fdde769f6135aa283e14f168e3eea75d1bcc3d98e1d93dfc9"
         },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
         "decision": {
-          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0404-0408-v1/decisions/0408-mn8-energy.json",
-          "sha256": "1683ebad674b6cc82b74cd7951bd9ad47be236eb2334e8ed92e54a137055a775"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0408-mn8-energy/attempt-2/terminal-decision-deferred-v1.json",
+          "sha256": "b0d4268ecfb2102a98db7762f444472504d8a5bf06450ecc3582318634f40a67"
         },
         "companySnapshot": null
       },
       "recovery": null,
+      "reAdjudications": [
+        {
+          "sequence": 1,
+          "reopenedAt": "2026-09-05T20:35:39.350Z",
+          "reason": "Fresh signed-in maximum-effort re-adjudication and independently verified exact exception; batch 0406-0410 assembled",
+          "priorCompletedAt": "2026-09-02T01:16:00.000Z",
+          "priorExceptionReason": "Defer the MN8 Energy ownership correction while preserving the verified research. Direct sources support Ridgewood's March 28, 2024 $125 million convertible-preferred investment through WSI Fund II Holdings and the signed but unclosed Greenbacker acquisition. The complete current common-owner table and stakes remain unresolved, so applying a partial ownership after-image would risk displacing valid active owners before legal closing.",
+          "priorArtifacts": {
+            "taskSnapshot": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0408-mn8-energy/attempt-1/locked-batch-v1-task-snapshot.json",
+              "sha256": "ac611d7be4161af04d94f7825797faced8145ae986ff9befea7132fb390eb884"
+            },
+            "proposal": null,
+            "approval": null,
+            "applyReceipt": null,
+            "decision": {
+              "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0404-0408-v1/decisions/0408-mn8-energy.json",
+              "sha256": "1683ebad674b6cc82b74cd7951bd9ad47be236eb2334e8ed92e54a137055a775"
+            },
+            "companySnapshot": null
+          },
+          "priorManifestSha256": "868d3249b62c90e834a3894181fd140be9753a1e606724286d581cd1eaeccb5f",
+          "batchLedger": {
+            "location": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+            "sha256": "438296aa050ada7f40049cc8578337debb1a6fd19cefeece8d3ba0fc4e5f2dae"
+          },
+          "evidence": {
+            "researchDecision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0408-mn8-energy/attempt-2/research-decision-v2.json",
+              "sha256": "62f9525ab36695a746be6349fe41464d65de71e7982ddb6e81b94419f4b04715"
+            },
+            "chatgptAttestation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0408-mn8-energy/attempt-2/chatgpt-attestation-v2.json",
+              "sha256": "66f42f410b943fea885913c2c93798ac2be85ecbb9d0c9f99b12cbccd217182b"
+            },
+            "prompt": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0408-mn8-energy/attempt-2/chatgpt-research-prompt.md",
+              "sha256": "ad1ce91bbf38485f14704591d8e936cf79be6e68bb6da8c3368829f6a8b2c123"
+            },
+            "acceptedResponse": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0408-mn8-energy/attempt-2/chatgpt-accepted-response.txt",
+              "sha256": "ca90f9d47ee96b0b919f017d99a09f47f52f990fb745dedde2d4d441f00dc068"
+            },
+            "transcript": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0408-mn8-energy/attempt-2/chatgpt-transcript-materialized-v2.txt",
+              "sha256": "9eb41c16fdf98c3317b67ab7f5cd9bd6252c5b8e0b91544f41c09081d0d58893"
+            },
+            "sourceVerification": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0408-mn8-energy/attempt-2/source-verification.json",
+              "sha256": "1eb8adcb54ef1e00076f3962e25051ec02db5526b32f40895541eb2a9e32fc5e"
+            },
+            "responseValidation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0408-mn8-energy/attempt-2/chatgpt-response-validation.json",
+              "sha256": "19f5abdba42bc2af46eea33ea8f91034706b50999690e39dbb40022506e6f7bd"
+            }
+          }
+        }
+      ],
       "history": [
         {
           "sequence": 1,
@@ -42136,6 +42378,40 @@
             "e13f8d5e5e91bf0059312965522860cf9d3d3065290a2d2747e0cc96e3e22a2f"
           ],
           "kind": "BATCH"
+        },
+        {
+          "sequence": 3,
+          "from": "DEFERRED",
+          "to": "PENDING",
+          "at": "2026-09-05T20:35:39.350Z",
+          "reason": "Fresh signed-in maximum-effort re-adjudication and independently verified exact exception; batch 0406-0410 assembled",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "19f5abdba42bc2af46eea33ea8f91034706b50999690e39dbb40022506e6f7bd",
+            "1eb8adcb54ef1e00076f3962e25051ec02db5526b32f40895541eb2a9e32fc5e",
+            "438296aa050ada7f40049cc8578337debb1a6fd19cefeece8d3ba0fc4e5f2dae",
+            "62f9525ab36695a746be6349fe41464d65de71e7982ddb6e81b94419f4b04715",
+            "66f42f410b943fea885913c2c93798ac2be85ecbb9d0c9f99b12cbccd217182b",
+            "9eb41c16fdf98c3317b67ab7f5cd9bd6252c5b8e0b91544f41c09081d0d58893",
+            "ad1ce91bbf38485f14704591d8e936cf79be6e68bb6da8c3368829f6a8b2c123",
+            "ca90f9d47ee96b0b919f017d99a09f47f52f990fb745dedde2d4d441f00dc068"
+          ],
+          "kind": "DEFERRED_READJUDICATION"
+        },
+        {
+          "sequence": 4,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-05T20:39:05.000Z",
+          "reason": "Core identity, preferred issuance and pending-deal facts are proved, but no cutoff common register, exact stakes or transfer history is public. A correction would be incomplete.",
+          "taskSnapshotSha256": "fff988d3858ea00fdde769f6135aa283e14f168e3eea75d1bcc3d98e1d93dfc9",
+          "evidenceSha256": [
+            "117ad173a7960b78dae2efac51d61f454c5b40d3dadd680e904818bcdc24f78d",
+            "a56fc75d9b05453f92a80edefe9146a34e8d19641e1929f43bac91aebcf3dbf1",
+            "b0d4268ecfb2102a98db7762f444472504d8a5bf06450ecc3582318634f40a67",
+            "fff988d3858ea00fdde769f6135aa283e14f168e3eea75d1bcc3d98e1d93dfc9"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -42148,28 +42424,86 @@
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "2853c8d0e28d3a0ad3e5f4407da78551d6095f70f3fb7f65faf52b3aea3adf66",
       "status": "DEFERRED",
-      "attempts": 1,
-      "startedAt": "2026-09-02T01:53:09.000Z",
-      "updatedAt": "2026-09-02T02:00:58.000Z",
-      "completedAt": "2026-09-02T02:00:58.000Z",
-      "exceptionReason": "Defer the Prospect Lake correction while preserving the verified project-company identity and Ridgewood-IDE co-ownership evidence. The July 31, 2026 Prospect Lake Water, L.P. amendment has not been inspected for an ownership or general-partner change, and exact current stakes remain undisclosed. Applying an ownership after-image before resolving that filing would risk recording a stale cap table.",
+      "attempts": 2,
+      "startedAt": "2026-09-05T20:37:00.000Z",
+      "updatedAt": "2026-09-05T20:39:05.000Z",
+      "completedAt": "2026-09-05T20:39:05.000Z",
+      "exceptionReason": "Identity, historic contractual interests and the current general-partner chain are verified; the July 2026 filing has been visually read and concerns the existing GP detail/address. The complete cutoff-current direct-holder register and exact equity interests remain unavailable, so no ownership mutation is supported.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": "a7aadbc7cc83c2f7b86b0d0d3ee3aaaf6520c2b5a92dd2ed8672cd6fbe97ea17",
+      "taskSnapshotSha256": "cfeee284536350efd3f226b37bc1f9c8cd1d2a1b365952413214e798ac9bb5ef",
       "artifacts": {
         "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0409-prospect-lake-clean-water-center/attempt-1/locked-batch-v1-task-snapshot.json",
-          "sha256": "a7aadbc7cc83c2f7b86b0d0d3ee3aaaf6520c2b5a92dd2ed8672cd6fbe97ea17"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0409-prospect-lake-clean-water-center/attempt-2/locked-deferred-v1-task-snapshot.json",
+          "sha256": "cfeee284536350efd3f226b37bc1f9c8cd1d2a1b365952413214e798ac9bb5ef"
         },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
         "decision": {
-          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0409-0413-v1/decisions/0409-prospect-lake-clean-water-center.json",
-          "sha256": "0b421e4deac9cbef0f5caa71f6ee5129f3f9db4f7bddb293025d7175392738ee"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0409-prospect-lake-clean-water-center/attempt-2/terminal-decision-deferred-v1.json",
+          "sha256": "19d4fb43af031ae9ff8116981b649fd3ed7c288d8247c413614453253e92c2c1"
         },
         "companySnapshot": null
       },
       "recovery": null,
+      "reAdjudications": [
+        {
+          "sequence": 1,
+          "reopenedAt": "2026-09-05T20:35:39.786Z",
+          "reason": "Fresh signed-in maximum-effort re-adjudication and independently verified exact exception; batch 0406-0410 assembled",
+          "priorCompletedAt": "2026-09-02T02:00:58.000Z",
+          "priorExceptionReason": "Defer the Prospect Lake correction while preserving the verified project-company identity and Ridgewood-IDE co-ownership evidence. The July 31, 2026 Prospect Lake Water, L.P. amendment has not been inspected for an ownership or general-partner change, and exact current stakes remain undisclosed. Applying an ownership after-image before resolving that filing would risk recording a stale cap table.",
+          "priorArtifacts": {
+            "taskSnapshot": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0409-prospect-lake-clean-water-center/attempt-1/locked-batch-v1-task-snapshot.json",
+              "sha256": "a7aadbc7cc83c2f7b86b0d0d3ee3aaaf6520c2b5a92dd2ed8672cd6fbe97ea17"
+            },
+            "proposal": null,
+            "approval": null,
+            "applyReceipt": null,
+            "decision": {
+              "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0409-0413-v1/decisions/0409-prospect-lake-clean-water-center.json",
+              "sha256": "0b421e4deac9cbef0f5caa71f6ee5129f3f9db4f7bddb293025d7175392738ee"
+            },
+            "companySnapshot": null
+          },
+          "priorManifestSha256": "a33b4ca1e24793796b1f0073877f110dc835c1948d8920d7d2b405c3ea20fa6d",
+          "batchLedger": {
+            "location": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+            "sha256": "438296aa050ada7f40049cc8578337debb1a6fd19cefeece8d3ba0fc4e5f2dae"
+          },
+          "evidence": {
+            "researchDecision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0409-prospect-lake-clean-water-center/attempt-2/research-decision-v2.json",
+              "sha256": "859d257f88dd31fb13f522d604cf3c24a7102142a0170b9c09224b1104be26ab"
+            },
+            "chatgptAttestation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0409-prospect-lake-clean-water-center/attempt-2/chatgpt-attestation-v2.json",
+              "sha256": "b192c75187df4565e0493ea375d57d44972fba17a74fdaef843c0df2299c10cc"
+            },
+            "prompt": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0409-prospect-lake-clean-water-center/attempt-2/chatgpt-research-prompt.md",
+              "sha256": "77c6564f9c441753bb3f18da524888910fc3f15b89541e5108586c11d6a14340"
+            },
+            "acceptedResponse": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0409-prospect-lake-clean-water-center/attempt-2/chatgpt-accepted-response.txt",
+              "sha256": "c97198d82a2022d7b14adb764527b114c914d3a0ae53831aadeb49522b90aa13"
+            },
+            "transcript": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0409-prospect-lake-clean-water-center/attempt-2/chatgpt-transcript-materialized-v2.txt",
+              "sha256": "28def4e72cf44c801ce71f65a8242d6d4701860e75c133e27a62f43f4ab1b5ec"
+            },
+            "sourceVerification": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0409-prospect-lake-clean-water-center/attempt-2/source-verification-v2.json",
+              "sha256": "1aa9fc805fc07941838dce551d2e9af0c235b799ffa65d17fb59bfaf7b64876a"
+            },
+            "responseValidation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0409-prospect-lake-clean-water-center/attempt-2/chatgpt-response-validation-v2.json",
+              "sha256": "57d06b011ca7f8d57711a5492d9f321387755332750e2a7a4971a092e1dadfdf"
+            }
+          }
+        }
+      ],
       "history": [
         {
           "sequence": 1,
@@ -42195,6 +42529,40 @@
             "df5c5302abc87a42cc5330ce4b4d40f56e9473e834c4fbb0747bc74646166aee"
           ],
           "kind": "BATCH"
+        },
+        {
+          "sequence": 3,
+          "from": "DEFERRED",
+          "to": "PENDING",
+          "at": "2026-09-05T20:35:39.786Z",
+          "reason": "Fresh signed-in maximum-effort re-adjudication and independently verified exact exception; batch 0406-0410 assembled",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "1aa9fc805fc07941838dce551d2e9af0c235b799ffa65d17fb59bfaf7b64876a",
+            "28def4e72cf44c801ce71f65a8242d6d4701860e75c133e27a62f43f4ab1b5ec",
+            "438296aa050ada7f40049cc8578337debb1a6fd19cefeece8d3ba0fc4e5f2dae",
+            "57d06b011ca7f8d57711a5492d9f321387755332750e2a7a4971a092e1dadfdf",
+            "77c6564f9c441753bb3f18da524888910fc3f15b89541e5108586c11d6a14340",
+            "859d257f88dd31fb13f522d604cf3c24a7102142a0170b9c09224b1104be26ab",
+            "b192c75187df4565e0493ea375d57d44972fba17a74fdaef843c0df2299c10cc",
+            "c97198d82a2022d7b14adb764527b114c914d3a0ae53831aadeb49522b90aa13"
+          ],
+          "kind": "DEFERRED_READJUDICATION"
+        },
+        {
+          "sequence": 4,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-05T20:39:05.000Z",
+          "reason": "Identity, historic contractual interests and the current general-partner chain are verified; the July 2026 filing has been visually read and concerns the existing GP detail/address. The complete cutoff-current direct-holder register and exact equity interests remain unavailable, so no ownership mutation is supported.",
+          "taskSnapshotSha256": "cfeee284536350efd3f226b37bc1f9c8cd1d2a1b365952413214e798ac9bb5ef",
+          "evidenceSha256": [
+            "117ad173a7960b78dae2efac51d61f454c5b40d3dadd680e904818bcdc24f78d",
+            "19d4fb43af031ae9ff8116981b649fd3ed7c288d8247c413614453253e92c2c1",
+            "a56fc75d9b05453f92a80edefe9146a34e8d19641e1929f43bac91aebcf3dbf1",
+            "cfeee284536350efd3f226b37bc1f9c8cd1d2a1b365952413214e798ac9bb5ef"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -42207,28 +42575,86 @@
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "27decf45365605386b8e32520d0babb7caceb58e15f4dab5f1e0c482b06f3e3a",
       "status": "DEFERRED",
-      "attempts": 1,
-      "startedAt": "2026-09-02T01:53:09.000Z",
-      "updatedAt": "2026-09-02T02:00:58.000Z",
-      "completedAt": "2026-09-02T02:00:58.000Z",
-      "exceptionReason": "Defer the Sierra Railroad ownership correction while preserving the verified control and retained-investment evidence. Ridgewood's release proves a controlling acquisition and says Mike Hart retained a significant investment, but the complete post-close cap table, retained-holder roster and Sunburst passenger-operation perimeter are not directly disclosed. The existing Ridgewood-only owner representation therefore cannot yet be safely replaced with a complete after-image.",
+      "attempts": 2,
+      "startedAt": "2026-09-05T20:37:00.000Z",
+      "updatedAt": "2026-09-05T20:39:05.000Z",
+      "completedAt": "2026-09-05T20:39:05.000Z",
+      "exceptionReason": "Control and Hart retention are proved; direct holders, fund/vehicle, exact stakes/votes and seller/rollover set are not. The owner after-image is unsafe.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": "5c23838bd8608d4564571b62587fe8b0c4f5f11e512004664879ca652db288c8",
+      "taskSnapshotSha256": "6659d8301da0049aa6e60f2e2a6b2d4b3293e7f7ec5bd07e73d6e53278e5ef19",
       "artifacts": {
         "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0410-sierra-railroad-company/attempt-1/locked-batch-v2-task-snapshot.json",
-          "sha256": "5c23838bd8608d4564571b62587fe8b0c4f5f11e512004664879ca652db288c8"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0410-sierra-railroad-company/attempt-2/locked-deferred-v1-task-snapshot.json",
+          "sha256": "6659d8301da0049aa6e60f2e2a6b2d4b3293e7f7ec5bd07e73d6e53278e5ef19"
         },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
         "decision": {
-          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0409-0413-v1/decisions/0410-sierra-railroad-company.json",
-          "sha256": "d8fee61adee948972e745ec34418a9955eaadc2006d62c16dab8250a45a76aa5"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0410-sierra-railroad-company/attempt-2/terminal-decision-deferred-v1.json",
+          "sha256": "10a534f810152789d9e622edadd1767f782abbca64cf75098d083692b3073323"
         },
         "companySnapshot": null
       },
       "recovery": null,
+      "reAdjudications": [
+        {
+          "sequence": 1,
+          "reopenedAt": "2026-09-05T20:35:40.219Z",
+          "reason": "Fresh signed-in maximum-effort re-adjudication and independently verified exact exception; batch 0406-0410 assembled",
+          "priorCompletedAt": "2026-09-02T02:00:58.000Z",
+          "priorExceptionReason": "Defer the Sierra Railroad ownership correction while preserving the verified control and retained-investment evidence. Ridgewood's release proves a controlling acquisition and says Mike Hart retained a significant investment, but the complete post-close cap table, retained-holder roster and Sunburst passenger-operation perimeter are not directly disclosed. The existing Ridgewood-only owner representation therefore cannot yet be safely replaced with a complete after-image.",
+          "priorArtifacts": {
+            "taskSnapshot": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0410-sierra-railroad-company/attempt-1/locked-batch-v2-task-snapshot.json",
+              "sha256": "5c23838bd8608d4564571b62587fe8b0c4f5f11e512004664879ca652db288c8"
+            },
+            "proposal": null,
+            "approval": null,
+            "applyReceipt": null,
+            "decision": {
+              "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0409-0413-v1/decisions/0410-sierra-railroad-company.json",
+              "sha256": "d8fee61adee948972e745ec34418a9955eaadc2006d62c16dab8250a45a76aa5"
+            },
+            "companySnapshot": null
+          },
+          "priorManifestSha256": "9e939f1d0acf78c6b626ce280ddb84fcc2f3e1f52eede14bbc96fc719ff25b59",
+          "batchLedger": {
+            "location": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+            "sha256": "438296aa050ada7f40049cc8578337debb1a6fd19cefeece8d3ba0fc4e5f2dae"
+          },
+          "evidence": {
+            "researchDecision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0410-sierra-railroad-company/attempt-2/research-decision.json",
+              "sha256": "b96d188d0868d7f4069828290ec221dbb3fd961a883890eb05ea542d230d46da"
+            },
+            "chatgptAttestation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0410-sierra-railroad-company/attempt-2/chatgpt-attestation.json",
+              "sha256": "352992703c69d33b6e342796a63b6dcc0fa59cebfb917d101c6afc29de54283f"
+            },
+            "prompt": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0410-sierra-railroad-company/attempt-2/chatgpt-research-prompt.md",
+              "sha256": "f329ed72661a61070e35081f3655e9ecdbfb29a902ef3ff611da5480216682f0"
+            },
+            "acceptedResponse": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0410-sierra-railroad-company/attempt-2/chatgpt-accepted-response.txt",
+              "sha256": "4d001e42e1f7fbe49a9c394842044612c6b87e576a81a160c905d770b2ac07dc"
+            },
+            "transcript": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0410-sierra-railroad-company/attempt-2/chatgpt-transcript.txt",
+              "sha256": "47348dd588e058feadd2538e56362512b5305ffdb246c4066e1e6e3d14efeeba"
+            },
+            "sourceVerification": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0410-sierra-railroad-company/attempt-2/source-verification.json",
+              "sha256": "75c478c0f0002eeab2e6a1fe5fd0fa957d54edff23e86587c5c939fa608c4ea1"
+            },
+            "responseValidation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0410-sierra-railroad-company/attempt-2/chatgpt-response-validation.json",
+              "sha256": "6848f57e0e0cdda25bcc5da7c247cca63009bc07fd0fb9e0e7d142ba73388b2f"
+            }
+          }
+        }
+      ],
       "history": [
         {
           "sequence": 1,
@@ -42252,6 +42678,40 @@
             "5c23838bd8608d4564571b62587fe8b0c4f5f11e512004664879ca652db288c8",
             "d8fee61adee948972e745ec34418a9955eaadc2006d62c16dab8250a45a76aa5",
             "df5c5302abc87a42cc5330ce4b4d40f56e9473e834c4fbb0747bc74646166aee"
+          ],
+          "kind": "BATCH"
+        },
+        {
+          "sequence": 3,
+          "from": "DEFERRED",
+          "to": "PENDING",
+          "at": "2026-09-05T20:35:40.219Z",
+          "reason": "Fresh signed-in maximum-effort re-adjudication and independently verified exact exception; batch 0406-0410 assembled",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "352992703c69d33b6e342796a63b6dcc0fa59cebfb917d101c6afc29de54283f",
+            "438296aa050ada7f40049cc8578337debb1a6fd19cefeece8d3ba0fc4e5f2dae",
+            "47348dd588e058feadd2538e56362512b5305ffdb246c4066e1e6e3d14efeeba",
+            "4d001e42e1f7fbe49a9c394842044612c6b87e576a81a160c905d770b2ac07dc",
+            "6848f57e0e0cdda25bcc5da7c247cca63009bc07fd0fb9e0e7d142ba73388b2f",
+            "75c478c0f0002eeab2e6a1fe5fd0fa957d54edff23e86587c5c939fa608c4ea1",
+            "b96d188d0868d7f4069828290ec221dbb3fd961a883890eb05ea542d230d46da",
+            "f329ed72661a61070e35081f3655e9ecdbfb29a902ef3ff611da5480216682f0"
+          ],
+          "kind": "DEFERRED_READJUDICATION"
+        },
+        {
+          "sequence": 4,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-05T20:39:05.000Z",
+          "reason": "Control and Hart retention are proved; direct holders, fund/vehicle, exact stakes/votes and seller/rollover set are not. The owner after-image is unsafe.",
+          "taskSnapshotSha256": "6659d8301da0049aa6e60f2e2a6b2d4b3293e7f7ec5bd07e73d6e53278e5ef19",
+          "evidenceSha256": [
+            "10a534f810152789d9e622edadd1767f782abbca64cf75098d083692b3073323",
+            "117ad173a7960b78dae2efac51d61f454c5b40d3dadd680e904818bcdc24f78d",
+            "6659d8301da0049aa6e60f2e2a6b2d4b3293e7f7ec5bd07e73d6e53278e5ef19",
+            "a56fc75d9b05453f92a80edefe9146a34e8d19641e1929f43bac91aebcf3dbf1"
           ],
           "kind": "BATCH"
         }
@@ -47860,5 +48320,5 @@
       ]
     }
   ],
-  "manifestSha256": "78d737dff66d32d127d99913a92012144d01eee97e9e9f8fb102dd02fd5f95db"
+  "manifestSha256": "55e06e0bbf0264048b4a3ae6369931bc2cf0be56797d03644bf5eb8b32ebbd4a"
 }

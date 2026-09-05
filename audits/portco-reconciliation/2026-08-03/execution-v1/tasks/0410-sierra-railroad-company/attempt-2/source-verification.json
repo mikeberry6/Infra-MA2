@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+  "runId": "portco-deferred-readjudication-2026-09-05",
+  "taskId": "ledger:0410:sierra-railroad-company:b9c99f78",
+  "taskIndex": 410,
+  "companyName": "Sierra Railroad Company",
+  "checkedAt": "2026-09-05T20:33:00.000Z",
+  "method": "Independent current HTTP byte capture and hashes for all six returned URLs; direct source HTML claim review; pypdf text inspection and visual rendering of RRIF page14; interactive Delaware registry observation. Secondary sources remain secondary; registry landing bytes are not entity-detail evidence.",
+  "sources": [
+    {
+      "url": "https://ridgewoodinfrastructure.com/ridgewood-infrastructure-acquires-sierra-railroad-company/",
+      "finalUrl": "https://ridgewoodinfrastructure.com/ridgewood-infrastructure-acquires-sierra-railroad-company/",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 134070,
+      "sha256": "d87f649befa076ca3694296460862a36bbf3cb3edd471e28ab7ca03407b94ac6",
+      "evidenceBytesPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0410-sierra-railroad-company/attempt-2/source-bytes/source-1.html",
+      "sourceTier": "1-PARTY",
+      "healthStatus": "WORKING",
+      "applicationPrimary": true,
+      "verifiedClaims": [
+        "Direct sponsor acquired controlling interest by March 9, 2026; Hart says he remains significant investor.",
+        "Sierra Northern and Railpower included; CVAT add-on; Brookfield provides debt.",
+        "No complete direct holder set, fund, vehicle, exact stake, votes or retained/seller schedule disclosed."
+      ]
+    },
+    {
+      "url": "https://icis.corp.delaware.gov/ecorp/entitysearch/namesearch.aspx",
+      "finalUrl": "https://icis.corp.delaware.gov/ecorp/entitysearch/namesearch.aspx",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 46893,
+      "sha256": "61c9a46135344af0a07808678fb12744e3484eef5ed23f9e6802ea1943513660",
+      "evidenceBytesPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0410-sierra-railroad-company/attempt-2/source-bytes/source-2.html",
+      "sourceTier": "1-GOV",
+      "healthStatus": "LANDING_WORKING_DETAIL_UNAVAILABLE",
+      "applicationPrimary": false,
+      "verifiedClaims": [
+        "Search landing page reopened; browser shows processing error and Search disabled. No detail result verified."
+      ]
+    },
+    {
+      "url": "https://savenoyoheadlands.org/mrmdom/meyer/meyer_appeal/APPELLANTS_MOT_JUD_NOT_DEC_PAUL_BEARD_A168497_%20A168959.pdf",
+      "finalUrl": "https://savenoyoheadlands.org/mrmdom/meyer/meyer_appeal/APPELLANTS_MOT_JUD_NOT_DEC_PAUL_BEARD_A168497_%20A168959.pdf",
+      "httpStatus": 200,
+      "mediaType": "application/pdf",
+      "bytes": 2942849,
+      "sha256": "d9f71b7d8da69abbf2c493a1be46b10c3e34eadecc72965d3672a5a15e9c565a",
+      "evidenceBytesPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0410-sierra-railroad-company/attempt-2/source-bytes/source-3.pdf",
+      "sourceTier": "1-CONTRACT",
+      "healthStatus": "WORKING",
+      "applicationPrimary": false,
+      "verifiedClaims": [
+        "Court-copy declaration page 4 identifies January 11, 2024 RRIF agreement.",
+        "Pages 14/20/27 define majority beneficial economic/voting control baseline, Sierra Railroad Company California corporation as Holdings and Michael Hart as Permitted Holder.",
+        "Not an exact direct holder register or post-March2026 capitalization schedule."
+      ]
+    },
+    {
+      "url": "https://northborne.com/news/sierra-railroad-company-has-been-acquired-by-ridgewood-infrastructure/",
+      "finalUrl": "https://northborne.com/news/sierra-railroad-company-has-been-acquired-by-ridgewood-infrastructure/",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 100691,
+      "sha256": "a64a6c5872d4f7112fa79aac8256a3dd4dca1b1f9067e3545b549ca38f528ca8",
+      "evidenceBytesPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0410-sierra-railroad-company/attempt-2/source-bytes/source-4.html",
+      "sourceTier": "1-ADVISER",
+      "healthStatus": "WORKING",
+      "applicationPrimary": false,
+      "verifiedClaims": [
+        "March 11 adviser release confirms sale completed and financial terms undisclosed.",
+        "Includes unnamed passenger rail business and rights along mainline; no separation/cap-table schedule."
+      ]
+    },
+    {
+      "url": "https://www.mendolocal.news/private-equity-acquires-skunk-train-owner/",
+      "finalUrl": "https://www.mendolocal.news/private-equity-acquires-skunk-train-owner/",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 47074,
+      "sha256": "6d198800e9ba3d70466554f869f49b2cc6eaf3c89864c748df3d250f6d28c262",
+      "evidenceBytesPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0410-sierra-railroad-company/attempt-2/source-bytes/source-5.html",
+      "sourceTier": "2-RECORD-REPORT",
+      "healthStatus": "WORKING",
+      "applicationPrimary": false,
+      "verifiedClaims": [
+        "Secondary reporting describes March6 merger with RW Whitney Merger Sub,66.8percent legacy cashout/33.2percent preservation and conversion.",
+        "Reporting is not independently certified direct filing evidence; no current holder or exact Ridgewood percentage inferred."
+      ]
+    },
+    {
+      "url": "https://www.mendolocal.news/who-owns-the-mill-site-in-fort-bragg/",
+      "finalUrl": "https://www.mendolocal.news/who-owns-the-mill-site-in-fort-bragg/",
+      "httpStatus": 200,
+      "mediaType": "text/html",
+      "bytes": 42349,
+      "sha256": "0e0651d332958d45d8bc8bcb426417b6ba678201010b48b15e8ca56f9414ac69",
+      "evidenceBytesPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0410-sierra-railroad-company/attempt-2/source-bytes/source-6.html",
+      "sourceTier": "2-RECORD-REPORT",
+      "healthStatus": "WORKING",
+      "applicationPrimary": false,
+      "verifiedClaims": [
+        "Secondary report describes January29 transfers to distinct Hart-controlled Holdings and quotes Mendocino denial of Ridgewood involvement.",
+        "Parcel record lag and unnamed passenger inclusion leave perimeter uncertified; no direct transfer/ownership schedule recovered."
+      ]
+    }
+  ],
+  "checks": {
+    "allReturnedEvidenceUrlsChecked": true,
+    "allReturnedUrlsChecked": true,
+    "allEvidenceRowsChecked": true,
+    "allUrlsHttps": true,
+    "returnedOpenCount": 6,
+    "returnedDetailUnavailableCount": 1,
+    "exactlyOneApplicationPrimary": true,
+    "controlAndHartRetentionVerified": true,
+    "completeCutoffDirectOwnerSetVerified": false,
+    "certifiedConversionContinuityVerified": false,
+    "certifiedCarveOutVerified": false,
+    "ownershipMutationBlocked": true,
+    "terminalDeferralSupported": true
+  },
+  "allEvidenceUrlsDirectHttps": true,
+  "allReturnedEvidenceSourcesWorkingOrBrowserVerified": false,
+  "directByteCaptureCount": 6,
+  "deadSourceCount": 0,
+  "recommendedApplicationPrimaryUrl": "https://ridgewoodinfrastructure.com/ridgewood-infrastructure-acquires-sierra-railroad-company/",
+  "recommendedApplicationPrimarySha256": "d87f649befa076ca3694296460862a36bbf3cb3edd471e28ab7ca03407b94ac6",
+  "limitations": [
+    "The Delaware search URL was reopened by HTTP and browser. The HTTP bytes are only the landing form; browser displayed An error occurred while processing the request and a disabled Search control. No independent entity-detail or certified conversion check succeeded. The response's LLC number, formation date and CA continuity remain unverified hypotheses, not mutation facts.",
+    "The RRIF document is an executed-agreement copy embedded in an appellate filing on a third-party host, not an official regulator-hosted download. Page 4 identifies the attached January 11, 2024 agreement; pages 14, 20 and 27 define change in control, Holdings as Sierra Railroad Company (California corporation) and Michael Hart as Permitted Holder. The majority threshold is a contractual control baseline, not an exact registered direct stake or a 2026 owner register.",
+    "The two MendoLocal pages are secondary record-based reporting, independently reopened and hashed only as corroborative research. The merger/share mechanics, conversion and apparent carve-out are not promoted into direct-source certified facts."
+  ]
+}

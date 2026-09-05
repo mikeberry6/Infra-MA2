@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_ATTESTATION",
+  "runId": "portco-deferred-readjudication-2026-09-05",
+  "taskId": "ledger:0409:prospect-lake-clean-water-center:c098d1e8",
+  "taskIndex": 409,
+  "companyName": "Prospect Lake Clean Water Center",
+  "conversationUrl": "https://chatgpt.com/c/6a9c5a07-3688-83e9-b7f8-c1b9c116b147",
+  "accountTier": "ChatGPT Pro",
+  "surface": "Work",
+  "model": "GPT-5.6 Sol",
+  "effort": "Ultra",
+  "power": "6 of 6",
+  "uiVerified": true,
+  "uiEvidence": {
+    "accountLabel": "mike berry Pro",
+    "surfaceLabel": "Work",
+    "modeMenuModelLabel": "GPT-5.6 Sol",
+    "composerModelLabel": "GPT-5.6 Sol Ultra",
+    "modeMenuEffortLabel": "Ultra",
+    "modeMenuPowerLabel": "Ultra, 6 of 6",
+    "capturedBeforeSubmission": true
+  },
+  "initialSubmittedAt": "2026-09-05T18:05:52.000Z",
+  "initialCompletedObservedAt": "2026-09-05T18:51:17.000Z",
+  "initialReportedGenerationDuration": "PT27M27S",
+  "repairSubmittedAt": null,
+  "repairCompletedObservedAt": null,
+  "repairReportedGenerationDuration": null,
+  "repairCount": 0,
+  "initialOutcome": "VALIDATED_STRUCTURED_RESPONSE",
+  "finalOutcome": "VALIDATED_STRUCTURED_RESPONSE_WITHOUT_REPAIR",
+  "contentHashes": {
+    "promptSha256": "77c6564f9c441753bb3f18da524888910fc3f15b89541e5108586c11d6a14340",
+    "initialResponseSha256": "c97198d82a2022d7b14adb764527b114c914d3a0ae53831aadeb49522b90aa13",
+    "repairPromptSha256": null,
+    "acceptedResponseSha256": "c97198d82a2022d7b14adb764527b114c914d3a0ae53831aadeb49522b90aa13",
+    "transcriptSha256": "28def4e72cf44c801ce71f65a8242d6d4701860e75c133e27a62f43f4ab1b5ec"
+  },
+  "captureMethod": "signed-in ChatGPT web application via browser DOM textContent",
+  "captureNote": "The prompt was submitted exactly once after the signed-in UI visibly showed the Pro account, Work surface, GPT-5.6 Sol and the current maximum Ultra 6-of-6 effort. The live UI no longer exposed the former Pro 5-of-5 label, so this attestation preserves the stronger current setting and exact visible labels. The UI reported 27m27s for the generation. The raw assistant-message DOM textContent was captured verbatim, parsed as strict JSON between the requested markers and preserved with one terminal LF.",
+  "transcriptMaterialization": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0409-prospect-lake-clean-water-center/attempt-2/chatgpt-transcript-materialized-v2.txt",
+    "sourceTranscriptPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0409-prospect-lake-clean-water-center/attempt-2/chatgpt-transcript.txt",
+    "sourceTranscriptSha256": "03e22029f98d85a5cac7231a1b518754a54f7297592c26a5daed44c8f7334a99",
+    "method": "Verbatim preserved prompt and accepted response expanded into one artifact; intermediate progress/tool text not claimed.",
+    "generatedAt": "2026-09-05T20:16:00.000Z"
+  }
+}
+

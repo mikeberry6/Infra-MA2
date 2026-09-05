@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_ATTESTATION",
+  "runId": "portco-deferred-readjudication-2026-09-05",
+  "taskId": "ledger:0408:mn8-energy:3c6d0235",
+  "taskIndex": 408,
+  "companyName": "MN8 Energy",
+  "conversationUrl": "https://chatgpt.com/c/6a9c5206-8708-83ea-bfc5-6ea3409423be",
+  "accountTier": "ChatGPT Pro",
+  "surface": "Work",
+  "model": "GPT-5.6 Sol",
+  "effort": "Ultra",
+  "power": "6 of 6",
+  "uiVerified": true,
+  "uiEvidence": {
+    "accountLabel": "mike berry Pro",
+    "surfaceLabel": "Work",
+    "modeMenuModelLabel": "GPT-5.6 Sol",
+    "composerModelLabel": "GPT-5.6 Sol Ultra",
+    "modeMenuEffortLabel": "Ultra",
+    "modeMenuPowerLabel": "Ultra, 6 of 6",
+    "capturedBeforeSubmission": true
+  },
+  "initialSubmittedAt": "2026-09-05T17:32:35.000Z",
+  "initialCompletedObservedAt": "2026-09-05T17:58:54.000Z",
+  "initialReportedGenerationDuration": "PT24M6S",
+  "repairSubmittedAt": null,
+  "repairCompletedObservedAt": null,
+  "repairReportedGenerationDuration": null,
+  "repairCount": 0,
+  "initialOutcome": "VALIDATED_STRUCTURED_RESPONSE",
+  "finalOutcome": "VALIDATED_STRUCTURED_RESPONSE_WITHOUT_REPAIR",
+  "contentHashes": {
+    "promptSha256": "ad1ce91bbf38485f14704591d8e936cf79be6e68bb6da8c3368829f6a8b2c123",
+    "initialResponseSha256": "ca90f9d47ee96b0b919f017d99a09f47f52f990fb745dedde2d4d441f00dc068",
+    "repairPromptSha256": null,
+    "acceptedResponseSha256": "ca90f9d47ee96b0b919f017d99a09f47f52f990fb745dedde2d4d441f00dc068",
+    "transcriptSha256": "9eb41c16fdf98c3317b67ab7f5cd9bd6252c5b8e0b91544f41c09081d0d58893"
+  },
+  "captureMethod": "signed-in ChatGPT web application via browser DOM textContent",
+  "captureNote": "The prompt was submitted exactly once after the signed-in UI visibly showed the Pro account, Work surface, GPT-5.6 Sol and the current maximum Ultra 6-of-6 effort. The live UI no longer exposed the former Pro 5-of-5 label, so this attestation preserves the stronger current setting and exact visible labels. The UI reported 24m6s for the generation. The raw assistant-message DOM textContent was captured verbatim, parsed as strict JSON between the requested markers and preserved with one terminal LF.",
+  "transcriptMaterialization": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0408-mn8-energy/attempt-2/chatgpt-transcript-materialized-v2.txt",
+    "sourceTranscriptPath": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0408-mn8-energy/attempt-2/chatgpt-transcript.txt",
+    "sourceTranscriptSha256": "8e94f609415926e47f5904735eca2a96d54684f28214724d18a1b9c9f1a31e98",
+    "method": "Verbatim preserved prompt and accepted response expanded into one artifact; intermediate progress/tool text not claimed.",
+    "generatedAt": "2026-09-05T20:16:00.000Z"
+  }
+}
+
