@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_APPLY_BATCH_MANIFEST",
+  "methodologyVersion": "PORTCO_APPLY_BATCH_V1",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "batchId": "batch-deferred-0400-0405-v1",
+  "createdAt": "2026-09-05T15:46:00.000Z",
+  "sourceExecutionManifest": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+    "sha256": "84ff2e3bd1b426c38c1556b9e0a3f241b8316e397c03f35f7fa499b00c9d485e"
+  },
+  "researchHashNormalization": {
+    "path": "audits/portco-reconciliation/2026-08-19/research-staging/artifact-hash-normalization.json",
+    "sha256": "01e99668d75baa5585bafc20ac858098bb23b78e3f9eb427bee6be00c63911b1"
+  },
+  "members": [
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0400:rowan-cinco:18f76471",
+      "taskIndex": 400,
+      "companyName": "Rowan Cinco",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0400-rowan-cinco/attempt-2/terminal-decision-deferred-v1.json",
+        "sha256": "321cb4b83175121b6f9f4f74c3bd2402077947e8f5b91a764711ee844cc7af80"
+      }
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0401:rowan-temple:fb4df5a1",
+      "taskIndex": 401,
+      "companyName": "Rowan Temple",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0401-rowan-temple/attempt-2/terminal-decision-deferred-v1.json",
+        "sha256": "fcab669ac0d0cb2d96ed2931a27a50bdb833222adb7b78d6dbf7a8e0dd42b107"
+      }
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0403:valley-of-fire:3a0ca3e8",
+      "taskIndex": 403,
+      "companyName": "Valley of Fire",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0403-valley-of-fire/attempt-2/terminal-decision-deferred-v1.json",
+        "sha256": "e9679317113b4014867d39c5bb9a906435ab01e359cb7d8142ce5d56852d8b2f"
+      }
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0404:national-power:872e462e",
+      "taskIndex": 404,
+      "companyName": "National Power",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0404-national-power/attempt-2/terminal-decision-deferred-v1.json",
+        "sha256": "7e40c2be0701184d14b4e8c1d1275a86c2313f39ecfcdaaa9f1d5882c2a356f3"
+      }
+    },
+    {
+      "kind": "TERMINAL",
+      "taskId": "ledger:0405:northstar-recycling:dba0ea8b",
+      "taskIndex": 405,
+      "companyName": "Northstar Recycling",
+      "outcome": "DEFERRED",
+      "decision": {
+        "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0405-northstar-recycling/attempt-2/terminal-decision-deferred-v1.json",
+        "sha256": "0011c653191639bef7fb2462dc99660241220a776e75b4bce69cf30a67976461"
+      }
+    }
+  ],
+  "collisionAnalysis": {
+    "independent": true,
+    "claimsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "sharedSourceUrls": [],
+    "conflicts": []
+  },
+  "batchSha256": "3c4cf1f854ee5b4afd2ad77fd530ca7a497c8610b8a589ef8877b6e1b4eac2f3"
+}

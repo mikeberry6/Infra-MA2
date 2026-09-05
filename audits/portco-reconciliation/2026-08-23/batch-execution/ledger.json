@@ -3,7 +3,7 @@
   "artifactType": "PORTCO_BATCH_EXECUTION_LEDGER",
   "runId": "portco-reconciliation-2026-08-03-v2",
   "createdAt": "2026-08-23T04:21:00.000Z",
-  "updatedAt": "2026-09-05T10:34:00.000Z",
+  "updatedAt": "2026-09-05T15:50:00.000Z",
   "activeBatchId": null,
   "batches": [
     {
@@ -9323,7 +9323,69 @@
           "reason": "Five fresh exact deferred re-adjudications completed; immutable terminal receipt verifies zero database and seed writes."
         }
       ]
+    },
+    {
+      "batchId": "batch-deferred-0400-0405-v1",
+      "state": "COMPLETED",
+      "taskIds": [
+        "ledger:0400:rowan-cinco:18f76471",
+        "ledger:0401:rowan-temple:fb4df5a1",
+        "ledger:0403:valley-of-fire:3a0ca3e8",
+        "ledger:0404:national-power:872e462e",
+        "ledger:0405:northstar-recycling:dba0ea8b"
+      ],
+      "taskIndexes": [
+        400,
+        401,
+        403,
+        404,
+        405
+      ],
+      "createdAt": "2026-09-05T15:38:00.000Z",
+      "updatedAt": "2026-09-05T15:50:00.000Z",
+      "completedAt": "2026-09-05T15:50:00.000Z",
+      "batchManifest": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-deferred-0400-0405-v1/batch-manifest.json",
+        "sha256": "3c4cf1f854ee5b4afd2ad77fd530ca7a497c8610b8a589ef8877b6e1b4eac2f3"
+      },
+      "releaseSha": null,
+      "receipt": {
+        "path": "audits/portco-reconciliation/2026-08-23/batches/batch-deferred-0400-0405-v1/terminal-receipt.json",
+        "sha256": "f023dc3c4a7e632bb48d55bb61a1fcc1a4145b68268fb2c0a9b323d3f2ad5f0a"
+      },
+      "reason": "Five fresh exact deferred re-adjudications completed; immutable terminal receipt verifies zero database and seed writes.",
+      "history": [
+        {
+          "sequence": 1,
+          "from": null,
+          "to": "FORMING",
+          "at": "2026-09-05T15:38:00.000Z",
+          "evidenceSha256": [],
+          "reason": null
+        },
+        {
+          "sequence": 2,
+          "from": "FORMING",
+          "to": "READY",
+          "at": "2026-09-05T15:47:00.000Z",
+          "evidenceSha256": [
+            "3c4cf1f854ee5b4afd2ad77fd530ca7a497c8610b8a589ef8877b6e1b4eac2f3"
+          ],
+          "reason": null
+        },
+        {
+          "sequence": 3,
+          "from": "READY",
+          "to": "COMPLETED",
+          "at": "2026-09-05T15:50:00.000Z",
+          "evidenceSha256": [
+            "3c4cf1f854ee5b4afd2ad77fd530ca7a497c8610b8a589ef8877b6e1b4eac2f3",
+            "f023dc3c4a7e632bb48d55bb61a1fcc1a4145b68268fb2c0a9b323d3f2ad5f0a"
+          ],
+          "reason": "Five fresh exact deferred re-adjudications completed; immutable terminal receipt verifies zero database and seed writes."
+        }
+      ]
     }
   ],
-  "ledgerSha256": "af341b814cfea293e1a9b628b3da419663b0fab31da7de20a89e4dfc6cc8d13e"
+  "ledgerSha256": "438296aa050ada7f40049cc8578337debb1a6fd19cefeece8d3ba0fc4e5f2dae"
 }

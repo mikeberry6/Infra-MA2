@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_ATTESTATION",
+  "runId": "portco-deferred-readjudication-2026-09-05",
+  "taskId": "ledger:0405:northstar-recycling:dba0ea8b",
+  "taskIndex": 405,
+  "companyName": "Northstar Recycling",
+  "conversationUrl": "https://chatgpt.com/c/6a9c26fa-e638-83ea-9a53-d056c7040d3d",
+  "accountTier": "ChatGPT Pro",
+  "surface": "Work",
+  "model": "GPT-5.6 Sol",
+  "effort": "Ultra",
+  "power": "6 of 6",
+  "uiVerified": true,
+  "uiEvidence": {
+    "accountLabel": "mike berry Pro",
+    "surfaceLabel": "Work",
+    "modeMenuModelLabel": "GPT-5.6 Sol",
+    "composerModelLabel": "GPT-5.6 Sol Ultra",
+    "modeMenuEffortLabel": "Ultra",
+    "modeMenuPowerLabel": "Ultra, 6 of 6",
+    "capturedBeforeSubmission": true
+  },
+  "initialSubmittedAt": "2026-09-05T14:28:16.811Z",
+  "initialCompletedObservedAt": "2026-09-05T15:14:16.527Z",
+  "initialReportedGenerationDuration": "PT19M8S",
+  "repairSubmittedAt": null,
+  "repairCompletedObservedAt": null,
+  "repairReportedGenerationDuration": null,
+  "repairCount": 0,
+  "initialOutcome": "VALIDATED_STRUCTURED_RESPONSE",
+  "finalOutcome": "VALIDATED_STRUCTURED_RESPONSE_WITHOUT_REPAIR",
+  "contentHashes": {
+    "promptSha256": "45a7d630e9842adba62331c2ccfd3b531d011c02b5f7da89b23b9eb5c48975b5",
+    "initialResponseSha256": "c7c2bfc7b2269d2c78bb90500370cd4e3dcb8f9b2b480e782765e18a7d6f5dfb",
+    "repairPromptSha256": null,
+    "acceptedResponseSha256": "c7c2bfc7b2269d2c78bb90500370cd4e3dcb8f9b2b480e782765e18a7d6f5dfb",
+    "transcriptSha256": "c695f7a24bbc829934de52a481cb4c6dc2e22acd8090b32585747b2b0016c2df"
+  },
+  "captureMethod": "signed-in ChatGPT web application via browser DOM textContent",
+  "captureNote": "The prompt was submitted exactly once after the signed-in UI visibly showed the Pro account, Work surface, GPT-5.6 Sol and the current maximum Ultra 6-of-6 effort. The live UI no longer exposed the former Pro 5-of-5 label, so this attestation preserves the stronger current setting and exact visible labels. The UI reported 19m8s for the generation. The raw assistant-message DOM textContent was captured verbatim, parsed as strict JSON between the requested markers and preserved with one terminal LF."
+}

@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0404:national-power:872e462e",
+  "taskIndex": 404,
+  "companyName": "National Power",
+  "outcome": "DEFERRED",
+  "decidedAt": "2026-09-05T15:44:00.000Z",
+  "rationale": "Identity and REP IV association are proven; the complete post-2023 direct-member set is not. Any after-image would be inferred.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0404-national-power/attempt-2/locked-deferred-v1-task-snapshot.json",
+    "sha256": "c62ee824ae6e2fdd42c763d3be175fdcda9852ffe2920cdbd7d9421202c939e9"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0404-national-power/attempt-2/application-research-decision.json",
+    "sha256": "6bf33d1d5dbdd242769a66c92a1cc63ec94813f51d406c67db27834b767c0b10"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0404-national-power/attempt-2/source-verification.json",
+    "sha256": "dda094ffd507f587522386b9dd4cd2a1e4b5dba4476cf3446eba94cc0fae5ec5"
+  },
+  "evidence": [
+    {
+      "url": "https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/trademark/6715/0355",
+      "purpose": "Continuity, effective time, NP Holdco member."
+    },
+    {
+      "url": "https://www.tecum.com/tecum-capital-announces-investment-in-national-power-corp-to-drive-future-growth/",
+      "purpose": "Parties, debt/equity, founder minority, continuity."
+    },
+    {
+      "url": "https://www.tecum.com/portfolio/national-power/",
+      "purpose": "Fund, date, Exited status."
+    },
+    {
+      "url": "https://www.c3cap.com/portfolio/?_sfm_status=exited",
+      "purpose": "Cutoff Exited status."
+    },
+    {
+      "url": "https://www.ridgemontep.com/press-releases/ridgemont-equity-partners-leads-recapitalization-to-support-national-powers-growth/",
+      "purpose": "Issuer, announcement, management wording, lenders."
+    },
+    {
+      "url": "https://azroc.my.site.com/AZRoc/s/contractor-search?licenseId=a0ocs00000HQTZFAA5",
+      "purpose": "Current Holdings, REP HoldCo, Midco, REP IV parent associations; not cap table."
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "7e40c2be0701184d14b4e8c1d1275a86c2313f39ecfcdaaa9f1d5882c2a356f3"
+}

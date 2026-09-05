@@ -1,0 +1,220 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_APPLICATION_RESEARCH_DECISION",
+  "taskId": "ledger:0400:rowan-cinco:18f76471",
+  "taskIndex": 400,
+  "companyName": "Rowan Cinco",
+  "asOfDate": "2026-09-05",
+  "decision": "DEFERRED",
+  "confidence": "HIGH_PROJECT_PLATFORM_IDENTITY_MEDIUM_DISCLOSED_RELATIONSHIPS_LOW_COMPLETE_CUTOFF_CAP_TABLE",
+  "researchOnly": true,
+  "generatedAt": "2026-09-05T11:25:00.000Z",
+  "result": {
+    "asOfDate": "2026-09-05",
+    "requestedCompany": "Rowan Cinco",
+    "requestedManagers": [
+      "Quinbrook Infrastructure Partners",
+      "University Pension Plan Ontario",
+      "Blackstone",
+      "Birch Infrastructure"
+    ],
+    "decision": "DEFERRED",
+    "confidence": "HIGH_IDENTITY;LOW_CAP_TABLE",
+    "rationale": "Cinco is a Rowan project matching the existing platform. Merge is unsafe because Cinco's members and Rowan's post-recap active cap table—including UPP treatment and exact holders, stakes, votes and governance—are not public.",
+    "identityResolution": {
+      "sourceRecord": "cmrxpjmqo018kivhef2na5x5p (Rowan Cinco)",
+      "mergeTarget": "cmrxpjmr2018livhe1yqhqyh5 (Rowan Digital Infrastructure)",
+      "finding": "Rowan Cinco/Cinco Data Center/Project Cinco=one subordinate campus; Cinco 1=first 300MW phase.",
+      "entities": "Rowan Cinco LLC (f/k/a Rowan Land Resources LLC)=Delaware project SPV/borrower; Rowan Green Data LLC (formed 2020-11-16)=historical JV; separately formed Rowan Digital Infrastructure LLC (2025-07-14)=current platform/parent, not a proven rename.",
+      "chain": "Cinco labels -> Rowan Cinco LLC -> UNRESOLVED members/intermediates -> Rowan platform"
+    },
+    "ownershipResolution": {
+      "completeCurrentOwnerSet": "UNRESOLVED",
+      "owners": [
+        {
+          "manager": "Quinbrook Infrastructure Partners",
+          "organization": "Quinbrook Infrastructure Partners",
+          "fund": "Net Zero Power Fund",
+          "vehicle": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2020-12-17",
+          "entryDate": null,
+          "entryYear": 2020,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "ACTIVE; POSITION UNRESOLVED"
+        },
+        {
+          "manager": "Birch Infrastructure",
+          "organization": "Birch Infrastructure, PBLLC",
+          "fund": null,
+          "vehicle": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2020-12-17",
+          "entryDate": null,
+          "entryYear": 2020,
+          "exitDate": null,
+          "exitYear": 2022,
+          "isActive": false,
+          "transactionState": "FORMER; RESCISSION CLAIM PENDING"
+        },
+        {
+          "manager": "University Pension Plan Ontario",
+          "organization": "University Pension Plan Ontario",
+          "fund": null,
+          "vehicle": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2024-08-13",
+          "entryDate": null,
+          "entryYear": 2024,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": null,
+          "transactionState": "UNRESOLVED POST-RECAP"
+        },
+        {
+          "manager": "Blackstone",
+          "organization": "Blackstone Inc. affiliates",
+          "fund": "NOT_PUBLICLY_DISCLOSED",
+          "vehicle": "NOT_PUBLICLY_DISCLOSED",
+          "stake": "NOT_PUBLICLY_DISCLOSED",
+          "announcementDate": "2026-04-09",
+          "entryDate": null,
+          "entryYear": 2026,
+          "exitDate": null,
+          "exitYear": null,
+          "isActive": true,
+          "transactionState": "CLOSED; CLOSE DATE NOT_PUBLICLY_DISCLOSED"
+        }
+      ],
+      "platform": "Birch pleads initial Quinbrook control/board majority and a 2021 transfer of Birch's interest to Rowan Management Co LLC; member status is uncertified. Quinbrook said Rowan was wholly owned by January 2023. Blackstone affiliates later acquired a significant minority. Islington/Apex reports a 49% sale/51% Fund retention; those are LP-reported economics, not a party cap table, and UPP makes the company denominator unclear. Blackstone fund/vehicle, issuer/security, sellers, mix, exact stakes/votes/control and UPP treatment remain UNRESOLVED; Quinbrook's managing partner remained chairman.",
+      "cincoEquity": "No Cinco co-owner/JV disclosed; LLC members uncertified.",
+      "nonEquity": "Design LLC=occupant; Google LLC=operator; TD (Texas)/lenders=secured creditors; Medina County=tax counterparty."
+    },
+    "operatingResolution": {
+      "location": "440 acres near Lytle, Medina County, Texas",
+      "scope": "Cinco 1=300MW; campus power envelope up to 1GW in 2026-2030",
+      "status": "UNDER_CONSTRUCTION; groundbreaking Aug./Sept. 2025",
+      "completionEnergization": "Cinco 1 target late 2026; broader 300MW completion target 2027; no energization/operation verified.",
+      "financing": "About $550m/$551m construction debt; not equity."
+    },
+    "acquisitionExitCheck": {
+      "searchThrough": "2026-09-05",
+      "laterEquityEvent": "NONE_FOUND_POST_RECAP",
+      "pendingTransactions": [],
+      "litigation": "Birch rescission pending; no equity restored.",
+      "excluded": "Debt/tax/lease/land/utility events=non-equity."
+    },
+    "milestones": [
+      {
+        "date": "2020-12-17",
+        "event": "Quinbrook/Birch announced Rowan JV."
+      },
+      {
+        "date": "2022",
+        "event": "Birch divested under 2022-11-18 EPA; close date unproved; rescission sought."
+      },
+      {
+        "date": "2024-08-13",
+        "event": "UPP announced completed co-investment; July entry month, exact day unknown."
+      },
+      {
+        "date": "2026-04-09",
+        "event": "Blackstone affiliates announced completed significant-minority acquisition."
+      }
+    ],
+    "evidence": [
+      {
+        "label": "Quinbrook portfolio",
+        "url": "https://www.quinbrook.com/our-portfolio/rowan-digital-infrastructure/",
+        "purpose": "hierarchy/scope/status",
+        "sourceTier": "PRIMARY",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Medina record",
+        "url": "https://public.destinyhosted.com/medindocs/2025/CC/20251219_117/1802_Rowan_Project_Cinco.pdf",
+        "purpose": "name/borrower",
+        "sourceTier": "PRIMARY",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Quinbrook 2023",
+        "url": "https://www.quinbrook.com/news-insights/quinbrook-expands-rowan-green-data-center-platform/",
+        "purpose": "formation/sole owner",
+        "sourceTier": "PRIMARY",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Birch petition",
+        "url": "https://www.docketalarm.com/cases/New_York_State_New_York_County_Supreme_Court/654061---2026/In_the_matter_of_the_Application_of_Birch_Infrastructure_PBLLC_v._Quinbrook_Infrastructure_Partners_LLC/1/",
+        "purpose": "pleaded exit/reorg",
+        "sourceTier": "COURT_FILING",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "UPP release",
+        "url": "https://myupp.ca/upp-invests-in-data-centre-developer-rowan-digital-infrastructure/",
+        "purpose": "co-investment",
+        "sourceTier": "PRIMARY",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      },
+      {
+        "label": "Recap release",
+        "url": "https://www.quinbrook.com/news-insights/rowan-digital-infrastructure-announces-strategic-recapitalization/",
+        "purpose": "Blackstone close",
+        "sourceTier": "PRIMARY",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": true
+      },
+      {
+        "label": "Apex LP report",
+        "url": "https://democracy.islington.gov.uk/documents/s47698/Appendix1-Apex%20Islington%20Q1%202026%20Final%20V2.pdf",
+        "purpose": "reported 49%/51%",
+        "sourceTier": "LP_REPORT",
+        "workingStatus": "OPEN",
+        "isRecommendedPrimary": false
+      }
+    ],
+    "beforeAfterChanges": {
+      "before": "Standalone Cinco + existing Rowan platform.",
+      "after": "NO_CHANGE; later SUPERSEDED candidate."
+    },
+    "excludedOrDuplicateCandidates": [
+      "Rowan Bauxite=another project, not another platform.",
+      "Customers/operators, lenders, government and site counterparties=non-equity."
+    ],
+    "unresolvedQuestions": [
+      "Cinco member ledger, LLC agreement and equity-pledge/org chart for members, units and governance.",
+      "Reorganization records, amended platform LLC agreement, recap purchase/subscription agreement, closing cap table, holder/fund schedule, transfer ledger and funds flow for issuer/security, Blackstone vehicle/stake/votes/sellers/mix, Quinbrook retention/control and UPP retention/sale/rollover/transfer/dilution; plus UPP audited named-investment schedule."
+    ],
+    "recommendedListAction": "DEFER; preserve both records. Do not merge into cmrxpjmr2018livhe1yqhqyh5 until the after-image meets the active-ownership rule."
+  },
+  "lineage": {
+    "sourceDecision": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0400-rowan-cinco/attempt-2/research-decision.json",
+      "sha256": "f966a7e29f7df2cc5218d6a425b318257125b8829d58e1aabbf05bbf53980232"
+    },
+    "acceptedResponse": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0400-rowan-cinco/attempt-2/chatgpt-accepted-response.txt",
+      "sha256": "446cccd3b4eed1dadc6f33620117fbe6078ae070753815acf051adec91394a9b"
+    },
+    "sourceVerification": {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0400-rowan-cinco/attempt-2/source-verification.json",
+      "sha256": "486583c45d89796ab725de78afaa6bc58e0b587122057b12dbd493c1d9c7577f"
+    },
+    "acceptedResponseSha256": "446cccd3b4eed1dadc6f33620117fbe6078ae070753815acf051adec91394a9b",
+    "sourceVerificationArtifactType": "PORTCO_RECONCILIATION_SOURCE_VERIFICATION",
+    "confidenceNormalization": {
+      "acceptedValue": "HIGH_IDENTITY;LOW_CAP_TABLE",
+      "stagedSummaryValue": "HIGH_PROJECT_PLATFORM_IDENTITY_MEDIUM_DISCLOSED_RELATIONSHIPS_LOW_COMPLETE_CUTOFF_CAP_TABLE",
+      "basis": "The accepted response expressed an overall confidence band with a disclosure-gap qualifier; the staged summary preserves that band in its deterministic qualifier and the research decision is unchanged."
+    }
+  }
+}

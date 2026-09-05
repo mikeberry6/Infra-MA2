@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_ATTESTATION",
+  "runId": "portco-deferred-readjudication-2026-09-05",
+  "taskId": "ledger:0403:valley-of-fire:3a0ca3e8",
+  "taskIndex": 403,
+  "companyName": "Valley of Fire",
+  "conversationUrl": "https://chatgpt.com/c/6a9c0a96-b634-83ea-9fb1-cca44fc44f4f",
+  "accountTier": "ChatGPT Pro",
+  "surface": "Work",
+  "model": "GPT-5.6 Sol",
+  "effort": "Ultra",
+  "power": "6 of 6",
+  "uiVerified": true,
+  "uiEvidence": {
+    "accountLabel": "mike berry Pro",
+    "surfaceLabel": "Work",
+    "modeMenuModelLabel": "GPT-5.6 Sol",
+    "composerModelLabel": "GPT-5.6 Sol Ultra",
+    "modeMenuEffortLabel": "Ultra",
+    "modeMenuPowerLabel": "Ultra, 6 of 6",
+    "capturedBeforeSubmission": true
+  },
+  "initialSubmittedAt": "2026-09-05T12:27:41.000Z",
+  "initialCompletedObservedAt": "2026-09-05T13:13:16.080Z",
+  "initialReportedGenerationDuration": "PT17M38S",
+  "repairSubmittedAt": null,
+  "repairCompletedObservedAt": null,
+  "repairReportedGenerationDuration": null,
+  "repairCount": 0,
+  "initialOutcome": "VALIDATED_STRUCTURED_RESPONSE_FIRST_PASS",
+  "finalOutcome": "VALIDATED_STRUCTURED_RESPONSE_FIRST_PASS",
+  "contentHashes": {
+    "promptSha256": "7823081eb4a0b90623e4496685c016f4a5f37527ae4baf4cc1ddc907df7d0f94",
+    "initialResponseSha256": "0189e102324479ad32d2cab2ffe63366e76f7089b1d7407d1b827822f39357a7",
+    "repairPromptSha256": null,
+    "acceptedResponseSha256": "0189e102324479ad32d2cab2ffe63366e76f7089b1d7407d1b827822f39357a7",
+    "transcriptSha256": "c763e4b8c23b31751dfc760a8c775632d77ef0bca044efe1011cc4cdff93be3f"
+  },
+  "captureMethod": "signed-in ChatGPT web application via browser DOM textContent",
+  "captureNote": "The initial prompt was submitted exactly once after the signed-in UI visibly showed the Pro account, Work surface, GPT-5.6 Sol and the current maximum Ultra 6-of-6 effort. The live UI no longer exposed the former Pro 5-of-5 label, so this attestation preserves the stronger current setting and exact visible labels. The UI reported 17m38s for the sole generation. The first response passed the complete structure, size and terminal-deferral contract. Its browser DOM textContent is preserved exactly with one terminal LF."
+}

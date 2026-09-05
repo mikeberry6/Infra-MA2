@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RECONCILIATION_CHATGPT_ATTESTATION",
+  "runId": "portco-deferred-readjudication-2026-09-05",
+  "taskId": "ledger:0404:national-power:872e462e",
+  "taskIndex": 404,
+  "companyName": "National Power",
+  "conversationUrl": "https://chatgpt.com/c/6a9c18a7-e74c-83ea-bbd5-ea1a82b34552",
+  "accountTier": "ChatGPT Pro",
+  "surface": "Work",
+  "model": "GPT-5.6 Sol",
+  "effort": "Ultra",
+  "power": "6 of 6",
+  "uiVerified": true,
+  "uiEvidence": {
+    "accountLabel": "mike berry Pro",
+    "surfaceLabel": "Work",
+    "modeMenuModelLabel": "GPT-5.6 Sol",
+    "composerModelLabel": "GPT-5.6 Sol Ultra",
+    "modeMenuEffortLabel": "Ultra",
+    "modeMenuPowerLabel": "Ultra, 6 of 6",
+    "capturedBeforeSubmission": true
+  },
+  "initialSubmittedAt": "2026-09-05T13:28:07.066Z",
+  "initialCompletedObservedAt": "2026-09-05T14:13:48.000Z",
+  "initialReportedGenerationDuration": "PT21M13S",
+  "repairSubmittedAt": "2026-09-05T14:14:58.924Z",
+  "repairCompletedObservedAt": "2026-09-05T14:15:36.000Z",
+  "repairReportedGenerationDuration": null,
+  "repairCount": 1,
+  "initialOutcome": "VALID_JSON_IN_RAW_DOM_TEXTCONTENT_BUT_RENDERED_INNERTEXT_INSERTED_LAYOUT_LINE_BREAKS",
+  "finalOutcome": "VALIDATED_STRUCTURED_RESPONSE_AFTER_ONE_FORMAT_CONFIRMATION",
+  "contentHashes": {
+    "promptSha256": "d6f1787e400f798212f3d91a9c7cee40fa3e0880af2aecc75bec6d32db732cb3",
+    "initialResponseSha256": "e69747d27c3c070acf154ee8db1f2c01a87d4a38532d84b387eeb86a221d76a5",
+    "repairPromptSha256": "98d85dccd6d6ec3808e008d9c3e9c1b22e2ef34d2c3f03263b51033fadd37fbe",
+    "acceptedResponseSha256": "e69747d27c3c070acf154ee8db1f2c01a87d4a38532d84b387eeb86a221d76a5",
+    "transcriptSha256": "dbe634a3c6d7dda3b183c22b8bf8ed9bd284a55cc5a4eeed0701e2a9e623f528"
+  },
+  "captureMethod": "signed-in ChatGPT web application via browser DOM textContent",
+  "captureNote": "The initial prompt was submitted exactly once after the signed-in UI visibly showed the Pro account, Work surface, GPT-5.6 Sol and the current maximum Ultra 6-of-6 effort. The live UI no longer exposed the former Pro 5-of-5 label, so this attestation preserves the stronger current setting and exact visible labels. The UI reported 21m13s for the initial generation. Browser innerText inserted layout-only line breaks inside several long JSON strings, while the raw DOM textContent already parsed as strict JSON. One same-conversation format-confirmation turn returned byte-identical raw textContent. The accepted response is preserved exactly with one terminal LF."
+}

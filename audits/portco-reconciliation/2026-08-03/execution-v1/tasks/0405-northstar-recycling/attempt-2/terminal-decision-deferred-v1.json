@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0405:northstar-recycling:dba0ea8b",
+  "taskIndex": 405,
+  "companyName": "Northstar Recycling",
+  "outcome": "DEFERRED",
+  "decidedAt": "2026-09-05T15:45:00.000Z",
+  "rationale": "Identity and known events are verified; the complete current owner set is not.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0405-northstar-recycling/attempt-2/locked-deferred-v1-task-snapshot.json",
+    "sha256": "4f0faa7b054272f2d321f8363ed03064e62756fb80aaa92c29f40e022b33ff1e"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0405-northstar-recycling/attempt-2/application-research-decision.json",
+    "sha256": "2f19ac66337c75b304f9289fe85c525851fc1e81285aef599dbb9277ff9154d9"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0405-northstar-recycling/attempt-2/source-verification.json",
+    "sha256": "70f650ca31a229c68cb59fa875099c4a222c8bc302b71c1d1d648590ba228216"
+  },
+  "evidence": [
+    {
+      "url": "https://corp.sec.state.ma.us/CorpWeb/CorpSearch/CorpSearch.aspx",
+      "purpose": "Conversion/identity."
+    },
+    {
+      "url": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?aggregateId=forl-m22000000359-e392b11e-58a1-48c8-a847-f7f9159facf3&directionType=ForwardList&inquirytype=EntityName&listNameOrder=NORTHSTARREALTYSECURITIES+M120000057000&searchNameOrder=NORTHSTARRECYCLING+M220000003590&searchTerm=NORTHSTAR+REALTY,+INC.",
+      "purpose": "2026 named Member."
+    },
+    {
+      "url": "https://www.ridgemontep.com/press-releases/ridgemont-announces-growth-investment-in-northstar-recycling-company/",
+      "purpose": "Issuer/founders/terms."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/91767/000009176726000008/R12.htm",
+      "purpose": "2.7% entry/exit."
+    },
+    {
+      "url": "https://www.ridgemontep.com/wp-content/uploads/Ridgemont-Sustainability-Report-2025.pdf",
+      "purpose": "2024 recap/scale."
+    },
+    {
+      "url": "https://www.ridgemontep.com/portfolio/northstar-recycling-company/",
+      "purpose": "Current label/profile."
+    },
+    {
+      "url": "https://www.ridgemontep.com/press-releases/northstar-recycling-acquires-waste-technology-services/",
+      "purpose": "2025 add-on/2021 recap."
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "0011c653191639bef7fb2462dc99660241220a776e75b4bce69cf30a67976461"
+}

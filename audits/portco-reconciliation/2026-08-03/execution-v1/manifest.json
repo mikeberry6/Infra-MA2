@@ -5,7 +5,7 @@
   "runId": "portco-reconciliation-2026-08-03-v2",
   "asOfDate": "2026-08-03",
   "createdAt": "2026-08-03T16:26:27.000Z",
-  "updatedAt": "2026-09-05T10:33:00.000Z",
+  "updatedAt": "2026-09-05T15:49:00.000Z",
   "runStatus": "COMPLETE_WITH_EXCEPTIONS",
   "activeTaskId": null,
   "source": {
@@ -41139,28 +41139,86 @@
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "f558d0996548273cdb37e1bd65c92d3ec8346c633dfd35e4319111437c322a8e",
       "status": "DEFERRED",
-      "attempts": 1,
-      "startedAt": "2026-09-02T00:15:30.000Z",
-      "updatedAt": "2026-09-02T00:44:00.000Z",
-      "completedAt": "2026-09-02T00:44:00.000Z",
-      "exceptionReason": "Preserve Rowan Cinco unchanged and defer the project-to-platform merge. Direct sources establish Cinco as a Rowan Digital Infrastructure campus and Rowan Cinco LLC as the asset-level entity, but Rowan's current platform ownership after the April 9, 2026 Blackstone recapitalization remains unresolved. UPP's continuing ownership and the complete post-recapitalization cap table are not publicly disclosed.",
+      "attempts": 2,
+      "startedAt": "2026-09-05T15:38:00.000Z",
+      "updatedAt": "2026-09-05T15:49:00.000Z",
+      "completedAt": "2026-09-05T15:49:00.000Z",
+      "exceptionReason": "Cinco is a Rowan project matching the existing platform. Merge is unsafe because Cinco's members and Rowan's post-recap active cap table—including UPP treatment and exact holders, stakes, votes and governance—are not public.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": "2c3912d55c5748e7ddbdb3c629e053d23e4010b64d096385052b3cc83376ee3d",
+      "taskSnapshotSha256": "aa52c2d8756f67274519edf94698255511340c143790a54eda0b8de41cd0de81",
       "artifacts": {
         "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0400-rowan-cinco/attempt-1/locked-batch-v1-task-snapshot.json",
-          "sha256": "2c3912d55c5748e7ddbdb3c629e053d23e4010b64d096385052b3cc83376ee3d"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0400-rowan-cinco/attempt-2/locked-deferred-v1-task-snapshot.json",
+          "sha256": "aa52c2d8756f67274519edf94698255511340c143790a54eda0b8de41cd0de81"
         },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
         "decision": {
-          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0399-0403-v1/decisions/0400-rowan-cinco.json",
-          "sha256": "40634ed22232daf97a55c522e8e219a0e6ffd7330f7b452c39bf8ce1dd811810"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0400-rowan-cinco/attempt-2/terminal-decision-deferred-v1.json",
+          "sha256": "321cb4b83175121b6f9f4f74c3bd2402077947e8f5b91a764711ee844cc7af80"
         },
         "companySnapshot": null
       },
       "recovery": null,
+      "reAdjudications": [
+        {
+          "sequence": 1,
+          "reopenedAt": "2026-09-05T15:33:00.000Z",
+          "reason": "Fresh signed-in ChatGPT deferred re-adjudication completed with an exact evidenced exception.",
+          "priorCompletedAt": "2026-09-02T00:44:00.000Z",
+          "priorExceptionReason": "Preserve Rowan Cinco unchanged and defer the project-to-platform merge. Direct sources establish Cinco as a Rowan Digital Infrastructure campus and Rowan Cinco LLC as the asset-level entity, but Rowan's current platform ownership after the April 9, 2026 Blackstone recapitalization remains unresolved. UPP's continuing ownership and the complete post-recapitalization cap table are not publicly disclosed.",
+          "priorArtifacts": {
+            "taskSnapshot": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0400-rowan-cinco/attempt-1/locked-batch-v1-task-snapshot.json",
+              "sha256": "2c3912d55c5748e7ddbdb3c629e053d23e4010b64d096385052b3cc83376ee3d"
+            },
+            "proposal": null,
+            "approval": null,
+            "applyReceipt": null,
+            "decision": {
+              "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0399-0403-v1/decisions/0400-rowan-cinco.json",
+              "sha256": "40634ed22232daf97a55c522e8e219a0e6ffd7330f7b452c39bf8ce1dd811810"
+            },
+            "companySnapshot": null
+          },
+          "priorManifestSha256": "afe72d28c93a73878433b2f86e4eea22a8331f40d31035f98d43f5342c9a3cdd",
+          "batchLedger": {
+            "location": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+            "sha256": "af341b814cfea293e1a9b628b3da419663b0fab31da7de20a89e4dfc6cc8d13e"
+          },
+          "evidence": {
+            "researchDecision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0400-rowan-cinco/attempt-2/research-decision.json",
+              "sha256": "f966a7e29f7df2cc5218d6a425b318257125b8829d58e1aabbf05bbf53980232"
+            },
+            "chatgptAttestation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0400-rowan-cinco/attempt-2/chatgpt-attestation.json",
+              "sha256": "3df41780934d0cb4bc65843b49052ded69a297d3b1e4f543d3e872ff053bc3de"
+            },
+            "prompt": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0400-rowan-cinco/attempt-2/chatgpt-research-prompt.md",
+              "sha256": "2479e037773d32be0c61b802bf7518ba21acb2d4f0518d3e0e0429c5c208019d"
+            },
+            "acceptedResponse": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0400-rowan-cinco/attempt-2/chatgpt-accepted-response.txt",
+              "sha256": "446cccd3b4eed1dadc6f33620117fbe6078ae070753815acf051adec91394a9b"
+            },
+            "transcript": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0400-rowan-cinco/attempt-2/chatgpt-transcript.txt",
+              "sha256": "ff6914319672043a161cde6deb33de36bc3887c0deaa4e0b9f399694d91b80f9"
+            },
+            "sourceVerification": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0400-rowan-cinco/attempt-2/source-verification.json",
+              "sha256": "486583c45d89796ab725de78afaa6bc58e0b587122057b12dbd493c1d9c7577f"
+            },
+            "responseValidation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0400-rowan-cinco/attempt-2/chatgpt-response-validation.json",
+              "sha256": "2febf9b57b36c549d9e7b586d98eb13755f33d9866d2974e60b9f10ecd754560"
+            }
+          }
+        }
+      ],
       "history": [
         {
           "sequence": 1,
@@ -41186,6 +41244,40 @@
             "504b275f54e2a71d7aa4b688ebee267b93592e5b7976df47a1e6b63ea1eb3f2b"
           ],
           "kind": "BATCH"
+        },
+        {
+          "sequence": 3,
+          "from": "DEFERRED",
+          "to": "PENDING",
+          "at": "2026-09-05T15:33:00.000Z",
+          "reason": "Fresh signed-in ChatGPT deferred re-adjudication completed with an exact evidenced exception.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "2479e037773d32be0c61b802bf7518ba21acb2d4f0518d3e0e0429c5c208019d",
+            "2febf9b57b36c549d9e7b586d98eb13755f33d9866d2974e60b9f10ecd754560",
+            "3df41780934d0cb4bc65843b49052ded69a297d3b1e4f543d3e872ff053bc3de",
+            "446cccd3b4eed1dadc6f33620117fbe6078ae070753815acf051adec91394a9b",
+            "486583c45d89796ab725de78afaa6bc58e0b587122057b12dbd493c1d9c7577f",
+            "af341b814cfea293e1a9b628b3da419663b0fab31da7de20a89e4dfc6cc8d13e",
+            "f966a7e29f7df2cc5218d6a425b318257125b8829d58e1aabbf05bbf53980232",
+            "ff6914319672043a161cde6deb33de36bc3887c0deaa4e0b9f399694d91b80f9"
+          ],
+          "kind": "DEFERRED_READJUDICATION"
+        },
+        {
+          "sequence": 4,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-05T15:49:00.000Z",
+          "reason": "Cinco is a Rowan project matching the existing platform. Merge is unsafe because Cinco's members and Rowan's post-recap active cap table—including UPP treatment and exact holders, stakes, votes and governance—are not public.",
+          "taskSnapshotSha256": "aa52c2d8756f67274519edf94698255511340c143790a54eda0b8de41cd0de81",
+          "evidenceSha256": [
+            "321cb4b83175121b6f9f4f74c3bd2402077947e8f5b91a764711ee844cc7af80",
+            "3c4cf1f854ee5b4afd2ad77fd530ca7a497c8610b8a589ef8877b6e1b4eac2f3",
+            "aa52c2d8756f67274519edf94698255511340c143790a54eda0b8de41cd0de81",
+            "f023dc3c4a7e632bb48d55bb61a1fcc1a4145b68268fb2c0a9b323d3f2ad5f0a"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -41198,28 +41290,86 @@
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "101b48be7b81710e91a7ffca7bda19d008de3a9f21f0b798c4d0dc9123ae3dcd",
       "status": "DEFERRED",
-      "attempts": 1,
-      "startedAt": "2026-09-02T00:15:30.000Z",
-      "updatedAt": "2026-09-02T00:44:00.000Z",
-      "completedAt": "2026-09-02T00:44:00.000Z",
-      "exceptionReason": "Preserve Rowan Temple unchanged and defer the project-to-platform merge. Direct sources establish Temple as a Rowan Digital Infrastructure campus, but Rowan's current platform ownership after the April 9, 2026 Blackstone recapitalization remains unresolved. UPP's continuing ownership and the exact Quinbrook, UPP and Blackstone interests are not publicly disclosed.",
+      "attempts": 2,
+      "startedAt": "2026-09-05T15:38:00.000Z",
+      "updatedAt": "2026-09-05T15:49:00.000Z",
+      "completedAt": "2026-09-05T15:49:00.000Z",
+      "exceptionReason": "Temple is a Rowan asset, but the recap issuer and cutoff owner set remain material gaps: the member filing is from 2023, the 2026 release omits sellers/cap table/UPP treatment, and Temple's member chain is undisclosed. No merge passes the active-ownership rule.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": "f8f088206fa30d156aeb8ad732af8e70a6ca303e18be04ea1f90cff31a39b6ff",
+      "taskSnapshotSha256": "94cc53c576b19e1c8d43ce33a55515b2c4129f1c323c0e6f603925e39ca3ae43",
       "artifacts": {
         "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0401-rowan-temple/attempt-1/locked-batch-v1-task-snapshot.json",
-          "sha256": "f8f088206fa30d156aeb8ad732af8e70a6ca303e18be04ea1f90cff31a39b6ff"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0401-rowan-temple/attempt-2/locked-deferred-v1-task-snapshot.json",
+          "sha256": "94cc53c576b19e1c8d43ce33a55515b2c4129f1c323c0e6f603925e39ca3ae43"
         },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
         "decision": {
-          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0399-0403-v1/decisions/0401-rowan-temple.json",
-          "sha256": "0eda5633c60aaa57fcd8fb849dbe8f873c257a2c25e9410dca0225f4988e16c8"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0401-rowan-temple/attempt-2/terminal-decision-deferred-v1.json",
+          "sha256": "fcab669ac0d0cb2d96ed2931a27a50bdb833222adb7b78d6dbf7a8e0dd42b107"
         },
         "companySnapshot": null
       },
       "recovery": null,
+      "reAdjudications": [
+        {
+          "sequence": 1,
+          "reopenedAt": "2026-09-05T15:34:00.000Z",
+          "reason": "Fresh signed-in ChatGPT deferred re-adjudication completed with an exact evidenced exception.",
+          "priorCompletedAt": "2026-09-02T00:44:00.000Z",
+          "priorExceptionReason": "Preserve Rowan Temple unchanged and defer the project-to-platform merge. Direct sources establish Temple as a Rowan Digital Infrastructure campus, but Rowan's current platform ownership after the April 9, 2026 Blackstone recapitalization remains unresolved. UPP's continuing ownership and the exact Quinbrook, UPP and Blackstone interests are not publicly disclosed.",
+          "priorArtifacts": {
+            "taskSnapshot": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0401-rowan-temple/attempt-1/locked-batch-v1-task-snapshot.json",
+              "sha256": "f8f088206fa30d156aeb8ad732af8e70a6ca303e18be04ea1f90cff31a39b6ff"
+            },
+            "proposal": null,
+            "approval": null,
+            "applyReceipt": null,
+            "decision": {
+              "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0399-0403-v1/decisions/0401-rowan-temple.json",
+              "sha256": "0eda5633c60aaa57fcd8fb849dbe8f873c257a2c25e9410dca0225f4988e16c8"
+            },
+            "companySnapshot": null
+          },
+          "priorManifestSha256": "ce272f55feab0ed3cb5d844a6e09bdba72908e69b41c75684173014aa4dcefd6",
+          "batchLedger": {
+            "location": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+            "sha256": "af341b814cfea293e1a9b628b3da419663b0fab31da7de20a89e4dfc6cc8d13e"
+          },
+          "evidence": {
+            "researchDecision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0401-rowan-temple/attempt-2/research-decision.json",
+              "sha256": "6f2c462b7f22c5a85dd3a036699b8d0972e55f9c066d776514588112ce4875f9"
+            },
+            "chatgptAttestation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0401-rowan-temple/attempt-2/chatgpt-attestation.json",
+              "sha256": "4adf61c02bbfd046f5fe75d4eccd76532c742b073c96ae3b504049c3eabcc84d"
+            },
+            "prompt": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0401-rowan-temple/attempt-2/chatgpt-research-prompt.md",
+              "sha256": "a8e712cd0221d4f5112e737f98f854115f00d0b8d29c086df9e379a02dddb6fc"
+            },
+            "acceptedResponse": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0401-rowan-temple/attempt-2/chatgpt-accepted-response.txt",
+              "sha256": "fe71da1178752ec08eeb07a69a977778c8d5b3d86c2a63e4e579668a5d5e6da2"
+            },
+            "transcript": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0401-rowan-temple/attempt-2/chatgpt-transcript.txt",
+              "sha256": "397bc21f911de1d851b9154fd3a7b0906da15d341c209ad962f1cd5c28f2dc13"
+            },
+            "sourceVerification": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0401-rowan-temple/attempt-2/source-verification.json",
+              "sha256": "13deec4b8244b9067c3c2f2cd128e14de74fcb5cd50c265d1c73fed9bf777c4f"
+            },
+            "responseValidation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0401-rowan-temple/attempt-2/chatgpt-response-validation.json",
+              "sha256": "e19914e641d2bf44b6fcd61440827bc5199e1bb0bc5dd918fe39e92635f6214c"
+            }
+          }
+        }
+      ],
       "history": [
         {
           "sequence": 1,
@@ -41243,6 +41393,40 @@
             "5000110a4ac28649630ddeef238d59ee5811210bfafe8bb5b1488ce0794611ea",
             "504b275f54e2a71d7aa4b688ebee267b93592e5b7976df47a1e6b63ea1eb3f2b",
             "f8f088206fa30d156aeb8ad732af8e70a6ca303e18be04ea1f90cff31a39b6ff"
+          ],
+          "kind": "BATCH"
+        },
+        {
+          "sequence": 3,
+          "from": "DEFERRED",
+          "to": "PENDING",
+          "at": "2026-09-05T15:34:00.000Z",
+          "reason": "Fresh signed-in ChatGPT deferred re-adjudication completed with an exact evidenced exception.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "13deec4b8244b9067c3c2f2cd128e14de74fcb5cd50c265d1c73fed9bf777c4f",
+            "397bc21f911de1d851b9154fd3a7b0906da15d341c209ad962f1cd5c28f2dc13",
+            "4adf61c02bbfd046f5fe75d4eccd76532c742b073c96ae3b504049c3eabcc84d",
+            "6f2c462b7f22c5a85dd3a036699b8d0972e55f9c066d776514588112ce4875f9",
+            "a8e712cd0221d4f5112e737f98f854115f00d0b8d29c086df9e379a02dddb6fc",
+            "af341b814cfea293e1a9b628b3da419663b0fab31da7de20a89e4dfc6cc8d13e",
+            "e19914e641d2bf44b6fcd61440827bc5199e1bb0bc5dd918fe39e92635f6214c",
+            "fe71da1178752ec08eeb07a69a977778c8d5b3d86c2a63e4e579668a5d5e6da2"
+          ],
+          "kind": "DEFERRED_READJUDICATION"
+        },
+        {
+          "sequence": 4,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-05T15:49:00.000Z",
+          "reason": "Temple is a Rowan asset, but the recap issuer and cutoff owner set remain material gaps: the member filing is from 2023, the 2026 release omits sellers/cap table/UPP treatment, and Temple's member chain is undisclosed. No merge passes the active-ownership rule.",
+          "taskSnapshotSha256": "94cc53c576b19e1c8d43ce33a55515b2c4129f1c323c0e6f603925e39ca3ae43",
+          "evidenceSha256": [
+            "3c4cf1f854ee5b4afd2ad77fd530ca7a497c8610b8a589ef8877b6e1b4eac2f3",
+            "94cc53c576b19e1c8d43ce33a55515b2c4129f1c323c0e6f603925e39ca3ae43",
+            "f023dc3c4a7e632bb48d55bb61a1fcc1a4145b68268fb2c0a9b323d3f2ad5f0a",
+            "fcab669ac0d0cb2d96ed2931a27a50bdb833222adb7b78d6dbf7a8e0dd42b107"
           ],
           "kind": "BATCH"
         }
@@ -41334,28 +41518,86 @@
       "sourceDecisionStatus": "NEEDS_REVIEW",
       "sourceQueueEntrySha256": "c7424aa17c90b23d2d343ccde7878a91ec0e4abb39a37773c11a94ba31d13577",
       "status": "DEFERRED",
-      "attempts": 1,
-      "startedAt": "2026-09-02T00:15:30.000Z",
-      "updatedAt": "2026-09-02T00:44:00.000Z",
-      "completedAt": "2026-09-02T00:44:00.000Z",
-      "exceptionReason": "Preserve Valley of Fire unchanged and defer its ownership correction. Primary manager and company sources support Valley of Fire Solar, LLC as a distinct solar-and-storage holdco and identify the 2024 continuation vehicle, but the complete current cap table is not public. A March 2026 filing discloses an individual security holder without the security class or percentage, so a complete current ownership after-image cannot be stated safely.",
+      "attempts": 2,
+      "startedAt": "2026-09-05T15:38:00.000Z",
+      "updatedAt": "2026-09-05T15:49:00.000Z",
+      "completedAt": "2026-09-05T15:49:00.000Z",
+      "exceptionReason": "The 2023 owner, 2024 transfer and 2026 Cohen disclosures cannot be bridged into a complete current cap table without inference.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": "c587eecf37d50d507f96685ee4073a56777af5deeca823480148df4b5ae71709",
+      "taskSnapshotSha256": "36891c8323b096b1e54cc35d9f6ee5912794f4ca3e03c465ea8a554cbc8c720f",
       "artifacts": {
         "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0403-valley-of-fire/attempt-1/locked-batch-v1-task-snapshot.json",
-          "sha256": "c587eecf37d50d507f96685ee4073a56777af5deeca823480148df4b5ae71709"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0403-valley-of-fire/attempt-2/locked-deferred-v1-task-snapshot.json",
+          "sha256": "36891c8323b096b1e54cc35d9f6ee5912794f4ca3e03c465ea8a554cbc8c720f"
         },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
         "decision": {
-          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0399-0403-v1/decisions/0403-valley-of-fire.json",
-          "sha256": "12d21b98b3fbbab6d6efc0d5cb16ecd46d4e904b9fb05cdf21c22b618ad1f87d"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0403-valley-of-fire/attempt-2/terminal-decision-deferred-v1.json",
+          "sha256": "e9679317113b4014867d39c5bb9a906435ab01e359cb7d8142ce5d56852d8b2f"
         },
         "companySnapshot": null
       },
       "recovery": null,
+      "reAdjudications": [
+        {
+          "sequence": 1,
+          "reopenedAt": "2026-09-05T15:35:00.000Z",
+          "reason": "Fresh signed-in ChatGPT deferred re-adjudication completed with an exact evidenced exception.",
+          "priorCompletedAt": "2026-09-02T00:44:00.000Z",
+          "priorExceptionReason": "Preserve Valley of Fire unchanged and defer its ownership correction. Primary manager and company sources support Valley of Fire Solar, LLC as a distinct solar-and-storage holdco and identify the 2024 continuation vehicle, but the complete current cap table is not public. A March 2026 filing discloses an individual security holder without the security class or percentage, so a complete current ownership after-image cannot be stated safely.",
+          "priorArtifacts": {
+            "taskSnapshot": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0403-valley-of-fire/attempt-1/locked-batch-v1-task-snapshot.json",
+              "sha256": "c587eecf37d50d507f96685ee4073a56777af5deeca823480148df4b5ae71709"
+            },
+            "proposal": null,
+            "approval": null,
+            "applyReceipt": null,
+            "decision": {
+              "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0399-0403-v1/decisions/0403-valley-of-fire.json",
+              "sha256": "12d21b98b3fbbab6d6efc0d5cb16ecd46d4e904b9fb05cdf21c22b618ad1f87d"
+            },
+            "companySnapshot": null
+          },
+          "priorManifestSha256": "4bc3d3c05234e7b6f38b076a9ac7dca068aa907db69c15bd56cfbff2b5fb17c4",
+          "batchLedger": {
+            "location": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+            "sha256": "af341b814cfea293e1a9b628b3da419663b0fab31da7de20a89e4dfc6cc8d13e"
+          },
+          "evidence": {
+            "researchDecision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0403-valley-of-fire/attempt-2/research-decision.json",
+              "sha256": "61be9c277f3809f602ae0247d382825161a352107920f99bcec2c8956363833a"
+            },
+            "chatgptAttestation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0403-valley-of-fire/attempt-2/chatgpt-attestation.json",
+              "sha256": "68e37e271e24ea26fd5ac286431e0d5337e59ff5273234430f5560936d69673a"
+            },
+            "prompt": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0403-valley-of-fire/attempt-2/chatgpt-research-prompt.md",
+              "sha256": "7823081eb4a0b90623e4496685c016f4a5f37527ae4baf4cc1ddc907df7d0f94"
+            },
+            "acceptedResponse": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0403-valley-of-fire/attempt-2/chatgpt-accepted-response.txt",
+              "sha256": "0189e102324479ad32d2cab2ffe63366e76f7089b1d7407d1b827822f39357a7"
+            },
+            "transcript": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0403-valley-of-fire/attempt-2/chatgpt-transcript.txt",
+              "sha256": "c763e4b8c23b31751dfc760a8c775632d77ef0bca044efe1011cc4cdff93be3f"
+            },
+            "sourceVerification": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0403-valley-of-fire/attempt-2/source-verification.json",
+              "sha256": "a5dc5f70f1f1f1dd689936b018cb2b7236dfe72624b306e56319241f8a32a50a"
+            },
+            "responseValidation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0403-valley-of-fire/attempt-2/chatgpt-response-validation.json",
+              "sha256": "4fe860e1d2d9c85943b671a14b9be4d0a8aad42a517d1f8d82e6bffd6601cbef"
+            }
+          }
+        }
+      ],
       "history": [
         {
           "sequence": 1,
@@ -41381,6 +41623,40 @@
             "c587eecf37d50d507f96685ee4073a56777af5deeca823480148df4b5ae71709"
           ],
           "kind": "BATCH"
+        },
+        {
+          "sequence": 3,
+          "from": "DEFERRED",
+          "to": "PENDING",
+          "at": "2026-09-05T15:35:00.000Z",
+          "reason": "Fresh signed-in ChatGPT deferred re-adjudication completed with an exact evidenced exception.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "0189e102324479ad32d2cab2ffe63366e76f7089b1d7407d1b827822f39357a7",
+            "4fe860e1d2d9c85943b671a14b9be4d0a8aad42a517d1f8d82e6bffd6601cbef",
+            "61be9c277f3809f602ae0247d382825161a352107920f99bcec2c8956363833a",
+            "68e37e271e24ea26fd5ac286431e0d5337e59ff5273234430f5560936d69673a",
+            "7823081eb4a0b90623e4496685c016f4a5f37527ae4baf4cc1ddc907df7d0f94",
+            "a5dc5f70f1f1f1dd689936b018cb2b7236dfe72624b306e56319241f8a32a50a",
+            "af341b814cfea293e1a9b628b3da419663b0fab31da7de20a89e4dfc6cc8d13e",
+            "c763e4b8c23b31751dfc760a8c775632d77ef0bca044efe1011cc4cdff93be3f"
+          ],
+          "kind": "DEFERRED_READJUDICATION"
+        },
+        {
+          "sequence": 4,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-05T15:49:00.000Z",
+          "reason": "The 2023 owner, 2024 transfer and 2026 Cohen disclosures cannot be bridged into a complete current cap table without inference.",
+          "taskSnapshotSha256": "36891c8323b096b1e54cc35d9f6ee5912794f4ca3e03c465ea8a554cbc8c720f",
+          "evidenceSha256": [
+            "36891c8323b096b1e54cc35d9f6ee5912794f4ca3e03c465ea8a554cbc8c720f",
+            "3c4cf1f854ee5b4afd2ad77fd530ca7a497c8610b8a589ef8877b6e1b4eac2f3",
+            "e9679317113b4014867d39c5bb9a906435ab01e359cb7d8142ce5d56852d8b2f",
+            "f023dc3c4a7e632bb48d55bb61a1fcc1a4145b68268fb2c0a9b323d3f2ad5f0a"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -41393,28 +41669,86 @@
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "4d022c983c140df0732d58e4a78f65cf04581e9c60cca0f4cb5a27ae805673d6",
       "status": "DEFERRED",
-      "attempts": 1,
-      "startedAt": "2026-09-02T00:52:00.000Z",
-      "updatedAt": "2026-09-02T01:16:00.000Z",
-      "completedAt": "2026-09-02T01:16:00.000Z",
-      "exceptionReason": "Defer creation of National Power while preserving the verified research. Ridgemont's current portfolio page and 2023 recapitalization release establish a current infrastructure-services investment, but Eddie Youngblood's post-recapitalization interest, Ridgemont's exact stake and co-investors, and the complete current cap table remain unresolved. Creating an ownership record would therefore require an unsupported inference.",
+      "attempts": 2,
+      "startedAt": "2026-09-05T15:38:00.000Z",
+      "updatedAt": "2026-09-05T15:49:00.000Z",
+      "completedAt": "2026-09-05T15:49:00.000Z",
+      "exceptionReason": "Identity and REP IV association are proven; the complete post-2023 direct-member set is not. Any after-image would be inferred.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": "49012f48c3b90dd1b1cefbce0180348dbd176a118fe8137867863eefa34c03f8",
+      "taskSnapshotSha256": "6ecb2f47214b8e7c5664764eaf075c7442b1ea1dbe5aeb31b1524e5e19db139a",
       "artifacts": {
         "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0404-national-power/attempt-1/locked-batch-v1-task-snapshot.json",
-          "sha256": "49012f48c3b90dd1b1cefbce0180348dbd176a118fe8137867863eefa34c03f8"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0404-national-power/attempt-2/locked-deferred-v1-task-snapshot.json",
+          "sha256": "6ecb2f47214b8e7c5664764eaf075c7442b1ea1dbe5aeb31b1524e5e19db139a"
         },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
         "decision": {
-          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0404-0408-v1/decisions/0404-national-power.json",
-          "sha256": "b9fcf22ac3ff54e546f34abcec684537071dd7101fdd23664e1160247a225f69"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0404-national-power/attempt-2/terminal-decision-deferred-v1.json",
+          "sha256": "7e40c2be0701184d14b4e8c1d1275a86c2313f39ecfcdaaa9f1d5882c2a356f3"
         },
         "companySnapshot": null
       },
       "recovery": null,
+      "reAdjudications": [
+        {
+          "sequence": 1,
+          "reopenedAt": "2026-09-05T15:36:00.000Z",
+          "reason": "Fresh signed-in ChatGPT deferred re-adjudication completed with an exact evidenced exception.",
+          "priorCompletedAt": "2026-09-02T01:16:00.000Z",
+          "priorExceptionReason": "Defer creation of National Power while preserving the verified research. Ridgemont's current portfolio page and 2023 recapitalization release establish a current infrastructure-services investment, but Eddie Youngblood's post-recapitalization interest, Ridgemont's exact stake and co-investors, and the complete current cap table remain unresolved. Creating an ownership record would therefore require an unsupported inference.",
+          "priorArtifacts": {
+            "taskSnapshot": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0404-national-power/attempt-1/locked-batch-v1-task-snapshot.json",
+              "sha256": "49012f48c3b90dd1b1cefbce0180348dbd176a118fe8137867863eefa34c03f8"
+            },
+            "proposal": null,
+            "approval": null,
+            "applyReceipt": null,
+            "decision": {
+              "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0404-0408-v1/decisions/0404-national-power.json",
+              "sha256": "b9fcf22ac3ff54e546f34abcec684537071dd7101fdd23664e1160247a225f69"
+            },
+            "companySnapshot": null
+          },
+          "priorManifestSha256": "41b3b476cf2b2002e7b823f72963551d1d4d94209364f1d46f4658c17db8e6ea",
+          "batchLedger": {
+            "location": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+            "sha256": "af341b814cfea293e1a9b628b3da419663b0fab31da7de20a89e4dfc6cc8d13e"
+          },
+          "evidence": {
+            "researchDecision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0404-national-power/attempt-2/research-decision.json",
+              "sha256": "e6ed2faabded137427a22956becd292a1a8f493ee1c0b6a6e85ee87db82aef74"
+            },
+            "chatgptAttestation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0404-national-power/attempt-2/chatgpt-attestation.json",
+              "sha256": "cd203666db5d017204bc6a3225616b87bf616fcc376db4d708e478b7da8ee587"
+            },
+            "prompt": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0404-national-power/attempt-2/chatgpt-research-prompt.md",
+              "sha256": "d6f1787e400f798212f3d91a9c7cee40fa3e0880af2aecc75bec6d32db732cb3"
+            },
+            "acceptedResponse": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0404-national-power/attempt-2/chatgpt-accepted-response.txt",
+              "sha256": "e69747d27c3c070acf154ee8db1f2c01a87d4a38532d84b387eeb86a221d76a5"
+            },
+            "transcript": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0404-national-power/attempt-2/chatgpt-transcript.txt",
+              "sha256": "dbe634a3c6d7dda3b183c22b8bf8ed9bd284a55cc5a4eeed0701e2a9e623f528"
+            },
+            "sourceVerification": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0404-national-power/attempt-2/source-verification.json",
+              "sha256": "dda094ffd507f587522386b9dd4cd2a1e4b5dba4476cf3446eba94cc0fae5ec5"
+            },
+            "responseValidation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0404-national-power/attempt-2/chatgpt-response-validation.json",
+              "sha256": "d6d94e8ff8eae4dcfae0a59c5519c4402f4aa61a268e45d25c7591abcb1f1b3c"
+            }
+          }
+        }
+      ],
       "history": [
         {
           "sequence": 1,
@@ -41440,6 +41774,40 @@
             "e13f8d5e5e91bf0059312965522860cf9d3d3065290a2d2747e0cc96e3e22a2f"
           ],
           "kind": "BATCH"
+        },
+        {
+          "sequence": 3,
+          "from": "DEFERRED",
+          "to": "PENDING",
+          "at": "2026-09-05T15:36:00.000Z",
+          "reason": "Fresh signed-in ChatGPT deferred re-adjudication completed with an exact evidenced exception.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "af341b814cfea293e1a9b628b3da419663b0fab31da7de20a89e4dfc6cc8d13e",
+            "cd203666db5d017204bc6a3225616b87bf616fcc376db4d708e478b7da8ee587",
+            "d6d94e8ff8eae4dcfae0a59c5519c4402f4aa61a268e45d25c7591abcb1f1b3c",
+            "d6f1787e400f798212f3d91a9c7cee40fa3e0880af2aecc75bec6d32db732cb3",
+            "dbe634a3c6d7dda3b183c22b8bf8ed9bd284a55cc5a4eeed0701e2a9e623f528",
+            "dda094ffd507f587522386b9dd4cd2a1e4b5dba4476cf3446eba94cc0fae5ec5",
+            "e69747d27c3c070acf154ee8db1f2c01a87d4a38532d84b387eeb86a221d76a5",
+            "e6ed2faabded137427a22956becd292a1a8f493ee1c0b6a6e85ee87db82aef74"
+          ],
+          "kind": "DEFERRED_READJUDICATION"
+        },
+        {
+          "sequence": 4,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-05T15:49:00.000Z",
+          "reason": "Identity and REP IV association are proven; the complete post-2023 direct-member set is not. Any after-image would be inferred.",
+          "taskSnapshotSha256": "6ecb2f47214b8e7c5664764eaf075c7442b1ea1dbe5aeb31b1524e5e19db139a",
+          "evidenceSha256": [
+            "3c4cf1f854ee5b4afd2ad77fd530ca7a497c8610b8a589ef8877b6e1b4eac2f3",
+            "6ecb2f47214b8e7c5664764eaf075c7442b1ea1dbe5aeb31b1524e5e19db139a",
+            "7e40c2be0701184d14b4e8c1d1275a86c2313f39ecfcdaaa9f1d5882c2a356f3",
+            "f023dc3c4a7e632bb48d55bb61a1fcc1a4145b68268fb2c0a9b323d3f2ad5f0a"
+          ],
+          "kind": "BATCH"
         }
       ]
     },
@@ -41452,28 +41820,86 @@
       "sourceDecisionStatus": "READY_FOR_PROPOSAL",
       "sourceQueueEntrySha256": "fea547cb9749ff4c9edfa131822ba2a4fd8b1d294599717b3a57f310c1ba0474",
       "status": "DEFERRED",
-      "attempts": 1,
-      "startedAt": "2026-09-02T00:52:00.000Z",
-      "updatedAt": "2026-09-02T01:16:00.000Z",
-      "completedAt": "2026-09-02T01:16:00.000Z",
-      "exceptionReason": "Defer creation of Northstar Recycling while preserving the verified research. Ridgemont's official sources establish its current investment, and Sonoco's filing establishes a former 2.7% interest through December 2024, but the buyer or repurchaser of that interest and the resulting current minority-owner table are not disclosed. Ridgemont's exact stake and investment vehicle are also unresolved.",
+      "attempts": 2,
+      "startedAt": "2026-09-05T15:38:00.000Z",
+      "updatedAt": "2026-09-05T15:49:00.000Z",
+      "completedAt": "2026-09-05T15:49:00.000Z",
+      "exceptionReason": "Identity and known events are verified; the complete current owner set is not.",
       "supersededByTaskId": null,
-      "taskSnapshotSha256": "65217563fc698b6bf8d7b22ca3d189f93c566982769fe2cb096bd754e6f472d3",
+      "taskSnapshotSha256": "2057a72a9dda6b15b735d7b52ce95e9247684ce8e95975dd512ad9682c1668f0",
       "artifacts": {
         "taskSnapshot": {
-          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0405-northstar-recycling/attempt-1/locked-batch-v1-task-snapshot.json",
-          "sha256": "65217563fc698b6bf8d7b22ca3d189f93c566982769fe2cb096bd754e6f472d3"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0405-northstar-recycling/attempt-2/locked-deferred-v1-task-snapshot.json",
+          "sha256": "2057a72a9dda6b15b735d7b52ce95e9247684ce8e95975dd512ad9682c1668f0"
         },
         "proposal": null,
         "approval": null,
         "applyReceipt": null,
         "decision": {
-          "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0404-0408-v1/decisions/0405-northstar-recycling.json",
-          "sha256": "ce2a2700b8bbe405bffcd446ccc4eb7f09a3f01e6d6f29c4d3d5675b04da7127"
+          "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0405-northstar-recycling/attempt-2/terminal-decision-deferred-v1.json",
+          "sha256": "0011c653191639bef7fb2462dc99660241220a776e75b4bce69cf30a67976461"
         },
         "companySnapshot": null
       },
       "recovery": null,
+      "reAdjudications": [
+        {
+          "sequence": 1,
+          "reopenedAt": "2026-09-05T15:37:00.000Z",
+          "reason": "Fresh signed-in ChatGPT deferred re-adjudication completed with an exact evidenced exception.",
+          "priorCompletedAt": "2026-09-02T01:16:00.000Z",
+          "priorExceptionReason": "Defer creation of Northstar Recycling while preserving the verified research. Ridgemont's official sources establish its current investment, and Sonoco's filing establishes a former 2.7% interest through December 2024, but the buyer or repurchaser of that interest and the resulting current minority-owner table are not disclosed. Ridgemont's exact stake and investment vehicle are also unresolved.",
+          "priorArtifacts": {
+            "taskSnapshot": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0405-northstar-recycling/attempt-1/locked-batch-v1-task-snapshot.json",
+              "sha256": "65217563fc698b6bf8d7b22ca3d189f93c566982769fe2cb096bd754e6f472d3"
+            },
+            "proposal": null,
+            "approval": null,
+            "applyReceipt": null,
+            "decision": {
+              "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0404-0408-v1/decisions/0405-northstar-recycling.json",
+              "sha256": "ce2a2700b8bbe405bffcd446ccc4eb7f09a3f01e6d6f29c4d3d5675b04da7127"
+            },
+            "companySnapshot": null
+          },
+          "priorManifestSha256": "9d0759926a770332775f3dd0ebfe388e2d9041116dced6518a2c81b2f901e664",
+          "batchLedger": {
+            "location": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+            "sha256": "af341b814cfea293e1a9b628b3da419663b0fab31da7de20a89e4dfc6cc8d13e"
+          },
+          "evidence": {
+            "researchDecision": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0405-northstar-recycling/attempt-2/research-decision.json",
+              "sha256": "0cdb6e96e610638265ec6cf69ee72ef9236b10119cebeb01b2afcf76a0ab2c85"
+            },
+            "chatgptAttestation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0405-northstar-recycling/attempt-2/chatgpt-attestation.json",
+              "sha256": "464037b5a10abc1c0cca8556bbdd9778727b31bb664f1b1ce813beb7cbe729f9"
+            },
+            "prompt": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0405-northstar-recycling/attempt-2/chatgpt-research-prompt.md",
+              "sha256": "45a7d630e9842adba62331c2ccfd3b531d011c02b5f7da89b23b9eb5c48975b5"
+            },
+            "acceptedResponse": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0405-northstar-recycling/attempt-2/chatgpt-accepted-response.txt",
+              "sha256": "c7c2bfc7b2269d2c78bb90500370cd4e3dcb8f9b2b480e782765e18a7d6f5dfb"
+            },
+            "transcript": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0405-northstar-recycling/attempt-2/chatgpt-transcript.txt",
+              "sha256": "c695f7a24bbc829934de52a481cb4c6dc2e22acd8090b32585747b2b0016c2df"
+            },
+            "sourceVerification": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0405-northstar-recycling/attempt-2/source-verification.json",
+              "sha256": "70f650ca31a229c68cb59fa875099c4a222c8bc302b71c1d1d648590ba228216"
+            },
+            "responseValidation": {
+              "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0405-northstar-recycling/attempt-2/chatgpt-response-validation.json",
+              "sha256": "b9da6b39ac09ceff8ba5da97673a2d81a763b14a47d61779ccb7431496381481"
+            }
+          }
+        }
+      ],
       "history": [
         {
           "sequence": 1,
@@ -41497,6 +41923,40 @@
             "7ad67c2b871775596df12011a1a15a1826113b1ec1509ad76bd23cbbcff27ad4",
             "ce2a2700b8bbe405bffcd446ccc4eb7f09a3f01e6d6f29c4d3d5675b04da7127",
             "e13f8d5e5e91bf0059312965522860cf9d3d3065290a2d2747e0cc96e3e22a2f"
+          ],
+          "kind": "BATCH"
+        },
+        {
+          "sequence": 3,
+          "from": "DEFERRED",
+          "to": "PENDING",
+          "at": "2026-09-05T15:37:00.000Z",
+          "reason": "Fresh signed-in ChatGPT deferred re-adjudication completed with an exact evidenced exception.",
+          "taskSnapshotSha256": null,
+          "evidenceSha256": [
+            "0cdb6e96e610638265ec6cf69ee72ef9236b10119cebeb01b2afcf76a0ab2c85",
+            "45a7d630e9842adba62331c2ccfd3b531d011c02b5f7da89b23b9eb5c48975b5",
+            "464037b5a10abc1c0cca8556bbdd9778727b31bb664f1b1ce813beb7cbe729f9",
+            "70f650ca31a229c68cb59fa875099c4a222c8bc302b71c1d1d648590ba228216",
+            "af341b814cfea293e1a9b628b3da419663b0fab31da7de20a89e4dfc6cc8d13e",
+            "b9da6b39ac09ceff8ba5da97673a2d81a763b14a47d61779ccb7431496381481",
+            "c695f7a24bbc829934de52a481cb4c6dc2e22acd8090b32585747b2b0016c2df",
+            "c7c2bfc7b2269d2c78bb90500370cd4e3dcb8f9b2b480e782765e18a7d6f5dfb"
+          ],
+          "kind": "DEFERRED_READJUDICATION"
+        },
+        {
+          "sequence": 4,
+          "from": "PENDING",
+          "to": "DEFERRED",
+          "at": "2026-09-05T15:49:00.000Z",
+          "reason": "Identity and known events are verified; the complete current owner set is not.",
+          "taskSnapshotSha256": "2057a72a9dda6b15b735d7b52ce95e9247684ce8e95975dd512ad9682c1668f0",
+          "evidenceSha256": [
+            "0011c653191639bef7fb2462dc99660241220a776e75b4bce69cf30a67976461",
+            "2057a72a9dda6b15b735d7b52ce95e9247684ce8e95975dd512ad9682c1668f0",
+            "3c4cf1f854ee5b4afd2ad77fd530ca7a497c8610b8a589ef8877b6e1b4eac2f3",
+            "f023dc3c4a7e632bb48d55bb61a1fcc1a4145b68268fb2c0a9b323d3f2ad5f0a"
           ],
           "kind": "BATCH"
         }
@@ -47400,5 +47860,5 @@
       ]
     }
   ],
-  "manifestSha256": "afe72d28c93a73878433b2f86e4eea22a8331f40d31035f98d43f5342c9a3cdd"
+  "manifestSha256": "78d737dff66d32d127d99913a92012144d01eee97e9e9f8fb102dd02fd5f95db"
 }

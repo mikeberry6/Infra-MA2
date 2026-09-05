@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_TERMINAL_DECISION",
+  "runId": "portco-reconciliation-2026-08-03-v2",
+  "taskId": "ledger:0401:rowan-temple:fb4df5a1",
+  "taskIndex": 401,
+  "companyName": "Rowan Temple",
+  "outcome": "DEFERRED",
+  "decidedAt": "2026-09-05T15:42:00.000Z",
+  "rationale": "Temple is a Rowan asset, but the recap issuer and cutoff owner set remain material gaps: the member filing is from 2023, the 2026 release omits sellers/cap table/UPP treatment, and Temple's member chain is undisclosed. No merge passes the active-ownership rule.",
+  "taskSnapshot": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0401-rowan-temple/attempt-2/locked-deferred-v1-task-snapshot.json",
+    "sha256": "634f0129c8631545c69299a5a4d2b360869c327c08af01400e2cc3e1b5188422"
+  },
+  "researchDecision": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0401-rowan-temple/attempt-2/application-research-decision.json",
+    "sha256": "0345ab4a97b5e426a53af041383085190a6c6df4a0dfbddc1bd03f6b2f90bfd9"
+  },
+  "sourceVerification": {
+    "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0401-rowan-temple/attempt-2/source-verification.json",
+    "sha256": "13deec4b8244b9067c3c2f2cd128e14de74fcb5cd50c265d1c73fed9bf777c4f"
+  },
+  "evidence": [
+    {
+      "url": "https://rowan.digital/portfolio/temple/",
+      "purpose": "300 MW/700-acre child campus/status."
+    },
+    {
+      "url": "https://comptroller.texas.gov/taxes/data-centers/data-center-lists.php",
+      "purpose": "Temple LLC roles/Moriah; not member proof."
+    },
+    {
+      "url": "https://www.quinbrook.com/news-insights/quinbrook-expands-rowan-green-data-center-platform/",
+      "purpose": "Birch JV; wholly Quinbrook-owned by 2023."
+    },
+    {
+      "url": "https://comptroller.texas.gov/data-search/franchise-tax/32080230546",
+      "purpose": "Three members; stale/no stakes."
+    },
+    {
+      "url": "https://myupp.ca/upp-invests-in-data-centre-developer-rowan-digital-infrastructure/",
+      "purpose": "Completed co-investment; terms undisclosed."
+    },
+    {
+      "url": "https://www.quinbrook.com/news-insights/rowan-digital-infrastructure-announces-strategic-recapitalization/",
+      "purpose": "Closed Blackstone minority; cap table omitted."
+    },
+    {
+      "url": "https://www.docketalarm.com/cases/New_York_State_New_York_County_Supreme_Court/654061---2026/In_the_matter_of_the_Application_of_Birch_Infrastructure_PBLLC_v._Quinbrook_Infrastructure_Partners_LLC/1/",
+      "purpose": "Pleaded EPA/rescission; unadjudicated."
+    }
+  ],
+  "supersededByTaskId": null,
+  "decisionSha256": "fcab669ac0d0cb2d96ed2931a27a50bdb833222adb7b78d6dbf7a8e0dd42b107"
+}
