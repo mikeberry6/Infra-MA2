@@ -1,0 +1,694 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_DATABANK_FIELD_AUTHORITY",
+  "chronologySha256": "0e9326e9e40914ce36ad75c444d8f44200e6774639a5f450e173e95ebbb36eac",
+  "priorAuthoritySha256": "373eba1a4cc378aade9d6ce4d2e4e7c5ecff2b638cefaeedc8f42f6e58d5fc36",
+  "seedManifestSha256": "cd644038e360277a296d59d0eb6976c2a1eb85af3e752ffc941d944f1c556257",
+  "canonicalProposalSha256": "620469277d740d5970323532ca551d5f88e00b4b7cc27755fc41f86cc5f664f5",
+  "canonicalApprovalSha256": "8eb8471d6d5f2f63ba925233d256fc8ed701f14d3e20f55d9ed3b45aaa155aa2",
+  "canonicalReceiptSha256": "ab17a84bafdd73520dc3562857a1dc361af4a3d82048553a07b71282d6aab128",
+  "originalAttributionReceiptSha256": "779802d490bd3b00c5470e8fee2bc87ae5b3f98a70fe9c3d08af4931be2686cf",
+  "semanticCompanySha256": "54b0290594306370bb53ca3456be144e04ee33cb7636a90902ca526840183f4b",
+  "candidateFieldsAdjudicated": 20,
+  "cumulativeCandidateFieldsAdjudicated": 50,
+  "remainingCandidateFields": 553,
+  "additionalFieldsOutsideOriginal603": 5,
+  "interpretation": "AustralianSuper's pension program and DigitalBridge's corporate balance-sheet position are not specific managed funds. Northleaf, Ardian and CBRE remain unlinked UNRESOLVED with exact underlying-fund exceptions. Exactly one primary source per owner; no manager/vintage matching inference or allocation of the consortium's combined 35%.",
+  "qualifications": [
+    "Authority is not persistence or write authorization; all physical comparisons remain unchanged.",
+    "Five equality-blind fields shared unsupported fund attributions in production and seed: AustralianSuper link/name/classification and DigitalBridge link/name. They are additional to, not deductions from, the original 603.",
+    "The October 2024 announcement expected closing by year-end; the January 2025 release expected transaction closing in February. They are not new closing proofs. DigitalBridge's 2019 balance-sheet investment is not substituted for its canonical 2016 sponsor-entry year.",
+    "The investor roster contains dated manager biographies; it does not independently re-adjudicate all September 2026 ownership. All seven canonical periods, Swiss Life's existing GIO III disclosure, IMCO metadata and outside-universe TIAA/EDF/TJC context are preserved, not newly inferred or re-researched.",
+    "Five seed-upsert bindings are absent and remain explicit. Different original/current seed record IDs are bound by exact identities, not a fabricated rekey history. No new fund, legal entity, global alias or economics is introduced."
+  ],
+  "untouchedOwnerIdsPreserved": [
+    "cmrxpjsmg01hyivheczn6hwqa",
+    "cmrxpjsnf01i0ivhebiyk4oiw"
+  ],
+  "rows": [
+    {
+      "manager": "AustralianSuper",
+      "ownerId": "cmrxpjslx01hxivhery0xa53f",
+      "recordId": "OFA-03DCA6090529",
+      "originalRecordId": "OFA-B4BF8FD25402",
+      "fundId": "cmrxpj18k00bpivheqkog9qdz",
+      "sourceId": "australiansuper",
+      "year": 2024,
+      "stake": "Significant minority interest; exact percentage not publicly disclosed",
+      "fallback": "AustralianSuper Infrastructure Portfolio",
+      "fields": [
+        "attributionConfidence",
+        "attributionRationale"
+      ],
+      "companyId": "cmrxpj7kw00kzivhenjb9mu5y",
+      "seedWriteBinding": null,
+      "candidateSha256": "984f39be2ff9eeb62cfa4ddb98ab2a2ed7b18585aa7024fccc28e867e4205671",
+      "current": {
+        "linkedFundName": "AustralianSuper Infrastructure Portfolio",
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "AustralianSuper Infrastructure Portfolio",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, evergreen/permanent-capital vehicle, North America-relevant mandate; no second manager-matched fund candidate. Public disclosure does not identify a distinct fund."
+      },
+      "seedExpectation": {
+        "linkedFundName": "AustralianSuper Infrastructure Portfolio",
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "AustralianSuper Infrastructure Portfolio",
+        "attributionConfidence": "MEDIUM",
+        "attributionRationale": "Estimated by preserving the existing curated link to AustralianSuper Infrastructure Portfolio; public disclosure does not identify a distinct fund. Ranked evidence considered manager match 1.00, vehicle-name overlap 1.00, evergreen/permanent-capital vehicle, North America-relevant mandate."
+      },
+      "recommendedAttribution": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "DataBank's October 2024 announcement identifies AustralianSuper's retirement-savings investment and global real-assets portfolio. This supports pension-program attribution, not a separately disclosed AustralianSuper Infrastructure Portfolio fund or an inferred legal holding affiliate. The precise significant-minority percentage remains unavailable."
+      },
+      "fieldDecisions": [
+        {
+          "field": "attributionConfidence",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_CORRECTION_REQUIRED_NOT_AUTHORIZED_BY_THIS_REPORT",
+          "current": "LOW",
+          "seed": "MEDIUM",
+          "recommended": null,
+          "primarySourceUrl": "https://www.databank.com/resources/press-releases/databank-announces-2-0-billion-equity-raise-led-by-1-5-billion-investment-from-australiansuper/",
+          "primarySourceSha256": "d3270a134090148e164613015eae27ab95d93da166faec8cc91e45a09f289c4e",
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": true
+        },
+        {
+          "field": "attributionRationale",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_CORRECTION_REQUIRED_NOT_AUTHORIZED_BY_THIS_REPORT",
+          "current": "Estimated from manager match 1.00, evergreen/permanent-capital vehicle, North America-relevant mandate; no second manager-matched fund candidate. Public disclosure does not identify a distinct fund.",
+          "seed": "Estimated by preserving the existing curated link to AustralianSuper Infrastructure Portfolio; public disclosure does not identify a distinct fund. Ranked evidence considered manager match 1.00, vehicle-name overlap 1.00, evergreen/permanent-capital vehicle, North America-relevant mandate.",
+          "recommended": "DataBank's October 2024 announcement identifies AustralianSuper's retirement-savings investment and global real-assets portfolio. This supports pension-program attribution, not a separately disclosed AustralianSuper Infrastructure Portfolio fund or an inferred legal holding affiliate. The precise significant-minority percentage remains unavailable.",
+          "primarySourceUrl": "https://www.databank.com/resources/press-releases/databank-announces-2-0-billion-equity-raise-led-by-1-5-billion-investment-from-australiansuper/",
+          "primarySourceSha256": "d3270a134090148e164613015eae27ab95d93da166faec8cc91e45a09f289c4e",
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": true
+        }
+      ],
+      "additionalFieldDecisions": [
+        {
+          "field": "attributedFundName",
+          "outsideOriginal603": true,
+          "disposition": "SOURCE_SUPPORTED_CORRECTION_REQUIRED_NOT_AUTHORIZED_BY_THIS_REPORT",
+          "current": "AustralianSuper Infrastructure Portfolio",
+          "seed": "AustralianSuper Infrastructure Portfolio",
+          "recommended": null,
+          "primarySourceUrl": "https://www.databank.com/resources/press-releases/databank-announces-2-0-billion-equity-raise-led-by-1-5-billion-investment-from-australiansuper/",
+          "primarySourceSha256": "d3270a134090148e164613015eae27ab95d93da166faec8cc91e45a09f289c4e",
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": true
+        },
+        {
+          "field": "fundAttribution",
+          "outsideOriginal603": true,
+          "disposition": "SOURCE_SUPPORTED_CORRECTION_REQUIRED_NOT_AUTHORIZED_BY_THIS_REPORT",
+          "current": "INFERRED",
+          "seed": "INFERRED",
+          "recommended": "DIRECT_PROGRAM",
+          "primarySourceUrl": "https://www.databank.com/resources/press-releases/databank-announces-2-0-billion-equity-raise-led-by-1-5-billion-investment-from-australiansuper/",
+          "primarySourceSha256": "d3270a134090148e164613015eae27ab95d93da166faec8cc91e45a09f289c4e",
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": true
+        },
+        {
+          "field": "fundName",
+          "outsideOriginal603": true,
+          "disposition": "SOURCE_SUPPORTED_CORRECTION_REQUIRED_NOT_AUTHORIZED_BY_THIS_REPORT",
+          "current": "AustralianSuper Infrastructure Portfolio",
+          "seed": "AustralianSuper Infrastructure Portfolio",
+          "recommended": null,
+          "primarySourceUrl": "https://www.databank.com/resources/press-releases/databank-announces-2-0-billion-equity-raise-led-by-1-5-billion-investment-from-australiansuper/",
+          "primarySourceSha256": "d3270a134090148e164613015eae27ab95d93da166faec8cc91e45a09f289c4e",
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": true
+        }
+      ],
+      "preserves": {
+        "stake": "Significant minority interest; exact percentage not publicly disclosed",
+        "vehicleName": null,
+        "investmentYear": 2024,
+        "organizationName": "AustralianSuper",
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      "seedMatchesRecommendedAttribution": false,
+      "wholeCompanyReconciled": false
+    },
+    {
+      "manager": "DigitalBridge",
+      "ownerId": "cmrxpjsmy01hzivhez2e7jdnj",
+      "recordId": "OFA-B83EF29EAE12",
+      "originalRecordId": "OFA-15478CED86A0",
+      "fundId": "cmsdi3ze7004n7h4sajm63o16",
+      "sourceId": "digitalbridge",
+      "year": 2016,
+      "stake": "7.8% after the January 2025 secondary",
+      "fallback": "DigitalBridge Partners, LP",
+      "fields": [
+        "attributionConfidence",
+        "attributionRationale",
+        "fundAttribution"
+      ],
+      "companyId": "cmrxpj7kw00kzivhenjb9mu5y",
+      "seedWriteBinding": null,
+      "candidateSha256": "b4bb9a38e4cb19bcc41ed3677b85fa4f4377acab709ff72c94d250fe40ae9ad7",
+      "current": {
+        "linkedFundName": "DigitalBridge Partners, LP",
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "DigitalBridge Partners, LP",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, investment predates reported close by 2 years; pre-close deployment is plausible, North America-relevant mandate; next candidate trails by 43.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "seedExpectation": {
+        "linkedFundName": "DigitalBridge Partners, LP",
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "DigitalBridge Partners, LP",
+        "attributionConfidence": null,
+        "attributionRationale": "Matched supplemental ownership detail: Firm: DigitalBridge | Fund: Not publicly disclosed. | Ownership Interest: Not publicly disclosed. Seed milestones or source evidence explicitly name the current fund vehicle."
+      },
+      "recommendedAttribution": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "DigitalBridge's January 30, 2025 issuer release explicitly describes its retained 7.8% position as a corporate balance-sheet investment, not DigitalBridge Partners, LP. Its December 2019 balance-sheet entry is distinct from the existing 2016 sponsor-entry year, which is preserved. This attribution review does not establish a new legal holding vehicle or closing date."
+      },
+      "fieldDecisions": [
+        {
+          "field": "attributionConfidence",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_CORRECTION_REQUIRED_NOT_AUTHORIZED_BY_THIS_REPORT",
+          "current": "LOW",
+          "seed": null,
+          "recommended": null,
+          "primarySourceUrl": "https://ir.digitalbridge.com/news-releases/news-release-details/digitalbridge-announces-participation-databank-financing",
+          "primarySourceSha256": "090118578c2c40fc5b10c1a0d4740b3150a6e32a8e3757293abafb1d5bb90e37",
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": false
+        },
+        {
+          "field": "attributionRationale",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_CORRECTION_REQUIRED_NOT_AUTHORIZED_BY_THIS_REPORT",
+          "current": "Estimated from manager match 1.00, investment predates reported close by 2 years; pre-close deployment is plausible, North America-relevant mandate; next candidate trails by 43.0 points. Public disclosure does not identify a distinct fund.",
+          "seed": "Matched supplemental ownership detail: Firm: DigitalBridge | Fund: Not publicly disclosed. | Ownership Interest: Not publicly disclosed. Seed milestones or source evidence explicitly name the current fund vehicle.",
+          "recommended": "DigitalBridge's January 30, 2025 issuer release explicitly describes its retained 7.8% position as a corporate balance-sheet investment, not DigitalBridge Partners, LP. Its December 2019 balance-sheet entry is distinct from the existing 2016 sponsor-entry year, which is preserved. This attribution review does not establish a new legal holding vehicle or closing date.",
+          "primarySourceUrl": "https://ir.digitalbridge.com/news-releases/news-release-details/digitalbridge-announces-participation-databank-financing",
+          "primarySourceSha256": "090118578c2c40fc5b10c1a0d4740b3150a6e32a8e3757293abafb1d5bb90e37",
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": true
+        },
+        {
+          "field": "fundAttribution",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_CORRECTION_REQUIRED_NOT_AUTHORIZED_BY_THIS_REPORT",
+          "current": "INFERRED",
+          "seed": "DISCLOSED",
+          "recommended": "DIRECT_PROGRAM",
+          "primarySourceUrl": "https://ir.digitalbridge.com/news-releases/news-release-details/digitalbridge-announces-participation-databank-financing",
+          "primarySourceSha256": "090118578c2c40fc5b10c1a0d4740b3150a6e32a8e3757293abafb1d5bb90e37",
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": true
+        }
+      ],
+      "additionalFieldDecisions": [
+        {
+          "field": "attributedFundName",
+          "outsideOriginal603": true,
+          "disposition": "SOURCE_SUPPORTED_CORRECTION_REQUIRED_NOT_AUTHORIZED_BY_THIS_REPORT",
+          "current": "DigitalBridge Partners, LP",
+          "seed": "DigitalBridge Partners, LP",
+          "recommended": null,
+          "primarySourceUrl": "https://ir.digitalbridge.com/news-releases/news-release-details/digitalbridge-announces-participation-databank-financing",
+          "primarySourceSha256": "090118578c2c40fc5b10c1a0d4740b3150a6e32a8e3757293abafb1d5bb90e37",
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": true
+        },
+        {
+          "field": "fundName",
+          "outsideOriginal603": true,
+          "disposition": "SOURCE_SUPPORTED_CORRECTION_REQUIRED_NOT_AUTHORIZED_BY_THIS_REPORT",
+          "current": "DigitalBridge Partners, LP",
+          "seed": "DigitalBridge Partners, LP",
+          "recommended": null,
+          "primarySourceUrl": "https://ir.digitalbridge.com/news-releases/news-release-details/digitalbridge-announces-participation-databank-financing",
+          "primarySourceSha256": "090118578c2c40fc5b10c1a0d4740b3150a6e32a8e3757293abafb1d5bb90e37",
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": true
+        }
+      ],
+      "preserves": {
+        "stake": "7.8% after the January 2025 secondary",
+        "vehicleName": null,
+        "investmentYear": 2016,
+        "organizationName": "DigitalBridge",
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      "seedMatchesRecommendedAttribution": false,
+      "wholeCompanyReconciled": false
+    },
+    {
+      "manager": "Northleaf Capital Partners",
+      "ownerId": "cmsydgkjw000ib46h70jf5jhl",
+      "recordId": "OFA-8CBE74D0871F",
+      "originalRecordId": null,
+      "fundId": null,
+      "sourceId": "recap-2022",
+      "year": 2022,
+      "stake": "Member of the 35% 2022 consortium; individual percentage not publicly disclosed",
+      "fallback": "Northleaf Capital Partners",
+      "fields": [
+        "attributedFundName",
+        "attributionConfidence",
+        "attributionRationale",
+        "fundAttribution",
+        "fundName"
+      ],
+      "companyId": "cmrxpj7kw00kzivhenjb9mu5y",
+      "seedWriteBinding": null,
+      "candidateSha256": "a671bc50dc5291ad8fd06794efc486035d88a98e92ac797e1487d5caebc3776a",
+      "current": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "seedExpectation": {
+        "linkedFundName": "Northleaf NEIF",
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "Northleaf NEIF",
+        "attributionConfidence": "LOW",
+        "attributionRationale": "Estimated from manager match 1.00, vehicle-name overlap 0.50, evergreen/permanent-capital vehicle, North America-relevant mandate; next candidate trails by 7.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "recommendedAttribution": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "DataBank's August 30, 2022 closing release identifies Northleaf among the four-manager consortium acquiring a combined 35%. It does not identify Northleaf's underlying fund, holding entity or individual share. Northleaf NEIF is not inferred from a manager match; the precise fund and individual-share exceptions are preserved."
+      },
+      "fieldDecisions": [
+        {
+          "field": "attributedFundName",
+          "outsideOriginal603": false,
+          "disposition": "RETAIN_CURRENT_SOURCE_SUPPORTED_EXACT_EXCEPTION",
+          "current": null,
+          "seed": "Northleaf NEIF",
+          "recommended": null,
+          "primarySourceUrl": "https://www.databank.com/resources/press-releases/databank-completes-first-phase-of-major-recapitalization/",
+          "primarySourceSha256": "dc0dc270169029e44b66f2f58e4eaa993b2135fe45ba5887058b848c34fa25b2",
+          "productionWriteRequired": false,
+          "seedPersistenceRequired": true
+        },
+        {
+          "field": "attributionConfidence",
+          "outsideOriginal603": false,
+          "disposition": "RETAIN_CURRENT_SOURCE_SUPPORTED_EXACT_EXCEPTION",
+          "current": null,
+          "seed": "LOW",
+          "recommended": null,
+          "primarySourceUrl": "https://www.databank.com/resources/press-releases/databank-completes-first-phase-of-major-recapitalization/",
+          "primarySourceSha256": "dc0dc270169029e44b66f2f58e4eaa993b2135fe45ba5887058b848c34fa25b2",
+          "productionWriteRequired": false,
+          "seedPersistenceRequired": true
+        },
+        {
+          "field": "attributionRationale",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_CORRECTION_REQUIRED_NOT_AUTHORIZED_BY_THIS_REPORT",
+          "current": null,
+          "seed": "Estimated from manager match 1.00, vehicle-name overlap 0.50, evergreen/permanent-capital vehicle, North America-relevant mandate; next candidate trails by 7.0 points. Public disclosure does not identify a distinct fund.",
+          "recommended": "DataBank's August 30, 2022 closing release identifies Northleaf among the four-manager consortium acquiring a combined 35%. It does not identify Northleaf's underlying fund, holding entity or individual share. Northleaf NEIF is not inferred from a manager match; the precise fund and individual-share exceptions are preserved.",
+          "primarySourceUrl": "https://www.databank.com/resources/press-releases/databank-completes-first-phase-of-major-recapitalization/",
+          "primarySourceSha256": "dc0dc270169029e44b66f2f58e4eaa993b2135fe45ba5887058b848c34fa25b2",
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": true
+        },
+        {
+          "field": "fundAttribution",
+          "outsideOriginal603": false,
+          "disposition": "RETAIN_CURRENT_SOURCE_SUPPORTED_EXACT_EXCEPTION",
+          "current": "UNRESOLVED",
+          "seed": "INFERRED",
+          "recommended": "UNRESOLVED",
+          "primarySourceUrl": "https://www.databank.com/resources/press-releases/databank-completes-first-phase-of-major-recapitalization/",
+          "primarySourceSha256": "dc0dc270169029e44b66f2f58e4eaa993b2135fe45ba5887058b848c34fa25b2",
+          "productionWriteRequired": false,
+          "seedPersistenceRequired": true
+        },
+        {
+          "field": "fundName",
+          "outsideOriginal603": false,
+          "disposition": "RETAIN_CURRENT_SOURCE_SUPPORTED_EXACT_EXCEPTION",
+          "current": null,
+          "seed": "Northleaf NEIF",
+          "recommended": null,
+          "primarySourceUrl": "https://www.databank.com/resources/press-releases/databank-completes-first-phase-of-major-recapitalization/",
+          "primarySourceSha256": "dc0dc270169029e44b66f2f58e4eaa993b2135fe45ba5887058b848c34fa25b2",
+          "productionWriteRequired": false,
+          "seedPersistenceRequired": true
+        }
+      ],
+      "additionalFieldDecisions": [],
+      "preserves": {
+        "stake": "Member of the 35% 2022 consortium; individual percentage not publicly disclosed",
+        "vehicleName": null,
+        "investmentYear": 2022,
+        "organizationName": "Northleaf Capital Partners",
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      "seedMatchesRecommendedAttribution": false,
+      "wholeCompanyReconciled": false
+    },
+    {
+      "manager": "Ardian",
+      "ownerId": "cmsydgkmw000jb46hyotidjx9",
+      "recordId": "OFA-07E4341A4708",
+      "originalRecordId": null,
+      "fundId": null,
+      "sourceId": "recap-2022",
+      "year": 2022,
+      "stake": "Member of the 35% 2022 consortium; individual percentage not publicly disclosed",
+      "fallback": "Ardian",
+      "fields": [
+        "attributedFundName",
+        "attributionConfidence",
+        "attributionRationale",
+        "fundAttribution",
+        "fundName"
+      ],
+      "companyId": "cmrxpj7kw00kzivhenjb9mu5y",
+      "seedWriteBinding": null,
+      "candidateSha256": "c6852fcfff0046777968da4ab18712ae4013147919ba29aec1333a7c4082239d",
+      "current": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "seedExpectation": {
+        "linkedFundName": "Ardian Americas Infrastructure Fund V (AAIF V)",
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "Ardian Americas Infrastructure Fund V (AAIF V)",
+        "attributionConfidence": "MEDIUM",
+        "attributionRationale": "Estimated from manager match 1.00, vehicle-name overlap 0.33, vintage 2022 is 0 years before investment, North America-relevant mandate; next candidate trails by 12.0 points. Public disclosure does not identify a distinct fund."
+      },
+      "recommendedAttribution": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "DataBank's August 30, 2022 closing release identifies Ardian among the four-manager consortium acquiring a combined 35%. Neither that release nor the investor roster identifies the underlying Ardian fund or its individual share. AAIF V is not inferred from manager, geography or vintage; the precise exceptions remain."
+      },
+      "fieldDecisions": [
+        {
+          "field": "attributedFundName",
+          "outsideOriginal603": false,
+          "disposition": "RETAIN_CURRENT_SOURCE_SUPPORTED_EXACT_EXCEPTION",
+          "current": null,
+          "seed": "Ardian Americas Infrastructure Fund V (AAIF V)",
+          "recommended": null,
+          "primarySourceUrl": "https://www.databank.com/resources/press-releases/databank-completes-first-phase-of-major-recapitalization/",
+          "primarySourceSha256": "dc0dc270169029e44b66f2f58e4eaa993b2135fe45ba5887058b848c34fa25b2",
+          "productionWriteRequired": false,
+          "seedPersistenceRequired": true
+        },
+        {
+          "field": "attributionConfidence",
+          "outsideOriginal603": false,
+          "disposition": "RETAIN_CURRENT_SOURCE_SUPPORTED_EXACT_EXCEPTION",
+          "current": null,
+          "seed": "MEDIUM",
+          "recommended": null,
+          "primarySourceUrl": "https://www.databank.com/resources/press-releases/databank-completes-first-phase-of-major-recapitalization/",
+          "primarySourceSha256": "dc0dc270169029e44b66f2f58e4eaa993b2135fe45ba5887058b848c34fa25b2",
+          "productionWriteRequired": false,
+          "seedPersistenceRequired": true
+        },
+        {
+          "field": "attributionRationale",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_CORRECTION_REQUIRED_NOT_AUTHORIZED_BY_THIS_REPORT",
+          "current": null,
+          "seed": "Estimated from manager match 1.00, vehicle-name overlap 0.33, vintage 2022 is 0 years before investment, North America-relevant mandate; next candidate trails by 12.0 points. Public disclosure does not identify a distinct fund.",
+          "recommended": "DataBank's August 30, 2022 closing release identifies Ardian among the four-manager consortium acquiring a combined 35%. Neither that release nor the investor roster identifies the underlying Ardian fund or its individual share. AAIF V is not inferred from manager, geography or vintage; the precise exceptions remain.",
+          "primarySourceUrl": "https://www.databank.com/resources/press-releases/databank-completes-first-phase-of-major-recapitalization/",
+          "primarySourceSha256": "dc0dc270169029e44b66f2f58e4eaa993b2135fe45ba5887058b848c34fa25b2",
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": true
+        },
+        {
+          "field": "fundAttribution",
+          "outsideOriginal603": false,
+          "disposition": "RETAIN_CURRENT_SOURCE_SUPPORTED_EXACT_EXCEPTION",
+          "current": "UNRESOLVED",
+          "seed": "INFERRED",
+          "recommended": "UNRESOLVED",
+          "primarySourceUrl": "https://www.databank.com/resources/press-releases/databank-completes-first-phase-of-major-recapitalization/",
+          "primarySourceSha256": "dc0dc270169029e44b66f2f58e4eaa993b2135fe45ba5887058b848c34fa25b2",
+          "productionWriteRequired": false,
+          "seedPersistenceRequired": true
+        },
+        {
+          "field": "fundName",
+          "outsideOriginal603": false,
+          "disposition": "RETAIN_CURRENT_SOURCE_SUPPORTED_EXACT_EXCEPTION",
+          "current": null,
+          "seed": "Ardian Americas Infrastructure Fund V (AAIF V)",
+          "recommended": null,
+          "primarySourceUrl": "https://www.databank.com/resources/press-releases/databank-completes-first-phase-of-major-recapitalization/",
+          "primarySourceSha256": "dc0dc270169029e44b66f2f58e4eaa993b2135fe45ba5887058b848c34fa25b2",
+          "productionWriteRequired": false,
+          "seedPersistenceRequired": true
+        }
+      ],
+      "additionalFieldDecisions": [],
+      "preserves": {
+        "stake": "Member of the 35% 2022 consortium; individual percentage not publicly disclosed",
+        "vehicleName": null,
+        "investmentYear": 2022,
+        "organizationName": "Ardian",
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      "seedMatchesRecommendedAttribution": false,
+      "wholeCompanyReconciled": false
+    },
+    {
+      "manager": "CBRE Investment Management",
+      "ownerId": "cmsydgkpw000kb46hpgan1qz3",
+      "recordId": "OFA-DA47514092BE",
+      "originalRecordId": null,
+      "fundId": null,
+      "sourceId": "investors",
+      "year": null,
+      "stake": "Exact entry date, vehicle and percentage not publicly disclosed",
+      "fallback": "CBRE Investment Management",
+      "fields": [
+        "attributedFundName",
+        "attributionConfidence",
+        "attributionRationale",
+        "fundAttribution",
+        "fundName"
+      ],
+      "companyId": "cmrxpj7kw00kzivhenjb9mu5y",
+      "seedWriteBinding": null,
+      "candidateSha256": "e9dc07df3295157aa50e2fca8196f247a04de7c7bac9409198fe31f444da800f",
+      "current": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "seedExpectation": {
+        "linkedFundName": "CBRE GIF",
+        "fundAttribution": "INFERRED",
+        "attributedFundName": "CBRE GIF",
+        "attributionConfidence": "MEDIUM",
+        "attributionRationale": "Estimated from manager match 1.00, vehicle-name overlap 0.50, evergreen/permanent-capital vehicle, North America-relevant mandate; no second manager-matched fund candidate. Public disclosure does not identify a distinct fund."
+      },
+      "recommendedAttribution": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "DataBank's investor roster identifies CBRE Caledon and describes its fund and separate-account client business, without allocating DataBank to a named fund or account. Preserve the existing CBRE Investment Management association without inferring CBRE GIF, a holding entity, entry year or percentage."
+      },
+      "fieldDecisions": [
+        {
+          "field": "attributedFundName",
+          "outsideOriginal603": false,
+          "disposition": "RETAIN_CURRENT_SOURCE_SUPPORTED_EXACT_EXCEPTION",
+          "current": null,
+          "seed": "CBRE GIF",
+          "recommended": null,
+          "primarySourceUrl": "https://www.databank.com/about-databank/our-investors/",
+          "primarySourceSha256": "e169acc39e0a236b59d97cfe5cebc4ff8fc817308053f5cbd114cd9affaa9004",
+          "productionWriteRequired": false,
+          "seedPersistenceRequired": true
+        },
+        {
+          "field": "attributionConfidence",
+          "outsideOriginal603": false,
+          "disposition": "RETAIN_CURRENT_SOURCE_SUPPORTED_EXACT_EXCEPTION",
+          "current": null,
+          "seed": "MEDIUM",
+          "recommended": null,
+          "primarySourceUrl": "https://www.databank.com/about-databank/our-investors/",
+          "primarySourceSha256": "e169acc39e0a236b59d97cfe5cebc4ff8fc817308053f5cbd114cd9affaa9004",
+          "productionWriteRequired": false,
+          "seedPersistenceRequired": true
+        },
+        {
+          "field": "attributionRationale",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_CORRECTION_REQUIRED_NOT_AUTHORIZED_BY_THIS_REPORT",
+          "current": null,
+          "seed": "Estimated from manager match 1.00, vehicle-name overlap 0.50, evergreen/permanent-capital vehicle, North America-relevant mandate; no second manager-matched fund candidate. Public disclosure does not identify a distinct fund.",
+          "recommended": "DataBank's investor roster identifies CBRE Caledon and describes its fund and separate-account client business, without allocating DataBank to a named fund or account. Preserve the existing CBRE Investment Management association without inferring CBRE GIF, a holding entity, entry year or percentage.",
+          "primarySourceUrl": "https://www.databank.com/about-databank/our-investors/",
+          "primarySourceSha256": "e169acc39e0a236b59d97cfe5cebc4ff8fc817308053f5cbd114cd9affaa9004",
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": true
+        },
+        {
+          "field": "fundAttribution",
+          "outsideOriginal603": false,
+          "disposition": "RETAIN_CURRENT_SOURCE_SUPPORTED_EXACT_EXCEPTION",
+          "current": "UNRESOLVED",
+          "seed": "INFERRED",
+          "recommended": "UNRESOLVED",
+          "primarySourceUrl": "https://www.databank.com/about-databank/our-investors/",
+          "primarySourceSha256": "e169acc39e0a236b59d97cfe5cebc4ff8fc817308053f5cbd114cd9affaa9004",
+          "productionWriteRequired": false,
+          "seedPersistenceRequired": true
+        },
+        {
+          "field": "fundName",
+          "outsideOriginal603": false,
+          "disposition": "RETAIN_CURRENT_SOURCE_SUPPORTED_EXACT_EXCEPTION",
+          "current": null,
+          "seed": "CBRE GIF",
+          "recommended": null,
+          "primarySourceUrl": "https://www.databank.com/about-databank/our-investors/",
+          "primarySourceSha256": "e169acc39e0a236b59d97cfe5cebc4ff8fc817308053f5cbd114cd9affaa9004",
+          "productionWriteRequired": false,
+          "seedPersistenceRequired": true
+        }
+      ],
+      "additionalFieldDecisions": [],
+      "preserves": {
+        "stake": "Exact entry date, vehicle and percentage not publicly disclosed",
+        "vehicleName": null,
+        "investmentYear": null,
+        "organizationName": "CBRE Investment Management",
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      "seedMatchesRecommendedAttribution": false,
+      "wholeCompanyReconciled": false
+    }
+  ],
+  "databaseWrites": 0,
+  "seedChanges": 0,
+  "sourceTransitions": 0,
+  "applyAuthorized": false,
+  "completionAllowed": false,
+  "baseCommit": "423868dd6e024ad3b10cb2c474000379d79dc182",
+  "executionManifestSha256": "e1d37c59b0db0754f38fc8f1b668423d7135fa392b15559e4b7008586cbb2e07",
+  "ledgerSha256": "9118f52029df79c7d0e546d42bbae2d546b671786b574327c12bcd0beed5a45c",
+  "productionSnapshotSha256": "76f4b56dc3e542a67437d3bd45fb4cc183c6d2fefdbe2922e7ce088ef2279b3e",
+  "dependencies": [
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0110-databank-v1.json",
+      "sha256": "362657e3c7982b6087588ace8e5b43c4710b21b6c3f09c4facff7ff2eccb4cc2"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+      "sha256": "41032b7cf3c018305a08a588dfe110a247f56e5fbdff84c72c5e9627fa5f2e51"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0110-databank/attempt-1/chatgpt-attestation.json",
+      "sha256": "6370ac7839ea93655514cc6c30eab59fdd5eb1d28cc93d0e8d3176d107c7b464"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0110-databank/attempt-1/chatgpt-repair-response.txt",
+      "sha256": "91d2487a661e5604b5cdb97232d50f96697f389645248570ffddec935360530a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0110-databank/attempt-1/chatgpt-response-validation.json",
+      "sha256": "13a58d735635fa19f67e762049f73c1833f6ca2c3c22675ccdf47334be1ef2da"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0110-databank/attempt-1/production-apply/apply-receipt.json",
+      "sha256": "7959d0693b65a890385d68c4350913b70f67c2cf1d83a72c08b30cccd5b46b57"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0110-databank/attempt-1/research-binding.json",
+      "sha256": "9946f5d0b7337fbfdf152bbced41cf00b2fe4da6d89829671fde119cca03065e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0110-databank/attempt-1/research-decision.json",
+      "sha256": "a4962225b52b0ab9f3e59903aa68cbf5df95bcbce253183ad7ed63dde9f07d44"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0110-databank/attempt-1/source-verification.json",
+      "sha256": "78f5af2523cca8ff4f99e3bf591318c36a886ffbecbf771627845ae1e553350e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0110-databank-v1/proposal.json",
+      "sha256": "63f3a53aa50186494608a94add070226d5da3b7f862ed7ad089f023c23cb56f9"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+      "sha256": "4c29a13ed3559b1a3714e49a04df58fb05128657e406768ada7cb622bb3d4139"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/chronology.json",
+      "sha256": "354c05be15e4747a3f983cdf13894d0a7d003650f525550718adaaf72befc97a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/recovered-initial-apply/apply-receipt.json",
+      "sha256": "ad91679544c16da42eb4c1a89785243cf2e0a22a5ffdd229bd5ac97269497487"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/usd-clean-fuels/authority.json",
+      "sha256": "79ffb3a059ac4b78323002e78759b0e7e8a04f794a06e98b52986c33c4060eb5"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-08-16/apply-manifest.json",
+      "sha256": "1c3b0e245931211cbd8cac66c3810004a4fb6268d79d0b2e4e5a84639a207362"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-08-16/approval.json",
+      "sha256": "7498d586973eaf549d7fd541ab49d6ab9cc75b4a8331c7a12a90a2b3c352001e"
+    },
+    {
+      "path": "prisma/seed-data/funds.manifest.json",
+      "sha256": "6cce21787660a2d096e2836ddfae7f7fbc1ec60697ce5446de07c431055fd902"
+    },
+    {
+      "path": "prisma/seed-data/ownership-attributions.manifest.json",
+      "sha256": "c3b8d505c6cd8c9c1db16a01b93c0cb8f3d394b74919afa3048d458dc4c3467f"
+    },
+    {
+      "path": "scripts/generate-portfolio-fund-attribution.ts",
+      "sha256": "67274414b66683dbd1f1d9ca273f4f0a0ba58ff7a7cbf33cd8fedc70fb476b3d"
+    },
+    {
+      "path": "scripts/portfolio-fund-attribution/schema.ts",
+      "sha256": "ca1ad36475607959b6255316b795750c3e82ecf89aefc0951df0cc564fd61405"
+    }
+  ],
+  "sourceCaptureSha256": "e461f3233aedf67dad35df965e0a0563b43b4d69edaae1e78b52dca290c16040",
+  "reportSha256": "0c9a00866574eb4b2097cbec9d71cfb7286d58316855f615afc8b7b047807009"
+}
