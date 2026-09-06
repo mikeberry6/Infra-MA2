@@ -53,9 +53,12 @@ describe("Extenet identity-only seed persistence", () => {
     expect(projected.before).toEqual(plan.retainedBefore);
     expect(projected.retired).toEqual(plan.retiredDuplicate);
     expect(projected.after).toEqual({ ...plan.retainedBefore, name: EXTENET_NAME });
-    expect(companies).toEqual(projected.resultingCompanies);
+    // Preserve the complete historical PR917 image; later scoped state repairs
+    // have their own exact whole-live-seed assertion and cannot rewrite this one.
+    expect(sha256Canonical(projected.resultingCompanies)).toBe(plan.resultingSeedSha256);
+    expect(companies.find((company) => company.name === EXTENET_NAME)).toEqual(projected.after);
+    expect(companies.some((company) => [EXTENET_OLD_NAME, EXTENET_DUPLICATE_NAME].includes(company.name))).toBe(false);
     expect(companies).toHaveLength(1128);
-    expect(sha256Canonical(companies)).toBe(plan.resultingSeedSha256);
     const key = (company: { name: string; country: string }) => `${company.name.toLowerCase()}\0${company.country.toLowerCase()}`;
     expect(companies.map(key).sort()).toEqual(snapshot.production.publishedIdentities.map(key).sort());
   });
@@ -63,7 +66,7 @@ describe("Extenet identity-only seed persistence", () => {
   it("renames four attribution lookup keys without changing record IDs/metadata and removes only the duplicate", () => {
     const oldManifest = json("audits/portco-reconciliation/2026-09-06/seed-alias-persistence/resulting-attribution-manifest.json");
     const spec = json(`${directory}/seed-attribution-spec.json`);
-    const reconciled = reconcileSeedAttributionManifest({ sourceManifest: oldManifest, spec, evaluatedCompanies: companies });
+    const reconciled = reconcileSeedAttributionManifest({ sourceManifest: oldManifest, spec, evaluatedCompanies: projectExtenetSeedIdentity(source, image).resultingCompanies });
     expect(reconciled.manifest).toEqual(verifySeedManifest(json("prisma/seed-data/ownership-attributions.manifest.json")));
     expect(reconciled.artifact).toEqual(json(`${directory}/seed-attribution-reconciliation.json`));
     expect(spec.batchSha256).toBe(plan.repairSha256);

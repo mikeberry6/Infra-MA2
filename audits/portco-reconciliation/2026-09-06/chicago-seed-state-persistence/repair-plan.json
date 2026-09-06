@@ -1,0 +1,465 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHICAGO_DISPLAY_STATE_SEED_PERSISTENCE",
+  "baseCommit": "342118055e7cf10c24c7d8732547dfd0d94cd2f0",
+  "capturedAt": "2026-09-06T04:23:11.161Z",
+  "target": {
+    "label": "production-readonly",
+    "fingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929"
+  },
+  "canonicalDeployment": {
+    "id": "dpl_FAFPGdGUD1s9ToFLu5hdtA2bxeD9",
+    "url": "infra-ma-2-ny7fhoay5-mberry.vercel.app",
+    "readyState": "READY",
+    "target": "production",
+    "aliases": [
+      "infra-ma-2.vercel.app",
+      "infra-ma-2-git-main-mberry.vercel.app"
+    ],
+    "gitSource": {
+      "ref": "main",
+      "repoId": 1143556044,
+      "sha": "342118055e7cf10c24c7d8732547dfd0d94cd2f0",
+      "type": "github",
+      "prId": null
+    }
+  },
+  "executionManifestSha256": "e1d37c59b0db0754f38fc8f1b668423d7135fa392b15559e4b7008586cbb2e07",
+  "ledgerSha256": "9118f52029df79c7d0e546d42bbae2d546b671786b574327c12bcd0beed5a45c",
+  "activeBatchId": null,
+  "dependencies": [
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+      "sha256": "41032b7cf3c018305a08a588dfe110a247f56e5fbdff84c72c5e9627fa5f2e51"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+      "sha256": "4c29a13ed3559b1a3714e49a04df58fb05128657e406768ada7cb622bb3d4139"
+    },
+    {
+      "path": "prisma/seed-data/companies.ts",
+      "sha256": "6dde9d547a0877365739d4e0924c64fd87da182bd01af682fe38ef90a92340fb"
+    },
+    {
+      "path": "prisma/seed-data/approved-portco-after-images.json",
+      "sha256": "2f965edb5cb3aeee7416a203b5e9c57f2739c62c9f55964ab6d7c6a32bbc30b5"
+    },
+    {
+      "path": "prisma/seed-data/ownership-attributions.manifest.json",
+      "sha256": "c3b8d505c6cd8c9c1db16a01b93c0cb8f3d394b74919afa3048d458dc4c3467f"
+    },
+    {
+      "path": "prisma/seed-data/company-redirect-baseline.json",
+      "sha256": "ad851a0a0522d78db12eeb193939f9488100d1037484e08f608af56cb9df2cd1"
+    },
+    {
+      "path": "prisma/seed-data/chicago-seed-state-persistence.ts",
+      "sha256": "5acb2a828557168411a26c69465e0cf574196f7de738b716b60fbb247c89999a"
+    }
+  ],
+  "references": [
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0345-chicago-parking-meters/attempt-2/terminal-decision-deferred-v1.json",
+      "sha256": "c7851206d5922964d4aa8b9ac526f98040eb6672be7edc57eaa817d894791381",
+      "fileSha256": "a2b2987b084389731d66934c4b2ac3de825b1dfe1d3f4a8b130c4c08d13a7d4c"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0345-chicago-parking-meters/attempt-2/locked-deferred-v2-task-snapshot.json",
+      "sha256": "68673e1d397d9f3359618d3633a9d15de2fcdf9007c9e822a78f1e263799689a",
+      "fileSha256": "68673e1d397d9f3359618d3633a9d15de2fcdf9007c9e822a78f1e263799689a"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0345-chicago-parking-meters/attempt-2/application-research-decision.json",
+      "sha256": "9ef30e9fc9b1282366dbc03c612421613d44fc24fbde08b43e693330b2577f89",
+      "fileSha256": "9ef30e9fc9b1282366dbc03c612421613d44fc24fbde08b43e693330b2577f89"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0345-chicago-parking-meters/attempt-2/source-verification.json",
+      "sha256": "7dd93ee51b99678e33f340dfad9c33f97ccb5ea42397e838dfed39475005e9a2",
+      "fileSha256": "7dd93ee51b99678e33f340dfad9c33f97ccb5ea42397e838dfed39475005e9a2"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0345-chicago-parking-meters/attempt-2/research-decision.json",
+      "sha256": "d1d4875e5b3dae8becc701033a097ab00b9f30069490c567af703f98c5f555c8",
+      "fileSha256": "d1d4875e5b3dae8becc701033a097ab00b9f30069490c567af703f98c5f555c8"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0345-chicago-parking-meters/attempt-2/chatgpt-attestation.json",
+      "sha256": "4c16cfbe370781767464236fa41ea2de1b619d245b10e68c224cbad53e57ea6e",
+      "fileSha256": "4c16cfbe370781767464236fa41ea2de1b619d245b10e68c224cbad53e57ea6e"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0345-chicago-parking-meters/attempt-2/chatgpt-research-prompt.md",
+      "sha256": "87a3dcddac6ab0a407b1ef85962954c935285cdfe6060925f1f4571ba0db00a8",
+      "fileSha256": "87a3dcddac6ab0a407b1ef85962954c935285cdfe6060925f1f4571ba0db00a8"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0345-chicago-parking-meters/attempt-2/chatgpt-accepted-response.txt",
+      "sha256": "3d598ea2da19b220b9794e063b2935da5eb75f6543916229e4f67a7b10494b37",
+      "fileSha256": "3d598ea2da19b220b9794e063b2935da5eb75f6543916229e4f67a7b10494b37"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0345-chicago-parking-meters/attempt-2/chatgpt-transcript.txt",
+      "sha256": "cb94583e1d2b633a5e10d3bb4a967746c5ff46af8b550ea1e3de4b9fa009bd15",
+      "fileSha256": "cb94583e1d2b633a5e10d3bb4a967746c5ff46af8b550ea1e3de4b9fa009bd15"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0345-chicago-parking-meters/attempt-2/source-verification.json",
+      "sha256": "7dd93ee51b99678e33f340dfad9c33f97ccb5ea42397e838dfed39475005e9a2",
+      "fileSha256": "7dd93ee51b99678e33f340dfad9c33f97ccb5ea42397e838dfed39475005e9a2"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0345-chicago-parking-meters/attempt-2/chatgpt-response-validation.json",
+      "sha256": "90c19abe4dcd306ba38d6df4cbb9bbd1010cd44284612fd104d7390f759450c9",
+      "fileSha256": "90c19abe4dcd306ba38d6df4cbb9bbd1010cd44284612fd104d7390f759450c9"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0345-chicago-parking-meters/attempt-2/research-decision.json",
+      "sha256": "d1d4875e5b3dae8becc701033a097ab00b9f30069490c567af703f98c5f555c8",
+      "fileSha256": "d1d4875e5b3dae8becc701033a097ab00b9f30069490c567af703f98c5f555c8"
+    }
+  ],
+  "taskId": "ledger:0345:chicago-parking-meters:1a7d998e",
+  "taskStatus": "DEFERRED",
+  "terminalDecisionSha256": "c7851206d5922964d4aa8b9ac526f98040eb6672be7edc57eaa817d894791381",
+  "immutableOverlayProposalSha256": "e8e04c45b1ab744cfddcccb93362e39a22b6adbac9b47a98eaf32c2797aa9535",
+  "canonicalCompanyId": "cmrxpj47q00g7ivhe2d22x3iq",
+  "before": {
+    "name": "Chicago Parking Meters, LLC",
+    "investmentFirm": "ADIA Infrastructure",
+    "sector": "Transportation",
+    "subsector": "On-street parking concession",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Deeside Investments, Inc.",
+    "description": "Chicago Parking Meters, LLC operates and maintains the City of Chicago’s on-street parking system under a 75-year concession, serving residents, commuters, and businesses across approximately 36,000 metered spaces with digital payment and management services.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "website": "https://parkchicago.com/",
+    "yearFounded": 2008,
+    "investmentYear": 2009,
+    "headquarters": "Chicago, Illinois",
+    "milestones": [
+      {
+        "date": "Dec 3, 2008",
+        "event": "Consortium selected as winning bidder for Chicago parking concession.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Feb 13, 2009",
+        "event": "Concession closed and operations transferred.",
+        "category": "Financing"
+      },
+      {
+        "date": "Jun 5, 2013",
+        "event": "Amended concession agreement implemented.",
+        "category": "Other"
+      },
+      {
+        "date": "Mar 12, 2026",
+        "event": "Transfer approval requested following accepted sale bid.",
+        "category": "Divestiture"
+      }
+    ],
+    "management": [
+      {
+        "name": "Dennis Pedrelli",
+        "title": "Chief Executive Officer"
+      }
+    ],
+    "sources": [
+      {
+        "label": "City of Chicago — Ordinance authorizing approval of the proposed ownership transfer of Chicago Parking Meters, LLC",
+        "url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/matterattachmentspublic/fce6c416-c94a-4301-a2ef-6ef6c5ea6c93.pdf",
+        "type": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Identifies current ownership and pending Stonepeak sale."
+      },
+      {
+        "label": "Chicago Parking Meters — ParkChicago About",
+        "url": "https://parkchicago.com/about",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Provides company profile and operating scale."
+      },
+      {
+        "label": "morganstanley.com — Chicago Parking Meters, LLC",
+        "url": "https://www.morganstanley.com/im/en-us/capital-seeker/companies/chicago-parking-meters.html",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Morgan Stanley Infrastructure Investors LP and affiliated North Haven entities: SIGNED_PENDING_EXIT; 50.1%."
+      },
+      {
+        "label": "Allianz Global Investors — Infrastructure equity",
+        "url": "https://ch.allianzgi.com/en/pro/en-insights/private-markets/infrastructure-equity",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Allianz SE: SIGNED_PENDING_EXIT; 25.0%."
+      },
+      {
+        "label": "adia.ae — Chicago Parking Meters, LLC",
+        "url": "https://www.adia.ae/en/investments/infrastructure",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Abu Dhabi Investment Authority: SIGNED_PENDING_EXIT; 24.9%."
+      },
+      {
+        "label": "morganstanley.com — Chicago Parking Meters, LLC",
+        "url": "https://www.morganstanley.com/press-releases/chicago-parking-meters-llc-selected-as-winning-bidder-for-the-chicago-metered-parking-system_045f9d28-c142-11dd-b3a2-8df06e0b6eda",
+        "type": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "2008-12-03: Consortium selected as winning bidder for Chicago parking concession."
+      },
+      {
+        "label": "illinoiscourts.gov — Chicago Parking Meters, LLC",
+        "url": "https://www.illinoiscourts.gov/files/1123629.pdf/opinion",
+        "type": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "2009-02-13: Concession closed and operations transferred."
+      },
+      {
+        "label": "Close date source — Allianz Global Investors — Chicago Parking Meters, LLC",
+        "url": "https://metroplanning.org/projects/innovative-infrastructure-delivery-chicago-parking-meter-analysis/",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "2013-06-05: Amended concession agreement implemented."
+      },
+      {
+        "label": "parkchicago.com — Chicago Parking Meters, LLC",
+        "url": "https://parkchicago.com/news/parkchicago-r-begins-citywide-expansion-after-successful-west-loop-pilot-program",
+        "type": "ARTICLE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current management evidence for Dennis Pedrelli, Chief Executive Officer."
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Morgan Stanley Infrastructure Partners",
+        "ownershipVehicle": "North Haven Infrastructure Partners",
+        "investmentYear": 2009,
+        "stake": "50.1%",
+        "status": "Active",
+        "transactionState": "SIGNED_PENDING_EXIT"
+      },
+      {
+        "investmentFirm": "Allianz Global Investors",
+        "ownershipVehicle": "Deeside Investments, Inc.",
+        "investmentYear": 2009,
+        "stake": "25.0%",
+        "status": "Active",
+        "transactionState": "SIGNED_PENDING_EXIT"
+      },
+      {
+        "investmentFirm": "ADIA Infrastructure",
+        "ownershipVehicle": "Deeside Investments, Inc.",
+        "investmentYear": 2009,
+        "stake": "24.9%",
+        "status": "Active",
+        "transactionState": "SIGNED_PENDING_EXIT"
+      }
+    ]
+  },
+  "after": {
+    "name": "Chicago Parking Meters, LLC",
+    "investmentFirm": "ADIA Infrastructure",
+    "sector": "Transportation",
+    "subsector": "On-street parking concession",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Deeside Investments, Inc.",
+    "description": "Chicago Parking Meters, LLC operates and maintains the City of Chicago’s on-street parking system under a 75-year concession, serving residents, commuters, and businesses across approximately 36,000 metered spaces with digital payment and management services.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "website": "https://parkchicago.com/",
+    "yearFounded": 2008,
+    "investmentYear": 2009,
+    "headquarters": "Chicago, Illinois",
+    "milestones": [
+      {
+        "date": "Dec 3, 2008",
+        "event": "Consortium selected as winning bidder for Chicago parking concession.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Feb 13, 2009",
+        "event": "Concession closed and operations transferred.",
+        "category": "Financing"
+      },
+      {
+        "date": "Jun 5, 2013",
+        "event": "Amended concession agreement implemented.",
+        "category": "Other"
+      },
+      {
+        "date": "Mar 12, 2026",
+        "event": "Transfer approval requested following accepted sale bid.",
+        "category": "Divestiture"
+      }
+    ],
+    "management": [
+      {
+        "name": "Dennis Pedrelli",
+        "title": "Chief Executive Officer"
+      }
+    ],
+    "sources": [
+      {
+        "label": "City of Chicago — Ordinance authorizing approval of the proposed ownership transfer of Chicago Parking Meters, LLC",
+        "url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/matterattachmentspublic/fce6c416-c94a-4301-a2ef-6ef6c5ea6c93.pdf",
+        "type": "PRESENTATION",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Identifies current ownership and pending Stonepeak sale."
+      },
+      {
+        "label": "Chicago Parking Meters — ParkChicago About",
+        "url": "https://parkchicago.com/about",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Provides company profile and operating scale."
+      },
+      {
+        "label": "morganstanley.com — Chicago Parking Meters, LLC",
+        "url": "https://www.morganstanley.com/im/en-us/capital-seeker/companies/chicago-parking-meters.html",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Morgan Stanley Infrastructure Investors LP and affiliated North Haven entities: SIGNED_PENDING_EXIT; 50.1%."
+      },
+      {
+        "label": "Allianz Global Investors — Infrastructure equity",
+        "url": "https://ch.allianzgi.com/en/pro/en-insights/private-markets/infrastructure-equity",
+        "type": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Allianz SE: SIGNED_PENDING_EXIT; 25.0%."
+      },
+      {
+        "label": "adia.ae — Chicago Parking Meters, LLC",
+        "url": "https://www.adia.ae/en/investments/infrastructure",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Abu Dhabi Investment Authority: SIGNED_PENDING_EXIT; 24.9%."
+      },
+      {
+        "label": "morganstanley.com — Chicago Parking Meters, LLC",
+        "url": "https://www.morganstanley.com/press-releases/chicago-parking-meters-llc-selected-as-winning-bidder-for-the-chicago-metered-parking-system_045f9d28-c142-11dd-b3a2-8df06e0b6eda",
+        "type": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "2008-12-03: Consortium selected as winning bidder for Chicago parking concession."
+      },
+      {
+        "label": "illinoiscourts.gov — Chicago Parking Meters, LLC",
+        "url": "https://www.illinoiscourts.gov/files/1123629.pdf/opinion",
+        "type": "ARTICLE",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "2009-02-13: Concession closed and operations transferred."
+      },
+      {
+        "label": "Close date source — Allianz Global Investors — Chicago Parking Meters, LLC",
+        "url": "https://metroplanning.org/projects/innovative-infrastructure-delivery-chicago-parking-meter-analysis/",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "2013-06-05: Amended concession agreement implemented."
+      },
+      {
+        "label": "parkchicago.com — Chicago Parking Meters, LLC",
+        "url": "https://parkchicago.com/news/parkchicago-r-begins-citywide-expansion-after-successful-west-loop-pilot-program",
+        "type": "ARTICLE",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Current management evidence for Dennis Pedrelli, Chief Executive Officer."
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Morgan Stanley Infrastructure Partners",
+        "ownershipVehicle": "North Haven Infrastructure Partners",
+        "investmentYear": 2009,
+        "stake": "50.1%",
+        "status": "Active",
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "investmentFirm": "Allianz Global Investors",
+        "ownershipVehicle": "Deeside Investments, Inc.",
+        "investmentYear": 2009,
+        "stake": "25.0%",
+        "status": "Active",
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      {
+        "investmentFirm": "ADIA Infrastructure",
+        "ownershipVehicle": "Deeside Investments, Inc.",
+        "investmentYear": 2009,
+        "stake": "24.9%",
+        "status": "Active",
+        "transactionState": "CLOSED_ACTIVE"
+      }
+    ]
+  },
+  "ownerBindings": [
+    {
+      "productionId": "cmrxpjpd301coivhezreysio6",
+      "productionName": "MSIP",
+      "seedName": "Morgan Stanley Infrastructure Partners",
+      "vehicle": "North Haven Infrastructure Partners",
+      "stake": "50.1%"
+    },
+    {
+      "productionId": "cmrxpjpdm01cpivheou5raic6",
+      "productionName": "Abu Dhabi Investment Authority (ADIA)",
+      "seedName": "ADIA Infrastructure",
+      "vehicle": "Deeside Investments, Inc.",
+      "stake": "24.9%"
+    },
+    {
+      "productionId": "cmrxpjpe801cqivhexqthua8m",
+      "productionName": "Allianz Global Investors",
+      "seedName": "Allianz Global Investors",
+      "vehicle": "Deeside Investments, Inc.",
+      "stake": "25.0%"
+    }
+  ],
+  "productionSnapshotSha256": "ada6fb5c32353f08199c46ba917cd0682844684afcbb2c356eb01e2308d56831",
+  "sourceSeedSha256": "f87ac491a6f1e43228c5c8e2755beacda34f1685538f279d9a2299ca598fc7d8",
+  "resultingSeedSha256": "d9cf4d477f5640c4f69b8e2b5ab499cb14a2050222c3af75d0a643f2c271523c",
+  "resultingCompanyCount": 1128,
+  "freshException": {
+    "status": "EXACT_FACT_UNAVAILABLE",
+    "missingFact": "The final City action and consent, executed Stonepeak transaction documents and schedules, legal closing and funds flow, precise buyer fund and SPVs, every seller vehicle and retained or rolled interest, and the cutoff-current CPM and Deeside direct and beneficial-owner schedules with exact percentages and dates.",
+    "searchedEvidence": [
+      "Direct filed City transfer proposal and the current City Clerk legislative matter shell and public API",
+      "Direct concessionaire About page and current operating identity materials",
+      "Morgan Stanley's direct original winning-bidder release",
+      "Rendered Illinois appellate-court opinion mirror for the original concession closing",
+      "Direct August 12, 2026 aldermanic-office update anticipating a later Council vote",
+      "Current ordinance, roll-call, mayoral-action, consent, extension, termination, injunction, purchase-agreement, closing, funds-flow, member-ledger, beneficial-owner, fund, vehicle, stake, refinancing, recapitalization, transfer, exit and pending-transaction searches in the fresh ChatGPT conversation"
+    ],
+    "requiredToResolve": "An enacted ordinance and Council roll call, mayoral approval record, executed Section 17.1 consent and any extension letter, the executed purchase agreement and schedules, bid acceptance, closing certificate and funds-flow statement, and cutoff-dated CPM and Deeside member and beneficial-owner registers and transfer deeds."
+  },
+  "freshExceptionSha256": "853a9f06744ab85b971eb8744204cec29811471ba73bc8334e7f58b706d5a82e",
+  "changedFields": [
+    {
+      "path": "owners/0/transactionState",
+      "before": "SIGNED_PENDING_EXIT",
+      "after": "CLOSED_ACTIVE"
+    },
+    {
+      "path": "owners/1/transactionState",
+      "before": "SIGNED_PENDING_EXIT",
+      "after": "CLOSED_ACTIVE"
+    },
+    {
+      "path": "owners/2/transactionState",
+      "before": "SIGNED_PENDING_EXIT",
+      "after": "CLOSED_ACTIVE"
+    }
+  ],
+  "databaseWrites": 0,
+  "sourceTransitions": 0,
+  "attributionChanges": 0,
+  "citationChanges": 0,
+  "qualification": "Separate technical persistence of the existing production display, not application of research task 345. Only three seed machine-state fields change; current displayed owners, legal vehicles, stakes and dates are preserved, not newly verified. CLOSED_ACTIVE is an existing display state, not a finding about the contemplated Stonepeak sale. Its signing, final consent, legal closing and current cap table remain exactly deferred. The old overlay and citation evidenceLabels (including legacy SIGNED_PENDING_EXIT annotations already present in both seed and production) remain byte-identical historical metadata, not executed-transaction authority. Scoped owner bindings are presentation equivalents, not new legal identity evidence or a global alias rule. No seed replay or production data write is authorized.",
+  "repairSha256": "99ff5a36e145fe4403fa6ed14e0195696b3e99e53a1a5875ed6591317af17d0f"
+}
