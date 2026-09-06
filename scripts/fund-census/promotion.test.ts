@@ -62,8 +62,9 @@ describe("reviewed fund census promotion", () => {
       suppressedEvergreenChanges: 12,
       deferredRenames: 9,
       knownOwnershipReferences: 64,
-      currentSeedOwnershipReferences: 63,
-      ownershipReferenceDrift: -1,
+      // Retiring five superseded PortCo labels removes three duplicate raw-seed references.
+      currentSeedOwnershipReferences: 60,
+      ownershipReferenceDrift: -4,
     });
     expect(plan.summary.batches.map((batch) => batch.actionable)).toEqual([
       17,
