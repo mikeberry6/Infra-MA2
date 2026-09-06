@@ -1,0 +1,538 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_EXTENET_SEED_IDENTITY_PERSISTENCE",
+  "releaseId": "extenet-seed-identity-persistence-v1",
+  "baseCommit": "59b5d797abc1cff8e71949f08686a6d7ee7221af",
+  "capturedAt": "2026-09-06T03:22:26.368Z",
+  "target": {
+    "label": "production-readonly",
+    "fingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929"
+  },
+  "executionManifestSha256": "e1d37c59b0db0754f38fc8f1b668423d7135fa392b15559e4b7008586cbb2e07",
+  "ledgerSha256": "9118f52029df79c7d0e546d42bbae2d546b671786b574327c12bcd0beed5a45c",
+  "activeBatchId": null,
+  "dependencies": [
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+      "sha256": "41032b7cf3c018305a08a588dfe110a247f56e5fbdff84c72c5e9627fa5f2e51"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+      "sha256": "4c29a13ed3559b1a3714e49a04df58fb05128657e406768ada7cb622bb3d4139"
+    },
+    {
+      "path": "prisma/seed-data/companies.ts",
+      "sha256": "f1bce8343beca212805fa631963e7328a982db866204eb55005623f7a6240586"
+    },
+    {
+      "path": "prisma/seed-data/approved-portco-after-images.json",
+      "sha256": "2f965edb5cb3aeee7416a203b5e9c57f2739c62c9f55964ab6d7c6a32bbc30b5"
+    },
+    {
+      "path": "prisma/seed-data/ownership-attributions.manifest.json",
+      "sha256": "1d32ea1ae88517ed158c5278016e4319ce6f128b8dacb0bb4fb93a293ffb5690"
+    },
+    {
+      "path": "prisma/seed-data/company-redirect-baseline.json",
+      "sha256": "ad851a0a0522d78db12eeb193939f9488100d1037484e08f608af56cb9df2cd1"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/seed-alias-persistence/production-release-verification.json",
+      "sha256": "b3d66d5c52a9b8718a86f23f07224ccd0c954a77f23963670d5ac5d858749cd1"
+    }
+  ],
+  "references": [
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0213-extenet-formerly-extenet-systems/attempt-2/terminal-decision-deferred-v1.json",
+      "sha256": "9d2ee05085dbcdeab654e7f313d80b8479d194a5cb604eb5e167e86cfa5ffb21",
+      "fileSha256": "15986e6dbfe551f79c71cf6d3569024204c36aca710e04a0fd245571a06336c8"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0213-extenet-formerly-extenet-systems/attempt-2/locked-deferred-v1-task-snapshot.json",
+      "sha256": "de9e9092f8a18f63a759802c0414d1d7a13594481b0690cc47859bd63ed8ee5d",
+      "fileSha256": "de9e9092f8a18f63a759802c0414d1d7a13594481b0690cc47859bd63ed8ee5d"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0213-extenet-formerly-extenet-systems/attempt-2/application-research-decision.json",
+      "sha256": "9b8f42f27dea43a2585a82c2410c82a39fb02946ca6fbd20bc8c924ceea33557",
+      "fileSha256": "9b8f42f27dea43a2585a82c2410c82a39fb02946ca6fbd20bc8c924ceea33557"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0213-extenet-formerly-extenet-systems/attempt-2/source-verification.json",
+      "sha256": "1c0b2cbc7ce14dab21d23014088b57ba3237d8606b81fd55bb58f329bf024784",
+      "fileSha256": "1c0b2cbc7ce14dab21d23014088b57ba3237d8606b81fd55bb58f329bf024784"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0424-extenet-formerly-extenet-systems/attempt-1/terminal-decision-v1.json",
+      "sha256": "3fa7bc24717546d651d903e2da72e1da0152461a9387bb48c2ba603e1bc88bca",
+      "fileSha256": "e74155242260b05874a11e83d4b6a881db192f03b70b5c5aa5f417f1e832ce7d"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0424-extenet-formerly-extenet-systems/attempt-1/locked-batch-v2-task-snapshot.json",
+      "sha256": "ccb4d48463ba6a0d484bb9bac04f8628ddd4afa1262d5176317c5e5d21968708",
+      "fileSha256": "ccb4d48463ba6a0d484bb9bac04f8628ddd4afa1262d5176317c5e5d21968708"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0424-extenet-formerly-extenet-systems/attempt-1/application-research-decision-v2.json",
+      "sha256": "a45ce339c705b42e73d12ce49f926addefe2c1fc9fd3a2313bddf959e3da668c",
+      "fileSha256": "a45ce339c705b42e73d12ce49f926addefe2c1fc9fd3a2313bddf959e3da668c"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0424-extenet-formerly-extenet-systems/attempt-1/application-source-verification-v1.json",
+      "sha256": "168b98fd383fd5e969dba1f74856b303a85efd6de6d67a45792d600d6246a111",
+      "fileSha256": "168b98fd383fd5e969dba1f74856b303a85efd6de6d67a45792d600d6246a111"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0475-extenet/attempt-1/terminal-decision-v1.json",
+      "sha256": "29142adb9c929514354f746fdf1da0ba496149b060fdc1929f576c81ddfc5959",
+      "fileSha256": "df98f02c75558c3ca0400b25652278e989dd930fca9ddcf987fa5c9af96152ca"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0475-extenet/attempt-1/locked-batch-v1-task-snapshot.json",
+      "sha256": "b6a3b9a8723680e059d7e556440257d9722380ae8b161f68bcc6d4ca9a8175b5",
+      "fileSha256": "b6a3b9a8723680e059d7e556440257d9722380ae8b161f68bcc6d4ca9a8175b5"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0475-extenet/attempt-1/dependent-research-decision-v1.json",
+      "sha256": "aa5afaec17d99e16c2dddc242e5722c921c82ad5125c0de6149ad18841f7e6c1",
+      "fileSha256": "aa5afaec17d99e16c2dddc242e5722c921c82ad5125c0de6149ad18841f7e6c1"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0475-extenet/attempt-1/dependent-source-verification-v1.json",
+      "sha256": "939a12d853af2233e6d82b35f6dc8e5e7fb2c447d15e4a0b920db6ec54b1d55a",
+      "fileSha256": "939a12d853af2233e6d82b35f6dc8e5e7fb2c447d15e4a0b920db6ec54b1d55a"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0476-extenet-systems/attempt-1/terminal-decision-v1.json",
+      "sha256": "ec7746200a15879e5706f501f0ec1825e9c0d47eece68c39830d5c025209b79c",
+      "fileSha256": "480791b39521b5868266919af2f90ae5b0258c4024d451022aead11fc38f9021"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0476-extenet-systems/attempt-1/locked-batch-v1-task-snapshot.json",
+      "sha256": "b1a31a1c0ac19cb8ffbe77022a0b79cbca04d443baac96bed81f937985866df5",
+      "fileSha256": "b1a31a1c0ac19cb8ffbe77022a0b79cbca04d443baac96bed81f937985866df5"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0476-extenet-systems/attempt-1/dependent-research-decision-v1.json",
+      "sha256": "e2aede6996ac6b4178671e8263447f91d9b3aad6344f556d2532b10167b139e0",
+      "fileSha256": "e2aede6996ac6b4178671e8263447f91d9b3aad6344f556d2532b10167b139e0"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0476-extenet-systems/attempt-1/dependent-source-verification-v1.json",
+      "sha256": "8af51b61b7bcc0822011c708008a01c9fe442d933ae7bf32a9fc8b3a39fbcc26",
+      "fileSha256": "8af51b61b7bcc0822011c708008a01c9fe442d933ae7bf32a9fc8b3a39fbcc26"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0213-extenet-formerly-extenet-systems/attempt-2/research-decision.json",
+      "sha256": "c1741c01d873e7d2d5bde36e52c8aee02a2711b021162113219c0ce62841a989",
+      "fileSha256": "c1741c01d873e7d2d5bde36e52c8aee02a2711b021162113219c0ce62841a989"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0213-extenet-formerly-extenet-systems/attempt-2/chatgpt-attestation.json",
+      "sha256": "9820e7d41a99cc41a57e6635a06fc18da3d743bad1257832035ec20a4c95f1d6",
+      "fileSha256": "9820e7d41a99cc41a57e6635a06fc18da3d743bad1257832035ec20a4c95f1d6"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0213-extenet-formerly-extenet-systems/attempt-2/chatgpt-research-prompt.md",
+      "sha256": "ab187427bb007720e37f6c6160ec50e8ebf211183a95216b0ff7b9fee7f1b0e1",
+      "fileSha256": "ab187427bb007720e37f6c6160ec50e8ebf211183a95216b0ff7b9fee7f1b0e1"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0213-extenet-formerly-extenet-systems/attempt-2/chatgpt-accepted-response.txt",
+      "sha256": "fad81b9c2c2ed0e92c6bf3aff8ef299fd4c708347db87b6b1a9765055926a61d",
+      "fileSha256": "fad81b9c2c2ed0e92c6bf3aff8ef299fd4c708347db87b6b1a9765055926a61d"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0213-extenet-formerly-extenet-systems/attempt-2/chatgpt-transcript.txt",
+      "sha256": "a5cb53a4397bb861fabe35a9a35175b797e807d0f362d2689abdfcc182b2c726",
+      "fileSha256": "a5cb53a4397bb861fabe35a9a35175b797e807d0f362d2689abdfcc182b2c726"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0213-extenet-formerly-extenet-systems/attempt-2/source-verification.json",
+      "sha256": "1c0b2cbc7ce14dab21d23014088b57ba3237d8606b81fd55bb58f329bf024784",
+      "fileSha256": "1c0b2cbc7ce14dab21d23014088b57ba3237d8606b81fd55bb58f329bf024784"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0213-extenet-formerly-extenet-systems/attempt-2/chatgpt-response-validation.json",
+      "sha256": "482cc37a7babe9a6f228711bd76ebbe122a106cd867c721454e986746e4b7b3f",
+      "fileSha256": "482cc37a7babe9a6f228711bd76ebbe122a106cd867c721454e986746e4b7b3f"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0213-extenet-formerly-extenet-systems/attempt-2/research-decision.json",
+      "sha256": "c1741c01d873e7d2d5bde36e52c8aee02a2711b021162113219c0ce62841a989",
+      "fileSha256": "c1741c01d873e7d2d5bde36e52c8aee02a2711b021162113219c0ce62841a989"
+    }
+  ],
+  "members": [
+    {
+      "sequence": 213,
+      "taskId": "ledger:0213:extenet-formerly-extenet-systems:1d3fac1c",
+      "subject": "Extenet (formerly ExteNet Systems)",
+      "status": "DEFERRED",
+      "decisionSha256": "9d2ee05085dbcdeab654e7f313d80b8479d194a5cb604eb5e167e86cfa5ffb21",
+      "rationale": "Direct evidence resolves one continuing Extenet platform, active operations and the February 13, 2025 42% Stonepeak / 32% KH Killington / 26% Other Members cap table. It does not establish the September 4, 2026 owner set, stakes and vehicles, bridge JH Killington to KH Killington, or resolve Northleaf's, DigitalBridge's and Manulife's cutoff positions or the outcome of the reported outdoor DAS and small-cell sale process."
+    },
+    {
+      "sequence": 424,
+      "taskId": "ledger:0424:extenet-formerly-extenet-systems:deec194f",
+      "subject": "Extenet (formerly ExteNet Systems)",
+      "status": "SUPERSEDED",
+      "decisionSha256": "3fa7bc24717546d651d903e2da72e1da0152461a9387bb48c2ba603e1bc88bca",
+      "rationale": "Fresh task resolution proves this is the same canonical Extenet identity already represented by task 213. Task 213 preserves the unresolved Northleaf disposition and JH-to-KH legal bridge for final deferred re-adjudication, so creating a second mutation or deferral would duplicate the same company-level issue."
+    },
+    {
+      "sequence": 475,
+      "taskId": "ledger:0475:extenet:5c5cf1a1",
+      "subject": "Extenet",
+      "status": "SUPERSEDED",
+      "decisionSha256": "29142adb9c929514354f746fdf1da0ba496149b060fdc1929f576c81ddfc5959",
+      "rationale": "Extenet is the current brand of ExteNet Systems and therefore the same canonical company as deferred task 213. Task 213 remains the sole adjudication unit because its unresolved Northleaf disposition and JH-to-KH ownership-vehicle bridge affect the company regardless of which reciprocal label is used. Superseding this label removes a duplicate research unit without resolving or mutating the deferred ownership facts."
+    },
+    {
+      "sequence": 476,
+      "taskId": "ledger:0476:extenet-systems:5d66f0cd",
+      "subject": "ExteNet Systems",
+      "status": "SUPERSEDED",
+      "decisionSha256": "ec7746200a15879e5706f501f0ec1825e9c0d47eece68c39830d5c025209b79c",
+      "rationale": "ExteNet Systems is the former name of Extenet and therefore the same canonical company as deferred task 213. Task 213 remains the sole adjudication unit because its unresolved Northleaf disposition and JH-to-KH ownership-vehicle bridge apply across both names. Superseding this former-name label removes a duplicate research unit while preserving every exact deferred exception."
+    }
+  ],
+  "canonicalCompanyId": "cmrxpjdak00twivheazjbfqum",
+  "canonicalName": "Extenet (formerly ExteNet Systems)",
+  "country": "United States",
+  "retainedBefore": {
+    "name": "ExteNet Systems",
+    "investmentFirm": "Manulife",
+    "sector": "Digital",
+    "subsector": "Small cells, DAS, and fiber",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Manulife Infrastructure Fund II",
+    "description": "ExteNet develops and operates outdoor and in-building wireless infrastructure, fiber networks, and related connectivity systems for mobile carriers, venue owners, and enterprise customers. The company follows an asset-heavy model built around long-lived communications infrastructure and recurring carrier or venue revenues rather than retail service revenues. Public materials describe ExteNet as the largest privately held U.S. provider focused on DAS, small cells, fiber, and other advanced connectivity solutions. Its footprint is national, and the company relocated its headquarters to Frisco, Texas while continuing to serve carrier and enterprise customers across major U.S. markets. John Hancock led the acquisition of an approximately 30% stake in 2020, and ExteNet announced the closing of the Manulife-led investment in 2021 alongside existing owners Digital Colony and Stonepeak. Manulife's infrastructure team identifies the investment with Fund II.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2003,
+    "investmentYear": 2021,
+    "headquarters": "Multi-state United States",
+    "milestones": [
+      {
+        "date": "2003",
+        "event": "ExteNet Systems was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "Nov 2015",
+        "event": "Northleaf portfolio materials identify ExteNet Systems as a November 2015 infrastructure investment.",
+        "category": "Financing"
+      },
+      {
+        "date": "Nov 17, 2015",
+        "event": "Digital Bridge and Stonepeak completed ExteNet's $1.4 billion recapitalization.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Jul 23, 2015",
+        "event": "Digital Bridge and Stonepeak announced a recapitalization of ExteNet, with additional capital to support long-term growth.",
+        "category": "Financing"
+      },
+      {
+        "date": "May 10, 2021",
+        "event": "Manulife Investment Management completed its strategic investment in ExteNet.",
+        "category": "Financing"
+      },
+      {
+        "date": "Feb 5, 2026",
+        "event": "DigitalBridge (via Extenet Systems) agreed to sell Extenet Systems (Enterprise Fiber) to Undisclosed Buyer.",
+        "category": "Divestiture"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Announcement date source — Manulife — ExteNet Systems",
+        "url": "https://www.businesswire.com/news/home/20201015005270/en/ExteNet-Systems-Announces-Strategic-Investment-from-John-Hancock-Life-Insurance-Company-U.S.A.",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Investment date source — DigitalBridge — ExteNet Systems",
+        "url": "https://www.digitalbridge.com/portfolio/extenet-systems",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Close date source — DigitalBridge — ExteNet Systems",
+        "url": "https://www.prnewswire.com/news-releases/chicago-region-extenet-systems-completes-recapitalization-300180129.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Extenet — ExteNet Systems, LLC",
+        "url": "https://extenet.com/about-us/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Close date source — Stonepeak — ExteNet Systems",
+        "url": "https://www.prnewswire.com/news-releases/chicago-region-extenet-systems-completes-recapitalization-300180129.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Investment date source — Northleaf — ExteNet Systems",
+        "url": "https://www.northleafcapital.com/infrastructure-investments?page=2",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Manulife",
+        "ownershipVehicle": "Manulife Infrastructure Fund II",
+        "investmentYear": 2021,
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "Stonepeak",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2015,
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "DigitalBridge",
+        "ownershipVehicle": "DigitalBridge Equity",
+        "investmentYear": 2015,
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "Northleaf",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2015,
+        "status": "Active"
+      }
+    ]
+  },
+  "retainedAfter": {
+    "name": "Extenet (formerly ExteNet Systems)",
+    "investmentFirm": "Manulife",
+    "sector": "Digital",
+    "subsector": "Small cells, DAS, and fiber",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "Manulife Infrastructure Fund II",
+    "description": "ExteNet develops and operates outdoor and in-building wireless infrastructure, fiber networks, and related connectivity systems for mobile carriers, venue owners, and enterprise customers. The company follows an asset-heavy model built around long-lived communications infrastructure and recurring carrier or venue revenues rather than retail service revenues. Public materials describe ExteNet as the largest privately held U.S. provider focused on DAS, small cells, fiber, and other advanced connectivity solutions. Its footprint is national, and the company relocated its headquarters to Frisco, Texas while continuing to serve carrier and enterprise customers across major U.S. markets. John Hancock led the acquisition of an approximately 30% stake in 2020, and ExteNet announced the closing of the Manulife-led investment in 2021 alongside existing owners Digital Colony and Stonepeak. Manulife's infrastructure team identifies the investment with Fund II.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2003,
+    "investmentYear": 2021,
+    "headquarters": "Multi-state United States",
+    "milestones": [
+      {
+        "date": "2003",
+        "event": "ExteNet Systems was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "Nov 2015",
+        "event": "Northleaf portfolio materials identify ExteNet Systems as a November 2015 infrastructure investment.",
+        "category": "Financing"
+      },
+      {
+        "date": "Nov 17, 2015",
+        "event": "Digital Bridge and Stonepeak completed ExteNet's $1.4 billion recapitalization.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "Jul 23, 2015",
+        "event": "Digital Bridge and Stonepeak announced a recapitalization of ExteNet, with additional capital to support long-term growth.",
+        "category": "Financing"
+      },
+      {
+        "date": "May 10, 2021",
+        "event": "Manulife Investment Management completed its strategic investment in ExteNet.",
+        "category": "Financing"
+      },
+      {
+        "date": "Feb 5, 2026",
+        "event": "DigitalBridge (via Extenet Systems) agreed to sell Extenet Systems (Enterprise Fiber) to Undisclosed Buyer.",
+        "category": "Divestiture"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Announcement date source — Manulife — ExteNet Systems",
+        "url": "https://www.businesswire.com/news/home/20201015005270/en/ExteNet-Systems-Announces-Strategic-Investment-from-John-Hancock-Life-Insurance-Company-U.S.A.",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Investment date source — DigitalBridge — ExteNet Systems",
+        "url": "https://www.digitalbridge.com/portfolio/extenet-systems",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Close date source — DigitalBridge — ExteNet Systems",
+        "url": "https://www.prnewswire.com/news-releases/chicago-region-extenet-systems-completes-recapitalization-300180129.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Extenet — ExteNet Systems, LLC",
+        "url": "https://extenet.com/about-us/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Close date source — Stonepeak — ExteNet Systems",
+        "url": "https://www.prnewswire.com/news-releases/chicago-region-extenet-systems-completes-recapitalization-300180129.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Investment date source — Northleaf — ExteNet Systems",
+        "url": "https://www.northleafcapital.com/infrastructure-investments?page=2",
+        "type": "WEBSITE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Manulife",
+        "ownershipVehicle": "Manulife Infrastructure Fund II",
+        "investmentYear": 2021,
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "Stonepeak",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2015,
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "DigitalBridge",
+        "ownershipVehicle": "DigitalBridge Equity",
+        "investmentYear": 2015,
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "Northleaf",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2015,
+        "status": "Active"
+      }
+    ]
+  },
+  "retiredDuplicate": {
+    "name": "Extenet",
+    "investmentFirm": "Stonepeak",
+    "sector": "Digital",
+    "subsector": "Distributed wireless and fiber connectivity infrastructure",
+    "region": "North America",
+    "country": "United States",
+    "ownershipVehicle": "n.a.",
+    "description": "Extenet designs, builds, owns, and operates distributed wireless and fiber connectivity infrastructure across North America. Its customers include wireless carriers, venue owners, enterprises, and public-sector users that require indoor and outdoor mobility infrastructure rather than retail broadband services. The operating model is asset-heavy and contract based, supported by small cells, distributed antenna systems, and associated fiber networks with long useful lives. Company materials describe the business as one of the largest privately held communications infrastructure providers in North America and list a headquarters in Frisco, Texas. Stonepeak and DigitalBridge led a recapitalization of ExteNet in 2015, Manulife announced a strategic investment in 2021, and the company rebranded as Extenet in 2022.",
+    "status": "Active",
+    "countryTags": [
+      "United States"
+    ],
+    "yearFounded": 2002,
+    "investmentYear": 2015,
+    "headquarters": "United States",
+    "milestones": [
+      {
+        "date": "2002",
+        "event": "ExteNet Systems was founded.",
+        "category": "Founding"
+      },
+      {
+        "date": "Jul 2015",
+        "event": "Stonepeak and DigitalBridge announced a recapitalization of ExteNet Systems.",
+        "category": "Acquisition"
+      },
+      {
+        "date": "May 10, 2021",
+        "event": "ExteNet announced the closing of a strategic investment from Manulife Investment Management.",
+        "category": "Financing"
+      },
+      {
+        "date": "Dec 15, 2022",
+        "event": "ExteNet Systems announced its rebrand to Extenet.",
+        "category": "Management"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Company profile source — Extenet",
+        "url": "https://extenet.com/",
+        "type": "WEBSITE",
+        "purpose": "COMPANY_PROFILE"
+      },
+      {
+        "label": "Announcement date source — Stonepeak — Extenet",
+        "url": "https://www.prnewswire.com/news-releases/extenet-systems-announces-capital-restructuring-300117742.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Close date source — Stonepeak — Extenet",
+        "url": "https://www.prnewswire.com/news-releases/chicago-region-extenet-systems-completes-recapitalization-300180129.html",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Investment date source — Manulife Investment Management — Extenet",
+        "url": "https://extenet.com/extenet-systems-announces-successful-closing-of-manulife-investment/",
+        "type": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT"
+      },
+      {
+        "label": "Rebrand source — Extenet",
+        "url": "https://extenet.com/extenet-systems-is-now-extenet/",
+        "type": "PRESS_RELEASE",
+        "purpose": "COMPANY_PROFILE"
+      }
+    ],
+    "owners": [
+      {
+        "investmentFirm": "Stonepeak",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2015,
+        "status": "Active"
+      }
+    ]
+  },
+  "sourceSeedSha256": "f2a398507cb2c320456b9f6ea4b9514095d8443ed3f22cbfaffcf9446aaf07bc",
+  "resultingSeedSha256": "f87ac491a6f1e43228c5c8e2755beacda34f1685538f279d9a2299ca598fc7d8",
+  "sourceCompanyCount": 1129,
+  "resultingCompanyCount": 1128,
+  "productionSnapshotSha256": "153b10105a05225e75e69712a32bc576c06ecc0905ff42948897061f0a0f13e2",
+  "productionAliasesObserved": [],
+  "wholePublishedIdentityParity": true,
+  "freshException": {
+    "status": "EXACT_FACT_UNAVAILABLE",
+    "missingFact": "The complete September 4, 2026 direct and indirect owner set for Extenet; each manager's exact cutoff stake, fund and vehicle; the legal relationship, if any, between JH Killington Communications, LLC and KH Killington Communications, LLC; Northleaf's current direct or indirect holding, transfer, distribution, write-off or exit; DigitalBridge's and Manulife's cutoff positions; the identities within the 26% Other Members aggregate; and the signed, closed or abandoned outcome and any equity effect of the reported outdoor DAS and small-cell sale process.",
+    "searchedEvidence": [
+      "Fresh direct retrieval and extraction of the February 13, 2025 Kentucky PSC holding-company chart",
+      "Fresh direct retrieval and extraction of the 2020 JH Killington petition and 2021 closing notice",
+      "Fresh direct retrieval and extraction of the 2016 Kentucky owner table and the 2021 LLC conversion filing",
+      "Fresh direct retrieval and extraction of the April 20, 2026 ESL/ELVS rescission",
+      "Fresh direct Northleaf and DigitalBridge portfolio-page reopening and Extenet searches",
+      "Fresh direct Extenet company-page and Pilot closing-page reopening",
+      "Fresh Fitch URL reopening by raw HTTP and browser, which exposed only a generic shell and did not independently reveal the article body",
+      "Fresh direct browser reopening of the June 24, 2026 Fierce Network sale-process report and searches for a later signed deal, closing, foreclosure, bankruptcy, dissolution or equity transfer",
+      "JH Killington, KH Killington, Stonepeak Communication Holdings, Northleaf, DigitalBridge and Manulife formation, assignment, name-change, merger, member, fund, transfer, disposition and realization searches"
+    ],
+    "requiredToResolve": "A later direct regulatory cap table or ownership-chain filing, a legal JH-to-KH name-change or succession instrument, direct manager or fund holdings/disposition records, member or transaction documents identifying the Other Members, and a direct seller, buyer, lender, court or regulatory closing/termination record for the outdoor sale process."
+  },
+  "freshExceptionSha256": "4d1afb4629b15eea56dd6661bc58a3a9d30c0cdd970f7c5cef6874cb88c77467",
+  "databaseWrites": 0,
+  "sourceTransitions": 0,
+  "retainedOwnerChanges": 0,
+  "productionAttributionChanges": 0,
+  "qualification": "Separate technical identity persistence authorized by the continuation instruction, not application of deferred task 213. Its no-mutation research decision and exact exception are unchanged. Rename only the retained legacy seed identity to the existing production name and remove the exact Stonepeak-only duplicate. Preserve all retained fields and legacy attribution metadata without asserting fresh cutoff correctness. No production alias approval is claimed; observed aliases are empty. No full database seed or transaction replay is authorized.",
+  "repairSha256": "f7078bc622c924e1482efb8aa27ab8dd4a26eb21029b1617adaccbdf914c7e05"
+}

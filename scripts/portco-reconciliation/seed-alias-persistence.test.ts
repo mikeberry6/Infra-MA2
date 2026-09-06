@@ -10,6 +10,10 @@ import { verifySeedAttributionReconciliationSpec } from "../portfolio-fund-attri
 const directory = "audits/portco-reconciliation/2026-09-06/seed-alias-persistence";
 const json = (file: string) => JSON.parse(readFileSync(file, "utf8"));
 const plan = json(`${directory}/repair-plan.json`);
+// Historical release proof must survive later separately audited seed repairs.
+const historicalBefore = json("audits/portco-reconciliation/2026-09-06/final-reconciliation/evaluated-seed.json");
+const historicalAfter = historicalBefore.filter((company: { name: string; country: string }) =>
+  !plan.members.some((member: { retiredSeed: { name: string }; country: string }) => member.retiredSeed.name === company.name && member.country === company.country));
 
 describe("already-superseded PortCo seed identity persistence", () => {
   it("binds the exact idle terminal source state and the five reviewed alias decisions", () => {
@@ -32,8 +36,9 @@ describe("already-superseded PortCo seed identity persistence", () => {
   });
 
   it("removes only five duplicate seed entries without altering any retained company field", () => {
-    expect(companies).toHaveLength(plan.sourceCompanyCount - 5);
-    expect(sha256Canonical(companies)).toBe(plan.resultingSeedSha256);
+    expect(sha256Canonical(historicalBefore)).toBe(plan.sourceSeedSha256);
+    expect(historicalAfter).toHaveLength(plan.sourceCompanyCount - 5);
+    expect(sha256Canonical(historicalAfter)).toBe(plan.resultingSeedSha256);
     for (const member of plan.members) {
       expect(baseCompanies.some((company) => company.name === member.retiredSeed.name && company.country === member.country)).toBe(false);
       expect(companies.some((company) => company.name === member.retiredSeed.name && company.country === member.country)).toBe(false);
@@ -46,7 +51,8 @@ describe("already-superseded PortCo seed identity persistence", () => {
 
   it("removes only eight obsolete attribution records and leaves all canonical attributions unchanged", () => {
     const spec = verifySeedAttributionReconciliationSpec(json(`${directory}/seed-attribution-spec.json`));
-    const manifest = verifySeedManifest(json("prisma/seed-data/ownership-attributions.manifest.json"));
+    const manifest = verifySeedManifest(json(`${directory}/resulting-attribution-manifest.json`));
+    const current = verifySeedManifest(json("prisma/seed-data/ownership-attributions.manifest.json"));
     const artifact = json(`${directory}/seed-attribution-reconciliation.json`);
     expect(spec.batchSha256).toBe(plan.repairSha256);
     expect(spec.upsertRecords).toEqual([]);
@@ -55,7 +61,11 @@ describe("already-superseded PortCo seed identity persistence", () => {
     const { reconciliationSha256, ...reconciliationContent } = artifact;
     expect(attributionSha256(reconciliationContent)).toBe(reconciliationSha256);
     expect(artifact.resultingManifestSha256).toBe(manifest.manifestSha256);
-    expect(manifest).toEqual(json(`${directory}/resulting-attribution-manifest.json`));
+    for (const member of plan.members) {
+      const belongsToCanonical = (record: { companyName: string; country: string }) => record.companyName === member.canonicalName && record.country === member.country;
+      expect(current.records.filter(belongsToCanonical)).toEqual(manifest.records.filter(belongsToCanonical));
+      expect(current.records.some((record) => record.companyName === member.retiredSeed.name && record.country === member.country)).toBe(false);
+    }
     for (const record of artifact.removedRecords) {
       expect(plan.members.some((member: { retiredSeed: { name: string }; country: string }) => member.retiredSeed.name === record.companyName && member.country === record.country)).toBe(true);
     }
@@ -69,9 +79,9 @@ describe("already-superseded PortCo seed identity persistence", () => {
     for (const reference of plan.references) {
       expect(sha256Text(readFileSync(reference.location.split("#")[0], "utf8"))).toBe(reference.fileSha256);
     }
-    // These unresolved companies remain untouched, not silently retired by this repair.
+    // PR916 did not retire these; a later release must carry its own exact proof.
     for (const name of ["Extenet", "ExteNet Systems", "Chicago Parking Meters"]) {
-      expect(companies.some((company) => company.name.includes(name))).toBe(true);
+      expect(historicalAfter.some((company: { name: string }) => company.name.includes(name))).toBe(true);
     }
   });
 });
