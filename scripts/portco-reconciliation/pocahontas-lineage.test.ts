@@ -95,19 +95,23 @@ describe("Pocahontas superseded overlay lineage without mutation", () => {
     expect(() => provePocahontasLineage({ ...input, production: swapped })).toThrow(/relation identity/);
   });
 
-  it("rejects missing/duplicate/altered applied revisions and invalid metadata", () => {
+  it("rejects missing or duplicated applied revisions", () => {
     const current = input.production.revisions.find((row) => row.proposalHash === POCA_CURRENT)!;
     expect(() => provePocahontasLineage({ ...input, production: { ...input.production, revisions: [] } })).toThrow(/revision/);
     expect(() => provePocahontasLineage({ ...input, production: { ...input.production, revisions: [...input.production.revisions, current] } })).toThrow(/revision/);
-    for (const patch of [
-      { approver: "Unapproved" }, { afterJson: { name: "Altered" } }, { beforeJson: null },
-      { changedFields: [] }, { pipelineRunId: "unrelated-pipeline" }, { appliedAt: "invalid" },
-      { appliedAt: "2026-09-01T17:00:00.000Z" }, { appliedAt: "2026-09-02T00:00:00.000Z" },
-    ]) {
-      const production = structuredClone(input.production);
-      Object.assign(production.revisions.find((row) => row.proposalHash === POCA_CURRENT)!, patch);
-      expect(() => provePocahontasLineage({ ...input, production })).toThrow(/revision/);
-    }
+  });
+
+  // Each tamper case independently reproduces the full 1,128-company seed.
+  // Keep the normal per-test deadline instead of batching eight costly proofs
+  // into one test that exceeds it on the protected Linux CI runner.
+  it.each([
+    { approver: "Unapproved" }, { afterJson: { name: "Altered" } }, { beforeJson: null },
+    { changedFields: [] }, { pipelineRunId: "unrelated-pipeline" }, { appliedAt: "invalid" },
+    { appliedAt: "2026-09-01T17:00:00.000Z" }, { appliedAt: "2026-09-02T00:00:00.000Z" },
+  ])("rejects altered revision payload or metadata: %j", (patch) => {
+    const production = structuredClone(input.production);
+    Object.assign(production.revisions.find((row) => row.proposalHash === POCA_CURRENT)!, patch);
+    expect(() => provePocahontasLineage({ ...input, production })).toThrow(/revision/);
   });
 
   it("does not invent old history or confuse seed-label retirement with a production redirect", () => {
