@@ -1,0 +1,322 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_ARBOUR_FIELD_AUTHORITY",
+  "chronologySha256": "0e9326e9e40914ce36ad75c444d8f44200e6774639a5f450e173e95ebbb36eac",
+  "priorAuthoritySha256": "8336935955cf34ef88c68c02eb178480e0486efd65f267c76882dab20afdd75e",
+  "seedManifestSha256": "cd644038e360277a296d59d0eb6976c2a1eb85af3e752ffc941d944f1c556257",
+  "canonicalProposalSha256": "edb7ee52acbfcaa9c79b8c6025d4c08637841730abc44f5c6c4621801345cbb5",
+  "canonicalApprovalSha256": "372218bd4eb88f1e64b759b193ee0dc4124217aad9ab1094e139d4f007837090",
+  "canonicalReceiptSha256": "16688769e3217960412e03e6b6861814bbb47eda18f0b76d93a5a0eb1c11a8e7",
+  "canonicalRetryBindingSha256": "0ed335f43612e203634e16be4af5aae91c1d10e3ea35ef464fa87b4a12d5ea63",
+  "supersededProposalSha256": "4b43d7de87d12fc1b0cc0d966caca76a39e83e544486788aae83fb1080e58576",
+  "canonicalSeedOverlaySha256": "1e91e168ec3ac6a37671de5e794c6f89c8fcd4b3baa172a168fdf1c9d72d43e6",
+  "originalAttributionReceiptSha256": "779802d490bd3b00c5470e8fee2bc87ae5b3f98a70fe9c3d08af4931be2686cf",
+  "originalScopedStateSha256": "b12d4ab2a964591eb9b4cee9ecf8d46134e9f457f25083077542e9a6a719af18",
+  "semanticCompanySha256": "a82e2246959ce0c8d19ea40000749588d428ea35302354491b49dc2c5e7a4f9e",
+  "historicalPacket": [
+    {
+      "file": "chatgpt-attestation.json",
+      "sha256": "3761592272db8855c14481d1230224e6ad5b4c68f7733a091446b1a7043273be"
+    },
+    {
+      "file": "chatgpt-initial-response.txt",
+      "sha256": "c0ea59e64b5043915e5d009b72d9d8c4394d4ff4b3bff327872a1b75591eefca"
+    },
+    {
+      "file": "chatgpt-repair-prompt.txt",
+      "sha256": "8ea681c87a17ab28ac8240380ae1a19c2bf2268df4519a3a6aa3055b3c13917b"
+    },
+    {
+      "file": "chatgpt-repair-response.txt",
+      "sha256": "a8589694001cfc583701b8a2192b363854e07d4713fca1175621402ab1acc6c6"
+    },
+    {
+      "file": "chatgpt-response-validation.json",
+      "sha256": "3ce4dced8412e760c266b9223b29448660b378ec89c963d2ff6a28c56912784a"
+    },
+    {
+      "file": "chatgpt-transcript.txt",
+      "sha256": "8cb98659167072117fe5d7e5eb70332a4e4c9b10f9ede036132d6ba9681c19d1"
+    },
+    {
+      "file": "failed-dry-run-analysis.json",
+      "sha256": "3f3c84805b13cdd58ec6cb4d8e00c2bb553b4050b15bd40a64c7bebb11e1ca25"
+    },
+    {
+      "file": "research-binding.json",
+      "sha256": "10b6ac649ee5e315b63025a04e83e6d652bdaf30076968bfda609a554d0c0da2"
+    },
+    {
+      "file": "research-decision.json",
+      "sha256": "a7839007436f98fff8b23c8f79ee1d51b2ebe3c8a3abbbcb5cf3a71426fc8ef4"
+    },
+    {
+      "file": "research-decision.md",
+      "sha256": "d8c299b747caf531bee2933a8db202fe10ae0cbbaeafeb7c80b0941c70b4f177"
+    },
+    {
+      "file": "research-prompt.md",
+      "sha256": "8543891d8a7b9c49f4f83968ec3effb85d7c83ad73ff2d9aa2c11abeedc1fd38"
+    },
+    {
+      "file": "source-verification.json",
+      "sha256": "f9d3fe9898f3b2f3690e53554fa011343ea2c6507b4cd107e8a0957f78ce3358"
+    }
+  ],
+  "rows": [
+    {
+      "companyId": "cmrxpj86h00lzivhe009kcwjc",
+      "ownerId": "cmsyqdden000dgy6hngggcvdk",
+      "recordId": "OFA-21744437AC3C",
+      "candidateSha256": "6966c69e57a5ed680b9e9a416c58b0236d03429a4b535bab9e27199d0a62971b",
+      "current": {
+        "linkedFundName": null,
+        "fundAttribution": "UNRESOLVED",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": null
+      },
+      "seedExpectation": {
+        "linkedFundName": null,
+        "fundAttribution": "DISCLOSED",
+        "attributedFundName": "Axium Extendicare LTC II LP",
+        "attributionConfidence": null,
+        "attributionRationale": "Vehicle appears to be a named fund or listed vehicle but does not match funds.ts."
+      },
+      "recommended": {
+        "linkedFundName": null,
+        "fundAttribution": "DIRECT_PROGRAM",
+        "attributedFundName": null,
+        "attributionConfidence": null,
+        "attributionRationale": "Extendicare's Q2 2026 MD&A identifies its own 15% managed interest in Axium Extendicare LTC II LP, accounted for as an equity-method corporate investment. Classify this operating-company joint-venture interest as DIRECT_PROGRAM, not a disclosed third-party fund. Preserve the legal JV vehicle, 2023 entry and 15% managed-interest qualification; management fees are separate from ownership."
+      },
+      "preserves": {
+        "id": "cmsyqdden000dgy6hngggcvdk",
+        "managerName": "Extendicare Inc.",
+        "organizationName": "Extendicare Inc.",
+        "fundName": null,
+        "vehicleName": "Axium Extendicare LTC II LP",
+        "stake": "15% managed interest",
+        "investmentYear": 2023,
+        "exitYear": null,
+        "isActive": true,
+        "transactionState": "CLOSED_ACTIVE"
+      },
+      "missingSeedUpsertBinding": true,
+      "originalAttributionReceiptAbsent": true,
+      "wholeCompanyReconciled": false,
+      "fieldDecisions": [
+        {
+          "field": "attributedFundName",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_CORRECTION_REQUIRES_SEPARATE_PROTECTED_PERSISTENCE",
+          "current": null,
+          "seed": "Axium Extendicare LTC II LP",
+          "recommended": null,
+          "productionWriteRequired": false,
+          "seedPersistenceRequired": true,
+          "primarySourceUrl": "https://extendicare-1c124.kxcdn.com/app/uploads/2026/08/EXE-Q2-2026-Interim-MDA-vSedar2.pdf?x89279=",
+          "primarySourceSha256": "fdb082d8e400088516c7c29e2f8b94e4385b9a1f91d1b1abd2d759e870171e2e",
+          "primaryOneBasedPages": [
+            2,
+            5
+          ]
+        },
+        {
+          "field": "attributionRationale",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_CORRECTION_REQUIRES_SEPARATE_PROTECTED_PERSISTENCE",
+          "current": null,
+          "seed": "Vehicle appears to be a named fund or listed vehicle but does not match funds.ts.",
+          "recommended": "Extendicare's Q2 2026 MD&A identifies its own 15% managed interest in Axium Extendicare LTC II LP, accounted for as an equity-method corporate investment. Classify this operating-company joint-venture interest as DIRECT_PROGRAM, not a disclosed third-party fund. Preserve the legal JV vehicle, 2023 entry and 15% managed-interest qualification; management fees are separate from ownership.",
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": true,
+          "primarySourceUrl": "https://extendicare-1c124.kxcdn.com/app/uploads/2026/08/EXE-Q2-2026-Interim-MDA-vSedar2.pdf?x89279=",
+          "primarySourceSha256": "fdb082d8e400088516c7c29e2f8b94e4385b9a1f91d1b1abd2d759e870171e2e",
+          "primaryOneBasedPages": [
+            2,
+            5
+          ]
+        },
+        {
+          "field": "fundAttribution",
+          "outsideOriginal603": false,
+          "disposition": "SOURCE_SUPPORTED_CORRECTION_REQUIRES_SEPARATE_PROTECTED_PERSISTENCE",
+          "current": "UNRESOLVED",
+          "seed": "DISCLOSED",
+          "recommended": "DIRECT_PROGRAM",
+          "productionWriteRequired": true,
+          "seedPersistenceRequired": true,
+          "primarySourceUrl": "https://extendicare-1c124.kxcdn.com/app/uploads/2026/08/EXE-Q2-2026-Interim-MDA-vSedar2.pdf?x89279=",
+          "primarySourceSha256": "fdb082d8e400088516c7c29e2f8b94e4385b9a1f91d1b1abd2d759e870171e2e",
+          "primaryOneBasedPages": [
+            2,
+            5
+          ]
+        }
+      ]
+    }
+  ],
+  "candidateFieldsAdjudicated": 3,
+  "cumulativeCandidateFieldsAdjudicated": 80,
+  "remainingCandidateFields": 523,
+  "additionalFieldsOutsideOriginal603": 0,
+  "productionFieldsRequiringCorrection": 2,
+  "seedFieldsRequiringCorrection": 3,
+  "missingSeedUpsertBindings": 1,
+  "historicalTranscript": {
+    "attestedSha256": "1ac5b3c8ea8ae2bf79a74c23f1eba6dbba27bfa07968fe6ad961a5c56c1606df",
+    "committedSha256": "8cb98659167072117fe5d7e5eb70332a4e4c9b10f9ede036132d6ba9681c19d1",
+    "attestedHashMatches": false,
+    "exactResponseCompositionVerified": true,
+    "promptWhitespaceEquivalent": true,
+    "qualification": "Pre-existing committed transcript hash differs from attestation; preserve both without overwriting or claiming byte-identical attestation. The current direct-source field judgment does not depend on repairing that record."
+  },
+  "qualifications": [
+    "The sole field-primary is the existing Q2 2026 issuer MD&A, PDF pages2/5 (printed1/4): corporate equity-method ownership, not an inferred third-party investment fund. Pages2/4/5 and 2023 pages4/7 were rendered and fully reviewed including adjacent JV and accounting qualifications.",
+    "Preserve 15% managed interest, 2023 entry and Axium Extendicare LTC II LP vehicle. A legal operating JV name is not an investment-fund attribution. Management/operating fees and corporate share of JV profit are distinct.",
+    "Preserve Axium85%/2017/Axium LTC Limited Partnership with its precise unresolved commingled-fund rationale, realized Revera2017-2023 and exact retained metadata, all eight citations/current MD&A primary, all milestones and completed Arbour redirect. Western AgeCare and redevelopment Axium JV I remain separate.",
+    "Both complete PDFs exactly match historical raw hashes. Supporting Axium formation landing-page bytes changed; current page contains a short completion summary and link, not a full fund-allocation disclosure. Freeze new raw bytes without pretending historical equivalence.",
+    "The twelve-file historical packet is bound, including full compiled prompt/initial/repair transcript. One transport-only repair preserves identical JSON; original model's narrower owner array, organization alias and Ontario-primary choice were independently corrected historically. The transcript's pre-existing attestation hash mismatch remains explicit; other prompt/response bindings match.",
+    "Canonical v2 changed milestone categories/layout/relation mappings after a non-writing v1 dry-run failure; ownership, identity and evidence are unchanged. Old PENDING_PROTECTED_RELEASE flags are not current authority. Never replay ff43976e-daea-4172-969c-29c9e7f6c31a or reopen the completed task.",
+    "The Extendicare period was created after the original attribution apply and has no original attribution receipt or latest seed-upsert binding. Absence is proven, not fabricated. Two production fields and three overlapping seed fields need separate protected persistence; attributed-name null is retained in production.",
+    "This read-only report does not permit an apply, new corporate/fund/owner/vehicle entity, terminal transition or new September company research. Full seed replay remains prohibited and final parity/completion unproven."
+  ],
+  "databaseWrites": 0,
+  "seedChanges": 0,
+  "sourceTransitions": 0,
+  "applyAuthorized": false,
+  "completionAllowed": false,
+  "baseCommit": "17a95e01adb2cc01f4cf1cb09ccd4adcbdb38009",
+  "executionManifestSha256": "e1d37c59b0db0754f38fc8f1b668423d7135fa392b15559e4b7008586cbb2e07",
+  "ledgerSha256": "9118f52029df79c7d0e546d42bbae2d546b671786b574327c12bcd0beed5a45c",
+  "productionSnapshotSha256": "8e8cdf2b85d6015c0c69a6730eccc327c8c45e2da58f6175a027f49f816a3835",
+  "dependencies": [
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0113-arbour-heights-v2.json",
+      "sha256": "47f03083cab24f14d2579320483fa9261fff9fa0808f749906063c68598093a0"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+      "sha256": "41032b7cf3c018305a08a588dfe110a247f56e5fbdff84c72c5e9627fa5f2e51"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0113-arbour-heights/attempt-1/chatgpt-attestation.json",
+      "sha256": "3761592272db8855c14481d1230224e6ad5b4c68f7733a091446b1a7043273be"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0113-arbour-heights/attempt-1/chatgpt-initial-response.txt",
+      "sha256": "c0ea59e64b5043915e5d009b72d9d8c4394d4ff4b3bff327872a1b75591eefca"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0113-arbour-heights/attempt-1/chatgpt-repair-prompt.txt",
+      "sha256": "8ea681c87a17ab28ac8240380ae1a19c2bf2268df4519a3a6aa3055b3c13917b"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0113-arbour-heights/attempt-1/chatgpt-repair-response.txt",
+      "sha256": "a8589694001cfc583701b8a2192b363854e07d4713fca1175621402ab1acc6c6"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0113-arbour-heights/attempt-1/chatgpt-response-validation.json",
+      "sha256": "3ce4dced8412e760c266b9223b29448660b378ec89c963d2ff6a28c56912784a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0113-arbour-heights/attempt-1/chatgpt-transcript.txt",
+      "sha256": "8cb98659167072117fe5d7e5eb70332a4e4c9b10f9ede036132d6ba9681c19d1"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0113-arbour-heights/attempt-1/failed-dry-run-analysis.json",
+      "sha256": "3f3c84805b13cdd58ec6cb4d8e00c2bb553b4050b15bd40a64c7bebb11e1ca25"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0113-arbour-heights/attempt-1/locked-production-snapshot.json",
+      "sha256": "83bc7f9eca966d3c6f108b58b4b11565c5d9e3e2d9f5c91d07723963608f0b47"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0113-arbour-heights/attempt-1/research-binding.json",
+      "sha256": "10b6ac649ee5e315b63025a04e83e6d652bdaf30076968bfda609a554d0c0da2"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0113-arbour-heights/attempt-1/research-decision.json",
+      "sha256": "a7839007436f98fff8b23c8f79ee1d51b2ebe3c8a3abbbcb5cf3a71426fc8ef4"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0113-arbour-heights/attempt-1/research-decision.md",
+      "sha256": "d8c299b747caf531bee2933a8db202fe10ae0cbbaeafeb7c80b0941c70b4f177"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0113-arbour-heights/attempt-1/research-prompt.md",
+      "sha256": "8543891d8a7b9c49f4f83968ec3effb85d7c83ad73ff2d9aa2c11abeedc1fd38"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0113-arbour-heights/attempt-1/source-verification.json",
+      "sha256": "f9d3fe9898f3b2f3690e53554fa011343ea2c6507b4cd107e8a0957f78ce3358"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0113-arbour-heights/attempt-2/locked-task-snapshot.json",
+      "sha256": "c50c9d00482c72797c06fd0e52657666fef83ba43960353832408f282fa39de9"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0113-arbour-heights/attempt-2/production-apply/apply-receipt.json",
+      "sha256": "3a4574987caeabd27380ca9186ecd25ca34457d1fd17a9b85a4d4fce63f397e9"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0113-arbour-heights/attempt-2/retry-binding.json",
+      "sha256": "a1dee3326cb789ff98e9e49c8d6135b39fa3fde752ed0dd86c6efcb049db5ab2"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0113-arbour-heights-v1/proposal.json",
+      "sha256": "2f95bcff8dbd5d8dc1ecd6294af62df39d1a44cf9edefb1af6fa67b362aedeff"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0113-arbour-heights-v2/proposal.json",
+      "sha256": "803210d8373013039fddcba4b7996a1d27e70824b0e7793d442dd06a2c0b0aac"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+      "sha256": "4c29a13ed3559b1a3714e49a04df58fb05128657e406768ada7cb622bb3d4139"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/chronology.json",
+      "sha256": "354c05be15e4747a3f983cdf13894d0a7d003650f525550718adaaf72befc97a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/recovered-initial-apply/apply-receipt.json",
+      "sha256": "ad91679544c16da42eb4c1a89785243cf2e0a22a5ffdd229bd5ac97269497487"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/chesapeake/authority.json",
+      "sha256": "45cb7c81d2d5ebffa53ba94e3282d37519725082965cd9dd726b962a2ea25499"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-08-16/apply-manifest.json",
+      "sha256": "1c3b0e245931211cbd8cac66c3810004a4fb6268d79d0b2e4e5a84639a207362"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-08-16/approval.json",
+      "sha256": "7498d586973eaf549d7fd541ab49d6ab9cc75b4a8331c7a12a90a2b3c352001e"
+    },
+    {
+      "path": "prisma/seed-data/approved-portco-after-images.json",
+      "sha256": "2f965edb5cb3aeee7416a203b5e9c57f2739c62c9f55964ab6d7c6a32bbc30b5"
+    },
+    {
+      "path": "prisma/seed-data/ownership-attributions.manifest.json",
+      "sha256": "c3b8d505c6cd8c9c1db16a01b93c0cb8f3d394b74919afa3048d458dc4c3467f"
+    },
+    {
+      "path": "scripts/generate-portfolio-fund-attribution.ts",
+      "sha256": "67274414b66683dbd1f1d9ca273f4f0a0ba58ff7a7cbf33cd8fedc70fb476b3d"
+    },
+    {
+      "path": "scripts/portfolio-fund-attribution/schema.ts",
+      "sha256": "ca1ad36475607959b6255316b795750c3e82ecf89aefc0951df0cc564fd61405"
+    }
+  ],
+  "sourceCaptureSha256": "3343ac69d5f1dc651bbdf2ddefc88135942eeb78f102da7ae42e6a1b4456b62b",
+  "reportSha256": "325b09b13b5b093b37b0af232e5c14960643376cb8475d597de9772d89510d53"
+}
