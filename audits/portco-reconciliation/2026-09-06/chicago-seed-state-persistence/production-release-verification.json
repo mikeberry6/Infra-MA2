@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_CHICAGO_DISPLAY_STATE_SEED_VERIFICATION",
+  "phase": "production-release",
+  "checkedAt": "2026-09-06T04:33:24.169Z",
+  "repairSha256": "99ff5a36e145fe4403fa6ed14e0195696b3e99e53a1a5875ed6591317af17d0f",
+  "expectedSha": "c4fe14071d6a0a4d17f07c95165e742dbed1da62",
+  "canonicalDeployment": {
+    "id": "dpl_61hztPBNsctx2zamH3Hw7UVRYCze",
+    "url": "infra-ma-2-1f72w5imt-mberry.vercel.app",
+    "readyState": "READY",
+    "target": "production",
+    "aliases": [
+      "infra-ma-2.vercel.app",
+      "infra-ma-2-git-main-mberry.vercel.app"
+    ],
+    "gitSource": {
+      "ref": "main",
+      "repoId": 1143556044,
+      "sha": "c4fe14071d6a0a4d17f07c95165e742dbed1da62",
+      "type": "github",
+      "prId": null
+    }
+  },
+  "target": {
+    "label": "production-readonly",
+    "fingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929"
+  },
+  "productionSnapshotSha256": "ada6fb5c32353f08199c46ba917cd0682844684afcbb2c356eb01e2308d56831",
+  "productionUnchanged": true,
+  "wholePublishedIdentityParity": true,
+  "publishedCount": 1128,
+  "redirects": 70,
+  "resultingSeedSha256": "d9cf4d477f5640c4f69b8e2b5ab499cb14a2050222c3af75d0a643f2c271523c",
+  "preservedExceptionSha256": "853a9f06744ab85b971eb8744204cec29811471ba73bc8334e7f58b706d5a82e",
+  "changedSeedFields": [
+    {
+      "path": "owners/0/transactionState",
+      "before": "SIGNED_PENDING_EXIT",
+      "after": "CLOSED_ACTIVE"
+    },
+    {
+      "path": "owners/1/transactionState",
+      "before": "SIGNED_PENDING_EXIT",
+      "after": "CLOSED_ACTIVE"
+    },
+    {
+      "path": "owners/2/transactionState",
+      "before": "SIGNED_PENDING_EXIT",
+      "after": "CLOSED_ACTIVE"
+    }
+  ],
+  "apiChecks": [
+    {
+      "id": "cmrxpj47q00g7ivhe2d22x3iq",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpj47q00g7ivhe2d22x3iq",
+      "httpStatus": 200,
+      "bodySha256": "497bcf9e3ac6ade3bef740e27be1ebcabdd89026d7f71eb473376983bc1247ea",
+      "passed": true
+    }
+  ],
+  "databaseWrites": 0,
+  "sourceTransitions": 0,
+  "attributionChanges": 0,
+  "citationChanges": 0,
+  "passed": true
+}

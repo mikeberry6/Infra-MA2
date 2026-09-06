@@ -3,7 +3,6 @@ import { dirname, resolve } from "node:path";
 import { baseCompanies } from "../../prisma/seed-data/companies";
 import {
   applyApprovedPortCoAfterImages,
-  approvedPortCoSeedIdentityCandidates,
   type ApprovedPortCoAfterImage,
 } from "../../prisma/seed-data/approved-portco-after-images";
 import type { PortCo } from "../../prisma/seed-data/portco-types";
@@ -27,8 +26,6 @@ const APPROVED_SEED_BASENAME = "approved-portco-after-images.json";
 interface SeedOwner {
   investmentFirm: string;
   ownershipVehicle: string;
-  fundName?: string;
-  vehicleName?: string;
   investmentYear?: number;
   exitYear?: number;
   stake?: string;
@@ -121,59 +118,36 @@ export interface ApprovedSeedPublication {
   approvedSeedEntrySha256: string;
 }
 
-export interface ApprovedSeedBatchPublicationEntry {
-  taskId: string;
-  proposalSha256: string;
-  approvalSha256: string;
-  afterImageSha256: string;
-  approvedSeedEntrySha256: string;
-}
-
-export interface ApprovedSeedBatchPublication {
-  artifactPath: string;
-  artifactSha256: string;
-  entries: ApprovedSeedBatchPublicationEntry[];
-}
-
 function companyIdentityKey(company: { name: string; country: string }): string {
   return `${company.name.trim().toLowerCase()}\u0000${company.country.trim().toLowerCase()}`;
 }
 
-/** Current legacy display projection; explicit nulls remain in canonicalAfterImage. */
-export function projectApprovedSeedOwners(image: CompanyImage): SeedOwner[] {
-  return image.ownershipPeriods.map((owner) => ({
+function seedPortCo(image: CompanyImage): SeedPortCo {
+  const owners: SeedOwner[] = image.ownershipPeriods.map((owner) => ({
     investmentFirm: owner.organizationName ?? owner.managerName,
     ownershipVehicle: owner.fundName ?? owner.vehicleName ?? owner.managerName,
-    ...(owner.fundName === null ? {} : { fundName: owner.fundName }),
-    ...(owner.vehicleName === null ? {} : { vehicleName: owner.vehicleName }),
     ...(owner.investmentYear === null ? {} : { investmentYear: owner.investmentYear }),
     ...(owner.exitYear === null ? {} : { exitYear: owner.exitYear }),
     ...(owner.stake === null ? {} : { stake: owner.stake }),
     status: owner.transactionState === "REALIZED" ? "Realized" : "Active",
     transactionState: owner.transactionState,
   }));
-}
-
-function seedPortCo(image: CompanyImage): SeedPortCo {
-  const owners = projectApprovedSeedOwners(image);
   const focalOwner = owners.find((owner) => owner.status === "Active") ?? owners[0];
-  if (!focalOwner && image.recordStatus !== "ARCHIVED") {
-    throw new Error("A published approved seed company requires at least one ownership period");
-  }
+  if (!focalOwner) throw new Error("An approved seed company requires at least one ownership period");
   return {
     name: image.name,
-    investmentFirm: focalOwner?.investmentFirm ?? "Not applicable",
+    investmentFirm: focalOwner.investmentFirm,
     sector: seedDisplay(image.sector, sectorForSeed),
     subsector: image.subsector,
     region: seedDisplay(image.region, regionForSeed),
     country: image.country,
-    ownershipVehicle: focalOwner?.ownershipVehicle ?? "Not applicable",
+    ownershipVehicle: focalOwner.ownershipVehicle,
     description: image.description,
     status: image.companyStatus === "ACTIVE" ? "Active" : "Realized",
     countryTags: image.countryTags,
     ...(image.website === null ? {} : { website: image.website }),
     ...(image.yearFounded === null ? {} : { yearFounded: image.yearFounded }),
-    ...(focalOwner?.investmentYear === undefined ? {} : { investmentYear: focalOwner.investmentYear }),
+    ...(focalOwner.investmentYear === undefined ? {} : { investmentYear: focalOwner.investmentYear }),
     ...(image.headquarters === null ? {} : { headquarters: image.headquarters }),
     milestones: image.milestones.map(({ date, event, category }) => ({
       date,
@@ -198,10 +172,6 @@ export function buildApprovedSeedEntry(
   proposal: ReconciliationProposal,
   approval: ReconciliationApproval,
   approvedProductionSnapshot?: ProductionSnapshot,
-  seedIdentityCandidates: readonly PortCo[] = [
-    ...baseCompanies,
-    ...approvedPortCoSeedIdentityCandidates(),
-  ],
 ): ApprovedSeedEntry {
   const verifiedProposal = verifyProposal(proposal);
   const verifiedApproval = verifyApproval(approval, verifiedProposal);
@@ -239,27 +209,6 @@ export function buildApprovedSeedEntry(
     name: retirement.name,
     country: retirement.country,
   })));
-  const lockedSeedHash = verifiedProposal.executionLock?.seedEntrySha256 ?? null;
-  if (lockedSeedHash !== null) {
-    const lockedSeedIdentities = new Map<string, { name: string; country: string }>();
-    for (const candidate of seedIdentityCandidates) {
-      if (sha256Canonical(candidate) !== lockedSeedHash) continue;
-      lockedSeedIdentities.set(companyIdentityKey(candidate), {
-        name: candidate.name,
-        country: candidate.country,
-      });
-    }
-    if (lockedSeedIdentities.size === 0) {
-      throw new Error("Proposal-bound seed entry hash cannot be resolved from immutable seed history");
-    }
-    if (lockedSeedIdentities.size > 1) {
-      throw new Error("Proposal-bound seed entry hash resolves to multiple seed identities");
-    }
-    const [lockedSeedIdentity] = lockedSeedIdentities.values();
-    if (companyIdentityKey(lockedSeedIdentity) !== companyIdentityKey(verifiedProposal.afterImage)) {
-      retiredCompanies.push(lockedSeedIdentity);
-    }
-  }
   if (
     verifiedProposal.beforeImage
     && companyIdentityKey(verifiedProposal.beforeImage)
@@ -309,18 +258,6 @@ export function renderApprovedSeedArtifact(
     throw new Error("An immutable approved seed proposal hash already has different contents");
   }
   const next = sameHash.length === 1 ? existing : [...existing, entry];
-  return `${JSON.stringify(next, null, 2)}\n`;
-}
-
-export function renderApprovedSeedArtifactBatch(
-  existing: unknown,
-  entries: readonly ApprovedSeedEntry[],
-): string {
-  if (entries.length === 0) throw new Error("Approved seed batch requires at least one entry");
-  let next: unknown = existing;
-  for (const entry of entries) {
-    next = JSON.parse(renderApprovedSeedArtifact(next, entry)) as unknown;
-  }
   return `${JSON.stringify(next, null, 2)}\n`;
 }
 
@@ -512,80 +449,6 @@ export async function verifyPublishedApprovedSeedAfterImage(
   verifyApprovedSeedText(text, publication);
 }
 
-/**
- * Publish every approved seed after-image in one adjacent atomic rename. This
- * is the filesystem half of the batch protocol; the database half is applied
- * later in one serializable transaction.
- */
-export async function publishApprovedSeedAfterImages(input: {
-  artifactPath: string;
-  members: ReadonlyArray<{
-    proposal: ReconciliationProposal;
-    approval: ReconciliationApproval;
-    approvedProductionSnapshot: ProductionSnapshot;
-  }>;
-}): Promise<ApprovedSeedBatchPublication> {
-  const artifactPath = resolve(input.artifactPath);
-  if (!artifactPath.endsWith(`/${APPROVED_SEED_BASENAME}`)) {
-    throw new Error(`Seed writes are target-pinned to ${APPROVED_SEED_BASENAME}`);
-  }
-  if (input.members.length === 0) throw new Error("Approved seed batch requires at least one mutation");
-  const entries = input.members.map((member) => buildApprovedSeedEntry(
-    member.proposal,
-    member.approval,
-    member.approvedProductionSnapshot,
-  ));
-  const proposalHashes = entries.map((entry) => entry.proposalSha256);
-  if (new Set(proposalHashes).size !== proposalHashes.length) {
-    throw new Error("Approved seed batch repeats a proposal hash");
-  }
-  const currentArtifact: unknown = JSON.parse(await readFile(artifactPath, "utf8"));
-  const rendered = renderApprovedSeedArtifactBatch(currentArtifact, entries);
-  const renderedArtifact: unknown = JSON.parse(rendered);
-  for (const entry of entries) {
-    verifyApprovedSeedText(rendered, entry);
-    verifyApprovedSeedProjection({ artifact: renderedArtifact, expectedEntry: entry });
-  }
-  const temporaryPath = `${artifactPath}.batch-stage-${process.pid}-${Date.now()}`;
-  const handle = await open(temporaryPath, "wx", 0o600);
-  try {
-    await handle.writeFile(rendered, "utf8");
-    await handle.sync();
-  } finally {
-    await handle.close();
-  }
-  await rename(temporaryPath, artifactPath);
-  const directory = await open(dirname(artifactPath), "r");
-  try {
-    await directory.sync();
-  } finally {
-    await directory.close();
-  }
-  const publication: ApprovedSeedBatchPublication = {
-    artifactPath,
-    artifactSha256: sha256Text(rendered),
-    entries: entries.map((entry) => ({
-      taskId: entry.taskId,
-      proposalSha256: entry.proposalSha256,
-      approvalSha256: entry.approvalSha256,
-      afterImageSha256: entry.afterImageSha256,
-      approvedSeedEntrySha256: sha256Canonical(entry),
-    })),
-  };
-  await verifyPublishedApprovedSeedBatch(publication);
-  return publication;
-}
-
-export async function verifyPublishedApprovedSeedBatch(
-  publication: ApprovedSeedBatchPublication,
-): Promise<void> {
-  const text = await readFile(publication.artifactPath, "utf8");
-  if (sha256Text(text) !== publication.artifactSha256) {
-    throw new Error("Approved seed batch artifact bytes changed after publication");
-  }
-  for (const entry of publication.entries) verifyApprovedSeedText(text, entry);
-}
-
 export async function removeStagedApprovedSeedAfterImage(input: {
   artifactPath: string;
   proposal: ReconciliationProposal;
@@ -647,22 +510,13 @@ export async function supersedeStagedApprovedSeedAfterImage(input: {
   supersededApproval: ReconciliationApproval;
   supersedingProposal: ReconciliationProposal;
   supersedingApproval: ReconciliationApproval;
-  approvedProductionSnapshot: ProductionSnapshot;
 }): Promise<{ artifactPath: string; artifactSha256: string; removedProposalSha256: string }> {
   const artifactPath = resolve(input.artifactPath);
   if (!artifactPath.endsWith(`/${APPROVED_SEED_BASENAME}`)) {
     throw new Error(`Seed writes are target-pinned to ${APPROVED_SEED_BASENAME}`);
   }
-  const superseded = buildApprovedSeedEntry(
-    input.supersededProposal,
-    input.supersededApproval,
-    input.approvedProductionSnapshot,
-  );
-  const superseding = buildApprovedSeedEntry(
-    input.supersedingProposal,
-    input.supersedingApproval,
-    input.approvedProductionSnapshot,
-  );
+  const superseded = buildApprovedSeedEntry(input.supersededProposal, input.supersededApproval);
+  const superseding = buildApprovedSeedEntry(input.supersedingProposal, input.supersedingApproval);
   if (
     superseded.taskId !== superseding.taskId
     || input.supersededProposal.taskIndex !== input.supersedingProposal.taskIndex
