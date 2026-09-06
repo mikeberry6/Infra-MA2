@@ -1,0 +1,987 @@
+ <!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> <meta charset="utf-8" /> <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1"> <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self';
+          script-src 'self' 'unsafe-inline' 'unsafe-eval' *.jsdelivr.net cdnjs.cloudflare.com *.createsend1.com *.googletagmanager.com *.fonts.net *.sharethis.com *.fontawesome.com *.googleapis.com *.gstatic.com www.google.com *.google-analytics.com apis.google.com connect.facebook.net ajax.aspnetcdn.com https://www.youtube.com platform.twitter.com https://syndication.twitter.com/ https://s.ytimg.com https://publish.twitter.com *.twimg.com platform.linkedin.com http://platform.stumbleupon.com/1/widgets.js https://cdn.insight.sitefinity.com https://dec.azureedge.net/ munchkin.marketo.net *.eloqua.com js.hs-scripts.com js.hs-analytics.net *.en25.com cdn.ampproject.org web-chat.nativechat.com *.cloudinary.com cdn-cookieyes.com;
+          style-src 'self' 'unsafe-inline' *.typekit.net *.fonts.net *.fontawesome.com *.googleapis.com *.gstatic.com cdnjs.cloudflare.com netdna.bootstrapcdn.com kendo.cdn.telerik.com www.google.com https://cdn.insight.sitefinity.com https://dec.azureedge.net platform.twitter.com/css/ *.twimg.com web-chat.nativechat.com;
+          img-src 'self' *.gstatic.com *.sharethis.com *.googleapis.com *.google-analytics.com platform.tumblr.com web.facebook.com www.facebook.com https://delicious.com www.redditstatic.com www.linkedin.com i.ytimg.com https://syndication.twitter.com https://static.licdn.com/scds/common/u/images/apps/connect/sprites/sprite_connect_v14.png https://dec.azureedge.net https://*.insight.sitefinity.com https://*.dec.sitefinity.com pbs.twimg.com platform.twitter.com/css/ *.twimg.com data: blob: *.eloqua.com track.hubspot.com web-chat.nativechat.com *.frontify.com *.cloudinary.com cdn-cookieyes.com;
+          font-src 'self' *.typekit.net *.fonts.net fonts.gstatic.com kendo.cdn.telerik.com netdna.bootstrapcdn.com data:;
+          connect-src 'self' *.crwdcntrl.net *.sharethis.com *.fontawesome.com data: accounts.google.com https://*.g.doubleclick.net https://*.insight.sitefinity.com https://*.dec.sitefinity.com *.mktoresp.com *.google-analytics.com *.gstatic.com *.frontify.com *.cloudinary.com *.cookieyes.com cdn-cookieyes.com;
+          media-src 'self' data: blob: *.frontify.com *.cloudinary.com;
+          child-src 'self' http://t.sharethis.com/ https://platform.twitter.com/ https://syndication.twitter.com/ https://www.youtube.com/ https://www.youtube-nocookie.com https://player.vimeo.com/ https://w.soundcloud.com/ apis.google.com accounts.google.com staticxx.facebook.com www.facebook.com web.facebook.com badge.stumbleupon.com web-chat.nativechat.com *.frontify.com cloudinary.com *.cloudinary.com;
+          "> <link rel="apple-touch-icon" sizes="180x180" href="/CFImages/Icons/Favicons/apple-touch-icon.png"> <link rel="icon" type="image/png" sizes="32x32" href="/CFImages/Icons/Favicons/favicon-32x32.png"> <link rel="icon" type="image/png" sizes="16x16" href="/CFImages/Icons/Favicons/favicon-16x16.png"> <link rel="mask-icon" href="/CFImages/Icons/Favicons/safari-pinned-tab.svg" color="#bb0000"> <link rel="shortcut icon" href="/CFImages/Icons/Favicons/favicon.ico"> <meta name="msapplication-TileColor" content="#ffffff"> <meta name="msapplication-config" content="/CFImages/Icons/Favicons/browserconfig.xml"> <meta name="theme-color" content="#ffffff"> <!-- Fonts.com --> <link rel="stylesheet" href="https://use.typekit.net/dra4bcu.css"> <!-- Google Fonts --> <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet"> <script src="https://kit.fontawesome.com/788419f499.js" crossorigin="anonymous" async></script> <!-- load this style sheet asyncronously --> <link rel="stylesheet" href="/dist/kendo-ui-custom.min.css" media="print" onload="this.media='all'">  <!-- Start cookieyes banner --> <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/f39ecbf037cad3accf11ff68/script.js"></script> <!-- End cookieyes banner --> <!-- Google Tag Manager --> <script>
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || []; w[l].push({
+                    'gtm.start':
+                        new Date().getTime(), event: 'gtm.js'
+                }); var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-PBJD8JK');</script> <!-- End Google Tag Manager --> <!-- Splide --> <!-- Main Stylesheet --> <link rel="stylesheet" href='/dist/main.css'> <script type="text/javascript">
+
+        // TEMPORARY fix for incorrect links in cmsContent sections
+        //window.addEventListener('DOMContentLoaded', (event) => {
+
+        //    if (!$("body").hasClass("sfPageEditor")) {
+
+        //        // TeamMember links
+        //        $("a[href*='/print/bio/']").each(function () {
+        //            let href = $(this).attr("href");
+        //            href = href.replace("/print/bio/", "/people/bio/");
+        //            $(this).attr("href", href);
+        //            console.log("replaced team URL: ", href);
+        //        });
+
+        //        // Insight links
+        //        $("a[href*='/print/insight/']").each(function () {
+        //            let href = $(this).attr("href");
+        //            href = href.replace("/print/insight/", "/insights/article/");
+        //            $(this).attr("href", href);
+        //            console.log("replaced insight URL: ", href);
+        //        });
+        //    }
+        //});
+
+        // expertise sticky sidebar functions
+        function updateSidebarOffsetValues() { // runs on resize/recalc
+            stickySidebarCloneWrappersOffsets = [];
+            window.$stickySidebarCloneWrappers = $(".stickySidebarCloneWrapper");
+            if (window.$stickySidebarCloneWrappers.length) {
+                //for (const element of window.$stickyAnchors) {
+
+                //}
+                window.$stickySidebarCloneWrappers.each(function () {
+                    let offset = $(this).offset();
+                    let $this = $(this);
+                    let color = "white"; // default
+                    if ($this.hasClass("stickySidebarHoverBlack")) {
+                        color = "black";
+                    } else if ($this.hasClass("stickySidebarHoverTeal")) {
+                        color = "teal";
+                    }
+                    stickySidebarCloneWrappersOffsets.push({
+                        top: offset.top,
+                        bottom: offset.top + $this.outerHeight(),
+                        color: color
+                    });
+                });
+            }
+        }
+        function checkStickySidebarItems() { // runs on scroll
+            if (window.$stickyAnchors && window.$stickyAnchors.length) {
+                const WIGGLE = 4; // pixels. Adjust this number arbitrarily to tweak when the color change happens
+                for (const element of window.$stickyAnchors) {
+                    let $element = $(element); // the sticky element (.stickySidebar li a)
+                    let height = $element[0].clientHeight; // height of the sticky element
+                    let offset = $element.offset(); // the y-offset of the sticky element
+                    let isOverlappingWrapper = false;
+                    for (const wrapperOffset of stickySidebarCloneWrappersOffsets) {
+                        if (
+                            offset.top >= wrapperOffset.top - height + WIGGLE &&
+                            offset.top < wrapperOffset.bottom
+                        ) {
+                            isOverlappingWrapper = true;
+                        }
+                        if (isOverlappingWrapper) {
+                            $element.addClass(wrapperOffset.color);
+                            //$element.addClass("white");
+                        } else {
+                            $element.removeClass(wrapperOffset.color);
+                            //$element.removeClass("white");
+                        }
+                    }
+                }
+            }
+        }
+    </script> <title>
+	Revera and Axium Infrastructure Form a Joint Venture to Acquire and Share Ownership of 32 Long Term Care Homes | Goodmans LLP
+</title><meta id="description" content="Goodmans LLP represented Revera Inc. (&quot;Revera&quot;) in connection with the completion of a joint venture between&amp;nbsp;Axium Infrastructure (“Axium”) and Revera…" name="description" /><meta id="author" content="Goodmans LLP" name="author" /><meta id="publisher" content="Goodmans LLP" name="publisher" /><meta id="ogtype" content="webpage" property="og:type" /><meta id="ogtitle" content="Revera and Axium Infrastructure Form a Joint Venture to Acquire and Share Ownership of 32 Long Term Care Homes | Goodmans LLP" property="og:title" /><meta id="ogdescription" content="Goodmans LLP represented Revera Inc. (&quot;Revera&quot;) in connection with the completion of a joint venture between&amp;nbsp;Axium Infrastructure (“Axium”) and Revera…" property="og:description" /><meta id="ogsitename" content="Goodmans LLP" property="og:site_name" /><meta id="oglocale" content="en_US" property="og:locale" /><meta id="ogurl" content="https://www.goodmans.ca/expertise/case/revera-and-axium-infrastructure-form-a-joint-venture-to-acquire-and-share-ownership-of-32-long-term-care-homes" property="og:url" /><meta id="ogimage" content="https://www.goodmans.ca/images/default-source/fallbacks/default-fallback.tmb-cfthumb_m.png" property="og:image" /><meta id="ogsecureimage" content="https://www.goodmans.ca/images/default-source/fallbacks/default-fallback.tmb-cfthumb_m.png" property="og:image:secure_url" /><meta id="ogimagetype" content="image/png" property="og:image:type" /><meta id="twittercard" content="summary_large_image" name="twitter:card" /><meta id="twittertitle" content="Revera and Axium Infrastructure Form a Joint Venture to Acquire and Share Ownership of 32 Long Term Care Homes | Goodmans LLP" name="twitter:title" /><meta id="twitterdescription" content="Goodmans LLP represented Revera Inc. (&quot;Revera&quot;) in connection with the completion of a joint venture between&amp;nbsp;Axium Infrastructure (“Axium”) and Revera…" name="twitter:description" /><meta id="twitterimage" content="https://www.goodmans.ca/images/default-source/fallbacks/default-fallback.tmb-cfthumb_m.png" name="twitter:image" /><meta id="twittersite" content="Goodmans LLP" name="twitter:site" /><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","name":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://www.goodmans.ca","name":"Home","@type":"WebPage"}},{"@type":"ListItem","position":2,"item":{"@id":"https://www.goodmans.ca/expertise","name":"Expertise","@type":"WebPage"}},{"@type":"ListItem","position":3,"item":{"@id":"https://www.goodmans.ca/expertise/featured-work","name":"Featured Work","@type":"WebPage"}},{"@type":"ListItem","position":4,"item":{"@id":"https://www.goodmans.ca/expertise/case/revera-and-axium-infrastructure-form-a-joint-venture-to-acquire-and-share-ownership-of-32-long-term-care-homes","name":"Revera and Axium Infrastructure Form a Joint Venture to Acquire and Share Ownership of 32 Long Term Care Homes","@type":"WebPage"}}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Revera and Axium Infrastructure Form a Joint Venture to Acquire and Share Ownership of 32 Long Term Care Homes | Goodmans LLP","description":"Goodmans LLP represented Revera Inc. (\"Revera\") in connection with the completion of a joint venture between&nbsp;Axium Infrastructure (“Axium”) and Revera…","image":{"@type":"ImageObject","name":"Default Fallback","alternateName":"Goodmans LLP","url":"https://www.goodmans.ca/images/default-source/fallbacks/default-fallback.tmb-cfthumb_m.png","encodingFormat":"image/png"},"url":"https://www.goodmans.ca/expertise/case/revera-and-axium-infrastructure-form-a-joint-venture-to-acquire-and-share-ownership-of-32-long-term-care-homes","headline":"Revera and Axium Infrastructure Form a Joint Venture to Acquire and Share Ownership of 32 Long Term Care Homes","inLanguage":"en-CA","isPartOf":{"@type":"WebSite","@id":"https://www.goodmans.ca/#website"},"publisher":{"@type":"Organization","@id":"https://www.goodmans.ca/#organization"}}</script><style type="text/css" media="all">.justify-normal {
+    justify-content: normal;
+}
+
+.justify-start {
+    justify-content: flex-start;
+}
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-around {
+    justify-content: space-around;
+}
+
+.justify-evenly {
+    justify-content: space-evenly;
+}
+
+.justify-stretch {
+    justify-content: stretch;
+}
+
+.items-start {
+    align-items: flex-start;
+}
+
+.items-end {
+    align-items: flex-end;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.items-baseline {
+    align-items: baseline;
+}
+
+.items-stretch {
+    align-items: stretch;
+}
+
+.gap-l {
+  gap: 1rem;
+}
+
+.joinUsSection {
+  height: 40rem;
+  max-height: 80vh;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}</style><meta name="Generator" content="Sitefinity 15.4.8637.0 SE" /><link rel="canonical" href="https://www.goodmans.ca/expertise/case/revera-and-axium-infrastructure-form-a-joint-venture-to-acquire-and-share-ownership-of-32-long-term-care-homes" /></head> <body class=" detailPage "> <!-- Google Tag Manager (noscript) --> <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PBJD8JK"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> <!-- End Google Tag Manager (noscript) --> <nav id="skiptocontent" aria-label="Skip Navigation Links" style=""> <a href="#main_content" tabindex="0">skip to main content</a> </nav> <div hidden> <span id="new-window-0">Opens in a new window</span> <span id="new-window-1">Opens an external site</span> <span id="new-window-2">Opens an external site in a new tab</span> </div> <div id="wrapper" class="pageWrapper"> <header id="header"> 
+
+
+ <div class="mobileHeader"> <nav class="mobileNav" aria-label="Mobile Site Navigation" aria-expanded="false"> 
+ <div class="mobileNavInner"> </div> </nav> </div> <div class="topHeader"> <button class="hamburger" type="button"> <span class="sr-only">Open Main Site Navigation</span> <span class="lines"> <span class="line short"></span> <span class="line"></span> <span class="line short"></span> <span class="line"></span> </span> </button> 
+ </div> <div class="header"> 
+<div id="cph_header_TDF80EC3E128_Col00" class="container full sf_colsIn" data-sf-element="ContainerFull" data-placeholder-label="Container (Full Width Padded)"><div class="grid headerGrid grid-between" data-sf-element="Resizable 3 Column Grid" data-gutter-width="4rem" data-media-breakpoint="none" data-align-items="grid-align-stretch" data-justify-content="grid-between" style="margin: 0px calc(-2rem);">
+    <div id="cph_header_TDF80EC3E120_Col00" class="sf_colsIn col logo col-auto-width col-bottom" data-sf-element="Column 1" data-placeholder-label="Column 1" data-col-width="grow" data-align-items="col-align-stretch" data-justify-content="col-bottom" style="margin: 0px calc(2rem);">
+<div class="sfContentBlock sf-Long-text cmsContent"><a href="/home"><img src="/images/default-source/default-album/logo-goodmans.svg?sfvrsn=edaded8b_9" height="56" data-displaymode="Original" title="Goodmans LLP - Home Page" width="280" alt="Goodmans LLP Logo"></a></div></div>
+    <div id="cph_header_TDF80EC3E120_Col01" class="sf_colsIn col menu col-bottom" data-sf-element="Column 2" data-placeholder-label="Column 2" data-col-width="grow" data-align-items="col-align-stretch" data-justify-content="col-bottom" style="margin: 0px calc(2rem);">
+
+
+
+<nav class="mainNavWrapper" aria-label="Main Site Navigation">
+    <ul id="megaNav" class="megaNav mainNav">
+    <li class="rootMenuItem hasChildren ">
+        <a href="/people" target="_self" class="">People</a>
+            <ul class="megaContainer teammembers ">
+                    <li>
+                        <div>
+
+                            
+                            
+                            
+
+<div class="findAnything teamFilters">
+    <script type="application/json" class="findAnythingData">{"RootUrl":"/people","Model":{"ContentTypes":["teammembers","expertises"],"TitleResourceLabel":null,"FallBackToSiteSearch":false}}</script>
+    
+<fieldset class="keywordSearchWrapper">
+    <legend class="sr-only">Search People</legend>
+
+    <label class="sr-only" for="input_c79579da-64ae-4553-9e82-891a4be3a942" style="color:#000;background-color: #fff;">Search People …</label>
+    <input type="search" value="" class="keywordSearch" placeholder="Search People …" id="input_c79579da-64ae-4553-9e82-891a4be3a942" />
+    <div class="textFieldUnderline"></div>
+    <div class="buttons">
+        <button type="button" class="button searchSubmit"><span class="sr-only">Search</span><span class="icon search"></span></button>
+    </div>
+</fieldset>
+    <div class="fieldGroups">
+        
+        <fieldset data-filter-group class='col' data-group='data-expertises-guids' ><legend>Expertise </legend><select class='option-data-group'  data-group='data-expertises-guids' data-group-display='Expertise'><option value='' id='expertises-all' data-querystringvalue='' selected>Expertise</option><option data-querystringvalue='acquisition-finance' value='4ea244a5-831f-4c09-ade4-8adf58cd0f4f' id='expertises1'>Acquisition Finance</option><option data-querystringvalue='acquisitions-and-dispositions-' value='5a01f365-035d-4ad1-adec-5f9ba3c26772' id='expertises2'>Acquisitions and Dispositions </option><option data-querystringvalue='advertising-and-marketing' value='49f4ae89-539c-47c4-b5d5-ac54c6056e79' id='expertises3'>Advertising and Marketing</option><option data-querystringvalue='aging-and-health-care' value='4bd9eb3c-c83a-4425-9797-cbc968ad3d4b' id='expertises4'>Aging and Healthcare</option><option data-querystringvalue='alternate-finance' value='4f22ca42-9dea-45fb-9fb1-5c7af87c8305' id='expertises5'>Alternate Finance</option><option data-querystringvalue='anti-spam-and-malware' value='86635fad-befa-4237-adca-2b79d2015caa' id='expertises6'>Anti-Spam and Malware</option><option data-querystringvalue='appellate-advocacy' value='1abcdd1c-1858-4fb3-aa20-e85c708f5eb0' id='expertises7'>Appellate Advocacy</option><option data-querystringvalue='arbitration---domestic-and-international' value='34dc650e-d5e7-4c6c-9ece-7942e7889585' id='expertises8'>Arbitration - Domestic and International</option><option data-querystringvalue='artificial-intelligence' value='5c52c10f-d7ec-4306-b921-5e37a5c643e8' id='expertises9'>Artificial Intelligence</option><option data-querystringvalue='asset-based-lending' value='433defbf-f8f5-4661-85d4-d486b659a567' id='expertises10'>Asset-Based Lending</option><option data-querystringvalue='banking-and-finance' value='8d1c04f6-e145-48b5-9c62-3b83e4229690' id='expertises11'>Banking and Finance</option><option data-querystringvalue='cannabis' value='38642f60-fe5d-4bf4-9db8-cb2e8bde169f' id='expertises12'>Cannabis</option><option data-querystringvalue='capital-markets' value='0c579f01-2cc8-4f75-ba29-32affce473d3' id='expertises13'>Capital Markets</option><option data-querystringvalue='class-actions' value='edb3d3f8-dc5e-4f0e-a2af-673bfdd08541' id='expertises14'>Class Actions</option><option data-querystringvalue='communications-and-media' value='45f2e06b-d396-4dc9-9278-090e0e506e65' id='expertises15'>Communications and Media</option><option data-querystringvalue='competition-and-foreign-investment' value='738b3d49-adbe-446b-94b9-14ad2de36ffa' id='expertises16'>Competition and Foreign Investment</option><option data-querystringvalue='competition-bureau-investigations' value='c6cc2649-6223-4b8e-b9b7-1edd025db305' id='expertises17'>Competition Bureau investigations</option><option data-querystringvalue='competition-law-litigation-' value='69273368-603a-4536-9b35-5fdeb0fcaf65' id='expertises18'>Competition Law Litigation </option><option data-querystringvalue='compliance-programs-and-audits' value='fc9f89d1-38d7-43eb-8759-03d785f03fcd' id='expertises19'>Compliance Programs and Audits</option><option data-querystringvalue='construction-and-infrastucture' value='80a85ae7-dfe6-4a32-9990-496eee8cc8f9' id='expertises20'>Construction and Infrastructure</option><option data-querystringvalue='corporate-commercial-litigation' value='321b4caa-38d1-449d-aefb-c4c11a16c038' id='expertises21'>Corporate and Commercial Litigation</option><option data-querystringvalue='corporate-governance' value='a0c56412-1526-45ea-8063-d46fd954fcd9' id='expertises22'>Corporate Governance and Stakeholder Litigation</option><option data-querystringvalue='corporate-lending' value='4963f01d-7bfb-4d66-bdbc-4836f4789798' id='expertises23'>Corporate Lending</option><option data-querystringvalue='crisis-management-and-urgent-proceedings' value='019f5b06-d965-4b59-b01d-cf0b436cf8eb' id='expertises24'>Crisis Management and Urgent Proceedings</option><option data-querystringvalue='debt-issuances-and-high-yield-debt' value='dc901779-4db3-493e-9e1d-31e98222f4b9' id='expertises25'>Debt Issuances and High Yield Debt</option><option data-querystringvalue='development-changes-and-infrastructure-financing' value='8a0c84bb-65d0-4c57-9cd9-8738e0cd69ec' id='expertises26'>Development Changes and Infrastructure Financing</option><option data-querystringvalue='emerging-companies' value='69ffa26b-bba0-4205-8323-382a2e97e21c' id='expertises27'>Emerging Companies</option><option data-querystringvalue='employment-pensions-and-executive-compensation-' value='bebd4d90-4aee-47e8-a1bd-0d0960aea26a' id='expertises28'>Employment, Pensions and Executive Compensation </option><option data-querystringvalue='energy' value='f088d3bc-6e81-4dda-a1fc-7be85e5a50b1' id='expertises29'>Energy</option><option data-querystringvalue='entertainment' value='88148c88-65a0-4add-8936-a2908219235d' id='expertises30'>Entertainment</option><option data-querystringvalue='environmental' value='4ade8817-bc61-4e0d-b98c-7189f105eef4' id='expertises31'>Environmental</option><option data-querystringvalue='esports' value='4b9bd5df-2891-4e36-9df8-1018cdf9db43' id='expertises32'>Esports</option><option data-querystringvalue='estates-and-trusts' value='9b4fb85f-64d6-4d17-bf36-5e4aa9135659' id='expertises33'>Estates and Trusts Litigation</option><option data-querystringvalue='expropriation' value='f6be1e4d-5ca4-476b-b5c7-e63e28d7e370' id='expertises34'>Expropriation</option><option data-querystringvalue='financial-services-regulatory' value='cc2aa0b6-dddc-4961-857c-d1ef5fa6bfe5' id='expertises35'>Financial Services Regulatory</option><option data-querystringvalue='financing' value='2497a8df-497e-4156-a729-4eb015fe43a1' id='expertises36'>Financing</option><option data-querystringvalue='fintech' value='85b50240-9e61-45ca-999f-dff4e17b68e0' id='expertises37'>Fintech</option><option data-querystringvalue='food-and-drug-regulatory-and-litigation-' value='b0d509eb-1d80-4785-81b4-4867027b5fca' id='expertises38'>Food and Drug Regulatory and Litigation </option><option data-querystringvalue='foreign-investment-and-national-security-reviews-' value='8ac962d6-249e-49db-a3af-be65abaf741c' id='expertises39'>Foreign Investment and National Security Reviews </option><option data-querystringvalue='freedom-of-information' value='ebb55934-ce84-4937-a1f6-9a0fb41d918e' id='expertises40'>Freedom of Information</option><option data-querystringvalue='health-and-pharmaceutical-litigation' value='f5bb9f64-8f5b-4ce5-86f5-49ccc9becb23' id='expertises41'>Health and Pharmaceutical Litigation</option><option data-querystringvalue='hospitality' value='e9def4ff-9b0a-48dc-a69c-e34d1d0caea7' id='expertises42'>Hospitality </option><option data-querystringvalue='redirect---restructuring-and-insolvency-litigation' value='db952cad-f806-4538-ba1d-6b67c05eac63' id='expertises43'>Insolvency Litigation</option><option data-querystringvalue='insurance' value='c88e865b-0683-42f5-affe-53702aba5ec5' id='expertises44'>Insurance Litigation</option><option data-querystringvalue='intellectual-property' value='0bdf8e38-32c2-45e1-8eb1-a8e45fbb0e39' id='expertises45'>Intellectual Property Litigation</option><option data-querystringvalue='joint-ventures' value='abb028e7-930b-4c5f-852c-dc0d20fbd0ef' id='expertises46'>Joint Ventures</option><option data-querystringvalue='judicial-review' value='5aadecbf-ab6c-4c01-972d-ff1c2f8225f6' id='expertises47'>Judicial Review</option><option data-querystringvalue='leasing-' value='f853bb74-2537-4ce6-b088-c55a79a5b3f7' id='expertises48'>Leasing </option><option data-querystringvalue='dispute-resolution' value='d93a83f9-d5bd-4fcb-a9a2-1300feb78ad2' id='expertises49'>Litigation and Dispute Resolution</option><option data-querystringvalue='merger-review' value='aa656dab-fa16-452b-8885-fd691006343b' id='expertises50'>Merger Review</option><option data-querystringvalue='mergers-and-acquisitions' value='2ef8d01d-fbcc-4666-abc8-6f4c9648ef15' id='expertises51'>Mergers and Acquisitions</option><option data-querystringvalue='mining' value='bce0c9f7-0cf4-4ab7-bd0c-b171d083721d' id='expertises52'>Mining</option><option data-querystringvalue='municipal-and-land-development' value='2842bf9c-350e-4597-abb1-8a2bbded90e9' id='expertises53'>Municipal and Land Development</option><option data-querystringvalue='outsourcing' value='67373dff-51d1-485f-a0f5-98246c333e6e' id='expertises54'>Outsourcing</option><option data-querystringvalue='patent-prosecution-licensing-and-transactions' value='2c8feac5-c3b4-49e0-a2b4-517b4bcd3b83' id='expertises55'>Patent Prosecution, Licensing and Transactions</option><option data-querystringvalue='patent-trademark-and-copyright-litigation' value='00164aeb-acd1-41be-92ec-6cfd7835ce5d' id='expertises56'>Patent, Trademark and Copyright Litigation</option><option data-querystringvalue='pmprb-strategies-and-litigation' value='689aabb7-def8-4958-9657-5e5770685bbf' id='expertises57'>PMPRB Strategies and Litigation</option><option data-querystringvalue='power-and-energy-finance' value='3bb6ac76-ea40-47a5-83bc-53ba17bb249e' id='expertises58'>Power and Energy Finance</option><option data-querystringvalue='privacy-and-data-protection-' value='345a8dba-d229-49e8-9694-63db6bdd8255' id='expertises59'>Privacy and Data Protection </option><option data-querystringvalue='private-equity' value='cd78ef04-33c9-4b26-a47f-f99064b887e1' id='expertises60'>Private Equity</option><option data-querystringvalue='private-m-a' value='5d923f67-1b33-4b10-8dd4-8a5a1ee0d6ef' id='expertises61'>Private M&A</option><option data-querystringvalue='procurement' value='99680f62-c5e1-450e-82d3-f2f046a63ce1' id='expertises62'>Procurement</option><option data-querystringvalue='professional-liability' value='75706100-c11a-491a-a701-2846a53ed6bd' id='expertises63'>Professional Liability</option><option data-querystringvalue='project-finance' value='f76bd309-3b14-40da-8bf7-0983458eff96' id='expertises64'>Project Finance</option><option data-querystringvalue='property-assessment-and-taxation' value='1be30b63-a3cd-43a5-a7ab-5c0c1bda67ac' id='expertises65'>Property Assessment and Taxation</option><option data-querystringvalue='public-m-a' value='2d242c2a-b2c6-4c88-96e4-905ec6ee727c' id='expertises66'>Public M&A</option><option data-querystringvalue='real-estate' value='1cb3291a-e4d8-48c0-a7ec-a5c729e03dd6' id='expertises67'>Real Estate</option><option data-querystringvalue='real-estate-brokerage-compliance' value='bc429431-5570-45b4-93c1-2ce16cf2b98c' id='expertises68'>Real Estate Brokerage Compliance</option><option data-querystringvalue='real-estate-finance' value='8942e70c-e2bf-4ff5-839d-9e40785f15f2' id='expertises69'>Real Estate Finance</option><option data-querystringvalue='real-estate-litigation' value='43852953-e77e-4041-9052-475d94814816' id='expertises70'>Real Estate Litigation</option><option data-querystringvalue='regulatory-administrative-public-law' value='19aae608-7a74-4b00-a763-606e4e15041b' id='expertises71'>Regulatory, Administrative and Public Law</option><option data-querystringvalue='reits-and-income-securities' value='15ed138c-917a-4aaa-b75b-19e56134a5fb' id='expertises72'>REITS and Income Securities</option><option data-querystringvalue='restructuring-and-insolvency' value='f6aab799-208a-4a5c-8522-117622312e2b' id='expertises73'>Restructuring</option><option data-querystringvalue='securities' value='6ee12abd-9541-4957-a2d9-03890ca85f8a' id='expertises74'>Securities Litigation</option><option data-querystringvalue='shareholder-activism' value='30fe370a-0e04-4df3-8c5e-00915fc076de' id='expertises75'>Shareholder Activism</option><option data-querystringvalue='spacs' value='7ba04205-f473-4dff-a570-295519d2fd12' id='expertises76'>SPACS</option><option data-querystringvalue='special-committee-advisory' value='e193e5eb-cbbf-442d-82cf-e592171029b4' id='expertises77'>Special Committee Advisory</option><option data-querystringvalue='sports' value='7dfd1601-cc11-48ed-8a00-e167c5d652dd' id='expertises78'>Sports</option><option data-querystringvalue='structured-finance-and-derivatives' value='c67e0fa5-7fad-40cd-8d2b-9fa176fb330c' id='expertises79'>Structured Finance and Derivatives</option><option data-querystringvalue='student-housing' value='833ffbcc-55f0-4104-84a2-66500d020a29' id='expertises80'>Student Housing</option><option data-querystringvalue='tax' value='400256f7-da35-4ff8-9e04-22a0d912fc54' id='expertises81'>Tax</option><option data-querystringvalue='litigation-and-dispute-resolution-' value='8db71c54-1524-4615-b75b-d06685425f0c' id='expertises82'>Tax Litigation</option><option data-querystringvalue='technology' value='9e44371c-0675-4516-b930-f75448d489c6' id='expertises83'>Technology</option><option data-querystringvalue='technology-disputes' value='b16726ef-5766-4c0e-b0af-64d308203cb3' id='expertises84'>Technology Disputes</option><option data-querystringvalue='trademark-prosecution-licensing-and-transactions' value='842d2db8-a6c6-488b-bf6e-099d8d95e945' id='expertises85'>Trademark Prosecution, Licensing and Transactions</option><option data-querystringvalue='venture-capital' value='67d6c82b-aac9-4971-9dd5-3bdbc124b114' id='expertises86'>Venture Capital</option><option data-querystringvalue='white-collar-defence-and-investigations' value='18fca012-23b8-47bd-8d54-d72ce199988c' id='expertises87'>White Collar Defence and Investigations</option></select></fieldset><fieldset data-filter-group data-group='data-positiontypes-guids' class='col'><div class='toggleAction'><legend>Position </legend><select class='option-data-group' data-group='data-positiontypes-guids' data-group-display='Position'><option value='' id='PositionTypes-all' selected>Position</option><option data-querystringvalue='administration' value = 'c9c1b8d0-de53-48ec-ad4d-fdf7c6172dde' id='positiontypes1'>Administration</option><option data-querystringvalue='associate' value = '141a3da3-a59d-4308-a413-c6aa3f2fb283' id='positiontypes2'>Associate</option><option data-querystringvalue='counsel' value = '18c4d732-a120-4cdf-8225-3f098548d563' id='positiontypes3'>Counsel</option><option data-querystringvalue='law-clerk' value = '77b688f7-da83-4493-9668-b65fb5e415f4' id='positiontypes4'>Law Clerk</option><option data-querystringvalue='partner' value = '5aa4c3eb-6dc2-45ec-afd4-2a32743a106b' id='positiontypes5'>Partner</option><option data-querystringvalue='professional' value = 'ba2e2bb6-debe-4ab6-862a-ae52bc5dc8cf' id='positiontypes6'>Professional</option></select></fieldset><fieldset data-filter-group data-group='data-schools-guids' class='col'><div class='toggleAction'><legend>Law School </legend><select class='option-data-group' data-group='data-schools-guids' data-group-display='Law School'><option value='' id='Schools-all' selected>Law School</option><option data-querystringvalue='amherst-college' value = 'a33258e7-9bee-4b5f-996a-f36aa9cf9114' id='schools1'>Amherst College</option><option data-querystringvalue='bond-university' value = '8c2c2772-25b1-4213-914a-69bfeaaf9ef7' id='schools2'>Bond University</option><option data-querystringvalue='canadian-institute-of-chartered-accountants' value = 'a575b10c-2226-4ebd-8442-014dc48f2427' id='schools3'>Canadian Institute of Chartered Accountants</option><option data-querystringvalue='canadian-securities-course' value = 'fa38c34a-e6ca-4dce-9dec-e6be969bc5d0' id='schools4'>Canadian Securities Course</option><option data-querystringvalue='carleton-university' value = 'dfcd198c-d85b-4c58-ab11-1a24a25499fb' id='schools5'>Carleton University</option><option data-querystringvalue='chartered-professional-accountants-of-canada' value = 'c01e16ee-e0c2-4ecc-8e20-f04977bce140' id='schools6'>Chartered Professional Accountants of Canada</option><option data-querystringvalue='columbia-law-school' value = '9e5fdac9-3f32-4908-a52a-65085fb76b32' id='schools7'>Columbia Law School</option><option data-querystringvalue='columbia-university' value = 'e2e54ecd-8424-4619-979d-3d5c54661939' id='schools8'>Columbia University</option><option data-querystringvalue='columbia-university-school-of-law' value = '2dadd7c9-e822-46c6-b24d-c0877a577f53' id='schools9'>Columbia University School of Law</option><option data-querystringvalue='concordia-university' value = '8c695db0-fa44-4331-b9ee-234bb6f2ab03' id='schools10'>Concordia University</option><option data-querystringvalue='cornell-university' value = 'efb0a07d-fe1e-4ca9-83c6-6fc83a653245' id='schools11'>Cornell University</option><option data-querystringvalue='dalhousie-university' value = '66d16de2-b5ea-42b3-9e41-5b7f6c7b01c3' id='schools12'>Dalhousie University</option><option data-querystringvalue='dalhousie-university-schulich-school-of-law' value = '46727283-274f-477b-bc01-ed4c10f76da8' id='schools13'>Dalhousie University, Schulich School of Law</option><option data-querystringvalue='durham-college' value = '590d1b88-c625-4613-ae43-0c3c810a3766' id='schools14'>Durham College</option><option data-querystringvalue='hanoi-university' value = '3519eec6-d268-4b06-b2a1-771677d094ae' id='schools15'>Hanoi University</option><option data-querystringvalue='harvard-university' value = 'b1dd3a61-e36a-431e-a616-a2475cc57400' id='schools16'>Harvard University</option><option data-querystringvalue='herzing-college' value = '38b791bb-0e40-4fd6-828b-224a98f85d2c' id='schools17'>Herzing College</option><option data-querystringvalue='institute-of-corporate-directors' value = '04efee91-6a74-46cb-82ab-795c459dfa9a' id='schools18'>Institute of Corporate Directors</option><option data-querystringvalue='ivey-business-school' value = 'bfaa1152-7818-45ff-a80c-4681a16b52fe' id='schools19'>Ivey Business School</option><option data-querystringvalue='jindal-global-law-school' value = 'b1b0c4a7-39a4-46ff-a4c6-195911980290' id='schools20'>Jindal Global Law School</option><option data-querystringvalue='johns-hopkins-university' value = 'b723e4c2-71f2-4eaa-be7b-b0970f454eab' id='schools21'>Johns Hopkins University</option><option data-querystringvalue='laurentian-university' value = '0cca1e62-abd7-49f6-892a-15b2be977348' id='schools22'>Laurentian University</option><option data-querystringvalue='l%27institut-d%27etudes-politiques-de-paris' value = 'a5180526-3773-4bca-a547-989a78b7cb17' id='schools23'>L'Institut d'Etudes Politiques de Paris</option><option data-querystringvalue='london-school-of-economics-and-political-science' value = 'ca381dcc-4492-4d0b-ab0d-962baa76d0ba' id='schools24'>London School of Economics and Political Science</option><option data-querystringvalue='mcgill-university' value = '123f7f79-d0c3-480c-92c1-d14cf3aacf95' id='schools25'>McGill University</option><option data-querystringvalue='mcgill-university-desautels-faculty-of-management' value = 'f98b36ee-8df5-47d7-84c8-423d32b1ca17' id='schools26'>McGill University, Desautels Faculty of Management</option><option data-querystringvalue='mcmaster-university' value = '142d1e69-eb5c-4c52-ab1b-f891cdbe1bf0' id='schools27'>McMaster University</option><option data-querystringvalue='memorial-university' value = 'e00baf6c-6cff-4e91-b14d-ce891d29f6f3' id='schools28'>Memorial University</option><option data-querystringvalue='memorial-university-of-newfoundland' value = '1c9a3b83-6d89-4e8d-8e3c-5c15816c3b7c' id='schools29'>Memorial University of Newfoundland</option><option data-querystringvalue='mount-allison-university' value = '0f67a9ab-8de2-4783-b8ee-43a47621ef0a' id='schools30'>Mount Allison University</option><option data-querystringvalue='munk-school-of-global-affairs-university-of-toronto' value = '9a6bf84f-af4d-4ab4-8d2a-26817bf957f5' id='schools31'>Munk School of Global Affairs, University of Toronto</option><option data-querystringvalue='new-york-university' value = '5c253a4a-da7e-4359-bc87-928a58a04849' id='schools32'>New York University</option><option data-querystringvalue='northwestern-university' value = '0a70d903-c7f3-4cb0-9b2b-042a73720fe5' id='schools33'>Northwestern University</option><option data-querystringvalue='osgoode-hall-law-school' value = 'a1d9fedf-43a0-4202-9f3b-e9d8c04ca944' id='schools34'>Osgoode Hall Law School</option><option data-querystringvalue='osgoode-hall-law-school-schulich-school-of-business' value = '0b255ce3-fa49-432a-ac08-38610da7c643' id='schools35'>Osgoode Hall Law School / Schulich School of Business</option><option data-querystringvalue='osgoode-professional-development' value = '85e33184-ae82-42a8-9589-9f62824166c2' id='schools36'>Osgoode Professional Development</option><option data-querystringvalue='oxford-university' value = '5e4f729e-d02d-47d0-9d75-1f09d21efa0d' id='schools37'>Oxford University</option><option data-querystringvalue='princeton-university' value = '62b7dfea-8e30-4805-8ecd-d423c7fef8b3' id='schools38'>Princeton University</option><option data-querystringvalue='queen%27s-university' value = '3325900a-8e29-48fe-a24c-bb58c2bf3136' id='schools39'>Queen's University</option><option data-querystringvalue='queen%27s-university---queen%27s-law' value = '5e8e0afd-768d-4ee0-983a-595a941cc5bf' id='schools40'>Queen's University / Queen's Law</option><option data-querystringvalue='queen%27s-university---smith-school-of-business' value = '6f3d3da0-31ee-4eeb-8848-991c10c92f61' id='schools41'>Queen's University / Smith School of Business</option><option data-querystringvalue='ryerson-university' value = '4555de9e-f5aa-4c64-84b3-04911097a070' id='schools42'>Ryerson University</option><option data-querystringvalue='schulich-school-of-business' value = '24ba6645-e0a8-49b3-8bb6-cdd0ab8eb72b' id='schools43'>Schulich School of Business</option><option data-querystringvalue='schulich-school-of-business---york-university' value = 'c5babe5e-d497-4927-9f2f-d3cd77563324' id='schools44'>Schulich School of Business - York University</option><option data-querystringvalue='seneca-polytechnic' value = 'ea34a56e-45f6-4fa3-8b4d-2f5719e04575' id='schools45'>Seneca Polytechnic</option><option data-querystringvalue='simon-fraser-university' value = '773af9cf-d747-4d11-b290-66b3c0cc5494' id='schools46'>Simon Fraser University</option><option data-querystringvalue='st-francis-xavier-university' value = 'ad1ca2a2-81ec-4277-adf2-4c76bdec013c' id='schools47'>St. Francis Xavier University</option><option data-querystringvalue='st-mary%27s-university' value = '27598a85-c7fa-41b4-bef8-d7f31da18fe2' id='schools48'>St. Mary's University</option><option data-querystringvalue='stanford-university' value = 'fef04a77-b17f-426c-9ed6-aade0df109e8' id='schools49'>Stanford University</option><option data-querystringvalue='toronto-metropolitan-university-%28formerly-ryerson-university' value = '2f6aff9f-17f0-4714-b14c-0e776ea99336' id='schools50'>Toronto Metropolitan University (formerly Ryerson University)</option><option data-querystringvalue='ubc-sauder-school-of-business' value = '5a8d3442-a5a1-43ae-8f46-2c9d1dc16531' id='schools51'>UBC Sauder School of Business</option><option data-querystringvalue='universidad-latinoamericana-de-ciencia-y-tecnolog%C3%ADa' value = 'f8ce7e94-376d-4b8f-b1eb-43f8846d6ac3' id='schools52'>Universidad Latinoamericana de Ciencia y Tecnología</option><option data-querystringvalue='universidad-rafael-urdaneta' value = 'f6d28c0d-8221-4705-b40a-701ba03f7d7a' id='schools53'>Universidad Rafael Urdaneta</option><option data-querystringvalue='universit%C3%A0-degli-studi-di-torino' value = 'd2661800-ca5d-4524-b783-b9603a783409' id='schools54'>Università degli Studi di Torino</option><option data-querystringvalue='university-college-london' value = '706801e3-79f3-4af1-b534-2cd0dde3551b' id='schools55'>University College London</option><option data-querystringvalue='university-of-alberta' value = 'f4b9d124-d1c1-48af-ad67-32ac2d25be38' id='schools56'>University of Alberta</option><option data-querystringvalue='university-of-british-columbia' value = 'a080ef95-1b77-4b2d-bae9-f8b6eb5dae1d' id='schools57'>University of British Columbia</option><option data-querystringvalue='university-of-california-at-berkeley' value = '1eeaf5c8-77d9-43ae-8f94-be9c12c54a9c' id='schools58'>University of California at Berkeley</option><option data-querystringvalue='university-of-california-at-los-angeles' value = 'bade1449-6033-4181-b5a0-b40482935b8c' id='schools59'>University of California at Los Angeles</option><option data-querystringvalue='university-of-cape-town' value = '0353021c-98d2-4ee4-9ed2-89003df7d8af' id='schools60'>University of Cape Town</option><option data-querystringvalue='university-of-guelph' value = 'd4da3793-7f7a-4fcd-8d59-4f9274ed1a0f' id='schools61'>University of Guelph</option><option data-querystringvalue='university-of-guelph-gordon-s-lang-school-of-business-and-economics' value = '5b1388b4-c338-45d7-9285-1b70f1cd4665' id='schools62'>University of Guelph, Gordon S. Lang School of Business and Economics</option><option data-querystringvalue='university-of-leeds' value = 'f17b19f4-f61b-4c0e-85c9-095c35482828' id='schools63'>University of Leeds</option><option data-querystringvalue='university-of-manitoba' value = '36dc1690-822a-4659-9aea-25940b7b3c50' id='schools64'>University of Manitoba</option><option data-querystringvalue='university-of-miami-school-of-law' value = '53c53a8e-7eda-4bbd-8d51-88bbb075c392' id='schools65'>University of Miami School of Law</option><option data-querystringvalue='university-of-notre-dame' value = 'cfa148e2-4383-4e0b-94b0-e8ec3612bf28' id='schools66'>University of Notre Dame</option><option data-querystringvalue='university-of-ottawa' value = '433a4182-783e-451d-87de-a357c222c9cb' id='schools67'>University of Ottawa</option><option data-querystringvalue='university-of-oxford' value = 'a9d9bee0-6c4f-4fb6-8b9c-e905ed0ea438' id='schools68'>University of Oxford</option><option data-querystringvalue='university-of-pittsburgh' value = '139bd52d-1071-4d78-9e58-b413bc89c8e1' id='schools69'>University of Pittsburgh</option><option data-querystringvalue='university-of-toronto' value = '43406d3d-d5f8-4fac-a9a5-d034dccab4b6' id='schools70'>University of Toronto</option><option data-querystringvalue='university-of-toronto---university-of-trinity-college' value = '53e4139b-37b2-4ad1-8a1b-27a658dd4ff2' id='schools71'>University of Toronto – University of Trinity College</option><option data-querystringvalue='university-of-victoria' value = '09b66ef8-7d5a-4ecb-be2a-64f2fb7332d1' id='schools72'>University of Victoria</option><option data-querystringvalue='university-of-waterloo' value = 'f76a0390-450f-41b9-96d6-0cf98ebf6203' id='schools73'>University of Waterloo</option><option data-querystringvalue='university-of-windsor' value = '18165273-aeb8-4612-aa2d-9d50f1c47731' id='schools74'>University of Windsor</option><option data-querystringvalue='university-of-windsor-faculty-of-law' value = '367e1f6d-74a6-4ccb-ae95-dfea207d7d7d' id='schools75'>University of Windsor Faculty of Law</option><option data-querystringvalue='university-of-windsor-university-of-detroit-mercy' value = 'c8d1d1eb-c53e-47f1-8edc-276a83539d8a' id='schools76'>University of Windsor, University of Detroit Mercy</option><option data-querystringvalue='university-of-winnipeg' value = '2afa790e-84d8-4599-9831-6382c8d0e345' id='schools77'>University of Winnipeg</option><option data-querystringvalue='university-of-witwatersrand' value = '7747ebf0-2d30-49a5-abcb-3c8202944652' id='schools78'>University of Witwatersrand</option><option data-querystringvalue='western-university' value = 'a33dbd07-d985-4986-985d-f006f68eb088' id='schools79'>Western University</option><option data-querystringvalue='western-university-ivey-business-school' value = '51b4eaf8-1c11-4f94-85dc-2562fa67ce8b' id='schools80'>Western University / Ivey Business School</option><option data-querystringvalue='wilfrid-laurier-university' value = 'a8b22257-08a4-4fa0-b0db-f0dd45ac98d7' id='schools81'>Wilfrid Laurier University</option><option data-querystringvalue='yale-university' value = '6408e59b-a4af-48aa-968b-ed371bf07aa1' id='schools82'>Yale University</option><option data-querystringvalue='york-university' value = 'b9a35251-35a7-4e1c-a4f9-ce7a2597e275' id='schools83'>York University</option></select></fieldset>
+    </div>
+</div>
+
+
+                        </div>
+                    </li>
+            </ul>
+    </li>
+    <li class="rootMenuItem hasChildren childSelected childSelected">
+        <a href="/expertise" target="_self" class="childSelected">Expertise</a>
+            <ul class="megaContainer expertises ">
+                    <li>
+                        <div class="">
+                            <ul class="expertiseTree navUl">
+                                <li class="expertiseMenuItem">
+                                    <h3>Practices</h3>
+                                    <ul class="level1"><li><a href="https://www.goodmans.ca/expertise-detail/banking-and-finance">Banking and Finance</a></li><li><a href="https://www.goodmans.ca/expertise-detail/capital-markets">Capital Markets</a></li><li><a href="https://www.goodmans.ca/expertise-detail/competition-and-foreign-investment">Competition and Foreign Investment</a></li><li><a href="https://www.goodmans.ca/expertise-detail/employment-pensions-and-executive-compensation-">Employment, Pensions and Executive Compensation </a></li><li><a href="https://www.goodmans.ca/expertise-detail/environmental">Environmental</a></li><li><a href="https://www.goodmans.ca/expertise-detail/intellectual-property">Intellectual Property Litigation</a></li><li><a href="https://www.goodmans.ca/expertise-detail/dispute-resolution">Litigation and Dispute Resolution</a></li><li><a href="https://www.goodmans.ca/expertise-detail/mergers-and-acquisitions">Mergers and Acquisitions</a></li><li><a href="https://www.goodmans.ca/expertise-detail/municipal-and-land-development">Municipal and Land Development</a></li><li><a href="https://www.goodmans.ca/expertise-detail/privacy-and-data-protection-">Privacy and Data Protection </a></li><li><a href="https://www.goodmans.ca/expertise-detail/private-equity">Private Equity</a></li><li><a href="https://www.goodmans.ca/expertise-detail/procurement">Procurement</a></li><li><a href="https://www.goodmans.ca/expertise-detail/real-estate">Real Estate</a></li><li><a href="https://www.goodmans.ca/expertise-detail/restructuring-and-insolvency">Restructuring</a></li><li><a href="https://www.goodmans.ca/expertise-detail/shareholder-activism">Shareholder Activism</a></li><li><a href="https://www.goodmans.ca/expertise-detail/tax">Tax</a></li><li><a href="https://www.goodmans.ca/expertise-detail/venture-capital">Venture Capital</a></li></ul>
+                                </li>
+                                <li class="industriesMenuItem">
+                                    <h3>Industries</h3>
+                                    <ul class="level1"><li><a href="https://www.goodmans.ca/expertise-detail/aging-and-health-care">Aging and Healthcare</a></li><li><a href="https://www.goodmans.ca/expertise-detail/artificial-intelligence">Artificial Intelligence</a></li><li><a href="https://www.goodmans.ca/expertise-detail/cannabis">Cannabis</a></li><li><a href="https://www.goodmans.ca/expertise-detail/communications-and-media">Communications and Media</a></li><li><a href="https://www.goodmans.ca/expertise-detail/construction-and-infrastucture">Construction and Infrastructure</a></li><li><a href="https://www.goodmans.ca/expertise-detail/energy">Energy</a></li><li><a href="https://www.goodmans.ca/expertise-detail/entertainment">Entertainment</a></li><li><a href="https://www.goodmans.ca/expertise-detail/hospitality">Hospitality </a></li><li><a href="https://www.goodmans.ca/expertise-detail/mining">Mining</a></li><li><a href="https://www.goodmans.ca/expertise-detail/sports">Sports</a></li><li><a href="https://www.goodmans.ca/expertise-detail/technology">Technology</a></li></ul>
+                                </li>
+                                            <li class="hasChildren   expertiseSubMenu">
+                <a class=" button" href="/expertise/featured-work" target="_self">Featured Work</a>
+                    <ul class="cases">
+                        
+                                            </ul>
+            </li>
+
+                            </ul>
+                        </div>
+                    </li>
+            </ul>
+    </li>
+    <li class="rootMenuItem hasChildren ">
+        <a href="/insights" target="_self" class="">Insights</a>
+            <ul class="megaContainer  commonPanel">
+            <li class="hasChildren   ">
+                <a class=" " href="/insights/our-insights" target="_self">Insights</a>
+                    <ul class="publications">
+                        
+                                            </ul>
+            </li>
+            <li class="hasChildren   ">
+                <a class=" " href="/insights/news-and-events" target="_self">News &amp; Events</a>
+                    <ul class="newsitems">
+                        
+                                            </ul>
+            </li>
+            <li class="hasChildren   ">
+                <a class=" " href="/insights/blogs" target="_self">Blogs</a>
+                    <ul class="blogitems">
+                        
+                                            </ul>
+            </li>
+            <li class="  ">
+                <a class=" " href="/insights/goodmans-presents" target="_self">CPD - Goodmans Presents</a>
+            </li>
+            </ul>
+    </li>
+    <li class="rootMenuItem hasChildren ">
+        <a href="/our-firm" target="_self" class="">Our Firm</a>
+            <ul class="megaContainer  commonPanel">
+            <li class="  ">
+                <a class=" " href="/our-firm/about-goodmans" target="_self">About Goodmans</a>
+            </li>
+            <li class="  ">
+                <a class=" " href="/our-firm/awards-and-recognition" target="_self">Awards &amp; Recognition</a>
+            </li>
+            <li class="  ">
+                <a class=" " href="/our-firm/DEIB" target="_self">Diversity, Equity, Inclusion &amp; Belonging</a>
+            </li>
+            <li class="  ">
+                <a class=" " href="/our-firm/community-and-pro-bono" target="_self">Community &amp; Pro Bono</a>
+            </li>
+            <li class="  ">
+                <a class=" " href="/our-firm/alumni" target="_self">Alumni</a>
+            </li>
+            <li class="  ">
+                <a class=" " href="/our-firm/world-law-group" target="_self">World Law Group</a>
+            </li>
+            </ul>
+    </li>
+    <li class="rootMenuItem hasChildren ">
+        <a href="/careers" target="_self" class="">Careers</a>
+            <ul class="megaContainer  commonPanel">
+            <li class="  ">
+                <a class=" " href="/careers/current-opportunities" target="_self">Current Opportunities</a>
+            </li>
+            <li class="  ">
+                <a class=" " href="/careers/lawyers" target="_self">Lawyers</a>
+            </li>
+            <li class="  ">
+                <a class=" " href="/careers/business-professionals" target="_self">Legal and Business Professionals</a>
+            </li>
+            <li class="  ">
+                <a class=" " href="/careers/students" target="_self">Students</a>
+            </li>
+            </ul>
+    </li>
+    <li class="rootMenuItem hasChildren contactPage ">
+        <a href="/contact" target="_self" class="">Contact Us</a>
+            <ul class="megaContainer specialpagecontact ">
+            </ul>
+    </li>
+    </ul>
+</nav>
+
+
+
+
+
+
+
+</div>
+    <div id="cph_header_TDF80EC3E120_Col02" class="sf_colsIn col searchContact col-auto-width col-bottom" data-sf-element="Column 3" data-placeholder-label="Column 3" data-col-width="grow" data-align-items="col-align-stretch" data-justify-content="col-bottom" style="margin: 0px calc(2rem);"><div class="grid resizable grid-nogutter grid-align-center" data-sf-element="Resizable 2 Column Grid" data-gutter-width="0" data-media-breakpoint="none" data-align-items="grid-align-center" data-justify-content="grid-start">
+    <div id="cph_header_TDF80EC3E130_Col00" class="sf_colsIn col search col-auto-width col-middle" data-sf-element="Column 1" data-placeholder-label="Search" data-col-width="grow" data-align-items="col-align-stretch" data-justify-content="col-middle"><div class="form-inline  searchBox">
+
+
+    <!--Button-->
+    <button type="button" class="searchModal-1_open sfsearchOpen"><span class="icon search"></span><span class="sr-only">Toggle Site Search</span></button>
+    
+
+
+    <!--Modal Content-->
+    <section id="searchModal-1" aria-label="Site Search" class="searchModal">
+        <button type="button" class="searchModal-1_close button close"><span class="sr-only">Close Search Box</span></button>
+        
+        <div class="modalContent">
+
+            
+            <div class="searchBoxEnhanced" data-index-catalogue="enhancedsearchindex">
+                <h3 class="">Site Search</h3>
+                <div class="form-inline">
+                    <div class="searchFilters" role="search">
+                        <fieldset class="fields checkboxes checkboxGroup mbxl">
+                            <legend class="sr-only">Content Type Filters</legend>
+                                <div class="field checkbox">
+                                    <input type="checkbox" value="all" name="contentTypes" id="filter_type_all" checked />
+                                    <label for="filter_type_all">All</label>
+                                </div>
+                                        <div class="field checkbox">
+                                            <input type="checkbox" value="pages" name="contentTypes" id="filter_type_pages" checked />
+                                            <label for="filter_type_pages">Pages</label>
+                                        </div>
+                                        <div class="field checkbox">
+                                            <input type="checkbox" value="teammembers" name="contentTypes" id="filter_type_teammembers" checked />
+                                            <label for="filter_type_teammembers">People</label>
+                                        </div>
+                                        <div class="field checkbox">
+                                            <input type="checkbox" value="expertises" name="contentTypes" id="filter_type_expertises" checked />
+                                            <label for="filter_type_expertises">Expertise</label>
+                                        </div>
+                                        <div class="field checkbox">
+                                            <input type="checkbox" value="publications" name="contentTypes" id="filter_type_publications" checked />
+                                            <label for="filter_type_publications">Publications</label>
+                                        </div>
+                                        <div class="field checkbox">
+                                            <input type="checkbox" value="news" name="contentTypes" id="filter_type_news" checked />
+                                            <label for="filter_type_news">News</label>
+                                        </div>
+                                        <div class="field checkbox">
+                                            <input type="checkbox" value="events" name="contentTypes" id="filter_type_events" checked />
+                                            <label for="filter_type_events">Events</label>
+                                        </div>
+                                        <div class="field checkbox">
+                                            <input type="checkbox" value="blogs" name="contentTypes" id="filter_type_blogs" checked />
+                                            <label for="filter_type_blogs">Blog</label>
+                                        </div>
+                                        <div class="field checkbox">
+                                            <input type="checkbox" value="cases" name="contentTypes" id="filter_type_cases" checked />
+                                            <label for="filter_type_cases">Featured Work</label>
+                                        </div>
+                        </fieldset>
+                        <div class="keywordSearchWrapper">
+                            <label for="4333489f-1c92-497a-80c4-b073abf64bf6" class="sr-only">Search input</label>
+                            <input type="search" title="Search input" placeholder="Search" id="4333489f-1c92-497a-80c4-b073abf64bf6" class="form-control" value="" aria-autocomplete="both" aria-describedby='SearchInfo-1' />
+                            <button type="button" class="sfsearchSubmit button" id="5b955deb-6bac-4874-a6d7-14b1583cce61"><span class="icon search"></span><span class="sr-only">Go</span></button>
+                        </div>
+                        <span id='SearchInfo-1' aria-hidden="true" hidden>When autocomplete results are available use up and down arrows to review and enter to select.</span>
+
+                        <input type="hidden" data-sf-role="resultsUrl" value="/search-results" />
+                        <input type="hidden" data-sf-role="indexCatalogue" value="enhancedsearchindex" />
+                        <input type="hidden" data-sf-role="wordsMode" value="AllWords" />
+                        <input type="hidden" data-sf-role="disableSuggestions" value='true' />
+                        <input type="hidden" data-sf-role="minSuggestionLength" value="3" />
+                        <input type="hidden" data-sf-role="suggestionFields" value="Title,Content" />
+                        <input type="hidden" data-sf-role="language" value="en" />
+                        <input type="hidden" data-sf-role="siteId" value="20de9f8d-1e0f-4bbc-a857-4e8efd9decc9" />
+                        <input type="hidden" data-sf-role="suggestionsRoute" value="/restapi/search/suggestions" />
+                        <input type="hidden" data-sf-role="searchTextBoxId" value='#4333489f-1c92-497a-80c4-b073abf64bf6' />
+                        <input type="hidden" data-sf-role="searchButtonId" value='#5b955deb-6bac-4874-a6d7-14b1583cce61' />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+</div>
+    <div id="cph_header_TDF80EC3E130_Col01" class="sf_colsIn col contact col-auto-width col-middle" data-sf-element="Column 2" data-placeholder-label="Contact" data-col-width="grow" data-align-items="col-align-stretch" data-justify-content="col-middle">
+<button type="button" class="button"  onclick="window.location.href='/contact'">Contact Us</button></div>
+</div></div>
+</div>
+
+
+</div> </div> </header> <main> <div class="topper"> 
+ </div> <div class="bd" id="main_content"> <div class="breadCrumb"> 
+ </div> 
+<div id="cph_body_T5482399C002_Col00" class="sf_colsIn" data-sf-element="Div" data-placeholder-label="Main Content">
+    <!-- SCHEMA START -->
+    <!-- SCHEMA END -->
+
+<article aria-label="Revera and Axium Infrastructure Form a Joint Venture to Acquire and Share Ownership of 32 Long Term Care Homes" class="detailView insight case">
+    
+
+
+    <div class="pageTopper topperSection">
+        <div class="topperInner">
+            <div class="container">
+                <div class="topperContent">
+                    <div class="meta">
+<span class='dates' ><time datetime='2018-04-27'>April 27, 2018</time></span>                    </div>
+                    <div class="topperTitle">
+                        <h1>Revera and Axium Infrastructure Form a Joint Venture to Acquire and Share Ownership of 32 Long Term Care Homes</h1>
+                    </div>
+
+                    
+
+                </div>
+                <div class="buttons printAndShare">
+                    
+                        <script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5d011fe64351e9001265056a&product=custom-share-buttons' async='async'>
+        window.addEventListener('DOMContentLoaded', function () {
+            $("#pxcelframe").attr("title", "Share this IFrame");
+        });
+    </script>
+    <div class="shareThis">
+        <button type="button" class="button toggleSharingOptions"><span class="icon share"></span>Share</button>
+            <div class="sharingLinksModal">
+        <ul class="sharingLinks">
+                    <li class="sharingLink">
+                        <button type="button" class="button share-button st-custom-button linkedin-share-button" data-network="linkedin" style="--index:0;--platform-color:#0a66c2;" aria-label="Share on LinkedIn"><em class='fab fa-fw fa-linkedin-in'></em><span class="sr-only">Share on LinkedIn</span></button>
+                    </li>
+                    <li class="sharingLink">
+                        <button type="button" class="button share-button st-custom-button copy-share-button" data-network="copy" style="--index:1;--platform-color:#000000;" aria-label="Copy"><em class='far fa-fw fa-copy'></em><span class="sr-only">Copy</span></button>
+                    </li>
+
+        </ul>
+    </div>
+
+    </div>
+
+
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="breadCrumb">
+        <div class="container full">
+    <div class="container ">
+        <nav class="breadCrumbInner">
+                    <a href="/home">Home</a>
+                    <span class="separator"> | </span>
+                    <a href="/expertise">Expertise</a>
+                    <span class="separator"> | </span>
+                    <a href="/expertise/featured-work">Featured Work</a>
+                    <span class="separator"> | </span>
+                    <span class="current">Revera and Axium Infrastructure Form a Joint Venture to Acquire and Share Ownership of 32 Long Term Care Homes</span>
+        </nav>
+    </div>
+</div>
+    </div>
+    <div class="full container">
+        <div class="container">
+            <div class="mainContent">
+
+                        <section class="overview" aria-label="Overview">
+                            <div class="sidebarPadding container">
+                                <div class="cmsContent readMoreContent highlightFirstElement" id="overview">
+                                    <p>Goodmans LLP represented Revera Inc. ("Revera") in connection with the completion of a joint venture between&nbsp;Axium Infrastructure (“Axium”) and Revera to acquire and share ownership in 32 long-term care homes across Canada.</p><p>This joint venture is owned by Revera as to a 25% interest and by an affiliate of Axium as to the remaining 75% interest. The joint venture was formed and the first acquisition by the joint venture of 16 care homes in Manitoba, Alberta and British Columbia was completed on December 21, 2017. The second acquisition by the joint venture was completed on April 27, 2018 and included 16 long-term care homes in Ontario. In each case, the joint venture acquired the homes from Revera and Revera will continue to provide management functions at the homes.</p><p>The acquisition transaction required approvals from a number of third parties, including health ministries and various regional health authorities in Ontario, Manitoba, Alberta and British Columbia, existing mortgage lenders, Canada Mortgage and Housing Corporation and the Competition Bureau. </p><p>Axium manages dedicated infrastructure funds having approximately C$2.8 billion in assets under management as of December 31, 2017, as well as C$1.2 billion in co-investments.</p><p>Revera is a leading owner, operator, manager and investor in the senior living sector. Through its portfolio of partnerships, Revera owns or operates more than 500 properties across Canada, the United States and the United Kingdom, serving more than 55,000 seniors. The company offers seniors’ apartments, independent living, assisted living, memory care, and long term care.&nbsp;</p>
+                                </div>
+                                
+
+                            </div>
+                        </section>
+    <section aria-label="Expertise" class="wrapper related expertiseandsectorsWrapper expertisesWrapper sideTitleWrapper sidebarPadding" data-placeholder-label="Expertise" >
+        
+            <div class="container">
+                <h2 class='sideTitle listViewTitle'  name='expertise' id='expertise'>Expertise</h2>
+                <div class="containerInner">
+                    <ul  class="listView expertiseandsectors expertises">
+                            <li>
+                                
+<article aria-label="Aging and Healthcare" class="cardView expertiseandsector expertise  clickable" data-url="https://www.goodmans.ca/expertise-detail/aging-and-health-care" >
+    <h3 ><a href="https://www.goodmans.ca/expertise-detail/aging-and-health-care"    tabindex="0">Aging and Healthcare</a></h3>
+    
+</article>
+                            </li>
+                            <li>
+                                
+<article aria-label="Banking and Finance" class="cardView expertiseandsector expertise  clickable" data-url="https://www.goodmans.ca/expertise-detail/banking-and-finance" >
+    <h3 ><a href="https://www.goodmans.ca/expertise-detail/banking-and-finance"    tabindex="0">Banking and Finance</a></h3>
+    
+</article>
+                            </li>
+                            <li>
+                                
+<article aria-label="Capital Markets" class="cardView expertiseandsector expertise  clickable" data-url="https://www.goodmans.ca/expertise-detail/capital-markets" >
+    <h3 ><a href="https://www.goodmans.ca/expertise-detail/capital-markets"    tabindex="0">Capital Markets</a></h3>
+    
+</article>
+                            </li>
+                            <li>
+                                
+<article aria-label="Competition and Foreign Investment" class="cardView expertiseandsector expertise  clickable" data-url="https://www.goodmans.ca/expertise-detail/competition-and-foreign-investment" >
+    <h3 ><a href="https://www.goodmans.ca/expertise-detail/competition-and-foreign-investment"    tabindex="0">Competition and Foreign Investment</a></h3>
+    
+</article>
+                            </li>
+                            <li>
+                                
+<article aria-label="Employment, Pensions and Executive Compensation " class="cardView expertiseandsector expertise  clickable" data-url="https://www.goodmans.ca/expertise-detail/employment-pensions-and-executive-compensation-" >
+    <h3 ><a href="https://www.goodmans.ca/expertise-detail/employment-pensions-and-executive-compensation-"    tabindex="0">Employment, Pensions and Executive Compensation </a></h3>
+    
+</article>
+                            </li>
+                            <li>
+                                
+<article aria-label="Private Equity" class="cardView expertiseandsector expertise  clickable" data-url="https://www.goodmans.ca/expertise-detail/private-equity" >
+    <h3 ><a href="https://www.goodmans.ca/expertise-detail/private-equity"    tabindex="0">Private Equity</a></h3>
+    
+</article>
+                            </li>
+                            <li>
+                                
+<article aria-label="Real Estate" class="cardView expertiseandsector expertise  clickable" data-url="https://www.goodmans.ca/expertise-detail/real-estate" >
+    <h3 ><a href="https://www.goodmans.ca/expertise-detail/real-estate"    tabindex="0">Real Estate</a></h3>
+    
+</article>
+                            </li>
+                            <li>
+                                
+<article aria-label="REITS and Income Securities" class="cardView expertiseandsector expertise  clickable" data-url="https://www.goodmans.ca/expertise-detail/reits-and-income-securities" >
+    <h3 ><a href="https://www.goodmans.ca/expertise-detail/reits-and-income-securities"    tabindex="0">REITS and Income Securities</a></h3>
+    
+</article>
+                            </li>
+                            <li>
+                                
+<article aria-label="Tax" class="cardView expertiseandsector expertise  clickable" data-url="https://www.goodmans.ca/expertise-detail/tax" >
+    <h3 ><a href="https://www.goodmans.ca/expertise-detail/tax"    tabindex="0">Tax</a></h3>
+    
+</article>
+                            </li>
+                    </ul>
+                    
+                </div>
+            
+        </div>
+    </section>
+                            <div class="force edge bigBlockQuote stickySidebarCloneWrapper mtn container">
+                                <div class="sidebarPadding container">
+                                    
+<div class="fullscreenImage" data-target=".bigBlockQuote" data-backstretch="True" data-src="https://www.goodmans.ca/images/default-source/pagebanners/newart30.jpg?sfvrsn=646e6bf0_2" data-lazy-src="/CFImages/FallBackImages/default_fallback_banner_lazy.png" data-align-x="" data-align-y="" data-scale="cover" data-overlay-opacity=".6" data-overlay-color="#000">
+</div>
+
+                                    
+                                    
+    <aside aria-label="Testimonials" class="wrapper related  testimonialsWrapper splide" data-splide-preset="single-auto-height"  id="48b9a7bf-a4ce-404d-98cf-096101269838" >
+        
+        <div class="splide__arrows">
+            <button class="splide__arrow splide__arrow--prev">
+                <span class="far fa-chevron-left" role="presentation"></span>
+            </button>
+            <button class="splide__arrow splide__arrow--next">
+                <span class="far fa-chevron-right" role="presentation"></span>
+            </button>
+        </div>
+        <div class="splide__track">
+            <ul  class=" testimonials splide__list">
+                    <li class="splide__slide slide lazy">
+                        
+<blockquote class="cardView testimonial noImage">
+    "Goodmans has deep experience in capital markets and in the REIT space. Their service and responsiveness levels are also very high."
+
+<cite class='testimonialSource' >&mdash; Chambers Canada</cite></blockquote>
+                    </li>
+                    <li class="splide__slide slide lazy">
+                        
+<blockquote class="cardView testimonial noImage">
+    Goodmans LLP houses a full-service capital markets practice... Among its core strong suits, the group is arguably best known for its strength in SPACs, REITs and IPOs...
+
+<cite class='testimonialSource' >&mdash; The Legal 500 Canada</cite></blockquote>
+                    </li>
+                    <li class="splide__slide slide lazy">
+                        
+<blockquote class="cardView testimonial noImage">
+    "The team is very professional, solves problems efficiently and is very hard-working. It is a great pleasure and privilege to work with the team on cross-border transactions and multi-jurisdictional projects."
+
+<cite class='testimonialSource' >&mdash; Legal 500 Canada</cite></blockquote>
+                    </li>
+                    <li class="splide__slide slide lazy">
+                        
+<blockquote class="cardView testimonial noImage">
+    "It is one of our trusted and preferred legal firms when we go to select specific counsel. It is a leader in capital markets, and we trust the group's view and know that it works well."
+
+<cite class='testimonialSource' >&mdash; Chambers Canada</cite></blockquote>
+                    </li>
+                    <li class="splide__slide slide lazy">
+                        
+<blockquote class="cardView testimonial noImage">
+    A prominent player in REITs and SPAC-related offerings, also bearing an impressive record in cross-border and cannabis-related matters.
+
+<cite class='testimonialSource' >&mdash; The Legal 500 Canada</cite></blockquote>
+                    </li>
+                    <li class="splide__slide slide lazy">
+                        
+<blockquote class="cardView testimonial noImage">
+    Clients note, "They have an exceptional ability to understand the root of the issue and figure out realistic, step-by-step approaches to solve problems."
+
+<cite class='testimonialSource' >&mdash; Chambers Canada</cite></blockquote>
+                    </li>
+                    <li class="splide__slide slide lazy">
+                        
+<blockquote class="cardView testimonial noImage">
+    A distinguished practice valued for advising major REITs and financial institutions on innovative capital markets transactions. 
+
+<cite class='testimonialSource' >&mdash; Chambers Canada</cite></blockquote>
+                    </li>
+                    <li class="splide__slide slide lazy">
+                        
+<blockquote class="cardView testimonial noImage">
+    On the Capital Markets group, one&nbsp;<span style="background-color: initial; font-family: inherit; font-size: inherit; text-align: inherit; text-transform: inherit; word-spacing: normal; caret-color: auto; white-space: inherit">client says, "deep strength and expertise at all levels...nothing can replace stability and the fact that I have worked with Goodmans on both sides of the table since the early 2000’s."</span>
+
+<cite class='testimonialSource' >&mdash; Legal 500 Canada</cite></blockquote>
+                    </li>
+                    <li class="splide__slide slide lazy">
+                        
+<blockquote class="cardView testimonial noImage">
+    One interviewee reported,&nbsp;"The Goodmans team as a whole is excellent," adding: "The lawyers are very responsive and get the job done. It is of great assurance to have them as our legal advisers."
+
+<cite class='testimonialSource' >&mdash; Chambers Canada</cite></blockquote>
+                    </li>
+                    <li class="splide__slide slide lazy">
+                        
+<blockquote class="cardView testimonial noImage">
+    Clients comment Goodmans Capital Markets team has "Deep experience, based upon decades of leadership in the sector."
+
+<cite class='testimonialSource' >&mdash; IFLR1000</cite></blockquote>
+                    </li>
+                    <li class="splide__slide slide lazy">
+                        
+<blockquote class="cardView testimonial noImage">
+    A client notes, "The lawyers that I have worked with at Goodmans are extremely professional, knowledgeable, creative and excellent service providers. The matters that we have worked on were extremely complicated and required high level of ability to combine understanding
+of our business objectives with legal analysis."
+
+<cite class='testimonialSource' >&mdash; IFLR1000</cite></blockquote>
+                    </li>
+                    <li class="splide__slide slide lazy">
+                        
+<blockquote class="cardView testimonial noImage">
+    Clients note the team's "institutional knowledge is very deep" and stated: "It's like they're part of the team they work with. They're extremely responsive."
+
+<cite class='testimonialSource' >&mdash; Chambers Global</cite></blockquote>
+                    </li>
+            </ul>
+        </div>
+    </aside>
+
+                                </div>
+                            </div>
+    <section aria-label="Featured Work" class="wrapper related insightsWrapper casesWrapper sideTitleWrapper sidebarPadding">
+        <div class="container">
+            <h2 class='sideTitle listViewTitle'  name='featuredWork' id='featuredWork'>Featured Work</h2>
+            <div class="innerContainer">
+                <ul  class="listView insights cases">
+                        <li>
+                            
+<article aria-label="Onex Partners and co-investors acquire AirSprint" class="cardView insight case  clickable" data-url="https://www.goodmans.ca/expertise/case/onex-partners-and-co-investors-to-acquire-airsprint" >
+    <div class="meta">
+                <span>Mergers and Acquisitions</span>
+
+            <span class='separator'></span>
+        <span class='dates' ><time datetime='2026-08-10'>August 10, 2026</time></span>    </div>
+    <h3 ><a href="https://www.goodmans.ca/expertise/case/onex-partners-and-co-investors-to-acquire-airsprint"    tabindex="0">Onex Partners and co-investors acquire AirSprint</a></h3>
+    <div class='summary cmsContent' >Goodmans LLP acted as M&amp;A legal counsel to Onex Partners in connection with the acquisition of AirSprint Inc. by Onex and its co-investors…</div>
+</article>
+                        </li>
+                        <li>
+                            
+<article aria-label="Minto Apartment REIT completes going-private transaction with Crestpoint and Minto Group" class="cardView insight case  clickable" data-url="https://www.goodmans.ca/expertise/case/minto-apartment-reit-announces-going-private-transaction-with-crestpoint-and-minto-group" >
+    <div class="meta">
+                <span>REITS and Income Securities</span>
+
+            <span class='separator'></span>
+        <span class='dates' ><time datetime='2026-08-07'>August 07, 2026</time></span>    </div>
+    <h3 ><a href="https://www.goodmans.ca/expertise/case/minto-apartment-reit-announces-going-private-transaction-with-crestpoint-and-minto-group"    tabindex="0">Minto Apartment REIT completes going-private transaction with Crestpoint and Minto Group</a></h3>
+    <div class='summary cmsContent' >Goodmans LLP acted for Minto Apartment Real Estate Investment Trust (the “REIT”) in connection with its going-private transaction with Crestpoint Real Estate Investments Limited Partnership…</div>
+</article>
+                        </li>
+                        <li>
+                            
+<article aria-label="Jamieson Wellness to be acquired by Kirin Holdings in a deal valued at approximately C$2.5 billion" class="cardView insight case  clickable featured" data-url="https://www.goodmans.ca/expertise/case/jamieson-wellness-to-be-acquired-by-kirin-in-a-deal-valued-at-approximately-c25-billion" >
+    <div class="meta">
+                <span>Mergers and Acquisitions</span>
+
+            </div>
+    <h3 ><a href="https://www.goodmans.ca/expertise/case/jamieson-wellness-to-be-acquired-by-kirin-in-a-deal-valued-at-approximately-c25-billion"    tabindex="0">Jamieson Wellness to be acquired by Kirin Holdings in a deal valued at approximately C$2.5 billion</a></h3>
+    <div class='summary cmsContent' >Goodmans LLP is acting for Jamieson Wellness Inc. in connection with its definitive arrangement agreement with Kirin Holdings Company, Limited, pursuant to which Kirin has agreed to acquire all of the…</div>
+</article>
+                        </li>
+                        <li>
+                            
+<article aria-label="MDA Space closes C$600 million senior unsecured notes offering" class="cardView insight case  clickable" data-url="https://www.goodmans.ca/expertise/case/mda-space-closes-c-600-million-senior-unsecured-notes-offering" >
+    <div class="meta">
+                <span>Capital Markets</span>
+
+            <span class='separator'></span>
+        <span class='dates' ><time datetime='2026-08-05'>August 05, 2026</time></span>    </div>
+    <h3 ><a href="https://www.goodmans.ca/expertise/case/mda-space-closes-c-600-million-senior-unsecured-notes-offering"    tabindex="0">MDA Space closes C$600 million senior unsecured notes offering</a></h3>
+    <div class='summary cmsContent' >Goodmans LLP acted for MDA Space Ltd. in connection with its private placement offering of C$600 million aggregate principal amount of 6.50% senior unsecured notes due…</div>
+</article>
+                        </li>
+                        <li>
+                            
+<article aria-label="Cadillac Mines Corporation closes C$440 million IPO" class="cardView insight case  clickable" data-url="https://www.goodmans.ca/expertise/case/cadillac-mines-corporation-launches-ipo" >
+    <div class="meta">
+                <span>Mining</span>
+
+            <span class='separator'></span>
+        <span class='dates' ><time datetime='2026-08-05'>August 05, 2026</time></span>    </div>
+    <h3 ><a href="https://www.goodmans.ca/expertise/case/cadillac-mines-corporation-launches-ipo"    tabindex="0">Cadillac Mines Corporation closes C$440 million IPO</a></h3>
+    <div class='summary cmsContent' >Goodmans LLP acted as Canadian legal counsel to Cadillac Mines Corporation in connection with its C$440 million initial public offering of common shares and special flow-through shares, and its…</div>
+</article>
+                        </li>
+                        <li>
+                            
+<article aria-label="Starboard Asset backs Amapá Minerals in C$140 million IPO" class="cardView insight case  clickable" data-url="https://www.goodmans.ca/expertise/case/starboard-asset-backs-amapá-minerals-in-c-140-million-ipo" >
+    <div class="meta">
+                <span>Mining</span>
+
+            <span class='separator'></span>
+        <span class='dates' ><time datetime='2026-07-30'>July 30, 2026</time></span>    </div>
+    <h3 ><a href="https://www.goodmans.ca/expertise/case/starboard-asset-backs-amapá-minerals-in-c-140-million-ipo"    tabindex="0">Starboard Asset backs Amapá Minerals in C$140 million IPO</a></h3>
+    <div class='summary cmsContent' >Goodmans LLP acted for Starboard Asset Ltda. and its funds in connection with its initial investment in the predecessor to Amapá Minerals Holdings Inc., and as sponsor and promoter of Amapá Minerals…</div>
+</article>
+                        </li>
+                </ul>
+<div class='viewAllMoreWrapper' ><a href="/expertise/featured-work?expertises=0c579f01-2cc8-4f75-ba29-32affce473d3" aria-label="View more Cases related to Capital Markets" class="button outline" tabindex="0" ">View More Featured Work</a></div>            </div>
+        </div>
+    </section>
+
+            </div>
+            <div class="stickySidebarWrapper">
+                        <div class="stickySidebar">
+                            <nav aria-label="scroll links">
+                                <ul class="scrollingSideBar">
+                                    <li><a href="#overview" aria-label="Scroll to Overview section" >Overview</a></li><li><a href="#expertise" aria-label="Scroll to Expertise section" >Expertise</a></li><li><a href="#featuredWork" aria-label="Scroll to Featured Work section" >Featured Work</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+
+</div> </div> </main> </div> <footer id="footer" class="site-footer"> <section aria-label="Sitemap and Subscribe" class="preFooter"> 
+ </section> <section aria-label="About, Legal and Accessibility" class="mainFooter"> 
+<div id="cph_footer_TDF80EC3E140_Col00" class="container full sf_colsIn" data-sf-element="ContainerFull" data-placeholder-label="Container (Full Width Padded)"><div class="grid resizable mainFooterGrid grid-nogutter" data-sf-element="Resizable 2 Column Grid" data-gutter-width="0" data-media-breakpoint="1300px" data-align-items="grid-align-stretch" data-justify-content="grid-start" style="">
+    <div id="cph_footer_TDF80EC3E132_Col00" class="sf_colsIn col footerLeft" data-sf-element="Column 1" data-placeholder-label="Logo &amp;amp;amp;amp;amp;amp; Contact Information" data-col-width="grow" data-align-items="col-align-stretch" data-justify-content="col-top"><div id="cph_footer_TDF80EC3E145_Col00" class="sf_colsIn footerLeftGrid" data-sf-element="Div" data-placeholder-label="Footer Left Grid"><div id="cph_footer_TDF80EC3E146_Col00" class="sf_colsIn logoAndAddress" data-sf-element="Div" data-placeholder-label="Logo and Address">
+<div class="sfContentBlock sf-Long-text cmsContent"><a href="/home"><img src="/images/default-source/default-album/logo-goodmans.svg?sfvrsn=edaded8b_9" height="56" data-displaymode="Original" title="Goodmans LLP - Home Page" width="280" alt="Goodmans LLP Logo"></a></div>
+<div class="sfContentBlock sf-Long-text cmsContent"><p>Bay Adelaide Centre - West Tower<br>333 Bay Street, Suite 3400<br>Toronto, ON&nbsp; M5H 2S7</p></div>
+
+</div><div id="cph_footer_TDF80EC3E147_Col00" class="sf_colsIn studentLinks" data-sf-element="Div" data-placeholder-label="Student Links">
+<div class="sfContentBlock sf-Long-text cmsContent"><p><a class="button outline" href="/careers/current-opportunities">Current Opportunities</a><br><a target="_blank" data-sf-marked="" data-sf-ec-immutable="" class="button outline" href="https://www.goodmansstudent.ca/">Goodstudents</a><br><a href="https://campaign.goodmansllp.ca/5/1991/landing-pages/subscription-form.asp" target="_blank" data-sf-marked="" data-sf-ec-immutable="" class="button outline">Subscribe</a></p></div>
+
+</div>
+
+</div></div>
+    <div id="cph_footer_TDF80EC3E132_Col01" class="sf_colsIn col footerRight dark" data-sf-element="Column 2" data-placeholder-label="Sitemap" data-col-width="80%" data-align-items="col-align-stretch" data-justify-content="col-top"><div class="grid resizable grid-nogutter footerSitemapGrid" data-sf-element="Resizable 3 Column Grid" data-gutter-width="0" data-media-breakpoint="none" data-align-items="grid-align-stretch" data-justify-content="grid-start">
+    <div id="cph_footer_TDF80EC3E141_Col00" class="sf_colsIn col" data-sf-element="Column 1" data-placeholder-label="Sitemap Left" data-col-width="grow" data-align-items="col-align-stretch" data-justify-content="col-top">
+<nav class="navCustomUl">
+    <ul class="reset">
+    <li class="rootMenuItem hasChildren ">
+        <a href="/people" target="_self" class="">People</a>
+            <ul class="subMenu teammembers">
+                
+                
+            </ul>
+    </li>
+    <li class="rootMenuItem hasChildren ">
+        <a href="/our-firm" target="_self" class="">Our Firm</a>
+            <ul class="subMenu ">
+                
+                            <li class="menuItem  ">
+                <a class="" href="/our-firm/about-goodmans" target="_self">About Goodmans</a>
+                
+            </li>
+            <li class="menuItem  ">
+                <a class="" href="/our-firm/awards-and-recognition" target="_self">Awards &amp; Recognition</a>
+                
+            </li>
+            <li class="menuItem  ">
+                <a class="" href="/our-firm/DEIB" target="_self">Diversity, Equity, Inclusion &amp; Belonging</a>
+                
+            </li>
+            <li class="menuItem  ">
+                <a class="" href="/our-firm/community-and-pro-bono" target="_self">Community &amp; Pro Bono</a>
+                
+            </li>
+            <li class="menuItem  ">
+                <a class="" href="/our-firm/alumni" target="_self">Alumni</a>
+                
+            </li>
+            <li class="menuItem  ">
+                <a class="" href="/our-firm/world-law-group" target="_self">World Law Group</a>
+                
+            </li>
+
+            </ul>
+    </li>
+    </ul>
+</nav>
+
+
+
+
+
+
+
+
+
+</div>
+    <div id="cph_footer_TDF80EC3E141_Col01" class="sf_colsIn col" data-sf-element="Column 2" data-placeholder-label="Sitemap Center" data-col-width="grow" data-align-items="col-align-stretch" data-justify-content="col-top">
+<nav class="navCustomUl">
+    <ul class="reset">
+    <li class="rootMenuItem hasChildren childSelected childSelected">
+        <a href="/expertise" target="_self" class="childSelected">Expertise</a>
+            <ul class="subMenu expertises">
+                
+                    <li class="menuItem)">
+                        <a class="" href="/expertise">Practices &amp; Industries</a>
+                    </li>
+                            <li class="menuItem hasChildren  ">
+                <a class="" href="/expertise/featured-work" target="_self">Featured Work</a>
+                
+            </li>
+
+            </ul>
+    </li>
+    <li class="rootMenuItem hasChildren ">
+        <a href="/insights" target="_self" class="">Insights</a>
+            <ul class="subMenu ">
+                
+                            <li class="menuItem hasChildren  ">
+                <a class="" href="/insights/our-insights" target="_self">Insights</a>
+                
+            </li>
+            <li class="menuItem hasChildren  ">
+                <a class="" href="/insights/news-and-events" target="_self">News &amp; Events</a>
+                
+            </li>
+            <li class="menuItem hasChildren  ">
+                <a class="" href="/insights/blogs" target="_self">Blogs</a>
+                
+            </li>
+            <li class="menuItem  ">
+                <a class="" href="/insights/goodmans-presents" target="_self">CPD - Goodmans Presents</a>
+                
+            </li>
+
+            </ul>
+    </li>
+    </ul>
+</nav>
+
+
+
+
+
+
+
+
+
+</div>
+    <div id="cph_footer_TDF80EC3E141_Col02" class="sf_colsIn col" data-sf-element="Column 3" data-placeholder-label="Sitemap Right" data-col-width="grow" data-align-items="col-align-stretch" data-justify-content="col-top"><div id="cph_footer_TDF80EC3E151_Col00" class="sf_colsIn sitemapRightInner" data-sf-element="Div" data-placeholder-label="Sitemap Right (inner)">
+<nav class="navCustomUl">
+    <ul class="reset">
+    <li class="rootMenuItem hasChildren ">
+        <a href="/careers" target="_self" class="">Careers</a>
+            <ul class="subMenu ">
+                
+                            <li class="menuItem  ">
+                <a class="" href="/careers/current-opportunities" target="_self">Current Opportunities</a>
+                
+            </li>
+            <li class="menuItem  ">
+                <a class="" href="/careers/lawyers" target="_self">Lawyers</a>
+                
+            </li>
+            <li class="menuItem  ">
+                <a class="" href="/careers/business-professionals" target="_self">Legal and Business Professionals</a>
+                
+            </li>
+            <li class="menuItem  ">
+                <a class="" href="/careers/students" target="_self">Students</a>
+                
+            </li>
+
+            </ul>
+    </li>
+    <li class="rootMenuItem hasChildren ">
+        <a href="/contact" target="_self" class="">Contact Us</a>
+            <ul class="subMenu specialpagecontact">
+                
+                
+            </ul>
+    </li>
+    </ul>
+</nav>
+
+
+
+
+
+
+
+
+
+
+<div class="sfContentBlock sf-Long-text cmsContent"><ul class="socialLinks reset"><li><a href="https://ca.linkedin.com/company/goodmans-llp" target="_blank" title="LinkedIn - Goodmans LLP" data-sf-ec-immutable=""><em class="fab fa-linkedin-in"></em></a></li>
+</ul></div>
+
+</div></div>
+</div></div>
+</div>
+
+</div> </section> <section aria-label="Copyright" class="copyrightFooter"> 
+<div id="cph_copyright_TDF80EC3E129_Col00" class="sf_colsIn container full light" data-sf-element="ContainerFull" data-placeholder-label="Footer Copyright"><div class="grid resizable footerCopyrightGrid grid-between" data-sf-element="Resizable 3 Column Grid" data-gutter-width="2rem" data-media-breakpoint="767px" data-align-items="grid-align-stretch" data-justify-content="grid-between" style="margin: 0px calc(-1rem);">
+    <div id="cph_copyright_TDF80EC3E135_Col00" class="sf_colsIn col copyright col-auto-width" data-sf-element="Column 1" data-placeholder-label="Copyright" data-col-width="grow" data-align-items="col-align-stretch" data-justify-content="col-top" style="margin: 0px calc(1rem);">
+<div class="sfContentBlock sf-Long-text cmsContent"><p>All Rights Reserved © 2026 Goodmans LLP</p></div></div>
+    <div id="cph_copyright_TDF80EC3E135_Col01" class="sf_colsIn col legal col-auto-width" data-sf-element="Column 2" data-placeholder-label="Legal" data-col-width="grow" data-align-items="col-align-stretch" data-justify-content="col-top" style="margin: 0px calc(1rem);"><nav class="topLevelSimple" aria-label="Footer Site Navigation">
+    <ul class="reset">
+    <li class="">
+        <a href="/legal/disclaimer" target="_self" class="">Disclaimer</a>
+    </li>
+    <li class="">
+        <a href="/legal/terms-of-use" target="_self" class="">Terms of Use</a>
+    </li>
+    <li class="">
+        <a href="/legal/privacy-policy" target="_self" class="">Privacy</a>
+    </li>
+    <li class="">
+        <a href="https://remote.goodmans.ca" target="_blank" class="">Login</a>
+    </li>
+    <li class="">
+        <a href="/legal/accessibility" target="_self" class="">Accessibility</a>
+    </li>
+    <li class="">
+        <a href="/legal/terms-of-engagement" target="_self" class="">Terms of Engagement</a>
+    </li>
+    <li class="">
+        <a href="/legal/fraud-alert" target="_self" class="">Fraud Alert</a>
+    </li>
+    </ul>
+</nav>
+
+
+
+
+
+
+</div>
+    <div id="cph_copyright_TDF80EC3E135_Col02" class="sf_colsIn col cubicle col-auto-width" data-sf-element="Column 3" data-placeholder-label="Attribution" data-col-width="grow" data-align-items="col-align-stretch" data-justify-content="col-top" style="margin: 0px calc(1rem);">
+<div class="sfContentBlock sf-Long-text cmsContent"><a target="_blank" href="https://www.cubiclefugitive.com">Credits</a></div></div>
+</div>
+
+</div> </section> <a class="scrollToTop" aria-label="Scroll to top"><span role="presentation" class="fal fa-chevron-up"></span></a> </footer> <!-- Main Scripts --> <script src="/ScriptResource.axd?d=6DQe8ARl7A9TiuWej5ttClv-vNdqwB4FUetFXWUPj-w7rPNG5_oCLG1-W_CXBTCQW_LSJQB-cHLIMJly54AJpEhuAju-LAaC_f_TVZ2OAgn_FFSLGgs5zYhO7D22iM1eD3CAPZXc0bOvbT5VAQxcOgjzJCPGUI5dYvSc36c1WEf4PZ6FnsChkVu04hYpSj4w0&amp;t=ffffffff945ec8f8" type="text/javascript"></script><script src="/ScriptResource.axd?d=74FHISOx3fOPKwLxL0RMYl1dZjbGd_pH-HhRbRcI5-jKoXybnd-OQbhiWwYtw7F9RRRYPhslV5CbmsMwARevhIK6gAB46_OxCd7PIUazXvyT9I86555XAVxitC4EutZlovLikBFbMsQxu0nDu_LauiIyiUmVRPqqXzorf6SwfGNOYM8jEgbh_3pFoeQVE_vY0&amp;t=ffffffff945ec8f8" type="text/javascript"></script> <script src="/dist/kendo-ui-custom.min.js"></script> <script src='/dist/main.js'></script> <script src="/Frontend-Assembly/Telerik.Sitefinity.Frontend.Navigation/Mvc/Views/Navigation/CustomDefault.min.js?v=MTI0MjQ4Mzc5NA%3d%3d" type="text/javascript"></script><script src="/Frontend-Assembly/Telerik.Sitefinity.Frontend.Navigation/Mvc/Views/FindASearch/FindAnything.min.js?v=MTQ4ODk5MjM2Nw%3d%3d" type="text/javascript"></script><script src="/Frontend-Assembly/Telerik.Sitefinity.Frontend.Search/Mvc/Views/SearchBox/SearchBoxCustom.min.js?v=LTY5MzE4MDg1NQ%3d%3d" type="text/javascript"></script><script src="/Frontend-Assembly/Telerik.Sitefinity.Frontend.Search/Mvc/Views/SearchBox/Search-box-enhanced.min.js?v=MTA0MDAxODQ3OA%3d%3d" type="text/javascript"></script><script src="/Frontend-Assembly/Telerik.Sitefinity.Frontend/Mvc/Views/ShareThis/ShareThis.min.js?v=MzYxODI3OTk4" type="text/javascript"></script><script src="/Frontend-Assembly/SitefinityWebApp/Mvc/Views/FullScreenImages/FullScreenImages.min.js?v=OTY0Njg4NTA0" type="text/javascript"></script> </body> </html>
+
+
