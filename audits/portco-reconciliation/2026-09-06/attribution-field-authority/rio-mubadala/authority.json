@@ -1,0 +1,298 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_RIO_MUBADALA_FIELD_AUTHORITY",
+  "priorAuthoritySha256": "d975522b0684d8c5276d3f3e337ca7beaf5a602b8f1704621cbf49f48f24c70f",
+  "chronologySha256": "0e9326e9e40914ce36ad75c444d8f44200e6774639a5f450e173e95ebbb36eac",
+  "canonicalProposalSha256": "e882f7bce6a6ab08a71eb270bacd169040e9fcb925fc55a5423cf48beb4d4ab3",
+  "canonicalApprovalSha256": "9c84586fc442430d977c23f851a4faafcef46be9f3b41f6edeeb3c9c7aafe644",
+  "canonicalReceiptSha256": "ae355d94f1188d547fb5fd9e731d7731e6cff35d374330cd1006059eb5eb5e78",
+  "originalAttributionReceiptSha256": "779802d490bd3b00c5470e8fee2bc87ae5b3f98a70fe9c3d08af4931be2686cf",
+  "subsequentAttributionReceiptSha256": "b9f52c2b5beda928a14451b1dfecf45630f29393144103ef4a006542749d31e6",
+  "seedManifestSha256": "cd644038e360277a296d59d0eb6976c2a1eb85af3e752ffc941d944f1c556257",
+  "seedSpecSha256": "418335c6c61a6ea47de9c18507eab6b4513e6d273071faf1d970d33c175db42d",
+  "semanticCompanySha256": "5225f256aa0324e4422224f7e45a7f163e6d5fd5a34709dd609fbef11ab89740",
+  "companyId": "cmrxpjgli00yvivheorrptcgd",
+  "ownershipPeriodId": "cmrxpk2ef01xgivhe1pzzw4h7",
+  "recordId": "OFA-20166140109D",
+  "originalRecordId": "OFA-08D66635201C",
+  "candidateFieldsAdjudicated": 0,
+  "cumulativeCandidateFieldsAdjudicated": 57,
+  "remainingCandidateFields": 546,
+  "additionalFieldsOutsideOriginal603": 3,
+  "current": {
+    "linkedFundName": null,
+    "fundAttribution": "DISCLOSED",
+    "attributedFundName": "MIC TI Holding LLC",
+    "attributionConfidence": null,
+    "attributionRationale": "Matched supplemental ownership detail: Firm: Mubadala Investment Company | Fund: MIC TI Holding LLC | Ownership Interest: 6.57% Supplemental ownership detail discloses a distinct fund/vehicle that does not match funds.ts."
+  },
+  "recommendedAttribution": {
+    "linkedFundName": null,
+    "fundAttribution": "DIRECT_PROGRAM",
+    "attributedFundName": null,
+    "attributionConfidence": null,
+    "attributionRationale": "The existing 2023 DOE-filed ownership notice identifies MIC as an indirect wholly owned subsidiary of Mubadala, a sovereign investor managing capital for the Government of Abu Dhabi. This supports direct sovereign-program attribution, not a distinct MIC TI Holding LLC fund. Preserve the separately verified MIC TI Holding Company 2 RSC Limited legal vehicle and all exact project-stake exceptions."
+  },
+  "fieldDecisions": [
+    {
+      "field": "fundAttribution",
+      "outsideOriginal603": true,
+      "disposition": "SOURCE_SUPPORTED_CORRECTION_REQUIRED_NOT_AUTHORIZED_BY_THIS_REPORT",
+      "current": "DISCLOSED",
+      "seed": "DISCLOSED",
+      "recommended": "DIRECT_PROGRAM",
+      "primarySourceUrl": "https://www.energy.gov/sites/default/files/2023-08/15-190-LNG_RGLNG%20Statement%20and%20Notice%20of%20Change%20in%20Control%20(Aug.%2016%202023).pdf",
+      "primarySourceSha256": "18019ef4fab630ce934826d580e6ce87a0ae1cc46379f950dd50e0a4e3f2f5ae",
+      "primaryOneBasedPage": 6,
+      "productionWriteRequired": true,
+      "seedPersistenceRequired": true
+    },
+    {
+      "field": "attributedFundName",
+      "outsideOriginal603": true,
+      "disposition": "SOURCE_SUPPORTED_CORRECTION_REQUIRED_NOT_AUTHORIZED_BY_THIS_REPORT",
+      "current": "MIC TI Holding LLC",
+      "seed": "MIC TI Holding LLC",
+      "recommended": null,
+      "primarySourceUrl": "https://www.energy.gov/sites/default/files/2023-08/15-190-LNG_RGLNG%20Statement%20and%20Notice%20of%20Change%20in%20Control%20(Aug.%2016%202023).pdf",
+      "primarySourceSha256": "18019ef4fab630ce934826d580e6ce87a0ae1cc46379f950dd50e0a4e3f2f5ae",
+      "primaryOneBasedPage": 6,
+      "productionWriteRequired": true,
+      "seedPersistenceRequired": true
+    },
+    {
+      "field": "attributionRationale",
+      "outsideOriginal603": true,
+      "disposition": "SOURCE_SUPPORTED_CORRECTION_REQUIRED_NOT_AUTHORIZED_BY_THIS_REPORT",
+      "current": "Matched supplemental ownership detail: Firm: Mubadala Investment Company | Fund: MIC TI Holding LLC | Ownership Interest: 6.57% Supplemental ownership detail discloses a distinct fund/vehicle that does not match funds.ts.",
+      "seed": "Matched supplemental ownership detail: Firm: Mubadala Investment Company | Fund: MIC TI Holding LLC | Ownership Interest: 6.57% Supplemental ownership detail discloses a distinct fund/vehicle that does not match funds.ts.",
+      "recommended": "The existing 2023 DOE-filed ownership notice identifies MIC as an indirect wholly owned subsidiary of Mubadala, a sovereign investor managing capital for the Government of Abu Dhabi. This supports direct sovereign-program attribution, not a distinct MIC TI Holding LLC fund. Preserve the separately verified MIC TI Holding Company 2 RSC Limited legal vehicle and all exact project-stake exceptions.",
+      "primarySourceUrl": "https://www.energy.gov/sites/default/files/2023-08/15-190-LNG_RGLNG%20Statement%20and%20Notice%20of%20Change%20in%20Control%20(Aug.%2016%202023).pdf",
+      "primarySourceSha256": "18019ef4fab630ce934826d580e6ce87a0ae1cc46379f950dd50e0a4e3f2f5ae",
+      "primaryOneBasedPage": 6,
+      "productionWriteRequired": true,
+      "seedPersistenceRequired": true
+    }
+  ],
+  "interpretation": "MIC is a sovereign investor's wholly owned holding subsidiary, not a separately disclosed managed infrastructure fund. DIRECT_PROGRAM is supported by the filed ownership description; fund not publicly disclosed is preserved and no named managed fund is inferred.",
+  "preserves": {
+    "id": "cmrxpk2ef01xgivhe1pzzw4h7",
+    "managerName": "Mubadala",
+    "organizationName": "Mubadala",
+    "fundName": null,
+    "vehicleName": "MIC TI Holding Company 2 RSC Limited",
+    "stake": "Phase 1 minimum 6.57%; Train 4 5.2%; Train 5 included in 13.2% combined GIC/Mubadala interest",
+    "investmentYear": 2023,
+    "exitYear": null,
+    "isActive": true,
+    "transactionState": "CLOSED_ACTIVE",
+    "remainingOwnerIds": [
+      "cmrxpk2dz01xfivhe6czef2co",
+      "cmrxpk2f101xhivhej18k131a",
+      "cmt5so2hh001z2oyyjxzfgmon",
+      "cmt5so2hq00202oyye9cc3m3s",
+      "cmt5so2i300222oyywym8y1a1"
+    ],
+    "pendingTransactions": 0,
+    "redirects": 0,
+    "linkedFunds": 0,
+    "physicalComparisonsUnchanged": true
+  },
+  "qualifications": [
+    "This resolves the separate PR928 equality-blind issue without altering its frozen report or counting three fields against the original603.",
+    "The sole primary is the already-frozen original DOE filing, page6, reused without a new network capture. The complete page and footnotes were visually inspected again for this separate judgment.",
+    "The source's minimum Phase1 6.57% is not a combined-terminal stake. Train4 5.2% and the unallocated Train5 combined13.2% are preserved from the canonical packet, not inferred from the 2023 filing.",
+    "Mubadala's separate Nineteenth Investment Company interest in NextDecade Parent is not this project holding vehicle and is not added to the project stake.",
+    "The research's Mubadala Investment Company PJSC organization label does not authorize renaming the materialized Mubadala organization. No identity, legal-vehicle, stake, year, fund-economics or September2026 ownership update is made.",
+    "All source hashes, canonical/seed/receipt lineage and the prior five-owner proof are checked against fresh READ ONLY production. Receipt backing and seed equality are not sole substantive authority.",
+    "This authority report is not an apply manifest. Three production-field and three seed-field corrections remain for a separately protected persistence step."
+  ],
+  "databaseWrites": 0,
+  "seedChanges": 0,
+  "sourceTransitions": 0,
+  "applyAuthorized": false,
+  "completionAllowed": false,
+  "baseCommit": "feb490099729ad72045bd4af9bfcd5cee41c120b",
+  "executionManifestSha256": "e1d37c59b0db0754f38fc8f1b668423d7135fa392b15559e4b7008586cbb2e07",
+  "ledgerSha256": "9118f52029df79c7d0e546d42bbae2d546b671786b574327c12bcd0beed5a45c",
+  "productionSnapshotSha256": "ffde0a1d3b33ea91d90f5bfe6f4b1506830b098e5fea78a3a4978afe68c77f8f",
+  "dependencies": [
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/approvals/0151-rio-grande-lng-v3.json",
+      "sha256": "a5f82efb30a435975b7a97d085b81df922bef3f6f21a1e2ebf2e578c0a2e54ab"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+      "sha256": "41032b7cf3c018305a08a588dfe110a247f56e5fbdff84c72c5e9627fa5f2e51"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0151-rio-grande-lng/attempt-1/chatgpt-accepted-response.txt",
+      "sha256": "ef52e69c937c85805e2c63c918bd1bb1d4b374e11f06d8b339ebb6d535d739d4"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0151-rio-grande-lng/attempt-1/chatgpt-attestation.json",
+      "sha256": "1a7c1f831e90f325a488f6a778c3a6852e45b28919a692260a63ca02ae89ac3b"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0151-rio-grande-lng/attempt-1/chatgpt-response-validation.json",
+      "sha256": "b4384c14b632043c05a9feb33c9460b8c6491091d7bfe878db2ad161b5dca8eb"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0151-rio-grande-lng/attempt-1/chatgpt-transcript.txt",
+      "sha256": "76c3f686ec0c3ddbae4bab8d2f02d629dc0c7969e78109aa975f020f8ec3114b"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0151-rio-grande-lng/attempt-1/locked-v2-task-snapshot.json",
+      "sha256": "4ae179f841ae2168842f6e542f7f77b3e6692729207fe330d87b8dd9a48dc059"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0151-rio-grande-lng/attempt-1/research-decision.json",
+      "sha256": "872561003296aa3c9a858a08a13b3f3586b9dacb794b8bc662a293f5447c5154"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0151-rio-grande-lng/attempt-1/research-prompt.md",
+      "sha256": "a77077355a8361c242d0cd6496d8641377234bda638e5107cbebab0f3103ea48"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0151-rio-grande-lng/attempt-1/source-verification.json",
+      "sha256": "7688d644cb76de5e39925c97ff723a1cfe11181d814b13f26a89397a442db260"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/proposals/0151-rio-grande-lng-v3/proposal.json",
+      "sha256": "54b0b31b77cb7524a6a2efb7a1b0a069b27ea64b4b653effbe39b0e938292518"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+      "sha256": "4c29a13ed3559b1a3714e49a04df58fb05128657e406768ada7cb622bb3d4139"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0146-0151-v3/batch-manifest.json",
+      "sha256": "9b2ef216d8e05dc9a8bdaccb5c8f25176be0038f7c8b8e9b55247569f78722af"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0146-0151-v3/production-apply/batch-apply-receipt.json",
+      "sha256": "611fcfc943a43057ed19645c7e8b21a9144beeddf049358e8e64af79bc640842"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batches/batch-0146-0151-v3/seed-attribution-reconciliation-spec-v2.json",
+      "sha256": "0e84ef88724a3321f9a1fa4820c7c24438481ecc6b01e3a72d8a1ee4078709fc"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/chronology.json",
+      "sha256": "354c05be15e4747a3f983cdf13894d0a7d003650f525550718adaaf72befc97a"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/production-snapshot.json",
+      "sha256": "4c247899868b6e77adbdd023fe6e5aec0a8f4ab4a0b41a1bfafa3c1ef4664f52"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-chronology/recovered-initial-apply/apply-receipt.json",
+      "sha256": "ad91679544c16da42eb4c1a89785243cf2e0a22a5ffdd229bd5ac97269497487"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/databank/authority.json",
+      "sha256": "e47afd54f9796b3f9f96437968c17de9fe0abcc1dce9b9257d604be577fc4ff8"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/rio-grande-lng/authority.json",
+      "sha256": "3054518c8639eafd96945f14b77d4aa94667c2de5fba616c03f5cf0c04ee5070"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/rio-grande-lng/capture-verification.json",
+      "sha256": "9287a6a9055cc28f074c48582f61626a7975fdf0be0f20e036e114a31128783c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/rio-grande-lng/doe.pdf",
+      "sha256": "8e4960f150f9c6a47764223dc11a9dd6418d6c6f63b4ca9cb167109da092405e"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/rio-grande-lng/doe.txt",
+      "sha256": "c57ba870395b4490d2ec7b934a9fc6a46d6b96a1c9f980949d31b37d40499578"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/rio-grande-lng/original-filing.pdf",
+      "sha256": "18019ef4fab630ce934826d580e6ce87a0ae1cc46379f950dd50e0a4e3f2f5ae"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/rio-grande-lng/original-filing.txt",
+      "sha256": "aedda57c38ded9fc6445e36db05be1552344cec6a10f911008976dda45f24337"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/rio-grande-lng/production-snapshot.json",
+      "sha256": "f270f577c185cbecad8f2191b13e7f4c5d79cc957e1da6e4846efa978f5ced5f"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/rio-grande-lng/source-capture.json",
+      "sha256": "2082334af44fab73e11d2c4c178e6ba21b4729dc2fd710ab7ecace9041a20f4d"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/rio-grande-lng/total.html",
+      "sha256": "9f6b67582953e8bdaacbf76a7d73749fcb53afdea6c2d5cee102df072c44593c"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/rio-grande-lng/xrg-browser.txt",
+      "sha256": "c5dbc31a86eea697deb5ee5ef52275da6479136737cc22fc1112f44b624f17ae"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-08-16/apply-manifest.json",
+      "sha256": "1c3b0e245931211cbd8cac66c3810004a4fb6268d79d0b2e4e5a84639a207362"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-08-16/approval.json",
+      "sha256": "7498d586973eaf549d7fd541ab49d6ab9cc75b4a8331c7a12a90a2b3c352001e"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-08-23/scoped/batch-0146-attribution-repair/apply-manifest.json",
+      "sha256": "d4be2e923f2789110ce08c59d0a4a96224688dffbdda2cbc31a0423031c84156"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-08-23/scoped/batch-0146-attribution-repair/approval.json",
+      "sha256": "0b4a257b4de29e0be74e9202da7901134faf38d6e771bdfde1592f48593dd904"
+    },
+    {
+      "path": "audits/portfolio-fund-attribution/2026-08-23/scoped/batch-0146-attribution-repair/production-apply/apply-receipt.json",
+      "sha256": "dc1c5d1ed0391f2e25a5c900edd9209d1d96baec7e73bbd0e9888831ca0ffdc8"
+    },
+    {
+      "path": "prisma/seed-data/funds.manifest.json",
+      "sha256": "6cce21787660a2d096e2836ddfae7f7fbc1ec60697ce5446de07c431055fd902"
+    },
+    {
+      "path": "prisma/seed-data/ownership-attributions.manifest.json",
+      "sha256": "c3b8d505c6cd8c9c1db16a01b93c0cb8f3d394b74919afa3048d458dc4c3467f"
+    },
+    {
+      "path": "scripts/generate-portfolio-fund-attribution.ts",
+      "sha256": "67274414b66683dbd1f1d9ca273f4f0a0ba58ff7a7cbf33cd8fedc70fb476b3d"
+    },
+    {
+      "path": "scripts/portco-reconciliation/audit-rio-grande-field-authority.ts",
+      "sha256": "dd933603f66b4b8f05e6ca879a929f2a2b40a651549af9c9033d6cad3ba446ef"
+    },
+    {
+      "path": "scripts/portco-reconciliation/capture-rio-grande-authority.mjs",
+      "sha256": "ff58af95d04460e30c2b284f970e52566f7b824a7e91d619acb3ead77f012bd6"
+    },
+    {
+      "path": "scripts/portco-reconciliation/rio-grande-field-authority.test.ts",
+      "sha256": "62596182315c7c2b116a866c1412871d4a72bbb6eb18e07a8f885bc8c93b628a"
+    },
+    {
+      "path": "scripts/portco-reconciliation/rio-grande-field-authority.ts",
+      "sha256": "10ab85dbd1e33658bf4b7147cd59263b76929ea6db20dde68d94e3e80d714d55"
+    },
+    {
+      "path": "scripts/portfolio-fund-attribution/schema.ts",
+      "sha256": "ca1ad36475607959b6255316b795750c3e82ecf89aefc0951df0cc564fd61405"
+    }
+  ],
+  "sourceCaptureSha256": "62fd339c6e1f9f60b8f911b81b28d1491dc75d5cd5df87424abadb918c0ac586",
+  "sourceCaptureReusedWithoutNetwork": true,
+  "visualReview": {
+    "originalFilingOneBasedPages": [
+      6
+    ],
+    "method": "Reused the existing complete page6 rendering and visually inspected body and footnotes for this separate Mubadala judgment. MIC is a sovereign investor's wholly owned subsidiary; separate NextDecade Parent ownership is not substituted for project ownership. No new PDF capture or company research."
+  },
+  "reportSha256": "3bd1bd20057948a1d10a666792afc99b90b01b7d4ad892856e201a6d5903bee9"
+}
