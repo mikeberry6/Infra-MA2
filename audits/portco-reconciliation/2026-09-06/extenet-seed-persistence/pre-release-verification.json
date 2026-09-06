@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_EXTENET_SEED_PERSISTENCE_VERIFICATION",
+  "phase": "pre-release",
+  "checkedAt": "2026-09-06T03:25:56.367Z",
+  "repairSha256": "f7078bc622c924e1482efb8aa27ab8dd4a26eb21029b1617adaccbdf914c7e05",
+  "expectedSha": "59b5d797abc1cff8e71949f08686a6d7ee7221af",
+  "canonicalDeployment": {
+    "id": "dpl_HDpePYKburuTBQ3ovgW8jaQjEBFf",
+    "url": "infra-ma-2-ral5r6qqs-mberry.vercel.app",
+    "readyState": "READY",
+    "target": "production",
+    "aliases": [
+      "infra-ma-2.vercel.app",
+      "infra-ma-2-git-main-mberry.vercel.app"
+    ],
+    "gitSource": {
+      "ref": "main",
+      "repoId": 1143556044,
+      "sha": "59b5d797abc1cff8e71949f08686a6d7ee7221af",
+      "type": "github",
+      "prId": null
+    }
+  },
+  "target": {
+    "label": "production-readonly",
+    "fingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929"
+  },
+  "productionSnapshotSha256": "153b10105a05225e75e69712a32bc576c06ecc0905ff42948897061f0a0f13e2",
+  "productionUnchanged": true,
+  "publishedCount": 1128,
+  "redirects": 70,
+  "wholePublishedIdentityParity": true,
+  "resultingSeedSha256": "f87ac491a6f1e43228c5c8e2755beacda34f1685538f279d9a2299ca598fc7d8",
+  "resultingSeedCompanies": 1128,
+  "resultingAttributionManifestSha256": "cd644038e360277a296d59d0eb6976c2a1eb85af3e752ffc941d944f1c556257",
+  "canonicalApiChecks": [
+    {
+      "id": "cmrxpjdak00twivheazjbfqum",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjdak00twivheazjbfqum",
+      "httpStatus": 200,
+      "bodySha256": "c97dbd7bb2f8b445759789a83430aba01da65b0d38ad1d6edf413c2d32d829dc",
+      "passed": true
+    },
+    {
+      "id": "cmrxpjnj4019sivheei4wmjpj",
+      "url": "https://infra-ma-2.vercel.app/Infra-MA2/api/portfolio/cmrxpjnj4019sivheei4wmjpj",
+      "httpStatus": 200,
+      "bodySha256": "c97dbd7bb2f8b445759789a83430aba01da65b0d38ad1d6edf413c2d32d829dc",
+      "passed": true
+    }
+  ],
+  "freshExceptionSha256": "4d1afb4629b15eea56dd6661bc58a3a9d30c0cdd970f7c5cef6874cb88c77467",
+  "databaseWrites": 0,
+  "sourceTransitions": 0,
+  "passed": true
+}

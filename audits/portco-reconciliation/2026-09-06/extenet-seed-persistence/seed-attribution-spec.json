@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_BATCH_SEED_ATTRIBUTION_RECONCILIATION_SPEC",
+  "batchId": "extenet-seed-identity-persistence-v1",
+  "batchSha256": "f7078bc622c924e1482efb8aa27ab8dd4a26eb21029b1617adaccbdf914c7e05",
+  "reconciledAt": "2026-09-06T03:22:26.368Z",
+  "sourceManifestSha256": "53260bdb933ef8960d1518769ab77c4bc7de0fdeff1dae0c7b78ecc6a4bda7c0",
+  "rationale": "Technical seed identity persistence, not a source bundle: rename four company-name lookup keys, retaining record IDs and every other field; remove only the duplicate Stonepeak record. Existing estimates remain legacy estimates, not fresh ownership findings. Zero production writes.",
+  "removeRecordIds": [
+    "OFA-F01811471EBB"
+  ],
+  "upsertRecords": [
+    {
+      "recordId": "OFA-08E61FB1AF8A",
+      "companyName": "Extenet (formerly ExteNet Systems)",
+      "country": "United States",
+      "investmentFirm": "Manulife",
+      "currentVehicleName": "Manulife Infrastructure Fund II",
+      "investmentYear": 2021,
+      "stake": null,
+      "targetLinkedFundName": "Manulife Infrastructure Fund II",
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "Manulife Infrastructure Fund II",
+      "attributionConfidence": null,
+      "attributionRationale": "Matched supplemental ownership detail: Firm: Manulife Investment Management-led consortium | Fund: Manulife Infrastructure Fund II | Ownership Interest: Approximately 30% Verified fund matches an existing fund-list entry.",
+      "evidenceUrls": [
+        "https://www.businesswire.com/news/home/20201015005270/en/ExteNet-Systems-Announces-Strategic-Investment-from-John-Hancock-Life-Insurance-Company-U.S.A.",
+        "https://www.prnewswire.com/news-releases/chicago-region-extenet-systems-completes-recapitalization-300180129.html",
+        "https://extenet.com/about-us/",
+        "https://extenet.com/extenet-systems-welcomes-john-hancock-as-a-strategic-investor/",
+        "https://extenet.com/extenet-systems-announces-successful-closing-of-manulife-investment/"
+      ]
+    },
+    {
+      "recordId": "OFA-AE538848FA8E",
+      "companyName": "Extenet (formerly ExteNet Systems)",
+      "country": "United States",
+      "investmentFirm": "Stonepeak",
+      "currentVehicleName": "n.a.",
+      "investmentYear": 2015,
+      "stake": null,
+      "targetLinkedFundName": "Stonepeak Core Fund",
+      "fundAttribution": "INFERRED",
+      "attributedFundName": "Stonepeak Core Fund",
+      "attributionConfidence": "LOW",
+      "attributionRationale": "Estimated from manager match 1.00, evergreen/permanent-capital vehicle, North America-relevant mandate; next candidate trails by 45.0 points. Public disclosure does not identify a distinct fund.",
+      "evidenceUrls": [
+        "https://www.prnewswire.com/news-releases/chicago-region-extenet-systems-completes-recapitalization-300180129.html",
+        "https://www.businesswire.com/news/home/20201015005270/en/ExteNet-Systems-Announces-Strategic-Investment-from-John-Hancock-Life-Insurance-Company-U.S.A.",
+        "https://www.extenet.com/",
+        "https://www.extenet.com/company/",
+        "https://www.prnewswire.com/news-releases/manulife-investment-management-completes-strategic-investment-in-extenet-systems-301288019.html"
+      ]
+    },
+    {
+      "recordId": "OFA-1DA23C8E78A6",
+      "companyName": "Extenet (formerly ExteNet Systems)",
+      "country": "United States",
+      "investmentFirm": "DigitalBridge",
+      "currentVehicleName": "DigitalBridge Equity",
+      "investmentYear": 2015,
+      "stake": null,
+      "targetLinkedFundName": null,
+      "fundAttribution": "DISCLOSED",
+      "attributedFundName": "DigitalBridge Equity",
+      "attributionConfidence": null,
+      "attributionRationale": "Matched supplemental ownership detail: Firm: DigitalBridge | Fund: DigitalBridge Equity | Ownership Interest: Not publicly disclosed. Verified fund matches an existing fund-list entry.",
+      "evidenceUrls": [
+        "https://www.prnewswire.com/news-releases/chicago-region-extenet-systems-completes-recapitalization-300180129.html",
+        "https://www.businesswire.com/news/home/20201015005270/en/ExteNet-Systems-Announces-Strategic-Investment-from-John-Hancock-Life-Insurance-Company-U.S.A.",
+        "https://extenet.com/",
+        "https://www.digitalbridge.com/portfolio/extenet-systems",
+        "https://extenet.com/extenet-systems-and-mgm-resorts-announce-nationwide-connectivity-partnership/"
+      ]
+    },
+    {
+      "recordId": "OFA-13BA80034A07",
+      "companyName": "Extenet (formerly ExteNet Systems)",
+      "country": "United States",
+      "investmentFirm": "Northleaf",
+      "currentVehicleName": "n.a.",
+      "investmentYear": 2015,
+      "stake": null,
+      "targetLinkedFundName": "Northleaf NEIF",
+      "fundAttribution": "INFERRED",
+      "attributedFundName": "Northleaf NEIF",
+      "attributionConfidence": "LOW",
+      "attributionRationale": "Estimated from manager match 1.00, evergreen/permanent-capital vehicle, North America-relevant mandate; next candidate trails by 45.0 points. Public disclosure does not identify a distinct fund.",
+      "evidenceUrls": [
+        "https://www.businesswire.com/news/home/20201015005270/en/ExteNet-Systems-Announces-Strategic-Investment-from-John-Hancock-Life-Insurance-Company-U.S.A.",
+        "https://www.prnewswire.com/news-releases/chicago-region-extenet-systems-completes-recapitalization-300180129.html"
+      ]
+    }
+  ],
+  "specSha256": "8f2701ed7ab224ed7de0b3525c5f24a05172800b9eb8fa8bea31da3fe9de41dd"
+}

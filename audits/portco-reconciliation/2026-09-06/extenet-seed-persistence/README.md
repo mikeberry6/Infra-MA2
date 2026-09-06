@@ -1,0 +1,27 @@
+# Extenet: identity-only seed persistence
+
+This release renames the retained `ExteNet Systems` seed entry to the existing production name `Extenet (formerly ExteNet Systems)` and retires the separate Stonepeak-only `Extenet` duplicate. Every other field in the retained entry is unchanged. Its four existing displayed owner rows match the current production core owner projection; the retired duplicate's sole owner is an exact subset. No production company, alias, owner, fund link, attribution, citation, milestone, pending transaction or redirect is mutated. No source task is reopened or finalized, no bundle is activated, and no transaction or full seed is replayed.
+
+## Authority and unresolved facts
+
+This is the separately authorized technical persistence repair in the continuation instruction, **not application of task 213's deferred research**. That research explicitly required no database/seed after-image because current ownership is unresolved. Its research bytes, terminal DEFERRED outcome and precise exception are unchanged. The identity-only relationship is independently recorded in its resolved legal-continuity findings and reciprocal terminal supersessions 424, 475 and 476. The plan revalidates these decisions, their task/research/source references and all seven fresh research-evidence files.
+
+The change does not certify legacy displayed owners as the September 4, 2026 cap table. The missing cutoff owners, stakes, vehicles, JH-to-KH legal bridge, Northleaf disposition, DigitalBridge/Manulife positions, Other Members and outdoor-sale outcome remain exactly unavailable. The existing description, location, historical sources and estimates are deliberately preserved, not silently refreshed. Observed production aliases are empty; this release does not invent an alias approval or completed mutation receipt for task 213.
+
+## Frozen evidence and exact scope
+
+Protected base: `59b5d797abc1cff8e71949f08686a6d7ee7221af` (PR916). Plan SHA: `f7078bc622c924e1482efb8aa27ab8dd4a26eb21029b1617adaccbdf914c7e05`. Fresh pinned production capture: **2026-09-06T03:22:26.368Z**, using `SET TRANSACTION READ ONLY` inside RepeatableRead. Snapshot SHA: `153b10105a05225e75e69712a32bc576c06ecc0905ff42948897061f0a0f13e2`. The full Extenet graph and all 70 redirects remain identical to the verified final-audit capture. The source manifest, idle ledger, immutable overlays, redirect baseline and prior PR916 production-release proof are hash-bound dependencies.
+
+Evaluated seed count changes **1,129 → 1,128**. Every published seed `(name, country)` identity now matches the fresh 1,128-company production identity set exactly, without collisions. Resulting seed SHA: `f87ac491a6f1e43228c5c8e2755beacda34f1685538f279d9a2299ca598fc7d8`. This proves identity parity, not complete legacy seed replay parity for other fields.
+
+Four attribution records retain their IDs and every metadata/evidence field while changing only the company-name lookup key. One duplicate Stonepeak record, `OFA-F01811471EBB`, is removed. Attribution records change **1,394 → 1,393**, inferred records **458 → 457**, unresolved records remain 69. No retained attribution is reclassified or freshly endorsed. The existing reconciliation schema's `batchId` is a technical release identifier, not a source-bundle activation or production apply authorization. Resulting attribution manifest SHA: `cd644038e360277a296d59d0eb6976c2a1eb85af3e752ffc941d944f1c556257`.
+
+The removed seed object is retained in `repair-plan.json`; removed and replaced attribution before-images are retained in `seed-attribution-reconciliation.json` and protected Git history. This cleanup is recoverable. All unrelated seed objects and attributions compare exactly against the prior release.
+
+## Verification and remaining closeout
+
+Local complete suite: **163 files / 1,264 tests passed**. Ordinary typecheck and scoped ESLint passed. Offline seed validation: **0 errors, 54 existing-format warnings**. Tests cover exact before/after scope, all retained fields, source hashes and exception preservation, whole published identity parity, attribution reconstruction and fail-closed collision/stale-owner/repeated-application cases. PR916's historical full-seed assertion is reconstructed from its frozen inputs instead of incorrectly pinning all future live seed changes; its five retired aliases and retained canonical data remain checked against live seeds, and this release independently checks the entire current seed against its exact plan.
+
+Pre-release verification proves canonical production still serves the exact protected base SHA, full scoped production and redirects are unchanged, and both canonical and retired-focus API checks pass. The canonical rendered drawer was also inspected: the existing Manulife, Northleaf, DigitalBridge and Stonepeak rows, their vehicles and the two estimated/low-confidence labels remain displayed; those are preserved legacy UI facts, not new ownership findings. A post-release proof must independently bind the eventual protected merge SHA and canonical production deployment before this release is considered complete.
+
+Chicago Parking Meters/other legacy owner representations, attribution chronology candidates and obsolete Pocahontas overlay lineage remain outside this release. The overall goal and heartbeat must stay open until those are reconciled and final counts/exception reporting are published and verified. No Deal Database, public interface, layout or scorecard-enrichment change is included.
