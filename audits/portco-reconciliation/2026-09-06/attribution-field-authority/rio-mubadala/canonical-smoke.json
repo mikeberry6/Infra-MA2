@@ -1,0 +1,103 @@
+{
+  "generatedAt": "2026-09-06T15:13:07.897Z",
+  "origin": "https://infra-ma-2.vercel.app",
+  "basePath": "/Infra-MA2",
+  "expectedVersion": null,
+  "healthCheckSkipped": true,
+  "legacyRootAllowed": true,
+  "transport": "fetch",
+  "passed": true,
+  "health": null,
+  "checks": [
+    {
+      "name": "canonical root",
+      "route": "/",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "durationMs": 542,
+      "finalUrl": "https://infra-ma-2.vercel.app/Infra-MA2/tracker",
+      "passed": true
+    },
+    {
+      "name": "public /tracker",
+      "route": "/tracker",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "durationMs": 69,
+      "finalUrl": "https://infra-ma-2.vercel.app/Infra-MA2/tracker",
+      "passed": true
+    },
+    {
+      "name": "public /funds",
+      "route": "/funds",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "durationMs": 197,
+      "finalUrl": "https://infra-ma-2.vercel.app/Infra-MA2/funds",
+      "passed": true
+    },
+    {
+      "name": "public /portfolio",
+      "route": "/portfolio",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "durationMs": 139,
+      "finalUrl": "https://infra-ma-2.vercel.app/Infra-MA2/portfolio",
+      "passed": true
+    },
+    {
+      "name": "public /news",
+      "route": "/news",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "durationMs": 136,
+      "finalUrl": "https://infra-ma-2.vercel.app/Infra-MA2/news",
+      "passed": true
+    },
+    {
+      "name": "public /dashboard",
+      "route": "/dashboard",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "durationMs": 1058,
+      "finalUrl": "https://infra-ma-2.vercel.app/Infra-MA2/dashboard",
+      "passed": true
+    },
+    {
+      "name": "public /search",
+      "route": "/search",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "durationMs": 1024,
+      "finalUrl": "https://infra-ma-2.vercel.app/Infra-MA2/search",
+      "passed": true
+    },
+    {
+      "name": "public /earnings",
+      "route": "/earnings",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "durationMs": 102,
+      "finalUrl": "https://infra-ma-2.vercel.app/Infra-MA2/earnings",
+      "passed": true
+    },
+    {
+      "name": "public /login",
+      "route": "/login",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "durationMs": 147,
+      "finalUrl": "https://infra-ma-2.vercel.app/Infra-MA2/login",
+      "passed": true
+    },
+    {
+      "name": "anonymous deal export denied",
+      "route": "/api/exports/deals",
+      "expectedStatus": 403,
+      "actualStatus": 403,
+      "durationMs": 45,
+      "finalUrl": "https://infra-ma-2.vercel.app/Infra-MA2/api/exports/deals",
+      "passed": true
+    }
+  ]
+}
