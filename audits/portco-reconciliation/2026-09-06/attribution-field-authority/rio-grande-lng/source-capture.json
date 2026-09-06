@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "RIO_GRANDE_EXISTING_SOURCE_REOPEN",
+  "sources": [
+    {
+      "id": "original-filing",
+      "requestedUrl": "https://www.energy.gov/sites/default/files/2023-08/15-190-LNG_RGLNG%20Statement%20and%20Notice%20of%20Change%20in%20Control%20(Aug.%2016%202023).pdf",
+      "finalUrl": "https://www.energy.gov/sites/default/files/2023-08/15-190-LNG_RGLNG%20Statement%20and%20Notice%20of%20Change%20in%20Control%20(Aug.%2016%202023).pdf",
+      "retrievedAt": "2026-09-06T14:00:38.401Z",
+      "httpStatus": 200,
+      "contentType": "application/pdf",
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/rio-grande-lng/original-filing.pdf",
+      "byteLength": 467758,
+      "sha256": "18019ef4fab630ce934826d580e6ce87a0ae1cc46379f950dd50e0a4e3f2f5ae"
+    },
+    {
+      "id": "doe",
+      "requestedUrl": "https://www.energy.gov/sites/default/files/2026-01/Rio%20Grande%20LNG%202026%20CIC%20Response%20Letter%20-%20FINAL.pdf",
+      "finalUrl": "https://www.energy.gov/sites/default/files/2026-01/Rio%20Grande%20LNG%202026%20CIC%20Response%20Letter%20-%20FINAL.pdf",
+      "retrievedAt": "2026-09-06T14:00:38.382Z",
+      "httpStatus": 200,
+      "contentType": "application/pdf",
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/rio-grande-lng/doe.pdf",
+      "byteLength": 346577,
+      "sha256": "8e4960f150f9c6a47764223dc11a9dd6418d6c6f63b4ca9cb167109da092405e"
+    },
+    {
+      "id": "total",
+      "requestedUrl": "https://corporate.totalenergies.us/news/totalenergies-reaches-final-investment-decision-its-partners-rio-grande-lng-train-4-10-direct",
+      "finalUrl": "https://corporate.totalenergies.us/news/totalenergies-reaches-final-investment-decision-its-partners-rio-grande-lng-train-4-10-direct",
+      "retrievedAt": "2026-09-06T14:00:38.641Z",
+      "httpStatus": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/rio-grande-lng/total.html",
+      "byteLength": 145716,
+      "sha256": "9f6b67582953e8bdaacbf76a7d73749fcb53afdea6c2d5cee102df072c44593c"
+    },
+    {
+      "id": "xrg",
+      "requestedUrl": "https://xrg.com/en/news/XRG-Strengthens-US-LNG-Position-with-Second-Rio-Grande-LNG-Transaction-Completion",
+      "finalUrl": "https://xrg.com/en/news/XRG-Strengthens-US-LNG-Position-with-Second-Rio-Grande-LNG-Transaction-Completion",
+      "retrievedAt": "2026-09-06T13:59:12.789Z",
+      "httpStatus": null,
+      "contentType": "text/plain; rendered browser document.body.innerText plus one terminal newline",
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/rio-grande-lng/xrg-browser.txt",
+      "byteLength": 4881,
+      "sha256": "c5dbc31a86eea697deb5ee5ef52275da6479136737cc22fc1112f44b624f17ae",
+      "method": "Ordinary in-app browser exact rendered DOM read; HTTP status not exposed. Full headline, dated July 2 2026 release and body visibly verified. Not raw response bytes."
+    }
+  ],
+  "extractedText": [
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/rio-grande-lng/doe.txt",
+      "sha256": "c57ba870395b4490d2ec7b934a9fc6a46d6b96a1c9f980949d31b37d40499578",
+      "extractor": "/Users/mikeberry6/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/poppler/poppler/bin/pdftotext"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-09-06/attribution-field-authority/rio-grande-lng/original-filing.txt",
+      "sha256": "aedda57c38ded9fc6445e36db05be1552344cec6a10f911008976dda45f24337",
+      "extractor": "/Users/mikeberry6/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/poppler/poppler/bin/pdftotext"
+    }
+  ],
+  "sourceAccess": {
+    "sidley": "Direct fetch returned 403; ordinary browser returned Page Not Found. Cached search text is not fresh evidence. Not used as authority.",
+    "federalRegister": "Direct fetch returned 302 to unblock.federalregister.gov; not followed. Reopened the exact original DOE filed PDF directly linked by the existing 2023-19051 notice instead; no new company research.",
+    "xrg": "Direct fetch failed; ordinary browser successfully rendered the exact existing article. Content export unsupported; complete visible body text preserved with one appended newline.",
+    "failedInitialCapture": "First all-source capture failed on Sidley before writing any fetched artifacts. No successful frozen phase was repeated."
+  },
+  "qualification": "Only existing protected task151 or seed citations reopened for fund/program attribution. No new company/ChatGPT research, ownership/exit search, task transition, stake/date change, legal-vehicle inference or fund-economics update. Content requires independent review; HTTP success is not adjudication."
+}
