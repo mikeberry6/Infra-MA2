@@ -52,8 +52,9 @@ describe("portfolio fund attribution seed manifest", () => {
     const ownerKeys = owners.map(ownerKey);
     const manifestKeys = manifest.records.map(ownerKey);
 
-    expect(manifest.records).toHaveLength(1_402);
-    expect(owners).toHaveLength(1_402);
+    // Five already-superseded seed labels carried eight duplicate owner records.
+    expect(manifest.records).toHaveLength(1_394);
+    expect(owners).toHaveLength(1_394);
     expect(new Set(ownerKeys)).toHaveProperty("size", ownerKeys.length);
     expect(new Set(manifestKeys)).toHaveProperty("size", manifestKeys.length);
     expect([...manifestKeys].sort()).toEqual([...ownerKeys].sort());
@@ -64,8 +65,8 @@ describe("portfolio fund attribution seed manifest", () => {
     const inferred = manifest.records.filter((record) => record.fundAttribution === "INFERRED");
     expect(manifest.policy.fundCreates).toBe(0);
     expect(manifest.policy.fundUpdates).toBe(0);
-    expect(manifest.policy.inferredAssignments).toBe(463);
-    expect(inferred).toHaveLength(463);
+    expect(manifest.policy.inferredAssignments).toBe(458);
+    expect(inferred).toHaveLength(458);
     expect(manifest.records.filter((record) => record.fundAttribution === "UNRESOLVED")).toHaveLength(69);
     expect(manifest.records.every((record) => (
       record.fundAttribution !== "INFERRED"

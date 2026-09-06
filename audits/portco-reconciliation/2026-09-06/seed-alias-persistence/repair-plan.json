@@ -1,0 +1,1661 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PORTCO_SEED_ALIAS_PERSISTENCE_REPAIR",
+  "releaseId": "seed-alias-persistence-0466-0496-v1",
+  "baseCommit": "e800427881fe13269e20b9eafd9607db43094b5e",
+  "capturedAt": "2026-09-06T02:21:53.307Z",
+  "target": {
+    "label": "production-readonly",
+    "fingerprint": "45836a2e3306aa27a98c47cded3087b545691ec737c22861a69c4ab202986929"
+  },
+  "executionManifestSha256": "e1d37c59b0db0754f38fc8f1b668423d7135fa392b15559e4b7008586cbb2e07",
+  "ledgerSha256": "9118f52029df79c7d0e546d42bbae2d546b671786b574327c12bcd0beed5a45c",
+  "activeBatchId": null,
+  "productionSnapshotSha256": "0a0a325c48299f4dd50bb2e2a470751bba9e5b226de793e9861dcf606468909b",
+  "sourceSeedSha256": "efec4db5cd919987593de21d266ed26107a91d3b35c1ded2b62024fb042e436d",
+  "resultingSeedSha256": "f2a398507cb2c320456b9f6ea4b9514095d8443ed3f22cbfaffcf9446aaf07bc",
+  "sourceCompanyCount": 1134,
+  "resultingCompanyCount": 1129,
+  "dependencies": [
+    {
+      "path": "audits/portco-reconciliation/2026-08-03/execution-v1/manifest.json",
+      "sha256": "41032b7cf3c018305a08a588dfe110a247f56e5fbdff84c72c5e9627fa5f2e51"
+    },
+    {
+      "path": "audits/portco-reconciliation/2026-08-23/batch-execution/ledger.json",
+      "sha256": "4c29a13ed3559b1a3714e49a04df58fb05128657e406768ada7cb622bb3d4139"
+    },
+    {
+      "path": "prisma/seed-data/companies.ts",
+      "sha256": "3c2e147d6c780b1be6b1b522086861062333a5b8c9016e62bd23b5a0f960df1e"
+    },
+    {
+      "path": "prisma/seed-data/approved-portco-after-images.json",
+      "sha256": "2f965edb5cb3aeee7416a203b5e9c57f2739c62c9f55964ab6d7c6a32bbc30b5"
+    },
+    {
+      "path": "prisma/seed-data/ownership-attributions.manifest.json",
+      "sha256": "d41b4f2e5bf5cb9300e9f8ebb8afde2f233ffbb30e3055178fb39f5845e29774"
+    },
+    {
+      "path": "prisma/seed-data/company-redirect-baseline.json",
+      "sha256": "ad851a0a0522d78db12eeb193939f9488100d1037484e08f608af56cb9df2cd1"
+    }
+  ],
+  "references": [
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0466-alpha-generation-alphagen/attempt-1/terminal-decision-v1.json",
+      "sha256": "08dfb1737d5288b9cfbb77c24623d9d0bf578df2bf26303fd711991155cdd31c",
+      "fileSha256": "f79721f2ca190cee7e0891fef8a5a64d8abb849681b913db74020903cbe80266"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0466-alpha-generation-alphagen/attempt-1/locked-batch-v2-task-snapshot.json",
+      "sha256": "bdfeee3d90e6225bef2ada4d7fd00157508f862329de403d63d101cf499bce18",
+      "fileSha256": "bdfeee3d90e6225bef2ada4d7fd00157508f862329de403d63d101cf499bce18"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0466-alpha-generation-alphagen/attempt-1/reciprocal-research-decision-v1.json",
+      "sha256": "cf08970e28f67ba2335e3eeb84c33de1fe4422c8b86d64b19f8cfdfaf2ea7124",
+      "fileSha256": "cf08970e28f67ba2335e3eeb84c33de1fe4422c8b86d64b19f8cfdfaf2ea7124"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0466-alpha-generation-alphagen/attempt-1/reciprocal-source-verification-v1.json",
+      "sha256": "b7bc97f4fb16a92d50f565acd43016735e2de6c476b5be39922932bd78bdbcc2",
+      "fileSha256": "b7bc97f4fb16a92d50f565acd43016735e2de6c476b5be39922932bd78bdbcc2"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/proposals/0064-alphagen-v2/proposal.json",
+      "sha256": "d157dabd1986e6d798a901b7924d9eaa51b77e7f4ebad8ac0ed4aace55ddab8b",
+      "fileSha256": "1eb4ee0f90090215669daadd15b5876918f634e36abdf819ff6afbc200ec6bce"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/approvals/0064-alphagen-v2.json",
+      "sha256": "ed67ccfe0c1c7e490112998e3031a302ed750816b763361379f690adcb229e9a",
+      "fileSha256": "e19502091891135c3bc458ca081711fd4c27911d46a92eac887e090d8803ecb1"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0064-alphagen/attempt-1/production-apply/apply-receipt.json",
+      "sha256": "18632a11c03a26264493e8244886af5b1c6ba9ab991402da362f6f025af5a6a7",
+      "fileSha256": "55d50cabe1a0b91de7c7148f5f56deea4567c32b3d8468b98d3577247683ddfa"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0472-cleco-corporation/attempt-1/terminal-decision-v1.json",
+      "sha256": "65c6d2b86af55dbef469df3409037c2815c4f89a66462d97abb7485557991334",
+      "fileSha256": "a278c3997d82e1664ffbcb4ffbfea1413f9078721080fe2cb4546b6746496614"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0472-cleco-corporation/attempt-1/locked-batch-v1-task-snapshot.json",
+      "sha256": "ac6eff04bff818e3dbdc9083f5fad9ceb1301559e32b20841fb3d4b73dd9e15a",
+      "fileSha256": "ac6eff04bff818e3dbdc9083f5fad9ceb1301559e32b20841fb3d4b73dd9e15a"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0472-cleco-corporation/attempt-1/dependent-research-decision-v1.json",
+      "sha256": "3960fb61505132515805bbc84b379bf68e0e9aa5336ff015095d711447530444",
+      "fileSha256": "3960fb61505132515805bbc84b379bf68e0e9aa5336ff015095d711447530444"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0472-cleco-corporation/attempt-1/dependent-source-verification-v1.json",
+      "sha256": "463d3a2f705cf720be2c210aaee69a958922e50a80fb3981270fb6a4fa4cfc65",
+      "fileSha256": "463d3a2f705cf720be2c210aaee69a958922e50a80fb3981270fb6a4fa4cfc65"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/proposals/0122-cleco-corporate-holdings-llc-v1/proposal.json",
+      "sha256": "0cf9cab89dfb8ad09276950ccff124e710c55ee7385551fe8f8d15c406cbb21f",
+      "fileSha256": "8c497e8331600a13c379ec7d6ec2fcbaa9f1e8d7560013363476338bc6c6d990"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/approvals/0122-cleco-corporate-holdings-llc-v1.json",
+      "sha256": "ac2f02532fb8414e8e7afc3b823602268c925d74d37e48f587273c45c8b11e32",
+      "fileSha256": "77816845f43fe493977bbf8ca1098b22da5747f5ca61333374d9d7b488461c20"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0121-0125-v1/production-apply/batch-apply-receipt.json#members/1/receipt",
+      "sha256": "4574fd1dabf48ab369f15a14a3c91ac96e4ac89da0aa9d992e1b1b2a9847bf7c",
+      "fileSha256": "27f6514a6a027cd6f96309e0f2c5aad2f346dff46ac4682bc274933e5970ce4c"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0490-puget-energy-puget-sound-energy/attempt-1/terminal-decision-v1.json",
+      "sha256": "cefeed8d8c413e67bf31aa99af14d8689b93af93dad020527ec0202e6515bf9e",
+      "fileSha256": "7c5bdda40201cc94c00b9964ba25dd3e3a16ac10e41187bc29f3b7fd15c95836"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0490-puget-energy-puget-sound-energy/attempt-1/locked-batch-v1-task-snapshot.json",
+      "sha256": "5bc71fed71387f45f75a53c10769a969a9ce2a99fe785a5d368daad957b3420f",
+      "fileSha256": "5bc71fed71387f45f75a53c10769a969a9ce2a99fe785a5d368daad957b3420f"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0490-puget-energy-puget-sound-energy/attempt-1/dependent-research-decision-v1.json",
+      "sha256": "252f50fa3a80321f2b5bc6abded45b32a587be0d098eb8c2312e451422a798a3",
+      "fileSha256": "252f50fa3a80321f2b5bc6abded45b32a587be0d098eb8c2312e451422a798a3"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0490-puget-energy-puget-sound-energy/attempt-1/dependent-source-verification-v1.json",
+      "sha256": "8591e517689a4b2b41308d0396da787b9e56afd78e21baf1de7d1a034a1c1d0c",
+      "fileSha256": "8591e517689a4b2b41308d0396da787b9e56afd78e21baf1de7d1a034a1c1d0c"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/proposals/0128-puget-energy-v1/proposal.json",
+      "sha256": "c579f09caa89779cb49d9aecada0638377ed8aab7d30989af7357ce54d604036",
+      "fileSha256": "407b6779ef11e1eec82cbf1a5abd11c6b9206f2c5851e554a46de348cb92a1f3"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/approvals/0128-puget-energy-v1.json",
+      "sha256": "cfdff69e5a30ec8011584f24c515830c64309a2b7985572714f2a9f556226f9b",
+      "fileSha256": "25c62e13a004b42580a3c70da2c3a9bb9422d58c2e4b2a786caa015f272f2c0d"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0126-0130-v1/production-apply/batch-apply-receipt.json#members/2/receipt",
+      "sha256": "038ba0356997af25395a8b9a7158261e2cb7db4378a8bcfa184d10b9db7c3869",
+      "fileSha256": "dcd312a97336a2f1ee766690ba2201310bb5b51698eb93795f66aaebf6bafbe3"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0495-u-s-medical-outpatient-facilities-portfolio-medcraft-jv/attempt-1/terminal-decision-v1.json",
+      "sha256": "08e727380765282f0ab2fdb92144fa6ea737f70ee5d25d2046e05d727b6527bd",
+      "fileSha256": "a681d043ace14ff0a96854e573f908a49e4cf6b259c8e33029d06e8b75445cf1"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0495-u-s-medical-outpatient-facilities-portfolio-medcraft-jv/attempt-1/locked-batch-v1-task-snapshot.json",
+      "sha256": "8cbb23525034c1bfe2f33c1bba9e3cbdde128b79c9a8686d44a79284998dc3e9",
+      "fileSha256": "8cbb23525034c1bfe2f33c1bba9e3cbdde128b79c9a8686d44a79284998dc3e9"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0495-u-s-medical-outpatient-facilities-portfolio-medcraft-jv/attempt-1/dependent-research-decision-v1.json",
+      "sha256": "d3e21f1d83f32fd3355ecfc0b3cf974a6a1414e9eade3eea9a13b953cdc679d9",
+      "fileSha256": "d3e21f1d83f32fd3355ecfc0b3cf974a6a1414e9eade3eea9a13b953cdc679d9"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0495-u-s-medical-outpatient-facilities-portfolio-medcraft-jv/attempt-1/dependent-source-verification-v1.json",
+      "sha256": "ddc1724c83373acb89aeba4b27a56ffe3831324e15e744ae9e9dcb9f600d1104",
+      "fileSha256": "ddc1724c83373acb89aeba4b27a56ffe3831324e15e744ae9e9dcb9f600d1104"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/proposals/0250-medcraft-medical-outpatient-portfolio-v1/proposal.json",
+      "sha256": "eeeacc4abe708aa4ff4b8ed33a54e9d0bddef996e8b1ee6d641329c9f1185cf5",
+      "fileSha256": "e468f60be3245fd4b278ac3a04ebb1f96b70655888b6af786abb2dd15f24629e"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/approvals/0250-medcraft-medical-outpatient-portfolio-v1.json",
+      "sha256": "efe6a5bd9511a9379853aac7a4743a43d41c00f09e5fe726f57aeaaaeb0f1cd7",
+      "fileSha256": "7406a0e0d93609b4ae1c67cf328f48e9ed6aa50c7f339c3e1886cd35c052634a"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0249-0253-v1/production-apply/batch-apply-receipt.json#members/1/receipt",
+      "sha256": "22488f716612a9125f445b08b42baa56bddc5384420c16f43c855cd32c412c6b",
+      "fileSha256": "98e7f515014bf5a4d9de8cdcc2ef12e8589146ad2bb1e10d886ff948c80797a8"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0496-u-s-medical-outpatient-facilities-portfolio-montecito-jv/attempt-1/terminal-decision-v1.json",
+      "sha256": "8ef84a0e0e3af2838dd25292354c315e6872982e69a1a522a69ac0a3da21077d",
+      "fileSha256": "2587924b0f0e1700c2fd653bd0c10a054474c64b3c3efd492209df7c4829aafc"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0496-u-s-medical-outpatient-facilities-portfolio-montecito-jv/attempt-1/locked-batch-v1-task-snapshot.json",
+      "sha256": "db8e044804ed9d126fc2ed8f94b1141a2c3936aa405448bc356b2dcc44cad015",
+      "fileSha256": "db8e044804ed9d126fc2ed8f94b1141a2c3936aa405448bc356b2dcc44cad015"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0496-u-s-medical-outpatient-facilities-portfolio-montecito-jv/attempt-1/dependent-research-decision-v1.json",
+      "sha256": "6aab56eb3a1512c6639bbaffdc1f0ad2c10eb228f40a1604e06ad450a57daa20",
+      "fileSha256": "6aab56eb3a1512c6639bbaffdc1f0ad2c10eb228f40a1604e06ad450a57daa20"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/execution-v1/tasks/0496-u-s-medical-outpatient-facilities-portfolio-montecito-jv/attempt-1/dependent-source-verification-v1.json",
+      "sha256": "381211ea243fecadea95b2ff1777e44abaf7177f54983d8d1b3360115b541686",
+      "fileSha256": "381211ea243fecadea95b2ff1777e44abaf7177f54983d8d1b3360115b541686"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/proposals/0251-montecito-medical-outpatient-portfolio-v1/proposal.json",
+      "sha256": "a4ed998ed258706be5eabc1f634fc9c84a8e2053dd0544b693a9d832632585be",
+      "fileSha256": "4c5f7ddf1af6707ab136cca27791893e602f96640e4e10206417b16801f81b4e"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-03/approvals/0251-montecito-medical-outpatient-portfolio-v1.json",
+      "sha256": "5472f25d6dd83963653c83914fb4fb8c1f485f8c0a552dcd8ecc02e5ed532282",
+      "fileSha256": "80a93051e7e3031da7ce7b0feca7223627b949310d68881866027a73955f156c"
+    },
+    {
+      "location": "audits/portco-reconciliation/2026-08-23/batches/batch-0249-0253-v1/production-apply/batch-apply-receipt.json#members/2/receipt",
+      "sha256": "8fce0e3acc458f7df27cf836fc174de32538f187795cc70275663598d3169417",
+      "fileSha256": "98e7f515014bf5a4d9de8cdcc2ef12e8589146ad2bb1e10d886ff948c80797a8"
+    }
+  ],
+  "members": [
+    {
+      "sourceSequence": 466,
+      "sourceTaskId": "ledger:0466:alpha-generation-alphagen:c81d7304",
+      "canonicalSequence": 64,
+      "canonicalTaskId": "ledger:0064:alphagen:b9424b11",
+      "retiredSeed": {
+        "name": "Alpha Generation (AlphaGen)",
+        "investmentFirm": "ArcLight Capital Partners",
+        "sector": "Power & ET",
+        "subsector": "Power Asset Management",
+        "region": "North America",
+        "country": "United States",
+        "ownershipVehicle": "ArcLight Energy Partners Fund VII",
+        "description": "Alpha Generation is ArcLight's management platform for a large portfolio of power generation assets in the United States. The platform serves wholesale power markets through strategic management and oversight of existing thermal generation assets rather than through greenfield development alone. ArcLight stated in 2024 that AlphaGen was formed to oversee about 14 GW of power infrastructure across four U.S. competitive power markets and a portfolio generating nearly $2 billion of annual revenue. Its role is therefore operational and portfolio-oriented, covering commercial, strategic, and asset-management functions across multiple generation subsidiaries. ArcLight announced the creation of AlphaGen in January 2024 as part of the management structure for ArcLight Energy Partners Fund VII, while public sources do not disclose the internal ownership split within the platform.",
+        "status": "Active",
+        "countryTags": [
+          "United States"
+        ],
+        "yearFounded": 2024,
+        "investmentYear": 2024,
+        "headquarters": "United States",
+        "milestones": [
+          {
+            "date": "2024",
+            "event": "ArcLight stated that AlphaGen would oversee approximately 14 GW of power infrastructure across four U.S. markets.",
+            "category": "Expansion"
+          },
+          {
+            "date": "2024",
+            "event": "Public disclosures also described the managed portfolio as generating nearly $2 billion of annual revenue.",
+            "category": "Expansion"
+          },
+          {
+            "date": "2024",
+            "event": "Alpha Generation (AlphaGen) was founded.",
+            "category": "Founding"
+          },
+          {
+            "date": "Jan 10, 2024",
+            "event": "ArcLight announced the formation of Alpha Generation as an ArcLight-owned platform to oversee its power infrastructure portfolio.",
+            "category": "Financing"
+          }
+        ],
+        "sources": [
+          {
+            "label": "Alphagen — Alpha Generation (AlphaGen)",
+            "url": "https://www.alphagen.com/",
+            "type": "WEBSITE",
+            "purpose": "COMPANY_PROFILE"
+          },
+          {
+            "label": "Announcement date source — ArcLight Capital Partners — Alpha Generation (AlphaGen)",
+            "url": "https://www.prnewswire.com/news-releases/arclight-creates-alphagen-to-manage-one-of-the-largest-power-infrastructure-portfolios-in-the-united-states-302031341.html",
+            "type": "PRESS_RELEASE",
+            "purpose": "OWNERSHIP_INVESTMENT"
+          },
+          {
+            "label": "Arclight — Alpha Generation (AlphaGen)",
+            "url": "https://arclight.com/portfolio-services/",
+            "type": "WEBSITE",
+            "purpose": "OPERATIONS_ASSETS"
+          }
+        ],
+        "owners": [
+          {
+            "investmentFirm": "ArcLight Capital Partners",
+            "ownershipVehicle": "ArcLight Energy Partners Fund VII",
+            "investmentYear": 2024,
+            "status": "Active"
+          }
+        ]
+      },
+      "retiredSeedSha256": "61dcdd43c1d799d77860e63d1d71fa337003945f15867bd7665f0dfc41e74a97",
+      "canonicalSeed": {
+        "name": "Alpha Generation, LLC",
+        "investmentFirm": "Abu Dhabi Investment Authority (ADIA)",
+        "sector": "Power & ET",
+        "subsector": "Thermal generation infrastructure and independent power production",
+        "region": "North America",
+        "country": "United States",
+        "ownershipVehicle": "Black Volt B 2024 LLC",
+        "description": "Alpha Generation, LLC (AlphaGen) owns and operates 26 dispatchable power-generation facilities totaling approximately 14 GW across six U.S. states and the PJM, NYISO, ISO-NE and CAISO markets. The Houston-based platform serves wholesale electricity, capacity and ancillary-services markets through gas- and oil-fired generation assets. ArcLight Energy Partners Fund VII formed AlphaGen in January 2024 and remains the controlling majority owner. ADIA holds a separately evidenced 16.8% indirect interest through Black Volt B 2024 LLC. CPP Investments completed a US$1.0 billion strategic minority investment through CPPIB AlphaGen US LLC on March 9, 2026. Exact ArcLight and CPP ownership percentages are not publicly disclosed, and no subsequent exit or pending sale was identified through August 12, 2026.",
+        "status": "Active",
+        "countryTags": [
+          "United States"
+        ],
+        "website": "https://www.alphagen.com/",
+        "yearFounded": 2024,
+        "investmentYear": 2025,
+        "headquarters": "Houston, Texas, United States",
+        "milestones": [
+          {
+            "date": "Oct 2024",
+            "event": "AlphaGen completed $3.7 billion of inaugural corporate financing.",
+            "category": "Financing"
+          },
+          {
+            "date": "Jan 2024",
+            "event": "ArcLight created AlphaGen to manage its U.S. power infrastructure portfolio.",
+            "category": "Founding"
+          },
+          {
+            "date": "Jan 13, 2025",
+            "event": "ArcLight announced a US$500 million minority investment in AlphaGen by a wholly owned subsidiary of ADIA.",
+            "category": "Financing"
+          },
+          {
+            "date": "May 23, 2025",
+            "event": "ADIA completed its US$500 million minority investment in AlphaGen through Black Volt B 2024 LLC.",
+            "category": "Acquisition"
+          },
+          {
+            "date": "2024",
+            "event": "ArcLight stated that AlphaGen would oversee approximately 14 GW of power infrastructure across four U.S. markets.",
+            "category": "Expansion"
+          },
+          {
+            "date": "2024",
+            "event": "Public disclosures also described the managed portfolio as generating nearly $2 billion of annual revenue.",
+            "category": "Expansion"
+          },
+          {
+            "date": "2024",
+            "event": "Alpha Generation (AlphaGen) was founded.",
+            "category": "Founding"
+          },
+          {
+            "date": "Jan 10, 2024",
+            "event": "ArcLight announced the formation of Alpha Generation as an ArcLight-owned platform to oversee its power infrastructure portfolio.",
+            "category": "Financing"
+          },
+          {
+            "date": "2025",
+            "event": "CPP Investments described AlphaGen as one of the largest independent power portfolios in the United States, with more than 11 GW of capacity.",
+            "category": "Expansion"
+          },
+          {
+            "date": "Oct 2, 2025",
+            "event": "CPP Investments entered into a definitive agreement to invest US$1.0 billion for a strategic minority position in AlphaGen, subject to regulatory approval.",
+            "category": "Financing"
+          },
+          {
+            "date": "Mar 9, 2026",
+            "event": "CPP Investments completed its US$1.0 billion strategic minority investment in AlphaGen through CPPIB AlphaGen US LLC; ArcLight Fund VII retained majority control and ADIA remained a co-owner.",
+            "category": "Acquisition"
+          }
+        ],
+        "management": [],
+        "sources": [
+          {
+            "label": "Alphagen — Alpha Generation, LLC",
+            "url": "https://www.alphagen.com/about-us/",
+            "type": "WEBSITE",
+            "purpose": "COMPANY_PROFILE",
+            "evidenceLabel": "Alphagen company profile"
+          },
+          {
+            "label": "Alphagen — Alpha Generation, LLC",
+            "url": "https://www.alphagen.com/portfolio/",
+            "type": "WEBSITE",
+            "purpose": "OPERATIONS_ASSETS",
+            "evidenceLabel": "Alphagen operations / asset details"
+          },
+          {
+            "label": "Alphagen — Alpha Generation, LLC",
+            "url": "https://www.alphagen.com/newsroom/press-releases/arclight-creates-alphagen-to-manage-one-of-the-largest-power-infrastructure-portfolios-in-the-united-states/",
+            "type": "PRESS_RELEASE",
+            "purpose": "SUPPORTING_CONTEXT",
+            "evidenceLabel": "Alphagen — Alpha Generation, LLC"
+          },
+          {
+            "label": "Announcement date source — ADIA Infrastructure — Alpha Generation, LLC",
+            "url": "https://www.prnewswire.com/news-releases/arclight-announces-500mm-investment-by-a-wholly-owned-subsidiary-of-adia-in-11-gw-alphagen-power-infrastructure-platform-302348464.html",
+            "type": "PRESS_RELEASE",
+            "purpose": "OWNERSHIP_INVESTMENT",
+            "evidenceLabel": "ADIA Infrastructure transaction announcement"
+          },
+          {
+            "label": "Alphagen — Alpha Generation (AlphaGen)",
+            "url": "https://www.alphagen.com/",
+            "type": "WEBSITE",
+            "purpose": "COMPANY_PROFILE",
+            "evidenceLabel": "Alphagen company profile"
+          },
+          {
+            "label": "Announcement date source — ArcLight Capital Partners — Alpha Generation (AlphaGen)",
+            "url": "https://www.prnewswire.com/news-releases/arclight-creates-alphagen-to-manage-one-of-the-largest-power-infrastructure-portfolios-in-the-united-states-302031341.html",
+            "type": "PRESS_RELEASE",
+            "purpose": "OWNERSHIP_INVESTMENT",
+            "evidenceLabel": "ArcLight Capital Partners transaction announcement"
+          },
+          {
+            "label": "Arclight — Alpha Generation (AlphaGen)",
+            "url": "https://arclight.com/portfolio-services/",
+            "type": "WEBSITE",
+            "purpose": "OPERATIONS_ASSETS",
+            "evidenceLabel": "Arclight operations / asset details"
+          },
+          {
+            "label": "Announcement date source — CPP Investments — AlphaGen",
+            "url": "https://www.prnewswire.com/news-releases/arclight-announces-us1-0-billion-investment-by-cpp-investments-in-alphagen-302573170.html",
+            "type": "PRESS_RELEASE",
+            "purpose": "OWNERSHIP_INVESTMENT",
+            "evidenceLabel": "CPP Investments transaction announcement"
+          },
+          {
+            "label": "Cppinvestments — AlphaGen",
+            "url": "https://www.cppinvestments.com/newsroom/arclight-announces-us1-0-billion-investment-by-cpp-investments-in-alphagen/",
+            "type": "PRESS_RELEASE",
+            "purpose": "SUPPORTING_CONTEXT",
+            "evidenceLabel": "Cppinvestments — AlphaGen"
+          },
+          {
+            "label": "Arclight — AlphaGen",
+            "url": "https://www.arclight.com/",
+            "type": "WEBSITE",
+            "purpose": "COMPANY_PROFILE",
+            "evidenceLabel": "Arclight company profile"
+          },
+          {
+            "label": "Cppinvestments — AlphaGen",
+            "url": "https://www.cppinvestments.com/newsroom/cpp-investments-net-assets-total-777-5-billion-at-second-quarter-fiscal-2026/",
+            "type": "PRESS_RELEASE",
+            "purpose": "OPERATIONS_ASSETS",
+            "evidenceLabel": "Cppinvestments operations / asset details"
+          },
+          {
+            "label": "AlphaGen — legal identity and Houston headquarters",
+            "url": "https://www.alphagen.com/terms-of-use/",
+            "type": "WEBSITE",
+            "purpose": "COMPANY_PROFILE",
+            "evidenceLabel": "Alpha Generation, LLC legal identity, AlphaGen operating name and Houston corporate address"
+          },
+          {
+            "label": "New York PSC — Alpha Generation ownership structure",
+            "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BA01BFB9B-0000-C91F-B9E1-724E88CA2CEF%7D&DocTitle=Declaratory+Ruling+on+Transfer",
+            "type": "OTHER",
+            "purpose": "OWNERSHIP_INVESTMENT",
+            "evidenceLabel": "ArcLight Fund VII control, ADIA's 16.8% interest and authorization of CPP Investments' minority acquisition"
+          },
+          {
+            "label": "New York PSC — ADIA AlphaGen closing notice",
+            "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B005A3297-0000-C375-AEDB-F5A75B5B08B6%7D",
+            "type": "OTHER",
+            "purpose": "OWNERSHIP_INVESTMENT",
+            "evidenceLabel": "Authoritative notice that ADIA's AlphaGen equity investment closed on May 23, 2025"
+          },
+          {
+            "label": "New York PSC — CPP Investments AlphaGen closing notice",
+            "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B403BFC9C-0000-CA44-9615-25956B0326D0%7D&DocTitle=Notice+of+Transaction+Consummation",
+            "type": "OTHER",
+            "purpose": "OWNERSHIP_INVESTMENT",
+            "evidenceLabel": "Authoritative notice that CPP Investments' AlphaGen transaction closed on March 9, 2026"
+          },
+          {
+            "label": "CPPIB AlphaGen US LLC — 2026 regulatory asset report",
+            "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BD03EFC9C-0000-C148-94C0-B37A4518CEE4%7D&DocTitle=Redacted+CPPIB+2026+Annual+Report",
+            "type": "OTHER",
+            "purpose": "OWNERSHIP_INVESTMENT",
+            "evidenceLabel": "Post-closing regulatory report identifying Alpha Generation Super Holdings across NYISO, PJM and ISO-NE"
+          },
+          {
+            "label": "CPP Investments — fiscal 2026 results",
+            "url": "https://www.newswire.ca/news-releases/cpp-investments-net-assets-total-793-3-billion-at-2026-fiscal-year-end-814459989.html",
+            "type": "PRESS_RELEASE",
+            "purpose": "OWNERSHIP_INVESTMENT",
+            "evidenceLabel": "CPP Investments' post-closing confirmation of its US$1.0 billion AlphaGen strategic minority position alongside ArcLight"
+          }
+        ],
+        "owners": [
+          {
+            "investmentFirm": "Abu Dhabi Investment Authority (ADIA)",
+            "ownershipVehicle": "Black Volt B 2024 LLC",
+            "investmentYear": 2025,
+            "stake": "16.8%",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          },
+          {
+            "investmentFirm": "ArcLight Capital Partners",
+            "ownershipVehicle": "ArcLight Energy Partners Fund VII",
+            "investmentYear": 2024,
+            "stake": "Controlling majority interest; exact percentage not publicly disclosed",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          },
+          {
+            "investmentFirm": "CPP Investments",
+            "ownershipVehicle": "CPPIB AlphaGen US LLC",
+            "investmentYear": 2026,
+            "stake": "Strategic minority interest; exact percentage not publicly disclosed",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        ]
+      },
+      "canonicalSeedSha256": "fb7f9fcdc59f3fbe5bf7f72e5c6b4bdf7733c4f6f80a9fe044db5544bb30a3dd",
+      "canonicalCompanyId": "cmrxpjcgh00slivheg8qw8idf",
+      "canonicalName": "Alpha Generation, LLC",
+      "country": "United States",
+      "proposalSha256": "d157dabd1986e6d798a901b7924d9eaa51b77e7f4ebad8ac0ed4aace55ddab8b",
+      "approvalSha256": "ed67ccfe0c1c7e490112998e3031a302ed750816b763361379f690adcb229e9a",
+      "applyReceiptSha256": "18632a11c03a26264493e8244886af5b1c6ba9ab991402da362f6f025af5a6a7",
+      "primaryCitation": {
+        "id": null,
+        "label": "New York PSC — CPP Investments AlphaGen closing notice",
+        "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B403BFC9C-0000-CA44-9615-25956B0326D0%7D&DocTitle=Notice+of+Transaction+Consummation",
+        "sourceType": "OTHER",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Authoritative notice that CPP Investments' AlphaGen transaction closed on March 9, 2026",
+        "isPrimary": true
+      },
+      "terminalDecisionSha256": "08dfb1737d5288b9cfbb77c24623d9d0bf578df2bf26303fd711991155cdd31c",
+      "rationale": "Alpha Generation (AlphaGen) is the same legal and operating identity already resolved by completed canonical task 64 for AlphaGen. Task 64 merged the duplicate production identities into Alpha Generation, LLC, preserved AlphaGen and Alpha Generation (AlphaGen) as aliases, reconciled the ArcLight, ADIA and CPP Investments ownership chain, and has an immutable production apply receipt. This heuristic-overlap seed label must therefore not create a second company or repeat the completed transaction."
+    },
+    {
+      "sourceSequence": 472,
+      "sourceTaskId": "ledger:0472:cleco-corporation:2901703f",
+      "canonicalSequence": 122,
+      "canonicalTaskId": "ledger:0122:cleco-corporate-holdings-llc:43ffb062",
+      "retiredSeed": {
+        "name": "Cleco Corporation",
+        "investmentFirm": "BCI",
+        "sector": "Utilities",
+        "subsector": "Regulated electric utility",
+        "region": "North America",
+        "country": "United States",
+        "ownershipVehicle": "Infrastructure & Renewable Resources",
+        "description": "Cleco Corporation is the holding company for Cleco Group LLC, a regulated electric utility platform serving Louisiana through Cleco Power and related generation assets. Cleco serves approximately 298,000 residential, commercial, and industrial customers in 24 Louisiana parishes, owns eight generating units with 2,676 MW of rated capacity, and remains regulated by the Louisiana Public Service Commission. The business is asset-heavy and largely regulated, with earnings supported by utility networks, generation assets, and approved tariffs. A North American investor group led by Macquarie Infrastructure and Real Assets and BCI completed the take-private acquisition in April 2016. On April 27, 2026, Stonepeak and Bernhard Capital Partners announced an agreement to acquire Cleco from Macquarie Asset Management, BCI, and Manulife Investment Management, but the transaction remained subject to customary regulatory approvals as of May 12, 2026, so the BCI holding remains active until a closing is confirmed.",
+        "status": "Active",
+        "countryTags": [
+          "United States"
+        ],
+        "yearFounded": 1933,
+        "investmentYear": 2016,
+        "website": "https://www.cleco.com/",
+        "headquarters": "Pineville, Louisiana",
+        "milestones": [
+          {
+            "date": "1933",
+            "event": "Cleco's corporate history materials trace the company's founding to 1933.",
+            "category": "Other"
+          },
+          {
+            "date": "1933",
+            "event": "Cleco Corporation was founded.",
+            "category": "Founding"
+          },
+          {
+            "date": "Oct 20, 2014",
+            "event": "Cleco announced an agreement to be acquired by an investor group led by Macquarie Infrastructure and Real Assets and BCI.",
+            "category": "Acquisition"
+          },
+          {
+            "date": "2016",
+            "event": "Louisiana regulatory materials disclosed the post-closing ownership interests of Macquarie, BCI, and John Hancock Financial / Manulife.",
+            "category": "Financing"
+          },
+          {
+            "date": "Apr 13, 2016",
+            "event": "The investor group completed the acquisition of Cleco.",
+            "category": "Acquisition"
+          },
+          {
+            "date": "Apr 27, 2026",
+            "event": "Macquarie Asset Management, BCI, and Manulife Investment Management announced an agreement to sell Cleco Group to Stonepeak and Bernhard Capital Partners, subject to regulatory approvals.",
+            "category": "Divestiture"
+          }
+        ],
+        "management": [
+          {
+            "name": "William \"Bill\" Fontenot",
+            "title": "President and Chief Executive Officer"
+          },
+          {
+            "name": "Kristin Guillory",
+            "title": "Chief Financial Officer"
+          },
+          {
+            "name": "Robert Breedlove",
+            "title": "Chief Operations Officer"
+          },
+          {
+            "name": "Justin \"Shane\" Hilton",
+            "title": "Chief Commercial Officer"
+          },
+          {
+            "name": "Sybil Montegut",
+            "title": "Chief Administrative & Sustainability Officer"
+          },
+          {
+            "name": "Andre Guillory",
+            "title": "Chief Customer Officer"
+          }
+        ],
+        "sources": [
+          {
+            "label": "Company profile source — Cleco Corporation",
+            "url": "https://www.cleco.com/about/history",
+            "type": "WEBSITE",
+            "purpose": "COMPANY_PROFILE"
+          },
+          {
+            "label": "Management source — Cleco Corporation",
+            "url": "https://www.cleco.com/about/leadership-governance/executive-officers",
+            "type": "WEBSITE",
+            "purpose": "COMPANY_PROFILE",
+            "evidenceLabel": "Current Cleco executive officers"
+          },
+          {
+            "label": "Announcement date source — BCI — Cleco Corporation",
+            "url": "https://www.cleco.com/media/press-releases/detail/2014/10/20/cleco-enters-agreement-to-be-acquired-by-north-american-investor-group-led-by-macquarie-infrastructure-and-real-assets-and-british-columbia-investment-management-corporation",
+            "type": "PRESS_RELEASE",
+            "purpose": "OWNERSHIP_INVESTMENT"
+          },
+          {
+            "label": "Close date source — BCI — Cleco Corporation",
+            "url": "https://www.cleco.com/media/press-releases/detail/2016/04/13/north-american-led-investor-group-completes-acquisition-of-cleco",
+            "type": "ARTICLE",
+            "purpose": "OWNERSHIP_INVESTMENT"
+          },
+          {
+            "label": "Ownership interest source — BCI I&RR 2024 financial statements — Cleco Corporation",
+            "url": "https://www.bci.ca/wp-content/uploads/2024/08/IRR-Program-FS-2024_Secured.pdf",
+            "type": "PRESENTATION",
+            "purpose": "OWNERSHIP_INVESTMENT",
+            "evidenceLabel": "BCI 36.9% ownership interest in Cleco Corporation as of December 31, 2024"
+          },
+          {
+            "label": "Regulatory ownership source — Cleco Corporation",
+            "url": "https://lpscpubvalence.lpsc.louisiana.gov/portal/PSC/ViewFile?fileId=SnuJItgVr6k%3D",
+            "type": "ARTICLE",
+            "purpose": "FINANCING_FILINGS"
+          },
+          {
+            "label": "Pending sale source — Cleco Corporation",
+            "url": "https://www.cleco.com/media/press-releases/detail/2026/04/27/stonepeak-and-bernhard-capital-partners-to-acquire-cleco",
+            "type": "PRESS_RELEASE",
+            "purpose": "MILESTONE_EVENT",
+            "evidenceLabel": "Sale announced April 27, 2026; subject to regulatory approvals"
+          }
+        ],
+        "owners": [
+          {
+            "investmentFirm": "Macquarie Asset Management",
+            "ownershipVehicle": "n.a.",
+            "investmentYear": 2016,
+            "status": "Active"
+          },
+          {
+            "investmentFirm": "Manulife Investment Management",
+            "ownershipVehicle": "Cleco investor consortium",
+            "investmentYear": 2016,
+            "status": "Active"
+          },
+          {
+            "investmentFirm": "BCI",
+            "ownershipVehicle": "Infrastructure & Renewable Resources",
+            "investmentYear": 2016,
+            "stake": "36.9%",
+            "status": "Active"
+          }
+        ]
+      },
+      "retiredSeedSha256": "df426d27c2e02195a950c01d1a4d6a449c5c756ee53802ceeae8d33e3f4c11a8",
+      "canonicalSeed": {
+        "name": "Cleco Corporate Holdings LLC",
+        "investmentFirm": "Macquarie Asset Management",
+        "sector": "Utilities",
+        "subsector": "Regulated electric utility and wholesale generation",
+        "region": "North America",
+        "country": "United States",
+        "ownershipVehicle": "Macquarie Infrastructure Partners III",
+        "description": "Cleco Corporate Holdings LLC is the operating parent within the privately held Cleco Group utility platform, serving Louisiana through Cleco Power and related generation assets. The regulated utility serves approximately 298,000 customers across 24 Louisiana parishes and owns eight generating units with 2,676 MW of rated capacity, supported by transmission and distribution networks and approved tariffs. Macquarie Asset Management, BCI and Manulife completed the take-private acquisition on April 13, 2016 and remain the legal owners; their last publicly confirmed 2020 interests were 53.9%, 36.9% and 9.2%, respectively, while exact current percentages are not publicly disclosed. A signed agreement announced April 27, 2026 would sell 100% of Cleco Group to Pine JV Holdings LLC, backed by Stonepeak and Bernhard Capital Partners, but the regulatory proceedings remained open through August 19, 2026, so the existing owners remain active pending closing.",
+        "status": "Active",
+        "countryTags": [
+          "United States"
+        ],
+        "website": "https://www.cleco.com/",
+        "yearFounded": 1935,
+        "investmentYear": 2016,
+        "headquarters": "Pineville, Louisiana",
+        "milestones": [
+          {
+            "date": "1933",
+            "event": "Cleco Corporation was founded.",
+            "category": "Founding"
+          },
+          {
+            "date": "1933",
+            "event": "Cleco's corporate history materials trace the company's founding to 1933.",
+            "category": "Other"
+          },
+          {
+            "date": "1933",
+            "event": "Cleco Corporate Holdings LLC was founded.",
+            "category": "Founding"
+          },
+          {
+            "date": "Oct 20, 2014",
+            "event": "Cleco announced an agreement to be acquired by an investor group led by Macquarie Infrastructure and Real Assets and BCI.",
+            "category": "Acquisition"
+          },
+          {
+            "date": "2016",
+            "event": "Louisiana regulatory materials disclosed the post-closing ownership interests of Macquarie, BCI, and John Hancock Financial / Manulife.",
+            "category": "Financing"
+          },
+          {
+            "date": "Apr 13, 2016",
+            "event": "The Macquarie-led investor group, including BCI and Manulife, completed the take-private acquisition of Cleco; Cleco Corporation converted and was renamed Cleco Corporate Holdings LLC.",
+            "category": "Acquisition"
+          },
+          {
+            "date": "Apr 27, 2026",
+            "event": "Cleco announced a signed agreement for Pine JV Holdings LLC, backed by Stonepeak and Bernhard Capital Partners, to acquire 100% of Cleco Group, subject to regulatory approvals.",
+            "category": "Divestiture"
+          }
+        ],
+        "management": [
+          {
+            "name": "William \"Bill\" Fontenot",
+            "title": "President and Chief Executive Officer"
+          },
+          {
+            "name": "Kristin Guillory",
+            "title": "Chief Financial Officer"
+          },
+          {
+            "name": "Robert Breedlove",
+            "title": "Chief Operations Officer"
+          },
+          {
+            "name": "Justin \"Shane\" Hilton",
+            "title": "Chief Commercial Officer"
+          },
+          {
+            "name": "Sybil Montegut",
+            "title": "Chief Administrative & Sustainability Officer"
+          },
+          {
+            "name": "Andre Guillory",
+            "title": "Chief Customer Officer"
+          }
+        ],
+        "sources": [
+          {
+            "label": "Company profile source — Cleco Corporation",
+            "url": "https://www.cleco.com/about/history",
+            "type": "WEBSITE",
+            "purpose": "COMPANY_PROFILE",
+            "evidenceLabel": "Cleco company profile"
+          },
+          {
+            "label": "Management source — Cleco Corporation",
+            "url": "https://www.cleco.com/about/leadership-governance/executive-officers",
+            "type": "WEBSITE",
+            "purpose": "COMPANY_PROFILE",
+            "evidenceLabel": "Current Cleco executive officers"
+          },
+          {
+            "label": "Announcement date source — BCI — Cleco Corporation",
+            "url": "https://www.cleco.com/media/press-releases/detail/2014/10/20/cleco-enters-agreement-to-be-acquired-by-north-american-investor-group-led-by-macquarie-infrastructure-and-real-assets-and-british-columbia-investment-management-corporation",
+            "type": "PRESS_RELEASE",
+            "purpose": "OWNERSHIP_INVESTMENT",
+            "evidenceLabel": "BCI transaction announcement"
+          },
+          {
+            "label": "Close date source — BCI — Cleco Corporation",
+            "url": "https://www.cleco.com/media/press-releases/detail/2016/04/13/north-american-led-investor-group-completes-acquisition-of-cleco",
+            "type": "ARTICLE",
+            "purpose": "OWNERSHIP_INVESTMENT",
+            "evidenceLabel": "April 13, 2016 take-private closing and corporate conversion"
+          },
+          {
+            "label": "Ownership interest source — BCI I&RR 2024 financial statements — Puget Sound Energy",
+            "url": "https://www.bci.ca/wp-content/uploads/2024/08/IRR-Program-FS-2024_Secured.pdf",
+            "type": "PRESENTATION",
+            "purpose": "OWNERSHIP_INVESTMENT",
+            "evidenceLabel": "BCI 36.9% ownership interest in Cleco Corporation as of December 31, 2024"
+          },
+          {
+            "label": "Regulatory ownership source — Cleco Corporation",
+            "url": "https://lpscpubvalence.lpsc.louisiana.gov/portal/PSC/ViewFile?fileId=SnuJItgVr6k%3D",
+            "type": "ARTICLE",
+            "purpose": "FINANCING_FILINGS",
+            "evidenceLabel": "Macquarie, BCI and Manulife ownership chain and last-confirmed stake percentages"
+          },
+          {
+            "label": "Pending sale source — Cleco Corporation",
+            "url": "https://www.cleco.com/media/press-releases/detail/2026/04/27/stonepeak-and-bernhard-capital-partners-to-acquire-cleco",
+            "type": "PRESS_RELEASE",
+            "purpose": "OWNERSHIP_INVESTMENT",
+            "evidenceLabel": "Signed 100% sale to Pine JV Holdings, subject to regulatory approvals"
+          },
+          {
+            "label": "Cleco — 2026 Q1 Form 10-Q",
+            "url": "https://www.sec.gov/Archives/edgar/data/1089819/000108981926000010/cnl-20260331.htm",
+            "type": "SEC_FILING",
+            "purpose": "OWNERSHIP_INVESTMENT",
+            "evidenceLabel": "Current corporate hierarchy, utility scale and pending sale status"
+          },
+          {
+            "label": "Cleco — Company profile",
+            "url": "https://www.cleco.com/about/our-company",
+            "type": "WEBSITE",
+            "purpose": "COMPANY_PROFILE",
+            "evidenceLabel": "Headquarters, founding history, customers and operating footprint"
+          },
+          {
+            "label": "Louisiana PSC — Cleco sale docket U-37963",
+            "url": "https://lpscpubvalence.lpsc.louisiana.gov/portal/PSC/DocketDetails?docketId=32834",
+            "type": "WEBSITE",
+            "purpose": "FINANCING_FILINGS",
+            "evidenceLabel": "Open regulatory proceeding for the pending Cleco sale"
+          },
+          {
+            "label": "FERC — Cleco sale filing EC26-120",
+            "url": "https://elibrary.ferc.gov/eLibrary/docinfo?accession_Number=20260629-5281",
+            "type": "OTHER",
+            "purpose": "FINANCING_FILINGS",
+            "evidenceLabel": "Federal regulatory filing for the pending 100% Cleco Group sale"
+          },
+          {
+            "label": "Cleco — 2017 debt prospectus",
+            "url": "https://www.sec.gov/Archives/edgar/data/1089819/000119312517101185/d317836d424b3.htm",
+            "type": "SEC_FILING",
+            "purpose": "OWNERSHIP_INVESTMENT",
+            "evidenceLabel": "Macquarie fund and acquisition vehicle attribution"
+          }
+        ],
+        "owners": [
+          {
+            "investmentFirm": "Macquarie Asset Management",
+            "ownershipVehicle": "Macquarie Infrastructure Partners III",
+            "fundName": "Macquarie Infrastructure Partners III",
+            "vehicleName": "MIP Cleco Partners L.P.",
+            "investmentYear": 2016,
+            "stake": "53.9% last confirmed in 2020; exact current percentage not publicly disclosed",
+            "status": "Active",
+            "transactionState": "SIGNED_PENDING_EXIT"
+          },
+          {
+            "investmentFirm": "Manulife Investment Management",
+            "ownershipVehicle": "John Hancock Life Insurance Company (U.S.A.)",
+            "vehicleName": "John Hancock Life Insurance Company (U.S.A.)",
+            "investmentYear": 2016,
+            "stake": "9.2% last confirmed in 2020; exact current percentage not publicly disclosed",
+            "status": "Active",
+            "transactionState": "SIGNED_PENDING_EXIT"
+          },
+          {
+            "investmentFirm": "BCI",
+            "ownershipVehicle": "Infrastructure & Renewable Resources",
+            "fundName": "Infrastructure & Renewable Resources",
+            "vehicleName": "bcIMC Como Investment LP",
+            "investmentYear": 2016,
+            "stake": "36.9% last confirmed in 2020; exact current percentage not publicly disclosed",
+            "status": "Active",
+            "transactionState": "SIGNED_PENDING_EXIT"
+          }
+        ]
+      },
+      "canonicalSeedSha256": "5d0438d14e330380bf0e2f7524f0231b3015b475300f671fcaecb062466e77cd",
+      "canonicalCompanyId": "cmrxpjkkg0151ivhenxskmy7x",
+      "canonicalName": "Cleco Corporate Holdings LLC",
+      "country": "United States",
+      "proposalSha256": "0cf9cab89dfb8ad09276950ccff124e710c55ee7385551fe8f8d15c406cbb21f",
+      "approvalSha256": "ac2f02532fb8414e8e7afc3b823602268c925d74d37e48f587273c45c8b11e32",
+      "applyReceiptSha256": "4574fd1dabf48ab369f15a14a3c91ac96e4ac89da0aa9d992e1b1b2a9847bf7c",
+      "primaryCitation": {
+        "id": null,
+        "label": "Cleco — 2026 Q1 Form 10-Q",
+        "url": "https://www.sec.gov/Archives/edgar/data/1089819/000108981926000010/cnl-20260331.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current corporate hierarchy, utility scale and pending sale status",
+        "isPrimary": true
+      },
+      "terminalDecisionSha256": "65c6d2b86af55dbef469df3409037c2815c4f89a66462d97abb7485557991334",
+      "rationale": "Cleco Corporation is the predecessor name of the same Louisiana utility parent already reconciled as Cleco Corporate Holdings LLC in completed task 122. The current production record preserves Cleco Corporation as an alias and the reviewed ownership, pending-sale and subsidiary boundaries, so a second company would duplicate the canonical parent identity."
+    },
+    {
+      "sourceSequence": 490,
+      "sourceTaskId": "ledger:0490:puget-energy-puget-sound-energy:e962de5d",
+      "canonicalSequence": 128,
+      "canonicalTaskId": "ledger:0128:puget-energy:f96cd6be",
+      "retiredSeed": {
+        "name": "Puget Energy / Puget Sound Energy",
+        "investmentFirm": "AIMCo",
+        "sector": "Utilities",
+        "subsector": "Regulated electricity and gas distribution",
+        "region": "North America",
+        "country": "United States",
+        "ownershipVehicle": "n.a.",
+        "description": "Puget Energy is the holding company for Puget Sound Energy, Washington's regulated electric and gas utility. The utility serves approximately 1.2 million electric customers and 900,000 natural gas customers across a 6,000-square-mile service territory in 10 counties. Its operating model is asset-heavy and regulated, with revenue supported by utility rate structures, generation assets, transmission, distribution, and long-lived network infrastructure. AIMCo has held the investment since the 2009 take-private and increased its stake in 2018, while the current public consortium also includes Macquarie, Ontario Teachers', OMERS, BCI, and PGGM. BCI's 2024 I&RR financial statements disclose a 20.9% ownership interest in Puget Sound Energy, and BCI continued to describe PSE as one of its largest and longest-standing infrastructure investments in 2025.",
+        "status": "Active",
+        "countryTags": [
+          "United States"
+        ],
+        "investmentYear": 2009,
+        "headquarters": "Washington",
+        "milestones": [
+          {
+            "date": "Feb 6, 2009",
+            "event": "Puget Holdings completed the take-private acquisition of Puget Energy through a consortium of infrastructure investors including AIMCo and BCI.",
+            "category": "Acquisition"
+          },
+          {
+            "date": "Mar 2018",
+            "event": "AIMCo announced that it had increased its stake in Puget Sound Energy's parent company.",
+            "category": "Acquisition"
+          },
+          {
+            "date": "Dec 2021",
+            "event": "Macquarie Asset Management and Ontario Teachers' signed an agreement to acquire a stake in Puget Holdings.",
+            "category": "Acquisition"
+          },
+          {
+            "date": "Jan 2022",
+            "event": "Macquarie and Ontario Teachers' completed the transaction and each disclosed a 15.8% ownership interest.",
+            "category": "Acquisition"
+          }
+        ],
+        "sources": [
+          {
+            "label": "Aimco — Puget Energy / Puget Sound Energy",
+            "url": "https://www.aimco.ca/insights/aimco-increases-stake-in-puget-sound-energy",
+            "type": "ARTICLE"
+          },
+          {
+            "label": "Investment date source — AIMCo — Puget Energy / Puget Sound Energy",
+            "url": "https://assets.ctfassets.net/lyt4cjmefjno/5aorUTYWwgPMIGc9cNPx9r/8518334d4637dbde57c10a376b60c10c/puget_investment.pdf",
+            "type": "PRESENTATION",
+            "purpose": "OWNERSHIP_INVESTMENT"
+          },
+          {
+            "label": "Close date source — AIMCo — Puget Energy / Puget Sound Energy",
+            "url": "https://www.sec.gov/Archives/edgar/data/81100/000119312509027209/d8k.htm",
+            "type": "SEC_FILING",
+            "purpose": "FINANCING_FILINGS"
+          },
+          {
+            "label": "Pse — Puget Energy / Puget Sound Energy",
+            "url": "https://www.pse.com/en/about-us",
+            "type": "WEBSITE",
+            "purpose": "COMPANY_PROFILE"
+          },
+          {
+            "label": "Pse — Puget Energy / Puget Sound Energy",
+            "url": "https://www.pse.com/en/Customer-Service/pse-locations-2",
+            "type": "ARTICLE",
+            "purpose": "OPERATIONS_ASSETS"
+          },
+          {
+            "label": "Current investment source — BCI — Puget Sound Energy",
+            "url": "https://www.bci.ca/powering-the-pacific-northwest-bcis-strategic-investment-in-puget-sound-energy/",
+            "type": "ARTICLE",
+            "purpose": "OWNERSHIP_INVESTMENT",
+            "evidenceLabel": "BCI 2009 initial investment and continuing PSE ownership context"
+          },
+          {
+            "label": "Ownership interest source — BCI I&RR 2024 financial statements — Puget Sound Energy",
+            "url": "https://www.bci.ca/wp-content/uploads/2024/08/IRR-Program-FS-2024_Secured.pdf",
+            "type": "PRESENTATION",
+            "purpose": "OWNERSHIP_INVESTMENT",
+            "evidenceLabel": "BCI 20.9% ownership interest in Puget Sound Energy as of December 31, 2024"
+          }
+        ],
+        "owners": [
+          {
+            "investmentFirm": "AIMCo",
+            "ownershipVehicle": "n.a.",
+            "investmentYear": 2009,
+            "status": "Active"
+          },
+          {
+            "investmentFirm": "BCI",
+            "ownershipVehicle": "Infrastructure & Renewable Resources",
+            "investmentYear": 2009,
+            "stake": "20.9%",
+            "status": "Active"
+          }
+        ]
+      },
+      "retiredSeedSha256": "fe35e6afdca1af0c487e0327d8f995e7e73596adc9ecb43277e7ae0144371831",
+      "canonicalSeed": {
+        "name": "Puget Energy, Inc.",
+        "investmentFirm": "AIMCo",
+        "sector": "Utilities",
+        "subsector": "Regulated electricity and gas utility platform",
+        "region": "North America",
+        "country": "United States",
+        "ownershipVehicle": "AIMCo Direct Infrastructure Investment",
+        "description": "Puget Energy, Inc. is a Bellevue, Washington-based utility holding company whose core business is Puget Sound Energy, the regulated electric and natural gas utility serving western Washington. PSE is wholly owned by Puget Energy and serves approximately 1.26 million electric customers and 883,000 natural-gas customers across roughly 6,000 square miles in 10 counties. Puget LNG is a separate nonregulated subsidiary of Puget Energy. The platform is owned through Puget Holdings by BCI (20.9%), Macquarie Asset Management (15.8%), OMERS (23.9%), Ontario Teachers' Pension Plan (15.8%), AIMCo (13.6%) and PGGM (10.0%). No later sponsor transfer or signed pending platform sale was identified through August 23, 2026. Puget Sound Energy is retained as the regulated subsidiary and operating brand rather than counted as a separate PortCo.",
+        "status": "Active",
+        "countryTags": [
+          "United States"
+        ],
+        "website": "https://www.pugetenergy.com/",
+        "yearFounded": 1999,
+        "investmentYear": 2009,
+        "headquarters": "Bellevue, Washington",
+        "milestones": [
+          {
+            "date": "1999",
+            "event": "Puget Energy was incorporated in Washington as the future holding company for Puget Sound Energy.",
+            "category": "Founding"
+          },
+          {
+            "date": "Feb 6, 2009",
+            "event": "Puget Holdings completed the take-private acquisition of Puget Energy through a long-term infrastructure investor consortium.",
+            "category": "Acquisition"
+          },
+          {
+            "date": "Aug 8, 2018",
+            "event": "AIMCo and BCI agreed to increase their Puget Holdings interests while OMERS and PGGM agreed to acquire initial 23.9% and 10.0% stakes.",
+            "category": "Acquisition"
+          },
+          {
+            "date": "Apr 17, 2019",
+            "event": "The ownership transition closed: the original Macquarie consortium exited, OMERS and PGGM entered, and BCI and AIMCo increased their interests.",
+            "category": "Financing"
+          },
+          {
+            "date": "Jul 7, 2021",
+            "event": "Macquarie Asset Management and Ontario Teachers' announced an agreement to acquire CPP Investments' 31.6% Puget Holdings interest in equal 15.8% stakes.",
+            "category": "Acquisition"
+          },
+          {
+            "date": "Feb 22, 2022",
+            "event": "Macquarie Asset Management and Ontario Teachers' completed their acquisition of CPP Investments' 31.6% Puget Holdings interest and each became a 15.8% owner.",
+            "category": "Acquisition"
+          }
+        ],
+        "management": [],
+        "sources": [
+          {
+            "label": "Aimco — Puget Energy / Puget Sound Energy",
+            "url": "https://www.aimco.ca/insights/aimco-increases-stake-in-puget-sound-energy",
+            "type": "ARTICLE",
+            "purpose": "SUPPORTING_CONTEXT",
+            "evidenceLabel": "AIMCo's continuing Puget investment and increased interest"
+          },
+          {
+            "label": "Investment date source — AIMCo — Puget Energy / Puget Sound Energy",
+            "url": "https://assets.ctfassets.net/lyt4cjmefjno/5aorUTYWwgPMIGc9cNPx9r/8518334d4637dbde57c10a376b60c10c/puget_investment.pdf",
+            "type": "PRESENTATION",
+            "purpose": "OWNERSHIP_INVESTMENT",
+            "evidenceLabel": "AIMCo's original consortium investment"
+          },
+          {
+            "label": "Close date source — AIMCo — Puget Energy / Puget Sound Energy",
+            "url": "https://www.sec.gov/Archives/edgar/data/81100/000119312509027209/d8k.htm",
+            "type": "SEC_FILING",
+            "purpose": "FINANCING_FILINGS",
+            "evidenceLabel": "February 6, 2009 take-private close"
+          },
+          {
+            "label": "Pse — Puget Energy / Puget Sound Energy",
+            "url": "https://www.pse.com/en/about-us",
+            "type": "WEBSITE",
+            "purpose": "COMPANY_PROFILE",
+            "evidenceLabel": "Puget Sound Energy regulated operating subsidiary profile"
+          },
+          {
+            "label": "Pse — Puget Energy / Puget Sound Energy",
+            "url": "https://www.pse.com/en/Customer-Service/pse-locations-2",
+            "type": "ARTICLE",
+            "purpose": "OPERATIONS_ASSETS",
+            "evidenceLabel": "Puget Sound Energy service locations and operating footprint"
+          },
+          {
+            "label": "Current investment source — BCI — Puget Sound Energy",
+            "url": "https://www.bci.ca/powering-the-pacific-northwest-bcis-strategic-investment-in-puget-sound-energy/",
+            "type": "ARTICLE",
+            "purpose": "OWNERSHIP_INVESTMENT",
+            "evidenceLabel": "BCI's 2009 entry and continuing Puget investment"
+          },
+          {
+            "label": "Ownership interest source — BCI I&RR 2024 financial statements — Puget Sound Energy",
+            "url": "https://www.bci.ca/wp-content/uploads/2024/08/IRR-Program-FS-2024_Secured.pdf",
+            "type": "PRESENTATION",
+            "purpose": "OWNERSHIP_INVESTMENT",
+            "evidenceLabel": "BCI 20.9% Puget ownership at December 31, 2024"
+          },
+          {
+            "label": "Close date source — OTPP — Puget Sound Energy",
+            "url": "https://www.otpp.com/en-ca/about-us/news-and-insights/2022/macquarie-asset-management-and-ontario-teachers--complete-acquis/",
+            "type": "WEBSITE",
+            "purpose": "OWNERSHIP_INVESTMENT",
+            "evidenceLabel": "Ontario Teachers' February 22, 2022 close and 15.8% stake"
+          },
+          {
+            "label": "Omers — Puget Sound Energy",
+            "url": "https://www.omers.com/news/omers-infrastructure-announces-investment-in-puget-sound-energy",
+            "type": "ARTICLE",
+            "purpose": "OWNERSHIP_INVESTMENT",
+            "evidenceLabel": "OMERS investment announcement and approximately 24% stake"
+          },
+          {
+            "label": "Close date source — AIMCo — Puget Sound Energy",
+            "url": "https://www.sec.gov/Archives/edgar/data/81100/000119312509027209/dex991.htm",
+            "type": "SEC_FILING",
+            "purpose": "FINANCING_FILINGS",
+            "evidenceLabel": "2009 consortium members and take-private close"
+          },
+          {
+            "label": "Close date source — Macquarie Asset Management — Puget Sound Energy",
+            "url": "https://www.macquarie.com/us/en/about/news/2022/macquarie-asset-management-and-ontario-teachers-complete-acquisition-of-stake-in-puget-holdings.html",
+            "type": "WEBSITE",
+            "purpose": "OWNERSHIP_INVESTMENT",
+            "evidenceLabel": "Macquarie and Ontario Teachers' February 22, 2022 close, stakes and Macquarie vehicle"
+          },
+          {
+            "label": "Investment date source — PGGM — Puget Sound Energy",
+            "url": "https://pggm.nl/en/press/puget-sound-energy-welcomes-new-investment",
+            "type": "PRESS_RELEASE",
+            "purpose": "OWNERSHIP_INVESTMENT",
+            "evidenceLabel": "PGGM's 10% Puget investment and 2018 announcement"
+          },
+          {
+            "label": "Puget Energy — Company profile",
+            "url": "https://www.pugetenergy.com/",
+            "type": "WEBSITE",
+            "purpose": "COMPANY_PROFILE",
+            "evidenceLabel": "Puget Energy parent identity, Bellevue headquarters and PSE operating subsidiary"
+          },
+          {
+            "label": "Puget Energy — Spring 2026 investor presentation",
+            "url": "https://www.sec.gov/Archives/edgar/data/81100/000119312526084011/d109936dex991.htm",
+            "type": "SEC_FILING",
+            "purpose": "OWNERSHIP_INVESTMENT",
+            "evidenceLabel": "Current six-owner table, stakes, transition dates and Puget Energy / PSE boundary"
+          },
+          {
+            "label": "Puget Energy and PSE — second-quarter 2026 Form 10-Q",
+            "url": "https://www.sec.gov/Archives/edgar/data/1085392/000108539226000016/psd-20260630.htm",
+            "type": "SEC_FILING",
+            "purpose": "OWNERSHIP_INVESTMENT",
+            "evidenceLabel": "Latest parent-subsidiary structure and subsequent platform-exit check"
+          },
+          {
+            "label": "Puget Energy — 2019 ownership transition Form 8-K",
+            "url": "https://www.sec.gov/Archives/edgar/data/81100/000119312519110918/d696857d8k.htm",
+            "type": "SEC_FILING",
+            "purpose": "OWNERSHIP_INVESTMENT",
+            "evidenceLabel": "April 17, 2019 ownership transition close"
+          },
+          {
+            "label": "Puget Energy — 2026 credit agreement subsidiary schedule",
+            "url": "https://www.sec.gov/Archives/edgar/data/1085392/000108539226000016/exhibit101-pugetenergy2026.htm",
+            "type": "SEC_FILING",
+            "purpose": "COMPANY_PROFILE",
+            "evidenceLabel": "PSE 100% owned by Puget Energy and Puget LNG sibling boundary"
+          },
+          {
+            "label": "Puget Energy and PSE — 2025 Form 10-K",
+            "url": "https://www.sec.gov/Archives/edgar/data/1085392/000108539226000008/psd-20251231.htm",
+            "type": "SEC_FILING",
+            "purpose": "COMPANY_PROFILE",
+            "evidenceLabel": "Puget Energy founding history, parent boundary and current owner set"
+          }
+        ],
+        "owners": [
+          {
+            "investmentFirm": "AIMCo",
+            "ownershipVehicle": "AIMCo Direct Infrastructure Investment",
+            "fundName": "AIMCo Direct Infrastructure Investment",
+            "investmentYear": 2009,
+            "stake": "13.6% current; 7.6% before the April 2019 increase",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          },
+          {
+            "investmentFirm": "BCI",
+            "ownershipVehicle": "Infrastructure & Renewable Resources",
+            "fundName": "Infrastructure & Renewable Resources",
+            "investmentYear": 2009,
+            "stake": "20.9% current; 16.9% before the April 2019 increase",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          },
+          {
+            "investmentFirm": "Macquarie Asset Management",
+            "ownershipVehicle": "Macquarie Washington Clean Energy Investment, L.P. (Macquarie Global Infrastructure Fund)",
+            "vehicleName": "Macquarie Washington Clean Energy Investment, L.P. (Macquarie Global Infrastructure Fund)",
+            "investmentYear": 2022,
+            "stake": "15.8%",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          },
+          {
+            "investmentFirm": "Ontario Teachers' Pension Plan",
+            "ownershipVehicle": "Ontario Teachers' Pension Plan",
+            "investmentYear": 2022,
+            "stake": "15.8%",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          },
+          {
+            "investmentFirm": "OMERS",
+            "ownershipVehicle": "OMERS Infrastructure",
+            "fundName": "OMERS Infrastructure",
+            "investmentYear": 2019,
+            "stake": "23.9%",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          },
+          {
+            "investmentFirm": "PGGM",
+            "ownershipVehicle": "PGGM",
+            "investmentYear": 2019,
+            "stake": "10.0%",
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          },
+          {
+            "investmentFirm": "Macquarie Asset Management",
+            "ownershipVehicle": "Original Puget Holdings consortium vehicles",
+            "vehicleName": "Original Puget Holdings consortium vehicles",
+            "investmentYear": 2009,
+            "exitYear": 2019,
+            "stake": "44.0% rounded",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          },
+          {
+            "investmentFirm": "CPP Investments",
+            "ownershipVehicle": "CPP Investment Board (USRE II) Inc.",
+            "vehicleName": "CPP Investment Board (USRE II) Inc.",
+            "investmentYear": 2009,
+            "exitYear": 2022,
+            "stake": "31.6%",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          }
+        ]
+      },
+      "canonicalSeedSha256": "0109da5303ebcc844683df303cd86d9e16a187446567da8674b34b18f58f59c4",
+      "canonicalCompanyId": "cmrxpj4fp00ghivhebe9bfh5k",
+      "canonicalName": "Puget Energy, Inc.",
+      "country": "United States",
+      "proposalSha256": "c579f09caa89779cb49d9aecada0638377ed8aab7d30989af7357ce54d604036",
+      "approvalSha256": "cfdff69e5a30ec8011584f24c515830c64309a2b7985572714f2a9f556226f9b",
+      "applyReceiptSha256": "038ba0356997af25395a8b9a7158261e2cb7db4378a8bcfa184d10b9db7c3869",
+      "primaryCitation": {
+        "id": null,
+        "label": "Puget Energy — Spring 2026 investor presentation",
+        "url": "https://www.sec.gov/Archives/edgar/data/81100/000119312526084011/d109936dex991.htm",
+        "sourceType": "SEC_FILING",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current six-owner table, stakes, transition dates and Puget Energy / PSE boundary",
+        "isPrimary": true
+      },
+      "terminalDecisionSha256": "cefeed8d8c413e67bf31aa99af14d8689b93af93dad020527ec0202e6515bf9e",
+      "rationale": "Puget Sound Energy is the regulated operating subsidiary of the same sponsor-held parent already reconciled as Puget Energy, Inc. in completed task 128. The current production record preserves Puget Sound Energy, PSE and the composite label as aliases while keeping ownership at the canonical parent, so a separate company would duplicate the reviewed identity and ownership perimeter."
+    },
+    {
+      "sourceSequence": 495,
+      "sourceTaskId": "ledger:0495:u-s-medical-outpatient-facilities-portfolio-medcraft-jv:f5a7946c",
+      "canonicalSequence": 250,
+      "canonicalTaskId": "ledger:0250:medcraft-medical-outpatient-portfolio:bb470706",
+      "retiredSeed": {
+        "name": "U.S. Medical Outpatient Facilities Portfolio (MedCraft JV)",
+        "investmentFirm": "Fengate Asset Management",
+        "sector": "Social Infra",
+        "subsector": "Medical outpatient facilities",
+        "region": "North America",
+        "country": "United States",
+        "ownershipVehicle": "Fengate Infrastructure Fund IV",
+        "description": "U.S. Medical Outpatient Facilities Portfolio (MedCraft JV) is a portfolio of medical outpatient buildings in the United States. Its end users are patients and healthcare providers, with occupancy tied to a major nonprofit health system under a sale-leaseback structure rather than broad multi-tenant speculative leasing. The model is asset-heavy and healthcare-oriented, with value supported by essential outpatient real estate and a large health-system tenant. Fengate disclosed in 2025 that the portfolio comprises 24 facilities with more than 900,000 square feet of medical space across two states. The reviewed materials did not disclose the specific states, property-level revenue, or current ownership percentages within the joint venture. Fengate acquired the portfolio in 2025 alongside MedCraft as part of its healthcare infrastructure strategy.",
+        "status": "Active",
+        "countryTags": [
+          "United States"
+        ],
+        "investmentYear": 2025,
+        "headquarters": "Two U.S. states (not publicly disclosed.)",
+        "milestones": [
+          {
+            "date": "2025",
+            "event": "Fengate stated that the portfolio added more than 900,000 square feet of medical space across two states.",
+            "category": "Expansion"
+          },
+          {
+            "date": "2025",
+            "event": "The acquisition was completed alongside MedCraft under a sale-leaseback structure.",
+            "category": "Divestiture"
+          },
+          {
+            "date": "Sep 11, 2025",
+            "event": "Fengate announced the acquisition of 24 medical outpatient facilities from a large U.S. nonprofit health system.",
+            "category": "Acquisition"
+          }
+        ],
+        "sources": [
+          {
+            "label": "Announcement date source — Fengate Asset Management — U.S. Medical Outpatient Facilities Portfolio (MedCraft JV)",
+            "url": "https://fengate.com/news/fengate-expands-healthcare-infrastructure-portfolio-with-acquisition-of-24-u-s-outpatient-facilities",
+            "type": "PRESS_RELEASE",
+            "purpose": "OWNERSHIP_INVESTMENT"
+          },
+          {
+            "label": "GlobeNewsWire — U.S. Medical Outpatient Facilities Portfolio (MedCraft JV)",
+            "url": "https://www.globenewswire.com/news-release/2025/09/11/3148713/0/en/Fengate-expands-healthcare-infrastructure-portfolio-with-acquisition-of-24-U-S-outpatient-facilities.html",
+            "type": "PRESS_RELEASE",
+            "purpose": "MILESTONE_EVENT"
+          },
+          {
+            "label": "Medcraft — U.S. Medical Outpatient Facilities Portfolio (MedCraft JV)",
+            "url": "https://www.medcraft.com/",
+            "type": "WEBSITE",
+            "purpose": "COMPANY_PROFILE"
+          }
+        ],
+        "owners": [
+          {
+            "investmentFirm": "Fengate Asset Management",
+            "ownershipVehicle": "Fengate Infrastructure Fund IV",
+            "investmentYear": 2025,
+            "status": "Active"
+          }
+        ]
+      },
+      "retiredSeedSha256": "ce44603f04fcae093fcba7e0cc077eb109cd0182ceef6ffd192fd9b6243e437e",
+      "canonicalSeed": {
+        "name": "Fengate-MedCraft Cleveland Clinic Outpatient Portfolio",
+        "investmentFirm": "Fengate Asset Management",
+        "sector": "Social Infra",
+        "subsector": "Medical outpatient facilities",
+        "region": "North America",
+        "country": "United States",
+        "ownershipVehicle": "FG MC II Cleveland, LLC / location-specific title LLCs",
+        "description": "Fengate-MedCraft Cleveland Clinic Outpatient Portfolio is a 24-facility medical-outpatient sale-leaseback portfolio across Ohio and Florida totaling more than 900,000 square feet. Fengate Asset Management and MedCraft Healthcare Real Estate acquired the portfolio in September 2025 through FG MC II Cleveland, LLC and location-specific title entities; public sources do not disclose their percentages or a deal-specific Fengate fund. Cleveland Clinic and title affiliates were the former fee owners and remain the principal tenant/operator under long-term leases. The portfolio is the first Fengate-MedCraft joint-venture acquisition and is distinct from Fengate's separate Project Lotus investment with Montecito. No later disposal, recapitalization, owner exit or signed ownership transaction was identified through August 29, 2026.",
+        "status": "Active",
+        "countryTags": [
+          "United States"
+        ],
+        "yearFounded": 2025,
+        "investmentYear": 2025,
+        "milestones": [
+          {
+            "date": "Sep 4, 2025",
+            "event": "Cleveland Clinic property transfers and financing into the FG MC II title structure began for the outpatient portfolio.",
+            "category": "Acquisition"
+          },
+          {
+            "date": "Sep 10, 2025",
+            "event": "Contemporaneous reporting identified Cleveland Clinic as seller and continuing tenant and MedCraft as buyer across the 24-facility portfolio.",
+            "category": "Other"
+          },
+          {
+            "date": "Sep 11, 2025",
+            "event": "Fengate announced the first Fengate-MedCraft joint-venture acquisition: 24 outpatient facilities across Ohio and Florida totaling more than 900,000 square feet.",
+            "category": "Acquisition"
+          }
+        ],
+        "management": [],
+        "sources": [
+          {
+            "label": "Announcement date source — Fengate Asset Management — U.S. Medical Outpatient Facilities Portfolio (MedCraft JV)",
+            "url": "https://fengate.com/news/fengate-expands-healthcare-infrastructure-portfolio-with-acquisition-of-24-u-s-outpatient-facilities",
+            "type": "PRESS_RELEASE",
+            "purpose": "OWNERSHIP_INVESTMENT",
+            "evidenceLabel": "Fengate-MedCraft joint ownership, closed acquisition, 24 facilities, two states and 900,000-plus square feet"
+          },
+          {
+            "label": "GlobeNewsWire — U.S. Medical Outpatient Facilities Portfolio (MedCraft JV)",
+            "url": "https://www.globenewswire.com/news-release/2025/09/11/3148713/0/en/Fengate-expands-healthcare-infrastructure-portfolio-with-acquisition-of-24-U-S-outpatient-facilities.html",
+            "type": "PRESS_RELEASE",
+            "purpose": "SUPPORTING_CONTEXT",
+            "evidenceLabel": "Syndicated Fengate transaction announcement"
+          },
+          {
+            "label": "Medcraft — U.S. Medical Outpatient Facilities Portfolio (MedCraft JV)",
+            "url": "https://www.medcraft.com/",
+            "type": "WEBSITE",
+            "purpose": "COMPANY_PROFILE",
+            "evidenceLabel": "MedCraft healthcare real-estate operating profile"
+          },
+          {
+            "label": "NEOtrans — Cleveland Clinic outpatient sale-leaseback",
+            "url": "https://neo-trans.blog/2025/09/10/cleveland-clinic-sells-leases-back-24-facilities/",
+            "type": "ARTICLE",
+            "purpose": "OWNERSHIP_INVESTMENT",
+            "evidenceLabel": "Seller, tenant, buyer, transfer timing and title-vehicle evidence"
+          },
+          {
+            "label": "Cuyahoga County — FG MC II title record",
+            "url": "https://myplace.cuyahogacounty.gov/NTgzMTQwMTE%3D?city=OTk%3D&dataRequested=UHJvcGVydHkgU3VtbWFyeSBSZXBvcnQ%3D&searchBy=UGFyY2Vs",
+            "type": "OTHER",
+            "purpose": "OWNERSHIP_INVESTMENT",
+            "evidenceLabel": "Government title evidence for the FG MC II ownership structure"
+          }
+        ],
+        "owners": [
+          {
+            "investmentFirm": "Fengate Asset Management",
+            "ownershipVehicle": "FG MC II Cleveland, LLC / location-specific title LLCs",
+            "vehicleName": "FG MC II Cleveland, LLC / location-specific title LLCs",
+            "investmentYear": 2025,
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          },
+          {
+            "investmentFirm": "MedCraft Healthcare Real Estate",
+            "ownershipVehicle": "FG MC II Cleveland, LLC / location-specific title LLCs",
+            "vehicleName": "FG MC II Cleveland, LLC / location-specific title LLCs",
+            "investmentYear": 2025,
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          },
+          {
+            "investmentFirm": "Cleveland Clinic Foundation",
+            "ownershipVehicle": "Direct fee-title affiliates",
+            "vehicleName": "Direct fee-title affiliates",
+            "exitYear": 2025,
+            "stake": "Former fee ownership across the sold portfolio; asset allocation not publicly disclosed",
+            "status": "Realized",
+            "transactionState": "REALIZED"
+          }
+        ]
+      },
+      "canonicalSeedSha256": "4b18b4eaa3bbbf18b24c6f7518228ca6dc494f235f6621f28c087ce8a958c27a",
+      "canonicalCompanyId": "cmrxpjfs500xmivheiqodqkfz",
+      "canonicalName": "Fengate-MedCraft Cleveland Clinic Outpatient Portfolio",
+      "country": "United States",
+      "proposalSha256": "eeeacc4abe708aa4ff4b8ed33a54e9d0bddef996e8b1ee6d641329c9f1185cf5",
+      "approvalSha256": "efe6a5bd9511a9379853aac7a4743a43d41c00f09e5fe726f57aeaaaeb0f1cd7",
+      "applyReceiptSha256": "22488f716612a9125f445b08b42baa56bddc5384420c16f43c855cd32c412c6b",
+      "primaryCitation": {
+        "id": "cmrxpr3j30ak7ivhemocedz3z",
+        "label": "Announcement date source — Fengate Asset Management — U.S. Medical Outpatient Facilities Portfolio (MedCraft JV)",
+        "url": "https://fengate.com/news/fengate-expands-healthcare-infrastructure-portfolio-with-acquisition-of-24-u-s-outpatient-facilities",
+        "sourceType": "PRESS_RELEASE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Fengate-MedCraft joint ownership, closed acquisition, 24 facilities, two states and 900,000-plus square feet",
+        "isPrimary": true
+      },
+      "terminalDecisionSha256": "08e727380765282f0ab2fdb92144fa6ea737f70ee5d25d2046e05d727b6527bd",
+      "rationale": "This source label is the exact reviewed alias of the same 24-facility Fengate-MedCraft Cleveland Clinic outpatient portfolio already reconciled in completed task 250. The canonical after-image and complete seed overlay retain the source label as an alias, and the fresh production snapshot confirms the canonical company remains published with the expected relationship counts. Creating or correcting a second record would duplicate that canonical portfolio identity."
+    },
+    {
+      "sourceSequence": 496,
+      "sourceTaskId": "ledger:0496:u-s-medical-outpatient-facilities-portfolio-montecito-jv:be578f31",
+      "canonicalSequence": 251,
+      "canonicalTaskId": "ledger:0251:montecito-medical-outpatient-portfolio:18c48dc3",
+      "retiredSeed": {
+        "name": "U.S. Medical Outpatient Facilities Portfolio (Montecito JV)",
+        "investmentFirm": "Fengate Asset Management",
+        "sector": "Social Infra",
+        "subsector": "Medical outpatient facilities",
+        "region": "North America",
+        "country": "United States",
+        "ownershipVehicle": "Fengate Infrastructure Fund IV",
+        "description": "U.S. Medical Outpatient Facilities Portfolio (Montecito JV) is a portfolio of medical outpatient properties in the United States. Its end users are patients and physician practices requiring ambulatory surgery, radiology, oncology, orthopedics, and related outpatient services. The model is asset-heavy and healthcare-oriented, with economics supported by specialized outpatient real estate rather than general office tenancy. Fengate disclosed in 2025 that the acquisition covered 16 facilities serving communities across 10 states and formed part of a healthcare portfolio exceeding 80 facilities and more than US$1 billion in assets. The reviewed materials did not disclose property-level revenue or current ownership percentages within the joint venture. Fengate completed the acquisition alongside Montecito Medical in 2025 on behalf of Fengate Infrastructure Fund IV and affiliated entities.",
+        "status": "Active",
+        "countryTags": [
+          "United States"
+        ],
+        "investmentYear": 2025,
+        "headquarters": "Ten U.S. states (not publicly disclosed.)",
+        "milestones": [
+          {
+            "date": "2025",
+            "event": "Fengate stated that the properties delivered high-acuity outpatient services across 10 states.",
+            "category": "Other"
+          },
+          {
+            "date": "2025",
+            "event": "The transaction was completed alongside Montecito Medical and expanded Fengate's healthcare portfolio beyond 80 facilities.",
+            "category": "Expansion"
+          },
+          {
+            "date": "Oct 30, 2025",
+            "event": "Fengate announced the acquisition of 16 medical outpatient facilities in the United States.",
+            "category": "Acquisition"
+          }
+        ],
+        "sources": [
+          {
+            "label": "Announcement date source — Fengate Asset Management — U.S. Medical Outpatient Facilities Portfolio (Montecito JV)",
+            "url": "https://fengate.com/news/fengate-acquires-16-medical-outpatient-facilities-in-the-united-states",
+            "type": "PRESS_RELEASE",
+            "purpose": "OWNERSHIP_INVESTMENT"
+          },
+          {
+            "label": "GlobeNewsWire — U.S. Medical Outpatient Facilities Portfolio (Montecito JV)",
+            "url": "https://www.globenewswire.com/news-release/2025/10/30/3177631/0/en/Fengate-acquires-16-medical-outpatient-facilities-in-the-United-States.html",
+            "type": "PRESS_RELEASE",
+            "purpose": "MILESTONE_EVENT"
+          },
+          {
+            "label": "Montecitomac — U.S. Medical Outpatient Facilities Portfolio (Montecito JV)",
+            "url": "https://montecitomac.com/",
+            "type": "WEBSITE",
+            "purpose": "COMPANY_PROFILE"
+          }
+        ],
+        "owners": [
+          {
+            "investmentFirm": "Fengate Asset Management",
+            "ownershipVehicle": "Fengate Infrastructure Fund IV",
+            "investmentYear": 2025,
+            "status": "Active"
+          }
+        ]
+      },
+      "retiredSeedSha256": "1596b612f9bde0cc6f2e931012038db5968238d01b6ba1f272e4c1400e7171a4",
+      "canonicalSeed": {
+        "name": "Montecito Medical Outpatient Portfolio",
+        "investmentFirm": "Fengate Asset Management",
+        "sector": "Social Infra",
+        "subsector": "Medical outpatient facilities",
+        "region": "North America",
+        "country": "United States",
+        "ownershipVehicle": "Fengate Infrastructure Fund IV",
+        "description": "Montecito Medical Outpatient Portfolio is the bounded 2025 Project Lotus sale-recapitalization of a national medical-outpatient portfolio. Fengate Asset Management invested through Fengate Infrastructure Fund IV and affiliated entities using FG MNTO I LOTUS, LLC, while Montecito Medical Real Estate retained equity; their percentages are not publicly disclosed. Fengate described 16 facilities in 10 states, while transaction-advisor and trade sources described 18 properties in 11 states totaling approximately 750,000 square feet and a US$323 million recapitalization with US$233 million of financing. The facilities were 100% leased at closing to health systems and physician groups. The record excludes Montecito's enterprise portfolio and Fengate's separate MedCraft/Cleveland Clinic portfolio. No later portfolio sale, owner exit or signed ownership transaction was identified through August 29, 2026.",
+        "status": "Active",
+        "countryTags": [
+          "United States"
+        ],
+        "yearFounded": 2025,
+        "investmentYear": 2025,
+        "milestones": [
+          {
+            "date": "Aug 25, 2025",
+            "event": "FG MNTO I LOTUS, LLC was established as the acquisition vehicle for the Project Lotus recapitalization.",
+            "category": "Founding"
+          },
+          {
+            "date": "Oct 30, 2025",
+            "event": "Fengate announced its Fund IV investment alongside Montecito in the medical-outpatient portfolio.",
+            "category": "Acquisition"
+          },
+          {
+            "date": "Nov 4, 2025",
+            "event": "Newmark and trade reporting described the closed US$323 million recapitalization, US$233 million financing and Montecito's retained equity.",
+            "category": "Financing"
+          }
+        ],
+        "management": [],
+        "sources": [
+          {
+            "label": "Announcement date source — Fengate Asset Management — U.S. Medical Outpatient Facilities Portfolio (Montecito JV)",
+            "url": "https://fengate.com/news/fengate-acquires-16-medical-outpatient-facilities-in-the-united-states",
+            "type": "PRESS_RELEASE",
+            "purpose": "SUPPORTING_CONTEXT",
+            "evidenceLabel": "Earlier Fengate announcement for the same 16-facility portfolio"
+          },
+          {
+            "label": "GlobeNewsWire — U.S. Medical Outpatient Facilities Portfolio (Montecito JV)",
+            "url": "https://www.globenewswire.com/news-release/2025/10/30/3177631/0/en/Fengate-acquires-16-medical-outpatient-facilities-in-the-United-States.html",
+            "type": "PRESS_RELEASE",
+            "purpose": "SUPPORTING_CONTEXT",
+            "evidenceLabel": "Syndicated earlier Fengate transaction announcement"
+          },
+          {
+            "label": "Montecitomac — U.S. Medical Outpatient Facilities Portfolio (Montecito JV)",
+            "url": "https://montecitomac.com/",
+            "type": "WEBSITE",
+            "purpose": "COMPANY_PROFILE",
+            "evidenceLabel": "Montecito Medical real-estate operating profile"
+          },
+          {
+            "label": "Fengate — Montecito medical outpatient portfolio",
+            "url": "https://fengate.com/news/fengate-acquires-montecito-medical-outpatient-portfolio/",
+            "type": "ARTICLE",
+            "purpose": "OWNERSHIP_INVESTMENT",
+            "evidenceLabel": "Fund IV attribution, Montecito partnership and closed portfolio investment"
+          },
+          {
+            "label": "Newmark — Project Lotus recapitalization and financing",
+            "url": "https://wolfmediausa.com/2025/11/04/news-release-newmark-arranges-323-million-sale-and-233-million-financing-of-national-medical-outpatient-portfolio/",
+            "type": "PRESS_RELEASE",
+            "purpose": "FINANCING_FILINGS",
+            "evidenceLabel": "US$323 million recapitalization, US$233 million financing and portfolio scale"
+          },
+          {
+            "label": "HREI — Project Lotus closing and retained equity",
+            "url": "https://wolfmediausa.com/2025/11/04/transactions-18-mob-750000-s-f-portfolio-closes-for-323-million/",
+            "type": "ARTICLE",
+            "purpose": "OWNERSHIP_INVESTMENT",
+            "evidenceLabel": "Closed recapitalization and Montecito retained ownership"
+          },
+          {
+            "label": "Bloomberg LEI — FG MNTO I LOTUS",
+            "url": "https://lei.bloomberg.com/leis/view/254900VE6YWU9Z872H42",
+            "type": "OTHER",
+            "purpose": "COMPANY_PROFILE",
+            "evidenceLabel": "Legal acquisition-vehicle identity"
+          }
+        ],
+        "owners": [
+          {
+            "investmentFirm": "Fengate Asset Management",
+            "ownershipVehicle": "Fengate Infrastructure Fund IV",
+            "fundName": "Fengate Infrastructure Fund IV",
+            "vehicleName": "FG MNTO I LOTUS, LLC",
+            "investmentYear": 2025,
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          },
+          {
+            "investmentFirm": "Montecito Medical Real Estate",
+            "ownershipVehicle": "Retained equity through FG MNTO I LOTUS, LLC",
+            "vehicleName": "Retained equity through FG MNTO I LOTUS, LLC",
+            "investmentYear": 2025,
+            "status": "Active",
+            "transactionState": "CLOSED_ACTIVE"
+          }
+        ]
+      },
+      "canonicalSeedSha256": "3feae8248a5e44b4291658d4cde7da7654c87355a2e8c34b258e01bce0917a51",
+      "canonicalCompanyId": "cmrxpjfsr00xnivhemb529yxo",
+      "canonicalName": "Montecito Medical Outpatient Portfolio",
+      "country": "United States",
+      "proposalSha256": "a4ed998ed258706be5eabc1f634fc9c84a8e2053dd0544b693a9d832632585be",
+      "approvalSha256": "5472f25d6dd83963653c83914fb4fb8c1f485f8c0a552dcd8ecc02e5ed532282",
+      "applyReceiptSha256": "8fce0e3acc458f7df27cf836fc174de32538f187795cc70275663598d3169417",
+      "primaryCitation": {
+        "id": null,
+        "label": "Fengate — Montecito medical outpatient portfolio",
+        "url": "https://fengate.com/news/fengate-acquires-montecito-medical-outpatient-portfolio/",
+        "sourceType": "ARTICLE",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Fund IV attribution, Montecito partnership and closed portfolio investment",
+        "isPrimary": true
+      },
+      "terminalDecisionSha256": "8ef84a0e0e3af2838dd25292354c315e6872982e69a1a522a69ac0a3da21077d",
+      "rationale": "This source label is the exact reviewed alias of the same 16-facility Fengate-Montecito medical outpatient portfolio already reconciled in completed task 251. The canonical after-image and complete seed overlay retain the source label as an alias, and the fresh production snapshot confirms the canonical company remains published with the expected relationship counts. Creating or correcting a second record would duplicate that canonical portfolio identity."
+    }
+  ],
+  "databaseWrites": 0,
+  "sourceTransitions": 0,
+  "canonicalCompanyChanges": 0,
+  "qualification": "Seed-only removal of five already-superseded duplicate labels. Existing canonical companies, ownership, pending transactions, citations and redirects remain byte-identical. This release is not a new source bundle and must not replay any transaction. Extenet, Chicago Parking Meters and attribution parity candidates remain out of scope.",
+  "repairSha256": "fe73d0279eaf28f077a4bdc8094fc6fe6bf5e5ed5170930a86cdfcf8f825ab3a"
+}
